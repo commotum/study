@@ -1,0 +1,10 @@
+
+$$
+\cos \alpha \cos \beta=\frac{1}{2}(\cos (\alpha-\beta)+\cos (\alpha+\beta))
+$$
+$$
+\sin \alpha \sin \beta=\frac{1}{2}(\cos (\alpha-\beta)-\cos (\alpha+\beta))
+$$
+$$
+\sin \alpha \cos \beta=\frac{1}{2}(\sin (\alpha-\beta)+\sin (\alpha+\beta))
+$$
