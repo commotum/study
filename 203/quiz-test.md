@@ -73,6 +73,35 @@ questions:
   correct_option: lisbon
 ```
 
+## `multi-select` - Multiple Questions With Separate Options
+
+```quiz
+type: multi-select
+content: >-
+  Choose the correct answer for each dropdown. Each dropdown has its own option list.
+
+questions:
+- content: Select 1
+  options:
+  - id: pi
+    content: '$\pi$'
+  - id: minus-one
+    content: '$-1$'
+  - id: zero
+    content: '$0$'
+  - id: one
+    content: '$1$'
+  correct_option: pi
+
+- content: Select 2
+  options:
+  - id: not-orthogonal
+    content: are not orthogonal
+  - id: orthogonal
+    content: are orthogonal
+  correct_option: orthogonal
+```
+
 ## `noodle` - Connect Questions With Options
 
 ```quiz
@@ -160,8 +189,9 @@ content: |-
 - Issue: The dropdown initially defaulted to the first option instead of the placeholder.
 - Resolution: Each dropdown now starts with an empty value mapped to the disabled `Select an answer` placeholder.
 - Issue: The placeholder looked like a normal selected answer.
-- Resolution: The placeholder uses muted text color while keeping the native Obsidian/browser select styling.
-- Feedback theme: Dropdown feedback appears only after pressing **Check**. The selected answer keeps the same dropdown size and shape, but is marked green using the "right" theme when correct and red using the "wrong" theme when incorrect. Because the dropdown always has a single selected answer, there is no missed/unselected state. When the selected answer is wrong, the correct answer is shown beneath the dropdown as regular red feedback text, not as a second boxed answer. Any per-question feedback text is displayed under the dropdown after checking, with correct feedback styled in the green "right" theme and wrong feedback styled in the red "wrong" theme, matching the checkbox feedback style.
+- Resolution: The placeholder uses muted text color while keeping the custom dropdown aligned with Obsidian theme styling.
+- Feedback theme: Dropdown feedback appears only after pressing **Check**. The selected answer keeps the same dropdown shape, but is marked green using the "right" theme when correct and red using the "wrong" theme when incorrect. Because the dropdown always has a single selected answer, there is no missed/unselected state. When the selected answer is wrong, the correct answer is shown beneath the dropdown as regular red feedback text, not as a second boxed answer. Any per-question feedback text is displayed under the dropdown after checking, with correct feedback styled in the green "right" theme and wrong feedback styled in the red "wrong" theme, matching the checkbox feedback style.
+- Follow-up fix: Select-style quizzes now use a custom dropdown so option labels can render inline Markdown and LaTeX. The dropdown opens inside the quiz block, wraps long labels, and keeps a fixed-size chevron.
 
 ### `noodle`
 
@@ -188,4 +218,4 @@ content: |-
 - `Development workflow.md`: Most useful for understanding why each code change needs a plugin reload before it appears in Obsidian. It confirmed the practical test loop: rebuild, reinstall/copy the artifacts, then disable/enable the plugin or restart Obsidian.
 - `Anatomy of a plugin.md`: Useful for orientation rather than the specific visual bugs. It explains the plugin lifecycle, especially that setup happens in `onload()` and cleanup happens in `onunload()`. That matched this repo's structure where `src/main.ts` registers the `quiz` Markdown code block processor.
 - `Use Svelte in your plugin.md`: Useful for understanding the component side of the repo. It explains that Svelte components are compiled into the plugin bundle and mounted into Obsidian UI elements, which is exactly how the `Quiz*.svelte` components render inside the processed quiz block.
-- `User interface/HTML elements.md`: Potentially useful for future UI cleanup, but not central to these fixes. The current bugs were mostly Svelte state, schema parsing, native select behavior, and CSS feedback styling rather than Obsidian-specific HTML APIs.
+- `User interface/HTML elements.md`: Potentially useful for future UI cleanup, but not central to these fixes. The current bugs were mostly Svelte state, schema parsing, custom dropdown behavior, and CSS feedback styling rather than Obsidian-specific HTML APIs.
