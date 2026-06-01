@@ -1,0 +1,2203 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Linearity",
+      "lesson_core_move": "Apply the continuous-time Fourier transform linearity property to compute the spectrum of a weighted sum of signals by carrying the same weights onto their transform-domain terms.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Linearity",
+          "section_index": 1,
+          "section_title": "Introduction to Linearity",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Linearity matters because it lets you reuse known Fourier pairs instead of recomputing the transform integral for every new signal. If the input is built from pieces whose transforms are already known, the job is to transform each piece and keep its coefficient attached.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the base case, a single scalar multiple stays scalar after transformation. If $x(t)$ has spectrum $X(j\\omega)$, then multiplying the signal by $a$ multiplies the spectrum by the same $a$; the shape of the spectrum does not change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a x(t) \\leftrightarrow a X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same rule also works term by term for a sum of two known signals. Start with unit weights so the structure is easy to see: $x_1(t)$ contributes $X_1(j\\omega)$ and $x_2(t)$ contributes $X_2(j\\omega)$, and the total spectrum is their sum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once weights appear, do not move them or combine them early. Each coefficient stays attached to its own time-domain term and therefore to its own frequency-domain term, so $a$ stays with $X_1(j\\omega)$ and $b$ stays with $X_2(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a x_1(t)+b x_2(t) \\leftrightarrow a X_1(j\\omega)+b X_2(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the general pattern is simple: transform each known component, preserve every coefficient, and add the resulting spectra. That is the linearity step the later examples in this lesson will reuse, whether there are two terms or many.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Linearity",
+          "section_index": 2,
+          "section_title": "Transforming a Scaled Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given that $x(t)$ has CTFT $X(j\\omega)$, find the CTFT of $3x(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the known pair $x(t) \\leftrightarrow X(j\\omega)$. Because the CTFT is linear, multiplying the signal by a constant multiplies the spectrum by the same constant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}x(t) &\\leftrightarrow X(j\\omega)\\\\3x(t) &\\leftrightarrow 3X(j\\omega)\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the CTFT of $3x(t)$ is $3X(j\\omega)$. The coefficient stays attached to the spectrum term, and nothing else in the Fourier pair changes.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Linearity",
+          "section_index": 3,
+          "section_title": "Transforming a Sum of Two Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x_1(t)$ has CTFT $X_1(j\\omega)$ and $x_2(t)$ has CTFT $X_2(j\\omega)$, find the CTFT of $x_1(t)+x_2(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that each summand already has a known CTFT pair. Linearity says you can transform the two terms separately and then add the spectra, keeping the notation unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}x_1(t) &\\leftrightarrow X_1(j\\omega)\\\\x_2(t) &\\leftrightarrow X_2(j\\omega)\\\\x_1(t)+x_2(t) &\\leftrightarrow X_1(j\\omega)+X_2(j\\omega)\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the CTFT of $x_1(t)+x_2(t)$ is $X_1(j\\omega)+X_2(j\\omega)$. The only operation is term-by-term addition of the known spectra; no new CTFT property is needed.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Linearity",
+          "section_index": 4,
+          "section_title": "Transforming a Weighted Sum of Two Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x_1(t)$ has CTFT $X_1(j\\omega)$ and $x_2(t)$ has CTFT $X_2(j\\omega)$, find the CTFT of $2x_1(t)-3x_2(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a two-term sum with weights already in front of each signal. Use linearity term by term: keep the $2$ with the first signal and keep the $-3$ with the second signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}x_1(t) &\\leftrightarrow X_1(j\\omega)\\\\x_2(t) &\\leftrightarrow X_2(j\\omega)\\\\2x_1(t)-3x_2(t) &\\leftrightarrow 2X_1(j\\omega)-3X_2(j\\omega)\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the CTFT of $2x_1(t)-3x_2(t)$ is $2X_1(j\\omega)-3X_2(j\\omega)$. The coefficients and the sign stay attached to their own spectrum terms.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Linearity",
+          "section_index": 5,
+          "section_title": "Transforming a Multi-Term Weighted Sum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x_1(t) \\leftrightarrow X_1(j\\omega)$, $x_2(t) \\leftrightarrow X_2(j\\omega)$, and $x_3(t) \\leftrightarrow X_3(j\\omega)$, find the CTFT of $x_1(t)-2x_2(t)+4x_3(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a three-term weighted sum. Use linearity term by term: keep each coefficient attached to its signal as you move into the CTFT domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx_1(t) &\\leftrightarrow X_1(j\\omega)\\\\\nx_2(t) &\\leftrightarrow X_2(j\\omega)\\\\\nx_3(t) &\\leftrightarrow X_3(j\\omega)\\\\\nx_1(t)-2x_2(t)+4x_3(t) &\\leftrightarrow X_1(j\\omega)-2X_2(j\\omega)+4X_3(j\\omega)\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The final spectrum is the same weighted sum of the individual spectra: $X_1(j\\omega)-2X_2(j\\omega)+4X_3(j\\omega)$. Nothing changes except that each time-domain term becomes its known transform.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Time Shifting",
+      "lesson_core_move": "Convert a time shift x(t - t0) into the Fourier-domain factor e^(-j omega t0) X(j omega) so known transform pairs can be reused in transform-property calculations.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Time Shifting",
+          "section_index": 1,
+          "section_title": "Introduction to Time Shifting",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A time shift means you should reuse a known Fourier pair instead of recomputing the transform from scratch. Start from a pair like $x(t) \\leftrightarrow X(j\\omega)$, then read the shift sign in the argument to decide which factor to attach.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-t_0) \\leftrightarrow e^{-j\\omega t_0}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A delay by $t_0$ keeps the original spectrum and multiplies it by $e^{-j\\omega t_0}$. The only change is the shift factor; the base transform pair stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+t_0) \\leftrightarrow e^{+j\\omega t_0}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "An advance uses the opposite sign in the exponential. Read the sign inside the parentheses first, then match it to the sign in the Fourier factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_{\\text{shifted}}(j\\omega)=e^{-j\\omega t_0}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the working rule is simple: identify the shift, keep the known spectrum, and attach the correct exponential factor. That is the form you will reuse in the worked examples.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Time Shifting",
+          "section_index": 2,
+          "section_title": "Transforming a Delayed Signal from a Known Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $x(t-2)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a delayed copy of a known pair. Start from $x(t) \\leftrightarrow X(j\\omega)$ and use the delay rule from the tutorial.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-t_0) \\leftrightarrow e^{-j\\omega t_0}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the delay is $2$, so replace $t_0$ with $2$ and keep the base spectrum unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-2) \\leftrightarrow e^{-j2\\omega}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transform of the delayed signal is the original spectrum multiplied by the delay factor $e^{-j2\\omega}$. No new transform integral is needed.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Time Shifting",
+          "section_index": 3,
+          "section_title": "Transforming an Advanced Signal from a Known Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $e^{-t}u(t) \\leftrightarrow \\frac{1}{1+j\\omega}$, find the Fourier transform of $e^{-(t-3)}u(t-3)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a delayed causal exponential. Start from the known pair $e^{-t}u(t) \\leftrightarrow \\frac{1}{1+j\\omega}$ and recognize the shift in the time argument.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-t}u(t) \\leftrightarrow \\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The given signal is the same base signal delayed by $3$, so the time-shift rule attaches $e^{-j3\\omega}$ to the original spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-(t-3)}u(t-3) \\leftrightarrow e^{-j3\\omega}\\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transformed signal keeps the denominator $1+j\\omega$ and only picks up the delay factor. The result comes from recognition plus the shift rule, not from a new transform integral.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Time Shifting",
+          "section_index": 4,
+          "section_title": "Choosing the Sign in the Time-Shift Factor",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $x(t+4)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the plus sign in the time argument. $x(t+4)$ is an advance, so rewrite it as $x(t-(-4))$ and read the shift amount as $t_0=-4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-t_0) \\leftrightarrow e^{-j\\omega t_0}X(j\\omega), \\quad t_0=-4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the negative shift into the rule. That turns the factor into $e^{-j\\omega(-4)}=e^{+j4\\omega}$, so the sign flips because the signal moved left in time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+4) \\leftrightarrow e^{+j4\\omega}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct factor for an advance is the positive exponent. The output keeps the base spectrum $X(j\\omega)$ and only changes the sign in the shift factor.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Time Shifting",
+          "section_index": 5,
+          "section_title": "Applying Time Shifting to a Shifted Sum of Known Pairs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $3x(t-1)-2x(t+2)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a weighted sum of two shifted copies of the same base signal. Use linearity first, then apply the time-shift rule to each term on its own.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "3x(t-1)-2x(t+2) \\leftrightarrow 3\\mathcal{F}\\{x(t-1)\\}-2\\mathcal{F}\\{x(t+2)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first term is a delay of $1$, so it picks up $e^{-j\\omega}$. The second term is an advance of $2$, so it picks up $e^{+j2\\omega}$; the coefficient $-2$ stays attached to that term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "3x(t-1) \\leftrightarrow 3e^{-j\\omega}X(j\\omega), \\quad -2x(t+2) \\leftrightarrow -2e^{+j2\\omega}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Combine the transformed pieces after the fact. Both terms share the same base spectrum $X(j\\omega)$, so the final answer is just the sum of the two shifted contributions.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "G(j\\omega)=\\left(3e^{-j\\omega}-2e^{+j2\\omega}\\right)X(j\\omega)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Magnitude and Phase Effects of Time Shifting",
+      "lesson_core_move": "Determine how a time shift leaves the Fourier-transform magnitude unchanged while adding the linear phase term -omega t0 to the spectrum.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Magnitude and Phase Effects of Time Shifting",
+          "section_index": 1,
+          "section_title": "Introduction to Magnitude and Phase Effects of Time Shifting",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Suppose $x(t)\\leftrightarrow X(j\\omega)$ and let $Y(j\\omega)$ be the transform of the delayed signal $y(t)=x(t-t_0)$ with $t_0>0$. The cue in this step is the extra factor from the shift: separate what it does to magnitude and what it does to phase.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-t_0)\\leftrightarrow e^{-j\\omega t_0}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The factor $e^{-j\\omega t_0}$ has unit magnitude for every $\\omega$, so the magnitude spectrum does not change at all. The delay only rotates the spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|Y(j\\omega)|=|X(j\\omega)|,\\qquad \\angle Y(j\\omega)=\\angle X(j\\omega)-\\omega t_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the phase gains the linear term $-\\omega t_0$, which means the phase slope changes by $-t_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If the shift is an advance instead of a delay, just flip the sign of $t_0$; the magnitude still stays unchanged, and the phase term becomes $+\\omega t_0$. Later examples will reuse exactly this pattern by keeping the magnitude fixed and reading the sign from the phase slope.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Magnitude and Phase Effects of Time Shifting",
+          "section_index": 2,
+          "section_title": "Magnitude Spectrum of a Time-Shifted Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)\\leftrightarrow X(j\\omega)$ and $y(t)=x(t-2)$, what is $|Y(j\\omega)|$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the delay by $2$ in $y(t)=x(t-2)$. Use the time-shift property with the known pair $x(t)\\leftrightarrow X(j\\omega)$, so the shifted spectrum is the original spectrum multiplied by $e^{-j2\\omega}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=e^{-j2\\omega}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now take the magnitude of both sides. The factor $e^{-j2\\omega}$ has unit magnitude for every $\\omega$, so it does not change the size of the spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|Y(j\\omega)|=|e^{-j2\\omega}|\\,|X(j\\omega)|=|X(j\\omega)|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the magnitude spectrum is unchanged by the delay, and the answer is $|Y(j\\omega)|=|X(j\\omega)|$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Magnitude and Phase Effects of Time Shifting",
+          "section_index": 3,
+          "section_title": "Phase Change from a Time Delay",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)\\leftrightarrow X(j\\omega)$ and $\\angle X(j\\omega)=\\omega/2$, what is $\\angle Y(j\\omega)$ for $y(t)=x(t-3)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the delay by $3$ in $y(t)=x(t-3)$. Keep the original phase $\\angle X(j\\omega)=\\omega/2$ and use the time-shift rule to add only the delay-induced linear term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=e^{-j3\\omega}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The factor $e^{-j3\\omega}$ contributes phase $-3\\omega$, and it has unit magnitude, so it does not change the magnitude spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\angle Y(j\\omega)=\\angle X(j\\omega)-3\\omega=\\omega/2-3\\omega=-5\\omega/2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the new phase spectrum is $-5\\omega/2$, and the magnitude stays unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Magnitude and Phase Effects of Time Shifting",
+          "section_index": 4,
+          "section_title": "Phase Change from a Time Advance",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)\\leftrightarrow X(j\\omega)$ and $\\angle X(j\\omega)=\\omega/2$, what is $\\angle Y(j\\omega)$ for $y(t)=x(t+3)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A time advance is the mirror image of the delay case. Keep the original phase $\\omega/2$ and add the advance term that comes from shifting $x(t)$ to $x(t+3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=e^{j3\\omega}X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The factor $e^{j3\\omega}$ has unit magnitude, so the magnitude spectrum stays $|Y(j\\omega)|=|X(j\\omega)|$. Its phase contribution is $+3\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\angle Y(j\\omega)=\\angle X(j\\omega)+3\\omega=\\omega/2+3\\omega=7\\omega/2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the advance leaves the magnitude unchanged and shifts the phase line upward by $3\\omega$, giving $\\angle Y(j\\omega)=7\\omega/2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Magnitude and Phase Effects of Time Shifting",
+          "section_index": 5,
+          "section_title": "Identifying a Time Shift from Linear Phase",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $Y(j\\omega)=X(j\\omega)e^{-j4\\omega}$, what time shift does $y(t)$ represent relative to $x(t)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Read the linear phase term first. The factor multiplying $X(j\\omega)$ is $e^{-j4\\omega}$, so compare its exponent to the standard shift form $e^{-j\\omega t_0}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "-4\\omega=-\\omega t_0\\;\\Rightarrow\\;t_0=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $t_0$ is positive, the signal is delayed by 4 units: $y(t)=x(t-4)$. The factor $e^{-j4\\omega}$ has unit magnitude, so the magnitude spectrum does not change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-4),\\qquad |Y(j\\omega)|=|X(j\\omega)|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the negative linear phase slope identifies a delay of 4, and the magnitude remains unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Time Scaling",
+      "lesson_core_move": "Convert a known Fourier transform pair for x(t) into the transform of x(at) by applying reciprocal frequency scaling and the 1/|a| magnitude factor.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Time Scaling",
+          "section_index": 1,
+          "section_title": "Introduction to Time Scaling",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "If you already know a pair like $x(t) \\leftrightarrow X(j\\omega)$, time scaling tells you how to reuse it when the time variable is multiplied by a nonzero factor. The move is to keep the same spectrum shape, substitute $\\omega/a$ for $\\omega$, and carry the $1/|a|$ factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with $a=2$. This is the simplest compression case: $x(2t)$ runs twice as fast in time, so its spectrum widens on the frequency axis and drops to half height.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(at) \\leftrightarrow \\frac{1}{|a|}X\\left(j\\frac{\\omega}{a}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the concrete result is $x(2t) \\leftrightarrow \\frac12 X\\left(j\\frac{\\omega}{2}\\right)$. The reciprocal frequency substitution is the same rule in every case; only the scale factor changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the same rule on the expansion case $x(t/2)$. With $a=\\frac12$, the spectrum becomes $2X(j2\\omega)$, which confirms that stretching time compresses frequency while doubling the amplitude.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Time Scaling",
+          "section_index": 2,
+          "section_title": "Transforming x(2t) from a Known Fourier Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $x(2t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is the scale factor $a=2$ multiplying time. Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$ and treat $x(2t)$ as the same signal with time compressed by a factor of 2.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the time-scaling rule $x(at) \\leftrightarrow \\frac{1}{|a|}X\\left(j\\frac{\\omega}{a}\\right)$ with $a=2$. The frequency variable becomes $\\omega/2$, and the spectrum picks up the factor $1/2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(2t) \\leftrightarrow \\frac12 X\\left(j\\frac{\\omega}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transform of $x(2t)$ is $\\frac12 X\\left(j\\frac{\\omega}{2}\\right)$. Compression in time widens the spectrum and lowers its height by one-half.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Time Scaling",
+          "section_index": 3,
+          "section_title": "Transforming x(t/2) from a Known Fourier Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $x(t/2)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is the expansion factor hidden in $x(t/2)$. Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$ and treat $x(t/2)$ as the same signal with time stretched by a factor of 2.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the time-scaling rule $x(at) \\leftrightarrow \\frac{1}{|a|}X\\left(j\\frac{\\omega}{a}\\right)$ with $a=\\frac12$. The frequency variable becomes $\\omega/(1/2)=2\\omega$, and the spectrum picks up the factor $1/|1/2|=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t/2) \\leftrightarrow 2X(j2\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transform of $x(t/2)$ is $2X(j2\\omega)$. Stretching time compresses the spectrum on the frequency axis and doubles its height.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Time Scaling",
+          "section_index": 4,
+          "section_title": "Applying the 1/|a| Magnitude Factor",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $3x(2t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is the outside scalar $3$ multiplying a time-scaled signal. Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$, separate the amplitude factor from the time scaling, and handle $3x(2t)$ in two steps.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First apply the time-scaling rule to $x(2t)$ with $a=2$. That gives $\\frac12 X\\left(j\\frac{\\omega}{2}\\right)$, and the scalar $3$ still sits outside the transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "3x(2t) \\leftrightarrow \\frac{3}{2}X\\left(j\\frac{\\omega}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the final transform is $\\frac{3}{2}X\\left(j\\frac{\\omega}{2}\\right)$. The scalar multiplies the spectrum after time scaling, so the coefficient and the reciprocal factor combine cleanly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Time Scaling",
+          "section_index": 5,
+          "section_title": "Using Time Scaling with a General Scale Factor",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$ and a nonzero scale factor $a$, state the Fourier transform of $x(at)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the general nonzero scale factor $a$. Start from the known pair and keep the scale symbol explicit so the result works for every nonzero value of $a$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $x(at)$, replace $\\omega$ by $\\omega/a$ in the transform argument and attach the magnitude factor $1/|a|$. The absolute value keeps the scaling correct whether $a$ is positive or negative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(at) \\leftrightarrow \\frac{1}{|a|}X\\left(j\\frac{\\omega}{a}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the general time-scaling rule is $x(at) \\leftrightarrow \\frac{1}{|a|}X\\left(j\\frac{\\omega}{a}\\right)$. This one formula contains the earlier numeric cases and is the version to reuse in later work.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Time Reversal",
+      "lesson_core_move": "Convert a known Fourier transform pair x(t) <-> X(j omega) into the time-reversed pair x(-t) <-> X(-j omega).",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Reversal",
+          "section_index": 1,
+          "section_title": "Introduction to Time Reversal",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Time reversal is the Fourier-transform property you use when you already know a pair and want the reflected one. In this section, the cue is a signal written as $x(-t)$, and the only new operation is to negate the time argument in the signal and the frequency argument in the spectrum. Use the simplest base case from the outline: start from one known pair with no scaling, shifting, or modulation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the reversed pair directly by flipping the sign of the time variable in the signal and the sign of the frequency variable in the spectrum. That gives $x(-t)$ with transform $X(-j\\omega)$, and nothing else changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(-t) \\leftrightarrow X(-j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The rule does not introduce a new amplitude factor or a different Fourier property; it only mirrors the time-domain signal and the frequency-domain spectrum. The next sections will apply that same one-step sign flip to an explicit pair, to a written spectrum expression, and to a reflected signal that must be recognized first.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Reversal",
+          "section_index": 2,
+          "section_title": "Reversing a Known Transform Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given the known pair $x(t)=e^{-2t}u(t) \\leftrightarrow X(j\\omega)=\\frac{1}{2+j\\omega}$, recognize that $e^{2t}u(-t)$ is $x(-t)$ and find its Fourier transform.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the known Fourier pair $x(t)=e^{-2t}u(t)$ with spectrum $X(j\\omega)=\\frac{1}{2+j\\omega}$. Because this is a time-reversal problem, keep the same pair and change only the time sign in the signal and the frequency sign in the spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{-2t}u(t) \\leftrightarrow X(j\\omega)=\\frac{1}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reflect the signal by replacing $t$ with $-t$, which gives $x(-t)=e^{2t}u(-t)$. The causal exponential becomes anti-causal, but the amplitude form itself stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now reflect the spectrum by replacing $j\\omega$ with $-j\\omega$, which gives $X(-j\\omega)=\\frac{1}{2-j\\omega}$. No other Fourier property is involved.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(-t)=e^{2t}u(-t) \\leftrightarrow X(-j\\omega)=\\frac{1}{2-j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the reversed transform pair is $e^{2t}u(-t) \\leftrightarrow \\frac{1}{2-j\\omega}$: the time-domain signal is reflected, and the spectrum mirrors by the same sign flip. The next examples will reuse that one-step rule with different constants and with reflected forms that must first be recognized as $x(-t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Reversal",
+          "section_index": 3,
+          "section_title": "Replacing Frequency Signs in a Spectrum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $X(j\\omega)=\\frac{2+j\\omega}{4+j\\omega}$, find the spectrum of $x(-t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the explicit spectrum $X(j\\omega)=\\frac{2+j\\omega}{4+j\\omega}$. This is the algebraic version of the time-reversal rule, so keep the same expression and replace only the frequency sign.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{2+j\\omega}{4+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Replace $\\omega$ by $-\\omega$ everywhere in the spectrum. That changes every $j\\omega$ into $-j\\omega$, so the numerator becomes $2-j\\omega$ and the denominator becomes $4-j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(-j\\omega)=\\frac{2-j\\omega}{4-j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the spectrum of the time-reversed signal is $X(-j\\omega)=\\frac{2-j\\omega}{4-j\\omega}$, with the constants unchanged and only the frequency signs flipped. The next examples will reuse the same substitution on different rational forms and on reflected signals that must first be recognized as $x(-t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Reversal",
+          "section_index": 4,
+          "section_title": "Recognizing Reflected Signals Before Applying Time Reversal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)=e^{-2t}u(t)$ has transform $X(j\\omega)=\\frac{1}{2+j\\omega}$, recognize that $e^{2t}u(-t)$ is $x(-t)$ and find its Fourier transform.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the known pair $x(t)=e^{-2t}u(t)$ with spectrum $X(j\\omega)=\\frac{1}{2+j\\omega}$, but the signal you are given is not written in the standard form yet. Recognize $e^{2t}u(-t)$ as the reflected signal $x(-t)$ before applying the property.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{-2t}u(t) \\leftrightarrow X(j\\omega)=\\frac{1}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Replacing $t$ with $-t$ gives $x(-t)=e^{2t}u(-t)$. That is the only recognition step needed here: once the reflected form is identified, the time-reversal rule applies directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now flip the frequency sign in the spectrum. Replacing $j\\omega$ by $-j\\omega$ gives $X(-j\\omega)=\\frac{1}{2-j\\omega}$, with no other changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(-t)=e^{2t}u(-t) \\leftrightarrow X(-j\\omega)=\\frac{1}{2-j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the reflected signal $e^{2t}u(-t)$ has transform $\\frac{1}{2-j\\omega}$. The important move is recognizing the algebraic form as $x(-t)$ first, then applying the same sign flip used in the earlier examples.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Frequency Shifting",
+      "lesson_core_move": "Convert multiplication by a complex exponential in time into the corresponding shift of X(j omega) along the continuous-frequency axis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Frequency Shifting",
+          "section_index": 1,
+          "section_title": "Introduction to Frequency Shifting",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A complex exponential in time does not change the shape of a Fourier transform; it shifts the spectrum along the $\\omega$ axis. For a known pair $x(t) \\leftrightarrow X(j\\omega)$, the sign on the exponential tells you which direction the shift goes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$ and multiply by $e^{j\\omega_0 t}$. In the transform integral, that factor combines with the kernel $e^{-j\\omega t}$, so the frequency variable appears as $\\omega-\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{j\\omega_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t)e^{j\\omega_0 t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the same transform as $X(j(\\omega-\\omega_0))$. So $e^{j\\omega_0 t}$ shifts the spectrum to the right by $\\omega_0$ without changing its shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{j\\omega_0 t}\\} = X(j(\\omega-\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The companion rule is the mirror image: $e^{-j\\omega_0 t}$ produces $X(j(\\omega+\\omega_0))$, which shifts the spectrum left by $\\omega_0$. Keep those two sign patterns fixed.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{-j\\omega_0 t}\\} = X(j(\\omega+\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The next examples will only use these two cases: apply the shift rule and read the sign of the modulating exponential.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Frequency Shifting",
+          "section_index": 2,
+          "section_title": "Shifting X(j omega) to X(j(omega - omega0))",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $x(t)e^{j\\omega_0 t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$. The cue is the positive modulating factor $e^{j\\omega_0 t}$, so use the right-shift rule from the introduction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{j\\omega_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t)e^{j\\omega_0 t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Combine the exponentials inside the integral: $e^{j\\omega_0 t}e^{-j\\omega t}=e^{-j(\\omega-\\omega_0)t}$. That is the same kernel as the original transform, but with $\\omega$ replaced by $\\omega-\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{j\\omega_0 t}\\} = X(j(\\omega-\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So multiplying by $e^{j\\omega_0 t}$ shifts the spectrum to the right by $\\omega_0$ without changing its shape. The result is the original spectrum evaluated at the shifted frequency argument.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Frequency Shifting",
+          "section_index": 3,
+          "section_title": "Shifting X(j omega) to X(j(omega + omega0))",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, find the Fourier transform of $x(t)e^{-j\\omega_0 t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$. The cue is the negative modulating factor $e^{-j\\omega_0 t}$, so use the left-shift rule from the introduction. This is the mirror image of the previous example: only the sign on the exponential changes, and the spectral shift flips with it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{-j\\omega_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega_0 t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Combine the exponentials inside the integral: $e^{-j\\omega_0 t}e^{-j\\omega t}=e^{-j(\\omega+\\omega_0)t}$. That is the same kernel as the original transform, but with $\\omega$ replaced by $\\omega+\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{-j\\omega_0 t}\\} = X(j(\\omega+\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So multiplying by $e^{-j\\omega_0 t}$ shifts the spectrum to the left by $\\omega_0$ without changing its shape. The result is the original spectrum evaluated at the shifted frequency argument.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Frequency Shifting",
+          "section_index": 4,
+          "section_title": "Applying a Numeric Frequency Shift to a Known Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $e^{-t}u(t) \\leftrightarrow \\frac{1}{1+j\\omega}$, find the Fourier transform of $e^{-t}u(t)e^{j3t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known pair $e^{-t}u(t) \\leftrightarrow \\frac{1}{1+j\\omega}$. The cue is the positive modulating factor $e^{j3t}$, so use the right-shift rule from the introduction. This is the same shift rule as before, but now the shift amount is a concrete number.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-t}u(t) \\leftrightarrow \\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The right-shift rule replaces $\\omega$ with $\\omega-3$ inside the known spectrum. So the shifted transform is the original expression evaluated at the shifted frequency argument.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{e^{-t}u(t)e^{j3t}\\} = \\frac{1}{1+j(\\omega-3)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So multiplying by $e^{j3t}$ shifts the spectrum to the right by $3$ without changing its shape. The only change is the frequency argument in the denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Frequency Shifting",
+          "section_index": 5,
+          "section_title": "Choosing the Correct Shift Direction from the Modulating Exponential",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t) \\leftrightarrow X(j\\omega)$, determine the Fourier transform of $x(t)e^{-j\\omega_0 t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known pair $x(t) \\leftrightarrow X(j\\omega)$. The cue is the negative modulating factor $e^{-j\\omega_0 t}$, so use the left-shift rule from the introduction. This is the sign-recognition version of the rule: the minus sign in time produces a plus sign inside the frequency argument.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The left-shift rule replaces $\\omega$ with $\\omega+\\omega_0$ inside the spectrum. So do not keep the spectrum unchanged and do not copy the sign directly from the exponential; reverse it in the frequency argument instead.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x(t)e^{-j\\omega_0 t}\\} = X(j(\\omega+\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the negative modulating exponential produces the opposite frequency shift. The mnemonic is simple: a minus sign in time gives a plus sign inside the frequency argument.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Cosine Modulation",
+      "lesson_core_move": "Convert multiplication by a cosine in time into the half-weighted sum of two shifted Fourier spectra centered at the modulation frequencies.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Cosine Modulation",
+          "section_index": 1,
+          "section_title": "Introduction to Cosine Modulation",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When you see $y(t)=x(t)\\cos(\\omega_0 t)$ and you already know $x(t)\\leftrightarrow X(j\\omega)$, read the cosine as a modulation cue: the spectrum will split into two shifted copies of $X(j\\omega)$, each with half weight.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t)\\cos(\\omega_0 t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rewrite the cosine first. Euler's formula makes the two modulation directions visible at once, so the cosine becomes an average of one positive-frequency exponential and one negative-frequency exponential.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\cos(\\omega_0 t)=\\frac{1}{2}\\left(e^{j\\omega_0 t}+e^{-j\\omega_0 t}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use linearity. The product becomes the sum of two terms, and the factor $1/2$ stays attached to both terms instead of disappearing.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the frequency-shift rule to each exponential factor. The $e^{j\\omega_0 t}$ term shifts the spectrum to $X(j(\\omega-\\omega_0))$, and the $e^{-j\\omega_0 t}$ term shifts it to $X(j(\\omega+\\omega_0))$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{1}{2}X(j(\\omega-\\omega_0))+\\frac{1}{2}X(j(\\omega+\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So cosine modulation does not create a new spectrum shape. It produces two half-weighted copies of the original spectrum centered at $+\\omega_0$ and $-\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Cosine Modulation",
+          "section_index": 2,
+          "section_title": "Writing a Cosine Product as Two Complex-Exponential Shifts",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $y(t)=x(t)\\cos(\\omega_0 t)$, rewrite the product as a half-weighted sum of two complex-exponential modulations of $x(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from $y(t)=x(t)\\cos(\\omega_0 t)$. The cue is the cosine factor, and the goal is to rewrite it as two equal-weight complex-exponential modulations of the same signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\cos(\\omega_0 t)=\\frac{1}{2}\\left(e^{j\\omega_0 t}+e^{-j\\omega_0 t}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute that identity into the product and distribute $x(t)$ across both terms. Keep the factor $1/2$ on each term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\frac{1}{2}x(t)e^{j\\omega_0 t}+\\frac{1}{2}x(t)e^{-j\\omega_0 t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the decomposition the next step will use: one cosine product becomes two half-weighted exponential modulations, one with $+\\omega_0$ and one with $-\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Cosine Modulation",
+          "section_index": 3,
+          "section_title": "Computing the Two Half-Weighted Shifted Spectra",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t)$ has CTFT $X(j\\omega)$, compute the CTFT of $x(t)\\cos(\\omega_0 t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from $x(t)\\leftrightarrow X(j\\omega)$ and the decomposition from the previous step. The cue is the two exponential factors: each one shifts the same spectrum instead of changing its shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\frac{1}{2}x(t)e^{j\\omega_0 t}+\\frac{1}{2}x(t)e^{-j\\omega_0 t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the frequency-shift rule to the positive exponential term first. Multiplying by $e^{j\\omega_0 t}$ moves the spectrum to the right by $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(t)e^{j\\omega_0 t} &\\leftrightarrow X(j(\\omega-\\omega_0)) \\\\\nx(t)e^{-j\\omega_0 t} &\\leftrightarrow X(j(\\omega+\\omega_0))\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now attach the common $1/2$ weight to both shifted spectra and combine them. The negative exponential term shifts the spectrum to the left by $\\omega_0$, so both pieces stay balanced and separate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{1}{2}X(j(\\omega-\\omega_0))+\\frac{1}{2}X(j(\\omega+\\omega_0))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So cosine modulation turns one product into two half-weighted spectral copies centered at $+\\omega_0$ and $-\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Cosine Modulation",
+          "section_index": 4,
+          "section_title": "Applying Cosine Modulation to a Standard Transform Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $e^{-t}u(t)$ has CTFT $1/(1+j\\omega)$, find the CTFT of $e^{-t}u(t)\\cos(3t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known pair $e^{-t}u(t)\\leftrightarrow 1/(1+j\\omega)$. The cue is the cosine factor, so the earlier cosine-modulation rule applies directly and we do not re-derive the transform from scratch.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{-t}u(t),\\qquad X(j\\omega)=\\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the cosine-modulation formula with the numeric modulation frequency $\\omega_0=3$. That gives two shifted copies of the same standard spectrum, each with weight $1/2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{1}{2}X(j(\\omega-3))+\\frac{1}{2}X(j(\\omega+3))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the standard pair into both shifted terms. The transform is just the original rational expression evaluated at $\\omega-3$ and $\\omega+3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{1}{2}\\left[\\frac{1}{1+j(\\omega-3)}+\\frac{1}{1+j(\\omega+3)}\\right]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So multiplying $e^{-t}u(t)$ by $\\cos(3t)$ does not change the base spectrum shape. It produces the same spectrum centered at $+3$ and $-3$, with half weight on each copy.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Cosine Modulation",
+          "section_index": 5,
+          "section_title": "Interpreting Cosine Modulation as Two Shifted Spectral Copies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $y(t)=e^{-t}u(t)\\cos(3t)$, interpret the spectrum as two half-height copies of the original spectrum centered at $\\omega=\\pm 3$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the base spectrum $X(j\\omega)=\\frac{1}{1+j\\omega}$ for $e^{-t}u(t)$. The cue is the shifted arguments in the cosine-modulation formula, so this step is about reading the final spectrum as a pair of copies of that same base shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{1}{2}\\left[\\frac{1}{1+j(\\omega-3)}+\\frac{1}{1+j(\\omega+3)}\\right]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The term with $\\omega-3$ is the original spectrum shifted right by $3$, and the term with $\\omega+3$ is the same spectrum shifted left by $3$. Cosine modulation does not create a new shape; it places two copies of the base spectrum on the frequency axis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Each shifted copy carries the factor $\\frac{1}{2}$, so each one has half the original height. That scaling is part of the cosine-modulation rule and applies to both sidebands equally.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the interpretation is two identical spectral copies centered at $\\omega=3$ and $\\omega=-3$, each with half amplitude. This is the reusable reading rule for cosine modulation: one base spectrum becomes two half-height sidebands at the modulation frequencies.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 8,
+      "lesson_title": "Time-Derivative Property",
+      "lesson_core_move": "Convert differentiation in time into multiplication by j omega in the continuous-time Fourier transform domain to compute spectra without redoing the transform integral.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 8,
+          "lesson_title": "Time-Derivative Property",
+          "section_index": 1,
+          "section_title": "Introduction to Time-Derivative Property",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When you already know $X(j\\omega)$ for $x(t)$, the time-derivative property lets you get the spectrum of $x'(t)$ without redoing the transform integral. The point of the step is simple: differentiation in time becomes multiplication by $j\\omega$ in the frequency domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with one differentiable signal $x(t)$ whose CTFT $X(j\\omega)$ is already known. We want the transform of $x'(t)$, so write the CTFT integral for the derivative and keep the known spectrum in view.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty} \\frac{d}{dt}x(t)e^{-j\\omega t}\\,dt = \\left[x(t)e^{-j\\omega t}\\right]_{-\\infty}^{\\infty}+j\\omega\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The integration-by-parts step produces a boundary term and a frequency factor. Under the usual assumption that the boundary term vanishes, only the $j\\omega$ factor remains multiplying the original transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}x(t)\\right\\}=j\\omega X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This means each frequency component is scaled by its own $j\\omega$ factor. The shortcut is valid whenever the original transform pair is known and the boundary term goes to zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The operating rule for later steps is: differentiate in time first, then multiply the known spectrum by $j\\omega$ instead of re-evaluating the integral.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Time-Derivative Property",
+          "section_index": 2,
+          "section_title": "Transforming a First Derivative from a Known Spectrum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $\\frac{d}{dt}e^{j\\omega_0 t}$ using the known transform pair for $e^{j\\omega_0 t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "We already know the transform pair $e^{j\\omega_0 t} \\leftrightarrow 2\\pi\\delta(\\omega-\\omega_0)$, so the derivative property lets us move straight to the frequency domain. The cue is that a time derivative is being taken on a signal whose spectrum is already known.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}e^{j\\omega_0 t}\\right\\}=j\\omega\\left(2\\pi\\delta(\\omega-\\omega_0)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The $\\delta$ spike is supported only at $\\omega=\\omega_0$, so the $j\\omega$ factor evaluates to $j\\omega_0$ at the spike. That turns the product into a single scaled impulse.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}e^{j\\omega_0 t}\\right\\}=j\\omega_0\\,2\\pi\\delta(\\omega-\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the derivative spectrum is the same spike at $\\omega_0$, scaled by the derivative constant $j\\omega_0$. The example shows the shortcut in its cleanest form: use the known pair, multiply by $j\\omega$, and simplify at the spike.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Time-Derivative Property",
+          "section_index": 3,
+          "section_title": "Applying the j omega Factor to a Known Transform Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $\\frac{d}{dt}\\cos(\\omega_0 t)$ by multiplying the known cosine spectrum by $j\\omega$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "We already know the transform pair $\\cos(\\omega_0 t) \\leftrightarrow \\pi\\bigl[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\bigr]$, so the cue is a derivative applied to a known pair. That means we can stay in the frequency domain and multiply the cosine spectrum by $j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}\\cos(\\omega_0 t)\\right\\}=j\\omega\\,\\pi\\bigl[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\bigr]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The spike at $\\omega=\\omega_0$ picks up the factor $j\\omega_0$, while the spike at $\\omega=-\\omega_0$ picks up the factor $-j\\omega_0$. That is why the two terms end up with opposite signs after simplification.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}\\cos(\\omega_0 t)\\right\\}=j\\omega_0\\pi\\delta(\\omega-\\omega_0)-j\\omega_0\\pi\\delta(\\omega+\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the derivative spectrum keeps the same two-sided support as the cosine, but each spike is scaled by the frequency where it lives. This is the clean two-spike version of the $j\\omega$ shortcut.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Time-Derivative Property",
+          "section_index": 4,
+          "section_title": "Combining Linearity with the Time-Derivative Property",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $\\frac{d}{dt}\\bigl(3\\cos(2t)-2\\cos(5t)\\bigr)$ by combining linearity with the derivative property.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a weighted sum inside the derivative, so split the expression first. Linearity lets you transform each cosine term separately before you recombine the pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}\\bigl(3\\cos(2t)-2\\cos(5t)\\bigr)\\right\\}=3\\,\\mathcal{F}\\left\\{\\frac{d}{dt}\\cos(2t)\\right\\}-2\\,\\mathcal{F}\\left\\{\\frac{d}{dt}\\cos(5t)\\right\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the previous example, use $\\mathcal{F}\\left\\{\\frac{d}{dt}\\cos(\\Omega t)\\right\\}=j\\Omega\\pi\\bigl[\\delta(\\omega-\\Omega)-\\delta(\\omega+\\Omega)\\bigr]$. Apply it once with $\\Omega=2$ and once with $\\Omega=5$, keeping the original coefficients $3$ and $-2$ attached.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "3\\bigl(2j\\pi[\\delta(\\omega-2)-\\delta(\\omega+2)]\\bigr)-2\\bigl(5j\\pi[\\delta(\\omega-5)-\\delta(\\omega+5)]\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now simplify the coefficients. The first pair becomes $6j\\pi[\\delta(\\omega-2)-\\delta(\\omega+2)]$, and the second pair becomes $-10j\\pi[\\delta(\\omega-5)-\\delta(\\omega+5)]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "6j\\pi\\delta(\\omega-2)-6j\\pi\\delta(\\omega+2)-10j\\pi\\delta(\\omega-5)+10j\\pi\\delta(\\omega+5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result stays separated by frequency pair, which makes the linearity step visible. That is the spectrum of the derivative of the weighted sum without redoing any transform integral.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Time-Derivative Property",
+          "section_index": 5,
+          "section_title": "Using the Time-Derivative Property to Avoid the Transform Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Without evaluating any transform integrals, find the CTFT of $\\frac{d}{dt}\\bigl(2\\cos(3t)-4\\sin(2t)+e^{j5t}\\bigr)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a composite derivative built from signals with known transform pairs, so do not start an integral. Split the sum first, then apply linearity and the derivative property term by term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\frac{d}{dt}\\bigl(2\\cos(3t)-4\\sin(2t)+e^{j5t}\\bigr)\\right\\}=2\\,\\mathcal{F}\\left\\{\\frac{d}{dt}\\cos(3t)\\right\\}-4\\,\\mathcal{F}\\left\\{\\frac{d}{dt}\\sin(2t)\\right\\}+\\mathcal{F}\\left\\{\\frac{d}{dt}e^{j5t}\\right\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the known pairs from the earlier steps: $\\cos(3t)\\leftrightarrow \\pi\\bigl[\\delta(\\omega-3)+\\delta(\\omega+3)\\bigr]$, $\\sin(2t)\\leftrightarrow j\\pi\\bigl[\\delta(\\omega+2)-\\delta(\\omega-2)\\bigr]$, and $e^{j5t}\\leftrightarrow 2\\pi\\delta(\\omega-5)$. Multiplying each pair by $j\\omega$ gives the derivative spectra without any new integration.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "2\\bigl(3j\\pi[\\delta(\\omega-3)-\\delta(\\omega+3)]\\bigr)-4\\bigl(2\\pi[\\delta(\\omega-2)+\\delta(\\omega+2)]\\bigr)+10j\\pi\\delta(\\omega-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The coefficients stay attached to their own frequency spikes: the cosine term becomes a signed $j\\pi$ pair, the sine term becomes a real two-spike pair, and the complex exponential becomes a single shifted spike scaled by $j5$. Now combine the pieces into one spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "6j\\pi\\delta(\\omega-3)-6j\\pi\\delta(\\omega+3)-8\\pi\\delta(\\omega-2)-8\\pi\\delta(\\omega+2)+10j\\pi\\delta(\\omega-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the CTFT with no transform integral at all. The only work was decomposition, reuse of known pairs, and recombination under linearity.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 9,
+      "lesson_title": "Solving Transform Problems Using Known Pairs",
+      "lesson_core_move": "Solve continuous-time Fourier transform problems by decomposing the signal into known transform pairs and selecting the appropriate property to assemble the resulting spectrum.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 9,
+          "lesson_title": "Solving Transform Problems Using Known Pairs",
+          "section_index": 1,
+          "section_title": "Introduction to Solving Transform Problems Using Known Pairs",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The solve order in this lesson is simple: identify the closest known pair, rewrite the signal so every modification is visible, and then apply the property that matches each visible change before combining the pieces. The goal is not to start from the transform integral; it is to reuse stored pairs and the properties attached to them.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_0(t) \\leftrightarrow X_0(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the clean base case. If the signal already matches a known pair, you can read the spectrum directly. If a constant multiplies that pair, carry the constant through by linearity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{a\\,x_0(t)\\}=a\\,X_0(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same idea extends to sums. Rewrite the signal term by term, transform each known-pair piece, and add the results.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\sum_k a_k x_k(t)\\right\\}=\\sum_k a_k X_k(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For shifts, scaling, reversal, modulation, and differentiation, do the same thing in a slightly different order: first rewrite the signal so the modification is visible, then apply the matching property to that rewritten term. The rewrite tells you which factor or spectral change belongs to each piece.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{x_0(t-t_0)\\}=e^{-j\\omega t_0}X_0(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the pattern you will reuse in the next steps: one known pair, then one small rewrite, then the property that matches it, and finally the combined spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Solving Transform Problems Using Known Pairs",
+          "section_index": 2,
+          "section_title": "Identifying the Base Fourier Transform Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=4e^{-2t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the decaying exponential multiplied by $u(t)$, which matches the stored transform pair for $e^{-at}u(t)$. Start by recognizing that base pair, because the only new feature in this example is the constant weight 4 in front.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-at}u(t) \\leftrightarrow \\frac{1}{a+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $a=2$ to get the transform of the base signal $e^{-2t}u(t)$. Then carry the outer factor 4 through by linearity; the scaling does not change the transform shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=4\\left(\\frac{1}{2+j\\omega}\\right)=\\frac{4}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the final spectrum is $X(j\\omega)=\\frac{4}{2+j\\omega}$. This is the model for the next examples: match the known pair first, then carry any visible modification through the appropriate property.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Solving Transform Problems Using Known Pairs",
+          "section_index": 3,
+          "section_title": "Decomposing a Signal into Known-Pair Terms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=e^{-t}u(t)+2e^{-2t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a sum of two decaying exponentials multiplied by $u(t)$, and each term already matches the known pair $e^{-at}u(t)$. The move here is to split the signal into terms before doing any transform work.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-at}u(t) \\leftrightarrow \\frac{1}{a+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the signal as two separate known-pair terms: $e^{-t}u(t)$ and $2e^{-2t}u(t)$. Then transform each term on its own and carry the coefficient on the second term through by linearity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\\mathcal{F}\\{e^{-t}u(t)\\} &= \\frac{1}{1+j\\omega} \\\\ \\mathcal{F}\\{2e^{-2t}u(t)\\} &= \\frac{2}{2+j\\omega}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add the two spectra to get the final result. The important step is the decomposition: once the sum has been split into known-pair pieces, the transform is just the sum of the individual transforms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{1}{1+j\\omega}+\\frac{2}{2+j\\omega}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Solving Transform Problems Using Known Pairs",
+          "section_index": 4,
+          "section_title": "Selecting the Property for Each Signal Modification",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=3e^{-2(t-1)}u(t-1)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a delayed copy of the same one-sided exponential pair. Rewrite the signal as $3x_0(t-1)$ so the delay and the scale factor are both visible before you transform anything.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_0(t)=e^{-2t}u(t) \\leftrightarrow X_0(j\\omega)=\\frac{1}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With the signal written as $3x_0(t-1)$, the property choice is automatic: apply linearity for the factor 3 and time shifting for the delay of 1. The delay contributes the phase factor $e^{-j\\omega}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{3x_0(t-1)\\}=3e^{-j\\omega}X_0(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the base spectrum into that shifted form and simplify. The result is the original rational spectrum multiplied by the phase factor from the delay.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{3e^{-j\\omega}}{2+j\\omega}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Solving Transform Problems Using Known Pairs",
+          "section_index": 5,
+          "section_title": "Combining Multiple Properties on a Modified Known Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=2e^{-(t-1)}u(t-1)\\cos(3t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a known exponential pair that has been delayed and then multiplied by a cosine. Rewrite the signal as $2x_0(t-1)\\cos(3t)$ so the two modifications are visible before you transform anything.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_0(t)=e^{-t}u(t) \\leftrightarrow X_0(j\\omega)=\\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First apply the delay to the base pair: $x_0(t-1)$ has spectrum $e^{-j\\omega}X_0(j\\omega)$. Then apply cosine modulation, which turns multiplication by $\\cos(3t)$ into two frequency shifts. The outer factor 2 cancels the $1/2$ from the cosine rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{2x_0(t-1)\\cos(3t)\\}=e^{-j(\\omega-3)}X_0(j(\\omega-3))+e^{-j(\\omega+3)}X_0(j(\\omega+3))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute $X_0(j\\omega)=\\frac{1}{1+j\\omega}$ into each shifted copy. Keep the two terms separate so the delay phase and the modulation shift stay attached to the correct copy.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{e^{-j(\\omega-3)}}{1+j(\\omega-3)}+\\frac{e^{-j(\\omega+3)}}{1+j(\\omega+3)}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Solving Transform Problems Using Known Pairs",
+          "section_index": 6,
+          "section_title": "Assembling the Final Spectrum from Transformed Pieces",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=2e^{-(t-1)}u(t-1)\\cos(3t)+e^{-t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a sum of two known-pair pieces: one composite term from the previous example and one plain exponential. Rewrite the signal as $x(t)=x_1(t)+x_2(t)$ so you can transform each piece separately and only add the spectra at the end.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_1(t)=2e^{-(t-1)}u(t-1)\\cos(3t), \\qquad x_2(t)=e^{-t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the previous chain for $x_1(t)$: its spectrum is the sum of the two shifted copies from the delayed cosine-modulated exponential. For $x_2(t)$, direct lookup gives $e^{-t}u(t)\\leftrightarrow\\frac{1}{1+j\\omega}$. Then add the results.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_1(j\\omega)=\\frac{e^{-j(\\omega-3)}}{1+j(\\omega-3)}+\\frac{e^{-j(\\omega+3)}}{1+j(\\omega+3)}, \\qquad X_2(j\\omega)=\\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now assemble the full spectrum by linearity. Nothing new happens in this step: the final answer is just the transformed composite piece plus the transformed simple piece.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{e^{-j(\\omega-3)}}{1+j(\\omega-3)}+\\frac{e^{-j(\\omega+3)}}{1+j(\\omega+3)}+\\frac{1}{1+j\\omega}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

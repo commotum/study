@@ -1,0 +1,1737 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Delaying a Signal",
+      "lesson_core_move": "Delay a continuous-time signal by shifting each key time point, breakpoint, and support interval T units to the right while preserving the signal's shape and values.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Delaying a Signal",
+          "step_type": "tutorial",
+          "learning_goal": "Define delay as a right shift and establish the mapping rule for features and support intervals.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Two-panel signal graph showing $x(t)$ and $y(t)=x(t-T)$, where every feature and interval is moved right by $T$.",
+            "visual_elements": [
+              "time axis",
+              "signal waveform",
+              "key time markers",
+              "support boundaries"
+            ],
+            "image_generation_notes": "Keep a clean Cartesian grid, same axis scale in both panels, and one clearly visible shift arrow from $t_0$ to $t_0+T$."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the exact delay operator: $y(t)=x(t-T)$, and that this moves each point to the right by $T$ while preserving amplitude and shape.",
+            "base_case": "Single peak at the origin moved to $t = T$.",
+            "paragraph_plan": [
+              "Introduce delay as rightward translation in the time domain.",
+              "State the algebraic rule $y(t)=x(t-T)$ and explain meaning term-by-term.",
+              "Map a tagged point: $t_0 \\mapsto t_0+T$ with unchanged value.",
+              "Map support: interval $[a,b] \\mapsto [a+T,b+T]$ and preserve piecewise pattern.",
+              "Preview why examples then add controlled wrinkles: one point, multiple points, interval boundaries, finite support with breakpoints."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t-T)$$",
+              "$$t_0 \\mapsto t_0+T$$",
+              "$$[a,b] \\mapsto [a+T,b+T]$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial section.",
+            "worked_solution_goal": "Not applicable for tutorial section.",
+            "variation_from_previous": "Not applicable for tutorial section.",
+            "solution_step_plan": [
+              "Not applicable for tutorial section."
+            ],
+            "practice_variation_axes": [
+              "Not applicable for tutorial section."
+            ]
+          },
+          "handoff_notes": "Keep this section short and tightly scaffolded; no questions. Use the graph image as the single conceptual anchor before moving to examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Delaying a Single Feature Time",
+          "step_type": "example",
+          "learning_goal": "Shift one identifiable feature time and keep its value unchanged.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A graph with one nonzero feature point at $t_0$ in $x(t)$ and its delayed placement at $t_0+T$ in $y(t)$.",
+            "visual_elements": [
+              "single feature marker",
+              "delayed feature marker",
+              "axis ticks",
+              "$T$ shift annotation"
+            ],
+            "image_generation_notes": "Generate variants by changing $t_0$ and $T$ while preserving the same waveform shape."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "time values",
+            "practice_question_model": "For $x(t)$ with one feature at $t_0 = 1$ and delay $T = 3$, ask for the delayed feature time in $y(t)$.",
+            "distractor_plan": [
+              "Use $t_0 - T$ to model left-shift confusion.",
+              "Keep $t_0$ unchanged to catch missing shift application.",
+              "Use $|t_0 - T|$ style absolute-value confusion.",
+              "Shift by wrong magnitude, such as $2T$ or $0.5T$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example section.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "Not applicable for example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $x(t)$ with one peak of height 4 at $t = 1$, delay by $T = 3$ and give $y(t)$'s feature time and value.",
+            "worked_solution_goal": "The learner maps $1$ to $4$ and keeps the peak value equal to $4$.",
+            "variation_from_previous": "Extends the tutorial base point from $t = 0$ to an arbitrary feature time.",
+            "solution_step_plan": [
+              "Write the delayed signal $y(t)=x(t-T)$.",
+              "Identify the original feature time $t_0 = 1$.",
+              "Compute the delayed time $t_0 + T = 4$.",
+              "State unchanged feature height/value and no shape distortion."
+            ],
+            "practice_variation_axes": [
+              "Feature time $t_0$",
+              "Delay amount $T$"
+            ]
+          },
+          "handoff_notes": "Target an algebraic or graph-based question template that only changes $t_0$ and $T$ from the worked example."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Delaying Key Points on a Signal Graph",
+          "step_type": "example",
+          "learning_goal": "Shift multiple marked feature points consistently and maintain their relative order and values.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Piecewise graph with several key points and a delayed version shifted right by $T$, with all point labels visible.",
+            "visual_elements": [
+              "multiple key-point markers",
+              "segmented graph pieces",
+              "matched point labels",
+              "right-shift arrows"
+            ],
+            "image_generation_notes": "Reuse the same basic shape and change the key-point coordinates or $T$ in mirror questions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "paired time-value statements",
+            "practice_question_model": "Given a graph with points at $t=-1$, $0$, and $2$ delayed by $T = 4$, ask which option lists all delayed point times correctly.",
+            "distractor_plan": [
+              "Apply left-shift instead of right-shift on one or more points.",
+              "Drop one key point or duplicate a shifted point.",
+              "Shift by the wrong sign or magnitude while keeping spacing.",
+              "Alter point heights while shifting times correctly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example section.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "Not applicable for example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Take a signal with key points $(-2,3)$, $(0,-1)$, and $(3,2)$. Delay by $T = 2$. List all delayed key-point times with values.",
+            "worked_solution_goal": "The learner applies $t \\mapsto t+T$ to each point while preserving values: $(-2,3) \\to (0,3)$, $(0,-1) \\to (2,-1)$, $(3,2) \\to (5,2)$.",
+            "variation_from_previous": "Moves from one-point timing shift to coordinated multi-point mapping without changing interval handling yet.",
+            "solution_step_plan": [
+              "Write $y(t)=x(t-T)$.",
+              "Mark each original key point time and value.",
+              "Add $T$ to each time coordinate.",
+              "Keep each value unchanged and preserve shape order."
+            ],
+            "practice_variation_axes": [
+              "Number of key points",
+              "Starting and target times",
+              "Delay amount $T$"
+            ]
+          },
+          "handoff_notes": "Emphasize uniform time mapping across all points; avoid changing signs or amplitudes in options."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Delaying the Support Interval",
+          "step_type": "example",
+          "learning_goal": "Shift support interval endpoints right by $T$ and verify the delayed signal is zero outside shifted support.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Graph of finite-support signal with original support $[a,b]$ and delayed support $[a+T,b+T]$, with shaded nonzero regions.",
+            "visual_elements": [
+              "finite support region",
+              "shaded nonzero interval",
+              "endpoint markers",
+              "zero regions"
+            ],
+            "image_generation_notes": "Prefer clear interval endpoints at clean numeric ticks for easy interval-answer options."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "intervals",
+            "practice_question_model": "If $x(t)$ is nonzero on $[-1,4]$, delayed by $T = 3$, ask for the support interval of $y(t)$.",
+            "distractor_plan": [
+              "Use $[-1-T,4-T]$ to model sign confusion.",
+              "Use $[-1,4]$ to model no-delay confusion.",
+              "Shift only one endpoint.",
+              "Swap endpoint order or confuse open and closed interval notation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example section.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "Not applicable for example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given that $x(t)$ is nonzero on $2 \\le t \\le 6$, delay by $T = 1.5$ and specify the support of $y(t)$.",
+            "worked_solution_goal": "The learner shifts both endpoints by $+T$ to conclude $3.5 \\le t \\le 7.5$ with no change in nonzero magnitude pattern.",
+            "variation_from_previous": "Extends point mapping to interval-level mapping while keeping arithmetic structure simple.",
+            "solution_step_plan": [
+              "Write support of $x(t)$ as $[a,b]$.",
+              "Apply the delay rule to produce $y(t)=x(t-T)$.",
+              "Shift interval endpoints: $[a+T, b+T]$.",
+              "State zero outside the shifted interval."
+            ],
+            "practice_variation_axes": [
+              "Endpoint values $a,b$",
+              "Delay $T$"
+            ]
+          },
+          "handoff_notes": "Keep support notation explicit; practice should include both inclusive and exclusive interval forms where helpful."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Delaying Breakpoints of a Finite-Duration Signal",
+          "step_type": "example",
+          "learning_goal": "Translate all breakpoints and piecewise regions of a finite-duration signal by $T$ with unchanged segment formulas.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Piecewise finite-duration signal graph with multiple breakpoint markers, alongside delayed version with each segment shifted right by $T$.",
+            "visual_elements": [
+              "piecewise segments",
+              "breakpoints",
+              "horizontal/linear pieces",
+              "shift mapping arrows"
+            ],
+            "image_generation_notes": "Use a short piecewise example with 3 breakpoints; keep formulas simple enough to mirror in question models."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "piecewise interval and breakpoint times",
+            "practice_question_model": "A finite signal has breakpoints at $-2$, $0$, and $5$ and support $[-2,5]$, delayed by $T = 4$. Ask for all shifted breakpoints and support.",
+            "distractor_plan": [
+              "Shift all breakpoints by $-T$.",
+              "Preserve one breakpoint and shift only others.",
+              "Shift to the right but reorder intervals incorrectly.",
+              "Preserve support endpoints but alter segment formulas or amplitudes."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example section.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "Not applicable for example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "A signal has breakpoints at $t = -1$, $t = 2$, and $t = 4$ and piecewise formulas on those intervals. Delay by $T = 2$. Translate each breakpoint and interval.",
+            "worked_solution_goal": "The learner shifts each breakpoint and boundary by $+2$ and states the resulting piecewise time regions and shapes remain identical in values.",
+            "variation_from_previous": "Generalizes support shifting to full finite piecewise structure with multiple intervals and formula continuity points.",
+            "solution_step_plan": [
+              "List all breakpoints and support endpoints of $x(t)$.",
+              "Apply the delay map $t \\mapsto t+T$ to each breakpoint and boundary.",
+              "Rewrite interval conditions with shifted bounds.",
+              "Assign original formulas to shifted intervals with unchanged expression form."
+            ],
+            "practice_variation_axes": [
+              "Number of breakpoints",
+              "Breakpoint spacing",
+              "Delay $T$"
+            ]
+          },
+          "handoff_notes": "Prepare for explicit piecewise practice: keep graph and interval labels synchronized to avoid boundary ambiguity."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Advancing a Signal",
+      "lesson_core_move": "Advance a continuous-time signal by shifting each key time point, breakpoint, and support interval T units to the left while preserving the signal's shape and values.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Advancing a Signal",
+          "step_type": "tutorial",
+          "learning_goal": "Define advancing as a left translation of the entire signal by $T$ while leaving waveform values unchanged.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "A simple continuous-time signal with one labeled landmark and a clear left shift by $T$ on the same axes.",
+            "visual_elements": [
+              "time axis",
+              "original signal",
+              "advanced signal",
+              "shift arrow",
+              "labeled key time point"
+            ],
+            "image_generation_notes": "Keep the plot uncluttered and schematic; show the original and advanced copies with the same shape and different time positions."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the rule that an advance subtracts $T$ from every time coordinate while preserving amplitudes, widths, and shape.",
+            "base_case": "Use one labeled feature at $t_0$ and move it to $t_0-T$.",
+            "paragraph_plan": [
+              "Name the operation and state the left-shift rule in plain language.",
+              "Show the simplest base case with one landmark and one translation.",
+              "Generalize the same translation to the whole graph and support interval.",
+              "Close by checking that only time locations change; values and spacing do not."
+            ],
+            "display_math_plan": [
+              "$$t_0\\mapsto t_0-T$$",
+              "$$t_{\\text{new}}=t_{\\text{old}}-T$$",
+              "$$[a,b]\\mapsto[a-T,b-T]$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Introduce the advance as a pure left translation; keep the explanation visual and avoid notation-heavy interpretation."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Moving a Key Time Point Left by an Advance Amount",
+          "step_type": "example",
+          "learning_goal": "Move one labeled time point left by $T$ and identify the new coordinate.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use a single numeric time point or short time list.",
+            "visual_elements": [],
+            "image_generation_notes": "No image; keep the example symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text choices, one correct shifted time.",
+            "practice_question_model": "If a feature at $t_0$ is advanced by $T$, which time is the new feature location?",
+            "distractor_plan": [
+              "Use $t_0+T$ instead of subtracting.",
+              "Leave the time unchanged.",
+              "Subtract in the wrong order, $T-t_0$.",
+              "Apply the shift to the signal value instead of the time."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Advance a signal with one labeled feature at $t=7$ by $3$ units and identify the new feature time.",
+            "worked_solution_goal": "Subtract the advance amount from the original time and report the new location as $t=4$.",
+            "variation_from_previous": "Extends the tutorial rule from a conceptual left shift to one explicit labeled time point.",
+            "solution_step_plan": [
+              "Identify the original feature time $t_0$.",
+              "Subtract the advance amount $T$ from that time.",
+              "State the new feature time $t_0-T$ and keep the feature value unchanged."
+            ],
+            "practice_variation_axes": [
+              "Vary the original time point.",
+              "Vary the advance amount $T$.",
+              "Use integer or fractional times.",
+              "Ask for the shifted location from either one labeled point or a short set of times."
+            ]
+          },
+          "handoff_notes": "Keep this step numeric and single-point focused; the goal is the coordinate rule, not a full graph shift."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Advancing a Signal Graph Without Changing Its Shape",
+          "step_type": "example",
+          "learning_goal": "Translate a full signal graph left by $T$ without changing amplitudes, widths, or relative order.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": true,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A clean signal plot shown before and after a left shift by $T$, with a few labeled landmarks and the same waveform shape.",
+            "visual_elements": [
+              "time axis",
+              "original signal",
+              "advanced signal",
+              "shift arrow",
+              "labeled landmarks"
+            ],
+            "image_generation_notes": "Use a simple graph with a few distinct features so the left translation is obvious; keep the original and advanced copies aligned in value and shape."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five graph-image choices, one correct advanced signal.",
+            "practice_question_model": "Which graph shows the given signal advanced left by $T$ units without changing shape?",
+            "distractor_plan": [
+              "Shift the signal right instead of left.",
+              "Shift left by the wrong amount.",
+              "Keep the original graph unchanged.",
+              "Distort one feature height or width while translating."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Advance the plotted signal left by $2$ units and sketch the result on the same axes.",
+            "worked_solution_goal": "Move every visible landmark left by $2$ while preserving the graph's shape and values.",
+            "variation_from_previous": "Moves from one labeled time point to an entire plotted waveform with multiple landmarks.",
+            "solution_step_plan": [
+              "Identify every visible landmark, endpoint, and flat region on the original graph.",
+              "Shift each time coordinate left by the same amount $T$.",
+              "Redraw the same waveform shape at the new time locations.",
+              "Check that amplitudes, widths, and zero regions are unchanged."
+            ],
+            "practice_variation_axes": [
+              "Vary the size of $T$.",
+              "Vary the number of landmarks in the graph.",
+              "Vary whether the waveform has one bump, two bumps, or a flat segment.",
+              "Vary whether the plot is centered near $t=0$ or away from it."
+            ]
+          },
+          "handoff_notes": "Use the image as task data; the example should emphasize a rigid translation, not a redraw with new shape."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Advancing Breakpoints and Support Intervals",
+          "step_type": "example",
+          "learning_goal": "Shift every breakpoint and support boundary left by $T$ and rewrite the piecewise structure correctly.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; represent the signal as a breakpoint/support-interval list.",
+            "visual_elements": [],
+            "image_generation_notes": "No image; keep the example symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text choices, one correct shifted breakpoint/support-interval description.",
+            "practice_question_model": "Given the support interval and breakpoints of a finite-duration signal, which shifted interval list is correct after advancing by $T$ units?",
+            "distractor_plan": [
+              "Shift everything to the right instead of the left.",
+              "Shift only the support interval but not the internal breakpoints.",
+              "Leave one endpoint unchanged.",
+              "Subtract the wrong amount from the breakpoints and interval endpoints."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A finite-duration signal is nonzero on $[1,6]$ with breakpoints at $t=2$ and $t=4$. Advance it by $3$ units and identify the new breakpoint times and support interval.",
+            "worked_solution_goal": "Subtract $3$ from every breakpoint and support endpoint, then rewrite the shifted interval structure.",
+            "variation_from_previous": "Moves from translating a plotted graph to translating the breakpoint list and support interval of a finite-duration signal.",
+            "solution_step_plan": [
+              "Identify the support interval endpoints and any interior breakpoints.",
+              "Subtract $T$ from every endpoint and breakpoint.",
+              "Rewrite the piecewise description on the shifted intervals.",
+              "Verify that the signal is still zero outside the shifted support interval."
+            ],
+            "practice_variation_axes": [
+              "Vary the number of breakpoints.",
+              "Vary the width of the support interval.",
+              "Use integer or fractional breakpoint locations.",
+              "Vary whether the signal has one or multiple constant or sloped pieces."
+            ]
+          },
+          "handoff_notes": "Keep this step symbolic and interval-based; it should feel like the algebraic version of the graph shift."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Recognizing the Advance Amount from an Original and Advanced Signal",
+          "step_type": "example",
+          "learning_goal": "Infer $T$ from paired original and advanced signals by comparing corresponding landmark times.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Two aligned signal plots, original and advanced, with matching landmarks highlighted so the learner can infer the left shift $T$.",
+            "visual_elements": [
+              "time axis",
+              "original signal",
+              "advanced signal",
+              "paired landmarks",
+              "shift indicator"
+            ],
+            "image_generation_notes": "Show the same waveform before and after the shift on aligned axes; highlight one or two corresponding features so the time difference is easy to read."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text choices, one correct advance amount $T$.",
+            "practice_question_model": "Given the original and advanced signals, which advance amount $T$ produced the shift?",
+            "distractor_plan": [
+              "Use the wrong sign for the shift.",
+              "Measure the spacing between the wrong pair of landmarks.",
+              "Choose the original time coordinate instead of the time difference.",
+              "Pick an off-by-one or off-by-half value."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Use the original and advanced signal plots to determine the advance amount $T$.",
+            "worked_solution_goal": "Match corresponding landmarks, read the leftward time difference, and report the shift amount.",
+            "variation_from_previous": "Reverses the reasoning direction by asking for the shift amount instead of applying a known shift.",
+            "solution_step_plan": [
+              "Match one obvious pair of corresponding landmarks.",
+              "Compute the leftward time difference as $T$.",
+              "Confirm the same $T$ with another landmark or support endpoint.",
+              "State the advance amount clearly and keep the direction explicit."
+            ],
+            "practice_variation_axes": [
+              "Vary which landmark pair gives the clearest difference.",
+              "Vary the number of visible features.",
+              "Vary whether the shift is integer or fractional.",
+              "Vary whether the signals include a plateau or multiple peaks."
+            ]
+          },
+          "handoff_notes": "Make the inverse relationship explicit: the learner should read $T$ from the time offset between corresponding features, not from a formula."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Interpreting $x(t-T)$",
+      "lesson_core_move": "Interpret x(t-T) for T > 0 by mapping each original feature time t0 to t0 + T and recognizing the result as a T-unit delay.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Interpreting $x(t-T)$",
+          "step_type": "tutorial",
+          "learning_goal": "Teach the learner to read $x(t-T)$ with $T>0$ as a $T$-unit delay and to map each feature time $t_0$ to $t_0+T$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the rule is taught symbolically from the time-shift notation.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; keep the section text-only."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "Not applicable; no tutorial questions.",
+            "practice_question_model": "Not applicable; this tutorial has no practice questions.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the learner to read $x(t-T)$ with $T>0$ as a $T$-unit delay and to map each feature time $t_0$ to $t_0+T$.",
+            "base_case": "Use one feature time $t_0$ so the writer can show the delay without adding multiple landmarks.",
+            "paragraph_plan": [
+              "State the sign convention: subtracting a positive amount inside the argument delays the signal by that amount.",
+              "Introduce one feature time $t_0$ and compare where the original and shifted signals place that feature.",
+              "Show the mapping $t_0$ to $t_0+T$ and emphasize that the waveform shape and values stay the same.",
+              "Close by restating the rule in delay language so later examples can reuse it."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t-T)$$",
+              "$$t_0\\mapsto t_0+T$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial section.",
+            "worked_solution_goal": "Not applicable for tutorial section.",
+            "variation_from_previous": "Not applicable for tutorial section.",
+            "solution_step_plan": [
+              "Not applicable for tutorial section."
+            ],
+            "practice_variation_axes": [
+              "Not applicable for tutorial section."
+            ]
+          },
+          "handoff_notes": "Keep the explanation short and sign-convention focused; do not add practice here. The later examples should reuse the same feature-time mapping rule."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Recognizing $x(t-T)$ as a Delay",
+          "step_type": "example",
+          "learning_goal": "Recognize $x(t-T)$ as a $T$-unit delay from the formula alone and restate it in words.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is a sign-convention check on the formula $x(t-T)$.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; keep the worked example symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five text choices describing the time shift",
+            "practice_question_model": "Which statement best describes $y(t)=x(t-4)$ for $x(t)$?",
+            "distractor_plan": [
+              "Include one correct choice naming a $4$-unit delay.",
+              "Include one choice that calls the same shift a $4$-unit advance.",
+              "Include one choice that says the signal shifts left by $4$.",
+              "Include one choice that says the waveform is scaled or stretched instead of shifted.",
+              "Include one choice that ignores the positive shift amount and treats $x(t-4)$ as unchanged."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Give a brief sign-rule reminder before the worked example: subtracting a positive amount inside the argument means delay.",
+            "base_case": "Use a single positive shift amount so the example can name the shift before moving to feature mapping.",
+            "paragraph_plan": [
+              "State the sign convention in one sentence: $x(t-T)$ with $T>0$ is delayed.",
+              "Transition to the worked example by plugging in one concrete positive $T$.",
+              "Keep the explanation symbolic and tied directly to the delay interpretation."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t-4)$$",
+              "$$x(t-T)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $y(t)=x(t-4)$, decide whether the signal is delayed or advanced and state the amount of shift.",
+            "worked_solution_goal": "Conclude that the signal is delayed by $4$ units and that its shape is unchanged.",
+            "variation_from_previous": "Moves from the abstract sign rule to one concrete shift amount.",
+            "solution_step_plan": [
+              "Identify the inner subtraction as $T=4$.",
+              "Apply the sign rule to classify the shift as a delay.",
+              "State that every feature moves right by $4$ with the same values.",
+              "Write the final verbal interpretation as a $4$-unit delay."
+            ],
+            "practice_variation_axes": [
+              "Change the numeric shift amount.",
+              "Swap the answer from delay to advance.",
+              "Vary the wording of the description while keeping the same formula."
+            ]
+          },
+          "handoff_notes": "Keep the question text-only and focus distractors on sign confusion and false amplitude-change claims."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Mapping One Feature Time to $t_0+T$",
+          "step_type": "example",
+          "learning_goal": "Map one original feature time $t_0$ to its delayed location $t_0+T$ in $x(t-T)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the task is a single feature-time mapping in symbols.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; keep the example notation-driven."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five text choices for a shifted time value",
+            "practice_question_model": "A spike occurs at $t_0=2$ in $x(t)$. Where does it appear in $x(t-5)$?",
+            "distractor_plan": [
+              "Use $t_0-T$ to model left-shift confusion.",
+              "Keep $t_0$ unchanged to catch missing shift application.",
+              "Use the wrong sign and move the feature left instead of right.",
+              "Add the wrong shift magnitude.",
+              "Use $T$ alone instead of the original feature time plus the shift."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that one original feature time shifts to $t_0+T$ while the waveform values stay unchanged.",
+            "base_case": "Use one labeled feature time and one positive shift amount.",
+            "paragraph_plan": [
+              "State the mapping rule $t_0$ to $t_0+T$.",
+              "Compute the new location for a single example feature time.",
+              "Restate the result as a rightward delay of the original feature."
+            ],
+            "display_math_plan": [
+              "$$t_0\\mapsto t_0+T$$",
+              "$$t_{\\text{new}}=t_0+T$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "A signal $x(t)$ has a spike at $t_0=2$. Where does that spike appear in $y(t)=x(t-5)$?",
+            "worked_solution_goal": "Shift the spike to $t=7$ and identify the result as a $5$-unit delay.",
+            "variation_from_previous": "Extends the previous delay statement by tracking one concrete feature time.",
+            "solution_step_plan": [
+              "Identify the original feature time $t_0=2$.",
+              "Add the shift amount $T=5$.",
+              "State the new time $t_0+T=7$.",
+              "Name the overall shift as a $5$-unit delay."
+            ],
+            "practice_variation_axes": [
+              "Change the original feature time.",
+              "Change the delay amount.",
+              "Ask for the new location in words rather than numbers."
+            ]
+          },
+          "handoff_notes": "Keep the example focused on one feature time and avoid introducing multiple landmarks or interval notation."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Mapping Multiple Feature Times in $x(t-T)$",
+          "step_type": "example",
+          "learning_goal": "Shift several original feature times by the same $T$ and keep their spacing unchanged.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the task is a list of feature times shifted by the same amount.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; keep the example symbolic and list-based."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five text choices listing shifted time values",
+            "practice_question_model": "Original feature times are $1$, $3$, and $7$. Where do they appear in $x(t-2)$?",
+            "distractor_plan": [
+              "Shift only one of the listed times.",
+              "Subtract $T$ instead of adding it.",
+              "Use the wrong shift amount for every time.",
+              "Leave the original times unchanged.",
+              "Reorder the times or distort their spacing."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that the same $t_0\\mapsto t_0+T$ rule applies to every feature time in the list.",
+            "base_case": "Use a short list of feature times so the writer can show repeated application of the same shift.",
+            "paragraph_plan": [
+              "List the original feature times.",
+              "Add $T$ to each time and keep the order and spacing the same.",
+              "State the shifted list and restate the delay interpretation."
+            ],
+            "display_math_plan": [
+              "$$t_i\\mapsto t_i+T$$",
+              "$$\\{t_1,t_2,t_3\\}\\mapsto\\{t_1+T,t_2+T,t_3+T\\}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Original feature times are at $t=1$, $t=3$, and $t=7$. Locate them in $y(t)=x(t-2)$.",
+            "worked_solution_goal": "Shift all three times to $3$, $5$, and $9$ while preserving their spacing.",
+            "variation_from_previous": "Moves from one feature time to several feature times with the same shift amount.",
+            "solution_step_plan": [
+              "List the original feature times $1$, $3$, and $7$.",
+              "Add $T=2$ to each time.",
+              "Preserve the original order and spacing.",
+              "State the shifted feature times $3$, $5$, and $9$."
+            ],
+            "practice_variation_axes": [
+              "Change the number of feature times.",
+              "Change the shift amount $T$.",
+              "Include a zero or negative original time."
+            ]
+          },
+          "handoff_notes": "Keep the question choices textual and make the distractors target partial shifting, sign mistakes, and spacing errors."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Mapping Support Intervals in $x(t-T)$",
+          "step_type": "example",
+          "learning_goal": "Shift the support interval of $x(t)$ by adding $T$ to both endpoints and preserving each endpoint's open or closed status.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the task is interval shifting in symbolic notation.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; keep the support-interval example notation-driven."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five text choices in interval notation",
+            "practice_question_model": "If $x(t)$ is nonzero on $0 \\le t < 2$, what is the support interval of $x(t-3)$?",
+            "distractor_plan": [
+              "Use the interval shifted the wrong direction.",
+              "Leave the interval unchanged.",
+              "Shift only one endpoint.",
+              "Change the open or closed endpoint status.",
+              "Reverse the interval order or introduce a gap that was not present."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that the support interval shifts by the same endpoint mapping rule as a feature time: add $T$ to each endpoint and preserve open or closed notation.",
+            "base_case": "Use one interval with one closed and one open endpoint so the writer can preserve the endpoint types explicitly.",
+            "paragraph_plan": [
+              "State the interval-shift rule in endpoint form.",
+              "Apply it to one concrete support interval.",
+              "Keep the open and closed endpoint markers unchanged while shifting the numbers.",
+              "Close by linking the shifted interval back to the delay interpretation."
+            ],
+            "display_math_plan": [
+              "$$[a,b)\\mapsto[a+T,b+T)$$",
+              "$$0\\le t<2\\mapsto 3\\le t<5$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $x(t)$ is nonzero on $0 \\le t < 2$, what is the support interval of $y(t)=x(t-3)$?",
+            "worked_solution_goal": "Shift both endpoints by $3$ to get $3 \\le t < 5$ and preserve the closed-open structure.",
+            "variation_from_previous": "Extends point mapping to a whole support interval with endpoint bookkeeping.",
+            "solution_step_plan": [
+              "Identify the original support interval $0 \\le t < 2$.",
+              "Add $T=3$ to both endpoints.",
+              "Preserve the closed-open endpoint structure.",
+              "State the shifted support interval $3 \\le t < 5$."
+            ],
+            "practice_variation_axes": [
+              "Change the endpoint values.",
+              "Change the open versus closed endpoints.",
+              "Change the shift amount $T$."
+            ]
+          },
+          "handoff_notes": "Keep interval notation explicit and do not introduce piecewise formulas or graphs; this section is only about support endpoints."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Interpreting $x(t+T)$",
+      "lesson_core_move": "Interpret x(t+T) for T > 0 by mapping each original feature time t0 to t0 - T and recognizing the result as a T-unit advance.",
+      "section_count": 4,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Interpreting $x(t+T)$",
+          "step_type": "tutorial",
+          "learning_goal": "Establish that $x(t+T)$ means a $T$-unit advance and that each original feature time moves to $t_0-T$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the sign convention that $x(t+T)$ advances the signal by $T$ and move one labeled feature from $t_0$ to $t_0-T$.",
+            "base_case": "Use one labeled feature time $t_0$ in $x(t)$ and show that it reappears at $t_0-T$ in $x(t+T)$.",
+            "paragraph_plan": [
+              "State the reading rule and contrast it with the delay notation: adding $T$ inside the argument moves the signal left by $T$.",
+              "Use the one-feature base case to map a single labeled time $t_0$ to $t_0-T$.",
+              "Emphasize that only the time labels change; the shape and values stay the same.",
+              "Name the result as a $T$-unit advance so later examples can reuse the same sign convention."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t+T)$$",
+              "$$t_0 \\mapsto t_0-T$$",
+              "$$x(t+T)\\text{ is a }T\\text{-unit advance}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the sign convention explicit: adding $T$ inside the argument moves every landmark left by $T$ and leaves the shape unchanged."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Mapping One Feature Time in $x(t+T)$",
+          "step_type": "example",
+          "learning_goal": "Map one concrete feature time through the advance rule and identify its new time location.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "single shifted time value",
+            "practice_question_model": "A signal $x(t)$ has a marked feature at $t_0=a$. For $T=b>0$, which time is that feature at in $x(t+T)$?",
+            "distractor_plan": [
+              "Include the unshifted time $a$ as a tempting answer.",
+              "Include $a+T$ to catch students who reverse the sign and treat the advance like a delay.",
+              "Include an answer that subtracts the wrong amount from $a$.",
+              "Include a choice that describes the shift in words but does not give the new time location."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A signal $x(t)$ has a marked feature at $t_0=6$. Where does that feature appear in $x(t+2)$?",
+            "worked_solution_goal": "Show that the feature moves to $t_0-T=4$ and identify the result as a $2$-unit advance.",
+            "variation_from_previous": "Moves from the abstract rule to one concrete landmark with numeric values.",
+            "solution_step_plan": [
+              "Identify the original feature time and the shift amount.",
+              "Apply the rule $t_0 \\mapsto t_0-T$.",
+              "Compute the new time location and state the advance direction."
+            ],
+            "practice_variation_axes": [
+              "feature time value",
+              "shift size $T$",
+              "feature type"
+            ]
+          },
+          "handoff_notes": "Keep the example focused on one landmark only so the sign flip is isolated from any interval or multi-feature bookkeeping."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Mapping Multiple Feature Times in $x(t+T)$",
+          "step_type": "example",
+          "learning_goal": "Apply $t_0 \\mapsto t_0-T$ to several feature times at once while preserving their relative order and spacing.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "ordered list of shifted feature times",
+            "practice_question_model": "A signal $x(t)$ has features at $t=t_1$, $t=t_2$, and $t=t_3$. For $T=b>0$, which ordered set of feature times appears in $x(t+T)$?",
+            "distractor_plan": [
+              "Include the original feature times unchanged.",
+              "Include the set shifted right by $T$ to catch the delay/advance sign reversal.",
+              "Include an answer that shifts only one feature time and leaves the others unchanged.",
+              "Include an answer that keeps the spacing but anchors the set at the wrong starting time."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A signal $x(t)$ has features at $t=-1$, $t=2$, and $t=5$. Where do those features appear in $x(t+3)$?",
+            "worked_solution_goal": "Map each feature time separately, keep the ordering, and show that the whole pattern is advanced by $3$.",
+            "variation_from_previous": "Extends the same mapping from one landmark to several landmarks at once.",
+            "solution_step_plan": [
+              "List the original feature times.",
+              "Subtract $T$ from each time.",
+              "Preserve the order and spacing of the mapped times.",
+              "State the result as a uniform advance by $T$."
+            ],
+            "practice_variation_axes": [
+              "number of feature times",
+              "spacing between feature times",
+              "signs of the original times",
+              "value of $T$"
+            ]
+          },
+          "handoff_notes": "Show that the same subtraction rule applies to every feature time and that the relative pattern is unchanged."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Mapping the Support Interval of $x(t+T)$",
+          "step_type": "example",
+          "learning_goal": "Map the support interval of $x(t)$ into the support of $x(t+T)$ by shifting both endpoints left by $T$ and preserving endpoint openness or closedness.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "interval notation",
+            "practice_question_model": "If $x(t)$ is nonzero on $a \\le t < b$ and $T=c>0$, what is the support of $x(t+T)$?",
+            "distractor_plan": [
+              "Include the original support interval unchanged.",
+              "Include the interval shifted right by $T$ to catch the wrong sign.",
+              "Include an answer that shifts only one endpoint.",
+              "Include an answer that changes the open/closed endpoint types even though the interval shape should be preserved."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A signal $x(t)$ is nonzero on $1 \\le t < 4$. What is the support of $x(t+2)$?",
+            "worked_solution_goal": "Shift both endpoints left by $2$ and keep the closed left endpoint and open right endpoint unchanged.",
+            "variation_from_previous": "Moves from isolated feature times to a full support interval with endpoint bookkeeping.",
+            "solution_step_plan": [
+              "Read the original support endpoints.",
+              "Subtract $T$ from each endpoint.",
+              "Preserve the open or closed status of each endpoint.",
+              "State the shifted support interval and name it an advance."
+            ],
+            "practice_variation_axes": [
+              "endpoint values",
+              "open versus closed endpoints",
+              "finite versus semi-infinite support",
+              "value of $T$"
+            ]
+          },
+          "handoff_notes": "Preserve the endpoint types while shifting the whole support left by $T$; do not let the interval bookkeeping drift into a sign-error exercise."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Time Shifts of Piecewise Signals",
+      "lesson_core_move": "Convert a piecewise continuous-time signal into its shifted form by moving each breakpoint in the shift direction and assigning each original formula to the corresponding new interval.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Time Shifts of Piecewise Signals",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the breakpoint-translation rule for shifting piecewise signals and show that the formulas stay attached to their intervals.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the tutorial is a symbolic interval-translation explanation.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. Keep the explanation text-only and centered on breakpoint movement and interval reassignment."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Give the minimum effective explanation of how to shift a piecewise definition: move each breakpoint, keep each formula attached to its original piece, and rewrite the intervals in shifted order.",
+            "base_case": "Use a two-piece signal with one breakpoint and one shift amount $T$; show the delay case first, then note that an advance uses the same rule with the breakpoint moved left instead of right.",
+            "paragraph_plan": [
+              "State the core rule up front: shifting a piecewise signal means translating breakpoints and reusing the same formulas on the shifted intervals.",
+              "Show the simplest one-breakpoint piecewise constant signal so the learner can see the original interval structure before any shift.",
+              "Work the delay case on that base signal: move the breakpoint right by $T$ and relabel the pieces without changing their values.",
+              "Generalize to the advance case and to pieces that depend on $t$, emphasizing that the formulas stay fixed while the interval endpoints move.",
+              "Close with the multiple-breakpoint checklist: shift every breakpoint, preserve their order, and rebuild the piecewise definition one interval at a time."
+            ],
+            "display_math_plan": [
+              "$$x(t)=\\begin{cases}A,&a\\le t<b\\\\B,&b\\le t<c\\end{cases}$$",
+              "$$y(t)=x(t-T)=\\begin{cases}A,&a+T\\le t<b+T\\\\B,&b+T\\le t<c+T\\end{cases}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial interval-first and compact. Do not turn it into a graph-reading lesson or a separate notation lesson; the writer should establish the shift rule, show one base case, and stop."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Delaying a Piecewise Constant Signal",
+          "step_type": "example",
+          "learning_goal": "Delay a piecewise constant signal by moving its breakpoint right by $T$ and rewriting the delayed signal as a piecewise definition.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is a symbolic one-breakpoint delay problem.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The worked example and the practice questions should stay fully symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text-only piecewise-definition choices; one is correct.",
+            "practice_question_model": "Given a one-breakpoint piecewise constant signal and a delay of $T$, choose the correctly delayed piecewise definition.",
+            "distractor_plan": [
+              "Move the breakpoint in the wrong direction.",
+              "Keep the breakpoint fixed and only copy the original definition.",
+              "Shift the breakpoint correctly but swap the left and right constants.",
+              "Use the correct constants but attach them to the wrong intervals.",
+              "Preserve the piece values but mishandle the interval endpoints or ordering."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Delay a one-breakpoint piecewise constant signal by $T>0$ and write the delayed signal as a piecewise definition.",
+            "worked_solution_goal": "Move the breakpoint right by $T$, keep each constant value attached to its original interval, and write the delayed signal with updated interval bounds.",
+            "variation_from_previous": "This extends the tutorial's base case into a fully written delay problem with one concrete breakpoint and constant pieces only.",
+            "solution_step_plan": [
+              "Identify the original breakpoint and the constant on each side.",
+              "Shift the breakpoint right by $T$.",
+              "Keep the left and right constants attached to the same relative pieces on the new intervals.",
+              "Write the delayed piecewise definition and check that the interval bounds match the shift."
+            ],
+            "practice_variation_axes": [
+              "location of the original breakpoint",
+              "size of the delay $T$",
+              "whether the shifted breakpoint crosses $t=0$",
+              "the constant values on the two pieces",
+              "whether the signal has finite or semi-infinite support"
+            ]
+          },
+          "handoff_notes": "Keep this as the simplest concrete delay case: one breakpoint, constant values, no graph, and no extra algebra. The only new skill is moving the breakpoint right by $T$ and relabeling the intervals."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Advancing a Piecewise Constant Signal",
+          "step_type": "example",
+          "learning_goal": "Advance a piecewise constant signal by moving its breakpoint left by $T$ and rewriting the advanced signal as a piecewise definition.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is a symbolic one-breakpoint advance problem.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. Keep the example text-only and focus on leftward breakpoint movement."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text-only piecewise-definition choices; one is correct.",
+            "practice_question_model": "Given a one-breakpoint piecewise constant signal and an advance of $T$, choose the correctly advanced piecewise definition.",
+            "distractor_plan": [
+              "Move the breakpoint right instead of left.",
+              "Leave the breakpoint in place and only change the labels.",
+              "Attach the original constants to the wrong shifted intervals.",
+              "Reverse the interval order after the shift.",
+              "Keep the constants correct but mis-handle a boundary value or endpoint convention."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Advance a one-breakpoint piecewise constant signal by $T>0$ and write the advanced signal as a piecewise definition.",
+            "worked_solution_goal": "Move the breakpoint left by $T$, keep each constant value attached to its original interval, and write the advanced signal with updated interval bounds.",
+            "variation_from_previous": "This mirrors the previous example but reverses the shift direction, so the learner must move the breakpoint left instead of right.",
+            "solution_step_plan": [
+              "Identify the original breakpoint and the constant on each side.",
+              "Shift the breakpoint left by $T$.",
+              "Keep the same constants attached to the shifted intervals.",
+              "Write the advanced piecewise definition and verify the intervals are ordered correctly."
+            ],
+            "practice_variation_axes": [
+              "shift direction",
+              "location of the original breakpoint",
+              "size of $T$",
+              "whether the advanced signal crosses into negative time",
+              "the values on each constant piece"
+            ]
+          },
+          "handoff_notes": "Mirror section 2 but reverse the direction. Do not introduce any new wrinkle beyond moving the breakpoint left by $T$ and preserving the same constant pieces."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Shifting Piecewise Formulas That Depend on t",
+          "step_type": "example",
+          "learning_goal": "Shift a piecewise signal whose pieces are formulas in $t$ while preserving each formula on the interval it occupies after the shift.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is a symbolic piecewise-shift problem with $t$-dependent formulas.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The key distinction is interval translation versus formula substitution, which should be handled symbolically."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text-only piecewise-definition choices; one is correct.",
+            "practice_question_model": "Given a piecewise signal with formulas in $t$ and a delay of $T$, choose the correctly shifted piecewise definition.",
+            "distractor_plan": [
+              "Shift the breakpoints correctly but also substitute $t\\pm T$ into each formula when the task is only to rewrite the shifted definition.",
+              "Move the breakpoints in the wrong direction.",
+              "Keep the formulas correct but assign them to the wrong intervals.",
+              "Use the original interval bounds instead of the shifted bounds.",
+              "Swap two adjacent formulas after translating the breakpoints."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Delay a piecewise signal whose pieces are formulas in $t$ by $T>0$ and write the shifted signal as a piecewise definition.",
+            "worked_solution_goal": "Move the breakpoints right by $T$, keep each formula exactly as written, and attach each formula to the correct shifted interval.",
+            "variation_from_previous": "The new wrinkle is that the signal pieces are formulas in $t$, so the learner must preserve the formulas while still translating the intervals.",
+            "solution_step_plan": [
+              "Identify each original formula and breakpoint.",
+              "Shift the breakpoints right by $T$.",
+              "Keep each formula unchanged and attach it to the corresponding shifted interval.",
+              "Write the delayed piecewise definition and check that every interval is covered once."
+            ],
+            "practice_variation_axes": [
+              "formula type on each piece",
+              "number of breakpoints",
+              "shift amount $T$",
+              "whether the formulas are linear, quadratic, or otherwise nonlinear in $t$",
+              "whether the signal has equal or unequal interval lengths"
+            ]
+          },
+          "handoff_notes": "The key distinction here is formula preservation: the formulas already live on the shifted intervals, so the writer should not turn this into an $x(t-T)$ substitution lesson."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Shifting a Piecewise Signal with Multiple Breakpoints",
+          "step_type": "example",
+          "learning_goal": "Shift a multi-breakpoint piecewise signal by moving every breakpoint in the same direction and preserving the interval-to-formula assignment across all pieces.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is a symbolic multi-breakpoint shift problem.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. Focus on ordered breakpoint translation and complete interval bookkeeping."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text-only piecewise-definition choices; one is correct.",
+            "practice_question_model": "Given a piecewise signal with multiple breakpoints and an advance of $T$, choose the correctly shifted piecewise definition.",
+            "distractor_plan": [
+              "Translate one breakpoint correctly but leave another breakpoint unchanged.",
+              "Shift all breakpoints but place the interval formulas in the wrong order.",
+              "Move the breakpoints in the wrong direction.",
+              "Omit the middle piece or duplicate one of the intervals.",
+              "Keep the formulas right but attach them to a neighboring interval after the shift."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Advance a piecewise signal with multiple breakpoints by $T>0$ and write the fully shifted piecewise definition.",
+            "worked_solution_goal": "Translate every breakpoint left by $T$, rebuild the interval list in order, and assign each original formula to the matching shifted interval.",
+            "variation_from_previous": "This increases the bookkeeping load by adding several breakpoints, so the learner must manage ordered interval translation instead of a single boundary.",
+            "solution_step_plan": [
+              "List all original breakpoints in order.",
+              "Shift each breakpoint left by $T$ and preserve their order.",
+              "Rebuild the shifted intervals one by one.",
+              "Attach each original formula to the corresponding shifted interval.",
+              "Check that no interval is skipped or duplicated."
+            ],
+            "practice_variation_axes": [
+              "number of breakpoints",
+              "spacing between breakpoints",
+              "whether the middle interval is constant or formula-based",
+              "whether the advance crosses $t=0$",
+              "whether the piecewise definition uses open or closed endpoints at the breakpoints"
+            ]
+          },
+          "handoff_notes": "Use multiple breakpoints to force ordered interval bookkeeping. The writer should make the learner translate every breakpoint, then verify that each original formula appears exactly once in the shifted definition."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Writing a Complete Shifted Piecewise Definition",
+          "step_type": "example",
+          "learning_goal": "Synthesize the full shift procedure by rewriting a complete piecewise signal with all breakpoints moved and all formulas reassigned.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the synthesis step is a symbolic complete-definition rewrite.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. Keep the final synthesis step symbolic and focused on complete interval reconstruction."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five text-only piecewise-definition choices; one is correct.",
+            "practice_question_model": "Given a complete piecewise signal and a delay of $T$, choose the complete shifted piecewise definition.",
+            "distractor_plan": [
+              "Shift every breakpoint in the wrong direction.",
+              "Leave one piece unshifted while shifting the others.",
+              "Copy the original interval structure without updating the bounds.",
+              "Swap two adjacent formulas after translating the breakpoints.",
+              "Omit one piece or collapse two intervals into one."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given a complete piecewise signal and a delay of $T>0$, write the final shifted piecewise definition with all intervals and formulas in order.",
+            "worked_solution_goal": "Translate every breakpoint, rebuild the shifted interval list, and write a complete piecewise definition with no missing or duplicated pieces.",
+            "variation_from_previous": "This is the synthesis step: instead of focusing on one local wrinkle, the learner has to perform the full breakpoint-translation procedure from start to finish.",
+            "solution_step_plan": [
+              "Parse the original piecewise definition and identify every breakpoint.",
+              "Shift each breakpoint by the given amount.",
+              "Reconstruct the shifted intervals in order.",
+              "Attach each formula to its new interval and simplify the notation.",
+              "Confirm that the final piecewise definition is complete and consistent."
+            ],
+            "practice_variation_axes": [
+              "number of pieces",
+              "mix of constant and $t$-dependent formulas",
+              "shift direction",
+              "whether the original intervals are symmetric or irregular",
+              "whether the shift moves a breakpoint across $t=0$"
+            ]
+          },
+          "handoff_notes": "Treat this as the wrap-up synthesis step. The writer should combine breakpoint translation and interval reassignment into one clean final definition, with no new idea beyond the core shift rule."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Time Shifts of Exponential Signals",
+      "lesson_core_move": "Convert delayed and advanced exponential signals by substituting t - T or t + T into e^{st} and factoring the shift into the constant multiplier e^{-sT} or e^{sT}.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Time Shifts of Exponential Signals",
+          "step_type": "tutorial",
+          "learning_goal": "Show that shifting the input of an exponential signal changes only the constant multiplier, not the time-dependent exponential shape.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; keep the tutorial fully symbolic."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No practice questions for the tutorial step.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the reusable algebraic rule that a shift inside $e^{at}$ or $e^{st}$ can be pulled out as the constant multiplier $e^{-aT}$, $e^{aT}$, $e^{-sT}$, or $e^{sT}$.",
+            "base_case": "Start with the real exponential $e^{at}$ and a positive shift $T>0$ so the learner sees the distributive step before extending the same pattern to complex $s$.",
+            "paragraph_plan": [
+              "State the goal: a time shift inside an exponential does not change the exponential shape, only the outside constant factor.",
+              "Work the delay case $e^{a(t-T)}$ step by step and show how it becomes $e^{-aT}e^{at}$.",
+              "Mirror the advance case $e^{a(t+T)}$ and show how it becomes $e^{aT}e^{at}$.",
+              "Generalize the same identity to $e^{s(t-T)}$ and $e^{s(t+T)}$ so later examples can reuse the rule for real or complex $s$.",
+              "Close by telling the learner that the remaining sections will apply the same shift-and-factor pattern to concrete signals."
+            ],
+            "display_math_plan": [
+              "$$e^{a(t-T)} = e^{at-aT} = e^{-aT}e^{at}$$",
+              "$$e^{a(t+T)} = e^{at+aT} = e^{aT}e^{at}$$",
+              "$$e^{s(t-T)} = e^{-sT}e^{st}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "No worked example in the tutorial step.",
+            "worked_solution_goal": "N/A",
+            "variation_from_previous": "N/A",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact and symbolic. Do not introduce graphs or extra algebraic cases; the goal is one reusable identity for delay and advance."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Delaying a Real Exponential Signal",
+          "step_type": "example",
+          "learning_goal": "Apply the delay rule to a concrete real exponential and simplify the result into a constant times the original exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the worked example and practice stay symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "If $x(t)=e^{5t}$, what is $x(t-1)$ in simplified form?",
+            "distractor_plan": [
+              "Use the wrong sign on the constant multiplier, such as $e^{5}e^{5t}$.",
+              "Forget to apply the delay and return $e^{5t}$.",
+              "Leave the shift inside the exponent, such as $e^{5(t-1)}$.",
+              "Flip the sign of the whole exponential rate, such as $e^{-5t}$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No tutorial segment in this example step; begin directly with the worked example and its explanation.",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $x(t)=e^{3t}$, find the delayed signal $x(t-2)$ in simplified form.",
+            "worked_solution_goal": "Substitute $t-2$ into $e^{3t}$, distribute the exponent, and factor the result as $e^{-6}e^{3t}$ so the learner sees the delay become a constant multiplier.",
+            "variation_from_previous": "This is the first concrete application of the tutorial rule: instead of a symbolic identity, the learner uses a specific real exponential and a numeric delay.",
+            "solution_step_plan": [
+              "Substitute $t-2$ for $t$ in $x(t)$.",
+              "Expand $3(t-2)$ and separate the $t$-term from the constant term.",
+              "Rewrite the result as $e^{3t}e^{-6}$ or $e^{-6}e^{3t}$.",
+              "State the final simplified delayed signal and note that only the constant multiplier changed."
+            ],
+            "practice_variation_axes": [
+              "Change the growth rate $a$ in $e^{at}$.",
+              "Change the delay amount $T$.",
+              "Switch between growing and decaying real exponentials.",
+              "Ask for either the full simplified expression or just the constant multiplier."
+            ]
+          },
+          "handoff_notes": "Keep the example numerically simple and entirely symbolic. The only new move is substituting $t-T$ and pulling out the constant factor."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Advancing a Real Exponential Signal",
+          "step_type": "example",
+          "learning_goal": "Apply the advance rule to a concrete real exponential and simplify the result into a constant times the original exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the advance case is still a symbolic factoring task."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "If $x(t)=e^{-4t}$, what is $x(t+3)$ in simplified form?",
+            "distractor_plan": [
+              "Use the delay sign instead of the advance sign, such as $e^{12}e^{-4t}$.",
+              "Forget to apply the advance and return $e^{-4t}$.",
+              "Leave the shift inside the exponent, such as $e^{-4(t+3)}$.",
+              "Flip the sign of the exponential rate, such as $e^{4t}$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No tutorial segment in this example step; begin directly with the worked example and its explanation.",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $x(t)=e^{3t}$, find the advanced signal $x(t+2)$ in simplified form.",
+            "worked_solution_goal": "Substitute $t+2$ into $e^{3t}$, distribute the exponent, and factor the result as $e^{6}e^{3t}$ so the learner sees an advance become a constant multiplier with the opposite sign from the delay case.",
+            "variation_from_previous": "This keeps the same real exponential structure but flips the shift direction from $t-T$ to $t+T$, so the learner must reverse the sign of the outside multiplier.",
+            "solution_step_plan": [
+              "Substitute $t+2$ for $t$ in $x(t)$.",
+              "Expand $3(t+2)$ and isolate the constant term.",
+              "Factor the exponential into $e^{3t}e^{6}$ or $e^{6}e^{3t}$.",
+              "Conclude that advancing changes only the constant multiplier, not the exponential shape."
+            ],
+            "practice_variation_axes": [
+              "Use a decaying real exponential instead of a growing one.",
+              "Change the advance amount $T$.",
+              "Ask the learner to simplify the whole expression or identify the multiplier only.",
+              "Swap delay and advance so the sign of the constant factor must be checked."
+            ]
+          },
+          "handoff_notes": "Keep the example parallel to the delay case but with the sign reversed. The student should notice that the shift direction changes only the sign of the constant factor."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Factoring a Shift in $e^{st}$",
+          "step_type": "example",
+          "learning_goal": "Convert a shifted exponential with symbolic $s$ into a constant multiplier times $e^{st}$ and recognize the general delay or advance identity.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; this is a pure algebraic identity step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Which expression is equal to $e^{s(t-T)}$?",
+            "distractor_plan": [
+              "Swap the sign on the shift multiplier, using $e^{sT}e^{st}$.",
+              "Fail to distribute $s$ correctly across $t-T$.",
+              "Treat the shift as subtraction outside the exponent, such as $e^{st-T}$.",
+              "Write the advanced form $e^{s(t+T)}$ instead of the delayed form."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No tutorial segment in this example step; begin directly with the worked example and its explanation.",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite $e^{s(t-T)}$ in the form $C e^{st}$ and identify $C$.",
+            "worked_solution_goal": "Show that distributing $s$ across $t-T$ gives $e^{st-sT}$, then factor the constant piece as $e^{-sT}$ so the learner recognizes the general delay identity.",
+            "variation_from_previous": "This extends the real-exponential examples to a symbolic exponent $s$, so the student sees that the same algebra works without substituting any numerical values.",
+            "solution_step_plan": [
+              "Substitute $t-T$ into the exponent of $e^{st}$.",
+              "Distribute $s$ to get $st-sT$.",
+              "Split the exponential into a product of a time-dependent term and a constant term.",
+              "State the general identity $e^{s(t-T)}=e^{-sT}e^{st}$ and note the matching advance identity."
+            ],
+            "practice_variation_axes": [
+              "Use a specific symbolic or numeric complex $s$.",
+              "Switch between delay and advance.",
+              "Ask for the multiplier only or the fully factored expression.",
+              "Change the shift amount $T$."
+            ]
+          },
+          "handoff_notes": "This is the abstraction step. Keep the algebra explicit so the learner sees that the same rule from the real exponential case works for every $s$."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Shifting Damped or Growing Sinusoids",
+          "step_type": "example",
+          "learning_goal": "Apply the same shift identity to a complex exponential so the learner can separate the damping or growth factor from the phase factor.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; keep the damped or growing sinusoid example algebraic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "If $x(t)=e^{(-1+j4)t}$, what is $x(t-2)$ in factored form?",
+            "distractor_plan": [
+              "Flip the sign on the shift factor, such as $e^{-2+j8}e^{(-1+j4)t}$.",
+              "Flip only the phase sign, such as $e^{2+j8}e^{(-1+j4)t}$.",
+              "Treat the delay as an advance, such as $e^{(-1+j4)(t+2)}$.",
+              "Forget to factor the shift and leave the answer as $e^{(-1+j4)(t-2)}$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No tutorial segment in this example step; begin directly with the worked example and its explanation.",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $x(t)=e^{(-1+j4)t}$, write the delayed signal $x(t-2)$ in factored form.",
+            "worked_solution_goal": "Apply the same shift identity to a complex exponent, then separate the resulting constant multiplier into the decay factor $e^{2}$ and the phase factor $e^{-j8}$ so the learner sees how damping or growth and oscillation are both preserved up to constants.",
+            "variation_from_previous": "This keeps the algebraic move but adds a complex $s=(-1+j4)$, showing that the shift changes both amplitude and phase while leaving the underlying time dependence in $e^{(-1+j4)t}$ intact.",
+            "solution_step_plan": [
+              "Substitute $t-2$ into the complex exponential.",
+              "Distribute $(-1+j4)$ across $t-2$.",
+              "Factor the result as a constant times $e^{(-1+j4)t}$.",
+              "Split the constant into the real decay or growth factor and the complex phase factor if helpful.",
+              "Conclude that the shift changes amplitude and phase by constants, not the oscillation rate."
+            ],
+            "practice_variation_axes": [
+              "Vary the real part of $s$ to switch between damping and growth.",
+              "Vary the imaginary part of $s$ to change the oscillation rate.",
+              "Switch between delay and advance.",
+              "Ask for the factored form or the separated amplitude and phase multiplier."
+            ]
+          },
+          "handoff_notes": "Keep the final example symbolic but slightly richer. The key takeaway is that a complex exponential still follows the same shift rule, with the outside factor splitting naturally into amplitude and phase parts."
+        }
+      ]
+    }
+  ]
+}

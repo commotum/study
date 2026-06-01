@@ -1,0 +1,1574 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Delaying a Signal",
+      "lesson_core_move": "Delay a continuous-time signal by shifting each key time point, breakpoint, and support interval T units to the right while preserving the signal's shape and values.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Delaying a Signal",
+          "section_index": 1,
+          "section_title": "Introduction to Delaying a Signal",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Two-panel instructional signal graph on a clean Cartesian grid. Left panel shows a simple continuous-time signal $x(t)$ with one clear peak at $t_0$, visible support boundaries, and labeled time-axis markers. Right panel shows $y(t)=x(t-T)$ on the same scale, with the entire waveform shifted right by $T$ so the peak moves from $t_0$ to $t_0+T$ and the support moves from $[a,b]$ to $[a+T,b+T]$. Include a clear rightward arrow labeled $T$ between corresponding feature markers. No decorative elements."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A delay moves a continuous-time signal to the right by $T$ units. In the graph below, $x(t)$ and $y(t)$ have the same shape; only the time locations change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The delay operator is $y(t)=x(t-T)$. Read the minus sign inside the input as \"look back $T$ units on the original signal,\" so the visible signal appears $T$ units later.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Any tagged feature follows the same rule: a peak, breakpoint, or marker at $t_0$ in $x(t)$ appears at $t_0+T$ in $y(t)$, and its value does not change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0 \\mapsto t_0+T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same rule applies to support: if $x(t)$ is nonzero on $[a,b]$, then $y(t)$ is nonzero on $[a+T,b+T]$, and each piece of a piecewise signal keeps its formula after the shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[a,b] \\mapsto [a+T,b+T]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the base case for the lesson. The examples that follow keep the same right-shift rule and add one controlled wrinkle at a time: a single point, multiple points, support boundaries, and finite-duration breakpoints.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Delaying a Signal",
+          "section_index": 2,
+          "section_title": "Delaying a Single Feature Time",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Two-panel instructional signal graph on a clean Cartesian grid. Left panel shows $x(t)$ with one peak of height 4 at $t=1$ and a visible support region around the peak. Right panel shows $y(t)=x(t-T)$ on the same scale, with the same peak shifted right by $T=3$ to $t=4$ and the same peak height 4. Include matching axis ticks and a clear rightward arrow labeled $3$ from $t=1$ to $t=4$. No decorative elements."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "For $x(t)$ with one peak of height 4 at $t = 1$, delay by $T = 3$ and give $y(t)$'s feature time and value.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is one peak of height 4 at $t=1$. For a delay, keep the peak height and shift only its time location.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the delayed signal as $y(t)=x(t-T)$. Here $T=3$, so the peak moves right by 3 units.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The original feature time is $t_0=1$, so the delayed time is $t_0+T=1+3=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0+T=1+3=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The peak value stays $4$, so the delayed signal has its peak at $t=4$ with no change in shape or height.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Delaying a Signal",
+          "section_index": 3,
+          "section_title": "Delaying Key Points on a Signal Graph",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Two-panel instructional signal graph on a clean Cartesian grid. Left panel shows $x(t)$ as a piecewise signal with three labeled key points at $(-2,3)$, $(0,-1)$, and $(3,2)$ connected by simple line or curve segments that preserve the order of the points. Right panel shows $y(t)=x(t-T)$ with the same shape shifted right by $T=2$, placing the corresponding labeled points at $(0,3)$, $(2,-1)$, and $(5,2)$. Include matching axis ticks, clear rightward arrows labeled $2$ from each original time to its delayed time, and no decorative elements."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Take a signal with key points $(-2,3)$, $(0,-1)$, and $(3,2)$. Delay by $T = 2$. List all delayed key-point times with values.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a graph with several labeled key points. For a delay, move every time coordinate right by the same $T$ and keep each value unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the delayed-signal rule $y(t)=x(t-T)$. Then apply that same shift to each marked point, one by one.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $T=2$, so add 2 to each key-point time and leave the values alone: $-2 \\mapsto 0$, $0 \\mapsto 2$, and $3 \\mapsto 5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(-2,3) \\to (0,3),\\qquad (0,-1) \\to (2,-1),\\qquad (3,2) \\to (5,2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The delayed graph keeps the same shape and the same relative order of the points. Only the horizontal positions change.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Delaying a Signal",
+          "section_index": 4,
+          "section_title": "Delaying the Support Interval",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Two-panel instructional signal graph on a clean Cartesian grid. Left panel shows $x(t)$ as a finite-support signal that is nonzero only on $[2,6]$, with the interval shaded and endpoint markers at $t=2$ and $t=6$. Right panel shows $y(t)=x(t-T)$ with $T=1.5$, the same shape shifted right so it is nonzero only on $[3.5,7.5]$, with the shifted interval shaded and endpoint markers at $t=3.5$ and $t=7.5$. Include clear rightward arrows labeled $1.5$ from each original endpoint to its delayed endpoint, show zero regions outside the shaded intervals, and add no decorative elements."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given that $x(t)$ is nonzero on $2 \\le t \\le 6$, delay by $T = 1.5$ and specify the support of $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a finite support interval. For a delay, move both endpoints right by the same $T$ and keep the signal zero outside the shifted interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the delayed-signal rule $y(t)=x(t-T)$. Since the original support is $[2,6]$, shift the whole interval by $T=1.5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "2+1.5=3.5,\\quad 6+1.5=7.5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the support interval shifts to the right by $1.5$ with no change in the signal shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{support of } y(t) = [3.5,7.5]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That means $y(t)$ is nonzero on $[3.5,7.5]$ and zero for $t<3.5$ or $t>7.5$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Delaying a Signal",
+          "section_index": 5,
+          "section_title": "Delaying Breakpoints of a Finite-Duration Signal",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Two-panel instructional signal graph on a clean Cartesian grid. Left panel shows a finite-duration piecewise signal $x(t)$ with breakpoints at $t=-1$, $t=2$, and $t=4$, with the nonzero region spanning $[-1,4]$ and simple piecewise segments between the breakpoints. Right panel shows $y(t)=x(t-T)$ with $T=2$, the same shape shifted right so the breakpoints are at $t=1$, $t=4$, and $t=6$, and the nonzero region spans $[1,6]$. Include endpoint markers, segment labels, and clear rightward shift arrows labeled $2$ from each original breakpoint to its delayed location. No decorative elements."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "A signal has breakpoints at $t = -1$, $t = 2$, and $t = 4$ and piecewise formulas on those intervals. Delay by $T = 2$. Translate each breakpoint and interval.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a finite-duration piecewise signal with breakpoints at $-1$, $2$, and $4$. For a delay, move every breakpoint and support boundary right by the same $T$ and keep each segment formula attached to its shifted interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the delayed-signal rule $y(t)=x(t-T)$. Here $T=2$, so the breakpoint times and the support edges all shift right by 2.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Shift each breakpoint and boundary by adding 2: $-1 \\mapsto 1$, $2 \\mapsto 4$, and $4 \\mapsto 6$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "-1+2=1,\\quad 2+2=4,\\quad 4+2=6",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That rewrites the piecewise time regions as $t<1$, $1 \\le t < 4$, $4 \\le t < 6$, and $t \\ge 6$. The segment shapes and values stay the same on the shifted intervals.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{support of } y(t) = [1,6]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $y(t)$ is zero outside $[1,6]$, and only the horizontal placement of the breakpoints changes.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Advancing a Signal",
+      "lesson_core_move": "Advance a continuous-time signal by shifting each key time point, breakpoint, and support interval T units to the left while preserving the signal's shape and values.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Advancing a Signal",
+          "section_index": 1,
+          "section_title": "Introduction to Advancing a Signal",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Instructional schematic on a time axis showing a continuous-time signal before and after advancing by $T$. Show the original signal and the advanced copy on the same axes, with the advanced copy shifted left by $T$ units. Include one labeled key time point moving from $t_0$ to $t_0-T$, a clear left-pointing shift arrow, and enough whitespace that the identical shape is obvious."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Advancing a signal means moving the entire waveform left by $T$ units. The rule is simple: subtract $T$ from every time coordinate, but leave the waveform values, widths, and overall shape unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the simplest base case, a single labeled feature at $t_0$ moves to $t_0-T$. That is the whole idea of an advance: the feature stays the same, and only its time location changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0\\mapsto t_0-T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same left shift applies to every key time point, breakpoint, and endpoint in the graph. If a signal is described by a landmark time, the advanced signal uses the same landmark moved left by $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_{\\text{new}}=t_{\\text{old}}-T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So an interval $[a,b]$ becomes $[a-T,b-T]$. The important check is that only the time locations change; the amplitudes, widths, and ordering stay the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[a,b]\\mapsto[a-T,b-T]",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Advancing a Signal",
+          "section_index": 2,
+          "section_title": "Moving a Key Time Point Left by an Advance Amount",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Advance a signal with one labeled feature at $t=7$ by $3$ units and identify the new feature time.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is one labeled feature at $t=7$. For an advance, subtract the shift amount from the time coordinate and keep the feature's value unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0-T=7-3=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the new feature time is $t=4$. The feature stays the same; only its time position moves left by $3$ units.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Advancing a Signal",
+          "section_index": 3,
+          "section_title": "Advancing a Signal Graph Without Changing Its Shape",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Instructional graph on one set of time axes showing a continuous-time signal before and after a left shift by $2$ units. The original waveform should include a few distinct landmarks, such as a rise, a peak, and a flat or zero segment, so the translation is obvious. Overlay the advanced waveform on the same axes with identical heights and widths, shifted exactly $2$ units left. Label corresponding landmarks on both copies and include a clear left-pointing arrow labeled $2$."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Advance the plotted signal left by $2$ units and sketch the result on the same axes.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a full signal graph with several visible landmarks. For an advance, treat the waveform as one rigid shape and move every time location left by $2$ units.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Mark each endpoint, peak, corner, and flat region on the original graph. Then subtract $2$ from each time coordinate: a feature at $t=a$ moves to $t=a-2$, and a segment from $a$ to $b$ moves to $[a-2,b-2]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_{new}=t_{old}-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now redraw the same heights and widths at the shifted times. The advanced graph keeps the same shape, the same values, and the same relative order of features; only the horizontal position changes.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Advancing a Signal",
+          "section_index": 4,
+          "section_title": "Advancing Breakpoints and Support Intervals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A finite-duration signal is nonzero on $[1,6]$ with breakpoints at $t=2$ and $t=4$. Advance it by $3$ units and identify the new breakpoint times and support interval.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a finite-duration signal described by its support interval and interior breakpoints. For an advance, subtract the same shift from every endpoint and breakpoint, then keep the piece order unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[1,6]\\mapsto[-2,3], 2\\mapsto-1, 4\\mapsto1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the new support interval is $[-2,3]$, and the new breakpoints are $t=-1$ and $t=1$. The original three subintervals $[1,2]$, $[2,4]$, and $[4,6]$ become $[-2,-1]$, $[-1,1]$, and $[1,3]$ after the shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the whole move: every boundary moves left by $3$, and the signal remains zero outside the shifted support interval.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Advancing a Signal",
+          "section_index": 5,
+          "section_title": "Recognizing the Advance Amount from an Original and Advanced Signal",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Instructional comparison on aligned time axes showing the same continuous-time signal before and after a left shift. Include the original signal and the advanced signal on the same plot, with one clearly labeled landmark moving from $t=5$ to $t=3$ and a matching support boundary moving from $t=1$ to $t=-1$. Use a clear left-pointing shift arrow labeled $2$ to make the advance amount easy to read."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Use the original and advanced signal plots to determine the advance amount $T$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a pair of aligned plots showing the same waveform before and after a shift. To find $T$, match one visible landmark on the original signal with the same landmark on the advanced signal and read the leftward time difference.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The peak moves from $t=5$ to $t=3$, so the leftward shift is $5-3=2$ units. That gives the advance amount directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T = 5 - 3 = 2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the support boundary too: $t=1$ moves to $t=-1$, which is the same $2$-unit difference. The advance amount is $T=2$, and the direction stays explicit: the signal moved left.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Interpreting $x(t-T)$",
+      "lesson_core_move": "Interpret x(t-T) for T > 0 by mapping each original feature time t0 to t0 + T and recognizing the result as a T-unit delay.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Interpreting $x(t-T)$",
+          "section_index": 1,
+          "section_title": "Introduction to Interpreting $x(t-T)$",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When $T>0$, reading $x(t-T)$ means the signal is delayed by $T$ time units. The minus sign inside the argument tells you to move the waveform to the right, not to the left.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To see the rule on one feature, suppose a particular feature of $x(t)$ occurs at time $t_0$. In the shifted signal, that same feature appears later, at $t_0+T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0\\mapsto t_0+T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Nothing about the shape or values changes. The only change is time: each original feature time moves right by $T$, so $x(t-T)$ is a $T$-unit delay.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Interpreting $x(t-T)$",
+          "section_index": 2,
+          "section_title": "Recognizing $x(t-T)$ as a Delay",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $y(t)=x(t-4)$, decide whether the signal is delayed or advanced and state the amount of shift.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For $x(t-T)$ with $T>0$, the cue is the minus sign inside the argument. That sign means delay: the signal keeps the same shape, but every feature moves right by $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In this example, the shift amount is $T=4$. So the rule says each original feature time $t_0$ moves to $t_0+4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0\\mapsto t_0+4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $y(t)=x(t-4)$ is a $4$-unit delay. The waveform is unchanged except for the rightward shift.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Interpreting $x(t-T)$",
+          "section_index": 3,
+          "section_title": "Mapping One Feature Time to $t_0+T$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A signal $x(t)$ has a spike at $t_0=2$. Where does that spike appear in $y(t)=x(t-5)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The spike at $t_0=2$ is the feature to track, and the cue is still the delay rule for $x(t-T)$ with $T>0$. Subtracting a positive amount inside the argument shifts that feature right by $T$ without changing its value.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $T=5$, so the feature time moves from $t_0=2$ to $t_0+T=2+5=7$. The waveform value at the spike stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0+T=2+5=7",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the spike appears at $t=7$, and $y(t)$ is a $5$-unit delay of $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Interpreting $x(t-T)$",
+          "section_index": 4,
+          "section_title": "Mapping Multiple Feature Times in $x(t-T)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Original feature times are at $t=1$, $t=3$, and $t=7$. Locate them in $y(t)=x(t-2)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same delay rule: with $x(t-T)$ and $T>0$, add $T$ to every original feature time. Because the same shift is applied to each feature, the spacing between features stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_i\\mapsto t_i+T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the original feature times are $1$, $3$, and $7$, and the shift is $T=2$. So each time becomes $1+2$, $3+2$, and $7+2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\{1,3,7\\}\\mapsto\\{3,5,9\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the features appear at $3$, $5$, and $9$, and the order and spacing are unchanged. $y(t)=x(t-2)$ is a $2$-unit delay of $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Interpreting $x(t-T)$",
+          "section_index": 5,
+          "section_title": "Mapping Support Intervals in $x(t-T)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)$ is nonzero on $0 \\le t < 2$, what is the support interval of $y(t)=x(t-3)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the support interval of $x(t)$, and the rule is the same delay rule used for feature times: when $x(t-T)$ has $T>0$, add $T$ to each endpoint and keep each endpoint's open or closed status.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[0,2)\\mapsto[3,5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the original support interval is $0 \\le t < 2$ and the shift amount is $T=3$. So the left endpoint becomes $0+3=3$ and the right endpoint becomes $2+3=5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le t<2\\mapsto 3\\le t<5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the support interval of $y(t)=x(t-3)$ is $3 \\le t < 5$. The closed-open structure stays the same, and the interval is shifted right by $3$ units.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Interpreting $x(t+T)$",
+      "lesson_core_move": "Interpret x(t+T) for T > 0 by mapping each original feature time t0 to t0 - T and recognizing the result as a T-unit advance.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Interpreting $x(t+T)$",
+          "section_index": 1,
+          "section_title": "Introduction to Interpreting $x(t+T)$",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Read $x(t+T)$ as a time advance when $T>0$. The plus sign inside the argument means the signal moves left by $T$, not right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t+T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use one labeled feature time $t_0$ as the base case. If that feature appears at $t_0$ in $x(t)$, then it appears at $t_0-T$ in $x(t+T)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0 \\mapsto t_0-T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Only the time labels change. The signal shape, amplitudes, and relative feature pattern stay the same while every landmark shifts left by $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+T)\\text{ is a }T\\text{-unit advance}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That sign convention is the one to reuse later: when you see $x(t+T)$ with $T>0$, move each original feature time to $t_0-T$ and read the result as an advance.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Interpreting $x(t+T)$",
+          "section_index": 2,
+          "section_title": "Mapping One Feature Time in $x(t+T)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A signal $x(t)$ has a marked feature at $t_0=6$. Where does that feature appear in $x(t+2)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the plus sign inside $x(t+T)$. For $T>0$, that sign means an advance: every feature moves left by $T$ while the shape stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t+2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the feature time $t_0=6$ and apply the advance rule. The mapping is $t_0\\mapsto t_0-T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0 \\mapsto t_0-T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substituting $T=2$ gives $6-2=4$, so the feature appears at $t=4$. The signal's value does not change; only the time location does.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+2)\\text{ is a }2\\text{-unit advance}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Interpreting $x(t+T)$",
+          "section_index": 3,
+          "section_title": "Mapping Multiple Feature Times in $x(t+T)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A signal $x(t)$ has features at $t=-1$, $t=2$, and $t=5$. Where do those features appear in $x(t+3)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the plus sign inside $x(t+T)$. For $T>0$, that sign means an advance: every feature moves left by $T$ while the order and spacing stay the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t+3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the three feature times $-1$, $2$, and $5$. Apply the same mapping $t_0\\mapsto t_0-T$ to each time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "-1 \\mapsto -4,\\quad 2 \\mapsto -1,\\quad 5 \\mapsto 2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $T=3$, the mapped times are $-4$, $-1$, and $2$. The spacing is unchanged: the gaps are still $3$ units.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+3)\\text{ is a }3\\text{-unit advance}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Interpreting $x(t+T)$",
+          "section_index": 4,
+          "section_title": "Mapping the Support Interval of $x(t+T)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A signal $x(t)$ is nonzero on $1 \\le t < 4$. What is the support of $x(t+2)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the support interval $1 \\le t < 4$. For $T>0$, $x(t+T)$ advances the whole signal left by $T$; the endpoints move by the same amount, and their open or closed status stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t+2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the original endpoints as $1$ and $4$. Apply the same shift rule to each endpoint: subtract $2$ from both.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "1 \\mapsto -1,\\quad 4 \\mapsto 2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The left endpoint stays closed and the right endpoint stays open, so the support of $x(t+2)$ is $-1 \\le t < 2$. The interval keeps the same shape; it just moves left by $2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+2)\\text{ is a }2\\text{-unit advance}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Time Shifts of Piecewise Signals",
+      "lesson_core_move": "Convert a piecewise continuous-time signal into its shifted form by moving each breakpoint in the shift direction and assigning each original formula to the corresponding new interval.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Shifts of Piecewise Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Time Shifts of Piecewise Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When a signal is written piecewise, the key thing to recognize is the breakpoint structure. A time shift does not change the formulas themselves; it moves each breakpoint in the shift direction and keeps each formula attached to the corresponding interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the simplest base case first: a two-piece signal with one breakpoint. Write the original signal so the interval structure is visible before any shift is applied.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}A,&a\\le t<b\\\\B,&b\\le t<c\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For a delay by $T$, the shifted signal is $y(t)=x(t-T)$. That means every breakpoint moves right by $T$, and the same formulas stay attached to the shifted intervals in the same order.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)=\\begin{cases}A,&a+T\\le t<b+T\\\\B,&b+T\\le t<c+T\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "An advance uses the same rule with the breakpoints moved left instead of right. So the real job in every piecewise shift is to move each breakpoint, preserve their order, and rebuild the definition one interval at a time.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Shifts of Piecewise Signals",
+          "section_index": 2,
+          "section_title": "Delaying a Piecewise Constant Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Delay the piecewise constant signal $x(t)=\\begin{cases}2,&t<1\\\\5,&1\\le t\\end{cases}$ by $T>0$ and write $y(t)=x(t-T)$ as a piecewise definition.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A delay by $T>0$ means the input time becomes $t-T$. For a piecewise constant signal, the constants do not change; only the breakpoint moves right by $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}2,&t<1\\\\5,&1\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the original breakpoint is at $t=1$, so after the delay it moves to $t=1+T$. The left constant stays on the left of the new breakpoint, and the right constant stays on the right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-T)=\\begin{cases}2,&t<1+T\\\\5,&1+T\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the delayed signal is the same two constants with a shifted breakpoint. That is the pattern to reuse: move the breakpoint, keep the piece values attached to their original sides, and rewrite the intervals in the new order.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Shifts of Piecewise Signals",
+          "section_index": 3,
+          "section_title": "Advancing a Piecewise Constant Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Advance the piecewise constant signal $x(t)=\\begin{cases}2,&t<1\\\\5,&1\\le t\\end{cases}$ by $T>0$ and write $y(t)=x(t+T)$ as a piecewise definition.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "An advance by $T>0$ means the input time becomes $t+T$. For a piecewise constant signal, the constants do not change; only the breakpoint moves left by $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}2,&t<1\\\\5,&1\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the original breakpoint is at $t=1$, so after the advance it moves to $t=1-T$. The left constant stays on the left of the new breakpoint, and the right constant stays on the right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t+T)=\\begin{cases}2,&t<1-T\\\\5,&1-T\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the advanced signal is the same two constants with a shifted breakpoint. That is the pattern to reuse: move the breakpoint left, keep the piece values attached to their original sides, and rewrite the intervals in the new order.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Shifts of Piecewise Signals",
+          "section_index": 4,
+          "section_title": "Shifting Piecewise Formulas That Depend on t",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Delay the piecewise signal $x(t)=\\begin{cases}t+2,&t<1\\\\3-t,&1\\le t\\end{cases}$ by $T>0$ and write the shifted signal as a piecewise definition.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the pieces are formulas in $t$. For this kind of delay, move the breakpoint right by $T$, but do not rewrite the formulas by substituting $t-T$ into them; keep each formula exactly as written on its new interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}t+2,&t<1\\\\3-t,&1\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the breakpoint at $t=1$ moves to $t=1+T$. The formula $t+2$ stays with the left piece, and the formula $3-t$ stays with the right piece.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}t+2,&t<1+T\\\\3-t,&1+T\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the delayed signal is obtained by translating the interval bounds and reattaching the same formulas. The only change is where each formula lives.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Shifts of Piecewise Signals",
+          "section_index": 5,
+          "section_title": "Shifting a Piecewise Signal with Multiple Breakpoints",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Advance the piecewise signal $x(t)=\\begin{cases}1,&t<2\\\\4,&2\\le t<5\\\\0,&5\\le t\\end{cases}$ by $T>0$ and write the shifted signal as a piecewise definition.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that there are two breakpoints, at $t=2$ and $t=5$. Because this is an advance by $T>0$, move both breakpoints left by $T$ and keep each original constant value attached to its interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n2 &\\mapsto 2-T \\\\\n5 &\\mapsto 5-T\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now rebuild the intervals from left to right. The first piece stays first, the middle piece stays between the shifted breakpoints, and the last piece stays last.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}1,&t<2-T\\\\4,&2-T\\le t<5-T\\\\0,&5-T\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That final form uses each original piece exactly once, with both breakpoints translated in the same direction by the same amount.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Time Shifts of Piecewise Signals",
+          "section_index": 6,
+          "section_title": "Writing a Complete Shifted Piecewise Definition",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Delay the complete piecewise signal $x(t)=\\begin{cases}t+1,&t<0\\\\3,&0\\le t<2\\\\5-t,&2\\le t<4\\\\1,&4\\le t\\end{cases}$ by $T>0$ and write the final shifted piecewise definition with all intervals and formulas in order.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that this is a complete piecewise definition: it has several breakpoints and a mix of constant and $t$-dependent pieces. For a delay by $T>0$, move every breakpoint right by $T$ and keep each formula attached to the same piece.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}t+1,&t<0\\\\3,&0\\le t<2\\\\5-t,&2\\le t<4\\\\1,&4\\le t\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The breakpoints at $0$, $2$, and $4$ move to $T$, $2+T$, and $4+T$. Rebuild the intervals in order, then reattach the same formulas to the corresponding shifted pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n0 &\\mapsto T \\\\\n2 &\\mapsto 2+T \\\\\n4 &\\mapsto 4+T\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That gives the complete shifted definition with no missing or duplicated pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}t+1,&t<T\\\\3,&T\\le t<2+T\\\\5-t,&2+T\\le t<4+T\\\\1,&4+T\\le t\\end{cases}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Time Shifts of Exponential Signals",
+      "lesson_core_move": "Convert delayed and advanced exponential signals by substituting t - T or t + T into e^{st} and factoring the shift into the constant multiplier e^{-sT} or e^{sT}.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Time Shifts of Exponential Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Time Shifts of Exponential Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an exponential signal like $e^{at}$ or $e^{st}$, a time shift changes only the constant multiplier. The time-dependent exponential shape stays the same, so the first thing to look for is whether the input has become $t-T$ or $t+T$ inside the exponent.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{a(t-T)} = e^{at-aT} = e^{-aT}e^{at}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the delay case, distribute the exponent first, then separate the part that still depends on $t$ from the part that does not. The delayed exponential is just the original exponential multiplied by the constant factor $e^{-aT}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{a(t+T)} = e^{at+aT} = e^{aT}e^{at}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The advance case works the same way, except the constant factor has the opposite sign in the exponent. So a delay gives $e^{-aT}$ and an advance gives $e^{aT}$, while the exponential part in $t$ remains unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{s(t-T)} = e^{-sT}e^{st}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same algebra works for $e^{st}$ with complex $s$ as well. This is the reusable rule for the rest of the lesson: substitute $t-T$ or $t+T$ into the exponential, distribute the exponent, and pull the shift out as a constant multiplier.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Time Shifts of Exponential Signals",
+          "section_index": 2,
+          "section_title": "Delaying a Real Exponential Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)=e^{3t}$, find the delayed signal $x(t-2)$ in simplified form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the delay rule from the introduction and substitute $t-2$ into the original exponential $x(t)=e^{3t}$. The cue is the shift inside the input, and the goal is to rewrite the result as a constant times the same exponential shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-2)=e^{3(t-2)}=e^{3t-6}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now separate the time-dependent part from the constant part. The $3t$ term stays inside the exponential shape, and the $-6$ term becomes a constant multiplier outside.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-2)=e^{-6}e^{3t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the delayed signal is $e^{-6}e^{3t}$. The delay changes only the constant factor in front; it does not change the exponential dependence on $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Time Shifts of Exponential Signals",
+          "section_index": 3,
+          "section_title": "Advancing a Real Exponential Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)=e^{3t}$, find the advanced signal $x(t+2)$ in simplified form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the advance rule from the introduction and substitute $t+2$ into the original exponential $x(t)=e^{3t}$. The cue is the shift inside the input, and the goal is to rewrite the result as a constant times the same exponential shape.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+2)=e^{3(t+2)}=e^{3t+6}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now separate the time-dependent part from the constant part. The $3t$ term stays inside the exponential shape, and the $+6$ term becomes a constant multiplier outside.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+2)=e^{6}e^{3t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the advanced signal is $e^{6}e^{3t}$. The advance changes only the constant factor in front; it does not change the exponential dependence on $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Time Shifts of Exponential Signals",
+          "section_index": 4,
+          "section_title": "Factoring a Shift in $e^{st}$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $e^{s(t-T)}$ in the form $C e^{st}$ and identify $C$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the shifted exponential $e^{s(t-T)}$ and treat the shift as part of the exponent. The cue is the form $t-T$, and the goal is to separate the $t$-dependent factor from the constant factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{s(t-T)}=e^{st-sT}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now split the exponent into a time term and a shift term. The $st$ part stays with $e^{st}$, while the $-sT$ part becomes the constant multiplier.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{s(t-T)}=e^{-sT}e^{st}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the expression is $C e^{st}$ with $C=e^{-sT}$. This is the general delay identity, and the matching advance form is $e^{s(t+T)}=e^{sT}e^{st}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Time Shifts of Exponential Signals",
+          "section_index": 5,
+          "section_title": "Shifting Damped or Growing Sinusoids",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $x(t)=e^{(-1+j4)t}$, write the delayed signal $x(t-2)$ in factored form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same shift rule with the complex exponential $x(t)=e^{(-1+j4)t}$. The cue is the delay $t-2$, and the goal is to factor the result into a constant multiplier times the original time dependence.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-2)=e^{(-1+j4)(t-2)}=e^{(-1+j4)t+2-j8}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now separate the constant part from the $t$-dependent part. The $(-1+j4)t$ term stays with the original complex exponential, and the $2-j8$ term becomes a multiplier outside.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t-2)=e^{2-j8}e^{(-1+j4)t}=e^{2}e^{-j8}e^{(-1+j4)t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the delayed signal is $e^{2}e^{-j8}e^{(-1+j4)t}$. The shift changes only the constant amplitude and phase factors; it does not change the exponential's time dependence.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

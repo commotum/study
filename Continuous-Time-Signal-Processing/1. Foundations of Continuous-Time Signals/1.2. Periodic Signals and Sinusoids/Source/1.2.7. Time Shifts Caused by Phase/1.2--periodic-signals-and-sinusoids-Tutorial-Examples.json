@@ -1,0 +1,2358 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Periodic Continuous-Time Signals",
+      "lesson_core_move": "Determine whether a continuous-time signal is periodic by verifying that some positive time shift T satisfies x(t+T)=x(t) for every t, connecting the result to later period, angular frequency, and harmonic analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic Continuous-Time Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Periodic Continuous-Time Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A periodic continuous-time signal repeats itself after a positive time shift. The cue is that the same waveform comes back at a later time, and the equality must hold for every $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(t+T) &= x(t) \\\\\nT &> 0\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the definition on a simple repeating sinusoid. The point is to see one full cycle match the next cycle after a positive shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(t) &= \\cos(2\\pi t) \\\\\nx(t+2) &= \\cos(2\\pi(t+2)) \\\\\n&= \\cos(2\\pi t + 4\\pi) \\\\\n&= \\cos(2\\pi t) \\\\\n&= x(t)\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A signal can have more than one valid positive shift, so this lesson only needs existence of some $T>0$, not the smallest one. If no positive shift works for every $t$, the signal is not periodic; later lessons will use this idea for the fundamental period, angular frequency, and harmonics.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic Continuous-Time Signals",
+          "section_index": 2,
+          "section_title": "Checking a Proposed Period from the Definition",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Verify that $T=2$ is a period for $x(t)=\\cos(2\\pi t)$ by checking that $x(t+2)=x(t)$ for every $t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a proposed positive shift. For $x(t)=\\cos(2\\pi t)$, test $T=2$ by substituting $t+2$ into the formula and checking whether the result matches the original signal for every $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(t+2) &= \\cos(2\\pi(t+2)) \\\\\n&= \\cos(2\\pi t + 4\\pi) \\\\\n&= \\cos(2\\pi t) \\\\\n&= x(t)\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The substitution returns the original signal, so $T=2$ is a valid period. That is the definition in action: one positive shift works for every $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic Continuous-Time Signals",
+          "section_index": 3,
+          "section_title": "Finding a Valid Positive Shift for a Repeating Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A signal takes the value $1$ on $0 \\le t < 1$, $0$ on $1 \\le t < 2$, and $-1$ on $2 \\le t < 3$, then repeats that three-part block forever. Find one positive $T$ such that $x(t+T)=x(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a repeating block description. Read one complete block, note that its length is $3$, and test that block length as the candidate positive shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n[0,1) &: 1 \\\\\n[1,2) &: 0 \\\\\n[2,3) &: -1 \\\\\n[3,4) &: 1 \\\\\n[4,5) &: 0 \\\\\n[5,6) &: -1\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same sequence of values reappears after $3$ time units, and each subinterval in the next block matches the original block after that shift. Therefore $x(t+3)=x(t)$ for every $t$, so $T=3$ is a valid positive shift.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic Continuous-Time Signals",
+          "section_index": 4,
+          "section_title": "Recognizing Periodicity from a Graph",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean continuous-time line plot on labeled time and amplitude axes showing a non-sinusoidal waveform that repeats exactly after a horizontal shift of 4 units. Show two identical cycles, with the first cycle spanning $0 \\le t < 4$ and the second cycle spanning $4 \\le t < 8$. Make the repeated landmarks easy to compare by including matching peaks, troughs, and endpoints, and add a visible horizontal bracket or arrow spanning one cycle length labeled $4$."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "From the graph of $x(t)$, decide whether the waveform repeats after a positive shift and identify one visible shift that works.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the graph itself. Find one obvious landmark on a cycle, compare it with the same landmark on the next cycle, and read the horizontal distance as a candidate positive shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same waveform shape reappears $4$ units later, so the landmark check matches the full cycle, not just one point. That gives one visible positive shift of $4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+4)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the whole graph matches after that shift, the signal is periodic. The graph is the cue, the repeated cycle is the rule, and $T=4$ is one visible positive shift.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic Continuous-Time Signals",
+          "section_index": 5,
+          "section_title": "Showing a Signal Is Not Periodic",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Show that $x(t)=t$ is not periodic by assuming a positive shift $T$ and checking whether $x(t+T)=x(t)$ can hold for every $t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a monotone trend. Test periodicity by assuming a positive shift $T$ and substituting it into $x(t)=t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(t+T) &= t+T \\\\\nx(t) &= t \\\\\nt+T &= t \\\\\nT &= 0\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That forces $T=0$, which contradicts the requirement that a period be positive. So no positive $T$ satisfies $x(t+T)=x(t)$ for every $t$, and the signal is not periodic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Fundamental Period",
+      "lesson_core_move": "Determine the smallest positive time shift T_0 that satisfies x(t+T_0)=x(t) for a periodic continuous-time signal or sinusoid and interpret it as the signal's fundamental period.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Fundamental Period",
+          "section_index": 1,
+          "section_title": "Introduction to Fundamental Period",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time signal is periodic when there is a positive time shift that makes the signal repeat itself for every $t$. The test is whether shifting by $T$ leaves the waveform unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+T)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The fundamental period, written $T_0$, is the smallest positive shift that works. If several positive shifts repeat the same signal, $T_0$ is the first one you would name.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_0 = \\min\\{T>0 : x(t+T)=x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Any larger integer multiple of $T_0$ is also a period, but it is not fundamental. So the question is not just whether the signal repeats, but what the smallest positive repeat shift is.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A simple repeating sinusoid or waveform makes the idea concrete: one visible cycle gives a picture of the smallest shift that returns the signal to the same shape. That is the meaning of $T_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $T_0$ as the basic repeat time for any periodic signal. Later sections will use it to connect period with angular frequency and harmonic structure.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Fundamental Period",
+          "section_index": 2,
+          "section_title": "Checking Whether a Time Shift Is a Period",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $T=2$ is a period of $x(t)=\\cos(\\pi t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the proposed shift $T=2$. To test it, substitute $t+2$ into the signal and check whether the result equals $x(t)$ for every $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+2)=\\cos(\\pi(t+2))=\\cos(\\pi t+2\\pi)=\\cos(\\pi t)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The angle increases by $2\\pi$, and cosine repeats after a full $2\\pi$ turn. So the shifted signal matches the original signal for every $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, $T=2$ is a period of $x(t)=\\cos(\\pi t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Fundamental Period",
+          "section_index": 3,
+          "section_title": "Finding the Smallest Positive Repeating Time Shift",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the fundamental period of $x(t)=\\cos\\left(\\frac{\\pi}{2}t\\right)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the coefficient of $t$ inside the cosine. To find the fundamental period, set the phase advance from $t$ to $t+T_0$ equal to $2\\pi$ and solve for the smallest positive $T_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+T_0)=\\cos\\left(\\frac{\\pi}{2}(t+T_0)\\right)=\\cos\\left(\\frac{\\pi}{2}t+\\frac{\\pi}{2}T_0\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{\\pi}{2}T_0=2\\pi \\quad\\Rightarrow\\quad T_0=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the smallest positive shift that produces one full $2\\pi$ phase wrap, so the fundamental period is $T_0=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Fundamental Period",
+          "section_index": 4,
+          "section_title": "Distinguishing a Period from the Fundamental Period",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=\\cos(2\\pi t)$, determine whether $T=2$ is the fundamental period or just a period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the proposed shift $T=2$. First substitute it into the signal and check whether the waveform repeats exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+2)=\\cos(2\\pi(t+2))=\\cos(2\\pi t+4\\pi)=\\cos(2\\pi t)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $T=2$ is a valid period. But to decide whether it is fundamental, find the smallest positive shift that produces the same repeat.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "2\\pi T_0=2\\pi \\quad\\Rightarrow\\quad T_0=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the smallest positive repeating shift is $T_0=1$, the shift $T=2$ is only a period. It is a larger multiple of the fundamental period, not the fundamental period itself.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Fundamental Period",
+          "section_index": 5,
+          "section_title": "Finding the Fundamental Period from One Complete Cycle",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal completes one full cycle from $t=1$ to $t=7$. What is its fundamental period?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the stated start and end of one complete cycle. The fundamental period is the length of that repeating interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_0=7-1=6",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the signal repeats every $6$ time units. That interval length is the fundamental period.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Fundamental Angular Frequency",
+      "lesson_core_move": "Identify the fundamental angular frequency omega_0 as the angular rate of one fundamental cycle for a periodic continuous-time signal and use it as the base spacing for harmonic frequencies.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fundamental Angular Frequency",
+          "section_index": 1,
+          "section_title": "Introduction to Fundamental Angular Frequency",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a periodic continuous-time signal, start by recognizing the fundamental cycle. The angular frequency attached to that one repeating cycle is $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the simplest base case: one full cycle takes $T_0$ seconds, and over that cycle the phase advances by one full turn, or $2\\pi$ radians. That is why $\\omega_0$ is measured in rad/s: it is the angular rate of the repeating pattern.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This formula gives the phase-advance rate for one cycle. If the signal repeats faster, $\\omega_0$ is larger; if it repeats more slowly, $\\omega_0$ is smaller.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k = k\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once $\\omega_0$ is set, the harmonic angular frequencies fall on a uniform ladder at integer multiples of the same spacing. So $\\omega_0$ is not just one frequency value; it is the base step size for the whole harmonic set.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep this lesson focused on interpreting $\\omega_0$ as the angular rate of one fundamental cycle and as the spacing between harmonics. Later lessons will connect $\\omega_0$ and $T_0$ in conversion problems, but here the job is to recognize the base rate cleanly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fundamental Angular Frequency",
+          "section_index": 2,
+          "section_title": "Interpreting omega_0 as Angular Rate",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal completes one fundamental cycle every $4$ s. Interpret $\\omega_0$ as the angular rate of that cycle and identify its value.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the phrase 'one fundamental cycle every $4$ s.' That tells you to read the cycle time as $T_0 = 4$ s and to interpret $\\omega_0$ as the phase-advance rate of that single repeat.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "One fundamental cycle always means one full $2\\pi$ radians of phase advance. So the angular rate is the phase advance per cycle divided by the cycle time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $T_0 = 4$ s and simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{4} = \\frac{\\pi}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the signal's fundamental angular frequency is $\\pi/2$ rad/s. In words, the signal advances by $\\pi/2$ radians each second across one repeating cycle.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the interpretation to carry forward: $\\omega_0$ is the angular rate attached to one fundamental cycle, not a harmonic multiple or a separate period value.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fundamental Angular Frequency",
+          "section_index": 3,
+          "section_title": "Identifying omega_0 from One Fundamental Cycle",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal repeats once every $\\frac{2}{5}$ s. Find its fundamental angular frequency $\\omega_0$ exactly.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the phrase 'repeats once every $\\frac{2}{5}$ s.' That tells you the fundamental period is $T_0 = \\frac{2}{5}$ s, so the job is to turn one cycle into an angular rate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "One fundamental cycle always corresponds to a full $2\\pi$ radians of phase advance. So the base angular frequency is the phase advance per cycle divided by the cycle time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $T_0 = \\frac{2}{5}$ s and simplify exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{\\frac{2}{5}} = 5\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the fundamental angular frequency is $5\\pi$ rad/s. The unit check matches the interpretation: radians per second is the angular rate of one repeating cycle.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fundamental Angular Frequency",
+          "section_index": 4,
+          "section_title": "Distinguishing omega_0 from Harmonic Angular Frequencies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has angular frequencies $4$ rad/s, $8$ rad/s, and $12$ rad/s. Which value is $\\omega_0$, and which values are harmonics?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the list of angular frequencies $4$ rad/s, $8$ rad/s, and $12$ rad/s. The job is not to compute a period; it is to identify the base spacing that the other values sit on.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the smallest positive value. Here that is $4$ rad/s, so take $\\omega_0 = 4$ rad/s.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "8 = 2\\omega_0, \\qquad 12 = 3\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because each larger frequency is an integer multiple of $\\omega_0$, both are harmonics. The multiple on $8$ rad/s is $2$, so it is the second harmonic; the multiple on $12$ rad/s is $3$, so it is the third harmonic.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the classification is $\\omega_0 = 4$ rad/s, while $8$ rad/s and $12$ rad/s are harmonic frequencies.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The key rule to carry forward is: choose the smallest positive spacing as $\\omega_0$, then label only the integer multiples as harmonics. Do not pick the largest value just because it appears later in the list.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fundamental Angular Frequency",
+          "section_index": 5,
+          "section_title": "Using omega_0 as Harmonic Frequency Spacing",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If a periodic signal has $\\omega_0 = 3$ rad/s, what are the first four positive harmonic frequencies?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the given base spacing $\\omega_0 = 3$ rad/s. The job is to build the harmonic ladder by multiplying that spacing by consecutive positive integers.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the harmonic rule $\\omega_k = k\\omega_0$ for $k = 1, 2, 3, 4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k = k\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $\\omega_0 = 3$ rad/s and evaluate the first four terms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_1 = 1(3) = 3, \\qquad \\omega_2 = 2(3) = 6, \\qquad \\omega_3 = 3(3) = 9, \\qquad \\omega_4 = 4(3) = 12",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the first four positive harmonic frequencies are $3$ rad/s, $6$ rad/s, $9$ rad/s, and $12$ rad/s. Each one is spaced by $3$ rad/s, which is exactly $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The carry-forward rule is to start at $\\omega_0$ and keep multiplying by consecutive positive integers. Do not divide by the harmonic number or skip the base spacing.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Converting Between Period and Angular Frequency",
+      "lesson_core_move": "Convert between T_0 and omega_0 for periodic continuous-time signals using omega_0 = 2*pi/T_0 and T_0 = 2*pi/omega_0 while preserving the time and radians-per-second meanings.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Converting Between Period and Angular Frequency",
+          "section_index": 1,
+          "section_title": "Introduction to Converting Between Period and Angular Frequency",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a periodic continuous-time signal, $T_0$ is the time for one full repeat, measured in seconds, and $\\omega_0$ is the angular frequency of that same repeat, measured in radians per second. Use $T_0$ when the problem is asking for a time period and use $\\omega_0$ when it is asking for an angular-rate description.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[T_0] = \\text{s}, \\quad [\\omega_0] = \\text{rad/s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The two quantities are tied together because one full cycle is $2\\pi$ radians. That gives one identity and two equivalent conversion formulas, and they all describe the same repetition in different units.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 T_0 = 2\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_0 = \\frac{2\\pi}{\\omega_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the simplest base case, one full repeat that lasts $T_0 = 1\\text{ s}$ corresponds to $\\omega_0 = 2\\pi\\text{ rad/s}$, and the same relation works in reverse: $\\omega_0 = 2\\pi\\text{ rad/s}$ corresponds to $T_0 = 1\\text{ s}$. Keep both directions in mind, because later problems may give either quantity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}T_0 &= 1\\text{ s} \\;\\Rightarrow\\; \\omega_0 = 2\\pi\\text{ rad/s} \\\\[4pt]\\omega_0 &= 2\\pi\\text{ rad/s} \\;\\Rightarrow\\; T_0 = 1\\text{ s}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This conversion changes only the representation of the repetition. It does not change the underlying signal, so later steps can move back and forth between period and angular frequency as needed.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Converting Between Period and Angular Frequency",
+          "section_index": 2,
+          "section_title": "Converting a Period to an Angular Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has $T_0 = 4\\text{ s}$. Find $\\omega_0$ and state the units.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the period is already known in seconds, and the target is the angular frequency in radians per second. Use the conversion rule $\\omega_0 = \\dfrac{2\\pi}{T_0}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\\omega_0 &= \\frac{2\\pi}{T_0} \\\\[4pt]&= \\frac{2\\pi}{4\\text{ s}} \\\\[4pt]&= \\frac{\\pi}{2}\\text{ rad/s}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the angular frequency is $\\omega_0 = \\dfrac{\\pi}{2}\\text{ rad/s}$. The result is smaller than $2\\pi\\text{ rad/s}$ because a longer period means fewer radians per second for one full repeat.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Converting Between Period and Angular Frequency",
+          "section_index": 3,
+          "section_title": "Converting an Angular Frequency to a Period",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has $\\omega_0 = \\frac{3\\pi}{2}\\text{ rad/s}$. Find $T_0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the angular frequency is already known in radians per second, and the target is the period in seconds. Use the inverse conversion rule $T_0 = \\dfrac{2\\pi}{\\omega_0}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}T_0 &= \\frac{2\\pi}{\\omega_0} \\\\[4pt]&= \\frac{2\\pi}{\\frac{3\\pi}{2}} \\\\[4pt]&= \\frac{4}{3}\\text{ s}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the period is $T_0 = \\dfrac{4}{3}\\text{ s}$. The unit is seconds because the angular-frequency unit is inverted in the formula, so the result measures time for one full repeat.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Converting Between Period and Angular Frequency",
+          "section_index": 4,
+          "section_title": "Interpreting Converted Period and Angular Frequency Values",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has $T_0 = 2\\text{ s}$ and $\\omega_0 = \\pi\\text{ rad/s}$. Decide whether the pair is consistent and interpret each value.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a proposed $T_0$/$\\omega_0$ pair. Check consistency by converting one value with the period-frequency rule and comparing the result in the other units.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\\omega_0 &= \\frac{2\\pi}{T_0} = \\frac{2\\pi}{2\\text{ s}} = \\pi\\text{ rad/s} \\\\[6pt]T_0 &= \\frac{2\\pi}{\\omega_0} = \\frac{2\\pi}{\\pi}\\text{ s} = 2\\text{ s}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The pair is consistent. $T_0 = 2\\text{ s}$ means one full repeat takes 2 seconds, and $\\omega_0 = \\pi\\text{ rad/s}$ means the phase advances by $\\pi$ radians each second, not $\\pi$ cycles per second.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Sinusoidal Signals",
+      "lesson_core_move": "Express a continuous-time sinusoidal signal in sine or cosine form and read its angular frequency and period from the coefficient of time.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Sinusoidal Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Sinusoidal Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time sinusoid is a signal you can write as a sine or cosine with a linear argument in $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(\\omega t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same template also covers sine, so the two standard forms are the cosine form and the sine form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\sin(\\omega t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The number multiplying $t$ is the angular frequency $\\omega$, not the period. Read that coefficient first.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $T=\\frac{2\\pi}{\\omega}$ to convert $\\omega$ into a period, and keep the units consistent: radians per second for $\\omega$ and seconds for $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega=\\frac{2\\pi}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case $x(t)=\\cos(t)$, $\\omega=1$ rad/s and $T=2\\pi$ s, so this is the simplest reference sinusoid.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(t)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Sinusoidal Signals",
+          "section_index": 2,
+          "section_title": "Recognizing Sine and Cosine Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Recognize that $x(t)=\\cos(3t)$ is a sinusoidal signal written in cosine form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the cosine template from the previous step: a sinusoid is a sine or cosine with a linear time argument.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(3t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This matches the cosine form because the argument $3t$ is linear in $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(\\omega t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $x(t)=\\cos(3t)$ is a sinusoidal signal written in cosine form. Keep the focus on the form; period conversion comes later.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Sinusoidal Signals",
+          "section_index": 3,
+          "section_title": "Reading Angular Frequency from a Sinusoid",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=2\\sin(\\frac{5}{3}t)$, identify the angular frequency.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the sinusoid template from the previous step: a sine or cosine with a linear time argument. The angular frequency is the number multiplying $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2\\sin\\left(\\frac{5}{3}t\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the argument is $\\frac{5}{3}t$, so the coefficient of $t$ is $\\omega=\\frac{5}{3}$. The amplitude factor $2$ does not affect the angular frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega=\\frac{5}{3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the angular frequency is $\\omega=\\frac{5}{3}$ rad/s. Keep the task at this read-off step; period conversion comes later.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Sinusoidal Signals",
+          "section_index": 4,
+          "section_title": "Finding the Period of a Sinusoidal Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=\\cos(\\pi t)$, find the period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the sinusoid rule from the earlier steps: first read $\\omega$ from the coefficient of $t$, then convert it to period with $T=2\\pi/\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(\\pi t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the coefficient of $t$ is $\\omega=\\pi$ rad/s. That is the value to substitute into the period formula.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{\\pi}=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the period is $T=2$ s. The key move is the conversion from angular frequency to time period.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Sinusoidal Signals",
+          "section_index": 5,
+          "section_title": "Writing a Sinusoid from Its Angular Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write a cosine signal with angular frequency $4$ rad/s and verify its period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the given angular frequency. In the simplest construction, use cosine form with unit amplitude and zero phase, and place the number multiplying $t$ inside the cosine.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(4t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This signal has angular frequency $\\omega=4$ rad/s because the coefficient of $t$ is $4$. The period comes from the same conversion rule used earlier.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{4}=\\frac{\\pi}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So one valid answer is $x(t)=\\cos(4t)$, and its period is $T=\\pi/2$ s. The frequency is set by the time coefficient, not by the amplitude.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Amplitude and Phase of a Sinusoid",
+      "lesson_core_move": "Extract the amplitude and phase from a continuous-time sinusoid, interpreting amplitude as peak deviation and phase as the angular offset within one period.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Amplitude and Phase of a Sinusoid",
+          "section_index": 1,
+          "section_title": "Introduction to Amplitude and Phase of a Sinusoid",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the simplest standard sinusoid, $x(t)=A\\cos(\\omega t)$, so you can see the amplitude before any phase offset appears. In the general standard form, the same signal is written as either $x(t)=A\\cos(\\omega t+\\phi)$ or $x(t)=A\\sin(\\omega t+\\phi)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A\\cos(\\omega t+\\phi)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A\\sin(\\omega t+\\phi)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read $A$ as the amplitude. It is the positive peak deviation from the center line, so it tells you how far the sinusoid rises above and falls below its middle value. Do not confuse it with the angular frequency $\\omega$ or with the sign of the coefficient.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "A>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read $\\phi$ as the phase. It is the constant angular offset inside the argument, and it locates the waveform within one period. The same reading rule works in both cosine and sine form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For now, the job is only to recognize the standard form and extract $A$ and $\\phi$ cleanly. Later sections will handle sign changes and rewrite wrinkles without changing this basic reading rule.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Amplitude and Phase of a Sinusoid",
+          "section_index": 2,
+          "section_title": "Identifying Amplitude and Phase in Cosine Form",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Identify the amplitude and phase of $x(t)=4\\cos(3t+\\pi/6)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Match the signal to the standard cosine form $x(t)=A\\cos(\\omega t+\\phi)$. In this form, the coefficient in front of cosine is the amplitude, and the constant term inside the argument is the phase.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=4\\cos(3t+\\pi/6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the coefficient is $4$, so the amplitude is $A=4$. That is the positive peak deviation, not the angular frequency $3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(A,\\phi)=(4,\\pi/6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The constant term inside the cosine argument is $\\pi/6$, so the phase is $\\phi=\\pi/6$. The amplitude-phase pair is $(4,\\pi/6)$, and no rewrite is needed because the cosine form is already standard.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Amplitude and Phase of a Sinusoid",
+          "section_index": 3,
+          "section_title": "Identifying Amplitude and Phase in Sine Form",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Identify the amplitude and phase of $x(t)=3\\sin(5t+\\pi/3)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Match the signal to the standard sine form $x(t)=A\\sin(\\omega t+\\phi)$. In this form, the coefficient in front of sine is the amplitude, and the constant term inside the argument is the phase.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=3\\sin(5t+\\pi/3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the coefficient is $3$, so the amplitude is $A=3$. That is the positive peak deviation, not the angular frequency $5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(A,\\phi)=(3,\\pi/3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The constant term inside the sine argument is $\\pi/3$, so the phase is $\\phi=\\pi/3$. The amplitude-phase pair is $(3,\\pi/3)$, and no rewrite is needed because the sine form is already standard.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Amplitude and Phase of a Sinusoid",
+          "section_index": 4,
+          "section_title": "Identifying Phase with a Negative Offset",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Identify the amplitude and phase of $x(t)=2\\cos(7t-\\pi/4)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Match the signal to the standard cosine form $x(t)=A\\cos(\\omega t+\\phi)$. In this form, the coefficient in front of cosine is the amplitude, and the constant term inside the argument is the phase.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2\\cos(7t-\\pi/4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the coefficient is $2$, so the amplitude is $A=2$. That is the positive peak deviation, not the angular frequency $7$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(A,\\phi)=(2,-\\pi/4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The constant term inside the cosine argument is $-\\pi/4$, so the phase is $\\phi=-\\pi/4$. The amplitude-phase pair is $(2,-\\pi/4)$, and no rewrite is needed because the task is to read the phase sign directly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Amplitude and Phase of a Sinusoid",
+          "section_index": 5,
+          "section_title": "Rewriting a Negative Coefficient with Positive Amplitude",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=-4\\cos(3t-\\pi/6)$ in positive-amplitude form and identify its amplitude and phase.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the negative-coefficient cosine form. Use $-\\cos(\\theta)=\\cos(\\theta+\\pi)$ so the sign moves into the phase and the amplitude becomes positive.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=-4\\cos(3t-\\pi/6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the identity inside the cosine argument and keep the frequency term unchanged. The coefficient becomes $4$, and the phase gains a $\\pi$ shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=4\\cos((3t-\\pi/6)+\\pi)=4\\cos(3t+5\\pi/6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(A,\\phi)=(4,5\\pi/6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The positive-amplitude standard form is $x(t)=4\\cos(3t+5\\pi/6)$. The amplitude is $A=4$, and the phase is $\\phi=5\\pi/6$ after absorbing the negative sign into the phase.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Time Shifts Caused by Phase",
+      "lesson_core_move": "Convert the phase term in a continuous-time sinusoid into its equivalent time advance or delay using the angular frequency and the correct sign convention.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Time Shifts Caused by Phase",
+          "section_index": 1,
+          "section_title": "Introduction to Time Shifts Caused by Phase",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A phase term inside a sinusoid is another way of saying the waveform happens earlier or later in time. Start from the zero-phase case $x(t)=\\cos(\\omega t)$, where there is no horizontal shift yet.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now add phase to the argument. If the signal is $x(t)=\\cos(\\omega t+\\phi)$, factor out $\\omega$ so the phase becomes part of the time variable instead of staying as a separate angle.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\cos(\\omega t+\\phi)=\\cos\\left(\\omega\\left(t+\\frac{\\phi}{\\omega}\\right)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That rewrite means a positive phase advances the signal by $\\phi/\\omega$ seconds. If you write shifts as $x(t-\\tau)$, then the same positive phase corresponds to $\\tau=-\\phi/\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\cos(\\omega t-\\phi)=\\cos\\left(\\omega\\left(t-\\frac{\\phi}{\\omega}\\right)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A negative phase does the opposite: it delays the signal by $\\phi/\\omega$ seconds, and in $x(t-\\tau)$ notation that is $\\tau=\\phi/\\omega$. The same conversion works for sine signals too, so later examples can switch between $\\cos$ and $\\sin$ without changing the rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The target move is always the same: identify $\\omega$, divide the phase by $\\omega$, and read the result as a time advance or delay with the correct sign.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Time Shifts Caused by Phase",
+          "section_index": 2,
+          "section_title": "Rewriting a Positive Phase Term as a Time Advance",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=2\\cos(8t+\\pi/2)$ as a cosine with no explicit phase term and identify the time advance.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the positive phase term in $x(t)=2\\cos(8t+\\pi/2)$. Keep the cosine and the amplitude $2$, and rewrite only the time argument.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the angular frequency is $\\omega=8$ and the phase is $\\phi=\\pi/2$. The advance amount comes from dividing the phase by the angular frequency: $\\Delta t=\\phi/\\omega=\\pi/16$ seconds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "8t+\\pi/2=8\\left(t+\\pi/16\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That rewrite shows the signal is the same cosine shifted left by $\\pi/16$ seconds. In shift notation, this is a time advance, so the waveform appears earlier than $2\\cos(8t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2\\cos\\left(8\\left(t+\\pi/16\\right)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the final interpretation is a time advance of $\\pi/16$ seconds, and the amplitude stays $2$. The same divide-by-$\\omega$ rule is what later positive-phase examples will reuse.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Time Shifts Caused by Phase",
+          "section_index": 3,
+          "section_title": "Rewriting a Negative Phase Term as a Time Delay",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=5\\sin(6t-\\pi/3)$ as a sine with no explicit phase term and identify the time delay.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the negative phase term in $x(t)=5\\sin(6t-\\pi/3)$. Keep the amplitude and sine form fixed, and rewrite only the angle so it looks like $\\omega(t-\\Delta t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $\\omega=6$ and $\\phi=-\\pi/3$, so the delay magnitude is $\\Delta t=|\\phi|/\\omega=(\\pi/3)/6=\\pi/18$ seconds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "6t-\\pi/3 = 6\\left(t-\\pi/18\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=5\\sin\\left(6\\left(t-\\pi/18\\right)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A negative phase term becomes a right shift, so this signal is delayed by $\\pi/18$ seconds. The sine follows the same phase-to-time rule as cosine: use the sign to decide advance or delay, then use $|\\phi|/\\omega$ for the amount.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Time Shifts Caused by Phase",
+          "section_index": 4,
+          "section_title": "Computing Shift Size from Phase and Angular Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "How far and in which direction is $x(t)=2\\cos(5t+3)$ shifted relative to $2\\cos(5t)$?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the positive phase term in $x(t)=2\\cos(5t+3)$. Keep the cosine and amplitude $2$ fixed, and rewrite only the angle so it looks like $\\omega(t+\\Delta t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $\\omega=5$ and $\\phi=3$, so the shift size is $\\Delta t=\\phi/\\omega=3/5$ seconds. The units work because radians divided by radians per second give seconds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "5t+3=5\\left(t+3/5\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2\\cos\\left(5\\left(t+3/5\\right)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the signal is advanced by $3/5$ seconds relative to $2\\cos(5t)$. The same divide-by-$\\omega$ rule used in the earlier phase examples still applies when the phase is a plain number instead of a multiple of $\\pi$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Time Shifts Caused by Phase",
+          "section_index": 5,
+          "section_title": "Interpreting Phase-Caused Shifts in Sine Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Interpret $x(t)=3\\sin(7t-2)$ as a time shift and rewrite it without an explicit phase term.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the negative phase term in $x(t)=3\\sin(7t-2)$. Keep the sine form and amplitude $3$ fixed, and rewrite only the angle so it looks like $\\omega(t-\\Delta t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $\\omega=7$ and $\\phi=-2$, so the delay magnitude is $\\Delta t=|\\phi|/\\omega=2/7$ seconds. The units work because radians divided by radians per second give seconds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "7t-2 = 7\\left(t-2/7\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=3\\sin\\left(7\\left(t-2/7\\right)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the signal is delayed by $2/7$ seconds relative to $3\\sin(7t)$. The same phase-to-time rule used for cosine applies to sine as well: identify $\\omega$, divide the phase by $\\omega$, and read the sign as an advance or delay.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 8,
+      "lesson_title": "Harmonics of a Fundamental Frequency",
+      "lesson_core_move": "Classify sinusoidal components in a periodic continuous-time signal as harmonics by expressing each angular frequency as an integer multiple of the fundamental angular frequency.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 8,
+          "lesson_title": "Harmonics of a Fundamental Frequency",
+          "section_index": 1,
+          "section_title": "Introduction to Harmonics of a Fundamental Frequency",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In a periodic continuous-time signal, the harmonic test is based on the fundamental angular frequency $\\omega_0$. A sinusoidal component is a harmonic when its angular frequency fits the same spacing pattern as the fundamental frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_n = n\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the harmonic family as $\\omega_n = n\\omega_0$, where $n$ is a positive integer. The harmonic number is the integer $n$, not the amplitude, the phase, or the sign of the sinusoid.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "n = \\frac{\\omega_n}{\\omega_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The simplest case is $\\omega = \\omega_0$, which gives $\\omega/\\omega_0 = 1$ and makes the component the first harmonic. The next integer multiples, such as $2\\omega_0$ and $3\\omega_0$, give the second and third harmonics by the same test.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_1=\\omega_0,\\; \\omega_2=2\\omega_0,\\; \\omega_3=3\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the rule is simple: compute $\\omega/\\omega_0$. If the result is a positive integer, the component is a harmonic; if it is not, the component is not a harmonic. In the next examples, you will apply this integer-multiple test to single terms, numeric ratios, nonharmonic ratios, and multiple components.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Harmonics of a Fundamental Frequency",
+          "section_index": 2,
+          "section_title": "Identifying Integer-Multiple Angular Frequencies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the periodic signal $x(t)=5\\cos(4\\omega_0 t-\\pi/3)$, identify the angular frequency and state which harmonic the sinusoid is.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the coefficient of $t$ inside the sinusoid. The amplitude $5$ and the phase $-\\pi/3$ do not affect the harmonic label, so the only part to read is the angular-frequency factor multiplying $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega = 4\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the coefficient on $t$, the angular frequency is $4\\omega_0$. To classify the component, divide by the fundamental angular frequency and check whether the ratio is a positive integer.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{\\omega}{\\omega_0}=\\frac{4\\omega_0}{\\omega_0}=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the ratio is the positive integer $4$, the sinusoid is the fourth harmonic. The amplitude and phase are just clutter; they do not change the harmonic number.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Harmonics of a Fundamental Frequency",
+          "section_index": 3,
+          "section_title": "Finding the Harmonic Number of a Sinusoidal Component",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has fundamental angular frequency $\\omega_0=2\\pi$ rad/s and contains the component $4\\cos(10\\pi t+\\pi/6)$. Determine the harmonic number of the component.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the coefficient of $t$ inside the sinusoid. The amplitude $4$ and the phase $\\pi/6$ do not affect the harmonic number, so the only job is to compare the component angular frequency to $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega = 10\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the fundamental angular frequency is $\\omega_0=2\\pi$. Form the ratio $\\omega/\\omega_0$ and simplify it before naming the harmonic.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{\\omega}{\\omega_0}=\\frac{10\\pi}{2\\pi}=5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the ratio is the positive integer $5$, the component is the fifth harmonic. The amplitude and phase are just clutter; they do not change the harmonic number.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Harmonics of a Fundamental Frequency",
+          "section_index": 4,
+          "section_title": "Recognizing Frequencies That Are Not Harmonics",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has fundamental angular frequency $\\omega_0=4\\pi$ rad/s and contains the component $3\\sin(10\\pi t-\\pi/4)$. Decide whether the sinusoid is a harmonic.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the coefficient of $t$ inside the sinusoid. The amplitude $3$ and the phase $-\\pi/4$ do not affect the classification, so the only job is to compare the component angular frequency to $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega = 10\\pi,\\qquad \\omega_0 = 4\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Form the ratio $\\omega/\\omega_0$ and simplify it. The ratio can be a fraction only if the component is not a harmonic, because the harmonic test requires a positive integer.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{\\omega}{\\omega_0}=\\frac{10\\pi}{4\\pi}=\\frac{5}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $5/2$ is not a positive integer, the component is not a harmonic. Even though the ratio is a neat fraction, it does not satisfy the integer-multiple test, and the amplitude and phase still do not matter.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Harmonics of a Fundamental Frequency",
+          "section_index": 5,
+          "section_title": "Classifying Multiple Sinusoidal Components by Harmonic Number",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=3\\cos(2\\pi t-\\pi/5)+\\sin(6\\pi t)+4\\cos(7\\pi t)$ with fundamental angular frequency $2\\pi$ rad/s, classify each sinusoidal component by harmonic number or as not a harmonic.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Scan the terms one at a time. The amplitude and phase do not affect harmonic status; only the angular frequency in front of $t$ matters.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=3\\cos(2\\pi t-\\pi/5)+\\sin(6\\pi t)+4\\cos(7\\pi t),\\qquad \\omega_0=2\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read off each angular frequency and divide by $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{2\\pi}{2\\pi}=1,\\qquad \\frac{6\\pi}{2\\pi}=3,\\qquad \\frac{7\\pi}{2\\pi}=\\frac{7}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $3\\cos(2\\pi t-\\pi/5)$ is the first harmonic, $\\sin(6\\pi t)$ is the third harmonic, and $4\\cos(7\\pi t)$ is not a harmonic because $7/2$ is not a positive integer. The classification is term-by-term, not based on amplitude or phase.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 9,
+      "lesson_title": "Sums of Periodic Signals",
+      "lesson_core_move": "Determine whether a sum of continuous-time periodic signals is periodic and find its repeating period by comparing component periods, angular frequencies, and harmonic relationships.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 9,
+          "lesson_title": "Sums of Periodic Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Sums of Periodic Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a sum $x(t)=x_1(t)+x_2(t)$, the key question is whether one positive shift $T$ repeats the whole sum, not whether each component is periodic in isolation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the base case, start with two components that already share the same positive period $T$. That is the simplest situation because the same shift can be tested against both components at once.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_1(t+T)=x_1(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_2(t+T)=x_2(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If both components satisfy those equalities for the same $T$, then the sum satisfies $x(t+T)=x(t)$ as well, because each term returns to itself under the same shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "When the component periods differ, do not reuse one component period automatically. Later examples will search for a common repeating time by comparing periods directly, then angular frequencies and harmonic relationships, and they will also show cases where no shared repeat exists.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That shared-shift idea is the only tool this introduction needs: if a single positive shift repeats every component, it repeats the sum, and the rest of the lesson asks how to find or rule out that shared shift.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Sums of Periodic Signals",
+          "section_index": 2,
+          "section_title": "Sums of Signals with the Same Period",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=\\cos(2\\pi t)+\\sin(2\\pi t+\\pi/3)$ is periodic and, if so, identify a repeating period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is that both terms already repeat after the same positive shift. Because the coefficient of $t$ is $2\\pi$ in each component, each signal has period $T=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_1(t+1)=\\cos\\bigl(2\\pi(t+1)\\bigr)=\\cos(2\\pi t+2\\pi)=\\cos(2\\pi t)=x_1(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_2(t+1)=\\sin\\bigl(2\\pi(t+1)+\\pi/3\\bigr)=\\sin(2\\pi t+2\\pi+\\pi/3)=\\sin(2\\pi t+\\pi/3)=x_2(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since both components return to themselves after the same shift, the sum does too: $x(t+1)=x_1(t+1)+x_2(t+1)=x_1(t)+x_2(t)=x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $x(t)$ is periodic, and one repeating period is $T=1$. The key point is that the shared period belongs to the whole sum because it belongs to every component.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Sums of Periodic Signals",
+          "section_index": 3,
+          "section_title": "Finding a Common Period from Component Periods",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=\\cos(\\pi t)+\\sin(2\\pi t/3)$ is periodic and, if so, find a repeating period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is that the component periods are different, so the goal is to find a common positive shift that repeats both terms at once. From the coefficients of $t$, $x_1(t)=\\cos(\\pi t)$ has period $2$ and $x_2(t)=\\sin(2\\pi t/3)$ has period $3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_1=\\frac{2\\pi}{\\pi}=2,\\qquad T_2=\\frac{2\\pi}{2\\pi/3}=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first shared repeat time is the least common multiple of $2$ and $3$, so $T=6$. That is the smallest positive shift that can repeat both components together.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_1(t+6)=\\cos\\bigl(\\pi(t+6)\\bigr)=\\cos(\\pi t+6\\pi)=\\cos(\\pi t)=x_1(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_2(t+6)=\\sin\\bigl(\\tfrac{2\\pi}{3}(t+6)\\bigr)=\\sin\\bigl(\\tfrac{2\\pi}{3}t+4\\pi\\bigr)=\\sin\\bigl(\\tfrac{2\\pi}{3}t\\bigr)=x_2(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since both components return to their original values after $6$, the sum does too: $x(t+6)=x_1(t+6)+x_2(t+6)=x_1(t)+x_2(t)=x(t)$. So $x(t)$ is periodic, and one repeating period is $T=6$; any larger common multiple also works, but $6$ is the least shared repeat.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Sums of Periodic Signals",
+          "section_index": 4,
+          "section_title": "Finding a Common Period from Component Angular Frequencies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=\\cos(4t)+\\sin(6t-\\pi/4)$ is periodic and, if so, find a repeating period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both coefficients of $t$ are multiples of a smaller angular frequency. Here $4=2\\cdot 2$ and $6=3\\cdot 2$, so both components are harmonics of $2$ rad/s.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "4=2\\cdot 2,\\qquad 6=3\\cdot 2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A shared base angular frequency of $2$ rad/s corresponds to period $T=\\frac{2\\pi}{2}=\\pi$. So $\\pi$ is the candidate repeat for the sum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n\\cos\\bigl(4(t+\\pi)\\bigr) &= \\cos(4t+4\\pi) = \\cos(4t),\\\\\n\\sin\\bigl(6(t+\\pi)-\\pi/4\\bigr) &= \\sin(6t-\\pi/4+6\\pi) = \\sin(6t-\\pi/4)\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because both terms return to themselves after the same shift, the sum does too: $x(t+\\pi)=x_1(t+\\pi)+x_2(t+\\pi)=x_1(t)+x_2(t)=x(t)$. So $x(t)$ is periodic, and one repeating period is $T=\\pi$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Sums of Periodic Signals",
+          "section_index": 5,
+          "section_title": "Recognizing Sums with No Shared Repeating Time",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=\\cos(t)+\\cos(\\sqrt{2}t)$ is periodic.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that each term is periodic on its own, so the test is whether they share a positive repeat time. From the angular frequencies, $x_1(t)=\\cos(t)$ has period $T_1=2\\pi$ and $x_2(t)=\\cos(\\sqrt{2}t)$ has period $T_2=\\frac{2\\pi}{\\sqrt{2}}=\\sqrt{2}\\pi$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_1=2\\pi,\\qquad T_2=\\sqrt{2}\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The ratio $T_1/T_2=\\sqrt{2}$ is irrational. An exact common repeat would have to be a common positive multiple of both periods, so it would require integers $m$ and $n$ with $2\\pi m=\\sqrt{2}\\pi n$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "2\\pi m=\\sqrt{2}\\pi n \\quad \\Rightarrow \\quad 2m=\\sqrt{2}\\,n",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That would force $\\sqrt{2}=2m/n$, a rational number, which is impossible. So no positive common shift exists, and $x(t)$ is not periodic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 10,
+      "lesson_title": "Rational Period Ratios and Periodicity",
+      "lesson_core_move": "Classify a sum of periodic continuous-time signals as periodic or aperiodic by testing whether their fundamental periods have rational ratios and finding the least common period when they do.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 10,
+          "lesson_title": "Rational Period Ratios and Periodicity",
+          "section_index": 1,
+          "section_title": "Introduction to Rational Period Ratios and Periodicity",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A sum of periodic continuous-time signals is periodic only if every component comes back to the same state after one positive time shift. The cue is a shared repeat time: look for a single $T>0$ that works for every component.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+T)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the base case of two component fundamental periods, $T_1$ and $T_2$. If one period is an integer multiple of the other, they already share a repeat time. For example, periods of $2$ s and $6$ s line up again after $6$ s.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{T_1}{T_2}\\in\\mathbb{Q}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In general, the periods must have a rational ratio. If $T_1/T_2=p/q$ in lowest terms, then multiplying through gives a common period.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{T_1}{T_2}=\\frac{p}{q}\\quad(\\gcd(p,q)=1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "qT_1=pT_2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The least common period is the smallest positive shared multiple. For any finite sum of periodic components, find the smallest $T>0$ that equals an integer multiple of every component period.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_{\\text{LC}}=\\min\\{T>0:\\,T=mT_1=nT_2,\\,m,n\\in\\mathbb{Z}_{>0}\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If the ratio is irrational, the components never line up exactly at any positive shift, so no finite common period exists and the sum is aperiodic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Rational Period Ratios and Periodicity",
+          "section_index": 2,
+          "section_title": "Testing a Sum with an Integer Period Ratio",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A sum $x(t)=x_1(t)+x_2(t)$ has component fundamental periods $T_1=2$ s and $T_2=6$ s. Determine whether $x(t)$ is periodic and, if so, find a least common period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the rational-ratio cue from the tutorial: a sum of periodic signals is periodic when the component fundamental periods share a rational ratio. Here $x(t)=x_1(t)+x_2(t)$ with $T_1=2$ s and $T_2=6$ s, so the first check is the ratio.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{T_2}{T_1}=\\frac{6}{2}=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The ratio is an integer, so the periods are commensurate. Because $6=3\\cdot 2$, the larger period is already a shared repeat time for both components.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_{\\text{LC}}=6\\text{ s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, $x(t)$ is periodic, and its least common period is $6$ s.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Rational Period Ratios and Periodicity",
+          "section_index": 3,
+          "section_title": "Finding a Least Common Period from a Noninteger Rational Ratio",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A sum $x(t)=x_1(t)+x_2(t)$ has component fundamental periods $T_1=2$ s and $T_2=3$ s. Determine whether $x(t)$ is periodic and, if so, find a least common period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the rational-ratio cue from the tutorial and the previous example: a sum is periodic when the component fundamental periods have a rational ratio. Here $x(t)=x_1(t)+x_2(t)$ with $T_1=2$ s and $T_2=3$ s, so the ratio is rational but not an integer.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{T_2}{T_1}=\\frac{3}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Even though neither period is an integer multiple of the other, the periods are commensurate. Find integers $m$ and $n$ with $mT_1=nT_2$; here $3T_1=2T_2=6$, so both components repeat after $6$ s.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_{\\text{LC}}=6\\text{ s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, $x(t)$ is periodic, and its least common period is $6$ s.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Rational Period Ratios and Periodicity",
+          "section_index": 4,
+          "section_title": "Classifying a Sum with an Irrational Period Ratio",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A sum $x(t)=x_1(t)+x_2(t)$ has component fundamental periods $T_1=2$ s and $T_2=2\\sqrt{2}$ s. Determine whether $x(t)$ is periodic.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the rational-ratio test again. Here $x(t)=x_1(t)+x_2(t)$ with $T_1=2$ s and $T_2=2\\sqrt{2}$ s, so first check the ratio of the component periods.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{T_2}{T_1}=\\frac{2\\sqrt{2}}{2}=\\sqrt{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $\\sqrt{2}$ is irrational, the periods are not commensurate. That means there are no positive integers $m$ and $n$ with $mT_1=nT_2$, so the sum has no common repeat time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, $x(t)$ is aperiodic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Rational Period Ratios and Periodicity",
+          "section_index": 5,
+          "section_title": "Finding the Least Common Period for Multiple Periodic Components",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A sum $x(t)=x_1(t)+x_2(t)+x_3(t)$ has component fundamental periods $T_1=2$ s, $T_2=3$ s, and $T_3=4$ s. Determine whether $x(t)$ is periodic and, if so, find a least common period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same rational-ratio test, but now all three component periods must fit one shared repeat time. Here $x(t)=x_1(t)+x_2(t)+x_3(t)$ with $T_1=2$ s, $T_2=3$ s, and $T_3=4$ s.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{T_2}{T_1}=\\frac{3}{2}, \\quad \\frac{T_3}{T_1}=2, \\quad \\frac{T_3}{T_2}=\\frac{4}{3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Each ratio is rational, so the three periods are commensurate. Look for a single time that is a multiple of all three periods. The smallest one is $12$ s, since $12=6T_1=4T_2=3T_3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T_{\\text{LC}}=12\\text{ s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, $x(t)$ is periodic, and its least common period is $12$ s.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

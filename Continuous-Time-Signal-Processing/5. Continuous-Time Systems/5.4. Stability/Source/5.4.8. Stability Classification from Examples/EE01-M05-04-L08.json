@@ -1,0 +1,1362 @@
+{
+  "lesson_id": "EE01-M05-04-L08",
+  "compiled_at": "2026-05-30T21:58:11+00:00",
+  "runner_version": "2026-05-30-ece-course-data-compile-quiz-blank-blocks-v1",
+  "cache_key": "01c19b0ffa7da0cbd0f65f0c87acebf3f6cdb6719f0cc1b5263c3ccb67c2f0e2",
+  "compile_options": {
+    "allow_missing_images": false,
+    "include_answers": false,
+    "quiz_blocks": true
+  },
+  "source_artifact_hashes": {
+    "course_map_path": {
+      "path": "COURSES/Electrical-and-Computer-Engineering/Continuous-Time-Signal-Processing/Course-Map-Continuous-Time-Signal-Processing.md",
+      "sha256": "e140b2ee483ef8f233ff077ac16252584a518d9a7706feee996b12180fa29979"
+    },
+    "topic_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/4-Topic-Identification/1-Outputs/Continuous-Time-Signal-Processing/5.4--stability-Topics.json",
+      "sha256": "f319046e83b3182bbc41a39fa472772e32447d481ff13e328b2a7a17b34a778f"
+    },
+    "step_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/5-Step-Identification/1-Outputs/Continuous-Time-Signal-Processing/5.4--stability-Steps.json",
+      "sha256": "c96c87feea911cff903ad80e7aad625448a306cd94418734b28a1ebdb4c880f3"
+    },
+    "outline_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/1-Step-Outline/1-Outputs/Continuous-Time-Signal-Processing/5.4--stability-Step-Outline.json",
+      "sha256": "4220779e1e2c6e784d15883e022e4a50c99687bf9def0f0e2a1e43f044a704ba"
+    },
+    "tutorial_example_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/2-Tutorial-Example-Generation/1-Outputs/Continuous-Time-Signal-Processing/5.4--stability-Tutorial-Examples.json",
+      "sha256": "82907fbe519684b8d3ae9835ab3638f59012aefa68cca3d6728ab4183605c576"
+    },
+    "question_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/3-Question-Generation/1-Outputs/Continuous-Time-Signal-Processing/5.4--stability-Questions.json",
+      "sha256": "f656bf5c68d713a803be13154abaf1bd616c07d66c75e09f3b7fec7e6378988b"
+    },
+    "image_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/5.4--stability-Images.json",
+      "sha256": "50d291e28c3539745a5eb9bc954c3f290e52f9d732ea0a516ad1997835b7a685"
+    }
+  },
+  "course": {
+    "course_slug": "Continuous-Time-Signal-Processing",
+    "course_code": "CTS",
+    "course_id": "EE01",
+    "course_name": "Continuous Time Signal Processing"
+  },
+  "module": {
+    "unit_number": "5",
+    "unit_name": "Unit 5",
+    "group_type": "module",
+    "group_id": "EE01-M05-04",
+    "group_number": "5.4",
+    "group_name": "Stability",
+    "module_id": "EE01-M05-04",
+    "module_number": "5.4",
+    "module_name": "Stability"
+  },
+  "tutorial_example_entry": {
+    "lesson_index": 8,
+    "lesson_title": "Stability Classification from Examples",
+    "lesson_core_move": "Classify continuous-time system examples as BIBO stable or unstable by identifying whether bounded inputs produce bounded outputs or reveal growth, inadequate damping, or integrator accumulation.",
+    "section_count": 6,
+    "sections": [
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 1,
+        "section_title": "Introduction to Stability Classification from Examples",
+        "step_type": "tutorial",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "tutorial_content": {
+          "blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue for this lesson is a continuous-time system example where you can inspect what happens to the output without solving the whole system. Start from the control case: a bounded input that produces a clearly bounded output. That is the behavior you want to recognize as BIBO stable before you look for failures.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\forall x(t): |x(t)| \\le M_x \\implies \\forall t: |y(t)| \\le M_y \\text{ (stable)}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "If you can point to a bounded input that forces the output to grow without bound, classify the system as unstable. The lesson will use one fixed decision path for every example: first check whether the output stays bounded, then look for growth, then inspect whether the response is too weakly damped, and finally check whether accumulation is building up over time.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\forall M > 0,\\ \\exists t_0 \\text{ such that } |y(t_0)| > M \\text{ indicates unbounded output}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The recurring instability signatures in this topic are persistent growth, inadequate damping, and integrator accumulation. A bounded input can still produce an unbounded output through accumulation, so keep that mechanism in view even when the input itself looks harmless.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y_{\\text{integrator}}(t)=\\int_0^t x(\\tau)\\,d\\tau",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Use the same scan order every time: bounded-output evidence first, then growth, then damping, then accumulation. That keeps the classification decision consistent and gives later examples a stable vocabulary to reuse.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 2,
+        "section_title": "Classifying Systems with Directly Bounded Outputs",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Classify stability for $y(t)=0.5\\,\\arctan(x(t))$ with bounded input $x(t)=\\cos(2t)$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is a bounded input passed through a static nonlinearity. Here, $x(t)=\\cos(2t)$ is bounded for all $t$, so this is the control style of example where the output can be checked directly from the formula.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|x(t)|=|\\cos(2t)|\\le 1",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Now use the output rule itself. Because $|\\arctan(u)| \\le \\pi/2$ for every real $u$, the output is globally bounded no matter which bounded value $x(t)$ takes.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|y(t)|=\\left|0.5\\,\\arctan(x(t))\\right|\\le 0.5\\cdot \\frac{\\pi}{2}=\\frac{\\pi}{4}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "That explicit finite bound means the system is BIBO stable. The reason is directly bounded output: the output stays under a fixed limit for every time $t$, so this example belongs in the stable class.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 3,
+        "section_title": "Classifying Systems with Growing Outputs",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Classify whether $y(t)=e^{t}x(t)$ is stable for bounded input $x(t)=\\sin t$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is a bounded input multiplied by an explicit growth factor. Here, $x(t)=\\sin t$ is bounded, so the only new issue is whether the factor $e^t$ forces the output to leave every finite bound.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|x(t)|=|\\sin t|\\le 1",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Now write the output magnitude directly. The bounded input stays bounded, but the exponential multiplier keeps increasing, so the output magnitude grows without bound as $t$ increases.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|y(t)|=|e^t x(t)|=e^t|x(t)|=e^t|\\sin t|",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "At times where $|\\sin t|=1$, the magnitude matches the exponential factor, so it can become arbitrarily large. That is enough to classify the system as unstable.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\forall M>0,\\ \\exists n \\text{ such that } |y(\\pi/2+2\\pi n)|=e^{\\pi/2+2\\pi n}>M",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The reason label is output growth: the input is bounded, but the exponential factor makes the output unbounded. Keep that distinction explicit, because later examples will separate growth from damping and accumulation.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 4,
+        "section_title": "Classifying Integrator-Type Accumulation",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Classify the system $y(t)=\\int_0^t x(\\tau)\\,d\\tau$ under bounded input $x(t)=1$ for all $t$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is an accumulator: the output at time $t$ is the running integral of the input. The input $x(t)=1$ is bounded, so this is a valid BIBO test case.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|x(t)| = |1| = 1",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Now evaluate the accumulated response directly. Integrating a constant input makes the output grow linearly with time, so the output does not stay within one fixed bound.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=\\int_0^t 1\\,d\\tau = t",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Because $|y(t)|=t$ grows without limit as $t$ increases, there is no finite uniform bound on the output. One bounded-input counterexample is enough to classify the system as unstable.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\forall M>0,\\ \\exists t>M \\text{ such that } |y(t)|=t>M",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The classification is unstable, and the mechanism label is integrator accumulation.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 5,
+        "section_title": "Classifying Damped Physical Responses",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Determine stability of $y(t)=e^{-3t}x(t)$ for bounded $x(t)$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is exponential decay, so this is a damping-dominated response rather than growth or accumulation. Start from the bounded-input condition $|x(t)|\\le M_x$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|x(t)|\\le M_x",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "For the causal response with $t\\ge 0$, the factor $e^{-3t}$ never exceeds $1$ and only shrinks with time. That gives an explicit global bound on the output.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "0\\le e^{-3t}\\le 1\\quad (t\\ge 0),\\qquad |y(t)|=|e^{-3t}x(t)|\\le |x(t)|\\le M_x",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Because the output stays bounded for every bounded input, the system is stable. The reason label is damping-dominated physical response.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 6,
+        "section_title": "Choosing the Stability Reason in Mixed Examples",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Classify $y(t)=e^{-2t}x(t)+\\int_0^t e^{-\\tau}x(t-\\tau)\\,d\\tau$ for bounded input $x(t)=\\sin t$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is mixed: one term is directly damped, and the other is an accumulation term with a decaying kernel. Start with the bounded input, $x(t)=\\sin t$, so $|x(t)|\\le 1$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|x(t)|\\le 1",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Bound each contribution separately. The direct term cannot grow because of the factor $e^{-2t}$, and the integral term is controlled by the same exponential decay inside the kernel.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\begin{aligned}\n|y(t)| &\\le e^{-2t}|x(t)| + \\int_0^t e^{-\\tau}|x(t-\\tau)|\\,d\\tau \\\\\n&\\le 1 + \\int_0^t e^{-\\tau}\\,d\\tau \\\\\n&\\le 2\n\\end{aligned}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The output stays bounded, so the system is stable. The single strongest reason is damping, because the decay terms prevent both growth and unbounded accumulation.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "question_entry": {
+    "lesson_index": 8,
+    "lesson_title": "Stability Classification from Examples",
+    "lesson_core_move": "Classify continuous-time system examples as BIBO stable or unstable by identifying whether bounded inputs produce bounded outputs or reveal growth, inadequate damping, or integrator accumulation.",
+    "section_count": 5,
+    "sections": [
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 2,
+        "section_title": "Classifying Systems with Directly Bounded Outputs",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given a bounded input $x(t)=\\sin(3t)$, classify the system $y(t)=2\\tanh(x(t))$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "What is the correct class label and primary reason?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, direct bounded-output argument from a bounded static nonlinearity.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because the output coefficient is large and can produce unbounded spikes.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, by insufficient damping in the rule.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, due to integrator accumulation in this rule.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because a sinusoidal input always indicates instability.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "A",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For all $t$, $|x(t)|=|\\sin(3t)|\\le 1$. Because $|\\tanh(u)|\\le 1$ for every real $u$, we get $|y(t)|=|2\\tanh(x(t))|\\le 2$. A finite global bound exists, so the system is BIBO stable via direct bounded-output reasoning.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given bounded input $x(t)=\\operatorname{sgn}(\\sin t)$, classify $y(t)=\\frac{1}{2}\\arctan(3x(t)-2)+1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose the correct class label and primary reason.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, direct bounded-output argument from a bounded static nonlinearity.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because sign changes create unbounded spikes in the output.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, due to insufficient damping in a non-damping rule.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, due to integrator accumulation from bounded input integration.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because a constant offset in the output always causes unbounded growth.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "A",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Since $x(t)=\\operatorname{sgn}(\\sin t)$, $|x(t)|\\le 1$, so $3x(t)-2$ is bounded. For any real argument, $|\\arctan(u)|\\le \\pi/2$, giving $|y(t)-1|\\le 1$. Therefore the output is bounded globally by a finite constant and the correct class is stable with direct bounded-output reasoning.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 3,
+        "section_title": "Classifying Systems with Growing Outputs",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For the system $y(t)=e^t\\cos t$, classify stability from the bounded input $x(t)=\\cos t$ and choose the best reason.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable: bounded input is multiplied by $e^t$, so the output can grow without bound.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because $\\cos t$ is bounded for all time.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable due to damping from the sinusoid factor in $\\cos t$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable due to integrator accumulation from periodic input behavior.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because periodic input guarantees bounded output.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "Unstable because output growth from $e^t$ dominates and makes $|y(t)|$ unbounded.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Since $x(t)=\\cos t$ is bounded, $|x(t)|\\le 1$. The output is $y(t)=e^t\\cos t$, so $|y(t)|=e^t|\\cos t|$. At times $t=2\\pi n$, $|y(t)|=e^{2\\pi n}$, which exceeds every finite $M$. The bounded input still gives an unbounded output, so the system is unstable due to output growth.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Classify $y(t)=e^t\\left(1+\\sin t\\right)$ for bounded input $x(t)=1+\\sin t$ and select the best reason.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable: the exponential factor multiplies a bounded signal, producing an unbounded output.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable because $1+\\sin t$ is bounded between $0$ and $2$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable due to damping from the bounded sinusoid envelope.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable because bounded input integration accumulates over time.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable because the input is periodic and the output repeats.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "Unstable because bounded input remains bounded while multiplication by $e^t$ makes $|y(t)|$ unbounded.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The input satisfies $|x(t)|=|1+\\sin t|\\le 2$, but $|y(t)|=|e^t||1+\\sin t|=e^t|1+\\sin t|$. At times $t=\\pi/2+2\\pi n$, $\\sin t=1$, so $|y(t)|=2e^t$. Since this grows without bound as $t\\to\\infty$, no finite uniform bound exists and the system is unstable via output growth.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 4,
+        "section_title": "Classifying Integrator-Type Accumulation",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For $y(t)=\\int_0^t 2x(\\tau)\\,d\\tau$ and bounded input $x(t)=1$, classify this system as stable or unstable and choose the primary reason.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because the input is bounded and the output appears bounded in early time samples.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because the output grows due to exponential growth in the formula.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because integration accumulates bounded input into an unbounded output (integrator accumulation).",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because bounded input cannot produce unbounded output without damping.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because there is no damping factor to cancel growth.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "Unstable due to integrator accumulation",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The input is bounded because $|x(t)|=1$ for all $t$. Substitute into the system rule to get $y(t)=\\int_0^t 2\\,d\\tau=2t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t 2\\,d\\tau=2t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For any finite bound $M$, choose $t>\\max\\{M,0\\}$ and then $|y(t)|=2t>M$. So there is no uniform finite bound and the system is unstable from accumulation of bounded input.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Take $x(t)=\\frac{1+\\operatorname{sgn}(\\sin t)}{2}$ and $y(t)=\\int_0^t x(\\tau)\\,d\\tau$. Which classification and mechanism is correct?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, by direct bounded-output reasoning.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because growth is caused by the oscillatory sign term.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because integrator accumulation creates unbounded output even from bounded input.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because damping is present in the bounded square-wave input.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because bounded inputs with periodic sign changes can never produce instability.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "Unstable due to integrator accumulation",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The input stays bounded: $0\\le x(t)\\le1$, so it is bounded. On each full cycle of length $2\\pi$, the positive half-cycle keeps $x(t)=1$, giving area $\\pi$, while the zero half-cycle adds nothing. Therefore, $y(t)$ increases without bound at points $t=2\\pi n$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(2\\pi n)=\\int_0^{2\\pi n} x(\\tau)\\,d\\tau = n\\pi,\\quad n\\in\\mathbb{N}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since $y(2\\pi n)=n\\pi$ grows without bound as $n\\to\\infty$, no single finite output bound exists; the failure mechanism is accumulation in the integrator.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 5,
+        "section_title": "Classifying Damped Physical Responses",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Classify the stability of $y(t)=e^{-4t}x(t)$ for $t\\ge 0$, where $x(t)=7\\sin(5t-\\pi/5)$ is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because $|x(t)|\\le 7$ and $|e^{-4t}|\\le 1$ for $t\\ge 0$, so $|y(t)|\\le 7$ for all $t$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because bounded input amplitude $7\\sin(5t-\\pi/5)$ is large and drives growth in the output.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable by accumulation, because the sine term adds up over time.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because $e^{-4t}$ is a growth factor for all time.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Cannot classify from the expression alone; the phase term decides stability.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "A",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "From bounded input, $|x(t)|\\le 7$. For $t\\ge 0$, $0\\le e^{-4t}\\le 1$, so $|y(t)| = |e^{-4t}x(t)|\\le 7\\cdot 1=7$. A finite global bound exists, so the system is BIBO stable by damping.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Classify the stability of $y(t)=e^{-2t}x(t-2)+3$ for $t\\ge 0$, with bounded input $x(t)=\\cos t+2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable, because $x(t)$ is bounded, the shift keeps $x(t-2)$ bounded, and the decaying factor plus constant produces a finite output bound.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable due to integrator accumulation, even though no integral appears in the formula.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable due to output growth, since $\n $e^{-2t}$$ forces growth like $$e^t$$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable or unstable depends on whether $x(t-2)$ has frequency $2$, because frequency does not affect boundedness.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable, because adding $3$ guarantees unbounded output as $t\\to\\infty$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "A",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Since $x(t)=\\cos t+2$ is bounded, $|x(t)|\\le 3$ and therefore $|x(t-2)|\\le 3$. With $t\\ge 0$, $0\\le e^{-2t}\\le 1$, so $|e^{-2t}x(t-2)|\\le 3$. The output obeys $|y(t)|\\le 3+3=6$, so it remains bounded; this is stable with damping-dominated response and no accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 8,
+        "lesson_title": "Stability Classification from Examples",
+        "section_index": 6,
+        "section_title": "Choosing the Stability Reason in Mixed Examples",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Classify $y(t)=e^{-2t}x(t)+\\int_0^t e^{-\\tau}x(t-\\tau)\\,d\\tau$ with bounded input $x(t)=\\cos t$. Choose one correct classification and the primary reason.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable; damping dominates and keeps both terms bounded.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable; the direct bounded-output path is enough because bounded input alone determines the result, with no need to inspect accumulation.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable; accumulation must dominate because the integral term always creates unbounded output from bounded inputs.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable; growth dominates because the response has both an integral and a multiplicative term.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable; convolution structure means the system is never stable.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "A. Stable; damping dominates and keeps both terms bounded.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "With $x(t)=\\cos t$, we have $|x(t)|\\le 1$. For each term, $e^{-2t}|x(t)|\\le 1$ and $\\left|\\int_0^t e^{-\\tau}x(t-\\tau)\\,d\\tau\\right|\\le \\int_0^t e^{-\\tau}\\,d\\tau\\le 1$. So $|y(t)|$ stays bounded by a finite constant, so the system is stable by damping, not growth or accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Classify $y(t)=\\tfrac{1}{2}e^{-3t}x(t)+\\int_0^t e^{-3\\tau}x(t-\\tau)\\,d\\tau$ for bounded input $x(t)=2\\sin(2t)$. Which classification and primary reason is correct?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable; damping controls both the direct and integral terms.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable; growth dominates because $\\sin$ inputs are periodic and can align with the exponential terms.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Stable; direct bounded-output reasoning is enough because the integral does not matter in a mixed form.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable; accumulation dominates because the input is integrated over time.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Unstable; the kernel is not explicitly decaying enough to prevent unbounded accumulation.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "A. Stable; damping controls both the direct and integral terms.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For $x(t)=2\\sin(2t)$, $|x(t)|\\le 2$. Then the direct term is bounded by $\\tfrac{1}{2}e^{-3t}|x(t)|\\le 1$. Also $\\left|\\int_0^t e^{-3\\tau}x(t-\\tau)\\,d\\tau\\right|\\le 2\\int_0^t e^{-3\\tau}\\,d\\tau\\le \\frac{2}{3}$. Both are finite for all $t$, so the output is bounded and stable; growth and accumulation are not the governing failure modes.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "image_records": [],
+  "copied_images": [],
+  "copied_source_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/Course-Map-Continuous-Time-Signal-Processing.md",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/5.4--stability-Topics.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/5.4--stability-Steps.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/5.4--stability-Step-Outline.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/5.4--stability-Tutorial-Examples.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/5.4--stability-Questions.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M05-04/EE01-M05-04-L08/Source/5.4--stability-Images.json"
+  ],
+  "copied_image_code_files": [],
+  "copied_image_context_files": []
+}

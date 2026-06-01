@@ -1,0 +1,2899 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "System Output from Input and Impulse Response",
+      "lesson_core_move": "Compute the LTI system output by evaluating the continuous-time convolution integral for a given input signal and impulse response.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "System Output from Input and Impulse Response",
+          "section_index": 1,
+          "section_title": "Introduction to System Output from Input and Impulse Response",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this lesson, the input signal is written as $x(t)$, the impulse response is written as $h(t)$, and the output signal is written as $y(t)$. The impulse response $h(t)$ describes the LTI system, so once $x(t)$ and $h(t)$ are known, the output is determined by convolution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This equation says that the output value at time t is the convolution of the input with the impulse response. The variable t is the output time, so the final answer is still a function of t.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To compute that convolution directly, use a dummy integration variable $\\tau$. The input $x(t)$ becomes $x(\\tau)$, and the impulse response $h(t)$ becomes $h(t-\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The basic workflow is: identify $x(t)$, $h(t)$, and $y(t)$; write the convolution integral; substitute the formulas as $x(\\tau)$ and $h(t-\\tau)$; then evaluate the resulting integral for the output. Later sections will practice those moves one at a time.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "System Output from Input and Impulse Response",
+          "section_index": 2,
+          "section_title": "Identifying the Input, Impulse Response, and Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A causal LTI system is driven by input $x(t)=u(t)-u(t-2)$ and has impulse response $h(t)=e$^{-t}$u(t)$. Identify the input signal, impulse response, and output symbol.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start by matching each phrase in the statement to its role. The phrase \"driven by input\" names the input signal, so the input is $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t)-u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The phrase \"has impulse response\" names the system's impulse response, so the impulse response is $h(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "h(t)=e^{-t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The output signal is the unknown response of the LTI system. We name it $y(t)$, and it is the convolution of the input with the impulse response.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the labels are: input $x(t)=u(t)-u(t-2)$, impulse response $h(t)=e$^{-t}$u(t)$, and output $y(t)$. This step only identifies the roles; the convolution integral is set up later.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "System Output from Input and Impulse Response",
+          "section_index": 3,
+          "section_title": "Writing the Output as a Convolution Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "An LTI system has input $x(t)=u(t)-u(t-1)$ and impulse response $h(t)=e$^{-2t}$u(t)$. Write the output $y(t)$ as a convolution integral before substituting the formulas.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the system is LTI and the statement gives both the input $x(t)$ and the impulse response $h(t)$. For an LTI system, the output is the convolution of those two signals.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To write this as an integral, use $\\tau$ as the integration variable. The input is read at $\\tau$, and the impulse response is read at t-$\\tau$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)\\to x(\\tau),\\qquad h(t)\\to h(t-\\tau)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now place those two factors inside the convolution integral, integrate with respect to $\\tau$, and use infinite bounds for the general continuous-time convolution form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the requested setup. The given formulas for $x(t)$ and $h(t)$ have not been substituted yet; that is the next move after the convolution template is written.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "System Output from Input and Impulse Response",
+          "section_index": 4,
+          "section_title": "Substituting x(tau) and h(t - tau) into the Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=u(t)-u(t-1)$ and $h(t)=e$^{-2t}$u(t)$, substitute $x(\\tau)$ and $h(t-\\tau)$ into the convolution integral for $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the convolution integral formed in the previous step. The new move is to replace the symbolic factors $x(\\tau)$ and $h(t-\\tau)$ with the matching formulas from the problem.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the input, replace every t in $x(t)=u(t)-u(t-1)$ with $\\tau$. This gives the factor $x(\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)=u(\\tau)-u(\\tau-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the impulse response, replace every t in $h(t)=e$^{-2t}$u(t)$ with t-$\\tau$. This gives the shifted factor $h(t-\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "h(t-\\tau)=e^{-2(t-\\tau)}u(t-\\tau)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now multiply those two substituted factors inside the same integral. Keep the infinite bounds and do not evaluate or simplify the overlap regions yet.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty}[u(\\tau)-u(\\tau-1)]e^{-2(t-\\tau)}u(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the substituted convolution integral. The setup is complete for this section; evaluating the integral is a separate step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "System Output from Input and Impulse Response",
+          "section_index": 5,
+          "section_title": "Evaluating the Integral for the Output Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For an LTI system with input $x(t)=e$^{-t}$u(t)$ and impulse response $h(t)=u(t)$, the convolution setup on $0<t<1$ is $y(t)$=$\\int$_0^t $e^{-\\tau}$\\,d$\\tau$. Evaluate $y(t)$ on this interval.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The convolution setup and the time region are already given. The task is only to evaluate the definite integral for $0<t<1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t e^{-\\tau}\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Integrate with respect to $\\tau$. An antiderivative of $e^{-\\tau}$ is -$e^{-\\tau}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int e^{-\\tau}\\,d\\tau=-e^{-\\tau}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the upper bound $\\tau$=t and the lower bound $\\tau$=0, then simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\left[-e^{-\\tau}\\right]_0^t=-e^{-t}-(-e^0)=1-e^{-t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Attach the stated interval to the result: on $0<t<1$, the output is $y(t)=1-e$^{-t}.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Breaking Convolution into Time Regions",
+      "lesson_core_move": "Partition a direct convolution calculation into time regions by tracking how the overlap between x(tau) and h(t - tau) changes as t moves.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Breaking Convolution into Time Regions",
+          "section_index": 1,
+          "section_title": "Introduction to Breaking Convolution into Time Regions",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Create a clean support-interval diagram for direct convolution. Show one horizontal tau-axis with the fixed support of x(\\tau) labeled [a,b]. Show several positions of the moving support of h(t-\\tau), labeled [t-d,t-c], including before contact, partial overlap, and after separation. Mark endpoint contact events where an endpoint of h(t-\\tau) lines up with an endpoint of x(\\tau). Include a small t-axis underneath with the corresponding breakpoint labels. Do not show detailed signal amplitudes; focus on support intervals and changing overlap."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A direct convolution is split into time regions because the $\\tau$-values that contribute to the integral change as t changes. For a fixed output time t, only $\\tau$-values where both factors are nonzero can affect $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the simplest finite-support case, $x(\\tau)$ gives a fixed support constraint on the $\\tau$-axis. If $x(\\tau)$ is nonzero on [a,b], then those endpoints do not move as t changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)\\neq 0 \\text{ on } [a,b]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The other factor, $h(t - \\tau)$, creates the moving support constraint. If h is nonzero on [c,d] in its own input variable, then $h(t - \\tau)$ is nonzero on the $\\tau$-interval [t - d, t - c].",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "h(t-\\tau)\\neq 0 \\text{ on } [t-d,t-c]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the useful $\\tau$-values are exactly the overlap of the fixed support interval and the moving support interval. When that overlap changes, the integration bounds must change too.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{overlap in }\\tau=[a,b]\\cap[t-d,t-c]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A contact time is a t-value where an endpoint of the moving interval [t - d, t - c] lines up with an endpoint of the fixed interval [a,b]. These contact times are the breakpoints for the convolution calculation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The open intervals between consecutive contact times are the time regions. Inside one such region, the overlap pattern stays the same, so the same kind of $\\tau$-bounds applies throughout that region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The routine for this lesson is to find the contact times, order them on the t-axis, decide which regions have overlap, and then write the $\\tau$ integration bounds for each overlap region.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Breaking Convolution into Time Regions",
+          "section_index": 2,
+          "section_title": "Finding Contact Times Between x(tau) and h(t - tau)",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Create a clean tau-axis support diagram for a direct convolution contact-time example. Show the fixed support of x(\\tau) as a horizontal interval from \\tau=0 to \\tau=3, labeled x(\\tau) nonzero on [0,3]. Show the moving support of h(t-\\tau) as a second horizontal interval on the same tau scale from \\tau=t-2 to \\tau=t, labeled h(t-\\tau) nonzero on [t-2,t]. Label the four endpoints 0, 3, t-2, and t clearly. Add subtle dashed vertical alignment guides indicating that each moving endpoint can be matched with each fixed endpoint. Do not show amplitudes, integral evaluation, region classification, or solved contact-time values."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "For $x(\\tau)$ nonzero on 0$\\le$ $\\tau$$\\le$ 3 and $h(t-\\tau)$ nonzero on t-2$\\le$ $\\tau$$\\le$ t, find the contact times between their support endpoints.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is endpoint contact: a contact time happens when an endpoint of the moving support of $h(t-\\tau)$ has the same $\\tau$-location as an endpoint of the fixed support of $x(\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)\\neq 0 \\text{ on } [0,3],\\qquad h(t-\\tau)\\neq 0 \\text{ on } [t-2,t]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The fixed endpoints are 0 and 3. The moving endpoints are t-2 and t. To find every contact time, set each moving endpoint equal to each fixed endpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t-2=0,\\qquad t-2=3,\\qquad t=0,\\qquad t=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now solve those four endpoint-alignment equations for t. The solutions are t-values because t is the amount that moves the support of $h(t-\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned} t-2=0&\\Rightarrow t=2 \\\\ t-2=3&\\Rightarrow t=5 \\\\ t=0&\\Rightarrow t=0 \\\\ t=3&\\Rightarrow t=3 \\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Sort the resulting t-values from earliest to latest. These are the contact times where the overlap pattern can change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=0,\\ 2,\\ 3,\\ 5",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Breaking Convolution into Time Regions",
+          "section_index": 3,
+          "section_title": "Ordering Breakpoints on the t-Axis",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Create a clean instructional diagram for ordering convolution breakpoints. In the top panel, show a tau-axis with the fixed support of x(\\tau) from \\tau=-1 to \\tau=2 and the moving support of h(t-\\tau) from \\tau=t-3 to \\tau=t-1, with all four endpoints labeled. Add small callouts for the unsorted contact-time candidates t=2, t=5, t=0, and t=3 produced by endpoint alignments. In the bottom panel, show a horizontal t-axis with the breakpoints placed left to right at 0, 2, 3, and 5, and leave the open intervals between and outside them visually clear. Do not classify the intervals as overlap or no-overlap, and do not show integration bounds or convolution values."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "For $x(\\tau)$ nonzero on -1$\\le$ $\\tau$$\\le$ 2 and $h(t-\\tau)$ nonzero on t-3$\\le$ $\\tau$$\\le$ t-1, find the contact times and order the resulting breakpoints on the t-axis.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same endpoint contact used before, but now the result must become a t-axis partition. First find the contact times, then sort them from left to right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)\\neq 0 \\text{ on } [-1,2],\\qquad h(t-\\tau)\\neq 0 \\text{ on } [t-3,t-1]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The fixed endpoints are -1 and 2. The moving endpoints are t-3 and t-1, so each moving endpoint is set equal to each fixed endpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned} t-3=-1&\\Rightarrow t=2 \\\\ t-3=2&\\Rightarrow t=5 \\\\ t-1=-1&\\Rightarrow t=0 \\\\ t-1=2&\\Rightarrow t=3 \\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The candidate breakpoints are $t=2$, $t=5$, $t=0$, and $t=3$ in the order they were found. If two equations gave the same t-value, we would keep it only once; here all four values are distinct.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0<2<3<5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "These ordered breakpoints divide the t-axis into open time regions. Include the exterior region before the first breakpoint and the exterior region after the last breakpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(-\\infty,0),\\quad (0,2),\\quad (2,3),\\quad (3,5),\\quad (5,\\infty)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the ordered breakpoints are $t=0$,2,3,5, and the listed open intervals are the candidate time regions. This section stops at the partition; it does not decide yet which regions have overlap.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Breaking Convolution into Time Regions",
+          "section_index": 4,
+          "section_title": "Classifying No-Overlap and Overlap Regions",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Create a stacked support-interval diagram for classifying convolution time regions. Use five small tau-axis rows, one for each open t-region determined by breakpoints 0, 2, 3, and 5. In every row, show the fixed x(\\tau) support [0,3]. For representative values t=-1, t=1, t=5/2, t=4, and t=6, show the moving h(t-\\tau) supports [-3,-1], [-1,1], [1/2,5/2], [2,4], and [4,6]. Shade only the tau-values covered by both supports in rows where overlap exists. Label the rows t<0: no-overlap, 0<t<2: overlap, 2<t<3: overlap, 3<t<5: overlap, and t>5: no-overlap. Do not show integration bounds, convolution formulas, or area calculations."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Using the ordered breakpoints $t=0$,2,3,5 for $x(\\tau)$ supported on [0,3] and $h(t-\\tau)$ supported on [t-2,t], classify each resulting t-region as no-overlap or overlap.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The ordered breakpoints divide the t-axis into open regions. To classify a region, test one representative t-value from inside that region and check whether the fixed support [0,3] shares any $\\tau$-values with the moving support [t-2,t].",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(-\\infty,0),\\quad (0,2),\\quad (2,3),\\quad (3,5),\\quad (5,\\infty)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use an interior representative for each open region, not a boundary value. Endpoint-only contact occurs at a breakpoint, so it does not make an entire open region an overlap region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For each representative t-value, substitute into the moving support [t-2,t] and compare that interval with the fixed support [0,3].",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{array}{c|c|c|c} \\text{region} & \\text{test }t & h(t-\\tau)\\text{ support} & \\text{classification} \\\\ \\hline t<0 & -1 & [-3,-1] & \\text{no-overlap} \\\\ 0<t<2 & 1 & [-1,1] & \\text{overlap} \\\\ 2<t<3 & \\frac{5}{2} & [\\frac{1}{2},\\frac{5}{2}] & \\text{overlap} \\\\ 3<t<5 & 4 & [2,4] & \\text{overlap} \\\\ t>5 & 6 & [4,6] & \\text{no-overlap} \\end{array}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the exterior regions $t<0$ and $t>5$ produce no overlap. The three middle regions $0<t<2$, $2<t<3$, and $3<t<5$ produce nonempty overlap and are the regions that can contribute to the convolution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{array}{c|c} \\text{t-region} & \\text{status} \\\\ \\hline t<0 & \\text{no-overlap} \\\\ 0<t<2 & \\text{overlap} \\\\ 2<t<3 & \\text{overlap} \\\\ 3<t<5 & \\text{overlap} \\\\ t>5 & \\text{no-overlap} \\end{array}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This classification only says where the product $x(\\tau)$$h(t-\\tau)$ can be nonzero. It does not yet assign the $\\tau$ integration bounds for the overlap regions.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Breaking Convolution into Time Regions",
+          "section_index": 5,
+          "section_title": "Assigning Integration Bounds for Each Time Region",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Create a stacked tau-axis support diagram for assigning convolution integration bounds. Show three rows for the overlap time regions 0<t<2, 2<t<3, and 3<t<5. In each row, show the fixed x(\\tau) support [0,3] and the moving h(t-\\tau) support [t-2,t]. Shade the intersection of the two supports. In the row 0<t<2, label the shaded overlap endpoints lower bound 0 and upper bound t. In the row 2<t<3, label the shaded overlap endpoints lower bound t-2 and upper bound t. In the row 3<t<5, label the shaded overlap endpoints lower bound t-2 and upper bound 3. Include small labels noting that the exterior regions t<0 and t>5 have no overlap and no integration bounds. Do not show integral evaluation, signal amplitudes, or convolution output formulas."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "For $x(\\tau)$ supported on [0,3] and $h(t-\\tau)$ supported on [t-2,t], assign the $\\tau$ integration bounds for each overlap time region.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the regions already classified as overlap regions. The exterior regions $t<0$ and $t>5$ have no overlap, so they give zero contribution and do not need integration bounds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0<t<2,\\qquad 2<t<3,\\qquad 3<t<5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For any overlap region, the $\\tau$-bounds come from the intersection of the fixed support and the moving support. The lower bound is the larger left endpoint, and the upper bound is the smaller right endpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[0,3]\\cap[t-2,t],\\qquad \\tau_{\\min}=\\max(0,t-2),\\qquad \\tau_{\\max}=\\min(3,t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now simplify the larger-left-endpoint and smaller-right-endpoint choices inside each overlap region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{array}{c|c|c|c} \\text{t-region} & \\text{left endpoints} & \\text{right endpoints} & \\text{tau bounds} \\\\ \\hline 0<t<2 & 0>t-2 & t<3 & 0\\le \\tau\\le t \\\\ 2<t<3 & t-2>0 & t<3 & t-2\\le \\tau\\le t \\\\ 3<t<5 & t-2>0 & 3<t & t-2\\le \\tau\\le 3 \\end{array}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is a piecewise bounds list matched to the overlap regions. These are the bounds needed for the later convolution integrals, but no integral is evaluated here.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{array}{c|c} \\text{t-region} & \\text{tau integration bounds} \\\\ \\hline 0<t<2 & 0\\le \\tau\\le t \\\\ 2<t<3 & t-2\\le \\tau\\le t \\\\ 3<t<5 & t-2\\le \\tau\\le 3 \\end{array}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Convolution with Finite-Duration Signals",
+      "lesson_core_move": "Compute the convolution of finite-duration input and impulse-response signals by finding overlap intervals, setting integration bounds, and assembling the piecewise LTI output.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Convolution with Finite-Duration Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Convolution with Finite-Duration Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an LTI system, the output is the convolution of the input signal with the impulse response. The direct calculation starts with the convolution integral, where $t$ is the output time and $\\tau$ is the integration variable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Finite-duration signals are zero outside bounded support intervals. That means most values of $\\tau$ contribute nothing to the integral. The only useful values of $\\tau$ are the values where both $x(\\tau)$ and $h(t-\\tau)$ are nonzero at the same time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(\\tau)&\\neq 0 \\text{ on } [a,b],\\\\\nh(t-\\tau)&\\neq 0 \\text{ when } t-\\tau\\in[c,d]\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first interval is fixed on the $\\tau$-axis. The second interval moves as $t$ changes. Since $h(t-\\tau)$ is nonzero when $t-\\tau$ lies between $c$ and $d$, its active $\\tau$-interval is $[t-d,t-c]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau\\in[a,b]\\cap[t-d,t-c]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That intersection is the overlap interval. For each time region, the endpoints of the overlap interval become the integration bounds for that piece of $y(t)$. If the intersection is empty, the output is zero in that time region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the simplest finite-duration case, take $x(t)=1$ on $0\\le t\\le 3$ and $h(t)=1$ on $0\\le t\\le 2$, with both signals zero outside those intervals. Then $x(\\tau)$ is fixed on $[0,3]$, while $h(t-\\tau)$ is active on $[t-2,t]$. Every nonzero piece of the convolution comes from the overlap $[0,3]\\cap[t-2,t]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\operatorname{supp}(x*h)\\subseteq[a+c,b+d]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the workflow is: find the possible output support, split time into regions where the overlap changes, set the $\\tau$-bounds from the overlap in each region, evaluate each bounded integral, and assemble the final piecewise output $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Convolution with Finite-Duration Signals",
+          "section_index": 2,
+          "section_title": "Finding the Output Support from Finite-Duration Signal Supports",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Suppose $x(t)$ is nonzero only on $0\\le t\\le 3$ and $h(t)$ is nonzero only on $1\\le t\\le 4$. Find the possible nonzero support of $y(t)=(x*h)(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both signals have finite support. To find the possible support of the convolution output, use the endpoints of the two input supports before doing any integration.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\operatorname{supp}(x)=[0,3],\\qquad \\operatorname{supp}(h)=[1,4]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first possible time when the output can be nonzero comes from adding the two left endpoints. This is the earliest time when the finite supports can first touch in the convolution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0+1=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The last possible time when the output can be nonzero comes from adding the two right endpoints. This is the latest time before the finite supports have fully separated.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "3+4=7",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, the convolution output can be nonzero only between these two endpoint sums. This gives the outer support interval, not the detailed piecewise formula for $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\operatorname{supp}(y)\\subseteq[1,7]",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Convolution with Finite-Duration Signals",
+          "section_index": 3,
+          "section_title": "Setting Integral Bounds in a Partial-Overlap Region",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Let $x(t)=1$ on $0\\le t\\le 3$ and $h(t)=1$ on $0\\le t\\le 2$, with both signals zero otherwise. For $0<t<2$, set the $\\tau$ integration bounds for $y(t)=\\int x(\\tau)h(t-\\tau)\\,d\\tau$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the stated time region $0<t<2$. In this section, the goal is not to evaluate the convolution; the goal is to find which values of $\\tau$ make both factors nonzero in that region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First rewrite the fixed signal as a support condition on $\\tau$. Since $x(t)$ is nonzero on $0\\le t\\le 3$, the factor $x(\\tau)$ is nonzero only on this fixed interval:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le \\tau\\le 3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next convert the support of $h$ into a condition on $\\tau$. The factor $h(t-\\tau)$ is nonzero when its input $t-\\tau$ lies between $0$ and $2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le t-\\tau\\le 2\\quad\\Longrightarrow\\quad t-2\\le \\tau\\le t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The integration bounds come from the overlap of the fixed interval and the moving interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau\\in[0,3]\\cap[t-2,t]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use the region condition $0<t<2$. In this region, $t-2<0$, so the larger lower endpoint is $0$. Also $t<2<3$, so the smaller upper endpoint is $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[0,3]\\cap[t-2,t]=[0,t]\\qquad(0<t<2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, for the rising partial-overlap region, the $\\tau$ bounds are $0\\le\\tau\\le t$. The bounded convolution setup is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{0}^{t} x(\\tau)h(t-\\tau)\\,d\\tau\\qquad(0<t<2)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Convolution with Finite-Duration Signals",
+          "section_index": 4,
+          "section_title": "Setting Integral Bounds in a Full-Overlap Region",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Let $x(t)=1$ on $0\\le t\\le 3$ and $h(t)=1$ on $0\\le t\\le 2$, with both signals zero otherwise. For $2<t<3$, set the $\\tau$ integration bounds for $y(t)=\\int x(\\tau)h(t-\\tau)\\,d\\tau$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the signals are the same as before, but the time region is now $2<t<3$. That region is a full-overlap region: the moving support from $h(t-\\tau)$ sits entirely inside the fixed support of $x(\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the same support intersection. The factor $x(\\tau)$ is nonzero on $[0,3]$, and the factor $h(t-\\tau)$ is nonzero when $t-2\\le \\tau\\le t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau\\in[0,3]\\cap[t-2,t]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now compare endpoints using $2<t<3$. Since $t>2$, the left endpoint $t-2$ is greater than $0$, so the lower integration bound comes from the moving interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t-2>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Also, since $t<3$, the right endpoint $t$ is less than $3$, so the upper integration bound also comes from the moving interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t<3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, in the region $2<t<3$, the moving interval $[t-2,t]$ is fully inside the fixed interval $[0,3]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[0,3]\\cap[t-2,t]=[t-2,t]\\qquad(2<t<3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the full-overlap $\\tau$ bounds are $t-2\\le\\tau\\le t$. The bounded convolution setup is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{t-2}^{t} x(\\tau)h(t-\\tau)\\,d\\tau\\qquad(2<t<3)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Convolution with Finite-Duration Signals",
+          "section_index": 5,
+          "section_title": "Evaluating Finite-Duration Convolution Pieces",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Let $x(t)=2$ on $0\\le t\\le 3$ and $h(t)=1$ on $0\\le t\\le 2$, with both signals zero otherwise. Evaluate $y(t)$ on the regions $0<t<2$ with bounds $0\\le\\tau\\le t$ and $2<t<3$ with bounds $t-2\\le\\tau\\le t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the time regions and $\\tau$ bounds are already supplied. This section adds the evaluation step: substitute the constant signal values into the integrand and evaluate each bounded integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On both stated overlap regions, the bounds have already restricted $\\tau$ to values where both factors are nonzero. Therefore $x(\\tau)=2$ and $h(t-\\tau)=1$ inside each integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)h(t-\\tau)=2\\cdot 1=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the partial-overlap region $0<t<2$, use the supplied bounds $0\\le\\tau\\le t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{0}^{t}2\\,d\\tau=2t\\qquad(0<t<2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the full-overlap region $2<t<3$, use the supplied bounds $t-2\\le\\tau\\le t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{t-2}^{t}2\\,d\\tau=2\\bigl(t-(t-2)\\bigr)=4\\qquad(2<t<3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the evaluated pieces are $y(t)=2t$ on $0<t<2$ and $y(t)=4$ on $2<t<3$. These are region-specific formulas, not the full piecewise output yet.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Convolution with Finite-Duration Signals",
+          "section_index": 6,
+          "section_title": "Assembling the Piecewise Finite-Duration Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Let $x(t)=1$ on $0\\le t\\le 3$ and $h(t)=2$ on $0\\le t\\le 2$, with both signals zero otherwise. Compute and assemble the full piecewise output $y(t)=(x*h)(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the full output is requested. That means we need the zero regions, the nonzero time regions, the bounds in each nonzero region, and the evaluated formula for each piece.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First find the possible output support from the endpoint sums. The support of $x$ is $[0,3]$, and the support of $h$ is $[0,2]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\operatorname{supp}(y)\\subseteq[0+0,3+2]=[0,5]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $y(t)=0$ outside $[0,5]$. Inside that support, use the same overlap representation as before: $x(\\tau)$ is fixed on $[0,3]$, and $h(t-\\tau)$ is active on $[t-2,t]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau\\in[0,3]\\cap[t-2,t]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The endpoint contacts split the nonzero support into a rising partial-overlap region, a full-overlap region, and a falling partial-overlap region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n0<t<2 &: \\quad 0\\le\\tau\\le t,\\\\\n2\\le t\\le 3 &: \\quad t-2\\le\\tau\\le t,\\\\\n3<t<5 &: \\quad t-2\\le\\tau\\le 3\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On each overlap interval, the integrand is constant because $x(\\tau)=1$ and $h(t-\\tau)=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)h(t-\\tau)=1\\cdot 2=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now evaluate the bounded integral on each nonzero region and keep each formula attached to the region that produced it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n0<t<2 &: \\quad y(t)=\\int_0^t 2\\,d\\tau=2t,\\\\\n2\\le t\\le 3 &: \\quad y(t)=\\int_{t-2}^t 2\\,d\\tau=4,\\\\\n3<t<5 &: \\quad y(t)=\\int_{t-2}^3 2\\,d\\tau=2(5-t)=10-2t\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Finally, assemble the zero regions and the three evaluated nonzero pieces into one piecewise output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\n0, & t\\le 0,\\\\\n2t, & 0<t<2,\\\\\n4, & 2\\le t\\le 3,\\\\\n10-2t, & 3<t<5,\\\\\n0, & t\\ge 5.\n\\end{cases}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Convolution with Sloped Signals",
+      "lesson_core_move": "Evaluate direct convolution involving sloped signal segments by expressing the overlapping pieces in tau, setting time-dependent bounds, and integrating the resulting products.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Convolution with Sloped Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Convolution with Sloped Signals",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean schematic tau-axis signal plot for direct convolution. Show x(tau) as a ramp segment x(tau)=tau on 0 <= tau <= 1, zero outside that interval. On the same tau axis, show h(t - tau) as a shifted constant segment of height 1 supported on t - 1 <= tau <= t. Shade the overlap interval between the two supports, label the fixed x(tau) support [0,1], label the moving h(t - tau) support [t - 1,t], and mark the overlap bounds a(t) and b(t). Keep the plot simple, integer-labeled, and instructional."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an LTI system, direct convolution still starts with the same integral. The output time t is held fixed, and $\\tau$ is the variable that moves through the overlap between $x(\\tau)$ and $h(t - \\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With rectangular pulses, the product is often constant on the overlap, so the main work is finding the overlap length. With a sloped segment, the signal value changes as $\\tau$ changes. That means the integrand must use the actual formula for the overlapping signal piece.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the simplest case, let the input piece be a ramp and let the shifted impulse-response piece be constant on the overlap.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)=\\tau \\text{ on } 0\\le \\tau\\le 1,\\qquad h(t-\\tau)=1 \\text{ on } t-1\\le \\tau\\le t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Only $\\tau$-values inside both active intervals contribute to the integral. If $a(t)$ is the lower overlap bound and $b(t)$ is the upper overlap bound, the one-region setup uses the ramp value $\\tau$ throughout that overlap.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{a(t)}^{b(t)} \\tau\\cdot 1\\,d\\tau=\\int_{a(t)}^{b(t)}\\tau\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the recurring workflow for sloped convolution is: write each overlapping piece as a function of $\\tau$, find the time-dependent overlap bounds, integrate the product over that interval, and then place the result in the correct piece of $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Convolution with Sloped Signals",
+          "section_index": 2,
+          "section_title": "Rewriting a Sloped Segment as a Function of Tau",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "A clean finite-duration signal plot on a tau axis. Show x(tau) = 0 outside 0 <= tau <= 2, and show one highlighted rising line segment from the point (0,0) to the point (2,4). Label the horizontal axis tau, label the vertical axis x(tau), mark endpoints (0,0) and (2,4), and make the zero regions outside the active interval visible. The image is task data for deriving the linear formula x(tau) = m tau + b."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "A signal $x(\\tau)$ is zero outside $0 \\le \\tau \\le 2$ and rises linearly from 0 at $\\tau = 0$ to 4 at $\\tau = 2$. Write $x(\\tau)$ on its nonzero interval.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the highlighted sloped segment. Before this signal can be used inside a convolution integral, the segment needs a formula in the integration variable $\\tau$, together with the interval where that formula applies.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the two endpoint coordinates from the segment. The signal value is 0 when $\\tau = 0$, and the signal value is 4 when $\\tau = 2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(0,0)\\quad\\text{and}\\quad(2,4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use change in signal value divided by change in $\\tau$ to find the slope of the line segment.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "m=\\frac{4-0}{2-0}=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now write the line in the form $x(\\tau) = m$ $\\tau$ + b. Since the segment passes through the origin, the intercept is 0.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0=2(0)+b\\quad\\Longrightarrow\\quad b=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Attach the active interval to the formula. The segment is nonzero only from $\\tau = 0$ through $\\tau = 2$, so the usable $\\tau$-domain expression is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\tau)=2\\tau,\\qquad 0\\le \\tau\\le 2.",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Convolution with Sloped Signals",
+          "section_index": 3,
+          "section_title": "Setting Bounds for a Sloped Segment Overlap",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Two aligned tau-axis support diagrams for one early-time convolution region. Show x(tau) supported on 0 <= tau <= 2 as a fixed interval, with a simple rising sloped segment drawn above it to indicate this is the sloped signal. Show h(t - tau) supported on t - 1 <= tau <= t as a shifted interval on the same tau scale. For the stated region 0 <= t <= 1, shade the overlap interval from tau = 0 to tau = t. Label the lower bound as max(0, t - 1) = 0 and the upper bound as min(2, t) = t. Keep the diagram clean, instructional, and focused on bounds rather than integration."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Let $x(\\tau)$ be nonzero on $0 \\le \\tau \\le 2$, and let $h(t - \\tau)$ be nonzero on $t - 1 \\le \\tau \\le t$. For $0 \\le t \\le 1$, set the $\\tau$-bounds for their overlap.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both factors are only nonzero on certain $\\tau$-intervals. To set the convolution bounds, intersect the fixed support of $x(\\tau)$ with the moving support of $h(t - \\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The fixed support comes from $x(\\tau)$. It contributes only when $\\tau$ is between 0 and 2.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le \\tau\\le 2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The shifted impulse-response factor has a moving support because its endpoints depend on t.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t-1\\le \\tau\\le t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The overlap interval is the intersection of those two supports. The lower bound is the larger left endpoint, and the upper bound is the smaller right endpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "[0,2]\\cap[t-1,t]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{lower bound}=\\max(0,t-1),\\qquad \\text{upper bound}=\\min(2,t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use the stated time region. If $0 \\le t \\le 1$, then $t - 1 \\le 0$, so the larger left endpoint is 0. Also $t \\le 1 \\le 2$, so the smaller right endpoint is t.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\max(0,t-1)=0,\\qquad \\min(2,t)=t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So in this early time region, the overlap that will become the integration interval is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le \\tau\\le t,\\qquad 0\\le t\\le 1.",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Convolution with Sloped Signals",
+          "section_index": 4,
+          "section_title": "Integrating a Sloped Segment Times a Constant Segment",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Aligned tau-axis plots for one convolution region. Show x(tau) = 2 tau as a rising sloped segment on 0 <= tau <= 2. Show h(t - tau) = 3 as a constant segment supported on t - 1 <= tau <= t. For the stated region 0 <= t <= 1, shade the overlap interval 0 <= tau <= t. Label the overlap bounds, label the sloped factor 2 tau, label the constant factor 3, and include the t-region label 0 <= t <= 1. Keep the diagram focused on the data needed for the integral, with no extra signal pieces."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Suppose $x(\\tau) = 2 \\tau$ on $0 \\le \\tau \\le 2$ and $h(t - \\tau) = 3$ on $t - 1 \\le \\tau \\le t$. For $0 \\le t \\le 1$, evaluate the convolution contribution over the overlap.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the overlap bounds are already determined for this early time region. The new step is to multiply the sloped factor by the constant factor and integrate with respect to $\\tau$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the overlap rule used in the previous section, the active $\\tau$-interval for $0 \\le t \\le 1$ is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le \\tau\\le t.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On that interval, substitute the two signal pieces into the integrand. The sloped piece is $x(\\tau) = 2$ $\\tau$, and the shifted constant piece is $h(t - \\tau) = 3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^t (2\\tau)(3)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Multiply the factors before integrating. The variable of integration is $\\tau$, while t stays fixed as the upper bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^t 6\\tau\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now integrate with respect to $\\tau$ and apply the time-dependent upper and lower bounds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^t 6\\tau\\,d\\tau=\\left[3\\tau^2\\right]_0^t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left[3\\tau^2\\right]_0^t=3t^2-0=3t^2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the convolution contribution for this stated time region is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "3t^2,\\qquad 0\\le t\\le 1.",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Convolution with Sloped Signals",
+          "section_index": 5,
+          "section_title": "Integrating Products of Two Sloped Segments",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Aligned tau-axis plots for one early-time convolution region with two sloped factors. Show x(tau) = tau as a rising sloped segment on 0 <= tau <= 2. Show h(t - tau) = t - tau as a decreasing sloped segment on t - 1 <= tau <= t, labeled explicitly as a function of tau. For the stated region 0 <= t <= 1, shade the overlap interval 0 <= tau <= t. Mark the overlap bounds tau = 0 and tau = t, label the two active formulas x(tau) = tau and h(t - tau) = t - tau, and include the t-region label 0 <= t <= 1. Keep the visual focused on the two linear factors and the single overlap interval."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Suppose $x(\\tau) = \\tau$ on $0 \\le \\tau \\le 2$ and $h(t - \\tau) = t - \\tau$ on $t - 1 \\le \\tau \\le t$. For $0 \\le t \\le 1$, evaluate the convolution contribution over the overlap.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both overlapping pieces are linear functions of $\\tau$. This is like the previous section, except the shifted $h(t - \\tau)$ factor is no longer constant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Bounds: for the stated early time region, the same support intersection gives the overlap interval",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le \\tau\\le t,\\qquad 0\\le t\\le 1.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Integrand: on that overlap, use $x(\\tau) = \\tau$ and $h(t - \\tau) = t - \\tau$. The regional convolution contribution is therefore",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^t \\tau(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Expansion: multiply the two linear factors before integrating. Treat t as fixed because $\\tau$ is the integration variable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau(t-\\tau)=t\\tau-\\tau^2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^t \\tau(t-\\tau)\\,d\\tau=\\int_0^t (t\\tau-\\tau^2)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Integration: integrate term by term with respect to $\\tau$, then apply the bounds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^t (t\\tau-\\tau^2)\\,d\\tau=\\left[\\frac{t\\tau^2}{2}-\\frac{\\tau^3}{3}\\right]_0^t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Evaluation: substituting the upper bound $\\tau = t$ gives two powers of t that combine into one simplified polynomial term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left[\\frac{t\\tau^2}{2}-\\frac{\\tau^3}{3}\\right]_0^t=\\frac{t^3}{2}-\\frac{t^3}{3}=\\frac{t^3}{6}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the convolution contribution for this stated time region is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{t^3}{6},\\qquad 0\\le t\\le 1.",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Convolution with Sloped Signals",
+          "section_index": 6,
+          "section_title": "Assembling the Piecewise Result for Sloped Convolution",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-006",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-006]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-006]",
+              "image_description": "A compact assembly diagram for a finite-duration sloped convolution. Show a horizontal t-axis with ordered regions t < 0, 0 <= t < 1, 1 <= t < 2, 2 <= t <= 3, and t > 3. Mark t < 0 and t > 3 as no overlap with y(t) = 0. For the active regions, include a small table or timeline labels: 0 <= t < 1 has tau-overlap 0 <= tau <= t and contribution t^3/6; 1 <= t < 2 has tau-overlap t - 1 <= tau <= t and contribution 1/6; 2 <= t <= 3 has tau-overlap t - 1 <= tau <= 2 and contribution (3 - t)^3/6. Include a final cue reading assemble into y(t). Keep the visual organized as task data, not decorative signal art."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "For a finite-duration sloped convolution, the regional calculations have already produced these results: no overlap for $t < 0$, contribution $t^3$/6 for $0 \\le t < 1$, contribution 1/6 for $1 \\le t < 2$, contribution (3 - t)^3/6 for $2 \\le t \\le 3$, and no overlap for $t > 3$. Assemble the complete piecewise output $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the hard regional work has already been done. This step is not another integration step; it is the bookkeeping step that turns region contributions into one output signal $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-006"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "List the regions in increasing order of t, including the no-overlap regions outside the total support.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t<0,\\qquad 0\\le t<1,\\qquad 1\\le t<2,\\qquad 2\\le t\\le 3,\\qquad t>3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now attach each evaluated contribution to its matching interval. The exterior no-overlap regions become zero pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{array}{c|c}\n\\text{time region} & \\text{output piece} \\\\\n\\hline\nt<0 & 0 \\\\\n0\\le t<1 & \\dfrac{t^3}{6} \\\\\n1\\le t<2 & \\dfrac{1}{6} \\\\\n2\\le t\\le 3 & \\dfrac{(3-t)^3}{6} \\\\\nt>3 & 0\n\\end{array}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the assembly before writing the final answer: the intervals are ordered, every active contribution appears once, and the zero regions outside the support are included.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, the complete piecewise convolution output is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\n0, & t<0,\\\\\n\\dfrac{t^3}{6}, & 0\\le t<1,\\\\\n\\dfrac{1}{6}, & 1\\le t<2,\\\\\n\\dfrac{(3-t)^3}{6}, & 2\\le t\\le 3,\\\\\n0, & t>3.\n\\end{cases}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Using Geometry for Piecewise Convolution",
+      "lesson_core_move": "Convert each time-region overlap in a direct convolution into geometric area calculations to obtain the piecewise LTI system output.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Using Geometry for Piecewise Convolution",
+          "section_index": 1,
+          "section_title": "Introduction to Using Geometry for Piecewise Convolution",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean tau-axis product-overlap diagram for one fixed value of t. Show x(\\tau) and h(t - \\tau) aligned on the same horizontal \\tau axis, with their active overlap interval labeled from a(t) to b(t). Below or directly over the overlap, shade the resulting product region x(\\tau)h(t - \\tau) as a simple rectangle. Label the rectangle width as b(t) - a(t) and the constant product height as C. Keep the diagram instructional and uncluttered; avoid decorative signal art."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a direct convolution, the output at one fixed time t is found by integrating over the horizontal variable $\\tau$. The value of t stays fixed while $\\tau$ moves across the overlap between $x(\\tau)$ and $h(t - \\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After the convolution has been split into time regions, each region has its own overlap interval. On one such region, the nonzero contribution comes only from the $\\tau$-values where both factors are active.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{a(t)}^{b(t)}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The geometric shortcut is to look at the product $x(\\tau)$$h(t - \\tau)$, not either signal alone. The integral is the signed area under that product over the current overlap interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the simplest case, the product is constant over the whole overlap interval. Then the shaded product region is a rectangle: its width is the overlap length in $\\tau$, and its height is the constant product value.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{a(t)}^{b(t)} C\\,d\\tau=C\\bigl(b(t)-a(t)\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the recurring move for the lesson: identify the product shape for the current time region, read its geometric dimensions, compute the area, and attach that area formula to the correct piece of $y(t)$. Later sections use the same idea for rectangles, triangles, trapezoids, composite regions, and final piecewise assembly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Using Geometry for Piecewise Convolution",
+          "section_index": 2,
+          "section_title": "Finding a Constant-Height Overlap Area",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "A clean tau-axis overlap-product diagram for the time region 0 <= t <= 1. Show one shaded rectangular product region representing x(\\tau)h(t - \\tau). Label the horizontal tau-width of the rectangle as t and the constant vertical product height as 3. Include a tau axis, the rectangle boundary, and the label 0 <= t <= 1. Keep the visual focused on the rectangle dimensions; do not add decorative signal art or extra unused signal pieces."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the shown overlap region for $0 \\le t \\le 1$, the product $x(\\tau)$$h(t - \\tau)$ is a rectangle with $\\tau$-width t and constant height 3. Use geometry to find the convolution contribution for this region.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the shaded product region is a rectangle. For this time region, the convolution contribution is the area under the product $x(\\tau)$$h(t - \\tau)$, so use rectangle area instead of setting up a new algebraic integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the two dimensions from the product diagram: the $\\tau$-width is t, and the constant product height is 3.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{area}=(\\text{width})(\\text{height})=t\\cdot 3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Multiplying the width by the height gives the value of the regional convolution integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{\\text{overlap}}x(\\tau)h(t-\\tau)\\,d\\tau=3t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the convolution contribution on the stated region is 3t for $0 \\le t \\le 1$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Using Geometry for Piecewise Convolution",
+          "section_index": 3,
+          "section_title": "Finding a Triangular Overlap Area",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "A clean tau-axis product-region diagram for the time region 0 <= t <= 1. Show one shaded right-triangle region representing x(\\tau)h(t - \\tau). Label the horizontal base along the tau axis as t and label the maximum vertical product height as 2t. Include a tau axis, the triangular boundary, and the label 0 <= t <= 1. Keep the visual focused on the triangle dimensions; do not add decorative signal art or extra unused signal pieces."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the shown overlap region for $0 \\le t \\le 1$, the product $x(\\tau)$$h(t - \\tau)$ is a right triangle with base t and height 2t. Use geometry to find the convolution contribution for this region.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the shaded product region is a triangle. The convolution contribution is still the area under the product $x(\\tau)$$h(t - \\tau)$, but this time the product has one sloped boundary, so use triangle area instead of rectangle area.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the two triangle dimensions from the product diagram: the base along the $\\tau$ axis is t, and the maximum product height is 2t.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{area}=\\frac{1}{2}(\\text{base})(\\text{height})",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the base and height from the diagram, then simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{1}{2}(t)(2t)=t^2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the convolution contribution on the stated region is $t^2$ for $0 \\le t \\le 1$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Using Geometry for Piecewise Convolution",
+          "section_index": 4,
+          "section_title": "Finding a Trapezoidal Overlap Area",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean tau-axis product-region diagram for the time region 1 <= t <= 2. Show one shaded trapezoid under the product x(\\tau)h(t - \\tau). Label the horizontal tau-width as 1, the left vertical height as 2, and the right vertical height as t + 1. Include a tau axis, the trapezoid boundary, and the label 1 <= t <= 2. Keep the visual focused on the trapezoid dimensions; do not add decorative signal art or extra unused signal pieces."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the shown overlap region for $1 \\le t \\le 2$, the product $x(\\tau)$$h(t - \\tau)$ is a trapezoid with $\\tau$-width 1, left height 2, and right height t + 1. Use geometry to find the convolution contribution for this region.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the shaded product region is a trapezoid. The convolution contribution is still the area under $x(\\tau)$$h(t - \\tau)$, but now the product has two nonzero parallel heights, so average the heights and multiply by the $\\tau$-width.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the trapezoid dimensions from the product diagram: the $\\tau$-width is 1, the left height is 2, and the right height is t + 1.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{area}=\\frac{1}{2}(\\text{left height}+\\text{right height})(\\text{width})",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the two heights and the width, then simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{1}{2}\\bigl(2+(t+1)\\bigr)(1)=\\frac{t+3}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the convolution contribution on the stated region is (t + 3)/2 for $1 \\le t \\le 2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Using Geometry for Piecewise Convolution",
+          "section_index": 5,
+          "section_title": "Splitting an Overlap Region into Geometric Pieces",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "A clean tau-axis product-region diagram for the time region 1 <= t <= 2. Show one shaded composite region representing x(\\tau)h(t - \\tau), subdivided by a dashed vertical line into a rectangle plus a right triangle. Label the rectangle width as 1 and height as 2. Label the triangle base as t - 1 and height as t - 1. Include a tau axis, the decomposition line, and the label 1 <= t <= 2. Keep the visual focused on the component dimensions; do not add decorative signal art or extra unused signal pieces."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the shown overlap region for $1 \\le t \\le 2$, the product $x(\\tau)$$h(t - \\tau)$ is split into a rectangle of width 1 and height 2 plus a right triangle of base t - 1 and height t - 1. Use geometry to find the convolution contribution for this region.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the shaded product region is not one standard shape. Split it along the marked line, compute the area of each simple piece, and add those areas to get the convolution contribution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rectangle piece: the rectangle has width 1 and height 2, so its area is width times height.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "A_{\\text{rect}}=(1)(2)=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Triangle piece: the right triangle has base t - 1 and height t - 1, so use one-half times base times height.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "A_{\\text{tri}}=\\frac{1}{2}(t-1)(t-1)=\\frac{1}{2}(t-1)^2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add the component areas because the two pieces partition the same product region without overlapping interiors.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "A_{\\text{total}}=2+\\frac{1}{2}(t-1)^2=\\frac{1}{2}t^2-t+\\frac{5}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the convolution contribution on the stated region is 2 + (1/2)(t - 1)^2, equivalently (1/2)$t^2$ - t + 5/2, for $1 \\le t \\le 2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Using Geometry for Piecewise Convolution",
+          "section_index": 6,
+          "section_title": "Assembling the Piecewise Output from Geometric Areas",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-006",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-006]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-006]",
+              "image_description": "A compact time-axis region summary for assembling a piecewise convolution output. Show the t-axis partitioned into five ordered regions: t < 0 labeled zero overlap, 0 <= t < 1 labeled rectangle area A_1(t)=3t, 1 <= t < 2 labeled triangle area A_2(t)=t^2, 2 <= t < 3 labeled trapezoid area A_3(t)=4 - t, and t >= 3 labeled zero overlap. Include a clear cue that these formulas are already computed geometric areas to be placed into y(t). Keep the visual structured and symbolic; do not add decorative signal art."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "A convolution has been split into ordered time regions. The region summary gives $A_1(t)=3t$ on $0 \\le t < 1$, $A_2(t)=t^2$ on $1 \\le t < 2$, and $A_3(t)=4 - t$ on $2 \\le t < 3$, with zero overlap for $t < 0$ and $t \\ge 3$. Assemble the complete piecewise output $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the geometric area formulas have already been computed. This step is not about finding new areas; it is about placing each area formula on its matching time interval and adding zero outside the active support.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-006"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "List the regions in increasing order and keep the no-overlap regions. That gives two zero pieces and three active pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t<0,\\quad 0\\le t<1,\\quad 1\\le t<2,\\quad 2\\le t<3,\\quad t\\ge 3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now assign each computed area formula to the interval where it was produced. The exterior regions have no overlap, so $y(t)$ is zero there.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}0, & t<0,\\\\3t, & 0\\le t<1,\\\\t^2, & 1\\le t<2,\\\\4-t, & 2\\le t<3,\\\\0, & t\\ge 3.\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This piecewise expression is the full LTI system output for the summarized convolution because every ordered region is covered exactly once.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Checking Continuity of a Convolution Result",
+      "lesson_core_move": "Verify a piecewise convolution result by comparing left- and right-hand boundary values at adjacent time regions to catch algebra or region errors.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Checking Continuity of a Convolution Result",
+          "section_index": 1,
+          "section_title": "Introduction to Checking Continuity of a Convolution Result",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Direct convolution often produces a piecewise output because the overlap between $x(\\tau)$ and $h(t-\\tau)$ changes as t moves. After assembling $y(t)$, one useful verification step is to inspect the time boundaries where the formula changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At a shared boundary $t=a$, evaluate the formula from the region just to the left and the formula from the region just to the right. The continuity check asks whether those two boundary values agree.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_{\\text{left}}(a)=y_{\\text{right}}(a)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the simplest zero-to-nonzero boundary, suppose the piecewise result has $y(t)=0$ for $t<a$ and $y(t)=t-a$ for a$\\le$ $t<b$. The left piece gives 0 at $t=a$, and the right piece also gives 0.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\ny_{\\text{left}}(a)&=0,\\\\\ny_{\\text{right}}(a)&=a-a=0\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the values match, the boundary passes the continuity check. If the values do not match, the check does not automatically give the corrected formula; it tells you to recheck the algebra, integration bounds, or region assignment near that boundary.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_{\\text{left}}(a)=y_{\\text{right}}(a)\\Rightarrow \\text{check passes},\\qquad y_{\\text{left}}(a)\\ne y_{\\text{right}}(a)\\Rightarrow \\text{recheck nearby work}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In this lesson, the same boundary-value test is used first at an outer zero-to-nonzero boundary, then at an interior boundary between two nonzero pieces, then across all boundaries of a piecewise convolution result.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Checking Continuity of a Convolution Result",
+          "section_index": 2,
+          "section_title": "Checking Continuity at a Zero-to-Nonzero Boundary",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Check whether the piecewise convolution result $y(t)=0$ for $t<1$ and $y(t)=t-1$ for $1\\let<3$ is continuous at $t=1$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the formula changes at $t=1$. To check this boundary, compare the value from the zero-output region with the value from the first nonzero formula at the same boundary time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\n0, & t<1,\\\\\nt-1, & 1\\le t<3\n\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The left-hand region is the zero piece, so its boundary value is 0. For the right-hand region, substitute $t=1$ into the formula t-1.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\ny_{\\text{left}}(1)&=0,\\\\\ny_{\\text{right}}(1)&=1-1=0\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both adjacent pieces give the same boundary value. Therefore, the piecewise convolution result passes the continuity check at $t=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_{\\text{left}}(1)=y_{\\text{right}}(1)=0",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Checking Continuity of a Convolution Result",
+          "section_index": 3,
+          "section_title": "Checking an Interior Boundary Between Two Nonzero Pieces",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Check whether $y(t) = t$ for $0 \\le t < 1$ and $y(t) = 2 - t$ for $1 \\le t < 2$ is continuous at $t = 1$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $t=1$ is an interior boundary between two nonzero formulas. Use the same boundary-value rule, but now evaluate both adjacent pieces at $t=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\nt, & 0\\le t<1,\\\\\n2-t, & 1\\le t<2\n\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the left piece, substitute $t=1$ into the formula t. For the right piece, substitute $t=1$ into the formula 2-t.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\ny_{\\text{left}}(1)&=1,\\\\\ny_{\\text{right}}(1)&=2-1=1\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The two formulas look different, but continuity is checked by comparing their boundary values, not their forms or slopes. Since both values are 1, the interior boundary passes the continuity check.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_{\\text{left}}(1)=y_{\\text{right}}(1)=1",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Checking Continuity of a Convolution Result",
+          "section_index": 4,
+          "section_title": "Checking Continuity Across All Time-Region Boundaries",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Check continuity at every boundary for $y(t) = 0$ for $t < 0$, $y(t) = t$ for $0 \\le t < 1$, $y(t) = 2 - t$ for $1 \\le t < 2$, and $y(t) = 0$ for $t \\ge 2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that this piecewise result has several time-region boundaries. List the shared boundaries in increasing order, then compare the formula immediately to the left with the formula immediately to the right at each boundary.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\n0, & t<0,\\\\\nt, & 0\\le t<1,\\\\\n2-t, & 1\\le t<2,\\\\\n0, & t\\ge 2\n\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The shared boundaries are $t=0$, $t=1$, and $t=2$. Check each one by evaluating only the two pieces that touch that boundary.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nt=0:&\\quad y_{\\text{left}}(0)=0,\\quad y_{\\text{right}}(0)=0,\\\\\nt=1:&\\quad y_{\\text{left}}(1)=1,\\quad y_{\\text{right}}(1)=2-1=1,\\\\\nt=2:&\\quad y_{\\text{left}}(2)=2-2=0,\\quad y_{\\text{right}}(2)=0\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Every adjacent pair gives matching boundary values. Therefore, the piecewise convolution result passes the continuity check at all of its time-region boundaries.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{All boundary checks pass.}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Checking Continuity of a Convolution Result",
+          "section_index": 5,
+          "section_title": "Using a Failed Continuity Check to Find an Error",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A computed convolution result is $y(t) = 0$ for $t < 0$, $y(t) = t$ for $0 \\le t < 1$, $y(t) = 3 - t$ for $1 \\le t < 2$, and $y(t) = 0$ for $t \\ge 2$. Use a continuity check to identify where the result likely contains an error.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that this is no longer just a pass-or-fail verification. Use the same boundary-value comparison, but scan the boundaries in order until a mismatch appears.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\n0, & t<0,\\\\\nt, & 0\\le t<1,\\\\\n3-t, & 1\\le t<2,\\\\\n0, & t\\ge 2\n\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The shared boundaries are $t=0$, $t=1$, and $t=2$. Start at $t=0$ by comparing the zero piece on the left with the formula t on the right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=0:\\quad y_{\\text{left}}(0)=0,\\quad y_{\\text{right}}(0)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The boundary $t=0$ passes, so move to the next boundary. At $t=1$, compare the left formula t with the right formula 3-t.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=1:\\quad y_{\\text{left}}(1)=1,\\quad y_{\\text{right}}(1)=3-1=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The values at $t=1$ do not match. That flags the adjacent pieces around $t=1$, or the transition between them, as the likely place to investigate for an algebra, integration-bound, or region-assignment error.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_{\\text{left}}(1)\\ne y_{\\text{right}}(1)\\Rightarrow \\text{recheck the pieces adjacent to }t=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This continuity check locates a likely problem area, but it does not by itself determine the corrected convolution formula.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Interpreting Convolution as LTI System Output",
+      "lesson_core_move": "Interpret a piecewise convolution result as the time-domain output behavior of an LTI system determined jointly by the input signal and impulse response.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Interpreting Convolution as LTI System Output",
+          "section_index": 1,
+          "section_title": "Introduction to Interpreting Convolution as LTI System Output",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Create a compact black-and-white technical diagram of an LTI system. Show an input arrow labeled x(t) entering a rectangular system block labeled h(t), and an output arrow labeled y(t)=(x*h)(t). Beneath the block diagram, show three small aligned time axes labeled input x(t), impulse response h(t), and output y(t), with simple finite-duration sketches on each axis. Keep all labels readable and do not add numeric signal data."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an LTI system, the impulse response $h(t)$ characterizes the system. When the input is $x(t)$, the output is the convolution of $x(t)$ with $h(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The convolution formula still tells you where $y(t)$ comes from, but in this lesson the main move is interpretation. Once the convolution has already been computed, treat the resulting piecewise function as the time-domain output signal $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For a finite-duration input and a finite-duration impulse response, the computed output is often a piecewise signal. A simple case has zero output before the signals overlap, a nonzero region where the output rises, reaches a peak or plateau, and then falls, and zero output again after overlap ends.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\n0, & t<a \\\\\ny_1(t), & a\\le t<b \\\\\ny_2(t), & b\\le t<c \\\\\n0, & t\\ge c\n\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To interpret the result, first name the piecewise function as $y(t)$. Then read where $y(t)$ is zero, where it is nonzero, which breakpoints divide the time axis, and how the output changes on each interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Those breakpoints come from changes in overlap between $x(\\tau)$ and $h(t-\\tau)$. Here, you use that overlap idea to explain the output behavior, not to recompute the convolution integral from scratch.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Interpreting Convolution as LTI System Output",
+          "section_index": 2,
+          "section_title": "Identifying the Convolution Result as the Output y(t)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "An LTI system has input $x(t)$, impulse response $h(t)$, and the convolution has already been computed as (x*h)$(t)=g(t)$. Identify the system output $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an LTI system, the output rule is that the output equals the convolution of the input with the impulse response.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here, the convolution has already been computed and named $g(t)$. Match the given statement to the output rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(x*h)(t)=g(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since $y(t)$ is the convolution result, the system output is $g(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=g(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The output is not $x(t)$ alone, $h(t)$ alone, or the product $x(t)$$h(t)$. It is the computed convolution of the input and impulse response.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Interpreting Convolution as LTI System Output",
+          "section_index": 3,
+          "section_title": "Reading Zero and Nonzero Output Regions",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Create a clean black-and-white time-domain plot of the convolution output y(t). Show a horizontal t-axis and a vertical y(t)-axis. Plot y(t)=0 for t<a, a nonzero finite-duration curve from t=a to t=b, and y(t)=0 for t>b. Label the breakpoints a and b on the t-axis, label the nonzero region a<t<b, and make the zero line visible before a and after b. Use no numeric values."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "A plotted convolution output $y(t)$ is zero before $t=a$, nonzero from $t=a$ to $t=b$, and zero after $t=b$. Identify the zero and nonzero output regions.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The plotted curve is the computed convolution output, so read it as $y(t)$. The task is not to recompute the convolution integral; it is to read where the output exists over time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Before the first breakpoint a, the graph lies on the zero line. Therefore the output is zero for times before a.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=0, \\qquad t<a",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From a to b, the graph leaves the zero line. That interval is the nonzero output region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)\\ne 0, \\qquad a<t<b",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After the second breakpoint b, the graph returns to the zero line. Therefore the output is zero for times after b.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=0, \\qquad t>b",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the output is nonzero from a to b, and it is zero before a and after b. The endpoint convention is not the main issue here; a and b are the support boundaries of the output.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Interpreting Convolution as LTI System Output",
+          "section_index": 4,
+          "section_title": "Connecting Piecewise Breakpoints to Changing Overlap",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Create a clean black-and-white instructional diagram with four aligned panels. Panel 1: a fixed rectangular support for x(tau) on a tau-axis, labeled from its left endpoint to its right endpoint. Panels 2-4: matching tau-axes showing the shifted support of h(t-tau) at t=a, t=b, and t=c, with overlap against x(tau) highlighted. At t=a, the right endpoint of h(t-tau) just touches the left endpoint of x(tau). At t=b, the supports are aligned with maximum overlap. At t=c, the left endpoint of h(t-tau) just touches the right endpoint of x(tau). Add a small y(t) plot at the bottom with breakpoints a, b, and c marked, showing zero before a, a nonzero region split at b, and zero after c."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "A finite-duration input and impulse response produce a piecewise output $y(t)$ with breakpoints at $t=a$, $t=b$, and $t=c$. Explain what changes in the overlap between $x(\\tau)$ and $h(t-\\tau)$ at each breakpoint.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $y(t)$ is piecewise. A breakpoint in $y(t)$ marks a time when the overlap relationship between $x(\\tau)$ and $h(t-\\tau)$ changes. We will read the breakpoints in increasing order.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a<b<c",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $t=a$, the shifted support of $h(t-\\tau)$ first touches the support of $x(\\tau)$. This is the start of overlap, so it explains why $y(t)$ changes from zero to a nonzero piece after a.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=a:\\quad \\text{overlap begins}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $t=b$, the endpoint alignment changes inside the nonzero region. In the sketch, the supports are aligned at their maximum overlap, so after b the overlap no longer grows in the same way. This creates a new piece of $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=b:\\quad \\text{overlap changes from growing to shrinking}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $t=c$, the shifted support of $h(t-\\tau)$ reaches the last contact with the support of $x(\\tau)$. After that time there is no overlap, so $y(t)$ returns to zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=c:\\quad \\text{overlap ends}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the breakpoints are not arbitrary features of the formula. They come from support events in the convolution: overlap begins at a, the overlap pattern changes at b, and overlap ends at c.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Interpreting Convolution as LTI System Output",
+          "section_index": 5,
+          "section_title": "Explaining Output Shape from the Input and Impulse Response",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Create a clean black-and-white instructional diagram with three aligned time-domain plots using a shared horizontal time scale. Top plot: x(t) as a wider finite-duration rectangular pulse. Middle plot: h(t) as a shorter finite-duration rectangular pulse. Bottom plot: the computed output y(t) as a trapezoidal finite-duration signal with breakpoints labeled a, b, c, and d. Label the y(t) intervals as zero before a, rising on a<t<b, level on b<t<c, falling on c<t<d, and zero after d. Keep the figure uncluttered and do not include convolution calculations."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Plots of a finite-duration input $x(t)$, impulse response $h(t)$, and computed output $y(t)$ are shown. Explain why $y(t)$ first rises, then levels off, and finally falls.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the shape of the computed output $y(t)$. To explain that shape, connect each interval of $y(t)$ to how $x(\\tau)$ overlaps the shifted impulse response $h(t-\\tau)$ as t moves.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the plot, the nonzero output is divided into three behavior intervals: $y(t)$ rises from a to b, stays level from b to c, and falls from c to d.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a<t<b:\\ \\text{rising},\\qquad b<t<c:\\ \\text{level},\\qquad c<t<d:\\ \\text{falling}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On the first interval, the shifted $h(t-\\tau)$ is entering the support of $x(\\tau)$. More of the two signals overlap as t increases, so the weighted overlap in the integral increases. That is why $y(t)$ rises.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a<t<b:\\quad \\text{overlap increases}\\Rightarrow y(t)\\text{ rises}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On the middle interval, the shorter pulse is fully inside the longer pulse. The amount of overlap stays the same, so the convolution output stays level instead of continuing to rise.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "b<t<c:\\quad \\text{overlap stays constant}\\Rightarrow y(t)\\text{ levels off}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On the final nonzero interval, $h(t-\\tau)$ is leaving the support of $x(\\tau)$. The overlap shrinks as t increases, so the value of the integral decreases. That is why $y(t)$ falls back to zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "c<t<d:\\quad \\text{overlap decreases}\\Rightarrow y(t)\\text{ falls}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the output shape is not explained by $x(t)$ alone or $h(t)$ alone. It comes from their joint overlap inside the convolution integral.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Interpreting Convolution as LTI System Output",
+          "section_index": 6,
+          "section_title": "Summarizing the LTI System Response from the Piecewise Output",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-006",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-006]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-006]",
+              "image_description": "Create a clean black-and-white instructional figure showing a final piecewise output y(t) for an LTI system. Include a small block diagram x(t) -> h(t) -> y(t) above the plot. The y(t) plot should have a horizontal t-axis, visible zero regions before a and after d, and marked breakpoints a, b, c, and d. Label the nonzero regions as rising on a<t<b, level on b<t<c, and falling on c<t<d. Keep the visual focused on summarizing the output behavior; do not include convolution calculations or extra signal plots."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "A computed piecewise output $y(t)$ is shown for an LTI system with input $x(t)$ and impulse response $h(t)$. Summarize the system's time-domain output behavior.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The plotted piecewise function is the system output $y(t)$. Since the system is LTI, this output is the convolution of the given input $x(t)$ with the impulse response $h(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=(x*h)(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-006"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start the summary by stating the support. The output is zero before the first breakpoint a, nonzero from a to d, and zero again after d.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=0\\text{ for }t<a\\text{ and }t>d,\\qquad y(t)\\ne 0\\text{ for }a<t<d",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, name the breakpoints that divide the response into time regions. Here, the relevant breakpoints are a, b, c, and d.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a<b<c<d",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now describe the behavior inside the nonzero interval. The output rises on the first nonzero interval, stays level in the middle interval, and falls on the final nonzero interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "a<t<b:\\ \\text{rises},\\qquad b<t<c:\\ \\text{stays level},\\qquad c<t<d:\\ \\text{falls}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A concise response summary is: for this input and impulse response, the LTI system output is zero until a, turns on and rises from a to b, remains level from b to c, falls from c to d, and is zero after d.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The final phrase matters: this is the response to the given $x(t)$ through the system with impulse response $h(t)$, not a behavior of $x(t)$ alone, $h(t)$ alone, or the system independent of its input.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

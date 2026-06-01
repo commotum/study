@@ -1,0 +1,1707 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Systems as Signal Transformations",
+      "lesson_core_move": "Interpret a continuous-time system as a rule that transforms an input signal into an output signal, connecting the system-as-transformation view to later filters, circuits, differential-equation models, and system-property tests.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Systems as Signal Transformations",
+          "section_index": 1,
+          "section_title": "Introduction to Systems as Signal Transformations",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this course, $x(t)$ names an input signal and $y(t)$ names the corresponding output signal. A continuous-time system is the rule that takes one signal in and produces the other signal out.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read $T\\{\\cdot\\}$ as the system itself. The input signal enters the rule, the rule acts on it, and the output signal comes out. The system is the transformation, not the signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the identity transformation, the output is exactly the input. This is the simplest case: the system still has an input-to-output structure, but it leaves the signal unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=2x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In a scaled transformation, the same input-output structure remains, but the rule changes the input by a fixed factor. Later sections will keep this same view and use it to interpret filters, circuits, differential-equation models, and system-property tests.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Systems as Signal Transformations",
+          "section_index": 2,
+          "section_title": "Distinguishing a Signal from a System",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $y(t)=\\dfrac{d}{dt}x(t)+2x(t)$, identify the input signal, output signal, and system mapping.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the equation $y(t)=\\dfrac{d}{dt}x(t)+2x(t)$. The left-hand side tells us the output signal, and the expression on the right tells us the system rule that transforms the input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\dfrac{d}{dt}x(t)+2x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $x(t)$ is the input signal, because it is the signal being acted on. The output signal is $y(t)$, because it is the signal produced after the rule acts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the system is the operator $T\\{\\cdot\\}$ defined by $T\\{x(t)\\}=\\dfrac{d}{dt}x(t)+2x(t)$. The transformation is the whole rule, not either signal by itself.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Systems as Signal Transformations",
+          "section_index": 3,
+          "section_title": "Applying a Simple System Rule to a Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Apply $y(t)=x(t-1)$ to $x(t)=u(t)-u(t-2)$ and simplify the output expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the system rule $y(t)=x(t-1)$. That rule says to keep the same input signal form and replace every $t$ inside $x(t)$ with $t-1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the input signal is $x(t)=u(t)-u(t-2)$. Apply the same shift to each term: $u(t)$ becomes $u(t-1)$ and $u(t-2)$ becomes $u(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t)-u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the output is $y(t)=u(t-1)-u(t-3)$. The system rule stayed fixed; only the input was transformed by the same shift everywhere it appeared.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=u(t-1)-u(t-3)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Systems as Signal Transformations",
+          "section_index": 4,
+          "section_title": "Recognizing the Same System Rule Across Different Inputs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x_1(t)=t$, $x_2(t)=e^{-t}$, and $x_3(t)=\\sin t$, show how all three follow the same rule $y(t)=x(t-1)+x(t+1)$ and compute one output form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same fixed system rule $y(t)=x(t-1)+x(t+1)$. The input changes from one signal to the next, but the rule stays exactly the same.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t-1)+x(t+1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $x_1(t)=t$, substitute $t-1$ and $t+1$ into the same rule. That gives $y_1(t)=x_1(t-1)+x_1(t+1)=(t-1)+(t+1)=2t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\ny_1(t) &= x_1(t-1)+x_1(t+1) \\\\\n&= (t-1)+(t+1) \\\\\n&= 2t\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $x_2(t)=e^{-t}$, the same substitution pattern gives $y_2(t)=x_2(t-1)+x_2(t+1)=e^{-(t-1)}+e^{-(t+1)}$. For $x_3(t)=\\sin t$, the output follows the same rule: $y_3(t)=\\sin(t-1)+\\sin(t+1)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\ny_2(t) &= e^{-(t-1)}+e^{-(t+1)} \\\\\ny_3(t) &= \\sin(t-1)+\\sin(t+1)\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The important point is that the system rule does not change when the input changes. Each new signal is processed by the same transformation, so the system is recognized by its rule, not by one particular input.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Inputs and Outputs",
+      "lesson_core_move": "Distinguish the input signal, output signal, and transformation direction for a continuous-time system so a situation can be framed as an input-output model before applying system notation and system-property tests.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Inputs and Outputs",
+          "section_index": 1,
+          "section_title": "Introduction to Inputs and Outputs",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time system is a rule that takes one signal in and produces another signal out. In this lesson, call the signal that goes in the input, call the signal that comes out the output, and read the direction from input to output before you try to name any physical meaning.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read $y(t)=T\\{x(t)\\}$ as: the signal $x(t)$ is fed into the system rule $T$, and the result is $y(t)$. If $x(t)$ appears inside the system operator and $y(t)$ appears on the outside, then the mapping runs from input to output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=2x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The base case $y(t)=x(t)$ follows the same frame: $x(t)$ is still the input signal, $y(t)$ is still the output signal, and the transformation direction is still input to output even when the two signals match exactly. Keep the mapping clear first; only after that should you attach a physical meaning such as voltage, position, or temperature.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Inputs and Outputs",
+          "section_index": 2,
+          "section_title": "Identifying Inputs and Outputs from System Descriptions",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $y(t)=4x(t)-5$, label which quantity is the input signal, which quantity is the output signal, and state the transformation direction.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A written system description usually shows one signal on the left and one signal inside the rule on the right. Use that placement as your cue: the left-side signal is the output candidate, and the signal inside the rule is the input candidate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=4x(t)-5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $y(t)=4x(t)-5$, the signal being transformed is $x(t)$, and the result is $y(t)$. The constant $-5$ changes the output value, but it does not change which signal is being fed into the system, so the direction is still input to output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=F(x(t))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That gives the repeatable method: read the equation, label the left side as output, label the signal inside the rule as input, and state the direction as input to output. The same reading works for other one-way system descriptions with gains or offsets, as long as the mapping is still one-sided.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Inputs and Outputs",
+          "section_index": 3,
+          "section_title": "Determining the Direction of a Signal Transformation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the rule $v(t)=\\frac{d}{dt}u(t)$, identify the input, the output, and the direction, and confirm why differentiation indicates a one-way input→output transform.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is the operator form. The signal on the left is the output candidate, and the signal inside the operator is the input candidate, so the direction runs from the inner signal to the left-side signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=\\frac{d}{dt}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $v(t)=\\frac{d}{dt}u(t)$, the signal being transformed is $u(t)$, and the result is $v(t)$. Differentiation changes the signal, but it does not reverse the mapping: $u(t)$ still feeds the rule and $v(t)$ still comes out.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=F(u(t))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the repeatable reading is: label the left side as output, label the signal inside the operator as input, and state the direction as input to output. The operator type can change from derivative to integral or another rule, but the direction still comes from the one-sided dependence.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Inputs and Outputs",
+          "section_index": 4,
+          "section_title": "Assigning Physical Quantities as Input and Output Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A sensor outputs voltage $v_s(t)$ based on position $x(t)$ through a transfer block. Choose the input and output and phrase the input-output mapping sentence.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the physical cue first: decide which quantity is being applied to the block and which quantity is being produced by it. The externally supplied or controlled quantity is the input candidate, and the measured or resulting quantity is the output candidate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_s(t)=F(x(t))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here, $x(t)$ is the signal entering the sensor model, so it is the input. The sensor produces $v_s(t)$ in response, so $v_s(t)$ is the output, and the direction is still input to output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)\\rightarrow v_s(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the reusable mapping sentence is: $x(t)$ is input, $v_s(t)$ is output, and the model runs from $x(t)$ to $v_s(t)$. The physical label changes, but the reading rule does not: identify the injected quantity first, then name the produced quantity second.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Inputs and Outputs",
+          "section_index": 5,
+          "section_title": "Checking an Input-Output Assignment Against a System Description",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given a proposed statement 'y is input and x is output' for $y(t)=\\int_0^t x(\\tau)d\\tau$, check and correct the assignment.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Treat the proposed labels as a claim to test against the rule structure. The signal inside the operator is the one feeding the system, and the left-side signal is the one coming out, so the check is whether the proposed labels match that direction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t x(\\tau)d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here, $x(t)$ is inside the rule, so it is the input. $y(t)$ is on the left, so it is the output. The proposed swap '$y$ is input and $x$ is output' conflicts with the equation, so it must be rejected.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)\\rightarrow y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The corrected assignment is: $x(t)$ is input, $y(t)$ is output, and the mapping runs from $x(t)$ to $y(t)$. The verification rule is simple: match the symbols to the equation, then keep only the labeling that preserves the operator’s direction.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Continuous-Time System Notation",
+      "lesson_core_move": "Interpret continuous-time system notation such as x(t) -> y(t) and y(t) = T{x(t)} by identifying the input signal, system operator, and output signal in an input-output model.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Continuous-Time System Notation",
+          "section_index": 1,
+          "section_title": "Introduction to Continuous-Time System Notation",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time system is a rule that transforms one signal into another signal at each time $t$. Read these expressions as mappings: the input signal is written on the inside, and the output signal is written as the result of that mapping.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In arrow form, write $x(t) \\to y(t)$ to mean: start from $x(t)$, apply the system rule, and produce $y(t)$ as output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\to y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Operator notation is the same idea in function-style language: $y(t) = T\\{x(t)\\}$. The symbol $T$ is the system operator, and the braces show that $T$ takes $x(t)$ as its input signal and returns $y(t)$ as the output signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t) = T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case $y(t)=2x(t)$, identify $x(t)$ as input and $y(t)$ as output, then read the same transformation as arrow notation. The rule is scaling by $2$, so this is the same system written two ways.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t) = 2x(t) = T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the next sections, first label what is input, output, and operator in each equation; then you will apply the same reading pattern to shifted and scaled system rules while keeping this notation structure stable.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Continuous-Time System Notation",
+          "section_index": 2,
+          "section_title": "Identifying Input and Output in Arrow Notation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Read this arrow form and identify the input/output: $x(t) \\to y(t)=2x(t-1)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this example is the arrow form $x(t) \\to y(t)=2x(t-1)$. In this notation, the symbol on the left is the source signal, and the symbol on the right is the destination signal after the system acts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\to y(t)=2x(t-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply step one: locate the left endpoint of the arrow. That endpoint is the input signal. Therefore, the input is $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply step two: the right endpoint is the output signal, so the output is $y(t)$. The right side also shows the same output as an explicit expression, $y(t)=2x(t-1)$, which reinforces output-side notation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply step three: report the pair with explicit direction. Input is $x(t)$, output is $y(t)$, and the direction is input to output, written as $x(t) \\to y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\to y(t), \\quad y(t)=2x(t-1)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Continuous-Time System Notation",
+          "section_index": 3,
+          "section_title": "Identifying the System Operator in Operator Notation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $y(t)=T\\{x(t)\\}$ and $T\\{x(t)\\}=x(t-1)$, identify the operator and restate the system map in operator form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start by reading the braces in the map $y(t)=T\\{x(t)\\}$: the expression inside $\\{\\cdot\\}$ is the operator input, so $x(t)$ is the argument passed through the system rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, identify the rule itself from $T\\{x(t)\\}=x(t-1)$. This is a one-step delay operator, because it replaces every instance of $t$ with $t-1$ inside the input signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}=x(t-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Finally, keep the input/output roles explicit: input is $x(t)$, output is $y(t)$, and $T$ is the operator that maps that input to the output by delaying it one unit.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Continuous-Time System Notation",
+          "section_index": 4,
+          "section_title": "Translating Between Arrow Notation and Operator Notation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Translate this pair exactly and check equivalence: $x(t) \\to y(t)=\\int_0^t x(\\tau)d\\tau$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the given notation form $x(t) \\to y(t)=\\int_0^t x(\\tau)d\\tau$. The arrow form gives the rule in the same order: input is $x(t)$, output is $y(t)$, and the transformation is the integral expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Identify the two conversion targets: the output is written as an operator-evaluated input in $y(t)=T\\{x(t)\\}$, so the operator body must be exactly the same expression attached to $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T\\{x(t)\\}=\\int_0^t x(\\tau)d\\tau,\\quad y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the equivalent operator representation as $y(t)=T\\{x(t)\\}=\\int_0^t x(\\tau)d\\tau$, and this can be translated back to arrow notation the same way: $x(t) \\to y(t)=\\int_0^t x(\\tau)d\\tau$. The meaning is unchanged in both forms.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Continuous-Time System Notation",
+          "section_index": 5,
+          "section_title": "Interpreting System Notation with Named Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the operator form $y_u(t)=\\mathcal{H}\\{u(t)\\}$ where $\\mathcal{H}\\{u(t)\\}=u(t)^2+1$, identify input/output/operator and rewrite in arrow notation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the operator form and parse the named endpoints. The output label is $y_u(t)$, the input signal is the argument $u(t)$ inside $\\mathcal{H}\\{\\cdot\\}$, and the operator body is $u(t)^2+1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Match the operator symbol to the same role used earlier: $\\mathcal{H}$ is the system operator, so keep its mapping exactly as $\\mathcal{H}\\{u(t)\\}=u(t)^2+1$ and do not change the underlying transformation when moving notation styles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_u(t)=\\mathcal{H}\\{u(t)\\}=u(t)^2+1,\\quad u(t)\\to y_u(t)=u(t)^2+1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The equivalent arrow statement is $u(t)\\to y_u(t)=u(t)^2+1$. This confirms the symbolic roles are unchanged by relabeling: input is still the non-braced signal, output is still the mapped signal, and $\\mathcal{H}$ is the same operator.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Filters as Systems",
+      "lesson_core_move": "Map a filter description into continuous-time system notation by identifying the input signal, output signal, and the signal feature the filter passes, attenuates, or modifies.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Filters as Systems",
+          "section_index": 1,
+          "section_title": "Introduction to Filters as Systems",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Filters are systems, so every filter description should be read as an input-output mapping: the filter takes one signal as input and produces another signal as output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Always identify the three parts first: the input signal $x(t)$, the output signal $y(t)$, and the feature behavior of the filter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, use the statement \"low-pass filter reduces high-frequency content\": write input as $x(t)$ and output as $y(t)$, then mark that this filter attenuates one feature band.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the same pattern when you compare filters: first lock $x(t)\\to y(t)$, then decide whether the filter passes, attenuates, or modifies the target feature.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{Filter behavior} \\in \\{\\text{pass},\\;\\text{attenuate},\\;\\text{modify}\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the next section, keep this structure fixed and practice the same translation repeatedly so the mapping becomes automatic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Filters as Systems",
+          "section_index": 2,
+          "section_title": "Identifying the Input and Output of a Filter",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the filter described as \"This filter takes acceleration input $a(t)$ and produces velocity output $v(t)$ by suppressing rapid oscillations\", identify $x(t)$ and $y(t)$ in system form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Cue: a filter statement usually names the source signal and the response signal. The source signal is the input candidate, and the response signal is the output candidate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose the rule: use consistent system notation with $x(t)$ for the input and $y(t)$ for the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the description, the input signal is the acceleration signal, so set $x(t)=a(t)$. The output signal is velocity, so set $y(t)=v(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, the filter maps $a(t)$ to $v(t)$, which in standard system form is $y(t)=T\\{x(t)\\}$ with $x(t)=a(t)$ and $y(t)=v(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Filters as Systems",
+          "section_index": 3,
+          "section_title": "Identifying the Signal Feature a Filter Passes",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A filter states: \"This filter keeps DC and low-frequency components and reduces rapid oscillations.\" Identify the feature it passes in system terms.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the phrase that says what the filter keeps. Here, \"keeps DC and low-frequency components\" tells you the passed feature is the low-frequency, near-DC part of the signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{passed feature} = \\text{low-frequency / near-DC content}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The extra phrase \"reduces rapid oscillations\" supports the same reading: the filter is not passing the fast-varying part, so the preserved feature is the slow-varying, near-DC content.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T\\{x(t)\\}\\ \\text{passes low-frequency / near-DC content}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the concise system-language classification is: this filter passes low-frequency, near-DC content. That is the feature label later questions should reuse when they ask what the filter passes.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Filters as Systems",
+          "section_index": 4,
+          "section_title": "Identifying the Signal Feature a Filter Attenuates",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A filter says: \"This filter reduces the energy of high-frequency components and suppresses fast fluctuations.\" Identify the feature it attenuates.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the phrase that says what the filter weakens. Here, \"reduces the energy of high-frequency components\" tells you the attenuated feature is the high-frequency, rapid-fluctuation part of the signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{attenuated feature} = \\text{high-frequency / rapid fluctuation content}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The phrase \"suppresses fast fluctuations\" confirms that the filter is reducing that feature, not removing it entirely. In system terms, the behavior is attenuation of the high-frequency part of $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T\\{x(t)\\}\\ \\text{attenuates high-frequency / rapid fluctuation content}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the concise classification is: this filter attenuates high-frequency, rapid-fluctuation content. That is the label later questions should reuse when they ask what the filter attenuates.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Filters as Systems",
+          "section_index": 5,
+          "section_title": "Identifying the Signal Feature a Filter Modifies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A filter claims: \"This filter amplifies selected frequencies by a factor and delays them by fixed $t_0$.\" Identify the modified signal feature.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the phrase that describes how the filter changes the signal. Here, \"amplifies selected frequencies by a factor\" tells you the gain is modified, and \"delays them by fixed $t_0$\" tells you the timing is modified.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{modified feature} = \\text{gain and delay / phase-delay characteristics}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is not a pass-only or attenuate-only description. In system terms, the filter changes the way $x(t)$ is scaled and shifted, so the correct feature label is gain together with delay, or phase-delay behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T\\{x(t)\\}\\ \\text{modifies gain and delay}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the concise classification is: this filter modifies gain and delay characteristics. That label is what later questions should reuse when the description includes explicit transformation language.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Filters as Systems",
+          "section_index": 6,
+          "section_title": "Mapping a Filter Description Into System Notation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Filter description: \"Input $x(t)$ is a continuous-time signal. The system outputs $y(t)$ where high-frequency content is reduced and phase is advanced by $t_0$.\" Convert this to one system-notation sentence and identify its feature behavior.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the full description: it gives the input signal, the output signal, and the feature behavior. Here, $x(t)$ is the input, $y(t)$ is the output, high-frequency content is reduced, and phase is advanced by $t_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The behavior clause attaches to that system form: the filter attenuates high-frequency content and modifies phase by a delay advance of $t_0$. That keeps the notation compact while preserving both feature labels.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=T\\{x(t)\\}, \\qquad \\text{high-frequency content is attenuated and phase is advanced by } t_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the full system-notation statement is $y(t)=T\\{x(t)\\}$ with high-frequency attenuation and phase advance. That is the complete mapping later questions should imitate.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "RC Circuits as Systems",
+      "lesson_core_move": "Model an RC circuit as a continuous-time input-output system by assigning a source signal as the input, choosing a circuit variable as the output, and interpreting the circuit relation as the system rule.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC Circuits as Systems",
+          "section_index": 1,
+          "section_title": "Introduction to RC Circuits as Systems",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean textbook-style monochrome schematic of a series RC circuit driven by a source voltage. Label the source as $v_s(t)$, the resistor as $R$, the capacitor as $C$, the current with an arrow labeled $i(t)$, and the capacitor voltage as $v_C(t)$ to show the first output choice. Include a ground reference and keep the layout simple and uncluttered so the source, resistor, capacitor, and output node are easy to identify."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A series RC circuit can be read as a continuous-time input-output system: one signal drives the circuit, and another signal is the output we watch. In this first view, the important job is not solving the circuit yet but recognizing the roles that the source and circuit variables play.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, name the source voltage as $v_s(t)$ and take the capacitor voltage $v_C(t)$ as the output. That gives the circuit a clear input-output pairing: the source is the input signal, and the capacitor voltage is the response signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_s(t)=v_R(t)+v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The resistor voltage is related to the current by Ohm's law, so the middle branch variable is not independent. Once the current is named as $i(t)$, the resistor voltage becomes $v_R(t)=Ri(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_R(t)=Ri(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the capacitor, the current and the capacitor voltage are linked by $i(t)=C \\frac{d}{dt}v_C(t)$. That means the output signal is determined by the circuit relation rather than chosen arbitrarily.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i(t)=C \\frac{d}{dt}v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substituting the resistor and capacitor relations into KVL gives the system rule for this base model. In other words, the RC circuit is now written as a mapping from $v_s(t)$ to $v_C(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_s(t)=RC \\frac{d}{dt}v_C(t)+v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This section sets up the system view: the source voltage is the input, the capacitor voltage is the output, and the circuit equation is the rule that connects them. Later sections will keep the same circuit and change only the output choice or the way the same relation is read.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC Circuits as Systems",
+          "section_index": 2,
+          "section_title": "Assigning the Source Voltage as the Input",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "A clean textbook-style monochrome schematic of the same series RC circuit, with the source voltage visually emphasized as the input signal. Label the source as $v_s(t)$, the resistor as $R$, the capacitor as $C$, the current with an arrow labeled $i(t)$, and show candidate circuit variables $v_R(t)$ and $v_C(t)$ so the learner can distinguish the input from internal variables. Include a ground reference and keep the diagram uncluttered and instructional."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the RC circuit, identify which signal should be treated as the input and explain why the source voltage, not $v_R(t)$ or $v_C(t)$, plays that role.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this RC circuit, the source voltage is the signal that drives the rest of the system. The task here is to recognize which signal plays the input role before worrying about how the circuit responds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Name the independent source as $v_s(t)$. Because it supplies the signal that enters the circuit, $v_s(t)$ is the input signal in this model.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The voltages across the resistor and capacitor, $v_R(t)$ and $v_C(t)$, are internal circuit variables. They are determined by the source and the circuit relation, so they are not the input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the input-output pairing starts with $v_s(t)$ feeding the circuit, while $v_R(t)$ and $v_C(t)$ remain response variables inside the system. That is the role assignment this example establishes for the RC model.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC Circuits as Systems",
+          "section_index": 3,
+          "section_title": "Choosing the Capacitor Voltage as the Output",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "A clean textbook-style monochrome schematic of the same series RC circuit, with the capacitor branch and capacitor voltage emphasized as the output signal. Label the source as $v_s(t)$, the resistor as $R$, the capacitor as $C$, the current with an arrow labeled $i(t)$, and show the capacitor voltage as $v_C(t)$. Keep the layout consistent with the previous section so the only meaningful change is that the capacitor branch is visually highlighted as the chosen output."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the same RC circuit, choose the capacitor voltage as the output and state the input-output pair.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Keep the same RC circuit and the same source input $v_s(t)$. The new job here is to choose the capacitor voltage $v_C(t)$ as the output signal and read it off the circuit correctly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Locate the capacitor branch and name the voltage across it $v_C(t)$. That branch voltage is the output signal in this model.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the input-output pairing as $v_s(t) \\mapsto v_C(t)$. The source still drives the circuit, and the capacitor voltage is the response we are tracking.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This choice does not change the physical circuit, but it does change the system description. The governing circuit relation will tell us how $v_C(t)$ depends on $v_s(t)$, and that is the perspective this example sets up.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC Circuits as Systems",
+          "section_index": 4,
+          "section_title": "Choosing the Resistor Voltage as the Output",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean textbook-style monochrome schematic of the same series RC circuit, with the resistor branch and resistor voltage emphasized as the output signal. Label the source as $v_s(t)$, the resistor as $R$, the capacitor as $C$, the current with an arrow labeled $i(t)$, and show the resistor voltage as $v_R(t)$. Keep the layout consistent with earlier sections so the learner can compare output choices across the same physical system."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the same RC circuit, choose the resistor voltage as the output and state the input-output pair.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Keep the same RC circuit and the same source input $v_s(t)$. The new job here is to choose the resistor voltage $v_R(t)$ as the output signal and distinguish it from the source and capacitor voltages.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Locate the resistor branch and name the voltage across it $v_R(t)$. That branch voltage is the output signal in this model.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the input-output pairing as $v_s(t) \\mapsto v_R(t)$. The source still drives the circuit, and the resistor voltage is the response we are tracking.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This choice does not change the physical circuit, but it does change the system description. The model now treats $v_R(t)$ as the output, so the same circuit is being read in a different input-output role.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC Circuits as Systems",
+          "section_index": 5,
+          "section_title": "Interpreting the RC Circuit Relation as the System Rule",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "A clean textbook-style monochrome schematic of the same series RC circuit used earlier in this topic, showing source voltage, resistor, capacitor, and current labels. Emphasize the input source as $v_s(t)$ and highlight the capacitor branch as the chosen output $v_C(t)$. Include labels for $R$, $C$, and the loop-current $i(t)$, and keep notation consistent with previous RC examples."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Using the RC circuit with source voltage $v_s(t)$ as input and capacitor voltage $v_C(t)$ as output, write the equation that defines the system rule.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This step uses the same RC circuit and input choice from the prior section, but now we translate the circuit into the system rule for output $v_C(t)$ directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the loop rule with output and internal variables: $v_s(t)=v_R(t)+v_C(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use Ohm and capacitor relations: $v_R(t)=R i(t)$ and $i(t)=C\\frac{d}{dt}v_C(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_s(t)=RC\\frac{d}{dt}v_C(t)+v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That equation is the system rule: the source signal $v_s(t)$ drives the system, and the system returns the capacitor-voltage response $v_C(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Automobile Motion as a System",
+      "lesson_core_move": "Represent automobile motion as a continuous-time input-output system by selecting physical input and output signals and expressing their relationship as a system rule such as integrating acceleration to obtain velocity or position.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Automobile Motion as a System",
+          "section_index": 1,
+          "section_title": "Introduction to Automobile Motion as a System",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001-image-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Minimal line-art one-dimensional car-motion schematic showing a car moving along a straight road with three labeled signals, $a(t)$, $v(t)$, and $x(t)$, plus arrows indicating the signal mapping from acceleration into an integrator block, then to velocity, and from velocity into a second integrator block, then to position. Emphasize input-output direction and keep the diagram simple and instructional."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Treat automobile motion as a continuous-time system: one motion signal goes in, another motion signal comes out, and the system rule tells you how they are connected. In the simplest version of this topic, take acceleration $a(t)$ as the input and velocity $v(t)$ or position $x(t)$ as the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001-image-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The key modeling move is to express that connection with a kinematic rule. If acceleration is the input, then velocity is obtained by integrating acceleration, and position is obtained by integrating velocity. The same physical motion can therefore be written as more than one valid input-output pair, as long as the direction of the rule is consistent.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t) = \\int a(\\tau)\\,d\\tau + C",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, imagine a car with constant acceleration $a(t)=a_0$ and zero initial velocity and position. Then the system produces a velocity that grows linearly in time, and that same output can be integrated again to get position. This is the cleanest starting point for recognizing automobile motion as a system.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) = \\int v(\\tau)\\,d\\tau + D",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the core idea is simple: choose a physical input and output, then write the rule that maps one to the other with the correct integration direction and initial-condition convention. Later sections will use this same setup to test which signal plays each role and how the rule changes when the chosen pair changes.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Automobile Motion as a System",
+          "section_index": 2,
+          "section_title": "Choosing Automobile Motion Input and Output Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A car's acceleration is known as a function of time. Velocity is monitored as output. Write the valid input-output statement for the motion system.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that acceleration is the given motion signal and velocity is the monitored quantity. That makes $a(t)$ the natural input and $v(t)$ the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With that choice, the motion rule is a one-step kinematic map from acceleration to velocity. In operator form, write $v(t)=\\mathcal{T}\\{a(t)\\}$; in integration form, the same rule is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=\\int_{0}^{t} a(\\tau)\\,d\\tau+v(0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This pairing is valid because one integration changes the signal from acceleration units to velocity units, and the signal direction stays consistent with the system description. The result is a clean input-output statement for automobile motion.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Automobile Motion as a System",
+          "section_index": 3,
+          "section_title": "Modeling Acceleration as the Input and Velocity as the Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Model a system with input $a(t)$ and output $v(t)$ where $a(t)=3$ and $v(0)=2$. Compute the explicit output rule.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that acceleration is the input signal and velocity is the output signal, so this is a one-step kinematic system from $a(t)$ to $v(t)$. The goal is to write the system rule in a form that keeps the integration direction and initial condition visible.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=\\int_{0}^{t} a(\\tau)\\,d\\tau+v(0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the constant acceleration input $a(t)=3$ and use the given initial value $v(0)=2$. The integral of a constant over $[0,t]$ is linear in $t$, so the output stays in the same signal family as the input-rule description predicts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=\\int_{0}^{t} 3\\,d\\tau+2=3t+2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the explicit system rule is $v(t)=3t+2$. That is the correct input-output model: acceleration drives velocity, the constant of integration is fixed by $v(0)$, and the notation stays consistent with the motion-system setup.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Automobile Motion as a System",
+          "section_index": 4,
+          "section_title": "Modeling Velocity as the Input and Position as the Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Represent the system with input $v(t)$ and output $x(t)$, then compute $x(t)$ for $v(t)=2t+1$ and $x(0)=0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that velocity is the given motion signal and position is the accumulated quantity, so this is the next kinematic stage from $v(t)$ to $x(t)$. The goal is to write the system rule in a form that keeps the integration direction and initial condition visible.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\int_{0}^{t} v(\\tau)\\,d\\tau+x(0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given velocity input $v(t)=2t+1$ and use the initial value $x(0)=0$. Integrate term by term so the output rule stays aligned with the same input-output convention used in the previous section.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\int_{0}^{t} (2\\tau+1)\\,d\\tau+0=t^2+t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the explicit system rule is $x(t)=t^2+t$. That is the correct input-output model: velocity drives position, the constant of integration is fixed by $x(0)$, and the notation remains consistent with the motion-system setup.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Automobile Motion as a System",
+          "section_index": 5,
+          "section_title": "Representing Acceleration-to-Position Motion as an Input-Output System",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Model the system from $a(t)$ directly to $x(t)$ and compute $x(t)$ for $a(t)=t$, $v(0)=1$, $x(0)=2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that acceleration is the input and position is the final output, but this system has two integration stages. The rule is to chain the acceleration-to-velocity map with the velocity-to-position map, keeping both initial conditions visible.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=\\int_0^t a(\\tau)\\,d\\tau+v(0),\\qquad x(t)=\\int_0^t v(\\sigma)\\,d\\sigma+x(0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First compute the intermediate velocity from $a(t)=t$ and $v(0)=1$. That gives the signal that feeds the second stage of the system.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v(t)=\\int_0^t \\tau\\,d\\tau+1=\\frac{t^2}{2}+1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now insert that velocity into the position rule and apply $x(0)=2$. This turns the two-step kinematic relation into one direct input-output model from acceleration to position.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\int_0^t \\left(\\frac{\\sigma^2}{2}+1\\right)\\,d\\sigma+2=\\frac{t^3}{6}+t+2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the composed system rule is a two-integral chain from $a(t)$ to $x(t)$, with $v(0)$ and $x(0)$ fixing the constants. For this input, the output is $x(t)=\\frac{t^3}{6}+t+2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Differential Equations as Input-Output Models",
+      "lesson_core_move": "Convert a differential equation into a continuous-time input-output model by identifying the input, output, derivative orders, and the equation rule that determines the output from the input.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Differential Equations as Input-Output Models",
+          "section_index": 1,
+          "section_title": "Introduction to Differential Equations as Input-Output Models",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Many differential equations in this course are also continuous-time system descriptions. Read the equation as a rule that takes one signal as the input and produces another signal as the output, instead of treating it only as something to solve for.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the system view, the signal being driven by the equation is the input, and the signal whose derivatives appear on the left is the output. That lets us write the same idea as $y(t)=\\mathcal{T}\\{x(t)\\}$, where $\\mathcal{T}$ is the rule that maps $x(t)$ to $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y'(t) + a\\,y(t) = x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The simplest base case is the first-order equation $y'(t)+y(t)=x(t)$. Here $x(t)$ is the input, $y(t)$ is the output, and the equation tells you that the output is determined by its own current value and derivative together with the driving input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y''(t)+b\\,y'(t)+c\\,y(t)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same reading works for higher-order equations such as $y''(t)+b\\,y'(t)+c\\,y(t)=x(t)$. The highest derivative of $y(t)$ tells you the system order, and the whole equation is the input-output rule you will translate in the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Differential Equations as Input-Output Models",
+          "section_index": 2,
+          "section_title": "Identifying the Input and Output in a Differential Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $2y'(t)+3y(t)=x(t)+\\sin t$, identify the valid input-output assignment and write it as a system rule.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the derivatives are attached to $y(t)$ on the left side of $2y'(t)+3y(t)=x(t)+\\sin t$. That means $y(t)$ is the output signal, because it is the quantity being determined by the differential rule, and $x(t)$ is the input signal, because it is part of the driving side of the model.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The extra $\\sin t$ term is a fixed forcing term on the driving side, so it does not change the role labels. The valid assignment is still input $x(t)$ and output $y(t)$; what would be wrong is to swap them and make the output signal drive itself.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the system reading is: input $x(t)$ goes into a rule that produces output $y(t)$, with the differential equation providing the mapping. In later steps, that same role check will let you read more complicated equations quickly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Differential Equations as Input-Output Models",
+          "section_index": 3,
+          "section_title": "Reading Output Derivative Orders in a Differential Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Read $y'''(t)+y''(t)+5y'(t)=x(t)-1$ and report the output derivative orders, highest order, and corresponding system order.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the output signal $y(t)$ on the left side: every derivative term attached to $y(t)$ belongs to the output side of the model. In this equation, the output derivative orders are $3$, $2$, and $1$, so the highest output derivative order is $3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The term $x(t)-1$ is on the forcing side, so it does not change the output order count. To read the system order, ignore the input expression and look only at the highest derivative of $y(t)$; here that makes the model a third-order system.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct result is: output derivative orders $3$, $2$, and $1$, highest order $3$, and system order $3$. The input-output reading stays the same as in the previous step; this step adds only the rule for counting derivatives on the output side.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Differential Equations as Input-Output Models",
+          "section_index": 4,
+          "section_title": "Interpreting the Equation Rule that Relates Input to Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Interpret $y''(t)+y'(t)+y(t)=x(t)$ as a rule that maps input trajectory $x(t)$ to output trajectory $y(t)$, including derivative dependence.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the output signal is still $y(t)$, because all of the derivative terms on the left side are attached to $y(t)$. So this equation is not just a statement to solve; it is the rule that tells how the input $x(t)$ drives the output $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In operator form, we can write the same idea as $\\mathcal{D}^2y(t)+\\mathcal{D}y(t)+y(t)=x(t)$, where $\\mathcal{D}$ represents differentiation with respect to $t$. That makes the rule explicit: the output is determined by a second derivative term, a first derivative term, and the output itself, all balanced against the input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the input-output description is: the signal $x(t)$ is the input, the signal $y(t)$ is the output, and the system rule maps $x(t)$ to $y(t)$ through the differential equation $y''(t)+y'(t)+y(t)=x(t)$. This is the form you want to recognize before moving on to more complicated equations.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Differential Equations as Input-Output Models",
+          "section_index": 5,
+          "section_title": "Converting Higher-Order Differential Equations into Input-Output Models",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Convert $y^{(4)}(t)+y'''(t)+5y''(t)+2y'(t)+y(t)=u(t)$ into a high-level input-output description and state the system order.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that every derivative term belongs to the output signal $y(t)$, while the forcing term on the right side is the input $u(t)$. The highest derivative on the output is $y^{(4)}(t)$, so the system order is $4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Without solving for $y(t)$, we keep the equation as the rule that links the input to the output: a fourth-order output model driven by $u(t)$, with derivative terms $y^{(4)}(t)$, $y'''(t)$, $5y''(t)$, $2y'(t)$, and $y(t)$ combining to match the input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In operator form, the model is $\\mathcal{D}^4y(t)+\\mathcal{D}^3y(t)+5\\mathcal{D}^2y(t)+2\\mathcal{D}y(t)+y(t)=u(t)$. So the input is $u(t)$, the output is $y(t)$, and the system is a fourth-order input-output model with no ambiguity about direction or order.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

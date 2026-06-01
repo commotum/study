@@ -1,0 +1,2456 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "RC Low-Pass Circuit Model",
+      "lesson_core_move": "Model the RC low-pass circuit by identifying the series resistor, shunt capacitor, and capacitor-voltage output as the physical LTI filter used for later differential-equation and frequency-response analysis.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "RC Low-Pass Circuit Model",
+          "section_index": 1,
+          "section_title": "Introduction to RC Low-Pass Circuit Model",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean schematic of the standard RC low-pass circuit with $v_{in}(t)$ entering a series resistor $R$, a shunt capacitor $C$ to ground, and $v_{out}(t)=v_C(t)$ measured across the capacitor. Keep the drawing uncluttered, emphasize topology over numerical values, and make the output node obvious."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The canonical RC low-pass circuit is the physical model you will use for the rest of this lesson. It is the source-$R$-$C$-to-ground topology that turns a circuit diagram into an LTI system description.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the schematic, $v_{in}(t)$ enters a series resistor $R$, the capacitor $C$ goes from the output node to ground, and the output is the capacitor voltage at that same node.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_{out}(t)=v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That output convention is the key identification step: $v_{out}(t)$ is the voltage across $C$, so $v_{out}(t)=v_C(t)$. Keep this topology fixed as the base case; later steps will use the same circuit for the differential equation and the frequency response.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "RC Low-Pass Circuit Model",
+          "section_index": 2,
+          "section_title": "Identifying the Series Resistor and Shunt Capacitor",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "A clean schematic of the standard RC low-pass circuit with $v_{in}(t)$ entering a series resistor $R$, a shunt capacitor $C$ to ground, and the output node after the resistor. Keep the drawing uncluttered and pedagogical, emphasize topology over numerical values, and make the output node obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the standard RC low-pass circuit, which component is the series resistor and which component is the shunt capacitor?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same canonical RC low-pass schematic from the tutorial: $v_{in}(t)$ enters a resistor on the signal path, and a capacitor connects from the output node to ground.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To identify the low-pass topology, trace the path from the source to the first component. That first component is the series resistor. Then look at the branch that leaves the output node and goes to ground; that branch is the shunt capacitor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_{out}(t)=v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So in this model, $R$ is the series element and $C$ is the shunt element. That wiring pattern is the RC low-pass model you will carry into the differential-equation and frequency-response steps.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "RC Low-Pass Circuit Model",
+          "section_index": 3,
+          "section_title": "Identifying the Capacitor Voltage as the Output Signal",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "A clean schematic of the standard RC low-pass circuit with $v_{in}(t)$ entering a series resistor $R$, a shunt capacitor $C$ to ground, an output marker across the capacitor, and node labels $v_C(t)$ and $v_R(t)$ to show the capacitor and resistor voltages. Keep the diagram uncluttered and pedagogical, and make the capacitor branch and output marker obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the standard RC low-pass circuit, which voltage is the output signal measured across the capacitor?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same canonical RC low-pass schematic, now with the output marker placed across the capacitor. The cue is the capacitor branch, because the output is measured across $C$, not across the input source or the resistor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Trace the voltage across the capacitor and name that signal $v_C(t)$. Since the output marker is across the same element, the output signal is the capacitor voltage.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_{out}(t)=v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the output is $v_C(t)$, while $v_{in}(t)$ stays the input and $v_R(t)$ stays the resistor voltage. That output convention is the one you will use in the next RC low-pass steps.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "RC Low-Pass Circuit Model",
+          "section_index": 4,
+          "section_title": "Interpreting the RC Low-Pass Circuit as an Input-Output Filter",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean schematic of the standard RC low-pass circuit annotated with an input arrow at the source, a series resistor $R$, a shunt capacitor $C$ to ground, and an output arrow across the capacitor. Emphasize signal flow from input to output, keep the diagram uncluttered, and make the system boundary obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the standard RC low-pass circuit, identify the input signal, the output signal, and the circuit as an input-output filter.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same canonical RC low-pass schematic, now annotated with an input arrow at the source and an output arrow across the capacitor. The cue is the signal flow from source to capacitor, because the circuit is being read as a two-signal filter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Mark the source-side signal as the input and the capacitor voltage as the output. The resistor and capacitor together are the system elements that sit between those two signals.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_{out}(t)=v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the model is a driven LTI filter: $v_{in}(t)$ enters on one side, $v_C(t)$ leaves on the other, and the RC network maps one to the other. That system boundary is the interpretation you will reuse in the later differential-equation and frequency-response steps.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Low-Pass Differential Equation",
+      "lesson_core_move": "Derive the low-pass input-output differential equation from the RC circuit model by relating resistor current, capacitor current, input voltage, and output voltage.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Low-Pass Differential Equation",
+          "section_index": 1,
+          "section_title": "Introduction to Low-Pass Differential Equation",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In the standard RC low-pass circuit, use $x(t)$ for the source input and $y(t)$ for the capacitor-voltage output. The resistor and capacitor lie in one series branch, so the same branch current flows through both elements.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_R(t)=i_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That branch current can be written from the resistor's voltage drop. Since the resistor sees the input voltage minus the output voltage, Ohm's law gives the resistor current as the drop divided by $R$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_R(t)=\\frac{x(t)-y(t)}{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The capacitor current uses the output voltage itself. With the output measured across the capacitor, the capacitor law gives current equal to $C$ times the time derivative of $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Equating those two branch-current expressions is the derivation step that produces the low-pass differential equation. Rearranging gives the standard first-order form used in the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\frac{dy(t)}{dt}+y(t)=x(t)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Low-Pass Differential Equation",
+          "section_index": 2,
+          "section_title": "Identifying the Low-Pass Input and Capacitor-Voltage Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A series resistor feeds a shunt capacitor to ground. The source is labeled $u(t)$ and the capacitor voltage is labeled $v_C(t)$. Identify the system input and the system output.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Look at the source-side label $u(t)$ and the voltage marked across the capacitor, $v_C(t)$. In the RC low-pass model, the source voltage is the input and the capacitor voltage is the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t),\\qquad y(t)=v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct identification is input $u(t)$, or $x(t)$ in the lesson notation, and output $v_C(t)$, or $y(t)$. Keep that pairing fixed for the rest of the derivation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Do not replace the output with the resistor voltage or any branch current. Those are internal circuit quantities that will appear later in the equations, but they are not the system input-output pair.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Low-Pass Differential Equation",
+          "section_index": 3,
+          "section_title": "Writing the Resistor Current from the Input-Output Voltage Difference",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the RC low-pass circuit with input $x(t)$ and output $y(t)$, write the resistor current in terms of the voltage across the series resistor.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the voltage drop across the series resistor. Its left end is at the input node $x(t)$, and its right end is at the output node $y(t)$. With current flowing from input to output, the resistor drop is $x(t)-y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_R(t)=x(t)-y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply Ohm's law to the resistor. The branch current equals the voltage across the resistor divided by $R$, using the same sign convention that the next step will keep for the capacitor branch.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_R(t)=\\frac{v_R(t)}{R}=\\frac{x(t)-y(t)}{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the resistor current is $i_R(t)=\\frac{x(t)-y(t)}{R}$. Keep that branch direction fixed, because the capacitor-current step will match it exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Low-Pass Differential Equation",
+          "section_index": 4,
+          "section_title": "Writing the Capacitor Current from the Output-Voltage Derivative",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the same RC low-pass circuit, write the capacitor current in terms of the capacitor voltage $y(t)$ and capacitance $C$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the voltage across the capacitor, which we already fixed as $y(t)$. For a capacitor, the current is determined by the time derivative of that same voltage, using the same branch-current direction as the resistor current.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the capacitor current is $i_C(t)=C\\frac{dy(t)}{dt}$. The point to keep is simple: resistor current used the voltage drop, while capacitor current uses the output-voltage derivative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Do not replace the derivative with the voltage itself, and do not invert the factor of $C$. This step isolates the capacitor law so the next example can combine it with the resistor current.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Low-Pass Differential Equation",
+          "section_index": 5,
+          "section_title": "Equating the Resistor and Capacitor Currents",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Combine the resistor and capacitor current formulas for the same RC low-pass branch and write the equality that follows from the series connection.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the series branch: the resistor and capacitor sit on the same current path, so one branch current flows through both elements with the same direction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_R(t)=\\frac{x(t)-y(t)}{R},\\qquad i_C(t)=C\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the branch is in series, set the two currents equal rather than adding them.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{x(t)-y(t)}{R}=C\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That equality is the raw low-pass differential equation before rearrangement. Keep this form for the next step, where it will be rewritten into standard first-order form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Low-Pass Differential Equation",
+          "section_index": 6,
+          "section_title": "Rewriting the Low-Pass Differential Equation in Standard First-Order Form",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Starting from $\\frac{x(t)-y(t)}{R}=C\\frac{dy(t)}{dt}$, rewrite the equation in standard first-order form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the current-equality equation from the previous step. The goal now is only algebraic cleanup: clear the denominator, isolate the derivative term, and expose the time constant $RC$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)-y(t)=RC\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Move the output term to the left and leave the input term on the right. That gives the standard low-pass form with the derivative term multiplied by $RC$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\frac{dy(t)}{dt}+y(t)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same equation can also be normalized by dividing through by $RC$. Either form is equivalent, but both keep the same input-output relationship.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{dy(t)}{dt}+\\frac{1}{RC}y(t)=\\frac{1}{RC}x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This closes the derivation: the RC low-pass circuit is now in standard first-order differential-equation form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Low-Pass Frequency Response",
+      "lesson_core_move": "Convert the low-pass differential equation into the frequency response \\(H(j\\omega)\\) that maps sinusoidal input frequency to output amplitude scaling and phase shift.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Low-Pass Frequency Response",
+          "section_index": 1,
+          "section_title": "Introduction to Low-Pass Frequency Response",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The previous lesson gave the low-pass differential equation. Here the goal is to see how that same equation responds to one sinusoid at angular frequency $\\omega$, so we treat the output as another sinusoid at the same frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\,\\frac{dy(t)}{dt} + y(t) = x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the trial forms $x(t)=X e^{j\\omega t}$ and $y(t)=Y e^{j\\omega t}$. The constants $X$ and $Y$ are complex amplitudes, so the response will be read from the ratio $H(j\\omega)=Y/X$ after the algebra is set up.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=X e^{j\\omega t}\\qquad y(t)=Y e^{j\\omega t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The key move is the derivative rule $\\frac{d}{dt}e^{j\\omega t}=j\\omega e^{j\\omega t}$. That replaces differentiation with multiplication by $j\\omega$ and turns the differential equation into an algebraic relation in $X$ and $Y$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{d}{dt}e^{j\\omega t}=j\\omega e^{j\\omega t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is only the bridge step. The next examples will use the same trial form to solve for $H(j\\omega)$ and then interpret the result as amplitude scaling and phase shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(j\\omega)=\\frac{Y}{X}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Low-Pass Frequency Response",
+          "section_index": 2,
+          "section_title": "Replacing Low-Pass Derivatives with \\(j\\omega\\) Factors",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Starting from $RC\\,\\frac{dy(t)}{dt}+y(t)=x(t)$ with $x(t)=Xe^{j\\omega t}$ and $y(t)=Ye^{j\\omega t}$, replace the derivative with a $j\\omega$ factor and write the resulting algebraic equation linking $X$ and $Y$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same low-pass equation and the same sinusoidal trial frequency $\\omega$ from the tutorial step. The input and output are both written as complex exponentials, so the unknowns are the complex amplitudes $X$ and $Y$ rather than new time-domain shapes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=Xe^{j\\omega t}\\qquad y(t)=Ye^{j\\omega t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Differentiate the output trial and use $\\frac{d}{dt}e^{j\\omega t}=j\\omega e^{j\\omega t}$. Substituting into $RC\\,\\frac{dy(t)}{dt}+y(t)=x(t)$ and canceling the common exponential leaves an algebraic relation in $X$ and $Y$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(1+j\\omega RC)Y=X",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Low-Pass Frequency Response",
+          "section_index": 3,
+          "section_title": "Solving for the Low-Pass Frequency Response",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Starting from $(1+j\\omega RC)Y=X$, solve for the ratio $H(j\\omega)=Y/X$ and write the low-pass frequency response in simplest form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the transformed equation $(1+j\\omega RC)Y=X$. The cue is that the differential equation has already become algebra, so the next move is to isolate the ratio $Y/X$ and name it $H(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(1+j\\omega RC)Y=X",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Divide both sides by $X$ to expose $Y/X$, then divide by $1+j\\omega RC$ to isolate the response. That gives the low-pass frequency response $H(j\\omega)=Y/X=1/(1+j\\omega RC)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(j\\omega)=\\frac{Y}{X}=\\frac{1}{1+j\\omega RC}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Low-Pass Frequency Response",
+          "section_index": 4,
+          "section_title": "Evaluating \\(H(j\\omega)\\) at a Specific Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Evaluate $H(j\\omega)=1/(1+j\\omega RC)$ at $\\omega=1/RC$ and simplify the result to a rectangular complex number.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the specific frequency $\\omega=1/RC$ into the response. The cue is that the formula is already known, so the only move left is evaluation and simplification.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H\\!\\left(j\\frac{1}{RC}\\right)=\\frac{1}{1+j\\left(\\frac{1}{RC}\\right)RC}=\\frac{1}{1+j}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now rationalize the denominator with the complex conjugate $1-j$. That clears the imaginary part from the denominator and puts the value in rectangular form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H\\!\\left(j\\frac{1}{RC}\\right)=\\frac{1}{1+j}\\cdot\\frac{1-j}{1-j}=\\frac{1-j}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the evaluated response is $H(j/RC)=(1-j)/2$. Keep this form in mind as the simplified complex value for the next interpretation step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Low-Pass Frequency Response",
+          "section_index": 5,
+          "section_title": "Interpreting Amplitude Scaling and Phase Shift from \\(H(j\\omega)\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $H(j\\omega)=\\frac{1-j}{2}$, determine the amplitude scaling and phase shift, and state how a unit-amplitude sinusoid at that frequency is changed by the filter.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Read the complex response in magnitude-phase form. The cue is that $H(j\\omega)$ already tells you both the size change and the angle change, so the job is to separate those two pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\sqrt{\\left(\\frac{1}{2}\\right)^2+\\left(-\\frac{1}{2}\\right)^2}=\\frac{1}{\\sqrt{2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The real and imaginary parts have equal size, and the imaginary part is negative, so the angle is in the fourth quadrant. That gives a phase shift of $-\\pi/4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\angle H(j\\omega)=-\\frac{\\pi}{4},\\qquad H(j\\omega)=\\frac{1}{\\sqrt{2}}e^{-j\\pi/4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So a unit-amplitude sinusoid at that frequency comes out with amplitude $1/\\sqrt{2}$ and a $\\pi/4$ lag. In time-domain form, the output stays at the same frequency and is simply scaled and shifted in phase.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(\\omega t)\\quad \\longrightarrow \\quad y(t)=\\frac{1}{\\sqrt{2}}\\cos\\!\\left(\\omega t-\\frac{\\pi}{4}\\right)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Low-Pass Magnitude Response",
+      "lesson_core_move": "Compute the RC low-pass magnitude response from its frequency response and interpret how it passes low frequencies while attenuating high frequencies.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Low-Pass Magnitude Response",
+          "section_index": 1,
+          "section_title": "Introduction to Low-Pass Magnitude Response",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The magnitude response is the gain curve $|H(j\\omega)|$ of the RC low-pass filter. Read it when you want to know how much a sinusoid at frequency $\\omega$ is scaled, without tracking the phase.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(j\\omega)=\\frac{1}{1+j\\omega RC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the known low-pass frequency response $H(j\\omega)=\\frac{1}{1+j\\omega RC}$. The magnitude response is the absolute value of that complex response, so the phase factor does not change the gain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The cleanest check is the zero-frequency case: at $\\omega=0$, the gain is $1$. So very low frequencies pass through the filter with essentially no attenuation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j0)|=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At the opposite extreme, the gain falls toward $0$ as $\\omega$ gets large. That is the low-pass signature: low frequencies are passed, high frequencies are attenuated.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{\\omega\\to\\infty}|H(j\\omega)|=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the magnitude response condenses the filter into one nonnegative curve: near $1$ at low frequency and near $0$ at high frequency. That compact gain curve is the frequency-domain statement of pass-low, attenuate-high behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Low-Pass Magnitude Response",
+          "section_index": 2,
+          "section_title": "Computing |H(j\\omega)| from the Low-Pass Frequency Response",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $H(j\\omega)=\\frac{1}{1+j\\omega RC}$, compute $|H(j\\omega)|$ and simplify it to a real-valued gain expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the known RC low-pass frequency response $H(j\\omega)=\\frac{1}{1+j\\omega RC}$. The action is to take its magnitude and simplify the complex denominator until only a real gain remains.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left|H(j\\omega)\\right|=\\left|\\frac{1}{1+j\\omega RC}\\right|=\\frac{|1|}{|1+j\\omega RC|}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The numerator has magnitude $1$. For the denominator, use the magnitude of $a+jb$ with $a=1$ and $b=\\omega RC$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|1+j\\omega RC|=\\sqrt{1+(\\omega RC)^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute that denominator magnitude back into the gain expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the simplified RC low-pass magnitude response: a real, nonnegative gain formula written directly from the frequency response.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Low-Pass Magnitude Response",
+          "section_index": 3,
+          "section_title": "Evaluating Low-Frequency Gain for the RC Low-Pass Filter",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Starting from $|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}$, compute the low-frequency gain $|H(j0)|$ and explain why the filter behaves like a pass-through near DC.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the low-frequency endpoint of the magnitude formula from the previous step. Use direct substitution at $\\omega=0$ in $|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}$ to evaluate the gain near DC.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $\\omega=0$ and simplify the denominator. The squared term vanishes, so the response becomes a unit gain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j0)|=\\frac{1}{\\sqrt{1+(0\\cdot RC)^2}}=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the RC low-pass filter passes a constant or slowly varying component with gain $1$ at DC. That is the low-frequency endpoint that shows the filter behaves like a pass-through near zero frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Low-Pass Magnitude Response",
+          "section_index": 4,
+          "section_title": "Evaluating High-Frequency Gain for the RC Low-Pass Filter",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Using $|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}$, evaluate the high-frequency gain as $\\omega\\to\\infty$ and explain why the response goes to 0.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the high-frequency endpoint of the same magnitude formula. Use the limit $\\omega\\to\\infty$ on $|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}$ so we can see what happens to rapid oscillations.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "As $\\omega$ grows, the denominator grows without bound while the numerator stays $1$. That forces the gain to shrink toward zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{\\omega\\to\\infty}|H(j\\omega)|=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the RC low-pass filter attenuates high-frequency components: rapid oscillations are suppressed because their gain approaches zero.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Low-Pass Magnitude Response",
+          "section_index": 5,
+          "section_title": "Interpreting the Low-Pass Magnitude Response as Passing and Attenuating Frequencies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}$, explain how the response behaves at low and high frequencies and use that to classify the filter as low-pass.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same magnitude curve from the previous steps. We already know the low-frequency gain is $1$ at $\\omega=0$ and the high-frequency gain tends to $0$ as $\\omega\\to\\infty$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{1}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That means the curve starts near $1$ at low frequency and falls toward $0$ as frequency increases. So the response gives strong gain to slowly varying components and weak gain to rapid oscillations.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j0)|=1,\\qquad \\lim_{\\omega\\to\\infty}|H(j\\omega)|=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore the RC filter is low-pass: low frequencies are passed, while high frequencies are attenuated. The magnitude response is the frequency-domain summary of that behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "RC High-Pass Circuit Model",
+      "lesson_core_move": "Model the RC high-pass circuit by identifying the series capacitor, resistor-to-ground, and resistor-voltage output as the physical LTI filter used for later differential-equation and frequency-response analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC High-Pass Circuit Model",
+          "section_index": 1,
+          "section_title": "Introduction to RC High-Pass Circuit Model",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Clean black-and-white RC high-pass circuit schematic with an input source on the left labeled $v_{in}(t)$, a series capacitor between the source and the output node, a resistor from the output node to ground, and the output voltage labeled $v_{out}(t)$ across the resistor. Emphasize the series capacitor, the resistor-to-ground branch, and the output arrow across the resistor."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The RC high-pass circuit is the physical LTI filter to recognize here. In the standard schematic, the input source feeds a capacitor in series, and the resistor drops from the output node to ground.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the capacitor as the series element and the resistor as the shunt-to-ground path. That wiring is the base case you will keep using in this lesson.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The output is the resistor voltage, $v_{out}(t)$, not the capacitor voltage. That output choice is what makes this the high-pass model.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep this input-output picture in mind. Later sections will use the same circuit to write the differential equation and the frequency response without redrawing the full model.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC High-Pass Circuit Model",
+          "section_index": 2,
+          "section_title": "Identifying the Series Capacitor and Resistor-to-Ground",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Clean black-and-white RC high-pass circuit schematic with an input source on the left, a capacitor in series on the input path, a resistor from the output node to ground, and clear node labels showing the signal path from $v_{in}(t)$ to the output node. Emphasize the capacitor in series and the grounded resistor as the defining topology."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the RC high-pass circuit shown, identify which element is the series capacitor and which element is connected from the output node to ground.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is the high-pass topology: the input source at $v_{in}(t)$ reaches the output node through a series capacitor, and the resistor returns that node to ground.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Trace the input source to the first passive element on the path. That first element is the series capacitor, because it sits directly between the input and the output node.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now follow the branch from the output node to ground. That branch is the resistor-to-ground path, which is the second defining element of the model.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct circuit description is: series capacitor, then resistor to ground. Keep this arrangement fixed; later sections will use the same schematic to locate the signals and then treat the circuit as an LTI model.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC High-Pass Circuit Model",
+          "section_index": 3,
+          "section_title": "Locating the Input Voltage and Resistor-Voltage Output",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "High-pass RC schematic with the input voltage arrow at the source-side node labeled $v_{in}(t)$ and the output voltage arrow across the resistor to ground labeled $v_{out}(t)$. Show the series capacitor from the source to the output node, the resistor from the output node to ground, and make the output node clear so the output is measured across the resistor, not across the capacitor."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "In the same RC high-pass circuit, locate the input voltage and the resistor-voltage output.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the circuit layout as the cue: the source-side node is where the input enters, and the resistor branch is where the output is taken. In an RC high-pass circuit, the signal port is the same physical network you identified before, but now you read it as an input-output system.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Mark the source-side node as $v_{in}(t)$. That is the input voltage, because it is the driving signal applied to the circuit before the series capacitor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Mark the voltage across the resistor as $v_{out}(t)$. The output is measured from the output node down to ground across the resistor, not across the capacitor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the model is an input at the source and an output across the resistor. That port choice is the one you carry forward into the differential-equation and frequency-response sections.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC High-Pass Circuit Model",
+          "section_index": 4,
+          "section_title": "Interpreting the High-Pass Circuit as an LTI System",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Clean RC high-pass schematic with the source-side input arrow labeled $v_{in}(t)$, the output arrow across the resistor labeled $v_{out}(t)$, the series capacitor, the resistor to ground, and a clear annotation such as 'one-input, one-output LTI system' beside the circuit. Keep the diagram minimal and emphasize that the passive elements are fixed."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Treat the RC high-pass circuit as an LTI system by naming its input, output, and fixed passive elements.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the port labels as the cue: the source-side signal is $v_{in}(t)$ and the resistor voltage is $v_{out}(t)$. That turns the same circuit diagram into an input-output model instead of just a parts diagram.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Treat the capacitor and resistor as fixed passive elements. They do not change with time, so they define a fixed network for the signal to pass through.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With one input, one output, and fixed passive elements, the circuit is a linear time-invariant system. In other words, it is a stable RC filter model with a consistent input-output relationship.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the interpretation you carry forward into the differential-equation and frequency-response sections: the circuit is not just a schematic, it is the filter model you will analyze.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "RC High-Pass Circuit Model",
+          "section_index": 5,
+          "section_title": "Distinguishing the High-Pass Model from the Low-Pass Model",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Side-by-side textbook-style circuit comparison showing the RC high-pass arrangement and the RC low-pass arrangement with the same orientation and line weight. In the high-pass diagram, show the capacitor in series with the input path, the resistor to ground, the input labeled $v_{in}(t)$, and the output labeled $v_{out}(t)$ across the resistor. In the low-pass diagram, show the resistor in series with the input path, the capacitor to ground, and the output across the capacitor. Keep both diagrams minimal so the topology difference is the main signal."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Compare the high-pass schematic with the low-pass schematic and identify the placement difference that makes this model high-pass.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the low-pass model as the contrast cue. The two circuits use the same capacitor and resistor, but the order of those elements and the output node are what change the filter type.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the high-pass model, the capacitor is in series with the input path and the resistor goes to ground. In the low-pass model, the resistor is in series and the capacitor goes to ground.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the output node next. The high-pass output is across the resistor, while the low-pass output is across the capacitor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the distinguishing feature: high-pass means capacitor first, resistor to ground, and output across the resistor. The same parts arranged the other way give the low-pass model instead.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "High-Pass Differential Equation",
+      "lesson_core_move": "Derive the high-pass input-output differential equation from the RC circuit model by relating capacitor current, resistor current, input voltage, and output voltage.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "High-Pass Differential Equation",
+          "section_index": 1,
+          "section_title": "Introduction to High-Pass Differential Equation",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In the high-pass RC derivation, treat the circuit as an input-output system with input $x(t)$ and resistor-voltage output $y(t)$. The capacitor voltage is the remaining drop in the series branch, so the setup begins by naming the voltage split and the shared current.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=v_C(t)+y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That voltage-sum relation is the first cue to recognize. Once $y(t)$ is known, the capacitor voltage can be rewritten as $v_C(t)=x(t)-y(t)$, which is the form that will later let the capacitor law use the input and output directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=i_R(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the capacitor and resistor are in series, they carry the same branch current. That shared-current relation is the second cue in the derivation, and it is what lets the capacitor law and resistor law meet in one equation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\,\\frac{dv_C(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_R(t)=\\frac{y(t)}{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the setup is complete: one voltage-sum equation, one current-equality equation, and one law for each element. The next step will substitute $v_C(t)=x(t)-y(t)$ into the capacitor law and combine it with the resistor law to reach $RC\\,\\frac{dy(t)}{dt}+y(t)=RC\\,\\frac{dx(t)}{dt}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\,\\frac{dy(t)}{dt}+y(t)=RC\\,\\frac{dx(t)}{dt}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "High-Pass Differential Equation",
+          "section_index": 2,
+          "section_title": "Writing the Input Voltage as Capacitor Voltage Plus Output Voltage",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the high-pass RC circuit, start from $x(t)=v_C(t)+y(t)$ and solve for the capacitor voltage $v_C(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the voltage-sum relation from the circuit: $x(t)=v_C(t)+y(t)$. The cue here is that the capacitor voltage is the quantity to isolate before the capacitor current law can be rewritten in terms of $x(t)$ and $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=v_C(t)+y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Subtract $y(t)$ from both sides so the capacitor voltage stands alone on the left. This keeps the sign convention aligned with the series branch: the capacitor voltage is the input minus the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_C(t)=x(t)-y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That isolated form is the substitution-ready result for the next step. Keep it in this exact shape so the capacitor law can be rewritten directly in terms of $x(t)$ and $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "High-Pass Differential Equation",
+          "section_index": 3,
+          "section_title": "Relating the Series Capacitor Current and Resistor Current",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the same high-pass RC circuit, write the capacitor current and resistor current, then set them equal because the elements are in series.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the series branch: the capacitor and resistor lie on the same current path, so they must carry the same current. Start by writing that shared-current relation explicitly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=i_R(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now write each current using the element law that matches it. The capacitor current comes from the derivative of $v_C(t)$, and the resistor current comes from the voltage across the resistor, $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\,\\frac{dv_C(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_R(t)=\\frac{y(t)}{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With both laws written in the same notation, the shared current is ready to be reused in the next step. Keep $i_C(t)=i_R(t)$ explicit and leave $v_C(t)$ unsolved here.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "High-Pass Differential Equation",
+          "section_index": 4,
+          "section_title": "Substituting Output Voltage into the Capacitor Current Law",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Substitute $v_C(t)=x(t)-y(t)$ into $i_C(t)=C\\,\\frac{dv_C(t)}{dt}$ and simplify the capacitor current in terms of $x(t)$ and $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the capacitor law for the shared branch current. The cue is the isolated capacitor voltage from the previous step, so replace $v_C(t)$ before doing any further algebra.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\,\\frac{dv_C(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $v_C(t)=x(t)-y(t)$ directly into the derivative. Keep the subtraction intact so the sign structure stays visible through the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\,\\frac{d}{dt}\\bigl(x(t)-y(t)\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Differentiate term by term. The derivative of a difference is the difference of the derivatives, so the capacitor current stays separated into the input and output rates.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "i_C(t)=C\\,\\bigl(x'(t)-y'(t)\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the form you need next: the capacitor current is now written entirely in $x(t)$ and $y(t)$, with the substitution chain kept explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "High-Pass Differential Equation",
+          "section_index": 5,
+          "section_title": "Rearranging into the High-Pass Input-Output Differential Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Combine $i_C(t)=C\\,\\frac{d}{dt}\\bigl(x(t)-y(t)\\bigr)$ with $i_R(t)=\\frac{y(t)}{R}$ and rearrange the result into the standard high-pass input-output differential equation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the current-balance equation from the previous step. Both branch currents are already written in $x(t)$ and $y(t)$, so the remaining job is to clear the resistor denominator and isolate the output derivative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "C\\,\\frac{d}{dt}\\bigl(x(t)-y(t)\\bigr)=\\frac{y(t)}{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Expand the derivative of the difference term by term. This keeps the input rate and the output rate visible before the algebraic rearrangement.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "C\\,\\bigl(x'(t)-y'(t)\\bigr)=\\frac{y(t)}{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Multiply through by $R$ to remove the denominator. That gives one equation with only the current scale factor and the two time-derivative terms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\,\\bigl(x'(t)-y'(t)\\bigr)=y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now move the output-derivative term to the left and keep the input-derivative term on the right. The result is the standard high-pass input-output differential equation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\,\\frac{dy(t)}{dt}+y(t)=RC\\,\\frac{dx(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the reusable ODE form for the high-pass RC filter, and it is the form the later frequency-response lesson will start from.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "High-Pass Frequency Response",
+      "lesson_core_move": "Convert the high-pass differential equation into the frequency response \\(H(j\\omega)\\) that maps sinusoidal input frequency to output amplitude scaling and phase shift.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "High-Pass Frequency Response",
+          "section_index": 1,
+          "section_title": "Introduction to High-Pass Frequency Response",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Frequency response asks what the high-pass circuit does to one sinusoid at frequency $\\omega$. For that base case, we rewrite the differential equation in the frequency domain, where $X(j\\omega)$ and $Y(j\\omega)$ represent the input and output at the same sinusoidal frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\,\\frac{dx(t)}{dt}=y(t)+RC\\,\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In steady state, a time derivative becomes multiplication by $j\\omega$ for a sinusoidal input. Apply that rule term by term to the high-pass equation: the derivative of the input becomes $j\\omega X(j\\omega)$, and the derivative of the output becomes $j\\omega Y(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "j\\omega RC\\,X(j\\omega)=(1+j\\omega RC)Y(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once the derivatives have been replaced, the circuit equation is an algebraic relation between $X(j\\omega)$ and $Y(j\\omega)$. That is the form we need before we can isolate the response of the circuit itself.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(j\\omega)=\\frac{Y(j\\omega)}{X(j\\omega)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This ratio is the frequency response. In the next steps, we will solve for $H(j\\omega)$ and use it to read the amplitude scaling and phase shift of the high-pass filter at each input frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "High-Pass Frequency Response",
+          "section_index": 2,
+          "section_title": "Replacing Derivatives with \\(j\\omega\\) in the High-Pass Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Convert the high-pass differential equation $RC\\,\\frac{dx(t)}{dt}=y(t)+RC\\,\\frac{dy(t)}{dt}$ into its frequency-domain form by replacing each derivative with $j\\omega$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the high-pass differential equation from the previous step. For a single sinusoid at frequency $\\omega$, our goal is to rewrite that time-domain relation in terms of $X(j\\omega)$ and $Y(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "RC\\,\\frac{dx(t)}{dt}=y(t)+RC\\,\\frac{dy(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In steady state, each time derivative becomes multiplication by $j\\omega$. Apply that rule to both derivative terms, and keep the non-derivative terms as the frequency-domain quantities $X(j\\omega)$ and $Y(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "j\\omega RC\\,X(j\\omega)=(1+j\\omega RC)Y(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the algebraic frequency-domain relation for the high-pass circuit. We have not solved for $H(j\\omega)$ yet; this step only replaces the derivatives and puts the equation in the form we will use next.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "High-Pass Frequency Response",
+          "section_index": 3,
+          "section_title": "Solving the High-Pass Equation for \\(H(j\\omega)\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Starting from $j\\omega RC\\,X(j\\omega)=(1+j\\omega RC)Y(j\\omega)$, solve for $H(j\\omega)=\\frac{Y(j\\omega)}{X(j\\omega)}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the frequency-domain equation produced in the previous step. The ratio $Y(j\\omega)/X(j\\omega)$ is the transfer function, so isolate that ratio without moving on to interpretation yet.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nj\\omega RC\\,X(j\\omega) &= (1+j\\omega RC)Y(j\\omega) \\\\\n\\frac{Y(j\\omega)}{X(j\\omega)} &= \\frac{j\\omega RC}{1+j\\omega RC} \\\\\nH(j\\omega) &= \\frac{j\\omega RC}{1+j\\omega RC}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the standard high-pass frequency response. The next step will use $H(j\\omega)$ to write the sinusoidal output in amplitude-phase form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "High-Pass Frequency Response",
+          "section_index": 4,
+          "section_title": "Using \\(H(j\\omega)\\) to Write the High-Pass Sinusoidal Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For an input sinusoid $x(t)=A\\cos(\\omega t+\\phi)$, use $H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}$ to write the corresponding high-pass output in amplitude-phase form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the input sinusoid and the transfer function at the same frequency $\\omega$. The output keeps the same angular frequency; only the amplitude and phase change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nH(j\\omega) &= \\frac{j\\omega RC}{1+j\\omega RC} \\\\\n|H(j\\omega)| &= \\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}} \\\\\n\\angle H(j\\omega) &= \\frac{\\pi}{2}-\\tan^{-1}(\\omega RC) \\\\\ny(t) &= A|H(j\\omega)|\\cos\\!\\bigl(\\omega t+\\phi+\\angle H(j\\omega)\\bigr) \\\\\n&= A\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}\\cos\\!\\Bigl(\\omega t+\\phi+\\frac{\\pi}{2}-\\tan^{-1}(\\omega RC)\\Bigr)\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The gain multiplies the input amplitude, and the phase of $H(j\\omega)$ adds to the input phase. That gives the real high-pass output in amplitude-phase form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 8,
+      "lesson_title": "High-Pass Magnitude Response",
+      "lesson_core_move": "Compute the RC high-pass magnitude response from its frequency response and interpret how it attenuates low frequencies while passing high frequencies.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 8,
+          "lesson_title": "High-Pass Magnitude Response",
+          "section_index": 1,
+          "section_title": "Introduction to High-Pass Magnitude Response",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The RC high-pass response starts from the complex frequency response $H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}$. For this step, ignore phase and focus only on the magnitude, because $|H(j\\omega)|$ is the amplitude-only summary that tells us how strongly each frequency passes through the filter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Taking magnitudes turns the complex ratio into a real gain formula. The move here is to read the numerator and denominator by magnitude only and simplify the result into a single expression for $|H(j\\omega)|$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This base case is the starting point for the rest of the lesson: once the magnitude formula is visible, we can read off what happens at low frequency and at high frequency, and then interpret the circuit as a high-pass filter.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "High-Pass Magnitude Response",
+          "section_index": 2,
+          "section_title": "Computing \\(|H(j\\omega)|\\) from the High-Pass Frequency Response",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}$, compute $|H(j\\omega)|$ and simplify it to a standard magnitude-response formula.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the complex high-pass response $H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}$. To get the magnitude response, take the absolute value of the whole fraction and separate the numerator and denominator by magnitude.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\left|\\frac{j\\omega RC}{1+j\\omega RC}\\right|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The numerator has magnitude $|j\\omega RC|=\\omega RC$, and the denominator has magnitude $|1+j\\omega RC|=\\sqrt{1+(\\omega RC)^2}$. That turns the complex response into a real gain formula.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the RC high-pass magnitude response is $|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}$, a real, nonnegative amplitude-only summary that we will use in the next sections to read low-frequency attenuation and high-frequency passage.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "High-Pass Magnitude Response",
+          "section_index": 3,
+          "section_title": "Interpreting Low-Frequency Attenuation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}$, determine what happens as $\\omega\\to0$ and explain why the circuit suppresses low-frequency input.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the low-frequency regime $\\omega RC\\ll1$ applied to the magnitude formula $|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}$. That tells us to use the same amplitude-only response from the previous step and simplify it at small $\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "When $\\omega RC\\ll1$, the term $(\\omega RC)^2$ is tiny, so $\\sqrt{1+(\\omega RC)^2}\\approx1$. The gain therefore becomes proportional to $\\omega$, which is exactly the low-frequency attenuation behavior we want to recognize.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}|H(j\\omega)|&=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}\\\\&\\approx\\frac{\\omega RC}{1}\\\\&=\\omega RC\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{\\omega\\to0}|H(j\\omega)|=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the response shrinks to zero as frequency goes to zero, which means the RC high-pass filter strongly attenuates low-frequency input.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "High-Pass Magnitude Response",
+          "section_index": 4,
+          "section_title": "Interpreting High-Frequency Passage",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}$, determine what happens as $\\omega\\to\\infty$ and explain why the circuit passes high-frequency input.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the high-frequency regime $\\omega RC\\gg1$ applied to the same magnitude formula $|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}$. That tells us to check what the ratio becomes when the frequency is much larger than the cutoff scale.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "When $\\omega RC\\gg1$, both the numerator and the dominant term in the denominator scale like $\\omega RC$. So the gain approaches $1$ rather than shrinking toward $0$, which is the signature of high-frequency passage.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}|H(j\\omega)|&=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}\\\\&\\approx\\frac{\\omega RC}{\\omega RC}\\\\&=1\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{\\omega\\to\\infty}|H(j\\omega)|=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So for very large $\\omega$, the RC high-pass filter passes the input with near-unity gain, which means the high-frequency part of the signal comes through essentially unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "High-Pass Magnitude Response",
+          "section_index": 5,
+          "section_title": "Reading the High-Pass Magnitude Response as a Filter",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Using $|H(j\\omega)|=\\frac{\\omega RC}{\\sqrt{1+(\\omega RC)^2}}$, explain why the RC circuit passes high frequencies while attenuating low frequencies.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to combine the two endpoint facts from the same magnitude response. We already know how the response behaves near $\\omega=0$ and as $\\omega\\to\\infty$, so the task is to turn those limits into a filter classification.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}|H(j\\omega)|&\\to0 \\quad \\text{as } \\omega\\to0\\\\|H(j\\omega)|&\\to1 \\quad \\text{as } \\omega\\to\\infty\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That means low-frequency components are strongly attenuated because their output magnitude is near zero, while high-frequency components are passed because their output magnitude is near one. The magnitude response separates the input by frequency content rather than treating all frequencies alike.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the RC circuit is a high-pass filter: the magnitude response suppresses low frequencies and passes high frequencies.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 9,
+      "lesson_title": "Comparing RC Low-Pass and High-Pass Filters",
+      "lesson_core_move": "Distinguish RC low-pass and high-pass filters by comparing their magnitude-response trends to predict which frequency components are passed or attenuated.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 9,
+          "lesson_title": "Comparing RC Low-Pass and High-Pass Filters",
+          "section_index": 1,
+          "section_title": "Introduction to Comparing RC Low-Pass and High-Pass Filters",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001-rc-comparison-plot",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean textbook-style plot on shared axes comparing normalized RC magnitude responses. The low-pass curve should start near 1 at low frequency and fall toward 0 at high frequency. The high-pass curve should start near 0 at low frequency and rise toward 1 at high frequency. Include a cutoff marker, label the low-frequency and high-frequency ends, and keep the figure schematic and uncluttered."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This step teaches the endpoint-comparison rule for RC magnitude responses. Start with one component far below cutoff and one component far above cutoff, and use the shared normalized plot to compare the low- and high-frequency endpoints. Do not re-derive the circuits here; read the response trend and decide which component is passed more strongly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001-rc-comparison-plot"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At the low-frequency endpoint, the RC low-pass response is near $1$ and the RC high-pass response is near $0$. That means a slowly varying component is passed by the low-pass filter and attenuated by the high-pass filter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{LP}(j\\omega)| \\to 1 \\text{ as } \\omega \\to 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{HP}(j\\omega)| \\to 0 \\text{ as } \\omega \\to 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At the high-frequency endpoint, the roles reverse. The RC low-pass response falls toward $0$ and the RC high-pass response rises toward $1$, so a rapidly varying component is attenuated by the low-pass filter and passed by the high-pass filter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{LP}(j\\omega)| \\to 0 \\text{ as } \\omega \\to \\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{HP}(j\\omega)| \\to 1 \\text{ as } \\omega \\to \\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The reusable rule is to compare the endpoint magnitudes and read the larger magnitude as the component that passes more strongly. Later comparisons can reuse the same endpoint check to classify a filter or predict how a mixed signal will behave.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Comparing RC Low-Pass and High-Pass Filters",
+          "section_index": 2,
+          "section_title": "Comparing Low-Frequency Behavior",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare the low-frequency behavior of the RC low-pass and RC high-pass magnitude responses at $\\omega \\ll 1/RC$, and decide which filter passes a slowly varying sinusoid.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is $\\omega \\ll 1/RC$, so this example sits at the low-frequency endpoint of the magnitude responses. Use the same comparison rule from the introduction: read the low-pass and high-pass magnitudes at that endpoint, not the circuit equations.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{LP}(j\\omega)| \\to 1 \\text{ as } \\omega \\to 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{HP}(j\\omega)| \\to 0 \\text{ as } \\omega \\to 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the low-pass magnitude is near $1$ and the high-pass magnitude is near $0$ at this endpoint, the RC low-pass filter passes the slowly varying sinusoid more strongly. The RC high-pass filter attenuates that same component.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The reusable rule is simple: at a given frequency endpoint, the larger magnitude is the filter that passes that component more strongly. For low frequency, that filter is the RC low-pass filter.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Comparing RC Low-Pass and High-Pass Filters",
+          "section_index": 3,
+          "section_title": "Comparing High-Frequency Behavior",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare the high-frequency behavior of the RC low-pass and RC high-pass magnitude responses at $\\omega \\gg 1/RC$, and decide which filter passes a rapidly varying sinusoid.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is $\\omega \\gg 1/RC$, so use the high-frequency endpoint of the same comparison rule from the previous example, but flipped to the high-frequency side. At that endpoint, compare the two magnitude responses directly and decide which one is larger.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{LP}(j\\omega)| \\to 0 \\text{ as } \\omega \\to \\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{HP}(j\\omega)| \\to 1 \\text{ as } \\omega \\to \\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $|H_{HP}(j\\omega)|$ is near $1$ while $|H_{LP}(j\\omega)|$ is near $0$, the high-pass filter passes a rapidly varying sinusoid more strongly and the low-pass filter attenuates it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reusable rule: identify the frequency regime, compare the two magnitudes at that endpoint, and assign 'pass' to the larger response and 'attenuate' to the smaller one.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Comparing RC Low-Pass and High-Pass Filters",
+          "section_index": 4,
+          "section_title": "Identifying Filter Type from a Magnitude Response",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004-magnitude-response-plot",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean schematic magnitude-response plot for an RC filter with frequency on the horizontal axis and normalized magnitude on the vertical axis. The single response curve starts near 1 at low frequency, falls smoothly across a cutoff marker, and ends near 0 at high frequency. Keep the plot uncluttered, with clear axes and minimal labels beyond the curve trend."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "From the given magnitude-response plot, identify whether the filter is RC low-pass or RC high-pass by comparing the low-frequency and high-frequency ends of the curve.",
+            "explanation_blocks": [
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004-magnitude-response-plot"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the two ends of the curve first. The left end is high and the right end is low, so the visual trend matches the low-pass pattern rather than the high-pass pattern.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{LP}(j\\omega)| \\approx 1 \\text{ for } \\omega \\ll 1/RC",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|H_{LP}(j\\omega)| \\approx 0 \\text{ for } \\omega \\gg 1/RC",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That endpoint behavior means the filter passes low frequencies and attenuates high frequencies, so the plot identifies an RC low-pass filter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reusable rule: use the low-frequency and high-frequency ends of the response, not the cutoff marker alone. High-left and low-right means low-pass; low-left and high-right means high-pass.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Comparing RC Low-Pass and High-Pass Filters",
+          "section_index": 5,
+          "section_title": "Predicting Passed and Attenuated Frequency Components",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A signal has components at $100$ Hz and $10$ kHz; compare what an RC low-pass filter and an RC high-pass filter do to each component.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the frequency split. Put the $100$ Hz component on the low-frequency side and the $10$ kHz component on the high-frequency side, then apply the same endpoint rule from the earlier examples.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "100 \\text{ Hz} \\rightarrow \\text{passed by RC low-pass}, \\quad 10 \\text{ kHz} \\rightarrow \\text{attenuated by RC low-pass}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "100 \\text{ Hz} \\rightarrow \\text{attenuated by RC high-pass}, \\quad 10 \\text{ kHz} \\rightarrow \\text{passed by RC high-pass}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the low-pass filter keeps the low-frequency component and suppresses the high-frequency component, while the high-pass filter does the opposite.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reusable rule: sort the components by frequency relative to cutoff, then assign the lower-frequency components to pass through the low-pass filter and the higher-frequency components to pass through the high-pass filter.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 10,
+      "lesson_title": "Effect of $RC$ on Filter Behavior",
+      "lesson_core_move": "Predict how changing \\(RC\\) shifts the cutoff behavior and magnitude-response transition of RC low-pass and high-pass filters.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 10,
+          "lesson_title": "Effect of $RC$ on Filter Behavior",
+          "section_index": 1,
+          "section_title": "Introduction to Effect of $RC$ on Filter Behavior",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When you see an RC low-pass or high-pass filter, read the product $RC$ as the controlling quantity for cutoff location. The key idea is that changing $RC$ moves where the magnitude response turns.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_c = \\frac{1}{RC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "f_c = \\frac{1}{2\\pi RC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $\\omega_c$ and $f_c$ are inversely proportional to $RC$, a larger $RC$ lowers the cutoff and a smaller $RC$ raises it. So the magnitude-response transition shifts to lower frequency when $RC$ increases and to higher frequency when $RC$ decreases.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This same cutoff-setting rule applies to both RC low-pass and RC high-pass filters, so later examples can use one inverse relationship to predict how the transition moves in either response.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Effect of $RC$ on Filter Behavior",
+          "section_index": 2,
+          "section_title": "Identifying $RC$ as the Cutoff-Setting Quantity",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Two RC low-pass filters have $(R,C) = (1\\,\\text{k}\\Omega, 1\\,\\mu\\text{F})$ and $(R,C) = (2\\,\\text{k}\\Omega, 0.5\\,\\mu\\text{F})$. Determine whether they have the same cutoff frequency and identify the controlling quantity.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the product $RC$: the cutoff depends on $RC$ itself, not on $R$ or $C$ alone. Compare the two filters by computing each product first.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nR_1C_1 &= (1\\,\\text{k}\\Omega)(1\\,\\mu\\text{F}) = 10^{-3}\\,\\text{s} \\\\\nR_2C_2 &= (2\\,\\text{k}\\Omega)(0.5\\,\\mu\\text{F}) = 10^{-3}\\,\\text{s}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the products match, substituting into $\\omega_c = 1/RC$ gives the same cutoff frequency for both filters. Equal $RC$ means equal cutoff location.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the controlling quantity is $RC$. When $RC$ changes, the magnitude-response transition moves; when $RC$ stays the same, the transition stays in the same place.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Effect of $RC$ on Filter Behavior",
+          "section_index": 3,
+          "section_title": "Predicting a Low-Pass Magnitude Response After Changing $RC$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A low-pass filter has cutoff $\\omega_c = 1/RC$. If $RC$ doubles, determine the new cutoff frequency and state how the magnitude-response transition shifts relative to the original curve.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the inverse cutoff rule: for a low-pass RC filter, $RC$ sets the cutoff location. If $RC$ doubles, the new cutoff must move in the opposite direction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n\\omega_c' &= \\frac{1}{2RC} \\\\\n&= \\frac{1}{2}\\cdot\\frac{1}{RC} \\\\\n&= \\frac{\\omega_c}{2}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the new cutoff frequency is half the original cutoff frequency. The magnitude-response transition shifts to lower frequency, which means the bend in the low-pass curve moves left on the frequency axis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The controlling quantity is still $RC$: changing $R$ or $C$ matters only through their product. When that product gets larger, the cutoff gets smaller and the transition moves left; when the product gets smaller, the cutoff gets larger and the transition moves right.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Effect of $RC$ on Filter Behavior",
+          "section_index": 4,
+          "section_title": "Predicting a High-Pass Magnitude Response After Changing $RC$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A high-pass filter has cutoff $\\omega_c = 1/RC$. If $RC$ doubles, determine the new cutoff frequency and say whether a frequency just below the original cutoff is closer to or farther from the passband.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same inverse cutoff rule, but now we read it on a high-pass curve. For a high-pass RC filter, larger $RC$ still lowers the cutoff, so the transition moves to a lower frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n\\omega_c' &= \\frac{1}{2RC} \\\\\n&= \\frac{1}{2}\\cdot\\frac{1}{RC} \\\\\n&= \\frac{\\omega_c}{2}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the new cutoff frequency is half the original cutoff frequency. A frequency just below the original cutoff is now above the new cutoff, so it is closer to the passband and less attenuated than before.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The controlling quantity is still $RC$: changing $R$ or $C$ matters only through their product. The rule is the same for both RC filter types; the only difference is which side of the cutoff counts as the passband.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 10,
+          "lesson_title": "Effect of $RC$ on Filter Behavior",
+          "section_index": 5,
+          "section_title": "Comparing Magnitude-Response Transitions for Different $RC$ Values",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Two RC filters satisfy $RC_1 < RC_2$. Compare their cutoff frequencies and magnitude-response transition locations for both the low-pass and high-pass responses.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the ordering of the two $RC$ values. Since $\\omega_c = 1/RC$, the larger product gives the lower cutoff frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n\\omega_{c,1} &= \\frac{1}{RC_1} \\\\\n\\omega_{c,2} &= \\frac{1}{RC_2} \\\\\nRC_1 < RC_2 &\\Rightarrow \\omega_{c,1} > \\omega_{c,2}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the filter with $RC_2$ has the lower cutoff frequency. For the low-pass response, its magnitude transition occurs at the lower frequency, so that curve is shifted farther left than the curve with $RC_1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same ordering holds for the high-pass response. The filter with $RC_2$ begins its transition at the lower frequency, so its rising edge is also shifted farther left.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The shared conclusion is that larger $RC$ lowers the cutoff and moves the magnitude-response transition to lower frequency for both RC filter types. The low-pass and high-pass curves differ in shape, but they follow the same cutoff-ordering rule.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1992 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Zeros of a Transfer Function",
+      "lesson_core_move": "Compute zeros of a rational transfer function by solving its numerator polynomial and interpreting the roots as s-plane locations where H(s) vanishes.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Zeros of a Transfer Function",
+          "step_type": "tutorial",
+          "learning_goal": "Define a zero of a transfer function and state the zero condition on the numerator polynomial.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required for this tutorial; the move is purely symbolic."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that for $H(s)=\\frac{N(s)}{D(s)}$, the zero condition is $H(s)=0 \\Rightarrow N(s)=0$ with $D(s) \\neq 0$, and explain that each root is an $s$-plane zero location.",
+            "base_case": "Use $H(s)=\\frac{s+3}{s+1}$ and show that the zero is at $s=-3$.",
+            "paragraph_plan": [
+              "Introduce transfer-function form $H(s)=\\frac{N(s)}{D(s)}$ and define numerator and denominator roles.",
+              "Derive the zero condition $H(s)=0 \\Rightarrow N(s)=0$, and state denominator validity requirement.",
+              "Work the base case: solve one linear numerator and read one zero location.",
+              "Name the zero location as the root in the $s$-plane where the system response factor vanishes.",
+              "Prepare for next steps: multiple roots, quadratic numerators, then interpretation."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)}$$",
+              "$$H(s)=0 \\Rightarrow N(s)=0$$",
+              "$$D(s)\\neq0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section strictly minimal instruction and move quickly to controlled examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding a Zero from a Linear Numerator",
+          "step_type": "example",
+          "learning_goal": "Find one zero from a linear numerator by setting the numerator to zero.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual artifacts are needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $H(s)=\\frac{s-4}{(s+1)(s+3)}$, the transfer function zero is:",
+            "distractor_plan": [
+              "Use $s+4=0$ instead of $s-4=0$.",
+              "Report a denominator root such as $s=-1$.",
+              "Assume no zero exists when numerator is linear.",
+              "Return $s=4/3$ from a mistaken scaling step.",
+              "Give a pole condition as the answer."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the zero of $H(s)=\\frac{s-4}{s+3}$.",
+            "worked_solution_goal": "Set $s-4=0$ and return the zero $s=4$.",
+            "variation_from_previous": "First example step that applies the tutorial rule to a concrete numerator with a nonzero shift.",
+            "solution_step_plan": [
+              "Write $H(s)=0$ for the given transfer function.",
+              "Reduce to $s-4=0$ because the denominator is nonzero at the zero.",
+              "Solve the linear equation and output $s=4$.",
+              "State the zero location in the $s$-plane."
+            ],
+            "practice_variation_axes": [
+              "Change linear numerator sign and constant.",
+              "Use a different scalar factor in numerator.",
+              "Use a denominator with multiple factors to keep the zero step isolated."
+            ]
+          },
+          "handoff_notes": "Use the 5-option multiple-choice format with one algebraically correct root and four closely related distractors."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding Multiple Zeros from a Factored Numerator",
+          "step_type": "example",
+          "learning_goal": "List all zeros from a factored numerator containing multiple linear factors.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; zero listing is symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "set",
+            "practice_question_model": "For $H(s)=\\frac{(s+1)(s-2)(s-5)}{s^2+4s+3}$, the zero set is:",
+            "distractor_plan": [
+              "Leave out one numerator factor root.",
+              "Choose denominator roots as zero candidates.",
+              "Swap both signs on the real roots.",
+              "Collapse two roots into one midpoint value.",
+              "Solve $s^2+4s+3=0$ and report those values."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find all zeros of $H(s)=\\frac{(s+3)(s-4)}{s+5}$.",
+            "worked_solution_goal": "Set $(s+3)(s-4)=0$, solve both linear factors, and report zeros at $s=-3$ and $s=4$.",
+            "variation_from_previous": "Move from one zero to multiple zeros by applying the zero-product rule.",
+            "solution_step_plan": [
+              "Set numerator factors equal to zero from $H(s)=0$.",
+              "Apply $(s+3)(s-4)=0 \\Rightarrow s+3=0$ or $s-4=0$.",
+              "Solve both equations.",
+              "List all distinct zeros explicitly."
+            ],
+            "practice_variation_axes": [
+              "Permute factor signs and values.",
+              "Introduce reordered factors and nonordered roots.",
+              "Insert a constant multiplier outside the numerator product."
+            ]
+          },
+          "handoff_notes": "Anchor that every linear numerator factor contributes one zero candidate."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Finding Zeros by Factoring a Quadratic Numerator",
+          "step_type": "example",
+          "learning_goal": "Convert quadratic numerators to factored form and extract zero locations.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No graph needed; all computations stay algebraic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "set",
+            "practice_question_model": "For $H(s)=\\frac{s^2-3s-10}{s+1}$, select the correct zero set:",
+            "distractor_plan": [
+              "Use denominator root as if it were a zero.",
+              "Factor with the wrong signs.",
+              "Find only one root from the quadratic.",
+              "Skip factoring and use a formula with arithmetic mistakes.",
+              "Convert to roots incorrectly as $\\{-2,5\\}$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find all zeros of $H(s)=\\frac{s^2-4s-5}{s^2+2s+1}$.",
+            "worked_solution_goal": "Factor numerator $s^2-4s-5=(s-5)(s+1)$ and return zeros at $s=5$ and $s=-1$.",
+            "variation_from_previous": "Increase step complexity by requiring factoring before zero extraction.",
+            "solution_step_plan": [
+              "Factor the numerator into linear factors.",
+              "Set the factored numerator equal to zero.",
+              "Solve each factor equation.",
+              "Collect and report the full zero set."
+            ],
+            "practice_variation_axes": [
+              "Change quadratic constant/sign while preserving factorability.",
+              "Use non-monic leading coefficient.",
+              "Require common-factor extraction before quadratics are split."
+            ]
+          },
+          "handoff_notes": "Keep factoring concise, then reuse the same zero test from earlier sections to reduce cognitive load."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting Zeros as Locations Where H(s) Vanishes",
+          "step_type": "example",
+          "learning_goal": "Interpret each numerator root as an $s$-plane zero and distinguish it from poles.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No pole-zero diagram required at this stage."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "set",
+            "practice_question_model": "For $H(s)=\\frac{(s+2)(s-4)}{(s+1)(s+3)}$, which zero set is correct?",
+            "distractor_plan": [
+              "Select denominator roots as the zero set.",
+              "Report only one zero.",
+              "Use shifted sign versions of roots.",
+              "Return a midpoint value instead of a set.",
+              "List both zeros and poles together as one combined set."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Identify the zeros of $H(s)=\\frac{(s+2)(s-4)}{(s+1)(s+3)}$ and interpret their meaning.",
+            "worked_solution_goal": "State zeros at $s=-2$ and $s=4$, and explain they are points where $H(s)=0$.",
+            "variation_from_previous": "Transition from computation to interpretation in preparation for pole-location and plotting topics.",
+            "solution_step_plan": [
+              "Set numerator $(s+2)(s-4)=0$ from the zero condition.",
+              "Solve each factor and list zeros.",
+              "Show that the denominator roots are excluded from the zero set.",
+              "Write a brief interpretation sentence for each zero in $s$-plane terms."
+            ],
+            "practice_variation_axes": [
+              "Swap signs while preserving denominator distractors.",
+              "Use mixed real and complex factor forms in later generated questions.",
+              "Use equivalent factorizations to test transfer, not memorization."
+            ]
+          },
+          "handoff_notes": "Make the zero-vs-pole boundary explicit in wording so downstream writers use the same taxonomy."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Poles of a Transfer Function",
+      "lesson_core_move": "Compute poles of a rational transfer function by finding the zeros of its denominator polynomial and interpreting those s-plane values as the system-mode locations used in pole-zero analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Poles of a Transfer Function",
+          "step_type": "tutorial",
+          "learning_goal": "Define poles as roots of the denominator polynomial and connect the pole-solution equation to system-mode locations in the $s$-plane.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No images required for the first tutorial; keep cognitive load low and notation-only."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Explain that for $H(s)=N(s)/D(s)$, poles are solutions of $D(s)=0$ and are interpreted as system-mode locations used in pole-zero analysis.",
+            "base_case": "Use $H(s)=1/(s+4)$ and show that $D(s)=s+4$, so the pole is $s=-4$ by solving $s+4=0$.",
+            "paragraph_plan": [
+              "State the transfer-function form and define poles with a one-sentence contrast to zeros as numerator solutions.",
+              "Show why denominator roots are not optional details: each root is a value that makes $H(s)$ unbounded in symbolic form.",
+              "Solve one linear denominator exactly and emphasize how the root is read directly as one pole value.",
+              "Preview progression: next sections add additional linear factors, factoring expanded polynomials, and then geometric interpretation in the $s$-plane."
+            ],
+            "display_math_plan": [
+              "$$H(s)=N(s)/D(s)$$",
+              "$$D(s)=0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this step tutorial-only: direct instruction only, no questions. Maintain a minimal-notation flow to keep symbolic load low."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding a Pole from a Linear Denominator Factor",
+          "step_type": "example",
+          "learning_goal": "Solve a single linear denominator factor and extract the corresponding single pole location.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual objects are required; all work is symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "numeric",
+            "practice_question_model": "Compute poles of $H(s)$ where the denominator is one linear factor and choose the correct $s$ value.",
+            "distractor_plan": [
+              "Include a distractor that incorrectly solves the numerator polynomial root instead of the denominator.",
+              "Include sign-flip distractors for $(s\\pm a)=0$ patterns.",
+              "Include repeated-pole distractors only when denominator has no repeated factor, to catch overgeneralization."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the poles of $H(s)=\\frac{3s+1}{s+5}$.",
+            "worked_solution_goal": "Isolate $D(s)=s+5$, solve $s+5=0$, and identify the single pole $s=-5$.",
+            "variation_from_previous": "Adds a nontrivial numerator to confirm the pole rule ignores numerator details at this stage.",
+            "solution_step_plan": [
+              "Extract denominator polynomial: $D(s)=s+5$.",
+              "Solve $D(s)=0$ to get $s=-5$.",
+              "State final pole set: $\\{-5\\}$."
+            ],
+            "practice_variation_axes": [
+              "Change sign and constant in the linear denominator factor while keeping one-pole structure.",
+              "Change numerator form to show distractor safety while preserving denominator root computation."
+            ]
+          },
+          "handoff_notes": "Keep this example short and mirrored. Ensure the worked example prompt and practice model both keep one-symbolic-skill focus for deliberate practice."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding Poles from Factored Denominator Polynomials",
+          "step_type": "example",
+          "learning_goal": "Find multiple poles when the denominator is already factored into linear terms.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Algebra is sufficient; no graph needed in this section."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "numeric",
+            "practice_question_model": "Given $H(s)$ with a factored denominator, find all pole values and choose the correct ordered set.",
+            "distractor_plan": [
+              "Add distractors that include numerator roots as if they were poles.",
+              "Add one distractor with a sign error for each linear factor.",
+              "Add distractors that omit one factor or add a duplicated root when multiplicity is not present."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find all poles of $H(s)=\\frac{4}{(s+2)(s-3)}$.",
+            "worked_solution_goal": "Set each factor to zero and return poles at $s=-2$ and $s=3$.",
+            "variation_from_previous": "Expands from one factor to two factors, requiring a set-valued output rather than a single value.",
+            "solution_step_plan": [
+              "Read denominator factors as $D(s)=(s+2)(s-3)$.",
+              "Set each factor to zero: $s+2=0$ and $s-3=0$.",
+              "Compute poles $s=-2$ and $s=3$, and return full set with clear order-invariant notation."
+            ],
+            "practice_variation_axes": [
+              "Swap factor signs and values to prevent memorized memorization.",
+              "Reorder factors to test recognition independent of written order."
+            ]
+          },
+          "handoff_notes": "Require explicit check that no factor is skipped. If a negative real pole is included, keep it in the same algebraic format as previous step to stabilize pattern learning."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Finding Poles by Factoring an Expanded Denominator",
+          "step_type": "example",
+          "learning_goal": "Factor an expanded denominator polynomial, then compute poles from resulting linear factors.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual support needed; all operations are symbolic factorization and root solving."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "numeric",
+            "practice_question_model": "Factor the expanded denominator, solve for zeros, and select the correct pole set.",
+            "distractor_plan": [
+              "Include distractors from using the wrong factoring sign pattern.",
+              "Include distractors that produce non-real roots when the quadratic factors into reals.",
+              "Include distractors that report numerator zeros as poles."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the poles of $H(s)=\\frac{2}{s^2+s-6}$.",
+            "worked_solution_goal": "Factor $s^2+s-6=(s+3)(s-2)$ and derive poles $s=-3$ and $s=2$.",
+            "variation_from_previous": "One meaningful wrinkle: denominator is presented expanded, so factoring is now part of the pole workflow.",
+            "solution_step_plan": [
+              "Set $D(s)=s^2+s-6$ and factor to identify linear factors.",
+              "Solve each factor equation to locate poles.",
+              "List all poles and check count matches polynomial degree."
+            ],
+            "practice_variation_axes": [
+              "Vary coefficient patterns while keeping factorable quadratics.",
+              "Switch target from subtraction to addition forms to check arithmetic attentiveness."
+            ]
+          },
+          "handoff_notes": "Emphasize factoring reliability and arithmetic hygiene, because this step is often where students overfocus on numerators or cancel factors incorrectly."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Reading Pole Values as Locations in the $s$-Plane",
+          "step_type": "example",
+          "learning_goal": "Translate pole values into coordinate pairs in the $s$-plane and interpret real/imaginary parts as plane coordinates.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "A clean $s$-plane diagram with labeled real and imaginary axes and three marked pole points corresponding to the worked example values.",
+            "visual_elements": [
+              "complex plane axes",
+              "real axis",
+              "imaginary axis",
+              "point markers for poles",
+              "coordinate labels"
+            ],
+            "image_generation_notes": "Use one instructional plot in the section only. Keep points uncluttered and ensure each plotted pole can be read as (real, imag) coordinates."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "numeric",
+            "practice_question_model": "Given a factored denominator, solve for poles and identify which coordinate pair corresponds to the pole with positive imaginary part.",
+            "distractor_plan": [
+              "Include distractors that confuse real and imaginary parts (swap coordinates).",
+              "Include distractors that choose wrong sign combinations in each coordinate.",
+              "Include distractors that report poles as magnitudes instead of coordinates."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\frac{2}{s^2+2s+5}$, find poles and state their $s$-plane coordinates.",
+            "worked_solution_goal": "Compute poles $s=-1\\pm 2j$ and map them to $(-1,2)$ and $(-1,-2)$ in the $s$-plane.",
+            "variation_from_previous": "Adds geometric interpretation after equation solving so students convert algebraic poles into coordinate positions, including nonzero imaginary parts.",
+            "solution_step_plan": [
+              "Find poles by solving $D(s)=s^2+2s+5=0$.",
+              "Report pole values $s=-1+2j$ and $s=-1-2j$.",
+              "Translate each pole to coordinates: real part then imag part with axis labels.",
+              "Verify both poles share the same real coordinate with opposite imaginary signs."
+            ],
+            "practice_variation_axes": [
+              "Vary sign and magnitude of real part while keeping one positive and one negative imaginary part.",
+              "Introduce one purely real pole as a contrast item and one complex pair item."
+            ]
+          },
+          "handoff_notes": "Keep this as one tutorial-only-image pattern: provide a minimal instructional plot in the section, then mirror the interpretation in symbolic questions."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Pole-Zero Plots",
+      "lesson_core_move": "Plot the poles and zeros of a rational transfer function in the complex s-plane by converting numerator and denominator roots into marked locations for transfer-function interpretation.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Pole-Zero Plots",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the mapping $H(s)=\\frac{N(s)}{D(s)} \\leftrightarrow$ poles and zeros in the complex $s$-plane.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Coordinate grid of the $s$-plane showing real axis and imaginary axis and two anchor points labeled for one zero and one pole.",
+            "visual_elements": [
+              "real axis",
+              "imaginary axis",
+              "zero marker",
+              "pole marker"
+            ],
+            "image_generation_notes": "Use a simple $s$-plane template with clear axis labels before introducing numerical plotting examples."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define the transfer-function root correspondence: roots of $N(s)$ are zero locations and roots of $D(s)$ are pole locations on the $s$-plane.",
+            "base_case": "Use $H(s)=\\frac{s+1}{s+2}$ and show the single zero at $s=-1$ and single pole at $s=-2$.",
+            "paragraph_plan": [
+              "Define a pole-zero plot as a geometric representation of the zero and pole roots of a rational transfer function.",
+              "Recall $H(s)=\\frac{N(s)}{D(s)}$ and define each numerator root as a zero, each denominator root as a pole.",
+              "State the axis convention on the $s$-plane: horizontal axis is real part, vertical axis is imaginary part.",
+              "Introduce marker conventions and one concrete numeric base example using open circle for zero and cross for pole.",
+              "Show where to place both points and connect interpretation language to transfer-function behavior."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)}$$",
+              "$$N(s)=\\prod_i (s-z_i),\\;D(s)=\\prod_j (s-p_j)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section as direct instruction plus schema setup only; no practice questions here."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Plotting Real Zeros and Real Poles",
+          "step_type": "example",
+          "learning_goal": "Place only real-number zeros and poles from a factored transfer function onto the real axis of the $s$-plane.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "An $s$-plane with real axis marks and placeholders for one zero and two poles, all with fixed numeric coordinates.",
+            "visual_elements": [
+              "empty $s$-plane grid",
+              "real axis ticks",
+              "zero marker",
+              "pole marker"
+            ],
+            "image_generation_notes": "Use clean 1D real-axis examples first; include coordinate labels so the model and mirrored question variants can swap values."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Plot poles and zeros for $H(s)=\\frac{s+1}{s(s+3)}$ and identify the real-axis coordinate of each feature.",
+            "distractor_plan": [
+              "Mix sign of real coordinates",
+              "Swap which mark is a zero vs pole",
+              "Place one point off the real axis when data is purely real",
+              "Use the wrong ordering of coordinates",
+              "Duplicate a marker at the same coordinate"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Plot poles and zeros for $H(s)=\\frac{(s+1)(s+2)}{s(s-1)}$.",
+            "worked_solution_goal": "Demonstrate extracting real-axis roots from factored polynomials and mapping each root to the correct marker on the $s$-plane.",
+            "variation_from_previous": "This extends the tutorial base case by adding one real zero and two real poles.",
+            "solution_step_plan": [
+              "Find all real roots of $N(s)$ and $D(s)$.",
+              "Classify each root as zero or pole.",
+              "Mark the real-axis points with symbol conventions in one pass on the same $s$-plane."
+            ],
+            "practice_variation_axes": [
+              "change sign of one root",
+              "exchange relative spacing of roots",
+              "reorder coefficients in prompt while keeping root set equivalent"
+            ]
+          },
+          "handoff_notes": "Keep this as a controlled extension from the base case, with no complex arithmetic introduced yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Plotting Complex Zeros and Complex Poles",
+          "step_type": "example",
+          "learning_goal": "Plot complex conjugate pairs of poles and zeros in the $s$-plane with correct real-imaginary coordinates.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "An $s$-plane with horizontal/vertical axis and mirrored points above and below the real axis for conjugate pairs.",
+            "visual_elements": [
+              "real axis",
+              "imaginary axis",
+              "conjugate pair symmetry",
+              "real coordinate label",
+              "imaginary coordinate label"
+            ],
+            "image_generation_notes": "Show both members of each conjugate pair explicitly to reinforce plotting symmetry."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "formula",
+            "practice_question_model": "Plot poles and zeros for $H(s)=\\frac{(s+1)(s^2+4)}{(s^2+1)(s-2)}$ and identify where the complex features lie.",
+            "distractor_plan": [
+              "Forget to pair complex roots by conjugates",
+              "Swap imaginary signs on one member of a pair",
+              "Treat complex conjugate roots as real-axis points",
+              "Use pole marker for zero and vice versa",
+              "Reverse real and imaginary components in coordinate labels"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Plot poles and zeros for $H(s)=\\frac{(s+2)(s^2+1)}{(s+1)(s^2+4)}$.",
+            "worked_solution_goal": "Show that a quadratic factor gives two symmetric imaginary-coordinate points and place both points with correct marker type.",
+            "variation_from_previous": "This extends the previous step by adding one complex pair and preserving the real-axis plotting routine.",
+            "solution_step_plan": [
+              "Factor any quadratic term to identify conjugate roots.",
+              "List real and imaginary parts of each root as $(\\sigma, \\omega)$.",
+              "Plot conjugate points on opposite sides of the real axis using marker conventions."
+            ],
+            "practice_variation_axes": [
+              "swap which conjugate pair appears in numerator vs denominator",
+              "change frequencies while keeping real parts zero",
+              "alter the single real root magnitude"
+            ]
+          },
+          "handoff_notes": "Require students to explicitly write conjugate point coordinates before marking the plot."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Plotting Poles and Zeros from Factored Transfer Functions",
+          "step_type": "example",
+          "learning_goal": "Convert a fully factored transfer function with mixed real and complex factors into a complete pole-zero plot.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "An $s$-plane with both real axis points and a conjugate pair already visible to be filled by a new rational function.",
+            "visual_elements": [
+              "mixed real and complex features",
+              "multiple marker colors",
+              "axis labels",
+              "real/imag grid"
+            ],
+            "image_generation_notes": "Use one template image where learners mark several points in one pass; vary coordinates in practice questions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Plot poles and zeros for $H(s)=\\frac{(s+3)(s^2+9)}{(s+1)(s-2)(s^2+4s+5)}$.",
+            "distractor_plan": [
+              "Treat complex pair as two unrelated single points",
+              "Classify roots with wrong marker type",
+              "Drop one factor when converting roots",
+              "Confuse real and imaginary parts for quadratic roots",
+              "Mirror across the wrong axis"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Plot poles and zeros for $H(s)=\\frac{(s+1)(s^2+1)}{(s-1)(s+2)(s^2+4)}$.",
+            "worked_solution_goal": "Produce a full mixed-domain plot from a factored form by sequencing root extraction and plotting in one pass.",
+            "variation_from_previous": "This step combines real poles/zeros and complex pairs in one worked example instead of introducing one category at a time.",
+            "solution_step_plan": [
+              "Identify and list all roots from each factor.",
+              "Classify each root as pole or zero from numerator/denominator location.",
+              "Plot all root points in coordinate space, then verify axis-alignment and marker consistency."
+            ],
+            "practice_variation_axes": [
+              "swap constant and linear factors while preserving multiplicity",
+              "change one real root to a different location",
+              "replace one conjugate pair with a different frequency"
+            ]
+          },
+          "handoff_notes": "This is the first full-pattern step and should include both real and complex examples without introducing multiplicity yet."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Plotting Poles and Zeros from Polynomial Transfer Functions",
+          "step_type": "example",
+          "learning_goal": "Extract roots from expanded $N(s)$ and $D(s)$ and then plot all poles and zeros, emphasizing setup and root-finding workflow.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "An $s$-plane showing a blank template with enough space for up to five plotted points from expanded polynomials.",
+            "visual_elements": [
+              "unfactored-to-factored workflow",
+              "real axis",
+              "imag axis",
+              "multiple roots"
+            ],
+            "image_generation_notes": "Keep polynomial values small and factorable so question variants can swap coefficients and reuse the same visual format."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $H(s)=\\frac{s^3+2s^2+ s}{s^3+2s^2+ s+1}$, factor both numerator and denominator and then choose the correct pole-zero sketch.",
+            "distractor_plan": [
+              "Skip factoring before plotting and place incorrect root counts",
+              "Confuse numerator roots with denominator roots",
+              "Mis-factor a quadratic to wrong pair",
+              "Mirror complex points across wrong axis",
+              "Drop repeated arithmetic signs in coefficients when factoring"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Plot poles and zeros for $H(s)=\\frac{s^3+2s^2-s}{s^3+s^2-4s+4}$.",
+            "worked_solution_goal": "Demonstrate factoring expanded polynomials, extracting root coordinates, and then plotting all features accurately.",
+            "variation_from_previous": "This final step adds the algebraic step of factoring expanded polynomials before plotting, building directly on the factored examples.",
+            "solution_step_plan": [
+              "Factor numerator and denominator into linear and quadratic factors.",
+              "Solve all factors for roots with real and complex coordinates.",
+              "Map each root onto the $s$-plane using consistent marker conventions."
+            ],
+            "practice_variation_axes": [
+              "reorder coefficient values while preserving factor structure",
+              "replace one constant to shift all roots",
+              "switch one real root with one conjugate pair through new coefficients"
+            ]
+          },
+          "handoff_notes": "If a root is not factorable within the example scope, provide a computed factorization and focus on plotting process."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Real Poles",
+      "lesson_core_move": "Infer from each real pole of a transfer function whether the corresponding LTI response mode is a decaying or growing nonoscillatory exponential.",
+      "section_count": 4,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Real Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Help learners identify the real-pole to time-response mapping $s=p$ to $e^{pt}$ for mode behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image support is required for this topic; all sign decisions are symbol-driven."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": [
+              "not-applicable"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "State that a real pole contributes a mode term $e^{pt}u(t)$ in the homogeneous response and that the sign of $p$ decides decay versus growth.",
+            "base_case": "Use the base case $H(s)=\\frac{A}{s+2}$, giving a pole at $-2$ and mode $e^{-2t}u(t)$, which decays as $t$ increases.",
+            "paragraph_plan": [
+              "Introduce the connection between denominator roots of $H(s)$ and mode terms in $h(t)$ or the homogeneous response of an LTI system.",
+              "Show the base decomposition step from a single real pole: identify $p$ in a factor $s-p$ and map directly to $e^{pt}u(t)$.",
+              "Show how sign controls magnitude behavior over $t \\ge 0$: $p<0$ produces decay, $p>0$ produces growth, $p=0$ produces constant mode.",
+              "Explain the system-behavior takeaway: negative real poles imply stable/decaying nonoscillatory mode, positive real poles imply unstable/growing nonoscillatory mode."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{K}{s-p} \\Rightarrow h(t)=Ke^{pt}u(t)$$",
+              "$$p<0 \\Rightarrow e^{pt}\\text{ decays}$$",
+              "$p>0 \\Rightarrow e^{pt}\\text{ grows}$."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this step tightly conceptual and symbolic. No worked example or practice should be attached to the tutorial step per the section planning policy."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Interpreting Negative Real Poles as Decaying Modes",
+          "step_type": "example",
+          "learning_goal": "Classify the mode produced by a negative real pole as a decaying nonoscillatory exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No picture is needed because the pole sign and mode rule are determined from algebraic form alone."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five symbolic options describing time-domain mode behavior.",
+            "practice_question_model": "Given a transfer function with real pole at $s=-2$, select the correct nonoscillatory mode statement.",
+            "distractor_plan": [
+              "Include a growing exponential distractor that inverts the sign rule.",
+              "Include an oscillatory-mode distractor to test rejection of imaginary-part association.",
+              "Include a constant-mode distractor for the $p=0$ boundary case.",
+              "Include a sign-error distractor where the absolute value is ignored but magnitude is correct."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Interpret the real-pole mode in $H(s)=\\frac{3}{s+5}$.",
+            "worked_solution_goal": "Conclude that the pole is $p=-5$, so the mode is $e^{-5t}u(t)$, a decaying nonoscillatory term.",
+            "variation_from_previous": "Uses the same sign rule from the tutorial base case and applies it to one explicit transfer function.",
+            "solution_step_plan": [
+              "Factor the denominator and read the real pole value directly from $s-p$ form.",
+              "Map pole value to exponential mode using $y_h(t)=Ce^{pt}u(t)$.",
+              "Classify the behavior using the sign rule for $p=-5$."
+            ],
+            "practice_variation_axes": [
+              "single-real-pole value magnitude",
+              "sign flip in denominator form $(s-a)$ versus $(s+a)$",
+              "position of pole in numerator constant scaling only"
+            ]
+          },
+          "handoff_notes": "Keep this example a direct extension of tutorial language: solve pole-to-mode conversion first, then classify decay versus growth only."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Interpreting Positive Real Poles as Growing Modes",
+          "step_type": "example",
+          "learning_goal": "Classify the mode produced by a positive real pole as a growing nonoscillatory exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Image is not needed because sign interpretation is computed from symbolic denominator form."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five symbolic options describing stability and behavior class.",
+            "practice_question_model": "Given $H(s)=\\frac{4}{s-2}$, choose the correct response classification.",
+            "distractor_plan": [
+              "Include a decaying-mode distractor that mirrors the negative-sign case.",
+              "Include an oscillatory-mode distractor (imaginary-part trap).",
+              "Include a bounded response distractor that confuses time-domain behavior with pole location sign.",
+              "Include a wrong constant-mode distractor for $p=0$ confusion."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Interpret the real-pole mode in $H(s)=\\frac{1}{s-1.5}$.",
+            "worked_solution_goal": "Show pole $p=1.5$ gives $e^{1.5t}u(t)$, which is a growing nonoscillatory exponential (unstable mode).",
+            "variation_from_previous": "Extends the same mapping with the sign flipped from $p=-5$ to $p=1.5$.",
+            "solution_step_plan": [
+              "Identify the pole from denominator root and record that it is positive.",
+              "Write the equivalent mode term and evaluate its large-$t$ trend.",
+              "Label the mode as growing, nonoscillatory, and therefore unstable if isolated as the dominant real mode."
+            ],
+            "practice_variation_axes": [
+              "pole value sign in denominator written as $(s-a)$ vs $(s+a)$",
+              "magnitude of positive pole and interpretation speed of growth",
+              "presence of simple gain constant in the numerator"
+            ]
+          },
+          "handoff_notes": "This section should explicitly contrast with section 2 to reduce over-generalized stability rules. Emphasize direct sign mapping not rote graph reading."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Comparing Real-Pole Locations and Exponential Rates",
+          "step_type": "example",
+          "learning_goal": "Compare decay or growth rates of multiple real poles to rank nonoscillatory mode dominance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram is necessary; ordering rates by pole magnitude uses symbolic comparison."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Five symbolic statements comparing mode rates.",
+            "practice_question_model": "Given poles at $s=-1$ and $s=-4$, choose the correct statement about which mode decays faster.",
+            "distractor_plan": [
+              "Include an option that reverses ordering using $|p|$.",
+              "Include a distractor that mistakenly ties faster magnitude to slower time response.",
+              "Include an incorrect oscillatory interpretation requiring complex poles.",
+              "Include a distractor that uses sign but ignores rate when signs are both negative."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Compare the nonoscillatory rates for transfer functions with poles $s=-1$, $s=-3$, and $s=2$.",
+            "worked_solution_goal": "Use $e^{-t}$, $e^{-3t}$, and $e^{2t}$ to rank decay rates and identify the growing mode as dominant.",
+            "variation_from_previous": "Adds a multi-pole comparison where sign and pole magnitude both matter, not just single-pole classification.",
+            "solution_step_plan": [
+              "Extract all real poles and sort them by real part sign and absolute value.",
+              "Convert each pole to its mode $e^{pt}u(t)$ and compare exponents.",
+              "Rank decay rates from slowest to fastest for negative poles and identify the growing mode when present."
+            ],
+            "practice_variation_axes": [
+              "mix of negative and positive real poles",
+              "different magnitudes while preserving sign",
+              "number of real poles and tie-break selection of dominant mode"
+            ]
+          },
+          "handoff_notes": "Keep all variants anchored to the same symbolic rule chain; avoid introducing oscillatory language here."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Complex-Conjugate Poles",
+      "lesson_core_move": "Identify complex-conjugate pole pairs in a transfer function and translate their real and imaginary parts into damping or growth rate and oscillation frequency of the LTI response.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Complex-Conjugate Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the complex-conjugate-pole form $s=-\\sigma \\pm j\\omega$, explain why real transfer functions require this pairing, and define what the real and imaginary parts imply for LTI response behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is required for this tutorial step. The target concept is introduced symbolically to minimize initial cognitive load."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the exact move: identify complex-conjugate poles as $s=-\\sigma \\pm j\\omega$ and map $\\sigma$ to damping/growth rate and $\\omega$ to oscillation rate.",
+            "base_case": "Start from the baseline pair $s=\\pm j\\omega$ (zero real part) and then add nonzero $\\sigma$ to show damping and growth cases.",
+            "paragraph_plan": [
+              "State the conjugate-root rule for transfer functions with real coefficients: non-real poles must come in pairs $s_1=\\sigma+j\\omega$ and $s_2=\\sigma-j\\omega$.",
+              "Connect notation with standard response form and explain why the pair is read as mirror points in the $s$-plane.",
+              "Define $\\sigma$ as the real-part control term (decay or growth) and $\\omega$ as the imaginary-part oscillation term.",
+              "Preview the lesson flow: identify pairs from transfer functions, then interpret sign and magnitude of $\\sigma$ and $\\omega$, and finally do the same on a pole-zero plot."
+            ],
+            "display_math_plan": [
+              "$$s=\\sigma \\pm j\\omega,$$",
+              "$$e^{(\\sigma+j\\omega)t}=e^{\\sigma t}(\\cos \\omega t + j\\sin \\omega t).$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep tutorial text concise and rule-based. Reserve examples for concrete coordinate extraction and interpretation."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Complex-Conjugate Pole Pairs from a Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Given a transfer function, extract all complex-conjugate poles and rewrite them as $-\\sigma \\pm j\\omega$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is required because identification is purely from algebraic form."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic options using complex-number form",
+            "practice_question_model": "Given a rational transfer function, identify the non-real poles and write the conjugate pair in standard form.",
+            "distractor_plan": [
+              "Include choices that treat a real pole as part of a conjugate pair.",
+              "Include sign-mirrored options that swap real parts between the pair.",
+              "Include options that list complex values with incorrect imaginary sign matching."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\dfrac{5(s+1)}{(s+3)(s^2+4s+8)}$, identify the complex-conjugate poles and express them as $-\\sigma \\pm j\\omega$.",
+            "worked_solution_goal": "Transform the quadratic to a completed-square form and identify the pole pair as $-2\\pm2j$, setting up downstream interpretation.",
+            "variation_from_previous": "This is the first controlled extension from symbolic definition to concrete transfer-function data using one irreducible quadratic denominator factor.",
+            "solution_step_plan": [
+              "List all denominator roots structurally: real poles and quadratic factors.",
+              "Rewrite $s^2+4s+8=(s+2)^2+2^2$.",
+              "Extract the non-real pair $-2\\pm2j$.",
+              "Label the pair consistently as a conjugate pair before any behavioral interpretation."
+            ],
+            "practice_variation_axes": [
+              "Vary the quadratic coefficients while preserving one non-real pair.",
+              "Move between expanded and completed-square representations.",
+              "Change the order of poles in the factor list while keeping the same pair location."
+            ]
+          },
+          "handoff_notes": "Focus on algebraic extraction only in this step; behavior words (decay/growth/frequency) come in later examples."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Reading Decay Rate from a Negative Real Part",
+          "step_type": "example",
+          "learning_goal": "From poles $s=-\\sigma\\pm j\\omega$ with $\\sigma>0$, read the decay envelope rate from the real part and state stable (decaying) behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual required; interpretation is computed directly from written pole coordinates."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five options including rate/classification pair statements",
+            "practice_question_model": "Given poles with negative real part, identify the decay rate and whether the mode decays, grows, or is marginal.",
+            "distractor_plan": [
+              "Include options with correct frequency but wrong stability direction.",
+              "Include options that use $-\\omega$ as decay rate.",
+              "Include options that claim oscillation implies instability independent of real part."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given poles $-3\\pm j4$, report the decay rate and the qualitative response classification.",
+            "worked_solution_goal": "Recognize $\\sigma=3$ and classify the pair as a decaying oscillatory mode with envelope $e^{-3t}$.",
+            "variation_from_previous": "Uses the same pair-extraction routine and adds the first interpretation axis: real-part sign and magnitude.",
+            "solution_step_plan": [
+              "Match the poles to $-\\sigma\\pm j\\omega$.",
+              "Read $\\sigma=3$ from the real part.",
+              "State decay rate $3$ and stable envelope $e^{-3t}$.",
+              "Retain oscillation note: nonzero imaginary part still gives sinusoidal modulation."
+            ],
+            "practice_variation_axes": [
+              "Vary the magnitude of negative real part while keeping $\\omega$ fixed.",
+              "Include decimal-valued real parts.",
+              "Insert edge cases where $\\omega=0$ to contrast non-oscillatory decaying poles."
+            ]
+          },
+          "handoff_notes": "Emphasize a stable convention: negative real part means decay; positive magnitude indicates rate, not instability by itself."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Reading Growth Rate from a Positive Real Part",
+          "step_type": "example",
+          "learning_goal": "From poles with positive real part, identify the growth/exponential growth rate and separate growth interpretation from oscillation frequency.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual required; this is a direct symbolic interpretation step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five concise symbolic options with clear growth/decay labels",
+            "practice_question_model": "Given poles with positive real part, determine the growth/decay classification and the rate from the coordinate values.",
+            "distractor_plan": [
+              "Include growth rates with incorrect sign direction.",
+              "Include options that replace growth rate with $\\omega$.",
+              "Include distractors that confuse real and imaginary parts."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given poles $+2\\pm j5$, identify the growth rate and state whether the mode is stable, unstable, or marginal.",
+            "worked_solution_goal": "Interpret the pair as unstable/growing with growth envelope $e^{2t}$ and oscillation rate $5\\,\\mathrm{rad/s}$.",
+            "variation_from_previous": "Keeps the same extraction formula as the decay step but flips real-part sign to force stable/unstable contrast.",
+            "solution_step_plan": [
+              "Match poles to $\\sigma\\pm j\\omega$ form.",
+              "Read $\\sigma=2$ as real-part magnitude.",
+              "Classify response as exponentially growing due to positive real part.",
+              "Store growth/decay vocabulary for later reinforcement in plot interpretation."
+            ],
+            "practice_variation_axes": [
+              "Vary sign of real part while holding $\\omega$ fixed.",
+              "Use varied imaginary magnitudes with same positive real part.",
+              "Switch between compact notation and completed-square-derived notation."
+            ]
+          },
+          "handoff_notes": "Mirror the decay step structure so students detect only the sign flip in interpretation."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Reading Oscillation Frequency from the Imaginary Part",
+          "step_type": "example",
+          "learning_goal": "From a complex-conjugate pair, extract oscillation frequency from the imaginary part magnitude and isolate it from stability interpretation.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; frequency extraction is directly algebraic from the symbolic pair."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic options including frequency magnitude and behavior text",
+            "practice_question_model": "Given a conjugate pair, compute the oscillation frequency and decide if the motion is non-oscillatory.",
+            "distractor_plan": [
+              "Include $2\\omega$ and $\\omega^2$ as common incorrect frequency options.",
+              "Include choices that use radian-to-hertz confusion.",
+              "Include choices that equate frequency with real-part magnitude."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given poles $-1\\pm j7$, determine the oscillation frequency and write it in rad/s.",
+            "worked_solution_goal": "Read $\\omega=7$ from the imaginary part and return oscillation at $7\\,\\mathrm{rad/s}$.",
+            "variation_from_previous": "Retains same extraction rule and changes focus from real-part sign to imaginary-part magnitude.",
+            "solution_step_plan": [
+              "Represent poles in $-\\sigma\\pm j\\omega$ or $\\sigma\\pm j\\omega$ consistently.",
+              "Read imaginary-part magnitude $|\\omega|$.",
+              "State frequency magnitude and mention that sign of $\\omega$ does not change magnitude.",
+              "Record oscillatory vs non-oscillatory outcome."
+            ],
+            "practice_variation_axes": [
+              "Vary $\\omega$ values (integers/decimals) with fixed $\\sigma$.",
+              "Use prompts where pair notation is presented in denominator form first.",
+              "Include edge cases with $\\omega=0$ for contrast."
+            ]
+          },
+          "handoff_notes": "Keep frequency extraction explicit as $|\\operatorname{Im}(s)|$ to prevent sign mistakes."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Interpreting Complex-Conjugate Pole Pairs on a Pole-Zero Plot",
+          "step_type": "example",
+          "learning_goal": "Read a pole-zero plot to identify the conjugate pair and interpret decay/growth and oscillation directly from plotted coordinates.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Pole-zero plot in the s-plane showing axes and a highlighted conjugate pair at mirrored points above/below the real axis.",
+            "visual_elements": [
+              "s-plane real and imaginary axes",
+              "two highlighted complex poles symmetric about real axis",
+              "labels for both pole coordinates"
+            ],
+            "image_generation_notes": "Use a clean pole-zero diagram where learners must visually extract coordinates; do not encode answer choices as images."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five options combining identified pair coordinates and behavioral interpretation",
+            "practice_question_model": "From a given pole-zero plot, identify the highlighted conjugate pair and choose its correct decay/growth and oscillation interpretation.",
+            "distractor_plan": [
+              "Include distractors that confuse real and imaginary coordinates.",
+              "Include distractors that choose a mirrored point from a different pair.",
+              "Include distractors that swap stability classification while keeping the same frequency.",
+              "Include distractors that report frequency as one component of pair coordinates instead of magnitude."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "On the provided pole-zero plot, the highlighted pair is at $(-2\\pm j4)$. State the corresponding response form and behavior.",
+            "worked_solution_goal": "Read coordinates from the plot, convert to $-2\\pm j4$, and explain decaying oscillatory behavior.",
+            "variation_from_previous": "This step transfers the same interpretation language to the visual domain and makes the final move for the topic.",
+            "solution_step_plan": [
+              "Identify the highlighted conjugate pair from the plot symmetry.",
+              "Read $(\\operatorname{Re}(s), \\operatorname{Im}(s))=(-2,\\pm4)$.",
+              "Compute real-part magnitude and sign for decay/growth.",
+              "Compute frequency from $|\\omega|=4$ and report combined interpretation."
+            ],
+            "practice_variation_axes": [
+              "Vary pair positions across left and right half-planes.",
+              "Vary imaginary magnitude while keeping real part fixed.",
+              "Introduce additional poles/zeros so the task requires selecting the target pair first."
+            ]
+          },
+          "handoff_notes": "Treat this as the image-in-question transition; both example and practice must force coordinate extraction from the same visual data source."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Repeated Poles",
+      "lesson_core_move": "Identify repeated roots of a transfer-function denominator as repeated poles and represent their multiplicity correctly on a pole-zero plot.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Repeated Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Define pole multiplicity as the exponent of each repeated linear denominator factor and state how repeated poles appear in pole-zero interpretation as stronger local system effect near that $s$-location.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram is required for this tutorial; keep this step symbolic to reduce load and preserve a concise minimum-effective-dose setup."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the learner that a repeated pole is a repeated root of the transfer-function denominator and that its multiplicity is the power attached to a repeated factor in factored form.",
+            "base_case": "Use $H(s)=\\frac{1}{(s+1)^2}$ to establish the anchor: the denominator has one repeated real root at $s=-1$ with multiplicity $2$.",
+            "paragraph_plan": [
+              "Open by restating the notation: poles are zeros of the denominator $D(s)$.",
+              "Then define multiplicity: if a linear factor $(s-r)^m$ appears, pole $s=r$ has multiplicity $m$.",
+              "Contrast a repeated pole with two distinct factors, e.g., compare $(s+1)^2$ versus $(s+1)(s+3)$.",
+              "Connect to behavior of the $s$-plane: repeated poles share location and increase algebraic weight."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)},\\quad D(s)=(s-r)^m\\,D_\\text{simple}(s)$$",
+              "$$r:\\;\\text{is a pole with multiplicity }m$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep notation compact: only one symbolic worked example in this step and no practice questions."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying a Repeated Real Pole from a Factored Denominator",
+          "step_type": "example",
+          "learning_goal": "Compute multiplicity for a real repeated pole directly from the factored denominator.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed because the skill is extracting multiplicity from algebraic factors."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-option algebraic answer choices",
+            "practice_question_model": "For $H(s)=\\frac{2}{(s-1)^2(s+3)}$, identify the multiplicity of the pole at $s=1$.",
+            "distractor_plan": [
+              "Include one distractor that confuses repeated poles with distinct poles.",
+              "Include one distractor that misreads repeated roots from the numerator.",
+              "Include one distractor that miscounts exponent from a quadratic form."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $H(s)=\\frac{1}{(s+2)^2(s+5)}$, identify all poles and each pole multiplicity.",
+            "worked_solution_goal": "Find the repeated root at $s=-2$ and report it as multiplicity $2$, while reporting $s=-5$ as multiplicity $1$.",
+            "variation_from_previous": "This adds a second distinct pole to the base case so the writer must isolate the repeated root among mixed factors.",
+            "solution_step_plan": [
+              "Read the denominator factors and list each root with its exponent.",
+              "Convert each factor to a root: $(s+2)^2 \\to s=-2$ and $(s+5) \\to s=-5$.",
+              "Assign multiplicity from exponents: $m_{-2}=2$, $m_{-5}=1$."
+            ],
+            "practice_variation_axes": [
+              "Vary the repeated root value and exponent.",
+              "Keep one distinct pole and one repeated pole structure.",
+              "Swap signs between $s+ a$ and $s-a$ to require careful root identification."
+            ]
+          },
+          "handoff_notes": "Question set should stay symbolic-only and require only reading exponents from factored form."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding Pole Multiplicity by Factoring the Denominator",
+          "step_type": "example",
+          "learning_goal": "Extract multiplicities by factoring an expanded or compressed denominator into linear factors and counting repeated roots.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is required; the task is full symbolic factorization and counting."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-option algebraic answer choices",
+            "practice_question_model": "Factor $D(s)=s^3+3s^2+3s+1$ and report each pole multiplicity.",
+            "distractor_plan": [
+              "Add one distractor that factors the denominator partially and misses the repeated root.",
+              "Add one distractor that reverses multiplicity signs for complex or imaginary roots.",
+              "Add one distractor that gives the correct poles but wrong multiplicity values."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\frac{1}{s^3+3s^2+3s+1}$, factor the denominator and list repeated poles with multiplicities.",
+            "worked_solution_goal": "Produce $D(s)=(s+1)^3$, so the only pole is $s=-1$ with multiplicity $3$.",
+            "variation_from_previous": "This step adds required factoring before multiplicity reading, extending from already-factored forms.",
+            "solution_step_plan": [
+              "Factor the denominator fully into linear factors.",
+              "Group identical linear factors and convert each group to repeated root form.",
+              "Assign multiplicity equal to each factor exponent."
+            ],
+            "practice_variation_axes": [
+              "Vary source form between monic and non-monic polynomials.",
+              "Vary multiplicity orders (2,3,4) in factored result.",
+              "Include distractors where factoring errors produce wrong root count."
+            ]
+          },
+          "handoff_notes": "Emphasize checking polynomial expansion of the final factored form to avoid arithmetic mistakes."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Marking Pole Multiplicity on a Pole-Zero Plot",
+          "step_type": "example",
+          "learning_goal": "Represent repeated poles on an $s$-plane diagram with an explicit multiplicity convention.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "2D pole-zero plot grid with real and imaginary axes and one repeated real pole location with duplicate or stacked marker notation.",
+            "visual_elements": [
+              "complex s-plane axes",
+              "unmarked pole point at repeat location",
+              "repeat-count marker (label $m=2 or two concentric symbols)$"
+            ],
+            "image_generation_notes": "Generate a simple $s$-plane with one repeated and one simple pole so the writer can specify repeat marking conventions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-option textual/algebraic answer choices",
+            "practice_question_model": "For $H(s)=\\frac{4}{(s+2)^2(s-1)}$, mark each pole on an $s$-plane and choose the correct multiplicity notation for $s=-2$.",
+            "distractor_plan": [
+              "Include one distractor that uses one marker for multiplicity greater than one.",
+              "Include one distractor that places the repeated pole in the wrong half-plane.",
+              "Include one distractor that uses a complex-conjugate pair marker pattern instead of real-axis repeat marking."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\frac{3}{(s+1)^2(s+4)}$, show the pole-zero plot and annotate each pole with multiplicity.",
+            "worked_solution_goal": "Produce a plot showing one repeated pole at $s=-1$ with multiplicity $2$ and one simple pole at $s=-4$ with multiplicity $1$.",
+            "variation_from_previous": "This extends algebraic multiplicity recognition into the plot layer with explicit diagram notation.",
+            "solution_step_plan": [
+              "Factor and identify denominator roots and multiplicities.",
+              "Place each pole on the real axis in the $s$-plane.",
+              "Annotate repeated root at $s=-1$ with a consistent multiplicity marker."
+            ],
+            "practice_variation_axes": [
+              "Move repeated and simple poles to different real locations.",
+              "Change multiplicity from 2 to 3 to require a reusable annotation rule.",
+              "Mix one left-half and one right-half-pole example for sign control."
+            ]
+          },
+          "handoff_notes": "Question generator should preserve a uniform repeat-notation convention across all lessons in this module."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Representing Repeated Complex-Conjugate Poles",
+          "step_type": "example",
+          "learning_goal": "Count multiplicity for repeated complex-conjugate pole pairs and encode them correctly in the $s$-plane representation.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "s-plane diagram with symmetric complex-conjugate poles, one pair shown with multiplicity greater than one.",
+            "visual_elements": [
+              "complex s-plane axes",
+              "symmetric conjugate poles above and below imaginary axis",
+              "multiplicity labels for each conjugate member"
+            ],
+            "image_generation_notes": "Use a small set of axis ticks and clear conjugate symmetry so multiplicity labeling is unambiguous."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-option algebraic/coordinate answer choices",
+            "practice_question_model": "If $H(s)=\\frac{1}{\\left(s^2+2s+5\\right)^2}$, identify the repeated complex-conjugate poles and their multiplicities.",
+            "distractor_plan": [
+              "Include one distractor that identifies only one root from the pair.",
+              "Include one distractor that labels multiplicity per conjugate pair incorrectly as 1.",
+              "Include one distractor that confuses repeated multiplicity with order of a denominator quadratic."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find and plot the repeated complex-conjugate poles for $H(s)=\\frac{1}{(s+1-2j)^2(s+1+2j)^2}$ with multiplicity annotations.",
+            "worked_solution_goal": "Recognize both $s=-1\\pm 2j$ as repeated poles of multiplicity 2 each.",
+            "variation_from_previous": "This extends multiplicity handling from the real axis to symmetric complex-conjugate locations in the complex plane.",
+            "solution_step_plan": [
+              "Factor/parse quadratic factors into linear conjugate factors and identify each location.",
+              "Count multiplicity from exponent on each conjugate linear factor.",
+              "Plot both conjugates with matched multiplicity annotation."
+            ],
+            "practice_variation_axes": [
+              "Vary complex shift and damping terms in conjugate factors.",
+              "Vary exponent 2, 3, and 4 on conjugate factors.",
+              "Contrast correct conjugate multiplicity against a single-factor complex pair distractor."
+            ]
+          },
+          "handoff_notes": "Keep conjugate pair symmetry explicit so the question generator can create mirrored variants without changing core mapping."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Pole Locations in the $s$-Plane",
+      "lesson_core_move": "Locate poles of a rational transfer function in the s-plane and interpret their real and imaginary coordinates as decay or growth rates and oscillation frequencies for system behavior.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Pole Locations in the $s$-Plane",
+          "step_type": "tutorial",
+          "learning_goal": "Anchor the interpretation rule that a pole at $p=\\sigma+j\\omega$ maps to a natural-mode factor $e^{(\\sigma+j\\omega)t}=e^{\\sigma t}\\,e^{j\\omega t}$, so $σ$ controls growth/decay and $ω$ controls oscillation.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "An $s$-plane diagram with real axis $σ$, imaginary axis $j\\omega$, and 3 labeled sample poles: $-2$, $-1+j$, and $1-j$ to show sign conventions.",
+            "visual_elements": [
+              "s-plane axes",
+              "sample pole markers",
+              "real and imaginary coordinate labels"
+            ],
+            "image_generation_notes": "Keep the figure uncluttered and pedagogical. Use distinct colors or markers for left/right-half-plane poles and annotate one pole with its $\\sigma$ and $\\omega$ components."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "No questions in the tutorial section.",
+            "practice_question_model": "No practice questions in tutorial.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the one-step interpretation chain: from pole coordinate to exponential envelope and oscillation frequency, then to stability language (left-half-plane decay, right-half-plane growth).",
+            "base_case": "Begin with $p=-1$ and explicitly derive the response factor $e^{-t}$ as a decaying nonoscillatory mode.",
+            "paragraph_plan": [
+              "State that poles are roots of the denominator and each root is an exponent in a natural response term.",
+              "Introduce coordinate split $p=\\sigma+j\\omega$ and show the mapping to the real and oscillatory parts.",
+              "Explain the direct interpretation rule: $σ<0\\Rightarrow$ decays, $σ=0\\Rightarrow$ sustained sinusoidal contribution, $σ>0\\Rightarrow$ grows.",
+              "Explain the role of $ω$ in setting oscillation frequency $\\omega$ and non-oscillation when $ω=0$.",
+              "End with a short checklist for reading a pole: sign of $σ$, magnitude of $σ$, and sign/magnitude of $ω$."
+            ],
+            "display_math_plan": [
+              "$$p=\\sigma+j\\omega$$",
+              "$$e^{(\\sigma+j\\omega)t}=e^{\\sigma t}\\big(\\cos(\\omega t)+j\\sin(\\omega t)\\big)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "No worked example required in the tutorial section.",
+            "worked_solution_goal": "No worked example required in the tutorial section.",
+            "variation_from_previous": "No worked example required in the tutorial section.",
+            "solution_step_plan": [
+              "No worked example required in the tutorial section."
+            ],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section minimal: one concise visual schema and notation mapping. Avoid introducing root-locus or residue mechanics, which belong later."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Reading Pole Coordinates in the $s$-Plane",
+          "step_type": "example",
+          "learning_goal": "Given a plotted pole, extract $σ$ and $ω$ and restate the associated mode form in words and in exponential notation.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A single-pole $s$-plane figure with at least four candidate poles in different quadrants for interpretation questions, such as $-1$, $1$, $-2+j3$, and $-\\frac{1}{2}-j4$.",
+            "visual_elements": [
+              "single pole coordinates",
+              "axes grid with $\\sigma$ and $\\omega$ labels",
+              "quadrant markers"
+            ],
+            "image_generation_notes": "Generate separate variants that keep axis labels consistent and only vary pole coordinates to support mirrored MCQ generation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices (coordinate interpretation statements and mode forms)",
+            "practice_question_model": "Given the pole location in the $s$-plane, choose the correct natural response term.",
+            "distractor_plan": [
+              "Swap the signs of $σ$ and $ω$",
+              "Confuse $\\sigma$ with frequency and call it growth when it is actually decay",
+              "Use only the real part and ignore the imaginary part",
+              "Use only the imaginary part and ignore the real part"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No additional direct instruction for this example section.",
+            "base_case": "No additional direct instruction for this example section.",
+            "paragraph_plan": [
+              "No additional direct instruction for this example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read the pole at $-2+j1$ from the $s$-plane and identify the corresponding term in the natural response.",
+            "worked_solution_goal": "Show how to map $-2+j1$ to the mode $e^{(-2+j1)t}=e^{-2t}\\cos t + je^{-2t}\\sin t$ and then reduce to the interpretation phrase.",
+            "variation_from_previous": "Adds explicit coordinate extraction from a drawn pole after the introductory rule.",
+            "solution_step_plan": [
+              "Read real coordinate $σ=-2$ and imaginary coordinate $ω=1$ from the plot.",
+              "Write the mode as $e^{(-2+j1)t}$.",
+              "Separate to $e^{-2t}(\\cos t + j\\sin t)$ to identify decay and oscillation."
+            ],
+            "practice_variation_axes": [
+              "Change pole location to different quadrants",
+              "Change magnitude of $σ$",
+              "Change magnitude of $ω$",
+              "Ask for decay vs growth classification vs mode form"
+            ]
+          },
+          "handoff_notes": "Use the same interpretation template in all practice variants so learners notice the mapping pattern first, then vary numbers."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Interpreting the Real Coordinate of a Pole",
+          "step_type": "example",
+          "learning_goal": "Classify decay or growth from the real part of a pole while holding the imaginary part controlled.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Two pole points on the real axis of the $s$-plane, e.g., $-3$, $-1$, and $2$, shown with associated response envelope arrow lengths.",
+            "visual_elements": [
+              "real-axis poles",
+              "decay/growth arrow annotations",
+              "stability region shading"
+            ],
+            "image_generation_notes": "Create variants with different real-axis locations to isolate sign and magnitude effects of $σ$."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices (decay/growth statements and mode forms)",
+            "practice_question_model": "Given a pole on the real axis, choose the correct classification of system factor behavior (decay, growth, or sustained).",
+            "distractor_plan": [
+              "Misread left-half-plane as growth",
+              "Treat zero real part as decaying",
+              "Ignore magnitude of negative real part and only pick sign",
+              "Reverse the meaning of oscillation versus growth"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No additional direct instruction for this example section.",
+            "base_case": "No additional direct instruction for this example section.",
+            "paragraph_plan": [
+              "No additional direct instruction for this example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Interpret the pole at $-3$ on the $s$-plane and choose the correct response-type statement.",
+            "worked_solution_goal": "Demonstrate that $σ=-3$ gives a decaying real exponential factor $e^{-3t}$ with no oscillation when $ω=0$.",
+            "variation_from_previous": "Controls $ω=0$ to isolate the effect of only $σ$.",
+            "solution_step_plan": [
+              "Read the pole on the real axis and record $σ$.",
+              "Compute the corresponding mode $e^{σ t}$.",
+              "Map $σ<0$ to a decaying envelope and $σ>0$ to growth."
+            ],
+            "practice_variation_axes": [
+              "Swap sign of real coordinate",
+              "Adjust the magnitude of $σ$",
+              "Use near-zero negative/positive values as edge cases",
+              "Pair with a matching verbal description prompt"
+            ]
+          },
+          "handoff_notes": "This section should feel slightly scaffolded: first pure real-axis examples, then mixed examples in later sections."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting the Imaginary Coordinate of a Pole",
+          "step_type": "example",
+          "learning_goal": "Interpret oscillation frequency from $ω$ while keeping the real part fixed so the role of $ω$ is explicit.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Points on the imaginary axis such as $\\pm j$, $\\pm j2$, and $\\pm 2j$ marked on the $s$-plane, with short text arrows indicating oscillation rate.",
+            "visual_elements": [
+              "imag-axis poles",
+              "frequency arrows",
+              "symmetry labels for conjugate locations"
+            ],
+            "image_generation_notes": "Keep real coordinate equal to zero in base examples, then add conjugate variants in practice prompts."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices (oscillatory phrase and mode form options)",
+            "practice_question_model": "Given a purely imaginary pole from an $s$-plane image, choose the correct oscillation frequency interpretation.",
+            "distractor_plan": [
+              "Use real part as frequency",
+              "Set $ω=0$ when nonzero imaginary part is shown",
+              "Choose opposite sign of $ω$ but same magnitude effect",
+              "Ignore that imaginary-only poles imply sustained oscillations"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No additional direct instruction for this example section.",
+            "base_case": "No additional direct instruction for this example section.",
+            "paragraph_plan": [
+              "No additional direct instruction for this example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read the pole at $j2$ and identify the oscillation frequency and mode form.",
+            "worked_solution_goal": "Show that purely imaginary poles correspond to sustained oscillation and map $j2$ to $\\cos(2t)$/$\\sin(2t)$ behavior via $e^{j2t}$.",
+            "variation_from_previous": "Extends from the general coordinate-reading example to isolate the imaginary axis and explain sustained oscillation.",
+            "solution_step_plan": [
+              "Extract $σ=0$ and $ω=2$.",
+              "Write $e^{(0+j2)t}=e^{j2t}$ and rewrite as $∑$ sinusoidal components.",
+              "State that the envelope is constant (no decay or growth) and frequency is $2\\,\\mathrm{rad/s}$."
+            ],
+            "practice_variation_axes": [
+              "Use $ω=1,2,5$ magnitude changes",
+              "Use $-j2$ to test sign interpretation",
+              "Use multiple imaginary-only candidate poles",
+              "Ask for oscillation statement versus mode-form statement"
+            ]
+          },
+          "handoff_notes": "Keep the distinction between frequency magnitude and direction explicit to reduce sign-slip errors in later mixed-pole steps."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting Poles with Both Decay and Oscillation",
+          "step_type": "example",
+          "learning_goal": "Combine $σ$ and $ω$ into a single interpretation for damped or growing oscillatory modes.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A set of points in the upper and lower imaginary directions with negative real part, such as $-1\\pm j2$ and $-0.5-j4$, labeled by candidate mode forms.",
+            "visual_elements": [
+              "complex poles with both real/imag components",
+              "paired upper/lower half-plane markers",
+              "damped oscillation arrows"
+            ],
+            "image_generation_notes": "Generate mirrored pairs and near-axis variants to emphasize both components jointly."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices (fourier-style mode descriptions and numerical frequency options)",
+            "practice_question_model": "Given $p=\\sigma+j\\omega$ from a diagram, choose the full interpretation of envelope and oscillation.",
+            "distractor_plan": [
+              "Assign growth where decay is required by negative real part",
+              "Drop the imaginary component from mode form",
+              "Use only one of $|\\omega|$ or $\\u03c3$",
+              "Invert frequency sign and claim time reversal"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No additional direct instruction for this example section.",
+            "base_case": "No additional direct instruction for this example section.",
+            "paragraph_plan": [
+              "No additional direct instruction for this example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Interpret the pole $-0.5 + j3$ and summarize the natural response behavior.",
+            "worked_solution_goal": "Convert to $e^{-0.5t}e^{j3t}=e^{-0.5t}(\\cos 3t + j\\sin 3t)$ and label as decaying oscillation at $3\\,\\mathrm{rad/s}$.",
+            "variation_from_previous": "Builds on prior real-only and imag-only cases by combining both coordinates in one pole.",
+            "solution_step_plan": [
+              "Read both coordinates: $σ=-0.5$, $ω=3$.",
+              "Compute base factor $e^{(-0.5+j3)t}$.",
+              "Separate into envelope and sinusoidal parts and classify as damped oscillation."
+            ],
+            "practice_variation_axes": [
+              "Change $σ$ sign while holding $ω$ fixed",
+              "Change $ω$ magnitude while holding $σ$ fixed",
+              "Mirror poles across real axis",
+              "Prompt output format: qualitative behavior vs exact mode expression"
+            ]
+          },
+          "handoff_notes": "This is the first place where both coordinates can jointly be used in a single interpretation question, so tie this to the comparison section."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Comparing Pole Locations for System Behavior",
+          "step_type": "example",
+          "learning_goal": "Compare multiple poles and rank relative decay/oscillation effects from competing $σ$ and $ω$ values.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A diagram with three poles, e.g., $-4$, $-1+j4$, and $-1-j2$, for direct ranking by dominant behavior and oscillation strength.",
+            "visual_elements": [
+              "multiple poles in different regions",
+              "dominance/cascade comparison annotations",
+              "relative envelope rates"
+            ],
+            "image_generation_notes": "Vary combinations so each prompt forces one dominant-pole comparison and one wrong-sign trap."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices (comparative behavior statements)",
+            "practice_question_model": "Given a set of poles, select the correct ranking of response dominance or dominant behavior description.",
+            "distractor_plan": [
+              "Rank by frequency magnitude only and ignore decay rate",
+              "Rank by symmetry pairing rather than real-axis value",
+              "Choose conjugate pair as always dominant regardless of σ",
+              "Swap stable/unstable when comparing real parts"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No additional direct instruction for this example section.",
+            "base_case": "No additional direct instruction for this example section.",
+            "paragraph_plan": [
+              "No additional direct instruction for this example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For poles at $-4$, $-1+j4$, and $-1-j2$, identify which pole governs the long-term behavior and why.",
+            "worked_solution_goal": "Demonstrate that the pole with most positive real part dominates transient growth/decay rate (closest to imaginary axis) and link each oscillation pair to $ω$ magnitude.",
+            "variation_from_previous": "Composes multiple previously practiced single-pole interpretations into a comparative, ranking-type task.",
+            "solution_step_plan": [
+              "List each pole's $(\\u03c3,\\u03c9)$ values.",
+              "Compare real parts to identify dominant envelope rate.",
+              "Compare imaginary magnitudes for oscillation speed among candidates.",
+              "State final qualitative class and ranking."
+            ],
+            "practice_variation_axes": [
+              "Swap which pole is least-damped",
+              "Vary closeness to imaginary axis",
+              "Vary imaginary magnitudes while holding real parts constant",
+              "Ask for different outputs: fastest decay vs largest oscillation"
+            ]
+          },
+          "handoff_notes": "Keep ranking logic strictly causal: first choose dominant real-part effect, then describe oscillatory frequency characteristics."
+        }
+      ]
+    }
+  ]
+}

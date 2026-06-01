@@ -1,0 +1,430 @@
+# Phase Shifting by $\angle H(j\omega)$
+
+<!--
+lesson-id: EE01-M10-01-L08
+-->
+
+## Table of Contents
+
+- [Introduction to Phase Shifting by $\angle H(j\omega)$](#introduction-to-phase-shifting-by-angle-hjomega)
+- [Adding a Given Phase Shift to an Input Phase](#adding-a-given-phase-shift-to-an-input-phase)
+- [Adding a Negative Phase Shift](#adding-a-negative-phase-shift)
+- [Evaluating $\angle H(j\omega)$ at the Input Frequency](#evaluating-angle-hjomega-at-the-input-frequency)
+- [Writing the Same-Frequency Output with the Shifted Phase](#writing-the-same-frequency-output-with-the-shifted-phase)
+
+---
+
+<a id="introduction-to-phase-shifting-by-angle-hjomega"></a>
+## Introduction to Phase Shifting by $\angle H(j\omega)$
+
+The previous lesson showed that a complex exponential input keeps the same frequency through an LTI system. Here the new focus is the phase term: the system response $H(j\omega)$ rotates the output at that input frequency.
+
+Write $H(j\omega)$ in polar form so the phase contribution is visible. That lets you see the response as a magnitude factor together with an angle that will be added to the output exponent.
+
+$$
+H(j\omega)=|H(j\omega)|e^{j\angle H(j\omega)}
+$$
+
+Now multiply the input $e^{j\omega t}$ by that polar form. The angle from $H(j\omega)$ adds directly to the exponent, so the output keeps the same $\omega$ and picks up a phase rotation.
+
+$$
+y(t)=H(j\omega)e^{j\omega t}=|H(j\omega)|e^{j(\omega t+\angle H(j\omega))}
+$$
+
+For a real sinusoid, read the same rule as a phase shift on the cosine. Add $\angle H(j\omega)$ to the input phase $\phi$ and keep $\omega$ unchanged.
+
+$$
+x(t)=A\cos(\omega t+\phi)\quad\Rightarrow\quad y(t)=A|H(j\omega)|\cos(\omega t+\phi+\angle H(j\omega))
+$$
+
+So the reusable rule is: evaluate $\angle H(j\omega)$ at the input frequency, add it to the input phase, and keep the frequency the same.
+
+---
+
+<a id="adding-a-given-phase-shift-to-an-input-phase"></a>
+## Adding a Given Phase Shift to an Input Phase
+
+**Example:** If $x(t)=\cos(4t+\pi/6)$ and $\angle H(j4)=\pi/3$, what is the output phase?
+
+**Explanation**
+
+The cue is that the system phase shift is already given at the input frequency, so the only move is to add the angles and keep $\omega=4$ unchanged.
+
+$$
+\phi_{\text{out}}=\pi/6+\pi/3=\pi/2
+$$
+
+So the output phase is $\pi/2$. The output sinusoid still uses the same frequency $4$, so the full cosine form changes only in its phase.
+
+$$
+y(t)=\cos(4t+\pi/2)
+$$
+
+**Question 1:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q001
+content: |-
+  Given $x(t)=\cos(2t+\pi/8)$ and $\angle H(j2)=\pi/4$, what is the output phase?
+
+options:
+- id: a
+  content: |-
+    $3\pi/8$
+  correct: true
+  feedback: |-
+    Add the system phase shift to the input phase: $\pi/8+\pi/4=3\pi/8$. The frequency stays at $2$.
+
+- id: b
+  content: |-
+    $\pi/8$
+
+- id: c
+  content: |-
+    $\pi/4$
+
+- id: d
+  content: |-
+    $-\pi/8$
+
+- id: e
+  content: |-
+    $5\pi/8$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q002
+content: |-
+  If $x(t)=\cos(5t+\pi/6)$ and $\angle H(j5)=\pi/3$, which output sinusoid is correct?
+
+options:
+- id: a
+  content: |-
+    $\cos(5t+\pi/2)$
+  correct: true
+  feedback: |-
+    Add the given phase shift to the input phase: $\pi/6+\pi/3=\pi/2$. The output keeps the same frequency $5$; only the phase changes.
+
+- id: b
+  content: |-
+    $\cos(5t+\pi/6)$
+
+- id: c
+  content: |-
+    $\cos(5t-\pi/6)$
+
+- id: d
+  content: |-
+    $\cos(4t+\pi/2)$
+
+- id: e
+  content: |-
+    $3\cos(5t+\pi/2)$
+```
+
+---
+
+<a id="adding-a-negative-phase-shift"></a>
+## Adding a Negative Phase Shift
+
+**Example:** If $x(t)=\cos(2t+\pi/4)$ and $\angle H(j2)=-\pi/6$, what is the output phase?
+
+**Explanation**
+
+The cue is that the system phase shift is already given at the input frequency, so a negative value is still added to the input phase. Keep $\omega=2$ unchanged.
+
+$$
+\phi_{\text{out}}=\pi/4+(-\pi/6)=\pi/12
+$$
+
+So the output phase is $\pi/12$. The negative sign changes the angle, but it does not change the frequency of the sinusoid.
+
+$$
+y(t)=\cos(2t+\pi/12)
+$$
+
+**Question 3:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q003
+content: |-
+  If $x(t)=\cos(5t-\pi/3)$ and $\angle H(j5)=-\pi/5$, what is the output phase?
+
+options:
+- id: a
+  content: |-
+    $-\frac{8\pi}{15}$
+  correct: true
+  feedback: |-
+    Add the negative system phase directly to the input phase. The frequency stays $5$.
+
+    $$
+    \phi_{\text{out}}=-\pi/3+(-\pi/5)=-\frac{8\pi}{15}
+    $$
+
+    The negative sign does not mean subtract again; it just changes the direction of the phase shift.
+
+- id: b
+  content: |-
+    $-\frac{2\pi}{15}$
+
+- id: c
+  content: |-
+    $\frac{8\pi}{15}$
+
+- id: d
+  content: |-
+    $-\frac{\pi}{3}$
+
+- id: e
+  content: |-
+    $-\frac{\pi}{5}$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q004
+content: |-
+  If $x(t)=\cos(4t+\pi/8)$ and $\angle H(j4)=-\pi/3$, what is the output sinusoid?
+
+options:
+- id: a
+  content: |-
+    $y(t)=\cos\left(4t-\frac{5\pi}{24}\right)$
+  correct: true
+  feedback: |-
+    Add the system phase shift to the input phase and keep the frequency at $4$.
+
+    $$
+    \phi_{\text{out}}=\pi/8+(-\pi/3)=-\frac{5\pi}{24}
+    $$
+
+    So the output sinusoid is $y(t)=\cos\left(4t-\frac{5\pi}{24}\right)$. Only the phase changes; the frequency does not.
+
+- id: b
+  content: |-
+    $y(t)=\cos\left(4t+\frac{5\pi}{24}\right)$
+
+- id: c
+  content: |-
+    $y(t)=\cos\left(4t-\frac{\pi}{8}\right)$
+
+- id: d
+  content: |-
+    $y(t)=\cos\left(3t-\frac{5\pi}{24}\right)$
+
+- id: e
+  content: |-
+    $y(t)=\cos\left(4t-\frac{\pi}{3}\right)$
+```
+
+---
+
+<a id="evaluating-angle-hjomega-at-the-input-frequency"></a>
+## Evaluating $\angle H(j\omega)$ at the Input Frequency
+
+**Example:** If $x(t)=\cos(t+\pi/6)$ and $H(j\omega)=\frac{1+j\omega}{1-j\omega}$, what is the output phase?
+
+**Explanation**
+
+The cue is that $\angle H(j\omega)$ is not given directly, so first evaluate the transfer function at the input frequency $\omega=1$ and read off its angle. Then add that angle to the input phase.
+
+$$
+\angle H(j1)=\angle\!\left(\frac{1+j}{1-j}\right)=\angle(1+j)-\angle(1-j)=\frac{\pi}{4}-\left(-\frac{\pi}{4}\right)=\frac{\pi}{2}
+$$
+
+Now add the evaluated phase shift to the input phase $\pi/6$. The frequency stays at $1$ while only the angle changes.
+
+$$
+\phi_{\text{out}}=\pi/6+\pi/2=2\pi/3
+$$
+
+So the output phase is $2\pi/3$, and the same-frequency output would be $\cos(t+2\pi/3)$.
+
+**Question 5:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q005
+content: |-
+  If $x(t)=\cos(t+\pi/3)$ and $H(j\omega)=\frac{1-j\omega}{1+j\omega}$, what is the output phase?
+
+options:
+- id: a
+  content: |-
+    $-\pi/6$
+  correct: true
+  feedback: |-
+    Evaluate $\angle H(j\omega)$ at the input frequency $\omega=1$ first. Then add that shift to the input phase.
+
+    $$
+    \angle H(j1)=\angle\left(\frac{1-j}{1+j}\right)=\angle(1-j)-\angle(1+j)=-\frac{\pi}{4}-\frac{\pi}{4}=-\frac{\pi}{2}
+    $$
+
+    $$
+    \phi_{\text{out}}=\pi/3+(-\pi/2)=-\pi/6
+    $$
+
+    The frequency stays $1$; only the phase changes.
+
+- id: b
+  content: |-
+    $\pi/3$
+
+- id: c
+  content: |-
+    $\pi/3 + 1$
+
+- id: d
+  content: |-
+    $\pi/12$
+
+- id: e
+  content: |-
+    $-\pi/2$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q006
+content: |-
+  If $x(t)=\cos(2t+\pi/6)$ and $H(j\omega)=\frac{2-j\omega}{2+j\omega}$, what is the output phase?
+
+options:
+- id: a
+  content: |-
+    $-\pi/3$
+  correct: true
+  feedback: |-
+    Evaluate $\angle H(j\omega)$ at the input frequency $\omega=2$ first. Then add that shift to the input phase.
+
+    $$
+    \angle H(j2)=\angle\left(\frac{2-2j}{2+2j}\right)=\angle(2-2j)-\angle(2+2j)=-\frac{\pi}{4}-\frac{\pi}{4}=-\frac{\pi}{2}
+    $$
+
+    $$
+    \phi_{\text{out}}=\pi/6+(-\pi/2)=-\pi/3
+    $$
+
+    The frequency stays $2$; only the phase changes.
+
+- id: b
+  content: |-
+    $\pi/6$
+
+- id: c
+  content: |-
+    $\pi/6 + 1$
+
+- id: d
+  content: |-
+    $-\pi/12$
+
+- id: e
+  content: |-
+    $-\pi/2$
+```
+
+---
+
+<a id="writing-the-same-frequency-output-with-the-shifted-phase"></a>
+## Writing the Same-Frequency Output with the Shifted Phase
+
+**Example:** If $x(t)=A\cos(5t-\pi/3)$ and $\angle H(j5)=\pi/6$, write the output sinusoid.
+
+**Explanation**
+
+Use the phase result from the previous step, then put it back into the cosine. The frequency stays at $5$, so only the phase term changes.
+
+$$
+\phi_{\text{out}}=-\pi/3+\pi/6=-\pi/6
+$$
+
+So the output is still the same kind of sinusoid: same amplitude symbol $A$, same angular frequency $5$, and only the phase updated to $-\pi/6$.
+
+$$
+y(t)=A\cos(5t-\pi/6)
+$$
+
+**Question 7:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q007
+content: |-
+  If $x(t)=B\cos(3t+\pi/4)$ and $\angle H(j3)=\pi/6$, write the output sinusoid in standard cosine form.
+
+options:
+- id: a
+  content: |-
+    $y(t)=B\cos(3t+5\pi/12)$
+  correct: true
+  feedback: |-
+    Keep the frequency at $3$ and add the phase angles: $\pi/4+\pi/6=5\pi/12$. Then write the same-frequency output as a cosine with that shifted phase.
+
+- id: b
+  content: |-
+    $y(t)=B\cos(3t+\pi/4)$
+
+- id: c
+  content: |-
+    $y(t)=B\cos(3t+\pi/12)$
+
+- id: d
+  content: |-
+    $y(t)=B\sin(3t+5\pi/12)$
+
+- id: e
+  content: |-
+    $y(t)=(B+\pi/6)\cos(3t+5\pi/12)$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: EE01-M10-01-L08-q008
+content: |-
+  If $x(t)=A\cos(8t-\pi/6)$ and $\angle H(j8)=-\pi/4$, write the output sinusoid in standard cosine form.
+
+options:
+- id: a
+  content: |-
+    $y(t)=A\cos(8t-5\pi/12)$
+  correct: true
+  feedback: |-
+    Keep the frequency at $8$ and add the phase angles: $-\pi/6+(-\pi/4)=-5\pi/12$. Then write the output as the same cosine with the shifted phase.
+
+- id: b
+  content: |-
+    $y(t)=A\cos(8t-\pi/6)$
+
+- id: c
+  content: |-
+    $y(t)=A\cos(8t+\pi/12)$
+
+- id: d
+  content: |-
+    $y(t)=A\sin(8t-5\pi/12)$
+
+- id: e
+  content: |-
+    $y(t)=A\cos(4t-5\pi/12)$
+```

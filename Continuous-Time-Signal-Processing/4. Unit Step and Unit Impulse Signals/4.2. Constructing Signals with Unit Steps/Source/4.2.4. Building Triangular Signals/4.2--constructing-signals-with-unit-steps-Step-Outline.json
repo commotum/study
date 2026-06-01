@@ -1,0 +1,1792 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Windowing a Signal Over a Time Interval",
+      "lesson_core_move": "Construct a finite-duration version of a continuous-time signal by multiplying it by the shifted-unit-step window $u(t-a)-u(t-b)$ and identifying the interval over which the original signal is retained.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Windowing a Signal Over a Time Interval",
+          "step_type": "tutorial",
+          "learning_goal": "Show how a finite-duration signal window is formed as $y(t)=x(t) (u(t-a)-u(t-b))$ and how $a\\le b$ creates a retained interval.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagrams required; content is expression-first and interval-logic based."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No practice questions for the tutorial section.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Introduce the shifted-unit-step window as a multiplicative gate: it keeps $x(t)$ on an interval and zeroes it elsewhere.",
+            "base_case": "Use $x(t)=1$ with $y(t)=1\\cdot(u(t)-u(t-b))$ to show the retention interval from $0\\le t < b$.",
+            "paragraph_plan": [
+              "Define $u(t)$ and shifted versions $u(t-a)$, $u(t-b)$ as on-off gates.",
+              "Show the window product $u(t-a)-u(t-b)$ and state the two switching times $a$ and $b$.",
+              "Explain interval retention by reading the step transitions and excluding the region after $t\\ge b$.",
+              "Connect to familiar 1-line signal construction: multiply any existing $x(t)$ by a window factor.",
+              "Add a short sanity check on a generic symbolic expression for $y(t)$."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t)(u(t-a)-u(t-b))$$",
+              "$$u(t-a)-u(t-b)=1\\text{ for }a\\le t<b,\\;0\\text{ otherwise}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep terminology exact: \"window\" means a difference of shifted unit steps. Use closed-open interval phrasing $a\\le t<b$ unless boundaries are explicitly altered."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Windowing a Signal from t=0 to t=b",
+          "step_type": "example",
+          "learning_goal": "Construct and interpret the window $u(t)-u(t-b)$ multiplying a base signal from $t=0$ up to $t=b$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; interval and factor are fully specified by formulas."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $x(t)=t$, form the windowed signal $y(t)=x(t)(u(t)-u(t-b))$ and identify the retained interval.",
+            "distractor_plan": [
+              "Use only $u(t-b)$, missing the leading $u(t)$ and the start edge at 0.",
+              "Use $u(t)-u(t+b)$, shifting the cutoff by the wrong sign.",
+              "Multiply by $u(t+b)-u(t-b)$, doubling the support interval.",
+              "State the retained interval as $0<t\\le b$ if the lesson logic assumes right-endpoint inclusion."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Build $y(t)=t\\,(u(t)-u(t-b))$ and describe the retained interval and equivalent piecewise form.",
+            "worked_solution_goal": "Show that the result equals $y(t)=t$ on $0\\le t < b$ and $y(t)=0$ otherwise.",
+            "variation_from_previous": "Moves from a constant base case to a linear base signal, retaining the same start and end of the window.",
+            "solution_step_plan": [
+              "Write the window factor and identify where $u(t)-u(t-b)=1$.",
+              "Multiply $x(t)=t$ by the factor and isolate interval conditions.",
+              "Express $y(t)$ as a single expression or compact piecewise form with interval bounds."
+            ],
+            "practice_variation_axes": [
+              "Change the base signal from $t$ to $At+B$.",
+              "Swap endpoint values while preserving lower bound $0$.",
+              "Vary sign/zeroing conventions at the boundary only if instructor later specifies them."
+            ]
+          },
+          "handoff_notes": "Use boundary language consistently: window is active on $0\\le t < b$ for this section unless later corrected."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Windowing a Signal from t=a to t=b",
+          "step_type": "example",
+          "learning_goal": "Construct a shifted finite window $u(t-a)-u(t-b)$ for a base signal and identify retention between arbitrary endpoints.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; shifted interval is signaled directly by $a$ and $b$ in the expression."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $x(t)=\\cos t$, form $y(t)=x(t)(u(t-a)-u(t-b))$ and identify the retention interval in terms of $a$ and $b$.",
+            "distractor_plan": [
+              "Swap the window order to $u(t-b)-u(t-a)$, which inverts the retained interval.",
+              "Assume the window includes $t>b$ by using a sum instead of a difference.",
+              "Take retention as $a<t\\le b$ when the model requires closed-open form.",
+              "Misplace subtraction and write $u(t-a)-u(t-b)+u(t)$, adding extra leading support."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: For $x(t)=\\cos t$, multiply by $u(t-a)-u(t-b)$ and write the exact interval where the cosine component remains.",
+            "worked_solution_goal": "Produce a clean statement that the retained part is active for $a\\le t < b$ and is zero elsewhere.",
+            "variation_from_previous": "Introduces lower bound shift from $0$ to $a$, requiring learners to generalize the same window logic.",
+            "solution_step_plan": [
+              "Substitute $a$ and $b$ into the shifted steps.",
+              "Find sign regions of the difference term and mark where it equals 1.",
+              "Attach $x(t)$ only on that interval and keep all other regions at 0."
+            ],
+            "practice_variation_axes": [
+              "Use an arbitrary base function (polynomial, exponential, trigonometric).",
+              "Vary relative order checks with sample parameters $a<b$, and later with concrete numeric anchors.",
+              "Introduce parameterized endpoints in model questions while keeping symbolic interval logic."
+            ]
+          },
+          "handoff_notes": "Keep expression direction in sync: retained region uses left endpoint $a$ and right endpoint $b$."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Windowing a Signal Across t=0",
+          "step_type": "example",
+          "learning_goal": "Handle windows whose interval crosses the origin and maintain consistent sign/endpoint treatment in $u(t-a)-u(t-b)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; crossing zero is captured by signed endpoint choices in the formula."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Window $x(t)=e^{-t}$ by $u(t+2)-u(t-3)$. State the final retained interval and which time region remains active.",
+            "distractor_plan": [
+              "Treat both endpoints as positive, giving interval $2\\le t<3$ instead of $-2\\le t<3$.",
+              "Use active interval $-3\\le t< -2$ from misreading endpoint signs.",
+              "Ignore one step and use only one switch in the factor.",
+              "Flip interval polarity by using $u(t-3)-u(t+2)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: Write the windowed signal $y(t)=e^{-t}(u(t+2)-u(t-3))$ and identify where $y(t)$ is nonzero.",
+            "worked_solution_goal": "Show that the nonzero interval crosses zero and is correctly reported as $-2\\le t<3$.",
+            "variation_from_previous": "Adds sign-shifted endpoints that straddle zero, reinforcing parameter interpretation instead of pattern matching to $t=0$ start.",
+            "solution_step_plan": [
+              "Rewrite the two shifted steps and determine when each is 1.",
+              "Subtract the activations to find the net window support.",
+              "Attach the base signal to that support and keep zero outside the interval."
+            ],
+            "practice_variation_axes": [
+              "Swap signs of one endpoint while preserving the other.",
+              "Use non-even base signals to prevent symmetry shortcuts.",
+              "Test numeric edge cases like adjacent endpoints to avoid reversed intervals."
+            ]
+          },
+          "handoff_notes": "Emphasize that negative shifts in $u(t-a)$ and $u(t-b)$ move switches left and right on the time axis."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Identifying the Retained Interval from a Windowed Signal",
+          "step_type": "example",
+          "learning_goal": "Given a windowed expression, infer the retained time interval directly from switch times in $u(t-a)-u(t-b)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No separate image requested; inference is based on symbolic step expression reading."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given $y(t)=x(t)(u(t-1)-u(t+4))$, identify the interval where $y(t)$ retains $x(t)$ and select the corrected form.",
+            "distractor_plan": [
+              "Invert the order of endpoints and return interval $-4\\le t<1$.",
+              "Keep the same expression and conclude support is all $t$, assuming one switch is always redundant.",
+              "Use $0\\le t<5$ by adding endpoints instead of taking their difference.",
+              "Misread $u(t+4)$ as switching on at $t=4$ instead of at $t=-4$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example: From $y(t)=x(t)(u(t-2)-u(t-5))$, identify the window interval and rewrite a clean retained-domain sentence.",
+            "worked_solution_goal": "Report the active interval for $x(t)$ and verify that the expression matches a single contiguous finite window.",
+            "variation_from_previous": "Reverses from constructing the window to reading it from a finished formula, testing inverse skill.",
+            "solution_step_plan": [
+              "Locate the two switching terms and sort the two times.",
+              "Determine where the difference of steps equals one.",
+              "Translate that condition to retained interval notation used by the course."
+            ],
+            "practice_variation_axes": [
+              "Vary coefficient signs and parameter positions $u(t-a)-u(t-b)$.",
+              "Check interpretation when $a<b$ and when $a>b$ as an error-spotting case.",
+              "Ask for both interval statement and equivalent piecewise support conditions."
+            ]
+          },
+          "handoff_notes": "For quality, ensure question bank covers both correct-interpretation and failure cases where $a>b$ is not physically valid."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Building Piecewise Constant Signals",
+      "lesson_core_move": "Construct a piecewise constant continuous-time signal by converting its interval-by-interval level changes into a sum of scaled shifted unit steps.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Building Piecewise Constant Signals",
+          "step_type": "tutorial",
+          "learning_goal": "Interpret a piecewise constant signal as a baseline level plus a sequence of level changes driven by shifted unit steps.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visuals required for this section."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that each piecewise constant jump is represented by a shifted unit step scaled by that jump size.",
+            "base_case": "Introduce the base form for one transition from 0 to a nonzero level using one term $A u(t-a)$.",
+            "paragraph_plan": [
+              "State the objective: represent interval-by-interval constants with sums of shifted unit steps.",
+              "Define what a unit step does to a signal and identify left/right regions.",
+              "Work a symbolic one-step-on example and verify region values.",
+              "Extend to a finite window by subtracting a second step.",
+              "Transition to nonzero-to-nonzero transitions and then multiple transitions."
+            ],
+            "display_math_plan": [
+              "$$y(t)=y_0+\\sum_k \\Delta A_k u(t-a_k)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not used for tutorial sections.",
+            "worked_solution_goal": "Not used for tutorial sections.",
+            "variation_from_previous": "Not used for tutorial sections.",
+            "solution_step_plan": [
+              "Introduce base-case explanation and defer worked-example output generation to section 2."
+            ],
+            "practice_variation_axes": [
+              "N/A for tutorial section"
+            ]
+          },
+          "handoff_notes": "Keep this section tightly scoped and symbolic to reduce extraneous cognitive load before the first example."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Turning On a Constant Level with a Shifted Unit Step",
+          "step_type": "example",
+          "learning_goal": "Construct a nonzero constant after a start time using a single shifted unit step term.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Pure symbolic task; no figures required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Write the unit-step form for $x(t)=0$ for $t<2$ and $x(t)=5$ for $t\\ge2$.",
+            "distractor_plan": [
+              "Use $5u(t)$ instead of $5u(t-2)$.",
+              "Drop the scale coefficient and write just $u(t-2)$.",
+              "Move the amplitude to a negative sign, e.g., $-5u(t-2)$.",
+              "Use $u(2-t)$ instead of $u(t-2)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Guide example construction from interval statement to one shifted-step expression and interval check.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "Start from the start time and baseline.",
+              "Map interval statement to $A u(t-a)$ form.",
+              "Verify output at left and right regions."
+            ],
+            "display_math_plan": [
+              "$$x(t)=5u(t-2)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write a unit-step form for the signal $y(t)=0$ for $t<2$, and $y(t)=5$ for $t\\ge2$.",
+            "worked_solution_goal": "Produce the one-term step representation and show it matches the two regions.",
+            "variation_from_previous": "First worked example that applies the tutorial base-case directly with one shifted step.",
+            "solution_step_plan": [
+              "Read start time and amplitude from the interval definition.",
+              "Choose form $A u(t-a)$.",
+              "Set $A=5$, $a=2$.",
+              "Check left region gives 0 and right region gives 5."
+            ],
+            "practice_variation_axes": [
+              "Amplitude level",
+              "Shift value",
+              "Baseline being zero or nonzero"
+            ]
+          },
+          "handoff_notes": "Practice can reuse this motif with different values of $A$ and $a$."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Turning Off a Constant Level with a Second Shifted Unit Step",
+          "step_type": "example",
+          "learning_goal": "Create a finite nonzero interval using a positive step to turn on and a second shifted step to turn it off.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Keep algebraic only to support jump-form fluency."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Build the expression for $x(t)=4$ on $1\\le t<5$ and $x(t)=0$ otherwise.",
+            "distractor_plan": [
+              "Use only one step term and miss finite support.",
+              "Swap onset and offset order.",
+              "Use wrong signs for the subtraction term.",
+              "Use identical amplitudes but incorrect breakpoints."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show finite support as the difference of two shifted steps.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "Write the activate term at first breakpoint.",
+              "Write the deactivate term at second breakpoint with negative sign.",
+              "Combine and verify interval behavior."
+            ],
+            "display_math_plan": [
+              "$$x(t)=4u(t-1)-4u(t-5)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Construct a unit-step equation for $x(t)=4$ when $1\\le t<5$, and $x(t)=0$ elsewhere.",
+            "worked_solution_goal": "Produce a finite pulse expression and verify it is 0 before and after the interval.",
+            "variation_from_previous": "Adds a second breakpoint and introduces subtraction to remove activity after the second shift.",
+            "solution_step_plan": [
+              "Identify interval start and end times.",
+              "Write activation term $4u(t-1)$.",
+              "Write turn-off term $-4u(t-5)$.",
+              "Combine and evaluate piecewise to validate all regions."
+            ],
+            "practice_variation_axes": [
+              "Amplitude",
+              "Start and end times",
+              "Inside-vs-outside interval values"
+            ]
+          },
+          "handoff_notes": "Keep distractors close to correct form so question generator can mirror small arithmetic/sign mistakes."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Changing Directly Between Two Nonzero Constant Levels",
+          "step_type": "example",
+          "learning_goal": "Represent transitions between two nonzero levels through cumulative jump increments rather than zero reset.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram needed; focus on signed jump computations."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Convert $x(t)=2$ for $t<1$, $x(t)=5$ for $1\\le t<3$, and $x(t)=2$ for $t\\ge3$ into step form.",
+            "distractor_plan": [
+              "Use wrong jump size at the second transition.",
+              "Use baseline 0 instead of baseline 2.",
+              "Swap jump values as if the second transition returned to 0.",
+              "Mis-order the breakpoints in the expression."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Model a direct level-to-level jump with baseline-plus-$\\Delta$ terms.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "State baseline and list each level change.",
+              "Compute each jump from the prior level.",
+              "Assemble compact signed sum with shifted steps.",
+              "Confirm interval values using piecewise evaluation."
+            ],
+            "display_math_plan": [
+              "$$x(t)=2+3u(t-1)-3u(t-3)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Convert the piecewise signal $x(t)=2$ for $t<1$, $x(t)=5$ for $1\\le t<3$, and $x(t)=2$ for $t\\ge3$ to unit-step form.",
+            "worked_solution_goal": "Create a compact sum of jump terms and verify nonzero-to-nonzero transitions.",
+            "variation_from_previous": "Extends finite-window pattern to transitions between nonzero levels using positive and negative deltas.",
+            "solution_step_plan": [
+              "Set baseline $y_0=2$.",
+              "Compute $\\delta$ at $t=1$: $\\Delta A_1=5-2=3$.",
+              "Compute $\\delta$ at $t=3$: $\\Delta A_2=2-5=-3$.",
+              "Write $x(t)=2+3u(t-1)-3u(t-3)$.",
+              "Check each interval and edge cases."
+            ],
+            "practice_variation_axes": [
+              "Jump computation methods",
+              "Baseline level",
+              "Sign of each jump"
+            ]
+          },
+          "handoff_notes": "Reinforce the rule that each new breakpoint contributes only one signed jump equal to new level minus prior level."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Combining Multiple Level Changes into One Step Expression",
+          "step_type": "example",
+          "learning_goal": "Build and simplify a multi-breakpoint piecewise constant signal by summing baseline and several jump amplitudes.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed for this symbolic synthesis step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Convert $x(t)=1$ for $t<0$, $x(t)=4$ for $0\\le t<2$, $x(t)=-2$ for $2\\le t<4$, and $x(t)=3$ for $t\\ge4$ into a single expression.",
+            "distractor_plan": [
+              "Compute jumps from original level instead of prior-level increments.",
+              "Use only two transitions instead of three.",
+              "Place breakpoint times in the wrong order.",
+              "Drop the initial baseline term and shift all deltas incorrectly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Demonstrate scaling pattern to several transitions while preserving a single summation-style structure.",
+            "base_case": "Not applicable for example section.",
+            "paragraph_plan": [
+              "List intervals in order with level values.",
+              "Convert each breakpoint into one jump term.",
+              "Sum baseline and jumps into compact form.",
+              "Optionally simplify by grouping like terms where useful."
+            ],
+            "display_math_plan": [
+              "$$x(t)=1+3u(t)-6u(t-2)+5u(t-4)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write one unit-step expression for $x(t)=1$ if $t<0$, $x(t)=4$ if $0\\le t<2$, $x(t)=-2$ if $2\\le t<4$, and $x(t)=3$ if $t\\ge4$.",
+            "worked_solution_goal": "Demonstrate multi-breakpoint construction and verify all interval values in a single compact expression.",
+            "variation_from_previous": "Adds cumulative complexity by combining several positive and negative jump terms in one expression.",
+            "solution_step_plan": [
+              "Set baseline level $y_0=1$.",
+              "Compute $\\Delta A_1=4-1=3$ at $t=0$.",
+              "Compute $\\Delta A_2=-2-4=-6$ at $t=2$.",
+              "Compute $\\Delta A_3=3-(-2)=5$ at $t=4$.",
+              "Write $x(t)=1+3u(t)-6u(t-2)+5u(t-4)$.",
+              "Check each interval from $t<0$ to $t\\ge4$."
+            ],
+            "practice_variation_axes": [
+              "Number of breakpoints",
+              "Jump sign patterns",
+              "Baseline choice"
+            ]
+          },
+          "handoff_notes": "Use this section as the general template for later topics: baseline plus ordered $\\delta$ terms and direct interval verification."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Building Piecewise Linear Signals",
+      "lesson_core_move": "Construct a piecewise linear continuous-time signal by converting each breakpoint's slope change into a shifted ramp term gated by unit steps.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Building Piecewise Linear Signals",
+          "step_type": "tutorial",
+          "learning_goal": "Explain how each slope change in a piecewise linear continuous-time signal maps to a shifted ramp term, then show how multiple shifted ramps combine into one expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed because the step is driven by algebraic ramp identities."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": [
+              "not-applicable"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the core identity that a slope segment can be written as a shifted ramp coefficient: $\\Delta m\\,r(t-a)=\\Delta m(t-a)u(t-a)$, and that active slope at any time is the sum of active increments from these terms.",
+            "base_case": "Start from one base ramp: $x(t)=m\\,r(t-a)=m(t-a)u(t-a)$ and read its behavior piecewise.",
+            "paragraph_plan": [
+              "State the goal of representing piecewise linear signals with shifted ramp blocks instead of full case-by-case pieces.",
+              "Define $r(t-a)$ and show how $u(t-a)$ gates the slope contribution.",
+              "Show one-line slope accumulation across time by adding ramp terms with breakpoint offsets.",
+              "Demonstrate interval-limited segments with ramp differences, e.g. $r(t-a)-r(t-b)$.",
+              "Preview example progression: one shifted ramp, one breakpoint increment, finite-interval slope, then multiple increments."
+            ],
+            "display_math_plan": [
+              "$$r(t-a)= (t-a)u(t-a)$$",
+              "$$x(t)=m_0 r(t-a_0)+\\Delta m_1[r(t-a_1)-r(t-a_2)]+\\Delta m_2[r(t-a_2)-r(a_3)]$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [
+              "not-applicable"
+            ],
+            "practice_variation_axes": [
+              "not-applicable"
+            ]
+          },
+          "handoff_notes": "Keep notation consistent with module notation for shifted unit steps and ramp terms; use only symbolic expressions and avoid graph dependence."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Starting a Signal with One Shifted Ramp",
+          "step_type": "example",
+          "learning_goal": "Build one-piece piecewise linear signals by starting the slope with a single shifted ramp.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No graph data is required for this symbolic start-form step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Write an expression for the signal that is $0$ for $t<-1$ and equals $2(t+1)$ for $t\\ge -1$.",
+            "distractor_plan": [
+              "Incorrect shift direction such as $2(t+1)u(t)$.",
+              "Miss the ramp form and use $2u(t+1)$ instead.",
+              "Use $2(t-1)u(t+1)$ with an inconsistent time shift.",
+              "Add an extra constant offset not implied by the target function.",
+              "Omit unit-step gating and return $2(t+1)$ for all $t$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Express $x(t)$ where $x(t)=0$ for $t<-1$ and $x(t)=2(t+1)$ for $t\\ge -1$.",
+            "worked_solution_goal": "Produce $x(t)=2\\,r(t+1)$ and confirm that this equals $2(t+1)$ only after the gate opens.",
+            "variation_from_previous": "Extends the introduced base form to a delayed/advanced start time example.",
+            "solution_step_plan": [
+              "Identify that the target starts at $t=-1$ with slope 2.",
+              "Form the shifted ramp $r(t+1)=(t+1)u(t+1)$.",
+              "Scale by 2 to get $2r(t+1)$.",
+              "Check values for $t<-1$ and $t\\ge-1$ to verify piecewise behavior."
+            ],
+            "practice_variation_axes": [
+              "Shift time to different activation point",
+              "Change slope magnitude/sign",
+              "Use $r(t-a)$ versus explicit $(t-a)u(t-a)$ form"
+            ]
+          },
+          "handoff_notes": "The example should anchor the student's interpretation of $r(t-a)$ as a time-late linear segment creator."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Adding a Slope Change at a Breakpoint",
+          "step_type": "example",
+          "learning_goal": "Represent one interior breakpoint where slope increases or decreases by adding a shifted ramp increment.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Symbolic slope-difference control is the key artifact here."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Choose the expression for slope 1 from $t=0$ and slope 4 after $t=3$, with zero output before $t=0$.",
+            "distractor_plan": [
+              "Use only one term $r(t)$ and miss the breakpoint increment.",
+              "Apply increment at wrong time $t=2$ or $t=4$.",
+              "Use a unit-step constant $3u(t-3)$ instead of ramp increment.",
+              "Subtract the increment instead of adding it.",
+              "Omit the starting baseline slope and use only $3r(t-3)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Express a signal that has slope 0 for $t<0$, slope 1 on $[0,3)$, and slope 4 for $t\\ge3$.",
+            "worked_solution_goal": "Build and interpret the representation $x(t)=r(t)+3r(t-3)$ to show slope jump of $+3$ at $t=3$.",
+            "variation_from_previous": "Moves from a single ramp activation to a sustained breakpoint slope change.",
+            "solution_step_plan": [
+              "Set the initial slope segment as $r(t)$.",
+              "Compute slope change at $t=3$ as $\\Delta m=3$.",
+              "Add the increment term $3r(t-3)$.",
+              "Check slope in each interval by reading ramp derivatives."
+            ],
+            "practice_variation_axes": [
+              "Break point at different times",
+              "Slope increment negative versus positive",
+              "Different baseline slope value"
+            ]
+          },
+          "handoff_notes": "Keep students focused on slope increments, not value continuity at breakpoints."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Returning the Slope to Zero After an Interval",
+          "step_type": "example",
+          "learning_goal": "Terminate slope activity after a time interval by adding a second shifted ramp term with opposite coefficient.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is needed; interval-limited slope is an algebraic difference-of-ramps pattern."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Find the step expression for slope 2 on $[0,2)$ and slope 0 for $t\\ge2$.",
+            "distractor_plan": [
+              "Use only $2r(t)$, which keeps slope active forever.",
+              "Use $2r(t-2)$ as the only term, losing the segment start.",
+              "Use subtraction without a delayed difference, e.g., $2r(t)-2$.",
+              "Reverse terms as $2r(t-2)-2r(t)$.",
+              "Use gate sign $u(2-t)$ instead of $u(t-2)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Construct $x(t)=2t$ for $0\\le t<2$ and constant for $t\\ge2$.",
+            "worked_solution_goal": "Derive $x(t)=2r(t)-2r(t-2)$ and verify constant continuation after $t=2$.",
+            "variation_from_previous": "Adds a cancellation term that turns a permanent slope into a finite interval slope.",
+            "solution_step_plan": [
+              "Start from active slope term $2r(t)$.",
+              "Introduce stop term $2r(t-2)$.",
+              "Subtract the stop term: $2r(t)-2r(t-2)$.",
+              "Check function value at $t=1$ and $t=3$ to verify behavior."
+            ],
+            "practice_variation_axes": [
+              "Interval endpoint variation",
+              "Base slope variation (positive, negative)",
+              "Delay start time from zero"
+            ]
+          },
+          "handoff_notes": "This pattern is the core reusable template for finite-duration linear pieces in later triangular constructions."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Combining Multiple Slope Changes in One Expression",
+          "step_type": "example",
+          "learning_goal": "Combine several breakpoint slope changes into a single compact unit-step ramp expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No images should be required because the step compounds deterministic algebraic terms."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Choose the expression for slopes $[0,1,4,2]$ on breakpoints $t=0,2,5$ with zero initial value.",
+            "distractor_plan": [
+              "Skip one breakpoint term and collapse two intervals.",
+              "Use only constants with $u(t-a)$ instead of ramp differences.",
+              "Use wrong slope increment signs causing opposite slope direction.",
+              "Anchor all terms at incorrect start times.",
+              "Add extra offset terms that change the piecewise values."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Represent a signal with slope profile: 0 for $t<0$, 1 for $0\\le t<2$, 4 for $2\\le t<5$, and 2 for $t\\ge5$.",
+            "worked_solution_goal": "Build the compact form using baseline slope and increment/decrement terms with shifted ramps.",
+            "variation_from_previous": "Extends from one breakpoint to chained breakpoints and mixed slope changes.",
+            "solution_step_plan": [
+              "Write baseline slope after first active time.",
+              "Add an increment term at each breakpoint for slope change.",
+              "Use interval-ending correction at the next breakpoint where needed.",
+              "Assemble terms in one line and verify slopes in each interval."
+            ],
+            "practice_variation_axes": [
+              "Number of breakpoints",
+              "Sign and size of each slope increment",
+              "Placement of interval boundaries"
+            ]
+          },
+          "handoff_notes": "Keep term ordering explicit by ascending breakpoints and consistent use of $r(t-a)-r(t-b)$ for interval bounds."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Building Triangular Signals",
+      "lesson_core_move": "Construct a finite-duration triangular signal from its rise, peak, fall, and zero regions using shifted linear segments gated by unit steps.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Building Triangular Signals",
+          "step_type": "tutorial",
+          "learning_goal": "Identify a finite-duration triangle as three regions (rise, peak boundary, fall) and map each region to one gated linear term.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the triangle decomposition pattern $x(t)=\\text{rise segment}+\\text{fall segment}$, then gate each segment with step differences so the signal is nonzero only on the active interval.",
+            "base_case": "Use the unit-height unit-width base triangle: rise on $[0,1]$, peak at $t=1$, fall on $[1,2]$.",
+            "paragraph_plan": [
+              "State the interval structure for piecewise triangles: zero before $t_0$, rising linear on $[t_0,t_p)$, falling linear on $[t_p,t_1)$, and zero after $t_1$.",
+              "Define a generic slope form for each linear region and encode each region using $u(t-a)-u(t-b)$ as a window.",
+              "Show one worked algebraic form that combines both regions in one expression and enforces continuity at $t_p$.",
+              "Summarize the target check list: window boundaries, endpoint values, and value at the peak."
+            ],
+            "display_math_plan": [
+              "$$x(t)=r_1(t)\\left(u(t-t_0)-u(t-t_p)\\right)+r_2(t)\\left(u(t-t_p)-u(t-t_1)\\right)$$",
+              "$$x(t)=0\\quad\\text{for }t<t_0\\text{ or }t>t_1$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep tutorial strict: no question planning, no final answer key, and no image dependency. Emphasize the shift-window template only once, then let the example steps apply it."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Building a Basic Triangle from Rising and Falling Segments",
+          "step_type": "example",
+          "learning_goal": "Convert a simple symmetric unit-height triangle into one step-based expression with separate rising and falling linear windows.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic expression options with exactly one correct",
+            "practice_question_model": "Write a step-function expression for a unit-height triangle that rises linearly from $0$ at $t=0$ to $1$ at $t=1$ and falls back to $0$ at $t=2$.",
+            "distractor_plan": [
+              "Use one step term for the whole triangle instead of two windows.",
+              "Swap the rise and fall windows or shift boundaries by one unit.",
+              "Keep the right slope sign but include the wrong intercept in the fall segment."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find a unit-step representation for the triangle $x(t)$ with $x(t)=0$ for $t<0$ and $t>2$, $x(t)=t$ on $0\\le t<1$, and $x(t)=2-t$ on $1\\le t<2$.",
+            "worked_solution_goal": "Derive and combine the two gated linear pieces into $x(t)=t(u(t)-u(t-1))+(-t+2)(u(t-1)-u(t-2))$.",
+            "variation_from_previous": "This is the first full worked example that applies the tutorial template to concrete endpoint times and slopes.",
+            "solution_step_plan": [
+              "List the active intervals and confirm the rise/fall formulas on each interval.",
+              "Write rise term as $t(u(t)-u(t-1))$.",
+              "Write fall term as $(-t+2)(u(t-1)-u(t-2))$.",
+              "Sum terms and verify continuity at $t=1$, zero output outside $[0,2]$, and peak height $1$."
+            ],
+            "practice_variation_axes": [
+              "Change interval endpoints while preserving linear rise/fall.",
+              "Replace unit peak height with a variable height parameter in one segment."
+            ]
+          },
+          "handoff_notes": "Keep both terms gated by adjacent step differences and do not simplify into a single polynomial over all t."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Building a Shifted Triangle from Start, Peak, and End Times",
+          "step_type": "example",
+          "learning_goal": "Generalize the base triangle to arbitrary start, peak, and end times using shifted linear formulas inside the same step-window structure.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic expressions with one mathematically correct choice",
+            "practice_question_model": "Write a step-form expression for a triangle that starts at $t=2$, peaks at height $3$ at $t=5$, and ends at $t=8$.",
+            "distractor_plan": [
+              "Use windowing intervals based on $[2,5]$ and $[5,8]$ but apply wrong slope magnitudes.",
+              "Reverse rise/fall terms while keeping peak height unchanged.",
+              "Use only one window difference and miss one of the breakpoints."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Construct the step-form expression for $x(t)$ where $x(t)=\\frac{1}{3}(t-2)$ on $[2,5)$, and $x(t)=-\\frac{3}{2}t+\\frac{15}{2}$ on $[5,8)$.",
+            "worked_solution_goal": "Show how to translate shifted start/peak/end times into gating pairs $u(t-a)-u(t-b)$ and assemble the full triangle.",
+            "variation_from_previous": "Adds a time shift and nontrivial slopes, requiring explicit conversion of $a,p,b$ into two separate ramp windows.",
+            "solution_step_plan": [
+              "Compute rise slope from $(t,p,x)=(2,5,3)$ and write the rise formula on $[2,5)$.",
+              "Compute fall formula through points $(5,3)$ and $(8,0)$.",
+              "Gate each formula with $u(t-2)-u(t-5)$ and $u(t-5)-u(t-8)$ respectively.",
+              "Combine and verify the two-window form is continuous and zero outside $[2,8]$."
+            ],
+            "practice_variation_axes": [
+              "Move all three key times $(a,p,b)$ while preserving ordering.",
+              "Vary peak height while keeping $a,p,b$ fixed.",
+              "Use equivalent slope-intercept forms in either segment."
+            ]
+          },
+          "handoff_notes": "Keep formulas in $(a,p,b)$-style parameters for reuse, then specialize in practice; avoid introducing new transform identities."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Building a Nonunit-Height Triangular Signal",
+          "step_type": "example",
+          "learning_goal": "Scale the core rise/fall template to arbitrary peak height while preserving window boundaries and continuity at the peak.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic expression options with one mathematically correct response",
+            "practice_question_model": "Write the step expression for a triangle that starts at $t=0$, peaks at height $4$ at $t=2$, and returns to zero at $t=4$.",
+            "distractor_plan": [
+              "Use unit peak height in one of the gated terms.",
+              "Drop the peak-continuity condition and let the two pieces disagree at $t_p$.",
+              "Misplace the step boundary offsets, causing a gap or overlap in active intervals."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find a step-form model for $x(t)$ with $x(t)=2t$ on $0\\le t<2$, $x(t)=8-2t$ on $2\\le t<4$, and $x(t)=0$ otherwise.",
+            "worked_solution_goal": "Apply the same two-window structure while adjusting amplitudes to peak height $4$ and keeping continuity at $t=2$.",
+            "variation_from_previous": "Introduces nonunit peak height and checks that amplitude scaling is embedded inside both rise and fall formulas.",
+            "solution_step_plan": [
+              "Set rise formula on $[0,2)$ as $2t(u(t)-u(t-2))$.",
+              "Set fall formula on $[2,4)$ as $(8-2t)(u(t-2)-u(t-4))$.",
+              "Sum terms and simplify only if needed for presentation.",
+              "Verify value at $t=0,2,4$ and confirm zero output outside interval."
+            ],
+            "practice_variation_axes": [
+              "Change peak height while keeping $0\\le t \\le 4$ support.",
+              "Shift support interval and keep the same peak height.",
+              "Use different but equivalent slope-intercept representations."
+            ]
+          },
+          "handoff_notes": "Prefer explicit arithmetic in worked example so later question generators can mirror by swapping coefficients and interval endpoints."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Building an Asymmetric Triangular Signal with Unequal Slopes",
+          "step_type": "example",
+          "learning_goal": "Construct asymmetric triangles by assigning different rise and fall slopes while keeping gating boundaries and continuity constraints explicit.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic expression choices; one correct algebraic construction",
+            "practice_question_model": "Build the step form for a triangle with rise on $[0,1]$ to height $2$ and fall on $[1,4]$ back to zero.",
+            "distractor_plan": [
+              "Set rise and fall slopes to the same value, making the signal symmetric.",
+              "Use $u(t)-u(t-1)$ for both terms so the fall term never turns on.",
+              "Keep the peak at $t=4$ by mistake rather than $t=1$.",
+              "Write fall line as $2t+...$ with the wrong sign."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find a step-function expression for $x(t)=2t$ on $0\\le t<1$, $x(t)=\\frac{8-2t}{3}$ on $1\\le t<4$, and $x(t)=0$ otherwise.",
+            "worked_solution_goal": "Create a valid representation with unequal slopes by computing each slope separately and preserving the same step-window pattern.",
+            "variation_from_previous": "Adds slope asymmetry; rise and fall coefficients differ and are no longer mirror images.",
+            "solution_step_plan": [
+              "Write separate rise and fall linear expressions from the given endpoint conditions.",
+              "Attach $u(t)-u(t-1)$ to the rise region and $u(t-1)-u(t-4)$ to the fall region.",
+              "Sum the pieces and verify continuity at $t=1$ and zero output outside $[0,4]$.",
+              "Check peak value at the breakpoint to confirm asymmetric slope handling."
+            ],
+            "practice_variation_axes": [
+              "Vary rise time and fall time independently while preserving peak time and height.",
+              "Shift all breakpoints by a constant delay.",
+              "Change peak height while maintaining unequal slopes."
+            ]
+          },
+          "handoff_notes": "Keep region boundaries explicit to avoid sign/order errors that commonly cause discontinuities at the peak."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Simplifying Step-Function Expressions",
+      "lesson_core_move": "Simplify overlapping shifted-unit-step expressions by identifying their active time intervals and combining like signal segments into an equivalent compact expression.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Simplifying Step-Function Expressions",
+          "step_type": "tutorial",
+          "learning_goal": "Anchor the student in a concrete workflow: convert an overlapping step expression into piecewise active intervals, add active coefficients, then rewrite the result as a compact equivalent expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image is needed; this step is purely symbolic.",
+            "visual_elements": [],
+            "image_generation_notes": "Use a symbolic walkthrough with interval notation and coefficient bookkeeping only."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "none",
+            "practice_question_model": "No practice questions in the tutorial step.",
+            "distractor_plan": [
+              "No distractors for a non-question tutorial section."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the learner to simplify an expression like $2u(t-1)-u(t-2)+3u(t-3)$ by identifying interval boundaries from shifted steps, summing active amplitudes in each interval, and expressing the reduced result as non-overlapping step terms.",
+            "base_case": "Start from two-step overlap only, e.g., $u(t)-u(t-1) + u(t-1)$, then collapse the active value on the shared boundary regions.",
+            "paragraph_plan": [
+              "Introduce the active-interval view of a shifted-step term and identify each term's switch time as a candidate boundary.",
+              "Demonstrate a sorted-boundary checklist on a single overlap example and map each interval to the subset of active step terms.",
+              "Show coefficient accumulation in each interval, including cancellation where positive and negative segments overlap.",
+              "Show how to write the simplified piecewise form from interval values and convert it back to a compact step expression if needed.",
+              "Summarize a repeatable sequence: find boundaries, sort intervals, combine active coefficients, simplify by interval, then emit compact output."
+            ],
+            "display_math_plan": [
+              "$$f(t)=u(t-1)-u(t-2)$$",
+              "$$\\text{Step boundaries: }t=1,2\\;\\Rightarrow\\; \\text{active interval values are computed piecewise}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial sections.",
+            "worked_solution_goal": "No worked example is needed in this tutorial step.",
+            "variation_from_previous": "No variation step needed for the tutorial step.",
+            "solution_step_plan": [
+              "No worked example is provided in the tutorial section."
+            ],
+            "practice_variation_axes": [
+              "No practice questions in tutorial section."
+            ]
+          },
+          "handoff_notes": "Use this section to establish the exact sequence and notation for all subsequent examples. Keep it compact and symbol-focused so cognitive load stays low."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Active Intervals in Shifted Unit Step Expressions",
+          "step_type": "example",
+          "learning_goal": "Compute active intervals for a shifted-step expression and write its interval values correctly before simplification.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; interval boundaries and symbols are sufficient.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not include plots; use boundary tables and piecewise notation only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given $x(t)=2u(t-1)-3u(t-4)+u(t-5)$, identify the interval-value expression between breakpoints.",
+            "distractor_plan": [
+              "Include distractors that miss a boundary point.",
+              "Include distractors that keep a step active in the wrong interval.",
+              "Include distractors that accidentally reorder boundaries.",
+              "Include distractors that confuse strict versus non-strict switching at $t=a$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the active intervals for $x(t)=3u(t-1)-u(t-3)+2u(t-5)$.",
+            "worked_solution_goal": "Create the boundary set $\\{1,3,5\\}$, evaluate active subsets on each interval, and produce the interval-value expression before combining terms.",
+            "variation_from_previous": "Builds directly on the tutorial by removing the generic two-term prototype and adding a third boundary and mixed coefficients.",
+            "solution_step_plan": [
+              "List switch times from each factor as $t=1,3,5$.",
+              "Sort boundaries and split line into $t<1$, $1\\le t<3$, $3\\le t<5$, $t\\ge5$.",
+              "For each region, include terms with active arguments (nonzero coefficients) and sum amplitudes.",
+              "Record the piecewise active value map and keep it for simplification conversion."
+            ],
+            "practice_variation_axes": [
+              "Change coefficient magnitudes and signs.",
+              "Add or remove one extra shifted term.",
+              "Vary boundary order and spacing."
+            ]
+          },
+          "handoff_notes": "This example should train interval book-keeping. Keep worked example and questions consistent on interval partitioning only, with no picture dependency."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Combining Overlapping Constant Step Terms",
+          "step_type": "example",
+          "learning_goal": "Convert overlapping constant-amplitude step terms into a compact equivalent expression by combining interval sums.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use a compact algebraic interval table.",
+            "visual_elements": [],
+            "image_generation_notes": "If needed, provide a sorted interval table textually, not as a diagram."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Simplify $x(t)=2u(t-1)-u(t-2)+u(t-4)-u(t-5)$ into an equivalent compact form.",
+            "distractor_plan": [
+              "One distractor should skip combining overlaps in one interval.",
+              "One distractor should keep an inactive term active too long.",
+              "One distractor should preserve boundaries but with incorrect coefficients.",
+              "One distractor should reverse a subtraction sign before reassembly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Simplify $x(t)=u(t-2)+2u(t-4)-3u(t-6)$ and write a compact equivalent expression.",
+            "worked_solution_goal": "Derive interval values, combine constant coefficients on each interval, and rewrite with the shortest correct difference-of-steps form.",
+            "variation_from_previous": "This adds direct coefficient accumulation and elimination of redundant intermediate levels for the first time.",
+            "solution_step_plan": [
+              "Compute interval boundaries $2,4,6$ and evaluate the net value per interval.",
+              "Merge consecutive intervals with equal net value when possible, if permitted by boundaries.",
+              "Translate the reduced piecewise map back into one compact step expression with updated coefficients.",
+              "Check that each merged interval has matching activation/deactivation steps."
+            ],
+            "practice_variation_axes": [
+              "Vary number of constant overlaps.",
+              "Change signs to force both positive and negative cancellations.",
+              "Test whether learners merge equal-valued adjacent intervals correctly."
+            ]
+          },
+          "handoff_notes": "Keep this step focused on constant terms only; this avoids slope-handling complexity and preserves progression from prior interval logic."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Combining Overlapping Sloped Step Terms",
+          "step_type": "example",
+          "learning_goal": "Extend overlap simplification to shifted linear terms where active interval coefficients are linear functions of $t$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use symbolic linear forms and interval checks.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not include graph-dependent representations."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Simplify $x(t)=(t-1)u(t-1)-2(t-3)u(t-3)+u(t-5)$ using interval simplification.",
+            "distractor_plan": [
+              "One distractor should correctly find intervals but fail to combine slopes in one region.",
+              "One distractor should drop the shift in one linear factor.",
+              "One distractor should keep an early slope term active too far into later intervals.",
+              "One distractor should mishandle the intercept created by overlap."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Simplify $x(t)=(t-2)u(t-2)-(t-4)u(t-4)$ and express it as a compact piecewise form.",
+            "worked_solution_goal": "Track active slopes in each interval, simplify algebraically within each region, then reconstruct the compact result.",
+            "variation_from_previous": "Adds one level of complexity by replacing constant coefficients with sloped expressions while preserving the same interval workflow.",
+            "solution_step_plan": [
+              "Write switch times and interval list from shifted arguments.",
+              "Substitute active terms in each interval and expand/simplify linear pieces.",
+              "Look for equal neighboring piecewise segments to remove redundant step flips if valid.",
+              "Optionally compress to equivalent step form and preserve domain boundaries.",
+              "Verify continuity and endpoint behavior at each breakpoint."
+            ],
+            "practice_variation_axes": [
+              "Shift all slopes by different times.",
+              "Change linear prefactors and signs.",
+              "Add a third overlapping sloped term with a different slope."
+            ]
+          },
+          "handoff_notes": "Make the worked example explicit that slopes are evaluated only in active intervals, never globally."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Rewriting Redundant Step Terms into Compact Expressions",
+          "step_type": "example",
+          "learning_goal": "Eliminate redundant or canceling step terms and produce a cleaner, equivalent expression in minimal overlap form.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use symbolic cancellation checks only.",
+            "visual_elements": [],
+            "image_generation_notes": "Use algebraic difference-of-step identities when available to simplify structure."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Rewrite $x(t)=u(t-1)-2u(t-3)+2u(t-3)-u(t-5)$ into the most compact equivalent step form.",
+            "distractor_plan": [
+              "Include distractor that leaves opposite-sign paired terms uncanceled.",
+              "Include distractor that removes terms but introduces incorrect new switch points.",
+              "Include distractor that simplifies magnitude but wrongs signs.",
+              "Include distractor that compresses to fewer terms but changes active interval order."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite $x(t)=u(t-2)-u(t-4)+u(t-4)-u(t-6)$ as a compact equivalent expression.",
+            "worked_solution_goal": "Detect and remove redundant neighbors, keep only net-effective switch events, and verify equivalence interval by interval.",
+            "variation_from_previous": "Uses the same interval mechanism but introduces cancellation and elimination of adjacent redundant terms.",
+            "solution_step_plan": [
+              "Compute boundary set and evaluate interval map.",
+              "Cancel coefficients that net to zero in shared subintervals.",
+              "Rewrite the result with fewer step terms by removing inactive or canceling boundaries.",
+              "Check equivalence by sampling one test $t$ from each resulting interval."
+            ],
+            "practice_variation_axes": [
+              "Nested cancellation patterns.",
+              "Equal-opposite coefficients at shared boundaries.",
+              "Interleaving redundant and non-redundant terms."
+            ]
+          },
+          "handoff_notes": "This is the bridge into compactness quality. Keep the focus on proof by interval equivalence, not visual intuition."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Checking Simplified Step Expressions by Time Interval",
+          "step_type": "example",
+          "learning_goal": "Validate a simplified form by sampling canonical intervals and confirming exact equality with original segment logic.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use symbolic interval test points and tables.",
+            "visual_elements": [],
+            "image_generation_notes": "Only symbolic verification artifacts are required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Check whether the proposed simplification $y(t)=u(t-1)-u(t-4)$ matches $x(t)=u(t-1)-u(t-2)+u(t-2)-u(t-4)$ by interval testing.",
+            "distractor_plan": [
+              "One distractor should pass only on one interval and fail others.",
+              "One distractor should test endpoint only and miss interior mismatch.",
+              "One distractor should confuse strict vs. non-strict activation at a switch point.",
+              "One distractor should show algebraic equivalence on paper but incorrect boundary conditions."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Verify that $x(t)=2u(t-1)-u(t-3)-u(t-5)+u(t-4)$ is equivalent to a candidate compact form by checking each active interval.",
+            "worked_solution_goal": "Confirm equivalence by evaluating original and candidate on each interval representative, and confirm no interval mismatch at boundaries.",
+            "variation_from_previous": "Shifts from rewriting to verification, enforcing error-checking as the final lesson-step skill.",
+            "solution_step_plan": [
+              "Compute canonical boundary times from both forms.",
+              "Pick representative sample times in every interval.",
+              "Evaluate both forms numerically or symbolically at each sample and compare.",
+              "If mismatch appears, identify the smallest fix in interval map and restate corrected compact form."
+            ],
+            "practice_variation_axes": [
+              "Include candidates with one missing or one extra switch.",
+              "Vary boundary ordering and candidate complexity.",
+              "Add distractor candidates that differ only on a single interval."
+            ]
+          },
+          "handoff_notes": "End lesson with verification skill transfer: every simplification should pass an interval equality check before release to the question stage."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Converting Graphs into Unit Step Expressions",
+      "lesson_core_move": "Translate a continuous-time signal graph into a simplified unit step expression by identifying its breakpoints, interval formulas, and shifted unit-step windows.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Converting Graphs into Unit Step Expressions",
+          "step_type": "tutorial",
+          "learning_goal": "Establish the minimum set of graph-reading actions needed to rewrite a signal graph as a sum of shifted unit-step windows.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "A clean continuous-time graph with labeled time axis, a single nonzero interval, and highlighted breakpoints a and b.",
+            "visual_elements": [
+              "time axis with t ticks",
+              "piecewise signal graph",
+              "breakpoint markers",
+              "window interval highlight"
+            ],
+            "image_generation_notes": "Use clean axes, high contrast strokes, and only essential labels for breakpoints and segment value."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Introduce the conversion pipeline: read all breakpoints from the graph, map each active interval to a difference of two shifted steps, and attach the interval formula to each gated term.",
+            "base_case": "Use one pulse example with $x(t)=A$ on $0\\le t<T$ and $x(t)=0$ elsewhere to show $x(t)=A\\,\\big(u(t)-u(t-T)\\big)$.",
+            "paragraph_plan": [
+              "Define graph-to-window translation and why interval boundaries are the main objects to identify.",
+              "Introduce the base rule for a finite interval using two shifted unit steps.",
+              "Explain how segment formulas multiply the window term.",
+              "Preview the sequence: first parse intervals, then convert single segments, then combine and simplify."
+            ],
+            "display_math_plan": [
+              "$$x(t)=A\\big(u(t-a)-u(t-b)\\big)$$",
+              "$$x(t)=\\sum_k f_k\\big[u(t-a_k)-u(t-b_k)\\big]$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A for tutorial section.",
+            "worked_solution_goal": "N/A for tutorial section.",
+            "variation_from_previous": "N/A for tutorial section.",
+            "solution_step_plan": [
+              "N/A for tutorial section."
+            ],
+            "practice_variation_axes": [
+              "N/A for tutorial section."
+            ]
+          },
+          "handoff_notes": "Keep this section tightly focused on the core conversion method so students build a stable schema before solving any example conversions."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Breakpoints and Interval Formulas from a Graph",
+          "step_type": "example",
+          "learning_goal": "Given a graph, extract an ordered breakpoint list and corresponding interval formulas before writing step terms.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A graph with alternating zero and nonzero pieces, including negative and positive breakpoints and piecewise values.",
+            "visual_elements": [
+              "ordered breakpoints",
+              "piecewise region labels",
+              "endpoint markers",
+              "time-axis scale"
+            ],
+            "image_generation_notes": "Use the same visual style as the tutorial image so learners transfer the parsing routine directly."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given this graph, choose the correct ordered list of breakpoints and interval formulas.",
+            "distractor_plan": [
+              "Swap adjacent breakpoints and change interval order.",
+              "Use only every other interval and collapse others.",
+              "Ignore continuity conventions at endpoint transitions.",
+              "Misread negative-time segments as all positive-time.",
+              "Omit one interval that returns to zero"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read the displayed graph and write the interval formula table $\\{(t_0,t_1]: f_1,\\ (t_1,t_2]:f_2,\\dots\\}$.",
+            "worked_solution_goal": "Produce a complete, ordered interval map that preserves values and boundaries for future conversion.",
+            "variation_from_previous": "Extends the base case by handling multiple nonzero zones and negative-time regions.",
+            "solution_step_plan": [
+              "Mark every breakpoint in increasing time order.",
+              "Assign the graph value formula to each open interval between neighboring breakpoints.",
+              "Check endpoint handling at each breakpoint and note if value is included or excluded.",
+              "Return the interval table as ordered data for conversion."
+            ],
+            "practice_variation_axes": [
+              "Different breakpoint counts",
+              "Mixtures of zero and nonzero intervals",
+              "Endpoint conventions at discontinuities"
+            ]
+          },
+          "handoff_notes": "This section is data extraction only; avoid introducing step algebra yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Converting a Single Nonzero Graph Segment into a Step Window Term",
+          "step_type": "example",
+          "learning_goal": "Convert one isolated nonzero interval into the canonical shifted-window form $A(u(t-a)-u(t-b))$.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Graph with one isolated nonzero segment: $x(t)=A$ on $a\\le t < b$, zero elsewhere.",
+            "visual_elements": [
+              "single active interval",
+              "height label A",
+              "start/end breakpoints a and b"
+            ],
+            "image_generation_notes": "Show only one active segment so the gate-rule $u(t-a)-u(t-b)$ is unmistakable."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "From the graph, select the correct single-window conversion expression.",
+            "distractor_plan": [
+              "Reverse step order to $u(t-b)-u(t-a)$.",
+              "Use only one step $A u(t-a)$.",
+              "Shift both breakpoints by the wrong sign.",
+              "Drop amplitude and write unit height.",
+              "Use $u(t-b)-u(t-a)$ with the same symbols."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Convert the graph with $x(t)=A$ for $a\\le t<b$ and $x(t)=0$ elsewhere into a step form.",
+            "worked_solution_goal": "Create the exact gated expression and verify it turns on at $t=a$ and off at $t=b$.",
+            "variation_from_previous": "This adds conversion of a concrete isolated segment after interval extraction.",
+            "solution_step_plan": [
+              "Read interval endpoints $a$ and $b$ from the graph.",
+              "Write base gate $u(t-a)-u(t-b)$.",
+              "Multiply gate by segment amplitude $A$.",
+              "Test representative times outside and inside the interval."
+            ],
+            "practice_variation_axes": [
+              "Segment amplitude values",
+              "Positive and negative interval endpoints",
+              "Open/closed endpoint conventions"
+            ]
+          },
+          "handoff_notes": "Keep this as a single-term conversion so learners trust the window-difference template."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Converting a Piecewise Constant Graph into Shifted Unit Steps",
+          "step_type": "example",
+          "learning_goal": "Translate multiple constant pieces into a signed sum of shifted unit-step window terms.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Graph with two or more nonzero constant plateaus at different heights and at least one negative value.",
+            "visual_elements": [
+              "multiple plateaus",
+              "piece jumps",
+              "signed levels"
+            ],
+            "image_generation_notes": "Render jumps distinctly so each change in level is obvious without extra annotations."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Choose the unit-step expression that matches the piecewise constant graph with multiple level changes.",
+            "distractor_plan": [
+              "Drop or merge separate intervals into one wide interval.",
+              "Assign the wrong sign for descending levels.",
+              "Use incorrect order of window endpoints.",
+              "Combine all nonzero sections into a single coefficient.",
+              "Omit one transition segment in the sum."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Convert the graph $0\\to A\\to B\\to 0$ over two intervals to a unit-step sum.",
+            "worked_solution_goal": "Produce one shifted-window term per nonzero plateau and combine signs correctly.",
+            "variation_from_previous": "Adds independent terms for multiple constant intervals beyond the single-segment case.",
+            "solution_step_plan": [
+              "List all nonzero constant intervals and their heights.",
+              "Write one window term for each interval.",
+              "Scale each gate by its interval amplitude.",
+              "Sum terms and inspect interval-wise values."
+            ],
+            "practice_variation_axes": [
+              "Number of plateaus",
+              "Signed vs unsigned amplitudes",
+              "Relative spacing between intervals"
+            ]
+          },
+          "handoff_notes": "This is the core multi-term assembly pattern used for most piecewise-constant graphs."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Converting a Piecewise Linear Graph into Windowed Segment Formulas",
+          "step_type": "example",
+          "learning_goal": "Translate linear ramps in a graph into windowed segment formulas and combine with constant windows as needed.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Piecewise linear graph with one rising segment and one falling segment between labeled breakpoints.",
+            "visual_elements": [
+              "linear slope segments",
+              "breakpoints for slope changes",
+              "window boundaries"
+            ],
+            "image_generation_notes": "Keep slopes as integer or simple fractional values for readability and consistent gating checks."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Select the correct windowed linear expression for this graph with rise and fall sections.",
+            "distractor_plan": [
+              "Use a constant window for a segment that is linear.",
+              "Flip slope sign in one segment.",
+              "Misplace the start or stop shift.",
+              "Skip gating on/off and let ramp continue indefinitely.",
+              "Use an incorrect baseline in the linear formula."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Convert a graph with one linear rise and one linear fall into a sum of windowed ramp formulas.",
+            "worked_solution_goal": "Generate a correct expression that activates each ramp only on its intended interval.",
+            "variation_from_previous": "Adds nonconstant segment structure after constant-piece conversion.",
+            "solution_step_plan": [
+              "Identify each linear segment’s slope and intercept form.",
+              "Attach each segment with start and end windows.",
+              "Sum all piece terms and check continuity at breakpoints.",
+              "Simplify where adjacent windows share shift structure."
+            ],
+            "practice_variation_axes": [
+              "Slope magnitude",
+              "Segment duration",
+              "Sign change between rise and fall"
+            ]
+          },
+          "handoff_notes": "Avoid introducing notation beyond ramp-window forms already introduced in previous module lessons."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Writing a Simplified Unit Step Expression from a Multi-Segment Graph",
+          "step_type": "example",
+          "learning_goal": "Assemble and simplify the full unit-step expression for a graph with mixed constant and linear segments.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Graph with several mixed constant and linear segments, including at least one negative amplitude and multiple breakpoints.",
+            "visual_elements": [
+              "mixed constant and linear segments",
+              "multiple breakpoints",
+              "sign-changed levels"
+            ],
+            "image_generation_notes": "Keep the same scale and line conventions as earlier sections for direct consistency checks."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Choose the most simplified unit-step expression equivalent to the full multi-segment graph.",
+            "distractor_plan": [
+              "Keep redundant overlapping terms unsimplified.",
+              "Incorrectly merge nonadjacent intervals.",
+              "Attach wrong amplitude to one segment.",
+              "Misplace window endpoints after simplification.",
+              "Lose continuity by missing one breakpoint term."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given a full graph, derive and simplify one compact unit-step expression that matches all intervals.",
+            "worked_solution_goal": "Convert every segment, combine where possible, and return a concise expression with correct interval behavior.",
+            "variation_from_previous": "Moves from single-type segment conversion to full multi-type synthesis and simplification.",
+            "solution_step_plan": [
+              "Convert each segment independently using prior constant/linear patterns.",
+              "Sum all windowed terms into one expression.",
+              "Group redundant or overlapping terms into a compact form.",
+              "Validate expression by testing representative times and all breakpoints."
+            ],
+            "practice_variation_axes": [
+              "Additional mixed segment counts",
+              "Different breakpoint spacing and order",
+              "Alternative but equivalent simplified forms"
+            ]
+          },
+          "handoff_notes": "Require both exact equivalence and explicit simplification so downstream writers can reuse the final compact form."
+        }
+      ]
+    }
+  ]
+}

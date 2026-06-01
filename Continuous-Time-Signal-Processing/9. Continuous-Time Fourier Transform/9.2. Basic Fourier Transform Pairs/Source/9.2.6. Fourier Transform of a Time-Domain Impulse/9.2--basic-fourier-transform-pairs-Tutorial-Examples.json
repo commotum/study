@@ -1,0 +1,2223 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Fourier Transform of a One-Sided Exponential",
+      "lesson_core_move": "Compute the continuous-time Fourier transform of a decaying one-sided exponential e^(-a t)u(t) by applying the transform definition over its step-limited support and identifying the basic pair e^(-a t)u(t) <-> 1/(a + j omega) for a > 0.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Fourier Transform of a One-Sided Exponential",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform of a One-Sided Exponential",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal to recognize here is a decaying one-sided exponential, $x(t)=e^{-at}u(t)$ with $a>0$. The unit step $u(t)$ is the cue that the signal is zero for $t<0$ and equals the exponential only on the nonnegative-time side.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use that cue to rewrite the transform over the step-limited support, so the integral runs from $0$ to $\\infty$. At this point you are setting up the transform, not evaluating it yet.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_0^\\infty e^{-at}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Combine the two exponentials into the single kernel $e^{-(a+j\\omega)t}$. Because $a>0$, the kernel decays as $t$ grows, which is the convergence condition that makes this one-sided exponential a standard Fourier-transform pair.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-at}u(t)\\;\\leftrightarrow\\;\\frac{1}{a+j\\omega},\\qquad a>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That pair is the result to keep in view for the rest of this lesson: one-sided support gives the lower limit, and the exponential decay gives the denominator $a+j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Fourier Transform of a One-Sided Exponential",
+          "section_index": 2,
+          "section_title": "Setting Up the Transform Integral for a One-Sided Exponential",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Set up the Fourier transform integral for $x(t)=e^{-2t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the unit step $u(t)$: it turns $x(t)=e^{-2t}u(t)$ into a one-sided signal, so the Fourier-transform setup only needs the nonnegative-time support.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the transform definition and use the support limit from $u(t)$ to replace the lower bound with $0$ and the upper bound with $\\infty$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_0^\\infty e^{-2t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the decay factor and the kernel visible long enough to show the product. Then combine them into a single exponential so the setup is ready for the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_0^\\infty e^{-(2+j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the complete setup for this example: one-sided support sets the limits, and the decay constant becomes part of the complex exponent. The next step can evaluate the integral from this starting point.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Fourier Transform of a One-Sided Exponential",
+          "section_index": 3,
+          "section_title": "Evaluating the Exponential Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Evaluate the Fourier transform integral for $x(t)=e^{-2t}u(t)$ and simplify the result.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start from the setup integral for $x(t)=e^{-2t}u(t)$ and treat it as an improper integral, since the upper limit extends to infinity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\lim_{b\\to\\infty}\\int_0^b e^{-(2+j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the antiderivative of the exponential kernel, keeping the denominator $2+j\\omega$ intact.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\lim_{b\\to\\infty}\\left[-\\frac{e^{-(2+j\\omega)t}}{2+j\\omega}\\right]_0^b",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the real part of $2+j\\omega$ is $2>0$, the exponential term vanishes as $b\\to\\infty$. At $t=0$, the exponential equals $1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\lim_{b\\to\\infty}\\frac{1-e^{-(2+j\\omega)b}}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the closed form is $X(\\omega)=\\frac{1}{2+j\\omega}$. That is the evaluated transform for the one-sided exponential with decay constant $2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Fourier Transform of a One-Sided Exponential",
+          "section_index": 4,
+          "section_title": "Writing the One-Sided Exponential Transform Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write the transform pair for $e^{-at}u(t)$ and use it to identify the transform of $e^{-4t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The reusable cue is the one-sided exponential $e^{-at}u(t)$ with $a>0$: the unit step limits the signal to $t\\ge 0$, so the Fourier transform can be stored as a lookup pair.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-at}u(t)\\;\\leftrightarrow\\;\\frac{1}{a+j\\omega},\\qquad a>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The earlier calculation with $a=2$ produced exactly the same denominator pattern, so it is the concrete check that the lookup rule matches the integral evaluation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-2t}u(t)\\;\\leftrightarrow\\;\\frac{1}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use the same template with $a=4$ to read off the transform of $e^{-4t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-4t}u(t)\\;\\leftrightarrow\\;\\frac{1}{4+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the final lookup form is $e^{-at}u(t)\\leftrightarrow\\frac{1}{a+j\\omega}$ for $a>0$, and any specific positive decay constant drops straight into the denominator as $a+j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+      "lesson_core_move": "Decompose the exponential transform 1/(a + j omega) into its real part a/(a^2 + omega^2) and imaginary part -omega/(a^2 + omega^2) by multiplying by the complex conjugate.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+          "section_index": 1,
+          "section_title": "Introduction to Real and Imaginary Parts of an Exponential Transform",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When you see $X(j\\omega)=\\frac{1}{a+j\\omega}$ with $a>0$, the conjugate trick is the direct way to expose its real and imaginary parts. Multiplying by the complex conjugate keeps the transform unchanged and prepares the denominator to become real.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{1}{a+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the same transform as a product with $\\frac{a-j\\omega}{a-j\\omega}$. That step does not change the value; it only sets up the numerator and denominator for simplification.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{1}{a+j\\omega}\\cdot\\frac{a-j\\omega}{a-j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now expand the denominator. The imaginary terms cancel, so the denominator becomes the real quantity $a^2+\\omega^2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{a-j\\omega}{a^2+\\omega^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once the denominator is real, the split is immediate: the real part is $\\Re\\{X(j\\omega)\\}=\\frac{a}{a^2+\\omega^2}$ and the imaginary part is $\\Im\\{X(j\\omega)\\}=-\\frac{\\omega}{a^2+\\omega^2}$. That is the pattern you will reuse whenever this transform appears.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Re\\{X(j\\omega)\\}=\\frac{a}{a^2+\\omega^2},\\qquad \\Im\\{X(j\\omega)\\}=-\\frac{\\omega}{a^2+\\omega^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+          "section_index": 2,
+          "section_title": "Multiplying the Exponential Transform by the Complex Conjugate",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Starting from $X(j\\omega)=\\frac{1}{a+j\\omega}$, multiply by the complex conjugate of the denominator and write the unsimplified product form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Because the denominator is $a+j\\omega$, the matching conjugate is $a-j\\omega$. Multiply by $\\frac{a-j\\omega}{a-j\\omega}$ so the value stays the same while the algebra is set up for the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{1}{a+j\\omega}\\cdot\\frac{a-j\\omega}{a-j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now write the result in unsimplified product form: the numerator is $a-j\\omega$, and the denominator is still the product $(a+j\\omega)(a-j\\omega)$. Leave it in this form so the next section can simplify the denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{a-j\\omega}{(a+j\\omega)(a-j\\omega)}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+          "section_index": 3,
+          "section_title": "Simplifying the Denominator to a Real Quantity",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Simplify $(a+j\\omega)(a-j\\omega)$ into a real denominator and show the result inside the transformed fraction.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The next move is to simplify the denominator product from the conjugate step. Expand it directly, then use the fact that $j^2=-1$ so the imaginary terms cancel.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n(a+j\\omega)(a-j\\omega) &= a^2 - aj\\omega + aj\\omega - j^2\\omega^2 \\\\\n&= a^2 + \\omega^2\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That leaves a real denominator, $a^2+\\omega^2$. The numerator stays $a-j\\omega$, so the fraction is now ready to be split into real and imaginary parts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{a-j\\omega}{a^2+\\omega^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+          "section_index": 4,
+          "section_title": "Separating the Real and Imaginary Parts",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Take $\\frac{a-j\\omega}{a^2+\\omega^2}$ and identify its real part and imaginary part as separate terms.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The denominator is already real, so the remaining job is to split the numerator. Keep the same denominator on both terms and write the fraction as a real term plus a pure imaginary term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n\\frac{a-j\\omega}{a^2+\\omega^2} &= \\frac{a}{a^2+\\omega^2} - j\\frac{\\omega}{a^2+\\omega^2}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now the term without $j$ is the real part, and the coefficient of $j$ is the imaginary part. The negative sign stays with the imaginary part.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Re\\left\\{\\frac{a-j\\omega}{a^2+\\omega^2}\\right\\}=\\frac{a}{a^2+\\omega^2},\\qquad \\Im\\left\\{\\frac{a-j\\omega}{a^2+\\omega^2}\\right\\}=-\\frac{\\omega}{a^2+\\omega^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+          "section_index": 5,
+          "section_title": "Decomposing an Exponential Transform with a Specific Decay Constant",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Decompose $X(j\\omega)=\\frac{1}{2+j\\omega}$ into its real and imaginary parts.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Set the decay constant to $2$. The algebraic pattern stays the same, but the coefficients now simplify to concrete numbers.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nX(j\\omega) &= \\frac{1}{2+j\\omega}\\cdot\\frac{2-j\\omega}{2-j\\omega} \\\\\n&= \\frac{2-j\\omega}{(2+j\\omega)(2-j\\omega)} \\\\\n&= \\frac{2-j\\omega}{4+\\omega^2}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now the numerator splits over the real denominator. The real part is the constant term, and the imaginary part is the coefficient of $j$ with its negative sign preserved.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Re\\{X(j\\omega)\\}=\\frac{2}{4+\\omega^2},\\qquad \\Im\\{X(j\\omega)\\}=-\\frac{\\omega}{4+\\omega^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Real and Imaginary Parts of an Exponential Transform",
+          "section_index": 6,
+          "section_title": "Checking the Sign of the Imaginary Part",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Check the sign of the imaginary part when $X(j\\omega)=\\frac{1}{a+j\\omega}$ and confirm the correct final form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The only thing left to verify is the sign of the imaginary term. After multiplying by the conjugate, the numerator carries $-j\\omega$, so the negative sign must stay attached to the imaginary part.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nX(j\\omega) &= \\frac{1}{a+j\\omega}\\cdot\\frac{a-j\\omega}{a-j\\omega} \\\\\n&= \\frac{a-j\\omega}{a^2+\\omega^2}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The real part is still $\\frac{a}{a^2+\\omega^2}$, but the imaginary part is negative because the numerator contains $-j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Im\\{X(j\\omega)\\}=-\\frac{\\omega}{a^2+\\omega^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Fourier Transform of a Rectangular Pulse",
+      "lesson_core_move": "Compute the continuous-time Fourier transform of a finite rectangular pulse by evaluating the transform integral over the pulse interval and converting the result into a scaled sinc spectrum with the correct amplitude, width, and phase.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fourier Transform of a Rectangular Pulse",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform of a Rectangular Pulse",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the centered unit-height rectangular pulse $x(t)=1$ for $|t|\\le T/2$ and $0$ otherwise. For this base case, the continuous-time Fourier transform only needs the interval where the pulse is nonzero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}1, & |t|\\le T/2\\\\0, & \\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the pulse is centered, its transform is real and even. That lets us replace the infinite integration range with the support interval $[-T/2,\\,T/2]$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-T/2}^{T/2} e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Evaluating the antiderivative and subtracting the endpoint values gives the sine-over-argument form. This is the same transform, now written in a way that makes the spectrum shape visible.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\frac{2\\sin(\\omega T/2)}{\\omega}=T\\,\\mathrm{sinc}\\!\\left(\\frac{\\omega T}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This centered pulse is the base case to remember. Later changes in amplitude, width, or time shift will reuse the same sinc envelope and adjust only the scale or phase.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fourier Transform of a Rectangular Pulse",
+          "section_index": 2,
+          "section_title": "Evaluating the Transform Integral for a Centered Unit-Height Pulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=1$ for $-T/2\\le t\\le T/2$ and $0$ otherwise, starting from the transform integral and simplifying the answer as far as possible.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a centered, unit-height rectangular pulse of width $T$, so its support is exactly $[-T/2,\\,T/2]$. Start from the CTFT definition and restrict the integral to that interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-T/2}^{T/2} e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Integrate $e^{-j\\omega t}$ to get $\\frac{e^{-j\\omega t}}{-j\\omega}$, then evaluate the antiderivative at the two endpoints. That gives the exponential-difference form below.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\left.\\frac{e^{-j\\omega t}}{-j\\omega}\\right|_{-T/2}^{T/2}=\\frac{1}{-j\\omega}\\left(e^{-j\\omega T/2}-e^{j\\omega T/2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use Euler's relation to rewrite the exponential difference as a sine term. The centered pulse therefore produces a real, even spectrum with the compact sine-over-$\\omega$ form below.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\frac{2\\sin(\\omega T/2)}{\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "By continuity, the value at $\\omega=0$ is $X(0)=T$. This is the base transform shape that later amplitude, width, and shift changes will modify.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fourier Transform of a Rectangular Pulse",
+          "section_index": 3,
+          "section_title": "Converting the Centered Pulse Transform into Sinc Form",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(\\omega)=\\frac{2\\sin(\\omega T/2)}{\\omega}$ for the centered rectangular pulse, rewrite the answer in sinc form and identify the equivalent compact expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The transform has already been found, so the cue here is the algebraic rewrite. Keep the same centered pulse notation and convert the sine-over-$\\omega$ expression into the standard sinc form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\frac{2\\sin(\\omega T/2)}{\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Factor out $T$ so the denominator becomes $\\omega T/2$ and the remaining ratio matches the standard sinc definition. This is the same spectrum, just written in the compact form that makes the pulse-width scaling explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=T\\,\\frac{\\sin(\\omega T/2)}{\\omega T/2}=T\\,\\mathrm{sinc}\\!\\left(\\frac{\\omega T}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With $\\mathrm{sinc}(u)=\\frac{\\sin u}{u}$, the rewrite preserves the real, even spectrum from the previous step. At $\\omega=0$, the limit is still $X(0)=T$, so the compact form matches the original transform exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fourier Transform of a Rectangular Pulse",
+          "section_index": 4,
+          "section_title": "Including Amplitude and Width in the Scaled Sinc Transform",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=A$ for $-T/2\\le t\\le T/2$ and $0$ otherwise, and express the answer in scaled sinc form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same centered rectangular pulse as before, but now the pulse height is $A$ instead of $1$. Keep the same support interval and factor the amplitude out of the transform integral first.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-T/2}^{T/2} A\\,e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The remaining integral is exactly the centered unit-height case, so the same sine-over-$\\omega$ structure appears. The only new job is to preserve the factor $A$ all the way through the calculation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=A\\,\\frac{2\\sin(\\omega T/2)}{\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rewrite the result in sinc form exactly as before, now with the amplitude factor still attached. The width $T$ appears in the sinc argument and in the overall scale factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=AT\\,\\mathrm{sinc}\\!\\left(\\frac{\\omega T}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This shows the scaling rule clearly: multiplying the pulse by $A$ multiplies the spectrum by $A$, and changing the width $T$ changes both the height and the horizontal spread of the sinc envelope. The centered pulse is still the same base shape, just rescaled.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Fourier Transform of a Rectangular Pulse",
+          "section_index": 5,
+          "section_title": "Including the Phase Factor for an Off-Center Rectangular Pulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=1$ for $0\\le t\\le T$ and $0$ otherwise, and rewrite the result as a sinc spectrum with the correct linear phase factor.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the support interval $0\\le t\\le T$. This is the same width-$T$ rectangle as before, but shifted right by $T/2$, so the new feature is a linear phase factor rather than a new sinc envelope.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_0^T e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Integrate over the nonzero interval and evaluate the endpoints. The result is the same exponential-difference form that appears for any shifted rectangle.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\frac{1-e^{-j\\omega T}}{j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now factor the midpoint term $e^{-j\\omega T/2}$ so the phase and magnitude separate cleanly. That leaves the same sine-over-$\\omega$ structure as the centered pulse.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=e^{-j\\omega T/2}\\frac{2\\sin(\\omega T/2)}{\\omega}=T\\,e^{-j\\omega T/2}\\,\\mathrm{sinc}\\left(\\frac{\\omega T}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The sinc magnitude is unchanged from the centered case. The only new factor is the linear phase ramp from shifting the pulse by $T/2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Sinc-Shaped Spectra",
+      "lesson_core_move": "Interpret the rectangular pulse transform as a sinc-shaped spectrum by identifying how pulse duration and amplitude determine the central lobe, sidelobe oscillations, and frequency-domain scaling.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Sinc-Shaped Spectra",
+          "section_index": 1,
+          "section_title": "Introduction to Sinc-Shaped Spectra",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean two-panel instructional figure. Left panel: a centered rectangular pulse x(t)=A rect(t/T) with duration T and height A clearly labeled. Right panel: the corresponding sinc-shaped Fourier transform X(\\omega)=AT sinc(\\omega T/2), centered at zero frequency, with a dominant central lobe, several alternating sidelobes on both sides, and labeled frequency and amplitude axes. Keep the main lobe centered at zero frequency and make the width-versus-scale relationship visually clear."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A rectangular pulse turns into a sinc-shaped spectrum. The cue is the flat time-domain pulse: in frequency, look for a broad central lobe at zero frequency with alternating sidelobes on both sides.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, write the pulse as $x(t)=A\\,\\mathrm{rect}(t/T)$. If $A=1$, that is the unit-height pulse from the outline; $T$ sets the pulse duration.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A\\,\\mathrm{rect}(t/T)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=AT\\,\\mathrm{sinc}(\\omega T/2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathrm{sinc}(u)=\\frac{\\sin u}{u}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the pair this way: changing $T$ changes horizontal width, and changing $A$ rescales the whole spectrum vertically without changing the lobe pattern.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Sinc-Shaped Spectra",
+          "section_index": 2,
+          "section_title": "Identifying the Central Lobe and Sidelobes",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "A symmetric magnitude sinc spectrum plot centered at zero frequency, with the broad central lobe highlighted and the first sidelobes on the left and right clearly marked. Label the frequency axis and amplitude axis, keep the figure uncluttered, and make the center-versus-adjacent-lobes distinction visually obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given a plotted sinc spectrum of a rectangular pulse transform, identify the central lobe and the first sidelobes.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the sinc spectrum from the rectangular pulse transform. Read the middle hump as the central lobe, and read the smaller lobes on either side as the sidelobes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start at zero frequency. The lobe that contains $\\omega=0$ is the central lobe, even if the whole plot has been scaled vertically.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=AT\\,\\mathrm{sinc}(\\omega T/2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then move outward from the center: the first lobes immediately to the left and right are the first sidelobes. Symmetry makes the left and right labels match.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Sinc-Shaped Spectra",
+          "section_index": 3,
+          "section_title": "Relating Pulse Duration to Spectrum Width",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Two centered rectangular pulses with the same amplitude but different durations, shown side by side or in a stacked comparison, with each pulse paired to its sinc magnitude spectrum. Make the shorter pulse clearly produce a wider central lobe and more widely spaced zeros, and make the longer pulse clearly produce a narrower central lobe and tighter sidelobe spacing. Label the duration difference, keep the amplitude fixed, and keep the figure uncluttered."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given two rectangular pulses with different durations but the same amplitude, identify which transform has the narrower central lobe and which has the wider sidelobe spacing.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a comparison of two centered rectangular pulses with the same amplitude. Hold amplitude fixed and use duration as the only variable: shorter pulse, wider spectrum; longer pulse, narrower spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the rectangular-pulse transform rule. For $x(t)=A\\,\\mathrm{rect}(t/T)$, the spectrum is $X(\\omega)=AT\\,\\mathrm{sinc}(\\omega T/2)$. When $T$ gets smaller, the sinc stretches horizontally, so the central lobe gets wider and the sidelobe zeros move farther apart.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=AT\\,\\mathrm{sinc}(\\omega T/2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{larger }T \\Rightarrow \\text{narrower spectrum}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the shorter pulse matches the wider central lobe and wider sidelobe spacing, and the longer pulse matches the narrower spectrum with tighter sidelobe spacing. The comparison is one-dimensional: duration controls horizontal width, not vertical scale.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Sinc-Shaped Spectra",
+          "section_index": 4,
+          "section_title": "Relating Pulse Amplitude to Spectrum Scaling",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Two centered rectangular pulses with the same duration but different amplitudes, shown side by side or in a stacked comparison, with each pulse paired to its sinc magnitude spectrum. Keep the pulse widths identical, make the amplitude change obvious by vertical scaling only, and show that the taller pulse produces a taller sinc spectrum while the central-lobe width and sidelobe spacing stay unchanged."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given two rectangular pulses with the same duration but different amplitudes, identify how their sinc spectra differ.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a comparison of two centered rectangular pulses with the same duration. Hold duration fixed and treat amplitude as the only change: taller pulse, taller spectrum; same width, same zero locations.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use amplitude as a scale factor on the whole transform. If one pulse is $k$ times taller than the other, then every frequency value in its sinc spectrum is multiplied by $k$ as well.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_2(\\omega)=kX_1(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=AT\\,\\mathrm{sinc}(\\omega T/2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the taller pulse gives the taller sinc spectrum, but the central-lobe width and sidelobe spacing do not change because the duration stayed fixed. The comparison is a vertical rescaling, not a shape change.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Sinc-Shaped Spectra",
+          "section_index": 5,
+          "section_title": "Comparing Sinc Spectra from Different Rectangular Pulses",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "A small set of centered rectangular pulses with clearly different widths and amplitudes, paired with their sinc magnitude spectra for a matching task. Include enough visual variety to force the learner to separate width from amplitude: one pulse should be wider but shorter, one narrower but taller, and one with a different combination. Keep the spectra aligned so the wider pulse corresponds to the narrower central lobe and the taller pulse corresponds to the larger vertical scale. Use clear labels and an uncluttered layout."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given several rectangular pulses with different widths and amplitudes, match each pulse to its sinc spectrum and justify the match by width and scaling.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a matching task with several centered rectangular pulses. Use the two control knobs in order: duration sets the horizontal width, and amplitude sets the vertical scale.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First sort by duration. The wider pulse maps to the narrower sinc spectrum, and any two pulses with the same duration must have the same lobe spacing and zero locations.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=AT\\,\\mathrm{sinc}(\\omega T/2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{larger }T \\Rightarrow \\text{narrower spectrum}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{larger }A \\Rightarrow \\text{larger vertical scale}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then use amplitude only after the width match is fixed. The correct pair preserves both the horizontal shape and the vertical size, so the final match agrees on width first and scale second.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Zeros of the Rectangular Pulse Spectrum",
+      "lesson_core_move": "Compute the nonzero angular-frequency zeros of a rectangular pulse spectrum by solving sin(omega T/2) = 0 and relating the null spacing to the pulse width T.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Zeros of the Rectangular Pulse Spectrum",
+          "section_index": 1,
+          "section_title": "Introduction to Zeros of the Rectangular Pulse Spectrum",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a width-$T$ rectangular pulse, the spectrum is already in sinc form. The zero locations come from the sine numerator, not from the denominator, and the point $\\omega=0$ is the peak of the spectrum rather than a zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=AT\\frac{\\sin(\\omega T/2)}{\\omega T/2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the zero condition is $\\sin(\\omega T/2)=0$. Set $\\omega T/2=k\\pi$ and solve for $\\omega$ to get the indexed family of spectral nulls.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k=\\frac{2\\pi k}{T},\\quad k\\in\\mathbb{Z},\\;k\\ne 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Exclude $k=0$, since that gives the center value of the sinc, not a zero. The first nonzero zeros are the symmetric pair at $\\omega=\\pm 2\\pi/T$, and the same formula shows that adjacent nulls are spaced by $\\Delta\\omega=2\\pi/T$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Zeros of the Rectangular Pulse Spectrum",
+          "section_index": 2,
+          "section_title": "Finding the First Nonzero Zeros from Pulse Width",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A rectangular pulse has width $T=6$. Find the first nonzero angular-frequency zeros of its spectrum.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the sinc-form spectrum from the previous step. To find zeros, set the sine numerator equal to zero and ignore the center point $\\omega=0$, which is not a zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sin(\\omega T/2)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the zero condition as $\\omega T/2=k\\pi$ and solve for $\\omega$. That gives the indexed family of spectral nulls, and the first nonzero pair comes from $k=\\pm1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k=\\frac{2\\pi k}{T},\\quad k\\in\\mathbb{Z},\\;k\\ne 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $T=6$ and keep only the first nonzero pair. The result is the symmetric pair $\\omega=\\pm\\pi/3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega=\\pm\\frac{2\\pi}{6}=\\pm\\frac{\\pi}{3}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Zeros of the Rectangular Pulse Spectrum",
+          "section_index": 3,
+          "section_title": "Finding the Full Zero Pattern of a Rectangular Pulse Spectrum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A rectangular pulse has width $T=6$. Write the full set of nonzero angular-frequency zeros of its spectrum.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is still the sinc-form spectrum from the previous steps. The first pair showed that the zeros come from the sine numerator, and now we keep the same root condition but let the integer index run through every nonzero value.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k=\\frac{2\\pi k}{T},\\quad k\\in\\mathbb{Z},\\;k\\ne 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $T=6$ into the indexed family. That gives a repeating zero pattern with spacing $\\pi/3$ between adjacent nulls.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k=\\frac{2\\pi k}{6}=\\frac{k\\pi}{3},\\quad k\\in\\mathbb{Z},\\;k\\ne 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the full nonzero zero set is $\\ldots,-\\pi,-\\frac{2\\pi}{3},-\\frac{\\pi}{3},\\frac{\\pi}{3},\\frac{2\\pi}{3},\\pi,\\ldots$. The sign symmetry comes from the integer index $k$, and $k=0$ is still excluded because it is the center value of the sinc, not a zero.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Zeros of the Rectangular Pulse Spectrum",
+          "section_index": 4,
+          "section_title": "Computing Null Spacing from Pulse Width",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A rectangular pulse has width $T=6$. What is the spacing between adjacent nonzero zeros of its spectrum?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the indexed zero family from the previous step. Adjacent zeros are consecutive values of $k$, so the spacing comes from subtracting one indexed zero from the next.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_k=\\frac{2\\pi k}{T},\\qquad \\omega_{k+1}=\\frac{2\\pi (k+1)}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Subtract the two expressions. The $k$ terms cancel, so the angular-frequency gap is constant and does not depend on which pair of adjacent zeros you choose.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta\\omega=\\omega_{k+1}-\\omega_k=\\frac{2\\pi}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute $T=6$. The spacing between adjacent nonzero zeros is $\\Delta\\omega=2\\pi/6=\\pi/3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta\\omega=\\frac{2\\pi}{6}=\\frac{\\pi}{3}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Zeros of the Rectangular Pulse Spectrum",
+          "section_index": 5,
+          "section_title": "Inferring Pulse Width from Null Spacing",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "The spacing between adjacent nonzero zeros of a rectangular pulse spectrum is $\\Delta\\omega=\\pi/3$. Find the pulse width $T$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the spacing relation from the previous step. To recover the pulse width, start from $\\Delta\\omega=2\\pi/T$ and solve that formula for $T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta\\omega=\\frac{2\\pi}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rearrange the equation to isolate $T$. This gives the reciprocal form $T=2\\pi/\\Delta\\omega$, so the pulse width is determined directly by the measured zero spacing.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{\\Delta\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute $\\Delta\\omega=\\pi/3$. The result is $T=2\\pi/(\\pi/3)=6$, which has the correct units of time for a pulse width.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "T=\\frac{2\\pi}{\\pi/3}=6",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Fourier Transform of a Time-Domain Impulse",
+      "lesson_core_move": "Compute the continuous-time Fourier transform of a scaled or shifted time-domain impulse by applying the sifting property to obtain the corresponding flat spectrum or complex phase factor.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Fourier Transform of a Time-Domain Impulse",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform of a Time-Domain Impulse",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When the input is a time-domain impulse, the CTFT is handled directly by the sifting property. The integral does not stay as a frequency-dependent expression; it collapses to whatever the exponential evaluates to at the impulse location.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}\\delta(t-t_0)f(t)\\,dt=f(t_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the base case $x(t)=\\delta(t)$. Substituting into the CTFT gives $X(\\omega)=1$, so the spectrum is flat across all frequencies.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\delta(t) \\xleftrightarrow{\\mathcal{F}} 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The same rule shows what scale and shift do. Multiplying the impulse by $A$ multiplies the flat spectrum by $A$, and shifting the impulse to $t_0$ contributes only the phase factor $e^{-j\\omega t_0}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}A\\,\\delta(t) &\\xleftrightarrow{\\mathcal{F}} A \\\\ \\delta(t-t_0) &\\xleftrightarrow{\\mathcal{F}} e^{-j\\omega t_0} \\\\ A\\,\\delta(t-t_0) &\\xleftrightarrow{\\mathcal{F}} A e^{-j\\omega t_0}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For this lesson, keep the cue simple: a scaled or shifted impulse never changes the spectrum shape, only its height and phase. That is the transform pair to carry forward into the worked examples.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Fourier Transform of a Time-Domain Impulse",
+          "section_index": 2,
+          "section_title": "Transforming the Unit Impulse at the Origin",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=\\delta(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is the simplest impulse case: the impulse sits at the origin, so the CTFT integral collapses at $t=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}\\delta(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the sifting property at the origin. The impulse picks out the value of the exponential at $t=0$, so the frequency variable contributes no extra dependence.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=e^{-j\\omega\\cdot 0}=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the unit impulse produces a flat spectrum. In compact transform-pair form, $\\delta(t)\\xleftrightarrow{\\mathcal{F}}1$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Fourier Transform of a Time-Domain Impulse",
+          "section_index": 3,
+          "section_title": "Transforming a Scaled Time-Domain Impulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=3\\delta(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is the same origin-impulse case with one new wrinkle: the impulse is multiplied by $3$. The CTFT integral still collapses at $t=0$, so only the spectrum height changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}3\\delta(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Pull the constant $3$ outside the integral and reuse the unit-impulse result from the previous example. The exponential is still evaluated at $t=0$, so there is no frequency dependence to track.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=3\\int_{-\\infty}^{\\infty}\\delta(t)e^{-j\\omega t}\\,dt=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So scaling the time-domain impulse scales the flat spectrum by the same factor. In transform-pair form, $3\\delta(t)\\xleftrightarrow{\\mathcal{F}}3$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Fourier Transform of a Time-Domain Impulse",
+          "section_index": 4,
+          "section_title": "Transforming a Shifted Time-Domain Impulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=\\delta(t-t_0)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is the same impulse-transform pattern again, but now the impulse is shifted to $t_0$. The only change is where the sifting property samples the exponential.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}\\delta(t-t_0)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the sifting property at $t=t_0$. That replaces $t$ in the exponential with the shift location and leaves a pure phase factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=e^{-j\\omega t_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So a shifted time-domain impulse transforms to unit magnitude with a frequency-dependent phase: $\\delta(t-t_0)\\xleftrightarrow{\\mathcal{F}}e^{-j\\omega t_0}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Fourier Transform of a Time-Domain Impulse",
+          "section_index": 5,
+          "section_title": "Transforming a Scaled and Shifted Time-Domain Impulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the CTFT of $x(t)=A\\delta(t-t_0)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This combines the two earlier cases: the impulse is shifted to $t_0$ and scaled by $A$. The transform will therefore keep the phase factor from the shift and the amplitude factor from the scale.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=\\int_{-\\infty}^{\\infty}A\\delta(t-t_0)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Pull the constant $A$ outside the integral, then reuse the shifted-impulse result. The sifting property still evaluates the exponential at $t=t_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\omega)=A\\int_{-\\infty}^{\\infty}\\delta(t-t_0)e^{-j\\omega t}\\,dt=Ae^{-j\\omega t_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the combined effect is just amplitude times phase: $A\\delta(t-t_0)\\xleftrightarrow{\\mathcal{F}}Ae^{-j\\omega t_0}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Fourier Transform of a Constant Signal",
+      "lesson_core_move": "Convert a constant signal x(t) = A into the transform pair X(j omega) = 2 pi A delta(omega) by recognizing constant time-domain content as a frequency-domain impulse at zero frequency.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform of a Constant Signal",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform of a Constant Signal",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A constant signal is a flat waveform with no time variation. In the Fourier transform, that kind of signal is read as pure DC content concentrated at $\\omega=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the unit-constant case first: because the signal never changes with time, all of its spectral weight lands at zero frequency. So the Fourier transform of $x(t)=1$ is the zero-frequency impulse pair.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=2\\pi\\delta(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once the unit case is clear, any constant amplitude $A$ just scales the spectrum by $A$. The impulse stays at $\\omega=0$; only its weight changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=2\\pi A\\delta(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the pair in reverse as well: a zero-frequency impulse with weight $2\\pi A$ means the time-domain signal is the constant $A$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform of a Constant Signal",
+          "section_index": 2,
+          "section_title": "Converting the Unit Constant Signal to a Zero-Frequency Impulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t)=1$, choose the correct Fourier transform pair and identify the impulse at $\\omega=0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a unit constant signal: $x(t)=1$ is flat for all $t$, so it contains only DC content. That means the spectrum must collapse to the zero-frequency line.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the constant-signal rule from the tutorial: all spectral weight sits at $\\omega=0$, and the correct transform pair is a zero-frequency impulse with weight $2\\pi$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=2\\pi\\delta(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "No other frequency content appears. The unit constant signal maps directly to $2\\pi\\delta(\\omega)$ centered at $\\omega=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform of a Constant Signal",
+          "section_index": 3,
+          "section_title": "Converting a Scaled Constant Signal to a Weighted Impulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t)=A$, determine the Fourier transform and explain how the amplitude changes the impulse weight.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is still a constant signal: $x(t)=A$ is flat for all $t$, so it carries only DC content. The new wrinkle is just the constant level $A$ instead of $1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply linearity to the unit-constant result from the previous step: multiplying the time-domain signal by $A$ multiplies the spectrum by $A$ while leaving the impulse at $\\omega=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=2\\pi A\\delta(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the weighted impulse pair is the same zero-frequency location as before, with the amplitude carried into the coefficient. The spectrum is still concentrated at $\\omega=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform of a Constant Signal",
+          "section_index": 4,
+          "section_title": "Finding the Constant Amplitude from a Zero-Frequency Impulse Spectrum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(j\\omega)=2\\pi A\\delta(\\omega)$, choose the matching constant signal $x(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a zero-frequency impulse spectrum: $X(j\\omega)=2\\pi A\\delta(\\omega)$ means all of the spectral weight is concentrated at $\\omega=0$. That is the frequency-domain signature of a constant time-domain signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=2\\pi A\\delta(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the coefficient of $\\delta(\\omega)$ as the constant amplitude. The weight is $2\\pi A$, so the matching time-domain signal has amplitude $A$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the inverse read is direct: a zero-frequency impulse with weight $2\\pi A$ corresponds to the constant signal $x(t)=A$. No other frequency content is present.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 8,
+      "lesson_title": "Fourier Transform of a Complex Exponential",
+      "lesson_core_move": "Convert e^(j omega_0 t) into the transform pair X(j omega) = 2 pi delta(omega - omega_0) by recognizing it as a single frequency component shifted away from zero frequency.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 8,
+          "lesson_title": "Fourier Transform of a Complex Exponential",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform of a Complex Exponential",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A pure complex exponential $e^{j\\omega_0 t}$ is a single rotating frequency component, not a mixture of frequencies. In the Fourier transform, that means its content is concentrated at one angular frequency instead of spread across the spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{j\\omega_0 t} \\leftrightarrow 2\\pi\\delta(\\omega-\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read that pair as: the time signal $e^{j\\omega_0 t}$ becomes a single impulse at $\\omega=\\omega_0$. The transform is not a broad curve; it is one spectral line located exactly where the exponential rotates.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-j\\omega_0 t} \\leftrightarrow 2\\pi\\delta(\\omega+\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the sign in the exponent controls which side of zero the impulse sits on: positive $\\omega_0$ places the impulse to the right of zero frequency, and negative $\\omega_0$ places it to the left. The examples that follow will reuse this same pair first at concrete positive and negative frequencies, and then with a scale factor.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Fourier Transform of a Complex Exponential",
+          "section_index": 2,
+          "section_title": "Converting e^(j omega_0 t) to a Shifted Frequency Impulse",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t)=e^{j\\omega_0 t}$, find $X(j\\omega)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $x(t)=e^{j\\omega_0 t}$ is a pure complex exponential, so it contains one angular frequency only. That means its Fourier transform is not spread across many frequencies; it collapses to a single shifted impulse.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{j\\omega_0 t} \\leftrightarrow 2\\pi\\delta(\\omega-\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use that standard pair directly: a tone at $\\omega_0$ becomes one impulse centered at the same angular frequency. There is no extra algebra here beyond recognizing the signal as the single-frequency case from the introduction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{j\\omega_0 t} \\;\\Longrightarrow\\; X(j\\omega)=2\\pi\\delta(\\omega-\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The shift stays inside the impulse argument as $\\omega-\\omega_0$, so the spectral line is displaced from zero by exactly $\\omega_0$. The $2\\pi$ factor stays unchanged, and this is the form the later examples will specialize with concrete frequencies and scaling.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Fourier Transform of a Complex Exponential",
+          "section_index": 3,
+          "section_title": "Placing the Spectral Impulse at a Positive Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=e^{j4t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $x(t)=e^{j4t}$ is still a pure complex exponential, but now the angular frequency is the positive number $4$. So the transform should be the same single-impulse pattern, just centered at a positive frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{j4t} \\leftrightarrow 2\\pi\\delta(\\omega-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the result directly: the spectral impulse sits at $\\omega=4$, which is to the right of zero frequency. Nothing about the transform pair changes except the concrete value of $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{j4t} \\;\\Longrightarrow\\; X(j\\omega)=2\\pi\\delta(\\omega-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The substitution is the whole move: replace $\\omega_0$ by $4$, keep the $2\\pi$ factor, and keep the impulse shift as $\\omega-4$. That is the positive-frequency case the later examples will contrast with a negative frequency and with a scale factor.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Fourier Transform of a Complex Exponential",
+          "section_index": 4,
+          "section_title": "Placing the Spectral Impulse at a Negative Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=e^{-j5t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $x(t)=e^{-j5t}$ is still a pure complex exponential, but now the angular frequency is negative. So the transform is still a single spectral impulse; it just moves to the left of zero frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0=-5 \\;\\Longrightarrow\\; X(j\\omega)=2\\pi\\delta(\\omega-\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $\\omega_0=-5$ into the shift rule. That gives $\\delta(\\omega-(-5))$, which simplifies to $\\delta(\\omega+5)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{-j5t} \\;\\Longrightarrow\\; X(j\\omega)=2\\pi\\delta(\\omega+5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result confirms the negative-frequency placement: the impulse sits at $\\omega=-5$, not at a positive frequency. The only change from the positive-frequency case is the sign inside the $\\delta$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Fourier Transform of a Complex Exponential",
+          "section_index": 5,
+          "section_title": "Transforming a Scaled Complex Exponential",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $x(t)=3e^{j2t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $x(t)=3e^{j2t}$ is the same single-frequency complex exponential as before, but with a scalar factor of $3$ in front. That means the impulse stays at the same frequency and only its weight changes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{j2t} \\leftrightarrow 2\\pi\\delta(\\omega-2), \\qquad 3x(t) \\leftrightarrow 3X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply linearity to carry the factor of $3$ through the transform pair. The frequency location does not move, so the impulse remains at $\\omega=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=3e^{j2t} \\;\\Longrightarrow\\; X(j\\omega)=3\\cdot 2\\pi\\delta(\\omega-2)=6\\pi\\delta(\\omega-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result shows the only effect of the scale factor: it multiplies the impulse amplitude from $2\\pi$ to $6\\pi$. The spectral impulse is still centered at $\\omega=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 9,
+      "lesson_title": "Fourier Transform of a Cosine",
+      "lesson_core_move": "Compute the continuous-time Fourier transform of a cosine by rewriting it as half the sum of opposite-frequency complex exponentials and converting those exponentials into impulses at the positive and negative cosine frequencies.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 9,
+          "lesson_title": "Fourier Transform of a Cosine",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform of a Cosine",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When the signal is $\\cos(\\omega_0 t)$, the frequency-domain target is not one spike but a symmetric pair of spikes at $\\omega=\\pm\\omega_0$. The move is to rewrite the cosine as the average of two opposite-frequency complex exponentials, then transform those exponentials one at a time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from Euler's formula and keep the two frequencies visible. The cosine is the half-sum of $e^{j\\omega_0 t}$ and $e^{-j\\omega_0 t}$, so each term can be matched directly to the standard exponential transform pair.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\cos(\\omega_0 t)=\\frac{1}{2}\\left(e^{j\\omega_0 t}+e^{-j\\omega_0 t}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the known pair $e^{j\\omega_0 t} \\leftrightarrow 2\\pi\\delta(\\omega-\\omega_0)$ to the positive-frequency term. After the outer $\\tfrac{1}{2}$ is carried through, that term contributes an impulse at $\\omega=\\omega_0$ with weight $\\pi$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the same pair $e^{-j\\omega_0 t} \\leftrightarrow 2\\pi\\delta(\\omega+\\omega_0)$ to the negative-frequency term. It contributes the matching impulse at $\\omega=-\\omega_0$, again with weight $\\pi$ after the half-factor is included.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{\\cos(\\omega_0 t)\\}=\\pi\\big[\\delta(\\omega-\\omega_0)+\\delta(\\omega+\\omega_0)\\big]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Putting the two impulses together gives the canonical cosine transform pair: two equal spikes, one positive-frequency and one negative-frequency, with the same magnitude. Later examples will only change the algebraic wrinkle; the underlying move stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Fourier Transform of a Cosine",
+          "section_index": 2,
+          "section_title": "Rewriting a Cosine as Opposite-Frequency Complex Exponentials",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $\\cos(4t)$ as a half-sum of opposite-frequency complex exponentials.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a cosine written as $\\cos(4t)$. Rewrite it with Euler's identity so the two frequencies stay visible and the cosine is ready for the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\cos(4t)=\\frac{1}{2}\\left(e^{j4t}+e^{-j4t}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the factor of $\\tfrac{1}{2}$ outside both exponentials; that is what preserves the original cosine amplitude. The two terms are the opposite-frequency conjugate pair $e^{j4t}$ and $e^{-j4t}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Nothing about the signal has changed except its form. The rewrite now isolates the two frequency components so the next step can transform them separately.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Fourier Transform of a Cosine",
+          "section_index": 3,
+          "section_title": "Converting the Exponential Terms into Frequency-Domain Impulses",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Convert $\\tfrac{1}{2}e^{j4t}$ and $\\tfrac{1}{2}e^{-j4t}$ into their Fourier transforms using the complex-exponential transform pair.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the pair of opposite-frequency exponentials from the previous step. Each term has a standard Fourier-transform rule, so the only job here is to convert them one at a time and keep the half-factor attached.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{j\\omega_0 t}\\leftrightarrow 2\\pi\\delta(\\omega-\\omega_0),\\qquad e^{-j\\omega_0 t}\\leftrightarrow 2\\pi\\delta(\\omega+\\omega_0)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the positive-frequency rule to $\\tfrac{1}{2}e^{j4t}$. The outer $\\tfrac{1}{2}$ scales the impulse weight from $2\\pi$ to $\\pi$, giving $\\pi\\delta(\\omega-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the negative-frequency rule to $\\tfrac{1}{2}e^{-j4t}$. The same scaling gives the matching impulse $\\pi\\delta(\\omega+4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\left\\{\\tfrac{1}{2}e^{j4t}\\right\\}=\\pi\\delta(\\omega-4),\\qquad \\mathcal{F}\\left\\{\\tfrac{1}{2}e^{-j4t}\\right\\}=\\pi\\delta(\\omega+4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the complete conversion for the two exponential terms. Keep the two impulses separate here; the next step will combine them into the cosine transform pair.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Fourier Transform of a Cosine",
+          "section_index": 4,
+          "section_title": "Combining the Positive and Negative Frequency Impulses",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Combine the two impulse terms to obtain the Fourier transform of $\\cos(4t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the pair of impulses from the previous step: one at $\\omega=4$ and one at $\\omega=-4$. Combine them into the canonical symmetric cosine transform pair instead of leaving them as separate transformed exponentials.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\pi\\delta(\\omega-4)+\\pi\\delta(\\omega+4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The common factor is $\\pi$, so the two terms can be written as one symmetric expression. This is the final frequency-domain form of the cosine.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{F}\\{\\cos(4t)\\}=\\pi\\big[\\delta(\\omega-4)+\\delta(\\omega+4)\\big]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is two equal impulses, one at the positive cosine frequency and one at the negative cosine frequency. That symmetric pair is the standard cosine transform pair the later examples will reuse.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 9,
+          "lesson_title": "Fourier Transform of a Cosine",
+          "section_index": 5,
+          "section_title": "Finding the Fourier Transform of a Scaled Cosine",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Fourier transform of $3\\cos(4t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The only new cue is the leading scalar $3$. Treat it as a constant multiplier and keep it outside the transform so the cosine pair stays unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n\\mathcal{F}\\{3\\cos(4t)\\}\n&= 3\\mathcal{F}\\left\\{\\tfrac{1}{2}(e^{j4t}+e^{-j4t})\\right\\} \\\\\n&= 3 \\cdot \\tfrac{1}{2}\\left[\\mathcal{F}\\{e^{j4t}\\}+\\mathcal{F}\\{e^{-j4t}\\}\\right] \\\\\n&= 3 \\cdot \\tfrac{1}{2}\\left[2\\pi\\delta(\\omega-4)+2\\pi\\delta(\\omega+4)\\right] \\\\\n&= 3\\pi\\left[\\delta(\\omega-4)+\\delta(\\omega+4)\\right].\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The frequency locations stay at $\\omega=4$ and $\\omega=-4$. Only the impulse weights change, giving the scaled cosine pair $3\\pi\\left[\\delta(\\omega-4)+\\delta(\\omega+4)\\right]$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

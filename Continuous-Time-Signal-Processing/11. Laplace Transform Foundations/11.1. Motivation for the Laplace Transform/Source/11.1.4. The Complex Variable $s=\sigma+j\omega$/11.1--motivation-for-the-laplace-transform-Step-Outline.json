@@ -1,0 +1,2062 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Limitations of the Fourier Transform",
+      "lesson_core_move": "Test Fourier-integral convergence for continuous-time signals and LTI impulse responses to recognize when frequency-response analysis on the \\(j\\omega\\) axis must be extended with Laplace-domain exponential weighting.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Limitations of the Fourier Transform",
+          "step_type": "tutorial",
+          "learning_goal": "Establish the recurring move for this lesson: students must test Fourier-integral convergence before treating a signal or impulse response as having a frequency response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No symbolic graphics are needed; notation and formulas are sufficient."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define the Fourier-transform convergence test as the first gate in the lesson: the core move is to decide whether $\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ is valid by checking integral convergence.",
+            "base_case": "Use $x(t)=e^{-t}u(t)$ as the minimal convergent example so the direct-instruction move remains concrete and minimal.",
+            "paragraph_plan": [
+              "Open with the lesson-level map: convergence is the condition that determines if a Fourier frequency-response interpretation is lawful.",
+              "State the target operation as $\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ and the absolute-convergence check $\\int_{-\\infty}^{\\infty}|x(t)|\\,dt<\\infty$.",
+              "Explain that this condition can pass for some signal classes and fail for nondecaying/growing classes, which creates the course motivation for Laplace weighting.",
+              "Preview the step sequence: first confirm a decaying case, then contrast with nondecaying and growing cases, then transfer the same test to impulse responses, then decide when $e^{-\\sigma t}$ weighting is required."
+            ],
+            "display_math_plan": [
+              "$$X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt$$",
+              "$$\\int_{-\\infty}^{\\infty}|x(t)|\\,dt<\\infty \\Rightarrow X(j\\omega)\\text{ exists}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [
+              "not-applicable"
+            ],
+            "practice_variation_axes": [
+              "not-applicable"
+            ]
+          },
+          "handoff_notes": "No tutorial questions in this section. Keep this section purely direct-instruction and avoid inserting images or example-like walkthroughs."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Testing Convergence for a Decaying Time Signal",
+          "step_type": "example",
+          "learning_goal": "Show how to execute the core move on a convergent signal and conclude that Fourier analysis on $j\\omega$ is valid.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No plots are needed; all judgments are from symbolic integral behavior."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices (true/false condition statements, expressions, or formulas)",
+            "practice_question_model": "Given $x(t)=e^{-a|t|}$ with $a>0$, identify the correct statement about Fourier-transform convergence on $j\\omega$.",
+            "distractor_plan": [
+              "Pick wrong threshold assumptions such as requiring only boundedness, not absolute integrability.",
+              "Confuse bilateral with unilateral convergence and select a finite-slice conclusion.",
+              "Conclude growth in one side dominates regardless of decay elsewhere.",
+              "Claim exponential decay in one half-axis is always sufficient even when both sides diverge."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Demonstrate the one-step pattern for the example writer: evaluate the Fourier integral's absolute magnitude and compute finite bounds.",
+            "base_case": "Use the same base class as the tutorial, then specialize to $x(t)=e^{-2|t|}$.",
+            "paragraph_plan": [
+              "Split the integral into two improper halves and show the envelope is $e^{-2|t|}$ after taking magnitude.",
+              "Evaluate both halves explicitly and reduce to geometric/exponential antiderivative values.",
+              "Conclude finite total area and mark the signal as having a valid $j\\omega$-axis frequency response."
+            ],
+            "display_math_plan": [
+              "$$\\int_{-\\infty}^{\\infty}|e^{-2|t|}|\\,dt=\\int_{-\\infty}^{0}e^{2t}dt+\\int_{0}^{\\infty}e^{-2t}dt=1$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test whether the Fourier transform converges for $x(t)=e^{-2|t|}$.",
+            "worked_solution_goal": "Reach the conclusion that $\\int_{-\\infty}^{\\infty} e^{-2|t|}\\,dt<\\infty$, so $X(j\\omega)$ exists.",
+            "variation_from_previous": "Keep the same convergence rule but extend from a pure tutorial base case to a two-sided exponential envelope.",
+            "solution_step_plan": [
+              "Take magnitude: $\\left|e^{-2|t|}e^{-j\\omega t}\\right|=e^{-2|t|}$.",
+              "Split the absolute integral at $t=0$ into two one-sided improper integrals.",
+              "Evaluate both integrals to finite values and sum them.",
+              "State that absolute convergence implies the Fourier integral is well-defined."
+            ],
+            "practice_variation_axes": [
+              "Change decay rate from 2 to a general $a>0$ and reuse the same pattern.",
+              "Swap between two-sided and one-sided decaying forms.",
+              "Ask for the same move on complex sinusoids multiplied by a decaying envelope."
+            ]
+          },
+          "handoff_notes": "Keep worked example symbolic and concise; use practice that mirrors the same absolute-integral workflow."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Recognizing Divergence for a Nondecaying Time Signal",
+          "step_type": "example",
+          "learning_goal": "Apply the same move to a nondecaying signal and diagnose exactly why convergence fails on the $j\\omega$ axis.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; divergence is inferred from symbolic magnitude growth."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices (expressions and condition statements)",
+            "practice_question_model": "For $x(t)=1$, which option correctly describes whether a frequency-response $X(j\\omega)$ exists?",
+            "distractor_plan": [
+              "Choose a finite interval argument and ignore the infinite support.",
+              "Claim oscillation of $e^{-j\\omega t}$ guarantees convergence by cancellation for all signals.",
+              "Use boundedness of $x(t)$ as the only criterion.",
+              "Conclude convergence exists only when $\\omega\\neq 0$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Demonstrate one-way and two-sided nonconvergence with an explicit divergent absolute-value integral.",
+            "base_case": "Use the nondecaying template $x(t)=1$.",
+            "paragraph_plan": [
+              "Rewrite the magnitude integral for a nondecaying signal and test it directly.",
+              "Show the resulting improper integral has infinite area.",
+              "Label this as a fail for Fourier-transform existence on the $j\\omega$ axis."
+            ],
+            "display_math_plan": [
+              "$$\\int_{-\\infty}^{\\infty}|1|\\,dt=\\infty$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test convergence for $x(t)=1$ and decide if a Fourier transform exists.",
+            "worked_solution_goal": "Show the absolute integral is infinite and therefore conclude no $X(j\\omega)$ in the ordinary Fourier sense.",
+            "variation_from_previous": "Change the tested signal from decaying to constant to isolate the failure of convergence.",
+            "solution_step_plan": [
+              "Write $\\left|1\\cdot e^{-j\\omega t}\\right|=1$.",
+              "Compute $\\int_{-\\infty}^{\\infty}1\\,dt$ and classify it as divergent.",
+              "State clearly that divergence fails the lesson core move.",
+              "Record the implication: frequency-response language is not justified without extension."
+            ],
+            "practice_variation_axes": [
+              "Replace $1$ with another nondecaying bounded signal (e.g., shifted rectangular pulse with infinite support).",
+              "Test statements about endpoint behavior versus whole-domain integrability.",
+              "Vary whether the signal is even, odd, or shifted while keeping nondecay."
+            ]
+          },
+          "handoff_notes": "Make the failure explicit and binary: this example should be the first clear 'does not converge' anchor for learners."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Recognizing Divergence for a Growing Exponential Signal",
+          "step_type": "example",
+          "learning_goal": "Use the core move on a growing signal to confirm that exponential increase forces divergence in the Fourier framework.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; growth rate logic is captured algebraically."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices (conditions on exponent sign/rates and resulting transform validity)",
+            "practice_question_model": "For $x(t)=e^{2t}u(t)$, choose the correct conclusion about Fourier convergence and the next step the learner should take.",
+            "distractor_plan": [
+              "Pick bounded-oscillation from $e^{-j\\omega t}$ as sufficient even when amplitude grows.",
+              "Claim causal support guarantees Fourier existence regardless of growth rate.",
+              "Assume the one-sided integral converges because $\\omega \\neq 0$.",
+              "State that any exponential can be normalized by phase rotation and therefore converges."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Model the same absolute-integral test now with a growth exponent to show where and why divergence appears.",
+            "base_case": "Use $x(t)=e^{2t}u(t)$ as the minimal growing-causal counterexample.",
+            "paragraph_plan": [
+              "Write the absolute-value Fourier integral and simplify to a one-sided exponential growth integral.",
+              "Evaluate the improper upper-limit behavior and show it diverges.",
+              "Map this result to the lesson rule: the signal violates the prerequisite for ordinary Fourier frequency-response analysis."
+            ],
+            "display_math_plan": [
+              "$$\\int_{0}^{\\infty}|e^{2t}|\\,dt=\\infty$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test whether the Fourier transform converges for $x(t)=e^{2t}u(t)$.",
+            "worked_solution_goal": "Conclude that the one-sided absolute integral diverges and therefore no standard Fourier transform exists.",
+            "variation_from_previous": "Hold the same integral template but move from nondecay to exponential growth to create a stronger divergence pattern.",
+            "solution_step_plan": [
+              "Apply the magnitude and one-sided support: $\\left|e^{2t}u(t)e^{-j\\omega t}\\right|=e^{2t}u(t)$.",
+              "Compute the improper integral over $[0,\\infty)$.",
+              "Show the antiderivative grows unbounded as upper limit $\\to \\infty$.",
+              "Conclude divergence and pass forward to weighted-form remediation."
+            ],
+            "practice_variation_axes": [
+              "Vary the growth parameter $a$ in $e^{at}u(t)$ and classify convergence by sign.",
+              "Ask causal versus anti-causal growth cases.",
+              "Ask the same skill on a shifted growth signal $e^{a(t-t_0)}u(t-t_0)$."
+            ]
+          },
+          "handoff_notes": "Keep this step clearly distinct from nondecaying failure: growth rate is the key diagnostic."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Testing Whether an Impulse Response Has a Frequency Response",
+          "step_type": "example",
+          "learning_goal": "Transfer the core move to LTI impulse responses and decide convergence for $h(t)$ exactly as for signals.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No circuit or waveform visuals required for this step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices (classification of impulse responses by convergence outcome)",
+            "practice_question_model": "Which signal has a valid frequency response from the list: $h(t)=e^{-t}u(t)$, $h(t)=\\frac{1}{1+t}u(t)$, or $h(t)=e^{2t}u(t)$?",
+            "distractor_plan": [
+              "Classify based on sign pattern of $h(t)$ rather than integrability.",
+              "Treat one-sided decay as sufficient without checking the full impulse-response integral.",
+              "Apply signal-only intuition and miss the analogous test for $h(t)$ in system context.",
+              "Conclude frequency-response existence whenever a Laplace expression can be written."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Reinforce that convergence testing is identical for impulse responses: verify $\\int_{-\\infty}^{\\infty}|h(t)|dt$ before assigning frequency-response status.",
+            "base_case": "Anchor with a stable impulse response such as $h(t)=e^{-t}u(t)$.",
+            "paragraph_plan": [
+              "State the same test now in system language: $H(j\\omega)$ exists only if $h(t)$ is absolutely integrable.",
+              "Walk through one convergent and one nonconvergent candidate shape.",
+              "Close with the branch rule: convergent $h(t)$ keeps Fourier frequency response; nonconvergent $h(t)$ does not."
+            ],
+            "display_math_plan": [
+              "$$\\int_{-\\infty}^{\\infty}|h(t)|\\,dt$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test whether $h(t)=\\frac{1}{1+t}u(t)$ has a Fourier-domain frequency response.",
+            "worked_solution_goal": "Show divergence of $\\int_{0}^{\\infty}\\frac{1}{1+t}\\,dt$ and conclude no finite $H(j\\omega)$ in the Fourier sense.",
+            "variation_from_previous": "Shift the object under test from $x(t)$ to $h(t)$ while preserving the same absolute-convergence grammar.",
+            "solution_step_plan": [
+              "Insert $h(t)=\\frac{1}{1+t}u(t)$ into $\\left|\\int h(t)e^{-j\\omega t}dt\\right|\\le \\int |h(t)|dt$.",
+              "Reduce to $\\int_{0}^{\\infty}\\frac{1}{1+t}dt$ and evaluate divergence.",
+              "State nonexistence of $H(j\\omega)$ under Fourier assumptions.",
+              "Prepare transition language: this is the exact point where weighted (Laplace) thinking becomes necessary."
+            ],
+            "practice_variation_axes": [
+              "Replace with another marginally decaying/nondecaying impulse response family.",
+              "Ask causal vs anti-causal impulse responses with the same tail behavior.",
+              "Add a stable convergent comparison case to contrast with divergence."
+            ]
+          },
+          "handoff_notes": "Keep the step tied to system intuition without adding transfer-function derivations or pole-zero plots."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Deciding When Laplace-Domain Weighting Is Needed",
+          "step_type": "example",
+          "learning_goal": "Use the convergence outcomes above to decide when Fourier analysis must be extended with an exponential weight $e^{-\\sigma t}$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; transition to Laplace-domain weighting is derived symbolically."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices (correct condition on $\\sigma$ and remedy choice)",
+            "practice_question_model": "For $x(t)=e^{at}u(t)$ with $a>0$, which statement is correct?",
+            "distractor_plan": [
+              "Choosing any nonzero $\\sigma$ is treated as a remedy without checking sign constraints.",
+              "Assuming Fourier convergence from Laplace existence on some $s$ automatically implies a Fourier transform.",
+              "Using $\\sigma=0$ by default regardless of growth sign.",
+              "Ignoring causal/anti-causal direction when selecting the required inequality on $\\sigma$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the exact remedy decision: if divergence is from growth, test whether $e^{-\\sigma t}x(t)$ can be absolutely integrable for some $\\sigma$.",
+            "base_case": "Use $x(t)=e^{2t}u(t)$ as a base failure and recover the needed inequality for $\\sigma$.",
+            "paragraph_plan": [
+              "Restate the fail cases from prior steps and identify the specific growth term driving failure.",
+              "Introduce weighted integral $\\int x(t)e^{-\\sigma t}e^{-j\\omega t}dt$ as a controllable extension.",
+              "State the decision rule: choose $\\sigma$ so the weighted magnitude is absolutely integrable, then move to $X(s)$ language."
+            ],
+            "display_math_plan": [
+              "$$X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}dt,\\quad s=\\sigma+j\\omega$$",
+              "$$\\int_{0}^{\\infty}e^{(2-\\sigma)t}\\,dt<\\infty \\iff \\sigma>2$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $x(t)=e^{2t}u(t)$, decide whether Fourier or weighted Laplace-domain analysis applies and find the condition on $\\sigma$ that would permit convergence.",
+            "worked_solution_goal": "Show Fourier fails, then derive $\\sigma>2$ from the weighted integral and conclude that weighted analysis on the $s$-plane, not the $j\\omega$ axis, is the valid next representation.",
+            "variation_from_previous": "This final step is a controlled extension that adds the minimal extra parameter $\\sigma$ to remedy the previously demonstrated growth-divergence case.",
+            "solution_step_plan": [
+              "State the weighted form and rewrite the magnitude integral as $\\int_{0}^{\\infty}e^{(2-\\sigma)t}\\,dt$.",
+              "Solve the convergence inequality on the exponent and derive the required bound for $\\sigma$.",
+              "Contrast with $\\sigma=0$ to show why Fourier alone failed.",
+              "Conclude the branch rule for the lesson: use Fourier when the unweighted integral converges; otherwise introduce Laplace-domain weighting."
+            ],
+            "practice_variation_axes": [
+              "Generalize from $e^{2t}u(t)$ to $e^{at}u(t)$ and solve for the required $\\sigma$.",
+              "Swap causal support direction and test whether the sign inequality flips.",
+              "Apply the same decision step to mixed exponentials like $te^{at}u(t)$ with required comparison."
+            ]
+          },
+          "handoff_notes": "This section should end with explicit transfer guidance to the next lesson topic: when and why the $j\\omega$ slice is insufficient."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+      "lesson_core_move": "Determine whether a continuous-time signal lacks a convergent Fourier transform by testing the Fourier-transform integral for convergence and interpreting nondecaying or growing behavior as requiring Laplace-domain exponential weighting.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Signals Whose Fourier Transform Does Not Converge",
+          "step_type": "tutorial",
+          "learning_goal": "Establish the standard Fourier-transform setup and show that convergence is decided by the magnitude of the signal on each unbounded support interval.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; all reasoning is symbolic integral evaluation.",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed because the step is algebraic and scalar."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "Not applicable for tutorial section.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Introduce the Fourier-transform definition and a practical convergence screen: test improper integrals and classify limits at $t\\to\\pm\\infty$ before symbolic computation.",
+            "base_case": "Use $X(j\\omega)=\\int_0^{\\infty}e^{-at}e^{-j\\omega t}dt$ with $a>0$ as the convergent baseline.",
+            "paragraph_plan": [
+              "State $X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}dt$ and emphasize that $|e^{-j\\omega t}|=1$, so magnitude behavior comes from $x(t)$.",
+              "Show the absolute-value test form on each side of the support and connect it to improper-integral growth rules.",
+              "Work through a convergent decaying exponential and contrast with a constant/tiny-frequency test signal that does not dampen.",
+              "Summarize that nondecaying or growing signals are the trigger for the upcoming Laplace weighting move."
+            ],
+            "display_math_plan": [
+              "$$X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}dt$$",
+              "$$\\int_0^{\\infty} e^{-at}\\,dt=\\frac{1}{a},\\quad a>0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial section.",
+            "worked_solution_goal": "Not applicable for tutorial section.",
+            "variation_from_previous": "Not applicable for tutorial section.",
+            "solution_step_plan": [
+              "Not applicable for tutorial section."
+            ],
+            "practice_variation_axes": [
+              "Not applicable for tutorial section."
+            ]
+          },
+          "handoff_notes": "Do not write practice questions in this step. Focus on the shortest possible explanation sequence that defines the decision rule."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Testing Fourier-Transform Integral Convergence",
+          "step_type": "example",
+          "learning_goal": "Apply the convergence criterion to a convergent benchmark and check integral setup for one-sided signals.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; classify using closed-form integral behavior.",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed because all tasks are symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Determine whether the Fourier-transform integral converges for $x(t)=e^{-2t}u(t)$.",
+            "distractor_plan": [
+              "Include a choice that uses oscillation to incorrectly conclude divergence despite exponential decay.",
+              "Include a choice that swaps the support side and checks only $t<0$.",
+              "Include a choice that forgets that $|e^{-j\\omega t}|=1$.",
+              "Include a choice that assumes boundary terms always converge when the exponent is nonnegative."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test convergence of $X(j\\omega)=\\int_{0}^{\\infty}e^{-2t}e^{-j\\omega t}dt$.",
+            "worked_solution_goal": "Show the integral has finite magnitude and therefore a convergent Fourier-transform form under standard conditions.",
+            "variation_from_previous": "This step turns the tutorial rule into one concrete worked example using a stable, decaying template.",
+            "solution_step_plan": [
+              "Write the one-sided integral explicitly over the support.",
+              "Replace the complex kernel by magnitude: $|e^{-2t}e^{-j\\omega t}|=e^{-2t}$.",
+              "Evaluate the improper integral and verify it is finite.",
+              "Record the verdict as convergent and the reason in one sentence."
+            ],
+            "practice_variation_axes": [
+              "Change the decay constant from $2$ to a parameter $a$ and classify signs.",
+              "Replace with a shifted support, e.g., $u(t-1)$."
+            ]
+          },
+          "handoff_notes": "For this example, keep arithmetic short and directly connect each line to the convergence decision."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Recognizing Nondecaying Signals That Do Not Converge",
+          "step_type": "example",
+          "learning_goal": "Use the same procedure to classify nondecaying signals as Fourier-nonconvergent on unbounded intervals.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use constant and periodic forms in formulas only.",
+            "visual_elements": [],
+            "image_generation_notes": "No images required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "statement-choice",
+            "practice_question_model": "Classify whether $x(t)=1$ has a convergent Fourier transform.",
+            "distractor_plan": [
+              "Include a distractor that says boundedness alone implies convergence.",
+              "Include a distractor that uses only one-tail analysis and misses divergence on the other tail.",
+              "Include a distractor that confuses distributional/engineered conventions with standard improper-integral convergence.",
+              "Include a distractor that treats periodic terms as always convergent."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Determine convergence for $x(t)=\\cos(\\omega_0 t)$ over $(-\\infty,\\infty)$ using magnitude bounds.",
+            "worked_solution_goal": "Conclude nonconvergence in the standard Fourier integral sense due to non-decay on unbounded support.",
+            "variation_from_previous": "Extend testing from strictly constant signals to bounded periodic signals to reinforce the divergence pattern.",
+            "solution_step_plan": [
+              "Express the Fourier integral and confirm support is unbounded.",
+              "Take magnitudes to show the integrand does not decay in time.",
+              "Argue that the integral over an unbounded interval diverges.",
+              "Name the next diagnostic: growing signals are the opposite extreme and also fail."
+            ],
+            "practice_variation_axes": [
+              "Replace with a DC-shifted version, e.g., $1+0.1\\cos(\\omega_0 t)$.",
+              "Restrict to $t\\ge 0$ and compare the convergence verdict."
+            ]
+          },
+          "handoff_notes": "Keep this step focused on nondecaying tails; avoid any exponential-weighted form here."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Recognizing Growing Signals That Do Not Converge",
+          "step_type": "example",
+          "learning_goal": "Classify explicit growing one-sided exponentials as Fourier-nonconvergent by side-of-growth checks.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; classify with one-sided exponential growth inequalities.",
+            "visual_elements": [],
+            "image_generation_notes": "No images needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Classify convergence of $x(t)=e^{3t}u(t)$ in Fourier-transform form.",
+            "distractor_plan": [
+              "Include an option that assumes oscillation dominates and hides unbounded growth.",
+              "Include an option that incorrectly applies the decaying example inequality $a>0$ unchanged.",
+              "Include an option that gives convergence without stating any inequality on exponent sign.",
+              "Include an option that moves the support to $t<0$ without adjusting the conclusion."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test convergence of $x(t)=e^{3t}u(t)$ by evaluating the implied weighted-free magnitude integral.",
+            "worked_solution_goal": "Show divergence because $\\int_0^{\\infty}e^{3t}dt$ is unbounded.",
+            "variation_from_previous": "Apply the same convergence test to growth instead of nondecaying constants to isolate the second failure mode.",
+            "solution_step_plan": [
+              "Write the Fourier integral on $[0,\\infty)$.",
+              "Take magnitudes and remove the unit-magnitude kernel.",
+              "Recognize $\\int_0^{\\infty}e^{3t}dt$ does not converge.",
+              "Mark this as a growth-induced failure case that motivates exponential damping."
+            ],
+            "practice_variation_axes": [
+              "Move from $e^{3t}$ to $e^{-3t}$ and ask if convergence flips.",
+              "Add finite-duration truncation as a boundary-control variation."
+            ]
+          },
+          "handoff_notes": "Use this section as explicit contrast: same test, different tail behavior, same conclusion of nonconvergence."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Identifying Signals That Need Exponential Weighting",
+          "step_type": "example",
+          "learning_goal": "Decide when multiplication by $e^{-\\sigma t}$ can restore convergence and state the required real-condition direction.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; all diagnostics stay in symbolic exponent arithmetic.",
+            "visual_elements": [],
+            "image_generation_notes": "No images needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "formula-choice",
+            "practice_question_model": "For $x(t)=e^{2t}u(t)$, what condition on $\\sigma$ makes $\\int_0^{\\infty}e^{(2-\\sigma)t}dt$ finite?",
+            "distractor_plan": [
+              "Include a distractor that uses $\\sigma<2$ as the convergent condition.",
+              "Include a distractor that omits one-sided support and applies a symmetric inequality.",
+              "Include a distractor that uses non-strict inequality at equality by mistake.",
+              "Include a distractor that sets the condition on $\\omega$ instead of $\\sigma$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the condition on $\\sigma$ for $x(t)=e^{2t}u(t)$ so that $\\int_0^{\\infty}e^{(2-\\sigma)t}dt$ converges.",
+            "worked_solution_goal": "Show that convergence requires $\\sigma>2$, matching a negative net exponent after weighting.",
+            "variation_from_previous": "Bridge the prior failure case to the first corrective technique by adding a single real exponential factor.",
+            "solution_step_plan": [
+              "Substitute the weighted signal into the Fourier integral form.",
+              "Reduce to the scalar criterion $\\int_0^{\\infty}e^{(2-\\sigma)t}dt$.",
+              "Apply the standard condition for improper exponentials to derive $\\sigma>2$.",
+              "Phrase the result as the signal-specific threshold for later $s=\\sigma+j\\omega$ work."
+            ],
+            "practice_variation_axes": [
+              "Generalize to $e^{at}u(t)$ and identify condition $\\sigma>a$.",
+              "Use two-sided growth templates and require combined constraints."
+            ]
+          },
+          "handoff_notes": "This section should explicitly hand off the reason for Laplace-domain damping and not solve any $s$-plane geometry yet."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Exponential Weighting",
+      "lesson_core_move": "Apply exponential weighting to a continuous-time signal to determine how multiplying by \\(e^{-\\sigma t}\\) can make a nonconvergent Fourier-transform integral converge and motivate the Laplace-domain variable \\(s=\\sigma+j\\omega\\).",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Exponential Weighting",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce why multiplying by a damping term can restore convergence of a Fourier-transform integral and motivate the Laplace-domain real-part parameter.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed. The step is driven by algebraic notation and convergence conditions.",
+            "visual_elements": [],
+            "image_generation_notes": "Use pure symbolic scaffolding and avoid any plot or diagram."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that adding a damping factor creates a controllable decay via $e^{-\\sigma t}$ and motivates the Laplace-domain real-part parameter.",
+            "base_case": "Start with $x(t)=u(t)$ and contrast $\\int_0^{\\infty}u(t)e^{-j\\omega t}\\,dt$ with $\\int_0^{\\infty}u(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$.",
+            "paragraph_plan": [
+              "State the concrete learning target: use one damping factor to repair divergent Fourier behavior.",
+              "Review the raw Fourier-transform form and explain why non-decaying right-sided signals can fail the convergence test.",
+              "Introduce the weighted signal $x_w(t)=x(t)e^{-\\sigma t}$ and interpret $\\sigma$ as a tunable real damping factor for $t>0$.",
+              "Work the base case with $x(t)=u(t)$, showing that $e^{-\\sigma t}$ creates a convergent integral only when the real decay is positive.",
+              "Preview the remaining steps: apply this weighting to additional signals, test convergence thresholds, then rewrite with $s=\\sigma+j\\omega$."
+            ],
+            "display_math_plan": [
+              "$$\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$$",
+              "$$\\int_{-\\infty}^{\\infty} x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Do not ask practice questions in this step. Keep it short and symbolic to reduce cognitive load before example phases."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Applying a Decaying Weight to a Nondecaying Signal",
+          "step_type": "example",
+          "learning_goal": "Apply exponential weighting to a right-sided nondecaying signal and compute the resulting convergence condition.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed. All decisions come from one-dimensional exponent inequalities and algebra.",
+            "visual_elements": [],
+            "image_generation_notes": "No signal plots. Keep to symbolic expressions and inequalities."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $x(t)=u(t)$, test convergence of $\\int_0^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$. Which condition on $\\sigma$ is correct and what is the transformed form when it holds?",
+            "distractor_plan": [
+              "Include a distractor that ignores the sign of $\\sigma$ and claims no restriction is needed.",
+              "Include a distractor that puts $\\sigma<0$ as the convergence condition.",
+              "Include a distractor that incorrectly treats $\\omega$ as affecting convergence.",
+              "Include a distractor that uses the wrong final denominator sign.",
+              "Include a distractor that forgets one-sided support and assumes two-sided divergence in every case."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Evaluate $\\int_0^{\\infty}u(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ and state the condition on $\\sigma$ for convergence.",
+            "worked_solution_goal": "Show the weighted integrand becomes $e^{-(\\sigma+j\\omega)t}$ and derive $\\sigma>0$, with result $\\frac{1}{\\sigma+j\\omega}$.",
+            "variation_from_previous": "This is the first concrete worked example of the tutorial idea using the minimum nondecaying right-sided signal.",
+            "solution_step_plan": [
+              "Write the weighted transform integral for $x(t)=u(t)$.",
+              "Combine exponent terms into one kernel $e^{-(\\sigma+j\\omega)t}$.",
+              "Apply one-sided exponential convergence with real part criterion $\\sigma>0$.",
+              "Integrate and simplify the result to a closed form.",
+              "Separate the valid condition from the symbolic transformed value."
+            ],
+            "practice_variation_axes": [
+              "Swap support to $u(-t)$ and preserve the same weighting idea.",
+              "Replace $\\sigma$ by a parameter and ask for the required inequality on that parameter."
+            ]
+          },
+          "handoff_notes": "Keep the example strictly symbolic. Focus on exponent combination and the real-part convergence check."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Testing Convergence After Weighting",
+          "step_type": "example",
+          "learning_goal": "Test convergence when the signal is already decaying and verify how inherent decay and weighting combine.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed. Use symbolic comparison against the integrated exponent’s real part.",
+            "visual_elements": [],
+            "image_generation_notes": "No visual stimuli requested."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $x(t)=e^{-2t}u(t)$, determine the condition for convergence of $\\int_0^{\\infty}e^{-2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt$.",
+            "distractor_plan": [
+              "Include a distractor that adds decay rates as $\\sigma-2$ instead of $\\sigma+2$.",
+              "Include a distractor that constrains $\\omega$ and ignores the real-part rule.",
+              "Include a distractor that claims the integral always diverges.",
+              "Include a distractor that uses $\\sigma<-2$.",
+              "Include a distractor with right convergence inequality but wrong final expression denominator."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test convergence of $\\int_0^{\\infty}e^{-2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt$ and derive the inequality on $\\sigma$.",
+            "worked_solution_goal": "Show the exponent is $-(\\sigma+2+j\\omega)t$, so convergence requires $\\sigma>-2$, then provide the simplified integral result.",
+            "variation_from_previous": "Adds intrinsic signal decay to the same weighted integral pattern, so exponent combination must account for both rates.",
+            "solution_step_plan": [
+              "Substitute $x(t)=e^{-2t}u(t)$ in the weighted expression.",
+              "Collapse exponents into real-imaginary components.",
+              "Apply the convergence rule from the real exponent part.",
+              "Compute the resulting symbolic integral and final expression.",
+              "Reinforce that $\\omega$ changes oscillation only."
+            ],
+            "practice_variation_axes": [
+              "Replace $2$ with a positive parameter $a$ and keep the same process.",
+              "Shift the one-sided support and verify the method remains the same."
+            ]
+          },
+          "handoff_notes": "Keep the one-sided support clear. The key is adding exponents correctly and interpreting decay from the real part."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Choosing a Larger Weight for a Growing Signal",
+          "step_type": "example",
+          "learning_goal": "Find the minimum damping level needed for an exponentially growing signal to become convergent under weighting.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed. All work is algebraic with inequality constraints.",
+            "visual_elements": [],
+            "image_generation_notes": "Use strict symbolic parameter checks; no graphing required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $x(t)=e^{2t}u(t)$, determine the least $\\sigma$ needed for $\\int_0^{\\infty}e^{2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt$ to converge.",
+            "distractor_plan": [
+              "Include a distractor that gives $\\sigma<2$.",
+              "Include a distractor that allows equality $\\sigma\\le2$ as sufficient.",
+              "Include a distractor that uses a two-sided convergence test instead of one-sided support.",
+              "Include a distractor that keeps $j\\omega$ in the inequality.",
+              "Include a distractor with an incorrect sign in the final closed form."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the condition on $\\sigma$ for $\\int_0^{\\infty}e^{2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt$ to converge, and simplify the result.",
+            "worked_solution_goal": "Combine exponents as $e^{(2-\\sigma-j\\omega)t}$, derive $\\sigma>2$, and produce the symbolic transform form.",
+            "variation_from_previous": "Uses a growing signal so learners explicitly see that larger damping can overcome growth while preserving the same test workflow.",
+            "solution_step_plan": [
+              "Substitute the growing signal into the weighted kernel.",
+              "Combine the exponents and isolate the real coefficient of $t$.",
+              "Set and solve the convergence inequality.",
+              "Integrate under the valid condition and simplify."
+            ],
+            "practice_variation_axes": [
+              "Generalize from growth rate $2$ to $a>0$ and compute the minimum admissible $\\sigma$.",
+              "Check understanding of strict inequality at the boundary case."
+            ]
+          },
+          "handoff_notes": "This is a threshold-inference step; keep all options tied to real-part sign."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Combining Exponential Weighting with the Fourier Kernel",
+          "step_type": "example",
+          "learning_goal": "Rewrite the weighted kernel as a single exponential and define $s=\\sigma+j\\omega$ as compact notation.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed. This is notation compression in symbols only.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not include signal diagrams; keep to exponent rewrites."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Rewrite $\\int_0^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ using $s$ notation and choose the correct $s$ definition.",
+            "distractor_plan": [
+              "Include a distractor with $\\sigma-j\\omega$.",
+              "Include a distractor with $\\omega-\\sigma j$.",
+              "Include a distractor that separates the exponentials in the final compact form.",
+              "Include a distractor with $\\sigma=\\omega+j$.",
+              "Include a distractor that does not form a compact single-kernel expression."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite $\\int_0^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ as $\\int_0^{\\infty}x(t)e^{-st}\\,dt$ and define $s$.",
+            "worked_solution_goal": "Use $e^{-\\sigma t}e^{-j\\omega t}=e^{-(\\sigma+j\\omega)t}$ and set $s=\\sigma+j\\omega$.",
+            "variation_from_previous": "This final example compresses the prior weighted-convergence work into the core $s$-notation format.",
+            "solution_step_plan": [
+              "Apply the exponent-addition identity to collapse the kernel.",
+              "Introduce the compact symbol definition $s=\\sigma+j\\omega$.",
+              "Substitute $s$ back into the integral bounds.",
+              "Record interpretation: $\\sigma$ controls convergence and $\\omega$ the oscillatory frequency role."
+            ],
+            "practice_variation_axes": [
+              "Ask for $\\Re\\{s\\}$ identification from a given exponent expression.",
+              "Use shifted one-sided signals while preserving the same compact rewrite."
+            ]
+          },
+          "handoff_notes": "Bridge to the next lesson by emphasizing that this is notation compression, not a new theorem."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+      "lesson_core_move": "Convert an exponentially weighted Fourier integral into Laplace-domain notation by identifying \\(s=\\sigma+j\\omega\\), with \\(\\sigma\\) setting the convergence-producing exponential weight and \\(\\omega\\) setting the sinusoidal frequency.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to The Complex Variable $s=\\sigma+j\\omega$",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the compact symbolization $s=\\sigma+j\\omega$ so students can rewrite exponentially weighted Fourier integrals in Laplace notation.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visuals required; introduce by algebraic decomposition only."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "N/A",
+            "practice_question_model": "N/A",
+            "distractor_plan": [
+              "No practice questions are planned for this tutorial section."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Convert factors of the form $e^{-\\sigma t}e^{-j\\omega t}$ into $e^{-st}$ by defining $s=\\sigma+j\\omega$, and state the separate roles of $\\sigma$ (weighting) and $\\omega$ (frequency).",
+            "base_case": "Use $\\sigma=0$ so the weighted exponential is $e^{-j\\omega t}$ and identify it as the previous Fourier-kernel factorization.",
+            "paragraph_plan": [
+              "Start by restating the previous lesson result that exponential weighting is needed when the Fourier integral does not converge as-is.",
+              "State the notational goal: combine $e^{-\\sigma t}$ and $e^{-j\\omega t}$ into one compact symbol.",
+              "Define $s=\\sigma+j\\omega$, then explicitly separate the two roles: $ \\sigma$ sets real exponential gain/decay and $ \\omega$ sets sinusoidal angle frequency.",
+              "Show the direct bridge formula $e^{-\\sigma t}e^{-j\\omega t}=e^{-(\\sigma+j\\omega)t}=e^{-st}$. Emphasize this is a notation layer, not a new operator."
+            ],
+            "display_math_plan": [
+              "$$e^{-\\sigma t}e^{-j\\omega t}=e^{-(\\sigma+j\\omega)t}=e^{-st}$$",
+              "$$s=\\sigma+j\\omega$$",
+              "$$s\\big|_{\\sigma=0}=j\\omega$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [
+              "N/A"
+            ],
+            "practice_variation_axes": [
+              "N/A"
+            ]
+          },
+          "handoff_notes": "Use this section to place the minimal direct-instruction payload before the first practice-driven example; keep it short and symbolic."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying \\(\\sigma\\) and \\(\\omega\\) in \\(s=\\sigma+j\\omega\\)",
+          "step_type": "example",
+          "learning_goal": "Practice extracting the real and imaginary parts of complex variables and mapping them to weighting and frequency roles.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual data required; part extraction is done from algebraic form."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic expressions ($\\sigma$, $\\omega$, and distractors written in algebraic form)",
+            "practice_question_model": "Given $s=-3+j5$, identify $\\sigma$ and $\\omega$.",
+            "distractor_plan": [
+              "Swap real and imaginary parts, e.g., set $\\sigma=5$, $\\omega=-3$.",
+              "Drop the sign on the real part when identifying damping/growth.",
+              "Misread $s=\\sigma+j\\omega$ as a ratio and select formulas like $\\sigma=\\omega/j$.",
+              "Ignore one component and assign $\\omega=0$ for nonzero imaginary part."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$s=\\sigma+j\\omega \\Rightarrow \\sigma=\\Re\\{s\\},\\;\\omega=\\Im\\{s\\}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write $s=-2+j\\,7$ as \"$\\sigma$ is ... and $\\omega$ is ...\"",
+            "worked_solution_goal": "Given a complex value, isolate $\\sigma$ and $\\omega$ correctly and justify sign handling.",
+            "variation_from_previous": "This extends the tutorial by applying the definition to explicit values, including mixed sign and negative real part cases.",
+            "solution_step_plan": [
+              "Express $s$ in canonical form $\\sigma+j\\omega$ if needed by regrouping terms.",
+              "Read the real part as $\\sigma$ and the imaginary coefficient as $\\omega$.",
+              "State the interpretation: real part sets the exponential weight and imaginary part sets oscillation frequency.",
+              "Check one edge case where $\\omega=0$."
+            ],
+            "practice_variation_axes": [
+              "Change real part sign and magnitude.",
+              "Change sign of the imaginary coefficient.",
+              "Use pure real and pure imaginary forms.",
+              "Use non-integer $\\sigma, \\omega$ values."
+            ]
+          },
+          "handoff_notes": "Keep worked example and two practice questions tightly tied to identification mechanics; avoid introducing image-based geometry."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Combining \\(e^{-\\sigma t}\\) and \\(e^{-j\\omega t}\\) into \\(e^{-st}\\)",
+          "step_type": "example",
+          "learning_goal": "Rehearse exponent-sum rewriting so the learner can convert products of real/imaginary exponent factors into the single $e^{-st}$ term.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram or graph needed; expression rewriting is purely symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic forms (including one correct exponent-combined expression)",
+            "practice_question_model": "Rewrite $e^{-5t}e^{-j2\\omega t}$ in $e^{-st}$ form and state $s$.",
+            "distractor_plan": [
+              "Incorrectly keep $e^{-5t}$ and $e^{-j2\\omega t}$ separate.",
+              "Use $e^{-st} = e^{-(\\sigma-j\\omega)t}$ (sign error on $\\omega$).",
+              "Swap the roles by writing $s=\\omega+j\\sigma$.",
+              "Forget the common variable $t$ and use $e^{-(\\sigma+j\\omega)}$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$e^{-\\sigma t}e^{-j\\omega t}=e^{-(\\sigma+j\\omega)t}$$",
+              "$$\\text{with } s=\\sigma+j\\omega,\\; e^{-\\sigma t}e^{-j\\omega t}=e^{-st}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Show that $e^{-2t}\\,e^{-j4t}=e^{-st}$ and find $s$.",
+            "worked_solution_goal": "Combine exponent factors using exponent-addition and express the combined exponent with a single $s$ parameter.",
+            "variation_from_previous": "Controlled extension from identification to composition: now students move from reading parts of $s$ to reconstructing $s$ from factors.",
+            "solution_step_plan": [
+              "Write both exponentials with matching variable $t$ and negative sign convention.",
+              "Apply $e^A e^B=e^{A+B}$ to merge exponents.",
+              "Collect real and imaginary parts into $(\\sigma+j\\omega)t$.",
+              "Map to $e^{-st}$ and state $s=\\sigma+j\\omega$."
+            ],
+            "practice_variation_axes": [
+              "Vary $\\sigma$ and $\\omega$ magnitudes.",
+              "Include a pure growth case with negative $\\sigma$.",
+              "Use integer and fractional coefficients for $\\omega$.",
+              "Reverse order of factors to test commutativity only, not conceptual change."
+            ]
+          },
+          "handoff_notes": "Use this as a direct bridge to step 4, where the full integral is rewritten using the same substitution."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Rewriting an Exponentially Weighted Fourier Integral in Terms of \\(s\\)",
+          "step_type": "example",
+          "learning_goal": "Convert a weighted Fourier-type integral into Laplace-domain form by replacing the weight product with $e^{-st}$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No plots or diagrams needed; the conversion is expression-level."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five expression-heavy options with correct and incorrect integral rewrites",
+            "practice_question_model": "Rewrite $\\int_{-\\infty}^{\\infty}x(t)e^{-2t}e^{-j\\omega t}\\,dt$ in $s$-notation and state the corresponding $s$.",
+            "distractor_plan": [
+              "Leave the expression as $\\int x(t)e^{-2t}e^{-j\\omega t}\\,dt$ without combining factors.",
+              "Replace only the imaginary term with $\\exp(-st)$ but keep the real term separate.",
+              "Use the wrong sign on $\\sigma$ in $s=\\sigma+j\\omega$.",
+              "Move limits or variable of integration incorrectly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt$$",
+              "$$s=\\sigma+j\\omega$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Let $X(\\sigma,\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-3t}e^{-j\\omega t}\\,dt$. Rewrite this as $X(s)$.",
+            "worked_solution_goal": "Express the complete integral in Laplace-like notation and identify the correct $\\sigma$ component of $s$.",
+            "variation_from_previous": "Adds one more meaningful wrinkle by moving from isolated exponential products to their appearance inside the full transform integral.",
+            "solution_step_plan": [
+              "Copy the integral and label the two exponential factors as real and imaginary parts.",
+              "Apply $e^{-\\sigma t}e^{-j\\omega t}=e^{-st}$ substitution.",
+              "Substitute into the integral and simplify the display as $\\int x(t)e^{-st}dt$.",
+              "State the parameter role correspondence for $s$."
+            ],
+            "practice_variation_axes": [
+              "Change weighting coefficient $\\sigma$ (negative, positive, zero).",
+              "Change angular-frequency symbol placement (using $\\omega$ or numeric value).",
+              "Use different integration bounds while preserving structure.",
+              "Switch order of the two exponential factors."
+            ]
+          },
+          "handoff_notes": "Keep this as a single-skill handoff: the same algebraic substitution now applied inside a template integral."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting the Weighting and Frequency Roles of a Given \\(s\\)",
+          "step_type": "example",
+          "learning_goal": "Interpret $\\sigma$ as convergence-producing exponential weight and $\\omega$ as sinusoidal frequency from a concrete $s$ value.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No figure required; interpretation is done from algebraic form of $s$."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five concise options classifying damping/growth and oscillation direction",
+            "practice_question_model": "For $s=2-j5$, choose the correct interpretation of the real exponential factor and oscillatory frequency component.",
+            "distractor_plan": [
+              "Confuse growth/decay by assigning $\\omega$ to damping.",
+              "Treat both parts as independent frequencies.",
+              "Interpret a negative real part as growth and ignore the sign of $\\omega$.",
+              "Conclude no oscillation whenever $\\sigma\\neq 0$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$e^{-st}=e^{-\\sigma t}e^{-j\\omega t}$$",
+              "$$\\sigma<0 \\Rightarrow\\text{growth},\\;\\sigma>0 \\Rightarrow\\text{decay},\\;\\omega=0 \\Rightarrow\\text{no oscillation}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $s=-1+j4$, explain what the real and imaginary parts imply about the weighting and frequency of $e^{-st}$.",
+            "worked_solution_goal": "Diagnose whether the signal is decaying/growing and state oscillation frequency from the imaginary part.",
+            "variation_from_previous": "This step turns algebraic substitution into conceptual interpretation, the last skill before moving to the $s$-plane topic.",
+            "solution_step_plan": [
+              "Separate $s$ into $\\sigma$ and $\\omega$.",
+              "Evaluate sign of $\\sigma$ to infer gain behavior in $e^{-\\sigma t}$.",
+              "Evaluate $\\omega$ value for oscillation rate in $e^{-j\\omega t}$.",
+              "State complete interpretation in one sentence."
+            ],
+            "practice_variation_axes": [
+              "Use all sign combinations for $\\sigma$ and $\\omega$.",
+              "Use pure real and pure imaginary $s$ values.",
+              "Include nonzero numeric $\\omega$ with tiny/large magnitude.",
+              "Test boundary interpretation at $\\sigma=0$."
+            ]
+          },
+          "handoff_notes": "Treat interpretation as conceptual but still symbolic; no graph needed because this topic sequence has not yet introduced the $s$-plane yet."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+      "lesson_core_move": "Interpret \\(X(s)\\) as the Fourier transform of \\(x(t)e^{-\\sigma t}\\), identifying the ordinary Fourier transform as the \\(\\sigma=0\\) specialization when convergence permits.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Laplace Transform as a Generalization of Fourier Transform",
+          "step_type": "tutorial",
+          "learning_goal": "Anchor the learner to the core move by reframing Laplace transform notation as a Fourier transform of an exponentially weighted signal and motivating why this resolves convergence failures.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Introduce the generalized transform integral $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$ and identify it as a Fourier transform of a modified signal with the substitution $s=\\sigma+j\\omega$.",
+            "base_case": "Start with a convergent Fourier example and then show how multiplying the signal by $e^{-\\sigma t}$ shifts the same computation into a weighted form.",
+            "paragraph_plan": [
+              "Define why many signals violate Fourier convergence and why a weighted formulation is needed.",
+              "Rewrite $e^{-st}$ as $e^{-\\sigma t}e^{-j\\omega t}$ and interpret each factor.",
+              "Show that $\\int x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ is a Fourier transform in frequency parameter $\\omega$ of the weighted signal $x(t)e^{-\\sigma t}$.",
+              "State the special-case recovery at $\\sigma=0$ and connect it to $X(j\\omega)$.",
+              "Conclude with a short transition to worked examples that hold $\\sigma$ and vary $\\omega$.",
+              "Summarize when this perspective supports convergence.",
+              "Provide notation-tight transitions and caution around sign conventions."
+            ],
+            "display_math_plan": [
+              "$$X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$$",
+              "$$s=\\sigma+j\\omega$$",
+              "$$X(s)=\\int_{-\\infty}^{\\infty} [x(t)e^{-\\sigma t}]e^{-j\\omega t}\\,dt$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section conceptual and notation-driven; avoid graphs or tables and keep cognitive load low with one target identity."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Rewriting \\(X(s)\\) as a Fourier Transform of \\(x(t)e^{-\\sigma t}\\)",
+          "step_type": "example",
+          "learning_goal": "Show how to algebraically convert a Laplace integral into a Fourier-style integral of a weighted signal and name the resulting frequency-domain object.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Find the weighted signal corresponding to the transform $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-s t}\\,dt$ with $s=\\sigma+j\\omega$.",
+            "distractor_plan": [
+              "Include options that incorrectly separate the $e^{-\\sigma t}$ factor from $\\omega$ and use $e^{+\\sigma t}$.",
+              "Include sign mistakes on $s=\\sigma+j\\omega$ and on the exponential kernel argument.",
+              "Include options that swap roles of the weighted signal and transform kernel.",
+              "Include a distractor that treats $e^{-\\sigma t}$ as a replacement for $e^{-j\\omega t}$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$ as a Fourier-style transform using $s=\\sigma+j\\omega$.",
+            "worked_solution_goal": "Compute the weighted signal and express $X(s)$ as a Fourier transform in $\\omega$ of that weighted signal.",
+            "variation_from_previous": "Moves from definition-level identity to explicit algebraic substitution.",
+            "solution_step_plan": [
+              "Substitute $s=\\sigma+j\\omega$ into $X(s)$.",
+              "Split the exponential kernel into $e^{-\\sigma t}$ and $e^{-j\\omega t}$.",
+              "Group terms as $\\mathcal{F}\\{x(t)e^{-\\sigma t}\\}(\\omega)$.",
+              "State the interpretation for fixed $\\sigma$ as a Fourier transform slice."
+            ],
+            "practice_variation_axes": [
+              "Vary signal function $x(t)$ while keeping $\\sigma$ symbolic.",
+              "Vary where the split of the kernel occurs to test sign and grouping mistakes."
+            ]
+          },
+          "handoff_notes": "Use this as a high-precision symbolic bridge: one worked example, then mirrored practice on correct signal re-expression."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Recovering the Fourier Transform by Setting \\(\\sigma=0\\)",
+          "step_type": "example",
+          "learning_goal": "Reinforce that the ordinary Fourier transform appears as the special slice of the Laplace transform at zero damping.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Set $\\sigma=0$ in the weighted Fourier form and identify the resulting expression as the Fourier transform $X(j\\omega)$.",
+            "distractor_plan": [
+              "Include distractors that replace $\\sigma$ with $\\omega$.",
+              "Include distractors that omit the Fourier kernel $e^{-j\\omega t}$.",
+              "Include distractors that incorrectly reverse the sign in the exponent.",
+              "Include distractors that drop the weighting term in one branch but not another."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$, show the result when $\\sigma=0$ and identify it as the Fourier transform.",
+            "worked_solution_goal": "Map the $\\sigma=0$ slice to $X(j\\omega)$ and show the exact substitution chain.",
+            "variation_from_previous": "Applies the previous identity at a specific parameter value to recover a familiar result.",
+            "solution_step_plan": [
+              "Start with the identity from section 2.",
+              "Set $\\sigma=0$ in $s=\\sigma+j\\omega$.",
+              "Reduce the weighted signal to the original signal.",
+              "State the final identity as a direct Fourier-transform expression."
+            ],
+            "practice_variation_axes": [
+              "Vary wording and symbol order around $\\sigma=0$ specialization.",
+              "Vary signal complexity to test transfer of the parameter substitution rule."
+            ]
+          },
+          "handoff_notes": "Keep this as a concise checkpoint example so students can reuse it when linking to bilateral and unilateral transform forms."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Comparing Weighted and Unweighted Transform Integrals",
+          "step_type": "example",
+          "learning_goal": "Differentiate when a Laplace-weighted integral is necessary versus when ordinary Fourier form applies by comparing convergence behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "concept-check",
+            "practice_question_model": "For a candidate transform expression, identify whether the weighted or unweighted form is required and select the correct equivalent Fourier/Laplace expression.",
+            "distractor_plan": [
+              "Include choices that confuse convergence motivation with final notation.",
+              "Include a distractor that treats weighting as notation-only and not for convergence.",
+              "Include distractors that swap interpretations of $\\sigma$ and $\\omega$.",
+              "Include a distractor that changes the sign of the real-exponential factor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Compare $\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ and $\\int_{-\\infty}^{\\infty} x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ for the same signal.",
+            "worked_solution_goal": "Show how the damping term changes the integrand and therefore transform existence conditions.",
+            "variation_from_previous": "Introduces a practical convergence comparison using the same substitution framework as prior steps.",
+            "solution_step_plan": [
+              "Write both integrals for a common signal.",
+              "Explain how the real exponential weight changes magnitude growth or decay.",
+              "Classify when each integral converges.",
+              "Conclude with a decision rule for choosing weighted versus unweighted form."
+            ],
+            "practice_variation_axes": [
+              "Vary signal type (decaying, non-decaying, growing).",
+              "Vary whether $\\sigma$ is zero, positive, or negative where legally allowed.",
+              "Vary whether mistakes arise from incorrect interpretation of the weighting role."
+            ]
+          },
+          "handoff_notes": "Emphasize this as a bridge to Region of Convergence in later lesson; defer plots until the next ROC-focused lesson."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting \\(X(s)\\) as a Family of Fourier Transforms Indexed by \\(\\sigma\\)",
+          "step_type": "example",
+          "learning_goal": "Help students interpret $X(s)$ as a one-parameter family $\\mathcal{F}\\{x(t)e^{-\\sigma t}\\}(\\omega)$ and describe meaning of different $\\sigma$ choices.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "statement-choice",
+            "practice_question_model": "Choose the statement that correctly interprets $X(s)$ when $s=\\sigma+j\\omega$ and $\\sigma$ is varied.",
+            "distractor_plan": [
+              "Include distractors that claim different $\\sigma$ values do not change the transform family.",
+              "Include distractors that treat $\\omega$ as damping and $\\sigma$ as frequency.",
+              "Include distractors that replace the exponential weighting with polynomial weighting.",
+              "Include distractors that misidentify parameter roles in the integral."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Using two parameter values $\\sigma_1$ and $\\sigma_2$, express $X(s)$ as two related Fourier transforms of weighted signals.",
+            "worked_solution_goal": "Compute and interpret weighted Fourier transforms at multiple $\\sigma$ values and identify shared structure across the family.",
+            "variation_from_previous": "Generalizes the comparison to a parameterized family while holding the core substitution pattern.",
+            "solution_step_plan": [
+              "Write the base expression for each parameter value.",
+              "Map each to $\\mathcal{F}\\{x(t)e^{-\\sigma_i t}\\}(\\omega)$.",
+              "Compare interpretations for different $\\sigma_i$ values and convergence behavior.",
+              "State final transfer message: fixed-$\\omega$ slices produce a damping-indexed family."
+            ],
+            "practice_variation_axes": [
+              "Vary paired parameter values and identify implausible combinations.",
+              "Vary distractor wording around family-vs-single transform interpretation.",
+              "Vary sign conventions and identify the incorrect one."
+            ]
+          },
+          "handoff_notes": "Do not introduce $s$-plane geometry in this lesson; reserve it for the next lesson on ROC and poles."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "The $s$-Plane",
+      "lesson_core_move": "Map each complex value \\(s=\\sigma+j\\omega\\) onto the \\(s\\)-plane and interpret \\(\\sigma\\) as exponential weighting and \\(\\omega\\) as the Fourier-frequency coordinate.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to The $s$-Plane",
+          "step_type": "tutorial",
+          "learning_goal": "Create a shared geometric model of $s=\\sigma+j\\omega$ so students can place any complex value on a plane and read damping and frequency from coordinates.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Create a single $s$-plane diagram with origin, real axis labeled $\\sigma$, imaginary axis labeled $j\\omega$, and a generic point at $s=\\sigma+j\\omega$.",
+            "visual_elements": [
+              "$s$-plane axes",
+              "Origin anchor at $0$",
+              "Generic point labeled $s=\\sigma+j\\omega$"
+            ],
+            "image_generation_notes": "Use a clean coordinate grid and label orientation clearly; keep no decorative elements or unrelated geometric objects."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "N/A for tutorial step",
+            "practice_question_model": "N/A for tutorial step",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define the $s$-plane as the coordinate map for complex values $s=\\sigma+j\\omega$, anchoring the meaning of $\\sigma$ (horizontal position) and $\\omega$ (vertical position).",
+            "base_case": "Begin with $s=0$, then show $s=3$, and then $s=j\\omega$ to establish axis-to-component interpretation.",
+            "paragraph_plan": [
+              "Introduce why a new geometric view is needed after defining $s=\\sigma+j\\omega$.",
+              "Define the horizontal real axis as $\\sigma$ and the vertical axis as $j\\omega$, including sign conventions.",
+              "Map a sample value $s=\\sigma+j\\omega$ to an ordered pair $(\\sigma,\\omega)$ on the plane.",
+              "Emphasize that vertical location changes $\\omega$ while horizontal location changes $\\sigma$, with example points in each quadrant.",
+              "Preview downstream use: these coordinates describe damping via $\\sigma$ and oscillation by $\\omega$."
+            ],
+            "display_math_plan": [
+              "$$s=\\sigma+j\\omega$$",
+              "$$\\sigma=\\Re\\{s\\},\\quad \\omega=\\Im\\{s\\}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A for tutorial step.",
+            "worked_solution_goal": "N/A for tutorial step.",
+            "variation_from_previous": "N/A for tutorial step.",
+            "solution_step_plan": [
+              "N/A for tutorial step."
+            ],
+            "practice_variation_axes": [
+              "N/A for tutorial step."
+            ]
+          },
+          "handoff_notes": "Deliver this as the minimal-direct-instruction anchor step, then immediately shift to controlled plotting examples in the next step."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Plotting a Complex Value $s=\\sigma+j\\omega$",
+          "step_type": "example",
+          "learning_goal": "Practice turning algebraic components $\\sigma$ and $\\omega$ in $s=\\sigma+j\\omega$ into a plotted $s$-plane point.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Generate an $s$-plane image showing a single target point corresponding to one complex value, with clear axis labels and grid.",
+            "visual_elements": [
+              "Axis labels",
+              "Grid lattice",
+              "Plotted target point"
+            ],
+            "image_generation_notes": "Keep point symbols and labels large enough for easy visual extraction; reuse a consistent coordinate scale with tutorial diagram."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic options",
+            "practice_question_model": "Given a coordinate-style value such as $s=2+3j$, choose the correctly plotted $s$-plane location among five options.",
+            "distractor_plan": [
+              "Use distractors that swap real and imaginary parts.",
+              "Use distractors with sign errors on $\\sigma$ or $\\omega$.",
+              "Use distractors that omit the imaginary-axis label $j\\omega$.",
+              "Use distractors that place the point mirrored across one axis.",
+              "Use distractors with plausible coordinate transpositions."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example step",
+            "base_case": "N/A for example step",
+            "paragraph_plan": [
+              "N/A for example step"
+            ],
+            "display_math_plan": [
+              "N/A for example step"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Plot $s=2+j3$ on the $s$-plane and label the axis-crossings of the plotted point.",
+            "worked_solution_goal": "Place the point at real coordinate $\\sigma=2$ and imaginary coordinate $\\omega=3$, marking it as $s=2+j3$.",
+            "variation_from_previous": "This is the first explicit construction after tutorial; it extends the general definition into a concrete one-point placement.",
+            "solution_step_plan": [
+              "Read $\\sigma=2$ from the real part of $s=2+j3$.",
+              "Read $\\omega=3$ from the imaginary part coefficient of $j$.",
+              "Move 2 units right on the $\\sigma$ axis and 3 units up on the $j\\omega$ axis.",
+              "Place and label the point with the exact form $s=2+j3$."
+            ],
+            "practice_variation_axes": [
+              "numeric substitutions for positive/negative signs",
+              "different coordinate magnitudes",
+              "order of coordinates in prompt wording"
+            ]
+          },
+          "handoff_notes": "Use this as the first worked-example seed for generated practice mirrors; keep examples strictly one-point plotting tasks."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Reading $\\sigma$ and $\\omega$ from an $s$-Plane Point",
+          "step_type": "example",
+          "learning_goal": "Convert a plotted $s$-plane point back into the complex form $s=\\sigma+j\\omega$ with correct sign and axis interpretation.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show an $s$-plane with a marked point in a nontrivial quadrant to require both signs to be read correctly.",
+            "visual_elements": [
+              "Labeled $s$-plane",
+              "Single marked point with coordinates",
+              "Axis tick labels"
+            ],
+            "image_generation_notes": "Use a point with nonzero real and imaginary parts and no text beyond the point label to avoid clueing the correct answer."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic options",
+            "practice_question_model": "Given a plotted $s$-plane point, identify the correct expression $s=\\sigma+j\\omega$ from five candidate complex values.",
+            "distractor_plan": [
+              "Use distractors with swapped real and imaginary coordinates.",
+              "Use distractors with incorrect signs for either $\\sigma$ or $\\omega$.",
+              "Use distractors that use $-j\\omega$ or $j(-\\omega)$ inconsistently.",
+              "Use distractors that reflect the point across one axis.",
+              "Use distractors that keep one coordinate correct and one incorrect."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example step",
+            "base_case": "N/A for example step",
+            "paragraph_plan": [
+              "N/A for example step"
+            ],
+            "display_math_plan": [
+              "N/A for example step"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read the point at $\\sigma=-4$, $\\omega=1$ from the $s$-plane diagram and write the corresponding value of $s$.",
+            "worked_solution_goal": "Translate the geometric coordinates into the algebraic form $s=-4+j$.",
+            "variation_from_previous": "Inverts the previous step by moving from algebra-to-geometry to geometry-to-algebra.",
+            "solution_step_plan": [
+              "Locate the real coordinate $\\sigma=-4$ on the horizontal axis.",
+              "Locate the imaginary coordinate $\\omega=1$ on the vertical axis.",
+              "Write the point as $s=\\sigma+j\\omega$.",
+              "Substitute values to get $s=-4+j$."
+            ],
+            "practice_variation_axes": [
+              "quadrant selection",
+              "magnitude scaling",
+              "sign-flip distractors"
+            ]
+          },
+          "handoff_notes": "Keep question stems visual-first to preserve the step's target move; answers should stay symbolic for consistency with previous lesson templates."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting Horizontal Position as Exponential Weighting",
+          "step_type": "example",
+          "learning_goal": "Use horizontal position on the $s$-plane to interpret $\\sigma$ and connect it to exponential weighting behavior in $e^{-st}=e^{-\\sigma t}e^{-j\\omega t}$.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Generate an $s$-plane panel with three sample points across different $\\sigma$ values (negative, zero, positive) to support interpretation.",
+            "visual_elements": [
+              "$s$-plane with three points",
+              "Horizontal coordinate emphasis",
+              "Reference labels for sign bands"
+            ],
+            "image_generation_notes": "Highlight only horizontal coordinate differences while keeping vertical coordinate readable; avoid extra annotations that answer the interpretation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five textual options describing damping/growth",
+            "practice_question_model": "From a shown $s$-plane point with $\\sigma<0$, choose the correct interpretation of its exponential weighting behavior.",
+            "distractor_plan": [
+              "Use distractors that confuse exponential growth with decay.",
+              "Use distractors that attribute behavior to $\\omega$ instead of $\\sigma$.",
+              "Use distractors that ignore the sign of $\\sigma$.",
+              "Use distractors that use magnitude-only interpretation without sign.",
+              "Use distractors that conflate frequency and damping effects."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example step",
+            "base_case": "N/A for example step",
+            "paragraph_plan": [
+              "N/A for example step"
+            ],
+            "display_math_plan": [
+              "N/A for example step"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Use the point $s=-2+j3$ and state whether it corresponds to exponential decay or growth in $e^{-st}$.",
+            "worked_solution_goal": "Classify $\\sigma=-2$ as a decaying exponential weighting factor.",
+            "variation_from_previous": "Builds on reading coordinates by layering interpretation of the real-part sign and magnitude.",
+            "solution_step_plan": [
+              "Read $s=\\sigma+j\\omega$ and extract $\\sigma=-2$.",
+              "Recall that $e^{-st}=e^{-\\sigma t}e^{-j\\omega t}$.",
+              "Interpret $\\sigma<0$ as decay and explain opposite interpretation for $\\sigma>0$.",
+              "Choose the final qualitative behavior for the given point."
+            ],
+            "practice_variation_axes": [
+              "sign of $\\sigma$",
+              "magnitude of $\\sigma$",
+              "mixed-case distractors using $\\omega$"
+            ]
+          },
+          "handoff_notes": "Keep the geometry-to-behavior link explicit so later ROC steps can reuse this interpretation."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Identifying the $j\\omega$ Axis as the Fourier-Frequency Line",
+          "step_type": "example",
+          "learning_goal": "Identify points on the $j\\omega$ axis and connect this line to Fourier-analysis specialization by setting $\\sigma=0$.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show an $s$-plane with marked points on-axis and off-axis, with emphasis on the vertical $j\\omega$ axis.",
+            "visual_elements": [
+              "Pure imaginary axis",
+              "Points on and off $j\\omega$ axis",
+              "Axis labels with $\\sigma=0$ marker"
+            ],
+            "image_generation_notes": "Use exactly one clearly vertical frequency axis and minimal labels; preserve consistent axis style with earlier images."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic options",
+            "practice_question_model": "From a plotted point on the diagram, decide whether it lies on the $j\\omega$ axis and what this implies for $\\sigma$.",
+            "distractor_plan": [
+              "Use distractors that mistake proximity for equality to the axis.",
+              "Use distractors that assign $\\sigma\\neq0$ for on-axis points.",
+              "Use distractors that switch to $\\omega=0$ interpretation on $\\sigma=0$ line.",
+              "Use distractors that confuse real-axis points with imaginary-axis points.",
+              "Use distractors that assert frequency interpretation for off-axis points."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example step",
+            "base_case": "N/A for example step",
+            "paragraph_plan": [
+              "N/A for example step"
+            ],
+            "display_math_plan": [
+              "N/A for example step"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "From the $s$-plane, identify whether $s=j2$ is on the $j\\omega$ axis and state the value of $\\sigma$.",
+            "worked_solution_goal": "Confirm $s=j2$ lies on the $j\\omega$ axis and has $\\sigma=0$, matching the Fourier-frequency slice.",
+            "variation_from_previous": "Moves from general damping interpretation to the special case that selects the Fourier-frequency line.",
+            "solution_step_plan": [
+              "Locate $s=j2$ at horizontal coordinate $\\sigma=0$ and vertical coordinate $\\omega=2$.",
+              "Check alignment with vertical axis by reading real part.",
+              "State $\\sigma=0$ and note this is the pure-frequency slice.",
+              "Map this to the Fourier-interpretation bridge into $X(j\\omega)$."
+            ],
+            "practice_variation_axes": [
+              "on-axis vs off-axis classification",
+              "frequency value variations",
+              "alternative symbols such as $s=-j\\omega$ or $3+j0$"
+            ]
+          },
+          "handoff_notes": "Explicitly phrase that $\\sigma=0$ corresponds to the Fourier-frequency line; this creates direct continuity into ROC boundary discussion."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Region of Convergence",
+      "lesson_core_move": "Determine the region of convergence by using exponential weighting to identify the set of \\(s\\)-plane values for which a signal's Laplace-transform integral converges.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Region of Convergence",
+          "step_type": "tutorial",
+          "learning_goal": "Define the region of convergence for a Laplace transform as the set of $s$ values where the exponentially weighted integral is finite.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual required for first introduction; keep this section fully symbolic with inequalities and integral conditions."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Help the writer define the ROC from the convergence condition of $X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt$ and interpret ROC as a subset of the $s$-plane.",
+            "base_case": "Start with a single-sided exponential example, such as $x(t)=e^{-at}u(t)$, where ROC is immediately testable from a one-integral inequality.",
+            "paragraph_plan": [
+              "Introduce the weighted Laplace-integral form $X(s)=\\int x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ and define what it means for the transform to exist at one $s$ value.",
+              "Show the direct link between convergence and a real-part condition by isolating the exponential decay/growth term $e^{-\\sigma t}$ from $e^{-j\\omega t}$.",
+              "Explain that the ROC is the complete set of $\\sigma$ (equivalently $s$ points) that satisfy the corresponding inequality and therefore all make the integral finite.",
+              "Conclude by previewing that later sections convert point tests into inequalities and then geometric regions in the $s$-plane."
+            ],
+            "display_math_plan": [
+              "$$X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt=\\int_{-\\infty}^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$$",
+              "$$\\mathrm{ROC}=\\left\\{s: \\int x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt<\\infty\\right\\}.$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial section.",
+            "worked_solution_goal": "Not applicable for tutorial section.",
+            "variation_from_previous": "Not applicable for tutorial section.",
+            "solution_step_plan": [
+              "Not applicable for tutorial section."
+            ],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "No worked example or questions in this tutorial step; example and question writers should begin from this symbolic definition only."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Testing Convergence at One \\(s\\)-Plane Value",
+          "step_type": "example",
+          "learning_goal": "Test convergence for one candidate $s$ value by substituting it into the Laplace integral and applying an exponential tail criterion.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Purely symbolic test with numeric substitution and integral comparison."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choice expressions/inequality statements",
+            "practice_question_model": "At $s=-1+j3$, test whether $X(s)=\\int_0^{\\infty} e^{-2t}e^{-st}\\,dt$ converges.",
+            "distractor_plan": [
+              "Include the correct inequality test result using $\\sigma$ from the chosen $s$ value.",
+              "Include distractors that fail the test for the wrong reason (absolute value or wrong sign on exponent).",
+              "Include an incorrect but structurally plausible conclusion (e.g., converges conditionally but not absolutely).",
+              "Include one distractor that confuses $\\sigma$ with $\\omega$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "No direct-instruction paragraphs for an example step."
+            ],
+            "display_math_plan": [
+              "$$\\text{Substitute }s = \\sigma + j\\omega \\text{ and isolate magnitude-relevant factors.}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Compute whether the Laplace transform converges for $x(t)=e^{-2t}u(t)$ at $s=-1+j\\,3$.",
+            "worked_solution_goal": "Show that the section arrives at a concrete convergence truth value by reducing the integral to a real-exponential test.",
+            "variation_from_previous": "This step is a single-point test before converting the result into a full ROC inequality in the next section.",
+            "solution_step_plan": [
+              "Substitute $s=-1+j3$ into $X(s)=\\int_0^{\\infty} e^{-2t}e^{-st}\\,dt$.",
+              "Separate factors: $e^{-2t}e^{-(-1+j3)t}=e^{-t}e^{-j3t}$.",
+              "Replace the oscillatory part with unit magnitude and compare $\\int_0^{\\infty}e^{-t}\\,dt$ to conclude convergence.",
+              "State explicitly that the result is finite because $\\sigma= -1 > -2$."
+            ],
+            "practice_variation_axes": [
+              "Signal exponent sign changes",
+              "Evaluation point on different one-sided signals"
+            ]
+          },
+          "handoff_notes": "Questions should present one correct convergence decision and four plausible wrong choices based on sign and magnitude mistakes."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Converting a Convergence Test into a Condition on \\(\\sigma\\)",
+          "step_type": "example",
+          "learning_goal": "Generalize the pointwise convergence test into a symbolic inequality on $\\sigma$ that defines a half-plane boundary.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; output stays as algebraic inequality derivation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic inequalities about $\\sigma$",
+            "practice_question_model": "For $x(t)=e^{-2t}u(t)$, convert the convergence requirement from a fixed-point test into the inequality that defines the ROC.",
+            "distractor_plan": [
+              "Include distractors with flipped inequality direction.",
+              "Include distractors that use $\\omega$ instead of $\\sigma$.",
+              "Include distractors that impose equality as valid ROC boundary when it is not stated as inclusion.",
+              "Include a distractor that misclassifies left/right half-plane direction."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "No direct-instruction paragraphs for an example step."
+            ],
+            "display_math_plan": [
+              "$$\\text{Convergence bound reduces to a scalar inequality in }\\sigma.$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $x(t)=e^{-2t}u(t)$, rewrite the convergence result as a condition on $\\sigma$ for all $s=\\sigma+j\\omega$.",
+            "worked_solution_goal": "Produce a reusable rule such as $\\sigma > -2$ rather than checking isolated points.",
+            "variation_from_previous": "This step transforms one-point arithmetic into a full inequality in $\\sigma$.",
+            "solution_step_plan": [
+              "Start from $\\int_0^{\\infty} e^{-2t}e^{-st}\\,dt$ and split into magnitude-relevant and bounded-oscillatory parts.",
+              "Show that convergence requires the real part of the exponent to be negative: $-2-\\sigma<0$.",
+              "Algebraically solve for $\\sigma$, then present ROC in half-plane form.",
+              "Name the boundary line and inequality direction explicitly for downstream question generation."
+            ],
+            "practice_variation_axes": [
+              "Different decay/growth constants in one-sided exponentials",
+              "Left-sided signals to invert half-plane direction"
+            ]
+          },
+          "handoff_notes": "This is the bridge between numeric test and region-level reasoning; keep the algebra explicit and mistake-proof."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Marking the Region of Convergence in the \\(s\\)-Plane",
+          "step_type": "example",
+          "learning_goal": "Represent the derived $\\sigma$ inequality as a shaded ROC region in the $s$-plane with a clear boundary line.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Plot the complex $s$-plane with real axis $\\sigma$, imaginary axis $j\\omega$, and shaded ROC half-plane for inequalities such as Re{s}$>a$ or Re{s}$<a$.",
+            "visual_elements": [
+              "s-plane",
+              "real axis labeled $\\sigma$",
+              "imaginary axis labeled $j\\omega$",
+              "boundary vertical line and shaded half-plane"
+            ],
+            "image_generation_notes": "Use a clear boundary line at $\\sigma=a$ and full-plane orientation; keep style suitable for both worked example and mirrored practice."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five expression choices with boundary form and region direction",
+            "practice_question_model": "Given ROC condition Re{s}$> -2$, draw or identify the correct marked region in the $s$-plane.",
+            "distractor_plan": [
+              "Include mirror-image left-half-plane distractor",
+              "Include boundary-at-$\\sigma=-2$ drawn without proper shading side",
+              "Include distractor with swapped axes ($\\omega$ as horizontal)",
+              "Include distractor with equality-only inclusion on a wrong side"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "No direct-instruction paragraphs for an example step."
+            ],
+            "display_math_plan": [
+              "$$\\text{ROC: }\\{\\sigma+j\\omega:\\, \\sigma > a\\}\\quad\\text{or}\\quad\\{\\sigma+j\\omega:\\, \\sigma < a\\}.$$",
+              "$$\\text{Shading direction follows the strict inequality for the bounded integral side.}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given condition Re{s}$> -2$, show the ROC on the $s$-plane and mark the boundary.",
+            "worked_solution_goal": "Return a correct shaded half-plane representation anchored by the vertical boundary $\\sigma=-2$.",
+            "variation_from_previous": "This step extends algebraic inequalities into geometric interpretation for recognition and diagnosis.",
+            "solution_step_plan": [
+              "Translate the inequality from previous step into the boundary line $\\sigma=-2$.",
+              "Plot the $s$-plane with $\\sigma$ on horizontal axis and $\\omega$ on vertical axis.",
+              "Shade the side satisfying the inequality and label the boundary as excluded unless specified otherwise.",
+              "State interpretation in one sentence for transfer to the follow-up question generator."
+            ],
+            "practice_variation_axes": [
+              "Different constant $a$ values in boundary line",
+              "Direction of half-plane (left vs right) variants"
+            ]
+          },
+          "handoff_notes": "Question generator should favor one best-matching region image among five options; avoid answer-choice images unless explicitly added later."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Checking Whether the Fourier-Transform Slice Is Included in the Region of Convergence",
+          "step_type": "example",
+          "learning_goal": "Determine whether the Fourier-transform slice Re{$s=\\sigma+j\\omega$}=$\\sigma=0$ is inside the ROC inequality.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Keep this as a direct substitution check on the derived inequality."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five true/false-like statements or short condition checks",
+            "practice_question_model": "If ROC is Re{s}$> -2$, decide whether the Fourier transform exists by checking if the $j\\omega$ axis is included.",
+            "distractor_plan": [
+              "Include distractor that checks $\\sigma=\\omega$ by mistake.",
+              "Include distractor that confuses strict inequality as non-strict at boundary.",
+              "Include distractor that concludes no Fourier transform even when $0$ satisfies the ROC condition.",
+              "Include distractor that reverses inclusion test direction."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "No direct-instruction paragraphs for an example step."
+            ],
+            "display_math_plan": [
+              "$$s=j\\omega \\iff \\sigma=0,$$",
+              "$$\\text{Fourier transform exists iff }\\sigma=0\\text{ satisfies the ROC inequality.}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For ROC Re{s}$> -2$, decide whether the Fourier-transform slice $s=j\\omega$ is included.",
+            "worked_solution_goal": "Show the check by setting $\\sigma=0$ and testing it against the ROC condition.",
+            "variation_from_previous": "This step applies the plotted ROC rule to the specific frequency-axis slice that anchors Fourier-transform existence.",
+            "solution_step_plan": [
+              "Substitute $\\sigma=0$ (because $s=j\\omega$) into the ROC inequality.",
+              "Evaluate whether $0$ satisfies the inequality.",
+              "State whether $X(j\\omega)$ exists and explain why.",
+              "Translate to one-line decision language for practice generation."
+            ],
+            "practice_variation_axes": [
+              "Different ROC directions and inequalities",
+              "Boundary-inclusion edge cases"
+            ]
+          },
+          "handoff_notes": "Keep this section tightly tied to the prior geometric rule; questions should be short decision problems requiring no new derivation."
+        }
+      ]
+    }
+  ]
+}

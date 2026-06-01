@@ -1,0 +1,326 @@
+# Rewriting Signals as Functions of $\tau$
+
+<!--
+lesson-id: EE01-M06-03-L04
+-->
+
+## Table of Contents
+
+- [Introduction to Rewriting Signals as Functions of $\tau$](#introduction-to-rewriting-signals-as-functions-of-tau)
+- [Replacing $t$ with $\tau$ in Signal Formulas](#replacing-t-with-tau-in-signal-formulas)
+- [Rewriting Active Time Intervals with $\tau$](#rewriting-active-time-intervals-with-tau)
+- [Rewriting Shifted Signal Formulas with $\tau$](#rewriting-shifted-signal-formulas-with-tau)
+- [Preparing Piecewise Signals in $\tau$ for Convolution Setup](#preparing-piecewise-signals-in-tau-for-convolution-setup)
+
+---
+
+<a id="introduction-to-rewriting-signals-as-functions-of-tau"></a>
+## Introduction to Rewriting Signals as Functions of $\tau$
+
+In continuous-time convolution, $\tau$ is the variable that scans across the input timeline, while $t$ stays fixed as the output-time parameter. That is why the signals inside the convolution integral are written as functions of $\tau$.
+
+$$
+(x*h)(t)=\int_{-\infty}^{\infty} x(\tau)h(t-\tau)\,d\tau
+$$
+
+To rewrite a signal in $\tau$, replace the independent variable in both places where the signal uses time: the formula and the active interval. Keep the constants, coefficients, endpoint values, and inequality directions the same.
+
+$$
+x(t)=2t,\quad 0\le t\le 3 \quad \longrightarrow \quad x(\tau)=2\tau,\quad 0\le \tau\le 3
+$$
+
+This rewrite only prepares the signal for the convolution integral. It does not find overlap intervals, choose integration bounds, or evaluate the convolution.
+
+---
+
+<a id="replacing-t-with-tau-in-signal-formulas"></a>
+## Replacing $t$ with $\tau$ in Signal Formulas
+
+**Example:** Rewrite the signal formula $x(t)=3t+1$ as a function of $\tau$ for convolution setup.
+
+**Explanation**
+
+The cue is that the signal is still written with $t$, but convolution setup needs the input signal written on the $\tau$ axis. Here we are only rewriting the formula, so there is no active interval to change yet.
+
+Start with the original formula.
+
+$$
+x(t)=3t+1
+$$
+
+Replace the independent variable $t$ with $\tau$. The coefficient $3$, the constant $1$, and the addition stay unchanged.
+
+$$
+x(\tau)=3\tau+1
+$$
+
+So the convolution-ready version of the formula is $x(\tau)=3\tau+1$. This step only changes the independent variable inside the signal formula; it does not introduce $t-\tau$ or choose any integration bounds.
+
+**Question 1:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q001
+content: |-
+  Rewrite the signal formula as a function of $\tau$ for convolution setup.
+
+  $$
+  x(t)=2t^2-5
+  $$
+
+correct: |-
+  $x(\tau)=2\tau^2-5$
+
+feedback: |-
+  Replace the independent variable $t$ with $\tau$ everywhere it appears. The coefficient $2$, the exponent $2$, and the constant $-5$ stay unchanged.
+
+  $$
+  x(\tau)=2\tau^2-5
+  $$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q002
+content: |-
+  Rewrite the signal formula as a function of $\tau$ for convolution setup.
+
+  $$
+  x(t)=-4t+7
+  $$
+
+correct: |-
+  $x(\tau)=-4\tau+7$
+
+feedback: |-
+  Only the independent variable changes. Replace $t$ with $\tau$, and keep the coefficient $-4$ and the constant $7$ the same.
+
+  $$
+  x(\tau)=-4\tau+7
+  $$
+```
+
+---
+
+<a id="rewriting-active-time-intervals-with-tau"></a>
+## Rewriting Active Time Intervals with $\tau$
+
+**Example:** Rewrite the formula and active interval for $x(t)=4-t$ active on $1\le t\le 5$ using $\tau$.
+
+**Explanation**
+
+The cue is that the signal is described in two places using $t$: the formula and the active interval. For convolution setup, both parts need to be written using the integration variable $\tau$.
+
+$$
+x(t)=4-t,\quad 1\le t\le 5
+$$
+
+First replace $t$ with $\tau$ in the formula. Then replace the interval variable $t$ with $\tau$. The endpoint numbers $1$ and $5$ stay the same, and the inequality directions stay the same.
+
+$$
+x(\tau)=4-\tau,\quad 1\le \tau\le 5
+$$
+
+So the prepared signal is $x(\tau)=4-\tau$ active on $1\le \tau\le 5$. This step only rewrites the signal in the integration variable; it does not find overlap intervals or choose convolution bounds.
+
+**Question 3:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q003
+content: |-
+  Rewrite the formula and active interval using $\tau$.
+
+  $$
+  x(t)=t+2,\quad -1\le t\le 3
+  $$
+
+correct: |-
+  $x(\tau)=\tau+2,\quad -1\le \tau\le 3$
+
+feedback: |-
+  Replace $t$ with $\tau$ in both places. The endpoint values and inequality directions stay the same.
+
+  $$
+  x(\tau)=\tau+2,\quad -1\le \tau\le 3
+  $$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q004
+content: |-
+  Rewrite the formula and active interval using $\tau$.
+
+  $$
+  x(t)=5-2t,\quad 0<t\le 4
+  $$
+
+correct: |-
+  $x(\tau)=5-2\tau,\quad 0<\tau\le 4$
+
+feedback: |-
+  The formula variable changes from $t$ to $\tau$, and the interval variable changes from $t$ to $\tau$. The coefficient, endpoint values, and open/closed inequality symbols are unchanged.
+
+  $$
+  x(\tau)=5-2\tau,\quad 0<\tau\le 4
+  $$
+```
+
+---
+
+<a id="rewriting-shifted-signal-formulas-with-tau"></a>
+## Rewriting Shifted Signal Formulas with $\tau$
+
+**Example:** Rewrite $x(t)=e^{-2(t-1)}$ active for $t\ge 1$ as a function of $\tau$.
+
+**Explanation**
+
+The cue is the shifted group $(t-1)$ inside the formula. Since this is still the original signal $x(t)$, the rewrite changes the signal's independent variable from $t$ to $\tau$ while preserving the shift structure.
+
+$$
+x(t)=e^{-2(t-1)},\quad t\ge 1
+$$
+
+Replace $t$ with $\tau$ inside the grouped expression, so $(t-1)$ becomes $(\tau-1)$. Do not change the shift constant or reverse the order inside the parentheses.
+
+$$
+e^{-2(t-1)}\quad \longrightarrow \quad e^{-2(\tau-1)}
+$$
+
+Then rewrite the active interval with the same variable change. The condition $t\ge 1$ becomes $\tau\ge 1$.
+
+$$
+x(\tau)=e^{-2(\tau-1)},\quad \tau\ge 1
+$$
+
+So the prepared signal is $x(\tau)=e^{-2(\tau-1)}$ active for $\tau\ge 1$. This is a rewrite of the given signal only; it does not introduce the convolution-specific form $t-\tau$.
+
+**Question 5:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q005
+content: |-
+  Rewrite the shifted formula and active interval as a function of $\tau$.
+
+  $$
+  x(t)=3(t-2),\quad 2\le t\le 6
+  $$
+
+correct: |-
+  $x(\tau)=3(\tau-2),\quad 2\le \tau\le 6$
+
+feedback: |-
+  Replace $t$ with $\tau$ inside the grouped expression and in the active interval. The shift amount, endpoint values, and inequality directions stay the same.
+
+  $$
+  x(\tau)=3(\tau-2),\quad 2\le \tau\le 6
+  $$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q006
+content: |-
+  Rewrite the shifted formula and active interval as a function of $\tau$.
+
+  $$
+  x(t)=e^{-3(t+2)},\quad t\ge -2
+  $$
+
+correct: |-
+  $x(\tau)=e^{-3(\tau+2)},\quad \tau\ge -2$
+
+feedback: |-
+  The grouped term $(t+2)$ becomes $(\tau+2)$, not $(\tau-2)$ and not a $t-\tau$ expression. The one-sided active interval changes only by replacing $t$ with $\tau$.
+
+  $$
+  x(\tau)=e^{-3(\tau+2)},\quad \tau\ge -2
+  $$
+```
+
+---
+
+<a id="preparing-piecewise-signals-in-tau-for-convolution-setup"></a>
+## Preparing Piecewise Signals in $\tau$ for Convolution Setup
+
+**Example:** Prepare the piecewise signal $x(t)=0$ for $t<0$, $x(t)=t$ for $0\le t<2$, $x(t)=2$ for $2\le t\le 4$, and $x(t)=0$ for $t>4$ as a function of $\tau$ for convolution setup.
+
+**Explanation**
+
+The cue is that the signal is piecewise: each row has a formula and a condition. To prepare it for convolution setup, rewrite every row using $\tau$ while keeping the same order, endpoint numbers, endpoint inclusions, and zero pieces.
+
+$$
+x(t)=\begin{cases}0, & t<0\\ t, & 0\le t<2\\ 2, & 2\le t\le 4\\ 0, & t>4\end{cases}
+$$
+
+Rewrite the formulas first. The constant pieces $0$ and $2$ stay unchanged. The formula $t$ becomes $\tau$ because the independent variable is now $\tau$.
+
+Then rewrite each condition by replacing $t$ with $\tau$. The condition $t<0$ becomes $\tau<0$, $0\le t<2$ becomes $0\le \tau<2$, $2\le t\le 4$ becomes $2\le \tau\le 4$, and $t>4$ becomes $\tau>4$.
+
+$$
+x(\tau)=\begin{cases}0, & \tau<0\\ \tau, & 0\le \tau<2\\ 2, & 2\le \tau\le 4\\ 0, & \tau>4\end{cases}
+$$
+
+So the prepared signal is the complete piecewise definition of $x(\tau)$ above. This step only rewrites the signal description; it does not combine pieces, find overlap, choose integration bounds, or evaluate a convolution.
+
+**Question 7:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q007
+content: |-
+  Prepare the piecewise signal as a function of $\tau$ for convolution setup.
+
+  $$
+  x(t)=\begin{cases}1, & 0\le t<1\\ 3-t, & 1\le t\le 3\\ 0, & \text{otherwise}\end{cases}
+  $$
+
+correct: |-
+  $x(\tau)=\begin{cases}1, & 0\le \tau<1\\ 3-\tau, & 1\le \tau\le 3\\ 0, & \text{otherwise}\end{cases}$
+
+feedback: |-
+  Rewrite every row using $\tau$. The constant pieces stay the same, $3-t$ becomes $3-\tau$, and each interval condition changes from $t$ to $\tau$ without changing endpoints or inclusions.
+
+  $$
+  x(\tau)=\begin{cases}1, & 0\le \tau<1\\ 3-\tau, & 1\le \tau\le 3\\ 0, & \text{otherwise}\end{cases}
+  $$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: free
+id: EE01-M06-03-L04-q008
+content: |-
+  Prepare the piecewise signal as a function of $\tau$ for convolution setup.
+
+  $$
+  x(t)=\begin{cases}t+1, & -1\le t<0\\ 2, & 0\le t\le 2\\ 0, & \text{otherwise}\end{cases}
+  $$
+
+correct: |-
+  $x(\tau)=\begin{cases}\tau+1, & -1\le \tau<0\\ 2, & 0\le \tau\le 2\\ 0, & \text{otherwise}\end{cases}$
+
+feedback: |-
+  Replace $t$ with $\tau$ in the formula that contains the variable and in each piece condition. The constant piece and the otherwise-zero piece remain included in the complete definition.
+
+  $$
+  x(\tau)=\begin{cases}\tau+1, & -1\le \tau<0\\ 2, & 0\le \tau\le 2\\ 0, & \text{otherwise}\end{cases}
+  $$
+```

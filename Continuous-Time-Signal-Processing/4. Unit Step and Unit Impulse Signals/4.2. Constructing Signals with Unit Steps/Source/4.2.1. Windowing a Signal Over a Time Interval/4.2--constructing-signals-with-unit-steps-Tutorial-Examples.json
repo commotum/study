@@ -1,0 +1,1670 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Windowing a Signal Over a Time Interval",
+      "lesson_core_move": "Construct a finite-duration version of a continuous-time signal by multiplying it by the shifted-unit-step window $u(t-a)-u(t-b)$ and identifying the interval over which the original signal is retained.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Windowing a Signal Over a Time Interval",
+          "section_index": 1,
+          "section_title": "Introduction to Windowing a Signal Over a Time Interval",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The object to recognize is a **window gate** built from unit steps: $u(t-a)-u(t-b)$. Read this as an on-off factor that is multiplied into another signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First define the pieces you are switching on. The gate turns on at $t=a$ through $u(t-a)$ and turns off at $t=b$ through $u(t-b)$, so the two shifted steps create a retention interval between those times.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply the action directly: keep the original signal in the window and kill it elsewhere by writing $y(t)=x(t)(u(t-a)-u(t-b))$. This is the minimum direct-instruction move in this section.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the simplest base case to verify the pattern. Let $x(t)=1$ and form $y(t)=1\\cdot(u(t)-u(t-b))$. For $t<0$, $u(t)=0$ so the output is zero. For $0\\le t<b$, both switches keep the gate at one and the output is one. For $t\\ge b$, $u(t-b)=1$ and the difference is zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t)(u(t-a)-u(t-b))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t-a)-u(t-b)=1\\text{ for }a\\le t<b,\\;0\\text{ otherwise}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Sanity check the generic result from the same rule: the expression says $y(t)=x(t)$ only on the closed-open interval $a\\le t<b$, and $y(t)=0$ outside it, so the gate enforces both retention bounds and clipping in one multiplication.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Windowing a Signal Over a Time Interval",
+          "section_index": 2,
+          "section_title": "Windowing a Signal from t=0 to t=b",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Build $y(t)=t\\,(u(t)-u(t-b))$ and describe the retained interval and equivalent piecewise form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Cue: the interval should turn on at $t=0$ and turn off at $t=b$, so the window factor is $u(t)-u(t-b)$. This is the one new wrinkle in this step compared with the prior tutorial.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base factor directly and identify where it is active. Since $u(t)-u(t-b)=1$ for $0\\le t<b$ and $0$ otherwise, this window preserves any signal only on that interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t)-u(t-b)=\\begin{cases}1,&0\\le t<b\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the multiplication rule with $x(t)=t$: $y(t)=x(t)(u(t)-u(t-b))=t\\,(u(t)-u(t-b))$. The next step is to split by interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=t\\,(u(t)-u(t-b))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $0\\le t<b$, the window is $1$, so $y(t)=t\\cdot 1=t$. For $t<0$ or $t\\ge b$, the window is $0$, so $y(t)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}t,&0\\le t<b\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the worked result confirms the future question pattern: write the output as $y(t)=t(u(t)-u(t-b))$, then read the retained interval as $0\\le t<b$ and the clipped form as zero elsewhere.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Windowing a Signal Over a Time Interval",
+          "section_index": 3,
+          "section_title": "Windowing a Signal from t=a to t=b",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=\\cos t$, multiply by $u(t-a)-u(t-b)$ and write the exact interval where the cosine component remains.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the shifted retention window. In this step the signal stays active from $t=a$ up to $t=b$, so use the same form as before with both shifts: $u(t-a)-u(t-b)$. This adds exactly one wrinkle from the prior step: a nonzero left shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t-a)-u(t-b)=\\begin{cases}1,&a\\le t<b\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the core rule from the previous steps: $y(t)=x(t)(u(t-a)-u(t-b))$. Substitute $x(t)=\\cos t$ to get $y(t)=\\cos t\\,(u(t-a)-u(t-b))$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\cos t\\,(u(t-a)-u(t-b))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now isolate interval conditions. Multiply by the window value on each region: on $a\\le t<b$, the window equals $1$, and outside this interval it equals $0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}\\cos t,&a\\le t<b\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, the retained component is the cosine term on $a\\le t<b$, and all other times are zeroed out. This directly mirrors the planned question form: identify the same interval and express the answer in multiplied or piecewise form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Windowing a Signal Over a Time Interval",
+          "section_index": 4,
+          "section_title": "Windowing a Signal Across t=0",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write the windowed signal $y(t)=e^{-t}(u(t+2)-u(t-3))$ and identify where $y(t)$ is nonzero.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the interval now crosses the origin. Build the window directly as $u(t+2)-u(t-3)$, which uses a switch-on time at $t=-2$ and a switch-off time at $t=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the two-step rule separately: $u(t+2)=1$ when $t\\ge -2$, and $u(t-3)=1$ when $t\\ge 3$, otherwise each is $0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t+2)-u(t-3)=\\begin{cases}1,&-2\\le t<3\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the product rule from the lesson's core move: $y(t)=x(t)(u(t+2)-u(t-3))$. With $x(t)=e^{-t}$, this is $y(t)=e^{-t}(u(t+2)-u(t-3))$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=e^{-t}(u(t+2)-u(t-3))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then isolate the active region. On $-2\\le t<3$, the window is $1$, so $y(t)=e^{-t}$. Outside that interval, the window is $0$, so $y(t)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}e^{-t},&-2\\le t<3\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This verifies the desired target form: nonzero content is retained on a time interval that crosses $0$, specifically $-2\\le t<3$, while all other regions are clipped to zero.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Windowing a Signal Over a Time Interval",
+          "section_index": 5,
+          "section_title": "Identifying the Retained Interval from a Windowed Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From $y(t)=x(t)(u(t-2)-u(t-5))$, identify the window interval and rewrite a clean retained-domain sentence.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to read a finished window expression instead of constructing one. Here the retention window is $u(t-2)-u(t-5)$, so read the switch times as $t=2$ and $t=5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the inverse version of the core rule: the first step $u(t-2)$ turns on at $t=2$, and the second step $u(t-5)$ turns off the window at $t=5$. Sort the events and test the intervals $t<2$, $2\\le t<5$, and $t\\ge 5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t-2)-u(t-5)=\\begin{cases}0,&t<2\\\\1,&2\\le t<5\\\\0,&t\\ge 5\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Attach that support to $x(t)$ only where the window equals one. So $y(t)=x(t)$ for $2\\le t<5$, and $y(t)=0$ otherwise.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\begin{cases}x(t),&2\\le t<5\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The clean retained-domain statement is: the original signal is kept on the interval $2\\le t<5$, then fully removed elsewhere.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Building Piecewise Constant Signals",
+      "lesson_core_move": "Construct a piecewise constant continuous-time signal by converting its interval-by-interval level changes into a sum of scaled shifted unit steps.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Building Piecewise Constant Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Building Piecewise Constant Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this section, the move is to encode a piecewise constant signal as one baseline value plus a sequence of level jumps that each turn on at specific times. Your target is to represent interval-by-interval constants with shifted unit-step terms so each breakpoint maps directly to one term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the unit step as the building cue: $u(t)$ is $0$ for $t<0$ and $1$ for $t\\ge 0$. A shifted version $u(t-a)$ moves that switch to time $a$, so it is $0$ for $t<a$ and $1$ for $t\\ge a$. Treat this as the fundamental left-right region rule you will reuse throughout.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, use one transition from level $0$ to level $A$ at time $a$ with $y(t)=A u(t-a)$. Verify directly: when $t<a$, $u(t-a)=0$ so $y(t)=0$; when $t\\ge a$, $u(t-a)=1$ so $y(t)=A$. This one-term form is the smallest nontrivial pattern to imitate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To create a finite window, keep the first switch-on term and add a second switch-off term at the ending time $b$ as $y(t)=A u(t-a)-A u(t-b)$. In $a\\le t<b$, only the first term stays on and $y(t)=A$; for $t\\ge b$, both terms are on and cancel, giving $y(t)=0$. This is the same representation idea with one extra breakpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=y_0+\\sum_k \\Delta A_k u(t-a_k)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the next sections, keep the exact same action rule and only change the jump list: for each breakpoint at $a_k$, add $\\Delta A_k u(t-a_k)$ where $\\Delta A_k$ is the signed change from the prior level to the next level. Multiple transitions become a reusable sum, not separate special cases.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Building Piecewise Constant Signals",
+          "section_index": 2,
+          "section_title": "Turning On a Constant Level with a Shifted Unit Step",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write a unit-step form for $y(t)=0$ for $t<2$, and $y(t)=5$ for $t\\ge 2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a two-region piecewise constant signal with zero baseline before a single switch time. In this form, the move is to represent the right-hand jump at $t=2$ as a shifted unit-step term added to the baseline.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-term template from the core move: $y(t)=A u(t-a)$ for a transition from $0$ to a level $A$ at time $a$. Here the start is at $a=2$ and the level after the switch is $A=5$, so the candidate form is $y(t)=5u(t-2)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=5u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Verify region-by-region to confirm the representation: for $t<2$, $u(t-2)=0$, so $y(t)=5\\cdot 0=0$. For $t\\ge 2$, $u(t-2)=1$, so $y(t)=5\\cdot 1=5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is complete: the step form is $y(t)=5u(t-2)$, and it is the direct one-step extension of the previous tutorial pattern from section 1.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Building Piecewise Constant Signals",
+          "section_index": 3,
+          "section_title": "Turning Off a Constant Level with a Second Shifted Unit Step",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Construct a unit-step equation for $x(t)=4$ when $1\\le t<5$, and $x(t)=0$ elsewhere.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This signal has one nonzero pulse, so the cue is a finite interval with a clear start and end time. Use a turn-on term at $t=1$ and a turn-off term at $t=5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the finite support pattern, place $4u(t-1)$ for the onset at the left edge. Then add a negative offset at the right edge: $-4u(t-5)$ to remove the level after $t\\ge 5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=4u(t-1)-4u(t-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check all regions. For $t<1$, both shifted steps are $0$, so $x(t)=0-0=0$. For $1\\le t<5$, $u(t-1)=1$ and $u(t-5)=0$, so $x(t)=4\\cdot 1-4\\cdot 0=4$. For $t\\ge 5$, both are $1$, so $x(t)=4\\cdot 1-4\\cdot 1=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The finite support form is therefore $x(t)=4u(t-1)-4u(t-5)$, which is the same rule as before plus one extra breakpoint that turns the level off.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Building Piecewise Constant Signals",
+          "section_index": 4,
+          "section_title": "Changing Directly Between Two Nonzero Constant Levels",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Convert the piecewise signal $x(t)=2$ for $t<1$, $x(t)=5$ for $1\\le t<3$, and $x(t)=2$ for $t\\ge3$ to unit-step form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a nonzero-to-nonzero level change: the baseline is $2$, then the signal rises at $t=1$ and falls back at $t=3$. Because the baseline is already $2$, this is a cumulative-jump form problem, not a zero-reset problem.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the baseline term first: $y_0=2$. Then compute each signed jump from the previous level. At $t=1$, the jump is $\\Delta A_1=5-2=3$, so add $3u(t-1)$. At $t=3$, the jump is $\\Delta A_2=2-5=-3$, so add $-3u(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2+3u(t-1)-3u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Validate each interval. For $t<1$, both $u(t-1)$ and $u(t-3)$ are $0$, so $x(t)=2+0-0=2$. For $1\\le t<3$, only $u(t-1)=1$ and $u(t-3)=0$, so $x(t)=2+3-0=5$. For $t\\ge3$, both are $1$, so $x(t)=2+3-3=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The final step form is $x(t)=2+3u(t-1)-3u(t-3)$, which shows the exact signed-jump mechanism for direct transitions between two nonzero levels.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Building Piecewise Constant Signals",
+          "section_index": 5,
+          "section_title": "Combining Multiple Level Changes into One Step Expression",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write one unit-step expression for $x(t)=1$ if $t<0$, $x(t)=4$ if $0\\le t<2$, $x(t)=-2$ if $2\\le t<4$, and $x(t)=3$ if $t\\ge4$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This signal has multiple breakpoints, so the cue is to use one baseline and one signed jump at each breakpoint. List the levels in order: start at $1$, then jump to $4$ at $t=0$, then to $-2$ at $t=2$, then to $3$ at $t=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the baseline to the first value: $y_0=1$. The first jump is $\\Delta A_1=4-1=3$ at $t=0$, so add $3u(t)$. The second jump is $\\Delta A_2=-2-4=-6$ at $t=2$, so add $-6u(t-2)$. The third jump is $\\Delta A_3=3-(-2)=5$ at $t=4$, so add $5u(t-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1+3u(t)-6u(t-2)+5u(t-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the intervals. For $t<0$, all shifted steps are $0$, giving $x(t)=1$. For $0\\le t<2$, only $u(t)=1$, so $x(t)=1+3=4$. For $2\\le t<4$, $u(t)=1$ and $u(t-2)=1$ while $u(t-4)=0$, so $x(t)=1+3-6=-2$. For $t\\ge4$, all terms are $1$, so $x(t)=1+3-6+5=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The compact representation is $x(t)=1+3u(t)-6u(t-2)+5u(t-4)$, and it is the general reusable form for multiple level changes in this topic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Building Piecewise Linear Signals",
+      "lesson_core_move": "Construct a piecewise linear continuous-time signal by converting each breakpoint's slope change into a shifted ramp term gated by unit steps.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Building Piecewise Linear Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Building Piecewise Linear Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Your job in this step is to represent piecewise linear signals with reusable building blocks, not by writing many separate case lines. A slope change at time $a$ becomes one shifted ramp term, so many breakpoints can be combined into a single expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the shifted unit-ramp definition. The block $r(t-a)$ is a ramp that starts at $a$, and multiplying by $u(t-a)$ gates it on after that time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "r(t-a)= (t-a)u(t-a)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case: $x(t)=m r(t-a)=m(t-a)u(t-a)$. It is zero before $a$, then grows linearly with slope $m$ after $a$, which gives the exact same behavior as the simplest slope segment.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The core move is to add slope increments. If $\\Delta m_1$ appears at $a_1$, it contributes only for $t \\ge a_1$; if $\\Delta m_2$ appears at $a_2$, it contributes only for $t \\ge a_2$, etc. At any $t$, active slope is the sum of these contributions.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=m_0 r(t-a_0)+\\Delta m_1\\big[r(t-a_1)-r(t-a_2)\\big]+\\Delta m_2\\big[r(t-a_2)-r(t-a_3)\\big]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A difference of shifted ramps creates a finite-interval slope block. The term $\\Delta m [r(t-a)-r(t-b)]$ adds slope $\\Delta m$ from $a$ until $b$, and then stops changing afterward. This is the key pattern for segmenting piecewise linear segments cleanly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, you can generalize this recipe from one ramp to one breakpoint increment, then to a finite interval, and then to several increments chained together in the full signal form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Building Piecewise Linear Signals",
+          "section_index": 2,
+          "section_title": "Starting a Signal with One Shifted Ramp",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Express $x(t)$ where $x(t)=0$ for $t<-1$ and $x(t)=2(t+1)$ for $t\\ge-1$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the cue from the prompt: the signal is flat at $0$ before the start time and becomes linear with slope $2$ at $t=-1$, which means this is one shifted ramp segment.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The target is to express the turn-on time with a ramp shifted to $-1$. For a ramp shifted by $a$, the rule is $\\Delta m r(t-a)=\\Delta m(t-a)u(t-a)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "r(t-a)=(t-a)u(t-a)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the rule with $a=-1$ and slope $\\Delta m=2$: first form the shifted ramp, then scale it by $2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2r(t+1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2(t+1)u(t+1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the two regions: for $t<-1$, $u(t+1)=0$, so $x(t)=0$; for $t\\ge-1$, $u(t+1)=1$, so $x(t)=2(t+1)$. This matches the prompt exactly and is the compact one-ramp model for this step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Building Piecewise Linear Signals",
+          "section_index": 3,
+          "section_title": "Adding a Slope Change at a Breakpoint",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Express a signal that has slope $0$ for $t<0$, slope $1$ on $[0,3)$, and slope $4$ for $t\\ge3$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the signal does not just turn on once; its slope changes at the breakpoint $t=3$. Start with the slope-$1$ ramp that begins at $t=0$, then add only the extra slope needed after $t=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "r(t-a)=(t-a)u(t-a)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first active segment has slope $1$, so the baseline term is $r(t)$. At the breakpoint, the slope must increase from $1$ to $4$, so the slope increment is $\\Delta m=4-1=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta m=4-1=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A slope increment at $t=3$ is represented by a shifted ramp increment, so add $3r(t-3)$ to the original ramp.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=r(t)+3r(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=t u(t)+3(t-3)u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the intervals by reading active ramps. For $t<0$, neither ramp is active, so the slope is $0$. For $0\\le t<3$, only $r(t)$ is active, so the slope is $1$. For $t\\ge3$, both terms are active, so the slope is $1+3=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Building Piecewise Linear Signals",
+          "section_index": 4,
+          "section_title": "Returning the Slope to Zero After an Interval",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Construct $x(t)$ where $x(t)=2t$ for $0 \\le t < 2$ and constant for $t \\ge 2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the slope should stay at $2$ only on $[0,2)$ and then stop changing. That makes this a finite-interval slope block, so the right move is to start with the active ramp and then cancel it with a delayed copy.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "r(t)=t u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the slope-$2$ ramp $2r(t)$, which turns on at $t=0$. To return the slope to zero at $t=2$, subtract the same ramp shifted right by $2$, $2r(t-2)$, so the added slope disappears after the interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2r(t)-2r(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2t u(t)-2(t-2)u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the regions: for $t<0$, both ramps are off, so $x(t)=0$; for $0 \\le t < 2$, only the first ramp is active, so $x(t)=2t$; for $t \\ge 2$, both ramps are active, so the slope terms cancel and the signal stays constant at $4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Building Piecewise Linear Signals",
+          "section_index": 5,
+          "section_title": "Combining Multiple Slope Changes in One Expression",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Represent a signal with slope profile: $0$ for $t<0$, $1$ for $0 \\le t<2$, $4$ for $2 \\le t<5$, and $2$ for $t\\ge5$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a slope profile with three changes: the slope turns on at $t=0$, jumps again at $t=2$, and then drops at $t=5$. Read each change as one shifted-ramp term, and add the terms in time order.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the baseline slope-$1$ ramp $r(t)$. The change at $t=2$ is $+3$, because the slope goes from $1$ to $4$, and the change at $t=5$ is $-2$, because the slope goes from $4$ to $2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=r(t)+3r(t-2)-2r(t-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=t u(t)+3(t-2)u(t-2)-2(t-5)u(t-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the intervals: for $t<0$, all ramps are off, so the slope is $0$; for $0 \\le t<2$, only $r(t)$ is active, so the slope is $1$; for $2 \\le t<5$, the first two ramps are active, so the slope is $1+3=4$; for $t\\ge5$, all three ramps are active, so the slope is $1+3-2=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Building Triangular Signals",
+      "lesson_core_move": "Construct a finite-duration triangular signal from its rise, peak, fall, and zero regions using shifted linear segments gated by unit steps.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Building Triangular Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Building Triangular Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A finite-duration triangle is easiest to read as three regions: a rising line, a peak boundary, and a falling line, with zero before the start and after the end. The job in this first tutorial step is to recognize that each nonzero region can be written as one linear term that is active only over its own interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use step differences to gate each linear piece so it stays on only where it belongs. A rise term can be written as $r_1(t)(u(t-t_0)-u(t-t_p))$, and a fall term can be written as $r_2(t)(u(t-t_p)-u(t-t_1))$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=r_1(t)(u(t-t_0)-u(t-t_p))+r_2(t)(u(t-t_p)-u(t-t_1))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, keep the unit-height, unit-width triangle in mind: it rises on $[0,1]$, peaks at $t=1$, and falls on $[1,2]$. That base triangle is the reference shape for later examples, even when the endpoints, slopes, or peak height change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=0\\quad\\text{for }t<t_0\\text{ or }t>t_1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the first thing to do with any triangular signal is identify the start time, peak time, and end time, then match each interval to the correct linear segment. Once those windows are clear, the rest of the construction is just a matter of placing the rise and fall pieces into the right step gates.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Building Triangular Signals",
+          "section_index": 2,
+          "section_title": "Building a Basic Triangle from Rising and Falling Segments",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find a unit-step representation for the triangle $x(t)$ with $x(t)=0$ for $t<0$ and $t>2$, $x(t)=t$ on $0 \\le t < 1$, and $x(t)=2-t$ on $1 \\le t < 2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the unit-height triangle from $t=0$ to $t=2$: it is zero outside that interval, rises linearly on $[0,1)$, and falls linearly on $[1,2)$. The goal is to write those two linear pieces in a step-based form that keeps each piece active only where it belongs.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the rise and fall as separate linear pieces, then gate them with adjacent step differences. The rise segment is $t$ on $[0,1)$, so it uses $u(t)-u(t-1)$, and the fall segment is $2-t$ on $[1,2)$, so it uses $u(t-1)-u(t-2)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=t(u(t)-u(t-1))+(-t+2)(u(t-1)-u(t-2))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This expression is continuous at $t=1$, reaches the peak value $1$ there, and is zero for $t<0$ or $t>2$. The two gated linear pieces match at the peak, so the triangle has the right shape without needing any extra terms.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Building Triangular Signals",
+          "section_index": 3,
+          "section_title": "Building a Shifted Triangle from Start, Peak, and End Times",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Construct the step-form expression for $x(t)$ where $x(t)=\\frac{1}{3}(t-2)$ on $[2,5)$, and $x(t)=-\\frac{3}{2}t+\\frac{15}{2}$ on $[5,8)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the shifted triangle: it starts at $t=2$, rises to height $3$ at $t=5$, and falls back to zero at $t=8$. The same two-window pattern from the previous example still works; only the breakpoints and line formulas change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On $[2,5)$, the rise line is $\\frac{1}{3}(t-2)$, and on $[5,8)$, the fall line is $-\\frac{3}{2}t+\\frac{15}{2}$. Attach the rise line to $u(t-2)-u(t-5)$ and the fall line to $u(t-5)-u(t-8)$ so each piece is active only on its own interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{3}(t-2)(u(t-2)-u(t-5))+\\left(-\\frac{3}{2}t+\\frac{15}{2}\\right)(u(t-5)-u(t-8))",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This expression is continuous at $t=5$, gives the peak value $3$, and is zero for $t<2$ or $t>8$. The construction is the same as before: identify the start, peak, and end times, then place each shifted line inside the matching step window.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Building Triangular Signals",
+          "section_index": 4,
+          "section_title": "Building a Nonunit-Height Triangular Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find a step-form model for $x(t)$ with $x(t)=2t$ on $0\\le t<2$, $x(t)=8-2t$ on $2\\le t<4$, and $x(t)=0$ otherwise.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the nonunit-height triangle: it starts at $t=0$, rises to height $4$ at $t=2$, and falls back to zero at $t=4$. The same two-window pattern still works; only the amplitudes inside the linear pieces change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On $[0,2)$, the rise line is $2t$, and on $[2,4)$, the fall line is $8-2t$. Attach the rise line to $u(t)-u(t-2)$ and the fall line to $u(t-2)-u(t-4)$ so each piece is active only on its own interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2t\\bigl(u(t)-u(t-2)\\bigr)+(8-2t)\\bigl(u(t-2)-u(t-4)\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This expression is continuous at $t=2$, gives the peak value $4$, and is zero for $t<0$ or $t>4$. The construction matches the previous triangles exactly: identify the two linear pieces, gate each one to its interval, and keep the peak value in the line formulas.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Building Triangular Signals",
+          "section_index": 5,
+          "section_title": "Building an Asymmetric Triangular Signal with Unequal Slopes",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find a step-function expression for $x(t)=2t$ on $0\\le t<1$, $x(t)=\\frac{8-2t}{3}$ on $1\\le t<4$, and $x(t)=0$ otherwise.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the asymmetric triangle: it starts at $t=0$, reaches height $2$ at $t=1$, and then falls more slowly to zero at $t=4$. The same two-window pattern still works; only the rise and fall slopes are different.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the rise and fall as separate line segments from the given interval data. Attach $2t$ to $u(t)-u(t-1)$ and attach $\\frac{8-2t}{3}$ to $u(t-1)-u(t-4)$ so each line is active only on its own region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2t\\bigl(u(t)-u(t-1)\\bigr)+\\frac{8-2t}{3}\\bigl(u(t-1)-u(t-4)\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This expression is continuous at $t=1$, gives the peak value $2$, and is zero for $t<0$ or $t>4$. The construction is unchanged: keep the interval boundaries explicit, then place each slope inside the correct step window.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Simplifying Step-Function Expressions",
+      "lesson_core_move": "Simplify overlapping shifted-unit-step expressions by identifying their active time intervals and combining like signal segments into an equivalent compact expression.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Simplifying Step-Function Expressions",
+          "section_index": 1,
+          "section_title": "Introduction to Simplifying Step-Function Expressions",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Treat each shifted unit-step term as a gate that changes only when its argument crosses zero. In a sum of shifted steps, the switch times are the only time points where the expression can change value.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "f(t)=u(t-1)-u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To simplify, list every switch time, sort them, and split the time axis into intervals between those times. On each interval, decide which step terms are active and add their coefficients; that sum is the active value for the interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{Step boundaries: }t=1,2\\;\\Rightarrow\\;\\text{active interval values are computed piecewise}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, start with $x(t)=u(t)-u(t-1)+u(t-1)$. The boundaries are $t=0$ and $t=1$, so the interval values are $0$ for $t<0$, $1$ for $0\\le t<1$, and $1$ for $t\\ge 1$; that collapses to the compact form $u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the same bookkeeping for expressions like $2u(t-1)-u(t-2)+3u(t-3)$: find the boundaries, combine the active coefficients interval by interval, and rewrite the result as a compact equivalent expression with no redundant overlap.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Simplifying Step-Function Expressions",
+          "section_index": 2,
+          "section_title": "Identifying Active Intervals in Shifted Unit Step Expressions",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the active intervals for $x(t)=3u(t-1)-u(t-3)+2u(t-5)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Read each shifted unit-step term as a gate that turns on at its own shift time and stays on to the right. For this expression, the shift times are the only boundaries that matter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{Switch times: }t=1,3,5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Sort those switch times and split the time axis into the four intervals $t<1$, $1\\le t<3$, $3\\le t<5$, and $t\\ge 5$. On each interval, keep only the terms that are active there and add their coefficients.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}0, & t<1\\\\3, & 1\\le t<3\\\\2, & 3\\le t<5\\\\4, & t\\ge 5\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the active-interval map is $0$, then $3$, then $2$, then $4$. That is the output this step needs: the interval values written cleanly before any compact simplification.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The next step will reuse the same boundaries to combine these regions into a shorter equivalent step expression. For now, the key skill is identifying exactly which terms are active on each interval and summing them correctly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Simplifying Step-Function Expressions",
+          "section_index": 3,
+          "section_title": "Combining Overlapping Constant Step Terms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Simplify $x(t)=u(t-2)+2u(t-4)-3u(t-6)$ and write a compact equivalent expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Each shifted unit-step term is constant on the intervals between its switch times, so the first step is to list those times and read the active value on each interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{Switch times: }t=2,4,6",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Split the time axis into $t<2$, $2\\le t<4$, $4\\le t<6$, and $t\\ge 6$. On each interval, add the coefficients of the terms that are active there.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}0, & t<2\\\\1, & 2\\le t<4\\\\3, & 4\\le t<6\\\\0, & t\\ge 6\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The interval values are $0$, then $1$, then $3$, then $0$. Read those changes at the switch times as the step coefficients: a jump of $1$ at $t=2$, a further jump of $2$ at $t=4$, and a drop of $3$ at $t=6$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t-2)+2u(t-4)-3u(t-6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the compact step expression is the same coefficient pattern written directly in shifted-step form. The active-interval map and the step sum agree on every interval, which is the bookkeeping rule this example is modeling.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Simplifying Step-Function Expressions",
+          "section_index": 4,
+          "section_title": "Combining Overlapping Sloped Step Terms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Simplify $x(t)=(t-2)u(t-2)-(t-4)u(t-4)$ and express it as a compact piecewise form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that each shifted unit step turns a linear factor on only after its own switch time. Work interval by interval, and evaluate the slope only where the term is active.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t=2,4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the breakpoints to split the line into $t<2$, $2 \\le t < 4$, and $t \\ge 4$. In each region, keep only the active terms and simplify the linear expression that remains.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}0, & t<2\\\\t-2, & 2 \\le t < 4\\\\2, & t \\ge 4\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(t-2)-(t-4)=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The overlap cancels the slopes after $t=4$, so the piecewise form above is already the compact result. If you want the same answer in step notation, one equivalent form is $x(t)=(t-2)(u(t-2)-u(t-4))+2u(t-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Simplifying Step-Function Expressions",
+          "section_index": 5,
+          "section_title": "Rewriting Redundant Step Terms into Compact Expressions",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=u(t-2)-u(t-4)+u(t-4)-u(t-6)$ as a compact equivalent expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the canceling pair in $x(t)=u(t-2)-u(t-4)+u(t-4)-u(t-6)$. Before removing it, split the signal at the breakpoints $t=2,4,6$ and evaluate each interval separately.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}0, & t<2\\\\1, & 2 \\le t < 4\\\\1, & 4 \\le t < 6\\\\0, & t \\ge 6\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The middle two intervals match, so the boundary at $t=4$ is redundant. That means the pair $-u(t-4)+u(t-4)$ contributes nothing and can be removed.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t-2)-u(t-4)+u(t-4)-u(t-6)=u(t-2)-u(t-6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "One test point from each remaining interval confirms the equivalence: before $2$ the value is $0$, between $2$ and $6$ it is $1$, and after $6$ it returns to $0$. The compact form keeps only the net-effective switch events.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Simplifying Step-Function Expressions",
+          "section_index": 6,
+          "section_title": "Checking Simplified Step Expressions by Time Interval",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Verify that $x(t)=2u(t-1)-u(t-3)-u(t-5)+u(t-4)$ is equivalent to $y(t)=2u(t-1)-u(t-3)+u(t-4)-u(t-5)$ by checking each active interval.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the ordered list of switch times $t=1,3,4,5$. Test one representative from each interval so you check the interior of every segment and the behavior at each boundary.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{array}{c|ccccc}t & 0 & 2 & 3.5 & 4.5 & 6\\\\\\hline x(t) & 0 & 2 & 1 & 2 & 1\\\\ y(t) & 0 & 2 & 1 & 2 & 1\\end{array}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Every sample matches, so there is no interval mismatch and no boundary error. The candidate has the same active-value pattern as the original on all canonical intervals.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the verification rule to reuse: simplify first, then test one point from each canonical interval before you release the result.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Converting Graphs into Unit Step Expressions",
+      "lesson_core_move": "Translate a continuous-time signal graph into a simplified unit step expression by identifying its breakpoints, interval formulas, and shifted unit-step windows.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Converting Graphs into Unit Step Expressions",
+          "section_index": 1,
+          "section_title": "Introduction to Converting Graphs into Unit Step Expressions",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A clean continuous-time graph with a labeled time axis, a single nonzero interval from a to b, breakpoint markers at a and b, and the active interval highlighted clearly."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A graph is ready to convert when you can read its breakpoints first. The breakpoints tell you where the signal turns on, stays active, and turns off, so those times become the shifted step arguments in the expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For one finite interval, write a unit-step window as the difference of two shifted steps. The window is 1 on the active interval and 0 everywhere else, so it gates the signal to that segment only.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A\\big(u(t-a)-u(t-b)\\big)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the simplest pulse case, the active interval is $0 \\le t < T$, so the same rule becomes $x(t)=A\\big(u(t)-u(t-T)\\big)$. This is the base pattern you will reuse whenever a graph has one nonzero interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\sum_k f_k\\big[u(t-a_k)-u(t-b_k)\\big]",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For more complicated graphs, attach each interval formula to its own window, then combine the terms and simplify. The next steps will follow that same sequence: read the intervals, write each gated segment, and merge the result into one compact step expression.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Converting Graphs into Unit Step Expressions",
+          "section_index": 2,
+          "section_title": "Identifying Breakpoints and Interval Formulas from a Graph",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "A clean continuous-time graph with a labeled time axis, alternating zero and nonzero flat pieces, breakpoint markers at -2, 0, 3, and 5, and segment labels 0, 2, -1, 3, 0 shown directly on the graph."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Read the displayed graph and write the ordered breakpoint list together with the interval formula table $\\{(t_0,t_1]: f_1, (t_1,t_2]: f_2, \\dots\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start by reading the breakpoints in the graph. In this example, the signal changes at $t=-2$, $t=0$, $t=3$, and $t=5$, so those four times determine the ordered interval map.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now assign one formula to each region between neighboring breakpoints. Here the graph is piecewise constant, so each interval keeps the height shown on the plot, and the breakpoint convention places each change point on the interval to its right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "t_0=-2,\\quad t_1=0,\\quad t_2=3,\\quad t_3=5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=0 \\text{ for } t<-2,\\; 2 \\text{ for } -2\\le t<0,\\; -1 \\text{ for } 0\\le t<3,\\; 3 \\text{ for } 3\\le t<5,\\; 0 \\text{ for } t\\ge 5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That ordered breakpoint list and interval table are the complete input for the next conversion step. Keep the boundaries and interval values aligned exactly as shown, because the step-term rewrite will reuse this map directly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Converting Graphs into Unit Step Expressions",
+          "section_index": 3,
+          "section_title": "Converting a Single Nonzero Graph Segment into a Step Window Term",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "A clean continuous-time graph with a labeled time axis, one isolated nonzero flat segment of height A on the interval from a to b, breakpoint markers at a and b, and zero elsewhere so the window-difference rule is visually obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Convert the graph with $x(t)=A$ for $a\\le t<b$ and $x(t)=0$ elsewhere into a step form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a single nonzero interval with constant height $A$: the graph is zero before $a$, stays at $A$ on $a\\le t<b$, and returns to zero after $b$. That means one window term is enough; the job is to gate the amplitude with the two breakpoints.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the standard window difference. $u(t-a)$ turns the signal on at $a$, and $u(t-b)$ turns it back off at $b$, so $u(t-a)-u(t-b)$ is 1 exactly on the active interval and 0 elsewhere.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A\\big(u(t-a)-u(t-b)\\big)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the three regions in order. For $t<a$, both steps are 0. For $a\\le t<b$, the first step is 1 and the second is 0. For $t\\ge b$, both steps are 1, so the difference returns to 0. That verifies the exact single-window template for one isolated segment.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Converting Graphs into Unit Step Expressions",
+          "section_index": 4,
+          "section_title": "Converting a Piecewise Constant Graph into Shifted Unit Steps",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean continuous-time graph with a labeled time axis, breakpoint markers at a, b, and c, a first plateau of height A on the interval from a to b, a second plateau of height B on the interval from b to c drawn below the time axis to emphasize signed levels, and zero elsewhere so the multi-window sum is visually obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Convert the graph $0\\to A\\to B\\to 0$ over two intervals to a unit-step sum.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a piecewise constant graph with two nonzero plateaus. Read the levels and breakpoints first: the signal is $A$ on $a\\le t<b$, then $B$ on $b\\le t<c$, and zero outside those intervals.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write one shifted window for each plateau. The interval $a\\le t<b$ is isolated by $u(t-a)-u(t-b)$, and the interval $b\\le t<c$ is isolated by $u(t-b)-u(t-c)$; scaling each window by its plateau height gives the full signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=A\\big(u(t-a)-u(t-b)\\big)+B\\big(u(t-b)-u(t-c)\\big)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the result interval by interval. Before $a$ both windows are off; on $a\\le t<b$ only the first term contributes; on $b\\le t<c$ only the second term contributes; after $c$ both terms are off again. The signs stay attached to the plateau heights, so the step sum matches the graph exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Converting Graphs into Unit Step Expressions",
+          "section_index": 5,
+          "section_title": "Converting a Piecewise Linear Graph into Windowed Segment Formulas",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "A clean continuous-time graph with a labeled time axis, one rising line segment from (0,0) to (2,2), one falling line segment from (2,2) to (4,0), breakpoint markers at 0, 2, and 4, and zero elsewhere so the two linear segment windows are visually obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Convert the graph with $x(t)=t$ for $0\\le t<2$, $x(t)=4-t$ for $2\\le t<4$, and $x(t)=0$ elsewhere into a sum of windowed segment formulas.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is two linear pieces, not one constant plateau. Read each segment formula first: the signal rises like $t$ on $0\\le t<2$ and falls like $4-t$ on $2\\le t<4$. Then attach a gate that keeps each formula active only on its own interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use one window per segment. The rising piece is kept on by $u(t)-u(t-2)$, and the falling piece is kept on by $u(t-2)-u(t-4)$. Multiplying each interval formula by its own window prevents the linear trend from extending past its breakpoints.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=t\\big(u(t)-u(t-2)\\big)+(4-t)\\big(u(t-2)-u(t-4)\\big)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the intervals in order. Before $0$ both windows are off. On $0\\le t<2$, only the rising segment remains. On $2\\le t<4$, only the falling segment remains. After $4$, both windows are off again, so the windowed sum matches the graph on every interval.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Converting Graphs into Unit Step Expressions",
+          "section_index": 6,
+          "section_title": "Writing a Simplified Unit Step Expression from a Multi-Segment Graph",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-006",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-006]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-006]",
+              "image_description": "A clean continuous-time graph with a labeled time axis, breakpoint markers at 0, 2, 4, and 6, a constant plateau at height 2 from 0 to 2, a falling line segment from (2,2) to (4,0), a constant plateau at height -1 from 4 to 6 drawn below the axis to emphasize the sign change, and zero elsewhere so the simplification across shared breakpoints is visually obvious."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given the graph with $x(t)=2$ for $0\\le t<2$, $x(t)=4-t$ for $2\\le t<4$, $x(t)=-1$ for $4\\le t<6$, and $x(t)=0$ elsewhere, derive and simplify one compact unit-step expression that matches all intervals.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a mixed graph with constant and linear pieces. Read the interval formulas first: the signal is $2$ on $0\\le t<2$, then $4-t$ on $2\\le t<4$, then $-1$ on $4\\le t<6$, and $0$ elsewhere. The simplification comes from combining shared windows at the breakpoints.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-006"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Convert each segment independently. Use $u(t)-u(t-2)$ for the constant plateau, $u(t-2)-u(t-4)$ for the linear fall, and $u(t-4)-u(t-6)$ for the negative plateau. Then add the terms before simplifying the repeated breakpoint windows.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2\\big(u(t)-u(t-2)\\big)+(4-t)\\big(u(t-2)-u(t-4)\\big)-\\big(u(t-4)-u(t-6)\\big)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now combine the shared breakpoint terms at $t=2$ and $t=4$. Collecting like step functions gives one compact expression with one coefficient per breakpoint, which is easier to read and check.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2u(t)+(2-t)u(t-2)+(t-5)u(t-4)+u(t-6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the intervals in order. Before $0$ every step is off. On $0\\le t<2$ the value is $2$; on $2\\le t<4$ it becomes $4-t$; on $4\\le t<6$ it is $-1$; and after $6$ it returns to $0$. That confirms the simplified form matches the full graph exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

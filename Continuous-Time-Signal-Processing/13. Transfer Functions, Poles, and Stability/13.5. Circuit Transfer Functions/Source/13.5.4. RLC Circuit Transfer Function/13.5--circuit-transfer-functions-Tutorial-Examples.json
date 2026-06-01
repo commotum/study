@@ -1,0 +1,2237 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Deriving Transfer Functions from Differential Equations",
+      "lesson_core_move": "Convert a circuit input-output differential equation into a Laplace-domain transfer function by applying zero-initial-condition derivative properties and isolating H(s)=Y(s)/X(s) as the rational expression used for pole, stability, and frequency-response analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Deriving Transfer Functions from Differential Equations",
+          "section_index": 1,
+          "section_title": "Introduction to Deriving Transfer Functions from Differential Equations",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this section, the target move is to turn one input-output differential equation into one transfer-function ratio, then reuse that algebraic template repeatedly. The goal is to isolate the map $H(s)=\\frac{Y(s)}{X(s)}$ so the system can be analyzed by poles, stability, and frequency response in later topics.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use one-sided Laplace notation and keep initial conditions explicit: $\\mathcal{L}\\{x(t)\\}=X(s)$, $\\mathcal{L}\\{y(t)\\}=Y(s)$, and $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$, with the zero-initial-conditions rule setting $y(0^-)=0$ for this lesson. The same cue appears every time: map each term to the $s$ domain, then simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case $y'(t)+3y(t)=x(t)$ and apply the map term by term: replace $y'(t)$ with $sY(s)-y(0^-)$, replace $y(t)$ with $Y(s)$, and replace $x(t)$ with $X(s)$. Under zero initial conditions this becomes $(s+3)Y(s)=X(s)$, which is already in transfer-function-ready form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y(t)\\}=Y(s),\\quad \\mathcal{L}\\{x(t)\\}=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Isolate the ratio using three moves: gather $Y(s)$ terms, divide by the full $X(s)$ side, and name the quotient $H(s)$. For the base case, $\\frac{Y(s)}{X(s)}=\\frac{1}{s+3}$. Every later section adds one controlled wrinkle, but the sequence stays the same.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Deriving Transfer Functions from Differential Equations",
+          "section_index": 2,
+          "section_title": "Applying Zero-Initial-Condition Laplace Derivative Rules",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y''(t)+4y'(t)+5y(t)=x(t)$ into the Laplace-domain algebraic equation using zero initial conditions.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to keep the target move visible: map each time-domain derivative to an $s$-domain algebraic term, then remove initial-value terms using zero-initial-conditions. This keeps the same transfer-function workflow as the prior tutorial while adding one second-derivative wrinkle.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the derivative identities used in this topic. For one-sided Laplace with $y(t)$, the transforms are",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)\\\\\\\\n\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the rules term-by-term to the differential equation: replace $y''(t)$ by $s^2Y(s)-sy(0^-)-y'(0^-)$, replace $y'(t)$ by $sY(s)-y(0^-)$, replace $y(t)$ by $Y(s)$, and replace $x(t)$ by $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)-sy(0^-)-y'(0^-)+4\\,\\left(sY(s)-y(0^- )\\right)+5Y(s)=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the zero-initial-condition terms to zero: $y(0^-)=0$ and $y'(0^-)=0$. This is the controlled novelty of this step, and it strips the equation to pure algebra in $s$:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)+4sY(s)+5Y(s)=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect the coefficients of $Y(s)$ and keep the final relation exactly in $X(s),Y(s)$ form. Here the result is $s^2Y(s)+4sY(s)+5Y(s)=X(s)$, which is the clean baseline for later question variants with different derivative orders or coefficients.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Deriving Transfer Functions from Differential Equations",
+          "section_index": 3,
+          "section_title": "Transforming an Input-Output Differential Equation into an Algebraic Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y'(t)+3y(t)=x''(t)-2x(t)$ into $X(s)$ and $Y(s)$ form, using zero initial conditions.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The new cue in this step is a mixed-order equation: the input now has its own derivative, so the same rule set from the previous section must be applied on both sides. Convert each term to the Laplace domain and keep the same target algebraic form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided transform identities for each derivative term before collecting coefficients:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-),\\quad \\mathcal{L}\\{y(t)\\}=Y(s),\\quad \\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-),\\quad \\mathcal{L}\\{x(t)\\}=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute these rules into the differential equation: $(sY(s)-y(0^-))+3Y(s)=\\left(s^2X(s)-sx(0^-)-x'(0^-)\\right)-2X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use zero-initial-condition assumptions for this topic. Set $y(0^-)=0$, $x(0^-)=0$, and $x'(0^-)=0$. The transformed equation becomes:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s+3)Y(s)=(s^2-2)X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: all $Y(s)$ terms are on the left and all $X(s)$ terms are on the right, exactly in the transfer-form algebraic template. This is the same pattern as earlier steps with one added wrinkle on the input side.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Deriving Transfer Functions from Differential Equations",
+          "section_index": 4,
+          "section_title": "Isolating H(s)=Y(s)/X(s) from the Transformed Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From $(s+1)Y(s)+(2s+3)Y(s)=(4s+5)X(s)$, isolate $H(s)=\\frac{Y(s)}{X(s)}$ as a single rational function.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue for this step is a final algebraic cleanup: the transformed equation has multiple $Y(s)$ groups on one side, and the goal is to combine them into one coefficient before forming $H(s)=\\frac{Y(s)}{X(s)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First, combine like $Y(s)$ terms using the distributive rule on the left side.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s+1)Y(s)+(2s+3)Y(s)=\\left((s+1)+(2s+3)\\right)Y(s)=(3s+4)Y(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now divide both sides by $X(s)$ to form the transfer-function ratio directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{(3s+4)Y(s)}{X(s)}=4s+5 \\;\\Rightarrow\\; \\frac{Y(s)}{X(s)}=\\frac{4s+5}{3s+4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Solve for $\\frac{Y(s)}{X(s)}$ and express the transfer function in canonical rational form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{4s+5}{3s+4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This isolated form is the reusable target: one numerator and one denominator in $s$, ready for pole/stability work in the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Deriving Transfer Functions from Differential Equations",
+          "section_index": 5,
+          "section_title": "Writing H(s) as a Rational Function for Pole and Stability Analysis",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $\\frac{5s+2}{(s+1)(s+3)}$ as a single rational form and state the characteristic denominator polynomial used for pole evaluation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this step is to represent the denominator in a form that directly exposes poles. The expression already has numerator and denominator pieces, but we now connect the factored denominator to equivalent expanded form so the pole locations can be read consistently.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the rational function and expand the denominator only as a structural check.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{5s+2}{(s+1)(s+3)}=\\frac{5s+2}{s^2+4s+3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, identify and label the characteristic denominator polynomial for stability work: the denominator is $s^2+4s+3$, so the characteristic equation is $s^2+4s+3=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+4s+3=(s+1)(s+3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Solve for the roots of the denominator polynomial to locate poles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-1\\quad \\text{and}\\quad s=-3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both poles are in the left half-plane, so this transfer function is stable in the standard LTI sign convention used in this module. Preserve this result pattern because future questions reuse the same denominator-to-pole mapping in both expanded and factored forms.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "RC Transfer Functions in the $s$-Domain",
+      "lesson_core_move": "Derive first-order RC circuit transfer functions in the s-domain by replacing capacitors with 1/(sC), applying voltage or current division to form H(s)=Y(s)/X(s), and interpreting the resulting pole-zero structure in terms of time constant and low-pass or high-pass behavior.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "RC Transfer Functions in the $s$-Domain",
+          "section_index": 1,
+          "section_title": "Introduction to RC Transfer Functions in the $s$-Domain",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-image-01",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Annotated series RC schematic with input node labeled $V_{in}$, resistor $R$, capacitor $C$, output node labeled $V_o$, and ground references. Show branch order clearly so the capacitor and resistor ordering is unambiguous."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this lesson sequence we use transfer functions to replace circuit differential-equation setup with one compact algebraic workflow. The goal is to build a repeatable pattern: identify the circuit impedance model, form one output-to-input ratio, then use it as the basis for all low-pass and high-pass examples in this module.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start each RC section by recognizing the nodes as Laplace signals. Map the input node to $V_i(s)$, the chosen output node to $V_o(s)$, and label the capacitor impedance with the substitution $Z_C=\\frac{1}{sC}$. Then define the transfer function explicitly as $H(s)=\\frac{V_o(s)}{V_i(s)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{V_o(s)}{V_i(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-image-01"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, use a series RC with the output across the capacitor. Apply the divider rule in the $s$-domain to get $V_o(s)=V_i(s)\\,\\frac{Z_C}{R+Z_C}=V_i(s)\\,\\frac{\\frac{1}{sC}}{R+\\frac{1}{sC}}=\\frac{V_i(s)}{1+sRC}$. Therefore the base transfer function is $H(s)=\\frac{1}{1+sRC}$, which is the canonical first-order low-pass form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Z_C=\\frac{1}{sC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If you keep the same steps and only change the output node to be across the resistor, the divider form becomes complementary: $H(s)=\\frac{R}{R+\\frac{1}{sC}}=\\frac{sRC}{1+sRC}$. The only meaningful structural change is the node-choice slotting, while the same one-parameter workflow remains intact.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The remaining example sections will reuse this exact move with one new wrinkle at a time: set up the $s$-domain objects, apply ratio logic, simplify to first-order $H(s)$, and then read poles, zeros, and the time constant from the same result.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "RC Transfer Functions in the $s$-Domain",
+          "section_index": 2,
+          "section_title": "Writing the $s$-Domain RC Voltage Divider",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-image-02",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Series RC voltage-divider diagram with input source node $V_i$ on the left, resistor $R$, capacitor $C$, and output node $V_o$ across the capacitor."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Write the transfer function for a series RC circuit where $V_o$ is the capacitor voltage and reduce it to a standard first-order form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a series RC branch with output taken across the capacitor. Treat the input as $V_i(s)$ and the target output as $V_o(s)$, then build $H(s)=\\frac{V_o(s)}{V_i(s)}$ from that diagram.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-image-02"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the capacitor model first. Replace the capacitor impedance with its $s$-domain equivalent, then substitute that value into the divider structure that connects $R$ and the capacitor in series.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Z_C = \\frac{1}{sC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The divider expression is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "V_o(s)=V_i(s)\\,\\frac{Z_C}{R+Z_C}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $Z_C=\\frac{1}{sC}$ and simplify the fraction by multiplying numerator and denominator by $sC$. This keeps one controlled algebraic wrinkle from the previous section while making the final ratio explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "V_o(s)=V_i(s)\\,\\frac{\\frac{1}{sC}}{R+\\frac{1}{sC}}=V_i(s)\\,\\frac{1}{1+sRC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The resulting transfer function is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{V_o(s)}{V_i(s)}=\\frac{1}{1+sRC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This form is the standard first-order low-pass pattern with time constant $\\tau=RC$ and a single pole at $s=-1/(RC)$. The circuit is now represented by one reusable $H(s)$ expression ready for pole-zero interpretation in the next section.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "RC Transfer Functions in the $s$-Domain",
+          "section_index": 3,
+          "section_title": "Deriving a Low-Pass RC Transfer Function",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-image-03",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Series RC low-pass diagram with input node labeled $V_i$, resistor $R$, capacitor $C$, and output node labeled $V_o$ across the capacitor. Include the same geometry as the previous step and a simple high-$\\omega$ attenuation callout ($|H(j\\omega)| \\to 0$)."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Derive the low-pass expression and compute $\\tau$, $\\omega_c$, and $H(0)$ for a capacitor-output RC divider.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same recognition cue as the previous example: a series RC branch where the output is across the capacitor. Map the input to $V_i(s)$, the output to $V_o(s)$, and the target ratio is still $H(s)=\\frac{V_o(s)}{V_i(s)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-image-03"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The divider form is the same as before, but now we also extract endpoint interpretation from the final transfer function.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{V_o(s)}{V_i(s)}=\\frac{Z_C}{R+Z_C}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Replace the capacitor by its $s$-domain impedance and simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Z_C=\\frac{1}{sC},\\qquad H(s)=\\frac{1}{R+\\frac{1}{sC}}=\\frac{1}{1+sRC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now write the result in standard first-order time-constant form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{1}{1+sRC}=\\frac{1}{1+s\\tau}, \\quad \\tau=RC",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read endpoint behavior directly from this form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{s\\to 0}H(s)=1,\\qquad \\lim_{s\\to \\infty}H(s)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The DC value is $H(0)=1$, and the cutoff frequency is $\\omega_c=1/\\tau=1/(RC)$. Because low frequency passes with unity gain and high frequency decays to zero, this is a low-pass transfer function.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "RC Transfer Functions in the $s$-Domain",
+          "section_index": 4,
+          "section_title": "Deriving a High-Pass RC Transfer Function",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-image-04",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Series RC high-pass diagram with input node labeled $V_i$, resistor $R$, capacitor $C$, and output node labeled $V_o$ across the resistor. Use same geometry as the low-pass section and label the output-node flip clearly."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Derive $H(s)$ for the same RC network but with $V_o$ across $R$, then interpret numerator and limits.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same series RC branch as before, but the output node flips from the capacitor to the resistor. Keep the same mapping: input is $V_i(s)$, output is $V_o(s)$ across $R$, and the ratio target is $H(s)=\\frac{V_o(s)}{V_i(s)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-image-04"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the divider rule again so the only new variation is the tap point.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{V_o(s)}{V_i(s)}=\\frac{R}{R+Z_C}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $Z_C=\\frac{1}{sC}$ and simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{R}{R+\\frac{1}{sC}}=\\frac{sRC}{1+sRC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write it in standard first-order form and read the pole-zero structure from it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{sRC}{1+sRC}=\\frac{s\\tau}{1+s\\tau},\\quad \\tau=RC",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The zero is at $s=0$ and the pole is at $s=-1/(RC)$ from the first-order denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{s\\to 0}H(s)=0,\\qquad \\lim_{s\\to \\infty}H(s)=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "These endpoint checks and the nonzero numerator show it is high-pass: DC gain is zero, while high-frequency gain approaches unity.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "RC Transfer Functions in the $s$-Domain",
+          "section_index": 5,
+          "section_title": "Reading Poles, Zeros, and Time Constant from an RC Transfer Function",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Identify poles and zeros for both low-pass and high-pass RC transfer functions, then map each to $\\tau=RC$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is now pure recognition: you no longer build a new divider; you read structure from a finished transfer-function form. Use $H(s)=\\frac{N(s)}{D(s)}$ and extract features directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the two canonical forms from previous steps: $H_{LP}(s)=\\frac{1}{1+sRC}$ and $H_{HP}(s)=\\frac{sRC}{1+sRC}$. Keep numerator and denominator explicit for a stable comparison.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H_{LP}(s)=\\frac{N_{LP}(s)}{D_{LP}(s)}=\\frac{1}{1+sRC},\\qquad H_{HP}(s)=\\frac{N_{HP}(s)}{D_{HP}(s)}=\\frac{sRC}{1+sRC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the same rule for both functions: zeros satisfy $N(s)=0$, poles satisfy $D(s)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N_{LP}(s)=1\\;\\Rightarrow\\; \\text{No finite zeros},\\qquad D_{LP}(s)=1+sRC\\;\\Rightarrow\\; s=-\\frac{1}{RC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N_{HP}(s)=sRC\\;\\Rightarrow\\; s=0,\\qquad D_{HP}(s)=1+sRC\\;\\Rightarrow\\; s=-\\frac{1}{RC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Extract the shared time constant from the first-order denominator factor the same way in both cases.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau = RC,\\qquad s=-\\frac{1}{\\tau}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $R>0$ and $C>0$, $\\tau=RC>0$, so the pole is in the left-half plane and both filters are stable; low-pass has a DC-zero numerator and high-pass has a zero at the origin.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "RC Transfer Functions in the $s$-Domain",
+          "section_index": 6,
+          "section_title": "Classifying RC Filter Behavior from an $s$-Domain Transfer Function",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given two candidate RC transfer functions, classify each as low-pass or high-pass and justify with $H(0)$ and $H(\\infty)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is no longer deriving a circuit; it is classification from completed rational forms. Use the same workflow: write the DC and high-frequency limits, then use zero location to confirm behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use these two examples: $H_1(s)=\\frac{1}{1+sRC}$ and $H_2(s)=\\frac{4sRC}{1+sRC}$, with $R,C>0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H_1(s)=\\frac{1}{1+sRC},\\qquad H_2(s)=\\frac{4sRC}{1+sRC}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $H_1(s)$, evaluate endpoints:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{s\\to 0}H_1(s)=1,\\qquad \\lim_{s\\to \\infty}H_1(s)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The numerator has no finite zero, so this form passes low frequencies and attenuates high frequencies. Also, $s=-1/(RC)<0$ puts the pole in the stable left-half plane.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $H_2(s)$, use the same endpoint rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{s\\to 0}H_2(s)=0,\\qquad \\lim_{s\\to \\infty}H_2(s)=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The zero at $s=0$ in the numerator forces DC suppression, and the nonzero high-frequency gain indicates high-pass behavior (with gain scaling $4$ here due to the chosen numerator constant).",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final classification: $H_1(s)$ is low-pass and $H_2(s)$ is high-pass; in both cases the classification comes directly from numerator zeros and endpoint gains.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "RLC Circuit Differential Equation",
+      "lesson_core_move": "Derive the second-order input-output differential equation of an RLC circuit from Kirchhoff laws and element relations, identifying the coefficients that will become the circuit transfer function denominator and pole locations.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "RLC Circuit Differential Equation",
+          "section_index": 1,
+          "section_title": "Introduction to RLC Circuit Differential Equation",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Schematic of a single-loop series RLC circuit with source input $x(t)$, resistor $R$, inductor $L$, capacitor $C$, and output $y(t)$ across the capacitor."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For this lesson, treat the circuit as the target object: a **series** loop with source input $x(t)$, resistor $R$, inductor $L$, capacitor $C$, and output $y(t)=v_C(t)$. Use one loop current $i(t)$ for all three passive elements so each branch can be represented by the same current.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The branch equations are the action rules for this step. Write resistor voltage as $v_R(t)=R\\,i(t)$, inductor voltage as $v_L(t)=L\\,\\frac{d i(t)}{dt}$, and capacitor voltage as $v_C(t)=y(t)$ with $i(t)=C\\,\\frac{d y(t)}{dt}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply one-loop KVL in symbolic form: $x(t)=v_R(t)+v_L(t)+v_C(t)$. This is the direct substitution target that lets the student move from element-level relations to one input-output differential equation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=v_R(t)+v_L(t)+y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "v_R(t)=R\\,i(t),\\;v_L(t)=L\\,\\frac{d i(t)}{dt},\\;i(t)=C\\,\\frac{d y(t)}{dt}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute these relations and replace $i(t)$ with $\\frac{d y(t)}{dt}$ to reach the canonical form $L C\\,\\frac{d^2 y(t)}{dt^2}+R C\\,\\frac{d y(t)}{dt}+y(t)=x(t)$. In later steps, these coefficients $L C$, $R C$, and $1$ become the denominator structure that predicts pole locations in the transfer-function stage.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "RLC Circuit Differential Equation",
+          "section_index": 2,
+          "section_title": "Writing Kirchhoff's Law for a Series RLC Circuit",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Series RLC loop with labels and arrows for current direction, showing output node at capacitor and source at input node."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Write the KVL equation for the shown series RLC circuit with input $x(t)$ and output $y(t)=v_C(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same loop direction used in the diagram: current $i(t)$ flows through $R$, $L$, and $C$ in series from the source toward the output node. The cue is that all three element voltages must sum algebraically to the source voltage in a single closed loop.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply Kirchhoff's voltage law to the one loop and write one raw sum equation before substitution:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=v_R(t)+v_L(t)+v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now label each term with its branch so sign conventions are fixed: $v_R(t)$ is the resistor drop, $v_L(t)$ is the inductor drop, and $v_C(t)$ is the capacitor drop across the output node. This is the canonical raw KVL identity to carry into the next section, where each term will be converted into $R$, $L$, and $C$ relations.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "RLC Circuit Differential Equation",
+          "section_index": 3,
+          "section_title": "Substituting Resistor, Inductor, and Capacitor Relations",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From the KVL identity in the previous step, substitute $v_R(t)$, $v_L(t)$, and $v_C(t)$ to write the differential expression in terms of $y(t)$ and its derivatives.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the raw series loop identity from the previous section, so we keep that as the starting line and replace each branch voltage with its component relation without changing signs or topology.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=v_R(t)+v_L(t)+v_C(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the stable output choice $y(t)=v_C(t)$ from earlier sections, then apply the substitutions: $v_R(t)=R i(t)$, $v_L(t)=L\\frac{d i(t)}{dt}$, and $i(t)=C\\frac{d y(t)}{dt}$. Substitute $i(t)$ into both $v_R$ and $v_L$, and keep $v_C(t)=y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=R C\\frac{d y(t)}{dt}+L C\\frac{d^2 y(t)}{dt^2}+y(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now group terms so that the input is isolated on the left and the output derivatives stay on the right. This is the clean first-pass differential form that identifies the $L C$, $R C$, and leading-$1$ coefficients used in the next section.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "RLC Circuit Differential Equation",
+          "section_index": 4,
+          "section_title": "Eliminating Intermediate Variables to Relate Input and Output",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Simplify the substituted equation from Step 3 to remove any intermediate current variable and write the final input-output differential equation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that Step 3 left us with $x(t)=R C\\frac{d y(t)}{dt}+L C\\frac{d^2 y(t)}{dt^2}+y(t)$, so the goal now is pure algebra: eliminate no new physics, only intermediate form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose the standard differential-order arrangement by collecting like terms in $y''(t)$, $y'(t)$, and $y(t)$. Reorder the same equation so the highest-order derivative appears first:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L C\\frac{d^2 y(t)}{dt^2}+R C\\frac{d y(t)}{dt}+y(t)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Move everything to a single explicit ODE form and check for leftover current terms. No $i(t)$ remains, so the intermediate variable is eliminated and the input-output relation is ready for the next standardization step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "RLC Circuit Differential Equation",
+          "section_index": 5,
+          "section_title": "Arranging the RLC Equation in Standard Second-Order Form",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite the derived ODE in standard form $y''(t)+a_1 y'(t)+a_0 y(t)=b_0 x(t)$ and compute $a_1$ and $a_0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the unnormalized equation $L C\\frac{d^2 y(t)}{dt^2}+R C\\frac{d y(t)}{dt}+y(t)=x(t)$. The new move is a pure standardization pass: divide every term by $L C$ to match the canonical $y''+a_1 y'+a_0 y=b_0 x$ template.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{L C\\frac{d^2 y(t)}{dt^2}+R C\\frac{d y(t)}{dt}+y(t)}{L C}=\\frac{x(t)}{L C}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect the normalized coefficients term by term to identify the standard form constants: the second-derivative coefficient becomes 1, the first-derivative coefficient becomes $\\frac{R}{L}$, and the zeroth-derivative coefficient becomes $\\frac{1}{L C}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y''(t)+\\frac{R}{L}y'(t)+\\frac{1}{L C}y(t)=\\frac{1}{L C}x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Record the mapping for later handoff: $a_1=\\frac{R}{L}$ and $a_0=\\frac{1}{L C}$, with $b_0=\\frac{1}{L C}$. This keeps coefficient interpretation aligned with later transfer-function denominator structure.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "RLC Circuit Differential Equation",
+          "section_index": 6,
+          "section_title": "Identifying Coefficients That Determine RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From $y''+\\frac{R}{L}y'+\\frac{1}{LC}y=\\frac{1}{LC}x$, form the characteristic denominator and map coefficients to pole form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the normalized ODE, so to identify poles we now attach the standard homogeneous replacement $\\frac{d}{dt}\\to s$ to the zero-input part only and ignore the forcing coefficient for now.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y''+\\frac{R}{L}y'+\\frac{1}{L C}y=\\frac{1}{L C}x \\quad\\Rightarrow\\quad s^2+\\frac{R}{L}s+\\frac{1}{L C}=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Convert back to the circuit-scaled denominator for transfer-function form by multiplying by $L C$: ",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=L C s^2+R C s+1.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the sign/placement rule explicit: positive $\\frac{R}{L}$ and positive $\\frac{1}{L C}$ keep both characteristic coefficients positive in passive circuits, which is the local stability trend signal expected in this topic. The mapping here is the carry-forward bridge to pole-interpretation work in the next section.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "RLC Circuit Transfer Function",
+      "lesson_core_move": "Derive the RLC circuit transfer function H(s)=Y(s)/X(s) by Laplace-transforming its differential equation and expressing the result as a rational s-domain input-output ratio for pole and stability analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "RLC Circuit Transfer Function",
+          "section_index": 1,
+          "section_title": "Introduction to RLC Circuit Transfer Function",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The target object in this section is one transfer function ratio, not a long derivation. Every later step in this topic should reuse the same goal: from a differential equation, produce $H(s)=\\frac{Y(s)}{X(s)}$ in one algebraic pass so stability analysis can be done directly from the denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the canonical base model from this topic and hold it fixed while students learn the method: $L C\\,\\frac{d^2 y(t)}{dt^2}+R C\\,\\frac{dy(t)}{dt}+y(t)=x(t)$. The only required action is to Laplace-transform each term and then collect powers of $Y(s)$ and $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Under the zero-initial-condition convention used in this module, use these substitutions: $\\mathcal{L}\\{y'(t)\\}=sY(s)$, $\\mathcal{L}\\{y''(t)\\}=s^2Y(s)$, $\\mathcal{L}\\{y(t)\\}=Y(s)$, and $\\mathcal{L}\\{x(t)\\}=X(s)$. No extra initial-condition terms are carried in this setup.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now isolate the ratio by dividing by the input-side factor: $H(s)=\\frac{Y(s)}{X(s)}=\\frac{1}{L C\\,s^2+R C\\,s+1}$. This is the one move students need to memorize before moving on.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{1}{L C\\,s^2+R C\\,s+1}=\\frac{1/(L C)}{s^2+(R/L)s+1/(L C)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The skill you should carry forward from this section is the denominator-first check: rewrite $H(s)$ in rational form, read the denominator $D(s)$, and use it for pole location work in the next steps.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "RLC Circuit Transfer Function",
+          "section_index": 2,
+          "section_title": "Laplace-Transforming an RLC Differential Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Apply the Laplace transform to $L C\\,\\frac{d^2 y(t)}{dt^2}+R C\\,\\frac{dy(t)}{dt}+y(t)=x(t)$ under zero initial conditions and express the equation in terms of $Y(s)$ and $X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue for this example is the differential equation itself. The action is the same conversion pattern as the previous step: map each time-domain term to its Laplace-domain form, set initial conditions to zero, and collect a single algebraic relation in $Y(s)$ and $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $\\mathcal{L}\\{\\frac{d^2 y}{dt^2}\\}=s^2Y(s)-s y(0^-)-\\dot y(0^-)$ for the second-derivative term and $\\mathcal{L}\\{\\frac{dy}{dt}\\}=sY(s)-y(0^-)$ for the first-derivative term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the zero-initial-condition rule from this module: set $y(0^-)=0$ and $\\dot y(0^-)=0$, so the derivative transforms reduce to multiplication by $s$. Also use $\\mathcal{L}\\{y(t)\\}=Y(s)$ and $\\mathcal{L}\\{x(t)\\}=X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L C\\left(s^2Y(s)-s y(0^-)-\\dot y(0^- )\\right)+R C\\left(sY(s)-y(0^-)\\right)+Y(s)=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect the transformed terms on one line and verify the result is purely algebraic: a single relation between $Y(s)$ and $X(s)$ with no lingering time-domain terms. The final transformed equation is the completed target for this step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "RLC Circuit Transfer Function",
+          "section_index": 3,
+          "section_title": "Isolating the Output-to-Input Ratio",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From the transformed relation $L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)$, isolate $\\frac{Y(s)}{X(s)}$ in one fraction.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue for this example is the transformed differential equation itself. The action is to isolate the system ratio form by turning one transformed equation into the explicit transfer expression $H(s)=\\frac{Y(s)}{X(s)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First, factor all left-side $Y(s)$ terms into one polynomial coefficient times $Y(s)$. This keeps the final ratio step purely mechanical.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(L C\\,s^2 + R C\\,s + 1)Y(s)=X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, divide both sides by $X(s)$ to place $Y(s)$ over $X(s)$ and keep all input dependence in the denominator factor only.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{Y(s)}{X(s)}=\\frac{1}{L C\\,s^2+R C\\,s+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That gives the core transfer ratio. Optionally normalize by dividing numerator and denominator by $L C$ to expose the standard second-order template when desired:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{1}{L C\\left(s^2+\\frac{R}{L}s+\\frac{1}{L C}\\right)}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "RLC Circuit Transfer Function",
+          "section_index": 4,
+          "section_title": "Writing an RLC Transfer Function as a Rational Function of s",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}$ as $\\frac{K}{s^2+(R/L)s+1/(L C)}$ for $L=1$, $R=4$, $C=\\frac12$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the raw transfer form $H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}$. The rule is to divide through by the leading $s^2$ coefficient so the denominator is in standard second-order form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start by dividing numerator and denominator by $L C$. This is legal because $L C\\neq 0$ for passive components, and it exposes the normalized template explicitly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}=\\frac{\\frac{1}{L C}}{s^2+\\frac{R}{L}s+\\frac{1}{L C}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute $L=1$, $R=4$, $C=\\frac12$. Then $L C=\\frac12$, so the normalized gain becomes $\\frac{1}{L C}=2$ and the denominator coefficients become $\\frac{R}{L}=4$ and $\\frac{1}{L C}=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{2}{s^2+4s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep both checkpoints. The unnormalized denominator is $\\frac12 s^2+2s+1$, and the standardized denominator is $s^2+4s+2$. Both are equivalent, but the latter is the form you reuse for pole and stability work.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "RLC Circuit Transfer Function",
+          "section_index": 5,
+          "section_title": "Identifying the Denominator Polynomial for Pole Analysis",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From $H(s)=\\frac{1}{s^2+3s+2}$, state the characteristic polynomial and list the two poles.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the denominator in $H(s)$, since poles are defined by the values of $s$ where the transfer function denominator is zero. So we read $H(s)$ in denominator-first form and identify",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=s^2+3s+2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, factor this quadratic to expose poles directly as roots of $D(s)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+3s+2=(s+1)(s+2),\\quad D(s)=0\\iff s=-1\\text{ or }s=-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both roots are negative real parts, so this pole candidate set signals a stable pattern in later LTI stability checkpoints.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Checkpoint statement to reuse: characteristic polynomial $D(s)=s^2+3s+2$, poles $\\{-1,-2\\}$, stable-sign pattern $(\\Re\\{s\\}<0)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Computing Poles of an RLC Circuit",
+      "lesson_core_move": "Compute the poles of an RLC circuit by solving the denominator of its transfer function as a characteristic polynomial in s and locating the roots used for stability interpretation.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Computing Poles of an RLC Circuit",
+          "section_index": 1,
+          "section_title": "Introduction to Computing Poles of an RLC Circuit",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In this step, the transfer function is already in rational form, so the first thing to recognize is the denominator. Write the RLC transfer function as $H(s)=\\dfrac{N(s)}{D(s)}$ and treat $D(s)$ as the characteristic polynomial for pole analysis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{N(s)}{D(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The poles are the values of $s$ that make the denominator zero, so the next action is to solve $D(s)=0$. In the simplest base case, $H(s)=\\dfrac{1}{s+1}$ has one pole at $s=-1$, which is a left-half-plane root and signals a decaying mode.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That sign test is the stability cue to keep in mind: left-half-plane poles decay, while right-half-plane poles grow. In the next steps, you will use this same denominator-to-root move on second-order RLC polynomials, including repeated and complex-conjugate cases.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Computing Poles of an RLC Circuit",
+          "section_index": 2,
+          "section_title": "Identifying the RLC Characteristic Polynomial",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $H(s)=\\dfrac{12}{2s^2+6s+3}$, state the characteristic polynomial and write the equation to solve for poles.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the denominator of the transfer function. Write $H(s)$ in the form $H(s)=\\dfrac{N(s)}{D(s)}$, so here the characteristic polynomial is $D(s)=2s^2+6s+3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{12}{2s^2+6s+3}=\\frac{N(s)}{D(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To prepare for pole solving, set the denominator equal to zero: $D(s)=0$. If you want the polynomial in normalized form, divide by the leading coefficient to get $s^2+3s+\\frac{3}{2}=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "2s^2+6s+3=0 \\quad \\Longrightarrow \\quad s^2+3s+\\frac{3}{2}=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the form you will keep using: identify the denominator, name it as the characteristic polynomial, and isolate the equation whose roots are the poles. The next step will solve that polynomial and interpret the roots in the $s$-plane.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Computing Poles of an RLC Circuit",
+          "section_index": 3,
+          "section_title": "Computing Distinct Real RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find poles of $H(s)=\\dfrac{10}{s^2+4s+3}$ and classify them as distinct real poles.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the denominator polynomial, so start by setting $s^2+4s+3=0$. Because this is a second-order characteristic polynomial, the roots of this equation are the poles of the circuit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+4s+3=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Compute the discriminant to check whether the roots are real and distinct: $\\Delta=b^2-4ac=4^2-4(1)(3)=16-12=4$. Since $\\Delta>0$, there are two different real roots.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta=16-12=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now solve the quadratic to get the poles $s=-1$ and $s=-3$. Both poles lie in the left half of the $s$-plane, so this example is a stable two-pole case with distinct real decay rates.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-1,\\,-3",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Computing Poles of an RLC Circuit",
+          "section_index": 4,
+          "section_title": "Computing Repeated RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute poles of $H(s)=\\dfrac{7}{s^2+2s+1}$ and write them as a repeated-pole result.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is still the denominator polynomial, so start from $s^2+2s+1=0$. This is the same characteristic-polynomial step as before, but now the coefficients produce a zero discriminant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+2s+1=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Compute the discriminant: $\\Delta=b^2-4ac=2^2-4(1)(1)=4-4=0$. A zero discriminant means the quadratic has one repeated real root.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta=4-4=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the quadratic formula once and keep the multiplicity: $s=-1$ with multiplicity $2$. That repeated pole is a left-half-plane pole, so the mode is stable but has a repeated-root response shape rather than two distinct decay rates.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-1 \\text{ with multiplicity } 2",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Computing Poles of an RLC Circuit",
+          "section_index": 5,
+          "section_title": "Computing Complex-Conjugate RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find poles of $H(s)=\\dfrac{4}{s^2+2s+5}$ and classify stability from the pair in the $s$-plane.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the denominator polynomial, so set $s^2+2s+5=0$ and read off $a=1$, $b=2$, and $c=5$. Because this is the characteristic equation, the roots of that quadratic are the poles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+2s+5=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now check the discriminant. Here $\\Delta=b^2-4ac=2^2-4(1)(5)=4-20=-16$, so the roots are complex conjugates rather than two real poles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta=4-20=-16",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the quadratic formula in complex form: $s=-\\dfrac{b}{2a}\\pm j\\dfrac{\\sqrt{4ac-b^2}}{2a}$. Substituting the coefficients gives $s=-1\\pm 2j$, so the pole pair lies in the left half-plane and produces a decaying oscillatory response.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-1\\pm 2j",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Computing Poles of an RLC Circuit",
+          "section_index": 6,
+          "section_title": "Locating RLC Poles in the $s$-Plane",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-006",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-006]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-006]",
+              "image_description": "Clean $s$-plane with horizontal real axis and vertical imaginary axis centered at the origin. Label the left-half-plane as stable and the right-half-plane as unstable. Mark a double pole at $s=-1$ on the negative real axis with a doubled pole marker, and mark the conjugate pair at $s=-2\\pm j\\sqrt{6}$ with two symmetric dots. Include the imaginary-axis boundary label and a small legend that distinguishes pole markers from region labels."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Create a worked example that computes poles from $s^2+2s+1=0$ and $s^2+4s+10=0$, plots each, and classifies each set for stability in the same $s$-plane diagram.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is each denominator polynomial, and the rule is to solve the characteristic equation first, then place the resulting poles on the $s$-plane. For $s^2+2s+1=0$, the polynomial factors immediately; for $s^2+4s+10=0$, the discriminant is negative, so the poles must be a complex-conjugate pair.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}s^2+2s+1&=0 \\quad \\Rightarrow \\quad (s+1)^2=0 \\quad \\Rightarrow \\quad s=-1 \\text{ (double pole)}\\\\s^2+4s+10&=0 \\quad \\Rightarrow \\quad \\Delta=4^2-4(1)(10)=16-40=-24<0 \\quad \\Rightarrow \\quad s=-2\\pm j\\sqrt{6}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-006"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "On the plot, the double pole at $s=-1$ sits in the left-half-plane, so it is stable. The conjugate pair $s=-2\\pm j\\sqrt{6}$ also lies in the left-half-plane, so it is stable as well. The location rule is the same in every case: left-half-plane poles are stable, right-half-plane poles are unstable, and poles on the imaginary axis require special attention.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Determining Stability from RLC Poles",
+      "lesson_core_move": "Determine whether an RLC circuit transfer function is BIBO stable by checking that all computed poles lie strictly in the left half of the s-plane and interpreting any right-half-plane or imaginary-axis pole as a nondecaying circuit mode.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Determining Stability from RLC Poles",
+          "section_index": 1,
+          "section_title": "Introduction to Determining Stability from RLC Poles",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an RLC transfer function, the stability cue is the denominator of $H(s)$. Write the transfer function in the rational form $H(s)=N(s)/D(s)$, then treat the poles as the roots of $D(s)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{N(s)}{D(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The test is a left-half-plane test. The circuit is BIBO stable only when every pole $s_k$ has negative real part, written as $\\Re\\{s_k\\}<0$. A right-half-plane pole grows, and an imaginary-axis pole does not decay, so either case fails the BIBO stability test.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Re\\{s_k\\}<0 \\text{ for all poles } s_k \\Rightarrow \\text{ stable; } \\exists\\,s_k:\\Re\\{s_k\\}\\ge 0 \\Rightarrow \\text{ unstable}.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the simplest base case $H(s)=1/(s+3)$, the denominator is $D(s)=s+3$. Solving $s+3=0$ gives the single pole $s=-3$, and $\\Re\\{-3\\}=-3<0$, so this transfer function is stable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For higher-order RLC denominators, repeat the same check for each root of $D(s)$. A single pole with $\\Re\\{s_k\\}>0$ or $\\Re\\{s_k\\}=0$ determines the classification, because one growing or nondecaying circuit mode is enough to prevent BIBO stability.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Determining Stability from RLC Poles",
+          "section_index": 2,
+          "section_title": "Classifying Stability from Negative Real RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $H(s)=\\frac{6}{(s+4)(s+1)}$, classify the system as BIBO stable, unstable, or nondecaying.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the denominator, because BIBO stability for this RLC transfer function is decided by the pole locations. The denominator is already factored, so set $D(s)=0$ and use each factor to find a pole.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=(s+4)(s+1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=0 \\quad \\Rightarrow \\quad (s+4)(s+1)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Solving each factor gives the two real poles $s=-4$ and $s=-1$. Both have strictly negative real part, so both poles lie in the left half of the $s$-plane.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-4 \\quad \\text{or} \\quad s=-1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because every pole satisfies $\\operatorname{Re}(s)<0$, the modes decay instead of growing or persisting forever. The transfer function is therefore BIBO stable.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Determining Stability from RLC Poles",
+          "section_index": 3,
+          "section_title": "Classifying Stability from Left-Half-Plane Complex RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $H(s)=\\frac{40}{s^2+2s+10}$, find the poles and decide if the RLC system is stable.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that stability is decided by the pole locations of $H(s)$. The poles come from the denominator, so set the characteristic polynomial equal to zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+2s+10=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the quadratic formula. The negative discriminant means the poles form a complex-conjugate pair.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned} s &= \\frac{-2\\pm\\sqrt{2^2-4(1)(10)}}{2} \\\\ &= \\frac{-2\\pm\\sqrt{-36}}{2} \\\\ &= -1\\pm 3j \\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The poles are $s=-1+3j$ and $s=-1-3j$. Both have real part $-1$, so both poles lie strictly in the left half-plane.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\operatorname{Re}(-1+3j)=\\operatorname{Re}(-1-3j)=-1<0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore the RLC transfer function is BIBO stable. The complex pair means the natural response oscillates, but the negative real part makes that oscillation decay; there are no right-half-plane or imaginary-axis poles to create a nondecaying mode.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Determining Stability from RLC Poles",
+          "section_index": 4,
+          "section_title": "Classifying Instability from a Right-Half-Plane RLC Pole",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify $H(s)=\\frac{5}{(s-2)(s+1)(s+4)}$: is this RLC transfer function BIBO stable or unstable?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The stability cue is the pole locations, not the numerator value. For a rational RLC transfer function, BIBO stability requires every pole to satisfy $\\Re\\{s\\}<0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{5}{(s-2)(s+1)(s+4)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set each denominator factor equal to zero to list the poles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s-2=0\\Rightarrow s=2,\\qquad s+1=0\\Rightarrow s=-1,\\qquad s+4=0\\Rightarrow s=-4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The poles $s=-1$ and $s=-4$ are in the left half-plane, but $s=2$ has positive real part because $\\Re\\{2\\}=2>0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Re\\{2\\}=2>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore the transfer function is BIBO unstable. One right-half-plane pole is enough to fail the all-poles test, even though the other two poles are stable left-half-plane poles.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Determining Stability from RLC Poles",
+          "section_index": 5,
+          "section_title": "Classifying Instability from Imaginary-Axis RLC Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify stability for $H(s)=\\frac{2}{s^2+9}$ and interpret the time-domain implication of poles on the imaginary axis.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the denominator $s^2+9$. For this lesson's BIBO rule, the transfer function is stable only when every pole has strictly negative real part.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+9=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2=-9 \\quad \\Rightarrow \\quad s=\\pm 3j",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both poles are purely imaginary. Their real parts are exactly zero, so they sit on the boundary of the left half-plane rather than strictly inside it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Re\\{3j\\}=0,\\qquad \\Re\\{-3j\\}=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the poles do not satisfy $\\Re\\{s\\}<0$, the circuit transfer function is classified as unstable for BIBO purposes in this topic context.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The time-domain meaning is a nondecaying sinusoidal mode. These imaginary-axis poles do not create exponential growth like a right-half-plane pole, but they also do not decay away like left-half-plane poles.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+      "lesson_core_move": "Convert a circuit description among its time-domain differential equation, frequency-response form, and s-domain transfer function, interpreting poles and stability consistently across domains.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "section_index": 1,
+          "section_title": "Introduction to Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A linear circuit can be described in three matching ways: a time-domain differential equation, an $s$-domain transfer function, and a frequency response. The differential equation relates input and output signals such as $x(t)$ and $y(t)$ directly in time. The transfer function $H(s)$ gives the same input-output behavior as an algebraic ratio after a zero-initial-condition Laplace transform. The frequency response $H(j\\omega)$ is the same function evaluated on the imaginary axis for sinusoidal steady-state analysis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The conversion workflow has three actions. First, convert each time derivative to a power of $s$ under zero initial conditions. Next, collect the transformed output terms with $Y(s)$ and the transformed input terms with $X(s)$. Finally, isolate the ratio $H(s)=Y(s)/X(s)$, then substitute $s=j\\omega$ when the question asks for frequency response.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=H(s)X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For a first-order circuit model, the time-domain description usually has one output derivative term and one output term, driven by an input term. After the Laplace transform, that derivative contributes a factor of $sY(s)$, so the denominator of $H(s)$ comes from the output-side coefficients. The root of that denominator is the circuit pole.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once $H(s)$ is known, the frequency-response form does not require a new circuit derivation. Replace $s$ with $j\\omega$ and interpret the resulting complex value as sinusoidal gain and phase at angular frequency $\\omega$. The poles and zeros belong to $H(s)$ itself, so this substitution changes the evaluation path, not the underlying circuit description.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(j\\omega)=H(s)|_{s=j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Stability is read from the pole locations in the $s$ domain. For continuous-time circuits, poles in the left half-plane correspond to decaying natural responses, while poles in the right half-plane correspond to growing natural responses. The rest of this lesson uses the same sequence each time: derive $H(s)$ from the circuit equation, evaluate $H(j\\omega)$ for sinusoidal response, read the poles, and reconcile the time, frequency, and $s$-domain descriptions as one model.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "section_index": 2,
+          "section_title": "Converting a Circuit Differential Equation to a Transfer Function",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For zero initial conditions, convert $L y''(t)+R C y'(t)+y(t)=R C x'(t)$ into $H(s)=Y(s)/X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the differential equation is already linear with constant coefficients, and the initial conditions are zero. That means each time derivative transforms by multiplying the corresponding signal transform by $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y'(t)\\to sY(s),\\qquad y''(t)\\to s^2Y(s),\\qquad x'(t)\\to sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute those zero-initial-condition transforms into the circuit equation. Keep the output terms on the left and the input term on the right.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Ls^2Y(s)+RCsY(s)+Y(s)=RCsX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now factor out $Y(s)$ from the left side. This isolates the polynomial that will become the transfer-function denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left(Ls^2+RCs+1\\right)Y(s)=RCsX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Divide by $X(s)$ and by the collected output factor to isolate the ratio $Y(s)/X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{RCs}{Ls^2+RCs+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In numerator-denominator form, the input derivative contributes the factor $s$ in the numerator, while the pole locations are governed by the denominator $D(s)=Ls^2+RCs+1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N(s)=RCs,\\qquad D(s)=Ls^2+RCs+1",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "section_index": 3,
+          "section_title": "Finding Frequency Response from a Circuit Transfer Function",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Take $H(s)=\\frac{s+1}{s^2+3s+2}$ and rewrite it as $H(jw)$ in a form suitable for extracting magnitude and phase behavior.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the circuit description is already an $s$-domain transfer function. To find the frequency response, evaluate the same transfer function on the imaginary axis by substituting $s=jw$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(jw)=\\frac{jw+1}{(jw)^2+3jw+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use $(jw)^2=-w^2$ and collect the real and imaginary parts in the denominator. The numerator is already in real-plus-imaginary form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(jw)=\\frac{1+jw}{2-w^2+j3w}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the useful frequency-domain form: the numerator is $1+jw$ and the denominator is $(2-w^2)+j3w$. From here, magnitude and phase would come from the complex numerator divided by the complex denominator at each frequency $w$, while the poles remain the same poles encoded by the original denominator in $H(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "section_index": 4,
+          "section_title": "Interpreting Pole Locations Across Circuit Descriptions",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the poles of $H(s)=1/(s^2+4s+20)$, classify their locations, and state the implied time-domain behavior and BIBO stability.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The poles of $H(s)$ are the roots of the denominator. For this transfer function, the denominator polynomial is $s^2+4s+20$, so the pole calculation starts by setting that expression equal to zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+4s+20=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\frac{-4\\pm\\sqrt{4^2-4(1)(20)}}{2}=\\frac{-4\\pm\\sqrt{-64}}{2}=-2\\pm j4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The two poles are $s=-2+j4$ and $s=-2-j4$. They form a complex-conjugate pair, and both have real part $-2$, so both poles lie in the open left half-plane. The nonzero imaginary parts indicate oscillation, while the negative real part indicates exponential decay.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{(-2+j4)t},\\ e^{(-2-j4)t}\\quad \\Longleftrightarrow \\quad e^{-2t}\\bigl(C_1\\cos 4t+C_2\\sin 4t\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Thus the homogeneous time-domain response is an underdamped decaying oscillation. The same conclusion is visible from the circuit differential equation because these poles are also the roots of its characteristic polynomial.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For a continuous-time rational LTI circuit transfer function, BIBO stability requires every pole to be in the open left half-plane. Since both poles here have negative real part, the circuit is BIBO stable. In the frequency-response view, substituting $s=j\\omega$ does not move the poles onto the axis; it samples the response along the imaginary axis while the nearby left-half-plane poles shape the resonance and phase.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "section_index": 5,
+          "section_title": "Matching Time, Frequency, and $s$-Domain Descriptions of One Circuit",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For zero initial conditions, reconcile the circuit model $y''(t)+3y'(t)+2y(t)=x'(t)$ across time, $s$-, and frequency-domain descriptions. Find $H(s)$, write $H(jw)$, and state the pole-based stability conclusion.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The time-domain cue is the input derivative on the right side and the output derivatives on the left side. With zero initial conditions, each derivative becomes multiplication by $s$ in the transform domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)+3sY(s)+2Y(s)=sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect the output transform $Y(s)$, then divide by $X(s)$ and by the output polynomial. The input derivative contributes the numerator factor $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left(s^2+3s+2\\right)Y(s)=sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{s}{s^2+3s+2}=\\frac{s}{(s+1)(s+2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The matching frequency response is not a new system; it is the same transfer function evaluated on the imaginary axis by substituting $s=jw$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(jw)=\\frac{jw}{(jw)^2+3jw+2}=\\frac{jw}{2-w^2+j3w}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The pole check comes from the same denominator that appears in both $H(s)$ and $H(jw)$. The roots are $s=-1$ and $s=-2$, so both poles are in the open left half-plane.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "p_1=-1,\\qquad p_2=-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Thus the three descriptions match: the ODE $y''(t)+3y'(t)+2y(t)=x'(t)$ corresponds to $H(s)=s/(s^2+3s+2)$, to $H(jw)=jw/(2-w^2+j3w)$, and to a BIBO-stable circuit because every pole has negative real part.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

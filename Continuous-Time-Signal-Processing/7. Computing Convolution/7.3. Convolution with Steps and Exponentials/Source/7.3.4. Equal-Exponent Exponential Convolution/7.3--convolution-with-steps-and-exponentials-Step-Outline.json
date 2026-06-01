@@ -1,0 +1,1668 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Convolution of a Unit Step with a Decaying Exponential",
+      "lesson_core_move": "Compute the convolution of a unit step with a decaying exponential by using the causal overlap interval to evaluate the integral and write the result as ((1 - e^{-at})/a)u(t).",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Convolution of a Unit Step with a Decaying Exponential",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize the base convolution of a unit step with a causal decaying exponential as a support-overlap problem followed by a single exponential integral.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the tutorial can express the causal overlap entirely through unit-step inequalities and the convolution integral.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate a decorative signal plot. Use compact display math instead."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the base setup for computing y(t)=u(t)*e^{-at}u(t) with a>0 by translating the two causal factors into the overlap interval 0 <= tau <= t and previewing the step-gated result.",
+            "base_case": "Use x(t)=u(t) and h(t)=e^{-at}u(t), with a>0, so the only new work is finding the causal overlap and evaluating one exponential integral.",
+            "paragraph_plan": [
+              "State that this lesson computes a standard causal convolution: a unit step convolved with a decaying exponential.",
+              "Write the convolution integral and identify x(tau)=u(tau) and h(t-tau)=e^{-a(t-tau)}u(t-tau).",
+              "Explain that the unit steps determine where the integrand is nonzero: tau >= 0 from u(tau) and tau <= t from u(t-tau).",
+              "Point out that these inequalities overlap only when t >= 0, giving bounds 0 <= tau <= t.",
+              "Preview that the remaining calculation evaluates the exponential integral and attaches u(t) to express the zero-output region."
+            ],
+            "display_math_plan": [
+              "Show y(t)=int_{-infty}^{infty} u(tau)e^{-a(t-tau)}u(t-tau) d tau.",
+              "Show tau >= 0 and tau <= t, so 0 <= tau <= t when t >= 0.",
+              "Show y(t)=int_0^t e^{-a(t-tau)} d tau for t >= 0, leading to y(t)=((1-e^{-at})/a)u(t)."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial brief and directive. Do not include practice questions in this section."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding the Causal Overlap Interval",
+          "step_type": "example",
+          "learning_goal": "Determine exactly where x(tau)h(t-tau) is nonzero for the unit-step and causal exponential convolution.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the required reasoning is the symbolic intersection of tau >= 0 and tau <= t.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate signal plots for the example or questions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Piecewise overlap interval in tau, including the no-overlap case for t<0.",
+            "practice_question_model": "For x(t)=u(t) and h(t)=e^{-3t}u(t), determine the values of tau where x(tau)h(t-tau) is nonzero.",
+            "distractor_plan": [
+              "Use the reversed inequality tau >= t instead of tau <= t.",
+              "Give 0 <= tau <= t for all t without excluding t<0.",
+              "Use the support of h(tau) rather than h(t-tau).",
+              "Mistake the exponential decay factor for an additional support restriction."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=u(t) and h(t)=e^{-2t}u(t), find the values of tau where x(tau)h(t-tau) is nonzero.",
+            "worked_solution_goal": "Show that the integrand is nonzero on 0 <= tau <= t when t >= 0 and has no overlap when t<0.",
+            "variation_from_previous": "This is the first active step after the tutorial and isolates the support-overlap move without setting up or evaluating the integral.",
+            "solution_step_plan": [
+              "Rewrite the convolution factors as x(tau)=u(tau) and h(t-tau)=e^{-2(t-tau)}u(t-tau).",
+              "Translate u(tau) into the support condition tau >= 0.",
+              "Translate u(t-tau) into the support condition tau <= t.",
+              "Intersect the two inequalities and state that the interval exists only for t >= 0."
+            ],
+            "practice_variation_axes": [
+              "Change the exponential rate while keeping the same causal support.",
+              "Ask for the overlap interval using either inequality notation or interval notation.",
+              "Include choices that vary the no-overlap condition for t<0."
+            ]
+          },
+          "handoff_notes": "Make the example about support only. Do not evaluate any integral in this section."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Setting Up the Step-Exponential Convolution Integral",
+          "step_type": "example",
+          "learning_goal": "Use the causal overlap interval to write the correct definite convolution integral before doing any integration.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the task is to convert symbolic support bounds into a definite integral.",
+            "visual_elements": [],
+            "image_generation_notes": "Keep this section notation-based and avoid visual overlap diagrams."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Definite convolution integral with correct bounds and causal condition.",
+            "practice_question_model": "Set up, but do not evaluate, y(t)=u(t)*e^{-4t}u(t) using the causal overlap interval.",
+            "distractor_plan": [
+              "Use the wrong bounds, such as t to infinity or negative infinity to t.",
+              "Write e^{-a tau} instead of e^{-a(t-tau)} for this ordering.",
+              "Omit the condition that the integral applies only for t >= 0.",
+              "Use the full convolution integral without simplifying to the overlap bounds."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Set up, but do not evaluate, y(t)=u(t)*e^{-2t}u(t) as a convolution integral using the causal overlap interval.",
+            "worked_solution_goal": "Write y(t)=int_0^t e^{-2(t-tau)} d tau for t >= 0 and y(t)=0 for t<0.",
+            "variation_from_previous": "This extends the overlap interval from Section 2 into the integral setup, while still postponing evaluation.",
+            "solution_step_plan": [
+              "Start from y(t)=int_{-infty}^{infty} u(tau)e^{-2(t-tau)}u(t-tau) d tau.",
+              "Reuse the overlap interval 0 <= tau <= t for t >= 0.",
+              "Replace the infinite bounds with 0 and t.",
+              "State the separate zero-output case when t<0."
+            ],
+            "practice_variation_axes": [
+              "Change the exponential rate a.",
+              "Ask for the integral only, or for the integral plus the t<0 case.",
+              "Vary whether the answer is written piecewise or with a pending unit-step gate."
+            ]
+          },
+          "handoff_notes": "Keep evaluation out of this section. The skill is choosing the correct integrand and bounds from support."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Evaluating the Decaying-Exponential Integral",
+          "step_type": "example",
+          "learning_goal": "Evaluate the bounded decaying-exponential convolution integral and simplify it to (1-e^{-at})/a for t >= 0.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the task is algebraic evaluation of a definite exponential integral.",
+            "visual_elements": [],
+            "image_generation_notes": "No image generation needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Simplified expression for the integral, valid for t >= 0.",
+            "practice_question_model": "Evaluate int_0^t e^{-3(t-tau)} d tau for t >= 0.",
+            "distractor_plan": [
+              "Reverse the subtraction to produce (e^{-at}-1)/a.",
+              "Omit the division by a.",
+              "Treat the integrand as e^{-a tau} and produce a superficially similar result for the wrong reason.",
+              "Fail to simplify the exponential factors after applying the antiderivative."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Evaluate int_0^t e^{-2(t-tau)} d tau for t >= 0.",
+            "worked_solution_goal": "Show the calculation e^{-2t}int_0^t e^{2tau} d tau=(1-e^{-2t})/2.",
+            "variation_from_previous": "This takes the already-set integral from Section 3 and performs the first actual computation.",
+            "solution_step_plan": [
+              "Factor e^{-2t} out of the integrand.",
+              "Integrate e^{2tau} from 0 to t.",
+              "Substitute the bounds and multiply by e^{-2t}.",
+              "Simplify to (1-e^{-2t})/2."
+            ],
+            "practice_variation_axes": [
+              "Change the decay rate a.",
+              "Ask for the simplified result of the definite integral only.",
+              "Include rates that make the denominator easy to track, such as 2, 3, 4, or 5."
+            ]
+          },
+          "handoff_notes": "Use subgoal labels around factoring, integrating, substituting, and simplifying to control cognitive load."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Writing the Step-Gated Convolution Result",
+          "step_type": "example",
+          "learning_goal": "Attach the causal unit-step gate to the evaluated expression so the final convolution result includes the zero-output region.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the task is symbolic conversion from a causal piecewise result to a unit-step-gated expression.",
+            "visual_elements": [],
+            "image_generation_notes": "No image generation needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Final step-gated convolution expression.",
+            "practice_question_model": "Write the full result for y(t)=u(t)*e^{-5t}u(t), including the zero-output region.",
+            "distractor_plan": [
+              "Omit the final u(t) gate.",
+              "Use the wrong sign in the exponential, such as 1-e^{at}.",
+              "Use the wrong denominator or forget the denominator.",
+              "Attach an incorrect shifted step, such as u(t-a), instead of u(t)."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write the full convolution result for y(t)=u(t)*e^{-2t}u(t), including the zero-output region.",
+            "worked_solution_goal": "Convert the piecewise result y(t)=(1-e^{-2t})/2 for t >= 0 and y(t)=0 for t<0 into y(t)=((1-e^{-2t})/2)u(t).",
+            "variation_from_previous": "This final section adds the causal output notation after the integral has already been evaluated.",
+            "solution_step_plan": [
+              "Recall the evaluated result for the overlapping region t >= 0.",
+              "Recall that there is no overlap, so y(t)=0, when t<0.",
+              "Write the result as a piecewise expression.",
+              "Convert the piecewise expression into the compact unit-step-gated form."
+            ],
+            "practice_variation_axes": [
+              "Change the exponential rate a.",
+              "Ask learners to choose between piecewise and unit-step-gated representations.",
+              "Vary whether the prompt supplies the evaluated t >= 0 expression or expects learners to recall it from the previous section."
+            ]
+          },
+          "handoff_notes": "This section should complete the lesson core move by making the causal gate explicit, not by adding a new convolution family."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Step Response of a First-Order System",
+      "lesson_core_move": "Compute the step response of a first-order LTI system by convolving a unit-step input with a decaying-exponential impulse response and interpreting the result as a rising exponential toward steady state.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Step Response of a First-Order System",
+          "step_type": "tutorial",
+          "learning_goal": "Define the step response of a causal first-order LTI system as the convolution of a unit-step input with a decaying-exponential impulse response, and preview why the output is a rising exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the tutorial can establish the schema using the convolution formula, causal support constraints, and the resulting symbolic response."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that the first-order step response is the output y(t)=(u*h)(t), where the unit-step input turns on the system and the causal decaying-exponential impulse response determines the rising exponential shape.",
+            "base_case": "Use the normalized first-order impulse response h(t)=a e^{-a t}u(t) with a>0 and input x(t)=u(t), giving y(t)=(1-e^{-a t})u(t).",
+            "paragraph_plan": [
+              "Start by defining a step response as the output of an LTI system when the input is the unit step, emphasizing that this lesson computes it directly by convolution.",
+              "Introduce the causal first-order impulse response as a decaying exponential multiplied by u(t), with the simplest normalized case h(t)=a e^{-a t}u(t).",
+              "Write the convolution integral and explain that u(tau) requires tau>=0 while u(t-tau) requires tau<=t, so causal overlap exists only for t>=0.",
+              "State that the integral over 0<=tau<=t accumulates more of the decaying impulse response as t grows, producing a response that starts at 0 and approaches steady state.",
+              "Preview the reusable pattern: set the overlap bounds, evaluate the exponential integral, attach the causal unit step, then interpret the result."
+            ],
+            "display_math_plan": [
+              "x(t)=u(t), \\quad h(t)=a e^{-a t}u(t), \\quad a>0",
+              "y(t)=(u*h)(t)=\\int_{-\\infty}^{\\infty}u(\\tau)a e^{-a(t-\\tau)}u(t-\\tau)\\,d\\tau",
+              "t\\ge 0:\\quad y(t)=\\int_0^t a e^{-a(t-\\tau)}\\,d\\tau",
+              "y(t)=(1-e^{-a t})u(t)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact and directive. Do not turn it into a full derivation with multiple cases; its job is to give the learner the schema used in the examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Setting Up the Unit-Step Input Convolution",
+          "step_type": "example",
+          "learning_goal": "Convert a unit-step input and causal first-order impulse response into the correct convolution integrand and positive-time integration bounds.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the task data are the symbolic unit-step factors and the causal inequalities they impose on tau."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "Piecewise convolution setup: y(t)=0 for t<0 and an integral from 0 to t for t>=0 with the substituted exponential integrand.",
+            "practice_question_model": "Set up, but do not evaluate, the convolution integral for the step response when x(t)=u(t) and h(t)=3e^{-3t}u(t).",
+            "distractor_plan": [
+              "Use wrong bounds such as -infinity to t, 0 to infinity, or -infinity to infinity after substituting the step factors.",
+              "Omit the no-output condition for t<0.",
+              "Use h(tau) instead of h(t-tau), causing the exponential to depend on tau with the wrong shifted argument.",
+              "Reverse the causal constraint from u(t-tau), producing tau>=t instead of tau<=t."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Set up the convolution integral for the step response of a first-order LTI system with input x(t)=u(t) and impulse response h(t)=2e^{-2t}u(t).",
+            "worked_solution_goal": "Obtain y(t)=0 for t<0 and y(t)=\\int_0^t 2e^{-2(t-\\tau)}\\,d\\tau for t>=0, without evaluating the integral.",
+            "variation_from_previous": "This is the first active use of the tutorial schema: the learner now performs the support-constraint setup with a concrete decay rate.",
+            "solution_step_plan": [
+              "Start from y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau.",
+              "Substitute x(\\tau)=u(\\tau) and h(t-\\tau)=2e^{-2(t-\\tau)}u(t-\\tau).",
+              "Read the constraints u(\\tau) nonzero for tau>=0 and u(t-\\tau) nonzero for tau<=t.",
+              "Conclude that no overlap exists for t<0 and that the overlap interval is 0<=tau<=t for t>=0.",
+              "Write the resulting positive-time integral with the exponential integrand unchanged."
+            ],
+            "practice_variation_axes": [
+              "Change the positive decay rate a while keeping h(t)=a e^{-a t}u(t).",
+              "Ask only for setup, not evaluation.",
+              "Vary whether the expected answer is written as a piecewise statement or as a causal integral multiplied by u(t)."
+            ]
+          },
+          "handoff_notes": "The worked example should emphasize support logic over algebra. Keep the evaluation deferred so the section has one job."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Evaluating the First-Order Step Response Integral",
+          "step_type": "example",
+          "learning_goal": "Evaluate the positive-time exponential convolution integral for a normalized first-order impulse response and simplify it into a rising exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the section is an algebraic integral-evaluation task with symbolic exponential expressions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "Causal step-response expression in simplified form, such as (1-e^{-a t})u(t).",
+            "practice_question_model": "Evaluate the step response for x(t)=u(t) and h(t)=4e^{-4t}u(t).",
+            "distractor_plan": [
+              "Lose the outside exponential factor when rewriting the integrand.",
+              "Integrate e^{a tau} with the wrong sign or reciprocal.",
+              "Return e^{-a t}-1 instead of 1-e^{-a t}.",
+              "Omit the unit-step factor or the t>=0 causal condition in the final response."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Evaluate the step response for x(t)=u(t) and h(t)=2e^{-2t}u(t).",
+            "worked_solution_goal": "Show that the convolution evaluates to y(t)=(1-e^{-2t})u(t).",
+            "variation_from_previous": "This starts from the setup produced in the previous section and adds the single new task of evaluating the exponential integral.",
+            "solution_step_plan": [
+              "Begin with the causal integral y(t)=\\int_0^t 2e^{-2(t-\\tau)}\\,d\\tau for t>=0.",
+              "Rewrite the integrand as 2e^{-2t}e^{2\\tau} to make the integration variable clear.",
+              "Integrate e^{2\\tau} from 0 to t and simplify the scalar factors.",
+              "Simplify the result to 1-e^{-2t} for t>=0.",
+              "Attach u(t), or state the equivalent causal piecewise result."
+            ],
+            "practice_variation_axes": [
+              "Change the decay rate a in h(t)=a e^{-a t}u(t).",
+              "Use small integer rates so the integral mechanics stay central.",
+              "Require the final answer in unit-step form."
+            ]
+          },
+          "handoff_notes": "Use subgoal labels around setup, integration, and causal formatting. Avoid introducing non-unity system gain here unless needed for a single mirrored practice variant."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Writing the Causal Step Response",
+          "step_type": "example",
+          "learning_goal": "Convert a positive-time first-order step-response formula into a complete causal response using a unit-step factor and an equivalent piecewise definition.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the section is about symbolic causal notation and equivalent piecewise formatting."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "Equivalent unit-step and piecewise causal forms of the same first-order step response.",
+            "practice_question_model": "A first-order step-response calculation gives y(t)=4(1-e^{-2t}) for t>=0. Write the full causal response in unit-step form and piecewise form.",
+            "distractor_plan": [
+              "Write only the positive-time formula and omit the causal condition.",
+              "Attach u(t) to only part of the expression instead of the whole response.",
+              "Use the wrong zero region, such as y(t)=0 for t>0.",
+              "Change the algebraic response while converting notation instead of preserving the given positive-time formula."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A first-order step-response calculation gives y(t)=2(1-e^{-3t}) for t>=0. Write the full causal response in unit-step form and piecewise form.",
+            "worked_solution_goal": "Produce y(t)=2(1-e^{-3t})u(t) and the equivalent piecewise response with y(t)=0 for t<0 and y(t)=2(1-e^{-3t}) for t>=0.",
+            "variation_from_previous": "The integral has already been evaluated; the new wrinkle is representing causality cleanly without redoing the computation.",
+            "solution_step_plan": [
+              "Identify the given expression as the positive-time branch.",
+              "Attach u(t) to the entire positive-time expression to create the compact causal form.",
+              "Write the equivalent piecewise definition with a zero branch for t<0.",
+              "Check that the unit-step form and piecewise form preserve the same positive-time response."
+            ],
+            "practice_variation_axes": [
+              "Vary the steady-state multiplier K.",
+              "Vary the exponential decay rate a.",
+              "Alternate between asking for unit-step form, piecewise form, or both."
+            ]
+          },
+          "handoff_notes": "This section should not become another integration example. Keep attention on causal notation and equivalence of forms."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting the Rising Exponential Toward Steady State",
+          "step_type": "example",
+          "learning_goal": "Interpret a first-order step response by identifying its initial value, steady-state value, time constant, and rising-exponential behavior from the causal formula.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the learner can identify initial value, steady-state value, time constant, and monotone rise directly from the symbolic response."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "Short interpretation listing the initial value, steady-state value, time constant, and whether the response rises toward steady state.",
+            "practice_question_model": "For the step response y(t)=3(1-e^{-4t})u(t), identify the initial value, steady-state value, time constant, and qualitative behavior.",
+            "distractor_plan": [
+              "Confuse the steady-state value K with the decay rate a.",
+              "Give the time constant as a instead of 1/a.",
+              "Use y(0-) rather than y(0+) without recognizing the causal step-response behavior.",
+              "Describe the response as decaying to zero instead of rising toward its steady-state value."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the step response y(t)=2(1-e^{-3t})u(t), identify the initial value, steady-state value, time constant, and qualitative behavior.",
+            "worked_solution_goal": "Conclude that y(0+)=0, the steady-state value is 2, the time constant is 1/3, and the response rises exponentially toward 2.",
+            "variation_from_previous": "This shifts from writing the causal formula to reading system behavior from that formula.",
+            "solution_step_plan": [
+              "Use the positive-time branch y(t)=2(1-e^{-3t}) for interpretation.",
+              "Evaluate the positive-time expression at t=0+ to find the initial value.",
+              "Take the limit as t approaches infinity to find the steady-state value.",
+              "Read the time constant as the reciprocal of the exponential rate.",
+              "State the qualitative behavior as a rising exponential toward the steady-state value."
+            ],
+            "practice_variation_axes": [
+              "Vary the steady-state multiplier K.",
+              "Vary the decay rate a so the time constant changes.",
+              "Ask for all interpretation features together to preserve the same reasoning chain."
+            ]
+          },
+          "handoff_notes": "Keep interpretation tied to the formula, not a graph. A later visual lesson can use plots, but this first-pass lesson should make the symbolic response carry the meaning."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Convolution of Two One-Sided Exponentials",
+      "lesson_core_move": "Set up the convolution of two one-sided exponentials by translating their unit-step supports into causal overlap bounds, multiplying the exponential terms, and preparing the integral for evaluation.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Convolution of Two One-Sided Exponentials",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize that convolving two one-sided exponentials begins by rewriting both signals in the convolution variable, using the unit steps to find causal overlap, multiplying the exponential factors, and setting up the bounded integral without evaluating it.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; symbolic unit-step expressions and inequalities carry the setup."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the minimum setup pattern for two causal exponentials: rewrite in tau, convert unit steps into support inequalities, intersect those inequalities, multiply the exponential terms, and write the causal integral.",
+            "base_case": "Use x(t) = e^{-at}u(t) and h(t) = e^{-bt}u(t) with positive constants a and b.",
+            "paragraph_plan": [
+              "Start from the convolution integral and state that the dummy variable tau is where both signals are compared.",
+              "Show how x(t) becomes x(tau) and h(t) becomes h(t - tau), emphasizing that the unit-step arguments change along with the exponential arguments.",
+              "Translate u(tau) and u(t - tau) into the inequalities tau >= 0 and tau <= t, then intersect them to get 0 <= tau <= t when t >= 0.",
+              "Multiply the exponential terms and point out that this creates the integrand to be integrated over the overlap interval.",
+              "End with the bounded setup integral and explicitly say that evaluating the integral is reserved for later lessons."
+            ],
+            "display_math_plan": [
+              "(x*h)(t) = integral from -infinity to infinity of x(tau)h(t - tau) d tau",
+              "x(t) = e^{-at}u(t), h(t) = e^{-bt}u(t)",
+              "x(tau) = e^{-a tau}u(tau), h(t - tau) = e^{-b(t - tau)}u(t - tau)",
+              "u(tau) gives tau >= 0, and u(t - tau) gives tau <= t",
+              "(x*h)(t) = u(t) integral from 0 to t of e^{-a tau}e^{-b(t - tau)} d tau"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section short and directive. Do not introduce equal-exponent or unequal-exponent evaluation formulas here."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Rewriting One-Sided Exponentials in the Convolution Variable",
+          "step_type": "example",
+          "learning_goal": "Rewrite each one-sided exponential in the correct convolution argument so the later support and integrand work uses x(tau) and h(t - tau), not the original t-only forms.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the task is substitution into symbolic signal expressions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "Two rewritten expressions: one for x(tau) and one for h(t - tau).",
+            "practice_question_model": "Rewrite x(t) = e^{-4t}u(t) and h(t) = e^{-t}u(t) as x(tau) and h(t - tau) for a convolution setup.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite x(t) = e^{-2t}u(t) and h(t) = e^{-3t}u(t) as x(tau) and h(t - tau) inside the convolution integral.",
+            "worked_solution_goal": "Show that x(tau) = e^{-2 tau}u(tau) and h(t - tau) = e^{-3(t - tau)}u(t - tau).",
+            "variation_from_previous": "This is the first active use of the tutorial pattern with concrete exponential rates.",
+            "solution_step_plan": [
+              "Replace t by tau in x(t) to form x(tau).",
+              "Replace t by t - tau in h(t) to form h(t - tau).",
+              "Carry the unit-step argument through the same substitution as the exponential argument.",
+              "State the two rewritten factors as the pieces that will enter the convolution integrand."
+            ],
+            "practice_variation_axes": [
+              "Change the two decay rates.",
+              "Use one exponent with coefficient 1.",
+              "Swap which signal has the larger decay rate."
+            ]
+          },
+          "handoff_notes": "Do not find overlap bounds yet; keep the example focused on the argument substitutions."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding the Causal Overlap Bounds",
+          "step_type": "example",
+          "learning_goal": "Convert the unit-step factors u(tau) and u(t - tau) into inequalities and intersect them to get the causal tau interval for the convolution.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the overlap is determined by symbolic support inequalities."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "An inequality interval for tau, with the associated condition on t.",
+            "practice_question_model": "For x(tau) = e^{-5 tau}u(tau) and h(t - tau) = e^{-2(t - tau)}u(t - tau), find the tau-overlap bounds.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(tau) = e^{-2 tau}u(tau) and h(t - tau) = e^{-3(t - tau)}u(t - tau), find the tau-overlap bounds.",
+            "worked_solution_goal": "Derive tau >= 0 and tau <= t, then combine them as 0 <= tau <= t for t >= 0.",
+            "variation_from_previous": "This extends the rewrite step by using the unit-step arguments to determine where both factors are nonzero.",
+            "solution_step_plan": [
+              "Read u(tau) as the support condition tau >= 0.",
+              "Read u(t - tau) as the support condition t - tau >= 0.",
+              "Solve t - tau >= 0 as tau <= t.",
+              "Intersect tau >= 0 and tau <= t to get 0 <= tau <= t.",
+              "State that the overlap exists for t >= 0 and is empty for t < 0."
+            ],
+            "practice_variation_axes": [
+              "Change decay rates without changing the causal unit-step supports.",
+              "Ask for the bounds from already-rewritten factors.",
+              "Ask the learner to include the condition on t explicitly."
+            ]
+          },
+          "handoff_notes": "Keep the focus on support inequalities. Do not simplify the exponential product in this section."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Multiplying the Shifted Exponential Terms",
+          "step_type": "example",
+          "learning_goal": "Multiply the exponential parts of x(tau) and h(t - tau) and simplify the product into a usable integrand over the causal overlap interval.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the task is algebraic simplification of exponential factors."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A simplified exponential product as a function of t and tau.",
+            "practice_question_model": "For x(tau) = e^{-4 tau}u(tau) and h(t - tau) = e^{-(t - tau)}u(t - tau), multiply and simplify the exponential terms.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(tau) = e^{-2 tau}u(tau) and h(t - tau) = e^{-3(t - tau)}u(t - tau), multiply the exponential terms inside the overlap interval.",
+            "worked_solution_goal": "Show that e^{-2 tau}e^{-3(t - tau)} simplifies to e^{-3t}e^{tau}.",
+            "variation_from_previous": "This keeps the overlap bounds fixed and adds the algebraic step that creates the integrand.",
+            "solution_step_plan": [
+              "Write the exponential product e^{-2 tau}e^{-3(t - tau)}.",
+              "Distribute the exponent in the shifted factor to get e^{-2 tau}e^{-3t + 3 tau}.",
+              "Combine tau terms in the exponent.",
+              "Factor the result as e^{-3t}e^{tau}.",
+              "State that this is the integrand over the overlap interval, not yet an evaluated convolution."
+            ],
+            "practice_variation_axes": [
+              "Change the two decay rates.",
+              "Use decay rates that make the tau coefficient positive or negative.",
+              "Ask for either a single exponential form or a factored t-only times tau-dependent form."
+            ]
+          },
+          "handoff_notes": "Avoid carrying out the integral. This section prepares the integrand only."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Writing the Convolution Integral for Two One-Sided Exponentials",
+          "step_type": "example",
+          "learning_goal": "Assemble the rewritten factors, causal overlap bounds, and exponential product into the bounded convolution integral for two one-sided exponentials.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the final setup is a symbolic integral with causal bounds."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A bounded convolution integral, optionally including an explicit causal u(t) factor.",
+            "practice_question_model": "Set up, but do not evaluate, the convolution integral for x(t) = e^{-4t}u(t) and h(t) = e^{-t}u(t).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Set up, but do not evaluate, the convolution integral for x(t) = e^{-2t}u(t) and h(t) = e^{-3t}u(t).",
+            "worked_solution_goal": "Write (x*h)(t) = u(t) integral from 0 to t of e^{-2 tau}e^{-3(t - tau)} d tau, with the simplified-integrand form acceptable as an equivalent setup.",
+            "variation_from_previous": "This combines the rewrite, overlap, and product steps into the complete convolution setup.",
+            "solution_step_plan": [
+              "Rewrite x(t) and h(t) as x(tau) and h(t - tau).",
+              "Use the unit steps to state the overlap bounds 0 <= tau <= t for t >= 0.",
+              "Multiply the exponential terms to identify the integrand.",
+              "Replace the infinite convolution integral with the bounded integral from 0 to t.",
+              "Include a causal u(t) factor or an equivalent piecewise statement for t < 0."
+            ],
+            "practice_variation_axes": [
+              "Change the two decay rates.",
+              "Allow the answer to keep the product unsimplified or simplify the integrand.",
+              "Require the setup only, with no antiderivative or final closed form."
+            ]
+          },
+          "handoff_notes": "Explicitly prevent evaluation in this lesson. Equal-exponent and unequal-exponent evaluation are handled by the following lessons."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Equal-Exponent Exponential Convolution",
+      "lesson_core_move": "Compute the equal-exponent convolution of two one-sided exponentials by recognizing the repeated-exponent case and deriving the ramp-weighted exponential output from the causal overlap integral.",
+      "section_count": 4,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Equal-Exponent Exponential Convolution",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize that when two causal exponentials have the same exponent, their product inside the overlap interval becomes independent of tau, so integrating over the causal interval produces a ramp-weighted exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the key move is symbolic recognition of the repeated exponent and the causal integral length."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the repeated-exponent case for one-sided exponential convolution: use the causal overlap bounds, simplify the product to a tau-independent exponential, and show why the remaining integral contributes the factor t.",
+            "base_case": "Use x(t) = e^{-at}u(t) and h(t) = e^{-at}u(t) with a > 0.",
+            "paragraph_plan": [
+              "Connect to the prior one-sided exponential setup: both unit steps force the same causal overlap interval, 0 <= tau <= t, when t >= 0.",
+              "Identify the new feature of this lesson: the two exponentials have the same decay rate, so this is the repeated-exponent case.",
+              "Show that rewriting in the convolution variable gives e^{-a tau} and e^{-a(t - tau)}, with the unit steps still providing the overlap bounds.",
+              "Simplify the exponential product and point out that the tau terms cancel, leaving e^{-at}, which is constant with respect to tau for fixed t.",
+              "Integrate the constant-in-tau expression across the interval of length t and attach the causal u(t) factor to get the ramp-weighted exponential result."
+            ],
+            "display_math_plan": [
+              "(x*h)(t) = \\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau",
+              "x(\\tau) = e^{-a\\tau}u(\\tau), h(t-\\tau) = e^{-a(t-\\tau)}u(t-\\tau)",
+              "u(\\tau)u(t-\\tau) gives 0 <= \\tau <= t for t >= 0",
+              "e^{-a\\tau}e^{-a(t-\\tau)} = e^{-at}",
+              "(x*h)(t) = u(t)\\int_0^t e^{-at}\\,d\\tau = t e^{-at}u(t)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact and directive. Do not introduce unequal-exponent formulas or Laplace-transform shortcuts."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Setting Up the Repeated-Exponent Causal Integral",
+          "step_type": "example",
+          "learning_goal": "Set up the bounded convolution integral for two one-sided exponentials with the same exponent by rewriting both factors in tau and applying the causal overlap bounds.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the setup follows from symbolic unit-step support constraints and exponential substitution."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A bounded causal convolution integral, with an explicit u(t) factor or equivalent t >= 0 condition.",
+            "practice_question_model": "Set up, but do not evaluate, the convolution integral for x(t) = e^{-3t}u(t) and h(t) = e^{-3t}u(t).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Set up, but do not evaluate, the convolution integral for x(t) = e^{-2t}u(t) and h(t) = e^{-2t}u(t).",
+            "worked_solution_goal": "Write (x*h)(t) = u(t) integral from 0 to t of e^{-2 tau}e^{-2(t - tau)} d tau, or the equivalent t >= 0 bounded integral with zero output for t < 0.",
+            "variation_from_previous": "This applies the prior one-sided exponential convolution setup to the repeated-exponent case while stopping before simplification or evaluation.",
+            "solution_step_plan": [
+              "Rewrite x(t) as x(tau) = e^{-2 tau}u(tau).",
+              "Rewrite h(t) as h(t - tau) = e^{-2(t - tau)}u(t - tau).",
+              "Use u(tau) and u(t - tau) to state the overlap bounds 0 <= tau <= t for t >= 0.",
+              "Replace the infinite convolution integral with the bounded integral over the causal overlap interval.",
+              "Include the causal u(t) factor or an equivalent piecewise statement for the no-overlap case t < 0."
+            ],
+            "practice_variation_axes": [
+              "Change the shared decay rate.",
+              "Ask for setup only, with no simplification or antiderivative.",
+              "Allow the answer to include either an explicit u(t) factor or a stated t >= 0 condition."
+            ]
+          },
+          "handoff_notes": "Keep this section focused on the integral setup. Do not yet use the cancellation of tau terms as the main point."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Deriving the Ramp-Weighted Exponential Output",
+          "step_type": "example",
+          "learning_goal": "Evaluate the repeated-exponent causal integral by simplifying the exponential product to a tau-independent factor and multiplying by the length of the overlap interval.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the derivation is an algebraic cancellation followed by a one-variable integral."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A closed-form causal convolution formula, normally t e^{-at}u(t).",
+            "practice_question_model": "Compute (e^{-4t}u(t))*(e^{-4t}u(t)).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Compute (e^{-2t}u(t))*(e^{-2t}u(t)).",
+            "worked_solution_goal": "Derive (x*h)(t) = t e^{-2t}u(t).",
+            "variation_from_previous": "This extends the setup section by simplifying the repeated-exponent integrand and carrying out the integral.",
+            "solution_step_plan": [
+              "Start from the bounded causal integral with limits 0 to t.",
+              "Combine the exponents in e^{-2 tau}e^{-2(t - tau)}.",
+              "Show that the tau terms cancel, leaving e^{-2t}.",
+              "Treat e^{-2t} as constant with respect to tau and integrate it from 0 to t.",
+              "Attach the causal u(t) factor to state the final output for all t."
+            ],
+            "practice_variation_axes": [
+              "Change the shared decay rate.",
+              "Ask for the final causal formula instead of the setup.",
+              "Accept equivalent forms using a piecewise t >= 0 statement instead of u(t)."
+            ]
+          },
+          "handoff_notes": "Make the cancellation of tau terms the visible core move. Do not generalize to unequal rates in this section."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Including Scale Factors in the Equal-Exponent Result",
+          "step_type": "example",
+          "learning_goal": "Include leading scale factors in the equal-exponent convolution by carrying their product through the same ramp-weighted exponential result.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the only new data are symbolic scale factors multiplying the same causal exponential pattern."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A closed-form causal convolution formula of the form AB t e^{-at}u(t).",
+            "practice_question_model": "Compute the convolution of x(t) = 5e^{-3t}u(t) and h(t) = 2e^{-3t}u(t).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Compute the convolution of x(t) = 4e^{-2t}u(t) and h(t) = 3e^{-2t}u(t).",
+            "worked_solution_goal": "Derive (x*h)(t) = 12t e^{-2t}u(t).",
+            "variation_from_previous": "This keeps the repeated-exponent structure unchanged and adds the single wrinkle that leading constants multiply through the integral.",
+            "solution_step_plan": [
+              "Identify the shared exponent and the two leading scale factors.",
+              "Set up the causal integral over 0 <= tau <= t.",
+              "Multiply the scale factors to get the constant coefficient 12.",
+              "Use the repeated-exponent cancellation to simplify the exponential product to e^{-2t}.",
+              "Integrate 12e^{-2t} with respect to tau from 0 to t and attach u(t)."
+            ],
+            "practice_variation_axes": [
+              "Change both scale factors.",
+              "Change the shared decay rate while preserving equality of exponents.",
+              "Use simple positive integer coefficients so the focus stays on the convolution pattern."
+            ]
+          },
+          "handoff_notes": "Keep this as the final controlled extension: product of coefficients times the same t e^{-at}u(t) pattern. Do not add delays, unequal exponents, or noncausal supports."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Unequal-Exponent Exponential Convolution",
+      "lesson_core_move": "Compute the unequal-exponent convolution of two one-sided exponentials by evaluating the causal overlap integral and simplifying it into the scaled difference of exponentials.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Unequal-Exponent Exponential Convolution",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize the unequal-exponent case for two one-sided exponentials and preview why causal convolution produces a scaled difference of exponentials rather than a ramp-weighted exponential.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image required; the schema is clearest through causal unit-step notation and the convolution integral.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate a decorative signal plot; keep attention on the symbolic causal overlap and exponent difference."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the target form x(t)=e^{-at}u(t), h(t)=e^{-bt}u(t) with a>0, b>0, and a not equal to b, and show that the causal overlap integral leads to a scaled difference of exponentials.",
+            "base_case": "Use x(t)=e^{-at}u(t) and h(t)=e^{-bt}u(t), where a and b are positive unequal constants.",
+            "paragraph_plan": [
+              "Start by reminding the learner that both signals are causal, so only values with tau >= 0 and t - tau >= 0 can contribute.",
+              "State the unequal-exponent condition a not equal to b and contrast it with the equal-exponent case, where the product loses its tau-dependence after factoring.",
+              "Show the general causal integral over 0 <= tau <= t for t >= 0 and identify the exponent difference as the new algebraic feature.",
+              "Preview the final pattern as a scaled difference of the two decays, with the unit step attached to enforce zero output for t < 0.",
+              "Warn the writer to keep the denominator and exponential order consistent rather than treating the formula as a memorized template."
+            ],
+            "display_math_plan": [
+              "x(t)=e^{-at}u(t), h(t)=e^{-bt}u(t), a>0, b>0, a not equal to b",
+              "(x*h)(t)=int_0^t e^{-a tau}e^{-b(t-tau)} d tau for t >= 0",
+              "(x*h)(t)=((e^{-a t}-e^{-b t})/(b-a))u(t) for a not equal to b"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial short and directive. The lesson should establish the reusable computation path without asking the learner to discover the formula unaided."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Setting Causal Overlap Bounds for Unequal Exponentials",
+          "step_type": "example",
+          "learning_goal": "Translate the unit-step factors in x(tau) and h(t-tau) into the causal overlap interval for an unequal-exponent convolution.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image required; the overlap bounds are determined directly from unit-step inequalities.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not use a signal plot; the section should train symbolic conversion from step factors to tau-bounds."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A tau-interval with the causal condition, such as 0 <= tau <= t for t >= 0 and no overlap for t < 0.",
+            "practice_question_model": "For x(t)=e^{-3t}u(t) and h(t)=e^{-7t}u(t), state the overlap interval in tau for (x*h)(t).",
+            "distractor_plan": [
+              "Check for reversing the bounds as t <= tau <= 0.",
+              "Check for omitting the t >= 0 causal condition.",
+              "Check for incorrectly using exponent values as integration limits."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=e^{-2t}u(t) and h(t)=e^{-5t}u(t), set the causal overlap bounds for (x*h)(t).",
+            "worked_solution_goal": "Conclude that the convolution integral runs over 0 <= tau <= t when t >= 0, and that the output is zero when t < 0.",
+            "variation_from_previous": "Moves from the tutorial's general formula preview to the first concrete subgoal: deriving the overlap bounds before doing any exponent algebra.",
+            "solution_step_plan": [
+              "Rewrite x(tau) as e^{-2 tau}u(tau).",
+              "Rewrite h(t-tau) as e^{-5(t-tau)}u(t-tau).",
+              "Translate u(tau) into tau >= 0.",
+              "Translate u(t-tau) into tau <= t.",
+              "Combine the inequalities and state that a nonempty overlap requires t >= 0."
+            ],
+            "practice_variation_axes": [
+              "Change the positive decay rates while keeping both signals one-sided.",
+              "Ask only for bounds, not for product simplification or integration.",
+              "Include t < 0 explicitly in some generated items to check causal interpretation."
+            ]
+          },
+          "handoff_notes": "Keep this section focused on support logic. Do not let the worked example drift into multiplying the exponentials."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Multiplying Unequal Exponential Terms Inside the Integral",
+          "step_type": "example",
+          "learning_goal": "Simplify the product e^{-a tau}e^{-b(t-tau)} on the causal overlap interval and identify the remaining tau-dependent exponential factor.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image required; the task is exponent algebra inside the convolution integrand.",
+            "visual_elements": [],
+            "image_generation_notes": "Use compact displayed algebra instead of a plot."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A simplified exponential product factored into a t-only term times a tau-dependent exponential.",
+            "practice_question_model": "For x(t)=e^{-3t}u(t) and h(t)=e^{-7t}u(t), simplify x(tau)h(t-tau) on the overlap interval 0 <= tau <= t.",
+            "distractor_plan": [
+              "Check for adding exponents without distributing the negative sign in -b(t-tau).",
+              "Check for incorrectly simplifying to a constant integrand, which belongs to the equal-exponent case.",
+              "Check for factoring out e^{-a t} instead of a consistent t-only factor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=e^{-2t}u(t) and h(t)=e^{-5t}u(t), simplify the product x(tau)h(t-tau) on the causal overlap interval.",
+            "worked_solution_goal": "Rewrite e^{-2 tau}e^{-5(t-tau)} as e^{-5t}e^{3 tau}, making the unequal-exponent tau-dependence explicit.",
+            "variation_from_previous": "Keeps the same causal bounds but adds the next algebraic subgoal: simplifying the integrand before integration.",
+            "solution_step_plan": [
+              "Start from the previously established interval 0 <= tau <= t.",
+              "Substitute x(tau)=e^{-2 tau} and h(t-tau)=e^{-5(t-tau)} inside the overlap.",
+              "Distribute the exponent -5(t-tau) to get -5t+5tau.",
+              "Combine tau exponents to get -5t+3tau.",
+              "Factor the product as e^{-5t}e^{3 tau}."
+            ],
+            "practice_variation_axes": [
+              "Vary the two unequal positive decay rates.",
+              "Ask for the product only, not the integral.",
+              "Use rate pairs where b-a is positive and rate pairs where an equivalent e^{-a t}e^{-(b-a)(t-tau)} form could tempt inconsistency."
+            ]
+          },
+          "handoff_notes": "Make the unequal-exponent contrast explicit: unlike the repeated-exponent lesson, the integrand retains a tau-dependent exponential."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Evaluating the Unequal-Exponent Overlap Integral",
+          "step_type": "example",
+          "learning_goal": "Evaluate the causal overlap integral after the unequal exponential product has been simplified.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image required; the section is a one-variable exponential integral with t treated as fixed.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not use a graph; reinforce that t is fixed while integrating with respect to tau."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A symbolic expression for the evaluated integral before final difference-of-exponentials simplification.",
+            "practice_question_model": "Evaluate int_0^t e^{-7t}e^{4 tau} d tau for t >= 0.",
+            "distractor_plan": [
+              "Check for treating t as the integration variable.",
+              "Check for missing the division by the tau-exponent coefficient.",
+              "Check for evaluating only the upper limit and dropping the lower-limit term."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Evaluate int_0^t e^{-5t}e^{3 tau} d tau for t >= 0.",
+            "worked_solution_goal": "Obtain e^{-5t}(e^{3t}-1)/3 by treating e^{-5t} as constant with respect to tau.",
+            "variation_from_previous": "Uses the simplified product from the prior section and adds the integration step while delaying the final algebraic rewrite.",
+            "solution_step_plan": [
+              "Identify e^{-5t} as constant because the integration variable is tau.",
+              "Pull e^{-5t} outside the integral.",
+              "Antidifferentiate e^{3 tau} as e^{3 tau}/3.",
+              "Evaluate from tau=0 to tau=t.",
+              "Leave the result as e^{-5t}(e^{3t}-1)/3 for the next simplification step."
+            ],
+            "practice_variation_axes": [
+              "Vary the coefficient of tau in the exponent.",
+              "Keep the lower limit at 0 and upper limit at t.",
+              "Use prompts that stop before multiplying through to the scaled difference."
+            ]
+          },
+          "handoff_notes": "Keep the subgoal label centered on integration. The final simplification belongs to the next section."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Simplifying to a Scaled Difference of Exponentials",
+          "step_type": "example",
+          "learning_goal": "Convert the evaluated overlap integral into the standard scaled difference of exponentials for unequal decay rates.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image required; the target move is algebraic simplification of exponential factors.",
+            "visual_elements": [],
+            "image_generation_notes": "Use displayed algebra to show the distribution of the outside exponential."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A scaled difference of exponentials, such as (e^{-2t}-e^{-5t})/3.",
+            "practice_question_model": "Simplify e^{-7t}(e^{4t}-1)/4 as a scaled difference of exponentials.",
+            "distractor_plan": [
+              "Check for reversing the exponential order without changing the sign of the denominator.",
+              "Check for distributing e^{-7t} incorrectly through e^{4t}.",
+              "Check for leaving the result in unsimplified factored form."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Simplify e^{-5t}(e^{3t}-1)/3 as a scaled difference of exponentials.",
+            "worked_solution_goal": "Rewrite the expression as (e^{-2t}-e^{-5t})/3.",
+            "variation_from_previous": "Takes the evaluated integral from the prior section and adds only the algebraic rewrite into the recognizable unequal-exponent output form.",
+            "solution_step_plan": [
+              "Distribute e^{-5t} across the parentheses.",
+              "Combine e^{-5t}e^{3t} as e^{-2t}.",
+              "Keep the lower-limit term as -e^{-5t}.",
+              "Preserve the scale factor 1/3.",
+              "State the simplified scaled difference without adding the unit step yet."
+            ],
+            "practice_variation_axes": [
+              "Vary the outside decay and inside exponent difference.",
+              "Require exact exponential simplification.",
+              "Avoid adding causal unit-step notation until the final section."
+            ]
+          },
+          "handoff_notes": "This section should make the expression form automatic before the learner assembles the full causal convolution result."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Writing the Final Result as a Causal Output",
+          "step_type": "example",
+          "learning_goal": "Assemble the unequal-exponent convolution result and attach the causal unit step to represent zero output before the overlap begins.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image required; the final result is a symbolic expression with a causal unit-step factor.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not add a plot of the output; the learner should focus on assembling the formula and causal gate."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A complete causal convolution expression with u(t), such as ((e^{-2t}-e^{-5t})/3)u(t).",
+            "practice_question_model": "Find (x*h)(t) for x(t)=e^{-3t}u(t) and h(t)=e^{-7t}u(t), including the causal unit step.",
+            "distractor_plan": [
+              "Check for omitting the final u(t).",
+              "Check for using the equal-exponent result t e^{-at}u(t).",
+              "Check for sign errors in the denominator or reversed exponential order."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find (x*h)(t) for x(t)=e^{-2t}u(t) and h(t)=e^{-5t}u(t), including the causal unit step.",
+            "worked_solution_goal": "Write the full result as ((e^{-2t}-e^{-5t})/3)u(t), with zero output for t < 0 encoded by u(t).",
+            "variation_from_previous": "Combines the full sequence of bounds, product simplification, integration, algebraic simplification, and causal gating into the final answer form.",
+            "solution_step_plan": [
+              "State that causality gives no overlap for t < 0.",
+              "Use the previously derived overlap 0 <= tau <= t for t >= 0.",
+              "Write the evaluated and simplified expression (e^{-2t}-e^{-5t})/3 for t >= 0.",
+              "Attach u(t) to encode the causal support.",
+              "Check that the expression has the scaled difference form expected for unequal exponents."
+            ],
+            "practice_variation_axes": [
+              "Vary the two unequal decay rates.",
+              "Include rate pairs where the denominator is small but nonzero.",
+              "Ask for the final causal expression rather than intermediate steps."
+            ]
+          },
+          "handoff_notes": "This is the synthesis section. The question generator should mirror the full computation but keep numbers simple enough that the main load stays on the convolution structure."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Interpreting Causal Convolution",
+      "lesson_core_move": "Interpret causal convolution by connecting one-sided support and overlap bounds to the LTI output rule that only past input values weighted by the impulse response contribute at time t.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Interpreting Causal Convolution",
+          "step_type": "tutorial",
+          "learning_goal": "Explain causal convolution as an LTI output rule where a one-sided impulse response makes only present and past input values contribute to y(t).",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "A single tau-axis schematic for fixed output time t showing the shaded past-input region tau <= t, x(tau) over the tau axis, and h(t - tau) as a one-sided weighting function that is zero for tau > t.",
+            "visual_elements": [
+              "tau-axis with a marked output time t",
+              "shaded region tau <= t labeled present and past input values",
+              "unshaded region tau > t labeled future input values excluded by causality",
+              "generic x(tau) curve or samples over the past region",
+              "shifted one-sided h(t - tau) weighting function over the past region"
+            ],
+            "image_generation_notes": "Use one clean conceptual schematic with no decorative elements and no numerical signal values; the visual should reduce load by making the causal cutoff at tau = t visible."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "State that if h is causal, then h(t - tau) is nonzero only when tau <= t, so convolution output y(t) uses only input values at the present or before the output time.",
+            "base_case": "Use a generic input x(tau) and a causal impulse response h(t) = e^{-at}u(t) with t fixed.",
+            "paragraph_plan": [
+              "Recall the convolution output formula and emphasize that t is fixed while tau is the integration variable.",
+              "Define causality for the impulse response as h(s) = 0 when s < 0, then apply it to the shifted argument s = t - tau.",
+              "Convert t - tau >= 0 into tau <= t and identify this as the causal support constraint on the shifted impulse response.",
+              "Explain that x(tau) values with tau > t are future input values, so they cannot affect the current output of a causal LTI system.",
+              "Connect the support constraint to the familiar overlap idea: y(t) accumulates only where x(tau) and h(t - tau) are both nonzero.",
+              "Name the interpretation that will drive the examples: causal convolution is accumulated weighted past input."
+            ],
+            "display_math_plan": [
+              "Show y(t) = \\int_{-\\infty}^{\\infty} x(\\tau)h(t - \\tau)\\,d\\tau.",
+              "Show h(s) = 0 for s < 0, so h(t - \\tau) = 0 when t - \\tau < 0.",
+              "Show t - \\tau >= 0 \\Longleftrightarrow \\tau <= t.",
+              "Show the causal form y(t) = \\int_{-\\infty}^{t} x(\\tau)h(t - \\tau)\\,d\\tau before adding any extra support restrictions from x."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact and direct. The section should establish the causal support rule, not compute a convolution integral."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Past Input Values at a Fixed Output Time",
+          "step_type": "example",
+          "learning_goal": "Identify which x(tau) values can contribute to y(t) at a specified output time by applying the causal condition tau <= t.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "one selected inequality or interval description",
+            "practice_question_model": "For a causal LTI system, identify which input values x(\\tau) can contribute to y(5).",
+            "distractor_plan": [
+              "Include a future-values choice such as tau >= 5.",
+              "Include a strict-past-only choice such as tau < 5 that incorrectly excludes tau = 5.",
+              "Include an all-values choice that ignores causality.",
+              "Include an instant-only choice such as tau = 5.",
+              "Include a sign-reversed choice such as tau <= -5."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For a causal LTI system, identify which input values x(\\tau) can contribute to y(3).",
+            "worked_solution_goal": "Conclude that only input values with tau <= 3 can contribute to y(3).",
+            "variation_from_previous": "This is the first active use of the tutorial rule with a specific fixed output time.",
+            "solution_step_plan": [
+              "Start from the causal condition that h(t - tau) can be nonzero only when tau <= t.",
+              "Substitute the fixed output time t = 3.",
+              "State that x(tau) values with tau <= 3 are possible contributors.",
+              "State that x(tau) values with tau > 3 cannot contribute because they are future values relative to y(3)."
+            ],
+            "practice_variation_axes": [
+              "change the fixed output time",
+              "switch between inequality and interval wording",
+              "use positive, zero, or negative output times"
+            ]
+          },
+          "handoff_notes": "Keep the example focused on recognition of the causal past interval; do not introduce finite input support yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Reading Causal Overlap Bounds from One-Sided Supports",
+          "step_type": "example",
+          "learning_goal": "Read the active convolution bounds by intersecting the input support of x(tau) with the causal support of h(t - tau).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "one selected tau-interval",
+            "practice_question_model": "For x(\\tau) nonzero on 0 <= \\tau <= 6 and causal h(t - \\tau), determine the overlap bounds when 0 <= t <= 6.",
+            "distractor_plan": [
+              "Include the full input support 0 <= tau <= 6, ignoring the current output time.",
+              "Include the causal support tau <= t without the input lower bound.",
+              "Include the future interval t <= tau <= 6.",
+              "Include a reversed or impossible interval such as t <= tau <= 0.",
+              "Include a common shift-confusion interval such as 0 <= tau <= 6 - t."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(\\tau) nonzero on 0 <= \\tau <= 4 and causal h(t - \\tau), determine the overlap bounds when 0 <= t <= 4.",
+            "worked_solution_goal": "Conclude that the overlap bounds are 0 <= tau <= t.",
+            "variation_from_previous": "This adds finite one-sided input support to the causal past restriction from the previous section.",
+            "solution_step_plan": [
+              "List the support constraint from x(tau): 0 <= tau <= 4.",
+              "List the causal support constraint from h(t - tau): tau <= t.",
+              "Use the time-region condition 0 <= t <= 4 to determine that the upper overlap limit is t.",
+              "Intersect the constraints to get 0 <= tau <= t.",
+              "State that these bounds are the part of the input support visible to the causal impulse response at time t."
+            ],
+            "practice_variation_axes": [
+              "change the endpoint of the finite input support",
+              "change the active t-region within the input support",
+              "vary whether bounds are written with inequalities or integral limits"
+            ]
+          },
+          "handoff_notes": "The example should demonstrate support-intersection reasoning only; avoid evaluating the integral."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting the Shifted Impulse Response as a Weighting Function",
+          "step_type": "example",
+          "learning_goal": "Interpret h(t - tau) as the weighting factor applied to each past input value x(tau) in the convolution integral.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "one selected interpretation sentence",
+            "practice_question_model": "For h(t) = e^{-3t}u(t), interpret h(4 - \\tau) as a weighting function on x(\\tau).",
+            "distractor_plan": [
+              "Include a choice that says the weighting applies to future values tau > t.",
+              "Include a choice that treats the weight as constant over all tau.",
+              "Include a choice that confuses h(t - tau) with x(t - tau).",
+              "Include a choice that uses the wrong nonzero condition tau >= t.",
+              "Include a choice that reverses the exponent sign in the weight."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For h(t) = e^{-2t}u(t), interpret h(5 - \\tau) as a weighting function on x(\\tau).",
+            "worked_solution_goal": "Explain that h(5 - tau) = e^{-2(5 - tau)} for tau <= 5 and zero for tau > 5, so it weights past input values according to their distance from t = 5.",
+            "variation_from_previous": "This extends causal support recognition by adding the meaning of the nonzero impulse-response factor in the product x(tau)h(t - tau).",
+            "solution_step_plan": [
+              "Substitute 5 - tau into the impulse response expression.",
+              "Apply the unit-step condition 5 - tau >= 0 to find tau <= 5.",
+              "Write the nonzero weight as e^{-2(5 - tau)} on the allowed past interval.",
+              "Explain that each contributing x(tau) is multiplied by this shifted impulse-response value.",
+              "State that values with tau > 5 receive weight zero."
+            ],
+            "practice_variation_axes": [
+              "change the decay constant",
+              "change the fixed output time",
+              "vary the wording between nonzero support and weighting interpretation"
+            ]
+          },
+          "handoff_notes": "The worked solution should prioritize interpretation of the multiplicative weight, not algebraic simplification beyond substituting the shifted argument."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Recognizing Zero Output from No Past Overlap",
+          "step_type": "example",
+          "learning_goal": "Recognize when y(t) must be zero because the past interval allowed by causality has no overlap with the nonzero support of x(tau).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "one selected zero-or-nonzero conclusion with reason",
+            "practice_question_model": "If x(\\tau) is nonzero only for 1 <= \\tau <= 4 and h is causal, determine whether y(t) is zero for t < 1.",
+            "distractor_plan": [
+              "Include a choice saying y(t) is nonzero because the system is causal.",
+              "Include a choice saying y(t) is zero only for t < 0, ignoring delayed input support.",
+              "Include a choice saying y(t) is zero after the input support ends rather than before it begins.",
+              "Include a choice that bases the conclusion on h(tau) instead of h(t - tau).",
+              "Include a choice that says the answer cannot be determined even though support rules decide it."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If x(\\tau) is nonzero only for 2 <= \\tau <= 5 and h is causal, determine whether y(t) is zero for t < 2.",
+            "worked_solution_goal": "Conclude that y(t) = 0 for t < 2 because the causal past region tau <= t has no overlap with the input support 2 <= tau <= 5.",
+            "variation_from_previous": "This uses the same support-intersection logic to identify a no-overlap time region instead of a nonzero integration interval.",
+            "solution_step_plan": [
+              "State the input support constraint 2 <= tau <= 5.",
+              "State the causal shifted-impulse-response constraint tau <= t.",
+              "Use t < 2 to show that tau <= t lies entirely before the input support begins.",
+              "Conclude that the product x(tau)h(t - tau) is zero for every tau.",
+              "State that the convolution output is therefore zero in this time region."
+            ],
+            "practice_variation_axes": [
+              "change the delayed start time of the input support",
+              "change the length of the finite input support",
+              "vary whether the learner identifies a zero region or justifies a given zero claim"
+            ]
+          },
+          "handoff_notes": "Keep the reasoning support-based. Do not ask the writer to compute the output after overlap begins."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Explaining Output as Accumulated Weighted Past Input",
+          "step_type": "example",
+          "learning_goal": "Explain a causal convolution integral as an accumulation of past input values weighted by the shifted impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "one selected interpretation sentence",
+            "practice_question_model": "Explain what y(6) = \\int_0^6 x(\\tau)e^{-3(6 - \\tau)}\\,d\\tau means for a causal convolution with input support starting at tau = 0.",
+            "distractor_plan": [
+              "Include a choice that describes the integral as unweighted area under x(tau).",
+              "Include a choice that says future input values after t = 6 contribute.",
+              "Include a choice that interprets the integral as the impulse response alone.",
+              "Include a choice that says only the single value x(6) contributes.",
+              "Include a choice that shifts the interpretation into the frequency domain."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Explain what y(4) = \\int_0^4 x(\\tau)e^{-2(4 - \\tau)}\\,d\\tau means for a causal convolution with input support starting at tau = 0.",
+            "worked_solution_goal": "Describe y(4) as accumulated past input from tau = 0 to tau = 4, with each x(tau) weighted by the shifted impulse response e^{-2(4 - tau)}.",
+            "variation_from_previous": "This combines past-value recognition, overlap bounds, and shifted-response weighting into one full causal-convolution interpretation.",
+            "solution_step_plan": [
+              "Identify the fixed output time as t = 4.",
+              "Read the integration interval 0 <= tau <= 4 as the contributing past input times.",
+              "Identify e^{-2(4 - tau)} as the shifted impulse-response weight applied to each x(tau).",
+              "Explain the integral as adding all weighted contributions over the overlap interval.",
+              "State that no tau > 4 values appear because the system is causal."
+            ],
+            "practice_variation_axes": [
+              "change the fixed output time",
+              "change the exponential decay constant",
+              "change the lower input-support bound while keeping the interpretation causal",
+              "vary whether the answer emphasizes bounds, weighting, or accumulation"
+            ]
+          },
+          "handoff_notes": "This final example should synthesize the lesson's interpretation without expanding into direct computation of the integral."
+        }
+      ]
+    }
+  ]
+}

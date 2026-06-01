@@ -1,0 +1,1609 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Periodic vs. Aperiodic Signals",
+      "lesson_core_move": "Identify whether a continuous-time signal is periodic or aperiodic by testing for a finite repeating period and linking aperiodicity to the need for Fourier-transform analysis.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic vs. Aperiodic Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Periodic vs. Aperiodic Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time signal is periodic when there is some finite $T>0$ such that the signal repeats exactly after a shift of $T$, meaning the same waveform returns at every time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t+T)=x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The base case is a single sinusoid. For $x(t)=\\cos(\\omega_0 t)$, you can read off the smallest repeat period directly, so this is the cleanest place to see the periodicity test in action.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos(\\omega_0 t), \\quad T_0=\\frac{2\\pi}{\\omega_0}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If no finite $T>0$ makes $x(t+T)=x(t)$ true for all $t$, then the signal is aperiodic. That is the correct classification whenever the waveform never repeats exactly after any finite shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This classification determines the analysis tool: periodic signals are handled with Fourier series, and aperiodic signals move to Fourier-transform analysis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The next sections will test more complicated signals and then use this periodic-versus-aperiodic decision to choose the right analysis method.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic vs. Aperiodic Signals",
+          "section_index": 2,
+          "section_title": "Testing a Signal for a Finite Repeating Period",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=\\cos(2t)+\\cos(3t)$ is periodic, and if it is, identify a valid repeat period.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "To test periodicity, check whether the signal can repeat after one finite shift $T$ that works for every term at once. Here the cue is a sum of two sinusoids, so start by finding the repeat period of each sinusoidal term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}T_1 &= \\frac{2\\pi}{2} = \\pi,\\\\T_2 &= \\frac{2\\pi}{3}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A common repeat period must work for both terms together, so look for a finite shift that is a multiple of both $\\pi$ and $\\frac{2\\pi}{3}$. The shift $2\\pi$ does that, so it is a valid candidate to test.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}x(t+2\\pi) &= \\cos(2(t+2\\pi)) + \\cos(3(t+2\\pi))\\\\&= \\cos(2t+4\\pi) + \\cos(3t+6\\pi)\\\\&= \\cos(2t) + \\cos(3t)\\\\&= x(t)\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since $x(t+2\\pi)=x(t)$, the signal is periodic. One valid repeat period is $2\\pi$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic vs. Aperiodic Signals",
+          "section_index": 3,
+          "section_title": "Identifying Aperiodic Signals from Failed Period Tests",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=\\cos(t)+\\cos(\\sqrt{2}t)$ is periodic.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a sum of two sinusoidal terms, and each term is periodic on its own. The test is whether one finite shift $T>0$ can make both terms repeat at the same time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}T_1 &= 2\\pi,\\\\T_2 &= \\frac{2\\pi}{\\sqrt{2}} = \\sqrt{2}\\pi\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A finite repeat period for the whole signal would have to be a common repeat time for both terms. That means the same $T$ would have to line up as a common multiple of $2\\pi$ and $\\sqrt{2}\\pi$, but those periods are not commensurate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}2\\pi k &= \\frac{2\\pi m}{\\sqrt{2}}, \\qquad k,m\\in\\mathbb{Z}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This would force $k=m/\\sqrt{2}$, which is impossible for integers unless the period is zero. So no finite $T>0$ works, and the signal is aperiodic.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Periodic vs. Aperiodic Signals",
+          "section_index": 4,
+          "section_title": "Choosing Fourier Series or Fourier Transform Analysis from Periodicity",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=\\cos(t)+\\cos(\\sqrt{2}t)$, decide whether Fourier series or Fourier transform is the appropriate analysis tool and state why.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "From the previous section, $x(t)=\\cos(t)+\\cos(\\sqrt{2}t)$ is aperiodic, so there is no finite $T>0$ with $x(t+T)=x(t)$ for all $t$. That classification determines the analysis tool.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{periodic signal} \\rightarrow \\text{Fourier series} \\qquad \\text{aperiodic signal} \\rightarrow \\text{Fourier transform}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use Fourier series only when the signal repeats with a finite period, because the series describes one period and extends it by repetition. Use the Fourier transform when no finite repeat period exists, because the signal must be analyzed without assuming periodic repetition.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore the correct choice here is the Fourier transform, not Fourier series. The signal is aperiodic, so Fourier-transform analysis is the right tool.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Aperiodic Signals as Infinite-Period Limits",
+      "lesson_core_move": "Interpret an aperiodic signal as the infinite-period limit of a periodic extension to connect Fourier-series harmonics with the Fourier-transform viewpoint.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Aperiodic Signals as Infinite-Period Limits",
+          "section_index": 1,
+          "section_title": "Introduction to Aperiodic Signals as Infinite-Period Limits",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The bridge idea in this section is simple: start from an aperiodic signal, make a periodic extension by repeating one unchanged copy every $T$ units, and then let $T$ grow. That gives you a periodic signal you can think about first, while still keeping the original aperiodic waveform in view.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To build the extension, copy the same waveform again and again without changing its shape or values. The repeated signal is periodic because shifting it by one period gives the same signal back.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_T(t+T)=x_T(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "As $T$ gets larger, the repeated copies move farther apart. On any fixed finite time window, that means the local part of the periodic extension stays the same while the extra copies are pushed away from the window.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the aperiodic signal is recovered locally from the periodic extension in the limit. This is the time-domain picture that makes the Fourier-transform viewpoint natural for aperiodic signals.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{T\\to\\infty} x_T(t)=x(t)\\quad \\text{on any fixed finite time window}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use this limit idea as the starting point for the next sections: first think of the signal as a periodic extension with large $T$, and then let that period move toward infinity to reach the aperiodic case.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Aperiodic Signals as Infinite-Period Limits",
+          "section_index": 2,
+          "section_title": "Building a Periodic Extension from One Signal Copy",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Take a signal copy $x(t)$ that is nonzero on $0 \\le t < 1$ and build a periodic extension with period $T=4$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to keep one signal copy unchanged and repeat it every $4$ units. The goal is not to reshape the waveform, but to place the same copy into each length-$4$ cycle.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_T(t)=x(t-4k), \\quad 4k \\le t < 4(k+1), \\ k\\in \\mathbb{Z}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This rule copies the original waveform into every period without changing its shape or values. Since the original copy is nonzero on $0 \\le t < 1$, the same nonzero part appears in the same place inside each length-$4$ interval.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_T(t+4)=x_T(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the constructed signal is a periodic repetition of one unchanged copy, with period $4$. That is the concrete periodic extension the next steps will keep using.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Aperiodic Signals as Infinite-Period Limits",
+          "section_index": 3,
+          "section_title": "Increasing the Period While Preserving the Signal Copy",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare two periodic extensions of the same signal copy, one with period $T=4$ and one with period $T=12$, and explain what changes and what stays fixed.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both constructions use the same copy of $x(t)$. The only thing changing is the period, so the waveform itself must stay fixed while the spacing changes from $T_1=4$ to $T_2=12$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_{T_1}(t+T_1)=x_{T_1}(t), \\qquad x_{T_2}(t+T_2)=x_{T_2}(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With $T_1=4$, the repeated copies are $4$ units apart. With $T_2=12$, the same copy is $12$ units apart from its neighbors, so the gaps are wider for the larger period.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Nothing about the waveform copy is stretched, compressed, or reshaped. Increasing the period changes only the spacing between repeated copies, not the signal copy itself.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Aperiodic Signals as Infinite-Period Limits",
+          "section_index": 4,
+          "section_title": "Taking the Infinite-Period Limit of the Extension",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Let the period in the previous construction grow without bound. Describe what the periodic extension looks like on any fixed finite time window.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same periodic extension from the previous step: one unchanged copy of $x(t)$ repeated every $T$ units. Now let $T$ grow, but keep the copy itself fixed.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_T(t+T)=x_T(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "As $T$ gets larger, the repeated copies move farther apart. On a fixed finite window, that means the extra repeats eventually move out of view.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{T\\to\\infty} x_T(t)=x(t)\\quad \\text{on any fixed finite time window}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the local behavior on that window matches the original aperiodic signal. Increasing $T$ changes only the spacing between copies; it does not change the copy itself.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Aperiodic Signals as Infinite-Period Limits",
+          "section_index": 5,
+          "section_title": "Connecting the Infinite-Period Limit to the Fourier Transform Viewpoint",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Use the infinite-period limit to explain why the Fourier-series harmonics of the periodic extension lead naturally to the Fourier-transform viewpoint for the original signal.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same periodic extension $x_T(t)$ from the previous step. For each finite $T$, it is still periodic, so its frequency description is a set of discrete Fourier-series harmonics rather than a continuous band.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_T(t)=\\sum_{k=-\\infty}^{\\infty} c_k e^{j k \\omega_0 t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "As $T$ increases, the harmonic spacing shrinks, so those integer-indexed harmonics crowd closer together in frequency. The signal copy in time has not changed; only the frequency grid has become finer.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 \\to 0 \\quad \\text{as} \\quad T\\to\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the infinite-period limit is read as a transition from a discrete harmonic picture to a continuous-frequency picture. That is why the original aperiodic signal is naturally analyzed with the Fourier transform viewpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Frequency Spacing in Fourier Series",
+      "lesson_core_move": "Compute the Fourier-series frequency spacing omega_0 = 2*pi/T and interpret how it shrinks toward continuous frequency as the period grows without bound.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Frequency Spacing in Fourier Series",
+          "section_index": 1,
+          "section_title": "Introduction to Frequency Spacing in Fourier Series",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In a Fourier series, the spectrum is not continuous. It appears as discrete harmonic lines, and the spacing between neighboring lines is the angular-frequency spacing $\\omega_0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So if you know the period $T$, you know the gap between adjacent Fourier-series lines. The $n$th harmonic sits at $\\omega_n = n\\omega_0$, so every line is an integer multiple of the same spacing.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_n = n\\omega_0 = \\frac{2\\pi n}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This gives the key trend: when $T$ gets larger, $\\omega_0$ gets smaller. The same harmonic numbers are still there, but the lines are packed more tightly together.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{T\\to\\infty} \\omega_0 = 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the bridge to continuous frequency: as $T\\to\\infty$, the spacing collapses toward zero, and the Fourier-series line spectrum becomes arbitrarily dense.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Frequency Spacing in Fourier Series",
+          "section_index": 2,
+          "section_title": "Computing Frequency Spacing from the Period",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has period $T=0.5$ s. Compute the Fourier-series spacing $\\omega_0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the period $T$. For Fourier-series line spacing, use $\\omega_0 = 2\\pi/T$ and substitute the given period directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T} = \\frac{2\\pi}{0.5} = 4\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the adjacent Fourier-series harmonics are separated by $4\\pi$ rad/s. That is the harmonic gap for this signal, and it is the quantity that will shrink when the period grows.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Frequency Spacing in Fourier Series",
+          "section_index": 3,
+          "section_title": "Finding Harmonic Frequencies from the Spacing",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For a signal with period $T=2$ s, compute $\\omega_0$ and then list $\\omega_1$, $\\omega_2$, and $\\omega_3$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that once the spacing is known, each harmonic frequency is just an integer multiple of $\\omega_0$. For $T=2$ s, first compute the spacing from the period.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T} = \\frac{2\\pi}{2} = \\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use the harmonic rule $\\omega_n = n\\omega_0$. That means the first three positive harmonic lines are the 1st, 2nd, and 3rd multiples of the same spacing.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_1 = \\pi,\\quad \\omega_2 = 2\\pi,\\quad \\omega_3 = 3\\pi",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the harmonics stay equally spaced by $\\omega_0 = \\pi$ rad/s, and the full line pattern is just integer multiples of that gap.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Frequency Spacing in Fourier Series",
+          "section_index": 4,
+          "section_title": "Comparing Frequency Spacing for Larger Periods",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare the spacing for periods $T$ and $3T$ and identify which harmonic spectrum is denser.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a period change by a factor of $3$, so the spacing rule $\\omega_0 = 2\\pi/T$ is the only thing you need. Start from the baseline period $T$ and then replace $T$ by $3T$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T},\\qquad \\omega_0' = \\frac{2\\pi}{3T} = \\frac{1}{3}\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the larger period gives one-third the spacing. The harmonic lines move closer together, which means the spectrum is denser.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{\\omega_0'}{\\omega_0} = \\frac{1}{3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the reusable inverse scaling rule: multiply the period by a factor, and the Fourier-series spacing shrinks by the same factor.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Frequency Spacing in Fourier Series",
+          "section_index": 5,
+          "section_title": "Interpreting Frequency Spacing as the Period Grows Without Bound",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If the period grows without bound, what happens to $\\omega_0 = 2\\pi/T$ and the spacing between harmonic lines?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the limit $T\\to\\infty$. Use the same spacing rule $\\omega_0 = 2\\pi/T$ and watch what happens as the denominator grows.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{T\\to\\infty} \\omega_0 = \\lim_{T\\to\\infty} \\frac{2\\pi}{T} = 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the harmonic spacing collapses to zero. The Fourier-series lines crowd together, which is the signal that the spectrum is approaching a continuous frequency axis.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Continuous Frequency",
+      "lesson_core_move": "Interpret continuous frequency as the variable that replaces discrete harmonic indices when the Fourier-series period grows without bound.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Continuous Frequency",
+          "section_index": 1,
+          "section_title": "Introduction to Continuous Frequency",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a periodic signal with period $T$, the Fourier-series spectrum is not continuous. It sits on harmonic frequencies $\\omega_n = n\\omega_0$, where $n$ is an integer label and $\\omega_0$ is the spacing between adjacent lines.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_n = n\\omega_0 = \\frac{2\\pi n}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The spacing is the important part: adjacent harmonics differ by $\\Delta\\omega = \\omega_{n+1} - \\omega_n = \\omega_0$, and $\\omega_0 = \\frac{2\\pi}{T}$ ties that spacing directly to the period.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta\\omega = \\omega_{n+1} - \\omega_n = \\omega_0 = \\frac{2\\pi}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "As $T$ grows, $\\omega_0$ shrinks, so the same harmonic labels are packed more tightly on the frequency axis. The spectrum still uses integers $n$, but the frequency samples sit closer together.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{T\\to\\infty} \\Delta\\omega = 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the point of continuous frequency: when the grid becomes arbitrarily dense, the integer index stops being the natural coordinate, and the spectrum is better read with a continuous variable $\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Continuous Frequency",
+          "section_index": 2,
+          "section_title": "Identifying Discrete Harmonic Frequencies",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A periodic signal has period $T = 4$ s. Find $\\omega_0$ and list the harmonic frequencies for $n = -2,-1,0,1,2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the period $T$, which tells us to use the Fourier-series harmonic grid. The spectrum is not arbitrary; it sits at frequencies $\\omega_n = n\\omega_0$, with one line for each integer $n$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_n = n\\omega_0 = \\frac{2\\pi n}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $T = 4$ s, the spacing is $\\omega_0 = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$ rad/s. That means each harmonic line is separated from the next one by $\\frac{\\pi}{2}$ rad/s.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{T} = \\frac{2\\pi}{4} = \\frac{\\pi}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now multiply $\\omega_0$ by the listed integer labels. The harmonic frequencies are $-\\pi$, $-\\frac{\\pi}{2}$, $0$, $\\frac{\\pi}{2}$, and $\\pi$ rad/s, written from negative to positive.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\{-\\pi,\\,-\\frac{\\pi}{2},\\,0,\\,\\frac{\\pi}{2},\\,\\pi\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is a discrete Fourier-series grid: only the harmonic frequencies at those integer labels belong to the spectrum, and nothing sits between the lines.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Continuous Frequency",
+          "section_index": 3,
+          "section_title": "Seeing Frequency Samples Become Denser",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare periodic signals with periods $T = 2$ s and $T = 8$ s. Compute $\\omega_0$ for each and decide which spectrum has the denser harmonic grid over the same frequency interval.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a comparison of two periods, so use the same harmonic spacing rule from the previous step. For each signal, compute $\\omega_0 = \\frac{2\\pi}{T}$ and compare the line spacing on the Fourier-series grid.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_0 = \\frac{2\\pi}{2} = \\pi,\\qquad \\omega_0 = \\frac{2\\pi}{8} = \\frac{\\pi}{4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $T = 2$ s, the harmonic lines are $\\pi$ rad/s apart. For $T = 8$ s, they are only $\\frac{\\pi}{4}$ rad/s apart, so the larger-period signal has much tighter spacing.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta\\omega_{T=2} = \\pi,\\qquad \\Delta\\omega_{T=8} = \\frac{\\pi}{4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That spacing is the gap between adjacent harmonic lines. Over the same frequency interval, the grid with the smaller gap fits more samples, so the $T = 8$ spectrum is denser than the $T = 2$ spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Continuous Frequency",
+          "section_index": 4,
+          "section_title": "Replacing Harmonic Indices with a Frequency Variable",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A Fourier-series spectrum is written with harmonics at $\\omega_n = n\\omega_0$. Describe how the notation changes as $T \\to \\infty$ and $\\omega_0 \\to 0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the harmonic grid $\\omega_n = n\\omega_0$. Here $n$ is only a discrete label, and $\\omega_0 = \\frac{2\\pi}{T}$ is the fixed spacing between adjacent lines.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_n = n\\omega_0,\\qquad \\omega_0 = \\frac{2\\pi}{T}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "As $T \\to \\infty$, the spacing collapses: $\\Delta\\omega = \\omega_{n+1} - \\omega_n = \\omega_0 \\to 0$. Once the gap vanishes, the integer index stops being the useful coordinate on the frequency axis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta\\omega = \\omega_{n+1} - \\omega_n = \\omega_0 \\to 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The relabeling is the main point: replace the harmonic index $n$ with the continuous frequency variable $\\omega$. In the Fourier-transform setting, the spectrum is read on the $\\omega$ axis, not as a list of integer harmonic numbers.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Continuous Frequency",
+          "section_index": 5,
+          "section_title": "Reading a Spectrum on a Continuous Frequency Axis",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A spectrum is described as $X(\\omega)$ on a continuous frequency axis, and you are asked to read the value at $\\omega = 1.3\\pi$ rad/s. Explain how to interpret that request.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the continuous axis in $X(\\omega)$. Read $\\omega$ as the coordinate itself, so $\\omega = 1.3\\pi$ rad/s names a location on the spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega = 1.3\\pi\\ \\text{rad/s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In a Fourier series, you would be restricted to harmonic locations $\\omega_n = n\\omega_0$. Here, the point is that $1.3\\pi$ does not have to equal an integer multiple of a spacing to be meaningful.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\omega_n = n\\omega_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct reading is: take the spectrum value at that frequency coordinate. That is the bridge to Fourier-transform notation, where $\\omega$ is the axis label and not a harmonic index.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Fourier Transform Definition",
+      "lesson_core_move": "Apply the Fourier transform definition to convert an aperiodic continuous-time signal x(t) into its continuous-frequency spectrum X(j omega).",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Fourier Transform Definition",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform Definition",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Periodic continuous-time signals repeat with a finite period and are naturally described by Fourier series. An aperiodic signal does not repeat, so the forward Fourier transform gives its continuous-frequency description in terms of $\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the definition term by term: $x(t)$ is the time-domain signal, $e^{-j\\omega t}$ is the complex exponential that probes frequency $\\omega$, and the integral adds the contribution from every time instant. The result $X(j\\omega)$ is the continuous-frequency spectrum of $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}1, & -T/2 \\le t \\le T/2\\\\ 0, & \\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For a compact-support signal like this rectangular pulse, the integral is still written over all time, but the zero-valued regions contribute nothing. The calculation therefore depends only on the support of $x(t)$, which is the first thing to notice before any later example evaluates $X(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Fourier Transform Definition",
+          "section_index": 2,
+          "section_title": "Substituting a Signal into the Fourier Transform Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t)=1$ for $-T/2 \\le t \\le T/2$ and $0$ otherwise, write the Fourier transform integral for $X(j\\omega)$ and substitute the signal into the integrand.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the forward Fourier transform definition. Start from $X(j\\omega)=\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ and keep the infinite-time limits, because this step only inserts the signal into the integrand.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the signal is the compact-support pulse from the prompt: $x(t)=1$ on $-T/2 \\le t \\le T/2$ and $0$ otherwise. Replace $x(t)$ by that piecewise form directly inside the integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty} \\begin{cases}1, & -T/2 \\le t \\le T/2\\\\ 0, & \\text{otherwise}\\end{cases} e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the pure substitution result. The integrand now contains the chosen $x(t)$, but the bounds are still $-\\infty$ to $\\infty$; the next section will reduce them to the support interval.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Fourier Transform Definition",
+          "section_index": 3,
+          "section_title": "Setting Integration Limits from Aperiodic Signal Support",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Using the same pulse, identify the nonzero time interval and rewrite $X(j\\omega)$ with the correct integration limits.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the pulse support from the prompt: $x(t)$ is nonzero only on $-T/2 \\le t \\le T/2$. So the Fourier transform integral should keep only that interval when we set the bounds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $x(t)=0$ outside that support, the infinite limits can be replaced by the nonzero interval without changing the transform. Keep the integrand the same and only shrink the bounds.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-T/2}^{T/2} e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the bounded setup we wanted. The support has collapsed the full-time integral to the exact finite interval where $x(t)$ lives, and the next step will evaluate the result in terms of $\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Fourier Transform Definition",
+          "section_index": 4,
+          "section_title": "Evaluating X(j omega) as a Function of Continuous Frequency",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Evaluate $X(j\\omega)=\\int_{-T/2}^{T/2} e^{-j\\omega t}\\,dt$ and simplify the result into a closed-form expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the bounded Fourier transform integral from the previous step. Integrate $e^{-j\\omega t}$ with respect to $t$, then evaluate the antiderivative at the two limits to turn the transform into a function of $\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}X(j\\omega) &= \\int_{-T/2}^{T/2} e^{-j\\omega t}\\,dt \\\\ &= \\left[\\frac{e^{-j\\omega t}}{-j\\omega}\\right]_{-T/2}^{T/2} \\\\ &= \\frac{e^{-j\\omega T/2}-e^{j\\omega T/2}}{-j\\omega}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now simplify the exponential difference into a trigonometric form. That keeps the result as a continuous-frequency spectrum and makes the dependence on $\\omega$ easy to read.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}X(j\\omega) &= \\frac{e^{-j\\omega T/2}-e^{j\\omega T/2}}{-j\\omega} \\\\ &= \\frac{2\\sin(\\omega T/2)}{\\omega}\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the closed-form transform is $X(j\\omega)=\\frac{2\\sin(\\omega T/2)}{\\omega}$. At $\\omega=0$, the removable limit is $X(0)=T$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Fourier Transform Definition",
+          "section_index": 5,
+          "section_title": "Interpreting the Transform Result as a Continuous-Frequency Spectrum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given the closed-form $X(j\\omega)$ from the previous step, explain what it says about the signal’s continuous-frequency spectrum and the role of $\\omega$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the closed-form $X(j\\omega)$ from the previous step. Read it as a function of continuous frequency: every real $\\omega$ gives one value, so the result is a continuous spectrum rather than isolated harmonics or a discrete coefficient list.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\frac{2\\sin(\\omega T/2)}{\\omega}, \\qquad X(0)=T",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The value at $\\omega=0$ is the zero-frequency component, and here it equals the pulse area. That tells you how much DC content the finite pulse carries.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $x(t)$ is supported on a finite time interval, its transform is spread across a range of $\\omega$ instead of living at one frequency index. The shape of $X(j\\omega)$ is therefore a continuous-frequency spectrum whose width and sidelobes come from the time-limited pulse.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Inverse Fourier Transform",
+      "lesson_core_move": "Apply the inverse Fourier transform to reconstruct an aperiodic continuous-time signal x(t) from its continuous-frequency spectrum X(j omega).",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Inverse Fourier Transform",
+          "section_index": 1,
+          "section_title": "Introduction to Inverse Fourier Transform",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The inverse Fourier transform is the reverse of the forward transform: after a signal has been turned into $X(j\\omega)$, the inverse operation recovers the original $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}X(j\\omega)e^{j\\omega t}\\,d\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read that formula from left to right: the factor $\\frac{1}{2\\pi}$ sets the scale, the integral runs over all frequencies, and the kernel $e^{j\\omega t}$ rebuilds the time signal. The spectrum $X(j\\omega)$ supplies the frequency weights, and the integral recombines those contributions into $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is why the forward and inverse transforms form a pair: $x(t)\\leftrightarrow X(j\\omega)$. In the simplest known pair, applying the inverse integral reproduces the original time signal before any harder algebra appears.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)\\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Later examples will write the inverse integral for a given spectrum, evaluate it, and then verify the result by transforming back with the forward transform.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Inverse Fourier Transform",
+          "section_index": 2,
+          "section_title": "Writing the Inverse Fourier Transform Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given a continuous-frequency spectrum $X(j\\omega)$, write the inverse Fourier transform integral that reconstructs $x(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the spectrum $X(j\\omega)$ is given and the task is to recover the time signal $x(t)$. That means you use the inverse Fourier transform, not the forward transform, and you keep the sign, limits, and normalization exactly as written.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}X(j\\omega)e^{j\\omega t}\\,d\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the setup from left to right: the factor $\\frac{1}{2\\pi}$ sets the scale, the limits run over all frequencies, and the kernel $e^{j\\omega t}$ rebuilds the time signal from the spectrum. If a later prompt supplies a specific $X(j\\omega)$, substitute it directly into the integrand; if not, leave the inverse integral in this unevaluated form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the complete inverse-transform setup. The next examples will use the same form and then evaluate it for specific spectra.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Inverse Fourier Transform",
+          "section_index": 3,
+          "section_title": "Evaluating the Inverse Transform Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Evaluate the inverse Fourier transform of the even rectangular spectrum $X(j\\omega)=1$ for $|\\omega|\\le \\Omega$ and $0$ otherwise.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is an even rectangular spectrum centered at $\\omega=0$. That means the inverse transform starts with the band $[-\\Omega,\\Omega]$, and the even symmetry lets you rewrite the complex exponential integral in a real form before you simplify anything.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{2\\pi}\\int_{-\\Omega}^{\\Omega}e^{j\\omega t}\\,d\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{\\pi}\\int_0^\\Omega \\cos(\\omega t)\\,d\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{\\pi}\\left[\\frac{\\sin(\\omega t)}{t}\\right]_0^\\Omega=\\frac{1}{\\pi}\\frac{\\sin(\\Omega t)}{t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is real and even, which matches the spectrum. At $t=0$, take the usual limit, and in sinc form this is the familiar bandlimited time signal produced by a flat rectangular spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Inverse Fourier Transform",
+          "section_index": 4,
+          "section_title": "Reconstructing a Signal from a Piecewise Spectrum",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Reconstruct $x(t)$ from the piecewise spectrum $X(j\\omega)=1$ for $\\Omega_1\\le |\\omega|\\le \\Omega_2$ and $0$ otherwise.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a piecewise even spectrum with a gap in the middle. Rewrite it as the difference of two simpler even rectangles so you can apply the inverse transform once to the outer band and once to the missing inner band.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{2\\pi}\\int_{-\\Omega_2}^{\\Omega_2}e^{j\\omega t}\\,d\\omega-\\frac{1}{2\\pi}\\int_{-\\Omega_1}^{\\Omega_1}e^{j\\omega t}\\,d\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{\\pi}\\frac{\\sin(\\Omega_2 t)}{t}-\\frac{1}{\\pi}\\frac{\\sin(\\Omega_1 t)}{t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{\\pi}\\frac{\\sin(\\Omega_2 t)-\\sin(\\Omega_1 t)}{t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is the difference of two sinc-shaped terms, so it stays real and even. At $t=0$, use the usual limit and get $(\\Omega_2-\\Omega_1)/\\pi$, which matches the net band width.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Inverse Fourier Transform",
+          "section_index": 5,
+          "section_title": "Checking Reconstruction with the Forward Transform",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Check that the reconstructed $x(t)$ from the previous example produces the same piecewise $X(j\\omega)$ under the forward Fourier transform.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the reconstructed signal from the previous step. Since it is a difference of two sinc-shaped terms, check each term against the standard rectangle pair and use linearity to recover the target spectrum exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\frac{1}{\\pi}\\frac{\\sin(\\Omega_2 t)-\\sin(\\Omega_1 t)}{t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{\\sin(\\Omega t)}{\\pi t}\\leftrightarrow\\begin{cases}1,&|\\omega|\\le\\Omega\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\begin{cases}1,&\\Omega_1\\le|\\omega|\\le\\Omega_2\\\\0,&\\text{otherwise}\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The outer rectangle from $\\Omega_2$ minus the inner rectangle from $\\Omega_1$ gives the same piecewise spectrum as the target. That exact match confirms that the reconstruction is correct.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Fourier Transform Pair Notation",
+      "lesson_core_move": "Interpret Fourier transform pair notation by matching x(t) and X(j omega) to the forward and inverse transforms that connect a time-domain signal with its spectrum.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform Pair Notation",
+          "section_index": 1,
+          "section_title": "Introduction to Fourier Transform Pair Notation",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The notation $x(t) \\leftrightarrow X(j\\omega)$ names a Fourier transform pair. It is not asking you to calculate yet; it is saying that one time-domain signal and one frequency-domain spectrum are matched.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The left side, $x(t)$, is the time-domain signal. The variable $t$ tells you that this description is organized by time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The right side, $X(j\\omega)$, is the frequency-domain spectrum. The argument $j\\omega$ tells you that this description is organized by continuous angular frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reading the pair from left to right gives the forward Fourier transform: start with $x(t)$ and obtain $X(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\xrightarrow{\\mathcal{F}} X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reading the pair from right to left gives the inverse Fourier transform: start with $X(j\\omega)$ and reconstruct $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega) \\xrightarrow{\\mathcal{F}^{-1}} x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For later problems, identify the domain first. If the expression uses $t$, you are looking at the time signal; if it uses $j\\omega$, you are looking at the spectrum. Then read the arrow direction to decide whether the forward or inverse transform is being used.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform Pair Notation",
+          "section_index": 2,
+          "section_title": "Matching x(t) with X(j omega)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A reference sheet shows the pair $x(t) \\leftrightarrow X(j\\omega)$. Identify which symbol is the time-domain signal, which symbol is the spectrum, and state what transform relationship the pair names.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the printed pair $x(t) \\leftrightarrow X(j\\omega)$. This is a recognition task, not a calculation task: match each symbol to its domain and then read the arrow direction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The left symbol, $x(t)$, is the time-domain signal because the argument $t$ organizes the description by time. The right symbol, $X(j\\omega)$, is the frequency-domain spectrum because the argument $j\\omega$ organizes the description by continuous angular frequency.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reading the pair left to right names the forward Fourier transform: start with $x(t)$ and obtain $X(j\\omega)$. Reading the pair right to left names the inverse Fourier transform: start with $X(j\\omega)$ and reconstruct $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\xrightarrow{\\mathcal{F}} X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega) \\xrightarrow{\\mathcal{F}^{-1}} x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So when you see a Fourier pair, identify the domain first, then read the arrow direction. $x(t)$ is the time signal, $X(j\\omega)$ is the spectrum, and the notation tells you which transform direction connects them.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform Pair Notation",
+          "section_index": 3,
+          "section_title": "Reading the Forward Transform Direction",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "The pair notation $x(t) \\leftrightarrow X(j\\omega)$ is shown. If you start from $x(t)$, which symbol is produced by the forward transform, and what domain is it in?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the starting symbol $x(t)$. That tells you to read the notation in the signal-to-spectrum direction, not the reverse direction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the forward transform, $x(t)$ is the input signal and $X(j\\omega)$ is the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\xrightarrow{\\mathcal{F}} X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The symbol produced by the forward transform is $X(j\\omega)$. Because the argument is $j\\omega$, that output lives in the frequency domain and represents the spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So if a prompt asks for the forward-transform result from $x(t)$, name $X(j\\omega)$ and identify it as the frequency-domain spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform Pair Notation",
+          "section_index": 4,
+          "section_title": "Reading the Inverse Transform Direction",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "The pair notation $x(t) \\leftrightarrow X(j\\omega)$ is shown. If you start from $X(j\\omega)$, which function do you recover with the inverse transform, and what domain does it live in?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the starting symbol $X(j\\omega)$. That tells you to read the notation in the spectrum-to-signal direction, not the forward direction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the inverse transform, $X(j\\omega)$ is the input spectrum and $x(t)$ is the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega) \\xrightarrow{\\mathcal{F}^{-1}} x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The function recovered by the inverse transform is $x(t)$. Because the argument is $t$, that output lives in the time domain and represents the original signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So if a prompt asks for the inverse-transform result from $X(j\\omega)$, name $x(t)$ and identify it as the time-domain signal.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Fourier Transform Pair Notation",
+          "section_index": 5,
+          "section_title": "Interpreting a Fourier Transform Pair Table Entry",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A transform table entry lists $x(t)$ and $X(j\\omega)$ as a paired row. Explain what the row says about the signal, the spectrum, and the transform relationship.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the paired row $x(t)$ and $X(j\\omega)$. Read it as a Fourier pair entry, not as two unrelated symbols.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t) \\leftrightarrow X(j\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The left symbol, $x(t)$, is the time-domain signal. The right symbol, $X(j\\omega)$, is the frequency-domain spectrum.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the table row summarizes the same transform relationship from the earlier examples: the forward transform sends $x(t)$ to $X(j\\omega)$, and the inverse transform sends $X(j\\omega)$ back to $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "When you see this compact table entry, identify the signal, identify the spectrum, and read the row as one paired time-and-frequency description.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

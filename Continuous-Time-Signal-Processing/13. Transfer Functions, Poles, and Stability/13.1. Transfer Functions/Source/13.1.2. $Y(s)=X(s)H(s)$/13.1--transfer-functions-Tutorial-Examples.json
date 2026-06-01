@@ -1,0 +1,1440 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Laplace Transform of Convolution",
+      "lesson_core_move": "Transform an LTI convolution output \\(y(t)=x(t)*h(t)\\) with the one-sided Laplace transform to replace time-domain convolution by multiplication of \\(X(s)\\) and \\(H(s)\\) in transfer-function analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Laplace Transform of Convolution",
+          "section_index": 1,
+          "section_title": "Introduction to Laplace Transform of Convolution",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When an LTI output is written as $y(t)=x(t)*h(t)$, the cue is convolution in time and the next move is to switch to the one-sided Laplace domain. In this section, the rule to recognize is that convolution becomes multiplication of the input transform and the system transform, provided the causal and ROC conditions are valid.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the simplest causal case: let $x(t)=\\delta(t)$. Then $x(t)*h(t)=h(t)$, and because $\\mathcal{L}\\{\\delta(t)\\}=1$, the output transform is just $Y(s)=H(s)$ in this base case.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau\\;\\Longrightarrow\\;Y(s)=\\mathcal{L}\\{x(t)*h(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now name the pieces: $X(s)=\\mathcal{L}\\{x(t)\\}$, $H(s)=\\mathcal{L}\\{h(t)\\}$, and $Y(s)=\\mathcal{L}\\{y(t)\\}$. The Laplace convolution theorem packages those symbols into one compact relation that later sections can use without redoing the time-domain integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x(t)*h(t)\\}=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Operationally, this is what makes transfer-function analysis manageable: the time-domain convolution turns into algebra in $s$, so the system can be carried forward as $H(s)$ and combined with the input through multiplication. The next step will use this same notation unchanged.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Laplace Transform of Convolution",
+          "section_index": 2,
+          "section_title": "Recognizing an LTI Output as a Convolution",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Recognize the form of $y(t)=\\int_0^t e^{-\\tau}\\,h(t-\\tau)\\,d\\tau$ as a convolution and identify $x(t)$ and $h(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the integral kernel $h(t-\\tau)$ together with the one-sided limits $0\\le \\tau\\le t$. That matches the standard convolution pattern, so the output should be read as an LTI system response rather than as an ordinary product or a cross-correlation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Match the integrand to the canonical form $\\int x(\\tau)h(t-\\tau)\\,d\\tau$ by taking the input signal to be $x(\\tau)=e^{-\\tau}u(\\tau)$. The unit step is what makes this the causal one-sided case, because it keeps the signal active only for nonnegative time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t e^{-\\tau}\\,h(t-\\tau)\\,d\\tau \\;\\equiv\\; x(t)*h(t), \\qquad x(t)=e^{-t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With that identification in place, the time-domain output is already in convolution form, so the one-sided Laplace transform will turn it into the product $Y(s)=X(s)H(s)$. For this base case, the input transform is $X(s)=\\frac{1}{s+1}$ for $\\Re\\{s\\}>-1$, and the system factor remains $H(s)$ as the transfer-function multiplier.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Laplace Transform of Convolution",
+          "section_index": 3,
+          "section_title": "Transforming \\(x(t)*h(t)\\) into \\(X(s)H(s)\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $x(t)=e^{-t}u(t)$ and $h(t)=t\\,u(t)$, write the Laplace-domain product for $y(t)=x(t)*h(t)$ and simplify the result form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the convolution structure from the previous section, so the move is to transform each factor separately and then multiply the results. Because both signals are causal, the one-sided Laplace transform applies directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First identify the transform of the input factor $x(t)=e^{-t}u(t)$. By the standard one-sided Laplace table, this gives $X(s)=\\frac{1}{s+1}$ with ROC $\\Re\\{s\\}>-1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\mathcal{L}\\{e^{-t}u(t)\\}=\\frac{1}{s+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next identify the system factor $h(t)=t\\,u(t)$. Its one-sided Laplace transform is $H(s)=\\frac{1}{s^2}$ with ROC $\\Re\\{s\\}>0$, so the product must use the intersection of the two one-sided regions.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\mathcal{L}\\{t\\,u(t)\\}=\\frac{1}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply the convolution theorem: the Laplace transform of $y(t)=x(t)*h(t)$ is the product of the individual transforms. The result is a transfer-function-style expression with the causal ROC inherited from both factors, so the final form is $Y(s)=\\frac{1}{(s+1)s^2}$ with $\\Re\\{s\\}>0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)=\\frac{1}{s+1}\\cdot\\frac{1}{s^2}=\\frac{1}{(s+1)s^2}, \\qquad \\Re\\{s\\}>0",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Laplace Transform of Convolution",
+          "section_index": 4,
+          "section_title": "Applying the Convolution Transform to \\(y(t)=x(t)*h(t)\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "If $Y(s)=\\frac{1}{s(s+1)}$ and $X(s)=\\frac{1}{s}$, apply the convolution transform rule to find $H(s)$ and state the corresponding relationship in time domain.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the product identity $Y(s)=X(s)H(s)$. Since $Y(s)$ and one factor are already known, isolate the missing factor with algebra instead of recomputing anything from the time domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s) \\qquad \\Rightarrow \\qquad H(s)=\\frac{Y(s)}{X(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given transforms: $H(s)=\\dfrac{\\frac{1}{s(s+1)}}{\\frac{1}{s}}$. The $s$ factor cancels, so the missing system factor is $\\dfrac{1}{s+1}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{\\frac{1}{s(s+1)}}{\\frac{1}{s}}=\\frac{1}{s+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the recovered transfer multiplier is $H(s)=\\frac{1}{s+1}$, with one-sided ROC $\\Re\\{s\\}>-1$. The time-domain relationship remains $y(t)=x(t)*h(t)$; the Laplace-domain step is the algebraic way to identify the missing system factor.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Laplace Transform of Convolution",
+          "section_index": 5,
+          "section_title": "Interpreting Convolution Multiplication in the \\(s\\)-Domain",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(s)=\\frac{1}{s}$ and $H(s)=\\frac{1}{s+1}$, interpret $Y(s)=X(s)H(s)$ for the causal LTI system and state the corresponding time-domain operation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the product identity $Y(s)=X(s)H(s)$. Here $X(s)$ plays the role of the input, $H(s)$ plays the role of the system transfer factor, and $Y(s)$ is the output. Read the product as a system relation, not as two separate inputs being combined.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Translate that identity back to the time domain: the output is obtained by convolving the input with the impulse response, so $y(t)=x(t)*h(t)$. That is the meaning of multiplication in the $s$-domain for an LTI system.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=x(t)*h(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The practical point is that the system can be analyzed by multiplying transfer factors instead of evaluating convolution directly. In later transfer-function work, this is the rule that turns a signal-flow description into algebra.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "$Y(s)=X(s)H(s)$",
+      "lesson_core_move": "Translate the LTI input-output convolution relation \\(y(t)=x(t)*h(t)\\) into \\(Y(s)=X(s)H(s)\\) and identify \\(X(s)\\), \\(H(s)\\), and \\(Y(s)\\) as the input, system, and output transforms.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "$Y(s)=X(s)H(s)$",
+          "section_index": 1,
+          "section_title": "Introduction to $Y(s)=X(s)H(s)$",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When an LTI output is written as $y(t)=x(t)*h(t)$, the cue is the convolution symbol $*$. That cue tells you to move from the time-domain relation to the Laplace-domain product $Y(s)=X(s)H(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $X(s)=\\mathcal{L}\\{x(t)\\}$ for the input transform, $H(s)=\\mathcal{L}\\{h(t)\\}$ for the system transform, and $Y(s)=\\mathcal{L}\\{y(t)\\}$ for the output transform. Keep those roles fixed whenever you read or write the relation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x(t)*h(t)\\}=\\mathcal{L}\\{x(t)\\}\\,\\mathcal{L}\\{h(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substituting those symbols into the transform rule gives $Y(s)=X(s)H(s)$. In this form, the output transform is the product of the input transform and the system transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the direct mapping you will reuse in the next steps: start from $y(t)=x(t)*h(t)$, identify $X(s)$, $H(s)$, and $Y(s)$, and read the output as the product relation in the $s$-domain.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "$Y(s)=X(s)H(s)$",
+          "section_index": 2,
+          "section_title": "Translating an LTI Convolution Output into a Product Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Show that from $y(t)=x(t)*h(t)$, with $X(s)=\\frac{1}{s+1}$ and $H(s)=\\frac{2}{s+2}$, the output transform is $Y(s)=X(s)H(s)=\\frac{2}{(s+1)(s+2)}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the convolution symbol in $y(t)=x(t)*h(t)$. For an LTI system, that cue tells you to use the Laplace convolution theorem and move from the time-domain relation to the product relation in the $s$-domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=\\mathcal{L}\\{y(t)\\}=\\mathcal{L}\\{x(t)*h(t)\\}=\\mathcal{L}\\{x(t)\\}\\,\\mathcal{L}\\{h(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now keep the symbol roles fixed: $X(s)$ is the input transform, $H(s)$ is the system transform, and $Y(s)$ is the output transform. With that mapping in place, the identity becomes $Y(s)=X(s)H(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)=\\frac{1}{s+1}\\cdot\\frac{2}{s+2}=\\frac{2}{(s+1)(s+2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the worked substitution: the time-domain convolution becomes multiplication, the input and system transforms stay on the right side, and the result is the output transform $Y(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "$Y(s)=X(s)H(s)$",
+          "section_index": 3,
+          "section_title": "Identifying $X(s)$, $H(s)$, and $Y(s)$ in the Product Relation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $Y(s)=\\frac{4}{(s+1)(s+2)}$ from an LTI relation, identify which symbolic factor is $X(s)$, which is $H(s)$, and which is $Y(s)$, then state the interpretation in one sentence.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the left side: by definition, the quantity labeled $Y(s)$ is the output transform. The factorization on the right side must therefore be read as the product of the input transform and the system transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=\\frac{4}{(s+1)(s+2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the LTI interpretation to assign the fixed system factor to $H(s)$ and the remaining factor to $X(s)$. In a product relation, the two right-hand factors are not interchangeable: their roles come from the system statement, not from algebra alone.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s),\\qquad X(s)=\\frac{4}{s+1},\\qquad H(s)=\\frac{1}{s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the interpretation is: $Y(s)$ is the output transform, $X(s)$ is the input transform, and $H(s)$ is the system transform. This is the role check you will reuse whenever a product in the $s$-domain appears.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "$Y(s)=X(s)H(s)$",
+          "section_index": 4,
+          "section_title": "Writing $Y(s)$ from Given Input and System Transforms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute $Y(s)$ from $X(s)=\\frac{3}{s+1}$ and $H(s)=\\frac{s}{s+4}$ by applying the topic core move.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the product relation $Y(s)=X(s)H(s)$. That tells you to keep the input transform and system transform separate and multiply them directly in the $s$-domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given transforms exactly as written: $X(s)=\\frac{3}{s+1}$ and $H(s)=\\frac{s}{s+4}$. Then multiply the numerators and denominators without changing the symbol roles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=\\frac{3}{s+1}\\cdot\\frac{s}{s+4}=\\frac{3s}{(s+1)(s+4)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the output transform is $Y(s)=\\frac{3s}{(s+1)(s+4)}$. The computation stays inside the same interpretation: $X(s)$ is the input transform, $H(s)$ is the system transform, and $Y(s)$ is the output transform.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "$Y(s)=X(s)H(s)$",
+          "section_index": 5,
+          "section_title": "Interpreting $Y(s)=X(s)H(s)$ as the Laplace-Domain LTI System Relation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "With fixed $H(s)=\\frac{1}{s+2}$ and varying input transforms, compare outputs for $X_1(s)=\\frac{1}{s+1}$ and $X_2(s)=\\frac{2}{s+1}$ using the same $Y(s)=X(s)H(s)$ relation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $H(s)$ is fixed. That means the system part stays the same while the input transform changes, so you compare outputs by applying the same product rule to each input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y_1(s)=X_1(s)H(s), \\qquad Y_2(s)=X_2(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given transforms exactly as written: $X_1(s)=\\frac{1}{s+1}$, $X_2(s)=\\frac{2}{s+1}$, and $H(s)=\\frac{1}{s+2}$. The only change across the two cases is the input factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y_1(s)=\\frac{1}{s+1}\\cdot\\frac{1}{s+2}=\\frac{1}{(s+1)(s+2)}, \\qquad Y_2(s)=\\frac{2}{s+1}\\cdot\\frac{1}{s+2}=\\frac{2}{(s+1)(s+2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the same Laplace-domain system relation produces outputs that differ only through the input transform. The fixed factor is $H(s)$, and each output is still an $s$-domain result of the form $Y(s)=X(s)H(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Transfer Function $H(s)=Y(s)/X(s)$",
+      "lesson_core_move": "Isolate \\(H(s)\\) from the Laplace-domain input-output relation by dividing \\(Y(s)\\) by \\(X(s)\\) and interpret the result as the system-only multiplier for an LTI system.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transfer Function $H(s)=Y(s)/X(s)$",
+          "section_index": 1,
+          "section_title": "Introduction to Transfer Function $H(s)=Y(s)/X(s)$",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For an LTI system, the Laplace-domain input-output relation is $Y(s)=X(s)H(s)$. The object to recognize here is $H(s)$: it is the system-only factor, separate from the particular input and output transforms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If $X(s)\\neq 0$, divide both sides by $X(s)$ to isolate the system factor. This is the allowed algebraic move that removes the input dependence and leaves only the transfer function.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transfer function is not a new signal; it is the ratio that describes the LTI system itself. In later work, the same $H(s)$ stays with the system while different inputs change $X(s)$ and $Y(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)\\neq 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The base case is simple cancellation: if $X(s)$ and $Y(s)$ share the same factor, divide it out and read the remaining constant or rational factor as $H(s)$. That is the core move this section prepares.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transfer Function $H(s)=Y(s)/X(s)$",
+          "section_index": 2,
+          "section_title": "Isolating $H(s)$ from $Y(s)=X(s)H(s)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(s)=\\frac{4}{s+1}$ and $Y(s)=\\frac{10}{s+1}$, find $H(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the product relation $Y(s)=X(s)H(s)$. To isolate the system factor, divide both sides by $X(s)$, assuming $X(s)\\neq 0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the given transforms. Because both $X(s)$ and $Y(s)$ share the factor $(s+1)$, the ratio should cancel that shared term cleanly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{\\frac{10}{s+1}}{\\frac{4}{s+1}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After cancellation, $H(s)=\\frac{10}{4}=\\frac{5}{2}$. This is the transfer function for the system in this example: the input factor is removed, and only the system multiplier remains.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transfer Function $H(s)=Y(s)/X(s)$",
+          "section_index": 3,
+          "section_title": "Finding $H(s)$ from Given Input and Output Transforms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(s)=\\frac{2}{s-3}$ and $Y(s)=\\frac{8}{s-3}$, find $H(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same product relation $Y(s)=X(s)H(s)$. To isolate the system factor, divide by $X(s)$ and keep the ratio order $H(s)=Y(s)/X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the given transforms. The new wrinkle is the shifted factor $(s-3)$ in both terms, but the cancellation pattern is the same because the shared pole factor appears in numerator and denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{\\frac{8}{s-3}}{\\frac{2}{s-3}}=\\frac{8}{s-3}\\cdot\\frac{s-3}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After cancellation, $H(s)=4$. The transfer function is still the system-only multiplier, and the shifted denominator does not change the ratio when the shared factor matches.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transfer Function $H(s)=Y(s)/X(s)$",
+          "section_index": 4,
+          "section_title": "Interpreting $H(s)$ as the System-Only Multiplier",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(s)=\\frac{2}{s+1}$ and $Y(s)=\\frac{8}{s+1}$, find $H(s)$ and explain why the ratio represents only the system, not the specific input.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is still the product relation $Y(s)=X(s)H(s)$. To isolate the system factor, divide by $X(s)$ and keep the ratio order $H(s)=Y(s)/X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the given transforms. Both $X(s)$ and $Y(s)$ share the same factor $(s+1)$, so the algebra should cancel that input-dependent part and leave only the system ratio.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{Y(s)}{X(s)}=\\frac{\\frac{8}{s+1}}{\\frac{2}{s+1}}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After cancellation, $H(s)=4$. That result is the system-only multiplier: it describes the LTI system itself, while the specific input only changes $X(s)$ and therefore $Y(s)$ through the same ratio.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transfer Function $H(s)=Y(s)/X(s)$",
+          "section_index": 5,
+          "section_title": "Recognizing the Same Transfer Function Across Different Inputs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Experiment A: $X_1(s)=\\frac{1}{s+2}$, $Y_1(s)=\\frac{3}{s+2}$. Experiment B: $X_2(s)=\\frac{5}{s+2}$, $Y_2(s)=\\frac{15}{s+2}$. Compute the transfer function from each and verify whether they match.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same product relation in each experiment: $Y(s)=X(s)H(s)$. To identify the system-only factor, divide each output transform by its matching input transform and keep the ratio order $H(s)=Y(s)/X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H_1(s)=\\frac{Y_1(s)}{X_1(s)},\\qquad H_2(s)=\\frac{Y_2(s)}{X_2(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the two pairs. Each experiment has the same shared factor $(s+2)$, so the cancellation pattern is identical even though the amplitudes are different.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H_1(s)=\\frac{\\frac{3}{s+2}}{\\frac{1}{s+2}}=3,\\qquad H_2(s)=\\frac{\\frac{15}{s+2}}{\\frac{5}{s+2}}=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both ratios give $H(s)=3$, so the transfer function is the same across the two input-output pairs. That matching ratio is the system characteristic, while the specific input only changes the numerical scale of $X(s)$ and $Y(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Transfer Function vs. Impulse Response",
+      "lesson_core_move": "Relate an LTI system's impulse response \\(h(t)\\) to its transfer function \\(H(s)\\) by using the Laplace transform to connect the time-domain convolution kernel with the \\(s\\)-domain multiplier.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transfer Function vs. Impulse Response",
+          "section_index": 1,
+          "section_title": "Introduction to Transfer Function vs. Impulse Response",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "An LTI system is described in the time domain by its impulse response $h(t)$. The corresponding $s$-domain description is the transfer function $H(s)=\\mathcal{L}\\{h(t)\\}$. In the simplest base case, $h(t)=\\delta(t)$, so the system has $H(s)=1$ and does not change the input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "h(t)=\\delta(t) \\Rightarrow H(s)=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For any input $x(t)$, the output of an LTI system is $y(t)=x(t)*h(t)$. Taking the one-sided Laplace transform gives $Y(s)=\\mathcal{L}\\{y(t)\\}=X(s)H(s)$. This is the rule that connects the time-domain convolution kernel to the $s$-domain multiplier.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=\\mathcal{L}\\{x(t)*h(t)\\}=X(s)H(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $h(t)$ when you want the intuitive time-domain description of the system, and use $H(s)$ when you want the algebraic multiplier that acts on $X(s)$. The two forms describe the same LTI system, so later sections can move between them without changing the system itself.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The practical takeaway is simple: recognize the impulse response, transform it to get the transfer function, and then use $Y(s)=X(s)H(s)$ to analyze the output in the Laplace domain.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transfer Function vs. Impulse Response",
+          "section_index": 2,
+          "section_title": "Identifying h(t) as the Time-Domain System Description",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "From $y(t)=\\int_{0^-}^{\\infty} x(\\tau)e^{-2(t-\\tau)}u(t-\\tau)\\,d\\tau$, identify the corresponding $h(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Match the given output formula to the convolution pattern $y(t)=\\int x(\\tau)h(t-\\tau)\\,d\\tau$. The cue is the factor multiplying $x(\\tau)$ inside the integral, so the kernel is the part that depends on $t-\\tau$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int x(\\tau)h(t-\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here, $e^{-2(t-\\tau)}u(t-\\tau)$ plays the role of $h(t-\\tau)$. To read off the time-domain system description, replace the shifted argument $t-\\tau$ by the free variable $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "h(t)=e^{-2t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the impulse response is $h(t)=e^{-2t}u(t)$. That is the time-domain description of the LTI system, and it is the quantity whose Laplace transform later gives the transfer function $H(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transfer Function vs. Impulse Response",
+          "section_index": 3,
+          "section_title": "Finding H(s) from a Simple Impulse Response",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $H(s)$ for $h(t)=2e^{-2t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a causal exponential impulse response. Use the standard one-sided Laplace pair for $e^{-at}u(t)$, then keep the constant multiplier outside the transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{e^{-at}u(t)\\}=\\frac{1}{s+a}, \\qquad \\Re(s)>-a",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "With $a=2$, we get $\\mathcal{L}\\{e^{-2t}u(t)\\}=\\frac{1}{s+2}$. Multiplying by the outside factor 2 gives $H(s)=\\frac{2}{s+2}$, with ROC $\\Re(s)>-2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transfer Function vs. Impulse Response",
+          "section_index": 4,
+          "section_title": "Finding h(t) from a Simple Transfer Function",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $h(t)$ when $H(s)=\\frac{1}{s+2}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a simple first-order transfer function with one pole at $s=-2$. Match it to the standard unilateral Laplace pair, then read the time-domain kernel by reversing the transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}\\left\\{\\frac{1}{s+a}\\right\\}=e^{-at}u(t), \\qquad \\Re(s)>-a",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the denominator is $s+2$, so set $a=2$. The inverse transform is $h(t)=e^{-2t}u(t)$, with causal ROC $\\Re(s)>-2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transfer Function vs. Impulse Response",
+          "section_index": 5,
+          "section_title": "Comparing y(t)=x(t)*h(t) with Y(s)=X(s)H(s)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=e^{-t}u(t)$ and $h(t)=e^{-2t}u(t)$, show $y(t)=x(t)*h(t)$ and verify $Y(s)=X(s)H(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both signals are causal exponentials, so each one has a standard one-sided Laplace transform. First compute the input transform and the impulse-response transform, then multiply them in the $s$-domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{1}{s+1}, \\qquad H(s)=\\frac{1}{s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply the system rule $Y(s)=X(s)H(s)$. The product is $Y(s)=\\frac{1}{(s+1)(s+2)}$, which is the $s$-domain form that matches the convolution output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=X(s)H(s)=\\frac{1}{(s+1)(s+2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To check consistency in time, convolve the signals directly: $y(t)=\\int_0^t e^{-\\tau}e^{-2(t-\\tau)}\\,d\\tau=(e^{-t}-e^{-2t})u(t)$. That time-domain result transforms back to the same product, so the convolution rule and the multiplication rule agree.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Rational Transfer Functions",
+      "lesson_core_move": "Recognize a transfer function as rational by expressing \\(H(s)\\) as a quotient of polynomials in \\(s\\), the form used for later pole, zero, and stability analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rational Transfer Functions",
+          "section_index": 1,
+          "section_title": "Introduction to Rational Transfer Functions",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A transfer function is rational when it can be written as a quotient of two polynomials in $s$. In this lesson, the key form is $H(s)=\\frac{N(s)}{D(s)}$, where $N(s)$ is the numerator polynomial and $D(s)$ is the denominator polynomial.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{N(s)}{D(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Polynomials in $s$ can include constants, powers of $s$, and sums of such terms. So an expression like $\\frac{s+2}{s^2+3s+2}$ is already rational, because both the top and bottom are polynomials in $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N(s)=b_ms^m+\\cdots+b_1s+b_0,\\quad D(s)=a_ns^n+\\cdots+a_1s+a_0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If $H(s)$ does not yet look like one polynomial divided by another, rewrite it until that structure is visible. Once the rational form is clear, the numerator and denominator polynomials are ready for later zero, pole, and stability analysis.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rational Transfer Functions",
+          "section_index": 2,
+          "section_title": "Identifying Polynomial Quotients in $H(s)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Is $H(s)=\\frac{s+2}{s^2+3s+2}$ a rational transfer function?",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the quotient form itself: a rational transfer function is any $H(s)$ that can be written as one polynomial divided by another polynomial in $s$. Here, the right representation is $H(s)=\\frac{N(s)}{D(s)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{s+2}{s^2+3s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The numerator $s+2$ is a polynomial in $s$, and the denominator $s^2+3s+2$ is also a polynomial in $s$. Because both parts are polynomials, the expression already fits the rational form without any additional rewriting.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N(s)=s+2,\\quad D(s)=s^2+3s+2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $H(s)$ is a rational transfer function. The only decision here is recognizing the polynomial-over-polynomial structure; later steps can use $N(s)$ and $D(s)$ for further analysis.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rational Transfer Functions",
+          "section_index": 3,
+          "section_title": "Rewriting $H(s)$ as a Quotient of Polynomials",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $H(s)=\\frac{1}{s+1}+\\frac{2}{s+3}$ as one quotient of polynomials in $s$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the transfer function is a sum of two rational terms, so the right move is to combine them into a single quotient of polynomials in $s$. The common denominator is $(s+1)(s+3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{1}{s+1}+\\frac{2}{s+3}=\\frac{(s+3)+2(s+1)}{(s+1)(s+3)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After rewriting each term over the common denominator, combine the numerators: $(s+3)+2(s+1)=3s+5$. That gives a single rational expression with a polynomial numerator and a polynomial denominator.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{3s+5}{(s+1)(s+3)}=\\frac{3s+5}{s^2+4s+3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the rewritten transfer function is still rational, and now the polynomial-over-polynomial form is explicit. That is the form later lessons will use for pole, zero, and stability analysis.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rational Transfer Functions",
+          "section_index": 4,
+          "section_title": "Recognizing Rational Form After Algebraic Simplification",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Show that $H(s)=\\frac{s/(s+2)}{s+5}$ is rational by simplifying it into polynomial-over-polynomial form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the nested quotient: the transfer function is not yet written as one polynomial divided by another. The right representation is to flatten the outer division so the rational form becomes visible.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{s/(s+2)}{s+5}=\\frac{s}{(s+2)(s+5)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now the numerator is $s$, which is a polynomial in $s$, and the denominator is $(s+2)(s+5)$. Expanding that product gives another polynomial in $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{s}{(s+2)(s+5)}=\\frac{s}{s^2+7s+10}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the simplified expression is rational, because both the numerator and denominator are polynomials in $s$. The simplification step did not change the form; it made the polynomial-over-polynomial structure explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rational Transfer Functions",
+          "section_index": 5,
+          "section_title": "Recognizing Rational Form for Later Pole-Zero Analysis",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $H(s)=\\frac{s+4}{(s+1)(s+3)}$, identify the numerator and denominator expressions used for later pole-zero analysis.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the rational form itself: $H(s)$ is already written as a quotient of polynomials in $s$. For later analysis, the key move is to label the top and bottom expressions as $N(s)$ and $D(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{N(s)}{D(s)},\\quad N(s)=s+4,\\quad D(s)=(s+1)(s+3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The numerator is $N(s)=s+4$, and the denominator is $D(s)=(s+1)(s+3)$. Both are polynomials in $s$, so the expression is rational whether the denominator is left factored or expanded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=(s+1)(s+3)=s^2+4s+3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the rational form is explicit, and the next step in the analysis sequence is to use $N(s)=0$ for zeros and $D(s)=0$ for poles. This example stops at naming the symbolic parts and does not solve for the roots yet.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Numerator and Denominator Polynomials",
+      "lesson_core_move": "Separate a rational transfer function \\(H(s)\\) into numerator and denominator polynomials and connect numerator roots to zeros and denominator roots to poles for later \\(s\\)-plane and stability analysis.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Numerator and Denominator Polynomials",
+          "section_index": 1,
+          "section_title": "Introduction to Numerator and Denominator Polynomials",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A rational transfer function is written in the form $H(s)=\\frac{N(s)}{D(s)}$. The numerator polynomial is $N(s)$, and the denominator polynomial is $D(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{N(s)}{D(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "$H(s)$ is the transfer function itself, while $N(s)$ and $D(s)$ are ordinary polynomials in $s$. When you separate the fraction, keep each coefficient, degree, and sign with the polynomial it belongs to.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the smallest nontrivial case $H(s)=\\frac{s+2}{s+1}$ to see the split clearly: $N(s)=s+2$ and $D(s)=s+1$. The notation stays symbolic, so the job is to read each polynomial exactly as it appears in the fraction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{zero(s)}:\\ N(s)=0,\\quad \\text{pole(s)}:\\ D(s)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This split matters because later you will use $N(s)=0$ to find zeros and $D(s)=0$ to find poles. For now, the key move is just to separate the transfer function into its numerator and denominator polynomials without changing the algebra inside either one.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Numerator and Denominator Polynomials",
+          "section_index": 2,
+          "section_title": "Identifying Numerator and Denominator Polynomials in \\(H(s)\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Identify $N(s)$ and $D(s)$ for $H(s)=\\frac{3s^2+2s-1}{s^2+4s+5}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the single fraction form. For a rational transfer function, the expression above the bar is the numerator polynomial $N(s)$, and the expression below the bar is the denominator polynomial $D(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{3s^2+2s-1}{s^2+4s+5}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the top and bottom exactly as they appear. The top polynomial is $N(s)=3s^2+2s-1$, and the bottom polynomial is $D(s)=s^2+4s+5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N(s)=3s^2+2s-1,\\qquad D(s)=s^2+4s+5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Nothing moves between the two parts. The example only asks you to separate the transfer function into its numerator and denominator polynomials, keeping every coefficient, power, and sign with the part it already belongs to.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Numerator and Denominator Polynomials",
+          "section_index": 3,
+          "section_title": "Writing \\(H(s)\\) as \\(N(s)/D(s)\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write $H(s)=\\frac{(s-1)(s+2)}{(s+3)(s-4)}$ in polynomial-over-polynomial form and identify $N(s)$ and $D(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the factored fraction form. To write $H(s)$ as $N(s)/D(s)$, expand the factors in the numerator and denominator separately, then place each polynomial on the correct side of the fraction bar.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{(s-1)(s+2)}{(s+3)(s-4)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Expand the top first: $(s-1)(s+2)=s^2+s-2$. That is the numerator polynomial $N(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N(s)=(s-1)(s+2)=s^2+s-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now expand the bottom: $(s+3)(s-4)=s^2-s-12$. That is the denominator polynomial $D(s)$, and the terms stay in descending powers of $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=(s+3)(s-4)=s^2-s-12",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Putting the two results together gives $H(s)=\\frac{N(s)}{D(s)}=\\frac{s^2+s-2}{s^2-s-12}$. Reversing the expansion returns the original factored form, so the rewrite is algebraically equivalent.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Numerator and Denominator Polynomials",
+          "section_index": 4,
+          "section_title": "Finding Roots of the Numerator Polynomial",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find all zeros of $H(s)=\\frac{s^2-4}{s^2+4s+3}$ by solving $N(s)=0$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the numerator polynomial $N(s)$. To find zeros of $H(s)$, set the numerator equal to zero and solve that equation first.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "N(s)=s^2-4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Factor the numerator and use the zero-product rule. The polynomial becomes $(s-2)(s+2)=0$, so each factor gives one root.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2-4=(s-2)(s+2)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The solutions are $s=2$ and $s=-2$. These numerator roots are the zeros of $H(s)$, so the example result is $\\{2,-2\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Numerator and Denominator Polynomials",
+          "section_index": 5,
+          "section_title": "Finding Roots of the Denominator Polynomial",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find all poles of $H(s)=\\frac{s+1}{s^2+4s+3}$ and classify their denominator origin.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the denominator polynomial $D(s)$. To find poles of $H(s)$, set the denominator equal to zero and solve that equation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "D(s)=s^2+4s+3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Factor the denominator and use the zero-product rule. The polynomial becomes $(s+1)(s+3)=0$, so each factor gives one root.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2+4s+3=(s+1)(s+3)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The solutions are $s=-1$ and $s=-3$. These denominator roots are the poles of $H(s)$, so the example result is $\\{-1,-3\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Numerator and Denominator Polynomials",
+          "section_index": 6,
+          "section_title": "Labeling Numerator Roots as Zeros and Denominator Roots as Poles",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $H(s)=\\frac{(s-2)(s+1)}{s(s+3)}$, list zeros and poles using the numerator/denominator split.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the factorized transfer function. Read the numerator factors as $N(s)$ and the denominator factors as $D(s)$, then use the rule: numerator roots are zeros and denominator roots are poles.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "H(s)=\\frac{(s-2)(s+1)}{s(s+3)}=\\frac{N(s)}{D(s)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set $N(s)=0$ to find the zeros. The numerator factors give $s-2=0$ and $s+1=0$, so the numerator roots are $s=2$ and $s=-1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set $D(s)=0$ to find the poles. The denominator factors give $s=0$ and $s+3=0$, so the denominator roots are $s=0$ and $s=-3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the zeros are $\\{2,-1\\}$ and the poles are $\\{0,-3\\}$. The classification depends only on which polynomial produced the root, not on the sign of the root itself.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

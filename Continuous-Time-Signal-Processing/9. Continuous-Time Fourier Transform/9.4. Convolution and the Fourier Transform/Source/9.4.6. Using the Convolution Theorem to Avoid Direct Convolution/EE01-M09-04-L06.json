@@ -1,0 +1,1374 @@
+{
+  "lesson_id": "EE01-M09-04-L06",
+  "compiled_at": "2026-05-30T21:58:55+00:00",
+  "runner_version": "2026-05-30-ece-course-data-compile-quiz-blank-blocks-v1",
+  "cache_key": "801fbae17565079f66ffc308742fb94a60c1f7a1f58a0b930bea663c8c070c42",
+  "compile_options": {
+    "allow_missing_images": false,
+    "include_answers": false,
+    "quiz_blocks": true
+  },
+  "source_artifact_hashes": {
+    "course_map_path": {
+      "path": "COURSES/Electrical-and-Computer-Engineering/Continuous-Time-Signal-Processing/Course-Map-Continuous-Time-Signal-Processing.md",
+      "sha256": "e140b2ee483ef8f233ff077ac16252584a518d9a7706feee996b12180fa29979"
+    },
+    "topic_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/4-Topic-Identification/1-Outputs/Continuous-Time-Signal-Processing/9.4--convolution-and-the-fourier-transform-Topics.json",
+      "sha256": "787b315a1923f50a0e4ca302f46a3a480fc337a60e368c4132a7e7ca70451a66"
+    },
+    "step_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/5-Step-Identification/1-Outputs/Continuous-Time-Signal-Processing/9.4--convolution-and-the-fourier-transform-Steps.json",
+      "sha256": "33ed0c8f7284cc54761f1ae7e17f3a497af9479dd7e773a34603f64977f73013"
+    },
+    "outline_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/1-Step-Outline/1-Outputs/Continuous-Time-Signal-Processing/9.4--convolution-and-the-fourier-transform-Step-Outline.json",
+      "sha256": "2930043275957a4713229ea2b4831958eead8c4788be7b24ebeca06f6a912098"
+    },
+    "tutorial_example_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/2-Tutorial-Example-Generation/1-Outputs/Continuous-Time-Signal-Processing/9.4--convolution-and-the-fourier-transform-Tutorial-Examples.json",
+      "sha256": "fed5c240f3926db81ddb0341fbdf27c0967dff33dfe8bfb41fb528db23b57c39"
+    },
+    "question_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/3-Question-Generation/1-Outputs/Continuous-Time-Signal-Processing/9.4--convolution-and-the-fourier-transform-Questions.json",
+      "sha256": "bb5e1c0acfaafbda16e540f4d94723262c346b36fb79afed9cfa93ccc8adb612"
+    },
+    "image_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/9.4--convolution-and-the-fourier-transform-Images.json",
+      "sha256": "364b37738032a28a72829f4d2192b70bd9353c9ee8dddfc5b70c2785f995d6ac"
+    }
+  },
+  "course": {
+    "course_slug": "Continuous-Time-Signal-Processing",
+    "course_code": "CTS",
+    "course_id": "EE01",
+    "course_name": "Continuous Time Signal Processing"
+  },
+  "module": {
+    "unit_number": "9",
+    "unit_name": "Unit 9",
+    "group_type": "module",
+    "group_id": "EE01-M09-04",
+    "group_number": "9.4",
+    "group_name": "Convolution and the Fourier Transform",
+    "module_id": "EE01-M09-04",
+    "module_number": "9.4",
+    "module_name": "Convolution and the Fourier Transform"
+  },
+  "tutorial_example_entry": {
+    "lesson_index": 6,
+    "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+    "lesson_core_move": "Convert a continuous-time LTI convolution problem into Fourier-domain multiplication by finding $X(j\\omega)$ and $H(j\\omega)$, simplifying $Y(j\\omega)=X(j\\omega)H(j\\omega)$, and inverse-transforming to recover $y(t)$.",
+    "section_count": 6,
+    "sections": [
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 1,
+        "section_title": "Introduction to Using the Convolution Theorem to Avoid Direct Convolution",
+        "step_type": "tutorial",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "tutorial_content": {
+          "blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "When an LTI output is written as $y(t)=x(t)*h(t)$, the direct route is a convolution integral in $\\tau$, and that can be the expensive part of the calculation. The shortcut in this section is to move the work into the Fourier domain instead of expanding the integral by hand.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=x(t)*h(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The convolution theorem says the transform of the output is $Y(j\\omega)=X(j\\omega)H(j\\omega)$. So the action to remember is simple: find the Fourier transforms of $x(t)$ and $h(t)$, multiply them to get $Y(j\\omega)$, and treat that product as the frequency-domain version of the output.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "Y(j\\omega)=X(j\\omega)H(j\\omega)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "In the simplest base case, both $x(t)$ and $h(t)$ already match standard transform pairs, so the only new move is to use the theorem-driven workflow instead of direct convolution. That means you stay in one stable notation all the way through the calculation: transform first, multiply second, and then return to $y(t)$ by inverse transforming the result.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=\\mathcal{F}^{-1}\\{Y(j\\omega)\\}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Use this theorem whenever direct convolution is the bottleneck and the needed transform pairs are available. The result is a three-step shortcut you can reuse in later examples: transform the input and impulse response, multiply in frequency, and inverse-transform the product to recover $y(t)$.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 2,
+        "section_title": "Translating a Convolution Output into $Y(j\\omega)=X(j\\omega)H(j\\omega)$",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "A system output is defined by $y(t)=x(t)*h(t)$. Write the frequency-domain relation that lets you replace direct convolution with multiplication.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is that the output is already written as a convolution of the input and impulse response. For an LTI system, that is the signal to move into the Fourier domain and translate the convolution into a product.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=x(t)*h(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the frequency-domain relation is written with the output spectrum $Y(j\\omega)$ on the left and the two factor spectra on the right. The input becomes $X(j\\omega)$, the impulse response becomes $H(j\\omega)$, and the theorem tells you to multiply them.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "Y(j\\omega)=X(j\\omega)H(j\\omega)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "That is the translation to remember in this section: when the output is presented as a time-domain convolution, the matching frequency-domain statement is the product $Y(j\\omega)=X(j\\omega)H(j\\omega)$. No extra algebra is needed yet; the task is only to identify the correct transform-domain form.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 3,
+        "section_title": "Finding $X(j\\omega)$ and $H(j\\omega)$ from Transform Pairs",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Given simple standard-pair signals $x(t)=e^{-t}u(t)$ and $h(t)=e^{-2t}u(t)$, determine $X(j\\omega)$ and $H(j\\omega)$ and set up the product for $Y(j\\omega)$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is that both time-domain signals are one-sided decaying exponentials. That means you should not derive their Fourier transforms from scratch; you should match each signal to the standard transform pair for $e^{-at}u(t)$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\mathcal{F}\\{e^{-at}u(t)\\}=\\frac{1}{a+j\\omega},\\quad a>0",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Apply that pair separately to each signal. For $x(t)=e^{-t}u(t)$, the parameter is $a=1$, so the input transform is $X(j\\omega)=\\frac{1}{1+j\\omega}$. For $h(t)=e^{-2t}u(t)$, the parameter is $a=2$, so the impulse-response transform is $H(j\\omega)=\\frac{1}{2+j\\omega}$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "X(j\\omega)=\\frac{1}{1+j\\omega},\\qquad H(j\\omega)=\\frac{1}{2+j\\omega}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Now write the output spectrum as the product of those two transforms. The notation stays aligned with the theorem: $X(j\\omega)$ comes from $x(t)$, $H(j\\omega)$ comes from $h(t)$, and $Y(j\\omega)$ is their product.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "Y(j\\omega)=X(j\\omega)H(j\\omega)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "That is the full move in this step: recognize the standard pair, identify each transform correctly, and set up the frequency-domain product without simplifying it yet. The next step can work with the product itself.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 4,
+        "section_title": "Simplifying the Frequency-Domain Product $Y(j\\omega)$",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Given $X(j\\omega)=\\frac{1}{1+j\\omega}$ and $H(j\\omega)=\\frac{1}{2+j\\omega}$, simplify $Y(j\\omega)=X(j\\omega)H(j\\omega)$ into a form ready for inverse transformation.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue here is the product from the previous step. The job is algebraic cleanup, not a new theorem: multiply the known transforms and rewrite the result so it matches a familiar inverse-transform shape.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "Y(j\\omega)=\\frac{1}{(1+j\\omega)(2+j\\omega)}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Because the denominator is a product of two first-order terms, split it into a sum of simple pieces. That puts each term in a standard form you can invert directly in the next step.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "Y(j\\omega)=\\frac{1}{1+j\\omega}-\\frac{1}{2+j\\omega}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "This is the simplified frequency-domain form to keep: the same output spectrum, but now written as a sum of standard transform-pair terms. It is ready for the last time-domain step.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 5,
+        "section_title": "Inverse-Transforming $Y(j\\omega)$ to Recover $y(t)$",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Given the simplified frequency-domain output $Y(j\\omega)=\\frac{1}{1+j\\omega}-\\frac{1}{2+j\\omega}$, use inverse-transform pairs to recover the time-domain signal $y(t)$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is the simplified spectrum from the previous step. The job now is recognition: match each term in $Y(j\\omega)$ to a standard inverse-transform pair and then use linearity to return to the time domain.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\mathcal{F}^{-1}\\left\\{\\frac{1}{a+j\\omega}\\right\\}=e^{-at}u(t),\\quad a>0",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Each denominator already matches the pair with $a=1$ and $a=2$. Apply the inverse transform term by term, keeping the minus sign attached to the second term.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=e^{-t}u(t)-e^{-2t}u(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "That is the recovered time-domain output. The frequency-domain expression has been converted back into a clean causal signal by matching the inverse pair and preserving the algebra exactly.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 6,
+        "section_title": "Applying the Full Shortcut to an LTI System Output",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "For a complete continuous-time LTI problem with $x(t)=e^{-t}u(t)$ and $h(t)=e^{-2t}u(t)$, find the output $y(t)$ using the convolution theorem instead of evaluating the convolution integral.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is a complete continuous-time LTI output problem, so the shortcut should carry the whole workflow. Start by moving out of the time-domain convolution and into the Fourier domain, because the theorem lets you replace the integral with multiplication.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(t)=e^{-t}u(t), \\qquad h(t)=e^{-2t}u(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Both signals match the standard one-sided exponential pair, so read off their spectra directly instead of deriving them from scratch. That gives the input transform and the impulse-response transform in the same notation used in the earlier steps.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "X(j\\omega)=\\frac{1}{1+j\\omega}, \\qquad H(j\\omega)=\\frac{1}{2+j\\omega}, \\qquad Y(j\\omega)=X(j\\omega)H(j\\omega)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Now multiply the factors and simplify the product into a form that is easy to invert. Because the denominator is a product of first-order terms, split it into simple inverse-pair terms rather than leaving it in unsimplified form.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "Y(j\\omega)=\\frac{1}{(1+j\\omega)(2+j\\omega)}=\\frac{1}{1+j\\omega}-\\frac{1}{2+j\\omega}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The final step is to invert each term and keep the minus sign attached to the second component. This returns the time-domain output directly without ever evaluating the convolution integral.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=e^{-t}u(t)-e^{-2t}u(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "That is the complete shortcut: transform the input and impulse response, multiply in frequency, simplify the product, and invert back to the output. The example shows the entire workflow in one pass so the same sequence can be reused on new LTI problems.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "question_entry": {
+    "lesson_index": 6,
+    "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+    "lesson_core_move": "Convert a continuous-time LTI convolution problem into Fourier-domain multiplication by finding $X(j\\omega)$ and $H(j\\omega)$, simplifying $Y(j\\omega)=X(j\\omega)H(j\\omega)$, and inverse-transforming to recover $y(t)$.",
+    "section_count": 5,
+    "sections": [
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 2,
+        "section_title": "Translating a Convolution Output into $Y(j\\omega)=X(j\\omega)H(j\\omega)$",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A system output is written as $z(t)=p(t)*q(t)$. Which frequency-domain equation matches the convolution theorem?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$Z(j\\omega)=P(j\\omega)Q(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$Z(j\\omega)=P(j\\omega)+Q(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$P(j\\omega)=Z(j\\omega)Q(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$Z(j\\omega)=P(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$z(t)=P(j\\omega)Q(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$Z(j\\omega)=P(j\\omega)Q(j\\omega)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The time-domain statement is a convolution, so the convolution theorem turns it into a product in the frequency domain. The output spectrum stays on the left, and the input and impulse-response spectra multiply on the right.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "An LTI output is written as $y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau$. Which equation is the correct frequency-domain statement for $Y(j\\omega)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$Y(j\\omega)=X(j\\omega)H(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$Y(j\\omega)=X(j\\omega)+H(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=Y(j\\omega)H(j\\omega)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=\\mathcal{F}^{-1}\\{X(j\\omega)H(j\\omega)\\}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=x(t)*h(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$Y(j\\omega)=X(j\\omega)H(j\\omega)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The integral is the convolution form of the output, so the theorem says to replace it with multiplication in the Fourier domain. That gives the output spectrum $Y(j\\omega)$ as the product of $X(j\\omega)$ and $H(j\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 3,
+        "section_title": "Finding $X(j\\omega)$ and $H(j\\omega)$ from Transform Pairs",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given $x(t)=2e^{-t}u(t)$ and $h(t)=e^{-2t}u(t)$, which pair of transforms is correct before forming $Y(j\\omega)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{2}{1+j\\omega},\\ H(j\\omega)=\\frac{1}{2+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{1}{1+j\\omega},\\ H(j\\omega)=\\frac{1}{2+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{2}{2+j\\omega},\\ H(j\\omega)=\\frac{1}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{2}{1-j\\omega},\\ H(j\\omega)=\\frac{1}{2-j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{2}{1+j\\omega},\\ H(j\\omega)=\\frac{1}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$X(j\\omega)=\\frac{2}{1+j\\omega},\\ H(j\\omega)=\\frac{1}{2+j\\omega}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the standard pair $\\mathcal{F}\\{e^{-at}u(t)\\}=\\frac{1}{a+j\\omega}$ and keep the factor 2 on $x(t)$. That gives $X(j\\omega)=\\frac{2}{1+j\\omega}$ and $H(j\\omega)=\\frac{1}{2+j\\omega}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given $x(t)=e^{-2(t-1)}u(t-1)$ and $h(t)=3e^{-t}u(t)$, which pair of transforms is correct before forming $Y(j\\omega)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{e^{-j\\omega}}{2+j\\omega},\\ H(j\\omega)=\\frac{3}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{1}{2+j\\omega},\\ H(j\\omega)=\\frac{3}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{e^{j\\omega}}{2+j\\omega},\\ H(j\\omega)=\\frac{3}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{e^{-j\\omega}}{1+j\\omega},\\ H(j\\omega)=\\frac{3}{2+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$X(j\\omega)=\\frac{e^{-j\\omega}}{2+j\\omega},\\ H(j\\omega)=\\frac{1}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$X(j\\omega)=\\frac{e^{-j\\omega}}{2+j\\omega},\\ H(j\\omega)=\\frac{3}{1+j\\omega}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A delay by 1 multiplies the transform by $e^{-j\\omega}$, so the shifted exponential becomes $X(j\\omega)=\\frac{e^{-j\\omega}}{2+j\\omega}$. The factor 3 stays with the impulse response, so $H(j\\omega)=\\frac{3}{1+j\\omega}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 4,
+        "section_title": "Simplifying the Frequency-Domain Product $Y(j\\omega)$",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given $X(j\\omega)=\\frac{1}{1+j\\omega}$ and $H(j\\omega)=\\frac{3}{2+j\\omega}$, which simplified form of $Y(j\\omega)=X(j\\omega)H(j\\omega)$ is ready for inverse transformation?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3}{(1+j\\omega)(2+j\\omega)}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3}{1+j\\omega}-\\frac{3}{2+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{1}{1+j\\omega}-\\frac{1}{2+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3}{1+j\\omega}+\\frac{3}{2+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3}{2+j\\omega}-\\frac{3}{1+j\\omega}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "$\\frac{3}{1+j\\omega}-\\frac{3}{2+j\\omega}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Multiply first to get $Y(j\\omega)=\\frac{3}{(1+j\\omega)(2+j\\omega)}$. The goal is to rewrite that product in a standard inverse-transform form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{3}{1+j\\omega}-\\frac{3}{2+j\\omega}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choice B is correct because it keeps the factor 3 and splits the result into two familiar transform-pair terms. The other choices either leave the product unsimplified or change the algebra.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given $X(j\\omega)=\\frac{2+j\\omega}{1+j\\omega}$ and $H(j\\omega)=\\frac{1}{1+j\\omega}$, which simplified form of $Y(j\\omega)=X(j\\omega)H(j\\omega)$ is ready for inverse transformation?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{1}{1+j\\omega}+\\frac{1}{(1+j\\omega)^2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{2+j\\omega}{(1+j\\omega)^2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{1}{1+j\\omega}-\\frac{1}{(1+j\\omega)^2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{2}{1+j\\omega}+\\frac{1}{(1+j\\omega)^2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{1}{(1+j\\omega)^2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$\\frac{1}{1+j\\omega}+\\frac{1}{(1+j\\omega)^2}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use $(2+j\\omega)=(1+j\\omega)+1$ to separate the repeated factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(j\\omega)=\\frac{2+j\\omega}{(1+j\\omega)^2}=\\frac{(1+j\\omega)+1}{(1+j\\omega)^2}=\\frac{1}{1+j\\omega}+\\frac{1}{(1+j\\omega)^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choice A is correct because it rewrites the product as a sum of standard terms ready for inverse transformation. The other choices either stay unsimplified, drop a term, or change the coefficient.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 5,
+        "section_title": "Inverse-Transforming $Y(j\\omega)$ to Recover $y(t)$",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given $Y(j\\omega)=\\dfrac{3}{1+j\\omega}-\\dfrac{2}{4+j\\omega}$, which time-domain signal is $y(t)$ after inverse transformation?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3e^{-t}u(t)+2e^{-4t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$e^{-t}u(t)-2e^{-4t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3e^{-t}u(t)-2e^{-4t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3e^{t}u(t)-2e^{4t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3e^{-t}u(t)-2e^{-3t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "$3e^{-t}u(t)-2e^{-4t}u(t)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Match each term to the inverse pair $\\mathcal{F}^{-1}\\left\\{\\dfrac{1}{a+j\\omega}\\right\\}=e^{-at}u(t)$ and keep the coefficients attached by linearity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=3e^{-t}u(t)-2e^{-4t}u(t)",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Given $Y(j\\omega)=e^{-j3\\omega}\\left(\\dfrac{1}{2+j\\omega}+\\dfrac{4}{5+j\\omega}\\right)$, which time-domain signal is $y(t)$ after inverse transformation?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$e^{-2(t+3)}u(t+3)+4e^{-5(t+3)}u(t+3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$e^{-2(t-3)}u(t-3)+4e^{-5(t-3)}u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$e^{-2t}u(t)+4e^{-5t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$e^{-3(t-3)}u(t-3)+4e^{-6(t-3)}u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$e^{-2(t-3)}u(t-3)+e^{-5(t-3)}u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "$e^{-2(t-3)}u(t-3)+4e^{-5(t-3)}u(t-3)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The factor $e^{-j3\\omega}$ delays the time signal by $3$, and each rational term matches $\\mathcal{F}^{-1}\\left\\{\\dfrac{1}{a+j\\omega}\\right\\}=e^{-at}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=e^{-2(t-3)}u(t-3)+4e^{-5(t-3)}u(t-3)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Using the Convolution Theorem to Avoid Direct Convolution",
+        "section_index": 6,
+        "section_title": "Applying the Full Shortcut to an LTI System Output",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For the LTI system with $x(t)=e^{-2t}u(t)$ and $h(t)=e^{-3t}u(t)$, use the convolution theorem to choose the correct output $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=e^{-2t}u(t)-e^{-3t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=e^{-3t}u(t)-e^{-2t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=e^{-2t}u(t)+e^{-3t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=2e^{-2t}u(t)-e^{-3t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=e^{-t}u(t)-e^{-2t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$y(t)=e^{-2t}u(t)-e^{-3t}u(t)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The transforms are $X(j\\omega)=1/(2+j\\omega)$ and $H(j\\omega)=1/(3+j\\omega)$. Multiplying gives $Y(j\\omega)=1/((2+j\\omega)(3+j\\omega))=1/(2+j\\omega)-1/(3+j\\omega)$, so the inverse transform is $y(t)=e^{-2t}u(t)-e^{-3t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For the LTI system with $x(t)=2e^{-t}u(t)$ and $h(t)=e^{-2t}u(t)$, use the convolution theorem to choose the correct output $y(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=2e^{-t}u(t)-2e^{-2t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=2e^{-2t}u(t)-2e^{-t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=e^{-t}u(t)-e^{-2t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=2e^{-t}u(t)+2e^{-2t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)=e^{-t}u(t)-2e^{-2t}u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$y(t)=2e^{-t}u(t)-2e^{-2t}u(t)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Here $X(j\\omega)=2/(1+j\\omega)$ and $H(j\\omega)=1/(2+j\\omega)$. Their product is $Y(j\\omega)=2/((1+j\\omega)(2+j\\omega))=2/(1+j\\omega)-2/(2+j\\omega)$, so the time-domain output is $y(t)=2e^{-t}u(t)-2e^{-2t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "image_records": [],
+  "copied_images": [],
+  "copied_source_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/Course-Map-Continuous-Time-Signal-Processing.md",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/9.4--convolution-and-the-fourier-transform-Topics.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/9.4--convolution-and-the-fourier-transform-Steps.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/9.4--convolution-and-the-fourier-transform-Step-Outline.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/9.4--convolution-and-the-fourier-transform-Tutorial-Examples.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/9.4--convolution-and-the-fourier-transform-Questions.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M09-04/EE01-M09-04-L06/Source/9.4--convolution-and-the-fourier-transform-Images.json"
+  ],
+  "copied_image_code_files": [],
+  "copied_image_context_files": []
+}

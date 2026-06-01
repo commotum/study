@@ -1,0 +1,1875 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Linear Time-Invariant Systems",
+      "lesson_core_move": "Classify a continuous-time input-output system as linear time-invariant by applying the superposition and time-shift tests together, establishing when the impulse-response and convolution framework applies.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Linear Time-Invariant Systems",
+          "step_type": "tutorial",
+          "learning_goal": "State that a continuous-time system is LTI only when it passes both the linearity test and the time-invariance test, and connect that classification to whether impulse-response methods may be used.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the tutorial defines a symbolic two-test classification rule for input-output systems.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the combined LTI decision rule: first verify superposition, then verify time-shift consistency, and classify the system as LTI only if both tests succeed.",
+            "base_case": "Use the constant-gain system y(t)=3x(t) as the simplest base case because the same scalar multiplication makes both tests transparent.",
+            "paragraph_plan": [
+              "Open by naming the purpose of the lesson: deciding when a continuous-time input-output rule is linear time-invariant rather than merely familiar-looking.",
+              "Define linearity operationally through superposition, emphasizing that the system must preserve arbitrary scaling and addition of inputs.",
+              "Define time invariance operationally through a time shift, emphasizing that shifting the input before the system must only shift the original output by the same amount.",
+              "Combine the two tests into the LTI classification rule: both tests must pass; one failure is enough to reject LTI classification.",
+              "State why the classification matters in this module: the impulse-response and convolution framework applies only after the system has been established as LTI."
+            ],
+            "display_math_plan": [
+              "If T[x_1(t)]=y_1(t) and T[x_2(t)]=y_2(t), show the linearity test as T[a x_1(t)+b x_2(t)]=a y_1(t)+b y_2(t).",
+              "If T[x(t)]=y(t), show the time-invariance test as T[x(t-t0)]=y(t-t0).",
+              "Show the decision rule in compact form: linear + time-invariant = LTI; otherwise not LTI."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section short and rule-forward. Do not review the full prior systems unit; assume the learner has seen linearity and time-invariance separately and now needs the combined classification lens."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Testing a Constant-Gain System for LTI Classification",
+          "step_type": "example",
+          "learning_goal": "Classify a constant-gain system as LTI by showing that the same constant factor preserves both superposition and time shifts.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the worked example and follow-up questions operate entirely on symbolic input-output rules.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "select-list",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select one classification label: LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "practice_question_model": "Classify the system y(t)=-2x(t) as LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "distractor_plan": [
+              "Include a distractor that treats a negative or fractional gain as evidence of nonlinearity.",
+              "Include a distractor that checks linearity but forgets to check time invariance.",
+              "Include a distractor that rejects time invariance because the output is scaled."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the system y(t)=4x(t) as linear time-invariant or not by applying both the superposition test and the time-shift test.",
+            "worked_solution_goal": "Demonstrate a complete two-test LTI classification for the simplest symbolic system rule.",
+            "variation_from_previous": "This is the first worked example after the tutorial and instantiates the combined rule in the lowest-load case.",
+            "solution_step_plan": [
+              "Name the system operator T[x(t)]=4x(t).",
+              "Apply the superposition test to a x_1(t)+b x_2(t) and show that the output equals aT[x_1(t)]+bT[x_2(t)].",
+              "Apply the time-shift test to x(t-t0) and show that the output equals the original output shifted by t0.",
+              "Conclude that the system is LTI because both tests pass."
+            ],
+            "practice_variation_axes": [
+              "Change the constant gain, including negative and fractional constants.",
+              "Keep the rule memoryless and independent of t so the same reasoning pattern applies.",
+              "Ask for the final classification rather than a full derivation in later questions."
+            ]
+          },
+          "handoff_notes": "Use this section to establish the full classification routine with minimal algebra. The writer should make the two subgoals explicit: check linearity, check time invariance, then classify."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Testing a Derivative System for LTI Classification",
+          "step_type": "example",
+          "learning_goal": "Classify a derivative system as LTI by recognizing that differentiation preserves superposition and commutes with time shifts.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the target move is symbolic reasoning about differentiation and shifting.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "select-list",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select one classification label: LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "practice_question_model": "Classify the system y(t)=5 dx(t)/dt as LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "distractor_plan": [
+              "Include a distractor that treats the derivative operation as nonlinear because it changes the shape of the signal.",
+              "Include a distractor that confuses differentiating a shifted input with introducing explicit time dependence.",
+              "Include a distractor that marks the system time-varying because the derivative is with respect to t."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the system y(t)=dx(t)/dt as linear time-invariant or not by applying both LTI tests.",
+            "worked_solution_goal": "Show that a derivative operator is still LTI even though it is not a simple constant-gain rule.",
+            "variation_from_previous": "Adds an operator that changes the input waveform while preserving the same two-test classification structure.",
+            "solution_step_plan": [
+              "Write the system as T[x(t)]=dx(t)/dt.",
+              "Use derivative linearity to verify T[a x_1(t)+b x_2(t)]=aT[x_1(t)]+bT[x_2(t)].",
+              "For a shifted input x(t-t0), differentiate with respect to t and compare the result to y(t-t0).",
+              "Conclude that the derivative system is LTI because differentiation preserves both required properties."
+            ],
+            "practice_variation_axes": [
+              "Multiply the derivative by a constant gain.",
+              "Use first derivatives only; do not introduce higher-order operators in this lesson outline.",
+              "Keep the classification labels identical to the previous section to reinforce the same decision routine."
+            ]
+          },
+          "handoff_notes": "This section should be a controlled extension, not a calculus lesson. The example writer should rely on the known linearity of differentiation and show only the algebra needed for classification."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Rejecting LTI Classification When Linearity Fails",
+          "step_type": "example",
+          "learning_goal": "Reject LTI classification when a system fails superposition, even if the same system is time-invariant.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the learner only needs the symbolic system rule and a counterexample to superposition.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "select-list",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select one classification label: LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "practice_question_model": "Classify the system y(t)=|x(t)| as LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "distractor_plan": [
+              "Include a distractor that calls the system LTI because it has no explicit t in the rule.",
+              "Include a distractor that confuses time invariance with full LTI classification.",
+              "Include a distractor that marks the system time-varying merely because the input value can change over time."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the system y(t)=[x(t)]^2 as linear time-invariant or not by applying both LTI tests.",
+            "worked_solution_goal": "Show that one failed test is enough to reject LTI classification, while still naming the property that survives.",
+            "variation_from_previous": "Changes the output rule from linear operations to a nonlinear pointwise operation, creating the first rejection case.",
+            "solution_step_plan": [
+              "Write the system as T[x(t)]=[x(t)]^2.",
+              "Use a scaling or addition counterexample to show that superposition fails.",
+              "Check that shifting the input only shifts the squared output, so the system is time-invariant.",
+              "Conclude that the system is not LTI because linearity fails, even though time invariance holds."
+            ],
+            "practice_variation_axes": [
+              "Use other pointwise nonlinear rules such as absolute value or cubing.",
+              "Keep the rule independent of explicit t so the time-invariance result remains intact.",
+              "Require the learner to distinguish nonlinear time-invariant from LTI."
+            ]
+          },
+          "handoff_notes": "The worked solution should not stop after finding nonlinearity; it should still show the time-invariance check so the classification is precise rather than a binary LTI/not-LTI shortcut."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Rejecting LTI Classification When Time Invariance Fails",
+          "step_type": "example",
+          "learning_goal": "Reject LTI classification when a system passes superposition but fails the time-shift test because the rule depends explicitly on t.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the classification turns on comparing two symbolic expressions after a time shift.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "select-list",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select one classification label: LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "practice_question_model": "Classify the system y(t)=(t+2)x(t) as LTI, linear but time-varying, nonlinear but time-invariant, or nonlinear and time-varying.",
+            "distractor_plan": [
+              "Include a distractor that calls the system LTI because scaling by a quantity looks linear.",
+              "Include a distractor that treats explicit t as automatically nonlinear rather than time-varying.",
+              "Include a distractor that compares only the shifted input output and forgets to shift the original output."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the system y(t)=t x(t) as linear time-invariant or not by applying both LTI tests.",
+            "worked_solution_goal": "Show that a system can be linear but not time-invariant, so LTI classification still fails.",
+            "variation_from_previous": "Switches from a nonlinear but time-invariant rejection case to a linear but time-varying rejection case.",
+            "solution_step_plan": [
+              "Write the system as T[x(t)]=t x(t).",
+              "Verify superposition by distributing the explicit multiplier t over a linear combination of inputs.",
+              "Compute the output for a shifted input x(t-t0), obtaining t x(t-t0).",
+              "Shift the original output by t0, obtaining (t-t0)x(t-t0), and compare it to the shifted-input output.",
+              "Conclude that the system is not LTI because time invariance fails, even though linearity holds."
+            ],
+            "practice_variation_axes": [
+              "Change the explicit time multiplier while preserving linear dependence on x(t).",
+              "Use simple expressions such as t+2 or cos(t) only if the time-shift comparison remains low-load.",
+              "Require the final label to distinguish linear time-varying from nonlinear cases."
+            ]
+          },
+          "handoff_notes": "Make the two time-shift expressions visibly different. The most important handoff point is the comparison between T[x(t-t0)] and y(t-t0)."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Deciding Whether the Impulse-Response Framework Applies",
+          "step_type": "example",
+          "learning_goal": "Use the LTI classification result to decide whether the impulse-response framework is valid for a continuous-time system.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the decision depends on symbolic LTI classification and the resulting applicability of the impulse-response framework.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "select-list",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select one applicability label: framework applies because the system is LTI, does not apply because linearity fails, does not apply because time invariance fails, or does not apply because both tests fail.",
+            "practice_question_model": "Decide whether the impulse-response framework applies to the system y(t)=x(t)+x(t-2), using LTI classification as the reason.",
+            "distractor_plan": [
+              "Include a distractor that rejects the framework because the system contains a delay.",
+              "Include a distractor that says the framework applies after only checking linearity.",
+              "Include a distractor that says the framework applies to any system with an input-output formula."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Decide whether the impulse-response framework applies to the system y(t)=2x(t)-x(t-1) by classifying the system as LTI or not LTI.",
+            "worked_solution_goal": "Tie the two-test LTI classification directly to the permission to use impulse-response methods in the following lessons.",
+            "variation_from_previous": "Moves from classification alone to the consequence of classification, using a slightly richer LTI rule that combines scaling and delay.",
+            "solution_step_plan": [
+              "Identify the system as a sum of scaled and shifted copies of the input.",
+              "Verify linearity by applying the rule to a linear combination of inputs and distributing through both terms.",
+              "Verify time invariance by comparing the response to x(t-t0) with the original output shifted by t0.",
+              "Conclude that the system is LTI.",
+              "State that the impulse-response framework applies because both LTI tests pass."
+            ],
+            "practice_variation_axes": [
+              "Use sums of scaled delayed inputs that remain LTI.",
+              "Occasionally vary to a near-miss system with explicit t or a nonlinear operation in future practice, but keep this first model close to the worked example.",
+              "Require the learner to select both the applicability decision and the reason in one structured label."
+            ]
+          },
+          "handoff_notes": "This final section should bridge into the next module topics without teaching impulse response itself. The only new action is deciding whether that future framework is allowed."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Why Linearity and Time Invariance Matter Together",
+      "lesson_core_move": "Justify why linearity and time invariance must be paired by tracing how shifted and scaled input components produce shifted and scaled copies of one reusable impulse response.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Why Linearity and Time Invariance Matter Together",
+          "step_type": "tutorial",
+          "learning_goal": "Explain that linearity controls response scaling and addition while time invariance controls response shifting, so both properties are needed before one response pattern can be reused for scaled and shifted input components.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Give the learner the reusable-response rule that follows only when linearity and time invariance are both available: from one known input-output pair, scaled and shifted input copies produce scaled and shifted output copies.",
+            "base_case": "Start with a known response pair T{x(t)} = y(t), then separately show what linearity guarantees for a scaled copy and what time invariance guarantees for a shifted copy.",
+            "paragraph_plan": [
+              "Recall the system notation T{x(t)} = y(t) and frame the lesson around reusing a known response instead of recomputing a new one for every related input.",
+              "State the role of linearity: scaling an input component by a constant scales the corresponding output by the same constant.",
+              "State the role of time invariance: delaying or advancing an input component shifts the corresponding output by the same amount.",
+              "Combine the two properties into the operational rule for an LTI system: a scaled and shifted input component produces the same scaled and shifted copy of the known output.",
+              "Preview the impulse-response motivation without teaching impulse mechanics: this pairing is what will later allow one response pattern to be reused across shifted and scaled components."
+            ],
+            "display_math_plan": [
+              "T{x(t)} = y(t)",
+              "Linearity: T{a x(t)} = a y(t)",
+              "Time invariance: T{x(t - t0)} = y(t - t0)",
+              "Together for an LTI system: T{a x(t - t0)} = a y(t - t0)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial as minimum effective direct instruction. Do not introduce unit impulses, convolution, or a full impulse-response lesson; only explain why the LTI pairing makes later response reuse possible."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Tracing a Scaled Input Component Through a Linear System",
+          "step_type": "example",
+          "learning_goal": "Use linearity to trace how multiplying a known input component by a scalar multiplies the associated output by the same scalar.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the one output expression forced by linearity.",
+            "practice_question_model": "A linear system satisfies T{x(t)} = y(t). What output must correspond to the input -2x(t)?",
+            "distractor_plan": [
+              "Include the unscaled output y(t) to catch failure to apply homogeneity.",
+              "Include the reciprocal or opposite scalar multiple to catch scalar-handling errors.",
+              "Include an expression with a time shift to catch confusion with time invariance.",
+              "Include an expression that scales the input symbol instead of the output symbol."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Suppose a linear system satisfies T{x(t)} = y(t). What output must correspond to the input 3x(t)?",
+            "worked_solution_goal": "Conclude that the required output is 3y(t), because linearity transfers the scalar multiplier from the input component to its output.",
+            "variation_from_previous": "This is the first active example after the tutorial, so it isolates the scaling part of the combined LTI rule and avoids any time shift.",
+            "solution_step_plan": [
+              "Identify the known input-output pair T{x(t)} = y(t).",
+              "Recognize 3x(t) as a scalar multiple of the known input component.",
+              "Apply the homogeneity part of linearity to carry the scalar 3 to the output.",
+              "State the resulting output expression 3y(t)."
+            ],
+            "practice_variation_axes": [
+              "Vary the scalar among positive, negative, and fractional constants.",
+              "Keep the known response pair symbolic so the focus stays on the property, not computation.",
+              "Avoid time shifts until the next section."
+            ]
+          },
+          "handoff_notes": "The worked example should demonstrate one narrow move: scalar on input becomes the same scalar on output. Keep the explanation short enough that practice follows immediately."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Tracing a Shifted Input Component Through a Time-Invariant System",
+          "step_type": "example",
+          "learning_goal": "Use time invariance to trace how delaying or advancing a known input component shifts the associated output by the same amount.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the one output expression forced by time invariance.",
+            "practice_question_model": "A time-invariant system satisfies T{x(t)} = y(t). What output must correspond to the input x(t + 2)?",
+            "distractor_plan": [
+              "Include y(t - 2) to catch reversal of the shift sign.",
+              "Include y(t) to catch failure to shift the output.",
+              "Include x(t + 2) to catch confusing the output with the input.",
+              "Include a scaled output to catch confusion with linearity."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Suppose a time-invariant system satisfies T{x(t)} = y(t). What output must correspond to the input x(t - 4)?",
+            "worked_solution_goal": "Conclude that the required output is y(t - 4), because time invariance applies the same delay to the output response.",
+            "variation_from_previous": "This adds the time-shift move while removing scaling, so the learner practices the second property in isolation before combining it with linearity.",
+            "solution_step_plan": [
+              "Identify the known input-output pair T{x(t)} = y(t).",
+              "Recognize x(t - 4) as a delayed copy of the known input component.",
+              "Apply time invariance to delay the known output by the same amount.",
+              "State the resulting output expression y(t - 4)."
+            ],
+            "practice_variation_axes": [
+              "Vary between delays written as t - t0 and advances written as t + t0.",
+              "Keep scalar multipliers absent so the shift rule is the only active property.",
+              "Use symbolic outputs such as y(t) or r(t) to prevent dependence on a particular signal shape."
+            ]
+          },
+          "handoff_notes": "Make the sign convention explicit. The example writer should emphasize that the output receives the same time shift as the input copy, not the opposite shift."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Tracing a Scaled and Shifted Component Through an LTI System",
+          "step_type": "example",
+          "learning_goal": "Combine linearity and time invariance to trace a scaled, shifted input component to the corresponding scaled, shifted output component.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the one output expression that applies both the scalar and the time shift.",
+            "practice_question_model": "An LTI system satisfies T{x(t)} = y(t). What output must correspond to the input 4x(t + 1)?",
+            "distractor_plan": [
+              "Include 4y(t) to catch applying linearity but not time invariance.",
+              "Include y(t + 1) to catch applying time invariance but not linearity.",
+              "Include 4y(t - 1) to catch the wrong shift direction.",
+              "Include y(4t + 1) or a similar malformed expression to catch treating the scalar as a time-scaling factor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Suppose an LTI system satisfies T{x(t)} = y(t). What output must correspond to the input -2x(t - 3)?",
+            "worked_solution_goal": "Conclude that the required output is -2y(t - 3), because the LTI system preserves both the scalar multiplier and the time shift in the associated output copy.",
+            "variation_from_previous": "This controlled extension combines the two isolated moves from the previous examples into the full LTI tracing rule.",
+            "solution_step_plan": [
+              "Identify the known input-output pair T{x(t)} = y(t).",
+              "Recognize -2x(t - 3) as a scaled and delayed copy of the known input component.",
+              "Use time invariance to shift the known output to y(t - 3).",
+              "Use linearity to scale that shifted output by -2.",
+              "State the combined output expression -2y(t - 3)."
+            ],
+            "practice_variation_axes": [
+              "Vary scalar sign and magnitude.",
+              "Vary delay versus advance while keeping ordinary time shifts, not time scaling.",
+              "Keep exactly one known input-output pair so the learner focuses on tracing the transformed component."
+            ]
+          },
+          "handoff_notes": "This section should feel like the payoff of the two prior examples. The example can apply the properties in either order, but the final expression must show both changes on y(t)."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Justifying a Reusable Response Pattern for LTI Systems",
+          "step_type": "example",
+          "learning_goal": "Justify that a single known response pattern can be reused across scaled and shifted input components only because an LTI system preserves both scaling and shifting in the output.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the one justification that correctly explains why one response pattern can be reused.",
+            "practice_question_model": "An LTI system satisfies T{x(t)} = y(t). Which statement best explains why the outputs for 5x(t), x(t - 6), and 5x(t - 6) can all be predicted from y(t)?",
+            "distractor_plan": [
+              "Include a statement that cites only linearity, omitting the need to preserve shifts.",
+              "Include a statement that cites only time invariance, omitting the need to preserve scaling.",
+              "Include a statement that claims the input changes but the output pattern stays unshifted and unscaled.",
+              "Include a statement that says a new system response must be measured for every shifted or scaled component."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A system is LTI and a basic component x(t) produces y(t). Explain why knowing y(t) is enough to predict the outputs for 2x(t), x(t - 5), and 2x(t - 5).",
+            "worked_solution_goal": "Show that linearity gives 2y(t), time invariance gives y(t - 5), and the two properties together give 2y(t - 5), supporting the claim that one response pattern can be reused.",
+            "variation_from_previous": "This shifts from computing one transformed output to justifying the general reuse pattern across several related input components.",
+            "solution_step_plan": [
+              "Name the known response pair x(t) produces y(t).",
+              "Use linearity to predict the output for 2x(t).",
+              "Use time invariance to predict the output for x(t - 5).",
+              "Use both properties together to predict the output for 2x(t - 5).",
+              "State the reusable-response conclusion and connect it briefly to why an impulse-response framework will be useful later."
+            ],
+            "practice_variation_axes": [
+              "Vary the number and type of transformed components while keeping one known response pattern.",
+              "Ask for the best justification rather than a long written proof.",
+              "Keep the impulse-response connection as motivation only, not as a new computation rule."
+            ]
+          },
+          "handoff_notes": "The example writer should make the conceptual bridge explicit without starting the next lessons on unit impulse, impulse response, or convolution. The practice item should test whether the learner can identify why both properties are necessary, not just compute another expression."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "The Unit Impulse Input",
+      "lesson_core_move": "Interpret the unit impulse input delta(t) as the canonical probe whose output from an LTI system becomes the reference response used for later shifted and scaled impulse inputs.",
+      "section_count": 4,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to The Unit Impulse Input",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce delta(t) as the canonical input used to probe an LTI system and establish that the resulting output becomes the reference response for later impulse-response reasoning.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Show a simple LTI system block with an input signal labeled delta(t) entering the system and an output waveform labeled as the response to the unit impulse; keep the visual limited to the unshifted unit impulse case.",
+            "visual_elements": [
+              "input signal labeled delta(t)",
+              "LTI system block",
+              "arrow from input through the system",
+              "output response waveform"
+            ],
+            "image_generation_notes": "Use the image to reduce load by separating input, system, and output roles. Do not include convolution, decomposition, shifted impulses, or scaled impulses."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Explain that delta(t) is the unit impulse input used as a canonical probe for an LTI system and that the output to this probe is the response later reused as a reference pattern.",
+            "base_case": "A known LTI system is driven by the unshifted unit impulse delta(t), and the learner only interprets the role of the input and its output.",
+            "paragraph_plan": [
+              "Recall that an LTI system is useful because linearity and time invariance make responses reusable.",
+              "Introduce delta(t) as the idealized unit impulse located at t = 0, emphasizing its role as an input signal rather than a normal finite-height pulse.",
+              "State that applying delta(t) to an LTI system is the standard probe because it produces the system's response to a unit impulse at the origin.",
+              "Preview that this output will serve as the reference response for later shifted and scaled impulse inputs, without deriving those later cases."
+            ],
+            "display_math_plan": [
+              "Show the base input notation x(t) = delta(t).",
+              "Show a compact input-output mapping: delta(t) -> LTI system -> response to delta(t)."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial short and direct. The goal is role recognition for the unit impulse input, not a derivation of the impulse response formula or convolution."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying delta(t) as the Probe Input",
+          "step_type": "example",
+          "learning_goal": "Recognize delta(t) as the unshifted unit impulse probe input among nearby signal alternatives.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show several candidate input signals for the same LTI system, including an unshifted unit impulse delta(t), a unit step, a shifted impulse, a scaled impulse, and a short rectangular pulse.",
+            "visual_elements": [
+              "candidate input signal plots",
+              "unshifted impulse at t = 0",
+              "step signal distractor",
+              "shifted or scaled impulse distractors",
+              "shared LTI system label"
+            ],
+            "image_generation_notes": "Use simple labeled signal plots as task data. Keep answer choices textual so the learner identifies the correct plotted or labeled input without choosing among separate answer-choice images."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "One text choice naming the signal that is the unshifted unit impulse probe input.",
+            "practice_question_model": "A diagram shows five candidate inputs to the same LTI system: delta(t), u(t), delta(t - 2), 2 delta(t), and a rectangular pulse. Which input is the unshifted unit impulse probe?",
+            "distractor_plan": [
+              "Include a unit step input to test confusion between step and impulse.",
+              "Include a shifted impulse to test whether the learner notices the probe is located at t = 0.",
+              "Include a scaled impulse to test whether the learner notices the probe has unit weight.",
+              "Include a rectangular pulse to test confusion between an ideal impulse and a finite-width signal."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Identify the probe input in a set of candidate signals sent into the same LTI system.",
+            "worked_solution_goal": "Select delta(t) as the unshifted unit impulse input and reject step, shifted impulse, scaled impulse, and pulse alternatives.",
+            "variation_from_previous": "Moves from direct definition to recognizing the probe input in a small set of competing signal inputs.",
+            "solution_step_plan": [
+              "Read each candidate input label or signal plot.",
+              "Check whether the candidate is an impulse rather than a step, pulse, or output waveform.",
+              "Check whether the impulse is located at t = 0.",
+              "Check whether the impulse is the unit impulse rather than a scaled impulse.",
+              "Identify delta(t) as the canonical probe input."
+            ],
+            "practice_variation_axes": [
+              "order of candidate signal plots",
+              "label-only versus plot-supported candidate signals",
+              "types of distractors included",
+              "whether the shifted impulse is delayed or advanced"
+            ]
+          },
+          "handoff_notes": "The worked example should be a recognition task, not a computation. Do not ask for impulse area calculations or response formulas."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Distinguishing the Impulse Input from Its System Output",
+          "step_type": "example",
+          "learning_goal": "Separate the impulse input delta(t) from the output waveform produced when that input passes through an LTI system.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show a block diagram with delta(t) on the input arrow entering an LTI system and a distinct output waveform on the output arrow leaving the system.",
+            "visual_elements": [
+              "input arrow labeled delta(t)",
+              "LTI system block",
+              "output arrow labeled y(t) or r(t)",
+              "distinct output waveform"
+            ],
+            "image_generation_notes": "The visual should make input direction and output direction unambiguous. Use a response waveform that is visibly not another delta spike so the role distinction is clear."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "One text choice correctly identifying which signal is the input and which signal is the output.",
+            "practice_question_model": "A diagram shows delta(t) entering an LTI system and an output labeled r(t) leaving it. Which statement correctly identifies the input and output?",
+            "distractor_plan": [
+              "Swap the input and output roles.",
+              "Claim the output waveform is the unit impulse input.",
+              "Treat the LTI system block itself as the output signal.",
+              "Claim both displayed signals are inputs.",
+              "Claim the outgoing response is unrelated to the applied impulse input."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A block diagram shows delta(t) entering an LTI system and a waveform y(t) leaving it. Identify which signal is the impulse input and which signal is the system output.",
+            "worked_solution_goal": "Label delta(t) as the input probe and the outgoing waveform as the output response generated by that input.",
+            "variation_from_previous": "Adds the output side of the system so the learner must distinguish the probe from the response it produces.",
+            "solution_step_plan": [
+              "Locate the arrow entering the system block and read its signal label.",
+              "Locate the arrow leaving the system block and read its signal label.",
+              "Identify delta(t) as the input applied to the system.",
+              "Identify the outgoing waveform as the output generated by that input."
+            ],
+            "practice_variation_axes": [
+              "output signal label",
+              "shape of the output waveform",
+              "left-to-right versus top-to-bottom block diagram layout",
+              "wording of the input-output role statements"
+            ]
+          },
+          "handoff_notes": "Keep the example focused on roles in the input-output mapping. Do not require naming the output h(t) or computing the output from a system rule."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Using the Unit Impulse Output as the Reference Response",
+          "step_type": "example",
+          "learning_goal": "Interpret the output produced by the unit impulse input as the reference response that later shifted and scaled impulse inputs will reuse.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show delta(t) entering an LTI system and producing an output response r(t), with a light annotation that r(t) is the reference response for later impulse inputs.",
+            "visual_elements": [
+              "unit impulse input delta(t)",
+              "LTI system block",
+              "output response labeled r(t)",
+              "reference response annotation"
+            ],
+            "image_generation_notes": "The image should support interpretation of the unit-impulse output as a reusable reference response. Do not show shifted, scaled, or convolved outputs."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "One text choice stating the role of the output produced by delta(t).",
+            "practice_question_model": "For an LTI system, the input delta(t) produces the output r(t). What is the correct interpretation of r(t) in this lesson?",
+            "distractor_plan": [
+              "Claim r(t) is the input signal rather than the output.",
+              "Claim r(t) is arbitrary and cannot be reused for the system.",
+              "Claim r(t) already represents the response to a shifted impulse.",
+              "Claim the impulse delta(t) itself is the reference output.",
+              "Claim a step input, rather than a unit impulse input, defines this reference response."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system produces the output r(t) when the input is delta(t). Interpret what role r(t) will play for later shifted and scaled impulse inputs.",
+            "worked_solution_goal": "Recognize the unit-impulse output as the system's reference response for later impulse-response reasoning.",
+            "variation_from_previous": "Extends from identifying the input and output to interpreting the output as the reusable response pattern for the LTI system.",
+            "solution_step_plan": [
+              "Confirm that the applied input is the unshifted unit impulse delta(t).",
+              "Read the corresponding output response from the diagram or notation.",
+              "State that this output is the reference response associated with the unit impulse probe.",
+              "Connect the reference response to later shifted and scaled impulse inputs without computing those later variants."
+            ],
+            "practice_variation_axes": [
+              "symbol used for the output response",
+              "shape of the output response waveform",
+              "whether the reference-response wording is explicit or implicit",
+              "types of incorrect role interpretations offered as choices"
+            ]
+          },
+          "handoff_notes": "This section should prepare the next lessons on impulse response and shifted or scaled impulses. Do not derive formulas for those later cases or introduce convolution."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Impulse Response",
+      "lesson_core_move": "Determine an LTI system's impulse response h(t) by evaluating its output to delta(t) and interpreting that output as the kernel that governs shifted, scaled, and decomposed impulse inputs.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Impulse Response",
+          "step_type": "tutorial",
+          "learning_goal": "Define the impulse response h(t) as the output of an LTI system when the input is delta(t), and separate the role of the impulse input from the resulting system response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the definition T{delta(t)} = h(t) and make explicit that h(t) is the system's output to the unit impulse, not the impulse input itself.",
+            "base_case": "An LTI system is driven by the unshifted unit impulse x(t) = delta(t), and the output is named h(t).",
+            "paragraph_plan": [
+              "Recall that the unit impulse delta(t) is the canonical probe input for an LTI system.",
+              "State the direct definition: when the input is delta(t), the output is called the impulse response h(t).",
+              "Emphasize the role distinction: delta(t) is the input signal, while h(t) is the system's response to that input.",
+              "Explain that h(t) will later be reused as the reference response for shifted, scaled, and decomposed impulse inputs.",
+              "Keep the ending as a preview only; do not derive shifted responses or convolution in this lesson section."
+            ],
+            "display_math_plan": [
+              "x(t) = delta(t)",
+              "T{delta(t)} = h(t)",
+              "For the base impulse input, y(t) = h(t)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial as minimum direct instruction. Do not introduce convolution, impulse decomposition, or shifted/scaled response formulas yet."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding h(t) from a Given Delta-Input Output",
+          "step_type": "example",
+          "learning_goal": "Identify the output produced by x(t) = delta(t) as the impulse response h(t).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "An expression for h(t).",
+            "practice_question_model": "An LTI system has output y(t) = 3e^{-t}u(t) when the input is x(t) = delta(t). Find h(t).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has output y(t) = e^{-2t}u(t) when the input is x(t) = delta(t). Find h(t).",
+            "worked_solution_goal": "Conclude that h(t) = e^{-2t}u(t) because the given output is specifically the output to delta(t).",
+            "variation_from_previous": "Moves from the definition to the first active use of the definition, with the delta-input output already provided.",
+            "solution_step_plan": [
+              "Check that the stated input is x(t) = delta(t).",
+              "Recall that the output to delta(t) is named h(t).",
+              "Copy the given output expression as the impulse response.",
+              "State h(t) with the same expression as the given y(t)."
+            ],
+            "practice_variation_axes": [
+              "Vary the exponential rate or constant multiplier in the given output.",
+              "Use other compact symbolic outputs such as delayed steps or finite combinations of simple signals.",
+              "Keep the input exactly x(t) = delta(t) so the only move is recognizing the impulse-response definition."
+            ]
+          },
+          "handoff_notes": "The example should be deliberately direct. Avoid systems where the learner must apply a rule or infer a shift; that comes later."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding h(t) by Applying a System Rule to delta(t)",
+          "step_type": "example",
+          "learning_goal": "Compute h(t) by substituting x(t) = delta(t) into a given LTI system rule and simplifying the resulting output.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "An expression for h(t) after substituting delta(t) into the system rule.",
+            "practice_question_model": "For the LTI system y(t) = x(t) + 3x(t - 2), find h(t).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the LTI system y(t) = 2x(t) + x(t - 1), find h(t).",
+            "worked_solution_goal": "Substitute x(t) = delta(t) into the system rule and conclude that h(t) = 2delta(t) + delta(t - 1).",
+            "variation_from_previous": "Adds one controlled wrinkle: the output to delta(t) is not given directly, so the learner must generate it from the system rule.",
+            "solution_step_plan": [
+              "Start from the definition h(t) = T{delta(t)}.",
+              "Set the input signal in the system rule to x(t) = delta(t).",
+              "Replace x(t) with delta(t) and x(t - 1) with delta(t - 1).",
+              "Collect the resulting output expression and name it h(t)."
+            ],
+            "practice_variation_axes": [
+              "Vary the coefficients multiplying x(t) terms.",
+              "Vary a single delay amount in one shifted input term.",
+              "Keep the rule linear and time-invariant so the focus stays on evaluating the rule at delta(t)."
+            ]
+          },
+          "handoff_notes": "The example writer should show substitution cleanly and avoid turning this into convolution or decomposition. The practice generator should not include nonlinear operations or time-varying coefficients."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Distinguishing the Impulse Input from the Impulse Response",
+          "step_type": "example",
+          "learning_goal": "Label delta(t) as the impulse input and h(t) as the output response, even when both appear in the same system statement.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "select-list",
+            "answer_cardinality": "single",
+            "choice_count": 3,
+            "answer_format": "Select one label from a short list identifying the impulse input, impulse response, or ordinary output notation.",
+            "practice_question_model": "An LTI system has impulse response h(t) = 4e^{-3t}u(t). Which expression is the impulse response: delta(t), 4e^{-3t}u(t), or x(t)?",
+            "distractor_plan": [
+              "Include delta(t) to test confusion between the probe input and the response.",
+              "Include x(t) or y(t) notation to test confusion between generic input-output symbols and the named impulse response.",
+              "Include the correct h(t) expression in the same symbolic form used in the prompt."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t) = e^{-t}u(t). Identify the impulse input and the impulse response in this statement.",
+            "worked_solution_goal": "State that delta(t) is the impulse input used to define the response, while h(t) = e^{-t}u(t) is the resulting output response.",
+            "variation_from_previous": "Shifts from calculating h(t) to preventing a common role error between the input delta(t) and the output h(t).",
+            "solution_step_plan": [
+              "Read the phrase 'impulse response' as naming the output to the impulse input.",
+              "Identify delta(t) as the input that would be applied to the system.",
+              "Identify the given h(t) expression as the output response.",
+              "State the distinction in one sentence."
+            ],
+            "practice_variation_axes": [
+              "Vary the symbolic form of the impulse response.",
+              "Ask for either the input label or the response label.",
+              "Use short label sets that keep the task focused on role distinction."
+            ]
+          },
+          "handoff_notes": "Use a compact select-list format because this is a classification move, not a computation. Do not introduce answer-choice images."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting h(t) as the Reference Response for Later Impulse Inputs",
+          "step_type": "example",
+          "learning_goal": "Interpret the found impulse response h(t) as the reference output pattern that later shifted, scaled, and decomposed impulse inputs will reuse.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "An expression for h(t) plus a short phrase identifying it as the reference response.",
+            "practice_question_model": "An LTI system has output y(t) = 2e^{-4t}u(t) when x(t) = delta(t). Identify h(t) and state its role for later shifted or scaled impulse inputs.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has output y(t) = e^{-t}u(t) when x(t) = delta(t). Identify the reference response that later shifted or scaled impulse inputs will modify.",
+            "worked_solution_goal": "Name h(t) = e^{-t}u(t) as the reference response pattern that later LTI reasoning will shift, scale, and combine.",
+            "variation_from_previous": "Extends the role distinction by asking why the identified h(t) matters for later impulse-input reasoning, without performing those later transformations.",
+            "solution_step_plan": [
+              "Confirm that the given output is produced by the unit impulse input.",
+              "Name the output expression as h(t).",
+              "State that h(t) is the reference response for the system.",
+              "Preview that later shifted, scaled, and decomposed impulse inputs will reuse modified copies of this response."
+            ],
+            "practice_variation_axes": [
+              "Vary the given delta-input output expression.",
+              "Ask for a concise interpretation of h(t)'s role rather than a new calculation.",
+              "Keep the task before shifted-impulse formulas and before convolution."
+            ]
+          },
+          "handoff_notes": "This final section should bridge to the next lessons conceptually, but it must not ask the learner to compute shifted or scaled impulse responses yet."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Impulse Response as a System Description",
+      "lesson_core_move": "Use the impulse response h(t) as a complete LTI-system description by mapping shifted and scaled impulse components to corresponding shifted and scaled copies of h(t).",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Impulse Response as a System Description",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize h(t) as the reusable response template that describes how an LTI system responds to impulse components.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; the section should reduce load through compact symbolic mappings."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach that once h(t) is known for an LTI system, impulse inputs can be converted into corresponding copies of h(t) without reanalyzing the system.",
+            "base_case": "For input delta(t), the output of the LTI system is h(t).",
+            "paragraph_plan": [
+              "Start by stating that h(t) is more than one output value: it is the system's response template for the unit impulse input.",
+              "Show the base mapping delta(t) -> h(t), then explain that time invariance moves the response in time when the impulse is moved.",
+              "Show that linearity scales the response when the impulse amplitude is scaled.",
+              "Combine the two properties into the compact rule a delta(t - T) -> a h(t - T), previewing that this is the local mechanism behind impulse decomposition and convolution without deriving either one here."
+            ],
+            "display_math_plan": [
+              "delta(t) -> h(t)",
+              "delta(t - T) -> h(t - T)",
+              "a delta(t) -> a h(t)",
+              "a delta(t - T) -> a h(t - T)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial focused on the response-template idea. Do not derive convolution or introduce signal decomposition beyond a brief forward reference."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Reading h(t) as the Response Template for the Unit Impulse",
+          "step_type": "example",
+          "learning_goal": "Given an LTI system's impulse response, identify the output to the unit impulse input as the same function h(t).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; the task is a direct symbolic recognition of the definition of impulse response."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A symbolic output expression in t.",
+            "practice_question_model": "An LTI system has impulse response h(t) = 3e^{-t}u(t). What is the output when the input is delta(t)?",
+            "distractor_plan": [
+              "For generated feedback, anticipate answers that repeat delta(t), evaluate h at 0, or describe the input instead of giving h(t)."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t) = e^{-2t}u(t). What is the output when the input is delta(t)?",
+            "worked_solution_goal": "Demonstrate that the output to delta(t) is exactly the given impulse response h(t), with no shifting or scaling.",
+            "variation_from_previous": "This is the first active example after the tutorial and uses the unshifted, unscaled unit impulse only.",
+            "solution_step_plan": [
+              "Identify the input as the unit impulse delta(t).",
+              "Recall that h(t) is defined as the system output to delta(t).",
+              "Copy the given h(t) as the output expression.",
+              "State that this output is the response template before any shift or scale is applied."
+            ],
+            "practice_variation_axes": [
+              "Change the symbolic formula for h(t) while keeping the input as delta(t).",
+              "Use simple causal expressions with u(t) so the practice stays focused on recognizing h(t)."
+            ]
+          },
+          "handoff_notes": "Keep this example intentionally direct. The learner's work is recognizing that h(t) already encodes the output for delta(t)."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Mapping a Time-Shifted Impulse Component to a Time-Shifted Copy of h(t)",
+          "step_type": "example",
+          "learning_goal": "Map an input of the form delta(t - T) to the corresponding output h(t - T) by applying time invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; the shift can be handled cleanly by symbolic substitution."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A symbolic output expression in shifted time, preferably using h(t - T) and the substituted formula.",
+            "practice_question_model": "An LTI system has impulse response h(t) = e^{-3t}u(t). What is the output when the input is delta(t - 2)?",
+            "distractor_plan": [
+              "For generated feedback, anticipate wrong-direction shifts such as h(t + T), unchanged h(t), or outputs that keep delta(t - T) instead of using h."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t) = e^{-t}u(t). What is the output when the input is delta(t - 4)?",
+            "worked_solution_goal": "Show that a delay of the impulse input produces the same delay in the impulse response, giving h(t - 4).",
+            "variation_from_previous": "Adds one wrinkle: the impulse is shifted in time but not amplitude-scaled.",
+            "solution_step_plan": [
+              "Identify the input as delta(t - 4), a time-shifted unit impulse.",
+              "Apply time invariance to map delta(t - 4) to h(t - 4).",
+              "Substitute t - 4 into the given formula for h(t).",
+              "State the output as e^{-(t - 4)}u(t - 4), while emphasizing it is a shifted copy of h(t)."
+            ],
+            "practice_variation_axes": [
+              "Vary the delay T using small positive integers.",
+              "Vary the formula for h(t) while keeping the shift substitution visually simple.",
+              "Avoid adding amplitude scaling in this section."
+            ]
+          },
+          "handoff_notes": "Emphasize the direction of the shift. Do not use this section to discuss sums of multiple impulses."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Mapping an Amplitude-Scaled Impulse Component to an Amplitude-Scaled Copy of h(t)",
+          "step_type": "example",
+          "learning_goal": "Map an input of the form a delta(t) to the corresponding output a h(t) by applying linearity.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; the relevant operation is symbolic amplitude multiplication."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A symbolic output expression showing the scalar multiple of h(t).",
+            "practice_question_model": "An LTI system has impulse response h(t) = 2e^{-t}u(t). What is the output when the input is 4 delta(t)?",
+            "distractor_plan": [
+              "For generated feedback, anticipate answers that omit the scale factor, multiply the time variable instead of the output, or return the scaled impulse as the output."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t) = e^{-3t}u(t). What is the output when the input is 5 delta(t)?",
+            "worked_solution_goal": "Show that scaling the impulse input by 5 scales the entire impulse response by 5.",
+            "variation_from_previous": "Switches from time shifting to amplitude scaling while keeping the impulse located at t = 0.",
+            "solution_step_plan": [
+              "Identify the input as 5 delta(t), an amplitude-scaled unit impulse.",
+              "Apply linearity to map 5 delta(t) to 5h(t).",
+              "Multiply the given h(t) by 5.",
+              "State the output as 5e^{-3t}u(t), emphasizing that the whole response template is scaled."
+            ],
+            "practice_variation_axes": [
+              "Vary the scalar coefficient using simple positive integers.",
+              "Vary the given h(t) while keeping the input unshifted.",
+              "Avoid combining scaling with time shifting until the next section."
+            ]
+          },
+          "handoff_notes": "Keep the distinction clear between scaling the response amplitude and changing the time argument."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Mapping a Scaled and Shifted Impulse Component to a Scaled and Shifted Copy of h(t)",
+          "step_type": "example",
+          "learning_goal": "Map an input of the form a delta(t - T) to the corresponding output a h(t - T) by combining linearity and time invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image; the culminating task is a symbolic composition of scaling and shifting."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A symbolic output expression of the form a h(t - T), optionally expanded using the given h(t).",
+            "practice_question_model": "An LTI system has impulse response h(t) = 2e^{-4t}u(t). What is the output when the input is 4 delta(t - 1)?",
+            "distractor_plan": [
+              "For generated feedback, anticipate answers that omit the scalar, shift in the wrong direction, scale the shift parameter instead of the response, or leave the result as an impulse."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t) = e^{-t}u(t). What is the output when the input is 3 delta(t - 2)?",
+            "worked_solution_goal": "Demonstrate the full local rule: a scaled and delayed impulse produces a scaled and delayed copy of h(t).",
+            "variation_from_previous": "Combines the previous two wrinkles: time shifting and amplitude scaling happen together.",
+            "solution_step_plan": [
+              "Identify the scalar coefficient 3 and the delay 2 in the input 3 delta(t - 2).",
+              "Use time invariance to map delta(t - 2) to h(t - 2).",
+              "Use linearity to multiply the shifted response by 3.",
+              "Substitute t - 2 into the given h(t) and state the output as 3e^{-(t - 2)}u(t - 2).",
+              "Connect the result back to the general rule a delta(t - T) -> a h(t - T)."
+            ],
+            "practice_variation_axes": [
+              "Vary both the scalar a and the delay T using small values.",
+              "Vary the formula for h(t) while keeping substitution manageable.",
+              "Keep each practice item to one impulse component, leaving sums of impulse components for later lessons."
+            ]
+          },
+          "handoff_notes": "This is the lesson's culminating example. Keep it to a single scaled and shifted impulse component so the learner masters the local mapping before impulse sums and convolution."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Shifted Impulses Through an LTI System",
+      "lesson_core_move": "Map a shifted impulse input delta(t - tau) to the correspondingly shifted impulse response h(t - tau) by applying time invariance within the LTI impulse-response framework.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Shifted Impulses Through an LTI System",
+          "step_type": "tutorial",
+          "learning_goal": "State that an LTI system maps a shifted unit impulse to the same shift of the impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the time-invariance rule that if delta(t) produces h(t), then delta(t - tau0) produces h(t - tau0).",
+            "base_case": "Use delta(t - 2) as a delayed unit impulse and show that its output is h(t - 2).",
+            "paragraph_plan": [
+              "Recall that the impulse response h(t) is the output of the LTI system when the input is delta(t).",
+              "State that time invariance preserves the input-output relationship under the same time shift.",
+              "Apply that rule to a shifted impulse: shifting delta(t) by tau0 shifts the response h(t) by tau0.",
+              "Clarify the sign convention: delta(t - a) and h(t - a) are delayed, while delta(t + a) and h(t + a) are advanced.",
+              "Keep the focus on unit impulses only; scaling the impulse and response belongs to the next lesson."
+            ],
+            "display_math_plan": [
+              "delta(t) -> h(t)",
+              "delta(t - tau0) -> h(t - tau0)",
+              "delta(t - 2) -> h(t - 2)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Use brief direct instruction followed by notation the examples can reuse; no practice questions or images are needed in the tutorial."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding the Output for a Delayed Unit Impulse",
+          "step_type": "example",
+          "learning_goal": "Map a concrete delayed unit impulse delta(t - a) to the delayed impulse response h(t - a).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "single formula of the form y(t) = h(t - a)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output when the input is delta(t - 5)?",
+            "distractor_plan": [
+              "For answer checking, flag sign reversal such as h(t + 5), unchanged h(t), and returning delta(t - 5) instead of the system output."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output when the input is delta(t - 3).",
+            "worked_solution_goal": "Write y(t) = h(t - 3) by recognizing that the input is the unit impulse delayed by 3.",
+            "variation_from_previous": "This is the first concrete application of the tutorial rule, using a positive numeric delay.",
+            "solution_step_plan": [
+              "Start from the reference relationship delta(t) -> h(t).",
+              "Identify delta(t - 3) as delta(t) delayed by 3.",
+              "Apply time invariance to delay the output by the same amount.",
+              "Conclude that the output is y(t) = h(t - 3)."
+            ],
+            "practice_variation_axes": [
+              "Change the positive delay amount.",
+              "Use small integer delays before symbolic shifts.",
+              "Keep amplitude equal to 1 so the only move is time shifting."
+            ]
+          },
+          "handoff_notes": "The worked example should make the input shift and output shift visibly identical; avoid introducing scaling or convolution."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding the Output for an Advanced Unit Impulse",
+          "step_type": "example",
+          "learning_goal": "Map a concrete advanced unit impulse delta(t + a) to the advanced impulse response h(t + a).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "single formula of the form y(t) = h(t + a)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output when the input is delta(t + 4)?",
+            "distractor_plan": [
+              "For answer checking, flag sign reversal such as h(t - 4), unchanged h(t), and returning delta(t + 4) instead of h(t + 4)."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output when the input is delta(t + 2).",
+            "worked_solution_goal": "Write y(t) = h(t + 2) by treating delta(t + 2) as an advance of the unit impulse.",
+            "variation_from_previous": "This keeps the impulse amplitude fixed but changes the shift direction from delay to advance.",
+            "solution_step_plan": [
+              "Start from the reference relationship delta(t) -> h(t).",
+              "Rewrite the input mentally as delta(t - (-2)) to identify a shift of -2.",
+              "Apply time invariance so the output receives the same shift.",
+              "Conclude that the output is y(t) = h(t + 2)."
+            ],
+            "practice_variation_axes": [
+              "Change the positive number in delta(t + a).",
+              "Include examples where the main difficulty is recognizing an advance.",
+              "Keep amplitude equal to 1 and avoid combining delayed and advanced terms."
+            ]
+          },
+          "handoff_notes": "The example should explicitly address the common sign confusion without turning the section into a graph-based explanation."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Mapping a Symbolic Shift Through the Impulse Response",
+          "step_type": "example",
+          "learning_goal": "Map a symbolic shifted impulse delta(t - T) to the corresponding symbolic shifted impulse response h(t - T).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "single formula of the form y(t) = h(t - symbolic_shift)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output when the input is delta(t - t0)?",
+            "distractor_plan": [
+              "For answer checking, flag sign reversal, replacing the symbolic shift with a number, and using delta instead of h in the output."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output when the input is delta(t - T).",
+            "worked_solution_goal": "Write y(t) = h(t - T) while preserving the symbolic shift exactly.",
+            "variation_from_previous": "This replaces a numeric shift with a symbolic parameter while using the same time-invariance rule.",
+            "solution_step_plan": [
+              "Start from the reference relationship delta(t) -> h(t).",
+              "Identify T as the shift parameter in delta(t - T).",
+              "Apply time invariance without assigning T a numerical value.",
+              "Conclude that the output is y(t) = h(t - T)."
+            ],
+            "practice_variation_axes": [
+              "Change the shift symbol, such as T, t0, or tau0.",
+              "Vary whether the symbolic form appears as t - T or t + T.",
+              "Keep the task to one shifted unit impulse."
+            ]
+          },
+          "handoff_notes": "The section should train structural transfer from numeric shifts to symbolic shifts; do not introduce integration variables or convolution notation."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Matching the Input Shift to the Output Shift",
+          "step_type": "example",
+          "learning_goal": "Recognize the output expression whose impulse-response shift exactly matches the input impulse shift.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "one expression choice",
+            "practice_question_model": "An LTI system has impulse response h(t). Which output matches the input delta(t - 4)?",
+            "distractor_plan": [
+              "Include a sign-reversed output such as h(t + 4).",
+              "Include an unchanged output h(t).",
+              "Include an output that incorrectly leaves the answer as a shifted impulse.",
+              "Include an output with the wrong shift amount.",
+              "Avoid scaled-response distractors unless clearly marked as incorrect, because scaling is taught in the next lesson."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Which output matches the input delta(t + 6)?",
+            "worked_solution_goal": "Select h(t + 6) by matching the input shift exactly in the impulse response.",
+            "variation_from_previous": "This changes from generating the shifted response to recognizing the matching response among nearby alternatives.",
+            "solution_step_plan": [
+              "Identify the input as an advanced unit impulse because it has the form delta(t + 6).",
+              "Apply the rule that the impulse response receives the same shift.",
+              "Compare the candidate outputs by sign and shift amount.",
+              "Select the output h(t + 6)."
+            ],
+            "practice_variation_axes": [
+              "Alternate between delayed and advanced inputs.",
+              "Vary the numeric shift amount.",
+              "Use answer choices that isolate sign, amount, and delta-versus-h confusions."
+            ]
+          },
+          "handoff_notes": "This section should consolidate recognition after free-response generation; keep choices symbolic and structurally close."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Scaled Impulses Through an LTI System",
+      "lesson_core_move": "Compute the output of an LTI system for a scaled shifted impulse by applying homogeneity and time invariance to convert a delta(t - t0) into a h(t - t0).",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Scaled Impulses Through an LTI System",
+          "step_type": "tutorial",
+          "learning_goal": "State and interpret the LTI rule that an input a delta(t - t0) produces the output a h(t - t0), with scaling supplied by homogeneity and shifting supplied by time invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the conversion rule for scaled shifted impulses through an LTI system without introducing convolution or signal plots.",
+            "base_case": "If T{delta(t)} = h(t), then T{a delta(t)} = a h(t).",
+            "paragraph_plan": [
+              "Begin from the known impulse-response definition: the output to delta(t) is h(t).",
+              "Apply homogeneity first to show that multiplying the impulse by a multiplies the output by the same constant.",
+              "Apply time invariance to show that shifting the impulse by t0 shifts the impulse response by the same t0.",
+              "Combine the two ideas into the reusable rule a delta(t - t0) maps to a h(t - t0).",
+              "End by emphasizing that the coefficient and the shift are copied onto h, while the system itself is represented by h(t)."
+            ],
+            "display_math_plan": [
+              "T{delta(t)} = h(t)",
+              "T{a delta(t)} = a h(t)",
+              "T{delta(t - t0)} = h(t - t0)",
+              "T{a delta(t - t0)} = a h(t - t0)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact and rule-focused. Avoid graphing, convolution integrals, and physical interpretations beyond the direct LTI scaling-and-shifting rule."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding the Output for a Scaled Unshifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Compute the output for a scaled unshifted impulse by copying the scalar multiplier from delta(t) onto h(t).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression for y(t)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output y(t) when the input is x(t) = 5 delta(t)?",
+            "distractor_plan": [
+              "For validation feedback, watch for missing the scalar multiplier.",
+              "Watch for incorrectly writing the output as 5 delta(t) instead of 5 h(t).",
+              "Watch for adding a shift when the input impulse is unshifted."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output y(t) when the input is x(t) = 3 delta(t).",
+            "worked_solution_goal": "Show that x(t) = 3 delta(t) produces y(t) = 3h(t).",
+            "variation_from_previous": "First controlled application after the tutorial: use scaling only, with no time shift.",
+            "solution_step_plan": [
+              "Identify h(t) as the system output to delta(t).",
+              "Identify the coefficient 3 multiplying the input impulse.",
+              "Apply homogeneity to multiply the impulse response by the same coefficient.",
+              "State the final output as y(t) = 3h(t)."
+            ],
+            "practice_variation_axes": [
+              "Change the positive scalar coefficient.",
+              "Keep the impulse unshifted.",
+              "Keep the requested answer as an expression involving h(t)."
+            ]
+          },
+          "handoff_notes": "This example should make the coefficient-transfer move automatic before any shift signs are introduced."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding the Output for a Scaled Delayed Impulse",
+          "step_type": "example",
+          "learning_goal": "Compute the output for a scaled delayed impulse by transferring both the positive scalar and the delay from delta(t - t0) to h(t - t0).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression for y(t)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output y(t) when the input is x(t) = 2 delta(t - 4)?",
+            "distractor_plan": [
+              "For validation feedback, watch for writing h(t + 4) instead of h(t - 4).",
+              "Watch for dropping the scalar coefficient.",
+              "Watch for shifting the impulse response but leaving the impulse symbol in the output."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output y(t) when the input is x(t) = 4 delta(t - 2).",
+            "worked_solution_goal": "Show that x(t) = 4 delta(t - 2) produces y(t) = 4h(t - 2).",
+            "variation_from_previous": "Adds one wrinkle to the unshifted case: a positive delay appears inside the impulse argument.",
+            "solution_step_plan": [
+              "Identify the coefficient 4 and the delay 2 from the input 4 delta(t - 2).",
+              "Use time invariance to replace delta(t - 2) with h(t - 2) at the output.",
+              "Use homogeneity to keep the multiplier 4 on the shifted impulse response.",
+              "State the final output as y(t) = 4h(t - 2)."
+            ],
+            "practice_variation_axes": [
+              "Change the positive scalar coefficient.",
+              "Change the positive delay t0.",
+              "Keep the input in the form a delta(t - t0)."
+            ]
+          },
+          "handoff_notes": "The worked solution should explicitly preserve the sign inside the argument so students see that delta(t - 2) maps to h(t - 2), not h(t + 2)."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Finding the Output for a Scaled Advanced Impulse",
+          "step_type": "example",
+          "learning_goal": "Compute the output for a scaled advanced impulse by recognizing delta(t + t0) as an advance and copying the same plus-sign shift onto h(t + t0).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression for y(t)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output y(t) when the input is x(t) = 3 delta(t + 2)?",
+            "distractor_plan": [
+              "For validation feedback, watch for changing the plus sign to a minus sign.",
+              "Watch for interpreting delta(t + 2) as a delay instead of an advance.",
+              "Watch for dropping the scalar coefficient."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output y(t) when the input is x(t) = 5 delta(t + 1).",
+            "worked_solution_goal": "Show that x(t) = 5 delta(t + 1) produces y(t) = 5h(t + 1).",
+            "variation_from_previous": "Changes the shift direction from a delay to an advance while keeping the coefficient positive.",
+            "solution_step_plan": [
+              "Identify the coefficient 5 and the advanced impulse delta(t + 1).",
+              "Rewrite the shift if helpful as delta(t - (-1)) to connect it to the general rule.",
+              "Apply time invariance so the output uses h(t + 1).",
+              "Apply homogeneity so the multiplier 5 stays attached to the shifted impulse response.",
+              "State the final output as y(t) = 5h(t + 1)."
+            ],
+            "practice_variation_axes": [
+              "Change the positive scalar coefficient.",
+              "Change the positive number in delta(t + t0).",
+              "Keep the main challenge focused on preserving the plus sign in the output argument."
+            ]
+          },
+          "handoff_notes": "This section should isolate sign handling for advances. Do not introduce negative amplitudes yet."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Finding the Output for a Negative Scaled Shifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Compute the output for a negative scaled shifted impulse by preserving the negative coefficient and the impulse shift when writing the corresponding shifted impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression for y(t)",
+            "practice_question_model": "An LTI system has impulse response h(t). What is the output y(t) when the input is x(t) = -4 delta(t + 1)?",
+            "distractor_plan": [
+              "For validation feedback, watch for losing the negative sign on the coefficient.",
+              "Watch for changing the sign of the time shift while handling the negative amplitude.",
+              "Watch for distributing the negative sign into the time argument instead of keeping it as an amplitude multiplier."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output y(t) when the input is x(t) = -2 delta(t - 3).",
+            "worked_solution_goal": "Show that x(t) = -2 delta(t - 3) produces y(t) = -2h(t - 3).",
+            "variation_from_previous": "Adds a negative scalar after students have practiced positive scaling with delayed and advanced impulses.",
+            "solution_step_plan": [
+              "Identify the negative coefficient -2 separately from the time shift 3.",
+              "Use time invariance to map delta(t - 3) to h(t - 3).",
+              "Use homogeneity to keep the multiplier -2 on the shifted impulse response.",
+              "State the final output as y(t) = -2h(t - 3).",
+              "Briefly check that the negative sign changes amplitude, not shift direction."
+            ],
+            "practice_variation_axes": [
+              "Use negative scalar coefficients.",
+              "Vary between delayed and advanced impulses.",
+              "Keep the answer as a single scaled shifted copy of h."
+            ]
+          },
+          "handoff_notes": "This final example combines all local wrinkles in the lesson: coefficient sign, scalar transfer, and time-shift transfer. Keep it as one impulse term, not a sum of impulses."
+        }
+      ]
+    }
+  ]
+}

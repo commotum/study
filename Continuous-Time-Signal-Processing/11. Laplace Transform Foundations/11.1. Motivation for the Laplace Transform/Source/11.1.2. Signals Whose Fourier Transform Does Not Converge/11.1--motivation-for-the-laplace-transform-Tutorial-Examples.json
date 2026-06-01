@@ -1,0 +1,2003 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Limitations of the Fourier Transform",
+      "lesson_core_move": "Test Fourier-integral convergence for continuous-time signals and LTI impulse responses to recognize when frequency-response analysis on the \\(j\\omega\\) axis must be extended with Laplace-domain exponential weighting.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Limitations of the Fourier Transform",
+          "section_index": 1,
+          "section_title": "Introduction to Limitations of the Fourier Transform",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Before using a frequency-response model, test whether the Fourier transform is mathematically valid. The move for this lesson is simple: decide if the Fourier integral is well defined before using it to interpret $x(t)$ or a system impulse response as frequency-domain data.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the candidate transform as $X(j\\omega)=\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ and check absolute integrability first. The gate condition is $\\int_{-\\infty}^{\\infty}|x(t)|\\,dt<\\infty$. If this fails, the ordinary Fourier representation on the $j\\omega$ axis is not justified.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the lightest possible case as the anchor: let $x(t)=e^{-t}u(t)$. It is nonzero for $t\\ge 0$, its magnitude decays, and this concrete base case makes the convergence check easy to reuse in later steps.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}|x(t)|\\,dt<\\infty \\Rightarrow X(j\\omega)\\text{ exists}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In this lesson sequence, you will first confirm a convergent case, then contrast it with nondecaying and growing cases that fail, and finally apply the same test to impulse responses. When convergence fails, you will be ready to move to weighted transforms in the Laplace framework.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Limitations of the Fourier Transform",
+          "section_index": 2,
+          "section_title": "Testing Convergence for a Decaying Time Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test whether the Fourier transform converges for $x(t)=e^{-2|t|}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Apply the lesson cue from the prior step: test convergence of the Fourier transform before concluding a $j\\omega$-axis frequency response exists. For this signal, you evaluate absolute convergence of the transform kernel with $x(t)=e^{-2|t|}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First remove the oscillatory factor by taking magnitude, which gives $|x(t)e^{-j\\omega t}|=\\left|e^{-2|t|}e^{-j\\omega t}\\right|=e^{-2|t|}$. Absolute integrability is the decision criterion.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Split the absolute integral at the sign change of $|t|$ into two one-sided pieces.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}|e^{-2|t|}|\\,dt=\\int_{-\\infty}^{0}e^{2t}dt+\\int_{0}^{\\infty}e^{-2t}dt=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both one-sided integrals are finite, so the absolute integral is finite. Therefore $\\int_{-\\infty}^{\\infty}e^{-2|t|}e^{-j\\omega t}\\,dt$ is absolutely convergent, and the Fourier transform $X(j\\omega)$ is valid for this step's signal.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Limitations of the Fourier Transform",
+          "section_index": 3,
+          "section_title": "Recognizing Divergence for a Nondecaying Time Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test convergence for $x(t)=1$ and decide if a Fourier transform exists.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Keep the same core move from the previous step, but change to a nondecaying signal to isolate failure. The cue is the same absolute-convergence test, now applied to $x(t)=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Form the magnitude of the transform kernel: $\\left|1\\cdot e^{-j\\omega t}\\right|=1$. If this absolute value cannot be integrated to a finite number over the time axis, the Fourier transform does not exist.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Compute the absolute integral directly to test convergence.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}|1|\\,dt=\\int_{-\\infty}^{\\infty}1\\,dt=\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The improper integral diverges, so this example fails the core lesson move: $X(j\\omega)$ is not defined in the ordinary Fourier sense. Frequency-response language for this signal is therefore not justified without extension.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Limitations of the Fourier Transform",
+          "section_index": 4,
+          "section_title": "Recognizing Divergence for a Growing Exponential Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test whether the Fourier transform converges for $x(t)=e^{2t}u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Keep the same absolute-convergence rule from earlier steps, but apply the one new wrinkle: the signal now grows. The cue is to test convergence for $x(t)=e^{2t}u(t)$ on the $j\\omega$ Fourier kernel.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use one-sided support and magnitude first: $\\left|e^{2t}u(t)e^{-j\\omega t}\\right|=e^{2t}u(t)$. If this magnitude integral is infinite, then $X(j\\omega)$ is not defined in the standard Fourier sense.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Compute the absolute integral over the nonzero support interval $[0,\\infty)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}|e^{2t}u(t)e^{-j\\omega t}|\\,dt=\\int_{0}^{\\infty}|e^{2t}|\\,dt=\\lim_{T\\to\\infty}\\int_{0}^{T}e^{2t}dt=\\lim_{T\\to\\infty}\\left(\\frac{e^{2T}-1}{2}\\right)=\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The improper integral diverges because the antiderivative grows without bound. This is a clear failure of the lesson core move: the same absolute-integral test now shows the Fourier transform does not exist for this growing exponential, so the learner should move to weighted alternatives.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Limitations of the Fourier Transform",
+          "section_index": 5,
+          "section_title": "Testing Whether an Impulse Response Has a Frequency Response",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test whether $h(t)=\\frac{1}{1+t}u(t)$ has a Fourier-domain frequency response.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Now shift the test to the system object. Use the same absolute-convergence rule, but apply it to the impulse response $h(t)$: a frequency response $H(j\\omega)$ is valid only if the absolute integral of $h(t)$ is finite.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the transform-derivation bound. By triangle inequality, $\\left|\\int h(t)e^{-j\\omega t}dt\\right|\\le \\int |h(t)|\\,dt$, so we test absolute integrability of $h(t)=\\frac{1}{1+t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Reduce to the improper one-sided integral and evaluate its growth.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{0}^{\\infty}\\left|\\frac{1}{1+t}u(t)\\right|\\,dt=\\int_{0}^{\\infty}\\frac{1}{1+t}\\,dt=\\lim_{T\\to\\infty}\\ln(1+T)=\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The absolute integral diverges, so $H(j\\omega)$ does not exist in the ordinary Fourier sense. This is the impulse-response analogue of the earlier scalar-signal failures and marks the exact point where weighted-form (Laplace-domain) treatment is needed.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Limitations of the Fourier Transform",
+          "section_index": 6,
+          "section_title": "Deciding When Laplace-Domain Weighting Is Needed",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=e^{2t}u(t)$, decide whether Fourier or weighted Laplace-domain analysis applies and find the condition on $\\sigma$ that would permit convergence.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same cue from earlier steps: first test the unweighted Fourier integral, then add only the minimal remedy. The growth term is $e^{2t}u(t)$, which already showed unweighted divergence, so we introduce a real exponential weight $e^{-\\sigma t}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the weighted complex integral form, then reduce to a magnitude condition: $X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt$ with $s=\\sigma+j\\omega$. For this example, $x(t)=e^{2t}u(t)$ gives the absolute term $e^{-(\\sigma)t}e^{2t}u(t)=e^{(2-\\sigma)t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The convergence test is now a one-sided exponential integral on $[0,\\infty)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{0}^{\\infty}e^{(2-\\sigma)t}\\,dt<\\infty \\iff \\sigma>2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore Fourier fails at $\\sigma=0$ because the unweighted exponent is nondecaying, but any choice with $\\sigma>2$ makes the weighted integral finite. Branch rule: use Fourier only when the unweighted $j\\omega$-axis integral converges; otherwise move to weighted Laplace-domain representation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+      "lesson_core_move": "Determine whether a continuous-time signal lacks a convergent Fourier transform by testing the Fourier-transform integral for convergence and interpreting nondecaying or growing behavior as requiring Laplace-domain exponential weighting.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+          "section_index": 1,
+          "section_title": "Introduction to Signals Whose Fourier Transform Does Not Converge",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To use Fourier analysis, start by writing the transform definition exactly as $X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}dt$. The first object the learner must recognize is this integral template, and the first rule is that it is the decision point for every signal in this lesson.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $|e^{-j\\omega t}|=1$, convergence is controlled only by $x(t)$. The convergence test is an absolute-value check on the same support in the transform, written as $\\int_{-\\infty}^{\\infty}|x(t)|\\,dt < \\infty$. This is the practical rule used on each unbounded interval of time support.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty} e^{-at} \\,dt = \\frac{1}{a},\\quad a>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case $x(t)=e^{-at}u(t)$ with $a>0$ as the convergent anchor. It satisfies the magnitude test, so it has a valid Fourier-transform result and sets the minimum standard for this lesson.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Contrast that with signals that do not decay: constant or growing tails can make $\\int_{-\\infty}^{\\infty}|x(t)|dt$ diverge, so the Fourier transform is not guaranteed in the ordinary $j\\omega$ sense. The move is to classify the signal first, before doing any additional manipulation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "After this screen, keep only convergent signals for the ordinary Fourier-frequency viewpoint, and flag nondecaying or growing behavior as cases that trigger the upcoming Laplace-domain exponential weighting move.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+          "section_index": 2,
+          "section_title": "Testing Fourier-Transform Integral Convergence",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test convergence of $X(j\\omega)=\\int_{0}^{\\infty}e^{-2t}e^{-j\\omega t}dt$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal is one-sided because of $u(t)$, so write the Fourier integral as a one-sided improper integral: $X(j\\omega)=\\int_{0}^{\\infty}e^{-2t}e^{-j\\omega t}\\,dt$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the cue that the exponential kernel has unit magnitude, so $\\left|e^{-2t}e^{-j\\omega t}\\right|=e^{-2t}$. Test convergence on this envelope instead of the full complex signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^\\infty |e^{-2t}e^{-j\\omega t}|\\,dt=\\int_0^\\infty e^{-2t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^\\infty e^{-2t}\\,dt=\\left[-\\frac{1}{2}e^{-2t}\\right]_0^\\infty=\\frac{1}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since the absolute-value integral is finite, the Fourier-transform integral is convergent in the standard sense. Therefore this decaying one-sided signal is accepted by the $j\\omega$-axis rule.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+          "section_index": 3,
+          "section_title": "Recognizing Nondecaying Signals That Do Not Converge",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine convergence for $x(t)=\\cos(\\omega_0 t)$ over $(-\\infty,\\infty)$ using magnitude behavior.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Write the ordinary Fourier-transform integral over the full time axis: $X(j\\omega)=\\int_{-\\infty}^{\\infty}\\cos(\\omega_0 t)e^{-j\\omega t}\\,dt$. The support is unbounded, so convergence depends on what happens along the tails.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The Fourier kernel has unit magnitude, so it cannot make a nondecaying signal shrink: $|e^{-j\\omega t}|=1$. The cosine factor remains bounded but does not decay toward zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|\\cos(\\omega_0 t)e^{-j\\omega t}|=|\\cos(\\omega_0 t)|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}|\\cos(\\omega_0 t)|\\,dt=\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the magnitude integral has infinite area on the unbounded interval, the Fourier transform does not converge in the ordinary improper-integral sense. Boundedness alone is not enough; the signal must decay enough for the integral test to pass.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the diagnostic pattern for nondecaying periodic signals: they may be finite in amplitude, but their continuing tails keep the Fourier integral from converging. Growing signals are the next extreme and also fail this standard Fourier test.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+          "section_index": 4,
+          "section_title": "Recognizing Growing Signals That Do Not Converge",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test convergence of $x(t)=e^{3t}u(t)$ by evaluating the implied weighted-free magnitude integral.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the ordinary Fourier-transform setup. Because $u(t)$ restricts the signal to $t\\ge 0$, the integral only has a right-sided tail to check.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{0}^{\\infty}e^{3t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The Fourier kernel does not damp the signal because $|e^{-j\\omega t}|=1$. So the magnitude behavior is controlled by the growing factor $e^{3t}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left|e^{3t}e^{-j\\omega t}\\right|=e^{3t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now test the corresponding magnitude integral on $[0,\\infty)$. Its antiderivative grows without bound as the upper limit increases.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{0}^{\\infty}e^{3t}\\,dt=\\lim_{T\\to\\infty}\\int_{0}^{T}e^{3t}\\,dt=\\lim_{T\\to\\infty}\\frac{e^{3T}-1}{3}=\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore $x(t)=e^{3t}u(t)$ does not have a convergent ordinary Fourier transform. This is a growth-induced failure: the signal needs exponential weighting before a transform integral can converge.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Signals Whose Fourier Transform Does Not Converge",
+          "section_index": 5,
+          "section_title": "Identifying Signals That Need Exponential Weighting",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the condition on $\\sigma$ for $x(t)=e^{2t}u(t)$ so that $\\int_0^{\\infty}e^{(2-\\sigma)t}dt$ converges.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Cue: the signal $x(t)=e^{2t}u(t)$ grows on the right, so the previous unweighted Fourier test fails. Introduce exponential weighting and test the modified integral with parameter $\\sigma$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose the weighted Fourier-style form that isolates the real exponential factor: for a causal support, write",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_{\\sigma}(j\\omega)=\\int_0^{\\infty} e^{-\\sigma t}\\,e^{2t}u(t)e^{-j\\omega t}\\,dt = \\int_0^{\\infty} e^{(2-\\sigma)t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use magnitude logic next: $\\left|e^{-j\\omega t}\\right|=1$, so the oscillatory part does not affect convergence. Convergence depends on $\\int_0^{\\infty} e^{(2-\\sigma)t}\\,dt$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}\\left|e^{-\\sigma t}e^{2t}u(t)e^{-j\\omega t}\\right|\\,dt=\\int_0^{\\infty}e^{(2-\\sigma)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For an improper exponential tail, the one-sided integral is finite only when the exponent is negative: $2-\\sigma<0$. Convert this to a condition on $\\sigma$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "2-\\sigma<0 \\;\\Longleftrightarrow\\; \\sigma>2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: $x(t)=e^{2t}u(t)$ needs a weight with $\\sigma>2$ for weighted-convergence. This is the first corrective template before generalizing to $e^{at}u(t)$ with condition $\\sigma>a$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Exponential Weighting",
+      "lesson_core_move": "Apply exponential weighting to a continuous-time signal to determine how multiplying by \\(e^{-\\sigma t}\\) can make a nonconvergent Fourier-transform integral converge and motivate the Laplace-domain variable \\(s=\\sigma+j\\omega\\).",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Exponential Weighting",
+          "section_index": 1,
+          "section_title": "Introduction to Exponential Weighting",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The move is to use one explicit instruction step: identify when a signal fails the Fourier-transform setup and then add a damping factor to repair convergence before doing further work.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start from the Fourier-transform template. If we can use $X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt$, then we can continue with frequency-response calculations.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Signals that do not decay can make that integral diverge, which means the Fourier transform does not exist in the standard sense. In that case, the practical fix is to apply exponential weighting so convergence can be tested through a controllable real parameter.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Define a weighted signal $x_w(t)=x(t)e^{-\\sigma t}$ for $\\sigma>0$. The factor $e^{-\\sigma t}$ is a damping term that reduces high-$t$ growth and creates a direct condition you can tune.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the same base case from the outline: with $x(t)=u(t)$, compare $\\int_0^{\\infty}u(t)e^{-j\\omega t}\\,dt$ to $\\int_0^{\\infty}u(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$. The first one is not absolutely controllable, while the second is finite when $\\sigma$ is chosen positive.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_{-\\infty}^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the first step in the Laplace motivation chain: later steps will keep this weighted form, apply it to additional examples, and then rewrite the integral with $s=\\sigma+j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Exponential Weighting",
+          "section_index": 2,
+          "section_title": "Applying a Decaying Weight to a Nondecaying Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Evaluate $\\int_0^{\\infty}u(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ and state the condition on $\\sigma$ for convergence.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the weighted integral as the object to evaluate: for a right-sided signal $x(t)$, test $X_\\sigma(j\\omega)=\\int_0^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$. The rule for this section is to use $x(t)=u(t)$ so the algebra is minimal and the lesson move stays visible.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}u(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt = \\int_0^{\\infty}e^{-(\\sigma+j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the magnitude test to this expression. Because the oscillatory factor $e^{-j\\omega t}$ has unit magnitude, $\\left|e^{-(\\sigma+j\\omega)t}\\right|=e^{-\\sigma t}$. Convergence is controlled by the real part exponent, so this becomes a one-sided exponential-tail condition.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{-\\sigma t}\\,dt=\\begin{cases}\\frac{1}{\\sigma},& \\sigma>0\\\\ \\infty,& \\sigma\\le 0\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the rule is: require $\\sigma>0$ for the weighted signal to be convergent. With that condition, the transformed value is finite and can be written as a standard geometric-type result.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{-(\\sigma+j\\omega)t}\\,dt=\\left[\\frac{e^{-(\\sigma+j\\omega)t}}{-(\\sigma+j\\omega)}\\right]_0^{\\infty}=\\frac{1}{\\sigma+j\\omega}, \\quad \\sigma>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result separation: the condition is $\\sigma>0$, and the step output is $\\frac{1}{\\sigma+j\\omega}$. This is the first concrete example of how exponential weighting repairs the nondecaying step signal and defines the real-part parameter used in the Laplace view.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Exponential Weighting",
+          "section_index": 3,
+          "section_title": "Testing Convergence After Weighting",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Test convergence of $\\int_0^{\\infty}e^{-2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt$ and derive the inequality on $\\sigma$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the weighted one-sided transform form. Use the same representation as earlier, now with the decaying signal $x(t)=e^{-2t}u(t)$ so both inherent decay and the added damping are visible in one integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{-2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt=\\int_0^{\\infty}e^{-(\\sigma+2+j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Combine exponents into a real-plus-imaginary form. The real part is $-(\\sigma+2)$, so the magnitude check uses $\\left|e^{-(\\sigma+2+j\\omega)t}\\right|=e^{-(\\sigma+2)t}$. The oscillatory term $e^{-j\\omega t}$ affects phase only.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{-(\\sigma+2)t}\\,dt=\\begin{cases}\\frac{1}{\\sigma+2},& \\sigma>-2\\\\ \\infty,& \\sigma\\le -2\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the convergence rule for a one-sided exponential tail: require $\\sigma>-2$. That is the full inequality after combining the decay rates from both $e^{-2t}$ and $e^{-\\sigma t}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{-(\\sigma+2+j\\omega)t}\\,dt=\\left[\\frac{e^{-(\\sigma+2+j\\omega)t}}{-(\\sigma+2+j\\omega)}\\right]_0^{\\infty}=\\frac{1}{\\sigma+2+j\\omega}, \\quad \\sigma>-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the weighted transform is finite for $\\sigma>-2$, and the value is $\\frac{1}{\\sigma+2+j\\omega}$. This keeps one new wrinkle from the previous step: we now add the signal decay rate into the real-part exponent instead of learning a fresh rule.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Exponential Weighting",
+          "section_index": 4,
+          "section_title": "Choosing a Larger Weight for a Growing Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the condition on $\\sigma$ for $\\int_0^{\\infty}e^{2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt$ to converge, and simplify the result.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same weighted one-sided template and insert the growing signal choice $x(t)=e^{2t}u(t)$. The action is to combine all exponentials in the kernel and then apply the one-sided exponential-tail convergence rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt=\\int_0^{\\infty}e^{(2-\\sigma-j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the exponent as a real part plus imaginary part: $2-\\sigma-j\\omega$. Convergence on $[0,\\infty)$ depends on the real part only, so we check the sign of $2-\\sigma$. The oscillatory factor is controlled by $j\\omega$ and does not set convergence.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{(2-\\sigma)t}\\,dt=\\begin{cases}\\frac{1}{\\sigma-2},& \\sigma>2\\\\ \\infty,& \\sigma\\le 2\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the inequality so the real exponent is negative: $2-\\sigma<0$, which gives the minimum required damping level $\\sigma>2$. This is the first step where the learner must pick a larger damping constant than the growth rate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{(2-\\sigma-j\\omega)t}\\,dt=\\int_0^{\\infty}e^{-(\\sigma-2+j\\omega)t}\\,dt=\\left[\\frac{e^{-(\\sigma-2+j\\omega)t}}{-(\\sigma-2+j\\omega)}\\right]_0^{\\infty}=\\frac{1}{\\sigma-2+j\\omega}, \\quad \\sigma>2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the integral converges only for $\\sigma>2$, and the weighted form becomes $\\frac{1}{\\sigma-2+j\\omega}$. This preserves one workflow and adds the new wrinkle that a growing signal sets a stricter damping threshold.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Exponential Weighting",
+          "section_index": 5,
+          "section_title": "Combining Exponential Weighting with the Fourier Kernel",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $\\int_0^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ as $\\int_0^{\\infty}x(t)e^{-st}\\,dt$ and define $s$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the weighted integral kernel from earlier sections. Keep $x(t)$ general and rewrite only the exponential factors: replace the explicit damping and oscillation pair with one compact exponent.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt=\\int_0^{\\infty}x(t)e^{-(\\sigma+j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the exponent-addition identity to combine the exponentials into one real-imaginary decomposition. Then introduce the compact symbol $s=\\sigma+j\\omega$. This is the same rule used before, only now written in reusable $s$-notation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}x(t)e^{-(\\sigma+j\\omega)t}\\,dt=\\int_0^{\\infty}x(t)e^{-st}\\,dt, \\quad s=\\sigma+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final interpretation: $\\sigma=\\Re\\{s\\}$ is the real-part damping coordinate that determines convergence, and $\\omega=\\Im\\{s\\}$ is the oscillatory coordinate that matches the Fourier frequency term. This preserves the prior mechanics while compressing them into the standard Laplace-kernel form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+      "lesson_core_move": "Convert an exponentially weighted Fourier integral into Laplace-domain notation by identifying \\(s=\\sigma+j\\omega\\), with \\(\\sigma\\) setting the convergence-producing exponential weight and \\(\\omega\\) setting the sinusoidal frequency.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+          "section_index": 1,
+          "section_title": "Introduction to The Complex Variable $s=\\sigma+j\\omega$",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "When you try to use a Fourier kernel and the integral $\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt$ fails to converge, the previous lesson shows that adding an exponential weight is the remedy. You now package that idea so students can reuse it later in Laplace notation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The direct action is to replace separate factors with a single combined representation. Start from $e^{-\\sigma t}$ and $e^{-j\\omega t}$ and write them using one compact symbol $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Define the complex variable as $s=\\sigma+j\\omega$. In this definition, $\\sigma$ is the real part that controls exponential weighting, and $\\omega$ is the angular-frequency part that controls oscillation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the rule to combine the product of factors into one exponential: $e^{-\\sigma t}e^{-j\\omega t}=e^{-st}$. This keeps later derivations short and consistent.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-\\sigma t}e^{-j\\omega t}=e^{-(\\sigma+j\\omega)t}=e^{-st}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s\\big|_{\\sigma=0}=j\\omega",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+          "section_index": 2,
+          "section_title": "Identifying \\(\\sigma\\) and \\(\\omega\\) in \\(s=\\sigma+j\\omega\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write $s=-2+j\\,7$ as \"$\\sigma$ is ... and $\\omega$ is ...\"",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the target representation from this lesson, $s=\\sigma+j\\omega$, as the cue. You should match each part of the given number to that template without rearranging terms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The rule is: the part not multiplied by $j$ is the real part, so it is $\\sigma$; the coefficient of $j$ is the imaginary part, so it is $\\omega$. This is the same extraction you will reuse in every later section.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-2+j\\,7=(-2)+j(7) \\Rightarrow \\sigma=-2,\\;\\omega=7",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, the answer is \"$\\sigma$ is $-2$ and $\\omega$ is $7$\". A negative $\\sigma$ means the real part is negative in $s=\\sigma+j\\omega$, so the associated exponential factor in $e^{-st}$ is growing in time if used directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\,\\omega \\text{ with } \\omega=0 \\Rightarrow s=\\sigma",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So for the edge case $\\omega=0$, the same rule gives zero oscillation and $s$ is purely real; that is the special $j\\omega$-axis condition you will use in the next practice model.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+          "section_index": 3,
+          "section_title": "Combining \\(e^{-\\sigma t}\\) and \\(e^{-j\\omega t}\\) into \\(e^{-st}\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Show that $e^{-2t}\\,e^{-j4t}=e^{-st}$ and find $s$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Keep the same recognition target from the previous steps: the final form is $e^{-st}$. Here, the cue is already set by one factor with real exponent and one with imaginary exponent, both in the same variable $t$ and both with a leading minus sign.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the composition rule $e^A e^B=e^{A+B}$ with $A=-2t$ and $B=-j4t$, then merge them into one exponent.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-2t}e^{-j4t}=e^{-2t-j4t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now factor $t$ and write the combined exponent in canonical form $-(\\sigma+j\\omega)t$. Since $-2t-j4t=-(2+j4)t$, we identify $\\sigma=2$ and $\\omega=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-2t-j4t}=e^{-(2+j4)t}=e^{-st},\\; s=2+j4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is the same rule in reverse of the previous step: this time you reconstruct the single $s$ from two factors, so the answer is that the expression is in $e^{-st}$ form with $s=2+j4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+          "section_index": 4,
+          "section_title": "Rewriting an Exponentially Weighted Fourier Integral in Terms of \\(s\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Let $X(\\sigma,\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-3t}e^{-j\\omega t}\\,dt$. Rewrite this as $X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example is the weighted-integral form of the same rule: the cue is a product of two exponentials inside the transform integral, so the target is a single $e^{-st}$ factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Copy the integrand and label $e^{-3t}$ as the real damping factor and $e^{-j\\omega t}$ as the oscillation factor. The exponent form is now ready for one substitution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(\\sigma,\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-3t}e^{-j\\omega t}\\,dt=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $e^{-\\sigma t}e^{-j\\omega t}=e^{-st}$ from the previous steps with $\\sigma=3$, so the integral can be rewritten directly in Laplace form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega=3+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: the rewritten expression is $X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt$, with $\\sigma=3$ as the real part of $s$ and unchanged angular part from $\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "The Complex Variable $s=\\sigma+j\\omega$",
+          "section_index": 5,
+          "section_title": "Interpreting the Weighting and Frequency Roles of a Given \\(s\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $s=-1+j4$, explain what the real and imaginary parts imply about the weighting and frequency of $e^{-st}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the cue $e^{-st}=e^{-\\sigma t}e^{-j\\omega t}$, and read the given value as a concrete decomposition target.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Separate $s$ into parts: in $s=-1+j4$, the real part is $\\sigma=-1$ and the imaginary coefficient is $\\omega=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=-1+j4 \\Rightarrow \\sigma=-1,\\;\\omega=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the sign rule to $e^{-\\sigma t}$. Because $\\sigma=-1$, the real part gives $e^{-(-1)t}=e^{t}$, which is growing in time; if $\\sigma>0$, that same term would decay.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-st}=e^{-(-1)t}e^{-j4t}=e^{t}e^{-j4t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the imaginary part for oscillation: $\\omega=4$ gives sinusoidal frequency $4$ in the factor $e^{-j4t}$, so the full interpretation is growth modulation with angular frequency $4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+      "lesson_core_move": "Interpret \\(X(s)\\) as the Fourier transform of \\(x(t)e^{-\\sigma t}\\), identifying the ordinary Fourier transform as the \\(\\sigma=0\\) specialization when convergence permits.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+          "section_index": 1,
+          "section_title": "Introduction to Laplace Transform as a Generalization of Fourier Transform",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The goal of this lesson is to handle a signal class that does not always fit the pure Fourier-transform pattern. Some signals make $\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ diverge, so the target move is to build a generalized transform form that keeps the Fourier frequency kernel but introduces controlled damping.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the generalized form $X(s)$ and one convergent behavior pattern. In the convergent base case, take a decaying signal such as $x(t)=e^{-t}u(t)$, where the integral remains well defined. The Laplace definition is $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$, and this single line is the object students must recognize.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Replace $s$ with its real-imaginary split, $s=\\sigma+j\\omega$. This is the key recognition action: separate the damping term and the Fourier-frequency term in the exponent.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, apply that split directly to the transform expression. You should read $e^{-\\sigma t}$ as a weighting that can force convergence and read $e^{-j\\omega t}$ as the usual Fourier kernel on the weighted signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_{-\\infty}^{\\infty} [x(t)e^{-\\sigma t}]e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now connect directly to ordinary Fourier language: when $\\sigma=0$, the weighted term becomes $x(t)$, and the same expression reduces to the Fourier transform $X(j\\omega)$. That is the bridge this lesson uses, with the action step being, \"set $\\sigma=0$ and read the special case.\"",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because this is a tutorial step, stop after the rule and its meaning. Do not add extra examples yet; the next section will hold the simplest worked comparison between weighted and unweighted forms while you keep notation stable across later questions.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+          "section_index": 2,
+          "section_title": "Rewriting \\(X(s)\\) as a Fourier Transform of \\(x(t)e^{-\\sigma t}\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$ as a Fourier-style transform using $s=\\sigma+j\\omega$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this step is the Laplace variable form $X(s)$. To reuse the same core move, start by substituting the complex split $s=\\sigma+j\\omega$ so the expression is directly comparable to Fourier notation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-(\\sigma+j\\omega)t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the exponent-splitting rule $e^{-(\\sigma+j\\omega)t}=e^{-\\sigma t}e^{-j\\omega t}$, then group terms so one factor is the weighted signal and the other is the Fourier kernel.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_{-\\infty}^{\\infty}[x(t)e^{-\\sigma t}]e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is exactly a Fourier transform in $\\omega$ of the weighted signal $x(t)e^{-\\sigma t}$. For fixed $\\sigma$, write the result as $X(s)=\\mathcal{F}\\{x(t)e^{-\\sigma t}\\}(\\omega)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\mathcal{F}\\{x(t)e^{-\\sigma t}\\}(\\omega)",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+          "section_index": 3,
+          "section_title": "Recovering the Fourier Transform by Setting \\(\\sigma=0\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$, show the result when $\\sigma=0$ and identify it as the Fourier transform.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this step is the Laplace form $X(s)=\\int_{-\\infty}^{\\infty} x(t)e^{-st}\\,dt$. Use the same rule as before: split the complex variable as $s=\\sigma+j\\omega$ so you can compare with Fourier-kernel notation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_{-\\infty}^{\\infty} [x(t)e^{-\\sigma t}]e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the damping part to its special value by substituting $\\sigma=0$. This makes the exponential weight $e^{-\\sigma t}$ equal to $1$, so the transform collapses to the pure Fourier-kernel form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega,\\quad \\sigma=0 \\Rightarrow s=j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty}[x(t)e^{-0\\cdot t}]e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty}x(t)e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the exact checkpoint is $X(j\\omega)=\\mathcal{F}\\{x(t)\\}(\\omega)$: the Fourier transform is the $\\sigma=0$ slice of $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+          "section_index": 4,
+          "section_title": "Comparing Weighted and Unweighted Transform Integrals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare $\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$ and $\\int_{-\\infty}^{\\infty} x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt$ for the same signal.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both expressions use the same $x(t)$, but one is unweighted Fourier form and one is Laplace-weighted form. Use a concrete test signal to decide when the unweighted form is valid.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Let $x(t)=u(t)$. Then the two candidates are",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_{-\\infty}^{\\infty}u(t)e^{-j\\omega t}\\,dt,\\qquad X(s)=\\int_{-\\infty}^{\\infty}u(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use the step function support: $u(t)=0$ for $t<0$ and $u(t)=1$ for $t\\ge 0$. The Fourier form becomes $\\int_0^{\\infty}e^{-j\\omega t}\\,dt$, which does not produce a finite ordinary convergent value in this lesson setting.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(j\\omega)=\\int_0^{\\infty}e^{-j\\omega t}\\,dt \\;\\text{(not convergent in the ordinary sense)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the weighted form, the same support gives a real-exponential damping term:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_0^{\\infty}e^{-\\sigma t}e^{-j\\omega t}\\,dt=\\frac{1}{\\sigma+j\\omega}, \\quad \\sigma>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the rule is: use the unweighted integral when it converges as $\\int_{-\\infty}^{\\infty} x(t)e^{-j\\omega t}\\,dt$; otherwise use the weighted Laplace form with $\\sigma>0$ to enforce convergence and recover $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Laplace Transform as a Generalization of Fourier Transform",
+          "section_index": 5,
+          "section_title": "Interpreting \\(X(s)\\) as a Family of Fourier Transforms Indexed by \\(\\sigma\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Using two parameter values $\\sigma_1$ and $\\sigma_2$, express $X(s)$ as two related Fourier transforms of weighted signals.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is again the Laplace definition and the split $s=\\sigma+j\\omega$. To show the family viewpoint, hold one signal fixed and evaluate the transform at two different damping parameters.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose $x(t)=u(t)$ and form the two candidates with $\\sigma_1$ and $\\sigma_2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_{\\sigma_1}(\\omega)=\\int_{-\\infty}^{\\infty}u(t)e^{-\\sigma_1 t}e^{-j\\omega t}\\,dt,\\qquad X_{\\sigma_2}(\\omega)=\\int_{-\\infty}^{\\infty}u(t)e^{-\\sigma_2 t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Each expression is the Fourier transform of a different weighted signal, so identify both as a family of the same transform shape with different damping levels.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_{\\sigma_1}(\\omega)=\\mathcal{F}\\{u(t)e^{-\\sigma_1 t}\\}(\\omega),\\qquad X_{\\sigma_2}(\\omega)=\\mathcal{F}\\{u(t)e^{-\\sigma_2 t}\\}(\\omega)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t)e^{-\\sigma_i t}=e^{-\\sigma_i t}\\;\\text{for }t\\ge0,\\;0\\text{ for }t<0,\\quad i\\in\\{1,2\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the same formula yields two convergent one-sided integrals when $\\sigma_i>0$, but the two integrands are not the same because each $\\sigma_i$ changes damping strength in the same Fourier-kernel slot.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X_{\\sigma}(\\omega)=\\int_0^{\\infty}e^{-\\sigma t}e^{-j\\omega t}\\,dt=\\frac{1}{\\sigma+j\\omega},\\quad \\sigma>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The family message is: $X(s)$ is not one isolated object here but the family $\\{\\mathcal{F}\\{x(t)e^{-\\sigma t}\\}(\\omega)\\}_{\\sigma}$, indexed by damping parameter choices.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "The $s$-Plane",
+      "lesson_core_move": "Map each complex value \\(s=\\sigma+j\\omega\\) onto the \\(s\\)-plane and interpret \\(\\sigma\\) as exponential weighting and \\(\\omega\\) as the Fourier-frequency coordinate.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "The $s$-Plane",
+          "section_index": 1,
+          "section_title": "Introduction to The $s$-Plane",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "Create a single $s$-plane diagram with origin, real axis labeled $\\sigma$, imaginary axis labeled $j\\omega$, and a generic point at $s=\\sigma+j\\omega$."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "You have already seen $s=\\sigma+j\\omega$. The new geometric move is to anchor each complex value on a shared coordinate map so the same point tells you exponential weighting and oscillation at a glance.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=\\sigma+j\\omega",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Define the horizontal axis as the real part $\\sigma$ and the vertical axis as $j\\omega$ (where $\\omega$ is the frequency coordinate). In this view, each point is the ordered pair $(\\sigma,\\omega)$, so the two labels are read separately and directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sigma=\\Re\\{s\\},\\quad \\omega=\\Im\\{s\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the simplest examples first: $s=0$ is the origin, $s=3$ is on the real axis at $(\\sigma,\\omega)=(3,0)$, and $s=j\\omega$ is on the imaginary axis where $\\sigma=0$. This is the base pattern students reuse.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From this point forward, movement left or right changes $\\sigma$, and movement up or down changes $\\omega$. A final anchor: the Fourier-frequency slice is the $j\\omega$ axis, so $\\sigma=0$ corresponds exactly to no exponential weighting.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "The $s$-Plane",
+          "section_index": 2,
+          "section_title": "Plotting a Complex Value $s=\\sigma+j\\omega$",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-002",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-002]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+              "image_description": "Create an $s$-plane diagram showing a labeled point at $s=2+j3$, with real axis $\\sigma$, imaginary axis $j\\omega$, grid lines, and projection lines touching $(2,0)$ and $(0,3)$."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Plot $s=2+j3$ on the $s$-plane and label the axis-crossings of the plotted point.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Treat the prompt as a coordinate decode: in $s=\\sigma+j\\omega$, the real part is the horizontal coordinate and the coefficient of $j\\omega$ is the vertical coordinate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $s=2+j3$, identify the cue values by matching terms: $\\sigma=2$ and $\\omega=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(\\sigma,\\omega)=(2,3),\\quad s=2+j3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Place the point at two-rights, three-ups from the origin. Mark its axis crossings by drawing right-angle projections to the axes, so the same point corresponds to $\\sigma$-axis intercept $(2,0)$ and imaginary-axis intercept $(0,3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sigma=0 \\text{ and } \\omega=0\\text{-axis crossings for this example are } (0,3) \\text{ and } (2,0),",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The plotted point is therefore $s=2+j3$, which is in the first quadrant and has nonzero real part, so it is not on the pure Fourier-frequency $j\\omega$ axis.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "The $s$-Plane",
+          "section_index": 3,
+          "section_title": "Reading $\\sigma$ and $\\omega$ from an $s$-Plane Point",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-003",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-003]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+              "image_description": "Create an $s$-plane diagram with a single labeled point at $s=-4+j1$, real axis labeled $\\sigma$, imaginary axis labeled $j\\omega$, gridlines, and projections to the axes showing intercepts at $\\sigma=-4$ and $\\omega=1$."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Read the point at $\\sigma=-4$, $\\omega=1$ from the $s$-plane diagram and write the corresponding value of $s$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use this as a coordinate-read prompt: the point is already marked on the $s$-plane, so the task is to decode its horizontal and vertical coordinates into the canonical form $s=\\sigma+j\\omega$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First, read the real-axis coordinate. The marked point lies at $\\sigma=-4$, so the real part is $\\sigma=-4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, read the imaginary-axis coordinate. The height is $\\omega=1$, so the imaginary coefficient is positive one.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sigma=-4,\\quad \\omega=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the point in the form $s=\\sigma+j\\omega$, then substitute: $s=-4+j(1)= -4+j$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-003"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the plotted point corresponds to $s=-4+j$, which is left of the $\\sigma=0$ axis and above the real axis.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "The $s$-Plane",
+          "section_index": 4,
+          "section_title": "Interpreting Horizontal Position as Exponential Weighting",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Create an $s$-plane with three points: $s=-2+j3$, $s=0+j3$, and $s=2+j3$; include axis labels $\\sigma$ and $j\\omega$, equal spacing, and clear vertical projections from each point to the axes."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Use the point $s=-2+j3$ and state whether it corresponds to exponential decay or growth in $e^{-st}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use this as an interpretation prompt: the point is already given as $s$, so read its coordinates, then apply the split $e^{-st}=e^{-\\sigma t}e^{-j\\omega t}$ to infer exponential behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the point representation, identify $\\sigma=-2$ so the real part is negative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-st}=e^{-\\sigma t}e^{-j\\omega t},\\quad \\sigma=-2 \\Rightarrow e^{-(-2)t}=e^{2t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $e^{-\\sigma t}=e^{2t}$ grows with $t$, the weighting is exponential growth.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For comparison, if $\\sigma>0$ then $e^{-\\sigma t}$ decays, and $\\sigma=0$ removes exponential weighting altogether (pure-frequency slice).",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the point $s=-2+j3$ corresponds to exponential growth in the $e^{-st}$ weighting term.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "The $s$-Plane",
+          "section_index": 5,
+          "section_title": "Identifying the $j\\omega$ Axis as the Fourier-Frequency Line",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-005",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-005]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+              "image_description": "Create an $s$-plane diagram with the point $s=j2$, a clearly labeled vertical axis marked as $j\\omega$, and a real axis marked as $\\sigma=0$. Emphasize whether the point is on the imaginary axis and include the coordinate projection to the $\\sigma=0$ line."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "From the $s$-plane, identify whether $s=j2$ is on the $j\\omega$ axis and state the value of $\\sigma$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the axis-check cue in the prompt: the point is given as $s=j2$, so we read its coordinates and decide whether the real coordinate is zero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First, decompose $s=j2$ into the form $s=\\sigma+j\\omega$ so the real part is $\\sigma=0$ and the imaginary part is $\\omega=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sigma=0,\\; \\omega=2,\\; s=0+j2=j2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-005"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the real coordinate is zero, the point lies exactly on the $\\sigma=0$ (or $j\\omega$) axis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That means this is the Fourier-frequency slice, so the corresponding specialization is $X(j\\omega)$ with no exponential weighting shift.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Region of Convergence",
+      "lesson_core_move": "Determine the region of convergence by using exponential weighting to identify the set of \\(s\\)-plane values for which a signal's Laplace-transform integral converges.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Region of Convergence",
+          "section_index": 1,
+          "section_title": "Introduction to Region of Convergence",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The object to recognize is the **region of convergence**.\nFor a given signal $x(t)$, the ROC is the set of complex values $s$ where the Laplace integral exists and is finite.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_{-\\infty}^{\\infty}x(t)e^{-st}\\,dt=\\int_{-\\infty}^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Take one complex point $s=\\sigma+j\\omega$ and test directly whether the integral is finite. The action is: separate the kernel into a magnitude term and a phase term, then use $|e^{-j\\omega t}|=1$, so convergence is controlled by the real exponent factor and the signal tail, not by oscillation alone.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then define the ROC as all $s$ values that pass that convergence test. That means the same rule applies point-by-point in the $s$-plane: collect every $\\sigma+j\\omega$ that makes the integral finite into one explicit set.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathrm{ROC}=\\left\\{s: \\int_{-\\infty}^{\\infty}x(t)e^{-\\sigma t}e^{-j\\omega t}\\,dt<\\infty\\right\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the ROC is the full set of $s$ that satisfy the inequality. In the next sections, turn this test into a condition on $\\sigma$ and then reinterpret that condition as a geometric $s$-plane region.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Region of Convergence",
+          "section_index": 2,
+          "section_title": "Testing Convergence at One \\(s\\)-Plane Value",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute whether the Laplace transform converges for $x(t)=e^{-2t}u(t)$ at $s=-1+j\\,3$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the Laplace test form $X(s)=\\int_0^{\\infty}x(t)e^{-st}\\,dt$. For a single-point check, substitute the candidate $s$ value directly and test whether the resulting integral value is finite.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_0^{\\infty}e^{-2t}e^{-st}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(-1+j3)=\\int_0^{\\infty}e^{-2t}e^{-(-1+j3)t}\\,dt=\\int_0^{\\infty}e^{-t}e^{-j3t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Separate the exponential terms. Since $|e^{-j3t}|=1$, the oscillatory factor $e^{-j3t}$ does not change magnitude, so convergence is controlled by $\\int_0^{\\infty}e^{-t}\\,dt$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty}e^{-t}\\,dt=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the integral is finite, so the Laplace transform converges at $s=-1+j3$. In the lesson rule form, $\\sigma=-1$ and the condition $\\sigma>-2$ is true.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Region of Convergence",
+          "section_index": 3,
+          "section_title": "Converting a Convergence Test into a Condition on \\(\\sigma\\)",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=e^{-2t}u(t)$, rewrite the convergence result as a condition on $\\sigma$ for all $s=\\sigma+j\\omega$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue now is to convert a single-point outcome into a reusable inequality. Start from the same weighted kernel and isolate the part of the exponent that drives magnitude.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^{\\infty} e^{-2t}e^{-st}\\,dt=\\int_0^{\\infty}e^{-2t}e^{-\\sigma t}e^{-j\\omega t}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $|e^{-j\\omega t}|=1$ so only the real-exponential factor sets tail behavior. This means convergence is equivalent to the real exponent on $e^{-2t}e^{-\\sigma t}=e^{-(2+\\sigma)t}$ being negative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "-(2+\\sigma)<0 \\quad\\Rightarrow\\quad \\sigma>-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So for all $s=\\sigma+j\\omega$, the ROC is the half-plane defined by $\\sigma>-2$. Boundary is the vertical line Re{$s$}$=-2$, and the valid side is the right side of that line.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Region of Convergence",
+          "section_index": 4,
+          "section_title": "Marking the Region of Convergence in the \\(s\\)-Plane",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004-roc",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "Plot the complex $s$-plane with $\\sigma$ on the horizontal axis and $j\\omega$ on the vertical axis. Draw the vertical boundary line at $\\sigma=-2$ and clearly shade the half-plane where $\\sigma>-2$ (the right side). Label the boundary as excluded for this strict inequality."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Given condition $\\mathrm{Re}\\{s\\}> -2$, show the ROC on the $s$-plane and mark the boundary.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Cue: the algebraic result is $\\sigma>-2$ for the signal $x(t)=e^{-2t}u(t)$. The action is to map this inequality into the $s$-plane and mark every admissible $s$ point.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathrm{ROC}=\\left\\{s=\\sigma+j\\omega:\\,\\sigma>-2\\right\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004-roc"
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sigma=-2 \\quad\\Rightarrow\\quad \\text{vertical boundary line in }s\\text{-plane}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The shaded region is the right half-plane. It is the set of points with $\\sigma>-2$, so the $j\\omega$ axis is inside this ROC since $\\sigma=0$ satisfies the inequality.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Interpretation for the next step: a ROC condition written as $\\mathrm{Re}\\{s\\}>a$ always means shade away from the left boundary side and keep the boundary line labeled as excluded unless an equality condition is explicitly stated.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Region of Convergence",
+          "section_index": 5,
+          "section_title": "Checking Whether the Fourier-Transform Slice Is Included in the Region of Convergence",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For ROC $\\mathrm{Re}\\{s\\}> -2$, decide whether the Fourier-transform slice $s=j\\omega$ is included.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a direct membership test: use the derived ROC inequality and the slice identity $s=j\\omega$ to test whether one point on the $s$-plane is inside.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Step 1 is to convert the slice to a real-part test: $s=j\\omega \\iff \\sigma=0$. That gives a single scalar value for the condition.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sigma = 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Step 2 is to check the ROC inequality with this value: substitute into $\\mathrm{Re}\\{s\\}>-2$ and evaluate $0>-2$, which is true.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s=j\\omega \\Rightarrow X(j\\omega)\\text{ exists because }0 \\in \\{\\sigma>-2\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the Fourier-transform slice is included in the ROC, so the original signal has a valid $X(j\\omega)$ interpretation for this ROC inequality.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

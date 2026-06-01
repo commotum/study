@@ -1,0 +1,1334 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Representing Signals with Shifted Impulses",
+      "lesson_core_move": "Represent a continuous-time signal as shifted impulse components whose locations and weights encode its time-domain values for later LTI impulse-response analysis.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Representing Signals with Shifted Impulses",
+          "step_type": "tutorial",
+          "learning_goal": "State how a shifted impulse component records one time location and one signal value so a signal can be represented as components for later LTI analysis.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; use compact delta notation and short value lists instead of plots."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Introduce a shifted impulse component a delta(t - t0) as a symbolic marker for the signal value a at time t0.",
+            "base_case": "A single nonzero signal value x(2) = 3 represented by 3 delta(t - 2).",
+            "paragraph_plan": [
+              "Remind the learner that shifted impulses have locations and that later LTI analysis will use impulse components as building blocks.",
+              "Define a delta(t - t0) as an impulse located at t0 with weight a.",
+              "Separate the two pieces of information: the shift gives the time location and the multiplier gives the encoded signal value.",
+              "Explain that a finite list of signal values can be encoded by adding one shifted impulse component for each listed value.",
+              "Preview that later lessons use these components to build system outputs, while this lesson only reads and writes the components."
+            ],
+            "display_math_plan": [
+              "Show the general component a delta(t - t0).",
+              "Show x(2) = 3 encoded as 3 delta(t - 2).",
+              "Show a two-component representation such as 3 delta(t - 2) - delta(t + 1)."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the introduction focused on the location-weight encoding convention; do not introduce convolution or output-response formulas yet."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying the Time Location of a Shifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Identify the time location encoded by the shift in a single impulse expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the task is to read the shift from symbolic delta notation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "One time location, written as t = value.",
+            "practice_question_model": "For the shifted impulse delta(t - 4), what time location does the impulse mark?",
+            "distractor_plan": [
+              "Use a sign-reversal option such as t = -4.",
+              "Include t = 0 to catch treating every impulse as unshifted.",
+              "Include an option that repeats the shift expression instead of the location.",
+              "Include a nearby integer location to catch superficial pattern matching."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Identify the time location of the shifted impulse delta(t - 4).",
+            "worked_solution_goal": "Show that delta(t - 4) is located at t = 4.",
+            "variation_from_previous": "First active use after the tutorial; isolate the location cue before introducing non-unit weights.",
+            "solution_step_plan": [
+              "Match the expression to the pattern delta(t - t0).",
+              "Read t0 = 4 from the shift.",
+              "State that the impulse is located at t = 4."
+            ],
+            "practice_variation_axes": [
+              "Use positive and negative integer locations.",
+              "Use both delta(t - a) and delta(t + a) forms.",
+              "Occasionally use simple fractional locations once integer shifts are clear."
+            ]
+          },
+          "handoff_notes": "Make the sign convention explicit: delta(t + a) is located at t = -a."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Interpreting the Weight on a Shifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Distinguish the impulse weight from the impulse location in a weighted shifted-impulse expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the task is to parse coefficient and shift from notation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "One weight-location pair.",
+            "practice_question_model": "In 5 delta(t + 1), what are the impulse weight and time location?",
+            "distractor_plan": [
+              "Swap the weight and location.",
+              "Reverse the sign of the location.",
+              "Reverse the sign of the weight.",
+              "Treat the coefficient as a time shift instead of a multiplier."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "In -3 delta(t - 2), identify the impulse weight and the time location.",
+            "worked_solution_goal": "Show that the weight is -3 and the impulse is located at t = 2.",
+            "variation_from_previous": "Add the coefficient as a second piece of information while keeping a single shifted impulse.",
+            "solution_step_plan": [
+              "Identify the multiplier outside delta as the weight.",
+              "Match the shifted impulse to delta(t - t0).",
+              "Read the time location from the shift.",
+              "Report the weight and location as separate data."
+            ],
+            "practice_variation_axes": [
+              "Use positive and negative weights.",
+              "Use positive, negative, and zero locations.",
+              "Vary whether the shift is written with plus or minus notation."
+            ]
+          },
+          "handoff_notes": "Do not describe the weight as area unless it is immediately tied back to the encoded signal value; the section's purpose is notation parsing."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Encoding One Signal Value with a Shifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Write the shifted-impulse component that encodes one specified signal value at one specified time.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; give the signal value as text or compact notation such as x(3) = -2."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A single shifted-impulse expression.",
+            "practice_question_model": "Write the shifted-impulse component that encodes x(2) = 5.",
+            "distractor_plan": [
+              "Expected errors include reversing the shift sign.",
+              "Expected errors include writing the time location as the coefficient.",
+              "Expected errors include omitting the coefficient when the value is not 1."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write the shifted-impulse component that encodes x(3) = -2.",
+            "worked_solution_goal": "Produce -2 delta(t - 3) from the given signal value and time location.",
+            "variation_from_previous": "Reverse the direction of the task: generate the component from a value-location pair instead of reading the pair from a component.",
+            "solution_step_plan": [
+              "Identify the target time t0 from x(t0).",
+              "Use the signal value as the coefficient.",
+              "Write delta(t - t0) with the correct shift sign.",
+              "Combine the coefficient and shifted impulse into one component."
+            ],
+            "practice_variation_axes": [
+              "Use positive and negative signal values.",
+              "Use positive, negative, and zero time locations.",
+              "Use integer values first, then simple fractions only if notation remains clear."
+            ]
+          },
+          "handoff_notes": "The answer should be an expression, not an explanation; use free response so learners must generate the notation."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Encoding Multiple Signal Values with Shifted Impulses",
+          "step_type": "example",
+          "learning_goal": "Write a sum of shifted impulse components that encodes multiple specified signal values.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; present the data as a short list or table of time-value pairs."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A sum of shifted-impulse expressions.",
+            "practice_question_model": "Write a shifted-impulse representation for x(-1) = 2, x(0) = -3, and x(4) = 1.",
+            "distractor_plan": [
+              "Expected errors include reversing one or more shift signs.",
+              "Expected errors include dropping a negative coefficient.",
+              "Expected errors include omitting the delta(t) term for a value at t = 0.",
+              "Expected errors include combining unlike impulse locations into one coefficient."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write a shifted-impulse representation for x(-1) = 2, x(0) = 3, and x(4) = -1.",
+            "worked_solution_goal": "Produce 2 delta(t + 1) + 3 delta(t) - delta(t - 4) by assigning one component to each listed value.",
+            "variation_from_previous": "Extend from one value-location pair to a controlled sum of three independent components.",
+            "solution_step_plan": [
+              "List each time-value pair separately.",
+              "Convert each pair into one shifted impulse component.",
+              "Check the shift sign for negative, zero, and positive time locations.",
+              "Add the components into one representation."
+            ],
+            "practice_variation_axes": [
+              "Vary the number of listed nonzero values from two to four.",
+              "Include a mix of negative, zero, and positive locations.",
+              "Include both positive and negative weights.",
+              "Keep values sparse enough that the task tests encoding, not algebraic simplification."
+            ]
+          },
+          "handoff_notes": "Use subgoal labels around converting each pair and assembling the sum; do not advance to integrals or continuous sifting yet."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Reading a Shifted-Impulse Representation for LTI Analysis",
+          "step_type": "example",
+          "learning_goal": "Extract the component weights and locations from a shifted-impulse representation as the data that will later drive LTI impulse-response analysis.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the representation itself is the data for the task."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "A component list giving each weight and time location.",
+            "practice_question_model": "For x(t) = 4 delta(t - 3) - delta(t + 2), which component list correctly records the weights and locations for later LTI analysis?",
+            "distractor_plan": [
+              "Reverse one or both location signs.",
+              "Drop the negative sign on a weight.",
+              "Swap a coefficient with a time location.",
+              "Omit one component from the list.",
+              "State a response formula instead of the input component data."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read the component list in x(t) = 2 delta(t + 1) - 3 delta(t - 2) for later LTI analysis.",
+            "worked_solution_goal": "Identify the components as weight 2 at t = -1 and weight -3 at t = 2 without computing an output response.",
+            "variation_from_previous": "Move from writing a representation to reading a complete representation as the input-component data needed before applying an impulse response.",
+            "solution_step_plan": [
+              "Separate the representation into individual shifted-impulse terms.",
+              "For each term, record the coefficient as the weight.",
+              "For each term, record the shift location using the delta(t - t0) convention.",
+              "State the component list in a format that can later be paired with h(t)."
+            ],
+            "practice_variation_axes": [
+              "Use two or three components.",
+              "Mix plus-form and minus-form shifts.",
+              "Include one negative weight.",
+              "Avoid asking for the output y(t) until the later LTI-response lessons."
+            ]
+          },
+          "handoff_notes": "Keep the forward reference to LTI systems limited to identifying input components; do not derive convolution, sifting integrals, or shifted impulse responses in this lesson."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Continuous-Time Sifting Representation",
+      "lesson_core_move": "Express a continuous-time signal as a continuum of shifted impulses using the sifting identity \\(x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\).",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Continuous-Time Sifting Representation",
+          "step_type": "tutorial",
+          "learning_goal": "State the continuous-time sifting identity and interpret it as reconstructing a signal from a continuum of shifted impulses.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "none",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the tutorial should use compact notation and verbal interpretation rather than a decorative signal plot."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define the sifting representation and make clear that the integration variable \\(\\tau\\) indexes shifted impulses whose weights come from \\(x(\\tau)\\).",
+            "base_case": "Use a generic continuous-time signal \\(x(t)\\) and show that integrating \\(x(\\tau)\\delta(t-\\tau)\\) over all \\(\\tau\\) returns \\(x(t)\\).",
+            "paragraph_plan": [
+              "Remind the learner that a shifted impulse \\(\\delta(t-\\tau)\\) is located at the value selected by \\(\\tau\\) and can pick out a signal value through the sifting property.",
+              "State the sifting identity and identify the roles of \\(t\\), \\(\\tau\\), \\(x(\\tau)\\), \\(\\delta(t-\\tau)\\), and \\(d\\tau\\).",
+              "Explain that the integral is a continuous superposition of shifted impulses weighted by the signal values, not an ordinary area accumulation over nonzero-width pulses.",
+              "Connect the representation to the module flow by noting that decomposing an input into shifted impulses prepares the input for later LTI-system response construction."
+            ],
+            "display_math_plan": [
+              "\\int_{-\\infty}^{\\infty} f(\\tau)\\delta(t-\\tau)\\,d\\tau=f(t)",
+              "x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial concise and first-pass: define the identity, interpret each symbol, and avoid deriving convolution or introducing impulse response notation."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Evaluating a Sifting Integral at a Fixed Time",
+          "step_type": "example",
+          "learning_goal": "Evaluate a sifting integral by identifying the impulse-selected value of the integration variable and substituting that value into the weighting expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "none",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the selected value and resulting evaluation are fully determined by the symbolic delta expression."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "simplified scalar value",
+            "practice_question_model": "Evaluate \\(\\int_{-\\infty}^{\\infty}(2\\tau-1)\\delta(4-\\tau)\\,d\\tau\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Evaluate \\(\\int_{-\\infty}^{\\infty}(\\tau^2+1)\\delta(3-\\tau)\\,d\\tau\\).",
+            "worked_solution_goal": "Show that the impulse selects \\(\\tau=3\\), so the integral equals \\(3^2+1=10\\).",
+            "variation_from_previous": "First active use of the sifting identity at a fixed numeric time rather than as a general reconstruction formula.",
+            "solution_step_plan": [
+              "Identify the weighting expression as \\(f(\\tau)=\\tau^2+1\\).",
+              "Identify the selected value \\(\\tau=3\\) from the shifted impulse.",
+              "Evaluate the weighting expression at the selected value.",
+              "State the final scalar value of the integral."
+            ],
+            "practice_variation_axes": [
+              "Change the selected time to another integer.",
+              "Use a different low-degree polynomial or affine weighting expression.",
+              "Keep the limits infinite so the focus remains on sifting rather than support restriction."
+            ]
+          },
+          "handoff_notes": "The worked example should model the substitution as the main move; do not introduce sign subtleties beyond recognizing that \\(\\delta(3-\\tau)\\) selects \\(\\tau=3\\)."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Reconstructing x(t) with delta(t-tau)",
+          "step_type": "example",
+          "learning_goal": "Simplify a symbolic sifting integral with free variable \\(t\\) by replacing \\(\\tau\\) with \\(t\\) in the signal expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "none",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the task is recognizing the symbolic replacement induced by \\(\\delta(t-\\tau)\\)."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "simplified expression in \\(t\\)",
+            "practice_question_model": "Simplify \\(\\int_{-\\infty}^{\\infty}(\\tau+1)u(\\tau-1)\\delta(t-\\tau)\\,d\\tau\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Simplify \\(\\int_{-\\infty}^{\\infty}e^{-2\\tau}u(\\tau)\\delta(t-\\tau)\\,d\\tau\\).",
+            "worked_solution_goal": "Show that the integral reconstructs \\(e^{-2t}u(t)\\) by replacing every \\(\\tau\\) in the weighting expression with \\(t\\).",
+            "variation_from_previous": "Keeps the same sifting move but changes the selected value from a fixed number to the symbolic time variable \\(t\\).",
+            "solution_step_plan": [
+              "Identify the coefficient multiplying the impulse as the signal expression in \\(\\tau\\).",
+              "Use \\(\\delta(t-\\tau)\\) to select the value \\(\\tau=t\\).",
+              "Replace each occurrence of \\(\\tau\\) in the coefficient with \\(t\\).",
+              "State the reconstructed signal expression."
+            ],
+            "practice_variation_axes": [
+              "Vary the exponential, polynomial, or step-modulated expression multiplying the impulse.",
+              "Require replacement of \\(\\tau\\) in more than one factor.",
+              "Keep the delta term in the form \\(\\delta(t-\\tau)\\) to reinforce the reconstruction identity."
+            ]
+          },
+          "handoff_notes": "Emphasize variable roles: \\(\\tau\\) is integrated out, while \\(t\\) remains in the reconstructed signal."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Writing a Signal as a Sifting Integral",
+          "step_type": "example",
+          "learning_goal": "Convert a given signal expression \\(x(t)\\) into its continuous-time sifting integral by writing the weight as \\(x(\\tau)\\).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "none",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the conversion is between two symbolic forms of the same signal."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "sifting integral over \\(( -\\infty,\\infty )\\)",
+            "practice_question_model": "Write \\(x(t)=e^{-3t}u(t)\\) as a continuous-time sifting integral.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write \\(x(t)=\\cos(2t)u(t)\\) as a continuous-time sifting integral.",
+            "worked_solution_goal": "Show that \\(x(t)\\) can be written as \\(\\int_{-\\infty}^{\\infty}\\cos(2\\tau)u(\\tau)\\delta(t-\\tau)\\,d\\tau\\).",
+            "variation_from_previous": "Reverses the previous section's simplification task: instead of reducing a sifting integral to \\(x(t)\\), the learner builds the sifting integral from \\(x(t)\\).",
+            "solution_step_plan": [
+              "Start from the general identity \\(x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\).",
+              "Rewrite the given signal expression with \\(\\tau\\) replacing \\(t\\) to form \\(x(\\tau)\\).",
+              "Place \\(x(\\tau)\\) as the weight multiplying \\(\\delta(t-\\tau)\\).",
+              "Use infinite limits because no support restriction has been requested."
+            ],
+            "practice_variation_axes": [
+              "Vary the signal expression while keeping it compact.",
+              "Include one factor that depends on time so the learner must replace \\(t\\) by \\(\\tau\\).",
+              "Keep the requested form as an all-time sifting integral before adding support-restricted limits later."
+            ]
+          },
+          "handoff_notes": "The example writer should make the direction change explicit: the learner is constructing the representation, not evaluating it."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Restricting the Sifting Integral to the Signal Support",
+          "step_type": "example",
+          "learning_goal": "Write a sifting representation with finite integration limits by using the interval on which the signal is nonzero.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "none",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; provide the support interval in text or symbolic notation rather than requiring graph inspection."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "support-restricted sifting integral",
+            "practice_question_model": "Write the signal \\(x(t)=t+1\\) for \\(-1\\le t\\le 2\\), and \\(x(t)=0\\) otherwise, as a sifting integral with limits restricted to its support.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write the signal \\(x(t)=2t\\) for \\(0\\le t\\le 3\\), and \\(x(t)=0\\) otherwise, as a sifting integral with limits restricted to its support.",
+            "worked_solution_goal": "Show that only the support interval contributes, giving \\(x(t)=\\int_{0}^{3}2\\tau\\delta(t-\\tau)\\,d\\tau\\).",
+            "variation_from_previous": "Adds one wrinkle to the all-time representation by replacing infinite limits with the signal's nonzero support interval.",
+            "solution_step_plan": [
+              "Identify the support interval from the signal description.",
+              "Rewrite the nonzero signal formula with \\(\\tau\\) replacing \\(t\\).",
+              "Use the support interval as the lower and upper limits of integration.",
+              "Multiply by \\(\\delta(t-\\tau)\\) and state the restricted sifting integral."
+            ],
+            "practice_variation_axes": [
+              "Change the support interval endpoints.",
+              "Change the simple formula used on the support.",
+              "Include signals described as zero outside the interval so no graph is needed."
+            ]
+          },
+          "handoff_notes": "Keep support restriction as the only new feature; do not ask the learner to infer support from a graph or to compute an LTI-system output."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Weighted Impulse Decomposition",
+      "lesson_core_move": "Assign the weight \\(x(\\tau)\\) to each shifted impulse \\(\\delta(t-\\tau)\\) in the continuous-time decomposition so the impulse continuum can be passed through an LTI system by superposition.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Weighted Impulse Decomposition",
+          "step_type": "tutorial",
+          "learning_goal": "Explain that each shifted impulse \\(\\delta(t-\\tau)\\) in the continuous-time decomposition carries the signal value \\(x(\\tau)\\) as its weight.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Make the weighting rule explicit: the impulse location \\(\\tau\\) selects a shifted impulse, the signal value \\(x(\\tau)\\) supplies its coefficient, and the continuum of weighted impulses reconstructs \\(x(t)\\).",
+            "base_case": "If \\(x(2)=5\\), then the shifted impulse at \\(\\tau=2\\) is weighted by 5, giving the component \\(5\\delta(t-2)\\).",
+            "paragraph_plan": [
+              "Connect back to the sifting representation by stating that reconstruction requires one shifted impulse for each possible value of \\(\\tau\\).",
+              "State the local rule in words: the impulse at location \\(\\tau\\) receives the signal value at that same location as its weight.",
+              "Introduce the component notation \\(x(\\tau_0)\\delta(t-\\tau_0)\\) for a single selected location.",
+              "Show the full integral as the continuum version of adding all weighted shifted impulses.",
+              "Preview the structural reason this matters: the weighted impulse continuum can later be passed through an LTI system by superposition, but do not derive the output formula yet."
+            ],
+            "display_math_plan": [
+              "\\(\\text{component at }\\tau=\\tau_0:\\quad x(\\tau_0)\\delta(t-\\tau_0)\\)",
+              "\\(x(t)=\\displaystyle\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial concise and focused on the weighting rule. Avoid convolution, system output, or any new LTI response formula beyond the superposition motivation."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Matching a Shifted Impulse to Its Signal Value",
+          "step_type": "example",
+          "learning_goal": "Identify the scalar weight attached to a specified shifted impulse by evaluating the signal at the impulse location.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "single scalar weight",
+            "practice_question_model": "Given \\(x(\\tau)=\\tau^2-1\\), what weight matches the shifted impulse \\(\\delta(t-2)\\)?",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given \\(x(\\tau)=2\\tau+1\\), match the shifted impulse \\(\\delta(t-3)\\) to its signal value weight.",
+            "worked_solution_goal": "Show that \\(\\delta(t-3)\\) corresponds to \\(\\tau=3\\), then evaluate \\(x(3)=7\\) and name 7 as the weight.",
+            "variation_from_previous": "This is the first active use of the tutorial rule at a single specified impulse location.",
+            "solution_step_plan": [
+              "Read the impulse location from the expression \\(\\delta(t-3)\\).",
+              "Substitute that location into the signal expression.",
+              "State the resulting signal value as the impulse weight, without writing the full weighted component yet."
+            ],
+            "practice_variation_axes": [
+              "Change the signal expression while keeping evaluation arithmetic simple.",
+              "Change the impulse location to a positive integer or zero.",
+              "Use notation that forces the learner to distinguish \\(t\\) from the indexing variable \\(\\tau\\)."
+            ]
+          },
+          "handoff_notes": "This section should isolate the matching move only: locate \\(\\tau_0\\), evaluate \\(x(\\tau_0)\\), and stop at the scalar weight."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Writing a Single Weighted Impulse Component",
+          "step_type": "example",
+          "learning_goal": "Write one complete weighted impulse component by combining the evaluated signal weight with the correct shifted impulse.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "one expression of the form \\(c\\delta(t-\\tau_0)\\)",
+            "practice_question_model": "For \\(x(\\tau)=\\tau+5\\), write the weighted impulse component located at \\(\\tau=-2\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For a signal with \\(x(\\tau)=4-\\tau\\), write the weighted impulse component located at \\(\\tau=1\\).",
+            "worked_solution_goal": "Evaluate \\(x(1)=3\\) and write the component as \\(3\\delta(t-1)\\).",
+            "variation_from_previous": "The learner now writes the full weighted impulse expression instead of only identifying the scalar weight.",
+            "solution_step_plan": [
+              "Identify the requested impulse location \\(\\tau_0\\).",
+              "Evaluate the signal value \\(x(\\tau_0)\\).",
+              "Attach that value as the coefficient of the shifted impulse \\(\\delta(t-\\tau_0)\\).",
+              "Check the sign inside the impulse shift against the location."
+            ],
+            "practice_variation_axes": [
+              "Use positive, zero, or negative impulse locations.",
+              "Vary whether the signal expression is constant, affine, or a simple polynomial.",
+              "Require the answer as a single symbolic component rather than a verbal description."
+            ]
+          },
+          "handoff_notes": "Keep this as a controlled extension from scalar matching to expression writing; do not introduce sums of components until the next section."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Writing Several Weighted Impulse Components",
+          "step_type": "example",
+          "learning_goal": "Write a finite collection of weighted impulse components by applying the same evaluation-and-attach rule at several impulse locations.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "finite sum or ordered list of weighted impulse components",
+            "practice_question_model": "Using \\(x(\\tau)=2\\tau+1\\), write the weighted impulse components at \\(\\tau=0\\), \\(\\tau=1\\), and \\(\\tau=3\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Using \\(x(\\tau)=\\tau+3\\), write the weighted impulse components at \\(\\tau=0\\), \\(\\tau=1\\), and \\(\\tau=2\\).",
+            "worked_solution_goal": "Evaluate the three signal values and write the corresponding components as \\(3\\delta(t)\\), \\(4\\delta(t-1)\\), and \\(5\\delta(t-2)\\).",
+            "variation_from_previous": "This repeats the single-component move several times and organizes the results as a small finite decomposition.",
+            "solution_step_plan": [
+              "List the requested locations in order.",
+              "Evaluate \\(x(\\tau)\\) at each location.",
+              "Pair each weight with the shifted impulse centered at the same location.",
+              "Write the components as a finite sum or clearly ordered list."
+            ],
+            "practice_variation_axes": [
+              "Change the number of listed locations between two and four.",
+              "Use simple signal expressions that keep arithmetic subordinate to the decomposition move.",
+              "Vary whether the locations include zero while keeping all weights nonnegative before the next section."
+            ]
+          },
+          "handoff_notes": "The example should make the repeated subgoal structure visible so later practice builds fluency with location-value-component matching."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Handling Zero and Negative Impulse Weights",
+          "step_type": "example",
+          "learning_goal": "Correctly write weighted impulse components when evaluating the signal produces zero or negative weights.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "finite sum or ordered list of weighted impulse components, with zero components omitted or explicitly marked as zero",
+            "practice_question_model": "Using \\(x(\\tau)=2-\\tau\\), write the weighted impulse components at \\(\\tau=0\\), \\(\\tau=2\\), and \\(\\tau=4\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Using \\(x(\\tau)=\\tau-1\\), write the weighted impulse components at \\(\\tau=0\\), \\(\\tau=1\\), and \\(\\tau=3\\).",
+            "worked_solution_goal": "Show that the weights are \\(-1\\), 0, and 2, then write the nonzero components as \\(-\\delta(t)\\) and \\(2\\delta(t-3)\\), noting that the zero-weight component contributes nothing.",
+            "variation_from_previous": "This keeps the multi-component structure but adds the sign and zero-weight cases that affect how components are written.",
+            "solution_step_plan": [
+              "Evaluate the signal at each listed location.",
+              "Mark any zero weight as a component that contributes nothing.",
+              "Attach negative weights as negative coefficients rather than changing the impulse location.",
+              "Write the resulting expression, either omitting the zero component or explicitly showing it as zero."
+            ],
+            "practice_variation_axes": [
+              "Move which listed location produces the zero weight.",
+              "Include one negative weight and at least one positive weight.",
+              "Vary whether the final answer is requested as a sum or an ordered component list."
+            ]
+          },
+          "handoff_notes": "Emphasize that coefficient sign and impulse location are separate: a negative weight changes the coefficient, not the shift. This closes the lesson without passing components through an LTI system."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "From Impulse Decomposition to System Output",
+      "lesson_core_move": "Convert a weighted shifted-impulse input decomposition into the corresponding LTI output by replacing each shifted impulse with the matching shifted, scaled impulse response and superposing the responses.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to From Impulse Decomposition to System Output",
+          "step_type": "tutorial",
+          "learning_goal": "State the rule that a weighted shifted-impulse input component produces the matching shifted, scaled impulse response in an LTI system, and show how finite impulse decompositions turn into output sums.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Make explicit that an LTI system maps each input component a_k delta(t - t_k) to a_k h(t - t_k), then adds the component responses by superposition.",
+            "base_case": "A finite decomposition with two weighted shifted impulses, such as x(t) = 2 delta(t - 1) - delta(t - 3).",
+            "paragraph_plan": [
+              "Recall that h(t) is the output to delta(t), so time invariance sends delta(t - t_k) to h(t - t_k).",
+              "Recall that homogeneity sends a_k delta(t - t_k) to a_k h(t - t_k).",
+              "State that linearity adds the component responses when the input is a finite sum of weighted shifted impulses.",
+              "Preview the output rule y(t) = sum_k a_k h(t - t_k) for finite impulse decompositions."
+            ],
+            "display_math_plan": [
+              "Show a_k delta(t - t_k) maps to a_k h(t - t_k).",
+              "Show x(t) = sum_k a_k delta(t - t_k) maps to y(t) = sum_k a_k h(t - t_k)."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this as direct instruction only; do not derive convolution yet or introduce integral notation beyond the finite-sum idea."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Output from a Single Shifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Convert a single shifted impulse input into the corresponding shifted impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "An expression for y(t) as one shifted copy of h(t).",
+            "practice_question_model": "An LTI system has impulse response h(t). Find the output when x(t) = delta(t + 3).",
+            "distractor_plan": [
+              "Watch for reversing the sign of the shift, such as writing h(t - 3) for delta(t + 3).",
+              "Watch for leaving the output as delta notation instead of replacing the impulse with h."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output when x(t) = delta(t - 2).",
+            "worked_solution_goal": "Show that a shift in the impulse input produces the same shift in the impulse response, so y(t) = h(t - 2).",
+            "variation_from_previous": "Uses the simplest nonzero input component: one shifted impulse with unit weight.",
+            "solution_step_plan": [
+              "Identify the shift location in delta(t - 2).",
+              "Use time invariance to replace delta(t - 2) with h(t - 2) at the output.",
+              "Write the final output as y(t) = h(t - 2)."
+            ],
+            "practice_variation_axes": [
+              "Change the shift value.",
+              "Use an advance such as delta(t + 1).",
+              "Use different notation for the shift parameter."
+            ]
+          },
+          "handoff_notes": "Keep the worked example close to the shifted-impulse rule from the LTI setup; do not introduce scaling or multiple terms yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Output from a Scaled Shifted Impulse",
+          "step_type": "example",
+          "learning_goal": "Convert a scaled shifted impulse input into the corresponding scaled shifted impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "An expression for y(t) as one scaled shifted copy of h(t).",
+            "practice_question_model": "An LTI system has impulse response h(t). Find the output when x(t) = -2 delta(t + 4).",
+            "distractor_plan": [
+              "Watch for dropping the coefficient on the impulse response.",
+              "Watch for reversing the sign of the shift.",
+              "Watch for multiplying the time argument by the coefficient instead of scaling the response."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output when x(t) = 3 delta(t - 1).",
+            "worked_solution_goal": "Show that the input weight multiplies the shifted impulse response, so y(t) = 3 h(t - 1).",
+            "variation_from_previous": "Adds one coefficient multiplying the shifted impulse.",
+            "solution_step_plan": [
+              "Identify the shift and weight in 3 delta(t - 1).",
+              "Use time invariance to shift h(t) to h(t - 1).",
+              "Use homogeneity to carry the factor 3 to the output.",
+              "Write y(t) = 3 h(t - 1)."
+            ],
+            "practice_variation_axes": [
+              "Vary the positive coefficient.",
+              "Use a negative coefficient.",
+              "Use an advance or delay in the impulse argument."
+            ]
+          },
+          "handoff_notes": "Focus on coordinating the coefficient and the shift together; do not add multiple impulse terms yet."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Output from a Finite Sum of Weighted Shifted Impulses",
+          "step_type": "example",
+          "learning_goal": "Convert each term in a finite weighted shifted-impulse input into its matching output term and add the responses.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A finite sum expression for y(t) in shifted and scaled copies of h(t).",
+            "practice_question_model": "An LTI system has impulse response h(t). Find the output when x(t) = delta(t + 1) + 3 delta(t - 2) - 2 delta(t - 4).",
+            "distractor_plan": [
+              "Watch for converting only one impulse term and leaving the others unchanged.",
+              "Watch for dropping negative signs or coefficients.",
+              "Watch for reversing one or more shift signs."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t). Find the output when x(t) = 2 delta(t) - delta(t - 3) + 4 delta(t - 5).",
+            "worked_solution_goal": "Produce y(t) = 2 h(t) - h(t - 3) + 4 h(t - 5) by mapping each impulse term independently.",
+            "variation_from_previous": "Extends from one scaled shifted impulse to several terms in a finite sum.",
+            "solution_step_plan": [
+              "Separate the input into three weighted shifted impulse terms.",
+              "Map each delta(t - t_k) term to h(t - t_k).",
+              "Carry each coefficient to the corresponding response term.",
+              "Add the response terms to form y(t)."
+            ],
+            "practice_variation_axes": [
+              "Change the number of terms.",
+              "Include a zero shift.",
+              "Include negative weights.",
+              "Vary delay and advance locations."
+            ]
+          },
+          "handoff_notes": "Use finite sums only; save continuous integral notation for the following lesson."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Superposing Responses from a Weighted Impulse Decomposition",
+          "step_type": "example",
+          "learning_goal": "Apply the full finite-sum output rule to a compact weighted impulse decomposition and interpret the result as superposition of component responses.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": ""
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "A finite indexed-sum expansion for y(t) written in shifted and scaled copies of h(t).",
+            "practice_question_model": "An LTI system has impulse response h(t), and x(t) = sum_{k=1}^{3} a_k delta(t - t_k) with a_1 = 1, t_1 = -2, a_2 = 4, t_2 = 0, and a_3 = -3, t_3 = 3. Write y(t).",
+            "distractor_plan": [
+              "Watch for using the index values as coefficients instead of reading a_k.",
+              "Watch for reversing signs when a listed shift t_k is negative.",
+              "Watch for omitting a term from the superposition."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "An LTI system has impulse response h(t), and x(t) = sum_{k=1}^{3} a_k delta(t - t_k) with a_1 = 2, t_1 = 0, a_2 = -1, t_2 = 2, and a_3 = 3, t_3 = 5. Write y(t).",
+            "worked_solution_goal": "Translate indexed weights and shifts into y(t) = 2 h(t) - h(t - 2) + 3 h(t - 5).",
+            "variation_from_previous": "Uses compact indexed decomposition data instead of writing each impulse term explicitly.",
+            "solution_step_plan": [
+              "Read each coefficient a_k and shift t_k from the decomposition data.",
+              "Apply the rule a_k delta(t - t_k) maps to a_k h(t - t_k).",
+              "Write one response term for each k.",
+              "Superpose the terms into the final y(t)."
+            ],
+            "practice_variation_axes": [
+              "Vary indexed coefficients.",
+              "Vary the shift list.",
+              "Use a table of a_k and t_k values.",
+              "Include a negative coefficient or negative shift."
+            ]
+          },
+          "handoff_notes": "This should bridge to the next lesson by making the finite-sum pattern visible without deriving the convolution integral."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Deriving the Convolution Integral",
+      "lesson_core_move": "Derive the continuous-time convolution integral \\(y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau\\) by applying linearity and time invariance to the weighted shifted-impulse decomposition of an input signal.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Deriving the Convolution Integral",
+          "step_type": "tutorial",
+          "learning_goal": "State how the weighted shifted-impulse representation of an input becomes an LTI output formed from weighted shifted impulse responses.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the construction is a symbolic derivation from the input representation to the output integral.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate a decorative system diagram or signal plot; keep the tutorial focused on the symbolic mapping."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Make explicit that the convolution integral is obtained by passing each weighted shifted impulse in the input decomposition through an LTI system and then superposing the resulting responses.",
+            "base_case": "Begin with the known input decomposition \\(x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\) and the known LTI mapping \\(\\delta(t-\\tau)\\mapsto h(t-\\tau)\\).",
+            "paragraph_plan": [
+              "Recall that a continuous-time signal can be written as a continuum of weighted shifted impulses.",
+              "State that each shifted impulse component can be considered separately because the system is linear.",
+              "Use time invariance to explain why the response to \\(\\delta(t-\\tau)\\) is \\(h(t-\\tau)\\).",
+              "Use linearity again to attach the weight \\(x(\\tau)\\) to the shifted response.",
+              "Conclude that superposing all component responses over \\(\\tau\\) gives the convolution integral."
+            ],
+            "display_math_plan": [
+              "Show \\(x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\).",
+              "Show the component mapping \\(x(\\tau)\\delta(t-\\tau)\\mapsto x(\\tau)h(t-\\tau)\\).",
+              "Show \\(y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau\\)."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this as construction guidance rather than a full proof; the tutorial should set up the one move that the examples will practice in increasingly complete symbolic form."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Mapping a Shifted Impulse to a Shifted Impulse Response",
+          "step_type": "example",
+          "learning_goal": "Apply time invariance to replace a shifted impulse input with the correspondingly shifted impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the learner only needs the symbolic shifted-impulse rule.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not request signal plots; the practice should vary shifts symbolically."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression in terms of \\(h\\)",
+            "practice_question_model": "For an LTI system with impulse response \\(h(t)\\), determine the output produced by the input \\(\\delta(t-5)\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For an LTI system with impulse response \\(h(t)\\), determine the output produced by the input \\(\\delta(t-3)\\).",
+            "worked_solution_goal": "Show that the output is \\(h(t-3)\\) by applying time invariance to the impulse response.",
+            "variation_from_previous": "This isolates the unweighted shifted-impulse mapping before adding input weights or superposition.",
+            "solution_step_plan": [
+              "Recall that the response to \\(\\delta(t)\\) is \\(h(t)\\).",
+              "Identify the shift amount in \\(\\delta(t-3)\\).",
+              "Apply time invariance to shift the impulse response by the same amount.",
+              "State the component output as \\(h(t-3)\\)."
+            ],
+            "practice_variation_axes": [
+              "Change the positive shift value.",
+              "Use an advanced impulse such as \\(\\delta(t+2)\\) once the sign convention is clear.",
+              "Ask for the output using only symbolic \\(h\\)-notation."
+            ]
+          },
+          "handoff_notes": "The example writer should emphasize the sign inside \\(\\delta(t-\\tau)\\) and \\(h(t-\\tau)\\); avoid introducing the integral before the component mapping is secure."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Applying the Input Weight to the Shifted Response",
+          "step_type": "example",
+          "learning_goal": "Use linearity to carry the weight on a shifted impulse through to the corresponding shifted impulse response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the section practices scalar weighting of symbolic shifted responses.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate visuals; the controlled wrinkle is the scalar multiplier."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression in terms of \\(h\\)",
+            "practice_question_model": "For an LTI system with impulse response \\(h(t)\\), determine the output produced by the input \\(-3\\delta(t-1)\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For an LTI system with impulse response \\(h(t)\\), determine the output produced by the weighted shifted impulse \\(4\\delta(t-2)\\).",
+            "worked_solution_goal": "Show that the output is \\(4h(t-2)\\) by first mapping the shifted impulse and then applying the scalar weight.",
+            "variation_from_previous": "This adds a scalar input weight to the shifted impulse while keeping a single impulse component.",
+            "solution_step_plan": [
+              "Identify the unweighted shifted impulse \\(\\delta(t-2)\\).",
+              "Map \\(\\delta(t-2)\\) to \\(h(t-2)\\) by time invariance.",
+              "Apply homogeneity from linearity so the coefficient \\(4\\) multiplies the entire response.",
+              "State the weighted response as \\(4h(t-2)\\)."
+            ],
+            "practice_variation_axes": [
+              "Vary the scalar weight, including negative and fractional values.",
+              "Vary the impulse shift while preserving the same sign convention.",
+              "Use a symbolic weight such as \\(a\\) only after numeric weights are clear."
+            ]
+          },
+          "handoff_notes": "Prevent the common error of placing the weight inside the argument of \\(h\\); the weight multiplies the shifted response, not the time variable."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Superposing Responses from the Impulse Decomposition",
+          "step_type": "example",
+          "learning_goal": "Use linearity to add the outputs produced by multiple weighted shifted impulses as a finite bridge toward continuous superposition.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; finite superposition can be represented with compact symbolic sums.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not use diagrams; keep attention on mapping each symbolic component and adding responses."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression for \\(y(t)\\) in terms of shifted \\(h\\) terms",
+            "practice_question_model": "For an LTI system with impulse response \\(h(t)\\), write the output produced by the input \\(3\\delta(t+2)+5\\delta(t-1)\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For an LTI system with impulse response \\(h(t)\\), write the output produced by the input \\(2\\delta(t-1)-\\delta(t-4)\\).",
+            "worked_solution_goal": "Show that the output is \\(2h(t-1)-h(t-4)\\) by mapping each weighted shifted impulse and summing the component responses.",
+            "variation_from_previous": "This extends from one weighted shifted impulse to a finite sum of weighted shifted impulses.",
+            "solution_step_plan": [
+              "Separate the input into the components \\(2\\delta(t-1)\\) and \\(-\\delta(t-4)\\).",
+              "Map each shifted impulse to its shifted impulse response.",
+              "Apply each scalar weight to the corresponding shifted response.",
+              "Add the component responses to form \\(y(t)\\)."
+            ],
+            "practice_variation_axes": [
+              "Vary the number of impulse terms from two to three.",
+              "Vary coefficients, including negative coefficients.",
+              "Vary shift signs while keeping the response notation in \\(h(t-\\tau)\\) form."
+            ]
+          },
+          "handoff_notes": "Frame this as the finite-sum version of the convolution idea; do not jump to evaluating any actual convolution integral."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Identifying the Continuous-Time Convolution Integral",
+          "step_type": "example",
+          "learning_goal": "Convert the continuum of weighted shifted impulse responses into the convolution integral for the LTI system output.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image; the final move is recognizing the symbolic continuum superposition.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate overlap-area or flip-shift visuals; those belong to later convolution setup lessons."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "convolution integral expression for \\(y(t)\\)",
+            "practice_question_model": "Starting from \\(x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\), write the output \\(y(t)\\) for an LTI system whose impulse response is \\(h(t)\\).",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Starting from \\(x(t)=\\int_{-\\infty}^{\\infty}x(\\tau)\\delta(t-\\tau)\\,d\\tau\\), derive the expression for the output \\(y(t)\\) of an LTI system with impulse response \\(h(t)\\).",
+            "worked_solution_goal": "Show that each infinitesimal component \\(x(\\tau)\\delta(t-\\tau)\\,d\\tau\\) contributes \\(x(\\tau)h(t-\\tau)\\,d\\tau\\), so integrating all contributions gives \\(y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau\\).",
+            "variation_from_previous": "This replaces finite superposition with continuous superposition over all shifted impulse components.",
+            "solution_step_plan": [
+              "Write the weighted shifted-impulse decomposition of \\(x(t)\\).",
+              "Map \\(\\delta(t-\\tau)\\) to \\(h(t-\\tau)\\) using time invariance.",
+              "Carry the weight \\(x(\\tau)\\) and infinitesimal width \\(d\\tau\\) onto the component response.",
+              "Superpose all component responses by integrating over \\(\\tau\\).",
+              "Identify the resulting expression as the continuous-time convolution integral."
+            ],
+            "practice_variation_axes": [
+              "Ask for the full output integral from the input decomposition.",
+              "Ask for the integrand before the final integral is written.",
+              "Vary whether the prompt provides the component response mapping or asks the learner to supply it."
+            ]
+          },
+          "handoff_notes": "Keep the endpoint as derivation and identification of the formula; leave interpretation of \\(\\tau\\), holding \\(t\\) fixed, and flip-shift-multiply-integrate mechanics to the following 6.3 lessons."
+        }
+      ]
+    }
+  ]
+}

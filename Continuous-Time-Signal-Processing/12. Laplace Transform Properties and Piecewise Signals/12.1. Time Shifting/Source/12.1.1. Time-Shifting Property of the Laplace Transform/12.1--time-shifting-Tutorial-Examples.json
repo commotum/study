@@ -1,0 +1,1868 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Time-Shifting Property of the Laplace Transform",
+      "lesson_core_move": "Apply the one-sided Laplace time-shifting property to convert delayed signals written as $f(t-a)u(t-a)$ into $e^{-as}F(s)$ so unit-step and piecewise-signal transforms can be handled algebraically.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Time-Shifting Property of the Laplace Transform",
+          "section_index": 1,
+          "section_title": "Introduction to Time-Shifting Property of the Laplace Transform",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The one-sided Laplace transform works with causal signals, so it is written around $u(t)$ turning a signal on at and after zero. This means the signal form should explicitly include the one-sided gate, which is why we first identify the delay using $f(t-a)u(t-a)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The rule is: if $\\mathcal{L}\\{f(t)u(t)\\}=F(s)$, then $\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-as}F(s)$ for $a\\ge 0$. Here $a$ is the delay to the right and $F(s)$ is the transform of the undelayed base signal $f(t)u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-as}F(s),\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case $f(t)=1$ with $\\mathcal{L}\\{u(t)\\}=1/s$. With delay $a$, the delayed constant is $u(t-a)$, so the transform becomes $\\mathcal{L}\\{u(t-a)\\}=e^{-as}\\,\\mathcal{L}\\{u(t)\\}=e^{-as}/s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Before applying the rule, check two things: first, the delayed signal is in exact form $f(t-a)u(t-a)$ with the same shift $a$ in both the base term and the step, and second, the delay satisfies $a\\ge 0$ for the one-sided formula.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Time-Shifting Property of the Laplace Transform",
+          "section_index": 2,
+          "section_title": "Identifying the Base Signal and Delay",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{u(t-3)(t-3)^2\\}$ by rewriting it in the delayed form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Treat this as a delay-identification move. The target form is $x(t)=f(t-a)u(t-a)$. Here $x(t)=u(t-3)(t-3)^2$, so the same delay $a=3$ appears in both the base argument and the step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First rewrite the delayed base term as $f(t-3)$: set $f(t)=t^2$. Then we can express the signal as $x(t)=f(t-3)u(t-3)$, which is the exact template required by the theorem.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t-3)(t-3)^2=f(t-3)u(t-3),\\quad f(t)=t^2.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the known one-sided pair for the base signal: $\\mathcal{L}\\{t^2\\}=\\frac{2}{s^3}$. Because this is the delayed version with $a=3$, the delay factor is $e^{-3s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t-3)u(t-3)\\}=e^{-3s}F(s),\\quad F(s)=\\mathcal{L}\\{f(t)u(t)\\}=\\frac{2}{s^3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute and report the result as $\\mathcal{L}\\{u(t-3)(t-3)^2\\}=\\dfrac{2e^{-3s}}{s^3}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Time-Shifting Property of the Laplace Transform",
+          "section_index": 3,
+          "section_title": "Applying the Property from a Known Base Transform",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Use the known pair $\\mathcal{L}\\{e^{-2t}u(t)\\}=1/(s+2)$ to compute $\\mathcal{L}\\{e^{-2(t-1)}u(t-1)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is a cue-based reuse step: the base transform is already known, so we do not rederive $\\mathcal{L}\\{e^{-2t}u(t)\\}$. We only need to identify the delay structure and apply the time-shifting factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Match the target to the one-sided delayed template $\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-as}F(s)$. The signal can be written as $f(t-1)u(t-1)$ with $f(t)=e^{-2t}$ and delay $a=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "e^{-2(t-1)}u(t-1)=f(t-1)u(t-1),\\quad f(t)=e^{-2t},\\quad a=1.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the given cue, we have the base transform $F(s)=\\mathcal{L}\\{f(t)u(t)\\}=\\mathcal{L}\\{e^{-2t}u(t)\\}=\\frac{1}{s+2}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the delay multiplier once and only once: multiply by $e^{-as}$ with $a=1$ to account for the shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{e^{-2(t-1)}u(t-1)\\}=e^{-s} \\cdot F(s)=\\frac{e^{-s}}{s+2}.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: $\\mathcal{L}\\{e^{-2(t-1)}u(t-1)\\}=\\frac{e^{-s}}{s+2}$. This stays in one-sided causal form because the delay is cleanly separated from the same base transform.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Time-Shifting Property of the Laplace Transform",
+          "section_index": 4,
+          "section_title": "Computing the Base Transform Before Adding the Delay Factor",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $L\\{u(t-4)(t-4+2)\\}$ by first finding the base transform of $t+2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Treat this as the sequencing move: compute the non-delayed base transform first, then attach the shift factor at the end. The target signal is $x(t)=u(t-4)(t-4+2)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Match $x(t)$ to the delayed template $f(t-a)u(t-a)$. Rewrite the bracketed polynomial as a delayed base function: $x(t)=f(t-4)u(t-4)$ with $f(t)=t+2$ and $a=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t-4)(t-4+2)=\\bigl(t-4+2\\bigr)u(t-4)=f(t-4)u(t-4),\\quad f(t)=t+2,\\quad a=4.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now find the base transform of the undelayed base signal: $F(s)=L\\{f(t)u(t)\\}=L\\{t+2\\}=\\frac{1}{s^2}+\\frac{2}{s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided shift only after the base is ready: the transform rule gives a multiplicative factor $e^{-as}$ with $a=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L\\{u(t-4)f(t-4)\\}=e^{-4s}F(s),\\quad F(s)=\\frac{1}{s^2}+\\frac{2}{s},\\quad\\Rightarrow\\quad L\\{u(t-4)(t-4+2)\\}=e^{-4s}\\left(\\frac{1}{s^2}+\\frac{2}{s}\\right).",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $L\\{u(t-4)(t-4+2)\\}=\\frac{e^{-4s}}{s^2}+\\frac{2e^{-4s}}{s}$. This keeps the delay $e^{-4s}$ as a separate final multiplier, which is the required sequencing pattern.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Time-Shifting Property of the Laplace Transform",
+          "section_index": 5,
+          "section_title": "Recognizing When the Delayed Form Is Ready for Direct Use",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=u(t-1)(t+1)^2$ is directly ready for the theorem, then compute $L\\{x(t)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Before applying the shift rule, run the readiness check: can the signal be written as $f(t-a)u(t-a)$? If not, perform one local-time rewrite and then apply the theorem.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $x(t)=u(t-1)(t+1)^2$. Use the local-time variable $\\tau=t-1$. Then $x(t)=u(t-1)(\\tau+2)^2$ and this is already in delayed form as $f(\\tau)u(t-1)$ with $a=1$ and $f(\\tau)=(\\tau+2)^2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t-1)(t+1)^2=u(t-1)(t-1+2)^2=u(t-1)f(t-1),\\quad f(t)= (t+2)^2.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To keep one-sided notation stable, the base transform is $F(s)=L\\{f(t)u(t)\\}=L\\{(t+2)^2\\}=L\\{t^2+4t+4\\}=\\frac{2}{s^3}+\\frac{4}{s^2}+\\frac{4}{s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now attach the delay factor from the one-sided time-shifting rule exactly once: multiply by $e^{-as}$ with $a=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L\\{x(t)\\}=L\\{u(t-1)(t+1)^2\\}=e^{-s}F(s)=e^{-s}\\left(\\frac{2}{s^3}+\\frac{4}{s^2}+\\frac{4}{s}\\right).",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $L\\{u(t-1)(t+1)^2\\}=e^{-s}\\left(\\frac{2}{s^3}+\\frac{4}{s^2}+\\frac{4}{s}\\right)=\\frac{2e^{-s}}{s^3}+\\frac{4e^{-s}}{s^2}+\\frac{4e^{-s}}{s}$. The key decision is that the signal became valid after one local-time rewrite check.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Delayed Signals with Unit Steps",
+      "lesson_core_move": "Convert a delayed waveform into $f(t-a)u(t-a)$ by identifying the delay $a$ and shifted local time so the one-sided Laplace time-shifting property can be applied to piecewise signal representations.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Delayed Signals with Unit Steps",
+          "section_index": 1,
+          "section_title": "Introduction to Delayed Signals with Unit Steps",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The object to recognize is a delayed activation signal. A delayed waveform is turned on through a shifted unit-step gate, so $u(t-a)$ means the same base behavior is present only for $t \\ge a$ and is delayed by $a$ units from the origin.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To keep the move stable, define local time as $\\tau = t-a$. This is a time-origin shift for that expression: you do not replace the symbol $t$ by a constant, you rewrite delayed content in the shifted local coordinate so the base term and the gate share the same offset.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the canonical target form only when it is exact: $x(t)=f(t-a)u(t-a)$. Before applying time-shifting, verify that the same delay $a$ appears in both the local argument and the unit-step gate. If this synchronization is missing, rewrite before transforming.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=f(t-a)u(t-a)\\Rightarrow X(s)=e^{-as}F(s),\\quad a \\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case $x(t)=u(t-a)$ to lock the pattern: the delayed base term is $f(t)=1$ and the only shifted part is the gate, so extract the shared delay $a$ and keep the representation in one form only, ready to map to $e^{-as}$ in the Laplace domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau=t-a",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Delayed Signals with Unit Steps",
+          "section_index": 2,
+          "section_title": "Identifying the Delay and Local Time",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the delay and local-time variable for $x(t)=(t-3)^2u(t-3)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Read the unit-step gate first: in $x(t)=(t-3)^2u(t-3)$, the gate is $u(t-3)$, so the activation delay is $a=3$. The same delay value must be the one used to anchor the local-time rewrite.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set local time to $\\tau=t-3$, so $t=\\tau+3$. This is the local variable the base term should be written in.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau=t-3 \\Rightarrow t=\\tau+3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now rewrite the base factor using this local coordinate: $(t-3)^2=(\\tau)^2$, so the delayed canonical form is $x(t)=g(t-3)u(t-3)$ with $g(\\tau)=\\tau^2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=g(t-3)u(t-3),\\quad g(\\tau)=\\tau^2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result to check: the same delay appears in both parts, $a=3$ and $\\tau=t-3$, so this is a valid synchronized delayed form ready for one-sided Laplace time-shifting.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Delayed Signals with Unit Steps",
+          "section_index": 3,
+          "section_title": "Writing a Delayed Base Signal as $f(t-a)u(t-a)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=(t+4)u(t-4)$ as $f(t-4)u(t-4)$ and state $f(\\cdot)$ explicitly.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the unit-step gate: in $x(t)=(t+4)u(t-4)$, the delayed activation is exactly $u(t-4)$, so the delay is $a=4$. The canonical delayed form must keep that same $a$ in the local anchor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Define local time once: $\\tau=t-4$, so $t=\\tau+4$. The base expression is rewritten in terms of $\\tau$, because the delayed form is expressed around the local variable that tracks the switched-on segment.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau=t-4 \\Rightarrow t=\\tau+4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute into the base term: $(t+4)=(\\tau+4)+4=\\tau+8$. Because the signal is delayed by $4$, this is written as $g(\\tau)=\\tau+8$ inside $x(t)=g(t-4)u(t-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=g(t-4)u(t-4),\\quad g(\\tau)=\\tau+8",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Consistency check: $g(t-4)= (t-4)+8=t+4$, so $x(t)=g(t-4)u(t-4)$ is algebraically identical to the original signal and now has the canonical delayed pattern ready for the time-shifting step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Delayed Signals with Unit Steps",
+          "section_index": 4,
+          "section_title": "Converting Delayed Exponentials to Local-Time Form",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the local form for $x(t)=e^{-2(t-5)}u(t-5)$ for use with one-sided time shifting.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is again the unit-step gate. In $x(t)=e^{-2(t-5)}u(t-5)$, the delayed activation is $u(t-5)$, so the delay is $a=5$ and the same $a$ must appear in the local representation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the local variable as $\\tau=t-5$, so that $t=\\tau+5$. This is the standard delayed coordinate used throughout the delayed-base steps.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau=t-5 \\Rightarrow t=\\tau+5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rewrite the exponent using this local variable: $e^{-2(t-5)}=e^{-2\\tau}$. Then the signal can be written as $x(t)=e^{-2\\tau}u(\\tau)$, which is the synchronized local-time form before mapping back.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now map back to delayed notation with a shared delay anchor: $x(t)=g(t-5)u(t-5)$ where $g(\\tau)=e^{-2\\tau}$. This keeps the exponential in local time and preserves the same delay as the gate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=g(t-5)u(t-5),\\quad g(\\tau)=e^{-2\\tau}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Consistency check: substituting $\\tau=t-5$ gives $g(t-5)=e^{-2(t-5)}$, so the rewritten form is identical to the original delayed exponential and is ready for one-sided Laplace shifting.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Delayed Signals with Unit Steps",
+          "section_index": 5,
+          "section_title": "Rewriting Turned-On Signals from Global Time to Shifted Time",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=(t-2)\\big[u(t-2)-u(t-6)\\big]$ as a local-time delayed form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue now has two gates, so start with the first shifted gate: $u(t-2)$. This sets the primary delay anchor at $a=2$, which defines the local-time frame for the whole segment.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose the local variable $\\tau=t-2$, so $t=\\tau+2$. This is the same anchor used in earlier delayed-base steps.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau=t-2 \\Rightarrow t=\\tau+2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rewrite each factor in this local frame. The base polynomial becomes $t-2=\\tau$. The gates become $u(t-2)=u(\\tau)$ and $u(t-6)=u(\\tau-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t-6)=u((t-2)-4)=u(\\tau-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Assemble the synchronized form: $x(t)=\\tau\\big[u(\\tau)-u(\\tau-4)\\big]$. Both gate boundaries and the local base now use the same local coordinate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\tau\\big[u(\\tau)-u(\\tau-4)\\big],\\quad \\tau=t-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If you prefer delayed notation, this is equivalent to a windowed delayed form with synchronized support. Substituting back gives the exact original behavior: the signal is active on $2\\le t<6$ with local ramp $\\tau=t-2$, and zero elsewhere.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Delayed Signals with Unit Steps",
+          "section_index": 6,
+          "section_title": "Checking Whether a Delayed Signal Is Ready for Time Shifting",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Check if $x(t)=e^{-t}u(t-2)$ is already in canonical time-shifting form; if not, provide the correction.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start by checking the gate anchor. $x(t)=e^{-t}u(t-2)$ has the delayed switch $u(t-2)$, so the form should use delay $a=2$ with a single local coordinate $\\tau=t-2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now test synchronization. The base term is $e^{-t}$, not yet written as a function of $\\tau=t-2$, so this is not in canonical form yet.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\tau=t-2 \\Rightarrow t=\\tau+2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rewrite the base expression in the same local variable: $e^{-t}=e^{-(\\tau+2)}=e^{-2}e^{-\\tau}$. Then the signal becomes $x(t)=e^{-2}e^{-\\tau}u(\\tau)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Map back to delayed notation: $x(t)=e^{-2}e^{-(t-2)}u(t-2)=\\big(e^{-2}e^{-\\tau}\\big)u(\\tau)$ with $\\tau=t-2$. This is the canonical form needed for one-sided time shifting.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=g(t-2)u(t-2),\\quad g(t-2)=e^{-2}e^{-(t-2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Verdict: not ready in its original form, but ready after synchronization. Minimal correction is to rewrite the base as a function of $t-2$ so the delay in the gate and base are the same.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Transforming Shifted Unit Steps",
+      "lesson_core_move": "Convert each shifted unit step $u(t-a)$ into the Laplace-domain factor $e^{-as}/s$, interpreting the exponential factor as the delay marker used in piecewise-signal transforms.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transforming Shifted Unit Steps",
+          "section_index": 1,
+          "section_title": "Introduction to Transforming Shifted Unit Steps",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "In one-sided Laplace work, the anchor object is the causal step $u(t)$, whose transform is read as $L\\{u(t)\\}=\\frac{1}{s}$. That base pair is the template your future shifted-step rules must reuse.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L\\{u(t)\\}=\\frac{1}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A shifted unit step is written as $u(t-a)$ with $a\\ge 0$. The value of $a$ is the time offset where the signal turns on; this same $a$ is the multiplier in the exponential delay factor in the Laplace result.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The direct rule is: if a signal matches $u(t-a)$, then $u(t-a) \\leftrightarrow \\frac{e^{-as}}{s}$. This is the exact move for this lesson: read the shift in time notation and immediately write the exponential delay marker in $s$-space.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "L\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case pattern to stay consistent: for $a=0$, $u(t)$ gives $\\frac{1}{s}$, and for $a=2$, $u(t-2)$ gives $\\frac{e^{-2s}}{s}$. The structure is unchanged; only the delay $a$ in $u(t-a)$ changes the exponential term.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transforming Shifted Unit Steps",
+          "section_index": 2,
+          "section_title": "Transforming a Single Shifted Unit Step",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the one-sided Laplace transform of $u(t-2)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this example is the shifted-step form $u(t-a)$, so the delay parameter is read directly from the argument and the signal is recognized as a one-sided step shifted by $a=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the delayed-step transform pair for one-sided Laplace transforms: $u(t-a) \\leftrightarrow \\frac{e^{-as}}{s}$, with $a\\ge 0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the pair with $a=2$ by substitution into the rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-2)\\}=\\frac{e^{-2s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final check: the exponent is negative ($e^{-2s}$), and the denominator remains $s$ because the base transform is the unit step, consistent with one-sided Laplace form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transforming Shifted Unit Steps",
+          "section_index": 3,
+          "section_title": "Matching the Shift Amount to the Exponential Factor",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the inverse Laplace transform of $e^{-3s}/s$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example switches direction from the prior forward-transform work: we now start with a Laplace-domain expression and identify the delayed-step time signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the factorized form $e^{-as}/s$, so we match it to the pair $\\mathcal{L}^{-1}\\{e^{-as}/s\\}=u(t-a)$ with $a \\ge 0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}\\{e^{-as}/s\\}=u(t-a),\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the exponent as the delay marker: $e^{-3s}$ means $a=3$. The remaining factor is the base transform $1/s$, the one-sided transform of $u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}\\{e^{-3s}/s\\}=u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $\\mathcal{L}^{-1}\\{e^{-3s}/s\\}=u(t-3)$. This keeps a negative sign in the exponent and maps to a delay to the right by 3 seconds, as the one-sided convention requires.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transforming Shifted Unit Steps",
+          "section_index": 4,
+          "section_title": "Transforming Scaled Shifted Unit Steps",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the one-sided Laplace transform of $-2u(t-4)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This step keeps the same delay pattern and adds one new wrinkle: a scalar multiplier outside the shifted step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the solution template from previous steps to identify the delayed step template and the delay index. Here the signal is $-2u(t-4)=(-2)\\cdot u(t-4)$, so the shifted-step part is $u(t-4)$ with $a=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the delayed-step pair to the step component first: $u(t-a) \\leftrightarrow e^{-as}/s$ with $a\\ge 0$, so $u(t-4) \\leftrightarrow e^{-4s}/s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t-a) \\leftrightarrow \\frac{e^{-as}}{s},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then keep the outside constant as a multiplicative gain and attach it to the transform result: $\\mathcal{L}\\{-2u(t-4)\\} = -2\\,\\mathcal{L}\\{u(t-4)\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{-2u(t-4)\\} = -2\\cdot\\frac{e^{-4s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $\\mathcal{L}\\{-2u(t-4)\\}=-\\dfrac{2e^{-4s}}{s}$. The delay marker $e^{-4s}$ and the coefficient $-2$ both remain, so neither the direction of the delay nor the one-sided step support is changed.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Transforming Shifted Unit Steps",
+          "section_index": 5,
+          "section_title": "Transforming Sums of Shifted Unit Steps",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the one-sided Laplace transform of $u(t-1)+2u(t-3)-u(t-5)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example adds one new wrinkle: the signal is a sum of shifted steps, but each term still uses the same delayed-step pattern.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Split the signal into separate terms and identify each delay: $u(t-1)$ with $a=1$, $2u(t-3)$ with $a=3$, and $-u(t-5)$ with $a=5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For each term, apply the delayed-step pair $u(t-a) \\leftrightarrow e^{-as}/s$, which is valid for one-sided transforms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "u(t-1) \\leftrightarrow \\frac{e^{-s}}{s},\\quad 2u(t-3) \\leftrightarrow 2\\frac{e^{-3s}}{s},\\quad -u(t-5) \\leftrightarrow -\\frac{e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now combine by linearity, keeping each delay and denominator separate so each term stays in the same transformed form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-1)+2u(t-3)-u(t-5)\\}=\\frac{e^{-s}}{s}+\\frac{2e^{-3s}}{s}-\\frac{e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $\\mathcal{L}\\{u(t-1)+2u(t-3)-u(t-5)\\}=\\dfrac{e^{-s}+2e^{-3s}-e^{-5s}}{s}$. Each term preserves its own delay marker and coefficient, with only the algebraic summation happening in the transform domain.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Transforming Shifted Ramps",
+      "lesson_core_move": "Rewrite shifted ramp terms as delayed ramp-and-step components and apply the Laplace time-shifting property to compute their transforms for piecewise-signal representations.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Shifted Ramps",
+          "section_index": 1,
+          "section_title": "Introduction to Transforming Shifted Ramps",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The key object for this topic is the shifted ramp in delayed causal form: whenever a ramp term can be written as $f(t-a)u(t-a)$, it is ready for one-sided time-shifting. In this lesson, that form is the cue to use the exact transform rule rather than re-deriving an integral each time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base seed first: the ramp with no shift is $t u(t)$, and its one-sided transform is the reference template for this section.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{t u(t)\\}=\\frac{1}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply the shifted-ramp action in one line: rewrite delayed ramps as $f(t-a)u(t-a)$ and then apply $\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-a s}F(s)$. The substitution is $\\tau=t-a$, and that same shift amount $a$ is the one that appears in the exponential multiplier in the transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-a s}F(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Before moving to examples, avoid three common failure points: use the wrong sign in the delay ($a$ should match the signal’s activation time), drop the unit step factor $u(t-a)$, or attach $e^{-a s}$ to the wrong base transform term. Keep these checks in this order: verify $a$, verify $f(t-a)$, then verify one-sided support with $u(t-a)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Shifted Ramps",
+          "section_index": 2,
+          "section_title": "Transforming a Basic Delayed Ramp",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{(t-2)u(t-2)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is to first make the signal match the delayed canonical form $f(t-a)u(t-a)$; for this example, the expression already has that structure with $a=2$ and local base $f(t)=t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the base seed, we use the known one-sided transform of a simple ramp:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{t u(t)\\}=\\frac{1}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the time-shifting theorem directly: multiply the base transform by $e^{-a s}$ with the same delay $a=2$ that appears in the step gate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-a s}F(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $f(t)=t$, $a=2$, and $F(s)=1/s^2$ to get",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-2)u(t-2)\\}=e^{-2s}\\frac{1}{s^2} = \\frac{e^{-2s}}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the delayed-ramp template exactly in this order for the next step: identify $a$, confirm one-sided support with $u(t-a)$, then apply $e^{-a s}$ to the base ramp seed.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Shifted Ramps",
+          "section_index": 3,
+          "section_title": "Transforming a Scaled Delayed Ramp",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{3(t-4)u(t-4)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to match the delayed-ramp template $3(t-4)u(t-4)=3f(t-4)u(t-4)$ with the local seed $f(t)=tu(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the scalar outside the transform first, so linearity gives the separation of the gain:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{3f(t-4)u(t-4)\\}=3\\,\\mathcal{L}\\{f(t-4)u(t-4)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then apply the one-sided shift rule to the seed base term. The same delay $a=4$ appears in both the local-time argument and the unit-step gate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-as}F(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $f(t)=tu(t)$, we use the base transform $\\mathcal{L}\\{t u(t)\\}=1/s^2$, then attach the delay factor $e^{-4s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{3(t-4)u(t-4)\\}=3e^{-4s}\\,\\frac{1}{s^2}=\\frac{3e^{-4s}}{s^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Shifted Ramps",
+          "section_index": 4,
+          "section_title": "Transforming a Delayed Ramp with a Constant Offset",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{(t-2+5)u(t-2)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to put the expression into local delayed pieces so we can apply the same one-sided shift template term by term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(t-2+5)u(t-2)=(t-2)u(t-2)+5u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use linearity to transform each piece separately with the same delay $a=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the ramp piece, use the delayed-ramp seed rule:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-a)u(t-a)\\}=\\frac{e^{-as}}{s^2},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the delayed constant piece, use:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $a=2$ and combine in the same delayed factor form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-2+5)u(t-2)\\}=\\frac{e^{-2s}}{s^2}+\\frac{5e^{-2s}}{s}=e^{-2s}\\left(\\frac{1}{s^2}+\\frac{5}{s}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That final factorized form preserves the same delay mechanism while making the ramp and offset contributions explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Shifted Ramps",
+          "section_index": 5,
+          "section_title": "Transforming Sums of Shifted Ramp and Step Terms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{(t-2)u(t-2)+4u(t-2)-u(t-5)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to separate each delayed term because linearity is valid only after every part is in a shifted canonical form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the signal as a sum of a delayed ramp seed and two delayed constants:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(t-2)u(t-2)+4u(t-2)-u(t-5)=1\\cdot (t-2)u(t-2)+4\\,u(t-2)-1\\cdot u(t-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the delayed-ramp rule to the first term with $a=2$ and the delayed-step rule to the two step terms with their own delays.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-a)u(t-a)\\}=\\frac{e^{-as}}{s^2},\\quad a\\ge0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the identified delays and coefficients.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-2)u(t-2)\\}=\\frac{e^{-2s}}{s^2},\\quad \\mathcal{L}\\{4u(t-2)\\}=\\frac{4e^{-2s}}{s},\\quad \\mathcal{L}\\{u(t-5)\\}=\\frac{e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-2)u(t-2)+4u(t-2)-u(t-5)\\}=\\frac{e^{-2s}}{s^2}+\\frac{4e^{-2s}}{s}-\\frac{e^{-5s}}{s}=e^{-2s}\\left(\\frac{1}{s^2}+\\frac{4}{s}\\right)-\\frac{e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep this structure: transform each delayed piece separately, then combine by common delay factors if possible.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+      "lesson_core_move": "Rewrite each piecewise continuous-time signal as an initial expression plus breakpoint-triggered unit-step corrections, converting every later segment into a shifted form suitable for applying the Laplace time-shifting property.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+          "section_index": 1,
+          "section_title": "Introduction to Rewriting Piecewise Signals with Unit Steps",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A piecewise signal is controlled by breakpoints $a_k$, each one turning a new local formula on. Read the pattern as: baseline piece $x_0$ is always present, and every breakpoint adds a correction term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use one local variable per breakpoint, $τ=t-a_k$, so the gate and the local expression share the same shift. In that form, the activation term is $u(t-a_k)$ and the correction is written to this gate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta f_k=f_k(\\tau)-f_{k-1}(\\tau),\\quad x(t)=x_0+\\sum_{k=1}^{K}\\Delta f_k\\,u(t-a_k)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the baseline one-breakpoint case from the outline, $x(t)=x_0$ for $t<a_1$ and $x(t)=x_1(t-a_1)$ for $t\\ge a_1$, the compressed form is $x(t)=x_0+\\bigl[x_1(t-a_1)-x_0\\bigr]u(t-a_1)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Region check: if $t<a_1$, then $u(t-a_1)=0$ and $x(t)=x_0$; if $t\\ge a_1$, then $u(t-a_1)=1$ and $x(t)=x_1(t-a_1)$, so the rewritten expression matches both regions exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=x_0+\\sum_{k=1}^{K}\\left[f_k(t-a_k)-f_{k-1}(t-a_k)\\right]u(t-a_k)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The next operational goal is that every added branch is written in local-time form; that is the format needed when the piecewise signal is transformed next in the Laplace time-shifting workflow.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+          "section_index": 2,
+          "section_title": "Rewriting a Two-Segment Piecewise Signal with One Unit-Step Correction",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=2$ for $t<1$ and $x(t)=t+1$ for $t\\ge1$ as a base-plus-correction unit-step expression.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a single breakpoint at $t=1$, so use one correction term and keep the baseline segment as $x_0$ for the left-hand region.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the piecewise rule, set the baseline to $x_0=2$. The new branch is active for $t\\ge1$, so $a=1$ and the local variable is $\\tau=t-1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_0=2,\\quad x_1(\\tau)=\\tau+2,\\quad \\tau=t-1.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next build the correction term from the branch jump: $\\Delta f_1=x_1(\\tau)-x_0=\\tau$. The canonical one-breakpoint form is a baseline plus one delayed correction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=x_0+\\Delta f_1\\,u(t-1)=2+(t-1)u(t-1).",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Verify by regions: if $t<1$, then $u(t-1)=0$, so $x(t)=2$. If $t\\ge1$, then $u(t-1)=1$, so $x(t)=2+(t-1)=t+1$. This matches the original two-piece definition exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+          "section_index": 3,
+          "section_title": "Rewriting a Finite-Duration Segment with Turn-On and Turn-Off Steps",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=0$ for $t<1$, $x(t)=5$ for $1\\le t<3$, and $x(t)=0$ for $t\\ge3$ as a unit-step sum.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a finite interval: the signal turns on at $t=1$, stays on for a limited span, and turns off at $t=3$. That means start from a baseline and add two corrections, one for activation and one for cancellation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the left-side baseline for the first region as $x_0=0$. At the first breakpoint $a_1=1$, add the turn-on correction $+5u(t-1)$ because the new segment is $5$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At the second breakpoint $a_2=3$, the signal returns to zero, so add a turn-off correction $-5u(t-3)$. Use the local-time form with the same shift for each gate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=5u(t-1)-5u(t-3)=5\\left[u(t-1)-u(t-3)\\right].",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check regions to verify the result. For $t<1$, both steps are zero and $x(t)=0$. For $1\\le t<3$, only $u(t-1)=1$, so $x(t)=5-0=5$. For $t\\ge3$, both are one and $x(t)=5-5=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the unit-step form is a compact one-window representation: $x(t)=5u(t-1)-5u(t-3)$, exactly matching the finite-duration pulse on $[1,3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+          "section_index": 4,
+          "section_title": "Rewriting a Multi-Segment Piecewise Signal with Breakpoint Corrections",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=2$ for $t<1$, $x(t)=4$ for $1\\le t<2$, $x(t)=1$ for $2\\le t<5$, and $x(t)=3$ for $t\\ge5$ as cumulative unit-step corrections.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is a multi-breakpoint signal, so treat each boundary as one correction and keep the same baseline-plus-update structure from earlier sections.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the baseline value for the leftmost region: $x_0=2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_1=1$, the value jumps from $2$ to $4$, so add $+2u(t-1)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_2=2$, the value drops from $4$ to $1$, so add $-3u(t-2)$. At $a_3=5$, it rises from $1$ to $3$, so add $+2u(t-5)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2+2u(t-1)-3u(t-2)+2u(t-5).",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check region-by-region: for $t<1$, all steps are zero, so $x(t)=2$. For $1\\le t<2$, only $u(t-1)=1$, so $x(t)=2+2=4$. For $2\\le t<5$, $u(t-1)=u(t-2)=1$ and $u(t-5)=0$, so $x(t)=2+2-3=1$. For $t\\ge5$, all steps are one, so $x(t)=2+2-3+2=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This final expression is the verified three-breakpoint representation, built by cumulative corrections in breakpoint order.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+          "section_index": 5,
+          "section_title": "Rewriting Piecewise Linear Signals with Shifted Ramp Corrections",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Rewrite $x(t)=1$ for $t<1$, $x(t)=t+1$ for $1\\le t<3$, and $x(t)=2t-2$ for $t\\ge3$ as a delayed-unit-step decomposition.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a piece that changes with ramps, so keep the same breakpoint-correction structure and convert each active branch into local-time form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the left-region baseline to $x_0=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_1=1$, rewrite the second branch as a function of local time $\\tau=t-1$, so $x_1(\\tau)=\\tau+2$. The correction from baseline is $\\Delta f_1= x_1(\\tau)-x_0=(\\tau+2)-1=\\tau+1$, which gives $+(\\tau+1)u(t-1)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_2=3$, rewrite the third branch in local time $\\tau=t-3$ as $x_2(\\tau)=2\\tau+4$. The previous local branch at this breakpoint is $x_1(\\tau)=\\tau+4$, so the correction is $\\Delta f_2=x_2(\\tau)-x_1(\\tau)=\\tau$, giving $+\\tau u(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1+[(t-1)+1]u(t-1)+(t-3)u(t-3).",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check intervals: if $t<1$, both step terms are inactive and $x(t)=1$. If $1\\le t<3$, only $u(t-1)=1$, so $x(t)=1+(t-1+1)=t+1$. If $t\\ge3$, both are active and $x(t)=1+(t-1+1)+(t-3)=2t-2$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the same cumulative method as before, now with shifted ramp corrections replacing constant jumps.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Rewriting Piecewise Signals with Unit Steps",
+          "section_index": 6,
+          "section_title": "Rewriting All Corrections in Local Time for Laplace Time Shifting",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Normalize the same pattern as $x(t)=0$ for $t<1$, $x(t)=3-t$ for $1\\le t<3$, $x(t)=1$ for $3\\le t<4$, and $x(t)=0$ for $t\\ge4$ into local-time unit-step corrections.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal has three breakpoints, so the method stays the same as before, but every correction must be written in local time at its own breakpoint for immediate Laplace readiness.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set the baseline as $x_0=0$ and list breakpoints $a_1=1$, $a_2=3$, and $a_3=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_1=1$, use $\\tau=t-1$. The new branch is $x_1(\\tau)=3-(\\tau+1)=2-\\tau$, so the first correction is $\\Delta f_1=x_1-x_0=2-\\tau$. This gives $(2-(t-1))u(t-1)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_2=3$, use the local variable $\\tau=t-3$. Before this breakpoint the active branch is still $3-t$, so in local time it is $x_1(\\tau)=3-(\\tau+3)=-\\tau$. The next branch is $x_2(\\tau)=1$, so the second correction is $\\Delta f_2=1-(-\\tau)=1+\\tau$, giving $(1+(t-3))u(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At $a_3=4$, use $\\tau=t-4$. The active previous branch is constant $1$, so the final correction is $\\Delta f_3=0-1=-1$, giving $-u(t-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\left[2-(t-1)\\right]u(t-1)+(1+(t-3))u(t-3)-u(t-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check intervals: for $t<1$, all step terms are zero, so $x(t)=0$. For $1\\le t<3$, only $u(t-1)=1$, so $x(t)=2-(t-1)=3-t$. For $3\\le t<4$, both first two terms are active, so $x(t)=3-t+1+t-3=1$. For $t\\ge4$, all terms are active, so $x(t)=3-t+1+t-3-1=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This is the normalized local-time form: every nonzero correction uses delayed local substitution, so the expression is directly compatible with delayed one-sided Laplace operations.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Laplace Transforms of Piecewise Signals",
+      "lesson_core_move": "Compute one-sided Laplace transforms of piecewise continuous-time signals by converting interval definitions into shifted unit-step terms and applying linearity with the Laplace time-shifting property.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Laplace Transforms of Piecewise Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Laplace Transforms of Piecewise Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This lesson uses one fixed workflow for piecewise signals: convert interval definitions into shifted step terms first, then transform each delayed term with one-sided Laplace rules, then combine results with linearity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For any interval definition, read each segment boundary as a change in the active expression, then represent that change with $u(t-a)$ or a step difference $u(t-a)-u(t-b)$. This notation keeps the signal causal and makes each segment directly transformable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\int_0^{\\infty} x(t)e^{-st}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Once a segment is written as $f(t-a)u(t-a)$, apply the one-sided time-shift rule immediately: the same local-time shape contributes a factor $e^{-as}$ in the transform. The delay appears on every shifted term that starts at time $a$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t-a)u(t-a)\\}=e^{-as}F(s),\\;a\\ge0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use linearity across all step terms before and after conversion so constants can be carried cleanly. For the base case",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "$x(t)=\\{2,\\;0\\le t<3;\\;5,\\;t\\ge3\\}$ becomes $x(t)=2u(t)-2u(t-3)+5u(t-3)$, so $X(s)=\\frac{2}{s}+\\frac{3e^{-3s}}{s}$. This same sequence is the model you will reuse in every tutorial-ready example in this topic.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{f(t)u(t-a)\\}=\\sum_k e^{-as}F_k(s)\\text{ terms by linearity}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use one breakpoint first, then add complexity with finite windows and ramps. Do not start with graphs, and do not change the order of terms before the transformed form is ready; preserve each boundary order so the jump locations and signs remain correct.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Laplace Transforms of Piecewise Signals",
+          "section_index": 2,
+          "section_title": "Transforming a Two-Piece Signal with One Breakpoint",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{x(t)\\}$ for $x(t)=\\{2,\\;0\\le t<3;\\;5,\\;t\\ge3\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The target is a piecewise constant signal with one breakpoint, so rewrite the interval definition as step-gated constants and then apply the one-sided shift rule with linearity.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since the value changes from $2$ to $5$ at $t=3$, use a baseline term for the initial value and add a correction at the breakpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2u(t)-2u(t-3)+5u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now convert each shifted constant term using $\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}$, preserving causal support.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{2u(t)\\}=\\frac{2}{s},\\quad \\mathcal{L}\\{2u(t-3)\\}=\\frac{2e^{-3s}}{s},\\quad \\mathcal{L}\\{5u(t-3)\\}=\\frac{5e^{-3s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply linearity and combine delayed coefficients to get one compact shifted expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2}{s}-\\frac{2e^{-3s}}{s}+\\frac{5e^{-3s}}{s}=\\frac{2}{s}+\\frac{3e^{-3s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The jump at $t=3$ is $+3$, which matches the transform contribution $\\frac{3e^{-3s}}{s}$, so this is the correct end result.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Laplace Transforms of Piecewise Signals",
+          "section_index": 3,
+          "section_title": "Transforming a Piecewise Constant Signal with Multiple Breakpoints",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{x(t)\\}$ for $x(t)=\\{0,\\;t<1;\\;2,\\;1\\le t<3;\\;-1,\\;3\\le t<5;\\;0,\\;t\\ge5\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This piecewise signal has three breakpoints, so apply the same core move from the previous step: represent each bounded interval with step differences before transforming.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read the active values directly from the definition: $x(t)=2$ on $1\\le t<3$, then $x(t)=-1$ on $3\\le t<5$, and zero elsewhere. This is a finite-window correction pattern.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2\\bigl(u(t-1)-u(t-3)\\bigr)-\\bigl(u(t-3)-u(t-5)\\bigr)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Each term is now a delayed constant with one-sided support, so apply $\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}$ and keep the signs from the interval differences.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{2u(t-1)\\}=\\frac{2e^{-s}}{s},\\quad \\mathcal{L}\\{2u(t-3)\\}=\\frac{2e^{-3s}}{s},\\quad \\mathcal{L}\\{u(t-3)\\}=\\frac{e^{-3s}}{s},\\quad \\mathcal{L}\\{u(t-5)\\}=\\frac{e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use linearity to combine the coefficients with the shared $1/s$ factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2e^{-s}-2e^{-3s}-e^{-3s}+e^{-5s}}{s}=\\frac{2e^{-s}-3e^{-3s}+e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A quick check at $t=1,3,5$ confirms jumps of $+2$, $-3$, and $+1$, matching the interval coefficients in the symbolic expression, so the transformed form is consistent.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Laplace Transforms of Piecewise Signals",
+          "section_index": 4,
+          "section_title": "Transforming a Piecewise Linear Signal with Shifted Ramps",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{x(t)\\}$ for the piecewise signal $x(t)=0$ on $0 \\le t < 1$, $x(t)=t-1$ on $1 \\le t < 4$, and $x(t)=0$ for $t \\ge 4$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal is a delayed ramp that turns on at $t=1$ and turns back off at $t=4$. The useful cue is that the active piece is written in local time as $t-1$, so the first term should match the shifted-ramp pattern $(t-a)u(t-a)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-a)u(t-a)\\}=\\frac{e^{-as}}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use step functions to keep the ramp only on the interval $1 \\le t < 4$. This first writes the window as one ramp that starts at $t=1$ minus the same expression after $t=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=(t-1)u(t-1)-(t-1)u(t-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first term is already a delayed local-time ramp. The second term must be re-anchored at its own turn-off time $t=4$, because the shifting rule needs powers of $t-4$ multiplying $u(t-4)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(t-1)u(t-4)=\\bigl((t-4)+3\\bigr)u(t-4)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now transform each shifted piece by linearity. The $3u(t-4)$ part appears because the ramp has height $3$ at the moment it is shut off.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{e^{-s}}{s^2}-e^{-4s}\\left(\\frac{1}{s^2}+\\frac{3}{s}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The subtraction term closes the finite ramp window. Without it, the inverse signal would keep increasing after $t=4$ instead of returning to zero for $t \\ge 4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Laplace Transforms of Piecewise Signals",
+          "section_index": 5,
+          "section_title": "Transforming a Mixed Piecewise Signal with Shifted Steps and Ramps",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{x(t)\\}$ for the signal $x(t)=0$ on $0 \\le t<1$, $x(t)=t-1$ on $1 \\le t<3$, and $x(t)=4$ for $t \\ge 3$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal is zero until $t=1$, then follows a shifted ramp until $t=3$, and then becomes a constant. Write the finite ramp as a turned-on ramp minus the same ramp turned off at $t=3$, then add the delayed constant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=(t-1)u(t-1)-(t-1)u(t-3)+4u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first ramp term is already written in local time from $t=1$. For the shutoff term at $t=3$, rewrite $t-1$ as $(t-3)+2$ so the one-sided time-shift property can be applied with the correct delay.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(t-1)u(t-3)=\\big((t-3)+2\\big)u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{(t-1)u(t-1)\\}=\\frac{e^{-s}}{s^2},\\quad \\mathcal{L}\\{(t-1)u(t-3)\\}=e^{-3s}\\left(\\frac{1}{s^2}+\\frac{2}{s}\\right),\\quad \\mathcal{L}\\{4u(t-3)\\}=\\frac{4e^{-3s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now combine the transformed terms with the signs from the step representation. The delayed constant and the constant part of the shutoff term both contribute at $t=3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned} X(s)&=\\frac{e^{-s}}{s^2}-e^{-3s}\\left(\\frac{1}{s^2}+\\frac{2}{s}\\right)+\\frac{4e^{-3s}}{s}\\\\ &=\\frac{e^{-s}-e^{-3s}}{s^2}+\\frac{2e^{-3s}}{s}. \\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the Laplace transform is $X(s)=\\frac{e^{-s}-e^{-3s}}{s^2}+\\frac{2e^{-3s}}{s}$. The key alignment step is keeping every delayed term in its own local time before transforming it.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

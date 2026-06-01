@@ -1,0 +1,1561 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Direct and Time-Shifting Laplace Methods",
+      "lesson_core_move": "Convert delayed and piecewise continuous-time signals into one-sided Laplace-domain expressions by choosing between direct integration and the time-shifting property.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Direct and Time-Shifting Laplace Methods",
+          "section_index": 1,
+          "section_title": "Introduction to Direct and Time-Shifting Laplace Methods",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "One-sided Laplace starts from the same transform idea as the bilateral form but changes the energy window to the causal side only. For causal analysis, you use $\\mathcal{L}_+\\{x(t)\\}$, where the variable $t$ is restricted to $t\\ge 0$, so the lower integration bound is $0$ instead of $-\\infty$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{x(t)\\}=\\int_0^\\infty x(t)e^{-st}dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, start from $x(t)=e^{-t}u(t)$. Write the transform directly as $\\int_0^\\infty e^{-t}e^{-st}dt$ and evaluate it exactly. If you can keep the lower limit and causal factor explicit, you can reduce mistakes on signs, convergence, and conditions.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Then use the delay template only when the signal has an explicit delayed-causal form. For $x(t-t_0)u(t-t_0)$, the one-sided rule is to factor out the delay as $e^{-st_0}$ and then transform the base causal kernel: $x(t)u(t)$. This is valid when $t_0\\ge 0$ and the signal is causal (zero for $t< t_0$ in the shifted representation).",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{x(t-t_0)u(t-t_0)\\}=e^{-st_0}\\mathcal{L}_+\\{x(t)u(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use this section decision rule: if you can see a clean delayed-on-causal form like $x(t-t_0)u(t-t_0)$, use the shifting property; otherwise split by regions and integrate directly on $[0,\\infty)$. For this lesson, your immediate workflow is select method, execute in one line form, and keep the causal notation stable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{u(t-t_0)-u(t)\\}=\\frac{e^{-st_0}}{s}-\\frac{1}{s}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Direct and Time-Shifting Laplace Methods",
+          "section_index": 2,
+          "section_title": "Finding a One-Sided Laplace Transform by Direct Integration",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the one-sided Laplace transform of $x(t)=(2t+3)u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided definition directly because the signal is causal and already written as a polynomial times $u(t)$, so $\\mathcal{L}_+\\{x(t)\\}=\\int_0^\\infty x(t)e^{-st}dt$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{(2t+3)u(t)\\}=\\int_0^\\infty (2t+3)e^{-st}dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Set up the direct sum on the same $[0,\\infty)$ support: split the integral into a linear and a constant part so each piece is standard for one-sided transform tables.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{(2t+3)u(t)\\}=2\\int_0^\\infty t e^{-st}dt+3\\int_0^\\infty e^{-st}dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the constant piece, use the known one-sided result $\\int_0^\\infty e^{-st}dt=1/s$ for $s>0$. For $\\int_0^\\infty t e^{-st}dt$, use one-step integration by parts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^\\infty t e^{-st}dt =\\left[-\\frac{t e^{-st}}{s}\\right]_0^\\infty +\\frac{1}{s}\\int_0^\\infty e^{-st}dt=0+\\frac{1}{s}\\cdot\\frac{1}{s}=\\frac{1}{s^2},",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute both pieces and combine into one rational expression. This preserves the causal transform workflow used later for larger polynomials.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{(2t+3)u(t)\\}=\\frac{2}{s^2}+\\frac{3}{s}=\\frac{3s+2}{s^2},\\quad s>0",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Direct and Time-Shifting Laplace Methods",
+          "section_index": 3,
+          "section_title": "Applying Time Shifting to a Delayed Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute the one-sided transform of $x(t)=e^{-(t-2)}u(t-2)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a delayed causal signal, written as $x(t-a)u(t-a)$; here $a=2$ and the base shape is $e^{-t}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided time-shifting property rather than setting up a full integral from $2$ to $\\infty$, so the step stays reusable for any similar delayed term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{x(t-a)u(t-a)\\}=e^{-as}\\mathcal{L}_+\\{x(t)u(t)\\},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Match the template with $x(t-2)u(t-2)=e^{-(t-2)}u(t-2)$. This means $a=2$ and $x(t)=e^{-t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{e^{-(t-2)}u(t-2)\\}=e^{-2s}\\mathcal{L}_+\\{e^{-t}u(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the base transform and then attach the delay factor: $\\mathcal{L}_+\\{e^{-t}u(t)\\}=1/(s+1)$ (from the standard one-sided exponential result).",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{e^{-(t-2)}u(t-2)\\}=e^{-2s}\\frac{1}{s+1}=\\frac{e^{-2s}}{s+1},\\quad s>-1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: only the delay factor is new, so the example confirms that delayed causality is handled by multiplying the base one-sided transform by a pure $e^{-as}$ term.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Direct and Time-Shifting Laplace Methods",
+          "section_index": 4,
+          "section_title": "Finding a Piecewise Signal Transform by Splitting the Integral",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}_+\\{x(t)\\}$ for $x(t)=\\begin{cases}1,&0\\le t<2\\\\3,&t\\ge 2\\end{cases}$ using the definition.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is a piecewise causal signal, so we keep the one-sided definition and write separate support intervals for $x(t)$: $x(t)=1$ on $[0,2)$ and $x(t)=3$ on $[2,\\infty)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{x(t)\\}=\\int_0^\\infty x(t)e^{-st}dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Split the integral at the breakpoint $t=2$, then use the two interval constants as independent integrands.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{x(t)\\}=\\int_0^2 e^{-st}dt+3\\int_2^\\infty e^{-st}dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Evaluate each piece with the standard one-sided exponential rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\int_0^2 e^{-st}dt=\\frac{1-e^{-2s}}{s},\\quad\\int_2^\\infty e^{-st}dt=\\frac{e^{-2s}}{s},\\quad s>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add the two contributions and simplify into one symbolic expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{x(t)\\}=\\frac{1-e^{-2s}}{s}+3\\frac{e^{-2s}}{s}=\\frac{1+2e^{-2s}}{s},\\quad s>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This result keeps the same direct-integration template as the previous section, with one new wrinkle: interval splitting handles piecewise support cleanly and preserves causality in the limits.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Quick check: as $s\\to\\infty$, $\\mathcal{L}_+\\{x(t)\\}\\to 0$, so the result is consistent with a bounded positive-time signal.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Direct and Time-Shifting Laplace Methods",
+          "section_index": 5,
+          "section_title": "Choosing Between Direct Integration and Time Shifting",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute the one-sided transform of $x(t)=e^{-t}u(t)-e^{-(t-2)}u(t-2)$ and show the chosen method for each term.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This signal contains one direct causal term and one delayed causal term, so the method split is intentional: use direct one-sided transform on $e^{-t}u(t)$ and time-shifting on $e^{-(t-2)}u(t-2)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=e^{-t}u(t)-e^{-(t-2)}u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the non-shifted causal exponential, apply the base one-sided rule directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{e^{-t}u(t)\\}=\\frac{1}{s+1},\\quad s> -1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the delayed term, use the one-sided time-shift template with $a=2$ to avoid another full integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+\\{e^{-(t-2)}u(t-2)\\}=e^{-2s}\\mathcal{L}_+\\{e^{-t}u(t)\\}=\\frac{e^{-2s}}{s+1},\\quad s> -1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Subtract the delayed contribution from the direct contribution, then keep one simplified result.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{1}{s+1}-\\frac{e^{-2s}}{s+1}=\\frac{1-e^{-2s}}{s+1},\\quad s> -1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Method rule to carry forward: use the shift property when a clean $x(t-a)u(t-a)$ pattern is visible; use direct integration when the signal does not match that pattern or is not factored for an immediate shift rewrite.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Step-Function and Derivative Methods",
+      "lesson_core_move": "Compute the one-sided Laplace transform of a piecewise signal by choosing between shifted-unit-step rewriting and derivative-based transformation, including the effects of discontinuities and initial values.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Step-Function and Derivative Methods",
+          "section_index": 1,
+          "section_title": "Introduction to Step-Function and Derivative Methods",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This section uses the one-sided Laplace transform, so all computations are anchored at the causal domain $t \\ge 0$. Keep that boundary explicit, and if you use a derivative-based transform, include the left-limit term $x(0^-)$ in the transform formula.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x(t)\\}=\\int_0^\\infty x(t)e^{-st}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the base signal $x(t)=u(t)-u(t-2)$ and keep it fully symbolic before expanding. The goal is to build the transform from a clean decomposition and then apply the same pattern to longer piecewise expressions.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Method A is step-function rewriting: split the signal into shifted steps and transform each term directly from the step template. For this signal, write $x(t)=u(t)-u(t-2)$ so the transform is computed term-by-term. Method B is derivative-first: differentiate the signal and use $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$, which is often useful when slopes or piece changes create many segments.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the method that does fewer transformations on paper: if the signal already has clear delayed-step boundaries, use the step rewrite; if breakpoints imply repeated slope transitions or derivative structure, use the derivative method. This step is the route selector for the rest of the lesson.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The section sequence now moves from step-function construction, to shifted-step transforms, to derivative-driven transforms, then to impulses from jumps and the initial-value correction in $\\mathcal{L}\\{x'(t)\\}$ terms.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Step-Function and Derivative Methods",
+          "section_index": 2,
+          "section_title": "Choosing a Step-Function Rewrite for a Piecewise Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Write and transform a step-form expression for $x(t)=\\begin{cases}1,&0\\le t<2\\\\3,&2\\le t<5\\\\0,&t\\ge5\\end{cases}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a three-interval piecewise function with only boundary jumps at $t=2$ and $t=5$. Start by writing the waveform as a sum of delayed step differences so the active interval logic is explicit and preserves causality.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the step pattern for two windows: $u(t)$ turns on at $0$, $u(t-2)$ turns on at $2$, and $u(t-5)$ turns on at $5$. Combine them so $x(t)=1\\cdot u(t)-1\\cdot u(t-2)+3\\cdot [u(t-2)-u(t-5)]$ for $t\\ge0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t)-u(t-2)+3\\left(u(t-2)-u(t-5)\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply linearity, then the shifted-step transform rule term-by-term. This keeps the transform low-load because each term is already in a known basis.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{1}{s}-\\frac{e^{-2s}}{s}+\\frac{3e^{-2s}}{s}-\\frac{3e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Group terms to show the final form clearly and check interval signs against boundaries.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{1-e^{-2s}}{s}+\\frac{3\\left(e^{-2s}-e^{-5s}\\right)}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: the first pair of shifts produces value $1$ from $0\\le t<2$, and the weighted pair produces value $3$ on $2\\le t<5$. For $t\\ge5$, both pairs cancel to zero, matching the target signal.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Step-Function and Derivative Methods",
+          "section_index": 3,
+          "section_title": "Transforming Shifted Step Terms with Time Shifting",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $X(s)$ for $x(t)=2u(t-1)-u(t-3)+u(t-5)$ and simplify the shifted-step transform result.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is a sum of delayed unit-step terms. Because each term is already in shifted-step form, this example applies the time-shifting rule directly, term by term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "List the pieces and signs exactly: $+2u(t-1)$ starts at $t=1$, $-u(t-3)$ starts at $t=3$, and $+u(t-5)$ starts at $t=5$ with signs that must stay attached to their shifts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2u(t-1)-u(t-3)+u(t-5)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply linearity and the one-sided step identity to each term: for each $a\\ge0$, use $\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}$. Keep the three terms separate during substitution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=2\\frac{e^{-1\\cdot s}}{s}-\\frac{e^{-3s}}{s}+\\frac{e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now simplify only the delay constants and write the compact result. This keeps the exponent signs explicit and prevents the common mistake of flipping $e^{-as}$ into $e^{+as}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2e^{-s}}{s}-\\frac{e^{-3s}}{s}+\\frac{e^{-5s}}{s},\\quad \\operatorname{Re}\\{s\\}>0.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Sanity check: each term has the same $1/s$ base factor and only delay factors in exponentials. As $s\\to\\infty$, each $e^{-as}/s\\to0$, so the high-frequency tail decays as expected for delayed causal steps.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the transform is a signed sum of delayed-step transforms, and the next questions should mirror this pattern by varying coefficients, signs, and one new shift at a time.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Step-Function and Derivative Methods",
+          "section_index": 4,
+          "section_title": "Choosing a Derivative Method for a Piecewise Linear Signal",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Use the derivative property on the piecewise linear signal $x(t)=\\begin{cases}0,0\\le t<1\\\\t-1,1\\le t<3\\\\2t-4,3\\le t<5\\\\4, t\\ge5\\end{cases}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a piecewise linear signal with slope changes at fixed breakpoints. Choose the derivative method: one causal derivative handles each slope region with fewer integrals than direct piecewise integration.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Differentiate each interval expression: on $0\\le t<1$, $x'(t)=0$; on $1\\le t<3$, $x'(t)=1$; on $3\\le t<5$, $x'(t)=2$; and for $t\\ge5$, $x'(t)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now convert the slope pattern to step-weighted constants. To gate three active regions, use $x'(t)=1[u(t-1)-u(t-3)]+2[u(t-3)-u(t-5)]$, which simplifies to $x'(t)=u(t-1)+u(t-3)-2u(t-5)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Take the one-sided Laplace transform term-by-term and keep one shifted basis per region breakpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=\\frac{e^{-s}}{s}+\\frac{e^{-3s}}{s}-\\frac{2e^{-5s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided derivative rule $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$ and use $x(0^-)=0$ for this causal signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{e^{-s}}{s}+\\frac{e^{-3s}}{s}-\\frac{2e^{-5s}}{s},\\quad X(s)=\\frac{e^{-s}+e^{-3s}-2e^{-5s}}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Check the interval boundaries: $x(1^-)=x(1^+)=0$, $x(3^-)=x(3^+)=2$, and $x(5^-)=x(5^+)=4$. Continuity means no extra impulse corrections are added in this step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $X(s)=\\dfrac{e^{-s}+e^{-3s}-2e^{-5s}}{s^2}$, and this expression is the compact target form for the next practice model with one added slope wrinkle.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Step-Function and Derivative Methods",
+          "section_index": 5,
+          "section_title": "Accounting for Impulses from Jump Discontinuities",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute the one-sided transform of $x(t)=\\begin{cases}0,0\\le t<1\\\\3,1\\le t<4\\\\1,4\\le t<6\\\\0,t\\ge6\\end{cases}$ by converting each jump into an impulse contribution.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a piecewise constant signal with explicit jumps and no interior slopes. We must use the derivative method with impulse bookkeeping: each jump produces a $\\delta$ term in $x'(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Find one-sided limits around each breakpoint: at $t=1$, $x(1^-)=0$, $x(1^+)=3$; at $t=4$, $x(4^-)=3$, $x(4^+)=1$; at $t=6$, $x(6^-)=1$, $x(6^+)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Compute jump magnitudes $\\Delta x(t_i)=x(t_i^+)-x(t_i^-)$. For this signal, $\\Delta x(1)=3$, $\\Delta x(4)=-2$, and $\\Delta x(6)=-1$. Keep signs explicit so downward jumps stay negative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Convert to derivative form with impulses only:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'(t)=3\\delta(t-1)-2\\delta(t-4)-\\delta(t-6)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Transform the derivative and isolate $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=\\mathcal{L}^+\\{3\\delta(t-1)-2\\delta(t-4)-\\delta(t-6)\\}=3e^{-s}-2e^{-4s}-e^{-6s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided derivative identity $\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)$ and here $x(0^-)=0$ because the signal is zero on $t<1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=3e^{-s}-2e^{-4s}-e^{-6s},\\quad X(s)=\\frac{3e^{-s}-2e^{-4s}-e^{-6s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: $X(s)=\\dfrac{3e^{-s}-2e^{-4s}-e^{-6s}}{s}$, where the two negative exponentials come directly from downward jumps at $t=4$ and $t=6$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Step-Function and Derivative Methods",
+          "section_index": 6,
+          "section_title": "Including Initial Values in a Derivative-Based Transform",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Use the derivative transform with initial value to find $X(s)$ for $\\frac{d}{dt}x(t)=u(t)-u(t-2)$ with $x(0^-)=2$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a derivative-side input containing a delayed step and a nonzero initial condition. The rule is the one-sided derivative identity: keep both the shifted-step derivative input and the $x(0^-)$ term explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "First, write the right side as shifted-step terms already aligned with one-sided transform pairs.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{d}{dt}x(t)=u(t)-u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{u(t-a)\\}=\\frac{e^{-as}}{s},\\quad a\\ge0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{\\frac{d}{dt}x(t)\\}=\\frac{1}{s}-\\frac{e^{-2s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the derivative rule and solve for $X(s)$ with the correct one-sided correction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)-2=\\frac{1}{s}-\\frac{e^{-2s}}{s},",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add $x(0^-)=2$ and divide by $s$. The initial term is additive and not multiplied by any delay factor.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2}{s}+\\frac{1-e^{-2s}}{s^2}=\\frac{2s+1-e^{-2s}}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Interpretation: the delayed derivative jump contributes $-e^{-2s}/s^2$, while the nonzero initial value contributes the additive $2/s$ offset.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Solving for $X(s)$ from a Derivative",
+      "lesson_core_move": "Apply the one-sided derivative property to a known derivative signal and algebraically isolate $X(s)$ while preserving the required initial-value term.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Solving for $X(s)$ from a Derivative",
+          "section_index": 1,
+          "section_title": "Introduction to Solving for $X(s)$ from a Derivative",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The object for this step is the one-sided derivative transform identity, where the known input is usually $\\mathcal{L}^+\\{x'(t)\\}$ and the constant term to track is $x(0^-)$. The target move is to isolate $X(s)$ from that identity using the same algebraic pattern on every example in this topic.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use this exact action sequence: first add $x(0^-)$ to both sides, then divide every term by $s$. The result is the canonical rearrangement. This is the same pattern whether the initial value is zero or nonzero.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{\\mathcal{L}^+\\{x'(t)\\}+x(0^-)}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Quick checkpoint before moving on: confirm the one-sided context, keep the $0^-$ initial term visible until the end, and never skip either algebra step. If you do this in order, the later examples become a direct substitution routine, not a fresh derivation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Base case for the minimal cognitive load: with $x(0^-)=0$, the rule collapses to the simpler form $X(s)=\\mathcal{L}^+\\{x'(t)\\}/s$. For a known derivative transform value such as $\\mathcal{L}^+\\{x'(t)\\}=\\frac{2}{s+1}$, write $X(s)=\\frac{2}{s(s+1)}$ immediately.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Solving for $X(s)$ from a Derivative",
+          "section_index": 2,
+          "section_title": "Solving for $X(s)$ with Zero Initial Value",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $\\mathcal{L}^+\\{x'(t)\\}=\\frac{5}{(s+2)^2}$ and $x(0^-)=0$, solve for $X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the one-sided derivative identity with a known initial value: $\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)$. Use this rule first, then perform the isolation moves in a fixed order.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-) = \\frac{5}{(s+2)^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given data and write the target equation as $\\frac{5}{(s+2)^2}=sX(s)-0$. The only thing to do next is isolate $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{5}{(s+2)^2}+0=\\frac{5}{(s+2)^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add the initial term (which is zero) and then divide by $s$ to keep the one-sided form explicit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{\\frac{5}{(s+2)^2}}{s}=\\frac{5}{s(s+2)^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Solving for $X(s)$ from a Derivative",
+          "section_index": 3,
+          "section_title": "Solving for $X(s)$ with a Nonzero Initial Value",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $\\mathcal{L}^+\\{x'(t)\\}=\\frac{8}{s+1}+\\frac{2}{s}$ and $x(0^-)=3$, solve for $X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the one-sided derivative transform form with a known derivative transform and explicit nonzero initial value, so the rule is $\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)$. Identify $x'(t)$, keep the $x(0^-)$ term visible, and isolate $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given values into the identity: $\\mathcal{L}^+\\{x'(t)\\}=\\frac{8}{s+1}+\\frac{2}{s}$ and $x(0^-)=3$. This gives the isolated equation form $\\frac{8}{s+1}+\\frac{2}{s}=sX(s)-3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{8}{s+1}+\\frac{2}{s}=sX(s)-3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Move the initial term to the left side first, then divide the entire equation by $s$ to isolate $X(s)$ completely.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{8}{s+1}+\\frac{2}{s}+3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{\\frac{8}{s+1}+\\frac{2}{s}+3}{s}=\\frac{8}{s(s+1)}+\\frac{2}{s^2}+\\frac{3}{s}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Solving for $X(s)$ from a Derivative",
+          "section_index": 4,
+          "section_title": "Solving for $X(s)$ from a Derivative with Step Terms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $\\mathcal{L}^+\\{x'(t)\\}=\\frac{4}{s}-\\frac{4e^{-2s}}{s}$ and $x(0^-)=0$, solve for $X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the one-sided derivative identity with a known derivative transform. Use $\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)$. The only rule is the same isolation move used previously, now applied to delayed step-function terms in the transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given values: $x(0^-)=0$ and $\\mathcal{L}^+\\{x'(t)\\}=\\frac{4}{s}-\\frac{4e^{-2s}}{s}$. That gives $\\frac{4}{s}-\\frac{4e^{-2s}}{s}=sX(s)-0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{4}{s}-\\frac{4e^{-2s}}{s}=sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Drop the zero term and divide the full right-hand side by $s$ to isolate the transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{\\frac{4}{s}-\\frac{4e^{-2s}}{s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{4}{s^2}-\\frac{4e^{-2s}}{s^2}=\\frac{4(1-e^{-2s})}{s^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Solving for $X(s)$ from a Derivative",
+          "section_index": 5,
+          "section_title": "Solving for $X(s)$ from a Derivative with Impulse Terms",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $\\mathcal{L}^+\\{x'(t)\\}=\\frac{2}{s}+3-\\frac{2e^{-s}}{s}$ and $x(0^-)=1$, solve for $X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is again the one-sided derivative identity, now with a derivative transform that includes mixed terms: $\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)$. Keep the full right-hand-side expression intact until after isolation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^+\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given data: $\\mathcal{L}^+\\{x'(t)\\}=\\frac{2}{s}+3-\\frac{2e^{-s}}{s}$ and $x(0^-)=1$. Write the equation as $\\frac{2}{s}+3-\\frac{2e^{-s}}{s}=sX(s)-1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{2}{s}+3-\\frac{2e^{-s}}{s}=sX(s)-1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add $1$ to both sides to isolate $sX(s)$, then divide everything by $s$. This is the same move sequence as earlier examples, only with additional mixed components.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{2}{s}+3-\\frac{2e^{-s}}{s}+1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{\\frac{2}{s}+3-\\frac{2e^{-s}}{s}+1}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{4}{s}+\\frac{2}{s^2}-\\frac{2e^{-s}}{s^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Reconstructing a Time-Domain Signal from $X(s)$",
+      "lesson_core_move": "Reconstruct the causal time-domain signal from a solved $X(s)$ by decomposing it into known one-sided Laplace pairs and converting each term back to its time-domain component.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Reconstructing a Time-Domain Signal from $X(s)$",
+          "section_index": 1,
+          "section_title": "Introduction to Reconstructing a Time-Domain Signal from $X(s)$",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Reconstruction uses a one-sided inverse-Laplace move that is only valid for causal terms. For this lesson, a term is treated as causal when it matches the form that already includes or implies $u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For each $X(s)$ term, first identify the corresponding one-sided pair, then apply inverse mapping term-by-term. Use linearity: multiply, add, and subtract in $X(s)$ first, then invert each piece into the same operation pattern for $x(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The base-case anchor is $X(s)=1/(s+3)$. The move is to read this as the transform of an exponential decay with no shifts and no extra constants, so the reconstructed time signal is $x(t)=e^{-3t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{1}{s+a} \\Rightarrow x(t)=e^{-at}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, move from one known term to one-piece combinations. The same reconstruction rule works on sums and constants, so each part is inverted independently and then added in the time domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=X_1(s)+X_2(s) \\Rightarrow x(t)=x_1(t)+x_2(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the next sections you will do this as a pattern: first a single known pair, then a sum of known pairs, then delayed terms, and finally a full reconstructed signal from a full solved $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Reconstructing a Time-Domain Signal from $X(s)$",
+          "section_index": 2,
+          "section_title": "Reconstructing from a Single Known One-Sided Pair",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Reconstruct the causal signal from $X(s)=\\frac{3}{s+4}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a single one-sided rational term with the denominator in the form $s+a$, so this is a direct pair-recognition case. Identify the base pair $\\frac{1}{s+a} \\leftrightarrow e^{-at}u(t)$ and read $a=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}_+\\left\\{\\frac{1}{s+4}\\right\\}=e^{-4t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now apply the numerator gain outside the inverse transform. Since $X(s)=3\\cdot \\frac{1}{s+4}$, multiply the time-domain map by $3$ without changing the exponential rate.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}_+\\left\\{\\frac{3}{s+4}\\right\\}=3\\,\\mathcal{L}^{-1}_+\\left\\{\\frac{1}{s+4}\\right\\}=3e^{-4t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the reconstructed causal signal is $x(t)=3e^{-4t}u(t)$, which matches the one-sided target of a scaled decaying exponential starting at $t=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Reconstructing a Time-Domain Signal from $X(s)$",
+          "section_index": 3,
+          "section_title": "Reconstructing from a Sum of Known One-Sided Pairs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the causal signal for $X(s)=\\frac{2}{s+1}+\\frac{1}{s+4}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a sum of two known one-sided pairs, so apply linearity first. Write $X(s)$ as separate terms instead of trying to invert the whole fraction stack at once.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Split the transform into pieces: $X(s)=\\frac{2}{s+1}+\\frac{1}{s+4}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}_+\\left\\{\\frac{1}{s+a}\\right\\}=e^{-at}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $a=1$, $\\mathcal{L}^{-1}_+\\{1/(s+1)\\}=e^{-t}u(t)$, then scale by $2$. For $a=4$, $\\mathcal{L}^{-1}_+\\{1/(s+4)\\}=e^{-4t}u(t)$. Keep each output causal with $u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=2e^{-t}u(t)+e^{-4t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The reconstructed signal is the sum of the inverted pieces, so the final result is $x(t)=2e^{-t}u(t)+e^{-4t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Reconstructing a Time-Domain Signal from $X(s)$",
+          "section_index": 4,
+          "section_title": "Reconstructing Delayed Terms from Time-Shifting Factors",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $x(t)$ for $X(s)=\\frac{4}{s+1}e^{-2s}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a single delayed one-sided pair: the factor $e^{-2s}$ indicates a right shift in time after inversion. Write $X(s)=e^{-2s}X_0(s)$ with $X_0(s)=\\frac{4}{s+1}$ and invert $X_0(s)$ first.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}_+\\left\\{\\frac{4}{s+1}\\right\\}=4e^{-t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided delay rule with $T=2$: $\\mathcal{L}_+^{-1}\\{e^{-sT}X_0(s)\\}=x_0(t-T)u(t-T)$. Here that gives $x(t)=4e^{-(t-2)}u(t-2)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}_+^{-1}\\left\\{\\frac{4}{s+1}e^{-2s}\\right\\}=4e^{-(t-2)}u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The sign is fixed by causality: delay is $t-2$ inside the exponential and $u(t-2)$ in the support, not $t+2$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Reconstructing a Time-Domain Signal from $X(s)$",
+          "section_index": 5,
+          "section_title": "Reconstructing a Full Causal Signal from a Solved $X(s)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $X(s)=\\frac{2}{s+1}+\\frac{3}{s+2}e^{-2s}+\\frac{1}{s+4}$, find the causal time-domain signal.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The target is a full decomposition: identify three terms, apply linearity, and invert each with the one-sided map. Write $X(s)=X_1(s)+X_2(s)+X_3(s)$, where $X_1(s)=\\frac{2}{s+1}$, $X_2(s)=\\frac{3}{s+2}e^{-2s}$, and $X_3(s)=\\frac{1}{s+4}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the first and third non-delayed terms, invert directly using $\\mathcal{L}_+^{-1}\\{1/(s+a)\\}=e^{-at}u(t)$. Multiply by numerator gains before recombining.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}_+\\left\\{\\frac{2}{s+1}\\right\\}=2e^{-t}u(t),\\quad\\mathcal{L}^{-1}_+\\left\\{\\frac{1}{s+4}\\right\\}=e^{-4t}u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The middle term has a delay factor $e^{-2s}$, so invert $\\frac{3}{s+2}$ first, then apply the shift rule to produce $u(t-2)$ support.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}^{-1}_+\\left\\{\\frac{3}{s+2}e^{-2s}\\right\\}=3e^{-(t-2)}u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Add the three reconstructed pieces: $x(t)=2e^{-t}u(t)+3e^{-(t-2)}u(t-2)+e^{-4t}u(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Checking Initial and Final Behavior from a Transform",
+      "lesson_core_move": "Apply the initial- and final-value theorems to a one-sided Laplace transform $X(s)$ by verifying pole conditions and using transform-domain limits to check starting and steady-state behavior.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Checking Initial and Final Behavior from a Transform",
+          "section_index": 1,
+          "section_title": "Introduction to Checking Initial and Final Behavior from a Transform",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Different transforms can look similar, but behavior checks fail if the theorem conditions are not verified first. In this section, you will use one-sided limits as a diagnostic layer: the checks for $x(0^+)$ and $x(\\infty)$ prevent false conclusions before any graphing or substitution-heavy arithmetic.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the initial value, use the one-sided initial-value rule and a minimal algebra step. Start from the transform expression, form $sX(s)$, then take the $s\\to\\infty$ limit while keeping track of the highest-order terms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(0^+) = \\lim_{s\\to\\infty} sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the final value, first confirm the pole condition on $sX(s)$, then use the one-sided limit. If the poles of $sX(s)$ are not all in the left half-plane (except the required simple pole at $s=0$), do not use the formula, even if the arithmetic is easy.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\infty)=\\lim_{s\\to 0} sX(s), \\text{valid only when poles of } sX(s) \\text{ are in } \\Re\\{s\\}<0\\text{ (except one at } s=0\\text{)}.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use this checklist: identify which limit you need, check the theorem validity condition, evaluate the required transform-domain limit, and record the result. Next sections apply this same move to a concrete initial-value example, then a final-value example, then a rejection case.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Checking Initial and Final Behavior from a Transform",
+          "section_index": 2,
+          "section_title": "Checking the Initial Value from $X(s)$",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $x(0^+)$ for $X(s)=\\frac{3s+4}{s(s+2)}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is to recover the initial time value directly from a one-sided transform, using the initial-value rule from the prior tutorial. For this section, the workflow is the same as the base move: multiply by $s$, then evaluate the $s\\to\\infty$ limit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the initial-value theorem in symbolic form and rewrite the expression before limiting:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(0^+)=\\lim_{s\\to\\infty}sX(s)=\\lim_{s\\to\\infty}\\frac{3s+4}{s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Take the limit by keeping the highest-order terms: $(3s+4)/(s+2) \\to 3s/s=3$ as $s\\to\\infty$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(0^+)=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: $x(0^+)=3$. This limit is valid in this example because it is a causal one-sided transform, so the rule applies directly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Checking Initial and Final Behavior from a Transform",
+          "section_index": 3,
+          "section_title": "Checking the Final Value When Pole Conditions Hold",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $X(s)=\\frac{4}{s(s+3)}$, verify pole conditions for $sX(s)$ and compute $x(\\infty)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a final-value request from a one-sided transform, so the workflow must start by checking validity before arithmetic. For this step, the governing rule is: form $sX(s)$, verify its poles satisfy the stability condition, then evaluate the final-value limit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the final-value relation and rewrite the expression to isolate the pole structure:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\infty)=\\lim_{s\\to 0}sX(s),\\quad X(s)=\\frac{4}{s(s+3)} \\Rightarrow sX(s)=\\frac{4}{s+3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now list poles of $sX(s)=\\frac{4}{s+3}$: the only pole is at $s=-3$, which is strictly in the left half-plane, so the final-value theorem is applicable here.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\infty)=\\lim_{s\\to 0}\\frac{4}{s+3}=\\frac{4}{3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: the transform satisfies the pole check, so the one-sided final value is $x(\\infty)=\\frac{4}{3}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Checking Initial and Final Behavior from a Transform",
+          "section_index": 4,
+          "section_title": "Recognizing When the Final Value Theorem Does Not Apply",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine if final-value theorem applies to $X(s)=\\frac{1}{s(s^2+4)}$ and explain the result before attempting a limit.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a requested final-value check, so apply the same workflow as before but stop at the validity gate: form $sX(s)$, factor poles, and verify the allowed pole region before any substitution.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{1}{s^2+4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now check poles of $\\frac{1}{s^2+4}$. They are at $s=\\pm 2j$, both on the imaginary axis, and the validity rule for the one-sided final-value theorem requires poles of $sX(s)$ to be in $\\Re\\{s\\}<0$ except possibly one at $s=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since this condition is violated, do not apply $x(\\infty)=\\lim_{s\\to0}sX(s)$. The theorem is not applicable here for final value in this form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A safe next step is to obtain $x(t)$ by inverse Laplace or perform a separate long-term analysis of the reconstructed signal before claiming a steady-state value.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Checking Initial and Final Behavior from a Transform",
+          "section_index": 5,
+          "section_title": "Checking a Reconstructed Signal with Initial and Final Limits",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $X(s)=\\frac{2}{s}-\\frac{1}{s+1}+\\frac{3}{s+2}$, compute $x(0^+)$ and $x(\\infty)$ and verify them against $x(t)=2- e^{-t}+3e^{-2t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a consistency check for a reconstructed signal, so this step combines both initial- and final-value rules on the same $X(s)$. First compute the limits in the transform domain, then compare them with the values from the provided $x(t)$ form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=2-\\frac{s}{s+1}+\\frac{3s}{s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Compute the initial limit from the one-sided rule:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(0^+)=\\lim_{s\\to\\infty}sX(s)=\\lim_{s\\to\\infty}\\left(2-\\frac{s}{s+1}+\\frac{3s}{s+2}\\right)=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{2(s+1)(s+2)-s(s+2)+3s(s+1)}{s(s+1)(s+2)}=\\frac{3s^2+6s+2}{s(s+1)(s+2)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the final-value check, verify poles of $sX(s)$: the denominator gives poles at $s=0,-1,-2$. All are allowable for the one-sided final-value condition (LHP poles only, with at most one simple pole at $s=0$), so the theorem can be used.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(\\infty)=\\lim_{s\\to0}sX(s)=\\lim_{s\\to0}\\left(2-\\frac{s}{s+1}+\\frac{3s}{s+2}\\right)=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Evaluate the reconstructed signal: $x(0^+)=2-1+3=4$ and $x(\\infty)=2-0+0=2$. These match $x(0^+)=4$ and $x(\\infty)=2$ from transform limits, so the reconstruction is behaviorally consistent.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

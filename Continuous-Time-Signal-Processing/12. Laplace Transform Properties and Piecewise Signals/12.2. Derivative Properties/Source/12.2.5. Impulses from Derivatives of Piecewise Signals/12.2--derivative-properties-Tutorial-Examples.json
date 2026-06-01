@@ -1,0 +1,1892 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "First-Derivative Property",
+      "lesson_core_move": "Apply the one-sided Laplace first-derivative property to replace \\(\\mathcal{L}\\{x'(t)\\}\\) with \\(sX(s)-x(0^-)\\) in Laplace-domain signal and system equations.",
+      "section_count": 4,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "First-Derivative Property",
+          "section_index": 1,
+          "section_title": "Introduction to First-Derivative Property",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided Laplace viewpoint first. We work on causal signals over $[0^-,\\infty)$, so the key transform is $\\mathcal{L}\\{x(t)\\}=\\int_{0^-}^{\\infty}x(t)e^{-st}\\,dt$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To transform $\\mathcal{L}\\{x'(t)\\}$, define $u=e^{-st}$ and $dv=x'(t)dt$ and apply one-step integration by parts. Then treat the base causal case from this topic: if $x(t)=t$ for $t\\ge 0$, then $x(0^-)=0$ and the boundary correction does not appear as an extra nonzero constant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x(t)\\}=\\int_{0^-}^{\\infty} x(t)e^{-st} \\, dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=\\left.x(t)e^{-st}\\right|_{0^-}^{\\infty}+s\\int_{0^-}^{\\infty}x(t)e^{-st}\\,dt=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the derivative in time maps to multiplication by $s$ in the $s$-domain, then you subtract the pre-initial value. In this one-sided form, the result is $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read this as a template: whenever you see $x'(t)$ under a one-sided Laplace, write the $sX(s)$ term first, then always attach the correction $-x(0^-)$. The symbol $x(0^-)$ is the left-limit value at the causal boundary, not a post-origin value.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "First-Derivative Property",
+          "section_index": 2,
+          "section_title": "Transforming a Single First Derivative",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find the Laplace transform of the derivative when $x(t)=t^2u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the cue from the prior section: when you see a first derivative, apply the one-sided identity to convert it into an algebraic $s$-domain form. Write it first as $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the boundary term for this signal. Since $x(t)=t^2u(t)$ is causal with value $0$ at the left of the origin, $x(0^-)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\mathcal{L}\\{t^2u(t)\\}=\\frac{2}{s^3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the transform pair into the rule and keep the correction term in the template form.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)=s\\left(\\frac{2}{s^3}\\right)-0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=\\frac{2}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So for this step, the result is $\\mathcal{L}\\{x'(t)\\}=\\frac{2}{s^2}$, and the only new wrinkle from the tutorial is that you now use a concrete $X(s)$ value before simplifying.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "First-Derivative Property",
+          "section_index": 3,
+          "section_title": "Transforming a Scaled First-Derivative Term",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{5x'(t)\\}$ when $x(t)=t^2u(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this step is the scalar multiple: when the derivative is scaled by a constant, first transform the inner derivative and apply linearity to the whole result.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For $x(t)=t^2u(t)$, compute the one-sided boundary term first: $x(0^-)=0$. From the previous step, we already have $X(s)=\\mathcal{L}\\{t^2u(t)\\}=2/s^3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{5x'(t)\\}=5\\mathcal{L}\\{x'(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the one-sided derivative rule for $\\mathcal{L}\\{x'(t)\\}$ and preserve the initial-condition structure.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{5x'(t)\\}=5\\left(sX(s)-x(0^- )\\right)=5\\left(s\\cdot\\frac{2}{s^3}-0\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{5x'(t)\\}=\\frac{10}{s^2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is $\\mathcal{L}\\{5x'(t)\\}=10/s^2$. This is exactly the same rule as before, with one extra wrinkle: a constant multiplier must scale the full derivative transform, including the subtraction term form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "First-Derivative Property",
+          "section_index": 4,
+          "section_title": "Replacing First Derivatives in a Laplace-Domain Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y'(t)+3y(t)=\\cos t\\,u(t)$ with $y(0^-)=2$ into an $s$-domain equation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue in this step is a differential equation that contains one derivative term and linear time-domain terms. Treat each term separately in the Laplace domain, then combine them into one algebraic equation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)+3y(t)\\} = \\mathcal{L}\\{\\cos t\\,u(t)\\},",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the derivative, use the same cue-activated rule as before and keep the pre-initial term in place: $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)=sY(s)-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Transform the remaining left-hand and right-hand terms with linearity and the provided table identities.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{3y(t)\\}=3Y(s), \\quad \\mathcal{L}\\{\\cos t\\,u(t)\\}=\\frac{s}{s^2+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute these pieces into the transformed equation and collect unknown terms on the left.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(sY(s)-2)+3Y(s)=\\frac{s}{s^2+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s+3)Y(s)-2=\\frac{s}{s^2+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Result: the $s$-domain equation is $(s+3)Y(s)-2=s/(s^2+1)$. If a solved form is needed next, isolate $Y(s)$ as a single fraction.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Initial Conditions in Laplace Transforms",
+      "lesson_core_move": "Insert the appropriate pre-initial values into one-sided Laplace derivative formulas so initial conditions are carried correctly into \\(s\\)-domain equations.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "Initial Conditions in Laplace Transforms",
+          "section_index": 1,
+          "section_title": "Introduction to Initial Conditions in Laplace Transforms",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided (causal) Laplace setup from this module: $\\mathcal{L}\\{x(t)\\}=\\int_{0^-}^{\\infty}x(t)e^{-st}\\,dt$. The key object is the one-sided first-derivative move, which is the only rule that carries initial value data into the $s$-domain.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Define the boundary term directly as the left-hand limit, $x(0^-)=\\lim_{t\\to0^-}x(t)$. This value captures pre-origin behavior, which is what the one-sided derivative integral is sensitive to at the lower limit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case with a known pre-initial value: if $x(0^-)=c$, then substitute directly into $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$ to get $\\mathcal{L}\\{x'(t)\\}=sX(s)-c$. Keep the subtraction order exactly as written so the sign is correct.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Do not use $x(0^+)$ here. $x(0^+)$ is the first post-origin value and is not the boundary term in the one-sided derivative theorem; substituting it can shift the entire transformed equation by the wrong side-state information.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(0^-)=\\lim_{t\\to 0^-}x(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next examples will apply this same template in one step: first direct substitution, then zero initial-value checks, then explicit pre- vs post-origin comparison, and finally carrying the corrected term through an $s$-domain equation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Initial Conditions in Laplace Transforms",
+          "section_index": 2,
+          "section_title": "Substituting a Given Initial Value into the First-Derivative Property",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $\\mathcal{L}\\{x(t)\\}=\\frac{3}{s+1}$ and $x(0^-)=2$, find $\\mathcal{L}\\{x'(t)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both $X(s)$ and the pre-initial value are already provided, so this is a direct substitution step using the one-sided first-derivative identity from the prior tutorial.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the identity in symbolic form first, then replace $X(s)$ and $x(0^-)$ with the given values.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=s\\left(\\frac{3}{s+1}\\right)-2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transformed result is $\\mathcal{L}\\{x'(t)\\}=\\frac{3s}{s+1}-2$. The same subtraction term structure is now visible and reusable for later steps.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Initial Conditions in Laplace Transforms",
+          "section_index": 3,
+          "section_title": "Handling Zero Initial Conditions in the First-Derivative Property",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $\\mathcal{L}\\{x(t)\\}=\\frac{5}{s^2+9}$ and $x(0^-)=0$, compute $\\mathcal{L}\\{x'(t)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that the first-derivative rule is known and the pre-initial value is explicitly zero, so this is the boundary-term simplification branch.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the given initial condition into the formula: $x(0^-)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-0 = sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now insert the provided transform $X(s)=\\frac{5}{s^2+9}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=s\\left(\\frac{5}{s^2+9}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transformed derivative is $\\mathcal{L}\\{x'(t)\\}=\\frac{5s}{s^2+9}$, which confirms the zero-initial-condition branch collapses to the core multiplication-by-$s$ form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Initial Conditions in Laplace Transforms",
+          "section_index": 4,
+          "section_title": "Distinguishing Pre-Initial Values from Values After the Origin",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Suppose $x(0^-)= -1$ and $x(0^+)=3$ with $\\mathcal{L}\\{x(t)\\}=\\frac{2s+1}{s^2+4}$. Find $\\mathcal{L}\\{x'(t)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example is the notation-discrimination case: both a pre-origin and post-origin value are shown, but only the first one belongs in the derivative boundary term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided derivative identity with $x(0^-)$ explicitly; the value $x(0^+)=3$ is a separate post-origin point and is not substituted here.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=s\\left(\\frac{2s+1}{s^2+4}\\right)-(-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Replace the negative pre-initial value carefully: subtracting $x(0^-)= -1$ adds one.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=\\frac{2s^2+s}{s^2+4}+1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the result is $\\mathcal{L}\\{x'(t)\\}=s\\left(\\frac{2s+1}{s^2+4}\\right)+1$, showing only the pre-initial value drives the additive boundary term.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "Initial Conditions in Laplace Transforms",
+          "section_index": 5,
+          "section_title": "Carrying Initial Conditions into an s-Domain Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $x'(t)+3x(t)=e^{-2t}$ with $x(0^-)=1$ and write the resulting algebraic equation in $s$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is the full-equation transfer step: we now carry the initial condition through each transformed term of a differential equation, not just a single transform lookup.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}+3\\mathcal{L}\\{x(t)\\}=\\mathcal{L}\\{e^{-2t}\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided derivative rule and the known transform $\\mathcal{L}\\{x(t)\\}=X(s)$ with $\\mathcal{L}\\{e^{-2t}\\}=\\frac{1}{s+2}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)-x(0^-)+3X(s)=\\frac{1}{s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Insert the pre-initial value explicitly from the cue: $x(0^-)=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)-1+3X(s)=\\frac{1}{s+2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect $X(s)$ terms to get the transfer-ready form: $\\left(s+3\\right)X(s)-1=\\frac{1}{s+2}$, or equivalently $X(s)=\\frac{\\frac{1}{s+2}+1}{s+3}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Second-Derivative Property",
+      "lesson_core_move": "Convert a second time derivative under the one-sided Laplace transform into \\(s^2X(s)-sx(0^-)-x'(0^-)\\) for use in \\(s\\)-domain differential-equation models.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Second-Derivative Property",
+          "section_index": 1,
+          "section_title": "Introduction to Second-Derivative Property",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is a one-sided Laplace tutorial. The transform is over the causal interval $[0^-,\\infty)$, and every derivative rule must use the left-limit convention in the boundary terms.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x(t)\\}=\\int_{0^-}^{\\infty} x(t)e^{-st}\\,dt",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "To build the second-derivative rule, begin with the known first-derivative identity for $x'(t)$: $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$, and apply the same one-sided rule again with $x'(t)$ as the input signal.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the first-derivative transform into the second-derivative rule and keep both boundary terms: $\\mathcal{L}\\{x''(t)\\}=s\\mathcal{L}\\{x'(t)\\}-x'(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s\\mathcal{L}\\{x'(t)\\}-x'(0^-)=s[sX(s)-x(0^-)]-x'(0^-)=s^2X(s)-sx(0^-)-x'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the target move is $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)$. In this tutorial, the base case is the zero-condition version: if $x(0^-)=0$ and $x'(0^-)=0$, then the rule collapses to $\\mathcal{L}\\{x''(t)\\}=s^2X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Second-Derivative Property",
+          "section_index": 2,
+          "section_title": "Transforming a Second Derivative with Zero Initial Conditions",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $\\mathcal{L}\\{x''(t)\\}$ when $x(0^-)=0$, $x'(0^-)=0$, and $\\mathcal{L}\\{x(t)\\}=X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "From the previous tutorial, the cue is the second-derivative one-sided rule with boundary terms: $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the given initial conditions by substituting $x(0^-)=0$ and $x'(0^-)=0$ into the same formula.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-s\\cdot 0-0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now simplify to the benchmark form $\\mathcal{L}\\{x''(t)\\}=s^2X(s)$, which is the clean zero-initial-condition baseline for later examples.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Second-Derivative Property",
+          "section_index": 3,
+          "section_title": "Transforming a Second Derivative with a Nonzero Initial Value",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute $\\mathcal{L}\\{x''(t)\\}$ if $x(0^-)=5$, $x'(0^-)=0$, and $\\mathcal{L}\\{x(t)\\}=X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "From the same second-derivative template, identify the cue as $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)$ and use the given values directly.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $x(0^-)=5$ and $x'(0^-)=0$. This introduces only one nonzero correction term compared with the previous baseline example.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-s(5)-0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the answer is $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-5s$, where the position correction remains negative and multiplied by $s$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Second-Derivative Property",
+          "section_index": 4,
+          "section_title": "Transforming a Second Derivative with a Nonzero Initial Slope",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compute $\\mathcal{L}\\{x''(t)\\}$ when $x(0^-)=0$, $x'(0^-)=7$, and $\\mathcal{L}\\{x(t)\\}=X(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same one-sided second-derivative template, now with a nonzero slope initial value: $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $x(0^-)=0$ and $x'(0^-)=7$. This keeps the position correction zero and activates only the slope correction.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-s\\cdot 0-7",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the result is $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-7$, and the slope term is unmultiplied by $s$ with a negative sign.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Second-Derivative Property",
+          "section_index": 5,
+          "section_title": "Using the Second-Derivative Property in an s-Domain Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y''(t)+3y(t)=u(t)$ into $s$-domain form for $y(0^-)=0$, $y'(0^-)=2$, and $\\mathcal{L}\\{u(t)\\}=U(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a differential equation containing $y''(t)$, so apply the one-sided second-derivative template while keeping all other time-domain terms in the transform domain as the equation is assembled.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)\\n\\mathcal{L}\\{3y(t)\\}=3Y(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use these substitutions in $y''(t)+3y(t)=u(t)$ and include the given forcing transform $\\mathcal{L}\\{u(t)\\}=U(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)-sy(0^-)-y'(0^-)+3Y(s)=U(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute $y(0^-)=0$ and $y'(0^-)=2$ next, then simplify the equation so $Y(s)$ terms are collected together.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s^2+3)Y(s)-2=U(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the transformed equation is $(s^2+3)Y(s)-2=U(s)$, which can optionally be rearranged to $Y(s)=\\frac{U(s)+2}{s^2+3}$ if the next step is solving in the $s$-domain.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Transforming Differential Equations",
+      "lesson_core_move": "Transform a linear constant-coefficient differential equation into an algebraic equation in \\(s\\) by applying one-sided Laplace derivative properties and carrying initial conditions.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Differential Equations",
+          "section_index": 1,
+          "section_title": "Introduction to Transforming Differential Equations",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The target move is to convert a time-domain differential equation into one algebraic equation in the $s$-domain while preserving all pre-initial data needed to solve it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This conversion is built from the two one-sided derivative identities. For a signal $y(t)$ with Laplace transform $Y(s)$, the rules are $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$ and $\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For each differential term in the left side, apply these rules directly and keep the same structure: transform term-by-term, preserve the powers of $s$, and leave $Y(s)$ as the unknown function you will solve for.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case $y'(t)+y(t)=0$ with $y(0^-)=0$. Taking the one-sided transform gives $sY(s)-y(0^-)+Y(s)=0$, so this reduces to $(s+1)Y(s)=0$ and therefore $Y(s)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y'(t)+ay(t)=f(t)\\;\\Rightarrow\\;(s+a)Y(s)-y(0^-)=F(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The final step is to collect like terms of $Y(s)$ on one side and move any known forcing and initial-condition terms to the other side. That arrangement is the algebraic bridge that lets you solve for $Y(s)$ in the next step.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Differential Equations",
+          "section_index": 2,
+          "section_title": "Transforming a First-Order Differential Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y'(t)+4y(t)=3e^{-t}$ with $y(0^-)=0$ into its $s$-domain equation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This step extends the tutorial workflow to a non-homogeneous first-order equation. The cue is the term-by-term transform of a whole differential equation in time, and the goal is to produce one algebraic equation involving $Y(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided transform to both sides: $\\mathcal{L}\\{y'(t)+4y(t)\\}=\\mathcal{L}\\{3e^{-t}\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)+4y(t)\\}=\\mathcal{L}\\{3e^{-t}\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$ and the given condition $y(0^-)=0$, so $\\mathcal{L}\\{y'(t)\\}=sY(s)$. Also use $\\mathcal{L}\\{y(t)\\}=Y(s)$ and $\\mathcal{L}\\{3e^{-t}\\}=\\frac{3}{s+1}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sY(s)+4Y(s)=\\frac{3}{s+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect the unknown transform term on the left to get the algebraic equation for the response: $ (s+4)Y(s)=\\frac{3}{s+1} $, and isolate it as $Y(s)=\\frac{3}{(s+4)(s+1)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=\\frac{3}{(s+4)(s+1)}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Differential Equations",
+          "section_index": 3,
+          "section_title": "Carrying a Nonzero Initial Condition Through the Transform",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y'(t)+2y(t)=1$ with $y(0^-)=7$ and simplify the resulting $s$-domain equation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example changes only one thing from the previous step: the same first-order template now uses a nonzero pre-initial value, so the derivative term is no longer just $sY(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start by transforming both sides: $\\mathcal{L}\\{y'(t)+2y(t)\\}=\\mathcal{L}\\{1\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y'(t)+2y(t)\\}=\\mathcal{L}\\{1\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$ and substitute $y(0^-)=7$, then use $\\mathcal{L}\\{y(t)\\}=Y(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sY(s)-7+2Y(s)=\\frac{1}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now collect the transform terms and write the canonical algebraic equation: $(s+2)Y(s)=\\frac{1}{s}+7$, so $Y(s)=\\frac{1+7s}{s(s+2)}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s+2)Y(s)=\\frac{1}{s}+7,\\quad Y(s)=\\frac{1+7s}{s(s+2)}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Differential Equations",
+          "section_index": 4,
+          "section_title": "Transforming a Second-Order Differential Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y''(t)+5y'(t)+6y(t)=e^{-t}$ with $y(0^-)=1$ and $y'(0^-)=3$, and write the resulting $s$-domain equation in simplified form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example adds the second-order wrinkle: because the equation has a $y''(t)$ term, the derivative transform now contributes both $y(0^-)$ and $y'(0^-)$ in addition to the usual $s$-scaled $Y(s)$ term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start by transforming both sides term-by-term: $\\mathcal{L}\\{y''(t)+5y'(t)+6y(t)\\}=\\mathcal{L}\\{e^{-t}\\}$. This is the same cue-action-result pattern as before, now with one higher-order derivative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y''(t)+5y'(t)+6y(t)\\}=\\mathcal{L}\\{e^{-t}\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Replace each derivative transform with the one-sided formula: $\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)$ and $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$. Also use $\\mathcal{L}\\{y(t)\\}=Y(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)-sy(0^-)-y'(0^-)+5\\left[sY(s)-y(0^- )\\right]+6Y(s)=\\frac{1}{s+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the initials $y(0^-)=1$, $y'(0^-)=3$ and simplify the left-hand side.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)-s-3+5sY(s)-5+6Y(s)=\\frac{1}{s+1}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now collect $Y(s)$ terms and move the constant initial-condition terms to the right: $(s^2+5s+6)Y(s)- (s+8)=\\frac{1}{s+1}$, so $(s^2+5s+6)Y(s)=\\frac{1}{s+1}+s+8$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s^2+5s+6)Y(s)-(s+8)=\\frac{1}{s+1},\\quad (s^2+5s+6)Y(s)=\\frac{1}{s+1}+s+8",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "Y(s)=\\frac{\\frac{1}{s+1}+s+8}{s^2+5s+6}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Differential Equations",
+          "section_index": 5,
+          "section_title": "Transforming an Equation with Derivatives on Both Sides",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y''(t)+4y(t)=y'(t)$ with $y(0^-)=3$ and $y'(0^-)= -1$, and write the resulting $s$-domain equation in simplified form.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This example introduces one structural wrinkle: a derivative term now appears on the right side, so you must apply the same one-sided transform rule in both places.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Transform both sides of the differential equation: $\\mathcal{L}\\{y''(t)+4y(t)\\}=\\mathcal{L}\\{y'(t)\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y''(t)+4y(t)\\}=\\mathcal{L}\\{y'(t)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the transform formulas term-by-term: $\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)$, $\\mathcal{L}\\{y(t)\\}=Y(s)$, and $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)-sy(0^-)-y'(0^-)+4Y(s)=sY(s)-y(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the initial values $y(0^-)=3$, $y'(0^-)=-1$ and simplify.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2Y(s)-3s+1+4Y(s)=sY(s)-3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect the transform terms on one side and the constants on the other: $(s^2-s+4)Y(s)=3s-4$. This is the final algebraic equation in $Y(s)$ for this step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s^2-s+4)Y(s)=3s-4",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Transforming Differential Equations",
+          "section_index": 6,
+          "section_title": "Collecting Transformed Terms into an Algebraic Equation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Transform $y''(t)-4y'(t)+3y(t)=2y'(t)+1$ with $y(0^-)=2$ and $y'(0^-)= -1$, then write the final collected relation for $Y(s)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The new step is pure algebraic collection: transform all terms, then line up all $Y(s)$ terms on one side and constants/forcing on the other.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Transform both sides term-by-term: $\\mathcal{L}\\{y''(t)-4y'(t)+3y(t)\\}=\\mathcal{L}\\{2y'(t)+1\\}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{y''(t)-4y'(t)+3y(t)\\}=\\mathcal{L}\\{2y'(t)+1\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the derivative formulas: $\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-s y(0^-)-y'(0^-)$, $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$, and $\\mathcal{L}\\{1\\}=1/s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\left[s^2Y(s)-sy(0^-)-y'(0^-)-4\\left(sY(s)-y(0^-)\\right)+3Y(s)\\right]=2\\left[sY(s)-y(0^-)\\right]+\\frac{1}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Plug in $y(0^-)=2$ and $y'(0^-)=-1$ and simplify each side.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s^2-4s+3)Y(s)-2s+1=2sY(s)-4+\\frac{1}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Collect all $Y(s)$ terms on one side and non-$Y$ terms on the other: $(s^2-6s+3)Y(s)=\\frac{1}{s}+2s-13$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "(s^2-6s+3)Y(s)=\\frac{1}{s}+2s-13,\\quad Y(s)=\\frac{2s^2-13s+1}{s(s^2-6s+3)}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+      "lesson_core_move": "Convert each jump discontinuity in a piecewise signal into a shifted impulse whose area equals the jump size when forming derivatives for Laplace-transform analysis.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Impulses from Derivatives of Piecewise Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Your target is to find a derivative template for piecewise signals: identify each jump discontinuity, attach the matching shifted impulse, and combine those impulses with the smooth interval derivative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For a jump at time $t_k$, compute the signed jump size using left and right limits, then add that value as an impulse coefficient: a jump of $\\Delta x_k=x(t_k^+)-x(t_k^-)$ becomes $\\Delta x_k\\,\\delta(t-t_k)$ in the derivative representation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{dx(t)}{dt}=x'_c(t)+\\sum_k \\Delta x_k\\delta(t-t_k)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the base case $x(t)=0$ for $t<0$ and $x(t)=3$ for $t\\ge 0$. The only jump is at $0$, with $\\Delta x= x(0^+)-x(0^-)=3-0=3$, so $\\frac{dx(t)}{dt}=3\\,\\delta(t)$ plus no smooth interval term.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the same split in Laplace work: transform the smooth piece with $\\mathcal{L}\\{x'_c(t)\\}$ and transform each impulse term separately; then add the impulse factors with their shifts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=\\mathcal{L}\\{x'_c(t)\\}+\\sum_k \\Delta x_k e^{-s t_k}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "By the end of this section, you should be able to scan a piecewise signal, list jump points, and immediately write each jump as a signed shifted impulse in $x'(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+          "section_index": 2,
+          "section_title": "Finding the Jump Size at a Discontinuity",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=3$ for $t<0$, $x(t)=5$ for $0\\le t<2$, $x(t)=1$ for $2\\le t<4$, and $x(t)=4$ for $t\\ge 4$, compute each jump size.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is every time the piecewise rule changes. For this signal, list the discontinuity candidates from the interval boundaries: $t=0$, $t=2$, and $t=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}3, & t<0\\\\5, & 0\\le t<2\\\\1, & 2\\le t<4\\\\4, & t\\ge 4\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the fixed convention from the tutorial, $\\Delta x_k=x(t_k^+)-x(t_k^-)$, so each size is right-limit minus left-limit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta x_0=x(0^+)-x(0^-)=5-3=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta x_2=x(2^+)-x(2^-)=1-5=-4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta x_4=x(4^+)-x(4^-)=4-1=3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The ordered jump list is $\\Delta x_0=2$, $\\Delta x_2=-4$, and $\\Delta x_4=3$, each to be used as the impulse coefficients at their corresponding shifted times.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+          "section_index": 3,
+          "section_title": "Writing an Impulse for an Upward Jump",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=1$ for $t<0$, $x(t)=1$ for $0\\le t<1$, and $x(t)=5$ for $t\\ge1$, find the impulse term in $\\frac{d x(t)}{dt}$ at $t=1$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This is the upward-jump pattern from a single discontinuity: find the value change at the jump and convert it into a shifted impulse term in $x'(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}1, & t<0\\\\1, & 0\\le t<1\\\\5, & t\\ge1\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the left and right limits at the discontinuity point: $x(1^-)$ is the value just before $1$, and $x(1^+)$ is the value just after $1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(1^-)=1,\\quad x(1^+)=5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the fixed jump convention $\\Delta x = x(1^+)-x(1^-)$ so the jump coefficient comes from right minus left.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta x= x(1^+)-x(1^-)=5-1=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Translate the jump directly into the derivative as a shifted impulse with that coefficient: the result is",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "4\\delta(t-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: the derivative contributes $+4\\delta(t-1)$ at $t=1$, with a positive sign because the jump size is positive.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+          "section_index": 4,
+          "section_title": "Writing an Impulse for a Downward Jump",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=7$ for $t<1$ and $x(t)=2$ for $t\\ge1$, find the impulse term in the derivative and write its sign clearly.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This extends the same jump-to-impulse rule to a downward jump: locate the discontinuity, compute the signed jump size, and write the corresponding impulse term in $x'(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}7, & t<1\\\\2, & t\\ge1\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the jump at $t=1$, first write the one-sided values: the signal is $x(1^-)=7$ just before $1$ and $x(1^+)=2$ just after $1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(1^-)=7,\\quad x(1^+)=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the sign-safe jump convention $\\Delta x=x(1^+)-x(1^-)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\Delta x=2-7=-5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Translate the jump to an impulse with the same shift: $\\Delta x\\delta(t-1)$. Because $\\Delta x$ is negative, the impulse coefficient is negative.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "-5\\delta(t-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: the impulse term is $-5\\delta(t-1)$ at $t=1$, with the negative sign preserving the downward jump direction.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+          "section_index": 5,
+          "section_title": "Combining Impulses from Multiple Jump Discontinuities",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=0$ for $t<0$, $x(t)=4$ for $0\\le t<1$, $x(t)=1$ for $1\\le t<3$, and $x(t)=5$ for $t\\ge3$, express only the impulsive part of $x'(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This extends the previous step by combining all discontinuities in one signal. The impulse rule is applied at each jump point and then added.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}0, & t<0\\\\4, & 0\\le t<1\\\\1, & 1\\le t<3\\\\5, & t\\ge3\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "List discontinuity points: $t=0$, $t=1$, and $t=3$. Use $\\Delta x=x(t_k^+)-x(t_k^-)$ at each one.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(0^-)=0,\\; x(0^+)=4,\\;\\Delta x_0=4-0=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(1^-)=4,\\; x(1^+)=1,\\;\\Delta x_1=1-4=-3",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(3^-)=1,\\; x(3^+)=5,\\;\\Delta x_3=5-1=4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Translate each jump into a shifted impulse term and keep the signs and locations tied to each jump time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'_d(t)=\\Delta x_0\\,\\delta(t-0)+\\Delta x_1\\,\\delta(t-1)+\\Delta x_3\\,\\delta(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'_d(t)=4\\,\\delta(t)-3\\,\\delta(t-1)+4\\,\\delta(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: the impulsive part is $4\\delta(t)-3\\delta(t-1)+4\\delta(t-3)$, with a negative middle term from the downward jump at $t=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Impulses from Derivatives of Piecewise Signals",
+          "section_index": 6,
+          "section_title": "Using Jump-Impulse Terms in a Laplace-Transform Derivative",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $x(t)=0$ for $t<0$, $x(t)=2t$ for $0\\le t<1$, $x(t)=2$ for $1\\le t<3$, and $x(t)=t-2$ for $t\\ge3$, form $x'(t)$ including impulses and then compute $\\mathcal{L}\\{x'(t)\\}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the derivative workflow: write the interval derivative first, then add signed impulse terms for jump points, and finally transform both parts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}0, & t<0\\\\2t, & 0\\le t<1\\\\2, & 1\\le t<3\\\\t-2, & t\\ge3\\end{cases}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "From the piecewise intervals, the smooth derivative is $x'_c(t)=2u(t)-2u(t-1)+u(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'_c(t)=\\begin{cases}0,& t<0\\\\2,& 0<t<1\\\\0,& 1<t<3\\\\1,& t>3\\end{cases}=2u(t)-2u(t-1)+u(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Next, compute jumps at discontinuities from right minus left: $\\Delta x(1)=0$ and $\\Delta x(3)=1-2=-1$. So the impulse part is only $-\\delta(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'(t)=x'_c(t)-\\delta(t-3)=\\left(2u(t)-2u(t-1)+u(t-3)\\right)-\\delta(t-3)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now map each piece to Laplace form using linearity and $\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}$ and $\\mathcal{L}\\{\\delta(t-a)\\}=e^{-as}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=\\frac{2}{s}-\\frac{2e^{-s}}{s}+\\frac{e^{-3s}}{s}-e^{-3s}=\\frac{2(1-e^{-s})}{s}+\\frac{e^{-3s}}{s}-e^{-3s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Final result: $x'(t)=2u(t)-2u(t-1)+u(t-3)-\\delta(t-3)$ and $\\mathcal{L}\\{x'(t)\\}=\\frac{2}{s}-\\frac{2e^{-s}}{s}+\\frac{e^{-3s}}{s}-e^{-3s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Using Derivatives to Transform Piecewise Linear Signals",
+      "lesson_core_move": "Transform a piecewise linear signal by differentiating it into simpler step and impulse terms, applying Laplace derivative properties, and solving algebraically for \\(X(s)\\).",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Using Derivatives to Transform Piecewise Linear Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Using Derivatives to Transform Piecewise Linear Signals",
+          "step_type": "tutorial",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-001",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-001]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+              "image_description": "A compact figure with three time-domain sketches: causal ramp, shifted ramp, and finite ramp ending at a breakpoint. Mark slope regions, kink/endpoints, and map each region to derivative support types: constant step segments and vertical impulses."
+            }
+          ],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "This section establishes the piecewise-linear derivative workflow: recognize a piecewise-linear $x(t)$, differentiate it, and then use one-sided derivative and shift rules in the $s$ domain to solve for $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the core identity exactly as written: $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$, and reuse the shifted-step and shifted-impulse pairs, $\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}$ and $\\mathcal{L}\\{\\delta(t-a)\\}=e^{-as}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The base case is $x(t)=t\\,u(t)$, so $x'(t)=u(t)$ and $x(0^-)=0$. Transforming by the one-sided derivative rule gives $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)=sX(s)$. The transform of the derivative side is also $\\mathcal{L}\\{u(t)\\}=\\frac{1}{s}$, so the workflow is to set $\\frac{1}{s}=sX(s)$ and isolate $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "When converting $x'(t)$ from a piecewise-linear signal, separate two term types: constant-step pieces from slope segments and impulse terms from slope jumps or endpoints. This is the same template you will reuse in every later example.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{u(t-a)\\}=\\frac{e^{-as}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{\\delta(t-a)\\}=e^{-as}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the pre-initial value visible at every step, because one-sided Laplace uses the causal boundary term and this section’s examples avoid bilateral shortcuting. After this, each example should follow the same move: identify $x'(t)$ terms, map each term, combine algebra, then solve for $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Using Derivatives to Transform Piecewise Linear Signals",
+          "section_index": 2,
+          "section_title": "Transforming a Causal Ramp from Its First Derivative",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $X(s)$ for $x(t)=3t\\,u(t)$. Use only the derivative property and algebraic isolation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $x(t)$ is a causal ramp. Instead of transforming the ramp directly, differentiate once so the signal becomes a constant step.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'(t)=3u(t), \\qquad x(0^-)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided derivative property $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$. The derivative side is the transform of $3u(t)$, so it contributes $\\frac{3}{s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\frac{3}{s}=sX(s)-0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now isolate $X(s)$ by dividing by the remaining factor of $s$. The extra power of $s$ comes from solving the derivative-property equation, not from a shift.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{3}{s^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Using Derivatives to Transform Piecewise Linear Signals",
+          "section_index": 3,
+          "section_title": "Transforming a Shifted Ramp from a Shifted-Step Derivative",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $X(s)$ for $x(t)=2(t-1)u(t-1)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal is a ramp that starts at $t=1$ instead of at the origin. The derivative removes the ramp shape and leaves a shifted step, which is easier to transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'(t)=2u(t-1)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided derivative property. Because the shifted ramp is zero before it turns on, $x(0^-)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)=sX(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now transform the shifted step. The delay by $1$ contributes the factor $e^{-s}$, so $\\mathcal{L}\\{u(t-1)\\}=e^{-s}/s$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\mathcal{L}\\{2u(t-1)\\}=\\frac{2e^{-s}}{s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Solve by dividing by $s$. The shifted ramp has the same $1/s^2$ ramp structure as the unshifted case, with the extra shift factor $e^{-s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2e^{-s}}{s^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Using Derivatives to Transform Piecewise Linear Signals",
+          "section_index": 4,
+          "section_title": "Transforming a Finite Ramp with Endpoint Impulses",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $X(s)$ for $x(t)=2t\\,(u(t)-u(t-2))$ and keep endpoint impulses explicit.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The new feature is the finite right endpoint at $t=2$. Differentiating the ramp still produces step terms, but the sudden drop from $4$ to $0$ also produces a negative impulse at the endpoint.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'(t)=2u(t)-2u(t-2)-4\\delta(t-2), \\qquad x(0^-)=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-sided derivative property $\\mathcal{L}\\{x'(t)\\}=sX(s)-x(0^-)$. Since the signal is zero before the origin, the initial-value term contributes nothing.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\mathcal{L}\\{2u(t)-2u(t-2)-4\\delta(t-2)\\}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now transform each derivative term. The two step terms form the finite window contribution, and the endpoint impulse contributes $-4e^{-2s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "sX(s)=\\frac{2}{s}-\\frac{2e^{-2s}}{s}-4e^{-2s}=\\frac{2(1-e^{-2s})}{s}-4e^{-2s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Finally divide by $s$. The endpoint impulse must remain in the derivative equation; dropping it would miss the $-4e^{-2s}/s$ term in $X(s)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2(1-e^{-2s})}{s^2}-\\frac{4e^{-2s}}{s}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Using Derivatives to Transform Piecewise Linear Signals",
+          "section_index": 5,
+          "section_title": "Transforming a Triangular Signal from Slope-Change Impulses",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find $X(s)$ for $x(t)=2t\\,u(t)-4(t-1)u(t-1)+2(t-2)u(t-2)$ by using derivatives to expose slope-change impulses.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The signal is triangular because the slope changes from $0$ to $2$ at $t=0$, from $2$ to $-2$ at $t=1$, and from $-2$ back to $0$ at $t=2$. A second derivative turns those slope changes into impulses, which are easier to transform.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x'(t)=2u(t)-4u(t-1)+2u(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Differentiating once has removed the ramp pieces. Differentiating again leaves one impulse at each corner, weighted by the change in slope.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x''(t)=2\\delta(t)-4\\delta(t-1)+2\\delta(t-2)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the one-sided second-derivative property $\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)$. Since the signal is zero before the origin, $x(0^-)=0$ and $x'(0^-)=0$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\mathcal{L}\\{x''(t)\\}=s^2X(s)-sx(0^-)-x'(0^-)=s^2X(s)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now transform the impulse train. A shifted impulse at $t=a$ contributes $e^{-as}$, so the delays at $t=1$ and $t=2$ attach factors $e^{-s}$ and $e^{-2s}$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "s^2X(s)=2-4e^{-s}+2e^{-2s}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Divide by $s^2$ to recover the transform. The numerator records the slope jumps, and the denominator records that two differentiations were used.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "X(s)=\\frac{2-4e^{-s}+2e^{-2s}}{s^2}=\\frac{2(1-e^{-s})^2}{s^2}",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1938 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Systems as Signal Transformations",
+      "lesson_core_move": "Interpret a continuous-time system as a rule that transforms an input signal into an output signal, connecting the system-as-transformation view to later filters, circuits, differential-equation models, and system-property tests.",
+      "section_count": 4,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Systems as Signal Transformations",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the model of a continuous-time system as a rule mapping input signals to output signals so learners can identify system structure in later topics.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual data is required; this section is driven by symbolic notation and brief analogies."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Name a system as an input-to-output transformation, using both function-style notation x(t) -> y(t) and operator-style notation y(t)=T{x(t)}.",
+            "base_case": "Start with the identity transformation y(t)=x(t) and then a scaled transform y(t)=2x(t) to show the same structure with one wrinkle.",
+            "paragraph_plan": [
+              "Frame prior signal-language: what x(t), y(t), and t mean in this course context.",
+              "Define a system as the mapping that takes an input signal and returns an output signal for every t.",
+              "Introduce notation y(t)=T{x(t)} and connect T{·} to a fixed transformation rule.",
+              "Show two mini symbolic substitutions for the identity and scalar-multiple examples, emphasizing that the input is transformed rather than memorized.",
+              "Preview the lesson progression: classify what is input vs. system vs. output, then apply and recognize the same rule across examples."
+            ],
+            "display_math_plan": [
+              "$$y(t)=T\\{x(t)\\}$$",
+              "$$y(t)=x(t)$$",
+              "$$y(t)=2x(t)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "No example or practice content is needed in this first tutorial section; keep the direct-instruction payload compact and notation-first."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Distinguishing a Signal from a System",
+          "step_type": "example",
+          "learning_goal": "Help learners separate symbols for signals from the system rule that transforms them in a statement like y(t)=T{x(t)}.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagrams or plots are needed; symbolic parsing is sufficient."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Symbolic labels and short expressions.",
+            "practice_question_model": "For y(t)=\\int_{-\\infty}^{t}x(\\tau)d\\tau, identify the correct option for input, output, and system rule.",
+            "distractor_plan": [
+              "Swap x(t) and y(t) roles in at least one option.",
+              "Treat the integral operator as the output symbol.",
+              "Use a correct-looking expression but assign the same letter to both input and output.",
+              "Describe the relation as 'signal equals system' rather than 'system maps input to output.'"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "Identify what the section writer should use: none."
+            ],
+            "display_math_plan": [
+              "$$y(t)=\\int_{-\\infty}^{t}x(\\tau)d\\tau$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $y(t)=\\dfrac{d}{dt}x(t)+2x(t)$, identify the input signal, output signal, and system mapping.",
+            "worked_solution_goal": "Classify x(t) as input, y(t) as output, and the mapping as a differential linear operator with gain 2.",
+            "variation_from_previous": "Moves from a generic definition of system transformation to explicit symbol-level parsing in a nontrivial rule statement.",
+            "solution_step_plan": [
+              "Read the expression and mark every occurrence of independent variable t.",
+              "Assign the argument-bearing quantity that is transformed to input.",
+              "Assign the left-hand quantity as output.",
+              "Name the transformation T{·} implied by the entire right-hand expression."
+            ],
+            "practice_variation_axes": [
+              "Different symbolic operators (shift, gain, derivative).",
+              "Input/output symbol changes while preserving structure.",
+              "Multiple candidate descriptions including decoy system rules."
+            ]
+          },
+          "handoff_notes": "Keep the worked example and follow-up questions tightly focused on classification, not solving long calculations."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Applying a Simple System Rule to a Signal",
+          "step_type": "example",
+          "learning_goal": "Demonstrate applying a fixed system rule to a concrete input signal without changing the rule.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Computation is algebraic/substitution-only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Expression form with time-shifted/scaled symbols.",
+            "practice_question_model": "If $T\\{x(t)\\}=x(t-2)$ and $x(t)=e^{-t}$, which computed signal is the output?",
+            "distractor_plan": [
+              "Incorrectly shift in the wrong direction (t+2 instead of t-2).",
+              "Apply input value numerically at one time only instead of as a function.",
+              "Multiply where only a shift is intended.",
+              "Drop the same symbol (x) and write y(t)=e^{-t}+2."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "No tutorial-level instructions needed for example section."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t-2)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Apply $y(t)=x(t-1)$ to $x(t)=u(t)-u(t-2)$ and simplify the output expression.",
+            "worked_solution_goal": "Produce the transformed output by substituting $(t-1)$ for t in each input appearance and carrying the same shift through both terms.",
+            "variation_from_previous": "Adds a concrete substitution step to the prior classification of inputs/outputs, while keeping one simple linear time-shift rule.",
+            "solution_step_plan": [
+              "Write the output rule y(t)=x(t-1).",
+              "Substitute the given input into every x(·) occurrence.",
+              "Track the shift through each term consistently.",
+              "State the final y(t) using standard step-function syntax."
+            ],
+            "practice_variation_axes": [
+              "Different step-function arguments (delays and advances).",
+              "Single-term versus multi-term inputs.",
+              "Equivalent algebraic re-expression of the same computed output."
+            ]
+          },
+          "handoff_notes": "Keep the worked-example explanation focused on unchanged rule + consistent substitution; practice questions should vary signal form but keep the same rule."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Recognizing the Same System Rule Across Different Inputs",
+          "step_type": "example",
+          "learning_goal": "Train learners to detect a fixed system rule by applying it to multiple input forms and checking rule invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual tasks required; focus on symbolic invariance detection."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choice among candidate system-rule statements or selected outputs.",
+            "practice_question_model": "Given three mappings, identify which pair of cases use the same underlying rule T{·}: (A) $y(t)=x(t-1)$, (B) $y(t)=x(2t)$, (C) $y(t)=\\int x(\\tau)d\\tau$.",
+            "distractor_plan": [
+              "Treating scaling and shifting as the same rule despite a changed operator.",
+              "Overfitting to one specific input form and declaring different rules for equivalent delays.",
+              "Ignoring whether integration is present and selecting a shift-only description."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [
+              "No tutorial-style paragraph scaffold is needed in an example section."
+            ],
+            "display_math_plan": [
+              "$$y(t)=x(t-1)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $x_1(t)=t$, $x_2(t)=e^{-t}$, and $x_3(t)=\\sin t$, show how all three follow the same rule $y(t)=x(t-1)+x(t+1)$ and compute one output form.",
+            "worked_solution_goal": "Show explicit substitution into the shared rule and confirm no coefficient/operator changes across inputs.",
+            "variation_from_previous": "Adds multiple input families to test transfer of the same rule rather than repeated single-input execution.",
+            "solution_step_plan": [
+              "State the candidate rule once as a shared mapping.",
+              "Apply it to each input by replacing t with t−1 and t+1.",
+              "Write two outputs explicitly and leave the third in compact form.",
+              "Compare results to verify the same transformation structure."
+            ],
+            "practice_variation_axes": [
+              "Different input classes (polynomial, exponential, sinusoidal).",
+              "Different signed shifts in the same shared rule.",
+              "Multiple-choice identification of same-vs-different rule among decoys."
+            ]
+          },
+          "handoff_notes": "This is the strongest transfer point for example and question writers; keep distractors rule-focused rather than numeric."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Inputs and Outputs",
+      "lesson_core_move": "Distinguish the input signal, output signal, and transformation direction for a continuous-time system so a situation can be framed as an input-output model before applying system notation and system-property tests.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Inputs and Outputs",
+          "step_type": "tutorial",
+          "learning_goal": "State the core distinction between input signal, output signal, and system direction in a basic continuous-time input-output rule.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; all required structure is symbolic and can be introduced with variable mappings only."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "n/a",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define input signal, output signal, and transformation direction as the three-part frame for every continuous-time system statement in this lesson.",
+            "base_case": "Introduce the base case y(t)=x(t), labeling x as input and y as output with direction input→output.",
+            "paragraph_plan": [
+              "Open with a short contrast between a signal and a system rule, then define input, output, and direction in plain terms.",
+              "Introduce the standard notation y(t)=T{x(t)} and connect it to the verbal frame: x is fed into the system rule, y is produced.",
+              "Show one concrete base case and explicitly test direction by checking whether x appears inside an operator map producing y.",
+              "Add one quick rule for verification: choose a physical meaning for x and y only after the system mapping is clear."
+            ],
+            "display_math_plan": [
+              "y(t)=T\\{x(t)\\}",
+              "y(t)=2x(t)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section entirely conceptual. No practice questions; do not introduce diagrams. Keep the notation load to one mapping equation and one labeled example before moving to worked examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Inputs and Outputs from System Descriptions",
+          "step_type": "example",
+          "learning_goal": "From a written system description, correctly label the input and output variables.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; learner can identify roles from symbolic form alone."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "identify variable labels as x(t), y(t), or input/output direction",
+            "practice_question_model": "For a system map y(t)=3x(t)+2, identify the input, the output, and the direction of transformation.",
+            "distractor_plan": [
+              "Swap input and output variable roles.",
+              "Treat the independent variable t as one of the signals.",
+              "Confuse the constant term with input or output.",
+              "Reverse direction and claim output drives input."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given y(t)=4x(t)-5, label which quantity is the input signal, which is the output signal, and state the transformation direction.",
+            "worked_solution_goal": "Build a repeatable method: parse variable placement and determine which signal is being transformed into which.",
+            "variation_from_previous": "Adds a constant term to the base identity form while preserving one-step mapping.",
+            "solution_step_plan": [
+              "Read the equation and identify candidate input and output symbols.",
+              "Apply the rule: symbol on left side is output candidate, inside the system argument is input candidate.",
+              "State direction input→output and justify with the one-sided dependence shown in y(t)=F(x(t))."
+            ],
+            "practice_variation_axes": [
+              "swap symbol names (u/v, a/b, s/r)",
+              "change affine forms while preserving structure",
+              "add an extra constant gain or offset"
+            ]
+          },
+          "handoff_notes": "Use short controlled example-to-question transitions. Keep distractors aligned to common role-reversal errors."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Determining the Direction of a Signal Transformation",
+          "step_type": "example",
+          "learning_goal": "Determine whether a given equation implements an input-to-output transform or incorrectly implies the inverse direction.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; direction is inferable from argument structure and variable placement."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "direction judgment and role labeling in one response",
+            "practice_question_model": "Given z(t)=\\int_{-\\infty}^{t} x(\\tau)d\\tau, which quantity is input and which is output, and what is the transformation direction?",
+            "distractor_plan": [
+              "Read direction from integration bounds instead of dependency form.",
+              "Conclude both variables can be inputs simultaneously.",
+              "Treat the integration variable as the system output.",
+              "Reverse the arrow direction because symbols look similar."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the rule v(t)=\\frac{d}{dt}u(t), identify input, output, and direction, and confirm why differentiation indicates a one-way input→output transform.",
+            "worked_solution_goal": "Anchor direction in explicit dependence: the operator maps one named signal to another, regardless of operator type.",
+            "variation_from_previous": "Introduces operator form (derivative/integral) as a controlled wrinkle while keeping one input and one output signal.",
+            "solution_step_plan": [
+              "Identify the output by left-side position.",
+              "Identify the mapped signal inside the operator as input.",
+              "State direction from mapped signal to left-side signal and avoid interpreting the operator as changing signal identity."
+            ],
+            "practice_variation_axes": [
+              "swap differential and integral operators",
+              "rename signals while preserving operator type",
+              "replace one operator with time scaling"
+            ]
+          },
+          "handoff_notes": "Keep this section focused on direction only; defer formal operator notation depth to later lesson on system notation."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Assigning Physical Quantities as Input and Output Signals",
+          "step_type": "example",
+          "learning_goal": "Select appropriate physical quantities as input and output signals from a system context before coding the rule.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; choices are based on context text and symbolic mapping vocabulary."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "short mapping statement choosing the input/outcome pair",
+            "practice_question_model": "In a temperature-control system where thermostat setting p(t) influences room temperature r(t) through a model block, identify input and output and indicate whether the model maps p(t)→r(t) or r(t)→p(t).",
+            "distractor_plan": [
+              "Choose response variable as input because it is observable.",
+              "Label actuator variables and sensor variables backward by convention confusion.",
+              "Use unrelated physical quantity not present in description.",
+              "Mix up units and treat both signals as outputs simultaneously."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A sensor outputs voltage v_s(t) based on position x(t) through a transfer block. Choose the input and output and phrase the input-output mapping sentence.",
+            "worked_solution_goal": "Practice physical-to-symbol mapping without changing the underlying mapping rule logic.",
+            "variation_from_previous": "Adds physical semantics (sensor/control context) while preserving one-block transformation.",
+            "solution_step_plan": [
+              "Identify which quantity is externally chosen or injected.",
+              "Identify which quantity is produced/observed as system response.",
+              "Write the sentence: [chosen quantity] is input, [measured quantity] is output, mapping is input→output."
+            ],
+            "practice_variation_axes": [
+              "swap physical scenario (mechanical, electrical, thermal)",
+              "swap signal names while preserving causal roles",
+              "add a unit conversion label without changing direction"
+            ]
+          },
+          "handoff_notes": "Emphasize causal interpretation from context first, notation second. Keep questions short to reduce cognitive load."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Checking an Input-Output Assignment Against a System Description",
+          "step_type": "example",
+          "learning_goal": "Validate whether a proposed input-output pairing is consistent with the stated system rule and reject inconsistent pairings.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagrams are needed; consistency checks are textual and symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "consistency judgment plus corrected input/output labels",
+            "practice_question_model": "Which of the following best matches the system rule y(t)=\\int_0^t x(\\tau)d\\tau: 1) input=x, output=y with input→output; 2) input=y, output=x with input→output; 3) input=x, output=y with output→input; 4) no input/output; 5) both as outputs.",
+            "distractor_plan": [
+              "Pick the option that only mentions equation form but ignores causal role labels.",
+              "Accept symmetric phrasing that hides a direction error.",
+              "Reject a valid pairing due to operator complexity.",
+              "Choose ambiguous answers combining multiple claims."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given a proposed statement 'y is input and x is output' for y(t)=\\int_0^t x(\\tau)dτ, check and correct the assignment.",
+            "worked_solution_goal": "Develop a verification checklist that catches swapped roles before moving to notation-intensive topics.",
+            "variation_from_previous": "Introduces correction workflow: evaluate a candidate assignment and justify acceptance/rejection.",
+            "solution_step_plan": [
+              "Read proposed assignment as a claim about role labeling.",
+              "Compare with the rule structure and identify which signal feeds the operator.",
+              "Reject the wrong assignment and replace with the consistent one.",
+              "State the corrected direction explicitly in plain language."
+            ],
+            "practice_variation_axes": [
+              "swap integrals with derivatives",
+              "provide one false and one near-correct distractor pair",
+              "change variable names and operator type"
+            ]
+          },
+          "handoff_notes": "This final example should feel like a quality gate before the lesson ends; include why each wrong option violates the rule."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Continuous-Time System Notation",
+      "lesson_core_move": "Interpret continuous-time system notation such as x(t) -> y(t) and y(t) = T{x(t)} by identifying the input signal, system operator, and output signal in an input-output model.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Continuous-Time System Notation",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the core notation for continuous-time systems and connect arrow and operator forms to the same input-output meaning.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is needed: the notation is read from symbolic expressions."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define a continuous-time system as a transformation from an input signal x(t) to an output signal y(t), read x(t) -> y(t) as direction-sensitive, and define y(t)=T{x(t)} as a function-like operator statement of the same idea.",
+            "base_case": "Start with a single-symbol system rule: from y(t)=2x(t), identify x(t) as input, y(t) as output, and T as scaling by 2.",
+            "paragraph_plan": [
+              "State the naming convention for systems: input, output, and the transformation that connects them.",
+              "Introduce arrow notation as the directional map x(t) -> y(t) with y(t) as the system output of x(t).",
+              "Introduce operator notation y(t)=T{x(t)} and show it records the same mapping compactly as a rule name.",
+              "Show that both notations are interchangeable by translating y(t)=2x(t) to x(t) -> y(t).",
+              "Preview the later sections that add controlled twists: identifying inputs/outputs first, then reading T, then translation and naming."
+            ],
+            "display_math_plan": [
+              "x(t) \\to y(t)",
+              "y(t) = T\\{x(t)\\}",
+              "y(t) = 2x(t) = T\\{x(t)\\}"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "No worked example or practice questions in this tutorial section; keep the introduction narrow and notation-centric."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Input and Output in Arrow Notation",
+          "step_type": "example",
+          "learning_goal": "Given arrow-form expressions, correctly assign the input signal symbol and output signal symbol in one direction only.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual object is required; all work is symbol parsing."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic notation and short text",
+            "practice_question_model": "Given a mapping such as x(t) -> 3x(t), identify the input and output symbols and choose the correct pair.",
+            "distractor_plan": [
+              "Swap input/output labels, e.g., treating y(t) as input.",
+              "Read the arrow as equality direction reverse.",
+              "Add or remove terms in the arrow mapping symbolically.",
+              "Confuse x and y when symbols are changed names such as u(t), v(t)."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read this arrow form and identify the input/output: $x(t) \\to y(t)=2x(t-1)$.",
+            "worked_solution_goal": "Correctly name input x(t) and output y(t), and confirm directional mapping x to y.",
+            "variation_from_previous": "Builds from the tutorial base by adding a nontrivial expression on the output side while keeping arrow direction unchanged.",
+            "solution_step_plan": [
+              "Locate the left endpoint of the arrow as input and right endpoint as output.",
+              "Confirm that only the arrow direction is used for input-output roles.",
+              "Report the input-output pair using explicit words and symbolic labels."
+            ],
+            "practice_variation_axes": [
+              "Use shifted time arguments x(t-\\tau)",
+              "Use alternate symbol names x(t), u(t), v(t)",
+              "Use constant gain forms in output expression"
+            ]
+          },
+          "handoff_notes": "This section locks directionality before operator details are introduced."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Identifying the System Operator in Operator Notation",
+          "step_type": "example",
+          "learning_goal": "From an operator form, identify the rule T and distinguish it from input/output variables.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram or plot is required for symbolic operator parsing."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic notation and short text",
+            "practice_question_model": "Given y(t)=T\\{u(t)\\} where T describes integration, choose the best statement of T.",
+            "distractor_plan": [
+              "Choose the input symbol as the operator name.",
+              "Conflate T with the output y(t) instead of the transform rule.",
+              "Choose a wrong operator family (differentiation vs multiplication or delay).",
+              "Drop the function argument x(t) and answer with only T"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given y(t)=T\\{x(t)\\} and T\\{x(t)\\}=x(t-1), identify the operator and restate the system map in operator form.",
+            "worked_solution_goal": "Extract T as the delay-by-1 operator and keep x(t), y(t) roles clear.",
+            "variation_from_previous": "Adds operator extraction to the prior arrow-only parsing by naming the transform rule explicitly.",
+            "solution_step_plan": [
+              "Read the enclosing braces to isolate input argument x(t).",
+              "Rewrite T as a concrete rule acting on x(t).",
+              "Attach y(t) to that rule to preserve output interpretation."
+            ],
+            "practice_variation_axes": [
+              "Use gain operators T\\{x\\}=k x(t)",
+              "Use delay or advance operators T\\{x\\}=x(t\\pm t_0)",
+              "Use integral-like shorthand in symbolic form"
+            ]
+          },
+          "handoff_notes": "Keep operator extraction literal: the learner should never need to compute numeric values here."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Translating Between Arrow Notation and Operator Notation",
+          "step_type": "example",
+          "learning_goal": "Perform one-to-one conversion between x(t) -> y(t) and y(t)=T\\{x(t)\\} forms.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is needed because translation is algebraic and symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic notation and short text",
+            "practice_question_model": "Convert between equivalent representations: from x(t)\\to y(t)=\\int_0^t x(\\tau)d\\tau to operator form and back.",
+            "distractor_plan": [
+              "Swap source and destination notation directions.",
+              "Copy the right side into arrow body without naming the operator.",
+              "Use wrong transform variable context, e.g., x(t-\\tau) where not required.",
+              "Drop mapping direction when converting back to arrow notation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Translate this pair exactly and check equivalence: x(t) -> y(t)=\\int_0^t x(\\tau)d\\tau.",
+            "worked_solution_goal": "Produce the equivalent y(t)=T\\{x(t)\\} and confirm the same operator-to-map meaning.",
+            "variation_from_previous": "Reverses the direction of required conversion, forcing two-way translation after one-way reading in earlier sections.",
+            "solution_step_plan": [
+              "Start from the given notation form.",
+              "Identify input, output, and transformation expression.",
+              "Rebuild the target notation with the same data and verify semantic equivalence."
+            ],
+            "practice_variation_axes": [
+              "Start from operator form and go to arrow form",
+              "Swap input/output symbols while preserving role",
+              "Use nested symbolic transforms in operator body"
+            ]
+          },
+          "handoff_notes": "Use explicit equivalence language so example writer can mirror direction checks consistently."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting System Notation with Named Signals",
+          "step_type": "example",
+          "learning_goal": "Interpret system notation when inputs and outputs use alternate names while preserving role and operator mapping.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual support required; symbol names change only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic notation and short text",
+            "practice_question_model": "Given y_0(t)=T\\{u(t)\\} with T\\{u(t)\\}=2u(t)-u(t-1), identify input, output, and operator representation as arrow form.",
+            "distractor_plan": [
+              "Treat generic symbols (u, y_0, z) as meaningfully different system equations.",
+              "Choose wrong symbol as input due to naming conventions.",
+              "Omit braces and rewrite with equality only.",
+              "Preserve operator but invert input/output direction."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the operator form y_u(t)=\\mathcal{H}\\{u(t)\\} where \\mathcal{H}\\{u(t)\\}=u(t)^2+1, identify input/output/operator and rewrite in arrow notation.",
+            "worked_solution_goal": "Map named variables to roles correctly and restate the same system in either notation without semantic change.",
+            "variation_from_previous": "Introduces alternate symbol conventions and requires abstraction from x,y defaults to reinforce transfer to physical notation.",
+            "solution_step_plan": [
+              "Parse the named input variable and named output variable.",
+              "Match the named operator symbol to the same transformation role used earlier.",
+              "Write the equivalent arrow notation with new labels."
+            ],
+            "practice_variation_axes": [
+              "Swap variable letters and subscripts",
+              "Use equivalent operator glyphs like H, S, G",
+              "Use additive or gain-based operator bodies"
+            ]
+          },
+          "handoff_notes": "Emphasize symbol renaming as a transfer test; require explicit statement that semantics do not depend on symbols."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Filters as Systems",
+      "lesson_core_move": "Map a filter description into continuous-time system notation by identifying the input signal, output signal, and the signal feature the filter passes, attenuates, or modifies.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Filters as Systems",
+          "step_type": "tutorial",
+          "learning_goal": "Orient the learner to the filter-as-system viewpoint by naming input/output for filter descriptions and classifying the feature behavior as pass, attenuate, or modify.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual required; the section is handled purely with symbolic descriptions and sentence-level filter language."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define a filter as a system transformation y(t) = T{x(t)} and identify the two roles in any filter description: what signal is accepted as input and what signal is produced as output, then label whether the filter acts by passing, attenuating, or modifying a chosen signal feature.",
+            "base_case": "Introduce a single filter statement (e.g., \"low-pass filter reduces high-frequency content\") and explicitly mark x(t) as input and y(t) as output.",
+            "paragraph_plan": [
+              "Open with a one-sentence bridge from system notation: all filters are systems, so every filter can be viewed as a map from input signal x(t) to output signal y(t).",
+              "State the minimal identification pattern: name the input variable, the output variable, and the key feature behavior in one line of plain notation.",
+              "Use a simple worked-in-text example: y(t)=T{x(t)} for a filter that passes low frequencies and attenuates high frequencies, emphasizing feature language first.",
+              "Introduce controlled contrast language: passing keeps a feature, attenuating reduces a feature, modifying transforms feature attributes such as gain or delay, and map each into system terminology.",
+              "Preview the section sequence: next examples first lock input/output, then each feature class, then full system-notation mapping."
+            ],
+            "display_math_plan": [
+              "$$y(t)=T\\{x(t)\\}$$",
+              "$$\\text{Filter behavior} \\in \\{\\text{pass},\\;\\text{attenuate},\\;\\text{modify}\\}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Example placeholder intentionally left empty for tutorial section.",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Tutorial-only planning. Do not write section-level exercises or practice. Keep to minimum effective dose before practice-heavy sections."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying the Input and Output of a Filter",
+          "step_type": "example",
+          "learning_goal": "From a filter description, correctly assign input and output signals using a consistent naming convention compatible with system notation.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram is required; signal-function notation is sufficient."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic signal labels and short sentence labels",
+            "practice_question_model": "Given a filter statement, choose the correct ordered input-output pair (x(t) -> y(t)).",
+            "distractor_plan": [
+              "Include a distractor that swaps input and output symbols.",
+              "Include a distractor that uses unrelated variable names or a third signal not in the description.",
+              "Include a distractor that misidentifies a control/input parameter as the signal.",
+              "Include a distractor that gives the correct labels but reverses direction in notation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the filter described as \"This filter takes acceleration input a(t) and produces velocity output v(t) by suppressing rapid oscillations\", identify x(t) and y(t) in system form.",
+            "worked_solution_goal": "Produce the input-output assignment as y(t) = x(t) map with the filter's variable names relabeled consistently.",
+            "variation_from_previous": "Uses text from the tutorial base case but adds explicit variable names and a behavior clause to force careful extraction.",
+            "solution_step_plan": [
+              "Extract the signal receiving energy from source as the input candidate.",
+              "Identify the returned signal as the output candidate.",
+              "Check dimensions/roles (source/excitation vs response) to remove ambiguity.",
+              "Write the assignment in the standardized form y(t)=T{x(t)}."
+            ],
+            "practice_variation_axes": [
+              "input/output variable naming order",
+              "whether statement is causal language-based or equation-based",
+              "signal domain tags (time-domain vs sampled/other notation)"
+            ]
+          },
+          "handoff_notes": "Keep this example tightly focused on role assignment; do not also test feature classification yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Identifying the Signal Feature a Filter Passes",
+          "step_type": "example",
+          "learning_goal": "Classify a filter as passing a signal feature and distinguish it from attenuation or modification using filter language plus minimal symbolic cues.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No plots needed; this section remains linguistic and symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "feature-class labels",
+            "practice_question_model": "Choose which signal feature (low-frequency band, DC component, amplitude component, or edge content) the described filter passes.",
+            "distractor_plan": [
+              "Include a distractor that confuses pass behavior with attenuation behavior.",
+              "Include a distractor that names the output equation modifier instead of feature.",
+              "Include a distractor that misclassifies the pass feature by frequency band.",
+              "Include a distractor that uses phase-shift wording for a magnitude-only filter."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A filter states: \"This filter keeps DC and low-frequency components and reduces rapid oscillations.\" Identify the feature it passes in system terms.",
+            "worked_solution_goal": "State that the feature passed is the low-frequency / near-DC content and label it explicitly as the pass behavior of T\\{x(t)\\}.",
+            "variation_from_previous": "Moves from labeling x/y to classifying a specific feature while using the same two-signal mapping pattern.",
+            "solution_step_plan": [
+              "Read the feature phrase and isolate the preserved component.",
+              "Map that preserved component to pass behavior.",
+              "Attach it to the filter rule without changing the input-output form.",
+              "Use a concise phrase suitable for downstream explanation: \"This system passes ...\""
+            ],
+            "practice_variation_axes": [
+              "frequency-band keywords",
+              "time-domain feature wording (DC vs ripple/edges)",
+              "single-feature versus mixed-feature descriptions"
+            ]
+          },
+          "handoff_notes": "Do not require computations; this is classification by semantic feature extraction only."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Identifying the Signal Feature a Filter Attenuates",
+          "step_type": "example",
+          "learning_goal": "Identify the filter feature that is reduced in strength while distinguishing attenuation from mere omission or complete blocking.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; include attenuation language in statements."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "feature-class labels",
+            "practice_question_model": "Choose which signal feature is attenuated by the described filter and avoid classifying weakened gain as complete removal.",
+            "distractor_plan": [
+              "Include a distractor that labels attenuation as passing.",
+              "Include a distractor that uses an unrelated feature from a different domain (e.g., phase vs magnitude).",
+              "Include a distractor that mistakes complete block for attenuation.",
+              "Include a distractor that inverts the described feature direction."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A filter says: \"This filter reduces the energy of high-frequency components and suppresses fast fluctuations.\" Identify the feature it attenuates.",
+            "worked_solution_goal": "Identify the attenuated feature as the high-frequency/rapid fluctuation component and phrase it as a reduction, not elimination.",
+            "variation_from_previous": "Shifts from pass-classification to attenuation-classification using parallel wording and same extraction routine.",
+            "solution_step_plan": [
+              "Parse action verbs and isolate the weakened output property.",
+              "Map that property into a named feature class (e.g., high-frequency attenuation).",
+              "Confirm it is not complete blocking or inversion.",
+              "Return concise filter behavior sentence linked to system role."
+            ],
+            "practice_variation_axes": [
+              "attenuated feature strength (strong/partial)",
+              "feature domain (frequency, smoothness, amplitude envelope)",
+              "signal feature phrasing overlap with pass section"
+            ]
+          },
+          "handoff_notes": "This section sets contrast with pass-type behavior; keep answer choices short to reinforce category distinctions."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Identifying the Signal Feature a Filter Modifies",
+          "step_type": "example",
+          "learning_goal": "Select the signal feature that the filter changes in kind (gain, phase, delay, shape) rather than only passing or suppressing it.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "feature descriptors",
+            "practice_question_model": "Select the modified characteristic (e.g., phase, gain, delay) from a filter description with explicit transformation language.",
+            "distractor_plan": [
+              "Include a distractor that confuses modification with attenuation.",
+              "Include a distractor that chooses a passed feature for a modified filter.",
+              "Include a distractor that identifies the wrong signal quantity as modified.",
+              "Include a distractor that uses broad labels (e.g., output) without naming the changed feature."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A filter claims: \"This filter amplifies selected frequencies by a factor and delays them by fixed t_0.\" Identify the modified signal feature.",
+            "worked_solution_goal": "Classify the filter as modifying gain/phase-delay characteristics rather than only passing or attenuating a feature.",
+            "variation_from_previous": "Adds explicit gain and delay terms to force identification of transformation effects beyond pass/attenuate.",
+            "solution_step_plan": [
+              "Read the description for words that indicate transformation of shape/arrival/amplitude.",
+              "Confirm it is not a pure pass or attenuate claim.",
+              "Name the specific modified feature(s) with concise notation-ready wording.",
+              "Connect back to input-output form and preserve notation conventions."
+            ],
+            "practice_variation_axes": [
+              "modify type (gain vs phase vs delay)",
+              "single-feature versus paired-feature modification",
+              "sign and magnitude wording traps"
+            ]
+          },
+          "handoff_notes": "Keep this section focused on interpreting wording that implies a transform operation on a feature."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Mapping a Filter Description Into System Notation",
+          "step_type": "example",
+          "learning_goal": "Convert a complete filter description into a coherent system notation statement including input-output labels and identified feature behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; output is a notation translation rule."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "system notation statements",
+            "practice_question_model": "Given a short filter description, write and then choose the correct system notation form y(t)=T{x(t)} with the correct pass/attenuate/modify label.",
+            "distractor_plan": [
+              "Include a distractor with swapped input-output orientation.",
+              "Include a distractor with wrong feature label for the chosen system notation.",
+              "Include a distractor that omits the operator relationship and only repeats labels.",
+              "Include a distractor that uses an unsupported symbol set or missing T{·} wrapper."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Filter description: \"Input x(t) is a continuous-time signal. The system outputs y(t) where high-frequency content is reduced and phase is advanced by t_0.\" Convert this to one system-notation sentence and identify its feature behavior.",
+            "worked_solution_goal": "Produce a canonical system notation form and a complete behavior label that includes both attenuation and modification aspects.",
+            "variation_from_previous": "Integrates input/output and feature classification into one compact notation statement.",
+            "solution_step_plan": [
+              "Determine input and output symbols from the description.",
+              "Write the canonical arrow or operator form y(t) = T{x(t)}.",
+              "Attach the feature profile as a short clause: attenuates [feature], modifies [feature].",
+              "Check consistency with previous sections: one symbol name, one direction, one behavior class per term."
+            ],
+            "practice_variation_axes": [
+              "single versus combined behavior statements",
+              "notation style (arrow vs operator) compatibility",
+              "which feature terms are explicitly mentioned"
+            ]
+          },
+          "handoff_notes": "This is the synthesis section: ensure worked example and questions require full mapping, not only one-step identification."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "RC Circuits as Systems",
+      "lesson_core_move": "Model an RC circuit as a continuous-time input-output system by assigning a source signal as the input, choosing a circuit variable as the output, and interpreting the circuit relation as the system rule.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to RC Circuits as Systems",
+          "step_type": "tutorial",
+          "learning_goal": "Set up a series RC circuit as a continuous-time system by naming the source voltage as the input and a circuit voltage as the output.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "A clean textbook-style series RC circuit driven by a source voltage, with the source marked as the input and the capacitor voltage shown as the first output choice.",
+            "visual_elements": [
+              "voltage source labeled $v_s(t)$",
+              "series resistor labeled $R$",
+              "capacitor labeled $C$",
+              "current arrow $i(t)$",
+              "output label on the capacitor voltage $v_C(t)$",
+              "ground reference"
+            ],
+            "image_generation_notes": "Use a simple monochrome circuit schematic with clear labels and no decorative elements. The image should reduce the load of identifying the source, the passive components, and the output node."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "No questions in the tutorial.",
+            "practice_question_model": "N/A",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that the RC circuit becomes a system once the source voltage is named as $v_s(t)$ and a circuit variable such as $v_C(t)$ is named as the output.",
+            "base_case": "A series RC circuit driven by one source voltage, with the capacitor voltage used as the first output choice.",
+            "paragraph_plan": [
+              "Introduce the RC circuit as an input-output model, not just a physical schematic.",
+              "Identify the source voltage $v_s(t)$ as the input signal and the chosen circuit variable as the output signal.",
+              "Connect the source, resistor, and capacitor with the circuit relation that governs the output.",
+              "Summarize the system view as a mapping from $v_s(t)$ to the chosen output and preview that later examples will change only the chosen output or the way the relation is read."
+            ],
+            "display_math_plan": [
+              "$$v_s(t)=v_R(t)+v_C(t)$$",
+              "$$v_R(t)=R i(t)$$",
+              "$$i(t)=C \\frac{d}{dt}v_C(t)$$",
+              "$$v_s(t)=RC \\frac{d}{dt}v_C(t)+v_C(t)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the explanation at the level of model setup and circuit roles. Do not turn this section into a differential-equation exercise yet."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Assigning the Source Voltage as the Input",
+          "step_type": "example",
+          "learning_goal": "Identify the source voltage $v_s(t)$ as the input signal in the RC system.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "The same series RC circuit, with the source voltage emphasized so the learner can identify it as the input signal.",
+            "visual_elements": [
+              "voltage source labeled $v_s(t)$",
+              "series resistor labeled $R$",
+              "capacitor labeled $C$",
+              "current arrow $i(t)$",
+              "candidate output labels $v_R(t)$ and $v_C(t)$",
+              "ground reference"
+            ],
+            "image_generation_notes": "Reuse the same textbook circuit schematic across the worked example and practice questions. Keep the visual change limited to highlighting the source input so the learner focuses on the role assignment."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the signal that should be treated as the input.",
+            "practice_question_model": "Which signal is the input in a series RC circuit driven by a source voltage?",
+            "distractor_plan": [
+              "Offer the capacitor voltage as the most tempting wrong input.",
+              "Offer the resistor voltage as a second plausible wrong input.",
+              "Offer the branch current or output role as a role-confusion distractor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "In the RC circuit, identify which signal should be treated as the input and explain why the source voltage, not $v_R(t)$ or $v_C(t)$, plays that role.",
+            "worked_solution_goal": "Name $v_s(t)$ as the input and separate it from the internal circuit variables.",
+            "variation_from_previous": "Moves from the general system framing to the specific job of assigning the input role on the same circuit diagram.",
+            "solution_step_plan": [
+              "Point to the independent source and name its voltage $v_s(t)$.",
+              "State that the source drives the rest of the circuit, so it is the input signal.",
+              "Distinguish the input from the internal branch voltages across $R$ and $C$.",
+              "Record the start of the system model as $v_s(t)$ feeding the circuit."
+            ],
+            "practice_variation_axes": [
+              "Change the source label from $v_s(t)$ to $x(t)$ while keeping the same role.",
+              "Keep the same circuit topology but vary which variable is shown as the tempting wrong output.",
+              "Vary the diagram layout while keeping the source-input role unchanged."
+            ]
+          },
+          "handoff_notes": "Keep the worked example visually anchored to the circuit diagram and the input/output role distinction. Do not ask the learner to solve for the circuit response."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Choosing the Capacitor Voltage as the Output",
+          "step_type": "example",
+          "learning_goal": "Choose the capacitor voltage $v_C(t)$ as the output signal and read it off the circuit correctly.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "The same series RC circuit, with the capacitor branch and capacitor voltage emphasized as the output signal.",
+            "visual_elements": [
+              "voltage source labeled $v_s(t)$",
+              "series resistor labeled $R$",
+              "capacitor labeled $C$",
+              "capacitor voltage label $v_C(t)$",
+              "current arrow $i(t)$",
+              "ground reference"
+            ],
+            "image_generation_notes": "Use the same circuit layout as the previous section so the only meaningful change is that the capacitor voltage is now highlighted as the output. Keep the schematic clean and unambiguous."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the signal that should be treated as the output.",
+            "practice_question_model": "Which circuit variable should be chosen as the output if the capacitor voltage is the target signal?",
+            "distractor_plan": [
+              "Offer the source voltage as the most tempting wrong output.",
+              "Offer the resistor voltage as the second plausible wrong output.",
+              "Offer the branch current as a role-confusion distractor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "In the same RC circuit, choose the capacitor voltage as the output and state the input-output pair.",
+            "worked_solution_goal": "Identify $v_C(t)$ as the output and connect it to the capacitor branch.",
+            "variation_from_previous": "Keeps the same input but changes the chosen output from a generic circuit variable to the capacitor voltage.",
+            "solution_step_plan": [
+              "Locate the capacitor branch and name the voltage across it $v_C(t)$.",
+              "State that the capacitor voltage is the output signal in this model.",
+              "Write the input-output pairing as $v_s(t) \\mapsto v_C(t)$.",
+              "Preview that the governing circuit relation will define how the output depends on the input."
+            ],
+            "practice_variation_axes": [
+              "Use a different symbol such as $y(t)$ for the output while keeping it on the capacitor branch.",
+              "Vary the source label but keep the capacitor voltage as the output.",
+              "Swap the highlighted branch between capacitor and resistor while preserving the same circuit."
+            ]
+          },
+          "handoff_notes": "Keep the example focused on the output assignment, not on deriving the differential equation. The circuit diagram should make the capacitor branch visually obvious."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Choosing the Resistor Voltage as the Output",
+          "step_type": "example",
+          "learning_goal": "Choose the resistor voltage $v_R(t)$ as the output signal and distinguish it from the source and capacitor voltages.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "The same series RC circuit, with the resistor branch and resistor voltage emphasized as the output signal.",
+            "visual_elements": [
+              "voltage source labeled $v_s(t)$",
+              "series resistor labeled $R$",
+              "resistor voltage label $v_R(t)$",
+              "capacitor labeled $C$",
+              "capacitor voltage label $v_C(t)$",
+              "current arrow $i(t)$"
+            ],
+            "image_generation_notes": "Keep the circuit schematic consistent with earlier sections so the learner can compare output choices across the same physical system. Highlight only the resistor branch and its voltage."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the signal that should be treated as the output.",
+            "practice_question_model": "Which circuit variable should be chosen as the output if the resistor voltage is the target signal?",
+            "distractor_plan": [
+              "Offer the source voltage as the most tempting wrong output.",
+              "Offer the capacitor voltage as the second plausible wrong output.",
+              "Offer the branch current as a role-confusion distractor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "In the same RC circuit, choose the resistor voltage as the output and state the input-output pair.",
+            "worked_solution_goal": "Identify $v_R(t)$ as the output and separate it from the input source voltage.",
+            "variation_from_previous": "Changes only the chosen output from the capacitor branch to the resistor branch.",
+            "solution_step_plan": [
+              "Locate the resistor branch and name its voltage $v_R(t)$.",
+              "State that the resistor voltage is the output signal in this model.",
+              "Write the input-output pairing as $v_s(t) \\mapsto v_R(t)$.",
+              "Note that changing the output changes the system model even though the circuit stays the same."
+            ],
+            "practice_variation_axes": [
+              "Use a different output symbol such as $y(t)$ while keeping it on the resistor branch.",
+              "Vary the source label but keep the resistor voltage as the output.",
+              "Swap the highlighted branch between capacitor and resistor while preserving the same circuit."
+            ]
+          },
+          "handoff_notes": "Keep the model-building move separate from any attempt to solve for $v_R(t)$. The learner should leave with a clean resistor-output assignment."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Interpreting the RC Circuit Relation as the System Rule",
+          "step_type": "example",
+          "learning_goal": "Translate the RC circuit equations into the system rule for the chosen input-output model.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "The same series RC circuit, with the source voltage, resistor voltage, and capacitor voltage all labeled so the governing circuit relation can be read as the system rule.",
+            "visual_elements": [
+              "voltage source labeled $v_s(t)$",
+              "series resistor labeled $R$",
+              "capacitor labeled $C$",
+              "voltage labels $v_R(t)$ and $v_C(t)$",
+              "current arrow $i(t)$",
+              "ground reference"
+            ],
+            "image_generation_notes": "Use the circuit schematic as the anchor for the governing relation. The image should help the learner read the equation from the physical layout, not replace the algebra."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the equation that states the RC circuit relation as the system rule.",
+            "practice_question_model": "Which equation correctly expresses the RC circuit relation as the system rule when $v_C(t)$ is the output?",
+            "distractor_plan": [
+              "Swap the input and output sides of the equation.",
+              "Drop the $RC$ factor or the derivative term.",
+              "Use a resistor-voltage relation instead of the capacitor-voltage relation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Using the RC circuit with source voltage $v_s(t)$ as input and capacitor voltage $v_C(t)$ as output, write the circuit relation that defines the system rule.",
+            "worked_solution_goal": "Combine KVL and component laws into the differential equation that governs the output.",
+            "variation_from_previous": "Shifts from naming roles to expressing the actual input-output rule for the circuit.",
+            "solution_step_plan": [
+              "Write KVL as $v_s(t)=v_R(t)+v_C(t)$.",
+              "Substitute $v_R(t)=R i(t)$ and $i(t)=C \\frac{d}{dt}v_C(t)$.",
+              "Simplify to the governing relation $v_s(t)=RC \\frac{d}{dt}v_C(t)+v_C(t)$.",
+              "State that this relation is the system rule connecting the input to the output."
+            ],
+            "practice_variation_axes": [
+              "Replace $v_C(t)$ with a generic output symbol such as $y(t)$.",
+              "Vary the sign convention on the resistor voltage while preserving the same physical circuit.",
+              "Keep the circuit fixed but change the source waveform so the learner still reads the same rule."
+            ]
+          },
+          "handoff_notes": "Stay on the model relation, not on solving the differential equation. The important move is translating the circuit law into the system rule."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Automobile Motion as a System",
+      "lesson_core_move": "Represent automobile motion as a continuous-time input-output system by selecting physical input and output signals and expressing their relationship as a system rule such as integrating acceleration to obtain velocity or position.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Automobile Motion as a System",
+          "step_type": "tutorial",
+          "learning_goal": "Define automobile motion as a system by identifying a physical input signal, a physical output signal, and the rule that maps one to the other through kinematic integration.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Simple one-dimensional car-motion schematic showing position x(t), velocity v(t), and acceleration a(t) signals with arrows indicating input and output pairing and one integrator block.",
+            "visual_elements": [
+              "car-motion schematic",
+              "signal labels x(t), v(t), a(t)",
+              "input-output arrows",
+              "integrator icon"
+            ],
+            "image_generation_notes": "Minimal line-art diagram only, with no decorative elements. Emphasize the mapping direction between chosen signals."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that automobile motion examples are input-output systems by naming one physical input and one physical output and expressing the system rule as a derivative/integral relation.",
+            "base_case": "Use a no-slope-motion case with constant input acceleration $a(t)=a_0$ and zero initial velocity/position so $v(t)=a_0 t$, $x(t)=\\frac12 a_0 t^2$.",
+            "paragraph_plan": [
+              "Define the core system viewpoint for motion: a mapping from one motion-related quantity over time to another.",
+              "Introduce common candidates for input and output signals: acceleration, velocity, and position.",
+              "State the kinematic operator relations that connect them, emphasizing that the same physical setup can be expressed with different chosen pairs.",
+              "Close by previewing upcoming sections: selecting valid pairs, then applying single and double integration."
+            ],
+            "display_math_plan": [
+              "$$v(t) = \\int a(\\tau)\\,d\\tau + C$$",
+              "$$x(t) = \\int v(\\tau)\\,d\\tau + D$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For a car with constant acceleration input $a(t)=2\\,\\mathrm{m/s}^2$, choose input and output signals to model one system rule and state the rule in equation form.",
+            "worked_solution_goal": "Identify a valid input-output pairing and write the corresponding system mapping with the appropriate integration relation.",
+            "variation_from_previous": "The first section's base concept is converted into one explicit modeled system rule.",
+            "solution_step_plan": [
+              "Identify a physical signal to treat as input (example: $a(t)$).",
+              "Select a compatible output signal (example: $v(t)$).",
+              "Write the direct rule connecting them with the chosen initial condition convention.",
+              "Check units and causality direction to keep the system orientation consistent."
+            ],
+            "practice_variation_axes": [
+              "Swap which kinematic variable is treated as input",
+              "Use different constant and ramp-like input examples",
+              "Change initial-condition treatment (e.g., zero versus nonzero)"
+            ]
+          },
+          "handoff_notes": "Tutorial needs a concrete schematic. Keep the first example focused: one rule only, no branching."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Choosing Automobile Motion Input and Output Signals",
+          "step_type": "example",
+          "learning_goal": "Practice selecting valid input-output assignments in automotive kinematics and reject invalid pairings.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram is required; use clean symbolic notation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic matching",
+            "practice_question_model": "Given a scenario description, choose the best input-output pair for the automobile-motion system.",
+            "distractor_plan": [
+              "Treat output as input (direction reversed).",
+              "Choose unrelated quantities such as speed squared or distance traveled as both input and output.",
+              "Use position as input and acceleration as output in a scenario where velocity is already given.",
+              "Swap to a different physical quantity without updating the rule direction."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A car's acceleration is known as a function of time. Velocity is monitored as output. Write the valid input-output statement for the motion system.",
+            "worked_solution_goal": "Select the correct pair and express the system relation as a system rule in symbols.",
+            "variation_from_previous": "This section adds a deliberate classification task that reuses the core signal-identity rules from the tutorial.",
+            "solution_step_plan": [
+              "List feasible motion variables and map each candidate as potential input or output.",
+              "Eliminate pairs that violate direction (e.g., using output to determine input in this section's framing).",
+              "Write the rule for a correct pair in $y(t)=\\mathcal{T}\\{x(t)\\}$ form.",
+              "Confirm units/signature are consistent."
+            ],
+            "practice_variation_axes": [
+              "Change the input candidate among $a(t)$ and $v(t)$",
+              "Change the output target between $v(t)$ and $x(t)$",
+              "Change wording while keeping the same variable mapping"
+            ]
+          },
+          "handoff_notes": "Keep the example short and diagnostic. Focus on variable role, not arithmetic."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Modeling Acceleration as the Input and Velocity as the Output",
+          "step_type": "example",
+          "learning_goal": "Apply system notation for the rule $v(t)=\\int a(\\tau)d\\tau$ (plus initial condition) and treat it as an input-output system.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed for this symbolic modeling step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "Given acceleration $a(t)=4t+1$ and $v(0)=0$, write $v(t)$ from the system rule.",
+            "distractor_plan": [
+              "Drop the constant of integration or initial condition.",
+              "Differentiate instead of integrate.",
+              "Swap signal orientation and produce $a(t)$ from $v(t)$.",
+              "Use incorrect variable names that break input-output consistency."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Model a system with input $a(t)$ and output $v(t)$ where $a(t)=3$ and $v(0)=2$. Compute the explicit output rule.",
+            "worked_solution_goal": "Show the single integration and constants-initial-condition handling needed to produce $v(t)$.",
+            "variation_from_previous": "Builds on selected input/output pairing by introducing the first integral chain from acceleration to velocity.",
+            "solution_step_plan": [
+              "State the system operator mathematically: $v(t)=\\int_{0}^{t} a(\\tau)d\\tau+v(0)$.",
+              "Insert the given $a(t)$ and perform symbolic integration.",
+              "Add the initial condition to finalize the output expression.",
+              "Re-express as one compact system rule mapping $a(t)$ to $v(t)$."
+            ],
+            "practice_variation_axes": [
+              "Change input form (constant vs ramp)",
+              "Use nonzero initial velocity values",
+              "Vary integration interval endpoints"
+            ]
+          },
+          "handoff_notes": "Keep symbolic steps explicit: integral operator first, simplification second, units check optional but useful."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Modeling Velocity as the Input and Position as the Output",
+          "step_type": "example",
+          "learning_goal": "Use the kinematic system rule that maps velocity input to position output through integration and preserve notation consistency.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed for this purely symbolic transformation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "With input $v(t)=2t$, $x(0)=1$, write $x(t)$ and show the corresponding system rule.",
+            "distractor_plan": [
+              "Integrate with wrong bounds or wrong variable.",
+              "Replace integration with differentiation.",
+              "Omit the initial position constant.",
+              "Invert input-output orientation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Represent the system with input $v(t)$ and output $x(t)$, then compute $x(t)$ for $v(t)=2t+1$, $x(0)=0$.",
+            "worked_solution_goal": "Convert a velocity signal to position via integration and write the input-output mapping in operator notation.",
+            "variation_from_previous": "This applies the same integration principle to the next kinematic stage and introduces position as the output.",
+            "solution_step_plan": [
+              "Declare system rule: $x(t)=\\int_{0}^{t} v(\\tau)d\\tau + x(0)$.",
+              "Substitute the given velocity expression.",
+              "Integrate term by term to get the position signal.",
+              "State the resulting operator mapping $v(t)\\to x(t)$."
+            ],
+            "practice_variation_axes": [
+              "Change velocity input type (constant/ramp/piecewise)",
+              "Set nonzero versus zero initial position",
+              "Use alternative equivalent integral forms"
+            ]
+          },
+          "handoff_notes": "Maintain exact signal naming with $v(t)$ as input and $x(t)$ as output; avoid introducing unrelated mechanics context."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Representing Acceleration-to-Position Motion as an Input-Output System",
+          "step_type": "example",
+          "learning_goal": "Compose two kinematic integrations into a single system rule that maps acceleration to position.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; keep this as two-step symbolic derivation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "For $a(t)=3t$, with $v(0)=0$ and $x(0)=0$, derive and write $x(t)$ as a system output of acceleration.",
+            "distractor_plan": [
+              "Apply only one integration instead of two.",
+              "Drop both constants of integration/initial states.",
+              "Use final position as input to get acceleration output.",
+              "Confuse integration limits and produce time-shifted expressions."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Model the system from $a(t)$ directly to $x(t)$ and compute $x(t)$ for $a(t)=t$, $v(0)=1$, $x(0)=2$.",
+            "worked_solution_goal": "Produce the composed system rule (double integral with constants) and solve the expression.",
+            "variation_from_previous": "This section increases complexity by composing the two-stage map from the prior section into one direct system rule.",
+            "solution_step_plan": [
+              "Write both relations: $v(t)=\\int a(\\tau)d\\tau+v(0)$ and $x(t)=\\int v(\\tau)d\\tau+x(0)$.",
+              "Substitute the first into the second and integrate to obtain a direct $a(t)\\to x(t)$ form.",
+              "Apply initial conditions at both stages.",
+              "Present final compact system notation and note the operator chain length."
+            ],
+            "practice_variation_axes": [
+              "Change initial velocity and position constants",
+              "Use polynomial acceleration inputs of different degree",
+              "Reframe as piecewise acceleration with same composition structure"
+            ]
+          },
+          "handoff_notes": "This final example should explicitly connect the two integral steps into one higher-order motion system representation."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Differential Equations as Input-Output Models",
+      "lesson_core_move": "Convert a differential equation into a continuous-time input-output model by identifying the input, output, derivative orders, and the equation rule that determines the output from the input.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Differential Equations as Input-Output Models",
+          "step_type": "tutorial",
+          "learning_goal": "Show that many continuous-time differential equations can be read as system maps from an input signal to an output signal through derivative-based rules.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the section is symbolic and works from notation."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define the DE-based system view: treat one time function as input, one time function as output, and encode all remaining terms in a rule connecting them.",
+            "base_case": "Use the first-order DE form $y'(t)+y(t)=x(t)$ to show input-output roles immediately.",
+            "paragraph_plan": [
+              "Introduce why differential equations are useful as system descriptions, not just solve-for-$y$ exercises.",
+              "Define output as the left-side signal to be solved for and input as the signal that drives the relation.",
+              "Show the mapping pattern for first-order and second-order examples in operator notation.",
+              "State how this lesson converts between equation text and explicit input-output reasoning before practicing examples."
+            ],
+            "display_math_plan": [
+              "$$y'(t) + a\\,y(t) = x(t)$$",
+              "$$y''(t)+b\\,y'(t)+c\\,y(t)=x(t)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Interpret $y'(t)+y(t)=x(t)$ as a system rule by naming input, output, and the operator that maps input to output.",
+            "worked_solution_goal": "Express the equation as an input-output system statement using consistent signal roles and operator form.",
+            "variation_from_previous": "The base DE pattern is converted into one explicit system role assignment and rule statement.",
+            "solution_step_plan": [
+              "Identify the candidate output symbol and identify the driven term as input.",
+              "Rewrite the relation as an operator equation, e.g., $\\mathcal{T}\\{x(t)\\}=y(t)$.",
+              "Check that differentiation and coefficients are attached to the chosen output side.",
+              "Record the final input-output description in one sentence."
+            ],
+            "practice_variation_axes": [
+              "Swap variable names while preserving input-output structure",
+              "Use a coefficient-only variant with same derivative order",
+              "Change from $x(t)$ to $u(t)$ with the same rule"
+            ]
+          },
+          "handoff_notes": "Keep this tight: one minimal DE worked through from first principles, no branching into solution methods."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying the Input and Output in a Differential Equation",
+          "step_type": "example",
+          "learning_goal": "Practice selecting which signal is input and which is output in several differential-equation forms.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; identity decisions are symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic matching",
+            "practice_question_model": "Given $y''(t)+2y'(t)+y(t)=u(t)$, choose the correct input-output pair and justify direction.",
+            "distractor_plan": [
+              "Choose forcing term and output on the same side of the equation",
+              "Reverse the system direction and map output as input",
+              "Treat a derivative of the forcing term as the output by default",
+              "Choose no output variable in non-homogeneous right-hand terms"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $2y'(t)+3y(t)=x(t)+\\sin t$, identify the valid input-output assignment and write it as a system rule.",
+            "worked_solution_goal": "Select the driven signal as input and produce a concise statement of the system mapping.",
+            "variation_from_previous": "Introduces nonhomogeneous forcing while keeping the same role-identification procedure.",
+            "solution_step_plan": [
+              "Read each term and isolate the signal that is externally specified versus determined.",
+              "Verify the mapping direction implied by forcing/input versus state/output terms.",
+              "Reject any assignment that makes output appear as its own input.",
+              "State the final input-output pair and corresponding equation form."
+            ],
+            "practice_variation_axes": [
+              "Vary equation order without changing which side is input",
+              "Use forcing as $f(t)$, $u(t)$, or $x(t)$",
+              "Add constant terms that do not affect role choice"
+            ]
+          },
+          "handoff_notes": "Question generator should emphasize directional consistency and avoid trick options that only rename symbols."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Reading Output Derivative Orders in a Differential Equation",
+          "step_type": "example",
+          "learning_goal": "Identify the order of the output derivative terms and map that order to system order in the input-output model.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is needed; this is an order-reading exercise from symbolic notation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "derivative-order identification",
+            "practice_question_model": "In $y''(t)+4y'(t)+2y(t)=x(t)$, which derivative order of $y(t)$ appears and what does that imply about system order?",
+            "distractor_plan": [
+              "Report the input derivative order instead of output derivative order",
+              "Treat the highest derivative order as the forcing side order",
+              "Infer order from coefficients only",
+              "Ignore non-constant coefficients and miscount constant terms as derivatives"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Read $y'''(t)+y''(t)+5y'(t)=x(t)-1$ and report the output derivative orders, highest order, and corresponding system order.",
+            "worked_solution_goal": "Extract derivative orders accurately and connect highest output derivative order to system order.",
+            "variation_from_previous": "Moves from role selection to interpreting derivative structure and order implications.",
+            "solution_step_plan": [
+              "List all derivative terms associated with the output signal.",
+              "Identify the highest derivative power as model order.",
+              "State why input terms do not change output-system order in this representation.",
+              "Summarize the output: order and mapping language for the section."
+            ],
+            "practice_variation_axes": [
+              "Change highest derivative order from 2 to 3 and 4",
+              "Introduce missing lower-order output terms",
+              "Add derivative terms on input for distractor discrimination"
+            ]
+          },
+          "handoff_notes": "Keep the logic explicit: identify order from output side only, not from forcing expression."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting the Equation Rule that Relates Input to Output",
+          "step_type": "example",
+          "learning_goal": "Translate a differential equation into the verbal and operator rule that maps input signal history to output signal behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Symbolic interpretation only; no diagram needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "short symbolic statement",
+            "practice_question_model": "Rewrite $y''(t)+3y'(t)+2y(t)=x(t)$ as an explicit input-output rule sentence and operator form.",
+            "distractor_plan": [
+              "Swap $x(t)$ and $y(t)$ in the operator relationship",
+              "Omit derivative coefficients and claim wrong order",
+              "State only the solved $y(t)$ expression and not the system rule",
+              "Treat the equation as algebraic instead of a dynamic operator rule"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Interpret $y''(t)+y'(t)+y(t)=x(t)$ as a rule that maps input trajectory $x(t)$ to output trajectory $y(t)$, including derivative dependence.",
+            "worked_solution_goal": "Write a complete input-output rule description that captures differentiation order and causality direction.",
+            "variation_from_previous": "Moves from identifying order to expressing the full rule structure in words and operator form.",
+            "solution_step_plan": [
+              "State the selected input-output symbols clearly.",
+              "Rewrite terms with operator language indicating output derivatives on the left.",
+              "Express rule as a mapping from input signal to output response family.",
+              "Check that the mapping is directionally explicit and mathematically consistent."
+            ],
+            "practice_variation_axes": [
+              "Replace coefficients and constant source terms",
+              "Use equivalent operator notation with $\\mathcal{D}$",
+              "Ask for compact verbal rule statement before symbolic rule"
+            ]
+          },
+          "handoff_notes": "Question generator should allow equivalent formulations as correct if symbol placement and direction are preserved."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Converting Higher-Order Differential Equations into Input-Output Models",
+          "step_type": "example",
+          "learning_goal": "Convert a higher-order equation into an explicit input-output model that preserves derivative order and forcing structure.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; provide staged symbolic conversion."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "symbolic system-rule statement",
+            "practice_question_model": "Given $y^{(4)}(t)-2y''(t)+y(t)=3x(t)$, identify the system order and write the input-output model sentence.",
+            "distractor_plan": [
+              "Count derivative orders on $x(t)$ and confuse those with output order",
+              "Reduce a fourth-order equation to first-order in output order",
+              "Drop nonlinear forcing coefficient effects",
+              "Reverse the mapping direction or leave it ambiguous"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Convert $y^{(4)}(t)+y'''(t)+5y''(t)+2y'(t)+y(t)=u(t)$ into a high-level input-output description and state the system order.",
+            "worked_solution_goal": "Identify the governing input-output rule with correct derivative hierarchy and articulate the order unambiguously.",
+            "variation_from_previous": "This extends the rule-interpretation step to mixed and higher-order coefficients.",
+            "solution_step_plan": [
+              "Mark all output derivatives and identify the highest derivative order.",
+              "Separate input forcing terms from output dynamics without solving for $y(t)$.",
+              "Write the resulting mapping in a concise operator or sentence form.",
+              "Verify the final statement is self-consistent and avoids direction ambiguity."
+            ],
+            "practice_variation_axes": [
+              "Increase or decrease derivative order while retaining driven input",
+              "Use $x(t)$ or $u(t)$ as equivalent forcing notation",
+              "Inject forcing-only constants to test robustness of extraction"
+            ]
+          },
+          "handoff_notes": "Keep this section a conversion exercise, not a full DE solver or IC/IVP lesson."
+        }
+      ]
+    }
+  ]
+}

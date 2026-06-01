@@ -1,0 +1,1818 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Convolution of Two Equal-Width Rectangular Pulses",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize that convolving two equal-width rectangular pulses reduces to tracking a sliding overlap length and scaling that length by the pulse heights.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Show two equal-width rectangular pulses on a tau-axis: a fixed support for x(tau), a flipped-and-shifted support for h(t - tau), and the overlap interval that changes as t increases.",
+            "visual_elements": [
+              "tau-axis",
+              "fixed rectangular pulse x(tau)",
+              "moving rectangular pulse h(t - tau)",
+              "shaded overlap interval",
+              "labels for width T and time shift t"
+            ],
+            "image_generation_notes": "Use a clean signal-plot style with no decorative elements; emphasize supports and overlap rather than amplitude detail."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the base schema for equal-width rectangular-pulse convolution: the integral is determined by where the two supports overlap in the convolution variable.",
+            "base_case": "Two equal-width rectangular pulses of width T, with x(tau) fixed on 0 <= tau <= T and h(t - tau) sliding across it as t changes.",
+            "paragraph_plan": [
+              "Introduce the convolution integral and identify tau as the variable used to compare the fixed pulse with the shifted pulse.",
+              "Explain that the rectangular pulses are constant on their supports, so the integrand is nonzero only on the overlap of those supports.",
+              "Name the three structural events for equal widths: first contact, peak alignment, and last contact.",
+              "Preview the output shape: the overlap length rises linearly, then falls linearly, producing a triangular convolution output."
+            ],
+            "display_math_plan": [
+              "y(t) = (x * h)(t) = \\int_{-\\infty}^{\\infty} x(\\tau)h(t - \\tau)\\,d\\tau",
+              "y(t) = AB\\,L(t)",
+              "L(t) = \\text{length of }(\\operatorname{supp} x) \\cap (\\operatorname{supp} h(t - \\tau))"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact: define the geometric overlap interpretation before any piecewise computation."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Locating First Contact, Peak Alignment, and Last Contact",
+          "step_type": "example",
+          "learning_goal": "Identify the key time breakpoints that divide the convolution into no-overlap, rising-overlap, peak, falling-overlap, and no-overlap regions.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show equal-width rectangular supports on a tau-axis at first contact, peak alignment, and last contact, with t values marked for a width-T pair.",
+            "visual_elements": [
+              "three small tau-axis panels",
+              "fixed x(tau) support",
+              "shifted h(t - tau) support",
+              "first-contact marker",
+              "peak-alignment marker",
+              "last-contact marker"
+            ],
+            "image_generation_notes": "Practice images should vary the pulse width or support location while preserving equal widths and clear edge labels."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "An ordered list of the first-contact, peak-alignment, and last-contact t values.",
+            "practice_question_model": "Two unit-height rectangular pulses have equal width 4 and are positioned so x(tau) is fixed on 0 <= tau <= 4 while h(t - tau) slides across it. Which ordered triple gives first contact, peak alignment, and last contact?",
+            "distractor_plan": [
+              "Use triples that shift all breakpoints by one pulse width.",
+              "Swap first contact and last contact.",
+              "Use half-width values instead of full-width values.",
+              "Omit the peak-alignment breakpoint."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(tau) = 1 on 0 <= tau <= T and h(tau) = 1 on 0 <= tau <= T, locate first contact, peak alignment, and last contact for h(t - tau) as t varies.",
+            "worked_solution_goal": "Determine the breakpoints t = 0, t = T, and t = 2T that organize the equal-width rectangular-pulse convolution.",
+            "variation_from_previous": "This is the first worked example, isolating the contact times before any overlap-length computation.",
+            "solution_step_plan": [
+              "Write the fixed support of x(tau) as [0, T].",
+              "Write the shifted support of h(t - tau) as [t - T, t].",
+              "Find when the shifted support first touches the fixed support.",
+              "Find when the two equal-width supports are fully aligned.",
+              "Find when the shifted support leaves the fixed support.",
+              "List the resulting time regions in order."
+            ],
+            "practice_variation_axes": [
+              "pulse width",
+              "support starting point",
+              "whether the graph labels endpoints or width"
+            ]
+          },
+          "handoff_notes": "The worked example should make the edge-tracking logic explicit; do not compute the triangular formula yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Computing the Rising Overlap Length",
+          "step_type": "example",
+          "learning_goal": "Compute the overlap length on the rising interval where the shifted rectangle is entering the fixed rectangle.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the fixed support [0, T] and the shifted support [t - T, t] during the rising-overlap region 0 <= t <= T, with the overlap interval [0, t] shaded.",
+            "visual_elements": [
+              "tau-axis",
+              "fixed support [0, T]",
+              "shifted support [t - T, t]",
+              "shaded rising overlap [0, t]",
+              "length label L(t)"
+            ],
+            "image_generation_notes": "Use a single-panel signal/support diagram; the image should support reading the interval endpoints, not solve the algebra."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "A formula for the rising overlap length as a function of t.",
+            "practice_question_model": "For two equal-width rectangular pulses of width 5 with x(tau) fixed on 0 <= tau <= 5 and h(t - tau) supported on [t - 5, t], what is the overlap length for 0 <= t <= 5?",
+            "distractor_plan": [
+              "Use the falling-region expression 10 - t.",
+              "Use the constant full width 5.",
+              "Use the shifted left endpoint t - 5 as the length.",
+              "Use zero by confusing partial overlap with no overlap."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For two unit-height rectangular pulses supported on [0, T], compute the overlap length for 0 <= t <= T.",
+            "worked_solution_goal": "Show that the rising overlap length is L(t) = t.",
+            "variation_from_previous": "This extends breakpoint identification by computing the length in the first active region.",
+            "solution_step_plan": [
+              "State the fixed support [0, T] and shifted support [t - T, t].",
+              "Restrict to the rising interval 0 <= t <= T.",
+              "Identify the overlap interval as [0, t].",
+              "Subtract endpoints to get L(t) = t - 0.",
+              "Interpret the linear increase as the entering edge sweeping across the fixed pulse."
+            ],
+            "practice_variation_axes": [
+              "pulse width",
+              "numeric versus symbolic T",
+              "support interval shifted away from the origin"
+            ]
+          },
+          "handoff_notes": "Keep the worked example narrowly focused on length; amplitude scaling comes later."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Computing the Falling Overlap Length",
+          "step_type": "example",
+          "learning_goal": "Compute the overlap length on the falling interval where the shifted rectangle is leaving the fixed rectangle.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the fixed support [0, T] and shifted support [t - T, t] during T <= t <= 2T, with the overlap interval [t - T, T] shaded.",
+            "visual_elements": [
+              "tau-axis",
+              "fixed support [0, T]",
+              "shifted support [t - T, t]",
+              "shaded falling overlap [t - T, T]",
+              "length label L(t)"
+            ],
+            "image_generation_notes": "Use visual alignment that contrasts with the rising-overlap diagram so learners see which endpoint now moves inside the fixed support."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "A formula for the falling overlap length as a function of t.",
+            "practice_question_model": "For two equal-width rectangular pulses of width 5 with x(tau) fixed on 0 <= tau <= 5 and h(t - tau) supported on [t - 5, t], what is the overlap length for 5 <= t <= 10?",
+            "distractor_plan": [
+              "Use the rising-region expression t.",
+              "Use the constant full width 5.",
+              "Use T - t instead of 2T - t.",
+              "Use the no-overlap value 0 inside the active falling region."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For two unit-height rectangular pulses supported on [0, T], compute the overlap length for T <= t <= 2T.",
+            "worked_solution_goal": "Show that the falling overlap length is L(t) = 2T - t.",
+            "variation_from_previous": "This mirrors the rising-region computation, but the active overlap now shrinks as the shifted pulse exits.",
+            "solution_step_plan": [
+              "State the fixed support [0, T] and shifted support [t - T, t].",
+              "Restrict to the falling interval T <= t <= 2T.",
+              "Identify the overlap interval as [t - T, T].",
+              "Subtract endpoints to get L(t) = T - (t - T).",
+              "Simplify to L(t) = 2T - t and check that it falls from T to 0."
+            ],
+            "practice_variation_axes": [
+              "pulse width",
+              "numeric versus symbolic T",
+              "endpoint labels shown on the signal plot"
+            ]
+          },
+          "handoff_notes": "Emphasize endpoint subtraction and boundary checks to prevent using the rising formula in the falling region."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Scaling the Overlap Length by Rectangular Pulse Heights",
+          "step_type": "example",
+          "learning_goal": "Convert overlap length into convolution value by multiplying by the product of the rectangular pulse heights.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show two equal-width rectangular pulses with labeled heights A and B and a shaded overlap interval of length L(t), with the constant product AB marked over the overlap.",
+            "visual_elements": [
+              "rectangular pulse height A",
+              "rectangular pulse height B",
+              "shaded overlap interval",
+              "label L(t)",
+              "label AB on the integrand over the overlap"
+            ],
+            "image_generation_notes": "The visual should make clear that height scaling affects vertical amplitude while overlap length still controls the time dependence."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "A scaled convolution expression for a specified active region.",
+            "practice_question_model": "Two equal-width rectangular pulses have width 5, heights 2 and 3, and supports arranged as in the standard equal-width case. Which expression gives y(t) on 0 <= t <= 5?",
+            "distractor_plan": [
+              "Use the overlap length without multiplying by both heights.",
+              "Multiply by only one pulse height.",
+              "Use the falling-region length with the correct height product.",
+              "Use the width as a constant output over the rising region."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If x(t) has height A and h(t) has height B, and both pulses have width T, compute the convolution value from the overlap length on the rising and falling regions.",
+            "worked_solution_goal": "Show that y(t) = ABt for 0 <= t <= T and y(t) = AB(2T - t) for T <= t <= 2T.",
+            "variation_from_previous": "This adds amplitude scaling to the overlap-length formulas developed in the rising and falling regions.",
+            "solution_step_plan": [
+              "State that x(tau)h(t - tau) equals AB wherever the supports overlap.",
+              "Use y(t) = AB L(t) because the integrand is constant over the overlap interval.",
+              "Substitute L(t) = t on the rising region.",
+              "Substitute L(t) = 2T - t on the falling region.",
+              "Check that the peak value is ABT at full alignment."
+            ],
+            "practice_variation_axes": [
+              "pulse heights",
+              "pulse width",
+              "rising versus falling region"
+            ]
+          },
+          "handoff_notes": "Do not let this section become a full piecewise assembly; its job is the height-product scaling rule."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Writing the Piecewise Triangular Convolution Output",
+          "step_type": "example",
+          "learning_goal": "Assemble the contact times, overlap lengths, and height scaling into the complete piecewise triangular convolution output.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the final triangular output y(t) under the corresponding equal-width rectangular input pulses, with breakpoints 0, T, and 2T labeled and peak height ABT labeled.",
+            "visual_elements": [
+              "input rectangular pulses",
+              "output time axis",
+              "triangular convolution waveform",
+              "breakpoints 0, T, 2T",
+              "peak value ABT"
+            ],
+            "image_generation_notes": "For practice, vary width and heights while keeping equal-width rectangles; the image should provide the signal data, not answer-choice diagrams."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "A complete piecewise formula for y(t), including zero outside the active interval.",
+            "practice_question_model": "Two equal-width rectangular pulses have width 4, heights 2 and 1, and the standard supports that produce first contact at t = 0 and last contact at t = 8. Which piecewise expression gives y(t)?",
+            "distractor_plan": [
+              "Use correct formulas but wrong breakpoints.",
+              "Omit the zero-output regions.",
+              "Use the unscaled overlap lengths instead of height-scaled values.",
+              "Use the rising expression on both active intervals.",
+              "Give the correct triangular shape with an incorrect peak height."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write the complete convolution y(t) for two equal-width rectangular pulses of heights A and B supported on intervals of width T.",
+            "worked_solution_goal": "Produce the full triangular piecewise output with zero regions, rising region, falling region, and peak value.",
+            "variation_from_previous": "This combines the earlier breakpoints, overlap-length formulas, and height scaling into one final output.",
+            "solution_step_plan": [
+              "List the time regions t < 0, 0 <= t <= T, T <= t <= 2T, and t > 2T.",
+              "Assign y(t) = 0 in the no-overlap regions.",
+              "Use y(t) = ABt on the rising region.",
+              "Use y(t) = AB(2T - t) on the falling region.",
+              "State the peak value y(T) = ABT and connect the formula to the triangular waveform."
+            ],
+            "practice_variation_axes": [
+              "pulse width",
+              "pulse heights",
+              "numeric versus symbolic final expression",
+              "support shifted away from the origin while preserving equal widths"
+            ]
+          },
+          "handoff_notes": "This is the synthesis section; the writer should explicitly tie each piece of the formula to its overlap region."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "Convolution of Unequal-Width Rectangular Pulses",
+      "lesson_core_move": "Compute the convolution of unequal-width rectangular pulses by identifying the edge-aligned breakpoints, expressing the sliding overlap length piecewise, and scaling by the pulse amplitudes to obtain the trapezoidal output.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Convolution of Unequal-Width Rectangular Pulses",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce why unequal-width rectangular pulses produce a trapezoidal convolution output and preview the workflow of breakpoints, overlap length, and amplitude scaling.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Concept diagram showing a shorter rectangular pulse sliding across a wider rectangular pulse on the tau-axis, with first contact, full-overlap plateau, and last contact positions marked.",
+            "visual_elements": [
+              "two rectangular pulses of different widths",
+              "tau-axis and t labels",
+              "first contact, full-overlap, and last-contact positions",
+              "highlighted overlap length"
+            ],
+            "image_generation_notes": "Use the image to reduce load in the opening explanation; keep labels generic and avoid decorative styling."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Make explicit that unequal widths create three nonzero overlap behaviors: growing overlap, full overlap at the shorter width, and shrinking overlap.",
+            "base_case": "Use two positive rectangular pulses with unit heights and unequal widths, with the shorter pulse sliding across the longer pulse.",
+            "paragraph_plan": [
+              "State the convolution-as-overlap-area viewpoint for rectangular pulses.",
+              "Define the edge-aligned breakpoints that split t into no-overlap, growing-overlap, full-overlap, shrinking-overlap, and no-overlap regions.",
+              "Explain that the shorter width determines the plateau overlap length.",
+              "Explain that pulse amplitudes scale the overlap area after the overlap length is found.",
+              "Preview the final trapezoidal output as a piecewise function built from the three nonzero overlap regions."
+            ],
+            "display_math_plan": [
+              "Show y(t)=\\int_{-\\infty}^{\\infty}x(\\tau)h(t-\\tau)\\,d\\tau.",
+              "Show y(t)=A_xA_hL(t), where L(t) is the overlap length of the two rectangular supports."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section conceptual and compact; do not compute a full piecewise convolution before the example sections."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Edge-Aligned Breakpoints",
+          "step_type": "example",
+          "learning_goal": "Locate the ordered t-values where the shifted pulse first touches, becomes fully overlapping, stops being fully overlapping, and finally stops overlapping the fixed pulse.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Signal plot pair for x(tau) and h(t-tau) with unequal rectangular widths, showing the four edge-alignment events that determine the breakpoints.",
+            "visual_elements": [
+              "fixed support of x(tau)",
+              "sliding support of h(t-tau)",
+              "left and right edges of both supports",
+              "four ordered breakpoint labels"
+            ],
+            "image_generation_notes": "Use simple horizontal rectangular supports on a tau-axis; vary widths in questions while preserving one shorter and one longer pulse."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "ordered list of breakpoint t-values",
+            "practice_question_model": "From the signal plots for x(t) and h(t), where x(t) is nonzero on [0,3] and h(t) is nonzero on [0,8], list the edge-aligned breakpoints for the convolution.",
+            "distractor_plan": [
+              "Check for omitted plateau-start or plateau-end breakpoints.",
+              "Check for using only the total support endpoints.",
+              "Check for adding widths in the wrong order when locating final contact."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=2 on 0\\le t\\le 4 and h(t)=3 on 0\\le t\\le 7, identify the edge-aligned breakpoints of y(t)=x(t)*h(t).",
+            "worked_solution_goal": "Find the ordered breakpoints t=0, t=4, t=7, and t=11 before computing any overlap formulas.",
+            "variation_from_previous": "Moves from conceptual overlap regions to the first executable task: locating the t-values that control every later piece.",
+            "solution_step_plan": [
+              "Write the fixed support of x(tau) as 0\\le \\tau\\le 4.",
+              "Write the shifted support of h(t-\\tau) as t-7\\le \\tau\\le t.",
+              "Set the right edge of h(t-\\tau) equal to the left edge of x(tau) for first contact.",
+              "Set the right edge of h(t-\\tau) equal to the right edge of x(tau) for the start of full overlap.",
+              "Set the left edge of h(t-\\tau) equal to the left edge of x(tau) for the end of full overlap.",
+              "Set the left edge of h(t-\\tau) equal to the right edge of x(tau) for last contact."
+            ],
+            "practice_variation_axes": [
+              "shorter pulse width",
+              "longer pulse width",
+              "whether x or h is the shorter pulse",
+              "support starting point if still kept simple"
+            ]
+          },
+          "handoff_notes": "Treat breakpoint identification as the control structure for the lesson; avoid computing overlap lengths in this section."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Computing the Growing-Overlap Region",
+          "step_type": "example",
+          "learning_goal": "Compute the rising branch by expressing the overlap length during first contact through full containment and multiplying by the amplitude product.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Rectangular pulse overlap diagram focused on the growing-overlap interval, with the overlap length increasing from zero to the shorter width.",
+            "visual_elements": [
+              "fixed shorter rectangular support",
+              "wider shifted rectangular support entering from the left",
+              "growing overlap segment",
+              "breakpoint interval for the rising branch"
+            ],
+            "image_generation_notes": "Show only the visual information needed to identify the growing overlap length; question images should vary widths and heights."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "formula for y(t) on the growing-overlap interval",
+            "practice_question_model": "Using the plotted rectangular pulses with x(t)=2 on [0,3] and h(t)=5 on [0,8], find y(t) on the growing-overlap interval 0\\le t\\le 3.",
+            "distractor_plan": [
+              "Check for giving overlap length without multiplying by amplitudes.",
+              "Check for using the longer width as the rising-branch endpoint.",
+              "Check for writing a constant plateau value instead of a linear function of t."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=2 on 0\\le t\\le 4 and h(t)=3 on 0\\le t\\le 7, compute y(t) on the growing-overlap interval 0\\le t\\le 4.",
+            "worked_solution_goal": "Show that the growing overlap length is L(t)=t and therefore y(t)=6t on 0\\le t\\le 4.",
+            "variation_from_previous": "Uses the first two breakpoints from the prior section and adds the first overlap-length formula.",
+            "solution_step_plan": [
+              "State that the relevant interval is from first contact to the start of full overlap.",
+              "Identify the overlap interval in tau as 0\\le \\tau\\le t.",
+              "Compute the overlap length L(t)=t.",
+              "Multiply L(t) by the amplitude product 2\\cdot 3.",
+              "Attach the correct t-interval to the resulting branch."
+            ],
+            "practice_variation_axes": [
+              "pulse amplitudes",
+              "shorter pulse width",
+              "whether the rising branch starts at t=0 or a shifted first-contact time",
+              "inclusive or endpoint notation conventions"
+            ]
+          },
+          "handoff_notes": "Keep the worked solution focused on the growing region only; later sections handle plateau, shrinking, and full assembly."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Computing the Full-Overlap Plateau",
+          "step_type": "example",
+          "learning_goal": "Compute the constant middle branch by recognizing that the shorter pulse is fully contained in the longer pulse throughout the plateau interval.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Rectangular pulse overlap diagram focused on the full-overlap plateau, with the entire shorter support contained inside the longer shifted support.",
+            "visual_elements": [
+              "shorter rectangular support fully contained",
+              "longer rectangular support extending beyond both edges",
+              "constant overlap length equal to shorter width",
+              "plateau interval labels"
+            ],
+            "image_generation_notes": "Make containment visually clear; avoid unnecessary animation or extra regions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "constant formula for y(t) with its plateau interval",
+            "practice_question_model": "Using the plotted rectangular pulses with x(t)=2 on [0,3] and h(t)=5 on [0,8], find y(t) on the full-overlap plateau interval.",
+            "distractor_plan": [
+              "Check for using the longer width instead of the shorter width as the overlap length.",
+              "Check for forgetting to multiply by both amplitudes.",
+              "Check for assigning the plateau to the entire output support."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=2 on 0\\le t\\le 4 and h(t)=3 on 0\\le t\\le 7, compute y(t) on the full-overlap interval 4\\le t\\le 7.",
+            "worked_solution_goal": "Show that the plateau overlap length is L(t)=4 and therefore y(t)=24 on 4\\le t\\le 7.",
+            "variation_from_previous": "Extends the rising-branch computation to the constant middle case where overlap length stops changing.",
+            "solution_step_plan": [
+              "State that the full-overlap interval runs from t=4 to t=7.",
+              "Recognize that the whole shorter support is covered throughout this interval.",
+              "Set the overlap length equal to the shorter width, L(t)=4.",
+              "Multiply by the amplitude product 2\\cdot 3.",
+              "Attach the plateau interval to the constant branch."
+            ],
+            "practice_variation_axes": [
+              "shorter pulse width",
+              "longer pulse width",
+              "pulse amplitudes",
+              "which signal has the shorter support"
+            ]
+          },
+          "handoff_notes": "Emphasize the recognition move: full containment means constant overlap length, not a new integral setup."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Computing the Shrinking-Overlap Region",
+          "step_type": "example",
+          "learning_goal": "Compute the falling branch by expressing the overlap length after full containment ends and scaling it by the amplitude product.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Rectangular pulse overlap diagram focused on the shrinking-overlap interval, with overlap length decreasing from the shorter width to zero.",
+            "visual_elements": [
+              "fixed rectangular support",
+              "shifted rectangular support exiting to the right",
+              "shrinking overlap segment",
+              "last two breakpoint labels"
+            ],
+            "image_generation_notes": "Show the exit-side edge alignment clearly so the expression total-width-minus-t is visually motivated."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "formula for y(t) on the shrinking-overlap interval",
+            "practice_question_model": "Using the plotted rectangular pulses with x(t)=2 on [0,3] and h(t)=5 on [0,8], find y(t) on the shrinking-overlap interval 8\\le t\\le 11.",
+            "distractor_plan": [
+              "Check for writing the rising expression again instead of a decreasing expression.",
+              "Check for using the wrong final-contact time in the expression.",
+              "Check for omitting amplitude scaling."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=2 on 0\\le t\\le 4 and h(t)=3 on 0\\le t\\le 7, compute y(t) on the shrinking-overlap interval 7\\le t\\le 11.",
+            "worked_solution_goal": "Show that the shrinking overlap length is L(t)=11-t and therefore y(t)=6(11-t) on 7\\le t\\le 11.",
+            "variation_from_previous": "Adds the symmetric exit-side computation after the plateau, with overlap length decreasing instead of increasing or staying constant.",
+            "solution_step_plan": [
+              "State that the shrinking interval runs from the end of full overlap to last contact.",
+              "Identify the overlap interval in tau as t-7\\le \\tau\\le 4.",
+              "Compute the overlap length L(t)=4-(t-7)=11-t.",
+              "Multiply L(t) by the amplitude product 2\\cdot 3.",
+              "Attach the correct t-interval to the falling branch."
+            ],
+            "practice_variation_axes": [
+              "final-contact time",
+              "pulse amplitudes",
+              "which edge exits last",
+              "shorter and longer support widths"
+            ]
+          },
+          "handoff_notes": "Make the endpoint subtraction explicit so the writer prevents sign errors in the falling branch."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Assembling the Piecewise Trapezoidal Output",
+          "step_type": "example",
+          "learning_goal": "Combine the no-overlap, growing, plateau, and shrinking branches into one piecewise trapezoidal convolution output.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Input rectangular pulse plots paired with the resulting trapezoidal output sketch, with breakpoints aligned between the input overlap events and output branches.",
+            "visual_elements": [
+              "two unequal-width rectangular input pulses",
+              "four breakpoint markers",
+              "trapezoidal output with rising, plateau, and falling branches",
+              "zero-output regions outside support"
+            ],
+            "image_generation_notes": "Use the visual to connect the piecewise formula to the trapezoid shape; practice images should vary widths and amplitudes."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "complete piecewise formula for y(t)",
+            "practice_question_model": "Using the plotted rectangular pulses with x(t)=2 on [0,3] and h(t)=5 on [0,8], write the complete piecewise formula for y(t)=x(t)*h(t).",
+            "distractor_plan": [
+              "Check for missing zero-output regions.",
+              "Check for swapping plateau and shrinking intervals.",
+              "Check for correct amplitude scaling on all three nonzero branches.",
+              "Check for continuity at the internal breakpoints."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(t)=2 on 0\\le t\\le 4 and h(t)=3 on 0\\le t\\le 7, assemble the complete piecewise formula for y(t)=x(t)*h(t).",
+            "worked_solution_goal": "Combine the branches into y(t)=0 outside [0,11], y(t)=6t on [0,4], y(t)=24 on [4,7], and y(t)=6(11-t) on [7,11].",
+            "variation_from_previous": "Integrates all prior branch computations into the final output representation.",
+            "solution_step_plan": [
+              "List the ordered breakpoints from the earlier section.",
+              "Place zero-output branches before first contact and after last contact.",
+              "Insert the growing branch on the first nonzero interval.",
+              "Insert the plateau branch on the middle interval.",
+              "Insert the shrinking branch on the final nonzero interval.",
+              "Check that adjacent branch values match at the internal breakpoints."
+            ],
+            "practice_variation_axes": [
+              "pulse amplitudes",
+              "shorter pulse width",
+              "longer pulse width",
+              "whether the shorter support belongs to x or h",
+              "support endpoints while preserving unequal widths"
+            ]
+          },
+          "handoff_notes": "This is the culmination section; the writer should show assembly from earlier subgoals rather than re-derive every branch from scratch."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Triangular Outputs from Rectangular Pulses",
+      "lesson_core_move": "Construct the triangular convolution output for rectangular pulses by using the overlap interval to compute the linearly increasing and decreasing overlap area across each time region.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Triangular Outputs from Rectangular Pulses",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize that equal-width rectangular pulses produce a triangular convolution output because their overlap area grows linearly to a maximum and then shrinks linearly back to zero.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Show two equal-width rectangular pulses in the convolution variable, one fixed as x(\\tau) and one shifted as h(t-\\tau), with small panels for first contact, maximum overlap, and last contact, plus the matching triangular output sketch.",
+            "visual_elements": [
+              "fixed rectangular pulse x(\\tau)",
+              "shifted rectangular pulse h(t-\\tau)",
+              "\\tau-axis overlap interval",
+              "first-contact, maximum-overlap, and last-contact time markers",
+              "triangular convolution output y(t)"
+            ],
+            "image_generation_notes": "Use simple signal plots with labeled axes and shaded overlap regions; avoid decorative elements and keep the visual tied to the overlap-area idea."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Explicitly connect rectangular-pulse convolution to overlap area and explain why a linearly changing overlap length creates a triangular output.",
+            "base_case": "Two unit-height rectangular pulses with support [0, 2], so h(t-\\tau) has support [t-2, t] and the overlap length determines y(t).",
+            "paragraph_plan": [
+              "State the lesson target: build the triangular output by tracking how much of two rectangular pulses overlaps as t changes.",
+              "Recall that convolution multiplies x(\\tau) by h(t-\\tau) and integrates over the common support.",
+              "Explain that for rectangular pulses, the product is constant over the overlap interval, so the integral becomes height product times overlap length.",
+              "Use the base case to identify the qualitative flow: no overlap, growing overlap, shrinking overlap, no overlap.",
+              "Preview the four active steps that follow: locate time regions, compute rising area, compute falling area, and assemble the piecewise triangle."
+            ],
+            "display_math_plan": [
+              "y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau",
+              "y(t)=(\\text{height product})(\\text{overlap length at time }t)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial as a compact schema-builder; do not derive the full piecewise formula before the example sections."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Locating the Time Regions of a Triangular Convolution Output",
+          "step_type": "example",
+          "learning_goal": "Determine the first-contact, maximum-overlap, and last-contact times for equal-width rectangular pulses and use them to label the rising, falling, and zero-output regions.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show x(\\tau) on [0, 2] and h(t-\\tau) on [t-2, t], with movable interval endpoints and vertical markers at the time values where contact begins, full alignment occurs, and contact ends.",
+            "visual_elements": [
+              "support interval of x(\\tau)",
+              "support interval of h(t-\\tau)",
+              "endpoint labels 0, 2, t-2, and t",
+              "rising region marker",
+              "falling region marker"
+            ],
+            "image_generation_notes": "Use the visual as task data for both the worked example and mirrored questions; keep endpoints and region labels readable."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "ordered breakpoints and labeled time regions",
+            "practice_question_model": "Given two unit-height rectangular pulses with support [0, 3], identify the no-overlap, rising-overlap, and falling-overlap time regions for their convolution.",
+            "distractor_plan": [
+              "For feedback, watch for treating the h support as [t, t+W] instead of [t-W, t].",
+              "For feedback, watch for using the pulse width as the last-contact time instead of twice the width."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses with x(\\tau)=1 on 0\\le \\tau\\le 2 and h(\\tau)=1 on 0\\le \\tau\\le 2, locate the time regions where (x*h)(t) is zero, rising, and falling.",
+            "worked_solution_goal": "Find the breakpoints t=0, t=2, and t=4 and label the output regions around them.",
+            "variation_from_previous": "Moves from the tutorial's qualitative overlap story to explicit breakpoint and region identification.",
+            "solution_step_plan": [
+              "Write the fixed support of x(\\tau) as [0, 2].",
+              "Convert the support of h(t-\\tau) to [t-2, t].",
+              "Find first contact by setting the right endpoint of h(t-\\tau) equal to the left endpoint of x(\\tau).",
+              "Find maximum overlap by aligning the two intervals.",
+              "Find last contact by setting the left endpoint of h(t-\\tau) equal to the right endpoint of x(\\tau).",
+              "State the resulting no-overlap, rising-overlap, and falling-overlap intervals in t."
+            ],
+            "practice_variation_axes": [
+              "change the common pulse width",
+              "shift both supports while preserving equal widths",
+              "vary endpoint notation while preserving the same contact logic"
+            ]
+          },
+          "handoff_notes": "The example should not compute any convolution values yet; it should only establish the time partition that later sections use."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Computing the Rising Overlap Area",
+          "step_type": "example",
+          "learning_goal": "Compute the rising branch of the triangular convolution output by turning the growing overlap interval into a linearly increasing area.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the rising-region overlap for x(\\tau) on [0, 2] and h(t-\\tau) on [t-2, t] when 0\\le t\\le 2, with the overlap interval [0, t] shaded and labeled.",
+            "visual_elements": [
+              "rectangular pulse heights",
+              "shaded rising overlap interval [0, t]",
+              "\\tau-axis endpoint labels",
+              "height product label",
+              "rising branch of y(t)"
+            ],
+            "image_generation_notes": "The image should make the growing overlap length visually clear; do not include the full final piecewise answer."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "linear expression for y(t) on the rising interval",
+            "practice_question_model": "Let x(\\tau)=2 on [0, 3] and h(\\tau)=4 on [0, 3]. Find (x*h)(t) on the rising interval 0\\le t\\le 3.",
+            "distractor_plan": [
+              "For feedback, watch for omitting the pulse-height product.",
+              "For feedback, watch for using the falling overlap length instead of the rising overlap length."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(\\tau)=2 on 0\\le \\tau\\le 2 and h(\\tau)=3 on 0\\le \\tau\\le 2, find (x*h)(t) on the rising region 0\\le t\\le 2.",
+            "worked_solution_goal": "Derive y(t)=6t on the rising interval by multiplying the growing overlap length by the height product.",
+            "variation_from_previous": "Uses the time region already located and adds the first area computation.",
+            "solution_step_plan": [
+              "State the rising interval from the previous section: 0\\le t\\le 2.",
+              "Write the supports x(\\tau): [0, 2] and h(t-\\tau): [t-2, t].",
+              "Identify the overlap interval during the rising region as [0, t].",
+              "Compute the overlap length as t.",
+              "Multiply the overlap length by the product of pulse heights, 2\\cdot 3.",
+              "State the rising branch expression for y(t)."
+            ],
+            "practice_variation_axes": [
+              "change pulse heights",
+              "change common pulse width",
+              "use unit-height pulses before adding nonunit heights"
+            ]
+          },
+          "handoff_notes": "Keep the computation focused on one branch; do not ask for the falling branch or full piecewise output in this section."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Computing the Falling Overlap Area",
+          "step_type": "example",
+          "learning_goal": "Compute the falling branch of the triangular convolution output by turning the shrinking overlap interval into a linearly decreasing area.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the falling-region overlap for x(\\tau) on [0, 2] and h(t-\\tau) on [t-2, t] when 2\\le t\\le 4, with the overlap interval [t-2, 2] shaded and labeled.",
+            "visual_elements": [
+              "rectangular pulse heights",
+              "shaded falling overlap interval [t-2, 2]",
+              "\\tau-axis endpoint labels",
+              "shrinking overlap length label",
+              "falling branch of y(t)"
+            ],
+            "image_generation_notes": "Make the left endpoint of the overlap move with t and the right endpoint fixed at the end of x(\\tau); keep labels uncluttered."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "linear expression for y(t) on the falling interval",
+            "practice_question_model": "Let x(\\tau)=3 on [0, 4] and h(\\tau)=2 on [0, 4]. Find (x*h)(t) on the falling interval 4\\le t\\le 8.",
+            "distractor_plan": [
+              "For feedback, watch for using t-W instead of 2W-t as the falling overlap length.",
+              "For feedback, watch for forgetting to multiply by both pulse heights."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(\\tau)=2 on 0\\le \\tau\\le 2 and h(\\tau)=3 on 0\\le \\tau\\le 2, find (x*h)(t) on the falling region 2\\le t\\le 4.",
+            "worked_solution_goal": "Derive y(t)=6(4-t) on the falling interval by multiplying the shrinking overlap length by the height product.",
+            "variation_from_previous": "Uses the same pulses as the rising-area section but changes the overlap interval from growing to shrinking.",
+            "solution_step_plan": [
+              "State the falling interval: 2\\le t\\le 4.",
+              "Write the supports x(\\tau): [0, 2] and h(t-\\tau): [t-2, t].",
+              "Identify the overlap interval during the falling region as [t-2, 2].",
+              "Compute the overlap length as 2-(t-2)=4-t.",
+              "Multiply the overlap length by the product of pulse heights, 2\\cdot 3.",
+              "State the falling branch expression for y(t)."
+            ],
+            "practice_variation_axes": [
+              "change pulse heights",
+              "change common pulse width",
+              "ask for the falling interval explicitly or require it from endpoints"
+            ]
+          },
+          "handoff_notes": "Contrast the falling interval with the rising interval so the learner sees why the expression decreases as t increases."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Writing the Complete Piecewise Triangular Output",
+          "step_type": "example",
+          "learning_goal": "Assemble the no-overlap, rising-area, and falling-area cases into one complete piecewise triangular convolution output.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the input rectangular pulses with contact breakpoints and the completed triangular output y(t), with the rising and falling branches aligned to their time intervals.",
+            "visual_elements": [
+              "input rectangular pulses",
+              "breakpoints t=0, t=W, and t=2W",
+              "rising branch label",
+              "falling branch label",
+              "zero-output regions",
+              "completed triangular y(t) plot"
+            ],
+            "image_generation_notes": "Use the image to support assembly of the final piecewise rule; do not make answer choices graphical."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "complete piecewise definition of y(t)",
+            "practice_question_model": "Let x(\\tau)=1 on [0, 3] and h(\\tau)=5 on [0, 3]. Write the complete piecewise formula for (x*h)(t).",
+            "distractor_plan": [
+              "For feedback, watch for omitting the zero-output regions outside the contact interval.",
+              "For feedback, watch for using the same expression on both the rising and falling intervals.",
+              "For feedback, watch for incorrect endpoint ordering in the piecewise definition."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For x(\\tau)=2 on 0\\le \\tau\\le 2 and h(\\tau)=3 on 0\\le \\tau\\le 2, write the complete piecewise formula for (x*h)(t).",
+            "worked_solution_goal": "Combine the breakpoints, zero-output regions, rising branch, and falling branch into the full triangular output.",
+            "variation_from_previous": "Combines the prior region, rising-area, and falling-area work into the final lesson target.",
+            "solution_step_plan": [
+              "List the breakpoints t=0, t=2, and t=4.",
+              "Write y(t)=0 for t<0 and for t>4.",
+              "Use the rising branch y(t)=6t for 0\\le t\\le 2.",
+              "Use the falling branch y(t)=6(4-t) for 2\\le t\\le 4.",
+              "Assemble the cases in increasing order of t.",
+              "Check that the two nonzero branches meet at the peak value when t=2."
+            ],
+            "practice_variation_axes": [
+              "change pulse width",
+              "change pulse heights",
+              "shift supports while keeping equal widths",
+              "include or omit an output sketch as supporting data"
+            ]
+          },
+          "handoff_notes": "This is the synthesis section; the example writer should make the continuity/peak check brief and keep the main focus on assembling the piecewise output."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Trapezoidal Outputs from Rectangular Pulses",
+      "lesson_core_move": "Compute trapezoidal outputs from unequal-width rectangular-pulse convolution by partitioning time into no-overlap, growing-overlap, full-overlap, and shrinking-overlap regions.",
+      "section_count": 7,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Trapezoidal Outputs from Rectangular Pulses",
+          "step_type": "tutorial",
+          "learning_goal": "Recognize that convolving unequal-width rectangular pulses produces a trapezoid because the overlap length grows, stays constant, and then shrinks.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Show two unit-height rectangular pulses of unequal widths on aligned time axes, a sliding overlap snapshot in the convolution variable, and the resulting trapezoidal output divided into no-overlap, growing-overlap, full-overlap, and shrinking-overlap regions.",
+            "visual_elements": [
+              "unequal-width rectangular pulse x(t)",
+              "unequal-width rectangular pulse h(t)",
+              "overlap length in tau",
+              "trapezoidal output y(t)",
+              "four labeled time regions"
+            ],
+            "image_generation_notes": "Use clean signal plots with labeled breakpoints and region names; avoid decorative styling and avoid adding unrelated signal shapes."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Explain how unequal rectangular pulse widths create a trapezoidal convolution output from overlap length.",
+            "base_case": "Use unit-height pulses with supports [0, 5] and [0, 2] so the shorter pulse can fully overlap the longer pulse.",
+            "paragraph_plan": [
+              "State that the convolution value is the area of overlap between x(tau) and h(t - tau) when the pulses have unit height.",
+              "Contrast equal-width pulses, where the overlap immediately changes from growing to shrinking, with unequal-width pulses, where the shorter pulse can be fully inside the longer pulse.",
+              "Name the four interior regions in order: growing overlap, full overlap, and shrinking overlap, with no-overlap regions before first contact and after last contact.",
+              "Connect each region to the output shape: zero, increasing ramp, constant plateau, decreasing ramp, zero.",
+              "Preview that the lesson will compute each piece by ordering breakpoints and writing the overlap length on each interval."
+            ],
+            "display_math_plan": [
+              "y(t) = \\int_{-\\infty}^{\\infty} x(\\tau)h(t - \\tau)\\,d\\tau",
+              "For unit-height rectangular pulses, y(t) = overlap length.",
+              "Region pattern: 0, growing ramp, plateau, shrinking ramp, 0"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial to a minimum effective dose; the visual should reduce cognitive load by making the region names refer to visible overlap behavior."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Ordering the Breakpoints for Unequal-Width Rectangular Pulses",
+          "step_type": "example",
+          "learning_goal": "Order the contact times that divide unequal rectangular-pulse convolution into no-overlap, growing-overlap, full-overlap, shrinking-overlap, and no-overlap regions.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show x(tau) with support [0, 5] and h(t - tau) sweeping across it for a pulse h of width 2; mark the breakpoints t = 0, 2, 5, and 7 on a shared t-axis.",
+            "visual_elements": [
+              "fixed support of x(tau)",
+              "moving support of h(t - tau)",
+              "first-contact breakpoint",
+              "full-overlap start",
+              "full-overlap end",
+              "last-contact breakpoint"
+            ],
+            "image_generation_notes": "For questions, vary the long and short pulse widths but keep axis labels and breakpoint markers clear; do not include answer text in the image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "ordered breakpoints with interval labels",
+            "practice_question_model": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 6 and h(t) = 1 on 0 <= t <= 3, list the ordered breakpoints and name the region between each consecutive pair.",
+            "distractor_plan": [
+              "Flag responses that swap the short width and long width breakpoints.",
+              "Flag responses that omit the sum-of-widths breakpoint.",
+              "Flag responses that label the middle interval as growing or shrinking instead of full-overlap."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 5 and h(t) = 1 on 0 <= t <= 2, list the convolution breakpoints that separate the no-overlap, growing-overlap, full-overlap, shrinking-overlap, and no-overlap regions.",
+            "worked_solution_goal": "Produce the ordered breakpoints t = 0, 2, 5, 7 and attach the correct region label to each interval.",
+            "variation_from_previous": "Move from qualitative trapezoid recognition to concrete breakpoint ordering for one unequal-width pulse pair.",
+            "solution_step_plan": [
+              "Identify the longer support length and the shorter support length.",
+              "Use first contact at t = 0 and last contact at t = 5 + 2.",
+              "Use the shorter width to mark the end of the growing-overlap interval.",
+              "Use the longer width to mark the end of the full-overlap interval.",
+              "Write the ordered region map from left to right."
+            ],
+            "practice_variation_axes": [
+              "short pulse width",
+              "long pulse width",
+              "whether x or h is the shorter pulse",
+              "support endpoints that still begin at zero"
+            ]
+          },
+          "handoff_notes": "Keep endpoint conventions informal; in continuous-time area calculations, isolated endpoint inclusions do not change the convolution value."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Identifying No-Overlap Regions Before and After Contact",
+          "step_type": "example",
+          "learning_goal": "Determine the time intervals where the rectangular pulses do not overlap, so the convolution output is zero.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the same unequal-width pulse pair with h(t - tau) positioned entirely before first contact and entirely after last contact; highlight that the overlap length is zero in both outer regions.",
+            "visual_elements": [
+              "pre-contact no-overlap position",
+              "post-contact no-overlap position",
+              "zero overlap length",
+              "outer t-intervals",
+              "zero output on the y(t) axis"
+            ],
+            "image_generation_notes": "For question images, vary pulse widths while making the first-contact and last-contact positions visually unambiguous."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "two no-overlap intervals and the value y(t) = 0",
+            "practice_question_model": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 6 and h(t) = 1 on 0 <= t <= 3, identify the time intervals before first contact and after last contact where y(t) = 0.",
+            "distractor_plan": [
+              "Flag responses that use the shorter width as the last-contact time.",
+              "Flag responses that include the full-overlap interval as a no-overlap region.",
+              "Flag responses that give a nonzero output outside the contact interval."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 5 and h(t) = 1 on 0 <= t <= 2, identify the time intervals where the convolution output is zero because the pulses do not overlap.",
+            "worked_solution_goal": "Conclude that y(t) = 0 before first contact and after last contact, using t < 0 and t > 7 as the outer regions.",
+            "variation_from_previous": "Use the ordered breakpoints from the prior section to isolate only the two outer no-overlap regions.",
+            "solution_step_plan": [
+              "Recall the ordered breakpoints t = 0, 2, 5, 7.",
+              "Identify t < 0 as the region before first contact.",
+              "Identify t > 7 as the region after last contact.",
+              "State that the overlap length is zero in both regions.",
+              "Write the corresponding output value y(t) = 0."
+            ],
+            "practice_variation_axes": [
+              "last-contact time",
+              "long pulse width",
+              "short pulse width",
+              "strict versus non-strict endpoint notation handled consistently"
+            ]
+          },
+          "handoff_notes": "Do not let the section become a full piecewise assembly; keep the active move focused on zero-output regions."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Computing the Growing-Overlap Ramp",
+          "step_type": "example",
+          "learning_goal": "Compute the increasing ramp by expressing the growing overlap length as a function of time.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the growing-overlap interval for x(tau) on [0, 5] and a width-2 h(t - tau), with the overlap segment labeled as length t for 0 < t < 2.",
+            "visual_elements": [
+              "fixed rectangular support",
+              "moving rectangular support during first contact",
+              "overlap segment labeled t",
+              "growing ramp on output plot",
+              "growing interval 0 < t < 2"
+            ],
+            "image_generation_notes": "Question images should vary the pulse widths but keep the growing-overlap segment explicitly visible as a length measured from first contact."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "formula for y(t) on the growing-overlap interval",
+            "practice_question_model": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 6 and h(t) = 1 on 0 <= t <= 3, compute y(t) on the growing-overlap interval.",
+            "distractor_plan": [
+              "Flag responses that use the shorter pulse width as a constant plateau value during the growing interval.",
+              "Flag responses that write the shrinking expression on the growing interval.",
+              "Flag responses that omit the valid time interval for the ramp."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 5 and h(t) = 1 on 0 <= t <= 2, compute y(t) on the growing-overlap region.",
+            "worked_solution_goal": "Show that the overlap length is t on 0 < t < 2, so the growing ramp is y(t) = t for unit-height pulses.",
+            "variation_from_previous": "Move from identifying zero regions to computing the first nonzero region by measuring overlap length.",
+            "solution_step_plan": [
+              "Use the breakpoint map to locate the growing-overlap interval 0 < t < 2.",
+              "Identify the left and right endpoints of the overlap segment in the tau variable.",
+              "Compute overlap length as right endpoint minus left endpoint.",
+              "Multiply by the unit heights to get the convolution value.",
+              "Write the ramp formula together with its interval."
+            ],
+            "practice_variation_axes": [
+              "short pulse width",
+              "long pulse width",
+              "pulse height product if later variation includes amplitudes",
+              "interval notation for the growing region"
+            ]
+          },
+          "handoff_notes": "Use subgoal labels around interval, overlap length, and output formula so the example writer does not collapse the reasoning into one algebra step."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Computing the Full-Overlap Plateau",
+          "step_type": "example",
+          "learning_goal": "Compute the constant plateau by recognizing when the shorter rectangular pulse is fully overlapped.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the shorter pulse fully inside the longer pulse for x(tau) on [0, 5] and width-2 h(t - tau), with the overlap length fixed at 2 for 2 < t < 5.",
+            "visual_elements": [
+              "shorter rectangle fully inside longer rectangle",
+              "overlap segment labeled 2",
+              "plateau interval",
+              "constant output segment",
+              "breakpoints t = 2 and t = 5"
+            ],
+            "image_generation_notes": "Make the full-overlap position visually distinct from partial overlap; for questions, vary widths while preserving a nonempty plateau."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "constant value and interval for the plateau",
+            "practice_question_model": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 6 and h(t) = 1 on 0 <= t <= 3, compute y(t) on the full-overlap plateau interval.",
+            "distractor_plan": [
+              "Flag responses that use the longer pulse width as the plateau height.",
+              "Flag responses that keep y(t) variable instead of constant on the plateau.",
+              "Flag responses that place the plateau outside the interval from shorter width to longer width."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 5 and h(t) = 1 on 0 <= t <= 2, compute y(t) on the full-overlap plateau.",
+            "worked_solution_goal": "Show that the overlap length stays equal to the shorter width, so y(t) = 2 on 2 < t < 5 for unit-height pulses.",
+            "variation_from_previous": "Add the plateau case where overlap no longer changes with t because the shorter pulse is fully covered.",
+            "solution_step_plan": [
+              "Use the breakpoint map to locate the full-overlap interval 2 < t < 5.",
+              "Recognize that the entire shorter pulse is inside the longer pulse.",
+              "Set the overlap length equal to the shorter pulse width.",
+              "Multiply by the unit heights to get the plateau value.",
+              "Write the constant formula together with its interval."
+            ],
+            "practice_variation_axes": [
+              "shorter width",
+              "longer width",
+              "which input pulse is shorter",
+              "plateau interval endpoints"
+            ]
+          },
+          "handoff_notes": "Emphasize that the plateau height comes from the shorter width, not from the duration of the longer pulse."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Computing the Shrinking-Overlap Ramp",
+          "step_type": "example",
+          "learning_goal": "Compute the decreasing ramp by expressing the shrinking overlap length as total contact width minus time.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the shrinking-overlap interval for x(tau) on [0, 5] and a width-2 h(t - tau), with overlap length labeled 7 - t for 5 < t < 7.",
+            "visual_elements": [
+              "partial overlap after the plateau",
+              "overlap segment labeled 7 - t",
+              "shrinking interval 5 < t < 7",
+              "decreasing ramp on output plot",
+              "last-contact breakpoint"
+            ],
+            "image_generation_notes": "Question images should make the last-contact breakpoint and remaining overlap length easy to read without adding symbolic clutter."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "formula for y(t) on the shrinking-overlap interval",
+            "practice_question_model": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 6 and h(t) = 1 on 0 <= t <= 3, compute y(t) on the shrinking-overlap interval.",
+            "distractor_plan": [
+              "Flag responses that reuse the growing formula t on the shrinking interval.",
+              "Flag responses that use long width minus t instead of total contact width minus t.",
+              "Flag responses that omit the shrinking interval."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 5 and h(t) = 1 on 0 <= t <= 2, compute y(t) on the shrinking-overlap region.",
+            "worked_solution_goal": "Show that the overlap length is 7 - t on 5 < t < 7, so the shrinking ramp is y(t) = 7 - t for unit-height pulses.",
+            "variation_from_previous": "Mirror the growing-ramp computation after the full-overlap plateau, using last contact to form the decreasing expression.",
+            "solution_step_plan": [
+              "Use the breakpoint map to locate the shrinking-overlap interval 5 < t < 7.",
+              "Identify the last-contact time as the sum of the pulse widths.",
+              "Express the remaining overlap length as last-contact time minus t.",
+              "Multiply by the unit heights to get the convolution value.",
+              "Write the decreasing ramp formula together with its interval."
+            ],
+            "practice_variation_axes": [
+              "sum-of-widths breakpoint",
+              "shorter width",
+              "longer width",
+              "shrinking interval endpoints"
+            ]
+          },
+          "handoff_notes": "Keep the worked example parallel to the growing-ramp section so the learner sees the symmetry without treating it as a new method."
+        },
+        {
+          "section_index": 7,
+          "section_title": "Assembling the Complete Trapezoidal Output",
+          "step_type": "example",
+          "learning_goal": "Combine the zero regions, growing ramp, plateau, and shrinking ramp into one complete piecewise convolution output.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the input rectangular pulses and the complete output trapezoid for x(t) on [0, 5] and h(t) on [0, 2], with breakpoints 0, 2, 5, and 7 aligned to the piecewise formula regions.",
+            "visual_elements": [
+              "input pulse supports",
+              "complete breakpoint timeline",
+              "zero regions",
+              "growing ramp",
+              "plateau",
+              "shrinking ramp",
+              "final trapezoid y(t)"
+            ],
+            "image_generation_notes": "For questions, vary pulse widths and display the corresponding input supports; do not render the final answer in the image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "complete piecewise formula for y(t)",
+            "practice_question_model": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 6 and h(t) = 1 on 0 <= t <= 3, assemble the complete piecewise formula for y(t).",
+            "distractor_plan": [
+              "Flag responses with missing zero-output regions.",
+              "Flag responses with breakpoints in the wrong order.",
+              "Flag responses with plateau height equal to the longer width instead of the shorter width.",
+              "Flag responses with shrinking ramp written using the wrong intercept."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For unit-height rectangular pulses x(t) = 1 on 0 <= t <= 5 and h(t) = 1 on 0 <= t <= 2, assemble the complete piecewise formula for the convolution output y(t).",
+            "worked_solution_goal": "Combine the previously computed pieces into a single trapezoidal piecewise output: zero, growing ramp, plateau, shrinking ramp, zero.",
+            "variation_from_previous": "Synthesize all prior region computations into the complete output rather than computing only one region.",
+            "solution_step_plan": [
+              "List the ordered breakpoints 0, 2, 5, 7.",
+              "Write y(t) = 0 on the two no-overlap regions.",
+              "Insert the growing-ramp formula on the first nonzero interval.",
+              "Insert the plateau value on the full-overlap interval.",
+              "Insert the shrinking-ramp formula on the final nonzero interval.",
+              "Check that adjacent pieces meet at the trapezoid height and return to zero at last contact."
+            ],
+            "practice_variation_axes": [
+              "shorter pulse width",
+              "longer pulse width",
+              "which pulse is wider",
+              "optional pulse-height scaling after the unit-height structure is stable"
+            ]
+          },
+          "handoff_notes": "Treat this as assembly, not a new derivation; preserve the same simple pulse pair so the final section consolidates the lesson's core move."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Geometric Area Methods for Rectangular Pulse Convolution",
+      "lesson_core_move": "Compute rectangular-pulse convolutions by translating overlap intervals into geometric areas that produce the correct triangular or trapezoidal piecewise output across time.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Geometric Area Methods for Rectangular Pulse Convolution",
+          "step_type": "tutorial",
+          "learning_goal": "Explain how the value of a rectangular-pulse convolution at a fixed time can be found as the geometric area of the overlap region in the tau-axis picture.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Show x(tau) as a fixed rectangular pulse and h(t - tau) as a shifted rectangular pulse on the same tau axis, with their overlap shaded as a rectangle whose width is the overlap interval and whose height is the product of pulse amplitudes.",
+            "visual_elements": [
+              "tau-axis",
+              "fixed rectangular pulse x(tau)",
+              "shifted rectangular pulse h(t - tau)",
+              "shaded overlap rectangle",
+              "labels for overlap width and amplitude product"
+            ],
+            "image_generation_notes": "Use a clean signal plot, not a decorative graphic. Keep the visual focused on one fixed time value so the tutorial can introduce area before piecewise cases."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach that rectangular-pulse convolution can be evaluated by replacing the integral over the nonzero overlap with rectangle area: amplitude product times overlap length.",
+            "base_case": "Two positive rectangular pulses overlap on a single interval of length L at one fixed time t, with constant pulse heights A and B.",
+            "paragraph_plan": [
+              "State that earlier overlap mechanics determine where both factors are nonzero, and this lesson turns that overlap interval into area.",
+              "Introduce the fixed-time tau-axis picture: x(tau) stays fixed while h(t - tau) slides as t changes.",
+              "Explain that inside the overlap, the integrand is constant for rectangular pulses, so the integral is the area of a rectangle.",
+              "Name the two geometric ingredients: overlap length and height product.",
+              "Preview the three possible area behaviors across t: growing, constant full overlap, and shrinking."
+            ],
+            "display_math_plan": [
+              "y(t) = integral x(tau) h(t - tau) d tau",
+              "For rectangular pulses on an overlap of length L(t), y(t) = A B L(t)."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact. Do not derive a full convolution yet; establish the area schema that the later examples will repeatedly use."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Converting an Overlap Interval into Rectangular Area",
+          "step_type": "example",
+          "learning_goal": "Convert a known overlap interval and two rectangular-pulse amplitudes into the convolution value at one fixed time.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show two rectangular pulse factors on a tau axis at one fixed time, with the overlapping interval shaded and endpoint labels that make the width visible.",
+            "visual_elements": [
+              "tau-axis",
+              "two rectangular pulse factors",
+              "shaded overlap interval",
+              "endpoint labels",
+              "height labels"
+            ],
+            "image_generation_notes": "Question images should vary the overlap endpoints and pulse heights while preserving the single-interval rectangle-area task."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "numeric area value or simplified product",
+            "practice_question_model": "At a fixed time, the graph shows x(tau) = 2 and h(t - tau) = 3 over their common nonzero interval 1 <= tau <= 4. Use geometric area to find y(t).",
+            "distractor_plan": [
+              "For validation, watch for using endpoint sum instead of interval width.",
+              "For validation, watch for using one pulse height instead of the amplitude product.",
+              "For validation, watch for integrating over the union instead of the overlap."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "At a fixed time, x(tau) has height 2, h(t - tau) has height 3, and the two pulses overlap only on 1 <= tau <= 4. Use the geometric area method to find the convolution value y(t) at that time.",
+            "worked_solution_goal": "Show that the convolution value is the rectangle area formed by width 4 - 1 and height product 2 times 3.",
+            "variation_from_previous": "This is the first active step after the tutorial: the overlap interval is already known, so the only new action is converting width and amplitudes into area.",
+            "solution_step_plan": [
+              "Identify the overlap width from the interval endpoints.",
+              "Identify the constant integrand height as the product of the two pulse amplitudes.",
+              "Multiply width by height product to get the area.",
+              "State the result as the convolution value at the fixed time."
+            ],
+            "practice_variation_axes": [
+              "change overlap endpoints",
+              "change one or both amplitudes",
+              "include a left endpoint that is negative while keeping positive width"
+            ]
+          },
+          "handoff_notes": "Keep this section to one fixed-time area computation. Do not introduce growing, shrinking, or piecewise time intervals yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding Growing and Shrinking Areas for a Triangular Output",
+          "step_type": "example",
+          "learning_goal": "Use changing overlap length to produce the increasing and decreasing pieces of a triangular rectangular-pulse convolution.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show a sequence of tau-axis overlap snapshots for equal-width rectangular pulses: first contact, growing partial overlap, full alignment at the peak, shrinking partial overlap, and separation.",
+            "visual_elements": [
+              "tau-axis snapshots",
+              "equal-width rectangular pulses",
+              "growing shaded overlap",
+              "shrinking shaded overlap",
+              "time breakpoints"
+            ],
+            "image_generation_notes": "Use minimal snapshot panels or a compact annotated signal diagram. The visual should support recognition of the two linear overlap lengths that form the triangle."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "piecewise expression for the nonzero triangular output",
+            "practice_question_model": "Two unit-height rectangular pulses are supported on 0 <= tau <= 3 and 0 <= t - tau <= 3. Use growing and shrinking overlap areas to write y(t) for the nonzero time interval.",
+            "distractor_plan": [
+              "For validation, watch for reversing the growing and shrinking formulas.",
+              "For validation, watch for using the support width as a constant plateau.",
+              "For validation, watch for missing the final endpoint of the nonzero interval."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Two unit-height rectangular pulses each have width 2. Use geometric area to find the triangular convolution output over the times when the pulses overlap.",
+            "worked_solution_goal": "Demonstrate that the overlap area grows linearly until full alignment and then shrinks linearly until separation, producing a triangular output.",
+            "variation_from_previous": "Instead of one fixed overlap interval, the overlap width now changes with t in two linear cases.",
+            "solution_step_plan": [
+              "Identify the first contact time, peak full-alignment time, and final separation time.",
+              "Write the growing overlap length on the first interval.",
+              "Write the shrinking overlap length on the second interval.",
+              "Multiply by the unit amplitude product.",
+              "Assemble the two nonzero pieces and note that the output is zero outside them."
+            ],
+            "practice_variation_axes": [
+              "change the common pulse width",
+              "shift both supports while preserving equal widths",
+              "use unit heights so the focus remains on changing overlap length"
+            ]
+          },
+          "handoff_notes": "The example should feel like a controlled extension of Section 2: area is still width times height, but width is now a function of t."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Finding Constant Full-Overlap Area for a Trapezoidal Output",
+          "step_type": "example",
+          "learning_goal": "Identify the growing, constant full-overlap, and shrinking area cases that create a trapezoidal rectangular-pulse convolution.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show overlap snapshots for unequal-width rectangular pulses where the shorter pulse first partially overlaps, then is fully inside the longer pulse, then partially overlaps again.",
+            "visual_elements": [
+              "tau-axis snapshots",
+              "unequal-width rectangular pulses",
+              "growing overlap region",
+              "constant full-overlap region",
+              "shrinking overlap region",
+              "breakpoint labels"
+            ],
+            "image_generation_notes": "Make the shorter pulse visibly fit inside the longer pulse during the middle case so the constant-area plateau is visually unavoidable."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "piecewise expression for the nonzero trapezoidal output",
+            "practice_question_model": "A unit-height rectangular pulse of width 5 is convolved with a unit-height rectangular pulse of width 2. Use geometric area cases to write the nonzero trapezoidal output y(t).",
+            "distractor_plan": [
+              "For validation, watch for omitting the constant full-overlap interval.",
+              "For validation, watch for setting the plateau height to the longer width instead of the shorter width.",
+              "For validation, watch for placing the plateau endpoints at the wrong contact times."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "A unit-height rectangular pulse of width 4 is convolved with a unit-height rectangular pulse of width 2. Use geometric area to find the trapezoidal output over the nonzero time interval.",
+            "worked_solution_goal": "Show how unequal widths add a middle interval where the shorter pulse is fully overlapped and the area stays constant.",
+            "variation_from_previous": "This adds the full-overlap plateau that does not occur for equal-width triangular outputs.",
+            "solution_step_plan": [
+              "Identify the contact times that separate no overlap, growing partial overlap, full overlap, shrinking partial overlap, and no overlap.",
+              "Write the growing overlap length on the first nonzero interval.",
+              "Write the constant overlap length during full overlap as the shorter pulse width.",
+              "Write the shrinking overlap length on the final nonzero interval.",
+              "Assemble the three nonzero area pieces."
+            ],
+            "practice_variation_axes": [
+              "change the long pulse width",
+              "change the short pulse width",
+              "swap which signal has the longer support while preserving the same geometry"
+            ]
+          },
+          "handoff_notes": "Emphasize that the plateau comes from full overlap of the shorter rectangle, not from an algebraic shortcut."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Applying Pulse Amplitudes to Geometric Area",
+          "step_type": "example",
+          "learning_goal": "Scale the overlap-length geometry by the product of the rectangular pulse amplitudes.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show rectangular pulses with unequal height labels and a shaded overlap region, making clear that the geometric area uses overlap length times the product of the two heights.",
+            "visual_elements": [
+              "tau-axis",
+              "rectangular pulses with height labels",
+              "shaded overlap region",
+              "overlap length annotation",
+              "amplitude product annotation"
+            ],
+            "image_generation_notes": "Question images should vary both support widths and height labels. Avoid visual clutter by labeling only the endpoints needed for the area cases."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "scaled area expression or scaled piecewise expression",
+            "practice_question_model": "The overlap length for two rectangular pulses is L(t) = t on 0 <= t <= 2 and L(t) = 4 - t on 2 <= t <= 4. If the pulse heights are 3 and 2, use geometric area to write y(t) on the nonzero intervals.",
+            "distractor_plan": [
+              "For validation, watch for adding amplitudes instead of multiplying them.",
+              "For validation, watch for applying the amplitude product to only one piece.",
+              "For validation, watch for changing the overlap breakpoints when only amplitudes changed."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Two rectangular pulses have heights 2 and 3. Their overlap length is t for 0 <= t <= 2 and 4 - t for 2 <= t <= 4. Use geometric area to write the convolution output on the nonzero intervals.",
+            "worked_solution_goal": "Show that nonunit amplitudes do not change the overlap lengths but multiply every area piece by the amplitude product.",
+            "variation_from_previous": "This keeps the triangular area structure but adds nonunit heights, separating geometric width from amplitude scaling.",
+            "solution_step_plan": [
+              "Identify the existing overlap-length pieces.",
+              "Compute the amplitude product.",
+              "Multiply each overlap-length piece by the amplitude product.",
+              "Write the scaled nonzero output pieces without changing their time intervals."
+            ],
+            "practice_variation_axes": [
+              "change the pair of pulse amplitudes",
+              "use a trapezoidal overlap-length function instead of a triangular one",
+              "include one fractional amplitude while keeping endpoints simple"
+            ]
+          },
+          "handoff_notes": "Keep the conceptual emphasis on amplitude scaling after overlap geometry has been determined. Do not let this become a generic algebra simplification section."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Assembling the Piecewise Convolution from Area Cases",
+          "step_type": "example",
+          "learning_goal": "Combine no-overlap, partial-overlap, full-overlap, and amplitude-scaled area cases into one complete piecewise convolution output.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Show the full set of overlap cases for two rectangular pulses across time, with breakpoints marked and shaded regions indicating each nonzero area case.",
+            "visual_elements": [
+              "tau-axis overlap snapshots",
+              "time breakpoint labels",
+              "no-overlap cases",
+              "partial-overlap cases",
+              "full-overlap case when present",
+              "amplitude labels"
+            ],
+            "image_generation_notes": "The image should support assembling the final piecewise output. Keep each panel simple and align panels left-to-right in increasing t."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "free-response",
+            "answer_cardinality": "single",
+            "choice_count": 0,
+            "answer_format": "complete piecewise convolution including zero outside the support",
+            "practice_question_model": "Let x(tau) have height 2 on 0 <= tau <= 3 and let h(t - tau) have height 1 on 0 <= t - tau <= 1. Use geometric area cases to write the complete piecewise formula for y(t), including where it is zero.",
+            "distractor_plan": [
+              "For validation, watch for excluding the zero-output intervals.",
+              "For validation, watch for mixing up the growing and shrinking endpoint formulas.",
+              "For validation, watch for leaving out the amplitude product in the final piecewise formula.",
+              "For validation, watch for inconsistent breakpoint inequalities."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Let x(tau) have height 2 on 0 <= tau <= 3, and let h(t - tau) have height 1 on 0 <= t - tau <= 1. Use geometric area cases to assemble the complete piecewise formula for y(t).",
+            "worked_solution_goal": "Demonstrate the full handoff from visual overlap cases to a complete piecewise convolution formula with correct breakpoints, zero intervals, and amplitude scaling.",
+            "variation_from_previous": "This final section combines the earlier moves: interval width, growing and shrinking areas, full-overlap behavior when present, amplitude product, and zero outside overlap.",
+            "solution_step_plan": [
+              "List the time breakpoints where the overlap case changes.",
+              "Assign the correct area formula to each nonzero interval.",
+              "Apply the pulse amplitude product to each area formula.",
+              "Add zero pieces before first contact and after final separation.",
+              "Write the final piecewise convolution in increasing time order."
+            ],
+            "practice_variation_axes": [
+              "change support widths while keeping endpoints integer",
+              "change amplitudes",
+              "use either triangular or trapezoidal case structure",
+              "shift supports so the first contact time is not zero"
+            ]
+          },
+          "handoff_notes": "This is the capstone example for the lesson. It should not introduce a new convolution type; it should integrate the geometric area cases already practiced."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1088 @@
+{
+  "lesson_id": "EE01-M04-02-L02",
+  "compiled_at": "2026-05-30T21:57:52+00:00",
+  "runner_version": "2026-05-30-ece-course-data-compile-quiz-blank-blocks-v1",
+  "cache_key": "d510e3c7a6ad971b337845f631585434d6c22eaba62f256e3bcc886bdce733e2",
+  "compile_options": {
+    "allow_missing_images": false,
+    "include_answers": false,
+    "quiz_blocks": true
+  },
+  "source_artifact_hashes": {
+    "course_map_path": {
+      "path": "COURSES/Electrical-and-Computer-Engineering/Continuous-Time-Signal-Processing/Course-Map-Continuous-Time-Signal-Processing.md",
+      "sha256": "e140b2ee483ef8f233ff077ac16252584a518d9a7706feee996b12180fa29979"
+    },
+    "topic_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/4-Topic-Identification/1-Outputs/Continuous-Time-Signal-Processing/4.2--constructing-signals-with-unit-steps-Topics.json",
+      "sha256": "bb9f5c83c0522ca8dc5871c8ba3aad37fe08302e4a9798fc2388f1359e05ed0e"
+    },
+    "step_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/5-Step-Identification/1-Outputs/Continuous-Time-Signal-Processing/4.2--constructing-signals-with-unit-steps-Steps.json",
+      "sha256": "90681b14a3fa6279725c9e51fca6be56352bc98fdf369987edac705e085270c0"
+    },
+    "outline_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/1-Step-Outline/1-Outputs/Continuous-Time-Signal-Processing/4.2--constructing-signals-with-unit-steps-Step-Outline.json",
+      "sha256": "1baf0da06447a43d7bd9544e26b976090fbb826f8599eb58c1ed17612e13df86"
+    },
+    "tutorial_example_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/2-Tutorial-Example-Generation/1-Outputs/Continuous-Time-Signal-Processing/4.2--constructing-signals-with-unit-steps-Tutorial-Examples.json",
+      "sha256": "5039e039dba2b721ef3d9c6f580cae289bff1a660a0eafe4ce31ef703dfb47be"
+    },
+    "question_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/3-Question-Generation/1-Outputs/Continuous-Time-Signal-Processing/4.2--constructing-signals-with-unit-steps-Questions.json",
+      "sha256": "05acde5bda838220c9c966f30212d2f982340a9e91d949438bfcc024d1a776ea"
+    },
+    "image_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/4.2--constructing-signals-with-unit-steps-Images.json",
+      "sha256": "a8e58d595d18b504eca1f363cbab1f89131e12b12da3ff5979b1deeca43f267d"
+    }
+  },
+  "course": {
+    "course_slug": "Continuous-Time-Signal-Processing",
+    "course_code": "CTS",
+    "course_id": "EE01",
+    "course_name": "Continuous Time Signal Processing"
+  },
+  "module": {
+    "unit_number": "4",
+    "unit_name": "Unit 4",
+    "group_type": "module",
+    "group_id": "EE01-M04-02",
+    "group_number": "4.2",
+    "group_name": "Constructing Signals with Unit Steps",
+    "module_id": "EE01-M04-02",
+    "module_number": "4.2",
+    "module_name": "Constructing Signals with Unit Steps"
+  },
+  "tutorial_example_entry": {
+    "lesson_index": 2,
+    "lesson_title": "Building Piecewise Constant Signals",
+    "lesson_core_move": "Construct a piecewise constant continuous-time signal by converting its interval-by-interval level changes into a sum of scaled shifted unit steps.",
+    "section_count": 5,
+    "sections": [
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 1,
+        "section_title": "Introduction to Building Piecewise Constant Signals",
+        "step_type": "tutorial",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "tutorial_content": {
+          "blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "In this section, the move is to encode a piecewise constant signal as one baseline value plus a sequence of level jumps that each turn on at specific times. Your target is to represent interval-by-interval constants with shifted unit-step terms so each breakpoint maps directly to one term.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Use the unit step as the building cue: $u(t)$ is $0$ for $t<0$ and $1$ for $t\\ge 0$. A shifted version $u(t-a)$ moves that switch to time $a$, so it is $0$ for $t<a$ and $1$ for $t\\ge a$. Treat this as the fundamental left-right region rule you will reuse throughout.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "For the base case, use one transition from level $0$ to level $A$ at time $a$ with $y(t)=A u(t-a)$. Verify directly: when $t<a$, $u(t-a)=0$ so $y(t)=0$; when $t\\ge a$, $u(t-a)=1$ so $y(t)=A$. This one-term form is the smallest nontrivial pattern to imitate.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "To create a finite window, keep the first switch-on term and add a second switch-off term at the ending time $b$ as $y(t)=A u(t-a)-A u(t-b)$. In $a\\le t<b$, only the first term stays on and $y(t)=A$; for $t\\ge b$, both terms are on and cancel, giving $y(t)=0$. This is the same representation idea with one extra breakpoint.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=y_0+\\sum_k \\Delta A_k u(t-a_k)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "In the next sections, keep the exact same action rule and only change the jump list: for each breakpoint at $a_k$, add $\\Delta A_k u(t-a_k)$ where $\\Delta A_k$ is the signed change from the prior level to the next level. Multiple transitions become a reusable sum, not separate special cases.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 2,
+        "section_title": "Turning On a Constant Level with a Shifted Unit Step",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Write a unit-step form for $y(t)=0$ for $t<2$, and $y(t)=5$ for $t\\ge 2$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is a two-region piecewise constant signal with zero baseline before a single switch time. In this form, the move is to represent the right-hand jump at $t=2$ as a shifted unit-step term added to the baseline.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Use the one-term template from the core move: $y(t)=A u(t-a)$ for a transition from $0$ to a level $A$ at time $a$. Here the start is at $a=2$ and the level after the switch is $A=5$, so the candidate form is $y(t)=5u(t-2)$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=5u(t-2)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Verify region-by-region to confirm the representation: for $t<2$, $u(t-2)=0$, so $y(t)=5\\cdot 0=0$. For $t\\ge 2$, $u(t-2)=1$, so $y(t)=5\\cdot 1=5$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The result is complete: the step form is $y(t)=5u(t-2)$, and it is the direct one-step extension of the previous tutorial pattern from section 1.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 3,
+        "section_title": "Turning Off a Constant Level with a Second Shifted Unit Step",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Construct a unit-step equation for $x(t)=4$ when $1\\le t<5$, and $x(t)=0$ elsewhere.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "This signal has one nonzero pulse, so the cue is a finite interval with a clear start and end time. Use a turn-on term at $t=1$ and a turn-off term at $t=5$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "From the finite support pattern, place $4u(t-1)$ for the onset at the left edge. Then add a negative offset at the right edge: $-4u(t-5)$ to remove the level after $t\\ge 5$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(t)=4u(t-1)-4u(t-5)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Check all regions. For $t<1$, both shifted steps are $0$, so $x(t)=0-0=0$. For $1\\le t<5$, $u(t-1)=1$ and $u(t-5)=0$, so $x(t)=4\\cdot 1-4\\cdot 0=4$. For $t\\ge 5$, both are $1$, so $x(t)=4\\cdot 1-4\\cdot 1=0$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The finite support form is therefore $x(t)=4u(t-1)-4u(t-5)$, which is the same rule as before plus one extra breakpoint that turns the level off.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 4,
+        "section_title": "Changing Directly Between Two Nonzero Constant Levels",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Convert the piecewise signal $x(t)=2$ for $t<1$, $x(t)=5$ for $1\\le t<3$, and $x(t)=2$ for $t\\ge3$ to unit-step form.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is a nonzero-to-nonzero level change: the baseline is $2$, then the signal rises at $t=1$ and falls back at $t=3$. Because the baseline is already $2$, this is a cumulative-jump form problem, not a zero-reset problem.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Set the baseline term first: $y_0=2$. Then compute each signed jump from the previous level. At $t=1$, the jump is $\\Delta A_1=5-2=3$, so add $3u(t-1)$. At $t=3$, the jump is $\\Delta A_2=2-5=-3$, so add $-3u(t-3)$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(t)=2+3u(t-1)-3u(t-3)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Validate each interval. For $t<1$, both $u(t-1)$ and $u(t-3)$ are $0$, so $x(t)=2+0-0=2$. For $1\\le t<3$, only $u(t-1)=1$ and $u(t-3)=0$, so $x(t)=2+3-0=5$. For $t\\ge3$, both are $1$, so $x(t)=2+3-3=2$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The final step form is $x(t)=2+3u(t-1)-3u(t-3)$, which shows the exact signed-jump mechanism for direct transitions between two nonzero levels.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 5,
+        "section_title": "Combining Multiple Level Changes into One Step Expression",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Write one unit-step expression for $x(t)=1$ if $t<0$, $x(t)=4$ if $0\\le t<2$, $x(t)=-2$ if $2\\le t<4$, and $x(t)=3$ if $t\\ge4$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "This signal has multiple breakpoints, so the cue is to use one baseline and one signed jump at each breakpoint. List the levels in order: start at $1$, then jump to $4$ at $t=0$, then to $-2$ at $t=2$, then to $3$ at $t=4$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Set the baseline to the first value: $y_0=1$. The first jump is $\\Delta A_1=4-1=3$ at $t=0$, so add $3u(t)$. The second jump is $\\Delta A_2=-2-4=-6$ at $t=2$, so add $-6u(t-2)$. The third jump is $\\Delta A_3=3-(-2)=5$ at $t=4$, so add $5u(t-4)$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(t)=1+3u(t)-6u(t-2)+5u(t-4)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Check the intervals. For $t<0$, all shifted steps are $0$, giving $x(t)=1$. For $0\\le t<2$, only $u(t)=1$, so $x(t)=1+3=4$. For $2\\le t<4$, $u(t)=1$ and $u(t-2)=1$ while $u(t-4)=0$, so $x(t)=1+3-6=-2$. For $t\\ge4$, all terms are $1$, so $x(t)=1+3-6+5=3$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The compact representation is $x(t)=1+3u(t)-6u(t-2)+5u(t-4)$, and it is the general reusable form for multiple level changes in this topic.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "question_entry": {
+    "lesson_index": 2,
+    "lesson_title": "Building Piecewise Constant Signals",
+    "lesson_core_move": "Construct a piecewise constant continuous-time signal by converting its interval-by-interval level changes into a sum of scaled shifted unit steps.",
+    "section_count": 4,
+    "sections": [
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 2,
+        "section_title": "Turning On a Constant Level with a Shifted Unit Step",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Which unit-step expression represents the signal $x(t)=0$ for $t<4$ and $x(t)=6$ for $t\\ge 4$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t-4)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$u(t-4)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-6u(t-4)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$u(4-t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "$6u(t-4)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the one-step template $A u(t-a)$. The signal turns on at $t=4$ and stays at level $6$, so $A=6$ and $a=4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That gives $6u(t-4)$. It is $0$ for $t<4$ and $6$ for $t\\ge 4$, so it matches the piecewise definition exactly.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Which unit-step expression represents the signal $y(t)=0$ for $t<1$ and $y(t)=3$ for $t\\ge 1$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$u(t-1)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-3u(t-1)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t-1)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$u(1-t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "D"
+            ],
+            "correct_answer": "$3u(t-1)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Again use the template $A u(t-a)$ for a signal that is $0$ before one switch time and constant afterward. Here the switch happens at $t=1$ and the constant level is $3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct form is $3u(t-1)$. For $t<1$, the shifted step is $0$; for $t\\ge 1$, it is $1$, so the output is $3$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 3,
+        "section_title": "Turning Off a Constant Level with a Second Shifted Unit Step",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Write a unit-step expression for $x(t)=6$ when $2\\le t<7$, and $x(t)=0$ elsewhere.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t-2)-6u(t-7)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t-2)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t-7)-6u(t-2)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t-2)+6u(t-7)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6u(t-3)-6u(t-7)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$6u(t-2)-6u(t-7)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use one turn-on term at $t=2$ and one turn-off term at $t=7$. The correct expression is $6u(t-2)-6u(t-7)$, which is $0$ before $2$, $6$ on $[2,7)$, and $0$ after $7$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Write a unit-step expression for $x(t)=3$ when $0\\le t<4$, and $x(t)=0$ elsewhere.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t)-3u(t-4)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t-4)-3u(t)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t)+3u(t-4)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3u(t-1)-3u(t-4)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$3u(t)-3u(t-4)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Because the interval starts at $t=0$, the turn-on term is $3u(t)$. Subtract the same level at $t=4$ to turn it off, giving $3u(t)-3u(t-4)$. That expression is $0$ before $0$, $3$ on $[0,4)$, and $0$ after $4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 4,
+        "section_title": "Changing Directly Between Two Nonzero Constant Levels",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Convert $x(t)=4$ for $t<1$, $x(t)=9$ for $1\\le t<3$, and $x(t)=4$ for $t\\ge 3$ to unit-step form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$4+5u(t-1)-4u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$5u(t-1)-5u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$4+5u(t-1)-5u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$4+4u(t-1)-5u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$4+5u(t-3)-5u(t-1)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "$4+5u(t-1)-5u(t-3)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The baseline is $4$. The jump at $t=1$ is $9-4=5$, and the jump at $t=3$ is $4-9=-5$, so the step form is $4+5u(t-1)-5u(t-3)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Convert $x(t)=6$ for $t<2$, $x(t)=1$ for $2\\le t<5$, and $x(t)=6$ for $t\\ge 5$ to unit-step form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6-4u(t-2)+5u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6-5u(t-2)+5u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$0-5u(t-2)+5u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6-5u(t-5)+5u(t-2)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6+5u(t-2)-5u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "$6-5u(t-2)+5u(t-5)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The baseline is $6$. The jump at $t=2$ is $1-6=-5$, and the jump at $t=5$ is $6-1=5$, so the step form is $6-5u(t-2)+5u(t-5)$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 2,
+        "lesson_title": "Building Piecewise Constant Signals",
+        "section_index": 5,
+        "section_title": "Combining Multiple Level Changes into One Step Expression",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Convert the following piecewise signal into a single unit-step expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\begin{cases}2,&t<0\\\\7,&0\\le t<3\\\\1,&3\\le t<5\\\\4,&t\\ge 5\\end{cases}",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$x(t)=2+5u(t)-6u(t-3)+3u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$x(t)=2+7u(t)+1u(t-3)+4u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$x(t)=2+5u(t)-6u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$x(t)=2+5u(t)-6u(t-5)+3u(t-3)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$x(t)=5u(t)-6u(t-3)+3u(t-5)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$x(t)=2+5u(t)-6u(t-3)+3u(t-5)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Start with the baseline value $2$. The jump at $t=0$ is $7-2=5$, the jump at $t=3$ is $1-7=-6$, and the jump at $t=5$ is $4-1=3$, so the correct step expression adds those increments to the baseline.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Convert the following piecewise signal into a single unit-step expression.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "z(t)=\\begin{cases}-2,&t<0\\\\4,&0\\le t<2\\\\1,&2\\le t<6\\\\5,&t\\ge 6\\end{cases}",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$z(t)=-2+4u(t)+1u(t-2)+5u(t-6)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$z(t)=-2+6u(t)-3u(t-2)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$z(t)=-2+6u(t)-3u(t-2)+4u(t-6)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$z(t)=-2+6u(t)-3u(t-6)+4u(t-2)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$z(t)=6u(t)-3u(t-2)+4u(t-6)$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "$z(t)=-2+6u(t)-3u(t-2)+4u(t-6)$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the first level as the baseline, so start at $-2$. Then add the jumps $4-(-2)=6$ at $t=0$, $1-4=-3$ at $t=2$, and $5-1=4$ at $t=6$. That gives the single step expression in choice $C$. ",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "image_records": [],
+  "copied_images": [],
+  "copied_source_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/Course-Map-Continuous-Time-Signal-Processing.md",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/4.2--constructing-signals-with-unit-steps-Topics.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/4.2--constructing-signals-with-unit-steps-Steps.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/4.2--constructing-signals-with-unit-steps-Step-Outline.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/4.2--constructing-signals-with-unit-steps-Tutorial-Examples.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/4.2--constructing-signals-with-unit-steps-Questions.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M04-02/EE01-M04-02-L02/Source/4.2--constructing-signals-with-unit-steps-Images.json"
+  ],
+  "copied_image_code_files": [],
+  "copied_image_context_files": []
+}

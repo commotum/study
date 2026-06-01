@@ -1,0 +1,524 @@
+# Finding the Support of $h(t-\tau)$
+
+<!--
+lesson-id: EE01-M07-01-L02
+-->
+
+## Table of Contents
+
+- [Introduction to Finding the Support of $h(t-\tau)$](#introduction-to-finding-the-support-of-ht-tau)
+- [Holding $t$ Fixed in the Support Condition for $h(t-\tau)$](#holding-t-fixed-in-the-support-condition-for-ht-tau)
+- [Converting an $h(u)$ Support Interval into an Inequality for $t-\tau$](#converting-an-hu-support-interval-into-an-inequality-for-t-tau)
+- [Reversing Inequalities to Isolate $\tau$](#reversing-inequalities-to-isolate-tau)
+- [Writing the $h(t-\tau)$ Support Interval in Increasing $\tau$ Order](#writing-the-ht-tau-support-interval-in-increasing-tau-order)
+- [Checking the Moving Support Interval Against the Flip-Shift Picture](#checking-the-moving-support-interval-against-the-flip-shift-picture)
+
+---
+
+<a id="introduction-to-finding-the-support-of-ht-tau"></a>
+## Introduction to Finding the Support of $h(t-\tau)$
+
+In convolution, the support of $x(\tau)$ is a fixed interval in the variable $\tau$. The support of $h(t-\tau)$ is different: for each held value of $t$, we need the set of $\tau$ values that make the argument of $h$ land inside the support of $h$.
+
+Use $u$ as a temporary name for the input to $h$. Since the input to $h(t-\tau)$ is $u=t-\tau$, the rule is: put $t-\tau$ into the known support condition for $h(u)$, treat $t$ as a constant, and solve for $\tau$.
+
+$$
+h(u) \ne 0 \text{ for } 0 \le u \le a \quad\Longrightarrow\quad h(t-\tau) \ne 0 \text{ when } 0 \le t-\tau \le a
+$$
+
+Now isolate $\tau$. The important algebraic detail is that $\tau$ has a negative sign in $t-\tau$, so multiplying by $-1$ reverses both inequality directions.
+
+$$
+\begin{aligned} 0 &\le t-\tau \le a \\ -t &\le -\tau \le a-t \\ t &\ge \tau \ge t-a \\ t-a &\le \tau \le t \end{aligned}
+$$
+
+So if $h(u)$ is supported on $0\le u\le a$, then $h(t-\tau)$ is supported on $t-a\le \tau\le t$. The output of this step is an increasing interval in $\tau$; later, that interval can be compared with the fixed support of $x(\tau)$.
+
+---
+
+<a id="holding-t-fixed-in-the-support-condition-for-ht-tau"></a>
+## Holding $t$ Fixed in the Support Condition for $h(t-\tau)$
+
+**Example:** Suppose $h(u)$ is nonzero for $0 \le u \le 3$. For fixed $t=5$, find the support of $h(t-\tau)$ in terms of $\tau$.
+
+**Explanation**
+
+The cue is the expression $h(t-\tau)$ together with a fixed value of $t$. Since $t=5$, the argument of $h$ is $5-\tau$, and $h(5-\tau)$ is nonzero exactly when that argument lies in the support of $h(u)$.
+
+$$
+0 \le u \le 3
+$$
+
+Replace $u$ with $5-\tau$ because the input to $h$ is now $5-\tau$.
+
+$$
+0 \le 5-\tau \le 3
+$$
+
+Now solve this compound inequality for $\tau$. Subtract $5$ from each part, then multiply by $-1$; multiplying by $-1$ reverses the inequality directions.
+
+$$
+\begin{aligned} 0 &\le 5-\tau \le 3 \\ -5 &\le -\tau \le -2 \\ 5 &\ge \tau \ge 2 \\ 2 &\le \tau \le 5 \end{aligned}
+$$
+
+So, for fixed $t=5$, the support of $h(t-\tau)$ is $2\le \tau\le 5$. This is the moving-support interval after substituting this particular value of $t$, not an overlap interval yet.
+
+**Question 1:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q001
+content: |-
+  Suppose $h(u)$ is nonzero for $-2 \le u \le 1$. For fixed $t=5$, what is the support of $h(t-\tau)$?
+
+options:
+- id: a
+  content: |-
+    $7 \le \tau \le 4$
+
+- id: b
+  content: |-
+    $-7 \le \tau \le -4$
+
+- id: c
+  content: |-
+    $4 \le \tau \le 7$
+  correct: true
+  feedback: |-
+    Hold $t=5$ fixed and substitute $u=5-\tau$: $-2 \le 5-\tau \le 1$. Subtracting $5$ gives $-7 \le -\tau \le -4$, and multiplying by $-1$ reverses the inequalities, so $4 \le \tau \le 7$.
+
+- id: d
+  content: |-
+    $-2 \le \tau \le 1$
+
+- id: e
+  content: |-
+    $1 \le \tau \le -2$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q002
+content: |-
+  Suppose $h(u)$ is nonzero for $1 \le u \le 4$. For fixed $t=6$, what is the support of $h(t-\tau)$?
+
+options:
+- id: a
+  content: |-
+    $1 \le \tau \le 4$
+
+- id: b
+  content: |-
+    $-5 \le \tau \le -2$
+
+- id: c
+  content: |-
+    $5 \le \tau \le 2$
+
+- id: d
+  content: |-
+    $2 \le \tau \le 5$
+  correct: true
+  feedback: |-
+    With $t=6$, the support condition becomes $1 \le 6-\tau \le 4$. Subtracting $6$ gives $-5 \le -\tau \le -2$; multiplying by $-1$ reverses the inequalities, giving $2 \le \tau \le 5$.
+
+- id: e
+  content: |-
+    $4 \le \tau \le 1$
+```
+
+---
+
+<a id="converting-an-hu-support-interval-into-an-inequality-for-t-tau"></a>
+## Converting an $h(u)$ Support Interval into an Inequality for $t-\tau$
+
+**Example:** Suppose $h(u)$ is nonzero for $1 \le u \le 4$. Write the support condition for $h(t-\tau)$ before isolating $\tau$.
+
+**Explanation**
+
+The cue is that the known support is written for $h(u)$, but the signal in the convolution is $h(t-\tau)$. That means the input to $h$ is no longer $u$; the input is $t-\tau$.
+
+$$
+1 \le u \le 4
+$$
+
+The support endpoints stay the same because $h$ is nonzero when its argument lands between $1$ and $4$. So replace only the argument $u$ with $t-\tau$.
+
+$$
+1 \le t-\tau \le 4
+$$
+
+So the support condition for $h(t-\tau)$, before isolating $\tau$, is $1\le t-\tau\le 4$. This section stops here: solving that inequality for $\tau$ is the next move, not part of this conversion step.
+
+**Question 3:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q003
+content: |-
+  Suppose $h(u)$ is nonzero for $-2 \le u \le 5$. Which inequality gives the support condition for $h(t-\tau)$ before isolating $\tau$?
+
+options:
+- id: a
+  content: |-
+    $-2 \le \tau \le 5$
+
+- id: b
+  content: |-
+    $-2 \le t+\tau \le 5$
+
+- id: c
+  content: |-
+    $5 \le t-\tau \le -2$
+
+- id: d
+  content: |-
+    $-2 \le t \le 5$
+
+- id: e
+  content: |-
+    $-2 \le t-\tau \le 5$
+  correct: true
+  feedback: |-
+    The argument of $h$ is $t-\tau$, so replace $u$ with $t-\tau$ and keep the same support endpoints. The pre-isolation support condition is $-2 \le t-\tau \le 5$.
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q004
+content: |-
+  Suppose $h(u)$ is nonzero for $-6 \le u \le -1$. Which inequality gives the support condition for $h(t-\tau)$ before isolating $\tau$?
+
+options:
+- id: a
+  content: |-
+    $-6 \le t+\tau \le -1$
+
+- id: b
+  content: |-
+    $-6 \le t-\tau \le -1$
+  correct: true
+  feedback: |-
+    The support interval tells when the input to $h$ is between $-6$ and $-1$. For $h(t-\tau)$, that input is $t-\tau$, so the condition is $-6 \le t-\tau \le -1$ before any solving for $\tau$.
+
+- id: c
+  content: |-
+    $-6 \le \tau \le -1$
+
+- id: d
+  content: |-
+    $-1 \le t-\tau \le -6$
+
+- id: e
+  content: |-
+    $-6 \le t \le -1$
+```
+
+---
+
+<a id="reversing-inequalities-to-isolate-tau"></a>
+## Reversing Inequalities to Isolate $\tau$
+
+**Example:** Given that $2 \le t-\tau \le 6$, isolate $\tau$ and write the support interval for $h(t-\tau)$.
+
+**Explanation**
+
+The cue is that the support condition has already been converted into an inequality involving $t-\tau$. Now the task is only to solve that inequality for $\tau$, treating $t$ as fixed.
+
+$$
+2 \le t-\tau \le 6
+$$
+
+First subtract $t$ from all three parts so that $-\tau$ is alone in the middle.
+
+$$
+2-t \le -\tau \le 6-t
+$$
+
+Now multiply all three parts by $-1$. Because this multiplication uses a negative number, both inequality signs reverse.
+
+$$
+t-2 \ge \tau \ge t-6
+$$
+
+The values of $\tau$ are usually written from the smaller endpoint to the larger endpoint, so rewrite the same interval in increasing $\tau$ order.
+
+$$
+t-6 \le \tau \le t-2
+$$
+
+Therefore, the support interval for $h(t-\tau)$ is $t-6\le \tau\le t-2$. The key algebraic move was reversing the inequalities when $-\tau$ became $\tau$.
+
+**Question 5:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q005
+content: |-
+  Given the support condition $-1 \le t-\tau \le 3$, which interval gives the values of $\tau$ for which $h(t-\tau)$ is nonzero?
+
+options:
+- id: a
+  content: |-
+    $t-3 \le \tau \le t+1$
+  correct: true
+  feedback: |-
+    Subtract $t$ from all three parts to get $-1-t \le -\tau \le 3-t$. Multiplying by $-1$ reverses both inequalities, giving $t+1 \ge \tau \ge t-3$, which is $t-3 \le \tau \le t+1$ in increasing $\tau$ order.
+
+- id: b
+  content: |-
+    $t+1 \le \tau \le t-3$
+
+- id: c
+  content: |-
+    $-1-t \le \tau \le 3-t$
+
+- id: d
+  content: |-
+    $t-1 \le \tau \le t+3$
+
+- id: e
+  content: |-
+    $\tau-1 \le t \le \tau+3$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q006
+content: |-
+  Given the support condition $4 \le t-\tau \le 7$, which interval gives the values of $\tau$ for which $h(t-\tau)$ is nonzero?
+
+options:
+- id: a
+  content: |-
+    $t-4 \le \tau \le t-7$
+
+- id: b
+  content: |-
+    $4-t \le \tau \le 7-t$
+
+- id: c
+  content: |-
+    $t+4 \le \tau \le t+7$
+
+- id: d
+  content: |-
+    $\tau+4 \le t \le \tau+7$
+
+- id: e
+  content: |-
+    $t-7 \le \tau \le t-4$
+  correct: true
+  feedback: |-
+    Subtracting $t$ gives $4-t \le -\tau \le 7-t$. Multiplying by $-1$ reverses both inequality signs, so $t-4 \ge \tau \ge t-7$. Written in increasing $\tau$ order, the interval is $t-7 \le \tau \le t-4$.
+```
+
+---
+
+<a id="writing-the-ht-tau-support-interval-in-increasing-tau-order"></a>
+## Writing the $h(t-\tau)$ Support Interval in Increasing $\tau$ Order
+
+**Example:** Suppose $h(u)$ is nonzero for $-2 \le u \le 3$. Find the support of $h(t-\tau)$ and write it in increasing $\tau$ order.
+
+**Explanation**
+
+The cue is the support interval for $h(u)$ together with the shifted argument $t-\tau$. First convert the $h(u)$ support into a condition on the argument of $h(t-\tau)$.
+
+$$
+-2 \le t-\tau \le 3
+$$
+
+Now isolate $\tau$. Subtract $t$ from all three parts so that $-\tau$ is in the middle.
+
+$$
+-2-t \le -\tau \le 3-t
+$$
+
+Multiply by $-1$ and reverse both inequality signs. This gives the correct endpoints, but the interval is now written in decreasing $\tau$ order.
+
+$$
+t+2 \ge \tau \ge t-3
+$$
+
+Compare the two endpoint expressions. Since $t-3$ is smaller than $t+2$, write $t-3$ on the left and $t+2$ on the right.
+
+$$
+t-3 \le \tau \le t+2
+$$
+
+Therefore, the support of $h(t-\tau)$ is $t-3\le \tau\le t+2$. Writing the smaller $\tau$ endpoint first keeps the moving support ready for later overlap comparisons.
+
+**Question 7:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q007
+content: |-
+  Suppose $h(u)$ is nonzero for $-3 \le u \le 2$. Which interval is the support of $h(t-\tau)$ written in increasing $\tau$ order?
+
+options:
+- id: a
+  content: |-
+    $t+3 \le \tau \le t-2$
+
+- id: b
+  content: |-
+    $-3-t \le \tau \le 2-t$
+
+- id: c
+  content: |-
+    $t+2 \le \tau \le t+3$
+
+- id: d
+  content: |-
+    $t-2 \le \tau \le t+3$
+  correct: true
+  feedback: |-
+    Convert the support to $-3 \le t-\tau \le 2$. Solving for $\tau$ gives $t+3 \ge \tau \ge t-2$, so the increasing-order interval is $t-2 \le \tau \le t+3$.
+
+- id: e
+  content: |-
+    $-3 \le \tau \le 2$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q008
+content: |-
+  Suppose $h(u)$ is nonzero for $-4 \le u \le 1$. Which interval is the support of $h(t-\tau)$ written in increasing $\tau$ order?
+
+options:
+- id: a
+  content: |-
+    $t-1 \le \tau \le t+4$
+  correct: true
+  feedback: |-
+    The support condition is $-4 \le t-\tau \le 1$. After isolating $\tau$, the endpoints are $t+4$ and $t-1$; the smaller endpoint is $t-1$, so the increasing-order support interval is $t-1 \le \tau \le t+4$.
+
+- id: b
+  content: |-
+    $t+4 \le \tau \le t-1$
+
+- id: c
+  content: |-
+    $-4-t \le \tau \le 1-t$
+
+- id: d
+  content: |-
+    $t+1 \le \tau \le t+4$
+
+- id: e
+  content: |-
+    $-4 \le \tau \le 1$
+```
+
+---
+
+<a id="checking-the-moving-support-interval-against-the-flip-shift-picture"></a>
+## Checking the Moving Support Interval Against the Flip-Shift Picture
+
+**Example:** Use the flip-shift picture to check the support interval of $h(t-\tau)$ when $h(u)$ is nonzero on $0 \le u \le 2$.
+
+**Explanation**
+
+The picture should confirm the symbolic support result, not replace it. Start by reading the original support endpoints from the $u$-axis: $h(u)$ is nonzero from $u=0$ to $u=2$.
+
+![](<../Source/7.1.2. Finding the Support of $h(t-\tau)$/Images/l002-s006-te-section-006.png>)
+
+Using the symbolic rule from the previous sections, place the argument $t-\tau$ inside the original support interval and solve for $\tau$.
+
+$$
+0 \le t-\tau \le 2 \quad\Longrightarrow\quad t-2 \le \tau \le t
+$$
+
+The flip-shift picture matches that result. The right endpoint of the original $u$ support, $u=2$, becomes the left endpoint $\tau=t-2$, and the left endpoint $u=0$ becomes the right endpoint $\tau=t$.
+
+Therefore, the pictured moving support confirms the increasing-$\tau$ interval $t-2\le \tau\le t$. This check is only about the support of $h(t-\tau)$; it does not yet compare against $x(\tau)$ or set integration bounds.
+
+**Question 9:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q009
+content: |-
+  The diagram shows $h(u)$ supported on $1 \le u \le 4$ and the corresponding flip-shift picture for $h(t-\tau)$. Which $\tau$ interval matches the moving support?
+
+  ![](<../Source/7.1.2. Finding the Support of $h(t-\tau)$/Images/l002-s006-qg-q001-q001.png>)
+
+options:
+- id: a
+  content: |-
+    $t+1 \le \tau \le t+4$
+
+- id: b
+  content: |-
+    $t-1 \le \tau \le t-4$
+
+- id: c
+  content: |-
+    $t-4 \le \tau \le t-1$
+  correct: true
+  feedback: |-
+    For $h(t-\tau)$, the right endpoint of the original support maps to the left endpoint: $u=4$ gives $\tau=t-4$. The left endpoint maps to the right endpoint: $u=1$ gives $\tau=t-1$. So the moving support is $t-4 \le \tau \le t-1$.
+
+- id: d
+  content: |-
+    $1 \le \tau \le 4$
+
+- id: e
+  content: |-
+    $t-4 \le \tau \le t+1$
+```
+
+---
+
+**Question 10:**
+
+```quiz
+type: radio
+id: EE01-M07-01-L02-q010
+content: |-
+  The diagram shows $h(u)$ supported on $-2 \le u \le 3$ and the corresponding flip-shift picture for $h(t-\tau)$. Which $\tau$ interval matches the moving support?
+
+  ![](<../Source/7.1.2. Finding the Support of $h(t-\tau)$/Images/l002-s006-qg-q002-q002.png>)
+
+options:
+- id: a
+  content: |-
+    $t+2 \le \tau \le t-3$
+
+- id: b
+  content: |-
+    $t-3 \le \tau \le t+2$
+  correct: true
+  feedback: |-
+    The endpoint order reverses for $h(t-\tau)$. The original right endpoint $u=3$ maps to $\tau=t-3$, and the original left endpoint $u=-2$ maps to $\tau=t+2$. Thus the moving support is $t-3 \le \tau \le t+2$.
+
+- id: c
+  content: |-
+    $t-2 \le \tau \le t+3$
+
+- id: d
+  content: |-
+    $-2 \le \tau \le 3$
+
+- id: e
+  content: |-
+    $t-3 \le \tau \le t-2$
+```

@@ -1,0 +1,2288 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Causal LTI Systems",
+      "lesson_core_move": "Verify causality of an LTI system by checking that its impulse response satisfies h(t)=0 for all t<0 in the pole-based stability setting.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Causal LTI Systems",
+          "step_type": "tutorial",
+          "learning_goal": "Define causality for LTI systems in the time domain and confirm the exact condition the learner must check before proceeding to pole-based stability arguments.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No external visual object is needed; all verification is done from formulas and support conditions."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Tell the learner that a continuous-time LTI system is causal iff its impulse response has no nonzero content at negative time: $h(t)=0$ for all $t<0$, so causality is a support condition checked before classifying poles.",
+            "base_case": "Use the canonical causal example $h(t)=e^{-t}u(t)$ and show it is zero for every $t<0$ because it is right-sided.",
+            "paragraph_plan": [
+              "State the LTI causality test directly in one sentence: no output can depend on future inputs, so require $h(t)=0$ for negative time.",
+              "Relate support to time-domain structure by describing right-sided, left-sided, and bilateral impulse responses in terms of where $h(t)$ is nonzero.",
+              "Connect the condition to upcoming stability work by clarifying that pole location checks assume a causal system in this course sequence.",
+              "Introduce notation conventions for checking support from formulas and graphs, ending with a quick micro-check on $t<0$ values."
+            ],
+            "display_math_plan": [
+              "$$h(t)=0, t<0$$",
+              "$$y(t)=\\int_{-\\infty}^{\\infty} x(\\tau)h(t-\\tau)\\,d\\tau$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial step; move on to step 2 for the first worked example.",
+            "worked_solution_goal": "Tutorial step does not include an example prompt or worked solution plan.",
+            "variation_from_previous": "No example extension is required in the opening tutorial step.",
+            "solution_step_plan": [
+              "Introduce the causality condition as the only required decision rule in this step."
+            ],
+            "practice_variation_axes": [
+              "N/A for tutorial step"
+            ]
+          },
+          "handoff_notes": "Tutorial step: no worked example or practice items should be generated here. Keep notation plain and explicit so later example steps can mirror it."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Checking h(t)=0 for t<0 from an Impulse Response Formula",
+          "step_type": "example",
+          "learning_goal": "Determine causality by testing an algebraic impulse-response formula for any nonzero values when $t<0$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No figures are required; support is computed from symbolic structure and step/unit-step support rules."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five expression choices describing causality outcome and support reasoning",
+            "practice_question_model": "Given $h(t)=2u(t)-3u(t-1)+u(-t-2)$, is the system causal or noncausal? Choose the correct classification.",
+            "distractor_plan": [
+              "Include one distractor that checks only behavior for $t>0$ and ignores negative time entirely.",
+              "Include one distractor that treats $u(-t-2)$ as zero for all $t<0$, which is incorrect sign interpretation.",
+              "Include one distractor that marks a boundary term at $t=0$ as noncausal without checking strict support definition.",
+              "Include one distractor that concludes causal because impulse-response magnitudes are small rather than checking support sign.",
+              "Include one distractor that confuses shifts and thinks $u(t-1)$ creates negative-time support."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example steps; use worked example and question sequence only.",
+            "base_case": "Not applicable for example step.",
+            "paragraph_plan": [
+              "Not applicable"
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Check causality of $h(t)=3e^{-t}u(t)-5u(t+2)$ by testing the value of $h(t)$ for $t<0$.",
+            "worked_solution_goal": "Classify the impulse response as noncausal by identifying a nonzero left-half contribution from $u(t+2)$ and conclude that $h(t)$ is not zero for all negative time.",
+            "variation_from_previous": "The first section gave the rule; this step applies it to a multi-term formula with one clearly causal and one clearly noncausal support contribution.",
+            "solution_step_plan": [
+              "Rewrite each term using support intervals of the shifted step functions.",
+              "Evaluate each term for representative $t<0$ values.",
+              "Check whether any term remains nonzero over any interval with $t<0$.",
+              "If any negative-time value is nonzero, report noncausal; otherwise report causal."
+            ],
+            "practice_variation_axes": [
+              "Vary the direction and magnitude of time shifts in $u(\\cdot)$ and piecewise polynomial factors.",
+              "Vary whether left-side support appears from $u(-t)$ or $u(-t-a)$ terms.",
+              "Include cases with mixed right-sided and left-sided terms where only one negative-time term changes the answer."
+            ]
+          },
+          "handoff_notes": "This example must stay symbolic and short to enforce direct support checks, not pole reasoning."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Checking Causality from an Impulse Response Graph",
+          "step_type": "example",
+          "learning_goal": "Classify causality from a graph by verifying whether the plotted impulse response has support in $t<0$.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Plot of $h(t)$ versus t with clear regions for $t<0 and t>0$, including isolated impulse-like spikes and short finite support pulses.",
+            "visual_elements": [
+              "t-axis and $h(t)$ axis",
+              "support intervals in negative and nonnegative time",
+              "isolated impulse or pulse markers near $t=0$",
+              "at least one graph with a short nonzero segment for $t<0$"
+            ],
+            "image_generation_notes": "Generate graphs aligned to the same scale and notation so question stems can mirror stems from worked example by swapping segment positions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five compact labels such as causal/noncausal and selected support interval statements",
+            "practice_question_model": "Given a graph of an impulse response with one brief negative-time pulse and right-sided exponential tail, choose the correct causality label.",
+            "distractor_plan": [
+              "Include one distractor that misreads the horizontal axis and flips sign of time.",
+              "Include one distractor that treats any value at exactly $t=0 as immediate failure$.",
+              "Include one distractor that declares causal when there is any nonzero left-side impulse.",
+              "Include one distractor that ignores isolated spikes and only inspects continuous segments.",
+              "Include one distractor that claims bilaterally supported graph is causal."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "From the graph of $h(t)$ shown, identify whether the LTI system is causal and explain the negative-time support test used.",
+            "worked_solution_goal": "Use the graph to detect nonzero response at negative time and classify the system as noncausal.",
+            "variation_from_previous": "Transition from symbolic term-checking to visual support detection while keeping the same decision criterion of no nonzero values on $t<0$.",
+            "solution_step_plan": [
+              "Locate the full support interval(s) of the plotted response.",
+              "Check whether any support segment lies strictly in $t<0$.",
+              "Mark the first negative-time sample value to verify the rule.",
+              "Declare causality state and tie back to the earlier formula rule."
+            ],
+            "practice_variation_axes": [
+              "Swap negative-side support location while preserving overall shape class.",
+              "Use graphs with only a $t=0 impulse versus no nonzero left-side support$.",
+              "Use disconnected negative-time pieces to test robustness of the rule."
+            ]
+          },
+          "handoff_notes": "Use this section to bootstrap image-based question generation and keep answer choices text-only; the stem carries image data."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Identifying Noncausal Negative-Time Support",
+          "step_type": "example",
+          "learning_goal": "Spot and diagnose explicit negative-time support terms in causality tests, so the learner can quickly reject noncausal systems.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed because support recognition is done from algebraic forms."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five causal status options with brief interval labels",
+            "practice_question_model": "Evaluate $h(t)=2u(t)-u(t-1)+\\frac{1}{2}u(-t-3)$ and identify the noncausal support interval if present.",
+            "distractor_plan": [
+              "Include one distractor that assumes $u(-t-3)$ is causal because of the minus sign in time shift.",
+              "Include one distractor that ignores the constant $\\frac{1}{2}u(-t-3)$ term entirely.",
+              "Include one distractor that marks noncausal only when negative support is unbounded, not finite.",
+              "Include one distractor that miscomputes support of $u(t-1)$ as left-sided instead of right-sided.",
+              "Include one distractor that confuses causality with stability and marks the item noncausal based on pole sign only."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example steps; sequence is managed by worked example and practice generation.",
+            "base_case": "Not applicable for example step.",
+            "paragraph_plan": [
+              "Not applicable"
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Identify the negative-time support of $h(t)=4e^{-0.5t}u(t-2)-2u(-t+1)$ and classify causality.",
+            "worked_solution_goal": "Point out that the $u(-t+1)$ term creates left-time support, so the impulse response is not causal.",
+            "variation_from_previous": "This step sharpens the previous graph/formula checks by explicitly identifying which exact negative-time interval breaks causality.",
+            "solution_step_plan": [
+              "Break each term into support sets.",
+              "Use strict sign test: nonzero for any $t<0$ implies noncausal.",
+              "Compute or bracket the negative-time interval for offending terms.",
+              "Conclude with full rule: causality requires no such interval.",
+              "Optionally note if causality already fails, no further stability check should be trusted yet."
+            ],
+            "practice_variation_axes": [
+              "Vary whether the offending left-side support is impulse-like or finite-duration.",
+              "Vary algebraic complexity of coefficients and decay factors with same support signature.",
+              "Vary inclusion of multiple left-sided terms to test consistency of interval identification."
+            ]
+          },
+          "handoff_notes": "Keep this example tightly coupled to support interval naming so later practice can mirror with direct negative-time detection tasks."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Verifying Causality Before Using Pole Locations",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "learning_goal": "Practice the required pipeline: verify causality in the time domain before using pole-location checks for BIBO stability.",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No plots are required; this is a sequencing/control step with a symbolic inverse-Laplace scenario."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five textual options about allowed workflow and causality prerequisite",
+            "practice_question_model": "Given $H(s)=\\frac{s+2}{s(s+1)(s+4)}$, which order is valid before concluding BIBO stability: test pole locations only, or verify causality from $h(t)$ first? Choose the best action and causality result if the inverse transform contains noncausal terms.",
+            "distractor_plan": [
+              "Include distractor that jumps to pole-based stability without checking $h(t)$$ for t<0$.",
+              "Include distractor that says causality is guaranteed by left-half-plane poles in all cases.",
+              "Include distractor that applies wrong ordering by testing stability before support.",
+              "Include distractor that says no need to check causality because all examples are causal.",
+              "Include distractor that confuses anti-causal with improper support language near $t=0 but misses nonzero negative intervals$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\frac{1}{s^2+1}$, state the time-domain causality check flow before applying pole-location stability rules and show the consequence if $h(t)$ were found noncausal.",
+            "worked_solution_goal": "Demonstrate that any noncausal component invalidates direct pole-based stability conclusions for this lesson sequence and must be flagged before BIBO classification.",
+            "variation_from_previous": "This extends earlier support checks into workflow control, making the sequence explicit: impulse-response causality validation is a prerequisite for stable-system tests.",
+            "solution_step_plan": [
+              "Compute/inspect whether $h(t)$ is right-sided by analyzing inverse-transform support terms.",
+              "If noncausal support appears, stop and report causality status first.",
+              "Only when causal is confirmed, proceed to pole-based stability checks in the next lesson block.",
+              "Document this dependency so question generator reinforces ordering and guardrails."
+            ],
+            "practice_variation_axes": [
+              "Vary whether $h(t)$ is first derived from a rational $H(s)$ that suggests both right- and left-sided inverse terms.",
+              "Vary question order so learners must choose which test comes first.",
+              "Vary distractors where pole location alone is insufficient but time-domain support resolves causality immediately."
+            ]
+          },
+          "handoff_notes": "This is the gating step between this topic and next lesson family; keep emphasis on sequencing and noncausal-prerequisite failures."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "BIBO Stability from Pole Locations",
+      "lesson_core_move": "Classify a causal LTI system as BIBO stable or unstable by checking whether every transfer-function pole lies strictly in the left half of the s-plane.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to BIBO Stability from Pole Locations",
+          "step_type": "tutorial",
+          "learning_goal": "State the BIBO criterion for causal LTI systems and connect the pole condition to the left-half-plane stability test.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; this step is a direct symbolic rule pass."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "no tutorial practice; follow-up questions are planned in later example sections",
+            "distractor_plan": [
+              "No distractor plan is required for the tutorial section."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Give the exact target move: a causal LTI transfer function is BIBO stable iff every pole has strictly negative real part.",
+            "base_case": "Use $H(s)=\\frac{1}{s+2}$ as the base case; identify the sole pole at $-2$, show it is in the left half-plane, and classify the system as BIBO stable.",
+            "paragraph_plan": [
+              "Open by connecting to prior knowledge that the same system is causal from the previous lesson and that causality is required before applying pole checks.",
+              "Define poles as roots of the denominator $D(s)$ of $H(s)=\\dfrac{N(s)}{D(s)}$ and define the left half-plane as $\\Re\\{s\\}<0$.",
+              "Show the strict criterion for BIBO stability: every pole must satisfy negative real part; boundary poles at $\\Re\\{s\\}=0$ are not allowed for BIBO stability.",
+              "Give the base-case example and explicitly contrast stable, unstable, and boundary cases by inspection of pole locations.",
+              "Bridge to examples by introducing the three representations students will practice: listed poles, factored transfer function, and pole-zero plot."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)},\\; D(s)=\\prod_i (s-p_i)$$",
+              "$$\\text{BIBO stable for causal LTI} \\iff \\Re\\{p_i\\}<0\\;\\text{for every pole }p_i.$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "No worked example in tutorial step.",
+            "worked_solution_goal": "No worked example in tutorial step.",
+            "variation_from_previous": "No variation; this is a direct-instruction anchor section.",
+            "solution_step_plan": [
+              "No worked example in tutorial step."
+            ],
+            "practice_variation_axes": [
+              "No practice in tutorial step."
+            ]
+          },
+          "handoff_notes": "Prioritize minimum effective direct instruction, then immediate practice in the next sections. Keep the statement about strict left-half-plane (not nonpositive) explicit to avoid boundary errors."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Classifying a Causal LTI System from Listed Pole Locations",
+          "step_type": "example",
+          "learning_goal": "Given explicit pole values, apply the strict left-half-plane test to decide BIBO stability for causal LTI systems.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagrams are required because pole list text is sufficient."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with concise expression/word choices",
+            "practice_question_model": "Classify whether a system with poles listed as $p=\\{-1,-2,-4\\}$ is BIBO stable.",
+            "distractor_plan": [
+              "Use a distractor that flips strict inequality to non-strict (allowing $\\Re\\{p_i\\}=0$ as stable).",
+              "Use a distractor that treats zeros as the stability test and ignores denominator poles.",
+              "Use a distractor that classifies based on pole magnitude $|p_i|$ rather than real part sign.",
+              "Use a distractor that marks one negative real part pole as unstable.",
+              "Use a distractor that misreads a complex pole with negative real part as unstable due to nonzero imaginary part."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base-case explanation needed in example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify $H(s)$ for poles $\\{p_1=-1,p_2=-3,p_3=2\\}$.",
+            "worked_solution_goal": "Extract the real parts, test strict negativity, and conclude the system is BIBO unstable due to $p_3=2$.",
+            "variation_from_previous": "This introduces direct numerical pole lists instead of a generic rule statement in the tutorial.",
+            "solution_step_plan": [
+              "Write each pole and its real part: $-1,-3,2$.",
+              "Check strict real-part condition $\\Re\\{p_i\\}<0$ for each pole.",
+              "Find one violating pole ($2$ has positive real part).",
+              "Conclude the transfer function is not BIBO stable."
+            ],
+            "practice_variation_axes": [
+              "Swap one pole from negative to positive real part.",
+              "Replace one pole with a repeated negative pole to confirm multiplicity does not change the sign test.",
+              "Use a complex pair with negative real part to reinforce that imaginary part does not change the condition."
+            ]
+          },
+          "handoff_notes": "Keep this section symbolic and quick. Include one clearly stable and one clearly unstable option in model practice to reinforce the criterion."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Classifying Stability from a Factored Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Extract poles from a factored transfer function and apply the pole-half-plane rule to classify BIBO stability.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No figure is required; algebraic factorization is the only input needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with concise expression/word choices",
+            "practice_question_model": "Classify BIBO stability of $H(s)=\\dfrac{3(s+1)}{(s+1)(s+4)(s+5)}$.",
+            "distractor_plan": [
+              "Use a distractor that checks the numerator roots instead of denominator roots.",
+              "Use a distractor that treats one repeated factor as automatic cancellation and skips stability implication.",
+              "Use a distractor that uses non-strict real-part condition.",
+              "Use a distractor that only inspects magnitude of pole locations.",
+              "Use a distractor that classifies by counting zeros in the right half-plane."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base-case explanation needed in example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify $H(s)=\\dfrac{(s+2)(s+4)}{(s+1)(s+3)(s+6)}$.",
+            "worked_solution_goal": "Read denominator factors, identify poles at $-1,-3,-6$, and classify the system as BIBO stable.",
+            "variation_from_previous": "Extend from raw pole list input to deriving poles from a denominator factorization before applying the same strict sign test.",
+            "solution_step_plan": [
+              "List denominator factors and set each to zero to find poles.",
+              "Find poles $p=-1,-3,-6$ from $D(s)=(s+1)(s+3)(s+6)$.",
+              "Check $\\Re\\{p\\}<0$ for each pole.",
+              "Conclude all are strictly negative, so the system is BIBO stable."
+            ],
+            "practice_variation_axes": [
+              "Insert one factor with root in right half-plane while keeping rest negative.",
+              "Introduce one pole at the origin and one negative pole pair.",
+              "Introduce repeated pole factors and keep data short enough for rapid evaluation."
+            ]
+          },
+          "handoff_notes": "Treat repeated poles as stable/unstable by sign only; avoid overcomplicating with ROC rules or residues."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Classifying Stability from a Pole-Zero Plot",
+          "step_type": "example",
+          "learning_goal": "Read pole positions from a pole-zero plot and apply the same strict left-half-plane rule for causal LTI BIBO stability.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A pole-zero plot with real axis and imaginary axis, showing several poles and optional zeros; labels should make strict left-half-plane and right-half-plane placement explicit.",
+            "visual_elements": [
+              "s-plane coordinate axes",
+              "pole markers",
+              "zero markers",
+              "highlighted left and right half-plane regions"
+            ],
+            "image_generation_notes": "Use one section image for the worked example; generate additional practice images by shifting pole locations and preserving the same classification task."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic/short-text classification choices",
+            "practice_question_model": "Use a pole-zero plot with three poles plotted and ask for BIBO stability classification.",
+            "distractor_plan": [
+              "Use a distractor that only checks whether zeros are in LHP.",
+              "Use a distractor that uses non-strict real-axis boundary as stable.",
+              "Use a distractor that misreads the sign of poles near the imaginary axis.",
+              "Use a distractor that classifies by nearest pole-to-axis distance.",
+              "Use a distractor that marks the system unstable only when all poles are in RHP."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base-case explanation needed in example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Use the provided pole-zero plot to classify stability for poles at $-1$, $-4$, and $0.8$ with zeros at $\\pm j2$.",
+            "worked_solution_goal": "Read visual pole locations, identify the RHP pole, and conclude BIBO instability.",
+            "variation_from_previous": "Introduce geometric inspection by moving from symbolic factors to a pole-zero diagram, but keep the same strict-LHP criterion.",
+            "solution_step_plan": [
+              "Locate each pole on the $s$-plane and read its real part.",
+              "Ignore zero locations for this criterion and focus only on poles.",
+              "Apply $\\Re\\{p\\}<0$ to each pole.",
+              "Mark unstable because one pole is in RHP."
+            ],
+            "practice_variation_axes": [
+              "Move one pole across the imaginary axis in mirror-image plots.",
+              "Introduce the boundary case on the imaginary axis to test strict inequality transfer.",
+              "Swap multiple left-half-plane poles with one right-half-plane pole while holding answer pattern constant."
+            ]
+          },
+          "handoff_notes": "Treat this as image-in-question format: both worked example and practice benefit from generated plots. Keep answer choices text/symbolic only."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Detecting Instability from One Pole Outside the Strict Left Half-Plane",
+          "step_type": "example",
+          "learning_goal": "Diagnose instability quickly when exactly one pole violates strict left-half-plane conditions.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; reinforce the edge condition with compact symbolic examples."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with five short options",
+            "practice_question_model": "Classify BIBO stability of $H(s)=\\dfrac{1}{(s+1)(s+4)(s-2)}$.",
+            "distractor_plan": [
+              "Use a distractor that marks one unstable pole as still stable because one stable pole dominates.",
+              "Use a distractor that misapplies strict inequality as non-strict ($\\leq 0$).",
+              "Use a distractor that checks zeros only and ignores poles.",
+              "Use a distractor that classifies based on the number of poles rather than sign.",
+              "Use a distractor that fails only when repeated pole is unstable."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base-case explanation needed in example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the stability of $H(s)=\\dfrac{5}{(s+3)(s+0.5)(s-0.1)}$.",
+            "worked_solution_goal": "Extract poles, apply strict negativity, and label the system unstable due to exactly one RHP pole.",
+            "variation_from_previous": "Shift from generic pole-plot and algebra checks to the edge-case pattern where a single right-half-plane pole causes instability.",
+            "solution_step_plan": [
+              "Factor/inspect denominator to get poles $-3$, $-0.5$, $0.1$.",
+              "Apply strict left-half-plane condition to each pole.",
+              "Identify the outlier at $0.1$ as being in RHP.",
+              "Conclude instability because not all poles are strictly in LHP."
+            ],
+            "practice_variation_axes": [
+              "Change the outlier pole from slightly positive to clearly positive values.",
+              "Move the outlier to imaginary axis to contrast strict and non-strict inequality.",
+              "Keep one RHP pole and vary remaining LHP poles for repeated recognition."
+            ]
+          },
+          "handoff_notes": "Keep this as a fast diagnostic section. Emphasize that any single pole outside strict LHP is enough to fail the criterion."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Left-Half-Plane Poles",
+      "lesson_core_move": "Recognize left-half-plane poles by using their negative real parts to identify decaying response modes that support BIBO stability in causal LTI systems.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Left-Half-Plane Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Define the left-half-plane rule for causal LTI poles and connect the sign of the pole real part to decaying response behavior.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "An $s$-plane with real/imaginary axes, labeled left and right half-planes, and one pole at $-2$, one pole at $2$, and one pole on the imaginary axis.",
+            "visual_elements": [
+              "s-plane axes",
+              "left-half-plane shading",
+              "sample poles"
+            ],
+            "image_generation_notes": "Use a compact tutorial image to anchor the LHP concept; no question-specific pole sets are needed in this section."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No practice question for the tutorial step.",
+            "distractor_plan": [
+              "No distractor plan is required for a tutorial-only section."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "State the causal LTI BIBO criterion for poles: all poles must be in the left half-plane for stability.",
+            "base_case": "Use $H(s)=\\frac{1}{s+2}$ to show the single pole at $-2$ and classify the contribution as decaying.",
+            "paragraph_plan": [
+              "State the connection to the prior lesson: causal systems are assumed, and stability is decided by pole placement in $s$.",
+              "Define poles of $H(s)=\\frac{N(s)}{D(s)}$ as the roots of $D(s)$ and define the left-half-plane as $\\Re\\{s\\}<0$.",
+              "Split the pole effect using $s=\\sigma+j\\omega$ into $e^{\\sigma t}e^{j\\omega t}$ and name strict negative real part as decaying envelope.",
+              "Show boundary rule: poles with $\\Re\\{s\\}\\ge 0$ violate strict stability in this lesson.",
+              "Preview examples: numeric poles, pole maps, mode interpretation, and whole-system conclusion."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)}$$",
+              "$$e^{st}=e^{(\\sigma+j\\omega)t}=e^{\\sigma t}e^{j\\omega t}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "No worked example in tutorial step.",
+            "worked_solution_goal": "No worked example in tutorial step.",
+            "variation_from_previous": "No variation; this is a direct-instruction anchor step.",
+            "solution_step_plan": [
+              "No worked example in tutorial step."
+            ],
+            "practice_variation_axes": [
+              "No practice in tutorial step."
+            ]
+          },
+          "handoff_notes": "Use minimal direct explanation and set strict inequality language clearly before shifting to practice examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Poles with Negative Real Parts",
+          "step_type": "example",
+          "learning_goal": "Classify poles from algebraic lists by testing each real part against $\\Re\\{s\\}<0$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Purely symbolic pole list processing; no image needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with expression/text choices",
+            "practice_question_model": "Given poles $-3$, $0$, $2$, and $-0.5+j1$, choose the correct BIBO stability classification for a causal LTI system.",
+            "distractor_plan": [
+              "Treat boundary poles with zero real part as stable.",
+              "Use the imaginary part to classify stability instead of the real part.",
+              "Ignore one negative real pole and classify based only on pole multiplicity.",
+              "Classify based on whether poles are integers or complex.",
+              "Confuse numerator roots (zeros) with denominator roots (poles)."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base case for example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": [
+              "$$\\Re\\{s\\}<0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the pole set $\\{-1, -4, 2, -j3\\}$ for the causal transfer function.",
+            "worked_solution_goal": "Identify the left-half-plane poles and conclude the system is unstable because of $2$.",
+            "variation_from_previous": "Moves from the base rule into a mixed symbolic list including positive, negative, and purely imaginary elements.",
+            "solution_step_plan": [
+              "Rewrite each pole in $\\sigma+j\\omega$ form.",
+              "Compute each real part: $-1$, $-4$, $2$, $0$.",
+              "Select only poles with $\\sigma<0$.",
+              "Mark the set of LHP poles as $\\{-1,-4\\}$ and mark stability as failing due to $2$."
+            ],
+            "practice_variation_axes": [
+              "Vary one or two poles from LHP to RHP.",
+              "Replace real poles with complex poles sharing negative real part.",
+              "Include repeated negative-real poles to confirm multiplicity does not change the sign test."
+            ]
+          },
+          "handoff_notes": "Keep the decision strictly based on $\\Re\\{s\\}<0$ and leave no ambiguity on boundary handling."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Locating Left-Half-Plane Poles on the s-Plane",
+          "step_type": "example",
+          "learning_goal": "Read a pole-zero-like diagram and extract the subset of poles in the strict left half-plane.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "A pole map in the $s$-plane showing multiple poles and zeros with clear coordinates near both sides of the imaginary axis.",
+            "visual_elements": [
+              "s-plane axes",
+              "pole markers",
+              "zero markers",
+              "imaginary axis boundary"
+            ],
+            "image_generation_notes": "Use one similar diagram style for section and each practice variation with shifted pole coordinates."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with expression/text choices",
+            "practice_question_model": "Use a pole map with poles at $-2$, $-0.5$, $0.2$, and $-1+2j$ and ask for the correct BIBO-stability conclusion.",
+            "distractor_plan": [
+              "Classify zero-real-part points as stable.",
+              "Read only zeros and ignore pole positions.",
+              "Count all poles without sign-checking and guess from number.",
+              "Use pole magnitude rather than real-part sign as the rule.",
+              "Treat complex poles with negative real parts as unstable."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base case for example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Use the provided $s$-plane diagram to identify all left-half-plane poles and classify stability for the causal system.",
+            "worked_solution_goal": "Locate poles with negative real part and conclude instability from the RHP pole.",
+            "variation_from_previous": "Turns symbolic algebra into geometric inspection while preserving the same strict real-part rule.",
+            "solution_step_plan": [
+              "Locate each plotted pole and read its real part.",
+              "Apply $\\Re\\{s\\}<0$ to each point.",
+              "List poles qualifying for LHP.",
+              "Use all-poles rule to classify the full system."
+            ],
+            "practice_variation_axes": [
+              "Move one RHP pole across the axis to LHP.",
+              "Move a pole to the imaginary axis to test strict inequality.",
+              "Increase question density by adding distractor zeros while holding the same scoring logic."
+            ]
+          },
+          "handoff_notes": "Keep this an image-in-question section: both worked example and generated practice should use pole-location diagrams."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting Negative Real Parts as Decaying Modes",
+          "step_type": "example",
+          "learning_goal": "Convert qualifying left-half-plane poles into decaying temporal modes and explain why those modes remain bounded.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "This step is fully symbolic and formula-based."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with expression/text choices",
+            "practice_question_model": "Given poles $-1$, $-3+4j$, and $-0.2$, choose the correct statement about mode behavior.",
+            "distractor_plan": [
+              "Treat any nonzero imaginary part as non-decaying regardless of real part.",
+              "Classify complex poles by magnitude rather than real part.",
+              "Misapply strict inequality as non-strict and treat axis poles as stable.",
+              "Swap signs when translating $s$ into time-domain factors.",
+              "Infer instability from a large negative imaginary part."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base case for example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For poles $s=-2$ and $s=-1.5+2j$, write the associated mode terms in time-domain form and state whether each mode decays.",
+            "worked_solution_goal": "Show $e^{-2t}$ and $e^{-1.5t}e^{j2t}$ and mark both as decaying because real parts are negative.",
+            "variation_from_previous": "Adds the second stage of use: using pole location to generate corresponding time-response interpretation.",
+            "solution_step_plan": [
+              "Decompose each pole as $s=\\sigma+j\\omega$.",
+              "Apply $e^{st}=e^{\\sigma t}e^{j\\omega t}$.",
+              "Evaluate whether $\\sigma<0$ for each mode.",
+              "Describe decay behavior and connect it to stability intuition."
+            ],
+            "practice_variation_axes": [
+              "Vary real part magnitude to compare decay rates.",
+              "Include one complex pole with small negative real part near zero boundary.",
+              "Add one RHP distractor pole to require strict application of exclusion."
+            ]
+          },
+          "handoff_notes": "Keep explanation focused on $\\sigma$ in $e^{\\sigma t}e^{j\\omega t}$; do not introduce full response derivations."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Connecting All Left-Half-Plane Poles to BIBO Stability",
+          "step_type": "example",
+          "learning_goal": "Aggregate pole-by-pole checks into a whole-system BIBO classification for causal LTI transfer functions.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual media is needed; this is a compact symbolic decision aggregation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic classification with expression/text choices",
+            "practice_question_model": "Determine BIBO stability of $H(s)=\\frac{2}{(s+1)(s+3)(s+0.5)(s+0.2)}$ for a causal LTI system.",
+            "distractor_plan": [
+              "Classify based on zeros instead of poles.",
+              "Call the system unstable because one pole is repeated.",
+              "Use magnitude-only comparisons and ignore signs.",
+              "Treat a pole at $-0.2$ as non-decaying because it is close to the axis.",
+              "Allow one RHP pole and still declare stable."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "No direct instruction in example step.",
+            "base_case": "No base case for example section.",
+            "paragraph_plan": [
+              "No tutorial paragraphs."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $H(s)=\\frac{10}{(s+1)(s+2)(s+4)}$, determine BIBO stability for a causal LTI system.",
+            "worked_solution_goal": "Find all three poles, verify all have negative real part, and classify the system as BIBO stable.",
+            "variation_from_previous": "Uses full transfer-function aggregation from prior per-pole interpretation to the complete stability conclusion.",
+            "solution_step_plan": [
+              "Factor the denominator and compute poles.",
+              "Check each pole real part against $\\Re\\{s\\}<0$.",
+              "Use all-poles requirement: every pole must satisfy strict negativity.",
+              "Report final stability outcome."
+            ],
+            "practice_variation_axes": [
+              "Replace one stable pole with an unstable pole and recompute.",
+              "Change from three to four poles while keeping the same rule.",
+              "Add optional numerator-only changes so the classification remains denominator-based."
+            ]
+          },
+          "handoff_notes": "Reinforce that causality is prerequisite and that any RHP pole violates BIBO stability in one check."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Right-Half-Plane Poles",
+      "lesson_core_move": "Identify right-half-plane poles by using their positive real parts to infer growing exponential modes and BIBO instability in causal LTI systems.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Right-Half-Plane Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Build the exact rule that a right-half-plane pole is any pole with positive real part in the $s$-plane and that such a pole implies a growing exponential mode and BIBO instability for a causal LTI system.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Clean $s$-plane sketch with real axis, imaginary axis, and clearly highlighted right-half-plane region; include one pole at $s=1$ and one pole at $s=-1$.",
+            "visual_elements": [
+              "$s$-plane coordinate axes",
+              "right-half-plane region shading",
+              "sample poles at $s=1$ and $s=-1$"
+            ],
+            "image_generation_notes": "Keep labels minimal and legible. Use the image only to establish the geometric rule for pole regions."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No practice questions for tutorial step.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that for transfer functions written in pole form, the right-half-plane condition is $\\Re\\{s\\} > 0$ and that any such pole creates an unbounded impulse-response component.",
+            "base_case": "Use $H(s)=\\frac{1}{s-1}$, identify the single pole $s=1$, and conclude BIBO instability.",
+            "paragraph_plan": [
+              "Define right-half-plane vs left-half-plane on the $s$-plane using the sign of the real part.",
+              "Walk through one denominator-root example and explicitly map the pole sign to time-domain behavior.",
+              "State the classification rule: one or more right-half-plane poles makes the causal LTI system BIBO unstable."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{1}{s-1},\\; \\text{pole at } s=1$$",
+              "$$\\text{RHP condition: } \\Re\\{s\\} > 0$$",
+              "$$\\Re\\{s\\}=1>0\\Rightarrow y(t)\\text{ grows as }e^{t}\\text{ for causal systems}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial step.",
+            "worked_solution_goal": "Not applicable for tutorial step.",
+            "variation_from_previous": "Not applicable for tutorial step.",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this short and visual, then move immediately to pole-computation practice."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying a Positive Real Pole",
+          "step_type": "example",
+          "learning_goal": "Apply the right-half-plane rule to a single real pole transfer function and identify growth-causing pole locations.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices on transfer-function stability",
+            "practice_question_model": "Classify $H(s)=\\frac{5}{s-3}$ as stable or unstable in a causal LTI setting.",
+            "distractor_plan": [
+              "Use the numerator sign instead of pole locations.",
+              "Assume poles with larger imaginary part dominate instead of sign of real part.",
+              "Treat the pole at $s=3$ as imaginary-axis by mistake.",
+              "Apply left-half-plane decay intuition by changing the sign convention.",
+              "Conclude stability because only one pole exists."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "Not applicable for example step.",
+            "paragraph_plan": [
+              "Not applicable for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify stability of $H(s)=\\frac{1}{s-4}$.",
+            "worked_solution_goal": "Show the pole is at $s=4$ with positive real part and classify the system as BIBO unstable.",
+            "variation_from_previous": "Extend the tutorial base case to a parameterized real pole location not equal to 1.",
+            "solution_step_plan": [
+              "Set denominator $s-4=0$ to find the pole.",
+              "Compute $\\Re\\{s\\}=4$.",
+              "Apply the rule $\\Re\\{s\\}>0$ implies right-half-plane.",
+              "Conclude at least one unstable mode, so overall system is BIBO unstable."
+            ],
+            "practice_variation_axes": [
+              "pole real value",
+              "sign of the pole real part",
+              "numerator scaling"
+            ]
+          },
+          "handoff_notes": "Keep the example tightly one-step so students can copy the rule without overload."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Classifying a Transfer Function with One Right-Half-Plane Pole",
+          "step_type": "example",
+          "learning_goal": "Classify a causal LTI system when one real pole is in the right-half-plane and others are in the left-half-plane.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices with one-correct stability conclusion",
+            "practice_question_model": "Classify $H(s)=\\frac{2}{(s-2)(s+1)}$ as stable or unstable.",
+            "distractor_plan": [
+              "Conclude stable because only one pole is unstable and two poles are stable.",
+              "Ignore the left-half-plane pole at $s=-1$ and misclassify by numerator.",
+              "Classify using pole magnitudes instead of signs of real parts.",
+              "Treat repeated poles as automatically stable.",
+              "Assume complex conjugate structure is required for instability."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "Not applicable for example step.",
+            "paragraph_plan": [
+              "Not applicable for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the stability of $H(s)=\\frac{1}{(s-5)(s+2)}$.",
+            "worked_solution_goal": "Identify both poles and use any positive real pole condition to classify the system as BIBO unstable.",
+            "variation_from_previous": "Extend from one-pole examples to a two-pole transfer function with a second stable pole included.",
+            "solution_step_plan": [
+              "Find all poles by solving $(s-5)(s+2)=0$.",
+              "List poles $s=5$ and $s=-2$.",
+              "Apply rule: one right-half-plane pole is sufficient for instability.",
+              "State final classification: BIBO unstable."
+            ],
+            "practice_variation_axes": [
+              "number of poles in denominator",
+              "mix of left- and right-half-plane poles",
+              "pole order and numerator constants"
+            ]
+          },
+          "handoff_notes": "Reinforce that one unstable pole dominates system classification."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Detecting Right-Half-Plane Poles Among Multiple Poles",
+          "step_type": "example",
+          "learning_goal": "Scan multiple poles efficiently and detect whether any right-half-plane pole exists.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic responses that include a mixture of unstable/stable outcomes",
+            "practice_question_model": "Classify $H(s)=\\frac{7(s+1)}{(s+1)(s-1)(s+4)}$ for BIBO stability.",
+            "distractor_plan": [
+              "Skip the full factorization and check only one printed denominator factor.",
+              "Mark stable because two poles are left-half-plane.",
+              "Pick the most negative pole as the classifier.",
+              "Treat the zero at $s=-1$ as a pole and let it decide stability.",
+              "Use imaginary part magnitude while ignoring real-part sign."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "Not applicable for example step.",
+            "paragraph_plan": [
+              "Not applicable for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify $H(s)=\\frac{10(s+3)}{(s-1)(s+2)(s+5)}$.",
+            "worked_solution_goal": "Find all three poles and conclude instability because a positive-real pole exists.",
+            "variation_from_previous": "Increase pole count and explicitly practice skipping stable factors while still checking every real part.",
+            "solution_step_plan": [
+              "Set denominator factors to zero to list poles at $1,-2,-5$.",
+              "Check each pole's real part against zero.",
+              "Flag only right-half-plane poles as instability drivers.",
+              "Conclude BIBO instability due to $s=1$."
+            ],
+            "practice_variation_axes": [
+              "number of poles and combinations of signs",
+              "reordering of factors",
+              "presence of nonzero constant numerator"
+            ]
+          },
+          "handoff_notes": "Encourage a two-column scan: pole list and real-part sign."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Recognizing Right-Half-Plane Complex Poles",
+          "step_type": "example",
+          "learning_goal": "Classify systems with complex poles whose real part is positive, and connect them to growing oscillatory responses.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic choices with one-correct stability reasoning",
+            "practice_question_model": "Classify $H(s)=\\frac{8}{(s-(1+j))(s-(1-j))}$ as stable or unstable and identify the sign driver.",
+            "distractor_plan": [
+              "Treat complex poles as always stable regardless of real-part sign.",
+              "Use imaginary part only and ignore real part.",
+              "Conclude oscillatory implies stable.",
+              "Classify based on denominator degree parity.",
+              "Assume repeated right-half-plane factors are needed for instability."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "Not applicable for example step.",
+            "paragraph_plan": [
+              "Not applicable for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify $H(s)=\\frac{1}{(s-(2+j))(s-(2-j))}$.",
+            "worked_solution_goal": "Show both poles have real part $2>0$, so the causal LTI system is BIBO unstable.",
+            "variation_from_previous": "Extend the single- or real-pole checks to a complex-conjugate right-half-plane pair.",
+            "solution_step_plan": [
+              "Set each denominator factor to zero to identify poles $s=2+j$ and $s=2-j$.",
+              "Evaluate each real part as $\\Re\\{2\\pm j\\}=2$.",
+              "Apply rule that positive real part in any pole implies unstable growth mode.",
+              "State final classification and expected growing oscillatory behavior."
+            ],
+            "practice_variation_axes": [
+              "imaginary part magnitude",
+              "real part crossing the axis",
+              "single complex pole pair versus repeated complex pair"
+            ]
+          },
+          "handoff_notes": "Avoid overfitting the learner to real-pole cases by forcing real-part extraction for complex numbers."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Imaginary-Axis Poles",
+      "lesson_core_move": "Classify imaginary-axis poles by recognizing their nondecaying response modes and marking causal LTI systems with such poles as not BIBO stable.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Imaginary-Axis Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the strict imaginary-axis rule for causal LTI poles: any pole with zero real part creates a nondecaying mode and forces a BIBO-unstable conclusion.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "A clean $s$-plane with real and imaginary axes, labeled left/right/imaginary-axis regions, one pole in LHP at $-1$, one at RHP at $1$, and simple imaginary-axis points at $\\pm j2$ and $0$.",
+            "visual_elements": [
+              "$s$-plane axes",
+              "imaginary-axis sample poles",
+              "region labels for $\\Re\\{s\\}<0$, $\\Re\\{s\\}=0$, $\\Re\\{s\\}>0$"
+            ],
+            "image_generation_notes": "Use this as a compact schema image only; no question-variant pole plots are needed."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No tutorial practice questions for this section.",
+            "distractor_plan": [
+              "No distractor plan is needed for the tutorial section."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the exact classification rule: causal LTI systems are not BIBO stable if any pole has $\\Re\\{s\\}=0$; show this is the boundary case excluded from strict left-half-plane stability.",
+            "base_case": "Use $H(s)=\\frac{1}{s^2+4}$ with poles at $s=\\pm j2$ to establish the imaginary-axis location and nondecaying oscillatory behavior.",
+            "paragraph_plan": [
+              "Start from prior lesson: pole location determines causal LTI behavior; causality remains the prerequisite condition for all later stability checks.",
+              "State the general response form for one pole $s=\\sigma+j\\omega$ as $e^{st}=e^{\\sigma t}e^{j\\omega t}$.",
+              "Use the $s$-plane rule to define LHP ($\\Re\\{s\\}<0$), RHP ($\\Re\\{s\\}>0$), and imaginary-axis ($\\Re\\{s\\}=0$) categories.",
+              "Show why $\\Re\\{s\\}=0$ gives constant-envelope terms, so BIBO response does not decay and stability fails.",
+              "Preview the example sequence: zero-real-part identification, origin handling, simple nonzero imaginary poles, and repeated imaginary-axis poles."
+            ],
+            "display_math_plan": [
+              "$$e^{st}=e^{(\\sigma+j\\omega)t}=e^{\\sigma t}e^{j\\omega t}$$",
+              "$$\\Re\\{s\\}=0 \\Rightarrow e^{\\sigma t}=1 \\text{ (nondecaying envelope)}$$",
+              "$$H(s)=\\frac{N(s)}{D(s)},\\; D(s)=\\prod_i (s-p_i)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "No worked example in tutorial section.",
+            "worked_solution_goal": "No worked example in tutorial section.",
+            "variation_from_previous": "No variation; this is the tutorial anchor.",
+            "solution_step_plan": [
+              "No worked example in tutorial section."
+            ],
+            "practice_variation_axes": [
+              "No practice questions in tutorial section."
+            ]
+          },
+          "handoff_notes": "Use this tutorial as the visual anchor only, then shift to immediate symbolic practice in section 2."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Recognizing Poles with Zero Real Part",
+          "step_type": "example",
+          "learning_goal": "Identify nonzero-imaginary and imaginary-axis poles by checking whether $\\Re\\{p\\}=0$ and classify the resulting system as not BIBO stable.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; pole lists are sufficient."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic classification choices",
+            "practice_question_model": "Classify the causal LTI transfer function with poles at $-1$, $-3$, $\\pm 2j$.",
+            "distractor_plan": [
+              "Use a distractor that treats zero real part as stable because no poles are in the right half-plane.",
+              "Use a distractor that checks only pole magnitudes and ignores signs of real parts.",
+              "Use a distractor that classifies only real poles and ignores complex poles.",
+              "Use a distractor that classifies based on whether $\\Im\\{p\\}$ is zero.",
+              "Use a distractor that uses strict inequality as $\\Re\\{p\\}\\le 0$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "No base-case explanation needed in this example section.",
+            "paragraph_plan": [
+              "No tutorial content for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the poles $\\{-2,\\,-5,\\,3j,\\,-3j\\}$ for a causal LTI transfer function.",
+            "worked_solution_goal": "Mark all $\\Re\\{p\\}=0$ poles as nondecaying and conclude the system is not BIBO stable.",
+            "variation_from_previous": "Moves from the geometric rule to direct symbolic inspection of a mixed pole list.",
+            "solution_step_plan": [
+              "List each pole and compute its real part: $-2\\to -2$, $-5\\to -5$, $3j\\to 0$, $-3j\\to 0$.",
+              "Apply the imaginary-axis condition $\\Re\\{p\\}=0$ to identify $p=\\pm 3j$.",
+              "State that imaginary-axis poles are nondecaying modes.",
+              "Classify the system as BIBO unstable."
+            ],
+            "practice_variation_axes": [
+              "Swap one nonzero real pole for a pole with positive real part.",
+              "Replace one imaginary pole with a left-half-plane pole while holding option structure.",
+              "Add a repeated LHP pole without changing the nondecaying conclusion."
+            ]
+          },
+          "handoff_notes": "Keep the check local and fast: every pole either decays, grows, or is nondecaying by real-part value."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Classifying a Pole at the Origin",
+          "step_type": "example",
+          "learning_goal": "Handle the special boundary case $p=0$ as an imaginary-axis pole that contributes a nondecaying constant-like mode and therefore violates BIBO stability for causal LTI systems.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; this is a short symbolic boundary-case classification."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five concise symbolic classification choices",
+            "practice_question_model": "Classify $H(s)=\\dfrac{1}{s(s+2)(s+5)}$ for BIBO stability.",
+            "distractor_plan": [
+              "Use a distractor that marks the pole at the origin as stable because it is not in the RHP.",
+              "Use a distractor that ignores pole order and counts only the number of factors.",
+              "Use a distractor that classifies based on zeros rather than poles.",
+              "Use a distractor that assumes a single LHP pole dominates and allows a stable conclusion.",
+              "Use a distractor that treats numerator constants as determinants of stability."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "No base-case explanation needed in this example section.",
+            "paragraph_plan": [
+              "No tutorial content for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify BIBO stability for poles at $\\{0,-1,-4\\}$.",
+            "worked_solution_goal": "Identify the pole at the origin, map it to nondecaying behavior, and mark the system as not BIBO stable.",
+            "variation_from_previous": "Specializes the zero-real-part rule to the boundary point $p=0$, where students often overgeneralize away from strict instability.",
+            "solution_step_plan": [
+              "Solve $D(s)=0$ (or read the list) to verify poles $0,-1,-4$.",
+              "Check real parts: $\\Re\\{0\\}=0$, $\\Re\\{-1\\}=-1$, $\\Re\\{-4\\}=-4$.",
+              "Flag $p=0$ as an imaginary-axis pole, therefore nondecaying.",
+              "Conclude the overall system is not BIBO stable."
+            ],
+            "practice_variation_axes": [
+              "Replace the origin pole with a small positive-real part pole and compare both boundary and RHP violations.",
+              "Move $0$ to negative real part to test correction of unstable-to-stable boundary transitions.",
+              "Add stable and repeated LHP poles to keep the classification load low."
+            ]
+          },
+          "handoff_notes": "Call out the exact boundary logic: $\\Re\\{s\\}=0$ is not stable for BIBO in this lesson."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Classifying Simple Nonzero Imaginary-Axis Poles",
+          "step_type": "example",
+          "learning_goal": "Classify systems with nonzero imaginary-axis poles by separating pure imaginary real-part-zero poles from LHP and RHP poles in transfer-function data.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; examples are best handled by symbolic pole expressions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic classification options",
+            "practice_question_model": "Determine if $H(s)=\\dfrac{2}{(s-3)(s+j5)(s-j5)}$ is BIBO stable.",
+            "distractor_plan": [
+              "Use a distractor that calls nonzero imaginary poles stable because they oscillate.",
+              "Use a distractor that looks only at imaginary-part magnitude and ignores real part.",
+              "Use a distractor that classifies using pole conjugate pairs as always stable.",
+              "Use a distractor that classifies based on total pole count.",
+              "Use a distractor that treats $\\pm j5$ as purely imaginary but stable zeros."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "No base-case explanation needed in this example section.",
+            "paragraph_plan": [
+              "No tutorial content for example step."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify poles $\\{4,\\,-1,\\,-2j,\\,2j\\}$ for a causal LTI transfer function.",
+            "worked_solution_goal": "Read all real parts and classify poles at $\\pm2j$ as nondecaying imaginary-axis poles, then conclude not BIBO stable.",
+            "variation_from_previous": "Adds paired nonzero imaginary poles after the origin case, reinforcing the same real-part rule across multiple examples.",
+            "solution_step_plan": [
+              "List poles and their real parts: $\\Re\\{4\\}=4$, $\\Re\\{-1\\}=-1$, $\\Re\\{\\pm2j\\}=0$.",
+              "Apply strict stability checks: RHP is unstable, LHP is okay, but $\\Re=0$ is disallowed in this lesson.",
+              "Identify the two imaginary-axis poles as nondecaying oscillatory modes.",
+              "Conclude BIBO instability."
+            ],
+            "practice_variation_axes": [
+              "Change nonzero imaginary magnitude (e.g., $\\pm j1$, $\\pm j10$).",
+              "Introduce a complex pair with very small nonzero real part to test mixed interpretation.",
+              "Replace a nonzero imaginary pair with a repeated origin pole."
+            ]
+          },
+          "handoff_notes": "Keep the rule uniform across real and complex poles: check real part first, then apply instability verdicts."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Classifying Repeated Imaginary-Axis Poles",
+          "step_type": "example",
+          "learning_goal": "Classify multiplicity effects on imaginary-axis poles and confirm any repeated pole on $\\Re\\{s\\}=0$ still yields nondecaying, and typically non-BIBO-friendly, behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required for repeated imaginary poles; multiplicity is checked from symbolic pole factorization."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five short symbolic answer options",
+            "practice_question_model": "Classify $H(s)=\\dfrac{1}{(s-j1)^2(s+3)}$ as BIBO stable or not.",
+            "distractor_plan": [
+              "Use a distractor that assumes repeated imaginary poles are stable if all poles are complex-conjugate.",
+              "Use a distractor that checks only one root of a repeated pole.",
+              "Use a distractor that applies LHP strict rule to multiplicity and allows strict negative-only checks.",
+              "Use a distractor that ignores multiplicity and misclassifies purely from real factors.",
+              "Use a distractor that classifies based only on whether the pair is repeated."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for example step.",
+            "base_case": "No base-case explanation needed in this example section.",
+            "paragraph_plan": [
+              "No tutorial content for example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify the stability of $H(s)=\\dfrac{5}{(s+j2)^2(s+1)}$ for a causal LTI system.",
+            "worked_solution_goal": "Identify the repeated imaginary pole $s=-j2$? Actually $s=-j2$ and classify as unstable due to repeated zero-real-part poles.",
+            "variation_from_previous": "Builds from simple imaginary-axis poles to multiplicity, requiring students to carry the same real-part instability rule through repeated roots.",
+            "solution_step_plan": [
+              "Factor the denominator and list poles $s=-j2$ (double) and $s=-1$.",
+              "Record real parts: $\\Re\\{-j2\\}=0$ with multiplicity 2, $\\Re\\{-1\\}=-1$.",
+              "State that repeated zero-real-part poles remain nondecaying and can produce unbounded growth terms in time domain.",
+              "Conclude the system is not BIBO stable."
+            ],
+            "practice_variation_axes": [
+              "Change pole order at imaginary-axis location while keeping sign logic identical.",
+              "Replace the repeated pole with a single nonzero imaginary pole.",
+              "Add or remove an LHP pole to test attention to the governing imaginary-axis rule."
+            ]
+          },
+          "handoff_notes": "Do not let multiplicity distract from the governing criterion: $\\Re\\{s\\}=0$ is not permitted for causal BIBO stability."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Decaying Exponential Responses",
+      "lesson_core_move": "Interpret negative real pole locations as decaying exponential response terms and connect their decay rates to stable causal LTI system behavior.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Decaying Exponential Responses",
+          "step_type": "tutorial",
+          "learning_goal": "Define the mapping from a negative real pole to a decaying exponential response term and connect the pole sign to stable causal LTI behavior.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; this section is symbolic pole-to-expression conversion.",
+            "visual_elements": [
+              "none"
+            ],
+            "image_generation_notes": "No image generation needed for this symbolic tutorial."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No practice questions in tutorial.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that a pole at $s=-\\sigma$ with $\\sigma>0$ in $H(s)$ contributes a term $K e^{-\\sigma t}u(t)$ in the causal response, and explain that the decay rate is $\\sigma$.",
+            "base_case": "Convert $H(s)=1/(s+1)$ to $h(t)=e^{-t}u(t)$ and highlight that $-1$ gives a positive decay rate of $1$.",
+            "paragraph_plan": [
+              "State the core move and tie it to causal LTI context: negative real poles imply decaying exponential components in the response.",
+              "Recall the inverse Laplace pair and map a single pole $s=-\\sigma$ to $\\mathcal{L}^{-1}\\{1/(s+\\sigma)\\}=e^{-\\sigma t}u(t)$ for $\\sigma>0$.",
+              "Show how to read a transfer-function term $K/(s+\\sigma)$ as amplitude $K$ times the base term and note why causality uses $u(t)$.",
+              "Demonstrate why positive $\\sigma$ is stability-supporting and summarize as a reusable interpretation rule.",
+              "Preview examples that add coefficients, compare multiple decay rates, and then classify stability from the pole set."
+            ],
+            "display_math_plan": [
+              "$$\\mathcal{L}^{-1}\\{1/(s+\\sigma)\\}=e^{-\\sigma t}u(t)$$",
+              "$$s=-\\sigma,\\; \\sigma>0 \\implies 1/(s+\\sigma) \\leftrightarrow e^{-\\sigma t}u(t)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [
+              "Not applicable for tutorial step."
+            ],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this step concise. Introduce the core symbol mapping once, then move to controlled examples in the next sections."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Finding the Exponential Response from a Negative Real Pole",
+          "step_type": "example",
+          "learning_goal": "Convert a single negative real pole into its decaying exponential response term with correct sign and amplitude.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; all work is algebraic pole-to-time-domain conversion.",
+            "visual_elements": [
+              "none"
+            ],
+            "image_generation_notes": "No image generation required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given $H(s)=\\frac{6}{s+3}$, what is the matching causal response term?",
+            "distractor_plan": [
+              "Use a growing exponential $6e^{+3t}u(t)$.",
+              "Drop the unit-step factor and return only $6e^{-3t}$.",
+              "Use $6e^{-t/3}u(t)$ by inverting the pole value.",
+              "Use $\\frac{6}{s+3}$ as the answer expression.",
+              "Place the exponent sign wrong and write $6e^{3t}u(t)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the causal time-domain term for $H(s)=\\frac{6}{s+3}$.",
+            "worked_solution_goal": "Produce $h(t)=6e^{-3t}u(t)$ by matching the standard form and extracting the decay rate $3$.",
+            "variation_from_previous": "Adds coefficient 6 and keeps a single negative real pole to test controlled extension from the tutorial base case.",
+            "solution_step_plan": [
+              "Write the term as $\\frac{K}{s+\\alpha}$ and identify $K=6,\\,\\alpha=3$.",
+              "Map to $K e^{-\\alpha t}u(t)$ using the tutorial rule.",
+              "State and check final answer as $6e^{-3t}u(t)$; confirm decay is stable because $\\alpha>0$."
+            ],
+            "practice_variation_axes": [
+              "coefficient values",
+              "pole value changes",
+              "checking the placement of the minus sign"
+            ]
+          },
+          "handoff_notes": "Keep this at one controlled extension only: one pole, varied gain. Ensure the answer is a time-domain expression with $u(t)$."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Comparing Decay Rates from Negative Real Pole Locations",
+          "step_type": "example",
+          "learning_goal": "Compare how negative real pole locations set relative decay rates in the corresponding exponential response terms.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; compare pole magnitudes symbolically.",
+            "visual_elements": [
+              "none"
+            ],
+            "image_generation_notes": "No image generation required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Which pole gives the slowest response decay: $s=-1$, $s=-4$, or $s=-0.5$?",
+            "distractor_plan": [
+              "Ignore signs and treat magnitudes as stable or unstable in reverse.",
+              "Choose at random because magnitude is presumed enough.",
+              "Compare only denominator constants without considering the negative sign effect.",
+              "Use reciprocal-rate intuition in the opposite direction.",
+              "Conflate complex-pair logic with purely real negative poles."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Compare the decay in $H(s)=\\frac{2}{s+1}$ and $H(s)=\\frac{2}{s+4}$ and state which term decays faster.",
+            "worked_solution_goal": "Identify $2e^{-t}u(t)$ and $2e^{-4t}u(t)$, then rank decay: $e^{-4t}$ decays faster than $e^{-t}$ because $4>1$.",
+            "variation_from_previous": "Moves from single-term decoding to comparing two negative-real terms that share the same structure but differ in pole distance.",
+            "solution_step_plan": [
+              "Map each term to a decaying exponential using $\\frac{K}{s+\\alpha} \\to K e^{-\\alpha t}u(t)$.",
+              "Extract decay rates $\\alpha_1=1$ and $\\alpha_2=4$.",
+              "Rank by decay-rate magnitude and state the larger $\\alpha$ decays faster.",
+              "Map ranking back to stable behavior and note both remain stable individually."
+            ],
+            "practice_variation_axes": [
+              "swap pole values",
+              "add coefficient values",
+              "compare three-term ranking"
+            ]
+          },
+          "handoff_notes": "Keep comparison focused on decay-rate magnitude only; avoid introducing oscillatory or growth behavior here."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting Multiple Negative Real Poles as Decaying Terms",
+          "step_type": "example",
+          "learning_goal": "Interpret a sum of negative-real-pole terms as a sum of multiple decaying exponentials in the causal response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use algebraic decomposition and summation.",
+            "visual_elements": [
+              "none"
+            ],
+            "image_generation_notes": "No image generation required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Find the causal response term for $H(s)=\\frac{3}{s+1}+\\frac{2}{s+5}$ from the options.",
+            "distractor_plan": [
+              "Multiply terms into a single exponential with one coefficient.",
+              "Use positive exponents for one or both poles.",
+              "Drop one term by assuming repeated-time-domain collapse.",
+              "Reverse coefficient placement between exponent and front constant.",
+              "Return only one decaying mode and treat the expression as a pole product."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Convert $H(s)=\\frac{3}{s+1}+\\frac{2}{s+5}$ to time-domain response terms and state the two decay rates.",
+            "worked_solution_goal": "Give $h(t)=3e^{-t}u(t)+2e^{-5t}u(t)$ and identify decay rates $1$ and $5$.",
+            "variation_from_previous": "Adds superposition: one-to-many conversion where each negative real pole maps to one decaying component.",
+            "solution_step_plan": [
+              "Keep each summand in partial-fraction form.",
+              "Apply the single-pole map to each term independently.",
+              "Sum the time-domain terms and annotate each with its corresponding pole-based rate.",
+              "Interpret the response as a weighted sum of decaying modes and keep causal notation with $u(t)$."
+            ],
+            "practice_variation_axes": [
+              "number of poles",
+              "coefficient ordering",
+              "rate ordering and interpretation"
+            ]
+          },
+          "handoff_notes": "Use this as a direct extension from comparison: apply the same rule to multiple poles and preserve decomposition structure."
+        },
+        {
+          "section_index": 5,
+          "step_type": "example",
+          "section_title": "Connecting Decaying Exponential Responses to BIBO Stability",
+          "content_mode": "symbolic-only",
+          "learning_goal": "Use negative real poles and their decaying exponential terms to justify stable causal output behavior and BIBO conclusions.",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; use symbolic criteria from pole real parts.",
+            "visual_elements": [
+              "none"
+            ],
+            "image_generation_notes": "No image generation required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "classification",
+            "practice_question_model": "For $H(s)=\\frac{5}{s+2}-\\frac{1}{s+6}$, classify the system as BIBO stable or unstable.",
+            "distractor_plan": [
+              "Mark unstable because one pole is negative and one is small.",
+              "Mark unstable based on coefficient signs rather than pole locations.",
+              "Conflate negative real poles with oscillatory behavior.",
+              "Assume all rational transfer functions are unstable unless poles are repeated.",
+              "Conclude unstable due to nonexistent term-cancellation concerns."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify BIBO stability for $H(s)=\\frac{5}{s+2}+\\frac{1}{s+7}$ and explain why the time-domain response is stable.",
+            "worked_solution_goal": "Identify both poles as negative real, map to decaying exponentials, and conclude BIBO stability because all terms are decaying and absolutely integrable.",
+            "variation_from_previous": "Adds explicit stability judgment by connecting individual decaying terms to the broader causal LTI conclusion.",
+            "solution_step_plan": [
+              "List pole locations from denominator factors.",
+              "Check that each pole has negative real part, $s=-2$ and $s=-7$.",
+              "Use earlier maps to write $h(t)=5e^{-2t}u(t)+e^{-7t}u(t)$.",
+              "State that finite weighted sums of decaying exponentials are bounded for bounded input and therefore BIBO stable."
+            ],
+            "practice_variation_axes": [
+              "mixed sign pole sets",
+              "zero or positive real-part edge cases",
+              "interpretation from partial-fraction form"
+            ]
+          },
+          "handoff_notes": "Avoid pole-zero plot requirements here; this section should stay symbolic and connect pole real parts to bounded input-output behavior."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Growing Exponential Responses",
+      "lesson_core_move": "Identify positive real pole contributions as growing exponential response terms and use their unbounded time-domain growth to classify a causal LTI system as BIBO unstable.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Growing Exponential Responses",
+          "step_type": "tutorial",
+          "learning_goal": "Name the direct pole-to-time mapping that turns a positive real pole into a causal growing exponential mode and apply it as the first instability signal in BIBO checks.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visuals are required for this tutorial because the move is fully determined from symbolic pole locations and transfer-function form."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "N/A for tutorial section.",
+            "distractor_plan": [
+              "N/A for tutorial section."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "State the rule: for a causal LTI term $(s-a)^{-1}$, the causal mode is $u(t)e^{at}$, so if $a>0$ the response grows without bound and the system cannot be BIBO stable.",
+            "base_case": "Use $H(s)=\\frac{1}{s-1}$ as the simplest example and derive $h(t)=e^{t}u(t)$ before introducing arbitrary positive $a$ and mixed-pole contexts.",
+            "paragraph_plan": [
+              "Open with the causal-mode mapping from poles to time-domain terms and connect it to $h(t)=\\sum_k A_k e^{s_k t}u(t)$.",
+              "Contrast growth and decay by comparing $s=-\\alpha$ from the decaying lesson with $s=+a$, where $a>0$ causes $e^{at}$ to diverge.",
+              "State the one-step criterion: one positive real part among causal poles is sufficient for unbounded impulse-response magnitude and therefore BIBO instability.",
+              "Preview the sequence: identify the positive pole, convert it to time-domain response, then classify mixed cases by scanning for any growing contribution."
+            ],
+            "display_math_plan": [
+              "$$h(t)=A e^{st}u(t)\\quad\\text{for a simple causal pole at }s.$",
+              "$$\\Re\\{s\\}>0 \\Rightarrow |e^{st}|=e^{\\Re\\{s\\}t}\\to\\infty\\ (t\\to\\infty).$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A for tutorial section.",
+            "worked_solution_goal": "N/A for tutorial section.",
+            "variation_from_previous": "N/A for tutorial section.",
+            "solution_step_plan": [
+              "N/A for tutorial section."
+            ],
+            "practice_variation_axes": [
+              "N/A for tutorial section."
+            ]
+          },
+          "handoff_notes": "No tutorial questions should be generated in this section. Keep notation identical to prior lesson sequence."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Positive Real Pole Contributions",
+          "step_type": "example",
+          "learning_goal": "From a transfer-function factorization, extract only the positive real poles and identify the corresponding growing contribution candidates.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Use symbolic pole-location work only; no plot is needed to detect positive real poles."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given a factorized transfer function, choose the pole(s) that generate growing exponential time-domain contributions and the corresponding contribution sign.",
+            "distractor_plan": [
+              "Include distractors that select negative or zero real-part poles as the growth source.",
+              "Include distractors that pick the pole with smallest magnitude instead of checking sign.",
+              "Include distractors that confuse a repeated pole with a pair of stable poles."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example section.",
+            "base_case": "N/A for example section.",
+            "paragraph_plan": [
+              "N/A for example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\frac{6}{(s-4)(s+1)(s+2)}$, identify the pole that creates a growing exponential contribution.",
+            "worked_solution_goal": "Show that the positive real pole is $s=4$, so the unstable-contributing mode is the one associated with that pole.",
+            "variation_from_previous": "This applies the introduced rule to a full factorized transfer function with stable and unstable candidates.",
+            "solution_step_plan": [
+              "List denominator roots: $4$, $-1$, $-2$.",
+              "Filter for positive real roots: keep only $4$.",
+              "Translate that root into an instability candidate and hold it for the next section's conversion.",
+              "Record that any remaining poles are decaying or bounded and do not by themselves prevent instability when a positive pole exists."
+            ],
+            "practice_variation_axes": [
+              "Change signs and ordering of factors while preserving one positive real pole.",
+              "Move to non-factorized numerators that require expansion before identification.",
+              "Add or remove additional stable poles without changing the unstable contributor."
+            ]
+          },
+          "handoff_notes": "Keep the example strictly about identification, not full inverse-Laplace expansion."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Converting a Positive Real Pole to a Growing Exponential Response",
+          "step_type": "example",
+          "learning_goal": "Convert a positive real pole into the corresponding causal time-domain mode and confirm the growth sign.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "All transformation steps are algebraic and should stay symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Convert the simple positive real pole example to the corresponding $h(t)$ term and select the correct term.",
+            "distractor_plan": [
+              "Include distractors with sign-flipped exponent $e^{-at}u(t)$.",
+              "Include distractors that drop the causal factor $u(t)$.",
+              "Include distractors that place the residue on the wrong exponent root."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example section.",
+            "base_case": "N/A for example section.",
+            "paragraph_plan": [
+              "N/A for example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the unstable growing term for $H(s)=\\frac{5}{s-3}$.",
+            "worked_solution_goal": "Map the pole at $s=3$ with residue $5$ to $5e^{3t}u(t)$ and classify it as a growing exponential mode.",
+            "variation_from_previous": "Moves from identifying the dangerous pole to executing the causal time-domain conversion.",
+            "solution_step_plan": [
+              "Rewrite the transfer block as $H(s)=\\frac{A}{s-a}$ and read $A=5$, $a=3$.",
+              "Apply $\\frac{1}{s-a}\\to e^{at}u(t)$ for causal systems.",
+              "Multiply by coefficient $A$ and present the final response contribution.",
+              "Attach instability implication: this contribution is unbounded as $t\\to\\infty$."
+            ],
+            "practice_variation_axes": [
+              "Vary coefficient magnitudes while keeping one positive pole.",
+              "Embed the stable extra factors and require isolation of the growing term.",
+              "Use several values of $a>0$ and require one consistent conversion pattern."
+            ]
+          },
+          "handoff_notes": "Model this section as a direct worked example followed by mirrored symbolic practice problems."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Classifying Instability from an Unbounded Exponential Term",
+          "step_type": "example",
+          "learning_goal": "Use the identified growing exponential term to classify BIBO stability, including in explicit $h(t)$ form.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual diagram is needed; classification is an algebraic decision once the term signs are known."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given mixed exponential terms in $h(t)$, pick the correct BIBO stability classification and identify the unstable part.",
+            "distractor_plan": [
+              "Include distractors that ignore a growing term and rely only on stable terms.",
+              "Include distractors that claim decaying terms dominate long-term behavior.",
+              "Include distractors that reverse the criterion and call the system stable if only one term is unstable."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example section.",
+            "base_case": "N/A for example section.",
+            "paragraph_plan": [
+              "N/A for example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Determine BIBO stability for $h(t)=2e^{2t}u(t)-5e^{-3t}u(t)$.",
+            "worked_solution_goal": "Classify the response as unstable because $2e^{2t}u(t)$ is unbounded and dominates growth.",
+            "variation_from_previous": "Now the converted term is explicitly evaluated against stable and decaying terms in a full response sum.",
+            "solution_step_plan": [
+              "List all terms in the response expression.",
+              "Classify each as growing, decaying, or bounded.",
+              "Identify that $2e^{2t}u(t)$ violates bounded-output behavior for bounded input.",
+              "Return final BIBO label with concise justification."
+            ],
+            "practice_variation_axes": [
+              "Vary coefficients and signs while keeping one growing term.",
+              "Shift from transfer-function-derived form to direct time-domain form.",
+              "Use multiple-term sums with one unstable and several stable components."
+            ]
+          },
+          "handoff_notes": "Require at least one explicit statement that even one unstable mode dominates the BIBO conclusion."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Classifying Mixed Pole Sets with One Growing Exponential Contribution",
+          "step_type": "example",
+          "learning_goal": "Classify mixed pole sets by scanning all poles and applying the one-positive-real-pole criterion for BIBO instability.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Pole sets are processed from symbolic expressions; no image dependency is required."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given mixed poles, identify the unstable contribution and choose the correct BIBO stability result.",
+            "distractor_plan": [
+              "Include distractors that misread complex poles as unstable solely from oscillation.",
+              "Include distractors that mistake transcription errors in denominator roots.",
+              "Include distractors that average growth rates across poles and incorrectly declare stability."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A for example section.",
+            "base_case": "N/A for example section.",
+            "paragraph_plan": [
+              "N/A for example section."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify BIBO stability for $H(s)=\\frac{10(s-3)(s+5)}{(s-3)(s+1)(s+2)(s^2+4s+8)}$ and identify the unstable time-domain contribution.",
+            "worked_solution_goal": "Extract poles $\\{3,-1,-2,-2\\pm j2\\}$, isolate $s=3$ as the growing source, and classify the system as unstable.",
+            "variation_from_previous": "Generalizes from single-pole cases to mixed pole sets where several stable terms coexist with one growing contribution.",
+            "solution_step_plan": [
+              "Find all poles: $s=3$, $-1$, $-2$, and $-2\\pm j2$.",
+              "Check real parts: only $3$ is positive.",
+              "Convert only this pole to a growing exponential form and state why that term is the decisive instability cause.",
+              "Conclude unstable with a compact rule for mixed sets."
+            ],
+            "practice_variation_axes": [
+              "Vary the mix of stable and unstable poles.",
+              "Increase polynomial order while preserving one positive real pole.",
+              "Reorder and rescale rational factors to force robust pole extraction."
+            ]
+          },
+          "handoff_notes": "Use this as the transfer to generalization: mixed poles should still be solved by the same one-dangerous-mode scan."
+        }
+      ]
+    },
+    {
+      "lesson_index": 8,
+      "lesson_title": "Decaying Oscillatory Responses",
+      "lesson_core_move": "Convert left-half-plane complex-conjugate pole locations into exponentially decaying sinusoidal response terms and their BIBO-stable causal LTI interpretation.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Decaying Oscillatory Responses",
+          "step_type": "tutorial",
+          "learning_goal": "Align the interpretation of a left-half-plane complex-conjugate pole pair with a causal decaying oscillatory mode and its BIBO-stable meaning.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is required; the step is solved from symbolic pole forms."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Convert a pole pair $s=\\sigma\\pm j\\omega$ to a causal term $h(t)=e^{\\sigma t}(A\\cos(\\omega t)+B\\sin(\\omega t))u(t)$ and show that the sign of $\\sigma$ controls decay versus growth.",
+            "base_case": "Start from $s=-2\\pm j3$ and state the direct conversion to $e^{-2t}(A\\cos(3t)+B\\sin(3t))u(t)$.",
+            "paragraph_plan": [
+              "Introduce the rule that each left-half-plane pole pair maps to an exponentially decaying sinusoidal pair of real terms.",
+              "Derive the causal template from $s=\\sigma\\pm j\\omega$ and identify the decay rate, oscillation frequency, and support multiplier.",
+              "Use one worked simplification to distinguish a decaying oscillatory term from real-pole exponential and sustained oscillatory responses.",
+              "Close with the BIBO implication: all real parts must be negative for stability in causal LTI mode decomposition."
+            ],
+            "display_math_plan": [
+              "$$h(t)=\\mathcal{L}^{-1}\\left\\{\\frac{\\omega}{(s+\\alpha)^2+\\omega^2}\\right\\}=e^{-\\alpha t}\\sin(\\omega t)u(t)$$",
+              "$$h(t)=e^{-\\alpha t}(A\\cos \\omega t+B\\sin \\omega t)u(t)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep this section tightly focused on the first principle and minimal notation overhead before moving into example-led pattern matching."
+        },
+        {
+          "section_index": 2,
+          "step_type": "example",
+          "section_title": "Identifying Decaying Oscillations from Left-Half-Plane Pole Pairs",
+          "learning_goal": "Given pole locations, identify which conjugate pairs are decaying oscillatory contributors to a causal LTI response.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed because pole signs and conjugate structure are provided algebraically."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic expressions",
+            "practice_question_model": "Given poles at $s=-1\\pm j2$, $s=2\\pm j1$, and $s=-3\\pm j4$, classify each pair as decaying oscillatory, unstable oscillatory, or non-oscillatory.",
+            "distractor_plan": [
+              "Include a right-half-plane pair to check instability detection.",
+              "Include a pure real pole option to test no-oscillation rejection.",
+              "Include a non-conjugate single pole case to test conjugate-pair recognition.",
+              "Include a pure imaginary pair case to test decaying versus sustained distinction.",
+              "Include the correct classification but with mixed labels to test response wording."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this is an example step.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [
+              "Summarize the three conditions: complex, conjugate, and negative real part."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given pole pairs $s=-2\\pm j3$ and $s=+2\\pm j3$, classify each as decaying oscillatory or not.",
+            "worked_solution_goal": "Identify one decaying oscillatory pair and one unstable oscillatory pair by sign of real part.",
+            "variation_from_previous": "Adds multiple options, requiring controlled sorting rather than single-case recognition.",
+            "solution_step_plan": [
+              "List the real and imaginary parts of each pair.",
+              "Check for conjugacy and nonzero imaginary part.",
+              "Check whether each real part is negative, zero, or positive.",
+              "Map to decaying oscillatory, sustained oscillation, growing oscillation, or non-oscillatory categories."
+            ],
+            "practice_variation_axes": [
+              "real-part sign variation",
+              "presence of nonzero imaginary part",
+              "mixing with non-conjugate cases"
+            ]
+          },
+          "handoff_notes": "Use exact classification language already established in prior poles lessons so the progression stays reusable."
+        },
+        {
+          "section_index": 3,
+          "step_type": "example",
+          "section_title": "Reading Decay Rate and Oscillation Frequency from Complex Poles",
+          "learning_goal": "Extract decay rate and oscillation frequency directly from a complex-conjugate pole pair.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; read parameters directly from written pole expressions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "formula expressions",
+            "practice_question_model": "From $s=-4\\pm j5$, choose the correct decay constant and oscillation frequency pair.",
+            "distractor_plan": [
+              "Swap real and imaginary parts.",
+              "Return positive decay from a negative real part.",
+              "Use $|\\omega|$ as decay and $\\sigma$ as frequency.",
+              "Drop the conjugate condition and treat as two independent real poles."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this is an example step.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [
+              "Use direct parameter extraction from $s=\\sigma\\pm j\\omega$."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For poles $s=-3\\pm j2$, compute the decay rate and frequency used in the time-domain prototype.",
+            "worked_solution_goal": "Report decay constant $3$ and frequency $2$, and write the prototype structure.",
+            "variation_from_previous": "Shifts from classification to numeric parameter mapping of the same pole template.",
+            "solution_step_plan": [
+              "Rewrite pair in standard form $\\sigma\\pm j\\omega$.",
+              "Identify decay rate $|\\sigma|=3$ from the real part.",
+              "Identify angular frequency $\\omega=2$ from the imaginary part.",
+              "Write the prototype $h(t)=e^{-3t}(A\\cos(2t)+B\\sin(2t))u(t)$."
+            ],
+            "practice_variation_axes": [
+              "different combinations of real part magnitudes",
+              "different imaginary part magnitudes",
+              "increasing algebraic noise in pole notation"
+            ]
+          },
+          "handoff_notes": "Name both parameters explicitly to support stable automaticity in repeated question generation."
+        },
+        {
+          "section_index": 4,
+          "step_type": "example",
+          "section_title": "Writing the Response Term from a Complex-Conjugate Pole Pair",
+          "learning_goal": "Translate a given left-half-plane pole pair into the explicit decaying oscillatory time-domain term.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; this is a direct symbolic reconstruction step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "formula options",
+            "practice_question_model": "A transfer factor contributes poles at $s=-2\\pm j5$. Choose the corresponding causal decaying oscillatory response term.",
+            "distractor_plan": [
+              "Offer growing exponential form with $+2t$.",
+              "Offer no-envelope sinusoid to test oscillation recognition.",
+              "Offer non-causal expression without $u(t)$.",
+              "Offer wrong trigonometric frequency by swapping $2$ and $5$.",
+              "Offer mixed real-only template with no sine/cosine pair."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this is an example step.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [
+              "Show the direct template substitution into a two-term real-valued response."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Poles at $s=-2\\pm j5$ appear in the factor $(s+2)^2+25$. Write the corresponding response mode.",
+            "worked_solution_goal": "Produce the term $h_c(t)=e^{-2t}(A\\cos(5t)+B\\sin(5t))u(t)$.",
+            "variation_from_previous": "Moves from reading parameters to constructing the full explicit response basis function.",
+            "solution_step_plan": [
+              "Map the denominator to standard form $(s+\\alpha)^2+\\omega^2$.",
+              "Set $\\alpha=2$ and $\\omega=5$.",
+              "Write the time-domain sinusoidal-exponential form with causal multiplier.",
+              "State the stability implication from $\\alpha>0$ in this causal convention."
+            ],
+            "practice_variation_axes": [
+              "different damping coefficients",
+              "different frequencies",
+              "different algebraic factored forms for the same pair"
+            ]
+          },
+          "handoff_notes": "Require explicit inclusion of both trigonometric basis terms and the causal mask so downstream generators stay consistent."
+        },
+        {
+          "section_index": 5,
+          "step_type": "example",
+          "section_title": "Interpreting BIBO Stability from Decaying Oscillatory Modes",
+          "learning_goal": "Use left-half-plane complex modes plus mixed-mode examples to conclude overall BIBO stability for a causal LTI system.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; the decision uses symbolic sign checks across mode terms."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "reasoned stability conclusions",
+            "practice_question_model": "Given terms $e^{-2t}(3\\cos(4t))u(t)$, $e^{-t}(\\cos(3t))u(t)$, and $e^{t}(0.5\\sin(2t))u(t)$, determine BIBO stability.",
+            "distractor_plan": [
+              "Choose stable because two of three terms decay.",
+              "Choose marginally stable due to oscillation only.",
+              "Choose unstable due to the single positive-exponent mode.",
+              "Choose non-causal because of missing denominator context."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this is an example step.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [
+              "Aggregate per-mode real-part checks into an overall BIBO rule."
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Determine stability from poles corresponding to decaying terms $e^{-2t}(A\\cos 4t)u(t)$, $e^{-t}(B\\sin 3t)u(t)$, and one growing oscillatory mode $e^{t}(C\\cos 2t)u(t)$.",
+            "worked_solution_goal": "Conclude unstable by identifying the right-half-plane real part in the mode set.",
+            "variation_from_previous": "Adds system-level aggregation to test whether one unstable mode overrides decaying oscillatory components.",
+            "solution_step_plan": [
+              "List all exponent real parts from each mode.",
+              "Apply the all-negative real-part rule for BIBO stability.",
+              "Show that one positive real part makes the overall system unstable.",
+              "Summarize the final classification and one-sentence stability interpretation."
+            ],
+            "practice_variation_axes": [
+              "single unstable mode versus all stable modes",
+              "all decaying oscillatory modes only",
+              "mixed form input as pole list versus response list"
+            ]
+          },
+          "handoff_notes": "Close the lesson by reinforcing that all poles must be in the left half-plane for BIBO stability."
+        }
+      ]
+    }
+  ]
+}

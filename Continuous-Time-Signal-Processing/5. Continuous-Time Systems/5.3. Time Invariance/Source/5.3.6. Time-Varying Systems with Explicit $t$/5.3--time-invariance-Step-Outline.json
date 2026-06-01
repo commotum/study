@@ -1,0 +1,1873 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Meaning of Time Invariance",
+      "lesson_core_move": "Recognize time invariance by interpreting whether delaying or advancing any continuous-time input causes the system output to undergo the identical delay or advance without changing shape or rule.",
+      "section_count": 4,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Meaning of Time Invariance",
+          "step_type": "tutorial",
+          "learning_goal": "Define time invariance for a continuous-time system as exact commutation with input shifts and express the criterion in a single equation.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visuals needed for this symbolic definition lesson."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "not-applicable",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the single test condition: replace x(t) with x(t-T), compute both shift-then-system and system-then-shift outputs, and require equality for all t and T before declaring invariance.",
+            "base_case": "Use a minimal delay example with a memoryless system y(t)=x(t) and shift parameter T as a concrete anchor.",
+            "paragraph_plan": [
+              "Introduce the distinction between delaying/advancing the input first versus delaying/advancing the output after the system and why both must match.",
+              "Define shorthand for the two paths: TTS (time-shift then system) and STS (system then shift) with explicit notation.",
+              "State the invariance test rule: a system is time invariant iff TTS and STS are identical for arbitrary x(t) and arbitrary T.",
+              "Identify the practical failure checks: same shift direction, same shift magnitude, same signal rule and shape after substitution.",
+              "Preview the three worked examples: matching delay, matching advance, and a mismatch case where pattern changes."
+            ],
+            "display_math_plan": [
+              "$$x_1(t)=x(t-T), \\; y_{tts}(t)=S\\{x_1(t)\\}=S\\{x(t-T)\\}$$",
+              "$$y_{sts}(t)=y(t-T), \\; \\text{compare } y_{tts}(t) \\stackrel{?}{=} y_{sts}(t) \\text{ for all } t,T$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $y(t)=x(t)$, test whether a delay of $T$ in the input yields the same output delay.",
+            "worked_solution_goal": "Show both paths and verify exact equality to establish a canonical time-invariant base case.",
+            "variation_from_previous": "This is the first worked example and sets the base symbolic template for later sections.",
+            "solution_step_plan": [
+              "Compute the shifted input path: x_1(t)=x(t-T)$ and then y_{tts}(t)=x_1(t)=x(t-T)$.",
+              "Compute the direct path: y(t)=x(t)$, then form y_{sts}(t)=y(t-T)=x(t-T)$.",
+              "Compare the two expressions and conclude they are identical for all t,T.",
+              "Classify this system as time invariant and explicitly name the invariant feature (rule unchanged, shape unchanged, shift preserved)."
+            ],
+            "practice_variation_axes": [
+              "use a generic arbitrary system rule instead of identity",
+              "substitute symbolic T and then a numeric T example",
+              "require recognizing commutation without computing full signal forms"
+            ]
+          },
+          "handoff_notes": "Use the tutorial as a strict minimum-dose direct-instruction block followed by worked examples and deliberate practice; keep algebra light and reusable so questions are generated cleanly."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Recognizing a Matching Output Delay",
+          "step_type": "example",
+          "learning_goal": "Train recognition of time invariance when the input delay produces the same delayed output under a nontrivial system rule.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No signal plot needed; algebraic substitution is sufficient."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Algebraic comparisons of two expressions",
+            "practice_question_model": "For y(t)=2x(t-1), test whether y_{tts}(t) and y_{sts}(t) match for delay x(t-T).",
+            "distractor_plan": [
+              "Include a distractor where shift direction is flipped incorrectly (using x(t+T) in one path).",
+              "Include a distractor that checks only one side simplification and misses TTS vs STS substitution order.",
+              "Include a distractor where parameter T is accidentally treated as a fixed number instead of arbitrary."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test time invariance for $y(t)=2x(t-1)$ under input delay $x_1(t)=x(t-T)$.",
+            "worked_solution_goal": "Show that the delay propagates through the system unchanged even with a fixed delay offset inside x(t-1).",
+            "variation_from_previous": "Adds a fixed internal delay to the system rule while preserving output delay equivalence.",
+            "solution_step_plan": [
+              "Form TTS: substitute x_1(t)=x(t-T) into y(t), giving $y_{tts}(t)=2x((t)-1-T)=2x(t-T-1)$.",
+              "Form STS: compute $y(t)=2x(t-1)$ then delay output: $y_{sts}(t)=2x((t-T)-1)=2x(t-T-1)$.",
+              "Compare both expressions term-by-term and mark them identical.",
+              "Conclude this system is time invariant and note the fixed offset does not break shift commutation."
+            ],
+            "practice_variation_axes": [
+              "multiply-by-constant coefficient changes",
+              "replace -1 shift constant with +1 and keep the same delay test",
+              "swap T from symbolic to numeric while preserving method"
+            ]
+          },
+          "handoff_notes": "Focus on a single symbolic control-flow pattern: TTS and STS algebra must be written first, then compared. Keep answer choices consistent with expression-level equality."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Recognizing a Matching Output Advance",
+          "step_type": "example",
+          "learning_goal": "Generalize the same invariance check to advance shifts and avoid sign mistakes in substituted-time arguments.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual needed; advance vs delay distinction is handled with sign conventions in expressions."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Symbolic comparisons of shifted arguments",
+            "practice_question_model": "For y(t)=5x(t), check whether delaying the input by T and advancing by T are both handled as the same rule with x(t\\pm T).",
+            "distractor_plan": [
+              "Include a distractor that swaps signs between x(t+T) and x(t-T) in one path.",
+              "Include a distractor that claims invariance despite mismatched internal argument after substitution.",
+              "Include a distractor that fails to apply shift to the whole expression y(t) before comparison."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Test time invariance for $y(t)=\\frac{1}{2}x(t)$ using an advance input $x_1(t)=x(t+T)$.",
+            "worked_solution_goal": "Show that the path comparison remains equal when handling advance notation correctly.",
+            "variation_from_previous": "One meaningful wrinkle: swap delay for advance to verify students track sign conventions while using the same compare-step method.",
+            "solution_step_plan": [
+              "Compute TTS: $x_1(t)=x(t+T)$, then $y_{tts}(t)=\\frac{1}{2}x(t+T)$.",
+              "Compute STS: $y(t)=\\frac{1}{2}x(t)$, then $y_{sts}(t)=\\frac{1}{2}x(t+T)$.",
+              "Write the equality line explicitly with matching signs and conclude equality.",
+              "Explain why this is still a matched output advance, so the system is time invariant here as well."
+            ],
+            "practice_variation_axes": [
+              "replace coefficient and numeric scale",
+              "choose advance with a non-identity symbol such as t+2T",
+              "test both y(t)=a x(t) and y(t)=b x(t)+c forms"
+            ]
+          },
+          "handoff_notes": "Keep advance examples explicit and non-ambiguous about whether T shifts right or left; this section should reduce common sign errors before introducing non-invariant forms."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Recognizing When a Shift Changes the Output Pattern",
+          "step_type": "example",
+          "learning_goal": "Identify the non-invariance signature where shifted input does not produce merely shifted output because the output pattern or rule changes.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No plots required; signal-shape change is exposed via algebraic argument form only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Short equation-justification choices",
+            "practice_question_model": "For y(t)=t\\,x(t), classify whether a delay x(t-T) results in output y(t-T) when using TTS and STS.",
+            "distractor_plan": [
+              "Include a distractor that incorrectly cancels t with t-T by canceling algebraic factors.",
+              "Include a distractor that treats t x(t) as if t and T are interchangeable constants.",
+              "Include a distractor that compares only one side numerically and misses the mismatch in argument form."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Check whether $y(t)=t\\,x(t)$ is time invariant under input shift $x_1(t)=x(t-T)$.",
+            "worked_solution_goal": "Show that explicit time-dependent multiplicative factor alters output pattern, so TTS and STS differ.",
+            "variation_from_previous": "Introduces the minimal mismatch pattern change while reusing the exact compare workflow from delay/advance sections.",
+            "solution_step_plan": [
+              "Compute TTS: $y_{tts}(t)=t\\,x(t-T)$.",
+              "Compute STS: y(t)=t\\,x(t)$, then delay output: $y_{sts}(t)=(t-T)x(t-T)$.",
+              "Compare: one side is t x(t-T), the other is (t-T) x(t-T); identify mismatch term.",
+              "State that the output shape/rule changes, so the system is not time invariant."
+            ],
+            "practice_variation_axes": [
+              "change coefficient from t to t^2 and reuse the same mismatch test",
+              "swap T with -T and show the same mismatch logic",
+              "replace output pattern with t+2 or sin(t) multiplicative terms"
+            ]
+          },
+          "handoff_notes": "End the lesson with a clear non-invariant contrast so the question-generator can produce mirrored false-classification items."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "The Shift-Then-System Path",
+      "lesson_core_move": "Compute the output produced by first shifting a continuous-time input signal and then applying the system rule, so it can be compared against the system-then-shift path in a time-invariance test.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to The Shift-Then-System Path",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the shift-then-system construction as a sequence: first form x(t-T), then apply the same system rule that maps x(t) to y(t).",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram is required; all steps are symbolic substitutions."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "Not applicable for tutorial section.",
+            "practice_question_model": "Not applicable for tutorial section.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show exactly how the shift-then-system path is written as y_STS(t)=T\\{x(t-T)\\} and how it differs from the raw system output y(t).",
+            "base_case": "Use y(t)=x(t) and show that shift-then-system gives y_STS(t)=x(t-T).",
+            "paragraph_plan": [
+              "Open by restating the target move in one sentence and the role it plays in time-invariance testing.",
+              "Define the shifted input as x1(t)=x(t-T) and connect to system notation y(t)=\\mathcal{S}\\{x(t)\\}.",
+              "Show the substitution step that produces y_STS(t)=\\mathcal{S}\\{x(t-T)\\}.",
+              "Explain why this is the first leg of comparison and what must be preserved before matching with system-then-shift path."
+            ],
+            "display_math_plan": [
+              "x_1(t)=x(t-T)",
+              "y_{ST}(t)=\\mathcal{S}\\{x_1(t)\\}=\\mathcal{S}\\{x(t-T)\\}"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A",
+            "worked_solution_goal": "N/A",
+            "variation_from_previous": "N/A",
+            "solution_step_plan": [
+              "N/A"
+            ],
+            "practice_variation_axes": [
+              "N/A"
+            ]
+          },
+          "handoff_notes": "No practice questions; generate short direct-instruction with minimal symbolic load before first example."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Writing the Shifted Input as the System Input",
+          "step_type": "example",
+          "learning_goal": "Execute step one cleanly: rewrite the system input as x(t-T) before any further algebra.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; substitution is textual and formula-based."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "Given y(t)=2x(t), compute the shift-then-system output for input shift T: y_STS(t)=?",
+            "distractor_plan": [
+              "Drop the shift in the input and return 2x(t).",
+              "Flip the shift sign incorrectly to x(t+T).",
+              "Multiply shift incorrectly to 2x(t-T)-T.",
+              "Treat the constant as added after the output: 2x(t)+T."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For y(t)=2x(t), find the shift-then-system output when x(t) is first shifted by T.",
+            "worked_solution_goal": "Produce y_STS(t)=2x(t-T) by substituting x(t-T) into the system rule.",
+            "variation_from_previous": "Applies the shift-then-system definition to a constant-gain system.",
+            "solution_step_plan": [
+              "Write the shifted input as x_1(t)=x(t-T).",
+              "Apply the rule y(t)=2x(t) to x_1(t).",
+              "Return y_STS(t)=2x_1(t)=2x(t-T)."
+            ],
+            "practice_variation_axes": [
+              "Different static gain constants",
+              "Different variable names for T",
+              "Negative or symbolic T symbols"
+            ]
+          },
+          "handoff_notes": "Keep the example short: one substitution and one simplification to reduce cognitive load."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Applying a Memoryless System Rule After the Input Shift",
+          "step_type": "example",
+          "learning_goal": "Apply the same substitution rule to systems with an internal fixed input shift, preserving shift order and parentheses.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; internal shifts are tracked symbolically."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "Given y(t)=x(t-3), compute y_STS(t) for x(t-T) first-shifted input.",
+            "distractor_plan": [
+              "Ignore internal shift and use y_STS(t)=x(t-T-3) only when T multiplies 3 incorrectly.",
+              "Leave internal argument unshifted: y_STS(t)=x(t-3).",
+              "Incorrectly reverse subtraction order to x(t+T-3).",
+              "Move T outside the argument: x(t-3)-T."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For y(t)=x(t-3), find the shift-then-system path of a signal shifted first by T.",
+            "worked_solution_goal": "Show that y_STS(t)=x((t-T)-3).",
+            "variation_from_previous": "Introduces a fixed internal shift in the rule, adding a second subtraction in the same argument.",
+            "solution_step_plan": [
+              "Start with shifted input x(t-T).",
+              "Substitute x(t) -> x(t-T) inside y(t)=x(t-3).",
+              "Replace every occurrence of t in the rule with (t-T), yielding x((t-T)-3).",
+              "Optionally reorder as x(t-(T+3)) for compact form."
+            ],
+            "practice_variation_axes": [
+              "Different fixed delays (e.g., 1,2,5)",
+              "Shift direction of the fixed delay",
+              "Algebraic simplification preference (nested vs flattened)"
+            ]
+          },
+          "handoff_notes": "Emphasize substitution into the rule’s argument only; avoid any simplification beyond this section's goal."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Applying a System Rule with Internal Input Shifts After the Input Shift",
+          "step_type": "example",
+          "learning_goal": "Compute shift-then-system output when the rule contains multiple internal shifted arguments, maintaining argument mapping exactly for each term.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; this is a symbolic multiple-argument substitution pattern."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "For y(t)=x(t-1)-x(t+2), compute y_STS(t) after replacing x(t) by x(t-T).",
+            "distractor_plan": [
+              "Shift only one of the arguments, leaving one term unshifted.",
+              "Apply shift to system output after subtracting terms instead of inside each input argument.",
+              "Drop the sign on one internal shift, e.g., x(t+2-T) for x(t-2-T).",
+              "Incorrectly factor the shift from both terms as x(t-(T))(1-1)."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For y(t)=x(t-1)-x(t+2), compute the shift-then-system expression when x(t) is first shifted by T.",
+            "worked_solution_goal": "Produce y_STS(t)=x((t-T)-1)-x((t-T)+2) with correct signs preserved.",
+            "variation_from_previous": "Adds multiple internal argument shifts so substitution must be applied consistently across each term.",
+            "solution_step_plan": [
+              "Set x_1(t)=x(t-T).",
+              "Substitute x_1 into each rule occurrence: x(t-1) -> x((t-T)-1), x(t+2) -> x((t-T)+2).",
+              "Preserve operation sign and combine into final expression."
+            ],
+            "practice_variation_axes": [
+              "Number and sign of internal shifts",
+              "Additive and subtractive combinations of shifted terms",
+              "Different symbolic constants replacing 1 and 2"
+            ]
+          },
+          "handoff_notes": "Use this section to reinforce argument-level substitution discipline to reduce sign/order errors."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Applying a Multi-Term System Rule After the Input Shift",
+          "step_type": "example",
+          "learning_goal": "Generalize substitution across weighted sums of shifted inputs to produce a structured shift-then-system formula.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; multi-term rules are handled with algebraic patterning only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic expression",
+            "practice_question_model": "For y(t)=3x(t-1)+2x(t+1)-5x(t), compute the shift-then-system output for x(t-T).",
+            "distractor_plan": [
+              "Apply shift to only one term in the multi-term sum.",
+              "Replace each T with 2T in the arguments.",
+              "Shift only y(t) and ignore internal shifts.",
+              "Treat scaling coefficients as shifted quantities or part of argument substitution."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For y(t)=3x(t-1)+2x(t+1)-5x(t), compute y_STS(t) after x(t) is first shifted by T.",
+            "worked_solution_goal": "Return y_STS(t)=3x((t-T)-1)+2x((t-T)+1)-5x(t-T), a fully shifted form with coefficients untouched.",
+            "variation_from_previous": "Extends to a multi-term linear combination, testing scalable substitution across all arguments and coefficients.",
+            "solution_step_plan": [
+              "Introduce x_1(t)=x(t-T) as shifted input.",
+              "Substitute x_1 into every occurrence of x(.) in each term.",
+              "Keep coefficients and operators fixed while shifting only internal time arguments.",
+              "Optionally rewrite arguments to x(t-(T+1)), x(t-(T-1)), x(t-T)."
+            ],
+            "practice_variation_axes": [
+              "Number of terms in linear combination",
+              "Different coefficients and constant offsets",
+              "Question ordering of delayed vs advanced arguments"
+            ]
+          },
+          "handoff_notes": "This section should build toward reusable pattern matching for later time-invariance comparison with the system-then-shift path."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "The System-Then-Shift Path",
+      "lesson_core_move": "Compute the system-then-shift path by applying the continuous-time system rule to x(t) to get y(t), then replacing t with t - T to form y(t - T) for comparison in a time-invariance test.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to The System-Then-Shift Path",
+          "step_type": "tutorial",
+          "learning_goal": "Teach that the system-then-shift path means first forming $y(t)$ from $x(t)$ and then replacing every $t$ in the finished output with $t-T$ to get $y(t-T)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the lesson is purely symbolic.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not applicable",
+            "practice_question_model": "No questions in the tutorial step.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the learner that the system-then-shift path is computed by first applying the system rule to the original input and then shifting the completed output with $t \\mapsto t-T$.",
+            "base_case": "Use a simple output such as $y(t)=A\\,x(t-a)+B$ so the shift becomes $y(t-T)=A\\,x(t-T-a)+B$.",
+            "paragraph_plan": [
+              "State the path order: compute $y(t)$ first, then form $y(t-T)$ from that completed output.",
+              "Show that the shift acts on the finished expression, not on the input first.",
+              "Use a simple delayed-input output to show how an embedded $t$ becomes $t-T$ everywhere it appears.",
+              "Point out that constants do not change when the output is shifted.",
+              "Close with the comparison rule used later in time-invariance checks."
+            ],
+            "display_math_plan": [
+              "$$y(t)=A\\,x(t-a)+B$$",
+              "$$y(t-T)=A\\,x(t-T-a)+B$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A",
+            "worked_solution_goal": "N/A",
+            "variation_from_previous": "N/A",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial compact and symbolic. Do not introduce a second path or any image; the only job is to define the order $x(t) \\to y(t) \\to y(t-T)$."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Applying the System Rule Before Any Input Shift",
+          "step_type": "example",
+          "learning_goal": "Show how to apply a continuous-time system rule to $x(t)$ to obtain $y(t)$, then shift the completed output by replacing each $t$ with $t-T$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is algebraic substitution only.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Select the single symbolic expression for $y(t-T)$ after computing $y(t)$ from the system rule.",
+            "practice_question_model": "For the system $y(t)=3x(t)-x(t-2)$ and input $x(t)=t$, what is $y(t-T)$?",
+            "distractor_plan": [
+              "Include an option that shifts the input before applying the system rule.",
+              "Include an option that shifts only one of the delayed terms.",
+              "Include an option with the wrong sign on $T$.",
+              "Include an option that expands the algebra incorrectly after substitution.",
+              "Include an option that leaves $y(t)$ unshifted."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A; this is an example-only step built from the tutorial rule.",
+            "base_case": "N/A",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the system $y(t)=2x(t)+x(t-1)$ and input $x(t)=t^2$, find $y(t)$ and then compute $y(t-T)$.",
+            "worked_solution_goal": "Apply the system to the original input first, then shift the completed output by replacing every $t$ with $t-T$.",
+            "variation_from_previous": "Starts from a concrete input so the learner must build $y(t)$ before shifting it.",
+            "solution_step_plan": [
+              "Substitute $x(t)=t^2$ into the system rule to form $y(t)$.",
+              "Replace each $t$ in the finished output with $t-T$.",
+              "Simplify the shifted expression if possible."
+            ],
+            "practice_variation_axes": [
+              "Change the input function while keeping the same system structure.",
+              "Change the delay inside the system rule.",
+              "Change the coefficients so the learner must track every term."
+            ]
+          },
+          "handoff_notes": "Keep the worked example anchored to the order of operations: form $y(t)$ first, then shift the full result to $y(t-T)$. The practice question should mirror that exact path with only one new symbolic wrinkle."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Forming y(t - T) from a Direct Output Expression",
+          "step_type": "example",
+          "learning_goal": "Show how to form $y(t-T)$ by substituting $t-T$ into a finished output expression that is already known.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the task is direct symbolic substitution.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Select the single symbolic expression for the shifted output $y(t-T)$.",
+            "practice_question_model": "If $y(t)=4t-7$, what is $y(t-T)$?",
+            "distractor_plan": [
+              "Include an option that uses $t+T$ instead of $t-T$.",
+              "Include an option that shifts only part of the expression.",
+              "Include an option that changes the constant term unnecessarily.",
+              "Include an option that keeps $y(t)$ unchanged.",
+              "Include an option that expands the substitution incorrectly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A; this is an example-only step built from the tutorial rule.",
+            "base_case": "N/A",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $y(t)=5t^2-2t+1$, write $y(t-T)$.",
+            "worked_solution_goal": "Shift every explicit $t$ in a finished output expression and leave constants unchanged.",
+            "variation_from_previous": "Removes $x(t)$ entirely so the only job is substitution inside a closed-form output.",
+            "solution_step_plan": [
+              "Identify every occurrence of $t$ in the expression.",
+              "Replace each $t$ with $t-T$.",
+              "Simplify the resulting polynomial form."
+            ],
+            "practice_variation_axes": [
+              "Change the degree of the polynomial.",
+              "Change the constant term and sign pattern.",
+              "Use a linear expression instead of a quadratic."
+            ]
+          },
+          "handoff_notes": "Keep this section focused on pure replacement inside a finished output. The learner should see that the shift touches every explicit $t$ and nothing else."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Forming y(t - T) When y(t) Contains x(t - a)",
+          "step_type": "example",
+          "learning_goal": "Show how the system-then-shift path works when the output already contains delayed input terms such as $x(t-a)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the shift is tracked algebraically through delayed arguments.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Select the single symbolic expression for $y(t-T)$ after shifting the delayed input terms.",
+            "practice_question_model": "If $y(t)=x(t-1)+2x(t-4)$, what is $y(t-T)$?",
+            "distractor_plan": [
+              "Include an option that shifts only the outer $t$ but leaves the inner delays unchanged.",
+              "Include an option that turns $x(t-a)$ into $x(t-T+a)$.",
+              "Include an option that double-shifts to $x(t-2T-a)$.",
+              "Include an option that drops one of the terms.",
+              "Include an option that leaves the expression unshifted."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A; this is an example-only step built from the tutorial rule.",
+            "base_case": "N/A",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $y(t)=x(t-2)+3x(t)$, write $y(t-T)$.",
+            "worked_solution_goal": "Shift the output while preserving each embedded delay in the input arguments.",
+            "variation_from_previous": "Introduces delayed input arguments, so the shift must move both the outer time and the inner offset.",
+            "solution_step_plan": [
+              "Replace each $x(\\cdot)$ argument with the same argument after $t \\mapsto t-T$.",
+              "Keep the embedded delays attached to the shifted time.",
+              "Rewrite the final expression cleanly."
+            ],
+            "practice_variation_axes": [
+              "Use one or two delayed input terms.",
+              "Change the delay offsets.",
+              "Change the coefficients on the delayed terms."
+            ]
+          },
+          "handoff_notes": "The writer should emphasize that the delay inside $x(t-a)$ stays attached when $t$ becomes $t-T$. Avoid introducing any new notation beyond the shifted arguments."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Forming y(t - T) When y(t) Combines Multiple Terms",
+          "step_type": "example",
+          "learning_goal": "Show how to shift a mixed output expression by applying $t \\mapsto t-T$ consistently across delayed inputs, undelayed inputs, explicit time terms, and constants.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the task is a multi-term symbolic shift.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Select the single symbolic expression for $y(t-T)$ after shifting every $t$-dependent term exactly once.",
+            "practice_question_model": "If $y(t)=3x(t-2)-x(t)+2t-5$, what is $y(t-T)$?",
+            "distractor_plan": [
+              "Include an option that shifts the input terms but forgets the explicit $t$ term.",
+              "Include an option that shifts the constant term.",
+              "Include an option with the wrong sign on $T$ in one or more terms.",
+              "Include an option that only shifts some of the terms.",
+              "Include an option that applies the shift twice to the delayed input terms."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A; this is an example-only step built from the tutorial rule.",
+            "base_case": "N/A",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "If $y(t)=2x(t-1)-x(t)+t+4$, write $y(t-T)$.",
+            "worked_solution_goal": "Apply the same shift rule across delayed inputs, an undelayed input, an explicit time term, and a constant.",
+            "variation_from_previous": "Mixes every common term type so the learner must shift each $t$-bearing part exactly once.",
+            "solution_step_plan": [
+              "Shift the delayed input terms to $x(t-T-1)$ and $x(t-T)$.",
+              "Shift the explicit time term to $t-T$.",
+              "Leave the constant $4$ unchanged.",
+              "Combine the shifted pieces into one expression."
+            ],
+            "practice_variation_axes": [
+              "Mix delayed and undelayed input terms.",
+              "Add or remove an explicit time term.",
+              "Change the constant and coefficient signs."
+            ]
+          },
+          "handoff_notes": "This final example should stress consistency: every $t$-dependent piece shifts once, and the constant does not. Keep the model answer as a single clean symbolic expression."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Testing Time Invariance",
+      "lesson_core_move": "Compare the shift-then-system and system-then-shift expressions for an arbitrary input shift to classify a continuous-time input-output system as time invariant or time varying.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Testing Time Invariance",
+          "step_type": "tutorial",
+          "learning_goal": "Introduce the two-path test and the equivalence criterion used to decide time invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is needed; the section is purely algebraic notation-based."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show that a lesson passes this test when $y_1(t)=T\\{x(t-T)\\}$ and $y_2(t)=\\big(T\\{x(t)\\}\\big)\\!\\!\\big|_{t\\to t-T}$ are symbolically identical for every $T$.",
+            "base_case": "Use a two-step identity example $y(t)=x(t)$ so both paths produce $y_1(t)=x(t-T)$ and $y_2(t)=x(t-T)$.",
+            "paragraph_plan": [
+              "Define the two test paths and what is being compared.",
+              "State the output of the shift-first path for generic $T$.",
+              "State the output of the system-first path by substituting $t-T$ afterward.",
+              "Show the equivalence rule: the system is time invariant if simplified path expressions match exactly for all valid $T$.",
+              "Flag how this lesson differs from the prior path-construction lessons: no final output formula yet, only matching strategy."
+            ],
+            "display_math_plan": [
+              "$$y_1(t)=T\\{x(t-T)\\}$$",
+              "$$y_2(t)=y(t-T)$$",
+              "$$y_2(t)=T\\{x(t)\\}\\big|_{t\\to t-T}$$",
+              "$$y_1(t)=y_2(t)\\;\\forall T\\;\\Rightarrow\\;\\text{time invariant}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A for tutorial section.",
+            "worked_solution_goal": "N/A for tutorial section.",
+            "variation_from_previous": "N/A for tutorial section.",
+            "solution_step_plan": [
+              "N/A",
+              "N/A"
+            ],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep direct instruction minimal and symbolic. Introduce the comparison rule before any new worked examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Matching Shift-Then-System and System-Then-Shift Expressions",
+          "step_type": "example",
+          "learning_goal": "Apply the time-invariance test to a simple system and prove the two paths match.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image support needed; notation-only derivation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "multiple-choice classification of the time-invariance test outcome",
+            "practice_question_model": "For the system $y(t)=2x(t)$, choose the correct classification after comparing $y_1(t)$ and $y_2(t)$ for arbitrary shift $T$.",
+            "distractor_plan": [
+              "Offer a wrong class from algebraic sign errors in the shifted output.",
+              "Offer choices that confuse delaying by $+T$ vs $-T$.",
+              "Offer a choice that evaluates only one path instead of comparing both."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for an example section.",
+            "base_case": "Not applicable for an example section.",
+            "paragraph_plan": [
+              "Not applicable for an example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for an example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $y(t)=2x(t)$, compute the shift-then-system and system-then-shift expressions and decide if they are equal.",
+            "worked_solution_goal": "Show both paths simplify to the same output expression.",
+            "variation_from_previous": "Uses the fixed tutorial notation with the first nontrivial system rule and a clean matching result.",
+            "solution_step_plan": [
+              "Shift input: replace $x(t)$ by $x(t-T)$.",
+              "Apply system to shifted input: $y_1(t)=2x(t-T)$.",
+              "Apply system first: $y(t)=2x(t)$.",
+              "Delay the system output: $y_2(t)=2x(t-T)$.",
+              "Compare $y_1(t)$ and $y_2(t)$, then classify as time invariant."
+            ],
+            "practice_variation_axes": [
+              "Different constant gain coefficients",
+              "Different naming of shift variable",
+              "Equivalent but reordered simplification steps"
+            ]
+          },
+          "handoff_notes": "Use this section to establish the positive pattern before introducing failure cases."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Nonmatching Shift-Then-System and System-Then-Shift Expressions",
+          "step_type": "example",
+          "learning_goal": "Practice spotting a mismatch in one side of the path comparison and classify the system as time varying.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; mismatch is revealed by symbolic subtraction."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "multiple-choice with one correct classification and one-step explanation option",
+            "practice_question_model": "For $y(t)=x(t)+t$, determine whether $y_1(t)=T\\{x(t-T)\\}$ and $y_2(t)=T\\{x(t)\\}|_{t\\to t-T}$ match for arbitrary $T$.",
+            "distractor_plan": [
+              "Include distractor that mistakenly treats the constant $t$ as if it is also shifted by $T$.",
+              "Include distractor that compares only one path and ignores the other.",
+              "Include distractor that claims time invariance whenever two expressions have similar structure."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for an example section.",
+            "base_case": "Not applicable for an example section.",
+            "paragraph_plan": [
+              "Not applicable for an example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for an example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $y(t)=x(t)+t$, compute both paths and identify the nonmatching term introduced by the additive $t$.",
+            "worked_solution_goal": "Demonstrate that explicit dependence on $t$ creates a mismatch and implies time variation.",
+            "variation_from_previous": "Adds the first explicit-time term as the wrinkle beyond the matched gain example.",
+            "solution_step_plan": [
+              "Compute shift-first path: $y_1(t)=x(t-T)+t$.",
+              "Compute system-first path: $y(t)=x(t)+t$ then $y_2(t)=x(t-T)+(t-T)$.",
+              "Substitute and simplify both expressions.",
+              "Show the additive terms differ by $T$, so $y_1(t)\\neq y_2(t)$.",
+              "Mark the system as time varying."
+            ],
+            "practice_variation_axes": [
+              "Different explicit-time offsets (e.g., $t^2$, $3t$)",
+              "Use of different input symbols while preserving mismatch mechanism",
+              "Alternative shift labels"
+            ]
+          },
+          "handoff_notes": "The distractors should probe whether the model is checking both paths, not just eyeing a single non-constant term."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Testing Equality for an Arbitrary Input Shift",
+          "step_type": "example",
+          "learning_goal": "Run the full symbolic test with a system containing both a shift inside $x(\\cdot)$ and a prefactor to ensure the learner tests arbitrary $T$ systematically.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual data is required; the focus is algebraic equality."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "multiple-choice with one classification and one common-error alternative",
+            "practice_question_model": "For $y(t)=t\\,x(t-2)$, which statement about the two comparison paths is correct?",
+            "distractor_plan": [
+              "Wrongly conclude invariance by only comparing functional arguments and ignoring prefactors.",
+              "Conclude time variation only for $T=0$ but miss that $T\\neq 0$ is required.",
+              "Use $t-T$ in the wrong position, producing a false match."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for an example section.",
+            "base_case": "Not applicable for an example section.",
+            "paragraph_plan": [
+              "Not applicable for an example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for an example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $y(t)=t\\,x(t-2)$, simplify both paths $y_1(t)=T\\{x(t-T)\\}$ and $y_2(t)=T\\{x(t)\\}|_{t\\to t-T}$ to test equality.",
+            "worked_solution_goal": "Expose the surviving factor mismatch from substituting $t\\to t-T$ in the prefactor.",
+            "variation_from_previous": "Extends the previous mismatch case with a time factor multiplying a shifted argument.",
+            "solution_step_plan": [
+              "Compute $y_1(t)=t\\,x((t-T)-2)=t\\,x(t-T-2)$.",
+              "Compute $y(t)=t\\,x(t-2)$, then delay output: $y_2(t)=(t-T)x(t-T-2)$.",
+              "Compare coefficients and arguments term-by-term.",
+              "Identify the non-equality due to the prefactor and classify the system as time varying."
+            ],
+            "practice_variation_axes": [
+              "Different internal delays in $x(t-a)$",
+              "Different polynomial prefactors in $t$",
+              "Alternative but equivalent algebraic simplifications"
+            ]
+          },
+          "handoff_notes": "Keep this as a pure symbolic test of $T$-dependent mismatch; no extra conceptual framing is needed."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Classifying Time Invariance from Simplified Path Expressions",
+          "step_type": "example",
+          "learning_goal": "Classify systems quickly from simplified path expressions and reinforce the final decision rule.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; classification comes from cleaned symbolic forms."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "single-choice classification question",
+            "practice_question_model": "Given simplified paths $y_1(t)=x(t-T+1)$ and $y_2(t)=x(t-T+1)$, identify the correct time-invariance classification.",
+            "distractor_plan": [
+              "Offer a distractor that misclassifies a matched pair as time varying.",
+              "Offer a distractor that looks only at argument matching and ignores multiplicative/offset context.",
+              "Offer a distractor based on evaluating a single numeric $T$ value."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable for an example section.",
+            "base_case": "Not applicable for an example section.",
+            "paragraph_plan": [
+              "Not applicable for an example section."
+            ],
+            "display_math_plan": [
+              "Not applicable for an example section."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Use the following path expressions and classify the system: $y_1(t)=x(t-T+1)$, $y_2(t)=x(t-T+1)$.",
+            "worked_solution_goal": "Require a rapid decision using exact symbolic equality after simplification.",
+            "variation_from_previous": "Shifts focus from generating expressions to classifying from a simplified pair.",
+            "solution_step_plan": [
+              "Read both simplified path expressions.",
+              "Check each structural component (argument and coefficients) for identity.",
+              "Conclude classification based on equality for all $T$.",
+              "Briefly restate the rule for this lesson core move."
+            ],
+            "practice_variation_axes": [
+              "Small sign and index variations in arguments",
+              "Decoys where only one term is changed",
+              "Different letter labels while preserving equality or mismatch"
+            ]
+          },
+          "handoff_notes": "Use this section to prepare the student for automatic recall in subsequent review questions by emphasizing pattern recognition."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Time-Invariant Memoryless Systems",
+      "lesson_core_move": "Apply the time-invariance shift test to memoryless continuous-time system rules by verifying that the fixed pointwise mapping from x(t) to y(t) commutes with input shifts and contains no explicit dependence on t.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Time-Invariant Memoryless Systems",
+          "step_type": "tutorial",
+          "learning_goal": "Define time invariance for a memoryless rule as the requirement that shifting $x(t)$ by $T$ shifts $y(t)$ by the same $T$ without changing the pointwise mapping.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the shift test is fully symbolic.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The tutorial is explained with equations only."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not applicable",
+            "practice_question_model": "none",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the shift test for a memoryless system: if $x_T(t)=x(t-T)$, compare the output from the shifted input with the shifted original output $y(t-T)$.",
+            "base_case": "Use a constant-gain rule such as $y(t)=a x(t)$ as the simplest case where the same pointwise mapping clearly commutes with the shift.",
+            "paragraph_plan": [
+              "State the definition of time invariance as identical output shifting under any input shift.",
+              "Introduce the memoryless form $y(t)=f(x(t))$ and the shifted input $x_T(t)=x(t-T)$.",
+              "Show the shifted-input path symbolically and name the quantity to compare.",
+              "Show the system-then-shift path symbolically and emphasize that the same rule is being reused.",
+              "Anchor the idea with the constant-gain base case before moving to nonlinear, additive, and time-dependent rules."
+            ],
+            "display_math_plan": [
+              "x_T(t)=x(t-T)",
+              "y_T(t)=f(x(t-T))=y(t-T)"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable; this section is direct instruction rather than a worked example.",
+            "worked_solution_goal": "Not applicable.",
+            "variation_from_previous": "Not applicable.",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the introduction short and operational. The writer should define the shift test, show the memoryless form, and immediately hand off to the first constant-gain example."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Testing a Constant-Gain Memoryless Rule",
+          "step_type": "example",
+          "learning_goal": "Verify that a constant-gain memoryless rule commutes with input shifts.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the example is a symbolic comparison of two shift paths.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The worked example and practice should stay symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the classification and path comparison that show a constant-gain rule preserves the same output shift.",
+            "practice_question_model": "Given $y(t)=a x(t)$ and $x_T(t)=x(t-T)$, decide whether the rule is time invariant by comparing the shifted-input output with the shifted original output.",
+            "distractor_plan": [
+              "Treat any gain as if it automatically makes the system time varying.",
+              "Compare $y(t)$ to $y(t-T)$ without applying the same shift to the input path.",
+              "Reverse the sign of the shift and use $x(t+T)$ instead of $x(t-T)$.",
+              "Assume the gain changes when the input is shifted."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this section is a worked example.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Decide whether $y(t)=3x(t)$ is time invariant by comparing the output from $x_T(t)=x(t-T)$ with $y(t-T)$ from the original output.",
+            "worked_solution_goal": "Show that both paths produce $3x(t-T)$, so the output shift matches the input shift exactly.",
+            "variation_from_previous": "This keeps the rule pointwise and linear, but the learner now has to execute the shift test rather than only restate the definition.",
+            "solution_step_plan": [
+              "Write the shifted input as $x_T(t)=x(t-T)$.",
+              "Apply the rule to the shifted input to get $y_T(t)=3x(t-T)$.",
+              "Apply the rule first to get $y(t)=3x(t)$, then shift it to obtain $y(t-T)=3x(t-T)$.",
+              "Compare the two expressions and classify the rule as time invariant."
+            ],
+            "practice_variation_axes": [
+              "change the constant gain",
+              "use a different input shift amount $T$",
+              "keep the same shift-comparison test"
+            ]
+          },
+          "handoff_notes": "Keep the example tightly controlled: one input shift, one pointwise rule, one direct comparison, then a clear time-invariant classification."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Testing a Squaring Memoryless Rule",
+          "step_type": "example",
+          "learning_goal": "Verify that a nonlinear pointwise square rule still commutes with input shifts.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the square rule is checked by symbolic commutation.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The lesson should stay algebraic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the classification and path comparison that show the square rule preserves the same output shift.",
+            "practice_question_model": "Given $y(t)=x^2(t)$ and $x_T(t)=x(t-T)$, decide whether the rule is time invariant by comparing $(x(t-T))^2$ with the shifted original output.",
+            "distractor_plan": [
+              "Assume nonlinear automatically means time varying.",
+              "Square the shifted output incorrectly instead of shifting the input first.",
+              "Drop the shift inside the square and compare the wrong expressions.",
+              "Treat the exponent as if it introduced explicit $t$ dependence."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this section is a worked example.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Decide whether $y(t)=x^2(t)$ is time invariant by comparing the output from $x_T(t)=x(t-T)$ with $y(t-T)$ from the original output.",
+            "worked_solution_goal": "Show that both paths produce $(x(t-T))^2$, so the nonlinear fixed mapping still commutes with the shift.",
+            "variation_from_previous": "The rule is now nonlinear, so the learner must separate nonlinearity from time variation.",
+            "solution_step_plan": [
+              "Write the shifted input as $x_T(t)=x(t-T)$.",
+              "Apply the square rule to get $y_T(t)=(x(t-T))^2$.",
+              "Apply the rule first to get $y(t)=x^2(t)$, then shift it to obtain $y(t-T)=(x(t-T))^2$.",
+              "Compare the two expressions and classify the rule as time invariant."
+            ],
+            "practice_variation_axes": [
+              "replace the square with another fixed pointwise nonlinearity",
+              "change the input shift amount $T$",
+              "keep the same commutation test"
+            ]
+          },
+          "handoff_notes": "The writer should make the nonlinearity explicit, then show that the shift comparison still matches exactly."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Testing a Constant-Offset Memoryless Rule",
+          "step_type": "example",
+          "learning_goal": "Verify that a fixed output offset does not break time invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the offset rule is verified by symbolic equality.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The comparison is fully symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the classification and path comparison that show a constant offset preserves the same output shift.",
+            "practice_question_model": "Given $y(t)=x(t)+5$ and $x_T(t)=x(t-T)$, decide whether the rule is time invariant by comparing the two path expressions.",
+            "distractor_plan": [
+              "Treat any additive constant as if it breaks time invariance.",
+              "Shift the constant term by itself instead of keeping it fixed.",
+              "Confuse the constant offset with an input delay.",
+              "Assume addition to the output must create explicit $t$ dependence."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this section is a worked example.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Decide whether $y(t)=x(t)+5$ is time invariant by comparing the output from $x_T(t)=x(t-T)$ with $y(t-T)$ from the original output.",
+            "worked_solution_goal": "Show that both paths produce $x(t-T)+5$, so a fixed additive offset still commutes with the shift.",
+            "variation_from_previous": "The wrinkle is additive rather than multiplicative, so the learner must keep the constant term fixed while shifting the signal.",
+            "solution_step_plan": [
+              "Write the shifted input as $x_T(t)=x(t-T)$.",
+              "Apply the rule to the shifted input to get $y_T(t)=x(t-T)+5$.",
+              "Apply the rule first to get $y(t)=x(t)+5$, then shift it to obtain $y(t-T)=x(t-T)+5$.",
+              "Compare the two expressions and classify the rule as time invariant."
+            ],
+            "practice_variation_axes": [
+              "change the constant offset",
+              "combine a constant gain with a constant offset",
+              "keep the same shift-comparison test"
+            ]
+          },
+          "handoff_notes": "Keep the additive constant fixed across both paths. The point is that the offset is constant, not that it creates a new time dependence."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Spotting Explicit Time Dependence in a Memoryless Rule",
+          "step_type": "example",
+          "learning_goal": "Detect explicit $t$ dependence as a failure of time invariance even when the rule is memoryless.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the mismatch appears directly in the algebra.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not generate an image. The failure of time invariance is visible from the symbolic comparison."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the classification and path comparison that reveal the explicit $t$ term breaks time invariance.",
+            "practice_question_model": "Given $y(t)=t x(t)$ and $x_T(t)=x(t-T)$, decide whether the rule is time invariant by comparing $t x(t-T)$ with $(t-T)x(t-T)$.",
+            "distractor_plan": [
+              "Assume every memoryless rule is time invariant.",
+              "Ignore the explicit $t$ term and compare only the shifted input.",
+              "Treat $t$ as a constant when the output is shifted.",
+              "Mistake the mismatch in the time factor for a simple algebra error rather than a failure of time invariance."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Not applicable; this section is a worked example.",
+            "base_case": "Not applicable.",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Decide whether $y(t)=t x(t)$ is time invariant by comparing the output from $x_T(t)=x(t-T)$ with $y(t-T)$ from the original output.",
+            "worked_solution_goal": "Show that the shifted-input path gives $t x(t-T)$ while the shifted-output path gives $(t-T)x(t-T)$, so the explicit $t$ term breaks time invariance.",
+            "variation_from_previous": "This adds explicit $t$ dependence while keeping the rule memoryless, so the learner must separate 'memoryless' from 'time invariant.'",
+            "solution_step_plan": [
+              "Write the shifted input as $x_T(t)=x(t-T)$.",
+              "Apply the rule to the shifted input to get $y_T(t)=t x(t-T)$.",
+              "Apply the rule first to get $y(t)=t x(t)$, then shift it to obtain $y(t-T)=(t-T)x(t-T)$.",
+              "Compare the two expressions and identify the mismatch caused by explicit $t$."
+            ],
+            "practice_variation_axes": [
+              "replace $t$ with another explicit time factor or offset",
+              "separate memoryless structure from time-varying behavior",
+              "keep the same shift-comparison test"
+            ]
+          },
+          "handoff_notes": "Make the failure mode explicit: the mapping is still memoryless, but the $t$ in the rule changes under a shift, so the two paths do not match."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Time-Varying Systems with Explicit $t$",
+      "lesson_core_move": "Compare the shift-then-system and system-then-shift outputs for system rules containing explicit $t$ to recognize when absolute-time dependence makes a continuous-time system time varying.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Time-Varying Systems with Explicit $t$",
+          "step_type": "tutorial",
+          "learning_goal": "Show that an explicit $t$ in the system rule anchors the output to absolute time, so the shift test compares $T(x(t-t_0))$ with $y(t-t_0)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the idea is established by comparing symbolic input-shift and output-shift expressions.",
+            "visual_elements": [],
+            "image_generation_notes": "Keep the introduction symbolic; do not add a diagram or signal plot."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "none",
+            "practice_question_model": "none",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Define time variance by the shift test and show why an explicit $t$ in the rule changes the output when the input is shifted.",
+            "base_case": "Use the simplest rule with explicit time dependence, such as $y(t)=t x(t)$, and compare it to the shifted output $y(t-t_0)$.",
+            "paragraph_plan": [
+              "State the shift test: if the output to $x(t-t_0)$ equals $y(t-t_0)$ for every $t_0$, the system is time invariant.",
+              "Show that a symbol like $t$ inside the rule refers to absolute time, not the shifted input time.",
+              "Preview that later examples will compare the two paths on multipliers, offsets, and mixed rules."
+            ],
+            "display_math_plan": [
+              "$T(x(t))=y(t)$ and the comparison $T(x(t-t_0))$ versus $y(t-t_0)$.",
+              "$y(t)=t x(t)$ as the simplest explicit-$t$ rule."
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the tutorial short and direct; the later examples should supply the concrete path comparisons."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Comparing Paths for a Time-Dependent Multiplier",
+          "step_type": "example",
+          "learning_goal": "Compare $T(x(t-t_0))$ and $y(t-t_0)$ when the rule multiplies by $t$ so the learner sees the factor change from $t$ to $t-t_0$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; compare the symbolic outputs for the shifted input and shifted original output.",
+            "visual_elements": [],
+            "image_generation_notes": "Keep the example symbolic and equation-driven."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the expression that matches the requested path comparison or classification.",
+            "practice_question_model": "Given $T(x(t))=t x(t)$ and a shift $t_0$, ask which expression matches the system-then-shift path.",
+            "distractor_plan": [
+              "Use $t x(t-t_0)$ to confuse the shifted input with the shifted output.",
+              "Use $(t-t_0)x(t)$ to move the shift onto the wrong factor.",
+              "Use $t x(t)$ as an unshifted distractor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $T(x(t))=t x(t)$ and input $x(t)$, compare the outputs for the shifted input $x(t-t_0)$ and for the shifted original output $y(t-t_0)$.",
+            "worked_solution_goal": "Show that $T(x(t-t_0))=t x(t-t_0)$ while $y(t-t_0)=(t-t_0)x(t-t_0)$, so the two paths differ.",
+            "variation_from_previous": "Adds the first concrete explicit-$t$ rule after the introductory definition.",
+            "solution_step_plan": [
+              "Write the original output rule.",
+              "Apply the input shift inside the system rule.",
+              "Shift the original output by replacing $t$ with $t-t_0$.",
+              "Compare the factors and conclude that the system is time varying."
+            ],
+            "practice_variation_axes": [
+              "change $t_0$",
+              "change the input symbol while keeping the same multiplier",
+              "ask for the path comparison or time-variance classification"
+            ]
+          },
+          "handoff_notes": "Make the factor mismatch explicit; the later question should ask the learner to choose between the two symbolic paths."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Comparing Paths for a Time-Dependent Offset",
+          "step_type": "example",
+          "learning_goal": "Compare the two paths when the rule adds an explicit time-dependent offset, so the learner sees that absolute-time dependence alone can break invariance.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the mismatch is visible directly in the symbolic offset term.",
+            "visual_elements": [],
+            "image_generation_notes": "Keep the offset comparison symbolic and compact."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the expression or classification that correctly follows from the shift test.",
+            "practice_question_model": "For $T(x(t))=x(t)+t$ and shift $t_0$, ask which term changes between the two paths.",
+            "distractor_plan": [
+              "Use the input term as the apparent mismatch.",
+              "Use $t$ instead of $t-t_0$ to reflect the common error.",
+              "Use a distractor that shifts the whole output but not the added term."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $T(x(t))=x(t)+t$ and input $x(t)$, compare $T(x(t-t_0))$ with $y(t-t_0)$.",
+            "worked_solution_goal": "Show that the shifted input gives $x(t-t_0)+t$ but shifting the original output gives $x(t-t_0)+(t-t_0)$, so the outputs differ.",
+            "variation_from_previous": "Swaps the explicit-$t$ multiplier for an explicit-$t$ offset.",
+            "solution_step_plan": [
+              "Write the original output.",
+              "Substitute the shifted input into the system rule.",
+              "Shift the original output.",
+              "Compare the additive terms and conclude time variation."
+            ],
+            "practice_variation_axes": [
+              "replace the offset with another explicit function of $t$",
+              "change the shift amount $t_0$",
+              "ask for the mismatched term directly"
+            ]
+          },
+          "handoff_notes": "Keep the mismatch focused on the additive $t$ term so the learner does not drift into unrelated algebra."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Tracking Explicit $t$ Through an Input Shift",
+          "step_type": "example",
+          "learning_goal": "Track every occurrence of $t$ in a mixed rule after replacing $x(t)$ by $x(t-t_0)$ so the learner can separate the shifted input argument from the unchanged absolute-time symbol.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; the learner can track each $t$ symbol directly in the algebra.",
+            "visual_elements": [],
+            "image_generation_notes": "Do not add a plot; the key move is symbolic substitution."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the output expression that matches the requested path.",
+            "practice_question_model": "For $T(x(t))=t x(t)+x(t)$ and shift $t_0$, ask which output matches $y(t-t_0)$.",
+            "distractor_plan": [
+              "Shift only the input term.",
+              "Shift only the explicit-$t$ term.",
+              "Apply the shift to the wrong side of the comparison.",
+              "Include an unshifted original-output distractor."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $T(x(t))=t x(t)+x(t)$ and input $x(t)$, compare $T(x(t-t_0))$ with $y(t-t_0)$.",
+            "worked_solution_goal": "Show that each explicit $t$ in the rule stays as $t$ in the system-then-shift path, while the shifted output replaces every $x(t)$ by $x(t-t_0)$ and every free $t$ by $t-t_0$.",
+            "variation_from_previous": "Combines an explicit-$t$ multiplier and an explicit-$t$-free term so the learner must track both output pieces.",
+            "solution_step_plan": [
+              "Identify each occurrence of $t$ in the rule.",
+              "Compute the shift-then-system output.",
+              "Compute the system-then-shift output.",
+              "Compare the terms one by one and conclude noninvariance."
+            ],
+            "practice_variation_axes": [
+              "mix a multiplier and an offset",
+              "change which term depends on $t$",
+              "vary the shift amount"
+            ]
+          },
+          "handoff_notes": "The worked example should force term-by-term tracking, not a single-line shortcut."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Classifying Explicit-$t$ System Rules as Time Varying",
+          "step_type": "example",
+          "learning_goal": "Classify a system rule as time varying when any free $t$ remains in the rule after you compare the two shift paths.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "No image needed; classification follows directly from the symbolic shift comparison.",
+            "visual_elements": [],
+            "image_generation_notes": "Keep the classification purely symbolic and avoid any visual scaffolding."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 4,
+            "answer_format": "Select the correct classification after comparing the two shift paths.",
+            "practice_question_model": "For $T(x(t))=t x(t)+2x(t)$ and shift $t_0$, ask whether the rule is time invariant or time varying.",
+            "distractor_plan": [
+              "Offer the opposite classification as the main distractor.",
+              "Include a distractor that confuses explicit $t$ with the shifted input argument.",
+              "Include a distractor that ignores the shifted-output comparison."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $T(x(t))=t x(t)+2x(t)$ and input $x(t)$, compare the two shift paths and decide whether the system is time varying.",
+            "worked_solution_goal": "Show that the explicit $t$ factor changes under the shift test, so the system is time varying.",
+            "variation_from_previous": "Turns the path comparison into a final classification decision.",
+            "solution_step_plan": [
+              "Write the shifted-input output.",
+              "Write the shifted original output.",
+              "Compare the expressions for the two paths.",
+              "State the time-variance classification."
+            ],
+            "practice_variation_axes": [
+              "change the explicit-$t$ rule",
+              "change the input shift amount",
+              "ask for the final classification only"
+            ]
+          },
+          "handoff_notes": "Close the lesson by making the learner state the classification after the comparison, not before it."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Time Invariance vs. Signal Shifting",
+      "lesson_core_move": "Distinguish time invariance from signal shifting by tracing the shift-then-system and system-then-shift paths to decide whether a continuous-time system preserves input delays as identical output delays.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Time Invariance vs. Signal Shifting",
+          "step_type": "tutorial",
+          "learning_goal": "State the two-path test for time invariance: compare $T\\{x(t-\\tau)\\}$ with $y(t-\\tau)$ when $y(t)=T\\{x(t)\\}$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; the lesson is taught entirely by symbolic comparison of the two paths."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No questions in the tutorial; move directly from the minimum effective dose of explanation into the first example.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the student to decide time invariance by checking whether delaying the input by $\\tau$ produces the same delay on the output and nothing else changes.",
+            "base_case": "Start with one input $x(t)$, its shifted version $x(t-\\tau)$, and the original output $y(t)=T\\{x(t)\\}$ so the learner can compare the two paths side by side.",
+            "paragraph_plan": [
+              "Define signal shifting as moving one signal in time and define time invariance as preserving that same time shift at the output.",
+              "Show the two paths explicitly: shift-then-system versus system-then-shift.",
+              "State the decision rule: if the two outputs match for every input shift $\\tau$, the system is time invariant.",
+              "Stress that the test is about identical delay propagation, not about whether the waveform is unchanged in every other respect."
+            ],
+            "display_math_plan": [
+              "$$y(t)=T\\{x(t)\\}$$",
+              "$$T\\{x(t-\\tau)\\}$$",
+              "$$y(t-\\tau)$$",
+              "$T\\{x(t-\\tau)\\}=y(t-\\tau)$ for a time-invariant system"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "not-applicable",
+            "worked_solution_goal": "not-applicable",
+            "variation_from_previous": "not-applicable",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Keep the explanation brief and explicit. Do not introduce a concrete system rule yet; reserve that for the examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying Signal Shifting as an Operation on One Signal",
+          "step_type": "example",
+          "learning_goal": "Identify $x(t-\\tau)$ or $x(t+\\tau)$ as a shifted version of one signal before any system comparison.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; keep the shift operation symbolic and focused on one signal."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the option that correctly describes the shifted signal and the direction of the shift.",
+            "practice_question_model": "Given a shifted input such as $x(t-3)$ or $x(t+2)$, identify whether it is a delayed or advanced version of the original signal and what changed.",
+            "distractor_plan": [
+              "Reverse the sign of the shift and swap delay with advance.",
+              "Treat the shift as an amplitude change instead of a horizontal shift.",
+              "Describe the system output instead of the input signal.",
+              "Confuse the shifted signal with the time-invariance test itself."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given the signal $x(t)$, interpret the shifted inputs $x(t-3)$ and $x(t+2)$ as delayed or advanced versions of the same waveform before any system is applied.",
+            "worked_solution_goal": "Show that shifting changes only the time location of one signal and leaves its shape and rule intact.",
+            "variation_from_previous": "This step isolates one-signal shifting before the lesson asks the student to compare two system paths.",
+            "solution_step_plan": [
+              "Identify the unshifted signal and the substituted time argument.",
+              "Read $x(t-3)$ as a delay and $x(t+2)$ as an advance.",
+              "State that the waveform shape does not change, only its horizontal placement.",
+              "Separate signal shifting from any later claim about the system being time invariant."
+            ],
+            "practice_variation_axes": [
+              "Shift amount",
+              "Delay versus advance",
+              "Signal notation used in the prompt",
+              "Whether the shifted signal is written as an expression or a short description"
+            ]
+          },
+          "handoff_notes": "Keep the worked example on one signal only. The follow-up question should test shift recognition, not system comparison."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Comparing the Shift-Then-System and System-Then-Shift Paths",
+          "step_type": "example",
+          "learning_goal": "Carry out the two-path test by computing $T\\{x(t-\\tau)\\}$ and comparing it to $y(t-\\tau)$ where $y(t)=T\\{x(t)\\}$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; the comparison is purely algebraic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the option that correctly compares the two output paths and identifies whether they match.",
+            "practice_question_model": "Given a simple system such as $T\\{x(t)\\}=x^2(t)$ and a shifted input $x(t-\\tau)$, compare $T\\{x(t-\\tau)\\}$ with $y(t-\\tau)$ and decide whether the paths match.",
+            "distractor_plan": [
+              "Drop the shift inside the system and compare the wrong expressions.",
+              "Change the shift direction on one path.",
+              "Confuse $T\\{x(t-\\tau)\\}$ with $T\\{x(t)\\}-\\tau$.",
+              "Treat the system rule as if it shifts the output by itself.",
+              "Pick an answer that changes amplitude instead of time."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the system $T\\{x(t)\\}=x^2(t)$, compare the output for the shifted input $x(t-\\tau)$ with the shifted original output $y(t-\\tau)$ when $y(t)=T\\{x(t)\\}$.",
+            "worked_solution_goal": "Show that both paths produce the same expression, so the delay propagates unchanged.",
+            "variation_from_previous": "This step adds the system-comparison test after the learner already knows how to recognize a shifted signal.",
+            "solution_step_plan": [
+              "Write the original output $y(t)=x^2(t)$.",
+              "Apply the system to the shifted input to get $T\\{x(t-\\tau)\\}=x^2(t-\\tau)$.",
+              "Shift the original output to get $y(t-\\tau)=x^2(t-\\tau)$.",
+              "Match the two expressions and state that the system preserves the input delay."
+            ],
+            "practice_variation_axes": [
+              "Shift amount $\\tau$",
+              "Function form of the system rule",
+              "Whether the input is given algebraically or described in words",
+              "How the matching output is written"
+            ]
+          },
+          "handoff_notes": "The writer should show the two paths explicitly and keep the algebra minimal. The goal is the comparison, not the complexity of the system."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Recognizing Preserved Delays as Time-Invariant Behavior",
+          "step_type": "example",
+          "learning_goal": "Recognize that a delay preserved through the system is evidence that the system is time invariant.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; the preserved-delay check is fully symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the option that correctly identifies preserved delay behavior as time invariance.",
+            "practice_question_model": "Given a system with delayed terms, compare the shifted-input output to the shifted original output and decide whether the delay is preserved.",
+            "distractor_plan": [
+              "Match only one term and ignore the rest of the output.",
+              "Shift one side incorrectly and claim agreement.",
+              "Assume any delayed term automatically means time invariance.",
+              "Confuse preserved delay with output equality for a single input only.",
+              "Focus on the graph shape instead of the path comparison."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the system $T\\{x(t)\\}=x(t)+x(t-1)$ and input $x(t-\\tau)$, show that the output is exactly the delayed version of the original output.",
+            "worked_solution_goal": "Show that each term in the output shifts by the same amount, so the system is time invariant.",
+            "variation_from_previous": "The wrinkle is that the output already contains a built-in delay, so the learner must see that the whole output still shifts by the same $\\tau$.",
+            "solution_step_plan": [
+              "Compute the original output $y(t)=x(t)+x(t-1)$.",
+              "Apply the system to the shifted input to get $T\\{x(t-\\tau)\\}=x(t-\\tau)+x(t-1-\\tau)$.",
+              "Write the shifted original output $y(t-\\tau)=x(t-\\tau)+x(t-1-\\tau)$.",
+              "Match the terms and conclude that the delay is preserved."
+            ],
+            "practice_variation_axes": [
+              "Delay value",
+              "Number of delayed terms in the output",
+              "Whether the shift is a delay or an advance",
+              "How the matching expressions are written"
+            ]
+          },
+          "handoff_notes": "Use a system whose output already contains delay terms so the learner sees that preserved delay is a property of the whole rule, not just of one isolated term."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Rejecting Time Invariance from a Single Shifted Output",
+          "step_type": "example",
+          "learning_goal": "Use the two-path test to reject time invariance when $T\\{x(t-\\tau)\\}$ does not equal $y(t-\\tau)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed; the non-invariance decision comes from symbolic mismatch."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choose the option that correctly rejects time invariance by comparing the two paths.",
+            "practice_question_model": "Given a system with an explicit $t$ factor such as $T\\{x(t)\\}=t\\,x(t)$, determine whether the system preserves an input delay and identify the mismatch.",
+            "distractor_plan": [
+              "Treat $t$ and $t-\\tau$ as interchangeable.",
+              "Assume the system is time invariant because the input was shifted.",
+              "Ignore the explicit time dependence in the system rule.",
+              "Compare only the shifted output shape and miss the algebraic mismatch.",
+              "Claim agreement after simplifying away the $\\tau$ term incorrectly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "not-applicable",
+            "base_case": "not-applicable",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For the system $T\\{x(t)\\}=t\\,x(t)$, compare the output for $x(t-\\tau)$ with $y(t-\\tau)$ and show the paths do not match.",
+            "worked_solution_goal": "Show that the explicit $t$ factor stays tied to the current time, so shifting the input does not simply shift the output.",
+            "variation_from_previous": "This step keeps the same two-path test but switches to a time-varying rule so the mismatch is visible immediately.",
+            "solution_step_plan": [
+              "Write the original output $y(t)=t\\,x(t)$.",
+              "Apply the system to the shifted input to get $T\\{x(t-\\tau)\\}=t\\,x(t-\\tau)$.",
+              "Shift the original output to get $y(t-\\tau)=(t-\\tau)\\,x(t-\\tau)$.",
+              "Compare the two expressions and note that they are not equal."
+            ],
+            "practice_variation_axes": [
+              "The explicit time factor",
+              "The amount of input shift",
+              "Whether the mismatch is obvious from a single term or from a longer rule",
+              "The form used to state the non-invariance conclusion"
+            ]
+          },
+          "handoff_notes": "End with a clear rejection of time invariance. The key point is the mismatch between $T\\{x(t-\\tau)\\}$ and $y(t-\\tau)$, not the mere presence of a shifted input."
+        }
+      ]
+    }
+  ]
+}

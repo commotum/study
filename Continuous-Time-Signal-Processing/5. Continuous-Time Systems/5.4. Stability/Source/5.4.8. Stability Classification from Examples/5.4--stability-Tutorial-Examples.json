@@ -1,0 +1,2098 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Bounded Signals",
+      "lesson_core_move": "Determine whether a continuous-time signal is bounded by identifying a finite magnitude limit over all time for use in BIBO stability reasoning.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 1,
+          "lesson_title": "Bounded Signals",
+          "section_index": 1,
+          "section_title": "Introduction to Bounded Signals",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time signal is **bounded** when its magnitude stays below one finite ceiling for all time. In this topic, boundedness is the first check you use before BIBO stability reasoning: if a signal never grows beyond a finite limit, then its size is controlled in the way later system arguments need.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\exists M \\in \\mathbb{R}_{>0}: |x(t)| \\le M,\\; \\forall t \\in \\mathbb{R}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the exact condition to recognize: there must exist some finite $M > 0$ that works for every time $t$. The bound does not have to be the smallest possible number; it only has to be finite and valid everywhere the signal is defined.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M \\Rightarrow x(t) \\text{ is bounded.}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the constant signal $x(t)=3$, one valid bound is $M=3$, because $|x(t)|=3$ for every $t$. By contrast, $x(t)=t$ is not bounded, because no single finite ceiling can contain $|t|$ as time grows without limit.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the base rule is simple: look for one finite magnitude limit that works at all times. Later examples will add wrinkles, but they still use this same criterion.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Bounded Signals",
+          "section_index": 2,
+          "section_title": "Finding a Magnitude Bound from a Simple Formula",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine whether $x(t)=3+4\\sin(t)$ is bounded and give a bound $M$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that $x(t)$ is a constant term plus a sinusoid, so the cleanest move is to bound each piece separately. The constant $3$ is already finite, and $\\sin(t)$ has a known magnitude envelope over all time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|\\sin(t)| \\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That envelope gives $|4\\sin(t)| \\le 4$. Now combine the constant and variable parts with the triangle inequality: $|x(t)| = |3+4\\sin(t)| \\le |3| + |4\\sin(t)| \\le 3+4$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le 7",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So one valid magnitude bound is $M=7$, which means $x(t)$ is bounded. The key pattern is to separate the formula into bounded pieces, then combine their envelopes into one finite global bound.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Bounded Signals",
+          "section_index": 3,
+          "section_title": "Finding a Magnitude Bound for Sinusoidal Signals",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Find a finite bound for $x(t)=2\\sin(4t)+3\\cos(2t+\\pi/6)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a sum of sinusoidal terms, so the right move is to bound each term with its own global envelope. A phase shift such as $2t+\\pi/6$ changes where the wave sits in time, but it does not change the fact that a sine or cosine always stays between $-1$ and $1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|a\\sin(\\omega t+\\phi)| \\le |a|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $|2\\sin(4t)| \\le 2$ and $|3\\cos(2t+\\pi/6)| \\le 3$. Now combine the two envelopes with the triangle inequality:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| = |2\\sin(4t)+3\\cos(2t+\\pi/6)| \\le |2\\sin(4t)|+|3\\cos(2t+\\pi/6)| \\le 2+3=5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore one valid magnitude bound is $M=5$, so $x(t)$ is bounded. The pattern is the same as before: identify the envelope of each bounded piece, then add those envelopes to get one finite global bound.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Bounded Signals",
+          "section_index": 4,
+          "section_title": "Checking Boundedness from a Signal Graph",
+          "step_type": "example",
+          "content_mode": "image-needed",
+          "image_slots": [
+            {
+              "image_slot_id": "section-004",
+              "placement": "section",
+              "location_placeholder": "[IMAGE-LOCATION:section-004]",
+              "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+              "image_description": "A clean continuous-time signal graph for x(t) on a time axis from t=-6 to t=6. The curve is a smooth oscillation centered at 0 with clear maximum value 2 and minimum value -2. Include dashed horizontal envelope lines at y=2 and y=-2. Label the axes time and amplitude. The graph should show no drift, no growth, and no asymptotic divergence."
+            }
+          ],
+          "example_content": {
+            "example_prompt": "Use the displayed graph to decide whether $x(t)$ is bounded. Explain by referencing long-run growth behavior and envelope candidates.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a signal graph, so the first job is to look for a finite vertical envelope that contains the whole curve for every time. If the peaks and troughs stay within fixed levels and the graph does not drift upward or downward without limit, the signal is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "section-004"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here the curve stays between $-2$ and $2$ for all shown time, so one finite magnitude limit is immediately visible. There is no long-run growth, so the same envelope works everywhere on the graph.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le 2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the graph represents a bounded signal, and a valid bound is $M=2$. The decision rule is the same one used in the symbolic examples: find one finite magnitude ceiling that holds for all $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Bounded Signals",
+          "section_index": 5,
+          "section_title": "Recognizing Unbounded Growth Over All Time",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Assess boundedness of $x(t)=t^2 + 3e^{-t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a mixed signal: one term is a polynomial growth term and the other is an exponential term. To decide boundedness, check whether either term forces the magnitude to grow without a finite ceiling over all $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\text{For } t\\ge 0,\\; 3e^{-t}>0 \\text{ so } x(t)=t^2+3e^{-t}\\ge t^2.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $t^2$ grows without bound, no finite $M$ can satisfy $|x(t)|\\le M$ for all $t$. The positive exponential term does not change that conclusion, so $x(t)$ is unbounded.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 1,
+          "lesson_title": "Bounded Signals",
+          "section_index": 6,
+          "section_title": "Classifying Candidate Inputs as Bounded or Unbounded",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify each of the following candidates: $x_1(t)=\\cos(5t)$, $x_2(t)=\\frac{t+1}{t}$, $x_3(t)=2e^{-t}$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the same checkpoint for each signal: first look for an obvious global envelope, then look for singular behavior or one-sided growth that breaks any finite bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x_1(t)|=|\\cos(5t)|\\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "$x_1(t)$ is bounded because its magnitude never exceeds $1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x_2(t)=\\frac{t+1}{t}=1+\\frac{1}{t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "$x_2(t)$ is unbounded because it blows up near $t=0$, so no finite magnitude limit exists over all time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x_3(t)|=2e^{-t}\\to\\infty \\quad \\text{as } t\\to-\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "$x_3(t)$ is unbounded because it grows without limit in the negative-time direction. Final classification: $x_1$ bounded, $x_2$ unbounded, $x_3$ unbounded.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "BIBO Stability",
+      "lesson_core_move": "Apply the BIBO stability criterion by checking whether every bounded continuous-time input necessarily produces a bounded output under a given system rule.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 2,
+          "lesson_title": "BIBO Stability",
+          "section_index": 1,
+          "section_title": "Introduction to BIBO Stability",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time signal is bounded when it stays within some finite magnitude limit. In this lesson, the cue to look for is a bound of the form $|x(t)| \\le M$ for all $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "BIBO stability means that every bounded input must produce a bounded output under the system rule. The rule has to work for all bounded inputs, not just for a convenient one.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\forall\\, x(t)\\text{ bounded},\\; y(t)\\text{ bounded}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the base case, start with a scalar gain rule such as $y(t)=a x(t)$. If $|x(t)| \\le M$, then the output magnitude is controlled by the same finite input bound multiplied by the gain size.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le |a|M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That is the core pattern used throughout this topic: identify a finite input bound, apply the system rule, and check that the resulting output bound is still finite. Later examples keep the same logic while adding more structure to the rule being tested.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "BIBO Stability",
+          "section_index": 2,
+          "section_title": "Finding an Output Bound from an Input Bound",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $|x(t)| \\le 4$ and $y(t)=3x(t)$, find a valid bound for $|y(t)|$ and state whether the output is bounded.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input with $|x(t)| \\le 4$ and a simple scalar-gain rule $y(t)=3x(t)$. This is the base BIBO check: carry the input bound through the system rule and see whether the output stays finite.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le 4",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Apply the system rule inside an absolute value. Since $y(t)=3x(t)$, the output magnitude is $|y(t)|=|3x(t)|=3|x(t)|$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| = |3x(t)| = 3|x(t)|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the input bound $|x(t)| \\le 4$ to get $|y(t)| \\le 3\\cdot 4 = 12$. Because $12$ is finite, the output is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le 12",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So this simple gain rule passes the BIBO test for the given bounded input: the input bound becomes a finite output bound by multiplying by the gain size.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "BIBO Stability",
+          "section_index": 3,
+          "section_title": "Verifying BIBO Stability for Scaled and Offset System Rules",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Decide whether the system rule $y(t)=2x(t)-5$ is BIBO stable for any bounded input $x(t)$, and justify the verdict by building a bound from $|x(t)| \\le M$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input with $|x(t)| \\le M$ and a rule that scales the input and adds a constant offset. This is the next BIBO check: keep the same input bound and see whether the output can still be trapped by one finite constant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the output magnitude directly from the system rule. Since $y(t)=2x(t)-5$, take absolute values and bound each contribution separately.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| = |2x(t)-5| \\le |2x(t)| + |5| = 2|x(t)| + 5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the input bound $|x(t)| \\le M$ to get $|y(t)| \\le 2M+5$. Because $2M+5$ is finite whenever $M$ is finite, the output is bounded for every bounded input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le 2M+5",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So this scaled-plus-offset rule is BIBO stable: the output bound comes from the same input bound plus a fixed finite offset, not from any special choice of input.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "BIBO Stability",
+          "section_index": 4,
+          "section_title": "Verifying BIBO Stability for Shifted-Input System Rules",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Decide whether $y(t)=x(t-3)+4x(t+1)$ is BIBO stable for any bounded input $x(t)$, and derive a bound that uses the same input bound for both shifted copies.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input with $|x(t)| \\le M$ and a rule that uses shifted copies of the same input. Time shifts do not change the magnitude bound, so each shifted copy is still controlled by the same finite $M$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Write the output magnitude from the system rule and bound the shifted terms separately. Since $|x(t-3)| \\le M$ and $|x(t+1)| \\le M$, the output magnitude is controlled by the same input bound in both places.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| = |x(t-3)+4x(t+1)| \\le |x(t-3)| + 4|x(t+1)|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the common bound into each shifted copy to get $|y(t)| \\le M+4M=5M$. Because $5M$ is finite whenever $M$ is finite, the output is bounded for every bounded input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le 5M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So this shifted-input rule is BIBO stable: the time shift changes where the signal is sampled, but it does not change the size of the bound that controls the output.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 2,
+          "lesson_title": "BIBO Stability",
+          "section_index": 5,
+          "section_title": "Checking the Every Bounded Input Requirement",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Show that $y(t)=t\\,x(t)$ is not BIBO stable by choosing one bounded input that makes the output unbounded.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the universal requirement in the BIBO test: the system must produce a bounded output for every bounded input. To reject the rule, it is enough to find one bounded input that makes the output unbounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Choose the bounded input $x(t)=1$. Substituting it into the system rule gives $y(t)=t\\,x(t)=t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=t\\,x(t) \\Rightarrow y(t)=t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now the output magnitude is $|y(t)|=|t|$, and that grows without bound as $|t|$ increases. So the output is not bounded for this bounded input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{|t|\\to\\infty}|y(t)|=\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore, the system is not BIBO stable: one bounded counterexample is enough to break the 'every bounded input' requirement.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "Stable Physical Systems",
+      "lesson_core_move": "Interpret a stable physical continuous-time system as one whose response remains finite because its dynamics prevent bounded inputs from accumulating without bound.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 3,
+          "lesson_title": "Stable Physical Systems",
+          "section_index": 1,
+          "section_title": "Introduction to Stable Physical Systems",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A stable physical continuous-time system is one whose response stays finite over time when the input is bounded. The cue is not the size of the input alone; it is whether the system's own dynamics let the effect settle instead of pile up.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M_x \\text{ for all } t \\implies |y(t)| \\le M_y \\text{ for all } t.",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In physical terms, stability comes from internal dynamics that dissipate or leak energy, so bounded input does not keep accumulating into a larger and larger response. Decay, leakage, and dissipation are the mechanisms that keep the long-run output under control.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=y_{\\mathrm{steady}}(t)+y_{\\mathrm{transient}}(t), \\qquad y_{\\mathrm{transient}}(t)\\to 0 \\text{ as } t\\to\\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "When the transient decays, the response remains inside a finite envelope instead of accumulating without bound. That is the basic stability idea the next examples will use in more detailed cases.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Stable Physical Systems",
+          "section_index": 2,
+          "section_title": "Recognizing Finite Responses in Physical Systems",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify the response $y(t)=3 + 2e^{-4t}+0.1\\cos(2t)$ as stable or not under bounded physical input assumptions.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue here is a response law made from a constant offset, a decaying exponential, and a bounded oscillation. To classify the system, check whether any part can grow without bound as time advances.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=3+2e^{-4t}+0.1\\cos(2t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Each term stays finite: $3$ is a constant, $2e^{-4t}$ decays because the exponent is negative, and $0.1\\cos(2t)$ always remains between $-0.1$ and $0.1$. None of these pieces can accumulate into unbounded growth.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le |3| + |2e^{-4t}| + |0.1\\cos(2t)| \\le 3 + 2 + 0.1 = 5.1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the response remains inside a finite envelope for all time, with the transient term decaying and the oscillation staying bounded. That is the stable physical behavior: bounded input does not turn into unbounded accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Stable Physical Systems",
+          "section_index": 3,
+          "section_title": "Interpreting Bounded Responses to Sustained Inputs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $\\dot y+5y=x(t)$, $y(0)=0$, and $|x(t)|\\le 1$, classify whether $y(t)$ remains finite for all $t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a first-order system with a damping term $+5y$ and a bounded input $|x(t)|\\le 1$. To decide stability, write the response so the decaying natural part is separated from the forced part.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=e^{-5t}y(0)+\\int_0^t e^{-5(t-\\tau)}x(\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here $y(0)=0$, so the homogeneous term drops out and the response is the input filtered by a decaying kernel. Because $e^{-5(t-\\tau)}$ shrinks older input instead of letting it accumulate, a bounded input cannot build into an unbounded output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le \\int_0^t e^{-5(t-\\tau)}|x(\\tau)|\\,d\\tau \\le \\int_0^t e^{-5(t-\\tau)}\\,d\\tau = \\frac{1-e^{-5t}}5 \\le \\frac15",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $y(t)$ remains finite for all $t$ and stays inside a fixed envelope. The system is stable because its dynamics keep each bounded contribution from piling up without bound.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Stable Physical Systems",
+          "section_index": 4,
+          "section_title": "Interpreting Settling Behavior After a Bounded Input Change",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For a bounded input shift producing $y(t)=2+Ce^{-3t}$, determine finite settling behavior after the change and justify with dynamics.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input change whose response splits into a steady term and a transient term. To decide settling behavior, identify the long-time value and check whether the transient decays.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=2+Ce^{-3t}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The constant term $2$ is the finite settled level, and the transient $Ce^{-3t}$ decays because the exponent is negative. Since there is no polynomial growth term, nothing in the response can build up without bound after the input change.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{t\\to\\infty} y(t)=2, \\qquad y(t)-2=Ce^{-3t}\\to 0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the response settles to a finite value after the bounded input change, and the settling comes from the decaying dynamics rather than from the initial condition alone. This is stable physical behavior: a bounded change produces a bounded transient that fades into a finite steady state.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 3,
+          "lesson_title": "Stable Physical Systems",
+          "section_index": 5,
+          "section_title": "Identifying Dynamics That Prevent Accumulation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare $y_1(t)=\\int_0^t x(\\tau)\\,d\\tau$ and $y_2(t)=\\int_0^t e^{-2(t-\\tau)}x(\\tau)\\,d\\tau$ for bounded $x(t)$ and decide which prevents accumulation.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is two responses built from past input, but only one has a decaying memory of the past. To test accumulation, check whether older input keeps the same weight or gets suppressed with time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_1(t)=\\int_0^t x(\\tau)\\,d\\tau, \\qquad y_2(t)=\\int_0^t e^{-2(t-\\tau)}x(\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In $y_1$, every past input contributes equally, so bounded input can keep stacking up. In $y_2$, the factor $e^{-2(t-\\tau)}$ makes older input count less, so the response does not keep full memory of the entire history.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1 \\;\\Rightarrow\\; y_1(t)=\\int_0^t 1\\,d\\tau=t, \\qquad y_2(t)=\\int_0^t e^{-2(t-\\tau)}\\,d\\tau=\\frac{1-e^{-2t}}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "This shows the decision directly: $y_1$ is accumulation-prone because a bounded sustained input can grow without bound, while $y_2$ stays finite because the decaying kernel prevents old input from piling up. The dynamics in $y_2$ are the anti-accumulation mechanism.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "Damping and Dissipation",
+      "lesson_core_move": "Relate damping and dissipation mechanisms in continuous-time physical systems to decaying responses that support BIBO stability by preventing bounded inputs from accumulating into growing or unbounded outputs.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 4,
+          "lesson_title": "Damping and Dissipation",
+          "section_index": 1,
+          "section_title": "Introduction to Damping and Dissipation",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Damping and dissipation are the mechanisms that make a continuous-time response lose energy as time passes. In stability work, the cue to look for is a response that shrinks rather than accumulates, because decay is what keeps bounded input data from turning into growing output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The simplest model is an exponentially decaying response. When the response has the form $y(t)=K e^{-a t}u(t)$ with $a>0$, the damping rate is positive and the response is forced toward zero instead of away from it.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=K e^{-a t}u(t),\\ a>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That sign matters. A positive decay rate makes the factor $e^{-a t}$ shrink over time, so the response settles instead of accumulating. This is the basic damping signature used throughout the topic.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{t\\to\\infty} K e^{-a t}=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The contrast case is the same exponential shape with the opposite sign in the exponent. If the exponent is positive, the response does not decay, so the output can grow instead of settling.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=K e^{+a t}\\text{ does not decay for }a>0\\text{ and can grow unbounded.}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the first rule for this topic is simple: positive damping produces decay, decay produces settling, and settling is the behavior that prevents bounded inputs from building into unbounded outputs. Later examples will reuse this sign test as the quickest way to recognize a stable response mechanism.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Damping and Dissipation",
+          "section_index": 2,
+          "section_title": "Identifying a Decaying Response from Damping",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify $y(t)=3e^{-1.8t}$ as decaying or non-decaying and compute its long-term limit.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the exponent sign. A response of the form $K e^{-a t}$ with $a>0$ is the standard damped form from the tutorial, so this example is already set up to decay.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Rewrite the response in that standard form by reading off the coefficient and decay rate:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=3e^{-1.8t}=K e^{-a t},\\qquad K=3,\\ a=1.8>0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $a>0$, the exponential factor shrinks as $t$ increases. That means the response is decaying, not growing, so the output settles instead of accumulating.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\lim_{t\\to\\infty} 3e^{-1.8t}=0",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the correct classification is decaying, and the long-term limit is $0$. That is the exact behavior damping is meant to produce: a bounded response that settles rather than building into an unbounded output.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Damping and Dissipation",
+          "section_index": 3,
+          "section_title": "Relating Dissipation to Output Settling",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $y_1(t)=4e^{-0.7t}$ and $y_2(t)=4e^{-2.7t}$, identify which has stronger dissipation and quicker settling.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the decay rate in the exponent. Both responses are already in the damped form $K e^{-a t}$, so the comparison reduces to reading off $a$ and deciding which response loses energy faster.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Extract the decay rates from each response and keep the amplitudes fixed so only the dissipation strength changes:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "$y_1(t)=4e^{-0.7t}$ so $a_1=0.7$, and $y_2(t)=4e^{-2.7t}$ so $a_2=2.7$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since $2.7>0.7$, the second response has the stronger dissipation. A larger positive decay rate makes the exponential factor shrink faster, so $y_2(t)$ settles sooner and stays less persistent than $y_1(t)$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Both responses still decay to zero, but the one with the larger $a$ reaches that settled behavior more quickly. That is the practical meaning of stronger dissipation: it suppresses long-lived output and reduces the chance that bounded input data can accumulate into a growing response.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Damping and Dissipation",
+          "section_index": 4,
+          "section_title": "Checking a Bounded Input Against a Damped Response",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Given $|x(t)|\\le 3$ and $y(t)=\\int_0^t e^{-2(t-\\tau)}x(\\tau)d\\tau$, bound $|y(t)|$ and conclude if the output is bounded.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input passed through a damped response kernel. The exponential factor $e^{-2(t-\\tau)}$ decays in time, so the right move is to bound the output by the input envelope and then evaluate the resulting integral.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)|\\le\\int_0^t e^{-2(t-\\tau)}|x(\\tau)|d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now substitute the given bound $|x(\\tau)|\\le 3$ and keep the damping kernel fixed. That gives a purely numerical envelope for the output magnitude.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)|\\le 3\\int_0^t e^{-2(t-\\tau)}d\\tau=\\frac{3}{2}(1-e^{-2t})<\\frac{3}{2}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is finite for every $t$ and stays below $\\frac{3}{2}$, so the output is bounded. This is the BIBO pattern in its simplest damped form: a bounded input does not accumulate without limit because the decaying kernel suppresses long-term growth.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 4,
+          "lesson_title": "Damping and Dissipation",
+          "section_index": 5,
+          "section_title": "Recognizing How Damping Prevents Accumulation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare $y_d(t)=\\int_0^t e^{-(t-\\tau)}x(\\tau)d\\tau$ and $y_u(t)=\\int_0^t x(\\tau)d\\tau$ for bounded input $x(t)=1$, and identify which accumulates.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is that both systems see the same bounded input, so the only difference is whether the response kernel damps old input or keeps adding it directly. That makes this a direct test of how damping prevents accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substitute the bounded input $x(\\tau)=1$ into each response and keep the notation fixed:",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_d(t)=\\int_0^t e^{-(t-\\tau)}\\,d\\tau,\\qquad y_u(t)=\\int_0^t 1\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now evaluate each expression. The damped kernel produces a settled response, while the undamped integrator keeps accumulating the input over time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_d(t)=1-e^{-t},\\qquad y_u(t)=t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The damped response stays bounded and approaches $1$, but the undamped response grows without bound. So the one that accumulates is $y_u(t)$, and the one that avoids accumulation is $y_d(t)$; this is exactly how damping blocks bounded input from becoming unbounded output.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Unstable Systems",
+      "lesson_core_move": "Classify unstable continuous-time systems by applying the BIBO criterion to recognize bounded inputs that produce unbounded output growth due to insufficient damping or reinforcing dynamics.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 5,
+          "lesson_title": "Unstable Systems",
+          "section_index": 1,
+          "section_title": "Introduction to Unstable Systems",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time system is unstable when it fails the bounded-input bounded-output criterion: there exists a bounded input that produces an output with no finite bound. The cue is simple - if the input stays bounded but the output can still grow without limit, the system is unstable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M \\text{ for all } t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "A bounded input stays inside some finite ceiling $M$, and a bounded output would stay inside some finite ceiling $N$. Instability appears when you can name a bounded input but cannot find any finite bound on the corresponding output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\exists\\,x(t) \\text{ bounded such that } \\sup_t |y(t)| = \\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Start with the simplest failure case: $x(t)=\\sin t$ is bounded, but $y(t)=t\\sin t$ is not, because its envelope grows like $|t|$. The input remains under control while the output grows without bound, so the system is unstable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The growth can come from insufficient damping or from reinforcing dynamics, but the first test is always the same: decide whether the output stays bounded for bounded input. Later examples will separate true divergence from merely large but finite behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Keep the classification rule fixed: bounded input plus unbounded output means instability. That is the definition the next examples will keep reusing.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Unstable Systems",
+          "section_index": 2,
+          "section_title": "Recognizing Unbounded Output Growth",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A bounded input $x(t)=\\sin t$ produces output $y(t)=t\\sin t$. Decide whether the output is bounded or unbounded and state what that means for the system.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the bounded input: $x(t)=\\sin t$ stays between $-1$ and $1$, so it is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\sin t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now inspect the output $y(t)=t\\sin t$. The sinusoid still oscillates, but the factor $t$ makes the envelope grow without bound as $t$ increases.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=t\\sin t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because no finite $N$ can bound $|y(t)|$ for all $t$, the output is unbounded. A bounded input has produced an unbounded output, so the system fails BIBO stability and is unstable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sup_t |y(t)| = \\infty",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Unstable Systems",
+          "section_index": 3,
+          "section_title": "Distinguishing Large Bounded Outputs from Unbounded Outputs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A bounded input $x(t)=\\cos t$ produces output $y(t)=10\\sin t$. Decide whether the output is merely large or actually unbounded.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is still a bounded input: $x(t)=\\cos t$ stays between $-1$ and $1$, so the input is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\cos t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now inspect the output $y(t)=10\\sin t$. The amplitude is large, but the factor $10$ is fixed, so the envelope does not grow with $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=10\\sin t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the output stays within a finite bound, it is bounded rather than unbounded. This behavior does not make the system unstable, because size alone is not the BIBO test; the envelope must grow without bound to fail stability.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sup_t |y(t)| < \\infty",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Unstable Systems",
+          "section_index": 4,
+          "section_title": "Identifying Instability from Insufficient Damping",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A bounded input $x(t)=\\sin t$ produces output $y(t)=e^{0.2t}\\sin t$. Decide whether the system is unstable and explain why the damping interpretation matters.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the bounded input: $x(t)=\\sin t$ stays between $-1$ and $1$, so the input is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=\\sin t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now inspect the output $y(t)=e^{0.2t}\\sin t$. The sine term still oscillates, but the envelope is $e^{0.2t}$, and that factor grows with $t$ instead of decaying. That is the sign of insufficient damping.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=e^{0.2t}\\sin t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the envelope keeps increasing, no finite $N$ can bound $|y(t)|$ for all $t$. The response is unbounded, so a bounded input has produced an unbounded output and the system fails BIBO stability.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sup_t |y(t)| = \\infty",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Unstable Systems",
+          "section_index": 5,
+          "section_title": "Identifying Instability from Reinforcing Dynamics",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A bounded input $x(t)=u(t)$ passes through a system with output $y(t)=\\int_0^t x(\\tau)\\,d\\tau$. Decide whether the output stays bounded or grows without bound.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the bounded input $x(t)=u(t)$. It stays at $0$ or $1$, so the input is bounded.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The output is an accumulated response, $y(t)=\\int_0^t x(\\tau)\\,d\\tau$. For this input, the system keeps adding positive area, so the response grows instead of settling.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t x(\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Substituting the bounded input gives $y(t)=\\int_0^t 1\\,d\\tau=t$ for $t\\ge 0$, or equivalently $y(t)=t\\,u(t)$. That is a ramp with no finite upper bound, so the output is unbounded because of reinforcing dynamics.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=t\\,u(t)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since a bounded input produced an unbounded output, the system fails BIBO stability and is unstable. The cause here is reinforcing accumulation: each new bit of input adds more output instead of being damped away.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 5,
+          "lesson_title": "Unstable Systems",
+          "section_index": 6,
+          "section_title": "Classifying an Unstable System from Input-Output Behavior",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "A bounded input produces $y(t)=t\\cos t + 3\\sin t$. Classify the system and name the term that makes the output unbounded.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the mixed response $y(t)=t\\cos t + 3\\sin t$ coming from a bounded input. The question is not whether part of the output is bounded; it is whether the full output has a finite bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=t\\cos t + 3\\sin t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Split the response into two terms. The $3\\sin t$ term is bounded, but the $t\\cos t$ term has an envelope that grows like $|t|$, so it has no finite upper bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sup_t |t\\cos t| = \\infty",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the unbounded term dominates the bounded add-on, the whole output is unbounded. A bounded input has produced an unbounded output, so the system is unstable by the BIBO criterion.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\sup_t |y(t)| = \\infty",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Integrator-Type Systems",
+      "lesson_core_move": "Classify integrator-type systems by testing whether their cumulative input-output rule can turn a bounded input into an unbounded output under the BIBO stability criterion.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 6,
+          "lesson_title": "Integrator-Type Systems",
+          "section_index": 1,
+          "section_title": "Introduction to Integrator-Type Systems",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "An integrator-type system is a system whose output depends on accumulated input history rather than only on the input value at the current time. That cumulative dependence is the cue to watch for: if the output is built by adding up input over time, the system can behave very differently from a memoryless algebraic rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t x(\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the simplest base case, take a bounded constant input $x(t)=c$. This is the cleanest test because the input never grows in magnitude, so any growth in the output must come from the system rule itself rather than from the input.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t c\\,d\\tau = ct",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Since $y(t)=ct$ grows without bound as $t$ increases whenever $c\\neq 0$, this simple cumulative rule is a key BIBO stability test case. The lesson progression will keep using the same idea: identify cumulative input-output behavior, test it against a bounded input, and decide whether the output stays bounded for all time.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Integrator-Type Systems",
+          "section_index": 2,
+          "section_title": "Recognizing a Cumulative Input-Output Rule",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $y(t)=\\int_0^t x(\\tau)\\,d\\tau$, identify the cumulative input-output structure and state whether this is an integrator-type system.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the integral from $0$ to $t$. That means the output $y(t)$ is built from the accumulated past input $x(\\tau)$, not from the input value at a single instant.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t x(\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Read this rule in words as: add up the input history from the starting time to the current time $t$. That cumulative dependence is exactly the pattern that defines the integrator-type family.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So this operator is an integrator-type system. It is the lesson's target pattern, and it sets up the later BIBO test by showing that a bounded input can still produce output growth through accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Integrator-Type Systems",
+          "section_index": 3,
+          "section_title": "Testing a Pure Integrator with a Bounded Constant Input",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Evaluate $y(t)=\\int_0^t 1\\,d\\tau$ and use the result to decide BIBO stability for this system.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded constant input. For a pure integrator, the output adds up that constant over the interval from $0$ to $t$, so the direct test is to substitute the constant input into the cumulative rule.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t 1\\,d\\tau = t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is $y(t)=t$, which grows without bound as $t$ increases. The input stays bounded, but the accumulated output does not, so the system fails the bounded-output requirement.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So this pure integrator is not BIBO stable. This is the lesson's key growth test: a single bounded constant input can produce unbounded output when the system keeps accumulating input over time.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Integrator-Type Systems",
+          "section_index": 4,
+          "section_title": "Testing a Scaled Integrator-Type System",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For $y(t)=3\\int_0^t x(\\tau)\\,d\\tau$ and bounded $x(t)=1$, compute $y(t)$ and classify BIBO stability.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is still cumulative input-output behavior, but now the integrator has a scalar gain of $3$. That gain changes the rate of accumulation, not the fact that the output is built from all input values from $0$ to $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=3\\int_0^t 1\\,d\\tau = 3t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The result is $y(t)=3t$, which still grows without bound as $t$ increases. The input is bounded, but the accumulated output is not, so the bounded-output requirement fails again.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So this scaled integrator-type system is not BIBO stable. The key point is that a nonzero gain does not repair accumulation: it only changes how fast the unbounded growth appears.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 6,
+          "lesson_title": "Integrator-Type Systems",
+          "section_index": 5,
+          "section_title": "Recognizing That One Bounded Output Does Not Prove Stability",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Compare two inputs to $y(t)=\\int_0^t x(\\tau)\\,d\\tau$: $x_1(t)=\\sin t$ and $x_2(t)=1$, then classify the system.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the BIBO quantifier. To prove stability, it is not enough to find one bounded input with bounded output; every bounded input must produce a bounded output. So the right move is to test the same cumulative rule on two bounded inputs with different long-run behavior.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_1(t)=\\int_0^t \\sin \\tau\\,d\\tau = 1-\\cos t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_2(t)=\\int_0^t 1\\,d\\tau = t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The first output is bounded, but the second grows without bound. That single counterexample is enough to reject BIBO stability, because the definition requires all bounded inputs to produce bounded outputs.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So one bounded output does not prove stability. It only shows that one test input behaved well; the system still fails if any bounded input, such as the constant input, makes the accumulated output unbounded.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Bounded Inputs with Unbounded Outputs",
+      "lesson_core_move": "Disprove BIBO stability for a continuous-time system by tracing a bounded input through the system rule and demonstrating that the resulting output has no finite bound.",
+      "section_count": 5,
+      "sections": [
+        {
+          "lesson_index": 7,
+          "lesson_title": "Bounded Inputs with Unbounded Outputs",
+          "section_index": 1,
+          "section_title": "Introduction to Bounded Inputs with Unbounded Outputs",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A continuous-time system is BIBO stable only if every bounded input produces a bounded output. For this lesson, the key test is simple: one bounded input and one output with no finite bound are enough to reject BIBO stability.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| \\le M_x",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Here, a bounded input means that some finite constant $M_x$ exists with $|x(t)| \\le M_x$ for all $t$. A bounded output would require the same kind of finite constant $M_y$ with $|y(t)| \\le M_y$ for all $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)| \\le M_y",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the counterexample pattern is enough on its own: show one bounded input, trace it through the system rule, and then show that the resulting output has no finite bound. A simplest base case is a bounded input like $x(t)=1$ paired with an output like $y(t)=t$, which grows without bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1 \\qquad \\text{and} \\qquad y(t)=t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "In the next step, the lesson will keep this same logic but apply it to a specific system rule: first check that the chosen input is bounded, then trace it through the rule, and finally prove that the output cannot be bounded by any finite constant.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Bounded Inputs with Unbounded Outputs",
+          "section_index": 2,
+          "section_title": "Checking That the Test Input Is Bounded",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Verify that the test input $x(t)=1$ is bounded for all real $t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the constant test input $x(t)=1$. To show that it is bounded, use the definition from the introduction: find one finite constant $M$ such that $|x(t)| \\le M$ for every $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "x(t)=1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Taking the absolute value gives $|x(t)|=|1|=1$ for every $t$. So the same finite bound works everywhere, and the simplest choice is $M=1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)|=1 \\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Therefore the test input is bounded. That lets the lesson keep the same input in the next step and focus on the system rule and the output bound instead of rechecking the input.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Bounded Inputs with Unbounded Outputs",
+          "section_index": 3,
+          "section_title": "Tracing a Bounded Input Through the System Rule",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "For the system $y(t)=t x(t)$ and the bounded input $x(t)=1$, compute the output $y(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the same bounded input from the previous step, $x(t)=1$. Now apply the system rule directly: substitute that input into $y(t)=t x(t)$ and simplify the result.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\ny(t) &= t x(t) \\\\\n&= t(1) \\\\\n&= t\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the bounded input produces the output $y(t)=t$. This is the simplified expression the next step will use to show that the output has no finite bound.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Bounded Inputs with Unbounded Outputs",
+          "section_index": 4,
+          "section_title": "Showing That the Output Has No Finite Bound",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Show that the output $y(t)=t$ has no finite bound.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the simplified output $y(t)=t$ from the previous step. To show that it has no finite bound, test an arbitrary finite constant $M$ and check whether it can satisfy $|y(t)| \\le M$ for all $t$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n|y(M+1)| &= |M+1| \\\\\n&= M+1\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $M+1 > M$, this candidate bound fails. Since $M$ was arbitrary, no finite constant can dominate $|y(t)|$ for every $t$, so the output is unbounded.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 7,
+          "lesson_title": "Bounded Inputs with Unbounded Outputs",
+          "section_index": 5,
+          "section_title": "Disproving BIBO Stability from One Counterexample",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Use the bounded input $x(t)=1$ and the unbounded output $y(t)=t$ to decide whether the system is BIBO stable.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is the counterexample pair from the previous steps: the input $x(t)=1$ is bounded, and the output $y(t)=t$ has no finite bound. The BIBO rule says that a stable system must send every bounded input to a bounded output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\nx(t)=1 &\\quad \\text{is bounded} \\\\\ny(t)=t &\\quad \\text{is unbounded}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because one bounded input produced one unbounded output, the system fails the BIBO test. So the correct conclusion is that the system is not BIBO stable.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "lesson_index": 8,
+      "lesson_title": "Stability Classification from Examples",
+      "lesson_core_move": "Classify continuous-time system examples as BIBO stable or unstable by identifying whether bounded inputs produce bounded outputs or reveal growth, inadequate damping, or integrator accumulation.",
+      "section_count": 6,
+      "sections": [
+        {
+          "lesson_index": 8,
+          "lesson_title": "Stability Classification from Examples",
+          "section_index": 1,
+          "section_title": "Introduction to Stability Classification from Examples",
+          "step_type": "tutorial",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "tutorial_content": {
+            "blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue for this lesson is a continuous-time system example where you can inspect what happens to the output without solving the whole system. Start from the control case: a bounded input that produces a clearly bounded output. That is the behavior you want to recognize as BIBO stable before you look for failures.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\forall x(t): |x(t)| \\le M_x \\implies \\forall t: |y(t)| \\le M_y \\text{ (stable)}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "If you can point to a bounded input that forces the output to grow without bound, classify the system as unstable. The lesson will use one fixed decision path for every example: first check whether the output stays bounded, then look for growth, then inspect whether the response is too weakly damped, and finally check whether accumulation is building up over time.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\forall M > 0,\\ \\exists t_0 \\text{ such that } |y(t_0)| > M \\text{ indicates unbounded output}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The recurring instability signatures in this topic are persistent growth, inadequate damping, and integrator accumulation. A bounded input can still produce an unbounded output through accumulation, so keep that mechanism in view even when the input itself looks harmless.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y_{\\text{integrator}}(t)=\\int_0^t x(\\tau)\\,d\\tau",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Use the same scan order every time: bounded-output evidence first, then growth, then damping, then accumulation. That keeps the classification decision consistent and gives later examples a stable vocabulary to reuse.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Stability Classification from Examples",
+          "section_index": 2,
+          "section_title": "Classifying Systems with Directly Bounded Outputs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify stability for $y(t)=0.5\\,\\arctan(x(t))$ with bounded input $x(t)=\\cos(2t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input passed through a static nonlinearity. Here, $x(t)=\\cos(2t)$ is bounded for all $t$, so this is the control style of example where the output can be checked directly from the formula.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)|=|\\cos(2t)|\\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now use the output rule itself. Because $|\\arctan(u)| \\le \\pi/2$ for every real $u$, the output is globally bounded no matter which bounded value $x(t)$ takes.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)|=\\left|0.5\\,\\arctan(x(t))\\right|\\le 0.5\\cdot \\frac{\\pi}{2}=\\frac{\\pi}{4}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That explicit finite bound means the system is BIBO stable. The reason is directly bounded output: the output stays under a fixed limit for every time $t$, so this example belongs in the stable class.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Stability Classification from Examples",
+          "section_index": 3,
+          "section_title": "Classifying Systems with Growing Outputs",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify whether $y(t)=e^{t}x(t)$ is stable for bounded input $x(t)=\\sin t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is a bounded input multiplied by an explicit growth factor. Here, $x(t)=\\sin t$ is bounded, so the only new issue is whether the factor $e^t$ forces the output to leave every finite bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)|=|\\sin t|\\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now write the output magnitude directly. The bounded input stays bounded, but the exponential multiplier keeps increasing, so the output magnitude grows without bound as $t$ increases.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|y(t)|=|e^t x(t)|=e^t|x(t)|=e^t|\\sin t|",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "At times where $|\\sin t|=1$, the magnitude matches the exponential factor, so it can become arbitrarily large. That is enough to classify the system as unstable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\forall M>0,\\ \\exists n \\text{ such that } |y(\\pi/2+2\\pi n)|=e^{\\pi/2+2\\pi n}>M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The reason label is output growth: the input is bounded, but the exponential factor makes the output unbounded. Keep that distinction explicit, because later examples will separate growth from damping and accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Stability Classification from Examples",
+          "section_index": 4,
+          "section_title": "Classifying Integrator-Type Accumulation",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify the system $y(t)=\\int_0^t x(\\tau)\\,d\\tau$ under bounded input $x(t)=1$ for all $t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is an accumulator: the output at time $t$ is the running integral of the input. The input $x(t)=1$ is bounded, so this is a valid BIBO test case.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)| = |1| = 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Now evaluate the accumulated response directly. Integrating a constant input makes the output grow linearly with time, so the output does not stay within one fixed bound.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "y(t)=\\int_0^t 1\\,d\\tau = t",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because $|y(t)|=t$ grows without limit as $t$ increases, there is no finite uniform bound on the output. One bounded-input counterexample is enough to classify the system as unstable.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\forall M>0,\\ \\exists t>M \\text{ such that } |y(t)|=t>M",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The classification is unstable, and the mechanism label is integrator accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Stability Classification from Examples",
+          "section_index": 5,
+          "section_title": "Classifying Damped Physical Responses",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Determine stability of $y(t)=e^{-3t}x(t)$ for bounded $x(t)$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is exponential decay, so this is a damping-dominated response rather than growth or accumulation. Start from the bounded-input condition $|x(t)|\\le M_x$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)|\\le M_x",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "For the causal response with $t\\ge 0$, the factor $e^{-3t}$ never exceeds $1$ and only shrinks with time. That gives an explicit global bound on the output.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "0\\le e^{-3t}\\le 1\\quad (t\\ge 0),\\qquad |y(t)|=|e^{-3t}x(t)|\\le |x(t)|\\le M_x",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the output stays bounded for every bounded input, the system is stable. The reason label is damping-dominated physical response.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        },
+        {
+          "lesson_index": 8,
+          "lesson_title": "Stability Classification from Examples",
+          "section_index": 6,
+          "section_title": "Choosing the Stability Reason in Mixed Examples",
+          "step_type": "example",
+          "content_mode": "symbolic-only",
+          "image_slots": [],
+          "example_content": {
+            "example_prompt": "Classify $y(t)=e^{-2t}x(t)+\\int_0^t e^{-\\tau}x(t-\\tau)\\,d\\tau$ for bounded input $x(t)=\\sin t$.",
+            "explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The cue is mixed: one term is directly damped, and the other is an accumulation term with a decaying kernel. Start with the bounded input, $x(t)=\\sin t$, so $|x(t)|\\le 1$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|x(t)|\\le 1",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Bound each contribution separately. The direct term cannot grow because of the factor $e^{-2t}$, and the integral term is controlled by the same exponential decay inside the kernel.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n|y(t)| &\\le e^{-2t}|x(t)| + \\int_0^t e^{-\\tau}|x(t-\\tau)|\\,d\\tau \\\\\n&\\le 1 + \\int_0^t e^{-\\tau}\\,d\\tau \\\\\n&\\le 2\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The output stays bounded, so the system is stable. The single strongest reason is damping, because the decay terms prevent both growth and unbounded accumulation.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

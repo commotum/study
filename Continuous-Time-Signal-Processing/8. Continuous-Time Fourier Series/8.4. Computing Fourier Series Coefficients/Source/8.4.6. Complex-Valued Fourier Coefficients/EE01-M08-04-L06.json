@@ -1,0 +1,1166 @@
+{
+  "lesson_id": "EE01-M08-04-L06",
+  "compiled_at": "2026-05-30T21:58:42+00:00",
+  "runner_version": "2026-05-30-ece-course-data-compile-quiz-blank-blocks-v1",
+  "cache_key": "e24cc016decdda2e8d9283d7148c9ecccf262a7ce3cd5910f948c824cac6a50f",
+  "compile_options": {
+    "allow_missing_images": false,
+    "include_answers": false,
+    "quiz_blocks": true
+  },
+  "source_artifact_hashes": {
+    "course_map_path": {
+      "path": "COURSES/Electrical-and-Computer-Engineering/Continuous-Time-Signal-Processing/Course-Map-Continuous-Time-Signal-Processing.md",
+      "sha256": "e140b2ee483ef8f233ff077ac16252584a518d9a7706feee996b12180fa29979"
+    },
+    "topic_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/4-Topic-Identification/1-Outputs/Continuous-Time-Signal-Processing/8.4--computing-fourier-series-coefficients-Topics.json",
+      "sha256": "1f78f0424fa123bfc0622a341ac617eb80141f9c355bf38614d00dc43cf510af"
+    },
+    "step_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/5-Step-Identification/1-Outputs/Continuous-Time-Signal-Processing/8.4--computing-fourier-series-coefficients-Steps.json",
+      "sha256": "5a38f059d68e404a3b969a352f9652c2a324782c81e31a877f7ce1636edd6367"
+    },
+    "outline_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/1-Step-Outline/1-Outputs/Continuous-Time-Signal-Processing/8.4--computing-fourier-series-coefficients-Step-Outline.json",
+      "sha256": "4f20158d7ce26daa06d24f243e524f6750285fa4882652e76b5f91eeebd8eeb0"
+    },
+    "tutorial_example_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/2-Tutorial-Example-Generation/1-Outputs/Continuous-Time-Signal-Processing/8.4--computing-fourier-series-coefficients-Tutorial-Examples.json",
+      "sha256": "540fff9936c11a9ea92e6e920f7a69bbb23965efecf1a63a056878b22ce16c31"
+    },
+    "question_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/3-Question-Generation/1-Outputs/Continuous-Time-Signal-Processing/8.4--computing-fourier-series-coefficients-Questions.json",
+      "sha256": "39e58fd17c2d693ea58ff66c050f9b4b753cec71ca929a1d5b0d34567d4dd509"
+    },
+    "image_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/8.4--computing-fourier-series-coefficients-Images.json",
+      "sha256": "51de1510dfb72cc89560d6eb2dfb5568d8ca2f3e83f320746a55ed1323c822a4"
+    }
+  },
+  "course": {
+    "course_slug": "Continuous-Time-Signal-Processing",
+    "course_code": "CTS",
+    "course_id": "EE01",
+    "course_name": "Continuous Time Signal Processing"
+  },
+  "module": {
+    "unit_number": "8",
+    "unit_name": "Unit 8",
+    "group_type": "module",
+    "group_id": "EE01-M08-04",
+    "group_number": "8.4",
+    "group_name": "Computing Fourier Series Coefficients",
+    "module_id": "EE01-M08-04",
+    "module_number": "8.4",
+    "module_name": "Computing Fourier Series Coefficients"
+  },
+  "tutorial_example_entry": {
+    "lesson_index": 6,
+    "lesson_title": "Complex-Valued Fourier Coefficients",
+    "lesson_core_move": "Compute complex-valued Fourier series coefficients by evaluating the one-period complex-exponential coefficient integral and interpreting each result as the harmonic's amplitude-and-phase weight.",
+    "section_count": 5,
+    "sections": [
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 1,
+        "section_title": "Introduction to Complex-Valued Fourier Coefficients",
+        "step_type": "tutorial",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "tutorial_content": {
+          "blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "A complex Fourier series writes a periodic signal as $x(t)=\\sum_{k=-\\infty}^{\\infty} c_k e^{jk\\omega_0 t}$. The index $k$ labels the harmonic, and $\\omega_0$ is the fundamental angular frequency.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(t)=\\sum_{k=-\\infty}^{\\infty} c_k e^{jk\\omega_0 t}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "To find one coefficient, multiply by the matching exponential $e^{-jk\\omega_0 t}$ and average over one period $T$. That one-period projection isolates the $k$th harmonic and gives its complex weight $c_k$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "c_k=\\frac{1}{T}\\int_0^T x(t)e^{-jk\\omega_0 t}\\,dt",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Start with a constant signal: only the $k=0$ term survives, so $c_0$ is the DC coefficient. Then look at a single cosine harmonic at the fundamental frequency; the same projection rule isolates that harmonic before any mixed signal adds extra bookkeeping.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "You can read each coefficient as $c_k=|c_k|e^{j\\angle c_k}$. The magnitude tells you how strong the harmonic is, and the angle tells you its phase shift.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "c_k=|c_k|e^{j\\angle c_k}",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 2,
+        "section_title": "Evaluating One Complex Coefficient Integral",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Given $x(t)=4\\cos(\\omega_0 t-\\pi/3)$, compute $c_1$ from $c_1=\\frac{1}{T}\\int_0^T x(t)e^{-j\\omega_0 t}\\,dt$.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue here is a single shifted cosine at the fundamental frequency, so the coefficient integral should isolate the matching $k=1$ harmonic. Rewrite the cosine in complex-exponential form first, then multiply by the matching exponential $e^{-j\\omega_0 t}$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(t)=\\frac{4}{2}\\left(e^{j(\\omega_0 t-\\pi/3)}+e^{-j(\\omega_0 t-\\pi/3)}\\right)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "After multiplication by $e^{-j\\omega_0 t}$, the $e^{j\\omega_0 t}$ term becomes constant, while the other term becomes a $-2\\omega_0$ exponential that averages to zero over one period. That is the orthogonality step that leaves only the matching harmonic behind.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\begin{aligned}\nc_1 &= \\frac{1}{T}\\int_0^T 4\\cos(\\omega_0 t-\\pi/3)e^{-j\\omega_0 t}\\,dt \\\\\n&= \\frac{1}{T}\\int_0^T 2\\left(e^{j(\\omega_0 t-\\pi/3)}+e^{-j(\\omega_0 t-\\pi/3)}\\right)e^{-j\\omega_0 t}\\,dt \\\\\n&= \\frac{1}{T}\\int_0^T 2\\left(e^{-j\\pi/3}+e^{-j(2\\omega_0 t-\\pi/3)}\\right)\\,dt \\\\\n&= 2e^{-j\\pi/3}\n\\end{aligned}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the integral isolates the $k=1$ harmonic and returns $c_1=2e^{-j\\pi/3}$. That coefficient is the complex weight of the fundamental cosine term: its magnitude is $2$, and its angle is $-\\pi/3$.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 3,
+        "section_title": "Simplifying a Coefficient into Rectangular Form",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Starting from $c_1=2e^{-j\\pi/3}$, simplify the coefficient into rectangular form.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The only new wrinkle is the representation change. Use Euler's formula to rewrite the coefficient as a real part plus an imaginary part, then keep the magnitude $2$ outside the trigonometric terms.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "c_1=2\\bigl(\\cos(-\\pi/3)+j\\sin(-\\pi/3)\\bigr)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Now substitute $\\cos(-\\pi/3)=\\frac{1}{2}$ and $\\sin(-\\pi/3)=-\\frac{\\sqrt{3}}{2}$. That turns the exponential coefficient into a rectangular expression with the same harmonic weight.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\begin{aligned}\nc_1 &= 2\\bigl(\\cos(-\\pi/3)+j\\sin(-\\pi/3)\\bigr) \\\\\n&= 2\\left(\\frac{1}{2}-j\\frac{\\sqrt{3}}{2}\\right) \\\\\n&= 1-j\\sqrt{3}\n\\end{aligned}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the coefficient in rectangular form is $c_1=1-j\\sqrt{3}$. It is the same $k=1$ harmonic weight as before, just written as $a+jb$ instead of exponential form.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 4,
+        "section_title": "Converting a Complex Coefficient to Magnitude and Phase",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "Given $c_1=1-j\\sqrt{3}$, convert it to magnitude and phase.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "Start from the rectangular coefficient $c_1=1-j\\sqrt{3}$. The task is to read off its magnitude and its angle, because that polar pair is the amplitude-and-phase weight of the $k=1$ harmonic.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "|c_1|=\\sqrt{1^2+(-\\sqrt{3})^2}=\\sqrt{1+3}=2",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The real part is positive and the imaginary part is negative, so $c_1$ lies in quadrant IV. That means the phase is negative, with reference angle $\\pi/3$ from the right triangle.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\begin{aligned}\\angle c_1&=-\\pi/3\\\\c_1&=2e^{-j\\pi/3}\\end{aligned}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the same harmonic weight is now written as magnitude $2$ with phase $-\\pi/3$. This is the form used when you want to see how strongly the harmonic appears and what phase shift it carries.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 5,
+        "section_title": "Interpreting Positive and Negative Harmonic Weights",
+        "step_type": "example",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "example_content": {
+          "example_prompt": "For a real periodic signal with $c_2=1-j$ and $c_{-2}=1+j$, interpret what the positive and negative harmonic weights mean in the reconstruction.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "Because the signal is real, the coefficients at $+2$ and $-2$ must be conjugates. The cue is the pair, and the rule is that one real harmonic stores its amplitude-and-phase weight across both signs.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\begin{aligned}c_2&=1-j=\\sqrt{2}e^{-j\\pi/4}\\\\c_{-2}&=1+j=\\sqrt{2}e^{j\\pi/4}=c_2^*\\end{aligned}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Use that pair inside the synthesis sum. The two complex exponentials combine into one real oscillation, so they are not two separate harmonics.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\begin{aligned}c_2e^{j2\\omega_0 t}+c_{-2}e^{-j2\\omega_0 t}&=(1-j)e^{j2\\omega_0 t}+(1+j)e^{-j2\\omega_0 t}\\\\&=2\\sqrt{2}\\cos(2\\omega_0 t-\\pi/4)\\end{aligned}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the positive-index coefficient carries the amplitude-phase information: magnitude $\\sqrt{2}$ and phase $-\\pi/4$. The negative-index coefficient is the conjugate partner that makes the reconstruction real, and together they represent one $k=2$ harmonic with amplitude $2\\sqrt{2}$.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "question_entry": {
+    "lesson_index": 6,
+    "lesson_title": "Complex-Valued Fourier Coefficients",
+    "lesson_core_move": "Compute complex-valued Fourier series coefficients by evaluating the one-period complex-exponential coefficient integral and interpreting each result as the harmonic's amplitude-and-phase weight.",
+    "section_count": 4,
+    "sections": [
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 2,
+        "section_title": "Evaluating One Complex Coefficient Integral",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "What is $c_1$ for $x(t)=6\\cos(\\omega_0 t+\\pi/6)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3e^{j\\pi/6}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6e^{j\\pi/6}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3e^{-j\\pi/6}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$6e^{-j\\pi/6}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$3$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$3e^{j\\pi/6}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Expand the cosine as half the sum of complex exponentials, so the amplitude becomes $3$ instead of $6$. After multiplying by $e^{-j\\omega_0 t}$, the matching $k=1$ term stays constant and the nonmatching term averages to zero over one period.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n6\\cos(\\omega_0 t+\\pi/6) &= 3\\left(e^{j(\\omega_0 t+\\pi/6)}+e^{-j(\\omega_0 t+\\pi/6)}\\right) \\\\\nc_1 &= \\frac{1}{T}\\int_0^T 6\\cos(\\omega_0 t+\\pi/6)e^{-j\\omega_0 t}\\,dt \\\\\n&= \\frac{1}{T}\\int_0^T 3\\left(e^{j(\\omega_0 t+\\pi/6)}+e^{-j(\\omega_0 t+\\pi/6)}\\right)e^{-j\\omega_0 t}\\,dt \\\\\n&= 3e^{j\\pi/6}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $c_1=3e^{j\\pi/6}$. The choice with the full amplitude misses the $1/2$ from the cosine expansion, the opposite-phase choice is the $k=-1$ coefficient, and the pure number ignores the phase weight.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "What is $c_1$ for $x(t)=-8\\cos(\\omega_0 t-\\pi/4)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-4e^{-j\\pi/4}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-8e^{-j\\pi/4}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-4e^{j\\pi/4}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-8e^{j\\pi/4}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$4e^{-j\\pi/4}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$-4e^{-j\\pi/4}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The negative amplitude stays outside the cosine, and the cosine still contributes a half-amplitude coefficient. After you expand and multiply by $e^{-j\\omega_0 t}$, only the matching harmonic remains.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\begin{aligned}\n-8\\cos(\\omega_0 t-\\pi/4) &= -4\\left(e^{j(\\omega_0 t-\\pi/4)}+e^{-j(\\omega_0 t-\\pi/4)}\\right) \\\\\nc_1 &= \\frac{1}{T}\\int_0^T -8\\cos(\\omega_0 t-\\pi/4)e^{-j\\omega_0 t}\\,dt \\\\\n&= \\frac{1}{T}\\int_0^T -4\\left(e^{j(\\omega_0 t-\\pi/4)}+e^{-j(\\omega_0 t-\\pi/4)}\\right)e^{-j\\omega_0 t}\\,dt \\\\\n&= -4e^{-j\\pi/4}\n\\end{aligned}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $c_1=-4e^{-j\\pi/4}$. The choice with the full amplitude misses the $1/2$, the opposite-phase choice is the conjugate harmonic, the full-amplitude opposite-phase choice combines both mistakes, and the positive answer drops the sign on the original cosine.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 3,
+        "section_title": "Simplifying a Coefficient into Rectangular Form",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Simplify $c_1=3e^{j\\pi/6}$ into rectangular form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3\\sqrt{3}}{2} + \\frac{3j}{2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{\\sqrt{3}}{2} + \\frac{j}{2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3}{2} + \\frac{3j\\sqrt{3}}{2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3\\sqrt{3}}{2} - \\frac{3j}{2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{3}{2} - \\frac{3j\\sqrt{3}}{2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$\\frac{3\\sqrt{3}}{2} + \\frac{3j}{2}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use Euler's formula, $e^{j\\theta}=\\cos\\theta+j\\sin\\theta$, and keep the magnitude $3$ outside.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "c_1=3\\bigl(\\cos(\\pi/6)+j\\sin(\\pi/6)\\bigr)=3\\left(\\frac{\\sqrt{3}}{2}+j\\frac{1}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "That simplifies to $\\frac{3\\sqrt{3}}{2}+\\frac{3j}{2}$, so the correct choice is A.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Simplify $c_1=4e^{-j\\pi/3}$ into rectangular form.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$2 - 2j\\sqrt{3}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$\\frac{1}{2} - \\frac{j\\sqrt{3}}{2}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-2\\sqrt{3} + 2j$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$2 + 2j\\sqrt{3}$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$-2\\sqrt{3} - 2j$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$2 - 2j\\sqrt{3}$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use Euler's formula and substitute the trigonometric values for $-\\pi/3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "c_1=4\\bigl(\\cos(-\\pi/3)+j\\sin(-\\pi/3)\\bigr)=4\\left(\\frac{1}{2}-j\\frac{\\sqrt{3}}{2}\\right)",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So $c_1=2-2j\\sqrt{3}$, which is choice A.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 4,
+        "section_title": "Converting a Complex Coefficient to Magnitude and Phase",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "What are $|c_1|$ and $\\angle c_1$ for $c_1=\\sqrt{3}+j$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=2,\\ \\angle c_1=\\pi/6$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=\\pi/6,\\ \\angle c_1=2$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=2,\\ \\angle c_1=-\\pi/6$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=4,\\ \\angle c_1=\\pi/6$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$c_1=\\sqrt{3}+j$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$|c_1|=2,\\ \\angle c_1=\\pi/6$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Take the magnitude from the right triangle formed by the real and imaginary parts.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|c_1|=\\sqrt{(\\sqrt{3})^2+1^2}=\\sqrt{4}=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "The point $\\sqrt{3}+j$ lies in quadrant I, so the phase is the first-quadrant reference angle $\\pi/6$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\angle c_1=\\pi/6,\\qquad c_1=2e^{j\\pi/6}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the magnitude-and-phase pair is $2$ and $\\pi/6$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "What are $|c_1|$ and $\\angle c_1$ for $c_1=-\\sqrt{3}+j$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=2,\\ \\angle c_1=2\\pi/3$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=2,\\ \\angle c_1=-2\\pi/3$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=\\pi/3,\\ \\angle c_1=2$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$|c_1|=4,\\ \\angle c_1=2\\pi/3$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$c_1=-\\sqrt{3}+j$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$|c_1|=2,\\ \\angle c_1=2\\pi/3$",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Use the real and imaginary parts to get the magnitude.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "|c_1|=\\sqrt{(-\\sqrt{3})^2+1^2}=\\sqrt{4}=2",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Because the coefficient is in quadrant II, the phase is $2\\pi/3$.",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "display-math",
+                "text": "",
+                "latex": "\\angle c_1=2\\pi/3,\\qquad c_1=2e^{j2\\pi/3}",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "paragraph",
+                "text": "So the magnitude-and-phase pair is $2$ and $2\\pi/3$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 6,
+        "lesson_title": "Complex-Valued Fourier Coefficients",
+        "section_index": 5,
+        "section_title": "Interpreting Positive and Negative Harmonic Weights",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "symbolic-only",
+        "image_slots": [],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a real periodic signal with $c_4=2-j$ and $c_{-4}=2+j$, which statement best explains what these harmonic weights mean in the reconstruction?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They are two unrelated amplitudes, one for the positive harmonic and one for the negative harmonic.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "Only $c_4$ matters, because the negative-index coefficient can be ignored for real signals.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They are conjugate partners that together encode one real $k=4$ harmonic; the positive coefficient carries the amplitude-and-phase weight.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They are the instantaneous value of the signal at $t=4$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They show that the signal must contain two separate $k=4$ oscillations.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "They are conjugate partners that together encode one real $k=4$ harmonic; the positive coefficient carries the amplitude-and-phase weight.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Because the signal is real, $c_4$ and $c_{-4}$ must be conjugates. They do not represent two different harmonics; together they form one real oscillation, and the positive-index coefficient is the one whose magnitude and phase tell you the harmonic weight.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For a real periodic signal with $c_1=-3+4j$ and $c_{-1}=-3-4j$, which interpretation is correct?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They are two unrelated amplitudes for different waves.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They are conjugate partners that together encode one real $k=1$ harmonic, with the positive coefficient carrying the amplitude-and-phase weight.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "The negative coefficient is the only one that matters, so the positive coefficient can be dropped.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They are the value of the signal at $t=1$.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "They mean the signal is complex-valued.",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "They are conjugate partners that together encode one real $k=1$ harmonic, with the positive coefficient carrying the amplitude-and-phase weight.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "A real signal requires conjugate symmetry, so $c_1$ and $c_{-1}$ are paired weights for one real harmonic. The positive coefficient carries the amplitude-and-phase information; the negative coefficient is its conjugate partner that makes the synthesis real.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "image_records": [],
+  "copied_images": [],
+  "copied_source_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/Course-Map-Continuous-Time-Signal-Processing.md",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/8.4--computing-fourier-series-coefficients-Topics.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/8.4--computing-fourier-series-coefficients-Steps.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/8.4--computing-fourier-series-coefficients-Step-Outline.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/8.4--computing-fourier-series-coefficients-Tutorial-Examples.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/8.4--computing-fourier-series-coefficients-Questions.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M08-04/EE01-M08-04-L06/Source/8.4--computing-fourier-series-coefficients-Images.json"
+  ],
+  "copied_image_code_files": [],
+  "copied_image_context_files": []
+}

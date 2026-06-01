@@ -1,0 +1,2663 @@
+{
+  "lesson_id": "EE01-M07-02-L01",
+  "compiled_at": "2026-05-30T21:58:24+00:00",
+  "runner_version": "2026-05-30-ece-course-data-compile-quiz-blank-blocks-v1",
+  "cache_key": "15db6fe1fc8723b38d4c267233caab7ba6a10aba95504246763e2513c4d24149",
+  "compile_options": {
+    "allow_missing_images": false,
+    "include_answers": false,
+    "quiz_blocks": true
+  },
+  "source_artifact_hashes": {
+    "course_map_path": {
+      "path": "COURSES/Electrical-and-Computer-Engineering/Continuous-Time-Signal-Processing/Course-Map-Continuous-Time-Signal-Processing.md",
+      "sha256": "e140b2ee483ef8f233ff077ac16252584a518d9a7706feee996b12180fa29979"
+    },
+    "topic_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/4-Topic-Identification/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Topics.json",
+      "sha256": "ac4e977f1e9440e12be8fd5855d7dfcf9fc981d8c7720559fac37963dd2d76fe"
+    },
+    "step_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/1-Build-Course-Data/5-Step-Identification/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Steps.json",
+      "sha256": "89761f2eadc620759d6ad619f3a27b6a88956c06104598f31fb95382c46e0d73"
+    },
+    "outline_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/1-Step-Outline/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Step-Outline.json",
+      "sha256": "cc096f224c915f551873f41b2c3f4e490e6b844a7bc540a4a911d5e4cb5c3708"
+    },
+    "tutorial_example_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/2-Tutorial-Example-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Tutorial-Examples.json",
+      "sha256": "ede122bd30adf5ed3d25c69eda817e57e556a414e690420d2ce1ddad8706954b"
+    },
+    "question_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/3-Question-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Questions.json",
+      "sha256": "a9081f2134dfdacc2cac2b44b499fbe83a3d689612b8d243d1561ba21457fe32"
+    },
+    "image_output_path": {
+      "path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images.json",
+      "sha256": "3223d3d36c87c5ce801aac47aae4f1135059137397248779e02542c91475f233"
+    }
+  },
+  "course": {
+    "course_slug": "Continuous-Time-Signal-Processing",
+    "course_code": "CTS",
+    "course_id": "EE01",
+    "course_name": "Continuous Time Signal Processing"
+  },
+  "module": {
+    "unit_number": "7",
+    "unit_name": "Unit 7",
+    "group_type": "module",
+    "group_id": "EE01-M07-02",
+    "group_number": "7.2",
+    "group_name": "Convolution of Simple Signals",
+    "module_id": "EE01-M07-02",
+    "module_number": "7.2",
+    "module_name": "Convolution of Simple Signals"
+  },
+  "tutorial_example_entry": {
+    "lesson_index": 1,
+    "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+    "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform.",
+    "section_count": 6,
+    "sections": [
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 1,
+        "section_title": "Introduction to Convolution of Two Equal-Width Rectangular Pulses",
+        "step_type": "tutorial",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "section-001",
+            "placement": "section",
+            "location_placeholder": "[IMAGE-LOCATION:section-001]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:section-001]",
+            "image_description": "Clean instructional signal plot on a $\\tau$-axis showing two equal-width rectangular pulses of width T: $x(\\tau)$ fixed on $0 \\le \\tau \\le T$, $h(t - \\tau)$ as a flipped-and-shifted rectangular support [t - T, t], and a shaded overlap interval between the two supports. Label the $\\tau$-axis, $x(\\tau)$, $h(t - \\tau)$, width T, time shift t, and the overlap length $L(t)$. Use simple linework and no decorative elements."
+          }
+        ],
+        "tutorial_content": {
+          "blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "For two equal-width rectangular pulses, the convolution is easiest to read in the convolution variable $\\tau$. Think of $x(\\tau)$ as the fixed rectangle, and think of $h(t - \\tau)$ as the rectangle that slides across it as t changes.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t) = (x * h)(t) = \\int_{-\\infty}^{\\infty} x(\\tau)h(t - \\tau)\\,d\\tau",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Use the base case where both pulses have width T. The fixed pulse $x(\\tau)$ is nonzero on $0 \\le \\tau \\le T$, while the shifted pulse $h(t - \\tau)$ is nonzero on $t - T \\le \\tau \\le t$. The only part of the integral that contributes is the $\\tau$-interval where these two supports overlap.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "image",
+              "text": "",
+              "latex": "",
+              "image_slot_id": "section-001"
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Because rectangular pulses are constant on their supports, their product is also constant wherever they overlap. If the pulse heights are A and B, then the integrand equals AB on the overlap and equals 0 outside the overlap.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t) = AB\\,L(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "L(t) = \\text{length of }(\\operatorname{supp} x) \\cap (\\operatorname{supp} h(t - \\tau))",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the main action is not to expand the integral right away. First track the overlap length $L(t)$. For equal widths, there are three key events: first contact, peak alignment, and last contact. The overlap length starts at 0, grows until the rectangles fully align, and then shrinks back to 0.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "That rising-then-falling overlap length is why the convolution output is triangular. Later sections will compute the contact times, the rising length, the falling length, and the height scaling one piece at a time.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 2,
+        "section_title": "Locating First Contact, Peak Alignment, and Last Contact",
+        "step_type": "example",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "section-002",
+            "placement": "section",
+            "location_placeholder": "[IMAGE-LOCATION:section-002]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:section-002]",
+            "image_description": "Create three small side-by-side $\\tau$-axis panels for equal-width rectangular pulse supports of width T. In every panel, show the fixed support $x(\\tau)$ on [0, T] and the shifted support $h(t - \\tau)$ on [t - T, t]. Panel 1 should show first contact at $t = 0$, with the right edge $\\tau = t just touching \\tau = 0$. Panel 2 should show peak alignment at $t = T$, with [t - T, t] exactly matching [0, T]. Panel 3 should show last contact at $t = 2T$, with the left edge $\\tau = t - T just touching \\tau = T$. Label the $\\tau$-axis, endpoints 0 and T, the moving endpoints t - T and t where useful, and the three event names. Use a clean signal-plot style with no decorative elements."
+          }
+        ],
+        "example_content": {
+          "example_prompt": "For unit-height rectangular pulses $x(\\tau) = 1$ on 0 $\\le$ $\\tau$ $\\le$ T and $h(\\tau) = 1$ on 0 $\\le$ $\\tau$ $\\le$ T, locate first contact, peak alignment, and last contact for $h(t - \\tau)$ as t varies.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is that the two pulses have equal width. Before computing any overlap length, track only the two support intervals on the $\\tau$-axis and find the times when their edge relationship changes.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(\\tau) \\ne 0 \\text{ on } [0,T]",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Since h is nonzero on [0, T], the shifted factor $h(t - \\tau)$ is nonzero when t - $\\tau$ lies between 0 and T. Solving that inequality gives the moving support in the $\\tau$ variable.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "0 \\le t-\\tau \\le T \\quad \\Longleftrightarrow \\quad t-T \\le \\tau \\le t",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "image",
+              "text": "",
+              "latex": "",
+              "image_slot_id": "section-002"
+            },
+            {
+              "block_type": "paragraph",
+              "text": "First contact occurs when the right edge of the moving support, $\\tau = t$, just reaches the left edge of the fixed support at $\\tau = 0$. That edge equation gives the first breakpoint.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "t = 0",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Peak alignment occurs when the two equal-width supports match exactly. For [t - T, t] to equal [0, T], the left edges and right edges must line up at the same time.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "[t-T,t] = [0,T] \\quad \\Rightarrow \\quad t = T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Last contact occurs when the left edge of the moving support, $\\tau = t - T$, just reaches the right edge of the fixed support at $\\tau = T$. After this time, the supports no longer overlap.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "t - T = T \\quad \\Rightarrow \\quad t = 2T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "So the ordered breakpoints are first contact at $t = 0$, peak alignment at $t = T$, and last contact at $t = 2T$. These breakpoints divide the time axis into no overlap, growing overlap, peak alignment, shrinking overlap, and no overlap; the actual overlap-length formulas come after this edge map is in place.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 3,
+        "section_title": "Computing the Rising Overlap Length",
+        "step_type": "example",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "section-003",
+            "placement": "section",
+            "location_placeholder": "[IMAGE-LOCATION:section-003]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:section-003]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for the rising-overlap region $0 \\le t \\le T$. Show the fixed rectangular support $x(\\tau)$ on [0, T] and the shifted support $h(t - \\tau)$ on [t - T, t]. Make t - T appear to the left of 0, make t appear between 0 and T, and shade only the overlap interval [0, t]. Label the $\\tau$-axis, endpoints t - T, 0, t, and T, the fixed support [0, T], the shifted support [t - T, t], and the shaded length $L(t)$. Do not include decorative elements or solve the algebra in the image."
+          }
+        ],
+        "example_content": {
+          "example_prompt": "For two unit-height rectangular pulses supported on [0, T], compute the overlap length for 0 $\\le$ t $\\le$ T.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is the rising interval: t is between first contact and peak alignment. On this interval, the shifted rectangle has started entering the fixed rectangle, but it has not fully aligned yet.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\operatorname{supp} x(\\tau) = [0,T], \\qquad \\operatorname{supp} h(t-\\tau) = [t-T,t]",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Restrict to $0 \\le t \\le T$. In this range, the moving left edge t - T is at or to the left of 0, while the moving right edge t is inside the fixed support [0, T]. So the common part starts at 0 and ends at t.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "image",
+              "text": "",
+              "latex": "",
+              "image_slot_id": "section-003"
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "[0,T] \\cap [t-T,t] = [0,t], \\qquad 0 \\le t \\le T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The overlap length is the right endpoint minus the left endpoint. Here that means subtracting 0 from t.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "L(t) = t - 0 = t, \\qquad 0 \\le t \\le T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Thus the rising overlap length is $L(t) = t$. It starts at 0 when $t = 0$ and reaches the full width T when $t = T$, matching the entering edge sweeping across the fixed pulse.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 4,
+        "section_title": "Computing the Falling Overlap Length",
+        "step_type": "example",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "section-004",
+            "placement": "section",
+            "location_placeholder": "[IMAGE-LOCATION:section-004]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:section-004]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for the falling-overlap region $T \\le t \\le 2T$. Show the fixed rectangular support $x(\\tau)$ on [0, T] and the shifted support $h(t - \\tau)$ on [t - T, t]. Make t - T appear between 0 and T, make t appear to the right of T, and shade only the overlap interval [t - T, T]. Label the $\\tau$-axis, endpoints 0, t - T, T, and t, the fixed support [0, T], the shifted support [t - T, t], and the shaded length $L(t)$. Use visual alignment that contrasts with the rising-overlap diagram, and do not include decorative elements or solve the algebra in the image."
+          }
+        ],
+        "example_content": {
+          "example_prompt": "For two unit-height rectangular pulses supported on [0, T], compute the overlap length for T $\\le$ t $\\le$ 2T.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is the falling interval: t is between peak alignment and last contact. The shifted rectangle is now leaving the fixed rectangle, so the overlap should shrink as t increases.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "\\operatorname{supp} x(\\tau) = [0,T], \\qquad \\operatorname{supp} h(t-\\tau) = [t-T,t]",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Restrict to $T \\le t \\le 2T$. In this range, the moving left edge $t - T$ lies inside the fixed support $[0, T]$, while the moving right edge $t$ is at or to the right of $T$. So the common part starts at $t - T$ and ends at $T$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "image",
+              "text": "",
+              "latex": "",
+              "image_slot_id": "section-004"
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "[0,T] \\cap [t-T,t] = [t-T,T], \\qquad T \\le t \\le 2T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The overlap length is still right endpoint minus left endpoint. In the falling region, the right endpoint is T and the left endpoint is t - T.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "L(t) = T - (t - T) = 2T - t, \\qquad T \\le t \\le 2T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Thus the falling overlap length is $L(t) = 2T - t$. At $t = T$, it equals $T$, and at $t = 2T$, it equals $0$, so the formula matches the rectangle leaving the fixed support.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 5,
+        "section_title": "Scaling the Overlap Length by Rectangular Pulse Heights",
+        "step_type": "example",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "section-005",
+            "placement": "section",
+            "location_placeholder": "[IMAGE-LOCATION:section-005]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:section-005]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for two equal-width rectangular pulses with nonunit heights. Show $x(\\tau)$ as a fixed rectangle of height A and $h(t - \\tau)$ as a shifted rectangle of height B, with a shaded overlap interval labeled $L(t)$. Over the overlap, label the integrand height as AB to show that the product is constant there. Include minimal endpoint labels only as needed to show the overlap interval, and avoid decorative elements or a final piecewise answer."
+          }
+        ],
+        "example_content": {
+          "example_prompt": "If $x(t)$ has height A and $h(t)$ has height B, and both pulses have width T, compute the convolution value from the overlap length on the rising and falling regions.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The new cue is nonunit pulse height. The overlap lengths from the previous sections do not change; only the height of the product inside the overlap changes.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "x(\\tau)h(t-\\tau)=AB \\quad \\text{where the supports overlap}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "image",
+              "text": "",
+              "latex": "",
+              "image_slot_id": "section-005"
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Because the integrand is constant over the overlap interval, the convolution value is the product height AB times the overlap length $L(t)$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=AB\\,L(t)",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "On the rising region, the overlap length is $L(t) = t$. Substitute that length into the scaling rule.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=ABt, \\qquad 0 \\le t \\le T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "On the falling region, the overlap length is $L(t) = 2T - t$. Use the same height product; only the length expression changes.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=AB(2T-t), \\qquad T \\le t \\le 2T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "At peak alignment, both formulas give $y(T)$ = ABT. The heights scale the vertical value of the convolution, but they do not move the contact times or change the overlap-length formulas.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 6,
+        "section_title": "Writing the Piecewise Triangular Convolution Output",
+        "step_type": "example",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "section-006",
+            "placement": "section",
+            "location_placeholder": "[IMAGE-LOCATION:section-006]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:section-006]",
+            "image_description": "Create one clean instructional signal diagram with two equal-width rectangular input pulses of width T and heights A and B, plus the resulting triangular convolution output $y(t)$. Show the output on a t-axis with breakpoints 0, T, and 2T labeled, zero output before 0 and after 2T, a rising straight segment from (0, 0) to (T, ABT), and a falling straight segment from (T, ABT) to (2T, 0). Label the peak value ABT. Do not include answer choices or decorative elements."
+          }
+        ],
+        "example_content": {
+          "example_prompt": "Write the complete convolution $y(t)$ for two equal-width rectangular pulses of heights A and B supported on intervals of width T.",
+          "explanation_blocks": [
+            {
+              "block_type": "paragraph",
+              "text": "The cue is final assembly. Use the contact times, the overlap-length formulas, and the height scaling rule from the earlier sections, then place each formula on its own time region.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "t<0, \\qquad 0\\le t\\le T, \\qquad T\\le t\\le 2T, \\qquad t>2T",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "Before first contact and after last contact, the supports do not overlap, so the convolution value is $0$. On the rising region, use $y(t) = ABt$. On the falling region, use $y(t) = AB(2T - t)$.",
+              "latex": "",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "image",
+              "text": "",
+              "latex": "",
+              "image_slot_id": "section-006"
+            },
+            {
+              "block_type": "display-math",
+              "text": "",
+              "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ ABt, & 0\\le t\\le T \\\\ AB(2T-t), & T\\le t\\le 2T \\\\ 0, & t>2T\\end{cases}",
+              "image_slot_id": ""
+            },
+            {
+              "block_type": "paragraph",
+              "text": "The two active branches meet at $t = T$ because $ABt$ and $AB(2T - t)$ both give $ABT$ there. So the output rises linearly to the peak $ABT$, then falls linearly back to $0$, forming the triangular convolution output.",
+              "latex": "",
+              "image_slot_id": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "question_entry": {
+    "lesson_index": 1,
+    "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+    "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform.",
+    "section_count": 5,
+    "sections": [
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 2,
+        "section_title": "Locating First Contact, Peak Alignment, and Last Contact",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "q001",
+            "placement": "question-prompt",
+            "question_index": 1,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q001]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q001]",
+            "image_description": "Clean three-panel $\\tau$-axis support diagram for two equal-width rectangular pulses of width 4. In every panel, show the fixed support $x(\\tau)$ on $0 \\le \\tau \\le 4 and the moving support h(t - \\tau) on [t - 4$, t]. Panel 1: first contact at $t = 0$, with the right edge $\\tau = t touching \\tau = 0$. Panel 2: peak alignment at $t = 4$, with the moving support exactly matching [0, 4]. Panel 3: last contact at $t = 8$, with the left edge $\\tau = t - 4 touching \\tau = 4$. Label the $\\tau$-axis, endpoints 0 and 4, moving edges t - 4 and t, and the three event names. Do not show the final convolution formula."
+          },
+          {
+            "image_slot_id": "q002",
+            "placement": "question-prompt",
+            "question_index": 2,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q002]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q002]",
+            "image_description": "Clean three-panel $\\tau$-axis support diagram for two equal-width rectangular pulses of width 6. In every panel, show the fixed support $x(\\tau)$ on $-2 \\le \\tau \\le 4 and the moving support h(t - \\tau) on [t - 6$, t]. Panel 1: first contact at $t = -2$, with the right edge $\\tau = t touching \\tau = -2$. Panel 2: peak alignment at $t = 4$, with the moving support exactly matching [-2, 4]. Panel 3: last contact at $t = 10$, with the left edge $\\tau = t - 6 touching \\tau = 4$. Label the $\\tau$-axis, endpoints -2 and 4, width 6, moving edges t - 6 and t, and the three event names. Do not show the final convolution formula."
+          }
+        ],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Two unit-height rectangular pulses have equal width 4. The fixed support is $x(\\tau)$ nonzero on $0 \\le \\tau \\le 4$, and $h(t - \\tau)$ has moving support [t - 4, t]. Which ordered list gives first contact, peak alignment, and last contact?",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q001"
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(0, 4, 8)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(4, 8, 12)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(8, 4, 0)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(0, 2, 4)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(0, 8)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "First contact occurs at $t = 0$, peak alignment at $t = 4$, and last contact at $t = 8$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The fixed support is [0, 4] and the moving support is [t - 4, t]. First contact occurs when the right edge t reaches 0, peak alignment occurs when [t - 4, t] = [0, 4], and last contact occurs when $t - 4 = 4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Two unit-height rectangular pulses have equal width 6. The fixed support is $x(\\tau)$ nonzero on $-2 \\le \\tau \\le 4$, and $h(t - \\tau)$ has moving support [t - 6, t]. Which ordered list gives first contact, peak alignment, and last contact?",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q002"
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(4, 10, 16)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(-2, 4, 10)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(10, 4, -2)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(-2, 1, 4)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "(-2, 10)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "First contact occurs at $t = -2$, peak alignment at $t = 4$, and last contact at $t = 10$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The fixed support is [-2, 4] and the moving support is [t - 6, t]. First contact occurs when the right edge t reaches -2, peak alignment occurs when [t - 6, t] = [-2, 4], and last contact occurs when $t - 6 = 4$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 3,
+        "section_title": "Computing the Rising Overlap Length",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "q001",
+            "placement": "question-prompt",
+            "question_index": 1,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q001]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q001]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for the rising-overlap region $0 \\le t \\le 5$. Show the fixed rectangular support $x(\\tau)$ on [0, 5] and the shifted support $h(t - \\tau)$ on [t - 5, t]. Make t - 5 appear at or to the left of 0, make t appear between 0 and 5, and shade only the overlap interval [0, t]. Label the $\\tau$-axis, endpoints t - 5, 0, t, and 5, the fixed support [0, 5], the shifted support [t - 5, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula."
+          },
+          {
+            "image_slot_id": "q002",
+            "placement": "question-prompt",
+            "question_index": 2,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q002]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q002]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for the rising-overlap region $2 \\le t \\le 8$. Show the fixed rectangular support $x(\\tau)$ on [2, 8] and the shifted support $h(t - \\tau)$ on [t - 6, t]. Make t - 6 appear at or to the left of 2, make t appear between 2 and 8, and shade only the overlap interval [2, t]. Label the $\\tau$-axis, endpoints t - 6, 2, t, and 8, the fixed support [2, 8], the shifted support [t - 6, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula."
+          }
+        ],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For two equal-width rectangular pulses of width 5, $x(\\tau)$ is fixed on $0 \\le \\tau \\le 5$ and $h(t - \\tau)$ is supported on [t - 5, t]. What is the overlap length $L(t)$ for $0 \\le t \\le 5$?",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q001"
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 10 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 5$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = t - 5$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 0$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "$L(t) = t$ for $0 \\le t \\le 5$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "On the rising interval, t - 5 is at or to the left of 0 and t is inside [0, 5]. The overlap is therefore [0, t], so its length is $t - 0 = t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For two equal-width rectangular pulses of width 6, $x(\\tau)$ is fixed on $2 \\le \\tau \\le 8$ and $h(t - \\tau)$ is supported on [t - 6, t]. What is the overlap length $L(t)$ for $2 \\le t \\le 8$?",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q002"
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = t - 2$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 14 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 6$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = t - 6$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 0$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$L(t) = t - 2$ for $2 \\le t \\le 8$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "On the rising interval, t - 6 is at or to the left of 2 and t is inside [2, 8]. The overlap is therefore [2, t], so its length is t - 2.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 4,
+        "section_title": "Computing the Falling Overlap Length",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "q001",
+            "placement": "question-prompt",
+            "question_index": 1,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q001]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q001]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for the falling-overlap region $5 \\le t \\le 10$. Show the fixed rectangular support $x(\\tau)$ on [0, 5] and the shifted support $h(t - \\tau)$ on [t - 5, t]. Make t - 5 appear between 0 and 5, make t appear to the right of 5, and shade only the overlap interval [t - 5, 5]. Label the $\\tau$-axis, endpoints 0, t - 5, 5, and t, the fixed support [0, 5], the shifted support [t - 5, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula."
+          },
+          {
+            "image_slot_id": "q002",
+            "placement": "question-prompt",
+            "question_index": 2,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q002]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q002]",
+            "image_description": "Create one clean $\\tau$-axis support diagram for the falling-overlap region $4 \\le t \\le 8$. Show the fixed rectangular support $x(\\tau)$ on [0, 4] and the shifted support $h(t - \\tau)$ on [t - 4, t]. Make t - 4 appear between 0 and 4, make t appear to the right of 4, and shade only the overlap interval [t - 4, 4]. Label the $\\tau$-axis, endpoints 0, t - 4, 4, and t, the fixed support [0, 4], the shifted support [t - 4, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula."
+          }
+        ],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For two equal-width rectangular pulses of width 5, $x(\\tau)$ is fixed on $0 \\le \\tau \\le 5$ and $h(t - \\tau)$ is supported on [t - 5, t]. What is the overlap length $L(t)$ for $5 \\le t \\le 10$?",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q001"
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 5$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 10 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 5 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 0$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "$L(t) = 10 - t$ for $5 \\le t \\le 10$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "On the falling interval, t - 5 is inside [0, 5] and t is at or to the right of 5. The overlap is therefore [t - 5, 5], so its length is $5 - (t - 5) = 10 - t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "For two equal-width rectangular pulses of width 4, $x(\\tau)$ is fixed on $0 \\le \\tau \\le 4$ and $h(t - \\tau)$ is supported on [t - 4, t]. What is the overlap length $L(t)$ for $4 \\le t \\le 8$?",
+                "latex": "",
+                "image_slot_id": ""
+              },
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q002"
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 8 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 4$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 4 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$L(t) = 0$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "A"
+            ],
+            "correct_answer": "$L(t) = 8 - t$ for $4 \\le t \\le 8$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "On the falling interval, t - 4 is inside [0, 4] and t is at or to the right of 4. The overlap is therefore [t - 4, 4], so its length is $4 - (t - 4) = 8 - t$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 5,
+        "section_title": "Scaling the Overlap Length by Rectangular Pulse Heights",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "q001",
+            "placement": "question-prompt",
+            "question_index": 1,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q001]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q001]",
+            "image_description": "Clean $\\tau$-axis support diagram for two equal-width rectangular pulses of width 5 during the rising-overlap interval. Show $x(\\tau)$ fixed on [0, 5] with height 2. Show $h(t - \\tau)$ with shifted support [t - 5, t] and height 3 for $0 \\le t \\le 5$. Shade the overlap interval [0, t] and label it $L(t)$. Mark the constant product height over the overlap as 2 x $3 = 6$. Include endpoint labels t - 5, 0, t, and 5. Do not show the final expression for $y(t)$."
+          },
+          {
+            "image_slot_id": "q002",
+            "placement": "question-prompt",
+            "question_index": 2,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q002]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q002]",
+            "image_description": "Clean $\\tau$-axis support diagram for two equal-width rectangular pulses of width 4 during the falling-overlap interval. Show $x(\\tau)$ fixed on [0, 4] with height 3. Show $h(t - \\tau)$ with shifted support [t - 4, t] and height 5 for $4 \\le t \\le 8$. Shade the overlap interval [t - 4, 4] and label it $L(t)$. Mark the constant product height over the overlap as 3 x $5 = 15$. Include endpoint labels 0, t - 4, 4, and t. Do not show the final expression for $y(t)$."
+          }
+        ],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Two equal-width rectangular pulses have width 5 and heights 2 and 3. On the rising interval $0 \\le t \\le 5$, the overlap length is $L(t) = t. Which expression gives y(t)$ on this interval?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)$ = 2t",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = 6$(10 - t)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = 30$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)$ = 6t",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              }
+            ],
+            "correct_choice_labels": [
+              "E"
+            ],
+            "correct_answer": "$y(t)$ = 6t",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The integrand equals the height product wherever the pulses overlap. Since 2 x $3 = 6$ and the rising overlap length is $L(t) = t$, the convolution value is $y(t)$ = $6L(t)$ = 6t.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Two equal-width rectangular pulses have width 4 and heights 3 and 5. On the falling interval $4 \\le t \\le 8$, the overlap length is $L(t) = 8 - t. Which expression gives y(t)$ on this interval?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = 8 - t$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = 15$(8 - t)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = 3$(8 - t)",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t)$ = 15t",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "paragraph",
+                    "text": "$y(t) = 60$",
+                    "latex": "",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "B"
+            ],
+            "correct_answer": "$y(t) = 15$(8 - t)",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "Height scaling multiplies the overlap length by the product of the two pulse heights. Here 3 x $5 = 15$, so on the falling interval $y(t)$ = $15L(t)$ = 15(8 - t).",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lesson_index": 1,
+        "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+        "section_index": 6,
+        "section_title": "Writing the Piecewise Triangular Convolution Output",
+        "step_type": "example",
+        "question_type": "multiple-choice",
+        "answer_cardinality": "single",
+        "content_mode": "image-needed",
+        "image_slots": [
+          {
+            "image_slot_id": "q001",
+            "placement": "question-prompt",
+            "question_index": 1,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q001]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q001]",
+            "image_description": "Create one clean signal diagram for two equal-width rectangular pulses with standard supports. Show $x(t)$ as a rectangular pulse of width 4 and height 2 on $0 \\le t \\le 4$. Show $h(t)$ as a rectangular pulse of width 4 and height 1 on $0 \\le t \\le 4$. Under the inputs, show the triangular convolution output $y(t)$ on a t-axis with breakpoints 0, 4, and 8 labeled, zero output before 0 and after 8, a rising straight segment from (0, 0) to (4, 8), and a falling straight segment from (4, 8) to (8, 0). Label the peak value 8. Do not include answer choices or a piecewise formula."
+          },
+          {
+            "image_slot_id": "q002",
+            "placement": "question-prompt",
+            "question_index": 2,
+            "choice_label": "",
+            "location_placeholder": "[IMAGE-LOCATION:q002]",
+            "description_placeholder": "[IMAGE-DESCRIPTION:q002]",
+            "image_description": "Create one clean signal diagram for two equal-width rectangular pulses shifted away from the origin. Show $x(t)$ as a rectangular pulse of width 3 and height 2 on $1 \\le t \\le 4$. Show $h(t)$ as a rectangular pulse of width 3 and height 5 on $1 \\le t \\le 4$. Under the inputs, show the triangular convolution output $y(t)$ on a t-axis with breakpoints 2, 5, and 8 labeled, zero output before 2 and after 8, a rising straight segment from (2, 0) to (5, 30), and a falling straight segment from (5, 30) to (8, 0). Label the peak value 30. Do not include answer choices or a piecewise formula."
+          }
+        ],
+        "question_count": 2,
+        "questions": [
+          {
+            "question_index": 1,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q001"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Two equal-width rectangular pulses have width 4 and heights 2 and 1, with first contact at $t = 0$ and last contact at $t = 8$. Which piecewise expression gives $y(t)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ 2t, & 0\\le t\\le 8 \\\\ 2(16-t), & 8\\le t\\le 16 \\\\ 0, & t>16\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ t, & 0\\le t\\le 4 \\\\ 8-t, & 4\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ 2t, & 0\\le t\\le 4 \\\\ 2(8-t), & 4\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ 2t, & 0\\le t\\le 4 \\\\ 2t, & 4\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ 3t, & 0\\le t\\le 4 \\\\ 3(8-t), & 4\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "C"
+            ],
+            "correct_answer": "$y(t)=0$ for $t<0$, $y(t)$=2t for $0 \\le t \\le 4$, $y(t)=2$(8 - t) for $4 \\le t \\le 8$, and $y(t)=0$ for $t>8$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The height product is 2 x $1 = 2$. With width 4, the rising branch is 2t on $0 \\le t \\le 4$, the falling branch is 2(8 - t) on $4 \\le t \\le 8$, and the output is 0 before first contact and after last contact.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          },
+          {
+            "question_index": 2,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "prompt_blocks": [
+              {
+                "block_type": "image",
+                "text": "",
+                "latex": "",
+                "image_slot_id": "q002"
+              },
+              {
+                "block_type": "paragraph",
+                "text": "Two equal-width rectangular pulses each have width 3 and are supported on $1 \\le t \\le 4$. Their heights are 2 and 5, so first contact occurs at $t = 2$, peak alignment at $t = 5$, and last contact at $t = 8$. Which piecewise expression gives $y(t)$?",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ],
+            "choices": [
+              {
+                "choice_label": "A",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}10(t-2), & 2\\le t\\le 5 \\\\ 10(8-t), & 5\\le t\\le 8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "B",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<2 \\\\ t-2, & 2\\le t\\le 5 \\\\ 8-t, & 5\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "C",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<0 \\\\ 10t, & 0\\le t\\le 3 \\\\ 10(6-t), & 3\\le t\\le 6 \\\\ 0, & t>6\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              },
+              {
+                "choice_label": "D",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<2 \\\\ 10(t-2), & 2\\le t\\le 5 \\\\ 10(8-t), & 5\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": true
+              },
+              {
+                "choice_label": "E",
+                "choice_blocks": [
+                  {
+                    "block_type": "display-math",
+                    "text": "",
+                    "latex": "y(t)=\\begin{cases}0, & t<2 \\\\ 7(t-2), & 2\\le t\\le 5 \\\\ 7(8-t), & 5\\le t\\le 8 \\\\ 0, & t>8\\end{cases}",
+                    "image_slot_id": ""
+                  }
+                ],
+                "is_correct": false
+              }
+            ],
+            "correct_choice_labels": [
+              "D"
+            ],
+            "correct_answer": "$y(t)=0$ for $t<2$, $y(t)=10$(t - 2) for $2 \\le t \\le 5$, $y(t)=10$(8 - t) for $5 \\le t \\le 8$, and $y(t)=0$ for $t>8$.",
+            "answer_explanation_blocks": [
+              {
+                "block_type": "paragraph",
+                "text": "The height product is 2 x $5 = 10$. The shifted breakpoints make the rising overlap length t - 2 and the falling overlap length 8 - t, so the complete output includes zero before $t = 2$ and after $t = 8$.",
+                "latex": "",
+                "image_slot_id": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "image_records": [
+    {
+      "slot_key": "l001-s001-te-section-001",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "tutorial-example",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 1,
+      "section_title": "Introduction to Convolution of Two Equal-Width Rectangular Pulses",
+      "placement": "section",
+      "image_slot_id": "section-001",
+      "image_description": "Clean instructional signal plot on a $\\tau$-axis showing two equal-width rectangular pulses of width T: $x(\\tau)$ fixed on $0 \\le \\tau \\le T$, $h(t - \\tau)$ as a flipped-and-shifted rectangular support [t - T, t], and a shaded overlap interval between the two supports. Label the $\\tau$-axis, $x(\\tau)$, $h(t - \\tau)$, width T, time shift t, and the overlap length $L(t)$. Use simple linework and no decorative elements.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s001-te-section-001.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s001-te-section-001.py",
+      "covered_template": "standard $\\tau$-axis overlap-support diagram with overlapping rectangular pulses and shaded overlap interval",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s002-qg-q001-q001",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 2,
+      "section_title": "Locating First Contact, Peak Alignment, and Last Contact",
+      "placement": "question-prompt",
+      "image_slot_id": "q001",
+      "image_description": "Clean three-panel $\\tau$-axis support diagram for two equal-width rectangular pulses of width 4. In every panel, show the fixed support $x(\\tau)$ on $0 \\le \\tau \\le 4 and the moving support h(t - \\tau) on [t - 4$, t]. Panel 1: first contact at $t = 0$, with the right edge $\\tau = t touching \\tau = 0$. Panel 2: peak alignment at $t = 4$, with the moving support exactly matching [0, 4]. Panel 3: last contact at $t = 8$, with the left edge $\\tau = t - 4 touching \\tau = 4$. Label the $\\tau$-axis, endpoints 0 and 4, moving edges t - 4 and t, and the three event names. Do not show the final convolution formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s002-qg-q001-q001.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s002-qg-q001-q001.py",
+      "covered_template": "standard three-panel $\\tau$-axis support diagram showing first contact, peak alignment, and last contact",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a three-panel $\\tau$-axis support comparison with shared scale.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s002-qg-q002-q002",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 2,
+      "section_title": "Locating First Contact, Peak Alignment, and Last Contact",
+      "placement": "question-prompt",
+      "image_slot_id": "q002",
+      "image_description": "Clean three-panel $\\tau$-axis support diagram for two equal-width rectangular pulses of width 6. In every panel, show the fixed support $x(\\tau)$ on $-2 \\le \\tau \\le 4 and the moving support h(t - \\tau) on [t - 6$, t]. Panel 1: first contact at $t = -2$, with the right edge $\\tau = t touching \\tau = -2$. Panel 2: peak alignment at $t = 4$, with the moving support exactly matching [-2, 4]. Panel 3: last contact at $t = 10$, with the left edge $\\tau = t - 6 touching \\tau = 4$. Label the $\\tau$-axis, endpoints -2 and 4, width 6, moving edges t - 6 and t, and the three event names. Do not show the final convolution formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s002-qg-q002-q002.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s002-qg-q002-q002.py",
+      "covered_template": "standard three-panel $\\tau$-axis support diagram showing first contact, peak alignment, and last contact",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a three-panel $\\tau$-axis support comparison with shared scale.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s002-te-section-002",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "tutorial-example",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 2,
+      "section_title": "Locating First Contact, Peak Alignment, and Last Contact",
+      "placement": "section",
+      "image_slot_id": "section-002",
+      "image_description": "Create three small side-by-side $\\tau$-axis panels for equal-width rectangular pulse supports of width T. In every panel, show the fixed support $x(\\tau)$ on [0, T] and the shifted support $h(t - \\tau)$ on [t - T, t]. Panel 1 should show first contact at $t = 0$, with the right edge $\\tau = t just touching \\tau = 0$. Panel 2 should show peak alignment at $t = T$, with [t - T, t] exactly matching [0, T]. Panel 3 should show last contact at $t = 2T$, with the left edge $\\tau = t - T just touching \\tau = T$. Label the $\\tau$-axis, endpoints 0 and T, the moving endpoints t - T and t where useful, and the three event names. Use a clean signal-plot style with no decorative elements.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s002-te-section-002.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s002-te-section-002.py",
+      "covered_template": "standard three-panel $\\tau$-axis support diagram showing first contact, peak alignment, and last contact",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a three-panel $\\tau$-axis support comparison with shared scale.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s003-qg-q001-q001",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 3,
+      "section_title": "Computing the Rising Overlap Length",
+      "placement": "question-prompt",
+      "image_slot_id": "q001",
+      "image_description": "Create one clean $\\tau$-axis support diagram for the rising-overlap region $0 \\le t \\le 5$. Show the fixed rectangular support $x(\\tau)$ on [0, 5] and the shifted support $h(t - \\tau)$ on [t - 5, t]. Make t - 5 appear at or to the left of 0, make t appear between 0 and 5, and shade only the overlap interval [0, t]. Label the $\\tau$-axis, endpoints t - 5, 0, t, and 5, the fixed support [0, 5], the shifted support [t - 5, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s003-qg-q001-q001.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s003-qg-q001-q001.py",
+      "covered_template": "standard rising-overlap $\\tau$-axis support diagram with shaded overlap interval [left edge, t]",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s003-qg-q002-q002",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 3,
+      "section_title": "Computing the Rising Overlap Length",
+      "placement": "question-prompt",
+      "image_slot_id": "q002",
+      "image_description": "Create one clean $\\tau$-axis support diagram for the rising-overlap region $2 \\le t \\le 8$. Show the fixed rectangular support $x(\\tau)$ on [2, 8] and the shifted support $h(t - \\tau)$ on [t - 6, t]. Make t - 6 appear at or to the left of 2, make t appear between 2 and 8, and shade only the overlap interval [2, t]. Label the $\\tau$-axis, endpoints t - 6, 2, t, and 8, the fixed support [2, 8], the shifted support [t - 6, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s003-qg-q002-q002.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s003-qg-q002-q002.py",
+      "covered_template": "standard rising-overlap $\\tau$-axis support diagram with shaded overlap interval [left edge, t]",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s003-te-section-003",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "tutorial-example",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 3,
+      "section_title": "Computing the Rising Overlap Length",
+      "placement": "section",
+      "image_slot_id": "section-003",
+      "image_description": "Create one clean $\\tau$-axis support diagram for the rising-overlap region $0 \\le t \\le T$. Show the fixed rectangular support $x(\\tau)$ on [0, T] and the shifted support $h(t - \\tau)$ on [t - T, t]. Make t - T appear to the left of 0, make t appear between 0 and T, and shade only the overlap interval [0, t]. Label the $\\tau$-axis, endpoints t - T, 0, t, and T, the fixed support [0, T], the shifted support [t - T, t], and the shaded length $L(t)$. Do not include decorative elements or solve the algebra in the image.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s003-te-section-003.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s003-te-section-003.py",
+      "covered_template": "standard rising-overlap $\\tau$-axis support diagram with shaded overlap interval [left edge, t]",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s004-qg-q001-q001",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 4,
+      "section_title": "Computing the Falling Overlap Length",
+      "placement": "question-prompt",
+      "image_slot_id": "q001",
+      "image_description": "Create one clean $\\tau$-axis support diagram for the falling-overlap region $5 \\le t \\le 10$. Show the fixed rectangular support $x(\\tau)$ on [0, 5] and the shifted support $h(t - \\tau)$ on [t - 5, t]. Make t - 5 appear between 0 and 5, make t appear to the right of 5, and shade only the overlap interval [t - 5, 5]. Label the $\\tau$-axis, endpoints 0, t - 5, 5, and t, the fixed support [0, 5], the shifted support [t - 5, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s004-qg-q001-q001.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s004-qg-q001-q001.py",
+      "covered_template": "standard falling-overlap $\\tau$-axis support diagram with shaded overlap interval [t - T, right edge]",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s004-qg-q002-q002",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 4,
+      "section_title": "Computing the Falling Overlap Length",
+      "placement": "question-prompt",
+      "image_slot_id": "q002",
+      "image_description": "Create one clean $\\tau$-axis support diagram for the falling-overlap region $4 \\le t \\le 8$. Show the fixed rectangular support $x(\\tau)$ on [0, 4] and the shifted support $h(t - \\tau)$ on [t - 4, t]. Make t - 4 appear between 0 and 4, make t appear to the right of 4, and shade only the overlap interval [t - 4, 4]. Label the $\\tau$-axis, endpoints 0, t - 4, 4, and t, the fixed support [0, 4], the shifted support [t - 4, t], and the shaded length $L(t)$. Do not include the algebraic answer or any final convolution formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s004-qg-q002-q002.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s004-qg-q002-q002.py",
+      "covered_template": "standard falling-overlap $\\tau$-axis support diagram with shaded overlap interval [t - T, right edge]",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s004-te-section-004",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "tutorial-example",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 4,
+      "section_title": "Computing the Falling Overlap Length",
+      "placement": "section",
+      "image_slot_id": "section-004",
+      "image_description": "Create one clean $\\tau$-axis support diagram for the falling-overlap region $T \\le t \\le 2T$. Show the fixed rectangular support $x(\\tau)$ on [0, T] and the shifted support $h(t - \\tau)$ on [t - T, t]. Make t - T appear between 0 and T, make t appear to the right of T, and shade only the overlap interval [t - T, T]. Label the $\\tau$-axis, endpoints 0, t - T, T, and t, the fixed support [0, T], the shifted support [t - T, t], and the shaded length $L(t)$. Use visual alignment that contrasts with the rising-overlap diagram, and do not include decorative elements or solve the algebra in the image.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s004-te-section-004.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s004-te-section-004.py",
+      "covered_template": "standard falling-overlap $\\tau$-axis support diagram with shaded overlap interval [t - T, right edge]",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s005-qg-q001-q001",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 5,
+      "section_title": "Scaling the Overlap Length by Rectangular Pulse Heights",
+      "placement": "question-prompt",
+      "image_slot_id": "q001",
+      "image_description": "Clean $\\tau$-axis support diagram for two equal-width rectangular pulses of width 5 during the rising-overlap interval. Show $x(\\tau)$ fixed on [0, 5] with height 2. Show $h(t - \\tau)$ with shifted support [t - 5, t] and height 3 for $0 \\le t \\le 5$. Shade the overlap interval [0, t] and label it $L(t)$. Mark the constant product height over the overlap as 2 x $3 = 6$. Include endpoint labels t - 5, 0, t, and 5. Do not show the final expression for $y(t)$.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s005-qg-q001-q001.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s005-qg-q001-q001.py",
+      "covered_template": "standard overlap-support diagram with pulse-height annotations and constant product label",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s005-qg-q002-q002",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 5,
+      "section_title": "Scaling the Overlap Length by Rectangular Pulse Heights",
+      "placement": "question-prompt",
+      "image_slot_id": "q002",
+      "image_description": "Clean $\\tau$-axis support diagram for two equal-width rectangular pulses of width 4 during the falling-overlap interval. Show $x(\\tau)$ fixed on [0, 4] with height 3. Show $h(t - \\tau)$ with shifted support [t - 4, t] and height 5 for $4 \\le t \\le 8$. Shade the overlap interval [t - 4, 4] and label it $L(t)$. Mark the constant product height over the overlap as 3 x $5 = 15$. Include endpoint labels 0, t - 4, 4, and t. Do not show the final expression for $y(t)$.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s005-qg-q002-q002.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s005-qg-q002-q002.py",
+      "covered_template": "standard overlap-support diagram with pulse-height annotations and constant product label",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s005-te-section-005",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "tutorial-example",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 5,
+      "section_title": "Scaling the Overlap Length by Rectangular Pulse Heights",
+      "placement": "section",
+      "image_slot_id": "section-005",
+      "image_description": "Create one clean $\\tau$-axis support diagram for two equal-width rectangular pulses with nonunit heights. Show $x(\\tau)$ as a fixed rectangle of height A and $h(t - \\tau)$ as a shifted rectangle of height B, with a shaded overlap interval labeled $L(t)$. Over the overlap, label the integrand height as AB to show that the product is constant there. Include minimal endpoint labels only as needed to show the overlap interval, and avoid decorative elements or a final piecewise answer.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s005-te-section-005.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s005-te-section-005.py",
+      "covered_template": "standard overlap-support diagram with pulse-height annotations and constant product label",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a symbolic $\\tau$-axis support diagram with shaded overlap.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s006-qg-q001-q001",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 6,
+      "section_title": "Writing the Piecewise Triangular Convolution Output",
+      "placement": "question-prompt",
+      "image_slot_id": "q001",
+      "image_description": "Create one clean signal diagram for two equal-width rectangular pulses with standard supports. Show $x(t)$ as a rectangular pulse of width 4 and height 2 on $0 \\le t \\le 4$. Show $h(t)$ as a rectangular pulse of width 4 and height 1 on $0 \\le t \\le 4$. Under the inputs, show the triangular convolution output $y(t)$ on a t-axis with breakpoints 0, 4, and 8 labeled, zero output before 0 and after 8, a rising straight segment from (0, 0) to (4, 8), and a falling straight segment from (4, 8) to (8, 0). Label the peak value 8. Do not include answer choices or a piecewise formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s006-qg-q001-q001.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s006-qg-q001-q001.py",
+      "covered_template": "standard stacked signal plot with rectangular inputs and triangular convolution output",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a stacked input/output signal diagram with rectangular inputs and a triangular output.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s006-qg-q002-q002",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "question-generation",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 6,
+      "section_title": "Writing the Piecewise Triangular Convolution Output",
+      "placement": "question-prompt",
+      "image_slot_id": "q002",
+      "image_description": "Create one clean signal diagram for two equal-width rectangular pulses shifted away from the origin. Show $x(t)$ as a rectangular pulse of width 3 and height 2 on $1 \\le t \\le 4$. Show $h(t)$ as a rectangular pulse of width 3 and height 5 on $1 \\le t \\le 4$. Under the inputs, show the triangular convolution output $y(t)$ on a t-axis with breakpoints 2, 5, and 8 labeled, zero output before 2 and after 8, a rising straight segment from (2, 0) to (5, 30), and a falling straight segment from (5, 30) to (8, 0). Label the peak value 30. Do not include answer choices or a piecewise formula.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s006-qg-q002-q002.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s006-qg-q002-q002.py",
+      "covered_template": "standard stacked signal plot with rectangular inputs and triangular convolution output",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a stacked input/output signal diagram with rectangular inputs and a triangular output.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    },
+    {
+      "slot_key": "l001-s006-te-section-006",
+      "status": "generated",
+      "classifier": "COVERED",
+      "source_stage": "tutorial-example",
+      "lesson_index": 1,
+      "lesson_title": "Convolution of Two Equal-Width Rectangular Pulses",
+      "section_index": 6,
+      "section_title": "Writing the Piecewise Triangular Convolution Output",
+      "placement": "section",
+      "image_slot_id": "section-006",
+      "image_description": "Create one clean instructional signal diagram with two equal-width rectangular input pulses of width T and heights A and B, plus the resulting triangular convolution output $y(t)$. Show the output on a t-axis with breakpoints 0, T, and 2T labeled, zero output before 0 and after 2T, a rising straight segment from (0, 0) to (T, ABT), and a falling straight segment from (T, ABT) to (2T, 0). Label the peak value ABT. Do not include answer choices or decorative elements.",
+      "coverage_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+      "generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+      "image_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s006-te-section-006.png",
+      "python_output_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/code/l001-s006-te-section-006.py",
+      "covered_template": "standard stacked signal plot with rectangular inputs and triangular convolution output",
+      "missing_information": [],
+      "new_visual_elements": [],
+      "report": "Rendered as a stacked input/output signal diagram with rectangular inputs and a triangular output.",
+      "coverage_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-coverage.last-message.txt"
+      },
+      "generation_session": {
+        "status": "generated",
+        "output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "source_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "codex_session_id": "019dd642-ad59-7d42-92f7-03ed5bd0dbe4",
+        "last_message_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.last-message.retry-02.txt",
+        "partial_generation_output_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-images.json",
+        "reused_slot_keys": [],
+        "generated_slot_keys": [
+          "l001-s001-te-section-001",
+          "l001-s002-qg-q001-q001",
+          "l001-s002-qg-q002-q002",
+          "l001-s002-te-section-002",
+          "l001-s003-qg-q001-q001",
+          "l001-s003-qg-q002-q002",
+          "l001-s003-te-section-003",
+          "l001-s004-qg-q001-q001",
+          "l001-s004-qg-q002-q002",
+          "l001-s004-te-section-004",
+          "l001-s005-qg-q001-q001",
+          "l001-s005-qg-q002-q002",
+          "l001-s005-te-section-005",
+          "l001-s006-qg-q001-q001",
+          "l001-s006-qg-q002-q002",
+          "l001-s006-te-section-006"
+        ]
+      },
+      "lesson_context_md": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.md",
+      "lesson_context_json": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/l001.lesson-context.json",
+      "boilerplate_python_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/2-Runtime/3-Tmp/continuous-time-signal-processing-ee01-m07-02/shared-image-boilerplate.py",
+      "lesson_core_move": "Compute the continuous-time convolution of two equal-width rectangular pulses by tracking the moving overlap interval and converting its length into the resulting piecewise triangular waveform."
+    }
+  ],
+  "copied_images": [
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s001-te-section-001.png",
+      "markdown_path": "Source/Images/l001-s001-te-section-001.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s002-qg-q001-q001.png",
+      "markdown_path": "Source/Images/l001-s002-qg-q001-q001.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s002-qg-q002-q002.png",
+      "markdown_path": "Source/Images/l001-s002-qg-q002-q002.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s002-te-section-002.png",
+      "markdown_path": "Source/Images/l001-s002-te-section-002.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s003-qg-q001-q001.png",
+      "markdown_path": "Source/Images/l001-s003-qg-q001-q001.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s003-qg-q002-q002.png",
+      "markdown_path": "Source/Images/l001-s003-qg-q002-q002.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s003-te-section-003.png",
+      "markdown_path": "Source/Images/l001-s003-te-section-003.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s004-qg-q001-q001.png",
+      "markdown_path": "Source/Images/l001-s004-qg-q001-q001.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s004-qg-q002-q002.png",
+      "markdown_path": "Source/Images/l001-s004-qg-q002-q002.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s004-te-section-004.png",
+      "markdown_path": "Source/Images/l001-s004-te-section-004.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s005-qg-q001-q001.png",
+      "markdown_path": "Source/Images/l001-s005-qg-q001-q001.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s005-qg-q002-q002.png",
+      "markdown_path": "Source/Images/l001-s005-qg-q002-q002.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s005-te-section-005.png",
+      "markdown_path": "Source/Images/l001-s005-te-section-005.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s006-qg-q001-q001.png",
+      "markdown_path": "Source/Images/l001-s006-qg-q001-q001.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s006-qg-q002-q002.png",
+      "markdown_path": "Source/Images/l001-s006-qg-q002-q002.png"
+    },
+    {
+      "source_path": "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/4-Image-Generation/1-Outputs/Continuous-Time-Signal-Processing/7.2--convolution-of-simple-signals-Images/images/l001-s006-te-section-006.png",
+      "markdown_path": "Source/Images/l001-s006-te-section-006.png"
+    }
+  ],
+  "copied_source_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Course-Map-Continuous-Time-Signal-Processing.md",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/7.2--convolution-of-simple-signals-Topics.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/7.2--convolution-of-simple-signals-Steps.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/7.2--convolution-of-simple-signals-Step-Outline.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/7.2--convolution-of-simple-signals-Tutorial-Examples.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/7.2--convolution-of-simple-signals-Questions.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/7.2--convolution-of-simple-signals-Images.json"
+  ],
+  "copied_image_code_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/shared-image-boilerplate.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s001-te-section-001.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s002-qg-q001-q001.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s002-qg-q002-q002.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s002-te-section-002.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s003-qg-q001-q001.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s003-qg-q002-q002.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s003-te-section-003.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s004-qg-q001-q001.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s004-qg-q002-q002.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s004-te-section-004.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s005-qg-q001-q001.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s005-qg-q002-q002.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s005-te-section-005.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s006-qg-q001-q001.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s006-qg-q002-q002.py",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Code/l001-s006-te-section-006.py"
+  ],
+  "copied_image_context_files": [
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Context/l001.lesson-context.md",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Context/l001.lesson-context.json",
+    "PIPELINE/Electrical-and-Computer-Engineering/2-Build-Lessons/5-Compile/1-Outputs/Continuous-Time-Signal-Processing/EE01-M07-02/EE01-M07-02-L01/Source/Image-Context/l001.lesson-images.last-message.retry-02.txt"
+  ]
+}

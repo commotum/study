@@ -1,0 +1,512 @@
+# Real and Imaginary Parts of $s=\sigma+j\omega$
+
+<!--
+lesson-id: EE01-M02-04-L02
+-->
+
+## Table of Contents
+
+- [Introduction to Real and Imaginary Parts of $s=\sigma+j\omega$](#introduction-to-real-and-imaginary-parts-of-ssigmajomega)
+- [Identifying $\sigma$ and $\omega$ from $s=\sigma+j\omega$](#identifying-sigma-and-omega-from-ssigmajomega)
+- [Factoring $e^{(\sigma+j\omega)t}$ into Envelope and Oscillation Parts](#factoring-esigmajomegat-into-envelope-and-oscillation-parts)
+- [Interpreting $\sigma$ as the Growth or Decay Rate](#interpreting-sigma-as-the-growth-or-decay-rate)
+- [Interpreting $\omega$ as the Oscillation Rate](#interpreting-omega-as-the-oscillation-rate)
+- [Reading Both Rates from a Generalized Exponential Signal](#reading-both-rates-from-a-generalized-exponential-signal)
+
+---
+
+<a id="introduction-to-real-and-imaginary-parts-of-ssigmajomega"></a>
+## Introduction to Real and Imaginary Parts of $s=\sigma+j\omega$
+
+For generalized exponential signals, treat $t$ as the variable and $s$ as a fixed parameter. Write the signal as $x(t)=e^{st}$ so the same form can name a whole family of continuous-time signals.
+
+$$
+x(t)=e^{st}
+$$
+
+If you hold $s$ fixed, the formula becomes one specific signal in $t$. A simple real choice such as $s=-1$ gives $x(t)=e^{-t}$, a plain decaying exponential that anchors the notation before any more complicated choices of $s$ appear.
+
+$$
+x(t)=e^{-t}
+$$
+
+This is the reading rule for the rest of the module: one fixed value of $s$ selects one signal, and the same exponential form can later produce other special cases. In the next section, you will use one concrete value of $s$ and read the corresponding signal directly.
+
+---
+
+<a id="identifying-sigma-and-omega-from-ssigmajomega"></a>
+## Identifying $\sigma$ and $\omega$ from $s=\sigma+j\omega$
+
+**Example:** For $s=-3+j4$, identify $\sigma$ and $\omega$.
+
+**Explanation**
+
+Read $s=-3+j4$ in the standard form $s=\sigma+j\omega$. The real part is the number without $j$, and the imaginary part is the coefficient of $j$.
+
+$$
+s=-3+j4
+$$
+
+So $\sigma=-3$ and $\omega=4$. This is the direct read-off rule: match the real part to $\sigma$ and the coefficient of $j$ to $\omega$.
+
+$$
+(\sigma,\omega)=(-3,4)
+$$
+
+In $e^{st}$, that means the envelope decays while the signal oscillates at rate $4$. The sign of $\sigma$ controls the decay or growth, and $\omega$ controls the oscillation rate.
+
+**Question 1:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q001
+content: |-
+  Given $s=1-j6$, which choice correctly identifies $(\sigma,\omega)$?
+
+options:
+- id: a
+  content: |-
+    $(\sigma,\omega)=(1,-6)$
+  correct: true
+  feedback: |-
+    Read $s=1-j6$ in the form $s=\sigma+j\omega$. The real part is $1$, so $\sigma=1$, and the coefficient of $j$ is $-6$, so $\omega=-6$.
+
+- id: b
+  content: |-
+    $(\sigma,\omega)=(-6,1)$
+
+- id: c
+  content: |-
+    $(\sigma,\omega)=(1,6)$
+
+- id: d
+  content: |-
+    $(\sigma,\omega)=(6,1)$
+
+- id: e
+  content: |-
+    $\sigma+j\omega=1-j6$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q002
+content: |-
+  Given $s=-4+j2$, which choice correctly identifies $(\sigma,\omega)$?
+
+options:
+- id: a
+  content: |-
+    $(\sigma,\omega)=(-4,2)$
+  correct: true
+  feedback: |-
+    Read the real part of $s=-4+j2$ as $\sigma=-4$. The coefficient of $j$ is $2$, so $\omega=2$.
+
+- id: b
+  content: |-
+    $(\sigma,\omega)=(2,-4)$
+
+- id: c
+  content: |-
+    $(\sigma,\omega)=(-4,-2)$
+
+- id: d
+  content: |-
+    $(\sigma,\omega)=(4,2)$
+
+- id: e
+  content: |-
+    $\sigma+j\omega=-4+j2$
+```
+
+---
+
+<a id="factoring-esigmajomegat-into-envelope-and-oscillation-parts"></a>
+## Factoring $e^{(\sigma+j\omega)t}$ into Envelope and Oscillation Parts
+
+**Example:** Rewrite $e^{(-2+j5)t}$ as a product of an envelope factor and an oscillation factor, then identify each factor.
+
+**Explanation**
+
+Start with the cue $e^{(\sigma+j\omega)t}$. Here the exponent is $(-2+j5)t$, so the first step is to distribute $t$ across the real and imaginary parts.
+
+$$
+e^{(-2+j5)t}
+$$
+
+That becomes $e^{-2t+j5t}$. Now use $e^{a+b}=e^ae^b$ to split the signal into separate factors.
+
+$$
+e^{-2t}e^{j5t}
+$$
+
+So the envelope factor is $e^{-2t}$ and the oscillation factor is $e^{j5t}$. The real part $-2$ sets the decay rate, and the imaginary part $5$ sets the oscillation rate.
+
+**Question 3:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q003
+content: |-
+  Which expression correctly separates the envelope and oscillation in $e^{(3-j2)t}$?
+
+options:
+- id: a
+  content: |-
+    $e^{3t}e^{-j2t}$
+  correct: true
+  feedback: |-
+    Distribute $t$ across the exponent first: $e^{(3-j2)t}=e^{3t-j2t}$.
+
+    $$
+    e^{3t}e^{-j2t}
+    $$
+
+    Then apply $e^{a+b}=e^ae^b$. The envelope is $e^{3t}$ and the oscillation is $e^{-j2t}$, so choice A is correct.
+
+- id: b
+  content: |-
+    $e^{(3-j2)t}$
+
+- id: c
+  content: |-
+    $e^{3t}+e^{-j2t}$
+
+- id: d
+  content: |-
+    $e^{3t}e^{j2t}$
+
+- id: e
+  content: |-
+    $e^{3}e^{-j2t}$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q004
+content: |-
+  Which expression correctly separates the envelope and oscillation in $e^{(-4+j6)t}$?
+
+options:
+- id: a
+  content: |-
+    $e^{-4t}e^{j6t}$
+  correct: true
+  feedback: |-
+    Distribute $t$ first: $e^{(-4+j6)t}=e^{-4t+j6t}$.
+
+    $$
+    e^{-4t}e^{j6t}
+    $$
+
+    Then split the sum in the exponent with $e^{a+b}=e^ae^b$. The envelope is $e^{-4t}$, which decays, and the oscillation is $e^{j6t}$, so choice A is correct.
+
+- id: b
+  content: |-
+    $e^{-4t}+e^{j6t}$
+
+- id: c
+  content: |-
+    $e^{(-4+j6)t}$
+
+- id: d
+  content: |-
+    $e^{-4t}e^{-j6t}$
+
+- id: e
+  content: |-
+    $e^{-4}e^{j6t}$
+```
+
+---
+
+<a id="interpreting-sigma-as-the-growth-or-decay-rate"></a>
+## Interpreting $\sigma$ as the Growth or Decay Rate
+
+**Example:** For $x(t)=e^{(-4+j2)t}$, determine whether the envelope grows or decays and state the rate set by $\sigma$.
+
+**Explanation**
+
+The cue is the real part of the exponent in $e^{(\sigma+j\omega)t}$. Here $s=-4+j2$, so $\sigma=-4$.
+
+$$
+x(t)=e^{(-4+j2)t}
+$$
+
+The envelope factor is $e^{-4t}$. Because the exponent is negative, the envelope decreases as $t$ increases, so the signal decays rather than grows.
+
+$$
+e^{-4t}
+$$
+
+So $\sigma=-4$ means decay at rate $4$. The oscillatory factor $e^{j2t}$ stays separate and does not change the envelope interpretation.
+
+**Question 5:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q005
+content: |-
+  For $x(t)=e^{(3+j5)t}$, determine whether the envelope grows or decays and state the rate set by $\sigma$.
+
+options:
+- id: a
+  content: |-
+    The envelope decays at rate $3$.
+
+- id: b
+  content: |-
+    The envelope grows at rate $3$.
+  correct: true
+  feedback: |-
+    The real part is $\sigma=3$, so the envelope factor is $e^{3t}$.
+
+    $$
+    e^{3t}
+    $$
+
+    A positive $\sigma$ means the envelope grows, and the growth rate is $3$. The $j5t$ term only controls oscillation.
+
+- id: c
+  content: |-
+    The envelope stays constant at rate $3$.
+
+- id: d
+  content: |-
+    The envelope grows at rate $5$.
+
+- id: e
+  content: |-
+    The envelope decays because $\omega=5$ is positive.
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q006
+content: |-
+  For $x(t)=e^{(0-j4)t}$, determine whether the envelope grows, decays, or stays constant and state the rate set by $\sigma$.
+
+options:
+- id: a
+  content: |-
+    The envelope grows at rate $4$.
+
+- id: b
+  content: |-
+    The envelope decays at rate $4$.
+
+- id: c
+  content: |-
+    The envelope stays constant at rate $0$.
+  correct: true
+  feedback: |-
+    The real part is $\sigma=0$, so the envelope factor is $e^{0t}=1$.
+
+    $$
+    e^{0t}=1
+    $$
+
+    That means the envelope stays constant at rate $0$. The $-j4t$ term only controls oscillation.
+
+- id: d
+  content: |-
+    The envelope grows because $\omega=-4$ is negative.
+
+- id: e
+  content: |-
+    The envelope oscillates at rate $4$.
+```
+
+---
+
+<a id="interpreting-omega-as-the-oscillation-rate"></a>
+## Interpreting $\omega$ as the Oscillation Rate
+
+**Example:** For $x(t)=e^{(-1+j6)t}$, identify $\omega$ and explain how it sets the oscillation rate.
+
+**Explanation**
+
+The cue is the imaginary part of the exponent in $e^{(\sigma+j\omega)t}$. Here $s=-1+j6$, so $\omega=6$.
+
+$$
+x(t)=e^{(-1+j6)t}=e^{-t}e^{j6t}
+$$
+
+The envelope factor $e^{-t}$ stays separate. The oscillatory factor is $e^{j6t}$, and $|\omega|=6$ sets the oscillation rate, so a larger $|\omega|$ means faster oscillation.
+
+$$
+e^{j6t}
+$$
+
+So $\omega=6$ means oscillation at rate $6$. The sign of $\omega$ changes direction, but the magnitude controls how fast the oscillation varies, while $\sigma$ still controls the envelope.
+
+**Question 7:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q007
+content: |-
+  For $x(t)=e^{(-2+j4)t}$, what does $\omega=4$ tell you about the oscillatory part of the signal?
+
+options:
+- id: a
+  content: |-
+    The signal grows at rate 4.
+
+- id: b
+  content: |-
+    The signal decays at rate 4.
+
+- id: c
+  content: |-
+    The oscillatory part is $e^{j4t}$, so the signal oscillates at rate 4.
+  correct: true
+  feedback: |-
+    The imaginary part is $j4$, so the oscillatory factor is $e^{j4t}$. The magnitude $|\omega|=4$ sets how fast the oscillation varies; the real part $-2$ only sets the envelope.
+
+- id: d
+  content: |-
+    The signal is constant because $\omega$ only changes the envelope.
+
+- id: e
+  content: |-
+    The oscillation rate is 2 because $\sigma=-2$.
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q008
+content: |-
+  For $x(t)=e^{(-2-j4)t}$, what does $\omega=-4$ tell you about the oscillatory part of the signal?
+
+options:
+- id: a
+  content: |-
+    The oscillatory part is $e^{-j4t}$, and the negative sign only changes direction; the signal still oscillates at rate 4.
+  correct: true
+  feedback: |-
+    The imaginary part is $-j4$, so the oscillatory factor is $e^{-j4t}$. The sign changes the direction, but the speed is still set by $|\omega|=4$.
+
+- id: b
+  content: |-
+    The signal grows at rate 4.
+
+- id: c
+  content: |-
+    The signal decays at rate 4.
+
+- id: d
+  content: |-
+    The signal is constant because $\omega$ is negative.
+
+- id: e
+  content: |-
+    The oscillation rate is 2 because $\sigma=-2$.
+```
+
+---
+
+<a id="reading-both-rates-from-a-generalized-exponential-signal"></a>
+## Reading Both Rates from a Generalized Exponential Signal
+
+**Example:** For $x(t)=e^{(2-j3)t}$, read off $\sigma$ and $\omega$ and state the envelope and oscillation behavior of the signal.
+
+**Explanation**
+
+Read the real and imaginary parts of $s=2-j3$ together: $\sigma=2$ and $\omega=-3$.
+
+$$
+x(t)=e^{(2-j3)t}=e^{2t}e^{-j3t}
+$$
+
+The factor $e^{2t}$ is the envelope, so the signal grows. The factor $e^{-j3t}$ is the oscillation, and $|\omega|=3$ sets its rate.
+
+$$
+(\sigma,\omega)=(2,-3)
+$$
+
+So the complete description is growth at rate $2$ and oscillation at rate $3$. This is the full envelope-and-oscillation reading of a generalized exponential signal.
+
+**Question 9:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q009
+content: |-
+  For $x(t)=e^{(-3+j4)t}$, which description correctly identifies $(\sigma,\omega)$ and the envelope-and-oscillation behavior?
+
+options:
+- id: a
+  content: |-
+    $(\sigma,\omega)=(-3,4)$, so the envelope decays at rate $3$ and the signal oscillates at rate $4$.
+  correct: true
+  feedback: |-
+    Read $s=-3+j4$ directly as $\sigma=-3$ and $\omega=4$. A negative $\sigma$ means the envelope decays at rate $3$, and $\omega=4$ means the signal oscillates at rate $4$.
+
+- id: b
+  content: |-
+    $(\sigma,\omega)=(4,-3)$, so the envelope grows at rate $4$ and the signal oscillates at rate $3$.
+
+- id: c
+  content: |-
+    $(\sigma,\omega)=(-4,3)$, so the envelope decays at rate $4$ and the signal oscillates at rate $3$.
+
+- id: d
+  content: |-
+    $(\sigma,\omega)=(-3,4)$, so the envelope grows at rate $3$ and the signal is non-oscillatory.
+
+- id: e
+  content: |-
+    $(\sigma,\omega)=(3,-4)$, so the envelope decays at rate $3$ and the signal oscillates at rate $4$.
+```
+
+---
+
+**Question 10:**
+
+```quiz
+type: radio
+id: EE01-M02-04-L02-q010
+content: |-
+  For $x(t)=e^{(0+j5)t}$, which description correctly identifies $(\sigma,\omega)$ and the envelope-and-oscillation behavior?
+
+options:
+- id: a
+  content: |-
+    $(\sigma,\omega)=(0,5)$, so the envelope is constant and the signal oscillates at rate $5$.
+  correct: true
+  feedback: |-
+    Here $\sigma=0$ and $\omega=5$. Zero $\sigma$ means the envelope stays constant, and $\omega=5$ means the signal oscillates at rate $5$.
+
+- id: b
+  content: |-
+    $(\sigma,\omega)=(5,0)$, so the envelope grows at rate $5$ and the signal is non-oscillatory.
+
+- id: c
+  content: |-
+    $(\sigma,\omega)=(0,-5)$, so the envelope decays at rate $5$ and the signal oscillates at rate $5$.
+
+- id: d
+  content: |-
+    $(\sigma,\omega)=(-5,0)$, so the envelope is constant and the signal is non-oscillatory.
+
+- id: e
+  content: |-
+    $(\sigma,\omega)=(0,5)$, so the envelope decays at rate $5$ and the signal is non-oscillatory.
+```

@@ -1,0 +1,2158 @@
+{
+  "entries": [
+    {
+      "lesson_index": 1,
+      "lesson_title": "Deriving Transfer Functions from Differential Equations",
+      "lesson_core_move": "Convert a circuit input-output differential equation into a Laplace-domain transfer function by applying zero-initial-condition derivative properties and isolating H(s)=Y(s)/X(s) as the rational expression used for pole, stability, and frequency-response analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Deriving Transfer Functions from Differential Equations",
+          "step_type": "tutorial",
+          "learning_goal": "Anchor the lesson by showing that the target move is a single algebraic workflow: apply one-sided Laplace derivative rules, assume zero initial conditions, and isolate $H(s)=\\frac{Y(s)}{X(s)}$ as a rational function.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is needed. Build concept support with symbolic equations and explicit subgoal labels."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Introduce the direct map $y(t) \\mapsto Y(s)$ and $x(t) \\mapsto X(s)$, then show the target pattern for deriving $H(s)=\\frac{Y(s)}{X(s)}$ from an input-output differential equation.",
+            "base_case": "Use the base ODE $y'(t)+3y(t)=x(t)$ so learners see the whole pipeline in its simplest nontrivial form before adding higher-order terms.",
+            "paragraph_plan": [
+              "State the lesson objective, notation, and the one-sided Laplace derivative identities under zero initial conditions.",
+              "Walk through the base ODE transform line-by-line and show each derivative term mapping to algebraic $s$-domain terms.",
+              "Collect terms and isolate the ratio $\\frac{Y(s)}{X(s)}$, naming it $H(s)$ before adding complexity in later steps.",
+              "Conclude with a short scaffold: every later example repeats this same three-part pattern with incremental wrinkle additions."
+            ],
+            "display_math_plan": [
+              "$$\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$$",
+              "$$\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)$$",
+              "$$\\mathcal{L}\\{y(t)\\}=Y(s),\\quad \\mathcal{L}\\{x(t)\\}=X(s)$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Do not create a practice section for this step. Emphasize active recall of the derivative rules and the isolation pattern because later examples depend on this template."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Applying Zero-Initial-Condition Laplace Derivative Rules",
+          "step_type": "example",
+          "learning_goal": "Demonstrate the one-sided derivative transforms for $y'(t)$ and $y''(t)$ in a transfer-function context while explicitly setting all initial terms to zero.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image support needed; the skill is purely symbolic notation transformation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Transform $y''(t)+2y'(t)+3y(t)=x(t)$ with zero initial conditions into $X(s)$ and $Y(s)$ form.",
+            "distractor_plan": [
+              "Include nonzero initial conditions in at least one transformed derivative term.",
+              "Drop the $s^2$ multiplier on $Y(s)$ for the second derivative.",
+              "Move only input terms to one side and leave derivative terms mixed.",
+              "Lose the negative sign from the second derivative transform formula."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Transform $y''(t)+4y'(t)+5y(t)=x(t)$ into the Laplace-domain algebraic equation using zero initial conditions.",
+            "worked_solution_goal": "Produce $s^2Y(s)+4sY(s)+5Y(s)=X(s)$ after zeroing all $y(0^-)$ and $y'(0^-)$ terms.",
+            "variation_from_previous": "Builds the base workflow with a second-order left-hand term while keeping the right-hand side input at first order.",
+            "solution_step_plan": [
+              "Apply transforms to each derivative: $\\mathcal{L}\\{y'(t)\\}=sY(s)-y(0^-)$ and $\\mathcal{L}\\{y''(t)\\}=s^2Y(s)-sy(0^-)-y'(0^-)$.",
+              "Set $y(0^-)=0$ and $y'(0^-)=0$, since this topic uses zero-initial conditions.",
+              "Replace $y(t)$ and $x(t)$ by $Y(s)$ and $X(s)$ and collect like terms.",
+              "State the final algebraic relation with explicit $s$-domain coefficients."
+            ],
+            "practice_variation_axes": [
+              "Different derivative order combinations on $y(t)$",
+              "Input-side order changes (e.g., $x'(t)$ terms)",
+              "Different numeric coefficients"
+            ]
+          },
+          "handoff_notes": "Keep transform math compact and fully explicit so a later template can be generated as a stable worked example and mirror questions."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Transforming an Input-Output Differential Equation into an Algebraic Equation",
+          "step_type": "example",
+          "learning_goal": "Practice moving from a full differential equation that includes mixed input/output derivatives to a single algebraic equation in $X(s)$ and $Y(s)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram is required; this step is transformation algebra only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Convert $y'(t)+3y(t)=x''(t)-2x(t)$ to an $X(s),Y(s)$ equation with zero initial conditions.",
+            "distractor_plan": [
+              "Treat the entire right side as a single $X(s)$ term without polynomial $s$ factors.",
+              "Apply first-derivative rather than second-derivative rule to $x''(t)$.",
+              "Keep a stray time-domain term in the transformed equation.",
+              "Swap coefficients between numerator and denominator terms during collection."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Transform $y'(t)+3y(t)=x''(t)-2x(t)$ into $X(s)$ and $Y(s)$ form, using zero initial conditions.",
+            "worked_solution_goal": "Obtain $(s+3)Y(s)= (s^2-2)X(s)$ with clear term-by-term substitution.",
+            "variation_from_previous": "Adds an input derivative term so the example tests both sides of the equation symmetrically.",
+            "solution_step_plan": [
+              "Transform each derivative term on both sides and simplify under zero initials.",
+              "Replace time-domain symbols by their Laplace counterparts.",
+              "Collect terms so all $Y(s)$ terms remain on one side and all $X(s)$ terms on the other.",
+              "Finish with the explicit transformed algebraic equation."
+            ],
+            "practice_variation_axes": [
+              "Signs on input-side derivative terms",
+              "Presence of first vs second derivative on input",
+              "Numeric scaling of $x$ and $y$ coefficients"
+            ]
+          },
+          "handoff_notes": "Keep side-by-side transforms visible in the worked explanation so question generation can vary coefficient/sign structure safely."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Isolating H(s)=Y(s)/X(s) from the Transformed Equation",
+          "step_type": "example",
+          "learning_goal": "Train isolated transfer-function extraction by dividing by the $Y(s)$ or $X(s)$ side and producing an explicit symbolic expression for $H(s)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image is required; algebraic isolation is the target skill."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "From $(s^2+2s+1)Y(s)=(3s+4)X(s)$, select the correct $H(s)=\\frac{Y(s)}{X(s)}$.",
+            "distractor_plan": [
+              "Use reciprocal ratio $\\frac{X(s)}{Y(s)}$.",
+              "Drop the constant term in the $Y$-side polynomial.",
+              "Place the numerator as $(3s+4)(s^2+2s+1)$.",
+              "Reverse the sign structure of one factor in the numerator."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "From $(s+1)Y(s)+(2s+3)Y(s)=(4s+5)X(s)$, isolate $H(s)=\\frac{Y(s)}{X(s)}$ as a single rational function.",
+            "worked_solution_goal": "Produce $H(s)=\\frac{4s+5}{3s+4}$ from $(3s+4)Y(s)=(4s+5)X(s)$, simplified to canonical rational form.",
+            "variation_from_previous": "Extends beyond the previous equation by including separate grouped $Y(s)$ terms that must be combined before division.",
+            "solution_step_plan": [
+              "Combine like $Y(s)$ terms on the left and express as a single polynomial factor times $Y(s)$.",
+              "Divide both sides by $X(s)$ to form $\\frac{Y(s)}{X(s)}$.",
+              "Simplify the ratio and keep numerator/denominator explicitly identified.",
+              "Optionally re-express in factored or expanded denominator based on downstream reuse.",
+              "Confirm the expression is in rational-function form suitable for pole/stability follow-up."
+            ],
+            "practice_variation_axes": [
+              "Combined $Y(s)$ terms before isolation",
+              "Need to simplify arithmetic in $s$-polynomials before division",
+              "Equivalent equivalent forms (expanded vs factored)"
+            ]
+          },
+          "handoff_notes": "Keep a strict algebraic isolation pattern so question prompts can swap coefficients without changing workflow."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Writing H(s) as a Rational Function for Pole and Stability Analysis",
+          "step_type": "example",
+          "learning_goal": "Convert the isolated transfer function into explicit rational form and name the denominator polynomial for pole/stability use.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; use symbolic factorization and coefficient form only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Select the correct rational form and denominator polynomial for $H(s)=\\frac{2s+1}{s^2+4s+3}$ and identify the pole candidates.",
+            "distractor_plan": [
+              "Treat numerator factors as denominator factors in the same expression.",
+              "Report poles from zeros without computing denominator roots.",
+              "Alter the sign of the linear coefficient in the denominator.",
+              "Use $s^2-4s+3$ instead of $s^2+4s+3$ as the characteristic denominator."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite $\\frac{5s+2}{(s+1)(s+3)}$ as a single rational form and state the characteristic denominator polynomial used for pole evaluation.",
+            "worked_solution_goal": "Express $H(s)=\\frac{5s+2}{s^2+4s+3}$ and identify poles at $s=-1,-3$ with stability interpretation in the left half-plane pattern.",
+            "variation_from_previous": "Changes only denominator representation from expanded to factored form to reinforce consistent pole extraction in either form.",
+            "solution_step_plan": [
+              "Expand or factor the denominator cleanly so both forms are visible.",
+              "Mark numerator and denominator explicitly in rational form.",
+              "Solve denominator roots and map to pole locations.",
+              "Note the pole-location condition for LTI stability in this module context."
+            ],
+            "practice_variation_axes": [
+              "Expanded-to-factorized denominator conversion",
+              "Stable/unstable sign variants in denominator coefficients",
+              "Simple numerator coefficient swaps while keeping pole logic unchanged"
+            ]
+          },
+          "handoff_notes": "Keep pole notation stable and consistent with later module steps on computing poles and stability."
+        }
+      ]
+    },
+    {
+      "lesson_index": 2,
+      "lesson_title": "RC Transfer Functions in the $s$-Domain",
+      "lesson_core_move": "Derive first-order RC circuit transfer functions in the s-domain by replacing capacitors with 1/(sC), applying voltage or current division to form H(s)=Y(s)/X(s), and interpreting the resulting pole-zero structure in terms of time constant and low-pass or high-pass behavior.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to RC Transfer Functions in the $s$-Domain",
+          "step_type": "tutorial",
+          "learning_goal": "Orient the learner to the RC transfer-function workflow: convert capacitor behavior to the s-domain, map circuit nodes to Laplace signals, and set up $H(s)=Y(s)/X(s)$ before practicing multiple examples.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Annotated series RC circuit with input node labeled $V_{in}$, resistor $R$, capacitor $C$, output node labeled $V_o$, and ground references.",
+            "visual_elements": [
+              "series RC schematic",
+              "node labels $V_{in}$ and $V_o$",
+              "ground symbol"
+            ],
+            "image_generation_notes": "Use one clean diagram that reinforces branch order and output-node placement for both low-pass and high-pass variants."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "No practice question in the tutorial section; begin practice in the first example section.",
+            "distractor_plan": [
+              "N/A"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the exact procedure for $s$-domain RC modeling: (1) set $Z_C=\\frac{1}{sC}$, (2) apply divider or ratio logic, and (3) reduce to a first-order rational $H(s)$ with identifiable pole and optional zero.",
+            "base_case": "Use a series RC with output across the capacitor first, where the final form is the canonical low-pass ratio.",
+            "paragraph_plan": [
+              "Introduce why transfer functions replace differential-equation derivations in this sequence.",
+              "State the impedance substitutions and define the output/input Laplace ratio $H(s)=V_o(s)/V_i(s)$.",
+              "Show the divider setup for a canonical RC branch and a minimal algebraic simplification.",
+              "Show that changing only output node choice yields complementary filter behavior.",
+              "Preview the step-by-step pattern the next sections will repeat for low-pass, high-pass, and interpretation."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{V_o(s)}{V_i(s)}$$",
+              "$$Z_C=\\frac{1}{sC}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A",
+            "worked_solution_goal": "N/A",
+            "variation_from_previous": "N/A",
+            "solution_step_plan": [
+              "N/A"
+            ],
+            "practice_variation_axes": [
+              "N/A"
+            ]
+          },
+          "handoff_notes": "Keep this section free of extra calculations; the goal is a single clear target move and minimal cognitive overhead before example sections."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Writing the $s$-Domain RC Voltage Divider",
+          "step_type": "example",
+          "learning_goal": "Compute the low-pass capacitor-output transfer function using voltage division and obtain a normalized first-order model.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Series RC voltage-divider diagram with $V_i$ on the left, $R$ then $C$ to ground, and $V_o$ across $C$.",
+            "visual_elements": [
+              "series RC diagram",
+              "divider node labels",
+              "capacitor across output"
+            ],
+            "image_generation_notes": "Match notation and orientation used in the tutorial."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For a series RC network with $V_o$ across $C$, compute $H(s)=\\frac{V_o(s)}{V_i(s)}$ and pick the equivalent first-order form.",
+            "distractor_plan": [
+              "One choice uses $Z_C=sC$ instead of $1/(sC)$.",
+              "One choice inverts the voltage divider ratio.",
+              "One choice places $R$ and $C$ in incorrect algebraic positions.",
+              "One choice leaves out the identity term in the denominator.",
+              "One choice has incorrect pole location sign."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write the transfer function for a series RC circuit where $V_o$ is the capacitor voltage and reduce it to a standard first-order form.",
+            "worked_solution_goal": "Produce the correct expression $H(s)=\\frac{1}{1+sRC}$ and state the implied pole-time constant pair.",
+            "variation_from_previous": "This is the first worked example that applies the tutorial workflow to concrete algebra.",
+            "solution_step_plan": [
+              "Replace $C$ with $\\frac{1}{sC}$.",
+              "Apply divider $H(s)=\\frac{Z_C}{R+Z_C}$.",
+              "Multiply numerator and denominator by $sC$.",
+              "Normalize so the denominator is $1+sRC$ and identify $\\tau=RC$."
+            ],
+            "practice_variation_axes": [
+              "substitute different positive values of $R$ and $C$",
+              "numeric-to-symbolic conversion",
+              "rearrangement of equivalent algebraic forms"
+            ]
+          },
+          "handoff_notes": "Ensure the worked example includes a fully simplified rational $H(s)$ to support mirrored practice generation."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Deriving a Low-Pass RC Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Explicitly derive the low-pass RC transfer function and connect the form to DC gain and cutoff behavior.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Series RC low-pass diagram with output across the capacitor and frequency-attenuation note for high $\\omega$.",
+            "visual_elements": [
+              "low-pass RC topology",
+              "output node on capacitor",
+              "simple frequency tag"
+            ],
+            "image_generation_notes": "Use the same geometry as section 2 while labeling the same nodes."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given $H(s)=\\frac{1}{1+sRC}$ with positive $R, C$, choose the correct low-frequency and high-frequency interpretation and identify $\\tau$.",
+            "distractor_plan": [
+              "Include a zero-gain-at-DC distractor.",
+              "Include distractors with wrong pole placement.",
+              "Include distractors with incorrect expression $\\omega_c=RC$.",
+              "Include a distractor that swaps numerator and denominator.",
+              "Include distractors with high-frequency gain not tending to zero."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Derive the low-pass expression and compute $\\tau$, $\\omega_c$, and $H(0)$ for a capacitor-output RC divider.",
+            "worked_solution_goal": "Return $H(s)=\\frac{1}{1+sRC}$, $\\tau=RC$, $\\omega_c=1/RC$, and explain why it is low-pass.",
+            "variation_from_previous": "Extends the divider derivation with interpretation of DC/AC limits and cutoff parameter.",
+            "solution_step_plan": [
+              "Write $H(s)$ from divider in symbolic form.",
+              "Normalize and extract $\\tau=RC$.",
+              "Compute $\\lim_{s\\to 0}H(s)$ and $\\lim_{s\\to\\infty}H(s)$.",
+              "Convert to interpretation: low-pass behavior."
+            ],
+            "practice_variation_axes": [
+              "numeric substitution of $R,C$ values",
+              "sign and simplification checks",
+              "limit-based classification checks"
+            ]
+          },
+          "handoff_notes": "Keep one worked example plus two-step interpretation so question generator can mirror with slight numeric perturbations."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Deriving a High-Pass RC Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Derive the high-pass RC transfer function and contrast it with the low-pass form through zero location and asymptotic gains.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Series RC high-pass schematic with output marked across resistor node in the same layout as the low-pass section.",
+            "visual_elements": [
+              "high-pass output-at-resistor diagram",
+              "node annotation"
+            ],
+            "image_generation_notes": "Visual is needed only to show the output-node flip from low-pass to high-pass."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For output across $R$, compute $H(s)$ and classify the filter type from $H(0)$ and $H(\\infty)$.",
+            "distractor_plan": [
+              "Include a low-pass-form distractor from section 3 copied with unchanged numerator.",
+              "Include one distractor with pole sign errors.",
+              "Include one distractor with no zero at the origin.",
+              "Include one distractor with incorrect high-frequency limit.",
+              "Include one distractor with reciprocal time constant."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Derive $H(s)$ for the same RC network but with $V_o$ across $R$, then interpret numerator and limits.",
+            "worked_solution_goal": "Return the canonical high-pass form $H(s)=\\frac{sRC}{1+sRC}$ and show $H(0)=0$, $H(\\infty)=1$.",
+            "variation_from_previous": "Keep algebra the same and change only output tap to produce the complementary transfer form.",
+            "solution_step_plan": [
+              "Place output across resistor and write divider expression.",
+              "Substitute element impedances and simplify.",
+              "Normalize to first-order standard form and identify poles/zeros.",
+              "Evaluate DC and high-frequency limits for behavior label."
+            ],
+            "practice_variation_axes": [
+              "output-node swap",
+              "limit-check focus",
+              "coefficient scaling with constants"
+            ]
+          },
+          "handoff_notes": "Do not over-expand this section; it should directly contrast with the low-pass derivation in one controlled step."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Reading Poles, Zeros, and Time Constant from an RC Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Extract pole, zero, and $\\tau$ from $H(s)$ forms without re-deriving circuit equations.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visuals required; all data is algebraic and tabular."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "For $H(s)=\\frac{1}{1+sRC}$ and $H(s)=\\frac{sRC}{1+sRC}$, choose the correct pole, zero, and $\\tau$ pair.",
+            "distractor_plan": [
+              "Include options with complex-pole conclusions for real first-order denominators.",
+              "Include options that place zero at $-1/(RC)$.",
+              "Include options missing the $s$ term in the zero-numerator high-pass form.",
+              "Include options with $\\tau=1/(RC)$ mislabelled as pole value.",
+              "Include options that reverse low-pass/high-pass structural signatures."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Identify poles and zeros for both low-pass and high-pass RC transfer functions, then map each to $\\tau=RC$.",
+            "worked_solution_goal": "Correctly read $N(s)$ and $D(s)$ to report zero/pole structure and time constant.",
+            "variation_from_previous": "Shifts from deriving formulas to rapid structural diagnosis from existing rational expressions.",
+            "solution_step_plan": [
+              "Write each function in $\\frac{N(s)}{D(s)}$ form.",
+              "Set $N(s)=0$ for zeros and $D(s)=0$ for poles.",
+              "Extract $\\tau$ from the $sRC$ factor.",
+              "Summarize stability condition for $R,C>0$."
+            ],
+            "practice_variation_axes": [
+              "presence or absence of $s$ term in numerator",
+              "coefficient order in denominator",
+              "sign of coefficients"
+            ]
+          },
+          "handoff_notes": "Keep questions symbolic and directly map-to-form; this section builds classification speed before mixed review-style questions."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Classifying RC Filter Behavior from an $s$-Domain Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Classify RC first-order transfer functions as low-pass or high-pass using zero position and limiting gains.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram required; classification is from $H(s)$ expressions and limits."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "expression",
+            "practice_question_model": "Given $H(s)=\\frac{4sRC}{1+sRC}$ and $H(s)=\\frac{1}{1+sRC}$, classify each as high-pass or low-pass with endpoint checks.",
+            "distractor_plan": [
+              "Include distractors classifying by magnitude alone and ignoring numerator zero.",
+              "Include distractors that confuse gain scaling with filter type.",
+              "Include distractors that infer wrong behavior at $s=0$.",
+              "Include distractors that invert low/high asymptotic claims.",
+              "Include distractors with incorrect stable pole interpretation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given two candidate RC transfer functions, classify each as low-pass or high-pass and justify with $H(0)$ and $H(\\infty)$.",
+            "worked_solution_goal": "Produce correct classification for both with concise reasoning tied to zeros and limit behavior.",
+            "variation_from_previous": "Applies the structural extraction from section 5 to behavioral interpretation and decision-making.",
+            "solution_step_plan": [
+              "Compute $\\lim_{s\\to 0}H(s)$ and $\\lim_{s\\to \\infty}H(s)$.",
+              "Use zero presence to reinforce DC behavior.",
+              "Use pole location and $\\tau$ to discuss monotonic decay.",
+              "Label final behavior as low-pass or high-pass."
+            ],
+            "practice_variation_axes": [
+              "scale factors in numerator",
+              "mixed ordering of provided transfer functions",
+              "different stable first-order parameter values"
+            ]
+          },
+          "handoff_notes": "Prefer answer choices that mix close functional forms so learners must use limit checks, not only memory patterns."
+        }
+      ]
+    },
+    {
+      "lesson_index": 3,
+      "lesson_title": "RLC Circuit Differential Equation",
+      "lesson_core_move": "Derive the second-order input-output differential equation of an RLC circuit from Kirchhoff laws and element relations, identifying the coefficients that will become the circuit transfer function denominator and pole locations.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to RLC Circuit Differential Equation",
+          "step_type": "tutorial",
+          "learning_goal": "Orient the learner to a series RLC model and the target equation form $LC\\,\\frac{d^2 y(t)}{dt^2}+RC\\,\\frac{d y(t)}{dt}+y(t)=x(t)$ before any substitution-heavy algebra.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Schematic of a single-loop series RLC circuit with source input $x(t)$, resistor $R$, inductor $L$, capacitor $C$, and output $y(t)$ taken across the capacitor.",
+            "visual_elements": [
+              "series source-loop with R, L, C symbols",
+              "input label $x(t)$",
+              "output label $y(t)$ across capacitor"
+            ],
+            "image_generation_notes": "Minimal technical line drawing, no decorative styling. Clear node labels and current direction arrow in a single loop."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "N/A",
+            "distractor_plan": [
+              "N/A"
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the direct move: apply one-loop KVL to a series RLC and connect element equations to create one differential equation in $y(t)$ and $x(t)$.",
+            "base_case": "Use a single series topology with $v_R$, $v_L$, $v_C$, same-current loop, and output on the capacitor.",
+            "paragraph_plan": [
+              "Name input $x(t)$, output $y(t)=v_C(t)$, and define loop current $i(t)$ for all three passive elements.",
+              "State branch equations $v_R(t)=R i(t)$, $v_L(t)=L\\,\\frac{d i(t)}{dt}$, and $i(t)=C\\,\\frac{d y(t)}{dt}$.",
+              "Write one-loop KVL in symbolic form $x(t)=v_R(t)+v_L(t)+v_C(t)$ and show what substitution target it enables.",
+              "Preview coefficient interpretation: the resulting constant, first-derivative, and second-derivative multipliers become denominator coefficients for later pole work."
+            ],
+            "display_math_plan": [
+              "$$x(t)=v_R(t)+v_L(t)+y(t)$$",
+              "$$v_R(t)=R\\,i(t),\\; v_L(t)=L\\,\\frac{d i(t)}{dt},\\; i(t)=C\\,\\frac{d y(t)}{dt}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A",
+            "worked_solution_goal": "N/A",
+            "variation_from_previous": "N/A",
+            "solution_step_plan": [
+              "N/A"
+            ],
+            "practice_variation_axes": [
+              "N/A"
+            ]
+          },
+          "handoff_notes": "Keep this section strictly conceptual and short so the first worked example can start from the explicit KVL form without overloading cognitive load."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Writing Kirchhoff's Law for a Series RLC Circuit",
+          "step_type": "example",
+          "learning_goal": "Derive the raw KVL expression for a series RLC loop and explicitly express every loop term in time-domain symbols.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "section-only",
+            "image_description_seed": "Series RLC loop with labels and arrows for current direction, showing output node at capacitor and source at input node.",
+            "visual_elements": [
+              "RLC loop nodes with reference direction",
+              "input and output annotation"
+            ],
+            "image_generation_notes": "Reuse same layout as introductory schematic so students can transfer directly across sections."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "For a series RLC with $x(t)$ input and $y(t)$ output across the capacitor, choose the correct un-substituted KVL equation.",
+            "distractor_plan": [
+              "Drop one of the three element voltages from the KVL sum.",
+              "Use subtraction or wrong sign on a voltage drop in the sum.",
+              "Write source equation as product of elements instead of sum.",
+              "Use current as output symbol in place of $y(t)$.",
+              "Omit dependence on time in $x(t)$ and $y(t)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Write the KVL equation for the shown series RLC circuit with input $x(t)$ and output $y(t)=v_C(t)$.",
+            "worked_solution_goal": "Produce the explicit loop identity $x(t)=v_R(t)+v_L(t)+v_C(t)$ using the same current direction used in the diagram.",
+            "variation_from_previous": "The tutorial introduced the same diagram; this step applies it with formal KVL notation and explicit branch-sum structure.",
+            "solution_step_plan": [
+              "Restate the loop and current direction from the diagram.",
+              "Write one KVL equation equating source voltage to the series sum of branch voltages.",
+              "Label each term with its associated component to prevent sign ambiguity."
+            ],
+            "practice_variation_axes": [
+              "Change only variable symbols (for example, $x\\to u$, $y\\to v_C$)",
+              "Swap explicit naming of source/output while preserving topology"
+            ]
+          },
+          "handoff_notes": "Keep sign conventions identical to Tutorial image so later example and question stages do not need reinterpretation of direction."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Substituting Resistor, Inductor, and Capacitor Relations",
+          "step_type": "example",
+          "learning_goal": "Replace branch voltages with algebraic and differential relations to obtain one equation in $x(t)$, $y(t)$, and derivatives of $y(t)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image required; all transformations are symbolic and can be done from prior equations."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Substitute $v_R=R C\\,\\frac{d y(t)}{dt}$ and $v_L=L C\\,\\frac{d^2 y(t)}{dt^2}$ into KVL and select the correct resulting expression.",
+            "distractor_plan": [
+              "Use $v_R=\\frac{1}{R}i(t)$ instead of $R i(t)$.",
+              "Use $v_L=L i(t)$ instead of derivative relation.",
+              "Use $i(t)=\\frac{1}{C}\\,\\frac{d y(t)}{dt}$ sign-corrected wrong.",
+              "Omit one derivative order, collapsing to first-order only.",
+              "Place $y(t)$ outside KVL sum while replacing only $v_C$ with $y(t)$ incorrectly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "From the KVL identity in the previous step, substitute $v_R(t)$, $v_L(t)$, and $v_C(t)$ to write the differential expression in terms of $y(t)$ and its derivatives.",
+            "worked_solution_goal": "Obtain $x(t)=R C\\,\\frac{d y(t)}{dt}+L C\\,\\frac{d^2 y(t)}{dt^2}+y(t)$.",
+            "variation_from_previous": "Extends Step 2 by adding the constitutive substitutions; no new topology or conventions are introduced.",
+            "solution_step_plan": [
+              "Replace each branch voltage in KVL with its element relation.",
+              "Replace $i(t)$ in resistor and inductor expressions with $C\\,\\frac{d y(t)}{dt}$.",
+              "Group terms into the standard linear combination with $x(t)$ on left and $y(t)$ derivatives on right."
+            ],
+            "practice_variation_axes": [
+              "Change numerical parameter labels $R$, $L$, $C$",
+              "Replace $x(t)$/$y(t)$ with $u(t)$/$z(t)$ while preserving structure"
+            ]
+          },
+          "handoff_notes": "Check derivative order and multiplication order carefully; this is where most sign/order errors occur."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Eliminating Intermediate Variables to Relate Input and Output",
+          "step_type": "example",
+          "learning_goal": "Eliminate intermediate current terms and isolate a direct differential relation between $x(t)$ and $y(t)$.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram needed; this is pure algebraic elimination and rearrangement."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Use $i(t)=C\\,\\frac{d y(t)}{dt}$ and simplify the substituted KVL form to produce the equivalent input-output differential equation.",
+            "distractor_plan": [
+              "Leave $i(t)$ or $\\frac{d y}{dt}$ terms mixed together in the final equation.",
+              "Move $y(t)$ to the wrong side causing sign inversion.",
+              "Multiply through by $1/C$ instead of simplifying, causing coefficient mistakes.",
+              "Lose constant-coefficient term on $y(t)$.",
+              "Conflate numerator/denominator coefficient placement by using $L y(t)$ instead of $LC y''(t)$."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Simplify the substituted equation from Step 3 to remove any intermediate current variable and write the final input-output differential equation.",
+            "worked_solution_goal": "Show explicitly how $LC\\,y''(t)+RC\\,y'(t)+y(t)=x(t)$ emerges from substitution and algebraic grouping.",
+            "variation_from_previous": "Adds the elimination step only; it does not introduce a new physical relation.",
+            "solution_step_plan": [
+              "Collect $y''(t)$, $y'(t)$, and $y(t)$ terms with matching factors.",
+              "Move all terms to the same side in a single explicit differential equation.",
+              "State final simplified ODE with source on right for later standardization."
+            ],
+            "practice_variation_axes": [
+              "Swap the order of simplification steps while preserving final relation",
+              "Use equivalent notation such as $\\dot y$, $\\ddot y$ instead of derivative fractions"
+            ]
+          },
+          "handoff_notes": "Keep the step focused on elimination, not solving or classification, to retain a clean transition to standard-form normalization."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Arranging the RLC Equation in Standard Second-Order Form",
+          "step_type": "example",
+          "learning_goal": "Normalize the differential equation into standard second-order form and expose coefficient roles for stability and pole extraction later.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Normalize $LC\\,y''(t)+RC\\,y'(t)+y(t)=x(t)$ by dividing by $LC$ and identify coefficients $a_1=\\frac{R}{L}$ and $a_0=\\frac{1}{LC}$.",
+            "distractor_plan": [
+              "Divide by $R C$ or $L$ inconsistently instead of $L C$.",
+              "Swap $a_0$ and $a_1$ assignments.",
+              "Drop the right-hand-side scaling of $x(t)$.",
+              "Keep coefficients as reciprocals of each other due to algebraic inversion error.",
+              "Use derivative signs with the source term instead of output coefficients."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite the derived ODE in standard form $y''(t)+a_1 y'(t)+a_0 y(t)=b_0 x(t)$ and compute $a_1$ and $a_0$.",
+            "worked_solution_goal": "Show normalized coefficients for immediate transfer-function denominator structure: $y''(t)+\\frac{R}{L}y'(t)+\\frac{1}{LC}y(t)=\\frac{1}{LC}x(t)$.",
+            "variation_from_previous": "This is the algebraic normalization pass on the same derived equation to expose coefficient interpretation cleanly.",
+            "solution_step_plan": [
+              "Divide the entire ODE by $L C$.",
+              "Group into $y''+a_1 y' + a_0 y = b_0 x$.",
+              "Record identified coefficients and units for handoff into next lesson topic."
+            ],
+            "practice_variation_axes": [
+              "Given numeric parameter values, compute $a_1$, $a_0$, and $b_0$",
+              "Given generic symbols, classify which coefficient is damping versus stiffness"
+            ]
+          },
+          "handoff_notes": "This section is the direct bridge to RLC transfer function work; preserve exact coefficient definitions to avoid mismatch in next topic."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Identifying Coefficients That Determine RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Read the normalized ODE coefficients as the denominator polynomial parameters that determine pole location in the $s$-domain.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; this is a symbolic coefficient-to-pole interpretation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "symbolic-expression",
+            "practice_question_model": "Given $L$, $R$, $C$, identify the denominator polynomial and choose the equivalent pole-shape classification.",
+            "distractor_plan": [
+              "Read numerator-style coefficients as denominator poles.",
+              "Use numerator $LC$ and constant $\\frac{1}{LC}$ in wrong places.",
+              "Skip normalization and read coefficients directly from nonstandard form.",
+              "Treat damping ratio and natural frequency formulas as if signs were all positive.",
+              "Ignore coefficient sign, predicting stability from magnitudes only."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "N/A"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "From $y''+\\frac{R}{L}y'+\\frac{1}{LC}y=\\frac{1}{LC}x$, form the characteristic denominator and map coefficients to pole form.",
+            "worked_solution_goal": "Identify denominator $D(s)=L C s^2 + R C s + 1$ (or normalized $s^2+\\frac{R}{L}s+\\frac{1}{LC}$) and connect signs/coefficients to pole location trends.",
+            "variation_from_previous": "Uses the same normalized ODE and adds the single interpretation layer required for transfer-function readiness.",
+            "solution_step_plan": [
+              "Write characteristic polynomial by replacing $d/dt\\to s$ on homogeneous terms.",
+              "Express denominator coefficients in both unnormalized and normalized forms.",
+              "Explain how positive $\\frac{R}{L}$ and positive $\\frac{1}{LC}$ imply left-half-plane poles under ideal passive component assumptions."
+            ],
+            "practice_variation_axes": [
+              "Vary $R$, $L$, and $C$ signs/magnitudes and ask for damping trend",
+              "Vary starting form between normalized and unnormalized equation conventions"
+            ]
+          },
+          "handoff_notes": "Keep interpretation local to this lesson; avoid solving quadratic formulas or giving full stability classifications, which are covered in later lessons."
+        }
+      ]
+    },
+    {
+      "lesson_index": 4,
+      "lesson_title": "RLC Circuit Transfer Function",
+      "lesson_core_move": "Derive the RLC circuit transfer function H(s)=Y(s)/X(s) by Laplace-transforming its differential equation and expressing the result as a rational s-domain input-output ratio for pole and stability analysis.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to RLC Circuit Transfer Function",
+          "step_type": "tutorial",
+          "learning_goal": "Set the direct-instruction target: derive a low-order rational transfer function $H(s)$ from the RLC differential equation and identify how the s-domain denominator drives pole-based stability checks.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual is required for this target move; derivation is algebraic in notation."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "No practice in this tutorial section.",
+            "practice_question_model": "No practice in this tutorial section.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the exact minimum-entropy path: start from one standard second-order RLC form, apply zero-initial-condition Laplace derivative substitutions, and produce one algebraic ratio $Y(s)/X(s)$.",
+            "base_case": "Begin with $L C\\,\\frac{d^2 y(t)}{dt^2}+R C\\,\\frac{dy(t)}{dt}+y(t)=x(t)$ and transform each derivative under zero initial conditions.",
+            "paragraph_plan": [
+              "Open with why this step matters: transfer functions require only one algebraic ratio, not repeated symbolic recomputation.",
+              "Name the only operations needed: (i) apply Laplace derivative mapping for zero initial conditions and (ii) collect terms in $Y(s)$ and $X(s)$.",
+              "Walk one canonical worked manipulation from differential form to $L C s^2Y(s)+R C sY(s)+Y(s)=X(s)$.",
+              "Show the equivalent ratio $\\frac{Y(s)}{X(s)}=\\frac{1}{L C s^2+R C s+1}$ and its normalized denominator form.",
+              "Conclude with what students must be able to do next: identify denominator polynomial and infer pole location behavior by sign/structure."
+            ],
+            "display_math_plan": [
+              "$$L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)$$",
+              "$$H(s)=\\frac{Y(s)}{X(s)}=\\frac{1}{L C\\,s^2+R C\\,s+1}=\\frac{1/(L C)}{s^2+(R/L)s+1/(L C)}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial step.",
+            "worked_solution_goal": "Not applicable for tutorial step.",
+            "variation_from_previous": "Not applicable for tutorial step.",
+            "solution_step_plan": [
+              "Not applicable for tutorial step."
+            ],
+            "practice_variation_axes": [
+              "Not applicable for tutorial step."
+            ]
+          },
+          "handoff_notes": "Keep this as a short, high-signal setup so example steps become mechanical algebra drills. Prefer no diagram image unless a course writer explicitly requests circuit illustration."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Laplace-Transforming an RLC Differential Equation",
+          "step_type": "example",
+          "learning_goal": "Convert a concrete RLC differential equation into a purely algebraic $s$-domain relation between $Y(s)$ and $X(s)$ using zero-initial-condition rules.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No circuit drawing is required to perform this transformation step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Algebraic expression in $s$, $Y(s)$, and $X(s)$.",
+            "practice_question_model": "For $L=2$, $R=3$, and $C=\\frac{1}{2}$, transform the equation $L C\\,\\frac{d^2 y(t)}{dt^2}+R C\\,\\frac{dy(t)}{dt}+y(t)=x(t)$ with zero initial conditions and identify the correct $s$-domain equation.",
+            "distractor_plan": [
+              "Include one option that incorrectly uses $sY(s)-y(0^-)$ or $sX(s)-x(0^-)$ despite zero initial conditions.",
+              "Include one option that maps a derivative to an additive $s+\\frac{dy}{dt}$ term instead of $s$-multiplication.",
+              "Include one option that drops the $Y(s)$ scaling on one derivative term.",
+              "Include one option that moves the constant term to the numerator of $\\frac{Y(s)}{X(s)}$ instead of the denominator."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Apply the Laplace transform to $L C\\,\\frac{d^2 y(t)}{dt^2}+R C\\,\\frac{dy(t)}{dt}+y(t)=x(t)$ under zero initial conditions and express the equation in terms of $Y(s)$ and $X(s)$.",
+            "worked_solution_goal": "Produce the transformed relation $L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)$.",
+            "variation_from_previous": "This is the first algebraic step and controls the move from symbols in time to symbols in $s$ with no approximation or graph-based work.",
+            "solution_step_plan": [
+              "Apply $\\mathcal{L}\\{\\frac{d^2y}{dt^2}\\}=s^2Y(s)-s y(0^-)-\\dot y(0^-)$ and set initial terms to zero.",
+              "Apply $\\mathcal{L}\\{\\frac{dy}{dt}\\}=sY(s)-y(0^-)$ and set the initial term to zero.",
+              "Replace $y(t)$ by $Y(s)$ and $x(t)$ by $X(s)$.",
+              "Collect all $Y(s)$ and $X(s)$ terms into one transformed equation.",
+              "Check dimensional consistency by confirming the equation is purely rational in $s$ and signal transforms."
+            ],
+            "practice_variation_axes": [
+              "Vary $L$, $R$, and $C$ parameter values.",
+              "Swap the output variable label from $y$ to another symbol while preserving structure.",
+              "Use $\\frac{d^n y}{dt^n}$ with $n=1,2$ as a nearby derivative-order variant only after this base case."
+            ]
+          },
+          "handoff_notes": "Example writer should keep arithmetic and substitution explicit; question generator should target identifying the exact transformed equation, not full pole solving yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Isolating the Output-to-Input Ratio",
+          "step_type": "example",
+          "learning_goal": "Isolate the core transfer ratio $H(s)=Y(s)/X(s)$ from the transformed equation and keep it as a single rational expression.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No diagram required; all required structure is in equation manipulation."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choice of equivalent rational expression for $H(s)$.",
+            "practice_question_model": "From $2C s^2Y(s)+3C sY(s)+Y(s)=X(s)$ (with $C=1$), choose the correct simplified transfer function $H(s)=Y(s)/X(s)$.",
+            "distractor_plan": [
+              "Include one option that inverts the ratio ($X(s)/Y(s)$).",
+              "Include one option that adds the numerator terms and denominator terms incorrectly.",
+              "Include one option that forgets to divide by a common denominator coefficient.",
+              "Include one option that incorrectly multiplies numerator and denominator by $s$ or $s^{-1}$ without preserving equality."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "From the transformed relation $L C\\,s^2Y(s)+R C\\,sY(s)+Y(s)=X(s)$, isolate $\\frac{Y(s)}{X(s)}$ in one fraction.",
+            "worked_solution_goal": "Create a clean ratio $H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}$ and note that all dependence on input appears in $X(s)$ only.",
+            "variation_from_previous": "Extends the prior section by introducing explicit algebraic isolation and fraction structure required for later rational-form interpretation.",
+            "solution_step_plan": [
+              "Factor $Y(s)$ from all left-side terms.",
+              "Divide both sides of the equation by $X(s)$.",
+              "Express the result as a single rational fraction with $Y(s)/X(s)$ on the left.",
+              "Optional normalization: divide numerator and denominator by $L C$ to reveal standard second-order template terms.",
+              "State $H(s)$ as a pole-analysis-ready form and avoid simplifying to decimal-only coefficients unless parameters are numeric."
+            ],
+            "practice_variation_axes": [
+              "Change coefficient values while preserving algebraic structure.",
+              "Use normalized form or unnormalized form for $H(s)$.",
+              "Ask for pole-form rewriting as a second-order template."
+            ]
+          },
+          "handoff_notes": "Keep the fraction operation explicit to reinforce automaticity and reduce cognitive overload before moving to denominator interpretation."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Writing an RLC Transfer Function as a Rational Function of s",
+          "step_type": "example",
+          "learning_goal": "Rewrite $H(s)$ as a rational function with a standardized denominator so pole behavior is directly readable.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed for this algebraic normalization step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Choice of equivalent standardized rational form.",
+            "practice_question_model": "For $L=1$, $R=4$, $C=1/2$, write the normalized form of $H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}$ and choose the correct denominator coefficients.",
+            "distractor_plan": [
+              "Include one option that scales numerator and denominator inconsistently.",
+              "Include one option that normalizes by the wrong leading coefficient.",
+              "Include one option that changes the sign pattern of the denominator terms.",
+              "Include one option that omits the leading $s^2$ term in denominator normalization."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Rewrite $H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}$ as $\\frac{K}{s^2+(R/L)s+1/(L C)}$ for $L=1$, $R=4$, $C=\\frac12$.",
+            "worked_solution_goal": "Produce $H(s)$ in normalized form that exposes the standard second-order denominator coefficients clearly.",
+            "variation_from_previous": "Moves from the raw ratio to a canonical rational shape; this is the key transition used by stability and frequency-analysis stages.",
+            "solution_step_plan": [
+              "Start from $H(s)=\\frac{1}{L C\\,s^2+R C\\,s+1}$.",
+              "Divide numerator and denominator by $L C$.",
+              "Report canonical denominator coefficients $\\frac{R}{L}$ and $\\frac{1}{L C}$.",
+              "Substitute requested numeric values and simplify cleanly without decimal creep.",
+              "Keep both unnormalized and normalized forms as explicit checkpoints."
+            ],
+            "practice_variation_axes": [
+              "Vary $(L,R,C)$ numeric values while keeping symbolic derivation flow identical.",
+              "Ask for identifying $K$, coefficient of $s$, and constant term in the denominator.",
+              "Swap between raw and normalized denominator conventions to test fluency."
+            ]
+          },
+          "handoff_notes": "Question generator should include one distractor where denominator signs are flipped, since that error commonly blocks pole interpretation."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Identifying the Denominator Polynomial for Pole Analysis",
+          "step_type": "example",
+          "learning_goal": "Extract and interpret the characteristic denominator polynomial to make it usable for pole and stability reasoning in subsequent topics.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No pole-zero plot needed here; this step is polynomial extraction only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "Algebraic polynomial/roots form.",
+            "practice_question_model": "Given $H(s)=\\frac{2}{s^2+3s+2}$ from an RLC derivation, identify the denominator polynomial and its associated characteristic roots.",
+            "distractor_plan": [
+              "Include one option with sign errors on root expressions.",
+              "Include one option that selects numerator coefficients instead of denominator coefficients.",
+              "Include one option that confuses the polynomial degree (e.g., linear instead of quadratic).",
+              "Include one option that drops a factor of $s^2$ in the characteristic polynomial."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "From $H(s)=\\frac{1}{s^2+3s+2}$, state the characteristic polynomial and list the two poles.",
+            "worked_solution_goal": "Identify the denominator polynomial $D(s)=s^2+3s+2$ and its roots as the pole set for stability-oriented follow-up work.",
+            "variation_from_previous": "This is the final extraction step in the topic, turning normalized rational form into a stability-relevant polynomial object.",
+            "solution_step_plan": [
+              "Read $H(s)$ in denominator-first form and label $D(s)$.",
+              "Write $D(s)$ as a standard characteristic polynomial.",
+              "Solve or factor $D(s)$ to surface poles.",
+              "Classify each pole’s real part sign at a coarse level for quick stability signaling.",
+              "Record $D(s)$ and roots in a compact checkpoint statement for later step sessions."
+            ],
+            "practice_variation_axes": [
+              "Vary coefficients while preserving quadratic pattern.",
+              "Test repeated roots and complex conjugate variants once factoring is known.",
+              "Use non-integer coefficients that still factor or require quadratic formula."
+            ]
+          },
+          "handoff_notes": "Do not include $s$-plane plotting in this section; keep scope to algebraic extraction and pole candidates as a direct bridge to the next lesson on pole computation."
+        }
+      ]
+    },
+    {
+      "lesson_index": 5,
+      "lesson_title": "Computing Poles of an RLC Circuit",
+      "lesson_core_move": "Compute the poles of an RLC circuit by solving the denominator of its transfer function as a characteristic polynomial in s and locating the roots used for stability interpretation.",
+      "section_count": 6,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Computing Poles of an RLC Circuit",
+          "step_type": "tutorial",
+          "learning_goal": "Connect the RLC transfer-function denominator to the characteristic equation and define what pole roots represent in s-domain stability language.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed in this tutorial because the step is fully based on symbolic form from previous transfer-function context."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "Not applicable; tutorial step produces no practice questions.",
+            "practice_question_model": "No practice question is required in this tutorial section.",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the exact move: identify the characteristic polynomial from $H(s)=\\dfrac{N(s)}{D(s)}$, set $D(s)=0$, and interpret the resulting roots as poles for stability classification before practicing root solving.",
+            "base_case": "Use $H(s)=\\dfrac{1}{s+1}$ and show the single pole at $s=-1$ as the baseline stability pattern before moving to second-order RLC forms.",
+            "paragraph_plan": [
+              "Open by linking this step to the previous topic: the RLC transfer function was already derived in algebraic form as a rational function.",
+              "Define the denominator polynomial $D(s)$ and call it the characteristic polynomial.",
+              "Show that poles are the solutions of $D(s)=0$ and explain the sign test in the next step of lesson.",
+              "Give a short contrast of pole location intuition in the $s$-plane: left-half-plane poles decay, right-half-plane poles grow.",
+              "End with a transition sentence that previews discriminant-based cases handled in later examples."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)}$$",
+              "$$D(s)=0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Not applicable for tutorial section.",
+            "worked_solution_goal": "Not applicable for tutorial section.",
+            "variation_from_previous": "Not applicable for tutorial section.",
+            "solution_step_plan": [
+              "Not applicable for tutorial section."
+            ],
+            "practice_variation_axes": [
+              "Not applicable for tutorial section."
+            ]
+          },
+          "handoff_notes": "Keep this section minimal and concrete; students should have an immediate symbolic target and no extra diagram load before example practice begins."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Identifying the RLC Characteristic Polynomial",
+          "step_type": "example",
+          "learning_goal": "Write the RLC denominator as a standard characteristic polynomial in s and isolate it for root solving.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual artifact is required; the denominator extraction is algebraic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices labeled A--E",
+            "practice_question_model": "From $H(s)=\\dfrac{10}{LC\\,s^2+RC\\,s+1}$, identify the characteristic polynomial and its normalized form to prepare for solving for poles.",
+            "distractor_plan": [
+              "Include wrong distractors that incorrectly use numerator coefficients or move all signs to the left incorrectly.",
+              "Include distractors that keep an unsimplified numerator-denominator mix, e.g., treating transfer-function gains as part of the polynomial.",
+              "Include distractors that omit the leading coefficient or reorder terms.",
+              "Include one distractor that uses $D(s)=0$ but with signs reversed and one that factors incorrectly."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$D(s)=LC\\,s^2+RC\\,s+1=0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $H(s)=\\dfrac{12}{2s^2+6s+3}$, state the characteristic polynomial and write the equation to solve for poles.",
+            "worked_solution_goal": "The learner extracts $D(s)=2s^2+6s+3$, divides to monic form $s^2+3s+\\tfrac{3}{2}=0$, and prepares for root computation.",
+            "variation_from_previous": "This first example converts a raw transfer-function denominator into a standardized characteristic polynomial without solving the roots yet.",
+            "solution_step_plan": [
+              "Read $H(s)$ as ratio form and isolate $D(s)$ in the denominator.",
+              "Rearrange to standard form and set $D(s)=0$ for pole equations.",
+              "Optionally normalize by dividing by the leading coefficient to get $s^2+bs+c$ form."
+            ],
+            "practice_variation_axes": [
+              "Different leading denominator coefficients.",
+              "Different constant terms while preserving a second-order denominator.",
+              "Reordering of terms to test extraction fluency."
+            ]
+          },
+          "handoff_notes": "This is a symbolic identification checkpoint; keep examples tightly aligned to form-matching rather than solving yet."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Computing Distinct Real RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Compute two unequal real poles from a second-order characteristic polynomial with positive discriminant.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed because all poles are expressed symbolically and classification is numeric."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices labeled A--E",
+            "practice_question_model": "For $s^2+4s+3=0$, choose the two real distinct poles and the implied stability statement.",
+            "distractor_plan": [
+              "Include one choice that picks the repeated-root form from the quadratic formula.",
+              "Include one choice that gives complex roots with imaginary part.",
+              "Include one choice that swaps sign on one root.",
+              "Include distractors that incorrectly skip normalization before using the quadratic formula."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$s^2+4s+3=0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find poles of $H(s)=\\dfrac{10}{s^2+4s+3}$ and classify them as distinct real poles.",
+            "worked_solution_goal": "Learner computes $\\Delta=16-12=4>0$, then $s=-1,-3$ as two distinct real roots and ties this to stable behavior.",
+            "variation_from_previous": "Build from section 2 by adding numerical root solving with a discriminant-based case where roots are distinct and real.",
+            "solution_step_plan": [
+              "Set polynomial to zero and compute the discriminant.",
+              "Apply quadratic formula explicitly.",
+              "Verify distinctness by confirming $\\Delta>0$ and interpret signs.",
+              "Summarize stability outcome for the pair."
+            ],
+            "practice_variation_axes": [
+              "Different positive discriminant values and coefficient sizes.",
+              "One root negative, one root positive to test stability awareness.",
+              "Equivalent factored forms to test procedural fluency."
+            ]
+          },
+          "handoff_notes": "Use this as the first root-computation pattern; keep answer choices aligned to discriminant logic."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Computing Repeated RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Compute the repeated pole case from zero discriminant and describe its repeated-root implication on response shape.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; this step is algebraic with repeated roots in closed form."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices labeled A--E",
+            "practice_question_model": "For $s^2+2s+1=0$, identify the repeated pole and select the correct root expression.",
+            "distractor_plan": [
+              "Include choice with two distinct roots from arithmetic mistakes.",
+              "Include one with conjugate pair notation.",
+              "Include one with wrong multiplicity (single pole only by mistake).",
+              "Include one with sign error in the repeated value."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$\\Delta=b^2-4ac=0$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Compute poles of $H(s)=\\dfrac{7}{s^2+2s+1}$ and write them as a repeated-pole result.",
+            "worked_solution_goal": "Learner computes $\\Delta=0$, then finds $s=-1$ with multiplicity 2 and notes this is an edge-case stable but non-oscillatory response in LTI form.",
+            "variation_from_previous": "This extends the previous case by moving from distinct real roots to repeated root recognition via discriminant thresholding.",
+            "solution_step_plan": [
+              "Read denominator and calculate discriminant.",
+              "Show $\\Delta=0$ and apply quadratic formula once.",
+              "Compute multiplicity 2 by using the repeated-root expression.",
+              "Annotate the qualitative implication without deriving full time response.",
+              "Keep classification language concise for later stability section."
+            ],
+            "practice_variation_axes": [
+              "Different monic and non-monic second-order examples that still give $\\Delta=0$.",
+              "Positive and negative repeated poles for sign-sensitive interpretation.",
+              "Factored vs expanded forms of the denominator."
+            ]
+          },
+          "handoff_notes": "Emphasize exact multiplicity to avoid conflating repeated poles with two distinct solutions."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Computing Complex-Conjugate RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Compute conjugate complex poles from negative discriminant and distinguish stable oscillatory vs unstable variants by real part sign.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; poles can be identified via quadratic formula with $j\\beta$ form and signed real part."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic answer choices labeled A--E",
+            "practice_question_model": "For $s^2+2s+5=0$, select the correctly ordered complex-conjugate poles and indicate stability class.",
+            "distractor_plan": [
+              "Include one choice with swapped real/imaginary parts.",
+              "Include one choice that omits the negative sign in the real part.",
+              "Include a choice using non-conjugate single-root options.",
+              "Include a distractor with reversed sign on discriminant under the square root."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": [
+              "$$\\Delta<0$$",
+              "$$s = -\\frac{b}{2a} \\pm j\\frac{\\sqrt{4ac-b^2}}{2a}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find poles of $H(s)=\\dfrac{4}{s^2+2s+5}$ and classify stability from the pair in the $s$-plane.",
+            "worked_solution_goal": "Learner computes $\\Delta=-16$, writes $s=-1\\pm 2j$, and notes the left-half-plane real part gives decaying oscillatory response.",
+            "variation_from_previous": "This step changes from repeated/real-root cases to conjugate-complex roots while preserving the same denominator template.",
+            "solution_step_plan": [
+              "Set $a=1$, $b=2$, $c=5$ in the characteristic equation.",
+              "Compute $\\Delta=4-20<0$.",
+              "Use complex root form to produce conjugate pair.",
+              "Interpret decaying oscillatory stability from negative real part."
+            ],
+            "practice_variation_axes": [
+              "Different coefficient sets yielding negative discriminant.",
+              "Sign changes in $b$ to test stability interpretation.",
+              "Different magnitudes of damping and oscillation frequency."
+            ]
+          },
+          "handoff_notes": "Keep conjugate notation explicit and consistent so mirrored questions can test both algebra and stability interpretation."
+        },
+        {
+          "section_index": 6,
+          "section_title": "Locating RLC Poles in the $s$-Plane",
+          "step_type": "example",
+          "learning_goal": "Map computed poles to a pole map and classify location in left-half-plane, right-half-plane, and on-axis cases for stability interpretation.",
+          "content_mode": "image-needed",
+          "image_policy": {
+            "section_image_needed": true,
+            "question_images_needed": true,
+            "answer_choice_images_needed": false,
+            "image_use": "section-and-questions",
+            "image_description_seed": "Create a clean s-plane plot with labeled real and imaginary axes, and mark poles as dots for each example in this section.",
+            "visual_elements": [
+              "s-plane axes",
+              "left-half-plane label",
+              "right-half-plane label",
+              "imaginary-axis boundary",
+              "dot markers for poles"
+            ],
+            "image_generation_notes": "Generate one reusable template image and vary pole coordinates for practice variants to preserve task variety while keeping visual schema stable."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five choice options in text (descriptions of stability regions and pole counts)",
+            "practice_question_model": "Given an s-plane plot containing poles at $-1$, $-2\\pm j2$, and $+1$, choose the correct interpretation of stability and pole type.",
+            "distractor_plan": [
+              "Include one distractor that labels all points as stable despite right-half-plane pole.",
+              "Include one that misclassifies imaginary-axis poles as stable decay.",
+              "Include one that confuses multiplicity with oscillation count.",
+              "Include one with swapped left/right half-plane labeling."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "N/A",
+            "base_case": "N/A",
+            "paragraph_plan": [
+              "N/A"
+            ],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Create a worked example that computes poles from $s^2+2s+1=0$ and $s^2+4s+10=0$, plots each, and classifies each set for stability in the same s-plane diagram.",
+            "worked_solution_goal": "Learner computes poles from both examples, plots each marker set in the s-plane, and labels stability outcome from region membership.",
+            "variation_from_previous": "Extend root-computation examples into spatial interpretation by connecting algebraic roots directly to the geometric s-plane decision rule.",
+            "solution_step_plan": [
+              "Compute each set of poles algebraically from the characteristic equation.",
+              "Plot markers on a shared axis with clear real-axis orientation.",
+              "Label regions (LHP, RHP, and imaginary axis) and map each pole cluster.",
+              "State stability outcome for each cluster and common mistake checks."
+            ],
+            "practice_variation_axes": [
+              "Vary pole sets across stable, unstable, and marginally stable scenarios.",
+              "Vary coordinate values while keeping question pattern constant.",
+              "Vary question wording between pole classification and stability conclusion."
+            ]
+          },
+          "handoff_notes": "This section should use image-driven questions so practice can vary pole coordinates visually while preserving the same classification rubric."
+        }
+      ]
+    },
+    {
+      "lesson_index": 6,
+      "lesson_title": "Determining Stability from RLC Poles",
+      "lesson_core_move": "Determine whether an RLC circuit transfer function is BIBO stable by checking that all computed poles lie strictly in the left half of the s-plane and interpreting any right-half-plane or imaginary-axis pole as a nondecaying circuit mode.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Determining Stability from RLC Poles",
+          "step_type": "tutorial",
+          "learning_goal": "Connect the denominator roots of $H(s)$ to BIBO stability so students can classify a circuit mode as stable, unstable, or nondecaying by pole location in the $s$-plane.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; classification can be done from pole coordinates in algebraic form."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "N/A",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Teach the exact rule: an RLC transfer function $H(s)=N(s)/D(s)$ is BIBO stable iff every pole $s_k$ of $D(s)$ satisfies $\\Re\\{s_k\\}<0$, and unstable whenever any pole has $\\Re\\{s_k\\}>0$ or $\\Re\\{s_k\\}=0$.",
+            "base_case": "Start from a first-order stable transfer function such as $H(s)=1/(s+3)$ so the learner checks the single pole at $-3<0$ and labels it stable.",
+            "paragraph_plan": [
+              "Introduce stability from step-response behavior and why pole sign controls bounded-input bounded-output behavior for rational LTI systems.",
+              "State the exact transfer-function form $H(s)=N(s)/D(s)$ and identify poles as the roots of $D(s)=0$.",
+              "Apply the three-way stability test on simple examples: LHP stable, RHP unstable, imaginary-axis nondecaying.",
+              "Call out that a single violating pole dominates stability classification for this topic.",
+              "Preview that examples will reuse the same method on real, complex, and axis-aligned poles from RLC-derived denominators."
+            ],
+            "display_math_plan": [
+              "$$H(s)=\\frac{N(s)}{D(s)}$$",
+              "$$\\Re\\{s_k\\}<0 \\text{ for all poles } s_k \\Rightarrow \\text{ stable; } \\exists\\ s_k:\\Re\\{s_k\\}\\ge 0 \\Rightarrow \\text{ unstable}.$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "",
+            "worked_solution_goal": "",
+            "variation_from_previous": "",
+            "solution_step_plan": [],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "No worked example or practice for this tutorial step. Keep symbolic-only, with minimal math load and explicit classification language reused in later steps."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Classifying Stability from Negative Real RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Classify stability by solving a negative real-pole denominator and testing whether every pole has strictly negative real part.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Practice remains numeric-algebraic; no pole plot needed."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-expression multiple-choice",
+            "practice_question_model": "Given $H(s)=\\frac{25}{(s+2)(s+5)}$, choose the correct BIBO stability classification.",
+            "distractor_plan": [
+              "Include options that confuse repeated-pole stability with instability.",
+              "Include an incorrect choice that ignores multiplicity and checks only one root.",
+              "Include an option that incorrectly labels negative poles as unstable.",
+              "Include an option that uses right-half-plane criteria on the real part of the numerator roots.",
+              "Include a near-miss option with one pole slightly positive to test exact sign checking."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For $H(s)=\\frac{6}{(s+4)(s+1)}$, classify the system as BIBO stable, unstable, or nondecaying.",
+            "worked_solution_goal": "Show that both poles are real and negative, so both are in the LHP and the RLC transfer function is BIBO stable.",
+            "variation_from_previous": "Extend the base tutorial case by using a second-order denominator and repeated use of the same sign test on two real poles.",
+            "solution_step_plan": [
+              "Write the denominator as a factored polynomial and set $D(s)=0$.",
+              "Factor the polynomial or solve directly for each real root.",
+              "Check each root sign and verify all real parts are negative.",
+              "State final stability verdict and map to bounded/nondecaying response language."
+            ],
+            "practice_variation_axes": [
+              "Change pole magnitudes while keeping both poles real and negative.",
+              "Include one pole with small negative magnitude near zero to reinforce strict inequality.",
+              "Use non-factorized quadratic denominators and ask for factoring before classification."
+            ]
+          },
+          "handoff_notes": "This should be the first worked example and follow the tutorial rule exactly. Keep response options in symbol form; avoid numeric-only options when pole forms are symbolic."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Classifying Stability from Left-Half-Plane Complex RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Classify stability for complex-conjugate poles by computing the roots and verifying the common negative real part in the left-half-plane.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Use algebraic root solving only; no diagram needed to determine sign of real part."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-expression multiple-choice",
+            "practice_question_model": "For $H(s)=\\frac{12}{s^2+6s+13}$, classify the stability of the circuit from the pole locations.",
+            "distractor_plan": [
+              "Include a distractor that mistakes damped oscillatory responses for marginal instability.",
+              "Include a distractor that checks only one root of a conjugate pair.",
+              "Include an option that ignores the real part and classifies by magnitude only.",
+              "Include a distractor that misclassifies repeated complex poles with negative real part as unstable.",
+              "Include a distractor that confuses RHP/imaginary-axis labels with left-half-plane stability."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Given $H(s)=\\frac{40}{s^2+2s+10}$, find the poles and decide if the RLC system is stable.",
+            "worked_solution_goal": "Demonstrate root solving for complex-conjugate poles and classification by negative real part of each pair component.",
+            "variation_from_previous": "Move from pure real poles to conjugate pair poles as a controlled extension, adding oscillatory mode interpretation while keeping one-step stability decision flow.",
+            "solution_step_plan": [
+              "Set the characteristic equation to zero and solve $s^2+2s+10=0$.",
+              "Compute discriminant and derive complex poles $-1\\pm3j$.",
+              "Check that both poles have real part $-1$ and thus lie in LHP.",
+              "Conclude stable with decaying oscillatory contribution and no nondecaying modes."
+            ],
+            "practice_variation_axes": [
+              "Vary damping from high to low while preserving negative real part.",
+              "Introduce different constant term values that keep complex roots in LHP.",
+              "Add nontrivial leading coefficients and require normalization before solving."
+            ]
+          },
+          "handoff_notes": "Keep explicit notation for complex pairs; include both poles as conjugates to prevent accidental sign-only mistakes."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Classifying Instability from a Right-Half-Plane RLC Pole",
+          "step_type": "example",
+          "learning_goal": "Detect instability whenever any RLC pole has positive real part, even if the remaining poles are stable.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "Symbolic-only classification; no picture required to check sign of pole real part."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-expression multiple-choice",
+            "practice_question_model": "For $H(s)=\\frac{4}{(s-1)(s+2)}$, choose the correct stability classification.",
+            "distractor_plan": [
+              "Include a distractor that incorrectly focuses only on pole count and ignores sign.",
+              "Include a distractor that declares stable if most poles are in LHP.",
+              "Include a distractor that misinterprets repeated negative poles as unstable.",
+              "Include a distractor that treats $s=1$ as imaginary-axis behavior.",
+              "Include a distractor that uses numerator roots as if they controlled stability."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify $H(s)=\\frac{5}{(s-2)(s+1)(s+4)}$: is this RLC transfer function BIBO stable or unstable?",
+            "worked_solution_goal": "Find one pole at $s=2$ and show that this single RHP pole causes instability regardless of other LHP poles.",
+            "variation_from_previous": "Shift from all-stable poles to exactly one violating RHP pole so students can apply the global-violation rule.",
+            "solution_step_plan": [
+              "Factor the denominator and list all pole locations exactly.",
+              "Check each pole real part against the stability threshold $\\Re\\{s\\}<0$.",
+              "Identify the violating pole in the right-half-plane.",
+              "Write final verdict as unstable with nondecaying growth mode due to positive real pole."
+            ],
+            "practice_variation_axes": [
+              "Move the RHP pole magnitude and location while adding additional LHP poles.",
+              "Use quadratic factors with one positive root and one negative root.",
+              "Introduce first-order and second-order mixed forms to reinforce all-poles check.",
+              "Vary sign conventions in denominators to test transcription errors."
+            ]
+          },
+          "handoff_notes": "This is the first explicit counterexample step: reinforce that one RHP pole overrides all others."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Classifying Instability from Imaginary-Axis RLC Poles",
+          "step_type": "example",
+          "learning_goal": "Identify nondecaying modes from poles on the imaginary axis and classify those systems as unstable for BIBO purposes in this topic context.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No visual pole plot needed; classification is by algebraic pole location with real part exactly zero."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five-expression multiple-choice",
+            "practice_question_model": "For $H(s)=\\frac{3}{s^2+4}$, what is the correct BIBO stability classification?",
+            "distractor_plan": [
+              "Include a distractor that labels imaginary-axis poles as stable because roots are bounded.",
+              "Include a distractor that mistakes $\\pm 2j$ as damped complex poles and marks stable.",
+              "Include a distractor that checks only magnitude and ignores real-part boundary strictness.",
+              "Include a distractor that classifies as marginally stable even though this session uses nondecaying criterion as instability.",
+              "Include a distractor that mixes numerator signs to produce a stable verdict without pole re-computation."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Classify stability for $H(s)=\\frac{2}{(s^2+9)}$ and interpret the time-domain implication of poles on the imaginary axis.",
+            "worked_solution_goal": "Find poles $s=\\pm 3j$, detect real part zero, and classify as nondecaying/unstable under the BIBO rule used in this lesson.",
+            "variation_from_previous": "Extend the instability pattern from RHP violations to boundary violations at $\\Re\\{s\\}=0$ with purely imaginary conjugate roots.",
+            "solution_step_plan": [
+              "Set the denominator to zero and solve for $s$ using the imaginary-axis root structure.",
+              "Extract real part of each pole and verify it is exactly zero.",
+              "Apply strict-LHP rule and label the system unstable/nondecaying.",
+              "Explain the distinction from stable decaying LHP and RHP growth classes."
+            ],
+            "practice_variation_axes": [
+              "Include $s=0$ with other stable poles.",
+              "Include $s=\\pm j\\omega$ with different frequencies and mixed stable poles.",
+              "Include denominators with factor $s^2+\\omega^2$ versus completed-square forms to test recognition.",
+              "Vary distractor terms that create repeated imaginary-axis poles."
+            ]
+          },
+          "handoff_notes": "Use nondecaying wording consistently with prior setup so downstream authors do not switch to marginal-stability language mid-course."
+        }
+      ]
+    },
+    {
+      "lesson_index": 7,
+      "lesson_title": "Circuit Descriptions in Time, Frequency, and $s$ Domains",
+      "lesson_core_move": "Convert a circuit description among its time-domain differential equation, frequency-response form, and s-domain transfer function, interpreting poles and stability consistently across domains.",
+      "section_count": 5,
+      "sections": [
+        {
+          "section_index": 1,
+          "section_title": "Introduction to Circuit Descriptions in Time, Frequency, and $s$ Domains",
+          "step_type": "tutorial",
+          "learning_goal": "Build one shared conversion workflow for mapping a circuit ODE to a transfer-function ratio and then to a frequency-response expression while preserving pole-based stability meaning.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed for this symbolic conversion sequence."
+          },
+          "question_policy": {
+            "questions_needed": false,
+            "question_type": "not-applicable",
+            "answer_cardinality": "not-applicable",
+            "choice_count": 0,
+            "answer_format": "not-applicable",
+            "practice_question_model": "",
+            "distractor_plan": []
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "Show the exact one-to-one map: input-output differential equation to Laplace-domain ratio $H(s)=Y(s)/X(s)$, then to frequency response $H(jw)$ by substitution, and finally to pole stability inference.",
+            "base_case": "Use one simple first-order test circuit model so students first see the mapping with one root and one pole sign test.",
+            "paragraph_plan": [
+              "Open by naming the three representations: time-domain ODE, transfer function in $s$, and frequency response at $s=jw$; state that all encode the same circuit behavior.",
+              "Give the notation map used throughout the lesson and define learning goal language: convert, evaluate, and interpret stability.",
+              "Walk through the zero-initial-condition Laplace conversion of a derivative chain with the minimal algebraic rearrangement to isolate $Y(s)/X(s)$.",
+              "Connect the same symbolic object to frequency response by substituting $s= j w$ and explain that poles and zeros remain unchanged while interpretation shifts from equation coefficients to sinusoidal gain.",
+              "Close with a one-paragraph preview of section sequence: derive transfer function, evaluate $H(jw)$, read poles, then reconcile one circuit description across all three forms."
+            ],
+            "display_math_plan": [
+              "$$Y(s)=H(s)X(s)$$",
+              "$$H(jw)=H(s)|_{s=jw}$$"
+            ]
+          },
+          "example_outline": {
+            "worked_example_prompt": "N/A for tutorial section.",
+            "worked_solution_goal": "N/A for tutorial section.",
+            "variation_from_previous": "N/A for tutorial section.",
+            "solution_step_plan": [
+              "N/A for tutorial section."
+            ],
+            "practice_variation_axes": []
+          },
+          "handoff_notes": "Do not assign this section questions. Keep this as the shortest possible minimum-effective-dose direct-instruction segment before moving to worked examples."
+        },
+        {
+          "section_index": 2,
+          "section_title": "Converting a Circuit Differential Equation to a Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Practice converting a circuit differential equation into a rational transfer function and isolating the denominator that governs poles and stability.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed; all required operations are symbolic."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic/numeric choices in expression form",
+            "practice_question_model": "Given $L y''(t)+RC y'(t)+y(t)=RC x'(t)$ with zero initial conditions, identify the correct transfer function $H(s)=Y(s)/X(s)$.",
+            "distractor_plan": [
+              "Include one choice that fails to divide by the input transform term and swaps numerator and denominator.",
+              "Include one sign-error choice that changes $+RC$ or $+1$ signs in the denominator.",
+              "Include one choice that incorrectly keeps derivative initial-condition terms in the final ratio.",
+              "Include one choice that forgets the time-domain input derivative scaling by $s$ in the numerator."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For zero initial conditions, convert $L y''(t)+R C y'(t)+y(t)=R C x'(t)$ into $H(s)=Y(s)/X(s)$.",
+            "worked_solution_goal": "Output the rational transfer function $H(s)$ in expanded polynomial form and expose $D(s)$ explicitly as the characteristic denominator for pole analysis.",
+            "variation_from_previous": "Use the same differential-equation form as the tutorial base case but add one derivative on the input, so students must propagate the extra $s$ factor into the numerator.",
+            "solution_step_plan": [
+              "Apply zero-initial-condition transforms: $y'(t)\\to sY(s)$, $y''(t)\\to s^2Y(s)$, $x'(t)\\to sX(s)$.",
+              "Substitute into the ODE and collect all $Y(s)$ and $X(s)$ terms on opposite sides.",
+              "Divide through to isolate $Y(s)/X(s)$ and simplify numerator and denominator into polynomials.",
+              "Rewrite as $H(s)=\\frac{N(s)}{D(s)}$ and label numerator/denominator roles for later frequency and pole steps."
+            ],
+            "practice_variation_axes": [
+              "Swap which signal is differentiated on the RHS.",
+              "Swap which constants multiply $s^2$, $s$, and the constant term.",
+              "Introduce equivalent parameter values and ask for simplified canonical-coefficient form."
+            ]
+          },
+          "handoff_notes": "Keep algebra compact and explicit on cancellation steps so downstream example writer can mirror each move into explanation paragraphs."
+        },
+        {
+          "section_index": 3,
+          "section_title": "Finding Frequency Response from a Circuit Transfer Function",
+          "step_type": "example",
+          "learning_goal": "Convert a rational $H(s)$ into $H(jw)$ and extract frequency-dependent behavior that is consistent with the same poles as the time-domain model.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed for this symbolic-to-symbolic mapping step."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five symbolic/numeric choices in expression form",
+            "practice_question_model": "Given $H(s)=(s+3)/(s^2+2s+5)$, choose the correct $H(jw)$ expression.",
+            "distractor_plan": [
+              "Include a choice that forgets the substitution $s=jw$ and writes $H(w)$ in the real-variable form.",
+              "Include a choice that swaps real and imaginary parts when expanding denominator terms.",
+              "Include a choice that misses the $j$-factor on odd powers of $s$.",
+              "Include a choice that collapses directly to a real scalar and drops the imaginary component entirely."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Take $H(s)=\\frac{s+1}{s^2+3s+2}$ and rewrite it as $H(jw)$ in a form suitable for extracting magnitude and phase behavior.",
+            "worked_solution_goal": "Produce the substituted form with $s=jw$, preserving equivalent complex structure for later magnitude/phase interpretation.",
+            "variation_from_previous": "Use the denominator-polynomial transfer function from section 2 and convert it into frequency form, emphasizing continuity of symbol usage from one domain to another.",
+            "solution_step_plan": [
+              "Substitute $s=jw$ directly in both numerator and denominator.",
+              "Separate real and imaginary parts by expanding $(jw)^2=-w^2$ and collecting terms.",
+              "Rewrite numerator and denominator as $A+ jB$ pairs and discuss how this form supports sinusoidal response interpretation.",
+              "State what is needed from this form for downstream questions without introducing extra algebraic manipulation."
+            ],
+            "practice_variation_axes": [
+              "Change numerator constant and linear coefficients while keeping denominator order fixed.",
+              "Swap first- vs second-order transfer-function templates.",
+              "Use an $R$-$C$ style first-order denominator in one case to vary complexity level."
+            ]
+          },
+          "handoff_notes": "Focus on clean substitution and real-imag decomposition language; avoid any new theorem statements."
+        },
+        {
+          "section_index": 4,
+          "section_title": "Interpreting Pole Locations Across Circuit Descriptions",
+          "step_type": "example",
+          "learning_goal": "Tie pole placement in $H(s)$ to roots in differential-equation dynamics and frequency-response shape and stability.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No image needed. Pole interpretations can be done with computed roots and sign/classification rules."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five expression-based choices with short symbolic descriptions",
+            "practice_question_model": "For $H(s)=1/(s^2+4s+20)$, identify the correct interpretation among stability/class response options.",
+            "distractor_plan": [
+              "Include one choice that labels a left-half-plane pole pattern as unstable.",
+              "Include one choice that confuses complex conjugate poles with one real repeated pole.",
+              "Include one choice that misclassifies the marginal case as asymptotically stable.",
+              "Include one choice that ignores multiplicity when discussing system class."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "Find the poles of $H(s)=1/(s^2+4s+20)$, classify their locations, and state the implied time-domain behavior and BIBO stability.",
+            "worked_solution_goal": "Show that poles control both decay/oscillation in the time-domain response and stable/unstable behavior in frequency-domain interpretation.",
+            "variation_from_previous": "Start from section-3 frequency-response substitution and move to the root-level interpretation that anchors stability and long-term behavior across all domains.",
+            "solution_step_plan": [
+              "Compute roots of the denominator and classify real/imaginary parts.",
+              "Map each pole location rule to stability outcome without plotting.",
+              "Use the same root values to describe the corresponding homogeneous time-domain mode and damping type.",
+              "Restate the consistency check: equivalent information appears in ODE, $H(s)$, and $H(jw)$ forms."
+            ],
+            "practice_variation_axes": [
+              "Vary coefficients to move poles across left/right half-plane boundaries.",
+              "Change from real to complex-conjugate poles while preserving order.",
+              "Introduce a repeated pole case and require multiplicity interpretation."
+            ]
+          },
+          "handoff_notes": "Include both symbolic pole computation and interpretation phrases, so questions can be generated as classification-style items."
+        },
+        {
+          "section_index": 5,
+          "section_title": "Matching Time, Frequency, and $s$-Domain Descriptions of One Circuit",
+          "step_type": "example",
+          "learning_goal": "Reconcile one circuit across all three domains and choose the matching representation pair accurately.",
+          "content_mode": "symbolic-only",
+          "image_policy": {
+            "section_image_needed": false,
+            "question_images_needed": false,
+            "answer_choice_images_needed": false,
+            "image_use": "none",
+            "image_description_seed": "",
+            "visual_elements": [],
+            "image_generation_notes": "No images required; matching task uses explicit symbolic descriptions only."
+          },
+          "question_policy": {
+            "questions_needed": true,
+            "question_type": "multiple-choice",
+            "answer_cardinality": "single",
+            "choice_count": 5,
+            "answer_format": "five expression-based choices with one exactly matching triplet",
+            "practice_question_model": "Given ODE $y''(t)+3y'(t)+2y(t)=x'(t)$ and one candidate $H(s)$, choose the frequency response statement that is consistent with both.",
+            "distractor_plan": [
+              "Include one distractor that matches ODE roots but not the normalized transfer-function sign convention.",
+              "Include one distractor that keeps the same poles but uses incorrect numerator differentiation interpretation.",
+              "Include one distractor that swaps stability classification while preserving algebraic form.",
+              "Include one distractor that confuses frequency-response magnitude condition with phase-only condition."
+            ]
+          },
+          "tutorial_outline": {
+            "direct_instruction_goal": "",
+            "base_case": "",
+            "paragraph_plan": [],
+            "display_math_plan": []
+          },
+          "example_outline": {
+            "worked_example_prompt": "For one circuit model, complete all three descriptions: from ODE to $H(s)$, then to $H(jw)$, then verify stable pole locations with a consistency check.",
+            "worked_solution_goal": "Produce a compact map connecting one ODE, one rational $H(s)$, and one $H(jw)$ expression with matching stability statement.",
+            "variation_from_previous": "This example extends section 4 by adding a bidirectional matching task: start from one representation and infer the other two.",
+            "solution_step_plan": [
+              "Start with one given ODE and compute the transfer function using steps from section 2.",
+              "Form the corresponding frequency response via section 3 substitution.",
+              "Compute poles and produce the same stability conclusion as in section 4.",
+              "Assemble the three-domain mapping into a final one-line reconciliation statement."
+            ],
+            "practice_variation_axes": [
+              "Rotate which of the three domains is provided and ask for the other two.",
+              "Swap parameter values to create distinct stable/oscillatory/monotonic cases.",
+              "Vary whether input term is on input derivative or output derivative while keeping order fixed."
+            ]
+          },
+          "handoff_notes": "Treat this as an integration check section: each generated practice item should require one-to-one matching across at least two domains."
+        }
+      ]
+    }
+  ]
+}
