@@ -1,11 +1,14 @@
 # Continuous-Time Signal Processing
 
+```check-progress
+```
+
 ## Course Content
 
 - [ ] 1. Foundations of Continuous-Time Signals
 	- [ ] 1.1. Continuous-Time Signal Basics
-		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.1. Continuous-Time Signals as Functions|1.1.1. Continuous-Time Signals as Functions]]
-		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.2. Reading Signal Values from Graphs|1.1.2. Reading Signal Values from Graphs]]
+		- [x] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.1. Continuous-Time Signals as Functions|1.1.1. Continuous-Time Signals as Functions]]
+		- [x] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.2. Reading Signal Values from Graphs|1.1.2. Reading Signal Values from Graphs]]
 		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.3. Piecewise Signal Definitions|1.1.3. Piecewise Signal Definitions]]
 		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.4. Signal Support and Zero Regions|1.1.4. Signal Support and Zero Regions]]
 		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.5. Even and Odd Signal Symmetry|1.1.5. Even and Odd Signal Symmetry]]
@@ -31,8 +34,8 @@
 		- [ ] [[1. Foundations of Continuous-Time Signals/1.3. Signal Size/Lessons/1.3.7. Energy Signals vs. Power Signals|1.3.7. Energy Signals vs. Power Signals]]
 - [ ] 2. Complex Numbers and Complex Exponential Signals
 	- [ ] 2.1. Complex Exponential Form
-		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.1. Euler’s Formula|2.1.1. Euler’s Formula]]
-		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.2. Complex Numbers in Rectangular Form|2.1.2. Complex Numbers in Rectangular Form]]
+		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.1. Euler's Formula|2.1.1. Euler's Formula]]
+		- [x] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.2. Complex Numbers in Rectangular Form|2.1.2. Complex Numbers in Rectangular Form]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.3. Complex Numbers in Polar Form|2.1.3. Complex Numbers in Polar Form]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.4. Complex Exponentials|2.1.4. Complex Exponentials]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.5. Real and Imaginary Parts of Complex Exponentials|2.1.5. Real and Imaginary Parts of Complex Exponentials]]
@@ -54,20 +57,20 @@
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.3. Adding Sinusoids with Phasors/Lessons/2.3.5. Converting a Phasor Sum Back to a Sinusoid|2.3.5. Converting a Phasor Sum Back to a Sinusoid]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.3. Adding Sinusoids with Phasors/Lessons/2.3.6. Amplitude-Phase Form of a Sinusoidal Sum|2.3.6. Amplitude-Phase Form of a Sinusoidal Sum]]
 	- [ ] 2.4. Generalized Exponential Signals
-		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.1. The Generalized Exponential Signal $e^{st}$|2.4.1. The Generalized Exponential Signal $e^{st}$]]
-		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.2. Real and Imaginary Parts of $s=\sigma+j\omega$|2.4.2. Real and Imaginary Parts of $s=\sigma+j\omega$]]
+		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.1. The Generalized Exponential Signal eˢᵗ|2.4.1. The Generalized Exponential Signal eˢᵗ]]
+		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.2. Real and Imaginary Parts of s=σ+jω|2.4.2. Real and Imaginary Parts of s=σ+jω]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.3. Pure Real Exponentials|2.4.3. Pure Real Exponentials]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.4. Pure Complex Exponentials|2.4.4. Pure Complex Exponentials]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.5. Damped Sinusoids|2.4.5. Damped Sinusoids]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.6. Growing Sinusoids|2.4.6. Growing Sinusoids]]
 		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.7. Exponential Envelopes|2.4.7. Exponential Envelopes]]
-		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.8. Periodicity of $e^{j\omega t}$|2.4.8. Periodicity of $e^{j\omega t}$]]
+		- [ ] [[2. Complex Numbers and Complex Exponential Signals/2.4. Generalized Exponential Signals/Lessons/2.4.8. Periodicity of exp(jωt)|2.4.8. Periodicity of exp(jωt)]]
 - [ ] 3. Time-Domain Signal Operations
 	- [ ] 3.1. Time Shifting
 		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.1. Delaying a Signal|3.1.1. Delaying a Signal]]
 		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.2. Advancing a Signal|3.1.2. Advancing a Signal]]
-		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.3. Interpreting $x(t-T)$|3.1.3. Interpreting $x(t-T)$]]
-		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.4. Interpreting $x(t+T)$|3.1.4. Interpreting $x(t+T)$]]
+		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.3. Interpreting x(t-T)|3.1.3. Interpreting x(t-T)]]
+		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.4. Interpreting x(t+T)|3.1.4. Interpreting x(t+T)]]
 		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.5. Time Shifts of Piecewise Signals|3.1.5. Time Shifts of Piecewise Signals]]
 		- [ ] [[3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.6. Time Shifts of Exponential Signals|3.1.6. Time Shifts of Exponential Signals]]
 	- [ ] 3.2. Time Scaling
@@ -79,7 +82,7 @@
 		- [ ] [[3. Time-Domain Signal Operations/3.2. Time Scaling/Lessons/3.2.6. Comparing Time Shifts and Time Scaling|3.2.6. Comparing Time Shifts and Time Scaling]]
 	- [ ] 3.3. Time Reversal and Combined Operations
 		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.1. Time Reversal|3.3.1. Time Reversal]]
-		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.2. Reflecting a Signal Across $t=0$|3.3.2. Reflecting a Signal Across $t=0$]]
+		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.2. Reflecting a Signal Across t=0|3.3.2. Reflecting a Signal Across t=0]]
 		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.3. Time Reversal of Piecewise Signals|3.3.3. Time Reversal of Piecewise Signals]]
 		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.4. Time Reversal of Exponential Signals|3.3.4. Time Reversal of Exponential Signals]]
 		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.5. Combined Shift and Scale Operations|3.3.5. Combined Shift and Scale Operations]]
@@ -137,7 +140,7 @@
 		- [ ] [[5. Continuous-Time Systems/5.3. Time Invariance/Lessons/5.3.3. The System-Then-Shift Path|5.3.3. The System-Then-Shift Path]]
 		- [ ] [[5. Continuous-Time Systems/5.3. Time Invariance/Lessons/5.3.4. Testing Time Invariance|5.3.4. Testing Time Invariance]]
 		- [ ] [[5. Continuous-Time Systems/5.3. Time Invariance/Lessons/5.3.5. Time-Invariant Memoryless Systems|5.3.5. Time-Invariant Memoryless Systems]]
-		- [ ] [[5. Continuous-Time Systems/5.3. Time Invariance/Lessons/5.3.6. Time-Varying Systems with Explicit $t$|5.3.6. Time-Varying Systems with Explicit $t$]]
+		- [ ] [[5. Continuous-Time Systems/5.3. Time Invariance/Lessons/5.3.6. Time-Varying Systems with Explicit t|5.3.6. Time-Varying Systems with Explicit t]]
 		- [ ] [[5. Continuous-Time Systems/5.3. Time Invariance/Lessons/5.3.7. Time Invariance vs. Signal Shifting|5.3.7. Time Invariance vs. Signal Shifting]]
 	- [ ] 5.4. Stability
 		- [ ] [[5. Continuous-Time Systems/5.4. Stability/Lessons/5.4.1. Bounded Signals|5.4.1. Bounded Signals]]
@@ -165,16 +168,16 @@
 		- [ ] [[6. LTI Systems and Impulse Response/6.2. Signal Decomposition into Impulses/Lessons/6.2.5. Deriving the Convolution Integral|6.2.5. Deriving the Convolution Integral]]
 	- [ ] 6.3. Convolution Setup
 		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.1. Definition of Continuous-Time Convolution|6.3.1. Definition of Continuous-Time Convolution]]
-		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.2. Meaning of the Dummy Variable $\tau$|6.3.2. Meaning of the Dummy Variable $\tau$]]
-		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.3. Holding $t$ Fixed During Convolution|6.3.3. Holding $t$ Fixed During Convolution]]
-		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.4. Rewriting Signals as Functions of $\tau$|6.3.4. Rewriting Signals as Functions of $\tau$]]
-		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.5. Why $h(t-\tau)$ Appears|6.3.5. Why $h(t-\tau)$ Appears]]
+		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.2. Meaning of the Dummy Variable τ|6.3.2. Meaning of the Dummy Variable τ]]
+		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.3. Holding t Fixed During Convolution|6.3.3. Holding t Fixed During Convolution]]
+		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.4. Rewriting Signals as Functions of τ|6.3.4. Rewriting Signals as Functions of τ]]
+		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.5. Why h(t-τ) Appears|6.3.5. Why h(t-τ) Appears]]
 		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.6. Flip-Shift-Multiply-Integrate Procedure|6.3.6. Flip-Shift-Multiply-Integrate Procedure]]
 		- [ ] [[6. LTI Systems and Impulse Response/6.3. Convolution Setup/Lessons/6.3.7. Convolution as Overlap Area|6.3.7. Convolution as Overlap Area]]
 - [ ] 7. Computing Convolution
 	- [ ] 7.1. Convolution Mechanics
-		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.1. Finding the Support of $x(\tau)$|7.1.1. Finding the Support of $x(\tau)$]]
-		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.2. Finding the Support of $h(t-\tau)$|7.1.2. Finding the Support of $h(t-\tau)$]]
+		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.1. Finding the Support of x(τ)|7.1.1. Finding the Support of x(τ)]]
+		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.2. Finding the Support of h(t-τ)|7.1.2. Finding the Support of h(t-τ)]]
 		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.3. Determining the Overlap Interval|7.1.3. Determining the Overlap Interval]]
 		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.4. Setting Integral Bounds from Overlap|7.1.4. Setting Integral Bounds from Overlap]]
 		- [ ] [[7. Computing Convolution/7.1. Convolution Mechanics/Lessons/7.1.5. Evaluating Convolution Piece by Piece|7.1.5. Evaluating Convolution Piece by Piece]]
@@ -214,7 +217,7 @@
 		- [ ] [[8. Continuous-Time Fourier Series/8.2. Trigonometric Fourier Series/Lessons/8.2.2. Cosine Coefficients|8.2.2. Cosine Coefficients]]
 		- [ ] [[8. Continuous-Time Fourier Series/8.2. Trigonometric Fourier Series/Lessons/8.2.3. Sine Coefficients|8.2.3. Sine Coefficients]]
 		- [ ] [[8. Continuous-Time Fourier Series/8.2. Trigonometric Fourier Series/Lessons/8.2.4. Meaning of Fourier Coefficients|8.2.4. Meaning of Fourier Coefficients]]
-		- [ ] [[8. Continuous-Time Fourier Series/8.2. Trigonometric Fourier Series/Lessons/8.2.5. Harmonic Index $k$|8.2.5. Harmonic Index $k$]]
+		- [ ] [[8. Continuous-Time Fourier Series/8.2. Trigonometric Fourier Series/Lessons/8.2.5. Harmonic Index k|8.2.5. Harmonic Index k]]
 		- [ ] [[8. Continuous-Time Fourier Series/8.2. Trigonometric Fourier Series/Lessons/8.2.6. Reconstructing a Periodic Signal from Harmonics|8.2.6. Reconstructing a Periodic Signal from Harmonics]]
 	- [ ] 8.3. Complex Fourier Series
 		- [ ] [[8. Continuous-Time Fourier Series/8.3. Complex Fourier Series/Lessons/8.3.1. Complex-Exponential Fourier Series Form|8.3.1. Complex-Exponential Fourier Series Form]]
@@ -281,12 +284,12 @@
 	- [ ] 10.1. Sinusoids Through LTI Systems
 		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.1. Complex Exponentials as LTI System Inputs|10.1.1. Complex Exponentials as LTI System Inputs]]
 		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.2. Deriving the Output for a Complex Exponential Input|10.1.2. Deriving the Output for a Complex Exponential Input]]
-		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.3. Frequency Response $H(j\omega)$|10.1.3. Frequency Response $H(j\omega)$]]
-		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.4. Frequency Response as Fourier Transform of $h(t)$|10.1.4. Frequency Response as Fourier Transform of $h(t)$]]
+		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.3. Frequency Response H(jω)|10.1.3. Frequency Response H(jω)]]
+		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.4. Frequency Response as Fourier Transform of h(t)|10.1.4. Frequency Response as Fourier Transform of h(t)]]
 		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.5. Sinusoids as Eigenfunctions of LTI Systems|10.1.5. Sinusoids as Eigenfunctions of LTI Systems]]
 		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.6. Same-Frequency Output Property|10.1.6. Same-Frequency Output Property]]
-		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.7. Amplitude Scaling by $\|H(j\omega)\|$|10.1.7. Amplitude Scaling by $|H(j\omega)|$]]
-		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.8. Phase Shifting by $\angle H(j\omega)$|10.1.8. Phase Shifting by $\angle H(j\omega)$]]
+		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.7. Amplitude Scaling by ∣H(jω)∣|10.1.7. Amplitude Scaling by ∣H(jω)∣]]
+		- [ ] [[10. Frequency Response and Filtering/10.1. Sinusoids Through LTI Systems/Lessons/10.1.8. Phase Shifting by ∠ H(jω)|10.1.8. Phase Shifting by ∠ H(jω)]]
 	- [ ] 10.2. Interpreting Frequency Response
 		- [ ] [[10. Frequency Response and Filtering/10.2. Interpreting Frequency Response/Lessons/10.2.1. Magnitude Response|10.2.1. Magnitude Response]]
 		- [ ] [[10. Frequency Response and Filtering/10.2. Interpreting Frequency Response/Lessons/10.2.2. Phase Response|10.2.2. Phase Response]]
@@ -305,10 +308,10 @@
 		- [ ] [[10. Frequency Response and Filtering/10.3. RC Filters/Lessons/10.3.7. High-Pass Frequency Response|10.3.7. High-Pass Frequency Response]]
 		- [ ] [[10. Frequency Response and Filtering/10.3. RC Filters/Lessons/10.3.8. High-Pass Magnitude Response|10.3.8. High-Pass Magnitude Response]]
 		- [ ] [[10. Frequency Response and Filtering/10.3. RC Filters/Lessons/10.3.9. Comparing RC Low-Pass and High-Pass Filters|10.3.9. Comparing RC Low-Pass and High-Pass Filters]]
-		- [ ] [[10. Frequency Response and Filtering/10.3. RC Filters/Lessons/10.3.10. Effect of $RC$ on Filter Behavior|10.3.10. Effect of $RC$ on Filter Behavior]]
+		- [ ] [[10. Frequency Response and Filtering/10.3. RC Filters/Lessons/10.3.10. Effect of RC on Filter Behavior|10.3.10. Effect of RC on Filter Behavior]]
 	- [ ] 10.4. Frequency-Domain LTI System Analysis
 		- [ ] [[10. Frequency Response and Filtering/10.4. Frequency-Domain LTI System Analysis/Lessons/10.4.1. Fourier Transform of an LTI System Output|10.4.1. Fourier Transform of an LTI System Output]]
-		- [ ] [[10. Frequency Response and Filtering/10.4. Frequency-Domain LTI System Analysis/Lessons/10.4.2. Finding Output with $Y(j\omega)=X(j\omega)H(j\omega)$|10.4.2. Finding Output with $Y(j\omega)=X(j\omega)H(j\omega)$]]
+		- [ ] [[10. Frequency Response and Filtering/10.4. Frequency-Domain LTI System Analysis/Lessons/10.4.2. Finding Output with Y(jω)=X(jω)H(jω)|10.4.2. Finding Output with Y(jω)=X(jω)H(jω)]]
 		- [ ] [[10. Frequency Response and Filtering/10.4. Frequency-Domain LTI System Analysis/Lessons/10.4.3. Comparing Direct Convolution and Frequency-Domain Multiplication|10.4.3. Comparing Direct Convolution and Frequency-Domain Multiplication]]
 		- [ ] [[10. Frequency Response and Filtering/10.4. Frequency-Domain LTI System Analysis/Lessons/10.4.4. Periodic Inputs Through an LTI System|10.4.4. Periodic Inputs Through an LTI System]]
 		- [ ] [[10. Frequency Response and Filtering/10.4. Frequency-Domain LTI System Analysis/Lessons/10.4.5. Aperiodic Inputs Through an LTI System|10.4.5. Aperiodic Inputs Through an LTI System]]
@@ -318,14 +321,14 @@
 		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.1. Limitations of the Fourier Transform|11.1.1. Limitations of the Fourier Transform]]
 		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.2. Signals Whose Fourier Transform Does Not Converge|11.1.2. Signals Whose Fourier Transform Does Not Converge]]
 		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.3. Exponential Weighting|11.1.3. Exponential Weighting]]
-		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.4. The Complex Variable $s=\sigma+j\omega$|11.1.4. The Complex Variable $s=\sigma+j\omega$]]
+		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.4. The Complex Variable s=σ+jω|11.1.4. The Complex Variable s=σ+jω]]
 		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.5. Laplace Transform as a Generalization of Fourier Transform|11.1.5. Laplace Transform as a Generalization of Fourier Transform]]
-		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.6. The $s$-Plane|11.1.6. The $s$-Plane]]
+		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.6. The s-Plane|11.1.6. The s-Plane]]
 		- [ ] [[11. Laplace Transform Foundations/11.1. Motivation for the Laplace Transform/Lessons/11.1.7. Region of Convergence|11.1.7. Region of Convergence]]
 	- [ ] 11.2. One-Sided Laplace Transform
 		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.1. One-Sided Laplace Transform Definition|11.2.1. One-Sided Laplace Transform Definition]]
-		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.2. The $0^-$ Convention|11.2.2. The $0^-$ Convention]]
-		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.3. Laplace Transform of $e^{-at}u(t)$|11.2.3. Laplace Transform of $e^{-at}u(t)$]]
+		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.2. The 0⁻ Convention|11.2.2. The 0⁻ Convention]]
+		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.3. Laplace Transform of e⁻ᵃᵗu(t)|11.2.3. Laplace Transform of e⁻ᵃᵗu(t)]]
 		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.4. Laplace Transform of the Unit Step|11.2.4. Laplace Transform of the Unit Step]]
 		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.5. Laplace Transform of the Unit Impulse|11.2.5. Laplace Transform of the Unit Impulse]]
 		- [ ] [[11. Laplace Transform Foundations/11.2. One-Sided Laplace Transform/Lessons/11.2.6. Laplace Transform of Shifted Impulses|11.2.6. Laplace Transform of Shifted Impulses]]
@@ -333,7 +336,7 @@
 	- [ ] 11.3. Algebra with Laplace Transforms
 		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.1. Linearity of the Laplace Transform|11.3.1. Linearity of the Laplace Transform]]
 		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.2. Combining Simple Transform Pairs|11.3.2. Combining Simple Transform Pairs]]
-		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.3. Rational Functions in $s$|11.3.3. Rational Functions in $s$]]
+		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.3. Rational Functions in s|11.3.3. Rational Functions in s]]
 		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.4. Partial-Fraction Setup for Inverse Transforms|11.3.4. Partial-Fraction Setup for Inverse Transforms]]
 		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.5. Inverse Laplace Transform by Known Pairs|11.3.5. Inverse Laplace Transform by Known Pairs]]
 		- [ ] [[11. Laplace Transform Foundations/11.3. Algebra with Laplace Transforms/Lessons/11.3.6. Interpreting Poles in Simple Transform Pairs|11.3.6. Interpreting Poles in Simple Transform Pairs]]
@@ -355,14 +358,14 @@
 	- [ ] 12.3. Laplace Transform Solution Methods
 		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.1. Direct and Time-Shifting Laplace Methods|12.3.1. Direct and Time-Shifting Laplace Methods]]
 		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.2. Step-Function and Derivative Methods|12.3.2. Step-Function and Derivative Methods]]
-		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.3. Solving for $X(s)$ from a Derivative|12.3.3. Solving for $X(s)$ from a Derivative]]
-		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.4. Reconstructing a Time-Domain Signal from $X(s)$|12.3.4. Reconstructing a Time-Domain Signal from $X(s)$]]
+		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.3. Solving for X(s) from a Derivative|12.3.3. Solving for X(s) from a Derivative]]
+		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.4. Reconstructing a Time-Domain Signal from X(s)|12.3.4. Reconstructing a Time-Domain Signal from X(s)]]
 		- [ ] [[12. Laplace Transform Properties and Piecewise Signals/12.3. Laplace Transform Solution Methods/Lessons/12.3.5. Checking Initial and Final Behavior from a Transform|12.3.5. Checking Initial and Final Behavior from a Transform]]
 - [ ] 13. Transfer Functions, Poles, and Stability
 	- [ ] 13.1. Transfer Functions
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.1. Laplace Transform of Convolution|13.1.1. Laplace Transform of Convolution]]
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.2. $Y(s)=X(s)H(s)$|13.1.2. $Y(s)=X(s)H(s)$]]
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.3. Transfer Function $H(s)=Y(s) over X(s)$|13.1.3. Transfer Function $H(s)=Y(s)/X(s)$]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.2. Y(s)=X(s)H(s)|13.1.2. Y(s)=X(s)H(s)]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.3. Transfer Function H(s)=Y(s)∕X(s)|13.1.3. Transfer Function H(s)=Y(s)∕X(s)]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.4. Transfer Function vs. Impulse Response|13.1.4. Transfer Function vs. Impulse Response]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.5. Rational Transfer Functions|13.1.5. Rational Transfer Functions]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.1. Transfer Functions/Lessons/13.1.6. Numerator and Denominator Polynomials|13.1.6. Numerator and Denominator Polynomials]]
@@ -373,7 +376,7 @@
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.2. Poles and Zeros/Lessons/13.2.4. Real Poles|13.2.4. Real Poles]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.2. Poles and Zeros/Lessons/13.2.5. Complex-Conjugate Poles|13.2.5. Complex-Conjugate Poles]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.2. Poles and Zeros/Lessons/13.2.6. Repeated Poles|13.2.6. Repeated Poles]]
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.2. Poles and Zeros/Lessons/13.2.7. Pole Locations in the $s$-Plane|13.2.7. Pole Locations in the $s$-Plane]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.2. Poles and Zeros/Lessons/13.2.7. Pole Locations in the s-Plane|13.2.7. Pole Locations in the s-Plane]]
 	- [ ] 13.3. Stability of LTI Systems
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.3. Stability of LTI Systems/Lessons/13.3.1. Causal LTI Systems|13.3.1. Causal LTI Systems]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.3. Stability of LTI Systems/Lessons/13.3.2. BIBO Stability from Pole Locations|13.3.2. BIBO Stability from Pole Locations]]
@@ -384,17 +387,17 @@
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.3. Stability of LTI Systems/Lessons/13.3.7. Growing Exponential Responses|13.3.7. Growing Exponential Responses]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.3. Stability of LTI Systems/Lessons/13.3.8. Decaying Oscillatory Responses|13.3.8. Decaying Oscillatory Responses]]
 	- [ ] 13.4. Transfer-Function Analysis of LTI Systems
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.1. Finding Output with $Y(s)=X(s)H(s)$|13.4.1. Finding Output with $Y(s)=X(s)H(s)$]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.1. Finding Output with Y(s)=X(s)H(s)|13.4.1. Finding Output with Y(s)=X(s)H(s)]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.2. Finding Step Response from a Transfer Function|13.4.2. Finding Step Response from a Transfer Function]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.3. Finding Impulse Response from a Transfer Function|13.4.3. Finding Impulse Response from a Transfer Function]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.4. Frequency-Response and Transfer-Function Methods|13.4.4. Frequency-Response and Transfer-Function Methods]]
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.5. Connecting $H(s)$ and $H(j\omega)$|13.4.5. Connecting $H(s)$ and $H(j\omega)$]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.5. Connecting H(s) and H(jω)|13.4.5. Connecting H(s) and H(jω)]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.4. Transfer-Function Analysis of LTI Systems/Lessons/13.4.6. Interpreting System Behavior from Poles|13.4.6. Interpreting System Behavior from Poles]]
 	- [ ] 13.5. Circuit Transfer Functions
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.1. Deriving Transfer Functions from Differential Equations|13.5.1. Deriving Transfer Functions from Differential Equations]]
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.2. RC Transfer Functions in the $s$-Domain|13.5.2. RC Transfer Functions in the $s$-Domain]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.2. RC Transfer Functions in the s-Domain|13.5.2. RC Transfer Functions in the s-Domain]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.3. RLC Circuit Differential Equation|13.5.3. RLC Circuit Differential Equation]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.4. RLC Circuit Transfer Function|13.5.4. RLC Circuit Transfer Function]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.5. Computing Poles of an RLC Circuit|13.5.5. Computing Poles of an RLC Circuit]]
 		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.6. Determining Stability from RLC Poles|13.5.6. Determining Stability from RLC Poles]]
-		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.7. Circuit Descriptions in Time, Frequency, and $s$ Domains|13.5.7. Circuit Descriptions in Time, Frequency, and $s$ Domains]]
+		- [ ] [[13. Transfer Functions, Poles, and Stability/13.5. Circuit Transfer Functions/Lessons/13.5.7. Circuit Descriptions in Time, Frequency, and s Domains|13.5.7. Circuit Descriptions in Time, Frequency, and s Domains]]
