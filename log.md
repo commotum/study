@@ -33,3 +33,14 @@
 **Failure Mode:** `FM-DB-MCQ` — Double-Barreled MCQ  
 
 **Diagnostic:** The question stem asks for two outputs at once—the **support** and the **zero regions**—and each answer choice bundles both interval sets into a single all-or-nothing option. Because the distractors vary across multiple dimensions at the same time, including swapped support/zero regions, missing internal zero intervals, overgeneralized support, and incorrect endpoint inclusion, a wrong answer does not isolate which specific skill or misconception caused the error.
+
+
+## LOG-2026-06-08-002 — FM-SPF — EE01-M03-01-L01
+
+**Date:** 2026-06-08  
+**Lesson ID:** `EE01-M03-01-L01`  
+**Step IDs:** `introduction-to-delaying-a-signal`, `delaying-a-single-feature-time`, `EE01-M03-01-L01-q001`, `EE01-M03-01-L01-q002`  
+
+**Failure Mode:** `FM-SPF` — Split Plotting Failure  
+
+**Diagnostic:** The introduction, first single-feature example, and Questions 1-2 all use delay diagrams to compare an original peak or signal feature with $y(t)=x(t-T)$, varying original feature time and delay amount while preserving height and shape. Because the learning task depends on visually aligning the original and delayed feature locations, showing the related plots separately forces learners to reconcile separate axes instead of seeing the right shift on one shared coordinate grid.
