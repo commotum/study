@@ -1,6 +1,8 @@
 # Failure Mode Log
 
-## [LOG_ENTRY_ID] — [FAILURE_MODE_ID] — [LESSON_ITEM_ID]
+## Single-Step Template
+
+## [LOG_ENTRY_ID] — [FAILURE_MODE_ID] — [LESSON_ID]
 
 **Date:** [YYYY-MM-DD]
 **Lesson ID:** `[LESSON_ID]`
@@ -10,7 +12,20 @@
 **Diagnostic:** [In 1–2 sentences, describe the step item’s specific structure, its attributes, how it's constructed, and which distinct dimensions it varies across. Then explain how that structure activates the failure mode.]
 
 
-## LOG-2026-06-08-001 — FM-DB-MCQ — EE01-M13-04-L02-q003
+## Multi-Step Template
+
+## [LOG_ENTRY_ID] — [FAILURE_MODE_ID] — [LESSON_ID]
+
+**Date:** [YYYY-MM-DD]
+**Lesson ID:** `[LESSON_ID]`
+**Step IDs:** `[LESSON_ITEM_ID_1]`, `[LESSON_ITEM_ID_2]`
+
+**Failure Mode:** `[FAILURE_MODE_ID]` — [FAILURE_MODE_NAME]
+
+**Diagnostic:** [In 1–2 sentences, describe the shared structure across the step items, their attributes, how they're constructed, and which distinct dimensions they vary across. Then explain how that shared structure activates the failure mode.]
+
+
+## LOG-2026-06-08-001 — FM-DB-MCQ — EE01-M13-04-L02
 
 **Date:** 2026-06-08  
 **Lesson ID:** `EE01-M13-04-L02`  
