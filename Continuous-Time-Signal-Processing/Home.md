@@ -2,7 +2,7 @@
 
 ## Next Topics
 
-1. [Signal Support and Zero Regions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.4. Signal Support and Zero Regions.md>)
+1. [Delaying a Signal](<3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.1. Delaying a Signal.md>)
 2. [Definition of the Unit Step Function](<4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.1. Definition of the Unit Step Function.md>)
 3. [Complex Numbers in Polar Form](<2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.3. Complex Numbers in Polar Form.md>)
 4. [Instantaneous Power of a Signal](<1. Foundations of Continuous-Time Signals/1.3. Signal Size/Lessons/1.3.1. Instantaneous Power of a Signal.md>)
@@ -10,7 +10,7 @@
 
 ## Progress
 
-- 1. Foundations of Continuous-Time Signals: 13% (3/23)
+- 1. Foundations of Continuous-Time Signals: 17% (4/23)
 - 2. Complex Numbers and Complex Exponential Signals: 4% (1/28)
 - 3. Time-Domain Signal Operations: 0% (0/18)
 - 4. Unit Step and Unit Impulse Signals: 0% (0/24)
@@ -26,6 +26,7 @@
 
 ## History
 
+- [Signal Support and Zero Regions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.4. Signal Support and Zero Regions.md>) - 2026-06-08 09:51
 - [Piecewise Signal Definitions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.3. Piecewise Signal Definitions.md>) - 2026-06-08 09:22
 - [Continuous-Time Signals as Functions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.1. Continuous-Time Signals as Functions.md>) - 2026-06-07 14:20
 - [Reading Signal Values from Graphs](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.2. Reading Signal Values from Graphs.md>) - 2026-06-07 14:20
@@ -33,7 +34,7 @@
 
 ## Summary
 
-- Completed lessons: 4 / 334
+- Completed lessons: 5 / 334
 - Queue size: 5 / 5
 
 <!--

@@ -10,7 +10,7 @@
 		- [x] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.1. Continuous-Time Signals as Functions|1.1.1. Continuous-Time Signals as Functions]]
 		- [x] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.2. Reading Signal Values from Graphs|1.1.2. Reading Signal Values from Graphs]]
 		- [x] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.3. Piecewise Signal Definitions|1.1.3. Piecewise Signal Definitions]]
-		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.4. Signal Support and Zero Regions|1.1.4. Signal Support and Zero Regions]]
+		- [x] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.4. Signal Support and Zero Regions|1.1.4. Signal Support and Zero Regions]]
 		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.5. Even and Odd Signal Symmetry|1.1.5. Even and Odd Signal Symmetry]]
 		- [ ] [[1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.6. Basic Signal Parameters: Amplitude, Offset, and Duration|1.1.6. Basic Signal Parameters: Amplitude, Offset, and Duration]]
 	- [ ] 1.2. Periodic Signals and Sinusoids
