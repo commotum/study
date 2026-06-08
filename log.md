@@ -44,3 +44,13 @@
 **Failure Mode:** `FM-SPF` — Split Plotting Failure  
 
 **Diagnostic:** The introduction, first single-feature example, and Questions 1-2 all use delay diagrams to compare an original peak or signal feature with $y(t)=x(t-T)$, varying original feature time and delay amount while preserving height and shape. Because the learning task depends on visually aligning the original and delayed feature locations, showing the related plots separately forces learners to reconcile separate axes instead of seeing the right shift on one shared coordinate grid.
+
+
+## LOG-2026-06-08-003 — FM-MLF — EE01-M01-02-L01
+
+**Date:** 2026-06-08  
+**Lesson ID:** `EE01-M01-02-L01`  
+**Step ID:** `finding-a-valid-positive-shift-for-a-repeating-signal`  
+**Failure Mode:** `FM-MLF` — Malformed LaTeX Formatting  
+
+**Diagnostic:** The second worked example presents a repeating piecewise-constant block as a display-math `aligned` list whose rows combine half-open interval notation, alignment markers, colon separators, and scalar values. That pseudo-table construction mixes textual interval/value structure into LaTeX alignment syntax, activating malformed LaTeX formatting because the Markdown math environment may not render the intended interval-to-value listing cleanly.
