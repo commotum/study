@@ -89,8 +89,8 @@
 		- [ ] [[3. Time-Domain Signal Operations/3.3. Time Reversal and Combined Operations/Lessons/3.3.6. Order of Operations in Signal Transformations|3.3.6. Order of Operations in Signal Transformations]]
 - [ ] 4. Unit Step and Unit Impulse Signals
 	- [ ] 4.1. Unit Step Function
-		- [ ] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.1. Definition of the Unit Step Function|4.1.1. Definition of the Unit Step Function]]
-		- [ ] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.2. Unit Step as an On-Off Switch|4.1.2. Unit Step as an On-Off Switch]]
+		- [x] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.1. Definition of the Unit Step Function|4.1.1. Definition of the Unit Step Function]]
+		- [x] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.2. Unit Step as an On-Off Switch|4.1.2. Unit Step as an On-Off Switch]]
 		- [ ] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.3. Shifted Unit Step Functions|4.1.3. Shifted Unit Step Functions]]
 		- [ ] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.4. Starting a Signal with a Unit Step|4.1.4. Starting a Signal with a Unit Step]]
 		- [ ] [[4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.5. Delaying Exponential Signals with Unit Steps|4.1.5. Delaying Exponential Signals with Unit Steps]]

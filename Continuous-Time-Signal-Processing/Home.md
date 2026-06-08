@@ -3,7 +3,7 @@
 ## Next Topics
 
 1. [Delaying a Signal](<3. Time-Domain Signal Operations/3.1. Time Shifting/Lessons/3.1.1. Delaying a Signal.md>)
-2. [Definition of the Unit Step Function](<4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.1. Definition of the Unit Step Function.md>)
+2. [Shifted Unit Step Functions](<4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.3. Shifted Unit Step Functions.md>)
 3. [Complex Numbers in Polar Form](<2. Complex Numbers and Complex Exponential Signals/2.1. Complex Exponential Form/Lessons/2.1.3. Complex Numbers in Polar Form.md>)
 4. [Instantaneous Power of a Signal](<1. Foundations of Continuous-Time Signals/1.3. Signal Size/Lessons/1.3.1. Instantaneous Power of a Signal.md>)
 5. [Real and Imaginary Parts of an Exponential Transform](<9. Continuous-Time Fourier Transform/9.2. Basic Fourier Transform Pairs/Lessons/9.2.2. Real and Imaginary Parts of an Exponential Transform.md>)
@@ -13,7 +13,7 @@
 - 1. Foundations of Continuous-Time Signals: 17% (4/23)
 - 2. Complex Numbers and Complex Exponential Signals: 4% (1/28)
 - 3. Time-Domain Signal Operations: 0% (0/18)
-- 4. Unit Step and Unit Impulse Signals: 0% (0/24)
+- 4. Unit Step and Unit Impulse Signals: 8% (2/24)
 - 5. Continuous-Time Systems: 0% (0/30)
 - 6. LTI Systems and Impulse Response: 0% (0/19)
 - 7. Computing Convolution: 0% (0/25)
@@ -26,6 +26,8 @@
 
 ## History
 
+- [Unit Step as an On-Off Switch](<4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.2. Unit Step as an On-Off Switch.md>) - 2026-06-08 10:40
+- [Definition of the Unit Step Function](<4. Unit Step and Unit Impulse Signals/4.1. Unit Step Function/Lessons/4.1.1. Definition of the Unit Step Function.md>) - 2026-06-08 10:36
 - [Signal Support and Zero Regions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.4. Signal Support and Zero Regions.md>) - 2026-06-08 09:51
 - [Piecewise Signal Definitions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.3. Piecewise Signal Definitions.md>) - 2026-06-08 09:22
 - [Continuous-Time Signals as Functions](<1. Foundations of Continuous-Time Signals/1.1. Continuous-Time Signal Basics/Lessons/1.1.1. Continuous-Time Signals as Functions.md>) - 2026-06-07 14:20
@@ -34,7 +36,7 @@
 
 ## Summary
 
-- Completed lessons: 5 / 334
+- Completed lessons: 7 / 334
 - Queue size: 5 / 5
 
 <!--
