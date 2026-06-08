@@ -6,6 +6,7 @@
 * `FM-SPF` - [Split Plotting Failure](#fm-spf-split-plotting-failure)
 * `FM-UCL` - [Unclear Content Language](#fm-ucl-unclear-content-language)
 * `FM-MSL` - [Misleading Content Language](#fm-msl-misleading-content-language)
+* `FM-MLF` - [Malformed LaTeX Formatting](#fm-mlf-malformed-latex-formatting)
 
 ## FM-DB-MCQ: Double-Barreled MCQ
 
@@ -22,3 +23,7 @@
 ## FM-MSL: Misleading Content Language
 
 **Misleading Content Language:** A wording failure where the language unintentionally suggests a different task, quantity, relationship, or interpretation than the one being assessed. This occurs when the content appears to ask for one thing while intending another, causing the learner to infer the target from context rather than from clear wording.
+
+## FM-MLF: Malformed LaTeX Formatting
+
+**Malformed LaTeX Formatting:** A formatting failure where mathematical notation is written in a way that does not render correctly in the Markdown environment. This can occur because of broken delimiters, unsupported syntax, misplaced line breaks, escaping errors, or mixed Markdown/LaTeX structure that prevents the intended expression from displaying properly.
