@@ -22,7 +22,7 @@
 To calculate the limit at infinity of a rational function, such as
 
 $$
-\lim_\limits{x\rightarrow \infty}\left(\dfrac{x^4}{x^5-x^2}\right)
+\lim_{x\rightarrow \infty}\left(\dfrac{x^4}{x^5-x^2}\right)
 $$
 
 we apply the following procedure:
@@ -31,23 +31,23 @@ we apply the following procedure:
 
 $$
 \begin{aligned}
-lim_(x → ∞)(\frac{x^{4}}{x^{5} - x^{2}}) &= lim_(x → ∞)((x^{4} \div x^{5})/((x^{5} - x^{2}) \div x^{5})) \\
-&= lim_(x → ∞)(\frac{\frac{x^{4}}{x^{5}}}{\frac{x^{5}}{x^{5}} - \frac{x^{2}}{x^{5}}}) \\
-&= lim_(x → ∞)(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}})
+\lim_{x \to \infty}(\frac{x^{4}}{x^{5} - x^{2}}) &= \lim_{x \to \infty}((x^{4} \div x^{5})/((x^{5} - x^{2}) \div x^{5})) \\
+&= \lim_{x \to \infty}(\frac{\frac{x^{4}}{x^{5}}}{\frac{x^{5}}{x^{5}} - \frac{x^{2}}{x^{5}}}) \\
+&= \lim_{x \to \infty}(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}})
 \end{aligned}
 $$
 
 **Step 2:** Apply the rule that if $n$ is any positive integer then
 
 $$
-\displaystyle \lim_\limits{x\rightarrow \infty}\left(\dfrac{1}{x^n}\right)=0
+\displaystyle \lim_{x\rightarrow \infty}\left(\dfrac{1}{x^n}\right)=0
 $$
 
 Evaluate the remaining expression to obtain the answer.
 
 $$
 \begin{aligned}
-lim_(x → ∞)(\frac{x^{4}}{x^{5} - x^{2}}) &= lim_(x → ∞)(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}}) \\
+\lim_{x \to \infty}(\frac{x^{4}}{x^{5} - x^{2}}) &= \lim_{x \to \infty}(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}}) \\
 &= \frac{0}{1 - 0} \\
 &= \frac{0}{1} \\
 &= 0
@@ -59,7 +59,7 @@ $$
 <a id="evaluating-a-limit-at-infinity-rational-solutions"></a>
 ## Evaluating a Limit at Infinity: Rational Solutions
 
-**Example:** Evaluate $\lim_\limits{x\rightarrow \infty} \dfrac{3x^4+9x}{6x^4-x^3}$.
+**Example:** Evaluate $\lim_{x\rightarrow \infty} \dfrac{3x^4+9x}{6x^4-x^3}$.
 
 **Explanation**
 
@@ -67,8 +67,8 @@ First, we divide both the numerator and the denominator by the highest power of 
 
 $$
 \begin{aligned}
-lim_(x → ∞)\frac{3x^{4} + 9x}{6x^{4} - x^{3}} &= lim_(x → ∞)((\frac{3x^{4}}{x^{4}} + \frac{9x}{x^{4}}))/((\frac{6x^{4}}{x^{4}} - \frac{x^{3}}{x^{4}})) \\
-&= lim_(x → ∞)((3 + \frac{9}{x^{3}}))/((6 - \frac{1}{x})) \\
+\lim_{x \to \infty}\frac{3x^{4} + 9x}{6x^{4} - x^{3}} &= \lim_{x \to \infty}((\frac{3x^{4}}{x^{4}} + \frac{9x}{x^{4}}))/((\frac{6x^{4}}{x^{4}} - \frac{x^{3}}{x^{4}})) \\
+&= \lim_{x \to \infty}((3 + \frac{9}{x^{3}}))/((6 - \frac{1}{x})) \\
 &= \frac{3 + 0}{6 - 0} \\
 &= \frac{1}{2}
 \end{aligned}
@@ -82,7 +82,7 @@ $$
 type: radio
 id: MA253-UQ1-1903-q001
 content: |-
-  Evaluate $lim_(x → ∞)\frac{3x^{4} + 1}{-3x^{4} - 2x^{3}}$.
+  Evaluate $\lim_{x \to \infty}\frac{3x^{4} + 1}{-3x^{4} - 2x^{3}}$.
 options:
 - id: a
   content: |-
@@ -109,7 +109,7 @@ options:
 type: radio
 id: MA253-UQ1-1903-q002
 content: |-
-  Evaluate $lim_(x → ∞)\frac{-15}{x^{3} - 2}$.
+  Evaluate $\lim_{x \to \infty}\frac{-15}{x^{3} - 2}$.
 options:
 - id: a
   content: |-
@@ -133,7 +133,7 @@ options:
 <a id="evaluating-a-limit-at-infinity-infinite-solutions"></a>
 ## Evaluating a Limit at Infinity: Infinite Solutions
 
-**Example:** Calculate $\lim_\limits{x\rightarrow -\infty} \dfrac{4-5x-2x^3}{x^2+3}$.
+**Example:** Calculate $\lim_{x\rightarrow -\infty} \dfrac{4-5x-2x^3}{x^2+3}$.
 
 **Explanation**
 
@@ -141,10 +141,10 @@ First, we divide both the numerator and the denominator by the highest power of 
 
 $$
 \begin{aligned}
-lim_(x → - ∞)\frac{4 - 5x - 2x^{3}}{x^{2} + 3} &= lim_(x → - ∞)((\frac{-2x^{3}}{x^{2}} - \frac{5x}{x^{2}} + \frac{4}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{3}{x^{2}})) \\
-&= lim_(x → - ∞)((-2x - \frac{5}{x} + \frac{4}{x^{2}}))/((1 + \frac{3}{x^{2}})) \\
-&= lim_(x → - ∞)(\frac{-2x + 0 + 0}{1 + 0}) \\
-&= lim_(x → - ∞)(-2x) \\
+\lim_{x \to -\infty}\frac{4 - 5x - 2x^{3}}{x^{2} + 3} &= \lim_{x \to -\infty}((\frac{-2x^{3}}{x^{2}} - \frac{5x}{x^{2}} + \frac{4}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{3}{x^{2}})) \\
+&= \lim_{x \to -\infty}((-2x - \frac{5}{x} + \frac{4}{x^{2}}))/((1 + \frac{3}{x^{2}})) \\
+&= \lim_{x \to -\infty}(\frac{-2x + 0 + 0}{1 + 0}) \\
+&= \lim_{x \to -\infty}(-2x) \\
 &= ∞
 \end{aligned}
 $$
@@ -157,7 +157,7 @@ $$
 type: radio
 id: MA253-UQ1-1903-q003
 content: |-
-  Calculate $lim_(x → ∞)\frac{x^{4} - 6}{x^{2} - x + 2}$.
+  Calculate $\lim_{x \to \infty}\frac{x^{4} - 6}{x^{2} - x + 2}$.
 options:
 - id: a
   content: |-
@@ -184,7 +184,7 @@ options:
 type: radio
 id: MA253-UQ1-1903-q004
 content: |-
-  Calculate $lim_(x → - ∞)\frac{2x^{3} - 13}{x + 11}$.
+  Calculate $\lim_{x \to -\infty}\frac{2x^{3} - 13}{x + 11}$.
 options:
 - id: a
   content: |-
@@ -220,9 +220,9 @@ As a result, we get
 
 $$
 \begin{aligned}
-lim_(x → ∞)f(x) &= lim_(x → ∞)\frac{x + 1}{x^{2} + 2} \\
-&= lim_(x → ∞)((\frac{x}{x^{2}} + \frac{1}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{2}{x^{2}})) \\
-&= lim_(x → ∞)((\frac{1}{x} + \frac{1}{x^{2}}))/((1 + \frac{2}{x^{2}})) \\
+\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x + 1}{x^{2} + 2} \\
+&= \lim_{x \to \infty}((\frac{x}{x^{2}} + \frac{1}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{2}{x^{2}})) \\
+&= \lim_{x \to \infty}((\frac{1}{x} + \frac{1}{x^{2}}))/((1 + \frac{2}{x^{2}})) \\
 &= \frac{0 + 0}{1 + 0} \\
 &= 0
 \end{aligned}
@@ -244,16 +244,16 @@ So the horizontal asymptote of the graph $y=f(x)$ is $y=0$, as shown below.
 The horizontal asymptote is
 
 $$
-y=\lim_\limits{x \rightarrow \infty} f(x)
+y=\lim_{x \rightarrow \infty} f(x)
 $$
 
 To find the horizontal asymptote, we apply the usual procedure of dividing the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$.
 
 $$
 \begin{aligned}
-lim_(x → ∞)f(x) &= lim_(x → ∞)\frac{2x^{3} + 1}{x^{3} - 15x} \\
-&= lim_(x → ∞)((\frac{2x^{3}}{x^{3}} + \frac{1}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{15x}{x^{3}})) \\
-&= lim_(x → ∞)((2 + \frac{1}{x^{3}}))/((1 - \frac{15}{x^{2}})) \\
+\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{2x^{3} + 1}{x^{3} - 15x} \\
+&= \lim_{x \to \infty}((\frac{2x^{3}}{x^{3}} + \frac{1}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{15x}{x^{3}})) \\
+&= \lim_{x \to \infty}((2 + \frac{1}{x^{3}}))/((1 - \frac{15}{x^{2}})) \\
 &= \frac{2 + 0}{1 - 0} \\
 &= 2
 \end{aligned}
@@ -327,18 +327,18 @@ options:
 The horizontal asymptote is
 
 $$
-y=\lim_\limits{x \rightarrow \infty} f(x)
+y=\lim_{x \rightarrow \infty} f(x)
 $$
 
 To find the horizontal asymptote, we apply the usual procedure of dividing the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$.
 
 $$
 \begin{aligned}
-lim_(x → ∞)f(x) &= lim_(x → ∞)\frac{x^{5} - 10}{x^{3} - 8x^{2}} \\
-&= lim_(x → ∞)((\frac{x^{5}}{x^{3}} - \frac{10}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{8x^{2}}{x^{3}})) \\
-&= lim_(x → ∞)((x^{2} - \frac{10}{x^{3}}))/((1 - \frac{8}{x})) \\
-&= lim_(x → ∞)(\frac{x^{2} - 0}{1 - 0}) \\
-&= lim_(x → ∞)x^{2} \\
+\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x^{5} - 10}{x^{3} - 8x^{2}} \\
+&= \lim_{x \to \infty}((\frac{x^{5}}{x^{3}} - \frac{10}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{8x^{2}}{x^{3}})) \\
+&= \lim_{x \to \infty}((x^{2} - \frac{10}{x^{3}}))/((1 - \frac{8}{x})) \\
+&= \lim_{x \to \infty}(\frac{x^{2} - 0}{1 - 0}) \\
+&= \lim_{x \to \infty}x^{2} \\
 &= ∞
 \end{aligned}
 $$

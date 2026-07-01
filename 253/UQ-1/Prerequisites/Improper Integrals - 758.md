@@ -102,7 +102,10 @@ $$
 type: radio
 id: MA253-UQ1-758-q001
 content: |-
-  What is $\int_{1}^{\infty}\frac{3}{\theta^{3}}d\theta$?
+  Evaluate
+  $$
+  \int_{1}^{\infty}\frac{3}{\theta^{3}}\,d\theta
+  $$
 options:
 - id: a
   content: |-
@@ -129,7 +132,10 @@ options:
 type: radio
 id: MA253-UQ1-758-q002
 content: |-
-  What is $\int_{1}^{\infty}\frac{2}{\sqrt{x^{9}}}dx$?
+  Evaluate
+  $$
+  \int_{1}^{\infty}\frac{2}{\sqrt{x^{9}}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -210,7 +216,10 @@ $$
 type: radio
 id: MA253-UQ1-758-q003
 content: |-
-  Evaluate $\int_{0}^{\infty}(1)/(\sqrt{(x + 4)^{5}})dx$.
+  Evaluate
+  $$
+  \int_{0}^{\infty}\frac{1}{\sqrt{(x + 4)^{5}}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -237,7 +246,10 @@ options:
 type: radio
 id: MA253-UQ1-758-q004
 content: |-
-  Evaluate the integral $\int_{0}^{\infty}(x)/((1 + x^{2})^{2})dx$.
+  Evaluate the integral
+  $$
+  \int_{0}^{\infty}\frac{x}{(1 + x^{2})^{2}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -309,7 +321,10 @@ $$
 type: radio
 id: MA253-UQ1-758-q005
 content: |-
-  What is $\int_{-\infty}^{-1}\frac{1}{x^{3}}dx$?
+  Evaluate
+  $$
+  \int_{-\infty}^{-1}\frac{1}{x^{3}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -336,7 +351,10 @@ options:
 type: radio
 id: MA253-UQ1-758-q006
 content: |-
-  Evaluate $\int_{-\infty}^{-1}(1)/((7x + 3)^{3})dx$.
+  Evaluate
+  $$
+  \int_{-\infty}^{-1}\frac{1}{(7x + 3)^{3}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -363,7 +381,10 @@ options:
 type: radio
 id: MA253-UQ1-758-q007
 content: |-
-  Evaluate $\int_{-\infty}^{-1}(3x^{2})/((x^{3} - 1)^{4})dx$.
+  Evaluate
+  $$
+  \int_{-\infty}^{-1}\frac{3x^{2}}{(x^{3} - 1)^{4}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -450,7 +471,10 @@ In conclusion, only integral I is divergent.
 type: radio
 id: MA253-UQ1-758-q008
 content: |-
-  What is $\int_{0}^{\infty}\frac{1}{2x + 1}dx$?
+  Evaluate
+  $$
+  \int_{0}^{\infty}\frac{1}{2x + 1}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -479,9 +503,13 @@ id: MA253-UQ1-758-q009
 content: |-
   Which of the following improper integrals are divergent?
   
-  1. $\int_{10}^{\infty}\frac{1}{\sqrt{x - 1}}dx$
-  2. $\int_{-\infty}^{-1}\frac{1}{x}dx$
-  3. $\int_{1}^{\infty}\frac{1}{x^{2}}dx$
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{10}^{\infty}\frac{1}{\sqrt{x - 1}}\,dx \\
+  \text{II.}\quad &\int_{-\infty}^{-1}\frac{1}{x}\,dx \\
+  \text{III.}\quad &\int_{1}^{\infty}\frac{1}{x^{2}}\,dx
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-

@@ -101,7 +101,7 @@ $$
 type: radio
 id: MA253-UQ1-463-q001
 content: |-
-  What is $lim_(x → 0)(x\cos x)/(\ln (x + 1))$?
+  What is $\lim_{x \to 0}(x\cos x)/(\ln (x + 1))$?
 options:
 - id: a
   content: |-
@@ -128,7 +128,7 @@ options:
 type: radio
 id: MA253-UQ1-463-q002
 content: |-
-  What is $lim_(x → 0)\frac{x^{2} - x}{\tan x}$?
+  What is $\lim_{x \to 0}\frac{x^{2} - x}{\tan x}$?
 options:
 - id: a
   content: |-
@@ -188,7 +188,7 @@ $$
 type: radio
 id: MA253-UQ1-463-q003
 content: |-
-  What is $lim_(x → 0)\frac{\sin x - x}{x^{3} + x^{2}}$?
+  What is $\lim_{x \to 0}\frac{\sin x - x}{x^{3} + x^{2}}$?
 options:
 - id: a
   content: |-
@@ -215,7 +215,7 @@ options:
 type: radio
 id: MA253-UQ1-463-q004
 content: |-
-  What is $lim_(x → 0)((x^{2} - 1)^{2} - 1)/(x^{2})$?
+  What is $\lim_{x \to 0}((x^{2} - 1)^{2} - 1)/(x^{2})$?
 options:
 - id: a
   content: |-
@@ -315,7 +315,7 @@ $$
 type: radio
 id: MA253-UQ1-463-q005
 content: |-
-  Evaluate $lim_(x → 0^{+})(\ln x)/((\frac{1}{x^{2}}))$.
+  Evaluate $\lim_{x \to 0^{+}}(\ln x)/((\frac{1}{x^{2}}))$.
 options:
 - id: a
   content: |-
@@ -342,7 +342,7 @@ options:
 type: radio
 id: MA253-UQ1-463-q006
 content: |-
-  Evaluate $lim_(x → 0^{+})(\ln (\sin x))/(\csc x)$.
+  Evaluate $\lim_{x \to 0^{+}}(\ln (\sin x))/(\csc x)$.
 options:
 - id: a
   content: |-
@@ -414,7 +414,7 @@ $$
 type: radio
 id: MA253-UQ1-463-q007
 content: |-
-  What is $lim_(x → ∞)\frac{2\ln x}{e^{x}}$?
+  What is $\lim_{x \to \infty}\frac{2\ln x}{e^{x}}$?
 options:
 - id: a
   content: |-
@@ -441,7 +441,7 @@ options:
 type: radio
 id: MA253-UQ1-463-q008
 content: |-
-  What is $lim_(x → ∞)\frac{x + 1}{\sqrt{x} - 1}$?
+  What is $\lim_{x \to \infty}\frac{x + 1}{\sqrt{x} - 1}$?
 options:
 - id: a
   content: |-

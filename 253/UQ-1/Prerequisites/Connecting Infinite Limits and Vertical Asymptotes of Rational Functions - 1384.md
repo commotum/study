@@ -103,7 +103,7 @@ id: MA253-UQ1-1384-q001
 content: |-
   > A calculator is required to answer this question.
   
-  Evaluate $lim_(x → (-3)^{+})\frac{x^{2} + 4}{3x^{2} - 27}$.
+  Evaluate $\lim_{x \to (-3)^{+}}\frac{x^{2} + 4}{3x^{2} - 27}$.
 options:
 - id: a
   content: |-
@@ -132,7 +132,7 @@ id: MA253-UQ1-1384-q002
 content: |-
   > A calculator is required to answer this question.
   
-  Evaluate $lim_(x → 2^{+})\frac{x^{2} + 2x - 3}{10x - 20}$.
+  Evaluate $\lim_{x \to 2^{+}}\frac{x^{2} + 2x - 3}{10x - 20}$.
 options:
 - id: a
   content: |-
@@ -201,7 +201,7 @@ id: MA253-UQ1-1384-q003
 content: |-
   > A calculator is required to answer this question.
   
-  Calculate $lim_(x → (-1)^{-})\frac{x}{2x^{2} - 2}$.
+  Calculate $\lim_{x \to (-1)^{-}}\frac{x}{2x^{2} - 2}$.
 options:
 - id: a
   content: |-
@@ -230,7 +230,7 @@ id: MA253-UQ1-1384-q004
 content: |-
   > A calculator is required to answer this question.
   
-  Calculate $lim_(x → 4^{-})(- (1)/(x(x - 4)))$.
+  Calculate $\lim_{x \to 4^{-}}(- (1)/(x(x - 4)))$.
 options:
 - id: a
   content: |-
@@ -308,9 +308,9 @@ content: |-
   
   Given that $f(x) = (2x)/((x - 2)^{2})$, which of the following statements is correct?
   
-  1. $lim_(x → 2^{-})f(x) = + ∞$
-  2. $lim_(x → 2)f(x) = + ∞$
-  3. $lim_(x → 2^{+})f(x) = - ∞$
+  1. $\lim_{x \to 2^{-}}f(x) = + ∞$
+  2. $\lim_{x \to 2}f(x) = + ∞$
+  3. $\lim_{x \to 2^{+}}f(x) = - ∞$
 options:
 - id: a
   content: |-
@@ -341,9 +341,9 @@ content: |-
   
   Given that $f(x) = (x^{2})/((x - 1)^{3})$, which of the following statements is correct?
   
-  1. $lim_(x → 1^{-})f(x) = + ∞$
-  2. $lim_(x → 1)f(x) = + ∞$
-  3. $lim_(x → 1^{+})f(x) = + ∞$
+  1. $\lim_{x \to 1^{-}}f(x) = + ∞$
+  2. $\lim_{x \to 1}f(x) = + ∞$
+  3. $\lim_{x \to 1^{+}}f(x) = + ∞$
 options:
 - id: a
   content: |-
@@ -428,9 +428,9 @@ content: |-
   
   Given that $f(x) = \frac{x + 3}{x^{2} - 9}$, which of the following statements is correct?
   
-  1. $lim_(x → (-3)^{-})f(x) = - ∞$
-  2. $lim_(x → (-3)^{+})f(x) = + ∞$
-  3. $lim_(x → 3^{+})f(x) = ∞$
+  1. $\lim_{x \to (-3)^{-}}f(x) = - ∞$
+  2. $\lim_{x \to (-3)^{+}}f(x) = + ∞$
+  3. $\lim_{x \to 3^{+}}f(x) = ∞$
 options:
 - id: a
   content: |-
@@ -461,9 +461,9 @@ content: |-
   
   Given that $f(x) = \frac{2x + 2}{x^{2} - 1}$, which of the following statements is correct?
   
-  1. $lim_(x → 1^{-})f(x) = - ∞$
-  2. $lim_(x → (-1)^{+})f(x) = + ∞$
-  3. $lim_(x → (-1)^{-})f(x) = - ∞$
+  1. $\lim_{x \to 1^{-}}f(x) = - ∞$
+  2. $\lim_{x \to (-1)^{+}}f(x) = + ∞$
+  3. $\lim_{x \to (-1)^{-}}f(x) = - ∞$
 options:
 - id: a
   content: |-

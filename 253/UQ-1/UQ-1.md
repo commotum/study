@@ -4,12 +4,6 @@
 
 ### Main Priority
 
-#### Algebra Bridge
-
-- [The Difference of Squares Formula](<Prerequisites/The Difference of Squares Formula - 2275.md>)
-- [Factoring Differences of Squares](<Prerequisites/Factoring Differences of Squares - 370.md>)
-- [Simplifying Rational Expressions Using Polynomial Factorization](<Prerequisites/Simplifying Rational Expressions Using Polynomial Factorization - 1676.md>)
-
 #### Layer 6
 
 - [Improper Integrals](<Prerequisites/Improper Integrals - 758.md>)

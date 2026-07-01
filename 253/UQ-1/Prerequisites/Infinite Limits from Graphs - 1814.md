@@ -18,27 +18,27 @@
 
 Until now, all limits of the form $\lim\limits_{x \to a} f(x)$ that we have encountered have evaluated to either a finite number or $\text{DNE}$. However, there is another possibility: the limit could be *infinite*!
 
-For example, consider the function $f(x)$ whose graph is shown below. This function has a vertical asymptote at $x=1$, and the function value $f(x)$ grows without bound as $x$ approaches the asymptote $x=1$. What is the limit $\lim_\limits{x\to 1} f(x)$?
+For example, consider the function $f(x)$ whose graph is shown below. This function has a vertical asymptote at $x=1$, and the function value $f(x)$ grows without bound as $x$ approaches the asymptote $x=1$. What is the limit $\lim_{x\to 1} f(x)$?
 
 ![](<../Source/Infinite Limits from Graphs - 1814/Images/815fbd2e2e392e274e615b636b76ec3e.png>)
 
-Remember that in order for computing any limit, in this case, $\lim_\limits{x\to 1} f(x)$, we have to compute the left and right-sided limits separately and ensure that they match up.
+Remember that in order for computing any limit, in this case, $\lim_{x\to 1} f(x)$, we have to compute the left and right-sided limits separately and ensure that they match up.
 
 - **Left-sided limit:** As we approach $x=1$ (the vertical asymptote) from the left side of the graph, the function $f(x)$ increases without bound, approaching $\infty$. We conclude that
-$\lim_\limits{x\to 1^-} f(x) = \infty$.
+$\lim_{x\to 1^-} f(x) = \infty$.
 - **Right-sided limit:** Likewise, as we approach the vertical asymptote $x=1$ from the right side of the graph, $f(x)$ still approaches $\infty$. Consequently,
-$\lim_\limits{x\to 1^+} f(x) = \infty$.
+$\lim_{x\to 1^+} f(x) = \infty$.
 
 We see that both the left and right limits exist and are equal to $\infty$:
 
 $$
-\lim_\limits{x\to 1^-} f(x) = \lim_\limits{x\to 1^+} f(x) = \infty
+\lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) = \infty
 $$
 
 As a result, the overall limit is also equal to $\infty$:
 
 $$
-\lim_\limits{x\to 1} f(x) = \infty
+\lim_{x\to 1} f(x) = \infty
 $$
 
 ---
@@ -46,7 +46,7 @@ $$
 <a id="identifying-infinite-limits-when-the-left-and-right-limits-are-the-same"></a>
 ## Identifying Infinite Limits when the Left and Right Limits are the Same
 
-**Example:** The figure below shows the graph of $f(x)$. Evaluate $\lim_\limits{x \to \,4} f(x)$.
+**Example:** The figure below shows the graph of $f(x)$. Evaluate $\lim_{x \to \,4} f(x)$.
 
 ![](<../Source/Infinite Limits from Graphs - 1814/Images/b4bb94672e6fdf40e9cbcb416e1ecf20.png>)
 
@@ -55,19 +55,19 @@ $$
 We see from the graph that as $x$ approaches $4$ from the left, the function $f(x)$ approaches $-\infty$. So, the left-hand limit is
 
 $$
-\lim_\limits{x\rightarrow 4^-} f(x) = -\infty \,
+\lim_{x\rightarrow 4^-} f(x) = -\infty \,
 $$
 
 Likewise, as $x$ approaches $4$ from the right, the function $f(x)$ again approaches $-\infty$. So, the right-hand limit is
 
 $$
-\lim_\limits{x\rightarrow 4^+} f(x) = -\infty \,
+\lim_{x\rightarrow 4^+} f(x) = -\infty \,
 $$
 
 Consequently,
 
 $$
-\lim_\limits{x\rightarrow 4} f(x)=-\infty \,
+\lim_{x\rightarrow 4} f(x)=-\infty \,
 $$
 
 ---
@@ -82,9 +82,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → (-4)^{+})f(x) = - ∞$
-  2. $lim_(x → (-4)^{-})f(x) = ∞$
-  3. $lim_(x → - 4)f(x) = DNE$
+  1. $\lim_{x \to (-4)^{+}}f(x) = - ∞$
+  2. $\lim_{x \to (-4)^{-}}f(x) = ∞$
+  3. $\lim_{x \to - 4}f(x) = DNE$
 options:
 - id: a
   content: |-
@@ -113,31 +113,31 @@ id: MA253-UQ1-1814-q002
 content: |-
   ![](<../Source/Infinite Limits from Graphs - 1814/Images/q-35499.png>)
   
-  The figure above shows the graph of $f(x)$. Evaluate $lim_(x → - 1)f(x)$.
+  The figure above shows the graph of $f(x)$. Evaluate $\lim_{x \to - 1}f(x)$.
 options:
 - id: a
   content: |-
-    $lim_(x → - 1)f(x) = 0$
+    $\lim_{x \to - 1}f(x) = 0$
 - id: b
   content: |-
-    $lim_(x → - 1)f(x) = ∞$
+    $\lim_{x \to - 1}f(x) = ∞$
   correct: true
 - id: c
   content: |-
-    $lim_(x → - 1)f(x) =-1$
+    $\lim_{x \to - 1}f(x) =-1$
 - id: d
   content: |-
-    $lim_(x → - 1)f(x) = DNE$
+    $\lim_{x \to - 1}f(x) = DNE$
 - id: e
   content: |-
-    $lim_(x → - 1)f(x) = - ∞$
+    $\lim_{x \to - 1}f(x) = - ∞$
 ```
 ---
 
 <a id="identifying-infinite-limits-when-the-left-and-right-limits-are-different"></a>
 ## Identifying Infinite Limits when the Left and Right Limits are Different
 
-**Example:** The figure below shows the graph of $f(x)$. What is $\lim_\limits{x \to \,-\,4} f(x)$?
+**Example:** The figure below shows the graph of $f(x)$. What is $\lim_{x \to \,-\,4} f(x)$?
 
 ![](<../Source/Infinite Limits from Graphs - 1814/Images/eab9fdd38a536d4ad48fbc67d17143f3.png>)
 
@@ -146,19 +146,19 @@ options:
 As $x$ approaches $-4$ from the right, the function value $f(x)$ grows to infinity, and therefore
 
 $$
-\lim_\limits{x\to -4^+} f(x)=\infty
+\lim_{x\to -4^+} f(x)=\infty
 $$
 
 However, the function $f(x)$ is not defined for $x<-4$, and consequently we cannot approach $x=-4$ from the left. So we have
 
 $$
-\lim_\limits{x\to -4^-} f(x)=\text{DNE}
+\lim_{x\to -4^-} f(x)=\text{DNE}
 $$
 
 and therefore
 
 $$
-\lim_\limits{x\to -4} f(x)=\text{DNE}
+\lim_{x\to -4} f(x)=\text{DNE}
 $$
 
 ---
@@ -173,9 +173,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → 3^{+})f(x) = - ∞$
-  2. $lim_(x → 3^{-})f(x) = ∞$
-  3. $lim_(x → 3)f(x) = 3$
+  1. $\lim_{x \to 3^{+}}f(x) = - ∞$
+  2. $\lim_{x \to 3^{-}}f(x) = ∞$
+  3. $\lim_{x \to 3}f(x) = 3$
 options:
 - id: a
   content: |-
@@ -204,24 +204,24 @@ id: MA253-UQ1-1814-q004
 content: |-
   ![](<../Source/Infinite Limits from Graphs - 1814/Images/q-35501.png>)
   
-  The figure above shows the graph of $f(x)$. Evaluate $lim_(x → 3^{+})f(x)$.
+  The figure above shows the graph of $f(x)$. Evaluate $\lim_{x \to 3^{+}}f(x)$.
 options:
 - id: a
   content: |-
-    $lim_(x → 3^{+})f(x) = DNE$
+    $\lim_{x \to 3^{+}}f(x) = DNE$
 - id: b
   content: |-
-    $lim_(x → 3^{+})f(x) = 1$
+    $\lim_{x \to 3^{+}}f(x) = 1$
 - id: c
   content: |-
-    $lim_(x → 3^{+})f(x) = ∞$
+    $\lim_{x \to 3^{+}}f(x) = ∞$
   correct: true
 - id: d
   content: |-
-    $lim_(x → 3^{+})f(x) = - ∞$
+    $\lim_{x \to 3^{+}}f(x) = - ∞$
 - id: e
   content: |-
-    $lim_(x → 3^{+})f(x) = 3$
+    $\lim_{x \to 3^{+}}f(x) = 3$
 ```
 ---
 

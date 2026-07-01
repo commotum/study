@@ -44,7 +44,7 @@ Remember that logarithms are only defined for positive inputs $x\gt 0$, so we mu
 <a id="evaluating-using-direct-substitution"></a>
 ## Evaluating Using Direct Substitution
 
-**Example:** Find $\lim_\limits{x \to 4}\log_2 (x+4)$.
+**Example:** Find $\lim_{x \to 4}\log_2 (x+4)$.
 
 **Explanation**
 
@@ -54,7 +54,7 @@ To find this limit, we substitute $x=4$ into the expression:
 
 $$
 \begin{aligned}
-lim_(x → 4)\log_{2} (x + 4) &= \log_{2} (4 + 4) \\
+\lim_{x \to 4}\log_{2} (x + 4) &= \log_{2} (4 + 4) \\
 &= \log_{2} (8) \\
 &= \log_{2} (2^{3}) \\
 &= 3
@@ -69,7 +69,7 @@ $$
 type: radio
 id: MA253-UQ1-1377-q001
 content: |-
-  What is $lim_(x → 7)\log (15x - 5)$?
+  What is $\lim_{x \to 7}\log (15x - 5)$?
 options:
 - id: a
   content: |-
@@ -96,7 +96,7 @@ options:
 type: radio
 id: MA253-UQ1-1377-q002
 content: |-
-  What is $lim_(x → 5)\log_{3} (5x + 2)$?
+  What is $\lim_{x \to 5}\log_{3} (5x + 2)$?
 options:
 - id: a
   content: |-
@@ -185,7 +185,7 @@ $$
 type: radio
 id: MA253-UQ1-1377-q003
 content: |-
-  What is $lim_(x → ∞)\log_{2} (5 - x)$?
+  What is $\lim_{x \to \infty}\log_{2} (5 - x)$?
 options:
 - id: a
   content: |-
@@ -212,7 +212,7 @@ options:
 type: radio
 id: MA253-UQ1-1377-q004
 content: |-
-  What is $lim_(x → ∞)\log (2x - 4)$?
+  What is $\lim_{x \to \infty}\log (2x - 4)$?
 options:
 - id: a
   content: |-
@@ -236,7 +236,7 @@ options:
 <a id="evaluating-one-sided-infinite-limits-of-logarithmic-functions"></a>
 ## Evaluating One-Sided Infinite Limits of Logarithmic Functions
 
-**Example:** Calculate $\lim_\limits{x \to (-2)^{-}} \ln (x+2)$ and $\lim_\limits{x \to (-2)^{+}} \ln (x+2)$.
+**Example:** Calculate $\lim_{x \to (-2)^{-}} \ln (x+2)$ and $\lim_{x \to (-2)^{+}} \ln (x+2)$.
 
 **Explanation**
 
@@ -257,13 +257,13 @@ $$
 Therefore,
 
 $$
-\lim_\limits{x \to (-2)^{-}} \ln (x+2) = \textrm{DNE}
+\lim_{x \to (-2)^{-}} \ln (x+2) = \textrm{DNE}
 $$
 
 However, the function is defined for $x\gt -2$. Therefore,
 
 $$
-\lim_\limits{x \to (-2)^{+}} \ln (x+2) = -\infty
+\lim_{x \to (-2)^{+}} \ln (x+2) = -\infty
 $$
 
 ---
@@ -274,7 +274,7 @@ $$
 type: radio
 id: MA253-UQ1-1377-q005
 content: |-
-  What is $lim_(x → 5^{-})\log (5 - x)$?
+  What is $\lim_{x \to 5^{-}}\log (5 - x)$?
 options:
 - id: a
   content: |-
@@ -301,7 +301,7 @@ options:
 type: radio
 id: MA253-UQ1-1377-q006
 content: |-
-  Calculate $lim_(x → (-3)^{+})\ln (x + 3)$.
+  Calculate $\lim_{x \to (-3)^{+}}\ln (x + 3)$.
 options:
 - id: a
   content: |-
@@ -325,7 +325,7 @@ options:
 <a id="evaluating-infinite-limits-of-logarithmic-functions"></a>
 ## Evaluating Infinite Limits of Logarithmic Functions
 
-**Example:** Calculate $\lim_\limits{x \to 2} \ln (x-2)$.
+**Example:** Calculate $\lim_{x \to 2} \ln (x-2)$.
 
 **Explanation**
 
@@ -346,19 +346,19 @@ $$
 Therefore,
 
 $$
-\lim_\limits{x \to 2^{-}} \ln (x-2) = \textrm{DNE}
+\lim_{x \to 2^{-}} \ln (x-2) = \textrm{DNE}
 $$
 
 However, the function is defined for $x\gt 2$. Therefore,
 
 $$
-\lim_\limits{x \to 2^{+}} \ln (x-2) = -\infty
+\lim_{x \to 2^{+}} \ln (x-2) = -\infty
 $$
 
 Since the left and right-sided limits are not equal, we have
 
 $$
-\lim_\limits{x \to 2} \ln (x-2) = \textrm{DNE}
+\lim_{x \to 2} \ln (x-2) = \textrm{DNE}
 $$
 
 ---
@@ -369,7 +369,7 @@ $$
 type: radio
 id: MA253-UQ1-1377-q007
 content: |-
-  Calculate $lim_(x → (-4))\log_{2} (x + 4)$.
+  Calculate $\lim_{x \to (-4)}\log_{2} (x + 4)$.
 options:
 - id: a
   content: |-
@@ -396,7 +396,7 @@ options:
 type: radio
 id: MA253-UQ1-1377-q008
 content: |-
-  Calculate $lim_(x → 1/2)\ln (2x - 1)$.
+  Calculate $\lim_{x \to 1/2}\ln (2x - 1)$.
 options:
 - id: a
   content: |-

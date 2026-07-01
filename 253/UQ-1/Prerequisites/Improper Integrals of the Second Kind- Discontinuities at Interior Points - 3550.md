@@ -45,10 +45,10 @@ Let's evaluate $I_1$:
 
 $$
 \begin{aligned}
-∫_{1}^{2}\frac{1}{x - 2}dx &= lim_(a → 2^{-})∫_{1}^{a}\frac{1}{x - 2}dx \\
-&= lim_(a → 2^{-})\ln \mid x - 2 \mid \mid _{1}^{a} \\
-&= lim_(a → 2^{-})(\ln\begin{vmatrix}a - 2 & -\ln & 1 - 2\end{vmatrix}) \\
-&= lim_(a → 2^{-})(\ln \mid a - 2\begin{vmatrix}-0) \\ = lim_(a → 2^{-})(\ln \mid a - 2\end{vmatrix}) \\
+∫_{1}^{2}\frac{1}{x - 2}dx &= \lim_{a \to 2^{-}}∫_{1}^{a}\frac{1}{x - 2}dx \\
+&= \lim_{a \to 2^{-}}\ln \mid x - 2 \mid \mid _{1}^{a} \\
+&= \lim_{a \to 2^{-}}(\ln\begin{vmatrix}a - 2 & -\ln & 1 - 2\end{vmatrix}) \\
+&= \lim_{a \to 2^{-}}(\ln \mid a - 2\begin{vmatrix}-0) \\ = \lim_{a \to 2^{-}}(\ln \mid a - 2\end{vmatrix}) \\
 &= - ∞
 \end{aligned}
 $$
@@ -81,10 +81,10 @@ Let's evaluate each integral in turn.
 - Statement I is true. To compute the integral, we use the substitution
 $u = e^{2x}\quad\Longrightarrow\quad \dfrac 1 2\, \textrm d u = e^{2x}\,\textrm d x$.
 Calculating the integral, we get
-$∫_{-1}^{0}f(x)dx|= ∫_{-1}^{0}\frac{e^{2x}}{1 - e^{2x}}dx; = \frac{1}{2}∫_{e^{-2}}^{1}\frac{1}{1 - u}du; =-\frac{1}{2}lim_(a → 1^{-})[\ln \mid 1 - u\begin{vmatrix}]_{e^{-2}}^{a} \\ =-\frac{1}{2}lim_(a → 1^{-})(\ln\begin{vmatrix}1 - a & -\ln\end{vmatrix}1 - e^{-2}\end{vmatrix}); =-\frac{1}{2}[- ∞ - \ln (1 - e^{-2})]; = ∞$.
+$∫_{-1}^{0}f(x)dx|= ∫_{-1}^{0}\frac{e^{2x}}{1 - e^{2x}}dx; = \frac{1}{2}∫_{e^{-2}}^{1}\frac{1}{1 - u}du; =-\frac{1}{2}\lim_{a \to 1^{-}}[\ln \mid 1 - u\begin{vmatrix}]_{e^{-2}}^{a} \\ =-\frac{1}{2}\lim_{a \to 1^{-}}(\ln\begin{vmatrix}1 - a & -\ln\end{vmatrix}1 - e^{-2}\end{vmatrix}); =-\frac{1}{2}[- ∞ - \ln (1 - e^{-2})]; = ∞$.
 
 - Statement II is true. To compute the integral in statement II, we use the same process as before.
-$∫_{0}^{1}f(x)dx|= ∫_{0}^{1}\frac{e^{2x}}{1 - e^{2x}}dx; = \frac{1}{2}∫_{1}^{e^{2}}\frac{1}{1 - u}du; =-\frac{1}{2}lim_(a → 1^{+})[\ln \mid 1 - u\begin{vmatrix}]_{a}^{e^{2}} \\ =-\frac{1}{2}lim_(a → 1^{+})(\ln\begin{vmatrix}1 - e^{2} & -\ln\end{vmatrix}1 - a\end{vmatrix}); =-\frac{1}{2}[\ln (e^{2} - 1) - (- ∞)]; = - ∞$.
+$∫_{0}^{1}f(x)dx|= ∫_{0}^{1}\frac{e^{2x}}{1 - e^{2x}}dx; = \frac{1}{2}∫_{1}^{e^{2}}\frac{1}{1 - u}du; =-\frac{1}{2}\lim_{a \to 1^{+}}[\ln \mid 1 - u\begin{vmatrix}]_{a}^{e^{2}} \\ =-\frac{1}{2}\lim_{a \to 1^{+}}(\ln\begin{vmatrix}1 - e^{2} & -\ln\end{vmatrix}1 - a\end{vmatrix}); =-\frac{1}{2}[\ln (e^{2} - 1) - (- ∞)]; = - ∞$.
 - Statement III is true. We can write down this integral by splitting it over the discontinuity at $x=0$, as follows:
 $\displaystyle \int_{-1}^1 f(x) \,\textrm d x = \displaystyle \int_{-1}^0 f(x) \,\textrm d x + \displaystyle \int_{0}^1 f(x) \,\textrm d x$.
 Since both integrals on the right-hand side are divergent, the integral on the left-hand side is divergent, too.
@@ -99,11 +99,19 @@ In conclusion, statements I, II, and III are all true.
 type: radio
 id: MA253-UQ1-3550-q001
 content: |-
-  Given the function $f(x) = \frac{\cos x}{1 - \sin x}$, which of the following statements are true?
+  Given the function
+  $$
+  f(x) = \frac{\cos x}{1 - \sin x}
+  $$
+  which of the following statements are true?
   
-  1. $∫_{0}^{π/2}f(x)dx$ is divergent
-  2. $∫_{π/2}^{π}f(x)dx$ is divergent
-  3. $∫_{0}^{π}f(x)dx$ is divergent
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{0}^{\pi/2}f(x)\,dx \text{ is divergent} \\
+  \text{II.}\quad &\int_{\pi/2}^{\pi}f(x)\,dx \text{ is divergent} \\
+  \text{III.}\quad &\int_{0}^{\pi}f(x)\,dx \text{ is divergent}
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-
@@ -130,11 +138,19 @@ options:
 type: radio
 id: MA253-UQ1-3550-q002
 content: |-
-  Given the function $f(x) = \frac{x}{1 - x^{2}}$, which of the following statements are true?
+  Given the function
+  $$
+  f(x) = \frac{x}{1 - x^{2}}
+  $$
+  which of the following statements are true?
   
-  1. $∫_{0}^{1}f(x)dx$ is divergent
-  2. $∫_{1}^{2}f(x)dx$ is convergent
-  3. $∫_{0}^{2}f(x)dx$ is divergent
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{0}^{1}f(x)\,dx \text{ is divergent} \\
+  \text{II.}\quad &\int_{1}^{2}f(x)\,dx \text{ is convergent} \\
+  \text{III.}\quad &\int_{0}^{2}f(x)\,dx \text{ is divergent}
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-
@@ -176,9 +192,9 @@ $$
 \begin{aligned}
 I_{1} &= ∫_{-2}^{1}\frac{1}{\sqrt[3]{x - 1}}dx \\
 &= ∫_{-3}^{0}\frac{1}{\sqrt[3]{u}}du \\
-&= lim_(a → 0^{-})∫_{-3}^{a}u^{-1/3}du \\
-&= lim_(a → 0^{-})[\frac{3}{2}u^{2/3}]_{-3}^{a} \\
-&= lim_(a → 0^{-})\frac{3}{2}[a^{2/3} - (-3)^{2/3}] \\
+&= \lim_{a \to 0^{-}}∫_{-3}^{a}u^{-1/3}du \\
+&= \lim_{a \to 0^{-}}[\frac{3}{2}u^{2/3}]_{-3}^{a} \\
+&= \lim_{a \to 0^{-}}\frac{3}{2}[a^{2/3} - (-3)^{2/3}] \\
 &= \frac{3}{2}[(0)^{2/3} - \sqrt[3]{(-3)^{2}}] \\
 &=-\frac{3}{2}\sqrt[3]{9}
 \end{aligned}
@@ -190,9 +206,9 @@ $$
 \begin{aligned}
 I_{2} &= ∫_{1}^{2}\frac{1}{\sqrt[3]{x - 1}}dx \\
 &= ∫_{0}^{1}\frac{1}{\sqrt[3]{u}}du \\
-&= lim_(a → 0^{+})∫_{a}^{1}u^{-1/3}du \\
-&= lim_(a → 0^{+})[\frac{3}{2}u^{2/3}]_{a}^{1} \\
-&= lim_(a → 0^{+})\frac{3}{2}[1^{2/3} - a^{2/3}] \\
+&= \lim_{a \to 0^{+}}∫_{a}^{1}u^{-1/3}du \\
+&= \lim_{a \to 0^{+}}[\frac{3}{2}u^{2/3}]_{a}^{1} \\
+&= \lim_{a \to 0^{+}}\frac{3}{2}[1^{2/3} - a^{2/3}] \\
 &= \frac{3}{2}[1 - 0] \\
 &= \frac{3}{2}
 \end{aligned}
@@ -216,7 +232,10 @@ $$
 type: radio
 id: MA253-UQ1-3550-q003
 content: |-
-  What is $∫_{-27}^{1}\frac{1}{\sqrt[3]{x}}dx$?
+  Evaluate
+  $$
+  \int_{-27}^{1}\frac{1}{\sqrt[3]{x}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -243,7 +262,10 @@ options:
 type: radio
 id: MA253-UQ1-3550-q004
 content: |-
-  Evaluate the integral $∫_{-8}^{1}\frac{1}{\sqrt[3]{x}}dx$.
+  Evaluate the integral
+  $$
+  \int_{-8}^{1}\frac{1}{\sqrt[3]{x}}\,dx
+  $$
 options:
 - id: a
   content: |-

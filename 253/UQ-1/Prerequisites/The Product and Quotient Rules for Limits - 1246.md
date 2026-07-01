@@ -23,20 +23,20 @@ The **product rule** states that the limit of the product of two functions equal
 More precisely, if
 
 $$
-\lim_\limits{x\rightarrow \, a}f(x)=L
+\lim_{x\rightarrow \, a}f(x)=L
 $$
 
 and
 
 $$
-\lim_\limits{x\rightarrow \, a}g(x)=K
+\lim_{x\rightarrow \, a}g(x)=K
 $$
 
 then
 
 $$
 \begin{aligned}
-lim_(x → a)(f(x) \cdot g(x)) &= lim_(x → a)f(x) \cdot lim_(x → a)g(x) \\
+\lim_{x \to a}(f(x) \cdot g(x)) &= \lim_{x \to a}f(x) \cdot \lim_{x \to a}g(x) \\
 &= L \cdot K
 \end{aligned}
 $$
@@ -44,14 +44,14 @@ $$
 For example, we can evaluate
 
 $$
-\lim_\limits{x \rightarrow \,2} \left[ (x^2 +2x +3)(x^3-2x-1) \right]
+\lim_{x \rightarrow \,2} \left[ (x^2 +2x +3)(x^3-2x-1) \right]
 $$
 
 by evaluating the limit of each polynomial separately, and then multiplying the results together:
 
 $$
 \begin{aligned}
-lim_(x → 2)[(x^{2} + 2x + 3)(x^{3} - 2x - 1)] &= lim_(x → 2)(x^{2} + 2x + 3) \cdot lim_(x → 2)(x^{3} - 2x - 1) \\
+\lim_{x \to 2}[(x^{2} + 2x + 3)(x^{3} - 2x - 1)] &= \lim_{x \to 2}(x^{2} + 2x + 3) \cdot \lim_{x \to 2}(x^{3} - 2x - 1) \\
 &= (2^{2} + 2 \cdot 2 + 3) \cdot (2^{3} - 2 \cdot 2 - 1) \\
 &= (4 + 4 + 3) \cdot (8 - 4 - 1) \\
 &= (11) \cdot (3) \\
@@ -64,7 +64,7 @@ $$
 <a id="applying-the-product-rule-to-compute-a-limit"></a>
 ## Applying the Product Rule to Compute a Limit
 
-**Example:** Find $\lim_\limits{x\rightarrow -2}(x^2-3x)(x+1)^{3}$.
+**Example:** Find $\lim_{x\rightarrow -2}(x^2-3x)(x+1)^{3}$.
 
 **Explanation**
 
@@ -72,8 +72,8 @@ Applying the product rule, followed by the sum and constant multiple rules, we h
 
 $$
 \begin{aligned}
-lim_(x → - 2)(x^{2} - 3x)(x + 1)^{3} &= lim_(x → - 2)(x^{2} - 3x) \cdot lim_(x → - 2)(x + 1)^{3} \\
-&= (lim_(x → - 2)x^{2} - 3lim_(x → - 2)x)(lim_(x → - 2)(x^{3} + 3x^{2} + 3x + 1)) \\
+\lim_{x \to - 2}(x^{2} - 3x)(x + 1)^{3} &= \lim_{x \to - 2}(x^{2} - 3x) \cdot \lim_{x \to - 2}(x + 1)^{3} \\
+&= (\lim_{x \to - 2}x^{2} - 3\lim_{x \to - 2}x)(\lim_{x \to - 2}(x^{3} + 3x^{2} + 3x + 1)) \\
 &= ((-2)^{2} - 3(-2))((-2)^{3} + 3(-2)^{2} + 3(-2) + 1) \\
 &= (4 + 6)(-8 + 12 - 6 + 1) \\
 &= (10)(-1) \\
@@ -89,7 +89,7 @@ $$
 type: radio
 id: MA253-UQ1-1246-q001
 content: |-
-  Find $lim_(y → 2)(2y - 5)(y^{2} + 6y + 9)$.
+  Find $\lim_{y \to 2}(2y - 5)(y^{2} + 6y + 9)$.
 options:
 - id: a
   content: |-
@@ -116,7 +116,7 @@ options:
 type: radio
 id: MA253-UQ1-1246-q002
 content: |-
-  Find $lim_(x → 1/6)(2x + 1)(3x - 1)$.
+  Find $\lim_{x \to 1/6}(2x + 1)(3x - 1)$.
 options:
 - id: a
   content: |-
@@ -140,7 +140,7 @@ options:
 <a id="applying-the-product-rule-to-compute-a-limit-given-a-graph"></a>
 ## Applying the Product Rule to Compute a Limit Given a Graph
 
-**Example:** Find $\lim_\limits{x\rightarrow 2}\left(\dfrac{x^3 f(x)}{4}\right)$ for the function $f(x)$ plotted below.
+**Example:** Find $\lim_{x\rightarrow 2}\left(\dfrac{x^3 f(x)}{4}\right)$ for the function $f(x)$ plotted below.
 
 ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/a35e10a88fdb149d50b059d5b09e7c9b.png>)
 
@@ -149,14 +149,14 @@ options:
 From the graph, we get that
 
 $$
-\lim_\limits{x\rightarrow 2} f(x)=4
+\lim_{x\rightarrow 2} f(x)=4
 $$
 
 So, applying the product rule, we have
 
 $$
 \begin{aligned}
-lim_(x → 2)((x^{3}f(x))/(4)) &= \frac{1}{4} \cdot lim_(x → 2)x^{3} \cdot lim_(x → 2)f(x) \\
+\lim_{x \to 2}((x^{3}f(x))/(4)) &= \frac{1}{4} \cdot \lim_{x \to 2}x^{3} \cdot \lim_{x \to 2}f(x) \\
 &= \frac{1}{4} \cdot 2^{3} \cdot 4 \\
 &= 8
 \end{aligned}
@@ -172,7 +172,7 @@ id: MA253-UQ1-1246-q003
 content: |-
   ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-35443.png>)
   
-  Find $lim_(x → 1)(x^{2} + 2)f(x)$ for the function $f(x)$ plotted above.
+  Find $\lim_{x \to 1}(x^{2} + 2)f(x)$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -201,7 +201,7 @@ id: MA253-UQ1-1246-q004
 content: |-
   ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-35441.png>)
   
-  Find $lim_(x → 0)((2x + 3)f(x))/(9)$ for the function $f(x)$ plotted above.
+  Find $\lim_{x \to 0}((2x + 3)f(x))/(9)$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -230,32 +230,32 @@ The **quotient rule** states that the limit of the quotient of two functions equ
 More precisely, if
 
 $$
-\lim_\limits{x\rightarrow a}f(x)=L
+\lim_{x\rightarrow a}f(x)=L
 $$
 
 and
 
 $$
-\lim_\limits{x\rightarrow a}g(x)= K \neq 0
+\lim_{x\rightarrow a}g(x)= K \neq 0
 $$
 
 , then
 
 $$
-\lim_\limits{x\rightarrow a} \dfrac{f(x)}{g(x)} = \dfrac{\lim_\limits{x\rightarrow a}f(x)}{\lim_\limits{x\rightarrow a}g(x)}=\dfrac{L}{K}
+\lim_{x\rightarrow a} \dfrac{f(x)}{g(x)} = \dfrac{\lim_{x\rightarrow a}f(x)}{\lim_{x\rightarrow a}g(x)}=\dfrac{L}{K}
 $$
 
 For example, we can evaluate
 
 $$
-\lim_\limits{x \rightarrow \,2} \dfrac{x^2+4x}{x+1}
+\lim_{x \rightarrow \,2} \dfrac{x^2+4x}{x+1}
 $$
 
 by evaluating the limits of the numerator and denominator separately, and then dividing the results:
 
 $$
 \begin{aligned}
-lim_(x → 2)\frac{x^{2} + 4x}{x + 1} &= (lim_(x → 2)(x^{2} + 4x))/(lim_(x → 2)(x + 1)) \\
+\lim_{x \to 2}\frac{x^{2} + 4x}{x + 1} &= (\lim_{x \to 2}(x^{2} + 4x))/(\lim_{x \to 2}(x + 1)) \\
 &= \frac{2^{2} + 4 \cdot 2}{2 + 1} \\
 &= \frac{12}{3} \\
 &= 4
@@ -267,21 +267,21 @@ $$
 <a id="applying-the-quotient-rule-to-compute-a-limit"></a>
 ## Applying the Quotient Rule to Compute a Limit
 
-**Example:** Calculate $\lim_\limits{x\rightarrow 2} x^{-5}$.
+**Example:** Calculate $\lim_{x\rightarrow 2} x^{-5}$.
 
 **Explanation**
 
 First, we will express the negative exponent as a quotient:
 
 $$
-\lim_\limits{x\rightarrow 2} x^{-5}= \lim_\limits{x\rightarrow 2} \dfrac{1}{x^5}
+\lim_{x\rightarrow 2} x^{-5}= \lim_{x\rightarrow 2} \dfrac{1}{x^5}
 $$
 
 Then, we apply the quotient rule:
 
 $$
 \begin{aligned}
-lim_(x → 2)x^{-5} &= (lim_(x → 2)1)/(lim_(x → 2)x^{5}) \\
+\lim_{x \to 2}x^{-5} &= (\lim_{x \to 2}1)/(\lim_{x \to 2}x^{5}) \\
 &= \frac{1}{2^{5}} \\
 &= \frac{1}{32}
 \end{aligned}
@@ -295,7 +295,7 @@ $$
 type: radio
 id: MA253-UQ1-1246-q005
 content: |-
-  Find $lim_(x → - 3)\frac{2x}{x + 2}$.
+  Find $\lim_{x \to - 3}\frac{2x}{x + 2}$.
 options:
 - id: a
   content: |-
@@ -322,7 +322,7 @@ options:
 type: radio
 id: MA253-UQ1-1246-q006
 content: |-
-  Find $lim_(x → - 2) - 4x^{-3}$.
+  Find $\lim_{x \to - 2} - 4x^{-3}$.
 options:
 - id: a
   content: |-
@@ -346,7 +346,7 @@ options:
 <a id="applying-the-quotient-rule-to-compute-a-limit-given-a-graph"></a>
 ## Applying the Quotient Rule to Compute a Limit Given a Graph
 
-**Example:** Find $\lim_\limits{x\rightarrow 2} \dfrac{xf(x)+x^2}{2+f(x)}$ for the function $f(x)$ plotted below.
+**Example:** Find $\lim_{x\rightarrow 2} \dfrac{xf(x)+x^2}{2+f(x)}$ for the function $f(x)$ plotted below.
 
 ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/f9617550bea4c667507864cf1dccfa51.png>)
 
@@ -356,22 +356,22 @@ Using the quotient rule, we have
 
 $$
 \begin{aligned}
-lim_(x → 2)(xf(x) + x^{2})/(2 + f(x)) &= (lim_(x → 2)(xf(x) + x^{2}))/(lim_(x → 2)(2 + f(x)))
+\lim_{x \to 2}(xf(x) + x^{2})/(2 + f(x)) &= (\lim_{x \to 2}(xf(x) + x^{2}))/(\lim_{x \to 2}(2 + f(x)))
 \end{aligned}
 $$
 
 We find from the graph that
 
 $$
-\lim_\limits{x\rightarrow 2} f(x)=3
+\lim_{x\rightarrow 2} f(x)=3
 $$
 
 Calculating the limits of the numerator and denominator separately, we have
 
 $$
 \begin{aligned}
-lim_(x → 2)(xf(x) + x^{2}) &= 2(3) + 2^{2} = 10, \\
-lim_(x → 2)(2 + f(x)) &= 2 + 3 = 5
+\lim_{x \to 2}(xf(x) + x^{2}) &= 2(3) + 2^{2} = 10, \\
+\lim_{x \to 2}(2 + f(x)) &= 2 + 3 = 5
 \end{aligned}
 $$
 
@@ -379,7 +379,7 @@ Taking the quotient of these limits, we have
 
 $$
 \begin{aligned}
-lim_(x → 2)(xf(x) + x^{2})/(2 + f(x)) &= (lim_(x → 2)(xf(x) + x^{2}))/(lim_(x → 2)(2 + f(x))) \\
+\lim_{x \to 2}(xf(x) + x^{2})/(2 + f(x)) &= (\lim_{x \to 2}(xf(x) + x^{2}))/(\lim_{x \to 2}(2 + f(x))) \\
 &= \frac{10}{5} \\
 &= 2
 \end{aligned}
@@ -395,7 +395,7 @@ id: MA253-UQ1-1246-q007
 content: |-
   ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-17283.png>)
   
-  Find $lim_(x → 1)(3f(x) + 3x)/(6x^{2} + 4)$ for the function $f(x)$ plotted above.
+  Find $\lim_{x \to 1}(3f(x) + 3x)/(6x^{2} + 4)$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -424,7 +424,7 @@ id: MA253-UQ1-1246-q008
 content: |-
   ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-17281.png>)
   
-  Find $lim_(x → - π/2)(4x + π)/(f(x))$ for the function $f(x)$ plotted above.
+  Find $\lim_{x \to - \pi/2}(4x + π)/(f(x))$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-

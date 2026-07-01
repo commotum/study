@@ -23,14 +23,14 @@
 Consider the following limit:
 
 $$
-\lim_\limits{x \to 0} \dfrac{1- \cos x}{x}
+\lim_{x \to 0} \dfrac{1- \cos x}{x}
 $$
 
 Notice that direct substitution of $x=0$ leads to the indeterminate form
 
 $$
 \begin{aligned}
-lim_(x → 0)\frac{1 - \cos x}{x} &= \frac{1 - \cos 0}{0} \\
+\lim_{x \to 0}\frac{1 - \cos x}{x} &= \frac{1 - \cos 0}{0} \\
 &= \frac{1 - 1}{0} \\
 &= \frac{0}{0}
 \end{aligned}
@@ -55,7 +55,7 @@ $$
 is undefined at $x=0$, it does appear from the graph that
 
 $$
-\lim_\limits{x \to 0} \dfrac{1-\cos x}{x}=0
+\lim_{x \to 0} \dfrac{1-\cos x}{x}=0
 $$
 
 This is indeed the case. Moreover, it's possible to prove this result rigorously. However, we will assume that it is true and use it to calculate other limits.
@@ -65,7 +65,7 @@ This is indeed the case. Moreover, it's possible to prove this result rigorously
 <a id="evaluating-a-limit-of-a-function-involving-the-special-limit-with-cosine"></a>
 ## Evaluating a Limit of a Function Involving the Special Limit With Cosine
 
-**Example:** Evaluate $\lim_\limits{y \to 0} \dfrac{\cos^2 y-1}{y}$.
+**Example:** Evaluate $\lim_{y \to 0} \dfrac{\cos^2 y-1}{y}$.
 
 **Explanation**
 
@@ -74,7 +74,7 @@ Notice that as $y \to 0$, both numerator and denominator approach $0$.
 So, if we attempt to evaluate the limit directly, we get
 
 $$
-lim_(y → 0)\frac{\cos^{2} y - 1}{y} = (\cos^{2} (0) - 1)/(0) = \frac{0}{0}
+\lim_{y \to 0}\frac{\cos^{2} y - 1}{y} = (\cos^{2} (0) - 1)/(0) = \frac{0}{0}
 $$
 
 which is an indeterminate form.
@@ -82,16 +82,16 @@ which is an indeterminate form.
 Instead, let's recall the following special limit:
 
 $$
-\lim_\limits{y \to 0} \dfrac{1-\cos y}{y} = 0
+\lim_{y \to 0} \dfrac{1-\cos y}{y} = 0
 $$
 
 Rewriting the given limit using the algebra of limits and applying our special limit, we obtain the following:
 
 $$
 \begin{aligned}
-lim_(y → 0)\frac{\cos^{2} y - 1}{y} &= lim_(y → 0)((\cos y - 1)(\cos y + 1))/(y) \\
-&= lim_(y → 0)\frac{\cos y - 1}{y} \cdot lim_(y → 0)(\cos y + 1) \\
-&=-lim_(y → 0)\frac{1 - \cos y}{y} \cdot lim_(y → 0)(\cos y + 1) \\
+\lim_{y \to 0}\frac{\cos^{2} y - 1}{y} &= \lim_{y \to 0}((\cos y - 1)(\cos y + 1))/(y) \\
+&= \lim_{y \to 0}\frac{\cos y - 1}{y} \cdot \lim_{y \to 0}(\cos y + 1) \\
+&=-\lim_{y \to 0}\frac{1 - \cos y}{y} \cdot \lim_{y \to 0}(\cos y + 1) \\
 &=-0 \cdot (\cos 0 + 1) \\
 &= 0 \cdot 2 \\
 &= 0
@@ -106,7 +106,7 @@ $$
 type: radio
 id: MA253-UQ1-292-q001
 content: |-
-  Evaluate $lim_(x → 0)(1 - \cos^{2} x)/(x(1 + \cos x))$.
+  Evaluate $\lim_{x \to 0}(1 - \cos^{2} x)/(x(1 + \cos x))$.
 options:
 - id: a
   content: |-
@@ -133,7 +133,7 @@ options:
 type: radio
 id: MA253-UQ1-292-q002
 content: |-
-  What is $lim_(x → 0)\frac{1 - \cos x}{x\cos x}$?
+  What is $\lim_{x \to 0}\frac{1 - \cos x}{x\cos x}$?
 options:
 - id: a
   content: |-
@@ -157,7 +157,7 @@ options:
 <a id="evaluating-a-limit-of-a-function-involving-the-special-limit-with-cosine-advanced-cases"></a>
 ## Evaluating a Limit of a Function Involving the Special Limit With Cosine: Advanced Cases
 
-**Example:** Calculate $\lim_\limits{x \to 0} \dfrac{\sec x -1}{x}$.
+**Example:** Calculate $\lim_{x \to 0} \dfrac{\sec x -1}{x}$.
 
 **Explanation**
 
@@ -166,7 +166,7 @@ Notice that as $x \to 0$, both numerator and denominator approach $0$.
 So, if we attempt to evaluate the limit directly, we get
 
 $$
-\lim_\limits{x \to 0}\dfrac{\sec x -1}{x} = \dfrac{\sec 0-1}{0} = \dfrac 00
+\lim_{x \to 0}\dfrac{\sec x -1}{x} = \dfrac{\sec 0-1}{0} = \dfrac 00
 $$
 
 which is an indeterminate form.
@@ -174,17 +174,17 @@ which is an indeterminate form.
 Instead, let's recall the following special limit:
 
 $$
-\lim_\limits{x \to 0} \dfrac{1-\cos x}{x} = 0
+\lim_{x \to 0} \dfrac{1-\cos x}{x} = 0
 $$
 
 Now, multiplying both the numerator and denominator by $\cos x$, we can rewrite the expression and evaluate the limit:
 
 $$
 \begin{aligned}
-lim_(x → 0)\frac{\sec x - 1}{x} &= lim_(x → 0)((\sec x - 1)\cos x)/(x\cos x) \\
-&= lim_(x → 0)((\frac{1}{\cos x} - 1)\cos x)/(x\cos x) \\
-&= lim_(x → 0)\frac{1 - \cos x}{x\cos x} \\
-&= lim_(x → 0)\frac{1 - \cos x}{x} \cdot lim_(x → 0)\frac{1}{\cos x} \\
+\lim_{x \to 0}\frac{\sec x - 1}{x} &= \lim_{x \to 0}((\sec x - 1)\cos x)/(x\cos x) \\
+&= \lim_{x \to 0}((\frac{1}{\cos x} - 1)\cos x)/(x\cos x) \\
+&= \lim_{x \to 0}\frac{1 - \cos x}{x\cos x} \\
+&= \lim_{x \to 0}\frac{1 - \cos x}{x} \cdot \lim_{x \to 0}\frac{1}{\cos x} \\
 &= 0 \cdot (1)/(\cos (0)) \\
 &= 0 \cdot 1 \\
 &= 0
@@ -199,7 +199,7 @@ $$
 type: radio
 id: MA253-UQ1-292-q003
 content: |-
-  Calculate $lim_(t → 0)\frac{1 - \sec t}{t\sec t}$.
+  Calculate $\lim_{t \to 0}\frac{1 - \sec t}{t\sec t}$.
 options:
 - id: a
   content: |-
@@ -226,7 +226,7 @@ options:
 type: radio
 id: MA253-UQ1-292-q004
 content: |-
-  What is $lim_(x → 0)\frac{\cos x - 1 + \sin^{2} x}{x}$?
+  What is $\lim_{x \to 0}\frac{\cos x - 1 + \sin^{2} x}{x}$?
 options:
 - id: a
   content: |-
@@ -253,13 +253,13 @@ options:
 We can use our special limit with cosine to evaluate other limits, such as
 
 $$
-\lim_\limits{x \to 3} \dfrac{1-\cos(x-3)}{2x-6}
+\lim_{x \to 3} \dfrac{1-\cos(x-3)}{2x-6}
 $$
 
 For this limit, notice that as $x\to3$, both the numerator and denominator approach $0$. So, if we attempt to evaluate the limit directly, we get
 
 $$
-%\lim_\limits{x \to 0} \: \dfrac{\sin 2x}{x} = \dfrac00
+%\lim_{x \to 0} \: \dfrac{\sin 2x}{x} = \dfrac00
 $$
 
 which is an indeterminate form.
@@ -268,9 +268,9 @@ Instead, we rewrite the limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-lim_(x → 3)(1 - \cos (x - 3))/(2x - 6) &= lim_(x → 3)(1 - \cos (x - 3))/(2(x - 3)) \\
-&= lim_(x → 3)(\frac{1}{2} \cdot (1 - \cos (x - 3))/(x - 3)) \\
-&= \frac{1}{2} \cdot lim_(x → 3)(1 - \cos (x - 3))/((x - 3))
+\lim_{x \to 3}(1 - \cos (x - 3))/(2x - 6) &= \lim_{x \to 3}(1 - \cos (x - 3))/(2(x - 3)) \\
+&= \lim_{x \to 3}(\frac{1}{2} \cdot (1 - \cos (x - 3))/(x - 3)) \\
+&= \frac{1}{2} \cdot \lim_{x \to 3}(1 - \cos (x - 3))/((x - 3))
 \end{aligned}
 $$
 
@@ -283,14 +283,14 @@ $$
 then, since $\theta \to 0$ as $x \to 3$, we have
 
 $$
-\lim_\limits{x \to 3} \dfrac{1-\cos{\color{blue}(x-3)}}{\color{blue}(x-3)} = \lim_\limits{\theta \to 0} \: \dfrac{1-\cos {\color{blue}\theta}}{\color{blue}\theta} = 0
+\lim_{x \to 3} \dfrac{1-\cos{\color{blue}(x-3)}}{\color{blue}(x-3)} = \lim_{\theta \to 0} \: \dfrac{1-\cos {\color{blue}\theta}}{\color{blue}\theta} = 0
 $$
 
 Therefore,
 
 $$
 \begin{aligned}
-lim_(x → 3)(1 - \cos (x - 3))/(2x - 6) &= \frac{1}{2} \cdot lim_(x → 3)(1 - \cos (x - 3))/((x - 3)) \\
+\lim_{x \to 3}(1 - \cos (x - 3))/(2x - 6) &= \frac{1}{2} \cdot \lim_{x \to 3}(1 - \cos (x - 3))/((x - 3)) \\
 &= \frac{1}{2} \cdot 0 \\
 &= 0
 \end{aligned}
@@ -301,7 +301,7 @@ $$
 <a id="using-the-special-limit-with-cosine-and-substitution-to-evaluate-a-limit"></a>
 ## Using the Special Limit With Cosine and Substitution to Evaluate a Limit
 
-**Example:** Evaluate $\lim_\limits{x \to 0} \dfrac{1-\cos{3x}}{x}$.
+**Example:** Evaluate $\lim_{x \to 0} \dfrac{1-\cos{3x}}{x}$.
 
 **Explanation**
 
@@ -310,7 +310,7 @@ Notice that as $x \to 0$, both numerator and denominator approach $0$.
 So, if we attempt to evaluate the limit directly, we get
 
 $$
-\lim_\limits{x \to 0}\dfrac{1-\cos{3x}}{x} = \dfrac{1-\cos(3\cdot 0)}{0} = \dfrac 00
+\lim_{x \to 0}\dfrac{1-\cos{3x}}{x} = \dfrac{1-\cos(3\cdot 0)}{0} = \dfrac 00
 $$
 
 which is an indeterminate form.
@@ -318,28 +318,28 @@ which is an indeterminate form.
 Instead, let's recall the following special limit:
 
 $$
-\lim_\limits{\theta \to 0} \dfrac{1-\cos \theta}{\theta} = 0
+\lim_{\theta \to 0} \dfrac{1-\cos \theta}{\theta} = 0
 $$
 
 Rewriting the given limit using the algebra of limits and applying our special limit, we get the following:
 
 $$
 \begin{aligned}
-lim_(x → 0)\frac{1 - \cos 3x}{x} &= lim_(x → 0)(3 \cdot \frac{1 - \cos 3x}{3 \cdot x}) \\
-&= 3 \cdot lim_(x → 0)\frac{1 - \cos 3x}{3x}
+\lim_{x \to 0}\frac{1 - \cos 3x}{x} &= \lim_{x \to 0}(3 \cdot \frac{1 - \cos 3x}{3 \cdot x}) \\
+&= 3 \cdot \lim_{x \to 0}\frac{1 - \cos 3x}{3x}
 \end{aligned}
 $$
 
 Let $\theta=3x$. Then, since $\theta \to 0$ as $x \to 0$, we have
 
 $$
-\lim_\limits{x \to 0} \dfrac{1-\cos {\color{blue}3x}}{\color{blue}3x} = \lim_\limits{\theta \to 0} \dfrac{1-\cos {\color{blue}\theta}}{\color{blue}\theta} = 0
+\lim_{x \to 0} \dfrac{1-\cos {\color{blue}3x}}{\color{blue}3x} = \lim_{\theta \to 0} \dfrac{1-\cos {\color{blue}\theta}}{\color{blue}\theta} = 0
 $$
 
 Therefore,
 
 $$
-3\cdot\lim_\limits{x \to 0} \dfrac{1-\cos{\color{black}3x}}{\color{black}3x}= 3\cdot 0 = 0
+3\cdot\lim_{x \to 0} \dfrac{1-\cos{\color{black}3x}}{\color{black}3x}= 3\cdot 0 = 0
 $$
 
 ---
@@ -350,7 +350,7 @@ $$
 type: radio
 id: MA253-UQ1-292-q005
 content: |-
-  Evaluate $lim_(x → 1)(1 - \cos (x - 1))/(1 - x)$.
+  Evaluate $\lim_{x \to 1}(1 - \cos (x - 1))/(1 - x)$.
 options:
 - id: a
   content: |-
@@ -377,7 +377,7 @@ options:
 type: radio
 id: MA253-UQ1-292-q006
 content: |-
-  What is $lim_(x → 0)\frac{1 - \cos^{2} 2x}{3x}$?
+  What is $\lim_{x \to 0}\frac{1 - \cos^{2} 2x}{3x}$?
 options:
 - id: a
   content: |-
@@ -404,13 +404,13 @@ options:
 We can prove the result
 
 $$
-\displaystyle \lim_\limits{x \to 0} \dfrac{1-\cos x}{x}=0
+\displaystyle \lim_{x \to 0} \dfrac{1-\cos x}{x}=0
 $$
 
 using the limit
 
 $$
-\lim_\limits{x \to 0} \dfrac{\sin x}{x}=1
+\lim_{x \to 0} \dfrac{\sin x}{x}=1
 $$
 
 First, we multiply the numerator and the denominator of
@@ -433,9 +433,9 @@ We now take the limit as $x\to 0$, and obtain
 
 $$
 \begin{aligned}
-lim_(x → 0)\frac{1 - \cos x}{x} &= lim_(x → 0)(\sin^{2} x)/(x(1 + \cos x)) \\
-&= lim_(x → 0)(\frac{\sin x}{x} \cdot \frac{\sin x}{1 + \cos x}) \\
-&= (lim_(x → 0)\frac{\sin x}{x}) \cdot (lim_(x → 0)\frac{\sin x}{1 + \cos x}) \\
+\lim_{x \to 0}\frac{1 - \cos x}{x} &= \lim_{x \to 0}(\sin^{2} x)/(x(1 + \cos x)) \\
+&= \lim_{x \to 0}(\frac{\sin x}{x} \cdot \frac{\sin x}{1 + \cos x}) \\
+&= (\lim_{x \to 0}\frac{\sin x}{x}) \cdot (\lim_{x \to 0}\frac{\sin x}{1 + \cos x}) \\
 &= 1 \cdot \frac{\sin 0}{1 + \cos 0} \\
 &= \frac{0}{1 + 1} \\
 &= 0

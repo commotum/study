@@ -63,7 +63,7 @@ $$
 <a id="computing-a-limit-using-direct-substitution"></a>
 ## Computing a Limit Using Direct Substitution
 
-**Example:** Find $\lim_\limits{x\rightarrow (-1/2)} x^3$.
+**Example:** Find $\lim_{x\rightarrow (-1/2)} x^3$.
 
 **Explanation**
 
@@ -77,7 +77,7 @@ directly into the limit, we find
 
 $$
 \begin{aligned}
-lim_(x → (-1/2))x^{3} &= (-\frac{1}{2})^{3} \\
+\lim_{x \to (-1/2)}x^{3} &= (-\frac{1}{2})^{3} \\
 &=-\frac{1}{2^{3}} \\
 &=-\frac{1}{8}
 \end{aligned}
@@ -91,7 +91,7 @@ $$
 type: radio
 id: MA253-UQ1-1716-q001
 content: |-
-  Find $lim_(x → - 2)x^{5}$.
+  Find $\lim_{x \to - 2}x^{5}$.
 options:
 - id: a
   content: |-
@@ -118,7 +118,7 @@ options:
 type: radio
 id: MA253-UQ1-1716-q002
 content: |-
-  Find $lim_(x → 3)x^{4}$.
+  Find $\lim_{x \to 3}x^{4}$.
 options:
 - id: a
   content: |-
@@ -148,16 +148,16 @@ $$
 f(x)=c
 $$
 
-the limit $\lim_\limits{x\rightarrow a} c$ will match the value of the constant:
+the limit $\lim_{x\rightarrow a} c$ will match the value of the constant:
 
 $$
-\lim_\limits{x\rightarrow a} c=c \,
+\lim_{x\rightarrow a} c=c \,
 $$
 
-For example, the limit $\lim_\limits{x\rightarrow 2} 1$ is just the value of the constant, $1$:
+For example, the limit $\lim_{x\rightarrow 2} 1$ is just the value of the constant, $1$:
 
 $$
-\lim_\limits{x\rightarrow 2} 1 = 1
+\lim_{x\rightarrow 2} 1 = 1
 $$
 
 We can verify this result by graphing the function
@@ -184,7 +184,7 @@ $$
 <a id="computing-the-limit-of-a-constant-function"></a>
 ## Computing the Limit of a Constant Function
 
-**Example:** Evaluate $\lim_\limits{x\,\rightarrow \,-4} \sqrt{7}$.
+**Example:** Evaluate $\lim_{x\,\rightarrow \,-4} \sqrt{7}$.
 
 **Explanation**
 
@@ -197,7 +197,7 @@ $$
 remains equal to $\sqrt{7}$. Therefore, we have
 
 $$
-\lim_\limits{x\,\rightarrow\, -4} \sqrt{7}=\sqrt{7}
+\lim_{x\,\rightarrow\, -4} \sqrt{7}=\sqrt{7}
 $$
 
 ---
@@ -208,7 +208,7 @@ $$
 type: radio
 id: MA253-UQ1-1716-q003
 content: |-
-  Evaluate $lim_(x → - \sqrt{2})π$.
+  Evaluate $\lim_{x \to - \sqrt{2}}π$.
 options:
 - id: a
   content: |-
@@ -235,7 +235,7 @@ options:
 type: radio
 id: MA253-UQ1-1716-q004
 content: |-
-  Evaluate $lim_(y → π/3)3$.
+  Evaluate $\lim_{y \to \pi/3}3$.
 options:
 - id: a
   content: |-
@@ -262,19 +262,19 @@ options:
 The **constant rule for limits** states that if $c$ is a constant, and
 
 $$
-\lim_\limits{x\rightarrow a}f(x)=L
+\lim_{x\rightarrow a}f(x)=L
 $$
 
 then
 
 $$
-\lim_\limits{x\rightarrow a}c\cdot f(x) = c\cdot \lim_\limits{x\rightarrow a}f(x)=c\cdot L
+\lim_{x\rightarrow a}c\cdot f(x) = c\cdot \lim_{x\rightarrow a}f(x)=c\cdot L
 $$
 
-For example, to compute $\lim_\limits{x\rightarrow 2}5x^3$, we just factor the constant $5$ out of the limit and then substitute:
+For example, to compute $\lim_{x\rightarrow 2}5x^3$, we just factor the constant $5$ out of the limit and then substitute:
 
 $$
-\begin{aligned} \lim_\limits{x\rightarrow 2}{\color{blue}5}x^3 &= {\color{blue}5} \lim_\limits{x\rightarrow 2}x^3 \\[5pt] &= {\color{blue}5}\cdot 2^3 \\[5pt] &= 40 \end{aligned}
+\begin{aligned} \lim_{x\rightarrow 2}{\color{blue}5}x^3 &= {\color{blue}5} \lim_{x\rightarrow 2}x^3 \\[5pt] &= {\color{blue}5}\cdot 2^3 \\[5pt] &= 40 \end{aligned}
 $$
 
 Similarly, consider the graph of the function $y=f(x)$ below. Suppose we know that
@@ -297,8 +297,8 @@ Therefore,
 
 $$
 \begin{aligned}
-lim_(x → 1)cf(x) &= 10 \\
-c \cdot lim_(x → 1)f(x) &= 10 \\
+\lim_{x \to 1}cf(x) &= 10 \\
+c \cdot \lim_{x \to 1}f(x) &= 10 \\
 c \cdot 5 &= 10 \\
 c &= 2
 \end{aligned}
@@ -327,7 +327,7 @@ $$
 type: radio
 id: MA253-UQ1-1716-q005
 content: |-
-  Given that $lim_(x → \sqrt{2})Cx^{6} = 8$, where $C$ is a real constant, what is the value of $C$?
+  Given that $\lim_{x \to \sqrt{2}}Cx^{6} = 8$, where $C$ is a real constant, what is the value of $C$?
 options:
 - id: a
   content: |-
@@ -354,7 +354,7 @@ options:
 type: radio
 id: MA253-UQ1-1716-q006
 content: |-
-  Find $lim_(y → 3)\frac{5y^{2}}{3}$.
+  Find $\lim_{y \to 3}\frac{5y^{2}}{3}$.
 options:
 - id: a
   content: |-
@@ -378,7 +378,7 @@ options:
 <a id="using-the-constant-rule-to-compute-the-limit-of-a-function-given-a-graph"></a>
 ## Using the Constant Rule to Compute the Limit of a Function Given a Graph
 
-**Example:** The figure below shows the graph of $y=f(x)$. Evaluate $\lim_\limits{x \rightarrow \,0} \Bigl(-2.5f(x)\Bigr)$.
+**Example:** The figure below shows the graph of $y=f(x)$. Evaluate $\lim_{x \rightarrow \,0} \Bigl(-2.5f(x)\Bigr)$.
 
 ![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/a7f8750a28cdc0a0af8a34991e6a0836.png>)
 
@@ -387,14 +387,14 @@ options:
 From the graph we get that
 
 $$
-\lim_\limits{x\to 0}f(x)=2
+\lim_{x\to 0}f(x)=2
 $$
 
 Therefore,
 
 $$
 \begin{aligned}
-lim_(x → 0)(-2.5f(x)) &= (-2.5) \cdot lim_(x → 0)f(x) \\
+\lim_{x \to 0}(-2.5f(x)) &= (-2.5) \cdot \lim_{x \to 0}f(x) \\
 &= (-2.5) \cdot 2 \\
 &=-5
 \end{aligned}
@@ -410,7 +410,7 @@ id: MA253-UQ1-1716-q007
 content: |-
   ![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/q-35398.png>)
   
-  The figure above shows the graph of $y = f(x)$. Evaluate $lim_(x → 0)\sqrt{7}f(x)$.
+  The figure above shows the graph of $y = f(x)$. Evaluate $\lim_{x \to 0}\sqrt{7}f(x)$.
 options:
 - id: a
   content: |-
@@ -439,7 +439,7 @@ id: MA253-UQ1-1716-q008
 content: |-
   ![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/q-35397.png>)
   
-  The figure above shows the graph of $y = f(x)$. Evaluate $lim_(x → 1)(-6f(x))$.
+  The figure above shows the graph of $y = f(x)$. Evaluate $\lim_{x \to 1}(-6f(x))$.
 options:
 - id: a
   content: |-

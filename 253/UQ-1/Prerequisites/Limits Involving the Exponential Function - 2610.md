@@ -82,8 +82,8 @@ Now, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-lim_(n → ∞)(1 + \frac{1}{n})^{3n} &= lim_(n → ∞)[(1 + \frac{1}{n})^{n}]^{3} \\
-&= [lim_(n → ∞)(1 + \frac{1}{n})^{n}]^{3} \\
+\lim_{n \to \infty}(1 + \frac{1}{n})^{3n} &= \lim_{n \to \infty}[(1 + \frac{1}{n})^{n}]^{3} \\
+&= [\lim_{n \to \infty}(1 + \frac{1}{n})^{n}]^{3} \\
 &= e^{3}
 \end{aligned}
 $$
@@ -96,7 +96,7 @@ $$
 type: radio
 id: MA253-UQ1-2610-q001
 content: |-
-  What is $lim_(n → ∞)(1 + \frac{1}{n})^{-2n}$?
+  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{-2n}$?
 options:
 - id: a
   content: |-
@@ -123,7 +123,7 @@ options:
 type: radio
 id: MA253-UQ1-2610-q002
 content: |-
-  What is $lim_(n → ∞)(1 + \frac{1}{n})^{n/2}$?
+  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{n/2}$?
 options:
 - id: a
   content: |-
@@ -161,8 +161,8 @@ Now, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-lim_(n → ∞)(1 + \frac{1}{n})^{nx/3} &= lim_(n → ∞)[(1 + \frac{1}{n})^{n}]^{x/3} \\
-&= [lim_(n → ∞)(1 + \frac{1}{n})^{n}]^{x/3} \\
+\lim_{n \to \infty}(1 + \frac{1}{n})^{nx/3} &= \lim_{n \to \infty}[(1 + \frac{1}{n})^{n}]^{x/3} \\
+&= [\lim_{n \to \infty}(1 + \frac{1}{n})^{n}]^{x/3} \\
 &= e^{x/3} \\
 &= \sqrt[3]{e^{x}}
 \end{aligned}
@@ -176,7 +176,7 @@ $$
 type: radio
 id: MA253-UQ1-2610-q003
 content: |-
-  What is $lim_(n → ∞)(1 + \frac{1}{n})^{4nx}$?
+  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{4nx}$?
 options:
 - id: a
   content: |-
@@ -203,7 +203,7 @@ options:
 type: radio
 id: MA253-UQ1-2610-q004
 content: |-
-  What is $lim_(n → ∞)(1 + \frac{1}{n})^{nx/2}$?
+  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{nx/2}$?
 options:
 - id: a
   content: |-
@@ -239,9 +239,9 @@ First, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-lim_(n → ∞)(1 + \frac{x}{n})^{n} &= lim_(n → ∞)(1 + \frac{1}{n/x})^{n} \\
-&= lim_(n → ∞)(1 + \frac{1}{n/x})^{(n/x) \cdot x} \\
-&= [lim_(n → ∞)(1 + \frac{1}{n/x})^{n/x}]^{x}
+\lim_{n \to \infty}(1 + \frac{x}{n})^{n} &= \lim_{n \to \infty}(1 + \frac{1}{n/x})^{n} \\
+&= \lim_{n \to \infty}(1 + \frac{1}{n/x})^{(n/x) \cdot x} \\
+&= [\lim_{n \to \infty}(1 + \frac{1}{n/x})^{n/x}]^{x}
 \end{aligned}
 $$
 
@@ -255,7 +255,7 @@ Since $m\to\infty$ as $n\to\infty$, we obtain
 
 $$
 \begin{aligned}
-[lim_(n → ∞)(1 + \frac{1}{n/x})^{n/x}]^{x} &= [lim_(m → ∞)(1 + \frac{1}{m})^{m}_(⏟)_(e)]^{x} \\
+[\lim_{n \to \infty}(1 + \frac{1}{n/x})^{n/x}]^{x} &= [\lim_{m \to \infty}(1 + \frac{1}{m})^{m}_(⏟)_(e)]^{x} \\
 &= e^{x}
 \end{aligned}
 $$
@@ -263,7 +263,7 @@ $$
 Therefore, we conclude that
 
 $$
-e^{x} = lim_(n → ∞)(1 + \frac{x}{n})^{n}
+e^{x} = \lim_{n \to \infty}(1 + \frac{x}{n})^{n}
 $$
 
 ---
@@ -285,8 +285,8 @@ Now, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-lim_(n → ∞)(1 + \frac{x}{n})^{-n/2} &= lim_(n → ∞)[(1 + \frac{x}{n})^{n}]^{-1/2} \\
-&= [lim_(n → ∞)(1 + \frac{x}{n})^{n}]^{-1/2} \\
+\lim_{n \to \infty}(1 + \frac{x}{n})^{-n/2} &= \lim_{n \to \infty}[(1 + \frac{x}{n})^{n}]^{-1/2} \\
+&= [\lim_{n \to \infty}(1 + \frac{x}{n})^{n}]^{-1/2} \\
 &= (e^{x})^{-1/2} \\
 &= \sqrt{\frac{1}{e^{x}}}
 \end{aligned}
@@ -300,7 +300,7 @@ $$
 type: radio
 id: MA253-UQ1-2610-q005
 content: |-
-  What is $lim_(n → ∞)(1 + \frac{x}{n})^{-3n}$?
+  What is $\lim_{n \to \infty}(1 + \frac{x}{n})^{-3n}$?
 options:
 - id: a
   content: |-
@@ -327,7 +327,7 @@ options:
 type: radio
 id: MA253-UQ1-2610-q006
 content: |-
-  What is $lim_(n → ∞)(1 + \frac{x}{n})^{2nx}$?
+  What is $\lim_{n \to \infty}(1 + \frac{x}{n})^{2nx}$?
 options:
 - id: a
   content: |-

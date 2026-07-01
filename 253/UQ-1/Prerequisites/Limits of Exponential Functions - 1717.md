@@ -46,7 +46,7 @@ $$
 <a id="evaluating-using-direct-substitution"></a>
 ## Evaluating Using Direct Substitution
 
-**Example:** Find $\lim_\limits{x \to 1} (3^{2x} + 2^{3x} + 1)$.
+**Example:** Find $\lim_{x \to 1} (3^{2x} + 2^{3x} + 1)$.
 
 **Explanation**
 
@@ -54,7 +54,7 @@ We can evaluate this limit using direct substitution, as follows:
 
 $$
 \begin{aligned}
-lim_(x → 1)(3^{2x} + 2^{3x} + 1) &= 3^{2(1)} + 2^{3(1)} + 1 \\
+\lim_{x \to 1}(3^{2x} + 2^{3x} + 1) &= 3^{2(1)} + 2^{3(1)} + 1 \\
 &= 9 + 8 + 1 \\
 &= 18
 \end{aligned}
@@ -68,7 +68,7 @@ $$
 type: radio
 id: MA253-UQ1-1717-q001
 content: |-
-  Find $lim_(x → 3)10^{3x - 7}$.
+  Find $\lim_{x \to 3}10^{3x - 7}$.
 options:
 - id: a
   content: |-
@@ -95,7 +95,7 @@ options:
 type: radio
 id: MA253-UQ1-1717-q002
 content: |-
-  Find $lim_(x → 0)\frac{4^{x} - 5}{2^{x} - 2}$.
+  Find $\lim_{x \to 0}\frac{4^{x} - 5}{2^{x} - 2}$.
 options:
 - id: a
   content: |-
@@ -151,7 +151,7 @@ Again, the same properties are true for any exponential function $y=a^{-x}$ for 
 First, we rewrite the limit using the algebra of limits, as follows:
 
 $$
-lim_(x → - ∞) - 3(\frac{1}{2})^{x} =-3 \cdot lim_(x → - ∞)(\frac{1}{2})^{x}
+\lim_{x \to -\infty} - 3(\frac{1}{2})^{x} =-3 \cdot \lim_{x \to -\infty}(\frac{1}{2})^{x}
 $$
 
 Next, we recall the graph of
@@ -182,7 +182,7 @@ $$
 type: radio
 id: MA253-UQ1-1717-q003
 content: |-
-  What is $lim_(x → - ∞)(-7 \cdot 6^{x})$?
+  What is $\lim_{x \to -\infty}(-7 \cdot 6^{x})$?
 options:
 - id: a
   content: |-
@@ -209,7 +209,7 @@ options:
 type: radio
 id: MA253-UQ1-1717-q004
 content: |-
-  What is $lim_(x → ∞)8^{-x}$?
+  What is $\lim_{x \to \infty}8^{-x}$?
 options:
 - id: a
   content: |-
@@ -233,7 +233,7 @@ options:
 <a id="evaluating-infinite-limits-using-the-laws-of-exponents-and-the-algebra-of-limits"></a>
 ## Evaluating Infinite Limits Using the Laws of Exponents and the Algebra of Limits
 
-**Example:** Compute $\lim_\limits{x \to \infty} -5 \left(\dfrac{1}{3}\right)^{1+x}$.
+**Example:** Compute $\lim_{x \to \infty} -5 \left(\dfrac{1}{3}\right)^{1+x}$.
 
 **Explanation**
 
@@ -241,10 +241,10 @@ We can use the laws of exponents and the algebra of limits to rewrite the given 
 
 $$
 \begin{aligned}
-lim_(x → ∞) - 5(\frac{1}{3})^{1 + x} &= -5lim_(x → ∞)(\frac{1}{3})^{1 + x} \\
-&=-5lim_(x → ∞)(\frac{1}{3})^{1} \cdot (\frac{1}{3})^{x} \\
-&=-5lim_(x → ∞)\frac{1}{3} \cdot (\frac{1}{3})^{x} \\
-&=-\frac{5}{3} \cdot lim_(x → ∞)(\frac{1}{3})^{x}
+\lim_{x \to \infty} - 5(\frac{1}{3})^{1 + x} &= -5\lim_{x \to \infty}(\frac{1}{3})^{1 + x} \\
+&=-5\lim_{x \to \infty}(\frac{1}{3})^{1} \cdot (\frac{1}{3})^{x} \\
+&=-5\lim_{x \to \infty}\frac{1}{3} \cdot (\frac{1}{3})^{x} \\
+&=-\frac{5}{3} \cdot \lim_{x \to \infty}(\frac{1}{3})^{x}
 \end{aligned}
 $$
 
@@ -259,13 +259,13 @@ $$
 From the graph, we see that the function decreases to zero as $x$ increases. So
 
 $$
-\lim_\limits{x \to \infty} \left(\dfrac{1}{3}\right)^{x} = 0
+\lim_{x \to \infty} \left(\dfrac{1}{3}\right)^{x} = 0
 $$
 
 and finally, we have
 
 $$
--\dfrac{5}{3}\cdot \lim_\limits{x \to \infty} \left(\dfrac{1}{3}\right)^{x} = -\dfrac 5 3\cdot 0 = 0
+-\dfrac{5}{3}\cdot \lim_{x \to \infty} \left(\dfrac{1}{3}\right)^{x} = -\dfrac 5 3\cdot 0 = 0
 $$
 
 ---
@@ -276,7 +276,7 @@ $$
 type: radio
 id: MA253-UQ1-1717-q005
 content: |-
-  What is $lim_(x → ∞)2^{2x + 4}$?
+  What is $\lim_{x \to \infty}2^{2x + 4}$?
 options:
 - id: a
   content: |-
@@ -303,7 +303,7 @@ options:
 type: radio
 id: MA253-UQ1-1717-q006
 content: |-
-  What is $lim_(x → ∞)e^{(-3x + 1)}$?
+  What is $\lim_{x \to \infty}e^{(-3x + 1)}$?
 options:
 - id: a
   content: |-

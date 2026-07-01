@@ -70,7 +70,7 @@ With that in mind, let's examine our integrals.
 $\begin{aligned} \int_{0}^{\infty} e^{-x}\, \textrm{d}x &= \lim_{a \to \infty} \int_{0}^{a} e^{-x}\, \textrm{d}x \\ &= \lim_{a \to \infty} \left[-e^{-x}\right]_0^a \\ &= -\lim_{a \to \infty} \left({e^{-a}}-1\right) \\ &= 1. \end{aligned}$
 So the integral converges, and statement I is true.
 - Computing the integral in statement II, we get
-$∫_{- ∞}^{0}e^{-x}dx|= lim_(a → - ∞)∫_{a}^{0}e^{-x}dx; = lim_(a → - ∞)[- e^{-x}]_{a}^{0}; = lim_(a → - ∞)(e^{-a} - 1); = + ∞$.
+$∫_{- ∞}^{0}e^{-x}dx|= \lim_{a \to -\infty}∫_{a}^{0}e^{-x}dx; = \lim_{a \to -\infty}[- e^{-x}]_{a}^{0}; = \lim_{a \to -\infty}(e^{-a} - 1); = + ∞$.
 So the integral diverges, and statement II is true.
 - The integral in statement III can be expressed as
 $\displaystyle \int_{-\infty}^\infty f(x) \, \textrm dx= \int_{-\infty}^0 f(x) \, \textrm dx + \int_0^\infty f(x) \, \textrm dx$.
@@ -86,11 +86,19 @@ In conclusion, statements I, II, and III are all true.
 type: radio
 id: MA253-UQ1-1382-q001
 content: |-
-  Consider the function $f(x) = 3x^{2}$. Which of the following statements are true?
+  Consider the function
+  $$
+  f(x) = 3x^{2}
+  $$
+  Which of the following statements are true?
   
-  1. $∫_{0}^{∞}f(x)dx$ is convergent
-  2. $∫_{- ∞}^{0}f(x)dx$ is divergent
-  3. $∫_{- ∞}^{∞}f(x)dx$ is divergent
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{0}^{\infty}f(x)\,dx \text{ is convergent} \\
+  \text{II.}\quad &\int_{-\infty}^{0}f(x)\,dx \text{ is divergent} \\
+  \text{III.}\quad &\int_{-\infty}^{\infty}f(x)\,dx \text{ is divergent}
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-
@@ -117,11 +125,19 @@ options:
 type: radio
 id: MA253-UQ1-1382-q002
 content: |-
-  Consider the function $f(x) = e^{2x}$. Which of the following statements are true?
+  Consider the function
+  $$
+  f(x) = e^{2x}
+  $$
+  Which of the following statements are true?
   
-  1. $∫_{0}^{∞}f(x)dx$ is convergent
-  2. $∫_{- ∞}^{0}f(x)dx$ is divergent
-  3. $∫_{- ∞}^{∞}f(x)dx$ is divergent
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{0}^{\infty}f(x)\,dx \text{ is convergent} \\
+  \text{II.}\quad &\int_{-\infty}^{0}f(x)\,dx \text{ is divergent} \\
+  \text{III.}\quad &\int_{-\infty}^{\infty}f(x)\,dx \text{ is divergent}
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-
@@ -203,7 +219,10 @@ $$
 type: radio
 id: MA253-UQ1-1382-q003
 content: |-
-  Evaluate $∫_{- ∞}^{∞}\frac{1}{4 + x^{2}}dx$.
+  Evaluate
+  $$
+  \int_{-\infty}^{\infty}\frac{1}{4 + x^{2}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -230,7 +249,10 @@ options:
 type: radio
 id: MA253-UQ1-1382-q004
 content: |-
-  Evaluate the integral $∫_{- ∞}^{∞}(6x^{5})/((3 + x^{6})^{2})dx$.
+  Evaluate the integral
+  $$
+  \int_{-\infty}^{\infty}\frac{6x^{5}}{(3 + x^{6})^{2}}\,dx
+  $$
 options:
 - id: a
   content: |-

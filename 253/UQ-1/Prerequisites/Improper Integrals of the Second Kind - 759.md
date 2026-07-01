@@ -82,7 +82,13 @@ id: MA253-UQ1-759-q001
 content: |-
   Which of the following is an improper integral of the second kind?
   
-  1. $∫_{2}^{6}\frac{dx}{x}$ II. $∫_{2}^{6}\frac{dx}{x - 6}$ III. $∫_{2}^{∞}\frac{dx}{x - 6}$
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{2}^{6}\frac{dx}{x} \\
+  \text{II.}\quad &\int_{2}^{6}\frac{dx}{x - 6} \\
+  \text{III.}\quad &\int_{2}^{\infty}\frac{dx}{x - 6}
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-
@@ -111,7 +117,13 @@ id: MA253-UQ1-759-q002
 content: |-
   Which of the following is an improper integral of the second kind?
   
-  1. $∫_{π/4}^{∞}\tan xdx$ II. $∫_{0}^{π/2}\frac{dx}{1 - \sin x}dx$ III. $∫_{π/4}^{π/2}\csc xdx$
+  $$
+  \begin{aligned}
+  \text{I.}\quad &\int_{\pi/4}^{\infty}\tan x\,dx \\
+  \text{II.}\quad &\int_{0}^{\pi/2}\frac{dx}{1 - \sin x} \\
+  \text{III.}\quad &\int_{\pi/4}^{\pi/2}\csc x\,dx
+  \end{aligned}
+  $$
 options:
 - id: a
   content: |-
@@ -205,24 +217,26 @@ $$
 type: radio
 id: MA253-UQ1-759-q003
 content: |-
-  Which of the following is equivalent to
-  $∫_{2}^{5}\frac{dx}{\sqrt{x^{2} - 4}}$?
+  Which of the following is equivalent to the integral
+  $$
+  \int_{2}^{5}\frac{dx}{\sqrt{x^{2} - 4}}
+  $$
 options:
 - id: a
   content: |-
-    $lim_(a → - ∞)(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $\lim_{a \to -\infty}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: b
   content: |-
-    $lim_(a → 4^{+})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $\lim_{a \to 4^{+}}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: c
   content: |-
-    $lim_(a → 5^{-})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $\lim_{a \to 5^{-}}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: d
   content: |-
-    $lim_(a → + ∞)(∫_{2}^{a}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $\lim_{a \to +\infty}(∫_{2}^{a}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: e
   content: |-
-    $lim_(a → 2^{+})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $\lim_{a \to 2^{+}}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
   correct: true
 ```
 ---
@@ -233,25 +247,27 @@ options:
 type: radio
 id: MA253-UQ1-759-q004
 content: |-
-  Which of the following is equivalent to
-  $∫_{-6}^{-3}\frac{dx}{\sqrt{x^{2} - 9}}$?
+  Which of the following is equivalent to the integral
+  $$
+  \int_{-6}^{-3}\frac{dx}{\sqrt{x^{2} - 9}}
+  $$
 options:
 - id: a
   content: |-
-    $lim_(b → ∞)(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $\lim_{b \to \infty}(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: b
   content: |-
-    $lim_(b → 3^{-})(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $\lim_{b \to 3^{-}}(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: c
   content: |-
-    $lim_(b → (-3)^{-})(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $\lim_{b \to (-3)^{-}}(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
   correct: true
 - id: d
   content: |-
-    $lim_(b → (-6)^{+})(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $\lim_{b \to (-6)^{+}}(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: e
   content: |-
-    $lim_(b → - ∞)(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $\lim_{b \to -\infty}(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 ```
 ---
 
@@ -276,11 +292,11 @@ Nonetheless, it is possible to evaluate the integral by setting the upper bound 
 
 $$
 \begin{aligned}
-∫_{0}^{1}\frac{1}{\sqrt{1 - x^{2}}}dx &= lim_(b → 1^{-})∫_{0}^{b}\frac{1}{\sqrt{1 - x^{2}}}dx \\
-&= lim_(b → 1^{-})\arcsin x \mid _{0}^{b} \\
-&= lim_(b → 1^{-})[\arcsin b - \arcsin 0] \\
-&= lim_(b → 1^{-})[\arcsin b - 0] \\
-&= lim_(b → 1^{-})\arcsin b \\
+∫_{0}^{1}\frac{1}{\sqrt{1 - x^{2}}}dx &= \lim_{b \to 1^{-}}∫_{0}^{b}\frac{1}{\sqrt{1 - x^{2}}}dx \\
+&= \lim_{b \to 1^{-}}\arcsin x \mid _{0}^{b} \\
+&= \lim_{b \to 1^{-}}[\arcsin b - \arcsin 0] \\
+&= \lim_{b \to 1^{-}}[\arcsin b - 0] \\
+&= \lim_{b \to 1^{-}}\arcsin b \\
 &= \arcsin (1) \\
 &= \frac{π}{2}
 \end{aligned}
@@ -337,10 +353,10 @@ Nonetheless, it is possible to calculate the integral by setting the *lower* bou
 
 $$
 \begin{aligned}
-∫_{0}^{1}\frac{du}{u} &= lim_(a → 0^{+})∫_{a}^{1}\frac{du}{u} \\
-&= lim_(a → 0^{+})\ln \mid u \mid \mid _{a}^{1} \\
-&= lim_(a → 0^{+})[\ln\begin{vmatrix}1 & -\ln & a\end{vmatrix}] \\
-&= lim_(a → 0^{+})[0 - \ln \mid a \mid ] \\
+∫_{0}^{1}\frac{du}{u} &= \lim_{a \to 0^{+}}∫_{a}^{1}\frac{du}{u} \\
+&= \lim_{a \to 0^{+}}\ln \mid u \mid \mid _{a}^{1} \\
+&= \lim_{a \to 0^{+}}[\ln\begin{vmatrix}1 & -\ln & a\end{vmatrix}] \\
+&= \lim_{a \to 0^{+}}[0 - \ln \mid a \mid ] \\
 &= - (- ∞) \\
 &= ∞
 \end{aligned}
@@ -356,7 +372,10 @@ Therefore, we conclude that the integral is divergent.
 type: radio
 id: MA253-UQ1-759-q005
 content: |-
-  What is $∫_{0}^{16}\frac{1}{\sqrt{x}}dx$?
+  Evaluate
+  $$
+  \int_{0}^{16}\frac{1}{\sqrt{x}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -383,7 +402,10 @@ options:
 type: radio
 id: MA253-UQ1-759-q006
 content: |-
-  What is $∫_{1}^{4}\frac{dt}{\sqrt{4 - t}}$?
+  Evaluate
+  $$
+  \int_{1}^{4}\frac{dt}{\sqrt{4 - t}}
+  $$
 options:
 - id: a
   content: |-

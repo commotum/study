@@ -34,10 +34,10 @@ We proceed as we would with any other improper integral. We set the lower bound 
 
 $$
 \begin{aligned}
-∫_{- ∞}^{1}e^{x}dx &= lim_(a → - ∞)∫_{a}^{1}e^{x}dx \\
-&= lim_(a → - ∞)[e^{x}]_{a}^{1} \\
-&= lim_(a → - ∞)(e^{1} - e^{a}) \\
-&= lim_(a → - ∞)(e - e^{a})
+∫_{- ∞}^{1}e^{x}dx &= \lim_{a \to -\infty}∫_{a}^{1}e^{x}dx \\
+&= \lim_{a \to -\infty}[e^{x}]_{a}^{1} \\
+&= \lim_{a \to -\infty}(e^{1} - e^{a}) \\
+&= \lim_{a \to -\infty}(e - e^{a})
 \end{aligned}
 $$
 
@@ -50,7 +50,7 @@ Knowing this, we can solve our integral by evaluating the limit:
 
 $$
 \begin{aligned}
-∫_{- ∞}^{1}e^{x}dx &= lim_(a → - ∞)(e - e^{a}) \\
+∫_{- ∞}^{1}e^{x}dx &= \lim_{a \to -\infty}(e - e^{a}) \\
 &= e - 0 \\
 &= e
 \end{aligned}
@@ -91,10 +91,10 @@ We proceed by setting the upper bound equal to some parameter $a$, integrating a
 
 $$
 \begin{aligned}
-∫_{-1}^{∞}e^{-3x}dx &= lim_(a → ∞)∫_{-1}^{a}e^{-3x}dx \\
-&= lim_(a → ∞)[- \frac{e^{-3x}}{3}]_{-1}^{a} \\
-&=-\frac{1}{3} \cdot lim_(a → ∞)[e^{-3x}]_{-1}^{a} \\
-&=-\frac{1}{3} \cdot (lim_(a → ∞)e^{-3a} - e^{3})
+∫_{-1}^{∞}e^{-3x}dx &= \lim_{a \to \infty}∫_{-1}^{a}e^{-3x}dx \\
+&= \lim_{a \to \infty}[- \frac{e^{-3x}}{3}]_{-1}^{a} \\
+&=-\frac{1}{3} \cdot \lim_{a \to \infty}[e^{-3x}]_{-1}^{a} \\
+&=-\frac{1}{3} \cdot (\lim_{a \to \infty}e^{-3a} - e^{3})
 \end{aligned}
 $$
 
@@ -109,7 +109,7 @@ Using this to evaluate our integral, we conclude that
 
 $$
 \begin{aligned}
-∫_{-1}^{∞}e^{-3x} &= -\frac{1}{3} \cdot (lim_(a → ∞)e^{-3a} - e^{3}) \\
+∫_{-1}^{∞}e^{-3x} &= -\frac{1}{3} \cdot (\lim_{a \to \infty}e^{-3a} - e^{3}) \\
 &=-\frac{1}{3} \cdot (0 - e^{3}) \\
 &= \frac{e^{3}}{3}
 \end{aligned}
@@ -123,7 +123,10 @@ $$
 type: radio
 id: MA253-UQ1-4004-q001
 content: |-
-  What is $∫_{- ∞}^{-1}2e^{x}dx$?
+  Evaluate
+  $$
+  \int_{-\infty}^{-1}2e^{x}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -150,7 +153,10 @@ options:
 type: radio
 id: MA253-UQ1-4004-q002
 content: |-
-  What is $∫_{1}^{∞}e^{-2x}dx$?
+  Evaluate
+  $$
+  \int_{1}^{\infty}e^{-2x}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -188,11 +194,11 @@ We proceed by setting the lower bound equal to some parameter $a$, integrating a
 
 $$
 \begin{aligned}
-∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= 3 \cdot lim_(a → - ∞)∫_{a}^{0}2^{2x + 1}dx \\
-&= 3 \cdot lim_(a → - ∞)[(2^{2x + 1})/(2\ln (2))]_{a}^{0} \\
-&= (3 \cdot 2^{1})/(2\ln (2)) \cdot lim_(a → - ∞)[2^{2x}]_{a}^{0} \\
-&= (3)/(\ln (2)) \cdot lim_(a → - ∞)(2^{0} - 2^{2a}) \\
-&= (3)/(\ln (2)) \cdot (1 - lim_(a → - ∞)2^{2a})
+∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= 3 \cdot \lim_{a \to -\infty}∫_{a}^{0}2^{2x + 1}dx \\
+&= 3 \cdot \lim_{a \to -\infty}[(2^{2x + 1})/(2\ln (2))]_{a}^{0} \\
+&= (3 \cdot 2^{1})/(2\ln (2)) \cdot \lim_{a \to -\infty}[2^{2x}]_{a}^{0} \\
+&= (3)/(\ln (2)) \cdot \lim_{a \to -\infty}(2^{0} - 2^{2a}) \\
+&= (3)/(\ln (2)) \cdot (1 - \lim_{a \to -\infty}2^{2a})
 \end{aligned}
 $$
 
@@ -207,7 +213,7 @@ Using this to evaluate our integral, we conclude that
 
 $$
 \begin{aligned}
-∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= (3)/(\ln (2)) \cdot (1 - lim_(a → - ∞)2^{2a}) \\
+∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= (3)/(\ln (2)) \cdot (1 - \lim_{a \to -\infty}2^{2a}) \\
 &= (3)/(\ln (2)) \cdot (1 - 0) \\
 &= (3)/(\ln (2))
 \end{aligned}
@@ -221,7 +227,10 @@ $$
 type: radio
 id: MA253-UQ1-4004-q003
 content: |-
-  What is $∫_{- ∞}^{0}7^{x}dx$?
+  Evaluate
+  $$
+  \int_{-\infty}^{0}7^{x}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -248,7 +257,10 @@ options:
 type: radio
 id: MA253-UQ1-4004-q004
 content: |-
-  What is $∫_{- ∞}^{0}5^{x/2}dx$?
+  Evaluate
+  $$
+  \int_{-\infty}^{0}5^{x/2}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -301,10 +313,10 @@ Now, we proceed by setting the upper bound equal to some parameter $a$, integrat
 $$
 \begin{aligned}
 ∫_{1}^{∞}x^{3} \cdot 2^{-x^{4}}dx &= \frac{1}{4}∫_{1}^{∞}2^{-u}du \\
-&= \frac{1}{4} \cdot lim_(a → ∞)∫_{1}^{a}2^{-u}du \\
-&= \frac{1}{4} \cdot lim_(a → ∞)[- \frac{2^{-u}}{\ln 2}]_{1}^{a} \\
-&=-\frac{1}{4\ln 2} \cdot lim_(a → ∞)[2^{-u}]_{1}^{a} \\
-&=-\frac{1}{4\ln 2} \cdot (lim_(a → ∞)\frac{1}{2^{a}} - \frac{1}{2})
+&= \frac{1}{4} \cdot \lim_{a \to \infty}∫_{1}^{a}2^{-u}du \\
+&= \frac{1}{4} \cdot \lim_{a \to \infty}[- \frac{2^{-u}}{\ln 2}]_{1}^{a} \\
+&=-\frac{1}{4\ln 2} \cdot \lim_{a \to \infty}[2^{-u}]_{1}^{a} \\
+&=-\frac{1}{4\ln 2} \cdot (\lim_{a \to \infty}\frac{1}{2^{a}} - \frac{1}{2})
 \end{aligned}
 $$
 
@@ -325,7 +337,7 @@ Using this to evaluate our integral, we conclude that
 
 $$
 \begin{aligned}
-∫_{1}^{∞}x^{3} \cdot 2^{-x^{4}}dx &= -\frac{1}{4\ln 2} \cdot (lim_(a → ∞)\frac{1}{2^{a}} - \frac{1}{2}) \\
+∫_{1}^{∞}x^{3} \cdot 2^{-x^{4}}dx &= -\frac{1}{4\ln 2} \cdot (\lim_{a \to \infty}\frac{1}{2^{a}} - \frac{1}{2}) \\
 &=-\frac{1}{4\ln 2} \cdot (0 - \frac{1}{2}) \\
 &= \frac{1}{8\ln 2}
 \end{aligned}
@@ -339,7 +351,10 @@ $$
 type: radio
 id: MA253-UQ1-4004-q005
 content: |-
-  Evaluate the integral $∫_{0}^{∞}\frac{e^{-\sqrt{2x}}}{\sqrt{x}}dx$.
+  Evaluate the integral
+  $$
+  \int_{0}^{\infty}\frac{e^{-\sqrt{2x}}}{\sqrt{x}}\,dx
+  $$
 options:
 - id: a
   content: |-
@@ -366,7 +381,10 @@ options:
 type: radio
 id: MA253-UQ1-4004-q006
 content: |-
-  What is $∫_{- ∞}^{0}x^{2} \cdot 2^{x^{3}}dx$?
+  Evaluate
+  $$
+  \int_{-\infty}^{0}x^{2} \cdot 2^{x^{3}}\,dx
+  $$
 options:
 - id: a
   content: |-

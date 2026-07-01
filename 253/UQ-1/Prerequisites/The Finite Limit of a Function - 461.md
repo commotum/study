@@ -24,7 +24,7 @@ The **limit** of a function is the value that the function approaches. For examp
 As $x$ approaches $2$, the value of $f(x)$ approaches $1$. In other words, the limit of $f(x)$, as $x$ approaches $2$, is $1$. We can express this mathematically as
 
 $$
-\lim_\limits{x\rightarrow 2}f(x)=1 \,
+\lim_{x\rightarrow 2}f(x)=1 \,
 $$
 
 ---
@@ -32,7 +32,7 @@ $$
 <a id="finding-a-limit-when-the-function-value-is-not-defined"></a>
 ## Finding a Limit When the Function Value is Not Defined
 
-**Example:** Find $\lim_\limits{x\rightarrow \,-1}f(x)$ for the function $f(x)$ whose graph is shown below.
+**Example:** Find $\lim_{x\rightarrow \,-1}f(x)$ for the function $f(x)$ whose graph is shown below.
 
 ![](<../Source/The Finite Limit of a Function - 461/Images/b6347eacfd36c53c6aaae5603a25de44.png>)
 
@@ -41,7 +41,7 @@ $$
 As $x$ approaches $-1$, the value of $f(x)$ approaches $2$. Consequently,
 
 $$
-\lim_\limits{x\rightarrow \,-1}f(x)=2\,
+\lim_{x\rightarrow \,-1}f(x)=2\,
 $$
 
 ---
@@ -54,7 +54,7 @@ id: MA253-UQ1-461-q001
 content: |-
   ![](<../Source/The Finite Limit of a Function - 461/Images/q-16220.png>)
   
-  Find $lim_(x → 1)f(x)$ for the function $f(x)$ whose graph is shown above.
+  Find $\lim_{x \to 1}f(x)$ for the function $f(x)$ whose graph is shown above.
 options:
 - id: a
   content: |-
@@ -83,7 +83,7 @@ id: MA253-UQ1-461-q002
 content: |-
   ![](<../Source/The Finite Limit of a Function - 461/Images/q-16218.png>)
   
-  Find $lim_(x → 0)f(x)$ for the function $f(x)$ whose graph is shown above.
+  Find $\lim_{x \to 0}f(x)$ for the function $f(x)$ whose graph is shown above.
 options:
 - id: a
   content: |-
@@ -120,13 +120,13 @@ The actual values of $g(2)$ and $h(2)$ are irrelevant for determining the limit 
 Near $x=2$, both $g(x)$ and $h(x)$ appear to be approaching $y=1$. Therefore,
 
 $$
-\lim_\limits{x\rightarrow 2}g(x)=1
+\lim_{x\rightarrow 2}g(x)=1
 $$
 
 and
 
 $$
-\lim_\limits{x\rightarrow 2}h(x)=1 \,
+\lim_{x\rightarrow 2}h(x)=1 \,
 $$
 
 ---
@@ -134,7 +134,7 @@ $$
 <a id="finding-a-limit-when-the-limit-is-not-equal-to-the-function-value"></a>
 ## Finding a Limit When the Limit is Not Equal to the Function Value
 
-**Example:** Find $\lim_\limits{x\rightarrow \,0} f(x)$ for the function below.
+**Example:** Find $\lim_{x\rightarrow \,0} f(x)$ for the function below.
 
 ![](<../Source/The Finite Limit of a Function - 461/Images/44f08bb51e4cdb3911ee54733d69b8b5.png>)
 
@@ -143,7 +143,7 @@ $$
 As $x$ approaches $0$, the value of $f(x)$ approaches $1$. Consequently,
 
 $$
-\lim_\limits{x\rightarrow \,0}f(x)= 1\,
+\lim_{x\rightarrow \,0}f(x)= 1\,
 $$
 
 Remember, it does not matter that the actual value of $f(0)$ is $2$. All that matters is that as $x$ approaches $0$, the function $f(x)$ *looks like* it is getting closer and closer to $1$.
@@ -158,7 +158,7 @@ id: MA253-UQ1-461-q003
 content: |-
   ![](<../Source/The Finite Limit of a Function - 461/Images/q-16261.png>)
   
-  Find $lim_(x → 3)f(x)$ for the function above.
+  Find $\lim_{x \to 3}f(x)$ for the function above.
 options:
 - id: a
   content: |-
@@ -187,7 +187,7 @@ id: MA253-UQ1-461-q004
 content: |-
   ![](<../Source/The Finite Limit of a Function - 461/Images/q-16266.png>)
   
-  Find $lim_(x → 2)f(x)$ for the function above.
+  Find $\lim_{x \to 2}f(x)$ for the function above.
 options:
 - id: a
   content: |-
@@ -213,9 +213,9 @@ options:
 
 **Example:** Which of the following statements are true concerning the function $y=f(x)$ whose graph is shown below?
 
-1. $\lim_\limits{x\rightarrow \,0}f(x)=0$
-2. $\lim_\limits{x\rightarrow \,3}f(x)=0$
-3. $\lim_\limits{x\rightarrow \,-1}f(x)=\lim_\limits{x\rightarrow \,1}f(x)$
+1. $\lim_{x\rightarrow \,0}f(x)=0$
+2. $\lim_{x\rightarrow \,3}f(x)=0$
+3. $\lim_{x\rightarrow \,-1}f(x)=\lim_{x\rightarrow \,1}f(x)$
 
 ![](<../Source/The Finite Limit of a Function - 461/Images/42148299c32a941ad027d9e49c2933f7.png>)
 
@@ -224,15 +224,15 @@ options:
 Let's analyze each statement in turn.
 
 - Statement I is false. As $x$ approaches $0$, the function $f(x)$ approaches the value $y=-1$. Consequently,
-$\lim_\limits{x\rightarrow \,0}f(x)=-1$.
+$\lim_{x\rightarrow \,0}f(x)=-1$.
 - Statement II is true. As $x$ approaches $3$, the function $f(x)$ approaches the value $y=0$. Consequently,
-$\lim_\limits{x\rightarrow \,3}f(x)=0$.
+$\lim_{x\rightarrow \,3}f(x)=0$.
 - Statement III is false. As $x$ approaches $-1$ the function $f(x)$ approaches the value $y=2$, and consequently
-$\lim_\limits{x\rightarrow \,-1}f(x)=2$.
+$\lim_{x\rightarrow \,-1}f(x)=2$.
 Similiarly, as $x$ approaches $1$, the function $f(x)$ approaches the value $y=-2$, and consequently
-$\lim_\limits{x\rightarrow \,1}f(x)=-2$.
+$\lim_{x\rightarrow \,1}f(x)=-2$.
 As a result,
-$\lim_\limits{x\rightarrow \,-1}f(x)\ne\lim_\limits{x\rightarrow \,1}f(x)$.
+$\lim_{x\rightarrow \,-1}f(x)\ne\lim_{x\rightarrow \,1}f(x)$.
 
 In conclusion, only statement II is true.
 
@@ -248,9 +248,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → - 2)f(x) = 0$
-  2. $lim_(x → - 3)f(x) =-2$
-  3. $lim_(x → - 2)f(x) = lim_(x → 2)f(x)$
+  1. $\lim_{x \to - 2}f(x) = 0$
+  2. $\lim_{x \to - 3}f(x) =-2$
+  3. $\lim_{x \to - 2}f(x) = \lim_{x \to 2}f(x)$
 options:
 - id: a
   content: |-
@@ -281,9 +281,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → - 1)f(x) = 2$
-  2. $lim_(x → 0)f(x) = 2$
-  3. $lim_(x → 1)f(x) = lim_(x → 3)f(x)$
+  1. $\lim_{x \to - 1}f(x) = 2$
+  2. $\lim_{x \to 0}f(x) = 2$
+  3. $\lim_{x \to 1}f(x) = \lim_{x \to 3}f(x)$
 options:
 - id: a
   content: |-

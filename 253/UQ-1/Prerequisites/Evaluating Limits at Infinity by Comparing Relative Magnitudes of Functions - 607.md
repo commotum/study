@@ -91,7 +91,7 @@ $$
 type: radio
 id: MA253-UQ1-607-q001
 content: |-
-  Evaluate $lim_(x → ∞)\frac{e^{x}}{x^{9}}$.
+  Evaluate $\lim_{x \to \infty}\frac{e^{x}}{x^{9}}$.
 options:
 - id: a
   content: |-
@@ -118,7 +118,7 @@ options:
 type: radio
 id: MA253-UQ1-607-q002
 content: |-
-  Evaluate $lim_(x → ∞)\frac{e^{x}}{x}$.
+  Evaluate $\lim_{x \to \infty}\frac{e^{x}}{x}$.
 options:
 - id: a
   content: |-
@@ -160,7 +160,7 @@ $$
 type: radio
 id: MA253-UQ1-607-q003
 content: |-
-  Evaluate $lim_(x → ∞)(x)/(\ln (2x))$.
+  Evaluate $\lim_{x \to \infty}(x)/(\ln (2x))$.
 options:
 - id: a
   content: |-
@@ -187,7 +187,7 @@ options:
 type: radio
 id: MA253-UQ1-607-q004
 content: |-
-  Evaluate $lim_(x → ∞)\frac{\ln x}{x^{2}}$.
+  Evaluate $\lim_{x \to \infty}\frac{\ln x}{x^{2}}$.
 options:
 - id: a
   content: |-
@@ -229,7 +229,7 @@ $$
 type: radio
 id: MA253-UQ1-607-q005
 content: |-
-  Evaluate $lim_(x → ∞)(e^{x})/(\ln (2x))$.
+  Evaluate $\lim_{x \to \infty}(e^{x})/(\ln (2x))$.
 options:
 - id: a
   content: |-
@@ -256,7 +256,7 @@ options:
 type: radio
 id: MA253-UQ1-607-q006
 content: |-
-  Evaluate $lim_(x → ∞)(\ln (3x))/(e^{x})$.
+  Evaluate $\lim_{x \to \infty}(\ln (3x))/(e^{x})$.
 options:
 - id: a
   content: |-
@@ -314,7 +314,7 @@ shown below:
 type: radio
 id: MA253-UQ1-607-q007
 content: |-
-  Evaluate $lim_(x → ∞)\frac{\sin x - 3}{x^{3} + x^{2}}$.
+  Evaluate $\lim_{x \to \infty}\frac{\sin x - 3}{x^{3} + x^{2}}$.
 options:
 - id: a
   content: |-
@@ -341,7 +341,7 @@ options:
 type: radio
 id: MA253-UQ1-607-q008
 content: |-
-  Evaluate $lim_(x → ∞)\frac{3\sin x}{2x + 1}$.
+  Evaluate $\lim_{x \to \infty}\frac{3\sin x}{2x + 1}$.
 options:
 - id: a
   content: |-

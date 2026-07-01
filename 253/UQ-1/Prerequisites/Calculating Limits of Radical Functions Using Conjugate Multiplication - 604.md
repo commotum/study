@@ -28,7 +28,7 @@ If we try to evaluate the limit by directly substituting $x=1$, we get an indete
 
 $$
 \begin{aligned}
-lim_(x → 1)\frac{\sqrt{x} - 1}{x - 1} &= \frac{\sqrt{1} - 1}{1 - 1} = \frac{0}{0}
+\lim_{x \to 1}\frac{\sqrt{x} - 1}{x - 1} &= \frac{\sqrt{1} - 1}{1 - 1} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -53,7 +53,7 @@ If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
 \begin{aligned}
-lim_(x → 4^{+})\frac{x - 2\sqrt{x}}{x - 4} &= \frac{4 - 2\sqrt{4}}{4 - 4} = \frac{0}{0}
+\lim_{x \to 4^{+}}\frac{x - 2\sqrt{x}}{x - 4} &= \frac{4 - 2\sqrt{4}}{4 - 4} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -71,7 +71,7 @@ $$
 type: radio
 id: MA253-UQ1-604-q001
 content: |-
-  Evaluate $lim_(x → 0)\frac{\sqrt{x + 4} - 2}{x}$.
+  Evaluate $\lim_{x \to 0}\frac{\sqrt{x + 4} - 2}{x}$.
 options:
 - id: a
   content: |-
@@ -98,7 +98,7 @@ options:
 type: radio
 id: MA253-UQ1-604-q002
 content: |-
-  Evaluate $lim_(x → 4)\frac{\sqrt{x} - 2}{x - 4}$.
+  Evaluate $\lim_{x \to 4}\frac{\sqrt{x} - 2}{x - 4}$.
 options:
 - id: a
   content: |-
@@ -130,7 +130,7 @@ If we attempt to evaluate the limit by simply evaluating the function at $x=0$, 
 
 $$
 \begin{aligned}
-lim_(x → 0)\frac{3x}{\sqrt{x + 1} - 1} &= \frac{3 \cdot 0}{\sqrt{0 + 1} - 1} = \frac{0}{0}
+\lim_{x \to 0}\frac{3x}{\sqrt{x + 1} - 1} &= \frac{3 \cdot 0}{\sqrt{0 + 1} - 1} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -148,7 +148,7 @@ $$
 type: radio
 id: MA253-UQ1-604-q003
 content: |-
-  Evaluate $lim_(x → 1^{-})\frac{x - 1}{\sqrt{x + 3} - 2}$.
+  Evaluate $\lim_{x \to 1^{-}}\frac{x - 1}{\sqrt{x + 3} - 2}$.
 options:
 - id: a
   content: |-
@@ -175,7 +175,7 @@ options:
 type: radio
 id: MA253-UQ1-604-q004
 content: |-
-  Evaluate $lim_(x → 1^{+})\frac{1 - x^{2}}{1 - \sqrt{x}}$.
+  Evaluate $\lim_{x \to 1^{+}}\frac{1 - x^{2}}{1 - \sqrt{x}}$.
 options:
 - id: a
   content: |-

@@ -36,13 +36,13 @@ whose graph is shown below.
 On the right side of the graph, we see that as $x$ gets bigger and bigger, $f(x)$ approaches the horizontal asymptote $y=1$. In other words, as $x$ increases to infinity ($\infty$), the value of $f(x)$ approaches a limit of $1$. We can write this symbolically as
 
 $$
-\lim_\limits{x\to \infty} f(x) = 1
+\lim_{x\to \infty} f(x) = 1
 $$
 
 Likewise, on the left side of the graph, as $x$ decreases to negative infinity ($-\infty$), the value of $f(x)$ approaches the same horizontal asymptote $y=1$. Consequently, we also have that
 
 $$
-\lim_\limits{x\to -\infty} f(x) = 1
+\lim_{x\to -\infty} f(x) = 1
 $$
 
 ---
@@ -50,7 +50,7 @@ $$
 <a id="the-limit-at-infinity-for-a-bounded-function"></a>
 ## The Limit at Infinity for a Bounded Function
 
-**Example:** The figure below shows the graph of $f(x)$. Find the limit $\lim_\limits{x \rightarrow \infty} f(x)$.
+**Example:** The figure below shows the graph of $f(x)$. Find the limit $\lim_{x \rightarrow \infty} f(x)$.
 
 ![](<../Source/Limits at Infinity from Graphs - 1873/Images/c659f3cdd50fa6ce5f0169025175ce30.png>)
 
@@ -61,7 +61,7 @@ From the graph, we see that as $x$ increases to $\infty$, the graph of the funct
 Therefore, as $x$ approaches $\infty$, the function $f(x)$ approaches $4$, and we have
 
 $$
-\lim_\limits{x\rightarrow \infty} f(x) = 4
+\lim_{x\rightarrow \infty} f(x) = 4
 $$
 
 ---
@@ -76,9 +76,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → ∞)f(x) =-3$
-  2. $lim_(x → ∞)f(x) = 0$
-  3. $lim_(x → - ∞)f(x) =-3$
+  1. $\lim_{x \to \infty}f(x) =-3$
+  2. $\lim_{x \to \infty}f(x) = 0$
+  3. $\lim_{x \to -\infty}f(x) =-3$
 options:
 - id: a
   content: |-
@@ -107,7 +107,7 @@ id: MA253-UQ1-1873-q002
 content: |-
   ![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35042.png>)
   
-  The figure above shows the graph of $f(x)$. Find $lim_(x → ∞)f(x)$.
+  The figure above shows the graph of $f(x)$. Find $\lim_{x \to \infty}f(x)$.
 options:
 - id: a
   content: |-
@@ -140,7 +140,7 @@ Instead, a function $f(x)$ might get bigger and bigger, increasing without bound
 In this case, we say that the limit of the function is infinity:
 
 $$
-\lim_\limits{x \rightarrow \infty} f(x) = \infty
+\lim_{x \rightarrow \infty} f(x) = \infty
 $$
 
 ---
@@ -148,7 +148,7 @@ $$
 <a id="the-limit-at-infinity-for-an-unbounded-function"></a>
 ## The Limit at Infinity for an Unbounded Function
 
-**Example:** The figure below shows the graph of $f(x)$. Find $\lim_\limits{x \rightarrow \infty} f(x)$ and $\lim_\limits{x \rightarrow -\infty} f(x)$.
+**Example:** The figure below shows the graph of $f(x)$. Find $\lim_{x \rightarrow \infty} f(x)$ and $\lim_{x \rightarrow -\infty} f(x)$.
 
 ![](<../Source/Limits at Infinity from Graphs - 1873/Images/f290350a1a1eb74c4a8d9a837f8578e0.png>)
 
@@ -159,13 +159,13 @@ On the left side of the graph, we see that as the values of $x$ decrease and app
 Consequently, $f(x)$ approaches the value $2$ as $x$ approaches $-\infty$, and we have
 
 $$
-\lim_\limits{x\rightarrow -\infty} f(x) = 2
+\lim_{x\rightarrow -\infty} f(x) = 2
 $$
 
 On the right side of the graph, as the values of $x$ increase and approach $\infty$, the graph of the function grows without bound to $\infty$ as well. Therefore,
 
 $$
-\lim_\limits{x\to \infty} f(x) = \infty
+\lim_{x\to \infty} f(x) = \infty
 $$
 
 ---
@@ -180,9 +180,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → - ∞)f(x) = - ∞$
-  2. $lim_(x → ∞)f(x) = ∞$
-  3. $lim_(x → ∞)f(x) = - ∞$
+  1. $\lim_{x \to -\infty}f(x) = - ∞$
+  2. $\lim_{x \to \infty}f(x) = ∞$
+  3. $\lim_{x \to \infty}f(x) = - ∞$
 options:
 - id: a
   content: |-
@@ -211,24 +211,24 @@ id: MA253-UQ1-1873-q004
 content: |-
   ![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35809.png>)
   
-  The figure above shows the graph of $f(x)$. Find $lim_(x → ∞)f(x)$ and $lim_(x → - ∞)f(x)$.
+  The figure above shows the graph of $f(x)$. Find $\lim_{x \to \infty}f(x)$ and $\lim_{x \to -\infty}f(x)$.
 options:
 - id: a
   content: |-
-    $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = - ∞$
+    $\lim_{x \to \infty}f(x) = ∞$ and $\lim_{x \to -\infty}f(x) = - ∞$
 - id: b
   content: |-
-    $lim_(x → ∞)f(x) = 0$ and $lim_(x → - ∞)f(x) = DNE$
+    $\lim_{x \to \infty}f(x) = 0$ and $\lim_{x \to -\infty}f(x) = DNE$
 - id: c
   content: |-
-    $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = 0$
+    $\lim_{x \to \infty}f(x) = ∞$ and $\lim_{x \to -\infty}f(x) = 0$
   correct: true
 - id: d
   content: |-
-    $lim_(x → ∞)f(x) = 0$ and $lim_(x → - ∞)f(x) = 0$
+    $\lim_{x \to \infty}f(x) = 0$ and $\lim_{x \to -\infty}f(x) = 0$
 - id: e
   content: |-
-    $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = DNE$
+    $\lim_{x \to \infty}f(x) = ∞$ and $\lim_{x \to -\infty}f(x) = DNE$
 ```
 ---
 

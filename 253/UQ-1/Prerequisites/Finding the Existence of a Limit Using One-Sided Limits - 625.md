@@ -18,20 +18,20 @@
 
 In general, the limit of a function $f(x)$ at a point only exists if *both* the left-sided and right-sided limits *exist* and are the *same*.
 
-For example, suppose we want to compute $\lim_\limits{x\rightarrow 2}f(x)$ for the function whose graph is shown below. To do this, we must first compute the left and right-sided limits.
+For example, suppose we want to compute $\lim_{x\rightarrow 2}f(x)$ for the function whose graph is shown below. To do this, we must first compute the left and right-sided limits.
 
 ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/5633c1581be3cf554a210e0e5736d611.png>)
 
 As $x$ approaches $2$ from the left, $y$ approaches $0$. However, as $x$ approaches $2$ from the right, $y$ approaches $1$. Therefore, we have the following left and right-sided limits.
 
 $$
-\begin{bmatrix}Left-sided limit: & lim_(x → 2^{-})f(x) = 0 \\ Right-sided limit: & lim_(x → 2^{+})f(x) = 1\end{bmatrix}
+\begin{bmatrix}Left-sided limit: & \lim_{x \to 2^{-}}f(x) = 0 \\ Right-sided limit: & \lim_{x \to 2^{+}}f(x) = 1\end{bmatrix}
 $$
 
 Both of these limits exist. However, they are *not* the same. Consequently, the overall limit at $x=2$ does not exist:
 
 $$
-\lim_\limits{x\rightarrow 2}f(x)=\text{DNE}
+\lim_{x\rightarrow 2}f(x)=\text{DNE}
 $$
 
 ---
@@ -39,7 +39,7 @@ $$
 <a id="identifying-the-limit-at-an-interior-point"></a>
 ## Identifying the Limit at an Interior Point
 
-**Example:** Find $\lim_\limits{x\rightarrow 0}f(x)$ for the function $f(x)$ plotted below.
+**Example:** Find $\lim_{x\rightarrow 0}f(x)$ for the function $f(x)$ plotted below.
 
 ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/c8b132237879e9590da52da233c11da9.png>)
 
@@ -48,19 +48,19 @@ $$
 From the graph, we see that as we approach $x=0$ from the left, the $y$ value approaches $2$. So the left-hand limit is
 
 $$
-\lim_\limits{x\rightarrow \,0^{-}}f(x)=2
+\lim_{x\rightarrow \,0^{-}}f(x)=2
 $$
 
 Similarly, when we approach $x=0$ from the right, the $y$ value again approaches $2$. So the right-hand limit is
 
 $$
-\lim_\limits{x\rightarrow \,0^{+}}f(x)=2
+\lim_{x\rightarrow \,0^{+}}f(x)=2
 $$
 
 Since both the left and right-hand limits exist and are equal to $2$, we conclude that
 
 $$
-\lim_\limits{x\rightarrow \,0}f(x)=2
+\lim_{x\rightarrow \,0}f(x)=2
 $$
 
 ---
@@ -73,7 +73,7 @@ id: MA253-UQ1-625-q001
 content: |-
   ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/q-54404.png>)
   
-  Find $lim_(x → π/2)f(x)$ for the function $f(x)$ plotted above.
+  Find $\lim_{x \to \pi/2}f(x)$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -102,31 +102,31 @@ id: MA253-UQ1-625-q002
 content: |-
   ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/q-16604.png>)
   
-  Find $lim_(x → π)f(x)$ for the function $f(x)$ plotted above.
+  Find $\lim_{x \to \pi}f(x)$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
-    $lim_(x → π)f(x) = DNE$
+    $\lim_{x \to \pi}f(x) = DNE$
 - id: b
   content: |-
-    $lim_(x → π)f(x) = 0$
+    $\lim_{x \to \pi}f(x) = 0$
 - id: c
   content: |-
-    $lim_(x → π)f(x) = 1$
+    $\lim_{x \to \pi}f(x) = 1$
   correct: true
 - id: d
   content: |-
-    $lim_(x → π)f(x) = 2$
+    $\lim_{x \to \pi}f(x) = 2$
 - id: e
   content: |-
-    $lim_(x → π)f(x) = π$
+    $\lim_{x \to \pi}f(x) = π$
 ```
 ---
 
 <a id="identifying-the-limit-at-an-endpoint"></a>
 ## Identifying the Limit at an Endpoint
 
-**Example:** The function $y=f(x)$ is defined on $[MATH: x\in (1,5].]$ Find $\lim_\limits{x\rightarrow \, 1}f(x)$ for the function.
+**Example:** The function $y=f(x)$ is defined on $[MATH: x\in (1,5].]$ Find $\lim_{x\rightarrow \, 1}f(x)$ for the function.
 
 ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/6bfb9a65af6c19f313aee04796643568.png>)
 
@@ -135,25 +135,25 @@ options:
 From the graph, we see that it is not possible to approach $x=1$ from the left. Therefore,
 
 $$
-\lim_\limits{x\rightarrow \,1^{-}}f(x)=\text{DNE}
+\lim_{x\rightarrow \,1^{-}}f(x)=\text{DNE}
 $$
 
 When we approach $x=1$ from the right, we have
 
 $$
-\lim_\limits{x\rightarrow \,1^{+}}f(x)=1
+\lim_{x\rightarrow \,1^{+}}f(x)=1
 $$
 
 Since
 
 $$
-\lim_\limits{x\rightarrow 1^-} f(x) \ne \lim_\limits{x\rightarrow 1^+} f(x)
+\lim_{x\rightarrow 1^-} f(x) \ne \lim_{x\rightarrow 1^+} f(x)
 $$
 
 we conclude that
 
 $$
-\lim_\limits{x\rightarrow \,1}f(x)=\text{DNE}
+\lim_{x\rightarrow \,1}f(x)=\text{DNE}
 $$
 
 ---
@@ -166,23 +166,23 @@ id: MA253-UQ1-625-q003
 content: |-
   ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/q-16785.png>)
   
-  The function $y = f(x)$ is defined on $[MATH: x ∈ (- ∞,-1]∪[- \frac{1}{2}, \frac{1}{2}]∪[1, ∞).]$ Find $lim_(x → - 1)f(x)$.
+  The function $y = f(x)$ is defined on $[MATH: x ∈ (- ∞,-1]∪[- \frac{1}{2}, \frac{1}{2}]∪[1, ∞).]$ Find $\lim_{x \to - 1}f(x)$.
 options:
 - id: a
   content: |-
-    $lim_(x → - 1)f(x) =-1$
+    $\lim_{x \to - 1}f(x) =-1$
 - id: b
   content: |-
-    $lim_(x → - 1)f(x) = 1$
+    $\lim_{x \to - 1}f(x) = 1$
 - id: c
   content: |-
-    $lim_(x → - 1)f(x) = \frac{1}{4}$
+    $\lim_{x \to - 1}f(x) = \frac{1}{4}$
 - id: d
   content: |-
-    $lim_(x → - 1)f(x) = \frac{1}{2}$
+    $\lim_{x \to - 1}f(x) = \frac{1}{2}$
 - id: e
   content: |-
-    $lim_(x → - 1)f(x) = DNE$
+    $\lim_{x \to - 1}f(x) = DNE$
   correct: true
 ```
 ---
@@ -195,24 +195,24 @@ id: MA253-UQ1-625-q004
 content: |-
   ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/q-16784.png>)
   
-  The function $y = f(x)$ is defined on $[MATH: x ∈ (- ∞, \frac{1}{2}]∪(1, ∞).]$ Find $lim_(x → 1)f(x)$.
+  The function $y = f(x)$ is defined on $[MATH: x ∈ (- ∞, \frac{1}{2}]∪(1, ∞).]$ Find $\lim_{x \to 1}f(x)$.
 options:
 - id: a
   content: |-
-    $lim_(x → 1)f(x) = 0$
+    $\lim_{x \to 1}f(x) = 0$
 - id: b
   content: |-
-    $lim_(x → 1)f(x) = DNE$
+    $\lim_{x \to 1}f(x) = DNE$
   correct: true
 - id: c
   content: |-
-    $lim_(x → 1)f(x) = \frac{1}{2}$
+    $\lim_{x \to 1}f(x) = \frac{1}{2}$
 - id: d
   content: |-
-    $lim_(x → 1)f(x) = 1$
+    $\lim_{x \to 1}f(x) = 1$
 - id: e
   content: |-
-    $lim_(x → 1)f(x) = 2$
+    $\lim_{x \to 1}f(x) = 2$
 ```
 ---
 
@@ -221,9 +221,9 @@ options:
 
 **Example:** Which of the following statements are true concerning the function $y=f(x)$ whose graph is shown below?
 
-1. $\lim_\limits{x\rightarrow \,2}f(x)=0$
-2. $\lim_\limits{x\rightarrow \,1}f(x)=\text{DNE}$
-3. $\lim_\limits{x\rightarrow \,-1}f(x)=\lim_\limits{x\rightarrow \,0}f(x)$
+1. $\lim_{x\rightarrow \,2}f(x)=0$
+2. $\lim_{x\rightarrow \,1}f(x)=\text{DNE}$
+3. $\lim_{x\rightarrow \,-1}f(x)=\lim_{x\rightarrow \,0}f(x)$
 
 ![](<../Source/Finding the Existence of a Limit Using One-Sided Limits - 625/Images/65239b582d4f27c0e7d954e49afd4996.png>)
 
@@ -231,11 +231,11 @@ options:
 
 Let's analyze each statement in turn.
 
-- Statement I is true. We see from the graph that $\lim_\limits{x\rightarrow \,2^-}f(x)=\lim_\limits{x\rightarrow \,2^+}f(x)=0$. Consequently, $\lim_\limits{x\rightarrow \,2}f(x)=0$.
+- Statement I is true. We see from the graph that $\lim_{x\rightarrow \,2^-}f(x)=\lim_{x\rightarrow \,2^+}f(x)=0$. Consequently, $\lim_{x\rightarrow \,2}f(x)=0$.
 - Statement II is true. When approaching $x=1$ from the left and from the right, we get
-$\lim_\limits{x\rightarrow \,1^-}f(x)=0, \qquad \lim_\limits{x\rightarrow \,1^+}f(x)=3$,
-respectively. Since $\lim_\limits{x\rightarrow \,1^-}f(x)\ne\lim_\limits{x\rightarrow \,1^+}f(x)$, we conclude that $\lim_\limits{x\rightarrow \,1}f(x)=\text{DNE}$.
-- Statement III is false. Both limits $\lim_\limits{x\rightarrow \,-1}f(x)$ and $\lim_\limits{x\rightarrow \,0}f(x)$ do not exist because the function $f(x)$ is not given in the interval $[MATH: [-1,0)]$. We *cannot* say that the limits are equal because we can't compare the undefined values.
+$\lim_{x\rightarrow \,1^-}f(x)=0, \qquad \lim_{x\rightarrow \,1^+}f(x)=3$,
+respectively. Since $\lim_{x\rightarrow \,1^-}f(x)\ne\lim_{x\rightarrow \,1^+}f(x)$, we conclude that $\lim_{x\rightarrow \,1}f(x)=\text{DNE}$.
+- Statement III is false. Both limits $\lim_{x\rightarrow \,-1}f(x)$ and $\lim_{x\rightarrow \,0}f(x)$ do not exist because the function $f(x)$ is not given in the interval $[MATH: [-1,0)]$. We *cannot* say that the limits are equal because we can't compare the undefined values.
 
 In conclusion, only statements I and II are true.
 
@@ -251,9 +251,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → - 1)f(x) = DNE$
-  2. $lim_(x → 1)f(x) = 2$
-  3. $lim_(x → 0)f(x) = lim_(x → 2)f(x)$
+  1. $\lim_{x \to - 1}f(x) = DNE$
+  2. $\lim_{x \to 1}f(x) = 2$
+  3. $\lim_{x \to 0}f(x) = \lim_{x \to 2}f(x)$
 options:
 - id: a
   content: |-
@@ -284,9 +284,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → - 1)f(x) = 4$
-  2. $lim_(x → 1)f(x) = DNE$
-  3. $lim_(x → 3)f(x) = 1$
+  1. $\lim_{x \to - 1}f(x) = 4$
+  2. $\lim_{x \to 1}f(x) = DNE$
+  3. $\lim_{x \to 3}f(x) = 1$
 options:
 - id: a
   content: |-

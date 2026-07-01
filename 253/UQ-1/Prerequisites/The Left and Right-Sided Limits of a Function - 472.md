@@ -34,19 +34,19 @@ To be more precise about the direction in which $x$ approaches $a$, we use super
 For the function graphed above, the left-sided limit is
 
 $$
-\lim_\limits{x\rightarrow \,-1^{-}}f(x)=-4
+\lim_{x\rightarrow \,-1^{-}}f(x)=-4
 $$
 
 and the right-sided limit is
 
 $$
-\lim_\limits{x\rightarrow \,-1^{+}}f(x)=-3 \,
+\lim_{x\rightarrow \,-1^{+}}f(x)=-3 \,
 $$
 
 At the same time, if we consider the point $x=-5$, we note that the left-sided limit at this point does not exist because the function to the left of $x=-5$ is not defined. If the limit does not exist, we usually denote it using the abbreviation $\textrm{DNE}{:}$
 
 $$
-\lim_\limits{x\rightarrow \,-5^{-}}f(x)=\textrm{DNE}
+\lim_{x\rightarrow \,-5^{-}}f(x)=\textrm{DNE}
 $$
 
 **Note:** The "minus" superscript $(-)$ indicates "left" because the left direction is the negative direction on the number line, and the "plus" superscript $(+)$ indicates "right" because the right direction is the positive direction on the number line.
@@ -65,19 +65,19 @@ $$
 As $x$ approaches $0$ from the *left*, the function $f(x)$ approaches $1$. Therefore,
 
 $$
-\lim_\limits{x\rightarrow \,0^{-}}f(x) = 1 \,
+\lim_{x\rightarrow \,0^{-}}f(x) = 1 \,
 $$
 
 Likewise, as $x$ approaches $0$ from the *right*, the function $f(x)$ approaches $1$. Therefore,
 
 $$
-\lim_\limits{x\rightarrow \,0^{+}}f(x) = 1 \,
+\lim_{x\rightarrow \,0^{+}}f(x) = 1 \,
 $$
 
 In conclusion, we have
 
 $$
-\lim_\limits{x\rightarrow \,0^{-}}f(x)=\lim_\limits{x\rightarrow \,0^{+}}f(x)=1 \,
+\lim_{x\rightarrow \,0^{-}}f(x)=\lim_{x\rightarrow \,0^{+}}f(x)=1 \,
 $$
 
 ---
@@ -90,24 +90,24 @@ id: MA253-UQ1-472-q001
 content: |-
   ![](<../Source/The Left and Right-Sided Limits of a Function - 472/Images/q-16340.png>)
   
-  Find $lim_(x → - \frac{π}{2}^{-})f(x)$ and $lim_(x → - \frac{π}{2}^{+})f(x)$ for the function given above.
+  Find $\lim_{x \to - \frac{\pi}{2}^{-}}f(x)$ and $\lim_{x \to - \frac{\pi}{2}^{+}}f(x)$ for the function given above.
 options:
 - id: a
   content: |-
-    $lim_(x → - \frac{π}{2}^{-})f(x) = lim_(x → - \frac{π}{2}^{+})f(x) = \frac{π}{2}$
+    $\lim_{x \to - \frac{\pi}{2}^{-}}f(x) = \lim_{x \to - \frac{\pi}{2}^{+}}f(x) = \frac{π}{2}$
   correct: true
 - id: b
   content: |-
-    $lim_(x → - \frac{π}{2}^{-})f(x) = lim_(x → - \frac{π}{2}^{+})f(x) =-\frac{π}{2}$
+    $\lim_{x \to - \frac{\pi}{2}^{-}}f(x) = \lim_{x \to - \frac{\pi}{2}^{+}}f(x) =-\frac{π}{2}$
 - id: c
   content: |-
-    $lim_(x → - \frac{π}{2}^{-})f(x) = lim_(x → - \frac{π}{2}^{+})f(x) = 0$
+    $\lim_{x \to - \frac{\pi}{2}^{-}}f(x) = \lim_{x \to - \frac{\pi}{2}^{+}}f(x) = 0$
 - id: d
   content: |-
-    $lim_(x → - \frac{π}{2}^{-})f(x) = π, lim_(x → - \frac{π}{2}^{+})f(x) = \frac{π}{2}$
+    $\lim_{x \to - \frac{\pi}{2}^{-}}f(x) = π, \lim_{x \to - \frac{\pi}{2}^{+}}f(x) = \frac{π}{2}$
 - id: e
   content: |-
-    $lim_(x → - \frac{π}{2}^{-})f(x) = \frac{π}{2}, lim_(x → - \frac{π}{2}^{+})f(x) = π$
+    $\lim_{x \to - \frac{\pi}{2}^{-}}f(x) = \frac{π}{2}, \lim_{x \to - \frac{\pi}{2}^{+}}f(x) = π$
 ```
 ---
 
@@ -153,24 +153,24 @@ id: MA253-UQ1-472-q003
 content: |-
   ![](<../Source/The Left and Right-Sided Limits of a Function - 472/Images/q-16545.png>)
   
-  Find $lim_(x → \frac{π}{2}^{-})f(x)$ and $lim_(x → \frac{π}{2}^{+})f(x)$ for the function given above.
+  Find $\lim_{x \to \frac{\pi}{2}^{-}}f(x)$ and $\lim_{x \to \frac{\pi}{2}^{+}}f(x)$ for the function given above.
 options:
 - id: a
   content: |-
-    $lim_(x → \frac{π}{2}^{-})f(x) = \frac{π}{2}, lim_(x → \frac{π}{2}^{+})f(x) = π$
+    $\lim_{x \to \frac{\pi}{2}^{-}}f(x) = \frac{π}{2}, \lim_{x \to \frac{\pi}{2}^{+}}f(x) = π$
   correct: true
 - id: b
   content: |-
-    $lim_(x → \frac{π}{2}^{-})f(x) = 2π, lim_(x → \frac{π}{2}^{+})f(x) = π$
+    $\lim_{x \to \frac{\pi}{2}^{-}}f(x) = 2π, \lim_{x \to \frac{\pi}{2}^{+}}f(x) = π$
 - id: c
   content: |-
-    $lim_(x → \frac{π}{2}^{-})f(x) = \frac{π}{2}, lim_(x → \frac{π}{2}^{+})f(x) = DNE$
+    $\lim_{x \to \frac{\pi}{2}^{-}}f(x) = \frac{π}{2}, \lim_{x \to \frac{\pi}{2}^{+}}f(x) = DNE$
 - id: d
   content: |-
-    $lim_(x → \frac{π}{2}^{-})f(x) = π, lim_(x → \frac{π}{2}^{+})f(x) = \frac{π}{2}$
+    $\lim_{x \to \frac{\pi}{2}^{-}}f(x) = π, \lim_{x \to \frac{\pi}{2}^{+}}f(x) = \frac{π}{2}$
 - id: e
   content: |-
-    $lim_(x → \frac{π}{2}^{-})f(x) = π, lim_(x → \frac{π}{2}^{+})f(x) = DNE$
+    $\lim_{x \to \frac{\pi}{2}^{-}}f(x) = π, \lim_{x \to \frac{\pi}{2}^{+}}f(x) = DNE$
 ```
 ---
 
@@ -186,13 +186,13 @@ options:
 We see from the graph that, approaching $x=-2$ from the right, the function approaches the value $y=4$. However, we cannot approach $x=-2$ from the left, because the function is not defined left of $x=-2$. Consequently,
 
 $$
-\lim_\limits{x\rightarrow \,-2^{-}}f(x)=\text{DNE}\,,\quad\lim_\limits{x\rightarrow \,-2^{+}}f(x)=4 \,
+\lim_{x\rightarrow \,-2^{-}}f(x)=\text{DNE}\,,\quad\lim_{x\rightarrow \,-2^{+}}f(x)=4 \,
 $$
 
 On the other hand, approaching $x=2$ from the left, the function approaches the value $y=2$. However, we cannot approach $x=2$ from the right, because the function is not defined right of $x=2$. So we have
 
 $$
-\lim_\limits{x\rightarrow 2^{-}}f(x)=2\,,\quad\lim_\limits{x\rightarrow \,2^{+}}f(x)=\text{DNE} \,
+\lim_{x\rightarrow 2^{-}}f(x)=2\,,\quad\lim_{x\rightarrow \,2^{+}}f(x)=\text{DNE} \,
 $$
 
 **Note:** Here, $\text{DNE}$ is simply short for "does not exist".
@@ -211,20 +211,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $lim_(x → - 1^{-})f(x) = 2, lim_(x → 2^{+})f(x) = 1$
+    $\lim_{x \to - 1^{-}}f(x) = 2, \lim_{x \to 2^{+}}f(x) = 1$
 - id: b
   content: |-
-    $lim_(x → - 1^{-})f(x) = 1, lim_(x → 2^{+})f(x) = 2$
+    $\lim_{x \to - 1^{-}}f(x) = 1, \lim_{x \to 2^{+}}f(x) = 2$
 - id: c
   content: |-
-    $lim_(x → - 1^{-})f(x) = DNE, lim_(x → 2^{+})f(x) = DNE$
+    $\lim_{x \to - 1^{-}}f(x) = DNE, \lim_{x \to 2^{+}}f(x) = DNE$
 - id: d
   content: |-
-    $lim_(x → - 1^{-})f(x) = 1, lim_(x → 2^{+})f(x) = DNE$
+    $\lim_{x \to - 1^{-}}f(x) = 1, \lim_{x \to 2^{+}}f(x) = DNE$
   correct: true
 - id: e
   content: |-
-    $lim_(x → - 1^{-})f(x) = DNE, lim_(x → 2^{+})f(x) = 2$
+    $\lim_{x \to - 1^{-}}f(x) = DNE, \lim_{x \to 2^{+}}f(x) = 2$
 ```
 ---
 
@@ -240,20 +240,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $lim_(x → (1/2)^{+})f(x) = 0, lim_(x → 1^{-})f(x) = 0$
+    $\lim_{x \to (1/2)^{+}}f(x) = 0, \lim_{x \to 1^{-}}f(x) = 0$
 - id: b
   content: |-
-    $lim_(x → (1/2)^{+})f(x) = 0, lim_(x → 1^{-})f(x) = DNE$
+    $\lim_{x \to (1/2)^{+}}f(x) = 0, \lim_{x \to 1^{-}}f(x) = DNE$
 - id: c
   content: |-
-    $lim_(x → (1/2)^{+})f(x) = DNE, lim_(x → 1^{-})f(x) = DNE$
+    $\lim_{x \to (1/2)^{+}}f(x) = DNE, \lim_{x \to 1^{-}}f(x) = DNE$
   correct: true
 - id: d
   content: |-
-    $lim_(x → (1/2)^{+})f(x) = DNE, lim_(x → 1^{-})f(x) = 0$
+    $\lim_{x \to (1/2)^{+}}f(x) = DNE, \lim_{x \to 1^{-}}f(x) = 0$
 - id: e
   content: |-
-    $lim_(x → (1/2)^{+})f(x) = \frac{1}{2}, lim_(x → 1^{-})f(x) = 1$
+    $\lim_{x \to (1/2)^{+}}f(x) = \frac{1}{2}, \lim_{x \to 1^{-}}f(x) = 1$
 ```
 ---
 
@@ -281,9 +281,9 @@ $$
 
 **Example:** Which of the following statements are true concerning the function $y=f(x)$ whose graph is shown below?
 
-1. $\lim_\limits{x\rightarrow \,0^-}f(x)=\lim_\limits{x\rightarrow \,1^+}f(x)$
-2. $\lim_\limits{x\rightarrow \,0^+}f(x)=\lim_\limits{x\rightarrow \,1^+}f(x)$
-3. $\lim_\limits{x\rightarrow \,0^+}f(x)=\lim_\limits{x\rightarrow \,1^-}f(x)$
+1. $\lim_{x\rightarrow \,0^-}f(x)=\lim_{x\rightarrow \,1^+}f(x)$
+2. $\lim_{x\rightarrow \,0^+}f(x)=\lim_{x\rightarrow \,1^+}f(x)$
+3. $\lim_{x\rightarrow \,0^+}f(x)=\lim_{x\rightarrow \,1^-}f(x)$
 
 ![](<../Source/The Left and Right-Sided Limits of a Function - 472/Images/159bff05b4056d41855a5746156d573a.png>)
 
@@ -294,13 +294,13 @@ First, let's compute the limits in question.
 Looking at the graph, as $x$ approaches $0$ from the left, the function value $f(x)$ approaches $0$. However, as $x$ approaches $0$ from the right, the function value $f(x)$ is undefined. So we have
 
 $$
-\lim_\limits{x\rightarrow \,0^-}f(x)=0, \qquad \lim_\limits{x\rightarrow \,0^+}f(x)=\text{DNE} \,
+\lim_{x\rightarrow \,0^-}f(x)=0, \qquad \lim_{x\rightarrow \,0^+}f(x)=\text{DNE} \,
 $$
 
 On the other hand, as $x$ approaches $1$ from the left, the function value $f(x)$ is undefined, and as $x$ approaches $1$ from the right, the function value $f(x)$ approaches $0$. So we have
 
 $$
-\lim_\limits{x\rightarrow \,1^-}f(x)=\text{DNE}, \qquad \lim_\limits{x\rightarrow \,1^+}f(x)=0 \,
+\lim_{x\rightarrow \,1^-}f(x)=\text{DNE}, \qquad \lim_{x\rightarrow \,1^+}f(x)=0 \,
 $$
 
 Now, let's look at each statement in turn.
@@ -308,7 +308,7 @@ Now, let's look at each statement in turn.
 I.
 
 $$
-\lim_\limits{x\rightarrow \,0^-}f(x)=\lim_\limits{x\rightarrow \,1^+}f(x)
+\lim_{x\rightarrow \,0^-}f(x)=\lim_{x\rightarrow \,1^+}f(x)
 $$
 
 becomes $0=0$, which is true.
@@ -316,7 +316,7 @@ becomes $0=0$, which is true.
 II.
 
 $$
-\lim_\limits{x\rightarrow \,0^+}f(x)=\lim_\limits{x\rightarrow \,1^+}f(x)
+\lim_{x\rightarrow \,0^+}f(x)=\lim_{x\rightarrow \,1^+}f(x)
 $$
 
 becomes
@@ -330,7 +330,7 @@ which is false.
 III.
 
 $$
-\lim_\limits{x\rightarrow \,0^+}f(x)=\lim_\limits{x\rightarrow \,1^-}f(x)
+\lim_{x\rightarrow \,0^+}f(x)=\lim_{x\rightarrow \,1^-}f(x)
 $$
 
 becomes
@@ -355,9 +355,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → 1^{+})f(x) = 1$
-  2. $lim_(x → 2^{+})f(x) = 1$
-  3. $lim_(x → (-1)^{-})f(x) = lim_(x → (-1)^{+})f(x)$
+  1. $\lim_{x \to 1^{+}}f(x) = 1$
+  2. $\lim_{x \to 2^{+}}f(x) = 1$
+  3. $\lim_{x \to (-1)^{-}}f(x) = \lim_{x \to (-1)^{+}}f(x)$
 options:
 - id: a
   content: |-
@@ -388,9 +388,9 @@ content: |-
   
   Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
   
-  1. $lim_(x → - 1^{+})f(x) = lim_(x → 0^{-})f(x)$
-  2. $lim_(x → - 1^{+})f(x) = lim_(x → 0^{+})f(x)$
-  3. $lim_(x → 2^{+})f(x) = lim_(x → 2^{-})f(x)$
+  1. $\lim_{x \to - 1^{+}}f(x) = \lim_{x \to 0^{-}}f(x)$
+  2. $\lim_{x \to - 1^{+}}f(x) = \lim_{x \to 0^{+}}f(x)$
+  3. $\lim_{x \to 2^{+}}f(x) = \lim_{x \to 2^{-}}f(x)$
 options:
 - id: a
   content: |-
