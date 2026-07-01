@@ -1,0 +1,273 @@
+# Evaluating Special Limits Involving Sine Using a Substitution
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Using the Special Limit With Sine and Substitution to Evaluate a Limit](#using-the-special-limit-with-sine-and-substitution-to-evaluate-a-limit)
+- [Using the Special Limit With Sine and Substitution to Evaluate a Limit: Advanced Cases](#using-the-special-limit-with-sine-and-substitution-to-evaluate-a-limit-advanced-cases)
+
+## Prerequisites
+
+- [Special Limits Involving Sine](../606/606.md)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Recall the following special limit for sine:
+
+$$
+\lim_\limits{\theta \to 0}\: \dfrac{\sin \theta}{\theta} = 1
+$$
+
+We can use this special limit to evaluate other limits, such as
+
+$$
+\lim_\limits{x \to 0}\: \dfrac{\sin 2x}{x}
+$$
+
+For this limit, notice that as $x\to0$, both the numerator and denominator approach $0$. So, if we attempt to evaluate the limit directly, we get
+
+$$
+%\lim_\limits{x \to 0} \: \dfrac{\sin 2x}{x} = \dfrac00
+$$
+
+which is an indeterminate form.
+
+Instead, we rewrite the limit using the algebra of limits, as follows:
+
+$$
+\begin{aligned}
+lim_(x → 0)\frac{\sin 2x}{x} &= lim_(x → 0)(2 \cdot \frac{\sin 2x}{2x}) \\
+&= 2 \cdot lim_(x → 0)\frac{\sin 2x}{2x}
+\end{aligned}
+$$
+
+Now, this limit looks very similar to our special limit for sine. So, if we make the substitution
+
+$$
+\theta = 2x
+$$
+
+then, since $\theta \to 0$ as $x \to 0$, we have
+
+$$
+\lim_\limits{x \to 0} \: \dfrac{\sin {\color{blue}2x}}{\color{blue}2x} = \lim_\limits{\theta \to 0} \: \dfrac{\sin {\color{blue}\theta}}{\color{blue}\theta} = 1
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+lim_(x → 0)\frac{\sin 2x}{x} &= 2 \cdot lim_(x → 0)\frac{\sin 2x}{2x} \\
+&= 2 \cdot 1 \\
+&= 2
+\end{aligned}
+$$
+
+---
+
+<a id="using-the-special-limit-with-sine-and-substitution-to-evaluate-a-limit"></a>
+## Using the Special Limit With Sine and Substitution to Evaluate a Limit
+
+**Example:** Find $\lim_\limits{x \to 5} \:\dfrac{\sin (x-5)}{15-3x}$.
+
+**Explanation**
+
+Notice that as $x \to 5$, both numerator and denominator approach $0$.
+
+So, if we attempt to evaluate the limit directly, we get
+
+$$
+\lim_{x \to5} \:\dfrac{\sin(x-5)}{15-3x} = \dfrac00
+$$
+
+which is an indeterminate form.
+
+Instead, let's recall the following special limit:
+
+$$
+\lim_{\theta \to 0} \: \dfrac{\sin\theta}{\theta} = 1
+$$
+
+We rewrite the given limit using the algebra of limits, as follows:
+
+$$
+\begin{aligned}
+lim_(x → 5)(\sin (x - 5))/(15 - 3x) &= lim_(x → 5)(\sin (x - 5))/((-3)(x - 5)) \\
+&=-\frac{1}{3} \cdot lim_(x → 5)(\sin (x - 5))/(x - 5)
+\end{aligned}
+$$
+
+Let
+
+$$
+\theta =x-5
+$$
+
+Then, $\theta \to 0$ as $x \to 5$, we have
+
+$$
+\lim_\limits{x \to 5} \:\dfrac{\sin({\color{blue}x-5})}{\color{blue}x-5} = \lim_\limits{\theta \to 0} \:\dfrac{\sin{\color{blue}\theta}}{\color{blue}\theta} =1
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+-\frac{1}{3} \cdot lim_(x → 5)(\sin (x - 5))/(x - 5) &= -\frac{1}{3} \cdot 1 \\
+&=-\frac{1}{3}
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: MA253-UQ1-3678-q001
+content: |-
+  Evaluate $lim_(x → π/2)(\sin (x - \frac{π}{2}))/(2x - π)$.
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $\frac{1}{2}$
+  correct: true
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $\frac{π}{2}$
+```
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: MA253-UQ1-3678-q002
+content: |-
+  Find $lim_(x → 0)\frac{2x}{\sin 3x}$.
+options:
+- id: a
+  content: |-
+    $\frac{3}{2}$
+- id: b
+  content: |-
+    $\frac{2}{3}$
+  correct: true
+- id: c
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $1$
+- id: e
+  content: |-
+    $\frac{4}{3}$
+```
+---
+
+<a id="using-the-special-limit-with-sine-and-substitution-to-evaluate-a-limit-advanced-cases"></a>
+## Using the Special Limit With Sine and Substitution to Evaluate a Limit: Advanced Cases
+
+**Example:** Calculate $\lim_\limits{\theta \to 0} \:\dfrac{\tan 2\theta}{\theta}$.
+
+**Explanation**
+
+First, we can simplify the limit using trigonometric identities, as follows:
+
+$$
+\begin{aligned}
+lim_(θ → 0)\frac{\tan 2θ}{θ} &= lim_(θ → 0)((\frac{\sin 2θ}{\cos 2θ}))/(θ) \\
+&= lim_(θ → 0)(\frac{\sin 2θ}{θ} \cdot \frac{1}{\cos 2θ}) \\
+&= lim_(θ → 0)\frac{\sin 2θ}{θ} \cdot lim_(θ → 0)\frac{1}{\cos 2θ}
+\end{aligned}
+$$
+
+Let's now evaluate the limits separately:
+
+- Consider the first limit. Notice that as $\theta \to 0$, both numerator and denominator approach $0$. So, if we attempt to evaluate the limit directly, we get
+$\lim_\limits{\theta \to 0}\: \dfrac{\sin 2\theta}{\theta} = \dfrac{0}{0}$,
+which is an indeterminate form. Instead, let's recall the following special limit:
+$\lim_\limits{x \to 0}\: \dfrac{\sin x}{x} =1$We rewrite the given limit using the algebra of limits, as follows:
+$lim_(θ → 0)\frac{\sin 2θ}{θ}|= lim_(θ → 0)(2 \cdot \frac{\sin 2θ}{2θ}); = 2 \cdot lim_(θ → 0)\frac{\sin2θ}{2θ}$Let $x = 2\theta$. Then, since $x\to0$ as $\theta \to 0$, we have
+$2 \cdot \lim_\limits{\theta \to 0}\: \dfrac{\sin \color{blue}2\theta}{\color{blue}2\theta} = 2 \cdot \lim_\limits{x \to 0}\: \dfrac{\sin \color{blue}x}{\color{blue}x} = 2 \cdot 1 =2$.
+- Consider the second limit. Evaluating it directly, we get
+$\lim_\limits{\theta \to 0} \: \dfrac{1}{\cos 2\theta} = \dfrac{1}{\cos 0} = \dfrac11 = 1$.
+
+Therefore, we have
+
+$$
+lim_(θ → 0)\frac{\sin 2θ}{θ} \cdot lim_(θ → 0)\frac{1}{\cos 2θ} = 2 \cdot 1 = 2
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: MA253-UQ1-3678-q003
+content: |-
+  Evaluate $lim_(θ → 0)\frac{2}{θ\csc 4θ}$.
+options:
+- id: a
+  content: |-
+    $\frac{1}{8}$
+- id: b
+  content: |-
+    $4$
+- id: c
+  content: |-
+    $\frac{1}{4}$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $8$
+  correct: true
+```
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: MA253-UQ1-3678-q004
+content: |-
+  Evaluate $lim_(x → π/3)(\frac{π}{3} - x)\csc (x - \frac{π}{3})$.
+options:
+- id: a
+  content: |-
+    $\frac{π}{3}$
+- id: b
+  content: |-
+    Indeterminate
+- id: c
+  content: |-
+    $-\frac{π}{3}$
+- id: d
+  content: |-
+    $1$
+- id: e
+  content: |-
+    $-1$
+  correct: true
+```
+---
+
+## Navigation
+
+- [Next: Limits of Logarithmic Functions](<Limits of Logarithmic Functions - 1377.md>)
+- [Back to UQ-1](../UQ-1.md)
