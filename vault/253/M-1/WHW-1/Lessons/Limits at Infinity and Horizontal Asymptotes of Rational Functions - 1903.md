@@ -1,0 +1,455 @@
+# Limits at Infinity and Horizontal Asymptotes of Rational Functions
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Evaluating a Limit at Infinity: Rational Solutions](#evaluating-a-limit-at-infinity-rational-solutions)
+- [Evaluating a Limit at Infinity: Infinite Solutions](#evaluating-a-limit-at-infinity-infinite-solutions)
+- [Horizontal Asymptotes of Rational Functions](#horizontal-asymptotes-of-rational-functions)
+- [Identifying the Horizontal Asymptote of a Rational Function](#identifying-the-horizontal-asymptote-of-a-rational-function)
+- [Identifying When a Rational Function has No Horizontal Asymptote](#identifying-when-a-rational-function-has-no-horizontal-asymptote)
+
+## Prerequisites
+
+- [Horizontal Asymptotes of Rational Functions](../808/808.md)
+- [Limits of Reciprocal Functions](../1905/1905.md)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+To calculate the limit at infinity of a rational function, such as
+
+$$
+\lim_{x \to \infty}\left(\dfrac{x^4}{x^5-x^2}\right)
+$$
+
+we apply the following procedure:
+
+**Step 1:** Divide both the numerator and the denominator by the highest power of $x$ in the *denominator*.
+
+$$
+\begin{aligned}
+\lim_{x \to \infty}(\frac{x^{4}}{x^{5} - x^{2}}) &= \lim_{x \to \infty}\left(\frac{x^{4} \div x^{5}}{(x^{5} - x^{2}) \div x^{5}}\right) \\
+&= \lim_{x \to \infty}(\frac{\frac{x^{4}}{x^{5}}}{\frac{x^{5}}{x^{5}} - \frac{x^{2}}{x^{5}}}) \\
+&= \lim_{x \to \infty}(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}})
+\end{aligned}
+$$
+
+**Step 2:** Apply the rule that if $n$ is any positive integer then
+
+$$
+\displaystyle \lim_{x \to \infty}\left(\dfrac{1}{x^n}\right)=0
+$$
+
+Evaluate the remaining expression to obtain the answer.
+
+$$
+\begin{aligned}
+\lim_{x \to \infty}(\frac{x^{4}}{x^{5} - x^{2}}) &= \lim_{x \to \infty}(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}}) \\
+&= \frac{0}{1 - 0} \\
+&= \frac{0}{1} \\
+&= 0
+\end{aligned}
+$$
+
+---
+
+<a id="evaluating-a-limit-at-infinity-rational-solutions"></a>
+## Evaluating a Limit at Infinity: Rational Solutions
+
+**Example:** Evaluate $\lim_{x \to \infty} \dfrac{3x^4+9x}{6x^4-x^3}$.
+
+**Explanation**
+
+First, we divide both the numerator and the denominator by the highest power of $x$ in the denominator, which is $x^4$. Then, by noting that the reciprocals shrink to $0$ in the limit, we can then evaluate the resulting expression.
+
+$$
+\begin{aligned}
+\lim_{x \to \infty}\frac{3x^{4} + 9x}{6x^{4} - x^{3}} &= \lim_{x \to \infty}\frac{\frac{3x^{4}}{x^{4}} + \frac{9x}{x^{4}}}{\frac{6x^{4}}{x^{4}} - \frac{x^{3}}{x^{4}}} \\
+&= \lim_{x \to \infty}\frac{3 + \frac{9}{x^{3}}}{6 - \frac{1}{x}} \\
+&= \frac{3 + 0}{6 - 0} \\
+&= \frac{1}{2}
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q001
+content: |-
+  Evaluate $\lim_{x \to \infty}\frac{3x^{4} + 1}{-3x^{4} - 2x^{3}}$.
+
+options:
+- id: a
+  content: |-
+    $3$
+
+- id: b
+  content: |-
+    $1$
+
+- id: c
+  content: |-
+    $-\infty$
+
+- id: d
+  content: |-
+    $-1$
+  correct: true
+
+- id: e
+  content: |-
+    $-3$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q002
+content: |-
+  Evaluate $\lim_{x \to \infty}\frac{-15}{x^{3} - 2}$.
+
+options:
+- id: a
+  content: |-
+    $-15$
+
+- id: b
+  content: |-
+    $-\infty$
+
+- id: c
+  content: |-
+    $0$
+  correct: true
+
+- id: d
+  content: |-
+    $DNE$
+
+- id: e
+  content: |-
+    $\infty$
+```
+
+---
+
+<a id="evaluating-a-limit-at-infinity-infinite-solutions"></a>
+## Evaluating a Limit at Infinity: Infinite Solutions
+
+**Example:** Calculate $\lim_{x \to -\infty} \dfrac{4-5x-2x^3}{x^2+3}$.
+
+**Explanation**
+
+First, we divide both the numerator and the denominator by the highest power of $x$ in the denominator, which is $x^2$. Then, by noting that the reciprocals shrink to $0$ in the limit, we can then evaluate the resulting expression.
+
+$$
+\begin{aligned}
+\lim_{x \to -\infty}\frac{4 - 5x - 2x^{3}}{x^{2} + 3} &= \lim_{x \to -\infty}\frac{\frac{-2x^{3}}{x^{2}} - \frac{5x}{x^{2}} + \frac{4}{x^{2}}}{\frac{x^{2}}{x^{2}} + \frac{3}{x^{2}}} \\
+&= \lim_{x \to -\infty}\frac{-2x - \frac{5}{x} + \frac{4}{x^{2}}}{1 + \frac{3}{x^{2}}} \\
+&= \lim_{x \to -\infty}(\frac{-2x + 0 + 0}{1 + 0}) \\
+&= \lim_{x \to -\infty}(-2x) \\
+&= \infty
+\end{aligned}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q003
+content: |-
+  Calculate $\lim_{x \to \infty}\frac{x^{4} - 6}{x^{2} - x + 2}$.
+
+options:
+- id: a
+  content: |-
+    $0$
+
+- id: b
+  content: |-
+    $1$
+
+- id: c
+  content: |-
+    Does not exist.
+
+- id: d
+  content: |-
+    $\infty$
+  correct: true
+
+- id: e
+  content: |-
+    $-\infty$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q004
+content: |-
+  Calculate $\lim_{x \to -\infty}\frac{2x^{3} - 13}{x + 11}$.
+
+options:
+- id: a
+  content: |-
+    $-\infty$
+
+- id: b
+  content: |-
+    $0$
+
+- id: c
+  content: |-
+    $\infty$
+  correct: true
+
+- id: d
+  content: |-
+    Does not exist.
+
+- id: e
+  content: |-
+    $\frac{13}{11}$
+```
+
+---
+
+<a id="horizontal-asymptotes-of-rational-functions"></a>
+## Horizontal Asymptotes of Rational Functions
+
+The horizontal asymptotes of a rational function $y=f(x)$ coincide with the infinite limits of $f(x)$.
+
+For example, we can use the same procedure as before to find the horizontal asymptote of
+
+$$
+y=f(x) = \dfrac{x+1}{x^2+2}
+$$
+
+As a result, we get
+
+$$
+\begin{aligned}
+\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x + 1}{x^{2} + 2} \\
+&= \lim_{x \to \infty}\frac{\frac{x}{x^{2}} + \frac{1}{x^{2}}}{\frac{x^{2}}{x^{2}} + \frac{2}{x^{2}}} \\
+&= \lim_{x \to \infty}\frac{\frac{1}{x} + \frac{1}{x^{2}}}{1 + \frac{2}{x^{2}}} \\
+&= \frac{0 + 0}{1 + 0} \\
+&= 0
+\end{aligned}
+$$
+
+So the horizontal asymptote of the graph $y=f(x)$ is $y=0$, as shown below.
+
+![](<253/M-1/WHW-1/Source/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903/Images/0c4f485fcbb53ac9c3c1e186c6793a29.png>)
+
+---
+
+<a id="identifying-the-horizontal-asymptote-of-a-rational-function"></a>
+## Identifying the Horizontal Asymptote of a Rational Function
+
+**Example:** What is the horizontal asymptote of $y=f(x)$ with $f(x)=\dfrac{2x^3+1}{x^3-15x}$?
+
+**Explanation**
+
+The horizontal asymptote is
+
+$$
+y=\lim_{x \to \infty} f(x)
+$$
+
+To find the horizontal asymptote, we apply the usual procedure of dividing the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$.
+
+$$
+\begin{aligned}
+\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{2x^{3} + 1}{x^{3} - 15x} \\
+&= \lim_{x \to \infty}\frac{\frac{2x^{3}}{x^{3}} + \frac{1}{x^{3}}}{\frac{x^{3}}{x^{3}} - \frac{15x}{x^{3}}} \\
+&= \lim_{x \to \infty}\frac{2 + \frac{1}{x^{3}}}{1 - \frac{15}{x^{2}}} \\
+&= \frac{2 + 0}{1 - 0} \\
+&= 2
+\end{aligned}
+$$
+
+Therefore, the horizontal asymptote is $y=2$.
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q005
+content: |-
+  What is the horizontal asymptote of $y = f(x)$ with $f(x) = \frac{3x + 4}{6 - 15x}$?
+
+options:
+- id: a
+  content: |-
+    $y = \frac{1}{2}$
+
+- id: b
+  content: |-
+    $y =-\frac{1}{5}$
+  correct: true
+
+- id: c
+  content: |-
+    No horizontal asymptote
+
+- id: d
+  content: |-
+    $y =-\frac{1}{3}$
+
+- id: e
+  content: |-
+    $y =-\frac{2}{3}$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q006
+content: |-
+  Find the horizontal asymptote of the function $f(x) = \frac{2x + 5}{2x^{3} + 2x + 6}$.
+
+options:
+- id: a
+  content: |-
+    $y = \frac{1}{2}$
+
+- id: b
+  content: |-
+    $y = 0$
+  correct: true
+
+- id: c
+  content: |-
+    No horizontal asymptote
+
+- id: d
+  content: |-
+    $y = 1$
+
+- id: e
+  content: |-
+    $y = 2$
+```
+
+---
+
+<a id="identifying-when-a-rational-function-has-no-horizontal-asymptote"></a>
+## Identifying When a Rational Function has No Horizontal Asymptote
+
+**Example:** Find the horizontal asymptote of $y=f(x)$ where $f(x)=\dfrac{x^5-10}{x^3-8x^2}$.
+
+**Explanation**
+
+The horizontal asymptote is
+
+$$
+y=\lim_{x \to \infty} f(x)
+$$
+
+To find the horizontal asymptote, we apply the usual procedure of dividing the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$.
+
+$$
+\begin{aligned}
+\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x^{5} - 10}{x^{3} - 8x^{2}} \\
+&= \lim_{x \to \infty}\frac{\frac{x^{5}}{x^{3}} - \frac{10}{x^{3}}}{\frac{x^{3}}{x^{3}} - \frac{8x^{2}}{x^{3}}} \\
+&= \lim_{x \to \infty}\frac{x^{2} - \frac{10}{x^{3}}}{1 - \frac{8}{x}} \\
+&= \lim_{x \to \infty}(\frac{x^{2} - 0}{1 - 0}) \\
+&= \lim_{x \to \infty}x^{2} \\
+&= \infty
+\end{aligned}
+$$
+
+The limit does not come out to a finite number. Therefore, there is no horizontal asymptote.
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q007
+content: |-
+  Find the horizontal asymptote of $y = f(x)$ where $f(x) = \frac{12x - 3x^{4}}{3x^{2} + 7}$.
+
+options:
+- id: a
+  content: |-
+    No horizontal asymptote
+  correct: true
+
+- id: b
+  content: |-
+    $y =-3$
+
+- id: c
+  content: |-
+    $y =-1$
+
+- id: d
+  content: |-
+    $y = 0$
+
+- id: e
+  content: |-
+    $y = 1$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: MA253-WHW1-1903-q008
+content: |-
+  Find the horizontal asymptote of $y = f(x)$ where $f(x) = \frac{3x^{2} - 2}{9x}$.
+
+options:
+- id: a
+  content: |-
+    $y = 0$
+
+- id: b
+  content: |-
+    $y = \frac{1}{3}$
+
+- id: c
+  content: |-
+    $y = \frac{1}{9}$
+
+- id: d
+  content: |-
+    $y = 3$
+
+- id: e
+  content: |-
+    No horizontal asymptote
+  correct: true
+```
+
+---
+
+## Navigation
+
+- [Next: Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<253/M-1/WHW-1/Lessons/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
+- [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)

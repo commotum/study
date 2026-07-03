@@ -85,10 +85,27 @@ $$"""
     return "\n\n".join(part.rstrip() for part in parts) + "\n"
 
 
+def create_skeleton_dirs(document_dir: Path, document_name: str) -> list[Path]:
+    created_dirs = []
+    for folder_name in SKELETON_DIRS:
+        folder_path = document_dir / folder_name
+        folder_path.mkdir(exist_ok=True)
+        created_dirs.append(folder_path)
+
+    named_source_dir = document_dir / "Source" / document_name
+    images_dir = named_source_dir / "Images"
+    images_dir.mkdir(parents=True, exist_ok=True)
+    created_dirs.extend([named_source_dir, images_dir])
+    return created_dirs
+
+
 def parse_args() -> argparse.Namespace:
     repo_root = find_repo_root()
     parser = argparse.ArgumentParser(
-        description="Create an assignment folder with Prerequisites, Lessons, Source, and a same-name markdown file."
+        description=(
+            "Create an assignment folder with Prerequisites, Lessons, Source/<document>/Images, "
+            "and a same-name markdown file."
+        )
     )
     parser.add_argument("course", help="Course folder target, e.g. 253, vault/253, or an absolute path")
     parser.add_argument("document_name", type=valid_document_name, help="New document/folder name, e.g. WHW-2")
@@ -158,15 +175,14 @@ def main() -> int:
         return 2
 
     document_dir.mkdir(parents=True, exist_ok=True)
-    for folder_name in SKELETON_DIRS:
-        (document_dir / folder_name).mkdir(exist_ok=True)
+    created_dirs = create_skeleton_dirs(document_dir, args.document_name)
 
     document_path.write_text(render_index(template_dir, args.problem_count), encoding="utf-8")
 
     print(f"created: {document_dir}")
     print(f"markdown: {document_path}")
-    for folder_name in SKELETON_DIRS:
-        print(f"folder:   {document_dir / folder_name}")
+    for folder_path in created_dirs:
+        print(f"folder:   {folder_path}")
     return 0
 
 
