@@ -1,0 +1,822 @@
+{
+  "schema_version": 2,
+  "topic_id": "2926",
+  "topic_title": "Newton's Method for Optimizing Single-Variable Functions",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2926/Source/2926.html",
+  "source_url": "https://mathacademy.com/topics/2926",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "459710",
+        "dom_id": "sectionLink-459710",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-459710"
+      },
+      {
+        "index": 2,
+        "step_id": "459711",
+        "dom_id": "sectionLink-459711",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-459711"
+      },
+      {
+        "index": 3,
+        "step_id": "459712",
+        "dom_id": "sectionLink-459712",
+        "name": "",
+        "title": "Computing One Iteration of the Newton-Raphson Method for Optimization",
+        "selector": "#sectionLink-459712"
+      },
+      {
+        "index": 4,
+        "step_id": "459715",
+        "dom_id": "sectionLink-459715",
+        "name": "",
+        "title": "Computing Two Iterations of the Newton-Raphson Method for Optimization",
+        "selector": "#sectionLink-459715"
+      },
+      {
+        "index": 5,
+        "step_id": "459718",
+        "dom_id": "sectionLink-459718",
+        "name": "",
+        "title": "Finding the Critical Points of a Function Using the Newton-Raphson Method for Optimization",
+        "selector": "#sectionLink-459718"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "912",
+        "name": "Newton's Method",
+        "href": "/topics/newtons-method-912"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "459710",
+        "content_id": "10738",
+        "dom_id": "step-459710",
+        "selector": "#step-459710",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a previous lesson, we learned how to <em>find the roots</em> of a function using <em>Newton\u2019s method</em>. That is, we solved equations of the form<br/><span class=\"math\">[MATH: f(x) = 0,]</span></p>",
+            "readable_text": "In a previous lesson, we learned how to find the roots of a function using Newton\u2019s method. That is, we solved equations of the form\n[MATH: f(x) = 0,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>by starting with an initial guess and refining it step by step using the update rule\n<span class=\"math\">[MATH: x_{n+1} = x_n - \\dfrac{f(x_n)}{f&#x27;(x_n)}.]</span></p>",
+            "readable_text": "by starting with an initial guess and refining it step by step using the update rule\n[MATH: x_{n+1} = x_n - \\dfrac{f(x_n)}{f'(x_n)}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, we turn to a closely related problem of <em>finding a local minimum or maximum</em> of a function <span class=\"math\">[MATH: f(x)]</span>. Recall that these may occur at points where the derivative <span class=\"math\">[MATH: f&#x27;(x)]</span> is equal to zero. In other words, we are looking for the roots of the function&#x27;s derivative.</p>",
+            "readable_text": "Now, we turn to a closely related problem of finding a local minimum or maximum of a function [MATH: f(x)]. Recall that these may occur at points where the derivative [MATH: f'(x)] is equal to zero. In other words, we are looking for the roots of the function's derivative.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Earlier, we approximated the function by a straight line near our current guess. Here, instead of using a linear approximation, we assume that the function <span class=\"math\">[MATH: f(x)]</span> behaves like a <em>parabola</em> near our current guess. That\u2019s a reasonable assumption if <span class=\"math\">[MATH: f]</span> is smooth. </p>",
+            "readable_text": "Earlier, we approximated the function by a straight line near our current guess. Here, instead of using a linear approximation, we assume that the function [MATH: f(x)] behaves like a parabola near our current guess. That\u2019s a reasonable assumption if [MATH: f] is smooth.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To make this idea precise, we use a second-order Taylor approximation, <span class=\"math\">[MATH: F(x){:}]</span></p>",
+            "readable_text": "To make this idea precise, we use a second-order Taylor approximation, [MATH: F(x){:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: F(x) = f(x_n) + f&#x27;(x_n)(x - x_n) + \\dfrac{1}{2} f&#x27;&#x27;(x_n)(x - x_n)^2]</span></p>",
+            "readable_text": "[MATH: F(x) = f(x_n) + f'(x_n)(x - x_n) + \\dfrac{1}{2} f''(x_n)(x - x_n)^2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the minimum or maximum, we first need to take the derivative of this approximation, which is\n<span class=\"math\">[MATH: F&#x27;(x) = f&#x27;(x_n) + f&#x27;&#x27;(x_n)(x - x_n).]</span></p>",
+            "readable_text": "To find the minimum or maximum, we first need to take the derivative of this approximation, which is\n[MATH: F'(x) = f'(x_n) + f''(x_n)(x - x_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We then need to set <span class=\"math\">[MATH: F&#x27;(x) =0]</span>:\n<span class=\"math\">[MATH: f&#x27;(x_n) + f&#x27;&#x27;(x_n)(x - x_n) = 0]</span></p>",
+            "readable_text": "We then need to set [MATH: F'(x) =0]:\n[MATH: f'(x_n) + f''(x_n)(x - x_n) = 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we solve for <span class=\"math\">[MATH: x,]</span>  as follows:</p>",
+            "readable_text": "Finally, we solve for [MATH: x,] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: f^{\u2033}(x_{n})(x \u2212 x_{n})|= \u2212 f^{\u2032}(x_{n}); x \u2212 x_{n}|= \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n})); x|= x_{n} \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n}))]</span></p>",
+            "readable_text": "[MATH: f^{\u2033}(x_{n})(x \u2212 x_{n})|= \u2212 f^{\u2032}(x_{n}); x \u2212 x_{n}|= \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n})); x|= x_{n} \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n}))]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, just like in root-finding, we start with an initial guess and improve it step by step. But this time, we apply Newton\u2019s method to the derivative <span class=\"math\">[MATH: f&#x27;(x)]</span> instead of the function <span class=\"math\">[MATH: f(x)]</span> itself:\n<span class=\"math\">[MATH: x_{n+1} = x_n - \\dfrac{f&#x27;(x_n)}{f&#x27;&#x27;(x_n)}]</span></p>",
+            "readable_text": "So, just like in root-finding, we start with an initial guess and improve it step by step. But this time, we apply Newton\u2019s method to the derivative [MATH: f'(x)] instead of the function [MATH: f(x)] itself:\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note</strong>: The second derivative <span class=\"math\">[MATH: f&#x27;&#x27;(x_n)]</span> must not be zero. If it is zero, or even very close to zero, the update step can become extremely large, leading us far away from the solution.</p>",
+            "readable_text": "Note: The second derivative [MATH: f''(x_n)] must not be zero. If it is zero, or even very close to zero, the update step can become extremely large, leading us far away from the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Just like in root-finding, Newton\u2019s method works best when the function is smooth, and our initial guess is already close to the minimum or maximum.</p>",
+            "readable_text": "Just like in root-finding, Newton\u2019s method works best when the function is smooth, and our initial guess is already close to the minimum or maximum.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a previous lesson, we learned how to find the roots of a function using Newton\u2019s method. That is, we solved equations of the form\n[MATH: f(x) = 0,]\n\nContent:\nby starting with an initial guess and refining it step by step using the update rule\n[MATH: x_{n+1} = x_n - \\dfrac{f(x_n)}{f'(x_n)}.]\n\nContent:\nNow, we turn to a closely related problem of finding a local minimum or maximum of a function [MATH: f(x)]. Recall that these may occur at points where the derivative [MATH: f'(x)] is equal to zero. In other words, we are looking for the roots of the function's derivative.\n\nContent:\nEarlier, we approximated the function by a straight line near our current guess. Here, instead of using a linear approximation, we assume that the function [MATH: f(x)] behaves like a parabola near our current guess. That\u2019s a reasonable assumption if [MATH: f] is smooth.\n\nContent:\nTo make this idea precise, we use a second-order Taylor approximation, [MATH: F(x){:}]\n\nContent:\n[MATH: F(x) = f(x_n) + f'(x_n)(x - x_n) + \\dfrac{1}{2} f''(x_n)(x - x_n)^2]\n\nContent:\nTo find the minimum or maximum, we first need to take the derivative of this approximation, which is\n[MATH: F'(x) = f'(x_n) + f''(x_n)(x - x_n).]\n\nContent:\nWe then need to set [MATH: F'(x) =0]:\n[MATH: f'(x_n) + f''(x_n)(x - x_n) = 0]\n\nContent:\nFinally, we solve for [MATH: x,] as follows:\n\nContent:\n[MATH: f^{\u2033}(x_{n})(x \u2212 x_{n})|= \u2212 f^{\u2032}(x_{n}); x \u2212 x_{n}|= \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n})); x|= x_{n} \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n}))]\n\nContent:\nSo, just like in root-finding, we start with an initial guess and improve it step by step. But this time, we apply Newton\u2019s method to the derivative [MATH: f'(x)] instead of the function [MATH: f(x)] itself:\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)}]\n\nContent:\nNote: The second derivative [MATH: f''(x_n)] must not be zero. If it is zero, or even very close to zero, the update step can become extremely large, leading us far away from the solution.\n\nContent:\nJust like in root-finding, Newton\u2019s method works best when the function is smooth, and our initial guess is already close to the minimum or maximum."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "459711",
+        "content_id": "13141",
+        "dom_id": "step-459711",
+        "selector": "#step-459711",
+        "step_anchor": "step-2",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function \n<span class=\"math\">[MATH: f(x)= \\ln(x+1)+\\dfrac{2}{x+1}]</span>\nin the interval <span class=\"math\">[MATH: [0,2].]</span> Let&#x27;s calculate one iteration of the Newton-Raphson process for optimization starting at the point <span class=\"math\">[MATH: x_0=0.8.]</span> </p>",
+            "readable_text": "Suppose we wish to find a critical point of the function\n[MATH: f(x)= \\ln(x+1)+\\dfrac{2}{x+1}]\nin the interval [MATH: [0,2].] Let's calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.8.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Newton-Raphson process for optimization is</p>",
+            "readable_text": "The Newton-Raphson process for optimization is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{n+1} = x_n - \\dfrac{f&#x27;(x_n)}{f&#x27;&#x27;(x_n)},]</span></p>",
+            "readable_text": "[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: f&#x27;(x_n)]</span> and <span class=\"math\">[MATH: f&#x27;&#x27;(x_n)]</span> are the first and second derivatives of <span class=\"math\">[MATH: f(x)]</span> evaluated at <span class=\"math\">[MATH: x_n,]</span> respectively.</p>",
+            "readable_text": "where [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our case, we have</p>",
+            "readable_text": "In our case, we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: f^{\u2032}(x)|= (\\ln (x + 1) + (2)/(x + 1))^{\u2032}; = (1)/(x + 1) \u2212 (2)/((x + 1)^{2}); = (x \u2212 1)/((x + 1)^{2}),; f^{\u2033}(x)|= ((1)/(x + 1) \u2212 (2)/((x + 1)^{2}))^{\u2032}; = \u2212 (1)/((x + 1)^{2}) + (4)/((x + 1)^{3}); = (3 \u2212 x)/((x + 1)^{3}).]</span></p>",
+            "readable_text": "[MATH: f^{\u2032}(x)|= (\\ln (x + 1) + (2)/(x + 1))^{\u2032}; = (1)/(x + 1) \u2212 (2)/((x + 1)^{2}); = (x \u2212 1)/((x + 1)^{2}),; f^{\u2033}(x)|= ((1)/(x + 1) \u2212 (2)/((x + 1)^{2}))^{\u2032}; = \u2212 (1)/((x + 1)^{2}) + (4)/((x + 1)^{3}); = (3 \u2212 x)/((x + 1)^{3}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, our Newton-Raphson formula is</p>",
+            "readable_text": "Therefore, our Newton-Raphson formula is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{n + 1}|= x_{n} \u2212 ((x_{n} \u2212 1)/((x_{n} + 1)^{2}))/((3 \u2212 x_{n})/((x_{n} + 1)^{3})); = x_{n} \u2212 (x_{n}^{2} \u2212 1)/(3 \u2212 x_{n}).]</span></p>",
+            "readable_text": "[MATH: x_{n + 1}|= x_{n} \u2212 ((x_{n} \u2212 1)/((x_{n} + 1)^{2}))/((3 \u2212 x_{n})/((x_{n} + 1)^{3})); = x_{n} \u2212 (x_{n}^{2} \u2212 1)/(3 \u2212 x_{n}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Starting with <span class=\"math\">[MATH: x_0=0.8,]</span> we have</p>",
+            "readable_text": "Starting with [MATH: x_0=0.8,] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 (x_{0}^{2} \u2212 1)/(3 \u2212 x_{0}); = 0.8 \u2212 ((0.8)^{2} \u2212 1)/(3 \u2212 0.8); \u2248 0.964,]</span>\nrounded to three decimal places.</p>",
+            "readable_text": "[MATH: x_{1}|= x_{0} \u2212 (x_{0}^{2} \u2212 1)/(3 \u2212 x_{0}); = 0.8 \u2212 ((0.8)^{2} \u2212 1)/(3 \u2212 0.8); \u2248 0.964,]\nrounded to three decimal places.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we wish to find a critical point of the function\n[MATH: f(x)= \\ln(x+1)+\\dfrac{2}{x+1}]\nin the interval [MATH: [0,2].] Let's calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.8.]\n\nContent:\nThe Newton-Raphson process for optimization is\n\nContent:\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nContent:\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nContent:\nIn our case, we have\n\nContent:\n[MATH: f^{\u2032}(x)|= (\\ln (x + 1) + (2)/(x + 1))^{\u2032}; = (1)/(x + 1) \u2212 (2)/((x + 1)^{2}); = (x \u2212 1)/((x + 1)^{2}),; f^{\u2033}(x)|= ((1)/(x + 1) \u2212 (2)/((x + 1)^{2}))^{\u2032}; = \u2212 (1)/((x + 1)^{2}) + (4)/((x + 1)^{3}); = (3 \u2212 x)/((x + 1)^{3}).]\n\nContent:\nTherefore, our Newton-Raphson formula is\n\nContent:\n[MATH: x_{n + 1}|= x_{n} \u2212 ((x_{n} \u2212 1)/((x_{n} + 1)^{2}))/((3 \u2212 x_{n})/((x_{n} + 1)^{3})); = x_{n} \u2212 (x_{n}^{2} \u2212 1)/(3 \u2212 x_{n}).]\n\nContent:\nStarting with [MATH: x_0=0.8,] we have\n\nContent:\n[MATH: x_{1}|= x_{0} \u2212 (x_{0}^{2} \u2212 1)/(3 \u2212 x_{0}); = 0.8 \u2212 ((0.8)^{2} \u2212 1)/(3 \u2212 0.8); \u2248 0.964,]\nrounded to three decimal places."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "459712",
+        "content_id": "16703",
+        "dom_id": "step-459712",
+        "selector": "#step-459712",
+        "step_anchor": "step-3",
+        "title": "Computing One Iteration of the Newton-Raphson Method for Optimization",
+        "key_prerequisites": [
+          {
+            "topic_id": "912",
+            "name": "Newton's Method",
+            "href": "/topics/912",
+            "type": ""
+          },
+          {
+            "topic_id": "1115",
+            "name": "Selecting Procedures for Calculating Derivatives",
+            "href": "/topics/1115",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x)=x^2 + e^{-2x}]</span> in the interval <span class=\"math\">[MATH: [0,1].]</span> Calculate one iteration of the Newton-Raphson process for optimization starting at the point <span class=\"math\">[MATH: x_0=0.5.]</span> Round your final answer to <span class=\"math\">[MATH: 3]</span> decimal places if needed.</p>",
+            "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x)=x^2 + e^{-2x}] in the interval [MATH: [0,1].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.5.] Round your final answer to [MATH: 3] decimal places if needed.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson process for optimization is</p><p><span class=\"math\">[MATH: x_{n+1} = x_n - \\dfrac{f&#x27;(x_n)}{f&#x27;&#x27;(x_n)},]</span></p><p>where <span class=\"math\">[MATH: f&#x27;(x_n)]</span> and <span class=\"math\">[MATH: f&#x27;&#x27;(x_n)]</span> are the first and second derivatives of <span class=\"math\">[MATH: f(x)]</span> evaluated at <span class=\"math\">[MATH: x_n,]</span> respectively.</p><p>In our case, we have</p><p><span class=\"math\">[MATH: f^{\u2032}(x)|= (x^{2} + e^{\u2212 2x})^{\u2032}; = 2x \u2212 2e^{\u2212 2x},; f^{\u2033}(x)|= (2x \u2212 2e^{\u2212 2x})^{\u2032}; = 2 + 4e^{\u2212 2x}.]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: x_{n + 1} = x_{n} \u2212 (2x_{n} \u2212 2e^{\u2212 2x_{n}})/(2 + 4e^{\u2212 2x_{n}}).]</span></p><p>Starting with <span class=\"math\">[MATH: x_0=0.5,]</span> we have</p><p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 (2x_{0} \u2212 2e^{\u2212 2x_{0}})/(2 + 4e^{\u2212 2x_{0}}); = 0.5 \u2212 (2(0.5) \u2212 2e^{\u2212 2(0.5)})/(2 + 4e^{\u2212 2(0.5)}); \u2248 0.424,]</span>\nrounded to three decimal places.</p>",
+            "readable_text": "The Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{2} + e^{\u2212 2x})^{\u2032}; = 2x \u2212 2e^{\u2212 2x},; f^{\u2033}(x)|= (2x \u2212 2e^{\u2212 2x})^{\u2032}; = 2 + 4e^{\u2212 2x}.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1} = x_{n} \u2212 (2x_{n} \u2212 2e^{\u2212 2x_{n}})/(2 + 4e^{\u2212 2x_{n}}).]\n\nStarting with [MATH: x_0=0.5,] we have\n\n[MATH: x_{1}|= x_{0} \u2212 (2x_{0} \u2212 2e^{\u2212 2x_{0}})/(2 + 4e^{\u2212 2x_{0}}); = 0.5 \u2212 (2(0.5) \u2212 2e^{\u2212 2(0.5)})/(2 + 4e^{\u2212 2(0.5)}); \u2248 0.424,]\nrounded to three decimal places.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x)=x^2 + e^{-2x}] in the interval [MATH: [0,1].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.5.] Round your final answer to [MATH: 3] decimal places if needed.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{2} + e^{\u2212 2x})^{\u2032}; = 2x \u2212 2e^{\u2212 2x},; f^{\u2033}(x)|= (2x \u2212 2e^{\u2212 2x})^{\u2032}; = 2 + 4e^{\u2212 2x}.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1} = x_{n} \u2212 (2x_{n} \u2212 2e^{\u2212 2x_{n}})/(2 + 4e^{\u2212 2x_{n}}).]\n\nStarting with [MATH: x_0=0.5,] we have\n\n[MATH: x_{1}|= x_{0} \u2212 (2x_{0} \u2212 2e^{\u2212 2x_{0}})/(2 + 4e^{\u2212 2x_{0}}); = 0.5 \u2212 (2(0.5) \u2212 2e^{\u2212 2(0.5)})/(2 + 4e^{\u2212 2(0.5)}); \u2248 0.424,]\nrounded to three decimal places."
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "256772",
+        "dom_id": "question-256772",
+        "selector": "#question-256772",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x) = x^{3} \u2212 4x + 1]</span> in the interval <span class=\"math\">[MATH: [0, 2].]</span> Calculate one iteration of the Newton-Raphson process for optimization starting at the point <span class=\"math\">[MATH: x_{0} = 1.]</span> Round your final answer to <span class=\"math\">[MATH: 3]</span> decimal places if needed.<span class=\"free-response-line\"><span class=\"math\">[MATH: x_{1} \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x) = x^{3} \u2212 4x + 1] in the interval [MATH: [0, 2].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = 1.] Round your final answer to [MATH: 3] decimal places if needed.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = x^{3} \u2212 4x + 1] in the interval [MATH: [0, 2].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = 1.] Round your final answer to [MATH: 3] decimal places if needed.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "256810",
+        "dom_id": "question-256810",
+        "selector": "#question-256810",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x) = \\sin (x^{2}) + x^{3}]</span>  in the interval <span class=\"math\">[MATH: [\u2212 2, 0].]</span> Calculate one iteration of the Newton-Raphson process for optimization starting at the point <span class=\"math\">[MATH: x_{0} = \u2212 1.]</span> Round your final answer to <span class=\"math\">[MATH: 3]</span> decimal places if needed.<span class=\"free-response-line\"><span class=\"math\">[MATH: x_{1} \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x) = \\sin (x^{2}) + x^{3}] in the interval [MATH: [\u2212 2, 0].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = \u2212 1.] Round your final answer to [MATH: 3] decimal places if needed.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = \\sin (x^{2}) + x^{3}] in the interval [MATH: [\u2212 2, 0].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = \u2212 1.] Round your final answer to [MATH: 3] decimal places if needed.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "459715",
+        "content_id": "16704",
+        "dom_id": "step-459715",
+        "selector": "#step-459715",
+        "step_anchor": "step-6",
+        "title": "Computing Two Iterations of the Newton-Raphson Method for Optimization",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x)=x^3-6x^2+9x]</span> in the interval <span class=\"math\">[MATH: [0,2].]</span> Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point <span class=\"math\">[MATH: x_0=0.]</span> </p>",
+            "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x)=x^3-6x^2+9x] in the interval [MATH: [0,2].] Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson process for optimization is</p><p><span class=\"math\">[MATH: x_{n+1} = x_n - \\dfrac{f&#x27;(x_n)}{f&#x27;&#x27;(x_n)},]</span></p><p>where <span class=\"math\">[MATH: f&#x27;(x_n)]</span> and <span class=\"math\">[MATH: f&#x27;&#x27;(x_n)]</span> are the first and second derivatives of <span class=\"math\">[MATH: f(x)]</span> evaluated at <span class=\"math\">[MATH: x_n,]</span> respectively.</p><p>In our case, we have</p><p><span class=\"math\">[MATH: f^{\u2032}(x)|= (x^{3} \u2212 6x^{2} + 9x)^{\u2032} = 3x^{2} \u2212 12x + 9,; f^{\u2033}(x)|= (3x^{2} \u2212 12x + 9)^{\u2032} = 6x \u2212 12.]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: x_{n + 1}|= x_{n} \u2212 (3x_{n}^{2} \u2212 12x_{n} + 9)/(6x_{n} \u2212 12).]</span></p><p>Starting with <span class=\"math\">[MATH: x_0=0,]</span> we have</p><p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 (3x_{0}^{2} \u2212 12x_{0} + 9)/(6x_{0} \u2212 12); = 0 \u2212 (3(0)^{2} \u2212 12(0) + 9)/(6(0) \u2212 12); = (9)/(12); = 0.75]</span></p><p>For the second iteration, we have</p><p><span class=\"math\">[MATH: x_{2}|= x_{1} \u2212 (3x_{1}^{2} \u2212 12x_{1} + 9)/(6x_{1} \u2212 12); = 0.75 \u2212 (3(0.75)^{2} \u2212 12(0.75) + 9)/(6(0.75) \u2212 12); = 0.975]</span></p><p>Therefore, <span class=\"math\">[MATH: x_1 = 0.75]</span> and <span class=\"math\">[MATH: x_2 = 0.975.]</span> </p>",
+            "readable_text": "The Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{3} \u2212 6x^{2} + 9x)^{\u2032} = 3x^{2} \u2212 12x + 9,; f^{\u2033}(x)|= (3x^{2} \u2212 12x + 9)^{\u2032} = 6x \u2212 12.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1}|= x_{n} \u2212 (3x_{n}^{2} \u2212 12x_{n} + 9)/(6x_{n} \u2212 12).]\n\nStarting with [MATH: x_0=0,] we have\n\n[MATH: x_{1}|= x_{0} \u2212 (3x_{0}^{2} \u2212 12x_{0} + 9)/(6x_{0} \u2212 12); = 0 \u2212 (3(0)^{2} \u2212 12(0) + 9)/(6(0) \u2212 12); = (9)/(12); = 0.75]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 (3x_{1}^{2} \u2212 12x_{1} + 9)/(6x_{1} \u2212 12); = 0.75 \u2212 (3(0.75)^{2} \u2212 12(0.75) + 9)/(6(0.75) \u2212 12); = 0.975]\n\nTherefore, [MATH: x_1 = 0.75] and [MATH: x_2 = 0.975.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x)=x^3-6x^2+9x] in the interval [MATH: [0,2].] Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{3} \u2212 6x^{2} + 9x)^{\u2032} = 3x^{2} \u2212 12x + 9,; f^{\u2033}(x)|= (3x^{2} \u2212 12x + 9)^{\u2032} = 6x \u2212 12.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1}|= x_{n} \u2212 (3x_{n}^{2} \u2212 12x_{n} + 9)/(6x_{n} \u2212 12).]\n\nStarting with [MATH: x_0=0,] we have\n\n[MATH: x_{1}|= x_{0} \u2212 (3x_{0}^{2} \u2212 12x_{0} + 9)/(6x_{0} \u2212 12); = 0 \u2212 (3(0)^{2} \u2212 12(0) + 9)/(6(0) \u2212 12); = (9)/(12); = 0.75]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 (3x_{1}^{2} \u2212 12x_{1} + 9)/(6x_{1} \u2212 12); = 0.75 \u2212 (3(0.75)^{2} \u2212 12(0.75) + 9)/(6(0.75) \u2212 12); = 0.975]\n\nTherefore, [MATH: x_1 = 0.75] and [MATH: x_2 = 0.975.]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "256464",
+        "dom_id": "question-256464",
+        "selector": "#question-256464",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x) = x^{3} + x^{2} \u2212 3x + 4]</span> in the interval <span class=\"math\">[MATH: [0, 2].]</span> Calculate the second iteration of the Newton-Raphson process for optimization starting from the point <span class=\"math\">[MATH: x_{0} = 0.]</span> Round your answer to three decimal places.<span class=\"free-response-line\"><span class=\"math\">[MATH: x_{2} \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x) = x^{3} + x^{2} \u2212 3x + 4] in the interval [MATH: [0, 2].] Calculate the second iteration of the Newton-Raphson process for optimization starting from the point [MATH: x_{0} = 0.] Round your answer to three decimal places.[MATH: x_{2} \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = x^{3} + x^{2} \u2212 3x + 4] in the interval [MATH: [0, 2].] Calculate the second iteration of the Newton-Raphson process for optimization starting from the point [MATH: x_{0} = 0.] Round your answer to three decimal places.[MATH: x_{2} \u2248]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "256463",
+        "dom_id": "question-256463",
+        "selector": "#question-256463",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x) = \\cos (3x + (\u03c0)/(4))]</span> in the interval <span class=\"math\">[MATH: [0, 1].]</span> Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point <span class=\"math\">[MATH: x_{0} = 1.]</span> Round your answers to three decimal places.<span class=\"free-response-line\"><span class=\"math\">[MATH: x_{1} \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n<span class=\"math\">[MATH: , x_{2} \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x) = \\cos (3x + (\u03c0)/(4))] in the interval [MATH: [0, 1].] Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = 1.] Round your answers to three decimal places.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]\n[MATH: , x_{2} \u2248]\n[FREE_ENTRY 2]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = \\cos (3x + (\u03c0)/(4))] in the interval [MATH: [0, 1].] Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = 1.] Round your answers to three decimal places.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]\n[MATH: , x_{2} \u2248]\n[FREE_ENTRY 2]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "459718",
+        "content_id": "16705",
+        "dom_id": "step-459718",
+        "selector": "#step-459718",
+        "step_anchor": "step-9",
+        "title": "Finding the Critical Points of a Function Using the Newton-Raphson Method for Optimization",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given that the function <span class=\"math\">[MATH: f(x)=x^4-3x+1]</span> has a critical point in the interval <span class=\"math\">[MATH: [0,2],]</span> use the Newton-Raphson process for optimization starting from <span class=\"math\">[MATH: x_0=1]</span> to estimate the critical point. Round your final answer to two decimal places.</p>",
+            "readable_text": "Given that the function [MATH: f(x)=x^4-3x+1] has a critical point in the interval [MATH: [0,2],] use the Newton-Raphson process for optimization starting from [MATH: x_0=1] to estimate the critical point. Round your final answer to two decimal places.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson process for optimization is</p><p><span class=\"math\">[MATH: x_{n+1} = x_n - \\dfrac{f&#x27;(x_n)}{f&#x27;&#x27;(x_n)},]</span></p><p>where <span class=\"math\">[MATH: f&#x27;(x_n)]</span> and <span class=\"math\">[MATH: f&#x27;&#x27;(x_n)]</span> are the first and second derivatives of <span class=\"math\">[MATH: f(x)]</span> evaluated at <span class=\"math\">[MATH: x_n,]</span> respectively.</p><p>In our case, we have</p><p><span class=\"math\">[MATH: f^{\u2032}(x)|= (x^{4} \u2212 3x + 1)^{\u2032} = 4x^{3} \u2212 3,; f^{\u2033}(x)|= (4x^{3} \u2212 3)^{\u2032} = 12x^{2}.]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: x_{n + 1}|= x_{n} \u2212 (4x_{n}^{3} \u2212 3)/(12x_{n}^{2}); = (12x_{n}^{3} \u2212 (4x_{n}^{3} \u2212 3))/(12x_{n}^{2}); = (8x_{n}^{3} + 3)/(12x_{n}^{2})]</span></p><p>Starting with <span class=\"math\">[MATH: x_0 = 1,]</span> we have</p><p><span class=\"math\">[MATH: x_{1}|= (8x_{0}^{3} + 3)/(12x_{0}^{2}); = (8(1)^{3} + 3)/(12(1)^{2}); = 0.916666\u2026.]</span></p><p>Similarly, we have</p><p><span class=\"math\">[MATH: x_{2}|= (8x_{1}^{3} + 3)/(12x_{1}^{2}); = (8(0.916666\u2026)^{3} + 3)/(12(0.916666\u2026)^{2}); = 0.908631\u2026,; x_{3}|= (8x_{2}^{3} + 3)/(12x_{2}^{2}); = (8(0.908631\u2026)^{3} + 3)/(12(0.908631\u2026)^{2}); = 0.908560\u2026.]</span></p><p>Notice that the last two approximations <span class=\"math\">[MATH: x_2 \\approx0.91]</span> and <span class=\"math\">[MATH: x_3 \\approx 0.91]</span> are the same when rounded to two decimal places.</p><p>Therefore, the critical point of the function is <span class=\"math\">[MATH: x \\approx 0.91,]</span> rounded to two decimal places.</p>",
+            "readable_text": "The Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{4} \u2212 3x + 1)^{\u2032} = 4x^{3} \u2212 3,; f^{\u2033}(x)|= (4x^{3} \u2212 3)^{\u2032} = 12x^{2}.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1}|= x_{n} \u2212 (4x_{n}^{3} \u2212 3)/(12x_{n}^{2}); = (12x_{n}^{3} \u2212 (4x_{n}^{3} \u2212 3))/(12x_{n}^{2}); = (8x_{n}^{3} + 3)/(12x_{n}^{2})]\n\nStarting with [MATH: x_0 = 1,] we have\n\n[MATH: x_{1}|= (8x_{0}^{3} + 3)/(12x_{0}^{2}); = (8(1)^{3} + 3)/(12(1)^{2}); = 0.916666\u2026.]\n\nSimilarly, we have\n\n[MATH: x_{2}|= (8x_{1}^{3} + 3)/(12x_{1}^{2}); = (8(0.916666\u2026)^{3} + 3)/(12(0.916666\u2026)^{2}); = 0.908631\u2026,; x_{3}|= (8x_{2}^{3} + 3)/(12x_{2}^{2}); = (8(0.908631\u2026)^{3} + 3)/(12(0.908631\u2026)^{2}); = 0.908560\u2026.]\n\nNotice that the last two approximations [MATH: x_2 \\approx0.91] and [MATH: x_3 \\approx 0.91] are the same when rounded to two decimal places.\n\nTherefore, the critical point of the function is [MATH: x \\approx 0.91,] rounded to two decimal places.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven that the function [MATH: f(x)=x^4-3x+1] has a critical point in the interval [MATH: [0,2],] use the Newton-Raphson process for optimization starting from [MATH: x_0=1] to estimate the critical point. Round your final answer to two decimal places.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{4} \u2212 3x + 1)^{\u2032} = 4x^{3} \u2212 3,; f^{\u2033}(x)|= (4x^{3} \u2212 3)^{\u2032} = 12x^{2}.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1}|= x_{n} \u2212 (4x_{n}^{3} \u2212 3)/(12x_{n}^{2}); = (12x_{n}^{3} \u2212 (4x_{n}^{3} \u2212 3))/(12x_{n}^{2}); = (8x_{n}^{3} + 3)/(12x_{n}^{2})]\n\nStarting with [MATH: x_0 = 1,] we have\n\n[MATH: x_{1}|= (8x_{0}^{3} + 3)/(12x_{0}^{2}); = (8(1)^{3} + 3)/(12(1)^{2}); = 0.916666\u2026.]\n\nSimilarly, we have\n\n[MATH: x_{2}|= (8x_{1}^{3} + 3)/(12x_{1}^{2}); = (8(0.916666\u2026)^{3} + 3)/(12(0.916666\u2026)^{2}); = 0.908631\u2026,; x_{3}|= (8x_{2}^{3} + 3)/(12x_{2}^{2}); = (8(0.908631\u2026)^{3} + 3)/(12(0.908631\u2026)^{2}); = 0.908560\u2026.]\n\nNotice that the last two approximations [MATH: x_2 \\approx0.91] and [MATH: x_3 \\approx 0.91] are the same when rounded to two decimal places.\n\nTherefore, the critical point of the function is [MATH: x \\approx 0.91,] rounded to two decimal places."
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "256475",
+        "dom_id": "question-256475",
+        "selector": "#question-256475",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that the function <span class=\"math\">[MATH: f(x) = x^{5} + 3x^{2} \u2212 x]</span> has a critical point in the interval <span class=\"math\">[MATH: [0, 1],]</span> use the Newton-Raphson process for optimization starting from <span class=\"math\">[MATH: x_{0} = 0.5]</span> to estimate the critical point. Round your final answer to two decimal places.<span class=\"free-response-line\"><span class=\"math\">[MATH: x \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "Given that the function [MATH: f(x) = x^{5} + 3x^{2} \u2212 x] has a critical point in the interval [MATH: [0, 1],] use the Newton-Raphson process for optimization starting from [MATH: x_{0} = 0.5] to estimate the critical point. Round your final answer to two decimal places.[MATH: x \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that the function [MATH: f(x) = x^{5} + 3x^{2} \u2212 x] has a critical point in the interval [MATH: [0, 1],] use the Newton-Raphson process for optimization starting from [MATH: x_{0} = 0.5] to estimate the critical point. Round your final answer to two decimal places.[MATH: x \u2248]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "256865",
+        "dom_id": "question-256865",
+        "selector": "#question-256865",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that the function <span class=\"math\">[MATH: f(x) = x^{5} \u2212 6x^{2} + 2]</span> has a critical point in the interval <span class=\"math\">[MATH: [1, 2],]</span> use the Newton-Raphson process for optimization starting from <span class=\"math\">[MATH: x_{0} = 1.65]</span> to estimate the critical point. Round your final answer to two decimal places.<span class=\"free-response-line\"><span class=\"math\">[MATH: x \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "Given that the function [MATH: f(x) = x^{5} \u2212 6x^{2} + 2] has a critical point in the interval [MATH: [1, 2],] use the Newton-Raphson process for optimization starting from [MATH: x_{0} = 1.65] to estimate the critical point. Round your final answer to two decimal places.[MATH: x \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that the function [MATH: f(x) = x^{5} \u2212 6x^{2} + 2] has a critical point in the interval [MATH: [1, 2],] use the Newton-Raphson process for optimization starting from [MATH: x_{0} = 1.65] to estimate the critical point. Round your final answer to two decimal places.[MATH: x \u2248]\n[FREE_ENTRY 1]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn a previous lesson, we learned how to find the roots of a function using Newton\u2019s method. That is, we solved equations of the form\n[MATH: f(x) = 0,]\n\nContent:\nby starting with an initial guess and refining it step by step using the update rule\n[MATH: x_{n+1} = x_n - \\dfrac{f(x_n)}{f'(x_n)}.]\n\nContent:\nNow, we turn to a closely related problem of finding a local minimum or maximum of a function [MATH: f(x)]. Recall that these may occur at points where the derivative [MATH: f'(x)] is equal to zero. In other words, we are looking for the roots of the function's derivative.\n\nContent:\nEarlier, we approximated the function by a straight line near our current guess. Here, instead of using a linear approximation, we assume that the function [MATH: f(x)] behaves like a parabola near our current guess. That\u2019s a reasonable assumption if [MATH: f] is smooth.\n\nContent:\nTo make this idea precise, we use a second-order Taylor approximation, [MATH: F(x){:}]\n\nContent:\n[MATH: F(x) = f(x_n) + f'(x_n)(x - x_n) + \\dfrac{1}{2} f''(x_n)(x - x_n)^2]\n\nContent:\nTo find the minimum or maximum, we first need to take the derivative of this approximation, which is\n[MATH: F'(x) = f'(x_n) + f''(x_n)(x - x_n).]\n\nContent:\nWe then need to set [MATH: F'(x) =0]:\n[MATH: f'(x_n) + f''(x_n)(x - x_n) = 0]\n\nContent:\nFinally, we solve for [MATH: x,] as follows:\n\nContent:\n[MATH: f^{\u2033}(x_{n})(x \u2212 x_{n})|= \u2212 f^{\u2032}(x_{n}); x \u2212 x_{n}|= \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n})); x|= x_{n} \u2212 (f^{\u2032}(x_{n}))/(f^{\u2033}(x_{n}))]\n\nContent:\nSo, just like in root-finding, we start with an initial guess and improve it step by step. But this time, we apply Newton\u2019s method to the derivative [MATH: f'(x)] instead of the function [MATH: f(x)] itself:\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)}]\n\nContent:\nNote: The second derivative [MATH: f''(x_n)] must not be zero. If it is zero, or even very close to zero, the update step can become extremely large, leading us far away from the solution.\n\nContent:\nJust like in root-finding, Newton\u2019s method works best when the function is smooth, and our initial guess is already close to the minimum or maximum.\n\n---\n\nItem 2 \u2014 Tutorial: A Worked Example\n\nContent:\nSuppose we wish to find a critical point of the function\n[MATH: f(x)= \\ln(x+1)+\\dfrac{2}{x+1}]\nin the interval [MATH: [0,2].] Let's calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.8.]\n\nContent:\nThe Newton-Raphson process for optimization is\n\nContent:\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nContent:\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nContent:\nIn our case, we have\n\nContent:\n[MATH: f^{\u2032}(x)|= (\\ln (x + 1) + (2)/(x + 1))^{\u2032}; = (1)/(x + 1) \u2212 (2)/((x + 1)^{2}); = (x \u2212 1)/((x + 1)^{2}),; f^{\u2033}(x)|= ((1)/(x + 1) \u2212 (2)/((x + 1)^{2}))^{\u2032}; = \u2212 (1)/((x + 1)^{2}) + (4)/((x + 1)^{3}); = (3 \u2212 x)/((x + 1)^{3}).]\n\nContent:\nTherefore, our Newton-Raphson formula is\n\nContent:\n[MATH: x_{n + 1}|= x_{n} \u2212 ((x_{n} \u2212 1)/((x_{n} + 1)^{2}))/((3 \u2212 x_{n})/((x_{n} + 1)^{3})); = x_{n} \u2212 (x_{n}^{2} \u2212 1)/(3 \u2212 x_{n}).]\n\nContent:\nStarting with [MATH: x_0=0.8,] we have\n\nContent:\n[MATH: x_{1}|= x_{0} \u2212 (x_{0}^{2} \u2212 1)/(3 \u2212 x_{0}); = 0.8 \u2212 ((0.8)^{2} \u2212 1)/(3 \u2212 0.8); \u2248 0.964,]\nrounded to three decimal places.\n\n---\n\nItem 3 \u2014 Example: Computing One Iteration of the Newton-Raphson Method for Optimization\n\nExample Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x)=x^2 + e^{-2x}] in the interval [MATH: [0,1].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.5.] Round your final answer to [MATH: 3] decimal places if needed.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{2} + e^{\u2212 2x})^{\u2032}; = 2x \u2212 2e^{\u2212 2x},; f^{\u2033}(x)|= (2x \u2212 2e^{\u2212 2x})^{\u2032}; = 2 + 4e^{\u2212 2x}.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1} = x_{n} \u2212 (2x_{n} \u2212 2e^{\u2212 2x_{n}})/(2 + 4e^{\u2212 2x_{n}}).]\n\nStarting with [MATH: x_0=0.5,] we have\n\n[MATH: x_{1}|= x_{0} \u2212 (2x_{0} \u2212 2e^{\u2212 2x_{0}})/(2 + 4e^{\u2212 2x_{0}}); = 0.5 \u2212 (2(0.5) \u2212 2e^{\u2212 2(0.5)})/(2 + 4e^{\u2212 2(0.5)}); \u2248 0.424,]\nrounded to three decimal places.\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = x^{3} \u2212 4x + 1] in the interval [MATH: [0, 2].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = 1.] Round your final answer to [MATH: 3] decimal places if needed.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = \\sin (x^{2}) + x^{3}] in the interval [MATH: [\u2212 2, 0].] Calculate one iteration of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = \u2212 1.] Round your final answer to [MATH: 3] decimal places if needed.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]\n\n---\n\nItem 6 \u2014 Example: Computing Two Iterations of the Newton-Raphson Method for Optimization\n\nExample Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x)=x^3-6x^2+9x] in the interval [MATH: [0,2].] Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point [MATH: x_0=0.]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{3} \u2212 6x^{2} + 9x)^{\u2032} = 3x^{2} \u2212 12x + 9,; f^{\u2033}(x)|= (3x^{2} \u2212 12x + 9)^{\u2032} = 6x \u2212 12.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1}|= x_{n} \u2212 (3x_{n}^{2} \u2212 12x_{n} + 9)/(6x_{n} \u2212 12).]\n\nStarting with [MATH: x_0=0,] we have\n\n[MATH: x_{1}|= x_{0} \u2212 (3x_{0}^{2} \u2212 12x_{0} + 9)/(6x_{0} \u2212 12); = 0 \u2212 (3(0)^{2} \u2212 12(0) + 9)/(6(0) \u2212 12); = (9)/(12); = 0.75]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 (3x_{1}^{2} \u2212 12x_{1} + 9)/(6x_{1} \u2212 12); = 0.75 \u2212 (3(0.75)^{2} \u2212 12(0.75) + 9)/(6(0.75) \u2212 12); = 0.975]\n\nTherefore, [MATH: x_1 = 0.75] and [MATH: x_2 = 0.975.]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = x^{3} + x^{2} \u2212 3x + 4] in the interval [MATH: [0, 2].] Calculate the second iteration of the Newton-Raphson process for optimization starting from the point [MATH: x_{0} = 0.] Round your answer to three decimal places.[MATH: x_{2} \u2248]\n[FREE_ENTRY 1]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x) = \\cos (3x + (\u03c0)/(4))] in the interval [MATH: [0, 1].] Calculate the first two iterations of the Newton-Raphson process for optimization starting at the point [MATH: x_{0} = 1.] Round your answers to three decimal places.[MATH: x_{1} \u2248]\n[FREE_ENTRY 1]\n[MATH: , x_{2} \u2248]\n[FREE_ENTRY 2]\n\n---\n\nItem 9 \u2014 Example: Finding the Critical Points of a Function Using the Newton-Raphson Method for Optimization\n\nExample Prompt:\nGiven that the function [MATH: f(x)=x^4-3x+1] has a critical point in the interval [MATH: [0,2],] use the Newton-Raphson process for optimization starting from [MATH: x_0=1] to estimate the critical point. Round your final answer to two decimal places.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson process for optimization is\n\n[MATH: x_{n+1} = x_n - \\dfrac{f'(x_n)}{f''(x_n)},]\n\nwhere [MATH: f'(x_n)] and [MATH: f''(x_n)] are the first and second derivatives of [MATH: f(x)] evaluated at [MATH: x_n,] respectively.\n\nIn our case, we have\n\n[MATH: f^{\u2032}(x)|= (x^{4} \u2212 3x + 1)^{\u2032} = 4x^{3} \u2212 3,; f^{\u2033}(x)|= (4x^{3} \u2212 3)^{\u2032} = 12x^{2}.]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: x_{n + 1}|= x_{n} \u2212 (4x_{n}^{3} \u2212 3)/(12x_{n}^{2}); = (12x_{n}^{3} \u2212 (4x_{n}^{3} \u2212 3))/(12x_{n}^{2}); = (8x_{n}^{3} + 3)/(12x_{n}^{2})]\n\nStarting with [MATH: x_0 = 1,] we have\n\n[MATH: x_{1}|= (8x_{0}^{3} + 3)/(12x_{0}^{2}); = (8(1)^{3} + 3)/(12(1)^{2}); = 0.916666\u2026.]\n\nSimilarly, we have\n\n[MATH: x_{2}|= (8x_{1}^{3} + 3)/(12x_{1}^{2}); = (8(0.916666\u2026)^{3} + 3)/(12(0.916666\u2026)^{2}); = 0.908631\u2026,; x_{3}|= (8x_{2}^{3} + 3)/(12x_{2}^{2}); = (8(0.908631\u2026)^{3} + 3)/(12(0.908631\u2026)^{2}); = 0.908560\u2026.]\n\nNotice that the last two approximations [MATH: x_2 \\approx0.91] and [MATH: x_3 \\approx 0.91] are the same when rounded to two decimal places.\n\nTherefore, the critical point of the function is [MATH: x \\approx 0.91,] rounded to two decimal places.\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\nGiven that the function [MATH: f(x) = x^{5} + 3x^{2} \u2212 x] has a critical point in the interval [MATH: [0, 1],] use the Newton-Raphson process for optimization starting from [MATH: x_{0} = 0.5] to estimate the critical point. Round your final answer to two decimal places.[MATH: x \u2248]\n[FREE_ENTRY 1]\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\nGiven that the function [MATH: f(x) = x^{5} \u2212 6x^{2} + 2] has a critical point in the interval [MATH: [1, 2],] use the Newton-Raphson process for optimization starting from [MATH: x_{0} = 1.65] to estimate the critical point. Round your final answer to two decimal places.[MATH: x \u2248]\n[FREE_ENTRY 1]"
+  }
+}

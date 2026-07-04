@@ -1,0 +1,201 @@
+# Calculus II
+
+```check-progress
+```
+
+## Course Content
+
+- [ ] 1. Integration Techniques
+	- [ ] 1.1. Integration Using Substitution
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.1. Integrating Algebraic Functions Using Substitution|1.1.1. Integrating Algebraic Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.2. Integrating Linear Rational Functions Using Substitution|1.1.2. Integrating Linear Rational Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.3. Integration Using Substitution|1.1.3. Integration Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.4. Calculating Definite Integrals Using Substitution|1.1.4. Calculating Definite Integrals Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.5. Further Integration of Algebraic Functions Using Substitution|1.1.5. Further Integration of Algebraic Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.6. Integrating Exponential Functions Using Linear Substitution|1.1.6. Integrating Exponential Functions Using Linear Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.7. Integrating Exponential Functions Using Substitution|1.1.7. Integrating Exponential Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.8. Integrating Trigonometric Functions Using Substitution|1.1.8. Integrating Trigonometric Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.9. Integrating Logarithmic Functions Using Substitution|1.1.9. Integrating Logarithmic Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.10. Integration by Substitution With Inverse Trigonometric Functions|1.1.10. Integration by Substitution With Inverse Trigonometric Functions]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.11. Integrating Hyperbolic Functions Using Substitution|1.1.11. Integrating Hyperbolic Functions Using Substitution]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.12. Integration by Substitution With Inverse Hyperbolic Functions|1.1.12. Integration by Substitution With Inverse Hyperbolic Functions]]
+		- [ ] [[1. Integration Techniques/1.1. Integration Using Substitution/Lessons/1.1.13. Integration by Substitution With Inverse Reciprocal Hyperbolic Functions|1.1.13. Integration by Substitution With Inverse Reciprocal Hyperbolic Functions]]
+	- [ ] 1.2. Special Techniques for Integration
+		- [ ] [[1. Integration Techniques/1.2. Special Techniques for Integration/Lessons/1.2.1. Integrating Functions Using Polynomial Division|1.2.1. Integrating Functions Using Polynomial Division]]
+		- [ ] [[1. Integration Techniques/1.2. Special Techniques for Integration/Lessons/1.2.2. Integrating Functions by Completing the Square|1.2.2. Integrating Functions by Completing the Square]]
+		- [ ] [[1. Integration Techniques/1.2. Special Techniques for Integration/Lessons/1.2.3. Integration Using Hyperbolic Functions and Completing the Square|1.2.3. Integration Using Hyperbolic Functions and Completing the Square]]
+		- [ ] [[1. Integration Techniques/1.2. Special Techniques for Integration/Lessons/1.2.4. Integration Using Inverse Reciprocal Hyperbolic Functions and Completing the Square|1.2.4. Integration Using Inverse Reciprocal Hyperbolic Functions and Completing the Square]]
+	- [ ] 1.3. Integration Using Trigonometric Identities
+		- [ ] [[1. Integration Techniques/1.3. Integration Using Trigonometric Identities/Lessons/1.3.1. Integration Using Basic Trigonometric Identities|1.3.1. Integration Using Basic Trigonometric Identities]]
+		- [ ] [[1. Integration Techniques/1.3. Integration Using Trigonometric Identities/Lessons/1.3.2. Integration Using the Pythagorean Identities|1.3.2. Integration Using the Pythagorean Identities]]
+		- [ ] [[1. Integration Techniques/1.3. Integration Using Trigonometric Identities/Lessons/1.3.3. Integration Using the Double-Angle Formulas|1.3.3. Integration Using the Double-Angle Formulas]]
+		- [ ] [[1. Integration Techniques/1.3. Integration Using Trigonometric Identities/Lessons/1.3.4. Integrating Products of Trigonometric Functions|1.3.4. Integrating Products of Trigonometric Functions]]
+	- [ ] 1.4. Integration Using Hyperbolic Identities
+		- [ ] [[1. Integration Techniques/1.4. Integration Using Hyperbolic Identities/Lessons/1.4.1. Integration Using Basic Hyperbolic Identities|1.4.1. Integration Using Basic Hyperbolic Identities]]
+		- [ ] [[1. Integration Techniques/1.4. Integration Using Hyperbolic Identities/Lessons/1.4.2. Integration Using the Hyperbolic Pythagorean Identities|1.4.2. Integration Using the Hyperbolic Pythagorean Identities]]
+		- [ ] [[1. Integration Techniques/1.4. Integration Using Hyperbolic Identities/Lessons/1.4.3. Integration Using the Hyperbolic Double-Angle Formulas|1.4.3. Integration Using the Hyperbolic Double-Angle Formulas]]
+	- [ ] 1.5. Integration by Parts
+		- [ ] [[1. Integration Techniques/1.5. Integration by Parts/Lessons/1.5.1. Introduction to Integration by Parts|1.5.1. Introduction to Integration by Parts]]
+		- [ ] [[1. Integration Techniques/1.5. Integration by Parts/Lessons/1.5.2. Using Integration by Parts to Calculate Integrals With Logarithms|1.5.2. Using Integration by Parts to Calculate Integrals With Logarithms]]
+		- [ ] [[1. Integration Techniques/1.5. Integration by Parts/Lessons/1.5.3. Applying the Integration By Parts Twice|1.5.3. Applying the Integration By Parts Twice]]
+		- [ ] [[1. Integration Techniques/1.5. Integration by Parts/Lessons/1.5.4. The Tabular Method of Integration by Parts|1.5.4. The Tabular Method of Integration by Parts]]
+		- [ ] [[1. Integration Techniques/1.5. Integration by Parts/Lessons/1.5.5. Integration by Parts in Cyclic Cases|1.5.5. Integration by Parts in Cyclic Cases]]
+	- [ ] 1.6. Integration Using Partial Fractions
+		- [ ] [[1. Integration Techniques/1.6. Integration Using Partial Fractions/Lessons/1.6.1. Expressing Rational Functions as Sums of Partial Fractions|1.6.1. Expressing Rational Functions as Sums of Partial Fractions]]
+		- [ ] [[1. Integration Techniques/1.6. Integration Using Partial Fractions/Lessons/1.6.2. Expressing Rational Functions with Repeated Factors as Sums of Partial Fractions|1.6.2. Expressing Rational Functions with Repeated Factors as Sums of Partial Fractions]]
+		- [ ] [[1. Integration Techniques/1.6. Integration Using Partial Fractions/Lessons/1.6.3. Expressing Rational Functions with Irreducible Quadratic Factors as Sums of Partial Fractions|1.6.3. Expressing Rational Functions with Irreducible Quadratic Factors as Sums of Partial Fractions]]
+		- [ ] [[1. Integration Techniques/1.6. Integration Using Partial Fractions/Lessons/1.6.4. Integrating Rational Functions Using Partial Fractions|1.6.4. Integrating Rational Functions Using Partial Fractions]]
+		- [ ] [[1. Integration Techniques/1.6. Integration Using Partial Fractions/Lessons/1.6.5. Integrating Rational Functions with Repeated Factors|1.6.5. Integrating Rational Functions with Repeated Factors]]
+		- [ ] [[1. Integration Techniques/1.6. Integration Using Partial Fractions/Lessons/1.6.6. Integrating Rational Functions with Irreducible Quadratic Factors|1.6.6. Integrating Rational Functions with Irreducible Quadratic Factors]]
+	- [ ] 1.7. Improper Integrals
+		- [ ] [[1. Integration Techniques/1.7. Improper Integrals/Lessons/1.7.1. Improper Integrals|1.7.1. Improper Integrals]]
+		- [ ] [[1. Integration Techniques/1.7. Improper Integrals/Lessons/1.7.2. Improper Integrals Involving Exponential Functions|1.7.2. Improper Integrals Involving Exponential Functions]]
+		- [ ] [[1. Integration Techniques/1.7. Improper Integrals/Lessons/1.7.3. Improper Integrals Involving Arctangent|1.7.3. Improper Integrals Involving Arctangent]]
+		- [ ] [[1. Integration Techniques/1.7. Improper Integrals/Lessons/1.7.4. Improper Integrals Over the Real Line|1.7.4. Improper Integrals Over the Real Line]]
+		- [ ] [[1. Integration Techniques/1.7. Improper Integrals/Lessons/1.7.5. Improper Integrals of the Second Kind|1.7.5. Improper Integrals of the Second Kind]]
+		- [ ] [[1. Integration Techniques/1.7. Improper Integrals/Lessons/1.7.6. Improper Integrals of the Second Kind- Discontinuities at Interior Points|1.7.6. Improper Integrals of the Second Kind: Discontinuities at Interior Points]]
+- [ ] 2. Applications of Integration
+	- [ ] 2.1. Applications of Integration
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.1. Integrating Rates of Change|2.1.1. Integrating Rates of Change]]
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.2. Integrating Density Functions|2.1.2. Integrating Density Functions]]
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.3. The Average Value of a Function|2.1.3. The Average Value of a Function]]
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.4. The Area Between Curves Expressed as Functions of X|2.1.4. The Area Between Curves Expressed as Functions of X]]
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.5. The Area Between Curves Expressed as Functions of Y|2.1.5. The Area Between Curves Expressed as Functions of Y]]
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.6. Finding Areas Between Curves that Intersect at More Than Two Points|2.1.6. Finding Areas Between Curves that Intersect at More Than Two Points]]
+		- [ ] [[2. Applications of Integration/2.1. Applications of Integration/Lessons/2.1.7. The Arc Length of a Planar Curve|2.1.7. The Arc Length of a Planar Curve]]
+	- [ ] 2.2. Volumes of Solids With Known Cross Sections
+		- [ ] [[2. Applications of Integration/2.2. Volumes of Solids With Known Cross Sections/Lessons/2.2.1. Volumes of Solids with Square Cross Sections|2.2.1. Volumes of Solids with Square Cross Sections]]
+		- [ ] [[2. Applications of Integration/2.2. Volumes of Solids With Known Cross Sections/Lessons/2.2.2. Volumes of Solids with Rectangular Cross Sections|2.2.2. Volumes of Solids with Rectangular Cross Sections]]
+		- [ ] [[2. Applications of Integration/2.2. Volumes of Solids With Known Cross Sections/Lessons/2.2.3. Volumes of Solids with Triangular Cross Sections|2.2.3. Volumes of Solids with Triangular Cross Sections]]
+		- [ ] [[2. Applications of Integration/2.2. Volumes of Solids With Known Cross Sections/Lessons/2.2.4. Volumes of Solids with Circular Cross Sections|2.2.4. Volumes of Solids with Circular Cross Sections]]
+	- [ ] 2.3. Volumes of Revolution
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.1. Volumes of Revolution Using the Disc Method- Rotation About the Coordinate Axes|2.3.1. Volumes of Revolution Using the Disc Method: Rotation About the Coordinate Axes]]
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.2. Volumes of Revolution Using the Disc Method- Rotation About Other Axes|2.3.2. Volumes of Revolution Using the Disc Method: Rotation About Other Axes]]
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.3. Volumes of Revolution Using the Washer Method- Rotation About the Coordinate Axes|2.3.3. Volumes of Revolution Using the Washer Method: Rotation About the Coordinate Axes]]
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.4. Volumes of Revolution Using the Washer Method- Rotation About Other Axes|2.3.4. Volumes of Revolution Using the Washer Method: Rotation About Other Axes]]
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.5. The Shell Method- Rotating a Region About the X-Axis|2.3.5. The Shell Method: Rotating a Region About the X-Axis]]
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.6. The Shell Method- Rotating a Region Between Two Curves About the X-Axis|2.3.6. The Shell Method: Rotating a Region Between Two Curves About the X-Axis]]
+		- [ ] [[2. Applications of Integration/2.3. Volumes of Revolution/Lessons/2.3.7. The Shell Method- Rotation About the Y-Axis|2.3.7. The Shell Method: Rotation About the Y-Axis]]
+	- [ ] 2.4. Surface Areas of Revolution
+		- [ ] [[2. Applications of Integration/2.4. Surface Areas of Revolution/Lessons/2.4.1. Surface Areas of Revolution- Rotation About the X-Axis|2.4.1. Surface Areas of Revolution: Rotation About the X-Axis]]
+		- [ ] [[2. Applications of Integration/2.4. Surface Areas of Revolution/Lessons/2.4.2. Surface Areas of Revolution- Rotation About the Y-Axis|2.4.2. Surface Areas of Revolution: Rotation About the Y-Axis]]
+		- [ ] [[2. Applications of Integration/2.4. Surface Areas of Revolution/Lessons/2.4.3. Surface Areas of Revolution for Parametric Curves|2.4.3. Surface Areas of Revolution for Parametric Curves]]
+	- [ ] 2.5. Connecting Position, Velocity and Acceleration Using Integrals
+		- [ ] [[2. Applications of Integration/2.5. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/2.5.1. Calculating Velocity Using Integration|2.5.1. Calculating Velocity Using Integration]]
+		- [ ] [[2. Applications of Integration/2.5. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/2.5.2. Determining Characteristics of Moving Objects Using Integration|2.5.2. Determining Characteristics of Moving Objects Using Integration]]
+		- [ ] [[2. Applications of Integration/2.5. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/2.5.3. Calculating the Position Function of a Particle Using Integration|2.5.3. Calculating the Position Function of a Particle Using Integration]]
+		- [ ] [[2. Applications of Integration/2.5. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/2.5.4. Calculating the Displacement of a Particle Using Integration|2.5.4. Calculating the Displacement of a Particle Using Integration]]
+		- [ ] [[2. Applications of Integration/2.5. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/2.5.5. Calculating the Total Distance Traveled by a Particle|2.5.5. Calculating the Total Distance Traveled by a Particle]]
+		- [ ] [[2. Applications of Integration/2.5. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/2.5.6. Average Position, Velocity, and Acceleration|2.5.6. Average Position, Velocity, and Acceleration]]
+- [ ] 3. Parametric & Polar Equations
+	- [ ] 3.1. Parametric Equations
+		- [ ] [[3. Parametric & Polar Equations/3.1. Parametric Equations/Lessons/3.1.1. Differentiating Parametric Curves|3.1.1. Differentiating Parametric Curves]]
+		- [ ] [[3. Parametric & Polar Equations/3.1. Parametric Equations/Lessons/3.1.2. Calculating Tangent and Normal Lines with Parametric Equations|3.1.2. Calculating Tangent and Normal Lines with Parametric Equations]]
+		- [ ] [[3. Parametric & Polar Equations/3.1. Parametric Equations/Lessons/3.1.3. Second Derivatives of Parametric Equations|3.1.3. Second Derivatives of Parametric Equations]]
+		- [ ] [[3. Parametric & Polar Equations/3.1. Parametric Equations/Lessons/3.1.4. The Arc Length of a Parametric Curve|3.1.4. The Arc Length of a Parametric Curve]]
+		- [ ] [[3. Parametric & Polar Equations/3.1. Parametric Equations/Lessons/3.1.5. Calculating Areas Bounded by Parametric Functions|3.1.5. Calculating Areas Bounded by Parametric Functions]]
+	- [ ] 3.2. Vector-Valued Functions
+		- [ ] [[3. Parametric & Polar Equations/3.2. Vector-Valued Functions/Lessons/3.2.1. Defining Vector-Valued Functions|3.2.1. Defining Vector-Valued Functions]]
+		- [ ] [[3. Parametric & Polar Equations/3.2. Vector-Valued Functions/Lessons/3.2.2. Differentiating Vector-Valued Functions|3.2.2. Differentiating Vector-Valued Functions]]
+		- [ ] [[3. Parametric & Polar Equations/3.2. Vector-Valued Functions/Lessons/3.2.3. Integrating Vector-Valued Functions|3.2.3. Integrating Vector-Valued Functions]]
+	- [ ] 3.3. The Planar Motion of a Particle
+		- [ ] [[3. Parametric & Polar Equations/3.3. The Planar Motion of a Particle/Lessons/3.3.1. Calculating Velocity for Plane Motion Using Differentiation|3.3.1. Calculating Velocity for Plane Motion Using Differentiation]]
+		- [ ] [[3. Parametric & Polar Equations/3.3. The Planar Motion of a Particle/Lessons/3.3.2. Calculating Acceleration for Plane Motion Using Differentiation|3.3.2. Calculating Acceleration for Plane Motion Using Differentiation]]
+		- [ ] [[3. Parametric & Polar Equations/3.3. The Planar Motion of a Particle/Lessons/3.3.3. Finding Velocity Vectors in Two Dimensions Using Integration|3.3.3. Finding Velocity Vectors in Two Dimensions Using Integration]]
+		- [ ] [[3. Parametric & Polar Equations/3.3. The Planar Motion of a Particle/Lessons/3.3.4. Finding Displacement Vectors in Two Dimensions Using Integration|3.3.4. Finding Displacement Vectors in Two Dimensions Using Integration]]
+		- [ ] [[3. Parametric & Polar Equations/3.3. The Planar Motion of a Particle/Lessons/3.3.5. Applying Newton's Second Law in the Plane|3.3.5. Applying Newton's Second Law in the Plane]]
+	- [ ] 3.4. Polar Coordinates
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.1. Differentiating Curves Given in Polar Form|3.4.1. Differentiating Curves Given in Polar Form]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.2. Further Differentiation of Curves Given in Polar Form|3.4.2. Further Differentiation of Curves Given in Polar Form]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.3. Horizontal and Vertical Tangents to Polar Curves|3.4.3. Horizontal and Vertical Tangents to Polar Curves]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.4. Horizontal and Vertical Tangents to Polar Curves in Non-Differentiable Cases|3.4.4. Horizontal and Vertical Tangents to Polar Curves in Non-Differentiable Cases]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.5. Tangent and Normal Lines to Polar Curves|3.4.5. Tangent and Normal Lines to Polar Curves]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.6. Finding the Area of a Polar Region|3.4.6. Finding the Area of a Polar Region]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.7. Finding the Limits of Integration For a Given Polar Region|3.4.7. Finding the Limits of Integration For a Given Polar Region]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.8. The Total Area Bounded by a Single Polar Curve|3.4.8. The Total Area Bounded by a Single Polar Curve]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.9. The Area Bounded by Two Polar Curves|3.4.9. The Area Bounded by Two Polar Curves]]
+		- [ ] [[3. Parametric & Polar Equations/3.4. Polar Coordinates/Lessons/3.4.10. The Arc Length of a Polar Curve|3.4.10. The Arc Length of a Polar Curve]]
+- [ ] 4. Sequences & Series
+	- [ ] 4.1. Sequences
+		- [ ] [[4. Sequences & Series/4.1. Sequences/Lessons/4.1.1. Limits of Sequences|4.1.1. Limits of Sequences]]
+		- [ ] [[4. Sequences & Series/4.1. Sequences/Lessons/4.1.2. Convergence of Geometric Sequences|4.1.2. Convergence of Geometric Sequences]]
+		- [ ] [[4. Sequences & Series/4.1. Sequences/Lessons/4.1.3. Further Convergence of Geometric Sequences|4.1.3. Further Convergence of Geometric Sequences]]
+		- [ ] [[4. Sequences & Series/4.1. Sequences/Lessons/4.1.4. Limits of Sequences With Factorials|4.1.4. Limits of Sequences With Factorials]]
+		- [ ] [[4. Sequences & Series/4.1. Sequences/Lessons/4.1.5. Determining Limits of Sequences Using Relative Magnitudes|4.1.5. Determining Limits of Sequences Using Relative Magnitudes]]
+		- [ ] [[4. Sequences & Series/4.1. Sequences/Lessons/4.1.6. Further Determining Limits of Sequences Using Relative Magnitudes|4.1.6. Further Determining Limits of Sequences Using Relative Magnitudes]]
+	- [ ] 4.2. Monotonic Sequences
+		- [ ] [[4. Sequences & Series/4.2. Monotonic Sequences/Lessons/4.2.1. Monotonic Sequences|4.2.1. Monotonic Sequences]]
+		- [ ] [[4. Sequences & Series/4.2. Monotonic Sequences/Lessons/4.2.2. Identifying Monotonic Sequences Using Differentiation|4.2.2. Identifying Monotonic Sequences Using Differentiation]]
+		- [ ] [[4. Sequences & Series/4.2. Monotonic Sequences/Lessons/4.2.3. Identifying Monotonic Sequences Using Ratios|4.2.3. Identifying Monotonic Sequences Using Ratios]]
+	- [ ] 4.3. Infinite Series
+		- [ ] [[4. Sequences & Series/4.3. Infinite Series/Lessons/4.3.1. Infinite Series and Partial Sums|4.3.1. Infinite Series and Partial Sums]]
+		- [ ] [[4. Sequences & Series/4.3. Infinite Series/Lessons/4.3.2. Convergent and Divergent Infinite Series|4.3.2. Convergent and Divergent Infinite Series]]
+		- [ ] [[4. Sequences & Series/4.3. Infinite Series/Lessons/4.3.3. Properties of Infinite Series|4.3.3. Properties of Infinite Series]]
+		- [ ] [[4. Sequences & Series/4.3. Infinite Series/Lessons/4.3.4. Further Properties of Infinite Series|4.3.4. Further Properties of Infinite Series]]
+		- [ ] [[4. Sequences & Series/4.3. Infinite Series/Lessons/4.3.5. Telescoping Series|4.3.5. Telescoping Series]]
+	- [ ] 4.4. Geometric Series
+		- [ ] [[4. Sequences & Series/4.4. Geometric Series/Lessons/4.4.1. Finding the Sum of an Infinite Geometric Series|4.4.1. Finding the Sum of an Infinite Geometric Series]]
+		- [ ] [[4. Sequences & Series/4.4. Geometric Series/Lessons/4.4.2. Writing an Infinite Geometric Series in Sigma Notation|4.4.2. Writing an Infinite Geometric Series in Sigma Notation]]
+		- [ ] [[4. Sequences & Series/4.4. Geometric Series/Lessons/4.4.3. Sums of Infinite Geometric Series Given in Sigma Notation|4.4.3. Sums of Infinite Geometric Series Given in Sigma Notation]]
+		- [ ] [[4. Sequences & Series/4.4. Geometric Series/Lessons/4.4.4. Convergence of Geometric Series|4.4.4. Convergence of Geometric Series]]
+		- [ ] [[4. Sequences & Series/4.4. Geometric Series/Lessons/4.4.5. Repeating Decimals as Infinite Geometric Series|4.4.5. Repeating Decimals as Infinite Geometric Series]]
+	- [ ] 4.5. Infinite Series Convergence Tests
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.1. The Nth Term Test for Divergence|4.5.1. The Nth Term Test for Divergence]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.2. The Integral Test|4.5.2. The Integral Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.3. The Remainder Estimate for the Integral Test|4.5.3. The Remainder Estimate for the Integral Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.4. Harmonic Series and p-Series|4.5.4. Harmonic Series and p-Series]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.5. The Comparison Test|4.5.5. The Comparison Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.6. The Limit Comparison Test|4.5.6. The Limit Comparison Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.7. The Alternating Series Test|4.5.7. The Alternating Series Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.8. The Ratio Test|4.5.8. The Ratio Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.9. The Root Test|4.5.9. The Root Test]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.10. Absolute and Conditional Convergence|4.5.10. Absolute and Conditional Convergence]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.11. The Alternating Series Error Bound|4.5.11. The Alternating Series Error Bound]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.12. Determining Convergence Parameters for Infinite Series|4.5.12. Determining Convergence Parameters for Infinite Series]]
+		- [ ] [[4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.13. Selecting Procedures for Analyzing Infinite Series|4.5.13. Selecting Procedures for Analyzing Infinite Series]]
+	- [ ] 4.6. Taylor Polynomials
+		- [ ] [[4. Sequences & Series/4.6. Taylor Polynomials/Lessons/4.6.1. Second-Degree Taylor Polynomials|4.6.1. Second-Degree Taylor Polynomials]]
+		- [ ] [[4. Sequences & Series/4.6. Taylor Polynomials/Lessons/4.6.2. Analyzing Second-Degree Taylor Polynomials|4.6.2. Analyzing Second-Degree Taylor Polynomials]]
+		- [ ] [[4. Sequences & Series/4.6. Taylor Polynomials/Lessons/4.6.3. Third-Degree Taylor Polynomials|4.6.3. Third-Degree Taylor Polynomials]]
+		- [ ] [[4. Sequences & Series/4.6. Taylor Polynomials/Lessons/4.6.4. Higher-Degree Taylor Polynomials|4.6.4. Higher-Degree Taylor Polynomials]]
+		- [ ] [[4. Sequences & Series/4.6. Taylor Polynomials/Lessons/4.6.5. The Lagrange Error Bound|4.6.5. The Lagrange Error Bound]]
+	- [ ] 4.7. Taylor Series
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.1. Radius of Convergence of Power Series Centered at the Origin|4.7.1. Radius of Convergence of Power Series Centered at the Origin]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.2. Radius of Convergence of Power Series|4.7.2. Radius of Convergence of Power Series]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.3. Maclaurin Series|4.7.3. Maclaurin Series]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.4. Taylor Series|4.7.4. Taylor Series]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.5. Representing Functions as Power Series|4.7.5. Representing Functions as Power Series]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.6. Recognizing Standard Maclaurin Series|4.7.6. Recognizing Standard Maclaurin Series]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.7. Recognizing Standard Maclaurin Series for Trigonometric Functions|4.7.7. Recognizing Standard Maclaurin Series for Trigonometric Functions]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.8. Differentiating Taylor Series|4.7.8. Differentiating Taylor Series]]
+		- [ ] [[4. Sequences & Series/4.7. Taylor Series/Lessons/4.7.9. Approximating Integrals Using Taylor Series|4.7.9. Approximating Integrals Using Taylor Series]]
+- [ ] 5. Differential Equations
+	- [ ] 5.1. Introduction to Differential Equations
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.1. Introduction to Differential Equations|5.1.1. Introduction to Differential Equations]]
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.2. Verifying Solutions of Differential Equations|5.1.2. Verifying Solutions of Differential Equations]]
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.3. Solving First-Order ODEs Using Direct Integration|5.1.3. Solving First-Order ODEs Using Direct Integration]]
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.4. Solving First-Order ODEs Using Separation of Variables|5.1.4. Solving First-Order ODEs Using Separation of Variables]]
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.5. Solving First-Order IVPs Using Separation of Variables|5.1.5. Solving First-Order IVPs Using Separation of Variables]]
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.6. Modeling With First-Order ODEs|5.1.6. Modeling With First-Order ODEs]]
+		- [ ] [[5. Differential Equations/5.1. Introduction to Differential Equations/Lessons/5.1.7. Further Modeling With First-Order ODEs|5.1.7. Further Modeling With First-Order ODEs]]
+	- [ ] 5.2. Qualitative Techniques for Differential Equations
+		- [ ] [[5. Differential Equations/5.2. Qualitative Techniques for Differential Equations/Lessons/5.2.1. Qualitative Analysis of First-Order ODEs|5.2.1. Qualitative Analysis of First-Order ODEs]]
+		- [ ] [[5. Differential Equations/5.2. Qualitative Techniques for Differential Equations/Lessons/5.2.2. Equilibrium Solutions of First-Order ODEs|5.2.2. Equilibrium Solutions of First-Order ODEs]]
+	- [ ] 5.3. Modeling Exponential Growth and Decay With Differential Equations
+		- [ ] [[5. Differential Equations/5.3. Modeling Exponential Growth and Decay With Differential Equations/Lessons/5.3.1. Exponential Growth and Decay Models With First-Order ODEs|5.3.1. Exponential Growth and Decay Models With First-Order ODEs]]
+		- [ ] [[5. Differential Equations/5.3. Modeling Exponential Growth and Decay With Differential Equations/Lessons/5.3.2. Exponential Growth and Decay Models With First-Order ODEs- Calculating Unknown Times and Initial Values|5.3.2. Exponential Growth and Decay Models With First-Order ODEs: Calculating Unknown Times and Initial Values]]
+		- [ ] [[5. Differential Equations/5.3. Modeling Exponential Growth and Decay With Differential Equations/Lessons/5.3.3. Exponential Growth and Decay Models With First-Order ODEs- Half-Life Problems|5.3.3. Exponential Growth and Decay Models With First-Order ODEs: Half-Life Problems]]
+	- [ ] 5.4. Modeling Logistic Growth With Differential Equations
+		- [ ] [[5. Differential Equations/5.4. Modeling Logistic Growth With Differential Equations/Lessons/5.4.1. Logistic Growth Models With First-Order ODEs|5.4.1. Logistic Growth Models With First-Order ODEs]]
+		- [ ] [[5. Differential Equations/5.4. Modeling Logistic Growth With Differential Equations/Lessons/5.4.2. Qualitative Analysis of the Logistic Growth Equation|5.4.2. Qualitative Analysis of the Logistic Growth Equation]]
+		- [ ] [[5. Differential Equations/5.4. Modeling Logistic Growth With Differential Equations/Lessons/5.4.3. Solving the Logistic Growth Equation|5.4.3. Solving the Logistic Growth Equation]]
+	- [ ] 5.5. Slope Fields
+		- [ ] [[5. Differential Equations/5.5. Slope Fields/Lessons/5.5.1. Slope Fields for Directly Integrable Differential Equations|5.5.1. Slope Fields for Directly Integrable Differential Equations]]
+		- [ ] [[5. Differential Equations/5.5. Slope Fields/Lessons/5.5.2. Slope Fields for Autonomous Differential Equations|5.5.2. Slope Fields for Autonomous Differential Equations]]
+		- [ ] [[5. Differential Equations/5.5. Slope Fields/Lessons/5.5.3. Slope Fields for Nonautonomous Differential Equations|5.5.3. Slope Fields for Nonautonomous Differential Equations]]
+		- [ ] [[5. Differential Equations/5.5. Slope Fields/Lessons/5.5.4. Analyzing Slope Fields for Directly Integrable Differential Equations|5.5.4. Analyzing Slope Fields for Directly Integrable Differential Equations]]
+		- [ ] [[5. Differential Equations/5.5. Slope Fields/Lessons/5.5.5. Analyzing Slope Fields for Autonomous Differential Equations|5.5.5. Analyzing Slope Fields for Autonomous Differential Equations]]
+		- [ ] [[5. Differential Equations/5.5. Slope Fields/Lessons/5.5.6. Analyzing Slope Fields for Nonautonomous Differential Equations|5.5.6. Analyzing Slope Fields for Nonautonomous Differential Equations]]
+	- [ ] 5.6. Numerical Solutions of Differential Equations
+		- [ ] [[5. Differential Equations/5.6. Numerical Solutions of Differential Equations/Lessons/5.6.1. Euler's Method- Calculating One Step|5.6.1. Euler's Method: Calculating One Step]]
+		- [ ] [[5. Differential Equations/5.6. Numerical Solutions of Differential Equations/Lessons/5.6.2. Euler's Method- Calculating Multiple Steps|5.6.2. Euler's Method: Calculating Multiple Steps]]
