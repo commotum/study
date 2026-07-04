@@ -1,0 +1,1351 @@
+{
+  "schema_version": 2,
+  "topic_id": "3133",
+  "topic_title": "Singular Value Decomposition of Larger Matrices",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3133/Source/3133.html",
+  "source_url": "https://mathacademy.com/topics/3133",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "30548",
+        "dom_id": "sectionLink-30548",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-30548"
+      },
+      {
+        "index": 2,
+        "step_id": "32048",
+        "dom_id": "sectionLink-32048",
+        "name": "",
+        "title": "Finding the Third Factor in the SVD of a Rectangular Matrix",
+        "selector": "#sectionLink-32048"
+      },
+      {
+        "index": 3,
+        "step_id": "32050",
+        "dom_id": "sectionLink-32050",
+        "name": "",
+        "title": "Finding the First Factor in the SVD of a Rectangular Matrix",
+        "selector": "#sectionLink-32050"
+      },
+      {
+        "index": 4,
+        "step_id": "32049",
+        "dom_id": "sectionLink-32049",
+        "name": "",
+        "title": "Finding the First Factor in the SVD of a Rectangular Matrix: Advanced Cases",
+        "selector": "#sectionLink-32049"
+      },
+      {
+        "index": 5,
+        "step_id": "32872",
+        "dom_id": "sectionLink-32872",
+        "name": "",
+        "title": "Finding the First Factor in the SVD of a Rectangular Matrix: Cases Requiring Orthogonalization",
+        "selector": "#sectionLink-32872"
+      },
+      {
+        "index": 6,
+        "step_id": "32060",
+        "dom_id": "sectionLink-32060",
+        "name": "",
+        "title": "The Singular Value Decomposition of a Transposed Matrix",
+        "selector": "#sectionLink-32060"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3278",
+        "name": "Singular Value Decomposition of 2x2 Matrices With Zero or Repeated Eigenvalues",
+        "href": "/topics/singular-value-decomposition-of-2x2-matrices-with-zero-or-repeated-eigenvalues-3278"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 14,
+    "step_count": 6,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "30548",
+        "content_id": "4893",
+        "dom_id": "step-30548",
+        "selector": "#step-30548",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can compute a singular value decomposition (SVD) of any matrix! The algorithm for computing an SVD of a rectangular <span class=\"math\">[MATH: m\\times n]</span> matrix <span class=\"math\">[MATH: (m\\neq n)]</span> is similar to the algorithm for square matrices.</p>",
+            "readable_text": "We can compute a singular value decomposition (SVD) of any matrix! The algorithm for computing an SVD of a rectangular [MATH: m\\times n] matrix [MATH: (m\\neq n)] is similar to the algorithm for square matrices.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As an example, let&#x27;s consider the matrix <span class=\"math\">[MATH: A,]</span> given by</p>",
+            "readable_text": "As an example, let's consider the matrix [MATH: A,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1; \u2212 1|1; 1|1]]</span></p>",
+            "readable_text": "[MATH: [1|1; \u2212 1|1; 1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: A]</span> is a <span class=\"math\">[MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}]</span> matrix. So, to compute the SVD of <span class=\"math\">[MATH: A,]</span> we must write</p>",
+            "readable_text": "Notice that [MATH: A] is a [MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}] matrix. So, to compute the SVD of [MATH: A,] we must write",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A=U \\Sigma V^T,]</span></p>",
+            "readable_text": "[MATH: A=U \\Sigma V^T,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where</p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a <span class=\"math\">[MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}]</span> matrix with the singular values of <span class=\"math\">[MATH: A]</span> (ordered from largest to smallest) on the main diagonal and zeroes outside the main diagonal,</p></li><li><p><span class=\"math\">[MATH: U]</span> is an orthogonal <span class=\"math\">[MATH: {\\color{blue}{3}} \\times {\\color{blue}{3}}]</span> matrix, </p></li><li><p><span class=\"math\">[MATH: V]</span> is an orthogonal <span class=\"math\">[MATH: {\\color{red}{2}} \\times {\\color{red}{2}}]</span> matrix.</p></li></ul>",
+            "readable_text": "- [MATH: \\Sigma] is a [MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}] matrix with the singular values of [MATH: A] (ordered from largest to smallest) on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: {\\color{blue}{3}} \\times {\\color{blue}{3}}] matrix,\n- [MATH: V] is an orthogonal [MATH: {\\color{red}{2}} \\times {\\color{red}{2}}] matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We proceed as follows:</p>",
+            "readable_text": "We proceed as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 1.</strong> Compute <span class=\"math\">[MATH: A^T \\! A\\mathbin{:}]</span>\n<span class=\"math\">[MATH: A^{T}A|= [1|1; \u2212 1|1; 1|1]^{T}[1|1; \u2212 1|1; 1|1]; = [1|\u2212 1|1; 1|1|1][1|1; \u2212 1|1; 1|1]; = [3|1; 1|3]]</span></p></li><li><p><strong>Step 2.</strong>  Find the singular values of <span class=\"math\">[MATH: A.]</span> Computing the eigenvalues of <span class=\"math\">[MATH: A^TA,]</span> we get\n<span class=\"math\">[MATH: \\lambda_1 = 4, \\qquad \\lambda_2 = 2.]</span>\nTherefore, the singular values of <span class=\"math\">[MATH: A]</span> are \n<span class=\"math\">[MATH: \\sigma_1 = \\sqrt{\\lambda_1} =  2,  \\qquad \\sigma_2 = \\sqrt{\\lambda_2} =  \\sqrt{2}.]</span></p></li><li><p><strong>Step 3.</strong> Find the right singular vectors of <span class=\"math\">[MATH: A]</span> (i.e., the unit eigenvectors of <span class=\"math\">[MATH: A^T A]</span>). Seeking non-zero solutions of <span class=\"math\">[MATH: (A^T \\! A - \\lambda_1 I)\\mathbf{v}=\\mathbf{0}]</span> and <span class=\"math\">[MATH: (A^T \\! A - \\lambda_2 I)\\mathbf{v}=\\mathbf{0}]</span> gives the unit eigenvectors \n<span class=\"math\">[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]</span> </p></li><li><p><strong>Step 4.</strong> Find the left singular vectors of <span class=\"math\">[MATH: A.]</span> Since we know the singular values and right singular vectors, we can compute the first two columns of <span class=\"math\">[MATH: U]</span> as follows:</p><ul><li><p>First, we compute <span class=\"math\">[MATH: \\mathbf u_1\\mathbin{:}]</span>\n<span class=\"math\">[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[1|1; \u2212 1|1; 1|1][(1)/(sqrt(2)); (1)/(sqrt(2))]; = [(1)/(sqrt(2)); 0; (1)/(sqrt(2))]]</span></p></li><li><p>Then, we compute <span class=\"math\">[MATH: \\mathbf u_2\\mathbin{:}]</span>\n<span class=\"math\">[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(sqrt(2))[1|1; \u2212 1|1; 1|1][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = [0; 1; 0]]</span></p></li></ul></li></ul>",
+            "readable_text": "- Step 1. Compute [MATH: A^T \\! A\\mathbin{:}]\n[MATH: A^{T}A|= [1|1; \u2212 1|1; 1|1]^{T}[1|1; \u2212 1|1; 1|1]; = [1|\u2212 1|1; 1|1|1][1|1; \u2212 1|1; 1|1]; = [3|1; 1|3]]\n- Step 2. Find the singular values of [MATH: A.] Computing the eigenvalues of [MATH: A^TA,] we get\n[MATH: \\lambda_1 = 4, \\qquad \\lambda_2 = 2.]\nTherefore, the singular values of [MATH: A] are\n[MATH: \\sigma_1 = \\sqrt{\\lambda_1} = 2, \\qquad \\sigma_2 = \\sqrt{\\lambda_2} = \\sqrt{2}.]\n- Step 3. Find the right singular vectors of [MATH: A] (i.e., the unit eigenvectors of [MATH: A^T A]). Seeking non-zero solutions of [MATH: (A^T \\! A - \\lambda_1 I)\\mathbf{v}=\\mathbf{0}] and [MATH: (A^T \\! A - \\lambda_2 I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvectors\n[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]\n- Step 4. Find the left singular vectors of [MATH: A.] Since we know the singular values and right singular vectors, we can compute the first two columns of [MATH: U] as follows:\n\n- First, we compute [MATH: \\mathbf u_1\\mathbin{:}]\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[1|1; \u2212 1|1; 1|1][(1)/(sqrt(2)); (1)/(sqrt(2))]; = [(1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\n- Then, we compute [MATH: \\mathbf u_2\\mathbin{:}]\n[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(sqrt(2))[1|1; \u2212 1|1; 1|1][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = [0; 1; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The matrix <span class=\"math\">[MATH: U]</span> is a <span class=\"math\">[MATH: 3\\times 3]</span> matrix. However, we do not have the third singular value, so we can&#x27;t use the same formula to find the third column of <span class=\"math\">[MATH: U.]</span> But we know that <span class=\"math\">[MATH: U]</span> must be orthogonal. Hence, we must find a vector \n<span class=\"math\">[MATH: [x_{1}; x_{2}; x_{3}]]</span> \nsuch that \n<span class=\"math\">[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]</span>\nSolving this system, we get the following nonzero normalized solution:<br/><span class=\"math\">[MATH: u_{3}|= [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]</span> </p></li></ul>",
+            "readable_text": "- The matrix [MATH: U] is a [MATH: 3\\times 3] matrix. However, we do not have the third singular value, so we can't use the same formula to find the third column of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find a vector\n[MATH: [x_{1}; x_{2}; x_{3}]]\nsuch that\n[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]\nSolving this system, we get the following nonzero normalized solution:\n[MATH: u_{3}|= [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we construct the matrices <span class=\"math\">[MATH: U,]</span> <span class=\"math\">[MATH: \\Sigma,]</span> and <span class=\"math\">[MATH: V\\mathbin{:}]</span></p>",
+            "readable_text": "Finally, we construct the matrices [MATH: U,] [MATH: \\Sigma,] and [MATH: V\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); 0|1|0; (1)/(sqrt(2))|0|(1)/(sqrt(2))]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); 0|1|0; (1)/(sqrt(2))|0|(1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe can compute a singular value decomposition (SVD) of any matrix! The algorithm for computing an SVD of a rectangular [MATH: m\\times n] matrix [MATH: (m\\neq n)] is similar to the algorithm for square matrices.\n\nContent:\nAs an example, let's consider the matrix [MATH: A,] given by\n\nContent:\n[MATH: [1|1; \u2212 1|1; 1|1]]\n\nContent:\nNotice that [MATH: A] is a [MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}] matrix. So, to compute the SVD of [MATH: A,] we must write\n\nContent:\n[MATH: A=U \\Sigma V^T,]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\Sigma] is a [MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}] matrix with the singular values of [MATH: A] (ordered from largest to smallest) on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: {\\color{blue}{3}} \\times {\\color{blue}{3}}] matrix,\n- [MATH: V] is an orthogonal [MATH: {\\color{red}{2}} \\times {\\color{red}{2}}] matrix.\n\nContent:\nWe proceed as follows:\n\nContent:\n- Step 1. Compute [MATH: A^T \\! A\\mathbin{:}]\n[MATH: A^{T}A|= [1|1; \u2212 1|1; 1|1]^{T}[1|1; \u2212 1|1; 1|1]; = [1|\u2212 1|1; 1|1|1][1|1; \u2212 1|1; 1|1]; = [3|1; 1|3]]\n- Step 2. Find the singular values of [MATH: A.] Computing the eigenvalues of [MATH: A^TA,] we get\n[MATH: \\lambda_1 = 4, \\qquad \\lambda_2 = 2.]\nTherefore, the singular values of [MATH: A] are\n[MATH: \\sigma_1 = \\sqrt{\\lambda_1} = 2, \\qquad \\sigma_2 = \\sqrt{\\lambda_2} = \\sqrt{2}.]\n- Step 3. Find the right singular vectors of [MATH: A] (i.e., the unit eigenvectors of [MATH: A^T A]). Seeking non-zero solutions of [MATH: (A^T \\! A - \\lambda_1 I)\\mathbf{v}=\\mathbf{0}] and [MATH: (A^T \\! A - \\lambda_2 I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvectors\n[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]\n- Step 4. Find the left singular vectors of [MATH: A.] Since we know the singular values and right singular vectors, we can compute the first two columns of [MATH: U] as follows:\n\n- First, we compute [MATH: \\mathbf u_1\\mathbin{:}]\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[1|1; \u2212 1|1; 1|1][(1)/(sqrt(2)); (1)/(sqrt(2))]; = [(1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\n- Then, we compute [MATH: \\mathbf u_2\\mathbin{:}]\n[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(sqrt(2))[1|1; \u2212 1|1; 1|1][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = [0; 1; 0]]\n\nContent:\n- The matrix [MATH: U] is a [MATH: 3\\times 3] matrix. However, we do not have the third singular value, so we can't use the same formula to find the third column of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find a vector\n[MATH: [x_{1}; x_{2}; x_{3}]]\nsuch that\n[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]\nSolving this system, we get the following nonzero normalized solution:\n[MATH: u_{3}|= [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\n\nContent:\nFinally, we construct the matrices [MATH: U,] [MATH: \\Sigma,] and [MATH: V\\mathbin{:}]\n\nContent:\n[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); 0|1|0; (1)/(sqrt(2))|0|(1)/(sqrt(2))]]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "32048",
+        "content_id": "8632",
+        "dom_id": "step-32048",
+        "selector": "#step-32048",
+        "step_anchor": "step-2",
+        "title": "Finding the Third Factor in the SVD of a Rectangular Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "3132",
+            "name": "Singular Value Decomposition of 2x2 Matrices",
+            "href": "/topics/3132",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3|1; \u2212 1|\u2212 3; \u2212 4|4]]</span>\nConsider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: \\Sigma]</span> shown above. Given that <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find a <span class=\"math\">[MATH: 2\\times 2]</span> matrix that  could be the matrix <span class=\"math\">[MATH: V.]</span> </p>",
+            "readable_text": "[MATH: [3|1; \u2212 1|\u2212 3; \u2212 4|4]]\nConsider the matrices [MATH: A] and [MATH: \\Sigma] shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 2\\times 2] matrix that could be the matrix [MATH: V.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that if  <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix <span class=\"math\">[MATH: A,]</span> then</p><ul><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,</p></li><li><p><span class=\"math\">[MATH: U]</span> is an orthogonal <span class=\"math\">[MATH: 3 \\times 3]</span> matrix, </p></li><li><p><span class=\"math\">[MATH: V]</span> is an orthogonal <span class=\"math\">[MATH: 2 \\times 2]</span> matrix.</p></li></ul><p>Let&#x27;s find the singular value decomposition of <span class=\"math\">[MATH: A]</span> using the usual algorithm.</p><ul><li><p><strong>Step 1.</strong> Compute <span class=\"math\">[MATH: A^T \\! A\\mathbin{:}]</span>\n<span class=\"math\">[MATH: A^{T}A|= [3|1; \u2212 1|\u2212 3; \u2212 4|4]^{T}[3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [3|\u2212 1|\u2212 4; 1|\u2212 3|4][3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [26|\u2212 10; \u2212 10|26]]</span></p></li><li><p><strong>Step 2.</strong> Find the singular values. From the matrix <span class=\"math\">[MATH: \\Sigma,]</span> we deduce that <span class=\"math\">[MATH: \\sigma_1=6]</span> and <span class=\"math\">[MATH: \\sigma_2=4.]</span> </p></li><li><p><strong>Step 3.</strong> Find the right singular vectors of <span class=\"math\">[MATH: A]</span> (i.e., the unit eigenvectors of <span class=\"math\">[MATH: A^T \\! A]</span>):</p><ul><li><p>For <span class=\"math\">[MATH: \\lambda_1=\\sigma_1^2=36,]</span> we have\n<span class=\"math\">[MATH: A^{T}A \u2212 36I|= [26|\u2212 10; \u2212 10|26] \u2212 36[1|0; 0|1] = [\u2212 10|\u2212 10; \u2212 10|\u2212 10].]</span>\nSeeking a non-zero solution of <span class=\"math\">[MATH: (A^T \\! A - 36I)\\mathbf{v}=\\mathbf{0}]</span> gives the unit eigenvector<br/><span class=\"math\">[MATH: [\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]</span></p></li><li><p>For <span class=\"math\">[MATH: \\lambda_2=\\sigma_2^2=16,]</span> we have\n<span class=\"math\">[MATH: A^{T}A \u2212 16I|= [26|\u2212 10; \u2212 10|26] \u2212 16[1|0; 0|1] = [10|\u2212 10; \u2212 10|10].]</span>\nSeeking a non-zero solution of <span class=\"math\">[MATH: (A^T \\! A - 16I)\\mathbf{v}=\\mathbf{0}]</span> gives the unit eigenvector<br/><span class=\"math\">[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]</span> </p></li></ul></li></ul><p>Finally, we construct the matrix <span class=\"math\">[MATH: V\\mathbin{:}]</span></p><p><span class=\"math\">[MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "Recall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nLet's find the singular value decomposition of [MATH: A] using the usual algorithm.\n\n- Step 1. Compute [MATH: A^T \\! A\\mathbin{:}]\n[MATH: A^{T}A|= [3|1; \u2212 1|\u2212 3; \u2212 4|4]^{T}[3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [3|\u2212 1|\u2212 4; 1|\u2212 3|4][3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [26|\u2212 10; \u2212 10|26]]\n- Step 2. Find the singular values. From the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=6] and [MATH: \\sigma_2=4.]\n- Step 3. Find the right singular vectors of [MATH: A] (i.e., the unit eigenvectors of [MATH: A^T \\! A]):\n\n- For [MATH: \\lambda_1=\\sigma_1^2=36,] we have\n[MATH: A^{T}A \u2212 36I|= [26|\u2212 10; \u2212 10|26] \u2212 36[1|0; 0|1] = [\u2212 10|\u2212 10; \u2212 10|\u2212 10].]\nSeeking a non-zero solution of [MATH: (A^T \\! A - 36I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvector\n[MATH: [\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]\n- For [MATH: \\lambda_2=\\sigma_2^2=16,] we have\n[MATH: A^{T}A \u2212 16I|= [26|\u2212 10; \u2212 10|26] \u2212 16[1|0; 0|1] = [10|\u2212 10; \u2212 10|10].]\nSeeking a non-zero solution of [MATH: (A^T \\! A - 16I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvector\n[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]\n\nFinally, we construct the matrix [MATH: V\\mathbin{:}]\n\n[MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [3|1; \u2212 1|\u2212 3; \u2212 4|4]]\nConsider the matrices [MATH: A] and [MATH: \\Sigma] shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 2\\times 2] matrix that could be the matrix [MATH: V.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nLet's find the singular value decomposition of [MATH: A] using the usual algorithm.\n\n- Step 1. Compute [MATH: A^T \\! A\\mathbin{:}]\n[MATH: A^{T}A|= [3|1; \u2212 1|\u2212 3; \u2212 4|4]^{T}[3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [3|\u2212 1|\u2212 4; 1|\u2212 3|4][3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [26|\u2212 10; \u2212 10|26]]\n- Step 2. Find the singular values. From the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=6] and [MATH: \\sigma_2=4.]\n- Step 3. Find the right singular vectors of [MATH: A] (i.e., the unit eigenvectors of [MATH: A^T \\! A]):\n\n- For [MATH: \\lambda_1=\\sigma_1^2=36,] we have\n[MATH: A^{T}A \u2212 36I|= [26|\u2212 10; \u2212 10|26] \u2212 36[1|0; 0|1] = [\u2212 10|\u2212 10; \u2212 10|\u2212 10].]\nSeeking a non-zero solution of [MATH: (A^T \\! A - 36I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvector\n[MATH: [\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]\n- For [MATH: \\lambda_2=\\sigma_2^2=16,] we have\n[MATH: A^{T}A \u2212 16I|= [26|\u2212 10; \u2212 10|26] \u2212 16[1|0; 0|1] = [10|\u2212 10; \u2212 10|10].]\nSeeking a non-zero solution of [MATH: (A^T \\! A - 16I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvector\n[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]\n\nFinally, we construct the matrix [MATH: V\\mathbin{:}]\n\n[MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "97366",
+        "dom_id": "question-97366",
+        "selector": "#question-97366",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [0|0; 1|\u2212 1; \u2212 2|2], \u03a3 = [sqrt(10)|0; 0|0; 0|0]]</span>\nConsider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: \u03a3]</span> shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the matrix <span class=\"math\">[MATH: V?]</span></p>",
+          "readable_text": "[MATH: A = [0|0; 1|\u2212 1; \u2212 2|2], \u03a3 = [sqrt(10)|0; 0|0; 0|0]]\nConsider the matrices [MATH: A] and [MATH: \u03a3] shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: V?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-97366-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|\u2212 (1)/(sqrt(10))]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|\u2212 (1)/(sqrt(10))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-97366-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(2)/(sqrt(5))|(1)/(sqrt(5)); (1)/(sqrt(5))|\u2212 (2)/(sqrt(5))]]</span></p>",
+            "readable_text": "[MATH: [(2)/(sqrt(5))|(1)/(sqrt(5)); (1)/(sqrt(5))|\u2212 (2)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-97366-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 (1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]</span></p>",
+            "readable_text": "[MATH: [\u2212 (1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-97366-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span></p>",
+            "readable_text": "[MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-97366-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [0|0; 1|\u2212 1; \u2212 2|2], \u03a3 = [sqrt(10)|0; 0|0; 0|0]]\nConsider the matrices [MATH: A] and [MATH: \u03a3] shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: V?]\n\nChoices:\na. [MATH: [(1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|\u2212 (1)/(sqrt(10))]]\nb. [MATH: [(2)/(sqrt(5))|(1)/(sqrt(5)); (1)/(sqrt(5))|\u2212 (2)/(sqrt(5))]]\nc. [MATH: [\u2212 (1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]\nd. [MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\ne. [MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "97364",
+        "dom_id": "question-97364",
+        "selector": "#question-97364",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [0|2; \u2212 2|0; \u2212 2|\u2212 1], \u03a3 = [3|0; 0|2; 0|0]]</span>\nConsider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: \u03a3]</span> shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the matrix <span class=\"math\">[MATH: V?]</span></p>",
+          "readable_text": "[MATH: A = [0|2; \u2212 2|0; \u2212 2|\u2212 1], \u03a3 = [3|0; 0|2; 0|0]]\nConsider the matrices [MATH: A] and [MATH: \u03a3] shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: V?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-97364-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(2)/(sqrt(5))|\u2212 (1)/(sqrt(5)); (1)/(sqrt(5))|(2)/(sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [(2)/(sqrt(5))|\u2212 (1)/(sqrt(5)); (1)/(sqrt(5))|(2)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-97364-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-97364-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-97364-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-97364-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(10))|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(10))|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [0|2; \u2212 2|0; \u2212 2|\u2212 1], \u03a3 = [3|0; 0|2; 0|0]]\nConsider the matrices [MATH: A] and [MATH: \u03a3] shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: V?]\n\nChoices:\na. [MATH: [(2)/(sqrt(5))|\u2212 (1)/(sqrt(5)); (1)/(sqrt(5))|(2)/(sqrt(5))]]\nb. [MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]\nc. [MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nd. [MATH: [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\ne. [MATH: [(1)/(sqrt(10))|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "32050",
+        "content_id": "8634",
+        "dom_id": "step-32050",
+        "selector": "#step-32050",
+        "step_anchor": "step-5",
+        "title": "Finding the First Factor in the SVD of a Rectangular Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "2099",
+            "name": "Orthogonal Vectors in Euclidean Spaces",
+            "href": "/topics/2099",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|\u2212 2; \u2212 4|\u2212 3; 3|4]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find a vector whose components correspond to the <span class=\"math\">[MATH: 3]</span>rd column of the matrix <span class=\"math\">[MATH: U.]</span> </p>",
+            "readable_text": "[MATH: [2|\u2212 2; \u2212 4|\u2212 3; 3|4]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a vector whose components correspond to the [MATH: 3]rd column of the matrix [MATH: U.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that if  <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of an <span class=\"math\">[MATH: 3 \\times 2]</span> matrix <span class=\"math\">[MATH: A,]</span> then </p><ul><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,</p></li><li><p><span class=\"math\">[MATH: U]</span> is an orthogonal <span class=\"math\">[MATH: 3 \\times 3]</span> matrix, </p></li><li><p><span class=\"math\">[MATH: V]</span> is an orthogonal <span class=\"math\">[MATH: 2 \\times 2]</span> matrix.</p></li></ul><p>From the matrix <span class=\"math\">[MATH: \\Sigma,]</span> we deduce that <span class=\"math\">[MATH: \\sigma_1=7]</span> and <span class=\"math\">[MATH: \\sigma_2=3.]</span>\nAlso, the columns <span class=\"math\">[MATH: \\mathbf{v}_1]</span> and <span class=\"math\">[MATH: \\mathbf{v}_2]</span> of <span class=\"math\">[MATH: V]</span> give us the right singular vectors of <span class=\"math\">[MATH: A.]</span></p><p>Therefore, we can compute the <span class=\"math\">[MATH: 1]</span>st and <span class=\"math\">[MATH: 2]</span>nd columns of <span class=\"math\">[MATH: U]</span> as follows:</p><ul><li><p>First, we compute <span class=\"math\">[MATH: \\mathbf u_1\\mathbin{:}]</span>\n<span class=\"math\">[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(7)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][(1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(7)[0; \u2212 (7)/(sqrt(2)); (7)/(sqrt(2))]; = [0; \u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]</span></p></li><li><p>Then, we compute <span class=\"math\">[MATH: \\mathbf u_2\\mathbin{:}]</span>\n<span class=\"math\">[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(3)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(3)[\u2212 (4)/(sqrt(2)); (1)/(sqrt(2)); (1)/(sqrt(2))]; = [\u2212 (4)/(3sqrt(2)); (1)/(3sqrt(2)); (1)/(3sqrt(2))]]</span> </p></li></ul><p>Since we do not have the third singular value, we can&#x27;t use the same formula to find the third column of <span class=\"math\">[MATH: U.]</span> But we know that <span class=\"math\">[MATH: U]</span> must be orthogonal. Hence, we must find a vector \n<span class=\"math\">[MATH: [x_{1}; x_{2}; x_{3}]]</span>\nsuch that \n<span class=\"math\">[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]</span>\nSolving this system, which is equivalent to\n<span class=\"math\">[MATH: {\u2212 (1)/(sqrt(2))x_{2} + (1)/(sqrt(2))x_{3} = 0; \u2212 (4)/(3sqrt(2))x_{1} + (1)/(3sqrt(2))x_{2} + (1)/(3sqrt(2))x_{3} = 0]</span>\nwe get the nonzero normalized solution \n<span class=\"math\">[MATH: [(1)/(3); (2)/(3); (2)/(3)]]</span></p><p>Finally, we construct the matrix <span class=\"math\">[MATH: U \\mathbin{:}]</span></p><p><span class=\"math\">[MATH: [0|\u2212 (4)/(3sqrt(2))|1 3; \u2212 (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3; (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3]]</span></p>",
+            "readable_text": "Recall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of an [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=7] and [MATH: \\sigma_2=3.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st and [MATH: 2]nd columns of [MATH: U] as follows:\n\n- First, we compute [MATH: \\mathbf u_1\\mathbin{:}]\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(7)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][(1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(7)[0; \u2212 (7)/(sqrt(2)); (7)/(sqrt(2))]; = [0; \u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]\n- Then, we compute [MATH: \\mathbf u_2\\mathbin{:}]\n[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(3)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(3)[\u2212 (4)/(sqrt(2)); (1)/(sqrt(2)); (1)/(sqrt(2))]; = [\u2212 (4)/(3sqrt(2)); (1)/(3sqrt(2)); (1)/(3sqrt(2))]]\n\nSince we do not have the third singular value, we can't use the same formula to find the third column of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find a vector\n[MATH: [x_{1}; x_{2}; x_{3}]]\nsuch that\n[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]\nSolving this system, which is equivalent to\n[MATH: {\u2212 (1)/(sqrt(2))x_{2} + (1)/(sqrt(2))x_{3} = 0; \u2212 (4)/(3sqrt(2))x_{1} + (1)/(3sqrt(2))x_{2} + (1)/(3sqrt(2))x_{3} = 0]\nwe get the nonzero normalized solution\n[MATH: [(1)/(3); (2)/(3); (2)/(3)]]\n\nFinally, we construct the matrix [MATH: U \\mathbin{:}]\n\n[MATH: [0|\u2212 (4)/(3sqrt(2))|1 3; \u2212 (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3; (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [2|\u2212 2; \u2212 4|\u2212 3; 3|4]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a vector whose components correspond to the [MATH: 3]rd column of the matrix [MATH: U.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of an [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=7] and [MATH: \\sigma_2=3.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st and [MATH: 2]nd columns of [MATH: U] as follows:\n\n- First, we compute [MATH: \\mathbf u_1\\mathbin{:}]\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(7)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][(1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(7)[0; \u2212 (7)/(sqrt(2)); (7)/(sqrt(2))]; = [0; \u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]\n- Then, we compute [MATH: \\mathbf u_2\\mathbin{:}]\n[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(3)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(3)[\u2212 (4)/(sqrt(2)); (1)/(sqrt(2)); (1)/(sqrt(2))]; = [\u2212 (4)/(3sqrt(2)); (1)/(3sqrt(2)); (1)/(3sqrt(2))]]\n\nSince we do not have the third singular value, we can't use the same formula to find the third column of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find a vector\n[MATH: [x_{1}; x_{2}; x_{3}]]\nsuch that\n[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]\nSolving this system, which is equivalent to\n[MATH: {\u2212 (1)/(sqrt(2))x_{2} + (1)/(sqrt(2))x_{3} = 0; \u2212 (4)/(3sqrt(2))x_{1} + (1)/(3sqrt(2))x_{2} + (1)/(3sqrt(2))x_{3} = 0]\nwe get the nonzero normalized solution\n[MATH: [(1)/(3); (2)/(3); (2)/(3)]]\n\nFinally, we construct the matrix [MATH: U \\mathbin{:}]\n\n[MATH: [0|\u2212 (4)/(3sqrt(2))|1 3; \u2212 (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3; (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3]]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "98797",
+        "dom_id": "question-98797",
+        "selector": "#question-98797",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [1|\u2212 3; 4|4; \u2212 3|1], \u03a3 = [6|0; 0|4; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the <span class=\"math\">[MATH: 3]</span>rd column of the matrix <span class=\"math\">[MATH: U?]</span></p>",
+          "readable_text": "[MATH: A = [1|\u2212 3; 4|4; \u2212 3|1], \u03a3 = [6|0; 0|4; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the [MATH: 3]rd column of the matrix [MATH: U?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-98797-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-98797-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [1; 0; 0]]</span></p>",
+            "readable_text": "[MATH: [1; 0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-98797-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0; (1)/(sqrt(2)); (1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [0; (1)/(sqrt(2)); (1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-98797-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(2)/(3); (1)/(3); (2)/(3)]]</span> </p>",
+            "readable_text": "[MATH: [(2)/(3); (1)/(3); (2)/(3)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-98797-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [\u2212 (1)/(3sqrt(2)); (4)/(3sqrt(2)); \u2212 (1)/(3sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [\u2212 (1)/(3sqrt(2)); (4)/(3sqrt(2)); \u2212 (1)/(3sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [1|\u2212 3; 4|4; \u2212 3|1], \u03a3 = [6|0; 0|4; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the [MATH: 3]rd column of the matrix [MATH: U?]\n\nChoices:\na. [MATH: [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\nb. [MATH: [1; 0; 0]]\nc. [MATH: [0; (1)/(sqrt(2)); (1)/(sqrt(2))]]\nd. [MATH: [(2)/(3); (1)/(3); (2)/(3)]]\ne. [MATH: [\u2212 (1)/(3sqrt(2)); (4)/(3sqrt(2)); \u2212 (1)/(3sqrt(2))]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "97365",
+        "dom_id": "question-97365",
+        "selector": "#question-97365",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [0|0; 2|2; 1|\u2212 2], \u03a3 = [3|0; 0|2; 0|0], V = [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the <span class=\"math\">[MATH: 3]</span>rd column of the matrix <span class=\"math\">[MATH: U?]</span></p>",
+          "readable_text": "[MATH: A = [0|0; 2|2; 1|\u2212 2], \u03a3 = [3|0; 0|2; 0|0], V = [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the [MATH: 3]rd column of the matrix [MATH: U?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-97365-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2)); 0; \u2212 (1)/(sqrt(2))]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2)); 0; \u2212 (1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-97365-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2)); 0]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2)); 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-97365-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 0; 0]]</span> </p>",
+            "readable_text": "[MATH: [1; 0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-97365-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0; 0; 1]]</span> </p>",
+            "readable_text": "[MATH: [0; 0; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-97365-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(2)/(sqrt(5)); (1)/(sqrt(5)); 0]]</span></p>",
+            "readable_text": "[MATH: [(2)/(sqrt(5)); (1)/(sqrt(5)); 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [0|0; 2|2; 1|\u2212 2], \u03a3 = [3|0; 0|2; 0|0], V = [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the [MATH: 3]rd column of the matrix [MATH: U?]\n\nChoices:\na. [MATH: [(1)/(sqrt(2)); 0; \u2212 (1)/(sqrt(2))]]\nb. [MATH: [(1)/(sqrt(2)); (1)/(sqrt(2)); 0]]\nc. [MATH: [1; 0; 0]]\nd. [MATH: [0; 0; 1]]\ne. [MATH: [(2)/(sqrt(5)); (1)/(sqrt(5)); 0]]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "32049",
+        "content_id": "8633",
+        "dom_id": "step-32049",
+        "selector": "#step-32049",
+        "step_anchor": "step-8",
+        "title": "Finding the First Factor in the SVD of a Rectangular Matrix: Advanced Cases",
+        "key_prerequisites": [
+          {
+            "topic_id": "3278",
+            "name": "Singular Value Decomposition of 2x2 Matrices With Zero or Repeated Eigenvalues",
+            "href": "/topics/3278",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0; 2|0; 0|0]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find a <span class=\"math\">[MATH: 3\\times 3]</span> matrix that could be the matrix <span class=\"math\">[MATH: U.]</span> </p>",
+            "readable_text": "[MATH: [1|0; 2|0; 0|0]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 3\\times 3] matrix that could be the matrix [MATH: U.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that if  <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix <span class=\"math\">[MATH: A,]</span> then</p><ul><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,</p></li><li><p><span class=\"math\">[MATH: U]</span> is an orthogonal <span class=\"math\">[MATH: 3 \\times 3]</span> matrix, </p></li><li><p><span class=\"math\">[MATH: V]</span> is an orthogonal <span class=\"math\">[MATH: 2 \\times 2]</span> matrix.</p></li></ul><p>From the matrix <span class=\"math\">[MATH: \\Sigma,]</span> we deduce that <span class=\"math\">[MATH: \\sigma_1=\\sqrt5]</span> and <span class=\"math\">[MATH: \\sigma_2=0.]</span> \nAlso, the columns <span class=\"math\">[MATH: \\mathbf{v}_1]</span> and <span class=\"math\">[MATH: \\mathbf{v}_2]</span> of <span class=\"math\">[MATH: V]</span> give us the right singular vectors of <span class=\"math\">[MATH: A.]</span></p><p>Therefore, we can compute the <span class=\"math\">[MATH: 1]</span>st column of <span class=\"math\">[MATH: U]</span> as follows:</p><p><span class=\"math\">[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(sqrt(5))[1|0; 2|0; 0|0][1; 0]; = (1)/(sqrt(5))[1; 2; 0]; = [(1)/(sqrt(5)); (2)/(sqrt(5)); 0]]</span> </p><p>Since the second singular value is <span class=\"math\">[MATH: \\sigma_2=0]</span>, and we do not have a third singular value, we can&#x27;t use the same formula to find the second and third columns of <span class=\"math\">[MATH: U.]</span> But we know that <span class=\"math\">[MATH: U]</span> must be orthogonal. Hence, we must find vectors </p><p><span class=\"math\">[MATH: [x_{1}; x_{2}; x_{3}]]</span></p><p>such that <span class=\"math\">[MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0]</span> and <span class=\"math\">[MATH: \\|\\mathbf{u}\\|=1.]</span></p><p>Solving <span class=\"math\">[MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,]</span> which is equivalent to\n<span class=\"math\">[MATH: \\dfrac{1}{\\sqrt{5}} x_1 + \\dfrac{2}{\\sqrt{5}} x_2 = 0 \\qquad\\Longrightarrow\\qquad\nx_1 + 2x_2 = 0,]</span>\nwe get the general solution </p><p><span class=\"math\">[MATH: [\u2212 2x_{2}; x_{2}; x_{3}]]</span></p><p>where <span class=\"math\">[MATH: x_2]</span> and <span class=\"math\">[MATH: x_3]</span> are free variables. Notice that the two linearly independent solutions are mutually orthogonal. Normalizing these vectors, we get </p><p><span class=\"math\">[MATH: [\u2212 (2)/(sqrt(5)); (1)/(sqrt(5)); 0]]</span></p><p>Finally, we construct the matrix <span class=\"math\">[MATH: U \\mathbin{:}]</span></p><p><span class=\"math\">[MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5))|0; (2)/(sqrt(5))|(1)/(sqrt(5))|0; 0|0|1]]</span> </p>",
+            "readable_text": "Recall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=\\sqrt5] and [MATH: \\sigma_2=0.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st column of [MATH: U] as follows:\n\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(sqrt(5))[1|0; 2|0; 0|0][1; 0]; = (1)/(sqrt(5))[1; 2; 0]; = [(1)/(sqrt(5)); (2)/(sqrt(5)); 0]]\n\nSince the second singular value is [MATH: \\sigma_2=0], and we do not have a third singular value, we can't use the same formula to find the second and third columns of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find vectors\n\n[MATH: [x_{1}; x_{2}; x_{3}]]\n\nsuch that [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0] and [MATH: \\|\\mathbf{u}\\|=1.]\n\nSolving [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,] which is equivalent to\n[MATH: \\dfrac{1}{\\sqrt{5}} x_1 + \\dfrac{2}{\\sqrt{5}} x_2 = 0 \\qquad\\Longrightarrow\\qquad\nx_1 + 2x_2 = 0,]\nwe get the general solution\n\n[MATH: [\u2212 2x_{2}; x_{2}; x_{3}]]\n\nwhere [MATH: x_2] and [MATH: x_3] are free variables. Notice that the two linearly independent solutions are mutually orthogonal. Normalizing these vectors, we get\n\n[MATH: [\u2212 (2)/(sqrt(5)); (1)/(sqrt(5)); 0]]\n\nFinally, we construct the matrix [MATH: U \\mathbin{:}]\n\n[MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5))|0; (2)/(sqrt(5))|(1)/(sqrt(5))|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [1|0; 2|0; 0|0]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 3\\times 3] matrix that could be the matrix [MATH: U.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=\\sqrt5] and [MATH: \\sigma_2=0.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st column of [MATH: U] as follows:\n\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(sqrt(5))[1|0; 2|0; 0|0][1; 0]; = (1)/(sqrt(5))[1; 2; 0]; = [(1)/(sqrt(5)); (2)/(sqrt(5)); 0]]\n\nSince the second singular value is [MATH: \\sigma_2=0], and we do not have a third singular value, we can't use the same formula to find the second and third columns of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find vectors\n\n[MATH: [x_{1}; x_{2}; x_{3}]]\n\nsuch that [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0] and [MATH: \\|\\mathbf{u}\\|=1.]\n\nSolving [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,] which is equivalent to\n[MATH: \\dfrac{1}{\\sqrt{5}} x_1 + \\dfrac{2}{\\sqrt{5}} x_2 = 0 \\qquad\\Longrightarrow\\qquad\nx_1 + 2x_2 = 0,]\nwe get the general solution\n\n[MATH: [\u2212 2x_{2}; x_{2}; x_{3}]]\n\nwhere [MATH: x_2] and [MATH: x_3] are free variables. Notice that the two linearly independent solutions are mutually orthogonal. Normalizing these vectors, we get\n\n[MATH: [\u2212 (2)/(sqrt(5)); (1)/(sqrt(5)); 0]]\n\nFinally, we construct the matrix [MATH: U \\mathbin{:}]\n\n[MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5))|0; (2)/(sqrt(5))|(1)/(sqrt(5))|0; 0|0|1]]"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "97367",
+        "dom_id": "question-97367",
+        "selector": "#question-97367",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [0|0; 1|1; 3|3], \u03a3 = [2sqrt(5)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the matrix <span class=\"math\">[MATH: U?]</span></p>",
+          "readable_text": "[MATH: A = [0|0; 1|1; 3|3], \u03a3 = [2sqrt(5)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-97367-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|0|1; (1)/(sqrt(10))|\u2212 (1)/(sqrt(10))|0; (3)/(sqrt(10))|(3)/(sqrt(10))|0]]</span> </p>",
+            "readable_text": "[MATH: [0|0|1; (1)/(sqrt(10))|\u2212 (1)/(sqrt(10))|0; (3)/(sqrt(10))|(3)/(sqrt(10))|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-97367-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]</span> </p>",
+            "readable_text": "[MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-97367-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|0|1; (1)/(sqrt(5))|\u2212 (1)/(sqrt(5))|0; (2)/(sqrt(5))|(2)/(sqrt(5))|0]]</span> </p>",
+            "readable_text": "[MATH: [0|0|1; (1)/(sqrt(5))|\u2212 (1)/(sqrt(5))|0; (2)/(sqrt(5))|(2)/(sqrt(5))|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-97367-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-97367-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [0|0; 1|1; 3|3], \u03a3 = [2sqrt(5)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [0|0|1; (1)/(sqrt(10))|\u2212 (1)/(sqrt(10))|0; (3)/(sqrt(10))|(3)/(sqrt(10))|0]]\nb. [MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]\nc. [MATH: [0|0|1; (1)/(sqrt(5))|\u2212 (1)/(sqrt(5))|0; (2)/(sqrt(5))|(2)/(sqrt(5))|0]]\nd. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\ne. [MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "98855",
+        "dom_id": "question-98855",
+        "selector": "#question-98855",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [4|0; 3|0; 0|0], \u03a3 = [5|0; 0|0; 0|0], V = [1|0; 0|1]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the matrix <span class=\"math\">[MATH: U?]</span></p>",
+          "readable_text": "[MATH: A = [4|0; 3|0; 0|0], \u03a3 = [5|0; 0|0; 0|0], V = [1|0; 0|1]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-98855-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]</span> </p>",
+            "readable_text": "[MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-98855-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(4)/(5)|(1)/(sqrt(5))|(4)/(3sqrt(5)); (3)/(5)|0|\u2212 (5)/(3sqrt(5)); 0|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]</span>\n</p>",
+            "readable_text": "[MATH: [(4)/(5)|(1)/(sqrt(5))|(4)/(3sqrt(5)); (3)/(5)|0|\u2212 (5)/(3sqrt(5)); 0|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-98855-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]</span></p>",
+            "readable_text": "[MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-98855-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-98855-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [4|0; 3|0; 0|0], \u03a3 = [5|0; 0|0; 0|0], V = [1|0; 0|1]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]\nb. [MATH: [(4)/(5)|(1)/(sqrt(5))|(4)/(3sqrt(5)); (3)/(5)|0|\u2212 (5)/(3sqrt(5)); 0|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]\nc. [MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]\nd. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\ne. [MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "32872",
+        "content_id": "8798",
+        "dom_id": "step-32872",
+        "selector": "#step-32872",
+        "step_anchor": "step-11",
+        "title": "Finding the First Factor in the SVD of a Rectangular Matrix: Cases Requiring Orthogonalization",
+        "key_prerequisites": [
+          {
+            "topic_id": "2127",
+            "name": "The Gram-Schmidt Process for Two Vectors",
+            "href": "/topics/2127",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [sqrt(2)|0; 1|0; \u2212 1|0]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find a <span class=\"math\">[MATH: 3\\times 3]</span> matrix that could be the matrix <span class=\"math\">[MATH: U.]</span> </p>",
+            "readable_text": "[MATH: [sqrt(2)|0; 1|0; \u2212 1|0]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 3\\times 3] matrix that could be the matrix [MATH: U.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that if  <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix <span class=\"math\">[MATH: A,]</span> then</p><ul><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,</p></li><li><p><span class=\"math\">[MATH: U]</span> is an orthogonal <span class=\"math\">[MATH: 3 \\times 3]</span> matrix, </p></li><li><p><span class=\"math\">[MATH: V]</span> is an orthogonal <span class=\"math\">[MATH: 2 \\times 2]</span> matrix.</p></li></ul><p>From the matrix <span class=\"math\">[MATH: \\Sigma,]</span> we deduce that <span class=\"math\">[MATH: \\sigma_1=2]</span> and <span class=\"math\">[MATH: \\sigma_2=0.]</span>\nAlso, the columns <span class=\"math\">[MATH: \\mathbf{v}_1]</span> and <span class=\"math\">[MATH: \\mathbf{v}_2]</span> of <span class=\"math\">[MATH: V]</span> give us the right singular vectors of <span class=\"math\">[MATH: A.]</span></p><p>Therefore, we can compute the <span class=\"math\">[MATH: 1]</span>st column of <span class=\"math\">[MATH: U]</span> as follows:</p><p><span class=\"math\">[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[sqrt(2)|0; 1|0; \u2212 1|0][1; 0]; = (1)/(2)[sqrt(2); 1; \u2212 1]; = [(sqrt(2))/(2); (1)/(2); \u2212 (1)/(2)]]</span> </p><p>Since the second singular value is <span class=\"math\">[MATH: \\sigma_2=0]</span>, and we do not have the third singular value, we can&#x27;t use the same formula to find the second and third columns of <span class=\"math\">[MATH: U.]</span> But we know that <span class=\"math\">[MATH: U]</span> must be orthogonal. Hence, we must find vectors </p><p><span class=\"math\">[MATH: [u_{1}; u_{2}; u_{3}]]</span></p><p>such that <span class=\"math\">[MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0]</span> and <span class=\"math\">[MATH: \\|\\mathbf{u}\\|=1.]</span></p><p>Solving <span class=\"math\">[MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,]</span> which is equivalent to\n<span class=\"math\">[MATH: \\dfrac{\\sqrt2}{2} x_1 + \\dfrac{1}{2} x_2- \\dfrac{1}{2} x_3 = 0\n\\qquad\\Longrightarrow\\qquad\n\\sqrt2x_1 + x_2-x_3 = 0,]</span>\nwe get the general solution </p><p><span class=\"math\">[MATH: [x_{1}; x_{2}; sqrt(2)x_{1} + x_{2}]]</span></p><p>where <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2]</span> are free variables. </p><p>Notice that the two linearly independent solutions <span class=\"math\">[MATH: \\mathbf{b}_1]</span> and <span class=\"math\">[MATH: \\mathbf{b}_2]</span> are <em>not</em> mutually orthogonal. Therefore, we have to orthogonalize them using the Gram-Schmidt process. So, let </p><p><span class=\"math\">[MATH: [1; 0; sqrt(2)]]</span></p><p>Then,</p><p><span class=\"math\">[MATH: c_{2}|= b_{2} \u2212 (b_{2} \u22c5 c_{1})/(c_{1} \u22c5 c_{1})c_{1}; = [0; 1; 1] \u2212 (sqrt(2))/(3)[1; 0; sqrt(2)]; = (1)/(3)[\u2212 sqrt(2); 3; 1].]</span></p><p>Finally, normalizing the orthogonal vectors <span class=\"math\">[MATH: \\mathbf{c}_1]</span> and <span class=\"math\">[MATH: \\mathbf{c}_2,]</span> we obtain the second and third columns of <span class=\"math\">[MATH: U{:}]</span> </p><p><span class=\"math\">[MATH: [(1)/(sqrt(3)); 0; (sqrt(2))/(sqrt(3))]]</span></p><p>So, the matrix <span class=\"math\">[MATH: U]</span> could be the following:</p><p><span class=\"math\">[MATH: [(sqrt(2))/(2)|(1)/(sqrt(3))|\u2212 (sqrt(2))/(2sqrt(3)); (1)/(2)|0|(3)/(2sqrt(3)); \u2212 (1)/(2)|(sqrt(2))/(sqrt(3))|(1)/(2sqrt(3))]]</span> </p>",
+            "readable_text": "Recall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=2] and [MATH: \\sigma_2=0.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st column of [MATH: U] as follows:\n\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[sqrt(2)|0; 1|0; \u2212 1|0][1; 0]; = (1)/(2)[sqrt(2); 1; \u2212 1]; = [(sqrt(2))/(2); (1)/(2); \u2212 (1)/(2)]]\n\nSince the second singular value is [MATH: \\sigma_2=0], and we do not have the third singular value, we can't use the same formula to find the second and third columns of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find vectors\n\n[MATH: [u_{1}; u_{2}; u_{3}]]\n\nsuch that [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0] and [MATH: \\|\\mathbf{u}\\|=1.]\n\nSolving [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,] which is equivalent to\n[MATH: \\dfrac{\\sqrt2}{2} x_1 + \\dfrac{1}{2} x_2- \\dfrac{1}{2} x_3 = 0\n\\qquad\\Longrightarrow\\qquad\n\\sqrt2x_1 + x_2-x_3 = 0,]\nwe get the general solution\n\n[MATH: [x_{1}; x_{2}; sqrt(2)x_{1} + x_{2}]]\n\nwhere [MATH: x_1] and [MATH: x_2] are free variables.\n\nNotice that the two linearly independent solutions [MATH: \\mathbf{b}_1] and [MATH: \\mathbf{b}_2] are not mutually orthogonal. Therefore, we have to orthogonalize them using the Gram-Schmidt process. So, let\n\n[MATH: [1; 0; sqrt(2)]]\n\nThen,\n\n[MATH: c_{2}|= b_{2} \u2212 (b_{2} \u22c5 c_{1})/(c_{1} \u22c5 c_{1})c_{1}; = [0; 1; 1] \u2212 (sqrt(2))/(3)[1; 0; sqrt(2)]; = (1)/(3)[\u2212 sqrt(2); 3; 1].]\n\nFinally, normalizing the orthogonal vectors [MATH: \\mathbf{c}_1] and [MATH: \\mathbf{c}_2,] we obtain the second and third columns of [MATH: U{:}]\n\n[MATH: [(1)/(sqrt(3)); 0; (sqrt(2))/(sqrt(3))]]\n\nSo, the matrix [MATH: U] could be the following:\n\n[MATH: [(sqrt(2))/(2)|(1)/(sqrt(3))|\u2212 (sqrt(2))/(2sqrt(3)); (1)/(2)|0|(3)/(2sqrt(3)); \u2212 (1)/(2)|(sqrt(2))/(sqrt(3))|(1)/(2sqrt(3))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [sqrt(2)|0; 1|0; \u2212 1|0]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 3\\times 3] matrix that could be the matrix [MATH: U.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=2] and [MATH: \\sigma_2=0.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st column of [MATH: U] as follows:\n\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[sqrt(2)|0; 1|0; \u2212 1|0][1; 0]; = (1)/(2)[sqrt(2); 1; \u2212 1]; = [(sqrt(2))/(2); (1)/(2); \u2212 (1)/(2)]]\n\nSince the second singular value is [MATH: \\sigma_2=0], and we do not have the third singular value, we can't use the same formula to find the second and third columns of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find vectors\n\n[MATH: [u_{1}; u_{2}; u_{3}]]\n\nsuch that [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0] and [MATH: \\|\\mathbf{u}\\|=1.]\n\nSolving [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,] which is equivalent to\n[MATH: \\dfrac{\\sqrt2}{2} x_1 + \\dfrac{1}{2} x_2- \\dfrac{1}{2} x_3 = 0\n\\qquad\\Longrightarrow\\qquad\n\\sqrt2x_1 + x_2-x_3 = 0,]\nwe get the general solution\n\n[MATH: [x_{1}; x_{2}; sqrt(2)x_{1} + x_{2}]]\n\nwhere [MATH: x_1] and [MATH: x_2] are free variables.\n\nNotice that the two linearly independent solutions [MATH: \\mathbf{b}_1] and [MATH: \\mathbf{b}_2] are not mutually orthogonal. Therefore, we have to orthogonalize them using the Gram-Schmidt process. So, let\n\n[MATH: [1; 0; sqrt(2)]]\n\nThen,\n\n[MATH: c_{2}|= b_{2} \u2212 (b_{2} \u22c5 c_{1})/(c_{1} \u22c5 c_{1})c_{1}; = [0; 1; 1] \u2212 (sqrt(2))/(3)[1; 0; sqrt(2)]; = (1)/(3)[\u2212 sqrt(2); 3; 1].]\n\nFinally, normalizing the orthogonal vectors [MATH: \\mathbf{c}_1] and [MATH: \\mathbf{c}_2,] we obtain the second and third columns of [MATH: U{:}]\n\n[MATH: [(1)/(sqrt(3)); 0; (sqrt(2))/(sqrt(3))]]\n\nSo, the matrix [MATH: U] could be the following:\n\n[MATH: [(sqrt(2))/(2)|(1)/(sqrt(3))|\u2212 (sqrt(2))/(2sqrt(3)); (1)/(2)|0|(3)/(2sqrt(3)); \u2212 (1)/(2)|(sqrt(2))/(sqrt(3))|(1)/(2sqrt(3))]]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "98840",
+        "dom_id": "question-98840",
+        "selector": "#question-98840",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [2|2; \u2212 2|\u2212 2; 1|1], \u03a3 = [3sqrt(2)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the matrix <span class=\"math\">[MATH: U?]</span></p>",
+          "readable_text": "[MATH: A = [2|2; \u2212 2|\u2212 2; 1|1], \u03a3 = [3sqrt(2)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-98840-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-98840-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); (1)/(sqrt(5))|0|(1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); (1)/(sqrt(5))|0|(1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-98840-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-98840-d",
+            "content_type": "text",
+            "normalized_html": "<p>\n<span class=\"math\">[MATH: [(2)/(3)|1|0; \u2212 (2)/(3)|0|\u2212 (3)/(sqrt(10)); (1)/(3)|0|(1)/(sqrt(10))]]</span> </p>",
+            "readable_text": "[MATH: [(2)/(3)|1|0; \u2212 (2)/(3)|0|\u2212 (3)/(sqrt(10)); (1)/(3)|0|(1)/(sqrt(10))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-98840-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|1|0; 1|0|0; 0|0|1]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; 1|0|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [2|2; \u2212 2|\u2212 2; 1|1], \u03a3 = [3sqrt(2)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]\nb. [MATH: [0|1|0; (1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); (1)/(sqrt(5))|0|(1)/(sqrt(2))]]\nc. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\nd. [MATH: [(2)/(3)|1|0; \u2212 (2)/(3)|0|\u2212 (3)/(sqrt(10)); (1)/(3)|0|(1)/(sqrt(10))]]\ne. [MATH: [0|1|0; 1|0|0; 0|0|1]]"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "98854",
+        "dom_id": "question-98854",
+        "selector": "#question-98854",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [1|1; \u2212 1|\u2212 1; \u2212 1|\u2212 1], \u03a3 = [sqrt(6)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> which of the following could be the matrix <span class=\"math\">[MATH: U?]</span></p>",
+          "readable_text": "[MATH: A = [1|1; \u2212 1|\u2212 1; \u2212 1|\u2212 1], \u03a3 = [sqrt(6)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-98854-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(3))|1|0; \u2212 (1)/(sqrt(3))|0|\u2212 (1)/(sqrt(2)); \u2212 (1)/(sqrt(3))|0|(1)/(sqrt(2))]]</span> </p>",
+            "readable_text": "[MATH: [(1)/(sqrt(3))|1|0; \u2212 (1)/(sqrt(3))|0|\u2212 (1)/(sqrt(2)); \u2212 (1)/(sqrt(3))|0|(1)/(sqrt(2))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-98854-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]</span> </p>",
+            "readable_text": "[MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-98854-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]</span>\n</p>",
+            "readable_text": "[MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-98854-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]</span> </p>",
+            "readable_text": "[MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-98854-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(3))|(1)/(sqrt(2))|(1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|(1)/(sqrt(2))|\u2212 (1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|0|(2)/(sqrt(6))]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(3))|(1)/(sqrt(2))|(1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|(1)/(sqrt(2))|\u2212 (1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|0|(2)/(sqrt(6))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [1|1; \u2212 1|\u2212 1; \u2212 1|\u2212 1], \u03a3 = [sqrt(6)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [(1)/(sqrt(3))|1|0; \u2212 (1)/(sqrt(3))|0|\u2212 (1)/(sqrt(2)); \u2212 (1)/(sqrt(3))|0|(1)/(sqrt(2))]]\nb. [MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]\nc. [MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]\nd. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\ne. [MATH: [(1)/(sqrt(3))|(1)/(sqrt(2))|(1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|(1)/(sqrt(2))|\u2212 (1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|0|(2)/(sqrt(6))]]"
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "32060",
+        "content_id": "5110",
+        "dom_id": "step-32060",
+        "selector": "#step-32060",
+        "step_anchor": "step-14",
+        "title": "The Singular Value Decomposition of a Transposed Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we want to find an SVD for the <span class=\"math\">[MATH: 2\\times 4]</span> matrix <span class=\"math\">[MATH: A,]</span> given by</p>",
+            "readable_text": "Suppose we want to find an SVD for the [MATH: 2\\times 4] matrix [MATH: A,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0|1|0; 0|0|0|0]]</span></p>",
+            "readable_text": "[MATH: [1|0|1|0; 0|0|0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Directly applying the standard approach to <span class=\"math\">[MATH: A]</span> could be problematic because it requires finding the eigenvalues of the <span class=\"math\">[MATH: 4\\times 4]</span> matrix <span class=\"math\">[MATH: A^T \\! A.]</span> </p>",
+            "readable_text": "Directly applying the standard approach to [MATH: A] could be problematic because it requires finding the eigenvalues of the [MATH: 4\\times 4] matrix [MATH: A^T \\! A.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In such cases, it&#x27;s usually more convenient to find an SVD of the transposed matrix <span class=\"math\">[MATH: A^T]</span> and then take the transpose of the resulting SVD. In this case, we would only have to find the eigenvalues of a <span class=\"math\">[MATH: 2 \\times 2]</span> matrix.</p>",
+            "readable_text": "In such cases, it's usually more convenient to find an SVD of the transposed matrix [MATH: A^T] and then take the transpose of the resulting SVD. In this case, we would only have to find the eigenvalues of a [MATH: 2 \\times 2] matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, if</p>",
+            "readable_text": "For example, if",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A^T = U \\Sigma V^T]</span></p>",
+            "readable_text": "[MATH: A^T = U \\Sigma V^T]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is an SVD for <span class=\"math\">[MATH: A^T,]</span> then</p>",
+            "readable_text": "is an SVD for [MATH: A^T,] then",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A= \\left(A^T\\right)^T= \\left(U \\Sigma V^T\\right)^T=V\\Sigma^T U^T]</span></p>",
+            "readable_text": "[MATH: A= \\left(A^T\\right)^T= \\left(U \\Sigma V^T\\right)^T=V\\Sigma^T U^T]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is an SVD for <span class=\"math\">[MATH: A.]</span> </p>",
+            "readable_text": "is an SVD for [MATH: A.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Going through our usual process, we find that an SVD for <span class=\"math\">[MATH: A^T]</span> is</p>",
+            "readable_text": "Going through our usual process, we find that an SVD for [MATH: A^T] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2))|0; 0|0|0|1; (1)/(sqrt(2))|0|(1)/(sqrt(2))|0; 0|1|0|0]]</span></p>",
+            "readable_text": "[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2))|0; 0|0|0|1; (1)/(sqrt(2))|0|(1)/(sqrt(2))|0; 0|1|0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Taking the transpose of the above equation. we find that an SVD for <span class=\"math\">[MATH: A]</span> is</p>",
+            "readable_text": "Taking the transpose of the above equation. we find that an SVD for [MATH: A] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0; 0|1]]</span></p>",
+            "readable_text": "[MATH: [1|0; 0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we want to find an SVD for the [MATH: 2\\times 4] matrix [MATH: A,] given by\n\nContent:\n[MATH: [1|0|1|0; 0|0|0|0]]\n\nContent:\nDirectly applying the standard approach to [MATH: A] could be problematic because it requires finding the eigenvalues of the [MATH: 4\\times 4] matrix [MATH: A^T \\! A.]\n\nContent:\nIn such cases, it's usually more convenient to find an SVD of the transposed matrix [MATH: A^T] and then take the transpose of the resulting SVD. In this case, we would only have to find the eigenvalues of a [MATH: 2 \\times 2] matrix.\n\nContent:\nFor example, if\n\nContent:\n[MATH: A^T = U \\Sigma V^T]\n\nContent:\nis an SVD for [MATH: A^T,] then\n\nContent:\n[MATH: A= \\left(A^T\\right)^T= \\left(U \\Sigma V^T\\right)^T=V\\Sigma^T U^T]\n\nContent:\nis an SVD for [MATH: A.]\n\nContent:\nGoing through our usual process, we find that an SVD for [MATH: A^T] is\n\nContent:\n[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2))|0; 0|0|0|1; (1)/(sqrt(2))|0|(1)/(sqrt(2))|0; 0|1|0|0]]\n\nContent:\nTaking the transpose of the above equation. we find that an SVD for [MATH: A] is\n\nContent:\n[MATH: [1|0; 0|1]]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWe can compute a singular value decomposition (SVD) of any matrix! The algorithm for computing an SVD of a rectangular [MATH: m\\times n] matrix [MATH: (m\\neq n)] is similar to the algorithm for square matrices.\n\nContent:\nAs an example, let's consider the matrix [MATH: A,] given by\n\nContent:\n[MATH: [1|1; \u2212 1|1; 1|1]]\n\nContent:\nNotice that [MATH: A] is a [MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}] matrix. So, to compute the SVD of [MATH: A,] we must write\n\nContent:\n[MATH: A=U \\Sigma V^T,]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\Sigma] is a [MATH: {\\color{blue}{3}}\\times {\\color{red}{2}}] matrix with the singular values of [MATH: A] (ordered from largest to smallest) on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: {\\color{blue}{3}} \\times {\\color{blue}{3}}] matrix,\n- [MATH: V] is an orthogonal [MATH: {\\color{red}{2}} \\times {\\color{red}{2}}] matrix.\n\nContent:\nWe proceed as follows:\n\nContent:\n- Step 1. Compute [MATH: A^T \\! A\\mathbin{:}]\n[MATH: A^{T}A|= [1|1; \u2212 1|1; 1|1]^{T}[1|1; \u2212 1|1; 1|1]; = [1|\u2212 1|1; 1|1|1][1|1; \u2212 1|1; 1|1]; = [3|1; 1|3]]\n- Step 2. Find the singular values of [MATH: A.] Computing the eigenvalues of [MATH: A^TA,] we get\n[MATH: \\lambda_1 = 4, \\qquad \\lambda_2 = 2.]\nTherefore, the singular values of [MATH: A] are\n[MATH: \\sigma_1 = \\sqrt{\\lambda_1} = 2, \\qquad \\sigma_2 = \\sqrt{\\lambda_2} = \\sqrt{2}.]\n- Step 3. Find the right singular vectors of [MATH: A] (i.e., the unit eigenvectors of [MATH: A^T A]). Seeking non-zero solutions of [MATH: (A^T \\! A - \\lambda_1 I)\\mathbf{v}=\\mathbf{0}] and [MATH: (A^T \\! A - \\lambda_2 I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvectors\n[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]\n- Step 4. Find the left singular vectors of [MATH: A.] Since we know the singular values and right singular vectors, we can compute the first two columns of [MATH: U] as follows:\n\n- First, we compute [MATH: \\mathbf u_1\\mathbin{:}]\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[1|1; \u2212 1|1; 1|1][(1)/(sqrt(2)); (1)/(sqrt(2))]; = [(1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\n- Then, we compute [MATH: \\mathbf u_2\\mathbin{:}]\n[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(sqrt(2))[1|1; \u2212 1|1; 1|1][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = [0; 1; 0]]\n\nContent:\n- The matrix [MATH: U] is a [MATH: 3\\times 3] matrix. However, we do not have the third singular value, so we can't use the same formula to find the third column of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find a vector\n[MATH: [x_{1}; x_{2}; x_{3}]]\nsuch that\n[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]\nSolving this system, we get the following nonzero normalized solution:\n[MATH: u_{3}|= [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\n\nContent:\nFinally, we construct the matrices [MATH: U,] [MATH: \\Sigma,] and [MATH: V\\mathbin{:}]\n\nContent:\n[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); 0|1|0; (1)/(sqrt(2))|0|(1)/(sqrt(2))]]\n\n---\n\nItem 2 \u2014 Example: Finding the Third Factor in the SVD of a Rectangular Matrix\n\nExample Prompt:\n[MATH: [3|1; \u2212 1|\u2212 3; \u2212 4|4]]\nConsider the matrices [MATH: A] and [MATH: \\Sigma] shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 2\\times 2] matrix that could be the matrix [MATH: V.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nLet's find the singular value decomposition of [MATH: A] using the usual algorithm.\n\n- Step 1. Compute [MATH: A^T \\! A\\mathbin{:}]\n[MATH: A^{T}A|= [3|1; \u2212 1|\u2212 3; \u2212 4|4]^{T}[3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [3|\u2212 1|\u2212 4; 1|\u2212 3|4][3|1; \u2212 1|\u2212 3; \u2212 4|4]; = [26|\u2212 10; \u2212 10|26]]\n- Step 2. Find the singular values. From the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=6] and [MATH: \\sigma_2=4.]\n- Step 3. Find the right singular vectors of [MATH: A] (i.e., the unit eigenvectors of [MATH: A^T \\! A]):\n\n- For [MATH: \\lambda_1=\\sigma_1^2=36,] we have\n[MATH: A^{T}A \u2212 36I|= [26|\u2212 10; \u2212 10|26] \u2212 36[1|0; 0|1] = [\u2212 10|\u2212 10; \u2212 10|\u2212 10].]\nSeeking a non-zero solution of [MATH: (A^T \\! A - 36I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvector\n[MATH: [\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]\n- For [MATH: \\lambda_2=\\sigma_2^2=16,] we have\n[MATH: A^{T}A \u2212 16I|= [26|\u2212 10; \u2212 10|26] \u2212 16[1|0; 0|1] = [10|\u2212 10; \u2212 10|10].]\nSeeking a non-zero solution of [MATH: (A^T \\! A - 16I)\\mathbf{v}=\\mathbf{0}] gives the unit eigenvector\n[MATH: [(1)/(sqrt(2)); (1)/(sqrt(2))]]\n\nFinally, we construct the matrix [MATH: V\\mathbin{:}]\n\n[MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n[MATH: A = [0|0; 1|\u2212 1; \u2212 2|2], \u03a3 = [sqrt(10)|0; 0|0; 0|0]]\nConsider the matrices [MATH: A] and [MATH: \u03a3] shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: V?]\n\nChoices:\na. [MATH: [(1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|\u2212 (1)/(sqrt(10))]]\nb. [MATH: [(2)/(sqrt(5))|(1)/(sqrt(5)); (1)/(sqrt(5))|\u2212 (2)/(sqrt(5))]]\nc. [MATH: [\u2212 (1)/(sqrt(10))|(3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]\nd. [MATH: [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\ne. [MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n[MATH: A = [0|2; \u2212 2|0; \u2212 2|\u2212 1], \u03a3 = [3|0; 0|2; 0|0]]\nConsider the matrices [MATH: A] and [MATH: \u03a3] shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: V?]\n\nChoices:\na. [MATH: [(2)/(sqrt(5))|\u2212 (1)/(sqrt(5)); (1)/(sqrt(5))|(2)/(sqrt(5))]]\nb. [MATH: [(1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))]]\nc. [MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nd. [MATH: [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\ne. [MATH: [(1)/(sqrt(10))|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|(1)/(sqrt(10))]]\n\n---\n\nItem 5 \u2014 Example: Finding the First Factor in the SVD of a Rectangular Matrix\n\nExample Prompt:\n[MATH: [2|\u2212 2; \u2212 4|\u2212 3; 3|4]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a vector whose components correspond to the [MATH: 3]rd column of the matrix [MATH: U.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of an [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=7] and [MATH: \\sigma_2=3.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st and [MATH: 2]nd columns of [MATH: U] as follows:\n\n- First, we compute [MATH: \\mathbf u_1\\mathbin{:}]\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(7)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][(1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(7)[0; \u2212 (7)/(sqrt(2)); (7)/(sqrt(2))]; = [0; \u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]]\n- Then, we compute [MATH: \\mathbf u_2\\mathbin{:}]\n[MATH: u_{2}|= (1)/(\u03c3_{2})Av_{2}; = (1)/(3)[2|\u2212 2; \u2212 4|\u2212 3; 3|4][\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))]; = (1)/(3)[\u2212 (4)/(sqrt(2)); (1)/(sqrt(2)); (1)/(sqrt(2))]; = [\u2212 (4)/(3sqrt(2)); (1)/(3sqrt(2)); (1)/(3sqrt(2))]]\n\nSince we do not have the third singular value, we can't use the same formula to find the third column of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find a vector\n[MATH: [x_{1}; x_{2}; x_{3}]]\nsuch that\n[MATH: {u_{1} \u22c5 u_{3} = 0; u_{2} \u22c5 u_{3} = 0,]\nSolving this system, which is equivalent to\n[MATH: {\u2212 (1)/(sqrt(2))x_{2} + (1)/(sqrt(2))x_{3} = 0; \u2212 (4)/(3sqrt(2))x_{1} + (1)/(3sqrt(2))x_{2} + (1)/(3sqrt(2))x_{3} = 0]\nwe get the nonzero normalized solution\n[MATH: [(1)/(3); (2)/(3); (2)/(3)]]\n\nFinally, we construct the matrix [MATH: U \\mathbin{:}]\n\n[MATH: [0|\u2212 (4)/(3sqrt(2))|1 3; \u2212 (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3; (1)/(sqrt(2))|(1)/(3sqrt(2))|2 3]]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\n[MATH: A = [1|\u2212 3; 4|4; \u2212 3|1], \u03a3 = [6|0; 0|4; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the [MATH: 3]rd column of the matrix [MATH: U?]\n\nChoices:\na. [MATH: [\u2212 (1)/(sqrt(2)); 0; (1)/(sqrt(2))]]\nb. [MATH: [1; 0; 0]]\nc. [MATH: [0; (1)/(sqrt(2)); (1)/(sqrt(2))]]\nd. [MATH: [(2)/(3); (1)/(3); (2)/(3)]]\ne. [MATH: [\u2212 (1)/(3sqrt(2)); (4)/(3sqrt(2)); \u2212 (1)/(3sqrt(2))]]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\n[MATH: A = [0|0; 2|2; 1|\u2212 2], \u03a3 = [3|0; 0|2; 0|0], V = [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the [MATH: 3]rd column of the matrix [MATH: U?]\n\nChoices:\na. [MATH: [(1)/(sqrt(2)); 0; \u2212 (1)/(sqrt(2))]]\nb. [MATH: [(1)/(sqrt(2)); (1)/(sqrt(2)); 0]]\nc. [MATH: [1; 0; 0]]\nd. [MATH: [0; 0; 1]]\ne. [MATH: [(2)/(sqrt(5)); (1)/(sqrt(5)); 0]]\n\n---\n\nItem 8 \u2014 Example: Finding the First Factor in the SVD of a Rectangular Matrix: Advanced Cases\n\nExample Prompt:\n[MATH: [1|0; 2|0; 0|0]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 3\\times 3] matrix that could be the matrix [MATH: U.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=\\sqrt5] and [MATH: \\sigma_2=0.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st column of [MATH: U] as follows:\n\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(sqrt(5))[1|0; 2|0; 0|0][1; 0]; = (1)/(sqrt(5))[1; 2; 0]; = [(1)/(sqrt(5)); (2)/(sqrt(5)); 0]]\n\nSince the second singular value is [MATH: \\sigma_2=0], and we do not have a third singular value, we can't use the same formula to find the second and third columns of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find vectors\n\n[MATH: [x_{1}; x_{2}; x_{3}]]\n\nsuch that [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0] and [MATH: \\|\\mathbf{u}\\|=1.]\n\nSolving [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,] which is equivalent to\n[MATH: \\dfrac{1}{\\sqrt{5}} x_1 + \\dfrac{2}{\\sqrt{5}} x_2 = 0 \\qquad\\Longrightarrow\\qquad\nx_1 + 2x_2 = 0,]\nwe get the general solution\n\n[MATH: [\u2212 2x_{2}; x_{2}; x_{3}]]\n\nwhere [MATH: x_2] and [MATH: x_3] are free variables. Notice that the two linearly independent solutions are mutually orthogonal. Normalizing these vectors, we get\n\n[MATH: [\u2212 (2)/(sqrt(5)); (1)/(sqrt(5)); 0]]\n\nFinally, we construct the matrix [MATH: U \\mathbin{:}]\n\n[MATH: [(1)/(sqrt(5))|\u2212 (2)/(sqrt(5))|0; (2)/(sqrt(5))|(1)/(sqrt(5))|0; 0|0|1]]\n\n---\n\nItem 9 \u2014 Question 5\n\nPrompt:\n[MATH: A = [0|0; 1|1; 3|3], \u03a3 = [2sqrt(5)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [0|0|1; (1)/(sqrt(10))|\u2212 (1)/(sqrt(10))|0; (3)/(sqrt(10))|(3)/(sqrt(10))|0]]\nb. [MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]\nc. [MATH: [0|0|1; (1)/(sqrt(5))|\u2212 (1)/(sqrt(5))|0; (2)/(sqrt(5))|(2)/(sqrt(5))|0]]\nd. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\ne. [MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]\n\n---\n\nItem 10 \u2014 Question 6\n\nPrompt:\n[MATH: A = [4|0; 3|0; 0|0], \u03a3 = [5|0; 0|0; 0|0], V = [1|0; 0|1]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]\nb. [MATH: [(4)/(5)|(1)/(sqrt(5))|(4)/(3sqrt(5)); (3)/(5)|0|\u2212 (5)/(3sqrt(5)); 0|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]\nc. [MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]\nd. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\ne. [MATH: [0|1|0; (1)/(sqrt(10))|0|\u2212 (3)/(sqrt(10)); (3)/(sqrt(10))|0|(1)/(sqrt(10))]]\n\n---\n\nItem 11 \u2014 Example: Finding the First Factor in the SVD of a Rectangular Matrix: Cases Requiring Orthogonalization\n\nExample Prompt:\n[MATH: [sqrt(2)|0; 1|0; \u2212 1|0]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find a [MATH: 3\\times 3] matrix that could be the matrix [MATH: U.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that if [MATH: A=U \\Sigma V^T] is a singular value decomposition of a [MATH: 3 \\times 2] matrix [MATH: A,] then\n\n- [MATH: \\Sigma] is a [MATH: 3 \\times 2] matrix with nonnegative elements on the main diagonal and zeroes outside the main diagonal,\n- [MATH: U] is an orthogonal [MATH: 3 \\times 3] matrix,\n- [MATH: V] is an orthogonal [MATH: 2 \\times 2] matrix.\n\nFrom the matrix [MATH: \\Sigma,] we deduce that [MATH: \\sigma_1=2] and [MATH: \\sigma_2=0.]\nAlso, the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2] of [MATH: V] give us the right singular vectors of [MATH: A.]\n\nTherefore, we can compute the [MATH: 1]st column of [MATH: U] as follows:\n\n[MATH: u_{1}|= (1)/(\u03c3_{1})Av_{1}; = (1)/(2)[sqrt(2)|0; 1|0; \u2212 1|0][1; 0]; = (1)/(2)[sqrt(2); 1; \u2212 1]; = [(sqrt(2))/(2); (1)/(2); \u2212 (1)/(2)]]\n\nSince the second singular value is [MATH: \\sigma_2=0], and we do not have the third singular value, we can't use the same formula to find the second and third columns of [MATH: U.] But we know that [MATH: U] must be orthogonal. Hence, we must find vectors\n\n[MATH: [u_{1}; u_{2}; u_{3}]]\n\nsuch that [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0] and [MATH: \\|\\mathbf{u}\\|=1.]\n\nSolving [MATH: \\mathbf{u}_1 \\cdot \\mathbf{u} = 0,] which is equivalent to\n[MATH: \\dfrac{\\sqrt2}{2} x_1 + \\dfrac{1}{2} x_2- \\dfrac{1}{2} x_3 = 0\n\\qquad\\Longrightarrow\\qquad\n\\sqrt2x_1 + x_2-x_3 = 0,]\nwe get the general solution\n\n[MATH: [x_{1}; x_{2}; sqrt(2)x_{1} + x_{2}]]\n\nwhere [MATH: x_1] and [MATH: x_2] are free variables.\n\nNotice that the two linearly independent solutions [MATH: \\mathbf{b}_1] and [MATH: \\mathbf{b}_2] are not mutually orthogonal. Therefore, we have to orthogonalize them using the Gram-Schmidt process. So, let\n\n[MATH: [1; 0; sqrt(2)]]\n\nThen,\n\n[MATH: c_{2}|= b_{2} \u2212 (b_{2} \u22c5 c_{1})/(c_{1} \u22c5 c_{1})c_{1}; = [0; 1; 1] \u2212 (sqrt(2))/(3)[1; 0; sqrt(2)]; = (1)/(3)[\u2212 sqrt(2); 3; 1].]\n\nFinally, normalizing the orthogonal vectors [MATH: \\mathbf{c}_1] and [MATH: \\mathbf{c}_2,] we obtain the second and third columns of [MATH: U{:}]\n\n[MATH: [(1)/(sqrt(3)); 0; (sqrt(2))/(sqrt(3))]]\n\nSo, the matrix [MATH: U] could be the following:\n\n[MATH: [(sqrt(2))/(2)|(1)/(sqrt(3))|\u2212 (sqrt(2))/(2sqrt(3)); (1)/(2)|0|(3)/(2sqrt(3)); \u2212 (1)/(2)|(sqrt(2))/(sqrt(3))|(1)/(2sqrt(3))]]\n\n---\n\nItem 12 \u2014 Question 7\n\nPrompt:\n[MATH: A = [2|2; \u2212 2|\u2212 2; 1|1], \u03a3 = [3sqrt(2)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]\nb. [MATH: [0|1|0; (1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2)); (1)/(sqrt(5))|0|(1)/(sqrt(2))]]\nc. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\nd. [MATH: [(2)/(3)|1|0; \u2212 (2)/(3)|0|\u2212 (3)/(sqrt(10)); (1)/(3)|0|(1)/(sqrt(10))]]\ne. [MATH: [0|1|0; 1|0|0; 0|0|1]]\n\n---\n\nItem 13 \u2014 Question 8\n\nPrompt:\n[MATH: A = [1|1; \u2212 1|\u2212 1; \u2212 1|\u2212 1], \u03a3 = [sqrt(6)|0; 0|0; 0|0], V = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] which of the following could be the matrix [MATH: U?]\n\nChoices:\na. [MATH: [(1)/(sqrt(3))|1|0; \u2212 (1)/(sqrt(3))|0|\u2212 (1)/(sqrt(2)); \u2212 (1)/(sqrt(3))|0|(1)/(sqrt(2))]]\nb. [MATH: [0|0|1; (1)/(sqrt(2))|\u2212 (1)/(sqrt(2))|0; (1)/(sqrt(2))|(1)/(sqrt(2))|0]]\nc. [MATH: [(2)/(3)|(1)/(sqrt(5))|(4)/(3sqrt(5)); \u2212 (2)/(3)|0|(5)/(3sqrt(5)); (1)/(3)|\u2212 (2)/(sqrt(5))|(2)/(3sqrt(5))]]\nd. [MATH: [0|1|0; (1)/(sqrt(5))|0|\u2212 (2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5))]]\ne. [MATH: [(1)/(sqrt(3))|(1)/(sqrt(2))|(1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|(1)/(sqrt(2))|\u2212 (1)/(sqrt(6)); \u2212 (1)/(sqrt(3))|0|(2)/(sqrt(6))]]\n\n---\n\nItem 14 \u2014 Tutorial: The Singular Value Decomposition of a Transposed Matrix\n\nContent:\nSuppose we want to find an SVD for the [MATH: 2\\times 4] matrix [MATH: A,] given by\n\nContent:\n[MATH: [1|0|1|0; 0|0|0|0]]\n\nContent:\nDirectly applying the standard approach to [MATH: A] could be problematic because it requires finding the eigenvalues of the [MATH: 4\\times 4] matrix [MATH: A^T \\! A.]\n\nContent:\nIn such cases, it's usually more convenient to find an SVD of the transposed matrix [MATH: A^T] and then take the transpose of the resulting SVD. In this case, we would only have to find the eigenvalues of a [MATH: 2 \\times 2] matrix.\n\nContent:\nFor example, if\n\nContent:\n[MATH: A^T = U \\Sigma V^T]\n\nContent:\nis an SVD for [MATH: A^T,] then\n\nContent:\n[MATH: A= \\left(A^T\\right)^T= \\left(U \\Sigma V^T\\right)^T=V\\Sigma^T U^T]\n\nContent:\nis an SVD for [MATH: A.]\n\nContent:\nGoing through our usual process, we find that an SVD for [MATH: A^T] is\n\nContent:\n[MATH: [(1)/(sqrt(2))|0|\u2212 (1)/(sqrt(2))|0; 0|0|0|1; (1)/(sqrt(2))|0|(1)/(sqrt(2))|0; 0|1|0|0]]\n\nContent:\nTaking the transpose of the above equation. we find that an SVD for [MATH: A] is\n\nContent:\n[MATH: [1|0; 0|1]]"
+  }
+}

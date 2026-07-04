@@ -69,7 +69,6 @@ $$
 ```quiz
 type: radio
 id: ma-48570
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find $f^{′}(x)$ when $f(x) = \sin^{3} 4x$.
 options:
@@ -77,6 +76,7 @@ options:
   content: |-
     $3\sin^{2} 4x\cos 4x$
 - id: b
+  correct: true
   content: |-
     $12\sin^{2} 4x\cos 4x$
 - id: c
@@ -97,11 +97,11 @@ options:
 ```quiz
 type: radio
 id: ma-48569
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find $f^{′}(x)$ when $f(x) = \cos^{3} 3x$.
 options:
 - id: a
+  correct: true
   content: |-
     $-9\cos^{2} 3x\sin 3x$
 - id: b
@@ -165,11 +165,11 @@ $$
 ```quiz
 type: radio
 id: ma-31240
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find the slope of $y = 2x\cos (2x + 3)$ at $x =-1$.
 options:
 - id: a
+  correct: true
   content: |-
     $2\cos 1 + 4\sin 1$
 - id: b
@@ -193,7 +193,6 @@ options:
 ```quiz
 type: radio
 id: ma-11599
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $y = x^{3}(2x^{2} + 1)^{3}$, find $\frac{dy}{dx}$.
 options:
@@ -207,6 +206,7 @@ options:
   content: |-
     $(3x^{4} + 12x^{2})(2x^{2} + 1)^{2}$
 - id: d
+  correct: true
   content: |-
     $(18x^{4} + 3x^{2})(2x^{2} + 1)^{2}$
 - id: e
@@ -250,7 +250,6 @@ $$
 ```quiz
 type: radio
 id: ma-11973
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given that $y = (3x^{2})/((3x + 5)^{2})$, find $\frac{dy}{dx}$.
 options:
@@ -261,6 +260,7 @@ options:
   content: |-
     $(5x)/((3x + 5)^{4})$
 - id: c
+  correct: true
   content: |-
     $(30x)/((3x + 5)^{3})$
 - id: d
@@ -278,7 +278,6 @@ options:
 ```quiz
 type: radio
 id: ma-2396
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find $y^{′}$ for $y = (\tan (7x - 2))/(4x)$.
 options:
@@ -289,6 +288,7 @@ options:
   content: |-
     $(7\sec^{2} (7x - 2) - \tan (7x - 2))/(16x^{2})$
 - id: c
+  correct: true
   content: |-
     $(7x\sec^{2} (7x - 2) - \tan (7x - 2))/(4x^{2})$
 - id: d

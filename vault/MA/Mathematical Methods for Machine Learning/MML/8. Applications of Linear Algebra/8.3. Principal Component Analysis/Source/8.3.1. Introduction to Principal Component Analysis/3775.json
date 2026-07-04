@@ -1,0 +1,1611 @@
+{
+  "schema_version": 2,
+  "topic_id": "3775",
+  "topic_title": "Introduction to Principal Component Analysis",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3775/Source/3775.html",
+  "source_url": "https://mathacademy.com/topics/3775",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "610816",
+        "dom_id": "sectionLink-610816",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-610816"
+      },
+      {
+        "index": 2,
+        "step_id": "610817",
+        "dom_id": "sectionLink-610817",
+        "name": "",
+        "title": "PCA: Data Setup",
+        "selector": "#sectionLink-610817"
+      },
+      {
+        "index": 3,
+        "step_id": "611695",
+        "dom_id": "sectionLink-611695",
+        "name": "",
+        "title": "PCA: Constructing the Covariance Matrix",
+        "selector": "#sectionLink-611695"
+      },
+      {
+        "index": 4,
+        "step_id": "611646",
+        "dom_id": "sectionLink-611646",
+        "name": "",
+        "title": "PCA: Diagonalization",
+        "selector": "#sectionLink-611646"
+      },
+      {
+        "index": 5,
+        "step_id": "611560",
+        "dom_id": "sectionLink-611560",
+        "name": "",
+        "title": "The Principal Components",
+        "selector": "#sectionLink-611560"
+      },
+      {
+        "index": 6,
+        "step_id": "610818",
+        "dom_id": "sectionLink-610818",
+        "name": "",
+        "title": "Interpretation of Principal Components",
+        "selector": "#sectionLink-610818"
+      },
+      {
+        "index": 7,
+        "step_id": "610819",
+        "dom_id": "sectionLink-610819",
+        "name": "",
+        "title": "Identifying the First Principal Component From a Scatter Plot",
+        "selector": "#sectionLink-610819"
+      },
+      {
+        "index": 8,
+        "step_id": "610822",
+        "dom_id": "sectionLink-610822",
+        "name": "",
+        "title": "Identifying the Second Principal Component From a Scatter Plot",
+        "selector": "#sectionLink-610822"
+      },
+      {
+        "index": 9,
+        "step_id": "610825",
+        "dom_id": "sectionLink-610825",
+        "name": "",
+        "title": "Applications of Principal Component Analysis",
+        "selector": "#sectionLink-610825"
+      },
+      {
+        "index": 10,
+        "step_id": "610826",
+        "dom_id": "sectionLink-610826",
+        "name": "",
+        "title": "Representing Principal Components as Linear Combinations",
+        "selector": "#sectionLink-610826"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "711",
+        "name": "The Z-Score",
+        "href": "/topics/the-z-score-711"
+      },
+      {
+        "topic_id": "3138",
+        "name": "The Sample Covariance Matrix",
+        "href": "/topics/the-sample-covariance-matrix-3138"
+      },
+      {
+        "topic_id": "3335",
+        "name": "Diagonalization of 2x2 Symmetric Matrices",
+        "href": "/topics/diagonalization-of-2x2-symmetric-matrices-3335"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 16,
+    "step_count": 10,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "610816",
+        "content_id": "14783",
+        "dom_id": "step-610816",
+        "selector": "#step-610816",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we are analyzing house prices in a specific neighborhood, gathering data on quantitative features such as the total floor space, number of bedrooms and bathrooms, and distance to the town center. Our goal is to understand the relationship between these features and property values.</p>",
+            "readable_text": "Suppose we are analyzing house prices in a specific neighborhood, gathering data on quantitative features such as the total floor space, number of bedrooms and bathrooms, and distance to the town center. Our goal is to understand the relationship between these features and property values.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Problems involving multi-dimensional data analysis, such as this one, pose several challenges:</p>",
+            "readable_text": "Problems involving multi-dimensional data analysis, such as this one, pose several challenges:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Multi-dimensional data is often difficult to analyze.</p></li><li><p>Visualization can be virtually impossible.</p></li><li><p>Storing multi-dimensional data on a computer can require substantial hardware resources.</p></li></ul>",
+            "readable_text": "- Multi-dimensional data is often difficult to analyze.\n- Visualization can be virtually impossible.\n- Storing multi-dimensional data on a computer can require substantial hardware resources.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can overcome these challenges using <strong>dimensionality reduction.</strong> Dimensionality reduction works by compressing data into a smaller number of variables while (ideally) preserving as much information as possible.</p>",
+            "readable_text": "We can overcome these challenges using dimensionality reduction. Dimensionality reduction works by compressing data into a smaller number of variables while (ideally) preserving as much information as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To demonstrate the basic idea behind dimensionality reduction, consider the following data set for the variables <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y{:}]</span></p>",
+            "readable_text": "To demonstrate the basic idea behind dimensionality reduction, consider the following data set for the variables [MATH: x] and [MATH: y{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/be7a44a4b7e9cf74c39037a1b5f59789\"></p>",
+            "readable_text": "[IMG: /graphics/be7a44a4b7e9cf74c39037a1b5f59789]",
+            "images": [
+              {
+                "src": "/graphics/be7a44a4b7e9cf74c39037a1b5f59789",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that the data does not vary much in the <span class=\"math\">[MATH: y]</span>-direction. Therefore, we can transform the data set by projecting all points onto the <span class=\"math\">[MATH: x]</span>-axis. This process removes the variation in <span class=\"math\">[MATH: y]</span> with almost no loss of overall information, as shown below:</p>",
+            "readable_text": "Notice that the data does not vary much in the [MATH: y]-direction. Therefore, we can transform the data set by projecting all points onto the [MATH: x]-axis. This process removes the variation in [MATH: y] with almost no loss of overall information, as shown below:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/651afef7701aecac9363ddad7cb95f8d\"></p>",
+            "readable_text": "[IMG: /graphics/651afef7701aecac9363ddad7cb95f8d]",
+            "images": [
+              {
+                "src": "/graphics/651afef7701aecac9363ddad7cb95f8d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Multi-dimensional data typically exhibit characteristics suitable for dimensionality reduction:</p>",
+            "readable_text": "Multi-dimensional data typically exhibit characteristics suitable for dimensionality reduction:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Many variables are often correlated. In our house prices example, the number of bedrooms and bathrooms likely correlate. This means that one variable can often be expressed in terms of another. Or, we can find a new variable that describes the variation in both original variables.</p></li><li><p>Ultimately, we can aim to reduce the higher-dimensional structure of the data to a more fundamental, lower-dimensional structure containing only uncorrelated variables.</p></li></ul>",
+            "readable_text": "- Many variables are often correlated. In our house prices example, the number of bedrooms and bathrooms likely correlate. This means that one variable can often be expressed in terms of another. Or, we can find a new variable that describes the variation in both original variables.\n- Ultimately, we can aim to reduce the higher-dimensional structure of the data to a more fundamental, lower-dimensional structure containing only uncorrelated variables.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>By reducing the dimensionality of the data, we can work with a compact representation that retains only the most critical variables and discards the rest. This simplifies analysis and visualization.</p>",
+            "readable_text": "By reducing the dimensionality of the data, we can work with a compact representation that retains only the most critical variables and discards the rest. This simplifies analysis and visualization.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/be7a44a4b7e9cf74c39037a1b5f59789",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/651afef7701aecac9363ddad7cb95f8d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we are analyzing house prices in a specific neighborhood, gathering data on quantitative features such as the total floor space, number of bedrooms and bathrooms, and distance to the town center. Our goal is to understand the relationship between these features and property values.\n\nContent:\nProblems involving multi-dimensional data analysis, such as this one, pose several challenges:\n\nContent:\n- Multi-dimensional data is often difficult to analyze.\n- Visualization can be virtually impossible.\n- Storing multi-dimensional data on a computer can require substantial hardware resources.\n\nContent:\nWe can overcome these challenges using dimensionality reduction. Dimensionality reduction works by compressing data into a smaller number of variables while (ideally) preserving as much information as possible.\n\nContent:\nTo demonstrate the basic idea behind dimensionality reduction, consider the following data set for the variables [MATH: x] and [MATH: y{:}]\n\nGraphic:\n[IMG: /graphics/be7a44a4b7e9cf74c39037a1b5f59789]\n\nContent:\nNotice that the data does not vary much in the [MATH: y]-direction. Therefore, we can transform the data set by projecting all points onto the [MATH: x]-axis. This process removes the variation in [MATH: y] with almost no loss of overall information, as shown below:\n\nGraphic:\n[IMG: /graphics/651afef7701aecac9363ddad7cb95f8d]\n\nContent:\nMulti-dimensional data typically exhibit characteristics suitable for dimensionality reduction:\n\nContent:\n- Many variables are often correlated. In our house prices example, the number of bedrooms and bathrooms likely correlate. This means that one variable can often be expressed in terms of another. Or, we can find a new variable that describes the variation in both original variables.\n- Ultimately, we can aim to reduce the higher-dimensional structure of the data to a more fundamental, lower-dimensional structure containing only uncorrelated variables.\n\nContent:\nBy reducing the dimensionality of the data, we can work with a compact representation that retains only the most critical variables and discards the rest. This simplifies analysis and visualization."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "610817",
+        "content_id": "14784",
+        "dom_id": "step-610817",
+        "selector": "#step-610817",
+        "step_anchor": "step-2",
+        "title": "PCA: Data Setup",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the previous section, we saw that dimensionality reduction compresses data into fewer, uncorrelated variables. <strong>Principal Component Analysis (PCA)</strong> is a widely used technique for achieving this.</p>",
+            "readable_text": "In the previous section, we saw that dimensionality reduction compresses data into fewer, uncorrelated variables. Principal Component Analysis (PCA) is a widely used technique for achieving this.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have a sample of <span class=\"math\">[MATH: n]</span> observations, each with <span class=\"math\">[MATH: m]</span> features. We organize this data into an <span class=\"math\">[MATH: n \\times m]</span> <strong>observation matrix</strong> <span class=\"math\">[MATH: X,]</span> where each row is an observation and each column is a feature.</p>",
+            "readable_text": "Suppose we have a sample of [MATH: n] observations, each with [MATH: m] features. We organize this data into an [MATH: n \\times m] observation matrix [MATH: X,] where each row is an observation and each column is a feature.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, if we had <span class=\"math\">[MATH: n=3]</span> observations of <span class=\"math\">[MATH: m=2]</span> features, our observation matrix might look like this:\n<span class=\"math\">[MATH: [1|10; 2|20; 3|30]]</span>\nBefore applying PCA, we must standardize the data. This is because PCA is sensitive to the scale of features. For instance, measuring a feature in meters versus centimeters would lead to different results. We standardize by giving each column a mean of <span class=\"math\">[MATH: 0]</span> and a standard deviation of <span class=\"math\">[MATH: 1.]</span></p>",
+            "readable_text": "For example, if we had [MATH: n=3] observations of [MATH: m=2] features, our observation matrix might look like this:\n[MATH: [1|10; 2|20; 3|30]]\nBefore applying PCA, we must standardize the data. This is because PCA is sensitive to the scale of features. For instance, measuring a feature in meters versus centimeters would lead to different results. We standardize by giving each column a mean of [MATH: 0] and a standard deviation of [MATH: 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For our example, the first column has mean <span class=\"math\">[MATH: 2]</span> and standard deviation <span class=\"math\">[MATH: 1,]</span> while the second column has mean <span class=\"math\">[MATH: 20]</span> and standard deviation <span class=\"math\">[MATH: 10.]</span> Our standardized observation matrix <span class=\"math\">[MATH: X]</span> is:\n<span class=\"math\">[MATH: [(1 \u2212 2)/1|(10 \u2212 20)/10; (2 \u2212 2)/1|(20 \u2212 20)/10; (3 \u2212 2)/1|(30 \u2212 20)/10]]</span>\nNext, we&#x27;ll use this standardized data to analyze the relationships between the features.</p>",
+            "readable_text": "For our example, the first column has mean [MATH: 2] and standard deviation [MATH: 1,] while the second column has mean [MATH: 20] and standard deviation [MATH: 10.] Our standardized observation matrix [MATH: X] is:\n[MATH: [(1 \u2212 2)/1|(10 \u2212 20)/10; (2 \u2212 2)/1|(20 \u2212 20)/10; (3 \u2212 2)/1|(30 \u2212 20)/10]]\nNext, we'll use this standardized data to analyze the relationships between the features.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn the previous section, we saw that dimensionality reduction compresses data into fewer, uncorrelated variables. Principal Component Analysis (PCA) is a widely used technique for achieving this.\n\nContent:\nSuppose we have a sample of [MATH: n] observations, each with [MATH: m] features. We organize this data into an [MATH: n \\times m] observation matrix [MATH: X,] where each row is an observation and each column is a feature.\n\nContent:\nFor example, if we had [MATH: n=3] observations of [MATH: m=2] features, our observation matrix might look like this:\n[MATH: [1|10; 2|20; 3|30]]\nBefore applying PCA, we must standardize the data. This is because PCA is sensitive to the scale of features. For instance, measuring a feature in meters versus centimeters would lead to different results. We standardize by giving each column a mean of [MATH: 0] and a standard deviation of [MATH: 1.]\n\nContent:\nFor our example, the first column has mean [MATH: 2] and standard deviation [MATH: 1,] while the second column has mean [MATH: 20] and standard deviation [MATH: 10.] Our standardized observation matrix [MATH: X] is:\n[MATH: [(1 \u2212 2)/1|(10 \u2212 20)/10; (2 \u2212 2)/1|(20 \u2212 20)/10; (3 \u2212 2)/1|(30 \u2212 20)/10]]\nNext, we'll use this standardized data to analyze the relationships between the features."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "611695",
+        "content_id": "14962",
+        "dom_id": "step-611695",
+        "selector": "#step-611695",
+        "step_anchor": "step-3",
+        "title": "PCA: Constructing the Covariance Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that our data matrix <span class=\"math\">[MATH: X]</span> is standardized, we examine the relationships between its features using the <strong>sample covariance matrix</strong>, <span class=\"math\">[MATH: C.]</span> For standardized data, this is calculated as:</p>",
+            "readable_text": "Now that our data matrix [MATH: X] is standardized, we examine the relationships between its features using the sample covariance matrix, [MATH: C.] For standardized data, this is calculated as:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: C=\\dfrac{1}{n-1} X^T X]</span>\nUsing our standardized matrix from the previous slide, where <span class=\"math\">[MATH: n=3]</span>:\n<span class=\"math\">[MATH: C|= (1)/(3 \u2212 1)[\u2212 1|0|1; \u2212 1|0|1][\u2212 1|\u2212 1; 0|0; 1|1]; = (1)/(2)[2|2; 2|2]; = [1|1; 1|1]]</span>\nThe diagonal entries of <span class=\"math\">[MATH: C]</span> are the variances of the features, and the off-diagonal entries are the covariances between pairs of features.</p>",
+            "readable_text": "[MATH: C=\\dfrac{1}{n-1} X^T X]\nUsing our standardized matrix from the previous slide, where [MATH: n=3]:\n[MATH: C|= (1)/(3 \u2212 1)[\u2212 1|0|1; \u2212 1|0|1][\u2212 1|\u2212 1; 0|0; 1|1]; = (1)/(2)[2|2; 2|2]; = [1|1; 1|1]]\nThe diagonal entries of [MATH: C] are the variances of the features, and the off-diagonal entries are the covariances between pairs of features.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nNow that our data matrix [MATH: X] is standardized, we examine the relationships between its features using the sample covariance matrix, [MATH: C.] For standardized data, this is calculated as:\n\nContent:\n[MATH: C=\\dfrac{1}{n-1} X^T X]\nUsing our standardized matrix from the previous slide, where [MATH: n=3]:\n[MATH: C|= (1)/(3 \u2212 1)[\u2212 1|0|1; \u2212 1|0|1][\u2212 1|\u2212 1; 0|0; 1|1]; = (1)/(2)[2|2; 2|2]; = [1|1; 1|1]]\nThe diagonal entries of [MATH: C] are the variances of the features, and the off-diagonal entries are the covariances between pairs of features."
+      },
+      {
+        "lesson_index": 4,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "611646",
+        "content_id": "14961",
+        "dom_id": "step-611646",
+        "selector": "#step-611646",
+        "step_anchor": "step-4",
+        "title": "PCA: Diagonalization",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s look again at the covariance matrix we just calculated:\n<span class=\"math\">[MATH: [1|1; 1|1]]</span>\nNotice that the matrix <span class=\"math\">[MATH: C]</span> is symmetric. In fact, the sample covariance matrix is <em>always</em> a real symmetric matrix.</p>",
+            "readable_text": "Let's look again at the covariance matrix we just calculated:\n[MATH: [1|1; 1|1]]\nNotice that the matrix [MATH: C] is symmetric. In fact, the sample covariance matrix is always a real symmetric matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall from linear algebra that any real symmetric matrix is <strong>orthogonally diagonalizable</strong>. This means we can find an orthogonal matrix <span class=\"math\">[MATH: V]</span> and a diagonal matrix <span class=\"math\">[MATH: D]</span> such that\n<span class=\"math\">[MATH: V^T C V = D]</span>\nThe entries of the diagonal matrix <span class=\"math\">[MATH: D]</span> are the eigenvalues of <span class=\"math\">[MATH: C,]</span> and the columns of the matrix <span class=\"math\">[MATH: V]</span> are the corresponding orthonormal eigenvectors.</p>",
+            "readable_text": "Recall from linear algebra that any real symmetric matrix is orthogonally diagonalizable. This means we can find an orthogonal matrix [MATH: V] and a diagonal matrix [MATH: D] such that\n[MATH: V^T C V = D]\nThe entries of the diagonal matrix [MATH: D] are the eigenvalues of [MATH: C,] and the columns of the matrix [MATH: V] are the corresponding orthonormal eigenvectors.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we shall see how to use the matrix <span class=\"math\">[MATH: V]</span> to find uncorrelated features for our data.</p>",
+            "readable_text": "Next, we shall see how to use the matrix [MATH: V] to find uncorrelated features for our data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's look again at the covariance matrix we just calculated:\n[MATH: [1|1; 1|1]]\nNotice that the matrix [MATH: C] is symmetric. In fact, the sample covariance matrix is always a real symmetric matrix.\n\nContent:\nRecall from linear algebra that any real symmetric matrix is orthogonally diagonalizable. This means we can find an orthogonal matrix [MATH: V] and a diagonal matrix [MATH: D] such that\n[MATH: V^T C V = D]\nThe entries of the diagonal matrix [MATH: D] are the eigenvalues of [MATH: C,] and the columns of the matrix [MATH: V] are the corresponding orthonormal eigenvectors.\n\nContent:\nNext, we shall see how to use the matrix [MATH: V] to find uncorrelated features for our data."
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "611560",
+        "content_id": "14952",
+        "dom_id": "step-611560",
+        "selector": "#step-611560",
+        "step_anchor": "step-5",
+        "title": "The Principal Components",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that our goal is to find new features that are uncorrelated \u2014 equivalently, features whose covariance matrix is diagonal. In the previous section, we found an orthogonal matrix <span class=\"math\">[MATH: V]</span> such that <span class=\"math\">[MATH: V^T\\!CV]</span> is diagonal. This motivates defining a <strong>transformed observation matrix</strong> <span class=\"math\">[MATH: Y = XV.]</span> The columns of this new matrix <span class=\"math\">[MATH: Y]</span> are our new features.</p>",
+            "readable_text": "Recall that our goal is to find new features that are uncorrelated \u2014 equivalently, features whose covariance matrix is diagonal. In the previous section, we found an orthogonal matrix [MATH: V] such that [MATH: V^T\\!CV] is diagonal. This motivates defining a transformed observation matrix [MATH: Y = XV.] The columns of this new matrix [MATH: Y] are our new features.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting <span class=\"math\">[MATH: C = \\dfrac{1}{n-1} X^T X]</span> into the expression <span class=\"math\">[MATH: V^T\\!CV]</span> and noting that <span class=\"math\">[MATH: (XV)^T = V^T X^T{:}]</span></p>",
+            "readable_text": "Substituting [MATH: C = \\dfrac{1}{n-1} X^T X] into the expression [MATH: V^T\\!CV] and noting that [MATH: (XV)^T = V^T X^T{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: V^{T}CV_(\u23df)_(diagonal)|= V^{T}((1)/(n \u2212 1)X^{T}X)V; = (1)/(n \u2212 1)(XV)^{T}(XV); = (1)/(n \u2212 1)Y^{T}Y_(\u23df)_(covariance of [math]Y[/math])]</span></p>",
+            "readable_text": "[MATH: V^{T}CV_(\u23df)_(diagonal)|= V^{T}((1)/(n \u2212 1)X^{T}X)V; = (1)/(n \u2212 1)(XV)^{T}(XV); = (1)/(n \u2212 1)Y^{T}Y_(\u23df)_(covariance of [math]Y[/math])]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The covariance matrix of <span class=\"math\">[MATH: Y]</span> is diagonal, so the new features <span class=\"math\">[MATH: y_1, y_2, \\ldots, y_m]</span> are uncorrelated. The diagonal entries are the eigenvalues of <span class=\"math\">[MATH: C,]</span> so <span class=\"math\">[MATH: \\text{Var}(y_i) = \\lambda_i.]</span> By arranging the columns of <span class=\"math\">[MATH: V]</span> in order of decreasing eigenvalue, the new features are also arranged in order of decreasing variance.</p>",
+            "readable_text": "The covariance matrix of [MATH: Y] is diagonal, so the new features [MATH: y_1, y_2, \\ldots, y_m] are uncorrelated. The diagonal entries are the eigenvalues of [MATH: C,] so [MATH: \\text{Var}(y_i) = \\lambda_i.] By arranging the columns of [MATH: V] in order of decreasing eigenvalue, the new features are also arranged in order of decreasing variance.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The columns of <span class=\"math\">[MATH: V]</span> (the unit eigenvectors of <span class=\"math\">[MATH: C]</span>) are called the <strong>principal components</strong>. The <span class=\"math\">[MATH: 1]</span>st <em>principal component</em> is the eigenvector corresponding to the largest eigenvalue, the <span class=\"math\">[MATH: 2]</span>nd corresponds to the second-largest, and so on.</p>",
+            "readable_text": "The columns of [MATH: V] (the unit eigenvectors of [MATH: C]) are called the principal components. The [MATH: 1]st principal component is the eigenvector corresponding to the largest eigenvalue, the [MATH: 2]nd corresponds to the second-largest, and so on.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This procedure is the core of <strong>Principal Component Analysis (PCA)</strong>. To summarize:</p>",
+            "readable_text": "This procedure is the core of Principal Component Analysis (PCA). To summarize:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p><em>We define the change-of-variables <span class=\"math\">[MATH: Y = XV,]</span> where the columns of <span class=\"math\">[MATH: V]</span> are the <strong>principal components</strong> of the data, arranged in order of decreasing eigenvalue. This ensures that:</em></p><ul><li><p><em>The new features <span class=\"math\">[MATH: y_1,y_2,\\ldots,y_m]</span> are uncorrelated (diagonal covariance).</em></p></li><li><p><em>The new features are arranged in order of decreasing variance (<span class=\"math\">[MATH: \\text{Var}(y_i) = \\lambda_i]</span>).</em></p></li></ul></blockquote>",
+            "readable_text": "> We define the change-of-variables [MATH: Y = XV,] where the columns of [MATH: V] are the principal components of the data, arranged in order of decreasing eigenvalue. This ensures that:\n>\n> - The new features [MATH: y_1,y_2,\\ldots,y_m] are uncorrelated (diagonal covariance).\n> - The new features are arranged in order of decreasing variance ([MATH: \\text{Var}(y_i) = \\lambda_i]).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now let&#x27;s understand what these vectors mean in terms of the original data.</p>",
+            "readable_text": "Now let's understand what these vectors mean in terms of the original data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that our goal is to find new features that are uncorrelated \u2014 equivalently, features whose covariance matrix is diagonal. In the previous section, we found an orthogonal matrix [MATH: V] such that [MATH: V^T\\!CV] is diagonal. This motivates defining a transformed observation matrix [MATH: Y = XV.] The columns of this new matrix [MATH: Y] are our new features.\n\nContent:\nSubstituting [MATH: C = \\dfrac{1}{n-1} X^T X] into the expression [MATH: V^T\\!CV] and noting that [MATH: (XV)^T = V^T X^T{:}]\n\nContent:\n[MATH: V^{T}CV_(\u23df)_(diagonal)|= V^{T}((1)/(n \u2212 1)X^{T}X)V; = (1)/(n \u2212 1)(XV)^{T}(XV); = (1)/(n \u2212 1)Y^{T}Y_(\u23df)_(covariance of [math]Y[/math])]\n\nContent:\nThe covariance matrix of [MATH: Y] is diagonal, so the new features [MATH: y_1, y_2, \\ldots, y_m] are uncorrelated. The diagonal entries are the eigenvalues of [MATH: C,] so [MATH: \\text{Var}(y_i) = \\lambda_i.] By arranging the columns of [MATH: V] in order of decreasing eigenvalue, the new features are also arranged in order of decreasing variance.\n\nContent:\nThe columns of [MATH: V] (the unit eigenvectors of [MATH: C]) are called the principal components. The [MATH: 1]st principal component is the eigenvector corresponding to the largest eigenvalue, the [MATH: 2]nd corresponds to the second-largest, and so on.\n\nContent:\nThis procedure is the core of Principal Component Analysis (PCA). To summarize:\n\nContent:\n> We define the change-of-variables [MATH: Y = XV,] where the columns of [MATH: V] are the principal components of the data, arranged in order of decreasing eigenvalue. This ensures that:\n>\n> - The new features [MATH: y_1,y_2,\\ldots,y_m] are uncorrelated (diagonal covariance).\n> - The new features are arranged in order of decreasing variance ([MATH: \\text{Var}(y_i) = \\lambda_i]).\n\nContent:\nNow let's understand what these vectors mean in terms of the original data."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "610818",
+        "content_id": "14785",
+        "dom_id": "step-610818",
+        "selector": "#step-610818",
+        "step_anchor": "step-6",
+        "title": "Interpretation of Principal Components",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The statistical interpretation of the principal components is as follows: </p>",
+            "readable_text": "The statistical interpretation of the principal components is as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The <span class=\"math\">[MATH: 1]</span>st principal component defines a direction along which the original data has the maximum variance.</p></li><li><p>The <span class=\"math\">[MATH: 2]</span>nd principal component is perpendicular to the <span class=\"math\">[MATH: 1]</span>st component and defines a direction along which the remaining data has the maximum variance.</p></li><li><p>The <span class=\"math\">[MATH: 3]</span>rd principal component is perpendicular to both the <span class=\"math\">[MATH: 1]</span>st and the <span class=\"math\">[MATH: 2]</span>nd components and defines a direction along which the remaining data has the maximum variance.</p><p><span class=\"math\">[MATH: \\vdots]</span> </p><p>and so on. </p></li></ul>",
+            "readable_text": "- The [MATH: 1]st principal component defines a direction along which the original data has the maximum variance.\n- The [MATH: 2]nd principal component is perpendicular to the [MATH: 1]st component and defines a direction along which the remaining data has the maximum variance.\n- The [MATH: 3]rd principal component is perpendicular to both the [MATH: 1]st and the [MATH: 2]nd components and defines a direction along which the remaining data has the maximum variance.\n\n[MATH: \\vdots]\n\nand so on.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To illustrate, let&#x27;s consider the following scatter plot of a sample of two-dimensional (paired) observations.  </p>",
+            "readable_text": "To illustrate, let's consider the following scatter plot of a sample of two-dimensional (paired) observations.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/368882f67158c570527bd593cbb15ea0\"></p>",
+            "readable_text": "[IMG: /graphics/368882f67158c570527bd593cbb15ea0]",
+            "images": [
+              {
+                "src": "/graphics/368882f67158c570527bd593cbb15ea0",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our diagram, the direction along which the data varies the most corresponds (approximately) to the line shown below.</p>",
+            "readable_text": "In our diagram, the direction along which the data varies the most corresponds (approximately) to the line shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/ba1a44157e355104151c9ae1780be494\"></p>",
+            "readable_text": "[IMG: /graphics/ba1a44157e355104151c9ae1780be494]",
+            "images": [
+              {
+                "src": "/graphics/ba1a44157e355104151c9ae1780be494",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the vectors corresponding to the first and second principal components of the data could be the unit vectors shown below. </p>",
+            "readable_text": "Therefore, the vectors corresponding to the first and second principal components of the data could be the unit vectors shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/91b24aa4e6cf140ecb1131b6366d2ffc\"></p>",
+            "readable_text": "[IMG: /graphics/91b24aa4e6cf140ecb1131b6366d2ffc]",
+            "images": [
+              {
+                "src": "/graphics/91b24aa4e6cf140ecb1131b6366d2ffc",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/368882f67158c570527bd593cbb15ea0",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/ba1a44157e355104151c9ae1780be494",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/91b24aa4e6cf140ecb1131b6366d2ffc",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThe statistical interpretation of the principal components is as follows:\n\nContent:\n- The [MATH: 1]st principal component defines a direction along which the original data has the maximum variance.\n- The [MATH: 2]nd principal component is perpendicular to the [MATH: 1]st component and defines a direction along which the remaining data has the maximum variance.\n- The [MATH: 3]rd principal component is perpendicular to both the [MATH: 1]st and the [MATH: 2]nd components and defines a direction along which the remaining data has the maximum variance.\n\n[MATH: \\vdots]\n\nand so on.\n\nContent:\nTo illustrate, let's consider the following scatter plot of a sample of two-dimensional (paired) observations.\n\nGraphic:\n[IMG: /graphics/368882f67158c570527bd593cbb15ea0]\n\nContent:\nIn our diagram, the direction along which the data varies the most corresponds (approximately) to the line shown below.\n\nGraphic:\n[IMG: /graphics/ba1a44157e355104151c9ae1780be494]\n\nContent:\nTherefore, the vectors corresponding to the first and second principal components of the data could be the unit vectors shown below.\n\nGraphic:\n[IMG: /graphics/91b24aa4e6cf140ecb1131b6366d2ffc]"
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "610819",
+        "content_id": "21882",
+        "dom_id": "step-610819",
+        "selector": "#step-610819",
+        "step_anchor": "step-7",
+        "title": "Identifying the First Principal Component From a Scatter Plot",
+        "key_prerequisites": [
+          {
+            "topic_id": "232",
+            "name": "The Transpose of a Matrix",
+            "href": "/topics/232",
+            "type": ""
+          },
+          {
+            "topic_id": "2585",
+            "name": "Scatter Plots",
+            "href": "/topics/2585",
+            "type": ""
+          },
+          {
+            "topic_id": "3335",
+            "name": "Diagonalization of 2x2 Symmetric Matrices",
+            "href": "/topics/3335",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/92fc0b08a3b713d235ef9b2a2ab0daf8\"></div><p>The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?</p>",
+            "readable_text": "[IMG: /graphics/92fc0b08a3b713d235ef9b2a2ab0daf8]\n\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?",
+            "images": [
+              {
+                "src": "/graphics/92fc0b08a3b713d235ef9b2a2ab0daf8",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that the <em>first principal component</em> of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).</p><p>In our diagram, the direction where the variance changes the most corresponds (approximately) to the vector <span class=\"math\">[MATH: \\mathbf{a},]</span> as shown below.</p><div class=\"graphic\"><img src=\"/graphics/3d4c15dc774d411a46923bd50d98ca35\"></div><p>Therefore, the correct answer is &quot;<span class=\"math\">[MATH: \\mathbf{a}]</span> only.&quot;  </p>",
+            "readable_text": "Recall that the first principal component of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).\n\nIn our diagram, the direction where the variance changes the most corresponds (approximately) to the vector [MATH: \\mathbf{a},] as shown below.\n\n[IMG: /graphics/3d4c15dc774d411a46923bd50d98ca35]\n\nTherefore, the correct answer is \"[MATH: \\mathbf{a}] only.\"",
+            "images": [
+              {
+                "src": "/graphics/3d4c15dc774d411a46923bd50d98ca35",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/92fc0b08a3b713d235ef9b2a2ab0daf8",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/3d4c15dc774d411a46923bd50d98ca35",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/92fc0b08a3b713d235ef9b2a2ab0daf8]\n\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the first principal component of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).\n\nIn our diagram, the direction where the variance changes the most corresponds (approximately) to the vector [MATH: \\mathbf{a},] as shown below.\n\n[IMG: /graphics/3d4c15dc774d411a46923bd50d98ca35]\n\nTherefore, the correct answer is \"[MATH: \\mathbf{a}] only.\""
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "148440",
+        "dom_id": "question-148440",
+        "selector": "#question-148440",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-148440\"></p>",
+          "readable_text": "[IMG: /graphics/q-148440]",
+          "images": [
+            {
+              "src": "/graphics/q-148440",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?</p>",
+          "readable_text": "The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-148440-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-148440-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: b]</span>  and <span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: b] and [MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-148440-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: a]</span> only</p>",
+            "readable_text": "[MATH: a] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-148440-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span> only</p>",
+            "readable_text": "[MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-148440-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: a]</span>  and <span class=\"math\">[MATH: b]</span> only </p>",
+            "readable_text": "[MATH: a] and [MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-148440",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-148440]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?\n\nChoices:\na. [MATH: c] only\nb. [MATH: b] and [MATH: c] only\nc. [MATH: a] only\nd. [MATH: b] only\ne. [MATH: a] and [MATH: b] only"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "148157",
+        "dom_id": "question-148157",
+        "selector": "#question-148157",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-148157\"></p>",
+          "readable_text": "[IMG: /graphics/q-148157]",
+          "images": [
+            {
+              "src": "/graphics/q-148157",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?</p>",
+          "readable_text": "The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-148157-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-148157-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: a]</span> and <span class=\"math\">[MATH: b]</span> only</p>",
+            "readable_text": "[MATH: a] and [MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-148157-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span> and <span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: b] and [MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-148157-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: a]</span> only</p>",
+            "readable_text": "[MATH: a] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-148157-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span> only</p>",
+            "readable_text": "[MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-148157",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-148157]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?\n\nChoices:\na. [MATH: c] only\nb. [MATH: a] and [MATH: b] only\nc. [MATH: b] and [MATH: c] only\nd. [MATH: a] only\ne. [MATH: b] only"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "610822",
+        "content_id": "21885",
+        "dom_id": "step-610822",
+        "selector": "#step-610822",
+        "step_anchor": "step-10",
+        "title": "Identifying the Second Principal Component From a Scatter Plot",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/c15e6a9a2161adcf61a9f6b35330e0d6\"></div><p>The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?</p>",
+            "readable_text": "[IMG: /graphics/c15e6a9a2161adcf61a9f6b35330e0d6]\n\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?",
+            "images": [
+              {
+                "src": "/graphics/c15e6a9a2161adcf61a9f6b35330e0d6",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that the <em>first principal component</em> of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).</p><p>The <em>second principal component</em> of the data corresponds to the direction perpendicular to the first principal component in which the data varies the most.</p><p>In our diagram, the direction where the variance changes the most corresponds (approximately) to the vector <span class=\"math\">[MATH: \\mathbf{b},]</span> as shown below. So, <span class=\"math\">[MATH: \\mathbf{b}]</span> defines the direction of the first principal component.</p><div class=\"graphic\"><img src=\"/graphics/afcf62fd44044d12a87e7c669aa20e84\"></div><p>Next, notice that in the 2D case, we have only one direction perpendicular to the first principal component. And this direction corresponds to the vector <span class=\"math\">[MATH: \\mathbf{c},]</span> as shown below.</p><div class=\"graphic\"><img src=\"/graphics/50a19828e4365d90a8dbabb12596bdc4\"></div><p>Therefore, the correct answer is &quot;<span class=\"math\">[MATH: \\mathbf{c}]</span> only.&quot; </p>",
+            "readable_text": "Recall that the first principal component of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).\n\nThe second principal component of the data corresponds to the direction perpendicular to the first principal component in which the data varies the most.\n\nIn our diagram, the direction where the variance changes the most corresponds (approximately) to the vector [MATH: \\mathbf{b},] as shown below. So, [MATH: \\mathbf{b}] defines the direction of the first principal component.\n\n[IMG: /graphics/afcf62fd44044d12a87e7c669aa20e84]\n\nNext, notice that in the 2D case, we have only one direction perpendicular to the first principal component. And this direction corresponds to the vector [MATH: \\mathbf{c},] as shown below.\n\n[IMG: /graphics/50a19828e4365d90a8dbabb12596bdc4]\n\nTherefore, the correct answer is \"[MATH: \\mathbf{c}] only.\"",
+            "images": [
+              {
+                "src": "/graphics/afcf62fd44044d12a87e7c669aa20e84",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/50a19828e4365d90a8dbabb12596bdc4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/c15e6a9a2161adcf61a9f6b35330e0d6",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/afcf62fd44044d12a87e7c669aa20e84",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/50a19828e4365d90a8dbabb12596bdc4",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/c15e6a9a2161adcf61a9f6b35330e0d6]\n\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the first principal component of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).\n\nThe second principal component of the data corresponds to the direction perpendicular to the first principal component in which the data varies the most.\n\nIn our diagram, the direction where the variance changes the most corresponds (approximately) to the vector [MATH: \\mathbf{b},] as shown below. So, [MATH: \\mathbf{b}] defines the direction of the first principal component.\n\n[IMG: /graphics/afcf62fd44044d12a87e7c669aa20e84]\n\nNext, notice that in the 2D case, we have only one direction perpendicular to the first principal component. And this direction corresponds to the vector [MATH: \\mathbf{c},] as shown below.\n\n[IMG: /graphics/50a19828e4365d90a8dbabb12596bdc4]\n\nTherefore, the correct answer is \"[MATH: \\mathbf{c}] only.\""
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "148491",
+        "dom_id": "question-148491",
+        "selector": "#question-148491",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-148491\"></p>",
+          "readable_text": "[IMG: /graphics/q-148491]",
+          "images": [
+            {
+              "src": "/graphics/q-148491",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?</p>",
+          "readable_text": "The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-148491-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span>  only </p>",
+            "readable_text": "[MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-148491-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: a]</span>  only</p>",
+            "readable_text": "[MATH: a] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-148491-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span> and <span class=\"math\">[MATH: c]</span> only  </p>",
+            "readable_text": "[MATH: b] and [MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-148491-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: a]</span> and <span class=\"math\">[MATH: b]</span> only  </p>",
+            "readable_text": "[MATH: a] and [MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-148491-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: c]</span> only </p>",
+            "readable_text": "[MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-148491",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-148491]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?\n\nChoices:\na. [MATH: b] only\nb. [MATH: a] only\nc. [MATH: b] and [MATH: c] only\nd. [MATH: a] and [MATH: b] only\ne. [MATH: c] only"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "148159",
+        "dom_id": "question-148159",
+        "selector": "#question-148159",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-148159\"></p>",
+          "readable_text": "[IMG: /graphics/q-148159]",
+          "images": [
+            {
+              "src": "/graphics/q-148159",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?</p>",
+          "readable_text": "The scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-148159-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-148159-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span> only</p>",
+            "readable_text": "[MATH: b] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-148159-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: a]</span> only</p>",
+            "readable_text": "[MATH: a] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-148159-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: b]</span> and <span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: b] and [MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-148159-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: a]</span> and <span class=\"math\">[MATH: c]</span> only</p>",
+            "readable_text": "[MATH: a] and [MATH: c] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-148159",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-148159]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?\n\nChoices:\na. [MATH: c] only\nb. [MATH: b] only\nc. [MATH: a] only\nd. [MATH: b] and [MATH: c] only\ne. [MATH: a] and [MATH: c] only"
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 9,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "610825",
+        "content_id": "14789",
+        "dom_id": "step-610825",
+        "selector": "#step-610825",
+        "step_anchor": "step-13",
+        "title": "Applications of Principal Component Analysis",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose a physician measured two features, <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2,]</span> corresponding to height and weight for each athlete among a group who attended a particular competition. The collected data were stored in a standardized observation matrix, with each row containing both features for each athlete.</p>",
+            "readable_text": "Suppose a physician measured two features, [MATH: x_1] and [MATH: x_2,] corresponding to height and weight for each athlete among a group who attended a particular competition. The collected data were stored in a standardized observation matrix, with each row containing both features for each athlete.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A scatter plot of the physician&#x27;s results is shown below. </p>",
+            "readable_text": "A scatter plot of the physician's results is shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/20a8b3daec066a922821a2c36630b30f\"></p>",
+            "readable_text": "[IMG: /graphics/20a8b3daec066a922821a2c36630b30f]",
+            "images": [
+              {
+                "src": "/graphics/20a8b3daec066a922821a2c36630b30f",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Remember that the first and second principal components, denoted <span class=\"math\">[MATH: \\mathbf v_1]</span> and <span class=\"math\">[MATH: \\mathbf v_2,]</span> are the unit eigenvectors of the sample covariance matrix for the data set. The physician calculates that the first and second principal components of this data are approximately \n<span class=\"math\">[MATH: [0.316; 0.947]]</span></p>",
+            "readable_text": "Remember that the first and second principal components, denoted [MATH: \\mathbf v_1] and [MATH: \\mathbf v_2,] are the unit eigenvectors of the sample covariance matrix for the data set. The physician calculates that the first and second principal components of this data are approximately\n[MATH: [0.316; 0.947]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The first and second principal components are shown below:</p>",
+            "readable_text": "The first and second principal components are shown below:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/bfc97a6bbe195c83294108242e04a373\"></p>",
+            "readable_text": "[IMG: /graphics/bfc97a6bbe195c83294108242e04a373]",
+            "images": [
+              {
+                "src": "/graphics/bfc97a6bbe195c83294108242e04a373",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The physician wants to combine the two features linearly into a single feature that preserves the maximum variance. What is the best candidate for the new feature?</p>",
+            "readable_text": "The physician wants to combine the two features linearly into a single feature that preserves the maximum variance. What is the best candidate for the new feature?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The matrix of principal components, denoted <span class=\"math\">[MATH: V,]</span> is given by</p>",
+            "readable_text": "The matrix of principal components, denoted [MATH: V,] is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [|||; v_{1}|v_{2};|||]]</span></p>",
+            "readable_text": "[MATH: [|||; v_{1}|v_{2};|||]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Applying the change of variables <span class=\"math\">[MATH: Y = XV,\\,]</span> we can convert our observation matrix <span class=\"math\">[MATH: X]</span> into a new matrix <span class=\"math\">[MATH: Y]</span> of (linearly) transformed observations such that</p>",
+            "readable_text": "Applying the change of variables [MATH: Y = XV,\\,] we can convert our observation matrix [MATH: X] into a new matrix [MATH: Y] of (linearly) transformed observations such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the covariance matrix of <span class=\"math\">[MATH: Y]</span> is diagonal (meaning that the new features <span class=\"math\">[MATH: y_1]</span> and <span class=\"math\">[MATH: y_2]</span> are uncorrelated), and </p></li><li><p>the features <span class=\"math\">[MATH: y_1]</span> and <span class=\"math\">[MATH: y_2]</span> are arranged in order of decreasing variance (meaning that most of the variance is concentrated in <span class=\"math\">[MATH: y_1]</span>).</p></li></ul>",
+            "readable_text": "- the covariance matrix of [MATH: Y] is diagonal (meaning that the new features [MATH: y_1] and [MATH: y_2] are uncorrelated), and\n- the features [MATH: y_1] and [MATH: y_2] are arranged in order of decreasing variance (meaning that most of the variance is concentrated in [MATH: y_1]).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Applying the change of variables to a single observation <span class=\"math\">[MATH: [x_{1}|x_{2}]]</span> we have</p>",
+            "readable_text": "Applying the change of variables to a single observation [MATH: [x_{1}|x_{2}]] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][0.316|\u2212 0.947; 0.947|0.316]; = [0.316x_{1} + 0.947x_{2}|\u2212 0.947x_{1} + 0.316x_{2}].]</span></p>",
+            "readable_text": "[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][0.316|\u2212 0.947; 0.947|0.316]; = [0.316x_{1} + 0.947x_{2}|\u2212 0.947x_{1} + 0.316x_{2}].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As a result, <span class=\"math\">[MATH: y_1 = 0.316 x_1 + 0.947 x_2]</span> will contain most of the variance of the data. Therefore, the best candidate for the new single feature is</p>",
+            "readable_text": "As a result, [MATH: y_1 = 0.316 x_1 + 0.947 x_2] will contain most of the variance of the data. Therefore, the best candidate for the new single feature is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_1 = 0.316 x_1 + 0.947 x_2.]</span></p>",
+            "readable_text": "[MATH: y_1 = 0.316 x_1 + 0.947 x_2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/20a8b3daec066a922821a2c36630b30f",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/bfc97a6bbe195c83294108242e04a373",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose a physician measured two features, [MATH: x_1] and [MATH: x_2,] corresponding to height and weight for each athlete among a group who attended a particular competition. The collected data were stored in a standardized observation matrix, with each row containing both features for each athlete.\n\nContent:\nA scatter plot of the physician's results is shown below.\n\nGraphic:\n[IMG: /graphics/20a8b3daec066a922821a2c36630b30f]\n\nContent:\nRemember that the first and second principal components, denoted [MATH: \\mathbf v_1] and [MATH: \\mathbf v_2,] are the unit eigenvectors of the sample covariance matrix for the data set. The physician calculates that the first and second principal components of this data are approximately\n[MATH: [0.316; 0.947]]\n\nContent:\nThe first and second principal components are shown below:\n\nGraphic:\n[IMG: /graphics/bfc97a6bbe195c83294108242e04a373]\n\nContent:\nThe physician wants to combine the two features linearly into a single feature that preserves the maximum variance. What is the best candidate for the new feature?\n\nContent:\nThe matrix of principal components, denoted [MATH: V,] is given by\n\nContent:\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nContent:\nApplying the change of variables [MATH: Y = XV,\\,] we can convert our observation matrix [MATH: X] into a new matrix [MATH: Y] of (linearly) transformed observations such that\n\nContent:\n- the covariance matrix of [MATH: Y] is diagonal (meaning that the new features [MATH: y_1] and [MATH: y_2] are uncorrelated), and\n- the features [MATH: y_1] and [MATH: y_2] are arranged in order of decreasing variance (meaning that most of the variance is concentrated in [MATH: y_1]).\n\nContent:\nApplying the change of variables to a single observation [MATH: [x_{1}|x_{2}]] we have\n\nContent:\n[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][0.316|\u2212 0.947; 0.947|0.316]; = [0.316x_{1} + 0.947x_{2}|\u2212 0.947x_{1} + 0.316x_{2}].]\n\nContent:\nAs a result, [MATH: y_1 = 0.316 x_1 + 0.947 x_2] will contain most of the variance of the data. Therefore, the best candidate for the new single feature is\n\nContent:\n[MATH: y_1 = 0.316 x_1 + 0.947 x_2.]"
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 10,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "610826",
+        "content_id": "21886",
+        "dom_id": "step-610826",
+        "selector": "#step-610826",
+        "step_anchor": "step-14",
+        "title": "Representing Principal Components as Linear Combinations",
+        "key_prerequisites": [
+          {
+            "topic_id": "1195",
+            "name": "Multiplying a Matrix by a Column Vector",
+            "href": "/topics/1195",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A geologist has measured two specific features, <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2,]</span> for each rock among a sample of rocks she is studying. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular rock.\nThe first and second principal components of the data are approximately \n<span class=\"math\">[MATH: [\u2212 0.447; 0.894]]</span>\nBy combining the two measured features linearly, the geologist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature? </p>",
+            "readable_text": "A geologist has measured two specific features, [MATH: x_1] and [MATH: x_2,] for each rock among a sample of rocks she is studying. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular rock.\nThe first and second principal components of the data are approximately\n[MATH: [\u2212 0.447; 0.894]]\nBy combining the two measured features linearly, the geologist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall the direction in which the data varies the most (the direction where we have the maximum variance) corresponds to the <em>first principal component</em> of the data.</p><div class=\"graphic\"><img src=\"/graphics/5564f2a421051c9f4b4561c46df46326\"></div><p>Let  </p><p><span class=\"math\">[MATH: [|||; v_{1}|v_{2};|||]]</span></p><p>be the matrix of principal components. Then, applying the change of variables <span class=\"math\">[MATH: Y = XV,]</span> we can convert our observation matrix <span class=\"math\">[MATH: X]</span> into a new matrix <span class=\"math\">[MATH: Y]</span> of (linearly) transformed observations such that</p><ul><li><p>the covariance matrix of <span class=\"math\">[MATH: Y]</span> is diagonal (meaning that the new features <span class=\"math\">[MATH: y_1]</span> and <span class=\"math\">[MATH: y_2]</span> are uncorrelated), and </p></li><li><p>the features <span class=\"math\">[MATH: y_1]</span> and <span class=\"math\">[MATH: y_2]</span> are arranged in order of decreasing variance (meaning that most of the variance is concentrated in <span class=\"math\">[MATH: y_1]</span>).</p></li></ul><p>Applying our change of variables to a single observation <span class=\"math\">[MATH: [x_{1}|x_{2}]]</span> we get</p><p><span class=\"math\">[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][\u2212 0.447|\u2212 0.894; 0.894|\u2212 0.447]; = [\u2212 0.447x_{1} + 0.894x_{2}|\u2212 0.894x_{1} \u2212 0.447x_{2}].]</span></p><p>As a result, we have that <span class=\"math\">[MATH: y_1 = -0.447 x_1 + 0.894 x_2]</span> will contain most of the variance of the data. </p><p>Therefore, the best candidate for the new single feature is</p><p><span class=\"math\">[MATH: y_1 = -0.447 x_1 + 0.894 x_2.]</span> </p>",
+            "readable_text": "Recall the direction in which the data varies the most (the direction where we have the maximum variance) corresponds to the first principal component of the data.\n\n[IMG: /graphics/5564f2a421051c9f4b4561c46df46326]\n\nLet\n\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nbe the matrix of principal components. Then, applying the change of variables [MATH: Y = XV,] we can convert our observation matrix [MATH: X] into a new matrix [MATH: Y] of (linearly) transformed observations such that\n\n- the covariance matrix of [MATH: Y] is diagonal (meaning that the new features [MATH: y_1] and [MATH: y_2] are uncorrelated), and\n- the features [MATH: y_1] and [MATH: y_2] are arranged in order of decreasing variance (meaning that most of the variance is concentrated in [MATH: y_1]).\n\nApplying our change of variables to a single observation [MATH: [x_{1}|x_{2}]] we get\n\n[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][\u2212 0.447|\u2212 0.894; 0.894|\u2212 0.447]; = [\u2212 0.447x_{1} + 0.894x_{2}|\u2212 0.894x_{1} \u2212 0.447x_{2}].]\n\nAs a result, we have that [MATH: y_1 = -0.447 x_1 + 0.894 x_2] will contain most of the variance of the data.\n\nTherefore, the best candidate for the new single feature is\n\n[MATH: y_1 = -0.447 x_1 + 0.894 x_2.]",
+            "images": [
+              {
+                "src": "/graphics/5564f2a421051c9f4b4561c46df46326",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/5564f2a421051c9f4b4561c46df46326",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA geologist has measured two specific features, [MATH: x_1] and [MATH: x_2,] for each rock among a sample of rocks she is studying. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular rock.\nThe first and second principal components of the data are approximately\n[MATH: [\u2212 0.447; 0.894]]\nBy combining the two measured features linearly, the geologist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall the direction in which the data varies the most (the direction where we have the maximum variance) corresponds to the first principal component of the data.\n\n[IMG: /graphics/5564f2a421051c9f4b4561c46df46326]\n\nLet\n\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nbe the matrix of principal components. Then, applying the change of variables [MATH: Y = XV,] we can convert our observation matrix [MATH: X] into a new matrix [MATH: Y] of (linearly) transformed observations such that\n\n- the covariance matrix of [MATH: Y] is diagonal (meaning that the new features [MATH: y_1] and [MATH: y_2] are uncorrelated), and\n- the features [MATH: y_1] and [MATH: y_2] are arranged in order of decreasing variance (meaning that most of the variance is concentrated in [MATH: y_1]).\n\nApplying our change of variables to a single observation [MATH: [x_{1}|x_{2}]] we get\n\n[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][\u2212 0.447|\u2212 0.894; 0.894|\u2212 0.447]; = [\u2212 0.447x_{1} + 0.894x_{2}|\u2212 0.894x_{1} \u2212 0.447x_{2}].]\n\nAs a result, we have that [MATH: y_1 = -0.447 x_1 + 0.894 x_2] will contain most of the variance of the data.\n\nTherefore, the best candidate for the new single feature is\n\n[MATH: y_1 = -0.447 x_1 + 0.894 x_2.]"
+      },
+      {
+        "lesson_index": 15,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "343703",
+        "dom_id": "question-343703",
+        "selector": "#question-343703",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>An engineer measured two particular features, <span class=\"math\">[MATH: x_{1}]</span> and <span class=\"math\">[MATH: x_{2},]</span> for each road bridge in a city. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular bridge. \nThe first and second principal components of the data are approximately\n<span class=\"math\">[MATH: v_{1} \u2248 [0.669; 0.743], v_{2} \u2248 [0.743; \u2212 0.669].]</span></p><p>By combining the two measured features linearly, the engineer wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?</p>",
+          "readable_text": "An engineer measured two particular features, [MATH: x_{1}] and [MATH: x_{2},] for each road bridge in a city. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular bridge.\nThe first and second principal components of the data are approximately\n[MATH: v_{1} \u2248 [0.669; 0.743], v_{2} \u2248 [0.743; \u2212 0.669].]\n\nBy combining the two measured features linearly, the engineer wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-343703-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.669x_{1} \u2212 0.743x_{2}]</span> </p>",
+            "readable_text": "[MATH: 0.669x_{1} \u2212 0.743x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-343703-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.743x_{2}]</span> </p>",
+            "readable_text": "[MATH: 0.743x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-343703-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.669x_{1} + 0.743x_{2}]</span> </p>",
+            "readable_text": "[MATH: 0.669x_{1} + 0.743x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-343703-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.743x_{1} \u2212 0.669x_{2}]</span> </p>",
+            "readable_text": "[MATH: 0.743x_{1} \u2212 0.669x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-343703-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.669(x_{1} + x_{2})]</span> </p>",
+            "readable_text": "[MATH: 0.669(x_{1} + x_{2})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nAn engineer measured two particular features, [MATH: x_{1}] and [MATH: x_{2},] for each road bridge in a city. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular bridge.\nThe first and second principal components of the data are approximately\n[MATH: v_{1} \u2248 [0.669; 0.743], v_{2} \u2248 [0.743; \u2212 0.669].]\n\nBy combining the two measured features linearly, the engineer wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?\n\nChoices:\na. [MATH: 0.669x_{1} \u2212 0.743x_{2}]\nb. [MATH: 0.743x_{2}]\nc. [MATH: 0.669x_{1} + 0.743x_{2}]\nd. [MATH: 0.743x_{1} \u2212 0.669x_{2}]\ne. [MATH: 0.669(x_{1} + x_{2})]"
+      },
+      {
+        "lesson_index": 16,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "344071",
+        "dom_id": "question-344071",
+        "selector": "#question-344071",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A scientist measured two particular features, <span class=\"math\">[MATH: x_{1}]</span> and <span class=\"math\">[MATH: x_{2},]</span> for each athlete in a team. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular athlete. \nThe first and second principal components of the data are approximately\n<span class=\"math\">[MATH: v_{1} \u2248 [0.894; 0.447], v_{2} \u2248 [\u2212 0.447; 0.894].]</span></p><p>By combining the two measured features linearly, the scientist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?</p>",
+          "readable_text": "A scientist measured two particular features, [MATH: x_{1}] and [MATH: x_{2},] for each athlete in a team. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular athlete.\nThe first and second principal components of the data are approximately\n[MATH: v_{1} \u2248 [0.894; 0.447], v_{2} \u2248 [\u2212 0.447; 0.894].]\n\nBy combining the two measured features linearly, the scientist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-344071-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.447x_{2}]</span>\n</p>",
+            "readable_text": "[MATH: 0.447x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-344071-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.894(x_{1} + x_{2})]</span>\n</p>",
+            "readable_text": "[MATH: 0.894(x_{1} + x_{2})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-344071-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0.894x_{1} + 0.447x_{2}]</span>\n</p>",
+            "readable_text": "[MATH: 0.894x_{1} + 0.447x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-344071-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.894x_{1} \u2212 0.447x_{2}]</span>\n</p>",
+            "readable_text": "[MATH: 0.894x_{1} \u2212 0.447x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-344071-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: \u2212 0.447x_{1} + 0.894x_{2}]</span> </p>",
+            "readable_text": "[MATH: \u2212 0.447x_{1} + 0.894x_{2}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nA scientist measured two particular features, [MATH: x_{1}] and [MATH: x_{2},] for each athlete in a team. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular athlete.\nThe first and second principal components of the data are approximately\n[MATH: v_{1} \u2248 [0.894; 0.447], v_{2} \u2248 [\u2212 0.447; 0.894].]\n\nBy combining the two measured features linearly, the scientist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?\n\nChoices:\na. [MATH: 0.447x_{2}]\nb. [MATH: 0.894(x_{1} + x_{2})]\nc. [MATH: 0.894x_{1} + 0.447x_{2}]\nd. [MATH: 0.894x_{1} \u2212 0.447x_{2}]\ne. [MATH: \u2212 0.447x_{1} + 0.894x_{2}]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nSuppose we are analyzing house prices in a specific neighborhood, gathering data on quantitative features such as the total floor space, number of bedrooms and bathrooms, and distance to the town center. Our goal is to understand the relationship between these features and property values.\n\nContent:\nProblems involving multi-dimensional data analysis, such as this one, pose several challenges:\n\nContent:\n- Multi-dimensional data is often difficult to analyze.\n- Visualization can be virtually impossible.\n- Storing multi-dimensional data on a computer can require substantial hardware resources.\n\nContent:\nWe can overcome these challenges using dimensionality reduction. Dimensionality reduction works by compressing data into a smaller number of variables while (ideally) preserving as much information as possible.\n\nContent:\nTo demonstrate the basic idea behind dimensionality reduction, consider the following data set for the variables [MATH: x] and [MATH: y{:}]\n\nGraphic:\n[IMG: /graphics/be7a44a4b7e9cf74c39037a1b5f59789]\n\nContent:\nNotice that the data does not vary much in the [MATH: y]-direction. Therefore, we can transform the data set by projecting all points onto the [MATH: x]-axis. This process removes the variation in [MATH: y] with almost no loss of overall information, as shown below:\n\nGraphic:\n[IMG: /graphics/651afef7701aecac9363ddad7cb95f8d]\n\nContent:\nMulti-dimensional data typically exhibit characteristics suitable for dimensionality reduction:\n\nContent:\n- Many variables are often correlated. In our house prices example, the number of bedrooms and bathrooms likely correlate. This means that one variable can often be expressed in terms of another. Or, we can find a new variable that describes the variation in both original variables.\n- Ultimately, we can aim to reduce the higher-dimensional structure of the data to a more fundamental, lower-dimensional structure containing only uncorrelated variables.\n\nContent:\nBy reducing the dimensionality of the data, we can work with a compact representation that retains only the most critical variables and discards the rest. This simplifies analysis and visualization.\n\n---\n\nItem 2 \u2014 Tutorial: PCA: Data Setup\n\nContent:\nIn the previous section, we saw that dimensionality reduction compresses data into fewer, uncorrelated variables. Principal Component Analysis (PCA) is a widely used technique for achieving this.\n\nContent:\nSuppose we have a sample of [MATH: n] observations, each with [MATH: m] features. We organize this data into an [MATH: n \\times m] observation matrix [MATH: X,] where each row is an observation and each column is a feature.\n\nContent:\nFor example, if we had [MATH: n=3] observations of [MATH: m=2] features, our observation matrix might look like this:\n[MATH: [1|10; 2|20; 3|30]]\nBefore applying PCA, we must standardize the data. This is because PCA is sensitive to the scale of features. For instance, measuring a feature in meters versus centimeters would lead to different results. We standardize by giving each column a mean of [MATH: 0] and a standard deviation of [MATH: 1.]\n\nContent:\nFor our example, the first column has mean [MATH: 2] and standard deviation [MATH: 1,] while the second column has mean [MATH: 20] and standard deviation [MATH: 10.] Our standardized observation matrix [MATH: X] is:\n[MATH: [(1 \u2212 2)/1|(10 \u2212 20)/10; (2 \u2212 2)/1|(20 \u2212 20)/10; (3 \u2212 2)/1|(30 \u2212 20)/10]]\nNext, we'll use this standardized data to analyze the relationships between the features.\n\n---\n\nItem 3 \u2014 Tutorial: PCA: Constructing the Covariance Matrix\n\nContent:\nNow that our data matrix [MATH: X] is standardized, we examine the relationships between its features using the sample covariance matrix, [MATH: C.] For standardized data, this is calculated as:\n\nContent:\n[MATH: C=\\dfrac{1}{n-1} X^T X]\nUsing our standardized matrix from the previous slide, where [MATH: n=3]:\n[MATH: C|= (1)/(3 \u2212 1)[\u2212 1|0|1; \u2212 1|0|1][\u2212 1|\u2212 1; 0|0; 1|1]; = (1)/(2)[2|2; 2|2]; = [1|1; 1|1]]\nThe diagonal entries of [MATH: C] are the variances of the features, and the off-diagonal entries are the covariances between pairs of features.\n\n---\n\nItem 4 \u2014 Tutorial: PCA: Diagonalization\n\nContent:\nLet's look again at the covariance matrix we just calculated:\n[MATH: [1|1; 1|1]]\nNotice that the matrix [MATH: C] is symmetric. In fact, the sample covariance matrix is always a real symmetric matrix.\n\nContent:\nRecall from linear algebra that any real symmetric matrix is orthogonally diagonalizable. This means we can find an orthogonal matrix [MATH: V] and a diagonal matrix [MATH: D] such that\n[MATH: V^T C V = D]\nThe entries of the diagonal matrix [MATH: D] are the eigenvalues of [MATH: C,] and the columns of the matrix [MATH: V] are the corresponding orthonormal eigenvectors.\n\nContent:\nNext, we shall see how to use the matrix [MATH: V] to find uncorrelated features for our data.\n\n---\n\nItem 5 \u2014 Tutorial: The Principal Components\n\nContent:\nRecall that our goal is to find new features that are uncorrelated \u2014 equivalently, features whose covariance matrix is diagonal. In the previous section, we found an orthogonal matrix [MATH: V] such that [MATH: V^T\\!CV] is diagonal. This motivates defining a transformed observation matrix [MATH: Y = XV.] The columns of this new matrix [MATH: Y] are our new features.\n\nContent:\nSubstituting [MATH: C = \\dfrac{1}{n-1} X^T X] into the expression [MATH: V^T\\!CV] and noting that [MATH: (XV)^T = V^T X^T{:}]\n\nContent:\n[MATH: V^{T}CV_(\u23df)_(diagonal)|= V^{T}((1)/(n \u2212 1)X^{T}X)V; = (1)/(n \u2212 1)(XV)^{T}(XV); = (1)/(n \u2212 1)Y^{T}Y_(\u23df)_(covariance of [math]Y[/math])]\n\nContent:\nThe covariance matrix of [MATH: Y] is diagonal, so the new features [MATH: y_1, y_2, \\ldots, y_m] are uncorrelated. The diagonal entries are the eigenvalues of [MATH: C,] so [MATH: \\text{Var}(y_i) = \\lambda_i.] By arranging the columns of [MATH: V] in order of decreasing eigenvalue, the new features are also arranged in order of decreasing variance.\n\nContent:\nThe columns of [MATH: V] (the unit eigenvectors of [MATH: C]) are called the principal components. The [MATH: 1]st principal component is the eigenvector corresponding to the largest eigenvalue, the [MATH: 2]nd corresponds to the second-largest, and so on.\n\nContent:\nThis procedure is the core of Principal Component Analysis (PCA). To summarize:\n\nContent:\n> We define the change-of-variables [MATH: Y = XV,] where the columns of [MATH: V] are the principal components of the data, arranged in order of decreasing eigenvalue. This ensures that:\n>\n> - The new features [MATH: y_1,y_2,\\ldots,y_m] are uncorrelated (diagonal covariance).\n> - The new features are arranged in order of decreasing variance ([MATH: \\text{Var}(y_i) = \\lambda_i]).\n\nContent:\nNow let's understand what these vectors mean in terms of the original data.\n\n---\n\nItem 6 \u2014 Tutorial: Interpretation of Principal Components\n\nContent:\nThe statistical interpretation of the principal components is as follows:\n\nContent:\n- The [MATH: 1]st principal component defines a direction along which the original data has the maximum variance.\n- The [MATH: 2]nd principal component is perpendicular to the [MATH: 1]st component and defines a direction along which the remaining data has the maximum variance.\n- The [MATH: 3]rd principal component is perpendicular to both the [MATH: 1]st and the [MATH: 2]nd components and defines a direction along which the remaining data has the maximum variance.\n\n[MATH: \\vdots]\n\nand so on.\n\nContent:\nTo illustrate, let's consider the following scatter plot of a sample of two-dimensional (paired) observations.\n\nGraphic:\n[IMG: /graphics/368882f67158c570527bd593cbb15ea0]\n\nContent:\nIn our diagram, the direction along which the data varies the most corresponds (approximately) to the line shown below.\n\nGraphic:\n[IMG: /graphics/ba1a44157e355104151c9ae1780be494]\n\nContent:\nTherefore, the vectors corresponding to the first and second principal components of the data could be the unit vectors shown below.\n\nGraphic:\n[IMG: /graphics/91b24aa4e6cf140ecb1131b6366d2ffc]\n\n---\n\nItem 7 \u2014 Example: Identifying the First Principal Component From a Scatter Plot\n\nExample Prompt:\n[IMG: /graphics/92fc0b08a3b713d235ef9b2a2ab0daf8]\n\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the first principal component of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).\n\nIn our diagram, the direction where the variance changes the most corresponds (approximately) to the vector [MATH: \\mathbf{a},] as shown below.\n\n[IMG: /graphics/3d4c15dc774d411a46923bd50d98ca35]\n\nTherefore, the correct answer is \"[MATH: \\mathbf{a}] only.\"\n\n---\n\nItem 8 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-148440]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?\n\nChoices:\na. [MATH: c] only\nb. [MATH: b] and [MATH: c] only\nc. [MATH: a] only\nd. [MATH: b] only\ne. [MATH: a] and [MATH: b] only\n\n---\n\nItem 9 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-148157]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the first principal component of the data?\n\nChoices:\na. [MATH: c] only\nb. [MATH: a] and [MATH: b] only\nc. [MATH: b] and [MATH: c] only\nd. [MATH: a] only\ne. [MATH: b] only\n\n---\n\nItem 10 \u2014 Example: Identifying the Second Principal Component From a Scatter Plot\n\nExample Prompt:\n[IMG: /graphics/c15e6a9a2161adcf61a9f6b35330e0d6]\n\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the first principal component of the data corresponds to the direction in which the data varies the most (the direction where we have the maximum variance).\n\nThe second principal component of the data corresponds to the direction perpendicular to the first principal component in which the data varies the most.\n\nIn our diagram, the direction where the variance changes the most corresponds (approximately) to the vector [MATH: \\mathbf{b},] as shown below. So, [MATH: \\mathbf{b}] defines the direction of the first principal component.\n\n[IMG: /graphics/afcf62fd44044d12a87e7c669aa20e84]\n\nNext, notice that in the 2D case, we have only one direction perpendicular to the first principal component. And this direction corresponds to the vector [MATH: \\mathbf{c},] as shown below.\n\n[IMG: /graphics/50a19828e4365d90a8dbabb12596bdc4]\n\nTherefore, the correct answer is \"[MATH: \\mathbf{c}] only.\"\n\n---\n\nItem 11 \u2014 Question 3\n\nQuestion Graphic:\n[IMG: /graphics/q-148491]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?\n\nChoices:\na. [MATH: b] only\nb. [MATH: a] only\nc. [MATH: b] and [MATH: c] only\nd. [MATH: a] and [MATH: b] only\ne. [MATH: c] only\n\n---\n\nItem 12 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-148159]\n\nPrompt:\nThe scatter plot for a sample of paired observations is shown above. What vectors correspond to the direction of the second principal component of the data?\n\nChoices:\na. [MATH: c] only\nb. [MATH: b] only\nc. [MATH: a] only\nd. [MATH: b] and [MATH: c] only\ne. [MATH: a] and [MATH: c] only\n\n---\n\nItem 13 \u2014 Tutorial: Applications of Principal Component Analysis\n\nContent:\nSuppose a physician measured two features, [MATH: x_1] and [MATH: x_2,] corresponding to height and weight for each athlete among a group who attended a particular competition. The collected data were stored in a standardized observation matrix, with each row containing both features for each athlete.\n\nContent:\nA scatter plot of the physician's results is shown below.\n\nGraphic:\n[IMG: /graphics/20a8b3daec066a922821a2c36630b30f]\n\nContent:\nRemember that the first and second principal components, denoted [MATH: \\mathbf v_1] and [MATH: \\mathbf v_2,] are the unit eigenvectors of the sample covariance matrix for the data set. The physician calculates that the first and second principal components of this data are approximately\n[MATH: [0.316; 0.947]]\n\nContent:\nThe first and second principal components are shown below:\n\nGraphic:\n[IMG: /graphics/bfc97a6bbe195c83294108242e04a373]\n\nContent:\nThe physician wants to combine the two features linearly into a single feature that preserves the maximum variance. What is the best candidate for the new feature?\n\nContent:\nThe matrix of principal components, denoted [MATH: V,] is given by\n\nContent:\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nContent:\nApplying the change of variables [MATH: Y = XV,\\,] we can convert our observation matrix [MATH: X] into a new matrix [MATH: Y] of (linearly) transformed observations such that\n\nContent:\n- the covariance matrix of [MATH: Y] is diagonal (meaning that the new features [MATH: y_1] and [MATH: y_2] are uncorrelated), and\n- the features [MATH: y_1] and [MATH: y_2] are arranged in order of decreasing variance (meaning that most of the variance is concentrated in [MATH: y_1]).\n\nContent:\nApplying the change of variables to a single observation [MATH: [x_{1}|x_{2}]] we have\n\nContent:\n[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][0.316|\u2212 0.947; 0.947|0.316]; = [0.316x_{1} + 0.947x_{2}|\u2212 0.947x_{1} + 0.316x_{2}].]\n\nContent:\nAs a result, [MATH: y_1 = 0.316 x_1 + 0.947 x_2] will contain most of the variance of the data. Therefore, the best candidate for the new single feature is\n\nContent:\n[MATH: y_1 = 0.316 x_1 + 0.947 x_2.]\n\n---\n\nItem 14 \u2014 Example: Representing Principal Components as Linear Combinations\n\nExample Prompt:\nA geologist has measured two specific features, [MATH: x_1] and [MATH: x_2,] for each rock among a sample of rocks she is studying. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular rock.\nThe first and second principal components of the data are approximately\n[MATH: [\u2212 0.447; 0.894]]\nBy combining the two measured features linearly, the geologist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall the direction in which the data varies the most (the direction where we have the maximum variance) corresponds to the first principal component of the data.\n\n[IMG: /graphics/5564f2a421051c9f4b4561c46df46326]\n\nLet\n\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nbe the matrix of principal components. Then, applying the change of variables [MATH: Y = XV,] we can convert our observation matrix [MATH: X] into a new matrix [MATH: Y] of (linearly) transformed observations such that\n\n- the covariance matrix of [MATH: Y] is diagonal (meaning that the new features [MATH: y_1] and [MATH: y_2] are uncorrelated), and\n- the features [MATH: y_1] and [MATH: y_2] are arranged in order of decreasing variance (meaning that most of the variance is concentrated in [MATH: y_1]).\n\nApplying our change of variables to a single observation [MATH: [x_{1}|x_{2}]] we get\n\n[MATH: [y_{1}|y_{2}]|= [x_{1}|x_{2}]V; = [x_{1}|x_{2}][\u2212 0.447|\u2212 0.894; 0.894|\u2212 0.447]; = [\u2212 0.447x_{1} + 0.894x_{2}|\u2212 0.894x_{1} \u2212 0.447x_{2}].]\n\nAs a result, we have that [MATH: y_1 = -0.447 x_1 + 0.894 x_2] will contain most of the variance of the data.\n\nTherefore, the best candidate for the new single feature is\n\n[MATH: y_1 = -0.447 x_1 + 0.894 x_2.]\n\n---\n\nItem 15 \u2014 Question 5\n\nPrompt:\nAn engineer measured two particular features, [MATH: x_{1}] and [MATH: x_{2},] for each road bridge in a city. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular bridge.\nThe first and second principal components of the data are approximately\n[MATH: v_{1} \u2248 [0.669; 0.743], v_{2} \u2248 [0.743; \u2212 0.669].]\n\nBy combining the two measured features linearly, the engineer wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?\n\nChoices:\na. [MATH: 0.669x_{1} \u2212 0.743x_{2}]\nb. [MATH: 0.743x_{2}]\nc. [MATH: 0.669x_{1} + 0.743x_{2}]\nd. [MATH: 0.743x_{1} \u2212 0.669x_{2}]\ne. [MATH: 0.669(x_{1} + x_{2})]\n\n---\n\nItem 16 \u2014 Question 6\n\nPrompt:\nA scientist measured two particular features, [MATH: x_{1}] and [MATH: x_{2},] for each athlete in a team. The collected data was stored in a standardized observation matrix, where each row contains both features for a particular athlete.\nThe first and second principal components of the data are approximately\n[MATH: v_{1} \u2248 [0.894; 0.447], v_{2} \u2248 [\u2212 0.447; 0.894].]\n\nBy combining the two measured features linearly, the scientist wants to construct a single feature that preserves the maximum amount of variance of the collected data. Which of the following could be the best candidate for the new feature?\n\nChoices:\na. [MATH: 0.447x_{2}]\nb. [MATH: 0.894(x_{1} + x_{2})]\nc. [MATH: 0.894x_{1} + 0.447x_{2}]\nd. [MATH: 0.894x_{1} \u2212 0.447x_{2}]\ne. [MATH: \u2212 0.447x_{1} + 0.894x_{2}]"
+  }
+}

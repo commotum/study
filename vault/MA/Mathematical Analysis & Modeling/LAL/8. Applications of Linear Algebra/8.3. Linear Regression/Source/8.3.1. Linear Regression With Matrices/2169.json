@@ -1,0 +1,1168 @@
+{
+  "schema_version": 2,
+  "topic_id": "2169",
+  "topic_title": "Linear Regression With Matrices",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2169/Source/2169.html",
+  "source_url": "https://mathacademy.com/topics/2169",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20307",
+        "dom_id": "sectionLink-20307",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20307"
+      },
+      {
+        "index": 2,
+        "step_id": "37273",
+        "dom_id": "sectionLink-37273",
+        "name": "",
+        "title": "Identifying Elements of a Regression Line in Terms of Matrices and Vectors",
+        "selector": "#sectionLink-37273"
+      },
+      {
+        "index": 3,
+        "step_id": "20308",
+        "dom_id": "sectionLink-20308",
+        "name": "",
+        "title": "Finding a Least-Squares Regression Line",
+        "selector": "#sectionLink-20308"
+      },
+      {
+        "index": 4,
+        "step_id": "20310",
+        "dom_id": "sectionLink-20310",
+        "name": "",
+        "title": "Finding a Least-Squares Regression Line in Context",
+        "selector": "#sectionLink-20310"
+      },
+      {
+        "index": 5,
+        "step_id": "37328",
+        "dom_id": "sectionLink-37328",
+        "name": "",
+        "title": "Least-Squares vs. Minimizing the Sum of the Squared Residuals",
+        "selector": "#sectionLink-37328"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2166",
+        "name": "The Least-Squares Solution of a Linear System (Without Collinearity)",
+        "href": "/topics/the-least-squares-solution-of-a-linear-system-without-collinearity-2166"
+      },
+      {
+        "topic_id": "3753",
+        "name": "Making Predictions Using Trend Lines",
+        "href": "/topics/making-predictions-using-trend-lines-3753"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20307",
+        "content_id": "3652",
+        "dom_id": "step-20307",
+        "selector": "#step-20307",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the following data set:</p>",
+            "readable_text": "Consider the following data set:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p><span class=\"math\">[MATH: x]</span></p></th><td><p><b><span class=\"math\">[MATH: 100]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 110]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 120]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 130]</span></b></p></td></tr><tr><th><p><span class=\"math\">[MATH: y]</span></p></th><td><p><span class=\"math\">[MATH: 12]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: x] | [MATH: 100] | [MATH: 110] | [MATH: 120] | [MATH: 130] |\n| [MATH: y] | [MATH: 12] | [MATH: 11] | [MATH: 12] | [MATH: 15] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Our goal is to describe how to use matrices to carry out a linear regression. That is, we want to find an equation of the form</p>",
+            "readable_text": "Our goal is to describe how to use matrices to carry out a linear regression. That is, we want to find an equation of the form",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \\beta_0 + \\beta_1 x]</span></p>",
+            "readable_text": "[MATH: y = \\beta_0 + \\beta_1 x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>that best fits the given data points. </p>",
+            "readable_text": "that best fits the given data points.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/c0181831a6e790c04476f51670da497c\"></p>",
+            "readable_text": "[IMG: /graphics/c0181831a6e790c04476f51670da497c]",
+            "images": [
+              {
+                "src": "/graphics/c0181831a6e790c04476f51670da497c",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s write our problem in matrix notation. Substituting the values of <span class=\"math\">[MATH: x]</span> into the regression equation and equating the results to the corresponding observed values of <span class=\"math\">[MATH: y,]</span> we obtain the system</p>",
+            "readable_text": "Let's write our problem in matrix notation. Substituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the system",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\u03b2_{0} + 100\u03b2_{1} = 12; \u03b2_{0} + 110\u03b2_{1} = 11; \u03b2_{0} + 120\u03b2_{1} = 12; \u03b2_{0} + 130\u03b2_{1} = 15]</span></p>",
+            "readable_text": "[MATH: {\u03b2_{0} + 100\u03b2_{1} = 12; \u03b2_{0} + 110\u03b2_{1} = 11; \u03b2_{0} + 120\u03b2_{1} = 12; \u03b2_{0} + 130\u03b2_{1} = 15]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>which can be expressed in matrix notation as</p>",
+            "readable_text": "which can be expressed in matrix notation as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|100; 1|110; 1|120; 1|130]]</span></p>",
+            "readable_text": "[MATH: [1|100; 1|110; 1|120; 1|130]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The matrix <span class=\"math\">[MATH: X]</span> is called the <strong>design matrix,</strong> and <span class=\"math\">[MATH: \\mathbf{y}]</span> is called the <strong>observation vector</strong>. </p>",
+            "readable_text": "The matrix [MATH: X] is called the design matrix, and [MATH: \\mathbf{y}] is called the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since our points do not lie on a straight line, there will be no parameters <span class=\"math\">[MATH: \\beta_0]</span> and <span class=\"math\">[MATH: \\beta_1]</span> such that this equation is true. So instead, we seek parameters <span class=\"math\">[MATH: \\beta_0]</span> and <span class=\"math\">[MATH: \\beta_1]</span> that best approximate the solution.</p>",
+            "readable_text": "Since our points do not lie on a straight line, there will be no parameters [MATH: \\beta_0] and [MATH: \\beta_1] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0] and [MATH: \\beta_1] that best approximate the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, we seek to find a column vector <span class=\"math\">[MATH: \\boldsymbol\\beta]</span> such that</p>",
+            "readable_text": "In other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]</span></p>",
+            "readable_text": "[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is as small as possible.</p>",
+            "readable_text": "is as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that this is exactly the least-squares problem for the system <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]</span> Therefore, the coefficients of the line that best fits the data can be found as the solution to the corresponding least-squares problem! </p>",
+            "readable_text": "Notice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the line that best fits the data can be found as the solution to the corresponding least-squares problem!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This approach to finding parameters for a linear regression model is often called <strong>ordinary least squares (OLS) regression</strong>.</p>",
+            "readable_text": "This approach to finding parameters for a linear regression model is often called ordinary least squares (OLS) regression.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Pre-multiplying the equation <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}]</span> by <span class=\"math\">[MATH: X^T,]</span> we obtain the corresponding normal equation</p>",
+            "readable_text": "Pre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the columns of <span class=\"math\">[MATH: X]</span> are linearly independent, the matrix <span class=\"math\">[MATH: {X^T}X]</span> is invertible, and </p>",
+            "readable_text": "Since the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> into the formula above and simplifying, we get</p>",
+            "readable_text": "Substituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03b2^(^) = [1; 0.1].]</span></p>",
+            "readable_text": "[MATH: \u03b2^(^) = [1; 0.1].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the line of best fit (regression line) is </p>",
+            "readable_text": "Therefore, the line of best fit (regression line) is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = 1+ 0.1x.]</span></p>",
+            "readable_text": "[MATH: y = 1+ 0.1x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/c0181831a6e790c04476f51670da497c",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConsider the following data set:\n\nContent:\n| [MATH: x] | [MATH: 100] | [MATH: 110] | [MATH: 120] | [MATH: 130] |\n| [MATH: y] | [MATH: 12] | [MATH: 11] | [MATH: 12] | [MATH: 15] |\n\nContent:\nOur goal is to describe how to use matrices to carry out a linear regression. That is, we want to find an equation of the form\n\nContent:\n[MATH: y = \\beta_0 + \\beta_1 x]\n\nContent:\nthat best fits the given data points.\n\nGraphic:\n[IMG: /graphics/c0181831a6e790c04476f51670da497c]\n\nContent:\nLet's write our problem in matrix notation. Substituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the system\n\nContent:\n[MATH: {\u03b2_{0} + 100\u03b2_{1} = 12; \u03b2_{0} + 110\u03b2_{1} = 11; \u03b2_{0} + 120\u03b2_{1} = 12; \u03b2_{0} + 130\u03b2_{1} = 15]\n\nContent:\nwhich can be expressed in matrix notation as\n\nContent:\n[MATH: [1|100; 1|110; 1|120; 1|130]]\n\nContent:\nThe matrix [MATH: X] is called the design matrix, and [MATH: \\mathbf{y}] is called the observation vector.\n\nContent:\nSince our points do not lie on a straight line, there will be no parameters [MATH: \\beta_0] and [MATH: \\beta_1] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0] and [MATH: \\beta_1] that best approximate the solution.\n\nContent:\nIn other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that\n\nContent:\n[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]\n\nContent:\nis as small as possible.\n\nContent:\nNotice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the line that best fits the data can be found as the solution to the corresponding least-squares problem!\n\nContent:\nThis approach to finding parameters for a linear regression model is often called ordinary least squares (OLS) regression.\n\nContent:\nPre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation\n\nContent:\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nContent:\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and\n\nContent:\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nContent:\nSubstituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get\n\nContent:\n[MATH: \u03b2^(^) = [1; 0.1].]\n\nContent:\nTherefore, the line of best fit (regression line) is\n\nContent:\n[MATH: y = 1+ 0.1x.]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "37273",
+        "content_id": "9914",
+        "dom_id": "step-37273",
+        "selector": "#step-37273",
+        "step_anchor": "step-2",
+        "title": "Identifying Elements of a Regression Line in Terms of Matrices and Vectors",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: -6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: -3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: -1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: -7]</span></p></td><td><p><span class=\"math\">[MATH: -4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td></tr></table><p>The vector of coefficients  of the line <span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x]</span> that best fits the data above can be found using linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}]]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. Which are the design matrix <span class=\"math\">[MATH: X]</span> and the observation vector <span class=\"math\">[MATH: \\mathbf{y}]</span> in this context?</p>",
+            "readable_text": "| [MATH: x] | [MATH: -6] | [MATH: -3] | [MATH: -1] | [MATH: 0] | [MATH: 4] |\n| [MATH: y] | [MATH: -7] | [MATH: -4] | [MATH: 2] | [MATH: 8] | [MATH: 10] |\n\nThe vector of coefficients of the line [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Which are the design matrix [MATH: X] and the observation vector [MATH: \\mathbf{y}] in this context?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}-6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}-3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}-1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}-7]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}-4]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}2]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}8]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}10]</span></p></td></tr></table><p>The coefficients of the line that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system </p><p><span class=\"math\">[MATH: [1|\u2212 6; 1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [\u2212 7; \u2212 4; 2; 8; 10]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p>",
+            "readable_text": "| [MATH: x] | [MATH: \\color{blue}-6] | [MATH: \\color{blue}-3] | [MATH: \\color{blue}-1] | [MATH: \\color{blue}0] | [MATH: \\color{blue}4] |\n| [MATH: y] | [MATH: \\color{red}-7] | [MATH: \\color{red}-4] | [MATH: \\color{red}2] | [MATH: \\color{red}8] | [MATH: \\color{red}10] |\n\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 6; 1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [\u2212 7; \u2212 4; 2; 8; 10]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x] | [MATH: -6] | [MATH: -3] | [MATH: -1] | [MATH: 0] | [MATH: 4] |\n| [MATH: y] | [MATH: -7] | [MATH: -4] | [MATH: 2] | [MATH: 8] | [MATH: 10] |\n\nThe vector of coefficients of the line [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Which are the design matrix [MATH: X] and the observation vector [MATH: \\mathbf{y}] in this context?\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x] | [MATH: \\color{blue}-6] | [MATH: \\color{blue}-3] | [MATH: \\color{blue}-1] | [MATH: \\color{blue}0] | [MATH: \\color{blue}4] |\n| [MATH: y] | [MATH: \\color{red}-7] | [MATH: \\color{red}-4] | [MATH: \\color{red}2] | [MATH: \\color{red}8] | [MATH: \\color{red}10] |\n\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 6; 1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [\u2212 7; \u2212 4; 2; 8; 10]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector."
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "41462",
+        "dom_id": "question-41462",
+        "selector": "#question-41462",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \u2212 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \u2212 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 6]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 5]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table><p>The vector of coefficients  of the line <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x]</span> that best fits the data above can be found using linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nThe vector of coefficients of the line [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41462-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 2; 1|\u2212 1; 1|0; 1|1; 1|2]]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 2; 1|\u2212 1; 1|0; 1|1; 1|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41462-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 6; 1|\u2212 5; 1|\u2212 1; 1|1; 1|1]]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 6; 1|\u2212 5; 1|\u2212 1; 1|1; 1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41462-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 6|\u2212 2; \u2212 5|\u2212 1; \u2212 1|0; 1|1; 1|2]]</span></p>",
+            "readable_text": "[MATH: [\u2212 6|\u2212 2; \u2212 5|\u2212 1; \u2212 1|0; 1|1; 1|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41462-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2|\u2212 1|0|1|1; \u2212 6|\u2212 5|\u2212 1|1|1]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2|\u2212 1|0|1|1; \u2212 6|\u2212 5|\u2212 1|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41462-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|1|1|1; \u2212 2|\u2212 1|0|1|1]]</span></p>",
+            "readable_text": "[MATH: [1|1|1|1|1; \u2212 2|\u2212 1|0|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nThe vector of coefficients of the line [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|\u2212 2; 1|\u2212 1; 1|0; 1|1; 1|2]]\nb. [MATH: [1|\u2212 6; 1|\u2212 5; 1|\u2212 1; 1|1; 1|1]]\nc. [MATH: [\u2212 6|\u2212 2; \u2212 5|\u2212 1; \u2212 1|0; 1|1; 1|2]]\nd. [MATH: [\u2212 2|\u2212 1|0|1|1; \u2212 6|\u2212 5|\u2212 1|1|1]]\ne. [MATH: [1|1|1|1|1; \u2212 2|\u2212 1|0|1|1]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "139517",
+        "dom_id": "question-139517",
+        "selector": "#question-139517",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \u2212 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \u2212 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 6]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 5]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table><p>The vector of coefficients  of the line <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x]</span> that best fits the data above can be found using linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the observation vector <span class=\"math\">[MATH: y]</span> in this context?</p>",
+          "readable_text": "| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nThe vector of coefficients of the line [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139517-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|1|1|1]]</span></p>",
+            "readable_text": "[MATH: [1|1|1|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139517-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2|\u2212 1|0|1|2]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2|\u2212 1|0|1|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139517-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2; \u2212 1; 0; 1; 2]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2; \u2212 1; 0; 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139517-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 6|\u2212 5|\u2212 1|1|1]]</span></p>",
+            "readable_text": "[MATH: [\u2212 6|\u2212 5|\u2212 1|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139517-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 6; \u2212 5; \u2212 1; 1; 1]]</span></p>",
+            "readable_text": "[MATH: [\u2212 6; \u2212 5; \u2212 1; 1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nThe vector of coefficients of the line [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?\n\nChoices:\na. [MATH: [1|1|1|1|1]]\nb. [MATH: [\u2212 2|\u2212 1|0|1|2]]\nc. [MATH: [\u2212 2; \u2212 1; 0; 1; 2]]\nd. [MATH: [\u2212 6|\u2212 5|\u2212 1|1|1]]\ne. [MATH: [\u2212 6; \u2212 5; \u2212 1; 1; 1]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20308",
+        "content_id": "5610",
+        "dom_id": "step-20308",
+        "selector": "#step-20308",
+        "step_anchor": "step-5",
+        "title": "Finding a Least-Squares Regression Line",
+        "key_prerequisites": [
+          {
+            "topic_id": "2166",
+            "name": "The Least-Squares Solution of a Linear System (Without Collinearity)",
+            "href": "/topics/2166",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: -3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: -1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr></table><p>Find the line of the form <span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x]</span> that best fits the data above.</p><p><em>Hint: You can use the fact that</em>\n<span class=\"math\">[MATH: [26|0; 0|4]]</span>\n<em>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</em></p>",
+            "readable_text": "| [MATH: x] | [MATH: -3] | [MATH: -1] | [MATH: 0] | [MATH: 4] |\n| [MATH: y] | [MATH: 10] | [MATH: 8] | [MATH: 6] | [MATH: 3] |\n\nFind the line of the form [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: [26|0; 0|4]]\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The coefficients of the line that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system </p><p><span class=\"math\">[MATH: [1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [10; 8; 6; 3]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p><p>Pre-multiplying this equation by <span class=\"math\">[MATH: X^T,]</span> we obtain the corresponding normal equation</p><p><span class=\"math\">[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]</span></p><p>Since the columns of <span class=\"math\">[MATH: X]</span> are linearly independent, the matrix <span class=\"math\">[MATH: {X^T}X]</span> is invertible and </p><p><span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]</span></p><p>Substituting the given values of <span class=\"math\">[MATH: ({X^T} X )^{-1}]</span> and <span class=\"math\">[MATH: X^T \\mathbf{y}]</span> into the formula, we get</p><p><span class=\"math\">[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(104)[26|0; 0|4][27; \u2212 26]; = [6.75; \u2212 1].]</span></p><p>Hence, <span class=\"math\">[MATH: y = 6.75 - x.]</span></p>",
+            "readable_text": "The coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [10; 8; 6; 3]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nSubstituting the given values of [MATH: ({X^T} X )^{-1}] and [MATH: X^T \\mathbf{y}] into the formula, we get\n\n[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(104)[26|0; 0|4][27; \u2212 26]; = [6.75; \u2212 1].]\n\nHence, [MATH: y = 6.75 - x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x] | [MATH: -3] | [MATH: -1] | [MATH: 0] | [MATH: 4] |\n| [MATH: y] | [MATH: 10] | [MATH: 8] | [MATH: 6] | [MATH: 3] |\n\nFind the line of the form [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: [26|0; 0|4]]\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [10; 8; 6; 3]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nSubstituting the given values of [MATH: ({X^T} X )^{-1}] and [MATH: X^T \\mathbf{y}] into the formula, we get\n\n[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(104)[26|0; 0|4][27; \u2212 26]; = [6.75; \u2212 1].]\n\nHence, [MATH: y = 6.75 - x.]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "41559",
+        "dom_id": "question-41559",
+        "selector": "#question-41559",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \u2212 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \u2212 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 6]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 5]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table><p>Find the line of the form <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x]</span> that best fits the data above.</p><p><em>Hint: You can use the fact that</em>\n<span class=\"math\">[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[2|0; 0|1], X^{T}y = [\u2212 10; 20],]</span>\n<em>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector.</em></p>",
+          "readable_text": "| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[2|0; 0|1], X^{T}y = [\u2212 10; 20],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41559-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = 2 \u2212 x]</span></p>",
+            "readable_text": "[MATH: y = 2 \u2212 x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41559-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \u2212 1 + 3x]</span></p>",
+            "readable_text": "[MATH: y = \u2212 1 + 3x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41559-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = (3)/(2)x]</span></p>",
+            "readable_text": "[MATH: y = (3)/(2)x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41559-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \u2212 1 + (1)/(2)x]</span></p>",
+            "readable_text": "[MATH: y = \u2212 1 + (1)/(2)x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41559-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \u2212 2 + 2x]</span></p>",
+            "readable_text": "[MATH: y = \u2212 2 + 2x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[2|0; 0|1], X^{T}y = [\u2212 10; 20],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: y = 2 \u2212 x]\nb. [MATH: y = \u2212 1 + 3x]\nc. [MATH: y = (3)/(2)x]\nd. [MATH: y = \u2212 1 + (1)/(2)x]\ne. [MATH: y = \u2212 2 + 2x]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "139618",
+        "dom_id": "question-139618",
+        "selector": "#question-139618",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td></tr></table><p>Find the line of the form <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x]</span> that best fits the data above.</p><p><em>Hint: You can use the fact that</em>\n<span class=\"math\">[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[6|\u2212 2; \u2212 2|1], X^{T}y = [13; 9],]</span>\n<em>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector.</em></p>",
+          "readable_text": "| [MATH: x] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: y] | [MATH: 6] | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: \u2212 1] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[6|\u2212 2; \u2212 2|1], X^{T}y = [13; 9],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139618-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = 1.7 \u2212 6x]</span></p>",
+            "readable_text": "[MATH: y = 1.7 \u2212 6x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139618-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \u2212 6 + 1.7x]</span></p>",
+            "readable_text": "[MATH: y = \u2212 6 + 1.7x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139618-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \u2212 1.7 \u2212 6x]</span></p>",
+            "readable_text": "[MATH: y = \u2212 1.7 \u2212 6x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139618-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \u2212 1.7 + 6x]</span></p>",
+            "readable_text": "[MATH: y = \u2212 1.7 + 6x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139618-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = 6 \u2212 1.7x]</span></p>",
+            "readable_text": "[MATH: y = 6 \u2212 1.7x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n| [MATH: x] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: y] | [MATH: 6] | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: \u2212 1] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[6|\u2212 2; \u2212 2|1], X^{T}y = [13; 9],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: y = 1.7 \u2212 6x]\nb. [MATH: y = \u2212 6 + 1.7x]\nc. [MATH: y = \u2212 1.7 \u2212 6x]\nd. [MATH: y = \u2212 1.7 + 6x]\ne. [MATH: y = 6 \u2212 1.7x]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20310",
+        "content_id": "5611",
+        "dom_id": "step-20310",
+        "selector": "#step-20310",
+        "step_anchor": "step-8",
+        "title": "Finding a Least-Squares Regression Line in Context",
+        "key_prerequisites": [
+          {
+            "topic_id": "3753",
+            "name": "Making Predictions Using Trend Lines",
+            "href": "/topics/3753",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>An experiment consists of measuring how much a spring stretches (in inches) when one end of the spring is attached to the ceiling while a mass of <span class=\"math\">[MATH: x]</span> ounces hangs from the other end. This data is shown below.</p><table><tr><th><p>Mass <span class=\"math\">[MATH: (x)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><th><p>Stretch <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 0.8]</span></p></td><td><p><span class=\"math\">[MATH: 1.8]</span></p></td><td><p><span class=\"math\">[MATH: 3.2]</span></p></td><td><p><span class=\"math\">[MATH: 4.2]</span></p></td></tr></table><p>Find the line of the form <span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x]</span> that best fits the data above. According to the model, how much will the spring stretch if we use an <span class=\"math\">[MATH: 8]</span>-ounce mass, assuming that the trend continues?  </p><p><em>Hint: You can use the fact that</em>\n<span class=\"math\">[MATH: [23|\u2212 6; \u2212 6|2]]</span>\n<em>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</em></p>",
+            "readable_text": "An experiment consists of measuring how much a spring stretches (in inches) when one end of the spring is attached to the ceiling while a mass of [MATH: x] ounces hangs from the other end. This data is shown below.\n\n| Mass [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 5] |\n| Stretch [MATH: (y)] | [MATH: 0.8] | [MATH: 1.8] | [MATH: 3.2] | [MATH: 4.2] |\n\nFind the line of the form [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above. According to the model, how much will the spring stretch if we use an [MATH: 8]-ounce mass, assuming that the trend continues?\n\nHint: You can use the fact that\n[MATH: [23|\u2212 6; \u2212 6|2]]\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The coefficients of the line that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system  </p><p><span class=\"math\">[MATH: [1|1; 1|2; 1|4; 1|5]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [0.8; 1.8; 3.2; 4.2]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p><p>Pre-multiplying this equation by <span class=\"math\">[MATH: X^T,]</span> we obtain the corresponding normal equation</p><p><span class=\"math\">[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]</span></p><p>Since the columns of <span class=\"math\">[MATH: X]</span> are linearly independent, the matrix <span class=\"math\">[MATH: {X^T}X]</span> is invertible and </p><p><span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]</span></p><p>Substituting the given values of <span class=\"math\">[MATH: ({X^T} X )^{-1}]</span> and <span class=\"math\">[MATH: X^T \\mathbf{y}]</span> into the formula, we get</p><p><span class=\"math\">[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(20)[23|\u2212 6; \u2212 6|2] \u22c5 [10; 38.2]; = [0.04; 0.82].]</span></p><p>Therefore, we have the line <span class=\"math\">[MATH: y = 0.04+ 0.82x.]</span></p><p>Finally, to predict how much the spring will stretch if an <span class=\"math\">[MATH: 8]</span>-ounce mass is hung from it,  we substitute <span class=\"math\">[MATH: x=8]</span> into the equation of the line:</p><p><span class=\"math\">[MATH: y|= 0.04 + 0.82(8); = 6.6]</span></p><p>Thus, according to the model, if an <span class=\"math\">[MATH: 8]</span> ounce mass is hung on the spring, the spring will stretch <span class=\"math\">[MATH: 6.6]</span> inches. </p><p><strong>Note</strong>: Since we&#x27;re extrapolating (<span class=\"math\">[MATH: x=8]</span> is not within the range of the original set of <span class=\"math\">[MATH: x]</span>-values), our result <em>may</em> be unreliable.  </p>",
+            "readable_text": "The coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1; 1|2; 1|4; 1|5]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [0.8; 1.8; 3.2; 4.2]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nSubstituting the given values of [MATH: ({X^T} X )^{-1}] and [MATH: X^T \\mathbf{y}] into the formula, we get\n\n[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(20)[23|\u2212 6; \u2212 6|2] \u22c5 [10; 38.2]; = [0.04; 0.82].]\n\nTherefore, we have the line [MATH: y = 0.04+ 0.82x.]\n\nFinally, to predict how much the spring will stretch if an [MATH: 8]-ounce mass is hung from it, we substitute [MATH: x=8] into the equation of the line:\n\n[MATH: y|= 0.04 + 0.82(8); = 6.6]\n\nThus, according to the model, if an [MATH: 8] ounce mass is hung on the spring, the spring will stretch [MATH: 6.6] inches.\n\nNote: Since we're extrapolating ([MATH: x=8] is not within the range of the original set of [MATH: x]-values), our result may be unreliable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nAn experiment consists of measuring how much a spring stretches (in inches) when one end of the spring is attached to the ceiling while a mass of [MATH: x] ounces hangs from the other end. This data is shown below.\n\n| Mass [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 5] |\n| Stretch [MATH: (y)] | [MATH: 0.8] | [MATH: 1.8] | [MATH: 3.2] | [MATH: 4.2] |\n\nFind the line of the form [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above. According to the model, how much will the spring stretch if we use an [MATH: 8]-ounce mass, assuming that the trend continues?\n\nHint: You can use the fact that\n[MATH: [23|\u2212 6; \u2212 6|2]]\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1; 1|2; 1|4; 1|5]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [0.8; 1.8; 3.2; 4.2]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nSubstituting the given values of [MATH: ({X^T} X )^{-1}] and [MATH: X^T \\mathbf{y}] into the formula, we get\n\n[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(20)[23|\u2212 6; \u2212 6|2] \u22c5 [10; 38.2]; = [0.04; 0.82].]\n\nTherefore, we have the line [MATH: y = 0.04+ 0.82x.]\n\nFinally, to predict how much the spring will stretch if an [MATH: 8]-ounce mass is hung from it, we substitute [MATH: x=8] into the equation of the line:\n\n[MATH: y|= 0.04 + 0.82(8); = 6.6]\n\nThus, according to the model, if an [MATH: 8] ounce mass is hung on the spring, the spring will stretch [MATH: 6.6] inches.\n\nNote: Since we're extrapolating ([MATH: x=8] is not within the range of the original set of [MATH: x]-values), our result may be unreliable."
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "139750",
+        "dom_id": "question-139750",
+        "selector": "#question-139750",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A biologist has recorded data on a pine tree&#x27;s age (in years) and height (in feet). This data is shown below. </p><table><tr><th><p>Age <span class=\"math\">[MATH: (x)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><th><p>Height <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 1.2]</span></p></td><td><p><span class=\"math\">[MATH: 2.5]</span></p></td><td><p><span class=\"math\">[MATH: 3.6]</span></p></td><td><p><span class=\"math\">[MATH: 4.5]</span></p></td></tr></table><p>Find the line of the form <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x]</span> that best fits the data above. According to the model, what will be the tree&#x27;s height after <span class=\"math\">[MATH: 8]</span> years, assuming the trend continues?</p><p><em>Hint: You can use the fact that</em>\n<span class=\"math\">[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[15|\u2212 5; \u2212 5|2], X^{T}y = [11.8; 35],]</span>\n<em>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector.</em></p>",
+          "readable_text": "A biologist has recorded data on a pine tree's age (in years) and height (in feet). This data is shown below.\n\n| Age [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Height [MATH: (y)] | [MATH: 1.2] | [MATH: 2.5] | [MATH: 3.6] | [MATH: 4.5] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above. According to the model, what will be the tree's height after [MATH: 8] years, assuming the trend continues?\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[15|\u2212 5; \u2212 5|2], X^{T}y = [11.8; 35],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139750-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 9.5]</span> feet</p>",
+            "readable_text": "[MATH: 9.5] feet",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139750-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 8]</span> feet</p>",
+            "readable_text": "[MATH: 8] feet",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139750-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 7.5]</span> feet</p>",
+            "readable_text": "[MATH: 7.5] feet",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139750-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 8.5]</span> feet </p>",
+            "readable_text": "[MATH: 8.5] feet",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139750-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 9]</span> feet </p>",
+            "readable_text": "[MATH: 9] feet",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA biologist has recorded data on a pine tree's age (in years) and height (in feet). This data is shown below.\n\n| Age [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Height [MATH: (y)] | [MATH: 1.2] | [MATH: 2.5] | [MATH: 3.6] | [MATH: 4.5] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above. According to the model, what will be the tree's height after [MATH: 8] years, assuming the trend continues?\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[15|\u2212 5; \u2212 5|2], X^{T}y = [11.8; 35],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: 9.5] feet\nb. [MATH: 8] feet\nc. [MATH: 7.5] feet\nd. [MATH: 8.5] feet\ne. [MATH: 9] feet"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "41742",
+        "dom_id": "question-41742",
+        "selector": "#question-41742",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A store collected data about its profits (in thousands of dollars) for the first five months since opening. This data is shown below.</p><table><tr><th><p>Month <span class=\"math\">[MATH: (x)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><th><p>Profit <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 8.3]</span></p></td><td><p><span class=\"math\">[MATH: 5.1]</span></p></td><td><p><span class=\"math\">[MATH: 10.9]</span></p></td><td><p><span class=\"math\">[MATH: 10.7]</span></p></td><td><p><span class=\"math\">[MATH: 9.5]</span></p></td></tr></table><p>Find the line of the form <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x]</span> that best fits the data above. According to the model, what will be the profit in the <span class=\"math\">[MATH: 6]</span>th month, assuming that the trend continues?</p><p><em>Hint: You can use the fact that</em>\n<span class=\"math\">[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[11|\u2212 3; \u2212 3|1], X^{T}y = [44.5; 141.5],]</span>\n<em>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector.</em></p>",
+          "readable_text": "A store collected data about its profits (in thousands of dollars) for the first five months since opening. This data is shown below.\n\n| Month [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| Profit [MATH: (y)] | [MATH: 8.3] | [MATH: 5.1] | [MATH: 10.9] | [MATH: 10.7] | [MATH: 9.5] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above. According to the model, what will be the profit in the [MATH: 6]th month, assuming that the trend continues?\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[11|\u2212 3; \u2212 3|1], X^{T}y = [44.5; 141.5],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41742-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: $9200]</span></p>",
+            "readable_text": "[MATH: $9200]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41742-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: $12200]</span></p>",
+            "readable_text": "[MATH: $12200]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41742-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: $10400]</span></p>",
+            "readable_text": "[MATH: $10400]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41742-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: $11500]</span></p>",
+            "readable_text": "[MATH: $11500]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41742-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: $11300]</span></p>",
+            "readable_text": "[MATH: $11300]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA store collected data about its profits (in thousands of dollars) for the first five months since opening. This data is shown below.\n\n| Month [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| Profit [MATH: (y)] | [MATH: 8.3] | [MATH: 5.1] | [MATH: 10.9] | [MATH: 10.7] | [MATH: 9.5] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above. According to the model, what will be the profit in the [MATH: 6]th month, assuming that the trend continues?\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[11|\u2212 3; \u2212 3|1], X^{T}y = [44.5; 141.5],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: $9200]\nb. [MATH: $12200]\nc. [MATH: $10400]\nd. [MATH: $11500]\ne. [MATH: $11300]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37328",
+        "content_id": "6149",
+        "dom_id": "step-37328",
+        "selector": "#step-37328",
+        "step_anchor": "step-11",
+        "title": "Least-Squares vs. Minimizing the Sum of the Squared Residuals",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Given a dataset of paired numerical observations <span class=\"math\">[MATH: (x,y)]</span> and the corresponding linear regression model <span class=\"math\">[MATH: \\widehat{y} =f(x),]</span> the <strong>residual</strong> for a particular observation <span class=\"math\">[MATH: (x, y)]</span> is defined as</p>",
+            "readable_text": "Given a dataset of paired numerical observations [MATH: (x,y)] and the corresponding linear regression model [MATH: \\widehat{y} =f(x),] the residual for a particular observation [MATH: (x, y)] is defined as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: Residual|= Actual \u2212 Estimated; = y \u2212 f(x); = y \u2212 y^(^).]</span>\nWe subtract the <em>estimated</em> value predicted by the model from the actual <em>observed</em> value. The residuals for the data set we considered earlier are shown below.</p>",
+            "readable_text": "[MATH: Residual|= Actual \u2212 Estimated; = y \u2212 f(x); = y \u2212 y^(^).]\nWe subtract the estimated value predicted by the model from the actual observed value. The residuals for the data set we considered earlier are shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/145cd294ca6ed57aab703f6fe2f0587e\"></p>",
+            "readable_text": "[IMG: /graphics/145cd294ca6ed57aab703f6fe2f0587e]",
+            "images": [
+              {
+                "src": "/graphics/145cd294ca6ed57aab703f6fe2f0587e",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the past, you may have seen that  calculating a regression line typically means finding a line where the sum of the squared residuals \n<span class=\"math\">[MATH: \\displaystyle\\sum_{i=1}^4 r_i^2]</span>\nis as small as possible. </p>",
+            "readable_text": "In the past, you may have seen that calculating a regression line typically means finding a line where the sum of the squared residuals\n[MATH: \\displaystyle\\sum_{i=1}^4 r_i^2]\nis as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Using matrix notation, the sum of the squared residuals can be viewed as </p>",
+            "readable_text": "Using matrix notation, the sum of the squared residuals can be viewed as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\sum_{i=1}^4 r_i^2 = \\| \\mathbf{y} - X\\beta\\|^2.]</span></p>",
+            "readable_text": "[MATH: \\sum_{i=1}^4 r_i^2 = \\| \\mathbf{y} - X\\beta\\|^2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the condition that the sum of the squared residuals is minimized is equivalent to minimizing <span class=\"math\">[MATH: \\| \\mathbf{y} - X\\beta\\|^2.]</span> This, in turn, is equivalent to minimizing <span class=\"math\">[MATH: \\| \\mathbf{y} - X\\beta\\|.]</span> </p>",
+            "readable_text": "Therefore, the condition that the sum of the squared residuals is minimized is equivalent to minimizing [MATH: \\| \\mathbf{y} - X\\beta\\|^2.] This, in turn, is equivalent to minimizing [MATH: \\| \\mathbf{y} - X\\beta\\|.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the problem of minimizing the squared residuals is equivalent to solving the least squares problem for <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]</span></p>",
+            "readable_text": "Therefore, the problem of minimizing the squared residuals is equivalent to solving the least squares problem for [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/145cd294ca6ed57aab703f6fe2f0587e",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nGiven a dataset of paired numerical observations [MATH: (x,y)] and the corresponding linear regression model [MATH: \\widehat{y} =f(x),] the residual for a particular observation [MATH: (x, y)] is defined as\n\nContent:\n[MATH: Residual|= Actual \u2212 Estimated; = y \u2212 f(x); = y \u2212 y^(^).]\nWe subtract the estimated value predicted by the model from the actual observed value. The residuals for the data set we considered earlier are shown below.\n\nGraphic:\n[IMG: /graphics/145cd294ca6ed57aab703f6fe2f0587e]\n\nContent:\nIn the past, you may have seen that calculating a regression line typically means finding a line where the sum of the squared residuals\n[MATH: \\displaystyle\\sum_{i=1}^4 r_i^2]\nis as small as possible.\n\nContent:\nUsing matrix notation, the sum of the squared residuals can be viewed as\n\nContent:\n[MATH: \\sum_{i=1}^4 r_i^2 = \\| \\mathbf{y} - X\\beta\\|^2.]\n\nContent:\nTherefore, the condition that the sum of the squared residuals is minimized is equivalent to minimizing [MATH: \\| \\mathbf{y} - X\\beta\\|^2.] This, in turn, is equivalent to minimizing [MATH: \\| \\mathbf{y} - X\\beta\\|.]\n\nContent:\nTherefore, the problem of minimizing the squared residuals is equivalent to solving the least squares problem for [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nConsider the following data set:\n\nContent:\n| [MATH: x] | [MATH: 100] | [MATH: 110] | [MATH: 120] | [MATH: 130] |\n| [MATH: y] | [MATH: 12] | [MATH: 11] | [MATH: 12] | [MATH: 15] |\n\nContent:\nOur goal is to describe how to use matrices to carry out a linear regression. That is, we want to find an equation of the form\n\nContent:\n[MATH: y = \\beta_0 + \\beta_1 x]\n\nContent:\nthat best fits the given data points.\n\nGraphic:\n[IMG: /graphics/c0181831a6e790c04476f51670da497c]\n\nContent:\nLet's write our problem in matrix notation. Substituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the system\n\nContent:\n[MATH: {\u03b2_{0} + 100\u03b2_{1} = 12; \u03b2_{0} + 110\u03b2_{1} = 11; \u03b2_{0} + 120\u03b2_{1} = 12; \u03b2_{0} + 130\u03b2_{1} = 15]\n\nContent:\nwhich can be expressed in matrix notation as\n\nContent:\n[MATH: [1|100; 1|110; 1|120; 1|130]]\n\nContent:\nThe matrix [MATH: X] is called the design matrix, and [MATH: \\mathbf{y}] is called the observation vector.\n\nContent:\nSince our points do not lie on a straight line, there will be no parameters [MATH: \\beta_0] and [MATH: \\beta_1] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0] and [MATH: \\beta_1] that best approximate the solution.\n\nContent:\nIn other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that\n\nContent:\n[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]\n\nContent:\nis as small as possible.\n\nContent:\nNotice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the line that best fits the data can be found as the solution to the corresponding least-squares problem!\n\nContent:\nThis approach to finding parameters for a linear regression model is often called ordinary least squares (OLS) regression.\n\nContent:\nPre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation\n\nContent:\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nContent:\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and\n\nContent:\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nContent:\nSubstituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get\n\nContent:\n[MATH: \u03b2^(^) = [1; 0.1].]\n\nContent:\nTherefore, the line of best fit (regression line) is\n\nContent:\n[MATH: y = 1+ 0.1x.]\n\n---\n\nItem 2 \u2014 Example: Identifying Elements of a Regression Line in Terms of Matrices and Vectors\n\nExample Prompt:\n| [MATH: x] | [MATH: -6] | [MATH: -3] | [MATH: -1] | [MATH: 0] | [MATH: 4] |\n| [MATH: y] | [MATH: -7] | [MATH: -4] | [MATH: 2] | [MATH: 8] | [MATH: 10] |\n\nThe vector of coefficients of the line [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Which are the design matrix [MATH: X] and the observation vector [MATH: \\mathbf{y}] in this context?\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x] | [MATH: \\color{blue}-6] | [MATH: \\color{blue}-3] | [MATH: \\color{blue}-1] | [MATH: \\color{blue}0] | [MATH: \\color{blue}4] |\n| [MATH: y] | [MATH: \\color{red}-7] | [MATH: \\color{red}-4] | [MATH: \\color{red}2] | [MATH: \\color{red}8] | [MATH: \\color{red}10] |\n\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 6; 1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [\u2212 7; \u2212 4; 2; 8; 10]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nThe vector of coefficients of the line [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|\u2212 2; 1|\u2212 1; 1|0; 1|1; 1|2]]\nb. [MATH: [1|\u2212 6; 1|\u2212 5; 1|\u2212 1; 1|1; 1|1]]\nc. [MATH: [\u2212 6|\u2212 2; \u2212 5|\u2212 1; \u2212 1|0; 1|1; 1|2]]\nd. [MATH: [\u2212 2|\u2212 1|0|1|1; \u2212 6|\u2212 5|\u2212 1|1|1]]\ne. [MATH: [1|1|1|1|1; \u2212 2|\u2212 1|0|1|1]]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nThe vector of coefficients of the line [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above can be found using linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?\n\nChoices:\na. [MATH: [1|1|1|1|1]]\nb. [MATH: [\u2212 2|\u2212 1|0|1|2]]\nc. [MATH: [\u2212 2; \u2212 1; 0; 1; 2]]\nd. [MATH: [\u2212 6|\u2212 5|\u2212 1|1|1]]\ne. [MATH: [\u2212 6; \u2212 5; \u2212 1; 1; 1]]\n\n---\n\nItem 5 \u2014 Example: Finding a Least-Squares Regression Line\n\nExample Prompt:\n| [MATH: x] | [MATH: -3] | [MATH: -1] | [MATH: 0] | [MATH: 4] |\n| [MATH: y] | [MATH: 10] | [MATH: 8] | [MATH: 6] | [MATH: 3] |\n\nFind the line of the form [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: [26|0; 0|4]]\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 3; 1|\u2212 1; 1|0; 1|4]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [10; 8; 6; 3]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nSubstituting the given values of [MATH: ({X^T} X )^{-1}] and [MATH: X^T \\mathbf{y}] into the formula, we get\n\n[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(104)[26|0; 0|4][27; \u2212 26]; = [6.75; \u2212 1].]\n\nHence, [MATH: y = 6.75 - x.]\n\n---\n\nItem 6 \u2014 Question 3\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n| [MATH: x] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: y] | [MATH: \u2212 6] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 1] | [MATH: 1] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[2|0; 0|1], X^{T}y = [\u2212 10; 20],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: y = 2 \u2212 x]\nb. [MATH: y = \u2212 1 + 3x]\nc. [MATH: y = (3)/(2)x]\nd. [MATH: y = \u2212 1 + (1)/(2)x]\ne. [MATH: y = \u2212 2 + 2x]\n\n---\n\nItem 7 \u2014 Question 4\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n| [MATH: x] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: y] | [MATH: 6] | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: \u2212 1] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above.\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[6|\u2212 2; \u2212 2|1], X^{T}y = [13; 9],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: y = 1.7 \u2212 6x]\nb. [MATH: y = \u2212 6 + 1.7x]\nc. [MATH: y = \u2212 1.7 \u2212 6x]\nd. [MATH: y = \u2212 1.7 + 6x]\ne. [MATH: y = 6 \u2212 1.7x]\n\n---\n\nItem 8 \u2014 Example: Finding a Least-Squares Regression Line in Context\n\nExample Prompt:\nAn experiment consists of measuring how much a spring stretches (in inches) when one end of the spring is attached to the ceiling while a mass of [MATH: x] ounces hangs from the other end. This data is shown below.\n\n| Mass [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 5] |\n| Stretch [MATH: (y)] | [MATH: 0.8] | [MATH: 1.8] | [MATH: 3.2] | [MATH: 4.2] |\n\nFind the line of the form [MATH: y=\\beta_0 + \\beta_1 x] that best fits the data above. According to the model, how much will the spring stretch if we use an [MATH: 8]-ounce mass, assuming that the trend continues?\n\nHint: You can use the fact that\n[MATH: [23|\u2212 6; \u2212 6|2]]\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe coefficients of the line that best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1; 1|2; 1|4; 1|5]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}]^(\u23de)^(\u03b2)|= [0.8; 1.8; 3.2; 4.2]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nSubstituting the given values of [MATH: ({X^T} X )^{-1}] and [MATH: X^T \\mathbf{y}] into the formula, we get\n\n[MATH: \u03b2^(^)|= (X^{T}X)^{\u2212 1}X^{T}y; = (1)/(20)[23|\u2212 6; \u2212 6|2] \u22c5 [10; 38.2]; = [0.04; 0.82].]\n\nTherefore, we have the line [MATH: y = 0.04+ 0.82x.]\n\nFinally, to predict how much the spring will stretch if an [MATH: 8]-ounce mass is hung from it, we substitute [MATH: x=8] into the equation of the line:\n\n[MATH: y|= 0.04 + 0.82(8); = 6.6]\n\nThus, according to the model, if an [MATH: 8] ounce mass is hung on the spring, the spring will stretch [MATH: 6.6] inches.\n\nNote: Since we're extrapolating ([MATH: x=8] is not within the range of the original set of [MATH: x]-values), our result may be unreliable.\n\n---\n\nItem 9 \u2014 Question 5\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA biologist has recorded data on a pine tree's age (in years) and height (in feet). This data is shown below.\n\n| Age [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Height [MATH: (y)] | [MATH: 1.2] | [MATH: 2.5] | [MATH: 3.6] | [MATH: 4.5] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above. According to the model, what will be the tree's height after [MATH: 8] years, assuming the trend continues?\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[15|\u2212 5; \u2212 5|2], X^{T}y = [11.8; 35],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: 9.5] feet\nb. [MATH: 8] feet\nc. [MATH: 7.5] feet\nd. [MATH: 8.5] feet\ne. [MATH: 9] feet\n\n---\n\nItem 10 \u2014 Question 6\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA store collected data about its profits (in thousands of dollars) for the first five months since opening. This data is shown below.\n\n| Month [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| Profit [MATH: (y)] | [MATH: 8.3] | [MATH: 5.1] | [MATH: 10.9] | [MATH: 10.7] | [MATH: 9.5] |\n\nFind the line of the form [MATH: y = \u03b2_{0} + \u03b2_{1}x] that best fits the data above. According to the model, what will be the profit in the [MATH: 6]th month, assuming that the trend continues?\n\nHint: You can use the fact that\n[MATH: (X^{T}X)^{\u2212 1} = (1)/(10)[11|\u2212 3; \u2212 3|1], X^{T}y = [44.5; 141.5],]\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector.\n\nChoices:\na. [MATH: $9200]\nb. [MATH: $12200]\nc. [MATH: $10400]\nd. [MATH: $11500]\ne. [MATH: $11300]\n\n---\n\nItem 11 \u2014 Tutorial: Least-Squares vs. Minimizing the Sum of the Squared Residuals\n\nContent:\nGiven a dataset of paired numerical observations [MATH: (x,y)] and the corresponding linear regression model [MATH: \\widehat{y} =f(x),] the residual for a particular observation [MATH: (x, y)] is defined as\n\nContent:\n[MATH: Residual|= Actual \u2212 Estimated; = y \u2212 f(x); = y \u2212 y^(^).]\nWe subtract the estimated value predicted by the model from the actual observed value. The residuals for the data set we considered earlier are shown below.\n\nGraphic:\n[IMG: /graphics/145cd294ca6ed57aab703f6fe2f0587e]\n\nContent:\nIn the past, you may have seen that calculating a regression line typically means finding a line where the sum of the squared residuals\n[MATH: \\displaystyle\\sum_{i=1}^4 r_i^2]\nis as small as possible.\n\nContent:\nUsing matrix notation, the sum of the squared residuals can be viewed as\n\nContent:\n[MATH: \\sum_{i=1}^4 r_i^2 = \\| \\mathbf{y} - X\\beta\\|^2.]\n\nContent:\nTherefore, the condition that the sum of the squared residuals is minimized is equivalent to minimizing [MATH: \\| \\mathbf{y} - X\\beta\\|^2.] This, in turn, is equivalent to minimizing [MATH: \\| \\mathbf{y} - X\\beta\\|.]\n\nContent:\nTherefore, the problem of minimizing the squared residuals is equivalent to solving the least squares problem for [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]"
+  }
+}

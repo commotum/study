@@ -1,0 +1,1202 @@
+{
+  "schema_version": 2,
+  "topic_id": "2087",
+  "topic_title": "Solving Homogeneous Systems of ODEs With Distinct Eigenvalues",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2087/Source/2087.html",
+  "source_url": "https://mathacademy.com/topics/2087",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "540572",
+        "dom_id": "sectionLink-540572",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-540572"
+      },
+      {
+        "index": 2,
+        "step_id": "540573",
+        "dom_id": "sectionLink-540573",
+        "name": "",
+        "title": "Finding the General Solution Given the Eigenvalues and Eigenvectors of the Corresponding Matrix",
+        "selector": "#sectionLink-540573"
+      },
+      {
+        "index": 3,
+        "step_id": "540576",
+        "dom_id": "sectionLink-540576",
+        "name": "",
+        "title": "Finding the General Solution to a Linear System of Differential Equations",
+        "selector": "#sectionLink-540576"
+      },
+      {
+        "index": 4,
+        "step_id": "540579",
+        "dom_id": "sectionLink-540579",
+        "name": "",
+        "title": "Decoupling a Linear System of Differential Equations",
+        "selector": "#sectionLink-540579"
+      },
+      {
+        "index": 5,
+        "step_id": "540580",
+        "dom_id": "sectionLink-540580",
+        "name": "",
+        "title": "Determining the Decoupling Substitution of a Linear System of Differential Equations",
+        "selector": "#sectionLink-540580"
+      },
+      {
+        "index": 6,
+        "step_id": "540583",
+        "dom_id": "sectionLink-540583",
+        "name": "",
+        "title": "The Proof of the Formula For a General System",
+        "selector": "#sectionLink-540583"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1171",
+        "name": "Multiplying a Matrix by the Identity Matrix",
+        "href": "/topics/multiplying-a-matrix-by-the-identity-matrix-1171"
+      },
+      {
+        "topic_id": "1969",
+        "name": "Properties of Diagonalization",
+        "href": "/topics/properties-of-diagonalization-1969"
+      },
+      {
+        "topic_id": "3238",
+        "name": "Solving Decoupled Homogeneous Systems of ODEs",
+        "href": "/topics/solving-decoupled-homogeneous-systems-of-odes-3238"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "540572",
+        "content_id": "4183",
+        "dom_id": "step-540572",
+        "selector": "#step-540572",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We know how to solve a system of differential equations when they&#x27;re decoupled. However, most systems are not decoupled. So, how do we solve them?</p>",
+            "readable_text": "We know how to solve a system of differential equations when they're decoupled. However, most systems are not decoupled. So, how do we solve them?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider a general linear system of two differential equations:</p>",
+            "readable_text": "Let's consider a general linear system of two differential equations:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x_{1}^{\u2032}(t) = ax_{1}(t) + bx_{2}(t); x_{2}^{\u2032}(t) = cx_{1}(t) + dx_{2}(t)]</span></p>",
+            "readable_text": "[MATH: {x_{1}^{\u2032}(t) = ax_{1}(t) + bx_{2}(t); x_{2}^{\u2032}(t) = cx_{1}(t) + dx_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It turns out that if the matrix <span class=\"math\">[MATH: A]</span> has two <em>distinct real eigenvalues</em> <span class=\"math\">[MATH: \\lambda_1]</span> and <span class=\"math\">[MATH: \\lambda_2]</span>, then <span class=\"math\">[MATH: A]</span> is diagonalizable and we can solve the system.</p>",
+            "readable_text": "It turns out that if the matrix [MATH: A] has two distinct real eigenvalues [MATH: \\lambda_1] and [MATH: \\lambda_2], then [MATH: A] is diagonalizable and we can solve the system.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If the eigenvectors corresponding to <span class=\"math\">[MATH: \\color{red}\\lambda_1]</span> and <span class=\"math\">[MATH: \\color{blue}\\lambda_2]</span> are <span class=\"math\">[MATH: {\\color{red}\\mathbf{v}_1}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2},]</span> respectively, then the general solution to our original system can be written as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]</span></p>",
+            "readable_text": "If the eigenvectors corresponding to [MATH: \\color{red}\\lambda_1] and [MATH: \\color{blue}\\lambda_2] are [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2},] respectively, then the general solution to our original system can be written as\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This result is true for any <span class=\"math\">[MATH: n \\times n]</span> system with <span class=\"math\">[MATH: n]</span> distinct eigenvalues. We&#x27;ll prove this result for a <span class=\"math\">[MATH: 2\\times 2]</span> system at the end of the lesson.</p>",
+            "readable_text": "This result is true for any [MATH: n \\times n] system with [MATH: n] distinct eigenvalues. We'll prove this result for a [MATH: 2\\times 2] system at the end of the lesson.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let&#x27;s see some concrete examples.</p>",
+            "readable_text": "Now, let's see some concrete examples.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe know how to solve a system of differential equations when they're decoupled. However, most systems are not decoupled. So, how do we solve them?\n\nContent:\nLet's consider a general linear system of two differential equations:\n\nContent:\n[MATH: {x_{1}^{\u2032}(t) = ax_{1}(t) + bx_{2}(t); x_{2}^{\u2032}(t) = cx_{1}(t) + dx_{2}(t)]\n\nContent:\nIt turns out that if the matrix [MATH: A] has two distinct real eigenvalues [MATH: \\lambda_1] and [MATH: \\lambda_2], then [MATH: A] is diagonalizable and we can solve the system.\n\nContent:\nIf the eigenvectors corresponding to [MATH: \\color{red}\\lambda_1] and [MATH: \\color{blue}\\lambda_2] are [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2},] respectively, then the general solution to our original system can be written as\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]\n\nContent:\nThis result is true for any [MATH: n \\times n] system with [MATH: n] distinct eigenvalues. We'll prove this result for a [MATH: 2\\times 2] system at the end of the lesson.\n\nContent:\nNow, let's see some concrete examples."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "540573",
+        "content_id": "5974",
+        "dom_id": "step-540573",
+        "selector": "#step-540573",
+        "step_anchor": "step-2",
+        "title": "Finding the General Solution Given the Eigenvalues and Eigenvectors of the Corresponding Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "3238",
+            "name": "Solving Decoupled Homogeneous Systems of ODEs",
+            "href": "/topics/3238",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: [1; \u2212 2]]</span> and <span class=\"math\">[MATH: [2; 5]]</span> be eigenvectors of a matrix <span class=\"math\">[MATH: A]</span> that correspond to eigenvalues <span class=\"math\">[MATH: \\lambda_1=-1]</span> and <span class=\"math\">[MATH: \\lambda_2=2,]</span> respectively.\nWhat is the general solution of the matrix differential equation <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t)?]</span></p>",
+            "readable_text": "Let [MATH: [1; \u2212 2]] and [MATH: [2; 5]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \\lambda_1=-1] and [MATH: \\lambda_2=2,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)?]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Given a system of first-order linear ODEs in the form\n<span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t),]</span>\nwhere <span class=\"math\">[MATH: A]</span> has two distinct eigenvalues <span class=\"math\">[MATH: {\\color{red}\\lambda_1}, {\\color{blue}\\lambda_2}]</span> with corresponding eigenvectors <span class=\"math\">[MATH: {\\color{red}\\mathbf{v}_1}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2},]</span> the formula for the general solution is\n<span class=\"math\">[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]</span></p><p>Therefore, the general solution of our matrix differential equation is</p><p><span class=\"math\">[MATH: x(t)|= c_{1}[1; \u2212 2]e^{\u2212 t} + c_{2}[2; 5]e^{2t}, c_{1}, c_{2} \u2208 R.]</span></p>",
+            "readable_text": "Given a system of first-order linear ODEs in the form\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),]\nwhere [MATH: A] has two distinct eigenvalues [MATH: {\\color{red}\\lambda_1}, {\\color{blue}\\lambda_2}] with corresponding eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2},] the formula for the general solution is\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]\n\nTherefore, the general solution of our matrix differential equation is\n\n[MATH: x(t)|= c_{1}[1; \u2212 2]e^{\u2212 t} + c_{2}[2; 5]e^{2t}, c_{1}, c_{2} \u2208 R.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nLet [MATH: [1; \u2212 2]] and [MATH: [2; 5]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \\lambda_1=-1] and [MATH: \\lambda_2=2,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)?]\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a system of first-order linear ODEs in the form\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),]\nwhere [MATH: A] has two distinct eigenvalues [MATH: {\\color{red}\\lambda_1}, {\\color{blue}\\lambda_2}] with corresponding eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2},] the formula for the general solution is\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]\n\nTherefore, the general solution of our matrix differential equation is\n\n[MATH: x(t)|= c_{1}[1; \u2212 2]e^{\u2212 t} + c_{2}[2; 5]e^{2t}, c_{1}, c_{2} \u2208 R.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "39702",
+        "dom_id": "question-39702",
+        "selector": "#question-39702",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: v_{1} = [1; \u2212 1]]</span> and <span class=\"math\">[MATH: v_{2} = [0; 1]]</span> be eigenvectors of a matrix <span class=\"math\">[MATH: A]</span> that correspond to eigenvalues <span class=\"math\">[MATH: \u03bb_{1} = 1]</span> and <span class=\"math\">[MATH: \u03bb_{2} = \u2212 0.5,]</span> respectively.\nWhat is the general solution of the matrix differential equation <span class=\"math\">[MATH: x^{\u2032}(t) = Ax(t)?]</span></p>",
+          "readable_text": "Let [MATH: v_{1} = [1; \u2212 1]] and [MATH: v_{2} = [0; 1]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \u03bb_{1} = 1] and [MATH: \u03bb_{2} = \u2212 0.5,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: x^{\u2032}(t) = Ax(t)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-39702-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 0.5t} + c_{2}[0; 1]e^{t}, c_{1}, c_{2} \u2208 R]</span> </p>",
+            "readable_text": "[MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 0.5t} + c_{2}[0; 1]e^{t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-39702-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = (1)/(2)c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 t}, c_{1}, c_{2} \u2208 R]</span> </p>",
+            "readable_text": "[MATH: x(t) = (1)/(2)c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-39702-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 0.5t}, c_{1}, c_{2} \u2208 R]</span> </p>",
+            "readable_text": "[MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 0.5t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-39702-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + (1)/(2)c_{2}[0; 1], c_{1}, c_{2} \u2208 R]</span> </p>",
+            "readable_text": "[MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + (1)/(2)c_{2}[0; 1], c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-39702-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 0.5]e^{t}, c_{1}, c_{2} \u2208 R]</span> </p>",
+            "readable_text": "[MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 0.5]e^{t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: v_{1} = [1; \u2212 1]] and [MATH: v_{2} = [0; 1]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \u03bb_{1} = 1] and [MATH: \u03bb_{2} = \u2212 0.5,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: x^{\u2032}(t) = Ax(t)?]\n\nChoices:\na. [MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 0.5t} + c_{2}[0; 1]e^{t}, c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = (1)/(2)c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 t}, c_{1}, c_{2} \u2208 R]\nc. [MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 0.5t}, c_{1}, c_{2} \u2208 R]\nd. [MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + (1)/(2)c_{2}[0; 1], c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 0.5]e^{t}, c_{1}, c_{2} \u2208 R]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "39700",
+        "dom_id": "question-39700",
+        "selector": "#question-39700",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: v_{1} = [\u2212 2; 1]]</span> and <span class=\"math\">[MATH: v_{2} = [3; \u2212 1]]</span> be eigenvectors of a matrix <span class=\"math\">[MATH: A]</span> that correspond to eigenvalues <span class=\"math\">[MATH: \u03bb_{1} = 4]</span> and <span class=\"math\">[MATH: \u03bb_{2} = 0,]</span> respectively.\nWhat is the general solution of the matrix differential equation <span class=\"math\">[MATH: x^{\u2032}(t) = Ax(t)?]</span></p>",
+          "readable_text": "Let [MATH: v_{1} = [\u2212 2; 1]] and [MATH: v_{2} = [3; \u2212 1]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \u03bb_{1} = 4] and [MATH: \u03bb_{2} = 0,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: x^{\u2032}(t) = Ax(t)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-39700-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1], c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1], c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-39700-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t}c_{1} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t}c_{1} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-39700-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[3; \u2212 1]e^{4t}, c_{1} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[3; \u2212 1]e^{4t}, c_{1} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-39700-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1]e^{t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1]e^{t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-39700-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 2; 1] + c_{2}[3; \u2212 1]e^{4t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 2; 1] + c_{2}[3; \u2212 1]e^{4t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: v_{1} = [\u2212 2; 1]] and [MATH: v_{2} = [3; \u2212 1]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \u03bb_{1} = 4] and [MATH: \u03bb_{2} = 0,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: x^{\u2032}(t) = Ax(t)?]\n\nChoices:\na. [MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1], c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t}c_{1} \u2208 R]\nc. [MATH: x(t) = c_{1}[3; \u2212 1]e^{4t}, c_{1} \u2208 R]\nd. [MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1]e^{t}, c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[\u2212 2; 1] + c_{2}[3; \u2212 1]e^{4t}, c_{1}, c_{2} \u2208 R]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "540576",
+        "content_id": "5606",
+        "dom_id": "step-540576",
+        "selector": "#step-540576",
+        "step_anchor": "step-5",
+        "title": "Finding the General Solution to a Linear System of Differential Equations",
+        "key_prerequisites": [
+          {
+            "topic_id": "991",
+            "name": "Calculating the Eigenvectors of a 2x2 Matrix",
+            "href": "/topics/991",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Find the general solution to the system of differential equations \n<span class=\"math\">[MATH: {x_{1}^{\u2032}(t) = 6x_{1}(t) + 7x_{2}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) \u2212 4x_{2}(t).]</span></p><p><em>Hint: The eigenvalues of the system&#x27;s matrix are <span class=\"math\">[MATH: \\lambda_1=-1]</span> and <span class=\"math\">[MATH: \\lambda_2=3.]</span></em></p>",
+            "readable_text": "Find the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = 6x_{1}(t) + 7x_{2}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) \u2212 4x_{2}(t).]\n\nHint: The eigenvalues of the system's matrix are [MATH: \\lambda_1=-1] and [MATH: \\lambda_2=3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, we write down the matrix differential equation <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t)]</span> for the given system:</p><p><span class=\"math\">[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]</span></p><p>We need to find the eigenvalues and the eigenvectors of the matrix <span class=\"math\">[MATH: A.]</span></p><ul><li><p>We are given that the eigenvalues are \n<span class=\"math\">[MATH: \\lambda_1=-1\n\\qquad\\text{and}\\qquad\n\\lambda_2=3.]</span> </p></li><li><p>Let&#x27;s go through the process of finding the eigenvectors.</p><ul><li><p>For <span class=\"math\">[MATH: \\lambda_1 =-1,]</span> we get \n<span class=\"math\">[MATH: [7|7; \u2212 3|\u2212 3]]</span>\nSo, we get an eigenvector \n<span class=\"math\">[MATH: [\u2212 1; 1]]</span></p></li><li><p>For <span class=\"math\">[MATH: \\lambda_2 =3,]</span> we get \n<span class=\"math\">[MATH: [3|7; \u2212 3|\u2212 7]]</span>\nSo, we get an eigenvector \n<span class=\"math\">[MATH: [7; \u2212 3]]</span></p></li></ul></li></ul><p>Thus, the general solution to the given system is</p><p><span class=\"math\">[MATH: x(t)|= c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}; = c_{1}[\u2212 1; 1]e^{\u2212 t} + c_{2}[7; \u2212 3]e^{3t}, c_{1}, c_{2} \u2208 R.]</span></p>",
+            "readable_text": "First, we write down the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)] for the given system:\n\n[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]\n\nWe need to find the eigenvalues and the eigenvectors of the matrix [MATH: A.]\n\n- We are given that the eigenvalues are\n[MATH: \\lambda_1=-1\n\\qquad\\text{and}\\qquad\n\\lambda_2=3.]\n- Let's go through the process of finding the eigenvectors.\n\n- For [MATH: \\lambda_1 =-1,] we get\n[MATH: [7|7; \u2212 3|\u2212 3]]\nSo, we get an eigenvector\n[MATH: [\u2212 1; 1]]\n- For [MATH: \\lambda_2 =3,] we get\n[MATH: [3|7; \u2212 3|\u2212 7]]\nSo, we get an eigenvector\n[MATH: [7; \u2212 3]]\n\nThus, the general solution to the given system is\n\n[MATH: x(t)|= c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}; = c_{1}[\u2212 1; 1]e^{\u2212 t} + c_{2}[7; \u2212 3]e^{3t}, c_{1}, c_{2} \u2208 R.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFind the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = 6x_{1}(t) + 7x_{2}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) \u2212 4x_{2}(t).]\n\nHint: The eigenvalues of the system's matrix are [MATH: \\lambda_1=-1] and [MATH: \\lambda_2=3.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we write down the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)] for the given system:\n\n[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]\n\nWe need to find the eigenvalues and the eigenvectors of the matrix [MATH: A.]\n\n- We are given that the eigenvalues are\n[MATH: \\lambda_1=-1\n\\qquad\\text{and}\\qquad\n\\lambda_2=3.]\n- Let's go through the process of finding the eigenvectors.\n\n- For [MATH: \\lambda_1 =-1,] we get\n[MATH: [7|7; \u2212 3|\u2212 3]]\nSo, we get an eigenvector\n[MATH: [\u2212 1; 1]]\n- For [MATH: \\lambda_2 =3,] we get\n[MATH: [3|7; \u2212 3|\u2212 7]]\nSo, we get an eigenvector\n[MATH: [7; \u2212 3]]\n\nThus, the general solution to the given system is\n\n[MATH: x(t)|= c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}; = c_{1}[\u2212 1; 1]e^{\u2212 t} + c_{2}[7; \u2212 3]e^{3t}, c_{1}, c_{2} \u2208 R.]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "324452",
+        "dom_id": "question-324452",
+        "selector": "#question-324452",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the general solution to the system of differential equations \n<span class=\"math\">[MATH: {x_{1}^{\u2032}(t) = 5x_{1}(t) \u2212 7x_{2}(t); x_{2}^{\u2032}(t) = 2x_{2}(t).]</span></p>",
+          "readable_text": "Find the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = 5x_{1}(t) \u2212 7x_{2}(t); x_{2}^{\u2032}(t) = 2x_{2}(t).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-324452-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[3; 7]e^{5t} + c_{2}[0; 1]e^{2t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[3; 7]e^{5t} + c_{2}[0; 1]e^{2t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-324452-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[3; 7]e^{2t} + c_{2}[0; 1]e^{5t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[3; 7]e^{2t} + c_{2}[0; 1]e^{5t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-324452-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[7; 3]e^{5t} + c_{2}[1; 0]e^{2t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[7; 3]e^{5t} + c_{2}[1; 0]e^{2t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-324452-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[7; 1]e^{2t} + c_{2}[3; 0]e^{5t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[7; 1]e^{2t} + c_{2}[3; 0]e^{5t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-324452-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[7; 3]e^{2t} + c_{2}[1; 0]e^{5t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[7; 3]e^{2t} + c_{2}[1; 0]e^{5t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFind the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = 5x_{1}(t) \u2212 7x_{2}(t); x_{2}^{\u2032}(t) = 2x_{2}(t).]\n\nChoices:\na. [MATH: x(t) = c_{1}[3; 7]e^{5t} + c_{2}[0; 1]e^{2t}, c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = c_{1}[3; 7]e^{2t} + c_{2}[0; 1]e^{5t}, c_{1}, c_{2} \u2208 R]\nc. [MATH: x(t) = c_{1}[7; 3]e^{5t} + c_{2}[1; 0]e^{2t}, c_{1}, c_{2} \u2208 R]\nd. [MATH: x(t) = c_{1}[7; 1]e^{2t} + c_{2}[3; 0]e^{5t}, c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[7; 3]e^{2t} + c_{2}[1; 0]e^{5t}, c_{1}, c_{2} \u2208 R]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "324453",
+        "dom_id": "question-324453",
+        "selector": "#question-324453",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the general solution to the system of differential equations \n<span class=\"math\">[MATH: {x_{1}^{\u2032}(t) = x_{1}(t) + 3x_{2}(t); x_{2}^{\u2032}(t) = x_{1}(t) \u2212 x_{2}(t).]</span>\n<em>Hint: The eigenvalues of the system&#x27;s matrix are <span class=\"math\">[MATH: \u03bb_{1} = \u2212 2]</span> and <span class=\"math\">[MATH: \u03bb_{2} = 2.]</span></em></p>",
+          "readable_text": "Find the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = x_{1}(t) + 3x_{2}(t); x_{2}^{\u2032}(t) = x_{1}(t) \u2212 x_{2}(t).]\nHint: The eigenvalues of the system's matrix are [MATH: \u03bb_{1} = \u2212 2] and [MATH: \u03bb_{2} = 2.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-324453-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 2t} + c_{2}[1; 3]e^{2t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 2t} + c_{2}[1; 3]e^{2t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-324453-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t}, c_{1} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t}, c_{1} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-324453-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[3; 1]e^{2t}, c_{1} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[3; 1]e^{2t}, c_{1} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-324453-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t} + c_{2}[3; 1]e^{2t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t} + c_{2}[3; 1]e^{2t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-324453-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\u2212 1; 1]e^{2t} + c_{2}[3; 1]e^{\u2212 2t}, c_{1}, c_{2} \u2208 R]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\u2212 1; 1]e^{2t} + c_{2}[3; 1]e^{\u2212 2t}, c_{1}, c_{2} \u2208 R]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFind the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = x_{1}(t) + 3x_{2}(t); x_{2}^{\u2032}(t) = x_{1}(t) \u2212 x_{2}(t).]\nHint: The eigenvalues of the system's matrix are [MATH: \u03bb_{1} = \u2212 2] and [MATH: \u03bb_{2} = 2.]\n\nChoices:\na. [MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 2t} + c_{2}[1; 3]e^{2t}, c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t}, c_{1} \u2208 R]\nc. [MATH: x(t) = c_{1}[3; 1]e^{2t}, c_{1} \u2208 R]\nd. [MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t} + c_{2}[3; 1]e^{2t}, c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[\u2212 1; 1]e^{2t} + c_{2}[3; 1]e^{\u2212 2t}, c_{1}, c_{2} \u2208 R]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "540579",
+        "content_id": "3650",
+        "dom_id": "step-540579",
+        "selector": "#step-540579",
+        "step_anchor": "step-8",
+        "title": "Decoupling a Linear System of Differential Equations",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ve seen how to solve a decoupled system of differential equations. Our goal now is to understand in more detail why this method works. </p>",
+            "readable_text": "We've seen how to solve a decoupled system of differential equations. Our goal now is to understand in more detail why this method works.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider our general linear system of two differential equations once again:</p>",
+            "readable_text": "Let's consider our general linear system of two differential equations once again:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: Missing \\end{cases}]</span></p>",
+            "readable_text": "[MATH: Missing \\end{cases}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We will show that if the matrix <span class=\"math\">[MATH: A]</span> is diagonalizable, we can convert it into an equivalent decoupled system.</p>",
+            "readable_text": "We will show that if the matrix [MATH: A] is diagonalizable, we can convert it into an equivalent decoupled system.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If <span class=\"math\">[MATH: A]</span> is diagonalizable, it has <span class=\"math\">[MATH: 2]</span> linearly independent eigenvectors <span class=\"math\">[MATH: {\\color{red}\\mathbf{v}_1}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2}.]</span> We use these to form the <em>change of variables matrix</em> <span class=\"math\">[MATH: E,]</span> given by</p>",
+            "readable_text": "If [MATH: A] is diagonalizable, it has [MATH: 2] linearly independent eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}.] We use these to form the change of variables matrix [MATH: E,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [|||; v_{1}|v_{2};|||]]</span></p>",
+            "readable_text": "[MATH: [|||; v_{1}|v_{2};|||]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Because the columns are linearly independent, <span class=\"math\">[MATH: E]</span> is invertible. Then, the substitution  </p>",
+            "readable_text": "Because the columns are linearly independent, [MATH: E] is invertible. Then, the substitution",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}(t) = E\\mathbf{u}(t)]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}(t) = E\\mathbf{u}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>will transform our original system of differential equations into a decoupled one, as follows:</p>",
+            "readable_text": "will transform our original system of differential equations into a decoupled one, as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x^{\u2032}(t)|= Ax(t); (d)/(dt)(Eu(t))|= A(Eu(t)); Eu^{\u2032}(t)|= AEu(t); u^{\u2032}(t)|= E^{\u2212 1}AEu(t)]</span></p>",
+            "readable_text": "[MATH: x^{\u2032}(t)|= Ax(t); (d)/(dt)(Eu(t))|= A(Eu(t)); Eu^{\u2032}(t)|= AEu(t); u^{\u2032}(t)|= E^{\u2212 1}AEu(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note that</p>",
+            "readable_text": "Note that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]</span></p>",
+            "readable_text": "[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is a diagonal matrix, and <span class=\"math\">[MATH: {\\color{red}\\lambda_1},]</span> <span class=\"math\">[MATH: {\\color{blue}\\lambda_2}]</span> are the eigenvalues of <span class=\"math\">[MATH: A]</span> corresponding to <span class=\"math\">[MATH: {\\color{red}\\mathbf{v}_1}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2}.]</span></p>",
+            "readable_text": "is a diagonal matrix, and [MATH: {\\color{red}\\lambda_1},] [MATH: {\\color{blue}\\lambda_2}] are the eigenvalues of [MATH: A] corresponding to [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Following these steps, we now have the <em>decoupled system</em>\n<span class=\"math\">[MATH: Missing \\end{cases}]</span></p>",
+            "readable_text": "Following these steps, we now have the decoupled system\n[MATH: Missing \\end{cases}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Here, the matrix <span class=\"math\">[MATH: D = E^{-1}]</span> is sometimes called the <strong>decoupling matrix</strong>.</p>",
+            "readable_text": "Here, the matrix [MATH: D = E^{-1}] is sometimes called the decoupling matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see a concrete example.</p>",
+            "readable_text": "Let's see a concrete example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe've seen how to solve a decoupled system of differential equations. Our goal now is to understand in more detail why this method works.\n\nContent:\nLet's consider our general linear system of two differential equations once again:\n\nContent:\n[MATH: Missing \\end{cases}]\n\nContent:\nWe will show that if the matrix [MATH: A] is diagonalizable, we can convert it into an equivalent decoupled system.\n\nContent:\nIf [MATH: A] is diagonalizable, it has [MATH: 2] linearly independent eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}.] We use these to form the change of variables matrix [MATH: E,] given by\n\nContent:\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nContent:\nBecause the columns are linearly independent, [MATH: E] is invertible. Then, the substitution\n\nContent:\n[MATH: \\mathbf{x}(t) = E\\mathbf{u}(t)]\n\nContent:\nwill transform our original system of differential equations into a decoupled one, as follows:\n\nContent:\n[MATH: x^{\u2032}(t)|= Ax(t); (d)/(dt)(Eu(t))|= A(Eu(t)); Eu^{\u2032}(t)|= AEu(t); u^{\u2032}(t)|= E^{\u2212 1}AEu(t)]\n\nContent:\nNote that\n\nContent:\n[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]\n\nContent:\nis a diagonal matrix, and [MATH: {\\color{red}\\lambda_1},] [MATH: {\\color{blue}\\lambda_2}] are the eigenvalues of [MATH: A] corresponding to [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}.]\n\nContent:\nFollowing these steps, we now have the decoupled system\n[MATH: Missing \\end{cases}]\n\nContent:\nHere, the matrix [MATH: D = E^{-1}] is sometimes called the decoupling matrix.\n\nContent:\nLet's see a concrete example."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "540580",
+        "content_id": "5605",
+        "dom_id": "step-540580",
+        "selector": "#step-540580",
+        "step_anchor": "step-9",
+        "title": "Determining the Decoupling Substitution of a Linear System of Differential Equations",
+        "key_prerequisites": [
+          {
+            "topic_id": "864",
+            "name": "Inverses of 2x2 Matrices",
+            "href": "/topics/864",
+            "type": ""
+          },
+          {
+            "topic_id": "1969",
+            "name": "Properties of Diagonalization",
+            "href": "/topics/1969",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Find the substitution that will decouple the following system of differential equations: </p><p><span class=\"math\">[MATH: {x_{1}^{\u2032}(t) = \u2212 3x_{1}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) + x_{2}(t)]</span></p>",
+            "readable_text": "Find the substitution that will decouple the following system of differential equations:\n\n[MATH: {x_{1}^{\u2032}(t) = \u2212 3x_{1}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) + x_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let&#x27;s construct the matrix differential equation <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t)]</span> for the given system:\n<span class=\"math\">[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]</span></p><p>We need to find the eigenvalues and the eigenvectors of the matrix <span class=\"math\">[MATH: A.]</span></p><ul><li><p>Since <span class=\"math\">[MATH: A]</span> is lower-triangular, the eigenvalues are \n<span class=\"math\">[MATH: \\lambda_1=-3\n\\qquad\\text{and}\\qquad\n\\lambda_2=1.]</span> </p></li><li><p>Let&#x27;s go through the process of finding the eigenvectors.</p><ul><li><p>For <span class=\"math\">[MATH: \\lambda_1 =-3,]</span> we get \n<span class=\"math\">[MATH: [0|0; \u2212 3|4]]</span>\nSo, we get an eigenvector \n<span class=\"math\">[MATH: [4; 3]]</span></p></li><li><p>For <span class=\"math\">[MATH: \\lambda_2 =1,]</span> we get \n<span class=\"math\">[MATH: [\u2212 4|0; \u2212 3|0]]</span>\nSo, we get an eigenvector \n<span class=\"math\">[MATH: [0; 1]]</span></p></li></ul></li></ul><p>Therefore, we have <span class=\"math\">[MATH: [4|0; 3|1]]</span></p><p>Finally, the change of variables that decouples the system is given by <span class=\"math\">[MATH: \\mathbf{x}(t) = E\\mathbf{u}(t),]</span> or equivalently,\n<span class=\"math\">[MATH: {x_{1}(t) = 4u_{1}(t); x_{2}(t) = 3u_{1}(t) + u_{2}(t).]</span> </p>",
+            "readable_text": "Let's construct the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)] for the given system:\n[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]\n\nWe need to find the eigenvalues and the eigenvectors of the matrix [MATH: A.]\n\n- Since [MATH: A] is lower-triangular, the eigenvalues are\n[MATH: \\lambda_1=-3\n\\qquad\\text{and}\\qquad\n\\lambda_2=1.]\n- Let's go through the process of finding the eigenvectors.\n\n- For [MATH: \\lambda_1 =-3,] we get\n[MATH: [0|0; \u2212 3|4]]\nSo, we get an eigenvector\n[MATH: [4; 3]]\n- For [MATH: \\lambda_2 =1,] we get\n[MATH: [\u2212 4|0; \u2212 3|0]]\nSo, we get an eigenvector\n[MATH: [0; 1]]\n\nTherefore, we have [MATH: [4|0; 3|1]]\n\nFinally, the change of variables that decouples the system is given by [MATH: \\mathbf{x}(t) = E\\mathbf{u}(t),] or equivalently,\n[MATH: {x_{1}(t) = 4u_{1}(t); x_{2}(t) = 3u_{1}(t) + u_{2}(t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFind the substitution that will decouple the following system of differential equations:\n\n[MATH: {x_{1}^{\u2032}(t) = \u2212 3x_{1}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) + x_{2}(t)]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's construct the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)] for the given system:\n[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]\n\nWe need to find the eigenvalues and the eigenvectors of the matrix [MATH: A.]\n\n- Since [MATH: A] is lower-triangular, the eigenvalues are\n[MATH: \\lambda_1=-3\n\\qquad\\text{and}\\qquad\n\\lambda_2=1.]\n- Let's go through the process of finding the eigenvectors.\n\n- For [MATH: \\lambda_1 =-3,] we get\n[MATH: [0|0; \u2212 3|4]]\nSo, we get an eigenvector\n[MATH: [4; 3]]\n- For [MATH: \\lambda_2 =1,] we get\n[MATH: [\u2212 4|0; \u2212 3|0]]\nSo, we get an eigenvector\n[MATH: [0; 1]]\n\nTherefore, we have [MATH: [4|0; 3|1]]\n\nFinally, the change of variables that decouples the system is given by [MATH: \\mathbf{x}(t) = E\\mathbf{u}(t),] or equivalently,\n[MATH: {x_{1}(t) = 4u_{1}(t); x_{2}(t) = 3u_{1}(t) + u_{2}(t).]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "39052",
+        "dom_id": "question-39052",
+        "selector": "#question-39052",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: v_{1} = [3; \u2212 4]]</span> and <span class=\"math\">[MATH: v_{2} = [2; \u2212 3]]</span> be eigenvectors of a matrix <span class=\"math\">[MATH: A.]</span> Find the decoupling matrix of the differential equation <span class=\"math\">[MATH: x^{\u2032}(t) = Ax(t).]</span></p>",
+          "readable_text": "Let [MATH: v_{1} = [3; \u2212 4]] and [MATH: v_{2} = [2; \u2212 3]] be eigenvectors of a matrix [MATH: A.] Find the decoupling matrix of the differential equation [MATH: x^{\u2032}(t) = Ax(t).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-39052-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [\u2212 3|2; 4|3]]</span></p>",
+            "readable_text": "[MATH: D = [\u2212 3|2; 4|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-39052-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [3|2; \u2212 4|\u2212 3]]</span></p>",
+            "readable_text": "[MATH: D = [3|2; \u2212 4|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-39052-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [3|\u2212 4; 2|\u2212 3]]</span></p>",
+            "readable_text": "[MATH: D = [3|\u2212 4; 2|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-39052-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [\u2212 3|\u2212 2; 4|3]]</span></p>",
+            "readable_text": "[MATH: D = [\u2212 3|\u2212 2; 4|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-39052-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [\u2212 3|4; \u2212 2|3]]</span></p>",
+            "readable_text": "[MATH: D = [\u2212 3|4; \u2212 2|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: v_{1} = [3; \u2212 4]] and [MATH: v_{2} = [2; \u2212 3]] be eigenvectors of a matrix [MATH: A.] Find the decoupling matrix of the differential equation [MATH: x^{\u2032}(t) = Ax(t).]\n\nChoices:\na. [MATH: D = [\u2212 3|2; 4|3]]\nb. [MATH: D = [3|2; \u2212 4|\u2212 3]]\nc. [MATH: D = [3|\u2212 4; 2|\u2212 3]]\nd. [MATH: D = [\u2212 3|\u2212 2; 4|3]]\ne. [MATH: D = [\u2212 3|4; \u2212 2|3]]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "324455",
+        "dom_id": "question-324455",
+        "selector": "#question-324455",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the substitution that will decouple the following system of differential equations: </p><p><span class=\"math\">[MATH: {x_{1}^{\u2032}(t) = 3x_{1}(t) + 2x_{2}(t); x_{2}^{\u2032}(t) = x_{2}(t)]</span></p>",
+          "readable_text": "Find the substitution that will decouple the following system of differential equations:\n\n[MATH: {x_{1}^{\u2032}(t) = 3x_{1}(t) + 2x_{2}(t); x_{2}^{\u2032}(t) = x_{2}(t)]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-324455-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x_{1}(t) = 2u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = 2u_{2}(t)]</span></p>",
+            "readable_text": "[MATH: {x_{1}(t) = 2u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = 2u_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-324455-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x_{1}(t) = u_{1}(t) \u2212 2u_{2}(t); x_{2}(t) = 3u_{2}(t)]</span></p>",
+            "readable_text": "[MATH: {x_{1}(t) = u_{1}(t) \u2212 2u_{2}(t); x_{2}(t) = 3u_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-324455-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = \u2212 u_{2}(t)]</span></p>",
+            "readable_text": "[MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = \u2212 u_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-324455-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = u_{2}(t)]</span></p>",
+            "readable_text": "[MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = u_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-324455-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x_{1}(t) = u_{1}(t) + u_{2}(t); x_{2}(t) = u_{2}(t)]</span></p>",
+            "readable_text": "[MATH: {x_{1}(t) = u_{1}(t) + u_{2}(t); x_{2}(t) = u_{2}(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFind the substitution that will decouple the following system of differential equations:\n\n[MATH: {x_{1}^{\u2032}(t) = 3x_{1}(t) + 2x_{2}(t); x_{2}^{\u2032}(t) = x_{2}(t)]\n\nChoices:\na. [MATH: {x_{1}(t) = 2u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = 2u_{2}(t)]\nb. [MATH: {x_{1}(t) = u_{1}(t) \u2212 2u_{2}(t); x_{2}(t) = 3u_{2}(t)]\nc. [MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = \u2212 u_{2}(t)]\nd. [MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = u_{2}(t)]\ne. [MATH: {x_{1}(t) = u_{1}(t) + u_{2}(t); x_{2}(t) = u_{2}(t)]"
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "540583",
+        "content_id": "4184",
+        "dom_id": "step-540583",
+        "selector": "#step-540583",
+        "step_anchor": "step-12",
+        "title": "The Proof of the Formula For a General System",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the <span class=\"math\">[MATH: 2\\times 2]</span> matrix differential equation\n<span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t).]</span> </p>",
+            "readable_text": "Consider the [MATH: 2\\times 2] matrix differential equation\n[MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Assume that <span class=\"math\">[MATH: A]</span> is diagonalizable and has eigenvectors <span class=\"math\">[MATH: {\\color{red}\\mathbf{v}_1}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2}]</span> with corresponding eigenvalues <span class=\"math\">[MATH: {\\color{red}\\lambda_1}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\lambda_2},]</span> respectively.</p>",
+            "readable_text": "Assume that [MATH: A] is diagonalizable and has eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}] with corresponding eigenvalues [MATH: {\\color{red}\\lambda_1}] and [MATH: {\\color{blue}\\lambda_2},] respectively.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ve been using the general solution formula \n<span class=\"math\">[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]</span></p>",
+            "readable_text": "We've been using the general solution formula\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>But where does this formula come from? First, remember that the substitution</p>",
+            "readable_text": "But where does this formula come from? First, remember that the substitution",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [|||; v_{1}|v_{2};|||]]</span></p>",
+            "readable_text": "[MATH: [|||; v_{1}|v_{2};|||]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>transforms the matrix differential equation into the equivalent decoupled system</p>",
+            "readable_text": "transforms the matrix differential equation into the equivalent decoupled system",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]</span></p>",
+            "readable_text": "[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can solve this new decoupled system using the formula\n<span class=\"math\">[MATH: u(t)|= c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}, c_{1}, c_{2} \u2208 R.]</span></p>",
+            "readable_text": "We can solve this new decoupled system using the formula\n[MATH: u(t)|= c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}, c_{1}, c_{2} \u2208 R.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Using the substitution <span class=\"math\">[MATH: \\mathbf{x}(t)=E\\mathbf{u}(t)]</span>, we can transform the system back to the variable <span class=\"math\">[MATH: \\mathbf x(t),]</span> as follows:</p>",
+            "readable_text": "Using the substitution [MATH: \\mathbf{x}(t)=E\\mathbf{u}(t)], we can transform the system back to the variable [MATH: \\mathbf x(t),] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t)|= Eu(t); = E(c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}); = c_{1}E[1; 0]e^{\u03bb_{1}t} + c_{2}E[0; 1]e^{\u03bb_{2}t}; = c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}]</span></p>",
+            "readable_text": "[MATH: x(t)|= Eu(t); = E(c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}); = c_{1}E[1; 0]e^{\u03bb_{1}t} + c_{2}E[0; 1]e^{\u03bb_{2}t}; = c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the general solution to our original system is given by\n<span class=\"math\">[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]</span></p>",
+            "readable_text": "Therefore, the general solution to our original system is given by\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConsider the [MATH: 2\\times 2] matrix differential equation\n[MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t).]\n\nContent:\nAssume that [MATH: A] is diagonalizable and has eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}] with corresponding eigenvalues [MATH: {\\color{red}\\lambda_1}] and [MATH: {\\color{blue}\\lambda_2},] respectively.\n\nContent:\nWe've been using the general solution formula\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]\n\nContent:\nBut where does this formula come from? First, remember that the substitution\n\nContent:\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nContent:\ntransforms the matrix differential equation into the equivalent decoupled system\n\nContent:\n[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]\n\nContent:\nWe can solve this new decoupled system using the formula\n[MATH: u(t)|= c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}, c_{1}, c_{2} \u2208 R.]\n\nContent:\nUsing the substitution [MATH: \\mathbf{x}(t)=E\\mathbf{u}(t)], we can transform the system back to the variable [MATH: \\mathbf x(t),] as follows:\n\nContent:\n[MATH: x(t)|= Eu(t); = E(c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}); = c_{1}E[1; 0]e^{\u03bb_{1}t} + c_{2}E[0; 1]e^{\u03bb_{2}t}; = c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}]\n\nContent:\nTherefore, the general solution to our original system is given by\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWe know how to solve a system of differential equations when they're decoupled. However, most systems are not decoupled. So, how do we solve them?\n\nContent:\nLet's consider a general linear system of two differential equations:\n\nContent:\n[MATH: {x_{1}^{\u2032}(t) = ax_{1}(t) + bx_{2}(t); x_{2}^{\u2032}(t) = cx_{1}(t) + dx_{2}(t)]\n\nContent:\nIt turns out that if the matrix [MATH: A] has two distinct real eigenvalues [MATH: \\lambda_1] and [MATH: \\lambda_2], then [MATH: A] is diagonalizable and we can solve the system.\n\nContent:\nIf the eigenvectors corresponding to [MATH: \\color{red}\\lambda_1] and [MATH: \\color{blue}\\lambda_2] are [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2},] respectively, then the general solution to our original system can be written as\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]\n\nContent:\nThis result is true for any [MATH: n \\times n] system with [MATH: n] distinct eigenvalues. We'll prove this result for a [MATH: 2\\times 2] system at the end of the lesson.\n\nContent:\nNow, let's see some concrete examples.\n\n---\n\nItem 2 \u2014 Example: Finding the General Solution Given the Eigenvalues and Eigenvectors of the Corresponding Matrix\n\nExample Prompt:\nLet [MATH: [1; \u2212 2]] and [MATH: [2; 5]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \\lambda_1=-1] and [MATH: \\lambda_2=2,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)?]\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a system of first-order linear ODEs in the form\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),]\nwhere [MATH: A] has two distinct eigenvalues [MATH: {\\color{red}\\lambda_1}, {\\color{blue}\\lambda_2}] with corresponding eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2},] the formula for the general solution is\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}, \\qquad c_1,c_2 \\in \\mathbb{R}.]\n\nTherefore, the general solution of our matrix differential equation is\n\n[MATH: x(t)|= c_{1}[1; \u2212 2]e^{\u2212 t} + c_{2}[2; 5]e^{2t}, c_{1}, c_{2} \u2208 R.]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nLet [MATH: v_{1} = [1; \u2212 1]] and [MATH: v_{2} = [0; 1]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \u03bb_{1} = 1] and [MATH: \u03bb_{2} = \u2212 0.5,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: x^{\u2032}(t) = Ax(t)?]\n\nChoices:\na. [MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 0.5t} + c_{2}[0; 1]e^{t}, c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = (1)/(2)c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 t}, c_{1}, c_{2} \u2208 R]\nc. [MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 1]e^{\u2212 0.5t}, c_{1}, c_{2} \u2208 R]\nd. [MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + (1)/(2)c_{2}[0; 1], c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[1; \u2212 1]e^{t} + c_{2}[0; 0.5]e^{t}, c_{1}, c_{2} \u2208 R]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nLet [MATH: v_{1} = [\u2212 2; 1]] and [MATH: v_{2} = [3; \u2212 1]] be eigenvectors of a matrix [MATH: A] that correspond to eigenvalues [MATH: \u03bb_{1} = 4] and [MATH: \u03bb_{2} = 0,] respectively.\nWhat is the general solution of the matrix differential equation [MATH: x^{\u2032}(t) = Ax(t)?]\n\nChoices:\na. [MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1], c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t}c_{1} \u2208 R]\nc. [MATH: x(t) = c_{1}[3; \u2212 1]e^{4t}, c_{1} \u2208 R]\nd. [MATH: x(t) = c_{1}[\u2212 2; 1]e^{4t} + c_{2}[3; \u2212 1]e^{t}, c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[\u2212 2; 1] + c_{2}[3; \u2212 1]e^{4t}, c_{1}, c_{2} \u2208 R]\n\n---\n\nItem 5 \u2014 Example: Finding the General Solution to a Linear System of Differential Equations\n\nExample Prompt:\nFind the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = 6x_{1}(t) + 7x_{2}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) \u2212 4x_{2}(t).]\n\nHint: The eigenvalues of the system's matrix are [MATH: \\lambda_1=-1] and [MATH: \\lambda_2=3.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we write down the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)] for the given system:\n\n[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]\n\nWe need to find the eigenvalues and the eigenvectors of the matrix [MATH: A.]\n\n- We are given that the eigenvalues are\n[MATH: \\lambda_1=-1\n\\qquad\\text{and}\\qquad\n\\lambda_2=3.]\n- Let's go through the process of finding the eigenvectors.\n\n- For [MATH: \\lambda_1 =-1,] we get\n[MATH: [7|7; \u2212 3|\u2212 3]]\nSo, we get an eigenvector\n[MATH: [\u2212 1; 1]]\n- For [MATH: \\lambda_2 =3,] we get\n[MATH: [3|7; \u2212 3|\u2212 7]]\nSo, we get an eigenvector\n[MATH: [7; \u2212 3]]\n\nThus, the general solution to the given system is\n\n[MATH: x(t)|= c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}; = c_{1}[\u2212 1; 1]e^{\u2212 t} + c_{2}[7; \u2212 3]e^{3t}, c_{1}, c_{2} \u2208 R.]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\nFind the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = 5x_{1}(t) \u2212 7x_{2}(t); x_{2}^{\u2032}(t) = 2x_{2}(t).]\n\nChoices:\na. [MATH: x(t) = c_{1}[3; 7]e^{5t} + c_{2}[0; 1]e^{2t}, c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = c_{1}[3; 7]e^{2t} + c_{2}[0; 1]e^{5t}, c_{1}, c_{2} \u2208 R]\nc. [MATH: x(t) = c_{1}[7; 3]e^{5t} + c_{2}[1; 0]e^{2t}, c_{1}, c_{2} \u2208 R]\nd. [MATH: x(t) = c_{1}[7; 1]e^{2t} + c_{2}[3; 0]e^{5t}, c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[7; 3]e^{2t} + c_{2}[1; 0]e^{5t}, c_{1}, c_{2} \u2208 R]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\nFind the general solution to the system of differential equations\n[MATH: {x_{1}^{\u2032}(t) = x_{1}(t) + 3x_{2}(t); x_{2}^{\u2032}(t) = x_{1}(t) \u2212 x_{2}(t).]\nHint: The eigenvalues of the system's matrix are [MATH: \u03bb_{1} = \u2212 2] and [MATH: \u03bb_{2} = 2.]\n\nChoices:\na. [MATH: x(t) = c_{1}[1; \u2212 1]e^{\u2212 2t} + c_{2}[1; 3]e^{2t}, c_{1}, c_{2} \u2208 R]\nb. [MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t}, c_{1} \u2208 R]\nc. [MATH: x(t) = c_{1}[3; 1]e^{2t}, c_{1} \u2208 R]\nd. [MATH: x(t) = c_{1}[\u2212 1; 1]e^{\u2212 2t} + c_{2}[3; 1]e^{2t}, c_{1}, c_{2} \u2208 R]\ne. [MATH: x(t) = c_{1}[\u2212 1; 1]e^{2t} + c_{2}[3; 1]e^{\u2212 2t}, c_{1}, c_{2} \u2208 R]\n\n---\n\nItem 8 \u2014 Tutorial: Decoupling a Linear System of Differential Equations\n\nContent:\nWe've seen how to solve a decoupled system of differential equations. Our goal now is to understand in more detail why this method works.\n\nContent:\nLet's consider our general linear system of two differential equations once again:\n\nContent:\n[MATH: Missing \\end{cases}]\n\nContent:\nWe will show that if the matrix [MATH: A] is diagonalizable, we can convert it into an equivalent decoupled system.\n\nContent:\nIf [MATH: A] is diagonalizable, it has [MATH: 2] linearly independent eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}.] We use these to form the change of variables matrix [MATH: E,] given by\n\nContent:\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nContent:\nBecause the columns are linearly independent, [MATH: E] is invertible. Then, the substitution\n\nContent:\n[MATH: \\mathbf{x}(t) = E\\mathbf{u}(t)]\n\nContent:\nwill transform our original system of differential equations into a decoupled one, as follows:\n\nContent:\n[MATH: x^{\u2032}(t)|= Ax(t); (d)/(dt)(Eu(t))|= A(Eu(t)); Eu^{\u2032}(t)|= AEu(t); u^{\u2032}(t)|= E^{\u2212 1}AEu(t)]\n\nContent:\nNote that\n\nContent:\n[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]\n\nContent:\nis a diagonal matrix, and [MATH: {\\color{red}\\lambda_1},] [MATH: {\\color{blue}\\lambda_2}] are the eigenvalues of [MATH: A] corresponding to [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}.]\n\nContent:\nFollowing these steps, we now have the decoupled system\n[MATH: Missing \\end{cases}]\n\nContent:\nHere, the matrix [MATH: D = E^{-1}] is sometimes called the decoupling matrix.\n\nContent:\nLet's see a concrete example.\n\n---\n\nItem 9 \u2014 Example: Determining the Decoupling Substitution of a Linear System of Differential Equations\n\nExample Prompt:\nFind the substitution that will decouple the following system of differential equations:\n\n[MATH: {x_{1}^{\u2032}(t) = \u2212 3x_{1}(t); x_{2}^{\u2032}(t) = \u2212 3x_{1}(t) + x_{2}(t)]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's construct the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)] for the given system:\n[MATH: [x_{1}^{\u2032}(t); x_{2}^{\u2032}(t)]]\n\nWe need to find the eigenvalues and the eigenvectors of the matrix [MATH: A.]\n\n- Since [MATH: A] is lower-triangular, the eigenvalues are\n[MATH: \\lambda_1=-3\n\\qquad\\text{and}\\qquad\n\\lambda_2=1.]\n- Let's go through the process of finding the eigenvectors.\n\n- For [MATH: \\lambda_1 =-3,] we get\n[MATH: [0|0; \u2212 3|4]]\nSo, we get an eigenvector\n[MATH: [4; 3]]\n- For [MATH: \\lambda_2 =1,] we get\n[MATH: [\u2212 4|0; \u2212 3|0]]\nSo, we get an eigenvector\n[MATH: [0; 1]]\n\nTherefore, we have [MATH: [4|0; 3|1]]\n\nFinally, the change of variables that decouples the system is given by [MATH: \\mathbf{x}(t) = E\\mathbf{u}(t),] or equivalently,\n[MATH: {x_{1}(t) = 4u_{1}(t); x_{2}(t) = 3u_{1}(t) + u_{2}(t).]\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\nLet [MATH: v_{1} = [3; \u2212 4]] and [MATH: v_{2} = [2; \u2212 3]] be eigenvectors of a matrix [MATH: A.] Find the decoupling matrix of the differential equation [MATH: x^{\u2032}(t) = Ax(t).]\n\nChoices:\na. [MATH: D = [\u2212 3|2; 4|3]]\nb. [MATH: D = [3|2; \u2212 4|\u2212 3]]\nc. [MATH: D = [3|\u2212 4; 2|\u2212 3]]\nd. [MATH: D = [\u2212 3|\u2212 2; 4|3]]\ne. [MATH: D = [\u2212 3|4; \u2212 2|3]]\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\nFind the substitution that will decouple the following system of differential equations:\n\n[MATH: {x_{1}^{\u2032}(t) = 3x_{1}(t) + 2x_{2}(t); x_{2}^{\u2032}(t) = x_{2}(t)]\n\nChoices:\na. [MATH: {x_{1}(t) = 2u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = 2u_{2}(t)]\nb. [MATH: {x_{1}(t) = u_{1}(t) \u2212 2u_{2}(t); x_{2}(t) = 3u_{2}(t)]\nc. [MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = \u2212 u_{2}(t)]\nd. [MATH: {x_{1}(t) = u_{1}(t) \u2212 u_{2}(t); x_{2}(t) = u_{2}(t)]\ne. [MATH: {x_{1}(t) = u_{1}(t) + u_{2}(t); x_{2}(t) = u_{2}(t)]\n\n---\n\nItem 12 \u2014 Tutorial: The Proof of the Formula For a General System\n\nContent:\nConsider the [MATH: 2\\times 2] matrix differential equation\n[MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t).]\n\nContent:\nAssume that [MATH: A] is diagonalizable and has eigenvectors [MATH: {\\color{red}\\mathbf{v}_1}] and [MATH: {\\color{blue}\\mathbf{v}_2}] with corresponding eigenvalues [MATH: {\\color{red}\\lambda_1}] and [MATH: {\\color{blue}\\lambda_2},] respectively.\n\nContent:\nWe've been using the general solution formula\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]\n\nContent:\nBut where does this formula come from? First, remember that the substitution\n\nContent:\n[MATH: [|||; v_{1}|v_{2};|||]]\n\nContent:\ntransforms the matrix differential equation into the equivalent decoupled system\n\nContent:\n[MATH: [\u03bb_{1}|0; 0|\u03bb_{2}]]\n\nContent:\nWe can solve this new decoupled system using the formula\n[MATH: u(t)|= c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}, c_{1}, c_{2} \u2208 R.]\n\nContent:\nUsing the substitution [MATH: \\mathbf{x}(t)=E\\mathbf{u}(t)], we can transform the system back to the variable [MATH: \\mathbf x(t),] as follows:\n\nContent:\n[MATH: x(t)|= Eu(t); = E(c_{1}[1; 0]e^{\u03bb_{1}t} + c_{2}[0; 1]e^{\u03bb_{2}t}); = c_{1}E[1; 0]e^{\u03bb_{1}t} + c_{2}E[0; 1]e^{\u03bb_{2}t}; = c_{1}v_{1}e^{\u03bb_{1}t} + c_{2}v_{2}e^{\u03bb_{2}t}]\n\nContent:\nTherefore, the general solution to our original system is given by\n[MATH: \\mathbf{x}(t) = c_1{\\color{red}\\mathbf{v}_1} e^{{\\color{red}\\lambda_1} t} + c_2{\\color{blue}\\mathbf{v}_2} e^{{\\color{blue}\\lambda_2} t}.]"
+  }
+}

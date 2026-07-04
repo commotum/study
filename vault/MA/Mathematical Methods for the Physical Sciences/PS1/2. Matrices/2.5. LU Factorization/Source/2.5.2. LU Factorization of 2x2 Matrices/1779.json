@@ -1,0 +1,996 @@
+{
+  "schema_version": 2,
+  "topic_id": "1779",
+  "topic_title": "LU Factorization of 2x2 Matrices",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/1779/Source/1779.html",
+  "source_url": "https://mathacademy.com/topics/1779",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "17355",
+        "dom_id": "sectionLink-17355",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-17355"
+      },
+      {
+        "index": 2,
+        "step_id": "23125",
+        "dom_id": "sectionLink-23125",
+        "name": "",
+        "title": "Identifying LU Factorizations",
+        "selector": "#sectionLink-23125"
+      },
+      {
+        "index": 3,
+        "step_id": "23628",
+        "dom_id": "sectionLink-23628",
+        "name": "",
+        "title": "An Algorithm for Finding the LU Factorization of a 2x2 Matrix",
+        "selector": "#sectionLink-23628"
+      },
+      {
+        "index": 4,
+        "step_id": "17356",
+        "dom_id": "sectionLink-17356",
+        "name": "",
+        "title": "Finding the LU Factorization of a 2x2 Matrix",
+        "selector": "#sectionLink-17356"
+      },
+      {
+        "index": 5,
+        "step_id": "17359",
+        "dom_id": "sectionLink-17359",
+        "name": "",
+        "title": "Finding the LU Factorization of a Singular 2x2 Matrix",
+        "selector": "#sectionLink-17359"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1727",
+        "name": "Row Operations on 2x2 Matrices as Products of Elementary Matrices",
+        "href": "/topics/row-operations-on-2x2-matrices-as-products-of-elementary-matrices-1727"
+      },
+      {
+        "topic_id": "1777",
+        "name": "Triangular Matrices",
+        "href": "/topics/triangular-matrices-1777"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "17355",
+        "content_id": "3176",
+        "dom_id": "step-17355",
+        "selector": "#step-17355",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the same way that we can factor numbers or polynomials, we can factor a matrix by writing it as a product of two or more matrices. In fact, there is one factorization technique that works for <em>all</em> matrices, called <strong>LU factorization</strong> (or <strong>LU decomposition</strong>).</p>",
+            "readable_text": "In the same way that we can factor numbers or polynomials, we can factor a matrix by writing it as a product of two or more matrices. In fact, there is one factorization technique that works for all matrices, called LU factorization (or LU decomposition).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>LU factorization involves writing a matrix <span class=\"math\">[MATH: A]</span> as a product of two matrices <span class=\"math\">[MATH: L]</span> and <span class=\"math\">[MATH: U,]</span> where</p>",
+            "readable_text": "LU factorization involves writing a matrix [MATH: A] as a product of two matrices [MATH: L] and [MATH: U,] where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: [1|0; \u2217|1]]</span> is a <em>unit lower triangular matrix</em> (a lower triangular matrix that has only <span class=\"math\">[MATH: 1]</span>&#x27;s on the main diagonal), and</p></li><li><p><span class=\"math\">[MATH: [\u2217|\u2217; 0|\u2217]]</span> is an <em>upper triangular matrix</em>.</p></li></ul>",
+            "readable_text": "- [MATH: [1|0; \u2217|1]] is a unit lower triangular matrix (a lower triangular matrix that has only [MATH: 1]'s on the main diagonal), and\n- [MATH: [\u2217|\u2217; 0|\u2217]] is an upper triangular matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, we can write the matrix <span class=\"math\">[MATH: [\u2212 2|1; 6|\u2212 6]]</span> in LU factored form as follows:</p>",
+            "readable_text": "For example, we can write the matrix [MATH: [\u2212 2|1; 6|\u2212 6]] in LU factored form as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2|1; 6|\u2212 6] = [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]</span></p>",
+            "readable_text": "[MATH: [\u2212 2|1; 6|\u2212 6] = [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>You may be wondering how we arrived at this factorization. Shortly, we&#x27;ll discuss an algorithm that explains how to compute <span class=\"math\">[MATH: L]</span> and <span class=\"math\">[MATH: U]</span> for any <span class=\"math\">[MATH: 2\\times2]</span> matrix <span class=\"math\">[MATH: A.]</span> But for now, let&#x27;s focus on recognizing LU factored forms.</p>",
+            "readable_text": "You may be wondering how we arrived at this factorization. Shortly, we'll discuss an algorithm that explains how to compute [MATH: L] and [MATH: U] for any [MATH: 2\\times2] matrix [MATH: A.] But for now, let's focus on recognizing LU factored forms.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn the same way that we can factor numbers or polynomials, we can factor a matrix by writing it as a product of two or more matrices. In fact, there is one factorization technique that works for all matrices, called LU factorization (or LU decomposition).\n\nContent:\nLU factorization involves writing a matrix [MATH: A] as a product of two matrices [MATH: L] and [MATH: U,] where\n\nContent:\n- [MATH: [1|0; \u2217|1]] is a unit lower triangular matrix (a lower triangular matrix that has only [MATH: 1]'s on the main diagonal), and\n- [MATH: [\u2217|\u2217; 0|\u2217]] is an upper triangular matrix.\n\nContent:\nFor example, we can write the matrix [MATH: [\u2212 2|1; 6|\u2212 6]] in LU factored form as follows:\n\nContent:\n[MATH: [\u2212 2|1; 6|\u2212 6] = [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]\n\nContent:\nYou may be wondering how we arrived at this factorization. Shortly, we'll discuss an algorithm that explains how to compute [MATH: L] and [MATH: U] for any [MATH: 2\\times2] matrix [MATH: A.] But for now, let's focus on recognizing LU factored forms."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "23125",
+        "content_id": "6184",
+        "dom_id": "step-23125",
+        "selector": "#step-23125",
+        "step_anchor": "step-2",
+        "title": "Identifying LU Factorizations",
+        "key_prerequisites": [
+          {
+            "topic_id": "1777",
+            "name": "Triangular Matrices",
+            "href": "/topics/1777",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Which of the following products is the LU factorization of a matrix <span class=\"math\">[MATH: A?]</span></p><ol><li><p> <span class=\"math\">[MATH: [1|0; 4|1]]</span> </p></li><li><p> <span class=\"math\">[MATH: [2|0; 2|\u2212 3]]</span> </p></li><li><p> <span class=\"math\">[MATH: [1|0; \u2212 3|1]]</span> </p></li></ol>",
+            "readable_text": "Which of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: [1|0; 4|1]]\n2. [MATH: [2|0; 2|\u2212 3]]\n3. [MATH: [1|0; \u2212 3|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Remember that in the LU factorization of a matrix <span class=\"math\">[MATH: A,]</span> we write <span class=\"math\">[MATH: A=LU]</span> where the matrix <span class=\"math\">[MATH: L]</span> is a unit lower triangular matrix (a lower triangular matrix that has only <span class=\"math\">[MATH: 1]</span>&#x27;s on the main diagonal) and the matrix <span class=\"math\">[MATH: U]</span> is an upper triangular matrix:</p><p><span class=\"math\">[MATH: [1|0; \u2217|1]]</span></p><p>With that in mind, let&#x27;s inspect each product in turn.</p><ul><li><p>The first product is in <span class=\"math\">[MATH: LU]</span> form because the left matrix is a unit lower triangular matrix, and the right matrix is an upper triangular matrix.\n<span class=\"math\">[MATH: [1|0; 4|1]]</span></p></li><li><p>The second product is <em>not</em> in <span class=\"math\">[MATH: LU]</span> form. Although the left matrix is a lower triangular matrix, it is not a <em>unit</em> lower triangular matrix because it does not have <span class=\"math\">[MATH: 1]</span>&#x27;s on the diagonal.\n<span class=\"math\">[MATH: [2|0; 2|\u2212 3]]</span></p></li><li><p>The third product is <em>not</em> in <span class=\"math\">[MATH: LU]</span> form because the matrix on the right is not an upper triangular matrix, as it has a non-zero entry below the diagonal.\n<span class=\"math\">[MATH: [1|0; \u2212 3|1]]</span></p></li></ul><p>Therefore, the correct answer is &quot;I only.&quot;</p>",
+            "readable_text": "Remember that in the LU factorization of a matrix [MATH: A,] we write [MATH: A=LU] where the matrix [MATH: L] is a unit lower triangular matrix (a lower triangular matrix that has only [MATH: 1]'s on the main diagonal) and the matrix [MATH: U] is an upper triangular matrix:\n\n[MATH: [1|0; \u2217|1]]\n\nWith that in mind, let's inspect each product in turn.\n\n- The first product is in [MATH: LU] form because the left matrix is a unit lower triangular matrix, and the right matrix is an upper triangular matrix.\n[MATH: [1|0; 4|1]]\n- The second product is not in [MATH: LU] form. Although the left matrix is a lower triangular matrix, it is not a unit lower triangular matrix because it does not have [MATH: 1]'s on the diagonal.\n[MATH: [2|0; 2|\u2212 3]]\n- The third product is not in [MATH: LU] form because the matrix on the right is not an upper triangular matrix, as it has a non-zero entry below the diagonal.\n[MATH: [1|0; \u2212 3|1]]\n\nTherefore, the correct answer is \"I only.\"",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nWhich of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: [1|0; 4|1]]\n2. [MATH: [2|0; 2|\u2212 3]]\n3. [MATH: [1|0; \u2212 3|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nRemember that in the LU factorization of a matrix [MATH: A,] we write [MATH: A=LU] where the matrix [MATH: L] is a unit lower triangular matrix (a lower triangular matrix that has only [MATH: 1]'s on the main diagonal) and the matrix [MATH: U] is an upper triangular matrix:\n\n[MATH: [1|0; \u2217|1]]\n\nWith that in mind, let's inspect each product in turn.\n\n- The first product is in [MATH: LU] form because the left matrix is a unit lower triangular matrix, and the right matrix is an upper triangular matrix.\n[MATH: [1|0; 4|1]]\n- The second product is not in [MATH: LU] form. Although the left matrix is a lower triangular matrix, it is not a unit lower triangular matrix because it does not have [MATH: 1]'s on the diagonal.\n[MATH: [2|0; 2|\u2212 3]]\n- The third product is not in [MATH: LU] form because the matrix on the right is not an upper triangular matrix, as it has a non-zero entry below the diagonal.\n[MATH: [1|0; \u2212 3|1]]\n\nTherefore, the correct answer is \"I only.\""
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "32607",
+        "dom_id": "question-32607",
+        "selector": "#question-32607",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following products is the LU factorization of a matrix <span class=\"math\">[MATH: A?]</span></p><ol><li><p> <span class=\"math\">[MATH: A = [1|\u2212 1; 1|0][1|0; 7|1]]</span> </p></li><li><p> <span class=\"math\">[MATH: A = [1|0; 7|1][9|\u2212 1; 0|1]]</span> </p></li><li><p> <span class=\"math\">[MATH: A = [9|\u2212 1; 1|0][1|1; 7|0]]</span> </p></li></ol>",
+          "readable_text": "Which of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: A = [1|\u2212 1; 1|0][1|0; 7|1]]\n2. [MATH: A = [1|0; 7|1][9|\u2212 1; 0|1]]\n3. [MATH: A = [9|\u2212 1; 1|0][1|1; 7|0]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-32607-a",
+            "content_type": "text",
+            "normalized_html": "<p>III only</p>",
+            "readable_text": "III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-32607-b",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-32607-c",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-32607-d",
+            "content_type": "text",
+            "normalized_html": "<p>I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-32607-e",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: A = [1|\u2212 1; 1|0][1|0; 7|1]]\n2. [MATH: A = [1|0; 7|1][9|\u2212 1; 0|1]]\n3. [MATH: A = [9|\u2212 1; 1|0][1|1; 7|0]]\n\nChoices:\na. III only\nb. I only\nc. I and III only\nd. I and II only\ne. II only"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "32551",
+        "dom_id": "question-32551",
+        "selector": "#question-32551",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following products is the LU factorization of a matrix <span class=\"math\">[MATH: A?]</span></p><ol><li><p> <span class=\"math\">[MATH: A = [1|0; \u2212 3|1][2|5; 1|0]]</span> </p></li><li><p> <span class=\"math\">[MATH: A = [2|5; 0|1][1|0; \u2212 3|1]]</span> </p></li><li><p> <span class=\"math\">[MATH: A = [1|0; \u2212 3|1][2|5; 0|1]]</span> </p></li></ol>",
+          "readable_text": "Which of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: A = [1|0; \u2212 3|1][2|5; 1|0]]\n2. [MATH: A = [2|5; 0|1][1|0; \u2212 3|1]]\n3. [MATH: A = [1|0; \u2212 3|1][2|5; 0|1]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-32551-a",
+            "content_type": "text",
+            "normalized_html": "<p>None</p>",
+            "readable_text": "None",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-32551-b",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-32551-c",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-32551-d",
+            "content_type": "text",
+            "normalized_html": "<p>III only</p>",
+            "readable_text": "III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-32551-e",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: A = [1|0; \u2212 3|1][2|5; 1|0]]\n2. [MATH: A = [2|5; 0|1][1|0; \u2212 3|1]]\n3. [MATH: A = [1|0; \u2212 3|1][2|5; 0|1]]\n\nChoices:\na. None\nb. II and III only\nc. II only\nd. III only\ne. I only"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "23628",
+        "content_id": "3977",
+        "dom_id": "step-23628",
+        "selector": "#step-23628",
+        "step_anchor": "step-5",
+        "title": "An Algorithm for Finding the LU Factorization of a 2x2 Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: [\u2212 2|1; 6|\u2212 6]]</span> To perform LU factorization, we need to write <span class=\"math\">[MATH: A]</span> as </p>",
+            "readable_text": "Let [MATH: [\u2212 2|1; 6|\u2212 6]] To perform LU factorization, we need to write [MATH: A] as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2|1; 6|\u2212 6]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2|1; 6|\u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the matrices <span class=\"math\">[MATH: L]</span> and <span class=\"math\">[MATH: U,]</span> we reduce the matrix <span class=\"math\">[MATH: A]</span> to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to <span class=\"math\">[MATH: A]</span> in terms of matrix multiplication using elementary matrices:</p>",
+            "readable_text": "To find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A|= [\u2212 2|1; 6|\u2212 6]|R_{2}|:=R_{2} + 3R_{1}\u27fa[1|0; 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[\u2212 2|1; 0|\u2212 3]; = U]</span></p>",
+            "readable_text": "[MATH: A|= [\u2212 2|1; 6|\u2212 6]|R_{2}|:=R_{2} + 3R_{1}\u27fa[1|0; 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[\u2212 2|1; 0|\u2212 3]; = U]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The reduced matrix is upper triangular, so it is our matrix <span class=\"math\">[MATH: U.]</span> Now, since <span class=\"math\">[MATH: E_1A=U,]</span> we can invert <span class=\"math\">[MATH: E_1]</span> to arrive at the desired LU factorization:</p>",
+            "readable_text": "The reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 3|1]^{\u2212 1}U; A|= [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]</span></p>",
+            "readable_text": "[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 3|1]^{\u2212 1}U; A|= [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Caution:</strong> To get a unit lower triangular matrix at the end, we have the following restriction while reducing a matrix <span class=\"math\">[MATH: A]</span> to row echelon form:</p>",
+            "readable_text": "Caution: To get a unit lower triangular matrix at the end, we have the following restriction while reducing a matrix [MATH: A] to row echelon form:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>we can only add a multiple of the <span class=\"math\">[MATH: 1]</span>st row to the <span class=\"math\">[MATH: 2]</span>nd row (<span class=\"math\">[MATH: R_2:=R_2+k R_1]</span>), and</p></li><li><p>the other elementary row operations (swapping or multiplying a row by a number) are not allowed.</p></li></ul>",
+            "readable_text": "- we can only add a multiple of the [MATH: 1]st row to the [MATH: 2]nd row ([MATH: R_2:=R_2+k R_1]), and\n- the other elementary row operations (swapping or multiplying a row by a number) are not allowed.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet [MATH: [\u2212 2|1; 6|\u2212 6]] To perform LU factorization, we need to write [MATH: A] as\n\nContent:\n[MATH: [\u2212 2|1; 6|\u2212 6]]\n\nContent:\nTo find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices:\n\nContent:\n[MATH: A|= [\u2212 2|1; 6|\u2212 6]|R_{2}|:=R_{2} + 3R_{1}\u27fa[1|0; 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[\u2212 2|1; 0|\u2212 3]; = U]\n\nContent:\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\nContent:\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 3|1]^{\u2212 1}U; A|= [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]\n\nContent:\nCaution: To get a unit lower triangular matrix at the end, we have the following restriction while reducing a matrix [MATH: A] to row echelon form:\n\nContent:\n- we can only add a multiple of the [MATH: 1]st row to the [MATH: 2]nd row ([MATH: R_2:=R_2+k R_1]), and\n- the other elementary row operations (swapping or multiplying a row by a number) are not allowed."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "17356",
+        "content_id": "4765",
+        "dom_id": "step-17356",
+        "selector": "#step-17356",
+        "step_anchor": "step-6",
+        "title": "Finding the LU Factorization of a 2x2 Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "1727",
+            "name": "Row Operations on 2x2 Matrices as Products of Elementary Matrices",
+            "href": "/topics/1727",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given <span class=\"math\">[MATH: [7|9; \u2212 7|\u2212 6]]</span> find its LU decomposition. </p>",
+            "readable_text": "Given [MATH: [7|9; \u2212 7|\u2212 6]] find its LU decomposition.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To find the matrices <span class=\"math\">[MATH: L]</span> and <span class=\"math\">[MATH: U,]</span> we reduce the matrix <span class=\"math\">[MATH: A]</span> to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to <span class=\"math\">[MATH: A]</span> in terms of matrix multiplication using elementary matrices.</p><p><span class=\"math\">[MATH: A|= [7|9; \u2212 7|\u2212 6]|R_{2}|:=R_{2} + 1 \u22c5 R_{1}\u27fa[1|0; 1|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[7|9; 0|3]; = U]</span></p><p>The reduced matrix is upper triangular, so it is our matrix <span class=\"math\">[MATH: U.]</span> Now, since <span class=\"math\">[MATH: E_1A=U,]</span> we can invert <span class=\"math\">[MATH: E_1]</span> to arrive at the desired LU factorization:</p><p><span class=\"math\">[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 1|1]^{\u2212 1}U; A|= [1|0; \u2212 1|1]_(\u23df)_(L)[7|9; 0|3]_(\u23df)_(U)]</span></p>",
+            "readable_text": "To find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices.\n\n[MATH: A|= [7|9; \u2212 7|\u2212 6]|R_{2}|:=R_{2} + 1 \u22c5 R_{1}\u27fa[1|0; 1|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[7|9; 0|3]; = U]\n\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 1|1]^{\u2212 1}U; A|= [1|0; \u2212 1|1]_(\u23df)_(L)[7|9; 0|3]_(\u23df)_(U)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven [MATH: [7|9; \u2212 7|\u2212 6]] find its LU decomposition.\n\nContent:\nEXPLANATION\n\nExplanation:\nTo find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices.\n\n[MATH: A|= [7|9; \u2212 7|\u2212 6]|R_{2}|:=R_{2} + 1 \u22c5 R_{1}\u27fa[1|0; 1|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[7|9; 0|3]; = U]\n\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 1|1]^{\u2212 1}U; A|= [1|0; \u2212 1|1]_(\u23df)_(L)[7|9; 0|3]_(\u23df)_(U)]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "32549",
+        "dom_id": "question-32549",
+        "selector": "#question-32549",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that \n<span class=\"math\">[MATH: A = [4|2; \u2212 16|\u2212 3]]</span> \nhas the LU decomposition <span class=\"math\">[MATH: A = LU,]</span> then <span class=\"math\">[MATH: L =]</span></p>",
+          "readable_text": "Given that\n[MATH: A = [4|2; \u2212 16|\u2212 3]]\nhas the LU decomposition [MATH: A = LU,] then [MATH: L =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-32549-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0; \u2212 4|1]]</span></p>",
+            "readable_text": "[MATH: [1|0; \u2212 4|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-32549-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0; \u2212 16|1]]</span></p>",
+            "readable_text": "[MATH: [1|0; \u2212 16|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-32549-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 4|0; 1|1]]</span></p>",
+            "readable_text": "[MATH: [\u2212 4|0; 1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-32549-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0; 4|1]]</span></p>",
+            "readable_text": "[MATH: [1|0; 4|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-32549-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4|0; 2|5]]</span></p>",
+            "readable_text": "[MATH: [4|0; 2|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that\n[MATH: A = [4|2; \u2212 16|\u2212 3]]\nhas the LU decomposition [MATH: A = LU,] then [MATH: L =]\n\nChoices:\na. [MATH: [1|0; \u2212 4|1]]\nb. [MATH: [1|0; \u2212 16|1]]\nc. [MATH: [\u2212 4|0; 1|1]]\nd. [MATH: [1|0; 4|1]]\ne. [MATH: [4|0; 2|5]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "32529",
+        "dom_id": "question-32529",
+        "selector": "#question-32529",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that\n<span class=\"math\">[MATH: A = [1|\u2212 2; 3|\u2212 7]]</span> \nhas the LU decomposition <span class=\"math\">[MATH: A = LU]</span>, then <span class=\"math\">[MATH: l_{21} \u22c5 u_{22} =]</span></p>",
+          "readable_text": "Given that\n[MATH: A = [1|\u2212 2; 3|\u2212 7]]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} \u22c5 u_{22} =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-32529-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-32529-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-32529-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-32529-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 4]</span></p>",
+            "readable_text": "[MATH: \u2212 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-32529-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 3]</span></p>",
+            "readable_text": "[MATH: \u2212 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that\n[MATH: A = [1|\u2212 2; 3|\u2212 7]]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} \u22c5 u_{22} =]\n\nChoices:\na. [MATH: 2]\nb. [MATH: \u2212 2]\nc. [MATH: 3]\nd. [MATH: \u2212 4]\ne. [MATH: \u2212 3]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "17359",
+        "content_id": "4767",
+        "dom_id": "step-17359",
+        "selector": "#step-17359",
+        "step_anchor": "step-9",
+        "title": "Finding the LU Factorization of a Singular 2x2 Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given \n<span class=\"math\">[MATH: [4|3; 12|9]]</span>, find its LU decomposition.</p>",
+            "readable_text": "Given\n[MATH: [4|3; 12|9]], find its LU decomposition.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To find the matrices <span class=\"math\">[MATH: L]</span> and <span class=\"math\">[MATH: U,]</span> we reduce the matrix <span class=\"math\">[MATH: A]</span> to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to <span class=\"math\">[MATH: A]</span> in terms of matrix multiplication using elementary matrices.</p><p><span class=\"math\">[MATH: A|= [4|3; 12|9]|R_{2}|:=R_{2} + (\u2212 3)R_{1}\u27fa[1|0; \u2212 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[4|3; 0|0]; = U.]</span></p><p>The reduced matrix is upper triangular, so it is our matrix <span class=\"math\">[MATH: U.]</span> Now, since <span class=\"math\">[MATH: E_1A=U,]</span> we can invert <span class=\"math\">[MATH: E_1]</span> to arrive at the desired LU factorization:</p><p><span class=\"math\">[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; \u2212 3|1]^{\u2212 1}U; A|= [1|0; 3|1]_(\u23df)_(L)[4|3; 0|0]_(\u23df)_(U).]</span></p>",
+            "readable_text": "To find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices.\n\n[MATH: A|= [4|3; 12|9]|R_{2}|:=R_{2} + (\u2212 3)R_{1}\u27fa[1|0; \u2212 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[4|3; 0|0]; = U.]\n\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; \u2212 3|1]^{\u2212 1}U; A|= [1|0; 3|1]_(\u23df)_(L)[4|3; 0|0]_(\u23df)_(U).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven\n[MATH: [4|3; 12|9]], find its LU decomposition.\n\nContent:\nEXPLANATION\n\nExplanation:\nTo find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices.\n\n[MATH: A|= [4|3; 12|9]|R_{2}|:=R_{2} + (\u2212 3)R_{1}\u27fa[1|0; \u2212 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[4|3; 0|0]; = U.]\n\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; \u2212 3|1]^{\u2212 1}U; A|= [1|0; 3|1]_(\u23df)_(L)[4|3; 0|0]_(\u23df)_(U).]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "32545",
+        "dom_id": "question-32545",
+        "selector": "#question-32545",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that\n<span class=\"math\">[MATH: A = [3|2; \u2212 6|\u2212 4]]</span>\nhas the LU decomposition <span class=\"math\">[MATH: A = LU]</span>, then <span class=\"math\">[MATH: l_{21} + u_{22} =]</span></p>",
+          "readable_text": "Given that\n[MATH: A = [3|2; \u2212 6|\u2212 4]]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} + u_{22} =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-32545-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-32545-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-32545-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-32545-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-32545-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 1]</span></p>",
+            "readable_text": "[MATH: \u2212 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that\n[MATH: A = [3|2; \u2212 6|\u2212 4]]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} + u_{22} =]\n\nChoices:\na. [MATH: 1]\nb. [MATH: 0]\nc. [MATH: 2]\nd. [MATH: \u2212 2]\ne. [MATH: \u2212 1]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "74799",
+        "dom_id": "question-74799",
+        "selector": "#question-74799",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that \n<span class=\"math\">[MATH: A = [1|5; 2|10],]</span>\nhas the LU decomposition <span class=\"math\">[MATH: A = LU]</span>, then <span class=\"math\">[MATH: l_{21} + u_{22} =]</span></p>",
+          "readable_text": "Given that\n[MATH: A = [1|5; 2|10],]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} + u_{22} =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-74799-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-74799-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 1]</span></p>",
+            "readable_text": "[MATH: \u2212 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-74799-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-74799-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-74799-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that\n[MATH: A = [1|5; 2|10],]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} + u_{22} =]\n\nChoices:\na. [MATH: 0]\nb. [MATH: \u2212 1]\nc. [MATH: \u2212 2]\nd. [MATH: 1]\ne. [MATH: 2]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn the same way that we can factor numbers or polynomials, we can factor a matrix by writing it as a product of two or more matrices. In fact, there is one factorization technique that works for all matrices, called LU factorization (or LU decomposition).\n\nContent:\nLU factorization involves writing a matrix [MATH: A] as a product of two matrices [MATH: L] and [MATH: U,] where\n\nContent:\n- [MATH: [1|0; \u2217|1]] is a unit lower triangular matrix (a lower triangular matrix that has only [MATH: 1]'s on the main diagonal), and\n- [MATH: [\u2217|\u2217; 0|\u2217]] is an upper triangular matrix.\n\nContent:\nFor example, we can write the matrix [MATH: [\u2212 2|1; 6|\u2212 6]] in LU factored form as follows:\n\nContent:\n[MATH: [\u2212 2|1; 6|\u2212 6] = [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]\n\nContent:\nYou may be wondering how we arrived at this factorization. Shortly, we'll discuss an algorithm that explains how to compute [MATH: L] and [MATH: U] for any [MATH: 2\\times2] matrix [MATH: A.] But for now, let's focus on recognizing LU factored forms.\n\n---\n\nItem 2 \u2014 Example: Identifying LU Factorizations\n\nExample Prompt:\nWhich of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: [1|0; 4|1]]\n2. [MATH: [2|0; 2|\u2212 3]]\n3. [MATH: [1|0; \u2212 3|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nRemember that in the LU factorization of a matrix [MATH: A,] we write [MATH: A=LU] where the matrix [MATH: L] is a unit lower triangular matrix (a lower triangular matrix that has only [MATH: 1]'s on the main diagonal) and the matrix [MATH: U] is an upper triangular matrix:\n\n[MATH: [1|0; \u2217|1]]\n\nWith that in mind, let's inspect each product in turn.\n\n- The first product is in [MATH: LU] form because the left matrix is a unit lower triangular matrix, and the right matrix is an upper triangular matrix.\n[MATH: [1|0; 4|1]]\n- The second product is not in [MATH: LU] form. Although the left matrix is a lower triangular matrix, it is not a unit lower triangular matrix because it does not have [MATH: 1]'s on the diagonal.\n[MATH: [2|0; 2|\u2212 3]]\n- The third product is not in [MATH: LU] form because the matrix on the right is not an upper triangular matrix, as it has a non-zero entry below the diagonal.\n[MATH: [1|0; \u2212 3|1]]\n\nTherefore, the correct answer is \"I only.\"\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nWhich of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: A = [1|\u2212 1; 1|0][1|0; 7|1]]\n2. [MATH: A = [1|0; 7|1][9|\u2212 1; 0|1]]\n3. [MATH: A = [9|\u2212 1; 1|0][1|1; 7|0]]\n\nChoices:\na. III only\nb. I only\nc. I and III only\nd. I and II only\ne. II only\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nWhich of the following products is the LU factorization of a matrix [MATH: A?]\n\n1. [MATH: A = [1|0; \u2212 3|1][2|5; 1|0]]\n2. [MATH: A = [2|5; 0|1][1|0; \u2212 3|1]]\n3. [MATH: A = [1|0; \u2212 3|1][2|5; 0|1]]\n\nChoices:\na. None\nb. II and III only\nc. II only\nd. III only\ne. I only\n\n---\n\nItem 5 \u2014 Tutorial: An Algorithm for Finding the LU Factorization of a 2x2 Matrix\n\nContent:\nLet [MATH: [\u2212 2|1; 6|\u2212 6]] To perform LU factorization, we need to write [MATH: A] as\n\nContent:\n[MATH: [\u2212 2|1; 6|\u2212 6]]\n\nContent:\nTo find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices:\n\nContent:\n[MATH: A|= [\u2212 2|1; 6|\u2212 6]|R_{2}|:=R_{2} + 3R_{1}\u27fa[1|0; 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[\u2212 2|1; 0|\u2212 3]; = U]\n\nContent:\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\nContent:\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 3|1]^{\u2212 1}U; A|= [1|0; \u2212 3|1]_(\u23df)_(L) \u22c5 [\u2212 2|1; 0|\u2212 3]_(\u23df)_(U)]\n\nContent:\nCaution: To get a unit lower triangular matrix at the end, we have the following restriction while reducing a matrix [MATH: A] to row echelon form:\n\nContent:\n- we can only add a multiple of the [MATH: 1]st row to the [MATH: 2]nd row ([MATH: R_2:=R_2+k R_1]), and\n- the other elementary row operations (swapping or multiplying a row by a number) are not allowed.\n\n---\n\nItem 6 \u2014 Example: Finding the LU Factorization of a 2x2 Matrix\n\nExample Prompt:\nGiven [MATH: [7|9; \u2212 7|\u2212 6]] find its LU decomposition.\n\nContent:\nEXPLANATION\n\nExplanation:\nTo find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices.\n\n[MATH: A|= [7|9; \u2212 7|\u2212 6]|R_{2}|:=R_{2} + 1 \u22c5 R_{1}\u27fa[1|0; 1|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[7|9; 0|3]; = U]\n\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; 1|1]^{\u2212 1}U; A|= [1|0; \u2212 1|1]_(\u23df)_(L)[7|9; 0|3]_(\u23df)_(U)]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nGiven that\n[MATH: A = [4|2; \u2212 16|\u2212 3]]\nhas the LU decomposition [MATH: A = LU,] then [MATH: L =]\n\nChoices:\na. [MATH: [1|0; \u2212 4|1]]\nb. [MATH: [1|0; \u2212 16|1]]\nc. [MATH: [\u2212 4|0; 1|1]]\nd. [MATH: [1|0; 4|1]]\ne. [MATH: [4|0; 2|5]]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nGiven that\n[MATH: A = [1|\u2212 2; 3|\u2212 7]]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} \u22c5 u_{22} =]\n\nChoices:\na. [MATH: 2]\nb. [MATH: \u2212 2]\nc. [MATH: 3]\nd. [MATH: \u2212 4]\ne. [MATH: \u2212 3]\n\n---\n\nItem 9 \u2014 Example: Finding the LU Factorization of a Singular 2x2 Matrix\n\nExample Prompt:\nGiven\n[MATH: [4|3; 12|9]], find its LU decomposition.\n\nContent:\nEXPLANATION\n\nExplanation:\nTo find the matrices [MATH: L] and [MATH: U,] we reduce the matrix [MATH: A] to row echelon form. Whilst doing this, we simultaneously write down the row operations applied to [MATH: A] in terms of matrix multiplication using elementary matrices.\n\n[MATH: A|= [4|3; 12|9]|R_{2}|:=R_{2} + (\u2212 3)R_{1}\u27fa[1|0; \u2212 3|1]^(\u23de)^(E_{1}) \u22c5 A; \u223c[4|3; 0|0]; = U.]\n\nThe reduced matrix is upper triangular, so it is our matrix [MATH: U.] Now, since [MATH: E_1A=U,] we can invert [MATH: E_1] to arrive at the desired LU factorization:\n\n[MATH: E_{1}A|= U; A|= E_{1}^{\u2212 1}U; A|= [1|0; \u2212 3|1]^{\u2212 1}U; A|= [1|0; 3|1]_(\u23df)_(L)[4|3; 0|0]_(\u23df)_(U).]\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\nGiven that\n[MATH: A = [3|2; \u2212 6|\u2212 4]]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} + u_{22} =]\n\nChoices:\na. [MATH: 1]\nb. [MATH: 0]\nc. [MATH: 2]\nd. [MATH: \u2212 2]\ne. [MATH: \u2212 1]\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\nGiven that\n[MATH: A = [1|5; 2|10],]\nhas the LU decomposition [MATH: A = LU], then [MATH: l_{21} + u_{22} =]\n\nChoices:\na. [MATH: 0]\nb. [MATH: \u2212 1]\nc. [MATH: \u2212 2]\nd. [MATH: 1]\ne. [MATH: 2]"
+  }
+}

@@ -1,0 +1,805 @@
+{
+  "schema_version": 2,
+  "topic_id": "2124",
+  "topic_title": "Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases)",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2124/Source/2124.html",
+  "source_url": "https://mathacademy.com/topics/2124",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20246",
+        "dom_id": "sectionLink-20246",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20246"
+      },
+      {
+        "index": 2,
+        "step_id": "20248",
+        "dom_id": "sectionLink-20248",
+        "name": "",
+        "title": "The General Formula for the Orthogonal Projection of a Vector Onto a Subspace",
+        "selector": "#sectionLink-20248"
+      },
+      {
+        "index": 3,
+        "step_id": "20249",
+        "dom_id": "sectionLink-20249",
+        "name": "",
+        "title": "Finding the Orthogonal Projection of a Vector Onto a Plane",
+        "selector": "#sectionLink-20249"
+      },
+      {
+        "index": 4,
+        "step_id": "20247",
+        "dom_id": "sectionLink-20247",
+        "name": "",
+        "title": "Finding the Orthogonal Projection of a Vector Onto a Subspace",
+        "selector": "#sectionLink-20247"
+      },
+      {
+        "index": 5,
+        "step_id": "20250",
+        "dom_id": "sectionLink-20250",
+        "name": "",
+        "title": "Some Intuition Behind the Formula",
+        "selector": "#sectionLink-20250"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "232",
+        "name": "The Transpose of a Matrix",
+        "href": "/topics/the-transpose-of-a-matrix-232"
+      },
+      {
+        "topic_id": "864",
+        "name": "Inverses of 2x2 Matrices",
+        "href": "/topics/inverses-of-2x2-matrices-864"
+      },
+      {
+        "topic_id": "1196",
+        "name": "Multiplying Matrices",
+        "href": "/topics/multiplying-matrices-1196"
+      },
+      {
+        "topic_id": "2123",
+        "name": "Projecting Vectors Onto Subspaces in Euclidean Spaces (Orthogonal Bases)",
+        "href": "/topics/projecting-vectors-onto-subspaces-in-euclidean-spaces-orthogonal-bases-2123"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 9,
+    "step_count": 5,
+    "question_count": 4,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20246",
+        "content_id": "3626",
+        "dom_id": "step-20246",
+        "selector": "#step-20246",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ve already seen how to find the orthogonal projection of a vector onto a subspace in the case when the subspace is defined using an orthogonal basis. In this lesson, we&#x27;ll learn how to do the same thing in the case of non-orthogonal bases.</p>",
+            "readable_text": "We've already seen how to find the orthogonal projection of a vector onto a subspace in the case when the subspace is defined using an orthogonal basis. In this lesson, we'll learn how to do the same thing in the case of non-orthogonal bases.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, consider the following vectors:\n<span class=\"math\">[MATH: [1; 2; 1]]</span>\nHow can we find the orthogonal projection <span class=\"math\">[MATH: \\mathbf{x}_S]</span> of the vector <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the subspace <span class=\"math\">[MATH: S = \\textrm{Span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}?]</span> Notice that since <span class=\"math\">[MATH: \\mathbf a_1\\cdot \\mathbf a_2 \\neq 0,]</span> the vectors <span class=\"math\">[MATH: \\mathbf{a}_1]</span> and <span class=\"math\">[MATH: \\mathbf{a}_2]</span> are not orthogonal.</p>",
+            "readable_text": "For example, consider the following vectors:\n[MATH: [1; 2; 1]]\nHow can we find the orthogonal projection [MATH: \\mathbf{x}_S] of the vector [MATH: \\mathbf{x}] onto the subspace [MATH: S = \\textrm{Span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}?] Notice that since [MATH: \\mathbf a_1\\cdot \\mathbf a_2 \\neq 0,] the vectors [MATH: \\mathbf{a}_1] and [MATH: \\mathbf{a}_2] are not orthogonal.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As usual, we would like to write <span class=\"math\">[MATH: \\mathbf{x}]</span> as \n<span class=\"math\">[MATH: \\mathbf{x} = \\mathbf{x}_S + \\mathbf{x}_{S^\\perp},]</span>\nwhere <span class=\"math\">[MATH: \\mathbf{x}_S = k_1 \\mathbf{a}_1 + k_2 \\mathbf{a}_2 \\in S]</span> and <span class=\"math\">[MATH: \\mathbf{x}_{S^\\perp} \\!\\in S^\\perp.]</span></p>",
+            "readable_text": "As usual, we would like to write [MATH: \\mathbf{x}] as\n[MATH: \\mathbf{x} = \\mathbf{x}_S + \\mathbf{x}_{S^\\perp},]\nwhere [MATH: \\mathbf{x}_S = k_1 \\mathbf{a}_1 + k_2 \\mathbf{a}_2 \\in S] and [MATH: \\mathbf{x}_{S^\\perp} \\!\\in S^\\perp.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/647ee475350f13f6aab009bcc20a387d\"></p>",
+            "readable_text": "[IMG: /graphics/647ee475350f13f6aab009bcc20a387d]",
+            "images": [
+              {
+                "src": "/graphics/647ee475350f13f6aab009bcc20a387d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, we have\n<span class=\"math\">[MATH: x_{S^{\u22a5}}|= x \u2212 x_{S}; = x \u2212 (k_{1}a_{1} + k_{2}a_{2}); = x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}.]</span></p>",
+            "readable_text": "So, we have\n[MATH: x_{S^{\u22a5}}|= x \u2212 x_{S}; = x \u2212 (k_{1}a_{1} + k_{2}a_{2}); = x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since <span class=\"math\">[MATH: \\mathbf{x}_{S^\\perp} \\in S^\\perp,]</span> that is, <span class=\"math\">[MATH: \\mathbf{x}_{S^\\perp} \\perp S,]</span> we obtain\n<span class=\"math\">[MATH: {x_{S^{\u22a5}}\u22a5a_{1}; x_{S^{\u22a5}}\u22a5a_{2}\u27f9{x_{S^{\u22a5}} \u22c5 a_{1} = 0; x_{S^{\u22a5}} \u22c5 a_{2} = 0.]</span>\nNow, we substitute the expression for <span class=\"math\">[MATH: \\mathbf{x}_{S^\\perp}]</span> into the system to get\n<span class=\"math\">[MATH: {(x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{1} = 0; (x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{2} = 0]</span></p>",
+            "readable_text": "Since [MATH: \\mathbf{x}_{S^\\perp} \\in S^\\perp,] that is, [MATH: \\mathbf{x}_{S^\\perp} \\perp S,] we obtain\n[MATH: {x_{S^{\u22a5}}\u22a5a_{1}; x_{S^{\u22a5}}\u22a5a_{2}\u27f9{x_{S^{\u22a5}} \u22c5 a_{1} = 0; x_{S^{\u22a5}} \u22c5 a_{2} = 0.]\nNow, we substitute the expression for [MATH: \\mathbf{x}_{S^\\perp}] into the system to get\n[MATH: {(x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{1} = 0; (x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{2} = 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can write this system in an equivalent matrix form as follows:\n<span class=\"math\">[MATH: [\u2212 a_{1} \u2212; \u2212 a_{2} \u2212]]</span></p>",
+            "readable_text": "We can write this system in an equivalent matrix form as follows:\n[MATH: [\u2212 a_{1} \u2212; \u2212 a_{2} \u2212]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If we denote \n<span class=\"math\">[MATH: [|||; a_{1}|a_{2};|||]]</span>\nand <span class=\"math\">[MATH: [k_{1}; k_{2}]]</span> then we obtain\n<span class=\"math\">[MATH: A^TA\\mathbf{k} = A^T\\mathbf{x}\n\\qquad\\Longrightarrow\\qquad\n\\mathbf{k}=(A^TA)^{-1}A^T\\mathbf{x}.]</span></p>",
+            "readable_text": "If we denote\n[MATH: [|||; a_{1}|a_{2};|||]]\nand [MATH: [k_{1}; k_{2}]] then we obtain\n[MATH: A^TA\\mathbf{k} = A^T\\mathbf{x}\n\\qquad\\Longrightarrow\\qquad\n\\mathbf{k}=(A^TA)^{-1}A^T\\mathbf{x}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore,\n<span class=\"math\">[MATH: proj_{S}x|= Ak; = A(A^{T}A)^{\u2212 1}A^{T}x.]</span>\nThis is a formula for the orthogonal projection!</p>",
+            "readable_text": "Therefore,\n[MATH: proj_{S}x|= Ak; = A(A^{T}A)^{\u2212 1}A^{T}x.]\nThis is a formula for the orthogonal projection!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, we return to our example. Using the formula, we get\n<span class=\"math\">[MATH: proj_{S}x|= [1|1; 2|3; 1|1] \u22c5 ([1|2|1; 1|3|1] \u22c5 [1|1; 2|3; 1|1])^{\u2212 1} \u22c5 [1|2|1; 1|3|1] \u22c5 [2; 4; 0]; = [1|1; 2|3; 1|1] \u22c5 ([6|8; 8|11])^{\u2212 1} \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 (1)/(2)[11|\u2212 8; \u2212 8|6] \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 [\u2212 1; 2]; = [1; 4; 1].]</span></p>",
+            "readable_text": "Now, we return to our example. Using the formula, we get\n[MATH: proj_{S}x|= [1|1; 2|3; 1|1] \u22c5 ([1|2|1; 1|3|1] \u22c5 [1|1; 2|3; 1|1])^{\u2212 1} \u22c5 [1|2|1; 1|3|1] \u22c5 [2; 4; 0]; = [1|1; 2|3; 1|1] \u22c5 ([6|8; 8|11])^{\u2212 1} \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 (1)/(2)[11|\u2212 8; \u2212 8|6] \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 [\u2212 1; 2]; = [1; 4; 1].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note</strong>: Pay attention to the order in which we carried out the multiplication. Carrying out the operations in the order shown above can save us a lot of work!</p>",
+            "readable_text": "Note: Pay attention to the order in which we carried out the multiplication. Carrying out the operations in the order shown above can save us a lot of work!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/647ee475350f13f6aab009bcc20a387d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe've already seen how to find the orthogonal projection of a vector onto a subspace in the case when the subspace is defined using an orthogonal basis. In this lesson, we'll learn how to do the same thing in the case of non-orthogonal bases.\n\nContent:\nFor example, consider the following vectors:\n[MATH: [1; 2; 1]]\nHow can we find the orthogonal projection [MATH: \\mathbf{x}_S] of the vector [MATH: \\mathbf{x}] onto the subspace [MATH: S = \\textrm{Span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}?] Notice that since [MATH: \\mathbf a_1\\cdot \\mathbf a_2 \\neq 0,] the vectors [MATH: \\mathbf{a}_1] and [MATH: \\mathbf{a}_2] are not orthogonal.\n\nContent:\nAs usual, we would like to write [MATH: \\mathbf{x}] as\n[MATH: \\mathbf{x} = \\mathbf{x}_S + \\mathbf{x}_{S^\\perp},]\nwhere [MATH: \\mathbf{x}_S = k_1 \\mathbf{a}_1 + k_2 \\mathbf{a}_2 \\in S] and [MATH: \\mathbf{x}_{S^\\perp} \\!\\in S^\\perp.]\n\nGraphic:\n[IMG: /graphics/647ee475350f13f6aab009bcc20a387d]\n\nContent:\nSo, we have\n[MATH: x_{S^{\u22a5}}|= x \u2212 x_{S}; = x \u2212 (k_{1}a_{1} + k_{2}a_{2}); = x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}.]\n\nContent:\nSince [MATH: \\mathbf{x}_{S^\\perp} \\in S^\\perp,] that is, [MATH: \\mathbf{x}_{S^\\perp} \\perp S,] we obtain\n[MATH: {x_{S^{\u22a5}}\u22a5a_{1}; x_{S^{\u22a5}}\u22a5a_{2}\u27f9{x_{S^{\u22a5}} \u22c5 a_{1} = 0; x_{S^{\u22a5}} \u22c5 a_{2} = 0.]\nNow, we substitute the expression for [MATH: \\mathbf{x}_{S^\\perp}] into the system to get\n[MATH: {(x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{1} = 0; (x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{2} = 0]\n\nContent:\nWe can write this system in an equivalent matrix form as follows:\n[MATH: [\u2212 a_{1} \u2212; \u2212 a_{2} \u2212]]\n\nContent:\nIf we denote\n[MATH: [|||; a_{1}|a_{2};|||]]\nand [MATH: [k_{1}; k_{2}]] then we obtain\n[MATH: A^TA\\mathbf{k} = A^T\\mathbf{x}\n\\qquad\\Longrightarrow\\qquad\n\\mathbf{k}=(A^TA)^{-1}A^T\\mathbf{x}.]\n\nContent:\nTherefore,\n[MATH: proj_{S}x|= Ak; = A(A^{T}A)^{\u2212 1}A^{T}x.]\nThis is a formula for the orthogonal projection!\n\nContent:\nNow, we return to our example. Using the formula, we get\n[MATH: proj_{S}x|= [1|1; 2|3; 1|1] \u22c5 ([1|2|1; 1|3|1] \u22c5 [1|1; 2|3; 1|1])^{\u2212 1} \u22c5 [1|2|1; 1|3|1] \u22c5 [2; 4; 0]; = [1|1; 2|3; 1|1] \u22c5 ([6|8; 8|11])^{\u2212 1} \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 (1)/(2)[11|\u2212 8; \u2212 8|6] \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 [\u2212 1; 2]; = [1; 4; 1].]\n\nContent:\nNote: Pay attention to the order in which we carried out the multiplication. Carrying out the operations in the order shown above can save us a lot of work!"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20248",
+        "content_id": "3627",
+        "dom_id": "step-20248",
+        "selector": "#step-20248",
+        "step_anchor": "step-2",
+        "title": "The General Formula for the Orthogonal Projection of a Vector Onto a Subspace",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If <span class=\"math\">[MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}]</span> is a set of <em>linearly independent</em> vectors, then the orthogonal projection of a vector <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the subspace <span class=\"math\">[MATH: S = \\textrm{span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}]</span> is given by\n<span class=\"math\">[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x},]</span> \nwhere <span class=\"math\">[MATH: A]</span> is the matrix whose columns are the vectors of <span class=\"math\">[MATH: \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n,]</span> that is,\n<span class=\"math\">[MATH: [||||\u2026||; a_{1}|a_{2}|\u2026|a_{n};||||\u2026||]]</span></p>",
+            "readable_text": "If [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] is a set of linearly independent vectors, then the orthogonal projection of a vector [MATH: \\mathbf{x}] onto the subspace [MATH: S = \\textrm{span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x},]\nwhere [MATH: A] is the matrix whose columns are the vectors of [MATH: \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n,] that is,\n[MATH: [||||\u2026||; a_{1}|a_{2}|\u2026|a_{n};||||\u2026||]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Watch out!</strong> The fact that <span class=\"math\">[MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}]</span> must be linearly independent is important. If the vectors are linearly dependent, we need to find the basis of the span before applying the formula. </p>",
+            "readable_text": "Watch out! The fact that [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] must be linearly independent is important. If the vectors are linearly dependent, we need to find the basis of the span before applying the formula.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIf [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] is a set of linearly independent vectors, then the orthogonal projection of a vector [MATH: \\mathbf{x}] onto the subspace [MATH: S = \\textrm{span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x},]\nwhere [MATH: A] is the matrix whose columns are the vectors of [MATH: \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n,] that is,\n[MATH: [||||\u2026||; a_{1}|a_{2}|\u2026|a_{n};||||\u2026||]]\n\nContent:\nWatch out! The fact that [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] must be linearly independent is important. If the vectors are linearly dependent, we need to find the basis of the span before applying the formula."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20249",
+        "content_id": "5576",
+        "dom_id": "step-20249",
+        "selector": "#step-20249",
+        "step_anchor": "step-3",
+        "title": "Finding the Orthogonal Projection of a Vector Onto a Plane",
+        "key_prerequisites": [
+          {
+            "topic_id": "232",
+            "name": "The Transpose of a Matrix",
+            "href": "/topics/232",
+            "type": ""
+          },
+          {
+            "topic_id": "864",
+            "name": "Inverses of 2x2 Matrices",
+            "href": "/topics/864",
+            "type": ""
+          },
+          {
+            "topic_id": "1806",
+            "name": "The Parametric Equations of a Plane",
+            "href": "/topics/1806",
+            "type": ""
+          },
+          {
+            "topic_id": "2123",
+            "name": "Projecting Vectors Onto Subspaces in Euclidean Spaces (Orthogonal Bases)",
+            "href": "/topics/2123",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Find the orthogonal projection of the vector <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the plane <span class=\"math\">[MATH: \\mathbf{r}=s\\mathbf{v}+t\\mathbf{w},]</span> where <span class=\"math\">[MATH: s,t\\in\\mathbb R,]</span> and\n<span class=\"math\">[MATH: [\u2212 2; \u2212 2; 2]]</span> </p>",
+            "readable_text": "Find the orthogonal projection of the vector [MATH: \\mathbf{x}] onto the plane [MATH: \\mathbf{r}=s\\mathbf{v}+t\\mathbf{w},] where [MATH: s,t\\in\\mathbb R,] and\n[MATH: [\u2212 2; \u2212 2; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, notice that <span class=\"math\">[MATH: \\mathbf v]</span> and <span class=\"math\">[MATH: \\mathbf w]</span> are linearly independent. </p><p>The orthogonal projection of <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the subspace spanned by the columns of a matrix <span class=\"math\">[MATH: A]</span> is given by\n<span class=\"math\">[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A\\left(A^T\\!A\\right)^{-1}\\!A^T\\,\\mathbf{x}.]</span></p><p>Since our plane passes through the origin, it defines the subspace <span class=\"math\">[MATH: S=\\text{Span}\\{\\mathbf{v}, \\mathbf{w}\\}]</span> in <span class=\"math\">[MATH: \\mathbb{R}^3.]</span> In our case, we have\n<span class=\"math\">[MATH: [|||; v|w;|||]]</span>\nTherefore, we get the following projection:</p><p><span class=\"math\">[MATH: proj_{S}x|= [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 ([\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2])^{\u2212 1} \u22c5 [\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [2; 0; 8]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 [12|4; 4|12]^{\u2212 1} \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(32)[3|\u2212 1; \u2212 1|3] \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(4)[7; \u2212 9]; = [1; 1; 8]]</span></p>",
+            "readable_text": "First, notice that [MATH: \\mathbf v] and [MATH: \\mathbf w] are linearly independent.\n\nThe orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the columns of a matrix [MATH: A] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A\\left(A^T\\!A\\right)^{-1}\\!A^T\\,\\mathbf{x}.]\n\nSince our plane passes through the origin, it defines the subspace [MATH: S=\\text{Span}\\{\\mathbf{v}, \\mathbf{w}\\}] in [MATH: \\mathbb{R}^3.] In our case, we have\n[MATH: [|||; v|w;|||]]\nTherefore, we get the following projection:\n\n[MATH: proj_{S}x|= [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 ([\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2])^{\u2212 1} \u22c5 [\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [2; 0; 8]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 [12|4; 4|12]^{\u2212 1} \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(32)[3|\u2212 1; \u2212 1|3] \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(4)[7; \u2212 9]; = [1; 1; 8]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFind the orthogonal projection of the vector [MATH: \\mathbf{x}] onto the plane [MATH: \\mathbf{r}=s\\mathbf{v}+t\\mathbf{w},] where [MATH: s,t\\in\\mathbb R,] and\n[MATH: [\u2212 2; \u2212 2; 2]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, notice that [MATH: \\mathbf v] and [MATH: \\mathbf w] are linearly independent.\n\nThe orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the columns of a matrix [MATH: A] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A\\left(A^T\\!A\\right)^{-1}\\!A^T\\,\\mathbf{x}.]\n\nSince our plane passes through the origin, it defines the subspace [MATH: S=\\text{Span}\\{\\mathbf{v}, \\mathbf{w}\\}] in [MATH: \\mathbb{R}^3.] In our case, we have\n[MATH: [|||; v|w;|||]]\nTherefore, we get the following projection:\n\n[MATH: proj_{S}x|= [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 ([\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2])^{\u2212 1} \u22c5 [\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [2; 0; 8]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 [12|4; 4|12]^{\u2212 1} \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(32)[3|\u2212 1; \u2212 1|3] \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(4)[7; \u2212 9]; = [1; 1; 8]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "39857",
+        "dom_id": "question-39857",
+        "selector": "#question-39857",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the orthogonal projection of the vector <span class=\"math\">[MATH: x]</span> onto the plane <span class=\"math\">[MATH: r = sv + tw,]</span> where <span class=\"math\">[MATH: s, t \u2208 R,]</span> and\n<span class=\"math\">[MATH: v = [1; 2; 1], w = [2; 1; \u2212 1], x = [6; 3; 6].]</span></p>",
+          "readable_text": "Find the orthogonal projection of the vector [MATH: x] onto the plane [MATH: r = sv + tw,] where [MATH: s, t \u2208 R,] and\n[MATH: v = [1; 2; 1], w = [2; 1; \u2212 1], x = [6; 3; 6].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-39857-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [6; 3; 3]]</span></p>",
+            "readable_text": "[MATH: [6; 3; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-39857-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 6; 3]]</span></p>",
+            "readable_text": "[MATH: [3; 6; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-39857-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 3; 6; \u2212 3]]</span></p>",
+            "readable_text": "[MATH: [\u2212 3; 6; \u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-39857-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 3; 6]]</span></p>",
+            "readable_text": "[MATH: [3; 3; 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-39857-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [6; \u2212 3; 6]]</span></p>",
+            "readable_text": "[MATH: [6; \u2212 3; 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the orthogonal projection of the vector [MATH: x] onto the plane [MATH: r = sv + tw,] where [MATH: s, t \u2208 R,] and\n[MATH: v = [1; 2; 1], w = [2; 1; \u2212 1], x = [6; 3; 6].]\n\nChoices:\na. [MATH: [6; 3; 3]]\nb. [MATH: [3; 6; 3]]\nc. [MATH: [\u2212 3; 6; \u2212 3]]\nd. [MATH: [3; 3; 6]]\ne. [MATH: [6; \u2212 3; 6]]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "39869",
+        "dom_id": "question-39869",
+        "selector": "#question-39869",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the orthogonal projection of the vector <span class=\"math\">[MATH: x]</span> onto the plane <span class=\"math\">[MATH: r = sv + tw,]</span> where <span class=\"math\">[MATH: s, t \u2208 R,]</span> and\n<span class=\"math\">[MATH: v = [1; 1; 1], w = [3; 1; 3], x = [3; 4; 5].]</span></p>",
+          "readable_text": "Find the orthogonal projection of the vector [MATH: x] onto the plane [MATH: r = sv + tw,] where [MATH: s, t \u2208 R,] and\n[MATH: v = [1; 1; 1], w = [3; 1; 3], x = [3; 4; 5].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-39869-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; \u2212 4; 2]]</span></p>",
+            "readable_text": "[MATH: [2; \u2212 4; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-39869-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 3; 3]]</span></p>",
+            "readable_text": "[MATH: [3; 3; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-39869-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [5; 4; 3]]</span></p>",
+            "readable_text": "[MATH: [5; 4; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-39869-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; 4; 4]]</span></p>",
+            "readable_text": "[MATH: [4; 4; 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-39869-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 4; 2; \u2212 4]]</span></p>",
+            "readable_text": "[MATH: [\u2212 4; 2; \u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the orthogonal projection of the vector [MATH: x] onto the plane [MATH: r = sv + tw,] where [MATH: s, t \u2208 R,] and\n[MATH: v = [1; 1; 1], w = [3; 1; 3], x = [3; 4; 5].]\n\nChoices:\na. [MATH: [2; \u2212 4; 2]]\nb. [MATH: [3; 3; 3]]\nc. [MATH: [5; 4; 3]]\nd. [MATH: [4; 4; 4]]\ne. [MATH: [\u2212 4; 2; \u2212 4]]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20247",
+        "content_id": "5575",
+        "dom_id": "step-20247",
+        "selector": "#step-20247",
+        "step_anchor": "step-6",
+        "title": "Finding the Orthogonal Projection of a Vector Onto a Subspace",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Verify whether the vectors <span class=\"math\">[MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3]</span> are linearly independent, and find the orthogonal projection of <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the subspace spanned by the vectors <span class=\"math\">[MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3 \\},]</span> where\n<span class=\"math\">[MATH: [4; 3; 1]]</span></p>",
+            "readable_text": "Verify whether the vectors [MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3] are linearly independent, and find the orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the vectors [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3 \\},] where\n[MATH: [4; 3; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, we verify whether <span class=\"math\">[MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3]</span> are linearly independent. So, we start by creating a matrix whose columns are made up of our vectors, and then we reduce the matrix to row echelon form:</p><p><span class=\"math\">[MATH: M|=[4|1|1; 3|1|2; 1|1|4]|R_{3}\u2194R_{1}; \u223c[1|1|4; 3|1|2; 4|1|1]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 4)R_{1}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|\u2212 3|\u2212 15]|R_{3}:=R_{3} + (\u2212 (3)/(2))R_{2}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|0|0]]</span></p><p>In the reduced matrix above, the pivot columns correspond to the linearly independent vectors <span class=\"math\">[MATH: \\mathbf{a}_1]</span> and <span class=\"math\">[MATH: \\mathbf{a}_2]</span> that form the basis of our span.</p><p>Now, the orthogonal projection of <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the subspace spanned by the linearly independent columns of a matrix <span class=\"math\">[MATH: A]</span> is given by\n<span class=\"math\">[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}.]</span></p><p>In our case, we have\n<span class=\"math\">[MATH: [|||; a_{1}|a_{2};|||]]</span></p><p>Therefore, we get the following projection:</p><p><span class=\"math\">[MATH: proj_{S}x|= [4|1; 3|1; 1|1] \u22c5 ([4|3|1; 1|1|1] \u22c5 [4|1; 3|1; 1|1])^{\u2212 1} \u22c5 [4|3|1; 1|1|1] \u22c5 [5; \u2212 1; 1]; = [4|1; 3|1; 1|1] \u22c5 [26|8; 8|3]^{\u2212 1} \u22c5 [18; 5]; = [4|1; 3|1; 1|1] \u22c5 (1)/(14)[3|\u2212 8; \u2212 8|26] \u22c5 [18; 5]; = [4|1; 3|1; 1|1][1; \u2212 1]; = [3; 2; 0]]</span></p>",
+            "readable_text": "First, we verify whether [MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3] are linearly independent. So, we start by creating a matrix whose columns are made up of our vectors, and then we reduce the matrix to row echelon form:\n\n[MATH: M|=[4|1|1; 3|1|2; 1|1|4]|R_{3}\u2194R_{1}; \u223c[1|1|4; 3|1|2; 4|1|1]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 4)R_{1}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|\u2212 3|\u2212 15]|R_{3}:=R_{3} + (\u2212 (3)/(2))R_{2}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|0|0]]\n\nIn the reduced matrix above, the pivot columns correspond to the linearly independent vectors [MATH: \\mathbf{a}_1] and [MATH: \\mathbf{a}_2] that form the basis of our span.\n\nNow, the orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the linearly independent columns of a matrix [MATH: A] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}.]\n\nIn our case, we have\n[MATH: [|||; a_{1}|a_{2};|||]]\n\nTherefore, we get the following projection:\n\n[MATH: proj_{S}x|= [4|1; 3|1; 1|1] \u22c5 ([4|3|1; 1|1|1] \u22c5 [4|1; 3|1; 1|1])^{\u2212 1} \u22c5 [4|3|1; 1|1|1] \u22c5 [5; \u2212 1; 1]; = [4|1; 3|1; 1|1] \u22c5 [26|8; 8|3]^{\u2212 1} \u22c5 [18; 5]; = [4|1; 3|1; 1|1] \u22c5 (1)/(14)[3|\u2212 8; \u2212 8|26] \u22c5 [18; 5]; = [4|1; 3|1; 1|1][1; \u2212 1]; = [3; 2; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nVerify whether the vectors [MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3] are linearly independent, and find the orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the vectors [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3 \\},] where\n[MATH: [4; 3; 1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we verify whether [MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3] are linearly independent. So, we start by creating a matrix whose columns are made up of our vectors, and then we reduce the matrix to row echelon form:\n\n[MATH: M|=[4|1|1; 3|1|2; 1|1|4]|R_{3}\u2194R_{1}; \u223c[1|1|4; 3|1|2; 4|1|1]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 4)R_{1}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|\u2212 3|\u2212 15]|R_{3}:=R_{3} + (\u2212 (3)/(2))R_{2}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|0|0]]\n\nIn the reduced matrix above, the pivot columns correspond to the linearly independent vectors [MATH: \\mathbf{a}_1] and [MATH: \\mathbf{a}_2] that form the basis of our span.\n\nNow, the orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the linearly independent columns of a matrix [MATH: A] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}.]\n\nIn our case, we have\n[MATH: [|||; a_{1}|a_{2};|||]]\n\nTherefore, we get the following projection:\n\n[MATH: proj_{S}x|= [4|1; 3|1; 1|1] \u22c5 ([4|3|1; 1|1|1] \u22c5 [4|1; 3|1; 1|1])^{\u2212 1} \u22c5 [4|3|1; 1|1|1] \u22c5 [5; \u2212 1; 1]; = [4|1; 3|1; 1|1] \u22c5 [26|8; 8|3]^{\u2212 1} \u22c5 [18; 5]; = [4|1; 3|1; 1|1] \u22c5 (1)/(14)[3|\u2212 8; \u2212 8|26] \u22c5 [18; 5]; = [4|1; 3|1; 1|1][1; \u2212 1]; = [3; 2; 0]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "40570",
+        "dom_id": "question-40570",
+        "selector": "#question-40570",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the vector in the subspace spanned by <span class=\"math\">[MATH: {a_{1}, a_{2}}]</span> \nthat is closest to the vector <span class=\"math\">[MATH: x,]</span> where \n<span class=\"math\">[MATH: a_{1} = [1; 1; 0], a_{2} = [2; 2; \u2212 2], x = [8; \u2212 4; 8].]</span></p>",
+          "readable_text": "Find the vector in the subspace spanned by [MATH: {a_{1}, a_{2}}]\nthat is closest to the vector [MATH: x,] where\n[MATH: a_{1} = [1; 1; 0], a_{2} = [2; 2; \u2212 2], x = [8; \u2212 4; 8].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40570-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [5; 5; \u2212 6]]</span></p>",
+            "readable_text": "[MATH: [5; 5; \u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40570-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [6; 6; \u2212 4]]</span></p>",
+            "readable_text": "[MATH: [6; 6; \u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40570-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 3; \u2212 2]]</span></p>",
+            "readable_text": "[MATH: [3; 3; \u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40570-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; 2; 8]]</span></p>",
+            "readable_text": "[MATH: [2; 2; 8]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40570-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [7; 7; \u2212 6]]</span></p>",
+            "readable_text": "[MATH: [7; 7; \u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the vector in the subspace spanned by [MATH: {a_{1}, a_{2}}]\nthat is closest to the vector [MATH: x,] where\n[MATH: a_{1} = [1; 1; 0], a_{2} = [2; 2; \u2212 2], x = [8; \u2212 4; 8].]\n\nChoices:\na. [MATH: [5; 5; \u2212 6]]\nb. [MATH: [6; 6; \u2212 4]]\nc. [MATH: [3; 3; \u2212 2]]\nd. [MATH: [2; 2; 8]]\ne. [MATH: [7; 7; \u2212 6]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "40627",
+        "dom_id": "question-40627",
+        "selector": "#question-40627",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Verify whether the vectors <span class=\"math\">[MATH: a_{1}, a_{2}, a_{3}]</span> are linearly independent, and find the orthogonal projection of <span class=\"math\">[MATH: x]</span> onto the subspace spanned by the vectors <span class=\"math\">[MATH: {a_{1}, a_{2}, a_{3}},]</span> where\n<span class=\"math\">[MATH: a_{1} = [2; \u2212 2; \u2212 2], a_{2} = [2; 2; 2], a_{3} = [4; 0; 0], x = [3; 2; 2].]</span></p>",
+          "readable_text": "Verify whether the vectors [MATH: a_{1}, a_{2}, a_{3}] are linearly independent, and find the orthogonal projection of [MATH: x] onto the subspace spanned by the vectors [MATH: {a_{1}, a_{2}, a_{3}},] where\n[MATH: a_{1} = [2; \u2212 2; \u2212 2], a_{2} = [2; 2; 2], a_{3} = [4; 0; 0], x = [3; 2; 2].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40627-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; \u2212 5; \u2212 5]]</span></p>",
+            "readable_text": "[MATH: [1; \u2212 5; \u2212 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40627-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 2; 2]]</span></p>",
+            "readable_text": "[MATH: [3; 2; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40627-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [8; \u2212 4; \u2212 4]]</span></p>",
+            "readable_text": "[MATH: [8; \u2212 4; \u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40627-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; \u2212 4; \u2212 4]]</span></p>",
+            "readable_text": "[MATH: [2; \u2212 4; \u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40627-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2; 10; 10]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2; 10; 10]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nVerify whether the vectors [MATH: a_{1}, a_{2}, a_{3}] are linearly independent, and find the orthogonal projection of [MATH: x] onto the subspace spanned by the vectors [MATH: {a_{1}, a_{2}, a_{3}},] where\n[MATH: a_{1} = [2; \u2212 2; \u2212 2], a_{2} = [2; 2; 2], a_{3} = [4; 0; 0], x = [3; 2; 2].]\n\nChoices:\na. [MATH: [1; \u2212 5; \u2212 5]]\nb. [MATH: [3; 2; 2]]\nc. [MATH: [8; \u2212 4; \u2212 4]]\nd. [MATH: [2; \u2212 4; \u2212 4]]\ne. [MATH: [\u2212 2; 10; 10]]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20250",
+        "content_id": "3628",
+        "dom_id": "step-20250",
+        "selector": "#step-20250",
+        "step_anchor": "step-9",
+        "title": "Some Intuition Behind the Formula",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As we&#x27;ve already seen, the orthogonal projection of a vector <span class=\"math\">[MATH: \\mathbf{x}]</span> onto the one-dimensional subspace <span class=\"math\">[MATH: \\textrm{Span}\\{\\mathbf{a}\\}]</span> is given by \n<span class=\"math\">[MATH: \\textrm{proj}_{\\mathbf{a}} \\, \\mathbf{x} = \\dfrac{\\mathbf{a} \\cdot \\mathbf{x}}{\\mathbf{a} \\cdot \\mathbf{a}} \\: \\mathbf{a}.]</span>\nIf we suppose that <span class=\"math\">[MATH: \\mathbf{a}]</span> denotes the column-vector <span class=\"math\">[MATH: [|; a;|]]</span> then the dot product <span class=\"math\">[MATH: \\mathbf{a} \\cdot \\mathbf{a}]</span> is simply <span class=\"math\">[MATH: \\mathbf{a}^T \\mathbf{a},]</span> and we can write the formula as follows:\n<span class=\"math\">[MATH: proj_{a}x|= ((a \u22c5 x))/((a \u22c5 a))a; = [((a^{T}x))/((a^{T}a))]a; = a[((a^{T}x))/((a^{T}a))]; = a[(a^{T}a)^{\u2212 1}a^{T}x]; = a(a^{T}a)^{\u2212 1}a^{T}x.]</span></p>",
+            "readable_text": "As we've already seen, the orthogonal projection of a vector [MATH: \\mathbf{x}] onto the one-dimensional subspace [MATH: \\textrm{Span}\\{\\mathbf{a}\\}] is given by\n[MATH: \\textrm{proj}_{\\mathbf{a}} \\, \\mathbf{x} = \\dfrac{\\mathbf{a} \\cdot \\mathbf{x}}{\\mathbf{a} \\cdot \\mathbf{a}} \\: \\mathbf{a}.]\nIf we suppose that [MATH: \\mathbf{a}] denotes the column-vector [MATH: [|; a;|]] then the dot product [MATH: \\mathbf{a} \\cdot \\mathbf{a}] is simply [MATH: \\mathbf{a}^T \\mathbf{a},] and we can write the formula as follows:\n[MATH: proj_{a}x|= ((a \u22c5 x))/((a \u22c5 a))a; = [((a^{T}x))/((a^{T}a))]a; = a[((a^{T}x))/((a^{T}a))]; = a[(a^{T}a)^{\u2212 1}a^{T}x]; = a(a^{T}a)^{\u2212 1}a^{T}x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let&#x27;s compare the above with the formula that we use when we want to project onto an arbitrary subspace:\n<span class=\"math\">[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}]</span> \nAs we can see, they are basically the same thing!</p>",
+            "readable_text": "Now, let's compare the above with the formula that we use when we want to project onto an arbitrary subspace:\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}]\nAs we can see, they are basically the same thing!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nAs we've already seen, the orthogonal projection of a vector [MATH: \\mathbf{x}] onto the one-dimensional subspace [MATH: \\textrm{Span}\\{\\mathbf{a}\\}] is given by\n[MATH: \\textrm{proj}_{\\mathbf{a}} \\, \\mathbf{x} = \\dfrac{\\mathbf{a} \\cdot \\mathbf{x}}{\\mathbf{a} \\cdot \\mathbf{a}} \\: \\mathbf{a}.]\nIf we suppose that [MATH: \\mathbf{a}] denotes the column-vector [MATH: [|; a;|]] then the dot product [MATH: \\mathbf{a} \\cdot \\mathbf{a}] is simply [MATH: \\mathbf{a}^T \\mathbf{a},] and we can write the formula as follows:\n[MATH: proj_{a}x|= ((a \u22c5 x))/((a \u22c5 a))a; = [((a^{T}x))/((a^{T}a))]a; = a[((a^{T}x))/((a^{T}a))]; = a[(a^{T}a)^{\u2212 1}a^{T}x]; = a(a^{T}a)^{\u2212 1}a^{T}x.]\n\nContent:\nNow, let's compare the above with the formula that we use when we want to project onto an arbitrary subspace:\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}]\nAs we can see, they are basically the same thing!"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWe've already seen how to find the orthogonal projection of a vector onto a subspace in the case when the subspace is defined using an orthogonal basis. In this lesson, we'll learn how to do the same thing in the case of non-orthogonal bases.\n\nContent:\nFor example, consider the following vectors:\n[MATH: [1; 2; 1]]\nHow can we find the orthogonal projection [MATH: \\mathbf{x}_S] of the vector [MATH: \\mathbf{x}] onto the subspace [MATH: S = \\textrm{Span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}?] Notice that since [MATH: \\mathbf a_1\\cdot \\mathbf a_2 \\neq 0,] the vectors [MATH: \\mathbf{a}_1] and [MATH: \\mathbf{a}_2] are not orthogonal.\n\nContent:\nAs usual, we would like to write [MATH: \\mathbf{x}] as\n[MATH: \\mathbf{x} = \\mathbf{x}_S + \\mathbf{x}_{S^\\perp},]\nwhere [MATH: \\mathbf{x}_S = k_1 \\mathbf{a}_1 + k_2 \\mathbf{a}_2 \\in S] and [MATH: \\mathbf{x}_{S^\\perp} \\!\\in S^\\perp.]\n\nGraphic:\n[IMG: /graphics/647ee475350f13f6aab009bcc20a387d]\n\nContent:\nSo, we have\n[MATH: x_{S^{\u22a5}}|= x \u2212 x_{S}; = x \u2212 (k_{1}a_{1} + k_{2}a_{2}); = x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}.]\n\nContent:\nSince [MATH: \\mathbf{x}_{S^\\perp} \\in S^\\perp,] that is, [MATH: \\mathbf{x}_{S^\\perp} \\perp S,] we obtain\n[MATH: {x_{S^{\u22a5}}\u22a5a_{1}; x_{S^{\u22a5}}\u22a5a_{2}\u27f9{x_{S^{\u22a5}} \u22c5 a_{1} = 0; x_{S^{\u22a5}} \u22c5 a_{2} = 0.]\nNow, we substitute the expression for [MATH: \\mathbf{x}_{S^\\perp}] into the system to get\n[MATH: {(x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{1} = 0; (x \u2212 k_{1}a_{1} \u2212 k_{2}a_{2}) \u22c5 a_{2} = 0]\n\nContent:\nWe can write this system in an equivalent matrix form as follows:\n[MATH: [\u2212 a_{1} \u2212; \u2212 a_{2} \u2212]]\n\nContent:\nIf we denote\n[MATH: [|||; a_{1}|a_{2};|||]]\nand [MATH: [k_{1}; k_{2}]] then we obtain\n[MATH: A^TA\\mathbf{k} = A^T\\mathbf{x}\n\\qquad\\Longrightarrow\\qquad\n\\mathbf{k}=(A^TA)^{-1}A^T\\mathbf{x}.]\n\nContent:\nTherefore,\n[MATH: proj_{S}x|= Ak; = A(A^{T}A)^{\u2212 1}A^{T}x.]\nThis is a formula for the orthogonal projection!\n\nContent:\nNow, we return to our example. Using the formula, we get\n[MATH: proj_{S}x|= [1|1; 2|3; 1|1] \u22c5 ([1|2|1; 1|3|1] \u22c5 [1|1; 2|3; 1|1])^{\u2212 1} \u22c5 [1|2|1; 1|3|1] \u22c5 [2; 4; 0]; = [1|1; 2|3; 1|1] \u22c5 ([6|8; 8|11])^{\u2212 1} \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 (1)/(2)[11|\u2212 8; \u2212 8|6] \u22c5 [10; 14]; = [1|1; 2|3; 1|1] \u22c5 [\u2212 1; 2]; = [1; 4; 1].]\n\nContent:\nNote: Pay attention to the order in which we carried out the multiplication. Carrying out the operations in the order shown above can save us a lot of work!\n\n---\n\nItem 2 \u2014 Tutorial: The General Formula for the Orthogonal Projection of a Vector Onto a Subspace\n\nContent:\nIf [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] is a set of linearly independent vectors, then the orthogonal projection of a vector [MATH: \\mathbf{x}] onto the subspace [MATH: S = \\textrm{span}\\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x},]\nwhere [MATH: A] is the matrix whose columns are the vectors of [MATH: \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n,] that is,\n[MATH: [||||\u2026||; a_{1}|a_{2}|\u2026|a_{n};||||\u2026||]]\n\nContent:\nWatch out! The fact that [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 , \\ldots, \\mathbf{a}_n \\}] must be linearly independent is important. If the vectors are linearly dependent, we need to find the basis of the span before applying the formula.\n\n---\n\nItem 3 \u2014 Example: Finding the Orthogonal Projection of a Vector Onto a Plane\n\nExample Prompt:\nFind the orthogonal projection of the vector [MATH: \\mathbf{x}] onto the plane [MATH: \\mathbf{r}=s\\mathbf{v}+t\\mathbf{w},] where [MATH: s,t\\in\\mathbb R,] and\n[MATH: [\u2212 2; \u2212 2; 2]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, notice that [MATH: \\mathbf v] and [MATH: \\mathbf w] are linearly independent.\n\nThe orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the columns of a matrix [MATH: A] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A\\left(A^T\\!A\\right)^{-1}\\!A^T\\,\\mathbf{x}.]\n\nSince our plane passes through the origin, it defines the subspace [MATH: S=\\text{Span}\\{\\mathbf{v}, \\mathbf{w}\\}] in [MATH: \\mathbb{R}^3.] In our case, we have\n[MATH: [|||; v|w;|||]]\nTherefore, we get the following projection:\n\n[MATH: proj_{S}x|= [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 ([\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2])^{\u2212 1} \u22c5 [\u2212 2|\u2212 2|2; \u2212 2|\u2212 2|\u2212 2] \u22c5 [2; 0; 8]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 [12|4; 4|12]^{\u2212 1} \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(32)[3|\u2212 1; \u2212 1|3] \u22c5 [12; \u2212 20]; = [\u2212 2|\u2212 2; \u2212 2|\u2212 2; 2|\u2212 2] \u22c5 (1)/(4)[7; \u2212 9]; = [1; 1; 8]]\n\n---\n\nItem 4 \u2014 Question 1\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the orthogonal projection of the vector [MATH: x] onto the plane [MATH: r = sv + tw,] where [MATH: s, t \u2208 R,] and\n[MATH: v = [1; 2; 1], w = [2; 1; \u2212 1], x = [6; 3; 6].]\n\nChoices:\na. [MATH: [6; 3; 3]]\nb. [MATH: [3; 6; 3]]\nc. [MATH: [\u2212 3; 6; \u2212 3]]\nd. [MATH: [3; 3; 6]]\ne. [MATH: [6; \u2212 3; 6]]\n\n---\n\nItem 5 \u2014 Question 2\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the orthogonal projection of the vector [MATH: x] onto the plane [MATH: r = sv + tw,] where [MATH: s, t \u2208 R,] and\n[MATH: v = [1; 1; 1], w = [3; 1; 3], x = [3; 4; 5].]\n\nChoices:\na. [MATH: [2; \u2212 4; 2]]\nb. [MATH: [3; 3; 3]]\nc. [MATH: [5; 4; 3]]\nd. [MATH: [4; 4; 4]]\ne. [MATH: [\u2212 4; 2; \u2212 4]]\n\n---\n\nItem 6 \u2014 Example: Finding the Orthogonal Projection of a Vector Onto a Subspace\n\nExample Prompt:\nVerify whether the vectors [MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3] are linearly independent, and find the orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the vectors [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3 \\},] where\n[MATH: [4; 3; 1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we verify whether [MATH: \\mathbf{a}_1, \\mathbf{a}_2, \\mathbf{a}_3] are linearly independent. So, we start by creating a matrix whose columns are made up of our vectors, and then we reduce the matrix to row echelon form:\n\n[MATH: M|=[4|1|1; 3|1|2; 1|1|4]|R_{3}\u2194R_{1}; \u223c[1|1|4; 3|1|2; 4|1|1]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 4)R_{1}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|\u2212 3|\u2212 15]|R_{3}:=R_{3} + (\u2212 (3)/(2))R_{2}; \u223c[1|1|4; 0|\u2212 2|\u2212 10; 0|0|0]]\n\nIn the reduced matrix above, the pivot columns correspond to the linearly independent vectors [MATH: \\mathbf{a}_1] and [MATH: \\mathbf{a}_2] that form the basis of our span.\n\nNow, the orthogonal projection of [MATH: \\mathbf{x}] onto the subspace spanned by the linearly independent columns of a matrix [MATH: A] is given by\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}.]\n\nIn our case, we have\n[MATH: [|||; a_{1}|a_{2};|||]]\n\nTherefore, we get the following projection:\n\n[MATH: proj_{S}x|= [4|1; 3|1; 1|1] \u22c5 ([4|3|1; 1|1|1] \u22c5 [4|1; 3|1; 1|1])^{\u2212 1} \u22c5 [4|3|1; 1|1|1] \u22c5 [5; \u2212 1; 1]; = [4|1; 3|1; 1|1] \u22c5 [26|8; 8|3]^{\u2212 1} \u22c5 [18; 5]; = [4|1; 3|1; 1|1] \u22c5 (1)/(14)[3|\u2212 8; \u2212 8|26] \u22c5 [18; 5]; = [4|1; 3|1; 1|1][1; \u2212 1]; = [3; 2; 0]]\n\n---\n\nItem 7 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the vector in the subspace spanned by [MATH: {a_{1}, a_{2}}]\nthat is closest to the vector [MATH: x,] where\n[MATH: a_{1} = [1; 1; 0], a_{2} = [2; 2; \u2212 2], x = [8; \u2212 4; 8].]\n\nChoices:\na. [MATH: [5; 5; \u2212 6]]\nb. [MATH: [6; 6; \u2212 4]]\nc. [MATH: [3; 3; \u2212 2]]\nd. [MATH: [2; 2; 8]]\ne. [MATH: [7; 7; \u2212 6]]\n\n---\n\nItem 8 \u2014 Question 4\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nVerify whether the vectors [MATH: a_{1}, a_{2}, a_{3}] are linearly independent, and find the orthogonal projection of [MATH: x] onto the subspace spanned by the vectors [MATH: {a_{1}, a_{2}, a_{3}},] where\n[MATH: a_{1} = [2; \u2212 2; \u2212 2], a_{2} = [2; 2; 2], a_{3} = [4; 0; 0], x = [3; 2; 2].]\n\nChoices:\na. [MATH: [1; \u2212 5; \u2212 5]]\nb. [MATH: [3; 2; 2]]\nc. [MATH: [8; \u2212 4; \u2212 4]]\nd. [MATH: [2; \u2212 4; \u2212 4]]\ne. [MATH: [\u2212 2; 10; 10]]\n\n---\n\nItem 9 \u2014 Tutorial: Some Intuition Behind the Formula\n\nContent:\nAs we've already seen, the orthogonal projection of a vector [MATH: \\mathbf{x}] onto the one-dimensional subspace [MATH: \\textrm{Span}\\{\\mathbf{a}\\}] is given by\n[MATH: \\textrm{proj}_{\\mathbf{a}} \\, \\mathbf{x} = \\dfrac{\\mathbf{a} \\cdot \\mathbf{x}}{\\mathbf{a} \\cdot \\mathbf{a}} \\: \\mathbf{a}.]\nIf we suppose that [MATH: \\mathbf{a}] denotes the column-vector [MATH: [|; a;|]] then the dot product [MATH: \\mathbf{a} \\cdot \\mathbf{a}] is simply [MATH: \\mathbf{a}^T \\mathbf{a},] and we can write the formula as follows:\n[MATH: proj_{a}x|= ((a \u22c5 x))/((a \u22c5 a))a; = [((a^{T}x))/((a^{T}a))]a; = a[((a^{T}x))/((a^{T}a))]; = a[(a^{T}a)^{\u2212 1}a^{T}x]; = a(a^{T}a)^{\u2212 1}a^{T}x.]\n\nContent:\nNow, let's compare the above with the formula that we use when we want to project onto an arbitrary subspace:\n[MATH: \\textrm{proj}_{S} \\: \\mathbf{x} = A(A^T\\!A)^{-1}\\!A^T\\,\\mathbf{x}]\nAs we can see, they are basically the same thing!"
+  }
+}

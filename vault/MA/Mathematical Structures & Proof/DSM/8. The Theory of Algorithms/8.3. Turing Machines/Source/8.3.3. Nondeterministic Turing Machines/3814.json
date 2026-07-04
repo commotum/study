@@ -1,0 +1,1107 @@
+{
+  "schema_version": 2,
+  "topic_id": "3814",
+  "topic_title": "Nondeterministic Turing Machines",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3814/Source/3814.html",
+  "source_url": "https://mathacademy.com/topics/3814",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "421716",
+        "dom_id": "sectionLink-421716",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-421716"
+      },
+      {
+        "index": 2,
+        "step_id": "421717",
+        "dom_id": "sectionLink-421717",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-421717"
+      },
+      {
+        "index": 3,
+        "step_id": "421718",
+        "dom_id": "sectionLink-421718",
+        "name": "",
+        "title": "Building a Tree of Moves for a NTM Using a Table",
+        "selector": "#sectionLink-421718"
+      },
+      {
+        "index": 4,
+        "step_id": "421721",
+        "dom_id": "sectionLink-421721",
+        "name": "",
+        "title": "Building a Tree of Moves for a NTM Using a Diagram",
+        "selector": "#sectionLink-421721"
+      },
+      {
+        "index": 5,
+        "step_id": "421724",
+        "dom_id": "sectionLink-421724",
+        "name": "",
+        "title": "Other Types of Turing Machines",
+        "selector": "#sectionLink-421724"
+      },
+      {
+        "index": 6,
+        "step_id": "421727",
+        "dom_id": "sectionLink-421727",
+        "name": "",
+        "title": "Algorithmically Unsolvable Problems",
+        "selector": "#sectionLink-421727"
+      },
+      {
+        "index": 7,
+        "step_id": "421728",
+        "dom_id": "sectionLink-421728",
+        "name": "",
+        "title": "The P vs NP Problem",
+        "selector": "#sectionLink-421728"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3798",
+        "name": "Nondeterministic Finite Automata",
+        "href": "/topics/nondeterministic-finite-automata-3798"
+      },
+      {
+        "topic_id": "3807",
+        "name": "Big-Theta Notation",
+        "href": "/topics/big-theta-notation-3807"
+      },
+      {
+        "topic_id": "5420",
+        "name": "Processing Strings Using Turing Machines",
+        "href": "/topics/processing-strings-using-turing-machines-5420"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 7,
+    "question_count": 4,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "421716",
+        "content_id": "10023",
+        "dom_id": "step-421716",
+        "selector": "#step-421716",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Until now, we have only considered <em>deterministic</em> Turing machines (DTMs) in which a state and tape symbol correspond to one transition.</p>",
+            "readable_text": "Until now, we have only considered deterministic Turing machines (DTMs) in which a state and tape symbol correspond to one transition.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Another type is a <strong>nondeterministic Turing machine</strong> (NTM), where a state and tape symbol can correspond to multiple transitions. The transition function of an NTM has the form\n<span class=\"math\">[MATH: \\delta: Q \\times \\Gamma \\to 2^{Q \\times \\Gamma \\times \\{L, R\\}},]</span>\nwhere <span class=\"math\">[MATH: Q]</span> is a finite set of states, <span class=\"math\">[MATH: \\Gamma]</span> is the set of tape symbols, and <span class=\"math\">[MATH: L]</span> and <span class=\"math\">[MATH: R]</span> indicate whether to move left or right on the tape.</p>",
+            "readable_text": "Another type is a nondeterministic Turing machine (NTM), where a state and tape symbol can correspond to multiple transitions. The transition function of an NTM has the form\n[MATH: \\delta: Q \\times \\Gamma \\to 2^{Q \\times \\Gamma \\times \\{L, R\\}},]\nwhere [MATH: Q] is a finite set of states, [MATH: \\Gamma] is the set of tape symbols, and [MATH: L] and [MATH: R] indicate whether to move left or right on the tape.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider the NTM given by the transition table below.</p>",
+            "readable_text": "Let's consider the NTM given by the transition table below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\square]</span></p></td></tr><tr><td><p> <span class=\"math\">[MATH: \\to \\! q_1]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_0,\\square,L)]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_1,1,R), (q_2,\\square,L)]</span> </p></td></tr><tr><td><p> <span class=\"math\">[MATH: q_2]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_0,\\square,R), (q_2,1,R)]</span> </p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td></tr><tr><td><p> <span class=\"math\">[MATH: \\ast \\: q_0]</span> </p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td></tr></table>",
+            "readable_text": "| [MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_0,\\square,L)] | [MATH: (q_1,1,R), (q_2,\\square,L)] |\n| [MATH: q_2] | [MATH: (q_0,\\square,R), (q_2,1,R)] | [MATH: -] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note the intersection of row <span class=\"math\">[MATH: q_2]</span> and column <span class=\"math\">[MATH: 1.]</span> This tells us that being in state <span class=\"math\">[MATH: q_2]</span> and observing symbol <span class=\"math\">[MATH: 1]</span> on the tape, our machine performs the following two operations: </p>",
+            "readable_text": "Note the intersection of row [MATH: q_2] and column [MATH: 1.] This tells us that being in state [MATH: q_2] and observing symbol [MATH: 1] on the tape, our machine performs the following two operations:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Applies transition <span class=\"math\">[MATH: (q_2,1) \\to (q_0,\\square,R).]</span> In other words, it swaps to state <span class=\"math\">[MATH: q_0,]</span> erases <span class=\"math\">[MATH: 1]</span> from the tape and moves the head to the right.</p></li><li><p>Applies transition <span class=\"math\">[MATH: (q_2,1) \\to (q_2,1,R).]</span> In other words, it stays in state <span class=\"math\">[MATH: q_2,]</span> doesn&#x27;t change the symbol on the tape, and moves the head to the right.</p></li></ul>",
+            "readable_text": "- Applies transition [MATH: (q_2,1) \\to (q_0,\\square,R).] In other words, it swaps to state [MATH: q_0,] erases [MATH: 1] from the tape and moves the head to the right.\n- Applies transition [MATH: (q_2,1) \\to (q_2,1,R).] In other words, it stays in state [MATH: q_2,] doesn't change the symbol on the tape, and moves the head to the right.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The important thing here is that the machine conducts both of these transitions simultaneously! Thus, to illustrate how an NTM processes a string, we use a <strong>tree of moves</strong>, where each node is an instantaneous description (ID), and its children correspond to the transitions of the NTM. Also, the root is the initial ID.</p>",
+            "readable_text": "The important thing here is that the machine conducts both of these transitions simultaneously! Thus, to illustrate how an NTM processes a string, we use a tree of moves, where each node is an instantaneous description (ID), and its children correspond to the transitions of the NTM. Also, the root is the initial ID.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nUntil now, we have only considered deterministic Turing machines (DTMs) in which a state and tape symbol correspond to one transition.\n\nContent:\nAnother type is a nondeterministic Turing machine (NTM), where a state and tape symbol can correspond to multiple transitions. The transition function of an NTM has the form\n[MATH: \\delta: Q \\times \\Gamma \\to 2^{Q \\times \\Gamma \\times \\{L, R\\}},]\nwhere [MATH: Q] is a finite set of states, [MATH: \\Gamma] is the set of tape symbols, and [MATH: L] and [MATH: R] indicate whether to move left or right on the tape.\n\nContent:\nLet's consider the NTM given by the transition table below.\n\nContent:\n| [MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_0,\\square,L)] | [MATH: (q_1,1,R), (q_2,\\square,L)] |\n| [MATH: q_2] | [MATH: (q_0,\\square,R), (q_2,1,R)] | [MATH: -] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nNote the intersection of row [MATH: q_2] and column [MATH: 1.] This tells us that being in state [MATH: q_2] and observing symbol [MATH: 1] on the tape, our machine performs the following two operations:\n\nContent:\n- Applies transition [MATH: (q_2,1) \\to (q_0,\\square,R).] In other words, it swaps to state [MATH: q_0,] erases [MATH: 1] from the tape and moves the head to the right.\n- Applies transition [MATH: (q_2,1) \\to (q_2,1,R).] In other words, it stays in state [MATH: q_2,] doesn't change the symbol on the tape, and moves the head to the right.\n\nContent:\nThe important thing here is that the machine conducts both of these transitions simultaneously! Thus, to illustrate how an NTM processes a string, we use a tree of moves, where each node is an instantaneous description (ID), and its children correspond to the transitions of the NTM. Also, the root is the initial ID."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "421717",
+        "content_id": "11727",
+        "dom_id": "step-421717",
+        "selector": "#step-421717",
+        "step_anchor": "step-2",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\square]</span></p></td></tr><tr><td><p> <span class=\"math\">[MATH: \\to \\! q_1]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_0,\\square,L)]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_1,1,R), (q_2,\\square,L)]</span> </p></td></tr><tr><td><p> <span class=\"math\">[MATH: q_2]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_0,\\square,R), (q_2,1,R)]</span> </p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td></tr><tr><td><p> <span class=\"math\">[MATH: \\ast \\: q_0]</span> </p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td></tr></table>",
+            "readable_text": "| [MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_0,\\square,L)] | [MATH: (q_1,1,R), (q_2,\\square,L)] |\n| [MATH: q_2] | [MATH: (q_0,\\square,R), (q_2,1,R)] | [MATH: -] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To demonstrate, suppose the string <span class=\"math\">[MATH: 1\\square1]</span> is written on the tape of the Turing machine represented by the transition table above, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol, and the tape head initially observes the central blank symbol in state <span class=\"math\">[MATH: q_1.]</span> In other words, we start with the following configuration: </p>",
+            "readable_text": "To demonstrate, suppose the string [MATH: 1\\square1] is written on the tape of the Turing machine represented by the transition table above, where [MATH: \\square] is the blank symbol, and the tape head initially observes the central blank symbol in state [MATH: q_1.] In other words, we start with the following configuration:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/682bce27ee9296db1b3ada589379be35\"></p>",
+            "readable_text": "[IMG: /graphics/682bce27ee9296db1b3ada589379be35]",
+            "images": [
+              {
+                "src": "/graphics/682bce27ee9296db1b3ada589379be35",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s now construct the corresponding tree of moves.</p>",
+            "readable_text": "Let's now construct the corresponding tree of moves.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Constructing the root of the tree. We start with the initial configuration, as shown below.</p><div class=\"graphic\"><img src=\"/graphics/0bd0b8c5edc20452b7ec704c8388b098\"></div></li><li><p>Constructing the first layer of the tree. </p><ul><li><p>According to the transition table,\n<span class=\"math\">[MATH: \\delta(q_1,\\square) = \\{ (q_1,1,R), (q_2,\\square,L) \\}.]</span>\nAs a result, we have\n<span class=\"math\">[MATH: 1 q_1 \\square 1\n\\:\\vdash\\:\n\\{ 11 q_1 1,  q_2 1 \\square 1 \\}.]</span>\nHence, the node <span class=\"math\">[MATH: 1 q_1 \\square 1]</span> has two children: <span class=\"math\">[MATH: 11 q_1 1]</span> and <span class=\"math\">[MATH: q_2 1 \\square1,]</span> as depicted below.</p><div class=\"graphic\"><img src=\"/graphics/a6edc4c907b678341f87e1b862c3f01c\"></div></li></ul></li><li><p>Constructing the second layer of the tree.</p><ul><li><p>First, the left branch. According to the transition table,\n<span class=\"math\">[MATH: \\delta(q_1,1) = \\{ (q_0,\\square,L) \\}.]</span>\nAs a result, we have\n<span class=\"math\">[MATH: 11 q_1 1\n\\:\\vdash\\:\n\\{ 1 q_0 1 \\square \\}.]</span>\nHence, the node <span class=\"math\">[MATH: 11 q_1 1]</span> has one child: <span class=\"math\">[MATH: 1 q_0 1 \\square,]</span> as depicted below.</p><div class=\"graphic\"><img src=\"/graphics/79b118a2050df84dd10d441e7d7af2ad\"></div></li><li><p>Next, the right branch. According to the transition table,\n<span class=\"math\">[MATH: \\delta(q_2,1) = \\{ (q_0,\\square,R), (q_2,1,R) \\}.]</span>\nAs a result, we have\n<span class=\"math\">[MATH: q_21\\square 1\n\\:\\vdash\\:\n\\{ q_0 \\square1,  1 q_2 \\square1 \\}.]</span>\nHence, the node <span class=\"math\">[MATH: q_21\\square 1]</span> has two children: <span class=\"math\">[MATH: q_0 \\square1]</span> and <span class=\"math\">[MATH: 1 q_2 \\square1,]</span> as depicted below.</p><div class=\"graphic\"><img src=\"/graphics/445a6c9c26b4981e588b03d2c0b2fc9e\"></div></li></ul></li></ul>",
+            "readable_text": "- Constructing the root of the tree. We start with the initial configuration, as shown below.\n\n[IMG: /graphics/0bd0b8c5edc20452b7ec704c8388b098]\n- Constructing the first layer of the tree.\n\n- According to the transition table,\n[MATH: \\delta(q_1,\\square) = \\{ (q_1,1,R), (q_2,\\square,L) \\}.]\nAs a result, we have\n[MATH: 1 q_1 \\square 1\n\\:\\vdash\\:\n\\{ 11 q_1 1, q_2 1 \\square 1 \\}.]\nHence, the node [MATH: 1 q_1 \\square 1] has two children: [MATH: 11 q_1 1] and [MATH: q_2 1 \\square1,] as depicted below.\n\n[IMG: /graphics/a6edc4c907b678341f87e1b862c3f01c]\n- Constructing the second layer of the tree.\n\n- First, the left branch. According to the transition table,\n[MATH: \\delta(q_1,1) = \\{ (q_0,\\square,L) \\}.]\nAs a result, we have\n[MATH: 11 q_1 1\n\\:\\vdash\\:\n\\{ 1 q_0 1 \\square \\}.]\nHence, the node [MATH: 11 q_1 1] has one child: [MATH: 1 q_0 1 \\square,] as depicted below.\n\n[IMG: /graphics/79b118a2050df84dd10d441e7d7af2ad]\n- Next, the right branch. According to the transition table,\n[MATH: \\delta(q_2,1) = \\{ (q_0,\\square,R), (q_2,1,R) \\}.]\nAs a result, we have\n[MATH: q_21\\square 1\n\\:\\vdash\\:\n\\{ q_0 \\square1, 1 q_2 \\square1 \\}.]\nHence, the node [MATH: q_21\\square 1] has two children: [MATH: q_0 \\square1] and [MATH: 1 q_2 \\square1,] as depicted below.\n\n[IMG: /graphics/445a6c9c26b4981e588b03d2c0b2fc9e]",
+            "images": [
+              {
+                "src": "/graphics/0bd0b8c5edc20452b7ec704c8388b098",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/a6edc4c907b678341f87e1b862c3f01c",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/79b118a2050df84dd10d441e7d7af2ad",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/445a6c9c26b4981e588b03d2c0b2fc9e",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/682bce27ee9296db1b3ada589379be35",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/0bd0b8c5edc20452b7ec704c8388b098",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/a6edc4c907b678341f87e1b862c3f01c",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/79b118a2050df84dd10d441e7d7af2ad",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/445a6c9c26b4981e588b03d2c0b2fc9e",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\n| [MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_0,\\square,L)] | [MATH: (q_1,1,R), (q_2,\\square,L)] |\n| [MATH: q_2] | [MATH: (q_0,\\square,R), (q_2,1,R)] | [MATH: -] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nTo demonstrate, suppose the string [MATH: 1\\square1] is written on the tape of the Turing machine represented by the transition table above, where [MATH: \\square] is the blank symbol, and the tape head initially observes the central blank symbol in state [MATH: q_1.] In other words, we start with the following configuration:\n\nGraphic:\n[IMG: /graphics/682bce27ee9296db1b3ada589379be35]\n\nContent:\nLet's now construct the corresponding tree of moves.\n\nContent:\n- Constructing the root of the tree. We start with the initial configuration, as shown below.\n\n[IMG: /graphics/0bd0b8c5edc20452b7ec704c8388b098]\n- Constructing the first layer of the tree.\n\n- According to the transition table,\n[MATH: \\delta(q_1,\\square) = \\{ (q_1,1,R), (q_2,\\square,L) \\}.]\nAs a result, we have\n[MATH: 1 q_1 \\square 1\n\\:\\vdash\\:\n\\{ 11 q_1 1, q_2 1 \\square 1 \\}.]\nHence, the node [MATH: 1 q_1 \\square 1] has two children: [MATH: 11 q_1 1] and [MATH: q_2 1 \\square1,] as depicted below.\n\n[IMG: /graphics/a6edc4c907b678341f87e1b862c3f01c]\n- Constructing the second layer of the tree.\n\n- First, the left branch. According to the transition table,\n[MATH: \\delta(q_1,1) = \\{ (q_0,\\square,L) \\}.]\nAs a result, we have\n[MATH: 11 q_1 1\n\\:\\vdash\\:\n\\{ 1 q_0 1 \\square \\}.]\nHence, the node [MATH: 11 q_1 1] has one child: [MATH: 1 q_0 1 \\square,] as depicted below.\n\n[IMG: /graphics/79b118a2050df84dd10d441e7d7af2ad]\n- Next, the right branch. According to the transition table,\n[MATH: \\delta(q_2,1) = \\{ (q_0,\\square,R), (q_2,1,R) \\}.]\nAs a result, we have\n[MATH: q_21\\square 1\n\\:\\vdash\\:\n\\{ q_0 \\square1, 1 q_2 \\square1 \\}.]\nHence, the node [MATH: q_21\\square 1] has two children: [MATH: q_0 \\square1] and [MATH: 1 q_2 \\square1,] as depicted below.\n\n[IMG: /graphics/445a6c9c26b4981e588b03d2c0b2fc9e]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "421718",
+        "content_id": "15702",
+        "dom_id": "step-421718",
+        "selector": "#step-421718",
+        "step_anchor": "step-3",
+        "title": "Building a Tree of Moves for a NTM Using a Table",
+        "key_prerequisites": [
+          {
+            "topic_id": "3798",
+            "name": "Nondeterministic Finite Automata",
+            "href": "/topics/3798",
+            "type": ""
+          },
+          {
+            "topic_id": "5420",
+            "name": "Processing Strings Using Turing Machines",
+            "href": "/topics/5420",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/e7ac1aa19cc200348e9ac2444a88c03a\"></div><p>The string <span class=\"math\">[MATH: \\square1]</span> is written on the tape of the Turing machine given by the transition table below, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span> From left to right, what are the missing parts of the tree of moves shown above for the given machine?</p><table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\square]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! q_1]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td><td><p><span class=\"math\">[MATH: (q_0,1,R), (q_2,\\square,R)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q_2]</span></p></td><td><p><span class=\"math\">[MATH: (q_0,1,R),(q_2,1,L)]</span></p></td><td><p><span class=\"math\">[MATH: (q_0,1,L)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q_0]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td></tr></table>",
+            "readable_text": "[IMG: /graphics/e7ac1aa19cc200348e9ac2444a88c03a]\n\nThe string [MATH: \\square1] is written on the tape of the Turing machine given by the transition table below, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: -] | [MATH: (q_0,1,R), (q_2,\\square,R)] |\n| [MATH: q_2] | [MATH: (q_0,1,R),(q_2,1,L)] | [MATH: (q_0,1,L)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |",
+            "images": [
+              {
+                "src": "/graphics/e7ac1aa19cc200348e9ac2444a88c03a",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let&#x27;s consider each missing part from left to right:</p><ul><li><p>The parent node of the first missing part corresponds to the instantaneous description <span class=\"math\">[MATH: q_1\\square1.]</span></p><div class=\"graphic\"><img src=\"/graphics/906d645405032fa8e22486f636aa9a00\"></div><p>According to the transition table,\n<span class=\"math\">[MATH: \\delta(q_1,\\square) = \\{ (q_0,1,R), (q_2,\\square,R) \\}.]</span>\nAs a result, we have\n<span class=\"math\">[MATH: q_1\\square1\n\\:\\vdash\\:\n\\{ 1q_01, q_2 1 \\}.]</span>\nSo, the first missing part is <span class=\"math\">[MATH: 1q_0 1.]</span></p></li><li><p>The parent node of the second missing part corresponds to the instantaneous description <span class=\"math\">[MATH: q_2\\square1.]</span></p><div class=\"graphic\"><img src=\"/graphics/1661a534af8f6ee78ba2febda0c03073\"></div><p>According to the transition table,\n<span class=\"math\">[MATH: \\delta(q_2,\\square) = \\{ (q_0,1,L) \\}.]</span>\nAs a result, we have\n<span class=\"math\">[MATH: q_2\\square1\n\\:\\vdash\\:\nq_0\\square 11.]</span>\nSo, the second missing part is <span class=\"math\">[MATH: q_0\\square 11.]</span></p></li></ul><p>Hence, the tree of moves for the given machine is the following:</p><div class=\"graphic\"><img src=\"/graphics/03c0e5029862c04b196d13bacedee08d\"></div><p>Therefore, from left to right, the missing parts are <span class=\"math\">[MATH: 1 q_0 1]</span> and <span class=\"math\">[MATH: q_0\\square 11.]</span> </p>",
+            "readable_text": "Let's consider each missing part from left to right:\n\n- The parent node of the first missing part corresponds to the instantaneous description [MATH: q_1\\square1.]\n\n[IMG: /graphics/906d645405032fa8e22486f636aa9a00]\n\nAccording to the transition table,\n[MATH: \\delta(q_1,\\square) = \\{ (q_0,1,R), (q_2,\\square,R) \\}.]\nAs a result, we have\n[MATH: q_1\\square1\n\\:\\vdash\\:\n\\{ 1q_01, q_2 1 \\}.]\nSo, the first missing part is [MATH: 1q_0 1.]\n- The parent node of the second missing part corresponds to the instantaneous description [MATH: q_2\\square1.]\n\n[IMG: /graphics/1661a534af8f6ee78ba2febda0c03073]\n\nAccording to the transition table,\n[MATH: \\delta(q_2,\\square) = \\{ (q_0,1,L) \\}.]\nAs a result, we have\n[MATH: q_2\\square1\n\\:\\vdash\\:\nq_0\\square 11.]\nSo, the second missing part is [MATH: q_0\\square 11.]\n\nHence, the tree of moves for the given machine is the following:\n\n[IMG: /graphics/03c0e5029862c04b196d13bacedee08d]\n\nTherefore, from left to right, the missing parts are [MATH: 1 q_0 1] and [MATH: q_0\\square 11.]",
+            "images": [
+              {
+                "src": "/graphics/906d645405032fa8e22486f636aa9a00",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/1661a534af8f6ee78ba2febda0c03073",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/03c0e5029862c04b196d13bacedee08d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/e7ac1aa19cc200348e9ac2444a88c03a",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/906d645405032fa8e22486f636aa9a00",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/1661a534af8f6ee78ba2febda0c03073",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/03c0e5029862c04b196d13bacedee08d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/e7ac1aa19cc200348e9ac2444a88c03a]\n\nThe string [MATH: \\square1] is written on the tape of the Turing machine given by the transition table below, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: -] | [MATH: (q_0,1,R), (q_2,\\square,R)] |\n| [MATH: q_2] | [MATH: (q_0,1,R),(q_2,1,L)] | [MATH: (q_0,1,L)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's consider each missing part from left to right:\n\n- The parent node of the first missing part corresponds to the instantaneous description [MATH: q_1\\square1.]\n\n[IMG: /graphics/906d645405032fa8e22486f636aa9a00]\n\nAccording to the transition table,\n[MATH: \\delta(q_1,\\square) = \\{ (q_0,1,R), (q_2,\\square,R) \\}.]\nAs a result, we have\n[MATH: q_1\\square1\n\\:\\vdash\\:\n\\{ 1q_01, q_2 1 \\}.]\nSo, the first missing part is [MATH: 1q_0 1.]\n- The parent node of the second missing part corresponds to the instantaneous description [MATH: q_2\\square1.]\n\n[IMG: /graphics/1661a534af8f6ee78ba2febda0c03073]\n\nAccording to the transition table,\n[MATH: \\delta(q_2,\\square) = \\{ (q_0,1,L) \\}.]\nAs a result, we have\n[MATH: q_2\\square1\n\\:\\vdash\\:\nq_0\\square 11.]\nSo, the second missing part is [MATH: q_0\\square 11.]\n\nHence, the tree of moves for the given machine is the following:\n\n[IMG: /graphics/03c0e5029862c04b196d13bacedee08d]\n\nTherefore, from left to right, the missing parts are [MATH: 1 q_0 1] and [MATH: q_0\\square 11.]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "259030",
+        "dom_id": "question-259030",
+        "selector": "#question-259030",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259030\"></p>",
+          "readable_text": "[IMG: /graphics/q-259030]",
+          "images": [
+            {
+              "src": "/graphics/q-259030",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: \u25fb1]</span> is written on the tape of the Turing machine given by the transition table below, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> What is the missing part of the tree of moves shown above for the given machine?</p><table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u0393}]</span></p></td><td><p><span class=\"math\">[MATH: \u25fb]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p> <span class=\"math\">[MATH: \u2192 q_{1}]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_{1}, \u25fb, R), (q_{2}, 1, L)]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_{0}, 1, L)]</span> </p></td></tr><tr><td><p> <span class=\"math\">[MATH: q_{2}]</span> </p></td><td><p> <span class=\"math\">[MATH: (q_{0}, 1, R)]</span> </p></td><td><p> <span class=\"math\">[MATH: \u2212]</span> </p></td></tr><tr><td><p> <span class=\"math\">[MATH: \u2217q_{0}]</span> </p></td><td><p> <span class=\"math\">[MATH: \u2212]</span> </p></td><td><p> <span class=\"math\">[MATH: \u2212]</span> </p></td></tr></table>",
+          "readable_text": "The string [MATH: \u25fb1] is written on the tape of the Turing machine given by the transition table below, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] What is the missing part of the tree of moves shown above for the given machine?\n\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: \u25fb] | [MATH: 1] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, \u25fb, R), (q_{2}, 1, L)] | [MATH: (q_{0}, 1, L)] |\n| [MATH: q_{2}] | [MATH: (q_{0}, 1, R)] | [MATH: \u2212] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259030-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{1}1\u25fb]</span></p>",
+            "readable_text": "[MATH: q_{1}1\u25fb]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259030-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1q_{1}\u25fb1]</span></p>",
+            "readable_text": "[MATH: 1q_{1}\u25fb1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259030-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{0}11]</span></p>",
+            "readable_text": "[MATH: q_{0}11]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259030-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{0}\u25fb1]</span></p>",
+            "readable_text": "[MATH: q_{0}\u25fb1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259030-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1q_{0}\u25fb]</span></p>",
+            "readable_text": "[MATH: 1q_{0}\u25fb]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259030",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259030]\n\nPrompt:\nThe string [MATH: \u25fb1] is written on the tape of the Turing machine given by the transition table below, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] What is the missing part of the tree of moves shown above for the given machine?\n\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: \u25fb] | [MATH: 1] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, \u25fb, R), (q_{2}, 1, L)] | [MATH: (q_{0}, 1, L)] |\n| [MATH: q_{2}] | [MATH: (q_{0}, 1, R)] | [MATH: \u2212] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nChoices:\na. [MATH: q_{1}1\u25fb]\nb. [MATH: 1q_{1}\u25fb1]\nc. [MATH: q_{0}11]\nd. [MATH: q_{0}\u25fb1]\ne. [MATH: 1q_{0}\u25fb]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "238187",
+        "dom_id": "question-238187",
+        "selector": "#question-238187",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-238187\"></p>",
+          "readable_text": "[IMG: /graphics/q-238187]",
+          "images": [
+            {
+              "src": "/graphics/q-238187",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: 11]</span> is written on the tape of the Turing machine given by the transition table below, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> From left to right, what are the missing parts of the tree of moves shown above for the given machine?</p><table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u0393}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u25fb]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 q_{1}]</span></p></td><td><p><span class=\"math\">[MATH: (q_{1}, 1, R), (q_{2}, \u25fb, R)]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q_{2}]</span></p></td><td><p><span class=\"math\">[MATH: (q_{2}, 1, L)]</span></p></td><td><p><span class=\"math\">[MATH: (q_{0}, 1, R)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217q_{0}]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td></tr></table>",
+          "readable_text": "The string [MATH: 11] is written on the tape of the Turing machine given by the transition table below, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 1, R), (q_{2}, \u25fb, R)] | [MATH: \u2212] |\n| [MATH: q_{2}] | [MATH: (q_{2}, 1, L)] | [MATH: (q_{0}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-238187-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1\u25fbq_{2}\u25fb]</span> and <span class=\"math\">[MATH: \u25fbq_{2}1]</span></p>",
+            "readable_text": "[MATH: 1\u25fbq_{2}\u25fb] and [MATH: \u25fbq_{2}1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-238187-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 11q_{2}\u25fb]</span> and <span class=\"math\">[MATH: q_{0}11]</span></p>",
+            "readable_text": "[MATH: 11q_{2}\u25fb] and [MATH: q_{0}11]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-238187-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 11q_{2}\u25fb]</span> and <span class=\"math\">[MATH: q_{1}11]</span></p>",
+            "readable_text": "[MATH: 11q_{2}\u25fb] and [MATH: q_{1}11]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-238187-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 11q_{2}\u25fb]</span> and <span class=\"math\">[MATH: 1q_{0}1]</span></p>",
+            "readable_text": "[MATH: 11q_{2}\u25fb] and [MATH: 1q_{0}1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-238187-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1\u25fbq_{2}\u25fb]</span> and <span class=\"math\">[MATH: 1q_{0}1]</span></p>",
+            "readable_text": "[MATH: 1\u25fbq_{2}\u25fb] and [MATH: 1q_{0}1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-238187",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-238187]\n\nPrompt:\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition table below, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 1, R), (q_{2}, \u25fb, R)] | [MATH: \u2212] |\n| [MATH: q_{2}] | [MATH: (q_{2}, 1, L)] | [MATH: (q_{0}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nChoices:\na. [MATH: 1\u25fbq_{2}\u25fb] and [MATH: \u25fbq_{2}1]\nb. [MATH: 11q_{2}\u25fb] and [MATH: q_{0}11]\nc. [MATH: 11q_{2}\u25fb] and [MATH: q_{1}11]\nd. [MATH: 11q_{2}\u25fb] and [MATH: 1q_{0}1]\ne. [MATH: 1\u25fbq_{2}\u25fb] and [MATH: 1q_{0}1]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "421721",
+        "content_id": "16754",
+        "dom_id": "step-421721",
+        "selector": "#step-421721",
+        "step_anchor": "step-6",
+        "title": "Building a Tree of Moves for a NTM Using a Diagram",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/1cddf31f78e108b2450f1948fc01c0bc\"></div><p>The string <span class=\"math\">[MATH: \\square1]</span> is written on the tape of the Turing machine given by the transition diagram above, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span> What is the missing part of the tree of moves shown above for the given machine?</p>",
+            "readable_text": "[IMG: /graphics/1cddf31f78e108b2450f1948fc01c0bc]\n\nThe string [MATH: \\square1] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What is the missing part of the tree of moves shown above for the given machine?",
+            "images": [
+              {
+                "src": "/graphics/1cddf31f78e108b2450f1948fc01c0bc",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The parent node of the missing part corresponds to the instantaneous description <span class=\"math\">[MATH: q_2 \\square 11.]</span></p><div class=\"graphic\"><img src=\"/graphics/228a494e81f5e6414e48fb95d40498d6\"></div><p>\n According to the transition diagram,\n<span class=\"math\">[MATH: (q_2,\\square) \\to \\{ (q_0,\\square,R), (q_1,1,R) \\}.]</span>\nAs a result, we have\n<span class=\"math\">[MATH: q_2 \\square 11\n\\:\\vdash\\:\n\\{ q_0 11,   1q_111 \\}.]</span>\n\nTherefore, the missing part is <span class=\"math\">[MATH: 1q_111,]</span> and the tree of moves for the given machine is the following:\n\n</p><div class=\"graphic\"><img src=\"/graphics/c754974b883468e2bf9ff9efcc99529f\"></div>",
+            "readable_text": "The parent node of the missing part corresponds to the instantaneous description [MATH: q_2 \\square 11.]\n\n[IMG: /graphics/228a494e81f5e6414e48fb95d40498d6]\n\nAccording to the transition diagram,\n[MATH: (q_2,\\square) \\to \\{ (q_0,\\square,R), (q_1,1,R) \\}.]\nAs a result, we have\n[MATH: q_2 \\square 11\n\\:\\vdash\\:\n\\{ q_0 11, 1q_111 \\}.]\n\nTherefore, the missing part is [MATH: 1q_111,] and the tree of moves for the given machine is the following:\n\n[IMG: /graphics/c754974b883468e2bf9ff9efcc99529f]",
+            "images": [
+              {
+                "src": "/graphics/228a494e81f5e6414e48fb95d40498d6",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/c754974b883468e2bf9ff9efcc99529f",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/1cddf31f78e108b2450f1948fc01c0bc",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/228a494e81f5e6414e48fb95d40498d6",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/c754974b883468e2bf9ff9efcc99529f",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/1cddf31f78e108b2450f1948fc01c0bc]\n\nThe string [MATH: \\square1] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What is the missing part of the tree of moves shown above for the given machine?\n\nContent:\nEXPLANATION\n\nExplanation:\nThe parent node of the missing part corresponds to the instantaneous description [MATH: q_2 \\square 11.]\n\n[IMG: /graphics/228a494e81f5e6414e48fb95d40498d6]\n\nAccording to the transition diagram,\n[MATH: (q_2,\\square) \\to \\{ (q_0,\\square,R), (q_1,1,R) \\}.]\nAs a result, we have\n[MATH: q_2 \\square 11\n\\:\\vdash\\:\n\\{ q_0 11, 1q_111 \\}.]\n\nTherefore, the missing part is [MATH: 1q_111,] and the tree of moves for the given machine is the following:\n\n[IMG: /graphics/c754974b883468e2bf9ff9efcc99529f]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "257708",
+        "dom_id": "question-257708",
+        "selector": "#question-257708",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-257708\"></p>",
+          "readable_text": "[IMG: /graphics/q-257708]",
+          "images": [
+            {
+              "src": "/graphics/q-257708",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: 11]</span> is written on the tape of the Turing machine given by the transition diagram above, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> What is the missing part of the tree of moves shown above for the given machine?</p>",
+          "readable_text": "The string [MATH: 11] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] What is the missing part of the tree of moves shown above for the given machine?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-257708-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{1}1\u25fb]</span></p>",
+            "readable_text": "[MATH: q_{1}1\u25fb]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-257708-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 11q_{1}1]</span></p>",
+            "readable_text": "[MATH: 11q_{1}1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-257708-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{2}1\u25fb]</span></p>",
+            "readable_text": "[MATH: q_{2}1\u25fb]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-257708-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{2}11]</span></p>",
+            "readable_text": "[MATH: q_{2}11]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-257708-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{2}\u25fb1]</span></p>",
+            "readable_text": "[MATH: q_{2}\u25fb1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-257708",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-257708]\n\nPrompt:\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] What is the missing part of the tree of moves shown above for the given machine?\n\nChoices:\na. [MATH: q_{1}1\u25fb]\nb. [MATH: 11q_{1}1]\nc. [MATH: q_{2}1\u25fb]\nd. [MATH: q_{2}11]\ne. [MATH: q_{2}\u25fb1]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "259247",
+        "dom_id": "question-259247",
+        "selector": "#question-259247",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259247\"></p>",
+          "readable_text": "[IMG: /graphics/q-259247]",
+          "images": [
+            {
+              "src": "/graphics/q-259247",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: 01]</span> is written on the tape of the Turing machine given by the transition diagram above, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> From left to right, what are the missing parts of the tree of moves shown above for the given machine?</p>",
+          "readable_text": "The string [MATH: 01] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259247-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{2}110]</span> and <span class=\"math\">[MATH: q_{2}\u25fb1]</span></p>",
+            "readable_text": "[MATH: q_{2}110] and [MATH: q_{2}\u25fb1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259247-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{1}10]</span> and <span class=\"math\">[MATH: q_{2}\u25fb1]</span> </p>",
+            "readable_text": "[MATH: q_{1}10] and [MATH: q_{2}\u25fb1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259247-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{2}110]</span> and <span class=\"math\">[MATH: q_{1}\u25fb111]</span></p>",
+            "readable_text": "[MATH: q_{2}110] and [MATH: q_{1}\u25fb111]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259247-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{3}11]</span> and <span class=\"math\">[MATH: q_{3}\u25fb\u25fb1]</span></p>",
+            "readable_text": "[MATH: q_{3}11] and [MATH: q_{3}\u25fb\u25fb1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259247-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{1}10]</span> and <span class=\"math\">[MATH: q_{1}\u25fb111]</span></p>",
+            "readable_text": "[MATH: q_{1}10] and [MATH: q_{1}\u25fb111]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259247",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259247]\n\nPrompt:\nThe string [MATH: 01] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\nChoices:\na. [MATH: q_{2}110] and [MATH: q_{2}\u25fb1]\nb. [MATH: q_{1}10] and [MATH: q_{2}\u25fb1]\nc. [MATH: q_{2}110] and [MATH: q_{1}\u25fb111]\nd. [MATH: q_{3}11] and [MATH: q_{3}\u25fb\u25fb1]\ne. [MATH: q_{1}10] and [MATH: q_{1}\u25fb111]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "421724",
+        "content_id": "10024",
+        "dom_id": "step-421724",
+        "selector": "#step-421724",
+        "step_anchor": "step-9",
+        "title": "Other Types of Turing Machines",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ve considered deterministic and nondeterministic Turing machines with tapes that extend infinitely in both directions. However, there are several other variations:</p>",
+            "readable_text": "We've considered deterministic and nondeterministic Turing machines with tapes that extend infinitely in both directions. However, there are several other variations:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><em>Left-infinite</em> Turing machines, where the tape is infinite only to the left, with a fixed right boundary.</p></li><li><p><em>Right-infinite</em> Turing machines, where the tape is infinite only to the right, with a fixed left boundary.</p></li><li><p><em>Multi-tape</em> Turing machines, which have multiple tapes and heads that operate independently.</p></li></ul>",
+            "readable_text": "- Left-infinite Turing machines, where the tape is infinite only to the left, with a fixed right boundary.\n- Right-infinite Turing machines, where the tape is infinite only to the right, with a fixed left boundary.\n- Multi-tape Turing machines, which have multiple tapes and heads that operate independently.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Despite these differences, all these models are computationally equivalent and, when used as acceptors, define the same class of languages, called the <strong>decidable languages</strong>. </p>",
+            "readable_text": "Despite these differences, all these models are computationally equivalent and, when used as acceptors, define the same class of languages, called the decidable languages.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A Turing machine is one of many formal definitions of an <strong>algorithm</strong>. In other words, we say that a particular problem is &quot;algorithmically solvable&quot; if there exists a Turing machine that solves this problem.</p>",
+            "readable_text": "A Turing machine is one of many formal definitions of an algorithm. In other words, we say that a particular problem is \"algorithmically solvable\" if there exists a Turing machine that solves this problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>There are other formal definitions of algorithms in the theory of computations, but all those definitions are equivalent.</p>",
+            "readable_text": "There are other formal definitions of algorithms in the theory of computations, but all those definitions are equivalent.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe've considered deterministic and nondeterministic Turing machines with tapes that extend infinitely in both directions. However, there are several other variations:\n\nContent:\n- Left-infinite Turing machines, where the tape is infinite only to the left, with a fixed right boundary.\n- Right-infinite Turing machines, where the tape is infinite only to the right, with a fixed left boundary.\n- Multi-tape Turing machines, which have multiple tapes and heads that operate independently.\n\nContent:\nDespite these differences, all these models are computationally equivalent and, when used as acceptors, define the same class of languages, called the decidable languages.\n\nContent:\nA Turing machine is one of many formal definitions of an algorithm. In other words, we say that a particular problem is \"algorithmically solvable\" if there exists a Turing machine that solves this problem.\n\nContent:\nThere are other formal definitions of algorithms in the theory of computations, but all those definitions are equivalent."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "421727",
+        "content_id": "11728",
+        "dom_id": "step-421727",
+        "selector": "#step-421727",
+        "step_anchor": "step-10",
+        "title": "Algorithmically Unsolvable Problems",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that we have a formal definition of an algorithm (as a Turing machine), we can explore some interesting questions.</p>",
+            "readable_text": "Now that we have a formal definition of an algorithm (as a Turing machine), we can explore some interesting questions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Earlier in this lesson, we mentioned that some mathematical problems are algorithmically unsolvable - meaning no algorithmic solution exists. This can be understood intuitively as follows.</p>",
+            "readable_text": "Earlier in this lesson, we mentioned that some mathematical problems are algorithmically unsolvable - meaning no algorithmic solution exists. This can be understood intuitively as follows.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we fix a finite input alphabet (e.g., <span class=\"math\">[MATH: \\{0,1\\}]</span>). Then, there are only finitely many possible Turing machines for any fixed number of states. Since the total set of Turing machines is a countable union of finite sets, it is countable. </p>",
+            "readable_text": "Suppose we fix a finite input alphabet (e.g., [MATH: \\{0,1\\}]). Then, there are only finitely many possible Turing machines for any fixed number of states. Since the total set of Turing machines is a countable union of finite sets, it is countable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In contrast, the set of all possible problems - even just over the natural numbers - is uncountable. Indeed, for every subset of <span class=\"math\">[MATH: \\mathbb{N},]</span> there exists a mathematical problem whose solution set corresponds to that subset. Since uncountable infinity is strictly larger than any countable set, it follows that most problems will never have an algorithmic solution.</p>",
+            "readable_text": "In contrast, the set of all possible problems - even just over the natural numbers - is uncountable. Indeed, for every subset of [MATH: \\mathbb{N},] there exists a mathematical problem whose solution set corresponds to that subset. Since uncountable infinity is strictly larger than any countable set, it follows that most problems will never have an algorithmic solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>One example of an algorithmically unsolvable problem is determining the roots of an arbitrary polynomial with integer coefficients. This does not mean there are no algorithms for solving specific polynomial equations. For instance, the quadratic formula provides a solution for any quadratic equation. However, there can never be a general algorithm that, given an arbitrary polynomial with integer coefficients, finds its roots in a finite number of steps.</p>",
+            "readable_text": "One example of an algorithmically unsolvable problem is determining the roots of an arbitrary polynomial with integer coefficients. This does not mean there are no algorithms for solving specific polynomial equations. For instance, the quadratic formula provides a solution for any quadratic equation. However, there can never be a general algorithm that, given an arbitrary polynomial with integer coefficients, finds its roots in a finite number of steps.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nNow that we have a formal definition of an algorithm (as a Turing machine), we can explore some interesting questions.\n\nContent:\nEarlier in this lesson, we mentioned that some mathematical problems are algorithmically unsolvable - meaning no algorithmic solution exists. This can be understood intuitively as follows.\n\nContent:\nSuppose we fix a finite input alphabet (e.g., [MATH: \\{0,1\\}]). Then, there are only finitely many possible Turing machines for any fixed number of states. Since the total set of Turing machines is a countable union of finite sets, it is countable.\n\nContent:\nIn contrast, the set of all possible problems - even just over the natural numbers - is uncountable. Indeed, for every subset of [MATH: \\mathbb{N},] there exists a mathematical problem whose solution set corresponds to that subset. Since uncountable infinity is strictly larger than any countable set, it follows that most problems will never have an algorithmic solution.\n\nContent:\nOne example of an algorithmically unsolvable problem is determining the roots of an arbitrary polynomial with integer coefficients. This does not mean there are no algorithms for solving specific polynomial equations. For instance, the quadratic formula provides a solution for any quadratic equation. However, there can never be a general algorithm that, given an arbitrary polynomial with integer coefficients, finds its roots in a finite number of steps."
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "421728",
+        "content_id": "11729",
+        "dom_id": "step-421728",
+        "selector": "#step-421728",
+        "step_anchor": "step-11",
+        "title": "The P vs NP Problem",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Another fundamental problem in computational theory is closely tied to deterministic and nondeterministic Turing machines.</p>",
+            "readable_text": "Another fundamental problem in computational theory is closely tied to deterministic and nondeterministic Turing machines.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The class <span class=\"math\">[MATH: P]</span> consists of problems that can be solved using a deterministic Turing machine in polynomial time. More formally, a problem belongs to <span class=\"math\">[MATH: P]</span> if there exists a deterministic Turing machine that solves it in time <span class=\"math\">[MATH: \\Theta(p(n)),]</span> where <span class=\"math\">[MATH: n]</span> is the number of input symbols on the tape, and <span class=\"math\">[MATH: p(n)]</span> is a polynomial in <span class=\"math\">[MATH: n.]</span> On the other hand, the class <span class=\"math\">[MATH: NP]</span> consists of problems that can be solved in polynomial time using a nondeterministic Turing machine.</p>",
+            "readable_text": "The class [MATH: P] consists of problems that can be solved using a deterministic Turing machine in polynomial time. More formally, a problem belongs to [MATH: P] if there exists a deterministic Turing machine that solves it in time [MATH: \\Theta(p(n)),] where [MATH: n] is the number of input symbols on the tape, and [MATH: p(n)] is a polynomial in [MATH: n.] On the other hand, the class [MATH: NP] consists of problems that can be solved in polynomial time using a nondeterministic Turing machine.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Intuitively, <span class=\"math\">[MATH: P]</span> contains problems that can be solved relatively quickly, whereas <span class=\"math\">[MATH: NP]</span> includes problems for which, given a potential solution, it can be verified relatively quickly.</p>",
+            "readable_text": "Intuitively, [MATH: P] contains problems that can be solved relatively quickly, whereas [MATH: NP] includes problems for which, given a potential solution, it can be verified relatively quickly.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>One of the most famous unsolved problems in mathematics is whether \n<span class=\"math\">[MATH: P  \\stackrel{?}{=} NP.]</span>\nSince a deterministic Turing machine is a special case of a nondeterministic one, we know that <span class=\"math\">[MATH: P \\subseteq NP.]</span> The central question is whether there exist problems in <span class=\"math\">[MATH: NP]</span> that are not in <span class=\"math\">[MATH: P.]</span> In other words, are there problems for which solutions can be verified quickly but not necessarily found quickly (without being given the solution in advance)?</p>",
+            "readable_text": "One of the most famous unsolved problems in mathematics is whether\n[MATH: P \\stackrel{?}{=} NP.]\nSince a deterministic Turing machine is a special case of a nondeterministic one, we know that [MATH: P \\subseteq NP.] The central question is whether there exist problems in [MATH: NP] that are not in [MATH: P.] In other words, are there problems for which solutions can be verified quickly but not necessarily found quickly (without being given the solution in advance)?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The answer to this question is crucial, as most modern cryptography is based on the assumption that \n<span class=\"math\">[MATH: P \\neq NP.]</span>\nIf this assumption were false, many widely used cryptographic systems would be insecure.</p>",
+            "readable_text": "The answer to this question is crucial, as most modern cryptography is based on the assumption that\n[MATH: P \\neq NP.]\nIf this assumption were false, many widely used cryptographic systems would be insecure.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>An example of a problem believed to be in <span class=\"math\">[MATH: NP]</span> but not in <span class=\"math\">[MATH: P]</span> is integer factorization: </p>",
+            "readable_text": "An example of a problem believed to be in [MATH: NP] but not in [MATH: P] is integer factorization:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p>Given an integer that is the product of two large prime numbers, find those prime factors. </p></blockquote>",
+            "readable_text": "> Given an integer that is the product of two large prime numbers, find those prime factors.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If the factors are provided, verification is simple - multiplication confirms the result. However, no efficient algorithm is known for factoring large integers within a reasonable (polynomial) time. Mathematicians hope no such algorithm exists, as its discovery would break widely used cryptographic schemes.</p>",
+            "readable_text": "If the factors are provided, verification is simple - multiplication confirms the result. However, no efficient algorithm is known for factoring large integers within a reasonable (polynomial) time. Mathematicians hope no such algorithm exists, as its discovery would break widely used cryptographic schemes.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Moreover, this problem is so crucial that <span class=\"math\">[MATH: P]</span> versus <span class=\"math\">[MATH: NP]</span> is one of the so-called <em>Millennium Prize Problems</em>. The Clay Mathematics Institute has pledged <span class=\"math\">[MATH: \\[math]\\,1\\,000\\,000]</span> prize for the first correct solution to this problem. </p>",
+            "readable_text": "Moreover, this problem is so crucial that [MATH: P] versus [MATH: NP] is one of the so-called Millennium Prize Problems. The Clay Mathematics Institute has pledged [MATH: \\[math]\\,1\\,000\\,000] prize for the first correct solution to this problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nAnother fundamental problem in computational theory is closely tied to deterministic and nondeterministic Turing machines.\n\nContent:\nThe class [MATH: P] consists of problems that can be solved using a deterministic Turing machine in polynomial time. More formally, a problem belongs to [MATH: P] if there exists a deterministic Turing machine that solves it in time [MATH: \\Theta(p(n)),] where [MATH: n] is the number of input symbols on the tape, and [MATH: p(n)] is a polynomial in [MATH: n.] On the other hand, the class [MATH: NP] consists of problems that can be solved in polynomial time using a nondeterministic Turing machine.\n\nContent:\nIntuitively, [MATH: P] contains problems that can be solved relatively quickly, whereas [MATH: NP] includes problems for which, given a potential solution, it can be verified relatively quickly.\n\nContent:\nOne of the most famous unsolved problems in mathematics is whether\n[MATH: P \\stackrel{?}{=} NP.]\nSince a deterministic Turing machine is a special case of a nondeterministic one, we know that [MATH: P \\subseteq NP.] The central question is whether there exist problems in [MATH: NP] that are not in [MATH: P.] In other words, are there problems for which solutions can be verified quickly but not necessarily found quickly (without being given the solution in advance)?\n\nContent:\nThe answer to this question is crucial, as most modern cryptography is based on the assumption that\n[MATH: P \\neq NP.]\nIf this assumption were false, many widely used cryptographic systems would be insecure.\n\nContent:\nAn example of a problem believed to be in [MATH: NP] but not in [MATH: P] is integer factorization:\n\nContent:\n> Given an integer that is the product of two large prime numbers, find those prime factors.\n\nContent:\nIf the factors are provided, verification is simple - multiplication confirms the result. However, no efficient algorithm is known for factoring large integers within a reasonable (polynomial) time. Mathematicians hope no such algorithm exists, as its discovery would break widely used cryptographic schemes.\n\nContent:\nMoreover, this problem is so crucial that [MATH: P] versus [MATH: NP] is one of the so-called Millennium Prize Problems. The Clay Mathematics Institute has pledged [MATH: \\[math]\\,1\\,000\\,000] prize for the first correct solution to this problem."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nUntil now, we have only considered deterministic Turing machines (DTMs) in which a state and tape symbol correspond to one transition.\n\nContent:\nAnother type is a nondeterministic Turing machine (NTM), where a state and tape symbol can correspond to multiple transitions. The transition function of an NTM has the form\n[MATH: \\delta: Q \\times \\Gamma \\to 2^{Q \\times \\Gamma \\times \\{L, R\\}},]\nwhere [MATH: Q] is a finite set of states, [MATH: \\Gamma] is the set of tape symbols, and [MATH: L] and [MATH: R] indicate whether to move left or right on the tape.\n\nContent:\nLet's consider the NTM given by the transition table below.\n\nContent:\n| [MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_0,\\square,L)] | [MATH: (q_1,1,R), (q_2,\\square,L)] |\n| [MATH: q_2] | [MATH: (q_0,\\square,R), (q_2,1,R)] | [MATH: -] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nNote the intersection of row [MATH: q_2] and column [MATH: 1.] This tells us that being in state [MATH: q_2] and observing symbol [MATH: 1] on the tape, our machine performs the following two operations:\n\nContent:\n- Applies transition [MATH: (q_2,1) \\to (q_0,\\square,R).] In other words, it swaps to state [MATH: q_0,] erases [MATH: 1] from the tape and moves the head to the right.\n- Applies transition [MATH: (q_2,1) \\to (q_2,1,R).] In other words, it stays in state [MATH: q_2,] doesn't change the symbol on the tape, and moves the head to the right.\n\nContent:\nThe important thing here is that the machine conducts both of these transitions simultaneously! Thus, to illustrate how an NTM processes a string, we use a tree of moves, where each node is an instantaneous description (ID), and its children correspond to the transitions of the NTM. Also, the root is the initial ID.\n\n---\n\nItem 2 \u2014 Tutorial: A Worked Example\n\nContent:\n| [MATH: \\Large_{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_0,\\square,L)] | [MATH: (q_1,1,R), (q_2,\\square,L)] |\n| [MATH: q_2] | [MATH: (q_0,\\square,R), (q_2,1,R)] | [MATH: -] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nTo demonstrate, suppose the string [MATH: 1\\square1] is written on the tape of the Turing machine represented by the transition table above, where [MATH: \\square] is the blank symbol, and the tape head initially observes the central blank symbol in state [MATH: q_1.] In other words, we start with the following configuration:\n\nGraphic:\n[IMG: /graphics/682bce27ee9296db1b3ada589379be35]\n\nContent:\nLet's now construct the corresponding tree of moves.\n\nContent:\n- Constructing the root of the tree. We start with the initial configuration, as shown below.\n\n[IMG: /graphics/0bd0b8c5edc20452b7ec704c8388b098]\n- Constructing the first layer of the tree.\n\n- According to the transition table,\n[MATH: \\delta(q_1,\\square) = \\{ (q_1,1,R), (q_2,\\square,L) \\}.]\nAs a result, we have\n[MATH: 1 q_1 \\square 1\n\\:\\vdash\\:\n\\{ 11 q_1 1, q_2 1 \\square 1 \\}.]\nHence, the node [MATH: 1 q_1 \\square 1] has two children: [MATH: 11 q_1 1] and [MATH: q_2 1 \\square1,] as depicted below.\n\n[IMG: /graphics/a6edc4c907b678341f87e1b862c3f01c]\n- Constructing the second layer of the tree.\n\n- First, the left branch. According to the transition table,\n[MATH: \\delta(q_1,1) = \\{ (q_0,\\square,L) \\}.]\nAs a result, we have\n[MATH: 11 q_1 1\n\\:\\vdash\\:\n\\{ 1 q_0 1 \\square \\}.]\nHence, the node [MATH: 11 q_1 1] has one child: [MATH: 1 q_0 1 \\square,] as depicted below.\n\n[IMG: /graphics/79b118a2050df84dd10d441e7d7af2ad]\n- Next, the right branch. According to the transition table,\n[MATH: \\delta(q_2,1) = \\{ (q_0,\\square,R), (q_2,1,R) \\}.]\nAs a result, we have\n[MATH: q_21\\square 1\n\\:\\vdash\\:\n\\{ q_0 \\square1, 1 q_2 \\square1 \\}.]\nHence, the node [MATH: q_21\\square 1] has two children: [MATH: q_0 \\square1] and [MATH: 1 q_2 \\square1,] as depicted below.\n\n[IMG: /graphics/445a6c9c26b4981e588b03d2c0b2fc9e]\n\n---\n\nItem 3 \u2014 Example: Building a Tree of Moves for a NTM Using a Table\n\nExample Prompt:\n[IMG: /graphics/e7ac1aa19cc200348e9ac2444a88c03a]\n\nThe string [MATH: \\square1] is written on the tape of the Turing machine given by the transition table below, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: -] | [MATH: (q_0,1,R), (q_2,\\square,R)] |\n| [MATH: q_2] | [MATH: (q_0,1,R),(q_2,1,L)] | [MATH: (q_0,1,L)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's consider each missing part from left to right:\n\n- The parent node of the first missing part corresponds to the instantaneous description [MATH: q_1\\square1.]\n\n[IMG: /graphics/906d645405032fa8e22486f636aa9a00]\n\nAccording to the transition table,\n[MATH: \\delta(q_1,\\square) = \\{ (q_0,1,R), (q_2,\\square,R) \\}.]\nAs a result, we have\n[MATH: q_1\\square1\n\\:\\vdash\\:\n\\{ 1q_01, q_2 1 \\}.]\nSo, the first missing part is [MATH: 1q_0 1.]\n- The parent node of the second missing part corresponds to the instantaneous description [MATH: q_2\\square1.]\n\n[IMG: /graphics/1661a534af8f6ee78ba2febda0c03073]\n\nAccording to the transition table,\n[MATH: \\delta(q_2,\\square) = \\{ (q_0,1,L) \\}.]\nAs a result, we have\n[MATH: q_2\\square1\n\\:\\vdash\\:\nq_0\\square 11.]\nSo, the second missing part is [MATH: q_0\\square 11.]\n\nHence, the tree of moves for the given machine is the following:\n\n[IMG: /graphics/03c0e5029862c04b196d13bacedee08d]\n\nTherefore, from left to right, the missing parts are [MATH: 1 q_0 1] and [MATH: q_0\\square 11.]\n\n---\n\nItem 4 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-259030]\n\nPrompt:\nThe string [MATH: \u25fb1] is written on the tape of the Turing machine given by the transition table below, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] What is the missing part of the tree of moves shown above for the given machine?\n\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: \u25fb] | [MATH: 1] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, \u25fb, R), (q_{2}, 1, L)] | [MATH: (q_{0}, 1, L)] |\n| [MATH: q_{2}] | [MATH: (q_{0}, 1, R)] | [MATH: \u2212] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nChoices:\na. [MATH: q_{1}1\u25fb]\nb. [MATH: 1q_{1}\u25fb1]\nc. [MATH: q_{0}11]\nd. [MATH: q_{0}\u25fb1]\ne. [MATH: 1q_{0}\u25fb]\n\n---\n\nItem 5 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-238187]\n\nPrompt:\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition table below, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 1, R), (q_{2}, \u25fb, R)] | [MATH: \u2212] |\n| [MATH: q_{2}] | [MATH: (q_{2}, 1, L)] | [MATH: (q_{0}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nChoices:\na. [MATH: 1\u25fbq_{2}\u25fb] and [MATH: \u25fbq_{2}1]\nb. [MATH: 11q_{2}\u25fb] and [MATH: q_{0}11]\nc. [MATH: 11q_{2}\u25fb] and [MATH: q_{1}11]\nd. [MATH: 11q_{2}\u25fb] and [MATH: 1q_{0}1]\ne. [MATH: 1\u25fbq_{2}\u25fb] and [MATH: 1q_{0}1]\n\n---\n\nItem 6 \u2014 Example: Building a Tree of Moves for a NTM Using a Diagram\n\nExample Prompt:\n[IMG: /graphics/1cddf31f78e108b2450f1948fc01c0bc]\n\nThe string [MATH: \\square1] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What is the missing part of the tree of moves shown above for the given machine?\n\nContent:\nEXPLANATION\n\nExplanation:\nThe parent node of the missing part corresponds to the instantaneous description [MATH: q_2 \\square 11.]\n\n[IMG: /graphics/228a494e81f5e6414e48fb95d40498d6]\n\nAccording to the transition diagram,\n[MATH: (q_2,\\square) \\to \\{ (q_0,\\square,R), (q_1,1,R) \\}.]\nAs a result, we have\n[MATH: q_2 \\square 11\n\\:\\vdash\\:\n\\{ q_0 11, 1q_111 \\}.]\n\nTherefore, the missing part is [MATH: 1q_111,] and the tree of moves for the given machine is the following:\n\n[IMG: /graphics/c754974b883468e2bf9ff9efcc99529f]\n\n---\n\nItem 7 \u2014 Question 3\n\nQuestion Graphic:\n[IMG: /graphics/q-257708]\n\nPrompt:\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] What is the missing part of the tree of moves shown above for the given machine?\n\nChoices:\na. [MATH: q_{1}1\u25fb]\nb. [MATH: 11q_{1}1]\nc. [MATH: q_{2}1\u25fb]\nd. [MATH: q_{2}11]\ne. [MATH: q_{2}\u25fb1]\n\n---\n\nItem 8 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-259247]\n\nPrompt:\nThe string [MATH: 01] is written on the tape of the Turing machine given by the transition diagram above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] From left to right, what are the missing parts of the tree of moves shown above for the given machine?\n\nChoices:\na. [MATH: q_{2}110] and [MATH: q_{2}\u25fb1]\nb. [MATH: q_{1}10] and [MATH: q_{2}\u25fb1]\nc. [MATH: q_{2}110] and [MATH: q_{1}\u25fb111]\nd. [MATH: q_{3}11] and [MATH: q_{3}\u25fb\u25fb1]\ne. [MATH: q_{1}10] and [MATH: q_{1}\u25fb111]\n\n---\n\nItem 9 \u2014 Tutorial: Other Types of Turing Machines\n\nContent:\nWe've considered deterministic and nondeterministic Turing machines with tapes that extend infinitely in both directions. However, there are several other variations:\n\nContent:\n- Left-infinite Turing machines, where the tape is infinite only to the left, with a fixed right boundary.\n- Right-infinite Turing machines, where the tape is infinite only to the right, with a fixed left boundary.\n- Multi-tape Turing machines, which have multiple tapes and heads that operate independently.\n\nContent:\nDespite these differences, all these models are computationally equivalent and, when used as acceptors, define the same class of languages, called the decidable languages.\n\nContent:\nA Turing machine is one of many formal definitions of an algorithm. In other words, we say that a particular problem is \"algorithmically solvable\" if there exists a Turing machine that solves this problem.\n\nContent:\nThere are other formal definitions of algorithms in the theory of computations, but all those definitions are equivalent.\n\n---\n\nItem 10 \u2014 Tutorial: Algorithmically Unsolvable Problems\n\nContent:\nNow that we have a formal definition of an algorithm (as a Turing machine), we can explore some interesting questions.\n\nContent:\nEarlier in this lesson, we mentioned that some mathematical problems are algorithmically unsolvable - meaning no algorithmic solution exists. This can be understood intuitively as follows.\n\nContent:\nSuppose we fix a finite input alphabet (e.g., [MATH: \\{0,1\\}]). Then, there are only finitely many possible Turing machines for any fixed number of states. Since the total set of Turing machines is a countable union of finite sets, it is countable.\n\nContent:\nIn contrast, the set of all possible problems - even just over the natural numbers - is uncountable. Indeed, for every subset of [MATH: \\mathbb{N},] there exists a mathematical problem whose solution set corresponds to that subset. Since uncountable infinity is strictly larger than any countable set, it follows that most problems will never have an algorithmic solution.\n\nContent:\nOne example of an algorithmically unsolvable problem is determining the roots of an arbitrary polynomial with integer coefficients. This does not mean there are no algorithms for solving specific polynomial equations. For instance, the quadratic formula provides a solution for any quadratic equation. However, there can never be a general algorithm that, given an arbitrary polynomial with integer coefficients, finds its roots in a finite number of steps.\n\n---\n\nItem 11 \u2014 Tutorial: The P vs NP Problem\n\nContent:\nAnother fundamental problem in computational theory is closely tied to deterministic and nondeterministic Turing machines.\n\nContent:\nThe class [MATH: P] consists of problems that can be solved using a deterministic Turing machine in polynomial time. More formally, a problem belongs to [MATH: P] if there exists a deterministic Turing machine that solves it in time [MATH: \\Theta(p(n)),] where [MATH: n] is the number of input symbols on the tape, and [MATH: p(n)] is a polynomial in [MATH: n.] On the other hand, the class [MATH: NP] consists of problems that can be solved in polynomial time using a nondeterministic Turing machine.\n\nContent:\nIntuitively, [MATH: P] contains problems that can be solved relatively quickly, whereas [MATH: NP] includes problems for which, given a potential solution, it can be verified relatively quickly.\n\nContent:\nOne of the most famous unsolved problems in mathematics is whether\n[MATH: P \\stackrel{?}{=} NP.]\nSince a deterministic Turing machine is a special case of a nondeterministic one, we know that [MATH: P \\subseteq NP.] The central question is whether there exist problems in [MATH: NP] that are not in [MATH: P.] In other words, are there problems for which solutions can be verified quickly but not necessarily found quickly (without being given the solution in advance)?\n\nContent:\nThe answer to this question is crucial, as most modern cryptography is based on the assumption that\n[MATH: P \\neq NP.]\nIf this assumption were false, many widely used cryptographic systems would be insecure.\n\nContent:\nAn example of a problem believed to be in [MATH: NP] but not in [MATH: P] is integer factorization:\n\nContent:\n> Given an integer that is the product of two large prime numbers, find those prime factors.\n\nContent:\nIf the factors are provided, verification is simple - multiplication confirms the result. However, no efficient algorithm is known for factoring large integers within a reasonable (polynomial) time. Mathematicians hope no such algorithm exists, as its discovery would break widely used cryptographic schemes.\n\nContent:\nMoreover, this problem is so crucial that [MATH: P] versus [MATH: NP] is one of the so-called Millennium Prize Problems. The Clay Mathematics Institute has pledged [MATH: \\[math]\\,1\\,000\\,000] prize for the first correct solution to this problem."
+  }
+}

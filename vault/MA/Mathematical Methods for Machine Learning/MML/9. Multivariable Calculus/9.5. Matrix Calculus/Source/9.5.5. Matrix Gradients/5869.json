@@ -1,0 +1,1147 @@
+{
+  "schema_version": 2,
+  "topic_id": "5869",
+  "topic_title": "Matrix Gradients",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5869/Source/5869.html",
+  "source_url": "https://mathacademy.com/topics/5869",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "450917",
+        "dom_id": "sectionLink-450917",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-450917"
+      },
+      {
+        "index": 2,
+        "step_id": "450918",
+        "dom_id": "sectionLink-450918",
+        "name": "",
+        "title": "Computing the Gradient of a Function With Respect to a Matrix",
+        "selector": "#sectionLink-450918"
+      },
+      {
+        "index": 3,
+        "step_id": "450921",
+        "dom_id": "sectionLink-450921",
+        "name": "",
+        "title": "Component-Wise Differentiation",
+        "selector": "#sectionLink-450921"
+      },
+      {
+        "index": 4,
+        "step_id": "450922",
+        "dom_id": "sectionLink-450922",
+        "name": "",
+        "title": "Computing the Gradient of a Function Component-Wise",
+        "selector": "#sectionLink-450922"
+      },
+      {
+        "index": 5,
+        "step_id": "450925",
+        "dom_id": "sectionLink-450925",
+        "name": "",
+        "title": "Differentiation Using the Multivariable Chain Rule",
+        "selector": "#sectionLink-450925"
+      },
+      {
+        "index": 6,
+        "step_id": "450926",
+        "dom_id": "sectionLink-450926",
+        "name": "",
+        "title": "Applying the Chain Rule to Calculate Gradients",
+        "selector": "#sectionLink-450926"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "6007",
+        "name": "Further Vector Gradients",
+        "href": "/topics/further-vector-gradients-6007"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "450917",
+        "content_id": "12175",
+        "dom_id": "step-450917",
+        "selector": "#step-450917",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In previous lessons, we defined the gradient of a scalar-valued function with respect to a vector. In this lesson, we extend this idea to functions where the input is a <em>matrix</em> and the output is a scalar.</p>",
+            "readable_text": "In previous lessons, we defined the gradient of a scalar-valued function with respect to a vector. In this lesson, we extend this idea to functions where the input is a matrix and the output is a scalar.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have a function <span class=\"math\">[MATH: f: \\mathbb{R}^{m \\times n} \\to \\mathbb{R}]</span> that maps a matrix <span class=\"math\">[MATH: A \\in \\mathbb{R}^{m \\times n}]</span> to a scalar value <span class=\"math\">[MATH: f(A)]</span>. Just like with vector inputs, we define the <strong>gradient of <span class=\"math\">[MATH: f]</span> with respect to <span class=\"math\">[MATH: A]</span></strong> as the matrix of partial derivatives of <span class=\"math\">[MATH: f]</span> with respect to each individual entry of <span class=\"math\">[MATH: A{:}]</span></p>",
+            "readable_text": "Suppose we have a function [MATH: f: \\mathbb{R}^{m \\times n} \\to \\mathbb{R}] that maps a matrix [MATH: A \\in \\mathbb{R}^{m \\times n}] to a scalar value [MATH: f(A)]. Just like with vector inputs, we define the gradient of [MATH: f] with respect to [MATH: A] as the matrix of partial derivatives of [MATH: f] with respect to each individual entry of [MATH: A{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202f)/(\u2202a_{11})|(\u2202f)/(\u2202a_{12})|\u22ef|(\u2202f)/(\u2202a_{1n}); (\u2202f)/(\u2202a_{21})|(\u2202f)/(\u2202a_{22})|\u22ef|(\u2202f)/(\u2202a_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202a_{m1})|(\u2202f)/(\u2202a_{m2})|\u22ef|(\u2202f)/(\u2202a_{mn})]]</span></p>",
+            "readable_text": "[MATH: [(\u2202f)/(\u2202a_{11})|(\u2202f)/(\u2202a_{12})|\u22ef|(\u2202f)/(\u2202a_{1n}); (\u2202f)/(\u2202a_{21})|(\u2202f)/(\u2202a_{22})|\u22ef|(\u2202f)/(\u2202a_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202a_{m1})|(\u2202f)/(\u2202a_{m2})|\u22ef|(\u2202f)/(\u2202a_{mn})]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This gradient has the same shape as the matrix <span class=\"math\">[MATH: A.]</span> It tells us how sensitive the output <span class=\"math\">[MATH: f(A)]</span> is to changes in each element <span class=\"math\">[MATH: a_{ij}]</span>.</p>",
+            "readable_text": "This gradient has the same shape as the matrix [MATH: A.] It tells us how sensitive the output [MATH: f(A)] is to changes in each element [MATH: a_{ij}].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s apply this to a concrete example. Suppose we define the function<br/><span class=\"math\">[MATH: f(X) = \\ln(\\det(X))]</span>\nfor a square matrix <span class=\"math\">[MATH: X \\in \\mathbb{R}^{2 \\times 2}]</span>. Let&#x27;s find the gradient of <span class=\"math\">[MATH: f]</span> with respect to <span class=\"math\">[MATH: X]</span> and evaluate it at a specific point.</p>",
+            "readable_text": "Let\u2019s apply this to a concrete example. Suppose we define the function\n[MATH: f(X) = \\ln(\\det(X))]\nfor a square matrix [MATH: X \\in \\mathbb{R}^{2 \\times 2}]. Let's find the gradient of [MATH: f] with respect to [MATH: X] and evaluate it at a specific point.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, we write the matrix <span class=\"math\">[MATH: X]</span> as\n<span class=\"math\">[MATH: [x_{11}|x_{12}; x_{21}|x_{22}]]</span>\nThen, the determinant of <span class=\"math\">[MATH: X]</span> is\n<span class=\"math\">[MATH: \\det(X) = x_{11}x_{22} - x_{12}x_{21}.]</span>\nSo, the function becomes\n<span class=\"math\">[MATH: f(X) = \\ln(x_{11}x_{22} - x_{12}x_{21}).]</span></p>",
+            "readable_text": "First, we write the matrix [MATH: X] as\n[MATH: [x_{11}|x_{12}; x_{21}|x_{22}]]\nThen, the determinant of [MATH: X] is\n[MATH: \\det(X) = x_{11}x_{22} - x_{12}x_{21}.]\nSo, the function becomes\n[MATH: f(X) = \\ln(x_{11}x_{22} - x_{12}x_{21}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the gradient, we differentiate <span class=\"math\">[MATH: f]</span> with respect to each element of <span class=\"math\">[MATH: X.]</span> This gives\n<span class=\"math\">[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{12})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21})); (\u2202)/(\u2202x_{21})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{22})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))]; = [(x_{22})/(x_{11}x_{22} \u2212 x_{12}x_{21})|\u2212 (x_{21})/(x_{11}x_{22} \u2212 x_{12}x_{21}); \u2212 (x_{12})/(x_{11}x_{22} \u2212 x_{12}x_{21})|(x_{11})/(x_{11}x_{22} \u2212 x_{12}x_{21})]; = (1)/(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = (1)/(det(X))[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]</span></p>",
+            "readable_text": "To find the gradient, we differentiate [MATH: f] with respect to each element of [MATH: X.] This gives\n[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{12})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21})); (\u2202)/(\u2202x_{21})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{22})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))]; = [(x_{22})/(x_{11}x_{22} \u2212 x_{12}x_{21})|\u2212 (x_{21})/(x_{11}x_{22} \u2212 x_{12}x_{21}); \u2212 (x_{12})/(x_{11}x_{22} \u2212 x_{12}x_{21})|(x_{11})/(x_{11}x_{22} \u2212 x_{12}x_{21})]; = (1)/(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = (1)/(det(X))[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, suppose we wish to evaluate this gradient at\n<span class=\"math\">[MATH: [3|1; 5|\u2212 2]]</span>\nFirst, we compute the determinant:\n<span class=\"math\">[MATH: det(X)|= 3 \u22c5 (\u2212 2) \u2212 1 \u22c5 5; = \u2212 6 \u2212 5; = \u2212 11]</span>\nThen, we substitute our values into our gradient. This gives\n<span class=\"math\">[MATH: \u2207_{X}f(X)|= \u2212 (1)/(11)[\u2212 2|\u2212 5; \u2212 1|3]; = (1)/(11)[2|5; 1|\u2212 3].]</span></p>",
+            "readable_text": "Now, suppose we wish to evaluate this gradient at\n[MATH: [3|1; 5|\u2212 2]]\nFirst, we compute the determinant:\n[MATH: det(X)|= 3 \u22c5 (\u2212 2) \u2212 1 \u22c5 5; = \u2212 6 \u2212 5; = \u2212 11]\nThen, we substitute our values into our gradient. This gives\n[MATH: \u2207_{X}f(X)|= \u2212 (1)/(11)[\u2212 2|\u2212 5; \u2212 1|3]; = (1)/(11)[2|5; 1|\u2212 3].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This result tells us how the scalar output <span class=\"math\">[MATH: f(X) = \\ln(\\det(X))]</span> would change with respect to small changes in each entry of the matrix <span class=\"math\">[MATH: X]</span>. Each element in the gradient matrix captures that local rate of change.</p>",
+            "readable_text": "This result tells us how the scalar output [MATH: f(X) = \\ln(\\det(X))] would change with respect to small changes in each entry of the matrix [MATH: X]. Each element in the gradient matrix captures that local rate of change.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn previous lessons, we defined the gradient of a scalar-valued function with respect to a vector. In this lesson, we extend this idea to functions where the input is a matrix and the output is a scalar.\n\nContent:\nSuppose we have a function [MATH: f: \\mathbb{R}^{m \\times n} \\to \\mathbb{R}] that maps a matrix [MATH: A \\in \\mathbb{R}^{m \\times n}] to a scalar value [MATH: f(A)]. Just like with vector inputs, we define the gradient of [MATH: f] with respect to [MATH: A] as the matrix of partial derivatives of [MATH: f] with respect to each individual entry of [MATH: A{:}]\n\nContent:\n[MATH: [(\u2202f)/(\u2202a_{11})|(\u2202f)/(\u2202a_{12})|\u22ef|(\u2202f)/(\u2202a_{1n}); (\u2202f)/(\u2202a_{21})|(\u2202f)/(\u2202a_{22})|\u22ef|(\u2202f)/(\u2202a_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202a_{m1})|(\u2202f)/(\u2202a_{m2})|\u22ef|(\u2202f)/(\u2202a_{mn})]]\n\nContent:\nThis gradient has the same shape as the matrix [MATH: A.] It tells us how sensitive the output [MATH: f(A)] is to changes in each element [MATH: a_{ij}].\n\nContent:\nLet\u2019s apply this to a concrete example. Suppose we define the function\n[MATH: f(X) = \\ln(\\det(X))]\nfor a square matrix [MATH: X \\in \\mathbb{R}^{2 \\times 2}]. Let's find the gradient of [MATH: f] with respect to [MATH: X] and evaluate it at a specific point.\n\nContent:\nFirst, we write the matrix [MATH: X] as\n[MATH: [x_{11}|x_{12}; x_{21}|x_{22}]]\nThen, the determinant of [MATH: X] is\n[MATH: \\det(X) = x_{11}x_{22} - x_{12}x_{21}.]\nSo, the function becomes\n[MATH: f(X) = \\ln(x_{11}x_{22} - x_{12}x_{21}).]\n\nContent:\nTo find the gradient, we differentiate [MATH: f] with respect to each element of [MATH: X.] This gives\n[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{12})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21})); (\u2202)/(\u2202x_{21})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{22})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))]; = [(x_{22})/(x_{11}x_{22} \u2212 x_{12}x_{21})|\u2212 (x_{21})/(x_{11}x_{22} \u2212 x_{12}x_{21}); \u2212 (x_{12})/(x_{11}x_{22} \u2212 x_{12}x_{21})|(x_{11})/(x_{11}x_{22} \u2212 x_{12}x_{21})]; = (1)/(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = (1)/(det(X))[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]\n\nContent:\nNow, suppose we wish to evaluate this gradient at\n[MATH: [3|1; 5|\u2212 2]]\nFirst, we compute the determinant:\n[MATH: det(X)|= 3 \u22c5 (\u2212 2) \u2212 1 \u22c5 5; = \u2212 6 \u2212 5; = \u2212 11]\nThen, we substitute our values into our gradient. This gives\n[MATH: \u2207_{X}f(X)|= \u2212 (1)/(11)[\u2212 2|\u2212 5; \u2212 1|3]; = (1)/(11)[2|5; 1|\u2212 3].]\n\nContent:\nThis result tells us how the scalar output [MATH: f(X) = \\ln(\\det(X))] would change with respect to small changes in each entry of the matrix [MATH: X]. Each element in the gradient matrix captures that local rate of change."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "450918",
+        "content_id": "17349",
+        "dom_id": "step-450918",
+        "selector": "#step-450918",
+        "step_anchor": "step-2",
+        "title": "Computing the Gradient of a Function With Respect to a Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "6007",
+            "name": "Further Vector Gradients",
+            "href": "/topics/6007",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: f: \\mathbb{R}^{2 \\times 2} \\rightarrow \\mathbb{R}]</span> defined by <span class=\"math\">[MATH: f(X) = (\\det(X))^2.]</span> </p><p>What is the gradient of <span class=\"math\">[MATH: f]</span> with respect to <span class=\"math\">[MATH: X]</span> at <span class=\"math\">[MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]]</span></p>",
+            "readable_text": "Consider the function [MATH: f: \\mathbb{R}^{2 \\times 2} \\rightarrow \\mathbb{R}] defined by [MATH: f(X) = (\\det(X))^2.]\n\nWhat is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The gradient of a function <span class=\"math\">[MATH: f: \\mathbb{R}^{m \\times n} \\rightarrow \\mathbb{R}]</span> with respect to a matrix <span class=\"math\">[MATH: X \\in \\mathbb{R}^{m \\times n}]</span> is\n<span class=\"math\">[MATH: [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12})|\u22ef|(\u2202f)/(\u2202x_{1n}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})|\u22ef|(\u2202f)/(\u2202x_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202x_{m1})|(\u2202f)/(\u2202x_{m2})|\u22ef|(\u2202f)/(\u2202x_{mn})]]</span></p><p>In our case, writing out the function <span class=\"math\">[MATH: f(X)]</span> where <span class=\"math\">[MATH: [x_{11}|x_{12}; x_{21}|x_{22}]]</span>, we get\n<span class=\"math\">[MATH: f(X) = (\\det(X))^2 = (x_{11}x_{22} - x_{12}x_{21})^2.]</span></p><p>So, the gradient is\n<span class=\"math\">[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{12})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}; (\u2202)/(\u2202x_{21})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{22})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}]; = [2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{22}|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{21}); 2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{12})|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{11}]; = 2(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = 2det(X)[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]</span></p><p>Evaluating at <span class=\"math\">[MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]]</span> we get\n<span class=\"math\">[MATH: \u2207_{X}f(X)|= 2(\u2212 (1)/(2) \u22c5 10 \u2212 (\u2212 4) \u22c5 (3)/(2))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = 2(\u2212 5 \u2212 (\u2212 6))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = [20|8; \u2212 3|\u2212 1].]</span></p>",
+            "readable_text": "The gradient of a function [MATH: f: \\mathbb{R}^{m \\times n} \\rightarrow \\mathbb{R}] with respect to a matrix [MATH: X \\in \\mathbb{R}^{m \\times n}] is\n[MATH: [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12})|\u22ef|(\u2202f)/(\u2202x_{1n}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})|\u22ef|(\u2202f)/(\u2202x_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202x_{m1})|(\u2202f)/(\u2202x_{m2})|\u22ef|(\u2202f)/(\u2202x_{mn})]]\n\nIn our case, writing out the function [MATH: f(X)] where [MATH: [x_{11}|x_{12}; x_{21}|x_{22}]], we get\n[MATH: f(X) = (\\det(X))^2 = (x_{11}x_{22} - x_{12}x_{21})^2.]\n\nSo, the gradient is\n[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{12})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}; (\u2202)/(\u2202x_{21})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{22})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}]; = [2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{22}|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{21}); 2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{12})|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{11}]; = 2(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = 2det(X)[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]\n\nEvaluating at [MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]] we get\n[MATH: \u2207_{X}f(X)|= 2(\u2212 (1)/(2) \u22c5 10 \u2212 (\u2212 4) \u22c5 (3)/(2))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = 2(\u2212 5 \u2212 (\u2212 6))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = [20|8; \u2212 3|\u2212 1].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the function [MATH: f: \\mathbb{R}^{2 \\times 2} \\rightarrow \\mathbb{R}] defined by [MATH: f(X) = (\\det(X))^2.]\n\nWhat is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe gradient of a function [MATH: f: \\mathbb{R}^{m \\times n} \\rightarrow \\mathbb{R}] with respect to a matrix [MATH: X \\in \\mathbb{R}^{m \\times n}] is\n[MATH: [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12})|\u22ef|(\u2202f)/(\u2202x_{1n}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})|\u22ef|(\u2202f)/(\u2202x_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202x_{m1})|(\u2202f)/(\u2202x_{m2})|\u22ef|(\u2202f)/(\u2202x_{mn})]]\n\nIn our case, writing out the function [MATH: f(X)] where [MATH: [x_{11}|x_{12}; x_{21}|x_{22}]], we get\n[MATH: f(X) = (\\det(X))^2 = (x_{11}x_{22} - x_{12}x_{21})^2.]\n\nSo, the gradient is\n[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{12})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}; (\u2202)/(\u2202x_{21})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{22})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}]; = [2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{22}|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{21}); 2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{12})|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{11}]; = 2(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = 2det(X)[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]\n\nEvaluating at [MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]] we get\n[MATH: \u2207_{X}f(X)|= 2(\u2212 (1)/(2) \u22c5 10 \u2212 (\u2212 4) \u22c5 (3)/(2))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = 2(\u2212 5 \u2212 (\u2212 6))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = [20|8; \u2212 3|\u2212 1].]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "264512",
+        "dom_id": "question-264512",
+        "selector": "#question-264512",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: f: R^{2 \u00d7 2} \u2192 R]</span> defined by \n<span class=\"math\">[MATH: f(X) = \u2212 \\ln (det(X)).]</span> \nWhat is the gradient of <span class=\"math\">[MATH: f]</span> with respect to <span class=\"math\">[MATH: X]</span> at <span class=\"math\">[MATH: X = [2|1; 1|2]?]</span></p>",
+          "readable_text": "Consider the function [MATH: f: R^{2 \u00d7 2} \u2192 R] defined by\n[MATH: f(X) = \u2212 \\ln (det(X)).]\nWhat is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: X = [2|1; 1|2]?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-264512-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 3]]</span></p>",
+            "readable_text": "[MATH: [3; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-264512-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 (2)/(3)|(1)/(3); (1)/(3)|\u2212 (2)/(3)]]</span></p>",
+            "readable_text": "[MATH: [\u2212 (2)/(3)|(1)/(3); (1)/(3)|\u2212 (2)/(3)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-264512-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|1; 1|2]]</span></p>",
+            "readable_text": "[MATH: [2|1; 1|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-264512-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|\u2212 1; \u2212 1|2]]</span></p>",
+            "readable_text": "[MATH: [2|\u2212 1; \u2212 1|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-264512-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the function [MATH: f: R^{2 \u00d7 2} \u2192 R] defined by\n[MATH: f(X) = \u2212 \\ln (det(X)).]\nWhat is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: X = [2|1; 1|2]?]\n\nChoices:\na. [MATH: [3; 3]]\nb. [MATH: [\u2212 (2)/(3)|(1)/(3); (1)/(3)|\u2212 (2)/(3)]]\nc. [MATH: [2|1; 1|2]]\nd. [MATH: [2|\u2212 1; \u2212 1|2]]\ne. [MATH: 1]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "265775",
+        "dom_id": "question-265775",
+        "selector": "#question-265775",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: f: R^{2 \u00d7 2} \u2192 R]</span> defined by \n<span class=\"math\">[MATH: f(X) = \u2211_(i = 1)^(2)\u2211_(j = 1)^(2)x_{ij}^{2}]</span> \nwhere <span class=\"math\">[MATH: x_{ij}]</span> are the corresponding matrix&#x27;s entries. What is the gradient of <span class=\"math\">[MATH: f]</span> with respect to <span class=\"math\">[MATH: X]</span> at <span class=\"math\">[MATH: X = [\u2212 3|4; 1|\u2212 2]?]</span></p>",
+          "readable_text": "Consider the function [MATH: f: R^{2 \u00d7 2} \u2192 R] defined by\n[MATH: f(X) = \u2211_(i = 1)^(2)\u2211_(j = 1)^(2)x_{ij}^{2}]\nwhere [MATH: x_{ij}] are the corresponding matrix's entries. What is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: X = [\u2212 3|4; 1|\u2212 2]?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-265775-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [6|\u2212 8; \u2212 2|4]]</span></p>",
+            "readable_text": "[MATH: [6|\u2212 8; \u2212 2|4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-265775-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [6|8; 2|4]]</span></p>",
+            "readable_text": "[MATH: [6|8; 2|4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-265775-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 6|8; 2|\u2212 4]]</span></p>",
+            "readable_text": "[MATH: [\u2212 6|8; 2|\u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-265775-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [9|16; 1|4]]</span> </p>",
+            "readable_text": "[MATH: [9|16; 1|4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-265775-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 6|2; 8|\u2212 4]]</span></p>",
+            "readable_text": "[MATH: [\u2212 6|2; 8|\u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the function [MATH: f: R^{2 \u00d7 2} \u2192 R] defined by\n[MATH: f(X) = \u2211_(i = 1)^(2)\u2211_(j = 1)^(2)x_{ij}^{2}]\nwhere [MATH: x_{ij}] are the corresponding matrix's entries. What is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: X = [\u2212 3|4; 1|\u2212 2]?]\n\nChoices:\na. [MATH: [6|\u2212 8; \u2212 2|4]]\nb. [MATH: [6|8; 2|4]]\nc. [MATH: [\u2212 6|8; 2|\u2212 4]]\nd. [MATH: [9|16; 1|4]]\ne. [MATH: [\u2212 6|2; 8|\u2212 4]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "450921",
+        "content_id": "12388",
+        "dom_id": "step-450921",
+        "selector": "#step-450921",
+        "step_anchor": "step-5",
+        "title": "Component-Wise Differentiation",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have a scalar-valued function defined by\n<span class=\"math\">[MATH: f = \\mathbf{y}^T A \\mathbf{x},]</span>\nwhere <span class=\"math\">[MATH: \\mathbf{y} \\in \\mathbb{R}^m]</span>, <span class=\"math\">[MATH: \\mathbf{x} \\in \\mathbb{R}^n]</span>, and <span class=\"math\">[MATH: A \\in \\mathbb{R}^{m \\times n}]</span>.</p>",
+            "readable_text": "Suppose we have a scalar-valued function defined by\n[MATH: f = \\mathbf{y}^T A \\mathbf{x},]\nwhere [MATH: \\mathbf{y} \\in \\mathbb{R}^m], [MATH: \\mathbf{x} \\in \\mathbb{R}^n], and [MATH: A \\in \\mathbb{R}^{m \\times n}].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We want to compute the gradient of <span class=\"math\">[MATH: f]</span> with respect to the matrix <span class=\"math\">[MATH: A]</span>. The result turns out to be</p>",
+            "readable_text": "We want to compute the gradient of [MATH: f] with respect to the matrix [MATH: A]. The result turns out to be",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]</span></p>",
+            "readable_text": "[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s verify this by working component-wise. </p>",
+            "readable_text": "Let\u2019s verify this by working component-wise.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, note that we can write the product <span class=\"math\">[MATH: \\mathbf y^T A \\mathbf x]</span> as a double summation as follows:\n<span class=\"math\">[MATH: f = \\mathbf y^T A \\mathbf x = \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l.]</span>\nIn a previous lesson, we saw how to do this for <span class=\"math\">[MATH: \\mathbf x^T A \\mathbf x]</span>. The idea here is similar.</p>",
+            "readable_text": "First, note that we can write the product [MATH: \\mathbf y^T A \\mathbf x] as a double summation as follows:\n[MATH: f = \\mathbf y^T A \\mathbf x = \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l.]\nIn a previous lesson, we saw how to do this for [MATH: \\mathbf x^T A \\mathbf x]. The idea here is similar.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, we differentiate this summation with respect to <span class=\"math\">[MATH: A_{ij}{:}]</span></p>",
+            "readable_text": "Now, we differentiate this summation with respect to [MATH: A_{ij}{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= \\frac{\\partial}{\\partial A_{ij}} \\left( \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l \\right)]</span></p>",
+            "readable_text": "[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= \\frac{\\partial}{\\partial A_{ij}} \\left( \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l \\right)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since only the term where <span class=\"math\">[MATH: k = i]</span> and <span class=\"math\">[MATH: l = j]</span> depends on <span class=\"math\">[MATH: A_{ij}]</span>, all other terms vanish. So, we get</p>",
+            "readable_text": "Since only the term where [MATH: k = i] and [MATH: l = j] depends on [MATH: A_{ij}], all other terms vanish. So, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= y_i x_j.]</span></p>",
+            "readable_text": "[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= y_i x_j.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This tells us that the entry in the <span class=\"math\">[MATH: i]</span>th row and <span class=\"math\">[MATH: j]</span>th column of the gradient matrix is <span class=\"math\">[MATH: y_i x_j]</span>. Hence, the full gradient matrix is</p>",
+            "readable_text": "This tells us that the entry in the [MATH: i]th row and [MATH: j]th column of the gradient matrix is [MATH: y_i x_j]. Hence, the full gradient matrix is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]</span></p>",
+            "readable_text": "[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This result is an example of an outer product. The gradient of <span class=\"math\">[MATH: \\mathbf{y}^T A \\mathbf{x}]</span> with respect to the matrix <span class=\"math\">[MATH: A]</span> is given by multiplying the column vector <span class=\"math\">[MATH: \\mathbf{y}]</span> by the row vector <span class=\"math\">[MATH: \\mathbf{x}^T]</span>, resulting in a matrix of the same shape as <span class=\"math\">[MATH: A]</span>.</p>",
+            "readable_text": "This result is an example of an outer product. The gradient of [MATH: \\mathbf{y}^T A \\mathbf{x}] with respect to the matrix [MATH: A] is given by multiplying the column vector [MATH: \\mathbf{y}] by the row vector [MATH: \\mathbf{x}^T], resulting in a matrix of the same shape as [MATH: A].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s look at a few examples to see this in action.</p>",
+            "readable_text": "Let\u2019s look at a few examples to see this in action.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we have a scalar-valued function defined by\n[MATH: f = \\mathbf{y}^T A \\mathbf{x},]\nwhere [MATH: \\mathbf{y} \\in \\mathbb{R}^m], [MATH: \\mathbf{x} \\in \\mathbb{R}^n], and [MATH: A \\in \\mathbb{R}^{m \\times n}].\n\nContent:\nWe want to compute the gradient of [MATH: f] with respect to the matrix [MATH: A]. The result turns out to be\n\nContent:\n[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nContent:\nLet\u2019s verify this by working component-wise.\n\nContent:\nFirst, note that we can write the product [MATH: \\mathbf y^T A \\mathbf x] as a double summation as follows:\n[MATH: f = \\mathbf y^T A \\mathbf x = \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l.]\nIn a previous lesson, we saw how to do this for [MATH: \\mathbf x^T A \\mathbf x]. The idea here is similar.\n\nContent:\nNow, we differentiate this summation with respect to [MATH: A_{ij}{:}]\n\nContent:\n[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= \\frac{\\partial}{\\partial A_{ij}} \\left( \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l \\right)]\n\nContent:\nSince only the term where [MATH: k = i] and [MATH: l = j] depends on [MATH: A_{ij}], all other terms vanish. So, we get\n\nContent:\n[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= y_i x_j.]\n\nContent:\nThis tells us that the entry in the [MATH: i]th row and [MATH: j]th column of the gradient matrix is [MATH: y_i x_j]. Hence, the full gradient matrix is\n\nContent:\n[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nContent:\nThis result is an example of an outer product. The gradient of [MATH: \\mathbf{y}^T A \\mathbf{x}] with respect to the matrix [MATH: A] is given by multiplying the column vector [MATH: \\mathbf{y}] by the row vector [MATH: \\mathbf{x}^T], resulting in a matrix of the same shape as [MATH: A].\n\nContent:\nLet\u2019s look at a few examples to see this in action."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "450922",
+        "content_id": "17951",
+        "dom_id": "step-450922",
+        "selector": "#step-450922",
+        "step_anchor": "step-6",
+        "title": "Computing the Gradient of a Function Component-Wise",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}]</span> defined by <span class=\"math\">[MATH: L(\\mathbf{A}) = \\mathbf{y}^T\\mathbf{A}\\mathbf{x}]</span> where \n<span class=\"math\">[MATH: [1; 2; 3]]</span>\nWhat is <span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L]</span> at \n<span class=\"math\">[MATH: [2|1|0; \u2212 1|4|3]]</span></p>",
+            "readable_text": "Consider the function [MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}] defined by [MATH: L(\\mathbf{A}) = \\mathbf{y}^T\\mathbf{A}\\mathbf{x}] where\n[MATH: [1; 2; 3]]\nWhat is [MATH: \\nabla_{\\mathbf{A}} L] at\n[MATH: [2|1|0; \u2212 1|4|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The gradient of <span class=\"math\">[MATH: L]</span> with respect to <span class=\"math\">[MATH: \\mathbf{A}]</span> is a matrix of the same shape as <span class=\"math\">[MATH: \\mathbf{A}]</span>, with <span class=\"math\">[MATH: (i,j)]</span>th entry given by\n<span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]</span>\nthe partial derivative of <span class=\"math\">[MATH: L]</span> with respect to the <span class=\"math\">[MATH: (i,j)]</span>th entry of <span class=\"math\">[MATH: \\mathbf{A}.]</span></p><p>Writing out <span class=\"math\">[MATH: L]</span> in component-wise notation as \n<span class=\"math\">[MATH: L = \\sum\\limits_{i=1}^2 \\sum\\limits_{j=1}^3 a_{ij} y_i x_j,]</span>\nwe have\n<span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = y_i x_j.]</span></p><p>Thus, <span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]</span></p><p>Evaluating at the given values <span class=\"math\">[MATH: [1; 2; 3]]</span> and <span class=\"math\">[MATH: [4; 5]]</span> we get</p><p><span class=\"math\">[MATH: [4; 5]]</span></p>",
+            "readable_text": "The gradient of [MATH: L] with respect to [MATH: \\mathbf{A}] is a matrix of the same shape as [MATH: \\mathbf{A}], with [MATH: (i,j)]th entry given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]\nthe partial derivative of [MATH: L] with respect to the [MATH: (i,j)]th entry of [MATH: \\mathbf{A}.]\n\nWriting out [MATH: L] in component-wise notation as\n[MATH: L = \\sum\\limits_{i=1}^2 \\sum\\limits_{j=1}^3 a_{ij} y_i x_j,]\nwe have\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = y_i x_j.]\n\nThus, [MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nEvaluating at the given values [MATH: [1; 2; 3]] and [MATH: [4; 5]] we get\n\n[MATH: [4; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the function [MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}] defined by [MATH: L(\\mathbf{A}) = \\mathbf{y}^T\\mathbf{A}\\mathbf{x}] where\n[MATH: [1; 2; 3]]\nWhat is [MATH: \\nabla_{\\mathbf{A}} L] at\n[MATH: [2|1|0; \u2212 1|4|3]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe gradient of [MATH: L] with respect to [MATH: \\mathbf{A}] is a matrix of the same shape as [MATH: \\mathbf{A}], with [MATH: (i,j)]th entry given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]\nthe partial derivative of [MATH: L] with respect to the [MATH: (i,j)]th entry of [MATH: \\mathbf{A}.]\n\nWriting out [MATH: L] in component-wise notation as\n[MATH: L = \\sum\\limits_{i=1}^2 \\sum\\limits_{j=1}^3 a_{ij} y_i x_j,]\nwe have\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = y_i x_j.]\n\nThus, [MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nEvaluating at the given values [MATH: [1; 2; 3]] and [MATH: [4; 5]] we get\n\n[MATH: [4; 5]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "269388",
+        "dom_id": "question-269388",
+        "selector": "#question-269388",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: L: R^{3 \u00d7 2} \u2192 R]</span> defined by <span class=\"math\">[MATH: L(A) = 3(y^{T}Ax)]</span> where \n<span class=\"math\">[MATH: x = [3; 3], y = [0; \u2212 1; 4].]</span>\nWhat is <span class=\"math\">[MATH: \u2207_{A}L]</span> at \n<span class=\"math\">[MATH: A = [\u2212 2|3; 5|1; \u2212 1|0]?]</span></p>",
+          "readable_text": "Consider the function [MATH: L: R^{3 \u00d7 2} \u2192 R] defined by [MATH: L(A) = 3(y^{T}Ax)] where\n[MATH: x = [3; 3], y = [0; \u2212 1; 4].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [\u2212 2|3; 5|1; \u2212 1|0]?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-269388-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|0; \u2212 9|\u2212 9; 36|36]]</span></p>",
+            "readable_text": "[MATH: [0|0; \u2212 9|\u2212 9; 36|36]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-269388-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0; \u2212 18; 72]]</span></p>",
+            "readable_text": "[MATH: [0; \u2212 18; 72]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-269388-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|0; \u2212 3|\u2212 3; 12|12]]</span></p>",
+            "readable_text": "[MATH: [0|0; \u2212 3|\u2212 3; 12|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-269388-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|\u2212 9|36; 0|\u2212 9|36]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 9|36; 0|\u2212 9|36]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-269388-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [\u2212 2|3; 5|1; \u2212 1|0]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2|3; 5|1; \u2212 1|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the function [MATH: L: R^{3 \u00d7 2} \u2192 R] defined by [MATH: L(A) = 3(y^{T}Ax)] where\n[MATH: x = [3; 3], y = [0; \u2212 1; 4].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [\u2212 2|3; 5|1; \u2212 1|0]?]\n\nChoices:\na. [MATH: [0|0; \u2212 9|\u2212 9; 36|36]]\nb. [MATH: [0; \u2212 18; 72]]\nc. [MATH: [0|0; \u2212 3|\u2212 3; 12|12]]\nd. [MATH: [0|\u2212 9|36; 0|\u2212 9|36]]\ne. [MATH: [\u2212 2|3; 5|1; \u2212 1|0]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "268341",
+        "dom_id": "question-268341",
+        "selector": "#question-268341",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: L: R^{2 \u00d7 3} \u2192 R]</span> defined by <span class=\"math\">[MATH: L(A) = y^{T}Ax]</span> where \n<span class=\"math\">[MATH: x = [0; 10; 20], y = [7; 8].]</span>\nWhat is <span class=\"math\">[MATH: \u2207_{A}L]</span> at \n<span class=\"math\">[MATH: A = [1|2|0; 4|0|0]?]</span></p>",
+          "readable_text": "Consider the function [MATH: L: R^{2 \u00d7 3} \u2192 R] defined by [MATH: L(A) = y^{T}Ax] where\n[MATH: x = [0; 10; 20], y = [7; 8].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|2|0; 4|0|0]?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-268341-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|70|140; 0|80|160]]</span>\n</p>",
+            "readable_text": "[MATH: [0|70|140; 0|80|160]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-268341-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|0; 70|80; 140|160]]</span>\n</p>",
+            "readable_text": "[MATH: [0|0; 70|80; 140|160]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-268341-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [1|4; 2|0; 0|0]]</span>\n</p>",
+            "readable_text": "[MATH: [1|4; 2|0; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-268341-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0|0; 10|70; 20|80]]</span></p>",
+            "readable_text": "[MATH: [0|0; 10|70; 20|80]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-268341-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [1|2|0; 4|0|0]]</span>\n</p>",
+            "readable_text": "[MATH: [1|2|0; 4|0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the function [MATH: L: R^{2 \u00d7 3} \u2192 R] defined by [MATH: L(A) = y^{T}Ax] where\n[MATH: x = [0; 10; 20], y = [7; 8].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|2|0; 4|0|0]?]\n\nChoices:\na. [MATH: [0|70|140; 0|80|160]]\nb. [MATH: [0|0; 70|80; 140|160]]\nc. [MATH: [1|4; 2|0; 0|0]]\nd. [MATH: [0|0; 10|70; 20|80]]\ne. [MATH: [1|2|0; 4|0|0]]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "450925",
+        "content_id": "12479",
+        "dom_id": "step-450925",
+        "selector": "#step-450925",
+        "step_anchor": "step-9",
+        "title": "Differentiation Using the Multivariable Chain Rule",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>When working with scalar-valued functions defined on matrices, it&#x27;s often helpful to compute gradients using component-wise differentiation and the chain rule. This approach breaks down the computation into simpler intermediate steps and allows us to clearly see the dependencies.</p>",
+            "readable_text": "When working with scalar-valued functions defined on matrices, it's often helpful to compute gradients using component-wise differentiation and the chain rule. This approach breaks down the computation into simpler intermediate steps and allows us to clearly see the dependencies.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider a <em>scalar</em> function <span class=\"math\">[MATH: L(\\mathbf A),]</span> defined as\n<span class=\"math\">[MATH: L(\\mathbf{A}) = \\frac{1}{2} \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)^T \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)]</span>\nwhere <span class=\"math\">[MATH: \\mathbf{A} \\in \\mathbb{R}^{2 \\times 3}]</span>, <span class=\"math\">[MATH: \\mathbf{x} \\in \\mathbb{R}^3]</span>, and <span class=\"math\">[MATH: \\mathbf{b} \\in \\mathbb{R}^2.]</span></p>",
+            "readable_text": "Consider a scalar function [MATH: L(\\mathbf A),] defined as\n[MATH: L(\\mathbf{A}) = \\frac{1}{2} \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)^T \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)]\nwhere [MATH: \\mathbf{A} \\in \\mathbb{R}^{2 \\times 3}], [MATH: \\mathbf{x} \\in \\mathbb{R}^3], and [MATH: \\mathbf{b} \\in \\mathbb{R}^2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we want to compute the gradient <span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L]</span>, which is a matrix of the same shape as <span class=\"math\">[MATH: \\mathbf{A}]</span>. The entry in the <span class=\"math\">[MATH: i]</span>th row and <span class=\"math\">[MATH: j]</span>th column of the gradient matrix is given by \n<span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}}.]</span></p>",
+            "readable_text": "Suppose we want to compute the gradient [MATH: \\nabla_{\\mathbf{A}} L], which is a matrix of the same shape as [MATH: \\mathbf{A}]. The entry in the [MATH: i]th row and [MATH: j]th column of the gradient matrix is given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To simplify the differentiation, we define <span class=\"math\">[MATH: \\mathbf y \\in\\mathbb R^{2\\times 1}]</span> as \n<span class=\"math\">[MATH: [y_{1}; y_{2}]]</span></p>",
+            "readable_text": "To simplify the differentiation, we define [MATH: \\mathbf y \\in\\mathbb R^{2\\times 1}] as\n[MATH: [y_{1}; y_{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, we can write <span class=\"math\">[MATH: L]</span> in terms of <span class=\"math\">[MATH: \\mathbf y]</span> as \n<span class=\"math\">[MATH: L = \\frac{1}{2} \\mathbf{y}^T \\mathbf{y}.]</span></p>",
+            "readable_text": "Then, we can write [MATH: L] in terms of [MATH: \\mathbf y] as\n[MATH: L = \\frac{1}{2} \\mathbf{y}^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To compute <span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}}]</span>, we apply the multivariable chain rule:\n<span class=\"math\">[MATH: \\frac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\frac{\\partial L}{\\partial y_k} \\cdot \\frac{\\partial y_k}{\\partial a_{ij}}]</span>\nNote that the summation is from <span class=\"math\">[MATH: k=1]</span> to <span class=\"math\">[MATH: k=2]</span> because <span class=\"math\">[MATH: \\mathbf y]</span> has two components, and we&#x27;re differentiating with respect to each of them.</p>",
+            "readable_text": "To compute [MATH: \\dfrac{\\partial L}{\\partial a_{ij}}], we apply the multivariable chain rule:\n[MATH: \\frac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\frac{\\partial L}{\\partial y_k} \\cdot \\frac{\\partial y_k}{\\partial a_{ij}}]\nNote that the summation is from [MATH: k=1] to [MATH: k=2] because [MATH: \\mathbf y] has two components, and we're differentiating with respect to each of them.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let&#x27;s analyze the two factors of the product that appear in this summation.</p>",
+            "readable_text": "Now, let's analyze the two factors of the product that appear in this summation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>We know that\n<span class=\"math\">[MATH: \u2207_{y}L|= \u2207_{y}((1)/(2)y^{T}y); = (1)/(2) \u22c5 \u2207_{y}(y^{T}y); = (1)/(2) \u22c5 2y; = y.]</span>\nTherefore, we have\n<span class=\"math\">[MATH: \\frac{\\partial L}{\\partial y_k} = y_k.]</span></p></li><li><p>Writing <span class=\"math\">[MATH: \\mathbf{y} = \\mathbf{A} \\mathbf{x} - \\mathbf{b}]</span> in component form\n<span class=\"math\">[MATH: y_i = \\sum_{j=1}^3 a_{ij} x_j - b_i,]</span>\nwe have\n<span class=\"math\">[MATH: {x_{j},|i = k,; 0,|otherwise.]</span>\nOnly the <span class=\"math\">[MATH: k]</span>th row of <span class=\"math\">[MATH: \\mathbf{A}]</span> affects <span class=\"math\">[MATH: y_k]</span>.</p></li></ul>",
+            "readable_text": "- We know that\n[MATH: \u2207_{y}L|= \u2207_{y}((1)/(2)y^{T}y); = (1)/(2) \u22c5 \u2207_{y}(y^{T}y); = (1)/(2) \u22c5 2y; = y.]\nTherefore, we have\n[MATH: \\frac{\\partial L}{\\partial y_k} = y_k.]\n- Writing [MATH: \\mathbf{y} = \\mathbf{A} \\mathbf{x} - \\mathbf{b}] in component form\n[MATH: y_i = \\sum_{j=1}^3 a_{ij} x_j - b_i,]\nwe have\n[MATH: {x_{j},|i = k,; 0,|otherwise.]\nOnly the [MATH: k]th row of [MATH: \\mathbf{A}] affects [MATH: y_k].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Putting our two results together gives\n<span class=\"math\">[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j},]</span>\nbecause all terms vanish except the one where <span class=\"math\">[MATH: k=i]</span>.</p>",
+            "readable_text": "Putting our two results together gives\n[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j},]\nbecause all terms vanish except the one where [MATH: k=i].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, we conclude that\n<span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]</span></p>",
+            "readable_text": "Therefore, we conclude that\n[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the next example, we will use this formula to compute the gradient for specific vectors.</p>",
+            "readable_text": "In the next example, we will use this formula to compute the gradient for specific vectors.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWhen working with scalar-valued functions defined on matrices, it's often helpful to compute gradients using component-wise differentiation and the chain rule. This approach breaks down the computation into simpler intermediate steps and allows us to clearly see the dependencies.\n\nContent:\nConsider a scalar function [MATH: L(\\mathbf A),] defined as\n[MATH: L(\\mathbf{A}) = \\frac{1}{2} \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)^T \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)]\nwhere [MATH: \\mathbf{A} \\in \\mathbb{R}^{2 \\times 3}], [MATH: \\mathbf{x} \\in \\mathbb{R}^3], and [MATH: \\mathbf{b} \\in \\mathbb{R}^2.]\n\nContent:\nSuppose we want to compute the gradient [MATH: \\nabla_{\\mathbf{A}} L], which is a matrix of the same shape as [MATH: \\mathbf{A}]. The entry in the [MATH: i]th row and [MATH: j]th column of the gradient matrix is given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}}.]\n\nContent:\nTo simplify the differentiation, we define [MATH: \\mathbf y \\in\\mathbb R^{2\\times 1}] as\n[MATH: [y_{1}; y_{2}]]\n\nContent:\nThen, we can write [MATH: L] in terms of [MATH: \\mathbf y] as\n[MATH: L = \\frac{1}{2} \\mathbf{y}^T \\mathbf{y}.]\n\nContent:\nTo compute [MATH: \\dfrac{\\partial L}{\\partial a_{ij}}], we apply the multivariable chain rule:\n[MATH: \\frac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\frac{\\partial L}{\\partial y_k} \\cdot \\frac{\\partial y_k}{\\partial a_{ij}}]\nNote that the summation is from [MATH: k=1] to [MATH: k=2] because [MATH: \\mathbf y] has two components, and we're differentiating with respect to each of them.\n\nContent:\nNow, let's analyze the two factors of the product that appear in this summation.\n\nContent:\n- We know that\n[MATH: \u2207_{y}L|= \u2207_{y}((1)/(2)y^{T}y); = (1)/(2) \u22c5 \u2207_{y}(y^{T}y); = (1)/(2) \u22c5 2y; = y.]\nTherefore, we have\n[MATH: \\frac{\\partial L}{\\partial y_k} = y_k.]\n- Writing [MATH: \\mathbf{y} = \\mathbf{A} \\mathbf{x} - \\mathbf{b}] in component form\n[MATH: y_i = \\sum_{j=1}^3 a_{ij} x_j - b_i,]\nwe have\n[MATH: {x_{j},|i = k,; 0,|otherwise.]\nOnly the [MATH: k]th row of [MATH: \\mathbf{A}] affects [MATH: y_k].\n\nContent:\nPutting our two results together gives\n[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j},]\nbecause all terms vanish except the one where [MATH: k=i].\n\nContent:\nTherefore, we conclude that\n[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nContent:\nIn the next example, we will use this formula to compute the gradient for specific vectors."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "450926",
+        "content_id": "17870",
+        "dom_id": "step-450926",
+        "selector": "#step-450926",
+        "step_anchor": "step-10",
+        "title": "Applying the Chain Rule to Calculate Gradients",
+        "key_prerequisites": [
+          {
+            "topic_id": "3173",
+            "name": "The Multivariable Chain Rule",
+            "href": "/topics/3173",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: L: \\mathbb{R}^{2 \\times 3}   \\rightarrow \\mathbb{R}]</span> defined by <span class=\"math\">[MATH: L(\\mathbf{A}) = \\dfrac{1}{2}(\\mathbf{A}\\mathbf{x} - \\mathbf{b})^T(\\mathbf{A}\\mathbf{x} - \\mathbf{b}),]</span> where\n<span class=\"math\">[MATH: [1; 2; 3]]</span>\nWhat is <span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L]</span> at \n<span class=\"math\">[MATH: [1|0|2; 0|1|1]]</span></p>",
+            "readable_text": "Consider the function [MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}] defined by [MATH: L(\\mathbf{A}) = \\dfrac{1}{2}(\\mathbf{A}\\mathbf{x} - \\mathbf{b})^T(\\mathbf{A}\\mathbf{x} - \\mathbf{b}),] where\n[MATH: [1; 2; 3]]\nWhat is [MATH: \\nabla_{\\mathbf{A}} L] at\n[MATH: [1|0|2; 0|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The gradient of <span class=\"math\">[MATH: L]</span> with respect to <span class=\"math\">[MATH: \\mathbf{A}]</span> is a matrix of the same shape as <span class=\"math\">[MATH: \\mathbf{A}]</span>, with <span class=\"math\">[MATH: (i,j)]</span>th entry given by\n<span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]</span>\nthe partial derivative of <span class=\"math\">[MATH: L]</span> with respect to the <span class=\"math\">[MATH: (i,j)]</span>th entry of <span class=\"math\">[MATH: \\mathbf{A}.]</span></p><p>We can compute <span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}}]</span> by applying the chain rule.</p><p>Let <span class=\"math\">[MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\in \\mathbb{R}^2.]</span> Then, <span class=\"math\">[MATH: L(\\mathbf{A}) = \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y}]</span> and</p><p><span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\dfrac{\\partial L}{\\partial y_k} \\cdot \\dfrac{\\partial y_k}{\\partial a_{ij}}]</span></p><p>Now, since \n<span class=\"math\">[MATH: \\nabla_{\\mathbf{y}} L = \\nabla_{\\mathbf{y}} \\bigg( \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y} \\bigg) = \\mathbf{y},]</span></p><p>we have that</p><p><span class=\"math\">[MATH: \\dfrac{\\partial L}{\\partial y_k} = y_k.]</span></p><p>Writing out <span class=\"math\">[MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b}]</span> in component-wise notation as \n<span class=\"math\">[MATH: y_i = \\sum\\limits_{j=1}^3 (a_{ij} x_j - b_i),]</span>\nwe have </p><ul><li><p><span class=\"math\">[MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = x_j]</span> if <span class=\"math\">[MATH: i = k]</span>, and </p></li><li><p><span class=\"math\">[MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = 0]</span> if <span class=\"math\">[MATH: i \\neq k.]</span></p></li></ul><p>This means that </p><p><span class=\"math\">[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i} \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j}.]</span></p><p>The <span class=\"math\">[MATH: (i,j)]</span>th entry of <span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L]</span> is the <span class=\"math\">[MATH: i]</span>th entry of <span class=\"math\">[MATH: \\mathbf{y}]</span> multiplied by the <span class=\"math\">[MATH: j]</span>th entry of <span class=\"math\">[MATH: \\mathbf{x}]</span>, so</p><p><span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]</span></p><p>Finally, evaluating <span class=\"math\">[MATH: \\nabla_{\\mathbf{A}} L]</span> at <span class=\"math\">[MATH: [1; 2; 3]]</span> we get</p><p><span class=\"math\">[MATH: \u2207_{A}L|= y \u22c5 x^{T}; = (Ax \u2212 b) \u22c5 x^{T}; = ([1|0|2; 0|1|1][1; 2; 3] \u2212 [4; 5]) \u22c5 [1|2|3]; = ([7; 5] \u2212 [4; 5]) \u22c5 [1|2|3]; = [3; 0] \u22c5 [1|2|3]; = [3|6|9; 0|0|0].]</span></p>",
+            "readable_text": "The gradient of [MATH: L] with respect to [MATH: \\mathbf{A}] is a matrix of the same shape as [MATH: \\mathbf{A}], with [MATH: (i,j)]th entry given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]\nthe partial derivative of [MATH: L] with respect to the [MATH: (i,j)]th entry of [MATH: \\mathbf{A}.]\n\nWe can compute [MATH: \\dfrac{\\partial L}{\\partial a_{ij}}] by applying the chain rule.\n\nLet [MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\in \\mathbb{R}^2.] Then, [MATH: L(\\mathbf{A}) = \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y}] and\n\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\dfrac{\\partial L}{\\partial y_k} \\cdot \\dfrac{\\partial y_k}{\\partial a_{ij}}]\n\nNow, since\n[MATH: \\nabla_{\\mathbf{y}} L = \\nabla_{\\mathbf{y}} \\bigg( \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y} \\bigg) = \\mathbf{y},]\n\nwe have that\n\n[MATH: \\dfrac{\\partial L}{\\partial y_k} = y_k.]\n\nWriting out [MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b}] in component-wise notation as\n[MATH: y_i = \\sum\\limits_{j=1}^3 (a_{ij} x_j - b_i),]\nwe have\n\n- [MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = x_j] if [MATH: i = k], and\n- [MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = 0] if [MATH: i \\neq k.]\n\nThis means that\n\n[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i} \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j}.]\n\nThe [MATH: (i,j)]th entry of [MATH: \\nabla_{\\mathbf{A}} L] is the [MATH: i]th entry of [MATH: \\mathbf{y}] multiplied by the [MATH: j]th entry of [MATH: \\mathbf{x}], so\n\n[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nFinally, evaluating [MATH: \\nabla_{\\mathbf{A}} L] at [MATH: [1; 2; 3]] we get\n\n[MATH: \u2207_{A}L|= y \u22c5 x^{T}; = (Ax \u2212 b) \u22c5 x^{T}; = ([1|0|2; 0|1|1][1; 2; 3] \u2212 [4; 5]) \u22c5 [1|2|3]; = ([7; 5] \u2212 [4; 5]) \u22c5 [1|2|3]; = [3; 0] \u22c5 [1|2|3]; = [3|6|9; 0|0|0].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the function [MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}] defined by [MATH: L(\\mathbf{A}) = \\dfrac{1}{2}(\\mathbf{A}\\mathbf{x} - \\mathbf{b})^T(\\mathbf{A}\\mathbf{x} - \\mathbf{b}),] where\n[MATH: [1; 2; 3]]\nWhat is [MATH: \\nabla_{\\mathbf{A}} L] at\n[MATH: [1|0|2; 0|1|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe gradient of [MATH: L] with respect to [MATH: \\mathbf{A}] is a matrix of the same shape as [MATH: \\mathbf{A}], with [MATH: (i,j)]th entry given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]\nthe partial derivative of [MATH: L] with respect to the [MATH: (i,j)]th entry of [MATH: \\mathbf{A}.]\n\nWe can compute [MATH: \\dfrac{\\partial L}{\\partial a_{ij}}] by applying the chain rule.\n\nLet [MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\in \\mathbb{R}^2.] Then, [MATH: L(\\mathbf{A}) = \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y}] and\n\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\dfrac{\\partial L}{\\partial y_k} \\cdot \\dfrac{\\partial y_k}{\\partial a_{ij}}]\n\nNow, since\n[MATH: \\nabla_{\\mathbf{y}} L = \\nabla_{\\mathbf{y}} \\bigg( \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y} \\bigg) = \\mathbf{y},]\n\nwe have that\n\n[MATH: \\dfrac{\\partial L}{\\partial y_k} = y_k.]\n\nWriting out [MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b}] in component-wise notation as\n[MATH: y_i = \\sum\\limits_{j=1}^3 (a_{ij} x_j - b_i),]\nwe have\n\n- [MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = x_j] if [MATH: i = k], and\n- [MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = 0] if [MATH: i \\neq k.]\n\nThis means that\n\n[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i} \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j}.]\n\nThe [MATH: (i,j)]th entry of [MATH: \\nabla_{\\mathbf{A}} L] is the [MATH: i]th entry of [MATH: \\mathbf{y}] multiplied by the [MATH: j]th entry of [MATH: \\mathbf{x}], so\n\n[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nFinally, evaluating [MATH: \\nabla_{\\mathbf{A}} L] at [MATH: [1; 2; 3]] we get\n\n[MATH: \u2207_{A}L|= y \u22c5 x^{T}; = (Ax \u2212 b) \u22c5 x^{T}; = ([1|0|2; 0|1|1][1; 2; 3] \u2212 [4; 5]) \u22c5 [1|2|3]; = ([7; 5] \u2212 [4; 5]) \u22c5 [1|2|3]; = [3; 0] \u22c5 [1|2|3]; = [3|6|9; 0|0|0].]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "269590",
+        "dom_id": "question-269590",
+        "selector": "#question-269590",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: L: R^{3 \u00d7 2} \u2192 R]</span> defined by <span class=\"math\">[MATH: L(A) = (3Ax \u2212 2b)^{T}(3Ax \u2212 2b),]</span> where\n<span class=\"math\">[MATH: x = [0; 4], b = [2; 1; 0].]</span>\nWhat is <span class=\"math\">[MATH: \u2207_{A}L]</span> at \n<span class=\"math\">[MATH: A = [1|0; 1|2; 0|3]?]</span><br/>\n</p><div><table><tr><td><p>\n<span class=\"math\">[MATH: \u2207_{A} =]</span>\n</p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 96]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td><td><p><span class=\"math\">[MATH: 864]</span></p></td><td></td></tr></table></div>",
+          "readable_text": "Consider the function [MATH: L: R^{3 \u00d7 2} \u2192 R] defined by [MATH: L(A) = (3Ax \u2212 2b)^{T}(3Ax \u2212 2b),] where\n[MATH: x = [0; 4], b = [2; 1; 0].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|0; 1|2; 0|3]?]\n\n| [MATH: \u2207_{A} =] | | [FREE_ENTRY 1] | [MATH: \u2212 96] | |\n| | [MATH: 0] | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | [MATH: 864] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the function [MATH: L: R^{3 \u00d7 2} \u2192 R] defined by [MATH: L(A) = (3Ax \u2212 2b)^{T}(3Ax \u2212 2b),] where\n[MATH: x = [0; 4], b = [2; 1; 0].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|0; 1|2; 0|3]?]\n\n| [MATH: \u2207_{A} =] | | [FREE_ENTRY 1] | [MATH: \u2212 96] | |\n| | [MATH: 0] | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | [MATH: 864] | |"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "269257",
+        "dom_id": "question-269257",
+        "selector": "#question-269257",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the function <span class=\"math\">[MATH: L: R^{2 \u00d7 3} \u2192 R]</span> defined by <span class=\"math\">[MATH: L(A) = (1)/(2)(Ax \u2212 b)^{T}(Ax \u2212 b),]</span> where\n<span class=\"math\">[MATH: x = [0; 10; 20], b = [7; 8].]</span>\nWhat is <span class=\"math\">[MATH: \u2207_{A}L]</span> at \n<span class=\"math\">[MATH: A = [1|2|0; 4|0|0]?]</span><br/>\n</p><div><table><tr><td><p>\n<span class=\"math\">[MATH: \u2207_{A} =]</span>\n</p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 160]</span></p></td><td></td></tr></table></div>",
+          "readable_text": "Consider the function [MATH: L: R^{2 \u00d7 3} \u2192 R] defined by [MATH: L(A) = (1)/(2)(Ax \u2212 b)^{T}(Ax \u2212 b),] where\n[MATH: x = [0; 10; 20], b = [7; 8].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|2|0; 4|0|0]?]\n\n| [MATH: \u2207_{A} =] | | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] | |\n| | [MATH: 0] | [FREE_ENTRY 4] | [MATH: \u2212 160] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the function [MATH: L: R^{2 \u00d7 3} \u2192 R] defined by [MATH: L(A) = (1)/(2)(Ax \u2212 b)^{T}(Ax \u2212 b),] where\n[MATH: x = [0; 10; 20], b = [7; 8].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|2|0; 4|0|0]?]\n\n| [MATH: \u2207_{A} =] | | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] | |\n| | [MATH: 0] | [FREE_ENTRY 4] | [MATH: \u2212 160] | |"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn previous lessons, we defined the gradient of a scalar-valued function with respect to a vector. In this lesson, we extend this idea to functions where the input is a matrix and the output is a scalar.\n\nContent:\nSuppose we have a function [MATH: f: \\mathbb{R}^{m \\times n} \\to \\mathbb{R}] that maps a matrix [MATH: A \\in \\mathbb{R}^{m \\times n}] to a scalar value [MATH: f(A)]. Just like with vector inputs, we define the gradient of [MATH: f] with respect to [MATH: A] as the matrix of partial derivatives of [MATH: f] with respect to each individual entry of [MATH: A{:}]\n\nContent:\n[MATH: [(\u2202f)/(\u2202a_{11})|(\u2202f)/(\u2202a_{12})|\u22ef|(\u2202f)/(\u2202a_{1n}); (\u2202f)/(\u2202a_{21})|(\u2202f)/(\u2202a_{22})|\u22ef|(\u2202f)/(\u2202a_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202a_{m1})|(\u2202f)/(\u2202a_{m2})|\u22ef|(\u2202f)/(\u2202a_{mn})]]\n\nContent:\nThis gradient has the same shape as the matrix [MATH: A.] It tells us how sensitive the output [MATH: f(A)] is to changes in each element [MATH: a_{ij}].\n\nContent:\nLet\u2019s apply this to a concrete example. Suppose we define the function\n[MATH: f(X) = \\ln(\\det(X))]\nfor a square matrix [MATH: X \\in \\mathbb{R}^{2 \\times 2}]. Let's find the gradient of [MATH: f] with respect to [MATH: X] and evaluate it at a specific point.\n\nContent:\nFirst, we write the matrix [MATH: X] as\n[MATH: [x_{11}|x_{12}; x_{21}|x_{22}]]\nThen, the determinant of [MATH: X] is\n[MATH: \\det(X) = x_{11}x_{22} - x_{12}x_{21}.]\nSo, the function becomes\n[MATH: f(X) = \\ln(x_{11}x_{22} - x_{12}x_{21}).]\n\nContent:\nTo find the gradient, we differentiate [MATH: f] with respect to each element of [MATH: X.] This gives\n[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{12})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21})); (\u2202)/(\u2202x_{21})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))|(\u2202)/(\u2202x_{22})(\\ln (x_{11}x_{22} \u2212 x_{12}x_{21}))]; = [(x_{22})/(x_{11}x_{22} \u2212 x_{12}x_{21})|\u2212 (x_{21})/(x_{11}x_{22} \u2212 x_{12}x_{21}); \u2212 (x_{12})/(x_{11}x_{22} \u2212 x_{12}x_{21})|(x_{11})/(x_{11}x_{22} \u2212 x_{12}x_{21})]; = (1)/(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = (1)/(det(X))[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]\n\nContent:\nNow, suppose we wish to evaluate this gradient at\n[MATH: [3|1; 5|\u2212 2]]\nFirst, we compute the determinant:\n[MATH: det(X)|= 3 \u22c5 (\u2212 2) \u2212 1 \u22c5 5; = \u2212 6 \u2212 5; = \u2212 11]\nThen, we substitute our values into our gradient. This gives\n[MATH: \u2207_{X}f(X)|= \u2212 (1)/(11)[\u2212 2|\u2212 5; \u2212 1|3]; = (1)/(11)[2|5; 1|\u2212 3].]\n\nContent:\nThis result tells us how the scalar output [MATH: f(X) = \\ln(\\det(X))] would change with respect to small changes in each entry of the matrix [MATH: X]. Each element in the gradient matrix captures that local rate of change.\n\n---\n\nItem 2 \u2014 Example: Computing the Gradient of a Function With Respect to a Matrix\n\nExample Prompt:\nConsider the function [MATH: f: \\mathbb{R}^{2 \\times 2} \\rightarrow \\mathbb{R}] defined by [MATH: f(X) = (\\det(X))^2.]\n\nWhat is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe gradient of a function [MATH: f: \\mathbb{R}^{m \\times n} \\rightarrow \\mathbb{R}] with respect to a matrix [MATH: X \\in \\mathbb{R}^{m \\times n}] is\n[MATH: [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12})|\u22ef|(\u2202f)/(\u2202x_{1n}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})|\u22ef|(\u2202f)/(\u2202x_{2n}); \u22ee|\u22ee|\u22f1|\u22ee; (\u2202f)/(\u2202x_{m1})|(\u2202f)/(\u2202x_{m2})|\u22ef|(\u2202f)/(\u2202x_{mn})]]\n\nIn our case, writing out the function [MATH: f(X)] where [MATH: [x_{11}|x_{12}; x_{21}|x_{22}]], we get\n[MATH: f(X) = (\\det(X))^2 = (x_{11}x_{22} - x_{12}x_{21})^2.]\n\nSo, the gradient is\n[MATH: \u2207_{X}f(X)|= [(\u2202f)/(\u2202x_{11})|(\u2202f)/(\u2202x_{12}); (\u2202f)/(\u2202x_{21})|(\u2202f)/(\u2202x_{22})]; = [(\u2202)/(\u2202x_{11})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{12})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}; (\u2202)/(\u2202x_{21})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}|(\u2202)/(\u2202x_{22})(x_{11}x_{22} \u2212 x_{12}x_{21})^{2}]; = [2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{22}|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{21}); 2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 (\u2212 x_{12})|2(x_{11}x_{22} \u2212 x_{12}x_{21}) \u22c5 x_{11}]; = 2(x_{11}x_{22} \u2212 x_{12}x_{21})[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}]; = 2det(X)[x_{22}|\u2212 x_{21}; \u2212 x_{12}|x_{11}].]\n\nEvaluating at [MATH: [\u2212 (1)/(2)|(3)/(2); \u2212 4|10]] we get\n[MATH: \u2207_{X}f(X)|= 2(\u2212 (1)/(2) \u22c5 10 \u2212 (\u2212 4) \u22c5 (3)/(2))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = 2(\u2212 5 \u2212 (\u2212 6))[10|4; \u2212 (3)/(2)|\u2212 (1)/(2)]; = [20|8; \u2212 3|\u2212 1].]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nConsider the function [MATH: f: R^{2 \u00d7 2} \u2192 R] defined by\n[MATH: f(X) = \u2212 \\ln (det(X)).]\nWhat is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: X = [2|1; 1|2]?]\n\nChoices:\na. [MATH: [3; 3]]\nb. [MATH: [\u2212 (2)/(3)|(1)/(3); (1)/(3)|\u2212 (2)/(3)]]\nc. [MATH: [2|1; 1|2]]\nd. [MATH: [2|\u2212 1; \u2212 1|2]]\ne. [MATH: 1]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nConsider the function [MATH: f: R^{2 \u00d7 2} \u2192 R] defined by\n[MATH: f(X) = \u2211_(i = 1)^(2)\u2211_(j = 1)^(2)x_{ij}^{2}]\nwhere [MATH: x_{ij}] are the corresponding matrix's entries. What is the gradient of [MATH: f] with respect to [MATH: X] at [MATH: X = [\u2212 3|4; 1|\u2212 2]?]\n\nChoices:\na. [MATH: [6|\u2212 8; \u2212 2|4]]\nb. [MATH: [6|8; 2|4]]\nc. [MATH: [\u2212 6|8; 2|\u2212 4]]\nd. [MATH: [9|16; 1|4]]\ne. [MATH: [\u2212 6|2; 8|\u2212 4]]\n\n---\n\nItem 5 \u2014 Tutorial: Component-Wise Differentiation\n\nContent:\nSuppose we have a scalar-valued function defined by\n[MATH: f = \\mathbf{y}^T A \\mathbf{x},]\nwhere [MATH: \\mathbf{y} \\in \\mathbb{R}^m], [MATH: \\mathbf{x} \\in \\mathbb{R}^n], and [MATH: A \\in \\mathbb{R}^{m \\times n}].\n\nContent:\nWe want to compute the gradient of [MATH: f] with respect to the matrix [MATH: A]. The result turns out to be\n\nContent:\n[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nContent:\nLet\u2019s verify this by working component-wise.\n\nContent:\nFirst, note that we can write the product [MATH: \\mathbf y^T A \\mathbf x] as a double summation as follows:\n[MATH: f = \\mathbf y^T A \\mathbf x = \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l.]\nIn a previous lesson, we saw how to do this for [MATH: \\mathbf x^T A \\mathbf x]. The idea here is similar.\n\nContent:\nNow, we differentiate this summation with respect to [MATH: A_{ij}{:}]\n\nContent:\n[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= \\frac{\\partial}{\\partial A_{ij}} \\left( \\sum_{k=1}^m \\sum_{l=1}^n y_k A_{kl} x_l \\right)]\n\nContent:\nSince only the term where [MATH: k = i] and [MATH: l = j] depends on [MATH: A_{ij}], all other terms vanish. So, we get\n\nContent:\n[MATH: \\frac{\\partial f}{\\partial A_{ij}}\n= y_i x_j.]\n\nContent:\nThis tells us that the entry in the [MATH: i]th row and [MATH: j]th column of the gradient matrix is [MATH: y_i x_j]. Hence, the full gradient matrix is\n\nContent:\n[MATH: \\nabla_A f = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nContent:\nThis result is an example of an outer product. The gradient of [MATH: \\mathbf{y}^T A \\mathbf{x}] with respect to the matrix [MATH: A] is given by multiplying the column vector [MATH: \\mathbf{y}] by the row vector [MATH: \\mathbf{x}^T], resulting in a matrix of the same shape as [MATH: A].\n\nContent:\nLet\u2019s look at a few examples to see this in action.\n\n---\n\nItem 6 \u2014 Example: Computing the Gradient of a Function Component-Wise\n\nExample Prompt:\nConsider the function [MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}] defined by [MATH: L(\\mathbf{A}) = \\mathbf{y}^T\\mathbf{A}\\mathbf{x}] where\n[MATH: [1; 2; 3]]\nWhat is [MATH: \\nabla_{\\mathbf{A}} L] at\n[MATH: [2|1|0; \u2212 1|4|3]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe gradient of [MATH: L] with respect to [MATH: \\mathbf{A}] is a matrix of the same shape as [MATH: \\mathbf{A}], with [MATH: (i,j)]th entry given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]\nthe partial derivative of [MATH: L] with respect to the [MATH: (i,j)]th entry of [MATH: \\mathbf{A}.]\n\nWriting out [MATH: L] in component-wise notation as\n[MATH: L = \\sum\\limits_{i=1}^2 \\sum\\limits_{j=1}^3 a_{ij} y_i x_j,]\nwe have\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = y_i x_j.]\n\nThus, [MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nEvaluating at the given values [MATH: [1; 2; 3]] and [MATH: [4; 5]] we get\n\n[MATH: [4; 5]]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nConsider the function [MATH: L: R^{3 \u00d7 2} \u2192 R] defined by [MATH: L(A) = 3(y^{T}Ax)] where\n[MATH: x = [3; 3], y = [0; \u2212 1; 4].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [\u2212 2|3; 5|1; \u2212 1|0]?]\n\nChoices:\na. [MATH: [0|0; \u2212 9|\u2212 9; 36|36]]\nb. [MATH: [0; \u2212 18; 72]]\nc. [MATH: [0|0; \u2212 3|\u2212 3; 12|12]]\nd. [MATH: [0|\u2212 9|36; 0|\u2212 9|36]]\ne. [MATH: [\u2212 2|3; 5|1; \u2212 1|0]]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nConsider the function [MATH: L: R^{2 \u00d7 3} \u2192 R] defined by [MATH: L(A) = y^{T}Ax] where\n[MATH: x = [0; 10; 20], y = [7; 8].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|2|0; 4|0|0]?]\n\nChoices:\na. [MATH: [0|70|140; 0|80|160]]\nb. [MATH: [0|0; 70|80; 140|160]]\nc. [MATH: [1|4; 2|0; 0|0]]\nd. [MATH: [0|0; 10|70; 20|80]]\ne. [MATH: [1|2|0; 4|0|0]]\n\n---\n\nItem 9 \u2014 Tutorial: Differentiation Using the Multivariable Chain Rule\n\nContent:\nWhen working with scalar-valued functions defined on matrices, it's often helpful to compute gradients using component-wise differentiation and the chain rule. This approach breaks down the computation into simpler intermediate steps and allows us to clearly see the dependencies.\n\nContent:\nConsider a scalar function [MATH: L(\\mathbf A),] defined as\n[MATH: L(\\mathbf{A}) = \\frac{1}{2} \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)^T \\left( \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\right)]\nwhere [MATH: \\mathbf{A} \\in \\mathbb{R}^{2 \\times 3}], [MATH: \\mathbf{x} \\in \\mathbb{R}^3], and [MATH: \\mathbf{b} \\in \\mathbb{R}^2.]\n\nContent:\nSuppose we want to compute the gradient [MATH: \\nabla_{\\mathbf{A}} L], which is a matrix of the same shape as [MATH: \\mathbf{A}]. The entry in the [MATH: i]th row and [MATH: j]th column of the gradient matrix is given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}}.]\n\nContent:\nTo simplify the differentiation, we define [MATH: \\mathbf y \\in\\mathbb R^{2\\times 1}] as\n[MATH: [y_{1}; y_{2}]]\n\nContent:\nThen, we can write [MATH: L] in terms of [MATH: \\mathbf y] as\n[MATH: L = \\frac{1}{2} \\mathbf{y}^T \\mathbf{y}.]\n\nContent:\nTo compute [MATH: \\dfrac{\\partial L}{\\partial a_{ij}}], we apply the multivariable chain rule:\n[MATH: \\frac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\frac{\\partial L}{\\partial y_k} \\cdot \\frac{\\partial y_k}{\\partial a_{ij}}]\nNote that the summation is from [MATH: k=1] to [MATH: k=2] because [MATH: \\mathbf y] has two components, and we're differentiating with respect to each of them.\n\nContent:\nNow, let's analyze the two factors of the product that appear in this summation.\n\nContent:\n- We know that\n[MATH: \u2207_{y}L|= \u2207_{y}((1)/(2)y^{T}y); = (1)/(2) \u22c5 \u2207_{y}(y^{T}y); = (1)/(2) \u22c5 2y; = y.]\nTherefore, we have\n[MATH: \\frac{\\partial L}{\\partial y_k} = y_k.]\n- Writing [MATH: \\mathbf{y} = \\mathbf{A} \\mathbf{x} - \\mathbf{b}] in component form\n[MATH: y_i = \\sum_{j=1}^3 a_{ij} x_j - b_i,]\nwe have\n[MATH: {x_{j},|i = k,; 0,|otherwise.]\nOnly the [MATH: k]th row of [MATH: \\mathbf{A}] affects [MATH: y_k].\n\nContent:\nPutting our two results together gives\n[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j},]\nbecause all terms vanish except the one where [MATH: k=i].\n\nContent:\nTherefore, we conclude that\n[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nContent:\nIn the next example, we will use this formula to compute the gradient for specific vectors.\n\n---\n\nItem 10 \u2014 Example: Applying the Chain Rule to Calculate Gradients\n\nExample Prompt:\nConsider the function [MATH: L: \\mathbb{R}^{2 \\times 3} \\rightarrow \\mathbb{R}] defined by [MATH: L(\\mathbf{A}) = \\dfrac{1}{2}(\\mathbf{A}\\mathbf{x} - \\mathbf{b})^T(\\mathbf{A}\\mathbf{x} - \\mathbf{b}),] where\n[MATH: [1; 2; 3]]\nWhat is [MATH: \\nabla_{\\mathbf{A}} L] at\n[MATH: [1|0|2; 0|1|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe gradient of [MATH: L] with respect to [MATH: \\mathbf{A}] is a matrix of the same shape as [MATH: \\mathbf{A}], with [MATH: (i,j)]th entry given by\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}},]\nthe partial derivative of [MATH: L] with respect to the [MATH: (i,j)]th entry of [MATH: \\mathbf{A}.]\n\nWe can compute [MATH: \\dfrac{\\partial L}{\\partial a_{ij}}] by applying the chain rule.\n\nLet [MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b} \\in \\mathbb{R}^2.] Then, [MATH: L(\\mathbf{A}) = \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y}] and\n\n[MATH: \\dfrac{\\partial L}{\\partial a_{ij}} = \\sum_{k=1}^2 \\dfrac{\\partial L}{\\partial y_k} \\cdot \\dfrac{\\partial y_k}{\\partial a_{ij}}]\n\nNow, since\n[MATH: \\nabla_{\\mathbf{y}} L = \\nabla_{\\mathbf{y}} \\bigg( \\dfrac{1}{2}\\mathbf{y}^T\\mathbf{y} \\bigg) = \\mathbf{y},]\n\nwe have that\n\n[MATH: \\dfrac{\\partial L}{\\partial y_k} = y_k.]\n\nWriting out [MATH: \\mathbf{y} = \\mathbf{A}\\mathbf{x} - \\mathbf{b}] in component-wise notation as\n[MATH: y_i = \\sum\\limits_{j=1}^3 (a_{ij} x_j - b_i),]\nwe have\n\n- [MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = x_j] if [MATH: i = k], and\n- [MATH: \\dfrac{\\partial y_k}{\\partial a_{ij}} = 0] if [MATH: i \\neq k.]\n\nThis means that\n\n[MATH: (\u2202L)/(\u2202a_{ij})|= \u2211_(k = 1)^(2)(\u2202L)/(\u2202y_{k}) \u22c5 (\u2202y_{k})/(\u2202a_{ij}); = (\u2202L)/(\u2202y_{i}) \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i} \u22c5 (\u2202y_{i})/(\u2202a_{ij}); = y_{i}x_{j}.]\n\nThe [MATH: (i,j)]th entry of [MATH: \\nabla_{\\mathbf{A}} L] is the [MATH: i]th entry of [MATH: \\mathbf{y}] multiplied by the [MATH: j]th entry of [MATH: \\mathbf{x}], so\n\n[MATH: \\nabla_{\\mathbf{A}} L = \\mathbf{y} \\cdot \\mathbf{x}^T.]\n\nFinally, evaluating [MATH: \\nabla_{\\mathbf{A}} L] at [MATH: [1; 2; 3]] we get\n\n[MATH: \u2207_{A}L|= y \u22c5 x^{T}; = (Ax \u2212 b) \u22c5 x^{T}; = ([1|0|2; 0|1|1][1; 2; 3] \u2212 [4; 5]) \u22c5 [1|2|3]; = ([7; 5] \u2212 [4; 5]) \u22c5 [1|2|3]; = [3; 0] \u22c5 [1|2|3]; = [3|6|9; 0|0|0].]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\nConsider the function [MATH: L: R^{3 \u00d7 2} \u2192 R] defined by [MATH: L(A) = (3Ax \u2212 2b)^{T}(3Ax \u2212 2b),] where\n[MATH: x = [0; 4], b = [2; 1; 0].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|0; 1|2; 0|3]?]\n\n| [MATH: \u2207_{A} =] | | [FREE_ENTRY 1] | [MATH: \u2212 96] | |\n| | [MATH: 0] | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | [MATH: 864] | |\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\nConsider the function [MATH: L: R^{2 \u00d7 3} \u2192 R] defined by [MATH: L(A) = (1)/(2)(Ax \u2212 b)^{T}(Ax \u2212 b),] where\n[MATH: x = [0; 10; 20], b = [7; 8].]\nWhat is [MATH: \u2207_{A}L] at\n[MATH: A = [1|2|0; 4|0|0]?]\n\n| [MATH: \u2207_{A} =] | | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] | |\n| | [MATH: 0] | [FREE_ENTRY 4] | [MATH: \u2212 160] | |"
+  }
+}

@@ -1,0 +1,1266 @@
+{
+  "schema_version": 2,
+  "topic_id": "6396",
+  "topic_title": "The Implicit Euler Method",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/6396/Source/6396.html",
+  "source_url": "https://mathacademy.com/topics/6396",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "601605",
+        "dom_id": "sectionLink-601605",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-601605"
+      },
+      {
+        "index": 2,
+        "step_id": "601606",
+        "dom_id": "sectionLink-601606",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-601606"
+      },
+      {
+        "index": 3,
+        "step_id": "601607",
+        "dom_id": "sectionLink-601607",
+        "name": "",
+        "title": "Determining a General Update Formula for the Implicit Euler Method",
+        "selector": "#sectionLink-601607"
+      },
+      {
+        "index": 4,
+        "step_id": "601610",
+        "dom_id": "sectionLink-601610",
+        "name": "",
+        "title": "Computing One Step Using the Implicit Euler Method",
+        "selector": "#sectionLink-601610"
+      },
+      {
+        "index": 5,
+        "step_id": "608073",
+        "dom_id": "sectionLink-608073",
+        "name": "",
+        "title": "Multiple Iterations of the Implicit Euler Method",
+        "selector": "#sectionLink-608073"
+      },
+      {
+        "index": 6,
+        "step_id": "601613",
+        "dom_id": "sectionLink-601613",
+        "name": "",
+        "title": "Computing Two Steps Using the Implicit Euler Method",
+        "selector": "#sectionLink-601613"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3668",
+        "name": "Euler's Method: Calculating Multiple Steps",
+        "href": "/topics/eulers-method-calculating-multiple-steps-3668"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "601605",
+        "content_id": "14289",
+        "dom_id": "step-601605",
+        "selector": "#step-601605",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we wish to approximate a solution to an initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y_0 = y(x_0).]</span></p>",
+            "readable_text": "Suppose we wish to approximate a solution to an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that Euler&#x27;s method approximates a solution by evaluating the slope at the current point:\n<span class=\"math\">[MATH: \\Delta y = y&#x27; \\cdot \\Delta x]</span></p>",
+            "readable_text": "Recall that Euler's method approximates a solution by evaluating the slope at the current point:\n[MATH: \\Delta y = y' \\cdot \\Delta x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Although this method is simple, it&#x27;s not too accurate and can be unstable for some problems, meaning errors compound quickly.\nOne alternative is the implicit Euler method, which instead evaluates the slope at the <em>next</em> point, where <span class=\"math\">[MATH: x_\\text{new} = x + \\Delta x]</span>  and <span class=\"math\">[MATH: y_\\text{new} = y + \\Delta y.]</span></p>",
+            "readable_text": "Although this method is simple, it's not too accurate and can be unstable for some problems, meaning errors compound quickly.\nOne alternative is the implicit Euler method, which instead evaluates the slope at the next point, where [MATH: x_\\text{new} = x + \\Delta x] and [MATH: y_\\text{new} = y + \\Delta y.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>That is, the <strong>implicit Euler method</strong> (or <strong>backward Euler method</strong>) with step size <span class=\"math\">[MATH: \\Delta x]</span> is given by\n  <span class=\"math\">[MATH: \\Delta y = y&#x27;_\\text{new} \\cdot \\Delta x,]</span>\n  with <span class=\"math\">[MATH: y&#x27;_\\text{new} = f(x_\\text{new},y_\\text{new})]</span> evaluated at the next <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> values.</p>",
+            "readable_text": "That is, the implicit Euler method (or backward Euler method) with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>But how can we evaluate the slope at the next point if we need to know the slope to find the coordinates of the next point?</p>",
+            "readable_text": "But how can we evaluate the slope at the next point if we need to know the slope to find the coordinates of the next point?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Well, since <span class=\"math\">[MATH: y_\\text{new}]</span> is found by adding <span class=\"math\">[MATH: \\Delta y]</span> to <span class=\"math\">[MATH: y,]</span> we have</p>",
+            "readable_text": "Well, since [MATH: y_\\text{new}] is found by adding [MATH: \\Delta y] to [MATH: y,] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new}|= y + \u0394y; y_{new}|= y + y_{new}^{\u2032} \u22c5 \u0394x; y_{new}|= y + f(x_{new}, y_{new}) \u22c5 \u0394x.]</span></p>",
+            "readable_text": "[MATH: y_{new}|= y + \u0394y; y_{new}|= y + y_{new}^{\u2032} \u22c5 \u0394x; y_{new}|= y + f(x_{new}, y_{new}) \u22c5 \u0394x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: y_\\text{new}]</span> appears on both sides. This makes the update implicit: we solve for <span class=\"math\">[MATH: y_\\text{new}]</span> directly, rather than explicitly calculating the value of <span class=\"math\">[MATH: \\Delta y]</span> beforehand!</p>",
+            "readable_text": "Notice that [MATH: y_\\text{new}] appears on both sides. This makes the update implicit: we solve for [MATH: y_\\text{new}] directly, rather than explicitly calculating the value of [MATH: \\Delta y] beforehand!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we&#x27;ll focus on IVPs whose slope function is linear in <span class=\"math\">[MATH: y,]</span> i.e., of the form\n<span class=\"math\">[MATH: f(x,y) = a(x)y + b(x).]</span>\nIn such cases, we can simply solve the implicit equation for <span class=\"math\">[MATH: y_\\text{new},]</span> as demonstrated in the following worked example.</p>",
+            "readable_text": "In this lesson, we'll focus on IVPs whose slope function is linear in [MATH: y,] i.e., of the form\n[MATH: f(x,y) = a(x)y + b(x).]\nIn such cases, we can simply solve the implicit equation for [MATH: y_\\text{new},] as demonstrated in the following worked example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For more complex slope functions, we require a root-finding method, such as Newton&#x27;s method to solve the implicit equation iteratively. We&#x27;ll cover this in a later lesson.</p>",
+            "readable_text": "For more complex slope functions, we require a root-finding method, such as Newton's method to solve the implicit equation iteratively. We'll cover this in a later lesson.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we wish to approximate a solution to an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0).]\n\nContent:\nRecall that Euler's method approximates a solution by evaluating the slope at the current point:\n[MATH: \\Delta y = y' \\cdot \\Delta x]\n\nContent:\nAlthough this method is simple, it's not too accurate and can be unstable for some problems, meaning errors compound quickly.\nOne alternative is the implicit Euler method, which instead evaluates the slope at the next point, where [MATH: x_\\text{new} = x + \\Delta x] and [MATH: y_\\text{new} = y + \\Delta y.]\n\nContent:\nThat is, the implicit Euler method (or backward Euler method) with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nContent:\nBut how can we evaluate the slope at the next point if we need to know the slope to find the coordinates of the next point?\n\nContent:\nWell, since [MATH: y_\\text{new}] is found by adding [MATH: \\Delta y] to [MATH: y,] we have\n\nContent:\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + y_{new}^{\u2032} \u22c5 \u0394x; y_{new}|= y + f(x_{new}, y_{new}) \u22c5 \u0394x.]\n\nContent:\nNotice that [MATH: y_\\text{new}] appears on both sides. This makes the update implicit: we solve for [MATH: y_\\text{new}] directly, rather than explicitly calculating the value of [MATH: \\Delta y] beforehand!\n\nContent:\nIn this lesson, we'll focus on IVPs whose slope function is linear in [MATH: y,] i.e., of the form\n[MATH: f(x,y) = a(x)y + b(x).]\nIn such cases, we can simply solve the implicit equation for [MATH: y_\\text{new},] as demonstrated in the following worked example.\n\nContent:\nFor more complex slope functions, we require a root-finding method, such as Newton's method to solve the implicit equation iteratively. We'll cover this in a later lesson."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "601606",
+        "content_id": "14290",
+        "dom_id": "step-601606",
+        "selector": "#step-601606",
+        "step_anchor": "step-2",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the following initial value problem:</p>",
+            "readable_text": "Consider the following initial value problem:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = x-y+4, \\qquad y(0)=1]</span></p>",
+            "readable_text": "[MATH: y' = x-y+4, \\qquad y(0)=1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s use the <strong>implicit</strong> Euler method with one step to approximate the value of <span class=\"math\">[MATH: y(1).]</span></p>",
+            "readable_text": "Let's use the implicit Euler method with one step to approximate the value of [MATH: y(1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, since we want to find the value of <span class=\"math\">[MATH: y]</span> at <span class=\"math\">[MATH: x=1,]</span> we will use a step size of</p>",
+            "readable_text": "First, since we want to find the value of [MATH: y] at [MATH: x=1,] we will use a step size of",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Delta x = 1 - 0 = 1.]</span></p>",
+            "readable_text": "[MATH: \\Delta x = 1 - 0 = 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, in general, the change <span class=\"math\">[MATH: \\Delta y]</span> for our ODE is given by</p>",
+            "readable_text": "Then, in general, the change [MATH: \\Delta y] for our ODE is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new} \u2212 y_{new} + 4) \u22c5 1; = x_{new} \u2212 y_{new} + 4.]</span></p>",
+            "readable_text": "[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new} \u2212 y_{new} + 4) \u22c5 1; = x_{new} \u2212 y_{new} + 4.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, we substitute this into <span class=\"math\">[MATH: y_\\text{new} = y + \\Delta y]</span> and solve for <span class=\"math\">[MATH: y_\\text{new}{:}]</span></p>",
+            "readable_text": "Now, we substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for [MATH: y_\\text{new}{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new}|= y + \u0394y; y_{new}|= y + x_{new} \u2212 y_{new} + 4; 2y_{new}|= y + x_{new} + 4; y_{new}|= (1)/(2)(y + x_{new} + 4)]</span></p>",
+            "readable_text": "[MATH: y_{new}|= y + \u0394y; y_{new}|= y + x_{new} \u2212 y_{new} + 4; 2y_{new}|= y + x_{new} + 4; y_{new}|= (1)/(2)(y + x_{new} + 4)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We obtain a general formula for the new <span class=\"math\">[MATH: y]</span> value, <span class=\"math\">[MATH: y_\\text{new},]</span> in terms of the new value <span class=\"math\">[MATH: x_\\text{new}]</span> and the current value <span class=\"math\">[MATH: y]</span> - all values we know at any given step!</p>",
+            "readable_text": "We obtain a general formula for the new [MATH: y] value, [MATH: y_\\text{new},] in terms of the new value [MATH: x_\\text{new}] and the current value [MATH: y] - all values we know at any given step!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Plugging in our known values <span class=\"math\">[MATH: x_\\text{new} = x + \\Delta x = 0 + 1 = 1]</span> and <span class=\"math\">[MATH: y = 1,]</span> we get a new <span class=\"math\">[MATH: y]</span>-value of</p>",
+            "readable_text": "Plugging in our known values [MATH: x_\\text{new} = x + \\Delta x = 0 + 1 = 1] and [MATH: y = 1,] we get a new [MATH: y]-value of",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new}|= (1)/(2)(1 + 1 + 4) = 3.]</span></p>",
+            "readable_text": "[MATH: y_{new}|= (1)/(2)(1 + 1 + 4) = 3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, we conclude that <span class=\"math\">[MATH: y(1) \\approx 3.]</span> We can view our approximation made by the implicit Euler method in the coordinate plane as follows:</p>",
+            "readable_text": "Therefore, we conclude that [MATH: y(1) \\approx 3.] We can view our approximation made by the implicit Euler method in the coordinate plane as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/021675b756f13cfb90d322b910cfe2f6\"></p>",
+            "readable_text": "[IMG: /graphics/021675b756f13cfb90d322b910cfe2f6]",
+            "images": [
+              {
+                "src": "/graphics/021675b756f13cfb90d322b910cfe2f6",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/021675b756f13cfb90d322b910cfe2f6",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConsider the following initial value problem:\n\nContent:\n[MATH: y' = x-y+4, \\qquad y(0)=1]\n\nContent:\nLet's use the implicit Euler method with one step to approximate the value of [MATH: y(1).]\n\nContent:\nFirst, since we want to find the value of [MATH: y] at [MATH: x=1,] we will use a step size of\n\nContent:\n[MATH: \\Delta x = 1 - 0 = 1.]\n\nContent:\nThen, in general, the change [MATH: \\Delta y] for our ODE is given by\n\nContent:\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new} \u2212 y_{new} + 4) \u22c5 1; = x_{new} \u2212 y_{new} + 4.]\n\nContent:\nNow, we substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for [MATH: y_\\text{new}{:}]\n\nContent:\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + x_{new} \u2212 y_{new} + 4; 2y_{new}|= y + x_{new} + 4; y_{new}|= (1)/(2)(y + x_{new} + 4)]\n\nContent:\nWe obtain a general formula for the new [MATH: y] value, [MATH: y_\\text{new},] in terms of the new value [MATH: x_\\text{new}] and the current value [MATH: y] - all values we know at any given step!\n\nContent:\nPlugging in our known values [MATH: x_\\text{new} = x + \\Delta x = 0 + 1 = 1] and [MATH: y = 1,] we get a new [MATH: y]-value of\n\nContent:\n[MATH: y_{new}|= (1)/(2)(1 + 1 + 4) = 3.]\n\nContent:\nTherefore, we conclude that [MATH: y(1) \\approx 3.] We can view our approximation made by the implicit Euler method in the coordinate plane as follows:\n\nGraphic:\n[IMG: /graphics/021675b756f13cfb90d322b910cfe2f6]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "601607",
+        "content_id": "21312",
+        "dom_id": "step-601607",
+        "selector": "#step-601607",
+        "step_anchor": "step-3",
+        "title": "Determining a General Update Formula for the Implicit Euler Method",
+        "key_prerequisites": [
+          {
+            "topic_id": "354",
+            "name": "Solving Many-Variable Equations",
+            "href": "/topics/354",
+            "type": ""
+          },
+          {
+            "topic_id": "3668",
+            "name": "Euler's Method: Calculating Multiple Steps",
+            "href": "/topics/3668",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y&#x27; = 2x^2+3xy, \\qquad y(0)=-1]</span>\nThe <strong>implicit</strong> Euler method is applied with step size <span class=\"math\">[MATH: \\Delta x = 1.]</span> \nFind the general formula for the new <span class=\"math\">[MATH: y]</span> value, <span class=\"math\">[MATH: y_\\text{new},]</span> in terms of the new value <span class=\"math\">[MATH: x_\\text{new}]</span> and the current value <span class=\"math\">[MATH: y.]</span></p>",
+            "readable_text": "Consider the following initial value problem:\n[MATH: y' = 2x^2+3xy, \\qquad y(0)=-1]\nThe implicit Euler method is applied with step size [MATH: \\Delta x = 1.]\nFind the general formula for the new [MATH: y] value, [MATH: y_\\text{new},] in terms of the new value [MATH: x_\\text{new}] and the current value [MATH: y.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y_0 = y(x_0),]</span>\nthe implicit Euler method with step size <span class=\"math\">[MATH: \\Delta x]</span> is given by\n<span class=\"math\">[MATH: \\Delta y = y&#x27;_\\text{new} \\cdot \\Delta x,]</span>\nwith <span class=\"math\">[MATH: y&#x27;_\\text{new} = f(x_\\text{new},y_\\text{new})]</span> evaluated at the next <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> values.</p><p>In general, <span class=\"math\">[MATH: \\Delta y]</span> is given by</p><p><span class=\"math\">[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (2x_{new}^{2} + 3x_{new}y_{new}) \u22c5 1; = 2x_{new}^{2} + 3x_{new}y_{new}.]</span></p><p>We substitute this into <span class=\"math\">[MATH: y_\\text{new} = y + \\Delta y]</span> and solve for the general formula for <span class=\"math\">[MATH: y_\\text{new}{:}]</span></p><p><span class=\"math\">[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2x_{new}^{2} + 3x_{new}y_{new}; y_{new} \u2212 3x_{new}y_{new}|= y + 2x_{new}^{2}; y_{new}(1 \u2212 3x_{new})|= y + 2x_{new}^{2}; y_{new}|= (y + 2x_{new}^{2})/(1 \u2212 3x_{new})]</span></p>",
+            "readable_text": "For an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nIn general, [MATH: \\Delta y] is given by\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (2x_{new}^{2} + 3x_{new}y_{new}) \u22c5 1; = 2x_{new}^{2} + 3x_{new}y_{new}.]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2x_{new}^{2} + 3x_{new}y_{new}; y_{new} \u2212 3x_{new}y_{new}|= y + 2x_{new}^{2}; y_{new}(1 \u2212 3x_{new})|= y + 2x_{new}^{2}; y_{new}|= (y + 2x_{new}^{2})/(1 \u2212 3x_{new})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following initial value problem:\n[MATH: y' = 2x^2+3xy, \\qquad y(0)=-1]\nThe implicit Euler method is applied with step size [MATH: \\Delta x = 1.]\nFind the general formula for the new [MATH: y] value, [MATH: y_\\text{new},] in terms of the new value [MATH: x_\\text{new}] and the current value [MATH: y.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nIn general, [MATH: \\Delta y] is given by\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (2x_{new}^{2} + 3x_{new}y_{new}) \u22c5 1; = 2x_{new}^{2} + 3x_{new}y_{new}.]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2x_{new}^{2} + 3x_{new}y_{new}; y_{new} \u2212 3x_{new}y_{new}|= y + 2x_{new}^{2}; y_{new}(1 \u2212 3x_{new})|= y + 2x_{new}^{2}; y_{new}|= (y + 2x_{new}^{2})/(1 \u2212 3x_{new})]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "325169",
+        "dom_id": "question-325169",
+        "selector": "#question-325169",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = e^{x} \u2212 3xy, y(\u2212 2) = 3]</span>\nThe <strong>implicit</strong> Euler method is applied with step size <span class=\"math\">[MATH: \u0394x = 1.]</span> \nFind the general formula for the new <span class=\"math\">[MATH: y]</span> value, <span class=\"math\">[MATH: y_{new},]</span> in terms of the new value <span class=\"math\">[MATH: x_{new}]</span> and the current value <span class=\"math\">[MATH: y.]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = e^{x} \u2212 3xy, y(\u2212 2) = 3]\nThe implicit Euler method is applied with step size [MATH: \u0394x = 1.]\nFind the general formula for the new [MATH: y] value, [MATH: y_{new},] in terms of the new value [MATH: x_{new}] and the current value [MATH: y.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-325169-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = y + e^{x_{new}} \u2212 3y]</span></p>",
+            "readable_text": "[MATH: y_{new} = y + e^{x_{new}} \u2212 3y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-325169-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (y + e^{x_{new}})/(1 + 3x_{new})]</span></p>",
+            "readable_text": "[MATH: y_{new} = (y + e^{x_{new}})/(1 + 3x_{new})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-325169-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (y + e^{x_{new}})/(1 \u2212 3x_{new})]</span></p>",
+            "readable_text": "[MATH: y_{new} = (y + e^{x_{new}})/(1 \u2212 3x_{new})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-325169-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = y + e^{x_{new}} \u2212 3x_{new}y]</span></p>",
+            "readable_text": "[MATH: y_{new} = y + e^{x_{new}} \u2212 3x_{new}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-325169-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (y + e^{x_{new}})/(1 + 3y)]</span></p>",
+            "readable_text": "[MATH: y_{new} = (y + e^{x_{new}})/(1 + 3y)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = e^{x} \u2212 3xy, y(\u2212 2) = 3]\nThe implicit Euler method is applied with step size [MATH: \u0394x = 1.]\nFind the general formula for the new [MATH: y] value, [MATH: y_{new},] in terms of the new value [MATH: x_{new}] and the current value [MATH: y.]\n\nChoices:\na. [MATH: y_{new} = y + e^{x_{new}} \u2212 3y]\nb. [MATH: y_{new} = (y + e^{x_{new}})/(1 + 3x_{new})]\nc. [MATH: y_{new} = (y + e^{x_{new}})/(1 \u2212 3x_{new})]\nd. [MATH: y_{new} = y + e^{x_{new}} \u2212 3x_{new}y]\ne. [MATH: y_{new} = (y + e^{x_{new}})/(1 + 3y)]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "333409",
+        "dom_id": "question-333409",
+        "selector": "#question-333409",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = \u2212 4x + 2xy, y(3) = 5]</span>\nThe <strong>implicit</strong> Euler method is applied with step size <span class=\"math\">[MATH: \u0394x = (1)/(2).]</span> \nFind the general formula for the new <span class=\"math\">[MATH: y]</span> value, <span class=\"math\">[MATH: y_{new},]</span> in terms of the new value <span class=\"math\">[MATH: x_{new}]</span> and the current value <span class=\"math\">[MATH: y.]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = \u2212 4x + 2xy, y(3) = 5]\nThe implicit Euler method is applied with step size [MATH: \u0394x = (1)/(2).]\nFind the general formula for the new [MATH: y] value, [MATH: y_{new},] in terms of the new value [MATH: x_{new}] and the current value [MATH: y.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333409-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 x_{new})]</span></p>",
+            "readable_text": "[MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 x_{new})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333409-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (y \u2212 2x_{new})/(1 + x_{new})]</span></p>",
+            "readable_text": "[MATH: y_{new} = (y \u2212 2x_{new})/(1 + x_{new})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333409-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = y \u2212 2x_{new} + x_{new}y]</span></p>",
+            "readable_text": "[MATH: y_{new} = y \u2212 2x_{new} + x_{new}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333409-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 y)]</span></p>",
+            "readable_text": "[MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 y)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333409-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = y \u2212 2x_{new} \u2212 y]</span></p>",
+            "readable_text": "[MATH: y_{new} = y \u2212 2x_{new} \u2212 y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = \u2212 4x + 2xy, y(3) = 5]\nThe implicit Euler method is applied with step size [MATH: \u0394x = (1)/(2).]\nFind the general formula for the new [MATH: y] value, [MATH: y_{new},] in terms of the new value [MATH: x_{new}] and the current value [MATH: y.]\n\nChoices:\na. [MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 x_{new})]\nb. [MATH: y_{new} = (y \u2212 2x_{new})/(1 + x_{new})]\nc. [MATH: y_{new} = y \u2212 2x_{new} + x_{new}y]\nd. [MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 y)]\ne. [MATH: y_{new} = y \u2212 2x_{new} \u2212 y]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "601610",
+        "content_id": "21318",
+        "dom_id": "step-601610",
+        "selector": "#step-601610",
+        "step_anchor": "step-6",
+        "title": "Computing One Step Using the Implicit Euler Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y&#x27; = x^2y + e^x, \\qquad y(0)=-1]</span>\nUse the <strong>implicit</strong> Euler method with one step to approximate <span class=\"math\">[MATH: y\\left(\\dfrac12\\right).]</span></p>",
+            "readable_text": "Consider the following initial value problem:\n[MATH: y' = x^2y + e^x, \\qquad y(0)=-1]\nUse the implicit Euler method with one step to approximate [MATH: y\\left(\\dfrac12\\right).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y_0 = y(x_0),]</span>\nthe implicit Euler method with step size <span class=\"math\">[MATH: \\Delta x]</span> is given by\n<span class=\"math\">[MATH: \\Delta y = y&#x27;_\\text{new} \\cdot \\Delta x,]</span>\nwith <span class=\"math\">[MATH: y&#x27;_\\text{new} = f(x_\\text{new},y_\\text{new})]</span> evaluated at the next <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> values.</p><p>First, since we want to find the value of <span class=\"math\">[MATH: y]</span> at <span class=\"math\">[MATH: x=\\dfrac12,]</span> we will use a step size of</p><p><span class=\"math\">[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]</span></p><p>Now, let&#x27;s proceed with the implicit Euler method. In our case,</p><p><span class=\"math\">[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new}^{2}y_{new} + e^{x_{new}}) \u22c5 (1)/(2); = (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}}).]</span></p><p>We substitute this into <span class=\"math\">[MATH: y_\\text{new} = y + \\Delta y]</span> and solve for the general formula for <span class=\"math\">[MATH: y_\\text{new}{:}]</span></p><p><span class=\"math\">[MATH: y_{new}|= y + \u0394y; y_{new}|= y + (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}})]</span></p><p>which gives\n<span class=\"math\">[MATH: y_{new} \u2212 (1)/(2)x_{new}^{2}y_{new}|= y + (1)/(2)e^{x_{new}}; (1 \u2212 (1)/(2)x_{new}^{2})y_{new}|= y + (1)/(2)e^{x_{new}}; y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}).]</span></p><p>Now, in the first step, the new <span class=\"math\">[MATH: x]</span> value is <span class=\"math\">[MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.]</span> Hence, the new <span class=\"math\">[MATH: y]</span> value is</p><p><span class=\"math\">[MATH: y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}); = (\u2212 1 + (1)/(2)e^{1/2})/(1 \u2212 (1)/(2)((1)/(2))^{2}); = (4(sqrt(e) \u2212 2))/(7).]</span></p><p>Therefore, we conclude that <span class=\"math\">[MATH: y\\left(\\dfrac12\\right) = \\dfrac{4}{7} \\left(\\sqrt{e} - 2\\right).]</span></p>",
+            "readable_text": "For an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nFirst, since we want to find the value of [MATH: y] at [MATH: x=\\dfrac12,] we will use a step size of\n\n[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]\n\nNow, let's proceed with the implicit Euler method. In our case,\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new}^{2}y_{new} + e^{x_{new}}) \u22c5 (1)/(2); = (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}}).]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}})]\n\nwhich gives\n[MATH: y_{new} \u2212 (1)/(2)x_{new}^{2}y_{new}|= y + (1)/(2)e^{x_{new}}; (1 \u2212 (1)/(2)x_{new}^{2})y_{new}|= y + (1)/(2)e^{x_{new}}; y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}).]\n\nNow, in the first step, the new [MATH: x] value is [MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.] Hence, the new [MATH: y] value is\n\n[MATH: y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}); = (\u2212 1 + (1)/(2)e^{1/2})/(1 \u2212 (1)/(2)((1)/(2))^{2}); = (4(sqrt(e) \u2212 2))/(7).]\n\nTherefore, we conclude that [MATH: y\\left(\\dfrac12\\right) = \\dfrac{4}{7} \\left(\\sqrt{e} - 2\\right).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following initial value problem:\n[MATH: y' = x^2y + e^x, \\qquad y(0)=-1]\nUse the implicit Euler method with one step to approximate [MATH: y\\left(\\dfrac12\\right).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nFirst, since we want to find the value of [MATH: y] at [MATH: x=\\dfrac12,] we will use a step size of\n\n[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]\n\nNow, let's proceed with the implicit Euler method. In our case,\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new}^{2}y_{new} + e^{x_{new}}) \u22c5 (1)/(2); = (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}}).]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}})]\n\nwhich gives\n[MATH: y_{new} \u2212 (1)/(2)x_{new}^{2}y_{new}|= y + (1)/(2)e^{x_{new}}; (1 \u2212 (1)/(2)x_{new}^{2})y_{new}|= y + (1)/(2)e^{x_{new}}; y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}).]\n\nNow, in the first step, the new [MATH: x] value is [MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.] Hence, the new [MATH: y] value is\n\n[MATH: y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}); = (\u2212 1 + (1)/(2)e^{1/2})/(1 \u2212 (1)/(2)((1)/(2))^{2}); = (4(sqrt(e) \u2212 2))/(7).]\n\nTherefore, we conclude that [MATH: y\\left(\\dfrac12\\right) = \\dfrac{4}{7} \\left(\\sqrt{e} - 2\\right).]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "339688",
+        "dom_id": "question-339688",
+        "selector": "#question-339688",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = y(x^{4} + 1), y(0) = 3]</span>\nUse the <strong>implicit</strong> Euler method with one step to approximate <span class=\"math\">[MATH: y((1)/(2))]</span> rounded to <span class=\"math\">[MATH: 2]</span> decimal places.<span class=\"math\">[MATH: y((1)/(2)) =]</span> <span class=\"select-list\" data-select-id=\"selectList-339688-0\" data-select-index=\"1\">[SELECT 1]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = y(x^{4} + 1), y(0) = 3]\nUse the implicit Euler method with one step to approximate [MATH: y((1)/(2))] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) =] [SELECT 1]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-339688-0",
+              "frame_dom_id": "selectListFrame-339688-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 6.40]</span>",
+                  "readable_text": "[MATH: 6.40]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.32]</span>",
+                  "readable_text": "[MATH: 0.32]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.64]</span>",
+                  "readable_text": "[MATH: 0.64]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.25]</span>",
+                  "readable_text": "[MATH: 3.25]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-339688-0",
+            "frame_dom_id": "selectListFrame-339688-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 6.40]</span>",
+                "readable_text": "[MATH: 6.40]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 0.32]</span>",
+                "readable_text": "[MATH: 0.32]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 0.64]</span>",
+                "readable_text": "[MATH: 0.64]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 3.25]</span>",
+                "readable_text": "[MATH: 3.25]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = y(x^{4} + 1), y(0) = 3]\nUse the implicit Euler method with one step to approximate [MATH: y((1)/(2))] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) =] [SELECT 1]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "339635",
+        "dom_id": "question-339635",
+        "selector": "#question-339635",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = y(x^{2} + 1), y(\u2212 1) = 1]</span>\nUse the <strong>implicit</strong> Euler method with one step to approximate <span class=\"math\">[MATH: y(\u2212 (1)/(2))]</span> rounded to <span class=\"math\">[MATH: 2]</span> decimal places.<span class=\"math\">[MATH: y(\u2212 (1)/(2)) \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-339635-0\" data-select-index=\"1\">[SELECT 1]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = y(x^{2} + 1), y(\u2212 1) = 1]\nUse the implicit Euler method with one step to approximate [MATH: y(\u2212 (1)/(2))] rounded to [MATH: 2] decimal places.[MATH: y(\u2212 (1)/(2)) \u2248] [SELECT 1]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-339635-0",
+              "frame_dom_id": "selectListFrame-339635-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 2.33]</span>",
+                  "readable_text": "[MATH: 2.33]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.44]</span>",
+                  "readable_text": "[MATH: 3.44]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.63]</span>",
+                  "readable_text": "[MATH: 0.63]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 2.67]</span>",
+                  "readable_text": "[MATH: 2.67]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-339635-0",
+            "frame_dom_id": "selectListFrame-339635-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 2.33]</span>",
+                "readable_text": "[MATH: 2.33]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 3.44]</span>",
+                "readable_text": "[MATH: 3.44]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 0.63]</span>",
+                "readable_text": "[MATH: 0.63]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 2.67]</span>",
+                "readable_text": "[MATH: 2.67]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = y(x^{2} + 1), y(\u2212 1) = 1]\nUse the implicit Euler method with one step to approximate [MATH: y(\u2212 (1)/(2))] rounded to [MATH: 2] decimal places.[MATH: y(\u2212 (1)/(2)) \u2248] [SELECT 1]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "608073",
+        "content_id": "14897",
+        "dom_id": "step-608073",
+        "selector": "#step-608073",
+        "step_anchor": "step-9",
+        "title": "Multiple Iterations of the Implicit Euler Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Once the first iteration of an implicit Euler method implementation is complete, we can continue applying the same general update formula iteratively.</p>",
+            "readable_text": "Once the first iteration of an implicit Euler method implementation is complete, we can continue applying the same general update formula iteratively.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our previous example, we used one iteration of the implicit Euler method on the initial value problem\n<span class=\"math\">[MATH: y&#x27; = x-y+4, \\qquad y(0)=1]</span>\nusing the general formula\n<span class=\"math\">[MATH: y_\\text{new} = \\dfrac12(y + x_\\text{new} + 4)]</span>\nto approximate the value of <span class=\"math\">[MATH: y(1)\\approx3.]</span> Let&#x27;s now approximate the value of <span class=\"math\">[MATH: y(2)]</span> with one more step.</p>",
+            "readable_text": "In our previous example, we used one iteration of the implicit Euler method on the initial value problem\n[MATH: y' = x-y+4, \\qquad y(0)=1]\nusing the general formula\n[MATH: y_\\text{new} = \\dfrac12(y + x_\\text{new} + 4)]\nto approximate the value of [MATH: y(1)\\approx3.] Let's now approximate the value of [MATH: y(2)] with one more step.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the step size <span class=\"math\">[MATH: \\Delta x = 1]</span> remains the same, the update formula derived in the previous step still applies.</p>",
+            "readable_text": "Since the step size [MATH: \\Delta x = 1] remains the same, the update formula derived in the previous step still applies.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From the previous step, we have <span class=\"math\">[MATH: x=1]</span> and <span class=\"math\">[MATH: y=3.]</span> Hence, the new <span class=\"math\">[MATH: x]</span>-value is <span class=\"math\">[MATH: x_\\text{new} = 1 + 1 = 2,]</span> and the new <span class=\"math\">[MATH: y]</span>-value is</p>",
+            "readable_text": "From the previous step, we have [MATH: x=1] and [MATH: y=3.] Hence, the new [MATH: x]-value is [MATH: x_\\text{new} = 1 + 1 = 2,] and the new [MATH: y]-value is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{new} = (1)/(2)(3 + 2 + 4) = (9)/(2).]</span></p>",
+            "readable_text": "[MATH: y_{new} = (1)/(2)(3 + 2 + 4) = (9)/(2).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, we conclude that <span class=\"math\">[MATH: y(2) \\approx \\dfrac92.]</span> We can visualize this second step as follows:</p>",
+            "readable_text": "Therefore, we conclude that [MATH: y(2) \\approx \\dfrac92.] We can visualize this second step as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/30e7163f2a399b102706d5509e05e6a3\"></p>",
+            "readable_text": "[IMG: /graphics/30e7163f2a399b102706d5509e05e6a3]",
+            "images": [
+              {
+                "src": "/graphics/30e7163f2a399b102706d5509e05e6a3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/30e7163f2a399b102706d5509e05e6a3",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nOnce the first iteration of an implicit Euler method implementation is complete, we can continue applying the same general update formula iteratively.\n\nContent:\nIn our previous example, we used one iteration of the implicit Euler method on the initial value problem\n[MATH: y' = x-y+4, \\qquad y(0)=1]\nusing the general formula\n[MATH: y_\\text{new} = \\dfrac12(y + x_\\text{new} + 4)]\nto approximate the value of [MATH: y(1)\\approx3.] Let's now approximate the value of [MATH: y(2)] with one more step.\n\nContent:\nSince the step size [MATH: \\Delta x = 1] remains the same, the update formula derived in the previous step still applies.\n\nContent:\nFrom the previous step, we have [MATH: x=1] and [MATH: y=3.] Hence, the new [MATH: x]-value is [MATH: x_\\text{new} = 1 + 1 = 2,] and the new [MATH: y]-value is\n\nContent:\n[MATH: y_{new} = (1)/(2)(3 + 2 + 4) = (9)/(2).]\n\nContent:\nTherefore, we conclude that [MATH: y(2) \\approx \\dfrac92.] We can visualize this second step as follows:\n\nGraphic:\n[IMG: /graphics/30e7163f2a399b102706d5509e05e6a3]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "601613",
+        "content_id": "21661",
+        "dom_id": "step-601613",
+        "selector": "#step-601613",
+        "step_anchor": "step-10",
+        "title": "Computing Two Steps Using the Implicit Euler Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y&#x27; = 4x^2 - y, \\qquad y(0)=0]</span>\nUse the <strong>implicit</strong> Euler method with two steps of equal size to approximate <span class=\"math\">[MATH: y\\left(\\dfrac12\\right)]</span> and <span class=\"math\">[MATH: y(1).]</span></p>",
+            "readable_text": "Consider the following initial value problem:\n[MATH: y' = 4x^2 - y, \\qquad y(0)=0]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y\\left(\\dfrac12\\right)] and [MATH: y(1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y_0 = y(x_0),]</span>\nthe implicit Euler method with step size <span class=\"math\">[MATH: \\Delta x]</span> is given by\n<span class=\"math\">[MATH: \\Delta y = y&#x27;_\\text{new} \\cdot \\Delta x,]</span>\nwith <span class=\"math\">[MATH: y&#x27;_\\text{new} = f(x_\\text{new},y_\\text{new})]</span> evaluated at the next <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> values.</p><p>First, note that we are given <span class=\"math\">[MATH: y(0)]</span> and asked to find <span class=\"math\">[MATH: y(1).]</span> The distance from <span class=\"math\">[MATH: x=0]</span> to <span class=\"math\">[MATH: x=1]</span> is <span class=\"math\">[MATH: 1,]</span> and since we are asked to use two steps of equal size, our step size must be</p><p><span class=\"math\">[MATH: \\Delta x = \\dfrac{1-0}2 = \\dfrac12.]</span></p><p>Now, let&#x27;s proceed with the implicit Euler method. In general, <span class=\"math\">[MATH: \\Delta y]</span> is given by</p><p><span class=\"math\">[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (4(x_{new})^{2} \u2212 y_{new}) \u22c5 (1)/(2); = 2(x_{new})^{2} \u2212 (1)/(2)y_{new}.]</span></p><p>We substitute this into <span class=\"math\">[MATH: y_\\text{new} = y + \\Delta y]</span> and solve for the general formula for <span class=\"math\">[MATH: y_\\text{new}{:}]</span></p><p><span class=\"math\">[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2(x_{new})^{2} \u2212 (1)/(2)y_{new}; (3)/(2)y_{new}|= y + 2(x_{new})^{2}; y_{new}|= (2(y + 2(x_{new})^{2}))/(3)]</span></p><p>We now proceed to calculate our approximations of <span class=\"math\">[MATH: y\\left(\\dfrac12\\right)]</span> and <span class=\"math\">[MATH: y(1).]</span></p><p><strong>Step 1</strong>.</p><p>From the initial conditions, we have\n<span class=\"math\">[MATH: x = 0,\\qquad y = 0.]</span>\nTherefore, the new <span class=\"math\">[MATH: x]</span> value is \n<span class=\"math\">[MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.]</span>\nHence, the new <span class=\"math\">[MATH: y]</span> value is\n<span class=\"math\">[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2(0 + 2((1)/(2))^{2}))/(3); = (1)/(3).]</span></p><p><strong>Step 2</strong>.</p><p>From the previous step, we have\n<span class=\"math\">[MATH: x = \\dfrac12, \\qquad y = \\dfrac13.]</span>\nTherefore, the new <span class=\"math\">[MATH: x]</span> value is \n<span class=\"math\">[MATH: x_\\text{new} = x + \\Delta x = \\dfrac12 + \\dfrac12 = 1.]</span>\nHence, the new <span class=\"math\">[MATH: y]</span> value is</p><p><span class=\"math\">[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2((1)/(3) + 2 \u22c5 1^{2}))/(3); = (14)/(9).]</span></p><p>Therefore, we conclude that \n<span class=\"math\">[MATH: y\\left(\\dfrac12\\right)\\approx\\dfrac{1}{3}, \\qquad\ny(1)\\approx\\dfrac{14}{9}.]</span></p>",
+            "readable_text": "For an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nFirst, note that we are given [MATH: y(0)] and asked to find [MATH: y(1).] The distance from [MATH: x=0] to [MATH: x=1] is [MATH: 1,] and since we are asked to use two steps of equal size, our step size must be\n\n[MATH: \\Delta x = \\dfrac{1-0}2 = \\dfrac12.]\n\nNow, let's proceed with the implicit Euler method. In general, [MATH: \\Delta y] is given by\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (4(x_{new})^{2} \u2212 y_{new}) \u22c5 (1)/(2); = 2(x_{new})^{2} \u2212 (1)/(2)y_{new}.]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2(x_{new})^{2} \u2212 (1)/(2)y_{new}; (3)/(2)y_{new}|= y + 2(x_{new})^{2}; y_{new}|= (2(y + 2(x_{new})^{2}))/(3)]\n\nWe now proceed to calculate our approximations of [MATH: y\\left(\\dfrac12\\right)] and [MATH: y(1).]\n\nStep 1.\n\nFrom the initial conditions, we have\n[MATH: x = 0,\\qquad y = 0.]\nTherefore, the new [MATH: x] value is\n[MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.]\nHence, the new [MATH: y] value is\n[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2(0 + 2((1)/(2))^{2}))/(3); = (1)/(3).]\n\nStep 2.\n\nFrom the previous step, we have\n[MATH: x = \\dfrac12, \\qquad y = \\dfrac13.]\nTherefore, the new [MATH: x] value is\n[MATH: x_\\text{new} = x + \\Delta x = \\dfrac12 + \\dfrac12 = 1.]\nHence, the new [MATH: y] value is\n\n[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2((1)/(3) + 2 \u22c5 1^{2}))/(3); = (14)/(9).]\n\nTherefore, we conclude that\n[MATH: y\\left(\\dfrac12\\right)\\approx\\dfrac{1}{3}, \\qquad\ny(1)\\approx\\dfrac{14}{9}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following initial value problem:\n[MATH: y' = 4x^2 - y, \\qquad y(0)=0]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y\\left(\\dfrac12\\right)] and [MATH: y(1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nFirst, note that we are given [MATH: y(0)] and asked to find [MATH: y(1).] The distance from [MATH: x=0] to [MATH: x=1] is [MATH: 1,] and since we are asked to use two steps of equal size, our step size must be\n\n[MATH: \\Delta x = \\dfrac{1-0}2 = \\dfrac12.]\n\nNow, let's proceed with the implicit Euler method. In general, [MATH: \\Delta y] is given by\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (4(x_{new})^{2} \u2212 y_{new}) \u22c5 (1)/(2); = 2(x_{new})^{2} \u2212 (1)/(2)y_{new}.]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2(x_{new})^{2} \u2212 (1)/(2)y_{new}; (3)/(2)y_{new}|= y + 2(x_{new})^{2}; y_{new}|= (2(y + 2(x_{new})^{2}))/(3)]\n\nWe now proceed to calculate our approximations of [MATH: y\\left(\\dfrac12\\right)] and [MATH: y(1).]\n\nStep 1.\n\nFrom the initial conditions, we have\n[MATH: x = 0,\\qquad y = 0.]\nTherefore, the new [MATH: x] value is\n[MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.]\nHence, the new [MATH: y] value is\n[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2(0 + 2((1)/(2))^{2}))/(3); = (1)/(3).]\n\nStep 2.\n\nFrom the previous step, we have\n[MATH: x = \\dfrac12, \\qquad y = \\dfrac13.]\nTherefore, the new [MATH: x] value is\n[MATH: x_\\text{new} = x + \\Delta x = \\dfrac12 + \\dfrac12 = 1.]\nHence, the new [MATH: y] value is\n\n[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2((1)/(3) + 2 \u22c5 1^{2}))/(3); = (14)/(9).]\n\nTherefore, we conclude that\n[MATH: y\\left(\\dfrac12\\right)\\approx\\dfrac{1}{3}, \\qquad\ny(1)\\approx\\dfrac{14}{9}.]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "339642",
+        "dom_id": "question-339642",
+        "selector": "#question-339642",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = 2x \u2212 3y, y(0) = 1]</span>\nUse the <strong>implicit</strong> Euler method with two steps of equal size to approximate <span class=\"math\">[MATH: y((1)/(2))]</span> and <span class=\"math\">[MATH: y(1)]</span> rounded to <span class=\"math\">[MATH: 2]</span> decimal places.<span class=\"math\">[MATH: y((1)/(2)) \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-339642-0\" data-select-index=\"1\">[SELECT 1]</span>,\n<span class=\"math\">[MATH: y(1) \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-339642-1\" data-select-index=\"2\">[SELECT 2]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = 2x \u2212 3y, y(0) = 1]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y((1)/(2))] and [MATH: y(1)] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) \u2248] [SELECT 1],\n[MATH: y(1) \u2248] [SELECT 2]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-339642-0",
+              "frame_dom_id": "selectListFrame-339642-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.40]</span>",
+                  "readable_text": "[MATH: 0.40]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.67]</span>",
+                  "readable_text": "[MATH: 1.67]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.60]</span>",
+                  "readable_text": "[MATH: 0.60]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-339642-1",
+              "frame_dom_id": "selectListFrame-339642-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.64]</span>",
+                  "readable_text": "[MATH: 0.64]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.34]</span>",
+                  "readable_text": "[MATH: 0.34]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.56]</span>",
+                  "readable_text": "[MATH: 1.56]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-339642-0",
+            "frame_dom_id": "selectListFrame-339642-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 0.40]</span>",
+                "readable_text": "[MATH: 0.40]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 1.67]</span>",
+                "readable_text": "[MATH: 1.67]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 0.60]</span>",
+                "readable_text": "[MATH: 0.60]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-339642-1",
+            "frame_dom_id": "selectListFrame-339642-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 0.64]</span>",
+                "readable_text": "[MATH: 0.64]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 0.34]</span>",
+                "readable_text": "[MATH: 0.34]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 1.56]</span>",
+                "readable_text": "[MATH: 1.56]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = 2x \u2212 3y, y(0) = 1]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y((1)/(2))] and [MATH: y(1)] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) \u2248] [SELECT 1],\n[MATH: y(1) \u2248] [SELECT 2]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "339722",
+        "dom_id": "question-339722",
+        "selector": "#question-339722",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = e^{x} + x^{2} + y, y(0) = 1]</span>\nUse the <strong>implicit</strong> Euler method with two steps of equal size to approximate <span class=\"math\">[MATH: y((1)/(2))]</span> and <span class=\"math\">[MATH: y(1)]</span> rounded to <span class=\"math\">[MATH: 2]</span> decimal places.<span class=\"math\">[MATH: y((1)/(2)) \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-339722-0\" data-select-index=\"1\">[SELECT 1]</span>,\n<span class=\"math\">[MATH: y(1) \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-339722-1\" data-select-index=\"2\">[SELECT 2]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = e^{x} + x^{2} + y, y(0) = 1]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y((1)/(2))] and [MATH: y(1)] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) \u2248] [SELECT 1],\n[MATH: y(1) \u2248] [SELECT 2]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-339722-0",
+              "frame_dom_id": "selectListFrame-339722-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.73]</span>",
+                  "readable_text": "[MATH: 3.73]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.90]</span>",
+                  "readable_text": "[MATH: 3.90]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 2.00]</span>",
+                  "readable_text": "[MATH: 2.00]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-339722-1",
+              "frame_dom_id": "selectListFrame-339722-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 9.95]</span>",
+                  "readable_text": "[MATH: 9.95]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 11.52]</span>",
+                  "readable_text": "[MATH: 11.52]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 9.33]</span>",
+                  "readable_text": "[MATH: 9.33]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-339722-0",
+            "frame_dom_id": "selectListFrame-339722-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3.73]</span>",
+                "readable_text": "[MATH: 3.73]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 3.90]</span>",
+                "readable_text": "[MATH: 3.90]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 2.00]</span>",
+                "readable_text": "[MATH: 2.00]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-339722-1",
+            "frame_dom_id": "selectListFrame-339722-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 9.95]</span>",
+                "readable_text": "[MATH: 9.95]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 11.52]</span>",
+                "readable_text": "[MATH: 11.52]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 9.33]</span>",
+                "readable_text": "[MATH: 9.33]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = e^{x} + x^{2} + y, y(0) = 1]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y((1)/(2))] and [MATH: y(1)] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) \u2248] [SELECT 1],\n[MATH: y(1) \u2248] [SELECT 2]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nSuppose we wish to approximate a solution to an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0).]\n\nContent:\nRecall that Euler's method approximates a solution by evaluating the slope at the current point:\n[MATH: \\Delta y = y' \\cdot \\Delta x]\n\nContent:\nAlthough this method is simple, it's not too accurate and can be unstable for some problems, meaning errors compound quickly.\nOne alternative is the implicit Euler method, which instead evaluates the slope at the next point, where [MATH: x_\\text{new} = x + \\Delta x] and [MATH: y_\\text{new} = y + \\Delta y.]\n\nContent:\nThat is, the implicit Euler method (or backward Euler method) with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nContent:\nBut how can we evaluate the slope at the next point if we need to know the slope to find the coordinates of the next point?\n\nContent:\nWell, since [MATH: y_\\text{new}] is found by adding [MATH: \\Delta y] to [MATH: y,] we have\n\nContent:\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + y_{new}^{\u2032} \u22c5 \u0394x; y_{new}|= y + f(x_{new}, y_{new}) \u22c5 \u0394x.]\n\nContent:\nNotice that [MATH: y_\\text{new}] appears on both sides. This makes the update implicit: we solve for [MATH: y_\\text{new}] directly, rather than explicitly calculating the value of [MATH: \\Delta y] beforehand!\n\nContent:\nIn this lesson, we'll focus on IVPs whose slope function is linear in [MATH: y,] i.e., of the form\n[MATH: f(x,y) = a(x)y + b(x).]\nIn such cases, we can simply solve the implicit equation for [MATH: y_\\text{new},] as demonstrated in the following worked example.\n\nContent:\nFor more complex slope functions, we require a root-finding method, such as Newton's method to solve the implicit equation iteratively. We'll cover this in a later lesson.\n\n---\n\nItem 2 \u2014 Tutorial: A Worked Example\n\nContent:\nConsider the following initial value problem:\n\nContent:\n[MATH: y' = x-y+4, \\qquad y(0)=1]\n\nContent:\nLet's use the implicit Euler method with one step to approximate the value of [MATH: y(1).]\n\nContent:\nFirst, since we want to find the value of [MATH: y] at [MATH: x=1,] we will use a step size of\n\nContent:\n[MATH: \\Delta x = 1 - 0 = 1.]\n\nContent:\nThen, in general, the change [MATH: \\Delta y] for our ODE is given by\n\nContent:\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new} \u2212 y_{new} + 4) \u22c5 1; = x_{new} \u2212 y_{new} + 4.]\n\nContent:\nNow, we substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for [MATH: y_\\text{new}{:}]\n\nContent:\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + x_{new} \u2212 y_{new} + 4; 2y_{new}|= y + x_{new} + 4; y_{new}|= (1)/(2)(y + x_{new} + 4)]\n\nContent:\nWe obtain a general formula for the new [MATH: y] value, [MATH: y_\\text{new},] in terms of the new value [MATH: x_\\text{new}] and the current value [MATH: y] - all values we know at any given step!\n\nContent:\nPlugging in our known values [MATH: x_\\text{new} = x + \\Delta x = 0 + 1 = 1] and [MATH: y = 1,] we get a new [MATH: y]-value of\n\nContent:\n[MATH: y_{new}|= (1)/(2)(1 + 1 + 4) = 3.]\n\nContent:\nTherefore, we conclude that [MATH: y(1) \\approx 3.] We can view our approximation made by the implicit Euler method in the coordinate plane as follows:\n\nGraphic:\n[IMG: /graphics/021675b756f13cfb90d322b910cfe2f6]\n\n---\n\nItem 3 \u2014 Example: Determining a General Update Formula for the Implicit Euler Method\n\nExample Prompt:\nConsider the following initial value problem:\n[MATH: y' = 2x^2+3xy, \\qquad y(0)=-1]\nThe implicit Euler method is applied with step size [MATH: \\Delta x = 1.]\nFind the general formula for the new [MATH: y] value, [MATH: y_\\text{new},] in terms of the new value [MATH: x_\\text{new}] and the current value [MATH: y.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nIn general, [MATH: \\Delta y] is given by\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (2x_{new}^{2} + 3x_{new}y_{new}) \u22c5 1; = 2x_{new}^{2} + 3x_{new}y_{new}.]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2x_{new}^{2} + 3x_{new}y_{new}; y_{new} \u2212 3x_{new}y_{new}|= y + 2x_{new}^{2}; y_{new}(1 \u2212 3x_{new})|= y + 2x_{new}^{2}; y_{new}|= (y + 2x_{new}^{2})/(1 \u2212 3x_{new})]\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = e^{x} \u2212 3xy, y(\u2212 2) = 3]\nThe implicit Euler method is applied with step size [MATH: \u0394x = 1.]\nFind the general formula for the new [MATH: y] value, [MATH: y_{new},] in terms of the new value [MATH: x_{new}] and the current value [MATH: y.]\n\nChoices:\na. [MATH: y_{new} = y + e^{x_{new}} \u2212 3y]\nb. [MATH: y_{new} = (y + e^{x_{new}})/(1 + 3x_{new})]\nc. [MATH: y_{new} = (y + e^{x_{new}})/(1 \u2212 3x_{new})]\nd. [MATH: y_{new} = y + e^{x_{new}} \u2212 3x_{new}y]\ne. [MATH: y_{new} = (y + e^{x_{new}})/(1 + 3y)]\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = \u2212 4x + 2xy, y(3) = 5]\nThe implicit Euler method is applied with step size [MATH: \u0394x = (1)/(2).]\nFind the general formula for the new [MATH: y] value, [MATH: y_{new},] in terms of the new value [MATH: x_{new}] and the current value [MATH: y.]\n\nChoices:\na. [MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 x_{new})]\nb. [MATH: y_{new} = (y \u2212 2x_{new})/(1 + x_{new})]\nc. [MATH: y_{new} = y \u2212 2x_{new} + x_{new}y]\nd. [MATH: y_{new} = (y \u2212 2x_{new})/(1 \u2212 y)]\ne. [MATH: y_{new} = y \u2212 2x_{new} \u2212 y]\n\n---\n\nItem 6 \u2014 Example: Computing One Step Using the Implicit Euler Method\n\nExample Prompt:\nConsider the following initial value problem:\n[MATH: y' = x^2y + e^x, \\qquad y(0)=-1]\nUse the implicit Euler method with one step to approximate [MATH: y\\left(\\dfrac12\\right).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nFirst, since we want to find the value of [MATH: y] at [MATH: x=\\dfrac12,] we will use a step size of\n\n[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]\n\nNow, let's proceed with the implicit Euler method. In our case,\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (x_{new}^{2}y_{new} + e^{x_{new}}) \u22c5 (1)/(2); = (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}}).]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + (1)/(2)(x_{new}^{2}y_{new} + e^{x_{new}})]\n\nwhich gives\n[MATH: y_{new} \u2212 (1)/(2)x_{new}^{2}y_{new}|= y + (1)/(2)e^{x_{new}}; (1 \u2212 (1)/(2)x_{new}^{2})y_{new}|= y + (1)/(2)e^{x_{new}}; y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}).]\n\nNow, in the first step, the new [MATH: x] value is [MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.] Hence, the new [MATH: y] value is\n\n[MATH: y_{new}|= (y + (1)/(2)e^{x_{new}})/(1 \u2212 (1)/(2)x_{new}^{2}); = (\u2212 1 + (1)/(2)e^{1/2})/(1 \u2212 (1)/(2)((1)/(2))^{2}); = (4(sqrt(e) \u2212 2))/(7).]\n\nTherefore, we conclude that [MATH: y\\left(\\dfrac12\\right) = \\dfrac{4}{7} \\left(\\sqrt{e} - 2\\right).]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = y(x^{4} + 1), y(0) = 3]\nUse the implicit Euler method with one step to approximate [MATH: y((1)/(2))] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) =] [SELECT 1]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = y(x^{2} + 1), y(\u2212 1) = 1]\nUse the implicit Euler method with one step to approximate [MATH: y(\u2212 (1)/(2))] rounded to [MATH: 2] decimal places.[MATH: y(\u2212 (1)/(2)) \u2248] [SELECT 1]\n\n---\n\nItem 9 \u2014 Tutorial: Multiple Iterations of the Implicit Euler Method\n\nContent:\nOnce the first iteration of an implicit Euler method implementation is complete, we can continue applying the same general update formula iteratively.\n\nContent:\nIn our previous example, we used one iteration of the implicit Euler method on the initial value problem\n[MATH: y' = x-y+4, \\qquad y(0)=1]\nusing the general formula\n[MATH: y_\\text{new} = \\dfrac12(y + x_\\text{new} + 4)]\nto approximate the value of [MATH: y(1)\\approx3.] Let's now approximate the value of [MATH: y(2)] with one more step.\n\nContent:\nSince the step size [MATH: \\Delta x = 1] remains the same, the update formula derived in the previous step still applies.\n\nContent:\nFrom the previous step, we have [MATH: x=1] and [MATH: y=3.] Hence, the new [MATH: x]-value is [MATH: x_\\text{new} = 1 + 1 = 2,] and the new [MATH: y]-value is\n\nContent:\n[MATH: y_{new} = (1)/(2)(3 + 2 + 4) = (9)/(2).]\n\nContent:\nTherefore, we conclude that [MATH: y(2) \\approx \\dfrac92.] We can visualize this second step as follows:\n\nGraphic:\n[IMG: /graphics/30e7163f2a399b102706d5509e05e6a3]\n\n---\n\nItem 10 \u2014 Example: Computing Two Steps Using the Implicit Euler Method\n\nExample Prompt:\nConsider the following initial value problem:\n[MATH: y' = 4x^2 - y, \\qquad y(0)=0]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y\\left(\\dfrac12\\right)] and [MATH: y(1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y_0 = y(x_0),]\nthe implicit Euler method with step size [MATH: \\Delta x] is given by\n[MATH: \\Delta y = y'_\\text{new} \\cdot \\Delta x,]\nwith [MATH: y'_\\text{new} = f(x_\\text{new},y_\\text{new})] evaluated at the next [MATH: x] and [MATH: y] values.\n\nFirst, note that we are given [MATH: y(0)] and asked to find [MATH: y(1).] The distance from [MATH: x=0] to [MATH: x=1] is [MATH: 1,] and since we are asked to use two steps of equal size, our step size must be\n\n[MATH: \\Delta x = \\dfrac{1-0}2 = \\dfrac12.]\n\nNow, let's proceed with the implicit Euler method. In general, [MATH: \\Delta y] is given by\n\n[MATH: \u0394y|= y_{new}^{\u2032} \u22c5 \u0394x; = (4(x_{new})^{2} \u2212 y_{new}) \u22c5 (1)/(2); = 2(x_{new})^{2} \u2212 (1)/(2)y_{new}.]\n\nWe substitute this into [MATH: y_\\text{new} = y + \\Delta y] and solve for the general formula for [MATH: y_\\text{new}{:}]\n\n[MATH: y_{new}|= y + \u0394y; y_{new}|= y + 2(x_{new})^{2} \u2212 (1)/(2)y_{new}; (3)/(2)y_{new}|= y + 2(x_{new})^{2}; y_{new}|= (2(y + 2(x_{new})^{2}))/(3)]\n\nWe now proceed to calculate our approximations of [MATH: y\\left(\\dfrac12\\right)] and [MATH: y(1).]\n\nStep 1.\n\nFrom the initial conditions, we have\n[MATH: x = 0,\\qquad y = 0.]\nTherefore, the new [MATH: x] value is\n[MATH: x_\\text{new} = x + \\Delta x = 0 + \\dfrac12 = \\dfrac12.]\nHence, the new [MATH: y] value is\n[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2(0 + 2((1)/(2))^{2}))/(3); = (1)/(3).]\n\nStep 2.\n\nFrom the previous step, we have\n[MATH: x = \\dfrac12, \\qquad y = \\dfrac13.]\nTherefore, the new [MATH: x] value is\n[MATH: x_\\text{new} = x + \\Delta x = \\dfrac12 + \\dfrac12 = 1.]\nHence, the new [MATH: y] value is\n\n[MATH: y_{new}|= (2(y + 2(x_{new})^{2}))/(3); = (2((1)/(3) + 2 \u22c5 1^{2}))/(3); = (14)/(9).]\n\nTherefore, we conclude that\n[MATH: y\\left(\\dfrac12\\right)\\approx\\dfrac{1}{3}, \\qquad\ny(1)\\approx\\dfrac{14}{9}.]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = 2x \u2212 3y, y(0) = 1]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y((1)/(2))] and [MATH: y(1)] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) \u2248] [SELECT 1],\n[MATH: y(1) \u2248] [SELECT 2]\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = e^{x} + x^{2} + y, y(0) = 1]\nUse the implicit Euler method with two steps of equal size to approximate [MATH: y((1)/(2))] and [MATH: y(1)] rounded to [MATH: 2] decimal places.[MATH: y((1)/(2)) \u2248] [SELECT 1],\n[MATH: y(1) \u2248] [SELECT 2]"
+  }
+}

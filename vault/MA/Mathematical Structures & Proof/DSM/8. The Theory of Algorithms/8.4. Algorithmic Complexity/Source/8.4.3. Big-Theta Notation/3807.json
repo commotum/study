@@ -1,0 +1,1758 @@
+{
+  "schema_version": 2,
+  "topic_id": "3807",
+  "topic_title": "Big-Theta Notation",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3807/Source/3807.html",
+  "source_url": "https://mathacademy.com/topics/3807",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "417005",
+        "dom_id": "sectionLink-417005",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-417005"
+      },
+      {
+        "index": 2,
+        "step_id": "417006",
+        "dom_id": "sectionLink-417006",
+        "name": "",
+        "title": "Understanding the Definition of Big-Theta",
+        "selector": "#sectionLink-417006"
+      },
+      {
+        "index": 3,
+        "step_id": "417009",
+        "dom_id": "sectionLink-417009",
+        "name": "",
+        "title": "Proving That a Function Belongs to Big-Theta Set",
+        "selector": "#sectionLink-417009"
+      },
+      {
+        "index": 4,
+        "step_id": "417012",
+        "dom_id": "sectionLink-417012",
+        "name": "",
+        "title": "Properties of Big-Theta",
+        "selector": "#sectionLink-417012"
+      },
+      {
+        "index": 5,
+        "step_id": "417013",
+        "dom_id": "sectionLink-417013",
+        "name": "",
+        "title": "Using the Properties of Big-Theta Notation",
+        "selector": "#sectionLink-417013"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3805",
+        "name": "Big-Omega Notation",
+        "href": "/topics/big-omega-notation-3805"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417005",
+        "content_id": "11113",
+        "dom_id": "step-417005",
+        "selector": "#step-417005",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s recall some of the asymptotic notations we&#x27;ve seen in previous lessons, defined in the context of algorithmic complexity.</p>",
+            "readable_text": "Let's recall some of the asymptotic notations we've seen in previous lessons, defined in the context of algorithmic complexity.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The set <span class=\"math\">[MATH: O(g(n))]</span> contains all nonnegative functions <span class=\"math\">[MATH: f(n)]</span> such that <span class=\"math\">[MATH: f(n) \\leq c g(n)]</span> for <span class=\"math\">[MATH: c &gt; 0]</span> and sufficiently large <span class=\"math\">[MATH: n.]</span> Formally:\n<span class=\"math\">[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]</span>\nIf <span class=\"math\">[MATH: f\\in O(g(n)),]</span> then <span class=\"math\">[MATH: c g(n)]</span> is an <em>asymptotic upper bound</em> of <span class=\"math\">[MATH: f,]</span> as shown below.</p>",
+            "readable_text": "The set [MATH: O(g(n))] contains all nonnegative functions [MATH: f(n)] such that [MATH: f(n) \\leq c g(n)] for [MATH: c > 0] and sufficiently large [MATH: n.] Formally:\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\nIf [MATH: f\\in O(g(n)),] then [MATH: c g(n)] is an asymptotic upper bound of [MATH: f,] as shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/2f948c5b2ef93d491f29e7ae46268473\"></p>",
+            "readable_text": "[IMG: /graphics/2f948c5b2ef93d491f29e7ae46268473]",
+            "images": [
+              {
+                "src": "/graphics/2f948c5b2ef93d491f29e7ae46268473",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The set <span class=\"math\">[MATH: \\Omega(g(n))]</span> contains all nonnegative functions <span class=\"math\">[MATH: f(n)]</span> such that <span class=\"math\">[MATH: f(n) \\geq c g(n)]</span> for <span class=\"math\">[MATH: c &gt; 0]</span> and sufficiently large <span class=\"math\">[MATH: n.]</span> Formally:\n<span class=\"math\">[MATH: \\Omega(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c g(n)  \\leq f(n) \\big\\}]</span>\nIf <span class=\"math\">[MATH: f\\in \\Omega(g(n)),]</span> then <span class=\"math\">[MATH: c g(n)]</span> is an <em>asymptotic lower bound</em> of <span class=\"math\">[MATH: f,]</span> as shown below.</p>",
+            "readable_text": "The set [MATH: \\Omega(g(n))] contains all nonnegative functions [MATH: f(n)] such that [MATH: f(n) \\geq c g(n)] for [MATH: c > 0] and sufficiently large [MATH: n.] Formally:\n[MATH: \\Omega(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c g(n) \\leq f(n) \\big\\}]\nIf [MATH: f\\in \\Omega(g(n)),] then [MATH: c g(n)] is an asymptotic lower bound of [MATH: f,] as shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/3014ef545bc133c22947a6f6afb9d0d5\"></p>",
+            "readable_text": "[IMG: /graphics/3014ef545bc133c22947a6f6afb9d0d5]",
+            "images": [
+              {
+                "src": "/graphics/3014ef545bc133c22947a6f6afb9d0d5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A related valuable concept for classifying the asymptotic behavior of algorithms is <strong>big-theta</strong> notation.</p>",
+            "readable_text": "A related valuable concept for classifying the asymptotic behavior of algorithms is big-theta notation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have two nonnegative functions <span class=\"math\">[MATH: f(n)]</span> and <span class=\"math\">[MATH: g(n)]</span> such that there exist positive constants <span class=\"math\">[MATH: c_1]</span> and <span class=\"math\">[MATH: c_2]</span> such that, for sufficiently large <span class=\"math\">[MATH: n,]</span> we have\n<span class=\"math\">[MATH: c_1 g(n) \\leq f(n) \\leq c_2 g(n)]</span></p>",
+            "readable_text": "Suppose we have two nonnegative functions [MATH: f(n)] and [MATH: g(n)] such that there exist positive constants [MATH: c_1] and [MATH: c_2] such that, for sufficiently large [MATH: n,] we have\n[MATH: c_1 g(n) \\leq f(n) \\leq c_2 g(n)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>as depicted in the graph below.</p>",
+            "readable_text": "as depicted in the graph below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/e5490c9a928d23acb3279bc5e0bcc1a8\"></p>",
+            "readable_text": "[IMG: /graphics/e5490c9a928d23acb3279bc5e0bcc1a8]",
+            "images": [
+              {
+                "src": "/graphics/e5490c9a928d23acb3279bc5e0bcc1a8",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In plain English, beyond some threshold value <span class=\"math\">[MATH: n_0,]</span> the function <span class=\"math\">[MATH: f(n)]</span> is sandwiched between two multiples of <span class=\"math\">[MATH: g(n),]</span> ensuring that <span class=\"math\">[MATH: f(n)]</span> grows at the same rate as <span class=\"math\">[MATH: g(n)]</span> up to constant factors. In such cases, we write \n<span class=\"math\">[MATH: f(n) \\in \\Theta(g(n))]</span>\nwhere the formal definition of the set <span class=\"math\">[MATH: \\Theta(g(n))]</span> is given below:\n<span class=\"math\">[MATH: \\Theta(g(n)) = \\left\\{ f(n) : \\exists c_1 c_2,n_0 \\gt 0, \\forall n \\geq n_0, 0 \\leq c_1g(n) \\leq f(n)  \\leq c_2 g(n)\\right\\}]</span></p>",
+            "readable_text": "In plain English, beyond some threshold value [MATH: n_0,] the function [MATH: f(n)] is sandwiched between two multiples of [MATH: g(n),] ensuring that [MATH: f(n)] grows at the same rate as [MATH: g(n)] up to constant factors. In such cases, we write\n[MATH: f(n) \\in \\Theta(g(n))]\nwhere the formal definition of the set [MATH: \\Theta(g(n))] is given below:\n[MATH: \\Theta(g(n)) = \\left\\{ f(n) : \\exists c_1 c_2,n_0 \\gt 0, \\forall n \\geq n_0, 0 \\leq c_1g(n) \\leq f(n) \\leq c_2 g(n)\\right\\}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Big-Theta notation is helpful because it provides a tight bound on a function&#x27;s growth by specifying both an upper and a lower bound.</p>",
+            "readable_text": "Big-Theta notation is helpful because it provides a tight bound on a function's growth by specifying both an upper and a lower bound.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/2f948c5b2ef93d491f29e7ae46268473",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/3014ef545bc133c22947a6f6afb9d0d5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/e5490c9a928d23acb3279bc5e0bcc1a8",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's recall some of the asymptotic notations we've seen in previous lessons, defined in the context of algorithmic complexity.\n\nContent:\nThe set [MATH: O(g(n))] contains all nonnegative functions [MATH: f(n)] such that [MATH: f(n) \\leq c g(n)] for [MATH: c > 0] and sufficiently large [MATH: n.] Formally:\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\nIf [MATH: f\\in O(g(n)),] then [MATH: c g(n)] is an asymptotic upper bound of [MATH: f,] as shown below.\n\nGraphic:\n[IMG: /graphics/2f948c5b2ef93d491f29e7ae46268473]\n\nContent:\nThe set [MATH: \\Omega(g(n))] contains all nonnegative functions [MATH: f(n)] such that [MATH: f(n) \\geq c g(n)] for [MATH: c > 0] and sufficiently large [MATH: n.] Formally:\n[MATH: \\Omega(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c g(n) \\leq f(n) \\big\\}]\nIf [MATH: f\\in \\Omega(g(n)),] then [MATH: c g(n)] is an asymptotic lower bound of [MATH: f,] as shown below.\n\nGraphic:\n[IMG: /graphics/3014ef545bc133c22947a6f6afb9d0d5]\n\nContent:\nA related valuable concept for classifying the asymptotic behavior of algorithms is big-theta notation.\n\nContent:\nSuppose we have two nonnegative functions [MATH: f(n)] and [MATH: g(n)] such that there exist positive constants [MATH: c_1] and [MATH: c_2] such that, for sufficiently large [MATH: n,] we have\n[MATH: c_1 g(n) \\leq f(n) \\leq c_2 g(n)]\n\nContent:\nas depicted in the graph below.\n\nGraphic:\n[IMG: /graphics/e5490c9a928d23acb3279bc5e0bcc1a8]\n\nContent:\nIn plain English, beyond some threshold value [MATH: n_0,] the function [MATH: f(n)] is sandwiched between two multiples of [MATH: g(n),] ensuring that [MATH: f(n)] grows at the same rate as [MATH: g(n)] up to constant factors. In such cases, we write\n[MATH: f(n) \\in \\Theta(g(n))]\nwhere the formal definition of the set [MATH: \\Theta(g(n))] is given below:\n[MATH: \\Theta(g(n)) = \\left\\{ f(n) : \\exists c_1 c_2,n_0 \\gt 0, \\forall n \\geq n_0, 0 \\leq c_1g(n) \\leq f(n) \\leq c_2 g(n)\\right\\}]\n\nContent:\nBig-Theta notation is helpful because it provides a tight bound on a function's growth by specifying both an upper and a lower bound."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "417006",
+        "content_id": "16821",
+        "dom_id": "step-417006",
+        "selector": "#step-417006",
+        "step_anchor": "step-2",
+        "title": "Understanding the Definition of Big-Theta",
+        "key_prerequisites": [
+          {
+            "topic_id": "3803",
+            "name": "Big-O Notation",
+            "href": "/topics/3803",
+            "type": ""
+          },
+          {
+            "topic_id": "3805",
+            "name": "Big-Omega Notation",
+            "href": "/topics/3805",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose <span class=\"math\">[MATH: n \\in \\mathbb{N}.]</span> In the context of algorithmic complexity, what is the definition of <span class=\"math\">[MATH: \\Theta(n^{10})?]</span></p>",
+            "readable_text": "Suppose [MATH: n \\in \\mathbb{N}.] In the context of algorithmic complexity, what is the definition of [MATH: \\Theta(n^{10})?]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>According to the definition, <span class=\"math\">[MATH: \\Theta(g(n))]</span> is the set of all functions <span class=\"math\">[MATH: f(n)]</span> for which there exist positive constants <span class=\"math\">[MATH: c_1,]</span> <span class=\"math\">[MATH: c_2,]</span> and <span class=\"math\">[MATH: n_0]</span> such that for all <span class=\"math\">[MATH: n]</span> larger than <span class=\"math\">[MATH: n_0,]</span> the values of <span class=\"math\">[MATH: f(n)]</span> lies between <span class=\"math\">[MATH: c_1 \\cdot g(n)]</span> and <span class=\"math\">[MATH: c_2 \\cdot g(n).]</span></p><p><span class=\"math\">[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0\\leq c_1\\cdot g(n) \\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]</span></p><p>Geometrically, this means the following:</p><blockquote><p>The set <span class=\"math\">[MATH: \\Theta(n^{10})]</span>  consists of all the functions <span class=\"math\">[MATH: f(n),]</span> for which there exist positive constants <span class=\"math\">[MATH: c_1, c_2,]</span> and <span class=\"math\">[MATH: n_0]</span> such that the graph of <span class=\"math\">[MATH: f(n)]</span> lies between <span class=\"math\">[MATH: y=c_1\\cdot n^{10}]</span> and <span class=\"math\">[MATH: y=c_2\\cdot n^{10}]</span>  for all <span class=\"math\">[MATH: n\\geq n_0.]</span> </p></blockquote>",
+            "readable_text": "According to the definition, [MATH: \\Theta(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c_1,] [MATH: c_2,] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] lies between [MATH: c_1 \\cdot g(n)] and [MATH: c_2 \\cdot g(n).]\n\n[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0\\leq c_1\\cdot g(n) \\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]\n\nGeometrically, this means the following:\n\n> The set [MATH: \\Theta(n^{10})] consists of all the functions [MATH: f(n),] for which there exist positive constants [MATH: c_1, c_2,] and [MATH: n_0] such that the graph of [MATH: f(n)] lies between [MATH: y=c_1\\cdot n^{10}] and [MATH: y=c_2\\cdot n^{10}] for all [MATH: n\\geq n_0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose [MATH: n \\in \\mathbb{N}.] In the context of algorithmic complexity, what is the definition of [MATH: \\Theta(n^{10})?]\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: \\Theta(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c_1,] [MATH: c_2,] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] lies between [MATH: c_1 \\cdot g(n)] and [MATH: c_2 \\cdot g(n).]\n\n[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0\\leq c_1\\cdot g(n) \\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]\n\nGeometrically, this means the following:\n\n> The set [MATH: \\Theta(n^{10})] consists of all the functions [MATH: f(n),] for which there exist positive constants [MATH: c_1, c_2,] and [MATH: n_0] such that the graph of [MATH: f(n)] lies between [MATH: y=c_1\\cdot n^{10}] and [MATH: y=c_2\\cdot n^{10}] for all [MATH: n\\geq n_0.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "258660",
+        "dom_id": "question-258660",
+        "selector": "#question-258660",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: n \u2208 N.]</span> In the context of algorithmic complexity, select the correct options in the definition of <span class=\"math\">[MATH: \u0398(n^{7})]</span> below.The <span class=\"select-list\" data-select-id=\"selectList-258660-0\" data-select-index=\"1\">[SELECT 1]</span> <span class=\"math\">[MATH: \u0398(n^{7})]</span> consists of all the <span class=\"select-list\" data-select-id=\"selectList-258660-1\" data-select-index=\"2\">[SELECT 2]</span>, for which there exist positive constants <span class=\"math\">[MATH: c_{1}, c_{2},]</span> and <span class=\"math\">[MATH: n_{0}]</span> such that the graph of <span class=\"math\">[MATH: f(n)]</span> lies between \n<span class=\"select-list\" data-select-id=\"selectList-258660-2\" data-select-index=\"3\">[SELECT 3]</span> and <span class=\"select-list\" data-select-id=\"selectList-258660-3\" data-select-index=\"4\">[SELECT 4]</span> for all <span class=\"select-list\" data-select-id=\"selectList-258660-4\" data-select-index=\"5\">[SELECT 5]</span>.</p>",
+          "readable_text": "Suppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: \u0398(n^{7})] below.The [SELECT 1] [MATH: \u0398(n^{7})] consists of all the [SELECT 2], for which there exist positive constants [MATH: c_{1}, c_{2},] and [MATH: n_{0}] such that the graph of [MATH: f(n)] lies between\n[SELECT 3] and [SELECT 4] for all [SELECT 5].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258660-0",
+              "frame_dom_id": "selectListFrame-258660-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "function",
+                  "readable_text": "function"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "set",
+                  "readable_text": "set"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "number",
+                  "readable_text": "number"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258660-1",
+              "frame_dom_id": "selectListFrame-258660-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "functions <span class=\"math\">[MATH: f(n)]</span>",
+                  "readable_text": "functions [MATH: f(n)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "numbers <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "numbers [MATH: n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "sets <span class=\"math\">[MATH: {n}]</span>",
+                  "readable_text": "sets [MATH: {n}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-258660-2",
+              "frame_dom_id": "selectListFrame-258660-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: y = n^{7}]</span>",
+                  "readable_text": "[MATH: y = n^{7}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: y = c_{1} \u22c5 n^{7}]</span>",
+                  "readable_text": "[MATH: y = c_{1} \u22c5 n^{7}]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-258660-3",
+              "frame_dom_id": "selectListFrame-258660-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: y = n^{7}]</span>",
+                  "readable_text": "[MATH: y = n^{7}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: y = c_{2} \u22c5 n^{7}]</span>",
+                  "readable_text": "[MATH: y = c_{2} \u22c5 n^{7}]"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-258660-4",
+              "frame_dom_id": "selectListFrame-258660-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                  "readable_text": "[MATH: n \u2265 n_{0}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2264 n_{0}]</span>",
+                  "readable_text": "[MATH: n \u2264 n_{0}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258660-0",
+            "frame_dom_id": "selectListFrame-258660-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "function",
+                "readable_text": "function"
+              },
+              {
+                "index": 2,
+                "normalized_html": "set",
+                "readable_text": "set"
+              },
+              {
+                "index": 3,
+                "normalized_html": "number",
+                "readable_text": "number"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258660-1",
+            "frame_dom_id": "selectListFrame-258660-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "functions <span class=\"math\">[MATH: f(n)]</span>",
+                "readable_text": "functions [MATH: f(n)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "numbers <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "numbers [MATH: n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "sets <span class=\"math\">[MATH: {n}]</span>",
+                "readable_text": "sets [MATH: {n}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-258660-2",
+            "frame_dom_id": "selectListFrame-258660-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: y = n^{7}]</span>",
+                "readable_text": "[MATH: y = n^{7}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: y = c_{1} \u22c5 n^{7}]</span>",
+                "readable_text": "[MATH: y = c_{1} \u22c5 n^{7}]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-258660-3",
+            "frame_dom_id": "selectListFrame-258660-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: y = n^{7}]</span>",
+                "readable_text": "[MATH: y = n^{7}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: y = c_{2} \u22c5 n^{7}]</span>",
+                "readable_text": "[MATH: y = c_{2} \u22c5 n^{7}]"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-258660-4",
+            "frame_dom_id": "selectListFrame-258660-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                "readable_text": "[MATH: n \u2265 n_{0}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2264 n_{0}]</span>",
+                "readable_text": "[MATH: n \u2264 n_{0}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: \u0398(n^{7})] below.The [SELECT 1] [MATH: \u0398(n^{7})] consists of all the [SELECT 2], for which there exist positive constants [MATH: c_{1}, c_{2},] and [MATH: n_{0}] such that the graph of [MATH: f(n)] lies between\n[SELECT 3] and [SELECT 4] for all [SELECT 5]."
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "258655",
+        "dom_id": "question-258655",
+        "selector": "#question-258655",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: n \u2208 N.]</span> In the context of algorithmic complexity, select the correct options in the definition of <span class=\"math\">[MATH: \u0398(n^{3})]</span> below. <span class=\"math\">[MATH: \u2200]</span><span class=\"select-list\" data-select-id=\"selectList-258655-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-258655-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-258655-2\" data-select-index=\"3\">[SELECT 3]</span><span class=\"select-list\" data-select-id=\"selectList-258655-3\" data-select-index=\"4\">[SELECT 4]</span></p>",
+          "readable_text": "Suppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: \u0398(n^{3})] below. [MATH: \u2200][SELECT 1][SELECT 2][SELECT 3][SELECT 4]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258655-0",
+              "frame_dom_id": "selectListFrame-258655-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2200]</span>",
+                  "readable_text": "[MATH: \u2200]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2203]</span>",
+                  "readable_text": "[MATH: \u2203]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258655-1",
+              "frame_dom_id": "selectListFrame-258655-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                  "readable_text": "[MATH: n \u2265 n_{0}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c \u2265 n]</span>",
+                  "readable_text": "[MATH: c \u2265 n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2265 c]</span>",
+                  "readable_text": "[MATH: n \u2265 c]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-258655-2",
+              "frame_dom_id": "selectListFrame-258655-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: cf(n)]</span>",
+                  "readable_text": "[MATH: cf(n)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{3}]</span>",
+                  "readable_text": "[MATH: n^{3}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: f(n)]</span>",
+                  "readable_text": "[MATH: f(n)]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                  "readable_text": "[MATH: cn^{2}]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-258655-3",
+              "frame_dom_id": "selectListFrame-258655-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}f(n)]</span>",
+                  "readable_text": "[MATH: c_{2}f(n)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}]</span>",
+                  "readable_text": "[MATH: c_{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}n^{3}]</span>",
+                  "readable_text": "[MATH: c_{2}n^{3}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258655-0",
+            "frame_dom_id": "selectListFrame-258655-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2200]</span>",
+                "readable_text": "[MATH: \u2200]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2203]</span>",
+                "readable_text": "[MATH: \u2203]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258655-1",
+            "frame_dom_id": "selectListFrame-258655-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                "readable_text": "[MATH: n \u2265 n_{0}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c \u2265 n]</span>",
+                "readable_text": "[MATH: c \u2265 n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2265 c]</span>",
+                "readable_text": "[MATH: n \u2265 c]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-258655-2",
+            "frame_dom_id": "selectListFrame-258655-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: cf(n)]</span>",
+                "readable_text": "[MATH: cf(n)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n^{3}]</span>",
+                "readable_text": "[MATH: n^{3}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: f(n)]</span>",
+                "readable_text": "[MATH: f(n)]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                "readable_text": "[MATH: cn^{2}]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-258655-3",
+            "frame_dom_id": "selectListFrame-258655-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}f(n)]</span>",
+                "readable_text": "[MATH: c_{2}f(n)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}]</span>",
+                "readable_text": "[MATH: c_{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}n^{3}]</span>",
+                "readable_text": "[MATH: c_{2}n^{3}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: \u0398(n^{3})] below. [MATH: \u2200][SELECT 1][SELECT 2][SELECT 3][SELECT 4]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "417009",
+        "content_id": "16822",
+        "dom_id": "step-417009",
+        "selector": "#step-417009",
+        "step_anchor": "step-5",
+        "title": "Proving That a Function Belongs to Big-Theta Set",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Prove that <span class=\"math\">[MATH: 3n^2+1 \\in \\Theta(n^2)]</span> for <span class=\"math\">[MATH: n\\in\\mathbb N.]</span></p>",
+            "readable_text": "Prove that [MATH: 3n^2+1 \\in \\Theta(n^2)] for [MATH: n\\in\\mathbb N.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>According to the definition, <span class=\"math\">[MATH: \\Theta(g(n))]</span> is the set of all functions <span class=\"math\">[MATH: f(n)]</span> for which there exist positive constants <span class=\"math\">[MATH: c_1]</span>, <span class=\"math\">[MATH: c_2]</span> and <span class=\"math\">[MATH: n_0]</span> such that for all <span class=\"math\">[MATH: n]</span> larger than <span class=\"math\">[MATH: n_0,]</span> the values of <span class=\"math\">[MATH: f(n)]</span> lies between <span class=\"math\">[MATH: c_1 \\cdot g(n)]</span> and <span class=\"math\">[MATH: c_2 \\cdot g(n)]</span></p><p><span class=\"math\">[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c_1\\cdot g(n)\\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]</span></p><p>So, we start as shown below.</p><blockquote><p>We need to show that there exists constants <span class=\"math\">[MATH: c_1]</span> and <span class=\"math\">[MATH: c_2]</span> such that for sufficiently large <span class=\"math\">[MATH: n,]</span> we have\n<span class=\"math\">[MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]</span></p></blockquote><p>Now, let&#x27;s isolate <span class=\"math\">[MATH: c_1]</span> and <span class=\"math\">[MATH: c_2]</span> on the inequality.</p><blockquote><p>Dividing both sides of the inequality by <span class=\"math\">[MATH: n^2,]</span> we get follows:\n<span class=\"math\">[MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]</span></p></blockquote><p>Notice that <span class=\"math\">[MATH: \\dfrac{1}{n^2} = 1]</span> and <span class=\"math\">[MATH: 3+\\dfrac{1}{n^2}=4]</span> if <span class=\"math\">[MATH: n=1.]</span> Also,  <span class=\"math\">[MATH: \\dfrac{1}{n^2}]</span> monotonically approach <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n \\to \\infty.]</span> That means the minimum possible value of <span class=\"math\">[MATH: \\left(3+\\dfrac{1}{n^2}\\right)]</span> is <span class=\"math\">[MATH: 3]</span> and the maximum is <span class=\"math\">[MATH: 4.]</span> As a result, \n<span class=\"math\">[MATH: 3\\leq 3+\\dfrac{1}{n^2} \\leq 4]</span>\nfor all <span class=\"math\">[MATH: n \\geq 1,]</span> and we can now pick our constants. </p><blockquote><p>By setting <span class=\"math\">[MATH: n_0=1]</span>, <span class=\"math\">[MATH: c_1=3]</span> and <span class=\"math\">[MATH: c_2=4]</span> we make the above inequality hold for any <span class=\"math\">[MATH: n \\geq n_0.]</span></p></blockquote><p>Of course, other choices for the constants <span class=\"math\">[MATH: c_1]</span>, <span class=\"math\">[MATH: c_2,]</span> and <span class=\"math\">[MATH: n_0]</span> may do the job, but the important thing is we found at least one such combination.</p><blockquote><p>Therefore, <span class=\"math\">[MATH: 3n^2+1 \\in \\Theta(n^2).]</span></p></blockquote><p>The full proof is given below.</p><blockquote><p>We need to show that there exists constants <span class=\"math\">[MATH: c_1]</span> and <span class=\"math\">[MATH: c_2]</span> such that for sufficiently large <span class=\"math\">[MATH: n,]</span> we have\n<span class=\"math\">[MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]</span>\nDividing both sides of the inequality by <span class=\"math\">[MATH: n^2,]</span> we get follows:\n<span class=\"math\">[MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]</span>\nBy setting <span class=\"math\">[MATH: n_0=1]</span>, <span class=\"math\">[MATH: c_1=3]</span> and <span class=\"math\">[MATH: c_2=4]</span> we make the above inequality hold for any <span class=\"math\">[MATH: n \\geq n_0.]</span></p><p>Therefore, <span class=\"math\">[MATH: 3n^2+1 \\in \\Theta(n^2).]</span></p></blockquote>",
+            "readable_text": "According to the definition, [MATH: \\Theta(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c_1], [MATH: c_2] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] lies between [MATH: c_1 \\cdot g(n)] and [MATH: c_2 \\cdot g(n)]\n\n[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c_1\\cdot g(n)\\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]\n\nSo, we start as shown below.\n\n> We need to show that there exists constants [MATH: c_1] and [MATH: c_2] such that for sufficiently large [MATH: n,] we have\n> [MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]\n\nNow, let's isolate [MATH: c_1] and [MATH: c_2] on the inequality.\n\n> Dividing both sides of the inequality by [MATH: n^2,] we get follows:\n> [MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]\n\nNotice that [MATH: \\dfrac{1}{n^2} = 1] and [MATH: 3+\\dfrac{1}{n^2}=4] if [MATH: n=1.] Also, [MATH: \\dfrac{1}{n^2}] monotonically approach [MATH: 0] as [MATH: n \\to \\infty.] That means the minimum possible value of [MATH: \\left(3+\\dfrac{1}{n^2}\\right)] is [MATH: 3] and the maximum is [MATH: 4.] As a result,\n[MATH: 3\\leq 3+\\dfrac{1}{n^2} \\leq 4]\nfor all [MATH: n \\geq 1,] and we can now pick our constants.\n\n> By setting [MATH: n_0=1], [MATH: c_1=3] and [MATH: c_2=4] we make the above inequality hold for any [MATH: n \\geq n_0.]\n\nOf course, other choices for the constants [MATH: c_1], [MATH: c_2,] and [MATH: n_0] may do the job, but the important thing is we found at least one such combination.\n\n> Therefore, [MATH: 3n^2+1 \\in \\Theta(n^2).]\n\nThe full proof is given below.\n\n> We need to show that there exists constants [MATH: c_1] and [MATH: c_2] such that for sufficiently large [MATH: n,] we have\n> [MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]\n> Dividing both sides of the inequality by [MATH: n^2,] we get follows:\n> [MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]\n> By setting [MATH: n_0=1], [MATH: c_1=3] and [MATH: c_2=4] we make the above inequality hold for any [MATH: n \\geq n_0.]\n>\n> Therefore, [MATH: 3n^2+1 \\in \\Theta(n^2).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nProve that [MATH: 3n^2+1 \\in \\Theta(n^2)] for [MATH: n\\in\\mathbb N.]\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: \\Theta(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c_1], [MATH: c_2] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] lies between [MATH: c_1 \\cdot g(n)] and [MATH: c_2 \\cdot g(n)]\n\n[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c_1\\cdot g(n)\\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]\n\nSo, we start as shown below.\n\n> We need to show that there exists constants [MATH: c_1] and [MATH: c_2] such that for sufficiently large [MATH: n,] we have\n> [MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]\n\nNow, let's isolate [MATH: c_1] and [MATH: c_2] on the inequality.\n\n> Dividing both sides of the inequality by [MATH: n^2,] we get follows:\n> [MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]\n\nNotice that [MATH: \\dfrac{1}{n^2} = 1] and [MATH: 3+\\dfrac{1}{n^2}=4] if [MATH: n=1.] Also, [MATH: \\dfrac{1}{n^2}] monotonically approach [MATH: 0] as [MATH: n \\to \\infty.] That means the minimum possible value of [MATH: \\left(3+\\dfrac{1}{n^2}\\right)] is [MATH: 3] and the maximum is [MATH: 4.] As a result,\n[MATH: 3\\leq 3+\\dfrac{1}{n^2} \\leq 4]\nfor all [MATH: n \\geq 1,] and we can now pick our constants.\n\n> By setting [MATH: n_0=1], [MATH: c_1=3] and [MATH: c_2=4] we make the above inequality hold for any [MATH: n \\geq n_0.]\n\nOf course, other choices for the constants [MATH: c_1], [MATH: c_2,] and [MATH: n_0] may do the job, but the important thing is we found at least one such combination.\n\n> Therefore, [MATH: 3n^2+1 \\in \\Theta(n^2).]\n\nThe full proof is given below.\n\n> We need to show that there exists constants [MATH: c_1] and [MATH: c_2] such that for sufficiently large [MATH: n,] we have\n> [MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]\n> Dividing both sides of the inequality by [MATH: n^2,] we get follows:\n> [MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]\n> By setting [MATH: n_0=1], [MATH: c_1=3] and [MATH: c_2=4] we make the above inequality hold for any [MATH: n \\geq n_0.]\n>\n> Therefore, [MATH: 3n^2+1 \\in \\Theta(n^2).]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "259147",
+        "dom_id": "question-259147",
+        "selector": "#question-259147",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Prove that <span class=\"math\">[MATH: 3n + 9 \u2208 \u0398(n)]</span> for <span class=\"math\">[MATH: n \u2208 N.]</span></p>",
+          "readable_text": "Prove that [MATH: 3n + 9 \u2208 \u0398(n)] for [MATH: n \u2208 N.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "<p>We need to show that there exists constants <span class=\"math\">[MATH: c_{1}]</span> and  <span class=\"math\">[MATH: c_{2}]</span> such that for <span class=\"select-list\" data-select-id=\"selectList-259147-0\" data-select-index=\"1\">[SELECT 1]</span>, we have\n<span class=\"math\">[MATH: 3n + 9]</span><span class=\"select-list\" data-select-id=\"selectList-259147-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-259147-2\" data-select-index=\"3\">[SELECT 3]</span><span class=\"select-list\" data-select-id=\"selectList-259147-3\" data-select-index=\"4\">[SELECT 4]</span></p>",
+          "readable_text": "We need to show that there exists constants [MATH: c_{1}] and [MATH: c_{2}] such that for [SELECT 1], we have\n[MATH: 3n + 9][SELECT 2][SELECT 3][SELECT 4]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-259147-0",
+              "frame_dom_id": "selectListFrame-259147-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently small [MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently large [MATH: n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "all natural [MATH: n]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-259147-1",
+              "frame_dom_id": "selectListFrame-259147-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3n + 9]</span>",
+                  "readable_text": "[MATH: 3n + 9]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{1}]</span>",
+                  "readable_text": "[MATH: c_{1}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{1}n]</span>",
+                  "readable_text": "[MATH: c_{1}n]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "[MATH: n]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-259147-2",
+              "frame_dom_id": "selectListFrame-259147-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}n]</span>",
+                  "readable_text": "[MATH: c_{2}n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{1}n]</span>",
+                  "readable_text": "[MATH: c_{1}n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 3n + 9]</span>",
+                  "readable_text": "[MATH: 3n + 9]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "[MATH: n]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-259147-3",
+              "frame_dom_id": "selectListFrame-259147-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "[MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}n]</span>",
+                  "readable_text": "[MATH: c_{2}n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}]</span>",
+                  "readable_text": "[MATH: c_{2}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 3n]</span>",
+                  "readable_text": "[MATH: 3n]"
+                }
+              ]
+            }
+          ]
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-259147-0",
+            "frame_dom_id": "selectListFrame-259147-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently small [MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently large [MATH: n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "all natural [MATH: n]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-259147-1",
+            "frame_dom_id": "selectListFrame-259147-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3n + 9]</span>",
+                "readable_text": "[MATH: 3n + 9]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c_{1}]</span>",
+                "readable_text": "[MATH: c_{1}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: c_{1}n]</span>",
+                "readable_text": "[MATH: c_{1}n]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                "readable_text": "[MATH: n]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-259147-2",
+            "frame_dom_id": "selectListFrame-259147-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}n]</span>",
+                "readable_text": "[MATH: c_{2}n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c_{1}n]</span>",
+                "readable_text": "[MATH: c_{1}n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 3n + 9]</span>",
+                "readable_text": "[MATH: 3n + 9]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                "readable_text": "[MATH: n]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-259147-3",
+            "frame_dom_id": "selectListFrame-259147-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                "readable_text": "[MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}n]</span>",
+                "readable_text": "[MATH: c_{2}n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}]</span>",
+                "readable_text": "[MATH: c_{2}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 3n]</span>",
+                "readable_text": "[MATH: 3n]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nProve that [MATH: 3n + 9 \u2208 \u0398(n)] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists constants [MATH: c_{1}] and [MATH: c_{2}] such that for [SELECT 1], we have\n[MATH: 3n + 9][SELECT 2][SELECT 3][SELECT 4]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "258663",
+        "dom_id": "question-258663",
+        "selector": "#question-258663",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Prove that <span class=\"math\">[MATH: 8n^{2} + 3 \u2208 \u0398(n^{2})]</span> for <span class=\"math\">[MATH: n \u2208 N.]</span></p>",
+          "readable_text": "Prove that [MATH: 8n^{2} + 3 \u2208 \u0398(n^{2})] for [MATH: n \u2208 N.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "<p>We need to show that there exists constants <span class=\"math\">[MATH: c_{1}]</span> and  <span class=\"math\">[MATH: c_{2}]</span> such that for <span class=\"select-list\" data-select-id=\"selectList-258663-0\" data-select-index=\"1\">[SELECT 1]</span>, we have\n<span class=\"math\">[MATH: =]</span><span class=\"select-list\" data-select-id=\"selectList-258663-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-258663-2\" data-select-index=\"3\">[SELECT 3]</span></p>",
+          "readable_text": "We need to show that there exists constants [MATH: c_{1}] and [MATH: c_{2}] such that for [SELECT 1], we have\n[MATH: =][SELECT 2][SELECT 3]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258663-0",
+              "frame_dom_id": "selectListFrame-258663-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently large [MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently small [MATH: n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "all natural [MATH: n]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258663-1",
+              "frame_dom_id": "selectListFrame-258663-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: =]</span>",
+                  "readable_text": "[MATH: =]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2265]</span>",
+                  "readable_text": "[MATH: \u2265]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2264]</span>",
+                  "readable_text": "[MATH: \u2264]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-258663-2",
+              "frame_dom_id": "selectListFrame-258663-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}n^{2}]</span>",
+                  "readable_text": "[MATH: c_{2}n^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}(8n^{2} + 3)]</span>",
+                  "readable_text": "[MATH: c_{2}(8n^{2} + 3)]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: c_{2}]</span>",
+                  "readable_text": "[MATH: c_{2}]"
+                }
+              ]
+            }
+          ]
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258663-0",
+            "frame_dom_id": "selectListFrame-258663-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently large [MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently small [MATH: n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "all natural [MATH: n]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258663-1",
+            "frame_dom_id": "selectListFrame-258663-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: =]</span>",
+                "readable_text": "[MATH: =]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2265]</span>",
+                "readable_text": "[MATH: \u2265]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2264]</span>",
+                "readable_text": "[MATH: \u2264]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-258663-2",
+            "frame_dom_id": "selectListFrame-258663-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}n^{2}]</span>",
+                "readable_text": "[MATH: c_{2}n^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}(8n^{2} + 3)]</span>",
+                "readable_text": "[MATH: c_{2}(8n^{2} + 3)]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: c_{2}]</span>",
+                "readable_text": "[MATH: c_{2}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nProve that [MATH: 8n^{2} + 3 \u2208 \u0398(n^{2})] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists constants [MATH: c_{1}] and [MATH: c_{2}] such that for [SELECT 1], we have\n[MATH: =][SELECT 2][SELECT 3]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417012",
+        "content_id": "11169",
+        "dom_id": "step-417012",
+        "selector": "#step-417012",
+        "step_anchor": "step-8",
+        "title": "Properties of Big-Theta",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that we can summarize the scales of some frequently used functions in terms of Big-O notation using the diagram below.</p>",
+            "readable_text": "Recall that we can summarize the scales of some frequently used functions in terms of Big-O notation using the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/797ecfcb56319cabe80c66f78baed504\"></p>",
+            "readable_text": "[IMG: /graphics/797ecfcb56319cabe80c66f78baed504]",
+            "images": [
+              {
+                "src": "/graphics/797ecfcb56319cabe80c66f78baed504",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Here, we have the following inclusions:\n<span class=\"math\">[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]</span></p>",
+            "readable_text": "Here, we have the following inclusions:\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Furthermore, <span class=\"math\">[MATH: O(n^k) \\subset O(n^{k+1})]</span> for all <span class=\"math\">[MATH: k=1,2,3,\\ldots,]</span> and <span class=\"math\">[MATH: O(a^n) \\subset O(b^n)]</span> whenever <span class=\"math\">[MATH: a &lt; b.]</span></p>",
+            "readable_text": "Furthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can use the properties of Big-O to simplify expressions involving Big-Theta.</p>",
+            "readable_text": "We can use the properties of Big-O to simplify expressions involving Big-Theta.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In addition, we have the following two facts:</p>",
+            "readable_text": "In addition, we have the following two facts:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If <span class=\"math\">[MATH: c]</span> is any constant,\n<span class=\"math\">[MATH: \\Theta(c g(n)) = \\Theta(g(n)).]</span> </p></li><li><p>If <span class=\"math\">[MATH: O(g(n)) \\subset O(f(n)),]</span> then \n<span class=\"math\">[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]</span></p></li></ul>",
+            "readable_text": "- If [MATH: c] is any constant,\n[MATH: \\Theta(c g(n)) = \\Theta(g(n)).]\n- If [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>With that in mind, let&#x27;s prove that </p>",
+            "readable_text": "With that in mind, let's prove that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Theta(3n!+4n^3) = \\Theta(n!).]</span></p>",
+            "readable_text": "[MATH: \\Theta(3n!+4n^3) = \\Theta(n!).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since <span class=\"math\">[MATH: O(3n!)=O(n!)]</span> and <span class=\"math\">[MATH: O(4n^3)=O(n^3),]</span> we can re-write our expression as follows:\n<span class=\"math\">[MATH: \u0398(3n! + 4n^{3})|= \u0398(n! + n^{3}).]</span></p>",
+            "readable_text": "Since [MATH: O(3n!)=O(n!)] and [MATH: O(4n^3)=O(n^3),] we can re-write our expression as follows:\n[MATH: \u0398(3n! + 4n^{3})|= \u0398(n! + n^{3}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, since <span class=\"math\">[MATH: O(n^3) \\subset O(n!),]</span> we obtain that\n<span class=\"math\">[MATH: \\Theta(n!+n^3) = \\Theta(n!).]</span></p>",
+            "readable_text": "Finally, since [MATH: O(n^3) \\subset O(n!),] we obtain that\n[MATH: \\Theta(n!+n^3) = \\Theta(n!).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/797ecfcb56319cabe80c66f78baed504",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that we can summarize the scales of some frequently used functions in terms of Big-O notation using the diagram below.\n\nGraphic:\n[IMG: /graphics/797ecfcb56319cabe80c66f78baed504]\n\nContent:\nHere, we have the following inclusions:\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nContent:\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.]\n\nContent:\nWe can use the properties of Big-O to simplify expressions involving Big-Theta.\n\nContent:\nIn addition, we have the following two facts:\n\nContent:\n- If [MATH: c] is any constant,\n[MATH: \\Theta(c g(n)) = \\Theta(g(n)).]\n- If [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]\n\nContent:\nWith that in mind, let's prove that\n\nContent:\n[MATH: \\Theta(3n!+4n^3) = \\Theta(n!).]\n\nContent:\nSince [MATH: O(3n!)=O(n!)] and [MATH: O(4n^3)=O(n^3),] we can re-write our expression as follows:\n[MATH: \u0398(3n! + 4n^{3})|= \u0398(n! + n^{3}).]\n\nContent:\nFinally, since [MATH: O(n^3) \\subset O(n!),] we obtain that\n[MATH: \\Theta(n!+n^3) = \\Theta(n!).]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "417013",
+        "content_id": "16823",
+        "dom_id": "step-417013",
+        "selector": "#step-417013",
+        "step_anchor": "step-9",
+        "title": "Using the Properties of Big-Theta Notation",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Simplify the asymptotic notation <span class=\"math\">[MATH: \\Theta(2^n+3\\log(n)+1).]</span></p>",
+            "readable_text": "Simplify the asymptotic notation [MATH: \\Theta(2^n+3\\log(n)+1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>We can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.</p><div class=\"graphic\"><img src=\"/graphics/3e26883e4da8abd460b9de5f4aaf1c1f\"></div><p>Here, we have the following inclusions:</p><p><span class=\"math\">[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]</span></p><p>Furthermore, <span class=\"math\">[MATH: O(n^k) \\subset O(n^{k+1})]</span> for all <span class=\"math\">[MATH: k=1,2,3,\\ldots,]</span> and <span class=\"math\">[MATH: O(a^n) \\subset O(b^n)]</span> whenever <span class=\"math\">[MATH: a &lt; b.]</span></p><p>Notice that <span class=\"math\">[MATH: \\Theta(c g(n)) = \\Theta(g(n))]</span> for any constant multiplier <span class=\"math\">[MATH: c.]</span> \nAlso, if <span class=\"math\">[MATH: O(g(n)) \\subset O(f(n)),]</span> then \n<span class=\"math\">[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]</span></p><p>Now, since <span class=\"math\">[MATH: O(1) \\subset O(3\\log(n)),]</span> we can re-write our expression as follows:</p><p><span class=\"math\">[MATH: \u0398(2^{n} + 3\\log (n) + 1)|= \u0398(2^{n} + 3\\log (n)).]</span></p><p>Next, since <span class=\"math\">[MATH: O(3\\log(n))=O(\\log(n)),]</span> we get the following:\n<span class=\"math\">[MATH: \u0398(2^{n} + 3\\log (n))|= \u0398(2^{n} + \\log (n)).]</span></p><p>Finally, since <span class=\"math\">[MATH: O(\\log(n)) \\subset O(2^n),]</span> we obtain that\n<span class=\"math\">[MATH: \\Theta(2^n+\\log(n)) = \\Theta(2^n).]</span></p><p>Therefore, we have\n<span class=\"math\">[MATH: \\Theta(2^n+3\\log(n)+1) = \\Theta(2^n).]</span></p>",
+            "readable_text": "We can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\n[IMG: /graphics/3e26883e4da8abd460b9de5f4aaf1c1f]\n\nHere, we have the following inclusions:\n\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.]\n\nNotice that [MATH: \\Theta(c g(n)) = \\Theta(g(n))] for any constant multiplier [MATH: c.]\nAlso, if [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]\n\nNow, since [MATH: O(1) \\subset O(3\\log(n)),] we can re-write our expression as follows:\n\n[MATH: \u0398(2^{n} + 3\\log (n) + 1)|= \u0398(2^{n} + 3\\log (n)).]\n\nNext, since [MATH: O(3\\log(n))=O(\\log(n)),] we get the following:\n[MATH: \u0398(2^{n} + 3\\log (n))|= \u0398(2^{n} + \\log (n)).]\n\nFinally, since [MATH: O(\\log(n)) \\subset O(2^n),] we obtain that\n[MATH: \\Theta(2^n+\\log(n)) = \\Theta(2^n).]\n\nTherefore, we have\n[MATH: \\Theta(2^n+3\\log(n)+1) = \\Theta(2^n).]",
+            "images": [
+              {
+                "src": "/graphics/3e26883e4da8abd460b9de5f4aaf1c1f",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/3e26883e4da8abd460b9de5f4aaf1c1f",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSimplify the asymptotic notation [MATH: \\Theta(2^n+3\\log(n)+1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nWe can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\n[IMG: /graphics/3e26883e4da8abd460b9de5f4aaf1c1f]\n\nHere, we have the following inclusions:\n\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.]\n\nNotice that [MATH: \\Theta(c g(n)) = \\Theta(g(n))] for any constant multiplier [MATH: c.]\nAlso, if [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]\n\nNow, since [MATH: O(1) \\subset O(3\\log(n)),] we can re-write our expression as follows:\n\n[MATH: \u0398(2^{n} + 3\\log (n) + 1)|= \u0398(2^{n} + 3\\log (n)).]\n\nNext, since [MATH: O(3\\log(n))=O(\\log(n)),] we get the following:\n[MATH: \u0398(2^{n} + 3\\log (n))|= \u0398(2^{n} + \\log (n)).]\n\nFinally, since [MATH: O(\\log(n)) \\subset O(2^n),] we obtain that\n[MATH: \\Theta(2^n+\\log(n)) = \\Theta(2^n).]\n\nTherefore, we have\n[MATH: \\Theta(2^n+3\\log(n)+1) = \\Theta(2^n).]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "259203",
+        "dom_id": "question-259203",
+        "selector": "#question-259203",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Select the correct option below.<span class=\"math\">[MATH: n^{2} + 1]</span><span class=\"select-list\" data-select-id=\"selectList-259203-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-259203-1\" data-select-index=\"2\">[SELECT 2]</span></p>",
+          "readable_text": "Select the correct option below.[MATH: n^{2} + 1][SELECT 1][SELECT 2]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-259203-0",
+              "frame_dom_id": "selectListFrame-259203-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2} + 1]</span>",
+                  "readable_text": "[MATH: n^{2} + 1]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{3} + n^{2}]</span>",
+                  "readable_text": "[MATH: n^{3} + n^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 3n^{2} + 5]</span>",
+                  "readable_text": "[MATH: 3n^{2} + 5]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-259203-1",
+              "frame_dom_id": "selectListFrame-259203-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{3}]</span>",
+                  "readable_text": "[MATH: n^{3}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-259203-0",
+            "frame_dom_id": "selectListFrame-259203-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2} + 1]</span>",
+                "readable_text": "[MATH: n^{2} + 1]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n^{3} + n^{2}]</span>",
+                "readable_text": "[MATH: n^{3} + n^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 3n^{2} + 5]</span>",
+                "readable_text": "[MATH: 3n^{2} + 5]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-259203-1",
+            "frame_dom_id": "selectListFrame-259203-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n^{3}]</span>",
+                "readable_text": "[MATH: n^{3}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSelect the correct option below.[MATH: n^{2} + 1][SELECT 1][SELECT 2]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "258668",
+        "dom_id": "question-258668",
+        "selector": "#question-258668",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Select the correct option below.<span class=\"math\">[MATH: n^{2} + 1]</span><span class=\"select-list\" data-select-id=\"selectList-258668-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-258668-1\" data-select-index=\"2\">[SELECT 2]</span></p>",
+          "readable_text": "Select the correct option below.[MATH: n^{2} + 1][SELECT 1][SELECT 2]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258668-0",
+              "frame_dom_id": "selectListFrame-258668-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2} + 1]</span>",
+                  "readable_text": "[MATH: n^{2} + 1]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 7^{n} + n^{2}]</span>",
+                  "readable_text": "[MATH: 7^{n} + n^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 2n^{2} + 1]</span>",
+                  "readable_text": "[MATH: 2n^{2} + 1]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258668-1",
+              "frame_dom_id": "selectListFrame-258668-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 1|]</span>",
+                  "readable_text": "[MATH: 1|]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 7^{n}]</span>",
+                  "readable_text": "[MATH: 7^{n}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258668-0",
+            "frame_dom_id": "selectListFrame-258668-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2} + 1]</span>",
+                "readable_text": "[MATH: n^{2} + 1]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 7^{n} + n^{2}]</span>",
+                "readable_text": "[MATH: 7^{n} + n^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 2n^{2} + 1]</span>",
+                "readable_text": "[MATH: 2n^{2} + 1]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258668-1",
+            "frame_dom_id": "selectListFrame-258668-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 1|]</span>",
+                "readable_text": "[MATH: 1|]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 7^{n}]</span>",
+                "readable_text": "[MATH: 7^{n}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSelect the correct option below.[MATH: n^{2} + 1][SELECT 1][SELECT 2]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nLet's recall some of the asymptotic notations we've seen in previous lessons, defined in the context of algorithmic complexity.\n\nContent:\nThe set [MATH: O(g(n))] contains all nonnegative functions [MATH: f(n)] such that [MATH: f(n) \\leq c g(n)] for [MATH: c > 0] and sufficiently large [MATH: n.] Formally:\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\nIf [MATH: f\\in O(g(n)),] then [MATH: c g(n)] is an asymptotic upper bound of [MATH: f,] as shown below.\n\nGraphic:\n[IMG: /graphics/2f948c5b2ef93d491f29e7ae46268473]\n\nContent:\nThe set [MATH: \\Omega(g(n))] contains all nonnegative functions [MATH: f(n)] such that [MATH: f(n) \\geq c g(n)] for [MATH: c > 0] and sufficiently large [MATH: n.] Formally:\n[MATH: \\Omega(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c g(n) \\leq f(n) \\big\\}]\nIf [MATH: f\\in \\Omega(g(n)),] then [MATH: c g(n)] is an asymptotic lower bound of [MATH: f,] as shown below.\n\nGraphic:\n[IMG: /graphics/3014ef545bc133c22947a6f6afb9d0d5]\n\nContent:\nA related valuable concept for classifying the asymptotic behavior of algorithms is big-theta notation.\n\nContent:\nSuppose we have two nonnegative functions [MATH: f(n)] and [MATH: g(n)] such that there exist positive constants [MATH: c_1] and [MATH: c_2] such that, for sufficiently large [MATH: n,] we have\n[MATH: c_1 g(n) \\leq f(n) \\leq c_2 g(n)]\n\nContent:\nas depicted in the graph below.\n\nGraphic:\n[IMG: /graphics/e5490c9a928d23acb3279bc5e0bcc1a8]\n\nContent:\nIn plain English, beyond some threshold value [MATH: n_0,] the function [MATH: f(n)] is sandwiched between two multiples of [MATH: g(n),] ensuring that [MATH: f(n)] grows at the same rate as [MATH: g(n)] up to constant factors. In such cases, we write\n[MATH: f(n) \\in \\Theta(g(n))]\nwhere the formal definition of the set [MATH: \\Theta(g(n))] is given below:\n[MATH: \\Theta(g(n)) = \\left\\{ f(n) : \\exists c_1 c_2,n_0 \\gt 0, \\forall n \\geq n_0, 0 \\leq c_1g(n) \\leq f(n) \\leq c_2 g(n)\\right\\}]\n\nContent:\nBig-Theta notation is helpful because it provides a tight bound on a function's growth by specifying both an upper and a lower bound.\n\n---\n\nItem 2 \u2014 Example: Understanding the Definition of Big-Theta\n\nExample Prompt:\nSuppose [MATH: n \\in \\mathbb{N}.] In the context of algorithmic complexity, what is the definition of [MATH: \\Theta(n^{10})?]\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: \\Theta(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c_1,] [MATH: c_2,] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] lies between [MATH: c_1 \\cdot g(n)] and [MATH: c_2 \\cdot g(n).]\n\n[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0\\leq c_1\\cdot g(n) \\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]\n\nGeometrically, this means the following:\n\n> The set [MATH: \\Theta(n^{10})] consists of all the functions [MATH: f(n),] for which there exist positive constants [MATH: c_1, c_2,] and [MATH: n_0] such that the graph of [MATH: f(n)] lies between [MATH: y=c_1\\cdot n^{10}] and [MATH: y=c_2\\cdot n^{10}] for all [MATH: n\\geq n_0.]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: \u0398(n^{7})] below.The [SELECT 1] [MATH: \u0398(n^{7})] consists of all the [SELECT 2], for which there exist positive constants [MATH: c_{1}, c_{2},] and [MATH: n_{0}] such that the graph of [MATH: f(n)] lies between\n[SELECT 3] and [SELECT 4] for all [SELECT 5].\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: \u0398(n^{3})] below. [MATH: \u2200][SELECT 1][SELECT 2][SELECT 3][SELECT 4]\n\n---\n\nItem 5 \u2014 Example: Proving That a Function Belongs to Big-Theta Set\n\nExample Prompt:\nProve that [MATH: 3n^2+1 \\in \\Theta(n^2)] for [MATH: n\\in\\mathbb N.]\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: \\Theta(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c_1], [MATH: c_2] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] lies between [MATH: c_1 \\cdot g(n)] and [MATH: c_2 \\cdot g(n)]\n\n[MATH: \\Theta(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c_1,c_2, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq c_1\\cdot g(n)\\leq f(n) \\leq c_2\\cdot g(n) \\big\\}]\n\nSo, we start as shown below.\n\n> We need to show that there exists constants [MATH: c_1] and [MATH: c_2] such that for sufficiently large [MATH: n,] we have\n> [MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]\n\nNow, let's isolate [MATH: c_1] and [MATH: c_2] on the inequality.\n\n> Dividing both sides of the inequality by [MATH: n^2,] we get follows:\n> [MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]\n\nNotice that [MATH: \\dfrac{1}{n^2} = 1] and [MATH: 3+\\dfrac{1}{n^2}=4] if [MATH: n=1.] Also, [MATH: \\dfrac{1}{n^2}] monotonically approach [MATH: 0] as [MATH: n \\to \\infty.] That means the minimum possible value of [MATH: \\left(3+\\dfrac{1}{n^2}\\right)] is [MATH: 3] and the maximum is [MATH: 4.] As a result,\n[MATH: 3\\leq 3+\\dfrac{1}{n^2} \\leq 4]\nfor all [MATH: n \\geq 1,] and we can now pick our constants.\n\n> By setting [MATH: n_0=1], [MATH: c_1=3] and [MATH: c_2=4] we make the above inequality hold for any [MATH: n \\geq n_0.]\n\nOf course, other choices for the constants [MATH: c_1], [MATH: c_2,] and [MATH: n_0] may do the job, but the important thing is we found at least one such combination.\n\n> Therefore, [MATH: 3n^2+1 \\in \\Theta(n^2).]\n\nThe full proof is given below.\n\n> We need to show that there exists constants [MATH: c_1] and [MATH: c_2] such that for sufficiently large [MATH: n,] we have\n> [MATH: c_1n^2 \\leq 3n^2+1 \\leq c_2n^2.]\n> Dividing both sides of the inequality by [MATH: n^2,] we get follows:\n> [MATH: c_{1}n^{2}|\u2264 3n^{2} + 1 \u2264 c_{2}n^{2}; (c_{1}n^{2})/(n^{2})|\u2264 (3n^{2} + 1)/(n^{2}) \u2264 (c_{2}n^{2})/(n^{2}); c_{1}|\u2264 (3n^{2})/(n^{2}) + (1)/(n^{2}) \u2264 c_{2}; c_{1}|\u2264 3 + (1)/(n^{2}) \u2264 c_{2}]\n> By setting [MATH: n_0=1], [MATH: c_1=3] and [MATH: c_2=4] we make the above inequality hold for any [MATH: n \\geq n_0.]\n>\n> Therefore, [MATH: 3n^2+1 \\in \\Theta(n^2).]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\nProve that [MATH: 3n + 9 \u2208 \u0398(n)] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists constants [MATH: c_{1}] and [MATH: c_{2}] such that for [SELECT 1], we have\n[MATH: 3n + 9][SELECT 2][SELECT 3][SELECT 4]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\nProve that [MATH: 8n^{2} + 3 \u2208 \u0398(n^{2})] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists constants [MATH: c_{1}] and [MATH: c_{2}] such that for [SELECT 1], we have\n[MATH: =][SELECT 2][SELECT 3]\n\n---\n\nItem 8 \u2014 Tutorial: Properties of Big-Theta\n\nContent:\nRecall that we can summarize the scales of some frequently used functions in terms of Big-O notation using the diagram below.\n\nGraphic:\n[IMG: /graphics/797ecfcb56319cabe80c66f78baed504]\n\nContent:\nHere, we have the following inclusions:\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nContent:\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.]\n\nContent:\nWe can use the properties of Big-O to simplify expressions involving Big-Theta.\n\nContent:\nIn addition, we have the following two facts:\n\nContent:\n- If [MATH: c] is any constant,\n[MATH: \\Theta(c g(n)) = \\Theta(g(n)).]\n- If [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]\n\nContent:\nWith that in mind, let's prove that\n\nContent:\n[MATH: \\Theta(3n!+4n^3) = \\Theta(n!).]\n\nContent:\nSince [MATH: O(3n!)=O(n!)] and [MATH: O(4n^3)=O(n^3),] we can re-write our expression as follows:\n[MATH: \u0398(3n! + 4n^{3})|= \u0398(n! + n^{3}).]\n\nContent:\nFinally, since [MATH: O(n^3) \\subset O(n!),] we obtain that\n[MATH: \\Theta(n!+n^3) = \\Theta(n!).]\n\n---\n\nItem 9 \u2014 Example: Using the Properties of Big-Theta Notation\n\nExample Prompt:\nSimplify the asymptotic notation [MATH: \\Theta(2^n+3\\log(n)+1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nWe can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\n[IMG: /graphics/3e26883e4da8abd460b9de5f4aaf1c1f]\n\nHere, we have the following inclusions:\n\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.]\n\nNotice that [MATH: \\Theta(c g(n)) = \\Theta(g(n))] for any constant multiplier [MATH: c.]\nAlso, if [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: \\Theta(g(n)+f(n)) = \\Theta(f(n)).]\n\nNow, since [MATH: O(1) \\subset O(3\\log(n)),] we can re-write our expression as follows:\n\n[MATH: \u0398(2^{n} + 3\\log (n) + 1)|= \u0398(2^{n} + 3\\log (n)).]\n\nNext, since [MATH: O(3\\log(n))=O(\\log(n)),] we get the following:\n[MATH: \u0398(2^{n} + 3\\log (n))|= \u0398(2^{n} + \\log (n)).]\n\nFinally, since [MATH: O(\\log(n)) \\subset O(2^n),] we obtain that\n[MATH: \\Theta(2^n+\\log(n)) = \\Theta(2^n).]\n\nTherefore, we have\n[MATH: \\Theta(2^n+3\\log(n)+1) = \\Theta(2^n).]\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\nSelect the correct option below.[MATH: n^{2} + 1][SELECT 1][SELECT 2]\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\nSelect the correct option below.[MATH: n^{2} + 1][SELECT 1][SELECT 2]"
+  }
+}

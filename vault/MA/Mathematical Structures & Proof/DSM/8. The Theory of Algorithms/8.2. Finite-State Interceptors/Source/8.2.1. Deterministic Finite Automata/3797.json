@@ -1,0 +1,2122 @@
+{
+  "schema_version": 2,
+  "topic_id": "3797",
+  "topic_title": "Deterministic Finite Automata",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3797/Source/3797.html",
+  "source_url": "https://mathacademy.com/topics/3797",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "414818",
+        "dom_id": "sectionLink-414818",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-414818"
+      },
+      {
+        "index": 2,
+        "step_id": "414819",
+        "dom_id": "sectionLink-414819",
+        "name": "",
+        "title": "Identifying Components of a DFA",
+        "selector": "#sectionLink-414819"
+      },
+      {
+        "index": 3,
+        "step_id": "414822",
+        "dom_id": "sectionLink-414822",
+        "name": "",
+        "title": "Transition Tables of Deterministic Finite Automata",
+        "selector": "#sectionLink-414822"
+      },
+      {
+        "index": 4,
+        "step_id": "414823",
+        "dom_id": "sectionLink-414823",
+        "name": "",
+        "title": "Constructing a Transition Table Given a Diagram",
+        "selector": "#sectionLink-414823"
+      },
+      {
+        "index": 5,
+        "step_id": "414826",
+        "dom_id": "sectionLink-414826",
+        "name": "",
+        "title": "Drawing a Diagram Given a Transition Table",
+        "selector": "#sectionLink-414826"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "49",
+        "name": "The Cartesian Product",
+        "href": "/topics/the-cartesian-product-49"
+      },
+      {
+        "topic_id": "950",
+        "name": "Introduction to Graphs",
+        "href": "/topics/introduction-to-graphs-950"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "414818",
+        "content_id": "9641",
+        "dom_id": "step-414818",
+        "selector": "#step-414818",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In mathematics, there are two main types of &quot;machines&quot; known as <strong>automata</strong>. These structures represent the first step toward formally defining the concept of an <strong>algorithm</strong>.</p>",
+            "readable_text": "In mathematics, there are two main types of \"machines\" known as automata. These structures represent the first step toward formally defining the concept of an algorithm.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The first type of automaton is called an <strong>acceptor.</strong> It processes a string of symbols and determines whether to accept or reject it. The second is called a <strong>transducer,</strong> which takes an input string and transforms it into another string. In this lesson, we will focus on acceptors.</p>",
+            "readable_text": "The first type of automaton is called an acceptor. It processes a string of symbols and determines whether to accept or reject it. The second is called a transducer, which takes an input string and transforms it into another string. In this lesson, we will focus on acceptors.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A deterministic finite automaton (DFA) is a specific type of acceptor. It has a finite number of states and processes symbols from an input alphabet, transitioning between states based on predefined rules determined by the input symbols.</p>",
+            "readable_text": "A deterministic finite automaton (DFA) is a specific type of acceptor. It has a finite number of states and processes symbols from an input alphabet, transitioning between states based on predefined rules determined by the input symbols.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>More formally, a DFA is a five-tuple of the form <span class=\"math\">[MATH: A=(Q, \\Sigma, \\delta, q_0, F),]</span> where the components are as follows:</p>",
+            "readable_text": "More formally, a DFA is a five-tuple of the form [MATH: A=(Q, \\Sigma, \\delta, q_0, F),] where the components are as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: Q]</span> is a nonempty finite set of <strong>states</strong>. These are all the possible configurations the automaton can be in.</p></li><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a nonempty finite set of <strong>input symbols</strong>. This is the &quot;alphabet&quot; of symbols that the DFA can process as inputs.</p></li><li><p><span class=\"math\">[MATH: \\delta]</span> is a <strong>transition function</strong> of the form <span class=\"math\">[MATH: \\delta : Q \\times \\Sigma \\to Q.]</span> It takes a state and an input symbol and returns a state. This function determines how the DFA moves from one state to another based on a given input symbol.</p></li><li><p><span class=\"math\">[MATH: q_0 \\in Q]</span> is a <strong>start state</strong> (or <strong>initial state</strong>). This is the state in which the automaton begins.</p></li><li><p><span class=\"math\">[MATH: F \\subseteq Q]</span> is a set of <strong>final</strong> (or <strong>accepting</strong>) <strong>states</strong>.</p></li></ul>",
+            "readable_text": "- [MATH: Q] is a nonempty finite set of states. These are all the possible configurations the automaton can be in.\n- [MATH: \\Sigma] is a nonempty finite set of input symbols. This is the \"alphabet\" of symbols that the DFA can process as inputs.\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta : Q \\times \\Sigma \\to Q.] It takes a state and an input symbol and returns a state. This function determines how the DFA moves from one state to another based on a given input symbol.\n- [MATH: q_0 \\in Q] is a start state (or initial state). This is the state in which the automaton begins.\n- [MATH: F \\subseteq Q] is a set of final (or accepting) states.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can visualize a DFA as a directed graph, where</p>",
+            "readable_text": "We can visualize a DFA as a directed graph, where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>vertices represent the states,</p></li><li><p>arcs, labeled with input symbols, represent transitions from one state to another,</p></li><li><p>the start state is labeled by the input arrow <span class=\"math\">[MATH: \\to,]</span> and</p></li><li><p>the final states are circled by a double line.</p></li></ul>",
+            "readable_text": "- vertices represent the states,\n- arcs, labeled with input symbols, represent transitions from one state to another,\n- the start state is labeled by the input arrow [MATH: \\to,] and\n- the final states are circled by a double line.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, a deterministic finite automaton is given in the diagram below.</p>",
+            "readable_text": "For example, a deterministic finite automaton is given in the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/4be8735f80a2e8fbbb936bfc53f694b5\"></p>",
+            "readable_text": "[IMG: /graphics/4be8735f80a2e8fbbb936bfc53f694b5]",
+            "images": [
+              {
+                "src": "/graphics/4be8735f80a2e8fbbb936bfc53f694b5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this case, the automaton has the following components:</p>",
+            "readable_text": "In this case, the automaton has the following components:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The set of states <span class=\"math\">[MATH: Q = \\{p,q\\}]</span> (represented by the vertices).</p></li><li><p>The set of input symbols <span class=\"math\">[MATH: \\Sigma = \\{0,1,2\\}]</span> (represented by the arcs&#x27; labels).</p></li><li><p>The transition function <span class=\"math\">[MATH: \\delta]</span> with the following transitions defined by the arcs:\n<span class=\"math\">[MATH: \u03b4(p, 0)|= p,|\u03b4(p, 1)|= q,|\u03b4(p, 2)|= p,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= q,|\u03b4(q, 2)|= p]</span>\nFor instance, the arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1,]</span> means that <span class=\"math\">[MATH: \\delta(p,1)=q.]</span></p><div class=\"graphic\"><img src=\"/graphics/546fa0d4d35d84781c40c5a0067b9104\"></div></li><li><p>The start state <span class=\"math\">[MATH: p]</span> (that is labeled by the input arrow <span class=\"math\">[MATH: \\to]</span>), as shown below.</p><div class=\"graphic\"><img src=\"/graphics/4c261d07f2ccb02e41a6b341e01c4b32\"></div></li><li><p>The set of final states <span class=\"math\">[MATH: F = \\{q\\}]</span> (circled by the double line), as shown below.</p><div class=\"graphic\"><img src=\"/graphics/887645effee2202cba6e2ccb8a07f660\"></div></li></ul>",
+            "readable_text": "- The set of states [MATH: Q = \\{p,q\\}] (represented by the vertices).\n- The set of input symbols [MATH: \\Sigma = \\{0,1,2\\}] (represented by the arcs' labels).\n- The transition function [MATH: \\delta] with the following transitions defined by the arcs:\n[MATH: \u03b4(p, 0)|= p,|\u03b4(p, 1)|= q,|\u03b4(p, 2)|= p,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= q,|\u03b4(q, 2)|= p]\nFor instance, the arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1,] means that [MATH: \\delta(p,1)=q.]\n\n[IMG: /graphics/546fa0d4d35d84781c40c5a0067b9104]\n- The start state [MATH: p] (that is labeled by the input arrow [MATH: \\to]), as shown below.\n\n[IMG: /graphics/4c261d07f2ccb02e41a6b341e01c4b32]\n- The set of final states [MATH: F = \\{q\\}] (circled by the double line), as shown below.\n\n[IMG: /graphics/887645effee2202cba6e2ccb8a07f660]",
+            "images": [
+              {
+                "src": "/graphics/546fa0d4d35d84781c40c5a0067b9104",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/4c261d07f2ccb02e41a6b341e01c4b32",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/887645effee2202cba6e2ccb8a07f660",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/4be8735f80a2e8fbbb936bfc53f694b5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/546fa0d4d35d84781c40c5a0067b9104",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/4c261d07f2ccb02e41a6b341e01c4b32",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/887645effee2202cba6e2ccb8a07f660",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn mathematics, there are two main types of \"machines\" known as automata. These structures represent the first step toward formally defining the concept of an algorithm.\n\nContent:\nThe first type of automaton is called an acceptor. It processes a string of symbols and determines whether to accept or reject it. The second is called a transducer, which takes an input string and transforms it into another string. In this lesson, we will focus on acceptors.\n\nContent:\nA deterministic finite automaton (DFA) is a specific type of acceptor. It has a finite number of states and processes symbols from an input alphabet, transitioning between states based on predefined rules determined by the input symbols.\n\nContent:\nMore formally, a DFA is a five-tuple of the form [MATH: A=(Q, \\Sigma, \\delta, q_0, F),] where the components are as follows:\n\nContent:\n- [MATH: Q] is a nonempty finite set of states. These are all the possible configurations the automaton can be in.\n- [MATH: \\Sigma] is a nonempty finite set of input symbols. This is the \"alphabet\" of symbols that the DFA can process as inputs.\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta : Q \\times \\Sigma \\to Q.] It takes a state and an input symbol and returns a state. This function determines how the DFA moves from one state to another based on a given input symbol.\n- [MATH: q_0 \\in Q] is a start state (or initial state). This is the state in which the automaton begins.\n- [MATH: F \\subseteq Q] is a set of final (or accepting) states.\n\nContent:\nWe can visualize a DFA as a directed graph, where\n\nContent:\n- vertices represent the states,\n- arcs, labeled with input symbols, represent transitions from one state to another,\n- the start state is labeled by the input arrow [MATH: \\to,] and\n- the final states are circled by a double line.\n\nContent:\nFor example, a deterministic finite automaton is given in the diagram below.\n\nGraphic:\n[IMG: /graphics/4be8735f80a2e8fbbb936bfc53f694b5]\n\nContent:\nIn this case, the automaton has the following components:\n\nContent:\n- The set of states [MATH: Q = \\{p,q\\}] (represented by the vertices).\n- The set of input symbols [MATH: \\Sigma = \\{0,1,2\\}] (represented by the arcs' labels).\n- The transition function [MATH: \\delta] with the following transitions defined by the arcs:\n[MATH: \u03b4(p, 0)|= p,|\u03b4(p, 1)|= q,|\u03b4(p, 2)|= p,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= q,|\u03b4(q, 2)|= p]\nFor instance, the arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1,] means that [MATH: \\delta(p,1)=q.]\n\n[IMG: /graphics/546fa0d4d35d84781c40c5a0067b9104]\n- The start state [MATH: p] (that is labeled by the input arrow [MATH: \\to]), as shown below.\n\n[IMG: /graphics/4c261d07f2ccb02e41a6b341e01c4b32]\n- The set of final states [MATH: F = \\{q\\}] (circled by the double line), as shown below.\n\n[IMG: /graphics/887645effee2202cba6e2ccb8a07f660]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "414819",
+        "content_id": "15580",
+        "dom_id": "step-414819",
+        "selector": "#step-414819",
+        "step_anchor": "step-2",
+        "title": "Identifying Components of a DFA",
+        "key_prerequisites": [
+          {
+            "topic_id": "49",
+            "name": "The Cartesian Product",
+            "href": "/topics/49",
+            "type": ""
+          },
+          {
+            "topic_id": "950",
+            "name": "Introduction to Graphs",
+            "href": "/topics/950",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/562972fb11054f334ec6f2aa869896f4\"></div><p>Consider the deterministic finite automaton represented by the above diagram. Given that <span class=\"math\">[MATH: \\delta: Q \\times \\Sigma \\to Q]</span> is the transition function of the automaton, determine the set of states, the set of input symbols, the start point, and the set of final states of the automaton. Also, determine <span class=\"math\">[MATH: \\delta(q,1).]</span></p>",
+            "readable_text": "[IMG: /graphics/562972fb11054f334ec6f2aa869896f4]\n\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, determine the set of states, the set of input symbols, the start point, and the set of final states of the automaton. Also, determine [MATH: \\delta(q,1).]",
+            "images": [
+              {
+                "src": "/graphics/562972fb11054f334ec6f2aa869896f4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A deterministic finite automaton is a five-tuple of the form <span class=\"math\">[MATH: A = (Q, \\Sigma, \\delta, q_0, F),]</span> where</p><ul><li><p><span class=\"math\">[MATH: Q]</span> is a nonempty finite set of <em>states</em>,</p></li><li><p><span class=\"math\">[MATH: \\Sigma]</span>  is a nonempty finite set of <em>input symbols</em>,</p></li><li><p><span class=\"math\">[MATH: \\delta]</span> is a <em>transition function</em> of the form <span class=\"math\">[MATH: \\delta: Q \\times \\Sigma \\to Q]</span> that takes a state and an input symbol and returns a state,</p></li><li><p><span class=\"math\">[MATH: q_0 \\in Q]</span> is a <em>start state</em> (or <em>initial state</em>), and</p></li><li><p><span class=\"math\">[MATH: F \\subseteq Q]</span> is a set of <em>final</em> (or <em>accepting</em>) states.</p></li></ul><p>In our case, the automaton has the following components:</p><ul><li><p>the set of states <span class=\"math\">[MATH: Q=\\{p,q,r\\}]</span> (represented by the vertices),</p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma=\\{0,1\\}]</span> (represented by the arcs&#x27; labels),</p></li><li><p>the start state <span class=\"math\">[MATH: q]</span> (that is labeled by the input arrow <span class=\"math\">[MATH: \\to]</span>), and</p></li><li><p>the set of final states <span class=\"math\">[MATH: F=\\{q,r\\}]</span> (these are circled by the double line).</p></li></ul><p>Finally, the diagram shows an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: r,]</span> labeled <span class=\"math\">[MATH: 1.]</span> This means that\n<span class=\"math\">[MATH: \\delta(q,1) = r.]</span></p>",
+            "readable_text": "A deterministic finite automaton is a five-tuple of the form [MATH: A = (Q, \\Sigma, \\delta, q_0, F),] where\n\n- [MATH: Q] is a nonempty finite set of states,\n- [MATH: \\Sigma] is a nonempty finite set of input symbols,\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta: Q \\times \\Sigma \\to Q] that takes a state and an input symbol and returns a state,\n- [MATH: q_0 \\in Q] is a start state (or initial state), and\n- [MATH: F \\subseteq Q] is a set of final (or accepting) states.\n\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\}] (represented by the vertices),\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\}] (represented by the arcs' labels),\n- the start state [MATH: q] (that is labeled by the input arrow [MATH: \\to]), and\n- the set of final states [MATH: F=\\{q,r\\}] (these are circled by the double line).\n\nFinally, the diagram shows an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.] This means that\n[MATH: \\delta(q,1) = r.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/562972fb11054f334ec6f2aa869896f4",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/562972fb11054f334ec6f2aa869896f4]\n\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, determine the set of states, the set of input symbols, the start point, and the set of final states of the automaton. Also, determine [MATH: \\delta(q,1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nA deterministic finite automaton is a five-tuple of the form [MATH: A = (Q, \\Sigma, \\delta, q_0, F),] where\n\n- [MATH: Q] is a nonempty finite set of states,\n- [MATH: \\Sigma] is a nonempty finite set of input symbols,\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta: Q \\times \\Sigma \\to Q] that takes a state and an input symbol and returns a state,\n- [MATH: q_0 \\in Q] is a start state (or initial state), and\n- [MATH: F \\subseteq Q] is a set of final (or accepting) states.\n\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\}] (represented by the vertices),\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\}] (represented by the arcs' labels),\n- the start state [MATH: q] (that is labeled by the input arrow [MATH: \\to]), and\n- the set of final states [MATH: F=\\{q,r\\}] (these are circled by the double line).\n\nFinally, the diagram shows an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.] This means that\n[MATH: \\delta(q,1) = r.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "257520",
+        "dom_id": "question-257520",
+        "selector": "#question-257520",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-257520\"></p>",
+          "readable_text": "[IMG: /graphics/q-257520]",
+          "images": [
+            {
+              "src": "/graphics/q-257520",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the deterministic finite automaton represented by the above diagram. Given that <span class=\"math\">[MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q]</span> is the transition function of the automaton, select the correct options in the statements below.\n <span class=\"select-list\" data-select-id=\"selectList-257520-0\" data-select-index=\"1\">[SELECT 1]</span> is the set of states of the automaton.</p><p> <span class=\"select-list\" data-select-id=\"selectList-257520-1\" data-select-index=\"2\">[SELECT 2]</span> is the start state of the automaton.</p><p> <span class=\"select-list\" data-select-id=\"selectList-257520-2\" data-select-index=\"3\">[SELECT 3]</span> is the set of final states of the automaton.</p>",
+          "readable_text": "Consider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, select the correct options in the statements below.\n[SELECT 1] is the set of states of the automaton.\n\n[SELECT 2] is the start state of the automaton.\n\n[SELECT 3] is the set of final states of the automaton.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257520-0",
+              "frame_dom_id": "selectListFrame-257520-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: {p, r}]</span>",
+                  "readable_text": "[MATH: {p, r}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: {0, 1, 2}]</span>",
+                  "readable_text": "[MATH: {0, 1, 2}]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257520-1",
+              "frame_dom_id": "selectListFrame-257520-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257520-2",
+              "frame_dom_id": "selectListFrame-257520-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: {p}]</span>",
+                  "readable_text": "[MATH: {p}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: {r}]</span>",
+                  "readable_text": "[MATH: {r}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: {r, p}]</span>",
+                  "readable_text": "[MATH: {r, p}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-257520",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257520-0",
+            "frame_dom_id": "selectListFrame-257520-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: {p, r}]</span>",
+                "readable_text": "[MATH: {p, r}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: {0, 1, 2}]</span>",
+                "readable_text": "[MATH: {0, 1, 2}]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257520-1",
+            "frame_dom_id": "selectListFrame-257520-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257520-2",
+            "frame_dom_id": "selectListFrame-257520-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: {p}]</span>",
+                "readable_text": "[MATH: {p}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: {r}]</span>",
+                "readable_text": "[MATH: {r}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: {r, p}]</span>",
+                "readable_text": "[MATH: {r, p}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-257520]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, select the correct options in the statements below.\n[SELECT 1] is the set of states of the automaton.\n\n[SELECT 2] is the start state of the automaton.\n\n[SELECT 3] is the set of final states of the automaton."
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "235810",
+        "dom_id": "question-235810",
+        "selector": "#question-235810",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-235810\"></p>",
+          "readable_text": "[IMG: /graphics/q-235810]",
+          "images": [
+            {
+              "src": "/graphics/q-235810",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the deterministic finite automaton represented by the above diagram. Given that <span class=\"math\">[MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q]</span> is the transition function of the automaton, select the correct options in the statements below.</p><p> <span class=\"math\">[MATH: {0, 1}]</span> is the set of <span class=\"select-list\" data-select-id=\"selectList-235810-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p> <span class=\"select-list\" data-select-id=\"selectList-235810-1\" data-select-index=\"2\">[SELECT 2]</span> is the starting state of the automaton.</p><p> <span class=\"math\">[MATH: \u03b4(q, 1) =]</span> <span class=\"select-list\" data-select-id=\"selectList-235810-2\" data-select-index=\"3\">[SELECT 3]</span></p>",
+          "readable_text": "Consider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, select the correct options in the statements below.\n\n[MATH: {0, 1}] is the set of [SELECT 1].\n\n[SELECT 2] is the starting state of the automaton.\n\n[MATH: \u03b4(q, 1) =] [SELECT 3]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-235810-0",
+              "frame_dom_id": "selectListFrame-235810-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "input symbols",
+                  "readable_text": "input symbols"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "final states",
+                  "readable_text": "final states"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "starting states",
+                  "readable_text": "starting states"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-235810-1",
+              "frame_dom_id": "selectListFrame-235810-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-235810-2",
+              "frame_dom_id": "selectListFrame-235810-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-235810",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-235810-0",
+            "frame_dom_id": "selectListFrame-235810-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "input symbols",
+                "readable_text": "input symbols"
+              },
+              {
+                "index": 2,
+                "normalized_html": "final states",
+                "readable_text": "final states"
+              },
+              {
+                "index": 3,
+                "normalized_html": "starting states",
+                "readable_text": "starting states"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-235810-1",
+            "frame_dom_id": "selectListFrame-235810-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-235810-2",
+            "frame_dom_id": "selectListFrame-235810-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-235810]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, select the correct options in the statements below.\n\n[MATH: {0, 1}] is the set of [SELECT 1].\n\n[SELECT 2] is the starting state of the automaton.\n\n[MATH: \u03b4(q, 1) =] [SELECT 3]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "414822",
+        "content_id": "11564",
+        "dom_id": "step-414822",
+        "selector": "#step-414822",
+        "step_anchor": "step-5",
+        "title": "Transition Tables of Deterministic Finite Automata",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s common to put the values of a transition function in a table. Each row corresponds to a different state <span class=\"math\">[MATH: q,]</span> each column corresponds to a different input symbol <span class=\"math\">[MATH: a,]</span> and their intersection is the value of the transition function <span class=\"math\">[MATH: \\delta(q,a).]</span></p>",
+            "readable_text": "It's common to put the values of a transition function in a table. Each row corresponds to a different state [MATH: q,] each column corresponds to a different input symbol [MATH: a,] and their intersection is the value of the transition function [MATH: \\delta(q,a).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>An example is given below.\nNote that we place <span class=\"math\">[MATH: \\to]</span> next to the start state and <span class=\"math\">[MATH: \\ast]</span> next to any final states.</p>",
+            "readable_text": "An example is given below.\nNote that we place [MATH: \\to] next to the start state and [MATH: \\ast] next to any final states.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: q] | [MATH: q] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s construct a diagram representing the automaton given by this transition table.\nFrom the table, we determine that the automaton has the following components:</p>",
+            "readable_text": "Let's construct a diagram representing the automaton given by this transition table.\nFrom the table, we determine that the automaton has the following components:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the set of states <span class=\"math\">[MATH: Q=\\{p,q\\}]</span> (given by the rows),</p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma=\\{0,1\\}]</span> (given by the columns),</p></li><li><p>the start state <span class=\"math\">[MATH: p]</span> (labeled by <span class=\"math\">[MATH: \\to]</span>), and</p></li><li><p>the set of final states <span class=\"math\">[MATH: F=\\{q\\}]</span> (labeled by <span class=\"math\">[MATH: \\ast]</span>).</p></li></ul>",
+            "readable_text": "- the set of states [MATH: Q=\\{p,q\\}] (given by the rows),\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\}] (given by the columns),\n- the start state [MATH: p] (labeled by [MATH: \\to]), and\n- the set of final states [MATH: F=\\{q\\}] (labeled by [MATH: \\ast]).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that we have the components, we can construct the diagram.\nFirst, let&#x27;s draw the states of our automaton.</p>",
+            "readable_text": "Now that we have the components, we can construct the diagram.\nFirst, let's draw the states of our automaton.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/33f10abe5ff2d9c249de0f394010a2e3\"></p>",
+            "readable_text": "[IMG: /graphics/33f10abe5ff2d9c249de0f394010a2e3]",
+            "images": [
+              {
+                "src": "/graphics/33f10abe5ff2d9c249de0f394010a2e3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>According to the transition table, <span class=\"math\">[MATH: p]</span> is the start state, and <span class=\"math\">[MATH: q]</span> is a final state. So, we labeled <span class=\"math\">[MATH: p]</span> with an input arrow and circled <span class=\"math\">[MATH: q]</span> with a double line.</p>",
+            "readable_text": "According to the transition table, [MATH: p] is the start state, and [MATH: q] is a final state. So, we labeled [MATH: p] with an input arrow and circled [MATH: q] with a double line.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From the transition table, we also get the following:</p>",
+            "readable_text": "From the transition table, we also get the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Consider row <span class=\"math\">[MATH: p]</span> of the table. </p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,0)=p.]</span> So, we draw an arrow (loop) from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,1)=q.]</span> So, we draw an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1.]</span></p></li></ul></li></ul>",
+            "readable_text": "- Consider row [MATH: p] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: p,] indicating that [MATH: \\delta(p,0)=p.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(p,1)=q.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/403a3c4335095a1062ba7b3517f77a52\"></p>",
+            "readable_text": "[IMG: /graphics/403a3c4335095a1062ba7b3517f77a52]",
+            "images": [
+              {
+                "src": "/graphics/403a3c4335095a1062ba7b3517f77a52",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Consider row <span class=\"math\">[MATH: q]</span> of the table. </p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,0)=q.]</span> So, we draw an arrow (loop) from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 0.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,1)=q.]</span> So, we draw an arrow (loop) from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1.]</span></p></li></ul></li></ul>",
+            "readable_text": "- Consider row [MATH: q] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: q,] indicating that [MATH: \\delta(q,0)=q.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(q,1)=q.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/03b8ee7be51a688090da6a845502d6b8\"></p>",
+            "readable_text": "[IMG: /graphics/03b8ee7be51a688090da6a845502d6b8]",
+            "images": [
+              {
+                "src": "/graphics/03b8ee7be51a688090da6a845502d6b8",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We have been through every cell in the table, so we have added all the arcs. Therefore, our diagram is complete.</p>",
+            "readable_text": "We have been through every cell in the table, so we have added all the arcs. Therefore, our diagram is complete.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Watch out!</strong> We draw only one loop from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: q,]</span> labeled with both <span class=\"math\">[MATH: 0,1]</span> instead of two separate loops for each of the symbols <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1.]</span></p>",
+            "readable_text": "Watch out! We draw only one loop from [MATH: q] to [MATH: q,] labeled with both [MATH: 0,1] instead of two separate loops for each of the symbols [MATH: 0] and [MATH: 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/33f10abe5ff2d9c249de0f394010a2e3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/403a3c4335095a1062ba7b3517f77a52",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/03b8ee7be51a688090da6a845502d6b8",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIt's common to put the values of a transition function in a table. Each row corresponds to a different state [MATH: q,] each column corresponds to a different input symbol [MATH: a,] and their intersection is the value of the transition function [MATH: \\delta(q,a).]\n\nContent:\nAn example is given below.\nNote that we place [MATH: \\to] next to the start state and [MATH: \\ast] next to any final states.\n\nContent:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: q] | [MATH: q] |\n\nContent:\nLet's construct a diagram representing the automaton given by this transition table.\nFrom the table, we determine that the automaton has the following components:\n\nContent:\n- the set of states [MATH: Q=\\{p,q\\}] (given by the rows),\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\}] (given by the columns),\n- the start state [MATH: p] (labeled by [MATH: \\to]), and\n- the set of final states [MATH: F=\\{q\\}] (labeled by [MATH: \\ast]).\n\nContent:\nNow that we have the components, we can construct the diagram.\nFirst, let's draw the states of our automaton.\n\nGraphic:\n[IMG: /graphics/33f10abe5ff2d9c249de0f394010a2e3]\n\nContent:\nAccording to the transition table, [MATH: p] is the start state, and [MATH: q] is a final state. So, we labeled [MATH: p] with an input arrow and circled [MATH: q] with a double line.\n\nContent:\nFrom the transition table, we also get the following:\n\nContent:\n- Consider row [MATH: p] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: p,] indicating that [MATH: \\delta(p,0)=p.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(p,1)=q.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.]\n\nGraphic:\n[IMG: /graphics/403a3c4335095a1062ba7b3517f77a52]\n\nContent:\n- Consider row [MATH: q] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: q,] indicating that [MATH: \\delta(q,0)=q.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(q,1)=q.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 1.]\n\nGraphic:\n[IMG: /graphics/03b8ee7be51a688090da6a845502d6b8]\n\nContent:\nWe have been through every cell in the table, so we have added all the arcs. Therefore, our diagram is complete.\n\nContent:\nWatch out! We draw only one loop from [MATH: q] to [MATH: q,] labeled with both [MATH: 0,1] instead of two separate loops for each of the symbols [MATH: 0] and [MATH: 1.]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "414823",
+        "content_id": "15574",
+        "dom_id": "step-414823",
+        "selector": "#step-414823",
+        "step_anchor": "step-6",
+        "title": "Constructing a Transition Table Given a Diagram",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/a1a9e942aaf864f7de31783ff5c2b6d0\"></div><p>The diagram above shows a deterministic finite automaton. Construct the transition table corresponding to the given diagram.</p>",
+            "readable_text": "[IMG: /graphics/a1a9e942aaf864f7de31783ff5c2b6d0]\n\nThe diagram above shows a deterministic finite automaton. Construct the transition table corresponding to the given diagram.",
+            "images": [
+              {
+                "src": "/graphics/a1a9e942aaf864f7de31783ff5c2b6d0",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>In our case, the automaton has the following components:</p><ul><li><p>the set of states <span class=\"math\">[MATH: Q=\\{p,q,r\\},]</span></p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma=\\{0,1\\},]</span></p></li><li><p>the start state <span class=\"math\">[MATH: p,]</span> and</p></li><li><p>the set of final states <span class=\"math\">[MATH: F=\\{q\\}.]</span></p></li></ul><p>With that in mind, let&#x27;s determine the transition function.</p><p>First, we draw an empty table with a different state written in each row and a different input symbol written in each column:</p><table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q]</span></p></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: r]</span></p></td><td></td><td></td></tr></table><p>Notice that we write <span class=\"math\">[MATH: \\to]</span> next to <span class=\"math\">[MATH: p]</span> since it&#x27;s the start state, and we write <span class=\"math\">[MATH: \\ast]</span> next to <span class=\"math\">[MATH: q]</span> since it&#x27;s a final state.</p><p>Next, we fill in the remaining cells:</p><ul><li><p>There is an arrow (loop) from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0.]</span> This means that <span class=\"math\">[MATH: \\delta(p,0)=p.]</span> So, we write <span class=\"math\">[MATH: p]</span> at the intersection of row <span class=\"math\">[MATH: p]</span> and column <span class=\"math\">[MATH: 0.]</span></p></li><li><p>There is an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1.]</span> This means that <span class=\"math\">[MATH: \\delta(p,1)=q.]</span> So, we write <span class=\"math\">[MATH: q]</span> at the intersection of row <span class=\"math\">[MATH: p]</span> and column <span class=\"math\">[MATH: 1.]</span></p></li><li><p>There is an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0.]</span> This means that <span class=\"math\">[MATH: \\delta(q,0)=p.]</span> So, we write <span class=\"math\">[MATH: p]</span> at the intersection of row <span class=\"math\">[MATH: q]</span> and column <span class=\"math\">[MATH: 0.]</span></p></li><li><p>There is an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: r,]</span> labeled <span class=\"math\">[MATH: 1.]</span> This means that <span class=\"math\">[MATH: \\delta(q,1)=r.]</span> So, we write <span class=\"math\">[MATH: r]</span> at the intersection of row <span class=\"math\">[MATH: q]</span> and column <span class=\"math\">[MATH: 1.]</span></p></li><li><p>There is an arrow from <span class=\"math\">[MATH: r]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0.]</span> This means that <span class=\"math\">[MATH: \\delta(r,0)=p.]</span> So, we write <span class=\"math\">[MATH: p]</span> at the intersection of row <span class=\"math\">[MATH: r]</span> and column <span class=\"math\">[MATH: 0.]</span></p></li><li><p>There is an arrow (loop) from <span class=\"math\">[MATH: r]</span> to <span class=\"math\">[MATH: r,]</span> labeled <span class=\"math\">[MATH: 1.]</span> This means that <span class=\"math\">[MATH: \\delta(r,1)=r.]</span> So, we write <span class=\"math\">[MATH: r]</span> at the intersection of row <span class=\"math\">[MATH: r]</span> and column <span class=\"math\">[MATH: 1.]</span></p></li></ul><p>The transition table corresponding to the given diagram is shown below.</p><table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr></table>",
+            "readable_text": "In our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the set of final states [MATH: F=\\{q\\}.]\n\nWith that in mind, let's determine the transition function.\n\nFirst, we draw an empty table with a different state written in each row and a different input symbol written in each column:\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | | |\n| [MATH: \\ast \\: q] | | |\n| [MATH: r] | | |\n\nNotice that we write [MATH: \\to] next to [MATH: p] since it's the start state, and we write [MATH: \\ast] next to [MATH: q] since it's a final state.\n\nNext, we fill in the remaining cells:\n\n- There is an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(p,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: p] and column [MATH: 0.]\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.] This means that [MATH: \\delta(p,1)=q.] So, we write [MATH: q] at the intersection of row [MATH: p] and column [MATH: 1.]\n- There is an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(q,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: q] and column [MATH: 0.]\n- There is an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.] This means that [MATH: \\delta(q,1)=r.] So, we write [MATH: r] at the intersection of row [MATH: q] and column [MATH: 1.]\n- There is an arrow from [MATH: r] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(r,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: r] and column [MATH: 0.]\n- There is an arrow (loop) from [MATH: r] to [MATH: r,] labeled [MATH: 1.] This means that [MATH: \\delta(r,1)=r.] So, we write [MATH: r] at the intersection of row [MATH: r] and column [MATH: 1.]\n\nThe transition table corresponding to the given diagram is shown below.\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: p] | [MATH: r] |\n| [MATH: r] | [MATH: p] | [MATH: r] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/a1a9e942aaf864f7de31783ff5c2b6d0",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/a1a9e942aaf864f7de31783ff5c2b6d0]\n\nThe diagram above shows a deterministic finite automaton. Construct the transition table corresponding to the given diagram.\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the set of final states [MATH: F=\\{q\\}.]\n\nWith that in mind, let's determine the transition function.\n\nFirst, we draw an empty table with a different state written in each row and a different input symbol written in each column:\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | | |\n| [MATH: \\ast \\: q] | | |\n| [MATH: r] | | |\n\nNotice that we write [MATH: \\to] next to [MATH: p] since it's the start state, and we write [MATH: \\ast] next to [MATH: q] since it's a final state.\n\nNext, we fill in the remaining cells:\n\n- There is an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(p,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: p] and column [MATH: 0.]\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.] This means that [MATH: \\delta(p,1)=q.] So, we write [MATH: q] at the intersection of row [MATH: p] and column [MATH: 1.]\n- There is an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(q,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: q] and column [MATH: 0.]\n- There is an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.] This means that [MATH: \\delta(q,1)=r.] So, we write [MATH: r] at the intersection of row [MATH: q] and column [MATH: 1.]\n- There is an arrow from [MATH: r] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(r,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: r] and column [MATH: 0.]\n- There is an arrow (loop) from [MATH: r] to [MATH: r,] labeled [MATH: 1.] This means that [MATH: \\delta(r,1)=r.] So, we write [MATH: r] at the intersection of row [MATH: r] and column [MATH: 1.]\n\nThe transition table corresponding to the given diagram is shown below.\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: p] | [MATH: r] |\n| [MATH: r] | [MATH: p] | [MATH: r] |"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "235792",
+        "dom_id": "question-235792",
+        "selector": "#question-235792",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-235792\"></p>",
+          "readable_text": "[IMG: /graphics/q-235792]",
+          "images": [
+            {
+              "src": "/graphics/q-235792",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.</p><table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-235792-0\" data-select-index=\"1\">[SELECT 1]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235792-1\" data-select-index=\"2\">[SELECT 2]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235792-2\" data-select-index=\"3\">[SELECT 3]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-235792-3\" data-select-index=\"4\">[SELECT 4]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235792-4\" data-select-index=\"5\">[SELECT 5]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235792-5\" data-select-index=\"6\">[SELECT 6]</span></p></td></tr></table>",
+          "readable_text": "The diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.\n\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-235792-0",
+              "frame_dom_id": "selectListFrame-235792-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217p]</span>",
+                  "readable_text": "[MATH: \u2192; \u2217p]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 p]</span>",
+                  "readable_text": "[MATH: \u2192 p]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2217p]</span>",
+                  "readable_text": "[MATH: \u2217p]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-235792-1",
+              "frame_dom_id": "selectListFrame-235792-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-235792-2",
+              "frame_dom_id": "selectListFrame-235792-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-235792-3",
+              "frame_dom_id": "selectListFrame-235792-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 q]</span>",
+                  "readable_text": "[MATH: \u2192 q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217q]</span>",
+                  "readable_text": "[MATH: \u2192; \u2217q]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2217q]</span>",
+                  "readable_text": "[MATH: \u2217q]"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-235792-4",
+              "frame_dom_id": "selectListFrame-235792-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "dom_id": "selectList-235792-5",
+              "frame_dom_id": "selectListFrame-235792-5",
+              "placeholder": "[SELECT 6]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-235792",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-235792-0",
+            "frame_dom_id": "selectListFrame-235792-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217p]</span>",
+                "readable_text": "[MATH: \u2192; \u2217p]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 p]</span>",
+                "readable_text": "[MATH: \u2192 p]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: \u2217p]</span>",
+                "readable_text": "[MATH: \u2217p]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-235792-1",
+            "frame_dom_id": "selectListFrame-235792-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-235792-2",
+            "frame_dom_id": "selectListFrame-235792-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-235792-3",
+            "frame_dom_id": "selectListFrame-235792-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 q]</span>",
+                "readable_text": "[MATH: \u2192 q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217q]</span>",
+                "readable_text": "[MATH: \u2192; \u2217q]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: \u2217q]</span>",
+                "readable_text": "[MATH: \u2217q]"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-235792-4",
+            "frame_dom_id": "selectListFrame-235792-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "dom_id": "selectList-235792-5",
+            "frame_dom_id": "selectListFrame-235792-5",
+            "placeholder": "[SELECT 6]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-235792]\n\nPrompt:\nThe diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.\n\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "257690",
+        "dom_id": "question-257690",
+        "selector": "#question-257690",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-257690\"></p>",
+          "readable_text": "[IMG: /graphics/q-257690]",
+          "images": [
+            {
+              "src": "/graphics/q-257690",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.</p><table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-0\" data-select-index=\"1\">[SELECT 1]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-1\" data-select-index=\"2\">[SELECT 2]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-2\" data-select-index=\"3\">[SELECT 3]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-3\" data-select-index=\"4\">[SELECT 4]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-4\" data-select-index=\"5\">[SELECT 5]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-5\" data-select-index=\"6\">[SELECT 6]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-6\" data-select-index=\"7\">[SELECT 7]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-7\" data-select-index=\"8\">[SELECT 8]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257690-8\" data-select-index=\"9\">[SELECT 9]</span></p></td></tr></table>",
+          "readable_text": "The diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.\n\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |\n| [SELECT 7] | [SELECT 8] | [SELECT 9] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257690-0",
+              "frame_dom_id": "selectListFrame-257690-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217p]</span>",
+                  "readable_text": "[MATH: \u2192; \u2217p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 p]</span>",
+                  "readable_text": "[MATH: \u2192 p]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2217p]</span>",
+                  "readable_text": "[MATH: \u2217p]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257690-1",
+              "frame_dom_id": "selectListFrame-257690-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257690-2",
+              "frame_dom_id": "selectListFrame-257690-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-257690-3",
+              "frame_dom_id": "selectListFrame-257690-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2217q]</span>",
+                  "readable_text": "[MATH: \u2217q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 q]</span>",
+                  "readable_text": "[MATH: \u2192 q]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217q]</span>",
+                  "readable_text": "[MATH: \u2192; \u2217q]"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-257690-4",
+              "frame_dom_id": "selectListFrame-257690-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "dom_id": "selectList-257690-5",
+              "frame_dom_id": "selectListFrame-257690-5",
+              "placeholder": "[SELECT 6]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 7,
+              "dom_id": "selectList-257690-6",
+              "frame_dom_id": "selectListFrame-257690-6",
+              "placeholder": "[SELECT 7]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2217r]</span>",
+                  "readable_text": "[MATH: \u2217r]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 r]</span>",
+                  "readable_text": "[MATH: \u2192 r]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217r]</span>",
+                  "readable_text": "[MATH: \u2192; \u2217r]"
+                }
+              ]
+            },
+            {
+              "index": 8,
+              "dom_id": "selectList-257690-7",
+              "frame_dom_id": "selectListFrame-257690-7",
+              "placeholder": "[SELECT 8]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            },
+            {
+              "index": 9,
+              "dom_id": "selectList-257690-8",
+              "frame_dom_id": "selectListFrame-257690-8",
+              "placeholder": "[SELECT 9]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                  "readable_text": "[MATH: r]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-257690",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257690-0",
+            "frame_dom_id": "selectListFrame-257690-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217p]</span>",
+                "readable_text": "[MATH: \u2192; \u2217p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 p]</span>",
+                "readable_text": "[MATH: \u2192 p]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: \u2217p]</span>",
+                "readable_text": "[MATH: \u2217p]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257690-1",
+            "frame_dom_id": "selectListFrame-257690-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257690-2",
+            "frame_dom_id": "selectListFrame-257690-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-257690-3",
+            "frame_dom_id": "selectListFrame-257690-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2217q]</span>",
+                "readable_text": "[MATH: \u2217q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 q]</span>",
+                "readable_text": "[MATH: \u2192 q]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217q]</span>",
+                "readable_text": "[MATH: \u2192; \u2217q]"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-257690-4",
+            "frame_dom_id": "selectListFrame-257690-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "dom_id": "selectList-257690-5",
+            "frame_dom_id": "selectListFrame-257690-5",
+            "placeholder": "[SELECT 6]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 7,
+            "dom_id": "selectList-257690-6",
+            "frame_dom_id": "selectListFrame-257690-6",
+            "placeholder": "[SELECT 7]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2217r]</span>",
+                "readable_text": "[MATH: \u2217r]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 r]</span>",
+                "readable_text": "[MATH: \u2192 r]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192; \u2217r]</span>",
+                "readable_text": "[MATH: \u2192; \u2217r]"
+              }
+            ]
+          },
+          {
+            "index": 8,
+            "dom_id": "selectList-257690-7",
+            "frame_dom_id": "selectListFrame-257690-7",
+            "placeholder": "[SELECT 8]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "dom_id": "selectList-257690-8",
+            "frame_dom_id": "selectListFrame-257690-8",
+            "placeholder": "[SELECT 9]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: r]</span>",
+                "readable_text": "[MATH: r]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-257690]\n\nPrompt:\nThe diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.\n\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |\n| [SELECT 7] | [SELECT 8] | [SELECT 9] |"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "414826",
+        "content_id": "15575",
+        "dom_id": "step-414826",
+        "selector": "#step-414826",
+        "step_anchor": "step-9",
+        "title": "Drawing a Diagram Given a Transition Table",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr></table><p>Construct a diagram representing the deterministic finite automaton from the transition table above.</p>",
+            "readable_text": "| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: r] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: p] | [MATH: r] |\n| [MATH: r] | [MATH: q] | [MATH: p] |\n\nConstruct a diagram representing the deterministic finite automaton from the transition table above.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>In our case, the automaton has the following components:</p><ul><li><p>the set of states <span class=\"math\">[MATH: Q=\\{p,q,r\\},]</span></p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma=\\{0,1\\},]</span></p></li><li><p>the start state <span class=\"math\">[MATH: p,]</span> and</p></li><li><p>the set of final states <span class=\"math\">[MATH: F=\\{q\\}.]</span></p></li></ul><p>First, let&#x27;s draw the states of our automaton.</p><div class=\"graphic\"><img src=\"/graphics/c1bc2377476c3ae32029245099d540a6\"></div><p>According to the transition table, <span class=\"math\">[MATH: p]</span> is the start state, and <span class=\"math\">[MATH: q]</span> is a final state. So, we labeled <span class=\"math\">[MATH: p]</span> with an input arrow and circled <span class=\"math\">[MATH: q]</span> with a double line.</p><p>From the transition table, we also get the following:</p><ul><li><p>Consider row <span class=\"math\">[MATH: p]</span> of the table. </p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> is <span class=\"math\">[MATH: r,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,0)=r.]</span> So, we draw an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: r,]</span> labeled <span class=\"math\">[MATH: 0.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,1)=q.]</span> So, we draw an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1.]</span></p></li></ul></li></ul><div class=\"graphic\"><img src=\"/graphics/b0c2fbf760eac9738dfe457ddd41f981\"></div><ul><li><p>Consider row <span class=\"math\">[MATH: q]</span> of the table. </p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,0)=p.]</span> So, we draw an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> is <span class=\"math\">[MATH: r,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,1)=r.]</span> So, we draw an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: r,]</span> labeled <span class=\"math\">[MATH: 1.]</span></p></li></ul></li></ul><div class=\"graphic\"><img src=\"/graphics/c54e345bbdf4542ccc3482e6996c961a\"></div><ul><li><p>Consider row <span class=\"math\">[MATH: r]</span> of the table. </p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(r,0)=q.]</span> So, we draw an arrow from <span class=\"math\">[MATH: r]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 0.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(r,1)=p.]</span> So, we draw an arrow from <span class=\"math\">[MATH: r]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 1.]</span></p></li></ul></li></ul><div class=\"graphic\"><img src=\"/graphics/5dcf1249a00eb43012d48fb2ef1bb3c2\"></div><p>We have been through every cell in the table, so our diagram is complete.</p>",
+            "readable_text": "In our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the set of final states [MATH: F=\\{q\\}.]\n\nFirst, let's draw the states of our automaton.\n\n[IMG: /graphics/c1bc2377476c3ae32029245099d540a6]\n\nAccording to the transition table, [MATH: p] is the start state, and [MATH: q] is a final state. So, we labeled [MATH: p] with an input arrow and circled [MATH: q] with a double line.\n\nFrom the transition table, we also get the following:\n\n- Consider row [MATH: p] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: r,] indicating that [MATH: \\delta(p,0)=r.] So, we draw an arrow from [MATH: p] to [MATH: r,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(p,1)=q.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.]\n\n[IMG: /graphics/b0c2fbf760eac9738dfe457ddd41f981]\n\n- Consider row [MATH: q] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: p,] indicating that [MATH: \\delta(q,0)=p.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: r,] indicating that [MATH: \\delta(q,1)=r.] So, we draw an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.]\n\n[IMG: /graphics/c54e345bbdf4542ccc3482e6996c961a]\n\n- Consider row [MATH: r] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: q,] indicating that [MATH: \\delta(r,0)=q.] So, we draw an arrow from [MATH: r] to [MATH: q,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: p,] indicating that [MATH: \\delta(r,1)=p.] So, we draw an arrow from [MATH: r] to [MATH: p,] labeled [MATH: 1.]\n\n[IMG: /graphics/5dcf1249a00eb43012d48fb2ef1bb3c2]\n\nWe have been through every cell in the table, so our diagram is complete.",
+            "images": [
+              {
+                "src": "/graphics/c1bc2377476c3ae32029245099d540a6",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/b0c2fbf760eac9738dfe457ddd41f981",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/c54e345bbdf4542ccc3482e6996c961a",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/5dcf1249a00eb43012d48fb2ef1bb3c2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/c1bc2377476c3ae32029245099d540a6",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/b0c2fbf760eac9738dfe457ddd41f981",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/c54e345bbdf4542ccc3482e6996c961a",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/5dcf1249a00eb43012d48fb2ef1bb3c2",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: r] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: p] | [MATH: r] |\n| [MATH: r] | [MATH: q] | [MATH: p] |\n\nConstruct a diagram representing the deterministic finite automaton from the transition table above.\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the set of final states [MATH: F=\\{q\\}.]\n\nFirst, let's draw the states of our automaton.\n\n[IMG: /graphics/c1bc2377476c3ae32029245099d540a6]\n\nAccording to the transition table, [MATH: p] is the start state, and [MATH: q] is a final state. So, we labeled [MATH: p] with an input arrow and circled [MATH: q] with a double line.\n\nFrom the transition table, we also get the following:\n\n- Consider row [MATH: p] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: r,] indicating that [MATH: \\delta(p,0)=r.] So, we draw an arrow from [MATH: p] to [MATH: r,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(p,1)=q.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.]\n\n[IMG: /graphics/b0c2fbf760eac9738dfe457ddd41f981]\n\n- Consider row [MATH: q] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: p,] indicating that [MATH: \\delta(q,0)=p.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: r,] indicating that [MATH: \\delta(q,1)=r.] So, we draw an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.]\n\n[IMG: /graphics/c54e345bbdf4542ccc3482e6996c961a]\n\n- Consider row [MATH: r] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: q,] indicating that [MATH: \\delta(r,0)=q.] So, we draw an arrow from [MATH: r] to [MATH: q,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: p,] indicating that [MATH: \\delta(r,1)=p.] So, we draw an arrow from [MATH: r] to [MATH: p,] labeled [MATH: 1.]\n\n[IMG: /graphics/5dcf1249a00eb43012d48fb2ef1bb3c2]\n\nWe have been through every cell in the table, so our diagram is complete."
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "257761",
+        "dom_id": "question-257761",
+        "selector": "#question-257761",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192; \u2217r]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr></table><p>Which of the following diagrams represents the deterministic finite automaton given by the transition table above? </p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192; \u2217r] | [MATH: r] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n\nWhich of the following diagrams represents the deterministic finite automaton given by the transition table above?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-257761-a",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-257761-a-3\"></p>",
+            "readable_text": "[IMG: /graphics/q-257761-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-257761-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-257761-b",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-257761-a-5\"></p>",
+            "readable_text": "[IMG: /graphics/q-257761-a-5]",
+            "images": [
+              {
+                "src": "/graphics/q-257761-a-5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-257761-c",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-257761-a-1\"></p>",
+            "readable_text": "[IMG: /graphics/q-257761-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-257761-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-257761-d",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-257761-a-2\"></p>",
+            "readable_text": "[IMG: /graphics/q-257761-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-257761-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-257761-e",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-257761-a-4\"></p>",
+            "readable_text": "[IMG: /graphics/q-257761-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-257761-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-257761-a-3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-257761-a-5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-257761-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-257761-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-257761-a-4",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192; \u2217r] | [MATH: r] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n\nWhich of the following diagrams represents the deterministic finite automaton given by the transition table above?\n\nChoices:\na. [IMG: /graphics/q-257761-a-3]\nb. [IMG: /graphics/q-257761-a-5]\nc. [IMG: /graphics/q-257761-a-1]\nd. [IMG: /graphics/q-257761-a-2]\ne. [IMG: /graphics/q-257761-a-4]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "235815",
+        "dom_id": "question-235815",
+        "selector": "#question-235815",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217r]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr></table><p>Which of the following diagrams represents the deterministic finite automaton given by the transition table above? </p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192 p] | [MATH: p] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n| [MATH: \u2217r] | [MATH: r] | [MATH: q] |\n\nWhich of the following diagrams represents the deterministic finite automaton given by the transition table above?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-235815-a",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-235815-a-4\"> </p>",
+            "readable_text": "[IMG: /graphics/q-235815-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-235815-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-235815-b",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-235815-a-3\"> </p>",
+            "readable_text": "[IMG: /graphics/q-235815-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-235815-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-235815-c",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-235815-a-2\"> </p>",
+            "readable_text": "[IMG: /graphics/q-235815-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-235815-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-235815-d",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-235815-a-1\"> </p>",
+            "readable_text": "[IMG: /graphics/q-235815-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-235815-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-235815-e",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-235815-a-5\"> </p>",
+            "readable_text": "[IMG: /graphics/q-235815-a-5]",
+            "images": [
+              {
+                "src": "/graphics/q-235815-a-5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-235815-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-235815-a-3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-235815-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-235815-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-235815-a-5",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192 p] | [MATH: p] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n| [MATH: \u2217r] | [MATH: r] | [MATH: q] |\n\nWhich of the following diagrams represents the deterministic finite automaton given by the transition table above?\n\nChoices:\na. [IMG: /graphics/q-235815-a-4]\nb. [IMG: /graphics/q-235815-a-3]\nc. [IMG: /graphics/q-235815-a-2]\nd. [IMG: /graphics/q-235815-a-1]\ne. [IMG: /graphics/q-235815-a-5]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn mathematics, there are two main types of \"machines\" known as automata. These structures represent the first step toward formally defining the concept of an algorithm.\n\nContent:\nThe first type of automaton is called an acceptor. It processes a string of symbols and determines whether to accept or reject it. The second is called a transducer, which takes an input string and transforms it into another string. In this lesson, we will focus on acceptors.\n\nContent:\nA deterministic finite automaton (DFA) is a specific type of acceptor. It has a finite number of states and processes symbols from an input alphabet, transitioning between states based on predefined rules determined by the input symbols.\n\nContent:\nMore formally, a DFA is a five-tuple of the form [MATH: A=(Q, \\Sigma, \\delta, q_0, F),] where the components are as follows:\n\nContent:\n- [MATH: Q] is a nonempty finite set of states. These are all the possible configurations the automaton can be in.\n- [MATH: \\Sigma] is a nonempty finite set of input symbols. This is the \"alphabet\" of symbols that the DFA can process as inputs.\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta : Q \\times \\Sigma \\to Q.] It takes a state and an input symbol and returns a state. This function determines how the DFA moves from one state to another based on a given input symbol.\n- [MATH: q_0 \\in Q] is a start state (or initial state). This is the state in which the automaton begins.\n- [MATH: F \\subseteq Q] is a set of final (or accepting) states.\n\nContent:\nWe can visualize a DFA as a directed graph, where\n\nContent:\n- vertices represent the states,\n- arcs, labeled with input symbols, represent transitions from one state to another,\n- the start state is labeled by the input arrow [MATH: \\to,] and\n- the final states are circled by a double line.\n\nContent:\nFor example, a deterministic finite automaton is given in the diagram below.\n\nGraphic:\n[IMG: /graphics/4be8735f80a2e8fbbb936bfc53f694b5]\n\nContent:\nIn this case, the automaton has the following components:\n\nContent:\n- The set of states [MATH: Q = \\{p,q\\}] (represented by the vertices).\n- The set of input symbols [MATH: \\Sigma = \\{0,1,2\\}] (represented by the arcs' labels).\n- The transition function [MATH: \\delta] with the following transitions defined by the arcs:\n[MATH: \u03b4(p, 0)|= p,|\u03b4(p, 1)|= q,|\u03b4(p, 2)|= p,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= q,|\u03b4(q, 2)|= p]\nFor instance, the arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1,] means that [MATH: \\delta(p,1)=q.]\n\n[IMG: /graphics/546fa0d4d35d84781c40c5a0067b9104]\n- The start state [MATH: p] (that is labeled by the input arrow [MATH: \\to]), as shown below.\n\n[IMG: /graphics/4c261d07f2ccb02e41a6b341e01c4b32]\n- The set of final states [MATH: F = \\{q\\}] (circled by the double line), as shown below.\n\n[IMG: /graphics/887645effee2202cba6e2ccb8a07f660]\n\n---\n\nItem 2 \u2014 Example: Identifying Components of a DFA\n\nExample Prompt:\n[IMG: /graphics/562972fb11054f334ec6f2aa869896f4]\n\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, determine the set of states, the set of input symbols, the start point, and the set of final states of the automaton. Also, determine [MATH: \\delta(q,1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nA deterministic finite automaton is a five-tuple of the form [MATH: A = (Q, \\Sigma, \\delta, q_0, F),] where\n\n- [MATH: Q] is a nonempty finite set of states,\n- [MATH: \\Sigma] is a nonempty finite set of input symbols,\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta: Q \\times \\Sigma \\to Q] that takes a state and an input symbol and returns a state,\n- [MATH: q_0 \\in Q] is a start state (or initial state), and\n- [MATH: F \\subseteq Q] is a set of final (or accepting) states.\n\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\}] (represented by the vertices),\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\}] (represented by the arcs' labels),\n- the start state [MATH: q] (that is labeled by the input arrow [MATH: \\to]), and\n- the set of final states [MATH: F=\\{q,r\\}] (these are circled by the double line).\n\nFinally, the diagram shows an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.] This means that\n[MATH: \\delta(q,1) = r.]\n\n---\n\nItem 3 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-257520]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, select the correct options in the statements below.\n[SELECT 1] is the set of states of the automaton.\n\n[SELECT 2] is the start state of the automaton.\n\n[SELECT 3] is the set of final states of the automaton.\n\n---\n\nItem 4 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-235810]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, select the correct options in the statements below.\n\n[MATH: {0, 1}] is the set of [SELECT 1].\n\n[SELECT 2] is the starting state of the automaton.\n\n[MATH: \u03b4(q, 1) =] [SELECT 3]\n\n---\n\nItem 5 \u2014 Tutorial: Transition Tables of Deterministic Finite Automata\n\nContent:\nIt's common to put the values of a transition function in a table. Each row corresponds to a different state [MATH: q,] each column corresponds to a different input symbol [MATH: a,] and their intersection is the value of the transition function [MATH: \\delta(q,a).]\n\nContent:\nAn example is given below.\nNote that we place [MATH: \\to] next to the start state and [MATH: \\ast] next to any final states.\n\nContent:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: q] | [MATH: q] |\n\nContent:\nLet's construct a diagram representing the automaton given by this transition table.\nFrom the table, we determine that the automaton has the following components:\n\nContent:\n- the set of states [MATH: Q=\\{p,q\\}] (given by the rows),\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\}] (given by the columns),\n- the start state [MATH: p] (labeled by [MATH: \\to]), and\n- the set of final states [MATH: F=\\{q\\}] (labeled by [MATH: \\ast]).\n\nContent:\nNow that we have the components, we can construct the diagram.\nFirst, let's draw the states of our automaton.\n\nGraphic:\n[IMG: /graphics/33f10abe5ff2d9c249de0f394010a2e3]\n\nContent:\nAccording to the transition table, [MATH: p] is the start state, and [MATH: q] is a final state. So, we labeled [MATH: p] with an input arrow and circled [MATH: q] with a double line.\n\nContent:\nFrom the transition table, we also get the following:\n\nContent:\n- Consider row [MATH: p] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: p,] indicating that [MATH: \\delta(p,0)=p.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(p,1)=q.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.]\n\nGraphic:\n[IMG: /graphics/403a3c4335095a1062ba7b3517f77a52]\n\nContent:\n- Consider row [MATH: q] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: q,] indicating that [MATH: \\delta(q,0)=q.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(q,1)=q.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 1.]\n\nGraphic:\n[IMG: /graphics/03b8ee7be51a688090da6a845502d6b8]\n\nContent:\nWe have been through every cell in the table, so we have added all the arcs. Therefore, our diagram is complete.\n\nContent:\nWatch out! We draw only one loop from [MATH: q] to [MATH: q,] labeled with both [MATH: 0,1] instead of two separate loops for each of the symbols [MATH: 0] and [MATH: 1.]\n\n---\n\nItem 6 \u2014 Example: Constructing a Transition Table Given a Diagram\n\nExample Prompt:\n[IMG: /graphics/a1a9e942aaf864f7de31783ff5c2b6d0]\n\nThe diagram above shows a deterministic finite automaton. Construct the transition table corresponding to the given diagram.\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the set of final states [MATH: F=\\{q\\}.]\n\nWith that in mind, let's determine the transition function.\n\nFirst, we draw an empty table with a different state written in each row and a different input symbol written in each column:\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | | |\n| [MATH: \\ast \\: q] | | |\n| [MATH: r] | | |\n\nNotice that we write [MATH: \\to] next to [MATH: p] since it's the start state, and we write [MATH: \\ast] next to [MATH: q] since it's a final state.\n\nNext, we fill in the remaining cells:\n\n- There is an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(p,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: p] and column [MATH: 0.]\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.] This means that [MATH: \\delta(p,1)=q.] So, we write [MATH: q] at the intersection of row [MATH: p] and column [MATH: 1.]\n- There is an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(q,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: q] and column [MATH: 0.]\n- There is an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.] This means that [MATH: \\delta(q,1)=r.] So, we write [MATH: r] at the intersection of row [MATH: q] and column [MATH: 1.]\n- There is an arrow from [MATH: r] to [MATH: p,] labeled [MATH: 0.] This means that [MATH: \\delta(r,0)=p.] So, we write [MATH: p] at the intersection of row [MATH: r] and column [MATH: 0.]\n- There is an arrow (loop) from [MATH: r] to [MATH: r,] labeled [MATH: 1.] This means that [MATH: \\delta(r,1)=r.] So, we write [MATH: r] at the intersection of row [MATH: r] and column [MATH: 1.]\n\nThe transition table corresponding to the given diagram is shown below.\n\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: p] | [MATH: r] |\n| [MATH: r] | [MATH: p] | [MATH: r] |\n\n---\n\nItem 7 \u2014 Question 3\n\nQuestion Graphic:\n[IMG: /graphics/q-235792]\n\nPrompt:\nThe diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.\n\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |\n\n---\n\nItem 8 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-257690]\n\nPrompt:\nThe diagram above shows a deterministic finite automaton. Select the correct options in the corresponding transition table below.\n\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |\n| [SELECT 7] | [SELECT 8] | [SELECT 9] |\n\n---\n\nItem 9 \u2014 Example: Drawing a Diagram Given a Transition Table\n\nExample Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: r] | [MATH: q] |\n| [MATH: \\ast \\: q] | [MATH: p] | [MATH: r] |\n| [MATH: r] | [MATH: q] | [MATH: p] |\n\nConstruct a diagram representing the deterministic finite automaton from the transition table above.\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q,r\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the set of final states [MATH: F=\\{q\\}.]\n\nFirst, let's draw the states of our automaton.\n\n[IMG: /graphics/c1bc2377476c3ae32029245099d540a6]\n\nAccording to the transition table, [MATH: p] is the start state, and [MATH: q] is a final state. So, we labeled [MATH: p] with an input arrow and circled [MATH: q] with a double line.\n\nFrom the transition table, we also get the following:\n\n- Consider row [MATH: p] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: r,] indicating that [MATH: \\delta(p,0)=r.] So, we draw an arrow from [MATH: p] to [MATH: r,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: q,] indicating that [MATH: \\delta(p,1)=q.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1.]\n\n[IMG: /graphics/b0c2fbf760eac9738dfe457ddd41f981]\n\n- Consider row [MATH: q] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: p,] indicating that [MATH: \\delta(q,0)=p.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: r,] indicating that [MATH: \\delta(q,1)=r.] So, we draw an arrow from [MATH: q] to [MATH: r,] labeled [MATH: 1.]\n\n[IMG: /graphics/c54e345bbdf4542ccc3482e6996c961a]\n\n- Consider row [MATH: r] of the table.\n\n- Its intersection with column [MATH: 0] is [MATH: q,] indicating that [MATH: \\delta(r,0)=q.] So, we draw an arrow from [MATH: r] to [MATH: q,] labeled [MATH: 0.]\n- Its intersection with column [MATH: 1] is [MATH: p,] indicating that [MATH: \\delta(r,1)=p.] So, we draw an arrow from [MATH: r] to [MATH: p,] labeled [MATH: 1.]\n\n[IMG: /graphics/5dcf1249a00eb43012d48fb2ef1bb3c2]\n\nWe have been through every cell in the table, so our diagram is complete.\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192; \u2217r] | [MATH: r] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n\nWhich of the following diagrams represents the deterministic finite automaton given by the transition table above?\n\nChoices:\na. [IMG: /graphics/q-257761-a-3]\nb. [IMG: /graphics/q-257761-a-5]\nc. [IMG: /graphics/q-257761-a-1]\nd. [IMG: /graphics/q-257761-a-2]\ne. [IMG: /graphics/q-257761-a-4]\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192 p] | [MATH: p] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n| [MATH: \u2217r] | [MATH: r] | [MATH: q] |\n\nWhich of the following diagrams represents the deterministic finite automaton given by the transition table above?\n\nChoices:\na. [IMG: /graphics/q-235815-a-4]\nb. [IMG: /graphics/q-235815-a-3]\nc. [IMG: /graphics/q-235815-a-2]\nd. [IMG: /graphics/q-235815-a-1]\ne. [IMG: /graphics/q-235815-a-5]"
+  }
+}

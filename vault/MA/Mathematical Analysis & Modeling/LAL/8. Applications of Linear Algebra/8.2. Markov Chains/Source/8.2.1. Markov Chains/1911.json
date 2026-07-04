@@ -1,0 +1,1402 @@
+{
+  "schema_version": 2,
+  "topic_id": "1911",
+  "topic_title": "Markov Chains",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/1911/Source/1911.html",
+  "source_url": "https://mathacademy.com/topics/1911",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20288",
+        "dom_id": "sectionLink-20288",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20288"
+      },
+      {
+        "index": 2,
+        "step_id": "34164",
+        "dom_id": "sectionLink-34164",
+        "name": "",
+        "title": "Identifying Stochastic Vectors and Stochastic Matrices",
+        "selector": "#sectionLink-34164"
+      },
+      {
+        "index": 3,
+        "step_id": "20289",
+        "dom_id": "sectionLink-20289",
+        "name": "",
+        "title": "Constructing a Stochastic Matrix Given Some Data",
+        "selector": "#sectionLink-20289"
+      },
+      {
+        "index": 4,
+        "step_id": "20290",
+        "dom_id": "sectionLink-20290",
+        "name": "",
+        "title": "Markov Chains",
+        "selector": "#sectionLink-20290"
+      },
+      {
+        "index": 5,
+        "step_id": "22210",
+        "dom_id": "sectionLink-22210",
+        "name": "",
+        "title": "Calculating a State Vector",
+        "selector": "#sectionLink-22210"
+      },
+      {
+        "index": 6,
+        "step_id": "20291",
+        "dom_id": "sectionLink-20291",
+        "name": "",
+        "title": "Constructing a Stochastic Matrix and Making a Prediction",
+        "selector": "#sectionLink-20291"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1120",
+        "name": "The Complement of an Event",
+        "href": "/topics/the-complement-of-an-event-1120"
+      },
+      {
+        "topic_id": "1195",
+        "name": "Multiplying a Matrix by a Column Vector",
+        "href": "/topics/multiplying-a-matrix-by-a-column-vector-1195"
+      },
+      {
+        "topic_id": "1226",
+        "name": "Recursive Sequences",
+        "href": "/topics/recursive-sequences-1226"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 14,
+    "step_count": 6,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20288",
+        "content_id": "3645",
+        "dom_id": "step-20288",
+        "selector": "#step-20288",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can use repeated matrix multiplication to determine the state of a system given its initial state and some information about how one state transitions to the next state.</p>",
+            "readable_text": "We can use repeated matrix multiplication to determine the state of a system given its initial state and some information about how one state transitions to the next state.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To explain this concretely, suppose we have a population where people live either in the city or the countryside. A study carried out by the local authority shows that, each year,</p>",
+            "readable_text": "To explain this concretely, suppose we have a population where people live either in the city or the countryside. A study carried out by the local authority shows that, each year,",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: 6\\%]</span> of the city population relocates to the countryside, </p></li><li><p><span class=\"math\">[MATH: 3\\%]</span> of the countryside population relocates to the city, and</p></li><li><p>everyone else remains where they are.</p></li></ul>",
+            "readable_text": "- [MATH: 6\\%] of the city population relocates to the countryside,\n- [MATH: 3\\%] of the countryside population relocates to the city, and\n- everyone else remains where they are.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This information can be represented using a diagram, like the one below.</p>",
+            "readable_text": "This information can be represented using a diagram, like the one below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/607fa544e0da73963380a042ae01d18e\"></p>",
+            "readable_text": "[IMG: /graphics/607fa544e0da73963380a042ae01d18e]",
+            "images": [
+              {
+                "src": "/graphics/607fa544e0da73963380a042ae01d18e",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can also present this information as a table:</p>",
+            "readable_text": "We can also present this information as a table:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>City</b></p></td><td><p><b>Countryside</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>City</b></p></td><td><p><span class=\"math\">[MATH: 0.94]</span></p></td><td><p><span class=\"math\">[MATH: 0.03]</span></p></td></tr><tr><td><p><b>Countryside</b></p></td><td><p><span class=\"math\">[MATH: 0.06]</span></p></td><td><p><span class=\"math\">[MATH: 0.97]</span></p></td></tr></table>",
+            "readable_text": "| | | From: |\n| | | City | Countryside |\n| To: | City | [MATH: 0.94] | [MATH: 0.03] |\n| Countryside | [MATH: 0.06] | [MATH: 0.97] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We want to use this information to determine how the population will be distributed <span class=\"math\">[MATH: n]</span> years after the study was carried out. </p>",
+            "readable_text": "We want to use this information to determine how the population will be distributed [MATH: n] years after the study was carried out.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, let&#x27;s turn this table into a matrix <span class=\"math\">[MATH: P\\mathbin{:}]</span></p>",
+            "readable_text": "First, let's turn this table into a matrix [MATH: P\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.94|0.03; 0.06|0.97]]</span> </p>",
+            "readable_text": "[MATH: [0.94|0.03; 0.06|0.97]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that this matrix has the following properties:</p>",
+            "readable_text": "Notice that this matrix has the following properties:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>it is a square matrix</p></li><li><p>the sum of the entries in each column equals <span class=\"math\">[MATH: 1]</span></p></li><li><p>all entries in the matrix are non-negative</p></li></ul>",
+            "readable_text": "- it is a square matrix\n- the sum of the entries in each column equals [MATH: 1]\n- all entries in the matrix are non-negative",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A square matrix with these properties is called a <strong>stochastic matrix</strong>.</p>",
+            "readable_text": "A square matrix with these properties is called a stochastic matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now suppose that, at the time of the study, <span class=\"math\">[MATH: 70\\%]</span> of the population lived in the city and <span class=\"math\">[MATH: 30\\%]</span> in the countryside. We can represent this <strong>initial state</strong> using a so-called <strong>stochastic vector</strong> <span class=\"math\">[MATH: \\mathbf x_0,]</span> given by</p>",
+            "readable_text": "Now suppose that, at the time of the study, [MATH: 70\\%] of the population lived in the city and [MATH: 30\\%] in the countryside. We can represent this initial state using a so-called stochastic vector [MATH: \\mathbf x_0,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.70; 0.30]]</span></p>",
+            "readable_text": "[MATH: [0.70; 0.30]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Stochastic vectors contain non-negative entries only, and the sum of the entries equals <span class=\"math\">[MATH: 1.]</span> Note that each column of <span class=\"math\">[MATH: P]</span> is a stochastic vector.</p>",
+            "readable_text": "Stochastic vectors contain non-negative entries only, and the sum of the entries equals [MATH: 1.] Note that each column of [MATH: P] is a stochastic vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that we have our stochastic matrix and initial state vector, we can use matrix multiplication to calculate the population distribution sometime after the initial study took place:</p>",
+            "readable_text": "Now that we have our stochastic matrix and initial state vector, we can use matrix multiplication to calculate the population distribution sometime after the initial study took place:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>To calculate the population distribution after one year, we calculate the product <span class=\"math\">[MATH: P\\mathbf x_0\\mathbin{:}]</span>\n<span class=\"math\">[MATH: [0.94|0.03; 0.06|0.97]]</span>\nThe resulting vector \n<span class=\"math\">[MATH: [0.667; 0.333]]</span>\ntells us that one year after the study, <span class=\"math\">[MATH: 66.7]</span>% of the population will live in the city, and <span class=\"math\">[MATH: 33.3]</span>% will live in the countryside. </p></li><li><p>To model the distribution after <span class=\"math\">[MATH: 2]</span> years, we compute <span class=\"math\">[MATH: P\\mathbf x_1\\mathbin{:}]</span>\n<span class=\"math\">[MATH: [0.94|0.03; 0.06|0.97]]</span>\nThe resulting vector \n<span class=\"math\">[MATH: [0.637; 0.363]]</span>\ntells us that two years after the study, <span class=\"math\">[MATH: 63.7]</span>% of the population will live in the city, and <span class=\"math\">[MATH: 36.3]</span>% will live in the countryside. </p></li></ul>",
+            "readable_text": "- To calculate the population distribution after one year, we calculate the product [MATH: P\\mathbf x_0\\mathbin{:}]\n[MATH: [0.94|0.03; 0.06|0.97]]\nThe resulting vector\n[MATH: [0.667; 0.333]]\ntells us that one year after the study, [MATH: 66.7]% of the population will live in the city, and [MATH: 33.3]% will live in the countryside.\n- To model the distribution after [MATH: 2] years, we compute [MATH: P\\mathbf x_1\\mathbin{:}]\n[MATH: [0.94|0.03; 0.06|0.97]]\nThe resulting vector\n[MATH: [0.637; 0.363]]\ntells us that two years after the study, [MATH: 63.7]% of the population will live in the city, and [MATH: 36.3]% will live in the countryside.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/607fa544e0da73963380a042ae01d18e",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe can use repeated matrix multiplication to determine the state of a system given its initial state and some information about how one state transitions to the next state.\n\nContent:\nTo explain this concretely, suppose we have a population where people live either in the city or the countryside. A study carried out by the local authority shows that, each year,\n\nContent:\n- [MATH: 6\\%] of the city population relocates to the countryside,\n- [MATH: 3\\%] of the countryside population relocates to the city, and\n- everyone else remains where they are.\n\nContent:\nThis information can be represented using a diagram, like the one below.\n\nGraphic:\n[IMG: /graphics/607fa544e0da73963380a042ae01d18e]\n\nContent:\nWe can also present this information as a table:\n\nContent:\n| | | From: |\n| | | City | Countryside |\n| To: | City | [MATH: 0.94] | [MATH: 0.03] |\n| Countryside | [MATH: 0.06] | [MATH: 0.97] |\n\nContent:\nWe want to use this information to determine how the population will be distributed [MATH: n] years after the study was carried out.\n\nContent:\nFirst, let's turn this table into a matrix [MATH: P\\mathbin{:}]\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nNotice that this matrix has the following properties:\n\nContent:\n- it is a square matrix\n- the sum of the entries in each column equals [MATH: 1]\n- all entries in the matrix are non-negative\n\nContent:\nA square matrix with these properties is called a stochastic matrix.\n\nContent:\nNow suppose that, at the time of the study, [MATH: 70\\%] of the population lived in the city and [MATH: 30\\%] in the countryside. We can represent this initial state using a so-called stochastic vector [MATH: \\mathbf x_0,] given by\n\nContent:\n[MATH: [0.70; 0.30]]\n\nContent:\nStochastic vectors contain non-negative entries only, and the sum of the entries equals [MATH: 1.] Note that each column of [MATH: P] is a stochastic vector.\n\nContent:\nNow that we have our stochastic matrix and initial state vector, we can use matrix multiplication to calculate the population distribution sometime after the initial study took place:\n\nContent:\n- To calculate the population distribution after one year, we calculate the product [MATH: P\\mathbf x_0\\mathbin{:}]\n[MATH: [0.94|0.03; 0.06|0.97]]\nThe resulting vector\n[MATH: [0.667; 0.333]]\ntells us that one year after the study, [MATH: 66.7]% of the population will live in the city, and [MATH: 33.3]% will live in the countryside.\n- To model the distribution after [MATH: 2] years, we compute [MATH: P\\mathbf x_1\\mathbin{:}]\n[MATH: [0.94|0.03; 0.06|0.97]]\nThe resulting vector\n[MATH: [0.637; 0.363]]\ntells us that two years after the study, [MATH: 63.7]% of the population will live in the city, and [MATH: 36.3]% will live in the countryside."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "34164",
+        "content_id": "9162",
+        "dom_id": "step-34164",
+        "selector": "#step-34164",
+        "step_anchor": "step-2",
+        "title": "Identifying Stochastic Vectors and Stochastic Matrices",
+        "key_prerequisites": [
+          {
+            "topic_id": "861",
+            "name": "Introduction to Matrices",
+            "href": "/topics/861",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Which of the following are stochastic matrices?</p><p><span class=\"math\">[MATH: [\u2212 0.2|0; 1.2|1]]</span></p>",
+            "readable_text": "Which of the following are stochastic matrices?\n\n[MATH: [\u2212 0.2|0; 1.2|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that a stochastic vector is a vector with nonnegative entries that add up to <span class=\"math\">[MATH: 1.]</span> A matrix is stochastic if all its columns are stochastic vectors.</p><p>With that in mind, let&#x27;s examine our matrices in turn.</p><ul><li><p>Matrix <span class=\"math\">[MATH: \\bf{U}]</span> is <em>not</em> a stochastic matrix since its first column is not a stochastic vector (it contains negative entries): \n<span class=\"math\">[MATH: [\u2212 0.2|0; 1.2|1]]</span></p></li><li><p>Matrix <span class=\"math\">[MATH: \\bf{V}]</span> is a stochastic matrix. Indeed, each column is a stochastic vector (the corresponding entries are nonnegative and add up to one): \n<span class=\"math\">[MATH: [0.35|0.95; 0.65|0.05]0.35 + 0.65 = 1; 0.95 + 0.05 = 1]</span></p></li><li><p>Matrix <span class=\"math\">[MATH: \\bf{W}]</span> is <em>not</em> a stochastic matrix since its third column is not a stochastic vector (the corresponding entries don&#x27;t add up to one): \n<span class=\"math\">[MATH: [0|1|0; 0.5|0|0.4; 0.5|0|0.7]]</span></p></li></ul><p>Therefore, the correct answer is &quot;<span class=\"math\">[MATH: \\bf{V}]</span> only.&quot;</p>",
+            "readable_text": "Recall that a stochastic vector is a vector with nonnegative entries that add up to [MATH: 1.] A matrix is stochastic if all its columns are stochastic vectors.\n\nWith that in mind, let's examine our matrices in turn.\n\n- Matrix [MATH: \\bf{U}] is not a stochastic matrix since its first column is not a stochastic vector (it contains negative entries):\n[MATH: [\u2212 0.2|0; 1.2|1]]\n- Matrix [MATH: \\bf{V}] is a stochastic matrix. Indeed, each column is a stochastic vector (the corresponding entries are nonnegative and add up to one):\n[MATH: [0.35|0.95; 0.65|0.05]0.35 + 0.65 = 1; 0.95 + 0.05 = 1]\n- Matrix [MATH: \\bf{W}] is not a stochastic matrix since its third column is not a stochastic vector (the corresponding entries don't add up to one):\n[MATH: [0|1|0; 0.5|0|0.4; 0.5|0|0.7]]\n\nTherefore, the correct answer is \"[MATH: \\bf{V}] only.\"",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nWhich of the following are stochastic matrices?\n\n[MATH: [\u2212 0.2|0; 1.2|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a stochastic vector is a vector with nonnegative entries that add up to [MATH: 1.] A matrix is stochastic if all its columns are stochastic vectors.\n\nWith that in mind, let's examine our matrices in turn.\n\n- Matrix [MATH: \\bf{U}] is not a stochastic matrix since its first column is not a stochastic vector (it contains negative entries):\n[MATH: [\u2212 0.2|0; 1.2|1]]\n- Matrix [MATH: \\bf{V}] is a stochastic matrix. Indeed, each column is a stochastic vector (the corresponding entries are nonnegative and add up to one):\n[MATH: [0.35|0.95; 0.65|0.05]0.35 + 0.65 = 1; 0.95 + 0.05 = 1]\n- Matrix [MATH: \\bf{W}] is not a stochastic matrix since its third column is not a stochastic vector (the corresponding entries don't add up to one):\n[MATH: [0|1|0; 0.5|0|0.4; 0.5|0|0.7]]\n\nTherefore, the correct answer is \"[MATH: \\bf{V}] only.\""
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "109881",
+        "dom_id": "question-109881",
+        "selector": "#question-109881",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following are stochastic vectors?</p><p><span class=\"math\">[MATH: u = [0.5; 0; 0.5], v = [\u2212 0.45; 1.55], w = [0; 0]]</span></p>",
+          "readable_text": "Which of the following are stochastic vectors?\n\n[MATH: u = [0.5; 0; 0.5], v = [\u2212 0.45; 1.55], w = [0; 0]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-109881-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: u]</span> and <span class=\"math\">[MATH: w]</span> only</p>",
+            "readable_text": "[MATH: u] and [MATH: w] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-109881-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: u]</span>, <span class=\"math\">[MATH: v]</span>, and <span class=\"math\">[MATH: w]</span></p>",
+            "readable_text": "[MATH: u], [MATH: v], and [MATH: w]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-109881-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: u]</span> and <span class=\"math\">[MATH: v]</span> only</p>",
+            "readable_text": "[MATH: u] and [MATH: v] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-109881-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v]</span> only</p>",
+            "readable_text": "[MATH: v] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-109881-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: u]</span> only</p>",
+            "readable_text": "[MATH: u] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following are stochastic vectors?\n\n[MATH: u = [0.5; 0; 0.5], v = [\u2212 0.45; 1.55], w = [0; 0]]\n\nChoices:\na. [MATH: u] and [MATH: w] only\nb. [MATH: u], [MATH: v], and [MATH: w]\nc. [MATH: u] and [MATH: v] only\nd. [MATH: v] only\ne. [MATH: u] only"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "109882",
+        "dom_id": "question-109882",
+        "selector": "#question-109882",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following are stochastic matrices?</p><p><span class=\"math\">[MATH: U = [0.2|0; 0.5|1], V = [0.45|0.25; 0.55|0.75], W = [0|1|0; 0.5|0.2|0.3; 0.5|0|0.7]]</span></p>",
+          "readable_text": "Which of the following are stochastic matrices?\n\n[MATH: U = [0.2|0; 0.5|1], V = [0.45|0.25; 0.55|0.75], W = [0|1|0; 0.5|0.2|0.3; 0.5|0|0.7]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-109882-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: V]</span> and <span class=\"math\">[MATH: W]</span> only</p>",
+            "readable_text": "[MATH: V] and [MATH: W] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-109882-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: W]</span> only</p>",
+            "readable_text": "[MATH: W] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-109882-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: V]</span> only</p>",
+            "readable_text": "[MATH: V] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-109882-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: U]</span>, <span class=\"math\">[MATH: V]</span>, and <span class=\"math\">[MATH: W]</span></p>",
+            "readable_text": "[MATH: U], [MATH: V], and [MATH: W]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-109882-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: U]</span> and <span class=\"math\">[MATH: V]</span> only</p>",
+            "readable_text": "[MATH: U] and [MATH: V] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following are stochastic matrices?\n\n[MATH: U = [0.2|0; 0.5|1], V = [0.45|0.25; 0.55|0.75], W = [0|1|0; 0.5|0.2|0.3; 0.5|0|0.7]]\n\nChoices:\na. [MATH: V] and [MATH: W] only\nb. [MATH: W] only\nc. [MATH: V] only\nd. [MATH: U], [MATH: V], and [MATH: W]\ne. [MATH: U] and [MATH: V] only"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20289",
+        "content_id": "5598",
+        "dom_id": "step-20289",
+        "selector": "#step-20289",
+        "step_anchor": "step-5",
+        "title": "Constructing a Stochastic Matrix Given Some Data",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>There are two groups of people in a particular city: those who use their own vehicles and those who use public transport. A study has shown that, each year</p><ul><li><p><span class=\"math\">[MATH: 35\\%]</span> of people who used their own vehicles swap to public transport, and</p></li><li><p><span class=\"math\">[MATH: 25\\%]</span> of people who used public transport swap to their own vehicles.</p></li></ul><p>Give the stochastic matrix that describes how people change their means of transportation each year.</p>",
+            "readable_text": "There are two groups of people in a particular city: those who use their own vehicles and those who use public transport. A study has shown that, each year\n\n- [MATH: 35\\%] of people who used their own vehicles swap to public transport, and\n- [MATH: 25\\%] of people who used public transport swap to their own vehicles.\n\nGive the stochastic matrix that describes how people change their means of transportation each year.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>We are given the following situation for each year: </p><ul><li><p><span class=\"math\">[MATH: 35\\%]</span> of people who used their own vehicles swap to public transport. This implies that <span class=\"math\">[MATH: 65\\%]</span> of them remain using their own vehicles.</p></li><li><p><span class=\"math\">[MATH: 25\\%]</span> of people who used public transport swap to their own vehicles. This implies that <span class=\"math\">[MATH: 75\\%]</span> of them remain using public transport. </p></li></ul><p>Writing this information in tabular form, we obtain the following:</p><table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Vehicles</b></p></td><td><p><b>Public Transport </b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Vehicles</b></p></td><td><p><span class=\"math\">[MATH: 0.65]</span></p></td><td><p><span class=\"math\">[MATH: 0.25]</span></p></td></tr><tr><td><p><b>Public Transport</b></p></td><td><p><span class=\"math\">[MATH: 0.35]</span></p></td><td><p><span class=\"math\">[MATH: 0.75]</span></p></td></tr></table><p>Note that we can write a corresponding stochastic matrix as follows:\n<span class=\"math\">[MATH: [0.65|0.25; 0.35|0.75]]</span></p>",
+            "readable_text": "We are given the following situation for each year:\n\n- [MATH: 35\\%] of people who used their own vehicles swap to public transport. This implies that [MATH: 65\\%] of them remain using their own vehicles.\n- [MATH: 25\\%] of people who used public transport swap to their own vehicles. This implies that [MATH: 75\\%] of them remain using public transport.\n\nWriting this information in tabular form, we obtain the following:\n\n| | | From: |\n| | | Vehicles | Public Transport |\n| To: | Vehicles | [MATH: 0.65] | [MATH: 0.25] |\n| Public Transport | [MATH: 0.35] | [MATH: 0.75] |\n\nNote that we can write a corresponding stochastic matrix as follows:\n[MATH: [0.65|0.25; 0.35|0.75]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nThere are two groups of people in a particular city: those who use their own vehicles and those who use public transport. A study has shown that, each year\n\n- [MATH: 35\\%] of people who used their own vehicles swap to public transport, and\n- [MATH: 25\\%] of people who used public transport swap to their own vehicles.\n\nGive the stochastic matrix that describes how people change their means of transportation each year.\n\nContent:\nEXPLANATION\n\nExplanation:\nWe are given the following situation for each year:\n\n- [MATH: 35\\%] of people who used their own vehicles swap to public transport. This implies that [MATH: 65\\%] of them remain using their own vehicles.\n- [MATH: 25\\%] of people who used public transport swap to their own vehicles. This implies that [MATH: 75\\%] of them remain using public transport.\n\nWriting this information in tabular form, we obtain the following:\n\n| | | From: |\n| | | Vehicles | Public Transport |\n| To: | Vehicles | [MATH: 0.65] | [MATH: 0.25] |\n| Public Transport | [MATH: 0.35] | [MATH: 0.75] |\n\nNote that we can write a corresponding stochastic matrix as follows:\n[MATH: [0.65|0.25; 0.35|0.75]]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "35787",
+        "dom_id": "question-35787",
+        "selector": "#question-35787",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>In a particular country, there are two groups of people: those who use trains to travel and those who use cars. A study has shown that, each year </p><ul><li><p><span class=\"math\">[MATH: 42%]</span> of people who used trains swap to cars, and </p></li><li><p><span class=\"math\">[MATH: 33%]</span> of people who used cars swap to trains. </p></li></ul><p>Which of the following tables describes how these people change their preferences each year?</p>",
+          "readable_text": "In a particular country, there are two groups of people: those who use trains to travel and those who use cars. A study has shown that, each year\n\n- [MATH: 42%] of people who used trains swap to cars, and\n- [MATH: 33%] of people who used cars swap to trains.\n\nWhich of the following tables describes how these people change their preferences each year?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-35787-a",
+            "content_type": "nested-table",
+            "normalized_html": "<table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Trains</b></p></td><td><p><b>Cars</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Trains</b></p></td><td><p><span class=\"math\">[MATH: 0.58]</span></p></td><td><p><span class=\"math\">[MATH: 0.33]</span></p></td></tr><tr><td><p><b>Cars</b></p></td><td><p><span class=\"math\">[MATH: 0.42]</span></p></td><td><p><span class=\"math\">[MATH: 0.67]</span></p></td></tr></table>",
+            "readable_text": "| | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.58] | [MATH: 0.33] |\n| Cars | [MATH: 0.42] | [MATH: 0.67] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-35787-b",
+            "content_type": "nested-table",
+            "normalized_html": "<table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Trains</b></p></td><td><p><b>Cars</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Trains</b></p></td><td><p><span class=\"math\">[MATH: 0.42]</span></p></td><td><p><span class=\"math\">[MATH: 0.67]</span></p></td></tr><tr><td><p><b>Cars</b></p></td><td><p><span class=\"math\">[MATH: 0.58]</span></p></td><td><p><span class=\"math\">[MATH: 0.33]</span></p></td></tr></table>",
+            "readable_text": "| | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.42] | [MATH: 0.67] |\n| Cars | [MATH: 0.58] | [MATH: 0.33] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-35787-c",
+            "content_type": "nested-table",
+            "normalized_html": "<table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Trains</b></p></td><td><p><b>Cars</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Trains</b></p></td><td><p><span class=\"math\">[MATH: 0.42]</span></p></td><td><p><span class=\"math\">[MATH: 0.33]</span></p></td></tr><tr><td><p><b>Cars</b></p></td><td><p><span class=\"math\">[MATH: 0.58]</span></p></td><td><p><span class=\"math\">[MATH: 0.67]</span></p></td></tr></table>",
+            "readable_text": "| | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.42] | [MATH: 0.33] |\n| Cars | [MATH: 0.58] | [MATH: 0.67] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-35787-d",
+            "content_type": "nested-table",
+            "normalized_html": "<table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Trains</b></p></td><td><p><b>Cars</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Trains</b></p></td><td><p><span class=\"math\">[MATH: 0.58]</span></p></td><td><p><span class=\"math\">[MATH: 0.67]</span></p></td></tr><tr><td><p><b>Cars</b></p></td><td><p><span class=\"math\">[MATH: 0.42]</span></p></td><td><p><span class=\"math\">[MATH: 0.33]</span></p></td></tr></table>",
+            "readable_text": "| | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.58] | [MATH: 0.67] |\n| Cars | [MATH: 0.42] | [MATH: 0.33] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-35787-e",
+            "content_type": "nested-table",
+            "normalized_html": "<table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Trains</b></p></td><td><p><b>Cars</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Trains</b></p></td><td><p><span class=\"math\">[MATH: 0.67]</span></p></td><td><p><span class=\"math\">[MATH: 0.58]</span></p></td></tr><tr><td><p><b>Cars</b></p></td><td><p><span class=\"math\">[MATH: 0.33]</span></p></td><td><p><span class=\"math\">[MATH: 0.42]</span></p></td></tr></table>",
+            "readable_text": "| | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.67] | [MATH: 0.58] |\n| Cars | [MATH: 0.33] | [MATH: 0.42] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nIn a particular country, there are two groups of people: those who use trains to travel and those who use cars. A study has shown that, each year\n\n- [MATH: 42%] of people who used trains swap to cars, and\n- [MATH: 33%] of people who used cars swap to trains.\n\nWhich of the following tables describes how these people change their preferences each year?\n\nChoices:\na. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.58] | [MATH: 0.33] |\n| Cars | [MATH: 0.42] | [MATH: 0.67] |\nb. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.42] | [MATH: 0.67] |\n| Cars | [MATH: 0.58] | [MATH: 0.33] |\nc. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.42] | [MATH: 0.33] |\n| Cars | [MATH: 0.58] | [MATH: 0.67] |\nd. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.58] | [MATH: 0.67] |\n| Cars | [MATH: 0.42] | [MATH: 0.33] |\ne. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.67] | [MATH: 0.58] |\n| Cars | [MATH: 0.33] | [MATH: 0.42] |"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "35791",
+        "dom_id": "question-35791",
+        "selector": "#question-35791",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>There are three groups of fans in a certain town: those who prefer basketball, those who prefer baseball, and those who prefer football. A study has shown that, each year</p><ul><li><p>from the people that prefer basketball, <span class=\"math\">[MATH: 32%]</span> change to baseball and <span class=\"math\">[MATH: 28%]</span> change to football, </p></li><li><p>from the people that prefer baseball, <span class=\"math\">[MATH: 45%]</span> change to football and <span class=\"math\">[MATH: 15%]</span> change to basketball,</p></li><li><p>from the people that prefer football, <span class=\"math\">[MATH: 25%]</span> change to basketball and <span class=\"math\">[MATH: 65%]</span> change to baseball.</p></li></ul><p>The stochastic matrix that describes this situation is given below. What is the value of <span class=\"math\">[MATH: a + b + c?]</span></p><p><span class=\"math\">[MATH: P = [0.4|0.15|a; 0.32|b|0.65; c|0.45|0.1]]</span></p>",
+          "readable_text": "There are three groups of fans in a certain town: those who prefer basketball, those who prefer baseball, and those who prefer football. A study has shown that, each year\n\n- from the people that prefer basketball, [MATH: 32%] change to baseball and [MATH: 28%] change to football,\n- from the people that prefer baseball, [MATH: 45%] change to football and [MATH: 15%] change to basketball,\n- from the people that prefer football, [MATH: 25%] change to basketball and [MATH: 65%] change to baseball.\n\nThe stochastic matrix that describes this situation is given below. What is the value of [MATH: a + b + c?]\n\n[MATH: P = [0.4|0.15|a; 0.32|b|0.65; c|0.45|0.1]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-35791-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1.07]</span></p>",
+            "readable_text": "[MATH: 1.07]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-35791-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.93]</span></p>",
+            "readable_text": "[MATH: 0.93]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-35791-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.99]</span></p>",
+            "readable_text": "[MATH: 0.99]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-35791-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.87]</span></p>",
+            "readable_text": "[MATH: 0.87]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-35791-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nThere are three groups of fans in a certain town: those who prefer basketball, those who prefer baseball, and those who prefer football. A study has shown that, each year\n\n- from the people that prefer basketball, [MATH: 32%] change to baseball and [MATH: 28%] change to football,\n- from the people that prefer baseball, [MATH: 45%] change to football and [MATH: 15%] change to basketball,\n- from the people that prefer football, [MATH: 25%] change to basketball and [MATH: 65%] change to baseball.\n\nThe stochastic matrix that describes this situation is given below. What is the value of [MATH: a + b + c?]\n\n[MATH: P = [0.4|0.15|a; 0.32|b|0.65; c|0.45|0.1]]\n\nChoices:\na. [MATH: 1.07]\nb. [MATH: 0.93]\nc. [MATH: 0.99]\nd. [MATH: 0.87]\ne. [MATH: 1]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20290",
+        "content_id": "3646",
+        "dom_id": "step-20290",
+        "selector": "#step-20290",
+        "step_anchor": "step-8",
+        "title": "Markov Chains",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s reconsider the population we looked at earlier, where the stochastic vector that represents the initial distribution of people between the city and the countryside is</p>",
+            "readable_text": "Let's reconsider the population we looked at earlier, where the stochastic vector that represents the initial distribution of people between the city and the countryside is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.70; 0.30]]</span>\nand the yearly change in this distribution is represented by the stochastic matrix </p>",
+            "readable_text": "[MATH: [0.70; 0.30]]\nand the yearly change in this distribution is represented by the stochastic matrix",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.94|0.03; 0.06|0.97]]</span></p>",
+            "readable_text": "[MATH: [0.94|0.03; 0.06|0.97]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Earlier, we found that the population distribution after <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: 2]</span> years is given by the vectors <span class=\"math\">[MATH: \\mathbf x_1]</span> and <span class=\"math\">[MATH: \\mathbf x_2,]</span> \n respectively, where</p>",
+            "readable_text": "Earlier, we found that the population distribution after [MATH: 1] and [MATH: 2] years is given by the vectors [MATH: \\mathbf x_1] and [MATH: \\mathbf x_2,]\nrespectively, where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.94|0.03; 0.06|0.97]]</span></p>",
+            "readable_text": "[MATH: [0.94|0.03; 0.06|0.97]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>and</p>",
+            "readable_text": "and",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.94|0.03; 0.06|0.97]]</span></p>",
+            "readable_text": "[MATH: [0.94|0.03; 0.06|0.97]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The vectors <span class=\"math\">[MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots]</span> are called <strong>state vectors</strong>, and <span class=\"math\">[MATH: \\mathbf x_0]</span> is the <strong>initial state</strong>. </p>",
+            "readable_text": "The vectors [MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots] are called state vectors, and [MATH: \\mathbf x_0] is the initial state.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the state vector corresponding to the <span class=\"math\">[MATH: (k+1)]</span>th year, we left-multiply the state vector corresponding to the <span class=\"math\">[MATH: k]</span>th year by <span class=\"math\">[MATH: P.]</span> This gives rise to the following sequence:</p>",
+            "readable_text": "To find the state vector corresponding to the [MATH: (k+1)]th year, we left-multiply the state vector corresponding to the [MATH: k]th year by [MATH: P.] This gives rise to the following sequence:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{1}|= Px_{0},; x_{2}|= Px_{1},; x_{3}|= Px_{2},; \u22ee|\u22ee; x_{k + 1}|= Px_{k}; \u22ee|\u22ee]</span></p>",
+            "readable_text": "[MATH: x_{1}|= Px_{0},; x_{2}|= Px_{1},; x_{3}|= Px_{2},; \u22ee|\u22ee; x_{k + 1}|= Px_{k}; \u22ee|\u22ee]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A sequence of stochastic vectors <span class=\"math\">[MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots]</span> related to a stochastic matrix <span class=\"math\">[MATH: P]</span> in this way is called a <strong>Markov chain</strong>. </p>",
+            "readable_text": "A sequence of stochastic vectors [MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots] related to a stochastic matrix [MATH: P] in this way is called a Markov chain.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's reconsider the population we looked at earlier, where the stochastic vector that represents the initial distribution of people between the city and the countryside is\n\nContent:\n[MATH: [0.70; 0.30]]\nand the yearly change in this distribution is represented by the stochastic matrix\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nEarlier, we found that the population distribution after [MATH: 1] and [MATH: 2] years is given by the vectors [MATH: \\mathbf x_1] and [MATH: \\mathbf x_2,]\nrespectively, where\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nand\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nThe vectors [MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots] are called state vectors, and [MATH: \\mathbf x_0] is the initial state.\n\nContent:\nTo find the state vector corresponding to the [MATH: (k+1)]th year, we left-multiply the state vector corresponding to the [MATH: k]th year by [MATH: P.] This gives rise to the following sequence:\n\nContent:\n[MATH: x_{1}|= Px_{0},; x_{2}|= Px_{1},; x_{3}|= Px_{2},; \u22ee|\u22ee; x_{k + 1}|= Px_{k}; \u22ee|\u22ee]\n\nContent:\nA sequence of stochastic vectors [MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots] related to a stochastic matrix [MATH: P] in this way is called a Markov chain."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "22210",
+        "content_id": "5971",
+        "dom_id": "step-22210",
+        "selector": "#step-22210",
+        "step_anchor": "step-9",
+        "title": "Calculating a State Vector",
+        "key_prerequisites": [
+          {
+            "topic_id": "1195",
+            "name": "Multiplying a Matrix by a Column Vector",
+            "href": "/topics/1195",
+            "type": ""
+          },
+          {
+            "topic_id": "1226",
+            "name": "Recursive Sequences",
+            "href": "/topics/1226",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.5|0.1; 0.5|0.9]]</span> </p><p>Consider a Markov chain with the stochastic matrix <span class=\"math\">[MATH: P]</span> and the initial state vector <span class=\"math\">[MATH: \\mathbf{x}_0]</span> given above. Calculate the state vector <span class=\"math\">[MATH: \\mathbf{x}_2.]</span></p>",
+            "readable_text": "[MATH: [0.5|0.1; 0.5|0.9]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: \\mathbf{x}_0] given above. Calculate the state vector [MATH: \\mathbf{x}_2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To find the state vector <span class=\"math\">[MATH: \\mathbf{x}_2,]</span> we apply two steps of the Markov chain:\n<span class=\"math\">[MATH: \\mathbf{x_1}=P\\mathbf{x}_0, \\qquad \\mathbf{x}_2=P\\mathbf{x}_1]</span></p><p>After the first step, we have</p><p><span class=\"math\">[MATH: x_{1}|= Px_{0}; = [0.5|0.1; 0.5|0.9][0.2; 0.8]; = [0.18; 0.82].]</span></p><p>Finally, after the second step, we obtain </p><p><span class=\"math\">[MATH: x_{2}|= Px_{1}; = [0.5|0.1; 0.5|0.9][0.18; 0.82]; = [0.172; 0.828].]</span></p>",
+            "readable_text": "To find the state vector [MATH: \\mathbf{x}_2,] we apply two steps of the Markov chain:\n[MATH: \\mathbf{x_1}=P\\mathbf{x}_0, \\qquad \\mathbf{x}_2=P\\mathbf{x}_1]\n\nAfter the first step, we have\n\n[MATH: x_{1}|= Px_{0}; = [0.5|0.1; 0.5|0.9][0.2; 0.8]; = [0.18; 0.82].]\n\nFinally, after the second step, we obtain\n\n[MATH: x_{2}|= Px_{1}; = [0.5|0.1; 0.5|0.9][0.18; 0.82]; = [0.172; 0.828].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [0.5|0.1; 0.5|0.9]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: \\mathbf{x}_0] given above. Calculate the state vector [MATH: \\mathbf{x}_2.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo find the state vector [MATH: \\mathbf{x}_2,] we apply two steps of the Markov chain:\n[MATH: \\mathbf{x_1}=P\\mathbf{x}_0, \\qquad \\mathbf{x}_2=P\\mathbf{x}_1]\n\nAfter the first step, we have\n\n[MATH: x_{1}|= Px_{0}; = [0.5|0.1; 0.5|0.9][0.2; 0.8]; = [0.18; 0.82].]\n\nFinally, after the second step, we obtain\n\n[MATH: x_{2}|= Px_{1}; = [0.5|0.1; 0.5|0.9][0.18; 0.82]; = [0.172; 0.828].]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "35842",
+        "dom_id": "question-35842",
+        "selector": "#question-35842",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: P = [0.4|0.2|0.2; 0.3|0.4|0.5; 0.3|0.4|0.3], x_{0} = [0.2; 0.6; 0.2]]</span></p><p>Consider a Markov chain with the stochastic matrix <span class=\"math\">[MATH: P]</span> and the initial state vector <span class=\"math\">[MATH: x_{0}]</span> given above. Calculate the state vector <span class=\"math\">[MATH: x_{1}.]</span></p>",
+          "readable_text": "[MATH: P = [0.4|0.2|0.2; 0.3|0.4|0.5; 0.3|0.4|0.3], x_{0} = [0.2; 0.6; 0.2]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: x_{0}] given above. Calculate the state vector [MATH: x_{1}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-35842-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.24; 0.4; 0.36]]</span></p>",
+            "readable_text": "[MATH: [0.24; 0.4; 0.36]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-35842-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.12; 0.52; 0.36]]</span></p>",
+            "readable_text": "[MATH: [0.12; 0.52; 0.36]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-35842-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.28; 0.38; 0.34]]</span></p>",
+            "readable_text": "[MATH: [0.28; 0.38; 0.34]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-35842-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.2; 0.42; 0.56]]</span></p>",
+            "readable_text": "[MATH: [0.2; 0.42; 0.56]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-35842-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.24; 0.32; 0.44]]</span></p>",
+            "readable_text": "[MATH: [0.24; 0.32; 0.44]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n[MATH: P = [0.4|0.2|0.2; 0.3|0.4|0.5; 0.3|0.4|0.3], x_{0} = [0.2; 0.6; 0.2]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: x_{0}] given above. Calculate the state vector [MATH: x_{1}.]\n\nChoices:\na. [MATH: [0.24; 0.4; 0.36]]\nb. [MATH: [0.12; 0.52; 0.36]]\nc. [MATH: [0.28; 0.38; 0.34]]\nd. [MATH: [0.2; 0.42; 0.56]]\ne. [MATH: [0.24; 0.32; 0.44]]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "35846",
+        "dom_id": "question-35846",
+        "selector": "#question-35846",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: P = [0.2|0.5; 0.8|0.5], x_{0} = [0.7; 0.3]]</span> </p><p>Consider a Markov chain with the stochastic matrix <span class=\"math\">[MATH: P]</span> and the initial state vector <span class=\"math\">[MATH: x_{0}]</span> given above. Calculate the state vector <span class=\"math\">[MATH: x_{2}.]</span></p>",
+          "readable_text": "[MATH: P = [0.2|0.5; 0.8|0.5], x_{0} = [0.7; 0.3]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: x_{0}] given above. Calculate the state vector [MATH: x_{2}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-35846-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.393; 0.607]]</span></p>",
+            "readable_text": "[MATH: [0.393; 0.607]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-35846-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.611; 0.389]]</span></p>",
+            "readable_text": "[MATH: [0.611; 0.389]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-35846-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.442; 0.558]]</span></p>",
+            "readable_text": "[MATH: [0.442; 0.558]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-35846-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.413; 0.587]]</span></p>",
+            "readable_text": "[MATH: [0.413; 0.587]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-35846-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.526; 0.474]]</span></p>",
+            "readable_text": "[MATH: [0.526; 0.474]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n[MATH: P = [0.2|0.5; 0.8|0.5], x_{0} = [0.7; 0.3]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: x_{0}] given above. Calculate the state vector [MATH: x_{2}.]\n\nChoices:\na. [MATH: [0.393; 0.607]]\nb. [MATH: [0.611; 0.389]]\nc. [MATH: [0.442; 0.558]]\nd. [MATH: [0.413; 0.587]]\ne. [MATH: [0.526; 0.474]]"
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20291",
+        "content_id": "5599",
+        "dom_id": "step-20291",
+        "selector": "#step-20291",
+        "step_anchor": "step-12",
+        "title": "Constructing a Stochastic Matrix and Making a Prediction",
+        "key_prerequisites": [
+          {
+            "topic_id": "1195",
+            "name": "Multiplying a Matrix by a Column Vector",
+            "href": "/topics/1195",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A certain industry produces <span class=\"math\">[MATH: 2]</span> types of sugar, namely sugar <span class=\"math\">[MATH: A]</span> and sugar <span class=\"math\">[MATH: B]</span>. The following table describes how the number of consumers changes between both types of sugar in a month:</p><table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Sugar <span class=\"math\">[MATH: A]</span></b></p></td><td><p><b>Sugar <span class=\"math\">[MATH: B]</span></b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Sugar <span class=\"math\">[MATH: A]</span></b></p></td><td><p><span class=\"math\">[MATH: 0.3]</span></p></td><td><p><span class=\"math\">[MATH: 0.45]</span></p></td></tr><tr><td><p><b>Sugar <span class=\"math\">[MATH: B]</span></b></p></td><td><p><span class=\"math\">[MATH: 0.7]</span></p></td><td><p><span class=\"math\">[MATH: 0.55]</span></p></td></tr></table><p>That is, <span class=\"math\">[MATH: 70\\%]</span> of sugar <span class=\"math\">[MATH: A]</span> customers switch to sugar <span class=\"math\">[MATH: B]</span> each month, and <span class=\"math\">[MATH: 45\\%]</span> of sugar <span class=\"math\">[MATH: B]</span> customers switch to sugar <span class=\"math\">[MATH: A.]</span></p><p>Currently, <span class=\"math\">[MATH: 600]</span> customers use sugar <span class=\"math\">[MATH: A,]</span> while <span class=\"math\">[MATH: 400]</span> customers use sugar <span class=\"math\">[MATH: B.]</span> How many customers will use sugar <span class=\"math\">[MATH: A]</span> in one month? You may assume that the total number of customers doesn&#x27;t change.</p>",
+            "readable_text": "A certain industry produces [MATH: 2] types of sugar, namely sugar [MATH: A] and sugar [MATH: B]. The following table describes how the number of consumers changes between both types of sugar in a month:\n\n| | | From: |\n| | | Sugar [MATH: A] | Sugar [MATH: B] |\n| To: | Sugar [MATH: A] | [MATH: 0.3] | [MATH: 0.45] |\n| Sugar [MATH: B] | [MATH: 0.7] | [MATH: 0.55] |\n\nThat is, [MATH: 70\\%] of sugar [MATH: A] customers switch to sugar [MATH: B] each month, and [MATH: 45\\%] of sugar [MATH: B] customers switch to sugar [MATH: A.]\n\nCurrently, [MATH: 600] customers use sugar [MATH: A,] while [MATH: 400] customers use sugar [MATH: B.] How many customers will use sugar [MATH: A] in one month? You may assume that the total number of customers doesn't change.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>From the table, we can build the corresponding stochastic matrix: </p><p><span class=\"math\">[MATH: [0.3|0.45; 0.7|0.55]]</span></p><p>The vector describing the number of customers for each type of sugar is\n<span class=\"math\">[MATH: [600; 400]]</span>\nDividing the vector above by the total number of customers <span class=\"math\">[MATH: (1\\,000),]</span> we get the stochastic vector of the initial state:</p><p><span class=\"math\">[MATH: [600; 400]]</span></p><p>To find the state vector <span class=\"math\">[MATH: \\mathbf{x}_1]</span> after one month, we apply one step of the Markov chain:</p><p><span class=\"math\">[MATH: \\mathbf{x}_1=P\\mathbf{x}_0]</span></p><p>Therefore, we have</p><p><span class=\"math\">[MATH: x_{1}|= Px_{0}; = [0.3|0.45; 0.7|0.55][0.6; 0.4]; = [0.36; 0.64].]</span></p><p>So, after one month, <span class=\"math\">[MATH: \\color{blue}36\\%]</span> of customers will use sugar <span class=\"math\">[MATH: A.]</span> Computing <span class=\"math\">[MATH: 36\\%]</span> of <span class=\"math\">[MATH: 1\\,000,]</span> we obtain</p><p><span class=\"math\">[MATH: 1\\,000 \\cdot 0.36 = 360.]</span></p><p>Therefore, <span class=\"math\">[MATH: 360]</span> customers will use sugar <span class=\"math\">[MATH: A]</span> in one month.</p>",
+            "readable_text": "From the table, we can build the corresponding stochastic matrix:\n\n[MATH: [0.3|0.45; 0.7|0.55]]\n\nThe vector describing the number of customers for each type of sugar is\n[MATH: [600; 400]]\nDividing the vector above by the total number of customers [MATH: (1\\,000),] we get the stochastic vector of the initial state:\n\n[MATH: [600; 400]]\n\nTo find the state vector [MATH: \\mathbf{x}_1] after one month, we apply one step of the Markov chain:\n\n[MATH: \\mathbf{x}_1=P\\mathbf{x}_0]\n\nTherefore, we have\n\n[MATH: x_{1}|= Px_{0}; = [0.3|0.45; 0.7|0.55][0.6; 0.4]; = [0.36; 0.64].]\n\nSo, after one month, [MATH: \\color{blue}36\\%] of customers will use sugar [MATH: A.] Computing [MATH: 36\\%] of [MATH: 1\\,000,] we obtain\n\n[MATH: 1\\,000 \\cdot 0.36 = 360.]\n\nTherefore, [MATH: 360] customers will use sugar [MATH: A] in one month.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA certain industry produces [MATH: 2] types of sugar, namely sugar [MATH: A] and sugar [MATH: B]. The following table describes how the number of consumers changes between both types of sugar in a month:\n\n| | | From: |\n| | | Sugar [MATH: A] | Sugar [MATH: B] |\n| To: | Sugar [MATH: A] | [MATH: 0.3] | [MATH: 0.45] |\n| Sugar [MATH: B] | [MATH: 0.7] | [MATH: 0.55] |\n\nThat is, [MATH: 70\\%] of sugar [MATH: A] customers switch to sugar [MATH: B] each month, and [MATH: 45\\%] of sugar [MATH: B] customers switch to sugar [MATH: A.]\n\nCurrently, [MATH: 600] customers use sugar [MATH: A,] while [MATH: 400] customers use sugar [MATH: B.] How many customers will use sugar [MATH: A] in one month? You may assume that the total number of customers doesn't change.\n\nContent:\nEXPLANATION\n\nExplanation:\nFrom the table, we can build the corresponding stochastic matrix:\n\n[MATH: [0.3|0.45; 0.7|0.55]]\n\nThe vector describing the number of customers for each type of sugar is\n[MATH: [600; 400]]\nDividing the vector above by the total number of customers [MATH: (1\\,000),] we get the stochastic vector of the initial state:\n\n[MATH: [600; 400]]\n\nTo find the state vector [MATH: \\mathbf{x}_1] after one month, we apply one step of the Markov chain:\n\n[MATH: \\mathbf{x}_1=P\\mathbf{x}_0]\n\nTherefore, we have\n\n[MATH: x_{1}|= Px_{0}; = [0.3|0.45; 0.7|0.55][0.6; 0.4]; = [0.36; 0.64].]\n\nSo, after one month, [MATH: \\color{blue}36\\%] of customers will use sugar [MATH: A.] Computing [MATH: 36\\%] of [MATH: 1\\,000,] we obtain\n\n[MATH: 1\\,000 \\cdot 0.36 = 360.]\n\nTherefore, [MATH: 360] customers will use sugar [MATH: A] in one month."
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "35845",
+        "dom_id": "question-35845",
+        "selector": "#question-35845",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A certain company produces two types of smartphones: Phone <span class=\"math\">[MATH: A]</span> and Phone <span class=\"math\">[MATH: B.]</span> The following table describes how the number of customers changes between both types of smartphones each year:</p><table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Phone <span class=\"math\">[MATH: A]</span></b></p></td><td><p><b>Phone <span class=\"math\">[MATH: B]</span></b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Phone <span class=\"math\">[MATH: A]</span></b></p></td><td><p><span class=\"math\">[MATH: 0.6]</span></p></td><td><p><span class=\"math\">[MATH: 0.3]</span></p></td></tr><tr><td><p><b>Phone <span class=\"math\">[MATH: B]</span></b></p></td><td><p><span class=\"math\">[MATH: 0.4]</span></p></td><td><p><span class=\"math\">[MATH: 0.7]</span></p></td></tr></table><p>That is, <span class=\"math\">[MATH: 40%]</span> of Phone <span class=\"math\">[MATH: A]</span> customers switch to Phone <span class=\"math\">[MATH: B]</span> each year, and <span class=\"math\">[MATH: 30%]</span> of Phone <span class=\"math\">[MATH: B]</span> customers switch to Phone <span class=\"math\">[MATH: A.]</span></p><p>Currently, <span class=\"math\">[MATH: 600000]</span> customers use Phone <span class=\"math\">[MATH: A,]</span> while <span class=\"math\">[MATH: 400000]</span> customers use Phone <span class=\"math\">[MATH: B.]</span> How many customers will use Phone <span class=\"math\">[MATH: A]</span> in one year? You may assume that the total number of customers doesn&#x27;t change.</p>",
+          "readable_text": "A certain company produces two types of smartphones: Phone [MATH: A] and Phone [MATH: B.] The following table describes how the number of customers changes between both types of smartphones each year:\n\n| | | From: |\n| | | Phone [MATH: A] | Phone [MATH: B] |\n| To: | Phone [MATH: A] | [MATH: 0.6] | [MATH: 0.3] |\n| Phone [MATH: B] | [MATH: 0.4] | [MATH: 0.7] |\n\nThat is, [MATH: 40%] of Phone [MATH: A] customers switch to Phone [MATH: B] each year, and [MATH: 30%] of Phone [MATH: B] customers switch to Phone [MATH: A.]\n\nCurrently, [MATH: 600000] customers use Phone [MATH: A,] while [MATH: 400000] customers use Phone [MATH: B.] How many customers will use Phone [MATH: A] in one year? You may assume that the total number of customers doesn't change.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-35845-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 400000]</span></p>",
+            "readable_text": "[MATH: 400000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-35845-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 480000]</span></p>",
+            "readable_text": "[MATH: 480000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-35845-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 520000]</span></p>",
+            "readable_text": "[MATH: 520000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-35845-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 430000]</span></p>",
+            "readable_text": "[MATH: 430000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-35845-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 640000]</span></p>",
+            "readable_text": "[MATH: 640000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA certain company produces two types of smartphones: Phone [MATH: A] and Phone [MATH: B.] The following table describes how the number of customers changes between both types of smartphones each year:\n\n| | | From: |\n| | | Phone [MATH: A] | Phone [MATH: B] |\n| To: | Phone [MATH: A] | [MATH: 0.6] | [MATH: 0.3] |\n| Phone [MATH: B] | [MATH: 0.4] | [MATH: 0.7] |\n\nThat is, [MATH: 40%] of Phone [MATH: A] customers switch to Phone [MATH: B] each year, and [MATH: 30%] of Phone [MATH: B] customers switch to Phone [MATH: A.]\n\nCurrently, [MATH: 600000] customers use Phone [MATH: A,] while [MATH: 400000] customers use Phone [MATH: B.] How many customers will use Phone [MATH: A] in one year? You may assume that the total number of customers doesn't change.\n\nChoices:\na. [MATH: 400000]\nb. [MATH: 480000]\nc. [MATH: 520000]\nd. [MATH: 430000]\ne. [MATH: 640000]"
+      },
+      {
+        "lesson_index": 14,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "135462",
+        "dom_id": "question-135462",
+        "selector": "#question-135462",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A calculator is required to answer this question.</p>",
+          "readable_text": "A calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A certain company produces three types of cars: Standard, Sports, and Deluxe. The following table describes how the number of customers changes between the three types of cars each year:</p><table><tr><td></td><td></td><td><p>From:</p></td></tr><tr><td></td><td></td><td><p><b>Standard</b></p></td><td><p><b>Sports</b></p></td><td><p><b>Deluxe</b></p></td></tr><tr><td><p>To:</p></td><td><p><b>Standard</b></p></td><td><p><span class=\"math\">[MATH: 0.6]</span></p></td><td><p><span class=\"math\">[MATH: 0.1]</span></p></td><td><p><span class=\"math\">[MATH: 0.1]</span></p></td></tr><tr><td><p><b>Sports</b></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td><td><p><span class=\"math\">[MATH: 0.6]</span></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td></tr><tr><td><p><b>Deluxe</b></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td><td><p><span class=\"math\">[MATH: 0.3]</span></p></td><td><p><span class=\"math\">[MATH: 0.7]</span></p></td></tr></table><p>For example, <span class=\"math\">[MATH: 20%]</span> of Standard customers switch to Sports each year, and <span class=\"math\">[MATH: 30%]</span> of Sports customers switch to Deluxe.</p><p>Currently, <span class=\"math\">[MATH: 500000]</span> customers use Standard, <span class=\"math\">[MATH: 400000]</span> customers use Sports and <span class=\"math\">[MATH: 100000]</span> customers use Deluxe. How many customers will use Sports in one year? You may assume that the total number of customers doesn&#x27;t change.</p>",
+          "readable_text": "A certain company produces three types of cars: Standard, Sports, and Deluxe. The following table describes how the number of customers changes between the three types of cars each year:\n\n| | | From: |\n| | | Standard | Sports | Deluxe |\n| To: | Standard | [MATH: 0.6] | [MATH: 0.1] | [MATH: 0.1] |\n| Sports | [MATH: 0.2] | [MATH: 0.6] | [MATH: 0.2] |\n| Deluxe | [MATH: 0.2] | [MATH: 0.3] | [MATH: 0.7] |\n\nFor example, [MATH: 20%] of Standard customers switch to Sports each year, and [MATH: 30%] of Sports customers switch to Deluxe.\n\nCurrently, [MATH: 500000] customers use Standard, [MATH: 400000] customers use Sports and [MATH: 100000] customers use Deluxe. How many customers will use Sports in one year? You may assume that the total number of customers doesn't change.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-135462-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 320000]</span></p>",
+            "readable_text": "[MATH: 320000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-135462-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 280000]</span></p>",
+            "readable_text": "[MATH: 280000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-135462-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 290000]</span></p>",
+            "readable_text": "[MATH: 290000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-135462-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 360000]</span></p>",
+            "readable_text": "[MATH: 360000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-135462-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 350000]</span></p>",
+            "readable_text": "[MATH: 350000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA certain company produces three types of cars: Standard, Sports, and Deluxe. The following table describes how the number of customers changes between the three types of cars each year:\n\n| | | From: |\n| | | Standard | Sports | Deluxe |\n| To: | Standard | [MATH: 0.6] | [MATH: 0.1] | [MATH: 0.1] |\n| Sports | [MATH: 0.2] | [MATH: 0.6] | [MATH: 0.2] |\n| Deluxe | [MATH: 0.2] | [MATH: 0.3] | [MATH: 0.7] |\n\nFor example, [MATH: 20%] of Standard customers switch to Sports each year, and [MATH: 30%] of Sports customers switch to Deluxe.\n\nCurrently, [MATH: 500000] customers use Standard, [MATH: 400000] customers use Sports and [MATH: 100000] customers use Deluxe. How many customers will use Sports in one year? You may assume that the total number of customers doesn't change.\n\nChoices:\na. [MATH: 320000]\nb. [MATH: 280000]\nc. [MATH: 290000]\nd. [MATH: 360000]\ne. [MATH: 350000]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWe can use repeated matrix multiplication to determine the state of a system given its initial state and some information about how one state transitions to the next state.\n\nContent:\nTo explain this concretely, suppose we have a population where people live either in the city or the countryside. A study carried out by the local authority shows that, each year,\n\nContent:\n- [MATH: 6\\%] of the city population relocates to the countryside,\n- [MATH: 3\\%] of the countryside population relocates to the city, and\n- everyone else remains where they are.\n\nContent:\nThis information can be represented using a diagram, like the one below.\n\nGraphic:\n[IMG: /graphics/607fa544e0da73963380a042ae01d18e]\n\nContent:\nWe can also present this information as a table:\n\nContent:\n| | | From: |\n| | | City | Countryside |\n| To: | City | [MATH: 0.94] | [MATH: 0.03] |\n| Countryside | [MATH: 0.06] | [MATH: 0.97] |\n\nContent:\nWe want to use this information to determine how the population will be distributed [MATH: n] years after the study was carried out.\n\nContent:\nFirst, let's turn this table into a matrix [MATH: P\\mathbin{:}]\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nNotice that this matrix has the following properties:\n\nContent:\n- it is a square matrix\n- the sum of the entries in each column equals [MATH: 1]\n- all entries in the matrix are non-negative\n\nContent:\nA square matrix with these properties is called a stochastic matrix.\n\nContent:\nNow suppose that, at the time of the study, [MATH: 70\\%] of the population lived in the city and [MATH: 30\\%] in the countryside. We can represent this initial state using a so-called stochastic vector [MATH: \\mathbf x_0,] given by\n\nContent:\n[MATH: [0.70; 0.30]]\n\nContent:\nStochastic vectors contain non-negative entries only, and the sum of the entries equals [MATH: 1.] Note that each column of [MATH: P] is a stochastic vector.\n\nContent:\nNow that we have our stochastic matrix and initial state vector, we can use matrix multiplication to calculate the population distribution sometime after the initial study took place:\n\nContent:\n- To calculate the population distribution after one year, we calculate the product [MATH: P\\mathbf x_0\\mathbin{:}]\n[MATH: [0.94|0.03; 0.06|0.97]]\nThe resulting vector\n[MATH: [0.667; 0.333]]\ntells us that one year after the study, [MATH: 66.7]% of the population will live in the city, and [MATH: 33.3]% will live in the countryside.\n- To model the distribution after [MATH: 2] years, we compute [MATH: P\\mathbf x_1\\mathbin{:}]\n[MATH: [0.94|0.03; 0.06|0.97]]\nThe resulting vector\n[MATH: [0.637; 0.363]]\ntells us that two years after the study, [MATH: 63.7]% of the population will live in the city, and [MATH: 36.3]% will live in the countryside.\n\n---\n\nItem 2 \u2014 Example: Identifying Stochastic Vectors and Stochastic Matrices\n\nExample Prompt:\nWhich of the following are stochastic matrices?\n\n[MATH: [\u2212 0.2|0; 1.2|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a stochastic vector is a vector with nonnegative entries that add up to [MATH: 1.] A matrix is stochastic if all its columns are stochastic vectors.\n\nWith that in mind, let's examine our matrices in turn.\n\n- Matrix [MATH: \\bf{U}] is not a stochastic matrix since its first column is not a stochastic vector (it contains negative entries):\n[MATH: [\u2212 0.2|0; 1.2|1]]\n- Matrix [MATH: \\bf{V}] is a stochastic matrix. Indeed, each column is a stochastic vector (the corresponding entries are nonnegative and add up to one):\n[MATH: [0.35|0.95; 0.65|0.05]0.35 + 0.65 = 1; 0.95 + 0.05 = 1]\n- Matrix [MATH: \\bf{W}] is not a stochastic matrix since its third column is not a stochastic vector (the corresponding entries don't add up to one):\n[MATH: [0|1|0; 0.5|0|0.4; 0.5|0|0.7]]\n\nTherefore, the correct answer is \"[MATH: \\bf{V}] only.\"\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nWhich of the following are stochastic vectors?\n\n[MATH: u = [0.5; 0; 0.5], v = [\u2212 0.45; 1.55], w = [0; 0]]\n\nChoices:\na. [MATH: u] and [MATH: w] only\nb. [MATH: u], [MATH: v], and [MATH: w]\nc. [MATH: u] and [MATH: v] only\nd. [MATH: v] only\ne. [MATH: u] only\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nWhich of the following are stochastic matrices?\n\n[MATH: U = [0.2|0; 0.5|1], V = [0.45|0.25; 0.55|0.75], W = [0|1|0; 0.5|0.2|0.3; 0.5|0|0.7]]\n\nChoices:\na. [MATH: V] and [MATH: W] only\nb. [MATH: W] only\nc. [MATH: V] only\nd. [MATH: U], [MATH: V], and [MATH: W]\ne. [MATH: U] and [MATH: V] only\n\n---\n\nItem 5 \u2014 Example: Constructing a Stochastic Matrix Given Some Data\n\nExample Prompt:\nThere are two groups of people in a particular city: those who use their own vehicles and those who use public transport. A study has shown that, each year\n\n- [MATH: 35\\%] of people who used their own vehicles swap to public transport, and\n- [MATH: 25\\%] of people who used public transport swap to their own vehicles.\n\nGive the stochastic matrix that describes how people change their means of transportation each year.\n\nContent:\nEXPLANATION\n\nExplanation:\nWe are given the following situation for each year:\n\n- [MATH: 35\\%] of people who used their own vehicles swap to public transport. This implies that [MATH: 65\\%] of them remain using their own vehicles.\n- [MATH: 25\\%] of people who used public transport swap to their own vehicles. This implies that [MATH: 75\\%] of them remain using public transport.\n\nWriting this information in tabular form, we obtain the following:\n\n| | | From: |\n| | | Vehicles | Public Transport |\n| To: | Vehicles | [MATH: 0.65] | [MATH: 0.25] |\n| Public Transport | [MATH: 0.35] | [MATH: 0.75] |\n\nNote that we can write a corresponding stochastic matrix as follows:\n[MATH: [0.65|0.25; 0.35|0.75]]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\nIn a particular country, there are two groups of people: those who use trains to travel and those who use cars. A study has shown that, each year\n\n- [MATH: 42%] of people who used trains swap to cars, and\n- [MATH: 33%] of people who used cars swap to trains.\n\nWhich of the following tables describes how these people change their preferences each year?\n\nChoices:\na. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.58] | [MATH: 0.33] |\n| Cars | [MATH: 0.42] | [MATH: 0.67] |\nb. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.42] | [MATH: 0.67] |\n| Cars | [MATH: 0.58] | [MATH: 0.33] |\nc. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.42] | [MATH: 0.33] |\n| Cars | [MATH: 0.58] | [MATH: 0.67] |\nd. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.58] | [MATH: 0.67] |\n| Cars | [MATH: 0.42] | [MATH: 0.33] |\ne. | | | From: |\n| | | Trains | Cars |\n| To: | Trains | [MATH: 0.67] | [MATH: 0.58] |\n| Cars | [MATH: 0.33] | [MATH: 0.42] |\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\nThere are three groups of fans in a certain town: those who prefer basketball, those who prefer baseball, and those who prefer football. A study has shown that, each year\n\n- from the people that prefer basketball, [MATH: 32%] change to baseball and [MATH: 28%] change to football,\n- from the people that prefer baseball, [MATH: 45%] change to football and [MATH: 15%] change to basketball,\n- from the people that prefer football, [MATH: 25%] change to basketball and [MATH: 65%] change to baseball.\n\nThe stochastic matrix that describes this situation is given below. What is the value of [MATH: a + b + c?]\n\n[MATH: P = [0.4|0.15|a; 0.32|b|0.65; c|0.45|0.1]]\n\nChoices:\na. [MATH: 1.07]\nb. [MATH: 0.93]\nc. [MATH: 0.99]\nd. [MATH: 0.87]\ne. [MATH: 1]\n\n---\n\nItem 8 \u2014 Tutorial: Markov Chains\n\nContent:\nLet's reconsider the population we looked at earlier, where the stochastic vector that represents the initial distribution of people between the city and the countryside is\n\nContent:\n[MATH: [0.70; 0.30]]\nand the yearly change in this distribution is represented by the stochastic matrix\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nEarlier, we found that the population distribution after [MATH: 1] and [MATH: 2] years is given by the vectors [MATH: \\mathbf x_1] and [MATH: \\mathbf x_2,]\nrespectively, where\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nand\n\nContent:\n[MATH: [0.94|0.03; 0.06|0.97]]\n\nContent:\nThe vectors [MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots] are called state vectors, and [MATH: \\mathbf x_0] is the initial state.\n\nContent:\nTo find the state vector corresponding to the [MATH: (k+1)]th year, we left-multiply the state vector corresponding to the [MATH: k]th year by [MATH: P.] This gives rise to the following sequence:\n\nContent:\n[MATH: x_{1}|= Px_{0},; x_{2}|= Px_{1},; x_{3}|= Px_{2},; \u22ee|\u22ee; x_{k + 1}|= Px_{k}; \u22ee|\u22ee]\n\nContent:\nA sequence of stochastic vectors [MATH: \\mathbf{x}_0, \\mathbf{x}_1, \\mathbf{x}_2, \\ldots] related to a stochastic matrix [MATH: P] in this way is called a Markov chain.\n\n---\n\nItem 9 \u2014 Example: Calculating a State Vector\n\nExample Prompt:\n[MATH: [0.5|0.1; 0.5|0.9]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: \\mathbf{x}_0] given above. Calculate the state vector [MATH: \\mathbf{x}_2.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo find the state vector [MATH: \\mathbf{x}_2,] we apply two steps of the Markov chain:\n[MATH: \\mathbf{x_1}=P\\mathbf{x}_0, \\qquad \\mathbf{x}_2=P\\mathbf{x}_1]\n\nAfter the first step, we have\n\n[MATH: x_{1}|= Px_{0}; = [0.5|0.1; 0.5|0.9][0.2; 0.8]; = [0.18; 0.82].]\n\nFinally, after the second step, we obtain\n\n[MATH: x_{2}|= Px_{1}; = [0.5|0.1; 0.5|0.9][0.18; 0.82]; = [0.172; 0.828].]\n\n---\n\nItem 10 \u2014 Question 5\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n[MATH: P = [0.4|0.2|0.2; 0.3|0.4|0.5; 0.3|0.4|0.3], x_{0} = [0.2; 0.6; 0.2]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: x_{0}] given above. Calculate the state vector [MATH: x_{1}.]\n\nChoices:\na. [MATH: [0.24; 0.4; 0.36]]\nb. [MATH: [0.12; 0.52; 0.36]]\nc. [MATH: [0.28; 0.38; 0.34]]\nd. [MATH: [0.2; 0.42; 0.56]]\ne. [MATH: [0.24; 0.32; 0.44]]\n\n---\n\nItem 11 \u2014 Question 6\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\n[MATH: P = [0.2|0.5; 0.8|0.5], x_{0} = [0.7; 0.3]]\n\nConsider a Markov chain with the stochastic matrix [MATH: P] and the initial state vector [MATH: x_{0}] given above. Calculate the state vector [MATH: x_{2}.]\n\nChoices:\na. [MATH: [0.393; 0.607]]\nb. [MATH: [0.611; 0.389]]\nc. [MATH: [0.442; 0.558]]\nd. [MATH: [0.413; 0.587]]\ne. [MATH: [0.526; 0.474]]\n\n---\n\nItem 12 \u2014 Example: Constructing a Stochastic Matrix and Making a Prediction\n\nExample Prompt:\nA certain industry produces [MATH: 2] types of sugar, namely sugar [MATH: A] and sugar [MATH: B]. The following table describes how the number of consumers changes between both types of sugar in a month:\n\n| | | From: |\n| | | Sugar [MATH: A] | Sugar [MATH: B] |\n| To: | Sugar [MATH: A] | [MATH: 0.3] | [MATH: 0.45] |\n| Sugar [MATH: B] | [MATH: 0.7] | [MATH: 0.55] |\n\nThat is, [MATH: 70\\%] of sugar [MATH: A] customers switch to sugar [MATH: B] each month, and [MATH: 45\\%] of sugar [MATH: B] customers switch to sugar [MATH: A.]\n\nCurrently, [MATH: 600] customers use sugar [MATH: A,] while [MATH: 400] customers use sugar [MATH: B.] How many customers will use sugar [MATH: A] in one month? You may assume that the total number of customers doesn't change.\n\nContent:\nEXPLANATION\n\nExplanation:\nFrom the table, we can build the corresponding stochastic matrix:\n\n[MATH: [0.3|0.45; 0.7|0.55]]\n\nThe vector describing the number of customers for each type of sugar is\n[MATH: [600; 400]]\nDividing the vector above by the total number of customers [MATH: (1\\,000),] we get the stochastic vector of the initial state:\n\n[MATH: [600; 400]]\n\nTo find the state vector [MATH: \\mathbf{x}_1] after one month, we apply one step of the Markov chain:\n\n[MATH: \\mathbf{x}_1=P\\mathbf{x}_0]\n\nTherefore, we have\n\n[MATH: x_{1}|= Px_{0}; = [0.3|0.45; 0.7|0.55][0.6; 0.4]; = [0.36; 0.64].]\n\nSo, after one month, [MATH: \\color{blue}36\\%] of customers will use sugar [MATH: A.] Computing [MATH: 36\\%] of [MATH: 1\\,000,] we obtain\n\n[MATH: 1\\,000 \\cdot 0.36 = 360.]\n\nTherefore, [MATH: 360] customers will use sugar [MATH: A] in one month.\n\n---\n\nItem 13 \u2014 Question 7\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA certain company produces two types of smartphones: Phone [MATH: A] and Phone [MATH: B.] The following table describes how the number of customers changes between both types of smartphones each year:\n\n| | | From: |\n| | | Phone [MATH: A] | Phone [MATH: B] |\n| To: | Phone [MATH: A] | [MATH: 0.6] | [MATH: 0.3] |\n| Phone [MATH: B] | [MATH: 0.4] | [MATH: 0.7] |\n\nThat is, [MATH: 40%] of Phone [MATH: A] customers switch to Phone [MATH: B] each year, and [MATH: 30%] of Phone [MATH: B] customers switch to Phone [MATH: A.]\n\nCurrently, [MATH: 600000] customers use Phone [MATH: A,] while [MATH: 400000] customers use Phone [MATH: B.] How many customers will use Phone [MATH: A] in one year? You may assume that the total number of customers doesn't change.\n\nChoices:\na. [MATH: 400000]\nb. [MATH: 480000]\nc. [MATH: 520000]\nd. [MATH: 430000]\ne. [MATH: 640000]\n\n---\n\nItem 14 \u2014 Question 8\n\nCalculator Instructions:\nA calculator is required to answer this question.\n\nPrompt:\nA certain company produces three types of cars: Standard, Sports, and Deluxe. The following table describes how the number of customers changes between the three types of cars each year:\n\n| | | From: |\n| | | Standard | Sports | Deluxe |\n| To: | Standard | [MATH: 0.6] | [MATH: 0.1] | [MATH: 0.1] |\n| Sports | [MATH: 0.2] | [MATH: 0.6] | [MATH: 0.2] |\n| Deluxe | [MATH: 0.2] | [MATH: 0.3] | [MATH: 0.7] |\n\nFor example, [MATH: 20%] of Standard customers switch to Sports each year, and [MATH: 30%] of Sports customers switch to Deluxe.\n\nCurrently, [MATH: 500000] customers use Standard, [MATH: 400000] customers use Sports and [MATH: 100000] customers use Deluxe. How many customers will use Sports in one year? You may assume that the total number of customers doesn't change.\n\nChoices:\na. [MATH: 320000]\nb. [MATH: 280000]\nc. [MATH: 290000]\nd. [MATH: 360000]\ne. [MATH: 350000]"
+  }
+}

@@ -1,0 +1,2159 @@
+{
+  "schema_version": 2,
+  "topic_id": "3803",
+  "topic_title": "Big-O Notation",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3803/Source/3803.html",
+  "source_url": "https://mathacademy.com/topics/3803",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "419874",
+        "dom_id": "sectionLink-419874",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-419874"
+      },
+      {
+        "index": 2,
+        "step_id": "419875",
+        "dom_id": "sectionLink-419875",
+        "name": "",
+        "title": "Defining the Set O(n)",
+        "selector": "#sectionLink-419875"
+      },
+      {
+        "index": 3,
+        "step_id": "419876",
+        "dom_id": "sectionLink-419876",
+        "name": "",
+        "title": "Defining the Set O(1)",
+        "selector": "#sectionLink-419876"
+      },
+      {
+        "index": 4,
+        "step_id": "419877",
+        "dom_id": "sectionLink-419877",
+        "name": "",
+        "title": "Defining the Set O(g(n))",
+        "selector": "#sectionLink-419877"
+      },
+      {
+        "index": 5,
+        "step_id": "419878",
+        "dom_id": "sectionLink-419878",
+        "name": "",
+        "title": "Understanding the Definition of Big-O",
+        "selector": "#sectionLink-419878"
+      },
+      {
+        "index": 6,
+        "step_id": "419881",
+        "dom_id": "sectionLink-419881",
+        "name": "",
+        "title": "Proving That a Function Belongs to a Big-O Set",
+        "selector": "#sectionLink-419881"
+      },
+      {
+        "index": 7,
+        "step_id": "419884",
+        "dom_id": "sectionLink-419884",
+        "name": "",
+        "title": "Properties of Big-O Notation",
+        "selector": "#sectionLink-419884"
+      },
+      {
+        "index": 8,
+        "step_id": "419885",
+        "dom_id": "sectionLink-419885",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-419885"
+      },
+      {
+        "index": 9,
+        "step_id": "419886",
+        "dom_id": "sectionLink-419886",
+        "name": "",
+        "title": "Using the Properties of Big-O Notation",
+        "selector": "#sectionLink-419886"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "787",
+        "name": "Finite Quadratic Series",
+        "href": "/topics/finite-quadratic-series-787"
+      },
+      {
+        "topic_id": "1245",
+        "name": "Determining Limits of Sequences Using Relative Magnitudes",
+        "href": "/topics/determining-limits-of-sequences-using-relative-magnitudes-1245"
+      },
+      {
+        "topic_id": "2792",
+        "name": "Nested Quantifiers",
+        "href": "/topics/nested-quantifiers-2792"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 15,
+    "step_count": 9,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419874",
+        "content_id": "10080",
+        "dom_id": "step-419874",
+        "selector": "#step-419874",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>An <strong>algorithm</strong> is a step-by-step set of instructions or rules designed to perform a specific task or solve a particular problem. It is like a recipe that tells a person or computer precisely what to do in a methodical, structured way. However, not all algorithms are equally efficient because some take longer than others to solve the same problem.</p>",
+            "readable_text": "An algorithm is a step-by-step set of instructions or rules designed to perform a specific task or solve a particular problem. It is like a recipe that tells a person or computer precisely what to do in a methodical, structured way. However, not all algorithms are equally efficient because some take longer than others to solve the same problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose, for example, we wish to write an algorithm for computing the sum of the squares <span class=\"math\">[MATH: S(n)]</span> of the first <span class=\"math\">[MATH: (n+1)]</span> natural numbers. One way to do this is to compute the sum using a so-called <strong>brute force approach</strong>, which involves explicitly calculating and summing each squared term:</p>",
+            "readable_text": "Suppose, for example, we wish to write an algorithm for computing the sum of the squares [MATH: S(n)] of the first [MATH: (n+1)] natural numbers. One way to do this is to compute the sum using a so-called brute force approach, which involves explicitly calculating and summing each squared term:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: S(n) = 1^2+2^2+3^2+\\cdots + n^2 + (n+1)^2]</span></p>",
+            "readable_text": "[MATH: S(n) = 1^2+2^2+3^2+\\cdots + n^2 + (n+1)^2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s analyze how many arithmetic operations it takes to compute this sum:</p>",
+            "readable_text": "Let's analyze how many arithmetic operations it takes to compute this sum:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>For <span class=\"math\">[MATH: n=1,]</span> we require a total of <span class=\"math\">[MATH: 3]</span> arithmetic operations to compute the sum (two products and one summation):\n<span class=\"math\">[MATH: S(2)  = 1\\cdot 1 + 2\\cdot 2]</span></p></li><li><p>For <span class=\"math\">[MATH: n=2,]</span> we require a total of <span class=\"math\">[MATH: 5]</span> arithmetic operations to compute the sum (three products and two summations):\n<span class=\"math\">[MATH: S(3)  = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3]</span></p></li><li><p>For <span class=\"math\">[MATH: n=3,]</span> we require a total of <span class=\"math\">[MATH: 7]</span> arithmetic operations to compute the sum (four products and three summations):\n<span class=\"math\">[MATH: S(3)  = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3 + 4\\cdot 4]</span></p></li></ul>",
+            "readable_text": "- For [MATH: n=1,] we require a total of [MATH: 3] arithmetic operations to compute the sum (two products and one summation):\n[MATH: S(2) = 1\\cdot 1 + 2\\cdot 2]\n- For [MATH: n=2,] we require a total of [MATH: 5] arithmetic operations to compute the sum (three products and two summations):\n[MATH: S(3) = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3]\n- For [MATH: n=3,] we require a total of [MATH: 7] arithmetic operations to compute the sum (four products and three summations):\n[MATH: S(3) = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3 + 4\\cdot 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Observing the pattern, we see that for a given <span class=\"math\">[MATH: n,]</span> the number of arithmetic operations is given by the function</p>",
+            "readable_text": "Observing the pattern, we see that for a given [MATH: n,] the number of arithmetic operations is given by the function",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: f_1(n) = 2n+1.]</span>\nSince this grows linearly with <span class=\"math\">[MATH: n,]</span> the brute force method becomes inefficient and impractical for large <span class=\"math\">[MATH: n.]</span></p>",
+            "readable_text": "[MATH: f_1(n) = 2n+1.]\nSince this grows linearly with [MATH: n,] the brute force method becomes inefficient and impractical for large [MATH: n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The second method uses the well-known sum of squares formula</p>",
+            "readable_text": "The second method uses the well-known sum of squares formula",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = \\dfrac16 (n+1) (n+2)(2n+3).]</span>\nWriting each arithmetic operation on the right-hand side explicitly, we have \n<span class=\"math\">[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = (1 / 6) \\cdot (n+1) \\cdot (n+2)\\cdot (2\\cdot n+3).]</span>\nThis method requires only <span class=\"math\">[MATH: 8]</span> arithmetic operations (one division, four products, and three summations). Thus, the number of arithmetic operations for this algorithm is given by\n<span class=\"math\">[MATH: f_2(n) = 8.]</span>\nNotice that <span class=\"math\">[MATH: f_2]</span> is independent of <span class=\"math\">[MATH: n,]</span> which means the second algorithm is much more efficient than the first.</p>",
+            "readable_text": "[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = \\dfrac16 (n+1) (n+2)(2n+3).]\nWriting each arithmetic operation on the right-hand side explicitly, we have\n[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = (1 / 6) \\cdot (n+1) \\cdot (n+2)\\cdot (2\\cdot n+3).]\nThis method requires only [MATH: 8] arithmetic operations (one division, four products, and three summations). Thus, the number of arithmetic operations for this algorithm is given by\n[MATH: f_2(n) = 8.]\nNotice that [MATH: f_2] is independent of [MATH: n,] which means the second algorithm is much more efficient than the first.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Both algorithms produce the same result, but the second requires far fewer operations for large <span class=\"math\">[MATH: n.]</span> If we were to write some code for these algorithms on a computer, the second would execute faster for large <span class=\"math\">[MATH: n,]</span> and the difference becomes even more significant as <span class=\"math\">[MATH: n]</span> grows. </p>",
+            "readable_text": "Both algorithms produce the same result, but the second requires far fewer operations for large [MATH: n.] If we were to write some code for these algorithms on a computer, the second would execute faster for large [MATH: n,] and the difference becomes even more significant as [MATH: n] grows.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This example shows why it is important to compare algorithms&#x27; performance. The field of <strong>algorithmic complexity</strong> studies how fast or slow algorithms run as their input size grows. It helps us compare different algorithms to see which one is more efficient.</p>",
+            "readable_text": "This example shows why it is important to compare algorithms' performance. The field of algorithmic complexity studies how fast or slow algorithms run as their input size grows. It helps us compare different algorithms to see which one is more efficient.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To do this, we need a mathematical way to describe how their efficiency scales with <span class=\"math\">[MATH: n.]</span> That&#x27;s what we&#x27;ll discuss next.</p>",
+            "readable_text": "To do this, we need a mathematical way to describe how their efficiency scales with [MATH: n.] That's what we'll discuss next.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nAn algorithm is a step-by-step set of instructions or rules designed to perform a specific task or solve a particular problem. It is like a recipe that tells a person or computer precisely what to do in a methodical, structured way. However, not all algorithms are equally efficient because some take longer than others to solve the same problem.\n\nContent:\nSuppose, for example, we wish to write an algorithm for computing the sum of the squares [MATH: S(n)] of the first [MATH: (n+1)] natural numbers. One way to do this is to compute the sum using a so-called brute force approach, which involves explicitly calculating and summing each squared term:\n\nContent:\n[MATH: S(n) = 1^2+2^2+3^2+\\cdots + n^2 + (n+1)^2]\n\nContent:\nLet's analyze how many arithmetic operations it takes to compute this sum:\n\nContent:\n- For [MATH: n=1,] we require a total of [MATH: 3] arithmetic operations to compute the sum (two products and one summation):\n[MATH: S(2) = 1\\cdot 1 + 2\\cdot 2]\n- For [MATH: n=2,] we require a total of [MATH: 5] arithmetic operations to compute the sum (three products and two summations):\n[MATH: S(3) = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3]\n- For [MATH: n=3,] we require a total of [MATH: 7] arithmetic operations to compute the sum (four products and three summations):\n[MATH: S(3) = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3 + 4\\cdot 4]\n\nContent:\nObserving the pattern, we see that for a given [MATH: n,] the number of arithmetic operations is given by the function\n\nContent:\n[MATH: f_1(n) = 2n+1.]\nSince this grows linearly with [MATH: n,] the brute force method becomes inefficient and impractical for large [MATH: n.]\n\nContent:\nThe second method uses the well-known sum of squares formula\n\nContent:\n[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = \\dfrac16 (n+1) (n+2)(2n+3).]\nWriting each arithmetic operation on the right-hand side explicitly, we have\n[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = (1 / 6) \\cdot (n+1) \\cdot (n+2)\\cdot (2\\cdot n+3).]\nThis method requires only [MATH: 8] arithmetic operations (one division, four products, and three summations). Thus, the number of arithmetic operations for this algorithm is given by\n[MATH: f_2(n) = 8.]\nNotice that [MATH: f_2] is independent of [MATH: n,] which means the second algorithm is much more efficient than the first.\n\nContent:\nBoth algorithms produce the same result, but the second requires far fewer operations for large [MATH: n.] If we were to write some code for these algorithms on a computer, the second would execute faster for large [MATH: n,] and the difference becomes even more significant as [MATH: n] grows.\n\nContent:\nThis example shows why it is important to compare algorithms' performance. The field of algorithmic complexity studies how fast or slow algorithms run as their input size grows. It helps us compare different algorithms to see which one is more efficient.\n\nContent:\nTo do this, we need a mathematical way to describe how their efficiency scales with [MATH: n.] That's what we'll discuss next."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419875",
+        "content_id": "11913",
+        "dom_id": "step-419875",
+        "selector": "#step-419875",
+        "step_anchor": "step-2",
+        "title": "Defining the Set O(n)",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To compare algorithms, we need a systematic way of describing how a function behaves as its input <span class=\"math\">[MATH: n]</span> grows.</p>",
+            "readable_text": "To compare algorithms, we need a systematic way of describing how a function behaves as its input [MATH: n] grows.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that, for the brute force solution to our sum-of-squares problem, the total number of arithmetic operations was given by\n<span class=\"math\">[MATH: f_1(n) = 2n+1.]</span></p>",
+            "readable_text": "Recall that, for the brute force solution to our sum-of-squares problem, the total number of arithmetic operations was given by\n[MATH: f_1(n) = 2n+1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Our goal is to describe this function&#x27;s behavior using an <strong>asymptotic upper-bound</strong>:</p>",
+            "readable_text": "Our goal is to describe this function's behavior using an asymptotic upper-bound:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><em>Asymptotic</em> means we&#x27;re interested in <span class=\"math\">[MATH: n\\to\\infty.]</span></p></li><li><p>Finding an <em>upper bound</em> means we&#x27;d like to find a positive constant <span class=\"math\">[MATH: c]</span> and a positive function <span class=\"math\">[MATH: g(n)]</span> such that <span class=\"math\">[MATH: f_1 \\leq c g]</span> for <span class=\"math\">[MATH: n\\to\\infty.]</span></p></li></ul>",
+            "readable_text": "- Asymptotic means we're interested in [MATH: n\\to\\infty.]\n- Finding an upper bound means we'd like to find a positive constant [MATH: c] and a positive function [MATH: g(n)] such that [MATH: f_1 \\leq c g] for [MATH: n\\to\\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can form an asymptotic upper bound for <span class=\"math\">[MATH: f_1]</span> by observing that it is bounded above by <span class=\"math\">[MATH: 3n]</span> <em>for all</em> <span class=\"math\">[MATH: n\\geq n_0 = 1,]</span> as shown below.</p>",
+            "readable_text": "We can form an asymptotic upper bound for [MATH: f_1] by observing that it is bounded above by [MATH: 3n] for all [MATH: n\\geq n_0 = 1,] as shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/757207cf730d78613b88613ada3f56df\"></p>",
+            "readable_text": "[IMG: /graphics/757207cf730d78613b88613ada3f56df]",
+            "images": [
+              {
+                "src": "/graphics/757207cf730d78613b88613ada3f56df",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, for all <span class=\"math\">[MATH: n\\geq n_0,]</span> we have \n<span class=\"math\">[MATH: 2n+1 \\leq c g(n)]</span>\nwhere\n<span class=\"math\">[MATH: g(n) = n, \\qquad c = 3, \\qquad n_0 = 1.]</span></p>",
+            "readable_text": "Thus, for all [MATH: n\\geq n_0,] we have\n[MATH: 2n+1 \\leq c g(n)]\nwhere\n[MATH: g(n) = n, \\qquad c = 3, \\qquad n_0 = 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>There&#x27;s nothing special about our choice of constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> here. We could have also selected <span class=\"math\">[MATH: c=4]</span> and <span class=\"math\">[MATH: n_0=2,]</span> for example.</p>",
+            "readable_text": "There's nothing special about our choice of constants [MATH: c] and [MATH: n_0] here. We could have also selected [MATH: c=4] and [MATH: n_0=2,] for example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We define the set of functions that are <strong>of the order <span class=\"math\">[MATH: \\boldsymbol n]</span></strong>, denoted <span class=\"math\">[MATH: O(n),]</span> as follows:</p>",
+            "readable_text": "We define the set of functions that are of the order [MATH: \\boldsymbol n], denoted [MATH: O(n),] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: O(n) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c n \\big\\}]</span>\nIn plain English, the set <span class=\"math\">[MATH: O(n)]</span> describes all nonnegative functions bounded above by some positive linear function <span class=\"math\">[MATH: cn]</span> for sufficiently large <span class=\"math\">[MATH: n.]</span> This notation is often called <strong>big-O</strong> (pronounced &quot;big-oh&quot;) notation.</p>",
+            "readable_text": "[MATH: O(n) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c n \\big\\}]\nIn plain English, the set [MATH: O(n)] describes all nonnegative functions bounded above by some positive linear function [MATH: cn] for sufficiently large [MATH: n.] This notation is often called big-O (pronounced \"big-oh\") notation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We say that <span class=\"math\">[MATH: f_1 = 2n+1]</span> is <strong>of the order</strong> <span class=\"math\">[MATH: \\boldsymbol{n},]</span> and we write <span class=\"math\">[MATH: f_1\\in O(n).]</span></p>",
+            "readable_text": "We say that [MATH: f_1 = 2n+1] is of the order [MATH: \\boldsymbol{n},] and we write [MATH: f_1\\in O(n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/757207cf730d78613b88613ada3f56df",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nTo compare algorithms, we need a systematic way of describing how a function behaves as its input [MATH: n] grows.\n\nContent:\nRecall that, for the brute force solution to our sum-of-squares problem, the total number of arithmetic operations was given by\n[MATH: f_1(n) = 2n+1.]\n\nContent:\nOur goal is to describe this function's behavior using an asymptotic upper-bound:\n\nContent:\n- Asymptotic means we're interested in [MATH: n\\to\\infty.]\n- Finding an upper bound means we'd like to find a positive constant [MATH: c] and a positive function [MATH: g(n)] such that [MATH: f_1 \\leq c g] for [MATH: n\\to\\infty.]\n\nContent:\nWe can form an asymptotic upper bound for [MATH: f_1] by observing that it is bounded above by [MATH: 3n] for all [MATH: n\\geq n_0 = 1,] as shown below.\n\nGraphic:\n[IMG: /graphics/757207cf730d78613b88613ada3f56df]\n\nContent:\nThus, for all [MATH: n\\geq n_0,] we have\n[MATH: 2n+1 \\leq c g(n)]\nwhere\n[MATH: g(n) = n, \\qquad c = 3, \\qquad n_0 = 1.]\n\nContent:\nThere's nothing special about our choice of constants [MATH: c] and [MATH: n_0] here. We could have also selected [MATH: c=4] and [MATH: n_0=2,] for example.\n\nContent:\nWe define the set of functions that are of the order [MATH: \\boldsymbol n], denoted [MATH: O(n),] as follows:\n\nContent:\n[MATH: O(n) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c n \\big\\}]\nIn plain English, the set [MATH: O(n)] describes all nonnegative functions bounded above by some positive linear function [MATH: cn] for sufficiently large [MATH: n.] This notation is often called big-O (pronounced \"big-oh\") notation.\n\nContent:\nWe say that [MATH: f_1 = 2n+1] is of the order [MATH: \\boldsymbol{n},] and we write [MATH: f_1\\in O(n).]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419876",
+        "content_id": "11916",
+        "dom_id": "step-419876",
+        "selector": "#step-419876",
+        "step_anchor": "step-3",
+        "title": "Defining the Set O(1)",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s return to the solution to our sum-of-squares problem using the sum-of-squares formula. Recall that the total number of arithmetic operations was given by\n<span class=\"math\">[MATH: f_2(n) = 8.]</span></p>",
+            "readable_text": "Let's return to the solution to our sum-of-squares problem using the sum-of-squares formula. Recall that the total number of arithmetic operations was given by\n[MATH: f_2(n) = 8.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, for all <span class=\"math\">[MATH: n\\geq n_0,]</span> we have \n<span class=\"math\">[MATH: 8 \\leq c g(n)]</span>\nwhere\n<span class=\"math\">[MATH: g(n) = 1, \\qquad c = 8, \\qquad n_0 = 1.]</span></p>",
+            "readable_text": "Thus, for all [MATH: n\\geq n_0,] we have\n[MATH: 8 \\leq c g(n)]\nwhere\n[MATH: g(n) = 1, \\qquad c = 8, \\qquad n_0 = 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Again, there&#x27;s nothing special about our choice of constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> here. We could have also selected <span class=\"math\">[MATH: c=100]</span> and <span class=\"math\">[MATH: n_0=50,]</span> for example.</p>",
+            "readable_text": "Again, there's nothing special about our choice of constants [MATH: c] and [MATH: n_0] here. We could have also selected [MATH: c=100] and [MATH: n_0=50,] for example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We define the set of functions that are <strong>of the order <span class=\"math\">[MATH: 1]</span></strong>, denoted <span class=\"math\">[MATH: O(1),]</span> as follows:</p>",
+            "readable_text": "We define the set of functions that are of the order [MATH: 1], denoted [MATH: O(1),] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: O(1) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c \\big\\}]</span>\nIn plain English, the set <span class=\"math\">[MATH: O(1)]</span> describes all nonnegative functions bounded above by some positive constant for sufficiently large <span class=\"math\">[MATH: n.]</span></p>",
+            "readable_text": "[MATH: O(1) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c \\big\\}]\nIn plain English, the set [MATH: O(1)] describes all nonnegative functions bounded above by some positive constant for sufficiently large [MATH: n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We say that <span class=\"math\">[MATH: f_2 = 8]</span> is <strong>of the order</strong> <span class=\"math\">[MATH: \\boldsymbol{1},]</span> and we write <span class=\"math\">[MATH: f_2\\in O(1).]</span></p>",
+            "readable_text": "We say that [MATH: f_2 = 8] is of the order [MATH: \\boldsymbol{1},] and we write [MATH: f_2\\in O(1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's return to the solution to our sum-of-squares problem using the sum-of-squares formula. Recall that the total number of arithmetic operations was given by\n[MATH: f_2(n) = 8.]\n\nContent:\nThus, for all [MATH: n\\geq n_0,] we have\n[MATH: 8 \\leq c g(n)]\nwhere\n[MATH: g(n) = 1, \\qquad c = 8, \\qquad n_0 = 1.]\n\nContent:\nAgain, there's nothing special about our choice of constants [MATH: c] and [MATH: n_0] here. We could have also selected [MATH: c=100] and [MATH: n_0=50,] for example.\n\nContent:\nWe define the set of functions that are of the order [MATH: 1], denoted [MATH: O(1),] as follows:\n\nContent:\n[MATH: O(1) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c \\big\\}]\nIn plain English, the set [MATH: O(1)] describes all nonnegative functions bounded above by some positive constant for sufficiently large [MATH: n.]\n\nContent:\nWe say that [MATH: f_2 = 8] is of the order [MATH: \\boldsymbol{1},] and we write [MATH: f_2\\in O(1).]"
+      },
+      {
+        "lesson_index": 4,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419877",
+        "content_id": "11915",
+        "dom_id": "step-419877",
+        "selector": "#step-419877",
+        "step_anchor": "step-4",
+        "title": "Defining the Set O(g(n))",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can generalize these concepts by defining the set <span class=\"math\">[MATH: O(g(n))]</span> as follows:</p>",
+            "readable_text": "We can generalize these concepts by defining the set [MATH: O(g(n))] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]</span></p>",
+            "readable_text": "[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is the set of all nonnegative functions <span class=\"math\">[MATH: f(n)]</span> such that, for each <span class=\"math\">[MATH: f,]</span> there exist positive constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> such that for all <span class=\"math\">[MATH: n]</span> larger than <span class=\"math\">[MATH: n_0,]</span> the values of <span class=\"math\">[MATH: f(n)]</span> are not larger than <span class=\"math\">[MATH: c \\cdot g(n).]</span> </p>",
+            "readable_text": "This is the set of all nonnegative functions [MATH: f(n)] such that, for each [MATH: f,] there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Geometrically, this means that starting from a certain point <span class=\"math\">[MATH: n=n_0,]</span> the graph of <span class=\"math\">[MATH: y=c \\cdot g(n)]</span> lies <em>above</em> the graph of <span class=\"math\">[MATH: y=f(n)]</span> for all <span class=\"math\">[MATH: n\\geq n_0.]</span></p>",
+            "readable_text": "Geometrically, this means that starting from a certain point [MATH: n=n_0,] the graph of [MATH: y=c \\cdot g(n)] lies above the graph of [MATH: y=f(n)] for all [MATH: n\\geq n_0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/c8c8ba7bc85fad672d280e8f3a15736d\"></p>",
+            "readable_text": "[IMG: /graphics/c8c8ba7bc85fad672d280e8f3a15736d]",
+            "images": [
+              {
+                "src": "/graphics/c8c8ba7bc85fad672d280e8f3a15736d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, the set <span class=\"math\">[MATH: O(4^n)]</span> is defined as follows:</p>",
+            "readable_text": "For example, the set [MATH: O(4^n)] is defined as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: O(4^n) = \\big\\{ f(n) \\: : \\:\n\\exists c, n_0 &gt; 0\n, \\:\n\\forall n \\geq n_0\n, \\:\n0 \\leq f(n) \\leq c \\cdot 4^n \\big\\}]</span></p>",
+            "readable_text": "[MATH: O(4^n) = \\big\\{ f(n) \\: : \\:\n\\exists c, n_0 > 0\n, \\:\n\\forall n \\geq n_0\n, \\:\n0 \\leq f(n) \\leq c \\cdot 4^n \\big\\}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the context of algorithmic complexity, the functions <span class=\"math\">[MATH: f]</span> and <span class=\"math\">[MATH: g]</span> in our definition are always nonnegative since any algorithm requires zero or more steps to run.</p>",
+            "readable_text": "In the context of algorithmic complexity, the functions [MATH: f] and [MATH: g] in our definition are always nonnegative since any algorithm requires zero or more steps to run.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see some more examples.</p>",
+            "readable_text": "Let's see some more examples.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/c8c8ba7bc85fad672d280e8f3a15736d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe can generalize these concepts by defining the set [MATH: O(g(n))] as follows:\n\nContent:\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nContent:\nThis is the set of all nonnegative functions [MATH: f(n)] such that, for each [MATH: f,] there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n).]\n\nContent:\nGeometrically, this means that starting from a certain point [MATH: n=n_0,] the graph of [MATH: y=c \\cdot g(n)] lies above the graph of [MATH: y=f(n)] for all [MATH: n\\geq n_0.]\n\nGraphic:\n[IMG: /graphics/c8c8ba7bc85fad672d280e8f3a15736d]\n\nContent:\nFor example, the set [MATH: O(4^n)] is defined as follows:\n\nContent:\n[MATH: O(4^n) = \\big\\{ f(n) \\: : \\:\n\\exists c, n_0 > 0\n, \\:\n\\forall n \\geq n_0\n, \\:\n0 \\leq f(n) \\leq c \\cdot 4^n \\big\\}]\n\nContent:\nIn the context of algorithmic complexity, the functions [MATH: f] and [MATH: g] in our definition are always nonnegative since any algorithm requires zero or more steps to run.\n\nContent:\nLet's see some more examples."
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "419878",
+        "content_id": "15758",
+        "dom_id": "step-419878",
+        "selector": "#step-419878",
+        "step_anchor": "step-5",
+        "title": "Understanding the Definition of Big-O",
+        "key_prerequisites": [
+          {
+            "topic_id": "2792",
+            "name": "Nested Quantifiers",
+            "href": "/topics/2792",
+            "type": ""
+          },
+          {
+            "topic_id": "4425",
+            "name": "The Conditional Definition of a Set",
+            "href": "/topics/4425",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose <span class=\"math\">[MATH: n \\in \\mathbb{N}.]</span> In the context of algorithmic complexity, what is the definition of <span class=\"math\">[MATH: O(n^{10})?]</span> Describe this set geometrically.</p>",
+            "readable_text": "Suppose [MATH: n \\in \\mathbb{N}.] In the context of algorithmic complexity, what is the definition of [MATH: O(n^{10})?] Describe this set geometrically.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>According to the definition, <span class=\"math\">[MATH: O(g(n))]</span> is the set of all functions <span class=\"math\">[MATH: f(n)]</span> for which there exist positive constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> such that for all <span class=\"math\">[MATH: n]</span> larger than <span class=\"math\">[MATH: n_0,]</span> the values of <span class=\"math\">[MATH: f(n)]</span> are not larger than <span class=\"math\">[MATH: c \\cdot g(n){:}]</span> </p><p><span class=\"math\">[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]</span></p><p>Geometrically, this means the following:</p><blockquote><p>The set <span class=\"math\">[MATH: O(n^{10})]</span> consists of all the \nfunctions <span class=\"math\">[MATH: f(n)]</span> for which there exist positive constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> such that the graph of <span class=\"math\">[MATH: y=c n^{10}]</span> lies above the graph of <span class=\"math\">[MATH: y=f(n)]</span> for all <span class=\"math\">[MATH: n\\geq n_0.]</span> </p></blockquote>",
+            "readable_text": "According to the definition, [MATH: O(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n){:}]\n\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nGeometrically, this means the following:\n\n> The set [MATH: O(n^{10})] consists of all the\n> functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that the graph of [MATH: y=c n^{10}] lies above the graph of [MATH: y=f(n)] for all [MATH: n\\geq n_0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose [MATH: n \\in \\mathbb{N}.] In the context of algorithmic complexity, what is the definition of [MATH: O(n^{10})?] Describe this set geometrically.\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: O(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n){:}]\n\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nGeometrically, this means the following:\n\n> The set [MATH: O(n^{10})] consists of all the\n> functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that the graph of [MATH: y=c n^{10}] lies above the graph of [MATH: y=f(n)] for all [MATH: n\\geq n_0.]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "239247",
+        "dom_id": "question-239247",
+        "selector": "#question-239247",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: n \u2208 N.]</span> In the context of algorithmic complexity, select the correct options in the definition of <span class=\"math\">[MATH: O(n^{5})]</span> below.The <span class=\"select-list\" data-select-id=\"selectList-239247-0\" data-select-index=\"1\">[SELECT 1]</span> <span class=\"math\">[MATH: O(n^{5})]</span> consists of all the <span class=\"select-list\" data-select-id=\"selectList-239247-1\" data-select-index=\"2\">[SELECT 2]</span>, for which there exist positive constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_{0}]</span> such that the graph of <span class=\"select-list\" data-select-id=\"selectList-239247-2\" data-select-index=\"3\">[SELECT 3]</span> lies <span class=\"select-list\" data-select-id=\"selectList-239247-3\" data-select-index=\"4\">[SELECT 4]</span> the graph of <span class=\"math\">[MATH: y = f(n)]</span> for all <span class=\"select-list\" data-select-id=\"selectList-239247-4\" data-select-index=\"5\">[SELECT 5]</span>.</p>",
+          "readable_text": "Suppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: O(n^{5})] below.The [SELECT 1] [MATH: O(n^{5})] consists of all the [SELECT 2], for which there exist positive constants [MATH: c] and [MATH: n_{0}] such that the graph of [SELECT 3] lies [SELECT 4] the graph of [MATH: y = f(n)] for all [SELECT 5].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-239247-0",
+              "frame_dom_id": "selectListFrame-239247-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "set",
+                  "readable_text": "set"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "number",
+                  "readable_text": "number"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "function",
+                  "readable_text": "function"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-239247-1",
+              "frame_dom_id": "selectListFrame-239247-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "functions <span class=\"math\">[MATH: f(n)]</span>",
+                  "readable_text": "functions [MATH: f(n)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "numbers <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "numbers [MATH: n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "sets <span class=\"math\">[MATH: {n}]</span>",
+                  "readable_text": "sets [MATH: {n}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-239247-2",
+              "frame_dom_id": "selectListFrame-239247-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: y = cn^{5}]</span>",
+                  "readable_text": "[MATH: y = cn^{5}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: y = n^{5}]</span>",
+                  "readable_text": "[MATH: y = n^{5}]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-239247-3",
+              "frame_dom_id": "selectListFrame-239247-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "below",
+                  "readable_text": "below"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "above",
+                  "readable_text": "above"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-239247-4",
+              "frame_dom_id": "selectListFrame-239247-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2264 n_{0}]</span>",
+                  "readable_text": "[MATH: n \u2264 n_{0}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                  "readable_text": "[MATH: n \u2265 n_{0}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-239247-0",
+            "frame_dom_id": "selectListFrame-239247-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "set",
+                "readable_text": "set"
+              },
+              {
+                "index": 2,
+                "normalized_html": "number",
+                "readable_text": "number"
+              },
+              {
+                "index": 3,
+                "normalized_html": "function",
+                "readable_text": "function"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-239247-1",
+            "frame_dom_id": "selectListFrame-239247-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "functions <span class=\"math\">[MATH: f(n)]</span>",
+                "readable_text": "functions [MATH: f(n)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "numbers <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "numbers [MATH: n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "sets <span class=\"math\">[MATH: {n}]</span>",
+                "readable_text": "sets [MATH: {n}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-239247-2",
+            "frame_dom_id": "selectListFrame-239247-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: y = cn^{5}]</span>",
+                "readable_text": "[MATH: y = cn^{5}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: y = n^{5}]</span>",
+                "readable_text": "[MATH: y = n^{5}]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-239247-3",
+            "frame_dom_id": "selectListFrame-239247-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "below",
+                "readable_text": "below"
+              },
+              {
+                "index": 2,
+                "normalized_html": "above",
+                "readable_text": "above"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-239247-4",
+            "frame_dom_id": "selectListFrame-239247-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2264 n_{0}]</span>",
+                "readable_text": "[MATH: n \u2264 n_{0}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                "readable_text": "[MATH: n \u2265 n_{0}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: O(n^{5})] below.The [SELECT 1] [MATH: O(n^{5})] consists of all the [SELECT 2], for which there exist positive constants [MATH: c] and [MATH: n_{0}] such that the graph of [SELECT 3] lies [SELECT 4] the graph of [MATH: y = f(n)] for all [SELECT 5]."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "239245",
+        "dom_id": "question-239245",
+        "selector": "#question-239245",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: n \u2208 N.]</span> In the context of algorithmic complexity, select the correct options in the definition of <span class=\"math\">[MATH: O(n^{2})]</span> below. <span class=\"math\">[MATH: \u2203]</span><span class=\"select-list\" data-select-id=\"selectList-239245-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-239245-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-239245-2\" data-select-index=\"3\">[SELECT 3]</span><span class=\"select-list\" data-select-id=\"selectList-239245-3\" data-select-index=\"4\">[SELECT 4]</span><span class=\"select-list\" data-select-id=\"selectList-239245-4\" data-select-index=\"5\">[SELECT 5]</span><span class=\"select-list\" data-select-id=\"selectList-239245-5\" data-select-index=\"6\">[SELECT 6]</span></p>",
+          "readable_text": "Suppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: O(n^{2})] below. [MATH: \u2203][SELECT 1][SELECT 2][SELECT 3][SELECT 4][SELECT 5][SELECT 6]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-239245-0",
+              "frame_dom_id": "selectListFrame-239245-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2203]</span>",
+                  "readable_text": "[MATH: \u2203]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2200]</span>",
+                  "readable_text": "[MATH: \u2200]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-239245-1",
+              "frame_dom_id": "selectListFrame-239245-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: c, n_{0} &gt; 0]</span>",
+                  "readable_text": "[MATH: c, n_{0} > 0]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c, n &gt; 0]</span>",
+                  "readable_text": "[MATH: c, n > 0]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: c, n &lt; 0]</span>",
+                  "readable_text": "[MATH: c, n < 0]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-239245-2",
+              "frame_dom_id": "selectListFrame-239245-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2203]</span>",
+                  "readable_text": "[MATH: \u2203]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2200]</span>",
+                  "readable_text": "[MATH: \u2200]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-239245-3",
+              "frame_dom_id": "selectListFrame-239245-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2265 c]</span>",
+                  "readable_text": "[MATH: n \u2265 c]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c \u2265 n_{0}]</span>",
+                  "readable_text": "[MATH: c \u2265 n_{0}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                  "readable_text": "[MATH: n \u2265 n_{0}]"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-239245-4",
+              "frame_dom_id": "selectListFrame-239245-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: cf(n)]</span>",
+                  "readable_text": "[MATH: cf(n)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                  "readable_text": "[MATH: cn^{2}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: f(n)]</span>",
+                  "readable_text": "[MATH: f(n)]"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "dom_id": "selectList-239245-5",
+              "frame_dom_id": "selectListFrame-239245-5",
+              "placeholder": "[SELECT 6]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: c]</span>",
+                  "readable_text": "[MATH: c]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                  "readable_text": "[MATH: cn^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: cf(n)]</span>",
+                  "readable_text": "[MATH: cf(n)]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-239245-0",
+            "frame_dom_id": "selectListFrame-239245-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2203]</span>",
+                "readable_text": "[MATH: \u2203]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2200]</span>",
+                "readable_text": "[MATH: \u2200]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-239245-1",
+            "frame_dom_id": "selectListFrame-239245-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: c, n_{0} &gt; 0]</span>",
+                "readable_text": "[MATH: c, n_{0} > 0]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c, n &gt; 0]</span>",
+                "readable_text": "[MATH: c, n > 0]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: c, n &lt; 0]</span>",
+                "readable_text": "[MATH: c, n < 0]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-239245-2",
+            "frame_dom_id": "selectListFrame-239245-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2203]</span>",
+                "readable_text": "[MATH: \u2203]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2200]</span>",
+                "readable_text": "[MATH: \u2200]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-239245-3",
+            "frame_dom_id": "selectListFrame-239245-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2265 c]</span>",
+                "readable_text": "[MATH: n \u2265 c]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c \u2265 n_{0}]</span>",
+                "readable_text": "[MATH: c \u2265 n_{0}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n \u2265 n_{0}]</span>",
+                "readable_text": "[MATH: n \u2265 n_{0}]"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-239245-4",
+            "frame_dom_id": "selectListFrame-239245-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: cf(n)]</span>",
+                "readable_text": "[MATH: cf(n)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                "readable_text": "[MATH: cn^{2}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: f(n)]</span>",
+                "readable_text": "[MATH: f(n)]"
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "dom_id": "selectList-239245-5",
+            "frame_dom_id": "selectListFrame-239245-5",
+            "placeholder": "[SELECT 6]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: c]</span>",
+                "readable_text": "[MATH: c]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                "readable_text": "[MATH: cn^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: cf(n)]</span>",
+                "readable_text": "[MATH: cf(n)]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: O(n^{2})] below. [MATH: \u2203][SELECT 1][SELECT 2][SELECT 3][SELECT 4][SELECT 5][SELECT 6]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "419881",
+        "content_id": "15759",
+        "dom_id": "step-419881",
+        "selector": "#step-419881",
+        "step_anchor": "step-8",
+        "title": "Proving That a Function Belongs to a Big-O Set",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Prove that <span class=\"math\">[MATH: 8n - 2 \\in O(n^2)]</span> for <span class=\"math\">[MATH: n\\in\\mathbb N.]</span></p>",
+            "readable_text": "Prove that [MATH: 8n - 2 \\in O(n^2)] for [MATH: n\\in\\mathbb N.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>According to the definition, <span class=\"math\">[MATH: O(g(n))]</span> is the set of all functions <span class=\"math\">[MATH: f(n)]</span> for which there exist positive constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> such that for all <span class=\"math\">[MATH: n]</span> larger than <span class=\"math\">[MATH: n_0,]</span> the values of <span class=\"math\">[MATH: f(n)]</span> are not larger than <span class=\"math\">[MATH: c \\cdot g(n){:}]</span> </p><p><span class=\"math\">[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 &gt; 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]</span></p><p>So, we start as shown below.</p><blockquote><p>We need to show that there exists a constant <span class=\"math\">[MATH: c]</span> such that for sufficiently large <span class=\"math\">[MATH: n,]</span> we have\n<span class=\"math\">[MATH: 8n - 2\\leq c n^2.]</span></p></blockquote><p>Now, let&#x27;s isolate <span class=\"math\">[MATH: c]</span> on the right-hand side of the inequality.</p><blockquote><p>Dividing both sides of the inequality by <span class=\"math\">[MATH: n^2,]</span> we get the following:\n<span class=\"math\">[MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]</span></p></blockquote><p>Notice that <span class=\"math\">[MATH: \\dfrac{8}{n} = 8]</span> and <span class=\"math\">[MATH: \\dfrac{2}{n^2} = 2]</span> if <span class=\"math\">[MATH: n=1.]</span> Also, both <span class=\"math\">[MATH: \\dfrac{8}{n}]</span> and <span class=\"math\">[MATH: \\dfrac{2}{n^2}]</span> monotonically approach <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n \\to \\infty.]</span> As a result, \n<span class=\"math\">[MATH: \\dfrac{8}{n} - \\dfrac{2}{n^2} \\leq 8]</span>\nfor all <span class=\"math\">[MATH: n \\geq 1,]</span> and we can now pick our constants. </p><blockquote><p>By setting <span class=\"math\">[MATH: n_0=1]</span> and <span class=\"math\">[MATH: c=8,]</span> we make the above inequality hold for any <span class=\"math\">[MATH: n \\geq n_0.]</span></p></blockquote><p>Of course, other choices for the constants <span class=\"math\">[MATH: c]</span> and <span class=\"math\">[MATH: n_0]</span> may do the job, but the important thing is we found at least one such combination.</p><blockquote><p>Therefore, <span class=\"math\">[MATH: 8n - 2 \\in O(n^2).]</span></p></blockquote><p>The full proof is shown below:</p><blockquote><p>We need to show that there exists a constant <span class=\"math\">[MATH: c]</span> such that for sufficiently large <span class=\"math\">[MATH: n,]</span> we have\n<span class=\"math\">[MATH: 8n - 2\\leq c n^2.]</span>\nDividing both sides of the inequality by <span class=\"math\">[MATH: n^2,]</span> we get the following:\n<span class=\"math\">[MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]</span>\nBy setting <span class=\"math\">[MATH: n_0=1]</span> and <span class=\"math\">[MATH: c=8,]</span> we make the above inequality hold for any <span class=\"math\">[MATH: n \\geq n_0.]</span></p><p>Therefore, <span class=\"math\">[MATH: 8n - 2 \\in O(n^2).]</span></p></blockquote>",
+            "readable_text": "According to the definition, [MATH: O(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n){:}]\n\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nSo, we start as shown below.\n\n> We need to show that there exists a constant [MATH: c] such that for sufficiently large [MATH: n,] we have\n> [MATH: 8n - 2\\leq c n^2.]\n\nNow, let's isolate [MATH: c] on the right-hand side of the inequality.\n\n> Dividing both sides of the inequality by [MATH: n^2,] we get the following:\n> [MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]\n\nNotice that [MATH: \\dfrac{8}{n} = 8] and [MATH: \\dfrac{2}{n^2} = 2] if [MATH: n=1.] Also, both [MATH: \\dfrac{8}{n}] and [MATH: \\dfrac{2}{n^2}] monotonically approach [MATH: 0] as [MATH: n \\to \\infty.] As a result,\n[MATH: \\dfrac{8}{n} - \\dfrac{2}{n^2} \\leq 8]\nfor all [MATH: n \\geq 1,] and we can now pick our constants.\n\n> By setting [MATH: n_0=1] and [MATH: c=8,] we make the above inequality hold for any [MATH: n \\geq n_0.]\n\nOf course, other choices for the constants [MATH: c] and [MATH: n_0] may do the job, but the important thing is we found at least one such combination.\n\n> Therefore, [MATH: 8n - 2 \\in O(n^2).]\n\nThe full proof is shown below:\n\n> We need to show that there exists a constant [MATH: c] such that for sufficiently large [MATH: n,] we have\n> [MATH: 8n - 2\\leq c n^2.]\n> Dividing both sides of the inequality by [MATH: n^2,] we get the following:\n> [MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]\n> By setting [MATH: n_0=1] and [MATH: c=8,] we make the above inequality hold for any [MATH: n \\geq n_0.]\n>\n> Therefore, [MATH: 8n - 2 \\in O(n^2).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nProve that [MATH: 8n - 2 \\in O(n^2)] for [MATH: n\\in\\mathbb N.]\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: O(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n){:}]\n\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nSo, we start as shown below.\n\n> We need to show that there exists a constant [MATH: c] such that for sufficiently large [MATH: n,] we have\n> [MATH: 8n - 2\\leq c n^2.]\n\nNow, let's isolate [MATH: c] on the right-hand side of the inequality.\n\n> Dividing both sides of the inequality by [MATH: n^2,] we get the following:\n> [MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]\n\nNotice that [MATH: \\dfrac{8}{n} = 8] and [MATH: \\dfrac{2}{n^2} = 2] if [MATH: n=1.] Also, both [MATH: \\dfrac{8}{n}] and [MATH: \\dfrac{2}{n^2}] monotonically approach [MATH: 0] as [MATH: n \\to \\infty.] As a result,\n[MATH: \\dfrac{8}{n} - \\dfrac{2}{n^2} \\leq 8]\nfor all [MATH: n \\geq 1,] and we can now pick our constants.\n\n> By setting [MATH: n_0=1] and [MATH: c=8,] we make the above inequality hold for any [MATH: n \\geq n_0.]\n\nOf course, other choices for the constants [MATH: c] and [MATH: n_0] may do the job, but the important thing is we found at least one such combination.\n\n> Therefore, [MATH: 8n - 2 \\in O(n^2).]\n\nThe full proof is shown below:\n\n> We need to show that there exists a constant [MATH: c] such that for sufficiently large [MATH: n,] we have\n> [MATH: 8n - 2\\leq c n^2.]\n> Dividing both sides of the inequality by [MATH: n^2,] we get the following:\n> [MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]\n> By setting [MATH: n_0=1] and [MATH: c=8,] we make the above inequality hold for any [MATH: n \\geq n_0.]\n>\n> Therefore, [MATH: 8n - 2 \\in O(n^2).]"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "258871",
+        "dom_id": "question-258871",
+        "selector": "#question-258871",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Prove that <span class=\"math\">[MATH: 5n + 8 \u2208 O(n)]</span> for <span class=\"math\">[MATH: n \u2208 N.]</span></p>",
+          "readable_text": "Prove that [MATH: 5n + 8 \u2208 O(n)] for [MATH: n \u2208 N.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "<p>We need to show that there exists a constant <span class=\"math\">[MATH: c]</span> such that for \n<span class=\"select-list\" data-select-id=\"selectList-258871-0\" data-select-index=\"1\">[SELECT 1]</span>, \nwe have\n<span class=\"math\">[MATH: \u2265]</span><span class=\"select-list\" data-select-id=\"selectList-258871-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-258871-2\" data-select-index=\"3\">[SELECT 3]</span></p>",
+          "readable_text": "We need to show that there exists a constant [MATH: c] such that for\n[SELECT 1],\nwe have\n[MATH: \u2265][SELECT 2][SELECT 3]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258871-0",
+              "frame_dom_id": "selectListFrame-258871-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "all natural [MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently large [MATH: n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently small [MATH: n]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258871-1",
+              "frame_dom_id": "selectListFrame-258871-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2265]</span>",
+                  "readable_text": "[MATH: \u2265]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2264]</span>",
+                  "readable_text": "[MATH: \u2264]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: =]</span>",
+                  "readable_text": "[MATH: =]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-258871-2",
+              "frame_dom_id": "selectListFrame-258871-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "[MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c]</span>",
+                  "readable_text": "[MATH: c]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: cn]</span>",
+                  "readable_text": "[MATH: cn]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: c(5n + 8)]</span>",
+                  "readable_text": "[MATH: c(5n + 8)]"
+                }
+              ]
+            }
+          ]
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258871-0",
+            "frame_dom_id": "selectListFrame-258871-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "all natural [MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently large [MATH: n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently small [MATH: n]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258871-1",
+            "frame_dom_id": "selectListFrame-258871-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2265]</span>",
+                "readable_text": "[MATH: \u2265]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2264]</span>",
+                "readable_text": "[MATH: \u2264]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: =]</span>",
+                "readable_text": "[MATH: =]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-258871-2",
+            "frame_dom_id": "selectListFrame-258871-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                "readable_text": "[MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c]</span>",
+                "readable_text": "[MATH: c]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: cn]</span>",
+                "readable_text": "[MATH: cn]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: c(5n + 8)]</span>",
+                "readable_text": "[MATH: c(5n + 8)]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nProve that [MATH: 5n + 8 \u2208 O(n)] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists a constant [MATH: c] such that for\n[SELECT 1],\nwe have\n[MATH: \u2265][SELECT 2][SELECT 3]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "239294",
+        "dom_id": "question-239294",
+        "selector": "#question-239294",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Prove that <span class=\"math\">[MATH: 10n \u2212 6 \u2208 O(n^{2})]</span> for <span class=\"math\">[MATH: n \u2208 N.]</span></p>",
+          "readable_text": "Prove that [MATH: 10n \u2212 6 \u2208 O(n^{2})] for [MATH: n \u2208 N.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "<p>We need to show that there exists a constant <span class=\"math\">[MATH: c]</span> such that for <span class=\"select-list\" data-select-id=\"selectList-239294-0\" data-select-index=\"1\">[SELECT 1]</span>, we have\n<span class=\"math\">[MATH: \u2264]</span><span class=\"select-list\" data-select-id=\"selectList-239294-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-239294-2\" data-select-index=\"3\">[SELECT 3]</span></p>",
+          "readable_text": "We need to show that there exists a constant [MATH: c] such that for [SELECT 1], we have\n[MATH: \u2264][SELECT 2][SELECT 3]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-239294-0",
+              "frame_dom_id": "selectListFrame-239294-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "all natural [MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently large [MATH: n]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "sufficiently small [MATH: n]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-239294-1",
+              "frame_dom_id": "selectListFrame-239294-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2264]</span>",
+                  "readable_text": "[MATH: \u2264]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2265]</span>",
+                  "readable_text": "[MATH: \u2265]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: =]</span>",
+                  "readable_text": "[MATH: =]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-239294-2",
+              "frame_dom_id": "selectListFrame-239294-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: c(10n \u2212 6)]</span>",
+                  "readable_text": "[MATH: c(10n \u2212 6)]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: c]</span>",
+                  "readable_text": "[MATH: c]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                  "readable_text": "[MATH: cn^{2}]"
+                }
+              ]
+            }
+          ]
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-239294-0",
+            "frame_dom_id": "selectListFrame-239294-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "all natural <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "all natural [MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "sufficiently large <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently large [MATH: n]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "sufficiently small <span class=\"math\">[MATH: n]</span>",
+                "readable_text": "sufficiently small [MATH: n]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-239294-1",
+            "frame_dom_id": "selectListFrame-239294-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2264]</span>",
+                "readable_text": "[MATH: \u2264]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2265]</span>",
+                "readable_text": "[MATH: \u2265]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: =]</span>",
+                "readable_text": "[MATH: =]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-239294-2",
+            "frame_dom_id": "selectListFrame-239294-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: c(10n \u2212 6)]</span>",
+                "readable_text": "[MATH: c(10n \u2212 6)]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: c]</span>",
+                "readable_text": "[MATH: c]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: cn^{2}]</span>",
+                "readable_text": "[MATH: cn^{2}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nProve that [MATH: 10n \u2212 6 \u2208 O(n^{2})] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists a constant [MATH: c] such that for [SELECT 1], we have\n[MATH: \u2264][SELECT 2][SELECT 3]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419884",
+        "content_id": "10096",
+        "dom_id": "step-419884",
+        "selector": "#step-419884",
+        "step_anchor": "step-11",
+        "title": "Properties of Big-O Notation",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s recall our two algorithms for computing the sum of squares of the first <span class=\"math\">[MATH: (n+1)]</span> integers:</p>",
+            "readable_text": "Let's recall our two algorithms for computing the sum of squares of the first [MATH: (n+1)] integers:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The brute force approach:\n<span class=\"math\">[MATH: S(n) = 1^2+2^2+\\cdots + n^2+(n+1)^2]</span>\nThis algorithm requires <span class=\"math\">[MATH: f_1 = 2n+1]</span> arithmetic operations to compute, thus <span class=\"math\">[MATH: f_1 \\in O(n).]</span></p></li><li><p>The sum-of-squares formula:\n<span class=\"math\">[MATH: S(n) = \\dfrac16 (n+1)(n+2)(2n+3)]</span>\nThis algorithm requires <span class=\"math\">[MATH: f_2 = 8]</span> arithmetic operations to compute, thus <span class=\"math\">[MATH: f_2 \\in O(1).]</span></p></li></ul>",
+            "readable_text": "- The brute force approach:\n[MATH: S(n) = 1^2+2^2+\\cdots + n^2+(n+1)^2]\nThis algorithm requires [MATH: f_1 = 2n+1] arithmetic operations to compute, thus [MATH: f_1 \\in O(n).]\n- The sum-of-squares formula:\n[MATH: S(n) = \\dfrac16 (n+1)(n+2)(2n+3)]\nThis algorithm requires [MATH: f_2 = 8] arithmetic operations to compute, thus [MATH: f_2 \\in O(1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Geometrically, <span class=\"math\">[MATH: f_2\\in O(g(n))]</span> if <span class=\"math\">[MATH: f_2]</span> is bounded above by <span class=\"math\">[MATH: c g(n)]</span> for sufficiently large <span class=\"math\">[MATH: n.]</span> However, while <span class=\"math\">[MATH: f_2\\in O(1),]</span> it&#x27;s clear that some function of the form <span class=\"math\">[MATH: cn]</span> <em>also</em> bounds <span class=\"math\">[MATH: f_2]</span> for sufficiently large <span class=\"math\">[MATH: n.]</span> Therefore, we have that\n<span class=\"math\">[MATH: f_2 \\in O(n).]</span>\nFollowing this line of reasoning for any <span class=\"math\">[MATH: f\\in O(1),]</span> we see that\n<span class=\"math\">[MATH: O(1) \\subset O(n).]</span>\n</p>",
+            "readable_text": "Geometrically, [MATH: f_2\\in O(g(n))] if [MATH: f_2] is bounded above by [MATH: c g(n)] for sufficiently large [MATH: n.] However, while [MATH: f_2\\in O(1),] it's clear that some function of the form [MATH: cn] also bounds [MATH: f_2] for sufficiently large [MATH: n.] Therefore, we have that\n[MATH: f_2 \\in O(n).]\nFollowing this line of reasoning for any [MATH: f\\in O(1),] we see that\n[MATH: O(1) \\subset O(n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Similarly, any <span class=\"math\">[MATH: f\\in O(n)]</span> is also bounded above by some function <span class=\"math\">[MATH: cn^2]</span> for sufficiently large <span class=\"math\">[MATH: n.]</span> Therefore,\n<span class=\"math\">[MATH: O(1) \\subset O(n) \\subset O(n^2).]</span></p>",
+            "readable_text": "Similarly, any [MATH: f\\in O(n)] is also bounded above by some function [MATH: cn^2] for sufficiently large [MATH: n.] Therefore,\n[MATH: O(1) \\subset O(n) \\subset O(n^2).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.</p>",
+            "readable_text": "We can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/0934fb5b72015cacfb466a6f86f27bcd\"></p>",
+            "readable_text": "[IMG: /graphics/0934fb5b72015cacfb466a6f86f27bcd]",
+            "images": [
+              {
+                "src": "/graphics/0934fb5b72015cacfb466a6f86f27bcd",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Here, we have the following inclusions:</p>",
+            "readable_text": "Here, we have the following inclusions:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]</span></p>",
+            "readable_text": "[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Furthermore, <span class=\"math\">[MATH: O(n^k) \\subset O(n^{k+1})]</span> for all <span class=\"math\">[MATH: k=1,2,3,\\ldots,]</span> and <span class=\"math\">[MATH: O(a^n) \\subset O(b^n)]</span> whenever <span class=\"math\">[MATH: a &lt; b.]</span>  Notice that all inclusions are proper.</p>",
+            "readable_text": "Furthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.] Notice that all inclusions are proper.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We also have the following two facts:</p>",
+            "readable_text": "We also have the following two facts:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If <span class=\"math\">[MATH: c]</span> is any constant, then\n<span class=\"math\">[MATH: O(c g(n)) = O(g(n)).]</span> </p></li><li><p>If <span class=\"math\">[MATH: O(g(n)) \\subset O(f(n)),]</span> i.e., <span class=\"math\">[MATH: f(n)]</span> grow faster than <span class=\"math\">[MATH: g(n),]</span> then \n<span class=\"math\">[MATH: O(g(n)+f(n)) = O(f(n)).]</span> </p></li></ul>",
+            "readable_text": "- If [MATH: c] is any constant, then\n[MATH: O(c g(n)) = O(g(n)).]\n- If [MATH: O(g(n)) \\subset O(f(n)),] i.e., [MATH: f(n)] grow faster than [MATH: g(n),] then\n[MATH: O(g(n)+f(n)) = O(f(n)).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/0934fb5b72015cacfb466a6f86f27bcd",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's recall our two algorithms for computing the sum of squares of the first [MATH: (n+1)] integers:\n\nContent:\n- The brute force approach:\n[MATH: S(n) = 1^2+2^2+\\cdots + n^2+(n+1)^2]\nThis algorithm requires [MATH: f_1 = 2n+1] arithmetic operations to compute, thus [MATH: f_1 \\in O(n).]\n- The sum-of-squares formula:\n[MATH: S(n) = \\dfrac16 (n+1)(n+2)(2n+3)]\nThis algorithm requires [MATH: f_2 = 8] arithmetic operations to compute, thus [MATH: f_2 \\in O(1).]\n\nContent:\nGeometrically, [MATH: f_2\\in O(g(n))] if [MATH: f_2] is bounded above by [MATH: c g(n)] for sufficiently large [MATH: n.] However, while [MATH: f_2\\in O(1),] it's clear that some function of the form [MATH: cn] also bounds [MATH: f_2] for sufficiently large [MATH: n.] Therefore, we have that\n[MATH: f_2 \\in O(n).]\nFollowing this line of reasoning for any [MATH: f\\in O(1),] we see that\n[MATH: O(1) \\subset O(n).]\n\nContent:\nSimilarly, any [MATH: f\\in O(n)] is also bounded above by some function [MATH: cn^2] for sufficiently large [MATH: n.] Therefore,\n[MATH: O(1) \\subset O(n) \\subset O(n^2).]\n\nContent:\nWe can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\nGraphic:\n[IMG: /graphics/0934fb5b72015cacfb466a6f86f27bcd]\n\nContent:\nHere, we have the following inclusions:\n\nContent:\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nContent:\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.] Notice that all inclusions are proper.\n\nContent:\nWe also have the following two facts:\n\nContent:\n- If [MATH: c] is any constant, then\n[MATH: O(c g(n)) = O(g(n)).]\n- If [MATH: O(g(n)) \\subset O(f(n)),] i.e., [MATH: f(n)] grow faster than [MATH: g(n),] then\n[MATH: O(g(n)+f(n)) = O(f(n)).]"
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419885",
+        "content_id": "11928",
+        "dom_id": "step-419885",
+        "selector": "#step-419885",
+        "step_anchor": "step-12",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s prove that <span class=\"math\">[MATH: O(3n^5 + 2 +n!)=  O(n!).]</span></p>",
+            "readable_text": "Let's prove that [MATH: O(3n^5 + 2 +n!)= O(n!).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since <span class=\"math\">[MATH: O(2) \\subset O(3n^5),]</span> we can re-write the upper bound as follows:</p>",
+            "readable_text": "Since [MATH: O(2) \\subset O(3n^5),] we can re-write the upper bound as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: O(3n^{5} + 2 + n!)|= O(3n^{5} + n!).]</span></p>",
+            "readable_text": "[MATH: O(3n^{5} + 2 + n!)|= O(3n^{5} + n!).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, since <span class=\"math\">[MATH: O(3n^5)=O(n^5),]</span> we get the following:\n<span class=\"math\">[MATH: O(3n^{5} + n!)|= O(n^{5} + n!)]</span></p>",
+            "readable_text": "Next, since [MATH: O(3n^5)=O(n^5),] we get the following:\n[MATH: O(3n^{5} + n!)|= O(n^{5} + n!)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, since <span class=\"math\">[MATH: O(n^5) \\subset O(n!),]</span> we obtain that\n<span class=\"math\">[MATH: O(n^5 + n!) = O(n!).]</span></p>",
+            "readable_text": "Finally, since [MATH: O(n^5) \\subset O(n!),] we obtain that\n[MATH: O(n^5 + n!) = O(n!).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's prove that [MATH: O(3n^5 + 2 +n!)= O(n!).]\n\nContent:\nSince [MATH: O(2) \\subset O(3n^5),] we can re-write the upper bound as follows:\n\nContent:\n[MATH: O(3n^{5} + 2 + n!)|= O(3n^{5} + n!).]\n\nContent:\nNext, since [MATH: O(3n^5)=O(n^5),] we get the following:\n[MATH: O(3n^{5} + n!)|= O(n^{5} + n!)]\n\nContent:\nFinally, since [MATH: O(n^5) \\subset O(n!),] we obtain that\n[MATH: O(n^5 + n!) = O(n!).]"
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 9,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "419886",
+        "content_id": "15828",
+        "dom_id": "step-419886",
+        "selector": "#step-419886",
+        "step_anchor": "step-13",
+        "title": "Using the Properties of Big-O Notation",
+        "key_prerequisites": [
+          {
+            "topic_id": "50",
+            "name": "Subsets",
+            "href": "/topics/50",
+            "type": ""
+          },
+          {
+            "topic_id": "1245",
+            "name": "Determining Limits of Sequences Using Relative Magnitudes",
+            "href": "/topics/1245",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Simplify the asymptotic notation <span class=\"math\">[MATH: O\\left(3^n + 8 +2n^4\\right).]</span></p>",
+            "readable_text": "Simplify the asymptotic notation [MATH: O\\left(3^n + 8 +2n^4\\right).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>We can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.</p><div class=\"graphic\"><img src=\"/graphics/bfc39a209bd0ce7d5341aa1148954ed1\"></div><p>Here, we have the following inclusions:</p><p><span class=\"math\">[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]</span></p><p>Furthermore, <span class=\"math\">[MATH: O(n^k) \\subset O(n^{k+1})]</span> for all <span class=\"math\">[MATH: k=1,2,3,\\ldots,]</span> and <span class=\"math\">[MATH: O(a^n) \\subset O(b^n)]</span> whenever <span class=\"math\">[MATH: a &lt; b.]</span>  Notice that all inclusions are proper. </p><p>Also, <span class=\"math\">[MATH: O(c g(n)) = O(g(n))]</span> for any constant multiplier <span class=\"math\">[MATH: c,]</span> and if <span class=\"math\">[MATH: O(g(n)) \\subset O(f(n)),]</span> then \n<span class=\"math\">[MATH: O(g(n)+f(n)) = O(f(n)).]</span> </p><p>Now, since <span class=\"math\">[MATH: O(8) \\subset O(2n^4),]</span> we can re-write the upper bound as follows:</p><p><span class=\"math\">[MATH: O(3^{n} + 8 + 2n^{4})|= O(3^{n} + 2n^{4}).]</span></p><p>Next, since <span class=\"math\">[MATH: O(2n^4)=O(n^4),]</span> we get the following:\n<span class=\"math\">[MATH: O(3^{n} + 2n^{4})|= O(3^{n} + n^{4}).]</span></p><p>Finally, since <span class=\"math\">[MATH: O(n^4) \\subset O(3^n),]</span> we obtain that\n<span class=\"math\">[MATH: O(3^n + n^4) = O(3^n).]</span></p><p>Therefore, we have \n<span class=\"math\">[MATH: O\\left(3^n + 8 +2n^4\\right) = O(3^n).]</span></p>",
+            "readable_text": "We can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\n[IMG: /graphics/bfc39a209bd0ce7d5341aa1148954ed1]\n\nHere, we have the following inclusions:\n\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.] Notice that all inclusions are proper.\n\nAlso, [MATH: O(c g(n)) = O(g(n))] for any constant multiplier [MATH: c,] and if [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: O(g(n)+f(n)) = O(f(n)).]\n\nNow, since [MATH: O(8) \\subset O(2n^4),] we can re-write the upper bound as follows:\n\n[MATH: O(3^{n} + 8 + 2n^{4})|= O(3^{n} + 2n^{4}).]\n\nNext, since [MATH: O(2n^4)=O(n^4),] we get the following:\n[MATH: O(3^{n} + 2n^{4})|= O(3^{n} + n^{4}).]\n\nFinally, since [MATH: O(n^4) \\subset O(3^n),] we obtain that\n[MATH: O(3^n + n^4) = O(3^n).]\n\nTherefore, we have\n[MATH: O\\left(3^n + 8 +2n^4\\right) = O(3^n).]",
+            "images": [
+              {
+                "src": "/graphics/bfc39a209bd0ce7d5341aa1148954ed1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/bfc39a209bd0ce7d5341aa1148954ed1",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSimplify the asymptotic notation [MATH: O\\left(3^n + 8 +2n^4\\right).]\n\nContent:\nEXPLANATION\n\nExplanation:\nWe can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\n[IMG: /graphics/bfc39a209bd0ce7d5341aa1148954ed1]\n\nHere, we have the following inclusions:\n\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.] Notice that all inclusions are proper.\n\nAlso, [MATH: O(c g(n)) = O(g(n))] for any constant multiplier [MATH: c,] and if [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: O(g(n)+f(n)) = O(f(n)).]\n\nNow, since [MATH: O(8) \\subset O(2n^4),] we can re-write the upper bound as follows:\n\n[MATH: O(3^{n} + 8 + 2n^{4})|= O(3^{n} + 2n^{4}).]\n\nNext, since [MATH: O(2n^4)=O(n^4),] we get the following:\n[MATH: O(3^{n} + 2n^{4})|= O(3^{n} + n^{4}).]\n\nFinally, since [MATH: O(n^4) \\subset O(3^n),] we obtain that\n[MATH: O(3^n + n^4) = O(3^n).]\n\nTherefore, we have\n[MATH: O\\left(3^n + 8 +2n^4\\right) = O(3^n).]"
+      },
+      {
+        "lesson_index": 14,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "258942",
+        "dom_id": "question-258942",
+        "selector": "#question-258942",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Select the correct options in the derivation below.<span class=\"math\">[MATH: n]</span><span class=\"select-list\" data-select-id=\"selectList-258942-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-258942-1\" data-select-index=\"2\">[SELECT 2]</span></p>",
+          "readable_text": "Select the correct options in the derivation below.[MATH: n][SELECT 1][SELECT 2]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258942-0",
+              "frame_dom_id": "selectListFrame-258942-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "[MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n + 10]</span>",
+                  "readable_text": "[MATH: n + 10]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2} + n]</span>",
+                  "readable_text": "[MATH: n^{2} + n]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258942-1",
+              "frame_dom_id": "selectListFrame-258942-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                  "readable_text": "[MATH: n]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258942-0",
+            "frame_dom_id": "selectListFrame-258942-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                "readable_text": "[MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n + 10]</span>",
+                "readable_text": "[MATH: n + 10]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2} + n]</span>",
+                "readable_text": "[MATH: n^{2} + n]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258942-1",
+            "frame_dom_id": "selectListFrame-258942-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n]</span>",
+                "readable_text": "[MATH: n]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSelect the correct options in the derivation below.[MATH: n][SELECT 1][SELECT 2]"
+      },
+      {
+        "lesson_index": 15,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "240402",
+        "dom_id": "question-240402",
+        "selector": "#question-240402",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Select the correct options in the derivation below.<span class=\"math\">[MATH: n^{2} + 3^{n}]</span><span class=\"select-list\" data-select-id=\"selectList-240402-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-240402-1\" data-select-index=\"2\">[SELECT 2]</span></p>",
+          "readable_text": "Select the correct options in the derivation below.[MATH: n^{2} + 3^{n}][SELECT 1][SELECT 2]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-240402-0",
+              "frame_dom_id": "selectListFrame-240402-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2} + 3^{n}]</span>",
+                  "readable_text": "[MATH: n^{2} + 3^{n}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 5 + n^{2}]</span>",
+                  "readable_text": "[MATH: 5 + n^{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 5 + 2n^{2}]</span>",
+                  "readable_text": "[MATH: 5 + 2n^{2}]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-240402-1",
+              "frame_dom_id": "selectListFrame-240402-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 5|]</span>",
+                  "readable_text": "[MATH: 5|]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 3^{n}]</span>",
+                  "readable_text": "[MATH: 3^{n}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                  "readable_text": "[MATH: n^{2}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-240402-0",
+            "frame_dom_id": "selectListFrame-240402-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2} + 3^{n}]</span>",
+                "readable_text": "[MATH: n^{2} + 3^{n}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 5 + n^{2}]</span>",
+                "readable_text": "[MATH: 5 + n^{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 5 + 2n^{2}]</span>",
+                "readable_text": "[MATH: 5 + 2n^{2}]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-240402-1",
+            "frame_dom_id": "selectListFrame-240402-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 5|]</span>",
+                "readable_text": "[MATH: 5|]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 3^{n}]</span>",
+                "readable_text": "[MATH: 3^{n}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: n^{2}]</span>",
+                "readable_text": "[MATH: n^{2}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSelect the correct options in the derivation below.[MATH: n^{2} + 3^{n}][SELECT 1][SELECT 2]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nAn algorithm is a step-by-step set of instructions or rules designed to perform a specific task or solve a particular problem. It is like a recipe that tells a person or computer precisely what to do in a methodical, structured way. However, not all algorithms are equally efficient because some take longer than others to solve the same problem.\n\nContent:\nSuppose, for example, we wish to write an algorithm for computing the sum of the squares [MATH: S(n)] of the first [MATH: (n+1)] natural numbers. One way to do this is to compute the sum using a so-called brute force approach, which involves explicitly calculating and summing each squared term:\n\nContent:\n[MATH: S(n) = 1^2+2^2+3^2+\\cdots + n^2 + (n+1)^2]\n\nContent:\nLet's analyze how many arithmetic operations it takes to compute this sum:\n\nContent:\n- For [MATH: n=1,] we require a total of [MATH: 3] arithmetic operations to compute the sum (two products and one summation):\n[MATH: S(2) = 1\\cdot 1 + 2\\cdot 2]\n- For [MATH: n=2,] we require a total of [MATH: 5] arithmetic operations to compute the sum (three products and two summations):\n[MATH: S(3) = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3]\n- For [MATH: n=3,] we require a total of [MATH: 7] arithmetic operations to compute the sum (four products and three summations):\n[MATH: S(3) = 1\\cdot 1 + 2\\cdot 2 + 3\\cdot 3 + 4\\cdot 4]\n\nContent:\nObserving the pattern, we see that for a given [MATH: n,] the number of arithmetic operations is given by the function\n\nContent:\n[MATH: f_1(n) = 2n+1.]\nSince this grows linearly with [MATH: n,] the brute force method becomes inefficient and impractical for large [MATH: n.]\n\nContent:\nThe second method uses the well-known sum of squares formula\n\nContent:\n[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = \\dfrac16 (n+1) (n+2)(2n+3).]\nWriting each arithmetic operation on the right-hand side explicitly, we have\n[MATH: S(n) = \\sum_{i=1}^{n+1} i^2 = (1 / 6) \\cdot (n+1) \\cdot (n+2)\\cdot (2\\cdot n+3).]\nThis method requires only [MATH: 8] arithmetic operations (one division, four products, and three summations). Thus, the number of arithmetic operations for this algorithm is given by\n[MATH: f_2(n) = 8.]\nNotice that [MATH: f_2] is independent of [MATH: n,] which means the second algorithm is much more efficient than the first.\n\nContent:\nBoth algorithms produce the same result, but the second requires far fewer operations for large [MATH: n.] If we were to write some code for these algorithms on a computer, the second would execute faster for large [MATH: n,] and the difference becomes even more significant as [MATH: n] grows.\n\nContent:\nThis example shows why it is important to compare algorithms' performance. The field of algorithmic complexity studies how fast or slow algorithms run as their input size grows. It helps us compare different algorithms to see which one is more efficient.\n\nContent:\nTo do this, we need a mathematical way to describe how their efficiency scales with [MATH: n.] That's what we'll discuss next.\n\n---\n\nItem 2 \u2014 Tutorial: Defining the Set O(n)\n\nContent:\nTo compare algorithms, we need a systematic way of describing how a function behaves as its input [MATH: n] grows.\n\nContent:\nRecall that, for the brute force solution to our sum-of-squares problem, the total number of arithmetic operations was given by\n[MATH: f_1(n) = 2n+1.]\n\nContent:\nOur goal is to describe this function's behavior using an asymptotic upper-bound:\n\nContent:\n- Asymptotic means we're interested in [MATH: n\\to\\infty.]\n- Finding an upper bound means we'd like to find a positive constant [MATH: c] and a positive function [MATH: g(n)] such that [MATH: f_1 \\leq c g] for [MATH: n\\to\\infty.]\n\nContent:\nWe can form an asymptotic upper bound for [MATH: f_1] by observing that it is bounded above by [MATH: 3n] for all [MATH: n\\geq n_0 = 1,] as shown below.\n\nGraphic:\n[IMG: /graphics/757207cf730d78613b88613ada3f56df]\n\nContent:\nThus, for all [MATH: n\\geq n_0,] we have\n[MATH: 2n+1 \\leq c g(n)]\nwhere\n[MATH: g(n) = n, \\qquad c = 3, \\qquad n_0 = 1.]\n\nContent:\nThere's nothing special about our choice of constants [MATH: c] and [MATH: n_0] here. We could have also selected [MATH: c=4] and [MATH: n_0=2,] for example.\n\nContent:\nWe define the set of functions that are of the order [MATH: \\boldsymbol n], denoted [MATH: O(n),] as follows:\n\nContent:\n[MATH: O(n) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c n \\big\\}]\nIn plain English, the set [MATH: O(n)] describes all nonnegative functions bounded above by some positive linear function [MATH: cn] for sufficiently large [MATH: n.] This notation is often called big-O (pronounced \"big-oh\") notation.\n\nContent:\nWe say that [MATH: f_1 = 2n+1] is of the order [MATH: \\boldsymbol{n},] and we write [MATH: f_1\\in O(n).]\n\n---\n\nItem 3 \u2014 Tutorial: Defining the Set O(1)\n\nContent:\nLet's return to the solution to our sum-of-squares problem using the sum-of-squares formula. Recall that the total number of arithmetic operations was given by\n[MATH: f_2(n) = 8.]\n\nContent:\nThus, for all [MATH: n\\geq n_0,] we have\n[MATH: 8 \\leq c g(n)]\nwhere\n[MATH: g(n) = 1, \\qquad c = 8, \\qquad n_0 = 1.]\n\nContent:\nAgain, there's nothing special about our choice of constants [MATH: c] and [MATH: n_0] here. We could have also selected [MATH: c=100] and [MATH: n_0=50,] for example.\n\nContent:\nWe define the set of functions that are of the order [MATH: 1], denoted [MATH: O(1),] as follows:\n\nContent:\n[MATH: O(1) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c \\big\\}]\nIn plain English, the set [MATH: O(1)] describes all nonnegative functions bounded above by some positive constant for sufficiently large [MATH: n.]\n\nContent:\nWe say that [MATH: f_2 = 8] is of the order [MATH: \\boldsymbol{1},] and we write [MATH: f_2\\in O(1).]\n\n---\n\nItem 4 \u2014 Tutorial: Defining the Set O(g(n))\n\nContent:\nWe can generalize these concepts by defining the set [MATH: O(g(n))] as follows:\n\nContent:\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nContent:\nThis is the set of all nonnegative functions [MATH: f(n)] such that, for each [MATH: f,] there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n).]\n\nContent:\nGeometrically, this means that starting from a certain point [MATH: n=n_0,] the graph of [MATH: y=c \\cdot g(n)] lies above the graph of [MATH: y=f(n)] for all [MATH: n\\geq n_0.]\n\nGraphic:\n[IMG: /graphics/c8c8ba7bc85fad672d280e8f3a15736d]\n\nContent:\nFor example, the set [MATH: O(4^n)] is defined as follows:\n\nContent:\n[MATH: O(4^n) = \\big\\{ f(n) \\: : \\:\n\\exists c, n_0 > 0\n, \\:\n\\forall n \\geq n_0\n, \\:\n0 \\leq f(n) \\leq c \\cdot 4^n \\big\\}]\n\nContent:\nIn the context of algorithmic complexity, the functions [MATH: f] and [MATH: g] in our definition are always nonnegative since any algorithm requires zero or more steps to run.\n\nContent:\nLet's see some more examples.\n\n---\n\nItem 5 \u2014 Example: Understanding the Definition of Big-O\n\nExample Prompt:\nSuppose [MATH: n \\in \\mathbb{N}.] In the context of algorithmic complexity, what is the definition of [MATH: O(n^{10})?] Describe this set geometrically.\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: O(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n){:}]\n\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nGeometrically, this means the following:\n\n> The set [MATH: O(n^{10})] consists of all the\n> functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that the graph of [MATH: y=c n^{10}] lies above the graph of [MATH: y=f(n)] for all [MATH: n\\geq n_0.]\n\n---\n\nItem 6 \u2014 Question 1\n\nPrompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: O(n^{5})] below.The [SELECT 1] [MATH: O(n^{5})] consists of all the [SELECT 2], for which there exist positive constants [MATH: c] and [MATH: n_{0}] such that the graph of [SELECT 3] lies [SELECT 4] the graph of [MATH: y = f(n)] for all [SELECT 5].\n\n---\n\nItem 7 \u2014 Question 2\n\nPrompt:\nSuppose [MATH: n \u2208 N.] In the context of algorithmic complexity, select the correct options in the definition of [MATH: O(n^{2})] below. [MATH: \u2203][SELECT 1][SELECT 2][SELECT 3][SELECT 4][SELECT 5][SELECT 6]\n\n---\n\nItem 8 \u2014 Example: Proving That a Function Belongs to a Big-O Set\n\nExample Prompt:\nProve that [MATH: 8n - 2 \\in O(n^2)] for [MATH: n\\in\\mathbb N.]\n\nContent:\nEXPLANATION\n\nExplanation:\nAccording to the definition, [MATH: O(g(n))] is the set of all functions [MATH: f(n)] for which there exist positive constants [MATH: c] and [MATH: n_0] such that for all [MATH: n] larger than [MATH: n_0,] the values of [MATH: f(n)] are not larger than [MATH: c \\cdot g(n){:}]\n\n[MATH: O(g(n)) = \\big\\{ f(n) \\: : \\: \\exists c, n_0 > 0, \\: \\forall n \\geq n_0, \\: 0 \\leq f(n) \\leq c g(n) \\big\\}]\n\nSo, we start as shown below.\n\n> We need to show that there exists a constant [MATH: c] such that for sufficiently large [MATH: n,] we have\n> [MATH: 8n - 2\\leq c n^2.]\n\nNow, let's isolate [MATH: c] on the right-hand side of the inequality.\n\n> Dividing both sides of the inequality by [MATH: n^2,] we get the following:\n> [MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]\n\nNotice that [MATH: \\dfrac{8}{n} = 8] and [MATH: \\dfrac{2}{n^2} = 2] if [MATH: n=1.] Also, both [MATH: \\dfrac{8}{n}] and [MATH: \\dfrac{2}{n^2}] monotonically approach [MATH: 0] as [MATH: n \\to \\infty.] As a result,\n[MATH: \\dfrac{8}{n} - \\dfrac{2}{n^2} \\leq 8]\nfor all [MATH: n \\geq 1,] and we can now pick our constants.\n\n> By setting [MATH: n_0=1] and [MATH: c=8,] we make the above inequality hold for any [MATH: n \\geq n_0.]\n\nOf course, other choices for the constants [MATH: c] and [MATH: n_0] may do the job, but the important thing is we found at least one such combination.\n\n> Therefore, [MATH: 8n - 2 \\in O(n^2).]\n\nThe full proof is shown below:\n\n> We need to show that there exists a constant [MATH: c] such that for sufficiently large [MATH: n,] we have\n> [MATH: 8n - 2\\leq c n^2.]\n> Dividing both sides of the inequality by [MATH: n^2,] we get the following:\n> [MATH: 8n \u2212 2|\u2264 cn^{2}; (8n \u2212 2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8n)/(n^{2}) \u2212 (2)/(n^{2})|\u2264 (cn^{2})/(n^{2}); (8)/(n) \u2212 (2)/(n^{2})|\u2264 c]\n> By setting [MATH: n_0=1] and [MATH: c=8,] we make the above inequality hold for any [MATH: n \\geq n_0.]\n>\n> Therefore, [MATH: 8n - 2 \\in O(n^2).]\n\n---\n\nItem 9 \u2014 Question 3\n\nPrompt:\nProve that [MATH: 5n + 8 \u2208 O(n)] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists a constant [MATH: c] such that for\n[SELECT 1],\nwe have\n[MATH: \u2265][SELECT 2][SELECT 3]\n\n---\n\nItem 10 \u2014 Question 4\n\nPrompt:\nProve that [MATH: 10n \u2212 6 \u2208 O(n^{2})] for [MATH: n \u2208 N.]\n\nBody:\nWe need to show that there exists a constant [MATH: c] such that for [SELECT 1], we have\n[MATH: \u2264][SELECT 2][SELECT 3]\n\n---\n\nItem 11 \u2014 Tutorial: Properties of Big-O Notation\n\nContent:\nLet's recall our two algorithms for computing the sum of squares of the first [MATH: (n+1)] integers:\n\nContent:\n- The brute force approach:\n[MATH: S(n) = 1^2+2^2+\\cdots + n^2+(n+1)^2]\nThis algorithm requires [MATH: f_1 = 2n+1] arithmetic operations to compute, thus [MATH: f_1 \\in O(n).]\n- The sum-of-squares formula:\n[MATH: S(n) = \\dfrac16 (n+1)(n+2)(2n+3)]\nThis algorithm requires [MATH: f_2 = 8] arithmetic operations to compute, thus [MATH: f_2 \\in O(1).]\n\nContent:\nGeometrically, [MATH: f_2\\in O(g(n))] if [MATH: f_2] is bounded above by [MATH: c g(n)] for sufficiently large [MATH: n.] However, while [MATH: f_2\\in O(1),] it's clear that some function of the form [MATH: cn] also bounds [MATH: f_2] for sufficiently large [MATH: n.] Therefore, we have that\n[MATH: f_2 \\in O(n).]\nFollowing this line of reasoning for any [MATH: f\\in O(1),] we see that\n[MATH: O(1) \\subset O(n).]\n\nContent:\nSimilarly, any [MATH: f\\in O(n)] is also bounded above by some function [MATH: cn^2] for sufficiently large [MATH: n.] Therefore,\n[MATH: O(1) \\subset O(n) \\subset O(n^2).]\n\nContent:\nWe can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\nGraphic:\n[IMG: /graphics/0934fb5b72015cacfb466a6f86f27bcd]\n\nContent:\nHere, we have the following inclusions:\n\nContent:\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nContent:\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.] Notice that all inclusions are proper.\n\nContent:\nWe also have the following two facts:\n\nContent:\n- If [MATH: c] is any constant, then\n[MATH: O(c g(n)) = O(g(n)).]\n- If [MATH: O(g(n)) \\subset O(f(n)),] i.e., [MATH: f(n)] grow faster than [MATH: g(n),] then\n[MATH: O(g(n)+f(n)) = O(f(n)).]\n\n---\n\nItem 12 \u2014 Tutorial: A Worked Example\n\nContent:\nLet's prove that [MATH: O(3n^5 + 2 +n!)= O(n!).]\n\nContent:\nSince [MATH: O(2) \\subset O(3n^5),] we can re-write the upper bound as follows:\n\nContent:\n[MATH: O(3n^{5} + 2 + n!)|= O(3n^{5} + n!).]\n\nContent:\nNext, since [MATH: O(3n^5)=O(n^5),] we get the following:\n[MATH: O(3n^{5} + n!)|= O(n^{5} + n!)]\n\nContent:\nFinally, since [MATH: O(n^5) \\subset O(n!),] we obtain that\n[MATH: O(n^5 + n!) = O(n!).]\n\n---\n\nItem 13 \u2014 Example: Using the Properties of Big-O Notation\n\nExample Prompt:\nSimplify the asymptotic notation [MATH: O\\left(3^n + 8 +2n^4\\right).]\n\nContent:\nEXPLANATION\n\nExplanation:\nWe can summarize the scales of some frequently used functions in terms of Big-O notation in the diagram below.\n\n[IMG: /graphics/bfc39a209bd0ce7d5341aa1148954ed1]\n\nHere, we have the following inclusions:\n\n[MATH: O(1) \\subset O(\\log(n)) \\subset O(n) \\subset O(n\\log(n)) \\subset O(n^k) \\subset O(a^n) \\subset O(n!)]\n\nFurthermore, [MATH: O(n^k) \\subset O(n^{k+1})] for all [MATH: k=1,2,3,\\ldots,] and [MATH: O(a^n) \\subset O(b^n)] whenever [MATH: a < b.] Notice that all inclusions are proper.\n\nAlso, [MATH: O(c g(n)) = O(g(n))] for any constant multiplier [MATH: c,] and if [MATH: O(g(n)) \\subset O(f(n)),] then\n[MATH: O(g(n)+f(n)) = O(f(n)).]\n\nNow, since [MATH: O(8) \\subset O(2n^4),] we can re-write the upper bound as follows:\n\n[MATH: O(3^{n} + 8 + 2n^{4})|= O(3^{n} + 2n^{4}).]\n\nNext, since [MATH: O(2n^4)=O(n^4),] we get the following:\n[MATH: O(3^{n} + 2n^{4})|= O(3^{n} + n^{4}).]\n\nFinally, since [MATH: O(n^4) \\subset O(3^n),] we obtain that\n[MATH: O(3^n + n^4) = O(3^n).]\n\nTherefore, we have\n[MATH: O\\left(3^n + 8 +2n^4\\right) = O(3^n).]\n\n---\n\nItem 14 \u2014 Question 5\n\nPrompt:\nSelect the correct options in the derivation below.[MATH: n][SELECT 1][SELECT 2]\n\n---\n\nItem 15 \u2014 Question 6\n\nPrompt:\nSelect the correct options in the derivation below.[MATH: n^{2} + 3^{n}][SELECT 1][SELECT 2]"
+  }
+}

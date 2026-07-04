@@ -1,0 +1,1152 @@
+{
+  "schema_version": 2,
+  "topic_id": "2166",
+  "topic_title": "The Least-Squares Solution of a Linear System (Without Collinearity)",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2166/Source/2166.html",
+  "source_url": "https://mathacademy.com/topics/2166",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20269",
+        "dom_id": "sectionLink-20269",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20269"
+      },
+      {
+        "index": 2,
+        "step_id": "20271",
+        "dom_id": "sectionLink-20271",
+        "name": "",
+        "title": "Finding the Least-Squares Solution of a Linear System Given in Matrix Form",
+        "selector": "#sectionLink-20271"
+      },
+      {
+        "index": 3,
+        "step_id": "20270",
+        "dom_id": "sectionLink-20270",
+        "name": "",
+        "title": "Finding the Least-Squares Solution of a Linear System",
+        "selector": "#sectionLink-20270"
+      },
+      {
+        "index": 4,
+        "step_id": "27532",
+        "dom_id": "sectionLink-27532",
+        "name": "",
+        "title": "Finding the Distance Between a Vector to a Subspace of Solutions of a Linear System",
+        "selector": "#sectionLink-27532"
+      },
+      {
+        "index": 5,
+        "step_id": "37337",
+        "dom_id": "sectionLink-37337",
+        "name": "",
+        "title": "Deriving the Normal Equation",
+        "selector": "#sectionLink-37337"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "42",
+        "name": "Matrices With Easy-to-Find Inverses",
+        "href": "/topics/matrices-with-easy-to-find-inverses-42"
+      },
+      {
+        "topic_id": "155",
+        "name": "Representing 3x3 Systems of Equations Using a Matrix Product",
+        "href": "/topics/representing-3x3-systems-of-equations-using-a-matrix-product-155"
+      },
+      {
+        "topic_id": "3818",
+        "name": "Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases): Applications",
+        "href": "/topics/projecting-vectors-onto-subspaces-in-euclidean-spaces-arbitrary-bases-applications-3818"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20269",
+        "content_id": "3636",
+        "dom_id": "step-20269",
+        "selector": "#step-20269",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider the following system of linear equations:\n<span class=\"math\">[MATH: {x_{1} + x_{2} = \u2212 2; \u2212 x_{1} \u2212 4x_{2} = 4; 2x_{1} \u2212 x_{2} = 2]</span></p>",
+            "readable_text": "Let's consider the following system of linear equations:\n[MATH: {x_{1} + x_{2} = \u2212 2; \u2212 x_{1} \u2212 4x_{2} = 4; 2x_{1} \u2212 x_{2} = 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It is easy to show that the system is inconsistent (i.e., it has no solution). However, in real-world problems, we might want to find an approximate solution to the system. </p>",
+            "readable_text": "It is easy to show that the system is inconsistent (i.e., it has no solution). However, in real-world problems, we might want to find an approximate solution to the system.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s formulate the problem a little more rigorously. Firstly, we write down the system in the form <span class=\"math\">[MATH: A\\mathbf x = \\mathbf b\\mathbin{:}]</span>\n<span class=\"math\">[MATH: [1|1; \u2212 1|\u2212 4; 2|\u2212 1]]</span></p>",
+            "readable_text": "Let's formulate the problem a little more rigorously. Firstly, we write down the system in the form [MATH: A\\mathbf x = \\mathbf b\\mathbin{:}]\n[MATH: [1|1; \u2212 1|\u2212 4; 2|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We are interested in vectors <span class=\"math\">[MATH: \\hat{\\mathbf{x}}]</span> such that <span class=\"math\">[MATH: A\\hat{\\mathbf{x}}]</span> is very close to <span class=\"math\">[MATH: \\mathbf b.]</span> More precisely, we wish to <em>minimize the distance</em> between <span class=\"math\">[MATH: A\\hat{\\mathbf{x}}]</span> and <span class=\"math\">[MATH: \\mathbf b.]</span> Recall that the distance between <span class=\"math\">[MATH: A\\hat{\\mathbf{x}}]</span> and <span class=\"math\">[MATH: \\mathbf b]</span> is given by</p>",
+            "readable_text": "We are interested in vectors [MATH: \\hat{\\mathbf{x}}] such that [MATH: A\\hat{\\mathbf{x}}] is very close to [MATH: \\mathbf b.] More precisely, we wish to minimize the distance between [MATH: A\\hat{\\mathbf{x}}] and [MATH: \\mathbf b.] Recall that the distance between [MATH: A\\hat{\\mathbf{x}}] and [MATH: \\mathbf b] is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Vert  A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert.]</span></p>",
+            "readable_text": "[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The smaller the value of <span class=\"math\">[MATH: \\Vert  A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert,]</span> the better our approximation <span class=\"math\">[MATH: \\hat{\\mathbf{x}}]</span> will be. </p>",
+            "readable_text": "The smaller the value of [MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert,] the better our approximation [MATH: \\hat{\\mathbf{x}}] will be.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In terms of vector subspaces, we wish to find a vector <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> that lies in <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> and is closest to <span class=\"math\">[MATH: \\mathbf{b}.]</span>\nTherefore, <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> must be the orthogonal projection of <span class=\"math\">[MATH: \\mathbf{b}]</span> onto the subspace spanned by the columns of <span class=\"math\">[MATH: A.]</span></p>",
+            "readable_text": "In terms of vector subspaces, we wish to find a vector [MATH: A{\\hat{\\mathbf{x}}}] that lies in [MATH: \\textrm{Col}(A)] and is closest to [MATH: \\mathbf{b}.]\nTherefore, [MATH: A{\\hat{\\mathbf{x}}}] must be the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/9a9d0b2b43fd73bf698e36b97875d410\"></p>",
+            "readable_text": "[IMG: /graphics/9a9d0b2b43fd73bf698e36b97875d410]",
+            "images": [
+              {
+                "src": "/graphics/9a9d0b2b43fd73bf698e36b97875d410",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It can be shown that <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> is found by solving the corresponding <strong>normal equation</strong>, given by \n<span class=\"math\">[MATH: A^{T}Ax^(^)|= A^{T}b.]</span></p>",
+            "readable_text": "It can be shown that [MATH: {\\hat{\\mathbf{x}}}] is found by solving the corresponding normal equation, given by\n[MATH: A^{T}Ax^(^)|= A^{T}b.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ll prove this at the end of the lesson. Note that the normal equation is obtained by left-multiplying the equation <span class=\"math\">[MATH: A {\\hat{\\mathbf{x}}} = \\mathbf b]</span> by <span class=\"math\">[MATH: A^T.]</span></p>",
+            "readable_text": "We'll prove this at the end of the lesson. Note that the normal equation is obtained by left-multiplying the equation [MATH: A {\\hat{\\mathbf{x}}} = \\mathbf b] by [MATH: A^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, the matrix <span class=\"math\">[MATH: A^T \\! A]</span> is invertible. Therefore, left-multiplying the normal equation by <span class=\"math\">[MATH: (A^T \\! A)^{-1},]</span> we obtain</p>",
+            "readable_text": "Since the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, left-multiplying the normal equation by [MATH: (A^T \\! A)^{-1},] we obtain",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\\hat{\\mathbf{x}}} = (A^T \\! A)^{-1}A^T \\mathbf{b}.]</span></p>",
+            "readable_text": "[MATH: {\\hat{\\mathbf{x}}} = (A^T \\! A)^{-1}A^T \\mathbf{b}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We now compute the right-hand side as follows:\n<span class=\"math\">[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|\u2212 1|2; 1|\u2212 4|\u2212 1][1|1; \u2212 1|\u2212 4; 2|\u2212 1])^{\u2212 1}[1|\u2212 1|2; 1|\u2212 4|\u2212 1][\u2212 2; 4; 2]; = [6|3; 3|18]^{\u2212 1}[\u2212 2; \u2212 20]; = (1)/(99)[18|\u2212 3; \u2212 3|6][\u2212 2; \u2212 20]; = [(8)/(33); \u2212 (38)/(33)]]</span></p>",
+            "readable_text": "We now compute the right-hand side as follows:\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|\u2212 1|2; 1|\u2212 4|\u2212 1][1|1; \u2212 1|\u2212 4; 2|\u2212 1])^{\u2212 1}[1|\u2212 1|2; 1|\u2212 4|\u2212 1][\u2212 2; 4; 2]; = [6|3; 3|18]^{\u2212 1}[\u2212 2; \u2212 20]; = (1)/(99)[18|\u2212 3; \u2212 3|6][\u2212 2; \u2212 20]; = [(8)/(33); \u2212 (38)/(33)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The vector <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> is called the <strong>least-squares solution</strong> of the given system.</p>",
+            "readable_text": "The vector [MATH: {\\hat{\\mathbf{x}}}] is called the least-squares solution of the given system.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Watch out!</strong> We assumed that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, which guarantees that <span class=\"math\">[MATH: A^T \\! A\\,]</span> is invertible. However, if the columns of <span class=\"math\">[MATH: A]</span> are linearly <em>dependent,</em> then we have to use a different approach to solve the problem.</p>",
+            "readable_text": "Watch out! We assumed that the columns of [MATH: A] are linearly independent, which guarantees that [MATH: A^T \\! A\\,] is invertible. However, if the columns of [MATH: A] are linearly dependent, then we have to use a different approach to solve the problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/9a9d0b2b43fd73bf698e36b97875d410",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's consider the following system of linear equations:\n[MATH: {x_{1} + x_{2} = \u2212 2; \u2212 x_{1} \u2212 4x_{2} = 4; 2x_{1} \u2212 x_{2} = 2]\n\nContent:\nIt is easy to show that the system is inconsistent (i.e., it has no solution). However, in real-world problems, we might want to find an approximate solution to the system.\n\nContent:\nLet's formulate the problem a little more rigorously. Firstly, we write down the system in the form [MATH: A\\mathbf x = \\mathbf b\\mathbin{:}]\n[MATH: [1|1; \u2212 1|\u2212 4; 2|\u2212 1]]\n\nContent:\nWe are interested in vectors [MATH: \\hat{\\mathbf{x}}] such that [MATH: A\\hat{\\mathbf{x}}] is very close to [MATH: \\mathbf b.] More precisely, we wish to minimize the distance between [MATH: A\\hat{\\mathbf{x}}] and [MATH: \\mathbf b.] Recall that the distance between [MATH: A\\hat{\\mathbf{x}}] and [MATH: \\mathbf b] is given by\n\nContent:\n[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert.]\n\nContent:\nThe smaller the value of [MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert,] the better our approximation [MATH: \\hat{\\mathbf{x}}] will be.\n\nContent:\nIn terms of vector subspaces, we wish to find a vector [MATH: A{\\hat{\\mathbf{x}}}] that lies in [MATH: \\textrm{Col}(A)] and is closest to [MATH: \\mathbf{b}.]\nTherefore, [MATH: A{\\hat{\\mathbf{x}}}] must be the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]\n\nGraphic:\n[IMG: /graphics/9a9d0b2b43fd73bf698e36b97875d410]\n\nContent:\nIt can be shown that [MATH: {\\hat{\\mathbf{x}}}] is found by solving the corresponding normal equation, given by\n[MATH: A^{T}Ax^(^)|= A^{T}b.]\n\nContent:\nWe'll prove this at the end of the lesson. Note that the normal equation is obtained by left-multiplying the equation [MATH: A {\\hat{\\mathbf{x}}} = \\mathbf b] by [MATH: A^T.]\n\nContent:\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, left-multiplying the normal equation by [MATH: (A^T \\! A)^{-1},] we obtain\n\nContent:\n[MATH: {\\hat{\\mathbf{x}}} = (A^T \\! A)^{-1}A^T \\mathbf{b}.]\n\nContent:\nWe now compute the right-hand side as follows:\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|\u2212 1|2; 1|\u2212 4|\u2212 1][1|1; \u2212 1|\u2212 4; 2|\u2212 1])^{\u2212 1}[1|\u2212 1|2; 1|\u2212 4|\u2212 1][\u2212 2; 4; 2]; = [6|3; 3|18]^{\u2212 1}[\u2212 2; \u2212 20]; = (1)/(99)[18|\u2212 3; \u2212 3|6][\u2212 2; \u2212 20]; = [(8)/(33); \u2212 (38)/(33)]]\n\nContent:\nThe vector [MATH: {\\hat{\\mathbf{x}}}] is called the least-squares solution of the given system.\n\nContent:\nWatch out! We assumed that the columns of [MATH: A] are linearly independent, which guarantees that [MATH: A^T \\! A\\,] is invertible. However, if the columns of [MATH: A] are linearly dependent, then we have to use a different approach to solve the problem."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20271",
+        "content_id": "5589",
+        "dom_id": "step-20271",
+        "selector": "#step-20271",
+        "step_anchor": "step-2",
+        "title": "Finding the Least-Squares Solution of a Linear System Given in Matrix Form",
+        "key_prerequisites": [
+          {
+            "topic_id": "2124",
+            "name": "Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases)",
+            "href": "/topics/2124",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, find the least-squares solution of <span class=\"math\">[MATH: A\\mathbf{x}=\\mathbf{b}]</span>, where </p><p><span class=\"math\">[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]</span></p>",
+            "readable_text": "Given that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: A\\mathbf{x}=\\mathbf{b}], where\n\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First of all, we write the given system in the form <span class=\"math\">[MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]</span>\n<span class=\"math\">[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]</span></p><p>We can find the least-squares solution <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by <span class=\"math\">[MATH: A^T\\mathbin{:}]</span></p><p><span class=\"math\">[MATH: A^{T}Ax^(^)|= A^{T}b]</span></p><p>Since the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, the matrix <span class=\"math\">[MATH: A^T \\! A]</span> is invertible. Therefore, multiplying by <span class=\"math\">[MATH: (A^T \\! A)^{-1}]</span> on the left, we obtain</p><p><span class=\"math\">[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|2|0; \u2212 1|0|\u2212 1|1][1|\u2212 1; 1|0; 2|\u2212 1; 0|1])^{\u2212 1}[1|1|2|0; \u2212 1|0|\u2212 1|1][1; 0; 1; 0]; = [6|\u2212 3; \u2212 3|3]^{\u2212 1}[3; \u2212 2]; = (1)/(3)[1|1; 1|2][3; \u2212 2]; = [(1)/(3); \u2212 (1)/(3)].]</span></p>",
+            "readable_text": "First of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|2|0; \u2212 1|0|\u2212 1|1][1|\u2212 1; 1|0; 2|\u2212 1; 0|1])^{\u2212 1}[1|1|2|0; \u2212 1|0|\u2212 1|1][1; 0; 1; 0]; = [6|\u2212 3; \u2212 3|3]^{\u2212 1}[3; \u2212 2]; = (1)/(3)[1|1; 1|2][3; \u2212 2]; = [(1)/(3); \u2212 (1)/(3)].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: A\\mathbf{x}=\\mathbf{b}], where\n\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|2|0; \u2212 1|0|\u2212 1|1][1|\u2212 1; 1|0; 2|\u2212 1; 0|1])^{\u2212 1}[1|1|2|0; \u2212 1|0|\u2212 1|1][1; 0; 1; 0]; = [6|\u2212 3; \u2212 3|3]^{\u2212 1}[3; \u2212 2]; = (1)/(3)[1|1; 1|2][3; \u2212 2]; = [(1)/(3); \u2212 (1)/(3)].]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "40892",
+        "dom_id": "question-40892",
+        "selector": "#question-40892",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, find the least-squares solution of <span class=\"math\">[MATH: Ax = b]</span>, where </p><p> <span class=\"math\">[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1]]</span> and <span class=\"math\">[MATH: b = [1; 2; 1].]</span></p>",
+          "readable_text": "Given that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: Ax = b], where\n\n[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1]] and [MATH: b = [1; 2; 1].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40892-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(4)/(3); 1]]</span></p>",
+            "readable_text": "[MATH: [(4)/(3); 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40892-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [1; 1]]</span></p>",
+            "readable_text": "[MATH: [1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40892-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [1; (4)/(3)]]</span></p>",
+            "readable_text": "[MATH: [1; (4)/(3)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40892-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [2; (2)/(3)]]</span></p>",
+            "readable_text": "[MATH: [2; (2)/(3)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40892-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [\u2212 1; (4)/(3)]]</span></p>",
+            "readable_text": "[MATH: [\u2212 1; (4)/(3)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: Ax = b], where\n\n[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1]] and [MATH: b = [1; 2; 1].]\n\nChoices:\na. [MATH: [(4)/(3); 1]]\nb. [MATH: [1; 1]]\nc. [MATH: [1; (4)/(3)]]\nd. [MATH: [2; (2)/(3)]]\ne. [MATH: [\u2212 1; (4)/(3)]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "40891",
+        "dom_id": "question-40891",
+        "selector": "#question-40891",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, find the least-squares solution of <span class=\"math\">[MATH: Ax = b]</span>, where </p><p> <span class=\"math\">[MATH: A = [2|0|4; 2|\u2212 2|\u2212 2; 2|0|0; 2|2|\u2212 2]]</span> and <span class=\"math\">[MATH: b = [1; 1; 1; 1].]</span></p>",
+          "readable_text": "Given that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: Ax = b], where\n\n[MATH: A = [2|0|4; 2|\u2212 2|\u2212 2; 2|0|0; 2|2|\u2212 2]] and [MATH: b = [1; 1; 1; 1].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40891-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(1)/(8); 0; 0]]</span></p>",
+            "readable_text": "[MATH: [(1)/(8); 0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40891-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(1)/(2); 0; 0]]</span></p>",
+            "readable_text": "[MATH: [(1)/(2); 0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40891-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [2; 1; 3]]</span></p>",
+            "readable_text": "[MATH: [2; 1; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40891-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [(1)/(2); 1; (1)/(3)]]</span></p>",
+            "readable_text": "[MATH: [(1)/(2); 1; (1)/(3)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40891-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [0; 0; 0]]</span></p>",
+            "readable_text": "[MATH: [0; 0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: Ax = b], where\n\n[MATH: A = [2|0|4; 2|\u2212 2|\u2212 2; 2|0|0; 2|2|\u2212 2]] and [MATH: b = [1; 1; 1; 1].]\n\nChoices:\na. [MATH: [(1)/(8); 0; 0]]\nb. [MATH: [(1)/(2); 0; 0]]\nc. [MATH: [2; 1; 3]]\nd. [MATH: [(1)/(2); 1; (1)/(3)]]\ne. [MATH: [0; 0; 0]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20270",
+        "content_id": "5588",
+        "dom_id": "step-20270",
+        "selector": "#step-20270",
+        "step_anchor": "step-5",
+        "title": "Finding the Least-Squares Solution of a Linear System",
+        "key_prerequisites": [
+          {
+            "topic_id": "42",
+            "name": "Matrices With Easy-to-Find Inverses",
+            "href": "/topics/42",
+            "type": ""
+          },
+          {
+            "topic_id": "155",
+            "name": "Representing 3x3 Systems of Equations Using a Matrix Product",
+            "href": "/topics/155",
+            "type": ""
+          },
+          {
+            "topic_id": "864",
+            "name": "Inverses of 2x2 Matrices",
+            "href": "/topics/864",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Find the least-squares solution to the system of linear equations given below. You&#x27;re given that the columns of the corresponding coefficient matrix are linearly independent.</p><p><span class=\"math\">[MATH: {\u2212 2x_{1} \u2212 x_{2} = 12; x_{1} \u2212 2x_{2} + x_{3} = 0; \u2212 x_{2} \u2212 2x_{3} = \u2212 12; x_{1} \u2212 x_{3} = 0]</span></p>",
+            "readable_text": "Find the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n\n[MATH: {\u2212 2x_{1} \u2212 x_{2} = 12; x_{1} \u2212 2x_{2} + x_{3} = 0; \u2212 x_{2} \u2212 2x_{3} = \u2212 12; x_{1} \u2212 x_{3} = 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First of all, we write the given system in the form <span class=\"math\">[MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]</span>\n<span class=\"math\">[MATH: [\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1]]</span></p><p>We can find the least-squares solution <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by <span class=\"math\">[MATH: A^T\\mathbin{:}]</span></p><p><span class=\"math\">[MATH: A^{T}Ax^(^)|= A^{T}b]</span></p><p>Since the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, the matrix <span class=\"math\">[MATH: A^T \\! A]</span> is invertible. Therefore, multiplying by <span class=\"math\">[MATH: (A^T \\! A)^{-1}]</span> on the left, we obtain</p><p><span class=\"math\">[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1])^{\u2212 1}[\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][12; 0; \u2212 12; 0]; = [6|0|0; 0|6|0; 0|0|6]^{\u2212 1}[\u2212 24; 0; 24]; = (1)/(6)[1|0|0; 0|1|0; 0|0|1][\u2212 24; 0; 24]; = [\u2212 4; 0; 4].]</span></p>",
+            "readable_text": "First of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n[MATH: [\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1]]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1])^{\u2212 1}[\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][12; 0; \u2212 12; 0]; = [6|0|0; 0|6|0; 0|0|6]^{\u2212 1}[\u2212 24; 0; 24]; = (1)/(6)[1|0|0; 0|1|0; 0|0|1][\u2212 24; 0; 24]; = [\u2212 4; 0; 4].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFind the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n\n[MATH: {\u2212 2x_{1} \u2212 x_{2} = 12; x_{1} \u2212 2x_{2} + x_{3} = 0; \u2212 x_{2} \u2212 2x_{3} = \u2212 12; x_{1} \u2212 x_{3} = 0]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n[MATH: [\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1]]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1])^{\u2212 1}[\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][12; 0; \u2212 12; 0]; = [6|0|0; 0|6|0; 0|0|6]^{\u2212 1}[\u2212 24; 0; 24]; = (1)/(6)[1|0|0; 0|1|0; 0|0|1][\u2212 24; 0; 24]; = [\u2212 4; 0; 4].]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "41777",
+        "dom_id": "question-41777",
+        "selector": "#question-41777",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the least-squares solution to the system of linear equations given below. You&#x27;re given that the columns of the corresponding coefficient matrix are linearly independent.\n<span class=\"math\">[MATH: {2x_{1} + x_{2} = 5; x_{1} \u2212 x_{2} = 2; \u2212 3x_{1} \u2212 2x_{2} = 4]</span></p>",
+          "readable_text": "Find the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n[MATH: {2x_{1} + x_{2} = 5; x_{1} \u2212 x_{2} = 2; \u2212 3x_{1} \u2212 2x_{2} = 4]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41777-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; \u2212 2]]</span></p>",
+            "readable_text": "[MATH: [1; \u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41777-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2; (2)/(7)]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2; (2)/(7)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41777-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 4; 3]]</span></p>",
+            "readable_text": "[MATH: [\u2212 4; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41777-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 (1)/(5); 2]]</span></p>",
+            "readable_text": "[MATH: [\u2212 (1)/(5); 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41777-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0; \u2212 3]]</span></p>",
+            "readable_text": "[MATH: [0; \u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFind the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n[MATH: {2x_{1} + x_{2} = 5; x_{1} \u2212 x_{2} = 2; \u2212 3x_{1} \u2212 2x_{2} = 4]\n\nChoices:\na. [MATH: [1; \u2212 2]]\nb. [MATH: [\u2212 2; (2)/(7)]]\nc. [MATH: [\u2212 4; 3]]\nd. [MATH: [\u2212 (1)/(5); 2]]\ne. [MATH: [0; \u2212 3]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "41775",
+        "dom_id": "question-41775",
+        "selector": "#question-41775",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the least-squares solution to the system of linear equations given below. You&#x27;re given that the columns of the corresponding coefficient matrix are linearly independent.</p><p><span class=\"math\">[MATH: {x_{1} + 2x_{2} + x_{3} = 18; x_{1} \u2212 3x_{2} = 0; x_{1} + 2x_{2} \u2212 x_{3} = 18; x_{1} \u2212 x_{2} = 0]</span></p>",
+          "readable_text": "Find the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n\n[MATH: {x_{1} + 2x_{2} + x_{3} = 18; x_{1} \u2212 3x_{2} = 0; x_{1} + 2x_{2} \u2212 x_{3} = 18; x_{1} \u2212 x_{2} = 0]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41775-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 9; 2; 0]]</span></p>",
+            "readable_text": "[MATH: [\u2212 9; 2; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41775-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [18; \u2212 1; 0]]</span></p>",
+            "readable_text": "[MATH: [18; \u2212 1; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41775-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; \u2212 2; 0]]</span></p>",
+            "readable_text": "[MATH: [3; \u2212 2; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41775-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [9; 4; 0]]</span></p>",
+            "readable_text": "[MATH: [9; 4; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41775-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; \u2212 4; 0]]</span></p>",
+            "readable_text": "[MATH: [3; \u2212 4; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFind the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n\n[MATH: {x_{1} + 2x_{2} + x_{3} = 18; x_{1} \u2212 3x_{2} = 0; x_{1} + 2x_{2} \u2212 x_{3} = 18; x_{1} \u2212 x_{2} = 0]\n\nChoices:\na. [MATH: [\u2212 9; 2; 0]]\nb. [MATH: [18; \u2212 1; 0]]\nc. [MATH: [3; \u2212 2; 0]]\nd. [MATH: [9; 4; 0]]\ne. [MATH: [3; \u2212 4; 0]]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "27532",
+        "content_id": "7429",
+        "dom_id": "step-27532",
+        "selector": "#step-27532",
+        "step_anchor": "step-8",
+        "title": "Finding the Distance Between a Vector to a Subspace of Solutions of a Linear System",
+        "key_prerequisites": [
+          {
+            "topic_id": "3818",
+            "name": "Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases): Applications",
+            "href": "/topics/3818",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the system <span class=\"math\">[MATH: A\\mathbf{x}=\\mathbf{b}]</span>, where the matrix <span class=\"math\">[MATH: A]</span> and the vector <span class=\"math\">[MATH: \\mathbf{b}]</span> are given below. Given that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, find the minimum value of <span class=\"math\">[MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert.]</span>\n<span class=\"math\">[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]]</span></p>",
+            "readable_text": "Consider the system [MATH: A\\mathbf{x}=\\mathbf{b}], where the matrix [MATH: A] and the vector [MATH: \\mathbf{b}] are given below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert.]\n[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First of all, we write the given system in the form <span class=\"math\">[MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]</span></p><p><span class=\"math\">[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]^(\u23de)^(A)[x_{1}; x_{2}]^(\u23de)^(x)|= [22; 0; 0; 2]^(\u23de)^(b); Ax|= b]</span></p><p>We can find the least-squares solution <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by <span class=\"math\">[MATH: A^T\\mathbin{:}]</span></p><p><span class=\"math\">[MATH: A^{T}Ax^(^)|= A^{T}b]</span></p><p>Since the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, the matrix <span class=\"math\">[MATH: A^T \\! A]</span> is invertible. Therefore, multiplying by <span class=\"math\">[MATH: (A^T \\! A)^{-1}]</span> on the left, we obtain</p><p><span class=\"math\">[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1])^{\u2212 1}[1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][22; 0; 0; 2]; = [4|2; 2|2]^{\u2212 1}[20; 20]; = (1)/(4)[2|\u2212 2; \u2212 2|4][20; 20]; = (1)/(2)[1|\u2212 1; \u2212 1|2][20; 20]; = [0; 10].]</span></p><p>The minimum value of <span class=\"math\">[MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert]</span> is attained when <span class=\"math\">[MATH: \\mathbf{x}={\\hat{\\mathbf{x}}},]</span> which is the least-squares solution of the system <span class=\"math\">[MATH: A\\mathbf{x}=\\mathbf{b}.]</span></p><p>In this case, <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> represents the orthogonal projection of <span class=\"math\">[MATH: \\mathbf{b}]</span> onto the column space of <span class=\"math\">[MATH: A,]</span> and <span class=\"math\">[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert]</span> is the distance between the vector <span class=\"math\">[MATH: \\mathbf{b}]</span> and the column space.</p><p>Therefore,</p><p><span class=\"math\">[MATH: Ax^(^) \u2212 b|= [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1][0; 10] \u2212 [22; 0; 0; 2] = [\u2212 12; 0; 0; \u2212 12].]</span></p><p>Finally, </p><p><span class=\"math\">[MATH: \\Vert A{\\hat{\\mathbf{x}}}-\\mathbf{b}\\Vert =\\sqrt{(-12)^2+0^2+(-12)^2+0^2}=12\\sqrt{2}.]</span></p>",
+            "readable_text": "First of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n\n[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]^(\u23de)^(A)[x_{1}; x_{2}]^(\u23de)^(x)|= [22; 0; 0; 2]^(\u23de)^(b); Ax|= b]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1])^{\u2212 1}[1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][22; 0; 0; 2]; = [4|2; 2|2]^{\u2212 1}[20; 20]; = (1)/(4)[2|\u2212 2; \u2212 2|4][20; 20]; = (1)/(2)[1|\u2212 1; \u2212 1|2][20; 20]; = [0; 10].]\n\nThe minimum value of [MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert] is attained when [MATH: \\mathbf{x}={\\hat{\\mathbf{x}}},] which is the least-squares solution of the system [MATH: A\\mathbf{x}=\\mathbf{b}.]\n\nIn this case, [MATH: A{\\hat{\\mathbf{x}}}] represents the orthogonal projection of [MATH: \\mathbf{b}] onto the column space of [MATH: A,] and [MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert] is the distance between the vector [MATH: \\mathbf{b}] and the column space.\n\nTherefore,\n\n[MATH: Ax^(^) \u2212 b|= [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1][0; 10] \u2212 [22; 0; 0; 2] = [\u2212 12; 0; 0; \u2212 12].]\n\nFinally,\n\n[MATH: \\Vert A{\\hat{\\mathbf{x}}}-\\mathbf{b}\\Vert =\\sqrt{(-12)^2+0^2+(-12)^2+0^2}=12\\sqrt{2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the system [MATH: A\\mathbf{x}=\\mathbf{b}], where the matrix [MATH: A] and the vector [MATH: \\mathbf{b}] are given below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert.]\n[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n\n[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]^(\u23de)^(A)[x_{1}; x_{2}]^(\u23de)^(x)|= [22; 0; 0; 2]^(\u23de)^(b); Ax|= b]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1])^{\u2212 1}[1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][22; 0; 0; 2]; = [4|2; 2|2]^{\u2212 1}[20; 20]; = (1)/(4)[2|\u2212 2; \u2212 2|4][20; 20]; = (1)/(2)[1|\u2212 1; \u2212 1|2][20; 20]; = [0; 10].]\n\nThe minimum value of [MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert] is attained when [MATH: \\mathbf{x}={\\hat{\\mathbf{x}}},] which is the least-squares solution of the system [MATH: A\\mathbf{x}=\\mathbf{b}.]\n\nIn this case, [MATH: A{\\hat{\\mathbf{x}}}] represents the orthogonal projection of [MATH: \\mathbf{b}] onto the column space of [MATH: A,] and [MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert] is the distance between the vector [MATH: \\mathbf{b}] and the column space.\n\nTherefore,\n\n[MATH: Ax^(^) \u2212 b|= [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1][0; 10] \u2212 [22; 0; 0; 2] = [\u2212 12; 0; 0; \u2212 12].]\n\nFinally,\n\n[MATH: \\Vert A{\\hat{\\mathbf{x}}}-\\mathbf{b}\\Vert =\\sqrt{(-12)^2+0^2+(-12)^2+0^2}=12\\sqrt{2}.]"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "41783",
+        "dom_id": "question-41783",
+        "selector": "#question-41783",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the system <span class=\"math\">[MATH: Ax = b]</span>, where the matrix <span class=\"math\">[MATH: A]</span> and the vector <span class=\"math\">[MATH: b]</span> are given below. Given that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, find the minimum value of <span class=\"math\">[MATH: \u2016Ax \u2212 b\u2016.]</span>\n<span class=\"math\">[MATH: A = [1|1; 2|\u2212 1; \u2212 1|1; 0|1], b = [\u2212 10; 5; 0; \u2212 5]]</span></p>",
+          "readable_text": "Consider the system [MATH: Ax = b], where the matrix [MATH: A] and the vector [MATH: b] are given below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \u2016Ax \u2212 b\u2016.]\n[MATH: A = [1|1; 2|\u2212 1; \u2212 1|1; 0|1], b = [\u2212 10; 5; 0; \u2212 5]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41783-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3sqrt(7)]</span></p>",
+            "readable_text": "[MATH: 3sqrt(7)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41783-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: sqrt(70)]</span></p>",
+            "readable_text": "[MATH: sqrt(70)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41783-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2sqrt(6)]</span></p>",
+            "readable_text": "[MATH: 2sqrt(6)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41783-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: sqrt(30)]</span></p>",
+            "readable_text": "[MATH: sqrt(30)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41783-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 5sqrt(2)]</span></p>",
+            "readable_text": "[MATH: 5sqrt(2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the system [MATH: Ax = b], where the matrix [MATH: A] and the vector [MATH: b] are given below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \u2016Ax \u2212 b\u2016.]\n[MATH: A = [1|1; 2|\u2212 1; \u2212 1|1; 0|1], b = [\u2212 10; 5; 0; \u2212 5]]\n\nChoices:\na. [MATH: 3sqrt(7)]\nb. [MATH: sqrt(70)]\nc. [MATH: 2sqrt(6)]\nd. [MATH: sqrt(30)]\ne. [MATH: 5sqrt(2)]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "41782",
+        "dom_id": "question-41782",
+        "selector": "#question-41782",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the system <span class=\"math\">[MATH: Ax = b]</span>, where the matrix <span class=\"math\">[MATH: A]</span> and the vector <span class=\"math\">[MATH: b]</span> are shown below. Given that the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, find the minimum value of <span class=\"math\">[MATH: \u2016Ax \u2212 b\u2016.]</span>\n<span class=\"math\">[MATH: A = [1|2; 1|\u2212 1; 1|0; 1|2; \u2212 1|\u2212 3], b = [2; \u2212 6; 1; 1; 2]]</span></p>",
+          "readable_text": "Consider the system [MATH: Ax = b], where the matrix [MATH: A] and the vector [MATH: b] are shown below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \u2016Ax \u2212 b\u2016.]\n[MATH: A = [1|2; 1|\u2212 1; 1|0; 1|2; \u2212 1|\u2212 3], b = [2; \u2212 6; 1; 1; 2]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41782-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 4sqrt(2)]</span></p>",
+            "readable_text": "[MATH: 4sqrt(2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41782-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: sqrt(46)]</span></p>",
+            "readable_text": "[MATH: sqrt(46)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41782-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: sqrt(22)]</span></p>",
+            "readable_text": "[MATH: sqrt(22)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41782-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: sqrt(31)]</span></p>",
+            "readable_text": "[MATH: sqrt(31)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41782-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 8]</span></p>",
+            "readable_text": "[MATH: 8]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the system [MATH: Ax = b], where the matrix [MATH: A] and the vector [MATH: b] are shown below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \u2016Ax \u2212 b\u2016.]\n[MATH: A = [1|2; 1|\u2212 1; 1|0; 1|2; \u2212 1|\u2212 3], b = [2; \u2212 6; 1; 1; 2]]\n\nChoices:\na. [MATH: 4sqrt(2)]\nb. [MATH: sqrt(46)]\nc. [MATH: sqrt(22)]\nd. [MATH: sqrt(31)]\ne. [MATH: 8]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37337",
+        "content_id": "6154",
+        "dom_id": "step-37337",
+        "selector": "#step-37337",
+        "step_anchor": "step-11",
+        "title": "Deriving the Normal Equation",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose that <span class=\"math\">[MATH: A]</span> is an <span class=\"math\">[MATH: m \\times n]</span> matrix with linearly independent columns. We&#x27;ll now explain why the least-squares solution <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> to the least-squares problem </p>",
+            "readable_text": "Suppose that [MATH: A] is an [MATH: m \\times n] matrix with linearly independent columns. We'll now explain why the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] to the least-squares problem",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A\\mathbf x = \\mathbf b]</span></p>",
+            "readable_text": "[MATH: A\\mathbf x = \\mathbf b]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>can be found by solving the normal equation\n<span class=\"math\">[MATH: A^{T}Ax^(^)|= A^{T}b.]</span></p>",
+            "readable_text": "can be found by solving the normal equation\n[MATH: A^{T}Ax^(^)|= A^{T}b.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The vector <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> must be the orthogonal projection of <span class=\"math\">[MATH: \\mathbf{b}]</span> onto the subspace spanned by the columns of <span class=\"math\">[MATH: A.]</span></p>",
+            "readable_text": "The vector [MATH: A{\\hat{\\mathbf{x}}}] must be the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/a5d508e71c2b7ab3ba2ec4e3b3d86e38\"></p>",
+            "readable_text": "[IMG: /graphics/a5d508e71c2b7ab3ba2ec4e3b3d86e38]",
+            "images": [
+              {
+                "src": "/graphics/a5d508e71c2b7ab3ba2ec4e3b3d86e38",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As a result, we have that</p>",
+            "readable_text": "As a result, we have that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) \\perp \\textrm{Col}(A),]</span> </p>",
+            "readable_text": "[MATH: (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) \\perp \\textrm{Col}(A),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>which is equivalent to saying that <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}]</span> is orthogonal to each column <span class=\"math\">[MATH: \\mathbf{a}_i]</span> of <span class=\"math\">[MATH: A.]</span> Thus, the dot product of the columns of <span class=\"math\">[MATH: A]</span> and the vector <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}]</span> must be equal to <span class=\"math\">[MATH: 0{:}]</span></p>",
+            "readable_text": "which is equivalent to saying that [MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}] is orthogonal to each column [MATH: \\mathbf{a}_i] of [MATH: A.] Thus, the dot product of the columns of [MATH: A] and the vector [MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}] must be equal to [MATH: 0{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {a_{1}^{T}(Ax^(^) \u2212 b) = 0; a_{2}^{T}(Ax^(^) \u2212 b) = 0; \u22ee; a_{n}^{T}(Ax^(^) \u2212 b) = 0]</span></p>",
+            "readable_text": "[MATH: {a_{1}^{T}(Ax^(^) \u2212 b) = 0; a_{2}^{T}(Ax^(^) \u2212 b) = 0; \u22ee; a_{n}^{T}(Ax^(^) \u2212 b) = 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This system of equations can be written in terms of matrix products as</p>",
+            "readable_text": "This system of equations can be written in terms of matrix products as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A^T (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) = \\mathbf{0}.]</span> </p>",
+            "readable_text": "[MATH: A^T (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) = \\mathbf{0}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, expanding the left-hand side, we obtain our normal equation:</p>",
+            "readable_text": "Finally, expanding the left-hand side, we obtain our normal equation:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A^{T}(Ax^(^) \u2212 b)|= 0; A^{T}Ax^(^) \u2212 A^{T}b|= 0; A^{T}Ax^(^)|= A^{T}b]</span></p>",
+            "readable_text": "[MATH: A^{T}(Ax^(^) \u2212 b)|= 0; A^{T}Ax^(^) \u2212 A^{T}b|= 0; A^{T}Ax^(^)|= A^{T}b]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/a5d508e71c2b7ab3ba2ec4e3b3d86e38",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose that [MATH: A] is an [MATH: m \\times n] matrix with linearly independent columns. We'll now explain why the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] to the least-squares problem\n\nContent:\n[MATH: A\\mathbf x = \\mathbf b]\n\nContent:\ncan be found by solving the normal equation\n[MATH: A^{T}Ax^(^)|= A^{T}b.]\n\nContent:\nThe vector [MATH: A{\\hat{\\mathbf{x}}}] must be the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]\n\nGraphic:\n[IMG: /graphics/a5d508e71c2b7ab3ba2ec4e3b3d86e38]\n\nContent:\nAs a result, we have that\n\nContent:\n[MATH: (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) \\perp \\textrm{Col}(A),]\n\nContent:\nwhich is equivalent to saying that [MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}] is orthogonal to each column [MATH: \\mathbf{a}_i] of [MATH: A.] Thus, the dot product of the columns of [MATH: A] and the vector [MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}] must be equal to [MATH: 0{:}]\n\nContent:\n[MATH: {a_{1}^{T}(Ax^(^) \u2212 b) = 0; a_{2}^{T}(Ax^(^) \u2212 b) = 0; \u22ee; a_{n}^{T}(Ax^(^) \u2212 b) = 0]\n\nContent:\nThis system of equations can be written in terms of matrix products as\n\nContent:\n[MATH: A^T (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) = \\mathbf{0}.]\n\nContent:\nFinally, expanding the left-hand side, we obtain our normal equation:\n\nContent:\n[MATH: A^{T}(Ax^(^) \u2212 b)|= 0; A^{T}Ax^(^) \u2212 A^{T}b|= 0; A^{T}Ax^(^)|= A^{T}b]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nLet's consider the following system of linear equations:\n[MATH: {x_{1} + x_{2} = \u2212 2; \u2212 x_{1} \u2212 4x_{2} = 4; 2x_{1} \u2212 x_{2} = 2]\n\nContent:\nIt is easy to show that the system is inconsistent (i.e., it has no solution). However, in real-world problems, we might want to find an approximate solution to the system.\n\nContent:\nLet's formulate the problem a little more rigorously. Firstly, we write down the system in the form [MATH: A\\mathbf x = \\mathbf b\\mathbin{:}]\n[MATH: [1|1; \u2212 1|\u2212 4; 2|\u2212 1]]\n\nContent:\nWe are interested in vectors [MATH: \\hat{\\mathbf{x}}] such that [MATH: A\\hat{\\mathbf{x}}] is very close to [MATH: \\mathbf b.] More precisely, we wish to minimize the distance between [MATH: A\\hat{\\mathbf{x}}] and [MATH: \\mathbf b.] Recall that the distance between [MATH: A\\hat{\\mathbf{x}}] and [MATH: \\mathbf b] is given by\n\nContent:\n[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert.]\n\nContent:\nThe smaller the value of [MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert,] the better our approximation [MATH: \\hat{\\mathbf{x}}] will be.\n\nContent:\nIn terms of vector subspaces, we wish to find a vector [MATH: A{\\hat{\\mathbf{x}}}] that lies in [MATH: \\textrm{Col}(A)] and is closest to [MATH: \\mathbf{b}.]\nTherefore, [MATH: A{\\hat{\\mathbf{x}}}] must be the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]\n\nGraphic:\n[IMG: /graphics/9a9d0b2b43fd73bf698e36b97875d410]\n\nContent:\nIt can be shown that [MATH: {\\hat{\\mathbf{x}}}] is found by solving the corresponding normal equation, given by\n[MATH: A^{T}Ax^(^)|= A^{T}b.]\n\nContent:\nWe'll prove this at the end of the lesson. Note that the normal equation is obtained by left-multiplying the equation [MATH: A {\\hat{\\mathbf{x}}} = \\mathbf b] by [MATH: A^T.]\n\nContent:\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, left-multiplying the normal equation by [MATH: (A^T \\! A)^{-1},] we obtain\n\nContent:\n[MATH: {\\hat{\\mathbf{x}}} = (A^T \\! A)^{-1}A^T \\mathbf{b}.]\n\nContent:\nWe now compute the right-hand side as follows:\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|\u2212 1|2; 1|\u2212 4|\u2212 1][1|1; \u2212 1|\u2212 4; 2|\u2212 1])^{\u2212 1}[1|\u2212 1|2; 1|\u2212 4|\u2212 1][\u2212 2; 4; 2]; = [6|3; 3|18]^{\u2212 1}[\u2212 2; \u2212 20]; = (1)/(99)[18|\u2212 3; \u2212 3|6][\u2212 2; \u2212 20]; = [(8)/(33); \u2212 (38)/(33)]]\n\nContent:\nThe vector [MATH: {\\hat{\\mathbf{x}}}] is called the least-squares solution of the given system.\n\nContent:\nWatch out! We assumed that the columns of [MATH: A] are linearly independent, which guarantees that [MATH: A^T \\! A\\,] is invertible. However, if the columns of [MATH: A] are linearly dependent, then we have to use a different approach to solve the problem.\n\n---\n\nItem 2 \u2014 Example: Finding the Least-Squares Solution of a Linear System Given in Matrix Form\n\nExample Prompt:\nGiven that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: A\\mathbf{x}=\\mathbf{b}], where\n\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1; 0|1]]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|2|0; \u2212 1|0|\u2212 1|1][1|\u2212 1; 1|0; 2|\u2212 1; 0|1])^{\u2212 1}[1|1|2|0; \u2212 1|0|\u2212 1|1][1; 0; 1; 0]; = [6|\u2212 3; \u2212 3|3]^{\u2212 1}[3; \u2212 2]; = (1)/(3)[1|1; 1|2][3; \u2212 2]; = [(1)/(3); \u2212 (1)/(3)].]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nGiven that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: Ax = b], where\n\n[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1]] and [MATH: b = [1; 2; 1].]\n\nChoices:\na. [MATH: [(4)/(3); 1]]\nb. [MATH: [1; 1]]\nc. [MATH: [1; (4)/(3)]]\nd. [MATH: [2; (2)/(3)]]\ne. [MATH: [\u2212 1; (4)/(3)]]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nGiven that the columns of [MATH: A] are linearly independent, find the least-squares solution of [MATH: Ax = b], where\n\n[MATH: A = [2|0|4; 2|\u2212 2|\u2212 2; 2|0|0; 2|2|\u2212 2]] and [MATH: b = [1; 1; 1; 1].]\n\nChoices:\na. [MATH: [(1)/(8); 0; 0]]\nb. [MATH: [(1)/(2); 0; 0]]\nc. [MATH: [2; 1; 3]]\nd. [MATH: [(1)/(2); 1; (1)/(3)]]\ne. [MATH: [0; 0; 0]]\n\n---\n\nItem 5 \u2014 Example: Finding the Least-Squares Solution of a Linear System\n\nExample Prompt:\nFind the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n\n[MATH: {\u2212 2x_{1} \u2212 x_{2} = 12; x_{1} \u2212 2x_{2} + x_{3} = 0; \u2212 x_{2} \u2212 2x_{3} = \u2212 12; x_{1} \u2212 x_{3} = 0]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n[MATH: [\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1]]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][\u2212 2|\u2212 1|0; 1|\u2212 2|1; 0|\u2212 1|\u2212 2; 1|0|\u2212 1])^{\u2212 1}[\u2212 2|1|0|1; \u2212 1|\u2212 2|\u2212 1|0; 0|1|\u2212 2|\u2212 1][12; 0; \u2212 12; 0]; = [6|0|0; 0|6|0; 0|0|6]^{\u2212 1}[\u2212 24; 0; 24]; = (1)/(6)[1|0|0; 0|1|0; 0|0|1][\u2212 24; 0; 24]; = [\u2212 4; 0; 4].]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\nFind the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n[MATH: {2x_{1} + x_{2} = 5; x_{1} \u2212 x_{2} = 2; \u2212 3x_{1} \u2212 2x_{2} = 4]\n\nChoices:\na. [MATH: [1; \u2212 2]]\nb. [MATH: [\u2212 2; (2)/(7)]]\nc. [MATH: [\u2212 4; 3]]\nd. [MATH: [\u2212 (1)/(5); 2]]\ne. [MATH: [0; \u2212 3]]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\nFind the least-squares solution to the system of linear equations given below. You're given that the columns of the corresponding coefficient matrix are linearly independent.\n\n[MATH: {x_{1} + 2x_{2} + x_{3} = 18; x_{1} \u2212 3x_{2} = 0; x_{1} + 2x_{2} \u2212 x_{3} = 18; x_{1} \u2212 x_{2} = 0]\n\nChoices:\na. [MATH: [\u2212 9; 2; 0]]\nb. [MATH: [18; \u2212 1; 0]]\nc. [MATH: [3; \u2212 2; 0]]\nd. [MATH: [9; 4; 0]]\ne. [MATH: [3; \u2212 4; 0]]\n\n---\n\nItem 8 \u2014 Example: Finding the Distance Between a Vector to a Subspace of Solutions of a Linear System\n\nExample Prompt:\nConsider the system [MATH: A\\mathbf{x}=\\mathbf{b}], where the matrix [MATH: A] and the vector [MATH: \\mathbf{b}] are given below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert.]\n[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst of all, we write the given system in the form [MATH: A \\mathbf{x} = \\mathbf{b}\\mathbin{:}]\n\n[MATH: [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1]^(\u23de)^(A)[x_{1}; x_{2}]^(\u23de)^(x)|= [22; 0; 0; 2]^(\u23de)^(b); Ax|= b]\n\nWe can find the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] of the equation above by solving the corresponding normal equation, which we obtain by left-multiplying our original equation by [MATH: A^T\\mathbin{:}]\n\n[MATH: A^{T}Ax^(^)|= A^{T}b]\n\nSince the columns of [MATH: A] are linearly independent, the matrix [MATH: A^T \\! A] is invertible. Therefore, multiplying by [MATH: (A^T \\! A)^{-1}] on the left, we obtain\n\n[MATH: x^(^)|= (A^{T}A)^{\u2212 1}A^{T}b; = ([1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1])^{\u2212 1}[1|1|\u2212 1|\u2212 1; 1|0|0|\u2212 1][22; 0; 0; 2]; = [4|2; 2|2]^{\u2212 1}[20; 20]; = (1)/(4)[2|\u2212 2; \u2212 2|4][20; 20]; = (1)/(2)[1|\u2212 1; \u2212 1|2][20; 20]; = [0; 10].]\n\nThe minimum value of [MATH: \\Vert A\\mathbf{x} - \\mathbf{b} \\Vert] is attained when [MATH: \\mathbf{x}={\\hat{\\mathbf{x}}},] which is the least-squares solution of the system [MATH: A\\mathbf{x}=\\mathbf{b}.]\n\nIn this case, [MATH: A{\\hat{\\mathbf{x}}}] represents the orthogonal projection of [MATH: \\mathbf{b}] onto the column space of [MATH: A,] and [MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert] is the distance between the vector [MATH: \\mathbf{b}] and the column space.\n\nTherefore,\n\n[MATH: Ax^(^) \u2212 b|= [1|1; 1|0; \u2212 1|0; \u2212 1|\u2212 1][0; 10] \u2212 [22; 0; 0; 2] = [\u2212 12; 0; 0; \u2212 12].]\n\nFinally,\n\n[MATH: \\Vert A{\\hat{\\mathbf{x}}}-\\mathbf{b}\\Vert =\\sqrt{(-12)^2+0^2+(-12)^2+0^2}=12\\sqrt{2}.]\n\n---\n\nItem 9 \u2014 Question 5\n\nPrompt:\nConsider the system [MATH: Ax = b], where the matrix [MATH: A] and the vector [MATH: b] are given below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \u2016Ax \u2212 b\u2016.]\n[MATH: A = [1|1; 2|\u2212 1; \u2212 1|1; 0|1], b = [\u2212 10; 5; 0; \u2212 5]]\n\nChoices:\na. [MATH: 3sqrt(7)]\nb. [MATH: sqrt(70)]\nc. [MATH: 2sqrt(6)]\nd. [MATH: sqrt(30)]\ne. [MATH: 5sqrt(2)]\n\n---\n\nItem 10 \u2014 Question 6\n\nPrompt:\nConsider the system [MATH: Ax = b], where the matrix [MATH: A] and the vector [MATH: b] are shown below. Given that the columns of [MATH: A] are linearly independent, find the minimum value of [MATH: \u2016Ax \u2212 b\u2016.]\n[MATH: A = [1|2; 1|\u2212 1; 1|0; 1|2; \u2212 1|\u2212 3], b = [2; \u2212 6; 1; 1; 2]]\n\nChoices:\na. [MATH: 4sqrt(2)]\nb. [MATH: sqrt(46)]\nc. [MATH: sqrt(22)]\nd. [MATH: sqrt(31)]\ne. [MATH: 8]\n\n---\n\nItem 11 \u2014 Tutorial: Deriving the Normal Equation\n\nContent:\nSuppose that [MATH: A] is an [MATH: m \\times n] matrix with linearly independent columns. We'll now explain why the least-squares solution [MATH: {\\hat{\\mathbf{x}}}] to the least-squares problem\n\nContent:\n[MATH: A\\mathbf x = \\mathbf b]\n\nContent:\ncan be found by solving the normal equation\n[MATH: A^{T}Ax^(^)|= A^{T}b.]\n\nContent:\nThe vector [MATH: A{\\hat{\\mathbf{x}}}] must be the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]\n\nGraphic:\n[IMG: /graphics/a5d508e71c2b7ab3ba2ec4e3b3d86e38]\n\nContent:\nAs a result, we have that\n\nContent:\n[MATH: (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) \\perp \\textrm{Col}(A),]\n\nContent:\nwhich is equivalent to saying that [MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}] is orthogonal to each column [MATH: \\mathbf{a}_i] of [MATH: A.] Thus, the dot product of the columns of [MATH: A] and the vector [MATH: A{\\hat{\\mathbf{x}}}-\\mathbf{b}] must be equal to [MATH: 0{:}]\n\nContent:\n[MATH: {a_{1}^{T}(Ax^(^) \u2212 b) = 0; a_{2}^{T}(Ax^(^) \u2212 b) = 0; \u22ee; a_{n}^{T}(Ax^(^) \u2212 b) = 0]\n\nContent:\nThis system of equations can be written in terms of matrix products as\n\nContent:\n[MATH: A^T (A{\\hat{\\mathbf{x}}}-\\mathbf{b}) = \\mathbf{0}.]\n\nContent:\nFinally, expanding the left-hand side, we obtain our normal equation:\n\nContent:\n[MATH: A^{T}(Ax^(^) \u2212 b)|= 0; A^{T}Ax^(^) \u2212 A^{T}b|= 0; A^{T}Ax^(^)|= A^{T}b]"
+  }
+}

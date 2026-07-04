@@ -1,0 +1,1233 @@
+{
+  "schema_version": 2,
+  "topic_id": "5379",
+  "topic_title": "Newton's Method for Multivariable Functions",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5379/Source/5379.html",
+  "source_url": "https://mathacademy.com/topics/5379",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "460080",
+        "dom_id": "sectionLink-460080",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-460080"
+      },
+      {
+        "index": 2,
+        "step_id": "460081",
+        "dom_id": "sectionLink-460081",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-460081"
+      },
+      {
+        "index": 3,
+        "step_id": "460082",
+        "dom_id": "sectionLink-460082",
+        "name": "",
+        "title": "Computing One Iteration of the Newton-Raphson Method",
+        "selector": "#sectionLink-460082"
+      },
+      {
+        "index": 4,
+        "step_id": "460085",
+        "dom_id": "sectionLink-460085",
+        "name": "",
+        "title": "Computing Two Iterations of the Newton-Raphson Method",
+        "selector": "#sectionLink-460085"
+      },
+      {
+        "index": 5,
+        "step_id": "460088",
+        "dom_id": "sectionLink-460088",
+        "name": "",
+        "title": "Alternative to Newton's Method for Multivariable Functions Using Linear Systems",
+        "selector": "#sectionLink-460088"
+      },
+      {
+        "index": 6,
+        "step_id": "460089",
+        "dom_id": "sectionLink-460089",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-460089"
+      },
+      {
+        "index": 7,
+        "step_id": "460090",
+        "dom_id": "sectionLink-460090",
+        "name": "",
+        "title": "Computing Iterations of the Newton-Raphson Method Using Linear Systems",
+        "selector": "#sectionLink-460090"
+      },
+      {
+        "index": 8,
+        "step_id": "460093",
+        "dom_id": "sectionLink-460093",
+        "name": "",
+        "title": "Derivation of the Formula",
+        "selector": "#sectionLink-460093"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "151",
+        "name": "Solving 2x2 Systems of Equations Using Gaussian Elimination",
+        "href": "/topics/solving-2x2-systems-of-equations-using-gaussian-elimination-151"
+      },
+      {
+        "topic_id": "912",
+        "name": "Newton's Method",
+        "href": "/topics/newtons-method-912"
+      },
+      {
+        "topic_id": "1999",
+        "name": "The Jacobian",
+        "href": "/topics/the-jacobian-1999"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 14,
+    "step_count": 8,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "460080",
+        "content_id": "10772",
+        "dom_id": "step-460080",
+        "selector": "#step-460080",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a previous lesson, we learned how Newton\u2019s method works for functions of a single variable. Given a function <span class=\"math\">[MATH: f : \\mathbb{R} \\to \\mathbb{R}]</span>, the method generates a sequence of approximations using the rule<br/><span class=\"math\">[MATH: x_{n+1} = x_n - \\frac{f(x_n)}{f&#x27;(x_n)}.]</span></p>",
+            "readable_text": "In a previous lesson, we learned how Newton\u2019s method works for functions of a single variable. Given a function [MATH: f : \\mathbb{R} \\to \\mathbb{R}], the method generates a sequence of approximations using the rule\n[MATH: x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This formula uses the derivative <span class=\"math\">[MATH: f&#x27;(x_n)]</span> to construct a local linear approximation of <span class=\"math\">[MATH: f]</span> near <span class=\"math\">[MATH: x_n]</span>, which we then use to refine our guess.</p>",
+            "readable_text": "This formula uses the derivative [MATH: f'(x_n)] to construct a local linear approximation of [MATH: f] near [MATH: x_n], which we then use to refine our guess.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we turn to the multivariable case, where we want to solve systems of nonlinear equations. Specifically, we are interested in finding a vector <span class=\"math\">[MATH: \\mathbf{x} \\in \\mathbb{R}^n]</span> that solves<br/><span class=\"math\">[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]</span><br/>for a vector-valued function <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span>.</p>",
+            "readable_text": "In this lesson, we turn to the multivariable case, where we want to solve systems of nonlinear equations. Specifically, we are interested in finding a vector [MATH: \\mathbf{x} \\in \\mathbb{R}^n] that solves\n[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]\nfor a vector-valued function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The multivariable version of Newton\u2019s method updates our guess using the formula<br/><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]</span><br/>where <span class=\"math\">[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)]</span> is the Jacobian matrix of <span class=\"math\">[MATH: \\boldsymbol{f}]</span>, evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n]</span>.</p>",
+            "readable_text": "The multivariable version of Newton\u2019s method updates our guess using the formula\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\nwhere [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)] is the Jacobian matrix of [MATH: \\boldsymbol{f}], evaluated at [MATH: \\mathbf{x}_n].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is a natural extension of the single-variable rule, replacing the derivative with the Jacobian and the scalar update with a vector.</p>",
+            "readable_text": "This is a natural extension of the single-variable rule, replacing the derivative with the Jacobian and the scalar update with a vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To see how this method works in practice, let\u2019s walk through a concrete example.</p>",
+            "readable_text": "To see how this method works in practice, let\u2019s walk through a concrete example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a previous lesson, we learned how Newton\u2019s method works for functions of a single variable. Given a function [MATH: f : \\mathbb{R} \\to \\mathbb{R}], the method generates a sequence of approximations using the rule\n[MATH: x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.]\n\nContent:\nThis formula uses the derivative [MATH: f'(x_n)] to construct a local linear approximation of [MATH: f] near [MATH: x_n], which we then use to refine our guess.\n\nContent:\nIn this lesson, we turn to the multivariable case, where we want to solve systems of nonlinear equations. Specifically, we are interested in finding a vector [MATH: \\mathbf{x} \\in \\mathbb{R}^n] that solves\n[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]\nfor a vector-valued function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n].\n\nContent:\nThe multivariable version of Newton\u2019s method updates our guess using the formula\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\nwhere [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)] is the Jacobian matrix of [MATH: \\boldsymbol{f}], evaluated at [MATH: \\mathbf{x}_n].\n\nContent:\nThis is a natural extension of the single-variable rule, replacing the derivative with the Jacobian and the scalar update with a vector.\n\nContent:\nTo see how this method works in practice, let\u2019s walk through a concrete example."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "460081",
+        "content_id": "13125",
+        "dom_id": "step-460081",
+        "selector": "#step-460081",
+        "step_anchor": "step-2",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we are looking for a zero of the function<br/><span class=\"math\">[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]</span>\nin the region <span class=\"math\">[MATH: [-2, 2] \\times [-2, 2] \\subseteq \\mathbb{R}^2]</span>.</p>",
+            "readable_text": "Suppose we are looking for a zero of the function\n[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]\nin the region [MATH: [-2, 2] \\times [-2, 2] \\subseteq \\mathbb{R}^2].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We will perform one iteration of the Newton\u2013Raphson method, starting from the initial guess<br/><span class=\"math\">[MATH: [1; 1]]</span></p>",
+            "readable_text": "We will perform one iteration of the Newton\u2013Raphson method, starting from the initial guess\n[MATH: [1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Newton-Raphson method of finding the zeros of a multivariable function <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span> is</p>",
+            "readable_text": "The Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)]</span> is the Jacobian of <span class=\"math\">[MATH: \\boldsymbol f]</span> evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p>",
+            "readable_text": "where [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our case, the Jacobian is</p>",
+            "readable_text": "In our case, the Jacobian is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]</span></p>",
+            "readable_text": "[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, our Newton-Raphson formula is</p>",
+            "readable_text": "Therefore, our Newton-Raphson formula is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]</span></p>",
+            "readable_text": "[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Starting with <span class=\"math\">[MATH: [1; 1]]</span> we have</p>",
+            "readable_text": "Starting with [MATH: [1; 1]] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}^{\u2212 1}[x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; = [1; 1] \u2212 [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}]^{\u2212 1}[(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; = [1; 1] \u2212 [4|\u2212 2; 2|\u2212 3]^{\u2212 1}[5; 1]; = [1; 1] \u2212 (1)/(4 \u22c5 (\u2212 3) \u2212 (\u2212 2) \u22c5 2)[\u2212 3|2; \u2212 2|4][5; 1]; = [1; 1] + (1)/(8)[\u2212 13; \u2212 6]; = [\u2212 0.625; 0.25].]</span></p>",
+            "readable_text": "[MATH: x_{1}|= x_{0} \u2212 [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}^{\u2212 1}[x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; = [1; 1] \u2212 [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}]^{\u2212 1}[(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; = [1; 1] \u2212 [4|\u2212 2; 2|\u2212 3]^{\u2212 1}[5; 1]; = [1; 1] \u2212 (1)/(4 \u22c5 (\u2212 3) \u2212 (\u2212 2) \u22c5 2)[\u2212 3|2; \u2212 2|4][5; 1]; = [1; 1] + (1)/(8)[\u2212 13; \u2212 6]; = [\u2212 0.625; 0.25].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we are looking for a zero of the function\n[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]\nin the region [MATH: [-2, 2] \\times [-2, 2] \\subseteq \\mathbb{R}^2].\n\nContent:\nWe will perform one iteration of the Newton\u2013Raphson method, starting from the initial guess\n[MATH: [1; 1]]\n\nContent:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nIn our case, the Jacobian is\n\nContent:\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]\n\nContent:\nTherefore, our Newton-Raphson formula is\n\nContent:\n[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]\n\nContent:\nStarting with [MATH: [1; 1]] we have\n\nContent:\n[MATH: x_{1}|= x_{0} \u2212 [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}^{\u2212 1}[x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; = [1; 1] \u2212 [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}]^{\u2212 1}[(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; = [1; 1] \u2212 [4|\u2212 2; 2|\u2212 3]^{\u2212 1}[5; 1]; = [1; 1] \u2212 (1)/(4 \u22c5 (\u2212 3) \u2212 (\u2212 2) \u22c5 2)[\u2212 3|2; \u2212 2|4][5; 1]; = [1; 1] + (1)/(8)[\u2212 13; \u2212 6]; = [\u2212 0.625; 0.25].]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "460082",
+        "content_id": "16569",
+        "dom_id": "step-460082",
+        "selector": "#step-460082",
+        "step_anchor": "step-3",
+        "title": "Computing One Iteration of the Newton-Raphson Method",
+        "key_prerequisites": [
+          {
+            "topic_id": "864",
+            "name": "Inverses of 2x2 Matrices",
+            "href": "/topics/864",
+            "type": ""
+          },
+          {
+            "topic_id": "912",
+            "name": "Newton's Method",
+            "href": "/topics/912",
+            "type": ""
+          },
+          {
+            "topic_id": "1999",
+            "name": "The Jacobian",
+            "href": "/topics/1999",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: \\boldsymbol{f}(x,y)]</span> in the region <span class=\"math\">[MATH: [-2,2] \\times [0,2] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: [x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]]</span>\nCalculate one iteration of the Newton-Raphson process that starts with <span class=\"math\">[MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T.]</span> </p>",
+            "readable_text": "Suppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [-2,2] \\times [0,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson method of finding the zeros of a multivariable function <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span> is</p><p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]</span></p><p>where <span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)]</span> is the Jacobian of <span class=\"math\">[MATH: \\boldsymbol f]</span> evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p><p>In our case, the Jacobian is</p><p><span class=\"math\">[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 x \u2212 2)|(\u2202)/(\u2202y)(x^{2}y \u2212 x \u2212 2); (\u2202)/(\u2202x)(xy^{2} \u2212 y + 1)|(\u2202)/(\u2202y)(xy^{2} \u2212 y + 1)]; = [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1].]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]]</span></p><p>Starting with <span class=\"math\">[MATH: [1; 2]]</span> we have</p><p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]_{x_{0}}^{\u2212 1}[x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]_{x_{0}}; = [1; 2] \u2212 [2(1)(2) \u2212 1|(1)^{2}; (2)^{2}|2(1)(2) \u2212 1]^{\u2212 1}[(1)^{2}(2) \u2212 1 \u2212 2; 1(2)^{2} \u2212 2 + 1]; = [1; 2] \u2212 [3|1; 4|3]^{\u2212 1}[\u2212 1; 3]; = [1; 2] \u2212 (1)/(3 \u22c5 3 \u2212 4 \u22c5 1)[3|\u2212 1; \u2212 4|3][\u2212 1; 3]; = [1; 2] \u2212 (1)/(5)[\u2212 6; 13]; = [(11)/(5); \u2212 (3)/(5)]; = [2.2; \u2212 0.6].]</span></p>",
+            "readable_text": "The Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 x \u2212 2)|(\u2202)/(\u2202y)(x^{2}y \u2212 x \u2212 2); (\u2202)/(\u2202x)(xy^{2} \u2212 y + 1)|(\u2202)/(\u2202y)(xy^{2} \u2212 y + 1)]; = [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]]\n\nStarting with [MATH: [1; 2]] we have\n\n[MATH: x_{1}|= x_{0} \u2212 [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]_{x_{0}}^{\u2212 1}[x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]_{x_{0}}; = [1; 2] \u2212 [2(1)(2) \u2212 1|(1)^{2}; (2)^{2}|2(1)(2) \u2212 1]^{\u2212 1}[(1)^{2}(2) \u2212 1 \u2212 2; 1(2)^{2} \u2212 2 + 1]; = [1; 2] \u2212 [3|1; 4|3]^{\u2212 1}[\u2212 1; 3]; = [1; 2] \u2212 (1)/(3 \u22c5 3 \u2212 4 \u22c5 1)[3|\u2212 1; \u2212 4|3][\u2212 1; 3]; = [1; 2] \u2212 (1)/(5)[\u2212 6; 13]; = [(11)/(5); \u2212 (3)/(5)]; = [2.2; \u2212 0.6].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [-2,2] \\times [0,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T.]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 x \u2212 2)|(\u2202)/(\u2202y)(x^{2}y \u2212 x \u2212 2); (\u2202)/(\u2202x)(xy^{2} \u2212 y + 1)|(\u2202)/(\u2202y)(xy^{2} \u2212 y + 1)]; = [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]]\n\nStarting with [MATH: [1; 2]] we have\n\n[MATH: x_{1}|= x_{0} \u2212 [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]_{x_{0}}^{\u2212 1}[x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]_{x_{0}}; = [1; 2] \u2212 [2(1)(2) \u2212 1|(1)^{2}; (2)^{2}|2(1)(2) \u2212 1]^{\u2212 1}[(1)^{2}(2) \u2212 1 \u2212 2; 1(2)^{2} \u2212 2 + 1]; = [1; 2] \u2212 [3|1; 4|3]^{\u2212 1}[\u2212 1; 3]; = [1; 2] \u2212 (1)/(3 \u22c5 3 \u2212 4 \u22c5 1)[3|\u2212 1; \u2212 4|3][\u2212 1; 3]; = [1; 2] \u2212 (1)/(5)[\u2212 6; 13]; = [(11)/(5); \u2212 (3)/(5)]; = [2.2; \u2212 0.6].]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "256200",
+        "dom_id": "question-256200",
+        "selector": "#question-256200",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [\u2212 2, 0] \u00d7 [\u2212 2, 0]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = [xy \u2212 1; y^{3} + 3xy^{4} + 3].]</span>\nCalculate one iteration of the Newton-Raphson process that starts with <span class=\"math\">[MATH: x_{0} = [\u2212 1, \u2212 1]^{T}.]</span> Round your answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{1} \u2248 []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2212 0.917]</span></p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [\u2212 2, 0] \u00d7 [\u2212 2, 0]\u2286R^{2},] where\n[MATH: f(x, y) = [xy \u2212 1; y^{3} + 3xy^{4} + 3].]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: x_{0} = [\u2212 1, \u2212 1]^{T}.] Round your answer to three decimal places (if needed).| [MATH: x_{1} \u2248 [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [MATH: \u2212 0.917] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [\u2212 2, 0] \u00d7 [\u2212 2, 0]\u2286R^{2},] where\n[MATH: f(x, y) = [xy \u2212 1; y^{3} + 3xy^{4} + 3].]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: x_{0} = [\u2212 1, \u2212 1]^{T}.] Round your answer to three decimal places (if needed).| [MATH: x_{1} \u2248 [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [MATH: \u2212 0.917] |"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "256559",
+        "dom_id": "question-256559",
+        "selector": "#question-256559",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = [x^{2} \u2212 y^{4} + 1; x^{3}y \u2212 3].]</span>\nCalculate one iteration of the Newton-Raphson process that starts with <span class=\"math\">[MATH: x_{0} = [1, 1]^{T}.]</span></p><table><tr><td><p><span class=\"math\">[MATH: x_{1} = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td></tr></table>",
+          "readable_text": "Suppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2} \u2212 y^{4} + 1; x^{3}y \u2212 3].]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: x_{0} = [1, 1]^{T}.]\n\n| [MATH: x_{1} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2} \u2212 y^{4} + 1; x^{3}y \u2212 3].]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: x_{0} = [1, 1]^{T}.]\n\n| [MATH: x_{1} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "460085",
+        "content_id": "16570",
+        "dom_id": "step-460085",
+        "selector": "#step-460085",
+        "step_anchor": "step-6",
+        "title": "Computing Two Iterations of the Newton-Raphson Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: \\boldsymbol{f}(x,y)]</span> in the region <span class=\"math\">[MATH: [1,3] \\times [-2,0] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: [x^{2} + y \u2212 4; x + y^{2} \u2212 3]]</span>\nCalculate the second iteration of the Newton-Raphson process that starts at <span class=\"math\">[MATH: \\mathbf x_0 = \\big[1, \\: 0 \\big]^T]</span> if the first iteration of the algorithm gives <span class=\"math\">[MATH: \\mathbf{x}_1 = \\big[ 3, \\: -1 \\big]^T.]</span> Round your final answer to three decimal places (if needed).</p>",
+            "readable_text": "Suppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [1,3] \\times [-2,0] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2} + y \u2212 4; x + y^{2} \u2212 3]]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 0 \\big]^T] if the first iteration of the algorithm gives [MATH: \\mathbf{x}_1 = \\big[ 3, \\: -1 \\big]^T.] Round your final answer to three decimal places (if needed).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson method of finding the zeros of a multivariable function <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span> is</p><p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]</span></p><p>where <span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)]</span> is the Jacobian of <span class=\"math\">[MATH: \\boldsymbol f]</span> evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p><p>In our case, the Jacobian is</p><p><span class=\"math\">[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} + y \u2212 4)|(\u2202)/(\u2202y)(x^{2} + y \u2212 4); (\u2202)/(\u2202x)(x + y^{2} \u2212 3)|(\u2202)/(\u2202y)(x + y^{2} \u2212 3)]; = [2x|1; 1|2y].]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: [2x|1; 1|2y]]</span></p><p>For the second iteration, we have</p><p><span class=\"math\">[MATH: x_{2}|= x_{1} \u2212 [2x|1; 1|2y]_{x_{1}}^{\u2212 1}[x^{2} + y \u2212 4; x + y^{2} \u2212 3]_{x_{1}}; = [3; \u2212 1] \u2212 [2(3)|1; 1|2(\u2212 1)]^{\u2212 1}[3^{2} + (\u2212 1) \u2212 4; 3 + (\u2212 1)^{2} \u2212 3]; = [3; \u2212 1] \u2212 [6|1; 1|\u2212 2]^{\u2212 1}[4; 1]; = [3; \u2212 1] \u2212 (1)/(6 \u22c5 (\u2212 2) \u2212 1 \u22c5 1)[\u2212 2|\u2212 1; \u2212 1|6][4; 1]; = [3; \u2212 1] + (1)/(13)[\u2212 9; 2]; = [(30)/(13); \u2212 (11)/(13)]; \u2248 [2.308; \u2212 0.846],]</span></p><p>rounded to three decimal places.</p>",
+            "readable_text": "The Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} + y \u2212 4)|(\u2202)/(\u2202y)(x^{2} + y \u2212 4); (\u2202)/(\u2202x)(x + y^{2} \u2212 3)|(\u2202)/(\u2202y)(x + y^{2} \u2212 3)]; = [2x|1; 1|2y].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [2x|1; 1|2y]]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 [2x|1; 1|2y]_{x_{1}}^{\u2212 1}[x^{2} + y \u2212 4; x + y^{2} \u2212 3]_{x_{1}}; = [3; \u2212 1] \u2212 [2(3)|1; 1|2(\u2212 1)]^{\u2212 1}[3^{2} + (\u2212 1) \u2212 4; 3 + (\u2212 1)^{2} \u2212 3]; = [3; \u2212 1] \u2212 [6|1; 1|\u2212 2]^{\u2212 1}[4; 1]; = [3; \u2212 1] \u2212 (1)/(6 \u22c5 (\u2212 2) \u2212 1 \u22c5 1)[\u2212 2|\u2212 1; \u2212 1|6][4; 1]; = [3; \u2212 1] + (1)/(13)[\u2212 9; 2]; = [(30)/(13); \u2212 (11)/(13)]; \u2248 [2.308; \u2212 0.846],]\n\nrounded to three decimal places.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [1,3] \\times [-2,0] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2} + y \u2212 4; x + y^{2} \u2212 3]]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 0 \\big]^T] if the first iteration of the algorithm gives [MATH: \\mathbf{x}_1 = \\big[ 3, \\: -1 \\big]^T.] Round your final answer to three decimal places (if needed).\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} + y \u2212 4)|(\u2202)/(\u2202y)(x^{2} + y \u2212 4); (\u2202)/(\u2202x)(x + y^{2} \u2212 3)|(\u2202)/(\u2202y)(x + y^{2} \u2212 3)]; = [2x|1; 1|2y].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [2x|1; 1|2y]]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 [2x|1; 1|2y]_{x_{1}}^{\u2212 1}[x^{2} + y \u2212 4; x + y^{2} \u2212 3]_{x_{1}}; = [3; \u2212 1] \u2212 [2(3)|1; 1|2(\u2212 1)]^{\u2212 1}[3^{2} + (\u2212 1) \u2212 4; 3 + (\u2212 1)^{2} \u2212 3]; = [3; \u2212 1] \u2212 [6|1; 1|\u2212 2]^{\u2212 1}[4; 1]; = [3; \u2212 1] \u2212 (1)/(6 \u22c5 (\u2212 2) \u2212 1 \u22c5 1)[\u2212 2|\u2212 1; \u2212 1|6][4; 1]; = [3; \u2212 1] + (1)/(13)[\u2212 9; 2]; = [(30)/(13); \u2212 (11)/(13)]; \u2248 [2.308; \u2212 0.846],]\n\nrounded to three decimal places."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "256226",
+        "dom_id": "question-256226",
+        "selector": "#question-256226",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = [x^{2}y + x \u2212 3; xy^{2} \u2212 y \u2212 1].]</span>\nCalculate the second iteration of the Newton-Raphson process that starts at <span class=\"math\">[MATH: x_{0} = [1, 1]^{T}]</span> if the first iteration of the algorithm gives <span class=\"math\">[MATH: x_{1} = [1, 2]^{T}.]</span> Round your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{2} \u2248 []</span></p></td><td><p><span class=\"math\">[MATH: 1.091]</span></p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2}y + x \u2212 3; xy^{2} \u2212 y \u2212 1].]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: x_{0} = [1, 1]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [1, 2]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} \u2248 [] | [MATH: 1.091] | [MATH: ]] |\n| [FREE_ENTRY 1] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2}y + x \u2212 3; xy^{2} \u2212 y \u2212 1].]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: x_{0} = [1, 1]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [1, 2]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} \u2248 [] | [MATH: 1.091] | [MATH: ]] |\n| [FREE_ENTRY 1] |"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "256229",
+        "dom_id": "question-256229",
+        "selector": "#question-256229",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [1, 2] \u00d7 [0, 1]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = [x^{2} + y \u2212 xy \u2212 3; x^{2} \u2212 x + y \u2212 2].]</span>\nCalculate the second iteration of the Newton-Raphson process that starts at <span class=\"math\">[MATH: x_{0} = [1, 0]^{T}]</span> if the first iteration of the algorithm gives <span class=\"math\">[MATH: x_{1} = [2, 1]^{T}.]</span> Round your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{2} \u2248 []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2} + y \u2212 xy \u2212 3; x^{2} \u2212 x + y \u2212 2].]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: x_{0} = [1, 0]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [2, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} \u2248 [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2} + y \u2212 xy \u2212 3; x^{2} \u2212 x + y \u2212 2].]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: x_{0} = [1, 0]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [2, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} \u2248 [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "460088",
+        "content_id": "10905",
+        "dom_id": "step-460088",
+        "selector": "#step-460088",
+        "step_anchor": "step-9",
+        "title": "Alternative to Newton's Method for Multivariable Functions Using Linear Systems",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that we\u2019ve seen how to apply Newton\u2019s method in the multivariable case, it\u2019s worth noting that the standard update formula<br/><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n)]</span><br/>is not always the most practical way for us to compute the next step. In higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large matrix by rewriting the update as a linear system instead.</p>",
+            "readable_text": "Now that we\u2019ve seen how to apply Newton\u2019s method in the multivariable case, it\u2019s worth noting that the standard update formula\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n)]\nis not always the most practical way for us to compute the next step. In higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large matrix by rewriting the update as a linear system instead.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s go through how we can do that step by step.</p>",
+            "readable_text": "Let\u2019s go through how we can do that step by step.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start with the standard Newton update\n<span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "We start with the standard Newton update\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we subtract <span class=\"math\">[MATH: \\mathbf{x}_n]</span> from both sides\n<span class=\"math\">[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "Next, we subtract [MATH: \\mathbf{x}_n] from both sides\n[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, we multiply both sides by <span class=\"math\">[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)]</span>\n<span class=\"math\">[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "Then, we multiply both sides by [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)]\n[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This gives us the <em>linear system form</em> of Newton\u2019s method. This equivalent form allows us to solve directly for the update direction <span class=\"math\">[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n]</span> without ever computing the inverse of the Jacobian.</p>",
+            "readable_text": "This gives us the linear system form of Newton\u2019s method. This equivalent form allows us to solve directly for the update direction [MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n] without ever computing the inverse of the Jacobian.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To better understand how the method works in practice, let\u2019s walk through a concrete example.</p>",
+            "readable_text": "To better understand how the method works in practice, let\u2019s walk through a concrete example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nNow that we\u2019ve seen how to apply Newton\u2019s method in the multivariable case, it\u2019s worth noting that the standard update formula\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n)]\nis not always the most practical way for us to compute the next step. In higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large matrix by rewriting the update as a linear system instead.\n\nContent:\nLet\u2019s go through how we can do that step by step.\n\nContent:\nWe start with the standard Newton update\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nNext, we subtract [MATH: \\mathbf{x}_n] from both sides\n[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nThen, we multiply both sides by [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)]\n[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nThis gives us the linear system form of Newton\u2019s method. This equivalent form allows us to solve directly for the update direction [MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n] without ever computing the inverse of the Jacobian.\n\nContent:\nTo better understand how the method works in practice, let\u2019s walk through a concrete example."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "460089",
+        "content_id": "13126",
+        "dom_id": "step-460089",
+        "selector": "#step-460089",
+        "step_anchor": "step-10",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we are looking for a zero of the function<br/><span class=\"math\">[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]</span>\nin the region <span class=\"math\">[MATH: [-2, 2] \\times [-2, 3] \\subseteq \\mathbb{R}^2]</span>.</p>",
+            "readable_text": "Suppose we are looking for a zero of the function\n[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]\nin the region [MATH: [-2, 2] \\times [-2, 3] \\subseteq \\mathbb{R}^2].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Newton-Raphson method of finding the zeros of a multivariable function <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span> is</p>",
+            "readable_text": "The Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)]</span> is the Jacobian of <span class=\"math\">[MATH: \\boldsymbol f]</span> evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p>",
+            "readable_text": "where [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Equivalently, at each iteration, the above equation can be re-written as </p>",
+            "readable_text": "Equivalently, at each iteration, the above equation can be re-written as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our case, the Jacobian is</p>",
+            "readable_text": "In our case, the Jacobian is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]</span></p>",
+            "readable_text": "[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, our Newton-Raphson system of equations is</p>",
+            "readable_text": "Therefore, our Newton-Raphson system of equations is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]</span></p>",
+            "readable_text": "[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Starting with <span class=\"math\">[MATH: [1; 1]]</span> we have</p>",
+            "readable_text": "Starting with [MATH: [1; 1]] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}](x_{1} \u2212 x_{0})|= \u2212 [(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; [4|\u2212 2; 2|\u2212 3](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]</span></p>",
+            "readable_text": "[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}](x_{1} \u2212 x_{0})|= \u2212 [(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; [4|\u2212 2; 2|\u2212 3](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s solve this system using Gaussian elimination. We first set <span class=\"math\">[MATH: [d_{1}; d_{2}]]</span>, so the system becomes<br/><span class=\"math\">[MATH: [4|\u2212 2; 2|\u2212 3]]</span></p>",
+            "readable_text": "Let\u2019s solve this system using Gaussian elimination. We first set [MATH: [d_{1}; d_{2}]], so the system becomes\n[MATH: [4|\u2212 2; 2|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We write the augmented matrix as\n<span class=\"math\">[MATH: 4|\u2212 2|\u2212 5; 2|\u2212 3|\u2212 1]</span></p>",
+            "readable_text": "We write the augmented matrix as\n[MATH: 4|\u2212 2|\u2212 5; 2|\u2212 3|\u2212 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To eliminate the entry below the leading <span class=\"math\">[MATH: 4]</span>, we perform the row operation <span class=\"math\">[MATH: R_2 := R_2 - \\dfrac{1}{2} R_1{:}]</span>\n<span class=\"math\">[MATH: 4|\u2212 2|\u2212 5; 0|\u2212 2|1.5]</span></p>",
+            "readable_text": "To eliminate the entry below the leading [MATH: 4], we perform the row operation [MATH: R_2 := R_2 - \\dfrac{1}{2} R_1{:}]\n[MATH: 4|\u2212 2|\u2212 5; 0|\u2212 2|1.5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From the second row, we get\n<span class=\"math\">[MATH: -2d_2 = 1.5 \\quad \\Rightarrow \\quad d_2 = -0.75.]</span></p>",
+            "readable_text": "From the second row, we get\n[MATH: -2d_2 = 1.5 \\quad \\Rightarrow \\quad d_2 = -0.75.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We then substitute this into the first row, which gives\n<span class=\"math\">[MATH: 4d_1 - 2(-0.75) = -5 \\quad \\Rightarrow \\quad 4d_1 = -6.5 \\quad \\Rightarrow \\quad d_1 = -1.625.]</span></p>",
+            "readable_text": "We then substitute this into the first row, which gives\n[MATH: 4d_1 - 2(-0.75) = -5 \\quad \\Rightarrow \\quad 4d_1 = -6.5 \\quad \\Rightarrow \\quad d_1 = -1.625.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, the update vector is\n<span class=\"math\">[MATH: [\u2212 1.625; \u2212 0.75]]</span></p>",
+            "readable_text": "So, the update vector is\n[MATH: [\u2212 1.625; \u2212 0.75]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Hence, our updated approximation of the root is given by</p>",
+            "readable_text": "Hence, our updated approximation of the root is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{1}|= x_{0} + [\u2212 1.625; \u2212 0.75]; = [1; 1] + [\u2212 1.625; \u2212 0.75]; = [\u2212 0.625; 0.25].]</span></p>",
+            "readable_text": "[MATH: x_{1}|= x_{0} + [\u2212 1.625; \u2212 0.75]; = [1; 1] + [\u2212 1.625; \u2212 0.75]; = [\u2212 0.625; 0.25].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we are looking for a zero of the function\n[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]\nin the region [MATH: [-2, 2] \\times [-2, 3] \\subseteq \\mathbb{R}^2].\n\nContent:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nEquivalently, at each iteration, the above equation can be re-written as\n\nContent:\n[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nIn our case, the Jacobian is\n\nContent:\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]\n\nContent:\nTherefore, our Newton-Raphson system of equations is\n\nContent:\n[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]\n\nContent:\nStarting with [MATH: [1; 1]] we have\n\nContent:\n[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}](x_{1} \u2212 x_{0})|= \u2212 [(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; [4|\u2212 2; 2|\u2212 3](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]\n\nContent:\nLet\u2019s solve this system using Gaussian elimination. We first set [MATH: [d_{1}; d_{2}]], so the system becomes\n[MATH: [4|\u2212 2; 2|\u2212 3]]\n\nContent:\nWe write the augmented matrix as\n[MATH: 4|\u2212 2|\u2212 5; 2|\u2212 3|\u2212 1]\n\nContent:\nTo eliminate the entry below the leading [MATH: 4], we perform the row operation [MATH: R_2 := R_2 - \\dfrac{1}{2} R_1{:}]\n[MATH: 4|\u2212 2|\u2212 5; 0|\u2212 2|1.5]\n\nContent:\nFrom the second row, we get\n[MATH: -2d_2 = 1.5 \\quad \\Rightarrow \\quad d_2 = -0.75.]\n\nContent:\nWe then substitute this into the first row, which gives\n[MATH: 4d_1 - 2(-0.75) = -5 \\quad \\Rightarrow \\quad 4d_1 = -6.5 \\quad \\Rightarrow \\quad d_1 = -1.625.]\n\nContent:\nSo, the update vector is\n[MATH: [\u2212 1.625; \u2212 0.75]]\n\nContent:\nHence, our updated approximation of the root is given by\n\nContent:\n[MATH: x_{1}|= x_{0} + [\u2212 1.625; \u2212 0.75]; = [1; 1] + [\u2212 1.625; \u2212 0.75]; = [\u2212 0.625; 0.25].]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "460090",
+        "content_id": "16571",
+        "dom_id": "step-460090",
+        "selector": "#step-460090",
+        "step_anchor": "step-11",
+        "title": "Computing Iterations of the Newton-Raphson Method Using Linear Systems",
+        "key_prerequisites": [
+          {
+            "topic_id": "151",
+            "name": "Solving 2x2 Systems of Equations Using Gaussian Elimination",
+            "href": "/topics/151",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: \\boldsymbol{f}(x,y)]</span> in the region <span class=\"math\">[MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: [x^{2} \u2212 y^{2}; 2xy \u2212 1]]</span>\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point <span class=\"math\">[MATH: \\big[ 1, \\: 1 \\big]^T,]</span> and compute the components of the first iteration.</p>",
+            "readable_text": "Suppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2} \u2212 y^{2}; 2xy \u2212 1]]\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T,] and compute the components of the first iteration.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson method of finding the zeros of a multivariable function <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span> is</p><p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]</span></p><p>where <span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)]</span> is the Jacobian of <span class=\"math\">[MATH: \\boldsymbol f]</span> evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p><p>Equivalently, at each iteration, the above equation can be re-written as </p><p><span class=\"math\">[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]</span></p><p>In our case, the Jacobian is</p><p><span class=\"math\">[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} \u2212 y^{2})|(\u2202)/(\u2202y)(x^{2} \u2212 y^{2}); (\u2202)/(\u2202x)(2xy \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 1)]; = [2x|\u2212 2y; 2y|2x].]</span></p><p>Therefore, our Newton-Raphson system of equations is</p><p><span class=\"math\">[MATH: [2x|\u2212 2y; 2y|2x]]</span></p><p>Starting with <span class=\"math\">[MATH: [1; 1]]</span> we have</p><p><span class=\"math\">[MATH: [2x|\u2212 2y; 2y|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{2} \u2212 y^{2}; 2xy \u2212 1]_{x_{0}}; [2(1)|\u2212 2(1); 2(1)|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} \u2212 (1)^{2}; 2(1)(1) \u2212 1]; [2|\u2212 2; 2|2](x_{1} \u2212 x_{0})|= [0; \u2212 1].]</span></p><p>Solving this system of equations, we get <span class=\"math\">[MATH: [\u2212 0.25; \u2212 0.25]]</span> Hence,</p><p><span class=\"math\">[MATH: x_{1}|= x_{0} + [\u2212 0.25; \u2212 0.25]; = [1; 1] + [\u2212 0.25; \u2212 0.25]; = [0.75; 0.75].]</span></p>",
+            "readable_text": "The Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nEquivalently, at each iteration, the above equation can be re-written as\n\n[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} \u2212 y^{2})|(\u2202)/(\u2202y)(x^{2} \u2212 y^{2}); (\u2202)/(\u2202x)(2xy \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 1)]; = [2x|\u2212 2y; 2y|2x].]\n\nTherefore, our Newton-Raphson system of equations is\n\n[MATH: [2x|\u2212 2y; 2y|2x]]\n\nStarting with [MATH: [1; 1]] we have\n\n[MATH: [2x|\u2212 2y; 2y|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{2} \u2212 y^{2}; 2xy \u2212 1]_{x_{0}}; [2(1)|\u2212 2(1); 2(1)|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} \u2212 (1)^{2}; 2(1)(1) \u2212 1]; [2|\u2212 2; 2|2](x_{1} \u2212 x_{0})|= [0; \u2212 1].]\n\nSolving this system of equations, we get [MATH: [\u2212 0.25; \u2212 0.25]] Hence,\n\n[MATH: x_{1}|= x_{0} + [\u2212 0.25; \u2212 0.25]; = [1; 1] + [\u2212 0.25; \u2212 0.25]; = [0.75; 0.75].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2} \u2212 y^{2}; 2xy \u2212 1]]\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T,] and compute the components of the first iteration.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nEquivalently, at each iteration, the above equation can be re-written as\n\n[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} \u2212 y^{2})|(\u2202)/(\u2202y)(x^{2} \u2212 y^{2}); (\u2202)/(\u2202x)(2xy \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 1)]; = [2x|\u2212 2y; 2y|2x].]\n\nTherefore, our Newton-Raphson system of equations is\n\n[MATH: [2x|\u2212 2y; 2y|2x]]\n\nStarting with [MATH: [1; 1]] we have\n\n[MATH: [2x|\u2212 2y; 2y|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{2} \u2212 y^{2}; 2xy \u2212 1]_{x_{0}}; [2(1)|\u2212 2(1); 2(1)|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} \u2212 (1)^{2}; 2(1)(1) \u2212 1]; [2|\u2212 2; 2|2](x_{1} \u2212 x_{0})|= [0; \u2212 1].]\n\nSolving this system of equations, we get [MATH: [\u2212 0.25; \u2212 0.25]] Hence,\n\n[MATH: x_{1}|= x_{0} + [\u2212 0.25; \u2212 0.25]; = [1; 1] + [\u2212 0.25; \u2212 0.25]; = [0.75; 0.75].]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "256287",
+        "dom_id": "question-256287",
+        "selector": "#question-256287",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [0, 1] \u00d7 [1, 2]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = [x^{3}y \u2212 5y + 8; xy^{2} \u2212 3].]</span>\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point <span class=\"math\">[MATH: [1, 1]^{T}.]</span><span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: []</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 4]</span></p></td><td><p><span class=\"math\">[MATH: ](x_{1} \u2212 x_{0}) = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ].]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span>\n</p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{3}y \u2212 5y + 8; xy^{2} \u2212 3].]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T}.]| [MATH: [] | [MATH: 3] | [MATH: \u2212 4] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 1] | [MATH: ].] |\n| [FREE_ENTRY 2] | [FREE_ENTRY 3] | [MATH: 2] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{3}y \u2212 5y + 8; xy^{2} \u2212 3].]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T}.]| [MATH: [] | [MATH: 3] | [MATH: \u2212 4] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 1] | [MATH: ].] |\n| [FREE_ENTRY 2] | [FREE_ENTRY 3] | [MATH: 2] |"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "255856",
+        "dom_id": "question-255856",
+        "selector": "#question-255856",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a zero of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = [2x^{2} + y^{2} \u2212 2; x^{3} + y^{3} \u2212 1].]</span>\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting  at the point <span class=\"math\">[MATH: [1, 1]^{T},]</span> and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: ](x_{1} \u2212 x_{0}) = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span>\n</p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td></tr></table>\n<table><tr><td><p><span class=\"math\">[MATH: x_{1} \u2248 []</span></p></td><td><p><span class=\"math\">[MATH: 0.833]</span></p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = [2x^{2} + y^{2} \u2212 2; x^{3} + y^{3} \u2212 1].]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T},] and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).| [MATH: [] | [FREE_ENTRY 1] | [MATH: 2] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 2] | [MATH: ]] |\n| [FREE_ENTRY 3] | [MATH: 3] | [MATH: \u2212 1] |\n\n| [MATH: x_{1} \u2248 [] | [MATH: 0.833] | [MATH: ]] |\n| [FREE_ENTRY 4] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = [2x^{2} + y^{2} \u2212 2; x^{3} + y^{3} \u2212 1].]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T},] and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).| [MATH: [] | [FREE_ENTRY 1] | [MATH: 2] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 2] | [MATH: ]] |\n| [FREE_ENTRY 3] | [MATH: 3] | [MATH: \u2212 1] |\n\n| [MATH: x_{1} \u2248 [] | [MATH: 0.833] | [MATH: ]] |\n| [FREE_ENTRY 4] |"
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "460093",
+        "content_id": "13227",
+        "dom_id": "step-460093",
+        "selector": "#step-460093",
+        "step_anchor": "step-14",
+        "title": "Derivation of the Formula",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Just like in the single-variable case, the idea is to simplify the problem by replacing a nonlinear function with its linear approximation near our current guess.</p>",
+            "readable_text": "Just like in the single-variable case, the idea is to simplify the problem by replacing a nonlinear function with its linear approximation near our current guess.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we want to solve a system of nonlinear equations<br/><span class=\"math\">[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]</span><br/>where <span class=\"math\">[MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n]</span> is a vector-valued function.</p>",
+            "readable_text": "Suppose we want to solve a system of nonlinear equations\n[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]\nwhere [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is a vector-valued function.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Near a point <span class=\"math\">[MATH: \\mathbf{x}_0]</span>, we approximate <span class=\"math\">[MATH: \\boldsymbol{f}(\\mathbf{x})]</span> using its first-order Taylor expansion:<br/><span class=\"math\">[MATH: \\boldsymbol{f}(\\mathbf{x}) \\approx \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0),]</span><br/>where <span class=\"math\">[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_0)]</span> is the Jacobian matrix of <span class=\"math\">[MATH: \\boldsymbol{f}]</span> evaluated at <span class=\"math\">[MATH: \\mathbf{x}_0]</span>.</p>",
+            "readable_text": "Near a point [MATH: \\mathbf{x}_0], we approximate [MATH: \\boldsymbol{f}(\\mathbf{x})] using its first-order Taylor expansion:\n[MATH: \\boldsymbol{f}(\\mathbf{x}) \\approx \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0),]\nwhere [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_0)] is the Jacobian matrix of [MATH: \\boldsymbol{f}] evaluated at [MATH: \\mathbf{x}_0].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since this linear approximation is valid near <span class=\"math\">[MATH: \\mathbf{x}_0]</span>, we solve the simpler system<br/><span class=\"math\">[MATH: \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0) = \\mathbf{0}]</span><br/>instead of the full nonlinear system.</p>",
+            "readable_text": "Since this linear approximation is valid near [MATH: \\mathbf{x}_0], we solve the simpler system\n[MATH: \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0) = \\mathbf{0}]\ninstead of the full nonlinear system.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the next guess <span class=\"math\">[MATH: \\mathbf{x}_1]</span>, we solve this linear system for <span class=\"math\">[MATH: \\mathbf{x}]</span>. We isolate the term <span class=\"math\">[MATH: \\mathbf{x}]</span>, as follows:</p>",
+            "readable_text": "To find the next guess [MATH: \\mathbf{x}_1], we solve this linear system for [MATH: \\mathbf{x}]. We isolate the term [MATH: \\mathbf{x}], as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: J_{f}(x_{0})(x \u2212 x_{0})|= \u2212 f(x_{0}); x \u2212 x_{0}|= \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0}); x|= x_{0} \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0})]</span></p>",
+            "readable_text": "[MATH: J_{f}(x_{0})(x \u2212 x_{0})|= \u2212 f(x_{0}); x \u2212 x_{0}|= \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0}); x|= x_{0} \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This new value becomes our next guess, which we call <span class=\"math\">[MATH: \\mathbf{x}_1]</span>. So, we write\n<span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "This new value becomes our next guess, which we call [MATH: \\mathbf{x}_1]. So, we write\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is the multivariable version of the Newton\u2013Raphson update rule.</p>",
+            "readable_text": "This is the multivariable version of the Newton\u2013Raphson update rule.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nJust like in the single-variable case, the idea is to simplify the problem by replacing a nonlinear function with its linear approximation near our current guess.\n\nContent:\nSuppose we want to solve a system of nonlinear equations\n[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]\nwhere [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is a vector-valued function.\n\nContent:\nNear a point [MATH: \\mathbf{x}_0], we approximate [MATH: \\boldsymbol{f}(\\mathbf{x})] using its first-order Taylor expansion:\n[MATH: \\boldsymbol{f}(\\mathbf{x}) \\approx \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0),]\nwhere [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_0)] is the Jacobian matrix of [MATH: \\boldsymbol{f}] evaluated at [MATH: \\mathbf{x}_0].\n\nContent:\nSince this linear approximation is valid near [MATH: \\mathbf{x}_0], we solve the simpler system\n[MATH: \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0) = \\mathbf{0}]\ninstead of the full nonlinear system.\n\nContent:\nTo find the next guess [MATH: \\mathbf{x}_1], we solve this linear system for [MATH: \\mathbf{x}]. We isolate the term [MATH: \\mathbf{x}], as follows:\n\nContent:\n[MATH: J_{f}(x_{0})(x \u2212 x_{0})|= \u2212 f(x_{0}); x \u2212 x_{0}|= \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0}); x|= x_{0} \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0})]\n\nContent:\nThis new value becomes our next guess, which we call [MATH: \\mathbf{x}_1]. So, we write\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nThis is the multivariable version of the Newton\u2013Raphson update rule."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn a previous lesson, we learned how Newton\u2019s method works for functions of a single variable. Given a function [MATH: f : \\mathbb{R} \\to \\mathbb{R}], the method generates a sequence of approximations using the rule\n[MATH: x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.]\n\nContent:\nThis formula uses the derivative [MATH: f'(x_n)] to construct a local linear approximation of [MATH: f] near [MATH: x_n], which we then use to refine our guess.\n\nContent:\nIn this lesson, we turn to the multivariable case, where we want to solve systems of nonlinear equations. Specifically, we are interested in finding a vector [MATH: \\mathbf{x} \\in \\mathbb{R}^n] that solves\n[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]\nfor a vector-valued function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n].\n\nContent:\nThe multivariable version of Newton\u2019s method updates our guess using the formula\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\nwhere [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)] is the Jacobian matrix of [MATH: \\boldsymbol{f}], evaluated at [MATH: \\mathbf{x}_n].\n\nContent:\nThis is a natural extension of the single-variable rule, replacing the derivative with the Jacobian and the scalar update with a vector.\n\nContent:\nTo see how this method works in practice, let\u2019s walk through a concrete example.\n\n---\n\nItem 2 \u2014 Tutorial: A Worked Example\n\nContent:\nSuppose we are looking for a zero of the function\n[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]\nin the region [MATH: [-2, 2] \\times [-2, 2] \\subseteq \\mathbb{R}^2].\n\nContent:\nWe will perform one iteration of the Newton\u2013Raphson method, starting from the initial guess\n[MATH: [1; 1]]\n\nContent:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nIn our case, the Jacobian is\n\nContent:\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]\n\nContent:\nTherefore, our Newton-Raphson formula is\n\nContent:\n[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]\n\nContent:\nStarting with [MATH: [1; 1]] we have\n\nContent:\n[MATH: x_{1}|= x_{0} \u2212 [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}^{\u2212 1}[x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; = [1; 1] \u2212 [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}]^{\u2212 1}[(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; = [1; 1] \u2212 [4|\u2212 2; 2|\u2212 3]^{\u2212 1}[5; 1]; = [1; 1] \u2212 (1)/(4 \u22c5 (\u2212 3) \u2212 (\u2212 2) \u22c5 2)[\u2212 3|2; \u2212 2|4][5; 1]; = [1; 1] + (1)/(8)[\u2212 13; \u2212 6]; = [\u2212 0.625; 0.25].]\n\n---\n\nItem 3 \u2014 Example: Computing One Iteration of the Newton-Raphson Method\n\nExample Prompt:\nSuppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [-2,2] \\times [0,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T.]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 x \u2212 2)|(\u2202)/(\u2202y)(x^{2}y \u2212 x \u2212 2); (\u2202)/(\u2202x)(xy^{2} \u2212 y + 1)|(\u2202)/(\u2202y)(xy^{2} \u2212 y + 1)]; = [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]]\n\nStarting with [MATH: [1; 2]] we have\n\n[MATH: x_{1}|= x_{0} \u2212 [2xy \u2212 1|x^{2}; y^{2}|2xy \u2212 1]_{x_{0}}^{\u2212 1}[x^{2}y \u2212 x \u2212 2; xy^{2} \u2212 y + 1]_{x_{0}}; = [1; 2] \u2212 [2(1)(2) \u2212 1|(1)^{2}; (2)^{2}|2(1)(2) \u2212 1]^{\u2212 1}[(1)^{2}(2) \u2212 1 \u2212 2; 1(2)^{2} \u2212 2 + 1]; = [1; 2] \u2212 [3|1; 4|3]^{\u2212 1}[\u2212 1; 3]; = [1; 2] \u2212 (1)/(3 \u22c5 3 \u2212 4 \u22c5 1)[3|\u2212 1; \u2212 4|3][\u2212 1; 3]; = [1; 2] \u2212 (1)/(5)[\u2212 6; 13]; = [(11)/(5); \u2212 (3)/(5)]; = [2.2; \u2212 0.6].]\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [\u2212 2, 0] \u00d7 [\u2212 2, 0]\u2286R^{2},] where\n[MATH: f(x, y) = [xy \u2212 1; y^{3} + 3xy^{4} + 3].]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: x_{0} = [\u2212 1, \u2212 1]^{T}.] Round your answer to three decimal places (if needed).| [MATH: x_{1} \u2248 [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [MATH: \u2212 0.917] |\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2} \u2212 y^{4} + 1; x^{3}y \u2212 3].]\nCalculate one iteration of the Newton-Raphson process that starts with [MATH: x_{0} = [1, 1]^{T}.]\n\n| [MATH: x_{1} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |\n\n---\n\nItem 6 \u2014 Example: Computing Two Iterations of the Newton-Raphson Method\n\nExample Prompt:\nSuppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [1,3] \\times [-2,0] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2} + y \u2212 4; x + y^{2} \u2212 3]]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 0 \\big]^T] if the first iteration of the algorithm gives [MATH: \\mathbf{x}_1 = \\big[ 3, \\: -1 \\big]^T.] Round your final answer to three decimal places (if needed).\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} + y \u2212 4)|(\u2202)/(\u2202y)(x^{2} + y \u2212 4); (\u2202)/(\u2202x)(x + y^{2} \u2212 3)|(\u2202)/(\u2202y)(x + y^{2} \u2212 3)]; = [2x|1; 1|2y].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [2x|1; 1|2y]]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 [2x|1; 1|2y]_{x_{1}}^{\u2212 1}[x^{2} + y \u2212 4; x + y^{2} \u2212 3]_{x_{1}}; = [3; \u2212 1] \u2212 [2(3)|1; 1|2(\u2212 1)]^{\u2212 1}[3^{2} + (\u2212 1) \u2212 4; 3 + (\u2212 1)^{2} \u2212 3]; = [3; \u2212 1] \u2212 [6|1; 1|\u2212 2]^{\u2212 1}[4; 1]; = [3; \u2212 1] \u2212 (1)/(6 \u22c5 (\u2212 2) \u2212 1 \u22c5 1)[\u2212 2|\u2212 1; \u2212 1|6][4; 1]; = [3; \u2212 1] + (1)/(13)[\u2212 9; 2]; = [(30)/(13); \u2212 (11)/(13)]; \u2248 [2.308; \u2212 0.846],]\n\nrounded to three decimal places.\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2}y + x \u2212 3; xy^{2} \u2212 y \u2212 1].]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: x_{0} = [1, 1]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [1, 2]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} \u2248 [] | [MATH: 1.091] | [MATH: ]] |\n| [FREE_ENTRY 1] |\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{2} + y \u2212 xy \u2212 3; x^{2} \u2212 x + y \u2212 2].]\nCalculate the second iteration of the Newton-Raphson process that starts at [MATH: x_{0} = [1, 0]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [2, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} \u2248 [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |\n\n---\n\nItem 9 \u2014 Tutorial: Alternative to Newton's Method for Multivariable Functions Using Linear Systems\n\nContent:\nNow that we\u2019ve seen how to apply Newton\u2019s method in the multivariable case, it\u2019s worth noting that the standard update formula\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n)]\nis not always the most practical way for us to compute the next step. In higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large matrix by rewriting the update as a linear system instead.\n\nContent:\nLet\u2019s go through how we can do that step by step.\n\nContent:\nWe start with the standard Newton update\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nNext, we subtract [MATH: \\mathbf{x}_n] from both sides\n[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nThen, we multiply both sides by [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)]\n[MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nThis gives us the linear system form of Newton\u2019s method. This equivalent form allows us to solve directly for the update direction [MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n] without ever computing the inverse of the Jacobian.\n\nContent:\nTo better understand how the method works in practice, let\u2019s walk through a concrete example.\n\n---\n\nItem 10 \u2014 Tutorial: A Worked Example\n\nContent:\nSuppose we are looking for a zero of the function\n[MATH: [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]]\nin the region [MATH: [-2, 2] \\times [-2, 3] \\subseteq \\mathbb{R}^2].\n\nContent:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nEquivalently, at each iteration, the above equation can be re-written as\n\nContent:\n[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nIn our case, the Jacobian is\n\nContent:\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{4} \u2212 y^{2} + 5)|(\u2202)/(\u2202y)(x^{4} \u2212 y^{2} + 5); (\u2202)/(\u2202x)(x^{2} \u2212 y^{3} + 1)|(\u2202)/(\u2202y)(x^{2} \u2212 y^{3} + 1)]; = [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}].]\n\nContent:\nTherefore, our Newton-Raphson system of equations is\n\nContent:\n[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]]\n\nContent:\nStarting with [MATH: [1; 1]] we have\n\nContent:\n[MATH: [4x^{3}|\u2212 2y; 2x|\u2212 3y^{2}]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{4} \u2212 y^{2} + 5; x^{2} \u2212 y^{3} + 1]_{x_{0}}; [4(1)^{3}|\u2212 2(1); 2(1)|\u2212 3(1)^{2}](x_{1} \u2212 x_{0})|= \u2212 [(1)^{4} \u2212 (1)^{2} + 5; (1)^{2} \u2212 (1)^{3} + 1]; [4|\u2212 2; 2|\u2212 3](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]\n\nContent:\nLet\u2019s solve this system using Gaussian elimination. We first set [MATH: [d_{1}; d_{2}]], so the system becomes\n[MATH: [4|\u2212 2; 2|\u2212 3]]\n\nContent:\nWe write the augmented matrix as\n[MATH: 4|\u2212 2|\u2212 5; 2|\u2212 3|\u2212 1]\n\nContent:\nTo eliminate the entry below the leading [MATH: 4], we perform the row operation [MATH: R_2 := R_2 - \\dfrac{1}{2} R_1{:}]\n[MATH: 4|\u2212 2|\u2212 5; 0|\u2212 2|1.5]\n\nContent:\nFrom the second row, we get\n[MATH: -2d_2 = 1.5 \\quad \\Rightarrow \\quad d_2 = -0.75.]\n\nContent:\nWe then substitute this into the first row, which gives\n[MATH: 4d_1 - 2(-0.75) = -5 \\quad \\Rightarrow \\quad 4d_1 = -6.5 \\quad \\Rightarrow \\quad d_1 = -1.625.]\n\nContent:\nSo, the update vector is\n[MATH: [\u2212 1.625; \u2212 0.75]]\n\nContent:\nHence, our updated approximation of the root is given by\n\nContent:\n[MATH: x_{1}|= x_{0} + [\u2212 1.625; \u2212 0.75]; = [1; 1] + [\u2212 1.625; \u2212 0.75]; = [\u2212 0.625; 0.25].]\n\n---\n\nItem 11 \u2014 Example: Computing Iterations of the Newton-Raphson Method Using Linear Systems\n\nExample Prompt:\nSuppose we wish to find a zero of the function [MATH: \\boldsymbol{f}(x,y)] in the region [MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: [x^{2} \u2212 y^{2}; 2xy \u2212 1]]\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T,] and compute the components of the first iteration.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of finding the zeros of a multivariable function [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_\\boldsymbol{f}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n),]\n\nwhere [MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)] is the Jacobian of [MATH: \\boldsymbol f] evaluated at [MATH: \\mathbf{x}_n.]\n\nEquivalently, at each iteration, the above equation can be re-written as\n\n[MATH: J_\\boldsymbol{f}(\\mathbf{x}_n)(\\mathbf{x}_{n+1}-\\mathbf{x}_n) = -\\boldsymbol{f}(\\mathbf{x}_n).]\n\nIn our case, the Jacobian is\n\n[MATH: J_{f}(x)|= [(\u2202)/(\u2202x)(x^{2} \u2212 y^{2})|(\u2202)/(\u2202y)(x^{2} \u2212 y^{2}); (\u2202)/(\u2202x)(2xy \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 1)]; = [2x|\u2212 2y; 2y|2x].]\n\nTherefore, our Newton-Raphson system of equations is\n\n[MATH: [2x|\u2212 2y; 2y|2x]]\n\nStarting with [MATH: [1; 1]] we have\n\n[MATH: [2x|\u2212 2y; 2y|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [x^{2} \u2212 y^{2}; 2xy \u2212 1]_{x_{0}}; [2(1)|\u2212 2(1); 2(1)|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} \u2212 (1)^{2}; 2(1)(1) \u2212 1]; [2|\u2212 2; 2|2](x_{1} \u2212 x_{0})|= [0; \u2212 1].]\n\nSolving this system of equations, we get [MATH: [\u2212 0.25; \u2212 0.25]] Hence,\n\n[MATH: x_{1}|= x_{0} + [\u2212 0.25; \u2212 0.25]; = [1; 1] + [\u2212 0.25; \u2212 0.25]; = [0.75; 0.75].]\n\n---\n\nItem 12 \u2014 Question 5\n\nPrompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = [x^{3}y \u2212 5y + 8; xy^{2} \u2212 3].]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T}.]| [MATH: [] | [MATH: 3] | [MATH: \u2212 4] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 1] | [MATH: ].] |\n| [FREE_ENTRY 2] | [FREE_ENTRY 3] | [MATH: 2] |\n\n---\n\nItem 13 \u2014 Question 6\n\nPrompt:\nSuppose we wish to find a zero of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = [2x^{2} + y^{2} \u2212 2; x^{3} + y^{3} \u2212 1].]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T},] and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).| [MATH: [] | [FREE_ENTRY 1] | [MATH: 2] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 2] | [MATH: ]] |\n| [FREE_ENTRY 3] | [MATH: 3] | [MATH: \u2212 1] |\n\n| [MATH: x_{1} \u2248 [] | [MATH: 0.833] | [MATH: ]] |\n| [FREE_ENTRY 4] |\n\n---\n\nItem 14 \u2014 Tutorial: Derivation of the Formula\n\nContent:\nJust like in the single-variable case, the idea is to simplify the problem by replacing a nonlinear function with its linear approximation near our current guess.\n\nContent:\nSuppose we want to solve a system of nonlinear equations\n[MATH: \\boldsymbol{f}(\\mathbf{x}) = \\mathbf{0},]\nwhere [MATH: \\boldsymbol{f} : \\mathbb{R}^n \\to \\mathbb{R}^n] is a vector-valued function.\n\nContent:\nNear a point [MATH: \\mathbf{x}_0], we approximate [MATH: \\boldsymbol{f}(\\mathbf{x})] using its first-order Taylor expansion:\n[MATH: \\boldsymbol{f}(\\mathbf{x}) \\approx \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0),]\nwhere [MATH: J_{\\boldsymbol{f}}(\\mathbf{x}_0)] is the Jacobian matrix of [MATH: \\boldsymbol{f}] evaluated at [MATH: \\mathbf{x}_0].\n\nContent:\nSince this linear approximation is valid near [MATH: \\mathbf{x}_0], we solve the simpler system\n[MATH: \\boldsymbol{f}(\\mathbf{x}_0) + J_{\\boldsymbol{f}}(\\mathbf{x}_0)(\\mathbf{x} - \\mathbf{x}_0) = \\mathbf{0}]\ninstead of the full nonlinear system.\n\nContent:\nTo find the next guess [MATH: \\mathbf{x}_1], we solve this linear system for [MATH: \\mathbf{x}]. We isolate the term [MATH: \\mathbf{x}], as follows:\n\nContent:\n[MATH: J_{f}(x_{0})(x \u2212 x_{0})|= \u2212 f(x_{0}); x \u2212 x_{0}|= \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0}); x|= x_{0} \u2212 [J_{f}(x_{0})]^{\u2212 1}f(x_{0})]\n\nContent:\nThis new value becomes our next guess, which we call [MATH: \\mathbf{x}_1]. So, we write\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [J_{\\boldsymbol{f}}(\\mathbf{x}_n)]^{-1} \\boldsymbol{f}(\\mathbf{x}_n).]\n\nContent:\nThis is the multivariable version of the Newton\u2013Raphson update rule."
+  }
+}

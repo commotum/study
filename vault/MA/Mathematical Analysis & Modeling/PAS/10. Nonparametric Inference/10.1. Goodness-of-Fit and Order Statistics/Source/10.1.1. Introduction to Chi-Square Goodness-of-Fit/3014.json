@@ -1,0 +1,1551 @@
+{
+  "schema_version": 2,
+  "topic_id": "3014",
+  "topic_title": "Introduction to Chi-Square Goodness-of-Fit",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3014/Source/3014.html",
+  "source_url": "https://mathacademy.com/topics/3014",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "225704",
+        "dom_id": "sectionLink-225704",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-225704"
+      },
+      {
+        "index": 2,
+        "step_id": "225705",
+        "dom_id": "sectionLink-225705",
+        "name": "",
+        "title": "Calculating Expected Frequencies",
+        "selector": "#sectionLink-225705"
+      },
+      {
+        "index": 3,
+        "step_id": "225708",
+        "dom_id": "sectionLink-225708",
+        "name": "",
+        "title": "The Chi-Square Test Statistic",
+        "selector": "#sectionLink-225708"
+      },
+      {
+        "index": 4,
+        "step_id": "225709",
+        "dom_id": "sectionLink-225709",
+        "name": "",
+        "title": "Calculating a Test Statistic",
+        "selector": "#sectionLink-225709"
+      },
+      {
+        "index": 5,
+        "step_id": "225712",
+        "dom_id": "sectionLink-225712",
+        "name": "",
+        "title": "The Distribution of the Chi-Square Test Statistic",
+        "selector": "#sectionLink-225712"
+      },
+      {
+        "index": 6,
+        "step_id": "225713",
+        "dom_id": "sectionLink-225713",
+        "name": "",
+        "title": "Degrees of Freedom",
+        "selector": "#sectionLink-225713"
+      },
+      {
+        "index": 7,
+        "step_id": "225714",
+        "dom_id": "sectionLink-225714",
+        "name": "",
+        "title": "Conducting a Chi-Square Test",
+        "selector": "#sectionLink-225714"
+      },
+      {
+        "index": 8,
+        "step_id": "225715",
+        "dom_id": "sectionLink-225715",
+        "name": "",
+        "title": "Carrying Out a Chi-Square Goodness of Fit Test",
+        "selector": "#sectionLink-225715"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3023",
+        "name": "The Chi-Square Distribution",
+        "href": "/topics/the-chi-square-distribution-3023"
+      },
+      {
+        "topic_id": "3269",
+        "name": "Modeling With Discrete Uniform Distributions",
+        "href": "/topics/modeling-with-discrete-uniform-distributions-3269"
+      },
+      {
+        "topic_id": "3303",
+        "name": "Hypothesis Tests for One Mean: Known Population Variance",
+        "href": "/topics/hypothesis-tests-for-one-mean-known-population-variance-3303"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 14,
+    "step_count": 8,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "225704",
+        "content_id": "5642",
+        "dom_id": "step-225704",
+        "selector": "#step-225704",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we will learn how hypothesis tests are used to determine whether an observed sample fits a known probability distribution. Hypothesis tests that compare sample data against known probability distributions are called <strong>goodness-of-fit tests</strong>. </p>",
+            "readable_text": "In this lesson, we will learn how hypothesis tests are used to determine whether an observed sample fits a known probability distribution. Hypothesis tests that compare sample data against known probability distributions are called goodness-of-fit tests.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>By the end of this lesson, you&#x27;ll know how to conduct a <strong>chi-square goodness-of-fit</strong> test to determine whether some sample data were likely drawn from a discrete uniform distribution.  </p>",
+            "readable_text": "By the end of this lesson, you'll know how to conduct a chi-square goodness-of-fit test to determine whether some sample data were likely drawn from a discrete uniform distribution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we want to determine whether a particular six-sided die is fair. We can formulate the following null and alternative hypotheses:</p>",
+            "readable_text": "Suppose we want to determine whether a particular six-sided die is fair. We can formulate the following null and alternative hypotheses:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: H_0{:}\\:]</span> The die is fair</p></li><li><p><span class=\"math\">[MATH: H_1{:}\\:]</span> The die is <em>not</em> fair</p></li></ul>",
+            "readable_text": "- [MATH: H_0{:}\\:] The die is fair\n- [MATH: H_1{:}\\:] The die is not fair",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If the die is fair, it can be modeled using a discrete uniform distribution. Let <span class=\"math\">[MATH: Y]</span> be the outcome of the die under the null hypothesis. Then, <span class=\"math\">[MATH: Y\\sim U\\{1,2,3,4,5,6\\},]</span> and we have\n<span class=\"math\">[MATH: P(Y=y)=\\dfrac 16,\\qquad  y=1,2,3,4,5,6.]</span> </p>",
+            "readable_text": "If the die is fair, it can be modeled using a discrete uniform distribution. Let [MATH: Y] be the outcome of the die under the null hypothesis. Then, [MATH: Y\\sim U\\{1,2,3,4,5,6\\},] and we have\n[MATH: P(Y=y)=\\dfrac 16,\\qquad y=1,2,3,4,5,6.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, we can reformulate our null and alternative hypotheses as follows:</p>",
+            "readable_text": "Thus, we can reformulate our null and alternative hypotheses as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: H_0{:}\\:\\: Y\\sim U\\{1,2,3,4,5,6\\}]</span> </p></li><li><p><span class=\"math\">[MATH: H_1{:}\\:\\: Y\\not\\sim U\\{1,2,3,4,5,6\\}]</span> </p></li></ul>",
+            "readable_text": "- [MATH: H_0{:}\\:\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1{:}\\:\\: Y\\not\\sim U\\{1,2,3,4,5,6\\}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The alternative hypothesis reads, &quot;<span class=\"math\">[MATH: Y]</span> does not follow <span class=\"math\">[MATH: U\\{1,2,3,4,5,6\\}]</span>.&quot;</p>",
+            "readable_text": "The alternative hypothesis reads, \"[MATH: Y] does not follow [MATH: U\\{1,2,3,4,5,6\\}].\"",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To conduct our hypothesis test, we need some sample data. So, suppose we roll the die <span class=\"math\">[MATH: 120]</span> times and get the following frequency distribution: </p>",
+            "readable_text": "To conduct our hypothesis test, we need some sample data. So, suppose we roll the die [MATH: 120] times and get the following frequency distribution:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\textrm{Number rolled,}\\; y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\textrm{Observed frequency,}\\; O_i]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note the following:</p>",
+            "readable_text": "Note the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>We&#x27;ve denoted the <span class=\"math\">[MATH: i]</span>th possible outcome as <span class=\"math\">[MATH: y_i.]</span> These are simply the range of possible die scores. So, we have \n<span class=\"math\">[MATH: y_1 = 1,\\qquad y_2 = 2,\\qquad \\ldots,\\qquad y_6=6.]</span></p></li><li><p>We&#x27;ve denoted the <strong>observed frequency</strong> of the <span class=\"math\">[MATH: i]</span>th outcome as <span class=\"math\">[MATH: O_i.]</span>\n<span class=\"math\">[MATH: O_1 = 23,\\qquad O_2 = 15,\\qquad \\ldots,\\qquad O_6=18]</span></p></li></ul>",
+            "readable_text": "- We've denoted the [MATH: i]th possible outcome as [MATH: y_i.] These are simply the range of possible die scores. So, we have\n[MATH: y_1 = 1,\\qquad y_2 = 2,\\qquad \\ldots,\\qquad y_6=6.]\n- We've denoted the observed frequency of the [MATH: i]th outcome as [MATH: O_i.]\n[MATH: O_1 = 23,\\qquad O_2 = 15,\\qquad \\ldots,\\qquad O_6=18]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The score obtained when a die is thrown is the outcome of a random process. Therefore, we expect some variation in the observed frequencies <em>even when the die is fair</em>. The question we must ask ourselves is the following: Is there sufficient deviation of the observed frequencies compared to what&#x27;s expected under the null hypothesis to conclude that the null hypothesis is false?</p>",
+            "readable_text": "The score obtained when a die is thrown is the outcome of a random process. Therefore, we expect some variation in the observed frequencies even when the die is fair. The question we must ask ourselves is the following: Is there sufficient deviation of the observed frequencies compared to what's expected under the null hypothesis to conclude that the null hypothesis is false?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The first step to answering this question is to calculate the <strong>expected frequency</strong> <span class=\"math\">[MATH: E_i]</span> of the <span class=\"math\">[MATH: i]</span>th outcome for every possible outcome. </p>",
+            "readable_text": "The first step to answering this question is to calculate the expected frequency [MATH: E_i] of the [MATH: i]th outcome for every possible outcome.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, since <span class=\"math\">[MATH: Y]</span> is uniformly distributed under <span class=\"math\">[MATH: H_0,]</span> the probability of a random throw resulting in a score of <span class=\"math\">[MATH: Y = 1]</span> is</p>",
+            "readable_text": "Now, since [MATH: Y] is uniformly distributed under [MATH: H_0,] the probability of a random throw resulting in a score of [MATH: Y = 1] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: P(Y = 1) = \\dfrac16.]</span>\nTherefore, the <em>expected</em> number of times we should obtain a score of <span class=\"math\">[MATH: 1]</span> when a die is rolled <span class=\"math\">[MATH: N=120]</span> times is\n<span class=\"math\">[MATH: E_1 = \\dfrac16 \\cdot 120 = 20.]</span></p>",
+            "readable_text": "[MATH: P(Y = 1) = \\dfrac16.]\nTherefore, the expected number of times we should obtain a score of [MATH: 1] when a die is rolled [MATH: N=120] times is\n[MATH: E_1 = \\dfrac16 \\cdot 120 = 20.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since <span class=\"math\">[MATH: Y]</span> is uniform under <span class=\"math\">[MATH: H_0,]</span> the expected frequency of the <span class=\"math\">[MATH: i]</span>th outcome is the same for every value of <span class=\"math\">[MATH: i.]</span> Thus, for a sample size of <span class=\"math\">[MATH: N=120,]</span> the expected frequencies are given by\n<span class=\"math\">[MATH: E_{i}|= P(Y = y) \u22c5 N; = (1)/(6) \u22c5 120; = 20.]</span></p>",
+            "readable_text": "Since [MATH: Y] is uniform under [MATH: H_0,] the expected frequency of the [MATH: i]th outcome is the same for every value of [MATH: i.] Thus, for a sample size of [MATH: N=120,] the expected frequencies are given by\n[MATH: E_{i}|= P(Y = y) \u22c5 N; = (1)/(6) \u22c5 120; = 20.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This gives the following table of observed vs. expected frequencies.</p>",
+            "readable_text": "This gives the following table of observed vs. expected frequencies.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\textrm{Number rolled,}\\; y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\textrm{Observed frequency,}\\; O_i]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\textrm{Expected frequency,}\\; E_i]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: \\textrm{Expected frequency,}\\; E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn this lesson, we will learn how hypothesis tests are used to determine whether an observed sample fits a known probability distribution. Hypothesis tests that compare sample data against known probability distributions are called goodness-of-fit tests.\n\nContent:\nBy the end of this lesson, you'll know how to conduct a chi-square goodness-of-fit test to determine whether some sample data were likely drawn from a discrete uniform distribution.\n\nContent:\nSuppose we want to determine whether a particular six-sided die is fair. We can formulate the following null and alternative hypotheses:\n\nContent:\n- [MATH: H_0{:}\\:] The die is fair\n- [MATH: H_1{:}\\:] The die is not fair\n\nContent:\nIf the die is fair, it can be modeled using a discrete uniform distribution. Let [MATH: Y] be the outcome of the die under the null hypothesis. Then, [MATH: Y\\sim U\\{1,2,3,4,5,6\\},] and we have\n[MATH: P(Y=y)=\\dfrac 16,\\qquad y=1,2,3,4,5,6.]\n\nContent:\nThus, we can reformulate our null and alternative hypotheses as follows:\n\nContent:\n- [MATH: H_0{:}\\:\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1{:}\\:\\: Y\\not\\sim U\\{1,2,3,4,5,6\\}]\n\nContent:\nThe alternative hypothesis reads, \"[MATH: Y] does not follow [MATH: U\\{1,2,3,4,5,6\\}].\"\n\nContent:\nTo conduct our hypothesis test, we need some sample data. So, suppose we roll the die [MATH: 120] times and get the following frequency distribution:\n\nContent:\n| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n\nContent:\nNote the following:\n\nContent:\n- We've denoted the [MATH: i]th possible outcome as [MATH: y_i.] These are simply the range of possible die scores. So, we have\n[MATH: y_1 = 1,\\qquad y_2 = 2,\\qquad \\ldots,\\qquad y_6=6.]\n- We've denoted the observed frequency of the [MATH: i]th outcome as [MATH: O_i.]\n[MATH: O_1 = 23,\\qquad O_2 = 15,\\qquad \\ldots,\\qquad O_6=18]\n\nContent:\nThe score obtained when a die is thrown is the outcome of a random process. Therefore, we expect some variation in the observed frequencies even when the die is fair. The question we must ask ourselves is the following: Is there sufficient deviation of the observed frequencies compared to what's expected under the null hypothesis to conclude that the null hypothesis is false?\n\nContent:\nThe first step to answering this question is to calculate the expected frequency [MATH: E_i] of the [MATH: i]th outcome for every possible outcome.\n\nContent:\nNow, since [MATH: Y] is uniformly distributed under [MATH: H_0,] the probability of a random throw resulting in a score of [MATH: Y = 1] is\n\nContent:\n[MATH: P(Y = 1) = \\dfrac16.]\nTherefore, the expected number of times we should obtain a score of [MATH: 1] when a die is rolled [MATH: N=120] times is\n[MATH: E_1 = \\dfrac16 \\cdot 120 = 20.]\n\nContent:\nSince [MATH: Y] is uniform under [MATH: H_0,] the expected frequency of the [MATH: i]th outcome is the same for every value of [MATH: i.] Thus, for a sample size of [MATH: N=120,] the expected frequencies are given by\n[MATH: E_{i}|= P(Y = y) \u22c5 N; = (1)/(6) \u22c5 120; = 20.]\n\nContent:\nThis gives the following table of observed vs. expected frequencies.\n\nContent:\n| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: \\textrm{Expected frequency,}\\; E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "225705",
+        "content_id": "9313",
+        "dom_id": "step-225705",
+        "selector": "#step-225705",
+        "step_anchor": "step-2",
+        "title": "Calculating Expected Frequencies",
+        "key_prerequisites": [
+          {
+            "topic_id": "130",
+            "name": "Probability From Experimental Data",
+            "href": "/topics/130",
+            "type": ""
+          },
+          {
+            "topic_id": "3269",
+            "name": "Modeling With Discrete Uniform Distributions",
+            "href": "/topics/3269",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose <span class=\"math\">[MATH: X]</span> is a random variable with support <span class=\"math\">[MATH: S=\\{0,1,2,3,4\\}.]</span> We wish to carry out a hypothesis test with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_0\\mathbin{:}\\: X\\sim U\\{0,1,2,3,4\\}]</span> </p></li><li><p><span class=\"math\">[MATH: H_1\\mathbin{:}\\:X\\not\\sim U\\{0,1,2,3,4\\}]</span> </p></li></ul><p>A random sample is carried out, and the sample data is shown below. Calculate the expected frequency <span class=\"math\">[MATH: E_i]</span> for each observation. </p><table><tr><td><p>Observation <span class=\"math\">[MATH: (x_i)]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_i)]</span></p></td><td><p><span class=\"math\">[MATH: 45]</span></p></td><td><p><span class=\"math\">[MATH: 47]</span></p></td><td><p><span class=\"math\">[MATH: 46]</span></p></td><td><p><span class=\"math\">[MATH: 42]</span></p></td><td><p><span class=\"math\">[MATH: 40]</span></p></td></tr><tr><td><p>Expected Frequency <span class=\"math\">[MATH: (E_i)]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+            "readable_text": "Suppose [MATH: X] is a random variable with support [MATH: S=\\{0,1,2,3,4\\}.] We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\: X\\sim U\\{0,1,2,3,4\\}]\n- [MATH: H_1\\mathbin{:}\\:X\\not\\sim U\\{0,1,2,3,4\\}]\n\nA random sample is carried out, and the sample data is shown below. Calculate the expected frequency [MATH: E_i] for each observation.\n\n| Observation [MATH: (x_i)] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Observed Frequency [MATH: (O_i)] | [MATH: 45] | [MATH: 47] | [MATH: 46] | [MATH: 42] | [MATH: 40] |\n| Expected Frequency [MATH: (E_i)] | | | | | |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Under the null hypothesis, we have that <span class=\"math\">[MATH: X\\sim U\\{0,1,2,3,4\\}.]</span> Therefore,</p><p><span class=\"math\">[MATH: P(X=x)=\\dfrac 15,\\qquad  x=0,1,2,3,4.]</span> </p><p>The sample size is\n<span class=\"math\">[MATH: N = 45+47+46+42+40 = 220.]</span></p><p>Therefore, the expected frequencies for each observation are as follows:</p><p><span class=\"math\">[MATH: E_{1}|= N \u22c5 P(X = 0) = 220 \u22c5 (1)/(5) = 44; E_{2}|= N \u22c5 P(X = 2) = 220 \u22c5 (1)/(5) = 44; =\u22ee; E_{5}|= N \u22c5 P(X = 4) = 220 \u22c5 (1)/(5) = 44]</span></p><p>A table summarizing the observed and corresponding expected frequencies is given below:</p><table><tr><td><p><span class=\"math\">[MATH: x_i]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i]</span></p></td><td><p><span class=\"math\">[MATH: 45]</span></p></td><td><p><span class=\"math\">[MATH: 47]</span></p></td><td><p><span class=\"math\">[MATH: 46]</span></p></td><td><p><span class=\"math\">[MATH: 42]</span></p></td><td><p><span class=\"math\">[MATH: 40]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: E_i]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}]</span></p></td></tr></table>",
+            "readable_text": "Under the null hypothesis, we have that [MATH: X\\sim U\\{0,1,2,3,4\\}.] Therefore,\n\n[MATH: P(X=x)=\\dfrac 15,\\qquad x=0,1,2,3,4.]\n\nThe sample size is\n[MATH: N = 45+47+46+42+40 = 220.]\n\nTherefore, the expected frequencies for each observation are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(X = 0) = 220 \u22c5 (1)/(5) = 44; E_{2}|= N \u22c5 P(X = 2) = 220 \u22c5 (1)/(5) = 44; =\u22ee; E_{5}|= N \u22c5 P(X = 4) = 220 \u22c5 (1)/(5) = 44]\n\nA table summarizing the observed and corresponding expected frequencies is given below:\n\n| [MATH: x_i] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: O_i] | [MATH: 45] | [MATH: 47] | [MATH: 46] | [MATH: 42] | [MATH: 40] |\n| [MATH: E_i] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose [MATH: X] is a random variable with support [MATH: S=\\{0,1,2,3,4\\}.] We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\: X\\sim U\\{0,1,2,3,4\\}]\n- [MATH: H_1\\mathbin{:}\\:X\\not\\sim U\\{0,1,2,3,4\\}]\n\nA random sample is carried out, and the sample data is shown below. Calculate the expected frequency [MATH: E_i] for each observation.\n\n| Observation [MATH: (x_i)] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Observed Frequency [MATH: (O_i)] | [MATH: 45] | [MATH: 47] | [MATH: 46] | [MATH: 42] | [MATH: 40] |\n| Expected Frequency [MATH: (E_i)] | | | | | |\n\nContent:\nEXPLANATION\n\nExplanation:\nUnder the null hypothesis, we have that [MATH: X\\sim U\\{0,1,2,3,4\\}.] Therefore,\n\n[MATH: P(X=x)=\\dfrac 15,\\qquad x=0,1,2,3,4.]\n\nThe sample size is\n[MATH: N = 45+47+46+42+40 = 220.]\n\nTherefore, the expected frequencies for each observation are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(X = 0) = 220 \u22c5 (1)/(5) = 44; E_{2}|= N \u22c5 P(X = 2) = 220 \u22c5 (1)/(5) = 44; =\u22ee; E_{5}|= N \u22c5 P(X = 4) = 220 \u22c5 (1)/(5) = 44]\n\nA table summarizing the observed and corresponding expected frequencies is given below:\n\n| [MATH: x_i] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: O_i] | [MATH: 45] | [MATH: 47] | [MATH: 46] | [MATH: 42] | [MATH: 40] |\n| [MATH: E_i] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] |"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "252487",
+        "dom_id": "question-252487",
+        "selector": "#question-252487",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: X]</span> is a random variable with support <span class=\"math\">[MATH: S = {2, 4, 6, 8, 10}.]</span> We wish to carry out a hypothesis test with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_{0}:X\u223cU{2, 4, 6, 8, 10}]</span> </p></li><li><p><span class=\"math\">[MATH: H_{1}:X\u2241U{2, 4, 6, 8, 10}]</span> </p></li></ul><p>A random sample is carried out, and the sample data is shown below. Calculate the expected frequency <span class=\"math\">[MATH: E_{i}]</span> for each observation. </p><table><tr><td><p>Observation <span class=\"math\">[MATH: (x_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 32]</span></p></td><td><p><span class=\"math\">[MATH: 49]</span></p></td><td><p><span class=\"math\">[MATH: 45]</span></p></td><td><p><span class=\"math\">[MATH: 41]</span></p></td><td><p><span class=\"math\">[MATH: 33]</span></p></td></tr><tr><td><p>Expected Frequency <span class=\"math\">[MATH: (E_{i})]</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span>\n</p></td></tr></table>",
+          "readable_text": "Suppose [MATH: X] is a random variable with support [MATH: S = {2, 4, 6, 8, 10}.] We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:X\u223cU{2, 4, 6, 8, 10}]\n- [MATH: H_{1}:X\u2241U{2, 4, 6, 8, 10}]\n\nA random sample is carried out, and the sample data is shown below. Calculate the expected frequency [MATH: E_{i}] for each observation.\n\n| Observation [MATH: (x_{i})] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] | [MATH: 10] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 32] | [MATH: 49] | [MATH: 45] | [MATH: 41] | [MATH: 33] |\n| Expected Frequency [MATH: (E_{i})] | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] | [FREE_ENTRY 4] | [FREE_ENTRY 5] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose [MATH: X] is a random variable with support [MATH: S = {2, 4, 6, 8, 10}.] We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:X\u223cU{2, 4, 6, 8, 10}]\n- [MATH: H_{1}:X\u2241U{2, 4, 6, 8, 10}]\n\nA random sample is carried out, and the sample data is shown below. Calculate the expected frequency [MATH: E_{i}] for each observation.\n\n| Observation [MATH: (x_{i})] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] | [MATH: 10] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 32] | [MATH: 49] | [MATH: 45] | [MATH: 41] | [MATH: 33] |\n| Expected Frequency [MATH: (E_{i})] | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] | [FREE_ENTRY 4] | [FREE_ENTRY 5] |"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "252485",
+        "dom_id": "question-252485",
+        "selector": "#question-252485",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Three species of fish, species <span class=\"math\">[MATH: 1,]</span> species <span class=\"math\">[MATH: 2,]</span> and species <span class=\"math\">[MATH: 3,]</span> inhabit a particular river. We wish to carry out a hypothesis test with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_{0}:]</span> The species are distributed uniformly.</p></li><li><p><span class=\"math\">[MATH: H_{1}:]</span> The species are not distributed uniformly.</p></li></ul><p>A random sample of fish from the river is carried out. The sample data is shown below. Calculate the expected frequency <span class=\"math\">[MATH: E_{i}]</span> for each observation. </p><table><tr><td><p>Species of Fish <span class=\"math\">[MATH: (y_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 89]</span></p></td><td><p><span class=\"math\">[MATH: 120]</span></p></td><td><p><span class=\"math\">[MATH: 91]</span></p></td></tr><tr><td><p>Expected Frequency <span class=\"math\">[MATH: (E_{i})]</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span>\n</p></td></tr></table>",
+          "readable_text": "Three species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3,] inhabit a particular river. We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The species are distributed uniformly.\n- [MATH: H_{1}:] The species are not distributed uniformly.\n\nA random sample of fish from the river is carried out. The sample data is shown below. Calculate the expected frequency [MATH: E_{i}] for each observation.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n| Expected Frequency [MATH: (E_{i})] | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThree species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3,] inhabit a particular river. We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The species are distributed uniformly.\n- [MATH: H_{1}:] The species are not distributed uniformly.\n\nA random sample of fish from the river is carried out. The sample data is shown below. Calculate the expected frequency [MATH: E_{i}] for each observation.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n| Expected Frequency [MATH: (E_{i})] | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] |"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "225708",
+        "content_id": "10733",
+        "dom_id": "step-225708",
+        "selector": "#step-225708",
+        "step_anchor": "step-5",
+        "title": "The Chi-Square Test Statistic",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s return to the case of the suspected biased die with the following observed and expected frequencies:</p>",
+            "readable_text": "Let's return to the case of the suspected biased die with the following observed and expected frequencies:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\textrm{Number rolled,}\\; y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\textrm{Observed frequency,}\\; O_i]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\textrm{Expected frequency,}\\; E_i]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: \\textrm{Expected frequency,}\\; E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We want to test the following null and alternative hypotheses:</p>",
+            "readable_text": "We want to test the following null and alternative hypotheses:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]</span> </p></li><li><p><span class=\"math\">[MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]</span> </p></li></ul>",
+            "readable_text": "- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note the following:</p>",
+            "readable_text": "Note the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If the sample data support the hypothesis that the die is fair, then we expect the <em>squared difference</em> between the observed and expected frequencies \n<span class=\"math\">[MATH: (O_i - E_i)^2]</span>\nto be &quot;small&quot; in some sense. We square the differences so that they&#x27;re always positive.</p></li><li><p>What do we mean by small? Note that the magnitude (i.e., size) of the observed and expected frequencies will influence the magnitude of the squared differences. To mitigate this, we <em>scale</em> the data by dividing the squared differences by <span class=\"math\">[MATH: E_i,]</span> as follows: \n<span class=\"math\">[MATH: \\dfrac{(O_i - E_i)^2}{E_i}]</span></p></li><li><p>Thus, if the sample data support the null hypothesis, the <em>sum</em> of these differences should also be small. So, we define the <strong>chi-square test statistic</strong> for this hypothesis test as follows:\n<span class=\"math\">[MATH: \\sum_{i}\\dfrac{(O_i-E_i)^2}{E_i}]</span>\nScaling the data also ensures each term in the sum contributes proportionally, preventing large expected frequencies from dominating the test statistic.</p></li></ul>",
+            "readable_text": "- If the sample data support the hypothesis that the die is fair, then we expect the squared difference between the observed and expected frequencies\n[MATH: (O_i - E_i)^2]\nto be \"small\" in some sense. We square the differences so that they're always positive.\n- What do we mean by small? Note that the magnitude (i.e., size) of the observed and expected frequencies will influence the magnitude of the squared differences. To mitigate this, we scale the data by dividing the squared differences by [MATH: E_i,] as follows:\n[MATH: \\dfrac{(O_i - E_i)^2}{E_i}]\n- Thus, if the sample data support the null hypothesis, the sum of these differences should also be small. So, we define the chi-square test statistic for this hypothesis test as follows:\n[MATH: \\sum_{i}\\dfrac{(O_i-E_i)^2}{E_i}]\nScaling the data also ensures each term in the sum contributes proportionally, preventing large expected frequencies from dominating the test statistic.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To calculate the value of our test statistic in this case, we first add some additional rows to our table: </p>",
+            "readable_text": "To calculate the value of our test statistic in this case, we first add some additional rows to our table:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: E_i]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i - E_i]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: -5]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: -2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: -2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: (O_i - E_i)^2]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\dfrac{(O_i - E_i)^2}{E_i}]</span></p></td><td><p><span class=\"math\">[MATH: 0.45]</span></p></td><td><p><span class=\"math\">[MATH: 1.25]</span></p></td><td><p><span class=\"math\">[MATH: 1.25]</span></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td><td><p><span class=\"math\">[MATH: 0.05]</span></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n| [MATH: O_i - E_i] | [MATH: 3] | [MATH: -5] | [MATH: 5] | [MATH: -2] | [MATH: 1] | [MATH: -2] |\n| [MATH: (O_i - E_i)^2] | [MATH: 9] | [MATH: 25] | [MATH: 25] | [MATH: 4] | [MATH: 1] | [MATH: 4] |\n| [MATH: \\dfrac{(O_i - E_i)^2}{E_i}] | [MATH: 0.45] | [MATH: 1.25] | [MATH: 1.25] | [MATH: 0.2] | [MATH: 0.05] | [MATH: 0.2] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the chi-square test statistic, we sum the values in the final row:\n<span class=\"math\">[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 0.45 + 1.25 + 1.25 + 0.2 + 0.05 + 0.2 = 3.4]</span></p>",
+            "readable_text": "To find the chi-square test statistic, we sum the values in the final row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 0.45 + 1.25 + 1.25 + 0.2 + 0.05 + 0.2 = 3.4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can think about the test statistic intuitively as follows: </p>",
+            "readable_text": "We can think about the test statistic intuitively as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If our test statistic <span class=\"math\">[MATH: (3.4)]</span> is <em>greater than</em> some threshold value, then there is <em>sufficient</em> evidence that <span class=\"math\">[MATH: H_0]</span> is false, and we should reject it.</p></li><li><p>If our test statistic <span class=\"math\">[MATH: (3.4)]</span> is <em>smaller than</em> some threshold value, then there is <em>insufficient</em> evidence that <span class=\"math\">[MATH: H_0]</span> is false, and we should <em>not</em> reject it.</p></li></ul>",
+            "readable_text": "- If our test statistic [MATH: (3.4)] is greater than some threshold value, then there is sufficient evidence that [MATH: H_0] is false, and we should reject it.\n- If our test statistic [MATH: (3.4)] is smaller than some threshold value, then there is insufficient evidence that [MATH: H_0] is false, and we should not reject it.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ll discuss the details of this shortly. For now, let&#x27;s get some practice at computing chi-square test statistics.</p>",
+            "readable_text": "We'll discuss the details of this shortly. For now, let's get some practice at computing chi-square test statistics.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's return to the case of the suspected biased die with the following observed and expected frequencies:\n\nContent:\n| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: \\textrm{Expected frequency,}\\; E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n\nContent:\nWe want to test the following null and alternative hypotheses:\n\nContent:\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]\n\nContent:\nNote the following:\n\nContent:\n- If the sample data support the hypothesis that the die is fair, then we expect the squared difference between the observed and expected frequencies\n[MATH: (O_i - E_i)^2]\nto be \"small\" in some sense. We square the differences so that they're always positive.\n- What do we mean by small? Note that the magnitude (i.e., size) of the observed and expected frequencies will influence the magnitude of the squared differences. To mitigate this, we scale the data by dividing the squared differences by [MATH: E_i,] as follows:\n[MATH: \\dfrac{(O_i - E_i)^2}{E_i}]\n- Thus, if the sample data support the null hypothesis, the sum of these differences should also be small. So, we define the chi-square test statistic for this hypothesis test as follows:\n[MATH: \\sum_{i}\\dfrac{(O_i-E_i)^2}{E_i}]\nScaling the data also ensures each term in the sum contributes proportionally, preventing large expected frequencies from dominating the test statistic.\n\nContent:\nTo calculate the value of our test statistic in this case, we first add some additional rows to our table:\n\nContent:\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n| [MATH: O_i - E_i] | [MATH: 3] | [MATH: -5] | [MATH: 5] | [MATH: -2] | [MATH: 1] | [MATH: -2] |\n| [MATH: (O_i - E_i)^2] | [MATH: 9] | [MATH: 25] | [MATH: 25] | [MATH: 4] | [MATH: 1] | [MATH: 4] |\n| [MATH: \\dfrac{(O_i - E_i)^2}{E_i}] | [MATH: 0.45] | [MATH: 1.25] | [MATH: 1.25] | [MATH: 0.2] | [MATH: 0.05] | [MATH: 0.2] |\n\nContent:\nTo find the chi-square test statistic, we sum the values in the final row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 0.45 + 1.25 + 1.25 + 0.2 + 0.05 + 0.2 = 3.4]\n\nContent:\nWe can think about the test statistic intuitively as follows:\n\nContent:\n- If our test statistic [MATH: (3.4)] is greater than some threshold value, then there is sufficient evidence that [MATH: H_0] is false, and we should reject it.\n- If our test statistic [MATH: (3.4)] is smaller than some threshold value, then there is insufficient evidence that [MATH: H_0] is false, and we should not reject it.\n\nContent:\nWe'll discuss the details of this shortly. For now, let's get some practice at computing chi-square test statistics."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "225709",
+        "content_id": "9297",
+        "dom_id": "step-225709",
+        "selector": "#step-225709",
+        "step_anchor": "step-6",
+        "title": "Calculating a Test Statistic",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A particular city uses three types of public transportation: type <span class=\"math\">[MATH: 1,]</span> type <span class=\"math\">[MATH: 2,]</span> and type <span class=\"math\">[MATH: 3.]</span> Citizens&#x27; preferences across the three types are believed to be equally distributed. A random sample of citizens is conducted, and the frequency distribution of citizens who use each type of transport in the sample is shown below. </p><table><tr><td><p>Transportation Type <span class=\"math\">[MATH: (y_i)]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_i)]</span></p></td><td><p><span class=\"math\">[MATH: 135]</span></p></td><td><p><span class=\"math\">[MATH: 153]</span></p></td><td><p><span class=\"math\">[MATH: 162]</span></p></td></tr></table><p>Suppose a hypothesis test is conducted with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_0\\mathbin{:}\\:]</span> Transportation preferences are distributed uniformly.</p></li><li><p><span class=\"math\">[MATH: H_1\\mathbin{:}\\:]</span> Transportation preferences are not distributed uniformly.</p></li></ul><p>Calculate the value of the chi-square test statistic for this hypothesis test. </p>",
+            "readable_text": "A particular city uses three types of public transportation: type [MATH: 1,] type [MATH: 2,] and type [MATH: 3.] Citizens' preferences across the three types are believed to be equally distributed. A random sample of citizens is conducted, and the frequency distribution of citizens who use each type of transport in the sample is shown below.\n\n| Transportation Type [MATH: (y_i)] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_i)] | [MATH: 135] | [MATH: 153] | [MATH: 162] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\:] Transportation preferences are distributed uniformly.\n- [MATH: H_1\\mathbin{:}\\:] Transportation preferences are not distributed uniformly.\n\nCalculate the value of the chi-square test statistic for this hypothesis test.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Suppose we have a set of observed frequencies <span class=\"math\">[MATH: O_i]</span> and corresponding expected frequencies <span class=\"math\">[MATH: E_i,]</span> as defined by a theoretical model under the null hypothesis. The chi-square test statistic is given by</p><p><span class=\"math\">[MATH: \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]</span></p><p>where</p><ul><li><p><span class=\"math\">[MATH: O_i]</span> is the observed frequency for category <span class=\"math\">[MATH: i,]</span> and</p></li><li><p><span class=\"math\">[MATH: E_i]</span> is the expected frequency for category <span class=\"math\">[MATH: i,]</span> as predicted under the null hypothesis.</p></li></ul><p>Let <span class=\"math\">[MATH: Y]</span> be the preferred type of public transportation of a randomly selected citizen from the population under the null hypothesis. Then, we have</p><p><span class=\"math\">[MATH: P(Y=y)=\\dfrac 13,\\qquad  y=1,2,3.]</span> </p><p>The total number of citizens in the sample is\n<span class=\"math\">[MATH: N = 135 + 153+ 162 = 450.]</span></p><p>Therefore, the expected frequencies for each type of public transportation are as follows:</p><p><span class=\"math\">[MATH: E_{1}|= N \u22c5 P(Y = 1) = 450 \u22c5 (1)/(3) = 150; E_{2}|= N \u22c5 P(Y = 2) = 450 \u22c5 (1)/(3) = 150; E_{3}|= N \u22c5 P(Y = 3) = 450 \u22c5 (1)/(3) = 150]</span></p><p>A table summarizing the observed and corresponding theoretical frequencies is given below:</p><table><tr><td><p><span class=\"math\">[MATH: y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i]</span></p></td><td><p><span class=\"math\">[MATH: 135]</span></p></td><td><p><span class=\"math\">[MATH: 153]</span></p></td><td><p><span class=\"math\">[MATH: 162]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: E_i]</span></p></td><td><p><span class=\"math\">[MATH: 150]</span></p></td><td><p><span class=\"math\">[MATH: 150]</span></p></td><td><p><span class=\"math\">[MATH: 150]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\dfrac{(O_i-E_i)^2}{E_i}]</span></p></td><td><p><span class=\"math\">[MATH: 1.5]</span></p></td><td><p><span class=\"math\">[MATH: 0.06]</span></p></td><td><p><span class=\"math\">[MATH: 0.96]</span></p></td></tr></table><p>Notice that we have rounded values to four decimal places, where appropriate. </p><p>We compute our test statistic by summing the last row:\n<span class=\"math\">[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.5 + 0.06 + 0.96; = 2.52.]</span>\nTherefore, the value of the test statistic is <span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2.52}.]</span></p>",
+            "readable_text": "Suppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. The chi-square test statistic is given by\n\n[MATH: \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\nwhere\n\n- [MATH: O_i] is the observed frequency for category [MATH: i,] and\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis.\n\nLet [MATH: Y] be the preferred type of public transportation of a randomly selected citizen from the population under the null hypothesis. Then, we have\n\n[MATH: P(Y=y)=\\dfrac 13,\\qquad y=1,2,3.]\n\nThe total number of citizens in the sample is\n[MATH: N = 135 + 153+ 162 = 450.]\n\nTherefore, the expected frequencies for each type of public transportation are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(Y = 1) = 450 \u22c5 (1)/(3) = 150; E_{2}|= N \u22c5 P(Y = 2) = 450 \u22c5 (1)/(3) = 150; E_{3}|= N \u22c5 P(Y = 3) = 450 \u22c5 (1)/(3) = 150]\n\nA table summarizing the observed and corresponding theoretical frequencies is given below:\n\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: O_i] | [MATH: 135] | [MATH: 153] | [MATH: 162] |\n| [MATH: E_i] | [MATH: 150] | [MATH: 150] | [MATH: 150] |\n| [MATH: \\dfrac{(O_i-E_i)^2}{E_i}] | [MATH: 1.5] | [MATH: 0.06] | [MATH: 0.96] |\n\nNotice that we have rounded values to four decimal places, where appropriate.\n\nWe compute our test statistic by summing the last row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.5 + 0.06 + 0.96; = 2.52.]\nTherefore, the value of the test statistic is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2.52}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA particular city uses three types of public transportation: type [MATH: 1,] type [MATH: 2,] and type [MATH: 3.] Citizens' preferences across the three types are believed to be equally distributed. A random sample of citizens is conducted, and the frequency distribution of citizens who use each type of transport in the sample is shown below.\n\n| Transportation Type [MATH: (y_i)] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_i)] | [MATH: 135] | [MATH: 153] | [MATH: 162] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\:] Transportation preferences are distributed uniformly.\n- [MATH: H_1\\mathbin{:}\\:] Transportation preferences are not distributed uniformly.\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nContent:\nEXPLANATION\n\nExplanation:\nSuppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. The chi-square test statistic is given by\n\n[MATH: \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\nwhere\n\n- [MATH: O_i] is the observed frequency for category [MATH: i,] and\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis.\n\nLet [MATH: Y] be the preferred type of public transportation of a randomly selected citizen from the population under the null hypothesis. Then, we have\n\n[MATH: P(Y=y)=\\dfrac 13,\\qquad y=1,2,3.]\n\nThe total number of citizens in the sample is\n[MATH: N = 135 + 153+ 162 = 450.]\n\nTherefore, the expected frequencies for each type of public transportation are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(Y = 1) = 450 \u22c5 (1)/(3) = 150; E_{2}|= N \u22c5 P(Y = 2) = 450 \u22c5 (1)/(3) = 150; E_{3}|= N \u22c5 P(Y = 3) = 450 \u22c5 (1)/(3) = 150]\n\nA table summarizing the observed and corresponding theoretical frequencies is given below:\n\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: O_i] | [MATH: 135] | [MATH: 153] | [MATH: 162] |\n| [MATH: E_i] | [MATH: 150] | [MATH: 150] | [MATH: 150] |\n| [MATH: \\dfrac{(O_i-E_i)^2}{E_i}] | [MATH: 1.5] | [MATH: 0.06] | [MATH: 0.96] |\n\nNotice that we have rounded values to four decimal places, where appropriate.\n\nWe compute our test statistic by summing the last row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.5 + 0.06 + 0.96; = 2.52.]\nTherefore, the value of the test statistic is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2.52}.]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "252512",
+        "dom_id": "question-252512",
+        "selector": "#question-252512",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: Y]</span> is a random variable with support <span class=\"math\">[MATH: S = {1, 2, 3}.]</span> A random sample is carried out, and the frequency distribution of the sample data is shown below. </p><table><tr><td><p>Observation <span class=\"math\">[MATH: (y_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 156]</span></p></td><td><p><span class=\"math\">[MATH: 135]</span></p></td><td><p><span class=\"math\">[MATH: 159]</span></p></td></tr></table><p>Suppose a hypothesis test is conducted with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_{0}:Y\u223cU{1, 2, 3}]</span> </p></li><li><p><span class=\"math\">[MATH: H_{1}:Y\u2241U{1, 2, 3}]</span> </p></li></ul><p>Calculate the value of the chi-square test statistic for this hypothesis test.</p><p><span class=\"free-response-line\">The value of the test statistic is <span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>.</span></p>",
+          "readable_text": "Suppose [MATH: Y] is a random variable with support [MATH: S = {1, 2, 3}.] A random sample is carried out, and the frequency distribution of the sample data is shown below.\n\n| Observation [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 156] | [MATH: 135] | [MATH: 159] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:Y\u223cU{1, 2, 3}]\n- [MATH: H_{1}:Y\u2241U{1, 2, 3}]\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nThe value of the test statistic is [FREE_ENTRY 1].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose [MATH: Y] is a random variable with support [MATH: S = {1, 2, 3}.] A random sample is carried out, and the frequency distribution of the sample data is shown below.\n\n| Observation [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 156] | [MATH: 135] | [MATH: 159] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:Y\u223cU{1, 2, 3}]\n- [MATH: H_{1}:Y\u2241U{1, 2, 3}]\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nThe value of the test statistic is [FREE_ENTRY 1]."
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "252484",
+        "dom_id": "question-252484",
+        "selector": "#question-252484",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Three species of fish, species <span class=\"math\">[MATH: 1,]</span> species <span class=\"math\">[MATH: 2,]</span> and species <span class=\"math\">[MATH: 3]</span>, are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below. </p><table><tr><td><p>Species of Fish <span class=\"math\">[MATH: (y_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 89]</span></p></td><td><p><span class=\"math\">[MATH: 120]</span></p></td><td><p><span class=\"math\">[MATH: 91]</span></p></td></tr></table><p>Suppose a hypothesis test is conducted with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_{0}:]</span> The fish species are distributed uniformly.</p></li><li><p><span class=\"math\">[MATH: H_{1}:]</span> The fish species are not distributed uniformly.</p></li></ul><p>Calculate the value of the chi-square test statistic for this hypothesis test.</p><p><span class=\"free-response-line\">The value of the test statistic is <span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>.</span></p>",
+          "readable_text": "Three species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3], are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The fish species are distributed uniformly.\n- [MATH: H_{1}:] The fish species are not distributed uniformly.\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nThe value of the test statistic is [FREE_ENTRY 1].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThree species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3], are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The fish species are distributed uniformly.\n- [MATH: H_{1}:] The fish species are not distributed uniformly.\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nThe value of the test statistic is [FREE_ENTRY 1]."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "225712",
+        "content_id": "10828",
+        "dom_id": "step-225712",
+        "selector": "#step-225712",
+        "step_anchor": "step-9",
+        "title": "The Distribution of the Chi-Square Test Statistic",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have a set of observed frequencies <span class=\"math\">[MATH: O_i]</span> and corresponding expected frequencies <span class=\"math\">[MATH: E_i,]</span> as defined by a theoretical model under the null hypothesis. Then, it can be shown that the random variable</p>",
+            "readable_text": "Suppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. Then, it can be shown that the random variable",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]</span></p>",
+            "readable_text": "[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>approximately follows a chi-square distribution with <span class=\"math\">[MATH: \\nu]</span> degrees of freedom, where</p>",
+            "readable_text": "approximately follows a chi-square distribution with [MATH: \\nu] degrees of freedom, where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: O_i]</span> is the observed frequency for category <span class=\"math\">[MATH: i,]</span></p></li><li><p><span class=\"math\">[MATH: E_i]</span> is the expected frequency for category <span class=\"math\">[MATH: i,]</span> as predicted under the null hypothesis, and</p></li><li><p>the degrees of freedom <span class=\"math\">[MATH: \\nu]</span> is to be determined.</p></li></ul>",
+            "readable_text": "- [MATH: O_i] is the observed frequency for category [MATH: i,]\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis, and\n- the degrees of freedom [MATH: \\nu] is to be determined.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This approximation holds when all expected frequencies <span class=\"math\">[MATH: E_i]</span> are sufficiently large (typically <span class=\"math\">[MATH: E_i \\geq 5]</span> for each category), and the observations are independent.</p>",
+            "readable_text": "This approximation holds when all expected frequencies [MATH: E_i] are sufficiently large (typically [MATH: E_i \\geq 5] for each category), and the observations are independent.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Before we use this result for hypothesis testing, let&#x27;s discuss how to find the degrees of freedom <span class=\"math\">[MATH: \\nu]</span> for a given chi-square test.</p>",
+            "readable_text": "Before we use this result for hypothesis testing, let's discuss how to find the degrees of freedom [MATH: \\nu] for a given chi-square test.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. Then, it can be shown that the random variable\n\nContent:\n[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\nContent:\napproximately follows a chi-square distribution with [MATH: \\nu] degrees of freedom, where\n\nContent:\n- [MATH: O_i] is the observed frequency for category [MATH: i,]\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis, and\n- the degrees of freedom [MATH: \\nu] is to be determined.\n\nContent:\nThis approximation holds when all expected frequencies [MATH: E_i] are sufficiently large (typically [MATH: E_i \\geq 5] for each category), and the observations are independent.\n\nContent:\nBefore we use this result for hypothesis testing, let's discuss how to find the degrees of freedom [MATH: \\nu] for a given chi-square test."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "225713",
+        "content_id": "10829",
+        "dom_id": "step-225713",
+        "selector": "#step-225713",
+        "step_anchor": "step-10",
+        "title": "Degrees of Freedom",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s again return to the case of the suspected biased die with the following observed and expected frequencies:</p>",
+            "readable_text": "Let's again return to the case of the suspected biased die with the following observed and expected frequencies:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: E_i]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For a chi-square goodness-of-fit test, the number of degrees of freedom is the number of <em>independent</em> sample categories.</p>",
+            "readable_text": "For a chi-square goodness-of-fit test, the number of degrees of freedom is the number of independent sample categories.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>We have a total of <span class=\"math\">[MATH: n=6]</span> categories, each with an observed frequency. </p></li></ul>",
+            "readable_text": "- We have a total of [MATH: n=6] categories, each with an observed frequency.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>However, if the total number of observations is fixed, only <span class=\"math\">[MATH: 5]</span> of these categories may vary freely. In other words, if, for example, the first five observations \n<span class=\"math\">[MATH: O_1,\\quad O_2,\\quad\\ldots,\\quad O_5]</span>\nare allowed to vary freely, yet <span class=\"math\">[MATH: N]</span> (the total number of observations) is fixed, then <span class=\"math\">[MATH: O_6]</span> cannot vary because we have the following <strong>constraint.</strong>\n<span class=\"math\">[MATH: \\sum_{i=1}^6 O_i = N]</span>\nwhere <span class=\"math\">[MATH: N]</span> is the total number of observations.</p></li></ul>",
+            "readable_text": "- However, if the total number of observations is fixed, only [MATH: 5] of these categories may vary freely. In other words, if, for example, the first five observations\n[MATH: O_1,\\quad O_2,\\quad\\ldots,\\quad O_5]\nare allowed to vary freely, yet [MATH: N] (the total number of observations) is fixed, then [MATH: O_6] cannot vary because we have the following constraint.\n[MATH: \\sum_{i=1}^6 O_i = N]\nwhere [MATH: N] is the total number of observations.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, the number of degrees of freedom for this test is \n<span class=\"math\">[MATH: \\nu = n-1 = 5.]</span></p>",
+            "readable_text": "Thus, the number of degrees of freedom for this test is\n[MATH: \\nu = n-1 = 5.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>More generally, we may use the following formula when computing the degrees of freedom of a chi-square test:\n<span class=\"math\">[MATH: \\nu = \\textrm{number of categories} - \\textrm{number of constraints}]</span></p>",
+            "readable_text": "More generally, we may use the following formula when computing the degrees of freedom of a chi-square test:\n[MATH: \\nu = \\textrm{number of categories} - \\textrm{number of constraints}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we&#x27;ll only deal with cases with one constraint. In future lessons, we&#x27;ll discuss cases with more constraints and where we need to alter the number of categories.</p>",
+            "readable_text": "In this lesson, we'll only deal with cases with one constraint. In future lessons, we'll discuss cases with more constraints and where we need to alter the number of categories.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's again return to the case of the suspected biased die with the following observed and expected frequencies:\n\nContent:\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n\nContent:\nFor a chi-square goodness-of-fit test, the number of degrees of freedom is the number of independent sample categories.\n\nContent:\n- We have a total of [MATH: n=6] categories, each with an observed frequency.\n\nContent:\n- However, if the total number of observations is fixed, only [MATH: 5] of these categories may vary freely. In other words, if, for example, the first five observations\n[MATH: O_1,\\quad O_2,\\quad\\ldots,\\quad O_5]\nare allowed to vary freely, yet [MATH: N] (the total number of observations) is fixed, then [MATH: O_6] cannot vary because we have the following constraint.\n[MATH: \\sum_{i=1}^6 O_i = N]\nwhere [MATH: N] is the total number of observations.\n\nContent:\nThus, the number of degrees of freedom for this test is\n[MATH: \\nu = n-1 = 5.]\n\nContent:\nMore generally, we may use the following formula when computing the degrees of freedom of a chi-square test:\n[MATH: \\nu = \\textrm{number of categories} - \\textrm{number of constraints}]\n\nContent:\nIn this lesson, we'll only deal with cases with one constraint. In future lessons, we'll discuss cases with more constraints and where we need to alter the number of categories."
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "225714",
+        "content_id": "10825",
+        "dom_id": "step-225714",
+        "selector": "#step-225714",
+        "step_anchor": "step-11",
+        "title": "Conducting a Chi-Square Test",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: E_i]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\dfrac{(O_i - E_i)^2}{E_i}]</span></p></td><td><p><span class=\"math\">[MATH: 0.45]</span></p></td><td><p><span class=\"math\">[MATH: 1.25]</span></p></td><td><p><span class=\"math\">[MATH: 1.25]</span></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td><td><p><span class=\"math\">[MATH: 0.05]</span></p></td><td><p><span class=\"math\">[MATH: 0.2]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n| [MATH: \\dfrac{(O_i - E_i)^2}{E_i}] | [MATH: 0.45] | [MATH: 1.25] | [MATH: 1.25] | [MATH: 0.2] | [MATH: 0.05] | [MATH: 0.2] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We want to test the following null and alternative hypotheses on the above data set:</p>",
+            "readable_text": "We want to test the following null and alternative hypotheses on the above data set:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]</span> </p></li><li><p><span class=\"math\">[MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]</span> </p></li></ul>",
+            "readable_text": "- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We also have the following:</p>",
+            "readable_text": "We also have the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The number of degrees of freedom for this test is\n<span class=\"math\">[MATH: \\nu = 5.]</span></p></li><li><p>The chi-square test statistic is\n<span class=\"math\">[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 3.4.]</span></p></li><li><p>Since this is a hypothesis test, we must choose an appropriate significance level. So, let&#x27;s choose \n<span class=\"math\">[MATH: \\alpha = 5\\%.]</span></p></li><li><p>Since we want to know whether the test statistic exceeds a certain threshold, the chi-square goodness-of-fit test is <em>always right-tailed</em>. </p></li></ul>",
+            "readable_text": "- The number of degrees of freedom for this test is\n[MATH: \\nu = 5.]\n- The chi-square test statistic is\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 3.4.]\n- Since this is a hypothesis test, we must choose an appropriate significance level. So, let's choose\n[MATH: \\alpha = 5\\%.]\n- Since we want to know whether the test statistic exceeds a certain threshold, the chi-square goodness-of-fit test is always right-tailed.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Using a chi-square table, the critical value for <span class=\"math\">[MATH: \\nu=5]</span> at a <span class=\"math\">[MATH: 5\\%]</span> significance level is <span class=\"math\">[MATH: \\chi^2_{\\textrm{critical}}=11.070,]</span> and the critical region is\n<span class=\"math\">[MATH: X\\geq 11.070]</span>\nas shown below.</p>",
+            "readable_text": "Using a chi-square table, the critical value for [MATH: \\nu=5] at a [MATH: 5\\%] significance level is [MATH: \\chi^2_{\\textrm{critical}}=11.070,] and the critical region is\n[MATH: X\\geq 11.070]\nas shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/f9a6bb5fef818390b63bd888495ecce2\"></p>",
+            "readable_text": "[IMG: /graphics/f9a6bb5fef818390b63bd888495ecce2]",
+            "images": [
+              {
+                "src": "/graphics/f9a6bb5fef818390b63bd888495ecce2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Our test statistic <span class=\"math\">[MATH: (3.4)]</span> does not lie inside the critical region. Therefore, there is <span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{insufficient}}]</span> evidence to reject the null hypothesis. </p>",
+            "readable_text": "Our test statistic [MATH: (3.4)] does not lie inside the critical region. Therefore, there is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{insufficient}}] evidence to reject the null hypothesis.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, we have no evidence to suggest that the die is biased.</p>",
+            "readable_text": "In other words, we have no evidence to suggest that the die is biased.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/f9a6bb5fef818390b63bd888495ecce2",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n| [MATH: \\dfrac{(O_i - E_i)^2}{E_i}] | [MATH: 0.45] | [MATH: 1.25] | [MATH: 1.25] | [MATH: 0.2] | [MATH: 0.05] | [MATH: 0.2] |\n\nContent:\nWe want to test the following null and alternative hypotheses on the above data set:\n\nContent:\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]\n\nContent:\nWe also have the following:\n\nContent:\n- The number of degrees of freedom for this test is\n[MATH: \\nu = 5.]\n- The chi-square test statistic is\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 3.4.]\n- Since this is a hypothesis test, we must choose an appropriate significance level. So, let's choose\n[MATH: \\alpha = 5\\%.]\n- Since we want to know whether the test statistic exceeds a certain threshold, the chi-square goodness-of-fit test is always right-tailed.\n\nContent:\nUsing a chi-square table, the critical value for [MATH: \\nu=5] at a [MATH: 5\\%] significance level is [MATH: \\chi^2_{\\textrm{critical}}=11.070,] and the critical region is\n[MATH: X\\geq 11.070]\nas shown below.\n\nGraphic:\n[IMG: /graphics/f9a6bb5fef818390b63bd888495ecce2]\n\nContent:\nOur test statistic [MATH: (3.4)] does not lie inside the critical region. Therefore, there is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{insufficient}}] evidence to reject the null hypothesis.\n\nContent:\nIn other words, we have no evidence to suggest that the die is biased."
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "225715",
+        "content_id": "9299",
+        "dom_id": "step-225715",
+        "selector": "#step-225715",
+        "step_anchor": "step-12",
+        "title": "Carrying Out a Chi-Square Goodness of Fit Test",
+        "key_prerequisites": [
+          {
+            "topic_id": "3023",
+            "name": "The Chi-Square Distribution",
+            "href": "/topics/3023",
+            "type": ""
+          },
+          {
+            "topic_id": "3303",
+            "name": "Hypothesis Tests for One Mean: Known Population Variance",
+            "href": "/topics/3303",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose <span class=\"math\">[MATH: Y]</span> is a random variable with support <span class=\"math\">[MATH: S=\\{1,2,3\\}.]</span>  A random sample is carried out, and the sample data is shown below.</p><table><tr><td><p>Observation <span class=\"math\">[MATH: (y_i)]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_i)]</span></p></td><td><p><span class=\"math\">[MATH: \\,42\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,40\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,68\\,]</span> </p></td></tr></table><p>Conduct a chi-square goodness of fit test at the <span class=\"math\">[MATH: 1\\%]</span> significance level with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3\\}]</span> </p></li><li><p><span class=\"math\">[MATH: H_1\\mathbin{:}\\: Y\\not\\sim U\\{1,2,3\\}]</span> </p></li></ul><p>The table below gives the values of <span class=\"math\">[MATH: w]</span> that satisfy <span class=\"math\">[MATH: P(W\\geq w) = p,]</span> where <span class=\"math\">[MATH: W\\sim \\chi^2(\\nu).]</span></p><table><tr><td><p><span class=\"math\">[MATH: \\nu \\setminus p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\,2.706\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,3.841\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,5.024\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,6.635\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,7.879\\,]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: \\,4.605\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,5.991\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,7.378\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,9.210\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,10.597\\,]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\,6.251\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,7.815\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,9.348\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,11.345\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,12.838\\,]</span> </p></td></tr></table>",
+            "readable_text": "Suppose [MATH: Y] is a random variable with support [MATH: S=\\{1,2,3\\}.] A random sample is carried out, and the sample data is shown below.\n\n| Observation [MATH: (y_i)] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_i)] | [MATH: \\,42\\,] | [MATH: \\,40\\,] | [MATH: \\,68\\,] |\n\nConduct a chi-square goodness of fit test at the [MATH: 1\\%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3\\}]\n- [MATH: H_1\\mathbin{:}\\: Y\\not\\sim U\\{1,2,3\\}]\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W\\geq w) = p,] where [MATH: W\\sim \\chi^2(\\nu).]\n\n| [MATH: \\nu \\setminus p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 1] | [MATH: \\,2.706\\,] | [MATH: \\,3.841\\,] | [MATH: \\,5.024\\,] | [MATH: \\,6.635\\,] | [MATH: \\,7.879\\,] |\n| [MATH: 2] | [MATH: \\,4.605\\,] | [MATH: \\,5.991\\,] | [MATH: \\,7.378\\,] | [MATH: \\,9.210\\,] | [MATH: \\,10.597\\,] |\n| [MATH: 3] | [MATH: \\,6.251\\,] | [MATH: \\,7.815\\,] | [MATH: \\,9.348\\,] | [MATH: \\,11.345\\,] | [MATH: \\,12.838\\,] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Suppose we have a set of observed frequencies <span class=\"math\">[MATH: O_i]</span> and corresponding expected frequencies <span class=\"math\">[MATH: E_i,]</span> as defined by a theoretical model under the null hypothesis. Then, the random variable</p><p><span class=\"math\">[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]</span></p><p>approximately follows a chi-square distribution with <span class=\"math\">[MATH: \\nu]</span> degrees of freedom, where</p><ul><li><p><span class=\"math\">[MATH: O_i]</span> is the observed frequency for category <span class=\"math\">[MATH: i,]</span> and</p></li><li><p><span class=\"math\">[MATH: E_i]</span> is the expected frequency for category <span class=\"math\">[MATH: i,]</span> as predicted under the null hypothesis.</p></li></ul><p>This approximation holds when all expected frequencies <span class=\"math\">[MATH: E_i]</span> are sufficiently large (typically <span class=\"math\">[MATH: E_i \\geq 5]</span> for each category), and the observations are independent.</p><p>Under the null hypothesis, we have that <span class=\"math\">[MATH: Y\\sim U\\{1,2,3\\}.]</span> Therefore, </p><p><span class=\"math\">[MATH: P(Y=y)=\\dfrac{1}{3},\\qquad  y=1,2,3.]</span> </p><p>The sample size is\n<span class=\"math\">[MATH: N = 57 + 40 + 53 = 150.]</span></p><p>Therefore, the expected frequencies for each species are as follows:</p><p><span class=\"math\">[MATH: E_{1}|= N \u22c5 P(Y = 1) = 150 \u22c5 (1)/(3) = 50; E_{2}|= N \u22c5 P(Y = 2) = 150 \u22c5 (1)/(3) = 50; E_{3}|= N \u22c5 P(Y = 3) = 150 \u22c5 (1)/(3) = 50]</span></p><p>A table summarizing the observed and corresponding theoretical frequencies is given below:</p><table><tr><td><p><span class=\"math\">[MATH: y_i]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: O_i]</span></p></td><td><p><span class=\"math\">[MATH: \\,42\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,40\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,68\\,]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: E_i]</span></p></td><td><p><span class=\"math\">[MATH: \\,50\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,50\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,50\\,]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: \\dfrac{(O_i-E_i)^2}{E_i}]</span></p></td><td><p><span class=\"math\">[MATH: \\,1.28\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,2\\,]</span> </p></td><td><p><span class=\"math\">[MATH: \\,6.48\\,]</span> </p></td></tr></table><p>First, we compute our test statistic by summing the last row:\n<span class=\"math\">[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.28 + 2 + 6.48; = 9.76]</span>\nTherefore, the test statistic is <span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}9.76}.]</span></p><p>There is only one constraint on our data: the total number of observations must equal <span class=\"math\">[MATH: N.]</span> Therefore, the number of degrees of freedom <span class=\"math\">[MATH: \\nu]</span> is calculated as follows:\n<span class=\"math\">[MATH: \u03bd|= number of categories \u2212 number of constraints; = 3 \u2212 1; = 2]</span>\nSo, there are <span class=\"math\">[MATH: \\nu = \\bbox[3pt,Gainsboro]{\\color{blue}2}]</span> degrees of freedom.</p><p>From the given chi-square table, the critical value for <span class=\"math\">[MATH: \\nu=2]</span> at a <span class=\"math\">[MATH: 1\\%]</span> significance level is <span class=\"math\">[MATH: \\chi^2_{\\textrm{critical}}=9.210,]</span> and the critical region is\n<span class=\"math\">[MATH: X\\geq 9.210]</span>\nas shown below.</p><div class=\"graphic\"><img src=\"/graphics/be3bd67254db69a795b65a084754e2ee\"></div><p>Our test statistic <span class=\"math\">[MATH: (9.76)]</span> lies inside the critical region. Therefore, there is <span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{sufficient}}]</span> evidence to reject the null hypothesis. </p>",
+            "readable_text": "Suppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. Then, the random variable\n\n[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\napproximately follows a chi-square distribution with [MATH: \\nu] degrees of freedom, where\n\n- [MATH: O_i] is the observed frequency for category [MATH: i,] and\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis.\n\nThis approximation holds when all expected frequencies [MATH: E_i] are sufficiently large (typically [MATH: E_i \\geq 5] for each category), and the observations are independent.\n\nUnder the null hypothesis, we have that [MATH: Y\\sim U\\{1,2,3\\}.] Therefore,\n\n[MATH: P(Y=y)=\\dfrac{1}{3},\\qquad y=1,2,3.]\n\nThe sample size is\n[MATH: N = 57 + 40 + 53 = 150.]\n\nTherefore, the expected frequencies for each species are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(Y = 1) = 150 \u22c5 (1)/(3) = 50; E_{2}|= N \u22c5 P(Y = 2) = 150 \u22c5 (1)/(3) = 50; E_{3}|= N \u22c5 P(Y = 3) = 150 \u22c5 (1)/(3) = 50]\n\nA table summarizing the observed and corresponding theoretical frequencies is given below:\n\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: O_i] | [MATH: \\,42\\,] | [MATH: \\,40\\,] | [MATH: \\,68\\,] |\n| [MATH: E_i] | [MATH: \\,50\\,] | [MATH: \\,50\\,] | [MATH: \\,50\\,] |\n| [MATH: \\dfrac{(O_i-E_i)^2}{E_i}] | [MATH: \\,1.28\\,] | [MATH: \\,2\\,] | [MATH: \\,6.48\\,] |\n\nFirst, we compute our test statistic by summing the last row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.28 + 2 + 6.48; = 9.76]\nTherefore, the test statistic is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}9.76}.]\n\nThere is only one constraint on our data: the total number of observations must equal [MATH: N.] Therefore, the number of degrees of freedom [MATH: \\nu] is calculated as follows:\n[MATH: \u03bd|= number of categories \u2212 number of constraints; = 3 \u2212 1; = 2]\nSo, there are [MATH: \\nu = \\bbox[3pt,Gainsboro]{\\color{blue}2}] degrees of freedom.\n\nFrom the given chi-square table, the critical value for [MATH: \\nu=2] at a [MATH: 1\\%] significance level is [MATH: \\chi^2_{\\textrm{critical}}=9.210,] and the critical region is\n[MATH: X\\geq 9.210]\nas shown below.\n\n[IMG: /graphics/be3bd67254db69a795b65a084754e2ee]\n\nOur test statistic [MATH: (9.76)] lies inside the critical region. Therefore, there is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{sufficient}}] evidence to reject the null hypothesis.",
+            "images": [
+              {
+                "src": "/graphics/be3bd67254db69a795b65a084754e2ee",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/be3bd67254db69a795b65a084754e2ee",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose [MATH: Y] is a random variable with support [MATH: S=\\{1,2,3\\}.] A random sample is carried out, and the sample data is shown below.\n\n| Observation [MATH: (y_i)] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_i)] | [MATH: \\,42\\,] | [MATH: \\,40\\,] | [MATH: \\,68\\,] |\n\nConduct a chi-square goodness of fit test at the [MATH: 1\\%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3\\}]\n- [MATH: H_1\\mathbin{:}\\: Y\\not\\sim U\\{1,2,3\\}]\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W\\geq w) = p,] where [MATH: W\\sim \\chi^2(\\nu).]\n\n| [MATH: \\nu \\setminus p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 1] | [MATH: \\,2.706\\,] | [MATH: \\,3.841\\,] | [MATH: \\,5.024\\,] | [MATH: \\,6.635\\,] | [MATH: \\,7.879\\,] |\n| [MATH: 2] | [MATH: \\,4.605\\,] | [MATH: \\,5.991\\,] | [MATH: \\,7.378\\,] | [MATH: \\,9.210\\,] | [MATH: \\,10.597\\,] |\n| [MATH: 3] | [MATH: \\,6.251\\,] | [MATH: \\,7.815\\,] | [MATH: \\,9.348\\,] | [MATH: \\,11.345\\,] | [MATH: \\,12.838\\,] |\n\nContent:\nEXPLANATION\n\nExplanation:\nSuppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. Then, the random variable\n\n[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\napproximately follows a chi-square distribution with [MATH: \\nu] degrees of freedom, where\n\n- [MATH: O_i] is the observed frequency for category [MATH: i,] and\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis.\n\nThis approximation holds when all expected frequencies [MATH: E_i] are sufficiently large (typically [MATH: E_i \\geq 5] for each category), and the observations are independent.\n\nUnder the null hypothesis, we have that [MATH: Y\\sim U\\{1,2,3\\}.] Therefore,\n\n[MATH: P(Y=y)=\\dfrac{1}{3},\\qquad y=1,2,3.]\n\nThe sample size is\n[MATH: N = 57 + 40 + 53 = 150.]\n\nTherefore, the expected frequencies for each species are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(Y = 1) = 150 \u22c5 (1)/(3) = 50; E_{2}|= N \u22c5 P(Y = 2) = 150 \u22c5 (1)/(3) = 50; E_{3}|= N \u22c5 P(Y = 3) = 150 \u22c5 (1)/(3) = 50]\n\nA table summarizing the observed and corresponding theoretical frequencies is given below:\n\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: O_i] | [MATH: \\,42\\,] | [MATH: \\,40\\,] | [MATH: \\,68\\,] |\n| [MATH: E_i] | [MATH: \\,50\\,] | [MATH: \\,50\\,] | [MATH: \\,50\\,] |\n| [MATH: \\dfrac{(O_i-E_i)^2}{E_i}] | [MATH: \\,1.28\\,] | [MATH: \\,2\\,] | [MATH: \\,6.48\\,] |\n\nFirst, we compute our test statistic by summing the last row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.28 + 2 + 6.48; = 9.76]\nTherefore, the test statistic is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}9.76}.]\n\nThere is only one constraint on our data: the total number of observations must equal [MATH: N.] Therefore, the number of degrees of freedom [MATH: \\nu] is calculated as follows:\n[MATH: \u03bd|= number of categories \u2212 number of constraints; = 3 \u2212 1; = 2]\nSo, there are [MATH: \\nu = \\bbox[3pt,Gainsboro]{\\color{blue}2}] degrees of freedom.\n\nFrom the given chi-square table, the critical value for [MATH: \\nu=2] at a [MATH: 1\\%] significance level is [MATH: \\chi^2_{\\textrm{critical}}=9.210,] and the critical region is\n[MATH: X\\geq 9.210]\nas shown below.\n\n[IMG: /graphics/be3bd67254db69a795b65a084754e2ee]\n\nOur test statistic [MATH: (9.76)] lies inside the critical region. Therefore, there is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{sufficient}}] evidence to reject the null hypothesis."
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "252497",
+        "dom_id": "question-252497",
+        "selector": "#question-252497",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose <span class=\"math\">[MATH: Y]</span> is a random variable with support <span class=\"math\">[MATH: S = {2, 3, 5, 7, 9}.]</span>  A random sample is carried out, and the sample data is shown below.</p><table><tr><td><p>Observation <span class=\"math\">[MATH: (y_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 36]</span> </p></td><td><p><span class=\"math\">[MATH: 48]</span> </p></td><td><p><span class=\"math\">[MATH: 49]</span> </p></td><td><p><span class=\"math\">[MATH: 40]</span> </p></td><td><p><span class=\"math\">[MATH: 27]</span> </p></td></tr></table><p>A chi-square goodness of fit test is conducted at the <span class=\"math\">[MATH: 10%]</span> significance level with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_{0}:Y\u223cU{2, 3, 5, 7, 9}]</span> </p></li><li><p><span class=\"math\">[MATH: H_{1}:Y\u2241U{2, 3, 5, 7, 9}]</span> </p></li></ul><p>The table below gives the values of <span class=\"math\">[MATH: w]</span> that satisfy <span class=\"math\">[MATH: P(W \u2265 w) = p,]</span> where <span class=\"math\">[MATH: W\u223c\u03c7^{2}(\u03bd).]</span></p><table><tr><td><p><span class=\"math\">[MATH: \u03bd\u2216p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 6.251]</span> </p></td><td><p><span class=\"math\">[MATH: 7.815]</span> </p></td><td><p><span class=\"math\">[MATH: 9.348]</span> </p></td><td><p><span class=\"math\">[MATH: 11.345]</span> </p></td><td><p><span class=\"math\">[MATH: 12.838]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 7.779]</span> </p></td><td><p><span class=\"math\">[MATH: 9.488]</span> </p></td><td><p><span class=\"math\">[MATH: 11.143]</span> </p></td><td><p><span class=\"math\">[MATH: 13.277]</span> </p></td><td><p><span class=\"math\">[MATH: 14.860]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 9.236]</span> </p></td><td><p><span class=\"math\">[MATH: 11.070]</span> </p></td><td><p><span class=\"math\">[MATH: 12.833]</span> </p></td><td><p><span class=\"math\">[MATH: 15.086]</span> </p></td><td><p><span class=\"math\">[MATH: 16.750]</span> </p></td></tr></table><p>Using this information, select the options that make the following statements true.</p><p>The test statistic is\n<span class=\"select-list\" data-select-id=\"selectList-252497-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p>The number of degrees of freedom for this test is <span class=\"math\">[MATH: \u03bd =]</span> <span class=\"select-list\" data-select-id=\"selectList-252497-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p>At the <span class=\"math\">[MATH: 10%]</span> significance level, there is <span class=\"select-list\" data-select-id=\"selectList-252497-2\" data-select-index=\"3\">[SELECT 3]</span> evidence to reject the null hypothesis. </p>",
+          "readable_text": "Suppose [MATH: Y] is a random variable with support [MATH: S = {2, 3, 5, 7, 9}.] A random sample is carried out, and the sample data is shown below.\n\n| Observation [MATH: (y_{i})] | [MATH: 2] | [MATH: 3] | [MATH: 5] | [MATH: 7] | [MATH: 9] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 36] | [MATH: 48] | [MATH: 49] | [MATH: 40] | [MATH: 27] |\n\nA chi-square goodness of fit test is conducted at the [MATH: 10%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:Y\u223cU{2, 3, 5, 7, 9}]\n- [MATH: H_{1}:Y\u2241U{2, 3, 5, 7, 9}]\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W \u2265 w) = p,] where [MATH: W\u223c\u03c7^{2}(\u03bd).]\n\n| [MATH: \u03bd\u2216p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 3] | [MATH: 6.251] | [MATH: 7.815] | [MATH: 9.348] | [MATH: 11.345] | [MATH: 12.838] |\n| [MATH: 4] | [MATH: 7.779] | [MATH: 9.488] | [MATH: 11.143] | [MATH: 13.277] | [MATH: 14.860] |\n| [MATH: 5] | [MATH: 9.236] | [MATH: 11.070] | [MATH: 12.833] | [MATH: 15.086] | [MATH: 16.750] |\n\nUsing this information, select the options that make the following statements true.\n\nThe test statistic is\n[SELECT 1].\n\nThe number of degrees of freedom for this test is [MATH: \u03bd =] [SELECT 2].\n\nAt the [MATH: 10%] significance level, there is [SELECT 3] evidence to reject the null hypothesis.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-252497-0",
+              "frame_dom_id": "selectListFrame-252497-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 7.45]</span>",
+                  "readable_text": "[MATH: 7.45]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 7.24]</span>",
+                  "readable_text": "[MATH: 7.24]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 7.95]</span>",
+                  "readable_text": "[MATH: 7.95]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 8.25]</span>",
+                  "readable_text": "[MATH: 8.25]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 8.37]</span>",
+                  "readable_text": "[MATH: 8.37]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-252497-1",
+              "frame_dom_id": "selectListFrame-252497-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                  "readable_text": "[MATH: 4]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 5]</span>",
+                  "readable_text": "[MATH: 5]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-252497-2",
+              "frame_dom_id": "selectListFrame-252497-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "insufficient",
+                  "readable_text": "insufficient"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "sufficient",
+                  "readable_text": "sufficient"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-252497-0",
+            "frame_dom_id": "selectListFrame-252497-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 7.45]</span>",
+                "readable_text": "[MATH: 7.45]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 7.24]</span>",
+                "readable_text": "[MATH: 7.24]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 7.95]</span>",
+                "readable_text": "[MATH: 7.95]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 8.25]</span>",
+                "readable_text": "[MATH: 8.25]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 8.37]</span>",
+                "readable_text": "[MATH: 8.37]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-252497-1",
+            "frame_dom_id": "selectListFrame-252497-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                "readable_text": "[MATH: 4]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 5]</span>",
+                "readable_text": "[MATH: 5]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-252497-2",
+            "frame_dom_id": "selectListFrame-252497-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "insufficient",
+                "readable_text": "insufficient"
+              },
+              {
+                "index": 2,
+                "normalized_html": "sufficient",
+                "readable_text": "sufficient"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose [MATH: Y] is a random variable with support [MATH: S = {2, 3, 5, 7, 9}.] A random sample is carried out, and the sample data is shown below.\n\n| Observation [MATH: (y_{i})] | [MATH: 2] | [MATH: 3] | [MATH: 5] | [MATH: 7] | [MATH: 9] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 36] | [MATH: 48] | [MATH: 49] | [MATH: 40] | [MATH: 27] |\n\nA chi-square goodness of fit test is conducted at the [MATH: 10%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:Y\u223cU{2, 3, 5, 7, 9}]\n- [MATH: H_{1}:Y\u2241U{2, 3, 5, 7, 9}]\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W \u2265 w) = p,] where [MATH: W\u223c\u03c7^{2}(\u03bd).]\n\n| [MATH: \u03bd\u2216p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 3] | [MATH: 6.251] | [MATH: 7.815] | [MATH: 9.348] | [MATH: 11.345] | [MATH: 12.838] |\n| [MATH: 4] | [MATH: 7.779] | [MATH: 9.488] | [MATH: 11.143] | [MATH: 13.277] | [MATH: 14.860] |\n| [MATH: 5] | [MATH: 9.236] | [MATH: 11.070] | [MATH: 12.833] | [MATH: 15.086] | [MATH: 16.750] |\n\nUsing this information, select the options that make the following statements true.\n\nThe test statistic is\n[SELECT 1].\n\nThe number of degrees of freedom for this test is [MATH: \u03bd =] [SELECT 2].\n\nAt the [MATH: 10%] significance level, there is [SELECT 3] evidence to reject the null hypothesis."
+      },
+      {
+        "lesson_index": 14,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "252481",
+        "dom_id": "question-252481",
+        "selector": "#question-252481",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Three species of fish, species <span class=\"math\">[MATH: 1,]</span> species <span class=\"math\">[MATH: 2,]</span> and species <span class=\"math\">[MATH: 3]</span>, are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below. </p><table><tr><td><p>Species of Fish <span class=\"math\">[MATH: (y_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p>Observed Frequency <span class=\"math\">[MATH: (O_{i})]</span></p></td><td><p><span class=\"math\">[MATH: 89]</span></p></td><td><p><span class=\"math\">[MATH: 120]</span></p></td><td><p><span class=\"math\">[MATH: 91]</span></p></td></tr></table><p>A chi-square goodness of fit test is conducted at the <span class=\"math\">[MATH: 5%]</span> significance level with the following null and alternative hypotheses:</p><ul><li><p><span class=\"math\">[MATH: H_{0}:]</span> The fish species are distributed uniformly.</p></li><li><p><span class=\"math\">[MATH: H_{1}:]</span> The fish species are not distributed uniformly.</p></li></ul><p>The table below gives the values of <span class=\"math\">[MATH: w]</span> that satisfy <span class=\"math\">[MATH: P(W \u2265 w) = p,]</span> where <span class=\"math\">[MATH: W\u223c\u03c7^{2}(\u03bd).]</span></p><table><tr><td><p><span class=\"math\">[MATH: \u03bd\u2216p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2.705]</span> </p></td><td><p><span class=\"math\">[MATH: 3.841]</span> </p></td><td><p><span class=\"math\">[MATH: 5.024]</span> </p></td><td><p><span class=\"math\">[MATH: 6.635]</span> </p></td><td><p><span class=\"math\">[MATH: 7.879]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4.605]</span> </p></td><td><p><span class=\"math\">[MATH: 5.991]</span> </p></td><td><p><span class=\"math\">[MATH: 7.378]</span> </p></td><td><p><span class=\"math\">[MATH: 9.210]</span> </p></td><td><p><span class=\"math\">[MATH: 10.597]</span> </p></td></tr><tr><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 6.251]</span> </p></td><td><p><span class=\"math\">[MATH: 7.815]</span> </p></td><td><p><span class=\"math\">[MATH: 9.348]</span> </p></td><td><p><span class=\"math\">[MATH: 11.345]</span> </p></td><td><p><span class=\"math\">[MATH: 12.838]</span> </p></td></tr></table><p>Using this information, select the options that make the following statements true.</p><p>The test statistic is\n<span class=\"select-list\" data-select-id=\"selectList-252481-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p>The number of degrees of freedom for this test is <span class=\"math\">[MATH: \u03bd =]</span> <span class=\"select-list\" data-select-id=\"selectList-252481-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p>At the <span class=\"math\">[MATH: 5%]</span> significance level, there is <span class=\"select-list\" data-select-id=\"selectList-252481-2\" data-select-index=\"3\">[SELECT 3]</span> evidence to reject the null hypothesis. </p>",
+          "readable_text": "Three species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3], are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n\nA chi-square goodness of fit test is conducted at the [MATH: 5%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The fish species are distributed uniformly.\n- [MATH: H_{1}:] The fish species are not distributed uniformly.\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W \u2265 w) = p,] where [MATH: W\u223c\u03c7^{2}(\u03bd).]\n\n| [MATH: \u03bd\u2216p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 1] | [MATH: 2.705] | [MATH: 3.841] | [MATH: 5.024] | [MATH: 6.635] | [MATH: 7.879] |\n| [MATH: 2] | [MATH: 4.605] | [MATH: 5.991] | [MATH: 7.378] | [MATH: 9.210] | [MATH: 10.597] |\n| [MATH: 3] | [MATH: 6.251] | [MATH: 7.815] | [MATH: 9.348] | [MATH: 11.345] | [MATH: 12.838] |\n\nUsing this information, select the options that make the following statements true.\n\nThe test statistic is\n[SELECT 1].\n\nThe number of degrees of freedom for this test is [MATH: \u03bd =] [SELECT 2].\n\nAt the [MATH: 5%] significance level, there is [SELECT 3] evidence to reject the null hypothesis.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-252481-0",
+              "frame_dom_id": "selectListFrame-252481-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 6.02]</span>",
+                  "readable_text": "[MATH: 6.02]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 8.21]</span>",
+                  "readable_text": "[MATH: 8.21]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 5.31]</span>",
+                  "readable_text": "[MATH: 5.31]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 7.85]</span>",
+                  "readable_text": "[MATH: 7.85]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 5.22]</span>",
+                  "readable_text": "[MATH: 5.22]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-252481-1",
+              "frame_dom_id": "selectListFrame-252481-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                  "readable_text": "[MATH: 2]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-252481-2",
+              "frame_dom_id": "selectListFrame-252481-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "insufficient",
+                  "readable_text": "insufficient"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "sufficient",
+                  "readable_text": "sufficient"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-252481-0",
+            "frame_dom_id": "selectListFrame-252481-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 6.02]</span>",
+                "readable_text": "[MATH: 6.02]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 8.21]</span>",
+                "readable_text": "[MATH: 8.21]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 5.31]</span>",
+                "readable_text": "[MATH: 5.31]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 7.85]</span>",
+                "readable_text": "[MATH: 7.85]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 5.22]</span>",
+                "readable_text": "[MATH: 5.22]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-252481-1",
+            "frame_dom_id": "selectListFrame-252481-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                "readable_text": "[MATH: 2]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-252481-2",
+            "frame_dom_id": "selectListFrame-252481-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "insufficient",
+                "readable_text": "insufficient"
+              },
+              {
+                "index": 2,
+                "normalized_html": "sufficient",
+                "readable_text": "sufficient"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThree species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3], are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n\nA chi-square goodness of fit test is conducted at the [MATH: 5%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The fish species are distributed uniformly.\n- [MATH: H_{1}:] The fish species are not distributed uniformly.\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W \u2265 w) = p,] where [MATH: W\u223c\u03c7^{2}(\u03bd).]\n\n| [MATH: \u03bd\u2216p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 1] | [MATH: 2.705] | [MATH: 3.841] | [MATH: 5.024] | [MATH: 6.635] | [MATH: 7.879] |\n| [MATH: 2] | [MATH: 4.605] | [MATH: 5.991] | [MATH: 7.378] | [MATH: 9.210] | [MATH: 10.597] |\n| [MATH: 3] | [MATH: 6.251] | [MATH: 7.815] | [MATH: 9.348] | [MATH: 11.345] | [MATH: 12.838] |\n\nUsing this information, select the options that make the following statements true.\n\nThe test statistic is\n[SELECT 1].\n\nThe number of degrees of freedom for this test is [MATH: \u03bd =] [SELECT 2].\n\nAt the [MATH: 5%] significance level, there is [SELECT 3] evidence to reject the null hypothesis."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn this lesson, we will learn how hypothesis tests are used to determine whether an observed sample fits a known probability distribution. Hypothesis tests that compare sample data against known probability distributions are called goodness-of-fit tests.\n\nContent:\nBy the end of this lesson, you'll know how to conduct a chi-square goodness-of-fit test to determine whether some sample data were likely drawn from a discrete uniform distribution.\n\nContent:\nSuppose we want to determine whether a particular six-sided die is fair. We can formulate the following null and alternative hypotheses:\n\nContent:\n- [MATH: H_0{:}\\:] The die is fair\n- [MATH: H_1{:}\\:] The die is not fair\n\nContent:\nIf the die is fair, it can be modeled using a discrete uniform distribution. Let [MATH: Y] be the outcome of the die under the null hypothesis. Then, [MATH: Y\\sim U\\{1,2,3,4,5,6\\},] and we have\n[MATH: P(Y=y)=\\dfrac 16,\\qquad y=1,2,3,4,5,6.]\n\nContent:\nThus, we can reformulate our null and alternative hypotheses as follows:\n\nContent:\n- [MATH: H_0{:}\\:\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1{:}\\:\\: Y\\not\\sim U\\{1,2,3,4,5,6\\}]\n\nContent:\nThe alternative hypothesis reads, \"[MATH: Y] does not follow [MATH: U\\{1,2,3,4,5,6\\}].\"\n\nContent:\nTo conduct our hypothesis test, we need some sample data. So, suppose we roll the die [MATH: 120] times and get the following frequency distribution:\n\nContent:\n| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n\nContent:\nNote the following:\n\nContent:\n- We've denoted the [MATH: i]th possible outcome as [MATH: y_i.] These are simply the range of possible die scores. So, we have\n[MATH: y_1 = 1,\\qquad y_2 = 2,\\qquad \\ldots,\\qquad y_6=6.]\n- We've denoted the observed frequency of the [MATH: i]th outcome as [MATH: O_i.]\n[MATH: O_1 = 23,\\qquad O_2 = 15,\\qquad \\ldots,\\qquad O_6=18]\n\nContent:\nThe score obtained when a die is thrown is the outcome of a random process. Therefore, we expect some variation in the observed frequencies even when the die is fair. The question we must ask ourselves is the following: Is there sufficient deviation of the observed frequencies compared to what's expected under the null hypothesis to conclude that the null hypothesis is false?\n\nContent:\nThe first step to answering this question is to calculate the expected frequency [MATH: E_i] of the [MATH: i]th outcome for every possible outcome.\n\nContent:\nNow, since [MATH: Y] is uniformly distributed under [MATH: H_0,] the probability of a random throw resulting in a score of [MATH: Y = 1] is\n\nContent:\n[MATH: P(Y = 1) = \\dfrac16.]\nTherefore, the expected number of times we should obtain a score of [MATH: 1] when a die is rolled [MATH: N=120] times is\n[MATH: E_1 = \\dfrac16 \\cdot 120 = 20.]\n\nContent:\nSince [MATH: Y] is uniform under [MATH: H_0,] the expected frequency of the [MATH: i]th outcome is the same for every value of [MATH: i.] Thus, for a sample size of [MATH: N=120,] the expected frequencies are given by\n[MATH: E_{i}|= P(Y = y) \u22c5 N; = (1)/(6) \u22c5 120; = 20.]\n\nContent:\nThis gives the following table of observed vs. expected frequencies.\n\nContent:\n| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: \\textrm{Expected frequency,}\\; E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n\n---\n\nItem 2 \u2014 Example: Calculating Expected Frequencies\n\nExample Prompt:\nSuppose [MATH: X] is a random variable with support [MATH: S=\\{0,1,2,3,4\\}.] We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\: X\\sim U\\{0,1,2,3,4\\}]\n- [MATH: H_1\\mathbin{:}\\:X\\not\\sim U\\{0,1,2,3,4\\}]\n\nA random sample is carried out, and the sample data is shown below. Calculate the expected frequency [MATH: E_i] for each observation.\n\n| Observation [MATH: (x_i)] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Observed Frequency [MATH: (O_i)] | [MATH: 45] | [MATH: 47] | [MATH: 46] | [MATH: 42] | [MATH: 40] |\n| Expected Frequency [MATH: (E_i)] | | | | | |\n\nContent:\nEXPLANATION\n\nExplanation:\nUnder the null hypothesis, we have that [MATH: X\\sim U\\{0,1,2,3,4\\}.] Therefore,\n\n[MATH: P(X=x)=\\dfrac 15,\\qquad x=0,1,2,3,4.]\n\nThe sample size is\n[MATH: N = 45+47+46+42+40 = 220.]\n\nTherefore, the expected frequencies for each observation are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(X = 0) = 220 \u22c5 (1)/(5) = 44; E_{2}|= N \u22c5 P(X = 2) = 220 \u22c5 (1)/(5) = 44; =\u22ee; E_{5}|= N \u22c5 P(X = 4) = 220 \u22c5 (1)/(5) = 44]\n\nA table summarizing the observed and corresponding expected frequencies is given below:\n\n| [MATH: x_i] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: O_i] | [MATH: 45] | [MATH: 47] | [MATH: 46] | [MATH: 42] | [MATH: 40] |\n| [MATH: E_i] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}44}] |\n\n---\n\nItem 3 \u2014 Question 1\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose [MATH: X] is a random variable with support [MATH: S = {2, 4, 6, 8, 10}.] We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:X\u223cU{2, 4, 6, 8, 10}]\n- [MATH: H_{1}:X\u2241U{2, 4, 6, 8, 10}]\n\nA random sample is carried out, and the sample data is shown below. Calculate the expected frequency [MATH: E_{i}] for each observation.\n\n| Observation [MATH: (x_{i})] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] | [MATH: 10] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 32] | [MATH: 49] | [MATH: 45] | [MATH: 41] | [MATH: 33] |\n| Expected Frequency [MATH: (E_{i})] | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] | [FREE_ENTRY 4] | [FREE_ENTRY 5] |\n\n---\n\nItem 4 \u2014 Question 2\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThree species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3,] inhabit a particular river. We wish to carry out a hypothesis test with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The species are distributed uniformly.\n- [MATH: H_{1}:] The species are not distributed uniformly.\n\nA random sample of fish from the river is carried out. The sample data is shown below. Calculate the expected frequency [MATH: E_{i}] for each observation.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n| Expected Frequency [MATH: (E_{i})] | [FREE_ENTRY 1] | [FREE_ENTRY 2] | [FREE_ENTRY 3] |\n\n---\n\nItem 5 \u2014 Tutorial: The Chi-Square Test Statistic\n\nContent:\nLet's return to the case of the suspected biased die with the following observed and expected frequencies:\n\nContent:\n| [MATH: \\textrm{Number rolled,}\\; y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: \\textrm{Observed frequency,}\\; O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: \\textrm{Expected frequency,}\\; E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n\nContent:\nWe want to test the following null and alternative hypotheses:\n\nContent:\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]\n\nContent:\nNote the following:\n\nContent:\n- If the sample data support the hypothesis that the die is fair, then we expect the squared difference between the observed and expected frequencies\n[MATH: (O_i - E_i)^2]\nto be \"small\" in some sense. We square the differences so that they're always positive.\n- What do we mean by small? Note that the magnitude (i.e., size) of the observed and expected frequencies will influence the magnitude of the squared differences. To mitigate this, we scale the data by dividing the squared differences by [MATH: E_i,] as follows:\n[MATH: \\dfrac{(O_i - E_i)^2}{E_i}]\n- Thus, if the sample data support the null hypothesis, the sum of these differences should also be small. So, we define the chi-square test statistic for this hypothesis test as follows:\n[MATH: \\sum_{i}\\dfrac{(O_i-E_i)^2}{E_i}]\nScaling the data also ensures each term in the sum contributes proportionally, preventing large expected frequencies from dominating the test statistic.\n\nContent:\nTo calculate the value of our test statistic in this case, we first add some additional rows to our table:\n\nContent:\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n| [MATH: O_i - E_i] | [MATH: 3] | [MATH: -5] | [MATH: 5] | [MATH: -2] | [MATH: 1] | [MATH: -2] |\n| [MATH: (O_i - E_i)^2] | [MATH: 9] | [MATH: 25] | [MATH: 25] | [MATH: 4] | [MATH: 1] | [MATH: 4] |\n| [MATH: \\dfrac{(O_i - E_i)^2}{E_i}] | [MATH: 0.45] | [MATH: 1.25] | [MATH: 1.25] | [MATH: 0.2] | [MATH: 0.05] | [MATH: 0.2] |\n\nContent:\nTo find the chi-square test statistic, we sum the values in the final row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 0.45 + 1.25 + 1.25 + 0.2 + 0.05 + 0.2 = 3.4]\n\nContent:\nWe can think about the test statistic intuitively as follows:\n\nContent:\n- If our test statistic [MATH: (3.4)] is greater than some threshold value, then there is sufficient evidence that [MATH: H_0] is false, and we should reject it.\n- If our test statistic [MATH: (3.4)] is smaller than some threshold value, then there is insufficient evidence that [MATH: H_0] is false, and we should not reject it.\n\nContent:\nWe'll discuss the details of this shortly. For now, let's get some practice at computing chi-square test statistics.\n\n---\n\nItem 6 \u2014 Example: Calculating a Test Statistic\n\nExample Prompt:\nA particular city uses three types of public transportation: type [MATH: 1,] type [MATH: 2,] and type [MATH: 3.] Citizens' preferences across the three types are believed to be equally distributed. A random sample of citizens is conducted, and the frequency distribution of citizens who use each type of transport in the sample is shown below.\n\n| Transportation Type [MATH: (y_i)] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_i)] | [MATH: 135] | [MATH: 153] | [MATH: 162] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\:] Transportation preferences are distributed uniformly.\n- [MATH: H_1\\mathbin{:}\\:] Transportation preferences are not distributed uniformly.\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nContent:\nEXPLANATION\n\nExplanation:\nSuppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. The chi-square test statistic is given by\n\n[MATH: \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\nwhere\n\n- [MATH: O_i] is the observed frequency for category [MATH: i,] and\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis.\n\nLet [MATH: Y] be the preferred type of public transportation of a randomly selected citizen from the population under the null hypothesis. Then, we have\n\n[MATH: P(Y=y)=\\dfrac 13,\\qquad y=1,2,3.]\n\nThe total number of citizens in the sample is\n[MATH: N = 135 + 153+ 162 = 450.]\n\nTherefore, the expected frequencies for each type of public transportation are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(Y = 1) = 450 \u22c5 (1)/(3) = 150; E_{2}|= N \u22c5 P(Y = 2) = 450 \u22c5 (1)/(3) = 150; E_{3}|= N \u22c5 P(Y = 3) = 450 \u22c5 (1)/(3) = 150]\n\nA table summarizing the observed and corresponding theoretical frequencies is given below:\n\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: O_i] | [MATH: 135] | [MATH: 153] | [MATH: 162] |\n| [MATH: E_i] | [MATH: 150] | [MATH: 150] | [MATH: 150] |\n| [MATH: \\dfrac{(O_i-E_i)^2}{E_i}] | [MATH: 1.5] | [MATH: 0.06] | [MATH: 0.96] |\n\nNotice that we have rounded values to four decimal places, where appropriate.\n\nWe compute our test statistic by summing the last row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.5 + 0.06 + 0.96; = 2.52.]\nTherefore, the value of the test statistic is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2.52}.]\n\n---\n\nItem 7 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose [MATH: Y] is a random variable with support [MATH: S = {1, 2, 3}.] A random sample is carried out, and the frequency distribution of the sample data is shown below.\n\n| Observation [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 156] | [MATH: 135] | [MATH: 159] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:Y\u223cU{1, 2, 3}]\n- [MATH: H_{1}:Y\u2241U{1, 2, 3}]\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nThe value of the test statistic is [FREE_ENTRY 1].\n\n---\n\nItem 8 \u2014 Question 4\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThree species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3], are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n\nSuppose a hypothesis test is conducted with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The fish species are distributed uniformly.\n- [MATH: H_{1}:] The fish species are not distributed uniformly.\n\nCalculate the value of the chi-square test statistic for this hypothesis test.\n\nThe value of the test statistic is [FREE_ENTRY 1].\n\n---\n\nItem 9 \u2014 Tutorial: The Distribution of the Chi-Square Test Statistic\n\nContent:\nSuppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. Then, it can be shown that the random variable\n\nContent:\n[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\nContent:\napproximately follows a chi-square distribution with [MATH: \\nu] degrees of freedom, where\n\nContent:\n- [MATH: O_i] is the observed frequency for category [MATH: i,]\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis, and\n- the degrees of freedom [MATH: \\nu] is to be determined.\n\nContent:\nThis approximation holds when all expected frequencies [MATH: E_i] are sufficiently large (typically [MATH: E_i \\geq 5] for each category), and the observations are independent.\n\nContent:\nBefore we use this result for hypothesis testing, let's discuss how to find the degrees of freedom [MATH: \\nu] for a given chi-square test.\n\n---\n\nItem 10 \u2014 Tutorial: Degrees of Freedom\n\nContent:\nLet's again return to the case of the suspected biased die with the following observed and expected frequencies:\n\nContent:\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n\nContent:\nFor a chi-square goodness-of-fit test, the number of degrees of freedom is the number of independent sample categories.\n\nContent:\n- We have a total of [MATH: n=6] categories, each with an observed frequency.\n\nContent:\n- However, if the total number of observations is fixed, only [MATH: 5] of these categories may vary freely. In other words, if, for example, the first five observations\n[MATH: O_1,\\quad O_2,\\quad\\ldots,\\quad O_5]\nare allowed to vary freely, yet [MATH: N] (the total number of observations) is fixed, then [MATH: O_6] cannot vary because we have the following constraint.\n[MATH: \\sum_{i=1}^6 O_i = N]\nwhere [MATH: N] is the total number of observations.\n\nContent:\nThus, the number of degrees of freedom for this test is\n[MATH: \\nu = n-1 = 5.]\n\nContent:\nMore generally, we may use the following formula when computing the degrees of freedom of a chi-square test:\n[MATH: \\nu = \\textrm{number of categories} - \\textrm{number of constraints}]\n\nContent:\nIn this lesson, we'll only deal with cases with one constraint. In future lessons, we'll discuss cases with more constraints and where we need to alter the number of categories.\n\n---\n\nItem 11 \u2014 Tutorial: Conducting a Chi-Square Test\n\nContent:\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: O_i] | [MATH: 23] | [MATH: 15] | [MATH: 25] | [MATH: 18] | [MATH: 21] | [MATH: 18] |\n| [MATH: E_i] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] | [MATH: 20] |\n| [MATH: \\dfrac{(O_i - E_i)^2}{E_i}] | [MATH: 0.45] | [MATH: 1.25] | [MATH: 1.25] | [MATH: 0.2] | [MATH: 0.05] | [MATH: 0.2] |\n\nContent:\nWe want to test the following null and alternative hypotheses on the above data set:\n\nContent:\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3,4,5,6\\}]\n- [MATH: H_1\\mathbin{:}\\:Y\\not\\sim U\\{1,2,3,4,5,6\\}]\n\nContent:\nWe also have the following:\n\nContent:\n- The number of degrees of freedom for this test is\n[MATH: \\nu = 5.]\n- The chi-square test statistic is\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 3.4.]\n- Since this is a hypothesis test, we must choose an appropriate significance level. So, let's choose\n[MATH: \\alpha = 5\\%.]\n- Since we want to know whether the test statistic exceeds a certain threshold, the chi-square goodness-of-fit test is always right-tailed.\n\nContent:\nUsing a chi-square table, the critical value for [MATH: \\nu=5] at a [MATH: 5\\%] significance level is [MATH: \\chi^2_{\\textrm{critical}}=11.070,] and the critical region is\n[MATH: X\\geq 11.070]\nas shown below.\n\nGraphic:\n[IMG: /graphics/f9a6bb5fef818390b63bd888495ecce2]\n\nContent:\nOur test statistic [MATH: (3.4)] does not lie inside the critical region. Therefore, there is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{insufficient}}] evidence to reject the null hypothesis.\n\nContent:\nIn other words, we have no evidence to suggest that the die is biased.\n\n---\n\nItem 12 \u2014 Example: Carrying Out a Chi-Square Goodness of Fit Test\n\nExample Prompt:\nSuppose [MATH: Y] is a random variable with support [MATH: S=\\{1,2,3\\}.] A random sample is carried out, and the sample data is shown below.\n\n| Observation [MATH: (y_i)] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_i)] | [MATH: \\,42\\,] | [MATH: \\,40\\,] | [MATH: \\,68\\,] |\n\nConduct a chi-square goodness of fit test at the [MATH: 1\\%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_0\\mathbin{:}\\: Y\\sim U\\{1,2,3\\}]\n- [MATH: H_1\\mathbin{:}\\: Y\\not\\sim U\\{1,2,3\\}]\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W\\geq w) = p,] where [MATH: W\\sim \\chi^2(\\nu).]\n\n| [MATH: \\nu \\setminus p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 1] | [MATH: \\,2.706\\,] | [MATH: \\,3.841\\,] | [MATH: \\,5.024\\,] | [MATH: \\,6.635\\,] | [MATH: \\,7.879\\,] |\n| [MATH: 2] | [MATH: \\,4.605\\,] | [MATH: \\,5.991\\,] | [MATH: \\,7.378\\,] | [MATH: \\,9.210\\,] | [MATH: \\,10.597\\,] |\n| [MATH: 3] | [MATH: \\,6.251\\,] | [MATH: \\,7.815\\,] | [MATH: \\,9.348\\,] | [MATH: \\,11.345\\,] | [MATH: \\,12.838\\,] |\n\nContent:\nEXPLANATION\n\nExplanation:\nSuppose we have a set of observed frequencies [MATH: O_i] and corresponding expected frequencies [MATH: E_i,] as defined by a theoretical model under the null hypothesis. Then, the random variable\n\n[MATH: X = \\sum_{i} \\frac{(O_i - E_i)^2}{E_i}]\n\napproximately follows a chi-square distribution with [MATH: \\nu] degrees of freedom, where\n\n- [MATH: O_i] is the observed frequency for category [MATH: i,] and\n- [MATH: E_i] is the expected frequency for category [MATH: i,] as predicted under the null hypothesis.\n\nThis approximation holds when all expected frequencies [MATH: E_i] are sufficiently large (typically [MATH: E_i \\geq 5] for each category), and the observations are independent.\n\nUnder the null hypothesis, we have that [MATH: Y\\sim U\\{1,2,3\\}.] Therefore,\n\n[MATH: P(Y=y)=\\dfrac{1}{3},\\qquad y=1,2,3.]\n\nThe sample size is\n[MATH: N = 57 + 40 + 53 = 150.]\n\nTherefore, the expected frequencies for each species are as follows:\n\n[MATH: E_{1}|= N \u22c5 P(Y = 1) = 150 \u22c5 (1)/(3) = 50; E_{2}|= N \u22c5 P(Y = 2) = 150 \u22c5 (1)/(3) = 50; E_{3}|= N \u22c5 P(Y = 3) = 150 \u22c5 (1)/(3) = 50]\n\nA table summarizing the observed and corresponding theoretical frequencies is given below:\n\n| [MATH: y_i] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: O_i] | [MATH: \\,42\\,] | [MATH: \\,40\\,] | [MATH: \\,68\\,] |\n| [MATH: E_i] | [MATH: \\,50\\,] | [MATH: \\,50\\,] | [MATH: \\,50\\,] |\n| [MATH: \\dfrac{(O_i-E_i)^2}{E_i}] | [MATH: \\,1.28\\,] | [MATH: \\,2\\,] | [MATH: \\,6.48\\,] |\n\nFirst, we compute our test statistic by summing the last row:\n[MATH: \u2211_(i)((O_{i} \u2212 E_{i})^{2})/(E_{i})|= 1.28 + 2 + 6.48; = 9.76]\nTherefore, the test statistic is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}9.76}.]\n\nThere is only one constraint on our data: the total number of observations must equal [MATH: N.] Therefore, the number of degrees of freedom [MATH: \\nu] is calculated as follows:\n[MATH: \u03bd|= number of categories \u2212 number of constraints; = 3 \u2212 1; = 2]\nSo, there are [MATH: \\nu = \\bbox[3pt,Gainsboro]{\\color{blue}2}] degrees of freedom.\n\nFrom the given chi-square table, the critical value for [MATH: \\nu=2] at a [MATH: 1\\%] significance level is [MATH: \\chi^2_{\\textrm{critical}}=9.210,] and the critical region is\n[MATH: X\\geq 9.210]\nas shown below.\n\n[IMG: /graphics/be3bd67254db69a795b65a084754e2ee]\n\nOur test statistic [MATH: (9.76)] lies inside the critical region. Therefore, there is [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\textrm{sufficient}}] evidence to reject the null hypothesis.\n\n---\n\nItem 13 \u2014 Question 5\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose [MATH: Y] is a random variable with support [MATH: S = {2, 3, 5, 7, 9}.] A random sample is carried out, and the sample data is shown below.\n\n| Observation [MATH: (y_{i})] | [MATH: 2] | [MATH: 3] | [MATH: 5] | [MATH: 7] | [MATH: 9] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 36] | [MATH: 48] | [MATH: 49] | [MATH: 40] | [MATH: 27] |\n\nA chi-square goodness of fit test is conducted at the [MATH: 10%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:Y\u223cU{2, 3, 5, 7, 9}]\n- [MATH: H_{1}:Y\u2241U{2, 3, 5, 7, 9}]\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W \u2265 w) = p,] where [MATH: W\u223c\u03c7^{2}(\u03bd).]\n\n| [MATH: \u03bd\u2216p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 3] | [MATH: 6.251] | [MATH: 7.815] | [MATH: 9.348] | [MATH: 11.345] | [MATH: 12.838] |\n| [MATH: 4] | [MATH: 7.779] | [MATH: 9.488] | [MATH: 11.143] | [MATH: 13.277] | [MATH: 14.860] |\n| [MATH: 5] | [MATH: 9.236] | [MATH: 11.070] | [MATH: 12.833] | [MATH: 15.086] | [MATH: 16.750] |\n\nUsing this information, select the options that make the following statements true.\n\nThe test statistic is\n[SELECT 1].\n\nThe number of degrees of freedom for this test is [MATH: \u03bd =] [SELECT 2].\n\nAt the [MATH: 10%] significance level, there is [SELECT 3] evidence to reject the null hypothesis.\n\n---\n\nItem 14 \u2014 Question 6\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThree species of fish, species [MATH: 1,] species [MATH: 2,] and species [MATH: 3], are believed to co-exist in equal proportion in a particular river. A random sample of fish is conducted, and the frequency distribution of the fish in the sample is shown below.\n\n| Species of Fish [MATH: (y_{i})] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| Observed Frequency [MATH: (O_{i})] | [MATH: 89] | [MATH: 120] | [MATH: 91] |\n\nA chi-square goodness of fit test is conducted at the [MATH: 5%] significance level with the following null and alternative hypotheses:\n\n- [MATH: H_{0}:] The fish species are distributed uniformly.\n- [MATH: H_{1}:] The fish species are not distributed uniformly.\n\nThe table below gives the values of [MATH: w] that satisfy [MATH: P(W \u2265 w) = p,] where [MATH: W\u223c\u03c7^{2}(\u03bd).]\n\n| [MATH: \u03bd\u2216p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: 1] | [MATH: 2.705] | [MATH: 3.841] | [MATH: 5.024] | [MATH: 6.635] | [MATH: 7.879] |\n| [MATH: 2] | [MATH: 4.605] | [MATH: 5.991] | [MATH: 7.378] | [MATH: 9.210] | [MATH: 10.597] |\n| [MATH: 3] | [MATH: 6.251] | [MATH: 7.815] | [MATH: 9.348] | [MATH: 11.345] | [MATH: 12.838] |\n\nUsing this information, select the options that make the following statements true.\n\nThe test statistic is\n[SELECT 1].\n\nThe number of degrees of freedom for this test is [MATH: \u03bd =] [SELECT 2].\n\nAt the [MATH: 5%] significance level, there is [SELECT 3] evidence to reject the null hypothesis."
+  }
+}

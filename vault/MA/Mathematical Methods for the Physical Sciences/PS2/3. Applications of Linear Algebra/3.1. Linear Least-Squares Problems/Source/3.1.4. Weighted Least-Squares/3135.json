@@ -1,0 +1,959 @@
+{
+  "schema_version": 2,
+  "topic_id": "3135",
+  "topic_title": "Weighted Least-Squares",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3135/Source/3135.html",
+  "source_url": "https://mathacademy.com/topics/3135",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "36972",
+        "dom_id": "sectionLink-36972",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-36972"
+      },
+      {
+        "index": 2,
+        "step_id": "36973",
+        "dom_id": "sectionLink-36973",
+        "name": "",
+        "title": "Finding the Normal Equation for a Weighted Least-Squares Problem",
+        "selector": "#sectionLink-36973"
+      },
+      {
+        "index": 3,
+        "step_id": "36975",
+        "dom_id": "sectionLink-36975",
+        "name": "",
+        "title": "Finding the Solution to a Weighted Least-Squares Problem",
+        "selector": "#sectionLink-36975"
+      },
+      {
+        "index": 4,
+        "step_id": "37006",
+        "dom_id": "sectionLink-37006",
+        "name": "",
+        "title": "A Geometric Interpretation of the Weighted Least-Squares Solution",
+        "selector": "#sectionLink-37006"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2167",
+        "name": "The Least-Squares Solution of a Linear System (With Collinearity)",
+        "href": "/topics/the-least-squares-solution-of-a-linear-system-with-collinearity-2167"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 8,
+    "step_count": 4,
+    "question_count": 4,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "36972",
+        "content_id": "6076",
+        "dom_id": "step-36972",
+        "selector": "#step-36972",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider the least-squares problem <span class=\"math\">[MATH: A\\mathbf{x}=\\mathbf{b},]</span> where </p>",
+            "readable_text": "Let's consider the least-squares problem [MATH: A\\mathbf{x}=\\mathbf{b},] where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the corresponding least-squares solution is a vector <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> such that </p>",
+            "readable_text": "Recall that the corresponding least-squares solution is a vector [MATH: {\\hat{\\mathbf{x}}}] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Vert  A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert]</span>\nis as small as possible.</p>",
+            "readable_text": "[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert]\nis as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In real-world problems, the coefficients stored in <span class=\"math\">[MATH: A]</span> might come from sources that are not equally reliable. For example, the coefficients might be collected from population surveys with different sample sizes. As a result, we might want to assign a greater &quot;weight&quot; to the more reliable data.</p>",
+            "readable_text": "In real-world problems, the coefficients stored in [MATH: A] might come from sources that are not equally reliable. For example, the coefficients might be collected from population surveys with different sample sizes. As a result, we might want to assign a greater \"weight\" to the more reliable data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, suppose we require the weight of the coefficients in the first row to be twice the weights of the other rows. Then, we can re-state our problem by saying that, for the matrix of weights <span class=\"math\">[MATH: W,]</span> given by</p>",
+            "readable_text": "For example, suppose we require the weight of the coefficients in the first row to be twice the weights of the other rows. Then, we can re-state our problem by saying that, for the matrix of weights [MATH: W,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|0|0; 0|1|0; 0|0|1]]</span></p>",
+            "readable_text": "[MATH: [2|0|0; 0|1|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>we wish to find vectors <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> such that </p>",
+            "readable_text": "we wish to find vectors [MATH: {\\hat{\\mathbf{x}}}] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Vert  W (A{\\hat{\\mathbf{x}}} - \\mathbf{b}) \\Vert]</span>\nis as small as possible.</p>",
+            "readable_text": "[MATH: \\Vert W (A{\\hat{\\mathbf{x}}} - \\mathbf{b}) \\Vert]\nis as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, instead of solving <span class=\"math\">[MATH: A\\mathbf x = \\mathbf{b},]</span> we now need to solve the least-squares problem </p>",
+            "readable_text": "Therefore, instead of solving [MATH: A\\mathbf x = \\mathbf{b},] we now need to solve the least-squares problem",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: W\\!A\\mathbf x = W\\mathbf{b}.]</span></p>",
+            "readable_text": "[MATH: W\\!A\\mathbf x = W\\mathbf{b}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To get the normal equation corresponding to this least-squares problem, we pre-multiply both sides of the equation by <span class=\"math\">[MATH: (W\\!A)^T{:}]</span></p>",
+            "readable_text": "To get the normal equation corresponding to this least-squares problem, we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]</span></p>",
+            "readable_text": "[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, since</p>",
+            "readable_text": "Now, since",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2^{2}|0|0; 0|1^{2}|0; 0|0|1^{2}]]</span></p>",
+            "readable_text": "[MATH: [2^{2}|0|0; 0|1^{2}|0; 0|0|1^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>the normal equation can be written as follows:</p>",
+            "readable_text": "the normal equation can be written as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][1|\u2212 1; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][9; 0; 18]; [1|1|2; \u2212 1|0|\u2212 1][4|\u2212 4; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][36; 0; 18]; [9|\u2212 6; \u2212 6|5][x_{1}; x_{2}]|= [72; \u2212 54]]</span></p>",
+            "readable_text": "[MATH: [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][1|\u2212 1; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][9; 0; 18]; [1|1|2; \u2212 1|0|\u2212 1][4|\u2212 4; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][36; 0; 18]; [9|\u2212 6; \u2212 6|5][x_{1}; x_{2}]|= [72; \u2212 54]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Solving the final equation, we obtain the least-squares solution <span class=\"math\">[MATH: [4; \u2212 6]]</span></p>",
+            "readable_text": "Solving the final equation, we obtain the least-squares solution [MATH: [4; \u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's consider the least-squares problem [MATH: A\\mathbf{x}=\\mathbf{b},] where\n\nContent:\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]\n\nContent:\nRecall that the corresponding least-squares solution is a vector [MATH: {\\hat{\\mathbf{x}}}] such that\n\nContent:\n[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert]\nis as small as possible.\n\nContent:\nIn real-world problems, the coefficients stored in [MATH: A] might come from sources that are not equally reliable. For example, the coefficients might be collected from population surveys with different sample sizes. As a result, we might want to assign a greater \"weight\" to the more reliable data.\n\nContent:\nFor example, suppose we require the weight of the coefficients in the first row to be twice the weights of the other rows. Then, we can re-state our problem by saying that, for the matrix of weights [MATH: W,] given by\n\nContent:\n[MATH: [2|0|0; 0|1|0; 0|0|1]]\n\nContent:\nwe wish to find vectors [MATH: {\\hat{\\mathbf{x}}}] such that\n\nContent:\n[MATH: \\Vert W (A{\\hat{\\mathbf{x}}} - \\mathbf{b}) \\Vert]\nis as small as possible.\n\nContent:\nTherefore, instead of solving [MATH: A\\mathbf x = \\mathbf{b},] we now need to solve the least-squares problem\n\nContent:\n[MATH: W\\!A\\mathbf x = W\\mathbf{b}.]\n\nContent:\nTo get the normal equation corresponding to this least-squares problem, we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\nContent:\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nContent:\nNow, since\n\nContent:\n[MATH: [2^{2}|0|0; 0|1^{2}|0; 0|0|1^{2}]]\n\nContent:\nthe normal equation can be written as follows:\n\nContent:\n[MATH: [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][1|\u2212 1; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][9; 0; 18]; [1|1|2; \u2212 1|0|\u2212 1][4|\u2212 4; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][36; 0; 18]; [9|\u2212 6; \u2212 6|5][x_{1}; x_{2}]|= [72; \u2212 54]]\n\nContent:\nSolving the final equation, we obtain the least-squares solution [MATH: [4; \u2212 6]]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36973",
+        "content_id": "9831",
+        "dom_id": "step-36973",
+        "selector": "#step-36973",
+        "step_anchor": "step-2",
+        "title": "Finding the Normal Equation for a Weighted Least-Squares Problem",
+        "key_prerequisites": [
+          {
+            "topic_id": "2166",
+            "name": "The Least-Squares Solution of a Linear System (Without Collinearity)",
+            "href": "/topics/2166",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0; 0|1; 1|2]]</span></p><p>Consider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: W,]</span> and the vector <span class=\"math\">[MATH: \\mathbf{b}]</span> above. If the normal equation for the corresponding weighted least-squares problem <span class=\"math\">[MATH: W\\!A \\mathbf{x} = W\\mathbf{b}]</span> is given by</p><p><span class=\"math\">[MATH: [a|18; 18|b]]</span></p><p>what is the value of <span class=\"math\">[MATH: a+b+c?]</span></p>",
+            "readable_text": "[MATH: [1|0; 0|1; 1|2]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: \\mathbf{b}] above. If the normal equation for the corresponding weighted least-squares problem [MATH: W\\!A \\mathbf{x} = W\\mathbf{b}] is given by\n\n[MATH: [a|18; 18|b]]\n\nwhat is the value of [MATH: a+b+c?]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To get the normal equation corresponding to <span class=\"math\">[MATH: W\\!A\\mathbf{x}=W\\mathbf{b},]</span> we pre-multiply both sides of the equation by <span class=\"math\">[MATH: (W\\!A)^T{:}]</span></p><p><span class=\"math\">[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]</span></p><p>Now, since</p><p><span class=\"math\">[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|3^{2}]]</span></p><p>our normal equation can be written as follows:</p><p><span class=\"math\">[MATH: [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][1|0; 0|1; 1|2][x_{1}; x_{2}]|= [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][2; 0; 3]; [1|0|1; 0|1|2][1|0; 0|4; 9|18][x_{1}; x_{2}]|= [1|0|1; 0|1|2][2; 0; 27]; [10|18; 18|40][x_{1}; x_{2}]|= [29; 54]]</span></p><p>Therefore, we have</p><p><span class=\"math\">[MATH: a+b+c=10+40+54 = 104.]</span></p>",
+            "readable_text": "To get the normal equation corresponding to [MATH: W\\!A\\mathbf{x}=W\\mathbf{b},] we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nNow, since\n\n[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|3^{2}]]\n\nour normal equation can be written as follows:\n\n[MATH: [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][1|0; 0|1; 1|2][x_{1}; x_{2}]|= [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][2; 0; 3]; [1|0|1; 0|1|2][1|0; 0|4; 9|18][x_{1}; x_{2}]|= [1|0|1; 0|1|2][2; 0; 27]; [10|18; 18|40][x_{1}; x_{2}]|= [29; 54]]\n\nTherefore, we have\n\n[MATH: a+b+c=10+40+54 = 104.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [1|0; 0|1; 1|2]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: \\mathbf{b}] above. If the normal equation for the corresponding weighted least-squares problem [MATH: W\\!A \\mathbf{x} = W\\mathbf{b}] is given by\n\n[MATH: [a|18; 18|b]]\n\nwhat is the value of [MATH: a+b+c?]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo get the normal equation corresponding to [MATH: W\\!A\\mathbf{x}=W\\mathbf{b},] we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nNow, since\n\n[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|3^{2}]]\n\nour normal equation can be written as follows:\n\n[MATH: [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][1|0; 0|1; 1|2][x_{1}; x_{2}]|= [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][2; 0; 3]; [1|0|1; 0|1|2][1|0; 0|4; 9|18][x_{1}; x_{2}]|= [1|0|1; 0|1|2][2; 0; 27]; [10|18; 18|40][x_{1}; x_{2}]|= [29; 54]]\n\nTherefore, we have\n\n[MATH: a+b+c=10+40+54 = 104.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "137101",
+        "dom_id": "question-137101",
+        "selector": "#question-137101",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [1|0; 4|4; 2|1], b = [4; 1; \u2212 1], W = [2|0|0; 0|1|0; 0|0|1]]</span></p><p>Consider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: W,]</span> and the vector <span class=\"math\">[MATH: b]</span> above. If the normal equation for the corresponding weighted least-squares problem <span class=\"math\">[MATH: WA = Wb]</span> is given by</p><p><span class=\"math\">[MATH: [a|18; 18|b][x_{1}; x_{2}] = [c; 3]]</span></p><p>what is the value of <span class=\"math\">[MATH: a + b + c?]</span></p>",
+          "readable_text": "[MATH: A = [1|0; 4|4; 2|1], b = [4; 1; \u2212 1], W = [2|0|0; 0|1|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] above. If the normal equation for the corresponding weighted least-squares problem [MATH: WA = Wb] is given by\n\n[MATH: [a|18; 18|b][x_{1}; x_{2}] = [c; 3]]\n\nwhat is the value of [MATH: a + b + c?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137101-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 19]</span></p>",
+            "readable_text": "[MATH: \u2212 19]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137101-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 12]</span></p>",
+            "readable_text": "[MATH: 12]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137101-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 27]</span></p>",
+            "readable_text": "[MATH: \u2212 27]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137101-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 42]</span></p>",
+            "readable_text": "[MATH: 42]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137101-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 59]</span></p>",
+            "readable_text": "[MATH: 59]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [1|0; 4|4; 2|1], b = [4; 1; \u2212 1], W = [2|0|0; 0|1|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] above. If the normal equation for the corresponding weighted least-squares problem [MATH: WA = Wb] is given by\n\n[MATH: [a|18; 18|b][x_{1}; x_{2}] = [c; 3]]\n\nwhat is the value of [MATH: a + b + c?]\n\nChoices:\na. [MATH: \u2212 19]\nb. [MATH: 12]\nc. [MATH: \u2212 27]\nd. [MATH: 42]\ne. [MATH: 59]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "137888",
+        "dom_id": "question-137888",
+        "selector": "#question-137888",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [\u2212 4|3; 0|0; 8|\u2212 6], b = [4; 3; 1], W = [1|0|0; 0|2|0; 0|0|1]]</span></p><p>Consider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: W,]</span> and the vector <span class=\"math\">[MATH: b]</span> above. If the normal equation for the corresponding weighted least-squares problem <span class=\"math\">[MATH: WAx = Wb]</span> is given by</p><p><span class=\"math\">[MATH: [a|\u2212 60; \u2212 60|b][x_{1}; x_{2}] = [\u2212 8; c]]</span></p><p>what is the value of <span class=\"math\">[MATH: a + b + c?]</span></p>",
+          "readable_text": "[MATH: A = [\u2212 4|3; 0|0; 8|\u2212 6], b = [4; 3; 1], W = [1|0|0; 0|2|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] above. If the normal equation for the corresponding weighted least-squares problem [MATH: WAx = Wb] is given by\n\n[MATH: [a|\u2212 60; \u2212 60|b][x_{1}; x_{2}] = [\u2212 8; c]]\n\nwhat is the value of [MATH: a + b + c?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137888-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 131]</span></p>",
+            "readable_text": "[MATH: 131]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137888-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 127]</span></p>",
+            "readable_text": "[MATH: 127]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137888-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 225]</span></p>",
+            "readable_text": "[MATH: 225]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137888-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 272]</span></p>",
+            "readable_text": "[MATH: 272]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137888-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 252]</span></p>",
+            "readable_text": "[MATH: 252]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [\u2212 4|3; 0|0; 8|\u2212 6], b = [4; 3; 1], W = [1|0|0; 0|2|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] above. If the normal equation for the corresponding weighted least-squares problem [MATH: WAx = Wb] is given by\n\n[MATH: [a|\u2212 60; \u2212 60|b][x_{1}; x_{2}] = [\u2212 8; c]]\n\nwhat is the value of [MATH: a + b + c?]\n\nChoices:\na. [MATH: 131]\nb. [MATH: 127]\nc. [MATH: 225]\nd. [MATH: 272]\ne. [MATH: 252]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36975",
+        "content_id": "9832",
+        "dom_id": "step-36975",
+        "selector": "#step-36975",
+        "step_anchor": "step-5",
+        "title": "Finding the Solution to a Weighted Least-Squares Problem",
+        "key_prerequisites": [
+          {
+            "topic_id": "2167",
+            "name": "The Least-Squares Solution of a Linear System (With Collinearity)",
+            "href": "/topics/2167",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 1; \u2212 2|2; \u2212 1|1]]</span></p><p>Consider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: W,]</span> and the vector <span class=\"math\">[MATH: \\mathbf{b}]</span> shown above. Find the general solution for the weighted least-squares problem <span class=\"math\">[MATH: W\\!A\\mathbf{x}=W\\mathbf{b}.]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 1; \u2212 2|2; \u2212 1|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: \\mathbf{b}] shown above. Find the general solution for the weighted least-squares problem [MATH: W\\!A\\mathbf{x}=W\\mathbf{b}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To get the normal equation corresponding to <span class=\"math\">[MATH: W\\!A\\mathbf{x}=W\\mathbf{b},]</span> we pre-multiply both sides of the equation by <span class=\"math\">[MATH: (W\\!A)^T{:}]</span></p><p><span class=\"math\">[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]</span></p><p>Now, since</p><p><span class=\"math\">[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|2^{2}]]</span></p><p>our normal equation can be written as follows:</p><p><span class=\"math\">[MATH: [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][1|\u2212 1; \u2212 2|2; \u2212 1|1][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][\u2212 3; 0; 9]; [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|\u2212 1; \u2212 8|8; \u2212 4|4][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][\u2212 3; 0; 36]; [21|\u2212 21; \u2212 21|21][x_{1}; x_{2}]|= [\u2212 39; 39]]</span></p><p>Now, we solve the system corresponding to the above matrix equation using Gaussian elimination, as follows:\n<span class=\"math\">[MATH: M|= [21|\u2212 21|\u2212 39; \u2212 21|21|39]|R_{2}:=R_{2} + R_{1}; \u223c[21|\u2212 21|\u2212 39; 0|0|0]]</span></p><p>The reduced matrix above has one pivot column (the <span class=\"math\">[MATH: 1]</span>st one). Thus, <span class=\"math\">[MATH: x_2]</span> is a free variable. From the first equation, we have \n<span class=\"math\">[MATH: x_1=-\\dfrac{13}{7}+x_2.]</span></p><p>Hence, the general solution is</p><p><span class=\"math\">[MATH: [\u2212 (13)/(7) + x_{2}; x_{2}]]</span></p>",
+            "readable_text": "To get the normal equation corresponding to [MATH: W\\!A\\mathbf{x}=W\\mathbf{b},] we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nNow, since\n\n[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|2^{2}]]\n\nour normal equation can be written as follows:\n\n[MATH: [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][1|\u2212 1; \u2212 2|2; \u2212 1|1][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][\u2212 3; 0; 9]; [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|\u2212 1; \u2212 8|8; \u2212 4|4][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][\u2212 3; 0; 36]; [21|\u2212 21; \u2212 21|21][x_{1}; x_{2}]|= [\u2212 39; 39]]\n\nNow, we solve the system corresponding to the above matrix equation using Gaussian elimination, as follows:\n[MATH: M|= [21|\u2212 21|\u2212 39; \u2212 21|21|39]|R_{2}:=R_{2} + R_{1}; \u223c[21|\u2212 21|\u2212 39; 0|0|0]]\n\nThe reduced matrix above has one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] is a free variable. From the first equation, we have\n[MATH: x_1=-\\dfrac{13}{7}+x_2.]\n\nHence, the general solution is\n\n[MATH: [\u2212 (13)/(7) + x_{2}; x_{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [1|\u2212 1; \u2212 2|2; \u2212 1|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: \\mathbf{b}] shown above. Find the general solution for the weighted least-squares problem [MATH: W\\!A\\mathbf{x}=W\\mathbf{b}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo get the normal equation corresponding to [MATH: W\\!A\\mathbf{x}=W\\mathbf{b},] we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nNow, since\n\n[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|2^{2}]]\n\nour normal equation can be written as follows:\n\n[MATH: [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][1|\u2212 1; \u2212 2|2; \u2212 1|1][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][\u2212 3; 0; 9]; [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|\u2212 1; \u2212 8|8; \u2212 4|4][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][\u2212 3; 0; 36]; [21|\u2212 21; \u2212 21|21][x_{1}; x_{2}]|= [\u2212 39; 39]]\n\nNow, we solve the system corresponding to the above matrix equation using Gaussian elimination, as follows:\n[MATH: M|= [21|\u2212 21|\u2212 39; \u2212 21|21|39]|R_{2}:=R_{2} + R_{1}; \u223c[21|\u2212 21|\u2212 39; 0|0|0]]\n\nThe reduced matrix above has one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] is a free variable. From the first equation, we have\n[MATH: x_1=-\\dfrac{13}{7}+x_2.]\n\nHence, the general solution is\n\n[MATH: [\u2212 (13)/(7) + x_{2}; x_{2}]]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "137102",
+        "dom_id": "question-137102",
+        "selector": "#question-137102",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the solution for the weighted least-squares problem <span class=\"math\">[MATH: WAx = Wb,]</span> where</p><p><span class=\"math\">[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1], b = [1; 2; 1], W = [2|0|0; 0|2|0; 0|0|1].]</span></p>",
+          "readable_text": "Find the solution for the weighted least-squares problem [MATH: WAx = Wb,] where\n\n[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1], b = [1; 2; 1], W = [2|0|0; 0|2|0; 0|0|1].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137102-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 (4)/(3); 1]]</span></p>",
+            "readable_text": "[MATH: [\u2212 (4)/(3); 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137102-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 1]]</span></p>",
+            "readable_text": "[MATH: [3; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137102-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; 1]]</span></p>",
+            "readable_text": "[MATH: [2; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137102-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(5)/(3); 1]]</span></p>",
+            "readable_text": "[MATH: [(5)/(3); 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137102-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(5)/(3); \u2212 1]]</span></p>",
+            "readable_text": "[MATH: [(5)/(3); \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFind the solution for the weighted least-squares problem [MATH: WAx = Wb,] where\n\n[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1], b = [1; 2; 1], W = [2|0|0; 0|2|0; 0|0|1].]\n\nChoices:\na. [MATH: [\u2212 (4)/(3); 1]]\nb. [MATH: [3; 1]]\nc. [MATH: [2; 1]]\nd. [MATH: [(5)/(3); 1]]\ne. [MATH: [(5)/(3); \u2212 1]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "137105",
+        "dom_id": "question-137105",
+        "selector": "#question-137105",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [\u2212 2|1; 4|\u2212 2; \u2212 2|1], b = [3; 1; \u2212 5], W = [1|0|0; 0|2|0; 0|0|1]]</span> </p><p>Consider the matrices <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: W,]</span> and the vector <span class=\"math\">[MATH: b]</span> shown above. If the general solution for the weighted least-squares problem <span class=\"math\">[MATH: WAx = Wb]</span> is \n<span class=\"math\">[MATH: [a; 0] + x_{2}[b; c], x_{2} \u2208 R,]</span>\nwhat is the value of  <span class=\"math\">[MATH: 9a + (b)/(c)?]</span></p>",
+          "readable_text": "[MATH: A = [\u2212 2|1; 4|\u2212 2; \u2212 2|1], b = [3; 1; \u2212 5], W = [1|0|0; 0|2|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] shown above. If the general solution for the weighted least-squares problem [MATH: WAx = Wb] is\n[MATH: [a; 0] + x_{2}[b; c], x_{2} \u2208 R,]\nwhat is the value of [MATH: 9a + (b)/(c)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137105-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137105-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 5]</span></p>",
+            "readable_text": "[MATH: \u2212 5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137105-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 4]</span></p>",
+            "readable_text": "[MATH: 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137105-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137105-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [\u2212 2|1; 4|\u2212 2; \u2212 2|1], b = [3; 1; \u2212 5], W = [1|0|0; 0|2|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] shown above. If the general solution for the weighted least-squares problem [MATH: WAx = Wb] is\n[MATH: [a; 0] + x_{2}[b; c], x_{2} \u2208 R,]\nwhat is the value of [MATH: 9a + (b)/(c)?]\n\nChoices:\na. [MATH: 3]\nb. [MATH: \u2212 5]\nc. [MATH: 4]\nd. [MATH: 1]\ne. [MATH: \u2212 2]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37006",
+        "content_id": "6084",
+        "dom_id": "step-37006",
+        "selector": "#step-37006",
+        "step_anchor": "step-8",
+        "title": "A Geometric Interpretation of the Weighted Least-Squares Solution",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that if the solution <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> of the least-squares problem <span class=\"math\">[MATH: A\\mathbf x=\\mathbf{b}]</span> is unique, then <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> lies in <span class=\"math\">[MATH: \\textrm{Col}(A).]</span> Furthermore, <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> is the vector in <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> that&#x27;s closest to <span class=\"math\">[MATH: \\mathbf b.]</span> </p>",
+            "readable_text": "Recall that if the solution [MATH: {\\hat{\\mathbf{x}}}] of the least-squares problem [MATH: A\\mathbf x=\\mathbf{b}] is unique, then [MATH: A{\\hat{\\mathbf{x}}}] lies in [MATH: \\textrm{Col}(A).] Furthermore, [MATH: A{\\hat{\\mathbf{x}}}] is the vector in [MATH: \\textrm{Col}(A)] that's closest to [MATH: \\mathbf b.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In terms of vector spaces, the vector <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> is the orthogonal projection of <span class=\"math\">[MATH: \\mathbf{b}]</span> onto the subspace spanned by the columns of <span class=\"math\">[MATH: A.]</span> Therefore, the error vector <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}]</span> is orthogonal to <span class=\"math\">[MATH: \\textrm{Col}(A).]</span></p>",
+            "readable_text": "In terms of vector spaces, the vector [MATH: A{\\hat{\\mathbf{x}}}] is the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.] Therefore, the error vector [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/f8cc649840677fa8e964eb2a9b11bb84\"></p>",
+            "readable_text": "[IMG: /graphics/f8cc649840677fa8e964eb2a9b11bb84]",
+            "images": [
+              {
+                "src": "/graphics/f8cc649840677fa8e964eb2a9b11bb84",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A similar property holds for weighted least-squares solutions:</p>",
+            "readable_text": "A similar property holds for weighted least-squares solutions:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p><em>If the solution <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> of the least-squares problem <span class=\"math\">[MATH: W\\!A\\mathbf x=W\\mathbf{b}]</span> is unique, then\n<span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}]</span> is orthogonal to <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> with respect to the weighted dot product defined as \n<span class=\"math\">[MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i,]</span> \nwhere the <span class=\"math\">[MATH: w_i]</span>&#x27;s are the weights from the main diagonal of the weight matrix <span class=\"math\">[MATH: W.]</span></em> </p></blockquote>",
+            "readable_text": "> If the solution [MATH: {\\hat{\\mathbf{x}}}] of the least-squares problem [MATH: W\\!A\\mathbf x=W\\mathbf{b}] is unique, then\n> [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A)] with respect to the weighted dot product defined as\n> [MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i,]\n> where the [MATH: w_i]'s are the weights from the main diagonal of the weight matrix [MATH: W.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We previously considered the weighted least-squares problem <span class=\"math\">[MATH: W\\!Ax=W\\mathbf{b},]</span> where</p>",
+            "readable_text": "We previously considered the weighted least-squares problem [MATH: W\\!Ax=W\\mathbf{b},] where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s easy to show (using the usual techniques) that the unique weighted least-squares solution is given by </p>",
+            "readable_text": "It's easy to show (using the usual techniques) that the unique weighted least-squares solution is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; \u2212 6]]</span></p>",
+            "readable_text": "[MATH: [4; \u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Computing our error vector <span class=\"math\">[MATH: \\boldsymbol{\\varepsilon} = A{\\hat{\\mathbf{x}}} - \\mathbf{b},]</span> we get</p>",
+            "readable_text": "Computing our error vector [MATH: \\boldsymbol{\\varepsilon} = A{\\hat{\\mathbf{x}}} - \\mathbf{b},] we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03b5|= Ax^(^) \u2212 b; = [1|\u2212 1; 1|0; 2|\u2212 1] \u22c5 [4; \u2212 6] \u2212 [9; 0; 8]; = [10; 4; 14] \u2212 [9; 0; 18]; = [1; 4; \u2212 4].]</span></p>",
+            "readable_text": "[MATH: \u03b5|= Ax^(^) \u2212 b; = [1|\u2212 1; 1|0; 2|\u2212 1] \u22c5 [4; \u2212 6] \u2212 [9; 0; 8]; = [10; 4; 14] \u2212 [9; 0; 18]; = [1; 4; \u2212 4].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let <span class=\"math\">[MATH: \\mathbf a_1]</span> and <span class=\"math\">[MATH: \\mathbf a_2]</span> denote the columns of <span class=\"math\">[MATH: A\\mathbin{:}]</span>\n<span class=\"math\">[MATH: [|||; a_{1}|a_{2};|||]]</span></p>",
+            "readable_text": "Now, let [MATH: \\mathbf a_1] and [MATH: \\mathbf a_2] denote the columns of [MATH: A\\mathbin{:}]\n[MATH: [|||; a_{1}|a_{2};|||]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that the error vector <span class=\"math\">[MATH: \\boldsymbol{\\varepsilon}]</span> is <em>not</em> orthogonal to the columns of <span class=\"math\">[MATH: A\\mathbin{:}]</span></p>",
+            "readable_text": "Notice that the error vector [MATH: \\boldsymbol{\\varepsilon}] is not orthogonal to the columns of [MATH: A\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Computing <span class=\"math\">[MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_1,]</span> we have\n<span class=\"math\">[MATH: \u03b5 \u22c5 a_{1}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9; = (1)(1) + (4)(1) + (\u2212 4)(2); = \u2212 3; \u2260 0.]</span></p></li><li><p>Computing <span class=\"math\">[MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_2,]</span> we have\n<span class=\"math\">[MATH: \u03b5 \u22c5 a_{2}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; 1]\u27e9; = (1)(\u2212 1) + (4)(0) + (\u2212 4)(1); = \u2212 5; \u2260 0.]</span></p></li></ul>",
+            "readable_text": "- Computing [MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_1,] we have\n[MATH: \u03b5 \u22c5 a_{1}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9; = (1)(1) + (4)(1) + (\u2212 4)(2); = \u2212 3; \u2260 0.]\n- Computing [MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_2,] we have\n[MATH: \u03b5 \u22c5 a_{2}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; 1]\u27e9; = (1)(\u2212 1) + (4)(0) + (\u2212 4)(1); = \u2212 5; \u2260 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>However, if we check the orthogonality with respect to the <em>weighted</em> dot product </p>",
+            "readable_text": "However, if we check the orthogonality with respect to the weighted dot product",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i = 4x_1y_1 + x_2y_2 + x_3y_3,\n\\quad]</span> </p>",
+            "readable_text": "[MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i = 4x_1y_1 + x_2y_2 + x_3y_3,\n\\quad]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>we obtain the following:</p>",
+            "readable_text": "we obtain the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u27e8\u03b5, a_{1}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9_{W}; = 4(1)(1) + (4)(1) + (\u2212 4)(2); = 0\u2713; \u27e8\u03b5, a_{2}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; \u2212 1]\u27e9_{W}; = 4(1)(\u2212 1) + (4)(0) + (\u2212 4)(\u2212 1); = 0\u2713]</span></p>",
+            "readable_text": "[MATH: \u27e8\u03b5, a_{1}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9_{W}; = 4(1)(1) + (4)(1) + (\u2212 4)(2); = 0\u2713; \u27e8\u03b5, a_{2}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; \u2212 1]\u27e9_{W}; = 4(1)(\u2212 1) + (4)(0) + (\u2212 4)(\u2212 1); = 0\u2713]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This means that <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}]</span> is orthogonal to <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> with respect to the weighted dot product. We can write this as</p>",
+            "readable_text": "This means that [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A)] with respect to the weighted dot product. We can write this as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\perp_W \\textrm{Col}(A).]</span></p>",
+            "readable_text": "[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\perp_W \\textrm{Col}(A).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In terms of vector spaces, the vector <span class=\"math\">[MATH: A{\\hat{\\mathbf{x}}}]</span> is the orthogonal projection with respect to <span class=\"math\">[MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W]</span> of the vector <span class=\"math\">[MATH: \\mathbf{b}]</span> onto the subspace spanned by the columns of <span class=\"math\">[MATH: A.]</span> </p>",
+            "readable_text": "In terms of vector spaces, the vector [MATH: A{\\hat{\\mathbf{x}}}] is the orthogonal projection with respect to [MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W] of the vector [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Furthermore, the weighted least-squares problem with weight matrix <span class=\"math\">[MATH: W]</span> is equivalent to finding a vector <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> such that</p>",
+            "readable_text": "Furthermore, the weighted least-squares problem with weight matrix [MATH: W] is equivalent to finding a vector [MATH: {\\hat{\\mathbf{x}}}] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Vert  A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert_W]</span>\nis as small as possible.</p>",
+            "readable_text": "[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert_W]\nis as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/f8cc649840677fa8e964eb2a9b11bb84",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that if the solution [MATH: {\\hat{\\mathbf{x}}}] of the least-squares problem [MATH: A\\mathbf x=\\mathbf{b}] is unique, then [MATH: A{\\hat{\\mathbf{x}}}] lies in [MATH: \\textrm{Col}(A).] Furthermore, [MATH: A{\\hat{\\mathbf{x}}}] is the vector in [MATH: \\textrm{Col}(A)] that's closest to [MATH: \\mathbf b.]\n\nContent:\nIn terms of vector spaces, the vector [MATH: A{\\hat{\\mathbf{x}}}] is the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.] Therefore, the error vector [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A).]\n\nGraphic:\n[IMG: /graphics/f8cc649840677fa8e964eb2a9b11bb84]\n\nContent:\nA similar property holds for weighted least-squares solutions:\n\nContent:\n> If the solution [MATH: {\\hat{\\mathbf{x}}}] of the least-squares problem [MATH: W\\!A\\mathbf x=W\\mathbf{b}] is unique, then\n> [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A)] with respect to the weighted dot product defined as\n> [MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i,]\n> where the [MATH: w_i]'s are the weights from the main diagonal of the weight matrix [MATH: W.]\n\nContent:\nWe previously considered the weighted least-squares problem [MATH: W\\!Ax=W\\mathbf{b},] where\n\nContent:\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]\n\nContent:\nIt's easy to show (using the usual techniques) that the unique weighted least-squares solution is given by\n\nContent:\n[MATH: [4; \u2212 6]]\n\nContent:\nComputing our error vector [MATH: \\boldsymbol{\\varepsilon} = A{\\hat{\\mathbf{x}}} - \\mathbf{b},] we get\n\nContent:\n[MATH: \u03b5|= Ax^(^) \u2212 b; = [1|\u2212 1; 1|0; 2|\u2212 1] \u22c5 [4; \u2212 6] \u2212 [9; 0; 8]; = [10; 4; 14] \u2212 [9; 0; 18]; = [1; 4; \u2212 4].]\n\nContent:\nNow, let [MATH: \\mathbf a_1] and [MATH: \\mathbf a_2] denote the columns of [MATH: A\\mathbin{:}]\n[MATH: [|||; a_{1}|a_{2};|||]]\n\nContent:\nNotice that the error vector [MATH: \\boldsymbol{\\varepsilon}] is not orthogonal to the columns of [MATH: A\\mathbin{:}]\n\nContent:\n- Computing [MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_1,] we have\n[MATH: \u03b5 \u22c5 a_{1}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9; = (1)(1) + (4)(1) + (\u2212 4)(2); = \u2212 3; \u2260 0.]\n- Computing [MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_2,] we have\n[MATH: \u03b5 \u22c5 a_{2}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; 1]\u27e9; = (1)(\u2212 1) + (4)(0) + (\u2212 4)(1); = \u2212 5; \u2260 0.]\n\nContent:\nHowever, if we check the orthogonality with respect to the weighted dot product\n\nContent:\n[MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i = 4x_1y_1 + x_2y_2 + x_3y_3,\n\\quad]\n\nContent:\nwe obtain the following:\n\nContent:\n[MATH: \u27e8\u03b5, a_{1}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9_{W}; = 4(1)(1) + (4)(1) + (\u2212 4)(2); = 0\u2713; \u27e8\u03b5, a_{2}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; \u2212 1]\u27e9_{W}; = 4(1)(\u2212 1) + (4)(0) + (\u2212 4)(\u2212 1); = 0\u2713]\n\nContent:\nThis means that [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A)] with respect to the weighted dot product. We can write this as\n\nContent:\n[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\perp_W \\textrm{Col}(A).]\n\nContent:\nIn terms of vector spaces, the vector [MATH: A{\\hat{\\mathbf{x}}}] is the orthogonal projection with respect to [MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W] of the vector [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]\n\nContent:\nFurthermore, the weighted least-squares problem with weight matrix [MATH: W] is equivalent to finding a vector [MATH: {\\hat{\\mathbf{x}}}] such that\n\nContent:\n[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert_W]\nis as small as possible."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nLet's consider the least-squares problem [MATH: A\\mathbf{x}=\\mathbf{b},] where\n\nContent:\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]\n\nContent:\nRecall that the corresponding least-squares solution is a vector [MATH: {\\hat{\\mathbf{x}}}] such that\n\nContent:\n[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert]\nis as small as possible.\n\nContent:\nIn real-world problems, the coefficients stored in [MATH: A] might come from sources that are not equally reliable. For example, the coefficients might be collected from population surveys with different sample sizes. As a result, we might want to assign a greater \"weight\" to the more reliable data.\n\nContent:\nFor example, suppose we require the weight of the coefficients in the first row to be twice the weights of the other rows. Then, we can re-state our problem by saying that, for the matrix of weights [MATH: W,] given by\n\nContent:\n[MATH: [2|0|0; 0|1|0; 0|0|1]]\n\nContent:\nwe wish to find vectors [MATH: {\\hat{\\mathbf{x}}}] such that\n\nContent:\n[MATH: \\Vert W (A{\\hat{\\mathbf{x}}} - \\mathbf{b}) \\Vert]\nis as small as possible.\n\nContent:\nTherefore, instead of solving [MATH: A\\mathbf x = \\mathbf{b},] we now need to solve the least-squares problem\n\nContent:\n[MATH: W\\!A\\mathbf x = W\\mathbf{b}.]\n\nContent:\nTo get the normal equation corresponding to this least-squares problem, we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\nContent:\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nContent:\nNow, since\n\nContent:\n[MATH: [2^{2}|0|0; 0|1^{2}|0; 0|0|1^{2}]]\n\nContent:\nthe normal equation can be written as follows:\n\nContent:\n[MATH: [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][1|\u2212 1; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][4|0|0; 0|1|0; 0|0|1][9; 0; 18]; [1|1|2; \u2212 1|0|\u2212 1][4|\u2212 4; 1|0; 2|\u2212 1][x_{1}; x_{2}]|= [1|1|2; \u2212 1|0|\u2212 1][36; 0; 18]; [9|\u2212 6; \u2212 6|5][x_{1}; x_{2}]|= [72; \u2212 54]]\n\nContent:\nSolving the final equation, we obtain the least-squares solution [MATH: [4; \u2212 6]]\n\n---\n\nItem 2 \u2014 Example: Finding the Normal Equation for a Weighted Least-Squares Problem\n\nExample Prompt:\n[MATH: [1|0; 0|1; 1|2]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: \\mathbf{b}] above. If the normal equation for the corresponding weighted least-squares problem [MATH: W\\!A \\mathbf{x} = W\\mathbf{b}] is given by\n\n[MATH: [a|18; 18|b]]\n\nwhat is the value of [MATH: a+b+c?]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo get the normal equation corresponding to [MATH: W\\!A\\mathbf{x}=W\\mathbf{b},] we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nNow, since\n\n[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|3^{2}]]\n\nour normal equation can be written as follows:\n\n[MATH: [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][1|0; 0|1; 1|2][x_{1}; x_{2}]|= [1|0|1; 0|1|2][1|0|0; 0|4|0; 0|0|9][2; 0; 3]; [1|0|1; 0|1|2][1|0; 0|4; 9|18][x_{1}; x_{2}]|= [1|0|1; 0|1|2][2; 0; 27]; [10|18; 18|40][x_{1}; x_{2}]|= [29; 54]]\n\nTherefore, we have\n\n[MATH: a+b+c=10+40+54 = 104.]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n[MATH: A = [1|0; 4|4; 2|1], b = [4; 1; \u2212 1], W = [2|0|0; 0|1|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] above. If the normal equation for the corresponding weighted least-squares problem [MATH: WA = Wb] is given by\n\n[MATH: [a|18; 18|b][x_{1}; x_{2}] = [c; 3]]\n\nwhat is the value of [MATH: a + b + c?]\n\nChoices:\na. [MATH: \u2212 19]\nb. [MATH: 12]\nc. [MATH: \u2212 27]\nd. [MATH: 42]\ne. [MATH: 59]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n[MATH: A = [\u2212 4|3; 0|0; 8|\u2212 6], b = [4; 3; 1], W = [1|0|0; 0|2|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] above. If the normal equation for the corresponding weighted least-squares problem [MATH: WAx = Wb] is given by\n\n[MATH: [a|\u2212 60; \u2212 60|b][x_{1}; x_{2}] = [\u2212 8; c]]\n\nwhat is the value of [MATH: a + b + c?]\n\nChoices:\na. [MATH: 131]\nb. [MATH: 127]\nc. [MATH: 225]\nd. [MATH: 272]\ne. [MATH: 252]\n\n---\n\nItem 5 \u2014 Example: Finding the Solution to a Weighted Least-Squares Problem\n\nExample Prompt:\n[MATH: [1|\u2212 1; \u2212 2|2; \u2212 1|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: \\mathbf{b}] shown above. Find the general solution for the weighted least-squares problem [MATH: W\\!A\\mathbf{x}=W\\mathbf{b}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo get the normal equation corresponding to [MATH: W\\!A\\mathbf{x}=W\\mathbf{b},] we pre-multiply both sides of the equation by [MATH: (W\\!A)^T{:}]\n\n[MATH: (WA)^{T} \u22c5 WAx|= (WA)^{T} \u22c5 Wb; A^{T}(W^{T}W)Ax|= A^{T}(W^{T}W)b]\n\nNow, since\n\n[MATH: [1^{2}|0|0; 0|2^{2}|0; 0|0|2^{2}]]\n\nour normal equation can be written as follows:\n\n[MATH: [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][1|\u2212 1; \u2212 2|2; \u2212 1|1][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|0|0; 0|4|0; 0|0|4][\u2212 3; 0; 9]; [1|\u2212 2|\u2212 1; \u2212 1|2|1][1|\u2212 1; \u2212 8|8; \u2212 4|4][x_{1}; x_{2}]|= [1|\u2212 2|\u2212 1; \u2212 1|2|1][\u2212 3; 0; 36]; [21|\u2212 21; \u2212 21|21][x_{1}; x_{2}]|= [\u2212 39; 39]]\n\nNow, we solve the system corresponding to the above matrix equation using Gaussian elimination, as follows:\n[MATH: M|= [21|\u2212 21|\u2212 39; \u2212 21|21|39]|R_{2}:=R_{2} + R_{1}; \u223c[21|\u2212 21|\u2212 39; 0|0|0]]\n\nThe reduced matrix above has one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] is a free variable. From the first equation, we have\n[MATH: x_1=-\\dfrac{13}{7}+x_2.]\n\nHence, the general solution is\n\n[MATH: [\u2212 (13)/(7) + x_{2}; x_{2}]]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\nFind the solution for the weighted least-squares problem [MATH: WAx = Wb,] where\n\n[MATH: A = [1|\u2212 1; 1|0; 2|\u2212 1], b = [1; 2; 1], W = [2|0|0; 0|2|0; 0|0|1].]\n\nChoices:\na. [MATH: [\u2212 (4)/(3); 1]]\nb. [MATH: [3; 1]]\nc. [MATH: [2; 1]]\nd. [MATH: [(5)/(3); 1]]\ne. [MATH: [(5)/(3); \u2212 1]]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\n[MATH: A = [\u2212 2|1; 4|\u2212 2; \u2212 2|1], b = [3; 1; \u2212 5], W = [1|0|0; 0|2|0; 0|0|1]]\n\nConsider the matrices [MATH: A] and [MATH: W,] and the vector [MATH: b] shown above. If the general solution for the weighted least-squares problem [MATH: WAx = Wb] is\n[MATH: [a; 0] + x_{2}[b; c], x_{2} \u2208 R,]\nwhat is the value of [MATH: 9a + (b)/(c)?]\n\nChoices:\na. [MATH: 3]\nb. [MATH: \u2212 5]\nc. [MATH: 4]\nd. [MATH: 1]\ne. [MATH: \u2212 2]\n\n---\n\nItem 8 \u2014 Tutorial: A Geometric Interpretation of the Weighted Least-Squares Solution\n\nContent:\nRecall that if the solution [MATH: {\\hat{\\mathbf{x}}}] of the least-squares problem [MATH: A\\mathbf x=\\mathbf{b}] is unique, then [MATH: A{\\hat{\\mathbf{x}}}] lies in [MATH: \\textrm{Col}(A).] Furthermore, [MATH: A{\\hat{\\mathbf{x}}}] is the vector in [MATH: \\textrm{Col}(A)] that's closest to [MATH: \\mathbf b.]\n\nContent:\nIn terms of vector spaces, the vector [MATH: A{\\hat{\\mathbf{x}}}] is the orthogonal projection of [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.] Therefore, the error vector [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A).]\n\nGraphic:\n[IMG: /graphics/f8cc649840677fa8e964eb2a9b11bb84]\n\nContent:\nA similar property holds for weighted least-squares solutions:\n\nContent:\n> If the solution [MATH: {\\hat{\\mathbf{x}}}] of the least-squares problem [MATH: W\\!A\\mathbf x=W\\mathbf{b}] is unique, then\n> [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A)] with respect to the weighted dot product defined as\n> [MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i,]\n> where the [MATH: w_i]'s are the weights from the main diagonal of the weight matrix [MATH: W.]\n\nContent:\nWe previously considered the weighted least-squares problem [MATH: W\\!Ax=W\\mathbf{b},] where\n\nContent:\n[MATH: [1|\u2212 1; 1|0; 2|\u2212 1]]\n\nContent:\nIt's easy to show (using the usual techniques) that the unique weighted least-squares solution is given by\n\nContent:\n[MATH: [4; \u2212 6]]\n\nContent:\nComputing our error vector [MATH: \\boldsymbol{\\varepsilon} = A{\\hat{\\mathbf{x}}} - \\mathbf{b},] we get\n\nContent:\n[MATH: \u03b5|= Ax^(^) \u2212 b; = [1|\u2212 1; 1|0; 2|\u2212 1] \u22c5 [4; \u2212 6] \u2212 [9; 0; 8]; = [10; 4; 14] \u2212 [9; 0; 18]; = [1; 4; \u2212 4].]\n\nContent:\nNow, let [MATH: \\mathbf a_1] and [MATH: \\mathbf a_2] denote the columns of [MATH: A\\mathbin{:}]\n[MATH: [|||; a_{1}|a_{2};|||]]\n\nContent:\nNotice that the error vector [MATH: \\boldsymbol{\\varepsilon}] is not orthogonal to the columns of [MATH: A\\mathbin{:}]\n\nContent:\n- Computing [MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_1,] we have\n[MATH: \u03b5 \u22c5 a_{1}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9; = (1)(1) + (4)(1) + (\u2212 4)(2); = \u2212 3; \u2260 0.]\n- Computing [MATH: \\boldsymbol{\\varepsilon} \\cdot \\mathbf a_2,] we have\n[MATH: \u03b5 \u22c5 a_{2}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; 1]\u27e9; = (1)(\u2212 1) + (4)(0) + (\u2212 4)(1); = \u2212 5; \u2260 0.]\n\nContent:\nHowever, if we check the orthogonality with respect to the weighted dot product\n\nContent:\n[MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W = \\sum_{i=1}^n w_i^2 x_i y_i = 4x_1y_1 + x_2y_2 + x_3y_3,\n\\quad]\n\nContent:\nwe obtain the following:\n\nContent:\n[MATH: \u27e8\u03b5, a_{1}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [1; 1; 2]\u27e9_{W}; = 4(1)(1) + (4)(1) + (\u2212 4)(2); = 0\u2713; \u27e8\u03b5, a_{2}\u27e9_{W}|= \u27e8[1; 4; \u2212 4], [\u2212 1; 0; \u2212 1]\u27e9_{W}; = 4(1)(\u2212 1) + (4)(0) + (\u2212 4)(\u2212 1); = 0\u2713]\n\nContent:\nThis means that [MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b}] is orthogonal to [MATH: \\textrm{Col}(A)] with respect to the weighted dot product. We can write this as\n\nContent:\n[MATH: A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\perp_W \\textrm{Col}(A).]\n\nContent:\nIn terms of vector spaces, the vector [MATH: A{\\hat{\\mathbf{x}}}] is the orthogonal projection with respect to [MATH: \\langle \\mathbf{x}, \\mathbf{y} \\rangle_W] of the vector [MATH: \\mathbf{b}] onto the subspace spanned by the columns of [MATH: A.]\n\nContent:\nFurthermore, the weighted least-squares problem with weight matrix [MATH: W] is equivalent to finding a vector [MATH: {\\hat{\\mathbf{x}}}] such that\n\nContent:\n[MATH: \\Vert A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\Vert_W]\nis as small as possible."
+  }
+}

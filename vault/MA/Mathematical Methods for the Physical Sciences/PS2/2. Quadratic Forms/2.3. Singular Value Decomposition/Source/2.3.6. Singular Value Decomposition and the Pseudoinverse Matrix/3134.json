@@ -1,0 +1,1361 @@
+{
+  "schema_version": 2,
+  "topic_id": "3134",
+  "topic_title": "Singular Value Decomposition and the Pseudoinverse Matrix",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3134/Source/3134.html",
+  "source_url": "https://mathacademy.com/topics/3134",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "36962",
+        "dom_id": "sectionLink-36962",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-36962"
+      },
+      {
+        "index": 2,
+        "step_id": "37092",
+        "dom_id": "sectionLink-37092",
+        "name": "",
+        "title": "The Pseudoinverse of an Almost Diagonal Matrix",
+        "selector": "#sectionLink-37092"
+      },
+      {
+        "index": 3,
+        "step_id": "36966",
+        "dom_id": "sectionLink-36966",
+        "name": "",
+        "title": "Finding the Pseudoinverse of a Diagonal Matrix",
+        "selector": "#sectionLink-36966"
+      },
+      {
+        "index": 4,
+        "step_id": "37091",
+        "dom_id": "sectionLink-37091",
+        "name": "",
+        "title": "Finding the Pseudoinverse Using Singular Value Decomposition",
+        "selector": "#sectionLink-37091"
+      },
+      {
+        "index": 5,
+        "step_id": "36963",
+        "dom_id": "sectionLink-36963",
+        "name": "",
+        "title": "Finding the Pseudoinverse of a Matrix Given Its Singular Value Decomposition",
+        "selector": "#sectionLink-36963"
+      },
+      {
+        "index": 6,
+        "step_id": "36969",
+        "dom_id": "sectionLink-36969",
+        "name": "",
+        "title": "Reduced Singular Value Decomposition",
+        "selector": "#sectionLink-36969"
+      },
+      {
+        "index": 7,
+        "step_id": "36970",
+        "dom_id": "sectionLink-36970",
+        "name": "",
+        "title": "Finding the Pseudoinverse of a Matrix Given Its Reduced Singular Value Decomposition",
+        "selector": "#sectionLink-36970"
+      },
+      {
+        "index": 8,
+        "step_id": "36979",
+        "dom_id": "sectionLink-36979",
+        "name": "",
+        "title": "The Optimal Least-Squares Solution",
+        "selector": "#sectionLink-36979"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2167",
+        "name": "The Least-Squares Solution of a Linear System (With Collinearity)",
+        "href": "/topics/the-least-squares-solution-of-a-linear-system-with-collinearity-2167"
+      },
+      {
+        "topic_id": "3133",
+        "name": "Singular Value Decomposition of Larger Matrices",
+        "href": "/topics/singular-value-decomposition-of-larger-matrices-3133"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 14,
+    "step_count": 8,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "36962",
+        "content_id": "6074",
+        "dom_id": "step-36962",
+        "selector": "#step-36962",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The invertible matrix theorem tells us that if <span class=\"math\">[MATH: A]</span> is an <span class=\"math\">[MATH: n \\times n]</span> matrix with full rank (i.e., <span class=\"math\">[MATH: \\mathrm{rank}(A)=n]</span>), then there exists a unique inverse matrix <span class=\"math\">[MATH: A^{-1}]</span> such that </p>",
+            "readable_text": "The invertible matrix theorem tells us that if [MATH: A] is an [MATH: n \\times n] matrix with full rank (i.e., [MATH: \\mathrm{rank}(A)=n]), then there exists a unique inverse matrix [MATH: A^{-1}] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: AA^{-1}=A^{-1}\\!A=I_n,]</span></p>",
+            "readable_text": "[MATH: AA^{-1}=A^{-1}\\!A=I_n,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: I_n]</span> denotes the <span class=\"math\">[MATH: n \\times n]</span> identity matrix.</p>",
+            "readable_text": "where [MATH: I_n] denotes the [MATH: n \\times n] identity matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>There are two questions that we can ask:</p>",
+            "readable_text": "There are two questions that we can ask:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Can we extend the notion of an inverse matrix to one that works for <span class=\"math\">[MATH: n\\times n]</span> matrices <span class=\"math\">[MATH: A]</span> where <span class=\"math\">[MATH: \\mathrm{rank}(A) &lt; n?]</span></p></li><li><p>Is it possible to generalize the concept of an inverse to non-square matrices?</p></li></ul>",
+            "readable_text": "- Can we extend the notion of an inverse matrix to one that works for [MATH: n\\times n] matrices [MATH: A] where [MATH: \\mathrm{rank}(A) < n?]\n- Is it possible to generalize the concept of an inverse to non-square matrices?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The answer to both questions is yes! This generalization of the inverse of <span class=\"math\">[MATH: A]</span> is called the <strong>pseudoinverse</strong> of <span class=\"math\">[MATH: A,]</span> and is denoted <span class=\"math\">[MATH: A^+.]</span> The dimensions of <span class=\"math\">[MATH: A^+]</span> are the same as <span class=\"math\">[MATH: A^T.]</span></p>",
+            "readable_text": "The answer to both questions is yes! This generalization of the inverse of [MATH: A] is called the pseudoinverse of [MATH: A,] and is denoted [MATH: A^+.] The dimensions of [MATH: A^+] are the same as [MATH: A^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As an example, let&#x27;s consider the <span class=\"math\">[MATH: {\\color{red}{3}}\\times {\\color{blue}{2}}]</span> matrix <span class=\"math\">[MATH: A]</span> and its corresponding pseudoinverse, given below:</p>",
+            "readable_text": "As an example, let's consider the [MATH: {\\color{red}{3}}\\times {\\color{blue}{2}}] matrix [MATH: A] and its corresponding pseudoinverse, given below:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [5|0; 0|1; 0|0]]</span></p>",
+            "readable_text": "[MATH: [5|0; 0|1; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Computing <span class=\"math\">[MATH: A^{+}\\!A,]</span> we have\n<span class=\"math\">[MATH: A^{+}A|= (1)/(5)[1|0|0; 0|5|0] \u22c5 [5|0; 0|1; 0|0]; = [1|0; 0|1]]</span>\nwhich is the identity matrix <span class=\"math\">[MATH: I_{\\color{blue}{2}}.]</span></p></li><li><p>Computing <span class=\"math\">[MATH: A\\!A^{+},]</span> we have\n<span class=\"math\">[MATH: AA^{+}|= [5|0; 0|1; 0|0] \u22c5 (1)/(5)[1|0|0; 0|5|0]; = [1|0|0; 0|1|0; 0|0|0],]</span>\nwhich is <em>almost</em> the identity matrix <span class=\"math\">[MATH: I_{\\color{red}{3}}.]</span></p></li></ul>",
+            "readable_text": "- Computing [MATH: A^{+}\\!A,] we have\n[MATH: A^{+}A|= (1)/(5)[1|0|0; 0|5|0] \u22c5 [5|0; 0|1; 0|0]; = [1|0; 0|1]]\nwhich is the identity matrix [MATH: I_{\\color{blue}{2}}.]\n- Computing [MATH: A\\!A^{+},] we have\n[MATH: AA^{+}|= [5|0; 0|1; 0|0] \u22c5 (1)/(5)[1|0|0; 0|5|0]; = [1|0|0; 0|1|0; 0|0|0],]\nwhich is almost the identity matrix [MATH: I_{\\color{red}{3}}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can explain this result using the following properties of the pseudoinverse:</p>",
+            "readable_text": "We can explain this result using the following properties of the pseudoinverse:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><em>If the columns of an <span class=\"math\">[MATH: m\\times {\\color{blue}{n}}]</span> matrix <span class=\"math\">[MATH: A]</span> are linearly independent, then <span class=\"math\">[MATH: A^+A = I_{\\color{blue}{n}}.]</span></em></p></li><li><p><em>If the rows of an <span class=\"math\">[MATH: {\\color{red}{m}}\\times n]</span> matrix <span class=\"math\">[MATH: A]</span> are linearly independent, then <span class=\"math\">[MATH: AA^+ = I_{\\color{red}{m}}.]</span></em></p></li></ul>",
+            "readable_text": "- If the columns of an [MATH: m\\times {\\color{blue}{n}}] matrix [MATH: A] are linearly independent, then [MATH: A^+A = I_{\\color{blue}{n}}.]\n- If the rows of an [MATH: {\\color{red}{m}}\\times n] matrix [MATH: A] are linearly independent, then [MATH: AA^+ = I_{\\color{red}{m}}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the example above, the columns of <span class=\"math\">[MATH: A]</span> are linearly independent, but the rows are not.</p>",
+            "readable_text": "In the example above, the columns of [MATH: A] are linearly independent, but the rows are not.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Moreover, the notion of a pseudoinverse is consistent with inverse matrices. In particular,</p>",
+            "readable_text": "Moreover, the notion of a pseudoinverse is consistent with inverse matrices. In particular,",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p><em>If <span class=\"math\">[MATH: A]</span> is an invertible square matrix, then <span class=\"math\">[MATH: A^{+} = A^{-1}.]</span></em></p></blockquote>",
+            "readable_text": "> If [MATH: A] is an invertible square matrix, then [MATH: A^{+} = A^{-1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This lesson will discuss how to compute the pseudoinverse for any matrix, starting with an important special case.</p>",
+            "readable_text": "This lesson will discuss how to compute the pseudoinverse for any matrix, starting with an important special case.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThe invertible matrix theorem tells us that if [MATH: A] is an [MATH: n \\times n] matrix with full rank (i.e., [MATH: \\mathrm{rank}(A)=n]), then there exists a unique inverse matrix [MATH: A^{-1}] such that\n\nContent:\n[MATH: AA^{-1}=A^{-1}\\!A=I_n,]\n\nContent:\nwhere [MATH: I_n] denotes the [MATH: n \\times n] identity matrix.\n\nContent:\nThere are two questions that we can ask:\n\nContent:\n- Can we extend the notion of an inverse matrix to one that works for [MATH: n\\times n] matrices [MATH: A] where [MATH: \\mathrm{rank}(A) < n?]\n- Is it possible to generalize the concept of an inverse to non-square matrices?\n\nContent:\nThe answer to both questions is yes! This generalization of the inverse of [MATH: A] is called the pseudoinverse of [MATH: A,] and is denoted [MATH: A^+.] The dimensions of [MATH: A^+] are the same as [MATH: A^T.]\n\nContent:\nAs an example, let's consider the [MATH: {\\color{red}{3}}\\times {\\color{blue}{2}}] matrix [MATH: A] and its corresponding pseudoinverse, given below:\n\nContent:\n[MATH: [5|0; 0|1; 0|0]]\n\nContent:\n- Computing [MATH: A^{+}\\!A,] we have\n[MATH: A^{+}A|= (1)/(5)[1|0|0; 0|5|0] \u22c5 [5|0; 0|1; 0|0]; = [1|0; 0|1]]\nwhich is the identity matrix [MATH: I_{\\color{blue}{2}}.]\n- Computing [MATH: A\\!A^{+},] we have\n[MATH: AA^{+}|= [5|0; 0|1; 0|0] \u22c5 (1)/(5)[1|0|0; 0|5|0]; = [1|0|0; 0|1|0; 0|0|0],]\nwhich is almost the identity matrix [MATH: I_{\\color{red}{3}}.]\n\nContent:\nWe can explain this result using the following properties of the pseudoinverse:\n\nContent:\n- If the columns of an [MATH: m\\times {\\color{blue}{n}}] matrix [MATH: A] are linearly independent, then [MATH: A^+A = I_{\\color{blue}{n}}.]\n- If the rows of an [MATH: {\\color{red}{m}}\\times n] matrix [MATH: A] are linearly independent, then [MATH: AA^+ = I_{\\color{red}{m}}.]\n\nContent:\nIn the example above, the columns of [MATH: A] are linearly independent, but the rows are not.\n\nContent:\nMoreover, the notion of a pseudoinverse is consistent with inverse matrices. In particular,\n\nContent:\n> If [MATH: A] is an invertible square matrix, then [MATH: A^{+} = A^{-1}.]\n\nContent:\nThis lesson will discuss how to compute the pseudoinverse for any matrix, starting with an important special case."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37092",
+        "content_id": "6103",
+        "dom_id": "step-37092",
+        "selector": "#step-37092",
+        "step_anchor": "step-2",
+        "title": "The Pseudoinverse of an Almost Diagonal Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For an <em>almost</em> zero <span class=\"math\">[MATH: {\\color{red}{m}}\\times {\\color{blue}{n}}]</span> matrix with non-zero entries </p>",
+            "readable_text": "For an almost zero [MATH: {\\color{red}{m}}\\times {\\color{blue}{n}}] matrix with non-zero entries",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]</span></p>",
+            "readable_text": "[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>on the main diagonal only, the corresponding pseudoinverse is the <em>almost</em> zero <span class=\"math\">[MATH: {\\color{blue}{n}}\\times {\\color{red}{m}}]</span> matrix with non-zero entries </p>",
+            "readable_text": "on the main diagonal only, the corresponding pseudoinverse is the almost zero [MATH: {\\color{blue}{n}}\\times {\\color{red}{m}}] matrix with non-zero entries",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]</span></p>",
+            "readable_text": "[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>on the main diagonal only.</p>",
+            "readable_text": "on the main diagonal only.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, for the matrix <span class=\"math\">[MATH: A,]</span> given by</p>",
+            "readable_text": "For example, for the matrix [MATH: A,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3|0|0; 0|4|0]]</span></p>",
+            "readable_text": "[MATH: [3|0|0; 0|4|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>we calculate its pseudoinverse as follows:</p>",
+            "readable_text": "we calculate its pseudoinverse as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A^{+}|= [3|0|0; 0|4|0]^{+}; = [3^{\u2212 1}|0; 0|4^{\u2212 1}; 0|0]; = (1)/(12)[4|0; 0|3; 0|0]]</span></p>",
+            "readable_text": "[MATH: A^{+}|= [3|0|0; 0|4|0]^{+}; = [3^{\u2212 1}|0; 0|4^{\u2212 1}; 0|0]; = (1)/(12)[4|0; 0|3; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nFor an almost zero [MATH: {\\color{red}{m}}\\times {\\color{blue}{n}}] matrix with non-zero entries\n\nContent:\n[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]\n\nContent:\non the main diagonal only, the corresponding pseudoinverse is the almost zero [MATH: {\\color{blue}{n}}\\times {\\color{red}{m}}] matrix with non-zero entries\n\nContent:\n[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]\n\nContent:\non the main diagonal only.\n\nContent:\nFor example, for the matrix [MATH: A,] given by\n\nContent:\n[MATH: [3|0|0; 0|4|0]]\n\nContent:\nwe calculate its pseudoinverse as follows:\n\nContent:\n[MATH: A^{+}|= [3|0|0; 0|4|0]^{+}; = [3^{\u2212 1}|0; 0|4^{\u2212 1}; 0|0]; = (1)/(12)[4|0; 0|3; 0|0]]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36966",
+        "content_id": "9829",
+        "dom_id": "step-36966",
+        "selector": "#step-36966",
+        "step_anchor": "step-3",
+        "title": "Finding the Pseudoinverse of a Diagonal Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>For the matrix \n<span class=\"math\">[MATH: [6|0; 0|4; 0|0]]</span> find the pseudoinverse <span class=\"math\">[MATH: A^+.]</span></p>",
+            "readable_text": "For the matrix\n[MATH: [6|0; 0|4; 0|0]] find the pseudoinverse [MATH: A^+.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an &quot;almost&quot; zero <span class=\"math\">[MATH: m \\times n]</span> matrix with non-zero entries </p><p><span class=\"math\">[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]</span></p><p>on the main diagonal, the corresponding pseudoinverse is the &quot;almost&quot; zero <span class=\"math\">[MATH: n \\times m]</span> matrix with entries </p><p><span class=\"math\">[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]</span></p><p>on the main diagonal.</p><p>Therefore, we obtain </p><p><span class=\"math\">[MATH: A^{+}|= [6|0; 0|4; 0|0]^{+}; = [6^{\u2212 1}|0|0; 0|4^{\u2212 1}|0]; = (1)/(12)[2|0|0; 0|3|0].]</span> </p>",
+            "readable_text": "For an \"almost\" zero [MATH: m \\times n] matrix with non-zero entries\n\n[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]\n\non the main diagonal, the corresponding pseudoinverse is the \"almost\" zero [MATH: n \\times m] matrix with entries\n\n[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]\n\non the main diagonal.\n\nTherefore, we obtain\n\n[MATH: A^{+}|= [6|0; 0|4; 0|0]^{+}; = [6^{\u2212 1}|0|0; 0|4^{\u2212 1}|0]; = (1)/(12)[2|0|0; 0|3|0].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFor the matrix\n[MATH: [6|0; 0|4; 0|0]] find the pseudoinverse [MATH: A^+.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an \"almost\" zero [MATH: m \\times n] matrix with non-zero entries\n\n[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]\n\non the main diagonal, the corresponding pseudoinverse is the \"almost\" zero [MATH: n \\times m] matrix with entries\n\n[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]\n\non the main diagonal.\n\nTherefore, we obtain\n\n[MATH: A^{+}|= [6|0; 0|4; 0|0]^{+}; = [6^{\u2212 1}|0|0; 0|4^{\u2212 1}|0]; = (1)/(12)[2|0|0; 0|3|0].]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "136990",
+        "dom_id": "question-136990",
+        "selector": "#question-136990",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>For the matrix \n<span class=\"math\">[MATH: A = [2|0|0; 0|5|0],]</span> find the pseudoinverse <span class=\"math\">[MATH: A^{+}.]</span></p>",
+          "readable_text": "For the matrix\n[MATH: A = [2|0|0; 0|5|0],] find the pseudoinverse [MATH: A^{+}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-136990-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[5|0|0; 0|2|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(10)[5|0|0; 0|2|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-136990-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[2|0; 0|5; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(10)[2|0; 0|5; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-136990-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[5|0; 0|2; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(10)[5|0; 0|2; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-136990-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[2|0|0; 0|5|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(10)[2|0|0; 0|5|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-136990-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[\u2212 5|0; 0|\u2212 2; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(10)[\u2212 5|0; 0|\u2212 2; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFor the matrix\n[MATH: A = [2|0|0; 0|5|0],] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(10)[5|0|0; 0|2|0]]\nb. [MATH: (1)/(10)[2|0; 0|5; 0|0]]\nc. [MATH: (1)/(10)[5|0; 0|2; 0|0]]\nd. [MATH: (1)/(10)[2|0|0; 0|5|0]]\ne. [MATH: (1)/(10)[\u2212 5|0; 0|\u2212 2; 0|0]]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "136991",
+        "dom_id": "question-136991",
+        "selector": "#question-136991",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>For the matrix \n<span class=\"math\">[MATH: A = [3|0; 0|0],]</span> find the pseudoinverse <span class=\"math\">[MATH: A^{+}.]</span></p>",
+          "readable_text": "For the matrix\n[MATH: A = [3|0; 0|0],] find the pseudoinverse [MATH: A^{+}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-136991-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[0|0; 0|1]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[0|0; 0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-136991-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[0|0; 0|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[0|0; 0|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-136991-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[1|0; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[1|0; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-136991-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[1|0; 0|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[1|0; 0|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-136991-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[\u2212 1|0; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[\u2212 1|0; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFor the matrix\n[MATH: A = [3|0; 0|0],] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(3)[0|0; 0|1]]\nb. [MATH: (1)/(3)[0|0; 0|\u2212 1]]\nc. [MATH: (1)/(3)[1|0; 0|0]]\nd. [MATH: (1)/(3)[1|0; 0|\u2212 1]]\ne. [MATH: (1)/(3)[\u2212 1|0; 0|0]]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37091",
+        "content_id": "6102",
+        "dom_id": "step-37091",
+        "selector": "#step-37091",
+        "step_anchor": "step-6",
+        "title": "Finding the Pseudoinverse Using Singular Value Decomposition",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>There are many ways to find the pseudoinverse of a given matrix <span class=\"math\">[MATH: A.]</span> One way is to use the singular value decomposition of <span class=\"math\">[MATH: A{:}]</span></p>",
+            "readable_text": "There are many ways to find the pseudoinverse of a given matrix [MATH: A.] One way is to use the singular value decomposition of [MATH: A{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Specifically, if \n<span class=\"math\">[MATH: A=U \\Sigma V ^T]</span>\nis a singular value decomposition of <span class=\"math\">[MATH: A,]</span> then the pseudoinverse of <span class=\"math\">[MATH: A]</span> is given by\n<span class=\"math\">[MATH: A^+ = V \\, \\Sigma^+ \\, U^T,]</span> \nwhere <span class=\"math\">[MATH: \\Sigma^+]</span> is the pseudoinverse of <span class=\"math\">[MATH: \\Sigma.]</span></p>",
+            "readable_text": "Specifically, if\n[MATH: A=U \\Sigma V ^T]\nis a singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n[MATH: A^+ = V \\, \\Sigma^+ \\, U^T,]\nwhere [MATH: \\Sigma^+] is the pseudoinverse of [MATH: \\Sigma.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThere are many ways to find the pseudoinverse of a given matrix [MATH: A.] One way is to use the singular value decomposition of [MATH: A{:}]\n\nContent:\nSpecifically, if\n[MATH: A=U \\Sigma V ^T]\nis a singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n[MATH: A^+ = V \\, \\Sigma^+ \\, U^T,]\nwhere [MATH: \\Sigma^+] is the pseudoinverse of [MATH: \\Sigma.]"
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36963",
+        "content_id": "9828",
+        "dom_id": "step-36963",
+        "selector": "#step-36963",
+        "step_anchor": "step-7",
+        "title": "Finding the Pseudoinverse of a Matrix Given Its Singular Value Decomposition",
+        "key_prerequisites": [
+          {
+            "topic_id": "3133",
+            "name": "Singular Value Decomposition of Larger Matrices",
+            "href": "/topics/3133",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=U \\Sigma V^T]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find the pseudoinverse <span class=\"math\">[MATH: A^+.]</span></p>",
+            "readable_text": "[MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^+.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>If <span class=\"math\">[MATH: A=U \\Sigma V ^T]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> then the pseudoinverse of <span class=\"math\">[MATH: A]</span> is given by</p><p><span class=\"math\">[MATH: V \\, \\Sigma^+ \\, U^T,]</span></p><p>where <span class=\"math\">[MATH: \\Sigma^+]</span> is the pseudoinverse of <span class=\"math\">[MATH: \\Sigma.]</span> </p><p>First, notice that</p><p><span class=\"math\">[MATH: [1|0; 0|1]]</span></p><p>Therefore, we have</p><p><span class=\"math\">[MATH: A^{+}|= V\u03a3^{+}U^{T}; = [1|0; 0|1] \u22c5 (1)/(5)[1|0|0; 0|0|0] \u22c5 (1)/(5)[4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0; 0|1] \u22c5 [1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[4|3|0; 0|0|0].]</span></p>",
+            "readable_text": "If [MATH: A=U \\Sigma V ^T] is a singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n\n[MATH: V \\, \\Sigma^+ \\, U^T,]\n\nwhere [MATH: \\Sigma^+] is the pseudoinverse of [MATH: \\Sigma.]\n\nFirst, notice that\n\n[MATH: [1|0; 0|1]]\n\nTherefore, we have\n\n[MATH: A^{+}|= V\u03a3^{+}U^{T}; = [1|0; 0|1] \u22c5 (1)/(5)[1|0|0; 0|0|0] \u22c5 (1)/(5)[4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0; 0|1] \u22c5 [1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[4|3|0; 0|0|0].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^+.]\n\nContent:\nEXPLANATION\n\nExplanation:\nIf [MATH: A=U \\Sigma V ^T] is a singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n\n[MATH: V \\, \\Sigma^+ \\, U^T,]\n\nwhere [MATH: \\Sigma^+] is the pseudoinverse of [MATH: \\Sigma.]\n\nFirst, notice that\n\n[MATH: [1|0; 0|1]]\n\nTherefore, we have\n\n[MATH: A^{+}|= V\u03a3^{+}U^{T}; = [1|0; 0|1] \u22c5 (1)/(5)[1|0|0; 0|0|0] \u22c5 (1)/(5)[4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0; 0|1] \u22c5 [1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[4|3|0; 0|0|0].]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "136973",
+        "dom_id": "question-136973",
+        "selector": "#question-136973",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: U = [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))], \u03a3 = [5sqrt(2)|0; 0|0], V = [\u2212 (3)/(5)|(4)/(5); (4)/(5)|(3)/(5)]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find the pseudoinverse <span class=\"math\">[MATH: A^{+}.]</span></p>",
+          "readable_text": "[MATH: U = [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))], \u03a3 = [5sqrt(2)|0; 0|0], V = [\u2212 (3)/(5)|(4)/(5); (4)/(5)|(3)/(5)]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-136973-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(25)[3|\u2212 3; \u2212 4|4]]</span></p>",
+            "readable_text": "[MATH: (1)/(25)[3|\u2212 3; \u2212 4|4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-136973-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(25)[\u2212 3|4; 4|\u2212 3]]</span></p>",
+            "readable_text": "[MATH: (1)/(25)[\u2212 3|4; 4|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-136973-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(50)[3|\u2212 3; \u2212 4|4]]</span></p>",
+            "readable_text": "[MATH: (1)/(50)[3|\u2212 3; \u2212 4|4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-136973-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(50)[\u2212 4|4; 3|\u2212 3]]</span></p>",
+            "readable_text": "[MATH: (1)/(50)[\u2212 4|4; 3|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-136973-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(50)[\u2212 3|4; 4|\u2212 3]]</span></p>",
+            "readable_text": "[MATH: (1)/(50)[\u2212 3|4; 4|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: U = [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))], \u03a3 = [5sqrt(2)|0; 0|0], V = [\u2212 (3)/(5)|(4)/(5); (4)/(5)|(3)/(5)]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(25)[3|\u2212 3; \u2212 4|4]]\nb. [MATH: (1)/(25)[\u2212 3|4; 4|\u2212 3]]\nc. [MATH: (1)/(50)[3|\u2212 3; \u2212 4|4]]\nd. [MATH: (1)/(50)[\u2212 4|4; 3|\u2212 3]]\ne. [MATH: (1)/(50)[\u2212 3|4; 4|\u2212 3]]"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "136972",
+        "dom_id": "question-136972",
+        "selector": "#question-136972",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: U = [\u2212 (1)/(sqrt(5))|0|(2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5)); 0|1|0], \u03a3 = [5|0; 0|0; 0|0], V = [\u2212 (1)/(sqrt(5))|(2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U\u03a3V^{T}]</span> is a singular value decomposition of <span class=\"math\">[MATH: A,]</span> find the pseudoinverse <span class=\"math\">[MATH: A^{+}.]</span></p>",
+          "readable_text": "[MATH: U = [\u2212 (1)/(sqrt(5))|0|(2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5)); 0|1|0], \u03a3 = [5|0; 0|0; 0|0], V = [\u2212 (1)/(sqrt(5))|(2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-136972-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(16)[1|\u2212 2; \u2212 2|4; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(16)[1|\u2212 2; \u2212 2|4; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-136972-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(25)[\u2212 2|1; 4|\u2212 2; 0|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(25)[\u2212 2|1; 4|\u2212 2; 0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-136972-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(25)[1|\u2212 2|0; \u2212 2|4|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(25)[1|\u2212 2|0; \u2212 2|4|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-136972-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(16)[1|\u2212 2|0; \u2212 2|4|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(16)[1|\u2212 2|0; \u2212 2|4|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-136972-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(25)[\u2212 2|4|0; 1|\u2212 2|0]]</span></p>",
+            "readable_text": "[MATH: (1)/(25)[\u2212 2|4|0; 1|\u2212 2|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: U = [\u2212 (1)/(sqrt(5))|0|(2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5)); 0|1|0], \u03a3 = [5|0; 0|0; 0|0], V = [\u2212 (1)/(sqrt(5))|(2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(16)[1|\u2212 2; \u2212 2|4; 0|0]]\nb. [MATH: (1)/(25)[\u2212 2|1; 4|\u2212 2; 0|0]]\nc. [MATH: (1)/(25)[1|\u2212 2|0; \u2212 2|4|0]]\nd. [MATH: (1)/(16)[1|\u2212 2|0; \u2212 2|4|0]]\ne. [MATH: (1)/(25)[\u2212 2|4|0; 1|\u2212 2|0]]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "36969",
+        "content_id": "6075",
+        "dom_id": "step-36969",
+        "selector": "#step-36969",
+        "step_anchor": "step-10",
+        "title": "Reduced Singular Value Decomposition",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the matrix</p>",
+            "readable_text": "Consider the matrix",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4|0; 3|0; 0|2]]</span></p>",
+            "readable_text": "[MATH: [4|0; 3|0; 0|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>and its singular value decomposition <span class=\"math\">[MATH: A=U \\Sigma V ^T,]</span> where</p>",
+            "readable_text": "and its singular value decomposition [MATH: A=U \\Sigma V ^T,] where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]]</span></p>",
+            "readable_text": "[MATH: [(4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: \\Sigma]</span> contains a row of zeros. In these situations, it&#x27;s possible to simplify the decomposition of <span class=\"math\">[MATH: A.]</span> This simplified decomposition is called the <strong>reduced singular value decomposition</strong> of <span class=\"math\">[MATH: A.]</span></p>",
+            "readable_text": "Notice that [MATH: \\Sigma] contains a row of zeros. In these situations, it's possible to simplify the decomposition of [MATH: A.] This simplified decomposition is called the reduced singular value decomposition of [MATH: A.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, we note that <span class=\"math\">[MATH: A]</span> is a <span class=\"math\">[MATH: 3 \\times 2]</span> matrix. In addition, the matrix <span class=\"math\">[MATH: \\Sigma]</span> has two non-zero singular values on its main diagonal, so the rank of <span class=\"math\">[MATH: A]</span> is <span class=\"math\">[MATH: \\color{blue}r=2.]</span> </p>",
+            "readable_text": "First, we note that [MATH: A] is a [MATH: 3 \\times 2] matrix. In addition, the matrix [MATH: \\Sigma] has two non-zero singular values on its main diagonal, so the rank of [MATH: A] is [MATH: \\color{blue}r=2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find our reduced SVD, we proceed as follows:</p>",
+            "readable_text": "To find our reduced SVD, we proceed as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>First, we remove all zero rows and columns from <span class=\"math\">[MATH: \\Sigma.]</span> In our example, we should delete the <span class=\"math\">[MATH: 3]</span>rd row since it contains only zeros. Notice that we obtain a square invertible matrix of rank <span class=\"math\">[MATH: {\\color{blue}2}{:}]</span>\n<span class=\"math\">[MATH: [5|0; 0|2; 0|0]]</span></p></li><li><p>Next, we remove all extra columns of <span class=\"math\">[MATH: U]</span> starting from the right, keeping only <span class=\"math\">[MATH: \\color{blue}2]</span> columns. In our example, we should delete the <span class=\"math\">[MATH: 3]</span>rd column:<br/><span class=\"math\">[MATH: (4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]</span> </p></li><li><p>Finally, we remove all extra columns of <span class=\"math\">[MATH: V]</span> starting from the right, keeping only <span class=\"math\">[MATH: \\color{blue}2]</span> columns. In our example, we should keep <span class=\"math\">[MATH: V]</span> as it is since it already has only <span class=\"math\">[MATH: 2]</span> columns: \n<span class=\"math\">[MATH: [1|0; 0|1]]</span> </p></li></ul>",
+            "readable_text": "- First, we remove all zero rows and columns from [MATH: \\Sigma.] In our example, we should delete the [MATH: 3]rd row since it contains only zeros. Notice that we obtain a square invertible matrix of rank [MATH: {\\color{blue}2}{:}]\n[MATH: [5|0; 0|2; 0|0]]\n- Next, we remove all extra columns of [MATH: U] starting from the right, keeping only [MATH: \\color{blue}2] columns. In our example, we should delete the [MATH: 3]rd column:\n[MATH: (4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]\n- Finally, we remove all extra columns of [MATH: V] starting from the right, keeping only [MATH: \\color{blue}2] columns. In our example, we should keep [MATH: V] as it is since it already has only [MATH: 2] columns:\n[MATH: [1|0; 0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The reduced singular value decomposition of <span class=\"math\">[MATH: A]</span> is then given by</p>",
+            "readable_text": "The reduced singular value decomposition of [MATH: A] is then given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A = U_r \\Sigma_r V_r^T.]</span></p>",
+            "readable_text": "[MATH: A = U_r \\Sigma_r V_r^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, in our example, we have</p>",
+            "readable_text": "So, in our example, we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(4)/(5)|0; (3)/(5)|0; 0|1]]</span></p>",
+            "readable_text": "[MATH: [(4)/(5)|0; (3)/(5)|0; 0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In general, a singular value decomposition </p>",
+            "readable_text": "In general, a singular value decomposition",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A=U \\Sigma V^T]</span> </p>",
+            "readable_text": "[MATH: A=U \\Sigma V^T]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>of an <span class=\"math\">[MATH: m \\times n]</span> matrix <span class=\"math\">[MATH: A]</span> is not unique. However, we can always simplify it to the corresponding reduced singular value decomposition </p>",
+            "readable_text": "of an [MATH: m \\times n] matrix [MATH: A] is not unique. However, we can always simplify it to the corresponding reduced singular value decomposition",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A=U_r \\Sigma_r V_r^T]</span> </p>",
+            "readable_text": "[MATH: A=U_r \\Sigma_r V_r^T]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>with the following properties:</p>",
+            "readable_text": "with the following properties:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: \\Sigma_r]</span> is a square diagonal matrix of size <span class=\"math\">[MATH: r\\times r,]</span> where <span class=\"math\">[MATH: r\\leq \\min\\{m,n\\}]</span> is the rank of <span class=\"math\">[MATH: A.]</span> The main diagonal of <span class=\"math\">[MATH: \\Sigma_r]</span> contains the non-zero singular values <span class=\"math\">[MATH: \\sigma_1, \\sigma_2, \\ldots, \\sigma_r]</span> of <span class=\"math\">[MATH: A]</span> in descending order. </p></li><li><p><span class=\"math\">[MATH: U_r]</span> is a <span class=\"math\">[MATH: m\\times r]</span> matrix obtained by keeping only the first <span class=\"math\">[MATH: r]</span> columns of <span class=\"math\">[MATH: U.]</span> </p></li><li><p><span class=\"math\">[MATH: V_r]</span> is a <span class=\"math\">[MATH: n \\times r]</span> matrix obtained by keeping only the first <span class=\"math\">[MATH: r]</span> columns of <span class=\"math\">[MATH: V.]</span> </p></li></ul>",
+            "readable_text": "- [MATH: \\Sigma_r] is a square diagonal matrix of size [MATH: r\\times r,] where [MATH: r\\leq \\min\\{m,n\\}] is the rank of [MATH: A.] The main diagonal of [MATH: \\Sigma_r] contains the non-zero singular values [MATH: \\sigma_1, \\sigma_2, \\ldots, \\sigma_r] of [MATH: A] in descending order.\n- [MATH: U_r] is a [MATH: m\\times r] matrix obtained by keeping only the first [MATH: r] columns of [MATH: U.]\n- [MATH: V_r] is a [MATH: n \\times r] matrix obtained by keeping only the first [MATH: r] columns of [MATH: V.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConsider the matrix\n\nContent:\n[MATH: [4|0; 3|0; 0|2]]\n\nContent:\nand its singular value decomposition [MATH: A=U \\Sigma V ^T,] where\n\nContent:\n[MATH: [(4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]]\n\nContent:\nNotice that [MATH: \\Sigma] contains a row of zeros. In these situations, it's possible to simplify the decomposition of [MATH: A.] This simplified decomposition is called the reduced singular value decomposition of [MATH: A.]\n\nContent:\nFirst, we note that [MATH: A] is a [MATH: 3 \\times 2] matrix. In addition, the matrix [MATH: \\Sigma] has two non-zero singular values on its main diagonal, so the rank of [MATH: A] is [MATH: \\color{blue}r=2.]\n\nContent:\nTo find our reduced SVD, we proceed as follows:\n\nContent:\n- First, we remove all zero rows and columns from [MATH: \\Sigma.] In our example, we should delete the [MATH: 3]rd row since it contains only zeros. Notice that we obtain a square invertible matrix of rank [MATH: {\\color{blue}2}{:}]\n[MATH: [5|0; 0|2; 0|0]]\n- Next, we remove all extra columns of [MATH: U] starting from the right, keeping only [MATH: \\color{blue}2] columns. In our example, we should delete the [MATH: 3]rd column:\n[MATH: (4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]\n- Finally, we remove all extra columns of [MATH: V] starting from the right, keeping only [MATH: \\color{blue}2] columns. In our example, we should keep [MATH: V] as it is since it already has only [MATH: 2] columns:\n[MATH: [1|0; 0|1]]\n\nContent:\nThe reduced singular value decomposition of [MATH: A] is then given by\n\nContent:\n[MATH: A = U_r \\Sigma_r V_r^T.]\n\nContent:\nSo, in our example, we have\n\nContent:\n[MATH: [(4)/(5)|0; (3)/(5)|0; 0|1]]\n\nContent:\nIn general, a singular value decomposition\n\nContent:\n[MATH: A=U \\Sigma V^T]\n\nContent:\nof an [MATH: m \\times n] matrix [MATH: A] is not unique. However, we can always simplify it to the corresponding reduced singular value decomposition\n\nContent:\n[MATH: A=U_r \\Sigma_r V_r^T]\n\nContent:\nwith the following properties:\n\nContent:\n- [MATH: \\Sigma_r] is a square diagonal matrix of size [MATH: r\\times r,] where [MATH: r\\leq \\min\\{m,n\\}] is the rank of [MATH: A.] The main diagonal of [MATH: \\Sigma_r] contains the non-zero singular values [MATH: \\sigma_1, \\sigma_2, \\ldots, \\sigma_r] of [MATH: A] in descending order.\n- [MATH: U_r] is a [MATH: m\\times r] matrix obtained by keeping only the first [MATH: r] columns of [MATH: U.]\n- [MATH: V_r] is a [MATH: n \\times r] matrix obtained by keeping only the first [MATH: r] columns of [MATH: V.]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36970",
+        "content_id": "9830",
+        "dom_id": "step-36970",
+        "selector": "#step-36970",
+        "step_anchor": "step-11",
+        "title": "Finding the Pseudoinverse of a Matrix Given Its Reduced Singular Value Decomposition",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(3)/(5); (4)/(5); 0]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=U_r \\Sigma_r V_r^T]</span> is a reduced singular value decomposition of <span class=\"math\">[MATH: A,]</span> find the pseudoinverse <span class=\"math\">[MATH: A^+.]</span> </p>",
+            "readable_text": "[MATH: [(3)/(5); (4)/(5); 0]]\nConsider the matrices shown above. Given that [MATH: A=U_r \\Sigma_r V_r^T] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^+.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>If <span class=\"math\">[MATH: A=U_r \\Sigma_r V_r ^T]</span> is a reduced singular value decomposition of <span class=\"math\">[MATH: A,]</span> then the pseudoinverse of <span class=\"math\">[MATH: A]</span> is given by</p><p><span class=\"math\">[MATH: V_r \\, \\Sigma_r^+ \\, U_r^T,]</span></p><p>where <span class=\"math\">[MATH: \\Sigma_r^+]</span> is the pseudoinverse of <span class=\"math\">[MATH: \\Sigma_r.]</span></p><p>First, notice that</p><p><span class=\"math\">[MATH: [4; 3]]</span></p><p>Therefore, we have</p><p><span class=\"math\">[MATH: A^{+}|= V_{r}\u03a3_{r}^{+}U_{r}^{T}; = (1)/(5)[4; 3] \u22c5 (1)/(2)[1] \u22c5 (1)/(5)[3|4|0]; = (1)/(50)[4; 3] \u22c5 [1] \u22c5 [3|4|0]; = (1)/(50)[4; 3] \u22c5 [3|4|0]; = (1)/(50)[12|16|0; 9|12|0].]</span> </p>",
+            "readable_text": "If [MATH: A=U_r \\Sigma_r V_r ^T] is a reduced singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n\n[MATH: V_r \\, \\Sigma_r^+ \\, U_r^T,]\n\nwhere [MATH: \\Sigma_r^+] is the pseudoinverse of [MATH: \\Sigma_r.]\n\nFirst, notice that\n\n[MATH: [4; 3]]\n\nTherefore, we have\n\n[MATH: A^{+}|= V_{r}\u03a3_{r}^{+}U_{r}^{T}; = (1)/(5)[4; 3] \u22c5 (1)/(2)[1] \u22c5 (1)/(5)[3|4|0]; = (1)/(50)[4; 3] \u22c5 [1] \u22c5 [3|4|0]; = (1)/(50)[4; 3] \u22c5 [3|4|0]; = (1)/(50)[12|16|0; 9|12|0].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [(3)/(5); (4)/(5); 0]]\nConsider the matrices shown above. Given that [MATH: A=U_r \\Sigma_r V_r^T] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^+.]\n\nContent:\nEXPLANATION\n\nExplanation:\nIf [MATH: A=U_r \\Sigma_r V_r ^T] is a reduced singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n\n[MATH: V_r \\, \\Sigma_r^+ \\, U_r^T,]\n\nwhere [MATH: \\Sigma_r^+] is the pseudoinverse of [MATH: \\Sigma_r.]\n\nFirst, notice that\n\n[MATH: [4; 3]]\n\nTherefore, we have\n\n[MATH: A^{+}|= V_{r}\u03a3_{r}^{+}U_{r}^{T}; = (1)/(5)[4; 3] \u22c5 (1)/(2)[1] \u22c5 (1)/(5)[3|4|0]; = (1)/(50)[4; 3] \u22c5 [1] \u22c5 [3|4|0]; = (1)/(50)[4; 3] \u22c5 [3|4|0]; = (1)/(50)[12|16|0; 9|12|0].]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "138622",
+        "dom_id": "question-138622",
+        "selector": "#question-138622",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: U_{r} = [(1)/(sqrt(2)); \u2212 (1)/(sqrt(2))], \u03a3_{r} = [sqrt(10)], V_{r} = [(1)/(sqrt(5)); (2)/(sqrt(5))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U_{r}\u03a3_{r}V_{r}^{T}]</span> is a reduced singular value decomposition of <span class=\"math\">[MATH: A,]</span> find the pseudoinverse <span class=\"math\">[MATH: A^{+}.]</span></p>",
+          "readable_text": "[MATH: U_{r} = [(1)/(sqrt(2)); \u2212 (1)/(sqrt(2))], \u03a3_{r} = [sqrt(10)], V_{r} = [(1)/(sqrt(5)); (2)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U_{r}\u03a3_{r}V_{r}^{T}] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-138622-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[\u2212 1|1; \u2212 2|2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(10)[\u2212 1|1; \u2212 2|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-138622-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[1|\u2212 2; 2|\u2212 1]]</span> </p>",
+            "readable_text": "[MATH: (1)/(10)[1|\u2212 2; 2|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-138622-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[1|1; \u2212 2|\u2212 2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(10)[1|1; \u2212 2|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-138622-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[2|\u2212 1; 1|\u2212 2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(10)[2|\u2212 1; 1|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-138622-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(10)[1|\u2212 1; 2|\u2212 2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(10)[1|\u2212 1; 2|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: U_{r} = [(1)/(sqrt(2)); \u2212 (1)/(sqrt(2))], \u03a3_{r} = [sqrt(10)], V_{r} = [(1)/(sqrt(5)); (2)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U_{r}\u03a3_{r}V_{r}^{T}] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(10)[\u2212 1|1; \u2212 2|2]]\nb. [MATH: (1)/(10)[1|\u2212 2; 2|\u2212 1]]\nc. [MATH: (1)/(10)[1|1; \u2212 2|\u2212 2]]\nd. [MATH: (1)/(10)[2|\u2212 1; 1|\u2212 2]]\ne. [MATH: (1)/(10)[1|\u2212 1; 2|\u2212 2]]"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "136992",
+        "dom_id": "question-136992",
+        "selector": "#question-136992",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: U_{r} = [\u2212 (1)/(3sqrt(2))|\u2212 (1)/(sqrt(2)); (4)/(3sqrt(2))|0; \u2212 (1)/(3sqrt(2))|(1)/(sqrt(2))], \u03a3_{r} = [6|0; 0|4], V_{r} = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = U_{r}\u03a3_{r}V_{r}^{T}]</span> is a reduced singular value decomposition of <span class=\"math\">[MATH: A,]</span> find the pseudoinverse <span class=\"math\">[MATH: A^{+}.]</span></p>",
+          "readable_text": "[MATH: U_{r} = [\u2212 (1)/(3sqrt(2))|\u2212 (1)/(sqrt(2)); (4)/(3sqrt(2))|0; \u2212 (1)/(3sqrt(2))|(1)/(sqrt(2))], \u03a3_{r} = [6|0; 0|4], V_{r} = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U_{r}\u03a3_{r}V_{r}^{T}] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-136992-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(72)[\u2212 11|8|7; 7|8|\u2212 11]]</span></p>",
+            "readable_text": "[MATH: (1)/(72)[\u2212 11|8|7; 7|8|\u2212 11]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-136992-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(72)[\u2212 11|7; 8|8; 7|\u2212 11]]</span></p>",
+            "readable_text": "[MATH: (1)/(72)[\u2212 11|7; 8|8; 7|\u2212 11]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-136992-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(144)[5|6|\u2212 13; \u2212 13|6|5]]</span></p>",
+            "readable_text": "[MATH: (1)/(144)[5|6|\u2212 13; \u2212 13|6|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-136992-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(72)[7|8|\u2212 11; \u2212 11|8|7]]</span></p>",
+            "readable_text": "[MATH: (1)/(72)[7|8|\u2212 11; \u2212 11|8|7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-136992-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(144)[5|\u2212 13; 6|6; \u2212 13|5]]</span></p>",
+            "readable_text": "[MATH: (1)/(144)[5|\u2212 13; 6|6; \u2212 13|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: U_{r} = [\u2212 (1)/(3sqrt(2))|\u2212 (1)/(sqrt(2)); (4)/(3sqrt(2))|0; \u2212 (1)/(3sqrt(2))|(1)/(sqrt(2))], \u03a3_{r} = [6|0; 0|4], V_{r} = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U_{r}\u03a3_{r}V_{r}^{T}] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(72)[\u2212 11|8|7; 7|8|\u2212 11]]\nb. [MATH: (1)/(72)[\u2212 11|7; 8|8; 7|\u2212 11]]\nc. [MATH: (1)/(144)[5|6|\u2212 13; \u2212 13|6|5]]\nd. [MATH: (1)/(72)[7|8|\u2212 11; \u2212 11|8|7]]\ne. [MATH: (1)/(144)[5|\u2212 13; 6|6; \u2212 13|5]]"
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "36979",
+        "content_id": "6078",
+        "dom_id": "step-36979",
+        "selector": "#step-36979",
+        "step_anchor": "step-14",
+        "title": "The Optimal Least-Squares Solution",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the least-squares solution of the system </p>",
+            "readable_text": "Recall that the least-squares solution of the system",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A\\mathbf x=\\mathbf{b},]</span></p>",
+            "readable_text": "[MATH: A\\mathbf x=\\mathbf{b},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is a vector <span class=\"math\">[MATH: {\\hat{\\mathbf{x}}}]</span> such that <span class=\"math\">[MATH: \\| A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\|]</span> is minimized. </p>",
+            "readable_text": "is a vector [MATH: {\\hat{\\mathbf{x}}}] such that [MATH: \\| A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\|] is minimized.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The least-squares solution is not unique when <span class=\"math\">[MATH: A]</span> has linearly dependent columns. However, it can be shown that a so-called <strong>optimal least-squares solution</strong> <span class=\"math\">[MATH: \\mathbf{x^\\ast}]</span> always exists. The optimal least-squares solution is the solution to the least squares problem with the shortest possible length.</p>",
+            "readable_text": "The least-squares solution is not unique when [MATH: A] has linearly dependent columns. However, it can be shown that a so-called optimal least-squares solution [MATH: \\mathbf{x^\\ast}] always exists. The optimal least-squares solution is the solution to the least squares problem with the shortest possible length.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It turns out that the optimal least-squares solution can be found using the pseudoinverse of <span class=\"math\">[MATH: A,]</span> as follows:</p>",
+            "readable_text": "It turns out that the optimal least-squares solution can be found using the pseudoinverse of [MATH: A,] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x^\\ast} = A^{+} \\mathbf{b}]</span> </p>",
+            "readable_text": "[MATH: \\mathbf{x^\\ast} = A^{+} \\mathbf{b}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the least-squares solution of the system\n\nContent:\n[MATH: A\\mathbf x=\\mathbf{b},]\n\nContent:\nis a vector [MATH: {\\hat{\\mathbf{x}}}] such that [MATH: \\| A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\|] is minimized.\n\nContent:\nThe least-squares solution is not unique when [MATH: A] has linearly dependent columns. However, it can be shown that a so-called optimal least-squares solution [MATH: \\mathbf{x^\\ast}] always exists. The optimal least-squares solution is the solution to the least squares problem with the shortest possible length.\n\nContent:\nIt turns out that the optimal least-squares solution can be found using the pseudoinverse of [MATH: A,] as follows:\n\nContent:\n[MATH: \\mathbf{x^\\ast} = A^{+} \\mathbf{b}]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nThe invertible matrix theorem tells us that if [MATH: A] is an [MATH: n \\times n] matrix with full rank (i.e., [MATH: \\mathrm{rank}(A)=n]), then there exists a unique inverse matrix [MATH: A^{-1}] such that\n\nContent:\n[MATH: AA^{-1}=A^{-1}\\!A=I_n,]\n\nContent:\nwhere [MATH: I_n] denotes the [MATH: n \\times n] identity matrix.\n\nContent:\nThere are two questions that we can ask:\n\nContent:\n- Can we extend the notion of an inverse matrix to one that works for [MATH: n\\times n] matrices [MATH: A] where [MATH: \\mathrm{rank}(A) < n?]\n- Is it possible to generalize the concept of an inverse to non-square matrices?\n\nContent:\nThe answer to both questions is yes! This generalization of the inverse of [MATH: A] is called the pseudoinverse of [MATH: A,] and is denoted [MATH: A^+.] The dimensions of [MATH: A^+] are the same as [MATH: A^T.]\n\nContent:\nAs an example, let's consider the [MATH: {\\color{red}{3}}\\times {\\color{blue}{2}}] matrix [MATH: A] and its corresponding pseudoinverse, given below:\n\nContent:\n[MATH: [5|0; 0|1; 0|0]]\n\nContent:\n- Computing [MATH: A^{+}\\!A,] we have\n[MATH: A^{+}A|= (1)/(5)[1|0|0; 0|5|0] \u22c5 [5|0; 0|1; 0|0]; = [1|0; 0|1]]\nwhich is the identity matrix [MATH: I_{\\color{blue}{2}}.]\n- Computing [MATH: A\\!A^{+},] we have\n[MATH: AA^{+}|= [5|0; 0|1; 0|0] \u22c5 (1)/(5)[1|0|0; 0|5|0]; = [1|0|0; 0|1|0; 0|0|0],]\nwhich is almost the identity matrix [MATH: I_{\\color{red}{3}}.]\n\nContent:\nWe can explain this result using the following properties of the pseudoinverse:\n\nContent:\n- If the columns of an [MATH: m\\times {\\color{blue}{n}}] matrix [MATH: A] are linearly independent, then [MATH: A^+A = I_{\\color{blue}{n}}.]\n- If the rows of an [MATH: {\\color{red}{m}}\\times n] matrix [MATH: A] are linearly independent, then [MATH: AA^+ = I_{\\color{red}{m}}.]\n\nContent:\nIn the example above, the columns of [MATH: A] are linearly independent, but the rows are not.\n\nContent:\nMoreover, the notion of a pseudoinverse is consistent with inverse matrices. In particular,\n\nContent:\n> If [MATH: A] is an invertible square matrix, then [MATH: A^{+} = A^{-1}.]\n\nContent:\nThis lesson will discuss how to compute the pseudoinverse for any matrix, starting with an important special case.\n\n---\n\nItem 2 \u2014 Tutorial: The Pseudoinverse of an Almost Diagonal Matrix\n\nContent:\nFor an almost zero [MATH: {\\color{red}{m}}\\times {\\color{blue}{n}}] matrix with non-zero entries\n\nContent:\n[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]\n\nContent:\non the main diagonal only, the corresponding pseudoinverse is the almost zero [MATH: {\\color{blue}{n}}\\times {\\color{red}{m}}] matrix with non-zero entries\n\nContent:\n[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]\n\nContent:\non the main diagonal only.\n\nContent:\nFor example, for the matrix [MATH: A,] given by\n\nContent:\n[MATH: [3|0|0; 0|4|0]]\n\nContent:\nwe calculate its pseudoinverse as follows:\n\nContent:\n[MATH: A^{+}|= [3|0|0; 0|4|0]^{+}; = [3^{\u2212 1}|0; 0|4^{\u2212 1}; 0|0]; = (1)/(12)[4|0; 0|3; 0|0]]\n\n---\n\nItem 3 \u2014 Example: Finding the Pseudoinverse of a Diagonal Matrix\n\nExample Prompt:\nFor the matrix\n[MATH: [6|0; 0|4; 0|0]] find the pseudoinverse [MATH: A^+.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an \"almost\" zero [MATH: m \\times n] matrix with non-zero entries\n\n[MATH: \\sigma_1, \\: \\sigma_2, \\: \\ldots, \\: \\sigma_r]\n\non the main diagonal, the corresponding pseudoinverse is the \"almost\" zero [MATH: n \\times m] matrix with entries\n\n[MATH: {\\sigma_1^{-1}}, \\, {\\sigma_2^{-1}}, \\, \\ldots, \\, {\\sigma_r^{-1}}]\n\non the main diagonal.\n\nTherefore, we obtain\n\n[MATH: A^{+}|= [6|0; 0|4; 0|0]^{+}; = [6^{\u2212 1}|0|0; 0|4^{\u2212 1}|0]; = (1)/(12)[2|0|0; 0|3|0].]\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nFor the matrix\n[MATH: A = [2|0|0; 0|5|0],] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(10)[5|0|0; 0|2|0]]\nb. [MATH: (1)/(10)[2|0; 0|5; 0|0]]\nc. [MATH: (1)/(10)[5|0; 0|2; 0|0]]\nd. [MATH: (1)/(10)[2|0|0; 0|5|0]]\ne. [MATH: (1)/(10)[\u2212 5|0; 0|\u2212 2; 0|0]]\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nFor the matrix\n[MATH: A = [3|0; 0|0],] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(3)[0|0; 0|1]]\nb. [MATH: (1)/(3)[0|0; 0|\u2212 1]]\nc. [MATH: (1)/(3)[1|0; 0|0]]\nd. [MATH: (1)/(3)[1|0; 0|\u2212 1]]\ne. [MATH: (1)/(3)[\u2212 1|0; 0|0]]\n\n---\n\nItem 6 \u2014 Tutorial: Finding the Pseudoinverse Using Singular Value Decomposition\n\nContent:\nThere are many ways to find the pseudoinverse of a given matrix [MATH: A.] One way is to use the singular value decomposition of [MATH: A{:}]\n\nContent:\nSpecifically, if\n[MATH: A=U \\Sigma V ^T]\nis a singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n[MATH: A^+ = V \\, \\Sigma^+ \\, U^T,]\nwhere [MATH: \\Sigma^+] is the pseudoinverse of [MATH: \\Sigma.]\n\n---\n\nItem 7 \u2014 Example: Finding the Pseudoinverse of a Matrix Given Its Singular Value Decomposition\n\nExample Prompt:\n[MATH: [(4)/(5)|\u2212 (3)/(5)|0; (3)/(5)|(4)/(5)|0; 0|0|1]]\nConsider the matrices shown above. Given that [MATH: A=U \\Sigma V^T] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^+.]\n\nContent:\nEXPLANATION\n\nExplanation:\nIf [MATH: A=U \\Sigma V ^T] is a singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n\n[MATH: V \\, \\Sigma^+ \\, U^T,]\n\nwhere [MATH: \\Sigma^+] is the pseudoinverse of [MATH: \\Sigma.]\n\nFirst, notice that\n\n[MATH: [1|0; 0|1]]\n\nTherefore, we have\n\n[MATH: A^{+}|= V\u03a3^{+}U^{T}; = [1|0; 0|1] \u22c5 (1)/(5)[1|0|0; 0|0|0] \u22c5 (1)/(5)[4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0; 0|1] \u22c5 [1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[1|0|0; 0|0|0] \u22c5 [4|3|0; \u2212 3|4|0; 0|0|5]; = (1)/(25)[4|3|0; 0|0|0].]\n\n---\n\nItem 8 \u2014 Question 3\n\nPrompt:\n[MATH: U = [\u2212 (1)/(sqrt(2))|(1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))], \u03a3 = [5sqrt(2)|0; 0|0], V = [\u2212 (3)/(5)|(4)/(5); (4)/(5)|(3)/(5)]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(25)[3|\u2212 3; \u2212 4|4]]\nb. [MATH: (1)/(25)[\u2212 3|4; 4|\u2212 3]]\nc. [MATH: (1)/(50)[3|\u2212 3; \u2212 4|4]]\nd. [MATH: (1)/(50)[\u2212 4|4; 3|\u2212 3]]\ne. [MATH: (1)/(50)[\u2212 3|4; 4|\u2212 3]]\n\n---\n\nItem 9 \u2014 Question 4\n\nPrompt:\n[MATH: U = [\u2212 (1)/(sqrt(5))|0|(2)/(sqrt(5)); (2)/(sqrt(5))|0|(1)/(sqrt(5)); 0|1|0], \u03a3 = [5|0; 0|0; 0|0], V = [\u2212 (1)/(sqrt(5))|(2)/(sqrt(5)); (2)/(sqrt(5))|(1)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U\u03a3V^{T}] is a singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(16)[1|\u2212 2; \u2212 2|4; 0|0]]\nb. [MATH: (1)/(25)[\u2212 2|1; 4|\u2212 2; 0|0]]\nc. [MATH: (1)/(25)[1|\u2212 2|0; \u2212 2|4|0]]\nd. [MATH: (1)/(16)[1|\u2212 2|0; \u2212 2|4|0]]\ne. [MATH: (1)/(25)[\u2212 2|4|0; 1|\u2212 2|0]]\n\n---\n\nItem 10 \u2014 Tutorial: Reduced Singular Value Decomposition\n\nContent:\nConsider the matrix\n\nContent:\n[MATH: [4|0; 3|0; 0|2]]\n\nContent:\nand its singular value decomposition [MATH: A=U \\Sigma V ^T,] where\n\nContent:\n[MATH: [(4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]]\n\nContent:\nNotice that [MATH: \\Sigma] contains a row of zeros. In these situations, it's possible to simplify the decomposition of [MATH: A.] This simplified decomposition is called the reduced singular value decomposition of [MATH: A.]\n\nContent:\nFirst, we note that [MATH: A] is a [MATH: 3 \\times 2] matrix. In addition, the matrix [MATH: \\Sigma] has two non-zero singular values on its main diagonal, so the rank of [MATH: A] is [MATH: \\color{blue}r=2.]\n\nContent:\nTo find our reduced SVD, we proceed as follows:\n\nContent:\n- First, we remove all zero rows and columns from [MATH: \\Sigma.] In our example, we should delete the [MATH: 3]rd row since it contains only zeros. Notice that we obtain a square invertible matrix of rank [MATH: {\\color{blue}2}{:}]\n[MATH: [5|0; 0|2; 0|0]]\n- Next, we remove all extra columns of [MATH: U] starting from the right, keeping only [MATH: \\color{blue}2] columns. In our example, we should delete the [MATH: 3]rd column:\n[MATH: (4)/(5)|0|\u2212 (3)/(5); (3)/(5)|0|(4)/(5); 0|1|0]\n- Finally, we remove all extra columns of [MATH: V] starting from the right, keeping only [MATH: \\color{blue}2] columns. In our example, we should keep [MATH: V] as it is since it already has only [MATH: 2] columns:\n[MATH: [1|0; 0|1]]\n\nContent:\nThe reduced singular value decomposition of [MATH: A] is then given by\n\nContent:\n[MATH: A = U_r \\Sigma_r V_r^T.]\n\nContent:\nSo, in our example, we have\n\nContent:\n[MATH: [(4)/(5)|0; (3)/(5)|0; 0|1]]\n\nContent:\nIn general, a singular value decomposition\n\nContent:\n[MATH: A=U \\Sigma V^T]\n\nContent:\nof an [MATH: m \\times n] matrix [MATH: A] is not unique. However, we can always simplify it to the corresponding reduced singular value decomposition\n\nContent:\n[MATH: A=U_r \\Sigma_r V_r^T]\n\nContent:\nwith the following properties:\n\nContent:\n- [MATH: \\Sigma_r] is a square diagonal matrix of size [MATH: r\\times r,] where [MATH: r\\leq \\min\\{m,n\\}] is the rank of [MATH: A.] The main diagonal of [MATH: \\Sigma_r] contains the non-zero singular values [MATH: \\sigma_1, \\sigma_2, \\ldots, \\sigma_r] of [MATH: A] in descending order.\n- [MATH: U_r] is a [MATH: m\\times r] matrix obtained by keeping only the first [MATH: r] columns of [MATH: U.]\n- [MATH: V_r] is a [MATH: n \\times r] matrix obtained by keeping only the first [MATH: r] columns of [MATH: V.]\n\n---\n\nItem 11 \u2014 Example: Finding the Pseudoinverse of a Matrix Given Its Reduced Singular Value Decomposition\n\nExample Prompt:\n[MATH: [(3)/(5); (4)/(5); 0]]\nConsider the matrices shown above. Given that [MATH: A=U_r \\Sigma_r V_r^T] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^+.]\n\nContent:\nEXPLANATION\n\nExplanation:\nIf [MATH: A=U_r \\Sigma_r V_r ^T] is a reduced singular value decomposition of [MATH: A,] then the pseudoinverse of [MATH: A] is given by\n\n[MATH: V_r \\, \\Sigma_r^+ \\, U_r^T,]\n\nwhere [MATH: \\Sigma_r^+] is the pseudoinverse of [MATH: \\Sigma_r.]\n\nFirst, notice that\n\n[MATH: [4; 3]]\n\nTherefore, we have\n\n[MATH: A^{+}|= V_{r}\u03a3_{r}^{+}U_{r}^{T}; = (1)/(5)[4; 3] \u22c5 (1)/(2)[1] \u22c5 (1)/(5)[3|4|0]; = (1)/(50)[4; 3] \u22c5 [1] \u22c5 [3|4|0]; = (1)/(50)[4; 3] \u22c5 [3|4|0]; = (1)/(50)[12|16|0; 9|12|0].]\n\n---\n\nItem 12 \u2014 Question 5\n\nPrompt:\n[MATH: U_{r} = [(1)/(sqrt(2)); \u2212 (1)/(sqrt(2))], \u03a3_{r} = [sqrt(10)], V_{r} = [(1)/(sqrt(5)); (2)/(sqrt(5))]]\nConsider the matrices shown above. Given that [MATH: A = U_{r}\u03a3_{r}V_{r}^{T}] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(10)[\u2212 1|1; \u2212 2|2]]\nb. [MATH: (1)/(10)[1|\u2212 2; 2|\u2212 1]]\nc. [MATH: (1)/(10)[1|1; \u2212 2|\u2212 2]]\nd. [MATH: (1)/(10)[2|\u2212 1; 1|\u2212 2]]\ne. [MATH: (1)/(10)[1|\u2212 1; 2|\u2212 2]]\n\n---\n\nItem 13 \u2014 Question 6\n\nPrompt:\n[MATH: U_{r} = [\u2212 (1)/(3sqrt(2))|\u2212 (1)/(sqrt(2)); (4)/(3sqrt(2))|0; \u2212 (1)/(3sqrt(2))|(1)/(sqrt(2))], \u03a3_{r} = [6|0; 0|4], V_{r} = [(1)/(sqrt(2))|\u2212 (1)/(sqrt(2)); (1)/(sqrt(2))|(1)/(sqrt(2))]]\nConsider the matrices shown above. Given that [MATH: A = U_{r}\u03a3_{r}V_{r}^{T}] is a reduced singular value decomposition of [MATH: A,] find the pseudoinverse [MATH: A^{+}.]\n\nChoices:\na. [MATH: (1)/(72)[\u2212 11|8|7; 7|8|\u2212 11]]\nb. [MATH: (1)/(72)[\u2212 11|7; 8|8; 7|\u2212 11]]\nc. [MATH: (1)/(144)[5|6|\u2212 13; \u2212 13|6|5]]\nd. [MATH: (1)/(72)[7|8|\u2212 11; \u2212 11|8|7]]\ne. [MATH: (1)/(144)[5|\u2212 13; 6|6; \u2212 13|5]]\n\n---\n\nItem 14 \u2014 Tutorial: The Optimal Least-Squares Solution\n\nContent:\nRecall that the least-squares solution of the system\n\nContent:\n[MATH: A\\mathbf x=\\mathbf{b},]\n\nContent:\nis a vector [MATH: {\\hat{\\mathbf{x}}}] such that [MATH: \\| A{\\hat{\\mathbf{x}}} - \\mathbf{b} \\|] is minimized.\n\nContent:\nThe least-squares solution is not unique when [MATH: A] has linearly dependent columns. However, it can be shown that a so-called optimal least-squares solution [MATH: \\mathbf{x^\\ast}] always exists. The optimal least-squares solution is the solution to the least squares problem with the shortest possible length.\n\nContent:\nIt turns out that the optimal least-squares solution can be found using the pseudoinverse of [MATH: A,] as follows:\n\nContent:\n[MATH: \\mathbf{x^\\ast} = A^{+} \\mathbf{b}]"
+  }
+}

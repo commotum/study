@@ -1,0 +1,1394 @@
+{
+  "schema_version": 2,
+  "topic_id": "1971",
+  "topic_title": "Diagonalizing a 3x3 Matrix in the General Case",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/1971/Source/1971.html",
+  "source_url": "https://mathacademy.com/topics/1971",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20129",
+        "dom_id": "sectionLink-20129",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20129"
+      },
+      {
+        "index": 2,
+        "step_id": "37526",
+        "dom_id": "sectionLink-37526",
+        "name": "",
+        "title": "An Example of a Non-Diagonalizable 3x3 Matrix",
+        "selector": "#sectionLink-37526"
+      },
+      {
+        "index": 3,
+        "step_id": "37957",
+        "dom_id": "sectionLink-37957",
+        "name": "",
+        "title": "Determining Whether an NxN Matrix Is Diagonalizable",
+        "selector": "#sectionLink-37957"
+      },
+      {
+        "index": 4,
+        "step_id": "21531",
+        "dom_id": "sectionLink-21531",
+        "name": "",
+        "title": "Finding a Diagonal Matrix Corresponding to a Given Matrix",
+        "selector": "#sectionLink-21531"
+      },
+      {
+        "index": 5,
+        "step_id": "37527",
+        "dom_id": "sectionLink-37527",
+        "name": "",
+        "title": "The Diagonalization Algorithm",
+        "selector": "#sectionLink-37527"
+      },
+      {
+        "index": 6,
+        "step_id": "20130",
+        "dom_id": "sectionLink-20130",
+        "name": "",
+        "title": "Diagonalizing a 3x3 Matrix Given Part of the Diagonalization",
+        "selector": "#sectionLink-20130"
+      },
+      {
+        "index": 7,
+        "step_id": "31599",
+        "dom_id": "sectionLink-31599",
+        "name": "",
+        "title": "Diagonalizing a 3x3 Matrix",
+        "selector": "#sectionLink-31599"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1965",
+        "name": "Calculating the Eigenvectors of a 3x3 Matrix in the General Case",
+        "href": "/topics/calculating-the-eigenvectors-of-a-3x3-matrix-in-the-general-case-1965"
+      },
+      {
+        "topic_id": "1970",
+        "name": "Diagonalizing a 3x3 Matrix With Distinct Eigenvalues",
+        "href": "/topics/diagonalizing-a-3x3-matrix-with-distinct-eigenvalues-1970"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 13,
+    "step_count": 7,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20129",
+        "content_id": "3579",
+        "dom_id": "step-20129",
+        "selector": "#step-20129",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider the following matrix:</p>",
+            "readable_text": "Let's consider the following matrix:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0|1; 0|1|1; 0|0|0]]</span></p>",
+            "readable_text": "[MATH: [1|0|1; 0|1|1; 0|0|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is a <span class=\"math\">[MATH: 3\\times 3]</span> matrix, yet it has only <em>two</em> distinct eigenvalues, namely <span class=\"math\">[MATH: \\lambda_1 = 0]</span> and <span class=\"math\">[MATH: \\lambda_2 = 1.]</span> Note that <span class=\"math\">[MATH: \\lambda_1]</span> is a simple root of the  characteristic polynomial and <span class=\"math\">[MATH: \\lambda_2]</span> is a double root.</p>",
+            "readable_text": "This is a [MATH: 3\\times 3] matrix, yet it has only two distinct eigenvalues, namely [MATH: \\lambda_1 = 0] and [MATH: \\lambda_2 = 1.] Note that [MATH: \\lambda_1] is a simple root of the characteristic polynomial and [MATH: \\lambda_2] is a double root.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To diagonalize a <span class=\"math\">[MATH: 3\\times 3]</span> matrix, we need to find a basis of <span class=\"math\">[MATH: \\mathbb R^3]</span> consisting of linearly independent eigenvectors of <span class=\"math\">[MATH: A.]</span> So the question is, can we diagonalize this matrix even though it does not have three distinct eigenvalues?</p>",
+            "readable_text": "To diagonalize a [MATH: 3\\times 3] matrix, we need to find a basis of [MATH: \\mathbb R^3] consisting of linearly independent eigenvectors of [MATH: A.] So the question is, can we diagonalize this matrix even though it does not have three distinct eigenvalues?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s start by computing the eigenvectors of <span class=\"math\">[MATH: A\\mathbin{:}]</span></p>",
+            "readable_text": "Let's start by computing the eigenvectors of [MATH: A\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>First, we consider the simple root <span class=\"math\">[MATH: \\lambda_1 = 0.]</span> Solving the equation <span class=\"math\">[MATH: A \\mathbf x = \\lambda_1 \\mathbf x]</span> in the usual way, we obtain a single linearly independent eigenvector:\n<span class=\"math\">[MATH: [1; 1; \u2212 1]]</span></p></li><li><p>Next, we consider the double root <span class=\"math\">[MATH: \\lambda_2 = 1.]</span> Let&#x27;s solve the equation <span class=\"math\">[MATH: A \\mathbf x = \\lambda_2 \\mathbf x]</span> by reducing <span class=\"math\">[MATH: (A - \\lambda_2 I)]</span> to row-echelon form:\n<span class=\"math\">[MATH: A \u2212 \u03bb_{2}I|= [1|0|1; 0|1|1; 0|0|0] \u2212 [1|0|0; 0|1|0; 0|0|1]; = [0|0|1; 0|0|1; 0|0|\u2212 1]|R_{2}:=R_{2} + (\u2212 1)R_{1}; R_{3}:=R_{3} + R_{1}; \u223c[0|0|1; 0|0|0; 0|0|0]]</span>\nThere is one pivot column in the reduced matrix above (the <span class=\"math\">[MATH: 3]</span>rd one). Thus, <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2]</span> are free variables. From the first equation, we obtain the solution <span class=\"math\">[MATH: x_3 = 0.]</span> Therefore, the general solution is\n<span class=\"math\">[MATH: [x_{1}; x_{2}; 0]]</span>\nwhere <span class=\"math\">[MATH: x_1, x_2\\in \\mathbb R.]</span> Thus, we have obtained <em>two</em> linearly independent eigenvectors:\n<span class=\"math\">[MATH: [1; 0; 0]]</span></p></li></ul>",
+            "readable_text": "- First, we consider the simple root [MATH: \\lambda_1 = 0.] Solving the equation [MATH: A \\mathbf x = \\lambda_1 \\mathbf x] in the usual way, we obtain a single linearly independent eigenvector:\n[MATH: [1; 1; \u2212 1]]\n- Next, we consider the double root [MATH: \\lambda_2 = 1.] Let's solve the equation [MATH: A \\mathbf x = \\lambda_2 \\mathbf x] by reducing [MATH: (A - \\lambda_2 I)] to row-echelon form:\n[MATH: A \u2212 \u03bb_{2}I|= [1|0|1; 0|1|1; 0|0|0] \u2212 [1|0|0; 0|1|0; 0|0|1]; = [0|0|1; 0|0|1; 0|0|\u2212 1]|R_{2}:=R_{2} + (\u2212 1)R_{1}; R_{3}:=R_{3} + R_{1}; \u223c[0|0|1; 0|0|0; 0|0|0]]\nThere is one pivot column in the reduced matrix above (the [MATH: 3]rd one). Thus, [MATH: x_1] and [MATH: x_2] are free variables. From the first equation, we obtain the solution [MATH: x_3 = 0.] Therefore, the general solution is\n[MATH: [x_{1}; x_{2}; 0]]\nwhere [MATH: x_1, x_2\\in \\mathbb R.] Thus, we have obtained two linearly independent eigenvectors:\n[MATH: [1; 0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So <span class=\"math\">[MATH: A]</span> has three linearly independent eigenvectors that form a basis of <span class=\"math\">[MATH: \\mathbb R^3.]</span> Therefore, <span class=\"math\">[MATH: A]</span> is diagonalizable! </p>",
+            "readable_text": "So [MATH: A] has three linearly independent eigenvectors that form a basis of [MATH: \\mathbb R^3.] Therefore, [MATH: A] is diagonalizable!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In terms of eigenspaces, <span class=\"math\">[MATH: A]</span> is diagonalizable because the sum of the dimensions of the eigenspaces equals the number of rows/columns of <span class=\"math\">[MATH: A.]</span> The eigenspaces corresponding to <span class=\"math\">[MATH: \\lambda_1 = 0]</span> and <span class=\"math\">[MATH: \\lambda_2 = 1]</span> are given by</p>",
+            "readable_text": "In terms of eigenspaces, [MATH: A] is diagonalizable because the sum of the dimensions of the eigenspaces equals the number of rows/columns of [MATH: A.] The eigenspaces corresponding to [MATH: \\lambda_1 = 0] and [MATH: \\lambda_2 = 1] are given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 1; \u2212 1]]</span> </p>",
+            "readable_text": "[MATH: [1; 1; \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If we sum the dimensions of <span class=\"math\">[MATH: V_0]</span> and <span class=\"math\">[MATH: V_1,]</span> we get precisely <span class=\"math\">[MATH: 3\\mathbin{:}]</span></p>",
+            "readable_text": "If we sum the dimensions of [MATH: V_0] and [MATH: V_1,] we get precisely [MATH: 3\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\dim(V_{0}) + \\dim(V_{1}) = 1 + 2 = 3 \\quad {\\color{green}\\checkmark}]</span></p>",
+            "readable_text": "[MATH: \\dim(V_{0}) + \\dim(V_{1}) = 1 + 2 = 3 \\quad {\\color{green}\\checkmark}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>which means that <span class=\"math\">[MATH: A]</span> is diagonalizable.</p>",
+            "readable_text": "which means that [MATH: A] is diagonalizable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s important to realize that not all matrices are diagonalizable! Let&#x27;s see an example.</p>",
+            "readable_text": "It's important to realize that not all matrices are diagonalizable! Let's see an example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's consider the following matrix:\n\nContent:\n[MATH: [1|0|1; 0|1|1; 0|0|0]]\n\nContent:\nThis is a [MATH: 3\\times 3] matrix, yet it has only two distinct eigenvalues, namely [MATH: \\lambda_1 = 0] and [MATH: \\lambda_2 = 1.] Note that [MATH: \\lambda_1] is a simple root of the characteristic polynomial and [MATH: \\lambda_2] is a double root.\n\nContent:\nTo diagonalize a [MATH: 3\\times 3] matrix, we need to find a basis of [MATH: \\mathbb R^3] consisting of linearly independent eigenvectors of [MATH: A.] So the question is, can we diagonalize this matrix even though it does not have three distinct eigenvalues?\n\nContent:\nLet's start by computing the eigenvectors of [MATH: A\\mathbin{:}]\n\nContent:\n- First, we consider the simple root [MATH: \\lambda_1 = 0.] Solving the equation [MATH: A \\mathbf x = \\lambda_1 \\mathbf x] in the usual way, we obtain a single linearly independent eigenvector:\n[MATH: [1; 1; \u2212 1]]\n- Next, we consider the double root [MATH: \\lambda_2 = 1.] Let's solve the equation [MATH: A \\mathbf x = \\lambda_2 \\mathbf x] by reducing [MATH: (A - \\lambda_2 I)] to row-echelon form:\n[MATH: A \u2212 \u03bb_{2}I|= [1|0|1; 0|1|1; 0|0|0] \u2212 [1|0|0; 0|1|0; 0|0|1]; = [0|0|1; 0|0|1; 0|0|\u2212 1]|R_{2}:=R_{2} + (\u2212 1)R_{1}; R_{3}:=R_{3} + R_{1}; \u223c[0|0|1; 0|0|0; 0|0|0]]\nThere is one pivot column in the reduced matrix above (the [MATH: 3]rd one). Thus, [MATH: x_1] and [MATH: x_2] are free variables. From the first equation, we obtain the solution [MATH: x_3 = 0.] Therefore, the general solution is\n[MATH: [x_{1}; x_{2}; 0]]\nwhere [MATH: x_1, x_2\\in \\mathbb R.] Thus, we have obtained two linearly independent eigenvectors:\n[MATH: [1; 0; 0]]\n\nContent:\nSo [MATH: A] has three linearly independent eigenvectors that form a basis of [MATH: \\mathbb R^3.] Therefore, [MATH: A] is diagonalizable!\n\nContent:\nIn terms of eigenspaces, [MATH: A] is diagonalizable because the sum of the dimensions of the eigenspaces equals the number of rows/columns of [MATH: A.] The eigenspaces corresponding to [MATH: \\lambda_1 = 0] and [MATH: \\lambda_2 = 1] are given by\n\nContent:\n[MATH: [1; 1; \u2212 1]]\n\nContent:\nIf we sum the dimensions of [MATH: V_0] and [MATH: V_1,] we get precisely [MATH: 3\\mathbin{:}]\n\nContent:\n[MATH: \\dim(V_{0}) + \\dim(V_{1}) = 1 + 2 = 3 \\quad {\\color{green}\\checkmark}]\n\nContent:\nwhich means that [MATH: A] is diagonalizable.\n\nContent:\nIt's important to realize that not all matrices are diagonalizable! Let's see an example."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37526",
+        "content_id": "6190",
+        "dom_id": "step-37526",
+        "selector": "#step-37526",
+        "step_anchor": "step-2",
+        "title": "An Example of a Non-Diagonalizable 3x3 Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s now consider the following matrix:</p>",
+            "readable_text": "Let's now consider the following matrix:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0|0; \u2212 3|2|1; \u2212 2|0|2]]</span></p>",
+            "readable_text": "[MATH: [1|0|0; \u2212 3|2|1; \u2212 2|0|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Its eigenvalues are <span class=\"math\">[MATH: \\lambda_1=1]</span> (simple root) and <span class=\"math\">[MATH: \\lambda_2=2]</span> (double root).</p>",
+            "readable_text": "Its eigenvalues are [MATH: \\lambda_1=1] (simple root) and [MATH: \\lambda_2=2] (double root).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see how many linearly independent eigenvectors we can find for this matrix.</p>",
+            "readable_text": "Let's see how many linearly independent eigenvectors we can find for this matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>First, we consider the simple root <span class=\"math\">[MATH: \\lambda_1 = 1.]</span> Solving the equation <span class=\"math\">[MATH: A \\mathbf x = \\lambda_1 \\mathbf x]</span> in the usual way, we obtain a single linearly independent eigenvector:\n<span class=\"math\">[MATH: [1; 1; 2]]</span></p></li><li><p>Next, we consider the double root <span class=\"math\">[MATH: \\lambda_2 = 2.]</span> Let&#x27;s solve the equation <span class=\"math\">[MATH: A \\mathbf x = \\lambda_2 \\mathbf x]</span> by reducing <span class=\"math\">[MATH: (A - \\lambda_2 I)]</span> to row-echelon form:\n<span class=\"math\">[MATH: A \u2212 \u03bb_{2}I|= [1|0|0; \u2212 3|2|1; \u2212 2|0|2] \u2212 2[1|0|0; 0|1|0; 0|0|1]; = [\u2212 1|0|0; \u2212 3|0|1; \u2212 2|0|0]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 2)R_{1}; \u223c[\u2212 1|0|0; 0|0|1; 0|0|0]]</span>\nIn the reduced matrix above, there are two pivot columns (the <span class=\"math\">[MATH: 1]</span>st and the <span class=\"math\">[MATH: 3]</span>rd). Thus, <span class=\"math\">[MATH: x_2]</span> is a free variable. From the first and second equations, we have\n<span class=\"math\">[MATH: x_1 = x_3 = 0.]</span>\nTherefore, the general solution is\n<span class=\"math\">[MATH: [0; x_{2}; 0]]</span>\nwhere <span class=\"math\">[MATH: x_2\\in\\mathbb R.]</span> Thus, we have obtained <em>only one</em> linearly independent eigenvector:\n<span class=\"math\">[MATH: [0; 1; 0]]</span></p></li></ul>",
+            "readable_text": "- First, we consider the simple root [MATH: \\lambda_1 = 1.] Solving the equation [MATH: A \\mathbf x = \\lambda_1 \\mathbf x] in the usual way, we obtain a single linearly independent eigenvector:\n[MATH: [1; 1; 2]]\n- Next, we consider the double root [MATH: \\lambda_2 = 2.] Let's solve the equation [MATH: A \\mathbf x = \\lambda_2 \\mathbf x] by reducing [MATH: (A - \\lambda_2 I)] to row-echelon form:\n[MATH: A \u2212 \u03bb_{2}I|= [1|0|0; \u2212 3|2|1; \u2212 2|0|2] \u2212 2[1|0|0; 0|1|0; 0|0|1]; = [\u2212 1|0|0; \u2212 3|0|1; \u2212 2|0|0]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 2)R_{1}; \u223c[\u2212 1|0|0; 0|0|1; 0|0|0]]\nIn the reduced matrix above, there are two pivot columns (the [MATH: 1]st and the [MATH: 3]rd). Thus, [MATH: x_2] is a free variable. From the first and second equations, we have\n[MATH: x_1 = x_3 = 0.]\nTherefore, the general solution is\n[MATH: [0; x_{2}; 0]]\nwhere [MATH: x_2\\in\\mathbb R.] Thus, we have obtained only one linearly independent eigenvector:\n[MATH: [0; 1; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So <span class=\"math\">[MATH: A]</span> has <em>only two</em> linearly independent eigenvectors, and these cannot form a basis of <span class=\"math\">[MATH: \\mathbb R^3.]</span> Therefore, <span class=\"math\">[MATH: A]</span> is <em>not</em> diagonalizable.</p>",
+            "readable_text": "So [MATH: A] has only two linearly independent eigenvectors, and these cannot form a basis of [MATH: \\mathbb R^3.] Therefore, [MATH: A] is not diagonalizable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In terms of eigenspaces, the matrix <span class=\"math\">[MATH: A]</span> is not diagonalizable because the sum of the dimensions of the eigenspaces is <em>smaller</em> than the number of rows/columns of <span class=\"math\">[MATH: A.]</span> The eigenspaces corresponding to <span class=\"math\">[MATH: \\lambda_1 = 1]</span> and <span class=\"math\">[MATH: \\lambda_2 = 2]</span> are given by</p>",
+            "readable_text": "In terms of eigenspaces, the matrix [MATH: A] is not diagonalizable because the sum of the dimensions of the eigenspaces is smaller than the number of rows/columns of [MATH: A.] The eigenspaces corresponding to [MATH: \\lambda_1 = 1] and [MATH: \\lambda_2 = 2] are given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 1; 2]]</span> </p>",
+            "readable_text": "[MATH: [1; 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If we sum the dimensions of <span class=\"math\">[MATH: V_1]</span> and <span class=\"math\">[MATH: V_2,]</span> we get</p>",
+            "readable_text": "If we sum the dimensions of [MATH: V_1] and [MATH: V_2,] we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\dim(V_{1}) + \\dim(V_{2}) = 1 + 1 = 2 \\neq 3 \\quad {\\color{red}{\\boldsymbol\\times}}]</span></p>",
+            "readable_text": "[MATH: \\dim(V_{1}) + \\dim(V_{2}) = 1 + 1 = 2 \\neq 3 \\quad {\\color{red}{\\boldsymbol\\times}}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>which means that <span class=\"math\">[MATH: A]</span> is <em>not</em> diagonalizable.</p>",
+            "readable_text": "which means that [MATH: A] is not diagonalizable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's now consider the following matrix:\n\nContent:\n[MATH: [1|0|0; \u2212 3|2|1; \u2212 2|0|2]]\n\nContent:\nIts eigenvalues are [MATH: \\lambda_1=1] (simple root) and [MATH: \\lambda_2=2] (double root).\n\nContent:\nLet's see how many linearly independent eigenvectors we can find for this matrix.\n\nContent:\n- First, we consider the simple root [MATH: \\lambda_1 = 1.] Solving the equation [MATH: A \\mathbf x = \\lambda_1 \\mathbf x] in the usual way, we obtain a single linearly independent eigenvector:\n[MATH: [1; 1; 2]]\n- Next, we consider the double root [MATH: \\lambda_2 = 2.] Let's solve the equation [MATH: A \\mathbf x = \\lambda_2 \\mathbf x] by reducing [MATH: (A - \\lambda_2 I)] to row-echelon form:\n[MATH: A \u2212 \u03bb_{2}I|= [1|0|0; \u2212 3|2|1; \u2212 2|0|2] \u2212 2[1|0|0; 0|1|0; 0|0|1]; = [\u2212 1|0|0; \u2212 3|0|1; \u2212 2|0|0]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 2)R_{1}; \u223c[\u2212 1|0|0; 0|0|1; 0|0|0]]\nIn the reduced matrix above, there are two pivot columns (the [MATH: 1]st and the [MATH: 3]rd). Thus, [MATH: x_2] is a free variable. From the first and second equations, we have\n[MATH: x_1 = x_3 = 0.]\nTherefore, the general solution is\n[MATH: [0; x_{2}; 0]]\nwhere [MATH: x_2\\in\\mathbb R.] Thus, we have obtained only one linearly independent eigenvector:\n[MATH: [0; 1; 0]]\n\nContent:\nSo [MATH: A] has only two linearly independent eigenvectors, and these cannot form a basis of [MATH: \\mathbb R^3.] Therefore, [MATH: A] is not diagonalizable.\n\nContent:\nIn terms of eigenspaces, the matrix [MATH: A] is not diagonalizable because the sum of the dimensions of the eigenspaces is smaller than the number of rows/columns of [MATH: A.] The eigenspaces corresponding to [MATH: \\lambda_1 = 1] and [MATH: \\lambda_2 = 2] are given by\n\nContent:\n[MATH: [1; 1; 2]]\n\nContent:\nIf we sum the dimensions of [MATH: V_1] and [MATH: V_2,] we get\n\nContent:\n[MATH: \\dim(V_{1}) + \\dim(V_{2}) = 1 + 1 = 2 \\neq 3 \\quad {\\color{red}{\\boldsymbol\\times}}]\n\nContent:\nwhich means that [MATH: A] is not diagonalizable."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37957",
+        "content_id": "6259",
+        "dom_id": "step-37957",
+        "selector": "#step-37957",
+        "step_anchor": "step-3",
+        "title": "Determining Whether an NxN Matrix Is Diagonalizable",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To check whether diagonalization is possible, we can use the following theorem:</p>",
+            "readable_text": "To check whether diagonalization is possible, we can use the following theorem:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p><em>An <span class=\"math\">[MATH: n \\times n]</span> matrix is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals <span class=\"math\">[MATH: n]</span>.</em></p></blockquote>",
+            "readable_text": "> An [MATH: n \\times n] matrix is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals [MATH: n].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>That is, if </p>",
+            "readable_text": "That is, if",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\lambda_1, \\: \\lambda_2, \\: \\ldots, \\: \\lambda_k]</span></p>",
+            "readable_text": "[MATH: \\lambda_1, \\: \\lambda_2, \\: \\ldots, \\: \\lambda_k]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>are the distinct eigenvalues of an <span class=\"math\">[MATH: n \\times n]</span> matrix, and the corresponding eigenspaces are </p>",
+            "readable_text": "are the distinct eigenvalues of an [MATH: n \\times n] matrix, and the corresponding eigenspaces are",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: V_{\\lambda_1}, \\: V_{\\lambda_2}, \\: \\ldots, \\: V_{\\lambda_k}]</span></p>",
+            "readable_text": "[MATH: V_{\\lambda_1}, \\: V_{\\lambda_2}, \\: \\ldots, \\: V_{\\lambda_k}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>then the matrix is diagonalizable if and only if</p>",
+            "readable_text": "then the matrix is diagonalizable if and only if",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\dim(V_{\\lambda_1}) + \\dim(V_{\\lambda_2}) + \\cdots + \\dim(V_{\\lambda_k}) = n.]</span></p>",
+            "readable_text": "[MATH: \\dim(V_{\\lambda_1}) + \\dim(V_{\\lambda_2}) + \\cdots + \\dim(V_{\\lambda_k}) = n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nTo check whether diagonalization is possible, we can use the following theorem:\n\nContent:\n> An [MATH: n \\times n] matrix is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals [MATH: n].\n\nContent:\nThat is, if\n\nContent:\n[MATH: \\lambda_1, \\: \\lambda_2, \\: \\ldots, \\: \\lambda_k]\n\nContent:\nare the distinct eigenvalues of an [MATH: n \\times n] matrix, and the corresponding eigenspaces are\n\nContent:\n[MATH: V_{\\lambda_1}, \\: V_{\\lambda_2}, \\: \\ldots, \\: V_{\\lambda_k}]\n\nContent:\nthen the matrix is diagonalizable if and only if\n\nContent:\n[MATH: \\dim(V_{\\lambda_1}) + \\dim(V_{\\lambda_2}) + \\cdots + \\dim(V_{\\lambda_k}) = n.]"
+      },
+      {
+        "lesson_index": 4,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "21531",
+        "content_id": "5893",
+        "dom_id": "step-21531",
+        "selector": "#step-21531",
+        "step_anchor": "step-4",
+        "title": "Finding a Diagonal Matrix Corresponding to a Given Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "1964",
+            "name": "The Characteristic Equation of a Matrix",
+            "href": "/topics/1964",
+            "type": ""
+          },
+          {
+            "topic_id": "1965",
+            "name": "Calculating the Eigenvectors of a 3x3 Matrix in the General Case",
+            "href": "/topics/1965",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4|3|0; 0|1|0; 0|3|4]]</span>\nIf the matrix <span class=\"math\">[MATH: A]</span> above is diagonalizable, find a corresponding diagonal matrix <span class=\"math\">[MATH: D.]</span></p>",
+            "readable_text": "[MATH: [4|3|0; 0|1|0; 0|3|4]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, we find the eigenvalues of the matrix <span class=\"math\">[MATH: A]</span> by solving <span class=\"math\">[MATH: \\det(A-\\lambda I)=0\\mathbin{:}]</span></p><p><span class=\"math\">[MATH: |4 \u2212 \u03bb|3|0; 0|1 \u2212 \u03bb|0; 0|3|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)|4 \u2212 \u03bb|0; 0|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)((4 \u2212 \u03bb)(4 \u2212 \u03bb) \u2212 0)|= 0; (\u03bb \u2212 1)(\u03bb \u2212 4)^{2}|= 0]</span></p><p>Therefore, the eigenvalues are <span class=\"math\">[MATH: \\lambda_1=1]</span> (simple root) and <span class=\"math\">[MATH: \\lambda_2=4]</span> (double root).</p><p>Let&#x27;s now find the dimension of the eigenspace corresponding to each eigenvalue.</p><ul><li><p>First, we consider the simple root <span class=\"math\">[MATH: \\lambda_1 = 1.]</span> Since the root is simple, the dimension of the eigenspace <span class=\"math\">[MATH: V_{1}]</span> corresponding to <span class=\"math\">[MATH: \\lambda_1 = 1]</span> is\n<span class=\"math\">[MATH: \\text{dim}(V_{1}) = 1.]</span></p></li><li><p>Next, we consider the double root <span class=\"math\">[MATH: \\lambda_2 = 4.]</span> Let&#x27;s find the dimension of the eigenspace <span class=\"math\">[MATH: V_{4}]</span> corresponding to this eigenvalue. To do this, we row-reduce the matrix <span class=\"math\">[MATH: A-4I \\mathbin{:}]</span>\n<span class=\"math\">[MATH: A \u2212 4I|= [4|3|0; 0|1|0; 0|3|4] \u2212 4[1|0|0; 0|1|0; 0|0|1]; = [0|3|0; 0|\u2212 3|0; 0|3|0]|R_{2}:=R_{2} + R_{1}; R_{3}:=R_{3} + (\u2212 1)R_{1}; \u223c[0|3|0; 0|0|0; 0|0|0]]</span>\nIn the reduced matrix above, there is one pivot column (the <span class=\"math\">[MATH: 2]</span>nd one). This implies that we will have <span class=\"math\">[MATH: 3-1=2]</span> linearly independent eigenvectors corresponding to <span class=\"math\">[MATH: \\lambda_2 = 4.]</span> So,\n<span class=\"math\">[MATH: \\text{dim}(V_{4}) = 2.]</span></p></li></ul><p>Therefore, <span class=\"math\">[MATH: A]</span> is diagonalizable, since</p><p><span class=\"math\">[MATH: \\text{dim}(V_{1}) + \\text{dim}(V_{4}) = 1+2 = 3. \\quad {\\color{green}\\checkmark}]</span></p><p>Finally, a corresponding diagonal matrix is </p><p><span class=\"math\">[MATH: [4|0|0; 0|4|0; 0|0|1]]</span></p>",
+            "readable_text": "First, we find the eigenvalues of the matrix [MATH: A] by solving [MATH: \\det(A-\\lambda I)=0\\mathbin{:}]\n\n[MATH: |4 \u2212 \u03bb|3|0; 0|1 \u2212 \u03bb|0; 0|3|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)|4 \u2212 \u03bb|0; 0|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)((4 \u2212 \u03bb)(4 \u2212 \u03bb) \u2212 0)|= 0; (\u03bb \u2212 1)(\u03bb \u2212 4)^{2}|= 0]\n\nTherefore, the eigenvalues are [MATH: \\lambda_1=1] (simple root) and [MATH: \\lambda_2=4] (double root).\n\nLet's now find the dimension of the eigenspace corresponding to each eigenvalue.\n\n- First, we consider the simple root [MATH: \\lambda_1 = 1.] Since the root is simple, the dimension of the eigenspace [MATH: V_{1}] corresponding to [MATH: \\lambda_1 = 1] is\n[MATH: \\text{dim}(V_{1}) = 1.]\n- Next, we consider the double root [MATH: \\lambda_2 = 4.] Let's find the dimension of the eigenspace [MATH: V_{4}] corresponding to this eigenvalue. To do this, we row-reduce the matrix [MATH: A-4I \\mathbin{:}]\n[MATH: A \u2212 4I|= [4|3|0; 0|1|0; 0|3|4] \u2212 4[1|0|0; 0|1|0; 0|0|1]; = [0|3|0; 0|\u2212 3|0; 0|3|0]|R_{2}:=R_{2} + R_{1}; R_{3}:=R_{3} + (\u2212 1)R_{1}; \u223c[0|3|0; 0|0|0; 0|0|0]]\nIn the reduced matrix above, there is one pivot column (the [MATH: 2]nd one). This implies that we will have [MATH: 3-1=2] linearly independent eigenvectors corresponding to [MATH: \\lambda_2 = 4.] So,\n[MATH: \\text{dim}(V_{4}) = 2.]\n\nTherefore, [MATH: A] is diagonalizable, since\n\n[MATH: \\text{dim}(V_{1}) + \\text{dim}(V_{4}) = 1+2 = 3. \\quad {\\color{green}\\checkmark}]\n\nFinally, a corresponding diagonal matrix is\n\n[MATH: [4|0|0; 0|4|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [4|3|0; 0|1|0; 0|3|4]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we find the eigenvalues of the matrix [MATH: A] by solving [MATH: \\det(A-\\lambda I)=0\\mathbin{:}]\n\n[MATH: |4 \u2212 \u03bb|3|0; 0|1 \u2212 \u03bb|0; 0|3|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)|4 \u2212 \u03bb|0; 0|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)((4 \u2212 \u03bb)(4 \u2212 \u03bb) \u2212 0)|= 0; (\u03bb \u2212 1)(\u03bb \u2212 4)^{2}|= 0]\n\nTherefore, the eigenvalues are [MATH: \\lambda_1=1] (simple root) and [MATH: \\lambda_2=4] (double root).\n\nLet's now find the dimension of the eigenspace corresponding to each eigenvalue.\n\n- First, we consider the simple root [MATH: \\lambda_1 = 1.] Since the root is simple, the dimension of the eigenspace [MATH: V_{1}] corresponding to [MATH: \\lambda_1 = 1] is\n[MATH: \\text{dim}(V_{1}) = 1.]\n- Next, we consider the double root [MATH: \\lambda_2 = 4.] Let's find the dimension of the eigenspace [MATH: V_{4}] corresponding to this eigenvalue. To do this, we row-reduce the matrix [MATH: A-4I \\mathbin{:}]\n[MATH: A \u2212 4I|= [4|3|0; 0|1|0; 0|3|4] \u2212 4[1|0|0; 0|1|0; 0|0|1]; = [0|3|0; 0|\u2212 3|0; 0|3|0]|R_{2}:=R_{2} + R_{1}; R_{3}:=R_{3} + (\u2212 1)R_{1}; \u223c[0|3|0; 0|0|0; 0|0|0]]\nIn the reduced matrix above, there is one pivot column (the [MATH: 2]nd one). This implies that we will have [MATH: 3-1=2] linearly independent eigenvectors corresponding to [MATH: \\lambda_2 = 4.] So,\n[MATH: \\text{dim}(V_{4}) = 2.]\n\nTherefore, [MATH: A] is diagonalizable, since\n\n[MATH: \\text{dim}(V_{1}) + \\text{dim}(V_{4}) = 1+2 = 3. \\quad {\\color{green}\\checkmark}]\n\nFinally, a corresponding diagonal matrix is\n\n[MATH: [4|0|0; 0|4|0; 0|0|1]]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "37647",
+        "dom_id": "question-37647",
+        "selector": "#question-37647",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [1|0|0; 5|\u2212 3|\u2212 1; \u2212 5|4|2]]</span>\nIf the matrix <span class=\"math\">[MATH: A]</span> above is diagonalizable, find a corresponding diagonal matrix <span class=\"math\">[MATH: D.]</span></p>",
+          "readable_text": "[MATH: A = [1|0|0; 5|\u2212 3|\u2212 1; \u2212 5|4|2]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-37647-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: D = [1|0|0; 0|1|0; 0|0|2]]</span></p>",
+            "readable_text": "[MATH: D = [1|0|0; 0|1|0; 0|0|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-37647-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: A]</span> is not diagonalizable</p>",
+            "readable_text": "[MATH: A] is not diagonalizable",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-37647-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: D = [3|0|0; 0|\u2212 2|0; 0|0|\u2212 2]]</span></p>",
+            "readable_text": "[MATH: D = [3|0|0; 0|\u2212 2|0; 0|0|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-37647-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: D = [2|0|0; 0|3|0; 0|0|\u2212 2]]</span></p>",
+            "readable_text": "[MATH: D = [2|0|0; 0|3|0; 0|0|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-37647-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 2]]</span></p>",
+            "readable_text": "[MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [1|0|0; 5|\u2212 3|\u2212 1; \u2212 5|4|2]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]\n\nChoices:\na. [MATH: D = [1|0|0; 0|1|0; 0|0|2]]\nb. [MATH: A] is not diagonalizable\nc. [MATH: D = [3|0|0; 0|\u2212 2|0; 0|0|\u2212 2]]\nd. [MATH: D = [2|0|0; 0|3|0; 0|0|\u2212 2]]\ne. [MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 2]]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "37703",
+        "dom_id": "question-37703",
+        "selector": "#question-37703",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [\u2212 6|0|0; \u2212 9|12|0; \u2212 3|6|\u2212 6]]</span>\nIf the matrix <span class=\"math\">[MATH: A]</span> above is diagonalizable, find a corresponding diagonal matrix <span class=\"math\">[MATH: D.]</span></p>",
+          "readable_text": "[MATH: A = [\u2212 6|0|0; \u2212 9|12|0; \u2212 3|6|\u2212 6]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-37703-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [12|0|0; 0|12|0; 0|0|6]]</span></p>",
+            "readable_text": "[MATH: D = [12|0|0; 0|12|0; 0|0|6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-37703-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: A]</span> is not diagonalizable</p>",
+            "readable_text": "[MATH: A] is not diagonalizable",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-37703-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: D = [\u2212 6|0|0; 0|6|0; 0|0|\u2212 12]]</span></p>",
+            "readable_text": "[MATH: D = [\u2212 6|0|0; 0|6|0; 0|0|\u2212 12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-37703-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: D = [12|0|0; 0|\u2212 12|0; 0|0|\u2212 6]]</span></p>",
+            "readable_text": "[MATH: D = [12|0|0; 0|\u2212 12|0; 0|0|\u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-37703-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [\u2212 6|0|0; 0|\u2212 6|0; 0|0|12]]</span>\n</p>",
+            "readable_text": "[MATH: D = [\u2212 6|0|0; 0|\u2212 6|0; 0|0|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [\u2212 6|0|0; \u2212 9|12|0; \u2212 3|6|\u2212 6]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]\n\nChoices:\na. [MATH: D = [12|0|0; 0|12|0; 0|0|6]]\nb. [MATH: A] is not diagonalizable\nc. [MATH: D = [\u2212 6|0|0; 0|6|0; 0|0|\u2212 12]]\nd. [MATH: D = [12|0|0; 0|\u2212 12|0; 0|0|\u2212 6]]\ne. [MATH: D = [\u2212 6|0|0; 0|\u2212 6|0; 0|0|12]]"
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37527",
+        "content_id": "6191",
+        "dom_id": "step-37527",
+        "selector": "#step-37527",
+        "step_anchor": "step-7",
+        "title": "The Diagonalization Algorithm",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A square matrix <span class=\"math\">[MATH: A]</span> is diagonalizable if there exists a diagonal matrix <span class=\"math\">[MATH: D]</span> and an invertible matrix <span class=\"math\">[MATH: P]</span> such that</p>",
+            "readable_text": "A square matrix [MATH: A] is diagonalizable if there exists a diagonal matrix [MATH: D] and an invertible matrix [MATH: P] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A = PDP^{-1}.]</span></p>",
+            "readable_text": "[MATH: A = PDP^{-1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, diagonalizing <span class=\"math\">[MATH: A]</span> means finding matrices <span class=\"math\">[MATH: D]</span> and <span class=\"math\">[MATH: P]</span> that satisfy this equation. </p>",
+            "readable_text": "So, diagonalizing [MATH: A] means finding matrices [MATH: D] and [MATH: P] that satisfy this equation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, let&#x27;s diagonalize the matrix <span class=\"math\">[MATH: A,]</span> given by</p>",
+            "readable_text": "For example, let's diagonalize the matrix [MATH: A,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 1|\u2212 3|6; 0|2|0; \u2212 1|\u2212 1|4]]</span></p>",
+            "readable_text": "[MATH: [\u2212 1|\u2212 3|6; 0|2|0; \u2212 1|\u2212 1|4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To diagonalize a <span class=\"math\">[MATH: 3 \\times 3]</span> matrix, we follow a three-step <strong>diagonalization algorithm.</strong></p>",
+            "readable_text": "To diagonalize a [MATH: 3 \\times 3] matrix, we follow a three-step diagonalization algorithm.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Step 1:</strong> Find the eigenvalues of the matrix.</p>",
+            "readable_text": "Step 1: Find the eigenvalues of the matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We solve the characteristic equation <span class=\"math\">[MATH: \\vert A - \\lambda I \\vert = 0.]</span> For the given matrix, the eigenvalues are \n<span class=\"math\">[MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}\\qquad \\textrm{and} \\qquad{\\color{blue}\\lambda_3 =1}.]</span></p>",
+            "readable_text": "We solve the characteristic equation [MATH: \\vert A - \\lambda I \\vert = 0.] For the given matrix, the eigenvalues are\n[MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}\\qquad \\textrm{and} \\qquad{\\color{blue}\\lambda_3 =1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Step 2:</strong> Find a basis (if it exists) consisting of eigenvectors of the matrix.</p>",
+            "readable_text": "Step 2: Find a basis (if it exists) consisting of eigenvectors of the matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Following the usual method for computing eigenvectors, we get </p>",
+            "readable_text": "Following the usual method for computing eigenvectors, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; 0; 1]]</span></p>",
+            "readable_text": "[MATH: [2; 0; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>corresponding to the eigenvalues <span class=\"math\">[MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}]</span> and <span class=\"math\">[MATH: {\\color{blue}\\lambda_3 =1},]</span> respectively.</p>",
+            "readable_text": "corresponding to the eigenvalues [MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}] and [MATH: {\\color{blue}\\lambda_3 =1},] respectively.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Watch out!</strong> In this example, the total number of linearly independent eigenvectors equals the number of rows/columns of the matrix. If we obtain fewer eigenvectors at this step, then the matrix is <em>not</em> diagonalizable.</p>",
+            "readable_text": "Watch out! In this example, the total number of linearly independent eigenvectors equals the number of rows/columns of the matrix. If we obtain fewer eigenvectors at this step, then the matrix is not diagonalizable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Step 3: </strong> Construct the matrices <span class=\"math\">[MATH: D]</span> and <span class=\"math\">[MATH: P.]</span></p>",
+            "readable_text": "Step 3: Construct the matrices [MATH: D] and [MATH: P.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that we have our eigenvalues and corresponding eigenvectors, we can construct the diagonal matrix <span class=\"math\">[MATH: D]</span> and invertible matrix <span class=\"math\">[MATH: P.]</span></p>",
+            "readable_text": "Now that we have our eigenvalues and corresponding eigenvectors, we can construct the diagonal matrix [MATH: D] and invertible matrix [MATH: P.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The matrix <span class=\"math\">[MATH: D]</span> has the eigenvalues of the matrix as its entries on the main diagonal. We can write them in any order, so we let</p>",
+            "readable_text": "The matrix [MATH: D] has the eigenvalues of the matrix as its entries on the main diagonal. We can write them in any order, so we let",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|0|0; 0|2|0; 0|0|1]]</span></p>",
+            "readable_text": "[MATH: [2|0|0; 0|2|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, the columns of <span class=\"math\">[MATH: P]</span> are the corresponding eigenvectors. We must write each eigenvector in the <em>same</em> column as its respective eigenvalue in the matrix <span class=\"math\">[MATH: D.]</span> So, we get</p>",
+            "readable_text": "Then, the columns of [MATH: P] are the corresponding eigenvectors. We must write each eigenvector in the same column as its respective eigenvalue in the matrix [MATH: D.] So, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|\u2212 1|3; 0|1|0; 1|0|1]]</span></p>",
+            "readable_text": "[MATH: [2|\u2212 1|3; 0|1|0; 1|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we obtain</p>",
+            "readable_text": "Finally, we obtain",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: A = PDP^{\u2212 1}|= [2|\u2212 1|3; 0|1|0; 1|0|1][2|0|0; 0|2|0; 0|0|1][2|\u2212 1|3; 0|1|0; 1|0|1]^{\u2212 1}.]</span></p>",
+            "readable_text": "[MATH: A = PDP^{\u2212 1}|= [2|\u2212 1|3; 0|1|0; 1|0|1][2|0|0; 0|2|0; 0|0|1][2|\u2212 1|3; 0|1|0; 1|0|1]^{\u2212 1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note:</strong> When diagonalizing a diagonalizable matrix, we can place the eigenvalues into the matrix <span class=\"math\">[MATH: P]</span> in any order. We just need to be sure that the diagonal entries in the matrix <span class=\"math\">[MATH: D]</span> correspond to the columns of <span class=\"math\">[MATH: P.]</span></p>",
+            "readable_text": "Note: When diagonalizing a diagonalizable matrix, we can place the eigenvalues into the matrix [MATH: P] in any order. We just need to be sure that the diagonal entries in the matrix [MATH: D] correspond to the columns of [MATH: P.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example:</p>",
+            "readable_text": "For example:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Swapping the columns <span class=\"math\">[MATH: \\mathbf{v}_1]</span> and <span class=\"math\">[MATH: \\mathbf{v}_2,]</span> we get another valid diagonalization: \n<span class=\"math\">[MATH: [\u2212 1|2|3; 1|0|0; 0|1|1]]</span></p></li><li><p>Swapping the columns <span class=\"math\">[MATH: \\mathbf{v}_2]</span> and <span class=\"math\">[MATH: \\mathbf{v}_3]</span> above gives another valid diagonalization: \n<span class=\"math\">[MATH: [\u2212 1|3|2; 1|0|0; 0|1|1]]</span></p></li></ul>",
+            "readable_text": "- Swapping the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2,] we get another valid diagonalization:\n[MATH: [\u2212 1|2|3; 1|0|0; 0|1|1]]\n- Swapping the columns [MATH: \\mathbf{v}_2] and [MATH: \\mathbf{v}_3] above gives another valid diagonalization:\n[MATH: [\u2212 1|3|2; 1|0|0; 0|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nA square matrix [MATH: A] is diagonalizable if there exists a diagonal matrix [MATH: D] and an invertible matrix [MATH: P] such that\n\nContent:\n[MATH: A = PDP^{-1}.]\n\nContent:\nSo, diagonalizing [MATH: A] means finding matrices [MATH: D] and [MATH: P] that satisfy this equation.\n\nContent:\nFor example, let's diagonalize the matrix [MATH: A,] given by\n\nContent:\n[MATH: [\u2212 1|\u2212 3|6; 0|2|0; \u2212 1|\u2212 1|4]]\n\nContent:\nTo diagonalize a [MATH: 3 \\times 3] matrix, we follow a three-step diagonalization algorithm.\n\nContent:\nStep 1: Find the eigenvalues of the matrix.\n\nContent:\nWe solve the characteristic equation [MATH: \\vert A - \\lambda I \\vert = 0.] For the given matrix, the eigenvalues are\n[MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}\\qquad \\textrm{and} \\qquad{\\color{blue}\\lambda_3 =1}.]\n\nContent:\nStep 2: Find a basis (if it exists) consisting of eigenvectors of the matrix.\n\nContent:\nFollowing the usual method for computing eigenvectors, we get\n\nContent:\n[MATH: [2; 0; 1]]\n\nContent:\ncorresponding to the eigenvalues [MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}] and [MATH: {\\color{blue}\\lambda_3 =1},] respectively.\n\nContent:\nWatch out! In this example, the total number of linearly independent eigenvectors equals the number of rows/columns of the matrix. If we obtain fewer eigenvectors at this step, then the matrix is not diagonalizable.\n\nContent:\nStep 3: Construct the matrices [MATH: D] and [MATH: P.]\n\nContent:\nNow that we have our eigenvalues and corresponding eigenvectors, we can construct the diagonal matrix [MATH: D] and invertible matrix [MATH: P.]\n\nContent:\nThe matrix [MATH: D] has the eigenvalues of the matrix as its entries on the main diagonal. We can write them in any order, so we let\n\nContent:\n[MATH: [2|0|0; 0|2|0; 0|0|1]]\n\nContent:\nThen, the columns of [MATH: P] are the corresponding eigenvectors. We must write each eigenvector in the same column as its respective eigenvalue in the matrix [MATH: D.] So, we get\n\nContent:\n[MATH: [2|\u2212 1|3; 0|1|0; 1|0|1]]\n\nContent:\nFinally, we obtain\n\nContent:\n[MATH: A = PDP^{\u2212 1}|= [2|\u2212 1|3; 0|1|0; 1|0|1][2|0|0; 0|2|0; 0|0|1][2|\u2212 1|3; 0|1|0; 1|0|1]^{\u2212 1}.]\n\nContent:\nNote: When diagonalizing a diagonalizable matrix, we can place the eigenvalues into the matrix [MATH: P] in any order. We just need to be sure that the diagonal entries in the matrix [MATH: D] correspond to the columns of [MATH: P.]\n\nContent:\nFor example:\n\nContent:\n- Swapping the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2,] we get another valid diagonalization:\n[MATH: [\u2212 1|2|3; 1|0|0; 0|1|1]]\n- Swapping the columns [MATH: \\mathbf{v}_2] and [MATH: \\mathbf{v}_3] above gives another valid diagonalization:\n[MATH: [\u2212 1|3|2; 1|0|0; 0|1|1]]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20130",
+        "content_id": "5507",
+        "dom_id": "step-20130",
+        "selector": "#step-20130",
+        "step_anchor": "step-8",
+        "title": "Diagonalizing a 3x3 Matrix Given Part of the Diagonalization",
+        "key_prerequisites": [
+          {
+            "topic_id": "1970",
+            "name": "Diagonalizing a 3x3 Matrix With Distinct Eigenvalues",
+            "href": "/topics/1970",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=PDP^{-1},]</span> find the value of <span class=\"math\">[MATH: \\dfrac{a}{b}.]</span></p>",
+            "readable_text": "[MATH: [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8]]\nConsider the matrices shown above. Given that [MATH: A=PDP^{-1},] find the value of [MATH: \\dfrac{a}{b}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: D=P^{-1}AP]</span> is a diagonalization of the matrix <span class=\"math\">[MATH: A.]</span></p><p>From the diagonal matrix <span class=\"math\">[MATH: D,]</span> we find that the eigenvalues of <span class=\"math\">[MATH: A]</span> are</p><p><span class=\"math\">[MATH: \\qquad]</span> <span class=\"math\">[MATH: \\lambda_1=\\lambda_3=-2 \\quad]</span> and <span class=\"math\">[MATH: \\quad \\lambda_2=-9.]</span></p><p>The second column of <span class=\"math\">[MATH: P]</span> corresponds to <span class=\"math\">[MATH: \\lambda=-2.]</span> Computing <span class=\"math\">[MATH: A-\\lambda I,]</span> we have</p><p><span class=\"math\">[MATH: A \u2212 (\u2212 2)I|= [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8] \u2212 (\u2212 2)[1|0|0; 0|1|0; 0|0|1]; = [1|1|\u2212 2; \u2212 2|\u2212 2|4; 3|3|\u2212 6].]</span></p><p>So, we have a system of linear equations with the augmented matrix <span class=\"math\">[MATH: M]</span> which we reduce to row echelon form using Gaussian elimination:\n<span class=\"math\">[MATH: M|= [1|1|\u2212 2|0; \u2212 2|\u2212 2|4|0; 3|3|\u2212 6|0]|R_{2}:=R_{2} + 2R_{1}; R_{3}:=R_{3} + (\u2212 3)R_{1}; \u223c[1|1|\u2212 2|0; 0|0|0|0; 0|0|0|0]]</span></p><p>In the reduced matrix above, there is one pivot column (the <span class=\"math\">[MATH: 1]</span>st one). Thus, <span class=\"math\">[MATH: x_2]</span> and <span class=\"math\">[MATH: x_3]</span> are free variables. From the first equation, we obtain <span class=\"math\">[MATH: x_1 = -x_2+2x_3.]</span></p><p>Therefore, the general solution is\n<span class=\"math\">[MATH: [\u2212 x_{2} + 2x_{3}; x_{2}; x_{3}]]</span></p><p>Comparing this with the second column of <span class=\"math\">[MATH: P,]</span> we deduce that <span class=\"math\">[MATH: x_2=0.]</span> Now, setting <span class=\"math\">[MATH: x_3=1]</span> and substituting our values for <span class=\"math\">[MATH: x_2]</span> and <span class=\"math\">[MATH: x_3]</span> into the general solution, we obtain the following: </p><p><span class=\"math\">[MATH: [2; 0; 1]]</span></p><p>Finally, <span class=\"math\">[MATH: \\dfrac{a}{b}=\\dfrac{2}{1}=2.]</span></p>",
+            "readable_text": "Notice that [MATH: D=P^{-1}AP] is a diagonalization of the matrix [MATH: A.]\n\nFrom the diagonal matrix [MATH: D,] we find that the eigenvalues of [MATH: A] are\n\n[MATH: \\qquad] [MATH: \\lambda_1=\\lambda_3=-2 \\quad] and [MATH: \\quad \\lambda_2=-9.]\n\nThe second column of [MATH: P] corresponds to [MATH: \\lambda=-2.] Computing [MATH: A-\\lambda I,] we have\n\n[MATH: A \u2212 (\u2212 2)I|= [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8] \u2212 (\u2212 2)[1|0|0; 0|1|0; 0|0|1]; = [1|1|\u2212 2; \u2212 2|\u2212 2|4; 3|3|\u2212 6].]\n\nSo, we have a system of linear equations with the augmented matrix [MATH: M] which we reduce to row echelon form using Gaussian elimination:\n[MATH: M|= [1|1|\u2212 2|0; \u2212 2|\u2212 2|4|0; 3|3|\u2212 6|0]|R_{2}:=R_{2} + 2R_{1}; R_{3}:=R_{3} + (\u2212 3)R_{1}; \u223c[1|1|\u2212 2|0; 0|0|0|0; 0|0|0|0]]\n\nIn the reduced matrix above, there is one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] and [MATH: x_3] are free variables. From the first equation, we obtain [MATH: x_1 = -x_2+2x_3.]\n\nTherefore, the general solution is\n[MATH: [\u2212 x_{2} + 2x_{3}; x_{2}; x_{3}]]\n\nComparing this with the second column of [MATH: P,] we deduce that [MATH: x_2=0.] Now, setting [MATH: x_3=1] and substituting our values for [MATH: x_2] and [MATH: x_3] into the general solution, we obtain the following:\n\n[MATH: [2; 0; 1]]\n\nFinally, [MATH: \\dfrac{a}{b}=\\dfrac{2}{1}=2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8]]\nConsider the matrices shown above. Given that [MATH: A=PDP^{-1},] find the value of [MATH: \\dfrac{a}{b}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nNotice that [MATH: D=P^{-1}AP] is a diagonalization of the matrix [MATH: A.]\n\nFrom the diagonal matrix [MATH: D,] we find that the eigenvalues of [MATH: A] are\n\n[MATH: \\qquad] [MATH: \\lambda_1=\\lambda_3=-2 \\quad] and [MATH: \\quad \\lambda_2=-9.]\n\nThe second column of [MATH: P] corresponds to [MATH: \\lambda=-2.] Computing [MATH: A-\\lambda I,] we have\n\n[MATH: A \u2212 (\u2212 2)I|= [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8] \u2212 (\u2212 2)[1|0|0; 0|1|0; 0|0|1]; = [1|1|\u2212 2; \u2212 2|\u2212 2|4; 3|3|\u2212 6].]\n\nSo, we have a system of linear equations with the augmented matrix [MATH: M] which we reduce to row echelon form using Gaussian elimination:\n[MATH: M|= [1|1|\u2212 2|0; \u2212 2|\u2212 2|4|0; 3|3|\u2212 6|0]|R_{2}:=R_{2} + 2R_{1}; R_{3}:=R_{3} + (\u2212 3)R_{1}; \u223c[1|1|\u2212 2|0; 0|0|0|0; 0|0|0|0]]\n\nIn the reduced matrix above, there is one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] and [MATH: x_3] are free variables. From the first equation, we obtain [MATH: x_1 = -x_2+2x_3.]\n\nTherefore, the general solution is\n[MATH: [\u2212 x_{2} + 2x_{3}; x_{2}; x_{3}]]\n\nComparing this with the second column of [MATH: P,] we deduce that [MATH: x_2=0.] Now, setting [MATH: x_3=1] and substituting our values for [MATH: x_2] and [MATH: x_3] into the general solution, we obtain the following:\n\n[MATH: [2; 0; 1]]\n\nFinally, [MATH: \\dfrac{a}{b}=\\dfrac{2}{1}=2.]"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "37329",
+        "dom_id": "question-37329",
+        "selector": "#question-37329",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [10|\u2212 7|5; 16|\u2212 12|10; 8|\u2212 7|7], D = [1|0|0; 0|2|0; 0|0|2], P = [1|\u2212 5|a; 2|0|b; 1|8|0]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: D = P^{\u2212 1}AP,]</span> find the value of <span class=\"math\">[MATH: (a)/(b).]</span></p>",
+          "readable_text": "[MATH: A = [10|\u2212 7|5; 16|\u2212 12|10; 8|\u2212 7|7], D = [1|0|0; 0|2|0; 0|0|2], P = [1|\u2212 5|a; 2|0|b; 1|8|0]]\nConsider the matrices shown above. Given that [MATH: D = P^{\u2212 1}AP,] find the value of [MATH: (a)/(b).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-37329-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 1]</span></p>",
+            "readable_text": "[MATH: \u2212 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-37329-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 (2)/(5)]</span></p>",
+            "readable_text": "[MATH: \u2212 (2)/(5)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-37329-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 5]</span></p>",
+            "readable_text": "[MATH: \u2212 5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-37329-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (4)/(3)]</span></p>",
+            "readable_text": "[MATH: (4)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-37329-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (7)/(8)]</span></p>",
+            "readable_text": "[MATH: (7)/(8)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [10|\u2212 7|5; 16|\u2212 12|10; 8|\u2212 7|7], D = [1|0|0; 0|2|0; 0|0|2], P = [1|\u2212 5|a; 2|0|b; 1|8|0]]\nConsider the matrices shown above. Given that [MATH: D = P^{\u2212 1}AP,] find the value of [MATH: (a)/(b).]\n\nChoices:\na. [MATH: \u2212 1]\nb. [MATH: \u2212 (2)/(5)]\nc. [MATH: \u2212 5]\nd. [MATH: (4)/(3)]\ne. [MATH: (7)/(8)]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "37327",
+        "dom_id": "question-37327",
+        "selector": "#question-37327",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [\u2212 8|8|\u2212 6; \u2212 15|14|\u2212 9; \u2212 5|4|\u2212 1], D = [1|0|0; 0|2|0; 0|0|2], P = [2|a|4; 3|0|5; 1|b|0]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = PDP^{\u2212 1},]</span> find the value of <span class=\"math\">[MATH: (a)/(b).]</span></p>",
+          "readable_text": "[MATH: A = [\u2212 8|8|\u2212 6; \u2212 15|14|\u2212 9; \u2212 5|4|\u2212 1], D = [1|0|0; 0|2|0; 0|0|2], P = [2|a|4; 3|0|5; 1|b|0]]\nConsider the matrices shown above. Given that [MATH: A = PDP^{\u2212 1},] find the value of [MATH: (a)/(b).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-37327-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (4)/(3)]</span></p>",
+            "readable_text": "[MATH: (4)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-37327-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-37327-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-37327-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 (3)/(5)]</span></p>",
+            "readable_text": "[MATH: \u2212 (3)/(5)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-37327-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [\u2212 8|8|\u2212 6; \u2212 15|14|\u2212 9; \u2212 5|4|\u2212 1], D = [1|0|0; 0|2|0; 0|0|2], P = [2|a|4; 3|0|5; 1|b|0]]\nConsider the matrices shown above. Given that [MATH: A = PDP^{\u2212 1},] find the value of [MATH: (a)/(b).]\n\nChoices:\na. [MATH: (4)/(3)]\nb. [MATH: 1]\nc. [MATH: 2]\nd. [MATH: \u2212 (3)/(5)]\ne. [MATH: \u2212 2]"
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "31599",
+        "content_id": "8495",
+        "dom_id": "step-31599",
+        "selector": "#step-31599",
+        "step_anchor": "step-11",
+        "title": "Diagonalizing a 3x3 Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|2|6; \u2212 1|5|3; 1|\u2212 1|1]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A=PDP^{-1},]</span> what is the matrix <span class=\"math\">[MATH: P?]</span></p>",
+            "readable_text": "[MATH: [2|2|6; \u2212 1|5|3; 1|\u2212 1|1]]\nConsider the matrices shown above. Given that [MATH: A=PDP^{-1},] what is the matrix [MATH: P?]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: A=PDP^{-1}]</span> is a diagonalization of the matrix <span class=\"math\">[MATH: A.]</span> So let&#x27;s apply the diagonalization algorithm to <span class=\"math\">[MATH: A.]</span></p><p><strong>Step 1.</strong> From the diagonal matrix <span class=\"math\">[MATH: D,]</span> we deduce that the eigenvalues of <span class=\"math\">[MATH: A]</span> are </p><p><span class=\"math\">[MATH: \\qquad]</span> <span class=\"math\">[MATH: \\lambda_1=\\lambda_2=4 \\quad]</span> and <span class=\"math\">[MATH: \\quad \\lambda_3=0.]</span></p><p><strong>Step 2.</strong> Now, we need to find an eigenvector basis of <span class=\"math\">[MATH: A.]</span></p><ul><li><p>Consider <span class=\"math\">[MATH: \\lambda=4.]</span> Then,\n<span class=\"math\">[MATH: A \u2212 \u03bbI|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 4[1|0|0; 0|1|0; 0|0|1] = [\u2212 2|2|6; \u2212 1|1|3; 1|\u2212 1|\u2212 3].]</span>\nSo, we have a system of linear equations with the augmented matrix <span class=\"math\">[MATH: M]</span> which we reduce to row echelon form using Gaussian elimination:\n<span class=\"math\">[MATH: M|= [\u2212 2|2|6|0; \u2212 1|1|3|0; 1|\u2212 1|\u2212 3|0]|R_{2}:=R_{2} + (\u2212 (1)/(2))R_{1}; R_{3}:=R_{3} + (1)/(2)R_{1}; \u223c[\u2212 2|2|6|0; 0|0|0|0; 0|0|0|0]]</span>\nIn the reduced matrix above, there is one pivot column (the <span class=\"math\">[MATH: 1]</span>st one). Thus, <span class=\"math\">[MATH: x_2]</span> and <span class=\"math\">[MATH: x_3]</span> are free variables. From the first equation, we obtain <span class=\"math\">[MATH: x_1=x_2+3x_3.]</span> Hence, the general solution is\n<span class=\"math\">[MATH: [x_{2} + 3x_{3}; x_{2}; x_{3}]]</span>\nAs a result, we have two linearly independent eigenvectors</p><p><span class=\"math\">[MATH: \\qquad]</span> <span class=\"math\">[MATH: [1; 1; 0]]</span> and <span class=\"math\">[MATH: [3; 0; 1]]</span></p></li><li><p>Consider <span class=\"math\">[MATH: \\lambda=0.]</span> Then,\n<span class=\"math\">[MATH: A \u2212 0I|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 0[1|0|0; 0|1|0; 0|0|1] = [2|2|6; \u2212 1|5|3; 1|\u2212 1|1].]</span>\nSeeking for nonzero solutions of <span class=\"math\">[MATH: (A-0I)\\mathbf{x}=\\mathbf{0},]</span> we obtain the eigenvector </p><p><span class=\"math\">[MATH: \\qquad]</span> <span class=\"math\">[MATH: [\u2212 2; \u2212 1; 1]]</span></p></li></ul><p><strong>Step 3.</strong> We construct the invertible matrix <span class=\"math\">[MATH: P]</span> using our eigenvectors, as follows:\n<span class=\"math\">[MATH: [\u2212 2|1|3; \u2212 1|1|0; 1|0|1]]</span></p>",
+            "readable_text": "Notice that [MATH: A=PDP^{-1}] is a diagonalization of the matrix [MATH: A.] So let's apply the diagonalization algorithm to [MATH: A.]\n\nStep 1. From the diagonal matrix [MATH: D,] we deduce that the eigenvalues of [MATH: A] are\n\n[MATH: \\qquad] [MATH: \\lambda_1=\\lambda_2=4 \\quad] and [MATH: \\quad \\lambda_3=0.]\n\nStep 2. Now, we need to find an eigenvector basis of [MATH: A.]\n\n- Consider [MATH: \\lambda=4.] Then,\n[MATH: A \u2212 \u03bbI|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 4[1|0|0; 0|1|0; 0|0|1] = [\u2212 2|2|6; \u2212 1|1|3; 1|\u2212 1|\u2212 3].]\nSo, we have a system of linear equations with the augmented matrix [MATH: M] which we reduce to row echelon form using Gaussian elimination:\n[MATH: M|= [\u2212 2|2|6|0; \u2212 1|1|3|0; 1|\u2212 1|\u2212 3|0]|R_{2}:=R_{2} + (\u2212 (1)/(2))R_{1}; R_{3}:=R_{3} + (1)/(2)R_{1}; \u223c[\u2212 2|2|6|0; 0|0|0|0; 0|0|0|0]]\nIn the reduced matrix above, there is one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] and [MATH: x_3] are free variables. From the first equation, we obtain [MATH: x_1=x_2+3x_3.] Hence, the general solution is\n[MATH: [x_{2} + 3x_{3}; x_{2}; x_{3}]]\nAs a result, we have two linearly independent eigenvectors\n\n[MATH: \\qquad] [MATH: [1; 1; 0]] and [MATH: [3; 0; 1]]\n- Consider [MATH: \\lambda=0.] Then,\n[MATH: A \u2212 0I|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 0[1|0|0; 0|1|0; 0|0|1] = [2|2|6; \u2212 1|5|3; 1|\u2212 1|1].]\nSeeking for nonzero solutions of [MATH: (A-0I)\\mathbf{x}=\\mathbf{0},] we obtain the eigenvector\n\n[MATH: \\qquad] [MATH: [\u2212 2; \u2212 1; 1]]\n\nStep 3. We construct the invertible matrix [MATH: P] using our eigenvectors, as follows:\n[MATH: [\u2212 2|1|3; \u2212 1|1|0; 1|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [2|2|6; \u2212 1|5|3; 1|\u2212 1|1]]\nConsider the matrices shown above. Given that [MATH: A=PDP^{-1},] what is the matrix [MATH: P?]\n\nContent:\nEXPLANATION\n\nExplanation:\nNotice that [MATH: A=PDP^{-1}] is a diagonalization of the matrix [MATH: A.] So let's apply the diagonalization algorithm to [MATH: A.]\n\nStep 1. From the diagonal matrix [MATH: D,] we deduce that the eigenvalues of [MATH: A] are\n\n[MATH: \\qquad] [MATH: \\lambda_1=\\lambda_2=4 \\quad] and [MATH: \\quad \\lambda_3=0.]\n\nStep 2. Now, we need to find an eigenvector basis of [MATH: A.]\n\n- Consider [MATH: \\lambda=4.] Then,\n[MATH: A \u2212 \u03bbI|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 4[1|0|0; 0|1|0; 0|0|1] = [\u2212 2|2|6; \u2212 1|1|3; 1|\u2212 1|\u2212 3].]\nSo, we have a system of linear equations with the augmented matrix [MATH: M] which we reduce to row echelon form using Gaussian elimination:\n[MATH: M|= [\u2212 2|2|6|0; \u2212 1|1|3|0; 1|\u2212 1|\u2212 3|0]|R_{2}:=R_{2} + (\u2212 (1)/(2))R_{1}; R_{3}:=R_{3} + (1)/(2)R_{1}; \u223c[\u2212 2|2|6|0; 0|0|0|0; 0|0|0|0]]\nIn the reduced matrix above, there is one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] and [MATH: x_3] are free variables. From the first equation, we obtain [MATH: x_1=x_2+3x_3.] Hence, the general solution is\n[MATH: [x_{2} + 3x_{3}; x_{2}; x_{3}]]\nAs a result, we have two linearly independent eigenvectors\n\n[MATH: \\qquad] [MATH: [1; 1; 0]] and [MATH: [3; 0; 1]]\n- Consider [MATH: \\lambda=0.] Then,\n[MATH: A \u2212 0I|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 0[1|0|0; 0|1|0; 0|0|1] = [2|2|6; \u2212 1|5|3; 1|\u2212 1|1].]\nSeeking for nonzero solutions of [MATH: (A-0I)\\mathbf{x}=\\mathbf{0},] we obtain the eigenvector\n\n[MATH: \\qquad] [MATH: [\u2212 2; \u2212 1; 1]]\n\nStep 3. We construct the invertible matrix [MATH: P] using our eigenvectors, as follows:\n[MATH: [\u2212 2|1|3; \u2212 1|1|0; 1|0|1]]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "37717",
+        "dom_id": "question-37717",
+        "selector": "#question-37717",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [1|0|0; 2|\u2212 1|0; 3|\u2212 3|1]]</span>\nConsider the matrix <span class=\"math\">[MATH: A]</span> shown above. Given that <span class=\"math\">[MATH: A = PDP^{\u2212 1},]</span> which of the following could be matrices <span class=\"math\">[MATH: D]</span> and <span class=\"math\">[MATH: P?]</span></p>",
+          "readable_text": "[MATH: A = [1|0|0; 2|\u2212 1|0; 3|\u2212 3|1]]\nConsider the matrix [MATH: A] shown above. Given that [MATH: A = PDP^{\u2212 1},] which of the following could be matrices [MATH: D] and [MATH: P?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-37717-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]</span>\nand\n<span class=\"math\">[MATH: P = [1|0|0; 1|0|2; 0|1|3]]</span></p>",
+            "readable_text": "[MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 1|0|2; 0|1|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-37717-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]</span>\nand\n<span class=\"math\">[MATH: P = [\u2212 1|0|0; \u2212 1|0|\u2212 2; 0|3|\u2212 4]]</span></p>",
+            "readable_text": "[MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [\u2212 1|0|0; \u2212 1|0|\u2212 2; 0|3|\u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-37717-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: A]</span> is not diagonalizable</p>",
+            "readable_text": "[MATH: A] is not diagonalizable",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-37717-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]</span>\nand\n<span class=\"math\">[MATH: P = [1|0|0; 1|\u2212 2|0; 0|\u2212 3|5]]</span></p>",
+            "readable_text": "[MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 1|\u2212 2|0; 0|\u2212 3|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-37717-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]</span>\nand\n<span class=\"math\">[MATH: P = [1|0|0; 0|0|2; 0|4|0]]</span></p>",
+            "readable_text": "[MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 0|0|2; 0|4|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [1|0|0; 2|\u2212 1|0; 3|\u2212 3|1]]\nConsider the matrix [MATH: A] shown above. Given that [MATH: A = PDP^{\u2212 1},] which of the following could be matrices [MATH: D] and [MATH: P?]\n\nChoices:\na. [MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 1|0|2; 0|1|3]]\nb. [MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [\u2212 1|0|0; \u2212 1|0|\u2212 2; 0|3|\u2212 4]]\nc. [MATH: A] is not diagonalizable\nd. [MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 1|\u2212 2|0; 0|\u2212 3|5]]\ne. [MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 0|0|2; 0|4|0]]"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "37304",
+        "dom_id": "question-37304",
+        "selector": "#question-37304",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [1|1|1; 0|6|5; 0|\u2212 10|\u2212 9], D = [1|0|0; 0|1|0; 0|0|\u2212 4]]</span>\nConsider the matrices shown above. Given that <span class=\"math\">[MATH: A = PDP^{\u2212 1},]</span> which of the following could be the matrix <span class=\"math\">[MATH: P?]</span></p>",
+          "readable_text": "[MATH: A = [1|1|1; 0|6|5; 0|\u2212 10|\u2212 9], D = [1|0|0; 0|1|0; 0|0|\u2212 4]]\nConsider the matrices shown above. Given that [MATH: A = PDP^{\u2212 1},] which of the following could be the matrix [MATH: P?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-37304-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|1; \u2212 1|0|2; 1|0|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [0|1|1; \u2212 1|0|2; 1|0|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-37304-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: A]</span> is not diagonalizable</p>",
+            "readable_text": "[MATH: A] is not diagonalizable",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-37304-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0|0; 0|1|0; 0|0|\u2212 4]]</span></p>",
+            "readable_text": "[MATH: [1|0|0; 0|1|0; 0|0|\u2212 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-37304-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|0|\u2212 1; 0|\u2212 1|\u2212 5; 0|1|10]]</span></p>",
+            "readable_text": "[MATH: [1|0|\u2212 1; 0|\u2212 1|\u2212 5; 0|1|10]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-37304-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3|1|3; 0|1|0; 0|0|1]]</span></p>",
+            "readable_text": "[MATH: [3|1|3; 0|1|0; 0|0|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [1|1|1; 0|6|5; 0|\u2212 10|\u2212 9], D = [1|0|0; 0|1|0; 0|0|\u2212 4]]\nConsider the matrices shown above. Given that [MATH: A = PDP^{\u2212 1},] which of the following could be the matrix [MATH: P?]\n\nChoices:\na. [MATH: [0|1|1; \u2212 1|0|2; 1|0|\u2212 1]]\nb. [MATH: A] is not diagonalizable\nc. [MATH: [1|0|0; 0|1|0; 0|0|\u2212 4]]\nd. [MATH: [1|0|\u2212 1; 0|\u2212 1|\u2212 5; 0|1|10]]\ne. [MATH: [3|1|3; 0|1|0; 0|0|1]]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nLet's consider the following matrix:\n\nContent:\n[MATH: [1|0|1; 0|1|1; 0|0|0]]\n\nContent:\nThis is a [MATH: 3\\times 3] matrix, yet it has only two distinct eigenvalues, namely [MATH: \\lambda_1 = 0] and [MATH: \\lambda_2 = 1.] Note that [MATH: \\lambda_1] is a simple root of the characteristic polynomial and [MATH: \\lambda_2] is a double root.\n\nContent:\nTo diagonalize a [MATH: 3\\times 3] matrix, we need to find a basis of [MATH: \\mathbb R^3] consisting of linearly independent eigenvectors of [MATH: A.] So the question is, can we diagonalize this matrix even though it does not have three distinct eigenvalues?\n\nContent:\nLet's start by computing the eigenvectors of [MATH: A\\mathbin{:}]\n\nContent:\n- First, we consider the simple root [MATH: \\lambda_1 = 0.] Solving the equation [MATH: A \\mathbf x = \\lambda_1 \\mathbf x] in the usual way, we obtain a single linearly independent eigenvector:\n[MATH: [1; 1; \u2212 1]]\n- Next, we consider the double root [MATH: \\lambda_2 = 1.] Let's solve the equation [MATH: A \\mathbf x = \\lambda_2 \\mathbf x] by reducing [MATH: (A - \\lambda_2 I)] to row-echelon form:\n[MATH: A \u2212 \u03bb_{2}I|= [1|0|1; 0|1|1; 0|0|0] \u2212 [1|0|0; 0|1|0; 0|0|1]; = [0|0|1; 0|0|1; 0|0|\u2212 1]|R_{2}:=R_{2} + (\u2212 1)R_{1}; R_{3}:=R_{3} + R_{1}; \u223c[0|0|1; 0|0|0; 0|0|0]]\nThere is one pivot column in the reduced matrix above (the [MATH: 3]rd one). Thus, [MATH: x_1] and [MATH: x_2] are free variables. From the first equation, we obtain the solution [MATH: x_3 = 0.] Therefore, the general solution is\n[MATH: [x_{1}; x_{2}; 0]]\nwhere [MATH: x_1, x_2\\in \\mathbb R.] Thus, we have obtained two linearly independent eigenvectors:\n[MATH: [1; 0; 0]]\n\nContent:\nSo [MATH: A] has three linearly independent eigenvectors that form a basis of [MATH: \\mathbb R^3.] Therefore, [MATH: A] is diagonalizable!\n\nContent:\nIn terms of eigenspaces, [MATH: A] is diagonalizable because the sum of the dimensions of the eigenspaces equals the number of rows/columns of [MATH: A.] The eigenspaces corresponding to [MATH: \\lambda_1 = 0] and [MATH: \\lambda_2 = 1] are given by\n\nContent:\n[MATH: [1; 1; \u2212 1]]\n\nContent:\nIf we sum the dimensions of [MATH: V_0] and [MATH: V_1,] we get precisely [MATH: 3\\mathbin{:}]\n\nContent:\n[MATH: \\dim(V_{0}) + \\dim(V_{1}) = 1 + 2 = 3 \\quad {\\color{green}\\checkmark}]\n\nContent:\nwhich means that [MATH: A] is diagonalizable.\n\nContent:\nIt's important to realize that not all matrices are diagonalizable! Let's see an example.\n\n---\n\nItem 2 \u2014 Tutorial: An Example of a Non-Diagonalizable 3x3 Matrix\n\nContent:\nLet's now consider the following matrix:\n\nContent:\n[MATH: [1|0|0; \u2212 3|2|1; \u2212 2|0|2]]\n\nContent:\nIts eigenvalues are [MATH: \\lambda_1=1] (simple root) and [MATH: \\lambda_2=2] (double root).\n\nContent:\nLet's see how many linearly independent eigenvectors we can find for this matrix.\n\nContent:\n- First, we consider the simple root [MATH: \\lambda_1 = 1.] Solving the equation [MATH: A \\mathbf x = \\lambda_1 \\mathbf x] in the usual way, we obtain a single linearly independent eigenvector:\n[MATH: [1; 1; 2]]\n- Next, we consider the double root [MATH: \\lambda_2 = 2.] Let's solve the equation [MATH: A \\mathbf x = \\lambda_2 \\mathbf x] by reducing [MATH: (A - \\lambda_2 I)] to row-echelon form:\n[MATH: A \u2212 \u03bb_{2}I|= [1|0|0; \u2212 3|2|1; \u2212 2|0|2] \u2212 2[1|0|0; 0|1|0; 0|0|1]; = [\u2212 1|0|0; \u2212 3|0|1; \u2212 2|0|0]|R_{2}:=R_{2} + (\u2212 3)R_{1}; R_{3}:=R_{3} + (\u2212 2)R_{1}; \u223c[\u2212 1|0|0; 0|0|1; 0|0|0]]\nIn the reduced matrix above, there are two pivot columns (the [MATH: 1]st and the [MATH: 3]rd). Thus, [MATH: x_2] is a free variable. From the first and second equations, we have\n[MATH: x_1 = x_3 = 0.]\nTherefore, the general solution is\n[MATH: [0; x_{2}; 0]]\nwhere [MATH: x_2\\in\\mathbb R.] Thus, we have obtained only one linearly independent eigenvector:\n[MATH: [0; 1; 0]]\n\nContent:\nSo [MATH: A] has only two linearly independent eigenvectors, and these cannot form a basis of [MATH: \\mathbb R^3.] Therefore, [MATH: A] is not diagonalizable.\n\nContent:\nIn terms of eigenspaces, the matrix [MATH: A] is not diagonalizable because the sum of the dimensions of the eigenspaces is smaller than the number of rows/columns of [MATH: A.] The eigenspaces corresponding to [MATH: \\lambda_1 = 1] and [MATH: \\lambda_2 = 2] are given by\n\nContent:\n[MATH: [1; 1; 2]]\n\nContent:\nIf we sum the dimensions of [MATH: V_1] and [MATH: V_2,] we get\n\nContent:\n[MATH: \\dim(V_{1}) + \\dim(V_{2}) = 1 + 1 = 2 \\neq 3 \\quad {\\color{red}{\\boldsymbol\\times}}]\n\nContent:\nwhich means that [MATH: A] is not diagonalizable.\n\n---\n\nItem 3 \u2014 Tutorial: Determining Whether an NxN Matrix Is Diagonalizable\n\nContent:\nTo check whether diagonalization is possible, we can use the following theorem:\n\nContent:\n> An [MATH: n \\times n] matrix is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals [MATH: n].\n\nContent:\nThat is, if\n\nContent:\n[MATH: \\lambda_1, \\: \\lambda_2, \\: \\ldots, \\: \\lambda_k]\n\nContent:\nare the distinct eigenvalues of an [MATH: n \\times n] matrix, and the corresponding eigenspaces are\n\nContent:\n[MATH: V_{\\lambda_1}, \\: V_{\\lambda_2}, \\: \\ldots, \\: V_{\\lambda_k}]\n\nContent:\nthen the matrix is diagonalizable if and only if\n\nContent:\n[MATH: \\dim(V_{\\lambda_1}) + \\dim(V_{\\lambda_2}) + \\cdots + \\dim(V_{\\lambda_k}) = n.]\n\n---\n\nItem 4 \u2014 Example: Finding a Diagonal Matrix Corresponding to a Given Matrix\n\nExample Prompt:\n[MATH: [4|3|0; 0|1|0; 0|3|4]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we find the eigenvalues of the matrix [MATH: A] by solving [MATH: \\det(A-\\lambda I)=0\\mathbin{:}]\n\n[MATH: |4 \u2212 \u03bb|3|0; 0|1 \u2212 \u03bb|0; 0|3|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)|4 \u2212 \u03bb|0; 0|4 \u2212 \u03bb||= 0; (1 \u2212 \u03bb)((4 \u2212 \u03bb)(4 \u2212 \u03bb) \u2212 0)|= 0; (\u03bb \u2212 1)(\u03bb \u2212 4)^{2}|= 0]\n\nTherefore, the eigenvalues are [MATH: \\lambda_1=1] (simple root) and [MATH: \\lambda_2=4] (double root).\n\nLet's now find the dimension of the eigenspace corresponding to each eigenvalue.\n\n- First, we consider the simple root [MATH: \\lambda_1 = 1.] Since the root is simple, the dimension of the eigenspace [MATH: V_{1}] corresponding to [MATH: \\lambda_1 = 1] is\n[MATH: \\text{dim}(V_{1}) = 1.]\n- Next, we consider the double root [MATH: \\lambda_2 = 4.] Let's find the dimension of the eigenspace [MATH: V_{4}] corresponding to this eigenvalue. To do this, we row-reduce the matrix [MATH: A-4I \\mathbin{:}]\n[MATH: A \u2212 4I|= [4|3|0; 0|1|0; 0|3|4] \u2212 4[1|0|0; 0|1|0; 0|0|1]; = [0|3|0; 0|\u2212 3|0; 0|3|0]|R_{2}:=R_{2} + R_{1}; R_{3}:=R_{3} + (\u2212 1)R_{1}; \u223c[0|3|0; 0|0|0; 0|0|0]]\nIn the reduced matrix above, there is one pivot column (the [MATH: 2]nd one). This implies that we will have [MATH: 3-1=2] linearly independent eigenvectors corresponding to [MATH: \\lambda_2 = 4.] So,\n[MATH: \\text{dim}(V_{4}) = 2.]\n\nTherefore, [MATH: A] is diagonalizable, since\n\n[MATH: \\text{dim}(V_{1}) + \\text{dim}(V_{4}) = 1+2 = 3. \\quad {\\color{green}\\checkmark}]\n\nFinally, a corresponding diagonal matrix is\n\n[MATH: [4|0|0; 0|4|0; 0|0|1]]\n\n---\n\nItem 5 \u2014 Question 1\n\nPrompt:\n[MATH: A = [1|0|0; 5|\u2212 3|\u2212 1; \u2212 5|4|2]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]\n\nChoices:\na. [MATH: D = [1|0|0; 0|1|0; 0|0|2]]\nb. [MATH: A] is not diagonalizable\nc. [MATH: D = [3|0|0; 0|\u2212 2|0; 0|0|\u2212 2]]\nd. [MATH: D = [2|0|0; 0|3|0; 0|0|\u2212 2]]\ne. [MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 2]]\n\n---\n\nItem 6 \u2014 Question 2\n\nPrompt:\n[MATH: A = [\u2212 6|0|0; \u2212 9|12|0; \u2212 3|6|\u2212 6]]\nIf the matrix [MATH: A] above is diagonalizable, find a corresponding diagonal matrix [MATH: D.]\n\nChoices:\na. [MATH: D = [12|0|0; 0|12|0; 0|0|6]]\nb. [MATH: A] is not diagonalizable\nc. [MATH: D = [\u2212 6|0|0; 0|6|0; 0|0|\u2212 12]]\nd. [MATH: D = [12|0|0; 0|\u2212 12|0; 0|0|\u2212 6]]\ne. [MATH: D = [\u2212 6|0|0; 0|\u2212 6|0; 0|0|12]]\n\n---\n\nItem 7 \u2014 Tutorial: The Diagonalization Algorithm\n\nContent:\nA square matrix [MATH: A] is diagonalizable if there exists a diagonal matrix [MATH: D] and an invertible matrix [MATH: P] such that\n\nContent:\n[MATH: A = PDP^{-1}.]\n\nContent:\nSo, diagonalizing [MATH: A] means finding matrices [MATH: D] and [MATH: P] that satisfy this equation.\n\nContent:\nFor example, let's diagonalize the matrix [MATH: A,] given by\n\nContent:\n[MATH: [\u2212 1|\u2212 3|6; 0|2|0; \u2212 1|\u2212 1|4]]\n\nContent:\nTo diagonalize a [MATH: 3 \\times 3] matrix, we follow a three-step diagonalization algorithm.\n\nContent:\nStep 1: Find the eigenvalues of the matrix.\n\nContent:\nWe solve the characteristic equation [MATH: \\vert A - \\lambda I \\vert = 0.] For the given matrix, the eigenvalues are\n[MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}\\qquad \\textrm{and} \\qquad{\\color{blue}\\lambda_3 =1}.]\n\nContent:\nStep 2: Find a basis (if it exists) consisting of eigenvectors of the matrix.\n\nContent:\nFollowing the usual method for computing eigenvectors, we get\n\nContent:\n[MATH: [2; 0; 1]]\n\nContent:\ncorresponding to the eigenvalues [MATH: {\\color{red}{\\lambda_1}} = {\\color{red}{\\lambda_2}} = {\\color{red}2}] and [MATH: {\\color{blue}\\lambda_3 =1},] respectively.\n\nContent:\nWatch out! In this example, the total number of linearly independent eigenvectors equals the number of rows/columns of the matrix. If we obtain fewer eigenvectors at this step, then the matrix is not diagonalizable.\n\nContent:\nStep 3: Construct the matrices [MATH: D] and [MATH: P.]\n\nContent:\nNow that we have our eigenvalues and corresponding eigenvectors, we can construct the diagonal matrix [MATH: D] and invertible matrix [MATH: P.]\n\nContent:\nThe matrix [MATH: D] has the eigenvalues of the matrix as its entries on the main diagonal. We can write them in any order, so we let\n\nContent:\n[MATH: [2|0|0; 0|2|0; 0|0|1]]\n\nContent:\nThen, the columns of [MATH: P] are the corresponding eigenvectors. We must write each eigenvector in the same column as its respective eigenvalue in the matrix [MATH: D.] So, we get\n\nContent:\n[MATH: [2|\u2212 1|3; 0|1|0; 1|0|1]]\n\nContent:\nFinally, we obtain\n\nContent:\n[MATH: A = PDP^{\u2212 1}|= [2|\u2212 1|3; 0|1|0; 1|0|1][2|0|0; 0|2|0; 0|0|1][2|\u2212 1|3; 0|1|0; 1|0|1]^{\u2212 1}.]\n\nContent:\nNote: When diagonalizing a diagonalizable matrix, we can place the eigenvalues into the matrix [MATH: P] in any order. We just need to be sure that the diagonal entries in the matrix [MATH: D] correspond to the columns of [MATH: P.]\n\nContent:\nFor example:\n\nContent:\n- Swapping the columns [MATH: \\mathbf{v}_1] and [MATH: \\mathbf{v}_2,] we get another valid diagonalization:\n[MATH: [\u2212 1|2|3; 1|0|0; 0|1|1]]\n- Swapping the columns [MATH: \\mathbf{v}_2] and [MATH: \\mathbf{v}_3] above gives another valid diagonalization:\n[MATH: [\u2212 1|3|2; 1|0|0; 0|1|1]]\n\n---\n\nItem 8 \u2014 Example: Diagonalizing a 3x3 Matrix Given Part of the Diagonalization\n\nExample Prompt:\n[MATH: [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8]]\nConsider the matrices shown above. Given that [MATH: A=PDP^{-1},] find the value of [MATH: \\dfrac{a}{b}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nNotice that [MATH: D=P^{-1}AP] is a diagonalization of the matrix [MATH: A.]\n\nFrom the diagonal matrix [MATH: D,] we find that the eigenvalues of [MATH: A] are\n\n[MATH: \\qquad] [MATH: \\lambda_1=\\lambda_3=-2 \\quad] and [MATH: \\quad \\lambda_2=-9.]\n\nThe second column of [MATH: P] corresponds to [MATH: \\lambda=-2.] Computing [MATH: A-\\lambda I,] we have\n\n[MATH: A \u2212 (\u2212 2)I|= [\u2212 1|1|\u2212 2; \u2212 2|\u2212 4|4; 3|3|\u2212 8] \u2212 (\u2212 2)[1|0|0; 0|1|0; 0|0|1]; = [1|1|\u2212 2; \u2212 2|\u2212 2|4; 3|3|\u2212 6].]\n\nSo, we have a system of linear equations with the augmented matrix [MATH: M] which we reduce to row echelon form using Gaussian elimination:\n[MATH: M|= [1|1|\u2212 2|0; \u2212 2|\u2212 2|4|0; 3|3|\u2212 6|0]|R_{2}:=R_{2} + 2R_{1}; R_{3}:=R_{3} + (\u2212 3)R_{1}; \u223c[1|1|\u2212 2|0; 0|0|0|0; 0|0|0|0]]\n\nIn the reduced matrix above, there is one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] and [MATH: x_3] are free variables. From the first equation, we obtain [MATH: x_1 = -x_2+2x_3.]\n\nTherefore, the general solution is\n[MATH: [\u2212 x_{2} + 2x_{3}; x_{2}; x_{3}]]\n\nComparing this with the second column of [MATH: P,] we deduce that [MATH: x_2=0.] Now, setting [MATH: x_3=1] and substituting our values for [MATH: x_2] and [MATH: x_3] into the general solution, we obtain the following:\n\n[MATH: [2; 0; 1]]\n\nFinally, [MATH: \\dfrac{a}{b}=\\dfrac{2}{1}=2.]\n\n---\n\nItem 9 \u2014 Question 3\n\nPrompt:\n[MATH: A = [10|\u2212 7|5; 16|\u2212 12|10; 8|\u2212 7|7], D = [1|0|0; 0|2|0; 0|0|2], P = [1|\u2212 5|a; 2|0|b; 1|8|0]]\nConsider the matrices shown above. Given that [MATH: D = P^{\u2212 1}AP,] find the value of [MATH: (a)/(b).]\n\nChoices:\na. [MATH: \u2212 1]\nb. [MATH: \u2212 (2)/(5)]\nc. [MATH: \u2212 5]\nd. [MATH: (4)/(3)]\ne. [MATH: (7)/(8)]\n\n---\n\nItem 10 \u2014 Question 4\n\nPrompt:\n[MATH: A = [\u2212 8|8|\u2212 6; \u2212 15|14|\u2212 9; \u2212 5|4|\u2212 1], D = [1|0|0; 0|2|0; 0|0|2], P = [2|a|4; 3|0|5; 1|b|0]]\nConsider the matrices shown above. Given that [MATH: A = PDP^{\u2212 1},] find the value of [MATH: (a)/(b).]\n\nChoices:\na. [MATH: (4)/(3)]\nb. [MATH: 1]\nc. [MATH: 2]\nd. [MATH: \u2212 (3)/(5)]\ne. [MATH: \u2212 2]\n\n---\n\nItem 11 \u2014 Example: Diagonalizing a 3x3 Matrix\n\nExample Prompt:\n[MATH: [2|2|6; \u2212 1|5|3; 1|\u2212 1|1]]\nConsider the matrices shown above. Given that [MATH: A=PDP^{-1},] what is the matrix [MATH: P?]\n\nContent:\nEXPLANATION\n\nExplanation:\nNotice that [MATH: A=PDP^{-1}] is a diagonalization of the matrix [MATH: A.] So let's apply the diagonalization algorithm to [MATH: A.]\n\nStep 1. From the diagonal matrix [MATH: D,] we deduce that the eigenvalues of [MATH: A] are\n\n[MATH: \\qquad] [MATH: \\lambda_1=\\lambda_2=4 \\quad] and [MATH: \\quad \\lambda_3=0.]\n\nStep 2. Now, we need to find an eigenvector basis of [MATH: A.]\n\n- Consider [MATH: \\lambda=4.] Then,\n[MATH: A \u2212 \u03bbI|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 4[1|0|0; 0|1|0; 0|0|1] = [\u2212 2|2|6; \u2212 1|1|3; 1|\u2212 1|\u2212 3].]\nSo, we have a system of linear equations with the augmented matrix [MATH: M] which we reduce to row echelon form using Gaussian elimination:\n[MATH: M|= [\u2212 2|2|6|0; \u2212 1|1|3|0; 1|\u2212 1|\u2212 3|0]|R_{2}:=R_{2} + (\u2212 (1)/(2))R_{1}; R_{3}:=R_{3} + (1)/(2)R_{1}; \u223c[\u2212 2|2|6|0; 0|0|0|0; 0|0|0|0]]\nIn the reduced matrix above, there is one pivot column (the [MATH: 1]st one). Thus, [MATH: x_2] and [MATH: x_3] are free variables. From the first equation, we obtain [MATH: x_1=x_2+3x_3.] Hence, the general solution is\n[MATH: [x_{2} + 3x_{3}; x_{2}; x_{3}]]\nAs a result, we have two linearly independent eigenvectors\n\n[MATH: \\qquad] [MATH: [1; 1; 0]] and [MATH: [3; 0; 1]]\n- Consider [MATH: \\lambda=0.] Then,\n[MATH: A \u2212 0I|= [2|2|6; \u2212 1|5|3; 1|\u2212 1|1] \u2212 0[1|0|0; 0|1|0; 0|0|1] = [2|2|6; \u2212 1|5|3; 1|\u2212 1|1].]\nSeeking for nonzero solutions of [MATH: (A-0I)\\mathbf{x}=\\mathbf{0},] we obtain the eigenvector\n\n[MATH: \\qquad] [MATH: [\u2212 2; \u2212 1; 1]]\n\nStep 3. We construct the invertible matrix [MATH: P] using our eigenvectors, as follows:\n[MATH: [\u2212 2|1|3; \u2212 1|1|0; 1|0|1]]\n\n---\n\nItem 12 \u2014 Question 5\n\nPrompt:\n[MATH: A = [1|0|0; 2|\u2212 1|0; 3|\u2212 3|1]]\nConsider the matrix [MATH: A] shown above. Given that [MATH: A = PDP^{\u2212 1},] which of the following could be matrices [MATH: D] and [MATH: P?]\n\nChoices:\na. [MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 1|0|2; 0|1|3]]\nb. [MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [\u2212 1|0|0; \u2212 1|0|\u2212 2; 0|3|\u2212 4]]\nc. [MATH: A] is not diagonalizable\nd. [MATH: D = [1|0|0; 0|\u2212 1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 1|\u2212 2|0; 0|\u2212 3|5]]\ne. [MATH: D = [1|0|0; 0|1|0; 0|0|\u2212 1]]\nand\n[MATH: P = [1|0|0; 0|0|2; 0|4|0]]\n\n---\n\nItem 13 \u2014 Question 6\n\nPrompt:\n[MATH: A = [1|1|1; 0|6|5; 0|\u2212 10|\u2212 9], D = [1|0|0; 0|1|0; 0|0|\u2212 4]]\nConsider the matrices shown above. Given that [MATH: A = PDP^{\u2212 1},] which of the following could be the matrix [MATH: P?]\n\nChoices:\na. [MATH: [0|1|1; \u2212 1|0|2; 1|0|\u2212 1]]\nb. [MATH: A] is not diagonalizable\nc. [MATH: [1|0|0; 0|1|0; 0|0|\u2212 4]]\nd. [MATH: [1|0|\u2212 1; 0|\u2212 1|\u2212 5; 0|1|10]]\ne. [MATH: [3|1|3; 0|1|0; 0|0|1]]"
+  }
+}

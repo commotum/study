@@ -1,0 +1,1863 @@
+{
+  "schema_version": 2,
+  "topic_id": "6399",
+  "topic_title": "Order of Numerical Methods",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/6399/Source/6399.html",
+  "source_url": "https://mathacademy.com/topics/6399",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "585132",
+        "dom_id": "sectionLink-585132",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-585132"
+      },
+      {
+        "index": 2,
+        "step_id": "585133",
+        "dom_id": "sectionLink-585133",
+        "name": "",
+        "title": "Determining the Order of a Numerical Method By Comparing GTE for Different Step Sizes",
+        "selector": "#sectionLink-585133"
+      },
+      {
+        "index": 3,
+        "step_id": "585136",
+        "dom_id": "sectionLink-585136",
+        "name": "",
+        "title": "Order From Local Truncation Error",
+        "selector": "#sectionLink-585136"
+      },
+      {
+        "index": 4,
+        "step_id": "585137",
+        "dom_id": "sectionLink-585137",
+        "name": "",
+        "title": "Determining the Order of a Numerical Method By Comparing LTE for Different Step Sizes",
+        "selector": "#sectionLink-585137"
+      },
+      {
+        "index": 5,
+        "step_id": "585140",
+        "dom_id": "sectionLink-585140",
+        "name": "",
+        "title": "Determining the Order of a Numerical Method Given the GTE or LTE",
+        "selector": "#sectionLink-585140"
+      },
+      {
+        "index": 6,
+        "step_id": "585144",
+        "dom_id": "sectionLink-585144",
+        "name": "",
+        "title": "Making Inferences Given the Order of a Numerical Method",
+        "selector": "#sectionLink-585144"
+      },
+      {
+        "index": 7,
+        "step_id": "593404",
+        "dom_id": "sectionLink-593404",
+        "name": "",
+        "title": "Connecting the Definitions of the Order of Numerical Methods",
+        "selector": "#sectionLink-593404"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2854",
+        "name": "Big-O Notation",
+        "href": "/topics/big-o-notation-2854"
+      },
+      {
+        "topic_id": "3246",
+        "name": "Error in Numerical Methods",
+        "href": "/topics/error-in-numerical-methods-3246"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 15,
+    "step_count": 7,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "585132",
+        "content_id": "14500",
+        "dom_id": "step-585132",
+        "selector": "#step-585132",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Each step of a numerical method produces a local truncation error <span class=\"math\">[MATH: \\tau,]</span> which, over multiple steps, accumulates into a global truncation error <span class=\"math\">[MATH: e.]</span> Both LTE and GTE depend on step size <span class=\"math\">[MATH: \\Delta x.]</span></p>",
+            "readable_text": "Each step of a numerical method produces a local truncation error [MATH: \\tau,] which, over multiple steps, accumulates into a global truncation error [MATH: e.] Both LTE and GTE depend on step size [MATH: \\Delta x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The <strong>order</strong> of a numerical method describes how fast these errors shrink as <span class=\"math\">[MATH: \\Delta x]</span> decreases.\nA numerical method has order <span class=\"math\">[MATH: p]</span> if <span class=\"math\">[MATH: p]</span> is the <em>largest positive</em> integer such that the global truncation error (GTE) satisfies\n<span class=\"math\">[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]</span></p>",
+            "readable_text": "The order of a numerical method describes how fast these errors shrink as [MATH: \\Delta x] decreases.\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, a numerical method has order <span class=\"math\">[MATH: p]</span> if, for sufficiently small step sizes, reducing the step size by a factor of <span class=\"math\">[MATH: k]</span> reduces the GTE by a factor of approximately <span class=\"math\">[MATH: k^p{:}]</span></p>",
+            "readable_text": "In other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the GTE by a factor of approximately [MATH: k^p{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: e((\u0394x)/(k))|\u2248 K((\u0394x)/(k))^{p} = (K(\u0394x)^{p})/(k^{p}) \u2248 (e(\u0394x))/(k^{p})]</span></p>",
+            "readable_text": "[MATH: e((\u0394x)/(k))|\u2248 K((\u0394x)/(k))^{p} = (K(\u0394x)^{p})/(k^{p}) \u2248 (e(\u0394x))/(k^{p})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s demonstrate with an example. Suppose a numerical method is used to approximate the solution to an initial value problem.</p>",
+            "readable_text": "Let's demonstrate with an example. Suppose a numerical method is used to approximate the solution to an initial value problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>With step size <span class=\"math\">[MATH: \\Delta x = 0.21,]</span> the observed global truncation error is <span class=\"math\">[MATH: e(0.21) = 0.785.]</span></p></li><li><p>With step size <span class=\"math\">[MATH: \\Delta x = 0.07,]</span> the observed global truncation error is <span class=\"math\">[MATH: e(0.07) = 0.010.]</span></p></li></ul>",
+            "readable_text": "- With step size [MATH: \\Delta x = 0.21,] the observed global truncation error is [MATH: e(0.21) = 0.785.]\n- With step size [MATH: \\Delta x = 0.07,] the observed global truncation error is [MATH: e(0.07) = 0.010.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Using this data, we can estimate the order of the numerical method.</p>",
+            "readable_text": "Using this data, we can estimate the order of the numerical method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The step size decreases from <span class=\"math\">[MATH: 0.21]</span> to <span class=\"math\">[MATH: 0.07.]</span> So, it reduces by a factor of\n<span class=\"math\">[MATH: k = \\dfrac{0.21}{0.07} = 3.]</span></p>",
+            "readable_text": "The step size decreases from [MATH: 0.21] to [MATH: 0.07.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.21}{0.07} = 3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As a result, for a numerical method of order <span class=\"math\">[MATH: p,]</span> the GTE should decrease by a factor of approximately\n<span class=\"math\">[MATH: k^p = 3^p.]</span></p>",
+            "readable_text": "As a result, for a numerical method of order [MATH: p,] the GTE should decrease by a factor of approximately\n[MATH: k^p = 3^p.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>On the other hand, the GTE actually decreases from <span class=\"math\">[MATH: 0.785]</span> to <span class=\"math\">[MATH: 0.010.]</span> So, it reduces by a factor of\n<span class=\"math\">[MATH: \\dfrac{0.785}{0.010} = 78.5.]</span></p>",
+            "readable_text": "On the other hand, the GTE actually decreases from [MATH: 0.785] to [MATH: 0.010.] So, it reduces by a factor of\n[MATH: \\dfrac{0.785}{0.010} = 78.5.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Comparing the two scale factors for the GTE, we get\n<span class=\"math\">[MATH: 3^{p}|\u2248 78.5; p|\u2248 \\log_{3} (78.5); p|\u2248 3.97\u2026.]</span></p>",
+            "readable_text": "Comparing the two scale factors for the GTE, we get\n[MATH: 3^{p}|\u2248 78.5; p|\u2248 \\log_{3} (78.5); p|\u2248 3.97\u2026.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, rounding to the nearest integer, the approximate order of the method is <span class=\"math\">[MATH: 4.]</span></p>",
+            "readable_text": "Therefore, rounding to the nearest integer, the approximate order of the method is [MATH: 4.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>But why is order important? Well, a higher order means that the error decreases faster as <span class=\"math\">[MATH: \\Delta x]</span> decreases. As a result, higher-order methods can achieve a target accuracy <em>with fewer steps</em>. In this way, order predicts the accuracy you gain when you make steps smaller.</p>",
+            "readable_text": "But why is order important? Well, a higher order means that the error decreases faster as [MATH: \\Delta x] decreases. As a result, higher-order methods can achieve a target accuracy with fewer steps. In this way, order predicts the accuracy you gain when you make steps smaller.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nEach step of a numerical method produces a local truncation error [MATH: \\tau,] which, over multiple steps, accumulates into a global truncation error [MATH: e.] Both LTE and GTE depend on step size [MATH: \\Delta x.]\n\nContent:\nThe order of a numerical method describes how fast these errors shrink as [MATH: \\Delta x] decreases.\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\n\nContent:\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the GTE by a factor of approximately [MATH: k^p{:}]\n\nContent:\n[MATH: e((\u0394x)/(k))|\u2248 K((\u0394x)/(k))^{p} = (K(\u0394x)^{p})/(k^{p}) \u2248 (e(\u0394x))/(k^{p})]\n\nContent:\nLet's demonstrate with an example. Suppose a numerical method is used to approximate the solution to an initial value problem.\n\nContent:\n- With step size [MATH: \\Delta x = 0.21,] the observed global truncation error is [MATH: e(0.21) = 0.785.]\n- With step size [MATH: \\Delta x = 0.07,] the observed global truncation error is [MATH: e(0.07) = 0.010.]\n\nContent:\nUsing this data, we can estimate the order of the numerical method.\n\nContent:\nThe step size decreases from [MATH: 0.21] to [MATH: 0.07.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.21}{0.07} = 3.]\n\nContent:\nAs a result, for a numerical method of order [MATH: p,] the GTE should decrease by a factor of approximately\n[MATH: k^p = 3^p.]\n\nContent:\nOn the other hand, the GTE actually decreases from [MATH: 0.785] to [MATH: 0.010.] So, it reduces by a factor of\n[MATH: \\dfrac{0.785}{0.010} = 78.5.]\n\nContent:\nComparing the two scale factors for the GTE, we get\n[MATH: 3^{p}|\u2248 78.5; p|\u2248 \\log_{3} (78.5); p|\u2248 3.97\u2026.]\n\nContent:\nTherefore, rounding to the nearest integer, the approximate order of the method is [MATH: 4.]\n\nContent:\nBut why is order important? Well, a higher order means that the error decreases faster as [MATH: \\Delta x] decreases. As a result, higher-order methods can achieve a target accuracy with fewer steps. In this way, order predicts the accuracy you gain when you make steps smaller."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "585133",
+        "content_id": "21684",
+        "dom_id": "step-585133",
+        "selector": "#step-585133",
+        "step_anchor": "step-2",
+        "title": "Determining the Order of a Numerical Method By Comparing GTE for Different Step Sizes",
+        "key_prerequisites": [
+          {
+            "topic_id": "1482",
+            "name": "Solving Exponential Equations Using Logarithms",
+            "href": "/topics/1482",
+            "type": ""
+          },
+          {
+            "topic_id": "2854",
+            "name": "Big-O Notation",
+            "href": "/topics/2854",
+            "type": ""
+          },
+          {
+            "topic_id": "3246",
+            "name": "Error in Numerical Methods",
+            "href": "/topics/3246",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>The global truncation error (GTE) of a numerical method with step size <span class=\"math\">[MATH: \\Delta x]</span> is\n<span class=\"math\">[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4.]</span>\nComplete the following sentences.</p><p><span class=\"math\">[MATH: \\quad]</span> With step size <span class=\"math\">[MATH: \\Delta x = 0.4,]</span> the global truncation error is <span class=\"math\">[MATH: XXX]</span></p><p><span class=\"math\">[MATH: \\quad]</span> With step size <span class=\"math\">[MATH: \\Delta x = 0.2,]</span> the global truncation error is <span class=\"math\">[MATH: XXX]</span></p><p><span class=\"math\">[MATH: \\quad]</span> Decreasing from <span class=\"math\">[MATH: \\Delta x = 0.4]</span> to <span class=\"math\">[MATH: \\Delta x = 0.2,]</span> the GTE is reduced by a factor of <span class=\"math\">[MATH: XXX]</span></p><p><span class=\"math\">[MATH: \\quad]</span> According to this data, the order of the method is approximately\n<span class=\"math\">[MATH: XXX]</span></p>",
+            "readable_text": "The global truncation error (GTE) of a numerical method with step size [MATH: \\Delta x] is\n[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4.]\nComplete the following sentences.\n\n[MATH: \\quad] With step size [MATH: \\Delta x = 0.4,] the global truncation error is [MATH: XXX]\n\n[MATH: \\quad] With step size [MATH: \\Delta x = 0.2,] the global truncation error is [MATH: XXX]\n\n[MATH: \\quad] Decreasing from [MATH: \\Delta x = 0.4] to [MATH: \\Delta x = 0.2,] the GTE is reduced by a factor of [MATH: XXX]\n\n[MATH: \\quad] According to this data, the order of the method is approximately\n[MATH: XXX]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method has order <span class=\"math\">[MATH: p]</span> if <span class=\"math\">[MATH: p]</span> is the largest positive integer such that the global truncation error (GTE) satisfies\n<span class=\"math\">[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]</span>\nThe order describes how fast errors shrink as <span class=\"math\">[MATH: \\Delta x]</span> decreases.</p><p>In other words, a numerical method has order <span class=\"math\">[MATH: p]</span> if, for sufficiently small step sizes, reducing the step size by a factor of <span class=\"math\">[MATH: k]</span> reduces the GTE by a factor of approximately <span class=\"math\">[MATH: k^p.]</span></p><p>First, we compute the GTE for the given step sizes:</p><ul><li><p>With step size <span class=\"math\">[MATH: \\Delta x = 0.4,]</span> the GTE is\n<span class=\"math\">[MATH: e(0.4)|= 4(0.4)^{3} + (0.4)^{4}; = 4 \u22c5 0.064 + 1 \u22c5 0.0256; = 0.256 + 0.0256; = 0.2816; \u2248 0.282.]</span></p></li><li><p>With step size <span class=\"math\">[MATH: \\Delta x = 0.2,]</span> the GTE is\n<span class=\"math\">[MATH: e(0.2)|= 4(0.2)^{3} + (0.2)^{4}; = 4 \u22c5 0.008 + 1 \u22c5 0.0016; = 0.032 + 0.0016; = 0.0336; \u2248 0.034.]</span></p></li></ul><p>Next, we determine the order by comparing the errors. The step size decreases from <span class=\"math\">[MATH: 0.4]</span> to <span class=\"math\">[MATH: 0.2.]</span> So, it reduces by a factor of\n<span class=\"math\">[MATH: k = \\dfrac{0.4}{0.2} = 2.]</span></p><p>As a result, for a numerical method of order <span class=\"math\">[MATH: p,]</span> the GTE should decrease by a factor of approximately\n<span class=\"math\">[MATH: k^p = 2^p.]</span></p><p>On the other hand, the GTE actually decreases from <span class=\"math\">[MATH: 0.281\\,6]</span> to <span class=\"math\">[MATH: 0.033\\,6.]</span> So, it reduces by a factor of\n<span class=\"math\">[MATH: \\dfrac{0.281\\,6}{0.033\\,6} = 8.380\\,95\\ldots \\approx  \\bbox[4pt,border: 1px solid gray]{8.381}.]</span></p><p>Comparing the two scale factors for the GTE, we get\n<span class=\"math\">[MATH: 2^{p}|\u2248 8.380952\u2026; p|\u2248 \\log_{2} (8.38095\u2026); p|\u2248 3.067\u2026.]</span></p><p>Therefore, rounding to the nearest integer, the estimated order of the method is\n<span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid gray]{3}.]</span></p><p>Indeed, this coincides with the definition of the order from the expression for the GTE:\n<span class=\"math\">[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4\n\\quad\\Rightarrow\\quad\ne(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^3\\right)\\quad\\textrm{as}\\quad \\Delta x\\to 0.]</span>\nHence, the order of the method is <span class=\"math\">[MATH: 3.]</span></p>",
+            "readable_text": "A numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the GTE by a factor of approximately [MATH: k^p.]\n\nFirst, we compute the GTE for the given step sizes:\n\n- With step size [MATH: \\Delta x = 0.4,] the GTE is\n[MATH: e(0.4)|= 4(0.4)^{3} + (0.4)^{4}; = 4 \u22c5 0.064 + 1 \u22c5 0.0256; = 0.256 + 0.0256; = 0.2816; \u2248 0.282.]\n- With step size [MATH: \\Delta x = 0.2,] the GTE is\n[MATH: e(0.2)|= 4(0.2)^{3} + (0.2)^{4}; = 4 \u22c5 0.008 + 1 \u22c5 0.0016; = 0.032 + 0.0016; = 0.0336; \u2248 0.034.]\n\nNext, we determine the order by comparing the errors. The step size decreases from [MATH: 0.4] to [MATH: 0.2.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.4}{0.2} = 2.]\n\nAs a result, for a numerical method of order [MATH: p,] the GTE should decrease by a factor of approximately\n[MATH: k^p = 2^p.]\n\nOn the other hand, the GTE actually decreases from [MATH: 0.281\\,6] to [MATH: 0.033\\,6.] So, it reduces by a factor of\n[MATH: \\dfrac{0.281\\,6}{0.033\\,6} = 8.380\\,95\\ldots \\approx \\bbox[4pt,border: 1px solid gray]{8.381}.]\n\nComparing the two scale factors for the GTE, we get\n[MATH: 2^{p}|\u2248 8.380952\u2026; p|\u2248 \\log_{2} (8.38095\u2026); p|\u2248 3.067\u2026.]\n\nTherefore, rounding to the nearest integer, the estimated order of the method is\n[MATH: \\bbox[4pt,border: 1px solid gray]{3}.]\n\nIndeed, this coincides with the definition of the order from the expression for the GTE:\n[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4\n\\quad\\Rightarrow\\quad\ne(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^3\\right)\\quad\\textrm{as}\\quad \\Delta x\\to 0.]\nHence, the order of the method is [MATH: 3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nThe global truncation error (GTE) of a numerical method with step size [MATH: \\Delta x] is\n[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4.]\nComplete the following sentences.\n\n[MATH: \\quad] With step size [MATH: \\Delta x = 0.4,] the global truncation error is [MATH: XXX]\n\n[MATH: \\quad] With step size [MATH: \\Delta x = 0.2,] the global truncation error is [MATH: XXX]\n\n[MATH: \\quad] Decreasing from [MATH: \\Delta x = 0.4] to [MATH: \\Delta x = 0.2,] the GTE is reduced by a factor of [MATH: XXX]\n\n[MATH: \\quad] According to this data, the order of the method is approximately\n[MATH: XXX]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the GTE by a factor of approximately [MATH: k^p.]\n\nFirst, we compute the GTE for the given step sizes:\n\n- With step size [MATH: \\Delta x = 0.4,] the GTE is\n[MATH: e(0.4)|= 4(0.4)^{3} + (0.4)^{4}; = 4 \u22c5 0.064 + 1 \u22c5 0.0256; = 0.256 + 0.0256; = 0.2816; \u2248 0.282.]\n- With step size [MATH: \\Delta x = 0.2,] the GTE is\n[MATH: e(0.2)|= 4(0.2)^{3} + (0.2)^{4}; = 4 \u22c5 0.008 + 1 \u22c5 0.0016; = 0.032 + 0.0016; = 0.0336; \u2248 0.034.]\n\nNext, we determine the order by comparing the errors. The step size decreases from [MATH: 0.4] to [MATH: 0.2.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.4}{0.2} = 2.]\n\nAs a result, for a numerical method of order [MATH: p,] the GTE should decrease by a factor of approximately\n[MATH: k^p = 2^p.]\n\nOn the other hand, the GTE actually decreases from [MATH: 0.281\\,6] to [MATH: 0.033\\,6.] So, it reduces by a factor of\n[MATH: \\dfrac{0.281\\,6}{0.033\\,6} = 8.380\\,95\\ldots \\approx \\bbox[4pt,border: 1px solid gray]{8.381}.]\n\nComparing the two scale factors for the GTE, we get\n[MATH: 2^{p}|\u2248 8.380952\u2026; p|\u2248 \\log_{2} (8.38095\u2026); p|\u2248 3.067\u2026.]\n\nTherefore, rounding to the nearest integer, the estimated order of the method is\n[MATH: \\bbox[4pt,border: 1px solid gray]{3}.]\n\nIndeed, this coincides with the definition of the order from the expression for the GTE:\n[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4\n\\quad\\Rightarrow\\quad\ne(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^3\\right)\\quad\\textrm{as}\\quad \\Delta x\\to 0.]\nHence, the order of the method is [MATH: 3.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "333542",
+        "dom_id": "question-333542",
+        "selector": "#question-333542",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A numerical method is used to approximate the solution to an initial value problem.</p><ul><li><p>With step size <span class=\"math\">[MATH: \u0394x = 0.09,]</span> the observed global truncation error is <span class=\"math\">[MATH: e(0.09) = 0.188.]</span></p></li><li><p>With step size <span class=\"math\">[MATH: \u0394x = 0.03,]</span> the observed global truncation error is <span class=\"math\">[MATH: e(0.03) = 0.007.]</span></p></li></ul><p>Use this data to estimate the order of the numerical method.</p>",
+          "readable_text": "A numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \u0394x = 0.09,] the observed global truncation error is [MATH: e(0.09) = 0.188.]\n- With step size [MATH: \u0394x = 0.03,] the observed global truncation error is [MATH: e(0.03) = 0.007.]\n\nUse this data to estimate the order of the numerical method.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333542-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333542-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 4]</span></p>",
+            "readable_text": "[MATH: 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333542-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333542-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333542-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \u0394x = 0.09,] the observed global truncation error is [MATH: e(0.09) = 0.188.]\n- With step size [MATH: \u0394x = 0.03,] the observed global truncation error is [MATH: e(0.03) = 0.007.]\n\nUse this data to estimate the order of the numerical method.\n\nChoices:\na. [MATH: 3]\nb. [MATH: 4]\nc. [MATH: 0]\nd. [MATH: 1]\ne. [MATH: 2]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "333568",
+        "dom_id": "question-333568",
+        "selector": "#question-333568",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The global truncation error (GTE) of a numerical method with step size <span class=\"math\">[MATH: \u0394x]</span> is\n<span class=\"math\">[MATH: e(\u0394x) = 7(\u0394x)^{3} \u2212 2(\u0394x)^{4}.]</span>\nComplete the following sentences. With step size <span class=\"math\">[MATH: \u0394x = 0.6,]</span> the global truncation error is <span class=\"math\">[MATH: \u2248]</span>\n<span class=\"select-list\" data-select-id=\"selectList-333568-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p> With step size <span class=\"math\">[MATH: \u0394x = 0.4,]</span> the global truncation error is <span class=\"math\">[MATH: \u2248]</span>\n<span class=\"select-list\" data-select-id=\"selectList-333568-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p> Decreasing from <span class=\"math\">[MATH: \u0394x = 0.6]</span> to <span class=\"math\">[MATH: \u0394x = 0.4,]</span> the GTE is reduced by a factor of <span class=\"math\">[MATH: \u2248]</span>\n<span class=\"select-list\" data-select-id=\"selectList-333568-2\" data-select-index=\"3\">[SELECT 3]</span>.</p><p> According to this data, the order of the method is approximately\n<span class=\"select-list\" data-select-id=\"selectList-333568-3\" data-select-index=\"4\">[SELECT 4]</span>.</p>",
+          "readable_text": "The global truncation error (GTE) of a numerical method with step size [MATH: \u0394x] is\n[MATH: e(\u0394x) = 7(\u0394x)^{3} \u2212 2(\u0394x)^{4}.]\nComplete the following sentences. With step size [MATH: \u0394x = 0.6,] the global truncation error is [MATH: \u2248]\n[SELECT 1].\n\nWith step size [MATH: \u0394x = 0.4,] the global truncation error is [MATH: \u2248]\n[SELECT 2].\n\nDecreasing from [MATH: \u0394x = 0.6] to [MATH: \u0394x = 0.4,] the GTE is reduced by a factor of [MATH: \u2248]\n[SELECT 3].\n\nAccording to this data, the order of the method is approximately\n[SELECT 4].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-333568-0",
+              "frame_dom_id": "selectListFrame-333568-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 2.586]</span>",
+                  "readable_text": "[MATH: 2.586]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.253]</span>",
+                  "readable_text": "[MATH: 1.253]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.056]</span>",
+                  "readable_text": "[MATH: 3.056]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.397]</span>",
+                  "readable_text": "[MATH: 0.397]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.122]</span>",
+                  "readable_text": "[MATH: 1.122]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-333568-1",
+              "frame_dom_id": "selectListFrame-333568-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.056]</span>",
+                  "readable_text": "[MATH: 3.056]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 2.586]</span>",
+                  "readable_text": "[MATH: 2.586]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.122]</span>",
+                  "readable_text": "[MATH: 1.122]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.253]</span>",
+                  "readable_text": "[MATH: 1.253]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.397]</span>",
+                  "readable_text": "[MATH: 0.397]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-333568-2",
+              "frame_dom_id": "selectListFrame-333568-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.987]</span>",
+                  "readable_text": "[MATH: 3.987]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.157]</span>",
+                  "readable_text": "[MATH: 3.157]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.965]</span>",
+                  "readable_text": "[MATH: 1.965]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 5.056]</span>",
+                  "readable_text": "[MATH: 5.056]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.856]</span>",
+                  "readable_text": "[MATH: 0.856]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-333568-3",
+              "frame_dom_id": "selectListFrame-333568-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                  "readable_text": "[MATH: 2]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                  "readable_text": "[MATH: 4]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 5]</span>",
+                  "readable_text": "[MATH: 5]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-333568-0",
+            "frame_dom_id": "selectListFrame-333568-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 2.586]</span>",
+                "readable_text": "[MATH: 2.586]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 1.253]</span>",
+                "readable_text": "[MATH: 1.253]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 3.056]</span>",
+                "readable_text": "[MATH: 3.056]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 0.397]</span>",
+                "readable_text": "[MATH: 0.397]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 1.122]</span>",
+                "readable_text": "[MATH: 1.122]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-333568-1",
+            "frame_dom_id": "selectListFrame-333568-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3.056]</span>",
+                "readable_text": "[MATH: 3.056]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 2.586]</span>",
+                "readable_text": "[MATH: 2.586]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 1.122]</span>",
+                "readable_text": "[MATH: 1.122]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 1.253]</span>",
+                "readable_text": "[MATH: 1.253]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 0.397]</span>",
+                "readable_text": "[MATH: 0.397]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-333568-2",
+            "frame_dom_id": "selectListFrame-333568-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3.987]</span>",
+                "readable_text": "[MATH: 3.987]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 3.157]</span>",
+                "readable_text": "[MATH: 3.157]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 1.965]</span>",
+                "readable_text": "[MATH: 1.965]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 5.056]</span>",
+                "readable_text": "[MATH: 5.056]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 0.856]</span>",
+                "readable_text": "[MATH: 0.856]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-333568-3",
+            "frame_dom_id": "selectListFrame-333568-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                "readable_text": "[MATH: 2]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                "readable_text": "[MATH: 4]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 5]</span>",
+                "readable_text": "[MATH: 5]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe global truncation error (GTE) of a numerical method with step size [MATH: \u0394x] is\n[MATH: e(\u0394x) = 7(\u0394x)^{3} \u2212 2(\u0394x)^{4}.]\nComplete the following sentences. With step size [MATH: \u0394x = 0.6,] the global truncation error is [MATH: \u2248]\n[SELECT 1].\n\nWith step size [MATH: \u0394x = 0.4,] the global truncation error is [MATH: \u2248]\n[SELECT 2].\n\nDecreasing from [MATH: \u0394x = 0.6] to [MATH: \u0394x = 0.4,] the GTE is reduced by a factor of [MATH: \u2248]\n[SELECT 3].\n\nAccording to this data, the order of the method is approximately\n[SELECT 4]."
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "585136",
+        "content_id": "14501",
+        "dom_id": "step-585136",
+        "selector": "#step-585136",
+        "step_anchor": "step-5",
+        "title": "Order From Local Truncation Error",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>An alternative, but equivalent, definition for the <strong>order</strong> can be made in terms of the local truncation error.</p>",
+            "readable_text": "An alternative, but equivalent, definition for the order can be made in terms of the local truncation error.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A numerical method has <strong>order</strong> <span class=\"math\">[MATH: p]</span> if <span class=\"math\">[MATH: p]</span> is the largest positive integer such that the local truncation error (LTE) satisfies</p>",
+            "readable_text": "A numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]</span></p>",
+            "readable_text": "[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, a numerical method has <strong>order</strong> <span class=\"math\">[MATH: p]</span> if, for sufficiently small step sizes, reducing the step size by a factor of <span class=\"math\">[MATH: k]</span> reduces the LTE by a factor of approximately <span class=\"math\">[MATH: k^{p+1}.]</span></p>",
+            "readable_text": "In other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>But why is the power <span class=\"math\">[MATH: p+1]</span> for LTE but only <span class=\"math\">[MATH: p]</span> for GTE?</p>",
+            "readable_text": "But why is the power [MATH: p+1] for LTE but only [MATH: p] for GTE?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Each local truncation error measures the error made in <em>one step</em> of the method. If a method has order <span class=\"math\">[MATH: p,]</span> then the error made in a single step shrinks like</p>",
+            "readable_text": "Each local truncation error measures the error made in one step of the method. If a method has order [MATH: p,] then the error made in a single step shrinks like",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right).]</span></p>",
+            "readable_text": "[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>However, on a fixed interval, using step size <span class=\"math\">[MATH: \\Delta x]</span> requires about</p>",
+            "readable_text": "However, on a fixed interval, using step size [MATH: \\Delta x] requires about",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: N \\approx \\dfrac1{\\Delta x}]</span></p>",
+            "readable_text": "[MATH: N \\approx \\dfrac1{\\Delta x}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>steps. The global truncation error results from <em>accumulating</em> these local errors over all steps.</p>",
+            "readable_text": "steps. The global truncation error results from accumulating these local errors over all steps.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Heuristically, adding up <span class=\"math\">[MATH: N]</span> local errors of size <span class=\"math\">[MATH: (\\Delta x)^{p+1}]</span> gives</p>",
+            "readable_text": "Heuristically, adding up [MATH: N] local errors of size [MATH: (\\Delta x)^{p+1}] gives",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: e(\\Delta x) \\sim N \\cdot (\\Delta x)^{p+1} \\sim \\dfrac1{\\Delta x} \\cdot (\\Delta x)^{p+1} = (\\Delta x)^p.]</span></p>",
+            "readable_text": "[MATH: e(\\Delta x) \\sim N \\cdot (\\Delta x)^{p+1} \\sim \\dfrac1{\\Delta x} \\cdot (\\Delta x)^{p+1} = (\\Delta x)^p.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, the local truncation error is one power of <span class=\"math\">[MATH: \\Delta x]</span> higher than the global truncation error.</p>",
+            "readable_text": "Thus, the local truncation error is one power of [MATH: \\Delta x] higher than the global truncation error.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we will apply this definition to determine the order of a given numerical method.</p>",
+            "readable_text": "Next, we will apply this definition to determine the order of a given numerical method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nAn alternative, but equivalent, definition for the order can be made in terms of the local truncation error.\n\nContent:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n\nContent:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\n\nContent:\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nContent:\nBut why is the power [MATH: p+1] for LTE but only [MATH: p] for GTE?\n\nContent:\nEach local truncation error measures the error made in one step of the method. If a method has order [MATH: p,] then the error made in a single step shrinks like\n\nContent:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right).]\n\nContent:\nHowever, on a fixed interval, using step size [MATH: \\Delta x] requires about\n\nContent:\n[MATH: N \\approx \\dfrac1{\\Delta x}]\n\nContent:\nsteps. The global truncation error results from accumulating these local errors over all steps.\n\nContent:\nHeuristically, adding up [MATH: N] local errors of size [MATH: (\\Delta x)^{p+1}] gives\n\nContent:\n[MATH: e(\\Delta x) \\sim N \\cdot (\\Delta x)^{p+1} \\sim \\dfrac1{\\Delta x} \\cdot (\\Delta x)^{p+1} = (\\Delta x)^p.]\n\nContent:\nThus, the local truncation error is one power of [MATH: \\Delta x] higher than the global truncation error.\n\nContent:\nNext, we will apply this definition to determine the order of a given numerical method."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "585137",
+        "content_id": "21685",
+        "dom_id": "step-585137",
+        "selector": "#step-585137",
+        "step_anchor": "step-6",
+        "title": "Determining the Order of a Numerical Method By Comparing LTE for Different Step Sizes",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A numerical method is used to approximate the solution to an initial value problem.</p><ul><li><p>With step size <span class=\"math\">[MATH: \\Delta x = 0.24,]</span> the observed local truncation error is <span class=\"math\">[MATH: \\tau(0.24) = 0.8.]</span></p></li><li><p>With step size <span class=\"math\">[MATH: \\Delta x = 0.08,]</span> the observed local truncation error is <span class=\"math\">[MATH: \\tau(0.08) = 0.01.]</span></p></li></ul><p>Estimate the order of the numerical method, rounded to the nearest integer.</p>",
+            "readable_text": "A numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \\Delta x = 0.24,] the observed local truncation error is [MATH: \\tau(0.24) = 0.8.]\n- With step size [MATH: \\Delta x = 0.08,] the observed local truncation error is [MATH: \\tau(0.08) = 0.01.]\n\nEstimate the order of the numerical method, rounded to the nearest integer.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method has order <span class=\"math\">[MATH: p]</span> if <span class=\"math\">[MATH: p]</span> is the largest positive integer such that the local truncation error (LTE) satisfies\n<span class=\"math\">[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]</span>\nThe order describes how fast errors shrink as <span class=\"math\">[MATH: \\Delta x]</span> decreases.</p><p>In other words, a numerical method has order <span class=\"math\">[MATH: p]</span> if, for sufficiently small step sizes, reducing the step size by a factor of <span class=\"math\">[MATH: k]</span> reduces the LTE by a factor of approximately <span class=\"math\">[MATH: k^{p+1}.]</span></p><p>In our case, the step size decreases from <span class=\"math\">[MATH: 0.24]</span> to <span class=\"math\">[MATH: 0.08.]</span> So, it reduces by a factor of\n<span class=\"math\">[MATH: k = \\dfrac{0.24}{0.08} = 3.]</span></p><p>As a result, for a numerical method of order <span class=\"math\">[MATH: p,]</span> the LTE should decrease by a factor of approximately\n<span class=\"math\">[MATH: k^{p+1} = 3^{p+1}.]</span></p><p>On the other hand, the LTE actually decreases from <span class=\"math\">[MATH: 0.8]</span> to <span class=\"math\">[MATH: 0.01.]</span> So, it reduces by a factor of\n<span class=\"math\">[MATH: \\dfrac{0.8}{0.01} = 80.]</span></p><p>Comparing the two scale factors for the LTE, we get\n<span class=\"math\">[MATH: 3^{p + 1}|\u2248 80; p + 1|\u2248 \\log_{3} (80); p + 1|\u2248 3.987\u2026; p|\u2248 2.987\u2026.]</span></p><p>Therefore, rounding to the nearest integer, the estimated order of the method is <span class=\"math\">[MATH: 3.]</span></p>",
+            "readable_text": "A numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nIn our case, the step size decreases from [MATH: 0.24] to [MATH: 0.08.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.24}{0.08} = 3.]\n\nAs a result, for a numerical method of order [MATH: p,] the LTE should decrease by a factor of approximately\n[MATH: k^{p+1} = 3^{p+1}.]\n\nOn the other hand, the LTE actually decreases from [MATH: 0.8] to [MATH: 0.01.] So, it reduces by a factor of\n[MATH: \\dfrac{0.8}{0.01} = 80.]\n\nComparing the two scale factors for the LTE, we get\n[MATH: 3^{p + 1}|\u2248 80; p + 1|\u2248 \\log_{3} (80); p + 1|\u2248 3.987\u2026; p|\u2248 2.987\u2026.]\n\nTherefore, rounding to the nearest integer, the estimated order of the method is [MATH: 3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \\Delta x = 0.24,] the observed local truncation error is [MATH: \\tau(0.24) = 0.8.]\n- With step size [MATH: \\Delta x = 0.08,] the observed local truncation error is [MATH: \\tau(0.08) = 0.01.]\n\nEstimate the order of the numerical method, rounded to the nearest integer.\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nIn our case, the step size decreases from [MATH: 0.24] to [MATH: 0.08.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.24}{0.08} = 3.]\n\nAs a result, for a numerical method of order [MATH: p,] the LTE should decrease by a factor of approximately\n[MATH: k^{p+1} = 3^{p+1}.]\n\nOn the other hand, the LTE actually decreases from [MATH: 0.8] to [MATH: 0.01.] So, it reduces by a factor of\n[MATH: \\dfrac{0.8}{0.01} = 80.]\n\nComparing the two scale factors for the LTE, we get\n[MATH: 3^{p + 1}|\u2248 80; p + 1|\u2248 \\log_{3} (80); p + 1|\u2248 3.987\u2026; p|\u2248 2.987\u2026.]\n\nTherefore, rounding to the nearest integer, the estimated order of the method is [MATH: 3.]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "333702",
+        "dom_id": "question-333702",
+        "selector": "#question-333702",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A numerical method is used to approximate the solution to an initial value problem.</p><ul><li><p>With step size <span class=\"math\">[MATH: \u0394x = 0.08,]</span> the observed local truncation error is <span class=\"math\">[MATH: \u03c4(0.08) = 0.13.]</span></p></li><li><p>With step size <span class=\"math\">[MATH: \u0394x = 0.02,]</span> the observed local truncation error is <span class=\"math\">[MATH: \u03c4(0.02) = 0.002.]</span></p></li></ul><p>Estimate the order of the numerical method.</p>",
+          "readable_text": "A numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \u0394x = 0.08,] the observed local truncation error is [MATH: \u03c4(0.08) = 0.13.]\n- With step size [MATH: \u0394x = 0.02,] the observed local truncation error is [MATH: \u03c4(0.02) = 0.002.]\n\nEstimate the order of the numerical method.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333702-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 5]</span></p>",
+            "readable_text": "[MATH: 5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333702-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333702-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 4]</span></p>",
+            "readable_text": "[MATH: 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333702-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333702-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \u0394x = 0.08,] the observed local truncation error is [MATH: \u03c4(0.08) = 0.13.]\n- With step size [MATH: \u0394x = 0.02,] the observed local truncation error is [MATH: \u03c4(0.02) = 0.002.]\n\nEstimate the order of the numerical method.\n\nChoices:\na. [MATH: 5]\nb. [MATH: 3]\nc. [MATH: 4]\nd. [MATH: 1]\ne. [MATH: 2]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "333706",
+        "dom_id": "question-333706",
+        "selector": "#question-333706",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The local truncation error (LTE) of a numerical method with step size <span class=\"math\">[MATH: \u0394x]</span> is\n<span class=\"math\">[MATH: \u03c4(\u0394x) = 7(\u0394x)^{4} \u2212 2(\u0394x)^{5}.]</span>\nComplete the following sentences. With step size <span class=\"math\">[MATH: \u0394x = 0.5,]</span> the local truncation error is\n<span class=\"select-list\" data-select-id=\"selectList-333706-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p> With step size <span class=\"math\">[MATH: \u0394x = 0.25,]</span> the local truncation error is <span class=\"math\">[MATH: \u2248]</span>\n<span class=\"select-list\" data-select-id=\"selectList-333706-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p> Decreasing from <span class=\"math\">[MATH: \u0394x = 0.5]</span> to <span class=\"math\">[MATH: \u0394x = 0.25,]</span> the LTE is reduced by a factor of <span class=\"math\">[MATH: \u2248]</span>\n<span class=\"select-list\" data-select-id=\"selectList-333706-2\" data-select-index=\"3\">[SELECT 3]</span>.</p><p> According to this data, the order of the method is approximately\n<span class=\"select-list\" data-select-id=\"selectList-333706-3\" data-select-index=\"4\">[SELECT 4]</span>.</p>",
+          "readable_text": "The local truncation error (LTE) of a numerical method with step size [MATH: \u0394x] is\n[MATH: \u03c4(\u0394x) = 7(\u0394x)^{4} \u2212 2(\u0394x)^{5}.]\nComplete the following sentences. With step size [MATH: \u0394x = 0.5,] the local truncation error is\n[SELECT 1].\n\nWith step size [MATH: \u0394x = 0.25,] the local truncation error is [MATH: \u2248]\n[SELECT 2].\n\nDecreasing from [MATH: \u0394x = 0.5] to [MATH: \u0394x = 0.25,] the LTE is reduced by a factor of [MATH: \u2248]\n[SELECT 3].\n\nAccording to this data, the order of the method is approximately\n[SELECT 4].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-333706-0",
+              "frame_dom_id": "selectListFrame-333706-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.225]</span>",
+                  "readable_text": "[MATH: 0.225]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.375]</span>",
+                  "readable_text": "[MATH: 0.375]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.550]</span>",
+                  "readable_text": "[MATH: 0.550]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.075]</span>",
+                  "readable_text": "[MATH: 0.075]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.025]</span>",
+                  "readable_text": "[MATH: 0.025]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-333706-1",
+              "frame_dom_id": "selectListFrame-333706-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.375]</span>",
+                  "readable_text": "[MATH: 0.375]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.025]</span>",
+                  "readable_text": "[MATH: 0.025]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.550]</span>",
+                  "readable_text": "[MATH: 0.550]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.225]</span>",
+                  "readable_text": "[MATH: 0.225]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.075]</span>",
+                  "readable_text": "[MATH: 0.075]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-333706-2",
+              "frame_dom_id": "selectListFrame-333706-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 17.671]</span>",
+                  "readable_text": "[MATH: 17.671]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 12.135]</span>",
+                  "readable_text": "[MATH: 12.135]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 7.864]</span>",
+                  "readable_text": "[MATH: 7.864]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 14.769]</span>",
+                  "readable_text": "[MATH: 14.769]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 9.168]</span>",
+                  "readable_text": "[MATH: 9.168]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-333706-3",
+              "frame_dom_id": "selectListFrame-333706-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                  "readable_text": "[MATH: 4]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 5]</span>",
+                  "readable_text": "[MATH: 5]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                  "readable_text": "[MATH: 2]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-333706-0",
+            "frame_dom_id": "selectListFrame-333706-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 0.225]</span>",
+                "readable_text": "[MATH: 0.225]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 0.375]</span>",
+                "readable_text": "[MATH: 0.375]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 0.550]</span>",
+                "readable_text": "[MATH: 0.550]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 0.075]</span>",
+                "readable_text": "[MATH: 0.075]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 0.025]</span>",
+                "readable_text": "[MATH: 0.025]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-333706-1",
+            "frame_dom_id": "selectListFrame-333706-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 0.375]</span>",
+                "readable_text": "[MATH: 0.375]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 0.025]</span>",
+                "readable_text": "[MATH: 0.025]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 0.550]</span>",
+                "readable_text": "[MATH: 0.550]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 0.225]</span>",
+                "readable_text": "[MATH: 0.225]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 0.075]</span>",
+                "readable_text": "[MATH: 0.075]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-333706-2",
+            "frame_dom_id": "selectListFrame-333706-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 17.671]</span>",
+                "readable_text": "[MATH: 17.671]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 12.135]</span>",
+                "readable_text": "[MATH: 12.135]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 7.864]</span>",
+                "readable_text": "[MATH: 7.864]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 14.769]</span>",
+                "readable_text": "[MATH: 14.769]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 9.168]</span>",
+                "readable_text": "[MATH: 9.168]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-333706-3",
+            "frame_dom_id": "selectListFrame-333706-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                "readable_text": "[MATH: 4]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 5]</span>",
+                "readable_text": "[MATH: 5]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                "readable_text": "[MATH: 2]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe local truncation error (LTE) of a numerical method with step size [MATH: \u0394x] is\n[MATH: \u03c4(\u0394x) = 7(\u0394x)^{4} \u2212 2(\u0394x)^{5}.]\nComplete the following sentences. With step size [MATH: \u0394x = 0.5,] the local truncation error is\n[SELECT 1].\n\nWith step size [MATH: \u0394x = 0.25,] the local truncation error is [MATH: \u2248]\n[SELECT 2].\n\nDecreasing from [MATH: \u0394x = 0.5] to [MATH: \u0394x = 0.25,] the LTE is reduced by a factor of [MATH: \u2248]\n[SELECT 3].\n\nAccording to this data, the order of the method is approximately\n[SELECT 4]."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "585140",
+        "content_id": "21686",
+        "dom_id": "step-585140",
+        "selector": "#step-585140",
+        "step_anchor": "step-9",
+        "title": "Determining the Order of a Numerical Method Given the GTE or LTE",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Which of the following expressions for the global truncation error (<span class=\"math\">[MATH: e]</span>) or local truncation error (<span class=\"math\">[MATH: \\tau]</span>) represent a second-order numerical method?</p><ol><li><p> <span class=\"math\">[MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5]</span> </p></li><li><p> <span class=\"math\">[MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4]</span> </p></li><li><p> <span class=\"math\">[MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6]</span> </p></li></ol>",
+            "readable_text": "Which of the following expressions for the global truncation error ([MATH: e]) or local truncation error ([MATH: \\tau]) represent a second-order numerical method?\n\n1. [MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5]\n2. [MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4]\n3. [MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For a given numerical method, if <span class=\"math\">[MATH: p]</span> is the largest positive integer such that</p><ul><li><p>the global truncation error (GTE) satisfies<br/><span class=\"math\">[MATH: e(\\Delta x) = \\mathcal O((\\Delta x)^p)\\quad\\textrm{as}\\quad \\Delta x \\to 0,]</span></p></li><li><p>the local truncation error (LTE) satisfies<br/><span class=\"math\">[MATH: \\tau(\\Delta x) = \\mathcal O((\\Delta x)^{p+1})\\quad\\textrm{as}\\quad \\Delta x \\to 0,]</span></p></li></ul><p>then the method is of order <span class=\"math\">[MATH: p.]</span></p><p>With that in mind, let\u2019s check each option:</p><ul><li><p>For the GTE expression <span class=\"math\">[MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5,]</span> the dominant term as <span class=\"math\">[MATH: \\Delta x\\to 0]</span> is <span class=\"math\">[MATH: 3(\\Delta x)^2 = 3(\\Delta x)^2.]</span><br/>So, statement I corresponds to an order <span class=\"math\">[MATH: 2]</span> method.</p></li><li><p>For the LTE expression <span class=\"math\">[MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4,]</span> the dominant term as <span class=\"math\">[MATH: \\Delta x\\to 0]</span> is <span class=\"math\">[MATH: 0.6(\\Delta x)^3 = 0.6(\\Delta x)^{2+1}.]</span><br/>So, statement II corresponds to an order <span class=\"math\">[MATH: 2]</span> method.</p></li><li><p>For the GTE expression <span class=\"math\">[MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6,]</span> the dominant term as <span class=\"math\">[MATH: \\Delta x\\to 0]</span> is <span class=\"math\">[MATH: 7(\\Delta x)^4 = 7(\\Delta x)^4.]</span><br/>So, statement III corresponds to an order <span class=\"math\">[MATH: 4]</span> method.</p></li></ul><p>Therefore, the correct answer is &quot;I and II only&quot;.</p>",
+            "readable_text": "For a given numerical method, if [MATH: p] is the largest positive integer such that\n\n- the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O((\\Delta x)^p)\\quad\\textrm{as}\\quad \\Delta x \\to 0,]\n- the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O((\\Delta x)^{p+1})\\quad\\textrm{as}\\quad \\Delta x \\to 0,]\n\nthen the method is of order [MATH: p.]\n\nWith that in mind, let\u2019s check each option:\n\n- For the GTE expression [MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 3(\\Delta x)^2 = 3(\\Delta x)^2.]\nSo, statement I corresponds to an order [MATH: 2] method.\n- For the LTE expression [MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 0.6(\\Delta x)^3 = 0.6(\\Delta x)^{2+1}.]\nSo, statement II corresponds to an order [MATH: 2] method.\n- For the GTE expression [MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 7(\\Delta x)^4 = 7(\\Delta x)^4.]\nSo, statement III corresponds to an order [MATH: 4] method.\n\nTherefore, the correct answer is \"I and II only\".",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nWhich of the following expressions for the global truncation error ([MATH: e]) or local truncation error ([MATH: \\tau]) represent a second-order numerical method?\n\n1. [MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5]\n2. [MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4]\n3. [MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor a given numerical method, if [MATH: p] is the largest positive integer such that\n\n- the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O((\\Delta x)^p)\\quad\\textrm{as}\\quad \\Delta x \\to 0,]\n- the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O((\\Delta x)^{p+1})\\quad\\textrm{as}\\quad \\Delta x \\to 0,]\n\nthen the method is of order [MATH: p.]\n\nWith that in mind, let\u2019s check each option:\n\n- For the GTE expression [MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 3(\\Delta x)^2 = 3(\\Delta x)^2.]\nSo, statement I corresponds to an order [MATH: 2] method.\n- For the LTE expression [MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 0.6(\\Delta x)^3 = 0.6(\\Delta x)^{2+1}.]\nSo, statement II corresponds to an order [MATH: 2] method.\n- For the GTE expression [MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 7(\\Delta x)^4 = 7(\\Delta x)^4.]\nSo, statement III corresponds to an order [MATH: 4] method.\n\nTherefore, the correct answer is \"I and II only\"."
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "333692",
+        "dom_id": "question-333692",
+        "selector": "#question-333692",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following global truncation error expressions represent a second-order numerical method?</p><ol><li><p> <span class=\"math\">[MATH: e(\u0394x) = 6(\u0394x)^{2}]</span> </p></li><li><p> <span class=\"math\">[MATH: e(\u0394x) = 0.3\u0394x + 2(\u0394x)^{2}]</span> </p></li><li><p> <span class=\"math\">[MATH: e(\u0394x) = 9(\u0394x)^{2} + 4(\u0394x)^{5}]</span> </p></li></ol>",
+          "readable_text": "Which of the following global truncation error expressions represent a second-order numerical method?\n\n1. [MATH: e(\u0394x) = 6(\u0394x)^{2}]\n2. [MATH: e(\u0394x) = 0.3\u0394x + 2(\u0394x)^{2}]\n3. [MATH: e(\u0394x) = 9(\u0394x)^{2} + 4(\u0394x)^{5}]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333692-a",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333692-b",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333692-c",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333692-d",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333692-e",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III</p>",
+            "readable_text": "I, II, and III",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following global truncation error expressions represent a second-order numerical method?\n\n1. [MATH: e(\u0394x) = 6(\u0394x)^{2}]\n2. [MATH: e(\u0394x) = 0.3\u0394x + 2(\u0394x)^{2}]\n3. [MATH: e(\u0394x) = 9(\u0394x)^{2} + 4(\u0394x)^{5}]\n\nChoices:\na. II only\nb. II and III only\nc. I and III only\nd. I only\ne. I, II, and III"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "333576",
+        "dom_id": "question-333576",
+        "selector": "#question-333576",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following local truncation error expressions represent a first-order numerical method?</p><ol><li><p> <span class=\"math\">[MATH: \u03c4(\u0394x) = 6(\u0394x)^{3}]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03c4(\u0394x) = 0.3(\u0394x)^{2} + 2(\u0394x)^{3}]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03c4(\u0394x) = 9(\u0394x)^{3} + 4(\u0394x)^{5}]</span> </p></li></ol>",
+          "readable_text": "Which of the following local truncation error expressions represent a first-order numerical method?\n\n1. [MATH: \u03c4(\u0394x) = 6(\u0394x)^{3}]\n2. [MATH: \u03c4(\u0394x) = 0.3(\u0394x)^{2} + 2(\u0394x)^{3}]\n3. [MATH: \u03c4(\u0394x) = 9(\u0394x)^{3} + 4(\u0394x)^{5}]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333576-a",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III</p>",
+            "readable_text": "I, II, and III",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333576-b",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333576-c",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333576-d",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333576-e",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following local truncation error expressions represent a first-order numerical method?\n\n1. [MATH: \u03c4(\u0394x) = 6(\u0394x)^{3}]\n2. [MATH: \u03c4(\u0394x) = 0.3(\u0394x)^{2} + 2(\u0394x)^{3}]\n3. [MATH: \u03c4(\u0394x) = 9(\u0394x)^{3} + 4(\u0394x)^{5}]\n\nChoices:\na. I, II, and III\nb. I only\nc. II only\nd. I and III only\ne. II and III only"
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "585144",
+        "content_id": "21687",
+        "dom_id": "step-585144",
+        "selector": "#step-585144",
+        "step_anchor": "step-13",
+        "title": "Making Inferences Given the Order of a Numerical Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A numerical method for approximating a solution to an initial value problem is known to be order <span class=\"math\">[MATH: 1.]</span><br/>Suppose that using step size <span class=\"math\">[MATH: \\Delta x = 0.4]</span> produces a local truncation error (LTE) of <span class=\"math\">[MATH: \\tau(0.4) \\approx 0.24.]</span><br/>If we instead use a step size <span class=\"math\">[MATH: \\Delta x = 0.1,]</span> what LTE should we expect?</p><p><span class=\"math\">[MATH: XXX]</span></p>",
+            "readable_text": "A numerical method for approximating a solution to an initial value problem is known to be order [MATH: 1.]\nSuppose that using step size [MATH: \\Delta x = 0.4] produces a local truncation error (LTE) of [MATH: \\tau(0.4) \\approx 0.24.]\nIf we instead use a step size [MATH: \\Delta x = 0.1,] what LTE should we expect?\n\n[MATH: XXX]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method has order <span class=\"math\">[MATH: p]</span> if <span class=\"math\">[MATH: p]</span> is the largest positive integer such that the local truncation error (LTE) satisfies<br/><span class=\"math\">[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad \\textrm{as}\\quad \\Delta x \\to 0.]</span>\nThe order describes how fast errors shrink as <span class=\"math\">[MATH: \\Delta x]</span> decreases.</p><p>In other words, a numerical method has order <span class=\"math\">[MATH: p]</span> if, for sufficiently small step sizes, reducing the step size by a factor of <span class=\"math\">[MATH: k]</span> reduces the LTE by a factor of approximately <span class=\"math\">[MATH: k^{p+1}.]</span></p><p>In our case, the step size decreases from <span class=\"math\">[MATH: 0.4]</span> to <span class=\"math\">[MATH: 0.1.]</span> So, it reduces by a factor of<br/><span class=\"math\">[MATH: k = \\frac{0.4}{0.1} = 4.]</span></p><p>Now, since the numerical method is of order <span class=\"math\">[MATH: 1,]</span> the error is expected to decrease by a factor of<br/><span class=\"math\">[MATH: k^{1+1} = 4^2 = 16.]</span></p><p>Therefore, using a step size of <span class=\"math\">[MATH: \\Delta x = 0.1,]</span> the expected LTE is<br/><span class=\"math\">[MATH: \\tau(0.1) \\approx \\frac{0.24}{16} = 0.015.]</span></p>",
+            "readable_text": "A numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad \\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nIn our case, the step size decreases from [MATH: 0.4] to [MATH: 0.1.] So, it reduces by a factor of\n[MATH: k = \\frac{0.4}{0.1} = 4.]\n\nNow, since the numerical method is of order [MATH: 1,] the error is expected to decrease by a factor of\n[MATH: k^{1+1} = 4^2 = 16.]\n\nTherefore, using a step size of [MATH: \\Delta x = 0.1,] the expected LTE is\n[MATH: \\tau(0.1) \\approx \\frac{0.24}{16} = 0.015.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA numerical method for approximating a solution to an initial value problem is known to be order [MATH: 1.]\nSuppose that using step size [MATH: \\Delta x = 0.4] produces a local truncation error (LTE) of [MATH: \\tau(0.4) \\approx 0.24.]\nIf we instead use a step size [MATH: \\Delta x = 0.1,] what LTE should we expect?\n\n[MATH: XXX]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad \\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nIn our case, the step size decreases from [MATH: 0.4] to [MATH: 0.1.] So, it reduces by a factor of\n[MATH: k = \\frac{0.4}{0.1} = 4.]\n\nNow, since the numerical method is of order [MATH: 1,] the error is expected to decrease by a factor of\n[MATH: k^{1+1} = 4^2 = 16.]\n\nTherefore, using a step size of [MATH: \\Delta x = 0.1,] the expected LTE is\n[MATH: \\tau(0.1) \\approx \\frac{0.24}{16} = 0.015.]"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "333530",
+        "dom_id": "question-333530",
+        "selector": "#question-333530",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A numerical method for approximating a solution to an initial value problem is known to be order <span class=\"math\">[MATH: 2.]</span>\nSuppose that using step size <span class=\"math\">[MATH: \u0394x = 0.1]</span> produces a global truncation error (GTE) of <span class=\"math\">[MATH: e(0.1) \u2248 0.072.]</span>\nIf we instead use a step size <span class=\"math\">[MATH: \u0394x = 0.05,]</span> what GTE should we expect?<span class=\"free-response-line\"><span class=\"math\">[MATH: e(0.05) \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "A numerical method for approximating a solution to an initial value problem is known to be order [MATH: 2.]\nSuppose that using step size [MATH: \u0394x = 0.1] produces a global truncation error (GTE) of [MATH: e(0.1) \u2248 0.072.]\nIf we instead use a step size [MATH: \u0394x = 0.05,] what GTE should we expect?[MATH: e(0.05) \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method for approximating a solution to an initial value problem is known to be order [MATH: 2.]\nSuppose that using step size [MATH: \u0394x = 0.1] produces a global truncation error (GTE) of [MATH: e(0.1) \u2248 0.072.]\nIf we instead use a step size [MATH: \u0394x = 0.05,] what GTE should we expect?[MATH: e(0.05) \u2248]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 14,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "333694",
+        "dom_id": "question-333694",
+        "selector": "#question-333694",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A numerical method for approximating a solution to an initial value problem is known to be order <span class=\"math\">[MATH: 2.]</span>\nSuppose that using step size <span class=\"math\">[MATH: \u0394x = 0.4]</span> produces a local truncation error (LTE) of <span class=\"math\">[MATH: \u03c4(0.4) \u2248 0.192.]</span>\nIf we instead use a step size <span class=\"math\">[MATH: \u0394x = 0.1,]</span> what LTE should we expect?<span class=\"free-response-line\"><span class=\"math\">[MATH: \u03c4(0.1) \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "A numerical method for approximating a solution to an initial value problem is known to be order [MATH: 2.]\nSuppose that using step size [MATH: \u0394x = 0.4] produces a local truncation error (LTE) of [MATH: \u03c4(0.4) \u2248 0.192.]\nIf we instead use a step size [MATH: \u0394x = 0.1,] what LTE should we expect?[MATH: \u03c4(0.1) \u2248]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method for approximating a solution to an initial value problem is known to be order [MATH: 2.]\nSuppose that using step size [MATH: \u0394x = 0.4] produces a local truncation error (LTE) of [MATH: \u03c4(0.4) \u2248 0.192.]\nIf we instead use a step size [MATH: \u0394x = 0.1,] what LTE should we expect?[MATH: \u03c4(0.1) \u2248]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 15,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "593404",
+        "content_id": "14656",
+        "dom_id": "step-593404",
+        "selector": "#step-593404",
+        "step_anchor": "step-16",
+        "title": "Connecting the Definitions of the Order of Numerical Methods",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ll now show that the definition of order with respect to LTE is the same as with respect to GTE.</p>",
+            "readable_text": "We'll now show that the definition of order with respect to LTE is the same as with respect to GTE.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Indeed, suppose a numerical method with increment formula <span class=\"math\">[MATH: \\Delta y = \\Phi(x, y, \\Delta x) \\cdot \\Delta x]</span> satisfies the following:\n<span class=\"math\">[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0]</span></p>",
+            "readable_text": "Indeed, suppose a numerical method with increment formula [MATH: \\Delta y = \\Phi(x, y, \\Delta x) \\cdot \\Delta x] satisfies the following:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>On a fixed interval of length <span class=\"math\">[MATH: L,]</span> the number of steps is <span class=\"math\">[MATH: N \\approx \\dfrac{L}{\\Delta x}.]</span> So,\n<span class=\"math\">[MATH: N = \\mathcal O\\!\\left(\\dfrac{1}{\\Delta x}\\right)]</span> as <span class=\"math\">[MATH: \\Delta x \\to 0.]</span></p>",
+            "readable_text": "On a fixed interval of length [MATH: L,] the number of steps is [MATH: N \\approx \\dfrac{L}{\\Delta x}.] So,\n[MATH: N = \\mathcal O\\!\\left(\\dfrac{1}{\\Delta x}\\right)] as [MATH: \\Delta x \\to 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, recall the relationship between GTE and LTE, given by</p>",
+            "readable_text": "Now, recall the relationship between GTE and LTE, given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: e(\\Delta x) = e_N = e_{N-1} + \\left[ \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\right] \\cdot \\Delta x + \\tau_N.]</span></p>",
+            "readable_text": "[MATH: e(\\Delta x) = e_N = e_{N-1} + \\left[ \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\right] \\cdot \\Delta x + \\tau_N.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since <span class=\"math\">[MATH: y(x_{N-1}) - y_{N-1} = e_{N-1},]</span> it is natural to say that changing the input <span class=\"math\">[MATH: y]</span> by <span class=\"math\">[MATH: e_{N-1}]</span> changes <span class=\"math\">[MATH: \\Phi]</span> by about a constant multiple of <span class=\"math\">[MATH: e_{N-1}.]</span> So, heuristically,</p>",
+            "readable_text": "Since [MATH: y(x_{N-1}) - y_{N-1} = e_{N-1},] it is natural to say that changing the input [MATH: y] by [MATH: e_{N-1}] changes [MATH: \\Phi] by about a constant multiple of [MATH: e_{N-1}.] So, heuristically,",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\approx Ce_{N-1}]</span></p>",
+            "readable_text": "[MATH: \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\approx Ce_{N-1}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>for some <span class=\"math\">[MATH: C]</span> that <em>doesn&#x27;t</em> depend on <span class=\"math\">[MATH: \\Delta x]</span> (on a fixed interval). Hence, the GTE satisfies approximately</p>",
+            "readable_text": "for some [MATH: C] that doesn't depend on [MATH: \\Delta x] (on a fixed interval). Hence, the GTE satisfies approximately",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: e(\\Delta x) = e_N \\approx (1+C\\Delta x)e_{N-1} + \\tau_N.]</span></p>",
+            "readable_text": "[MATH: e(\\Delta x) = e_N \\approx (1+C\\Delta x)e_{N-1} + \\tau_N.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>After <span class=\"math\">[MATH: N]</span> steps, we get\n<span class=\"math\">[MATH: e(\\Delta x) \\approx (1+C\\Delta x)^N e_0 + \\sum_{n=1}^N(1+C\\Delta x)^{N-n}\\tau_n.]</span></p>",
+            "readable_text": "After [MATH: N] steps, we get\n[MATH: e(\\Delta x) \\approx (1+C\\Delta x)^N e_0 + \\sum_{n=1}^N(1+C\\Delta x)^{N-n}\\tau_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, note that <span class=\"math\">[MATH: (1+C\\Delta x)^N \\approx e^{CN\\Delta x} \\approx e^{CL},]</span> which is <span class=\"math\">[MATH: \\mathcal O(1)]</span> as <span class=\"math\">[MATH: \\Delta x \\to 0.]</span> So, the weights <span class=\"math\">[MATH: (1+C\\Delta x)^{N-n}]</span> don&#x27;t change the <em>power</em> of <span class=\"math\">[MATH: \\Delta x.]</span></p>",
+            "readable_text": "Next, note that [MATH: (1+C\\Delta x)^N \\approx e^{CN\\Delta x} \\approx e^{CL},] which is [MATH: \\mathcal O(1)] as [MATH: \\Delta x \\to 0.] So, the weights [MATH: (1+C\\Delta x)^{N-n}] don't change the power of [MATH: \\Delta x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, we can treat the GTE as roughly the sum of the per-step local errors. Therefore,\n<span class=\"math\">[MATH: e(\\Delta x) \\approx \\sum_{n=1}^N \\tau_n]</span></p>",
+            "readable_text": "So, we can treat the GTE as roughly the sum of the per-step local errors. Therefore,\n[MATH: e(\\Delta x) \\approx \\sum_{n=1}^N \\tau_n]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>With <span class=\"math\">[MATH: \\tau_n = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)]</span> for each <span class=\"math\">[MATH: n=1,\\ldots,N,]</span> we get</p>",
+            "readable_text": "With [MATH: \\tau_n = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)] for each [MATH: n=1,\\ldots,N,] we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: e(\u0394x)|= \u2211_(n = 1)^(N)O((\u0394x)^{p + 1}); = N \u22c5 O((\u0394x)^{p + 1}); = O((1)/(\u0394x)) \u22c5 O((\u0394x)^{p + 1}); = O((\u0394x)^{p}).]</span></p>",
+            "readable_text": "[MATH: e(\u0394x)|= \u2211_(n = 1)^(N)O((\u0394x)^{p + 1}); = N \u22c5 O((\u0394x)^{p + 1}); = O((1)/(\u0394x)) \u22c5 O((\u0394x)^{p + 1}); = O((\u0394x)^{p}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note that since <span class=\"math\">[MATH: p]</span> is maximal in the LTE definition, this shows the GTE has order <span class=\"math\">[MATH: p]</span> as well.</p>",
+            "readable_text": "Note that since [MATH: p] is maximal in the LTE definition, this shows the GTE has order [MATH: p] as well.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe'll now show that the definition of order with respect to LTE is the same as with respect to GTE.\n\nContent:\nIndeed, suppose a numerical method with increment formula [MATH: \\Delta y = \\Phi(x, y, \\Delta x) \\cdot \\Delta x] satisfies the following:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0]\n\nContent:\nOn a fixed interval of length [MATH: L,] the number of steps is [MATH: N \\approx \\dfrac{L}{\\Delta x}.] So,\n[MATH: N = \\mathcal O\\!\\left(\\dfrac{1}{\\Delta x}\\right)] as [MATH: \\Delta x \\to 0.]\n\nContent:\nNow, recall the relationship between GTE and LTE, given by\n\nContent:\n[MATH: e(\\Delta x) = e_N = e_{N-1} + \\left[ \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\right] \\cdot \\Delta x + \\tau_N.]\n\nContent:\nSince [MATH: y(x_{N-1}) - y_{N-1} = e_{N-1},] it is natural to say that changing the input [MATH: y] by [MATH: e_{N-1}] changes [MATH: \\Phi] by about a constant multiple of [MATH: e_{N-1}.] So, heuristically,\n\nContent:\n[MATH: \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\approx Ce_{N-1}]\n\nContent:\nfor some [MATH: C] that doesn't depend on [MATH: \\Delta x] (on a fixed interval). Hence, the GTE satisfies approximately\n\nContent:\n[MATH: e(\\Delta x) = e_N \\approx (1+C\\Delta x)e_{N-1} + \\tau_N.]\n\nContent:\nAfter [MATH: N] steps, we get\n[MATH: e(\\Delta x) \\approx (1+C\\Delta x)^N e_0 + \\sum_{n=1}^N(1+C\\Delta x)^{N-n}\\tau_n.]\n\nContent:\nNext, note that [MATH: (1+C\\Delta x)^N \\approx e^{CN\\Delta x} \\approx e^{CL},] which is [MATH: \\mathcal O(1)] as [MATH: \\Delta x \\to 0.] So, the weights [MATH: (1+C\\Delta x)^{N-n}] don't change the power of [MATH: \\Delta x.]\n\nContent:\nSo, we can treat the GTE as roughly the sum of the per-step local errors. Therefore,\n[MATH: e(\\Delta x) \\approx \\sum_{n=1}^N \\tau_n]\n\nContent:\nWith [MATH: \\tau_n = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)] for each [MATH: n=1,\\ldots,N,] we get\n\nContent:\n[MATH: e(\u0394x)|= \u2211_(n = 1)^(N)O((\u0394x)^{p + 1}); = N \u22c5 O((\u0394x)^{p + 1}); = O((1)/(\u0394x)) \u22c5 O((\u0394x)^{p + 1}); = O((\u0394x)^{p}).]\n\nContent:\nNote that since [MATH: p] is maximal in the LTE definition, this shows the GTE has order [MATH: p] as well."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nEach step of a numerical method produces a local truncation error [MATH: \\tau,] which, over multiple steps, accumulates into a global truncation error [MATH: e.] Both LTE and GTE depend on step size [MATH: \\Delta x.]\n\nContent:\nThe order of a numerical method describes how fast these errors shrink as [MATH: \\Delta x] decreases.\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\n\nContent:\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the GTE by a factor of approximately [MATH: k^p{:}]\n\nContent:\n[MATH: e((\u0394x)/(k))|\u2248 K((\u0394x)/(k))^{p} = (K(\u0394x)^{p})/(k^{p}) \u2248 (e(\u0394x))/(k^{p})]\n\nContent:\nLet's demonstrate with an example. Suppose a numerical method is used to approximate the solution to an initial value problem.\n\nContent:\n- With step size [MATH: \\Delta x = 0.21,] the observed global truncation error is [MATH: e(0.21) = 0.785.]\n- With step size [MATH: \\Delta x = 0.07,] the observed global truncation error is [MATH: e(0.07) = 0.010.]\n\nContent:\nUsing this data, we can estimate the order of the numerical method.\n\nContent:\nThe step size decreases from [MATH: 0.21] to [MATH: 0.07.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.21}{0.07} = 3.]\n\nContent:\nAs a result, for a numerical method of order [MATH: p,] the GTE should decrease by a factor of approximately\n[MATH: k^p = 3^p.]\n\nContent:\nOn the other hand, the GTE actually decreases from [MATH: 0.785] to [MATH: 0.010.] So, it reduces by a factor of\n[MATH: \\dfrac{0.785}{0.010} = 78.5.]\n\nContent:\nComparing the two scale factors for the GTE, we get\n[MATH: 3^{p}|\u2248 78.5; p|\u2248 \\log_{3} (78.5); p|\u2248 3.97\u2026.]\n\nContent:\nTherefore, rounding to the nearest integer, the approximate order of the method is [MATH: 4.]\n\nContent:\nBut why is order important? Well, a higher order means that the error decreases faster as [MATH: \\Delta x] decreases. As a result, higher-order methods can achieve a target accuracy with fewer steps. In this way, order predicts the accuracy you gain when you make steps smaller.\n\n---\n\nItem 2 \u2014 Example: Determining the Order of a Numerical Method By Comparing GTE for Different Step Sizes\n\nExample Prompt:\nThe global truncation error (GTE) of a numerical method with step size [MATH: \\Delta x] is\n[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4.]\nComplete the following sentences.\n\n[MATH: \\quad] With step size [MATH: \\Delta x = 0.4,] the global truncation error is [MATH: XXX]\n\n[MATH: \\quad] With step size [MATH: \\Delta x = 0.2,] the global truncation error is [MATH: XXX]\n\n[MATH: \\quad] Decreasing from [MATH: \\Delta x = 0.4] to [MATH: \\Delta x = 0.2,] the GTE is reduced by a factor of [MATH: XXX]\n\n[MATH: \\quad] According to this data, the order of the method is approximately\n[MATH: XXX]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^p\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the GTE by a factor of approximately [MATH: k^p.]\n\nFirst, we compute the GTE for the given step sizes:\n\n- With step size [MATH: \\Delta x = 0.4,] the GTE is\n[MATH: e(0.4)|= 4(0.4)^{3} + (0.4)^{4}; = 4 \u22c5 0.064 + 1 \u22c5 0.0256; = 0.256 + 0.0256; = 0.2816; \u2248 0.282.]\n- With step size [MATH: \\Delta x = 0.2,] the GTE is\n[MATH: e(0.2)|= 4(0.2)^{3} + (0.2)^{4}; = 4 \u22c5 0.008 + 1 \u22c5 0.0016; = 0.032 + 0.0016; = 0.0336; \u2248 0.034.]\n\nNext, we determine the order by comparing the errors. The step size decreases from [MATH: 0.4] to [MATH: 0.2.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.4}{0.2} = 2.]\n\nAs a result, for a numerical method of order [MATH: p,] the GTE should decrease by a factor of approximately\n[MATH: k^p = 2^p.]\n\nOn the other hand, the GTE actually decreases from [MATH: 0.281\\,6] to [MATH: 0.033\\,6.] So, it reduces by a factor of\n[MATH: \\dfrac{0.281\\,6}{0.033\\,6} = 8.380\\,95\\ldots \\approx \\bbox[4pt,border: 1px solid gray]{8.381}.]\n\nComparing the two scale factors for the GTE, we get\n[MATH: 2^{p}|\u2248 8.380952\u2026; p|\u2248 \\log_{2} (8.38095\u2026); p|\u2248 3.067\u2026.]\n\nTherefore, rounding to the nearest integer, the estimated order of the method is\n[MATH: \\bbox[4pt,border: 1px solid gray]{3}.]\n\nIndeed, this coincides with the definition of the order from the expression for the GTE:\n[MATH: e(\\Delta x) = 4(\\Delta x)^3 + (\\Delta x)^4\n\\quad\\Rightarrow\\quad\ne(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^3\\right)\\quad\\textrm{as}\\quad \\Delta x\\to 0.]\nHence, the order of the method is [MATH: 3.]\n\n---\n\nItem 3 \u2014 Question 1\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \u0394x = 0.09,] the observed global truncation error is [MATH: e(0.09) = 0.188.]\n- With step size [MATH: \u0394x = 0.03,] the observed global truncation error is [MATH: e(0.03) = 0.007.]\n\nUse this data to estimate the order of the numerical method.\n\nChoices:\na. [MATH: 3]\nb. [MATH: 4]\nc. [MATH: 0]\nd. [MATH: 1]\ne. [MATH: 2]\n\n---\n\nItem 4 \u2014 Question 2\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe global truncation error (GTE) of a numerical method with step size [MATH: \u0394x] is\n[MATH: e(\u0394x) = 7(\u0394x)^{3} \u2212 2(\u0394x)^{4}.]\nComplete the following sentences. With step size [MATH: \u0394x = 0.6,] the global truncation error is [MATH: \u2248]\n[SELECT 1].\n\nWith step size [MATH: \u0394x = 0.4,] the global truncation error is [MATH: \u2248]\n[SELECT 2].\n\nDecreasing from [MATH: \u0394x = 0.6] to [MATH: \u0394x = 0.4,] the GTE is reduced by a factor of [MATH: \u2248]\n[SELECT 3].\n\nAccording to this data, the order of the method is approximately\n[SELECT 4].\n\n---\n\nItem 5 \u2014 Tutorial: Order From Local Truncation Error\n\nContent:\nAn alternative, but equivalent, definition for the order can be made in terms of the local truncation error.\n\nContent:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n\nContent:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\n\nContent:\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nContent:\nBut why is the power [MATH: p+1] for LTE but only [MATH: p] for GTE?\n\nContent:\nEach local truncation error measures the error made in one step of the method. If a method has order [MATH: p,] then the error made in a single step shrinks like\n\nContent:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right).]\n\nContent:\nHowever, on a fixed interval, using step size [MATH: \\Delta x] requires about\n\nContent:\n[MATH: N \\approx \\dfrac1{\\Delta x}]\n\nContent:\nsteps. The global truncation error results from accumulating these local errors over all steps.\n\nContent:\nHeuristically, adding up [MATH: N] local errors of size [MATH: (\\Delta x)^{p+1}] gives\n\nContent:\n[MATH: e(\\Delta x) \\sim N \\cdot (\\Delta x)^{p+1} \\sim \\dfrac1{\\Delta x} \\cdot (\\Delta x)^{p+1} = (\\Delta x)^p.]\n\nContent:\nThus, the local truncation error is one power of [MATH: \\Delta x] higher than the global truncation error.\n\nContent:\nNext, we will apply this definition to determine the order of a given numerical method.\n\n---\n\nItem 6 \u2014 Example: Determining the Order of a Numerical Method By Comparing LTE for Different Step Sizes\n\nExample Prompt:\nA numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \\Delta x = 0.24,] the observed local truncation error is [MATH: \\tau(0.24) = 0.8.]\n- With step size [MATH: \\Delta x = 0.08,] the observed local truncation error is [MATH: \\tau(0.08) = 0.01.]\n\nEstimate the order of the numerical method, rounded to the nearest integer.\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nIn our case, the step size decreases from [MATH: 0.24] to [MATH: 0.08.] So, it reduces by a factor of\n[MATH: k = \\dfrac{0.24}{0.08} = 3.]\n\nAs a result, for a numerical method of order [MATH: p,] the LTE should decrease by a factor of approximately\n[MATH: k^{p+1} = 3^{p+1}.]\n\nOn the other hand, the LTE actually decreases from [MATH: 0.8] to [MATH: 0.01.] So, it reduces by a factor of\n[MATH: \\dfrac{0.8}{0.01} = 80.]\n\nComparing the two scale factors for the LTE, we get\n[MATH: 3^{p + 1}|\u2248 80; p + 1|\u2248 \\log_{3} (80); p + 1|\u2248 3.987\u2026; p|\u2248 2.987\u2026.]\n\nTherefore, rounding to the nearest integer, the estimated order of the method is [MATH: 3.]\n\n---\n\nItem 7 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method is used to approximate the solution to an initial value problem.\n\n- With step size [MATH: \u0394x = 0.08,] the observed local truncation error is [MATH: \u03c4(0.08) = 0.13.]\n- With step size [MATH: \u0394x = 0.02,] the observed local truncation error is [MATH: \u03c4(0.02) = 0.002.]\n\nEstimate the order of the numerical method.\n\nChoices:\na. [MATH: 5]\nb. [MATH: 3]\nc. [MATH: 4]\nd. [MATH: 1]\ne. [MATH: 2]\n\n---\n\nItem 8 \u2014 Question 4\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe local truncation error (LTE) of a numerical method with step size [MATH: \u0394x] is\n[MATH: \u03c4(\u0394x) = 7(\u0394x)^{4} \u2212 2(\u0394x)^{5}.]\nComplete the following sentences. With step size [MATH: \u0394x = 0.5,] the local truncation error is\n[SELECT 1].\n\nWith step size [MATH: \u0394x = 0.25,] the local truncation error is [MATH: \u2248]\n[SELECT 2].\n\nDecreasing from [MATH: \u0394x = 0.5] to [MATH: \u0394x = 0.25,] the LTE is reduced by a factor of [MATH: \u2248]\n[SELECT 3].\n\nAccording to this data, the order of the method is approximately\n[SELECT 4].\n\n---\n\nItem 9 \u2014 Example: Determining the Order of a Numerical Method Given the GTE or LTE\n\nExample Prompt:\nWhich of the following expressions for the global truncation error ([MATH: e]) or local truncation error ([MATH: \\tau]) represent a second-order numerical method?\n\n1. [MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5]\n2. [MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4]\n3. [MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor a given numerical method, if [MATH: p] is the largest positive integer such that\n\n- the global truncation error (GTE) satisfies\n[MATH: e(\\Delta x) = \\mathcal O((\\Delta x)^p)\\quad\\textrm{as}\\quad \\Delta x \\to 0,]\n- the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O((\\Delta x)^{p+1})\\quad\\textrm{as}\\quad \\Delta x \\to 0,]\n\nthen the method is of order [MATH: p.]\n\nWith that in mind, let\u2019s check each option:\n\n- For the GTE expression [MATH: e(\\Delta x) = 3(\\Delta x)^2 + 4(\\Delta x)^5,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 3(\\Delta x)^2 = 3(\\Delta x)^2.]\nSo, statement I corresponds to an order [MATH: 2] method.\n- For the LTE expression [MATH: \\tau(\\Delta x) = 0.6(\\Delta x)^3 + 2(\\Delta x)^4,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 0.6(\\Delta x)^3 = 0.6(\\Delta x)^{2+1}.]\nSo, statement II corresponds to an order [MATH: 2] method.\n- For the GTE expression [MATH: e(\\Delta x) = 7(\\Delta x)^4 + 5(\\Delta x)^6,] the dominant term as [MATH: \\Delta x\\to 0] is [MATH: 7(\\Delta x)^4 = 7(\\Delta x)^4.]\nSo, statement III corresponds to an order [MATH: 4] method.\n\nTherefore, the correct answer is \"I and II only\".\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\nWhich of the following global truncation error expressions represent a second-order numerical method?\n\n1. [MATH: e(\u0394x) = 6(\u0394x)^{2}]\n2. [MATH: e(\u0394x) = 0.3\u0394x + 2(\u0394x)^{2}]\n3. [MATH: e(\u0394x) = 9(\u0394x)^{2} + 4(\u0394x)^{5}]\n\nChoices:\na. II only\nb. II and III only\nc. I and III only\nd. I only\ne. I, II, and III\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\nWhich of the following local truncation error expressions represent a first-order numerical method?\n\n1. [MATH: \u03c4(\u0394x) = 6(\u0394x)^{3}]\n2. [MATH: \u03c4(\u0394x) = 0.3(\u0394x)^{2} + 2(\u0394x)^{3}]\n3. [MATH: \u03c4(\u0394x) = 9(\u0394x)^{3} + 4(\u0394x)^{5}]\n\nChoices:\na. I, II, and III\nb. I only\nc. II only\nd. I and III only\ne. II and III only\n\n---\n\nItem 12 \u2014 Example: Making Inferences Given the Order of a Numerical Method\n\nExample Prompt:\nA numerical method for approximating a solution to an initial value problem is known to be order [MATH: 1.]\nSuppose that using step size [MATH: \\Delta x = 0.4] produces a local truncation error (LTE) of [MATH: \\tau(0.4) \\approx 0.24.]\nIf we instead use a step size [MATH: \\Delta x = 0.1,] what LTE should we expect?\n\n[MATH: XXX]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method has order [MATH: p] if [MATH: p] is the largest positive integer such that the local truncation error (LTE) satisfies\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad \\textrm{as}\\quad \\Delta x \\to 0.]\nThe order describes how fast errors shrink as [MATH: \\Delta x] decreases.\n\nIn other words, a numerical method has order [MATH: p] if, for sufficiently small step sizes, reducing the step size by a factor of [MATH: k] reduces the LTE by a factor of approximately [MATH: k^{p+1}.]\n\nIn our case, the step size decreases from [MATH: 0.4] to [MATH: 0.1.] So, it reduces by a factor of\n[MATH: k = \\frac{0.4}{0.1} = 4.]\n\nNow, since the numerical method is of order [MATH: 1,] the error is expected to decrease by a factor of\n[MATH: k^{1+1} = 4^2 = 16.]\n\nTherefore, using a step size of [MATH: \\Delta x = 0.1,] the expected LTE is\n[MATH: \\tau(0.1) \\approx \\frac{0.24}{16} = 0.015.]\n\n---\n\nItem 13 \u2014 Question 7\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method for approximating a solution to an initial value problem is known to be order [MATH: 2.]\nSuppose that using step size [MATH: \u0394x = 0.1] produces a global truncation error (GTE) of [MATH: e(0.1) \u2248 0.072.]\nIf we instead use a step size [MATH: \u0394x = 0.05,] what GTE should we expect?[MATH: e(0.05) \u2248]\n[FREE_ENTRY 1]\n\n---\n\nItem 14 \u2014 Question 8\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA numerical method for approximating a solution to an initial value problem is known to be order [MATH: 2.]\nSuppose that using step size [MATH: \u0394x = 0.4] produces a local truncation error (LTE) of [MATH: \u03c4(0.4) \u2248 0.192.]\nIf we instead use a step size [MATH: \u0394x = 0.1,] what LTE should we expect?[MATH: \u03c4(0.1) \u2248]\n[FREE_ENTRY 1]\n\n---\n\nItem 15 \u2014 Tutorial: Connecting the Definitions of the Order of Numerical Methods\n\nContent:\nWe'll now show that the definition of order with respect to LTE is the same as with respect to GTE.\n\nContent:\nIndeed, suppose a numerical method with increment formula [MATH: \\Delta y = \\Phi(x, y, \\Delta x) \\cdot \\Delta x] satisfies the following:\n[MATH: \\tau(\\Delta x) = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)\\quad\\textrm{as}\\quad \\Delta x \\to 0]\n\nContent:\nOn a fixed interval of length [MATH: L,] the number of steps is [MATH: N \\approx \\dfrac{L}{\\Delta x}.] So,\n[MATH: N = \\mathcal O\\!\\left(\\dfrac{1}{\\Delta x}\\right)] as [MATH: \\Delta x \\to 0.]\n\nContent:\nNow, recall the relationship between GTE and LTE, given by\n\nContent:\n[MATH: e(\\Delta x) = e_N = e_{N-1} + \\left[ \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\right] \\cdot \\Delta x + \\tau_N.]\n\nContent:\nSince [MATH: y(x_{N-1}) - y_{N-1} = e_{N-1},] it is natural to say that changing the input [MATH: y] by [MATH: e_{N-1}] changes [MATH: \\Phi] by about a constant multiple of [MATH: e_{N-1}.] So, heuristically,\n\nContent:\n[MATH: \\Phi(x_{N-1}, y(x_{N-1}), \\Delta x) - \\Phi(x_{N-1}, y_{N-1}, \\Delta x) \\approx Ce_{N-1}]\n\nContent:\nfor some [MATH: C] that doesn't depend on [MATH: \\Delta x] (on a fixed interval). Hence, the GTE satisfies approximately\n\nContent:\n[MATH: e(\\Delta x) = e_N \\approx (1+C\\Delta x)e_{N-1} + \\tau_N.]\n\nContent:\nAfter [MATH: N] steps, we get\n[MATH: e(\\Delta x) \\approx (1+C\\Delta x)^N e_0 + \\sum_{n=1}^N(1+C\\Delta x)^{N-n}\\tau_n.]\n\nContent:\nNext, note that [MATH: (1+C\\Delta x)^N \\approx e^{CN\\Delta x} \\approx e^{CL},] which is [MATH: \\mathcal O(1)] as [MATH: \\Delta x \\to 0.] So, the weights [MATH: (1+C\\Delta x)^{N-n}] don't change the power of [MATH: \\Delta x.]\n\nContent:\nSo, we can treat the GTE as roughly the sum of the per-step local errors. Therefore,\n[MATH: e(\\Delta x) \\approx \\sum_{n=1}^N \\tau_n]\n\nContent:\nWith [MATH: \\tau_n = \\mathcal O\\!\\left((\\Delta x)^{p+1}\\right)] for each [MATH: n=1,\\ldots,N,] we get\n\nContent:\n[MATH: e(\u0394x)|= \u2211_(n = 1)^(N)O((\u0394x)^{p + 1}); = N \u22c5 O((\u0394x)^{p + 1}); = O((1)/(\u0394x)) \u22c5 O((\u0394x)^{p + 1}); = O((\u0394x)^{p}).]\n\nContent:\nNote that since [MATH: p] is maximal in the LTE definition, this shows the GTE has order [MATH: p] as well."
+  }
+}

@@ -1,0 +1,1275 @@
+{
+  "schema_version": 2,
+  "topic_id": "3020",
+  "topic_title": "Spearman's Rank Correlation Coefficient",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3020/Source/3020.html",
+  "source_url": "https://mathacademy.com/topics/3020",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "224675",
+        "dom_id": "sectionLink-224675",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-224675"
+      },
+      {
+        "index": 2,
+        "step_id": "224676",
+        "dom_id": "sectionLink-224676",
+        "name": "",
+        "title": "Calculating Spearman\u2019s Rank Correlation Coefficient",
+        "selector": "#sectionLink-224676"
+      },
+      {
+        "index": 3,
+        "step_id": "224679",
+        "dom_id": "sectionLink-224679",
+        "name": "",
+        "title": "Interpreting the Correlation Coefficient",
+        "selector": "#sectionLink-224679"
+      },
+      {
+        "index": 4,
+        "step_id": "224680",
+        "dom_id": "sectionLink-224680",
+        "name": "",
+        "title": "Calculating Spearman\u2019s Rank Coefficient in Contextual Situations: Ranked Data",
+        "selector": "#sectionLink-224680"
+      },
+      {
+        "index": 5,
+        "step_id": "224716",
+        "dom_id": "sectionLink-224716",
+        "name": "",
+        "title": "Spearman's Rank Correlation Coefficient For Non-Ranked Data",
+        "selector": "#sectionLink-224716"
+      },
+      {
+        "index": 6,
+        "step_id": "224683",
+        "dom_id": "sectionLink-224683",
+        "name": "",
+        "title": "Calculating Spearman\u2019s Rank Coefficient in Contextual Situations: Non-Ranked Data",
+        "selector": "#sectionLink-224683"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "734",
+        "name": "Linear Correlation",
+        "href": "/topics/linear-correlation-734"
+      },
+      {
+        "topic_id": "1056",
+        "name": "The Linear Correlation Coefficient",
+        "href": "/topics/the-linear-correlation-coefficient-1056"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "224675",
+        "content_id": "10568",
+        "dom_id": "step-224675",
+        "selector": "#step-224675",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we&#x27;ll learn how to compute the <strong>Spearman&#x27;s rank correlation coefficient.</strong></p>",
+            "readable_text": "In this lesson, we'll learn how to compute the Spearman's rank correlation coefficient.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose two testers independently rated the taste of <span class=\"math\">[MATH: 5]</span> kinds of cheese during a degustation. Each tester ranked the cheeses by assigning a unique integer between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: 5]</span> to each kind, with <span class=\"math\">[MATH: 1]</span> being the best and <span class=\"math\">[MATH: 5]</span> being the worst. The table below shows their rankings, where the cheeses are labeled <span class=\"math\">[MATH: A]</span>-<span class=\"math\">[MATH: E.]</span> </p>",
+            "readable_text": "Suppose two testers independently rated the taste of [MATH: 5] kinds of cheese during a degustation. Each tester ranked the cheeses by assigning a unique integer between [MATH: 1] and [MATH: 5] to each kind, with [MATH: 1] being the best and [MATH: 5] being the worst. The table below shows their rankings, where the cheeses are labeled [MATH: A]-[MATH: E.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th></th><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><th><p><b>Tester 1 (<span class=\"math\">[MATH: x_i]</span>)</b></p></th><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><th><p><b>Tester 2 (<span class=\"math\">[MATH: y_i]</span>)</b></p></th><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table>",
+            "readable_text": "| | A | B | C | D | E |\n| Tester 1 ([MATH: x_i]) | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: 5] | [MATH: 2] |\n| Tester 2 ([MATH: y_i]) | [MATH: 3] | [MATH: 4] | [MATH: 2] | [MATH: 5] | [MATH: 1] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Spearman&#x27;s rank correlation coefficient  <span class=\"math\">[MATH: r_s]</span> is the linear correlation coefficient - also known as Pearson&#x27;s correlation coefficient - applied to two sets of ranks, as in the example above. </p>",
+            "readable_text": "The Spearman's rank correlation coefficient [MATH: r_s] is the linear correlation coefficient - also known as Pearson's correlation coefficient - applied to two sets of ranks, as in the example above.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the case of integer ranks, the formula for the correlation can be slightly simplified. </p>",
+            "readable_text": "In the case of integer ranks, the formula for the correlation can be slightly simplified.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Given two sets of ranks <span class=\"math\">[MATH: x_1, x_2, \\ldots, x_n]</span> and <span class=\"math\">[MATH: y_1, y_2, \\ldots, y_n,]</span> where the numbers in each set are uniquely expressed as integers between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: n,]</span> the <strong>Spearman&#x27;s rank correlation coefficient</strong> can be calculated as follows:\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]</span>\nwhere <span class=\"math\">[MATH: d_i = x_i - y_i]</span> is the difference between the ranks of <span class=\"math\">[MATH: x_i]</span> and <span class=\"math\">[MATH: y_i.]</span></p>",
+            "readable_text": "Given two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This formula can be derived directly from the definition of the product-moment correlation coefficient. The derivation is a little cumbersome, so we&#x27;ll skip it here. </p>",
+            "readable_text": "This formula can be derived directly from the definition of the product-moment correlation coefficient. The derivation is a little cumbersome, so we'll skip it here.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Back to our example. First, we calculate the differences between the ranks and their squares.</p>",
+            "readable_text": "Back to our example. First, we calculate the differences between the ranks and their squares.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p><span class=\"math\">[MATH: x_i]</span></p></th><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i x_i = 15]</span></p></td></tr><tr><th><p><span class=\"math\">[MATH: y_i]</span></p></th><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i y_i = 15]</span></p></td></tr><tr><th><p><span class=\"math\">[MATH: d_i]</span></p></th><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span></p></td></tr><tr><th><p><span class=\"math\">[MATH: d_i^2]</span></p></th><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i d_i^2 = 4]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: x_i] | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: 5] | [MATH: 2] | [MATH: \\displaystyle\\sum_i x_i = 15] |\n| [MATH: y_i] | [MATH: 3] | [MATH: 4] | [MATH: 2] | [MATH: 5] | [MATH: 1] | [MATH: \\displaystyle\\sum_i y_i = 15] |\n| [MATH: d_i] | [MATH: 1] | [MATH: -1] | [MATH: -1] | [MATH: 0] | [MATH: 1] | [MATH: \\displaystyle\\sum_i d_i = 0] |\n| [MATH: d_i^2] | [MATH: 1] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\displaystyle\\sum_i d_i^2 = 4] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span> as expected.</p>",
+            "readable_text": "Notice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, we have\n<span class=\"math\">[MATH: \\sum_{i=1}^{5} d_i^2 = 4, \\qquad n=5.]</span></p>",
+            "readable_text": "So, we have\n[MATH: \\sum_{i=1}^{5} d_i^2 = 4, \\qquad n=5.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the Spearman&#x27;s rank correlation coefficient is\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6(4)}{5(5^2-1)} = \\dfrac{4}{5} = 0.8.]</span></p>",
+            "readable_text": "Therefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(4)}{5(5^2-1)} = \\dfrac{4}{5} = 0.8.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note:</strong> If we compute the Pearson&#x27;s correlation coefficient for the above example using the usual formula \n<span class=\"math\">[MATH: \\rho(x,y) =  \\dfrac{\\textrm{Cov}(x,y)}{\\sigma_x \\cdot \\sigma_y},]</span>\nwe get the same value of <span class=\"math\">[MATH: \\rho=0.8.]</span></p>",
+            "readable_text": "Note: If we compute the Pearson's correlation coefficient for the above example using the usual formula\n[MATH: \\rho(x,y) = \\dfrac{\\textrm{Cov}(x,y)}{\\sigma_x \\cdot \\sigma_y},]\nwe get the same value of [MATH: \\rho=0.8.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn this lesson, we'll learn how to compute the Spearman's rank correlation coefficient.\n\nContent:\nSuppose two testers independently rated the taste of [MATH: 5] kinds of cheese during a degustation. Each tester ranked the cheeses by assigning a unique integer between [MATH: 1] and [MATH: 5] to each kind, with [MATH: 1] being the best and [MATH: 5] being the worst. The table below shows their rankings, where the cheeses are labeled [MATH: A]-[MATH: E.]\n\nContent:\n| | A | B | C | D | E |\n| Tester 1 ([MATH: x_i]) | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: 5] | [MATH: 2] |\n| Tester 2 ([MATH: y_i]) | [MATH: 3] | [MATH: 4] | [MATH: 2] | [MATH: 5] | [MATH: 1] |\n\nContent:\nThe Spearman's rank correlation coefficient [MATH: r_s] is the linear correlation coefficient - also known as Pearson's correlation coefficient - applied to two sets of ranks, as in the example above.\n\nContent:\nIn the case of integer ranks, the formula for the correlation can be slightly simplified.\n\nContent:\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nContent:\nThis formula can be derived directly from the definition of the product-moment correlation coefficient. The derivation is a little cumbersome, so we'll skip it here.\n\nContent:\nBack to our example. First, we calculate the differences between the ranks and their squares.\n\nContent:\n| [MATH: x_i] | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: 5] | [MATH: 2] | [MATH: \\displaystyle\\sum_i x_i = 15] |\n| [MATH: y_i] | [MATH: 3] | [MATH: 4] | [MATH: 2] | [MATH: 5] | [MATH: 1] | [MATH: \\displaystyle\\sum_i y_i = 15] |\n| [MATH: d_i] | [MATH: 1] | [MATH: -1] | [MATH: -1] | [MATH: 0] | [MATH: 1] | [MATH: \\displaystyle\\sum_i d_i = 0] |\n| [MATH: d_i^2] | [MATH: 1] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\displaystyle\\sum_i d_i^2 = 4] |\n\nContent:\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected.\n\nContent:\nSo, we have\n[MATH: \\sum_{i=1}^{5} d_i^2 = 4, \\qquad n=5.]\n\nContent:\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(4)}{5(5^2-1)} = \\dfrac{4}{5} = 0.8.]\n\nContent:\nNote: If we compute the Pearson's correlation coefficient for the above example using the usual formula\n[MATH: \\rho(x,y) = \\dfrac{\\textrm{Cov}(x,y)}{\\sigma_x \\cdot \\sigma_y},]\nwe get the same value of [MATH: \\rho=0.8.]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "224676",
+        "content_id": "16391",
+        "dom_id": "step-224676",
+        "selector": "#step-224676",
+        "step_anchor": "step-2",
+        "title": "Calculating Spearman\u2019s Rank Correlation Coefficient",
+        "key_prerequisites": [
+          {
+            "topic_id": "1056",
+            "name": "The Linear Correlation Coefficient",
+            "href": "/topics/1056",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Calculate Spearman&#x27;s correlation coefficient <span class=\"math\">[MATH: r_s]</span> for the two sets of ranks given below.</p><table><tr><th><p><b><span class=\"math\">[MATH: x_i]</span></b></p></th><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><th><p><b><span class=\"math\">[MATH: y_i]</span></b></p></th><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr></table>",
+            "readable_text": "Calculate Spearman's correlation coefficient [MATH: r_s] for the two sets of ranks given below.\n\n| [MATH: x_i] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 3] |\n| [MATH: y_i] | [MATH: 4] | [MATH: 1] | [MATH: 2] | [MATH: 3] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Spearman&#x27;s rank correlation coefficient <span class=\"math\">[MATH: r_s]</span> is Pearson&#x27;s correlation coefficient applied to two sets of ranks. </p><p>Given two sets of ranks <span class=\"math\">[MATH: x_1, x_2, \\ldots, x_n]</span> and <span class=\"math\">[MATH: y_1, y_2, \\ldots, y_n,]</span> where the numbers in each set are uniquely expressed as integers between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: n,]</span> the Spearman&#x27;s rank correlation coefficient can be calculated as follows:\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]</span>\nwhere <span class=\"math\">[MATH: d_i = x_i - y_i]</span> is the difference between the ranks of <span class=\"math\">[MATH: x_i]</span> and <span class=\"math\">[MATH: y_i.]</span></p><p>First, we calculate the differences between the ranks, and their squares.</p><table><tr><th><p><span class=\"math\">[MATH: x_i]</span></p></th><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i x_i = 10]</span></p></td></tr><tr><th><p><span class=\"math\">[MATH: y_i]</span></p></th><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i y_i = 10]</span></p></td></tr><tr><th><p><span class=\"math\">[MATH: d_i]</span></p></th><td><p><span class=\"math\">[MATH: -3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span></p></td></tr><tr><th><p><span class=\"math\">[MATH: d_i^2]</span></p></th><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\displaystyle\\sum_i d_i^2 = 14]</span></p></td></tr></table><p>Notice that <span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span> as expected.</p><p>So, we have</p><p><span class=\"math\">[MATH: \\sum_{i=1}^{4} d_i^2 = 14, \\qquad n=4.]</span></p><p>Therefore, the Spearman&#x27;s rank correlation coefficient is\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6(14)}{4(4^2-1)} = -0.4.]</span></p>",
+            "readable_text": "The Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we calculate the differences between the ranks, and their squares.\n\n| [MATH: x_i] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 3] | [MATH: \\displaystyle\\sum_i x_i = 10] |\n| [MATH: y_i] | [MATH: 4] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: \\displaystyle\\sum_i y_i = 10] |\n| [MATH: d_i] | [MATH: -3] | [MATH: 1] | [MATH: 2] | [MATH: 0] | [MATH: \\displaystyle\\sum_i d_i = 0] |\n| [MATH: d_i^2] | [MATH: 9] | [MATH: 1] | [MATH: 4] | [MATH: 0] | [MATH: \\displaystyle\\sum_i d_i^2 = 14] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected.\n\nSo, we have\n\n[MATH: \\sum_{i=1}^{4} d_i^2 = 14, \\qquad n=4.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(14)}{4(4^2-1)} = -0.4.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nCalculate Spearman's correlation coefficient [MATH: r_s] for the two sets of ranks given below.\n\n| [MATH: x_i] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 3] |\n| [MATH: y_i] | [MATH: 4] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we calculate the differences between the ranks, and their squares.\n\n| [MATH: x_i] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 3] | [MATH: \\displaystyle\\sum_i x_i = 10] |\n| [MATH: y_i] | [MATH: 4] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: \\displaystyle\\sum_i y_i = 10] |\n| [MATH: d_i] | [MATH: -3] | [MATH: 1] | [MATH: 2] | [MATH: 0] | [MATH: \\displaystyle\\sum_i d_i = 0] |\n| [MATH: d_i^2] | [MATH: 9] | [MATH: 1] | [MATH: 4] | [MATH: 0] | [MATH: \\displaystyle\\sum_i d_i^2 = 14] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected.\n\nSo, we have\n\n[MATH: \\sum_{i=1}^{4} d_i^2 = 14, \\qquad n=4.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(14)}{4(4^2-1)} = -0.4.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "251414",
+        "dom_id": "question-251414",
+        "selector": "#question-251414",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Two sets of ranks <span class=\"math\">[MATH: x_{1}, x_{2}, \u2026, x_{26}]</span> and <span class=\"math\">[MATH: y_{1}, y_{2}, \u2026, y_{26}]</span> are each uniquely expressed as numbers between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: 26.]</span> You are given that\n<span class=\"math\">[MATH: \u2211_(i = 1)^(26)(x_{i} \u2212 y_{i})^{2} = 4632.]</span>\nWhich of the following is the Spearman&#x27;s correlation coefficient <span class=\"math\">[MATH: r_{s}]</span> between the two datasets, rounded to two decimal places?</p>",
+          "readable_text": "Two sets of ranks [MATH: x_{1}, x_{2}, \u2026, x_{26}] and [MATH: y_{1}, y_{2}, \u2026, y_{26}] are each uniquely expressed as numbers between [MATH: 1] and [MATH: 26.] You are given that\n[MATH: \u2211_(i = 1)^(26)(x_{i} \u2212 y_{i})^{2} = 4632.]\nWhich of the following is the Spearman's correlation coefficient [MATH: r_{s}] between the two datasets, rounded to two decimal places?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251414-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.45]</span></p>",
+            "readable_text": "[MATH: 0.45]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251414-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.03]</span></p>",
+            "readable_text": "[MATH: 0.03]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251414-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 0.32]</span></p>",
+            "readable_text": "[MATH: \u2212 0.32]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251414-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 0.58]</span></p>",
+            "readable_text": "[MATH: \u2212 0.58]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251414-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 0.52]</span></p>",
+            "readable_text": "[MATH: \u2212 0.52]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nTwo sets of ranks [MATH: x_{1}, x_{2}, \u2026, x_{26}] and [MATH: y_{1}, y_{2}, \u2026, y_{26}] are each uniquely expressed as numbers between [MATH: 1] and [MATH: 26.] You are given that\n[MATH: \u2211_(i = 1)^(26)(x_{i} \u2212 y_{i})^{2} = 4632.]\nWhich of the following is the Spearman's correlation coefficient [MATH: r_{s}] between the two datasets, rounded to two decimal places?\n\nChoices:\na. [MATH: 0.45]\nb. [MATH: 0.03]\nc. [MATH: \u2212 0.32]\nd. [MATH: \u2212 0.58]\ne. [MATH: \u2212 0.52]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "251423",
+        "dom_id": "question-251423",
+        "selector": "#question-251423",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following is the Spearman&#x27;s correlation coefficient <span class=\"math\">[MATH: r_{s}]</span> between the two datasets given below?</p><table><tr><th><p><b><span class=\"math\">[MATH: x_{i}]</span></b></p></th><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><th><p><b><span class=\"math\">[MATH: y_{i}]</span></b></p></th><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr></table>",
+          "readable_text": "Which of the following is the Spearman's correlation coefficient [MATH: r_{s}] between the two datasets given below?\n\n| [MATH: x_{i}] | [MATH: 1] | [MATH: 3] | [MATH: 2] | [MATH: 4] |\n| [MATH: y_{i}] | [MATH: 2] | [MATH: 3] | [MATH: 1] | [MATH: 4] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251423-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.7]</span> </p>",
+            "readable_text": "[MATH: 0.7]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251423-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.85]</span></p>",
+            "readable_text": "[MATH: 0.85]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251423-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.8]</span></p>",
+            "readable_text": "[MATH: 0.8]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251423-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.6]</span> </p>",
+            "readable_text": "[MATH: 0.6]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251423-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0.75]</span> </p>",
+            "readable_text": "[MATH: 0.75]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nWhich of the following is the Spearman's correlation coefficient [MATH: r_{s}] between the two datasets given below?\n\n| [MATH: x_{i}] | [MATH: 1] | [MATH: 3] | [MATH: 2] | [MATH: 4] |\n| [MATH: y_{i}] | [MATH: 2] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n\nChoices:\na. [MATH: 0.7]\nb. [MATH: 0.85]\nc. [MATH: 0.8]\nd. [MATH: 0.6]\ne. [MATH: 0.75]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "224679",
+        "content_id": "10578",
+        "dom_id": "step-224679",
+        "selector": "#step-224679",
+        "step_anchor": "step-5",
+        "title": "Interpreting the Correlation Coefficient",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Similar to Pearson&#x27;s correlation coefficient, Spearman&#x27;s rank correlation coefficient <span class=\"math\">[MATH: r_s]</span> has the following properties:</p>",
+            "readable_text": "Similar to Pearson's correlation coefficient, Spearman's rank correlation coefficient [MATH: r_s] has the following properties:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If <span class=\"math\">[MATH: r_s = 1,]</span> rankings are in exact agreement.</p></li><li><p>If <span class=\"math\">[MATH: r_s = -1,]</span> rankings are in exact reverse order.</p></li><li><p>If <span class=\"math\">[MATH: r_s = 0,]</span> there is no correlation between the rankings.</p></li></ul>",
+            "readable_text": "- If [MATH: r_s = 1,] rankings are in exact agreement.\n- If [MATH: r_s = -1,] rankings are in exact reverse order.\n- If [MATH: r_s = 0,] there is no correlation between the rankings.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Furthermore, similar thresholds can be applied to distinguish between different degrees of relationships:</p>",
+            "readable_text": "Furthermore, similar thresholds can be applied to distinguish between different degrees of relationships:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p>Relationship</p></th><th><p>Spearman&#x27;s rank</p></th></tr><tr><td><p>Strong positive correlation</p></td><td><p><span class=\"math\">[MATH: 0.7 \\leq r_s \\leq 1]</span></p></td></tr><tr><td><p>Weak positive correlation</p></td><td><p><span class=\"math\">[MATH: 0.3 \\leq r_s \\lt 0.7]</span></p></td></tr><tr><td><p>Little or no correlation</p></td><td><p><span class=\"math\">[MATH: -0.3 &lt; r_s &lt; 0.3]</span></p></td></tr><tr><td><p>Weak negative correlation</p></td><td><p><span class=\"math\">[MATH: -0.7 \\lt r_s \\leq -0.3]</span></p></td></tr><tr><td><p>Strong negative correlation</p></td><td><p><span class=\"math\">[MATH: -1 \\leq r_s \\lt -0.7]</span></p></td></tr></table>",
+            "readable_text": "| Relationship | Spearman's rank |\n| Strong positive correlation | [MATH: 0.7 \\leq r_s \\leq 1] |\n| Weak positive correlation | [MATH: 0.3 \\leq r_s \\lt 0.7] |\n| Little or no correlation | [MATH: -0.3 < r_s < 0.3] |\n| Weak negative correlation | [MATH: -0.7 \\lt r_s \\leq -0.3] |\n| Strong negative correlation | [MATH: -1 \\leq r_s \\lt -0.7] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSimilar to Pearson's correlation coefficient, Spearman's rank correlation coefficient [MATH: r_s] has the following properties:\n\nContent:\n- If [MATH: r_s = 1,] rankings are in exact agreement.\n- If [MATH: r_s = -1,] rankings are in exact reverse order.\n- If [MATH: r_s = 0,] there is no correlation between the rankings.\n\nContent:\nFurthermore, similar thresholds can be applied to distinguish between different degrees of relationships:\n\nContent:\n| Relationship | Spearman's rank |\n| Strong positive correlation | [MATH: 0.7 \\leq r_s \\leq 1] |\n| Weak positive correlation | [MATH: 0.3 \\leq r_s \\lt 0.7] |\n| Little or no correlation | [MATH: -0.3 < r_s < 0.3] |\n| Weak negative correlation | [MATH: -0.7 \\lt r_s \\leq -0.3] |\n| Strong negative correlation | [MATH: -1 \\leq r_s \\lt -0.7] |"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "224680",
+        "content_id": "16397",
+        "dom_id": "step-224680",
+        "selector": "#step-224680",
+        "step_anchor": "step-6",
+        "title": "Calculating Spearman\u2019s Rank Coefficient in Contextual Situations: Ranked Data",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A film critic ranks five movies based on the screenplay and actors&#x27; performance. The table below shows the rankings, where the movies are labeled <span class=\"math\">[MATH: A]</span>-<span class=\"math\">[MATH: E.]</span></p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Screenplay</b></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><b>Actors&#x27; performance</b></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr></table><p>Calculate Spearman&#x27;s correlation coefficient <span class=\"math\">[MATH: r_s]</span> and interpret the result.</p>",
+            "readable_text": "A film critic ranks five movies based on the screenplay and actors' performance. The table below shows the rankings, where the movies are labeled [MATH: A]-[MATH: E.]\n\n| | A | B | C | D | E |\n| Screenplay | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Actors' performance | [MATH: 4] | [MATH: 1] | [MATH: 5] | [MATH: 3] | [MATH: 2] |\n\nCalculate Spearman's correlation coefficient [MATH: r_s] and interpret the result.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Spearman&#x27;s rank correlation coefficient <span class=\"math\">[MATH: r_s]</span> is Pearson&#x27;s correlation coefficient applied to two sets of ranks. </p><p>Given two sets of ranks <span class=\"math\">[MATH: x_1, x_2, \\ldots, x_n]</span> and <span class=\"math\">[MATH: y_1, y_2, \\ldots, y_n,]</span> where the numbers in each set are uniquely expressed as integers between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: n,]</span> the Spearman&#x27;s rank correlation coefficient can be calculated as follows:\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]</span>\nwhere <span class=\"math\">[MATH: d_i = x_i - y_i]</span> is the difference between the ranks of <span class=\"math\">[MATH: x_i]</span> and <span class=\"math\">[MATH: y_i.]</span></p><p>First, we calculate the differences between the ranks and their squares.</p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Screenplay</b></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><b>Actors&#x27; performances</b></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><b><span class=\"math\">[MATH: d_i]</span></b></p></td><td><p><span class=\"math\">[MATH: -2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: -2]</span></p></td><td><p><span class=\"math\">[MATH: -2]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><b><span class=\"math\">[MATH: d_i^2]</span></b></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr></table><p>\nNotice that <span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span> as expected, and\n<span class=\"math\">[MATH: \\sum_i d_i^2 = 4+16+4+4+4 = 32.]</span></p><p>Therefore, the Spearman&#x27;s rank correlation coefficient is\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6(32)}{5(5^2-1)} = -0.6.]</span></p><p>Since <span class=\"math\">[MATH: -0.7 &lt; r_s \\leq -0.3,]</span> we conclude that there is a <strong>weak negative correlation</strong> between the rankings.</p>",
+            "readable_text": "The Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we calculate the differences between the ranks and their squares.\n\n| | A | B | C | D | E |\n| Screenplay | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Actors' performances | [MATH: 4] | [MATH: 1] | [MATH: 5] | [MATH: 3] | [MATH: 2] |\n| [MATH: d_i] | [MATH: -2] | [MATH: 4] | [MATH: -2] | [MATH: -2] | [MATH: 2] |\n| [MATH: d_i^2] | [MATH: 4] | [MATH: 16] | [MATH: 4] | [MATH: 4] | [MATH: 4] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 4+16+4+4+4 = 32.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(32)}{5(5^2-1)} = -0.6.]\n\nSince [MATH: -0.7 < r_s \\leq -0.3,] we conclude that there is a weak negative correlation between the rankings.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA film critic ranks five movies based on the screenplay and actors' performance. The table below shows the rankings, where the movies are labeled [MATH: A]-[MATH: E.]\n\n| | A | B | C | D | E |\n| Screenplay | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Actors' performance | [MATH: 4] | [MATH: 1] | [MATH: 5] | [MATH: 3] | [MATH: 2] |\n\nCalculate Spearman's correlation coefficient [MATH: r_s] and interpret the result.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we calculate the differences between the ranks and their squares.\n\n| | A | B | C | D | E |\n| Screenplay | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Actors' performances | [MATH: 4] | [MATH: 1] | [MATH: 5] | [MATH: 3] | [MATH: 2] |\n| [MATH: d_i] | [MATH: -2] | [MATH: 4] | [MATH: -2] | [MATH: -2] | [MATH: 2] |\n| [MATH: d_i^2] | [MATH: 4] | [MATH: 16] | [MATH: 4] | [MATH: 4] | [MATH: 4] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 4+16+4+4+4 = 32.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(32)}{5(5^2-1)} = -0.6.]\n\nSince [MATH: -0.7 < r_s \\leq -0.3,] we conclude that there is a weak negative correlation between the rankings."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "251416",
+        "dom_id": "question-251416",
+        "selector": "#question-251416",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The school projects of twenty students are evaluated independently by two teachers. Each teacher ranks the projects independently, assigning a unique integer between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: 20]</span> to each project. If <span class=\"math\">[MATH: d_{1}, d_{2}, \u2026, d_{20}]</span> are the differences between the ranks given to each student, and the sum of the squared differences is given by\n<span class=\"math\">[MATH: \u2211_(i = 1)^(20)d_{i}^{2} = 780]</span></p><p>then find the Spearman&#x27;s rank correlation coefficient <span class=\"math\">[MATH: r_{s}]</span> and interpret the result.</p><p>Rounded to two decimal places, <span class=\"math\">[MATH: r_{s} \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-251416-0\" data-select-index=\"1\">[SELECT 1]</span>. Therefore, we conclude that there is \n<span class=\"select-list\" data-select-id=\"selectList-251416-1\" data-select-index=\"2\">[SELECT 2]</span> between the rankings.\n</p>",
+          "readable_text": "The school projects of twenty students are evaluated independently by two teachers. Each teacher ranks the projects independently, assigning a unique integer between [MATH: 1] and [MATH: 20] to each project. If [MATH: d_{1}, d_{2}, \u2026, d_{20}] are the differences between the ranks given to each student, and the sum of the squared differences is given by\n[MATH: \u2211_(i = 1)^(20)d_{i}^{2} = 780]\n\nthen find the Spearman's rank correlation coefficient [MATH: r_{s}] and interpret the result.\n\nRounded to two decimal places, [MATH: r_{s} \u2248] [SELECT 1]. Therefore, we conclude that there is\n[SELECT 2] between the rankings.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-251416-0",
+              "frame_dom_id": "selectListFrame-251416-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.41]</span>",
+                  "readable_text": "[MATH: 0.41]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 0.78]</span>",
+                  "readable_text": "[MATH: \u2212 0.78]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 0.02]</span>",
+                  "readable_text": "[MATH: \u2212 0.02]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.85]</span>",
+                  "readable_text": "[MATH: 0.85]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 0.31]</span>",
+                  "readable_text": "[MATH: \u2212 0.31]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-251416-1",
+              "frame_dom_id": "selectListFrame-251416-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "a weak positive correlation",
+                  "readable_text": "a weak positive correlation"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "a weak negative correlation",
+                  "readable_text": "a weak negative correlation"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "little or no correlation",
+                  "readable_text": "little or no correlation"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "a strong positive correlation",
+                  "readable_text": "a strong positive correlation"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "a strong negative correlation",
+                  "readable_text": "a strong negative correlation"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-251416-0",
+            "frame_dom_id": "selectListFrame-251416-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 0.41]</span>",
+                "readable_text": "[MATH: 0.41]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 0.78]</span>",
+                "readable_text": "[MATH: \u2212 0.78]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 0.02]</span>",
+                "readable_text": "[MATH: \u2212 0.02]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 0.85]</span>",
+                "readable_text": "[MATH: 0.85]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 0.31]</span>",
+                "readable_text": "[MATH: \u2212 0.31]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-251416-1",
+            "frame_dom_id": "selectListFrame-251416-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "a weak positive correlation",
+                "readable_text": "a weak positive correlation"
+              },
+              {
+                "index": 2,
+                "normalized_html": "a weak negative correlation",
+                "readable_text": "a weak negative correlation"
+              },
+              {
+                "index": 3,
+                "normalized_html": "little or no correlation",
+                "readable_text": "little or no correlation"
+              },
+              {
+                "index": 4,
+                "normalized_html": "a strong positive correlation",
+                "readable_text": "a strong positive correlation"
+              },
+              {
+                "index": 5,
+                "normalized_html": "a strong negative correlation",
+                "readable_text": "a strong negative correlation"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe school projects of twenty students are evaluated independently by two teachers. Each teacher ranks the projects independently, assigning a unique integer between [MATH: 1] and [MATH: 20] to each project. If [MATH: d_{1}, d_{2}, \u2026, d_{20}] are the differences between the ranks given to each student, and the sum of the squared differences is given by\n[MATH: \u2211_(i = 1)^(20)d_{i}^{2} = 780]\n\nthen find the Spearman's rank correlation coefficient [MATH: r_{s}] and interpret the result.\n\nRounded to two decimal places, [MATH: r_{s} \u2248] [SELECT 1]. Therefore, we conclude that there is\n[SELECT 2] between the rankings."
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "251408",
+        "dom_id": "question-251408",
+        "selector": "#question-251408",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Two teachers independently evaluated the school projects of six students, ranking the projects based on student performance. The table below shows the rankings, where the students are labeled <span class=\"math\">[MATH: A]</span>-<span class=\"math\">[MATH: F.]</span></p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td></tr><tr><td><p><b>Rank (Teacher 1)</b></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><b>Rank (Teacher 2)</b></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr></table><p>Calculate Spearman&#x27;s correlation coefficient <span class=\"math\">[MATH: r_{s}]</span> and interpret the result.</p><p>Rounded to two decimal places, <span class=\"math\">[MATH: r_{s} \u2248]</span> <span class=\"select-list\" data-select-id=\"selectList-251408-0\" data-select-index=\"1\">[SELECT 1]</span>. Therefore, we conclude that there is \n<span class=\"select-list\" data-select-id=\"selectList-251408-1\" data-select-index=\"2\">[SELECT 2]</span> between the rankings.\n</p>",
+          "readable_text": "Two teachers independently evaluated the school projects of six students, ranking the projects based on student performance. The table below shows the rankings, where the students are labeled [MATH: A]-[MATH: F.]\n\n| | A | B | C | D | E | F |\n| Rank (Teacher 1) | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| Rank (Teacher 2) | [MATH: 1] | [MATH: 5] | [MATH: 6] | [MATH: 4] | [MATH: 2] | [MATH: 3] |\n\nCalculate Spearman's correlation coefficient [MATH: r_{s}] and interpret the result.\n\nRounded to two decimal places, [MATH: r_{s} \u2248] [SELECT 1]. Therefore, we conclude that there is\n[SELECT 2] between the rankings.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-251408-0",
+              "frame_dom_id": "selectListFrame-251408-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.21]</span>",
+                  "readable_text": "[MATH: 0.21]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 0.91]</span>",
+                  "readable_text": "[MATH: \u2212 0.91]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 0.85]</span>",
+                  "readable_text": "[MATH: 0.85]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 0.43]</span>",
+                  "readable_text": "[MATH: \u2212 0.43]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 0.03]</span>",
+                  "readable_text": "[MATH: \u2212 0.03]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-251408-1",
+              "frame_dom_id": "selectListFrame-251408-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "a strong positive correlation",
+                  "readable_text": "a strong positive correlation"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "a weak negative correlation",
+                  "readable_text": "a weak negative correlation"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "little or no correlation",
+                  "readable_text": "little or no correlation"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "a weak positive correlation",
+                  "readable_text": "a weak positive correlation"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "a strong negative correlation",
+                  "readable_text": "a strong negative correlation"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-251408-0",
+            "frame_dom_id": "selectListFrame-251408-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 0.21]</span>",
+                "readable_text": "[MATH: 0.21]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 0.91]</span>",
+                "readable_text": "[MATH: \u2212 0.91]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 0.85]</span>",
+                "readable_text": "[MATH: 0.85]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 0.43]</span>",
+                "readable_text": "[MATH: \u2212 0.43]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 0.03]</span>",
+                "readable_text": "[MATH: \u2212 0.03]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-251408-1",
+            "frame_dom_id": "selectListFrame-251408-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "a strong positive correlation",
+                "readable_text": "a strong positive correlation"
+              },
+              {
+                "index": 2,
+                "normalized_html": "a weak negative correlation",
+                "readable_text": "a weak negative correlation"
+              },
+              {
+                "index": 3,
+                "normalized_html": "little or no correlation",
+                "readable_text": "little or no correlation"
+              },
+              {
+                "index": 4,
+                "normalized_html": "a weak positive correlation",
+                "readable_text": "a weak positive correlation"
+              },
+              {
+                "index": 5,
+                "normalized_html": "a strong negative correlation",
+                "readable_text": "a strong negative correlation"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nTwo teachers independently evaluated the school projects of six students, ranking the projects based on student performance. The table below shows the rankings, where the students are labeled [MATH: A]-[MATH: F.]\n\n| | A | B | C | D | E | F |\n| Rank (Teacher 1) | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| Rank (Teacher 2) | [MATH: 1] | [MATH: 5] | [MATH: 6] | [MATH: 4] | [MATH: 2] | [MATH: 3] |\n\nCalculate Spearman's correlation coefficient [MATH: r_{s}] and interpret the result.\n\nRounded to two decimal places, [MATH: r_{s} \u2248] [SELECT 1]. Therefore, we conclude that there is\n[SELECT 2] between the rankings."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "224716",
+        "content_id": "10797",
+        "dom_id": "step-224716",
+        "selector": "#step-224716",
+        "step_anchor": "step-9",
+        "title": "Spearman's Rank Correlation Coefficient For Non-Ranked Data",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The time spent on review per day (in hours) a week before a math exam and the final scores on the exam for six students are shown in the table below. The students are labeled A-F.</p>",
+            "readable_text": "The time spent on review per day (in hours) a week before a math exam and the final scores on the exam for six students are shown in the table below. The students are labeled A-F.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td></tr><tr><td><p><b>Review Time (Hours)</b></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><b>Final Score</b></p></td><td><p><span class=\"math\">[MATH: 4.2]</span></p></td><td><p><span class=\"math\">[MATH: 3.5]</span></p></td><td><p><span class=\"math\">[MATH: 1.6]</span></p></td><td><p><span class=\"math\">[MATH: 5.0]</span></p></td><td><p><span class=\"math\">[MATH: 4.8]</span></p></td><td><p><span class=\"math\">[MATH: 4.7]</span></p></td></tr></table>",
+            "readable_text": "| | A | B | C | D | E | F |\n| Review Time (Hours) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Final Score | [MATH: 4.2] | [MATH: 3.5] | [MATH: 1.6] | [MATH: 5.0] | [MATH: 4.8] | [MATH: 4.7] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s plot the data:</p>",
+            "readable_text": "Let's plot the data:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/dfeb4e05bcd175144f4028d4a28380e5\"></p>",
+            "readable_text": "[IMG: /graphics/dfeb4e05bcd175144f4028d4a28380e5]",
+            "images": [
+              {
+                "src": "/graphics/dfeb4e05bcd175144f4028d4a28380e5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From the diagram, there is a positive correlation. Indeed, computing Pearson&#x27;s correlation coefficient, we obtain <span class=\"math\">[MATH: \\rho \\approx 0.886.]</span>\nHowever, the points better fit a (quadratic) curve rather than a straight line. Pearson&#x27;s coefficient shows a strong linear correlation but not exact agreement. </p>",
+            "readable_text": "From the diagram, there is a positive correlation. Indeed, computing Pearson's correlation coefficient, we obtain [MATH: \\rho \\approx 0.886.]\nHowever, the points better fit a (quadratic) curve rather than a straight line. Pearson's coefficient shows a strong linear correlation but not exact agreement.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s now find the corresponding Spearman&#x27;s rank correlation coefficient.</p>",
+            "readable_text": "Let's now find the corresponding Spearman's rank correlation coefficient.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that given two sets of ranks <span class=\"math\">[MATH: x_1, x_2, \\ldots, x_n]</span> and <span class=\"math\">[MATH: y_1, y_2, \\ldots, y_n,]</span> where the numbers in each set are uniquely expressed as integers between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: n,]</span> the Spearman&#x27;s rank correlation coefficient can be calculated as follows:\n<span class=\"math\">[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]</span>\nwhere <span class=\"math\">[MATH: d_i = x_i - y_i]</span> is the difference between the ranks of <span class=\"math\">[MATH: x_i]</span> and <span class=\"math\">[MATH: y_i.]</span></p>",
+            "readable_text": "Recall that given two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, we need to rank the students&#x27; times and scores. So, we&#x27;ll label the shortest time as <span class=\"math\">[MATH: 1]</span> and the longest time as <span class=\"math\">[MATH: 6.]</span> Note that we can rank the times the opposite way, and the final answer will be the same.</p>",
+            "readable_text": "First, we need to rank the students' times and scores. So, we'll label the shortest time as [MATH: 1] and the longest time as [MATH: 6.] Note that we can rank the times the opposite way, and the final answer will be the same.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td></tr><tr><td><p><b>Review Time (Hours)</b></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><b>Final Score</b></p></td><td><p><span class=\"math\">[MATH: 4.2]</span></p></td><td><p><span class=\"math\">[MATH: 3.5]</span></p></td><td><p><span class=\"math\">[MATH: 1.6]</span></p></td><td><p><span class=\"math\">[MATH: 5.0]</span></p></td><td><p><span class=\"math\">[MATH: 4.8]</span></p></td><td><p><span class=\"math\">[MATH: 4.7]</span></p></td></tr><tr><td><p><b>Rank (Review Time)</b></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><b>Rank (Final Score)</b></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr></table>",
+            "readable_text": "| | A | B | C | D | E | F |\n| Review Time (Hours) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Final Score | [MATH: 4.2] | [MATH: 3.5] | [MATH: 1.6] | [MATH: 5.0] | [MATH: 4.8] | [MATH: 4.7] |\n| Rank (Review Time) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Rank (Final Score) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 5] | [MATH: 4] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we calculate the differences between the ranks (the two final rows in the table), and their squares.</p>",
+            "readable_text": "Next, we calculate the differences between the ranks (the two final rows in the table), and their squares.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td></tr><tr><td><p><b>Rank (Review Time)</b></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><b>Rank (Final Score)</b></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: d_i]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: d_i^2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table>",
+            "readable_text": "| | A | B | C | D | E | F |\n| Rank (Review Time) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Rank (Final Score) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 5] | [MATH: 4] |\n| [MATH: d_i] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: -1] | [MATH: 1] |\n| [MATH: d_i^2] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 1] | [MATH: 1] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span> as expected, and\n<span class=\"math\">[MATH: \\sum_i d_i^2 = 0^2+0^2+0^2+0^2+1^2+1^2 = 2.]</span></p>",
+            "readable_text": "Notice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 0^2+0^2+0^2+0^2+1^2+1^2 = 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the Spearman&#x27;s rank correlation coefficient is</p>",
+            "readable_text": "Therefore, the Spearman's rank correlation coefficient is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: r_s = 1 - \\dfrac{6(2)}{6(6^2-1)} \\approx 0.943]</span></p>",
+            "readable_text": "[MATH: r_s = 1 - \\dfrac{6(2)}{6(6^2-1)} \\approx 0.943]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, we have an even stronger positive correlation between the rankings than we got using Pearson&#x27;s coefficient. What does it mean?</p>",
+            "readable_text": "So, we have an even stronger positive correlation between the rankings than we got using Pearson's coefficient. What does it mean?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Spearman correlation measures the relationship between two variables based on their ranks, and it equals the Pearson correlation of those ranks. While Pearson&#x27;s correlation determines <em>linear</em> relationships, Spearman&#x27;s correlation focuses on <em>monotonic</em> (i.e., increasing or decreasing) relationships, whether linear or not. </p>",
+            "readable_text": "The Spearman correlation measures the relationship between two variables based on their ranks, and it equals the Pearson correlation of those ranks. While Pearson's correlation determines linear relationships, Spearman's correlation focuses on monotonic (i.e., increasing or decreasing) relationships, whether linear or not.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>A perfect Pearson&#x27;s correlation (<span class=\"math\">[MATH: 1]</span> or <span class=\"math\">[MATH: \u22121]</span>) occurs when one variable is a perfect <em>linear</em> function of the other. </p></li><li><p>On the other hand, a perfect Spearman&#x27;s correlation (<span class=\"math\">[MATH: 1]</span> or <span class=\"math\">[MATH: \u22121]</span>) occurs when one variable is a perfect <em>monotonic</em> function of the other.</p></li></ul>",
+            "readable_text": "- A perfect Pearson's correlation ([MATH: 1] or [MATH: \u22121]) occurs when one variable is a perfect linear function of the other.\n- On the other hand, a perfect Spearman's correlation ([MATH: 1] or [MATH: \u22121]) occurs when one variable is a perfect monotonic function of the other.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our example above, the dependence was not quite linear (rather quadratic). On the other hand, the dependence was almost monotonic (to get a perfect one, we would need to swap the ranks of only two data points, <span class=\"math\">[MATH: 4.7]</span> and <span class=\"math\">[MATH: 4.8]</span>).</p>",
+            "readable_text": "In our example above, the dependence was not quite linear (rather quadratic). On the other hand, the dependence was almost monotonic (to get a perfect one, we would need to swap the ranks of only two data points, [MATH: 4.7] and [MATH: 4.8]).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/dfeb4e05bcd175144f4028d4a28380e5",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThe time spent on review per day (in hours) a week before a math exam and the final scores on the exam for six students are shown in the table below. The students are labeled A-F.\n\nContent:\n| | A | B | C | D | E | F |\n| Review Time (Hours) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Final Score | [MATH: 4.2] | [MATH: 3.5] | [MATH: 1.6] | [MATH: 5.0] | [MATH: 4.8] | [MATH: 4.7] |\n\nContent:\nLet's plot the data:\n\nGraphic:\n[IMG: /graphics/dfeb4e05bcd175144f4028d4a28380e5]\n\nContent:\nFrom the diagram, there is a positive correlation. Indeed, computing Pearson's correlation coefficient, we obtain [MATH: \\rho \\approx 0.886.]\nHowever, the points better fit a (quadratic) curve rather than a straight line. Pearson's coefficient shows a strong linear correlation but not exact agreement.\n\nContent:\nLet's now find the corresponding Spearman's rank correlation coefficient.\n\nContent:\nRecall that given two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nContent:\nFirst, we need to rank the students' times and scores. So, we'll label the shortest time as [MATH: 1] and the longest time as [MATH: 6.] Note that we can rank the times the opposite way, and the final answer will be the same.\n\nContent:\n| | A | B | C | D | E | F |\n| Review Time (Hours) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Final Score | [MATH: 4.2] | [MATH: 3.5] | [MATH: 1.6] | [MATH: 5.0] | [MATH: 4.8] | [MATH: 4.7] |\n| Rank (Review Time) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Rank (Final Score) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 5] | [MATH: 4] |\n\nContent:\nNext, we calculate the differences between the ranks (the two final rows in the table), and their squares.\n\nContent:\n| | A | B | C | D | E | F |\n| Rank (Review Time) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Rank (Final Score) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 5] | [MATH: 4] |\n| [MATH: d_i] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: -1] | [MATH: 1] |\n| [MATH: d_i^2] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 1] | [MATH: 1] |\n\nContent:\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 0^2+0^2+0^2+0^2+1^2+1^2 = 2.]\n\nContent:\nTherefore, the Spearman's rank correlation coefficient is\n\nContent:\n[MATH: r_s = 1 - \\dfrac{6(2)}{6(6^2-1)} \\approx 0.943]\n\nContent:\nSo, we have an even stronger positive correlation between the rankings than we got using Pearson's coefficient. What does it mean?\n\nContent:\nThe Spearman correlation measures the relationship between two variables based on their ranks, and it equals the Pearson correlation of those ranks. While Pearson's correlation determines linear relationships, Spearman's correlation focuses on monotonic (i.e., increasing or decreasing) relationships, whether linear or not.\n\nContent:\n- A perfect Pearson's correlation ([MATH: 1] or [MATH: \u22121]) occurs when one variable is a perfect linear function of the other.\n- On the other hand, a perfect Spearman's correlation ([MATH: 1] or [MATH: \u22121]) occurs when one variable is a perfect monotonic function of the other.\n\nContent:\nIn our example above, the dependence was not quite linear (rather quadratic). On the other hand, the dependence was almost monotonic (to get a perfect one, we would need to swap the ranks of only two data points, [MATH: 4.7] and [MATH: 4.8])."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "224683",
+        "content_id": "16396",
+        "dom_id": "step-224683",
+        "selector": "#step-224683",
+        "step_anchor": "step-10",
+        "title": "Calculating Spearman\u2019s Rank Coefficient in Contextual Situations: Non-Ranked Data",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>The air pollution level in micrograms per cubic meter and average lung capacity of citizens in liters for five cities are shown in the table below. The cities are labeled A-E.</p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Air Pollution</b></p></td><td><p><span class=\"math\">[MATH: 50]</span></p></td><td><p><span class=\"math\">[MATH: 30]</span></p></td><td><p><span class=\"math\">[MATH: 45]</span></p></td><td><p><span class=\"math\">[MATH: 60]</span></p></td><td><p><span class=\"math\">[MATH: 35]</span></p></td></tr><tr><td><p><b>Lung Capacity</b></p></td><td><p><span class=\"math\">[MATH: 3.4]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3.8]</span></p></td><td><p><span class=\"math\">[MATH: 3.5]</span></p></td><td><p><span class=\"math\">[MATH: 4.1]</span></p></td></tr></table><p>Calculate <strong>Spearman&#x27;s rank</strong> correlation coefficient for this data.</p>",
+            "readable_text": "The air pollution level in micrograms per cubic meter and average lung capacity of citizens in liters for five cities are shown in the table below. The cities are labeled A-E.\n\n| | A | B | C | D | E |\n| Air Pollution | [MATH: 50] | [MATH: 30] | [MATH: 45] | [MATH: 60] | [MATH: 35] |\n| Lung Capacity | [MATH: 3.4] | [MATH: 4] | [MATH: 3.8] | [MATH: 3.5] | [MATH: 4.1] |\n\nCalculate Spearman's rank correlation coefficient for this data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Spearman&#x27;s rank correlation coefficient <span class=\"math\">[MATH: r_s]</span> is Pearson&#x27;s correlation coefficient applied to two sets of ranks. </p><p>Given two sets of ranks <span class=\"math\">[MATH: x_1, x_2, \\ldots, x_n]</span> and <span class=\"math\">[MATH: y_1, y_2, \\ldots, y_n,]</span> where the numbers in each set are uniquely expressed as integers between <span class=\"math\">[MATH: 1]</span> and <span class=\"math\">[MATH: n,]</span> the Spearman&#x27;s rank correlation coefficient can be calculated as follows:\n<span class=\"math\">[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]</span>\nwhere <span class=\"math\">[MATH: d_i = x_i - y_i]</span> is the difference between the ranks of <span class=\"math\">[MATH: x_i]</span> and <span class=\"math\">[MATH: y_i.]</span></p><p>First, we need to rank the cities&#x27; pollution levels and average lung capacities. So, we&#x27;ll label the highest value in each category as <span class=\"math\">[MATH: 1]</span> and the lowest value in each category as <span class=\"math\">[MATH: 5]</span> (Note that we can rank the values in each category the opposite way, and the final answer will be the same).</p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Air Pollution</b></p></td><td><p><span class=\"math\">[MATH: 50]</span></p></td><td><p><span class=\"math\">[MATH: 30]</span></p></td><td><p><span class=\"math\">[MATH: 45]</span></p></td><td><p><span class=\"math\">[MATH: 60]</span></p></td><td><p><span class=\"math\">[MATH: 35]</span></p></td></tr><tr><td><p><b>Lung Capacity</b></p></td><td><p><span class=\"math\">[MATH: 3.4]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3.8]</span></p></td><td><p><span class=\"math\">[MATH: 3.5]</span></p></td><td><p><span class=\"math\">[MATH: 4.1]</span></p></td></tr><tr><td><p><b>Rank (Air Pollution)</b></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><b>Rank (Lung Capacity)</b></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table><p>Next, we calculate the differences between the ranks, and their squares.</p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Rank (Air Pollution)</b></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><b>Rank (Lung Capacity)</b></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: d_i]</span></p></td><td><p><span class=\"math\">[MATH: -3]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: -3]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: d_i^2]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td></tr></table><p>Notice that <span class=\"math\">[MATH: \\displaystyle\\sum_i d_i = 0]</span> as expected, and\n<span class=\"math\">[MATH: \\sum_i d_i^2 = 9+9+0+9+9 = 36.]</span></p><p>Therefore, the Spearman&#x27;s rank correlation coefficient is\n<span class=\"math\">[MATH: r_s = 1 - \\dfrac{6(36)}{5(5^2-1)} = \\bbox[3pt,Gainsboro]{\\color{blue}-0.8}.]</span></p>",
+            "readable_text": "The Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we need to rank the cities' pollution levels and average lung capacities. So, we'll label the highest value in each category as [MATH: 1] and the lowest value in each category as [MATH: 5] (Note that we can rank the values in each category the opposite way, and the final answer will be the same).\n\n| | A | B | C | D | E |\n| Air Pollution | [MATH: 50] | [MATH: 30] | [MATH: 45] | [MATH: 60] | [MATH: 35] |\n| Lung Capacity | [MATH: 3.4] | [MATH: 4] | [MATH: 3.8] | [MATH: 3.5] | [MATH: 4.1] |\n| Rank (Air Pollution) | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Rank (Lung Capacity) | [MATH: 5] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 1] |\n\nNext, we calculate the differences between the ranks, and their squares.\n\n| | A | B | C | D | E |\n| Rank (Air Pollution) | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Rank (Lung Capacity) | [MATH: 5] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 1] |\n| [MATH: d_i] | [MATH: -3] | [MATH: 3] | [MATH: 0] | [MATH: -3] | [MATH: 3] |\n| [MATH: d_i^2] | [MATH: 9] | [MATH: 9] | [MATH: 0] | [MATH: 9] | [MATH: 9] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 9+9+0+9+9 = 36.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(36)}{5(5^2-1)} = \\bbox[3pt,Gainsboro]{\\color{blue}-0.8}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nThe air pollution level in micrograms per cubic meter and average lung capacity of citizens in liters for five cities are shown in the table below. The cities are labeled A-E.\n\n| | A | B | C | D | E |\n| Air Pollution | [MATH: 50] | [MATH: 30] | [MATH: 45] | [MATH: 60] | [MATH: 35] |\n| Lung Capacity | [MATH: 3.4] | [MATH: 4] | [MATH: 3.8] | [MATH: 3.5] | [MATH: 4.1] |\n\nCalculate Spearman's rank correlation coefficient for this data.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we need to rank the cities' pollution levels and average lung capacities. So, we'll label the highest value in each category as [MATH: 1] and the lowest value in each category as [MATH: 5] (Note that we can rank the values in each category the opposite way, and the final answer will be the same).\n\n| | A | B | C | D | E |\n| Air Pollution | [MATH: 50] | [MATH: 30] | [MATH: 45] | [MATH: 60] | [MATH: 35] |\n| Lung Capacity | [MATH: 3.4] | [MATH: 4] | [MATH: 3.8] | [MATH: 3.5] | [MATH: 4.1] |\n| Rank (Air Pollution) | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Rank (Lung Capacity) | [MATH: 5] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 1] |\n\nNext, we calculate the differences between the ranks, and their squares.\n\n| | A | B | C | D | E |\n| Rank (Air Pollution) | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Rank (Lung Capacity) | [MATH: 5] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 1] |\n| [MATH: d_i] | [MATH: -3] | [MATH: 3] | [MATH: 0] | [MATH: -3] | [MATH: 3] |\n| [MATH: d_i^2] | [MATH: 9] | [MATH: 9] | [MATH: 0] | [MATH: 9] | [MATH: 9] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 9+9+0+9+9 = 36.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(36)}{5(5^2-1)} = \\bbox[3pt,Gainsboro]{\\color{blue}-0.8}.]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "251497",
+        "dom_id": "question-251497",
+        "selector": "#question-251497",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The number of hours five students spend on social media each day, as well as their most recent GPA, are shown in the table below. The students are labeled A-E.</p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Hours on Social Media</b></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3.5]</span></p></td><td><p><span class=\"math\">[MATH: 1.5]</span></p></td></tr><tr><td><p><b>GPA</b></p></td><td><p><span class=\"math\">[MATH: 3.4]</span></p></td><td><p><span class=\"math\">[MATH: 3.8]</span></p></td><td><p><span class=\"math\">[MATH: 3.2]</span></p></td><td><p><span class=\"math\">[MATH: 4.0]</span></p></td><td><p><span class=\"math\">[MATH: 3.6]</span></p></td></tr></table><p>Calculate <strong>Spearman&#x27;s rank</strong> correlation coefficient for this data.</p><p><span class=\"free-response-line\">The Spearman&#x27;s rank correlation coefficient is <span class=\"math\">[MATH: r_{s} =]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>.</span></p>",
+          "readable_text": "The number of hours five students spend on social media each day, as well as their most recent GPA, are shown in the table below. The students are labeled A-E.\n\n| | A | B | C | D | E |\n| Hours on Social Media | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 3.5] | [MATH: 1.5] |\n| GPA | [MATH: 3.4] | [MATH: 3.8] | [MATH: 3.2] | [MATH: 4.0] | [MATH: 3.6] |\n\nCalculate Spearman's rank correlation coefficient for this data.\n\nThe Spearman's rank correlation coefficient is [MATH: r_{s} =]\n[FREE_ENTRY 1].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe number of hours five students spend on social media each day, as well as their most recent GPA, are shown in the table below. The students are labeled A-E.\n\n| | A | B | C | D | E |\n| Hours on Social Media | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 3.5] | [MATH: 1.5] |\n| GPA | [MATH: 3.4] | [MATH: 3.8] | [MATH: 3.2] | [MATH: 4.0] | [MATH: 3.6] |\n\nCalculate Spearman's rank correlation coefficient for this data.\n\nThe Spearman's rank correlation coefficient is [MATH: r_{s} =]\n[FREE_ENTRY 1]."
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "251424",
+        "dom_id": "question-251424",
+        "selector": "#question-251424",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The grades of five students in recent geometry and algebra exams are shown in the table below. The students are labeled A-E.</p><table><tr><td></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td></tr><tr><td><p><b>Geometry</b></p></td><td><p><span class=\"math\">[MATH: 75%]</span></p></td><td><p><span class=\"math\">[MATH: 64%]</span></p></td><td><p><span class=\"math\">[MATH: 88%]</span></p></td><td><p><span class=\"math\">[MATH: 56%]</span></p></td><td><p><span class=\"math\">[MATH: 61%]</span></p></td></tr><tr><td><p><b>Algebra</b></p></td><td><p><span class=\"math\">[MATH: 88%]</span></p></td><td><p><span class=\"math\">[MATH: 89%]</span></p></td><td><p><span class=\"math\">[MATH: 92%]</span></p></td><td><p><span class=\"math\">[MATH: 71%]</span></p></td><td><p><span class=\"math\">[MATH: 74%]</span></p></td></tr></table><p>Calculate <strong>Spearman&#x27;s rank</strong> correlation coefficient for these grades.</p><p><span class=\"free-response-line\">The Spearman&#x27;s rank correlation coefficient is <span class=\"math\">[MATH: r_{s} =]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>.</span></p>",
+          "readable_text": "The grades of five students in recent geometry and algebra exams are shown in the table below. The students are labeled A-E.\n\n| | A | B | C | D | E |\n| Geometry | [MATH: 75%] | [MATH: 64%] | [MATH: 88%] | [MATH: 56%] | [MATH: 61%] |\n| Algebra | [MATH: 88%] | [MATH: 89%] | [MATH: 92%] | [MATH: 71%] | [MATH: 74%] |\n\nCalculate Spearman's rank correlation coefficient for these grades.\n\nThe Spearman's rank correlation coefficient is [MATH: r_{s} =]\n[FREE_ENTRY 1].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe grades of five students in recent geometry and algebra exams are shown in the table below. The students are labeled A-E.\n\n| | A | B | C | D | E |\n| Geometry | [MATH: 75%] | [MATH: 64%] | [MATH: 88%] | [MATH: 56%] | [MATH: 61%] |\n| Algebra | [MATH: 88%] | [MATH: 89%] | [MATH: 92%] | [MATH: 71%] | [MATH: 74%] |\n\nCalculate Spearman's rank correlation coefficient for these grades.\n\nThe Spearman's rank correlation coefficient is [MATH: r_{s} =]\n[FREE_ENTRY 1]."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn this lesson, we'll learn how to compute the Spearman's rank correlation coefficient.\n\nContent:\nSuppose two testers independently rated the taste of [MATH: 5] kinds of cheese during a degustation. Each tester ranked the cheeses by assigning a unique integer between [MATH: 1] and [MATH: 5] to each kind, with [MATH: 1] being the best and [MATH: 5] being the worst. The table below shows their rankings, where the cheeses are labeled [MATH: A]-[MATH: E.]\n\nContent:\n| | A | B | C | D | E |\n| Tester 1 ([MATH: x_i]) | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: 5] | [MATH: 2] |\n| Tester 2 ([MATH: y_i]) | [MATH: 3] | [MATH: 4] | [MATH: 2] | [MATH: 5] | [MATH: 1] |\n\nContent:\nThe Spearman's rank correlation coefficient [MATH: r_s] is the linear correlation coefficient - also known as Pearson's correlation coefficient - applied to two sets of ranks, as in the example above.\n\nContent:\nIn the case of integer ranks, the formula for the correlation can be slightly simplified.\n\nContent:\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nContent:\nThis formula can be derived directly from the definition of the product-moment correlation coefficient. The derivation is a little cumbersome, so we'll skip it here.\n\nContent:\nBack to our example. First, we calculate the differences between the ranks and their squares.\n\nContent:\n| [MATH: x_i] | [MATH: 4] | [MATH: 3] | [MATH: 1] | [MATH: 5] | [MATH: 2] | [MATH: \\displaystyle\\sum_i x_i = 15] |\n| [MATH: y_i] | [MATH: 3] | [MATH: 4] | [MATH: 2] | [MATH: 5] | [MATH: 1] | [MATH: \\displaystyle\\sum_i y_i = 15] |\n| [MATH: d_i] | [MATH: 1] | [MATH: -1] | [MATH: -1] | [MATH: 0] | [MATH: 1] | [MATH: \\displaystyle\\sum_i d_i = 0] |\n| [MATH: d_i^2] | [MATH: 1] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\displaystyle\\sum_i d_i^2 = 4] |\n\nContent:\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected.\n\nContent:\nSo, we have\n[MATH: \\sum_{i=1}^{5} d_i^2 = 4, \\qquad n=5.]\n\nContent:\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(4)}{5(5^2-1)} = \\dfrac{4}{5} = 0.8.]\n\nContent:\nNote: If we compute the Pearson's correlation coefficient for the above example using the usual formula\n[MATH: \\rho(x,y) = \\dfrac{\\textrm{Cov}(x,y)}{\\sigma_x \\cdot \\sigma_y},]\nwe get the same value of [MATH: \\rho=0.8.]\n\n---\n\nItem 2 \u2014 Example: Calculating Spearman\u2019s Rank Correlation Coefficient\n\nExample Prompt:\nCalculate Spearman's correlation coefficient [MATH: r_s] for the two sets of ranks given below.\n\n| [MATH: x_i] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 3] |\n| [MATH: y_i] | [MATH: 4] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we calculate the differences between the ranks, and their squares.\n\n| [MATH: x_i] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 3] | [MATH: \\displaystyle\\sum_i x_i = 10] |\n| [MATH: y_i] | [MATH: 4] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: \\displaystyle\\sum_i y_i = 10] |\n| [MATH: d_i] | [MATH: -3] | [MATH: 1] | [MATH: 2] | [MATH: 0] | [MATH: \\displaystyle\\sum_i d_i = 0] |\n| [MATH: d_i^2] | [MATH: 9] | [MATH: 1] | [MATH: 4] | [MATH: 0] | [MATH: \\displaystyle\\sum_i d_i^2 = 14] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected.\n\nSo, we have\n\n[MATH: \\sum_{i=1}^{4} d_i^2 = 14, \\qquad n=4.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(14)}{4(4^2-1)} = -0.4.]\n\n---\n\nItem 3 \u2014 Question 1\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nTwo sets of ranks [MATH: x_{1}, x_{2}, \u2026, x_{26}] and [MATH: y_{1}, y_{2}, \u2026, y_{26}] are each uniquely expressed as numbers between [MATH: 1] and [MATH: 26.] You are given that\n[MATH: \u2211_(i = 1)^(26)(x_{i} \u2212 y_{i})^{2} = 4632.]\nWhich of the following is the Spearman's correlation coefficient [MATH: r_{s}] between the two datasets, rounded to two decimal places?\n\nChoices:\na. [MATH: 0.45]\nb. [MATH: 0.03]\nc. [MATH: \u2212 0.32]\nd. [MATH: \u2212 0.58]\ne. [MATH: \u2212 0.52]\n\n---\n\nItem 4 \u2014 Question 2\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nWhich of the following is the Spearman's correlation coefficient [MATH: r_{s}] between the two datasets given below?\n\n| [MATH: x_{i}] | [MATH: 1] | [MATH: 3] | [MATH: 2] | [MATH: 4] |\n| [MATH: y_{i}] | [MATH: 2] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n\nChoices:\na. [MATH: 0.7]\nb. [MATH: 0.85]\nc. [MATH: 0.8]\nd. [MATH: 0.6]\ne. [MATH: 0.75]\n\n---\n\nItem 5 \u2014 Tutorial: Interpreting the Correlation Coefficient\n\nContent:\nSimilar to Pearson's correlation coefficient, Spearman's rank correlation coefficient [MATH: r_s] has the following properties:\n\nContent:\n- If [MATH: r_s = 1,] rankings are in exact agreement.\n- If [MATH: r_s = -1,] rankings are in exact reverse order.\n- If [MATH: r_s = 0,] there is no correlation between the rankings.\n\nContent:\nFurthermore, similar thresholds can be applied to distinguish between different degrees of relationships:\n\nContent:\n| Relationship | Spearman's rank |\n| Strong positive correlation | [MATH: 0.7 \\leq r_s \\leq 1] |\n| Weak positive correlation | [MATH: 0.3 \\leq r_s \\lt 0.7] |\n| Little or no correlation | [MATH: -0.3 < r_s < 0.3] |\n| Weak negative correlation | [MATH: -0.7 \\lt r_s \\leq -0.3] |\n| Strong negative correlation | [MATH: -1 \\leq r_s \\lt -0.7] |\n\n---\n\nItem 6 \u2014 Example: Calculating Spearman\u2019s Rank Coefficient in Contextual Situations: Ranked Data\n\nExample Prompt:\nA film critic ranks five movies based on the screenplay and actors' performance. The table below shows the rankings, where the movies are labeled [MATH: A]-[MATH: E.]\n\n| | A | B | C | D | E |\n| Screenplay | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Actors' performance | [MATH: 4] | [MATH: 1] | [MATH: 5] | [MATH: 3] | [MATH: 2] |\n\nCalculate Spearman's correlation coefficient [MATH: r_s] and interpret the result.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r_s = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we calculate the differences between the ranks and their squares.\n\n| | A | B | C | D | E |\n| Screenplay | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Actors' performances | [MATH: 4] | [MATH: 1] | [MATH: 5] | [MATH: 3] | [MATH: 2] |\n| [MATH: d_i] | [MATH: -2] | [MATH: 4] | [MATH: -2] | [MATH: -2] | [MATH: 2] |\n| [MATH: d_i^2] | [MATH: 4] | [MATH: 16] | [MATH: 4] | [MATH: 4] | [MATH: 4] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 4+16+4+4+4 = 32.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(32)}{5(5^2-1)} = -0.6.]\n\nSince [MATH: -0.7 < r_s \\leq -0.3,] we conclude that there is a weak negative correlation between the rankings.\n\n---\n\nItem 7 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe school projects of twenty students are evaluated independently by two teachers. Each teacher ranks the projects independently, assigning a unique integer between [MATH: 1] and [MATH: 20] to each project. If [MATH: d_{1}, d_{2}, \u2026, d_{20}] are the differences between the ranks given to each student, and the sum of the squared differences is given by\n[MATH: \u2211_(i = 1)^(20)d_{i}^{2} = 780]\n\nthen find the Spearman's rank correlation coefficient [MATH: r_{s}] and interpret the result.\n\nRounded to two decimal places, [MATH: r_{s} \u2248] [SELECT 1]. Therefore, we conclude that there is\n[SELECT 2] between the rankings.\n\n---\n\nItem 8 \u2014 Question 4\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nTwo teachers independently evaluated the school projects of six students, ranking the projects based on student performance. The table below shows the rankings, where the students are labeled [MATH: A]-[MATH: F.]\n\n| | A | B | C | D | E | F |\n| Rank (Teacher 1) | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| Rank (Teacher 2) | [MATH: 1] | [MATH: 5] | [MATH: 6] | [MATH: 4] | [MATH: 2] | [MATH: 3] |\n\nCalculate Spearman's correlation coefficient [MATH: r_{s}] and interpret the result.\n\nRounded to two decimal places, [MATH: r_{s} \u2248] [SELECT 1]. Therefore, we conclude that there is\n[SELECT 2] between the rankings.\n\n---\n\nItem 9 \u2014 Tutorial: Spearman's Rank Correlation Coefficient For Non-Ranked Data\n\nContent:\nThe time spent on review per day (in hours) a week before a math exam and the final scores on the exam for six students are shown in the table below. The students are labeled A-F.\n\nContent:\n| | A | B | C | D | E | F |\n| Review Time (Hours) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Final Score | [MATH: 4.2] | [MATH: 3.5] | [MATH: 1.6] | [MATH: 5.0] | [MATH: 4.8] | [MATH: 4.7] |\n\nContent:\nLet's plot the data:\n\nGraphic:\n[IMG: /graphics/dfeb4e05bcd175144f4028d4a28380e5]\n\nContent:\nFrom the diagram, there is a positive correlation. Indeed, computing Pearson's correlation coefficient, we obtain [MATH: \\rho \\approx 0.886.]\nHowever, the points better fit a (quadratic) curve rather than a straight line. Pearson's coefficient shows a strong linear correlation but not exact agreement.\n\nContent:\nLet's now find the corresponding Spearman's rank correlation coefficient.\n\nContent:\nRecall that given two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nContent:\nFirst, we need to rank the students' times and scores. So, we'll label the shortest time as [MATH: 1] and the longest time as [MATH: 6.] Note that we can rank the times the opposite way, and the final answer will be the same.\n\nContent:\n| | A | B | C | D | E | F |\n| Review Time (Hours) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Final Score | [MATH: 4.2] | [MATH: 3.5] | [MATH: 1.6] | [MATH: 5.0] | [MATH: 4.8] | [MATH: 4.7] |\n| Rank (Review Time) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Rank (Final Score) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 5] | [MATH: 4] |\n\nContent:\nNext, we calculate the differences between the ranks (the two final rows in the table), and their squares.\n\nContent:\n| | A | B | C | D | E | F |\n| Rank (Review Time) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 4] | [MATH: 5] |\n| Rank (Final Score) | [MATH: 3] | [MATH: 2] | [MATH: 1] | [MATH: 6] | [MATH: 5] | [MATH: 4] |\n| [MATH: d_i] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: -1] | [MATH: 1] |\n| [MATH: d_i^2] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: 1] | [MATH: 1] |\n\nContent:\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 0^2+0^2+0^2+0^2+1^2+1^2 = 2.]\n\nContent:\nTherefore, the Spearman's rank correlation coefficient is\n\nContent:\n[MATH: r_s = 1 - \\dfrac{6(2)}{6(6^2-1)} \\approx 0.943]\n\nContent:\nSo, we have an even stronger positive correlation between the rankings than we got using Pearson's coefficient. What does it mean?\n\nContent:\nThe Spearman correlation measures the relationship between two variables based on their ranks, and it equals the Pearson correlation of those ranks. While Pearson's correlation determines linear relationships, Spearman's correlation focuses on monotonic (i.e., increasing or decreasing) relationships, whether linear or not.\n\nContent:\n- A perfect Pearson's correlation ([MATH: 1] or [MATH: \u22121]) occurs when one variable is a perfect linear function of the other.\n- On the other hand, a perfect Spearman's correlation ([MATH: 1] or [MATH: \u22121]) occurs when one variable is a perfect monotonic function of the other.\n\nContent:\nIn our example above, the dependence was not quite linear (rather quadratic). On the other hand, the dependence was almost monotonic (to get a perfect one, we would need to swap the ranks of only two data points, [MATH: 4.7] and [MATH: 4.8]).\n\n---\n\nItem 10 \u2014 Example: Calculating Spearman\u2019s Rank Coefficient in Contextual Situations: Non-Ranked Data\n\nExample Prompt:\nThe air pollution level in micrograms per cubic meter and average lung capacity of citizens in liters for five cities are shown in the table below. The cities are labeled A-E.\n\n| | A | B | C | D | E |\n| Air Pollution | [MATH: 50] | [MATH: 30] | [MATH: 45] | [MATH: 60] | [MATH: 35] |\n| Lung Capacity | [MATH: 3.4] | [MATH: 4] | [MATH: 3.8] | [MATH: 3.5] | [MATH: 4.1] |\n\nCalculate Spearman's rank correlation coefficient for this data.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Spearman's rank correlation coefficient [MATH: r_s] is Pearson's correlation coefficient applied to two sets of ranks.\n\nGiven two sets of ranks [MATH: x_1, x_2, \\ldots, x_n] and [MATH: y_1, y_2, \\ldots, y_n,] where the numbers in each set are uniquely expressed as integers between [MATH: 1] and [MATH: n,] the Spearman's rank correlation coefficient can be calculated as follows:\n[MATH: r = 1 - \\dfrac{6}{n(n^2-1)}\\sum_{i=1}^n d_i^2]\nwhere [MATH: d_i = x_i - y_i] is the difference between the ranks of [MATH: x_i] and [MATH: y_i.]\n\nFirst, we need to rank the cities' pollution levels and average lung capacities. So, we'll label the highest value in each category as [MATH: 1] and the lowest value in each category as [MATH: 5] (Note that we can rank the values in each category the opposite way, and the final answer will be the same).\n\n| | A | B | C | D | E |\n| Air Pollution | [MATH: 50] | [MATH: 30] | [MATH: 45] | [MATH: 60] | [MATH: 35] |\n| Lung Capacity | [MATH: 3.4] | [MATH: 4] | [MATH: 3.8] | [MATH: 3.5] | [MATH: 4.1] |\n| Rank (Air Pollution) | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Rank (Lung Capacity) | [MATH: 5] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 1] |\n\nNext, we calculate the differences between the ranks, and their squares.\n\n| | A | B | C | D | E |\n| Rank (Air Pollution) | [MATH: 2] | [MATH: 5] | [MATH: 3] | [MATH: 1] | [MATH: 4] |\n| Rank (Lung Capacity) | [MATH: 5] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 1] |\n| [MATH: d_i] | [MATH: -3] | [MATH: 3] | [MATH: 0] | [MATH: -3] | [MATH: 3] |\n| [MATH: d_i^2] | [MATH: 9] | [MATH: 9] | [MATH: 0] | [MATH: 9] | [MATH: 9] |\n\nNotice that [MATH: \\displaystyle\\sum_i d_i = 0] as expected, and\n[MATH: \\sum_i d_i^2 = 9+9+0+9+9 = 36.]\n\nTherefore, the Spearman's rank correlation coefficient is\n[MATH: r_s = 1 - \\dfrac{6(36)}{5(5^2-1)} = \\bbox[3pt,Gainsboro]{\\color{blue}-0.8}.]\n\n---\n\nItem 11 \u2014 Question 5\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe number of hours five students spend on social media each day, as well as their most recent GPA, are shown in the table below. The students are labeled A-E.\n\n| | A | B | C | D | E |\n| Hours on Social Media | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 3.5] | [MATH: 1.5] |\n| GPA | [MATH: 3.4] | [MATH: 3.8] | [MATH: 3.2] | [MATH: 4.0] | [MATH: 3.6] |\n\nCalculate Spearman's rank correlation coefficient for this data.\n\nThe Spearman's rank correlation coefficient is [MATH: r_{s} =]\n[FREE_ENTRY 1].\n\n---\n\nItem 12 \u2014 Question 6\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe grades of five students in recent geometry and algebra exams are shown in the table below. The students are labeled A-E.\n\n| | A | B | C | D | E |\n| Geometry | [MATH: 75%] | [MATH: 64%] | [MATH: 88%] | [MATH: 56%] | [MATH: 61%] |\n| Algebra | [MATH: 88%] | [MATH: 89%] | [MATH: 92%] | [MATH: 71%] | [MATH: 74%] |\n\nCalculate Spearman's rank correlation coefficient for these grades.\n\nThe Spearman's rank correlation coefficient is [MATH: r_{s} =]\n[FREE_ENTRY 1]."
+  }
+}

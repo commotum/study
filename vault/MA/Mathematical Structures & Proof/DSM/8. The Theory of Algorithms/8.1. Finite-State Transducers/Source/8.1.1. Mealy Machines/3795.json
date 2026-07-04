@@ -1,0 +1,1674 @@
+{
+  "schema_version": 2,
+  "topic_id": "3795",
+  "topic_title": "Mealy Machines",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3795/Source/3795.html",
+  "source_url": "https://mathacademy.com/topics/3795",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "418782",
+        "dom_id": "sectionLink-418782",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-418782"
+      },
+      {
+        "index": 2,
+        "step_id": "418783",
+        "dom_id": "sectionLink-418783",
+        "name": "",
+        "title": "Transition and Output Tables of Mealy Machines",
+        "selector": "#sectionLink-418783"
+      },
+      {
+        "index": 3,
+        "step_id": "418784",
+        "dom_id": "sectionLink-418784",
+        "name": "",
+        "title": "Constructing Transition and Output Tables Given a Diagram",
+        "selector": "#sectionLink-418784"
+      },
+      {
+        "index": 4,
+        "step_id": "418787",
+        "dom_id": "sectionLink-418787",
+        "name": "",
+        "title": "Drawing a Diagram Given Transition and Output Tables",
+        "selector": "#sectionLink-418787"
+      },
+      {
+        "index": 5,
+        "step_id": "418790",
+        "dom_id": "sectionLink-418790",
+        "name": "",
+        "title": "Using Mealy Machines to Process Strings",
+        "selector": "#sectionLink-418790"
+      },
+      {
+        "index": 6,
+        "step_id": "418791",
+        "dom_id": "sectionLink-418791",
+        "name": "",
+        "title": "Applying a Mealy Machine to a String",
+        "selector": "#sectionLink-418791"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "5414",
+        "name": "Processing Strings Using Deterministic Finite Automata",
+        "href": "/topics/processing-strings-using-deterministic-finite-automata-5414"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "418782",
+        "content_id": "10057",
+        "dom_id": "step-418782",
+        "selector": "#step-418782",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a previous lesson, we discussed that there are two main types of automata: <em>acceptors</em> and <em>transducers</em>. Recall:</p>",
+            "readable_text": "In a previous lesson, we discussed that there are two main types of automata: acceptors and transducers. Recall:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>An acceptor is a machine that receives a string as input and then either accepts or rejects the string.</p></li><li><p>A transducer is a machine that receives a string as input and then returns another string as output.</p></li></ul>",
+            "readable_text": "- An acceptor is a machine that receives a string as input and then either accepts or rejects the string.\n- A transducer is a machine that receives a string as input and then returns another string as output.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we will focus on transducers.</p>",
+            "readable_text": "In this lesson, we will focus on transducers.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>One example of a transducer is the <strong>Mealy machine</strong>, which processes an input string and produces a corresponding output string.</p>",
+            "readable_text": "One example of a transducer is the Mealy machine, which processes an input string and produces a corresponding output string.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>More formally, a Mealy machine is a six-tuple of the form <span class=\"math\">[MATH: M=(Q, \\Sigma, \\Gamma, \\delta, \\omega, q_0),]</span> where:</p>",
+            "readable_text": "More formally, a Mealy machine is a six-tuple of the form [MATH: M=(Q, \\Sigma, \\Gamma, \\delta, \\omega, q_0),] where:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: Q]</span> is a nonempty finite set of <strong>states</strong>. These are all the possible configurations the machine can be in.</p></li><li><p><span class=\"math\">[MATH: \\Sigma]</span> is a nonempty finite set of <strong>input symbols</strong>. The machine can process this &quot;alphabet&quot; of symbols as inputs.</p></li><li><p><span class=\"math\">[MATH: \\Gamma]</span> is a nonempty finite set of <strong>output symbols</strong>. The machine can write this &quot;alphabet&quot; of symbols as outputs.</p></li><li><p><span class=\"math\">[MATH: \\delta]</span> is a <strong>transition function</strong> of the form <span class=\"math\">[MATH: \\delta : Q \\times \\Sigma \\to Q.]</span> It takes a state and an input symbol and returns a state. This function determines how the machine moves from one state to another based on a given input symbol.</p></li><li><p><span class=\"math\">[MATH: \\omega]</span> is an <strong>output function</strong> of the form <span class=\"math\">[MATH: \\omega : Q \\times \\Sigma \\to \\Gamma.]</span> It takes a state and an input symbol and returns an output symbol. This function determines what symbol to write based on a given state and input symbol.</p></li><li><p><span class=\"math\">[MATH: q_0 \\in Q]</span> is a <strong>start state</strong> (or <strong>initial state</strong>). This is the state in which the machine begins.</p></li></ul>",
+            "readable_text": "- [MATH: Q] is a nonempty finite set of states. These are all the possible configurations the machine can be in.\n- [MATH: \\Sigma] is a nonempty finite set of input symbols. The machine can process this \"alphabet\" of symbols as inputs.\n- [MATH: \\Gamma] is a nonempty finite set of output symbols. The machine can write this \"alphabet\" of symbols as outputs.\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta : Q \\times \\Sigma \\to Q.] It takes a state and an input symbol and returns a state. This function determines how the machine moves from one state to another based on a given input symbol.\n- [MATH: \\omega] is an output function of the form [MATH: \\omega : Q \\times \\Sigma \\to \\Gamma.] It takes a state and an input symbol and returns an output symbol. This function determines what symbol to write based on a given state and input symbol.\n- [MATH: q_0 \\in Q] is a start state (or initial state). This is the state in which the machine begins.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can visualize a Mealy machine as a directed graph where</p>",
+            "readable_text": "We can visualize a Mealy machine as a directed graph where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the vertices represent the states,</p></li><li><p>the arcs, labeled with input and output symbols, represent transitions from one state to another, and the corresponding output symbol, and</p></li><li><p>the start state is labeled by the input arrow <span class=\"math\">[MATH: \\to.]</span></p></li></ul>",
+            "readable_text": "- the vertices represent the states,\n- the arcs, labeled with input and output symbols, represent transitions from one state to another, and the corresponding output symbol, and\n- the start state is labeled by the input arrow [MATH: \\to.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>An example of a Mealy machine is shown in the diagram below.</p>",
+            "readable_text": "An example of a Mealy machine is shown in the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/37da554bcf0b2cadcc858d97ce976413\"></p>",
+            "readable_text": "[IMG: /graphics/37da554bcf0b2cadcc858d97ce976413]",
+            "images": [
+              {
+                "src": "/graphics/37da554bcf0b2cadcc858d97ce976413",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this case, the machine has the following components:</p>",
+            "readable_text": "In this case, the machine has the following components:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The set of states <span class=\"math\">[MATH: Q = \\{p,q,r\\}]</span> (represented by the vertices).</p></li><li><p>The set of input symbols <span class=\"math\">[MATH: \\Sigma = \\{0,1\\}]</span> (represented by the first part of the arcs&#x27; labels).</p></li><li><p>The set of output symbols <span class=\"math\">[MATH: \\Gamma = \\{0,1\\}]</span> (represented by the second part of the arcs&#x27; labels).</p></li><li><p>The transition and output functions <span class=\"math\">[MATH: \\delta]</span> and <span class=\"math\">[MATH: \\omega]</span> with the following transitions and outputs defined by the arcs:\n<span class=\"math\">[MATH: \u03b4(p, 0)|= r,|\u03b4(p, 1)|= q,|\u03c9(p, 0)|= 1,|\u03c9(p, 1)|= 0,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= r,|\u03c9(q, 0)|= 0,|\u03c9(q, 1)|= 0,; \u03b4(r, 0)|= q,|\u03b4(r, 1)|= r|\u03c9(r, 0)|= 1,|\u03c9(r, 1)|= 1]</span>\nFor instance, the arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1/0,]</span> means that <span class=\"math\">[MATH: \\delta(p,1) = q]</span> and <span class=\"math\">[MATH: \\omega(p,1) = 0.]</span></p><div class=\"graphic\"><img src=\"/graphics/29e0d7b1dd47640ee59d76dca698b1f2\"></div></li><li><p>The start state <span class=\"math\">[MATH: p]</span> (that is labeled by the input arrow <span class=\"math\">[MATH: \\to]</span>), as shown below.</p><div class=\"graphic\"><img src=\"/graphics/a08878928cff68594887a5dbd95ab4c3\"></div></li></ul>",
+            "readable_text": "- The set of states [MATH: Q = \\{p,q,r\\}] (represented by the vertices).\n- The set of input symbols [MATH: \\Sigma = \\{0,1\\}] (represented by the first part of the arcs' labels).\n- The set of output symbols [MATH: \\Gamma = \\{0,1\\}] (represented by the second part of the arcs' labels).\n- The transition and output functions [MATH: \\delta] and [MATH: \\omega] with the following transitions and outputs defined by the arcs:\n[MATH: \u03b4(p, 0)|= r,|\u03b4(p, 1)|= q,|\u03c9(p, 0)|= 1,|\u03c9(p, 1)|= 0,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= r,|\u03c9(q, 0)|= 0,|\u03c9(q, 1)|= 0,; \u03b4(r, 0)|= q,|\u03b4(r, 1)|= r|\u03c9(r, 0)|= 1,|\u03c9(r, 1)|= 1]\nFor instance, the arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/0,] means that [MATH: \\delta(p,1) = q] and [MATH: \\omega(p,1) = 0.]\n\n[IMG: /graphics/29e0d7b1dd47640ee59d76dca698b1f2]\n- The start state [MATH: p] (that is labeled by the input arrow [MATH: \\to]), as shown below.\n\n[IMG: /graphics/a08878928cff68594887a5dbd95ab4c3]",
+            "images": [
+              {
+                "src": "/graphics/29e0d7b1dd47640ee59d76dca698b1f2",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/a08878928cff68594887a5dbd95ab4c3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/37da554bcf0b2cadcc858d97ce976413",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/29e0d7b1dd47640ee59d76dca698b1f2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/a08878928cff68594887a5dbd95ab4c3",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a previous lesson, we discussed that there are two main types of automata: acceptors and transducers. Recall:\n\nContent:\n- An acceptor is a machine that receives a string as input and then either accepts or rejects the string.\n- A transducer is a machine that receives a string as input and then returns another string as output.\n\nContent:\nIn this lesson, we will focus on transducers.\n\nContent:\nOne example of a transducer is the Mealy machine, which processes an input string and produces a corresponding output string.\n\nContent:\nMore formally, a Mealy machine is a six-tuple of the form [MATH: M=(Q, \\Sigma, \\Gamma, \\delta, \\omega, q_0),] where:\n\nContent:\n- [MATH: Q] is a nonempty finite set of states. These are all the possible configurations the machine can be in.\n- [MATH: \\Sigma] is a nonempty finite set of input symbols. The machine can process this \"alphabet\" of symbols as inputs.\n- [MATH: \\Gamma] is a nonempty finite set of output symbols. The machine can write this \"alphabet\" of symbols as outputs.\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta : Q \\times \\Sigma \\to Q.] It takes a state and an input symbol and returns a state. This function determines how the machine moves from one state to another based on a given input symbol.\n- [MATH: \\omega] is an output function of the form [MATH: \\omega : Q \\times \\Sigma \\to \\Gamma.] It takes a state and an input symbol and returns an output symbol. This function determines what symbol to write based on a given state and input symbol.\n- [MATH: q_0 \\in Q] is a start state (or initial state). This is the state in which the machine begins.\n\nContent:\nWe can visualize a Mealy machine as a directed graph where\n\nContent:\n- the vertices represent the states,\n- the arcs, labeled with input and output symbols, represent transitions from one state to another, and the corresponding output symbol, and\n- the start state is labeled by the input arrow [MATH: \\to.]\n\nContent:\nAn example of a Mealy machine is shown in the diagram below.\n\nGraphic:\n[IMG: /graphics/37da554bcf0b2cadcc858d97ce976413]\n\nContent:\nIn this case, the machine has the following components:\n\nContent:\n- The set of states [MATH: Q = \\{p,q,r\\}] (represented by the vertices).\n- The set of input symbols [MATH: \\Sigma = \\{0,1\\}] (represented by the first part of the arcs' labels).\n- The set of output symbols [MATH: \\Gamma = \\{0,1\\}] (represented by the second part of the arcs' labels).\n- The transition and output functions [MATH: \\delta] and [MATH: \\omega] with the following transitions and outputs defined by the arcs:\n[MATH: \u03b4(p, 0)|= r,|\u03b4(p, 1)|= q,|\u03c9(p, 0)|= 1,|\u03c9(p, 1)|= 0,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= r,|\u03c9(q, 0)|= 0,|\u03c9(q, 1)|= 0,; \u03b4(r, 0)|= q,|\u03b4(r, 1)|= r|\u03c9(r, 0)|= 1,|\u03c9(r, 1)|= 1]\nFor instance, the arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/0,] means that [MATH: \\delta(p,1) = q] and [MATH: \\omega(p,1) = 0.]\n\n[IMG: /graphics/29e0d7b1dd47640ee59d76dca698b1f2]\n- The start state [MATH: p] (that is labeled by the input arrow [MATH: \\to]), as shown below.\n\n[IMG: /graphics/a08878928cff68594887a5dbd95ab4c3]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "418783",
+        "content_id": "11585",
+        "dom_id": "step-418783",
+        "selector": "#step-418783",
+        "step_anchor": "step-2",
+        "title": "Transition and Output Tables of Mealy Machines",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Transition and output functions, <span class=\"math\">[MATH: \\delta]</span> and <span class=\"math\">[MATH: \\omega,]</span> are often put into tables, where a row represents a state <span class=\"math\">[MATH: q,]</span> a column represents an input symbol <span class=\"math\">[MATH: a,]</span> and their intersection is the value of the functions <span class=\"math\">[MATH: \\delta(q,a)]</span> and <span class=\"math\">[MATH: \\omega(q,a),]</span> respectively.</p>",
+            "readable_text": "Transition and output functions, [MATH: \\delta] and [MATH: \\omega,] are often put into tables, where a row represents a state [MATH: q,] a column represents an input symbol [MATH: a,] and their intersection is the value of the functions [MATH: \\delta(q,a)] and [MATH: \\omega(q,a),] respectively.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Below is an example of a Mealy machine&#x27;s transition table (on the left) and output table (on the right). Note that we place <span class=\"math\">[MATH: \\to]</span> next to the start state in the transition table.</p>",
+            "readable_text": "Below is an example of a Mealy machine's transition table (on the left) and output table (on the right). Note that we place [MATH: \\to] next to the start state in the transition table.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><table><tr><td><p><span class=\"math\">[MATH: \\delta]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr></table></td><td><table><tr><td><p><span class=\"math\">[MATH: \\omega]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: x]</span></p></td></tr></table></td></tr></table>",
+            "readable_text": "| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: p] | [MATH: q] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: x] | [MATH: y] | / | [MATH: q] | [MATH: y] | [MATH: x] | |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s construct a diagram of the machine given by these tables. From the tables, we determine that the machine has the following components:</p>",
+            "readable_text": "Let's construct a diagram of the machine given by these tables. From the tables, we determine that the machine has the following components:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the set of states <span class=\"math\">[MATH: Q = \\{p, q\\}]</span> (given by the rows),</p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma = \\{0,1\\}]</span> (given by the columns),</p></li><li><p>the set of output symbols <span class=\"math\">[MATH: \\Gamma = \\{x,y\\}]</span> (given by the values in the output table),</p></li><li><p>the start state <span class=\"math\">[MATH: p]</span> (labeled by <span class=\"math\">[MATH: \\to]</span> in the transition table), and</p></li><li><p>the transition function <span class=\"math\">[MATH: \\delta]</span> and the output function <span class=\"math\">[MATH: \\omega]</span> are given in the tables.</p></li></ul>",
+            "readable_text": "- the set of states [MATH: Q = \\{p, q\\}] (given by the rows),\n- the set of input symbols [MATH: \\Sigma = \\{0,1\\}] (given by the columns),\n- the set of output symbols [MATH: \\Gamma = \\{x,y\\}] (given by the values in the output table),\n- the start state [MATH: p] (labeled by [MATH: \\to] in the transition table), and\n- the transition function [MATH: \\delta] and the output function [MATH: \\omega] are given in the tables.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now that we have the components, we can construct the diagram. First, let&#x27;s draw the states of our machine.</p>",
+            "readable_text": "Now that we have the components, we can construct the diagram. First, let's draw the states of our machine.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/bc507a5acd0e73ff8207eb99be664b14\"></p>",
+            "readable_text": "[IMG: /graphics/bc507a5acd0e73ff8207eb99be664b14]",
+            "images": [
+              {
+                "src": "/graphics/bc507a5acd0e73ff8207eb99be664b14",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>According to the transition table, <span class=\"math\">[MATH: p]</span> is the start state, so we labeled it with an input arrow.\nFrom the tables, we also get the following:</p>",
+            "readable_text": "According to the transition table, [MATH: p] is the start state, so we labeled it with an input arrow.\nFrom the tables, we also get the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Consider row <span class=\"math\">[MATH: p]</span> of the tables.</p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> in the transition table is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,0) = p,]</span> and its intersection with column <span class=\"math\">[MATH: 0]</span> in the output table is <span class=\"math\">[MATH: x,]</span> indicating that <span class=\"math\">[MATH: \\omega(p,0)=x.]</span> So, we draw an arrow (loop) from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0/x.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> in the transition table is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,1) = q,]</span> and its intersection with column <span class=\"math\">[MATH: 1]</span> in the output table is <span class=\"math\">[MATH: y,]</span> indicating that <span class=\"math\">[MATH: \\omega(p,1)=y.]</span> So, we draw an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1/y.]</span></p></li></ul><div class=\"graphic\"><img src=\"/graphics/1e8624bcf35377277fa180d51f2a0623\"></div></li></ul>",
+            "readable_text": "- Consider row [MATH: p] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(p,0) = p,] and its intersection with column [MATH: 0] in the output table is [MATH: x,] indicating that [MATH: \\omega(p,0)=x.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0/x.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(p,1) = q,] and its intersection with column [MATH: 1] in the output table is [MATH: y,] indicating that [MATH: \\omega(p,1)=y.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/y.]\n\n[IMG: /graphics/1e8624bcf35377277fa180d51f2a0623]",
+            "images": [
+              {
+                "src": "/graphics/1e8624bcf35377277fa180d51f2a0623",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Consider row <span class=\"math\">[MATH: q]</span> of the tables.</p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> in the transition table is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,0) = p,]</span> and its intersection with column <span class=\"math\">[MATH: 0]</span> in the output table is <span class=\"math\">[MATH: y,]</span> indicating that <span class=\"math\">[MATH: \\omega(q,0)=y.]</span> So, we draw an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0/y.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> in the transition table is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,1) = q,]</span> and its intersection with column <span class=\"math\">[MATH: 1]</span> in the output table is <span class=\"math\">[MATH: x,]</span> indicating that <span class=\"math\">[MATH: \\omega(q,1)=x.]</span> So, we draw an arrow (loop) from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1/x.]</span></p></li></ul><div class=\"graphic\"><img src=\"/graphics/783a51713c33ed4cacaa7bb8c74b286a\"></div></li></ul>",
+            "readable_text": "- Consider row [MATH: q] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,0) = p,] and its intersection with column [MATH: 0] in the output table is [MATH: y,] indicating that [MATH: \\omega(q,0)=y.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0/y.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(q,1) = q,] and its intersection with column [MATH: 1] in the output table is [MATH: x,] indicating that [MATH: \\omega(q,1)=x.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 1/x.]\n\n[IMG: /graphics/783a51713c33ed4cacaa7bb8c74b286a]",
+            "images": [
+              {
+                "src": "/graphics/783a51713c33ed4cacaa7bb8c74b286a",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We have gone through every cell in the tables and added all the arcs, so our diagram is complete.</p>",
+            "readable_text": "We have gone through every cell in the tables and added all the arcs, so our diagram is complete.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/bc507a5acd0e73ff8207eb99be664b14",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/1e8624bcf35377277fa180d51f2a0623",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/783a51713c33ed4cacaa7bb8c74b286a",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nTransition and output functions, [MATH: \\delta] and [MATH: \\omega,] are often put into tables, where a row represents a state [MATH: q,] a column represents an input symbol [MATH: a,] and their intersection is the value of the functions [MATH: \\delta(q,a)] and [MATH: \\omega(q,a),] respectively.\n\nContent:\nBelow is an example of a Mealy machine's transition table (on the left) and output table (on the right). Note that we place [MATH: \\to] next to the start state in the transition table.\n\nContent:\n| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: p] | [MATH: q] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: x] | [MATH: y] | / | [MATH: q] | [MATH: y] | [MATH: x] | |\n\nContent:\nLet's construct a diagram of the machine given by these tables. From the tables, we determine that the machine has the following components:\n\nContent:\n- the set of states [MATH: Q = \\{p, q\\}] (given by the rows),\n- the set of input symbols [MATH: \\Sigma = \\{0,1\\}] (given by the columns),\n- the set of output symbols [MATH: \\Gamma = \\{x,y\\}] (given by the values in the output table),\n- the start state [MATH: p] (labeled by [MATH: \\to] in the transition table), and\n- the transition function [MATH: \\delta] and the output function [MATH: \\omega] are given in the tables.\n\nContent:\nNow that we have the components, we can construct the diagram. First, let's draw the states of our machine.\n\nGraphic:\n[IMG: /graphics/bc507a5acd0e73ff8207eb99be664b14]\n\nContent:\nAccording to the transition table, [MATH: p] is the start state, so we labeled it with an input arrow.\nFrom the tables, we also get the following:\n\nContent:\n- Consider row [MATH: p] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(p,0) = p,] and its intersection with column [MATH: 0] in the output table is [MATH: x,] indicating that [MATH: \\omega(p,0)=x.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0/x.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(p,1) = q,] and its intersection with column [MATH: 1] in the output table is [MATH: y,] indicating that [MATH: \\omega(p,1)=y.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/y.]\n\n[IMG: /graphics/1e8624bcf35377277fa180d51f2a0623]\n\nContent:\n- Consider row [MATH: q] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,0) = p,] and its intersection with column [MATH: 0] in the output table is [MATH: y,] indicating that [MATH: \\omega(q,0)=y.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0/y.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(q,1) = q,] and its intersection with column [MATH: 1] in the output table is [MATH: x,] indicating that [MATH: \\omega(q,1)=x.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 1/x.]\n\n[IMG: /graphics/783a51713c33ed4cacaa7bb8c74b286a]\n\nContent:\nWe have gone through every cell in the tables and added all the arcs, so our diagram is complete."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "418784",
+        "content_id": "15709",
+        "dom_id": "step-418784",
+        "selector": "#step-418784",
+        "step_anchor": "step-3",
+        "title": "Constructing Transition and Output Tables Given a Diagram",
+        "key_prerequisites": [
+          {
+            "topic_id": "3797",
+            "name": "Deterministic Finite Automata",
+            "href": "/topics/3797",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/56876a04434086fb81e9a6f3a7c5bccb\"></div><p>The diagram above shows a Mealy machine. Write down the correct options in the corresponding output table below.</p><table><tr><td><p><span class=\"math\">[MATH: \\omega]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td></td><td></td></tr></table>",
+            "readable_text": "[IMG: /graphics/56876a04434086fb81e9a6f3a7c5bccb]\n\nThe diagram above shows a Mealy machine. Write down the correct options in the corresponding output table below.\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | | |\n| [MATH: q] | | |",
+            "images": [
+              {
+                "src": "/graphics/56876a04434086fb81e9a6f3a7c5bccb",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>In our case, the automaton has the following components:</p><ul><li><p>the set of states <span class=\"math\">[MATH: Q=\\{p,q\\},]</span></p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma=\\{0,1\\},]</span></p></li><li><p>the set of output symbols <span class=\"math\">[MATH: \\Gamma=\\{a,b\\},]</span> and</p></li><li><p>the start state <span class=\"math\">[MATH: q.]</span></p></li></ul><p>With that in mind, let&#x27;s determine the output function.</p><p>First, we draw an empty table with a different state written in each row and a different input symbol written in each column:</p><table><tr><td><p><span class=\"math\">[MATH: \\omega]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td></td><td></td></tr></table><p>Next, we fill in the empty cells:</p><ul><li><p>There is an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 0/\\bbox[3pt,Moccasin]{a}.]</span> This means that <span class=\"math\">[MATH: \\omega(p,0)=\\bbox[3pt,Moccasin]{a}.]</span> So, we write <span class=\"math\">[MATH: a]</span> at the intersection of row <span class=\"math\">[MATH: p]</span> and column <span class=\"math\">[MATH: 0.]</span></p></li><li><p>There is an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1/\\bbox[3pt,Moccasin]{a}.]</span> This means that <span class=\"math\">[MATH: \\omega(p,1)=\\bbox[3pt,Moccasin]{a}.]</span> So, we write <span class=\"math\">[MATH: a]</span> at the intersection of row <span class=\"math\">[MATH: p]</span> and column <span class=\"math\">[MATH: 1.]</span></p></li></ul><ul><li><p>There is an arrow (loop) from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 0/\\bbox[3pt,Moccasin]{a}.]</span> This means that <span class=\"math\">[MATH: \\omega(q,0)=\\bbox[3pt,Moccasin]{a}.]</span> So, we write <span class=\"math\">[MATH: a]</span> at the intersection of row <span class=\"math\">[MATH: q]</span> and column <span class=\"math\">[MATH: 0.]</span></p></li></ul><ul><li><p>There is an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 1/\\bbox[3pt,Moccasin]{b}.]</span> This means that <span class=\"math\">[MATH: \\omega(q,1)=\\bbox[3pt,Moccasin]{b}.]</span> So, we write <span class=\"math\">[MATH: b]</span> at the intersection of row <span class=\"math\">[MATH: q]</span> and column <span class=\"math\">[MATH: 1.]</span></p></li></ul><p>The output table corresponding to the given diagram is shown below.</p><table><tr><td><p><span class=\"math\">[MATH: \\omega]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}b}]</span></p></td></tr></table>",
+            "readable_text": "In our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the set of output symbols [MATH: \\Gamma=\\{a,b\\},] and\n- the start state [MATH: q.]\n\nWith that in mind, let's determine the output function.\n\nFirst, we draw an empty table with a different state written in each row and a different input symbol written in each column:\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | | |\n| [MATH: q] | | |\n\nNext, we fill in the empty cells:\n\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 0/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(p,0)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: p] and column [MATH: 0.]\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(p,1)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: p] and column [MATH: 1.]\n\n- There is an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 0/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(q,0)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: q] and column [MATH: 0.]\n\n- There is an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 1/\\bbox[3pt,Moccasin]{b}.] This means that [MATH: \\omega(q,1)=\\bbox[3pt,Moccasin]{b}.] So, we write [MATH: b] at the intersection of row [MATH: q] and column [MATH: 1.]\n\nThe output table corresponding to the given diagram is shown below.\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] |\n| [MATH: q] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}b}] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/56876a04434086fb81e9a6f3a7c5bccb",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/56876a04434086fb81e9a6f3a7c5bccb]\n\nThe diagram above shows a Mealy machine. Write down the correct options in the corresponding output table below.\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | | |\n| [MATH: q] | | |\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the set of output symbols [MATH: \\Gamma=\\{a,b\\},] and\n- the start state [MATH: q.]\n\nWith that in mind, let's determine the output function.\n\nFirst, we draw an empty table with a different state written in each row and a different input symbol written in each column:\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | | |\n| [MATH: q] | | |\n\nNext, we fill in the empty cells:\n\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 0/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(p,0)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: p] and column [MATH: 0.]\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(p,1)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: p] and column [MATH: 1.]\n\n- There is an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 0/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(q,0)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: q] and column [MATH: 0.]\n\n- There is an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 1/\\bbox[3pt,Moccasin]{b}.] This means that [MATH: \\omega(q,1)=\\bbox[3pt,Moccasin]{b}.] So, we write [MATH: b] at the intersection of row [MATH: q] and column [MATH: 1.]\n\nThe output table corresponding to the given diagram is shown below.\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] |\n| [MATH: q] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}b}] |"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "238343",
+        "dom_id": "question-238343",
+        "selector": "#question-238343",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-238343\"></p>",
+          "readable_text": "[IMG: /graphics/q-238343]",
+          "images": [
+            {
+              "src": "/graphics/q-238343",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The diagram above shows a Mealy machine. Select the correct options in the corresponding transition table below.</p><table><tr><td><p><span class=\"math\">[MATH: \u03b4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-238343-0\" data-select-index=\"1\">[SELECT 1]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-238343-1\" data-select-index=\"2\">[SELECT 2]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-238343-2\" data-select-index=\"3\">[SELECT 3]</span></p></td></tr><tr><td><p><span class=\"select-list\" data-select-id=\"selectList-238343-3\" data-select-index=\"4\">[SELECT 4]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-238343-4\" data-select-index=\"5\">[SELECT 5]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-238343-5\" data-select-index=\"6\">[SELECT 6]</span></p></td></tr></table>",
+          "readable_text": "The diagram above shows a Mealy machine. Select the correct options in the corresponding transition table below.\n\n| [MATH: \u03b4] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-238343-0",
+              "frame_dom_id": "selectListFrame-238343-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 p]</span>",
+                  "readable_text": "[MATH: \u2192 p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-238343-1",
+              "frame_dom_id": "selectListFrame-238343-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-238343-2",
+              "frame_dom_id": "selectListFrame-238343-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-238343-3",
+              "frame_dom_id": "selectListFrame-238343-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2192 q]</span>",
+                  "readable_text": "[MATH: \u2192 q]"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-238343-4",
+              "frame_dom_id": "selectListFrame-238343-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "dom_id": "selectList-238343-5",
+              "frame_dom_id": "selectListFrame-238343-5",
+              "placeholder": "[SELECT 6]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                  "readable_text": "[MATH: p]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                  "readable_text": "[MATH: q]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-238343",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-238343-0",
+            "frame_dom_id": "selectListFrame-238343-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 p]</span>",
+                "readable_text": "[MATH: \u2192 p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-238343-1",
+            "frame_dom_id": "selectListFrame-238343-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-238343-2",
+            "frame_dom_id": "selectListFrame-238343-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-238343-3",
+            "frame_dom_id": "selectListFrame-238343-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2192 q]</span>",
+                "readable_text": "[MATH: \u2192 q]"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-238343-4",
+            "frame_dom_id": "selectListFrame-238343-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "dom_id": "selectList-238343-5",
+            "frame_dom_id": "selectListFrame-238343-5",
+            "placeholder": "[SELECT 6]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: p]</span>",
+                "readable_text": "[MATH: p]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q]</span>",
+                "readable_text": "[MATH: q]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-238343]\n\nPrompt:\nThe diagram above shows a Mealy machine. Select the correct options in the corresponding transition table below.\n\n| [MATH: \u03b4] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "258803",
+        "dom_id": "question-258803",
+        "selector": "#question-258803",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-258803\"></p>",
+          "readable_text": "[IMG: /graphics/q-258803]",
+          "images": [
+            {
+              "src": "/graphics/q-258803",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The diagram above shows a Mealy machine. Select the correct options in the corresponding output table below.</p><table><tr><td><p><span class=\"math\">[MATH: \u03c9]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-258803-0\" data-select-index=\"1\">[SELECT 1]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-258803-1\" data-select-index=\"2\">[SELECT 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-258803-2\" data-select-index=\"3\">[SELECT 3]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-258803-3\" data-select-index=\"4\">[SELECT 4]</span></p></td></tr></table>",
+          "readable_text": "The diagram above shows a Mealy machine. Select the correct options in the corresponding output table below.\n\n| [MATH: \u03c9] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [SELECT 1] | [SELECT 2] |\n| [MATH: q] | [SELECT 3] | [SELECT 4] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-258803-0",
+              "frame_dom_id": "selectListFrame-258803-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                  "readable_text": "[MATH: b]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                  "readable_text": "[MATH: a]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-258803-1",
+              "frame_dom_id": "selectListFrame-258803-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                  "readable_text": "[MATH: a]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                  "readable_text": "[MATH: b]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-258803-2",
+              "frame_dom_id": "selectListFrame-258803-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                  "readable_text": "[MATH: b]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                  "readable_text": "[MATH: a]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-258803-3",
+              "frame_dom_id": "selectListFrame-258803-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                  "readable_text": "[MATH: b]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                  "readable_text": "[MATH: a]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-258803",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-258803-0",
+            "frame_dom_id": "selectListFrame-258803-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                "readable_text": "[MATH: b]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                "readable_text": "[MATH: a]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-258803-1",
+            "frame_dom_id": "selectListFrame-258803-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                "readable_text": "[MATH: a]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                "readable_text": "[MATH: b]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-258803-2",
+            "frame_dom_id": "selectListFrame-258803-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                "readable_text": "[MATH: b]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                "readable_text": "[MATH: a]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-258803-3",
+            "frame_dom_id": "selectListFrame-258803-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: b]</span>",
+                "readable_text": "[MATH: b]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: a]</span>",
+                "readable_text": "[MATH: a]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-258803]\n\nPrompt:\nThe diagram above shows a Mealy machine. Select the correct options in the corresponding output table below.\n\n| [MATH: \u03c9] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [SELECT 1] | [SELECT 2] |\n| [MATH: q] | [SELECT 3] | [SELECT 4] |"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "418787",
+        "content_id": "15710",
+        "dom_id": "step-418787",
+        "selector": "#step-418787",
+        "step_anchor": "step-6",
+        "title": "Drawing a Diagram Given Transition and Output Tables",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><table><tr><td><p><span class=\"math\">[MATH: \\delta]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr></table></td><td><table><tr><td><p><span class=\"math\">[MATH: \\omega]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table></td></tr></table><p>Draw the diagram that represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?</p>",
+            "readable_text": "| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: p] | [MATH: p] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 1] | [MATH: 1] | / | [MATH: q] | [MATH: 0] | [MATH: 0] | |\n\nDraw the diagram that represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>In our case, the Mealy machine has the following components:</p><ul><li><p>the set of states <span class=\"math\">[MATH: Q=\\{p,q\\},]</span></p></li><li><p>the set of input symbols <span class=\"math\">[MATH: \\Sigma=\\{0,1\\},]</span></p></li><li><p>the set of output symbols <span class=\"math\">[MATH: \\Gamma=\\{0,1\\},]</span></p></li><li><p>the start state <span class=\"math\">[MATH: p,]</span> and</p></li><li><p>the transition function <span class=\"math\">[MATH: \\delta]</span> and the output function <span class=\"math\">[MATH: \\omega]</span> are given in the tables.</p></li></ul><p>First, let&#x27;s draw the states of our machine.</p><div class=\"graphic\"><img src=\"/graphics/6833951619e73e8736ec54b69f789450\"></div><p>According to the transition table, <span class=\"math\">[MATH: p]</span> is the start state, so we labeled it with an input arrow.</p><p>From the tables, we also get the following:</p><ul><li><p>Consider row <span class=\"math\">[MATH: p]</span> of the tables.</p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> in the transition table is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,0)=p,]</span> and its intersection with column <span class=\"math\">[MATH: 0]</span> in the output table is <span class=\"math\">[MATH: 1,]</span> indicating that <span class=\"math\">[MATH: \\omega(p,0)=1.]</span> So, we draw an arrow (loop) from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0/1.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> in the transition table is <span class=\"math\">[MATH: q,]</span> indicating that <span class=\"math\">[MATH: \\delta(p,1)=q,]</span> and its intersection with column <span class=\"math\">[MATH: 1]</span> in the output table is <span class=\"math\">[MATH: 1,]</span> indicating that <span class=\"math\">[MATH: \\omega(p,1)=1.]</span> So, we draw an arrow from <span class=\"math\">[MATH: p]</span> to <span class=\"math\">[MATH: q,]</span> labeled <span class=\"math\">[MATH: 1/1.]</span></p></li></ul></li></ul><div class=\"graphic\"><img src=\"/graphics/5cf653d76c49d583efda552fb2de8f1e\"></div><ul><li><p>Consider row <span class=\"math\">[MATH: q]</span> of the tables.</p><ul><li><p>Its intersection with column <span class=\"math\">[MATH: 0]</span> in the transition table is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,0)=p,]</span> and its intersection with column <span class=\"math\">[MATH: 0]</span> in the output table is <span class=\"math\">[MATH: 0,]</span> indicating that <span class=\"math\">[MATH: \\omega(q,0)=0.]</span> So, we draw an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 0/0.]</span></p></li><li><p>Its intersection with column <span class=\"math\">[MATH: 1]</span> in the transition table is <span class=\"math\">[MATH: p,]</span> indicating that <span class=\"math\">[MATH: \\delta(q,1)=p,]</span> and its intersection with column <span class=\"math\">[MATH: 1]</span> in the output table is <span class=\"math\">[MATH: 0,]</span> indicating that <span class=\"math\">[MATH: \\omega(q,1)=0.]</span> So, we draw an arrow from <span class=\"math\">[MATH: q]</span> to <span class=\"math\">[MATH: p,]</span> labeled <span class=\"math\">[MATH: 1/0.]</span></p></li></ul></li></ul><div class=\"graphic\"><img src=\"/graphics/792e5be4e4997db481afbd641f2eb6c5\"></div><p>We have been through every cell in the tables, so our diagram is complete.</p>",
+            "readable_text": "In our case, the Mealy machine has the following components:\n\n- the set of states [MATH: Q=\\{p,q\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the set of output symbols [MATH: \\Gamma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the transition function [MATH: \\delta] and the output function [MATH: \\omega] are given in the tables.\n\nFirst, let's draw the states of our machine.\n\n[IMG: /graphics/6833951619e73e8736ec54b69f789450]\n\nAccording to the transition table, [MATH: p] is the start state, so we labeled it with an input arrow.\n\nFrom the tables, we also get the following:\n\n- Consider row [MATH: p] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(p,0)=p,] and its intersection with column [MATH: 0] in the output table is [MATH: 1,] indicating that [MATH: \\omega(p,0)=1.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0/1.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(p,1)=q,] and its intersection with column [MATH: 1] in the output table is [MATH: 1,] indicating that [MATH: \\omega(p,1)=1.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/1.]\n\n[IMG: /graphics/5cf653d76c49d583efda552fb2de8f1e]\n\n- Consider row [MATH: q] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,0)=p,] and its intersection with column [MATH: 0] in the output table is [MATH: 0,] indicating that [MATH: \\omega(q,0)=0.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0/0.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,1)=p,] and its intersection with column [MATH: 1] in the output table is [MATH: 0,] indicating that [MATH: \\omega(q,1)=0.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 1/0.]\n\n[IMG: /graphics/792e5be4e4997db481afbd641f2eb6c5]\n\nWe have been through every cell in the tables, so our diagram is complete.",
+            "images": [
+              {
+                "src": "/graphics/6833951619e73e8736ec54b69f789450",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/5cf653d76c49d583efda552fb2de8f1e",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/792e5be4e4997db481afbd641f2eb6c5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/6833951619e73e8736ec54b69f789450",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/5cf653d76c49d583efda552fb2de8f1e",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/792e5be4e4997db481afbd641f2eb6c5",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: p] | [MATH: p] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 1] | [MATH: 1] | / | [MATH: q] | [MATH: 0] | [MATH: 0] | |\n\nDraw the diagram that represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the Mealy machine has the following components:\n\n- the set of states [MATH: Q=\\{p,q\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the set of output symbols [MATH: \\Gamma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the transition function [MATH: \\delta] and the output function [MATH: \\omega] are given in the tables.\n\nFirst, let's draw the states of our machine.\n\n[IMG: /graphics/6833951619e73e8736ec54b69f789450]\n\nAccording to the transition table, [MATH: p] is the start state, so we labeled it with an input arrow.\n\nFrom the tables, we also get the following:\n\n- Consider row [MATH: p] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(p,0)=p,] and its intersection with column [MATH: 0] in the output table is [MATH: 1,] indicating that [MATH: \\omega(p,0)=1.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0/1.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(p,1)=q,] and its intersection with column [MATH: 1] in the output table is [MATH: 1,] indicating that [MATH: \\omega(p,1)=1.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/1.]\n\n[IMG: /graphics/5cf653d76c49d583efda552fb2de8f1e]\n\n- Consider row [MATH: q] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,0)=p,] and its intersection with column [MATH: 0] in the output table is [MATH: 0,] indicating that [MATH: \\omega(q,0)=0.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0/0.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,1)=p,] and its intersection with column [MATH: 1] in the output table is [MATH: 0,] indicating that [MATH: \\omega(q,1)=0.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 1/0.]\n\n[IMG: /graphics/792e5be4e4997db481afbd641f2eb6c5]\n\nWe have been through every cell in the tables, so our diagram is complete."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "238346",
+        "dom_id": "question-238346",
+        "selector": "#question-238346",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><table><tr><td><p><span class=\"math\">[MATH: \u03b4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr></table></td><td><table><tr><td><p><span class=\"math\">[MATH: \u03c9]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: a]</span></p></td><td><p><span class=\"math\">[MATH: a]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: b]</span></p></td><td><p><span class=\"math\">[MATH: b]</span></p></td></tr></table></td></tr></table><p>Which of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?</p>",
+          "readable_text": "| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: \u2192 p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: a] | [MATH: a] | / | [MATH: q] | [MATH: b] | [MATH: b] | |\n\nWhich of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-238346-a",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238346-a-1\"> </p>",
+            "readable_text": "[IMG: /graphics/q-238346-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-238346-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-238346-b",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238346-a-2\"> </p>",
+            "readable_text": "[IMG: /graphics/q-238346-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-238346-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-238346-c",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238346-a-5\"> </p>",
+            "readable_text": "[IMG: /graphics/q-238346-a-5]",
+            "images": [
+              {
+                "src": "/graphics/q-238346-a-5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-238346-d",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238346-a-4\"> </p>",
+            "readable_text": "[IMG: /graphics/q-238346-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-238346-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-238346-e",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238346-a-3\"> </p>",
+            "readable_text": "[IMG: /graphics/q-238346-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-238346-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-238346-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238346-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238346-a-5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238346-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238346-a-3",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: \u2192 p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: a] | [MATH: a] | / | [MATH: q] | [MATH: b] | [MATH: b] | |\n\nWhich of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?\n\nChoices:\na. [IMG: /graphics/q-238346-a-1]\nb. [IMG: /graphics/q-238346-a-2]\nc. [IMG: /graphics/q-238346-a-5]\nd. [IMG: /graphics/q-238346-a-4]\ne. [IMG: /graphics/q-238346-a-3]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "258902",
+        "dom_id": "question-258902",
+        "selector": "#question-258902",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><table><tr><td><p><span class=\"math\">[MATH: \u03b4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr></table></td><td><table><tr><td><p><span class=\"math\">[MATH: \u03c9]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table></td></tr></table><p>Which of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?</p>",
+          "readable_text": "| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: \u2192 p] | [MATH: q] | [MATH: q] | / | [MATH: q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 0] | [MATH: 0] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nWhich of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-258902-a",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-258902-a-5\"> </p>",
+            "readable_text": "[IMG: /graphics/q-258902-a-5]",
+            "images": [
+              {
+                "src": "/graphics/q-258902-a-5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-258902-b",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-258902-a-3\"> </p>",
+            "readable_text": "[IMG: /graphics/q-258902-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-258902-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-258902-c",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-258902-a-4\"> </p>",
+            "readable_text": "[IMG: /graphics/q-258902-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-258902-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-258902-d",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-258902-a-2\"> </p>",
+            "readable_text": "[IMG: /graphics/q-258902-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-258902-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-258902-e",
+            "content_type": "image",
+            "normalized_html": "<p> <img src=\"/graphics/q-258902-a-1\"> </p>",
+            "readable_text": "[IMG: /graphics/q-258902-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-258902-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-258902-a-5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258902-a-3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258902-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258902-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258902-a-1",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: \u2192 p] | [MATH: q] | [MATH: q] | / | [MATH: q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 0] | [MATH: 0] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nWhich of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?\n\nChoices:\na. [IMG: /graphics/q-258902-a-5]\nb. [IMG: /graphics/q-258902-a-3]\nc. [IMG: /graphics/q-258902-a-4]\nd. [IMG: /graphics/q-258902-a-2]\ne. [IMG: /graphics/q-258902-a-1]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "418790",
+        "content_id": "11586",
+        "dom_id": "step-418790",
+        "selector": "#step-418790",
+        "step_anchor": "step-9",
+        "title": "Using Mealy Machines to Process Strings",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A Mealy machine can process a string by extending the definition of its output function <span class=\"math\">[MATH: \\omega]</span> to process each symbol of the string in turn.</p>",
+            "readable_text": "A Mealy machine can process a string by extending the definition of its output function [MATH: \\omega] to process each symbol of the string in turn.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: \\sigma = a\\beta]</span> be a string, where <span class=\"math\">[MATH: a]</span> is the first symbol of <span class=\"math\">[MATH: \\sigma,]</span> and <span class=\"math\">[MATH: \\beta]</span> is the remainder of <span class=\"math\">[MATH: \\sigma]</span> after removing the first symbol.\nThen, more formally, we can extend the output function <span class=\"math\">[MATH: \\omega]</span> of the machine to strings recursively as follows:</p>",
+            "readable_text": "Let [MATH: \\sigma = a\\beta] be a string, where [MATH: a] is the first symbol of [MATH: \\sigma,] and [MATH: \\beta] is the remainder of [MATH: \\sigma] after removing the first symbol.\nThen, more formally, we can extend the output function [MATH: \\omega] of the machine to strings recursively as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03c9(q, \u03f5)|= \u03f5; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2)]</span></p>",
+            "readable_text": "[MATH: \u03c9(q, \u03f5)|= \u03f5; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: \\epsilon]</span> denotes the empty string (the string containing no symbols), <span class=\"math\">[MATH: q]</span> is a state of the machine, <span class=\"math\">[MATH: \\delta]</span> is the transition function, and <span class=\"math\">[MATH: \\cdot]</span> denotes a concatenation of strings.</p>",
+            "readable_text": "where [MATH: \\epsilon] denotes the empty string (the string containing no symbols), [MATH: q] is a state of the machine, [MATH: \\delta] is the transition function, and [MATH: \\cdot] denotes a concatenation of strings.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To demonstrate, let&#x27;s find <span class=\"math\">[MATH: \\omega(p, 110),]</span> where <span class=\"math\">[MATH: \\omega : Q \\times \\Sigma \\to \\Gamma]</span> is the output function of the Mealy machine represented by the diagram below.</p>",
+            "readable_text": "To demonstrate, let's find [MATH: \\omega(p, 110),] where [MATH: \\omega : Q \\times \\Sigma \\to \\Gamma] is the output function of the Mealy machine represented by the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/d49a829525bee966585f13bd8c3de96d\"></p>",
+            "readable_text": "[IMG: /graphics/d49a829525bee966585f13bd8c3de96d]",
+            "images": [
+              {
+                "src": "/graphics/d49a829525bee966585f13bd8c3de96d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>According to the definition of the extension of the output function <span class=\"math\">[MATH: \\omega]</span> on the set of strings, we obtain the following:</p>",
+            "readable_text": "According to the definition of the extension of the output function [MATH: \\omega] on the set of strings, we obtain the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03c9(p, 110)|= \u03c9(p, 1) \u22c5 \u03c9(\u03b4(p, 1), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(r, 0); = 001]</span></p>",
+            "readable_text": "[MATH: \u03c9(p, 110)|= \u03c9(p, 1) \u22c5 \u03c9(\u03b4(p, 1), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(r, 0); = 001]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Working with the formal definition can be tricky. So, let&#x27;s describe what is going on in the computations from a slightly different point of view.</p>",
+            "readable_text": "Working with the formal definition can be tricky. So, let's describe what is going on in the computations from a slightly different point of view.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 1.</strong> The machine is in the start state <span class=\"math\">[MATH: p]</span> and observes the first letter of the string:\n<span class=\"math\">[MATH: \\bbox[2pt,Gainsboro]{1} \\, 1 \\, 0]</span>\nFrom the diagram, <span class=\"math\">[MATH: \\delta(p,1)=q.]</span> So, the machine switches to state <span class=\"math\">[MATH: q]</span> and moves to the next letter of the input string. At the same time, since <span class=\"math\">[MATH: \\omega(p,1)=0,]</span> the machine outputs <span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{0}.]</span></p></li><li><p><strong>Step 2.</strong> The machine is in the state <span class=\"math\">[MATH: q]</span> and observes the second letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(q,1)=r.]</span> So, the machine switches to state <span class=\"math\">[MATH: r]</span> and moves to the next letter of the string. At the same time, since <span class=\"math\">[MATH: \\omega(q,1)=0,]</span> the machine outputs <span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{0}.]</span></p></li><li><p><strong>Step 3.</strong> The machine is in the state <span class=\"math\">[MATH: r]</span> and observes the third letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(r,0)=q.]</span> So, the machine switches to state <span class=\"math\">[MATH: q]</span> and stops since the entire string has been processed. At the same time, since <span class=\"math\">[MATH: \\omega(r,0)=1,]</span> the machine outputs <span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{1}.]</span></p></li></ul>",
+            "readable_text": "- Step 1. The machine is in the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{1} \\, 1 \\, 0]\nFrom the diagram, [MATH: \\delta(p,1)=q.] So, the machine switches to state [MATH: q] and moves to the next letter of the input string. At the same time, since [MATH: \\omega(p,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 2. The machine is in the state [MATH: q] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]\nFrom the diagram, [MATH: \\delta(q,1)=r.] So, the machine switches to state [MATH: r] and moves to the next letter of the string. At the same time, since [MATH: \\omega(q,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 3. The machine is in the state [MATH: r] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]\nFrom the diagram, [MATH: \\delta(r,0)=q.] So, the machine switches to state [MATH: q] and stops since the entire string has been processed. At the same time, since [MATH: \\omega(r,0)=1,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, <span class=\"math\">[MATH: \\omega(p, 110)=\\bbox[3pt,Moccasin]{001}.]</span></p>",
+            "readable_text": "Therefore, [MATH: \\omega(p, 110)=\\bbox[3pt,Moccasin]{001}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/d49a829525bee966585f13bd8c3de96d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nA Mealy machine can process a string by extending the definition of its output function [MATH: \\omega] to process each symbol of the string in turn.\n\nContent:\nLet [MATH: \\sigma = a\\beta] be a string, where [MATH: a] is the first symbol of [MATH: \\sigma,] and [MATH: \\beta] is the remainder of [MATH: \\sigma] after removing the first symbol.\nThen, more formally, we can extend the output function [MATH: \\omega] of the machine to strings recursively as follows:\n\nContent:\n[MATH: \u03c9(q, \u03f5)|= \u03f5; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2)]\n\nContent:\nwhere [MATH: \\epsilon] denotes the empty string (the string containing no symbols), [MATH: q] is a state of the machine, [MATH: \\delta] is the transition function, and [MATH: \\cdot] denotes a concatenation of strings.\n\nContent:\nTo demonstrate, let's find [MATH: \\omega(p, 110),] where [MATH: \\omega : Q \\times \\Sigma \\to \\Gamma] is the output function of the Mealy machine represented by the diagram below.\n\nGraphic:\n[IMG: /graphics/d49a829525bee966585f13bd8c3de96d]\n\nContent:\nAccording to the definition of the extension of the output function [MATH: \\omega] on the set of strings, we obtain the following:\n\nContent:\n[MATH: \u03c9(p, 110)|= \u03c9(p, 1) \u22c5 \u03c9(\u03b4(p, 1), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(r, 0); = 001]\n\nContent:\nWorking with the formal definition can be tricky. So, let's describe what is going on in the computations from a slightly different point of view.\n\nContent:\n- Step 1. The machine is in the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{1} \\, 1 \\, 0]\nFrom the diagram, [MATH: \\delta(p,1)=q.] So, the machine switches to state [MATH: q] and moves to the next letter of the input string. At the same time, since [MATH: \\omega(p,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 2. The machine is in the state [MATH: q] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]\nFrom the diagram, [MATH: \\delta(q,1)=r.] So, the machine switches to state [MATH: r] and moves to the next letter of the string. At the same time, since [MATH: \\omega(q,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 3. The machine is in the state [MATH: r] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]\nFrom the diagram, [MATH: \\delta(r,0)=q.] So, the machine switches to state [MATH: q] and stops since the entire string has been processed. At the same time, since [MATH: \\omega(r,0)=1,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{1}.]\n\nContent:\nTherefore, [MATH: \\omega(p, 110)=\\bbox[3pt,Moccasin]{001}.]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "418791",
+        "content_id": "15711",
+        "dom_id": "step-418791",
+        "selector": "#step-418791",
+        "step_anchor": "step-10",
+        "title": "Applying a Mealy Machine to a String",
+        "key_prerequisites": [
+          {
+            "topic_id": "5414",
+            "name": "Processing Strings Using Deterministic Finite Automata",
+            "href": "/topics/5414",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><table><tr><td><p><span class=\"math\">[MATH: \\delta]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr></table></td><td><table><tr><td><p><span class=\"math\">[MATH: \\omega]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table></td></tr></table><p>Consider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that <span class=\"math\">[MATH: \\omega: Q \\times \\Sigma \\to \\Gamma]</span> is the output function of the machine, find <span class=\"math\">[MATH: \\omega(p, 010).]</span></p>",
+            "readable_text": "| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: q] | [MATH: p] | / | [MATH: q] | [MATH: p] | [MATH: q] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 0] | [MATH: 0] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nConsider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that [MATH: \\omega: Q \\times \\Sigma \\to \\Gamma] is the output function of the machine, find [MATH: \\omega(p, 010).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: \\sigma= a \\beta]</span> be a finite sequence of input symbols (string), where <span class=\"math\">[MATH: a]</span> is the first symbol of <span class=\"math\">[MATH: \\sigma]</span> and <span class=\"math\">[MATH: \\beta]</span> is the remainder of <span class=\"math\">[MATH: \\sigma]</span> after removing the first symbol. </p><p>Then, we can extend the output function <span class=\"math\">[MATH: \\omega]</span> of a Mealy machine to strings recursively using</p><p><span class=\"math\">[MATH: \u03c9(q, \u03f5)|= \u03f5,; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2),]</span></p><p>where <span class=\"math\">[MATH: \\epsilon]</span> denotes the empty string (the string containing no symbols), <span class=\"math\">[MATH: q]</span> is a state of the machine, <span class=\"math\">[MATH: \\delta]</span> is the transition function, and <span class=\"math\">[MATH: \\cdot]</span> denotes a concatenation of strings.</p><p>Now, we can compute the result using this definition of the extension of the output function <span class=\"math\">[MATH: \\omega]</span> on the set of strings. In our case, we obtain the following:</p><p><span class=\"math\">[MATH: \u03c9(p, 010)|= \u03c9(p, 0) \u22c5 \u03c9(\u03b4(p, 0), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(q, 0); = 001]</span></p><p>Let&#x27;s describe what is going on in the computations from a slightly different point of view.</p><ul><li><p><em>Step 1.</em> The machine is in the start state <span class=\"math\">[MATH: p]</span> and observes the first letter of the string:\n<span class=\"math\">[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0]</span>\nFrom the table, <span class=\"math\">[MATH: \\delta(p,0)=q.]</span> So, the machine switches to state <span class=\"math\">[MATH: q]</span> and moves to the next letter of the input string. At the same time, since <span class=\"math\">[MATH: \\omega(p,0)=0,]</span> the machine outputs <span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{0}.]</span></p></li><li><p><em>Step 2.</em> The machine is in the state <span class=\"math\">[MATH: q]</span> and observes the second letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]</span> \nFrom the table, <span class=\"math\">[MATH: \\delta(q,1)=q.]</span> So, the machine switches to state <span class=\"math\">[MATH: q]</span> (in this case, does not change the state) and moves to the next letter of the string. At the same time, since <span class=\"math\">[MATH: \\omega(q,1)=0,]</span> the machine outputs <span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{0}.]</span></p></li><li><p><em>Step 3.</em> The machine is in the state <span class=\"math\">[MATH: q]</span> and observes the third letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]</span> \nFrom the table, <span class=\"math\">[MATH: \\delta(q,0)=p.]</span> So, the machine switches to state <span class=\"math\">[MATH: p]</span> and stops since the entire string has been processed. At the same time, since <span class=\"math\">[MATH: \\omega(q,0)=1,]</span> the machine outputs <span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{1}.]</span></p></li></ul><p>Therefore, <span class=\"math\">[MATH: \\omega(p, 010)=\\bbox[3pt,Moccasin]{001}.]</span></p>",
+            "readable_text": "Let [MATH: \\sigma= a \\beta] be a finite sequence of input symbols (string), where [MATH: a] is the first symbol of [MATH: \\sigma] and [MATH: \\beta] is the remainder of [MATH: \\sigma] after removing the first symbol.\n\nThen, we can extend the output function [MATH: \\omega] of a Mealy machine to strings recursively using\n\n[MATH: \u03c9(q, \u03f5)|= \u03f5,; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\epsilon] denotes the empty string (the string containing no symbols), [MATH: q] is a state of the machine, [MATH: \\delta] is the transition function, and [MATH: \\cdot] denotes a concatenation of strings.\n\nNow, we can compute the result using this definition of the extension of the output function [MATH: \\omega] on the set of strings. In our case, we obtain the following:\n\n[MATH: \u03c9(p, 010)|= \u03c9(p, 0) \u22c5 \u03c9(\u03b4(p, 0), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(q, 0); = 001]\n\nLet's describe what is going on in the computations from a slightly different point of view.\n\n- Step 1. The machine is in the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0]\nFrom the table, [MATH: \\delta(p,0)=q.] So, the machine switches to state [MATH: q] and moves to the next letter of the input string. At the same time, since [MATH: \\omega(p,0)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 2. The machine is in the state [MATH: q] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]\nFrom the table, [MATH: \\delta(q,1)=q.] So, the machine switches to state [MATH: q] (in this case, does not change the state) and moves to the next letter of the string. At the same time, since [MATH: \\omega(q,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 3. The machine is in the state [MATH: q] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]\nFrom the table, [MATH: \\delta(q,0)=p.] So, the machine switches to state [MATH: p] and stops since the entire string has been processed. At the same time, since [MATH: \\omega(q,0)=1,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{1}.]\n\nTherefore, [MATH: \\omega(p, 010)=\\bbox[3pt,Moccasin]{001}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: q] | [MATH: p] | / | [MATH: q] | [MATH: p] | [MATH: q] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 0] | [MATH: 0] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nConsider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that [MATH: \\omega: Q \\times \\Sigma \\to \\Gamma] is the output function of the machine, find [MATH: \\omega(p, 010).]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet [MATH: \\sigma= a \\beta] be a finite sequence of input symbols (string), where [MATH: a] is the first symbol of [MATH: \\sigma] and [MATH: \\beta] is the remainder of [MATH: \\sigma] after removing the first symbol.\n\nThen, we can extend the output function [MATH: \\omega] of a Mealy machine to strings recursively using\n\n[MATH: \u03c9(q, \u03f5)|= \u03f5,; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\epsilon] denotes the empty string (the string containing no symbols), [MATH: q] is a state of the machine, [MATH: \\delta] is the transition function, and [MATH: \\cdot] denotes a concatenation of strings.\n\nNow, we can compute the result using this definition of the extension of the output function [MATH: \\omega] on the set of strings. In our case, we obtain the following:\n\n[MATH: \u03c9(p, 010)|= \u03c9(p, 0) \u22c5 \u03c9(\u03b4(p, 0), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(q, 0); = 001]\n\nLet's describe what is going on in the computations from a slightly different point of view.\n\n- Step 1. The machine is in the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0]\nFrom the table, [MATH: \\delta(p,0)=q.] So, the machine switches to state [MATH: q] and moves to the next letter of the input string. At the same time, since [MATH: \\omega(p,0)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 2. The machine is in the state [MATH: q] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]\nFrom the table, [MATH: \\delta(q,1)=q.] So, the machine switches to state [MATH: q] (in this case, does not change the state) and moves to the next letter of the string. At the same time, since [MATH: \\omega(q,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 3. The machine is in the state [MATH: q] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]\nFrom the table, [MATH: \\delta(q,0)=p.] So, the machine switches to state [MATH: p] and stops since the entire string has been processed. At the same time, since [MATH: \\omega(q,0)=1,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{1}.]\n\nTherefore, [MATH: \\omega(p, 010)=\\bbox[3pt,Moccasin]{001}.]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "238352",
+        "dom_id": "question-238352",
+        "selector": "#question-238352",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-238352\"></p>",
+          "readable_text": "[IMG: /graphics/q-238352]",
+          "images": [
+            {
+              "src": "/graphics/q-238352",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the Mealy machine represented by the above diagram. Given that <span class=\"math\">[MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393]</span> is the output function of the machine, <span class=\"math\">[MATH: \u03c9(p, 001) =]</span></p>",
+          "readable_text": "Consider the Mealy machine represented by the above diagram. Given that [MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393] is the output function of the machine, [MATH: \u03c9(p, 001) =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-238352-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 110]</span></p>",
+            "readable_text": "[MATH: 110]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-238352-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 101]</span></p>",
+            "readable_text": "[MATH: 101]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-238352-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 000]</span></p>",
+            "readable_text": "[MATH: 000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-238352-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 001]</span></p>",
+            "readable_text": "[MATH: 001]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-238352-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 111]</span></p>",
+            "readable_text": "[MATH: 111]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-238352",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-238352]\n\nPrompt:\nConsider the Mealy machine represented by the above diagram. Given that [MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393] is the output function of the machine, [MATH: \u03c9(p, 001) =]\n\nChoices:\na. [MATH: 110]\nb. [MATH: 101]\nc. [MATH: 000]\nd. [MATH: 001]\ne. [MATH: 111]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "258968",
+        "dom_id": "question-258968",
+        "selector": "#question-258968",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><table><tr><td><p><span class=\"math\">[MATH: \u03b4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr></table></td><td><table><tr><td><p><span class=\"math\">[MATH: \u03c9]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table></td></tr></table><p>Consider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that <span class=\"math\">[MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393]</span> is the output function of the machine, <span class=\"math\">[MATH: \u03c9(q, 101) =]</span></p>",
+          "readable_text": "| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: p] | [MATH: q] | / | [MATH: \u2192 q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 1] | [MATH: 1] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nConsider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that [MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393] is the output function of the machine, [MATH: \u03c9(q, 101) =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-258968-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 100]</span></p>",
+            "readable_text": "[MATH: 100]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-258968-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 011]</span></p>",
+            "readable_text": "[MATH: 011]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-258968-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 001]</span></p>",
+            "readable_text": "[MATH: 001]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-258968-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 110]</span></p>",
+            "readable_text": "[MATH: 110]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-258968-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 010]</span></p>",
+            "readable_text": "[MATH: 010]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: p] | [MATH: q] | / | [MATH: \u2192 q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 1] | [MATH: 1] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nConsider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that [MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393] is the output function of the machine, [MATH: \u03c9(q, 101) =]\n\nChoices:\na. [MATH: 100]\nb. [MATH: 011]\nc. [MATH: 001]\nd. [MATH: 110]\ne. [MATH: 010]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn a previous lesson, we discussed that there are two main types of automata: acceptors and transducers. Recall:\n\nContent:\n- An acceptor is a machine that receives a string as input and then either accepts or rejects the string.\n- A transducer is a machine that receives a string as input and then returns another string as output.\n\nContent:\nIn this lesson, we will focus on transducers.\n\nContent:\nOne example of a transducer is the Mealy machine, which processes an input string and produces a corresponding output string.\n\nContent:\nMore formally, a Mealy machine is a six-tuple of the form [MATH: M=(Q, \\Sigma, \\Gamma, \\delta, \\omega, q_0),] where:\n\nContent:\n- [MATH: Q] is a nonempty finite set of states. These are all the possible configurations the machine can be in.\n- [MATH: \\Sigma] is a nonempty finite set of input symbols. The machine can process this \"alphabet\" of symbols as inputs.\n- [MATH: \\Gamma] is a nonempty finite set of output symbols. The machine can write this \"alphabet\" of symbols as outputs.\n- [MATH: \\delta] is a transition function of the form [MATH: \\delta : Q \\times \\Sigma \\to Q.] It takes a state and an input symbol and returns a state. This function determines how the machine moves from one state to another based on a given input symbol.\n- [MATH: \\omega] is an output function of the form [MATH: \\omega : Q \\times \\Sigma \\to \\Gamma.] It takes a state and an input symbol and returns an output symbol. This function determines what symbol to write based on a given state and input symbol.\n- [MATH: q_0 \\in Q] is a start state (or initial state). This is the state in which the machine begins.\n\nContent:\nWe can visualize a Mealy machine as a directed graph where\n\nContent:\n- the vertices represent the states,\n- the arcs, labeled with input and output symbols, represent transitions from one state to another, and the corresponding output symbol, and\n- the start state is labeled by the input arrow [MATH: \\to.]\n\nContent:\nAn example of a Mealy machine is shown in the diagram below.\n\nGraphic:\n[IMG: /graphics/37da554bcf0b2cadcc858d97ce976413]\n\nContent:\nIn this case, the machine has the following components:\n\nContent:\n- The set of states [MATH: Q = \\{p,q,r\\}] (represented by the vertices).\n- The set of input symbols [MATH: \\Sigma = \\{0,1\\}] (represented by the first part of the arcs' labels).\n- The set of output symbols [MATH: \\Gamma = \\{0,1\\}] (represented by the second part of the arcs' labels).\n- The transition and output functions [MATH: \\delta] and [MATH: \\omega] with the following transitions and outputs defined by the arcs:\n[MATH: \u03b4(p, 0)|= r,|\u03b4(p, 1)|= q,|\u03c9(p, 0)|= 1,|\u03c9(p, 1)|= 0,; \u03b4(q, 0)|= p,|\u03b4(q, 1)|= r,|\u03c9(q, 0)|= 0,|\u03c9(q, 1)|= 0,; \u03b4(r, 0)|= q,|\u03b4(r, 1)|= r|\u03c9(r, 0)|= 1,|\u03c9(r, 1)|= 1]\nFor instance, the arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/0,] means that [MATH: \\delta(p,1) = q] and [MATH: \\omega(p,1) = 0.]\n\n[IMG: /graphics/29e0d7b1dd47640ee59d76dca698b1f2]\n- The start state [MATH: p] (that is labeled by the input arrow [MATH: \\to]), as shown below.\n\n[IMG: /graphics/a08878928cff68594887a5dbd95ab4c3]\n\n---\n\nItem 2 \u2014 Tutorial: Transition and Output Tables of Mealy Machines\n\nContent:\nTransition and output functions, [MATH: \\delta] and [MATH: \\omega,] are often put into tables, where a row represents a state [MATH: q,] a column represents an input symbol [MATH: a,] and their intersection is the value of the functions [MATH: \\delta(q,a)] and [MATH: \\omega(q,a),] respectively.\n\nContent:\nBelow is an example of a Mealy machine's transition table (on the left) and output table (on the right). Note that we place [MATH: \\to] next to the start state in the transition table.\n\nContent:\n| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: p] | [MATH: q] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: x] | [MATH: y] | / | [MATH: q] | [MATH: y] | [MATH: x] | |\n\nContent:\nLet's construct a diagram of the machine given by these tables. From the tables, we determine that the machine has the following components:\n\nContent:\n- the set of states [MATH: Q = \\{p, q\\}] (given by the rows),\n- the set of input symbols [MATH: \\Sigma = \\{0,1\\}] (given by the columns),\n- the set of output symbols [MATH: \\Gamma = \\{x,y\\}] (given by the values in the output table),\n- the start state [MATH: p] (labeled by [MATH: \\to] in the transition table), and\n- the transition function [MATH: \\delta] and the output function [MATH: \\omega] are given in the tables.\n\nContent:\nNow that we have the components, we can construct the diagram. First, let's draw the states of our machine.\n\nGraphic:\n[IMG: /graphics/bc507a5acd0e73ff8207eb99be664b14]\n\nContent:\nAccording to the transition table, [MATH: p] is the start state, so we labeled it with an input arrow.\nFrom the tables, we also get the following:\n\nContent:\n- Consider row [MATH: p] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(p,0) = p,] and its intersection with column [MATH: 0] in the output table is [MATH: x,] indicating that [MATH: \\omega(p,0)=x.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0/x.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(p,1) = q,] and its intersection with column [MATH: 1] in the output table is [MATH: y,] indicating that [MATH: \\omega(p,1)=y.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/y.]\n\n[IMG: /graphics/1e8624bcf35377277fa180d51f2a0623]\n\nContent:\n- Consider row [MATH: q] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,0) = p,] and its intersection with column [MATH: 0] in the output table is [MATH: y,] indicating that [MATH: \\omega(q,0)=y.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0/y.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(q,1) = q,] and its intersection with column [MATH: 1] in the output table is [MATH: x,] indicating that [MATH: \\omega(q,1)=x.] So, we draw an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 1/x.]\n\n[IMG: /graphics/783a51713c33ed4cacaa7bb8c74b286a]\n\nContent:\nWe have gone through every cell in the tables and added all the arcs, so our diagram is complete.\n\n---\n\nItem 3 \u2014 Example: Constructing Transition and Output Tables Given a Diagram\n\nExample Prompt:\n[IMG: /graphics/56876a04434086fb81e9a6f3a7c5bccb]\n\nThe diagram above shows a Mealy machine. Write down the correct options in the corresponding output table below.\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | | |\n| [MATH: q] | | |\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the automaton has the following components:\n\n- the set of states [MATH: Q=\\{p,q\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the set of output symbols [MATH: \\Gamma=\\{a,b\\},] and\n- the start state [MATH: q.]\n\nWith that in mind, let's determine the output function.\n\nFirst, we draw an empty table with a different state written in each row and a different input symbol written in each column:\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | | |\n| [MATH: q] | | |\n\nNext, we fill in the empty cells:\n\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 0/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(p,0)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: p] and column [MATH: 0.]\n- There is an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(p,1)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: p] and column [MATH: 1.]\n\n- There is an arrow (loop) from [MATH: q] to [MATH: q,] labeled [MATH: 0/\\bbox[3pt,Moccasin]{a}.] This means that [MATH: \\omega(q,0)=\\bbox[3pt,Moccasin]{a}.] So, we write [MATH: a] at the intersection of row [MATH: q] and column [MATH: 0.]\n\n- There is an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 1/\\bbox[3pt,Moccasin]{b}.] This means that [MATH: \\omega(q,1)=\\bbox[3pt,Moccasin]{b}.] So, we write [MATH: b] at the intersection of row [MATH: q] and column [MATH: 1.]\n\nThe output table corresponding to the given diagram is shown below.\n\n| [MATH: \\omega] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] |\n| [MATH: q] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}a}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}b}] |\n\n---\n\nItem 4 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-238343]\n\nPrompt:\nThe diagram above shows a Mealy machine. Select the correct options in the corresponding transition table below.\n\n| [MATH: \u03b4] | [MATH: 0] | [MATH: 1] |\n| [SELECT 1] | [SELECT 2] | [SELECT 3] |\n| [SELECT 4] | [SELECT 5] | [SELECT 6] |\n\n---\n\nItem 5 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-258803]\n\nPrompt:\nThe diagram above shows a Mealy machine. Select the correct options in the corresponding output table below.\n\n| [MATH: \u03c9] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [SELECT 1] | [SELECT 2] |\n| [MATH: q] | [SELECT 3] | [SELECT 4] |\n\n---\n\nItem 6 \u2014 Example: Drawing a Diagram Given Transition and Output Tables\n\nExample Prompt:\n| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: p] | [MATH: p] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 1] | [MATH: 1] | / | [MATH: q] | [MATH: 0] | [MATH: 0] | |\n\nDraw the diagram that represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?\n\nContent:\nEXPLANATION\n\nExplanation:\nIn our case, the Mealy machine has the following components:\n\n- the set of states [MATH: Q=\\{p,q\\},]\n- the set of input symbols [MATH: \\Sigma=\\{0,1\\},]\n- the set of output symbols [MATH: \\Gamma=\\{0,1\\},]\n- the start state [MATH: p,] and\n- the transition function [MATH: \\delta] and the output function [MATH: \\omega] are given in the tables.\n\nFirst, let's draw the states of our machine.\n\n[IMG: /graphics/6833951619e73e8736ec54b69f789450]\n\nAccording to the transition table, [MATH: p] is the start state, so we labeled it with an input arrow.\n\nFrom the tables, we also get the following:\n\n- Consider row [MATH: p] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(p,0)=p,] and its intersection with column [MATH: 0] in the output table is [MATH: 1,] indicating that [MATH: \\omega(p,0)=1.] So, we draw an arrow (loop) from [MATH: p] to [MATH: p,] labeled [MATH: 0/1.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: q,] indicating that [MATH: \\delta(p,1)=q,] and its intersection with column [MATH: 1] in the output table is [MATH: 1,] indicating that [MATH: \\omega(p,1)=1.] So, we draw an arrow from [MATH: p] to [MATH: q,] labeled [MATH: 1/1.]\n\n[IMG: /graphics/5cf653d76c49d583efda552fb2de8f1e]\n\n- Consider row [MATH: q] of the tables.\n\n- Its intersection with column [MATH: 0] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,0)=p,] and its intersection with column [MATH: 0] in the output table is [MATH: 0,] indicating that [MATH: \\omega(q,0)=0.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 0/0.]\n- Its intersection with column [MATH: 1] in the transition table is [MATH: p,] indicating that [MATH: \\delta(q,1)=p,] and its intersection with column [MATH: 1] in the output table is [MATH: 0,] indicating that [MATH: \\omega(q,1)=0.] So, we draw an arrow from [MATH: q] to [MATH: p,] labeled [MATH: 1/0.]\n\n[IMG: /graphics/792e5be4e4997db481afbd641f2eb6c5]\n\nWe have been through every cell in the tables, so our diagram is complete.\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\n| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: \u2192 p] | [MATH: p] | [MATH: q] | / | [MATH: q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: a] | [MATH: a] | / | [MATH: q] | [MATH: b] | [MATH: b] | |\n\nWhich of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?\n\nChoices:\na. [IMG: /graphics/q-238346-a-1]\nb. [IMG: /graphics/q-238346-a-2]\nc. [IMG: /graphics/q-238346-a-5]\nd. [IMG: /graphics/q-238346-a-4]\ne. [IMG: /graphics/q-238346-a-3]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\n| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: \u2192 p] | [MATH: q] | [MATH: q] | / | [MATH: q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 0] | [MATH: 0] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nWhich of the following diagrams represents the Mealy machine given by the above transition table (on the left) and the output table (on the right)?\n\nChoices:\na. [IMG: /graphics/q-258902-a-5]\nb. [IMG: /graphics/q-258902-a-3]\nc. [IMG: /graphics/q-258902-a-4]\nd. [IMG: /graphics/q-258902-a-2]\ne. [IMG: /graphics/q-258902-a-1]\n\n---\n\nItem 9 \u2014 Tutorial: Using Mealy Machines to Process Strings\n\nContent:\nA Mealy machine can process a string by extending the definition of its output function [MATH: \\omega] to process each symbol of the string in turn.\n\nContent:\nLet [MATH: \\sigma = a\\beta] be a string, where [MATH: a] is the first symbol of [MATH: \\sigma,] and [MATH: \\beta] is the remainder of [MATH: \\sigma] after removing the first symbol.\nThen, more formally, we can extend the output function [MATH: \\omega] of the machine to strings recursively as follows:\n\nContent:\n[MATH: \u03c9(q, \u03f5)|= \u03f5; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2)]\n\nContent:\nwhere [MATH: \\epsilon] denotes the empty string (the string containing no symbols), [MATH: q] is a state of the machine, [MATH: \\delta] is the transition function, and [MATH: \\cdot] denotes a concatenation of strings.\n\nContent:\nTo demonstrate, let's find [MATH: \\omega(p, 110),] where [MATH: \\omega : Q \\times \\Sigma \\to \\Gamma] is the output function of the Mealy machine represented by the diagram below.\n\nGraphic:\n[IMG: /graphics/d49a829525bee966585f13bd8c3de96d]\n\nContent:\nAccording to the definition of the extension of the output function [MATH: \\omega] on the set of strings, we obtain the following:\n\nContent:\n[MATH: \u03c9(p, 110)|= \u03c9(p, 1) \u22c5 \u03c9(\u03b4(p, 1), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(r, 0); = 001]\n\nContent:\nWorking with the formal definition can be tricky. So, let's describe what is going on in the computations from a slightly different point of view.\n\nContent:\n- Step 1. The machine is in the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{1} \\, 1 \\, 0]\nFrom the diagram, [MATH: \\delta(p,1)=q.] So, the machine switches to state [MATH: q] and moves to the next letter of the input string. At the same time, since [MATH: \\omega(p,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 2. The machine is in the state [MATH: q] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]\nFrom the diagram, [MATH: \\delta(q,1)=r.] So, the machine switches to state [MATH: r] and moves to the next letter of the string. At the same time, since [MATH: \\omega(q,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 3. The machine is in the state [MATH: r] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]\nFrom the diagram, [MATH: \\delta(r,0)=q.] So, the machine switches to state [MATH: q] and stops since the entire string has been processed. At the same time, since [MATH: \\omega(r,0)=1,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{1}.]\n\nContent:\nTherefore, [MATH: \\omega(p, 110)=\\bbox[3pt,Moccasin]{001}.]\n\n---\n\nItem 10 \u2014 Example: Applying a Mealy Machine to a String\n\nExample Prompt:\n| | [MATH: \\delta] | [MATH: 0] | [MATH: 1] | / | [MATH: \\to \\! p] | [MATH: q] | [MATH: p] | / | [MATH: q] | [MATH: p] | [MATH: q] | | | [MATH: \\omega] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 0] | [MATH: 0] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nConsider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that [MATH: \\omega: Q \\times \\Sigma \\to \\Gamma] is the output function of the machine, find [MATH: \\omega(p, 010).]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet [MATH: \\sigma= a \\beta] be a finite sequence of input symbols (string), where [MATH: a] is the first symbol of [MATH: \\sigma] and [MATH: \\beta] is the remainder of [MATH: \\sigma] after removing the first symbol.\n\nThen, we can extend the output function [MATH: \\omega] of a Mealy machine to strings recursively using\n\n[MATH: \u03c9(q, \u03f5)|= \u03f5,; \u03c9(q, \u03c3)|= \u03c9(q, a) \u22c5 \u03c9(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\epsilon] denotes the empty string (the string containing no symbols), [MATH: q] is a state of the machine, [MATH: \\delta] is the transition function, and [MATH: \\cdot] denotes a concatenation of strings.\n\nNow, we can compute the result using this definition of the extension of the output function [MATH: \\omega] on the set of strings. In our case, we obtain the following:\n\n[MATH: \u03c9(p, 010)|= \u03c9(p, 0) \u22c5 \u03c9(\u03b4(p, 0), 10); = 0 \u22c5 \u03c9(q, 10); = 0 \u22c5 \u03c9(q, 1) \u22c5 \u03c9(\u03b4(q, 1), 0); = 00 \u22c5 \u03c9(q, 0); = 001]\n\nLet's describe what is going on in the computations from a slightly different point of view.\n\n- Step 1. The machine is in the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0]\nFrom the table, [MATH: \\delta(p,0)=q.] So, the machine switches to state [MATH: q] and moves to the next letter of the input string. At the same time, since [MATH: \\omega(p,0)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 2. The machine is in the state [MATH: q] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0]\nFrom the table, [MATH: \\delta(q,1)=q.] So, the machine switches to state [MATH: q] (in this case, does not change the state) and moves to the next letter of the string. At the same time, since [MATH: \\omega(q,1)=0,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{0}.]\n- Step 3. The machine is in the state [MATH: q] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0}]\nFrom the table, [MATH: \\delta(q,0)=p.] So, the machine switches to state [MATH: p] and stops since the entire string has been processed. At the same time, since [MATH: \\omega(q,0)=1,] the machine outputs [MATH: \\bbox[3pt,Moccasin]{1}.]\n\nTherefore, [MATH: \\omega(p, 010)=\\bbox[3pt,Moccasin]{001}.]\n\n---\n\nItem 11 \u2014 Question 5\n\nQuestion Graphic:\n[IMG: /graphics/q-238352]\n\nPrompt:\nConsider the Mealy machine represented by the above diagram. Given that [MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393] is the output function of the machine, [MATH: \u03c9(p, 001) =]\n\nChoices:\na. [MATH: 110]\nb. [MATH: 101]\nc. [MATH: 000]\nd. [MATH: 001]\ne. [MATH: 111]\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\n| | [MATH: \u03b4] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: p] | [MATH: q] | / | [MATH: \u2192 q] | [MATH: q] | [MATH: p] | | | [MATH: \u03c9] | [MATH: 0] | [MATH: 1] | / | [MATH: p] | [MATH: 1] | [MATH: 1] | / | [MATH: q] | [MATH: 1] | [MATH: 0] | |\n\nConsider the Mealy machine represented by the above transition table (on the left) and the output table (on the right). Given that [MATH: \u03c9: Q \u00d7 \u03a3 \u2192 \u0393] is the output function of the machine, [MATH: \u03c9(q, 101) =]\n\nChoices:\na. [MATH: 100]\nb. [MATH: 011]\nc. [MATH: 001]\nd. [MATH: 110]\ne. [MATH: 010]"
+  }
+}

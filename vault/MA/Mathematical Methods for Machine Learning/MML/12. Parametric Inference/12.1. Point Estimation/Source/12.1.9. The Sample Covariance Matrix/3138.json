@@ -1,0 +1,1256 @@
+{
+  "schema_version": 2,
+  "topic_id": "3138",
+  "topic_title": "The Sample Covariance Matrix",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3138/Source/3138.html",
+  "source_url": "https://mathacademy.com/topics/3138",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "36980",
+        "dom_id": "sectionLink-36980",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-36980"
+      },
+      {
+        "index": 2,
+        "step_id": "36981",
+        "dom_id": "sectionLink-36981",
+        "name": "",
+        "title": "Finding the Sample Mean of an Observation Matrix",
+        "selector": "#sectionLink-36981"
+      },
+      {
+        "index": 3,
+        "step_id": "37301",
+        "dom_id": "sectionLink-37301",
+        "name": "",
+        "title": "Mean-Deviation Form",
+        "selector": "#sectionLink-37301"
+      },
+      {
+        "index": 4,
+        "step_id": "36984",
+        "dom_id": "sectionLink-36984",
+        "name": "",
+        "title": "Finding the Mean-Deviation Form of an Observation Matrix",
+        "selector": "#sectionLink-36984"
+      },
+      {
+        "index": 5,
+        "step_id": "36983",
+        "dom_id": "sectionLink-36983",
+        "name": "",
+        "title": "The Covariance Matrix",
+        "selector": "#sectionLink-36983"
+      },
+      {
+        "index": 6,
+        "step_id": "36982",
+        "dom_id": "sectionLink-36982",
+        "name": "",
+        "title": "Finding the Covariance Matrix",
+        "selector": "#sectionLink-36982"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "232",
+        "name": "The Transpose of a Matrix",
+        "href": "/topics/the-transpose-of-a-matrix-232"
+      },
+      {
+        "topic_id": "1196",
+        "name": "Multiplying Matrices",
+        "href": "/topics/multiplying-matrices-1196"
+      },
+      {
+        "topic_id": "3820",
+        "name": "The Sample Variance",
+        "href": "/topics/the-sample-variance-3820"
+      },
+      {
+        "topic_id": "5204",
+        "name": "Sums of Squares",
+        "href": "/topics/sums-of-squares-5204"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "36980",
+        "content_id": "6079",
+        "dom_id": "step-36980",
+        "selector": "#step-36980",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The table below describes the number of classes taken per semester and the average final grade in a sample of four college students.</p>",
+            "readable_text": "The table below describes the number of classes taken per semester and the average final grade in a sample of four college students.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><b>Number of Courses</b></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><b>Average Grade</b></p></td><td><p><span class=\"math\">[MATH: 80]</span></p></td><td><p><span class=\"math\">[MATH: 85]</span></p></td><td><p><span class=\"math\">[MATH: 75]</span></p></td><td><p><span class=\"math\">[MATH: 72]</span></p></td></tr></table>",
+            "readable_text": "| Number of Courses | [MATH: 4] | [MATH: 3] | [MATH: 5] | [MATH: 4] |\n| Average Grade | [MATH: 80] | [MATH: 85] | [MATH: 75] | [MATH: 72] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can collect this data in a matrix so that each column reports the number of courses and the average grade of a single student:</p>",
+            "readable_text": "We can collect this data in a matrix so that each column reports the number of courses and the average grade of a single student:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4|3|5|4; 80|85|75|72]]</span></p>",
+            "readable_text": "[MATH: [4|3|5|4; 80|85|75|72]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The matrix <span class=\"math\">[MATH: X]</span> is called the <strong>observation matrix.</strong></p>",
+            "readable_text": "The matrix [MATH: X] is called the observation matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we want to determine the mean number of courses and the mean average grade of this sample. The <strong>sample mean vector,</strong> denoted <span class=\"math\">[MATH: \\mathbf m,]</span> is a vector containing these values. The sample mean vector is given by</p>",
+            "readable_text": "Suppose we want to determine the mean number of courses and the mean average grade of this sample. The sample mean vector, denoted [MATH: \\mathbf m,] is a vector containing these values. The sample mean vector is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]</span></p>",
+            "readable_text": "[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n]</span> are the individual observations (columns of <span class=\"math\">[MATH: X]</span>).</p>",
+            "readable_text": "where [MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n] are the individual observations (columns of [MATH: X]).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From our matrix above, we have that  </p>",
+            "readable_text": "From our matrix above, we have that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; 80]]</span></p>",
+            "readable_text": "[MATH: [4; 80]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the sample mean vector is</p>",
+            "readable_text": "Therefore, the sample mean vector is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([4; 80] + [3; 85] + [5; 75] + [4; 72]); = (1)/(4)[16; 312]; = [4; 78].]</span></p>",
+            "readable_text": "[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([4; 80] + [3; 85] + [5; 75] + [4; 72]); = (1)/(4)[16; 312]; = [4; 78].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, the average number of courses is <span class=\"math\">[MATH: 4,]</span> and the average final grade is <span class=\"math\">[MATH: 78.]</span></p>",
+            "readable_text": "So, the average number of courses is [MATH: 4,] and the average final grade is [MATH: 78.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThe table below describes the number of classes taken per semester and the average final grade in a sample of four college students.\n\nContent:\n| Number of Courses | [MATH: 4] | [MATH: 3] | [MATH: 5] | [MATH: 4] |\n| Average Grade | [MATH: 80] | [MATH: 85] | [MATH: 75] | [MATH: 72] |\n\nContent:\nWe can collect this data in a matrix so that each column reports the number of courses and the average grade of a single student:\n\nContent:\n[MATH: [4|3|5|4; 80|85|75|72]]\n\nContent:\nThe matrix [MATH: X] is called the observation matrix.\n\nContent:\nSuppose we want to determine the mean number of courses and the mean average grade of this sample. The sample mean vector, denoted [MATH: \\mathbf m,] is a vector containing these values. The sample mean vector is given by\n\nContent:\n[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]\n\nContent:\nwhere [MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n] are the individual observations (columns of [MATH: X]).\n\nContent:\nFrom our matrix above, we have that\n\nContent:\n[MATH: [4; 80]]\n\nContent:\nTherefore, the sample mean vector is\n\nContent:\n[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([4; 80] + [3; 85] + [5; 75] + [4; 72]); = (1)/(4)[16; 312]; = [4; 78].]\n\nContent:\nSo, the average number of courses is [MATH: 4,] and the average final grade is [MATH: 78.]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36981",
+        "content_id": "9833",
+        "dom_id": "step-36981",
+        "selector": "#step-36981",
+        "step_anchor": "step-2",
+        "title": "Finding the Sample Mean of an Observation Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "244",
+            "name": "Addition and Scalar Multiplication of Cartesian Vectors in 2D",
+            "href": "/topics/244",
+            "type": ""
+          },
+          {
+            "topic_id": "861",
+            "name": "Introduction to Matrices",
+            "href": "/topics/861",
+            "type": ""
+          },
+          {
+            "topic_id": "2980",
+            "name": "The Sample Mean",
+            "href": "/topics/2980",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|0|2; 2|5|3|2]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the sample mean vector of <span class=\"math\">[MATH: X.]</span></p>",
+            "readable_text": "[MATH: [1|1|0|2; 2|5|3|2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that the sample mean vector is given by</p><p><span class=\"math\">[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]</span></p><p>where <span class=\"math\">[MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n]</span> are the individual observations (columns of <span class=\"math\">[MATH: X]</span>).</p><p>From the matrix, we have that  </p><p><span class=\"math\">[MATH: [1; 2]]</span></p><p>Therefore, the sample mean is</p><p><span class=\"math\">[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([1; 2] + [1; 5] + [0; 3] + [2; 2]); = (1)/(4)[4; 12]; = [1; 3].]</span></p>",
+            "readable_text": "Recall that the sample mean vector is given by\n\n[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]\n\nwhere [MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n] are the individual observations (columns of [MATH: X]).\n\nFrom the matrix, we have that\n\n[MATH: [1; 2]]\n\nTherefore, the sample mean is\n\n[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([1; 2] + [1; 5] + [0; 3] + [2; 2]); = (1)/(4)[4; 12]; = [1; 3].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [1|1|0|2; 2|5|3|2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the sample mean vector is given by\n\n[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]\n\nwhere [MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n] are the individual observations (columns of [MATH: X]).\n\nFrom the matrix, we have that\n\n[MATH: [1; 2]]\n\nTherefore, the sample mean is\n\n[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([1; 2] + [1; 5] + [0; 3] + [2; 2]); = (1)/(4)[4; 12]; = [1; 3].]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "137266",
+        "dom_id": "question-137266",
+        "selector": "#question-137266",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: X = [1|0|\u2212 2|5; 2|4|12|2]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the sample mean vector of <span class=\"math\">[MATH: X.]</span></p>",
+          "readable_text": "[MATH: X = [1|0|\u2212 2|5; 2|4|12|2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137266-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(5)/(4); 1]]</span></p>",
+            "readable_text": "[MATH: [(5)/(4); 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137266-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(5)/(4); 4]]</span></p>",
+            "readable_text": "[MATH: [(5)/(4); 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137266-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; 3]]</span></p>",
+            "readable_text": "[MATH: [2; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137266-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 4]]</span></p>",
+            "readable_text": "[MATH: [1; 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137266-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 5]]</span></p>",
+            "readable_text": "[MATH: [1; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: X = [1|0|\u2212 2|5; 2|4|12|2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]\n\nChoices:\na. [MATH: [(5)/(4); 1]]\nb. [MATH: [(5)/(4); 4]]\nc. [MATH: [2; 3]]\nd. [MATH: [1; 4]]\ne. [MATH: [1; 5]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "138589",
+        "dom_id": "question-138589",
+        "selector": "#question-138589",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: X = [7|8|0|\u2212 3; \u2212 2|10|\u2212 3|3]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the sample mean vector of <span class=\"math\">[MATH: X.]</span></p>",
+          "readable_text": "[MATH: X = [7|8|0|\u2212 3; \u2212 2|10|\u2212 3|3]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-138589-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2; 3]]</span></p>",
+            "readable_text": "[MATH: [2; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-138589-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [12; 8]]</span></p>",
+            "readable_text": "[MATH: [12; 8]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-138589-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; 2]]</span></p>",
+            "readable_text": "[MATH: [3; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-138589-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; 4]]</span></p>",
+            "readable_text": "[MATH: [4; 4]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-138589-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; 6]]</span></p>",
+            "readable_text": "[MATH: [4; 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: X = [7|8|0|\u2212 3; \u2212 2|10|\u2212 3|3]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]\n\nChoices:\na. [MATH: [2; 3]]\nb. [MATH: [12; 8]]\nc. [MATH: [3; 2]]\nd. [MATH: [4; 4]]\ne. [MATH: [4; 6]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37301",
+        "content_id": "6143",
+        "dom_id": "step-37301",
+        "selector": "#step-37301",
+        "step_anchor": "step-5",
+        "title": "Mean-Deviation Form",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Earlier, we studied data that reported the number of courses selected and the average grades of a sample of four college students. The observation matrix for this data was</p>",
+            "readable_text": "Earlier, we studied data that reported the number of courses selected and the average grades of a sample of four college students. The observation matrix for this data was",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4|3|5|4; 80|85|75|72]]</span></p>",
+            "readable_text": "[MATH: [4|3|5|4; 80|85|75|72]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The individual observations are</p>",
+            "readable_text": "The individual observations are",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; 80]]</span></p>",
+            "readable_text": "[MATH: [4; 80]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We also found the sample mean vector </p>",
+            "readable_text": "We also found the sample mean vector",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [4; 78]]</span></p>",
+            "readable_text": "[MATH: [4; 78]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>One thing we can do with this data is to check how much each observation differs from the mean values. To do that, we compute the difference between each observation and the sample mean vector:</p>",
+            "readable_text": "One thing we can do with this data is to check how much each observation differs from the mean values. To do that, we compute the difference between each observation and the sample mean vector:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: b_{1}|= x_{1} \u2212 m = [4; 80] \u2212 [4; 78] = [0; 2]; b_{2}|= x_{2} \u2212 m = [3; 85] \u2212 [4; 78] = [\u2212 1; 7]; b_{3}|= x_{3} \u2212 m = [5; 75] \u2212 [4; 78] = [1; \u2212 3]; b_{4}|= x_{4} \u2212 m = [4; 72] \u2212 [4; 78] = [0; \u2212 6]]</span></p>",
+            "readable_text": "[MATH: b_{1}|= x_{1} \u2212 m = [4; 80] \u2212 [4; 78] = [0; 2]; b_{2}|= x_{2} \u2212 m = [3; 85] \u2212 [4; 78] = [\u2212 1; 7]; b_{3}|= x_{3} \u2212 m = [5; 75] \u2212 [4; 78] = [1; \u2212 3]; b_{4}|= x_{4} \u2212 m = [4; 72] \u2212 [4; 78] = [0; \u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We collect these differences in a new matrix, as follows:</p>",
+            "readable_text": "We collect these differences in a new matrix, as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The matrix <span class=\"math\">[MATH: B]</span> is the <strong>mean-deviation form</strong> of <span class=\"math\">[MATH: X.]</span> It&#x27;s often easier to work with the mean-deviation form, especially if the original data contains large numbers.</p>",
+            "readable_text": "The matrix [MATH: B] is the mean-deviation form of [MATH: X.] It's often easier to work with the mean-deviation form, especially if the original data contains large numbers.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that the mean of a mean-deviation form equals the zero vector:</p>",
+            "readable_text": "Notice that the mean of a mean-deviation form equals the zero vector:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: m_{B}|= (1)/(4)([0; 2] + [\u2212 1; 7] + [1; \u2212 3] + [0; \u2212 6]); = (1)/(4)([0; 0]); = [0; 0]]</span></p>",
+            "readable_text": "[MATH: m_{B}|= (1)/(4)([0; 2] + [\u2212 1; 7] + [1; \u2212 3] + [0; \u2212 6]); = (1)/(4)([0; 0]); = [0; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nEarlier, we studied data that reported the number of courses selected and the average grades of a sample of four college students. The observation matrix for this data was\n\nContent:\n[MATH: [4|3|5|4; 80|85|75|72]]\n\nContent:\nThe individual observations are\n\nContent:\n[MATH: [4; 80]]\n\nContent:\nWe also found the sample mean vector\n\nContent:\n[MATH: [4; 78]]\n\nContent:\nOne thing we can do with this data is to check how much each observation differs from the mean values. To do that, we compute the difference between each observation and the sample mean vector:\n\nContent:\n[MATH: b_{1}|= x_{1} \u2212 m = [4; 80] \u2212 [4; 78] = [0; 2]; b_{2}|= x_{2} \u2212 m = [3; 85] \u2212 [4; 78] = [\u2212 1; 7]; b_{3}|= x_{3} \u2212 m = [5; 75] \u2212 [4; 78] = [1; \u2212 3]; b_{4}|= x_{4} \u2212 m = [4; 72] \u2212 [4; 78] = [0; \u2212 6]]\n\nContent:\nWe collect these differences in a new matrix, as follows:\n\nContent:\n[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]\n\nContent:\nThe matrix [MATH: B] is the mean-deviation form of [MATH: X.] It's often easier to work with the mean-deviation form, especially if the original data contains large numbers.\n\nContent:\nNotice that the mean of a mean-deviation form equals the zero vector:\n\nContent:\n[MATH: m_{B}|= (1)/(4)([0; 2] + [\u2212 1; 7] + [1; \u2212 3] + [0; \u2212 6]); = (1)/(4)([0; 0]); = [0; 0]]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36984",
+        "content_id": "9835",
+        "dom_id": "step-36984",
+        "selector": "#step-36984",
+        "step_anchor": "step-6",
+        "title": "Finding the Mean-Deviation Form of an Observation Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [5|9|4; 15|\u2212 7|1]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the mean-deviation form of <span class=\"math\">[MATH: X.]</span></p>",
+            "readable_text": "[MATH: [5|9|4; 15|\u2212 7|1]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that the mean-deviation form of the observation matrix</p><p><span class=\"math\">[MATH: [|||||; x_{1}|x_{2}|\u22ef|x_{n};|||||]]</span></p><p>is given by </p><p><span class=\"math\">[MATH: [|||||; b_{1}|b_{2}|\u22ef|b_{n};|||||]]</span></p><p>where <span class=\"math\">[MATH: \\mathbf{b}_i = \\mathbf{x}_i - \\mathbf{m}]</span> for <span class=\"math\">[MATH: i = 1,2, \\ldots, n,]</span> and <span class=\"math\">[MATH: \\mathbf{m}]</span> is sample mean vector.</p><p>From the matrix, we have that  </p><p><span class=\"math\">[MATH: [5; 15]]</span></p><p>As a result, the sample mean is</p><p><span class=\"math\">[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([5; 15] + [9; \u2212 7] + [4; 1]); = (1)/(3)[18; 9]; = [6; 3].]</span></p><p>Now, we have the following:</p><p><span class=\"math\">[MATH: b_{1}|= x_{1} \u2212 m = [5; 15] \u2212 [6; 3] = [\u2212 1; 12]; b_{2}|= x_{2} \u2212 m = [9; \u2212 7] \u2212 [6; 3] = [3; \u2212 10]; b_{3}|= x_{3} \u2212 m = [4; 1] \u2212 [6; 3] = [\u2212 2; \u2212 2]]</span></p><p>Therefore,  the mean-deviation form is</p><p><span class=\"math\">[MATH: [\u2212 1|3|\u2212 2; 12|\u2212 10|\u2212 2]]</span></p>",
+            "readable_text": "Recall that the mean-deviation form of the observation matrix\n\n[MATH: [|||||; x_{1}|x_{2}|\u22ef|x_{n};|||||]]\n\nis given by\n\n[MATH: [|||||; b_{1}|b_{2}|\u22ef|b_{n};|||||]]\n\nwhere [MATH: \\mathbf{b}_i = \\mathbf{x}_i - \\mathbf{m}] for [MATH: i = 1,2, \\ldots, n,] and [MATH: \\mathbf{m}] is sample mean vector.\n\nFrom the matrix, we have that\n\n[MATH: [5; 15]]\n\nAs a result, the sample mean is\n\n[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([5; 15] + [9; \u2212 7] + [4; 1]); = (1)/(3)[18; 9]; = [6; 3].]\n\nNow, we have the following:\n\n[MATH: b_{1}|= x_{1} \u2212 m = [5; 15] \u2212 [6; 3] = [\u2212 1; 12]; b_{2}|= x_{2} \u2212 m = [9; \u2212 7] \u2212 [6; 3] = [3; \u2212 10]; b_{3}|= x_{3} \u2212 m = [4; 1] \u2212 [6; 3] = [\u2212 2; \u2212 2]]\n\nTherefore, the mean-deviation form is\n\n[MATH: [\u2212 1|3|\u2212 2; 12|\u2212 10|\u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [5|9|4; 15|\u2212 7|1]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the mean-deviation form of the observation matrix\n\n[MATH: [|||||; x_{1}|x_{2}|\u22ef|x_{n};|||||]]\n\nis given by\n\n[MATH: [|||||; b_{1}|b_{2}|\u22ef|b_{n};|||||]]\n\nwhere [MATH: \\mathbf{b}_i = \\mathbf{x}_i - \\mathbf{m}] for [MATH: i = 1,2, \\ldots, n,] and [MATH: \\mathbf{m}] is sample mean vector.\n\nFrom the matrix, we have that\n\n[MATH: [5; 15]]\n\nAs a result, the sample mean is\n\n[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([5; 15] + [9; \u2212 7] + [4; 1]); = (1)/(3)[18; 9]; = [6; 3].]\n\nNow, we have the following:\n\n[MATH: b_{1}|= x_{1} \u2212 m = [5; 15] \u2212 [6; 3] = [\u2212 1; 12]; b_{2}|= x_{2} \u2212 m = [9; \u2212 7] \u2212 [6; 3] = [3; \u2212 10]; b_{3}|= x_{3} \u2212 m = [4; 1] \u2212 [6; 3] = [\u2212 2; \u2212 2]]\n\nTherefore, the mean-deviation form is\n\n[MATH: [\u2212 1|3|\u2212 2; 12|\u2212 10|\u2212 2]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "137296",
+        "dom_id": "question-137296",
+        "selector": "#question-137296",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: X = [1|0|2; 2|3|1]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the mean-deviation form of <span class=\"math\">[MATH: X.]</span></p>",
+          "readable_text": "[MATH: X = [1|0|2; 2|3|1]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137296-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|\u2212 1; 0|\u2212 1|1]]</span></p>",
+            "readable_text": "[MATH: [0|1|\u2212 1; 0|\u2212 1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137296-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 1|1; 0|\u2212 2|2]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 1|1; 0|\u2212 2|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137296-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 2|2; 0|1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 2|2; 0|1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137296-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 1|1; 0|1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 1|1; 0|1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137296-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|0|0; 0|1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [0|0|0; 0|1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: X = [1|0|2; 2|3|1]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]\n\nChoices:\na. [MATH: [0|1|\u2212 1; 0|\u2212 1|1]]\nb. [MATH: [0|\u2212 1|1; 0|\u2212 2|2]]\nc. [MATH: [0|\u2212 2|2; 0|1|\u2212 1]]\nd. [MATH: [0|\u2212 1|1; 0|1|\u2212 1]]\ne. [MATH: [0|0|0; 0|1|\u2212 1]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "138610",
+        "dom_id": "question-138610",
+        "selector": "#question-138610",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: X = [7|6|8; \u2212 1|\u2212 3|\u2212 2]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the mean-deviation form of <span class=\"math\">[MATH: X.]</span></p>",
+          "readable_text": "[MATH: X = [7|6|8; \u2212 1|\u2212 3|\u2212 2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-138610-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|\u2212 1|\u2212 1; \u2212 1|\u2212 1|2]]</span></p>",
+            "readable_text": "[MATH: [2|\u2212 1|\u2212 1; \u2212 1|\u2212 1|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-138610-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 1|1; 1|\u2212 1|0]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 1|1; 1|\u2212 1|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-138610-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 1|\u2212 1|2; \u2212 2|1|1]]</span></p>",
+            "readable_text": "[MATH: [\u2212 1|\u2212 1|2; \u2212 2|1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-138610-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|\u2212 1; 1|\u2212 1|1]]</span></p>",
+            "readable_text": "[MATH: [0|1|\u2212 1; 1|\u2212 1|1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-138610-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|2|\u2212 1; 2|\u2212 1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|2|\u2212 1; 2|\u2212 1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: X = [7|6|8; \u2212 1|\u2212 3|\u2212 2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]\n\nChoices:\na. [MATH: [2|\u2212 1|\u2212 1; \u2212 1|\u2212 1|2]]\nb. [MATH: [0|\u2212 1|1; 1|\u2212 1|0]]\nc. [MATH: [\u2212 1|\u2212 1|2; \u2212 2|1|1]]\nd. [MATH: [0|1|\u2212 1; 1|\u2212 1|1]]\ne. [MATH: [1|2|\u2212 1; 2|\u2212 1|\u2212 1]]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "36983",
+        "content_id": "6080",
+        "dom_id": "step-36983",
+        "selector": "#step-36983",
+        "step_anchor": "step-9",
+        "title": "The Covariance Matrix",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s consider again the mean-deviation matrix for the students&#x27; data we found previously:</p>",
+            "readable_text": "Let's consider again the mean-deviation matrix for the students' data we found previously:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Calculating the product <span class=\"math\">[MATH: B B^T,]</span> we obtain</p>",
+            "readable_text": "Calculating the product [MATH: B B^T,] we obtain",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6][0|2; \u2212 1|7; 1|\u2212 3; 0|\u2212 6]|= [2|\u2212 10; \u2212 10|98].]</span></p>",
+            "readable_text": "[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6][0|2; \u2212 1|7; 1|\u2212 3; 0|\u2212 6]|= [2|\u2212 10; \u2212 10|98].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s analyze what we&#x27;ve obtained:</p>",
+            "readable_text": "Let's analyze what we've obtained:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The entry in the first row and first column (<span class=\"math\">[MATH: {\\color{red}2}]</span>) is the sum of the squares of the mean deviations of the number of courses.</p></li><li><p>The entry in the second row and second column (<span class=\"math\">[MATH: {\\color{blue}98}]</span>) is the sum of the squares of the mean deviations of the final grades.</p></li><li><p>The off-diagonal entries (<span class=\"math\">[MATH: {\\color{purple}-10}]</span>) are the sum of the products of the mean deviations.</p></li></ul>",
+            "readable_text": "- The entry in the first row and first column ([MATH: {\\color{red}2}]) is the sum of the squares of the mean deviations of the number of courses.\n- The entry in the second row and second column ([MATH: {\\color{blue}98}]) is the sum of the squares of the mean deviations of the final grades.\n- The off-diagonal entries ([MATH: {\\color{purple}-10}]) are the sum of the products of the mean deviations.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since there were <span class=\"math\">[MATH: 4]</span> observations in total, if we divide each entry by <span class=\"math\">[MATH: 4-1=3,]</span>  we will get a matrix <span class=\"math\">[MATH: C]</span> with the <em>sample variances</em> in the diagonal and the <em>sample covariance</em> in the off-diagonal positions:</p>",
+            "readable_text": "Since there were [MATH: 4] observations in total, if we divide each entry by [MATH: 4-1=3,] we will get a matrix [MATH: C] with the sample variances in the diagonal and the sample covariance in the off-diagonal positions:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|\u2212 10; \u2212 10|98]]</span></p>",
+            "readable_text": "[MATH: [2|\u2212 10; \u2212 10|98]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This matrix is called the <strong>covariance matrix</strong> of the data.</p>",
+            "readable_text": "This matrix is called the covariance matrix of the data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In general, the sample covariance matrix is given by</p>",
+            "readable_text": "In general, the sample covariance matrix is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: C = \\dfrac{1}{n-1} B B^T,]</span></p>",
+            "readable_text": "[MATH: C = \\dfrac{1}{n-1} B B^T,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: B]</span> is the observation matrix in the mean-deviation form, and <span class=\"math\">[MATH: n]</span> is the number of observations.</p>",
+            "readable_text": "where [MATH: B] is the observation matrix in the mean-deviation form, and [MATH: n] is the number of observations.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's consider again the mean-deviation matrix for the students' data we found previously:\n\nContent:\n[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]\n\nContent:\nCalculating the product [MATH: B B^T,] we obtain\n\nContent:\n[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6][0|2; \u2212 1|7; 1|\u2212 3; 0|\u2212 6]|= [2|\u2212 10; \u2212 10|98].]\n\nContent:\nLet's analyze what we've obtained:\n\nContent:\n- The entry in the first row and first column ([MATH: {\\color{red}2}]) is the sum of the squares of the mean deviations of the number of courses.\n- The entry in the second row and second column ([MATH: {\\color{blue}98}]) is the sum of the squares of the mean deviations of the final grades.\n- The off-diagonal entries ([MATH: {\\color{purple}-10}]) are the sum of the products of the mean deviations.\n\nContent:\nSince there were [MATH: 4] observations in total, if we divide each entry by [MATH: 4-1=3,] we will get a matrix [MATH: C] with the sample variances in the diagonal and the sample covariance in the off-diagonal positions:\n\nContent:\n[MATH: [2|\u2212 10; \u2212 10|98]]\n\nContent:\nThis matrix is called the covariance matrix of the data.\n\nContent:\nIn general, the sample covariance matrix is given by\n\nContent:\n[MATH: C = \\dfrac{1}{n-1} B B^T,]\n\nContent:\nwhere [MATH: B] is the observation matrix in the mean-deviation form, and [MATH: n] is the number of observations."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36982",
+        "content_id": "9834",
+        "dom_id": "step-36982",
+        "selector": "#step-36982",
+        "step_anchor": "step-10",
+        "title": "Finding the Covariance Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "232",
+            "name": "The Transpose of a Matrix",
+            "href": "/topics/232",
+            "type": ""
+          },
+          {
+            "topic_id": "1196",
+            "name": "Multiplying Matrices",
+            "href": "/topics/1196",
+            "type": ""
+          },
+          {
+            "topic_id": "3591",
+            "name": "Covariance",
+            "href": "/topics/3591",
+            "type": ""
+          },
+          {
+            "topic_id": "3820",
+            "name": "The Sample Variance",
+            "href": "/topics/3820",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|6|4; \u2212 4|1|6]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the sample covariance matrix of the data.</p>",
+            "readable_text": "[MATH: [2|6|4; \u2212 4|1|6]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample covariance matrix of the data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that  the sample covariance matrix is given by</p><p><span class=\"math\">[MATH: C = \\dfrac{1}{n-1} B B^T,]</span></p><p>where <span class=\"math\">[MATH: B]</span> is the observation matrix in the mean-deviation form, and <span class=\"math\">[MATH: n]</span> is the number of observations.</p><p>So, we first need to compute the mean-deviation form of our observation matrix.</p><p>The sample mean is</p><p><span class=\"math\">[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([2; \u2212 4] + [6; 1] + [4; 6]); = (1)/(3)[12; 3]; = [4; 1].]</span></p><p>Now, we have the following:</p><p><span class=\"math\">[MATH: b_{1}|= x_{1} \u2212 m = [2; \u2212 4] \u2212 [4; 1] = [\u2212 2; \u2212 5]; b_{2}|= x_{2} \u2212 m = [6; 1] \u2212 [4; 1] = [2; 0]; b_{3}|= x_{3} \u2212 m = [4; 6] \u2212 [4; 1] = [0; 5]]</span></p><p>Therefore,  the mean-deviation form is</p><p><span class=\"math\">[MATH: [\u2212 2|2|0; \u2212 5|0|5]]</span></p><p>Finally, the sample covariance matrix is </p><p><span class=\"math\">[MATH: C|= (1)/(3 \u2212 1)[\u2212 2|2|0; \u2212 5|0|5][\u2212 2|\u2212 5; 2|0; 0|5]; = (1)/(2)[8|10; 10|50].]</span></p>",
+            "readable_text": "Recall that the sample covariance matrix is given by\n\n[MATH: C = \\dfrac{1}{n-1} B B^T,]\n\nwhere [MATH: B] is the observation matrix in the mean-deviation form, and [MATH: n] is the number of observations.\n\nSo, we first need to compute the mean-deviation form of our observation matrix.\n\nThe sample mean is\n\n[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([2; \u2212 4] + [6; 1] + [4; 6]); = (1)/(3)[12; 3]; = [4; 1].]\n\nNow, we have the following:\n\n[MATH: b_{1}|= x_{1} \u2212 m = [2; \u2212 4] \u2212 [4; 1] = [\u2212 2; \u2212 5]; b_{2}|= x_{2} \u2212 m = [6; 1] \u2212 [4; 1] = [2; 0]; b_{3}|= x_{3} \u2212 m = [4; 6] \u2212 [4; 1] = [0; 5]]\n\nTherefore, the mean-deviation form is\n\n[MATH: [\u2212 2|2|0; \u2212 5|0|5]]\n\nFinally, the sample covariance matrix is\n\n[MATH: C|= (1)/(3 \u2212 1)[\u2212 2|2|0; \u2212 5|0|5][\u2212 2|\u2212 5; 2|0; 0|5]; = (1)/(2)[8|10; 10|50].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: [2|6|4; \u2212 4|1|6]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample covariance matrix of the data.\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the sample covariance matrix is given by\n\n[MATH: C = \\dfrac{1}{n-1} B B^T,]\n\nwhere [MATH: B] is the observation matrix in the mean-deviation form, and [MATH: n] is the number of observations.\n\nSo, we first need to compute the mean-deviation form of our observation matrix.\n\nThe sample mean is\n\n[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([2; \u2212 4] + [6; 1] + [4; 6]); = (1)/(3)[12; 3]; = [4; 1].]\n\nNow, we have the following:\n\n[MATH: b_{1}|= x_{1} \u2212 m = [2; \u2212 4] \u2212 [4; 1] = [\u2212 2; \u2212 5]; b_{2}|= x_{2} \u2212 m = [6; 1] \u2212 [4; 1] = [2; 0]; b_{3}|= x_{3} \u2212 m = [4; 6] \u2212 [4; 1] = [0; 5]]\n\nTherefore, the mean-deviation form is\n\n[MATH: [\u2212 2|2|0; \u2212 5|0|5]]\n\nFinally, the sample covariance matrix is\n\n[MATH: C|= (1)/(3 \u2212 1)[\u2212 2|2|0; \u2212 5|0|5][\u2212 2|\u2212 5; 2|0; 0|5]; = (1)/(2)[8|10; 10|50].]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "137297",
+        "dom_id": "question-137297",
+        "selector": "#question-137297",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: B = [1|\u2212 2|4|\u2212 3; 0|3|\u2212 1|\u2212 2]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: B]</span> in the mean-deviation form above, where the individual observations are given in columns. \nFind the sample covariance matrix of the data.</p>",
+          "readable_text": "[MATH: B = [1|\u2212 2|4|\u2212 3; 0|3|\u2212 1|\u2212 2]]\nConsider the observation matrix [MATH: B] in the mean-deviation form above, where the individual observations are given in columns.\nFind the sample covariance matrix of the data.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137297-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[10|4; 4|6]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[10|4; 4|6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137297-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[30|\u2212 2; \u2212 2|14]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[30|\u2212 2; \u2212 2|14]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137297-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[30|4; 4|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[30|4; 4|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137297-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[30|\u2212 4; \u2212 4|14]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[30|\u2212 4; \u2212 4|14]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137297-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[0|4; 4|3]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[0|4; 4|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: B = [1|\u2212 2|4|\u2212 3; 0|3|\u2212 1|\u2212 2]]\nConsider the observation matrix [MATH: B] in the mean-deviation form above, where the individual observations are given in columns.\nFind the sample covariance matrix of the data.\n\nChoices:\na. [MATH: (1)/(3)[10|4; 4|6]]\nb. [MATH: (1)/(3)[30|\u2212 2; \u2212 2|14]]\nc. [MATH: (1)/(3)[30|4; 4|\u2212 1]]\nd. [MATH: (1)/(3)[30|\u2212 4; \u2212 4|14]]\ne. [MATH: (1)/(3)[0|4; 4|3]]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "137298",
+        "dom_id": "question-137298",
+        "selector": "#question-137298",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: X = [1|\u2212 10|0; 3|3|0]]</span>\nConsider the observation matrix <span class=\"math\">[MATH: X]</span> above, where the individual observations are given in columns. Find the sample covariance matrix of the data.</p>",
+          "readable_text": "[MATH: X = [1|\u2212 10|0; 3|3|0]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample covariance matrix of the data.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137298-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(2)[74|\u2212 9; \u2212 9|12]]</span></p>",
+            "readable_text": "[MATH: (1)/(2)[74|\u2212 9; \u2212 9|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137298-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(2)[74|\u2212 6; \u2212 6|7]]</span></p>",
+            "readable_text": "[MATH: (1)/(2)[74|\u2212 6; \u2212 6|7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137298-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(2)[34|\u2212 9; \u2212 9|25]]</span></p>",
+            "readable_text": "[MATH: (1)/(2)[34|\u2212 9; \u2212 9|25]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137298-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(2)[74|\u2212 9; \u2212 9|6]]</span></p>",
+            "readable_text": "[MATH: (1)/(2)[74|\u2212 9; \u2212 9|6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137298-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(2)[34|\u2212 9; \u2212 9|12]]</span></p>",
+            "readable_text": "[MATH: (1)/(2)[34|\u2212 9; \u2212 9|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: X = [1|\u2212 10|0; 3|3|0]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample covariance matrix of the data.\n\nChoices:\na. [MATH: (1)/(2)[74|\u2212 9; \u2212 9|12]]\nb. [MATH: (1)/(2)[74|\u2212 6; \u2212 6|7]]\nc. [MATH: (1)/(2)[34|\u2212 9; \u2212 9|25]]\nd. [MATH: (1)/(2)[74|\u2212 9; \u2212 9|6]]\ne. [MATH: (1)/(2)[34|\u2212 9; \u2212 9|12]]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nThe table below describes the number of classes taken per semester and the average final grade in a sample of four college students.\n\nContent:\n| Number of Courses | [MATH: 4] | [MATH: 3] | [MATH: 5] | [MATH: 4] |\n| Average Grade | [MATH: 80] | [MATH: 85] | [MATH: 75] | [MATH: 72] |\n\nContent:\nWe can collect this data in a matrix so that each column reports the number of courses and the average grade of a single student:\n\nContent:\n[MATH: [4|3|5|4; 80|85|75|72]]\n\nContent:\nThe matrix [MATH: X] is called the observation matrix.\n\nContent:\nSuppose we want to determine the mean number of courses and the mean average grade of this sample. The sample mean vector, denoted [MATH: \\mathbf m,] is a vector containing these values. The sample mean vector is given by\n\nContent:\n[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]\n\nContent:\nwhere [MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n] are the individual observations (columns of [MATH: X]).\n\nContent:\nFrom our matrix above, we have that\n\nContent:\n[MATH: [4; 80]]\n\nContent:\nTherefore, the sample mean vector is\n\nContent:\n[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([4; 80] + [3; 85] + [5; 75] + [4; 72]); = (1)/(4)[16; 312]; = [4; 78].]\n\nContent:\nSo, the average number of courses is [MATH: 4,] and the average final grade is [MATH: 78.]\n\n---\n\nItem 2 \u2014 Example: Finding the Sample Mean of an Observation Matrix\n\nExample Prompt:\n[MATH: [1|1|0|2; 2|5|3|2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the sample mean vector is given by\n\n[MATH: \\mathbf{m} = \\dfrac{1}{n} \\sum_{i=1}^n \\mathbf{x}_i,]\n\nwhere [MATH: \\mathbf{x}_1, \\mathbf{x}_2, \\ldots, \\mathbf{x}_n] are the individual observations (columns of [MATH: X]).\n\nFrom the matrix, we have that\n\n[MATH: [1; 2]]\n\nTherefore, the sample mean is\n\n[MATH: m|= (1)/(4)(x_{1} + x_{2} + x_{3} + x_{4}); = (1)/(4)([1; 2] + [1; 5] + [0; 3] + [2; 2]); = (1)/(4)[4; 12]; = [1; 3].]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n[MATH: X = [1|0|\u2212 2|5; 2|4|12|2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]\n\nChoices:\na. [MATH: [(5)/(4); 1]]\nb. [MATH: [(5)/(4); 4]]\nc. [MATH: [2; 3]]\nd. [MATH: [1; 4]]\ne. [MATH: [1; 5]]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n[MATH: X = [7|8|0|\u2212 3; \u2212 2|10|\u2212 3|3]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample mean vector of [MATH: X.]\n\nChoices:\na. [MATH: [2; 3]]\nb. [MATH: [12; 8]]\nc. [MATH: [3; 2]]\nd. [MATH: [4; 4]]\ne. [MATH: [4; 6]]\n\n---\n\nItem 5 \u2014 Tutorial: Mean-Deviation Form\n\nContent:\nEarlier, we studied data that reported the number of courses selected and the average grades of a sample of four college students. The observation matrix for this data was\n\nContent:\n[MATH: [4|3|5|4; 80|85|75|72]]\n\nContent:\nThe individual observations are\n\nContent:\n[MATH: [4; 80]]\n\nContent:\nWe also found the sample mean vector\n\nContent:\n[MATH: [4; 78]]\n\nContent:\nOne thing we can do with this data is to check how much each observation differs from the mean values. To do that, we compute the difference between each observation and the sample mean vector:\n\nContent:\n[MATH: b_{1}|= x_{1} \u2212 m = [4; 80] \u2212 [4; 78] = [0; 2]; b_{2}|= x_{2} \u2212 m = [3; 85] \u2212 [4; 78] = [\u2212 1; 7]; b_{3}|= x_{3} \u2212 m = [5; 75] \u2212 [4; 78] = [1; \u2212 3]; b_{4}|= x_{4} \u2212 m = [4; 72] \u2212 [4; 78] = [0; \u2212 6]]\n\nContent:\nWe collect these differences in a new matrix, as follows:\n\nContent:\n[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]\n\nContent:\nThe matrix [MATH: B] is the mean-deviation form of [MATH: X.] It's often easier to work with the mean-deviation form, especially if the original data contains large numbers.\n\nContent:\nNotice that the mean of a mean-deviation form equals the zero vector:\n\nContent:\n[MATH: m_{B}|= (1)/(4)([0; 2] + [\u2212 1; 7] + [1; \u2212 3] + [0; \u2212 6]); = (1)/(4)([0; 0]); = [0; 0]]\n\n---\n\nItem 6 \u2014 Example: Finding the Mean-Deviation Form of an Observation Matrix\n\nExample Prompt:\n[MATH: [5|9|4; 15|\u2212 7|1]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the mean-deviation form of the observation matrix\n\n[MATH: [|||||; x_{1}|x_{2}|\u22ef|x_{n};|||||]]\n\nis given by\n\n[MATH: [|||||; b_{1}|b_{2}|\u22ef|b_{n};|||||]]\n\nwhere [MATH: \\mathbf{b}_i = \\mathbf{x}_i - \\mathbf{m}] for [MATH: i = 1,2, \\ldots, n,] and [MATH: \\mathbf{m}] is sample mean vector.\n\nFrom the matrix, we have that\n\n[MATH: [5; 15]]\n\nAs a result, the sample mean is\n\n[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([5; 15] + [9; \u2212 7] + [4; 1]); = (1)/(3)[18; 9]; = [6; 3].]\n\nNow, we have the following:\n\n[MATH: b_{1}|= x_{1} \u2212 m = [5; 15] \u2212 [6; 3] = [\u2212 1; 12]; b_{2}|= x_{2} \u2212 m = [9; \u2212 7] \u2212 [6; 3] = [3; \u2212 10]; b_{3}|= x_{3} \u2212 m = [4; 1] \u2212 [6; 3] = [\u2212 2; \u2212 2]]\n\nTherefore, the mean-deviation form is\n\n[MATH: [\u2212 1|3|\u2212 2; 12|\u2212 10|\u2212 2]]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\n[MATH: X = [1|0|2; 2|3|1]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]\n\nChoices:\na. [MATH: [0|1|\u2212 1; 0|\u2212 1|1]]\nb. [MATH: [0|\u2212 1|1; 0|\u2212 2|2]]\nc. [MATH: [0|\u2212 2|2; 0|1|\u2212 1]]\nd. [MATH: [0|\u2212 1|1; 0|1|\u2212 1]]\ne. [MATH: [0|0|0; 0|1|\u2212 1]]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\n[MATH: X = [7|6|8; \u2212 1|\u2212 3|\u2212 2]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the mean-deviation form of [MATH: X.]\n\nChoices:\na. [MATH: [2|\u2212 1|\u2212 1; \u2212 1|\u2212 1|2]]\nb. [MATH: [0|\u2212 1|1; 1|\u2212 1|0]]\nc. [MATH: [\u2212 1|\u2212 1|2; \u2212 2|1|1]]\nd. [MATH: [0|1|\u2212 1; 1|\u2212 1|1]]\ne. [MATH: [1|2|\u2212 1; 2|\u2212 1|\u2212 1]]\n\n---\n\nItem 9 \u2014 Tutorial: The Covariance Matrix\n\nContent:\nLet's consider again the mean-deviation matrix for the students' data we found previously:\n\nContent:\n[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6]]\n\nContent:\nCalculating the product [MATH: B B^T,] we obtain\n\nContent:\n[MATH: [0|\u2212 1|1|0; 2|7|\u2212 3|\u2212 6][0|2; \u2212 1|7; 1|\u2212 3; 0|\u2212 6]|= [2|\u2212 10; \u2212 10|98].]\n\nContent:\nLet's analyze what we've obtained:\n\nContent:\n- The entry in the first row and first column ([MATH: {\\color{red}2}]) is the sum of the squares of the mean deviations of the number of courses.\n- The entry in the second row and second column ([MATH: {\\color{blue}98}]) is the sum of the squares of the mean deviations of the final grades.\n- The off-diagonal entries ([MATH: {\\color{purple}-10}]) are the sum of the products of the mean deviations.\n\nContent:\nSince there were [MATH: 4] observations in total, if we divide each entry by [MATH: 4-1=3,] we will get a matrix [MATH: C] with the sample variances in the diagonal and the sample covariance in the off-diagonal positions:\n\nContent:\n[MATH: [2|\u2212 10; \u2212 10|98]]\n\nContent:\nThis matrix is called the covariance matrix of the data.\n\nContent:\nIn general, the sample covariance matrix is given by\n\nContent:\n[MATH: C = \\dfrac{1}{n-1} B B^T,]\n\nContent:\nwhere [MATH: B] is the observation matrix in the mean-deviation form, and [MATH: n] is the number of observations.\n\n---\n\nItem 10 \u2014 Example: Finding the Covariance Matrix\n\nExample Prompt:\n[MATH: [2|6|4; \u2212 4|1|6]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample covariance matrix of the data.\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the sample covariance matrix is given by\n\n[MATH: C = \\dfrac{1}{n-1} B B^T,]\n\nwhere [MATH: B] is the observation matrix in the mean-deviation form, and [MATH: n] is the number of observations.\n\nSo, we first need to compute the mean-deviation form of our observation matrix.\n\nThe sample mean is\n\n[MATH: m|= (1)/(3)(x_{1} + x_{2} + x_{3}); = (1)/(3)([2; \u2212 4] + [6; 1] + [4; 6]); = (1)/(3)[12; 3]; = [4; 1].]\n\nNow, we have the following:\n\n[MATH: b_{1}|= x_{1} \u2212 m = [2; \u2212 4] \u2212 [4; 1] = [\u2212 2; \u2212 5]; b_{2}|= x_{2} \u2212 m = [6; 1] \u2212 [4; 1] = [2; 0]; b_{3}|= x_{3} \u2212 m = [4; 6] \u2212 [4; 1] = [0; 5]]\n\nTherefore, the mean-deviation form is\n\n[MATH: [\u2212 2|2|0; \u2212 5|0|5]]\n\nFinally, the sample covariance matrix is\n\n[MATH: C|= (1)/(3 \u2212 1)[\u2212 2|2|0; \u2212 5|0|5][\u2212 2|\u2212 5; 2|0; 0|5]; = (1)/(2)[8|10; 10|50].]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\n[MATH: B = [1|\u2212 2|4|\u2212 3; 0|3|\u2212 1|\u2212 2]]\nConsider the observation matrix [MATH: B] in the mean-deviation form above, where the individual observations are given in columns.\nFind the sample covariance matrix of the data.\n\nChoices:\na. [MATH: (1)/(3)[10|4; 4|6]]\nb. [MATH: (1)/(3)[30|\u2212 2; \u2212 2|14]]\nc. [MATH: (1)/(3)[30|4; 4|\u2212 1]]\nd. [MATH: (1)/(3)[30|\u2212 4; \u2212 4|14]]\ne. [MATH: (1)/(3)[0|4; 4|3]]\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\n[MATH: X = [1|\u2212 10|0; 3|3|0]]\nConsider the observation matrix [MATH: X] above, where the individual observations are given in columns. Find the sample covariance matrix of the data.\n\nChoices:\na. [MATH: (1)/(2)[74|\u2212 9; \u2212 9|12]]\nb. [MATH: (1)/(2)[74|\u2212 6; \u2212 6|7]]\nc. [MATH: (1)/(2)[34|\u2212 9; \u2212 9|25]]\nd. [MATH: (1)/(2)[74|\u2212 9; \u2212 9|6]]\ne. [MATH: (1)/(2)[34|\u2212 9; \u2212 9|12]]"
+  }
+}

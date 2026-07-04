@@ -1,0 +1,1718 @@
+{
+  "schema_version": 2,
+  "topic_id": "6685",
+  "topic_title": "Stability of Numerical Methods",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/6685/Source/6685.html",
+  "source_url": "https://mathacademy.com/topics/6685",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "594522",
+        "dom_id": "sectionLink-594522",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-594522"
+      },
+      {
+        "index": 2,
+        "step_id": "594523",
+        "dom_id": "sectionLink-594523",
+        "name": "",
+        "title": "Stability of Euler's Method",
+        "selector": "#sectionLink-594523"
+      },
+      {
+        "index": 3,
+        "step_id": "594524",
+        "dom_id": "sectionLink-594524",
+        "name": "",
+        "title": "Identifying True Statements About the Stability of Euler's Method",
+        "selector": "#sectionLink-594524"
+      },
+      {
+        "index": 4,
+        "step_id": "594527",
+        "dom_id": "sectionLink-594527",
+        "name": "",
+        "title": "Determining Stability in Euler's Method",
+        "selector": "#sectionLink-594527"
+      },
+      {
+        "index": 5,
+        "step_id": "594531",
+        "dom_id": "sectionLink-594531",
+        "name": "",
+        "title": "Stability Functions, Stability Regions, and Absolute Stability",
+        "selector": "#sectionLink-594531"
+      },
+      {
+        "index": 6,
+        "step_id": "594532",
+        "dom_id": "sectionLink-594532",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-594532"
+      },
+      {
+        "index": 7,
+        "step_id": "594533",
+        "dom_id": "sectionLink-594533",
+        "name": "",
+        "title": "Identifying True Statements About the Stability of Other Methods",
+        "selector": "#sectionLink-594533"
+      },
+      {
+        "index": 8,
+        "step_id": "594537",
+        "dom_id": "sectionLink-594537",
+        "name": "",
+        "title": "Table of Results",
+        "selector": "#sectionLink-594537"
+      },
+      {
+        "index": 9,
+        "step_id": "594538",
+        "dom_id": "sectionLink-594538",
+        "name": "",
+        "title": "Determining Stability in Other Methods",
+        "selector": "#sectionLink-594538"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1088",
+        "name": "Convergence of Geometric Sequences",
+        "href": "/topics/convergence-of-geometric-sequences-1088"
+      },
+      {
+        "topic_id": "3246",
+        "name": "Error in Numerical Methods",
+        "href": "/topics/error-in-numerical-methods-3246"
+      },
+      {
+        "topic_id": "3247",
+        "name": "The Modified Euler Method",
+        "href": "/topics/the-modified-euler-method-3247"
+      },
+      {
+        "topic_id": "3248",
+        "name": "The RK4 Method",
+        "href": "/topics/the-rk4-method-3248"
+      },
+      {
+        "topic_id": "6373",
+        "name": "The Trapezoidal Method",
+        "href": "/topics/the-trapezoidal-method-6373"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 17,
+    "step_count": 9,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "594522",
+        "content_id": "14217",
+        "dom_id": "step-594522",
+        "selector": "#step-594522",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>When solving ODEs numerically:</p>",
+            "readable_text": "When solving ODEs numerically:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The solution is advanced in many steps.</p></li><li><p>Each step introduces a small error (LTE).</p></li><li><p>These errors propagate forward (contributing to GTE).</p></li></ul>",
+            "readable_text": "- The solution is advanced in many steps.\n- Each step introduces a small error (LTE).\n- These errors propagate forward (contributing to GTE).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Stability describes how a numerical method responds to these small perturbations.</p>",
+            "readable_text": "Stability describes how a numerical method responds to these small perturbations.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A method is <strong>stable</strong> if small errors remain controlled as the computation proceeds.\nA method is <strong>unstable</strong> if small errors can grow rapidly, even when the true solution stays well-behaved.</p>",
+            "readable_text": "A method is stable if small errors remain controlled as the computation proceeds.\nA method is unstable if small errors can grow rapidly, even when the true solution stays well-behaved.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Stability determines how local errors turn into global errors: a method may be accurate in a single step, but if it is unstable, the global error can grow without bound.</p>",
+            "readable_text": "Stability determines how local errors turn into global errors: a method may be accurate in a single step, but if it is unstable, the global error can grow without bound.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>One way to study stability is to test a numerical method on the following <strong>test equation</strong>:</p>",
+            "readable_text": "One way to study stability is to test a numerical method on the following test equation:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda &gt; 0]</span></p>",
+            "readable_text": "[MATH: y' = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda > 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The exact solution of the test equation is <span class=\"math\">[MATH: y(x) = e^{-\\lambda x},]</span> which satisfies <span class=\"math\">[MATH: y(x) \\to 0]</span> as <span class=\"math\">[MATH: x \\to \\infty.]</span></p>",
+            "readable_text": "The exact solution of the test equation is [MATH: y(x) = e^{-\\lambda x},] which satisfies [MATH: y(x) \\to 0] as [MATH: x \\to \\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We say that a numerical method with update formula <span class=\"math\">[MATH: y_{n+1} = y_n + \\Delta y]</span> is <strong>stable</strong> for a given step size <span class=\"math\">[MATH: \\Delta x]</span> if, when applied to the test equation, the numerical solution also satisfies</p>",
+            "readable_text": "We say that a numerical method with update formula [MATH: y_{n+1} = y_n + \\Delta y] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation, the numerical solution also satisfies",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_n \\to 0 \\:\\text{ as }\\: n \\to \\infty.]</span></p>",
+            "readable_text": "[MATH: y_n \\to 0 \\:\\text{ as }\\: n \\to \\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To see how this works in practice, let&#x27;s analyze the stability of Euler&#x27;s method.</p>",
+            "readable_text": "To see how this works in practice, let's analyze the stability of Euler's method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWhen solving ODEs numerically:\n\nContent:\n- The solution is advanced in many steps.\n- Each step introduces a small error (LTE).\n- These errors propagate forward (contributing to GTE).\n\nContent:\nStability describes how a numerical method responds to these small perturbations.\n\nContent:\nA method is stable if small errors remain controlled as the computation proceeds.\nA method is unstable if small errors can grow rapidly, even when the true solution stays well-behaved.\n\nContent:\nStability determines how local errors turn into global errors: a method may be accurate in a single step, but if it is unstable, the global error can grow without bound.\n\nContent:\nOne way to study stability is to test a numerical method on the following test equation:\n\nContent:\n[MATH: y' = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda > 0]\n\nContent:\nThe exact solution of the test equation is [MATH: y(x) = e^{-\\lambda x},] which satisfies [MATH: y(x) \\to 0] as [MATH: x \\to \\infty.]\n\nContent:\nWe say that a numerical method with update formula [MATH: y_{n+1} = y_n + \\Delta y] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation, the numerical solution also satisfies\n\nContent:\n[MATH: y_n \\to 0 \\:\\text{ as }\\: n \\to \\infty.]\n\nContent:\nTo see how this works in practice, let's analyze the stability of Euler's method."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "594523",
+        "content_id": "14463",
+        "dom_id": "step-594523",
+        "selector": "#step-594523",
+        "step_anchor": "step-2",
+        "title": "Stability of Euler's Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We will now check the stability of Euler&#x27;s method by applying it to the test equation</p>",
+            "readable_text": "We will now check the stability of Euler's method by applying it to the test equation",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda &gt; 0.]</span></p>",
+            "readable_text": "[MATH: y' = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda > 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, recall that, for an initial value problem <span class=\"math\">[MATH: y&#x27; = f(x,y), y(x_0) = y_0,]</span> Euler&#x27;s method is given by the update formula</p>",
+            "readable_text": "First, recall that, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] Euler's method is given by the update formula",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{n+1} = y_n + f(x_n, y_n) \\cdot \\Delta x.]</span></p>",
+            "readable_text": "[MATH: y_{n+1} = y_n + f(x_n, y_n) \\cdot \\Delta x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Applying Euler&#x27;s method to the test equation, we get the following:</p>",
+            "readable_text": "Applying Euler's method to the test equation, we get the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n}) \u22c5 \u0394x; = y_{n} \u2212 \u03bby_{n} \u22c5 \u0394x; = (1 \u2212 \u03bb\u0394x)y_{n}]</span></p>",
+            "readable_text": "[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n}) \u22c5 \u0394x; = y_{n} \u2212 \u03bby_{n} \u22c5 \u0394x; = (1 \u2212 \u03bb\u0394x)y_{n}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, for stability, we require <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty.]</span> Here, since <span class=\"math\">[MATH: y_0=1,]</span> we have</p>",
+            "readable_text": "Now, for stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, since [MATH: y_0=1,] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{n}|= (1 \u2212 \u03bb\u0394x)y_{n \u2212 1}; = (1 \u2212 \u03bb\u0394x)((1 \u2212 \u03bb\u0394x)y_{n \u2212 2}); = (1 \u2212 \u03bb\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 \u03bb\u0394x)^{n}y_{0}; = (1 \u2212 \u03bb\u0394x)^{n}.]</span></p>",
+            "readable_text": "[MATH: y_{n}|= (1 \u2212 \u03bb\u0394x)y_{n \u2212 1}; = (1 \u2212 \u03bb\u0394x)((1 \u2212 \u03bb\u0394x)y_{n \u2212 2}); = (1 \u2212 \u03bb\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 \u03bb\u0394x)^{n}y_{0}; = (1 \u2212 \u03bb\u0394x)^{n}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s define <span class=\"math\">[MATH: R(\\lambda\\Delta x) = 1 - \\lambda\\Delta x.]</span> Then, <span class=\"math\">[MATH: y_n]</span> converges to <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n \\to \\infty]</span> if and only if <span class=\"math\">[MATH: |R(\\lambda\\Delta x)| &lt; 1.]</span> The function <span class=\"math\">[MATH: R(\\lambda\\Delta x)]</span> is called the <strong>stability function</strong> of Euler&#x27;s method.</p>",
+            "readable_text": "Let's define [MATH: R(\\lambda\\Delta x) = 1 - \\lambda\\Delta x.] Then, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if [MATH: |R(\\lambda\\Delta x)| < 1.] The function [MATH: R(\\lambda\\Delta x)] is called the stability function of Euler's method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Expanding this inequality, we get</p>",
+            "readable_text": "Expanding this inequality, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: |R(\u03bb\u0394x)||&lt; 1;|1 \u2212 \u03bb\u0394x||&lt; 1; \u2212 1 &lt; 1 \u2212 \u03bb\u0394x|&lt; 1; \u2212 2 &lt; \u2212 \u03bb\u0394x|&lt; 0; 0 &lt; \u03bb\u0394x|&lt; 2.]</span></p>",
+            "readable_text": "[MATH: |R(\u03bb\u0394x)||< 1;|1 \u2212 \u03bb\u0394x||< 1; \u2212 1 < 1 \u2212 \u03bb\u0394x|< 1; \u2212 2 < \u2212 \u03bb\u0394x|< 0; 0 < \u03bb\u0394x|< 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This means that Euler&#x27;s method is stable when applied to the test equation for values in the region <span class=\"math\">[MATH: 0 &lt; \\lambda\\Delta x &lt; 2.]</span></p>",
+            "readable_text": "This means that Euler's method is stable when applied to the test equation for values in the region [MATH: 0 < \\lambda\\Delta x < 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The diagram below shows the exact solution curve with the numerical steps of Euler&#x27;s method for the cases <span class=\"math\">[MATH: \\lambda\\Delta x &lt; 2]</span> and <span class=\"math\">[MATH: \\lambda\\Delta x = 2,]</span> with <span class=\"math\">[MATH: \\lambda &gt; 0]</span> fixed.</p>",
+            "readable_text": "The diagram below shows the exact solution curve with the numerical steps of Euler's method for the cases [MATH: \\lambda\\Delta x < 2] and [MATH: \\lambda\\Delta x = 2,] with [MATH: \\lambda > 0] fixed.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/f723b0574e30e665499be59c3e6e5136\"></p>",
+            "readable_text": "[IMG: /graphics/f723b0574e30e665499be59c3e6e5136]",
+            "images": [
+              {
+                "src": "/graphics/f723b0574e30e665499be59c3e6e5136",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that, for <span class=\"math\">[MATH: \\lambda\\Delta x &lt; 2,]</span> the numerical values converge to <span class=\"math\">[MATH: 0]</span> (stable), whereas for <span class=\"math\">[MATH: \\lambda\\Delta x = 2,]</span> the values oscillate between <span class=\"math\">[MATH: -1]</span> and <span class=\"math\">[MATH: 1]</span> and do not converge to <span class=\"math\">[MATH: 0]</span> (unstable).</p>",
+            "readable_text": "Notice that, for [MATH: \\lambda\\Delta x < 2,] the numerical values converge to [MATH: 0] (stable), whereas for [MATH: \\lambda\\Delta x = 2,] the values oscillate between [MATH: -1] and [MATH: 1] and do not converge to [MATH: 0] (unstable).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For values <span class=\"math\">[MATH: \\lambda\\Delta x &gt; 2,]</span> the numerical solution would grow in magnitude at each step, leading to rapidly diverging values.</p>",
+            "readable_text": "For values [MATH: \\lambda\\Delta x > 2,] the numerical solution would grow in magnitude at each step, leading to rapidly diverging values.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/f723b0574e30e665499be59c3e6e5136",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe will now check the stability of Euler's method by applying it to the test equation\n\nContent:\n[MATH: y' = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda > 0.]\n\nContent:\nFirst, recall that, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] Euler's method is given by the update formula\n\nContent:\n[MATH: y_{n+1} = y_n + f(x_n, y_n) \\cdot \\Delta x.]\n\nContent:\nApplying Euler's method to the test equation, we get the following:\n\nContent:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n}) \u22c5 \u0394x; = y_{n} \u2212 \u03bby_{n} \u22c5 \u0394x; = (1 \u2212 \u03bb\u0394x)y_{n}]\n\nContent:\nNow, for stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, since [MATH: y_0=1,] we have\n\nContent:\n[MATH: y_{n}|= (1 \u2212 \u03bb\u0394x)y_{n \u2212 1}; = (1 \u2212 \u03bb\u0394x)((1 \u2212 \u03bb\u0394x)y_{n \u2212 2}); = (1 \u2212 \u03bb\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 \u03bb\u0394x)^{n}y_{0}; = (1 \u2212 \u03bb\u0394x)^{n}.]\n\nContent:\nLet's define [MATH: R(\\lambda\\Delta x) = 1 - \\lambda\\Delta x.] Then, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if [MATH: |R(\\lambda\\Delta x)| < 1.] The function [MATH: R(\\lambda\\Delta x)] is called the stability function of Euler's method.\n\nContent:\nExpanding this inequality, we get\n\nContent:\n[MATH: |R(\u03bb\u0394x)||< 1;|1 \u2212 \u03bb\u0394x||< 1; \u2212 1 < 1 \u2212 \u03bb\u0394x|< 1; \u2212 2 < \u2212 \u03bb\u0394x|< 0; 0 < \u03bb\u0394x|< 2.]\n\nContent:\nThis means that Euler's method is stable when applied to the test equation for values in the region [MATH: 0 < \\lambda\\Delta x < 2.]\n\nContent:\nThe diagram below shows the exact solution curve with the numerical steps of Euler's method for the cases [MATH: \\lambda\\Delta x < 2] and [MATH: \\lambda\\Delta x = 2,] with [MATH: \\lambda > 0] fixed.\n\nGraphic:\n[IMG: /graphics/f723b0574e30e665499be59c3e6e5136]\n\nContent:\nNotice that, for [MATH: \\lambda\\Delta x < 2,] the numerical values converge to [MATH: 0] (stable), whereas for [MATH: \\lambda\\Delta x = 2,] the values oscillate between [MATH: -1] and [MATH: 1] and do not converge to [MATH: 0] (unstable).\n\nContent:\nFor values [MATH: \\lambda\\Delta x > 2,] the numerical solution would grow in magnitude at each step, leading to rapidly diverging values."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "594524",
+        "content_id": "21636",
+        "dom_id": "step-594524",
+        "selector": "#step-594524",
+        "step_anchor": "step-3",
+        "title": "Identifying True Statements About the Stability of Euler's Method",
+        "key_prerequisites": [
+          {
+            "topic_id": "602",
+            "name": "Euler's Method: Calculating One Step",
+            "href": "/topics/602",
+            "type": ""
+          },
+          {
+            "topic_id": "1088",
+            "name": "Convergence of Geometric Sequences",
+            "href": "/topics/1088",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Which of the following statements are true when testing the stability of Euler&#x27;s method on the test equation <span class=\"math\">[MATH: y&#x27; = -\\lambda y]</span> with <span class=\"math\">[MATH: y = y(x), \\, y(0) = 8, \\ x \\geq 0, \\, \\lambda = 6,]</span> and step size <span class=\"math\">[MATH: \\Delta x?]</span> </p><ol><li><p>  The update formula can be written as <span class=\"math\">[MATH: y_{n+1} = \\left(1 - 6\\Delta x\\right)^n y_n.]</span> </p></li><li><p>  The method is stable for <span class=\"math\">[MATH: |1 - 6\\Delta x| &lt; 1.]</span> </p></li><li><p>  The method is stable for step size <span class=\"math\">[MATH: \\Delta x = 0.1.]</span> </p></li><li><p>  The method is <strong>unstable</strong> for step size <span class=\"math\">[MATH: \\Delta x = 0.2.]</span> </p></li></ol>",
+            "readable_text": "Which of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y' = -\\lambda y] with [MATH: y = y(x), \\, y(0) = 8, \\ x \\geq 0, \\, \\lambda = 6,] and step size [MATH: \\Delta x?]\n\n1. The update formula can be written as [MATH: y_{n+1} = \\left(1 - 6\\Delta x\\right)^n y_n.]\n2. The method is stable for [MATH: |1 - 6\\Delta x| < 1.]\n3. The method is stable for step size [MATH: \\Delta x = 0.1.]\n4. The method is unstable for step size [MATH: \\Delta x = 0.2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method <span class=\"math\">[MATH: y_{n+1} = y_n + \\Delta y_n]</span> is stable for a given step size <span class=\"math\">[MATH: \\Delta x]</span> if, when applied to the test equation\n<span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0) = 8, \\quad x \\geq 0, \\quad \\lambda &gt; 0,]</span>\nthe numerical solution satisfies <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty,]</span> just like the exact solution.</p><p>Now, let&#x27;s check the stability of Euler&#x27;s Method by applying it to the test equation\n<span class=\"math\">[MATH: y&#x27; = -6y, \\qquad y(0) = 8.]</span></p><p>First, for an initial value problem <span class=\"math\">[MATH: y&#x27; = f(x,y), y(x_0) = y_0,]</span> Euler&#x27;s method is given by the update formula\n<span class=\"math\">[MATH: y_{n+1} = y_n + f(x_n,y_n) \\cdot \\Delta x.]</span></p><p>Now, let&#x27;s check our statements:</p><ul><li><p>Applying Euler&#x27;s method to the test equation, we get the following:\n<span class=\"math\">[MATH: y_{n + 1}|= y_{n} + (\u2212 6y_{n}) \u22c5 \u0394x; = y_{n} \u2212 6y_{n} \u22c5 \u0394x; = (1 \u2212 6\u0394x)y_{n}.]</span>\nHence, statement I is false.</p></li><li><p>For stability, we require <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty.]</span> Here, we have\n<span class=\"math\">[MATH: y_{n}|= (1 \u2212 6\u0394x)y_{n \u2212 1}; = (1 \u2212 6\u0394x)((1 \u2212 6\u0394x)y_{n \u2212 2}); = (1 \u2212 6\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 6\u0394x)^{n}y_{0}; = 8(1 \u2212 6\u0394x)^{n}.]</span>\nTherefore, <span class=\"math\">[MATH: y_n]</span> converges to <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n \\to \\infty]</span> if and only if <span class=\"math\">[MATH: \\left|1 - 6\\Delta x\\right| &lt; 1,]</span> as stated. Hence, statement II is true.</p></li><li><p>Expanding the inequality <span class=\"math\">[MATH: \\left|1 - 6\\Delta x\\right| &lt; 1,]</span> we get\n<span class=\"math\">[MATH: \u2212 1|&lt; 1 \u2212 6\u0394x &lt; 1; \u2212 2|&lt; \u2212 6\u0394x &lt; 0; 0|&lt; 6\u0394x &lt; 2; 0|&lt; \u0394x &lt; (1)/(3).]</span>\nFinally, we determine stability for the given step sizes:</p><ul><li><p>Since <span class=\"math\">[MATH: \\Delta x = 0.1]</span> satisfies the above inequality, Euler&#x27;s method is stable for this value. Hence, statement III is true.</p></li><li><p>Since <span class=\"math\">[MATH: \\Delta x = 0.2]</span> also satisfies the above inequality, Euler&#x27;s method is stable for this value. Hence, statement IV is false.</p></li></ul></li></ul><p>In conclusion, the correct answer is &quot;II and III only&quot;.</p>",
+            "readable_text": "A numerical method [MATH: y_{n+1} = y_n + \\Delta y_n] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 8, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nNow, let's check the stability of Euler's Method by applying it to the test equation\n[MATH: y' = -6y, \\qquad y(0) = 8.]\n\nFirst, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] Euler's method is given by the update formula\n[MATH: y_{n+1} = y_n + f(x_n,y_n) \\cdot \\Delta x.]\n\nNow, let's check our statements:\n\n- Applying Euler's method to the test equation, we get the following:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 6y_{n}) \u22c5 \u0394x; = y_{n} \u2212 6y_{n} \u22c5 \u0394x; = (1 \u2212 6\u0394x)y_{n}.]\nHence, statement I is false.\n- For stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, we have\n[MATH: y_{n}|= (1 \u2212 6\u0394x)y_{n \u2212 1}; = (1 \u2212 6\u0394x)((1 \u2212 6\u0394x)y_{n \u2212 2}); = (1 \u2212 6\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 6\u0394x)^{n}y_{0}; = 8(1 \u2212 6\u0394x)^{n}.]\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if [MATH: \\left|1 - 6\\Delta x\\right| < 1,] as stated. Hence, statement II is true.\n- Expanding the inequality [MATH: \\left|1 - 6\\Delta x\\right| < 1,] we get\n[MATH: \u2212 1|< 1 \u2212 6\u0394x < 1; \u2212 2|< \u2212 6\u0394x < 0; 0|< 6\u0394x < 2; 0|< \u0394x < (1)/(3).]\nFinally, we determine stability for the given step sizes:\n\n- Since [MATH: \\Delta x = 0.1] satisfies the above inequality, Euler's method is stable for this value. Hence, statement III is true.\n- Since [MATH: \\Delta x = 0.2] also satisfies the above inequality, Euler's method is stable for this value. Hence, statement IV is false.\n\nIn conclusion, the correct answer is \"II and III only\".",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nWhich of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y' = -\\lambda y] with [MATH: y = y(x), \\, y(0) = 8, \\ x \\geq 0, \\, \\lambda = 6,] and step size [MATH: \\Delta x?]\n\n1. The update formula can be written as [MATH: y_{n+1} = \\left(1 - 6\\Delta x\\right)^n y_n.]\n2. The method is stable for [MATH: |1 - 6\\Delta x| < 1.]\n3. The method is stable for step size [MATH: \\Delta x = 0.1.]\n4. The method is unstable for step size [MATH: \\Delta x = 0.2.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method [MATH: y_{n+1} = y_n + \\Delta y_n] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 8, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nNow, let's check the stability of Euler's Method by applying it to the test equation\n[MATH: y' = -6y, \\qquad y(0) = 8.]\n\nFirst, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] Euler's method is given by the update formula\n[MATH: y_{n+1} = y_n + f(x_n,y_n) \\cdot \\Delta x.]\n\nNow, let's check our statements:\n\n- Applying Euler's method to the test equation, we get the following:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 6y_{n}) \u22c5 \u0394x; = y_{n} \u2212 6y_{n} \u22c5 \u0394x; = (1 \u2212 6\u0394x)y_{n}.]\nHence, statement I is false.\n- For stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, we have\n[MATH: y_{n}|= (1 \u2212 6\u0394x)y_{n \u2212 1}; = (1 \u2212 6\u0394x)((1 \u2212 6\u0394x)y_{n \u2212 2}); = (1 \u2212 6\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 6\u0394x)^{n}y_{0}; = 8(1 \u2212 6\u0394x)^{n}.]\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if [MATH: \\left|1 - 6\\Delta x\\right| < 1,] as stated. Hence, statement II is true.\n- Expanding the inequality [MATH: \\left|1 - 6\\Delta x\\right| < 1,] we get\n[MATH: \u2212 1|< 1 \u2212 6\u0394x < 1; \u2212 2|< \u2212 6\u0394x < 0; 0|< 6\u0394x < 2; 0|< \u0394x < (1)/(3).]\nFinally, we determine stability for the given step sizes:\n\n- Since [MATH: \\Delta x = 0.1] satisfies the above inequality, Euler's method is stable for this value. Hence, statement III is true.\n- Since [MATH: \\Delta x = 0.2] also satisfies the above inequality, Euler's method is stable for this value. Hence, statement IV is false.\n\nIn conclusion, the correct answer is \"II and III only\"."
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "333079",
+        "dom_id": "question-333079",
+        "selector": "#question-333079",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following statements are true when testing the stability of Euler&#x27;s method on the test equation <span class=\"math\">[MATH: y^{\u2032} = \u2212 \u03bby]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 4,]</span> and step size <span class=\"math\">[MATH: \u0394x?]</span> </p><ol><li><p>  The update formula can be written as <span class=\"math\">[MATH: y_{n + 1} = (1 \u2212 4\u0394x)^{n}y_{n}.]</span> </p></li><li><p>  The method is stable for <span class=\"math\">[MATH: |1 \u2212 4\u0394x|&lt; 1.]</span> </p></li><li><p>  The method is stable for step size <span class=\"math\">[MATH: \u0394x = 0.2.]</span> </p></li><li><p>  The method is <strong>unstable</strong> for step size <span class=\"math\">[MATH: \u0394x = 0.3.]</span> </p></li></ol>",
+          "readable_text": "Which of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 4,] and step size [MATH: \u0394x?]\n\n1. The update formula can be written as [MATH: y_{n + 1} = (1 \u2212 4\u0394x)^{n}y_{n}.]\n2. The method is stable for [MATH: |1 \u2212 4\u0394x|< 1.]\n3. The method is stable for step size [MATH: \u0394x = 0.2.]\n4. The method is unstable for step size [MATH: \u0394x = 0.3.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333079-a",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333079-b",
+            "content_type": "text",
+            "normalized_html": "<p>II, III, and IV only</p>",
+            "readable_text": "II, III, and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333079-c",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III only</p>",
+            "readable_text": "I, II, and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333079-d",
+            "content_type": "text",
+            "normalized_html": "<p>III and IV only</p>",
+            "readable_text": "III and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333079-e",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and IV only</p>",
+            "readable_text": "I, II, and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 4,] and step size [MATH: \u0394x?]\n\n1. The update formula can be written as [MATH: y_{n + 1} = (1 \u2212 4\u0394x)^{n}y_{n}.]\n2. The method is stable for [MATH: |1 \u2212 4\u0394x|< 1.]\n3. The method is stable for step size [MATH: \u0394x = 0.2.]\n4. The method is unstable for step size [MATH: \u0394x = 0.3.]\n\nChoices:\na. II and III only\nb. II, III, and IV only\nc. I, II, and III only\nd. III and IV only\ne. I, II, and IV only"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "332530",
+        "dom_id": "question-332530",
+        "selector": "#question-332530",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following statements are true when testing the stability of Euler&#x27;s method on the test equation <span class=\"math\">[MATH: y^{\u2032} = \u2212 \u03bby]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 5,]</span> and step size <span class=\"math\">[MATH: \u0394x?]</span></p><ol><li><p>  The update formula can be written as <span class=\"math\">[MATH: y_{n + 1} = (1 \u2212 5\u0394x)^{n}y_{n}.]</span> </p></li><li><p>  The method is stable for <span class=\"math\">[MATH: |1 \u2212 5\u0394x|&lt; 1.]</span> </p></li><li><p>  The method is stable for step size <span class=\"math\">[MATH: \u0394x = 0.2.]</span> </p></li><li><p>  The method is <strong>unstable</strong> for step size <span class=\"math\">[MATH: \u0394x = 0.25.]</span> </p></li></ol>",
+          "readable_text": "Which of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 5,] and step size [MATH: \u0394x?]\n\n1. The update formula can be written as [MATH: y_{n + 1} = (1 \u2212 5\u0394x)^{n}y_{n}.]\n2. The method is stable for [MATH: |1 \u2212 5\u0394x|< 1.]\n3. The method is stable for step size [MATH: \u0394x = 0.2.]\n4. The method is unstable for step size [MATH: \u0394x = 0.25.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332530-a",
+            "content_type": "text",
+            "normalized_html": "<p>II, III, and IV only</p>",
+            "readable_text": "II, III, and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332530-b",
+            "content_type": "text",
+            "normalized_html": "<p>III and IV only</p>",
+            "readable_text": "III and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332530-c",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III only</p>",
+            "readable_text": "I, II, and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332530-d",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332530-e",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and IV only</p>",
+            "readable_text": "I, II, and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 5,] and step size [MATH: \u0394x?]\n\n1. The update formula can be written as [MATH: y_{n + 1} = (1 \u2212 5\u0394x)^{n}y_{n}.]\n2. The method is stable for [MATH: |1 \u2212 5\u0394x|< 1.]\n3. The method is stable for step size [MATH: \u0394x = 0.2.]\n4. The method is unstable for step size [MATH: \u0394x = 0.25.]\n\nChoices:\na. II, III, and IV only\nb. III and IV only\nc. I, II, and III only\nd. II and III only\ne. I, II, and IV only"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "594527",
+        "content_id": "21638",
+        "dom_id": "step-594527",
+        "selector": "#step-594527",
+        "step_anchor": "step-6",
+        "title": "Determining Stability in Euler's Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>For which of the following step sizes is Euler&#x27;s Method stable, given that <span class=\"math\">[MATH: \\lambda = 1]</span> is the parameter of the test equation <span class=\"math\">[MATH: y&#x27; = -\\lambda y]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \\geq 0,]</span> and step size <span class=\"math\">[MATH: \\Delta x?]</span></p><ol><li><p> <span class=\"math\">[MATH: \\Delta x = 0.5]</span> </p></li><li><p> <span class=\"math\">[MATH: \\Delta x = 0.9]</span> </p></li><li><p> <span class=\"math\">[MATH: \\Delta x = 1.2]</span> </p></li><li><p> <span class=\"math\">[MATH: \\Delta x = 1.8]</span> </p></li></ol><p><em>Hint: The stability function for Euler&#x27;s method is given by</em> <span class=\"math\">[MATH: R(\\lambda\\Delta x) = 1 - \\lambda \\Delta x.]</span></p>",
+            "readable_text": "For which of the following step sizes is Euler's Method stable, given that [MATH: \\lambda = 1] is the parameter of the test equation [MATH: y' = -\\lambda y] with [MATH: y = y(x), y(0) = 1, x \\geq 0,] and step size [MATH: \\Delta x?]\n\n1. [MATH: \\Delta x = 0.5]\n2. [MATH: \\Delta x = 0.9]\n3. [MATH: \\Delta x = 1.2]\n4. [MATH: \\Delta x = 1.8]\n\nHint: The stability function for Euler's method is given by [MATH: R(\\lambda\\Delta x) = 1 - \\lambda \\Delta x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method <span class=\"math\">[MATH: y_{n+1} = y_n + \\Delta y_n]</span>is stable for a given step size <span class=\"math\">[MATH: \\Delta x]</span> if, when applied to the test equation\n<span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda &gt; 0,]</span>\nthe numerical solution satisfies <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty,]</span> just like the exact solution.</p><p>For stability, we require that the following condition holds:</p><p><span class=\"math\">[MATH: |R(\u03bb\u0394x)||&lt; 1;|1 \u2212 \u03bb\u0394x||&lt; 1]</span></p><p>Solving this gives\n<span class=\"math\">[MATH: 0 &lt; \\lambda \\Delta x &lt; 2.]</span></p><p>This means that Euler&#x27;s method is stable when applied to the test equation for values in the region <span class=\"math\">[MATH: 0 &lt; \\lambda\\Delta x &lt; 2.]</span></p><p>In our case, where <span class=\"math\">[MATH: \\lambda=1,]</span> this region simplifies to\n<span class=\"math\">[MATH: 0|&lt; \u0394x &lt; 2.]</span></p><p>Now, of the given step sizes:</p><ul><li><p><span class=\"math\">[MATH: \\Delta x = 0.5]</span> satisfies the inequality,</p></li><li><p><span class=\"math\">[MATH: \\Delta x = 0.9]</span> satisfies the inequality,</p></li><li><p><span class=\"math\">[MATH: \\Delta x = 1.2]</span> satisfies the inequality, and</p></li><li><p><span class=\"math\">[MATH: \\Delta x = 1.8]</span> satisfies the inequality.</p></li></ul><p>Therefore, Euler&#x27;s method is stable for all given step sizes.</p><p>Thus, the correct answer is &quot;I, II, III, and IV&quot;.</p>",
+            "readable_text": "A numerical method [MATH: y_{n+1} = y_n + \\Delta y_n]is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nFor stability, we require that the following condition holds:\n\n[MATH: |R(\u03bb\u0394x)||< 1;|1 \u2212 \u03bb\u0394x||< 1]\n\nSolving this gives\n[MATH: 0 < \\lambda \\Delta x < 2.]\n\nThis means that Euler's method is stable when applied to the test equation for values in the region [MATH: 0 < \\lambda\\Delta x < 2.]\n\nIn our case, where [MATH: \\lambda=1,] this region simplifies to\n[MATH: 0|< \u0394x < 2.]\n\nNow, of the given step sizes:\n\n- [MATH: \\Delta x = 0.5] satisfies the inequality,\n- [MATH: \\Delta x = 0.9] satisfies the inequality,\n- [MATH: \\Delta x = 1.2] satisfies the inequality, and\n- [MATH: \\Delta x = 1.8] satisfies the inequality.\n\nTherefore, Euler's method is stable for all given step sizes.\n\nThus, the correct answer is \"I, II, III, and IV\".",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFor which of the following step sizes is Euler's Method stable, given that [MATH: \\lambda = 1] is the parameter of the test equation [MATH: y' = -\\lambda y] with [MATH: y = y(x), y(0) = 1, x \\geq 0,] and step size [MATH: \\Delta x?]\n\n1. [MATH: \\Delta x = 0.5]\n2. [MATH: \\Delta x = 0.9]\n3. [MATH: \\Delta x = 1.2]\n4. [MATH: \\Delta x = 1.8]\n\nHint: The stability function for Euler's method is given by [MATH: R(\\lambda\\Delta x) = 1 - \\lambda \\Delta x.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method [MATH: y_{n+1} = y_n + \\Delta y_n]is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nFor stability, we require that the following condition holds:\n\n[MATH: |R(\u03bb\u0394x)||< 1;|1 \u2212 \u03bb\u0394x||< 1]\n\nSolving this gives\n[MATH: 0 < \\lambda \\Delta x < 2.]\n\nThis means that Euler's method is stable when applied to the test equation for values in the region [MATH: 0 < \\lambda\\Delta x < 2.]\n\nIn our case, where [MATH: \\lambda=1,] this region simplifies to\n[MATH: 0|< \u0394x < 2.]\n\nNow, of the given step sizes:\n\n- [MATH: \\Delta x = 0.5] satisfies the inequality,\n- [MATH: \\Delta x = 0.9] satisfies the inequality,\n- [MATH: \\Delta x = 1.2] satisfies the inequality, and\n- [MATH: \\Delta x = 1.8] satisfies the inequality.\n\nTherefore, Euler's method is stable for all given step sizes.\n\nThus, the correct answer is \"I, II, III, and IV\"."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "332533",
+        "dom_id": "question-332533",
+        "selector": "#question-332533",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>For which of the following values is Euler&#x27;s method stable, given that <span class=\"math\">[MATH: \u03bb]</span> is the parameter of the test equation <span class=\"math\">[MATH: y^{\u2032} = \u2212 \u03bby]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb &gt; 0,]</span> and step size <span class=\"math\">[MATH: \u0394x?]</span></p><ol><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 0.67]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 1.20]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 1.80]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 2.25]</span> </p></li></ol><p><em>Hint: The stability function for Euler&#x27;s method is given by</em> <span class=\"math\">[MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]</span></p>",
+          "readable_text": "For which of the following values is Euler's method stable, given that [MATH: \u03bb] is the parameter of the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb > 0,] and step size [MATH: \u0394x?]\n\n1. [MATH: \u03bb\u0394x = 0.67]\n2. [MATH: \u03bb\u0394x = 1.20]\n3. [MATH: \u03bb\u0394x = 1.80]\n4. [MATH: \u03bb\u0394x = 2.25]\n\nHint: The stability function for Euler's method is given by [MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332533-a",
+            "content_type": "text",
+            "normalized_html": "<p>None</p>",
+            "readable_text": "None",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332533-b",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III only</p>",
+            "readable_text": "I, II, and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332533-c",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332533-d",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, III, and IV</p>",
+            "readable_text": "I, II, III, and IV",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332533-e",
+            "content_type": "text",
+            "normalized_html": "<p>I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFor which of the following values is Euler's method stable, given that [MATH: \u03bb] is the parameter of the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb > 0,] and step size [MATH: \u0394x?]\n\n1. [MATH: \u03bb\u0394x = 0.67]\n2. [MATH: \u03bb\u0394x = 1.20]\n3. [MATH: \u03bb\u0394x = 1.80]\n4. [MATH: \u03bb\u0394x = 2.25]\n\nHint: The stability function for Euler's method is given by [MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]\n\nChoices:\na. None\nb. I, II, and III only\nc. I only\nd. I, II, III, and IV\ne. I and II only"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "332461",
+        "dom_id": "question-332461",
+        "selector": "#question-332461",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>For which of the following step sizes is Euler&#x27;s Method <strong>unstable</strong>, given that <span class=\"math\">[MATH: \u03bb = 20]</span> is the parameter of the test equation <span class=\"math\">[MATH: y^{\u2032} = \u2212 \u03bby]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb &gt; 0,]</span> and step size <span class=\"math\">[MATH: \u0394x?]</span></p><ol><li><p> <span class=\"math\">[MATH: \u0394x = 0.05]</span> </p></li><li><p> <span class=\"math\">[MATH: \u0394x = 0.12]</span> </p></li><li><p> <span class=\"math\">[MATH: \u0394x = 0.2]</span> </p></li><li><p> <span class=\"math\">[MATH: \u0394x = 0.25]</span> </p></li></ol><p><em>Hint: The stability function for Euler&#x27;s method is given by</em> <span class=\"math\">[MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]</span></p>",
+          "readable_text": "For which of the following step sizes is Euler's Method unstable, given that [MATH: \u03bb = 20] is the parameter of the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb > 0,] and step size [MATH: \u0394x?]\n\n1. [MATH: \u0394x = 0.05]\n2. [MATH: \u0394x = 0.12]\n3. [MATH: \u0394x = 0.2]\n4. [MATH: \u0394x = 0.25]\n\nHint: The stability function for Euler's method is given by [MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332461-a",
+            "content_type": "text",
+            "normalized_html": "<p>III and IV only</p>",
+            "readable_text": "III and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332461-b",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, III, and IV</p>",
+            "readable_text": "I, II, III, and IV",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332461-c",
+            "content_type": "text",
+            "normalized_html": "<p>IV only</p>",
+            "readable_text": "IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332461-d",
+            "content_type": "text",
+            "normalized_html": "<p>None</p>",
+            "readable_text": "None",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332461-e",
+            "content_type": "text",
+            "normalized_html": "<p>II, III, and IV only</p>",
+            "readable_text": "II, III, and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nFor which of the following step sizes is Euler's Method unstable, given that [MATH: \u03bb = 20] is the parameter of the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb > 0,] and step size [MATH: \u0394x?]\n\n1. [MATH: \u0394x = 0.05]\n2. [MATH: \u0394x = 0.12]\n3. [MATH: \u0394x = 0.2]\n4. [MATH: \u0394x = 0.25]\n\nHint: The stability function for Euler's method is given by [MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]\n\nChoices:\na. III and IV only\nb. I, II, III, and IV\nc. IV only\nd. None\ne. II, III, and IV only"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "594531",
+        "content_id": "14464",
+        "dom_id": "step-594531",
+        "selector": "#step-594531",
+        "step_anchor": "step-10",
+        "title": "Stability Functions, Stability Regions, and Absolute Stability",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In general, when a numerical method\n<span class=\"math\">[MATH: y_{n+1} = y_n + \\Delta y_n]</span>\nis applied to the test equation\n<span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda &gt; 0,]</span>\nwe can write the update in the form\n<span class=\"math\">[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]</span>\nwhere <span class=\"math\">[MATH: R(\\lambda\\Delta x)]</span> is the <strong>stability function</strong> of the method.</p>",
+            "readable_text": "In general, when a numerical method\n[MATH: y_{n+1} = y_n + \\Delta y_n]\nis applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nwe can write the update in the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is the stability function of the method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For stability, we require <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty.]</span> Here, since <span class=\"math\">[MATH: y_0=1,]</span></p>",
+            "readable_text": "For stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, since [MATH: y_0=1,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{n}|= R(\u03bb\u0394x)y_{n \u2212 1}; = (R(\u03bb\u0394x))^{2}y_{n \u2212 2}; \u22ee\u22ee; = (R(\u03bb\u0394x))^{n}y_{0}; = (R(\u03bb\u0394x))^{n}.]</span></p>",
+            "readable_text": "[MATH: y_{n}|= R(\u03bb\u0394x)y_{n \u2212 1}; = (R(\u03bb\u0394x))^{2}y_{n \u2212 2}; \u22ee\u22ee; = (R(\u03bb\u0394x))^{n}y_{0}; = (R(\u03bb\u0394x))^{n}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As a geometric sequence, this decays to <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n\\to\\infty]</span> if and only if <span class=\"math\">[MATH: |R(\\lambda\\Delta x)| &lt; 1.]</span></p>",
+            "readable_text": "As a geometric sequence, this decays to [MATH: 0] as [MATH: n\\to\\infty] if and only if [MATH: |R(\\lambda\\Delta x)| < 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The set of values for which the method is stable, given by <span class=\"math\">[MATH: |R(\\lambda\\Delta x)| &lt; 1,]</span> is called the <strong>stability region</strong> of the method.</p>",
+            "readable_text": "The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A method that is stable for all possible values <span class=\"math\">[MATH: \\lambda\\Delta x &gt; 0]</span> is called <strong>absolutely stable</strong>.</p>",
+            "readable_text": "A method that is stable for all possible values [MATH: \\lambda\\Delta x > 0] is called absolutely stable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ve seen that Euler&#x27;s method is <em>not</em> absolutely stable, since its stability region is <span class=\"math\">[MATH: 0 &lt; \\lambda\\Delta x &lt; 2.]</span> But what about the implicit Euler method? Let&#x27;s find out.</p>",
+            "readable_text": "We've seen that Euler's method is not absolutely stable, since its stability region is [MATH: 0 < \\lambda\\Delta x < 2.] But what about the implicit Euler method? Let's find out.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn general, when a numerical method\n[MATH: y_{n+1} = y_n + \\Delta y_n]\nis applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nwe can write the update in the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is the stability function of the method.\n\nContent:\nFor stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, since [MATH: y_0=1,]\n\nContent:\n[MATH: y_{n}|= R(\u03bb\u0394x)y_{n \u2212 1}; = (R(\u03bb\u0394x))^{2}y_{n \u2212 2}; \u22ee\u22ee; = (R(\u03bb\u0394x))^{n}y_{0}; = (R(\u03bb\u0394x))^{n}.]\n\nContent:\nAs a geometric sequence, this decays to [MATH: 0] as [MATH: n\\to\\infty] if and only if [MATH: |R(\\lambda\\Delta x)| < 1.]\n\nContent:\nThe set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nContent:\nA method that is stable for all possible values [MATH: \\lambda\\Delta x > 0] is called absolutely stable.\n\nContent:\nWe've seen that Euler's method is not absolutely stable, since its stability region is [MATH: 0 < \\lambda\\Delta x < 2.] But what about the implicit Euler method? Let's find out."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "594532",
+        "content_id": "14484",
+        "dom_id": "step-594532",
+        "selector": "#step-594532",
+        "step_anchor": "step-11",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let&#x27;s check the stability of the implicit Euler method by applying it to the test equation</p>",
+            "readable_text": "Now, let's check the stability of the implicit Euler method by applying it to the test equation",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda &gt; 0.]</span></p>",
+            "readable_text": "[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, recall that, for an initial value problem <span class=\"math\">[MATH: y&#x27; = f(x,y), y(x_0) = y_0,]</span> the implicit Euler method is given by the update formula</p>",
+            "readable_text": "First, recall that, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] the implicit Euler method is given by the update formula",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{n+1} = y_n + f(x_{n+1},y_{n+1}) \\cdot \\Delta x.]</span></p>",
+            "readable_text": "[MATH: y_{n+1} = y_n + f(x_{n+1},y_{n+1}) \\cdot \\Delta x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Applying the implicit Euler method to the test equation, we get the following:</p>",
+            "readable_text": "Applying the implicit Euler method to the test equation, we get the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n + 1}) \u22c5 \u0394x; y_{n + 1} + \u03bby_{n + 1} \u22c5 \u0394x|= y_{n}; y_{n + 1}(1 + \u03bb\u0394x)|= y_{n}; y_{n + 1}|= (1)/(1 + \u03bb\u0394x) \u22c5 y_{n}]</span></p>",
+            "readable_text": "[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n + 1}) \u22c5 \u0394x; y_{n + 1} + \u03bby_{n + 1} \u22c5 \u0394x|= y_{n}; y_{n + 1}(1 + \u03bb\u0394x)|= y_{n}; y_{n + 1}|= (1)/(1 + \u03bb\u0394x) \u22c5 y_{n}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, the stability function is </p>",
+            "readable_text": "So, the stability function is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: R(\\lambda\\Delta x) = \\dfrac{1}{1 + \\lambda\\Delta x}.]</span></p>",
+            "readable_text": "[MATH: R(\\lambda\\Delta x) = \\dfrac{1}{1 + \\lambda\\Delta x}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The method is stable when</p>",
+            "readable_text": "The method is stable when",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: |R(\u03bb\u0394x)||&lt; 1;|(1)/(1 + \u03bb\u0394x)||&lt; 1.]</span></p>",
+            "readable_text": "[MATH: |R(\u03bb\u0394x)||< 1;|(1)/(1 + \u03bb\u0394x)||< 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, <span class=\"math\">[MATH: y_n]</span> converges to <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n \\to \\infty]</span> if and only if\n<span class=\"math\">[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| &lt; 1.]</span></p>",
+            "readable_text": "Therefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if\n[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| < 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since <span class=\"math\">[MATH: 1 + \\lambda\\Delta x &gt; 1]</span> for any positive step size <span class=\"math\">[MATH: \\Delta x,]</span> we have</p>",
+            "readable_text": "Since [MATH: 1 + \\lambda\\Delta x > 1] for any positive step size [MATH: \\Delta x,] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| &lt; 1]</span></p>",
+            "readable_text": "[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| < 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>for all <span class=\"math\">[MATH: \\Delta x &gt; 0.]</span> So, the implicit Euler method is absolutely stable!</p>",
+            "readable_text": "for all [MATH: \\Delta x > 0.] So, the implicit Euler method is absolutely stable!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The diagram below shows the exact solution curve with the numerical steps of both the explicit and the implicit Euler methods for the value <span class=\"math\">[MATH: \\lambda\\Delta x = 2.]</span> \nWe saw before that the explicit method oscillates between the values <span class=\"math\">[MATH: -1]</span> and <span class=\"math\">[MATH: 1]</span> and does not converge to <span class=\"math\">[MATH: 0.]</span></p>",
+            "readable_text": "The diagram below shows the exact solution curve with the numerical steps of both the explicit and the implicit Euler methods for the value [MATH: \\lambda\\Delta x = 2.]\nWe saw before that the explicit method oscillates between the values [MATH: -1] and [MATH: 1] and does not converge to [MATH: 0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Conversely, the numerical steps of the implicit Euler method converge to <span class=\"math\">[MATH: 0]</span> quite quickly for the same step size!</p>",
+            "readable_text": "Conversely, the numerical steps of the implicit Euler method converge to [MATH: 0] quite quickly for the same step size!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/a3f116666d9e9be9489eec23582bcc71\"></p>",
+            "readable_text": "[IMG: /graphics/a3f116666d9e9be9489eec23582bcc71]",
+            "images": [
+              {
+                "src": "/graphics/a3f116666d9e9be9489eec23582bcc71",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Implicit methods tend to be more numerically stable than explicit methods.</p>",
+            "readable_text": "Implicit methods tend to be more numerically stable than explicit methods.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/a3f116666d9e9be9489eec23582bcc71",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nNow, let's check the stability of the implicit Euler method by applying it to the test equation\n\nContent:\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0.]\n\nContent:\nFirst, recall that, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] the implicit Euler method is given by the update formula\n\nContent:\n[MATH: y_{n+1} = y_n + f(x_{n+1},y_{n+1}) \\cdot \\Delta x.]\n\nContent:\nApplying the implicit Euler method to the test equation, we get the following:\n\nContent:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n + 1}) \u22c5 \u0394x; y_{n + 1} + \u03bby_{n + 1} \u22c5 \u0394x|= y_{n}; y_{n + 1}(1 + \u03bb\u0394x)|= y_{n}; y_{n + 1}|= (1)/(1 + \u03bb\u0394x) \u22c5 y_{n}]\n\nContent:\nSo, the stability function is\n\nContent:\n[MATH: R(\\lambda\\Delta x) = \\dfrac{1}{1 + \\lambda\\Delta x}.]\n\nContent:\nThe method is stable when\n\nContent:\n[MATH: |R(\u03bb\u0394x)||< 1;|(1)/(1 + \u03bb\u0394x)||< 1.]\n\nContent:\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if\n[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| < 1.]\n\nContent:\nSince [MATH: 1 + \\lambda\\Delta x > 1] for any positive step size [MATH: \\Delta x,] we have\n\nContent:\n[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| < 1]\n\nContent:\nfor all [MATH: \\Delta x > 0.] So, the implicit Euler method is absolutely stable!\n\nContent:\nThe diagram below shows the exact solution curve with the numerical steps of both the explicit and the implicit Euler methods for the value [MATH: \\lambda\\Delta x = 2.]\nWe saw before that the explicit method oscillates between the values [MATH: -1] and [MATH: 1] and does not converge to [MATH: 0.]\n\nContent:\nConversely, the numerical steps of the implicit Euler method converge to [MATH: 0] quite quickly for the same step size!\n\nGraphic:\n[IMG: /graphics/a3f116666d9e9be9489eec23582bcc71]\n\nContent:\nImplicit methods tend to be more numerically stable than explicit methods."
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "594533",
+        "content_id": "21637",
+        "dom_id": "step-594533",
+        "selector": "#step-594533",
+        "step_anchor": "step-12",
+        "title": "Identifying True Statements About the Stability of Other Methods",
+        "key_prerequisites": [
+          {
+            "topic_id": "3247",
+            "name": "The Modified Euler Method",
+            "href": "/topics/3247",
+            "type": ""
+          },
+          {
+            "topic_id": "6373",
+            "name": "The Trapezoidal Method",
+            "href": "/topics/6373",
+            "type": ""
+          },
+          {
+            "topic_id": "6396",
+            "name": "The Implicit Euler Method",
+            "href": "/topics/6396",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>For the initial value problem <span class=\"math\">[MATH: y&#x27; = f(x,y), y(x_0) = y_0,]</span> the modified Euler method can be expressed as the update formula</p><p><span class=\"math\">[MATH: \u0394y_{n}^{(p)}|= f(x_{n}, y_{n}) \u22c5 \u0394x,; y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} + \u0394y_{n}^{(p)})) \u22c5 \u0394x.]</span></p><p>Which of the following statements are true when testing the stability of the modified Euler method on the test equation <span class=\"math\">[MATH: y&#x27;=-\\lambda y]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \\geq 0, \\lambda = 12,]</span> and step size <span class=\"math\">[MATH: \\Delta x?]</span> </p><ol><li><p>  The stability function is <span class=\"math\">[MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.]</span> </p></li><li><p>  The stability region is <span class=\"math\">[MATH: \\left|72\\left(\\Delta x - \\dfrac16\\right)^2\\right| &lt; 1.]</span> </p></li><li><p>  The method is absolutely stable. </p></li><li><p>  The method is stable for step size <span class=\"math\">[MATH: \\Delta x = 0.15.]</span> </p></li></ol><p><em>Hint:</em> The stability function <span class=\"math\">[MATH: R]</span> is given by <span class=\"math\">[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n.]</span></p>",
+            "readable_text": "For the initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] the modified Euler method can be expressed as the update formula\n\n[MATH: \u0394y_{n}^{(p)}|= f(x_{n}, y_{n}) \u22c5 \u0394x,; y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} + \u0394y_{n}^{(p)})) \u22c5 \u0394x.]\n\nWhich of the following statements are true when testing the stability of the modified Euler method on the test equation [MATH: y'=-\\lambda y] with [MATH: y = y(x), y(0) = 1, x \\geq 0, \\lambda = 12,] and step size [MATH: \\Delta x?]\n\n1. The stability function is [MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.]\n2. The stability region is [MATH: \\left|72\\left(\\Delta x - \\dfrac16\\right)^2\\right| < 1.]\n3. The method is absolutely stable.\n4. The method is stable for step size [MATH: \\Delta x = 0.15.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n+1} = R(\\lambda\\Delta x)y_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method  <span class=\"math\">[MATH: y_{n+1} = y_n + \\Delta y_n]</span> is stable for a given step size <span class=\"math\">[MATH: \\Delta x]</span> if, when applied to the test equation<br/><span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda &gt; 0,]</span><br/>the numerical solution satisfies <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty,]</span> just like the exact solution.</p><p>When a method is applied to the test equation, the update takes the form<br/><span class=\"math\">[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]</span><br/>where <span class=\"math\">[MATH: R(\\lambda\\Delta x)]</span> is the stability function of the method. The set of values for which the method is stable, given by <span class=\"math\">[MATH: |R(\\lambda\\Delta x)| &lt; 1,]</span> is called the stability region of the method.</p><p>A method that is stable for all possible values <span class=\"math\">[MATH: \\lambda\\Delta x &gt; 0]</span> is called absolutely stable.</p><p>Now, let&#x27;s check the stability of the modified Euler Method by applying it to the test equation<br/><span class=\"math\">[MATH: y&#x27; = -12y, \\qquad y(0) = 1.]</span></p><p>We now examine our statements:</p><ul><li><p>Applying the modified Euler method to this test equation, we get the following:\n<span class=\"math\">[MATH: y_{n} + \u0394y_{n}^{(p)}|= y_{n} + f(x_{n}, y_{n}) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x]</span>\nThus,\n<span class=\"math\">[MATH: y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 12y_{n} \u2212 12(y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 24y_{n} + 144y_{n} \u22c5 \u0394x) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x + 72y_{n} \u22c5 (\u0394x)^{2}; = [1 \u2212 12\u0394x + 72(\u0394x)^{2}]y_{n}.]</span>\nSo, the stability function is <span class=\"math\">[MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.]</span> Hence, statement I is true.</p></li><li><p>The method is stable when\n<span class=\"math\">[MATH: |R(12\u0394x)||&lt; 1;|1 \u2212 12\u0394x + 72(\u0394x)^{2}||&lt; 1;|72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)||&lt; 1.]</span>\nTherefore, <span class=\"math\">[MATH: y_n]</span> converges to <span class=\"math\">[MATH: 0]</span> as <span class=\"math\">[MATH: n \\to \\infty]</span> if and only if\n<span class=\"math\">[MATH: \\left|72\\left(\\Delta x - \\dfrac1{12}\\right)^2 + \\dfrac12\\right| &lt; 1.]</span>\nHence, statement II is false.</p></li><li><p>Now, since the argument of the absolute value is always non-negative, we can remove the absolute value. So, we have\n<span class=\"math\">[MATH: 72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)|&lt; 1; 72(\u0394x \u2212 (1)/(12))^{2}|&lt; (1)/(2); (\u0394x \u2212 (1)/(12))^{2}|&lt; (1)/(144); \u2212 (1)/(12) &lt; \u0394x \u2212 (1)/(12)|&lt; (1)/(12); 0 &lt; \u0394x|&lt; (1)/(6)]</span>\nThus, the modified Euler method is not absolutely stable, and statement III is false.</p></li><li><p>Finally, since it satisfies this inequality, the modified Euler method is stable for step size <span class=\"math\">[MATH: \\Delta x = 0.15,]</span> and hence statement IV is true.</p></li></ul><p>In conclusion, the correct answer is &quot;I and IV only&quot;.</p>",
+            "readable_text": "A numerical method [MATH: y_{n+1} = y_n + \\Delta y_n] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nWhen a method is applied to the test equation, the update takes the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is the stability function of the method. The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nA method that is stable for all possible values [MATH: \\lambda\\Delta x > 0] is called absolutely stable.\n\nNow, let's check the stability of the modified Euler Method by applying it to the test equation\n[MATH: y' = -12y, \\qquad y(0) = 1.]\n\nWe now examine our statements:\n\n- Applying the modified Euler method to this test equation, we get the following:\n[MATH: y_{n} + \u0394y_{n}^{(p)}|= y_{n} + f(x_{n}, y_{n}) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x]\nThus,\n[MATH: y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 12y_{n} \u2212 12(y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 24y_{n} + 144y_{n} \u22c5 \u0394x) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x + 72y_{n} \u22c5 (\u0394x)^{2}; = [1 \u2212 12\u0394x + 72(\u0394x)^{2}]y_{n}.]\nSo, the stability function is [MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.] Hence, statement I is true.\n- The method is stable when\n[MATH: |R(12\u0394x)||< 1;|1 \u2212 12\u0394x + 72(\u0394x)^{2}||< 1;|72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)||< 1.]\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if\n[MATH: \\left|72\\left(\\Delta x - \\dfrac1{12}\\right)^2 + \\dfrac12\\right| < 1.]\nHence, statement II is false.\n- Now, since the argument of the absolute value is always non-negative, we can remove the absolute value. So, we have\n[MATH: 72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)|< 1; 72(\u0394x \u2212 (1)/(12))^{2}|< (1)/(2); (\u0394x \u2212 (1)/(12))^{2}|< (1)/(144); \u2212 (1)/(12) < \u0394x \u2212 (1)/(12)|< (1)/(12); 0 < \u0394x|< (1)/(6)]\nThus, the modified Euler method is not absolutely stable, and statement III is false.\n- Finally, since it satisfies this inequality, the modified Euler method is stable for step size [MATH: \\Delta x = 0.15,] and hence statement IV is true.\n\nIn conclusion, the correct answer is \"I and IV only\".",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFor the initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] the modified Euler method can be expressed as the update formula\n\n[MATH: \u0394y_{n}^{(p)}|= f(x_{n}, y_{n}) \u22c5 \u0394x,; y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} + \u0394y_{n}^{(p)})) \u22c5 \u0394x.]\n\nWhich of the following statements are true when testing the stability of the modified Euler method on the test equation [MATH: y'=-\\lambda y] with [MATH: y = y(x), y(0) = 1, x \\geq 0, \\lambda = 12,] and step size [MATH: \\Delta x?]\n\n1. The stability function is [MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.]\n2. The stability region is [MATH: \\left|72\\left(\\Delta x - \\dfrac16\\right)^2\\right| < 1.]\n3. The method is absolutely stable.\n4. The method is stable for step size [MATH: \\Delta x = 0.15.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n+1} = R(\\lambda\\Delta x)y_n.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method [MATH: y_{n+1} = y_n + \\Delta y_n] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nWhen a method is applied to the test equation, the update takes the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is the stability function of the method. The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nA method that is stable for all possible values [MATH: \\lambda\\Delta x > 0] is called absolutely stable.\n\nNow, let's check the stability of the modified Euler Method by applying it to the test equation\n[MATH: y' = -12y, \\qquad y(0) = 1.]\n\nWe now examine our statements:\n\n- Applying the modified Euler method to this test equation, we get the following:\n[MATH: y_{n} + \u0394y_{n}^{(p)}|= y_{n} + f(x_{n}, y_{n}) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x]\nThus,\n[MATH: y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 12y_{n} \u2212 12(y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 24y_{n} + 144y_{n} \u22c5 \u0394x) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x + 72y_{n} \u22c5 (\u0394x)^{2}; = [1 \u2212 12\u0394x + 72(\u0394x)^{2}]y_{n}.]\nSo, the stability function is [MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.] Hence, statement I is true.\n- The method is stable when\n[MATH: |R(12\u0394x)||< 1;|1 \u2212 12\u0394x + 72(\u0394x)^{2}||< 1;|72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)||< 1.]\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if\n[MATH: \\left|72\\left(\\Delta x - \\dfrac1{12}\\right)^2 + \\dfrac12\\right| < 1.]\nHence, statement II is false.\n- Now, since the argument of the absolute value is always non-negative, we can remove the absolute value. So, we have\n[MATH: 72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)|< 1; 72(\u0394x \u2212 (1)/(12))^{2}|< (1)/(2); (\u0394x \u2212 (1)/(12))^{2}|< (1)/(144); \u2212 (1)/(12) < \u0394x \u2212 (1)/(12)|< (1)/(12); 0 < \u0394x|< (1)/(6)]\nThus, the modified Euler method is not absolutely stable, and statement III is false.\n- Finally, since it satisfies this inequality, the modified Euler method is stable for step size [MATH: \\Delta x = 0.15,] and hence statement IV is true.\n\nIn conclusion, the correct answer is \"I and IV only\"."
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "332535",
+        "dom_id": "question-332535",
+        "selector": "#question-332535",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following statements are true when testing the stability of the implicit Euler method on the test equation <span class=\"math\">[MATH: y^{\u2032} = \u2212 \u03bby]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,]</span> and step size <span class=\"math\">[MATH: \u0394x?]</span></p><ol><li><p>  The stability function is <span class=\"math\">[MATH: R(3\u0394x) = (1)/(1 + 3\u0394x).]</span> </p></li><li><p>  The stability region is <span class=\"math\">[MATH: |(1)/(1 \u2212 3\u0394x)|&lt; 1.]</span> </p></li><li><p>  The method is absolutely stable. </p></li><li><p>  The method is <strong>unstable</strong> for step size <span class=\"math\">[MATH: \u0394x = 0.25.]</span> </p></li></ol><p><em>Hint:</em> The stability function <span class=\"math\">[MATH: R]</span> is given by <span class=\"math\">[MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]</span></p>",
+          "readable_text": "Which of the following statements are true when testing the stability of the implicit Euler method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,] and step size [MATH: \u0394x?]\n\n1. The stability function is [MATH: R(3\u0394x) = (1)/(1 + 3\u0394x).]\n2. The stability region is [MATH: |(1)/(1 \u2212 3\u0394x)|< 1.]\n3. The method is absolutely stable.\n4. The method is unstable for step size [MATH: \u0394x = 0.25.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332535-a",
+            "content_type": "text",
+            "normalized_html": "<p>II and IV only</p>",
+            "readable_text": "II and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332535-b",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332535-c",
+            "content_type": "text",
+            "normalized_html": "<p>I and IV only</p>",
+            "readable_text": "I and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332535-d",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332535-e",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following statements are true when testing the stability of the implicit Euler method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,] and step size [MATH: \u0394x?]\n\n1. The stability function is [MATH: R(3\u0394x) = (1)/(1 + 3\u0394x).]\n2. The stability region is [MATH: |(1)/(1 \u2212 3\u0394x)|< 1.]\n3. The method is absolutely stable.\n4. The method is unstable for step size [MATH: \u0394x = 0.25.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]\n\nChoices:\na. II and IV only\nb. II only\nc. I and IV only\nd. II and III only\ne. I and III only"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "332571",
+        "dom_id": "question-332571",
+        "selector": "#question-332571",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following statements are true when testing the stability of the trapezoidal method on the test equation <span class=\"math\">[MATH: y^{\u2032} = \u2212 \u03bby]</span> with <span class=\"math\">[MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,]</span> and step size <span class=\"math\">[MATH: \u0394x?]</span></p><ol><li><p>  The stability function is <span class=\"math\">[MATH: R(3\u0394x) = (1 \u2212 3\u0394x/2)/(1 + 3\u0394x/2).]</span> </p></li><li><p>  The stability region is <span class=\"math\">[MATH: |(9)/(2)(\u0394x \u2212 (2)/(3))^{2} + (1)/(2)|&lt; 1.]</span> </p></li><li><p>  The method is absolutely stable. </p></li><li><p>  The method is <strong>unstable</strong> for step size <span class=\"math\">[MATH: \u0394x = 2.5.]</span> </p></li></ol><p><em>Hint:</em> The stability function <span class=\"math\">[MATH: R]</span> is given by <span class=\"math\">[MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]</span></p>",
+          "readable_text": "Which of the following statements are true when testing the stability of the trapezoidal method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,] and step size [MATH: \u0394x?]\n\n1. The stability function is [MATH: R(3\u0394x) = (1 \u2212 3\u0394x/2)/(1 + 3\u0394x/2).]\n2. The stability region is [MATH: |(9)/(2)(\u0394x \u2212 (2)/(3))^{2} + (1)/(2)|< 1.]\n3. The method is absolutely stable.\n4. The method is unstable for step size [MATH: \u0394x = 2.5.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332571-a",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332571-b",
+            "content_type": "text",
+            "normalized_html": "<p>I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332571-c",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332571-d",
+            "content_type": "text",
+            "normalized_html": "<p>I and IV only</p>",
+            "readable_text": "I and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332571-e",
+            "content_type": "text",
+            "normalized_html": "<p>II and IV only</p>",
+            "readable_text": "II and IV only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nWhich of the following statements are true when testing the stability of the trapezoidal method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,] and step size [MATH: \u0394x?]\n\n1. The stability function is [MATH: R(3\u0394x) = (1 \u2212 3\u0394x/2)/(1 + 3\u0394x/2).]\n2. The stability region is [MATH: |(9)/(2)(\u0394x \u2212 (2)/(3))^{2} + (1)/(2)|< 1.]\n3. The method is absolutely stable.\n4. The method is unstable for step size [MATH: \u0394x = 2.5.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]\n\nChoices:\na. I and III only\nb. I and II only\nc. II and III only\nd. I and IV only\ne. II and IV only"
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "594537",
+        "content_id": "14470",
+        "dom_id": "step-594537",
+        "selector": "#step-594537",
+        "step_anchor": "step-16",
+        "title": "Table of Results",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A table of some numerical methods, their stability functions, and stability regions is shown below. These results assume the test equation <span class=\"math\">[MATH: y&#x27; = -\\lambda y]</span> (where <span class=\"math\">[MATH: \\lambda &gt; 0]</span>) with step size <span class=\"math\">[MATH: \\Delta x]</span>.</p>",
+            "readable_text": "A table of some numerical methods, their stability functions, and stability regions is shown below. These results assume the test equation [MATH: y' = -\\lambda y] (where [MATH: \\lambda > 0]) with step size [MATH: \\Delta x].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p>Numerical Method</p></td><td><p>Stability Function <span class=\"math\">[MATH: R(\\lambda \\Delta x)]</span></p></td><td><p>Stability Region <span class=\"math\">[MATH: |R(\\lambda \\Delta x)| &lt; 1]</span></p></td><td><p>Absolutely Stable?</p></td></tr><tr><td><p>Euler&#x27;s</p></td><td><p><span class=\"math\">[MATH: 1 - \\lambda \\Delta x]</span></p></td><td><p><span class=\"math\">[MATH: 0 &lt; \\lambda \\Delta x &lt; 2]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}\\times]</span></p></td></tr><tr><td><p>Implicit Euler</p></td><td><p><span class=\"math\">[MATH: \\dfrac{1}{1 + \\lambda \\Delta x}]</span></p></td><td><p>All values <span class=\"math\">[MATH: \\lambda \\Delta x &gt; 0]</span></p></td><td><p><span class=\"math\">[MATH: \\color{green}\\checkmark]</span></p></td></tr><tr><td><p>Trapezoidal</p></td><td><p><span class=\"math\">[MATH: \\dfrac{1 - \\lambda \\Delta x/2}{1 + \\lambda \\Delta x/2}]</span></p></td><td><p>All values <span class=\"math\">[MATH: \\lambda \\Delta x &gt; 0]</span></p></td><td><p><span class=\"math\">[MATH: \\color{green}\\checkmark]</span></p></td></tr><tr><td><p>Modified Euler</p></td><td><p><span class=\"math\">[MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2}]</span></p></td><td><p><span class=\"math\">[MATH: 0 &lt; \\lambda\\Delta x &lt; 2]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}\\times]</span></p></td></tr><tr><td><p>Runge-Kutta (RK4)</p></td><td><p><span class=\"math\">[MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2} - \\dfrac{(\\lambda\\Delta x)^3}{6} + \\dfrac{(\\lambda\\Delta x)^4}{24}]</span></p></td><td><p><span class=\"math\">[MATH: 0 &lt; \\lambda\\Delta x &lt; 2.785\\ldots]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}\\times]</span></p></td></tr></table>",
+            "readable_text": "| Numerical Method | Stability Function [MATH: R(\\lambda \\Delta x)] | Stability Region [MATH: |R(\\lambda \\Delta x)| < 1] | Absolutely Stable? |\n| Euler's | [MATH: 1 - \\lambda \\Delta x] | [MATH: 0 < \\lambda \\Delta x < 2] | [MATH: \\color{red}\\times] |\n| Implicit Euler | [MATH: \\dfrac{1}{1 + \\lambda \\Delta x}] | All values [MATH: \\lambda \\Delta x > 0] | [MATH: \\color{green}\\checkmark] |\n| Trapezoidal | [MATH: \\dfrac{1 - \\lambda \\Delta x/2}{1 + \\lambda \\Delta x/2}] | All values [MATH: \\lambda \\Delta x > 0] | [MATH: \\color{green}\\checkmark] |\n| Modified Euler | [MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2}] | [MATH: 0 < \\lambda\\Delta x < 2] | [MATH: \\color{red}\\times] |\n| Runge-Kutta (RK4) | [MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2} - \\dfrac{(\\lambda\\Delta x)^3}{6} + \\dfrac{(\\lambda\\Delta x)^4}{24}] | [MATH: 0 < \\lambda\\Delta x < 2.785\\ldots] | [MATH: \\color{red}\\times] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nA table of some numerical methods, their stability functions, and stability regions is shown below. These results assume the test equation [MATH: y' = -\\lambda y] (where [MATH: \\lambda > 0]) with step size [MATH: \\Delta x].\n\nContent:\n| Numerical Method | Stability Function [MATH: R(\\lambda \\Delta x)] | Stability Region [MATH: |R(\\lambda \\Delta x)| < 1] | Absolutely Stable? |\n| Euler's | [MATH: 1 - \\lambda \\Delta x] | [MATH: 0 < \\lambda \\Delta x < 2] | [MATH: \\color{red}\\times] |\n| Implicit Euler | [MATH: \\dfrac{1}{1 + \\lambda \\Delta x}] | All values [MATH: \\lambda \\Delta x > 0] | [MATH: \\color{green}\\checkmark] |\n| Trapezoidal | [MATH: \\dfrac{1 - \\lambda \\Delta x/2}{1 + \\lambda \\Delta x/2}] | All values [MATH: \\lambda \\Delta x > 0] | [MATH: \\color{green}\\checkmark] |\n| Modified Euler | [MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2}] | [MATH: 0 < \\lambda\\Delta x < 2] | [MATH: \\color{red}\\times] |\n| Runge-Kutta (RK4) | [MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2} - \\dfrac{(\\lambda\\Delta x)^3}{6} + \\dfrac{(\\lambda\\Delta x)^4}{24}] | [MATH: 0 < \\lambda\\Delta x < 2.785\\ldots] | [MATH: \\color{red}\\times] |"
+      },
+      {
+        "lesson_index": 15,
+        "step_index": 9,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "594538",
+        "content_id": "21639",
+        "dom_id": "step-594538",
+        "selector": "#step-594538",
+        "step_anchor": "step-17",
+        "title": "Determining Stability in Other Methods",
+        "key_prerequisites": [
+          {
+            "topic_id": "3248",
+            "name": "The RK4 Method",
+            "href": "/topics/3248",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>For which of the following values is the Runge\u2013Kutta Method (RK4) stable, given that <span class=\"math\">[MATH: \\lambda]</span> is the parameter of the test equation?</p><ol><li><p> <span class=\"math\">[MATH: \\lambda\\Delta x = 0.6]</span> </p></li><li><p> <span class=\"math\">[MATH: \\lambda\\Delta x = 1.4]</span> </p></li><li><p> <span class=\"math\">[MATH: \\lambda\\Delta x = 2.8]</span> </p></li><li><p> <span class=\"math\">[MATH: \\lambda\\Delta x = 3.3]</span> </p></li></ol><p><em>Hint: The stability function <span class=\"math\">[MATH: R]</span> of the RK4 method is given by</em>\n<span class=\"math\">[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]</span></p>",
+            "readable_text": "For which of the following values is the Runge\u2013Kutta Method (RK4) stable, given that [MATH: \\lambda] is the parameter of the test equation?\n\n1. [MATH: \\lambda\\Delta x = 0.6]\n2. [MATH: \\lambda\\Delta x = 1.4]\n3. [MATH: \\lambda\\Delta x = 2.8]\n4. [MATH: \\lambda\\Delta x = 3.3]\n\nHint: The stability function [MATH: R] of the RK4 method is given by\n[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>A numerical method\n<span class=\"math\">[MATH: y_{n+1} = y_n + \\Delta y_n]</span>\nis stable for a given step size <span class=\"math\">[MATH: \\Delta x]</span> if, when applied to the test equation\n<span class=\"math\">[MATH: y&#x27; = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda &gt; 0,]</span>\nthe numerical solution satisfies <span class=\"math\">[MATH: y_n \\to 0]</span> as <span class=\"math\">[MATH: n \\to \\infty,]</span> just like the exact solution.</p><p>When a method is applied to the test equation, the update takes the form\n<span class=\"math\">[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]</span>\nwhere <span class=\"math\">[MATH: R(\\lambda\\Delta x)]</span> is referred to as the stability function of the method. The set of values for which the method is stable, given by <span class=\"math\">[MATH: |R(\\lambda\\Delta x)| &lt; 1,]</span> is called the stability region of the method.</p><p>The stability function of the RK4 Method is\n<span class=\"math\">[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]</span></p><p>Let&#x27;s check the stability of the RK4 Method for each of the given values in turn.</p><ul><li><p>For <span class=\"math\">[MATH: \\lambda\\Delta x = 0.6,]</span> we have\n<span class=\"math\">[MATH: |R(0.6)||=|1 \u2212 0.6 + ((0.6)^{2})/(2) \u2212 ((0.6)^{3})/(6) + ((0.6)^{4})/(24)|; =|(2747)/(5000)|; = 0.5494 &lt; 1.\u2713]</span>\nSince this value falls <em>within</em> the stability region, the RK4 Method is stable.</p></li><li><p>For <span class=\"math\">[MATH: \\lambda\\Delta x = 1.4,]</span> we have\n<span class=\"math\">[MATH: |R(1.4)||=|1 \u2212 1.4 + ((1.4)^{2})/(2) \u2212 ((1.4)^{3})/(6) + ((1.4)^{4})/(24)|; =|(4241)/(15000)|; = 0.282\u2026 &lt; 1.\u2713]</span>\nSince this value falls <em>within</em> the stability region, the RK4 Method is stable.</p></li><li><p>For <span class=\"math\">[MATH: \\lambda\\Delta x = 2.8,]</span> we have\n<span class=\"math\">[MATH: |R(2.8)||=|1 \u2212 2.8 + ((2.8)^{2})/(2) \u2212 ((2.8)^{3})/(6) + ((2.8)^{4})/(24)|; =|(639)/(625)|; = 1.0224 &gt; 1.\u00d7]</span>\nSince this value falls <em>outside</em> the stability region, the RK4 Method is unstable.</p></li><li><p>For <span class=\"math\">[MATH: \\lambda\\Delta x = 3.3,]</span> we have\n<span class=\"math\">[MATH: |R(3.3)||=|1 \u2212 3.3 + ((3.3)^{2})/(2) \u2212 ((3.3)^{3})/(6) + ((3.3)^{4})/(24)|; =|(167747)/(80000)|; = 2.096\u2026 &gt; 1.\u00d7]</span>\nSince this value falls <em>outside</em> the stability region, the RK4 Method is unstable.</p></li></ul><p>Therefore, the correct answer is &quot;I and II only&quot;.</p><p>Note that the stability region of the RK4 Method is <span class=\"math\">[MATH: 0 &lt; \\lambda\\Delta x &lt; 2.785\\ldots,]</span> so it is not absolutely stable.</p>",
+            "readable_text": "A numerical method\n[MATH: y_{n+1} = y_n + \\Delta y_n]\nis stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nWhen a method is applied to the test equation, the update takes the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is referred to as the stability function of the method. The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nThe stability function of the RK4 Method is\n[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]\n\nLet's check the stability of the RK4 Method for each of the given values in turn.\n\n- For [MATH: \\lambda\\Delta x = 0.6,] we have\n[MATH: |R(0.6)||=|1 \u2212 0.6 + ((0.6)^{2})/(2) \u2212 ((0.6)^{3})/(6) + ((0.6)^{4})/(24)|; =|(2747)/(5000)|; = 0.5494 < 1.\u2713]\nSince this value falls within the stability region, the RK4 Method is stable.\n- For [MATH: \\lambda\\Delta x = 1.4,] we have\n[MATH: |R(1.4)||=|1 \u2212 1.4 + ((1.4)^{2})/(2) \u2212 ((1.4)^{3})/(6) + ((1.4)^{4})/(24)|; =|(4241)/(15000)|; = 0.282\u2026 < 1.\u2713]\nSince this value falls within the stability region, the RK4 Method is stable.\n- For [MATH: \\lambda\\Delta x = 2.8,] we have\n[MATH: |R(2.8)||=|1 \u2212 2.8 + ((2.8)^{2})/(2) \u2212 ((2.8)^{3})/(6) + ((2.8)^{4})/(24)|; =|(639)/(625)|; = 1.0224 > 1.\u00d7]\nSince this value falls outside the stability region, the RK4 Method is unstable.\n- For [MATH: \\lambda\\Delta x = 3.3,] we have\n[MATH: |R(3.3)||=|1 \u2212 3.3 + ((3.3)^{2})/(2) \u2212 ((3.3)^{3})/(6) + ((3.3)^{4})/(24)|; =|(167747)/(80000)|; = 2.096\u2026 > 1.\u00d7]\nSince this value falls outside the stability region, the RK4 Method is unstable.\n\nTherefore, the correct answer is \"I and II only\".\n\nNote that the stability region of the RK4 Method is [MATH: 0 < \\lambda\\Delta x < 2.785\\ldots,] so it is not absolutely stable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nFor which of the following values is the Runge\u2013Kutta Method (RK4) stable, given that [MATH: \\lambda] is the parameter of the test equation?\n\n1. [MATH: \\lambda\\Delta x = 0.6]\n2. [MATH: \\lambda\\Delta x = 1.4]\n3. [MATH: \\lambda\\Delta x = 2.8]\n4. [MATH: \\lambda\\Delta x = 3.3]\n\nHint: The stability function [MATH: R] of the RK4 method is given by\n[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method\n[MATH: y_{n+1} = y_n + \\Delta y_n]\nis stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nWhen a method is applied to the test equation, the update takes the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is referred to as the stability function of the method. The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nThe stability function of the RK4 Method is\n[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]\n\nLet's check the stability of the RK4 Method for each of the given values in turn.\n\n- For [MATH: \\lambda\\Delta x = 0.6,] we have\n[MATH: |R(0.6)||=|1 \u2212 0.6 + ((0.6)^{2})/(2) \u2212 ((0.6)^{3})/(6) + ((0.6)^{4})/(24)|; =|(2747)/(5000)|; = 0.5494 < 1.\u2713]\nSince this value falls within the stability region, the RK4 Method is stable.\n- For [MATH: \\lambda\\Delta x = 1.4,] we have\n[MATH: |R(1.4)||=|1 \u2212 1.4 + ((1.4)^{2})/(2) \u2212 ((1.4)^{3})/(6) + ((1.4)^{4})/(24)|; =|(4241)/(15000)|; = 0.282\u2026 < 1.\u2713]\nSince this value falls within the stability region, the RK4 Method is stable.\n- For [MATH: \\lambda\\Delta x = 2.8,] we have\n[MATH: |R(2.8)||=|1 \u2212 2.8 + ((2.8)^{2})/(2) \u2212 ((2.8)^{3})/(6) + ((2.8)^{4})/(24)|; =|(639)/(625)|; = 1.0224 > 1.\u00d7]\nSince this value falls outside the stability region, the RK4 Method is unstable.\n- For [MATH: \\lambda\\Delta x = 3.3,] we have\n[MATH: |R(3.3)||=|1 \u2212 3.3 + ((3.3)^{2})/(2) \u2212 ((3.3)^{3})/(6) + ((3.3)^{4})/(24)|; =|(167747)/(80000)|; = 2.096\u2026 > 1.\u00d7]\nSince this value falls outside the stability region, the RK4 Method is unstable.\n\nTherefore, the correct answer is \"I and II only\".\n\nNote that the stability region of the RK4 Method is [MATH: 0 < \\lambda\\Delta x < 2.785\\ldots,] so it is not absolutely stable."
+      },
+      {
+        "lesson_index": 16,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "332737",
+        "dom_id": "question-332737",
+        "selector": "#question-332737",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>For which of the following values is the implicit Euler method stable, given that <span class=\"math\">[MATH: \u03bb]</span> is the parameter of the test equation?</p><ol><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 0.25]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 1]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 1.5]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 9]</span> </p></li></ol><p><em>Hint: The stability function <span class=\"math\">[MATH: R]</span> of the implicit Euler method is given by</em>\n<span class=\"math\">[MATH: R(\u03bb\u0394) = (1)/(1 + \u03bb\u0394x).]</span> </p>",
+          "readable_text": "For which of the following values is the implicit Euler method stable, given that [MATH: \u03bb] is the parameter of the test equation?\n\n1. [MATH: \u03bb\u0394x = 0.25]\n2. [MATH: \u03bb\u0394x = 1]\n3. [MATH: \u03bb\u0394x = 1.5]\n4. [MATH: \u03bb\u0394x = 9]\n\nHint: The stability function [MATH: R] of the implicit Euler method is given by\n[MATH: R(\u03bb\u0394) = (1)/(1 + \u03bb\u0394x).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332737-a",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, III, and IV</p>",
+            "readable_text": "I, II, III, and IV",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332737-b",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III only</p>",
+            "readable_text": "I, II, and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332737-c",
+            "content_type": "text",
+            "normalized_html": "<p>None</p>",
+            "readable_text": "None",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332737-d",
+            "content_type": "text",
+            "normalized_html": "<p>I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332737-e",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFor which of the following values is the implicit Euler method stable, given that [MATH: \u03bb] is the parameter of the test equation?\n\n1. [MATH: \u03bb\u0394x = 0.25]\n2. [MATH: \u03bb\u0394x = 1]\n3. [MATH: \u03bb\u0394x = 1.5]\n4. [MATH: \u03bb\u0394x = 9]\n\nHint: The stability function [MATH: R] of the implicit Euler method is given by\n[MATH: R(\u03bb\u0394) = (1)/(1 + \u03bb\u0394x).]\n\nChoices:\na. I, II, III, and IV\nb. I, II, and III only\nc. None\nd. I and II only\ne. I only"
+      },
+      {
+        "lesson_index": 17,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "332744",
+        "dom_id": "question-332744",
+        "selector": "#question-332744",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>For which of the following values is the Runge-Kutta Method (RK4) stable, given that <span class=\"math\">[MATH: \u03bb]</span> is the parameter of the test equation?</p><ol><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 0.4]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 1]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 2]</span> </p></li><li><p> <span class=\"math\">[MATH: \u03bb\u0394x = 3]</span> </p></li></ol><p><em>Hint: The stability function <span class=\"math\">[MATH: R]</span> of the RK4 method is given by</em>\n<span class=\"math\">[MATH: R(\u03bb\u0394) = 1 \u2212 \u03bb\u0394x + ((\u03bb\u0394x)^{2})/(2) \u2212 ((\u03bb\u0394x)^{3})/(6) + ((\u03bb\u0394x)^{4})/(24).]</span> </p>",
+          "readable_text": "For which of the following values is the Runge-Kutta Method (RK4) stable, given that [MATH: \u03bb] is the parameter of the test equation?\n\n1. [MATH: \u03bb\u0394x = 0.4]\n2. [MATH: \u03bb\u0394x = 1]\n3. [MATH: \u03bb\u0394x = 2]\n4. [MATH: \u03bb\u0394x = 3]\n\nHint: The stability function [MATH: R] of the RK4 method is given by\n[MATH: R(\u03bb\u0394) = 1 \u2212 \u03bb\u0394x + ((\u03bb\u0394x)^{2})/(2) \u2212 ((\u03bb\u0394x)^{3})/(6) + ((\u03bb\u0394x)^{4})/(24).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-332744-a",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-332744-b",
+            "content_type": "text",
+            "normalized_html": "<p>None</p>",
+            "readable_text": "None",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-332744-c",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, III, and IV</p>",
+            "readable_text": "I, II, III, and IV",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-332744-d",
+            "content_type": "text",
+            "normalized_html": "<p>I, II, and III only</p>",
+            "readable_text": "I, II, and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-332744-e",
+            "content_type": "text",
+            "normalized_html": "<p>I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFor which of the following values is the Runge-Kutta Method (RK4) stable, given that [MATH: \u03bb] is the parameter of the test equation?\n\n1. [MATH: \u03bb\u0394x = 0.4]\n2. [MATH: \u03bb\u0394x = 1]\n3. [MATH: \u03bb\u0394x = 2]\n4. [MATH: \u03bb\u0394x = 3]\n\nHint: The stability function [MATH: R] of the RK4 method is given by\n[MATH: R(\u03bb\u0394) = 1 \u2212 \u03bb\u0394x + ((\u03bb\u0394x)^{2})/(2) \u2212 ((\u03bb\u0394x)^{3})/(6) + ((\u03bb\u0394x)^{4})/(24).]\n\nChoices:\na. I only\nb. None\nc. I, II, III, and IV\nd. I, II, and III only\ne. I and II only"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWhen solving ODEs numerically:\n\nContent:\n- The solution is advanced in many steps.\n- Each step introduces a small error (LTE).\n- These errors propagate forward (contributing to GTE).\n\nContent:\nStability describes how a numerical method responds to these small perturbations.\n\nContent:\nA method is stable if small errors remain controlled as the computation proceeds.\nA method is unstable if small errors can grow rapidly, even when the true solution stays well-behaved.\n\nContent:\nStability determines how local errors turn into global errors: a method may be accurate in a single step, but if it is unstable, the global error can grow without bound.\n\nContent:\nOne way to study stability is to test a numerical method on the following test equation:\n\nContent:\n[MATH: y' = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda > 0]\n\nContent:\nThe exact solution of the test equation is [MATH: y(x) = e^{-\\lambda x},] which satisfies [MATH: y(x) \\to 0] as [MATH: x \\to \\infty.]\n\nContent:\nWe say that a numerical method with update formula [MATH: y_{n+1} = y_n + \\Delta y] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation, the numerical solution also satisfies\n\nContent:\n[MATH: y_n \\to 0 \\:\\text{ as }\\: n \\to \\infty.]\n\nContent:\nTo see how this works in practice, let's analyze the stability of Euler's method.\n\n---\n\nItem 2 \u2014 Tutorial: Stability of Euler's Method\n\nContent:\nWe will now check the stability of Euler's method by applying it to the test equation\n\nContent:\n[MATH: y' = -\\lambda y, \\qquad y(0)=1, \\quad x \\geq 0, \\quad \\lambda > 0.]\n\nContent:\nFirst, recall that, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] Euler's method is given by the update formula\n\nContent:\n[MATH: y_{n+1} = y_n + f(x_n, y_n) \\cdot \\Delta x.]\n\nContent:\nApplying Euler's method to the test equation, we get the following:\n\nContent:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n}) \u22c5 \u0394x; = y_{n} \u2212 \u03bby_{n} \u22c5 \u0394x; = (1 \u2212 \u03bb\u0394x)y_{n}]\n\nContent:\nNow, for stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, since [MATH: y_0=1,] we have\n\nContent:\n[MATH: y_{n}|= (1 \u2212 \u03bb\u0394x)y_{n \u2212 1}; = (1 \u2212 \u03bb\u0394x)((1 \u2212 \u03bb\u0394x)y_{n \u2212 2}); = (1 \u2212 \u03bb\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 \u03bb\u0394x)^{n}y_{0}; = (1 \u2212 \u03bb\u0394x)^{n}.]\n\nContent:\nLet's define [MATH: R(\\lambda\\Delta x) = 1 - \\lambda\\Delta x.] Then, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if [MATH: |R(\\lambda\\Delta x)| < 1.] The function [MATH: R(\\lambda\\Delta x)] is called the stability function of Euler's method.\n\nContent:\nExpanding this inequality, we get\n\nContent:\n[MATH: |R(\u03bb\u0394x)||< 1;|1 \u2212 \u03bb\u0394x||< 1; \u2212 1 < 1 \u2212 \u03bb\u0394x|< 1; \u2212 2 < \u2212 \u03bb\u0394x|< 0; 0 < \u03bb\u0394x|< 2.]\n\nContent:\nThis means that Euler's method is stable when applied to the test equation for values in the region [MATH: 0 < \\lambda\\Delta x < 2.]\n\nContent:\nThe diagram below shows the exact solution curve with the numerical steps of Euler's method for the cases [MATH: \\lambda\\Delta x < 2] and [MATH: \\lambda\\Delta x = 2,] with [MATH: \\lambda > 0] fixed.\n\nGraphic:\n[IMG: /graphics/f723b0574e30e665499be59c3e6e5136]\n\nContent:\nNotice that, for [MATH: \\lambda\\Delta x < 2,] the numerical values converge to [MATH: 0] (stable), whereas for [MATH: \\lambda\\Delta x = 2,] the values oscillate between [MATH: -1] and [MATH: 1] and do not converge to [MATH: 0] (unstable).\n\nContent:\nFor values [MATH: \\lambda\\Delta x > 2,] the numerical solution would grow in magnitude at each step, leading to rapidly diverging values.\n\n---\n\nItem 3 \u2014 Example: Identifying True Statements About the Stability of Euler's Method\n\nExample Prompt:\nWhich of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y' = -\\lambda y] with [MATH: y = y(x), \\, y(0) = 8, \\ x \\geq 0, \\, \\lambda = 6,] and step size [MATH: \\Delta x?]\n\n1. The update formula can be written as [MATH: y_{n+1} = \\left(1 - 6\\Delta x\\right)^n y_n.]\n2. The method is stable for [MATH: |1 - 6\\Delta x| < 1.]\n3. The method is stable for step size [MATH: \\Delta x = 0.1.]\n4. The method is unstable for step size [MATH: \\Delta x = 0.2.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method [MATH: y_{n+1} = y_n + \\Delta y_n] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 8, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nNow, let's check the stability of Euler's Method by applying it to the test equation\n[MATH: y' = -6y, \\qquad y(0) = 8.]\n\nFirst, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] Euler's method is given by the update formula\n[MATH: y_{n+1} = y_n + f(x_n,y_n) \\cdot \\Delta x.]\n\nNow, let's check our statements:\n\n- Applying Euler's method to the test equation, we get the following:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 6y_{n}) \u22c5 \u0394x; = y_{n} \u2212 6y_{n} \u22c5 \u0394x; = (1 \u2212 6\u0394x)y_{n}.]\nHence, statement I is false.\n- For stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, we have\n[MATH: y_{n}|= (1 \u2212 6\u0394x)y_{n \u2212 1}; = (1 \u2212 6\u0394x)((1 \u2212 6\u0394x)y_{n \u2212 2}); = (1 \u2212 6\u0394x)^{2}y_{n \u2212 2}; \u22ee\u22ee; = (1 \u2212 6\u0394x)^{n}y_{0}; = 8(1 \u2212 6\u0394x)^{n}.]\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if [MATH: \\left|1 - 6\\Delta x\\right| < 1,] as stated. Hence, statement II is true.\n- Expanding the inequality [MATH: \\left|1 - 6\\Delta x\\right| < 1,] we get\n[MATH: \u2212 1|< 1 \u2212 6\u0394x < 1; \u2212 2|< \u2212 6\u0394x < 0; 0|< 6\u0394x < 2; 0|< \u0394x < (1)/(3).]\nFinally, we determine stability for the given step sizes:\n\n- Since [MATH: \\Delta x = 0.1] satisfies the above inequality, Euler's method is stable for this value. Hence, statement III is true.\n- Since [MATH: \\Delta x = 0.2] also satisfies the above inequality, Euler's method is stable for this value. Hence, statement IV is false.\n\nIn conclusion, the correct answer is \"II and III only\".\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nWhich of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 4,] and step size [MATH: \u0394x?]\n\n1. The update formula can be written as [MATH: y_{n + 1} = (1 \u2212 4\u0394x)^{n}y_{n}.]\n2. The method is stable for [MATH: |1 \u2212 4\u0394x|< 1.]\n3. The method is stable for step size [MATH: \u0394x = 0.2.]\n4. The method is unstable for step size [MATH: \u0394x = 0.3.]\n\nChoices:\na. II and III only\nb. II, III, and IV only\nc. I, II, and III only\nd. III and IV only\ne. I, II, and IV only\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nWhich of the following statements are true when testing the stability of Euler's method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 5,] and step size [MATH: \u0394x?]\n\n1. The update formula can be written as [MATH: y_{n + 1} = (1 \u2212 5\u0394x)^{n}y_{n}.]\n2. The method is stable for [MATH: |1 \u2212 5\u0394x|< 1.]\n3. The method is stable for step size [MATH: \u0394x = 0.2.]\n4. The method is unstable for step size [MATH: \u0394x = 0.25.]\n\nChoices:\na. II, III, and IV only\nb. III and IV only\nc. I, II, and III only\nd. II and III only\ne. I, II, and IV only\n\n---\n\nItem 6 \u2014 Example: Determining Stability in Euler's Method\n\nExample Prompt:\nFor which of the following step sizes is Euler's Method stable, given that [MATH: \\lambda = 1] is the parameter of the test equation [MATH: y' = -\\lambda y] with [MATH: y = y(x), y(0) = 1, x \\geq 0,] and step size [MATH: \\Delta x?]\n\n1. [MATH: \\Delta x = 0.5]\n2. [MATH: \\Delta x = 0.9]\n3. [MATH: \\Delta x = 1.2]\n4. [MATH: \\Delta x = 1.8]\n\nHint: The stability function for Euler's method is given by [MATH: R(\\lambda\\Delta x) = 1 - \\lambda \\Delta x.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method [MATH: y_{n+1} = y_n + \\Delta y_n]is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nFor stability, we require that the following condition holds:\n\n[MATH: |R(\u03bb\u0394x)||< 1;|1 \u2212 \u03bb\u0394x||< 1]\n\nSolving this gives\n[MATH: 0 < \\lambda \\Delta x < 2.]\n\nThis means that Euler's method is stable when applied to the test equation for values in the region [MATH: 0 < \\lambda\\Delta x < 2.]\n\nIn our case, where [MATH: \\lambda=1,] this region simplifies to\n[MATH: 0|< \u0394x < 2.]\n\nNow, of the given step sizes:\n\n- [MATH: \\Delta x = 0.5] satisfies the inequality,\n- [MATH: \\Delta x = 0.9] satisfies the inequality,\n- [MATH: \\Delta x = 1.2] satisfies the inequality, and\n- [MATH: \\Delta x = 1.8] satisfies the inequality.\n\nTherefore, Euler's method is stable for all given step sizes.\n\nThus, the correct answer is \"I, II, III, and IV\".\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nFor which of the following values is Euler's method stable, given that [MATH: \u03bb] is the parameter of the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb > 0,] and step size [MATH: \u0394x?]\n\n1. [MATH: \u03bb\u0394x = 0.67]\n2. [MATH: \u03bb\u0394x = 1.20]\n3. [MATH: \u03bb\u0394x = 1.80]\n4. [MATH: \u03bb\u0394x = 2.25]\n\nHint: The stability function for Euler's method is given by [MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]\n\nChoices:\na. None\nb. I, II, and III only\nc. I only\nd. I, II, III, and IV\ne. I and II only\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nFor which of the following step sizes is Euler's Method unstable, given that [MATH: \u03bb = 20] is the parameter of the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb > 0,] and step size [MATH: \u0394x?]\n\n1. [MATH: \u0394x = 0.05]\n2. [MATH: \u0394x = 0.12]\n3. [MATH: \u0394x = 0.2]\n4. [MATH: \u0394x = 0.25]\n\nHint: The stability function for Euler's method is given by [MATH: R(\u03bb\u0394x) = 1 \u2212 \u03bb\u0394x.]\n\nChoices:\na. III and IV only\nb. I, II, III, and IV\nc. IV only\nd. None\ne. II, III, and IV only\n\n---\n\nItem 9 \u2014 Tutorial: Stability Functions, Stability Regions, and Absolute Stability\n\nContent:\nIn general, when a numerical method\n[MATH: y_{n+1} = y_n + \\Delta y_n]\nis applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nwe can write the update in the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is the stability function of the method.\n\nContent:\nFor stability, we require [MATH: y_n \\to 0] as [MATH: n \\to \\infty.] Here, since [MATH: y_0=1,]\n\nContent:\n[MATH: y_{n}|= R(\u03bb\u0394x)y_{n \u2212 1}; = (R(\u03bb\u0394x))^{2}y_{n \u2212 2}; \u22ee\u22ee; = (R(\u03bb\u0394x))^{n}y_{0}; = (R(\u03bb\u0394x))^{n}.]\n\nContent:\nAs a geometric sequence, this decays to [MATH: 0] as [MATH: n\\to\\infty] if and only if [MATH: |R(\\lambda\\Delta x)| < 1.]\n\nContent:\nThe set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nContent:\nA method that is stable for all possible values [MATH: \\lambda\\Delta x > 0] is called absolutely stable.\n\nContent:\nWe've seen that Euler's method is not absolutely stable, since its stability region is [MATH: 0 < \\lambda\\Delta x < 2.] But what about the implicit Euler method? Let's find out.\n\n---\n\nItem 10 \u2014 Tutorial: A Worked Example\n\nContent:\nNow, let's check the stability of the implicit Euler method by applying it to the test equation\n\nContent:\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0.]\n\nContent:\nFirst, recall that, for an initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] the implicit Euler method is given by the update formula\n\nContent:\n[MATH: y_{n+1} = y_n + f(x_{n+1},y_{n+1}) \\cdot \\Delta x.]\n\nContent:\nApplying the implicit Euler method to the test equation, we get the following:\n\nContent:\n[MATH: y_{n + 1}|= y_{n} + (\u2212 \u03bby_{n + 1}) \u22c5 \u0394x; y_{n + 1} + \u03bby_{n + 1} \u22c5 \u0394x|= y_{n}; y_{n + 1}(1 + \u03bb\u0394x)|= y_{n}; y_{n + 1}|= (1)/(1 + \u03bb\u0394x) \u22c5 y_{n}]\n\nContent:\nSo, the stability function is\n\nContent:\n[MATH: R(\\lambda\\Delta x) = \\dfrac{1}{1 + \\lambda\\Delta x}.]\n\nContent:\nThe method is stable when\n\nContent:\n[MATH: |R(\u03bb\u0394x)||< 1;|(1)/(1 + \u03bb\u0394x)||< 1.]\n\nContent:\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if\n[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| < 1.]\n\nContent:\nSince [MATH: 1 + \\lambda\\Delta x > 1] for any positive step size [MATH: \\Delta x,] we have\n\nContent:\n[MATH: \\left|\\dfrac{1}{1 + \\lambda\\Delta x}\\right| < 1]\n\nContent:\nfor all [MATH: \\Delta x > 0.] So, the implicit Euler method is absolutely stable!\n\nContent:\nThe diagram below shows the exact solution curve with the numerical steps of both the explicit and the implicit Euler methods for the value [MATH: \\lambda\\Delta x = 2.]\nWe saw before that the explicit method oscillates between the values [MATH: -1] and [MATH: 1] and does not converge to [MATH: 0.]\n\nContent:\nConversely, the numerical steps of the implicit Euler method converge to [MATH: 0] quite quickly for the same step size!\n\nGraphic:\n[IMG: /graphics/a3f116666d9e9be9489eec23582bcc71]\n\nContent:\nImplicit methods tend to be more numerically stable than explicit methods.\n\n---\n\nItem 11 \u2014 Example: Identifying True Statements About the Stability of Other Methods\n\nExample Prompt:\nFor the initial value problem [MATH: y' = f(x,y), y(x_0) = y_0,] the modified Euler method can be expressed as the update formula\n\n[MATH: \u0394y_{n}^{(p)}|= f(x_{n}, y_{n}) \u22c5 \u0394x,; y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} + \u0394y_{n}^{(p)})) \u22c5 \u0394x.]\n\nWhich of the following statements are true when testing the stability of the modified Euler method on the test equation [MATH: y'=-\\lambda y] with [MATH: y = y(x), y(0) = 1, x \\geq 0, \\lambda = 12,] and step size [MATH: \\Delta x?]\n\n1. The stability function is [MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.]\n2. The stability region is [MATH: \\left|72\\left(\\Delta x - \\dfrac16\\right)^2\\right| < 1.]\n3. The method is absolutely stable.\n4. The method is stable for step size [MATH: \\Delta x = 0.15.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n+1} = R(\\lambda\\Delta x)y_n.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method [MATH: y_{n+1} = y_n + \\Delta y_n] is stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nWhen a method is applied to the test equation, the update takes the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is the stability function of the method. The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nA method that is stable for all possible values [MATH: \\lambda\\Delta x > 0] is called absolutely stable.\n\nNow, let's check the stability of the modified Euler Method by applying it to the test equation\n[MATH: y' = -12y, \\qquad y(0) = 1.]\n\nWe now examine our statements:\n\n- Applying the modified Euler method to this test equation, we get the following:\n[MATH: y_{n} + \u0394y_{n}^{(p)}|= y_{n} + f(x_{n}, y_{n}) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x]\nThus,\n[MATH: y_{n + 1}|= y_{n} + (1)/(2)(f(x_{n}, y_{n}) + f(x_{n + 1}, y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 12y_{n} \u2212 12(y_{n} \u2212 12y_{n} \u22c5 \u0394x)) \u22c5 \u0394x; = y_{n} + (1)/(2)(\u2212 24y_{n} + 144y_{n} \u22c5 \u0394x) \u22c5 \u0394x; = y_{n} \u2212 12y_{n} \u22c5 \u0394x + 72y_{n} \u22c5 (\u0394x)^{2}; = [1 \u2212 12\u0394x + 72(\u0394x)^{2}]y_{n}.]\nSo, the stability function is [MATH: R(12\\Delta x) = 1 - 12\\Delta x + 72(\\Delta x)^2.] Hence, statement I is true.\n- The method is stable when\n[MATH: |R(12\u0394x)||< 1;|1 \u2212 12\u0394x + 72(\u0394x)^{2}||< 1;|72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)||< 1.]\nTherefore, [MATH: y_n] converges to [MATH: 0] as [MATH: n \\to \\infty] if and only if\n[MATH: \\left|72\\left(\\Delta x - \\dfrac1{12}\\right)^2 + \\dfrac12\\right| < 1.]\nHence, statement II is false.\n- Now, since the argument of the absolute value is always non-negative, we can remove the absolute value. So, we have\n[MATH: 72(\u0394x \u2212 (1)/(12))^{2} + (1)/(2)|< 1; 72(\u0394x \u2212 (1)/(12))^{2}|< (1)/(2); (\u0394x \u2212 (1)/(12))^{2}|< (1)/(144); \u2212 (1)/(12) < \u0394x \u2212 (1)/(12)|< (1)/(12); 0 < \u0394x|< (1)/(6)]\nThus, the modified Euler method is not absolutely stable, and statement III is false.\n- Finally, since it satisfies this inequality, the modified Euler method is stable for step size [MATH: \\Delta x = 0.15,] and hence statement IV is true.\n\nIn conclusion, the correct answer is \"I and IV only\".\n\n---\n\nItem 12 \u2014 Question 5\n\nPrompt:\nWhich of the following statements are true when testing the stability of the implicit Euler method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,] and step size [MATH: \u0394x?]\n\n1. The stability function is [MATH: R(3\u0394x) = (1)/(1 + 3\u0394x).]\n2. The stability region is [MATH: |(1)/(1 \u2212 3\u0394x)|< 1.]\n3. The method is absolutely stable.\n4. The method is unstable for step size [MATH: \u0394x = 0.25.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]\n\nChoices:\na. II and IV only\nb. II only\nc. I and IV only\nd. II and III only\ne. I and III only\n\n---\n\nItem 13 \u2014 Question 6\n\nPrompt:\nWhich of the following statements are true when testing the stability of the trapezoidal method on the test equation [MATH: y^{\u2032} = \u2212 \u03bby] with [MATH: y = y(x), y(0) = 1, x \u2265 0, \u03bb = 3,] and step size [MATH: \u0394x?]\n\n1. The stability function is [MATH: R(3\u0394x) = (1 \u2212 3\u0394x/2)/(1 + 3\u0394x/2).]\n2. The stability region is [MATH: |(9)/(2)(\u0394x \u2212 (2)/(3))^{2} + (1)/(2)|< 1.]\n3. The method is absolutely stable.\n4. The method is unstable for step size [MATH: \u0394x = 2.5.]\n\nHint: The stability function [MATH: R] is given by [MATH: y_{n + 1} = R(\u03bb\u0394x)y_{n}.]\n\nChoices:\na. I and III only\nb. I and II only\nc. II and III only\nd. I and IV only\ne. II and IV only\n\n---\n\nItem 14 \u2014 Tutorial: Table of Results\n\nContent:\nA table of some numerical methods, their stability functions, and stability regions is shown below. These results assume the test equation [MATH: y' = -\\lambda y] (where [MATH: \\lambda > 0]) with step size [MATH: \\Delta x].\n\nContent:\n| Numerical Method | Stability Function [MATH: R(\\lambda \\Delta x)] | Stability Region [MATH: |R(\\lambda \\Delta x)| < 1] | Absolutely Stable? |\n| Euler's | [MATH: 1 - \\lambda \\Delta x] | [MATH: 0 < \\lambda \\Delta x < 2] | [MATH: \\color{red}\\times] |\n| Implicit Euler | [MATH: \\dfrac{1}{1 + \\lambda \\Delta x}] | All values [MATH: \\lambda \\Delta x > 0] | [MATH: \\color{green}\\checkmark] |\n| Trapezoidal | [MATH: \\dfrac{1 - \\lambda \\Delta x/2}{1 + \\lambda \\Delta x/2}] | All values [MATH: \\lambda \\Delta x > 0] | [MATH: \\color{green}\\checkmark] |\n| Modified Euler | [MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2}] | [MATH: 0 < \\lambda\\Delta x < 2] | [MATH: \\color{red}\\times] |\n| Runge-Kutta (RK4) | [MATH: 1 - \\lambda\\Delta x + \\dfrac{(\\lambda\\Delta x)^2}{2} - \\dfrac{(\\lambda\\Delta x)^3}{6} + \\dfrac{(\\lambda\\Delta x)^4}{24}] | [MATH: 0 < \\lambda\\Delta x < 2.785\\ldots] | [MATH: \\color{red}\\times] |\n\n---\n\nItem 15 \u2014 Example: Determining Stability in Other Methods\n\nExample Prompt:\nFor which of the following values is the Runge\u2013Kutta Method (RK4) stable, given that [MATH: \\lambda] is the parameter of the test equation?\n\n1. [MATH: \\lambda\\Delta x = 0.6]\n2. [MATH: \\lambda\\Delta x = 1.4]\n3. [MATH: \\lambda\\Delta x = 2.8]\n4. [MATH: \\lambda\\Delta x = 3.3]\n\nHint: The stability function [MATH: R] of the RK4 method is given by\n[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nA numerical method\n[MATH: y_{n+1} = y_n + \\Delta y_n]\nis stable for a given step size [MATH: \\Delta x] if, when applied to the test equation\n[MATH: y' = -\\lambda y, \\qquad y(0) = 1, \\quad x \\geq 0, \\quad \\lambda > 0,]\nthe numerical solution satisfies [MATH: y_n \\to 0] as [MATH: n \\to \\infty,] just like the exact solution.\n\nWhen a method is applied to the test equation, the update takes the form\n[MATH: y_{n+1} = R(\\lambda\\Delta x)y_n,]\nwhere [MATH: R(\\lambda\\Delta x)] is referred to as the stability function of the method. The set of values for which the method is stable, given by [MATH: |R(\\lambda\\Delta x)| < 1,] is called the stability region of the method.\n\nThe stability function of the RK4 Method is\n[MATH: R(\\lambda\\Delta x)\n= 1 - \\lambda\\Delta x\n+ \\dfrac{(\\lambda\\Delta x)^2}{2}\n- \\dfrac{(\\lambda\\Delta x)^3}{6}\n+ \\dfrac{(\\lambda\\Delta x)^4}{24}.]\n\nLet's check the stability of the RK4 Method for each of the given values in turn.\n\n- For [MATH: \\lambda\\Delta x = 0.6,] we have\n[MATH: |R(0.6)||=|1 \u2212 0.6 + ((0.6)^{2})/(2) \u2212 ((0.6)^{3})/(6) + ((0.6)^{4})/(24)|; =|(2747)/(5000)|; = 0.5494 < 1.\u2713]\nSince this value falls within the stability region, the RK4 Method is stable.\n- For [MATH: \\lambda\\Delta x = 1.4,] we have\n[MATH: |R(1.4)||=|1 \u2212 1.4 + ((1.4)^{2})/(2) \u2212 ((1.4)^{3})/(6) + ((1.4)^{4})/(24)|; =|(4241)/(15000)|; = 0.282\u2026 < 1.\u2713]\nSince this value falls within the stability region, the RK4 Method is stable.\n- For [MATH: \\lambda\\Delta x = 2.8,] we have\n[MATH: |R(2.8)||=|1 \u2212 2.8 + ((2.8)^{2})/(2) \u2212 ((2.8)^{3})/(6) + ((2.8)^{4})/(24)|; =|(639)/(625)|; = 1.0224 > 1.\u00d7]\nSince this value falls outside the stability region, the RK4 Method is unstable.\n- For [MATH: \\lambda\\Delta x = 3.3,] we have\n[MATH: |R(3.3)||=|1 \u2212 3.3 + ((3.3)^{2})/(2) \u2212 ((3.3)^{3})/(6) + ((3.3)^{4})/(24)|; =|(167747)/(80000)|; = 2.096\u2026 > 1.\u00d7]\nSince this value falls outside the stability region, the RK4 Method is unstable.\n\nTherefore, the correct answer is \"I and II only\".\n\nNote that the stability region of the RK4 Method is [MATH: 0 < \\lambda\\Delta x < 2.785\\ldots,] so it is not absolutely stable.\n\n---\n\nItem 16 \u2014 Question 7\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFor which of the following values is the implicit Euler method stable, given that [MATH: \u03bb] is the parameter of the test equation?\n\n1. [MATH: \u03bb\u0394x = 0.25]\n2. [MATH: \u03bb\u0394x = 1]\n3. [MATH: \u03bb\u0394x = 1.5]\n4. [MATH: \u03bb\u0394x = 9]\n\nHint: The stability function [MATH: R] of the implicit Euler method is given by\n[MATH: R(\u03bb\u0394) = (1)/(1 + \u03bb\u0394x).]\n\nChoices:\na. I, II, III, and IV\nb. I, II, and III only\nc. None\nd. I and II only\ne. I only\n\n---\n\nItem 17 \u2014 Question 8\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFor which of the following values is the Runge-Kutta Method (RK4) stable, given that [MATH: \u03bb] is the parameter of the test equation?\n\n1. [MATH: \u03bb\u0394x = 0.4]\n2. [MATH: \u03bb\u0394x = 1]\n3. [MATH: \u03bb\u0394x = 2]\n4. [MATH: \u03bb\u0394x = 3]\n\nHint: The stability function [MATH: R] of the RK4 method is given by\n[MATH: R(\u03bb\u0394) = 1 \u2212 \u03bb\u0394x + ((\u03bb\u0394x)^{2})/(2) \u2212 ((\u03bb\u0394x)^{3})/(6) + ((\u03bb\u0394x)^{4})/(24).]\n\nChoices:\na. I only\nb. None\nc. I, II, III, and IV\nd. I, II, and III only\ne. I and II only"
+  }
+}

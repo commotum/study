@@ -1,0 +1,1769 @@
+{
+  "schema_version": 2,
+  "topic_id": "3319",
+  "topic_title": "Estimating Sample Sizes for Means",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3319/Source/3319.html",
+  "source_url": "https://mathacademy.com/topics/3319",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "222557",
+        "dom_id": "sectionLink-222557",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-222557"
+      },
+      {
+        "index": 2,
+        "step_id": "222559",
+        "dom_id": "sectionLink-222559",
+        "name": "",
+        "title": "Finding a Minimum Sample Size: Population Variance Is Known",
+        "selector": "#sectionLink-222559"
+      },
+      {
+        "index": 3,
+        "step_id": "222562",
+        "dom_id": "sectionLink-222562",
+        "name": "",
+        "title": "Cases Where the Population Variance is Unknown",
+        "selector": "#sectionLink-222562"
+      },
+      {
+        "index": 4,
+        "step_id": "222563",
+        "dom_id": "sectionLink-222563",
+        "name": "",
+        "title": "Finding a Minimum Sample Size Using a Point Estimate for the Variance",
+        "selector": "#sectionLink-222563"
+      },
+      {
+        "index": 5,
+        "step_id": "222566",
+        "dom_id": "sectionLink-222566",
+        "name": "",
+        "title": "The Empirical Rule for the Normal Distribution",
+        "selector": "#sectionLink-222566"
+      },
+      {
+        "index": 6,
+        "step_id": "222567",
+        "dom_id": "sectionLink-222567",
+        "name": "",
+        "title": "Finding a Minimum Sample Size Using the Empirical Rule",
+        "selector": "#sectionLink-222567"
+      },
+      {
+        "index": 7,
+        "step_id": "222570",
+        "dom_id": "sectionLink-222570",
+        "name": "",
+        "title": "Factors Affecting Sample Size",
+        "selector": "#sectionLink-222570"
+      },
+      {
+        "index": 8,
+        "step_id": "222571",
+        "dom_id": "sectionLink-222571",
+        "name": "",
+        "title": "Understanding the Minimum Sample Size Formula",
+        "selector": "#sectionLink-222571"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3594",
+        "name": "The Empirical Rule for the Normal Distribution",
+        "href": "/topics/the-empirical-rule-for-the-normal-distribution-3594"
+      },
+      {
+        "topic_id": "3855",
+        "name": "Confidence Intervals for One Mean: Unknown Population Variance",
+        "href": "/topics/confidence-intervals-for-one-mean-unknown-population-variance-3855"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 16,
+    "step_count": 8,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "222557",
+        "content_id": "9432",
+        "dom_id": "step-222557",
+        "selector": "#step-222557",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>When conducting statistical research, establishing a lower bound for the sample size needed to achieve a margin of error smaller than some pre-specified amount is often helpful. This allows those conducting the sample to achieve results whose errors are constrained and at the minimum level of time and cost.</p>",
+            "readable_text": "When conducting statistical research, establishing a lower bound for the sample size needed to achieve a margin of error smaller than some pre-specified amount is often helpful. This allows those conducting the sample to achieve results whose errors are constrained and at the minimum level of time and cost.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, suppose you&#x27;re planning a survey to estimate the average cost city commuters must pay monthly to travel to work. You&#x27;d need to figure out how many people to survey to ensure reliable results. A sample size that is too small might lead to misleading conclusions, while a sample that is too large wastes resources. This lesson explores how to determine the minimum sample size needed to strike the right balance.</p>",
+            "readable_text": "For example, suppose you're planning a survey to estimate the average cost city commuters must pay monthly to travel to work. You'd need to figure out how many people to survey to ensure reliable results. A sample size that is too small might lead to misleading conclusions, while a sample that is too large wastes resources. This lesson explores how to determine the minimum sample size needed to strike the right balance.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s determine a lower bound for the sample size required to find a confidence interval for a population mean <span class=\"math\">[MATH: \\mu]</span> with a fixed margin of error. </p>",
+            "readable_text": "Let's determine a lower bound for the sample size required to find a confidence interval for a population mean [MATH: \\mu] with a fixed margin of error.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Given a random sample and a value <span class=\"math\">[MATH: \\alpha]</span> between <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1,]</span> we know that the corresponding <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> can be written as\n<span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p>",
+            "readable_text": "Given a random sample and a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] we know that the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where </p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: \\!\\overline{\\,x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: \\sigma]</span> is the population standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z \\sim N(0,1).]</span> </p></li></ul>",
+            "readable_text": "- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose that we require the margin of error to be at most <span class=\"math\">[MATH: \\varepsilon,]</span> i.e.,</p>",
+            "readable_text": "Suppose that we require the margin of error to be at most [MATH: \\varepsilon,] i.e.,",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt{n}} \\leq \\varepsilon.]</span></p>",
+            "readable_text": "[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt{n}} \\leq \\varepsilon.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can solve this inequality for <span class=\"math\">[MATH: n]</span> by first squaring both sides. This gives</p>",
+            "readable_text": "We can solve this inequality for [MATH: n] by first squaring both sides. This gives",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: z_{\u03b1/2}^{2} \u22c5 (\u03c3^{2})/(n)|\u2264 \u03b5^{2}.]</span></p>",
+            "readable_text": "[MATH: z_{\u03b1/2}^{2} \u22c5 (\u03c3^{2})/(n)|\u2264 \u03b5^{2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>By solving this inequality for <span class=\"math\">[MATH: n,]</span> we obtain</p>",
+            "readable_text": "By solving this inequality for [MATH: n,] we obtain",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]</span></p>",
+            "readable_text": "[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This result gives us a lower bound on the sample size <span class=\"math\">[MATH: n]</span> needed to constrain the margin of error to <span class=\"math\">[MATH: \\varepsilon.]</span> </p>",
+            "readable_text": "This result gives us a lower bound on the sample size [MATH: n] needed to constrain the margin of error to [MATH: \\varepsilon.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, we have two possible cases: </p>",
+            "readable_text": "Now, we have two possible cases:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Case 1: The population variance <span class=\"math\">[MATH: \\sigma^2]</span> is known.</p></li><li><p>Case 2: The population variance <span class=\"math\">[MATH: \\sigma^2]</span> is unknown.</p></li></ul>",
+            "readable_text": "- Case 1: The population variance [MATH: \\sigma^2] is known.\n- Case 2: The population variance [MATH: \\sigma^2] is unknown.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s look at an example of the first case.</p>",
+            "readable_text": "Let's look at an example of the first case.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWhen conducting statistical research, establishing a lower bound for the sample size needed to achieve a margin of error smaller than some pre-specified amount is often helpful. This allows those conducting the sample to achieve results whose errors are constrained and at the minimum level of time and cost.\n\nContent:\nFor example, suppose you're planning a survey to estimate the average cost city commuters must pay monthly to travel to work. You'd need to figure out how many people to survey to ensure reliable results. A sample size that is too small might lead to misleading conclusions, while a sample that is too large wastes resources. This lesson explores how to determine the minimum sample size needed to strike the right balance.\n\nContent:\nLet's determine a lower bound for the sample size required to find a confidence interval for a population mean [MATH: \\mu] with a fixed margin of error.\n\nContent:\nGiven a random sample and a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] we know that the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nContent:\nSuppose that we require the margin of error to be at most [MATH: \\varepsilon,] i.e.,\n\nContent:\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt{n}} \\leq \\varepsilon.]\n\nContent:\nWe can solve this inequality for [MATH: n] by first squaring both sides. This gives\n\nContent:\n[MATH: z_{\u03b1/2}^{2} \u22c5 (\u03c3^{2})/(n)|\u2264 \u03b5^{2}.]\n\nContent:\nBy solving this inequality for [MATH: n,] we obtain\n\nContent:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nContent:\nThis result gives us a lower bound on the sample size [MATH: n] needed to constrain the margin of error to [MATH: \\varepsilon.]\n\nContent:\nNow, we have two possible cases:\n\nContent:\n- Case 1: The population variance [MATH: \\sigma^2] is known.\n- Case 2: The population variance [MATH: \\sigma^2] is unknown.\n\nContent:\nLet's look at an example of the first case."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "222559",
+        "content_id": "15119",
+        "dom_id": "step-222559",
+        "selector": "#step-222559",
+        "step_anchor": "step-2",
+        "title": "Finding a Minimum Sample Size: Population Variance Is Known",
+        "key_prerequisites": [
+          {
+            "topic_id": "260",
+            "name": "Confidence Intervals for One Mean: Known Population Variance",
+            "href": "/topics/260",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>A group of researchers wants to calculate a <span class=\"math\">[MATH: 98\\%]</span> confidence interval for the mean number of hours wolves sleep daily in their natural habitat. The population standard deviation is known to be <span class=\"math\">[MATH: \\sigma = 1.2 \\, \\textrm{h}.]</span></p><p>Find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for the <span class=\"math\">[MATH: 98\\%]</span> confidence interval for the mean number of hours wolves sleep daily is at most <span class=\"math\">[MATH: 0.3 \\, \\textrm{h}.]</span></p><p><em>Hint: Given a random variable <span class=\"math\">[MATH: Z \\sim N(0,1),]</span> the table below shows the <span class=\"math\">[MATH: z]</span>-scores <span class=\"math\">[MATH: z_p]</span> such that <span class=\"math\">[MATH: P(Z &gt; z_p) = p]</span> for some particular values of <span class=\"math\">[MATH: p.]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_p]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: 2.326]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table>",
+            "readable_text": "A group of researchers wants to calculate a [MATH: 98\\%] confidence interval for the mean number of hours wolves sleep daily in their natural habitat. The population standard deviation is known to be [MATH: \\sigma = 1.2 \\, \\textrm{h}.]\n\nFind the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 98\\%] confidence interval for the mean number of hours wolves sleep daily is at most [MATH: 0.3 \\, \\textrm{h}.]\n\nHint: Given a random variable [MATH: Z \\sim N(0,1),] the table below shows the [MATH: z]-scores [MATH: z_p] such that [MATH: P(Z > z_p) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>We do not know the distribution of the population. However, if the sample size <span class=\"math\">[MATH: n]</span> is <em>sufficiently large</em>, then, according to the central limit theorem, the sample mean is approximately normally distributed.</p><p>As a result, given a value <span class=\"math\">[MATH: \\alpha]</span> between <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1,]</span> the corresponding <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> can be written as</p><p><span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p><p>where </p><ul><li><p><span class=\"math\">[MATH: \\overline{x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: \\sigma]</span> is the population standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z \\sim N(0,1).]</span> </p></li></ul><p>If we require the margin of error to be at most <span class=\"math\">[MATH: \\varepsilon,]</span> then</p><p><span class=\"math\">[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]</span></p><p>We are interested in finding a <span class=\"math\">[MATH: 98\\%]</span> confidence interval. So, we have \n<span class=\"math\">[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]</span></p><p>From the percentage points table of the normal distribution, we obtain that <span class=\"math\">[MATH: z_{0.01}=2.326{:}]</span> </p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.05]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[2pt,Gainsboro]{\\color{blue}0.010}]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_p]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[2pt,Gainsboro]{\\color{blue}2.326}]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table><p>We&#x27;re given the population standard deviation <span class=\"math\">[MATH: \\sigma=1.2.]</span> Therefore, substituting \n<span class=\"math\">[MATH: \\varepsilon=0.3, \\qquad\n\\sigma=1.2, \\qquad\nz_{\\alpha/2}=2.326]</span>\ninto the inequality for <span class=\"math\">[MATH: n,]</span> we obtain</p><p><span class=\"math\">[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^{2})/(\u03b5^{2}); = ((2.326)^{2}(1.2)^{2})/((0.3)^{2}); \u2248 86.56.]</span></p><p>Finally, rounding up to the nearest integer, we get that <span class=\"math\">[MATH: n=87]</span> or larger. Notice that <span class=\"math\">[MATH: 87\\geq 30,]</span> therefore, the sample is sufficiently large to apply the normal approximation.</p>",
+            "readable_text": "We do not know the distribution of the population. However, if the sample size [MATH: n] is sufficiently large, then, according to the central limit theorem, the sample mean is approximately normally distributed.\n\nAs a result, given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\overline{x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nWe are interested in finding a [MATH: 98\\%] confidence interval. So, we have\n[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]\n\nFrom the percentage points table of the normal distribution, we obtain that [MATH: z_{0.01}=2.326{:}]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.05] | [MATH: 0.025] | [MATH: \\bbox[2pt,Gainsboro]{\\color{blue}0.010}] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: \\bbox[2pt,Gainsboro]{\\color{blue}2.326}] | [MATH: 2.576] |\n\nWe're given the population standard deviation [MATH: \\sigma=1.2.] Therefore, substituting\n[MATH: \\varepsilon=0.3, \\qquad\n\\sigma=1.2, \\qquad\nz_{\\alpha/2}=2.326]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^{2})/(\u03b5^{2}); = ((2.326)^{2}(1.2)^{2})/((0.3)^{2}); \u2248 86.56.]\n\nFinally, rounding up to the nearest integer, we get that [MATH: n=87] or larger. Notice that [MATH: 87\\geq 30,] therefore, the sample is sufficiently large to apply the normal approximation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nA group of researchers wants to calculate a [MATH: 98\\%] confidence interval for the mean number of hours wolves sleep daily in their natural habitat. The population standard deviation is known to be [MATH: \\sigma = 1.2 \\, \\textrm{h}.]\n\nFind the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 98\\%] confidence interval for the mean number of hours wolves sleep daily is at most [MATH: 0.3 \\, \\textrm{h}.]\n\nHint: Given a random variable [MATH: Z \\sim N(0,1),] the table below shows the [MATH: z]-scores [MATH: z_p] such that [MATH: P(Z > z_p) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nContent:\nEXPLANATION\n\nExplanation:\nWe do not know the distribution of the population. However, if the sample size [MATH: n] is sufficiently large, then, according to the central limit theorem, the sample mean is approximately normally distributed.\n\nAs a result, given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\overline{x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nWe are interested in finding a [MATH: 98\\%] confidence interval. So, we have\n[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]\n\nFrom the percentage points table of the normal distribution, we obtain that [MATH: z_{0.01}=2.326{:}]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.05] | [MATH: 0.025] | [MATH: \\bbox[2pt,Gainsboro]{\\color{blue}0.010}] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: \\bbox[2pt,Gainsboro]{\\color{blue}2.326}] | [MATH: 2.576] |\n\nWe're given the population standard deviation [MATH: \\sigma=1.2.] Therefore, substituting\n[MATH: \\varepsilon=0.3, \\qquad\n\\sigma=1.2, \\qquad\nz_{\\alpha/2}=2.326]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^{2})/(\u03b5^{2}); = ((2.326)^{2}(1.2)^{2})/((0.3)^{2}); \u2248 86.56.]\n\nFinally, rounding up to the nearest integer, we get that [MATH: n=87] or larger. Notice that [MATH: 87\\geq 30,] therefore, the sample is sufficiently large to apply the normal approximation."
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "226013",
+        "dom_id": "question-226013",
+        "selector": "#question-226013",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a normal population with unknown mean and standard deviation <span class=\"math\">[MATH: \u03c3 = 2.]</span> Find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for the <span class=\"math\">[MATH: 95%]</span> confidence interval for the population mean is at most <span class=\"math\">[MATH: 0.06.]</span></p><p><em>Hint: Use the fact that <span class=\"math\">[MATH: P(Z &gt; 1.96) = 0.025,]</span> where <span class=\"math\">[MATH: Z\u223cN(0, 1).]</span></em></p>",
+          "readable_text": "Consider a normal population with unknown mean and standard deviation [MATH: \u03c3 = 2.] Find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95%] confidence interval for the population mean is at most [MATH: 0.06.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z\u223cN(0, 1).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-226013-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 4269]</span></p>",
+            "readable_text": "[MATH: n = 4269]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-226013-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 5105]</span></p>",
+            "readable_text": "[MATH: n = 5105]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-226013-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 4168]</span></p>",
+            "readable_text": "[MATH: n = 4168]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-226013-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 4355]</span></p>",
+            "readable_text": "[MATH: n = 4355]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-226013-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 5192]</span></p>",
+            "readable_text": "[MATH: n = 5192]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normal population with unknown mean and standard deviation [MATH: \u03c3 = 2.] Find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95%] confidence interval for the population mean is at most [MATH: 0.06.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: n = 4269]\nb. [MATH: n = 5105]\nc. [MATH: n = 4168]\nd. [MATH: n = 4355]\ne. [MATH: n = 5192]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "251191",
+        "dom_id": "question-251191",
+        "selector": "#question-251191",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a population with unknown mean and standard deviation <span class=\"math\">[MATH: \u03c3 = 8.]</span> Find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for the <span class=\"math\">[MATH: 80%]</span> confidence interval for the population mean is at most <span class=\"math\">[MATH: 1.]</span></p><p><em>Hint: Given a random variable <span class=\"math\">[MATH: Z\u223cN(0, 1),]</span> the table below shows the <span class=\"math\">[MATH: z]</span>-scores <span class=\"math\">[MATH: z_{p}]</span> such that <span class=\"math\">[MATH: P(Z &gt; z_{p}) = p]</span> for some particular values of <span class=\"math\">[MATH: p.]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_{p}]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: 2.326]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table>",
+          "readable_text": "Consider a population with unknown mean and standard deviation [MATH: \u03c3 = 8.] Find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 80%] confidence interval for the population mean is at most [MATH: 1.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251191-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 151]</span></p>",
+            "readable_text": "[MATH: n = 151]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251191-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 106]</span> </p>",
+            "readable_text": "[MATH: n = 106]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251191-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 169]</span></p>",
+            "readable_text": "[MATH: n = 169]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251191-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 133]</span></p>",
+            "readable_text": "[MATH: n = 133]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251191-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 188]</span></p>",
+            "readable_text": "[MATH: n = 188]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a population with unknown mean and standard deviation [MATH: \u03c3 = 8.] Find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 80%] confidence interval for the population mean is at most [MATH: 1.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nChoices:\na. [MATH: n = 151]\nb. [MATH: n = 106]\nc. [MATH: n = 169]\nd. [MATH: n = 133]\ne. [MATH: n = 188]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "222562",
+        "content_id": "10557",
+        "dom_id": "step-222562",
+        "selector": "#step-222562",
+        "step_anchor": "step-5",
+        "title": "Cases Where the Population Variance is Unknown",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As we&#x27;ve seen, the sample size <span class=\"math\">[MATH: n]</span> required for margin of error for the <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval to be smaller that <span class=\"math\">[MATH: \\varepsilon]</span> is given by</p>",
+            "readable_text": "As we've seen, the sample size [MATH: n] required for margin of error for the [MATH: [100(1-\\alpha)]\\%] confidence interval to be smaller that [MATH: \\varepsilon] is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]</span></p>",
+            "readable_text": "[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In practice, the population variance is often unknown. How can we find a lower bound for <span class=\"math\">[MATH: n]</span> in such cases?</p>",
+            "readable_text": "In practice, the population variance is often unknown. How can we find a lower bound for [MATH: n] in such cases?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, recall that the corresponding confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> when the variance is <em>unknown</em> can be written as</p>",
+            "readable_text": "First, recall that the corresponding confidence interval for the population mean [MATH: \\mu] when the variance is unknown can be written as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p>",
+            "readable_text": "[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where </p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: \\!\\overline{\\,x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: s]</span> is the sample standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(T &gt; t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2},]</span> and <span class=\"math\">[MATH: T]</span> has a student&#x27;s <span class=\"math\">[MATH: t]</span>-distribution with <span class=\"math\">[MATH: n-1]</span> degrees of freedom. </p></li></ul>",
+            "readable_text": "- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: s] is the sample standard deviation, and\n- [MATH: P(T > t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2},] and [MATH: T] has a student's [MATH: t]-distribution with [MATH: n-1] degrees of freedom.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If we require the margin of error to be at most <span class=\"math\">[MATH: \\varepsilon,]</span> then</p>",
+            "readable_text": "If we require the margin of error to be at most [MATH: \\varepsilon,] then",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]</span></p>",
+            "readable_text": "[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note the following:</p>",
+            "readable_text": "Note the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>This lower bound can&#x27;t be directly calculated because we need <span class=\"math\">[MATH: n]</span> to determine <span class=\"math\">[MATH: t_{n-1, \\,\\alpha/2},]</span> and a lower bound for <span class=\"math\">[MATH: n]</span> is what we&#x27;re trying to find! </p></li><li><p>However, as <span class=\"math\">[MATH: n]</span> increases, the <span class=\"math\">[MATH: t]</span>-distribution approaches the standard normal distribution. </p></li><li><p>Therefore, we can replace <span class=\"math\">[MATH: t_{n-1, \\,\\alpha/2}]</span> by <span class=\"math\">[MATH: z_{\\alpha/2},]</span> where <span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z]</span> follows a standard normal distribution. </p></li></ul>",
+            "readable_text": "- This lower bound can't be directly calculated because we need [MATH: n] to determine [MATH: t_{n-1, \\,\\alpha/2},] and a lower bound for [MATH: n] is what we're trying to find!\n- However, as [MATH: n] increases, the [MATH: t]-distribution approaches the standard normal distribution.\n- Therefore, we can replace [MATH: t_{n-1, \\,\\alpha/2}] by [MATH: z_{\\alpha/2},] where [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z] follows a standard normal distribution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, our lower bound for <span class=\"math\">[MATH: n]</span> is as follows:\n<span class=\"math\">[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, s^2}{\\varepsilon^2}]</span>\nIn short, we simply replace <span class=\"math\">[MATH: \\sigma^2]</span> in our original bound with its unbiased estimate!</p>",
+            "readable_text": "Therefore, our lower bound for [MATH: n] is as follows:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, s^2}{\\varepsilon^2}]\nIn short, we simply replace [MATH: \\sigma^2] in our original bound with its unbiased estimate!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s now look at how to apply this in practice.</p>",
+            "readable_text": "Let's now look at how to apply this in practice.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nAs we've seen, the sample size [MATH: n] required for margin of error for the [MATH: [100(1-\\alpha)]\\%] confidence interval to be smaller that [MATH: \\varepsilon] is given by\n\nContent:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nContent:\nIn practice, the population variance is often unknown. How can we find a lower bound for [MATH: n] in such cases?\n\nContent:\nFirst, recall that the corresponding confidence interval for the population mean [MATH: \\mu] when the variance is unknown can be written as\n\nContent:\n[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: s] is the sample standard deviation, and\n- [MATH: P(T > t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2},] and [MATH: T] has a student's [MATH: t]-distribution with [MATH: n-1] degrees of freedom.\n\nContent:\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\nContent:\n[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]\n\nContent:\nNote the following:\n\nContent:\n- This lower bound can't be directly calculated because we need [MATH: n] to determine [MATH: t_{n-1, \\,\\alpha/2},] and a lower bound for [MATH: n] is what we're trying to find!\n- However, as [MATH: n] increases, the [MATH: t]-distribution approaches the standard normal distribution.\n- Therefore, we can replace [MATH: t_{n-1, \\,\\alpha/2}] by [MATH: z_{\\alpha/2},] where [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z] follows a standard normal distribution.\n\nContent:\nTherefore, our lower bound for [MATH: n] is as follows:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, s^2}{\\varepsilon^2}]\nIn short, we simply replace [MATH: \\sigma^2] in our original bound with its unbiased estimate!\n\nContent:\nLet's now look at how to apply this in practice."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "222563",
+        "content_id": "15120",
+        "dom_id": "step-222563",
+        "selector": "#step-222563",
+        "step_anchor": "step-6",
+        "title": "Finding a Minimum Sample Size Using a Point Estimate for the Variance",
+        "key_prerequisites": [
+          {
+            "topic_id": "3855",
+            "name": "Confidence Intervals for One Mean: Unknown Population Variance",
+            "href": "/topics/3855",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider a normal population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be <span class=\"math\">[MATH: s=0.5.]</span> Suppose we require a <span class=\"math\">[MATH: 98\\%]</span> confidence interval for the population mean to have a margin of error of at most <span class=\"math\">[MATH: 0.05.]</span>\nFind the smallest sample size <span class=\"math\">[MATH: n]</span> required to construct this interval.</p><p><em>Hint: Use the fact that <span class=\"math\">[MATH: P(Z &gt; 2.326) = 0.01,]</span> where <span class=\"math\">[MATH: Z \\sim N(0,1).]</span></em></p>",
+            "readable_text": "Consider a normal population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be [MATH: s=0.5.] Suppose we require a [MATH: 98\\%] confidence interval for the population mean to have a margin of error of at most [MATH: 0.05.]\nFind the smallest sample size [MATH: n] required to construct this interval.\n\nHint: Use the fact that [MATH: P(Z > 2.326) = 0.01,] where [MATH: Z \\sim N(0,1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>We are told that the population is normally distributed, but we do not know the population standard deviation <span class=\"math\">[MATH: \\sigma.]</span></p><p>Given a value <span class=\"math\">[MATH: \\alpha]</span> between <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1,]</span> the corresponding <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> can be written as</p><p><span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p><p>where </p><ul><li><p><span class=\"math\">[MATH: \\overline{x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: s]</span> is the sample standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(T &gt; t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: T]</span> has a student&#x27;s <span class=\"math\">[MATH: t]</span>-distribution with <span class=\"math\">[MATH: n-1]</span> degrees of freedom. </p></li></ul><p>If we require the margin of error to be at most <span class=\"math\">[MATH: \\varepsilon,]</span> then\n<span class=\"math\">[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]</span></p><p>Note that the above lower bound can&#x27;t be directly calculated because we need <span class=\"math\">[MATH: n]</span> to determine <span class=\"math\">[MATH: t_{n-1, \\,\\alpha/2},]</span> and <span class=\"math\">[MATH: n]</span> is the value we are trying to find. However, as <span class=\"math\">[MATH: n]</span> increases, the <span class=\"math\">[MATH: t]</span>-distribution approaches the standard normal distribution. Therefore, we can replace <span class=\"math\">[MATH: t_{n-1, \\,\\alpha/2}]</span> by <span class=\"math\">[MATH: z_{\\alpha/2},]</span> where <span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z]</span> follows a standard normal distribution.</p><p>Now, we are interested in finding a <span class=\"math\">[MATH: 98\\%]</span> confidence interval. So, we have \n<span class=\"math\">[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]</span></p><p>We are given that <span class=\"math\">[MATH: P(Z &gt; 2.326) = 0.01.]</span> As a result, \n<span class=\"math\">[MATH: z_{\\alpha/2} = z_{0.01} = 2.326.]</span></p><p>We&#x27;re given the sample standard deviation <span class=\"math\">[MATH: s=0.5.]</span> Therefore, substituting \n<span class=\"math\">[MATH: \\varepsilon=0.05, \\qquad\ns=0.5, \\qquad\nz_{\\alpha/2}=2.326]</span>\ninto the inequality for <span class=\"math\">[MATH: n,]</span> we obtain</p><p><span class=\"math\">[MATH: n|\u2265 (z_{\u03b1/2}^{2}s^{2})/(\u03b5^{2}); = ((2.326)^{2}(0.5)^{2})/((0.05)^{2}); \u2248 541.03.]</span></p><p>Finally, rounding up to the nearest integer, we get <span class=\"math\">[MATH: n=542]</span> or larger.</p>",
+            "readable_text": "We are told that the population is normally distributed, but we do not know the population standard deviation [MATH: \\sigma.]\n\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\overline{x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: s] is the sample standard deviation, and\n- [MATH: P(T > t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: T] has a student's [MATH: t]-distribution with [MATH: n-1] degrees of freedom.\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]\n\nNote that the above lower bound can't be directly calculated because we need [MATH: n] to determine [MATH: t_{n-1, \\,\\alpha/2},] and [MATH: n] is the value we are trying to find. However, as [MATH: n] increases, the [MATH: t]-distribution approaches the standard normal distribution. Therefore, we can replace [MATH: t_{n-1, \\,\\alpha/2}] by [MATH: z_{\\alpha/2},] where [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z] follows a standard normal distribution.\n\nNow, we are interested in finding a [MATH: 98\\%] confidence interval. So, we have\n[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]\n\nWe are given that [MATH: P(Z > 2.326) = 0.01.] As a result,\n[MATH: z_{\\alpha/2} = z_{0.01} = 2.326.]\n\nWe're given the sample standard deviation [MATH: s=0.5.] Therefore, substituting\n[MATH: \\varepsilon=0.05, \\qquad\ns=0.5, \\qquad\nz_{\\alpha/2}=2.326]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}s^{2})/(\u03b5^{2}); = ((2.326)^{2}(0.5)^{2})/((0.05)^{2}); \u2248 541.03.]\n\nFinally, rounding up to the nearest integer, we get [MATH: n=542] or larger.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider a normal population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be [MATH: s=0.5.] Suppose we require a [MATH: 98\\%] confidence interval for the population mean to have a margin of error of at most [MATH: 0.05.]\nFind the smallest sample size [MATH: n] required to construct this interval.\n\nHint: Use the fact that [MATH: P(Z > 2.326) = 0.01,] where [MATH: Z \\sim N(0,1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nWe are told that the population is normally distributed, but we do not know the population standard deviation [MATH: \\sigma.]\n\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\overline{x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: s] is the sample standard deviation, and\n- [MATH: P(T > t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: T] has a student's [MATH: t]-distribution with [MATH: n-1] degrees of freedom.\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]\n\nNote that the above lower bound can't be directly calculated because we need [MATH: n] to determine [MATH: t_{n-1, \\,\\alpha/2},] and [MATH: n] is the value we are trying to find. However, as [MATH: n] increases, the [MATH: t]-distribution approaches the standard normal distribution. Therefore, we can replace [MATH: t_{n-1, \\,\\alpha/2}] by [MATH: z_{\\alpha/2},] where [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z] follows a standard normal distribution.\n\nNow, we are interested in finding a [MATH: 98\\%] confidence interval. So, we have\n[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]\n\nWe are given that [MATH: P(Z > 2.326) = 0.01.] As a result,\n[MATH: z_{\\alpha/2} = z_{0.01} = 2.326.]\n\nWe're given the sample standard deviation [MATH: s=0.5.] Therefore, substituting\n[MATH: \\varepsilon=0.05, \\qquad\ns=0.5, \\qquad\nz_{\\alpha/2}=2.326]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}s^{2})/(\u03b5^{2}); = ((2.326)^{2}(0.5)^{2})/((0.05)^{2}); \u2248 541.03.]\n\nFinally, rounding up to the nearest integer, we get [MATH: n=542] or larger."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "251206",
+        "dom_id": "question-251206",
+        "selector": "#question-251206",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A researcher wants to estimate the mean height of adult males in a city. A preliminary study on a small sample found the sample standard deviation to be <span class=\"math\">[MATH: s = 6cm.]</span></p><p>Assuming the population is normally distributed, find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for a <span class=\"math\">[MATH: 90%]</span> confidence interval for the population mean height is at most <span class=\"math\">[MATH: 1.2cm.]</span> </p><p><em>Hint: Use the fact that <span class=\"math\">[MATH: P(Z &gt; 1.645) = 0.05,]</span> where <span class=\"math\">[MATH: Z\u223cN(0, 1).]</span></em></p>",
+          "readable_text": "A researcher wants to estimate the mean height of adult males in a city. A preliminary study on a small sample found the sample standard deviation to be [MATH: s = 6cm.]\n\nAssuming the population is normally distributed, find the smallest sample size [MATH: n] required to ensure that the margin of error for a [MATH: 90%] confidence interval for the population mean height is at most [MATH: 1.2cm.]\n\nHint: Use the fact that [MATH: P(Z > 1.645) = 0.05,] where [MATH: Z\u223cN(0, 1).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251206-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 74]</span></p>",
+            "readable_text": "[MATH: n = 74]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251206-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 68]</span></p>",
+            "readable_text": "[MATH: n = 68]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251206-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 63]</span></p>",
+            "readable_text": "[MATH: n = 63]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251206-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 61]</span> </p>",
+            "readable_text": "[MATH: n = 61]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251206-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 71]</span></p>",
+            "readable_text": "[MATH: n = 71]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA researcher wants to estimate the mean height of adult males in a city. A preliminary study on a small sample found the sample standard deviation to be [MATH: s = 6cm.]\n\nAssuming the population is normally distributed, find the smallest sample size [MATH: n] required to ensure that the margin of error for a [MATH: 90%] confidence interval for the population mean height is at most [MATH: 1.2cm.]\n\nHint: Use the fact that [MATH: P(Z > 1.645) = 0.05,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: n = 74]\nb. [MATH: n = 68]\nc. [MATH: n = 63]\nd. [MATH: n = 61]\ne. [MATH: n = 71]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "251210",
+        "dom_id": "question-251210",
+        "selector": "#question-251210",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be <span class=\"math\">[MATH: s = 5.]</span> Suppose we require a <span class=\"math\">[MATH: 80%]</span> confidence interval for the population mean to have a margin of error of at most <span class=\"math\">[MATH: 0.6.]</span>\nFind the smallest sample size <span class=\"math\">[MATH: n]</span> required to construct this interval.</p><p><em>Hint: Given a random variable <span class=\"math\">[MATH: Z\u223cN(0, 1),]</span> the table below shows the <span class=\"math\">[MATH: z]</span>-scores <span class=\"math\">[MATH: z_{p}]</span> such that <span class=\"math\">[MATH: P(Z &gt; z_{p}) = p]</span> for some particular values of <span class=\"math\">[MATH: p.]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_{p}]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: 2.326]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table>",
+          "readable_text": "Consider a population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be [MATH: s = 5.] Suppose we require a [MATH: 80%] confidence interval for the population mean to have a margin of error of at most [MATH: 0.6.]\nFind the smallest sample size [MATH: n] required to construct this interval.\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251210-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 118]</span></p>",
+            "readable_text": "[MATH: n = 118]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251210-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 126]</span></p>",
+            "readable_text": "[MATH: n = 126]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251210-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 115]</span></p>",
+            "readable_text": "[MATH: n = 115]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251210-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 122]</span></p>",
+            "readable_text": "[MATH: n = 122]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251210-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: n = 111]</span></p>",
+            "readable_text": "[MATH: n = 111]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be [MATH: s = 5.] Suppose we require a [MATH: 80%] confidence interval for the population mean to have a margin of error of at most [MATH: 0.6.]\nFind the smallest sample size [MATH: n] required to construct this interval.\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nChoices:\na. [MATH: n = 118]\nb. [MATH: n = 126]\nc. [MATH: n = 115]\nd. [MATH: n = 122]\ne. [MATH: n = 111]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "222566",
+        "content_id": "10558",
+        "dom_id": "step-222566",
+        "selector": "#step-222566",
+        "step_anchor": "step-9",
+        "title": "The Empirical Rule for the Normal Distribution",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s remind ourselves of the empirical rule for the normal distribution:</p>",
+            "readable_text": "Let's remind ourselves of the empirical rule for the normal distribution:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Approximately <span class=\"math\">[MATH: 68\\%]</span> of the data falls within <span class=\"math\">[MATH: 1]</span> standard deviation of the mean. </p><div class=\"graphic\"><img src=\"/graphics/68255887549e96eea1331a53a6f17fd4\"></div></li></ul>",
+            "readable_text": "- Approximately [MATH: 68\\%] of the data falls within [MATH: 1] standard deviation of the mean.\n\n[IMG: /graphics/68255887549e96eea1331a53a6f17fd4]",
+            "images": [
+              {
+                "src": "/graphics/68255887549e96eea1331a53a6f17fd4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Approximately  <span class=\"math\">[MATH: 95\\%]</span> of the data falls within <span class=\"math\">[MATH: 2]</span> standard deviations of the mean. </p><div class=\"graphic\"><img src=\"/graphics/86cfb0edad3bbe006950eb813a262edd\"></div></li></ul>",
+            "readable_text": "- Approximately [MATH: 95\\%] of the data falls within [MATH: 2] standard deviations of the mean.\n\n[IMG: /graphics/86cfb0edad3bbe006950eb813a262edd]",
+            "images": [
+              {
+                "src": "/graphics/86cfb0edad3bbe006950eb813a262edd",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Approximately  <span class=\"math\">[MATH: 99.7\\%]</span> of the data falls within <span class=\"math\">[MATH: 3]</span> standard deviations of the mean. </p><div class=\"graphic\"><img src=\"/graphics/68d85c99c7e06b5f400a53cc584501f7\"></div></li></ul>",
+            "readable_text": "- Approximately [MATH: 99.7\\%] of the data falls within [MATH: 3] standard deviations of the mean.\n\n[IMG: /graphics/68d85c99c7e06b5f400a53cc584501f7]",
+            "images": [
+              {
+                "src": "/graphics/68d85c99c7e06b5f400a53cc584501f7",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see how we can find minimum sample sizes using the empirical rule.</p>",
+            "readable_text": "Let's see how we can find minimum sample sizes using the empirical rule.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/68255887549e96eea1331a53a6f17fd4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/86cfb0edad3bbe006950eb813a262edd",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/68d85c99c7e06b5f400a53cc584501f7",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's remind ourselves of the empirical rule for the normal distribution:\n\nContent:\n- Approximately [MATH: 68\\%] of the data falls within [MATH: 1] standard deviation of the mean.\n\n[IMG: /graphics/68255887549e96eea1331a53a6f17fd4]\n\nContent:\n- Approximately [MATH: 95\\%] of the data falls within [MATH: 2] standard deviations of the mean.\n\n[IMG: /graphics/86cfb0edad3bbe006950eb813a262edd]\n\nContent:\n- Approximately [MATH: 99.7\\%] of the data falls within [MATH: 3] standard deviations of the mean.\n\n[IMG: /graphics/68d85c99c7e06b5f400a53cc584501f7]\n\nContent:\nLet's see how we can find minimum sample sizes using the empirical rule."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "222567",
+        "content_id": "15121",
+        "dom_id": "step-222567",
+        "selector": "#step-222567",
+        "step_anchor": "step-10",
+        "title": "Finding a Minimum Sample Size Using the Empirical Rule",
+        "key_prerequisites": [
+          {
+            "topic_id": "3594",
+            "name": "The Empirical Rule for the Normal Distribution",
+            "href": "/topics/3594",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider a normal population with unknown mean and variance, for which it is known that <span class=\"math\">[MATH: 99.7\\%]</span> of the observations lie between <span class=\"math\">[MATH: -5.3]</span> and <span class=\"math\">[MATH: 12.7,]</span> and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for the <span class=\"math\">[MATH: 95\\%]</span> confidence interval for the population mean is at most <span class=\"math\">[MATH: 0.5.]</span></p><p><em>Hint: Use the fact that <span class=\"math\">[MATH: P(Z &gt; 1.96) = 0.025,]</span> where <span class=\"math\">[MATH: Z \\sim N(0,1).]</span></em></p>",
+            "readable_text": "Consider a normal population with unknown mean and variance, for which it is known that [MATH: 99.7\\%] of the observations lie between [MATH: -5.3] and [MATH: 12.7,] and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95\\%] confidence interval for the population mean is at most [MATH: 0.5.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z \\sim N(0,1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Given a value <span class=\"math\">[MATH: \\alpha]</span> between <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1,]</span> the corresponding <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> can be written as</p><p><span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p><p>where </p><ul><li><p><span class=\"math\">[MATH: \\!\\overline{\\,x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: \\sigma]</span> is the population standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z \\sim N(0,1).]</span> </p></li></ul><p>If we require the margin of error to be at most <span class=\"math\">[MATH: \\varepsilon,]</span> then</p><p><span class=\"math\">[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]</span></p><p>To find an estimate for <span class=\"math\">[MATH: \\sigma^2,]</span> we can apply the empirical rule. According to this rule, <span class=\"math\">[MATH: 99.7\\%]</span> of the observations of a random normal variable <span class=\"math\">[MATH: N(\\mu, \\sigma^2)]</span> fall in the interval <span class=\"math\">[MATH: (\\mu-3\\sigma, \\mu+3\\sigma).]</span> Therefore, we can estimate <span class=\"math\">[MATH: \\sigma]</span> by dividing the given range by <span class=\"math\">[MATH: 2\\cdot 3 = 6{:}]</span>\n<span class=\"math\">[MATH: \\widehat{\\sigma} =\\dfrac{12.7-(-5.3)}{6} = 3]</span></p><p>We are interested in finding a <span class=\"math\">[MATH: 95\\%]</span> confidence interval. So, we have </p><p><span class=\"math\">[MATH: \\alpha=1-0.95=0.05 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.025.]</span></p><p>We are given that <span class=\"math\">[MATH: P(Z &gt; 1.96) = 0.025.]</span> As a result, </p><p><span class=\"math\">[MATH: z_{\\alpha/2} = z_{0.025} = 1.96.]</span></p><p>Therefore, substituting </p><p><span class=\"math\">[MATH: \\varepsilon=0.5, \\qquad\n\\widehat{\\sigma}=3, \\qquad\nz_{\\alpha/2}=1.96]</span>\ninto the inequality for <span class=\"math\">[MATH: n,]</span> we obtain</p><p><span class=\"math\">[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^(^)^{2})/(\u03b5^{2}); = ((1.96)^{2}(3)^{2})/((0.5)^{2}); \u2248 138.30]</span></p><p>Finally, rounding up to the nearest integer, we get that <span class=\"math\">[MATH: n=139]</span> or larger.</p>",
+            "readable_text": "Given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nTo find an estimate for [MATH: \\sigma^2,] we can apply the empirical rule. According to this rule, [MATH: 99.7\\%] of the observations of a random normal variable [MATH: N(\\mu, \\sigma^2)] fall in the interval [MATH: (\\mu-3\\sigma, \\mu+3\\sigma).] Therefore, we can estimate [MATH: \\sigma] by dividing the given range by [MATH: 2\\cdot 3 = 6{:}]\n[MATH: \\widehat{\\sigma} =\\dfrac{12.7-(-5.3)}{6} = 3]\n\nWe are interested in finding a [MATH: 95\\%] confidence interval. So, we have\n\n[MATH: \\alpha=1-0.95=0.05 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.025.]\n\nWe are given that [MATH: P(Z > 1.96) = 0.025.] As a result,\n\n[MATH: z_{\\alpha/2} = z_{0.025} = 1.96.]\n\nTherefore, substituting\n\n[MATH: \\varepsilon=0.5, \\qquad\n\\widehat{\\sigma}=3, \\qquad\nz_{\\alpha/2}=1.96]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^(^)^{2})/(\u03b5^{2}); = ((1.96)^{2}(3)^{2})/((0.5)^{2}); \u2248 138.30]\n\nFinally, rounding up to the nearest integer, we get that [MATH: n=139] or larger.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider a normal population with unknown mean and variance, for which it is known that [MATH: 99.7\\%] of the observations lie between [MATH: -5.3] and [MATH: 12.7,] and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95\\%] confidence interval for the population mean is at most [MATH: 0.5.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z \\sim N(0,1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nTo find an estimate for [MATH: \\sigma^2,] we can apply the empirical rule. According to this rule, [MATH: 99.7\\%] of the observations of a random normal variable [MATH: N(\\mu, \\sigma^2)] fall in the interval [MATH: (\\mu-3\\sigma, \\mu+3\\sigma).] Therefore, we can estimate [MATH: \\sigma] by dividing the given range by [MATH: 2\\cdot 3 = 6{:}]\n[MATH: \\widehat{\\sigma} =\\dfrac{12.7-(-5.3)}{6} = 3]\n\nWe are interested in finding a [MATH: 95\\%] confidence interval. So, we have\n\n[MATH: \\alpha=1-0.95=0.05 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.025.]\n\nWe are given that [MATH: P(Z > 1.96) = 0.025.] As a result,\n\n[MATH: z_{\\alpha/2} = z_{0.025} = 1.96.]\n\nTherefore, substituting\n\n[MATH: \\varepsilon=0.5, \\qquad\n\\widehat{\\sigma}=3, \\qquad\nz_{\\alpha/2}=1.96]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^(^)^{2})/(\u03b5^{2}); = ((1.96)^{2}(3)^{2})/((0.5)^{2}); \u2248 138.30]\n\nFinally, rounding up to the nearest integer, we get that [MATH: n=139] or larger."
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "251207",
+        "dom_id": "question-251207",
+        "selector": "#question-251207",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a normally distributed population with unknown mean and variance, for which it is known that <span class=\"math\">[MATH: 68%]</span> of the observations lie between <span class=\"math\">[MATH: 4.2]</span> and <span class=\"math\">[MATH: 9.8,]</span> and this data is distributed symmetrically about the mean. Using the empirical rule to estimate the population standard deviation, find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for the <span class=\"math\">[MATH: 95%]</span> confidence interval for the population mean is at most <span class=\"math\">[MATH: 0.3.]</span></p><p><em>Hint: Use the fact that <span class=\"math\">[MATH: P(Z &gt; 1.96) = 0.025,]</span> where <span class=\"math\">[MATH: Z\u223cN(0, 1).]</span></em></p>",
+          "readable_text": "Consider a normally distributed population with unknown mean and variance, for which it is known that [MATH: 68%] of the observations lie between [MATH: 4.2] and [MATH: 9.8,] and this data is distributed symmetrically about the mean. Using the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95%] confidence interval for the population mean is at most [MATH: 0.3.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z\u223cN(0, 1).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251207-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 297]</span></p>",
+            "readable_text": "[MATH: 297]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251207-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 356]</span></p>",
+            "readable_text": "[MATH: 356]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251207-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 277]</span></p>",
+            "readable_text": "[MATH: 277]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251207-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 335]</span></p>",
+            "readable_text": "[MATH: 335]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251207-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 242]</span></p>",
+            "readable_text": "[MATH: 242]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normally distributed population with unknown mean and variance, for which it is known that [MATH: 68%] of the observations lie between [MATH: 4.2] and [MATH: 9.8,] and this data is distributed symmetrically about the mean. Using the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95%] confidence interval for the population mean is at most [MATH: 0.3.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: 297]\nb. [MATH: 356]\nc. [MATH: 277]\nd. [MATH: 335]\ne. [MATH: 242]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "251197",
+        "dom_id": "question-251197",
+        "selector": "#question-251197",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a normally distributed population with unknown mean and variance, for which it is known that <span class=\"math\">[MATH: 95%]</span> of the observations lie between <span class=\"math\">[MATH: \u2212 5.2]</span> and <span class=\"math\">[MATH: 4.8,]</span> and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size <span class=\"math\">[MATH: n]</span> required to ensure that the margin of error for the <span class=\"math\">[MATH: 90%]</span> confidence interval for the population mean is at most <span class=\"math\">[MATH: 0.15.]</span></p><p><em>Hint: Use the fact that <span class=\"math\">[MATH: P(Z &gt; 1.645) = 0.05,]</span> where <span class=\"math\">[MATH: Z\u223cN(0, 1).]</span></em></p>",
+          "readable_text": "Consider a normally distributed population with unknown mean and variance, for which it is known that [MATH: 95%] of the observations lie between [MATH: \u2212 5.2] and [MATH: 4.8,] and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 90%] confidence interval for the population mean is at most [MATH: 0.15.]\n\nHint: Use the fact that [MATH: P(Z > 1.645) = 0.05,] where [MATH: Z\u223cN(0, 1).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-251197-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 825]</span></p>",
+            "readable_text": "[MATH: 825]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-251197-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 727]</span></p>",
+            "readable_text": "[MATH: 727]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-251197-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 752]</span></p>",
+            "readable_text": "[MATH: 752]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-251197-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 854]</span></p>",
+            "readable_text": "[MATH: 854]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-251197-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 672]</span></p>",
+            "readable_text": "[MATH: 672]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normally distributed population with unknown mean and variance, for which it is known that [MATH: 95%] of the observations lie between [MATH: \u2212 5.2] and [MATH: 4.8,] and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 90%] confidence interval for the population mean is at most [MATH: 0.15.]\n\nHint: Use the fact that [MATH: P(Z > 1.645) = 0.05,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: 825]\nb. [MATH: 727]\nc. [MATH: 752]\nd. [MATH: 854]\ne. [MATH: 672]"
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "222570",
+        "content_id": "10559",
+        "dom_id": "step-222570",
+        "selector": "#step-222570",
+        "step_anchor": "step-13",
+        "title": "Factors Affecting Sample Size",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we conduct a random sample to find the average weekly cost commuters spend traveling to work in a certain city. Let&#x27;s assume we initially used a sample of size <span class=\"math\">[MATH: n_1]</span> to construct a <span class=\"math\">[MATH: 95\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu.]</span> </p>",
+            "readable_text": "Suppose we conduct a random sample to find the average weekly cost commuters spend traveling to work in a certain city. Let's assume we initially used a sample of size [MATH: n_1] to construct a [MATH: 95\\%] confidence interval for the population mean [MATH: \\mu.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>After completing the initial survey, the city planners decided that a new sample must be carried out, and the resulting confidence interval should have the following improvements:</p>",
+            "readable_text": "After completing the initial survey, the city planners decided that a new sample must be carried out, and the resulting confidence interval should have the following improvements:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The confidence level of the new confidence interval should be <span class=\"math\">[MATH: 99\\%.]</span></p></li><li><p>The new confidence interval should be one-third as wide as the original (increased precision). </p></li></ul>",
+            "readable_text": "- The confidence level of the new confidence interval should be [MATH: 99\\%.]\n- The new confidence interval should be one-third as wide as the original (increased precision).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For a fixed sample size, increasing the confidence level leads to an <em>increase</em> in the width of the confidence interval. In other words, precision is reduced when we increase the confidence level. To increase precision, we need to <em>increase</em> the sample size. </p>",
+            "readable_text": "For a fixed sample size, increasing the confidence level leads to an increase in the width of the confidence interval. In other words, precision is reduced when we increase the confidence level. To increase precision, we need to increase the sample size.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s determine how much larger the second sample size <span class=\"math\">[MATH: n_2]</span> should be compared to the first to satisfy these new conditions.</p>",
+            "readable_text": "Let's determine how much larger the second sample size [MATH: n_2] should be compared to the first to satisfy these new conditions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, recall that, given a value <span class=\"math\">[MATH: \\alpha]</span> between <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1,]</span> the corresponding <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> can be written as</p>",
+            "readable_text": "First, recall that, given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p>",
+            "readable_text": "[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where </p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: \\!\\overline{\\,x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: \\sigma]</span> is the population standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z \\sim N(0,1).]</span> </p></li></ul>",
+            "readable_text": "- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We define the following: </p>",
+            "readable_text": "We define the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Let <span class=\"math\">[MATH: I_1]</span> and <span class=\"math\">[MATH: I_2]</span> be the <span class=\"math\">[MATH: 95\\%]</span> and <span class=\"math\">[MATH: 99\\%]</span> confidence intervals for the population mean obtained from samples of size <span class=\"math\">[MATH: n_1]</span> and <span class=\"math\">[MATH: n_2,]</span> respectively.  </p></li><li><p>Let <span class=\"math\">[MATH: \\varepsilon_1]</span> and <span class=\"math\">[MATH: \\varepsilon_2]</span> be the margins of error of <span class=\"math\">[MATH: I_1]</span> and <span class=\"math\">[MATH: I_2,]</span> respectively. </p></li></ul>",
+            "readable_text": "- Let [MATH: I_1] and [MATH: I_2] be the [MATH: 95\\%] and [MATH: 99\\%] confidence intervals for the population mean obtained from samples of size [MATH: n_1] and [MATH: n_2,] respectively.\n- Let [MATH: \\varepsilon_1] and [MATH: \\varepsilon_2] be the margins of error of [MATH: I_1] and [MATH: I_2,] respectively.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since we want <span class=\"math\">[MATH: I_2]</span> to be one-third of the length of <span class=\"math\">[MATH: I_1,]</span> we must have</p>",
+            "readable_text": "Since we want [MATH: I_2] to be one-third of the length of [MATH: I_1,] we must have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\varepsilon_1 = 3\\varepsilon_2.]</span> </p>",
+            "readable_text": "[MATH: \\varepsilon_1 = 3\\varepsilon_2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, we have\n<span class=\"math\">[MATH: z_{0.025} \\cdot \\dfrac{\\sigma}{\\sqrt{n_1}} = 3 \\cdot z_{0.005} \\cdot \\dfrac{\\sigma}{\\sqrt{n_2}}]</span>\nCanceling <span class=\"math\">[MATH: \\sigma]</span> and solving for <span class=\"math\">[MATH: \\dfrac{n_2}{n_1},]</span> we get</p>",
+            "readable_text": "Then, we have\n[MATH: z_{0.025} \\cdot \\dfrac{\\sigma}{\\sqrt{n_1}} = 3 \\cdot z_{0.005} \\cdot \\dfrac{\\sigma}{\\sqrt{n_2}}]\nCanceling [MATH: \\sigma] and solving for [MATH: \\dfrac{n_2}{n_1},] we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: z_{0.025} \u22c5 (1)/(sqrt(n_{1}))|= 3 \u22c5 z_{0.005} \u22c5 (1)/(sqrt(n_{2})); (sqrt(n_{2}))/(sqrt(n_{1}))|= (3 \u22c5 z_{0.005})/(z_{0.025}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((3 \u22c5 z_{0.005})/(z_{0.025}))^{2}; (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2})]</span></p>",
+            "readable_text": "[MATH: z_{0.025} \u22c5 (1)/(sqrt(n_{1}))|= 3 \u22c5 z_{0.005} \u22c5 (1)/(sqrt(n_{2})); (sqrt(n_{2}))/(sqrt(n_{1}))|= (3 \u22c5 z_{0.005})/(z_{0.025}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((3 \u22c5 z_{0.005})/(z_{0.025}))^{2}; (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, using the fact that <span class=\"math\">[MATH: z_{0.005} = 2.576]</span> and <span class=\"math\">[MATH: z_{0.025} = 1.960]</span>, we have</p>",
+            "readable_text": "Now, using the fact that [MATH: z_{0.005} = 2.576] and [MATH: z_{0.025} = 1.960], we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2}); = (9 \u22c5 2.576^{2})/(1.960^{2}); \u2248 15.54.]</span></p>",
+            "readable_text": "[MATH: (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2}); = (9 \u22c5 2.576^{2})/(1.960^{2}); \u2248 15.54.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This gives\n<span class=\"math\">[MATH: n_2 \\approx 15.5 n_1.]</span></p>",
+            "readable_text": "This gives\n[MATH: n_2 \\approx 15.5 n_1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, <span class=\"math\">[MATH: n_2]</span> must be larger than <span class=\"math\">[MATH: n_1]</span> by a factor of approximately <span class=\"math\">[MATH: 15.5.]</span> Note that the additional time and resources needed to conduct a sample that&#x27;s more than fifteen times the size of the first could be significant! </p>",
+            "readable_text": "Therefore, [MATH: n_2] must be larger than [MATH: n_1] by a factor of approximately [MATH: 15.5.] Note that the additional time and resources needed to conduct a sample that's more than fifteen times the size of the first could be significant!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s take a look at a similar problem in the case where the population variance is unknown.</p>",
+            "readable_text": "Let's take a look at a similar problem in the case where the population variance is unknown.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we conduct a random sample to find the average weekly cost commuters spend traveling to work in a certain city. Let's assume we initially used a sample of size [MATH: n_1] to construct a [MATH: 95\\%] confidence interval for the population mean [MATH: \\mu.]\n\nContent:\nAfter completing the initial survey, the city planners decided that a new sample must be carried out, and the resulting confidence interval should have the following improvements:\n\nContent:\n- The confidence level of the new confidence interval should be [MATH: 99\\%.]\n- The new confidence interval should be one-third as wide as the original (increased precision).\n\nContent:\nFor a fixed sample size, increasing the confidence level leads to an increase in the width of the confidence interval. In other words, precision is reduced when we increase the confidence level. To increase precision, we need to increase the sample size.\n\nContent:\nLet's determine how much larger the second sample size [MATH: n_2] should be compared to the first to satisfy these new conditions.\n\nContent:\nFirst, recall that, given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\nContent:\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nContent:\nWe define the following:\n\nContent:\n- Let [MATH: I_1] and [MATH: I_2] be the [MATH: 95\\%] and [MATH: 99\\%] confidence intervals for the population mean obtained from samples of size [MATH: n_1] and [MATH: n_2,] respectively.\n- Let [MATH: \\varepsilon_1] and [MATH: \\varepsilon_2] be the margins of error of [MATH: I_1] and [MATH: I_2,] respectively.\n\nContent:\nSince we want [MATH: I_2] to be one-third of the length of [MATH: I_1,] we must have\n\nContent:\n[MATH: \\varepsilon_1 = 3\\varepsilon_2.]\n\nContent:\nThen, we have\n[MATH: z_{0.025} \\cdot \\dfrac{\\sigma}{\\sqrt{n_1}} = 3 \\cdot z_{0.005} \\cdot \\dfrac{\\sigma}{\\sqrt{n_2}}]\nCanceling [MATH: \\sigma] and solving for [MATH: \\dfrac{n_2}{n_1},] we get\n\nContent:\n[MATH: z_{0.025} \u22c5 (1)/(sqrt(n_{1}))|= 3 \u22c5 z_{0.005} \u22c5 (1)/(sqrt(n_{2})); (sqrt(n_{2}))/(sqrt(n_{1}))|= (3 \u22c5 z_{0.005})/(z_{0.025}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((3 \u22c5 z_{0.005})/(z_{0.025}))^{2}; (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2})]\n\nContent:\nNow, using the fact that [MATH: z_{0.005} = 2.576] and [MATH: z_{0.025} = 1.960], we have\n\nContent:\n[MATH: (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2}); = (9 \u22c5 2.576^{2})/(1.960^{2}); \u2248 15.54.]\n\nContent:\nThis gives\n[MATH: n_2 \\approx 15.5 n_1.]\n\nContent:\nTherefore, [MATH: n_2] must be larger than [MATH: n_1] by a factor of approximately [MATH: 15.5.] Note that the additional time and resources needed to conduct a sample that's more than fifteen times the size of the first could be significant!\n\nContent:\nLet's take a look at a similar problem in the case where the population variance is unknown."
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "222571",
+        "content_id": "15122",
+        "dom_id": "step-222571",
+        "selector": "#step-222571",
+        "step_anchor": "step-14",
+        "title": "Understanding the Minimum Sample Size Formula",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider a normal population with unknown mean and standard deviation. Let <span class=\"math\">[MATH: I_1]</span> be a <span class=\"math\">[MATH: 95\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> obtained from a sample of size <span class=\"math\">[MATH: n_1]</span> using as an estimate for the standard deviation <span class=\"math\">[MATH: s_1=5,]</span> calculated from a previous study. </p><p>Suppose we require a second <span class=\"math\">[MATH: 98\\%]</span> confidence interval <span class=\"math\">[MATH: I_2]</span> to have the same length as <span class=\"math\">[MATH: I_1,]</span> obtained using a different estimate <span class=\"math\">[MATH: s_2=3.]</span> Find the relative size of the second sample <span class=\"math\">[MATH: n_2]</span> we should use to construct <span class=\"math\">[MATH: I_2.]</span> </p><p><em>Hint: Given a random variable <span class=\"math\">[MATH: Z \\sim N(0,1),]</span> the table below shows the <span class=\"math\">[MATH: z]</span>-scores <span class=\"math\">[MATH: z_p]</span> such that <span class=\"math\">[MATH: P(Z &gt; z_p) = p]</span> for some particular values of <span class=\"math\">[MATH: p.]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_p]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: 2.326]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table>",
+            "readable_text": "Consider a normal population with unknown mean and standard deviation. Let [MATH: I_1] be a [MATH: 95\\%] confidence interval for the population mean [MATH: \\mu] obtained from a sample of size [MATH: n_1] using as an estimate for the standard deviation [MATH: s_1=5,] calculated from a previous study.\n\nSuppose we require a second [MATH: 98\\%] confidence interval [MATH: I_2] to have the same length as [MATH: I_1,] obtained using a different estimate [MATH: s_2=3.] Find the relative size of the second sample [MATH: n_2] we should use to construct [MATH: I_2.]\n\nHint: Given a random variable [MATH: Z \\sim N(0,1),] the table below shows the [MATH: z]-scores [MATH: z_p] such that [MATH: P(Z > z_p) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Given a value <span class=\"math\">[MATH: \\alpha]</span> between <span class=\"math\">[MATH: 0]</span> and <span class=\"math\">[MATH: 1,]</span> the corresponding <span class=\"math\">[MATH: [100(1-\\alpha)]\\%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \\mu]</span> can be written as</p><p><span class=\"math\">[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]</span></p><p>where </p><ul><li><p><span class=\"math\">[MATH: \\!\\overline{\\,x}]</span> is the sample mean, </p></li><li><p><span class=\"math\">[MATH: n]</span> is the sample size,</p></li><li><p><span class=\"math\">[MATH: \\sigma]</span> is the population standard deviation, and</p></li><li><p><span class=\"math\">[MATH: P(Z &gt; z_{\\alpha/2}) = \\dfrac{\\alpha}{2}]</span> and <span class=\"math\">[MATH: Z \\sim N(0,1).]</span> </p></li></ul><p>Let <span class=\"math\">[MATH: \\varepsilon_1]</span> and <span class=\"math\">[MATH: \\varepsilon_2]</span> be the margins of error of <span class=\"math\">[MATH: I_1]</span> and <span class=\"math\">[MATH: I_2,]</span> respectively. Since we want <span class=\"math\">[MATH: I_2]</span> to be equal to <span class=\"math\">[MATH: I_1,]</span> we must have\n<span class=\"math\">[MATH: \\varepsilon_1 = \\varepsilon_2.]</span> </p><p>Then, we have\n<span class=\"math\">[MATH: z_{0.025} \\cdot \\dfrac{s_1}{\\sqrt{n_1}} = z_{0.01} \\cdot \\dfrac{s_2}{\\sqrt{n_2}}]</span>\nSolving for <span class=\"math\">[MATH: \\dfrac{n_2}{n_1},]</span> we get</p><p><span class=\"math\">[MATH: (sqrt(n_{2}))/(sqrt(n_{1}))|= (z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}))^{2}; (n_{2})/(n_{1})|= (z_{0.01}^{2} \u22c5 s_{2}^{2})/(z_{0.025}^{2} \u22c5 s_{1}^{2})]</span></p><p>Now, using the fact that <span class=\"math\">[MATH: s_1 = 5, s_2 = 3, z_{0.01} = 2.326, z_{0.25} = 1.960,]</span> we have</p><p><span class=\"math\">[MATH: (n_{2})/(n_{1})|= (2.326^{2} \u22c5 3^{2})/(1.960^{2} \u22c5 5^{2}) \u2248 0.507]</span></p><p>which gives</p><p><span class=\"math\">[MATH: n_1\\approx 1.97 n_2.]</span></p><p>Therefore, <span class=\"math\">[MATH: n_2]</span> must be <span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\text{smaller}}]</span> than <span class=\"math\">[MATH: n_1]</span> by a factor of approximately <span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1.97}.]</span></p>",
+            "readable_text": "Given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nLet [MATH: \\varepsilon_1] and [MATH: \\varepsilon_2] be the margins of error of [MATH: I_1] and [MATH: I_2,] respectively. Since we want [MATH: I_2] to be equal to [MATH: I_1,] we must have\n[MATH: \\varepsilon_1 = \\varepsilon_2.]\n\nThen, we have\n[MATH: z_{0.025} \\cdot \\dfrac{s_1}{\\sqrt{n_1}} = z_{0.01} \\cdot \\dfrac{s_2}{\\sqrt{n_2}}]\nSolving for [MATH: \\dfrac{n_2}{n_1},] we get\n\n[MATH: (sqrt(n_{2}))/(sqrt(n_{1}))|= (z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}))^{2}; (n_{2})/(n_{1})|= (z_{0.01}^{2} \u22c5 s_{2}^{2})/(z_{0.025}^{2} \u22c5 s_{1}^{2})]\n\nNow, using the fact that [MATH: s_1 = 5, s_2 = 3, z_{0.01} = 2.326, z_{0.25} = 1.960,] we have\n\n[MATH: (n_{2})/(n_{1})|= (2.326^{2} \u22c5 3^{2})/(1.960^{2} \u22c5 5^{2}) \u2248 0.507]\n\nwhich gives\n\n[MATH: n_1\\approx 1.97 n_2.]\n\nTherefore, [MATH: n_2] must be [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\text{smaller}}] than [MATH: n_1] by a factor of approximately [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1.97}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider a normal population with unknown mean and standard deviation. Let [MATH: I_1] be a [MATH: 95\\%] confidence interval for the population mean [MATH: \\mu] obtained from a sample of size [MATH: n_1] using as an estimate for the standard deviation [MATH: s_1=5,] calculated from a previous study.\n\nSuppose we require a second [MATH: 98\\%] confidence interval [MATH: I_2] to have the same length as [MATH: I_1,] obtained using a different estimate [MATH: s_2=3.] Find the relative size of the second sample [MATH: n_2] we should use to construct [MATH: I_2.]\n\nHint: Given a random variable [MATH: Z \\sim N(0,1),] the table below shows the [MATH: z]-scores [MATH: z_p] such that [MATH: P(Z > z_p) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nLet [MATH: \\varepsilon_1] and [MATH: \\varepsilon_2] be the margins of error of [MATH: I_1] and [MATH: I_2,] respectively. Since we want [MATH: I_2] to be equal to [MATH: I_1,] we must have\n[MATH: \\varepsilon_1 = \\varepsilon_2.]\n\nThen, we have\n[MATH: z_{0.025} \\cdot \\dfrac{s_1}{\\sqrt{n_1}} = z_{0.01} \\cdot \\dfrac{s_2}{\\sqrt{n_2}}]\nSolving for [MATH: \\dfrac{n_2}{n_1},] we get\n\n[MATH: (sqrt(n_{2}))/(sqrt(n_{1}))|= (z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}))^{2}; (n_{2})/(n_{1})|= (z_{0.01}^{2} \u22c5 s_{2}^{2})/(z_{0.025}^{2} \u22c5 s_{1}^{2})]\n\nNow, using the fact that [MATH: s_1 = 5, s_2 = 3, z_{0.01} = 2.326, z_{0.25} = 1.960,] we have\n\n[MATH: (n_{2})/(n_{1})|= (2.326^{2} \u22c5 3^{2})/(1.960^{2} \u22c5 5^{2}) \u2248 0.507]\n\nwhich gives\n\n[MATH: n_1\\approx 1.97 n_2.]\n\nTherefore, [MATH: n_2] must be [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\text{smaller}}] than [MATH: n_1] by a factor of approximately [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1.97}.]"
+      },
+      {
+        "lesson_index": 15,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "226120",
+        "dom_id": "question-226120",
+        "selector": "#question-226120",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a normal population with an unknown population mean and population standard deviation <span class=\"math\">[MATH: \u03c3 = 10.]</span> Let <span class=\"math\">[MATH: I_{1}]</span> be a <span class=\"math\">[MATH: 90%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \u03bc]</span> obtained from a sample of size <span class=\"math\">[MATH: n_{1}.]</span> </p><p>Suppose we require a second <span class=\"math\">[MATH: 95%]</span> confidence interval <span class=\"math\">[MATH: I_{2}]</span> to have half the length of <span class=\"math\">[MATH: I_{1}.]</span> Find the relative size of the second sample <span class=\"math\">[MATH: n_{2}]</span> we should use to construct <span class=\"math\">[MATH: I_{2}.]</span> </p><p><em>Hint: Given a random variable <span class=\"math\">[MATH: Z\u223cN(0, 1),]</span> the table below shows the <span class=\"math\">[MATH: z]</span>-scores <span class=\"math\">[MATH: z_{p}]</span> such that <span class=\"math\">[MATH: P(Z &gt; z_{p}) = p]</span> for some particular values of <span class=\"math\">[MATH: p.]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_{p}]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: 2.326]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table><p> The sample size <span class=\"math\">[MATH: n_{2}]</span> must be <span class=\"select-list\" data-select-id=\"selectList-226120-0\" data-select-index=\"1\">[SELECT 1]</span> than <span class=\"math\">[MATH: n_{1}]</span> by a factor of approximately <span class=\"select-list\" data-select-id=\"selectList-226120-1\" data-select-index=\"2\">[SELECT 2]</span>.</p>",
+          "readable_text": "Consider a normal population with an unknown population mean and population standard deviation [MATH: \u03c3 = 10.] Let [MATH: I_{1}] be a [MATH: 90%] confidence interval for the population mean [MATH: \u03bc] obtained from a sample of size [MATH: n_{1}.]\n\nSuppose we require a second [MATH: 95%] confidence interval [MATH: I_{2}] to have half the length of [MATH: I_{1}.] Find the relative size of the second sample [MATH: n_{2}] we should use to construct [MATH: I_{2}.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nThe sample size [MATH: n_{2}] must be [SELECT 1] than [MATH: n_{1}] by a factor of approximately [SELECT 2].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-226120-0",
+              "frame_dom_id": "selectListFrame-226120-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "smaller",
+                  "readable_text": "smaller"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "larger",
+                  "readable_text": "larger"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-226120-1",
+              "frame_dom_id": "selectListFrame-226120-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 6.5]</span>",
+                  "readable_text": "[MATH: 6.5]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 3.8]</span>",
+                  "readable_text": "[MATH: 3.8]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 5.7]</span>",
+                  "readable_text": "[MATH: 5.7]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 8.1]</span>",
+                  "readable_text": "[MATH: 8.1]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 4.2]</span>",
+                  "readable_text": "[MATH: 4.2]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-226120-0",
+            "frame_dom_id": "selectListFrame-226120-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "smaller",
+                "readable_text": "smaller"
+              },
+              {
+                "index": 2,
+                "normalized_html": "larger",
+                "readable_text": "larger"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-226120-1",
+            "frame_dom_id": "selectListFrame-226120-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 6.5]</span>",
+                "readable_text": "[MATH: 6.5]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 3.8]</span>",
+                "readable_text": "[MATH: 3.8]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 5.7]</span>",
+                "readable_text": "[MATH: 5.7]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 8.1]</span>",
+                "readable_text": "[MATH: 8.1]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 4.2]</span>",
+                "readable_text": "[MATH: 4.2]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normal population with an unknown population mean and population standard deviation [MATH: \u03c3 = 10.] Let [MATH: I_{1}] be a [MATH: 90%] confidence interval for the population mean [MATH: \u03bc] obtained from a sample of size [MATH: n_{1}.]\n\nSuppose we require a second [MATH: 95%] confidence interval [MATH: I_{2}] to have half the length of [MATH: I_{1}.] Find the relative size of the second sample [MATH: n_{2}] we should use to construct [MATH: I_{2}.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nThe sample size [MATH: n_{2}] must be [SELECT 1] than [MATH: n_{1}] by a factor of approximately [SELECT 2]."
+      },
+      {
+        "lesson_index": 16,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "226121",
+        "dom_id": "question-226121",
+        "selector": "#question-226121",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider a normal population with unknown mean and standard deviation. Let <span class=\"math\">[MATH: I_{1}]</span> be a <span class=\"math\">[MATH: 90%]</span> confidence interval for the population mean <span class=\"math\">[MATH: \u03bc]</span> obtained from a sample of size <span class=\"math\">[MATH: n_{1}]</span> using as an estimate for the standard deviation <span class=\"math\">[MATH: s_{1} = 2,]</span> calculated from a previous study. </p><p>Suppose we require a second <span class=\"math\">[MATH: 95%]</span> confidence interval <span class=\"math\">[MATH: I_{2}]</span> to have the same length as <span class=\"math\">[MATH: I_{1},]</span> obtained using a different estimate <span class=\"math\">[MATH: s_{2} = 1.5.]</span> Find the relative size of the second sample <span class=\"math\">[MATH: n_{2}]</span> we should use to construct <span class=\"math\">[MATH: I_{2}.]</span> </p><p><em>Hint: Given a random variable <span class=\"math\">[MATH: Z\u223cN(0, 1),]</span> the table below shows the <span class=\"math\">[MATH: z]</span>-scores <span class=\"math\">[MATH: z_{p}]</span> such that <span class=\"math\">[MATH: P(Z &gt; z_{p}) = p]</span> for some particular values of <span class=\"math\">[MATH: p.]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: 0.100]</span></p></td><td><p><span class=\"math\">[MATH: 0.050]</span></p></td><td><p><span class=\"math\">[MATH: 0.025]</span></p></td><td><p><span class=\"math\">[MATH: 0.010]</span></p></td><td><p><span class=\"math\">[MATH: 0.005]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: z_{p}]</span></p></td><td><p><span class=\"math\">[MATH: 1.282]</span></p></td><td><p><span class=\"math\">[MATH: 1.645]</span></p></td><td><p><span class=\"math\">[MATH: 1.960]</span></p></td><td><p><span class=\"math\">[MATH: 2.326]</span></p></td><td><p><span class=\"math\">[MATH: 2.576]</span></p></td></tr></table><p> The sample size <span class=\"math\">[MATH: n_{2}]</span> must be <span class=\"select-list\" data-select-id=\"selectList-226121-0\" data-select-index=\"1\">[SELECT 1]</span> than <span class=\"math\">[MATH: n_{1}]</span> by a factor of approximately <span class=\"select-list\" data-select-id=\"selectList-226121-1\" data-select-index=\"2\">[SELECT 2]</span>.</p>",
+          "readable_text": "Consider a normal population with unknown mean and standard deviation. Let [MATH: I_{1}] be a [MATH: 90%] confidence interval for the population mean [MATH: \u03bc] obtained from a sample of size [MATH: n_{1}] using as an estimate for the standard deviation [MATH: s_{1} = 2,] calculated from a previous study.\n\nSuppose we require a second [MATH: 95%] confidence interval [MATH: I_{2}] to have the same length as [MATH: I_{1},] obtained using a different estimate [MATH: s_{2} = 1.5.] Find the relative size of the second sample [MATH: n_{2}] we should use to construct [MATH: I_{2}.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nThe sample size [MATH: n_{2}] must be [SELECT 1] than [MATH: n_{1}] by a factor of approximately [SELECT 2].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-226121-0",
+              "frame_dom_id": "selectListFrame-226121-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "smaller",
+                  "readable_text": "smaller"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "larger",
+                  "readable_text": "larger"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-226121-1",
+              "frame_dom_id": "selectListFrame-226121-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.5]</span>",
+                  "readable_text": "[MATH: 1.5]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.75]</span>",
+                  "readable_text": "[MATH: 1.75]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.6]</span>",
+                  "readable_text": "[MATH: 1.6]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.25]</span>",
+                  "readable_text": "[MATH: 1.25]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: 1.35]</span>",
+                  "readable_text": "[MATH: 1.35]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-226121-0",
+            "frame_dom_id": "selectListFrame-226121-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "smaller",
+                "readable_text": "smaller"
+              },
+              {
+                "index": 2,
+                "normalized_html": "larger",
+                "readable_text": "larger"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-226121-1",
+            "frame_dom_id": "selectListFrame-226121-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 1.5]</span>",
+                "readable_text": "[MATH: 1.5]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 1.75]</span>",
+                "readable_text": "[MATH: 1.75]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 1.6]</span>",
+                "readable_text": "[MATH: 1.6]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: 1.25]</span>",
+                "readable_text": "[MATH: 1.25]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: 1.35]</span>",
+                "readable_text": "[MATH: 1.35]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normal population with unknown mean and standard deviation. Let [MATH: I_{1}] be a [MATH: 90%] confidence interval for the population mean [MATH: \u03bc] obtained from a sample of size [MATH: n_{1}] using as an estimate for the standard deviation [MATH: s_{1} = 2,] calculated from a previous study.\n\nSuppose we require a second [MATH: 95%] confidence interval [MATH: I_{2}] to have the same length as [MATH: I_{1},] obtained using a different estimate [MATH: s_{2} = 1.5.] Find the relative size of the second sample [MATH: n_{2}] we should use to construct [MATH: I_{2}.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nThe sample size [MATH: n_{2}] must be [SELECT 1] than [MATH: n_{1}] by a factor of approximately [SELECT 2]."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWhen conducting statistical research, establishing a lower bound for the sample size needed to achieve a margin of error smaller than some pre-specified amount is often helpful. This allows those conducting the sample to achieve results whose errors are constrained and at the minimum level of time and cost.\n\nContent:\nFor example, suppose you're planning a survey to estimate the average cost city commuters must pay monthly to travel to work. You'd need to figure out how many people to survey to ensure reliable results. A sample size that is too small might lead to misleading conclusions, while a sample that is too large wastes resources. This lesson explores how to determine the minimum sample size needed to strike the right balance.\n\nContent:\nLet's determine a lower bound for the sample size required to find a confidence interval for a population mean [MATH: \\mu] with a fixed margin of error.\n\nContent:\nGiven a random sample and a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] we know that the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nContent:\nSuppose that we require the margin of error to be at most [MATH: \\varepsilon,] i.e.,\n\nContent:\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt{n}} \\leq \\varepsilon.]\n\nContent:\nWe can solve this inequality for [MATH: n] by first squaring both sides. This gives\n\nContent:\n[MATH: z_{\u03b1/2}^{2} \u22c5 (\u03c3^{2})/(n)|\u2264 \u03b5^{2}.]\n\nContent:\nBy solving this inequality for [MATH: n,] we obtain\n\nContent:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nContent:\nThis result gives us a lower bound on the sample size [MATH: n] needed to constrain the margin of error to [MATH: \\varepsilon.]\n\nContent:\nNow, we have two possible cases:\n\nContent:\n- Case 1: The population variance [MATH: \\sigma^2] is known.\n- Case 2: The population variance [MATH: \\sigma^2] is unknown.\n\nContent:\nLet's look at an example of the first case.\n\n---\n\nItem 2 \u2014 Example: Finding a Minimum Sample Size: Population Variance Is Known\n\nExample Prompt:\nA group of researchers wants to calculate a [MATH: 98\\%] confidence interval for the mean number of hours wolves sleep daily in their natural habitat. The population standard deviation is known to be [MATH: \\sigma = 1.2 \\, \\textrm{h}.]\n\nFind the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 98\\%] confidence interval for the mean number of hours wolves sleep daily is at most [MATH: 0.3 \\, \\textrm{h}.]\n\nHint: Given a random variable [MATH: Z \\sim N(0,1),] the table below shows the [MATH: z]-scores [MATH: z_p] such that [MATH: P(Z > z_p) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nContent:\nEXPLANATION\n\nExplanation:\nWe do not know the distribution of the population. However, if the sample size [MATH: n] is sufficiently large, then, according to the central limit theorem, the sample mean is approximately normally distributed.\n\nAs a result, given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\overline{x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nWe are interested in finding a [MATH: 98\\%] confidence interval. So, we have\n[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]\n\nFrom the percentage points table of the normal distribution, we obtain that [MATH: z_{0.01}=2.326{:}]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.05] | [MATH: 0.025] | [MATH: \\bbox[2pt,Gainsboro]{\\color{blue}0.010}] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: \\bbox[2pt,Gainsboro]{\\color{blue}2.326}] | [MATH: 2.576] |\n\nWe're given the population standard deviation [MATH: \\sigma=1.2.] Therefore, substituting\n[MATH: \\varepsilon=0.3, \\qquad\n\\sigma=1.2, \\qquad\nz_{\\alpha/2}=2.326]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^{2})/(\u03b5^{2}); = ((2.326)^{2}(1.2)^{2})/((0.3)^{2}); \u2248 86.56.]\n\nFinally, rounding up to the nearest integer, we get that [MATH: n=87] or larger. Notice that [MATH: 87\\geq 30,] therefore, the sample is sufficiently large to apply the normal approximation.\n\n---\n\nItem 3 \u2014 Question 1\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normal population with unknown mean and standard deviation [MATH: \u03c3 = 2.] Find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95%] confidence interval for the population mean is at most [MATH: 0.06.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: n = 4269]\nb. [MATH: n = 5105]\nc. [MATH: n = 4168]\nd. [MATH: n = 4355]\ne. [MATH: n = 5192]\n\n---\n\nItem 4 \u2014 Question 2\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a population with unknown mean and standard deviation [MATH: \u03c3 = 8.] Find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 80%] confidence interval for the population mean is at most [MATH: 1.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nChoices:\na. [MATH: n = 151]\nb. [MATH: n = 106]\nc. [MATH: n = 169]\nd. [MATH: n = 133]\ne. [MATH: n = 188]\n\n---\n\nItem 5 \u2014 Tutorial: Cases Where the Population Variance is Unknown\n\nContent:\nAs we've seen, the sample size [MATH: n] required for margin of error for the [MATH: [100(1-\\alpha)]\\%] confidence interval to be smaller that [MATH: \\varepsilon] is given by\n\nContent:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nContent:\nIn practice, the population variance is often unknown. How can we find a lower bound for [MATH: n] in such cases?\n\nContent:\nFirst, recall that the corresponding confidence interval for the population mean [MATH: \\mu] when the variance is unknown can be written as\n\nContent:\n[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: s] is the sample standard deviation, and\n- [MATH: P(T > t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2},] and [MATH: T] has a student's [MATH: t]-distribution with [MATH: n-1] degrees of freedom.\n\nContent:\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\nContent:\n[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]\n\nContent:\nNote the following:\n\nContent:\n- This lower bound can't be directly calculated because we need [MATH: n] to determine [MATH: t_{n-1, \\,\\alpha/2},] and a lower bound for [MATH: n] is what we're trying to find!\n- However, as [MATH: n] increases, the [MATH: t]-distribution approaches the standard normal distribution.\n- Therefore, we can replace [MATH: t_{n-1, \\,\\alpha/2}] by [MATH: z_{\\alpha/2},] where [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z] follows a standard normal distribution.\n\nContent:\nTherefore, our lower bound for [MATH: n] is as follows:\n[MATH: n \\geq \\dfrac{z_{\\alpha/2}^2 \\, s^2}{\\varepsilon^2}]\nIn short, we simply replace [MATH: \\sigma^2] in our original bound with its unbiased estimate!\n\nContent:\nLet's now look at how to apply this in practice.\n\n---\n\nItem 6 \u2014 Example: Finding a Minimum Sample Size Using a Point Estimate for the Variance\n\nExample Prompt:\nConsider a normal population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be [MATH: s=0.5.] Suppose we require a [MATH: 98\\%] confidence interval for the population mean to have a margin of error of at most [MATH: 0.05.]\nFind the smallest sample size [MATH: n] required to construct this interval.\n\nHint: Use the fact that [MATH: P(Z > 2.326) = 0.01,] where [MATH: Z \\sim N(0,1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nWe are told that the population is normally distributed, but we do not know the population standard deviation [MATH: \\sigma.]\n\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\overline{x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: s] is the sample standard deviation, and\n- [MATH: P(T > t_{n-1, \\,\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: T] has a student's [MATH: t]-distribution with [MATH: n-1] degrees of freedom.\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n[MATH: t_{n-1, \\,\\alpha/2} \\cdot \\dfrac{s}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{t_{n-1, \\,\\alpha/2}^2 \\, s^2}{\\varepsilon^2}.]\n\nNote that the above lower bound can't be directly calculated because we need [MATH: n] to determine [MATH: t_{n-1, \\,\\alpha/2},] and [MATH: n] is the value we are trying to find. However, as [MATH: n] increases, the [MATH: t]-distribution approaches the standard normal distribution. Therefore, we can replace [MATH: t_{n-1, \\,\\alpha/2}] by [MATH: z_{\\alpha/2},] where [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z] follows a standard normal distribution.\n\nNow, we are interested in finding a [MATH: 98\\%] confidence interval. So, we have\n[MATH: \\alpha=1-0.98=0.02 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.01.]\n\nWe are given that [MATH: P(Z > 2.326) = 0.01.] As a result,\n[MATH: z_{\\alpha/2} = z_{0.01} = 2.326.]\n\nWe're given the sample standard deviation [MATH: s=0.5.] Therefore, substituting\n[MATH: \\varepsilon=0.05, \\qquad\ns=0.5, \\qquad\nz_{\\alpha/2}=2.326]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}s^{2})/(\u03b5^{2}); = ((2.326)^{2}(0.5)^{2})/((0.05)^{2}); \u2248 541.03.]\n\nFinally, rounding up to the nearest integer, we get [MATH: n=542] or larger.\n\n---\n\nItem 7 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA researcher wants to estimate the mean height of adult males in a city. A preliminary study on a small sample found the sample standard deviation to be [MATH: s = 6cm.]\n\nAssuming the population is normally distributed, find the smallest sample size [MATH: n] required to ensure that the margin of error for a [MATH: 90%] confidence interval for the population mean height is at most [MATH: 1.2cm.]\n\nHint: Use the fact that [MATH: P(Z > 1.645) = 0.05,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: n = 74]\nb. [MATH: n = 68]\nc. [MATH: n = 63]\nd. [MATH: n = 61]\ne. [MATH: n = 71]\n\n---\n\nItem 8 \u2014 Question 4\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a population with unknown mean and standard deviation. A small sample is taken, and the sample standard deviation is found to be [MATH: s = 5.] Suppose we require a [MATH: 80%] confidence interval for the population mean to have a margin of error of at most [MATH: 0.6.]\nFind the smallest sample size [MATH: n] required to construct this interval.\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nChoices:\na. [MATH: n = 118]\nb. [MATH: n = 126]\nc. [MATH: n = 115]\nd. [MATH: n = 122]\ne. [MATH: n = 111]\n\n---\n\nItem 9 \u2014 Tutorial: The Empirical Rule for the Normal Distribution\n\nContent:\nLet's remind ourselves of the empirical rule for the normal distribution:\n\nContent:\n- Approximately [MATH: 68\\%] of the data falls within [MATH: 1] standard deviation of the mean.\n\n[IMG: /graphics/68255887549e96eea1331a53a6f17fd4]\n\nContent:\n- Approximately [MATH: 95\\%] of the data falls within [MATH: 2] standard deviations of the mean.\n\n[IMG: /graphics/86cfb0edad3bbe006950eb813a262edd]\n\nContent:\n- Approximately [MATH: 99.7\\%] of the data falls within [MATH: 3] standard deviations of the mean.\n\n[IMG: /graphics/68d85c99c7e06b5f400a53cc584501f7]\n\nContent:\nLet's see how we can find minimum sample sizes using the empirical rule.\n\n---\n\nItem 10 \u2014 Example: Finding a Minimum Sample Size Using the Empirical Rule\n\nExample Prompt:\nConsider a normal population with unknown mean and variance, for which it is known that [MATH: 99.7\\%] of the observations lie between [MATH: -5.3] and [MATH: 12.7,] and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95\\%] confidence interval for the population mean is at most [MATH: 0.5.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z \\sim N(0,1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nIf we require the margin of error to be at most [MATH: \\varepsilon,] then\n\n[MATH: z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n} \\leq \\varepsilon\n\\qquad\\Longrightarrow\\qquad\nn \\geq \\dfrac{z_{\\alpha/2}^2 \\, \\sigma^2}{\\varepsilon^2}.]\n\nTo find an estimate for [MATH: \\sigma^2,] we can apply the empirical rule. According to this rule, [MATH: 99.7\\%] of the observations of a random normal variable [MATH: N(\\mu, \\sigma^2)] fall in the interval [MATH: (\\mu-3\\sigma, \\mu+3\\sigma).] Therefore, we can estimate [MATH: \\sigma] by dividing the given range by [MATH: 2\\cdot 3 = 6{:}]\n[MATH: \\widehat{\\sigma} =\\dfrac{12.7-(-5.3)}{6} = 3]\n\nWe are interested in finding a [MATH: 95\\%] confidence interval. So, we have\n\n[MATH: \\alpha=1-0.95=0.05 \\qquad\\Longrightarrow\\qquad\n\\dfrac{\\alpha}{2}=0.025.]\n\nWe are given that [MATH: P(Z > 1.96) = 0.025.] As a result,\n\n[MATH: z_{\\alpha/2} = z_{0.025} = 1.96.]\n\nTherefore, substituting\n\n[MATH: \\varepsilon=0.5, \\qquad\n\\widehat{\\sigma}=3, \\qquad\nz_{\\alpha/2}=1.96]\ninto the inequality for [MATH: n,] we obtain\n\n[MATH: n|\u2265 (z_{\u03b1/2}^{2}\u03c3^(^)^{2})/(\u03b5^{2}); = ((1.96)^{2}(3)^{2})/((0.5)^{2}); \u2248 138.30]\n\nFinally, rounding up to the nearest integer, we get that [MATH: n=139] or larger.\n\n---\n\nItem 11 \u2014 Question 5\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normally distributed population with unknown mean and variance, for which it is known that [MATH: 68%] of the observations lie between [MATH: 4.2] and [MATH: 9.8,] and this data is distributed symmetrically about the mean. Using the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 95%] confidence interval for the population mean is at most [MATH: 0.3.]\n\nHint: Use the fact that [MATH: P(Z > 1.96) = 0.025,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: 297]\nb. [MATH: 356]\nc. [MATH: 277]\nd. [MATH: 335]\ne. [MATH: 242]\n\n---\n\nItem 12 \u2014 Question 6\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normally distributed population with unknown mean and variance, for which it is known that [MATH: 95%] of the observations lie between [MATH: \u2212 5.2] and [MATH: 4.8,] and this data is distributed symmetrically about the mean.\nUsing the empirical rule to estimate the population standard deviation, find the smallest sample size [MATH: n] required to ensure that the margin of error for the [MATH: 90%] confidence interval for the population mean is at most [MATH: 0.15.]\n\nHint: Use the fact that [MATH: P(Z > 1.645) = 0.05,] where [MATH: Z\u223cN(0, 1).]\n\nChoices:\na. [MATH: 825]\nb. [MATH: 727]\nc. [MATH: 752]\nd. [MATH: 854]\ne. [MATH: 672]\n\n---\n\nItem 13 \u2014 Tutorial: Factors Affecting Sample Size\n\nContent:\nSuppose we conduct a random sample to find the average weekly cost commuters spend traveling to work in a certain city. Let's assume we initially used a sample of size [MATH: n_1] to construct a [MATH: 95\\%] confidence interval for the population mean [MATH: \\mu.]\n\nContent:\nAfter completing the initial survey, the city planners decided that a new sample must be carried out, and the resulting confidence interval should have the following improvements:\n\nContent:\n- The confidence level of the new confidence interval should be [MATH: 99\\%.]\n- The new confidence interval should be one-third as wide as the original (increased precision).\n\nContent:\nFor a fixed sample size, increasing the confidence level leads to an increase in the width of the confidence interval. In other words, precision is reduced when we increase the confidence level. To increase precision, we need to increase the sample size.\n\nContent:\nLet's determine how much larger the second sample size [MATH: n_2] should be compared to the first to satisfy these new conditions.\n\nContent:\nFirst, recall that, given a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\nContent:\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nContent:\nWe define the following:\n\nContent:\n- Let [MATH: I_1] and [MATH: I_2] be the [MATH: 95\\%] and [MATH: 99\\%] confidence intervals for the population mean obtained from samples of size [MATH: n_1] and [MATH: n_2,] respectively.\n- Let [MATH: \\varepsilon_1] and [MATH: \\varepsilon_2] be the margins of error of [MATH: I_1] and [MATH: I_2,] respectively.\n\nContent:\nSince we want [MATH: I_2] to be one-third of the length of [MATH: I_1,] we must have\n\nContent:\n[MATH: \\varepsilon_1 = 3\\varepsilon_2.]\n\nContent:\nThen, we have\n[MATH: z_{0.025} \\cdot \\dfrac{\\sigma}{\\sqrt{n_1}} = 3 \\cdot z_{0.005} \\cdot \\dfrac{\\sigma}{\\sqrt{n_2}}]\nCanceling [MATH: \\sigma] and solving for [MATH: \\dfrac{n_2}{n_1},] we get\n\nContent:\n[MATH: z_{0.025} \u22c5 (1)/(sqrt(n_{1}))|= 3 \u22c5 z_{0.005} \u22c5 (1)/(sqrt(n_{2})); (sqrt(n_{2}))/(sqrt(n_{1}))|= (3 \u22c5 z_{0.005})/(z_{0.025}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((3 \u22c5 z_{0.005})/(z_{0.025}))^{2}; (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2})]\n\nContent:\nNow, using the fact that [MATH: z_{0.005} = 2.576] and [MATH: z_{0.025} = 1.960], we have\n\nContent:\n[MATH: (n_{2})/(n_{1})|= (9 \u22c5 z_{0.005}^{2})/(z_{0.025}^{2}); = (9 \u22c5 2.576^{2})/(1.960^{2}); \u2248 15.54.]\n\nContent:\nThis gives\n[MATH: n_2 \\approx 15.5 n_1.]\n\nContent:\nTherefore, [MATH: n_2] must be larger than [MATH: n_1] by a factor of approximately [MATH: 15.5.] Note that the additional time and resources needed to conduct a sample that's more than fifteen times the size of the first could be significant!\n\nContent:\nLet's take a look at a similar problem in the case where the population variance is unknown.\n\n---\n\nItem 14 \u2014 Example: Understanding the Minimum Sample Size Formula\n\nExample Prompt:\nConsider a normal population with unknown mean and standard deviation. Let [MATH: I_1] be a [MATH: 95\\%] confidence interval for the population mean [MATH: \\mu] obtained from a sample of size [MATH: n_1] using as an estimate for the standard deviation [MATH: s_1=5,] calculated from a previous study.\n\nSuppose we require a second [MATH: 98\\%] confidence interval [MATH: I_2] to have the same length as [MATH: I_1,] obtained using a different estimate [MATH: s_2=3.] Find the relative size of the second sample [MATH: n_2] we should use to construct [MATH: I_2.]\n\nHint: Given a random variable [MATH: Z \\sim N(0,1),] the table below shows the [MATH: z]-scores [MATH: z_p] such that [MATH: P(Z > z_p) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_p] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a value [MATH: \\alpha] between [MATH: 0] and [MATH: 1,] the corresponding [MATH: [100(1-\\alpha)]\\%] confidence interval for the population mean [MATH: \\mu] can be written as\n\n[MATH: \\overline{x} \\pm \\overbrace{z_{\\alpha/2} \\cdot \\dfrac{\\sigma}{\\sqrt n}}^{\\large \\textrm{margin of error}},]\n\nwhere\n\n- [MATH: \\!\\overline{\\,x}] is the sample mean,\n- [MATH: n] is the sample size,\n- [MATH: \\sigma] is the population standard deviation, and\n- [MATH: P(Z > z_{\\alpha/2}) = \\dfrac{\\alpha}{2}] and [MATH: Z \\sim N(0,1).]\n\nLet [MATH: \\varepsilon_1] and [MATH: \\varepsilon_2] be the margins of error of [MATH: I_1] and [MATH: I_2,] respectively. Since we want [MATH: I_2] to be equal to [MATH: I_1,] we must have\n[MATH: \\varepsilon_1 = \\varepsilon_2.]\n\nThen, we have\n[MATH: z_{0.025} \\cdot \\dfrac{s_1}{\\sqrt{n_1}} = z_{0.01} \\cdot \\dfrac{s_2}{\\sqrt{n_2}}]\nSolving for [MATH: \\dfrac{n_2}{n_1},] we get\n\n[MATH: (sqrt(n_{2}))/(sqrt(n_{1}))|= (z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}); ((sqrt(n_{2}))/(sqrt(n_{1})))^{2}|= ((z_{0.01} \u22c5 s_{2})/(z_{0.025} \u22c5 s_{1}))^{2}; (n_{2})/(n_{1})|= (z_{0.01}^{2} \u22c5 s_{2}^{2})/(z_{0.025}^{2} \u22c5 s_{1}^{2})]\n\nNow, using the fact that [MATH: s_1 = 5, s_2 = 3, z_{0.01} = 2.326, z_{0.25} = 1.960,] we have\n\n[MATH: (n_{2})/(n_{1})|= (2.326^{2} \u22c5 3^{2})/(1.960^{2} \u22c5 5^{2}) \u2248 0.507]\n\nwhich gives\n\n[MATH: n_1\\approx 1.97 n_2.]\n\nTherefore, [MATH: n_2] must be [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\text{smaller}}] than [MATH: n_1] by a factor of approximately [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1.97}.]\n\n---\n\nItem 15 \u2014 Question 7\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normal population with an unknown population mean and population standard deviation [MATH: \u03c3 = 10.] Let [MATH: I_{1}] be a [MATH: 90%] confidence interval for the population mean [MATH: \u03bc] obtained from a sample of size [MATH: n_{1}.]\n\nSuppose we require a second [MATH: 95%] confidence interval [MATH: I_{2}] to have half the length of [MATH: I_{1}.] Find the relative size of the second sample [MATH: n_{2}] we should use to construct [MATH: I_{2}.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nThe sample size [MATH: n_{2}] must be [SELECT 1] than [MATH: n_{1}] by a factor of approximately [SELECT 2].\n\n---\n\nItem 16 \u2014 Question 8\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider a normal population with unknown mean and standard deviation. Let [MATH: I_{1}] be a [MATH: 90%] confidence interval for the population mean [MATH: \u03bc] obtained from a sample of size [MATH: n_{1}] using as an estimate for the standard deviation [MATH: s_{1} = 2,] calculated from a previous study.\n\nSuppose we require a second [MATH: 95%] confidence interval [MATH: I_{2}] to have the same length as [MATH: I_{1},] obtained using a different estimate [MATH: s_{2} = 1.5.] Find the relative size of the second sample [MATH: n_{2}] we should use to construct [MATH: I_{2}.]\n\nHint: Given a random variable [MATH: Z\u223cN(0, 1),] the table below shows the [MATH: z]-scores [MATH: z_{p}] such that [MATH: P(Z > z_{p}) = p] for some particular values of [MATH: p.]\n\n| [MATH: p] | [MATH: 0.100] | [MATH: 0.050] | [MATH: 0.025] | [MATH: 0.010] | [MATH: 0.005] |\n| [MATH: z_{p}] | [MATH: 1.282] | [MATH: 1.645] | [MATH: 1.960] | [MATH: 2.326] | [MATH: 2.576] |\n\nThe sample size [MATH: n_{2}] must be [SELECT 1] than [MATH: n_{1}] by a factor of approximately [SELECT 2]."
+  }
+}

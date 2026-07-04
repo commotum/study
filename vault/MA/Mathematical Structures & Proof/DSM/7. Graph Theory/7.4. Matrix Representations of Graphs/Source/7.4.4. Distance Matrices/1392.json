@@ -1,0 +1,1482 @@
+{
+  "schema_version": 2,
+  "topic_id": "1392",
+  "topic_title": "Distance Matrices",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/1392/Source/1392.html",
+  "source_url": "https://mathacademy.com/topics/1392",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "416209",
+        "dom_id": "sectionLink-416209",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-416209"
+      },
+      {
+        "index": 2,
+        "step_id": "416210",
+        "dom_id": "sectionLink-416210",
+        "name": "",
+        "title": "Building the Distance Matrix of a Graph",
+        "selector": "#sectionLink-416210"
+      },
+      {
+        "index": 3,
+        "step_id": "416213",
+        "dom_id": "sectionLink-416213",
+        "name": "",
+        "title": "Distance Matrix of a Directed Graph",
+        "selector": "#sectionLink-416213"
+      },
+      {
+        "index": 4,
+        "step_id": "416214",
+        "dom_id": "sectionLink-416214",
+        "name": "",
+        "title": "Building the Distance Matrix of a Directed Graph",
+        "selector": "#sectionLink-416214"
+      },
+      {
+        "index": 5,
+        "step_id": "416217",
+        "dom_id": "sectionLink-416217",
+        "name": "",
+        "title": "Distance Matrix of a Weighted Graph",
+        "selector": "#sectionLink-416217"
+      },
+      {
+        "index": 6,
+        "step_id": "416218",
+        "dom_id": "sectionLink-416218",
+        "name": "",
+        "title": "Building the Distance Matrix of a Weighted Graph",
+        "selector": "#sectionLink-416218"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3118",
+        "name": "Symmetric Matrices",
+        "href": "/topics/symmetric-matrices-3118"
+      },
+      {
+        "topic_id": "5431",
+        "name": "Walks, Paths, and Distances in Directed Graphs",
+        "href": "/topics/walks-paths-and-distances-in-directed-graphs-5431"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "416209",
+        "content_id": "10215",
+        "dom_id": "step-416209",
+        "selector": "#step-416209",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the distance between vertices <span class=\"math\">[MATH: u]</span> and <span class=\"math\">[MATH: v]</span> in an unweighted undirected graph, <span class=\"math\">[MATH: d(u,v),]</span> is the length (i.e., the number of edges) of the shortest path from <span class=\"math\">[MATH: u]</span> to <span class=\"math\">[MATH: v.]</span> If no path from <span class=\"math\">[MATH: u]</span> to <span class=\"math\">[MATH: v]</span> exists, we say that the distance is <span class=\"math\">[MATH: \\infty.]</span></p>",
+            "readable_text": "Recall that the distance between vertices [MATH: u] and [MATH: v] in an unweighted undirected graph, [MATH: d(u,v),] is the length (i.e., the number of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a simple undirected unweighted graph <span class=\"math\">[MATH: G=(V,E)]</span> with <span class=\"math\">[MATH: n]</span> vertices <span class=\"math\">[MATH: v_1, v_2, \\ldots, v_n,]</span> the <strong>distance matrix</strong> <span class=\"math\">[MATH: D]</span> of the graph is an <span class=\"math\">[MATH: n \\times n]</span> matrix (table), where the entry <span class=\"math\">[MATH: a_{ij}]</span> at the intersection of the <span class=\"math\">[MATH: i]</span>th row and the <span class=\"math\">[MATH: j]</span>th column equals the <em>distance</em> between the vertices <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j.]</span> </p>",
+            "readable_text": "In a simple undirected unweighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix (table), where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that, according to this definition:</p>",
+            "readable_text": "Notice that, according to this definition:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If no path exists between <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j,]</span> then the entry <span class=\"math\">[MATH: a_{ij}]</span> is <span class=\"math\">[MATH: \\infty.]</span></p></li><li><p>If <span class=\"math\">[MATH: i=j]</span> (i.e., it is the same vertex), then the entry <span class=\"math\">[MATH: a_{ii}]</span> is <span class=\"math\">[MATH: 0.]</span></p></li><li><p>The distance matrix of an undirected graph is symmetric about the main diagonal.</p></li></ul>",
+            "readable_text": "- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of an undirected graph is symmetric about the main diagonal.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s look at an example of how to build the distance matrix for the graph below.</p>",
+            "readable_text": "Let's look at an example of how to build the distance matrix for the graph below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/573f222dae5b9df7c51804281128625a\"></p>",
+            "readable_text": "[IMG: /graphics/573f222dae5b9df7c51804281128625a]",
+            "images": [
+              {
+                "src": "/graphics/573f222dae5b9df7c51804281128625a",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start with a square <span class=\"math\">[MATH: 4 \\times 4]</span> matrix with <span class=\"math\">[MATH: 0]</span>s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.</p>",
+            "readable_text": "We start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The path <span class=\"math\">[MATH: v_2-v_3-v_4]</span> has two edges and is the shortest path between <span class=\"math\">[MATH: v_2]</span> and <span class=\"math\">[MATH: v_4.]</span> Hence, we write <span class=\"math\">[MATH: 2]</span> in the entry <span class=\"math\">[MATH: a_{24}]</span> and, by symmetry, in the entry <span class=\"math\">[MATH: a_{42}.]</span></p></li></ul>",
+            "readable_text": "- The path [MATH: v_2-v_3-v_4] has two edges and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 2] in the entry [MATH: a_{24}] and, by symmetry, in the entry [MATH: a_{42}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | [MATH: 2] | | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Since the vertices <span class=\"math\">[MATH: v_2]</span> and <span class=\"math\">[MATH: v_3]</span> are adjacent, the shortest path between them is <span class=\"math\">[MATH: 1.]</span> Hence, we write <span class=\"math\">[MATH: 1]</span> in the entry <span class=\"math\">[MATH: a_{23}]</span> and, by symmetry, in the entry <span class=\"math\">[MATH: a_{32}.]</span> Similarly, since <span class=\"math\">[MATH: v_3]</span> and <span class=\"math\">[MATH: v_4]</span> are adjacent,  we write <span class=\"math\">[MATH: 1]</span> in the entry <span class=\"math\">[MATH: a_{34}]</span> and <span class=\"math\">[MATH: a_{43}.]</span></p></li></ul>",
+            "readable_text": "- Since the vertices [MATH: v_2] and [MATH: v_3] are adjacent, the shortest path between them is [MATH: 1.] Hence, we write [MATH: 1] in the entry [MATH: a_{23}] and, by symmetry, in the entry [MATH: a_{32}.] Similarly, since [MATH: v_3] and [MATH: v_4] are adjacent, we write [MATH: 1] in the entry [MATH: a_{34}] and [MATH: a_{43}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | | [MATH: 2] | [MATH: 1] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Since the vertex <span class=\"math\">[MATH: v_1]</span> is isolated, the distance from it to any other vertex is <span class=\"math\">[MATH: \\infty.]</span> Hence, we write <span class=\"math\">[MATH: \\infty]</span> in every entry of the <span class=\"math\">[MATH: 1]</span>st row and in every entry of the <span class=\"math\">[MATH: 1]</span>st column, except for <span class=\"math\">[MATH: a_{11}.]</span></p></li></ul>",
+            "readable_text": "- Since the vertex [MATH: v_1] is isolated, the distance from it to any other vertex is [MATH: \\infty.] Hence, we write [MATH: \\infty] in every entry of the [MATH: 1]st row and in every entry of the [MATH: 1]st column, except for [MATH: a_{11}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: 2] | [MATH: 1] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:</p>",
+            "readable_text": "The distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|\u221e|\u221e|\u221e; \u221e|0|1|2; \u221e|1|0|1; \u221e|2|1|0]]</span></p>",
+            "readable_text": "[MATH: [0|\u221e|\u221e|\u221e; \u221e|0|1|2; \u221e|1|0|1; \u221e|2|1|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/573f222dae5b9df7c51804281128625a",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the distance between vertices [MATH: u] and [MATH: v] in an unweighted undirected graph, [MATH: d(u,v),] is the length (i.e., the number of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]\n\nContent:\nIn a simple undirected unweighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix (table), where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nContent:\nNotice that, according to this definition:\n\nContent:\n- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of an undirected graph is symmetric about the main diagonal.\n\nContent:\nLet's look at an example of how to build the distance matrix for the graph below.\n\nGraphic:\n[IMG: /graphics/573f222dae5b9df7c51804281128625a]\n\nContent:\nWe start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.\n\nContent:\n- The path [MATH: v_2-v_3-v_4] has two edges and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 2] in the entry [MATH: a_{24}] and, by symmetry, in the entry [MATH: a_{42}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | [MATH: 2] | | [MATH: 0] |\n\nContent:\n- Since the vertices [MATH: v_2] and [MATH: v_3] are adjacent, the shortest path between them is [MATH: 1.] Hence, we write [MATH: 1] in the entry [MATH: a_{23}] and, by symmetry, in the entry [MATH: a_{32}.] Similarly, since [MATH: v_3] and [MATH: v_4] are adjacent, we write [MATH: 1] in the entry [MATH: a_{34}] and [MATH: a_{43}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | | [MATH: 2] | [MATH: 1] | [MATH: 0] |\n\nContent:\n- Since the vertex [MATH: v_1] is isolated, the distance from it to any other vertex is [MATH: \\infty.] Hence, we write [MATH: \\infty] in every entry of the [MATH: 1]st row and in every entry of the [MATH: 1]st column, except for [MATH: a_{11}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: 2] | [MATH: 1] | [MATH: 0] |\n\nContent:\nThe distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:\n\nContent:\n[MATH: [0|\u221e|\u221e|\u221e; \u221e|0|1|2; \u221e|1|0|1; \u221e|2|1|0]]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "416210",
+        "content_id": "16002",
+        "dom_id": "step-416210",
+        "selector": "#step-416210",
+        "step_anchor": "step-2",
+        "title": "Building the Distance Matrix of a Graph",
+        "key_prerequisites": [
+          {
+            "topic_id": "951",
+            "name": "Walks, Trails, Paths, and Distances",
+            "href": "/topics/951",
+            "type": ""
+          },
+          {
+            "topic_id": "3118",
+            "name": "Symmetric Matrices",
+            "href": "/topics/3118",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following disconnected graph.</p><div class=\"graphic\"><img src=\"/graphics/de10cb019137d7c57472407d9f398e01\"></div><p>Fill in the missing values in the following distance matrix for the graph above.</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: v_5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "Consider the following disconnected graph.\n\n[IMG: /graphics/de10cb019137d7c57472407d9f398e01]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | |\n| [MATH: v_2] | [MATH: 1] | [MATH: 0] | [MATH: 1] | | [MATH: 1] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: \\infty] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | | [MATH: \\infty] | [MATH: 0] | [MATH: \\infty] |\n| [MATH: v_5] | [MATH: 2] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: 0] |",
+            "images": [
+              {
+                "src": "/graphics/de10cb019137d7c57472407d9f398e01",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Given a fixed order of vertices <span class=\"math\">[MATH: v_1, v_2, \\ldots, v_n]</span> in an undirected graph, the <em>distance matrix</em> <span class=\"math\">[MATH: D]</span> of the graph is an <span class=\"math\">[MATH: n \\times n]</span>-matrix (table), where the element <span class=\"math\">[MATH: d_{ij}]</span> at the intersection of the <span class=\"math\">[MATH: i]</span>th row and the <span class=\"math\">[MATH: j]</span>th column equals the distance between the vertices <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j.]</span></p><p>If there is no path form <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j,]</span> we define <span class=\"math\">[MATH: d_{ij}=\\infty.]</span></p><p>The distances are calculated as follows:</p><ul><li><p>First, the entry <span class=\"math\">[MATH: d_{11}]</span> is the distance from <span class=\"math\">[MATH: v_1]</span> to itself, which is always zero. Hence, \n<span class=\"math\">[MATH: d_{11} = 0.]</span></p></li><li><p>Now, recall that the distance matrix of an undirected graph is symmetric about the main diagonal. Hence, by symmetry, we have\n<span class=\"math\">[MATH: d_{15} = d_{51} = 2.]</span></p></li><li><p>Finally, the distance from <span class=\"math\">[MATH: v_2]</span> to <span class=\"math\">[MATH: v_4]</span> is <span class=\"math\">[MATH: \\infty]</span> because there is no path from <span class=\"math\">[MATH: v_2]</span> to <span class=\"math\">[MATH: v_4.]</span> Hence, we have\n<span class=\"math\">[MATH: d_{24} = d_{42} = \\infty.]</span></p></li></ul><p>Therefore, the distance matrix is as follows:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: v_5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "Given a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in an undirected graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nIf there is no path form [MATH: v_i] and [MATH: v_j,] we define [MATH: d_{ij}=\\infty.]\n\nThe distances are calculated as follows:\n\n- First, the entry [MATH: d_{11}] is the distance from [MATH: v_1] to itself, which is always zero. Hence,\n[MATH: d_{11} = 0.]\n- Now, recall that the distance matrix of an undirected graph is symmetric about the main diagonal. Hence, by symmetry, we have\n[MATH: d_{15} = d_{51} = 2.]\n- Finally, the distance from [MATH: v_2] to [MATH: v_4] is [MATH: \\infty] because there is no path from [MATH: v_2] to [MATH: v_4.] Hence, we have\n[MATH: d_{24} = d_{42} = \\infty.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] |\n| [MATH: v_2] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: 1] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: \\infty] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: \\infty] | [MATH: 0] | [MATH: \\infty] |\n| [MATH: v_5] | [MATH: 2] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/de10cb019137d7c57472407d9f398e01",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following disconnected graph.\n\n[IMG: /graphics/de10cb019137d7c57472407d9f398e01]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | |\n| [MATH: v_2] | [MATH: 1] | [MATH: 0] | [MATH: 1] | | [MATH: 1] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: \\infty] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | | [MATH: \\infty] | [MATH: 0] | [MATH: \\infty] |\n| [MATH: v_5] | [MATH: 2] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: 0] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in an undirected graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nIf there is no path form [MATH: v_i] and [MATH: v_j,] we define [MATH: d_{ij}=\\infty.]\n\nThe distances are calculated as follows:\n\n- First, the entry [MATH: d_{11}] is the distance from [MATH: v_1] to itself, which is always zero. Hence,\n[MATH: d_{11} = 0.]\n- Now, recall that the distance matrix of an undirected graph is symmetric about the main diagonal. Hence, by symmetry, we have\n[MATH: d_{15} = d_{51} = 2.]\n- Finally, the distance from [MATH: v_2] to [MATH: v_4] is [MATH: \\infty] because there is no path from [MATH: v_2] to [MATH: v_4.] Hence, we have\n[MATH: d_{24} = d_{42} = \\infty.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] |\n| [MATH: v_2] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: 1] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: \\infty] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: \\infty] | [MATH: 0] | [MATH: \\infty] |\n| [MATH: v_5] | [MATH: 2] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "243217",
+        "dom_id": "question-243217",
+        "selector": "#question-243217",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-243217\"></p>",
+          "readable_text": "[IMG: /graphics/q-243217]",
+          "images": [
+            {
+              "src": "/graphics/q-243217",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Fill in the missing values in the distance matrix for the graph above:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+          "readable_text": "Fill in the missing values in the distance matrix for the graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 1] | [FREE_ENTRY 2] | [MATH: 3] |\n| [MATH: v_{2}] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 1] | [MATH: 1] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: 2] | [MATH: 2] | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: 3] | [FREE_ENTRY 5] | [MATH: 2] | [MATH: 1] | [MATH: 0] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-243217",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-243217]\n\nPrompt:\nFill in the missing values in the distance matrix for the graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 1] | [FREE_ENTRY 2] | [MATH: 3] |\n| [MATH: v_{2}] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 1] | [MATH: 1] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: 2] | [MATH: 2] | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: 3] | [FREE_ENTRY 5] | [MATH: 2] | [MATH: 1] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "257951",
+        "dom_id": "question-257951",
+        "selector": "#question-257951",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-257951\"></p>",
+          "readable_text": "[IMG: /graphics/q-257951]",
+          "images": [
+            {
+              "src": "/graphics/q-257951",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Fill in the missing values in the distance matrix for the graph above:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+          "readable_text": "Fill in the missing values in the distance matrix for the graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [MATH: 1] | [FREE_ENTRY 1] | [MATH: \u221e] | [FREE_ENTRY 2] |\n| [MATH: v_{2}] | [MATH: 1] | [MATH: 0] | [MATH: 2] | [MATH: \u221e] | [MATH: \u221e] |\n| [MATH: v_{3}] | [FREE_ENTRY 3] | [MATH: 2] | [MATH: 0] | [MATH: \u221e] | [MATH: \u221e] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: 1] | [MATH: 0] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-257951",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-257951]\n\nPrompt:\nFill in the missing values in the distance matrix for the graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [MATH: 1] | [FREE_ENTRY 1] | [MATH: \u221e] | [FREE_ENTRY 2] |\n| [MATH: v_{2}] | [MATH: 1] | [MATH: 0] | [MATH: 2] | [MATH: \u221e] | [MATH: \u221e] |\n| [MATH: v_{3}] | [FREE_ENTRY 3] | [MATH: 2] | [MATH: 0] | [MATH: \u221e] | [MATH: \u221e] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: 1] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "416213",
+        "content_id": "11606",
+        "dom_id": "step-416213",
+        "selector": "#step-416213",
+        "step_anchor": "step-5",
+        "title": "Distance Matrix of a Directed Graph",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the distance between vertices <span class=\"math\">[MATH: u]</span> and <span class=\"math\">[MATH: v]</span> in an unweighted directed graph, <span class=\"math\">[MATH: d(u,v),]</span> is the length (i.e., the number of edges) of the shortest path from <span class=\"math\">[MATH: u]</span> to <span class=\"math\">[MATH: v.]</span> If no path from <span class=\"math\">[MATH: u]</span> to <span class=\"math\">[MATH: v]</span> exists, we say that the distance is <span class=\"math\">[MATH: \\infty.]</span></p>",
+            "readable_text": "Recall that the distance between vertices [MATH: u] and [MATH: v] in an unweighted directed graph, [MATH: d(u,v),] is the length (i.e., the number of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a simple directed unweighted graph <span class=\"math\">[MATH: G=(V,E)]</span> with <span class=\"math\">[MATH: n]</span> vertices <span class=\"math\">[MATH: v_1, v_2, \\ldots, v_n,]</span> the <strong>distance matrix</strong> <span class=\"math\">[MATH: D]</span> of the graph is an <span class=\"math\">[MATH: n \\times n]</span> matrix, where the entry <span class=\"math\">[MATH: a_{ij}]</span> at the intersection of the <span class=\"math\">[MATH: i]</span>th row and the <span class=\"math\">[MATH: j]</span>th column represents the <em>distance</em> between the vertices <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j.]</span> </p>",
+            "readable_text": "In a simple directed unweighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix, where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column represents the distance between the vertices [MATH: v_i] and [MATH: v_j.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that, according to this definition:</p>",
+            "readable_text": "Notice that, according to this definition:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If no path exists between <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j,]</span> then the entry <span class=\"math\">[MATH: a_{ij}]</span> is <span class=\"math\">[MATH: \\infty.]</span></p></li><li><p>If <span class=\"math\">[MATH: i=j]</span> (i.e., it is the same vertex), then the entry <span class=\"math\">[MATH: a_{ii}]</span> is <span class=\"math\">[MATH: 0.]</span></p></li><li><p>The distance matrix of a directed graph is <em>not</em> symmetric about the main diagonal in general.</p></li></ul>",
+            "readable_text": "- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of a directed graph is not symmetric about the main diagonal in general.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s look at an example of how to build the distance matrix for the graph below.</p>",
+            "readable_text": "Let's look at an example of how to build the distance matrix for the graph below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/e1067a2ada4c6ba237654e8737c43670\"></p>",
+            "readable_text": "[IMG: /graphics/e1067a2ada4c6ba237654e8737c43670]",
+            "images": [
+              {
+                "src": "/graphics/e1067a2ada4c6ba237654e8737c43670",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start with a square <span class=\"math\">[MATH: 4 \\times 4]</span> matrix with <span class=\"math\">[MATH: 0]</span>s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.</p>",
+            "readable_text": "We start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The path <span class=\"math\">[MATH: v_1 \\to v_2 \\to v_3 \\to v_4]</span> has three edges and is the shortest path between <span class=\"math\">[MATH: v_1]</span> and <span class=\"math\">[MATH: v_4.]</span> Hence, we write <span class=\"math\">[MATH: 3]</span> in the entry <span class=\"math\">[MATH: a_{14}.]</span></p></li></ul>",
+            "readable_text": "- The path [MATH: v_1 \\to v_2 \\to v_3 \\to v_4] has three edges and is the shortest path between [MATH: v_1] and [MATH: v_4.] Hence, we write [MATH: 3] in the entry [MATH: a_{14}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Similarly, the path <span class=\"math\">[MATH: v_2 \\to v_3 \\to v_4]</span> has two edges and is the shortest path between <span class=\"math\">[MATH: v_2]</span> and <span class=\"math\">[MATH: v_4.]</span> Hence, we write <span class=\"math\">[MATH: 2]</span> in the entry <span class=\"math\">[MATH: a_{24}.]</span></p></li></ul>",
+            "readable_text": "- Similarly, the path [MATH: v_2 \\to v_3 \\to v_4] has two edges and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 2] in the entry [MATH: a_{24}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Similarly, the path <span class=\"math\">[MATH: v_4 \\to v_2 \\to v_3]</span> has two edges and is the shortest path between <span class=\"math\">[MATH: v_4]</span> and <span class=\"math\">[MATH: v_3.]</span> Hence, we write <span class=\"math\">[MATH: 2]</span> in the entry <span class=\"math\">[MATH: a_{43}.]</span></p></li></ul>",
+            "readable_text": "- Similarly, the path [MATH: v_4 \\to v_2 \\to v_3] has two edges and is the shortest path between [MATH: v_4] and [MATH: v_3.] Hence, we write [MATH: 2] in the entry [MATH: a_{43}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | [MATH: 2] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>We write <span class=\"math\">[MATH: 1]</span> in every entry that represents a vertex pair connected by a direct edge: <span class=\"math\">[MATH: a_{12}, a_{23}, a_{34},]</span> and <span class=\"math\">[MATH: a_{42}.]</span> </p></li></ul>",
+            "readable_text": "- We write [MATH: 1] in every entry that represents a vertex pair connected by a direct edge: [MATH: a_{12}, a_{23}, a_{34},] and [MATH: a_{42}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 1] | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | | [MATH: 1] | [MATH: 2] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Finally, we write <span class=\"math\">[MATH: \\infty]</span> in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.</p></li></ul>",
+            "readable_text": "- Finally, we write [MATH: \\infty] in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 1] | [MATH: \\infty] | [MATH: 3] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: 1] | [MATH: 2] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:</p>",
+            "readable_text": "The distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|1|\u221e|3; \u221e|0|1|2; \u221e|\u221e|0|1; \u221e|1|2|0]]</span></p>",
+            "readable_text": "[MATH: [0|1|\u221e|3; \u221e|0|1|2; \u221e|\u221e|0|1; \u221e|1|2|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/e1067a2ada4c6ba237654e8737c43670",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the distance between vertices [MATH: u] and [MATH: v] in an unweighted directed graph, [MATH: d(u,v),] is the length (i.e., the number of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]\n\nContent:\nIn a simple directed unweighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix, where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column represents the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nContent:\nNotice that, according to this definition:\n\nContent:\n- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of a directed graph is not symmetric about the main diagonal in general.\n\nContent:\nLet's look at an example of how to build the distance matrix for the graph below.\n\nGraphic:\n[IMG: /graphics/e1067a2ada4c6ba237654e8737c43670]\n\nContent:\nWe start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.\n\nContent:\n- The path [MATH: v_1 \\to v_2 \\to v_3 \\to v_4] has three edges and is the shortest path between [MATH: v_1] and [MATH: v_4.] Hence, we write [MATH: 3] in the entry [MATH: a_{14}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Similarly, the path [MATH: v_2 \\to v_3 \\to v_4] has two edges and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 2] in the entry [MATH: a_{24}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Similarly, the path [MATH: v_4 \\to v_2 \\to v_3] has two edges and is the shortest path between [MATH: v_4] and [MATH: v_3.] Hence, we write [MATH: 2] in the entry [MATH: a_{43}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | [MATH: 2] | [MATH: 0] |\n\nContent:\n- We write [MATH: 1] in every entry that represents a vertex pair connected by a direct edge: [MATH: a_{12}, a_{23}, a_{34},] and [MATH: a_{42}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 1] | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | | [MATH: 1] | [MATH: 2] | [MATH: 0] |\n\nContent:\n- Finally, we write [MATH: \\infty] in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 1] | [MATH: \\infty] | [MATH: 3] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: 1] | [MATH: 2] | [MATH: 0] |\n\nContent:\nThe distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:\n\nContent:\n[MATH: [0|1|\u221e|3; \u221e|0|1|2; \u221e|\u221e|0|1; \u221e|1|2|0]]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "416214",
+        "content_id": "16004",
+        "dom_id": "step-416214",
+        "selector": "#step-416214",
+        "step_anchor": "step-6",
+        "title": "Building the Distance Matrix of a Directed Graph",
+        "key_prerequisites": [
+          {
+            "topic_id": "5431",
+            "name": "Walks, Paths, and Distances in Directed Graphs",
+            "href": "/topics/5431",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following graph.</p><div class=\"graphic\"><img src=\"/graphics/743cdb7557e41cadd5dd2b2fef191871\"></div><p>Fill in the missing values in the following distance matrix for the graph above.</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: v_5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_5]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "Consider the following graph.\n\n[IMG: /graphics/743cdb7557e41cadd5dd2b2fef191871]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] | [MATH: 4] |\n| [MATH: v_2] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 2] | | [MATH: 1] | [MATH: 2] |\n| [MATH: v_4] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_5] | [MATH: 1] | | [MATH: 3] | [MATH: 4] | [MATH: 0] |",
+            "images": [
+              {
+                "src": "/graphics/743cdb7557e41cadd5dd2b2fef191871",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Given a fixed order of vertices <span class=\"math\">[MATH: v_1, v_2, \\ldots, v_n]</span> in a directed graph, the <em>distance matrix</em> <span class=\"math\">[MATH: D]</span> of the graph is an <span class=\"math\">[MATH: n \\times n]</span>-matrix (table), where the element <span class=\"math\">[MATH: d_{ij}]</span> at the intersection of the <span class=\"math\">[MATH: i]</span>th row and the <span class=\"math\">[MATH: j]</span>th column equals the distance from the vertex <span class=\"math\">[MATH: v_i]</span> to the vertex <span class=\"math\">[MATH: v_j.]</span></p><p>In our case, the vertices are arranged as <span class=\"math\">[MATH: v_1,v_2,v_3,v_4,]</span> and <span class=\"math\">[MATH: v_5.]</span> Let&#x27;s determine the distances.</p><p>Recall that the distance matrix of a directed graph is not symmetric in general. Some of the distances are calculated as follows:</p><ul><li><p>The distance from <span class=\"math\">[MATH: v_1]</span> to <span class=\"math\">[MATH: v_2]</span> is <span class=\"math\">[MATH: 1]</span> since the shortest path from <span class=\"math\">[MATH: v_1]</span> to <span class=\"math\">[MATH: v_2]</span> (namely, <span class=\"math\">[MATH: v_1 \\to v_2]</span>) has a length of <span class=\"math\">[MATH: 1.]</span> Hence, we have\n<span class=\"math\">[MATH: d_{12} = 1.]</span></p></li><li><p>The distance from <span class=\"math\">[MATH: v_1]</span> to <span class=\"math\">[MATH: v_3]</span> is <span class=\"math\">[MATH: 2]</span> since the shortest path from <span class=\"math\">[MATH: v_1]</span> to <span class=\"math\">[MATH: v_3]</span> (namely, <span class=\"math\">[MATH: v_1 \\to v_2 \\to v_3]</span>) has a length of <span class=\"math\">[MATH: 2.]</span> Hence, we have\n<span class=\"math\">[MATH: d_{13} = 2.]</span></p></li></ul><ul><li><p>The entry <span class=\"math\">[MATH: d_{33}]</span> is the distance from <span class=\"math\">[MATH: v_3]</span> to itself, which is always <span class=\"math\">[MATH: 0]</span>. Hence, \n<span class=\"math\">[MATH: d_{33} = 0.]</span></p></li><li><p>The distance from <span class=\"math\">[MATH: v_5]</span> to <span class=\"math\">[MATH: v_2]</span> is <span class=\"math\">[MATH: 2]</span> since the shortest path from <span class=\"math\">[MATH: v_5]</span> to <span class=\"math\">[MATH: v_2]</span> (namely, <span class=\"math\">[MATH: v_5 \\to v_1 \\to v_2]</span>) has a length of <span class=\"math\">[MATH: 2.]</span> Hence, \n<span class=\"math\">[MATH: d_{52} = 2.]</span></p></li></ul><p>Therefore, the distance matrix is as follows:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: v_5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1}]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_5]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "Given a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in a directed graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance from the vertex [MATH: v_i] to the vertex [MATH: v_j.]\n\nIn our case, the vertices are arranged as [MATH: v_1,v_2,v_3,v_4,] and [MATH: v_5.] Let's determine the distances.\n\nRecall that the distance matrix of a directed graph is not symmetric in general. Some of the distances are calculated as follows:\n\n- The distance from [MATH: v_1] to [MATH: v_2] is [MATH: 1] since the shortest path from [MATH: v_1] to [MATH: v_2] (namely, [MATH: v_1 \\to v_2]) has a length of [MATH: 1.] Hence, we have\n[MATH: d_{12} = 1.]\n- The distance from [MATH: v_1] to [MATH: v_3] is [MATH: 2] since the shortest path from [MATH: v_1] to [MATH: v_3] (namely, [MATH: v_1 \\to v_2 \\to v_3]) has a length of [MATH: 2.] Hence, we have\n[MATH: d_{13} = 2.]\n\n- The entry [MATH: d_{33}] is the distance from [MATH: v_3] to itself, which is always [MATH: 0]. Hence,\n[MATH: d_{33} = 0.]\n- The distance from [MATH: v_5] to [MATH: v_2] is [MATH: 2] since the shortest path from [MATH: v_5] to [MATH: v_2] (namely, [MATH: v_5 \\to v_1 \\to v_2]) has a length of [MATH: 2.] Hence,\n[MATH: d_{52} = 2.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: 0] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] | [MATH: 3] | [MATH: 4] |\n| [MATH: v_2] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 2] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_4] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_5] | [MATH: 1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] | [MATH: 3] | [MATH: 4] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/743cdb7557e41cadd5dd2b2fef191871",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following graph.\n\n[IMG: /graphics/743cdb7557e41cadd5dd2b2fef191871]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] | [MATH: 4] |\n| [MATH: v_2] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 2] | | [MATH: 1] | [MATH: 2] |\n| [MATH: v_4] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_5] | [MATH: 1] | | [MATH: 3] | [MATH: 4] | [MATH: 0] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in a directed graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance from the vertex [MATH: v_i] to the vertex [MATH: v_j.]\n\nIn our case, the vertices are arranged as [MATH: v_1,v_2,v_3,v_4,] and [MATH: v_5.] Let's determine the distances.\n\nRecall that the distance matrix of a directed graph is not symmetric in general. Some of the distances are calculated as follows:\n\n- The distance from [MATH: v_1] to [MATH: v_2] is [MATH: 1] since the shortest path from [MATH: v_1] to [MATH: v_2] (namely, [MATH: v_1 \\to v_2]) has a length of [MATH: 1.] Hence, we have\n[MATH: d_{12} = 1.]\n- The distance from [MATH: v_1] to [MATH: v_3] is [MATH: 2] since the shortest path from [MATH: v_1] to [MATH: v_3] (namely, [MATH: v_1 \\to v_2 \\to v_3]) has a length of [MATH: 2.] Hence, we have\n[MATH: d_{13} = 2.]\n\n- The entry [MATH: d_{33}] is the distance from [MATH: v_3] to itself, which is always [MATH: 0]. Hence,\n[MATH: d_{33} = 0.]\n- The distance from [MATH: v_5] to [MATH: v_2] is [MATH: 2] since the shortest path from [MATH: v_5] to [MATH: v_2] (namely, [MATH: v_5 \\to v_1 \\to v_2]) has a length of [MATH: 2.] Hence,\n[MATH: d_{52} = 2.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: 0] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] | [MATH: 3] | [MATH: 4] |\n| [MATH: v_2] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 2] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_4] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_5] | [MATH: 1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] | [MATH: 3] | [MATH: 4] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "258175",
+        "dom_id": "question-258175",
+        "selector": "#question-258175",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-258175\"></p>",
+          "readable_text": "[IMG: /graphics/q-258175]",
+          "images": [
+            {
+              "src": "/graphics/q-258175",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Fill in the missing values in the distance matrix of the directed graph above:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+          "readable_text": "Fill in the missing values in the distance matrix of the directed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 2] | [FREE_ENTRY 2] | [MATH: 4] |\n| [MATH: v_{2}] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: 4] | [MATH: 2] | [MATH: 3] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: 3] | [FREE_ENTRY 5] | [MATH: 2] | [MATH: 3] | [MATH: 0] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-258175",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-258175]\n\nPrompt:\nFill in the missing values in the distance matrix of the directed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 2] | [FREE_ENTRY 2] | [MATH: 4] |\n| [MATH: v_{2}] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: 4] | [MATH: 2] | [MATH: 3] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: 3] | [FREE_ENTRY 5] | [MATH: 2] | [MATH: 3] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "243231",
+        "dom_id": "question-243231",
+        "selector": "#question-243231",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-243231\"></p>",
+          "readable_text": "[IMG: /graphics/q-243231]",
+          "images": [
+            {
+              "src": "/graphics/q-243231",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Fill in the missing values in the distance matrix of the directed graph above:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+          "readable_text": "Fill in the missing values in the distance matrix of the directed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 1] | [FREE_ENTRY 2] | [MATH: 3] |\n| [MATH: v_{2}] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-243231",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-243231]\n\nPrompt:\nFill in the missing values in the distance matrix of the directed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 1] | [FREE_ENTRY 2] | [MATH: 3] |\n| [MATH: v_{2}] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "416217",
+        "content_id": "11607",
+        "dom_id": "step-416217",
+        "selector": "#step-416217",
+        "step_anchor": "step-9",
+        "title": "Distance Matrix of a Weighted Graph",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the distance between vertices <span class=\"math\">[MATH: u]</span> and <span class=\"math\">[MATH: v]</span> in a weighted graph, <span class=\"math\">[MATH: d(u,v),]</span> is the length (i.e., sum of the weights of edges) of the shortest path from <span class=\"math\">[MATH: u]</span> to <span class=\"math\">[MATH: v.]</span> If no path from <span class=\"math\">[MATH: u]</span> to <span class=\"math\">[MATH: v]</span> exists, we say that the distance is <span class=\"math\">[MATH: \\infty.]</span></p>",
+            "readable_text": "Recall that the distance between vertices [MATH: u] and [MATH: v] in a weighted graph, [MATH: d(u,v),] is the length (i.e., sum of the weights of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a weighted graph <span class=\"math\">[MATH: G=(V,E)]</span> with <span class=\"math\">[MATH: n]</span> vertices <span class=\"math\">[MATH: v_1, v_2, \\ldots, v_n,]</span> the <strong>distance matrix</strong> <span class=\"math\">[MATH: D]</span> of the graph is an <span class=\"math\">[MATH: n \\times n]</span> matrix, where the entry <span class=\"math\">[MATH: a_{ij}]</span> at the intersection of the <span class=\"math\">[MATH: i]</span>th row and the <span class=\"math\">[MATH: j]</span>th column equals the <em>distance</em> between the vertices <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j.]</span> Here <span class=\"math\">[MATH: G]</span> can be either directed or undirected. </p>",
+            "readable_text": "In a weighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix, where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.] Here [MATH: G] can be either directed or undirected.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that, according to this definition:</p>",
+            "readable_text": "Notice that, according to this definition:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If no path exists between <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j,]</span> then the entry <span class=\"math\">[MATH: a_{ij}]</span> is <span class=\"math\">[MATH: \\infty.]</span></p></li><li><p>If <span class=\"math\">[MATH: i=j]</span> (i.e., it is the same vertex), then the entry <span class=\"math\">[MATH: a_{ii}]</span> is <span class=\"math\">[MATH: 0.]</span></p></li><li><p>The distance matrix of an undirected weighted graph is symmetric about the main diagonal, but the distance matrix of a directed weighted graph is <em>not</em> symmetric in general.</p></li></ul>",
+            "readable_text": "- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of an undirected weighted graph is symmetric about the main diagonal, but the distance matrix of a directed weighted graph is not symmetric in general.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s look at an example of how to build the distance matrix for the directed weighted graph below.</p>",
+            "readable_text": "Let's look at an example of how to build the distance matrix for the directed weighted graph below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/e7743d89335b75e3a757b09cb9f5e69a\"></p>",
+            "readable_text": "[IMG: /graphics/e7743d89335b75e3a757b09cb9f5e69a]",
+            "images": [
+              {
+                "src": "/graphics/e7743d89335b75e3a757b09cb9f5e69a",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start with a square <span class=\"math\">[MATH: 4 \\times 4]</span> matrix with <span class=\"math\">[MATH: 0]</span>s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.</p>",
+            "readable_text": "We start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The detour path <span class=\"math\">[MATH: v_1 \\to v_2 \\to v_3 \\to v_4]</span> has a weight of <span class=\"math\">[MATH: 2+1+5=8]</span> and is the shortest path between <span class=\"math\">[MATH: v_1]</span> and <span class=\"math\">[MATH: v_4.]</span> (Notice that the alternative path <span class=\"math\">[MATH: v_1 \\to v_2 \\to v_4,]</span> which has fewer edges, has a greater weight of <span class=\"math\">[MATH: 2+7=9.]</span>) Hence, we write <span class=\"math\">[MATH: 8]</span> in the entry <span class=\"math\">[MATH: a_{14}.]</span></p></li></ul>",
+            "readable_text": "- The detour path [MATH: v_1 \\to v_2 \\to v_3 \\to v_4] has a weight of [MATH: 2+1+5=8] and is the shortest path between [MATH: v_1] and [MATH: v_4.] (Notice that the alternative path [MATH: v_1 \\to v_2 \\to v_4,] which has fewer edges, has a greater weight of [MATH: 2+7=9.]) Hence, we write [MATH: 8] in the entry [MATH: a_{14}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | | |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Similarly, the path <span class=\"math\">[MATH: v_2 \\to v_3 \\to v_4]</span> has a weight of <span class=\"math\">[MATH: 1+5=6]</span>  and is the shortest path between <span class=\"math\">[MATH: v_2]</span> and <span class=\"math\">[MATH: v_4.]</span> Hence, we write <span class=\"math\">[MATH: 6]</span> in the entry <span class=\"math\">[MATH: a_{24}.]</span></p></li></ul>",
+            "readable_text": "- Similarly, the path [MATH: v_2 \\to v_3 \\to v_4] has a weight of [MATH: 1+5=6] and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 6] in the entry [MATH: a_{24}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 6] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>We write the weight of an edge in the entry corresponding to a vertex pair connected by a direct edge with no shorter detours exist: <span class=\"math\">[MATH: a_{12}, a_{23},]</span> and <span class=\"math\">[MATH: a_{34}.]</span></p></li></ul>",
+            "readable_text": "- We write the weight of an edge in the entry corresponding to a vertex pair connected by a direct edge with no shorter detours exist: [MATH: a_{12}, a_{23},] and [MATH: a_{34}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td></td><td></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 2] | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 6] |\n| [MATH: v_3] | | | [MATH: 0] | [MATH: 5] |\n| [MATH: v_4] | | | | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Finally, we write <span class=\"math\">[MATH: \\infty]</span> in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.</p></li></ul>",
+            "readable_text": "- Finally, we write [MATH: \\infty] in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 2] | [MATH: \\infty] | [MATH: 8] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 6] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:</p>",
+            "readable_text": "The distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0|2|\u221e|8; \u221e|0|1|6; \u221e|\u221e|0|5; \u221e|\u221e|\u221e|0]]</span></p>",
+            "readable_text": "[MATH: [0|2|\u221e|8; \u221e|0|1|6; \u221e|\u221e|0|5; \u221e|\u221e|\u221e|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/e7743d89335b75e3a757b09cb9f5e69a",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the distance between vertices [MATH: u] and [MATH: v] in a weighted graph, [MATH: d(u,v),] is the length (i.e., sum of the weights of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]\n\nContent:\nIn a weighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix, where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.] Here [MATH: G] can be either directed or undirected.\n\nContent:\nNotice that, according to this definition:\n\nContent:\n- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of an undirected weighted graph is symmetric about the main diagonal, but the distance matrix of a directed weighted graph is not symmetric in general.\n\nContent:\nLet's look at an example of how to build the distance matrix for the directed weighted graph below.\n\nGraphic:\n[IMG: /graphics/e7743d89335b75e3a757b09cb9f5e69a]\n\nContent:\nWe start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.\n\nContent:\n- The detour path [MATH: v_1 \\to v_2 \\to v_3 \\to v_4] has a weight of [MATH: 2+1+5=8] and is the shortest path between [MATH: v_1] and [MATH: v_4.] (Notice that the alternative path [MATH: v_1 \\to v_2 \\to v_4,] which has fewer edges, has a greater weight of [MATH: 2+7=9.]) Hence, we write [MATH: 8] in the entry [MATH: a_{14}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | | |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Similarly, the path [MATH: v_2 \\to v_3 \\to v_4] has a weight of [MATH: 1+5=6] and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 6] in the entry [MATH: a_{24}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 6] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- We write the weight of an edge in the entry corresponding to a vertex pair connected by a direct edge with no shorter detours exist: [MATH: a_{12}, a_{23},] and [MATH: a_{34}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 2] | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 6] |\n| [MATH: v_3] | | | [MATH: 0] | [MATH: 5] |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Finally, we write [MATH: \\infty] in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 2] | [MATH: \\infty] | [MATH: 8] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 6] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |\n\nContent:\nThe distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:\n\nContent:\n[MATH: [0|2|\u221e|8; \u221e|0|1|6; \u221e|\u221e|0|5; \u221e|\u221e|\u221e|0]]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "416218",
+        "content_id": "16005",
+        "dom_id": "step-416218",
+        "selector": "#step-416218",
+        "step_anchor": "step-10",
+        "title": "Building the Distance Matrix of a Weighted Graph",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following directed weighted graph.</p><div class=\"graphic\"><img src=\"/graphics/d2117f3b84863f4e84ee864fe0c53364\"></div><p>Fill in the missing values in the following distance matrix for the graph above.</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: v_5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_5]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "Consider the following directed weighted graph.\n\n[IMG: /graphics/d2117f3b84863f4e84ee864fe0c53364]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | | [MATH: 3] | | [MATH: 6] | [MATH: 11] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 4] | [MATH: 3] | |\n| [MATH: v_3] | [MATH: \\infty] | | [MATH: 0] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_5] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |",
+            "images": [
+              {
+                "src": "/graphics/d2117f3b84863f4e84ee864fe0c53364",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Given a fixed order of vertices <span class=\"math\">[MATH: v_1, v_2, \\ldots, v_n]</span> in a directed weighted graph, the <em>distance matrix</em> <span class=\"math\">[MATH: D]</span> of the graph is an <span class=\"math\">[MATH: n \\times n]</span>-matrix (table), where the element <span class=\"math\">[MATH: d_{ij}]</span> at the intersection of the <span class=\"math\">[MATH: i]</span>th row and the <span class=\"math\">[MATH: j]</span>th column equals the distance between the vertices <span class=\"math\">[MATH: v_i]</span> and <span class=\"math\">[MATH: v_j.]</span></p><p>If there is no path from <span class=\"math\">[MATH: v_i]</span> to <span class=\"math\">[MATH: v_j,]</span> we define <span class=\"math\">[MATH: d_{ij}=\\infty.]</span></p><p>In our case, the vertices are arranged as <span class=\"math\">[MATH: v_1,v_2,v_3,v_4,]</span> and <span class=\"math\">[MATH: v_5.]</span> Some of the distance calculations are here as follows:</p><ul><li><p>The entry <span class=\"math\">[MATH: d_{11}]</span> is the distance from <span class=\"math\">[MATH: v_1]</span> to itself, which is always zero. Hence, \n<span class=\"math\">[MATH: d_{11} = 0.]</span></p></li><li><p>The distance from <span class=\"math\">[MATH: v_1]</span> to <span class=\"math\">[MATH: v_3]</span> is <span class=\"math\">[MATH: 7]</span> because the shortest path between these vertices (namely, <span class=\"math\">[MATH: v_1 \\to v_2 \\to v_3]</span>, not <span class=\"math\">[MATH: v_1 \\to v_3]</span>) has a total length of <span class=\"math\">[MATH: 3+4=7.]</span> Hence, we have\n<span class=\"math\">[MATH: d_{13} = 7.]</span></p></li><li><p>The distance from <span class=\"math\">[MATH: v_2]</span> to <span class=\"math\">[MATH: v_5]</span> is <span class=\"math\">[MATH: 8]</span> because the shortest path between these vertices (namely, <span class=\"math\">[MATH: v_2 \\to v_4 \\to v_5]</span>) has a total length of <span class=\"math\">[MATH: 3+5=8.]</span> Hence, we have\n<span class=\"math\">[MATH: d_{25} = 8.]</span></p></li><li><p>The distance from <span class=\"math\">[MATH: v_3]</span> to <span class=\"math\">[MATH: v_2]</span> is <span class=\"math\">[MATH: \\infty]</span> because there is no path from <span class=\"math\">[MATH: v_3]</span> to <span class=\"math\">[MATH: v_3]</span>. Hence, we have\n<span class=\"math\">[MATH: d_{32} = \\infty.]</span></p></li></ul><p>Therefore, the distance matrix is as follows:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: v_5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_1]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}7}]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_2]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}8}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_3]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_4]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_5]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: \\infty]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+            "readable_text": "Given a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in a directed weighted graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nIf there is no path from [MATH: v_i] to [MATH: v_j,] we define [MATH: d_{ij}=\\infty.]\n\nIn our case, the vertices are arranged as [MATH: v_1,v_2,v_3,v_4,] and [MATH: v_5.] Some of the distance calculations are here as follows:\n\n- The entry [MATH: d_{11}] is the distance from [MATH: v_1] to itself, which is always zero. Hence,\n[MATH: d_{11} = 0.]\n- The distance from [MATH: v_1] to [MATH: v_3] is [MATH: 7] because the shortest path between these vertices (namely, [MATH: v_1 \\to v_2 \\to v_3], not [MATH: v_1 \\to v_3]) has a total length of [MATH: 3+4=7.] Hence, we have\n[MATH: d_{13} = 7.]\n- The distance from [MATH: v_2] to [MATH: v_5] is [MATH: 8] because the shortest path between these vertices (namely, [MATH: v_2 \\to v_4 \\to v_5]) has a total length of [MATH: 3+5=8.] Hence, we have\n[MATH: d_{25} = 8.]\n- The distance from [MATH: v_3] to [MATH: v_2] is [MATH: \\infty] because there is no path from [MATH: v_3] to [MATH: v_3]. Hence, we have\n[MATH: d_{32} = \\infty.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 3] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}7}] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 4] | [MATH: 3] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}8}] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: 0] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_5] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/d2117f3b84863f4e84ee864fe0c53364",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following directed weighted graph.\n\n[IMG: /graphics/d2117f3b84863f4e84ee864fe0c53364]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | | [MATH: 3] | | [MATH: 6] | [MATH: 11] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 4] | [MATH: 3] | |\n| [MATH: v_3] | [MATH: \\infty] | | [MATH: 0] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_5] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in a directed weighted graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nIf there is no path from [MATH: v_i] to [MATH: v_j,] we define [MATH: d_{ij}=\\infty.]\n\nIn our case, the vertices are arranged as [MATH: v_1,v_2,v_3,v_4,] and [MATH: v_5.] Some of the distance calculations are here as follows:\n\n- The entry [MATH: d_{11}] is the distance from [MATH: v_1] to itself, which is always zero. Hence,\n[MATH: d_{11} = 0.]\n- The distance from [MATH: v_1] to [MATH: v_3] is [MATH: 7] because the shortest path between these vertices (namely, [MATH: v_1 \\to v_2 \\to v_3], not [MATH: v_1 \\to v_3]) has a total length of [MATH: 3+4=7.] Hence, we have\n[MATH: d_{13} = 7.]\n- The distance from [MATH: v_2] to [MATH: v_5] is [MATH: 8] because the shortest path between these vertices (namely, [MATH: v_2 \\to v_4 \\to v_5]) has a total length of [MATH: 3+5=8.] Hence, we have\n[MATH: d_{25} = 8.]\n- The distance from [MATH: v_3] to [MATH: v_2] is [MATH: \\infty] because there is no path from [MATH: v_3] to [MATH: v_3]. Hence, we have\n[MATH: d_{32} = \\infty.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 3] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}7}] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 4] | [MATH: 3] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}8}] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: 0] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_5] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "243268",
+        "dom_id": "question-243268",
+        "selector": "#question-243268",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-243268\"></p>",
+          "readable_text": "[IMG: /graphics/q-243268]",
+          "images": [
+            {
+              "src": "/graphics/q-243268",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Fill in the missing values in the distance matrix of the weighed graph above:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+          "readable_text": "Fill in the missing values in the distance matrix of the weighed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 3] | [FREE_ENTRY 2] | [MATH: 11] |\n| [MATH: v_{2}] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 4] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 3] | [MATH: 1] | [FREE_ENTRY 4] | [MATH: 3] | [MATH: 8] |\n| [MATH: v_{4}] | [MATH: 6] | [MATH: 4] | [MATH: 3] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_{5}] | [MATH: 11] | [FREE_ENTRY 5] | [MATH: 8] | [MATH: 5] | [MATH: 0] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-243268",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-243268]\n\nPrompt:\nFill in the missing values in the distance matrix of the weighed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 3] | [FREE_ENTRY 2] | [MATH: 11] |\n| [MATH: v_{2}] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 4] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 3] | [MATH: 1] | [FREE_ENTRY 4] | [MATH: 3] | [MATH: 8] |\n| [MATH: v_{4}] | [MATH: 6] | [MATH: 4] | [MATH: 3] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_{5}] | [MATH: 11] | [FREE_ENTRY 5] | [MATH: 8] | [MATH: 5] | [MATH: 0] |"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "243269",
+        "dom_id": "question-243269",
+        "selector": "#question-243269",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-243269\"></p>",
+          "readable_text": "[IMG: /graphics/q-243269]",
+          "images": [
+            {
+              "src": "/graphics/q-243269",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Fill in the missing values in the distance matrix of the directed weighted graph above:</p><table><tr><td></td><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{1}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{2}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{3}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{4}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: v_{5}]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-5\" data-blank-index=\"5\">[FREE_ENTRY 5]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: \u221e]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td></tr></table>",
+          "readable_text": "Fill in the missing values in the distance matrix of the directed weighted graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 3] | [FREE_ENTRY 2] | [MATH: 11] |\n| [MATH: v_{2}] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] | [MATH: 4] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 3] | [MATH: 8] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 5,
+              "dom_id": "freeResponseTextbox-5",
+              "placeholder": "[FREE_ENTRY 5]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-243269",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 5,
+            "dom_id": "freeResponseTextbox-5",
+            "placeholder": "[FREE_ENTRY 5]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-243269]\n\nPrompt:\nFill in the missing values in the distance matrix of the directed weighted graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 3] | [FREE_ENTRY 2] | [MATH: 11] |\n| [MATH: v_{2}] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] | [MATH: 4] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 3] | [MATH: 8] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] |"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nRecall that the distance between vertices [MATH: u] and [MATH: v] in an unweighted undirected graph, [MATH: d(u,v),] is the length (i.e., the number of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]\n\nContent:\nIn a simple undirected unweighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix (table), where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nContent:\nNotice that, according to this definition:\n\nContent:\n- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of an undirected graph is symmetric about the main diagonal.\n\nContent:\nLet's look at an example of how to build the distance matrix for the graph below.\n\nGraphic:\n[IMG: /graphics/573f222dae5b9df7c51804281128625a]\n\nContent:\nWe start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.\n\nContent:\n- The path [MATH: v_2-v_3-v_4] has two edges and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 2] in the entry [MATH: a_{24}] and, by symmetry, in the entry [MATH: a_{42}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | [MATH: 2] | | [MATH: 0] |\n\nContent:\n- Since the vertices [MATH: v_2] and [MATH: v_3] are adjacent, the shortest path between them is [MATH: 1.] Hence, we write [MATH: 1] in the entry [MATH: a_{23}] and, by symmetry, in the entry [MATH: a_{32}.] Similarly, since [MATH: v_3] and [MATH: v_4] are adjacent, we write [MATH: 1] in the entry [MATH: a_{34}] and [MATH: a_{43}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | | [MATH: 2] | [MATH: 1] | [MATH: 0] |\n\nContent:\n- Since the vertex [MATH: v_1] is isolated, the distance from it to any other vertex is [MATH: \\infty.] Hence, we write [MATH: \\infty] in every entry of the [MATH: 1]st row and in every entry of the [MATH: 1]st column, except for [MATH: a_{11}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: 2] | [MATH: 1] | [MATH: 0] |\n\nContent:\nThe distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:\n\nContent:\n[MATH: [0|\u221e|\u221e|\u221e; \u221e|0|1|2; \u221e|1|0|1; \u221e|2|1|0]]\n\n---\n\nItem 2 \u2014 Example: Building the Distance Matrix of a Graph\n\nExample Prompt:\nConsider the following disconnected graph.\n\n[IMG: /graphics/de10cb019137d7c57472407d9f398e01]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | |\n| [MATH: v_2] | [MATH: 1] | [MATH: 0] | [MATH: 1] | | [MATH: 1] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: \\infty] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | | [MATH: \\infty] | [MATH: 0] | [MATH: \\infty] |\n| [MATH: v_5] | [MATH: 2] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: 0] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in an undirected graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nIf there is no path form [MATH: v_i] and [MATH: v_j,] we define [MATH: d_{ij}=\\infty.]\n\nThe distances are calculated as follows:\n\n- First, the entry [MATH: d_{11}] is the distance from [MATH: v_1] to itself, which is always zero. Hence,\n[MATH: d_{11} = 0.]\n- Now, recall that the distance matrix of an undirected graph is symmetric about the main diagonal. Hence, by symmetry, we have\n[MATH: d_{15} = d_{51} = 2.]\n- Finally, the distance from [MATH: v_2] to [MATH: v_4] is [MATH: \\infty] because there is no path from [MATH: v_2] to [MATH: v_4.] Hence, we have\n[MATH: d_{24} = d_{42} = \\infty.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] |\n| [MATH: v_2] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: 1] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 1] | [MATH: 0] | [MATH: \\infty] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: \\infty] | [MATH: 0] | [MATH: \\infty] |\n| [MATH: v_5] | [MATH: 2] | [MATH: 1] | [MATH: 1] | [MATH: \\infty] | [MATH: 0] |\n\n---\n\nItem 3 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-243217]\n\nPrompt:\nFill in the missing values in the distance matrix for the graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 1] | [FREE_ENTRY 2] | [MATH: 3] |\n| [MATH: v_{2}] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 1] | [MATH: 1] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: 2] | [MATH: 2] | [MATH: 1] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: 3] | [FREE_ENTRY 5] | [MATH: 2] | [MATH: 1] | [MATH: 0] |\n\n---\n\nItem 4 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-257951]\n\nPrompt:\nFill in the missing values in the distance matrix for the graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [MATH: 1] | [FREE_ENTRY 1] | [MATH: \u221e] | [FREE_ENTRY 2] |\n| [MATH: v_{2}] | [MATH: 1] | [MATH: 0] | [MATH: 2] | [MATH: \u221e] | [MATH: \u221e] |\n| [MATH: v_{3}] | [FREE_ENTRY 3] | [MATH: 2] | [MATH: 0] | [MATH: \u221e] | [MATH: \u221e] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: 1] | [MATH: 0] |\n\n---\n\nItem 5 \u2014 Tutorial: Distance Matrix of a Directed Graph\n\nContent:\nRecall that the distance between vertices [MATH: u] and [MATH: v] in an unweighted directed graph, [MATH: d(u,v),] is the length (i.e., the number of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]\n\nContent:\nIn a simple directed unweighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix, where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column represents the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nContent:\nNotice that, according to this definition:\n\nContent:\n- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of a directed graph is not symmetric about the main diagonal in general.\n\nContent:\nLet's look at an example of how to build the distance matrix for the graph below.\n\nGraphic:\n[IMG: /graphics/e1067a2ada4c6ba237654e8737c43670]\n\nContent:\nWe start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.\n\nContent:\n- The path [MATH: v_1 \\to v_2 \\to v_3 \\to v_4] has three edges and is the shortest path between [MATH: v_1] and [MATH: v_4.] Hence, we write [MATH: 3] in the entry [MATH: a_{14}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Similarly, the path [MATH: v_2 \\to v_3 \\to v_4] has two edges and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 2] in the entry [MATH: a_{24}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Similarly, the path [MATH: v_4 \\to v_2 \\to v_3] has two edges and is the shortest path between [MATH: v_4] and [MATH: v_3.] Hence, we write [MATH: 2] in the entry [MATH: a_{43}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | [MATH: 2] | [MATH: 0] |\n\nContent:\n- We write [MATH: 1] in every entry that represents a vertex pair connected by a direct edge: [MATH: a_{12}, a_{23}, a_{34},] and [MATH: a_{42}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 1] | | [MATH: 3] |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | | | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | | [MATH: 1] | [MATH: 2] | [MATH: 0] |\n\nContent:\n- Finally, we write [MATH: \\infty] in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 1] | [MATH: \\infty] | [MATH: 3] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: 1] | [MATH: 2] | [MATH: 0] |\n\nContent:\nThe distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:\n\nContent:\n[MATH: [0|1|\u221e|3; \u221e|0|1|2; \u221e|\u221e|0|1; \u221e|1|2|0]]\n\n---\n\nItem 6 \u2014 Example: Building the Distance Matrix of a Directed Graph\n\nExample Prompt:\nConsider the following graph.\n\n[IMG: /graphics/743cdb7557e41cadd5dd2b2fef191871]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 3] | [MATH: 4] |\n| [MATH: v_2] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 2] | | [MATH: 1] | [MATH: 2] |\n| [MATH: v_4] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_5] | [MATH: 1] | | [MATH: 3] | [MATH: 4] | [MATH: 0] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in a directed graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance from the vertex [MATH: v_i] to the vertex [MATH: v_j.]\n\nIn our case, the vertices are arranged as [MATH: v_1,v_2,v_3,v_4,] and [MATH: v_5.] Let's determine the distances.\n\nRecall that the distance matrix of a directed graph is not symmetric in general. Some of the distances are calculated as follows:\n\n- The distance from [MATH: v_1] to [MATH: v_2] is [MATH: 1] since the shortest path from [MATH: v_1] to [MATH: v_2] (namely, [MATH: v_1 \\to v_2]) has a length of [MATH: 1.] Hence, we have\n[MATH: d_{12} = 1.]\n- The distance from [MATH: v_1] to [MATH: v_3] is [MATH: 2] since the shortest path from [MATH: v_1] to [MATH: v_3] (namely, [MATH: v_1 \\to v_2 \\to v_3]) has a length of [MATH: 2.] Hence, we have\n[MATH: d_{13} = 2.]\n\n- The entry [MATH: d_{33}] is the distance from [MATH: v_3] to itself, which is always [MATH: 0]. Hence,\n[MATH: d_{33} = 0.]\n- The distance from [MATH: v_5] to [MATH: v_2] is [MATH: 2] since the shortest path from [MATH: v_5] to [MATH: v_2] (namely, [MATH: v_5 \\to v_1 \\to v_2]) has a length of [MATH: 2.] Hence,\n[MATH: d_{52} = 2.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: 0] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}1}] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] | [MATH: 3] | [MATH: 4] |\n| [MATH: v_2] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: v_3] | [MATH: 1] | [MATH: 2] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_4] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_5] | [MATH: 1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}2}] | [MATH: 3] | [MATH: 4] | [MATH: 0] |\n\n---\n\nItem 7 \u2014 Question 3\n\nQuestion Graphic:\n[IMG: /graphics/q-258175]\n\nPrompt:\nFill in the missing values in the distance matrix of the directed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 2] | [FREE_ENTRY 2] | [MATH: 4] |\n| [MATH: v_{2}] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: 4] | [MATH: 2] | [MATH: 3] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: 3] | [FREE_ENTRY 5] | [MATH: 2] | [MATH: 3] | [MATH: 0] |\n\n---\n\nItem 8 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-243231]\n\nPrompt:\nFill in the missing values in the distance matrix of the directed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 1] | [FREE_ENTRY 2] | [MATH: 3] |\n| [MATH: v_{2}] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 1] | [MATH: 2] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] |\n\n---\n\nItem 9 \u2014 Tutorial: Distance Matrix of a Weighted Graph\n\nContent:\nRecall that the distance between vertices [MATH: u] and [MATH: v] in a weighted graph, [MATH: d(u,v),] is the length (i.e., sum of the weights of edges) of the shortest path from [MATH: u] to [MATH: v.] If no path from [MATH: u] to [MATH: v] exists, we say that the distance is [MATH: \\infty.]\n\nContent:\nIn a weighted graph [MATH: G=(V,E)] with [MATH: n] vertices [MATH: v_1, v_2, \\ldots, v_n,] the distance matrix [MATH: D] of the graph is an [MATH: n \\times n] matrix, where the entry [MATH: a_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.] Here [MATH: G] can be either directed or undirected.\n\nContent:\nNotice that, according to this definition:\n\nContent:\n- If no path exists between [MATH: v_i] and [MATH: v_j,] then the entry [MATH: a_{ij}] is [MATH: \\infty.]\n- If [MATH: i=j] (i.e., it is the same vertex), then the entry [MATH: a_{ii}] is [MATH: 0.]\n- The distance matrix of an undirected weighted graph is symmetric about the main diagonal, but the distance matrix of a directed weighted graph is not symmetric in general.\n\nContent:\nLet's look at an example of how to build the distance matrix for the directed weighted graph below.\n\nGraphic:\n[IMG: /graphics/e7743d89335b75e3a757b09cb9f5e69a]\n\nContent:\nWe start with a square [MATH: 4 \\times 4] matrix with [MATH: 0]s on the main diagonal and examine every pair of vertices to determine the remaining matrix entries.\n\nContent:\n- The detour path [MATH: v_1 \\to v_2 \\to v_3 \\to v_4] has a weight of [MATH: 2+1+5=8] and is the shortest path between [MATH: v_1] and [MATH: v_4.] (Notice that the alternative path [MATH: v_1 \\to v_2 \\to v_4,] which has fewer edges, has a greater weight of [MATH: 2+7=9.]) Hence, we write [MATH: 8] in the entry [MATH: a_{14}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | | |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Similarly, the path [MATH: v_2 \\to v_3 \\to v_4] has a weight of [MATH: 1+5=6] and is the shortest path between [MATH: v_2] and [MATH: v_4.] Hence, we write [MATH: 6] in the entry [MATH: a_{24}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | | [MATH: 6] |\n| [MATH: v_3] | | | [MATH: 0] | |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- We write the weight of an edge in the entry corresponding to a vertex pair connected by a direct edge with no shorter detours exist: [MATH: a_{12}, a_{23},] and [MATH: a_{34}.]\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 2] | | [MATH: 8] |\n| [MATH: v_2] | | [MATH: 0] | [MATH: 1] | [MATH: 6] |\n| [MATH: v_3] | | | [MATH: 0] | [MATH: 5] |\n| [MATH: v_4] | | | | [MATH: 0] |\n\nContent:\n- Finally, we write [MATH: \\infty] in all other empty cells to indicate that no paths exist between the corresponding vertex pairs.\n\nContent:\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] |\n| [MATH: v_1] | [MATH: 0] | [MATH: 2] | [MATH: \\infty] | [MATH: 8] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 1] | [MATH: 6] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |\n\nContent:\nThe distance matrix is completed. In regular matrix notation, we can write this distance matrix as follows:\n\nContent:\n[MATH: [0|2|\u221e|8; \u221e|0|1|6; \u221e|\u221e|0|5; \u221e|\u221e|\u221e|0]]\n\n---\n\nItem 10 \u2014 Example: Building the Distance Matrix of a Weighted Graph\n\nExample Prompt:\nConsider the following directed weighted graph.\n\n[IMG: /graphics/d2117f3b84863f4e84ee864fe0c53364]\n\nFill in the missing values in the following distance matrix for the graph above.\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | | [MATH: 3] | | [MATH: 6] | [MATH: 11] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 4] | [MATH: 3] | |\n| [MATH: v_3] | [MATH: \\infty] | | [MATH: 0] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_5] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |\n\nContent:\nEXPLANATION\n\nExplanation:\nGiven a fixed order of vertices [MATH: v_1, v_2, \\ldots, v_n] in a directed weighted graph, the distance matrix [MATH: D] of the graph is an [MATH: n \\times n]-matrix (table), where the element [MATH: d_{ij}] at the intersection of the [MATH: i]th row and the [MATH: j]th column equals the distance between the vertices [MATH: v_i] and [MATH: v_j.]\n\nIf there is no path from [MATH: v_i] to [MATH: v_j,] we define [MATH: d_{ij}=\\infty.]\n\nIn our case, the vertices are arranged as [MATH: v_1,v_2,v_3,v_4,] and [MATH: v_5.] Some of the distance calculations are here as follows:\n\n- The entry [MATH: d_{11}] is the distance from [MATH: v_1] to itself, which is always zero. Hence,\n[MATH: d_{11} = 0.]\n- The distance from [MATH: v_1] to [MATH: v_3] is [MATH: 7] because the shortest path between these vertices (namely, [MATH: v_1 \\to v_2 \\to v_3], not [MATH: v_1 \\to v_3]) has a total length of [MATH: 3+4=7.] Hence, we have\n[MATH: d_{13} = 7.]\n- The distance from [MATH: v_2] to [MATH: v_5] is [MATH: 8] because the shortest path between these vertices (namely, [MATH: v_2 \\to v_4 \\to v_5]) has a total length of [MATH: 3+5=8.] Hence, we have\n[MATH: d_{25} = 8.]\n- The distance from [MATH: v_3] to [MATH: v_2] is [MATH: \\infty] because there is no path from [MATH: v_3] to [MATH: v_3]. Hence, we have\n[MATH: d_{32} = \\infty.]\n\nTherefore, the distance matrix is as follows:\n\n| | [MATH: v_1] | [MATH: v_2] | [MATH: v_3] | [MATH: v_4] | [MATH: v_5] |\n| [MATH: v_1] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}0}] | [MATH: 3] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}7}] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_2] | [MATH: \\infty] | [MATH: 0] | [MATH: 4] | [MATH: 3] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}8}] |\n| [MATH: v_3] | [MATH: \\infty] | [MATH: \\bbox[3pt,Gainsboro]{\\color{blue}\\infty}] | [MATH: 0] | [MATH: 6] | [MATH: 11] |\n| [MATH: v_4] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_5] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: \\infty] | [MATH: 0] |\n\n---\n\nItem 11 \u2014 Question 5\n\nQuestion Graphic:\n[IMG: /graphics/q-243268]\n\nPrompt:\nFill in the missing values in the distance matrix of the weighed graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 3] | [FREE_ENTRY 2] | [MATH: 11] |\n| [MATH: v_{2}] | [MATH: 2] | [MATH: 0] | [MATH: 1] | [MATH: 4] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: 3] | [MATH: 1] | [FREE_ENTRY 4] | [MATH: 3] | [MATH: 8] |\n| [MATH: v_{4}] | [MATH: 6] | [MATH: 4] | [MATH: 3] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_{5}] | [MATH: 11] | [FREE_ENTRY 5] | [MATH: 8] | [MATH: 5] | [MATH: 0] |\n\n---\n\nItem 12 \u2014 Question 6\n\nQuestion Graphic:\n[IMG: /graphics/q-243269]\n\nPrompt:\nFill in the missing values in the distance matrix of the directed weighted graph above:\n\n| | [MATH: v_{1}] | [MATH: v_{2}] | [MATH: v_{3}] | [MATH: v_{4}] | [MATH: v_{5}] |\n| [MATH: v_{1}] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: 3] | [FREE_ENTRY 2] | [MATH: 11] |\n| [MATH: v_{2}] | [MATH: \u221e] | [MATH: 0] | [MATH: 1] | [MATH: 4] | [FREE_ENTRY 3] |\n| [MATH: v_{3}] | [MATH: \u221e] | [MATH: \u221e] | [FREE_ENTRY 4] | [MATH: 3] | [MATH: 8] |\n| [MATH: v_{4}] | [MATH: \u221e] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] | [MATH: 5] |\n| [MATH: v_{5}] | [MATH: \u221e] | [FREE_ENTRY 5] | [MATH: \u221e] | [MATH: \u221e] | [MATH: 0] |"
+  }
+}

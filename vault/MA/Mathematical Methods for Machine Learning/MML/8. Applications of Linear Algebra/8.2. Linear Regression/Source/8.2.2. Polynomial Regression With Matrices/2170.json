@@ -1,0 +1,1209 @@
+{
+  "schema_version": 2,
+  "topic_id": "2170",
+  "topic_title": "Polynomial Regression With Matrices",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2170/Source/2170.html",
+  "source_url": "https://mathacademy.com/topics/2170",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20311",
+        "dom_id": "sectionLink-20311",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20311"
+      },
+      {
+        "index": 2,
+        "step_id": "20313",
+        "dom_id": "sectionLink-20313",
+        "name": "",
+        "title": "Finding an Expression for a Least-Squares Regression Curve",
+        "selector": "#sectionLink-20313"
+      },
+      {
+        "index": 3,
+        "step_id": "22549",
+        "dom_id": "sectionLink-22549",
+        "name": "",
+        "title": "Identifying the Elements of a Polynomial Regression Model",
+        "selector": "#sectionLink-22549"
+      },
+      {
+        "index": 4,
+        "step_id": "37335",
+        "dom_id": "sectionLink-37335",
+        "name": "",
+        "title": "Regression Curves Containing Zero Coefficients",
+        "selector": "#sectionLink-37335"
+      },
+      {
+        "index": 5,
+        "step_id": "20312",
+        "dom_id": "sectionLink-20312",
+        "name": "",
+        "title": "Identifying the Design Matrix When the Regression Curve Contains Zero Coefficients",
+        "selector": "#sectionLink-20312"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "736",
+        "name": "Selecting a Regression Model",
+        "href": "/topics/selecting-a-regression-model-736"
+      },
+      {
+        "topic_id": "2169",
+        "name": "Linear Regression With Matrices",
+        "href": "/topics/linear-regression-with-matrices-2169"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20311",
+        "content_id": "3654",
+        "dom_id": "step-20311",
+        "selector": "#step-20311",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ve seen how to construct a simple linear regression model given some bivariate data <span class=\"math\">[MATH: (x,y).]</span> We can generalize this technique to fit data to an arbitrary polynomial. We call this process <strong>polynomial regression</strong>.</p>",
+            "readable_text": "We've seen how to construct a simple linear regression model given some bivariate data [MATH: (x,y).] We can generalize this technique to fit data to an arbitrary polynomial. We call this process polynomial regression.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The following table gives the number of units <span class=\"math\">[MATH: x]</span> (in hundreds) produced by a small company and the respective profits <span class=\"math\">[MATH: y]</span> (in thousands of dollars) earned for producing <span class=\"math\">[MATH: x]</span> units:</p>",
+            "readable_text": "The following table gives the number of units [MATH: x] (in hundreds) produced by a small company and the respective profits [MATH: y] (in thousands of dollars) earned for producing [MATH: x] units:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p>Goods <span class=\"math\">[MATH: (x)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><th><p>Profit <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr></table>",
+            "readable_text": "| Goods [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Profit [MATH: (y)] | [MATH: 16] | [MATH: 11] | [MATH: 15] | [MATH: 18] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we want to find the quadratic function</p>",
+            "readable_text": "Suppose we want to find the quadratic function",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2]</span></p>",
+            "readable_text": "[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>that best fits the given data points.</p>",
+            "readable_text": "that best fits the given data points.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/151c1d8d5104005ab862cb6ace27196d\"></p>",
+            "readable_text": "[IMG: /graphics/151c1d8d5104005ab862cb6ace27196d]",
+            "images": [
+              {
+                "src": "/graphics/151c1d8d5104005ab862cb6ace27196d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting the values of <span class=\"math\">[MATH: x]</span> into the regression equation and equating the results to the corresponding observed values of <span class=\"math\">[MATH: y,]</span> we obtain the following system:</p>",
+            "readable_text": "Substituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\u03b2_{0} + 1\u03b2_{1} + 1^{2}\u03b2_{2} = 16; \u03b2_{0} + 2\u03b2_{1} + 2^{2}\u03b2_{2} = 11; \u03b2_{0} + 3\u03b2_{1} + 3^{2}\u03b2_{2} = 15; \u03b2_{0} + 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]</span></p>",
+            "readable_text": "[MATH: {\u03b2_{0} + 1\u03b2_{1} + 1^{2}\u03b2_{2} = 16; \u03b2_{0} + 2\u03b2_{1} + 2^{2}\u03b2_{2} = 11; \u03b2_{0} + 3\u03b2_{1} + 3^{2}\u03b2_{2} = 15; \u03b2_{0} + 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This system can be written using matrix notation as</p>",
+            "readable_text": "This system can be written using matrix notation as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}]]</span></p>",
+            "readable_text": "[MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. </p>",
+            "readable_text": "where [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since our points do not lie on a quadratic curve, there will be no parameters <span class=\"math\">[MATH: \\beta_0, \\beta_1,]</span> and <span class=\"math\">[MATH: \\beta_2]</span> such that this equation is true. So instead, we seek parameters <span class=\"math\">[MATH: \\beta_0, \\beta_1,]</span> and <span class=\"math\">[MATH: \\beta_2]</span> that best approximate the solution.</p>",
+            "readable_text": "Since our points do not lie on a quadratic curve, there will be no parameters [MATH: \\beta_0, \\beta_1,] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0, \\beta_1,] and [MATH: \\beta_2] that best approximate the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, we seek to find a column vector <span class=\"math\">[MATH: \\boldsymbol\\beta]</span> such that</p>",
+            "readable_text": "In other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]</span></p>",
+            "readable_text": "[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is as small as possible.</p>",
+            "readable_text": "is as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that this is exactly the least-squares problem for the system <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]</span> Therefore, the coefficients of the curve that best fits the data can be found as the solution to the corresponding least-squares problem! </p>",
+            "readable_text": "Notice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the curve that best fits the data can be found as the solution to the corresponding least-squares problem!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Pre-multiplying the equation <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}]</span> by <span class=\"math\">[MATH: X^T,]</span> we obtain the corresponding normal equation</p>",
+            "readable_text": "Pre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the columns of <span class=\"math\">[MATH: X]</span> are linearly independent, the matrix <span class=\"math\">[MATH: {X^T}X]</span> is invertible, and </p>",
+            "readable_text": "Since the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> into the formula above and simplifying, we get</p>",
+            "readable_text": "Substituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03b2^(^) = [22.5; \u2212 9; 2].]</span></p>",
+            "readable_text": "[MATH: \u03b2^(^) = [22.5; \u2212 9; 2].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the quadratic curve of best fit (regression curve) is </p>",
+            "readable_text": "Therefore, the quadratic curve of best fit (regression curve) is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = 22.5 - 9x + 2x^2.]</span></p>",
+            "readable_text": "[MATH: y = 22.5 - 9x + 2x^2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/151c1d8d5104005ab862cb6ace27196d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe've seen how to construct a simple linear regression model given some bivariate data [MATH: (x,y).] We can generalize this technique to fit data to an arbitrary polynomial. We call this process polynomial regression.\n\nContent:\nThe following table gives the number of units [MATH: x] (in hundreds) produced by a small company and the respective profits [MATH: y] (in thousands of dollars) earned for producing [MATH: x] units:\n\nContent:\n| Goods [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Profit [MATH: (y)] | [MATH: 16] | [MATH: 11] | [MATH: 15] | [MATH: 18] |\n\nContent:\nSuppose we want to find the quadratic function\n\nContent:\n[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2]\n\nContent:\nthat best fits the given data points.\n\nGraphic:\n[IMG: /graphics/151c1d8d5104005ab862cb6ace27196d]\n\nContent:\nSubstituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: {\u03b2_{0} + 1\u03b2_{1} + 1^{2}\u03b2_{2} = 16; \u03b2_{0} + 2\u03b2_{1} + 2^{2}\u03b2_{2} = 11; \u03b2_{0} + 3\u03b2_{1} + 3^{2}\u03b2_{2} = 15; \u03b2_{0} + 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]\n\nContent:\nThis system can be written using matrix notation as\n\nContent:\n[MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}]]\n\nContent:\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nSince our points do not lie on a quadratic curve, there will be no parameters [MATH: \\beta_0, \\beta_1,] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0, \\beta_1,] and [MATH: \\beta_2] that best approximate the solution.\n\nContent:\nIn other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that\n\nContent:\n[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]\n\nContent:\nis as small as possible.\n\nContent:\nNotice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the curve that best fits the data can be found as the solution to the corresponding least-squares problem!\n\nContent:\nPre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation\n\nContent:\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nContent:\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and\n\nContent:\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nContent:\nSubstituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get\n\nContent:\n[MATH: \u03b2^(^) = [22.5; \u2212 9; 2].]\n\nContent:\nTherefore, the quadratic curve of best fit (regression curve) is\n\nContent:\n[MATH: y = 22.5 - 9x + 2x^2.]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20313",
+        "content_id": "5613",
+        "dom_id": "step-20313",
+        "selector": "#step-20313",
+        "step_anchor": "step-2",
+        "title": "Finding an Expression for a Least-Squares Regression Curve",
+        "key_prerequisites": [
+          {
+            "topic_id": "2169",
+            "name": "Linear Regression With Matrices",
+            "href": "/topics/2169",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr></table><p>Consider the data above and the matrices below. Find an expression (in terms of <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span>) for the vector of coefficients <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> of the curve <span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]</span> that best fits the data. </p><p><span class=\"math\">[MATH: [1|0|0^{2}|0^{3}; 1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}]]</span></p>",
+            "readable_text": "| [MATH: x] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 5] | [MATH: 2] |\n\nConsider the data above and the matrices below. Find an expression (in terms of [MATH: X] and [MATH: \\mathbf{y}]) for the vector of coefficients [MATH: \\boldsymbol{\\beta}] of the curve [MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data.\n\n[MATH: [1|0|0^{2}|0^{3}; 1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The coefficients of the curve </p><p><span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]</span></p><p>that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system </p><p><span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y},]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p><p>Pre-multiplying this equation by <span class=\"math\">[MATH: X^T,]</span> we obtain the corresponding normal equation</p><p><span class=\"math\">[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]</span></p><p>Since the columns of <span class=\"math\">[MATH: X]</span> are linearly independent, the matrix <span class=\"math\">[MATH: {X^T}X]</span> is invertible and </p><p><span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "The coefficients of the curve\n\n[MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: X \\boldsymbol{\\beta} = \\mathbf{y},]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 5] | [MATH: 2] |\n\nConsider the data above and the matrices below. Find an expression (in terms of [MATH: X] and [MATH: \\mathbf{y}]) for the vector of coefficients [MATH: \\boldsymbol{\\beta}] of the curve [MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data.\n\n[MATH: [1|0|0^{2}|0^{3}; 1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe coefficients of the curve\n\n[MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: X \\boldsymbol{\\beta} = \\mathbf{y},]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "42409",
+        "dom_id": "question-42409",
+        "selector": "#question-42409",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td></tr></table><p>Consider the data above and the matrices below. Find an expression for the vector of coefficients of the curve <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2}]</span> that best fits the data. </p><p><span class=\"math\">[MATH: X = [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}], y = [3; \u2212 2; \u2212 1; 1; \u2212 1]]</span></p>",
+          "readable_text": "| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nConsider the data above and the matrices below. Find an expression for the vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2}] that best fits the data.\n\n[MATH: X = [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}], y = [3; \u2212 2; \u2212 1; 1; \u2212 1]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-42409-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (X^{T}X)^{\u2212 1}X^{T}y]</span></p>",
+            "readable_text": "[MATH: (X^{T}X)^{\u2212 1}X^{T}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-42409-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: X^{T}(XX^{T})^{\u2212 1}y]</span></p>",
+            "readable_text": "[MATH: X^{T}(XX^{T})^{\u2212 1}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-42409-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (XX^{T})^{\u2212 1}Xy]</span></p>",
+            "readable_text": "[MATH: (XX^{T})^{\u2212 1}Xy]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-42409-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: X^{T}(XX^{T})^{\u2212 1}Xy]</span></p>",
+            "readable_text": "[MATH: X^{T}(XX^{T})^{\u2212 1}Xy]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-42409-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: X(X^{T}X)^{\u2212 1}X^{T}y]</span></p>",
+            "readable_text": "[MATH: X(X^{T}X)^{\u2212 1}X^{T}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nConsider the data above and the matrices below. Find an expression for the vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2}] that best fits the data.\n\n[MATH: X = [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}], y = [3; \u2212 2; \u2212 1; 1; \u2212 1]]\n\nChoices:\na. [MATH: (X^{T}X)^{\u2212 1}X^{T}y]\nb. [MATH: X^{T}(XX^{T})^{\u2212 1}y]\nc. [MATH: (XX^{T})^{\u2212 1}Xy]\nd. [MATH: X^{T}(XX^{T})^{\u2212 1}Xy]\ne. [MATH: X(X^{T}X)^{\u2212 1}X^{T}y]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "139591",
+        "dom_id": "question-139591",
+        "selector": "#question-139591",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr></table><p>Consider the data above and the matrices below. Find an expression for the vector of coefficients of the curve <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}]</span> that best fits the data. </p><p><span class=\"math\">[MATH: X = [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}], y = [2; \u2212 3; \u2212 2; 0; 1]]</span></p>",
+          "readable_text": "| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 2] | [MATH: \u2212 3] | [MATH: \u2212 2] | [MATH: 0] | [MATH: 1] |\n\nConsider the data above and the matrices below. Find an expression for the vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data.\n\n[MATH: X = [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}], y = [2; \u2212 3; \u2212 2; 0; 1]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139591-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (X^{T}X)^{\u2212 1}X^{T}y]</span></p>",
+            "readable_text": "[MATH: (X^{T}X)^{\u2212 1}X^{T}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139591-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: X^{T}(XX^{T})^{\u2212 1}y]</span></p>",
+            "readable_text": "[MATH: X^{T}(XX^{T})^{\u2212 1}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139591-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: X(X^{T}X)^{\u2212 1}y]</span></p>",
+            "readable_text": "[MATH: X(X^{T}X)^{\u2212 1}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139591-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: X(X^{T}X)^{\u2212 1}X^{T}y]</span></p>",
+            "readable_text": "[MATH: X(X^{T}X)^{\u2212 1}X^{T}y]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139591-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (XX^{T})^{\u2212 1}Xy]</span></p>",
+            "readable_text": "[MATH: (XX^{T})^{\u2212 1}Xy]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 2] | [MATH: \u2212 3] | [MATH: \u2212 2] | [MATH: 0] | [MATH: 1] |\n\nConsider the data above and the matrices below. Find an expression for the vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data.\n\n[MATH: X = [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}], y = [2; \u2212 3; \u2212 2; 0; 1]]\n\nChoices:\na. [MATH: (X^{T}X)^{\u2212 1}X^{T}y]\nb. [MATH: X^{T}(XX^{T})^{\u2212 1}y]\nc. [MATH: X(X^{T}X)^{\u2212 1}y]\nd. [MATH: X(X^{T}X)^{\u2212 1}X^{T}y]\ne. [MATH: (XX^{T})^{\u2212 1}Xy]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "22549",
+        "content_id": "6094",
+        "dom_id": "step-22549",
+        "selector": "#step-22549",
+        "step_anchor": "step-5",
+        "title": "Identifying the Elements of a Polynomial Regression Model",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 40]</span></p></td><td><p><span class=\"math\">[MATH: 70]</span></p></td><td><p><span class=\"math\">[MATH: 120]</span></p></td><td><p><span class=\"math\">[MATH: 100]</span></p></td><td><p><span class=\"math\">[MATH: 80]</span></p></td></tr></table><p>The vector of coefficients of the curve <span class=\"math\">[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]</span> that best fits the data above can be found using polynomial regression as</p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. Find <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> in this context.</p>",
+            "readable_text": "| [MATH: x] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: y] | [MATH: 40] | [MATH: 70] | [MATH: 120] | [MATH: 100] | [MATH: 80] |\n\nThe vector of coefficients of the curve [MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}6]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}40]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}70]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}120]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}100]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}80]</span></p></td></tr></table><p>The coefficients of the curve</p><p><span class=\"math\">[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]</span></p><p>that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system</p><p><span class=\"math\">[MATH: [1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}; 1|6|6^{2}|6^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [40; 70; 120; 100; 80]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\beta]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p>",
+            "readable_text": "| [MATH: x] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] | [MATH: \\color{blue}6] |\n| [MATH: y] | [MATH: \\color{red}40] | [MATH: \\color{red}70] | [MATH: \\color{red}120] | [MATH: \\color{red}100] | [MATH: \\color{red}80] |\n\nThe coefficients of the curve\n\n[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}; 1|6|6^{2}|6^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [40; 70; 120; 100; 80]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\beta] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: y] | [MATH: 40] | [MATH: 70] | [MATH: 120] | [MATH: 100] | [MATH: 80] |\n\nThe vector of coefficients of the curve [MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] | [MATH: \\color{blue}6] |\n| [MATH: y] | [MATH: \\color{red}40] | [MATH: \\color{red}70] | [MATH: \\color{red}120] | [MATH: \\color{red}100] | [MATH: \\color{red}80] |\n\nThe coefficients of the curve\n\n[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}; 1|6|6^{2}|6^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [40; 70; 120; 100; 80]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\beta] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector."
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "42406",
+        "dom_id": "question-42406",
+        "selector": "#question-42406",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td></tr></table><p>The vector of coefficients of the curve <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}]</span> that best fits the data above can be found using polynomial regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-42406-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-42406-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]</span></p>",
+            "readable_text": "[MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-42406-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]</span></p>",
+            "readable_text": "[MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-42406-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 2; 3; 4; 5]]</span></p>",
+            "readable_text": "[MATH: [1; 2; 3; 4; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-42406-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]</span></p>",
+            "readable_text": "[MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]\nb. [MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]\nc. [MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]\nd. [MATH: [1; 2; 3; 4; 5]]\ne. [MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "42412",
+        "dom_id": "question-42412",
+        "selector": "#question-42412",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td></tr></table><p>The vector of coefficients of the curve <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}]</span> that best fits the data above can be found using polynomial regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the observation vector <span class=\"math\">[MATH: y]</span> in this context?</p>",
+          "readable_text": "| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-42412-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]</span></p>",
+            "readable_text": "[MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-42412-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-42412-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]</span></p>",
+            "readable_text": "[MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-42412-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 2; 3; 4; 5]]</span></p>",
+            "readable_text": "[MATH: [1; 2; 3; 4; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-42412-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]</span></p>",
+            "readable_text": "[MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?\n\nChoices:\na. [MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]\nb. [MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]\nc. [MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]\nd. [MATH: [1; 2; 3; 4; 5]]\ne. [MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37335",
+        "content_id": "6152",
+        "dom_id": "step-37335",
+        "selector": "#step-37335",
+        "step_anchor": "step-8",
+        "title": "Regression Curves Containing Zero Coefficients",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In some cases, we might need to constrain the regression curve so that some of its coefficients equal zero. </p>",
+            "readable_text": "In some cases, we might need to constrain the regression curve so that some of its coefficients equal zero.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the table below, which gives the number of units <span class=\"math\">[MATH: x]</span> (in hundreds) produced by a small company and the respective profits <span class=\"math\">[MATH: y]</span> (in thousands of dollars) earned for producing <span class=\"math\">[MATH: x]</span> units. </p>",
+            "readable_text": "Consider the table below, which gives the number of units [MATH: x] (in hundreds) produced by a small company and the respective profits [MATH: y] (in thousands of dollars) earned for producing [MATH: x] units.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p>Goods <span class=\"math\">[MATH: (x)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><th><p>Profit <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td></tr></table>",
+            "readable_text": "| Goods [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Profit [MATH: (y)] | [MATH: 2] | [MATH: 5] | [MATH: 8] | [MATH: 18] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s known that the profit equals zero when the company does not produce any goods, so <span class=\"math\">[MATH: y=0]</span> when <span class=\"math\">[MATH: x=0.]</span> The company wishes to find a <em>quadratic</em> curve that best fits the data <em>subject to</em> the constraint that it should pass through the point <span class=\"math\">[MATH: (0,0).]</span></p>",
+            "readable_text": "It's known that the profit equals zero when the company does not produce any goods, so [MATH: y=0] when [MATH: x=0.] The company wishes to find a quadratic curve that best fits the data subject to the constraint that it should pass through the point [MATH: (0,0).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, our regression curve must pass through the point <span class=\"math\">[MATH: (0,0).]</span> In other words, the <span class=\"math\">[MATH: y]</span>-intercept of the quadratic curve must be <span class=\"math\">[MATH: 0.]</span> Therefore, we want to find the quadratic function</p>",
+            "readable_text": "So, our regression curve must pass through the point [MATH: (0,0).] In other words, the [MATH: y]-intercept of the quadratic curve must be [MATH: 0.] Therefore, we want to find the quadratic function",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \\beta_1 x + \\beta_2 x^2]</span></p>",
+            "readable_text": "[MATH: y = \\beta_1 x + \\beta_2 x^2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>that best fits the given data points.</p>",
+            "readable_text": "that best fits the given data points.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/b11123809898045f232dff4ca6c14f1b\"></p>",
+            "readable_text": "[IMG: /graphics/b11123809898045f232dff4ca6c14f1b]",
+            "images": [
+              {
+                "src": "/graphics/b11123809898045f232dff4ca6c14f1b",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting the values of <span class=\"math\">[MATH: x]</span> into the regression equation and equating the results to the corresponding observed values of <span class=\"math\">[MATH: y,]</span> we obtain the following system:</p>",
+            "readable_text": "Substituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\u03b2_{1} + 1^{2}\u03b2_{2} = 2; 2\u03b2_{1} + 2^{2}\u03b2_{2} = 5; 3\u03b2_{1} + 3^{2}\u03b2_{2} = 8; 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]</span></p>",
+            "readable_text": "[MATH: {\u03b2_{1} + 1^{2}\u03b2_{2} = 2; 2\u03b2_{1} + 2^{2}\u03b2_{2} = 5; 3\u03b2_{1} + 3^{2}\u03b2_{2} = 8; 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This system can be written using matrix notation as</p>",
+            "readable_text": "This system can be written using matrix notation as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1^{2}; 2|2^{2}; 3|3^{2}; 4|4^{2}]]</span></p>",
+            "readable_text": "[MATH: [1|1^{2}; 2|2^{2}; 3|3^{2}; 4|4^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. </p>",
+            "readable_text": "where [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The rest of the arguments are the same as before. Since our points do not lie on a quadratic curve, there will be no parameters <span class=\"math\">[MATH: \\beta_1]</span> and <span class=\"math\">[MATH: \\beta_2]</span> such that this equation is true. So instead, we seek parameters <span class=\"math\">[MATH: \\beta_1]</span> and <span class=\"math\">[MATH: \\beta_2]</span> that best approximate the solution. </p>",
+            "readable_text": "The rest of the arguments are the same as before. Since our points do not lie on a quadratic curve, there will be no parameters [MATH: \\beta_1] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_1] and [MATH: \\beta_2] that best approximate the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/b11123809898045f232dff4ca6c14f1b",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn some cases, we might need to constrain the regression curve so that some of its coefficients equal zero.\n\nContent:\nConsider the table below, which gives the number of units [MATH: x] (in hundreds) produced by a small company and the respective profits [MATH: y] (in thousands of dollars) earned for producing [MATH: x] units.\n\nContent:\n| Goods [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Profit [MATH: (y)] | [MATH: 2] | [MATH: 5] | [MATH: 8] | [MATH: 18] |\n\nContent:\nIt's known that the profit equals zero when the company does not produce any goods, so [MATH: y=0] when [MATH: x=0.] The company wishes to find a quadratic curve that best fits the data subject to the constraint that it should pass through the point [MATH: (0,0).]\n\nContent:\nSo, our regression curve must pass through the point [MATH: (0,0).] In other words, the [MATH: y]-intercept of the quadratic curve must be [MATH: 0.] Therefore, we want to find the quadratic function\n\nContent:\n[MATH: y = \\beta_1 x + \\beta_2 x^2]\n\nContent:\nthat best fits the given data points.\n\nGraphic:\n[IMG: /graphics/b11123809898045f232dff4ca6c14f1b]\n\nContent:\nSubstituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: {\u03b2_{1} + 1^{2}\u03b2_{2} = 2; 2\u03b2_{1} + 2^{2}\u03b2_{2} = 5; 3\u03b2_{1} + 3^{2}\u03b2_{2} = 8; 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]\n\nContent:\nThis system can be written using matrix notation as\n\nContent:\n[MATH: [1|1^{2}; 2|2^{2}; 3|3^{2}; 4|4^{2}]]\n\nContent:\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nThe rest of the arguments are the same as before. Since our points do not lie on a quadratic curve, there will be no parameters [MATH: \\beta_1] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_1] and [MATH: \\beta_2] that best approximate the solution."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20312",
+        "content_id": "5612",
+        "dom_id": "step-20312",
+        "selector": "#step-20312",
+        "step_anchor": "step-9",
+        "title": "Identifying the Design Matrix When the Regression Curve Contains Zero Coefficients",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td></tr></table><p>The vector of coefficients of the curve <span class=\"math\">[MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3]</span> that best fits the data above can be found using polynomial regression as</p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. Find <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> in this context.</p>",
+            "readable_text": "| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 6] | [MATH: 3] | [MATH: 2] | [MATH: 4] | [MATH: 6] |\n\nThe vector of coefficients of the curve [MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}6]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}3]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}2]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}4]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}6]</span></p></td></tr></table><p>The coefficients of the curve</p><p><span class=\"math\">[MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3]</span></p><p>that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system</p><p><span class=\"math\">[MATH: [1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}; 1|4^{2}|4^{3}; 1|5^{2}|5^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [6; 3; 2; 4; 6]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\beta]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p>",
+            "readable_text": "| [MATH: x] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] |\n| [MATH: y] | [MATH: \\color{red}6] | [MATH: \\color{red}3] | [MATH: \\color{red}2] | [MATH: \\color{red}4] | [MATH: \\color{red}6] |\n\nThe coefficients of the curve\n\n[MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}; 1|4^{2}|4^{3}; 1|5^{2}|5^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [6; 3; 2; 4; 6]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\beta] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 6] | [MATH: 3] | [MATH: 2] | [MATH: 4] | [MATH: 6] |\n\nThe vector of coefficients of the curve [MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] |\n| [MATH: y] | [MATH: \\color{red}6] | [MATH: \\color{red}3] | [MATH: \\color{red}2] | [MATH: \\color{red}4] | [MATH: \\color{red}6] |\n\nThe coefficients of the curve\n\n[MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}; 1|4^{2}|4^{3}; 1|5^{2}|5^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [6; 3; 2; 4; 6]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\beta] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector."
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "42408",
+        "dom_id": "question-42408",
+        "selector": "#question-42408",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td></tr></table><p>The vector of coefficients of the curve <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{2}x^{2}]</span> that best fits the data above can be found using polynomial regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{2}x^{2}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-42408-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1^{2}|3; 1|2^{2}|\u2212 2; 1|3^{2}|\u2212 1; 1|4^{2}|1; 1|5^{2}|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|1^{2}|3; 1|2^{2}|\u2212 2; 1|3^{2}|\u2212 1; 1|4^{2}|1; 1|5^{2}|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-42408-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1^{2}; 1|2^{2}; 1|3^{2}; 1|4^{2}; 1|5^{2}]]</span></p>",
+            "readable_text": "[MATH: [1|1^{2}; 1|2^{2}; 1|3^{2}; 1|4^{2}; 1|5^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-42408-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}]]</span></p>",
+            "readable_text": "[MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-42408-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]</span></p>",
+            "readable_text": "[MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-42408-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]</span></p>",
+            "readable_text": "[MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{2}x^{2}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|1^{2}|3; 1|2^{2}|\u2212 2; 1|3^{2}|\u2212 1; 1|4^{2}|1; 1|5^{2}|\u2212 1]]\nb. [MATH: [1|1^{2}; 1|2^{2}; 1|3^{2}; 1|4^{2}; 1|5^{2}]]\nc. [MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}]]\nd. [MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]\ne. [MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "139671",
+        "dom_id": "question-139671",
+        "selector": "#question-139671",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><b><span class=\"math\">[MATH: \u2212 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 9]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 12]</span></p></td></tr></table><p>The vector of coefficients of the curve <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}]</span> that best fits the data above can be found using polynomial regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: y] | [MATH: 2] | [MATH: 9] | [MATH: 0] | [MATH: \u2212 9] | [MATH: \u2212 12] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139671-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 1|(\u2212 1)^{2}; 1|0|0^{2}; 1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}]]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 1|(\u2212 1)^{2}; 1|0|0^{2}; 1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139671-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2|\u2212 1|(\u2212 1)^{2}; 9|0|0^{2}; 0|1|1^{2}; \u2212 9|2|2^{2}; \u2212 12|3|3^{2}]]</span></p>",
+            "readable_text": "[MATH: [2|\u2212 1|(\u2212 1)^{2}; 9|0|0^{2}; 0|1|1^{2}; \u2212 9|2|2^{2}; \u2212 12|3|3^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139671-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|(\u2212 1)^{2}|(\u2212 1)^{3}; 1|0^{2}|0^{3}; 1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}]]</span></p>",
+            "readable_text": "[MATH: [1|(\u2212 1)^{2}|(\u2212 1)^{3}; 1|0^{2}|0^{3}; 1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139671-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|\u2212 1|(\u2212 1)^{3}; 1|0|0^{3}; 1|1|1^{3}; 1|2|2^{3}; 1|3|3^{3}]]</span></p>",
+            "readable_text": "[MATH: [1|\u2212 1|(\u2212 1)^{3}; 1|0|0^{3}; 1|1|1^{3}; 1|2|2^{3}; 1|3|3^{3}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139671-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 1|(\u2212 1)^{2}|(\u2212 1)^{3}; 0|0^{2}|0^{3}; 1|1^{2}|1^{3}; 2|2^{2}|2^{3}; 3|3^{2}|3^{3}]]</span></p>",
+            "readable_text": "[MATH: [\u2212 1|(\u2212 1)^{2}|(\u2212 1)^{3}; 0|0^{2}|0^{3}; 1|1^{2}|1^{3}; 2|2^{2}|2^{3}; 3|3^{2}|3^{3}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: y] | [MATH: 2] | [MATH: 9] | [MATH: 0] | [MATH: \u2212 9] | [MATH: \u2212 12] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|\u2212 1|(\u2212 1)^{2}; 1|0|0^{2}; 1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}]]\nb. [MATH: [2|\u2212 1|(\u2212 1)^{2}; 9|0|0^{2}; 0|1|1^{2}; \u2212 9|2|2^{2}; \u2212 12|3|3^{2}]]\nc. [MATH: [1|(\u2212 1)^{2}|(\u2212 1)^{3}; 1|0^{2}|0^{3}; 1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}]]\nd. [MATH: [1|\u2212 1|(\u2212 1)^{3}; 1|0|0^{3}; 1|1|1^{3}; 1|2|2^{3}; 1|3|3^{3}]]\ne. [MATH: [\u2212 1|(\u2212 1)^{2}|(\u2212 1)^{3}; 0|0^{2}|0^{3}; 1|1^{2}|1^{3}; 2|2^{2}|2^{3}; 3|3^{2}|3^{3}]]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWe've seen how to construct a simple linear regression model given some bivariate data [MATH: (x,y).] We can generalize this technique to fit data to an arbitrary polynomial. We call this process polynomial regression.\n\nContent:\nThe following table gives the number of units [MATH: x] (in hundreds) produced by a small company and the respective profits [MATH: y] (in thousands of dollars) earned for producing [MATH: x] units:\n\nContent:\n| Goods [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Profit [MATH: (y)] | [MATH: 16] | [MATH: 11] | [MATH: 15] | [MATH: 18] |\n\nContent:\nSuppose we want to find the quadratic function\n\nContent:\n[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2]\n\nContent:\nthat best fits the given data points.\n\nGraphic:\n[IMG: /graphics/151c1d8d5104005ab862cb6ace27196d]\n\nContent:\nSubstituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: {\u03b2_{0} + 1\u03b2_{1} + 1^{2}\u03b2_{2} = 16; \u03b2_{0} + 2\u03b2_{1} + 2^{2}\u03b2_{2} = 11; \u03b2_{0} + 3\u03b2_{1} + 3^{2}\u03b2_{2} = 15; \u03b2_{0} + 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]\n\nContent:\nThis system can be written using matrix notation as\n\nContent:\n[MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}]]\n\nContent:\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nSince our points do not lie on a quadratic curve, there will be no parameters [MATH: \\beta_0, \\beta_1,] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0, \\beta_1,] and [MATH: \\beta_2] that best approximate the solution.\n\nContent:\nIn other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that\n\nContent:\n[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]\n\nContent:\nis as small as possible.\n\nContent:\nNotice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the curve that best fits the data can be found as the solution to the corresponding least-squares problem!\n\nContent:\nPre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation\n\nContent:\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nContent:\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and\n\nContent:\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nContent:\nSubstituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get\n\nContent:\n[MATH: \u03b2^(^) = [22.5; \u2212 9; 2].]\n\nContent:\nTherefore, the quadratic curve of best fit (regression curve) is\n\nContent:\n[MATH: y = 22.5 - 9x + 2x^2.]\n\n---\n\nItem 2 \u2014 Example: Finding an Expression for a Least-Squares Regression Curve\n\nExample Prompt:\n| [MATH: x] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 5] | [MATH: 2] |\n\nConsider the data above and the matrices below. Find an expression (in terms of [MATH: X] and [MATH: \\mathbf{y}]) for the vector of coefficients [MATH: \\boldsymbol{\\beta}] of the curve [MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data.\n\n[MATH: [1|0|0^{2}|0^{3}; 1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}]]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe coefficients of the curve\n\n[MATH: y=\\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: X \\boldsymbol{\\beta} = \\mathbf{y},]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nPre-multiplying this equation by [MATH: X^T,] we obtain the corresponding normal equation\n\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible and\n\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nConsider the data above and the matrices below. Find an expression for the vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2}] that best fits the data.\n\n[MATH: X = [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}], y = [3; \u2212 2; \u2212 1; 1; \u2212 1]]\n\nChoices:\na. [MATH: (X^{T}X)^{\u2212 1}X^{T}y]\nb. [MATH: X^{T}(XX^{T})^{\u2212 1}y]\nc. [MATH: (XX^{T})^{\u2212 1}Xy]\nd. [MATH: X^{T}(XX^{T})^{\u2212 1}Xy]\ne. [MATH: X(X^{T}X)^{\u2212 1}X^{T}y]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 2] | [MATH: \u2212 3] | [MATH: \u2212 2] | [MATH: 0] | [MATH: 1] |\n\nConsider the data above and the matrices below. Find an expression for the vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data.\n\n[MATH: X = [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}], \u03b2 = [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}], y = [2; \u2212 3; \u2212 2; 0; 1]]\n\nChoices:\na. [MATH: (X^{T}X)^{\u2212 1}X^{T}y]\nb. [MATH: X^{T}(XX^{T})^{\u2212 1}y]\nc. [MATH: X(X^{T}X)^{\u2212 1}y]\nd. [MATH: X(X^{T}X)^{\u2212 1}X^{T}y]\ne. [MATH: (XX^{T})^{\u2212 1}Xy]\n\n---\n\nItem 5 \u2014 Example: Identifying the Elements of a Polynomial Regression Model\n\nExample Prompt:\n| [MATH: x] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] |\n| [MATH: y] | [MATH: 40] | [MATH: 70] | [MATH: 120] | [MATH: 100] | [MATH: 80] |\n\nThe vector of coefficients of the curve [MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] | [MATH: \\color{blue}6] |\n| [MATH: y] | [MATH: \\color{red}40] | [MATH: \\color{red}70] | [MATH: \\color{red}120] | [MATH: \\color{red}100] | [MATH: \\color{red}80] |\n\nThe coefficients of the curve\n\n[MATH: y = \\beta_0 + \\beta_1 x + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}; 1|6|6^{2}|6^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [40; 70; 120; 100; 80]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\beta] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]\nb. [MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]\nc. [MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]\nd. [MATH: [1; 2; 3; 4; 5]]\ne. [MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{1}x + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?\n\nChoices:\na. [MATH: [3; \u2212 2; \u2212 1; 1; \u2212 1]]\nb. [MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]\nc. [MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]\nd. [MATH: [1; 2; 3; 4; 5]]\ne. [MATH: [1|1|1^{2}|1^{3}; 1|2|2^{2}|2^{3}; 1|3|3^{2}|3^{3}; 1|4|4^{2}|4^{3}; 1|5|5^{2}|5^{3}]]\n\n---\n\nItem 8 \u2014 Tutorial: Regression Curves Containing Zero Coefficients\n\nContent:\nIn some cases, we might need to constrain the regression curve so that some of its coefficients equal zero.\n\nContent:\nConsider the table below, which gives the number of units [MATH: x] (in hundreds) produced by a small company and the respective profits [MATH: y] (in thousands of dollars) earned for producing [MATH: x] units.\n\nContent:\n| Goods [MATH: (x)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Profit [MATH: (y)] | [MATH: 2] | [MATH: 5] | [MATH: 8] | [MATH: 18] |\n\nContent:\nIt's known that the profit equals zero when the company does not produce any goods, so [MATH: y=0] when [MATH: x=0.] The company wishes to find a quadratic curve that best fits the data subject to the constraint that it should pass through the point [MATH: (0,0).]\n\nContent:\nSo, our regression curve must pass through the point [MATH: (0,0).] In other words, the [MATH: y]-intercept of the quadratic curve must be [MATH: 0.] Therefore, we want to find the quadratic function\n\nContent:\n[MATH: y = \\beta_1 x + \\beta_2 x^2]\n\nContent:\nthat best fits the given data points.\n\nGraphic:\n[IMG: /graphics/b11123809898045f232dff4ca6c14f1b]\n\nContent:\nSubstituting the values of [MATH: x] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: {\u03b2_{1} + 1^{2}\u03b2_{2} = 2; 2\u03b2_{1} + 2^{2}\u03b2_{2} = 5; 3\u03b2_{1} + 3^{2}\u03b2_{2} = 8; 4\u03b2_{1} + 4^{2}\u03b2_{2} = 18]\n\nContent:\nThis system can be written using matrix notation as\n\nContent:\n[MATH: [1|1^{2}; 2|2^{2}; 3|3^{2}; 4|4^{2}]]\n\nContent:\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nThe rest of the arguments are the same as before. Since our points do not lie on a quadratic curve, there will be no parameters [MATH: \\beta_1] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_1] and [MATH: \\beta_2] that best approximate the solution.\n\n---\n\nItem 9 \u2014 Example: Identifying the Design Matrix When the Regression Curve Contains Zero Coefficients\n\nExample Prompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 6] | [MATH: 3] | [MATH: 2] | [MATH: 4] | [MATH: 6] |\n\nThe vector of coefficients of the curve [MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] |\n| [MATH: y] | [MATH: \\color{red}6] | [MATH: \\color{red}3] | [MATH: \\color{red}2] | [MATH: \\color{red}4] | [MATH: \\color{red}6] |\n\nThe coefficients of the curve\n\n[MATH: y = \\beta_0 + \\beta_2 x^2 + \\beta_3 x^3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}; 1|4^{2}|4^{3}; 1|5^{2}|5^{3}]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [6; 3; 2; 4; 6]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\beta] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\n| [MATH: x] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: y] | [MATH: 3] | [MATH: \u2212 2] | [MATH: \u2212 1] | [MATH: 1] | [MATH: \u2212 1] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{2}x^{2}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|1^{2}|3; 1|2^{2}|\u2212 2; 1|3^{2}|\u2212 1; 1|4^{2}|1; 1|5^{2}|\u2212 1]]\nb. [MATH: [1|1^{2}; 1|2^{2}; 1|3^{2}; 1|4^{2}; 1|5^{2}]]\nc. [MATH: [1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}; 1|4|4^{2}; 1|5|5^{2}]]\nd. [MATH: [1|3; 1|\u2212 2; 1|\u2212 1; 1|1; 1|\u2212 1]]\ne. [MATH: [1|1; 1|2; 1|3; 1|4; 1|5]]\n\n---\n\nItem 11 \u2014 Question 6\n\nPrompt:\n| [MATH: x] | [MATH: \u2212 1] | [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] |\n| [MATH: y] | [MATH: 2] | [MATH: 9] | [MATH: 0] | [MATH: \u2212 9] | [MATH: \u2212 12] |\n\nThe vector of coefficients of the curve [MATH: y = \u03b2_{0} + \u03b2_{2}x^{2} + \u03b2_{3}x^{3}] that best fits the data above can be found using polynomial regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|\u2212 1|(\u2212 1)^{2}; 1|0|0^{2}; 1|1|1^{2}; 1|2|2^{2}; 1|3|3^{2}]]\nb. [MATH: [2|\u2212 1|(\u2212 1)^{2}; 9|0|0^{2}; 0|1|1^{2}; \u2212 9|2|2^{2}; \u2212 12|3|3^{2}]]\nc. [MATH: [1|(\u2212 1)^{2}|(\u2212 1)^{3}; 1|0^{2}|0^{3}; 1|1^{2}|1^{3}; 1|2^{2}|2^{3}; 1|3^{2}|3^{3}]]\nd. [MATH: [1|\u2212 1|(\u2212 1)^{3}; 1|0|0^{3}; 1|1|1^{3}; 1|2|2^{3}; 1|3|3^{3}]]\ne. [MATH: [\u2212 1|(\u2212 1)^{2}|(\u2212 1)^{3}; 0|0^{2}|0^{3}; 1|1^{2}|1^{3}; 2|2^{2}|2^{3}; 3|3^{2}|3^{3}]]"
+  }
+}

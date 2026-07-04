@@ -1,0 +1,1210 @@
+{
+  "schema_version": 2,
+  "topic_id": "5289",
+  "topic_title": "Feature Extraction Using PCA",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5289/Source/5289.html",
+  "source_url": "https://mathacademy.com/topics/5289",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "629550",
+        "dom_id": "sectionLink-629550",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-629550"
+      },
+      {
+        "index": 2,
+        "step_id": "629551",
+        "dom_id": "sectionLink-629551",
+        "name": "",
+        "title": "The Projection Formula",
+        "selector": "#sectionLink-629551"
+      },
+      {
+        "index": 3,
+        "step_id": "629552",
+        "dom_id": "sectionLink-629552",
+        "name": "",
+        "title": "Identifying the Best One Dimensional Reduction Given SVD of Data",
+        "selector": "#sectionLink-629552"
+      },
+      {
+        "index": 4,
+        "step_id": "629555",
+        "dom_id": "sectionLink-629555",
+        "name": "",
+        "title": "Choosing the Number of Components",
+        "selector": "#sectionLink-629555"
+      },
+      {
+        "index": 5,
+        "step_id": "629556",
+        "dom_id": "sectionLink-629556",
+        "name": "",
+        "title": "Choosing the Amount of Dimensionality Reduction for a Given Dataset",
+        "selector": "#sectionLink-629556"
+      },
+      {
+        "index": 6,
+        "step_id": "629559",
+        "dom_id": "sectionLink-629559",
+        "name": "",
+        "title": "The Feature Extraction Pipeline",
+        "selector": "#sectionLink-629559"
+      },
+      {
+        "index": 7,
+        "step_id": "629560",
+        "dom_id": "sectionLink-629560",
+        "name": "",
+        "title": "Using PCA to Dimensionally Reduce an Uncentered Dataset",
+        "selector": "#sectionLink-629560"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3946",
+        "name": "The Connection Between PCA and SVD",
+        "href": "/topics/the-connection-between-pca-and-svd-3946"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 13,
+    "step_count": 7,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "629550",
+        "content_id": "13253",
+        "dom_id": "step-629550",
+        "selector": "#step-629550",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In previous lessons, we learned that the principal components of a standardized data matrix <span class=\"math\">[MATH: X]</span> are the eigenvectors of the covariance matrix, and that these eigenvectors appear as the columns of <span class=\"math\">[MATH: V]</span> in the singular value decomposition <span class=\"math\">[MATH: X = U\\Sigma V^T.]</span> We also learned that the variance along each principal component is proportional to the square of the corresponding singular value.</p>",
+            "readable_text": "In previous lessons, we learned that the principal components of a standardized data matrix [MATH: X] are the eigenvectors of the covariance matrix, and that these eigenvectors appear as the columns of [MATH: V] in the singular value decomposition [MATH: X = U\\Sigma V^T.] We also learned that the variance along each principal component is proportional to the square of the corresponding singular value.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we&#x27;ll learn how to use principal components to perform <strong>feature extraction</strong> \u2014 the process of projecting high-dimensional data onto a lower-dimensional subspace while preserving as much variance as possible.</p>",
+            "readable_text": "In this lesson, we'll learn how to use principal components to perform feature extraction \u2014 the process of projecting high-dimensional data onto a lower-dimensional subspace while preserving as much variance as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To illustrate the idea, suppose a biologist has recorded the resting heart rate and breathing rate for four mammals of different sizes. Both measurements have been standardized, giving the <span class=\"math\">[MATH: 4 \\times 2]</span> data matrix</p>",
+            "readable_text": "To illustrate the idea, suppose a biologist has recorded the resting heart rate and breathing rate for four mammals of different sizes. Both measurements have been standardized, giving the [MATH: 4 \\times 2] data matrix",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]</span></p>",
+            "readable_text": "[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The biologist knows that body size strongly influences both heart rate and breathing rate \u2014 smaller animals tend to have faster rates for both. They want to extract a single &quot;metabolic index&quot; that captures this underlying factor. How should they proceed?</p>",
+            "readable_text": "The biologist knows that body size strongly influences both heart rate and breathing rate \u2014 smaller animals tend to have faster rates for both. They want to extract a single \"metabolic index\" that captures this underlying factor. How should they proceed?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From the SVD <span class=\"math\">[MATH: X = U\\Sigma V^T,]</span> the first principal component is</p>",
+            "readable_text": "From the SVD [MATH: X = U\\Sigma V^T,] the first principal component is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 0.71; \u2212 0.71]]</span></p>",
+            "readable_text": "[MATH: [\u2212 0.71; \u2212 0.71]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>which points in the direction of maximum variance. To obtain a one-dimensional representation of the data, we project each row of <span class=\"math\">[MATH: X]</span> onto this direction by computing</p>",
+            "readable_text": "which points in the direction of maximum variance. To obtain a one-dimensional representation of the data, we project each row of [MATH: X] onto this direction by computing",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]</span></p>",
+            "readable_text": "[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The result is a <span class=\"math\">[MATH: 4 \\times 1]</span> vector \u2014 one number per animal \u2014 that captures the variation in body size. The second animal, with the most negative standardized values (indicating a larger, slower-metabolizing animal), has the largest projected value.</p>",
+            "readable_text": "The result is a [MATH: 4 \\times 1] vector \u2014 one number per animal \u2014 that captures the variation in body size. The second animal, with the most negative standardized values (indicating a larger, slower-metabolizing animal), has the largest projected value.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn previous lessons, we learned that the principal components of a standardized data matrix [MATH: X] are the eigenvectors of the covariance matrix, and that these eigenvectors appear as the columns of [MATH: V] in the singular value decomposition [MATH: X = U\\Sigma V^T.] We also learned that the variance along each principal component is proportional to the square of the corresponding singular value.\n\nContent:\nIn this lesson, we'll learn how to use principal components to perform feature extraction \u2014 the process of projecting high-dimensional data onto a lower-dimensional subspace while preserving as much variance as possible.\n\nContent:\nTo illustrate the idea, suppose a biologist has recorded the resting heart rate and breathing rate for four mammals of different sizes. Both measurements have been standardized, giving the [MATH: 4 \\times 2] data matrix\n\nContent:\n[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]\n\nContent:\nThe biologist knows that body size strongly influences both heart rate and breathing rate \u2014 smaller animals tend to have faster rates for both. They want to extract a single \"metabolic index\" that captures this underlying factor. How should they proceed?\n\nContent:\nFrom the SVD [MATH: X = U\\Sigma V^T,] the first principal component is\n\nContent:\n[MATH: [\u2212 0.71; \u2212 0.71]]\n\nContent:\nwhich points in the direction of maximum variance. To obtain a one-dimensional representation of the data, we project each row of [MATH: X] onto this direction by computing\n\nContent:\n[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]\n\nContent:\nThe result is a [MATH: 4 \\times 1] vector \u2014 one number per animal \u2014 that captures the variation in body size. The second animal, with the most negative standardized values (indicating a larger, slower-metabolizing animal), has the largest projected value."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "629551",
+        "content_id": "14748",
+        "dom_id": "step-629551",
+        "selector": "#step-629551",
+        "step_anchor": "step-2",
+        "title": "The Projection Formula",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>More generally, suppose we have a standardized <span class=\"math\">[MATH: n \\times p]</span> data matrix <span class=\"math\">[MATH: X,]</span> where each row is a data point and each column is a feature. To reduce the data from <span class=\"math\">[MATH: p]</span> dimensions to <span class=\"math\">[MATH: k]</span> dimensions, we project the data onto the first <span class=\"math\">[MATH: k]</span> principal components. If <span class=\"math\">[MATH: V_k]</span> is the <span class=\"math\">[MATH: p \\times k]</span> matrix whose columns are the first <span class=\"math\">[MATH: k]</span> principal components, the reduced data matrix is</p>",
+            "readable_text": "More generally, suppose we have a standardized [MATH: n \\times p] data matrix [MATH: X,] where each row is a data point and each column is a feature. To reduce the data from [MATH: p] dimensions to [MATH: k] dimensions, we project the data onto the first [MATH: k] principal components. If [MATH: V_k] is the [MATH: p \\times k] matrix whose columns are the first [MATH: k] principal components, the reduced data matrix is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: Z = X V_k.]</span></p>",
+            "readable_text": "[MATH: Z = X V_k.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Each row of <span class=\"math\">[MATH: Z]</span> is a <span class=\"math\">[MATH: k]</span>-dimensional representation of the corresponding data point, expressed in terms of the principal component directions.</p>",
+            "readable_text": "Each row of [MATH: Z] is a [MATH: k]-dimensional representation of the corresponding data point, expressed in terms of the principal component directions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>There is an equivalent way to compute <span class=\"math\">[MATH: Z]</span> using the SVD. Starting from <span class=\"math\">[MATH: X = U\\Sigma V^T,]</span> we have</p>",
+            "readable_text": "There is an equivalent way to compute [MATH: Z] using the SVD. Starting from [MATH: X = U\\Sigma V^T,] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: Z|= XV_{k}; = U\u03a3V^{T}V_{k}; = U\u03a3[I_{k}; 0]; = U[\u03a3_{k}; 0]; = U_{k}\u03a3_{k},]</span></p>",
+            "readable_text": "[MATH: Z|= XV_{k}; = U\u03a3V^{T}V_{k}; = U\u03a3[I_{k}; 0]; = U[\u03a3_{k}; 0]; = U_{k}\u03a3_{k},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: U_k]</span> is the <span class=\"math\">[MATH: n \\times k]</span> matrix of the first <span class=\"math\">[MATH: k]</span> columns of <span class=\"math\">[MATH: U,]</span> and <span class=\"math\">[MATH: \\Sigma_k]</span> is the <span class=\"math\">[MATH: k \\times k]</span> diagonal matrix of the first <span class=\"math\">[MATH: k]</span> singular values. </p>",
+            "readable_text": "where [MATH: U_k] is the [MATH: n \\times k] matrix of the first [MATH: k] columns of [MATH: U,] and [MATH: \\Sigma_k] is the [MATH: k \\times k] diagonal matrix of the first [MATH: k] singular values.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, we can compute the reduced data either as <span class=\"math\">[MATH: XV_k]</span> or as <span class=\"math\">[MATH: U_k\\Sigma_k.]</span></p>",
+            "readable_text": "So, we can compute the reduced data either as [MATH: XV_k] or as [MATH: U_k\\Sigma_k.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Watch out!</strong> The vector <span class=\"math\">[MATH: v_1]</span> (the first column of <span class=\"math\">[MATH: V]</span>) is a <em>direction</em> \u2014 a unit vector in feature space pointing along maximum variance. By contrast, the product <span class=\"math\">[MATH: Xv_1]</span> (equivalently, <span class=\"math\">[MATH: u_1\\sigma_1]</span>) is the <em>projected data</em> \u2014 an <span class=\"math\">[MATH: n \\times 1]</span> vector giving each data point&#x27;s coordinate along that direction. Some texts refer to this projected data as &quot;the first principal component of the data&quot; or as &quot;scores,&quot; so the term &quot;principal component&quot; can mean either the direction or the projected values, depending on context.</p>",
+            "readable_text": "Watch out! The vector [MATH: v_1] (the first column of [MATH: V]) is a direction \u2014 a unit vector in feature space pointing along maximum variance. By contrast, the product [MATH: Xv_1] (equivalently, [MATH: u_1\\sigma_1]) is the projected data \u2014 an [MATH: n \\times 1] vector giving each data point's coordinate along that direction. Some texts refer to this projected data as \"the first principal component of the data\" or as \"scores,\" so the term \"principal component\" can mean either the direction or the projected values, depending on context.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nMore generally, suppose we have a standardized [MATH: n \\times p] data matrix [MATH: X,] where each row is a data point and each column is a feature. To reduce the data from [MATH: p] dimensions to [MATH: k] dimensions, we project the data onto the first [MATH: k] principal components. If [MATH: V_k] is the [MATH: p \\times k] matrix whose columns are the first [MATH: k] principal components, the reduced data matrix is\n\nContent:\n[MATH: Z = X V_k.]\n\nContent:\nEach row of [MATH: Z] is a [MATH: k]-dimensional representation of the corresponding data point, expressed in terms of the principal component directions.\n\nContent:\nThere is an equivalent way to compute [MATH: Z] using the SVD. Starting from [MATH: X = U\\Sigma V^T,] we have\n\nContent:\n[MATH: Z|= XV_{k}; = U\u03a3V^{T}V_{k}; = U\u03a3[I_{k}; 0]; = U[\u03a3_{k}; 0]; = U_{k}\u03a3_{k},]\n\nContent:\nwhere [MATH: U_k] is the [MATH: n \\times k] matrix of the first [MATH: k] columns of [MATH: U,] and [MATH: \\Sigma_k] is the [MATH: k \\times k] diagonal matrix of the first [MATH: k] singular values.\n\nContent:\nSo, we can compute the reduced data either as [MATH: XV_k] or as [MATH: U_k\\Sigma_k.]\n\nContent:\nWatch out! The vector [MATH: v_1] (the first column of [MATH: V]) is a direction \u2014 a unit vector in feature space pointing along maximum variance. By contrast, the product [MATH: Xv_1] (equivalently, [MATH: u_1\\sigma_1]) is the projected data \u2014 an [MATH: n \\times 1] vector giving each data point's coordinate along that direction. Some texts refer to this projected data as \"the first principal component of the data\" or as \"scores,\" so the term \"principal component\" can mean either the direction or the projected values, depending on context."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "629552",
+        "content_id": "18786",
+        "dom_id": "step-629552",
+        "selector": "#step-629552",
+        "step_anchor": "step-3",
+        "title": "Identifying the Best One Dimensional Reduction Given SVD of Data",
+        "key_prerequisites": [
+          {
+            "topic_id": "3119",
+            "name": "Diagonalization of 3x3 Symmetric Matrices",
+            "href": "/topics/3119",
+            "type": ""
+          },
+          {
+            "topic_id": "3945",
+            "name": "Computing Principal Components",
+            "href": "/topics/3945",
+            "type": ""
+          },
+          {
+            "topic_id": "3946",
+            "name": "The Connection Between PCA and SVD",
+            "href": "/topics/3946",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 4]</span> datapoints with <span class=\"math\">[MATH: 2]</span> features in the form of the <span class=\"math\">[MATH: 4 \\times 2]</span> matrix\n<span class=\"math\">[MATH: [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00]]</span>\nwhere the data has been standardized (the mean of each feature is <span class=\"math\">[MATH: 0]</span> and the standard deviation is <span class=\"math\">[MATH: 1]</span>).\nWe are also given the SVD decomposition <span class=\"math\">[MATH: X = U \\Sigma V^T]</span> where:</p><p><span class=\"math\">[MATH: U|= [\u2212 0.689|\u2212 0.424|0.495|0.318; 0.143|\u2212 0.241|\u2212 0.524|0.804; 0.695|\u2212 0.188|0.650|0.244; \u2212 0.149|0.853|0.241|0.439]; \u03a3|= [2.075|0; 0|1.294; 0|0; 0|0]; V|= [\u2212 0.709|\u2212 0.706; 0.706|\u2212 0.709]]</span></p><p>Find the one-dimensional version of the data that preserves the most variance.</p>",
+            "readable_text": "Suppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \\times 2] matrix\n[MATH: [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U \\Sigma V^T] where:\n\n[MATH: U|= [\u2212 0.689|\u2212 0.424|0.495|0.318; 0.143|\u2212 0.241|\u2212 0.524|0.804; 0.695|\u2212 0.188|0.650|0.244; \u2212 0.149|0.853|0.241|0.439]; \u03a3|= [2.075|0; 0|1.294; 0|0; 0|0]; V|= [\u2212 0.709|\u2212 0.706; 0.706|\u2212 0.709]]\n\nFind the one-dimensional version of the data that preserves the most variance.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The one-dimensional version of the data that preserves the most variance is the projection onto the first principal component.</p><p>Recall that the principal components are the eigenvectors of the covariance matrix <span class=\"math\">[MATH: X^TX.]</span> Using the SVD <span class=\"math\">[MATH: X = U\\Sigma V^T]</span> and the orthogonality of <span class=\"math\">[MATH: U,]</span> we have</p><p><span class=\"math\">[MATH: X^{T}X|= (U\u03a3V^{T})^{T}(U\u03a3V^{T}); = V\u03a3^{T}U^{T}U\u03a3V^{T}; = V\u03a3^{T}\u03a3V^{T}.]</span></p><p>Since <span class=\"math\">[MATH: \\Sigma^T\\Sigma]</span> is diagonal with the squared singular values on the diagonal, the eigenvectors of <span class=\"math\">[MATH: X^TX]</span> are the columns of <span class=\"math\">[MATH: V,]</span> and the eigenvalues are the squared singular values. The largest eigenvalue corresponds to the first singular value <span class=\"math\">[MATH: \\sigma_1 = 2.075,]</span> so the first principal component is <span class=\"math\">[MATH: v_1,]</span> the first column of <span class=\"math\">[MATH: V{:}]</span></p><p><span class=\"math\">[MATH: [\u2212 0.709; 0.706]]</span></p><p>To obtain the one-dimensional version of the data, we project <span class=\"math\">[MATH: X]</span> onto <span class=\"math\">[MATH: v_1]</span> by computing</p><p><span class=\"math\">[MATH: Xv_{1}|= [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00][\u2212 0.709; 0.706]; = [\u2212 1.43; 0.30; 1.44; \u2212 0.31].]</span></p><p>Equivalently, we can compute this projection using <span class=\"math\">[MATH: u_1 \\sigma_1,]</span> where <span class=\"math\">[MATH: u_1]</span> is the first column of <span class=\"math\">[MATH: U.]</span> Indeed, from the SVD,</p><p><span class=\"math\">[MATH: Xv_{1}|= U\u03a3V^{T}v_{1} = U\u03a3[1; 0] = U[\u03c3_{1}; 0; 0; 0] = u_{1}\u03c3_{1}.]</span></p><p>Substituting <span class=\"math\">[MATH: u_1]</span> and <span class=\"math\">[MATH: \\sigma_1 = 2.075,]</span> we get</p><p><span class=\"math\">[MATH: [\u2212 0.689; 0.143; 0.695; \u2212 0.149]]</span></p><p>which confirms the result.</p><p><strong>Watch out!</strong> The vector <span class=\"math\">[MATH: v_1]</span> itself is the first principal component <em>direction</em> \u2014 a unit vector in feature space. It is not a one-dimensional representation of the data. The one-dimensional representation is <span class=\"math\">[MATH: Xv_1]</span> (or equivalently <span class=\"math\">[MATH: u_1\\sigma_1]</span>), which is a <span class=\"math\">[MATH: 4 \\times 1]</span> vector containing the projection of each data point onto this direction.</p>",
+            "readable_text": "The one-dimensional version of the data that preserves the most variance is the projection onto the first principal component.\n\nRecall that the principal components are the eigenvectors of the covariance matrix [MATH: X^TX.] Using the SVD [MATH: X = U\\Sigma V^T] and the orthogonality of [MATH: U,] we have\n\n[MATH: X^{T}X|= (U\u03a3V^{T})^{T}(U\u03a3V^{T}); = V\u03a3^{T}U^{T}U\u03a3V^{T}; = V\u03a3^{T}\u03a3V^{T}.]\n\nSince [MATH: \\Sigma^T\\Sigma] is diagonal with the squared singular values on the diagonal, the eigenvectors of [MATH: X^TX] are the columns of [MATH: V,] and the eigenvalues are the squared singular values. The largest eigenvalue corresponds to the first singular value [MATH: \\sigma_1 = 2.075,] so the first principal component is [MATH: v_1,] the first column of [MATH: V{:}]\n\n[MATH: [\u2212 0.709; 0.706]]\n\nTo obtain the one-dimensional version of the data, we project [MATH: X] onto [MATH: v_1] by computing\n\n[MATH: Xv_{1}|= [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00][\u2212 0.709; 0.706]; = [\u2212 1.43; 0.30; 1.44; \u2212 0.31].]\n\nEquivalently, we can compute this projection using [MATH: u_1 \\sigma_1,] where [MATH: u_1] is the first column of [MATH: U.] Indeed, from the SVD,\n\n[MATH: Xv_{1}|= U\u03a3V^{T}v_{1} = U\u03a3[1; 0] = U[\u03c3_{1}; 0; 0; 0] = u_{1}\u03c3_{1}.]\n\nSubstituting [MATH: u_1] and [MATH: \\sigma_1 = 2.075,] we get\n\n[MATH: [\u2212 0.689; 0.143; 0.695; \u2212 0.149]]\n\nwhich confirms the result.\n\nWatch out! The vector [MATH: v_1] itself is the first principal component direction \u2014 a unit vector in feature space. It is not a one-dimensional representation of the data. The one-dimensional representation is [MATH: Xv_1] (or equivalently [MATH: u_1\\sigma_1]), which is a [MATH: 4 \\times 1] vector containing the projection of each data point onto this direction.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \\times 2] matrix\n[MATH: [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U \\Sigma V^T] where:\n\n[MATH: U|= [\u2212 0.689|\u2212 0.424|0.495|0.318; 0.143|\u2212 0.241|\u2212 0.524|0.804; 0.695|\u2212 0.188|0.650|0.244; \u2212 0.149|0.853|0.241|0.439]; \u03a3|= [2.075|0; 0|1.294; 0|0; 0|0]; V|= [\u2212 0.709|\u2212 0.706; 0.706|\u2212 0.709]]\n\nFind the one-dimensional version of the data that preserves the most variance.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe one-dimensional version of the data that preserves the most variance is the projection onto the first principal component.\n\nRecall that the principal components are the eigenvectors of the covariance matrix [MATH: X^TX.] Using the SVD [MATH: X = U\\Sigma V^T] and the orthogonality of [MATH: U,] we have\n\n[MATH: X^{T}X|= (U\u03a3V^{T})^{T}(U\u03a3V^{T}); = V\u03a3^{T}U^{T}U\u03a3V^{T}; = V\u03a3^{T}\u03a3V^{T}.]\n\nSince [MATH: \\Sigma^T\\Sigma] is diagonal with the squared singular values on the diagonal, the eigenvectors of [MATH: X^TX] are the columns of [MATH: V,] and the eigenvalues are the squared singular values. The largest eigenvalue corresponds to the first singular value [MATH: \\sigma_1 = 2.075,] so the first principal component is [MATH: v_1,] the first column of [MATH: V{:}]\n\n[MATH: [\u2212 0.709; 0.706]]\n\nTo obtain the one-dimensional version of the data, we project [MATH: X] onto [MATH: v_1] by computing\n\n[MATH: Xv_{1}|= [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00][\u2212 0.709; 0.706]; = [\u2212 1.43; 0.30; 1.44; \u2212 0.31].]\n\nEquivalently, we can compute this projection using [MATH: u_1 \\sigma_1,] where [MATH: u_1] is the first column of [MATH: U.] Indeed, from the SVD,\n\n[MATH: Xv_{1}|= U\u03a3V^{T}v_{1} = U\u03a3[1; 0] = U[\u03c3_{1}; 0; 0; 0] = u_{1}\u03c3_{1}.]\n\nSubstituting [MATH: u_1] and [MATH: \\sigma_1 = 2.075,] we get\n\n[MATH: [\u2212 0.689; 0.143; 0.695; \u2212 0.149]]\n\nwhich confirms the result.\n\nWatch out! The vector [MATH: v_1] itself is the first principal component direction \u2014 a unit vector in feature space. It is not a one-dimensional representation of the data. The one-dimensional representation is [MATH: Xv_1] (or equivalently [MATH: u_1\\sigma_1]), which is a [MATH: 4 \\times 1] vector containing the projection of each data point onto this direction."
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "355828",
+        "dom_id": "question-355828",
+        "selector": "#question-355828",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 4]</span> datapoints with <span class=\"math\">[MATH: 2]</span> features in the form of the <span class=\"math\">[MATH: 4 \u00d7 2]</span> matrix\n<span class=\"math\">[MATH: X = [1.2|0.02; \u2212 0.27|1.05; \u2212 1.19|\u2212 1.35; 0.27|0.27]]</span>\nwhere the data has been standardized (the mean of each feature is <span class=\"math\">[MATH: 0]</span> and the standard deviation is <span class=\"math\">[MATH: 1]</span>).\nWe are also given the SVD decomposition <span class=\"math\">[MATH: X = U\u03a3V^{T}]</span> where:</p><p><span class=\"math\">[MATH: U|= [\u2212 0.411|0.663|0.61|\u2212 0.141; \u2212 0.262|\u2212 0.743|0.606|\u2212 0.113; 0.854|0.091|0.501|0.105; \u2212 0.182|0|0.104|0.978]; \u03a3|= [2.102|0; 0|1.257; 0|0; 0|0]; V|= [\u2212 0.708|0.707; \u2212 0.707|\u2212 0.708]]</span></p><p>Which of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?</p><ol><li><p> <span class=\"math\">[MATH: [\u2212 0.708; \u2212 0.707]]</span> </p></li><li><p> <span class=\"math\">[MATH: [\u2212 0.411; 0.663; 0.61; \u2212 0.141] \u22c5 2.102]</span> </p></li><li><p> <span class=\"math\">[MATH: [\u2212 0.411; \u2212 0.262; 0.854; \u2212 0.182] \u22c5 2.102]</span> </p></li></ol>",
+          "readable_text": "Suppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \u00d7 2] matrix\n[MATH: X = [1.2|0.02; \u2212 0.27|1.05; \u2212 1.19|\u2212 1.35; 0.27|0.27]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.411|0.663|0.61|\u2212 0.141; \u2212 0.262|\u2212 0.743|0.606|\u2212 0.113; 0.854|0.091|0.501|0.105; \u2212 0.182|0|0.104|0.978]; \u03a3|= [2.102|0; 0|1.257; 0|0; 0|0]; V|= [\u2212 0.708|0.707; \u2212 0.707|\u2212 0.708]]\n\nWhich of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?\n\n1. [MATH: [\u2212 0.708; \u2212 0.707]]\n2. [MATH: [\u2212 0.411; 0.663; 0.61; \u2212 0.141] \u22c5 2.102]\n3. [MATH: [\u2212 0.411; \u2212 0.262; 0.854; \u2212 0.182] \u22c5 2.102]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-355828-a",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-355828-b",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-355828-c",
+            "content_type": "text",
+            "normalized_html": "<p>III only</p>",
+            "readable_text": "III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-355828-d",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-355828-e",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \u00d7 2] matrix\n[MATH: X = [1.2|0.02; \u2212 0.27|1.05; \u2212 1.19|\u2212 1.35; 0.27|0.27]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.411|0.663|0.61|\u2212 0.141; \u2212 0.262|\u2212 0.743|0.606|\u2212 0.113; 0.854|0.091|0.501|0.105; \u2212 0.182|0|0.104|0.978]; \u03a3|= [2.102|0; 0|1.257; 0|0; 0|0]; V|= [\u2212 0.708|0.707; \u2212 0.707|\u2212 0.708]]\n\nWhich of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?\n\n1. [MATH: [\u2212 0.708; \u2212 0.707]]\n2. [MATH: [\u2212 0.411; 0.663; 0.61; \u2212 0.141] \u22c5 2.102]\n3. [MATH: [\u2212 0.411; \u2212 0.262; 0.854; \u2212 0.182] \u22c5 2.102]\n\nChoices:\na. II and III only\nb. I and III only\nc. III only\nd. II only\ne. I only"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "287059",
+        "dom_id": "question-287059",
+        "selector": "#question-287059",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 4]</span> datapoints with <span class=\"math\">[MATH: 2]</span> features in the form of the <span class=\"math\">[MATH: 4 \u00d7 2]</span> matrix\n<span class=\"math\">[MATH: X = [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38]]</span>\nwhere the data has been standardized (the mean of each feature is <span class=\"math\">[MATH: 0]</span> and the standard deviation is <span class=\"math\">[MATH: 1]</span>).\nWe are also given the SVD decomposition <span class=\"math\">[MATH: X = U\u03a3V^{T}]</span> where:</p><p><span class=\"math\">[MATH: U|= [\u2212 0.179|\u2212 0.341|0.574|\u2212 0.723; 0.858|0.08|0.489|0.138; \u2212 0.371|0.78|0.491|0.114; \u2212 0.307|\u2212 0.519|0.437|0.667]; \u03a3|= [2.416|0; 0|0.392; 0|0; 0|0]; V|= [\u2212 0.708|\u2212 0.706; \u2212 0.706|0.708]]</span></p><p>Which of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?</p><ol><li><p> <span class=\"math\">[MATH: [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38] \u22c5 [\u2212 0.708; \u2212 0.706]]</span> </p></li><li><p> <span class=\"math\">[MATH: [\u2212 0.179; 0.858; \u2212 0.371; \u2212 0.307] \u22c5 2.416]</span> </p></li><li><p> <span class=\"math\">[MATH: [\u2212 0.708; \u2212 0.706]]</span> </p></li></ol>",
+          "readable_text": "Suppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \u00d7 2] matrix\n[MATH: X = [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.179|\u2212 0.341|0.574|\u2212 0.723; 0.858|0.08|0.489|0.138; \u2212 0.371|0.78|0.491|0.114; \u2212 0.307|\u2212 0.519|0.437|0.667]; \u03a3|= [2.416|0; 0|0.392; 0|0; 0|0]; V|= [\u2212 0.708|\u2212 0.706; \u2212 0.706|0.708]]\n\nWhich of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?\n\n1. [MATH: [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38] \u22c5 [\u2212 0.708; \u2212 0.706]]\n2. [MATH: [\u2212 0.179; 0.858; \u2212 0.371; \u2212 0.307] \u22c5 2.416]\n3. [MATH: [\u2212 0.708; \u2212 0.706]]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-287059-a",
+            "content_type": "text",
+            "normalized_html": "<p>III only</p>",
+            "readable_text": "III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-287059-b",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-287059-c",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-287059-d",
+            "content_type": "text",
+            "normalized_html": "<p>I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-287059-e",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \u00d7 2] matrix\n[MATH: X = [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.179|\u2212 0.341|0.574|\u2212 0.723; 0.858|0.08|0.489|0.138; \u2212 0.371|0.78|0.491|0.114; \u2212 0.307|\u2212 0.519|0.437|0.667]; \u03a3|= [2.416|0; 0|0.392; 0|0; 0|0]; V|= [\u2212 0.708|\u2212 0.706; \u2212 0.706|0.708]]\n\nWhich of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?\n\n1. [MATH: [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38] \u22c5 [\u2212 0.708; \u2212 0.706]]\n2. [MATH: [\u2212 0.179; 0.858; \u2212 0.371; \u2212 0.307] \u22c5 2.416]\n3. [MATH: [\u2212 0.708; \u2212 0.706]]\n\nChoices:\na. III only\nb. I only\nc. I and III only\nd. I and II only\ne. II only"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "629555",
+        "content_id": "14749",
+        "dom_id": "step-629555",
+        "selector": "#step-629555",
+        "step_anchor": "step-6",
+        "title": "Choosing the Number of Components",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the previous section, we saw how to project data onto the first <span class=\"math\">[MATH: k]</span> principal components. But how do we choose <span class=\"math\">[MATH: k?]</span> Keeping more components preserves more information, while keeping fewer gives a more compact representation at the cost of discarding some variation.</p>",
+            "readable_text": "In the previous section, we saw how to project data onto the first [MATH: k] principal components. But how do we choose [MATH: k?] Keeping more components preserves more information, while keeping fewer gives a more compact representation at the cost of discarding some variation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the variance along the <span class=\"math\">[MATH: i]</span>th principal component is proportional to <span class=\"math\">[MATH: \\sigma_i^2,]</span> where <span class=\"math\">[MATH: \\sigma_i]</span> is the <span class=\"math\">[MATH: i]</span>th singular value. Therefore, the fraction of total variance preserved by keeping the first <span class=\"math\">[MATH: k]</span> components is</p>",
+            "readable_text": "Recall that the variance along the [MATH: i]th principal component is proportional to [MATH: \\sigma_i^2,] where [MATH: \\sigma_i] is the [MATH: i]th singular value. Therefore, the fraction of total variance preserved by keeping the first [MATH: k] components is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\dfrac{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_k^2}{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_p^2} = \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2}.]</span></p>",
+            "readable_text": "[MATH: \\dfrac{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_k^2}{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_p^2} = \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>While the amount of variance we need to preserve depends on the application, as a rule of thumb, we will choose the smallest <span class=\"math\">[MATH: k]</span> that preserves at least <span class=\"math\">[MATH: 90\\%]</span> of the variance. That is, we select <span class=\"math\">[MATH: k]</span> such that</p>",
+            "readable_text": "While the amount of variance we need to preserve depends on the application, as a rule of thumb, we will choose the smallest [MATH: k] that preserves at least [MATH: 90\\%] of the variance. That is, we select [MATH: k] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2} \\geq 0.90.]</span></p>",
+            "readable_text": "[MATH: \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2} \\geq 0.90.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn the previous section, we saw how to project data onto the first [MATH: k] principal components. But how do we choose [MATH: k?] Keeping more components preserves more information, while keeping fewer gives a more compact representation at the cost of discarding some variation.\n\nContent:\nRecall that the variance along the [MATH: i]th principal component is proportional to [MATH: \\sigma_i^2,] where [MATH: \\sigma_i] is the [MATH: i]th singular value. Therefore, the fraction of total variance preserved by keeping the first [MATH: k] components is\n\nContent:\n[MATH: \\dfrac{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_k^2}{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_p^2} = \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2}.]\n\nContent:\nWhile the amount of variance we need to preserve depends on the application, as a rule of thumb, we will choose the smallest [MATH: k] that preserves at least [MATH: 90\\%] of the variance. That is, we select [MATH: k] such that\n\nContent:\n[MATH: \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2} \\geq 0.90.]"
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "629556",
+        "content_id": "18840",
+        "dom_id": "step-629556",
+        "selector": "#step-629556",
+        "step_anchor": "step-7",
+        "title": "Choosing the Amount of Dimensionality Reduction for a Given Dataset",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 5]</span> datapoints with <span class=\"math\">[MATH: 3]</span> features in the form of the <span class=\"math\">[MATH: 5 \\times 3]</span> matrix\n<span class=\"math\">[MATH: [\u2212 1.21|\u2212 0.45|\u2212 1.17; \u2212 0.52|0.83|1.19; \u2212 0.18|\u2212 1.37|0.41; 1.41|\u2212 0.12|0.48; 0.51|1.11|\u2212 0.91]]</span>\nwhere the data has been standardized (the mean of each feature is <span class=\"math\">[MATH: 0]</span> and the standard deviation is <span class=\"math\">[MATH: 1]</span>).\nWe are also given the SVD decomposition <span class=\"math\">[MATH: X = U \\Sigma V^T]</span> where:</p><p><span class=\"math\">[MATH: U|= [\u2212 0.75|0.177|0.014|0.637|\u2212 0.004; 0.275|\u2212 0.054|\u2212 0.847|0.36|0.274; \u2212 0.213|\u2212 0.653|0.171|\u2212 0.068|0.703; 0.542|\u2212 0.181|0.459|0.678|\u2212 0.05; 0.15|0.711|0.206|\u2212 0.022|0.655]; \u03a3|= [2.272|0|0; 0|2.031|0; 0|0|1.659; 0|0|0; 0|0|0]; V|= [0.724|0.019|0.69; 0.422|0.779|\u2212 0.464; 0.546|\u2212 0.627|\u2212 0.555]]</span></p><p>We will use principal component analysis to reduce the dimensionality of the dataset. </p><p>In order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.</p><p>Fill in the blanks below:</p><p>We should pick components based on \n<span class=\"math\">[MATH: XXXXXXXXXXXXXXXXXXXXX]</span></p><p>If we wish to preserve <span class=\"math\">[MATH: 75\\%]</span> of the variance, we should reduce the dataset to \n<span class=\"math\">[MATH: XXXXXXXXXXXXXX]</span>.</p>",
+            "readable_text": "Suppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \\times 3] matrix\n[MATH: [\u2212 1.21|\u2212 0.45|\u2212 1.17; \u2212 0.52|0.83|1.19; \u2212 0.18|\u2212 1.37|0.41; 1.41|\u2212 0.12|0.48; 0.51|1.11|\u2212 0.91]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U \\Sigma V^T] where:\n\n[MATH: U|= [\u2212 0.75|0.177|0.014|0.637|\u2212 0.004; 0.275|\u2212 0.054|\u2212 0.847|0.36|0.274; \u2212 0.213|\u2212 0.653|0.171|\u2212 0.068|0.703; 0.542|\u2212 0.181|0.459|0.678|\u2212 0.05; 0.15|0.711|0.206|\u2212 0.022|0.655]; \u03a3|= [2.272|0|0; 0|2.031|0; 0|0|1.659; 0|0|0; 0|0|0]; V|= [0.724|0.019|0.69; 0.422|0.779|\u2212 0.464; 0.546|\u2212 0.627|\u2212 0.555]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nFill in the blanks below:\n\nWe should pick components based on\n[MATH: XXXXXXXXXXXXXXXXXXXXX]\n\nIf we wish to preserve [MATH: 75\\%] of the variance, we should reduce the dataset to\n[MATH: XXXXXXXXXXXXXX].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>In reducing the dimensionality of the dataset, we aim to preserve as much of the original variance as possible. </p><p>We should pick components based on <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the amount of cumulative variance preserved}}.]</span></p><p>The variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.</p><p>In our example, the singular values are\n<span class=\"math\">[MATH: \\sigma_1 = 2.272, \\qquad\n\\sigma_2 = 2.031, \\qquad\n\\sigma_3 = 1.659.]</span></p><p>Let us now compute the cumulative variance preserved for different numbers of components.</p><ul><li><p>The fraction of variance preserved by projecting the data onto the first principal component is \n<span class=\"math\">[MATH: \\dfrac{\\sigma_1^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 42.9\\%.]</span></p></li><li><p>The fraction of variance preserved by projecting the data onto the first two principal components is \n<span class=\"math\">[MATH: \\dfrac{\\sum\\limits_{i=1}^2 \\sigma_i^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2 + 2.031^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 77.1\\%.]</span></p></li></ul><p>Thus, we obtain that</p><ul><li><p>reducing the dataset to <span class=\"math\">[MATH: 1]</span> dimension would preserve <span class=\"math\">[MATH: 42.9\\%]</span> of the variance, while </p></li><li><p>reducing the dataset to <span class=\"math\">[MATH: 2]</span> dimensions would preserve <span class=\"math\">[MATH: 77.1\\%]</span> of the variance.</p></li></ul><div class=\"graphic\"><img src=\"/graphics/768df8ee7443b3e922bc46dd104181dc\"></div><p>Therefore, we should reduce the dataset to <span class=\"math\">[MATH: 2]</span> since this is the minimum number of components that preserves at least <span class=\"math\">[MATH: 75\\%]</span> of the variance.</p>",
+            "readable_text": "In reducing the dimensionality of the dataset, we aim to preserve as much of the original variance as possible.\n\nWe should pick components based on [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the amount of cumulative variance preserved}}.]\n\nThe variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.\n\nIn our example, the singular values are\n[MATH: \\sigma_1 = 2.272, \\qquad\n\\sigma_2 = 2.031, \\qquad\n\\sigma_3 = 1.659.]\n\nLet us now compute the cumulative variance preserved for different numbers of components.\n\n- The fraction of variance preserved by projecting the data onto the first principal component is\n[MATH: \\dfrac{\\sigma_1^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 42.9\\%.]\n- The fraction of variance preserved by projecting the data onto the first two principal components is\n[MATH: \\dfrac{\\sum\\limits_{i=1}^2 \\sigma_i^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2 + 2.031^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 77.1\\%.]\n\nThus, we obtain that\n\n- reducing the dataset to [MATH: 1] dimension would preserve [MATH: 42.9\\%] of the variance, while\n- reducing the dataset to [MATH: 2] dimensions would preserve [MATH: 77.1\\%] of the variance.\n\n[IMG: /graphics/768df8ee7443b3e922bc46dd104181dc]\n\nTherefore, we should reduce the dataset to [MATH: 2] since this is the minimum number of components that preserves at least [MATH: 75\\%] of the variance.",
+            "images": [
+              {
+                "src": "/graphics/768df8ee7443b3e922bc46dd104181dc",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/768df8ee7443b3e922bc46dd104181dc",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \\times 3] matrix\n[MATH: [\u2212 1.21|\u2212 0.45|\u2212 1.17; \u2212 0.52|0.83|1.19; \u2212 0.18|\u2212 1.37|0.41; 1.41|\u2212 0.12|0.48; 0.51|1.11|\u2212 0.91]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U \\Sigma V^T] where:\n\n[MATH: U|= [\u2212 0.75|0.177|0.014|0.637|\u2212 0.004; 0.275|\u2212 0.054|\u2212 0.847|0.36|0.274; \u2212 0.213|\u2212 0.653|0.171|\u2212 0.068|0.703; 0.542|\u2212 0.181|0.459|0.678|\u2212 0.05; 0.15|0.711|0.206|\u2212 0.022|0.655]; \u03a3|= [2.272|0|0; 0|2.031|0; 0|0|1.659; 0|0|0; 0|0|0]; V|= [0.724|0.019|0.69; 0.422|0.779|\u2212 0.464; 0.546|\u2212 0.627|\u2212 0.555]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nFill in the blanks below:\n\nWe should pick components based on\n[MATH: XXXXXXXXXXXXXXXXXXXXX]\n\nIf we wish to preserve [MATH: 75\\%] of the variance, we should reduce the dataset to\n[MATH: XXXXXXXXXXXXXX].\n\nContent:\nEXPLANATION\n\nExplanation:\nIn reducing the dimensionality of the dataset, we aim to preserve as much of the original variance as possible.\n\nWe should pick components based on [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the amount of cumulative variance preserved}}.]\n\nThe variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.\n\nIn our example, the singular values are\n[MATH: \\sigma_1 = 2.272, \\qquad\n\\sigma_2 = 2.031, \\qquad\n\\sigma_3 = 1.659.]\n\nLet us now compute the cumulative variance preserved for different numbers of components.\n\n- The fraction of variance preserved by projecting the data onto the first principal component is\n[MATH: \\dfrac{\\sigma_1^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 42.9\\%.]\n- The fraction of variance preserved by projecting the data onto the first two principal components is\n[MATH: \\dfrac{\\sum\\limits_{i=1}^2 \\sigma_i^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2 + 2.031^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 77.1\\%.]\n\nThus, we obtain that\n\n- reducing the dataset to [MATH: 1] dimension would preserve [MATH: 42.9\\%] of the variance, while\n- reducing the dataset to [MATH: 2] dimensions would preserve [MATH: 77.1\\%] of the variance.\n\n[IMG: /graphics/768df8ee7443b3e922bc46dd104181dc]\n\nTherefore, we should reduce the dataset to [MATH: 2] since this is the minimum number of components that preserves at least [MATH: 75\\%] of the variance."
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "287648",
+        "dom_id": "question-287648",
+        "selector": "#question-287648",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 5]</span> datapoints with <span class=\"math\">[MATH: 3]</span> features in the form of the <span class=\"math\">[MATH: 5 \u00d7 3]</span> matrix\n<span class=\"math\">[MATH: X = [1.40|1.37|\u2212 0.49; 0.59|0.29|\u2212 0.70; \u2212 0.97|\u2212 1.18|\u2212 0.66; \u2212 0.15|0.27|1.67; \u2212 0.86|\u2212 0.75|0.18]]</span>\nwhere the data has been standardized (the mean of each feature is <span class=\"math\">[MATH: 0]</span> and the standard deviation is <span class=\"math\">[MATH: 1]</span>).\nWe are also given the SVD decomposition <span class=\"math\">[MATH: X = U\u03a3V^{T}]</span> where:</p><p><span class=\"math\">[MATH: U|= [\u2212 0.713|0.123|\u2212 0.47|0.506|0.013; \u2212 0.25|0.321|0.709|0.213|0.535; 0.509|0.422|0.046|0.667|\u2212 0.342; 0.042|\u2212 0.839|0.241|0.487|0.01; 0.41|\u2212 0.027|\u2212 0.465|0.133|0.773]; \u03a3|= [2.809|0|0; 0|2.020|0; 0|0|0.114; 0|0|0; 0|0|0]; V|= [\u2212 0.711|0.051|0.701; \u2212 0.693|\u2212 0.218|\u2212 0.687; 0.118|\u2212 0.975|0.191]]</span></p><p>We will use principal component analysis to reduce the dimensionality of the dataset. </p><p>In order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.</p><p>We should pick components based on \n<span class=\"select-list\" data-select-id=\"selectList-287648-0\" data-select-index=\"1\">[SELECT 1]</span>.</p>",
+          "readable_text": "Suppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n[MATH: X = [1.40|1.37|\u2212 0.49; 0.59|0.29|\u2212 0.70; \u2212 0.97|\u2212 1.18|\u2212 0.66; \u2212 0.15|0.27|1.67; \u2212 0.86|\u2212 0.75|0.18]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.713|0.123|\u2212 0.47|0.506|0.013; \u2212 0.25|0.321|0.709|0.213|0.535; 0.509|0.422|0.046|0.667|\u2212 0.342; 0.042|\u2212 0.839|0.241|0.487|0.01; 0.41|\u2212 0.027|\u2212 0.465|0.133|0.773]; \u03a3|= [2.809|0|0; 0|2.020|0; 0|0|0.114; 0|0|0; 0|0|0]; V|= [\u2212 0.711|0.051|0.701; \u2212 0.693|\u2212 0.218|\u2212 0.687; 0.118|\u2212 0.975|0.191]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nWe should pick components based on\n[SELECT 1].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-287648-0",
+              "frame_dom_id": "selectListFrame-287648-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "the original number of features",
+                  "readable_text": "the original number of features"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "if the singular value is greater than <span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "if the singular value is greater than [MATH: 1]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "if the eigenvalue is smaller than average",
+                  "readable_text": "if the eigenvalue is smaller than average"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "the amount of cumulative variance preserved",
+                  "readable_text": "the amount of cumulative variance preserved"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-287648-0",
+            "frame_dom_id": "selectListFrame-287648-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "the original number of features",
+                "readable_text": "the original number of features"
+              },
+              {
+                "index": 2,
+                "normalized_html": "if the singular value is greater than <span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "if the singular value is greater than [MATH: 1]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "if the eigenvalue is smaller than average",
+                "readable_text": "if the eigenvalue is smaller than average"
+              },
+              {
+                "index": 4,
+                "normalized_html": "the amount of cumulative variance preserved",
+                "readable_text": "the amount of cumulative variance preserved"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n[MATH: X = [1.40|1.37|\u2212 0.49; 0.59|0.29|\u2212 0.70; \u2212 0.97|\u2212 1.18|\u2212 0.66; \u2212 0.15|0.27|1.67; \u2212 0.86|\u2212 0.75|0.18]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.713|0.123|\u2212 0.47|0.506|0.013; \u2212 0.25|0.321|0.709|0.213|0.535; 0.509|0.422|0.046|0.667|\u2212 0.342; 0.042|\u2212 0.839|0.241|0.487|0.01; 0.41|\u2212 0.027|\u2212 0.465|0.133|0.773]; \u03a3|= [2.809|0|0; 0|2.020|0; 0|0|0.114; 0|0|0; 0|0|0]; V|= [\u2212 0.711|0.051|0.701; \u2212 0.693|\u2212 0.218|\u2212 0.687; 0.118|\u2212 0.975|0.191]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nWe should pick components based on\n[SELECT 1]."
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "355899",
+        "dom_id": "question-355899",
+        "selector": "#question-355899",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 5]</span> datapoints with <span class=\"math\">[MATH: 4]</span> features in the form of the <span class=\"math\">[MATH: 5 \u00d7 4]</span> matrix\n<span class=\"math\">[MATH: X = [\u2212 1.11|\u2212 1.51|\u2212 0.99|\u2212 1.19; \u2212 0.58|1.16|1.49|0.35; \u2212 0.29|0.03|0.04|\u2212 0.68; 1.43|0.57|\u2212 0.84|1.42; 0.55|\u2212 0.25|0.3|0.1]]</span>\nwhere the data has been standardized (the mean of each feature is <span class=\"math\">[MATH: 0]</span> and the standard deviation is <span class=\"math\">[MATH: 1]</span>).\nWe are also given the SVD decomposition <span class=\"math\">[MATH: X = U\u03a3V^{T}]</span> where:</p><p><span class=\"math\">[MATH: U|= [\u2212 0.761|0.185|0.263|0.342|0.447; 0.309|\u2212 0.738|0.28|0.285|0.447; \u2212 0.169|\u2212 0.143|\u2212 0.022|\u2212 0.866|0.447; 0.538|0.63|0.338|0.013|0.447; 0.084|0.067|\u2212 0.859|0.225|0.447]; \u03a3|= [3.125|0|0|0; 0|2.362|0|0; 0|0|0.699|0; 0|0|0|0.455; 0|0|0|0]; V|= [0.49|0.509|\u2212 0.625|\u2212 0.333; 0.572|\u2212 0.337|0.479|\u2212 0.573; 0.25|\u2212 0.761|\u2212 0.55|0.237; 0.608|0.22|0.278|0.71]]</span></p><p>We will use principal component analysis to reduce the dimensionality of the dataset. </p><p>In order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.</p><p>We should pick components based on \n<span class=\"select-list\" data-select-id=\"selectList-355899-0\" data-select-index=\"1\">[SELECT 1]</span>.</p>",
+          "readable_text": "Suppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 4] features in the form of the [MATH: 5 \u00d7 4] matrix\n[MATH: X = [\u2212 1.11|\u2212 1.51|\u2212 0.99|\u2212 1.19; \u2212 0.58|1.16|1.49|0.35; \u2212 0.29|0.03|0.04|\u2212 0.68; 1.43|0.57|\u2212 0.84|1.42; 0.55|\u2212 0.25|0.3|0.1]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.761|0.185|0.263|0.342|0.447; 0.309|\u2212 0.738|0.28|0.285|0.447; \u2212 0.169|\u2212 0.143|\u2212 0.022|\u2212 0.866|0.447; 0.538|0.63|0.338|0.013|0.447; 0.084|0.067|\u2212 0.859|0.225|0.447]; \u03a3|= [3.125|0|0|0; 0|2.362|0|0; 0|0|0.699|0; 0|0|0|0.455; 0|0|0|0]; V|= [0.49|0.509|\u2212 0.625|\u2212 0.333; 0.572|\u2212 0.337|0.479|\u2212 0.573; 0.25|\u2212 0.761|\u2212 0.55|0.237; 0.608|0.22|0.278|0.71]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nWe should pick components based on\n[SELECT 1].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-355899-0",
+              "frame_dom_id": "selectListFrame-355899-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "if the singular value is greater than <span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "if the singular value is greater than [MATH: 1]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "if the eigenvalue is smaller than average",
+                  "readable_text": "if the eigenvalue is smaller than average"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "the original number of features",
+                  "readable_text": "the original number of features"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "the amount of cumulative variance preserved",
+                  "readable_text": "the amount of cumulative variance preserved"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-355899-0",
+            "frame_dom_id": "selectListFrame-355899-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "if the singular value is greater than <span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "if the singular value is greater than [MATH: 1]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "if the eigenvalue is smaller than average",
+                "readable_text": "if the eigenvalue is smaller than average"
+              },
+              {
+                "index": 3,
+                "normalized_html": "the original number of features",
+                "readable_text": "the original number of features"
+              },
+              {
+                "index": 4,
+                "normalized_html": "the amount of cumulative variance preserved",
+                "readable_text": "the amount of cumulative variance preserved"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 4] features in the form of the [MATH: 5 \u00d7 4] matrix\n[MATH: X = [\u2212 1.11|\u2212 1.51|\u2212 0.99|\u2212 1.19; \u2212 0.58|1.16|1.49|0.35; \u2212 0.29|0.03|0.04|\u2212 0.68; 1.43|0.57|\u2212 0.84|1.42; 0.55|\u2212 0.25|0.3|0.1]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.761|0.185|0.263|0.342|0.447; 0.309|\u2212 0.738|0.28|0.285|0.447; \u2212 0.169|\u2212 0.143|\u2212 0.022|\u2212 0.866|0.447; 0.538|0.63|0.338|0.013|0.447; 0.084|0.067|\u2212 0.859|0.225|0.447]; \u03a3|= [3.125|0|0|0; 0|2.362|0|0; 0|0|0.699|0; 0|0|0|0.455; 0|0|0|0]; V|= [0.49|0.509|\u2212 0.625|\u2212 0.333; 0.572|\u2212 0.337|0.479|\u2212 0.573; 0.25|\u2212 0.761|\u2212 0.55|0.237; 0.608|0.22|0.278|0.71]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nWe should pick components based on\n[SELECT 1]."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "629559",
+        "content_id": "14750",
+        "dom_id": "step-629559",
+        "selector": "#step-629559",
+        "step_anchor": "step-10",
+        "title": "The Feature Extraction Pipeline",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can now summarize the complete pipeline for using PCA to extract features from a dataset.</p>",
+            "readable_text": "We can now summarize the complete pipeline for using PCA to extract features from a dataset.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ol><li><p><strong>Standardize the data.</strong> Subtract the mean of each feature and divide by its standard deviation. This ensures that all features contribute equally to the analysis, regardless of their original units or scales.</p></li><li><p><strong>Compute the SVD.</strong> Find the singular value decomposition <span class=\"math\">[MATH: X_{\\text{std}} = U\\Sigma V^T.]</span> The columns of <span class=\"math\">[MATH: V]</span> are the principal components, and the diagonal entries of <span class=\"math\">[MATH: \\Sigma]</span> are the singular values.</p></li><li><p><strong>Choose the number of components.</strong> Using the singular values, compute the cumulative variance for each possible choice of <span class=\"math\">[MATH: k]</span> and select the smallest <span class=\"math\">[MATH: k]</span> that preserves at least <span class=\"math\">[MATH: 90\\%]</span> of the variance.</p></li><li><p><strong>Project the data.</strong> Compute the reduced data matrix <span class=\"math\">[MATH: Z = X_{\\text{std}} V_k,]</span> where <span class=\"math\">[MATH: V_k]</span> consists of the first <span class=\"math\">[MATH: k]</span> columns of <span class=\"math\">[MATH: V.]</span></p></li></ol>",
+            "readable_text": "1. Standardize the data. Subtract the mean of each feature and divide by its standard deviation. This ensures that all features contribute equally to the analysis, regardless of their original units or scales.\n2. Compute the SVD. Find the singular value decomposition [MATH: X_{\\text{std}} = U\\Sigma V^T.] The columns of [MATH: V] are the principal components, and the diagonal entries of [MATH: \\Sigma] are the singular values.\n3. Choose the number of components. Using the singular values, compute the cumulative variance for each possible choice of [MATH: k] and select the smallest [MATH: k] that preserves at least [MATH: 90\\%] of the variance.\n4. Project the data. Compute the reduced data matrix [MATH: Z = X_{\\text{std}} V_k,] where [MATH: V_k] consists of the first [MATH: k] columns of [MATH: V.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To interpret results in terms of the original features or to apply the same transformation to new data, we must keep track of the means and standard deviations used in Step 1.</p>",
+            "readable_text": "To interpret results in terms of the original features or to apply the same transformation to new data, we must keep track of the means and standard deviations used in Step 1.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe can now summarize the complete pipeline for using PCA to extract features from a dataset.\n\nContent:\n1. Standardize the data. Subtract the mean of each feature and divide by its standard deviation. This ensures that all features contribute equally to the analysis, regardless of their original units or scales.\n2. Compute the SVD. Find the singular value decomposition [MATH: X_{\\text{std}} = U\\Sigma V^T.] The columns of [MATH: V] are the principal components, and the diagonal entries of [MATH: \\Sigma] are the singular values.\n3. Choose the number of components. Using the singular values, compute the cumulative variance for each possible choice of [MATH: k] and select the smallest [MATH: k] that preserves at least [MATH: 90\\%] of the variance.\n4. Project the data. Compute the reduced data matrix [MATH: Z = X_{\\text{std}} V_k,] where [MATH: V_k] consists of the first [MATH: k] columns of [MATH: V.]\n\nContent:\nTo interpret results in terms of the original features or to apply the same transformation to new data, we must keep track of the means and standard deviations used in Step 1."
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "629560",
+        "content_id": "18844",
+        "dom_id": "step-629560",
+        "selector": "#step-629560",
+        "step_anchor": "step-11",
+        "title": "Using PCA to Dimensionally Reduce an Uncentered Dataset",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 5]</span> datapoints with <span class=\"math\">[MATH: 3]</span> features in the form of the <span class=\"math\">[MATH: 5 \\times 3]</span> matrix</p><p><span class=\"math\">[MATH: [3.265|1.400|6.558; 5.373|0.956|1.656; 7.349|0.797|\u2212 0.459; 3.926|0.148|2.597; 2.758|0.803|3.345]]</span></p><p>We wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.</p><p>Let&#x27;s walk through the process of reducing the dimensionality of the dataset.</p>",
+            "readable_text": "Suppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \\times 3] matrix\n\n[MATH: [3.265|1.400|6.558; 5.373|0.956|1.656; 7.349|0.797|\u2212 0.459; 3.926|0.148|2.597; 2.758|0.803|3.345]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nLet's walk through the process of reducing the dimensionality of the dataset.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>We will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the direction in feature space}}]</span> with the <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{most}}]</span> variance.</p><p>The second principal component is the direction <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{orthogonal}}]</span> to the first <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{principal component}}]</span> with the most variance.</p><p>In order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components, picking the number of components based on the amount of cumulative variance preserved.</p><p>The first step is to <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{standardize the data}}.]</span></p><p>The standardized data matrix is</p><p><span class=\"math\">[MATH: [\u2212 0.68|1.29|1.49; 0.45|0.30|\u2212 0.42; 1.52|\u2212 0.05|\u2212 1.25; \u2212 0.33|\u2212 1.50|\u2212 0.06; \u2212 0.96|\u2212 0.04|0.24]]</span></p><p>The SVD of the standardized data matrix is\n<span class=\"math\">[MATH: X_{std}|= U\u03a3V^{T}, where; U|= [\u2212 0.688|0.370|\u2212 0.421|0.197|0.417; 0.160|0.258|0.226|0.910|\u2212 0.168; 0.642|0.396|\u2212 0.101|\u2212 0.081|0.644; 0.147|\u2212 0.753|\u2212 0.451|0.353|0.289; \u2212 0.260|\u2212 0.271|0.747|0.038|0.547],; \u03a3|= [2.825|0|0; 0|1.939|0; 0|0|0.543; 0|0|0; 0|0|0],; V|= [0.607|0.503|\u2212 0.615; \u2212 0.383|0.864|0.327; \u2212 0.696|\u2212 0.037|\u2212 0.717].]</span></p><p>We compute the cumulative variance preserved for different numbers of components.</p><p>The variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.</p><ul><li><p>The fraction of variance preserved by projecting the data onto the first principal component is \n<span class=\"math\">[MATH: \\dfrac{2.825^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{66.3\\%}.]</span></p></li><li><p>The fraction of variance preserved by projecting the data onto the first two principal components is \n<span class=\"math\">[MATH: \\dfrac{2.825^2 + 1.939^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{97.6\\%}.]</span></p></li></ul><p>Thus, we have that </p><ul><li><p>reducing the dataset to <span class=\"math\">[MATH: 1]</span> dimension would preserve <span class=\"math\">[MATH: 66.3\\%]</span> of the variance, while </p></li><li><p>reducing the dataset to <span class=\"math\">[MATH: 2]</span> dimensions would preserve <span class=\"math\">[MATH: 97.6\\%]</span> of the variance.</p></li></ul><p>If we wish to preserve <span class=\"math\">[MATH: 90\\%]</span> of the variance, we should reduce the dataset to <span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{2}]</span> dimensions, since this is the minimum number of components that preserves at least <span class=\"math\">[MATH: 90\\%]</span> of the variance.</p><p>Writing <span class=\"math\">[MATH: v_1, v_2, v_3]</span> for the columns of <span class=\"math\">[MATH: V,]</span> the reduced dataset is</p><p><span class=\"math\">[MATH: X_{\\text{red}} = \\bbox[4pt,border: 1px solid lightgray]{X_{\\text{std}} \\cdot [v_1, v_2]},]</span>\nsince we need to project the data onto the first two principal components, which are the first two columns of <span class=\"math\">[MATH: V.]</span></p><p><strong>Note:</strong> In order to invert the projection and interpret any further analysis in terms of the original features, we need to know the means and standard deviations of the original dataset <span class=\"math\">[MATH: X.]</span> Additionally, in case we have more data, we can use the means and standard deviations of the original dataset to map the new data into the original feature space.</p>",
+            "readable_text": "We will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the direction in feature space}}] with the [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{most}}] variance.\n\nThe second principal component is the direction [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{orthogonal}}] to the first [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{principal component}}] with the most variance.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components, picking the number of components based on the amount of cumulative variance preserved.\n\nThe first step is to [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{standardize the data}}.]\n\nThe standardized data matrix is\n\n[MATH: [\u2212 0.68|1.29|1.49; 0.45|0.30|\u2212 0.42; 1.52|\u2212 0.05|\u2212 1.25; \u2212 0.33|\u2212 1.50|\u2212 0.06; \u2212 0.96|\u2212 0.04|0.24]]\n\nThe SVD of the standardized data matrix is\n[MATH: X_{std}|= U\u03a3V^{T}, where; U|= [\u2212 0.688|0.370|\u2212 0.421|0.197|0.417; 0.160|0.258|0.226|0.910|\u2212 0.168; 0.642|0.396|\u2212 0.101|\u2212 0.081|0.644; 0.147|\u2212 0.753|\u2212 0.451|0.353|0.289; \u2212 0.260|\u2212 0.271|0.747|0.038|0.547],; \u03a3|= [2.825|0|0; 0|1.939|0; 0|0|0.543; 0|0|0; 0|0|0],; V|= [0.607|0.503|\u2212 0.615; \u2212 0.383|0.864|0.327; \u2212 0.696|\u2212 0.037|\u2212 0.717].]\n\nWe compute the cumulative variance preserved for different numbers of components.\n\nThe variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.\n\n- The fraction of variance preserved by projecting the data onto the first principal component is\n[MATH: \\dfrac{2.825^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{66.3\\%}.]\n- The fraction of variance preserved by projecting the data onto the first two principal components is\n[MATH: \\dfrac{2.825^2 + 1.939^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{97.6\\%}.]\n\nThus, we have that\n\n- reducing the dataset to [MATH: 1] dimension would preserve [MATH: 66.3\\%] of the variance, while\n- reducing the dataset to [MATH: 2] dimensions would preserve [MATH: 97.6\\%] of the variance.\n\nIf we wish to preserve [MATH: 90\\%] of the variance, we should reduce the dataset to [MATH: \\bbox[4pt,border: 1px solid lightgray]{2}] dimensions, since this is the minimum number of components that preserves at least [MATH: 90\\%] of the variance.\n\nWriting [MATH: v_1, v_2, v_3] for the columns of [MATH: V,] the reduced dataset is\n\n[MATH: X_{\\text{red}} = \\bbox[4pt,border: 1px solid lightgray]{X_{\\text{std}} \\cdot [v_1, v_2]},]\nsince we need to project the data onto the first two principal components, which are the first two columns of [MATH: V.]\n\nNote: In order to invert the projection and interpret any further analysis in terms of the original features, we need to know the means and standard deviations of the original dataset [MATH: X.] Additionally, in case we have more data, we can use the means and standard deviations of the original dataset to map the new data into the original feature space.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \\times 3] matrix\n\n[MATH: [3.265|1.400|6.558; 5.373|0.956|1.656; 7.349|0.797|\u2212 0.459; 3.926|0.148|2.597; 2.758|0.803|3.345]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nLet's walk through the process of reducing the dimensionality of the dataset.\n\nContent:\nEXPLANATION\n\nExplanation:\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the direction in feature space}}] with the [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{most}}] variance.\n\nThe second principal component is the direction [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{orthogonal}}] to the first [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{principal component}}] with the most variance.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components, picking the number of components based on the amount of cumulative variance preserved.\n\nThe first step is to [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{standardize the data}}.]\n\nThe standardized data matrix is\n\n[MATH: [\u2212 0.68|1.29|1.49; 0.45|0.30|\u2212 0.42; 1.52|\u2212 0.05|\u2212 1.25; \u2212 0.33|\u2212 1.50|\u2212 0.06; \u2212 0.96|\u2212 0.04|0.24]]\n\nThe SVD of the standardized data matrix is\n[MATH: X_{std}|= U\u03a3V^{T}, where; U|= [\u2212 0.688|0.370|\u2212 0.421|0.197|0.417; 0.160|0.258|0.226|0.910|\u2212 0.168; 0.642|0.396|\u2212 0.101|\u2212 0.081|0.644; 0.147|\u2212 0.753|\u2212 0.451|0.353|0.289; \u2212 0.260|\u2212 0.271|0.747|0.038|0.547],; \u03a3|= [2.825|0|0; 0|1.939|0; 0|0|0.543; 0|0|0; 0|0|0],; V|= [0.607|0.503|\u2212 0.615; \u2212 0.383|0.864|0.327; \u2212 0.696|\u2212 0.037|\u2212 0.717].]\n\nWe compute the cumulative variance preserved for different numbers of components.\n\nThe variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.\n\n- The fraction of variance preserved by projecting the data onto the first principal component is\n[MATH: \\dfrac{2.825^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{66.3\\%}.]\n- The fraction of variance preserved by projecting the data onto the first two principal components is\n[MATH: \\dfrac{2.825^2 + 1.939^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{97.6\\%}.]\n\nThus, we have that\n\n- reducing the dataset to [MATH: 1] dimension would preserve [MATH: 66.3\\%] of the variance, while\n- reducing the dataset to [MATH: 2] dimensions would preserve [MATH: 97.6\\%] of the variance.\n\nIf we wish to preserve [MATH: 90\\%] of the variance, we should reduce the dataset to [MATH: \\bbox[4pt,border: 1px solid lightgray]{2}] dimensions, since this is the minimum number of components that preserves at least [MATH: 90\\%] of the variance.\n\nWriting [MATH: v_1, v_2, v_3] for the columns of [MATH: V,] the reduced dataset is\n\n[MATH: X_{\\text{red}} = \\bbox[4pt,border: 1px solid lightgray]{X_{\\text{std}} \\cdot [v_1, v_2]},]\nsince we need to project the data onto the first two principal components, which are the first two columns of [MATH: V.]\n\nNote: In order to invert the projection and interpret any further analysis in terms of the original features, we need to know the means and standard deviations of the original dataset [MATH: X.] Additionally, in case we have more data, we can use the means and standard deviations of the original dataset to map the new data into the original feature space."
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "290907",
+        "dom_id": "question-290907",
+        "selector": "#question-290907",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 5]</span> datapoints with <span class=\"math\">[MATH: 3]</span> features in the form of the <span class=\"math\">[MATH: 5 \u00d7 3]</span> matrix</p><p><span class=\"math\">[MATH: X = [5.711|3.866|\u2212 3.400; 3.580|\u2212 0.216|\u2212 3.789; \u2212 0.507|\u2212 5.693|\u2212 3.727; 1.640|\u2212 0.269|0.705; \u2212 0.225|\u2212 4.111|\u2212 2.130]]</span></p><p>We wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.</p><p>Select the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.</p><p>We will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is \n<span class=\"select-list\" data-select-id=\"selectList-290907-0\" data-select-index=\"1\">[SELECT 1]</span> \nwith the \n<span class=\"select-list\" data-select-id=\"selectList-290907-1\" data-select-index=\"2\">[SELECT 2]</span> \nvariance.</p>",
+          "readable_text": "Suppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n\n[MATH: X = [5.711|3.866|\u2212 3.400; 3.580|\u2212 0.216|\u2212 3.789; \u2212 0.507|\u2212 5.693|\u2212 3.727; 1.640|\u2212 0.269|0.705; \u2212 0.225|\u2212 4.111|\u2212 2.130]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nSelect the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.\n\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is\n[SELECT 1]\nwith the\n[SELECT 2]\nvariance.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-290907-0",
+              "frame_dom_id": "selectListFrame-290907-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "the datapoint",
+                  "readable_text": "the datapoint"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "the direction in feature space",
+                  "readable_text": "the direction in feature space"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-290907-1",
+              "frame_dom_id": "selectListFrame-290907-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "most",
+                  "readable_text": "most"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "least",
+                  "readable_text": "least"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-290907-0",
+            "frame_dom_id": "selectListFrame-290907-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "the datapoint",
+                "readable_text": "the datapoint"
+              },
+              {
+                "index": 2,
+                "normalized_html": "the direction in feature space",
+                "readable_text": "the direction in feature space"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-290907-1",
+            "frame_dom_id": "selectListFrame-290907-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "most",
+                "readable_text": "most"
+              },
+              {
+                "index": 2,
+                "normalized_html": "least",
+                "readable_text": "least"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n\n[MATH: X = [5.711|3.866|\u2212 3.400; 3.580|\u2212 0.216|\u2212 3.789; \u2212 0.507|\u2212 5.693|\u2212 3.727; 1.640|\u2212 0.269|0.705; \u2212 0.225|\u2212 4.111|\u2212 2.130]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nSelect the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.\n\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is\n[SELECT 1]\nwith the\n[SELECT 2]\nvariance."
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "355955",
+        "dom_id": "question-355955",
+        "selector": "#question-355955",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we have a dataset consisting of <span class=\"math\">[MATH: 5]</span> datapoints with <span class=\"math\">[MATH: 3]</span> features in the form of the <span class=\"math\">[MATH: 5 \u00d7 3]</span> matrix</p><p><span class=\"math\">[MATH: X = [5.659|2.361|1.245; 2.543|0.071|\u2212 1.476; \u2212 1.128|\u2212 4.766|\u2212 4.235; 5.697|\u2212 3.658|\u2212 1.704; 1.099|\u2212 4.975|\u2212 3.309]]</span></p><p>We wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.</p><p>Select the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.</p><p>We will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is \n<span class=\"select-list\" data-select-id=\"selectList-355955-0\" data-select-index=\"1\">[SELECT 1]</span> \nwith the \n<span class=\"select-list\" data-select-id=\"selectList-355955-1\" data-select-index=\"2\">[SELECT 2]</span> \nvariance.</p>",
+          "readable_text": "Suppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n\n[MATH: X = [5.659|2.361|1.245; 2.543|0.071|\u2212 1.476; \u2212 1.128|\u2212 4.766|\u2212 4.235; 5.697|\u2212 3.658|\u2212 1.704; 1.099|\u2212 4.975|\u2212 3.309]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nSelect the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.\n\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is\n[SELECT 1]\nwith the\n[SELECT 2]\nvariance.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-355955-0",
+              "frame_dom_id": "selectListFrame-355955-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "the datapoint",
+                  "readable_text": "the datapoint"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "the direction in feature space",
+                  "readable_text": "the direction in feature space"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-355955-1",
+              "frame_dom_id": "selectListFrame-355955-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "least",
+                  "readable_text": "least"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "most",
+                  "readable_text": "most"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-355955-0",
+            "frame_dom_id": "selectListFrame-355955-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "the datapoint",
+                "readable_text": "the datapoint"
+              },
+              {
+                "index": 2,
+                "normalized_html": "the direction in feature space",
+                "readable_text": "the direction in feature space"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-355955-1",
+            "frame_dom_id": "selectListFrame-355955-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "least",
+                "readable_text": "least"
+              },
+              {
+                "index": 2,
+                "normalized_html": "most",
+                "readable_text": "most"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n\n[MATH: X = [5.659|2.361|1.245; 2.543|0.071|\u2212 1.476; \u2212 1.128|\u2212 4.766|\u2212 4.235; 5.697|\u2212 3.658|\u2212 1.704; 1.099|\u2212 4.975|\u2212 3.309]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nSelect the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.\n\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is\n[SELECT 1]\nwith the\n[SELECT 2]\nvariance."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn previous lessons, we learned that the principal components of a standardized data matrix [MATH: X] are the eigenvectors of the covariance matrix, and that these eigenvectors appear as the columns of [MATH: V] in the singular value decomposition [MATH: X = U\\Sigma V^T.] We also learned that the variance along each principal component is proportional to the square of the corresponding singular value.\n\nContent:\nIn this lesson, we'll learn how to use principal components to perform feature extraction \u2014 the process of projecting high-dimensional data onto a lower-dimensional subspace while preserving as much variance as possible.\n\nContent:\nTo illustrate the idea, suppose a biologist has recorded the resting heart rate and breathing rate for four mammals of different sizes. Both measurements have been standardized, giving the [MATH: 4 \\times 2] data matrix\n\nContent:\n[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]\n\nContent:\nThe biologist knows that body size strongly influences both heart rate and breathing rate \u2014 smaller animals tend to have faster rates for both. They want to extract a single \"metabolic index\" that captures this underlying factor. How should they proceed?\n\nContent:\nFrom the SVD [MATH: X = U\\Sigma V^T,] the first principal component is\n\nContent:\n[MATH: [\u2212 0.71; \u2212 0.71]]\n\nContent:\nwhich points in the direction of maximum variance. To obtain a one-dimensional representation of the data, we project each row of [MATH: X] onto this direction by computing\n\nContent:\n[MATH: [0.4|0.6; \u2212 1.5|\u2212 1.5; 0.4|0.3; 0.7|0.6]]\n\nContent:\nThe result is a [MATH: 4 \\times 1] vector \u2014 one number per animal \u2014 that captures the variation in body size. The second animal, with the most negative standardized values (indicating a larger, slower-metabolizing animal), has the largest projected value.\n\n---\n\nItem 2 \u2014 Tutorial: The Projection Formula\n\nContent:\nMore generally, suppose we have a standardized [MATH: n \\times p] data matrix [MATH: X,] where each row is a data point and each column is a feature. To reduce the data from [MATH: p] dimensions to [MATH: k] dimensions, we project the data onto the first [MATH: k] principal components. If [MATH: V_k] is the [MATH: p \\times k] matrix whose columns are the first [MATH: k] principal components, the reduced data matrix is\n\nContent:\n[MATH: Z = X V_k.]\n\nContent:\nEach row of [MATH: Z] is a [MATH: k]-dimensional representation of the corresponding data point, expressed in terms of the principal component directions.\n\nContent:\nThere is an equivalent way to compute [MATH: Z] using the SVD. Starting from [MATH: X = U\\Sigma V^T,] we have\n\nContent:\n[MATH: Z|= XV_{k}; = U\u03a3V^{T}V_{k}; = U\u03a3[I_{k}; 0]; = U[\u03a3_{k}; 0]; = U_{k}\u03a3_{k},]\n\nContent:\nwhere [MATH: U_k] is the [MATH: n \\times k] matrix of the first [MATH: k] columns of [MATH: U,] and [MATH: \\Sigma_k] is the [MATH: k \\times k] diagonal matrix of the first [MATH: k] singular values.\n\nContent:\nSo, we can compute the reduced data either as [MATH: XV_k] or as [MATH: U_k\\Sigma_k.]\n\nContent:\nWatch out! The vector [MATH: v_1] (the first column of [MATH: V]) is a direction \u2014 a unit vector in feature space pointing along maximum variance. By contrast, the product [MATH: Xv_1] (equivalently, [MATH: u_1\\sigma_1]) is the projected data \u2014 an [MATH: n \\times 1] vector giving each data point's coordinate along that direction. Some texts refer to this projected data as \"the first principal component of the data\" or as \"scores,\" so the term \"principal component\" can mean either the direction or the projected values, depending on context.\n\n---\n\nItem 3 \u2014 Example: Identifying the Best One Dimensional Reduction Given SVD of Data\n\nExample Prompt:\nSuppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \\times 2] matrix\n[MATH: [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U \\Sigma V^T] where:\n\n[MATH: U|= [\u2212 0.689|\u2212 0.424|0.495|0.318; 0.143|\u2212 0.241|\u2212 0.524|0.804; 0.695|\u2212 0.188|0.650|0.244; \u2212 0.149|0.853|0.241|0.439]; \u03a3|= [2.075|0; 0|1.294; 0|0; 0|0]; V|= [\u2212 0.709|\u2212 0.706; 0.706|\u2212 0.709]]\n\nFind the one-dimensional version of the data that preserves the most variance.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe one-dimensional version of the data that preserves the most variance is the projection onto the first principal component.\n\nRecall that the principal components are the eigenvectors of the covariance matrix [MATH: X^TX.] Using the SVD [MATH: X = U\\Sigma V^T] and the orthogonality of [MATH: U,] we have\n\n[MATH: X^{T}X|= (U\u03a3V^{T})^{T}(U\u03a3V^{T}); = V\u03a3^{T}U^{T}U\u03a3V^{T}; = V\u03a3^{T}\u03a3V^{T}.]\n\nSince [MATH: \\Sigma^T\\Sigma] is diagonal with the squared singular values on the diagonal, the eigenvectors of [MATH: X^TX] are the columns of [MATH: V,] and the eigenvalues are the squared singular values. The largest eigenvalue corresponds to the first singular value [MATH: \\sigma_1 = 2.075,] so the first principal component is [MATH: v_1,] the first column of [MATH: V{:}]\n\n[MATH: [\u2212 0.709; 0.706]]\n\nTo obtain the one-dimensional version of the data, we project [MATH: X] onto [MATH: v_1] by computing\n\n[MATH: Xv_{1}|= [1.40|\u2212 0.62; 0.01|0.43; \u2212 0.85|1.19; \u2212 0.56|\u2212 1.00][\u2212 0.709; 0.706]; = [\u2212 1.43; 0.30; 1.44; \u2212 0.31].]\n\nEquivalently, we can compute this projection using [MATH: u_1 \\sigma_1,] where [MATH: u_1] is the first column of [MATH: U.] Indeed, from the SVD,\n\n[MATH: Xv_{1}|= U\u03a3V^{T}v_{1} = U\u03a3[1; 0] = U[\u03c3_{1}; 0; 0; 0] = u_{1}\u03c3_{1}.]\n\nSubstituting [MATH: u_1] and [MATH: \\sigma_1 = 2.075,] we get\n\n[MATH: [\u2212 0.689; 0.143; 0.695; \u2212 0.149]]\n\nwhich confirms the result.\n\nWatch out! The vector [MATH: v_1] itself is the first principal component direction \u2014 a unit vector in feature space. It is not a one-dimensional representation of the data. The one-dimensional representation is [MATH: Xv_1] (or equivalently [MATH: u_1\\sigma_1]), which is a [MATH: 4 \\times 1] vector containing the projection of each data point onto this direction.\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nSuppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \u00d7 2] matrix\n[MATH: X = [1.2|0.02; \u2212 0.27|1.05; \u2212 1.19|\u2212 1.35; 0.27|0.27]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.411|0.663|0.61|\u2212 0.141; \u2212 0.262|\u2212 0.743|0.606|\u2212 0.113; 0.854|0.091|0.501|0.105; \u2212 0.182|0|0.104|0.978]; \u03a3|= [2.102|0; 0|1.257; 0|0; 0|0]; V|= [\u2212 0.708|0.707; \u2212 0.707|\u2212 0.708]]\n\nWhich of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?\n\n1. [MATH: [\u2212 0.708; \u2212 0.707]]\n2. [MATH: [\u2212 0.411; 0.663; 0.61; \u2212 0.141] \u22c5 2.102]\n3. [MATH: [\u2212 0.411; \u2212 0.262; 0.854; \u2212 0.182] \u22c5 2.102]\n\nChoices:\na. II and III only\nb. I and III only\nc. III only\nd. II only\ne. I only\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nSuppose we have a dataset consisting of [MATH: 4] datapoints with [MATH: 2] features in the form of the [MATH: 4 \u00d7 2] matrix\n[MATH: X = [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.179|\u2212 0.341|0.574|\u2212 0.723; 0.858|0.08|0.489|0.138; \u2212 0.371|0.78|0.491|0.114; \u2212 0.307|\u2212 0.519|0.437|0.667]; \u03a3|= [2.416|0; 0|0.392; 0|0; 0|0]; V|= [\u2212 0.708|\u2212 0.706; \u2212 0.706|0.708]]\n\nWhich of the following matrices corresponds to the one-dimensional version of the data that preserves the most variance?\n\n1. [MATH: [0.40|0.21; \u2212 1.49|\u2212 1.44; 0.42|0.85; 0.67|0.38] \u22c5 [\u2212 0.708; \u2212 0.706]]\n2. [MATH: [\u2212 0.179; 0.858; \u2212 0.371; \u2212 0.307] \u22c5 2.416]\n3. [MATH: [\u2212 0.708; \u2212 0.706]]\n\nChoices:\na. III only\nb. I only\nc. I and III only\nd. I and II only\ne. II only\n\n---\n\nItem 6 \u2014 Tutorial: Choosing the Number of Components\n\nContent:\nIn the previous section, we saw how to project data onto the first [MATH: k] principal components. But how do we choose [MATH: k?] Keeping more components preserves more information, while keeping fewer gives a more compact representation at the cost of discarding some variation.\n\nContent:\nRecall that the variance along the [MATH: i]th principal component is proportional to [MATH: \\sigma_i^2,] where [MATH: \\sigma_i] is the [MATH: i]th singular value. Therefore, the fraction of total variance preserved by keeping the first [MATH: k] components is\n\nContent:\n[MATH: \\dfrac{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_k^2}{\\sigma_1^2 + \\sigma_2^2 + \\cdots + \\sigma_p^2} = \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2}.]\n\nContent:\nWhile the amount of variance we need to preserve depends on the application, as a rule of thumb, we will choose the smallest [MATH: k] that preserves at least [MATH: 90\\%] of the variance. That is, we select [MATH: k] such that\n\nContent:\n[MATH: \\dfrac{\\displaystyle\\sum_{i=1}^{k} \\sigma_i^2}{\\displaystyle\\sum_{i=1}^{p} \\sigma_i^2} \\geq 0.90.]\n\n---\n\nItem 7 \u2014 Example: Choosing the Amount of Dimensionality Reduction for a Given Dataset\n\nExample Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \\times 3] matrix\n[MATH: [\u2212 1.21|\u2212 0.45|\u2212 1.17; \u2212 0.52|0.83|1.19; \u2212 0.18|\u2212 1.37|0.41; 1.41|\u2212 0.12|0.48; 0.51|1.11|\u2212 0.91]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U \\Sigma V^T] where:\n\n[MATH: U|= [\u2212 0.75|0.177|0.014|0.637|\u2212 0.004; 0.275|\u2212 0.054|\u2212 0.847|0.36|0.274; \u2212 0.213|\u2212 0.653|0.171|\u2212 0.068|0.703; 0.542|\u2212 0.181|0.459|0.678|\u2212 0.05; 0.15|0.711|0.206|\u2212 0.022|0.655]; \u03a3|= [2.272|0|0; 0|2.031|0; 0|0|1.659; 0|0|0; 0|0|0]; V|= [0.724|0.019|0.69; 0.422|0.779|\u2212 0.464; 0.546|\u2212 0.627|\u2212 0.555]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nFill in the blanks below:\n\nWe should pick components based on\n[MATH: XXXXXXXXXXXXXXXXXXXXX]\n\nIf we wish to preserve [MATH: 75\\%] of the variance, we should reduce the dataset to\n[MATH: XXXXXXXXXXXXXX].\n\nContent:\nEXPLANATION\n\nExplanation:\nIn reducing the dimensionality of the dataset, we aim to preserve as much of the original variance as possible.\n\nWe should pick components based on [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the amount of cumulative variance preserved}}.]\n\nThe variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.\n\nIn our example, the singular values are\n[MATH: \\sigma_1 = 2.272, \\qquad\n\\sigma_2 = 2.031, \\qquad\n\\sigma_3 = 1.659.]\n\nLet us now compute the cumulative variance preserved for different numbers of components.\n\n- The fraction of variance preserved by projecting the data onto the first principal component is\n[MATH: \\dfrac{\\sigma_1^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 42.9\\%.]\n- The fraction of variance preserved by projecting the data onto the first two principal components is\n[MATH: \\dfrac{\\sum\\limits_{i=1}^2 \\sigma_i^2}{\\sum\\limits_{i=1}^3 \\sigma_i^2} =\n\\dfrac{2.272^2 + 2.031^2}{2.272^2 + 2.031^2 + 1.659^2} \\approx 77.1\\%.]\n\nThus, we obtain that\n\n- reducing the dataset to [MATH: 1] dimension would preserve [MATH: 42.9\\%] of the variance, while\n- reducing the dataset to [MATH: 2] dimensions would preserve [MATH: 77.1\\%] of the variance.\n\n[IMG: /graphics/768df8ee7443b3e922bc46dd104181dc]\n\nTherefore, we should reduce the dataset to [MATH: 2] since this is the minimum number of components that preserves at least [MATH: 75\\%] of the variance.\n\n---\n\nItem 8 \u2014 Question 3\n\nPrompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n[MATH: X = [1.40|1.37|\u2212 0.49; 0.59|0.29|\u2212 0.70; \u2212 0.97|\u2212 1.18|\u2212 0.66; \u2212 0.15|0.27|1.67; \u2212 0.86|\u2212 0.75|0.18]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.713|0.123|\u2212 0.47|0.506|0.013; \u2212 0.25|0.321|0.709|0.213|0.535; 0.509|0.422|0.046|0.667|\u2212 0.342; 0.042|\u2212 0.839|0.241|0.487|0.01; 0.41|\u2212 0.027|\u2212 0.465|0.133|0.773]; \u03a3|= [2.809|0|0; 0|2.020|0; 0|0|0.114; 0|0|0; 0|0|0]; V|= [\u2212 0.711|0.051|0.701; \u2212 0.693|\u2212 0.218|\u2212 0.687; 0.118|\u2212 0.975|0.191]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nWe should pick components based on\n[SELECT 1].\n\n---\n\nItem 9 \u2014 Question 4\n\nPrompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 4] features in the form of the [MATH: 5 \u00d7 4] matrix\n[MATH: X = [\u2212 1.11|\u2212 1.51|\u2212 0.99|\u2212 1.19; \u2212 0.58|1.16|1.49|0.35; \u2212 0.29|0.03|0.04|\u2212 0.68; 1.43|0.57|\u2212 0.84|1.42; 0.55|\u2212 0.25|0.3|0.1]]\nwhere the data has been standardized (the mean of each feature is [MATH: 0] and the standard deviation is [MATH: 1]).\nWe are also given the SVD decomposition [MATH: X = U\u03a3V^{T}] where:\n\n[MATH: U|= [\u2212 0.761|0.185|0.263|0.342|0.447; 0.309|\u2212 0.738|0.28|0.285|0.447; \u2212 0.169|\u2212 0.143|\u2212 0.022|\u2212 0.866|0.447; 0.538|0.63|0.338|0.013|0.447; 0.084|0.067|\u2212 0.859|0.225|0.447]; \u03a3|= [3.125|0|0|0; 0|2.362|0|0; 0|0|0.699|0; 0|0|0|0.455; 0|0|0|0]; V|= [0.49|0.509|\u2212 0.625|\u2212 0.333; 0.572|\u2212 0.337|0.479|\u2212 0.573; 0.25|\u2212 0.761|\u2212 0.55|0.237; 0.608|0.22|0.278|0.71]]\n\nWe will use principal component analysis to reduce the dimensionality of the dataset.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components.\n\nWe should pick components based on\n[SELECT 1].\n\n---\n\nItem 10 \u2014 Tutorial: The Feature Extraction Pipeline\n\nContent:\nWe can now summarize the complete pipeline for using PCA to extract features from a dataset.\n\nContent:\n1. Standardize the data. Subtract the mean of each feature and divide by its standard deviation. This ensures that all features contribute equally to the analysis, regardless of their original units or scales.\n2. Compute the SVD. Find the singular value decomposition [MATH: X_{\\text{std}} = U\\Sigma V^T.] The columns of [MATH: V] are the principal components, and the diagonal entries of [MATH: \\Sigma] are the singular values.\n3. Choose the number of components. Using the singular values, compute the cumulative variance for each possible choice of [MATH: k] and select the smallest [MATH: k] that preserves at least [MATH: 90\\%] of the variance.\n4. Project the data. Compute the reduced data matrix [MATH: Z = X_{\\text{std}} V_k,] where [MATH: V_k] consists of the first [MATH: k] columns of [MATH: V.]\n\nContent:\nTo interpret results in terms of the original features or to apply the same transformation to new data, we must keep track of the means and standard deviations used in Step 1.\n\n---\n\nItem 11 \u2014 Example: Using PCA to Dimensionally Reduce an Uncentered Dataset\n\nExample Prompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \\times 3] matrix\n\n[MATH: [3.265|1.400|6.558; 5.373|0.956|1.656; 7.349|0.797|\u2212 0.459; 3.926|0.148|2.597; 2.758|0.803|3.345]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nLet's walk through the process of reducing the dimensionality of the dataset.\n\nContent:\nEXPLANATION\n\nExplanation:\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{the direction in feature space}}] with the [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{most}}] variance.\n\nThe second principal component is the direction [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{orthogonal}}] to the first [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{principal component}}] with the most variance.\n\nIn order to reduce the dimensionality of the dataset, we will project the data onto the first few principal components, picking the number of components based on the amount of cumulative variance preserved.\n\nThe first step is to [MATH: \\bbox[4pt,border: 1px solid lightgray]{\\text{standardize the data}}.]\n\nThe standardized data matrix is\n\n[MATH: [\u2212 0.68|1.29|1.49; 0.45|0.30|\u2212 0.42; 1.52|\u2212 0.05|\u2212 1.25; \u2212 0.33|\u2212 1.50|\u2212 0.06; \u2212 0.96|\u2212 0.04|0.24]]\n\nThe SVD of the standardized data matrix is\n[MATH: X_{std}|= U\u03a3V^{T}, where; U|= [\u2212 0.688|0.370|\u2212 0.421|0.197|0.417; 0.160|0.258|0.226|0.910|\u2212 0.168; 0.642|0.396|\u2212 0.101|\u2212 0.081|0.644; 0.147|\u2212 0.753|\u2212 0.451|0.353|0.289; \u2212 0.260|\u2212 0.271|0.747|0.038|0.547],; \u03a3|= [2.825|0|0; 0|1.939|0; 0|0|0.543; 0|0|0; 0|0|0],; V|= [0.607|0.503|\u2212 0.615; \u2212 0.383|0.864|0.327; \u2212 0.696|\u2212 0.037|\u2212 0.717].]\n\nWe compute the cumulative variance preserved for different numbers of components.\n\nThe variance along a principal component is equal to the corresponding eigenvalue of the covariance matrix, which is proportional to the square of the corresponding singular value of the data matrix.\n\n- The fraction of variance preserved by projecting the data onto the first principal component is\n[MATH: \\dfrac{2.825^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{66.3\\%}.]\n- The fraction of variance preserved by projecting the data onto the first two principal components is\n[MATH: \\dfrac{2.825^2 + 1.939^2}{2.825^2 + 1.939^2 + 0.543^2} \\approx \\bbox[4pt,border: 1px solid lightgray]{97.6\\%}.]\n\nThus, we have that\n\n- reducing the dataset to [MATH: 1] dimension would preserve [MATH: 66.3\\%] of the variance, while\n- reducing the dataset to [MATH: 2] dimensions would preserve [MATH: 97.6\\%] of the variance.\n\nIf we wish to preserve [MATH: 90\\%] of the variance, we should reduce the dataset to [MATH: \\bbox[4pt,border: 1px solid lightgray]{2}] dimensions, since this is the minimum number of components that preserves at least [MATH: 90\\%] of the variance.\n\nWriting [MATH: v_1, v_2, v_3] for the columns of [MATH: V,] the reduced dataset is\n\n[MATH: X_{\\text{red}} = \\bbox[4pt,border: 1px solid lightgray]{X_{\\text{std}} \\cdot [v_1, v_2]},]\nsince we need to project the data onto the first two principal components, which are the first two columns of [MATH: V.]\n\nNote: In order to invert the projection and interpret any further analysis in terms of the original features, we need to know the means and standard deviations of the original dataset [MATH: X.] Additionally, in case we have more data, we can use the means and standard deviations of the original dataset to map the new data into the original feature space.\n\n---\n\nItem 12 \u2014 Question 5\n\nPrompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n\n[MATH: X = [5.711|3.866|\u2212 3.400; 3.580|\u2212 0.216|\u2212 3.789; \u2212 0.507|\u2212 5.693|\u2212 3.727; 1.640|\u2212 0.269|0.705; \u2212 0.225|\u2212 4.111|\u2212 2.130]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nSelect the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.\n\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is\n[SELECT 1]\nwith the\n[SELECT 2]\nvariance.\n\n---\n\nItem 13 \u2014 Question 6\n\nPrompt:\nSuppose we have a dataset consisting of [MATH: 5] datapoints with [MATH: 3] features in the form of the [MATH: 5 \u00d7 3] matrix\n\n[MATH: X = [5.659|2.361|1.245; 2.543|0.071|\u2212 1.476; \u2212 1.128|\u2212 4.766|\u2212 4.235; 5.697|\u2212 3.658|\u2212 1.704; 1.099|\u2212 4.975|\u2212 3.309]]\n\nWe wish to reduce the dimensionality of the dataset while still preserving as much variance as possible.\n\nSelect the correct options in the following reasoning that walks through the process of reducing the dimensionality of the dataset.\n\nWe will use principal component analysis to reduce the dimensionality of the dataset. The first principal component is\n[SELECT 1]\nwith the\n[SELECT 2]\nvariance."
+  }
+}

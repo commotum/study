@@ -1,0 +1,1085 @@
+{
+  "schema_version": 2,
+  "topic_id": "2127",
+  "topic_title": "The Gram-Schmidt Process for Two Vectors",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2127/Source/2127.html",
+  "source_url": "https://mathacademy.com/topics/2127",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20257",
+        "dom_id": "sectionLink-20257",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20257"
+      },
+      {
+        "index": 2,
+        "step_id": "20258",
+        "dom_id": "sectionLink-20258",
+        "name": "",
+        "title": "Finding an Orthogonal Basis For the Span of Two Vectors",
+        "selector": "#sectionLink-20258"
+      },
+      {
+        "index": 3,
+        "step_id": "26458",
+        "dom_id": "sectionLink-26458",
+        "name": "",
+        "title": "Scaling the Vectors After the Gram-Schmidt Process",
+        "selector": "#sectionLink-26458"
+      },
+      {
+        "index": 4,
+        "step_id": "20259",
+        "dom_id": "sectionLink-20259",
+        "name": "",
+        "title": "Finding an Orthogonal Basis For the Column Space of a Matrix",
+        "selector": "#sectionLink-20259"
+      },
+      {
+        "index": 5,
+        "step_id": "20260",
+        "dom_id": "sectionLink-20260",
+        "name": "",
+        "title": "Using the Gram-Schmidt Process to Find an Orthonormal Basis",
+        "selector": "#sectionLink-20260"
+      },
+      {
+        "index": 6,
+        "step_id": "20261",
+        "dom_id": "sectionLink-20261",
+        "name": "",
+        "title": "Finding an Orthonormal Basis of a Vector Space",
+        "selector": "#sectionLink-20261"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2103",
+        "name": "Orthogonal Sets in Euclidean Spaces",
+        "href": "/topics/orthogonal-sets-in-euclidean-spaces-2103"
+      },
+      {
+        "topic_id": "2122",
+        "name": "Projecting Vectors Onto One-Dimensional Subspaces",
+        "href": "/topics/projecting-vectors-onto-one-dimensional-subspaces-2122"
+      },
+      {
+        "topic_id": "2623",
+        "name": "Finding a Basis of the Column Space of a Matrix",
+        "href": "/topics/finding-a-basis-of-the-column-space-of-a-matrix-2623"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20257",
+        "content_id": "3631",
+        "dom_id": "step-20257",
+        "selector": "#step-20257",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The <strong>Gram-Schmidt process</strong> is an algorithm that we can use to construct an <em>orthogonal</em> basis if we are given a non-orthogonal basis to start with.</p>",
+            "readable_text": "The Gram-Schmidt process is an algorithm that we can use to construct an orthogonal basis if we are given a non-orthogonal basis to start with.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, consider the basis <span class=\"math\">[MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}]</span> for the subspace <span class=\"math\">[MATH: V=\\textrm{Span} \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\},]</span> where\n<span class=\"math\">[MATH: [1; \u2212 1]]</span></p>",
+            "readable_text": "For example, consider the basis [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}] for the subspace [MATH: V=\\textrm{Span} \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\},] where\n[MATH: [1; \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can use the above basis to construct an <em>orthogonal</em> basis for the given <span class=\"math\">[MATH: 2]</span>-dimensional subspace. To do this, we use the Gram-Schmidt process, which involves <span class=\"math\">[MATH: 2]</span> steps:</p>",
+            "readable_text": "We can use the above basis to construct an orthogonal basis for the given [MATH: 2]-dimensional subspace. To do this, we use the Gram-Schmidt process, which involves [MATH: 2] steps:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 1:</strong> Set <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_1}=\\mathbf{a}_1.]</span></p></li><li><p><strong>Step 2:</strong> Find a vector <span class=\"math\">[MATH: \\color{blue}\\mathbf{v}_2]</span> in <span class=\"math\">[MATH: V]</span> that&#x27;s orthogonal to <span class=\"math\">[MATH: \\color{blue}\\mathbf{v}_1.]</span> This can be achieved by computing\n<span class=\"math\">[MATH: v_{2}|= a_{2}\u2212 proj_{v_{1}}a_{2}; = a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]</span>\n</p><div class=\"graphic\"><img src=\"/graphics/417c5afa5e0daa667d60c63ed4a75b5d\"></div><p>\nNotice that <span class=\"math\">[MATH: \\color{blue}\\mathbf{v}_2]</span> is written as a linear combination of <span class=\"math\">[MATH: \\mathbf{a}_1(={\\color{blue}\\mathbf{v}_1})]</span> and <span class=\"math\">[MATH: \\mathbf{a}_2.]</span> So this means that <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2} \\in V,]</span> and also <span class=\"math\">[MATH: {\\color{blue}\\mathbf{v}_2} \\perp {\\color{blue}\\mathbf{v}_1}.]</span>\nMoreover, \n<span class=\"math\">[MATH: \\textrm{Span}\\{\\mathbf{a}_1,\\mathbf{a}_2\\} = V = \\textrm{Span}\\{ {\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2} \\}.]</span></p></li></ul>",
+            "readable_text": "- Step 1: Set [MATH: {\\color{blue}\\mathbf{v}_1}=\\mathbf{a}_1.]\n- Step 2: Find a vector [MATH: \\color{blue}\\mathbf{v}_2] in [MATH: V] that's orthogonal to [MATH: \\color{blue}\\mathbf{v}_1.] This can be achieved by computing\n[MATH: v_{2}|= a_{2}\u2212 proj_{v_{1}}a_{2}; = a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\n\n[IMG: /graphics/417c5afa5e0daa667d60c63ed4a75b5d]\n\nNotice that [MATH: \\color{blue}\\mathbf{v}_2] is written as a linear combination of [MATH: \\mathbf{a}_1(={\\color{blue}\\mathbf{v}_1})] and [MATH: \\mathbf{a}_2.] So this means that [MATH: {\\color{blue}\\mathbf{v}_2} \\in V,] and also [MATH: {\\color{blue}\\mathbf{v}_2} \\perp {\\color{blue}\\mathbf{v}_1}.]\nMoreover,\n[MATH: \\textrm{Span}\\{\\mathbf{a}_1,\\mathbf{a}_2\\} = V = \\textrm{Span}\\{ {\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2} \\}.]",
+            "images": [
+              {
+                "src": "/graphics/417c5afa5e0daa667d60c63ed4a75b5d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>After applying the Gram-Schmidt process, we get the set <span class=\"math\">[MATH: \\mathcal{B}=\\{{\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2}\\},]</span> which is an orthogonal basis for <span class=\"math\">[MATH: V.]</span></p>",
+            "readable_text": "After applying the Gram-Schmidt process, we get the set [MATH: \\mathcal{B}=\\{{\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2}\\},] which is an orthogonal basis for [MATH: V.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, in our example, we start by setting <span class=\"math\">[MATH: [1; \u2212 1]]</span> Then, we find the vector <span class=\"math\">[MATH: \\mathbf{v}_2]</span> that&#x27;s orthogonal to <span class=\"math\">[MATH: \\textrm{Span}\\{\\mathbf{v}_1\\}]</span> as follows:</p>",
+            "readable_text": "So, in our example, we start by setting [MATH: [1; \u2212 1]] Then, we find the vector [MATH: \\mathbf{v}_2] that's orthogonal to [MATH: \\textrm{Span}\\{\\mathbf{v}_1\\}] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}; = a_{2} \u2212 (4 \u22c5 1 + 6 \u22c5 (\u2212 1))/(1^{2} + (\u2212 1)^{2})v_{1}; = [4; 6] \u2212 (\u2212 1) \u22c5 [1; \u2212 1]; = [5; 5]]</span></p>",
+            "readable_text": "[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}; = a_{2} \u2212 (4 \u22c5 1 + 6 \u22c5 (\u2212 1))/(1^{2} + (\u2212 1)^{2})v_{1}; = [4; 6] \u2212 (\u2212 1) \u22c5 [1; \u2212 1]; = [5; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, <span class=\"math\">[MATH: [1; \u2212 1]]</span> is an orthogonal basis for <span class=\"math\">[MATH: V.]</span></p>",
+            "readable_text": "Therefore, [MATH: [1; \u2212 1]] is an orthogonal basis for [MATH: V.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/417c5afa5e0daa667d60c63ed4a75b5d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThe Gram-Schmidt process is an algorithm that we can use to construct an orthogonal basis if we are given a non-orthogonal basis to start with.\n\nContent:\nFor example, consider the basis [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}] for the subspace [MATH: V=\\textrm{Span} \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\},] where\n[MATH: [1; \u2212 1]]\n\nContent:\nWe can use the above basis to construct an orthogonal basis for the given [MATH: 2]-dimensional subspace. To do this, we use the Gram-Schmidt process, which involves [MATH: 2] steps:\n\nContent:\n- Step 1: Set [MATH: {\\color{blue}\\mathbf{v}_1}=\\mathbf{a}_1.]\n- Step 2: Find a vector [MATH: \\color{blue}\\mathbf{v}_2] in [MATH: V] that's orthogonal to [MATH: \\color{blue}\\mathbf{v}_1.] This can be achieved by computing\n[MATH: v_{2}|= a_{2}\u2212 proj_{v_{1}}a_{2}; = a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\n\n[IMG: /graphics/417c5afa5e0daa667d60c63ed4a75b5d]\n\nNotice that [MATH: \\color{blue}\\mathbf{v}_2] is written as a linear combination of [MATH: \\mathbf{a}_1(={\\color{blue}\\mathbf{v}_1})] and [MATH: \\mathbf{a}_2.] So this means that [MATH: {\\color{blue}\\mathbf{v}_2} \\in V,] and also [MATH: {\\color{blue}\\mathbf{v}_2} \\perp {\\color{blue}\\mathbf{v}_1}.]\nMoreover,\n[MATH: \\textrm{Span}\\{\\mathbf{a}_1,\\mathbf{a}_2\\} = V = \\textrm{Span}\\{ {\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2} \\}.]\n\nContent:\nAfter applying the Gram-Schmidt process, we get the set [MATH: \\mathcal{B}=\\{{\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2}\\},] which is an orthogonal basis for [MATH: V.]\n\nContent:\nSo, in our example, we start by setting [MATH: [1; \u2212 1]] Then, we find the vector [MATH: \\mathbf{v}_2] that's orthogonal to [MATH: \\textrm{Span}\\{\\mathbf{v}_1\\}] as follows:\n\nContent:\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}; = a_{2} \u2212 (4 \u22c5 1 + 6 \u22c5 (\u2212 1))/(1^{2} + (\u2212 1)^{2})v_{1}; = [4; 6] \u2212 (\u2212 1) \u22c5 [1; \u2212 1]; = [5; 5]]\n\nContent:\nTherefore, [MATH: [1; \u2212 1]] is an orthogonal basis for [MATH: V.]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20258",
+        "content_id": "5581",
+        "dom_id": "step-20258",
+        "selector": "#step-20258",
+        "step_anchor": "step-2",
+        "title": "Finding an Orthogonal Basis For the Span of Two Vectors",
+        "key_prerequisites": [
+          {
+            "topic_id": "2103",
+            "name": "Orthogonal Sets in Euclidean Spaces",
+            "href": "/topics/2103",
+            "type": ""
+          },
+          {
+            "topic_id": "2122",
+            "name": "Projecting Vectors Onto One-Dimensional Subspaces",
+            "href": "/topics/2122",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the subspace <span class=\"math\">[MATH: V]</span> and an orthogonal basis <span class=\"math\">[MATH: \\mathcal B]</span> of <span class=\"math\">[MATH: V,]</span> given below. Given that <span class=\"math\">[MATH: \\mathcal B]</span> is derived from <span class=\"math\">[MATH: V]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: \\dfrac{a}{c}?]</span></p><p><span class=\"math\">[MATH: [1; \u2212 1; 2]]</span></p>",
+            "readable_text": "Consider the subspace [MATH: V] and an orthogonal basis [MATH: \\mathcal B] of [MATH: V,] given below. Given that [MATH: \\mathcal B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: \\dfrac{a}{c}?]\n\n[MATH: [1; \u2212 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, let&#x27;s denote</p><p><span class=\"math\">[MATH: [1; \u2212 1; 2]]</span></p><p>We proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.</p><ul><li><p><strong>Step 1</strong>: We set <span class=\"math\">[MATH: [1; \u2212 1; 2]]</span></p></li><li><p><strong>Step 2</strong>: Next, we find <span class=\"math\">[MATH: \\mathbf{v}_2]</span>, using the formula\n<span class=\"math\">[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]</span>\nApplying the formula for <span class=\"math\">[MATH: \\mathbf v_2]</span> in our case gives\n<span class=\"math\">[MATH: v_{2}|= a_{2} \u2212 ((\u2212 3) \u22c5 1 + 5 \u22c5 (\u2212 1) + 2 \u22c5 2)/(1^{2} + (\u2212 1)^{2} + 2^{2})v_{1}; = [\u2212 3; 5; 2] + (2)/(3)[1; \u2212 1; 2]; = [\u2212 (7)/(3); (13)/(3); (10)/(3)].]</span></p></li></ul><p>Therefore, <span class=\"math\">[MATH: [1; \u2212 1; 2]]</span> is an orthogonal basis for <span class=\"math\">[MATH: V.]</span></p><p>Finally, <span class=\"math\">[MATH: a=-\\dfrac 7 3,]</span> <span class=\"math\">[MATH: c=\\dfrac{10}{3}]</span> and  </p><p><span class=\"math\">[MATH: \\dfrac{a}{c} = \\dfrac{\\left(-\\dfrac{7}{3}\\right)}{\\left(\\dfrac{10}{3}\\right)} = -\\dfrac{7}{10}.]</span></p>",
+            "readable_text": "First, let's denote\n\n[MATH: [1; \u2212 1; 2]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [1; \u2212 1; 2]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: v_{2}|= a_{2} \u2212 ((\u2212 3) \u22c5 1 + 5 \u22c5 (\u2212 1) + 2 \u22c5 2)/(1^{2} + (\u2212 1)^{2} + 2^{2})v_{1}; = [\u2212 3; 5; 2] + (2)/(3)[1; \u2212 1; 2]; = [\u2212 (7)/(3); (13)/(3); (10)/(3)].]\n\nTherefore, [MATH: [1; \u2212 1; 2]] is an orthogonal basis for [MATH: V.]\n\nFinally, [MATH: a=-\\dfrac 7 3,] [MATH: c=\\dfrac{10}{3}] and\n\n[MATH: \\dfrac{a}{c} = \\dfrac{\\left(-\\dfrac{7}{3}\\right)}{\\left(\\dfrac{10}{3}\\right)} = -\\dfrac{7}{10}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: \\mathcal B] of [MATH: V,] given below. Given that [MATH: \\mathcal B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: \\dfrac{a}{c}?]\n\n[MATH: [1; \u2212 1; 2]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's denote\n\n[MATH: [1; \u2212 1; 2]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [1; \u2212 1; 2]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: v_{2}|= a_{2} \u2212 ((\u2212 3) \u22c5 1 + 5 \u22c5 (\u2212 1) + 2 \u22c5 2)/(1^{2} + (\u2212 1)^{2} + 2^{2})v_{1}; = [\u2212 3; 5; 2] + (2)/(3)[1; \u2212 1; 2]; = [\u2212 (7)/(3); (13)/(3); (10)/(3)].]\n\nTherefore, [MATH: [1; \u2212 1; 2]] is an orthogonal basis for [MATH: V.]\n\nFinally, [MATH: a=-\\dfrac 7 3,] [MATH: c=\\dfrac{10}{3}] and\n\n[MATH: \\dfrac{a}{c} = \\dfrac{\\left(-\\dfrac{7}{3}\\right)}{\\left(\\dfrac{10}{3}\\right)} = -\\dfrac{7}{10}.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "40738",
+        "dom_id": "question-40738",
+        "selector": "#question-40738",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: V = Span{[2; \u2212 3; 1], [4; \u2212 2; 0]}, B = {[2; \u2212 3; 1], [a; b; c]}]</span></p><p>Consider the subspace <span class=\"math\">[MATH: V]</span> and an orthogonal basis <span class=\"math\">[MATH: B]</span> of <span class=\"math\">[MATH: V,]</span> given above. Given that <span class=\"math\">[MATH: B]</span> is derived from <span class=\"math\">[MATH: V]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: (a)/(c)?]</span></p>",
+          "readable_text": "[MATH: V = Span{[2; \u2212 3; 1], [4; \u2212 2; 0]}, B = {[2; \u2212 3; 1], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: (a)/(c)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40738-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40738-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40738-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40738-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 1]</span></p>",
+            "readable_text": "[MATH: \u2212 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40738-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 4]</span></p>",
+            "readable_text": "[MATH: \u2212 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: V = Span{[2; \u2212 3; 1], [4; \u2212 2; 0]}, B = {[2; \u2212 3; 1], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: (a)/(c)?]\n\nChoices:\na. [MATH: \u2212 2]\nb. [MATH: 1]\nc. [MATH: 3]\nd. [MATH: \u2212 1]\ne. [MATH: \u2212 4]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "41030",
+        "dom_id": "question-41030",
+        "selector": "#question-41030",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: V = Span{[1; 5; 1], [\u2212 2; \u2212 5; 0]}, B = {[1; 5; 1], [a; b; c]}]</span></p><p>Consider the subspace <span class=\"math\">[MATH: V]</span> and an orthogonal basis <span class=\"math\">[MATH: B]</span> of <span class=\"math\">[MATH: V,]</span> given above. Given that <span class=\"math\">[MATH: B]</span> is derived from <span class=\"math\">[MATH: V]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: (a)/(c)?]</span></p>",
+          "readable_text": "[MATH: V = Span{[1; 5; 1], [\u2212 2; \u2212 5; 0]}, B = {[1; 5; 1], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: (a)/(c)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41030-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41030-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41030-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: \u2212 1]</span></p>",
+            "readable_text": "[MATH: \u2212 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41030-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41030-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: V = Span{[1; 5; 1], [\u2212 2; \u2212 5; 0]}, B = {[1; 5; 1], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: (a)/(c)?]\n\nChoices:\na. [MATH: \u2212 2]\nb. [MATH: 1]\nc. [MATH: \u2212 1]\nd. [MATH: 0]\ne. [MATH: 2]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "26458",
+        "content_id": "4351",
+        "dom_id": "step-26458",
+        "selector": "#step-26458",
+        "step_anchor": "step-5",
+        "title": "Scaling the Vectors After the Gram-Schmidt Process",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Sometimes it&#x27;s helpful to &quot;clean up&quot; the result of a Gram-Schmidt process by scaling the resulting vectors.</p>",
+            "readable_text": "Sometimes it's helpful to \"clean up\" the result of a Gram-Schmidt process by scaling the resulting vectors.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, suppose that the set <span class=\"math\">[MATH: \\mathcal B,]</span> given by</p>",
+            "readable_text": "For example, suppose that the set [MATH: \\mathcal B,] given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; \u2212 1; 2]]</span></p>",
+            "readable_text": "[MATH: [1; \u2212 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is an orthogonal basis for <span class=\"math\">[MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}.]</span></p>",
+            "readable_text": "is an orthogonal basis for [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the vector <span class=\"math\">[MATH: \\mathbf{v}_2]</span> lies in <span class=\"math\">[MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}]</span> and <span class=\"math\">[MATH: \\mathbf{v}_1 \\perp \\mathbf{v}_2,]</span> the vector <span class=\"math\">[MATH: 3\\mathbf{v}_2]</span> also lies in <span class=\"math\">[MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}]</span> and <span class=\"math\">[MATH: \\mathbf{v}_1 \\perp 3\\mathbf{v}_2.]</span> Therefore, taking </p>",
+            "readable_text": "Since the vector [MATH: \\mathbf{v}_2] lies in [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}] and [MATH: \\mathbf{v}_1 \\perp \\mathbf{v}_2,] the vector [MATH: 3\\mathbf{v}_2] also lies in [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}] and [MATH: \\mathbf{v}_1 \\perp 3\\mathbf{v}_2.] Therefore, taking",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 7; 13; 10]]</span></p>",
+            "readable_text": "[MATH: [\u2212 7; 13; 10]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>instead of <span class=\"math\">[MATH: \\mathbf{v}_2,]</span> we again obtain an orthogonal basis for <span class=\"math\">[MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}\\mathbin{:}]</span></p>",
+            "readable_text": "instead of [MATH: \\mathbf{v}_2,] we again obtain an orthogonal basis for [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; \u2212 1; 2]]</span></p>",
+            "readable_text": "[MATH: [1; \u2212 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>But this time, the second vector in the basis looks slightly nicer and is probably easier to work with.</p>",
+            "readable_text": "But this time, the second vector in the basis looks slightly nicer and is probably easier to work with.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSometimes it's helpful to \"clean up\" the result of a Gram-Schmidt process by scaling the resulting vectors.\n\nContent:\nFor example, suppose that the set [MATH: \\mathcal B,] given by\n\nContent:\n[MATH: [1; \u2212 1; 2]]\n\nContent:\nis an orthogonal basis for [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}.]\n\nContent:\nSince the vector [MATH: \\mathbf{v}_2] lies in [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}] and [MATH: \\mathbf{v}_1 \\perp \\mathbf{v}_2,] the vector [MATH: 3\\mathbf{v}_2] also lies in [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}] and [MATH: \\mathbf{v}_1 \\perp 3\\mathbf{v}_2.] Therefore, taking\n\nContent:\n[MATH: [\u2212 7; 13; 10]]\n\nContent:\ninstead of [MATH: \\mathbf{v}_2,] we again obtain an orthogonal basis for [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}\\mathbin{:}]\n\nContent:\n[MATH: [1; \u2212 1; 2]]\n\nContent:\nBut this time, the second vector in the basis looks slightly nicer and is probably easier to work with."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20259",
+        "content_id": "5582",
+        "dom_id": "step-20259",
+        "selector": "#step-20259",
+        "step_anchor": "step-6",
+        "title": "Finding an Orthogonal Basis For the Column Space of a Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "1850",
+            "name": "The Column Space of a Matrix",
+            "href": "/topics/1850",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the subspace <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> and an orthogonal basis <span class=\"math\">[MATH: \\mathcal B]</span> of <span class=\"math\">[MATH: \\textrm{Col}(A),]</span> where <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: \\mathcal B]</span> are given below. Given that <span class=\"math\">[MATH: \\mathcal B]</span> is derived from <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: \\dfrac{c}{a}?]</span></p><p><span class=\"math\">[MATH: [1|\u2212 5; \u2212 2|\u2212 1; 2|\u2212 3]]</span></p>",
+            "readable_text": "Consider the subspace [MATH: \\textrm{Col}(A)] and an orthogonal basis [MATH: \\mathcal B] of [MATH: \\textrm{Col}(A),] where [MATH: A] and [MATH: \\mathcal B] are given below. Given that [MATH: \\mathcal B] is derived from [MATH: \\textrm{Col}(A)] using the Gram-Schmidt process, what is the value of [MATH: \\dfrac{c}{a}?]\n\n[MATH: [1|\u2212 5; \u2212 2|\u2212 1; 2|\u2212 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that <span class=\"math\">[MATH: \\textrm{Col}(A)]</span> is the span of the columns of <span class=\"math\">[MATH: A.]</span> </p><p>First, let&#x27;s denote</p><p><span class=\"math\">[MATH: [1; \u2212 2; 2]]</span></p><p>We proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.</p><ul><li><p><strong>Step 1</strong>: We set <span class=\"math\">[MATH: [1; \u2212 2; 2]]</span></p></li><li><p><strong>Step 2</strong>: Next, we find <span class=\"math\">[MATH: \\mathbf{v}_2]</span>, by using the formula\n<span class=\"math\">[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]</span>\nApplying the formula for <span class=\"math\">[MATH: \\mathbf v_2]</span> in our case gives\n<span class=\"math\">[MATH: v_{2}|= a_{2} \u2212 ((\u2212 5) \u22c5 1 + (\u2212 1) \u22c5 (\u2212 2) + (\u2212 3) \u22c5 2)/(1^{2} + (\u2212 2)^{2} + 2^{2})v_{1}; = [\u2212 5; \u2212 1; \u2212 3] + [1; \u2212 2; 2]; = [\u2212 4; \u2212 3; \u2212 1].]</span></p></li></ul><p>Therefore, <span class=\"math\">[MATH: [1; \u2212 2; 2]]</span> is an orthogonal basis for <span class=\"math\">[MATH: \\textrm{Col}(A).]</span></p><p>Finally, <span class=\"math\">[MATH: a=-4,]</span> <span class=\"math\">[MATH: c=-1,]</span> and  </p><p><span class=\"math\">[MATH: \\dfrac{c}{a} = \\dfrac{-1}{-4} = \\dfrac{1}{4}.]</span></p>",
+            "readable_text": "Recall that [MATH: \\textrm{Col}(A)] is the span of the columns of [MATH: A.]\n\nFirst, let's denote\n\n[MATH: [1; \u2212 2; 2]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [1; \u2212 2; 2]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], by using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: v_{2}|= a_{2} \u2212 ((\u2212 5) \u22c5 1 + (\u2212 1) \u22c5 (\u2212 2) + (\u2212 3) \u22c5 2)/(1^{2} + (\u2212 2)^{2} + 2^{2})v_{1}; = [\u2212 5; \u2212 1; \u2212 3] + [1; \u2212 2; 2]; = [\u2212 4; \u2212 3; \u2212 1].]\n\nTherefore, [MATH: [1; \u2212 2; 2]] is an orthogonal basis for [MATH: \\textrm{Col}(A).]\n\nFinally, [MATH: a=-4,] [MATH: c=-1,] and\n\n[MATH: \\dfrac{c}{a} = \\dfrac{-1}{-4} = \\dfrac{1}{4}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the subspace [MATH: \\textrm{Col}(A)] and an orthogonal basis [MATH: \\mathcal B] of [MATH: \\textrm{Col}(A),] where [MATH: A] and [MATH: \\mathcal B] are given below. Given that [MATH: \\mathcal B] is derived from [MATH: \\textrm{Col}(A)] using the Gram-Schmidt process, what is the value of [MATH: \\dfrac{c}{a}?]\n\n[MATH: [1|\u2212 5; \u2212 2|\u2212 1; 2|\u2212 3]]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that [MATH: \\textrm{Col}(A)] is the span of the columns of [MATH: A.]\n\nFirst, let's denote\n\n[MATH: [1; \u2212 2; 2]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [1; \u2212 2; 2]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], by using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: v_{2}|= a_{2} \u2212 ((\u2212 5) \u22c5 1 + (\u2212 1) \u22c5 (\u2212 2) + (\u2212 3) \u22c5 2)/(1^{2} + (\u2212 2)^{2} + 2^{2})v_{1}; = [\u2212 5; \u2212 1; \u2212 3] + [1; \u2212 2; 2]; = [\u2212 4; \u2212 3; \u2212 1].]\n\nTherefore, [MATH: [1; \u2212 2; 2]] is an orthogonal basis for [MATH: \\textrm{Col}(A).]\n\nFinally, [MATH: a=-4,] [MATH: c=-1,] and\n\n[MATH: \\dfrac{c}{a} = \\dfrac{-1}{-4} = \\dfrac{1}{4}.]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "40741",
+        "dom_id": "question-40741",
+        "selector": "#question-40741",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [3|2; \u2212 1|1; 0|2], B = {[3; \u2212 1; 0], [a; b; c]}]</span></p><p>Consider the subspace <span class=\"math\">[MATH: Col(A)]</span> and an orthogonal basis <span class=\"math\">[MATH: B]</span> of <span class=\"math\">[MATH: Col(A),]</span> where <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: B]</span> are given above. Given that <span class=\"math\">[MATH: B]</span> is derived from <span class=\"math\">[MATH: Col(A)]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: (b)/(a)?]</span></p>",
+          "readable_text": "[MATH: A = [3|2; \u2212 1|1; 0|2], B = {[3; \u2212 1; 0], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthogonal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: (b)/(a)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40741-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 4]</span></p>",
+            "readable_text": "[MATH: 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40741-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 5]</span></p>",
+            "readable_text": "[MATH: \u2212 5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40741-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40741-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40741-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [3|2; \u2212 1|1; 0|2], B = {[3; \u2212 1; 0], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthogonal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: (b)/(a)?]\n\nChoices:\na. [MATH: 4]\nb. [MATH: \u2212 5]\nc. [MATH: 1]\nd. [MATH: 3]\ne. [MATH: \u2212 2]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "41035",
+        "dom_id": "question-41035",
+        "selector": "#question-41035",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [4|5; 4|5; 2|\u2212 2], B = {[4; 4; 2], [a; b; c]}]</span></p><p>Consider the subspace <span class=\"math\">[MATH: Col(A)]</span> and an orthogonal basis <span class=\"math\">[MATH: B]</span> of <span class=\"math\">[MATH: Col(A),]</span> where <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: B]</span> are given above. Given that <span class=\"math\">[MATH: B]</span> is derived from <span class=\"math\">[MATH: Col(A)]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: (c)/(a)?]</span></p>",
+          "readable_text": "[MATH: A = [4|5; 4|5; 2|\u2212 2], B = {[4; 4; 2], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthogonal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: (c)/(a)?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-41035-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2]</span></p>",
+            "readable_text": "[MATH: 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-41035-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-41035-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 4]</span></p>",
+            "readable_text": "[MATH: \u2212 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-41035-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 2]</span></p>",
+            "readable_text": "[MATH: \u2212 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-41035-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3]</span></p>",
+            "readable_text": "[MATH: 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [4|5; 4|5; 2|\u2212 2], B = {[4; 4; 2], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthogonal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: (c)/(a)?]\n\nChoices:\na. [MATH: 2]\nb. [MATH: 1]\nc. [MATH: \u2212 4]\nd. [MATH: \u2212 2]\ne. [MATH: 3]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20260",
+        "content_id": "3632",
+        "dom_id": "step-20260",
+        "selector": "#step-20260",
+        "step_anchor": "step-9",
+        "title": "Using the Gram-Schmidt Process to Find an Orthonormal Basis",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Given a basis <span class=\"math\">[MATH: \\{\\mathbf{a}_1, \\mathbf{a}_2\\}]</span> for a subspace <span class=\"math\">[MATH: V,]</span> we can use the Gram-Schmidt process to find an <em>orthonormal</em> basis of the subspace.</p>",
+            "readable_text": "Given a basis [MATH: \\{\\mathbf{a}_1, \\mathbf{a}_2\\}] for a subspace [MATH: V,] we can use the Gram-Schmidt process to find an orthonormal basis of the subspace.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To do this, we simply execute the Gram-Schmidt process as before to obtain an orthogonal basis <span class=\"math\">[MATH: \\{\\mathbf{v}_1, \\mathbf{v}_2\\},]</span> and then we normalize each vector in this basis to get the orthonormal basis <span class=\"math\">[MATH: \\{\\mathbf{u}_1, \\mathbf{u}_2\\},]</span> where\n<span class=\"math\">[MATH: \\mathbf{u}_1 = \\dfrac{\\mathbf{v}_1}{\\Vert \\mathbf{v}_1 \\Vert},\n\\quad\n\\mathbf{u}_2 = \\dfrac{\\mathbf{v}_2}{\\Vert \\mathbf{v}_2 \\Vert}.]</span></p>",
+            "readable_text": "To do this, we simply execute the Gram-Schmidt process as before to obtain an orthogonal basis [MATH: \\{\\mathbf{v}_1, \\mathbf{v}_2\\},] and then we normalize each vector in this basis to get the orthonormal basis [MATH: \\{\\mathbf{u}_1, \\mathbf{u}_2\\},] where\n[MATH: \\mathbf{u}_1 = \\dfrac{\\mathbf{v}_1}{\\Vert \\mathbf{v}_1 \\Vert},\n\\quad\n\\mathbf{u}_2 = \\dfrac{\\mathbf{v}_2}{\\Vert \\mathbf{v}_2 \\Vert}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nGiven a basis [MATH: \\{\\mathbf{a}_1, \\mathbf{a}_2\\}] for a subspace [MATH: V,] we can use the Gram-Schmidt process to find an orthonormal basis of the subspace.\n\nContent:\nTo do this, we simply execute the Gram-Schmidt process as before to obtain an orthogonal basis [MATH: \\{\\mathbf{v}_1, \\mathbf{v}_2\\},] and then we normalize each vector in this basis to get the orthonormal basis [MATH: \\{\\mathbf{u}_1, \\mathbf{u}_2\\},] where\n[MATH: \\mathbf{u}_1 = \\dfrac{\\mathbf{v}_1}{\\Vert \\mathbf{v}_1 \\Vert},\n\\quad\n\\mathbf{u}_2 = \\dfrac{\\mathbf{v}_2}{\\Vert \\mathbf{v}_2 \\Vert}.]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20261",
+        "content_id": "5583",
+        "dom_id": "step-20261",
+        "selector": "#step-20261",
+        "step_anchor": "step-10",
+        "title": "Finding an Orthonormal Basis of a Vector Space",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the subspace <span class=\"math\">[MATH: V]</span> and an <strong>orthonormal</strong> basis <span class=\"math\">[MATH: \\mathcal B]</span> of <span class=\"math\">[MATH: V,]</span> given below. Given that <span class=\"math\">[MATH: \\mathcal B]</span> is derived from <span class=\"math\">[MATH: V]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: |a|+|b|+|c|?]</span>\n&#x27;\n<span class=\"math\">[MATH: [2; 2; \u2212 1]]</span></p>",
+            "readable_text": "Consider the subspace [MATH: V] and an orthonormal basis [MATH: \\mathcal B] of [MATH: V,] given below. Given that [MATH: \\mathcal B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n'\n[MATH: [2; 2; \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, let&#x27;s denote</p><p><span class=\"math\">[MATH: [2; 2; \u2212 1]]</span></p><p>We proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.</p><ul><li><p><strong>Step 1</strong>: We set <span class=\"math\">[MATH: [2; 2; \u2212 1]]</span></p></li><li><p><strong>Step 2</strong>: Next, we find <span class=\"math\">[MATH: \\mathbf{v}_2]</span>, by using the formula\n<span class=\"math\">[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]</span>\nApplying the formula for <span class=\"math\">[MATH: \\mathbf v_2]</span> in our case gives\n<span class=\"math\">[MATH: = a_{2} \u2212 (6 \u22c5 2 + 0 \u22c5 2 + 3 \u22c5 (\u2212 1))/(2^{2} + 2^{2} + (\u2212 1)^{2})v_{1}; = [6; 0; 3] \u2212 [2; 2; \u2212 1]; = [4; \u2212 2; 4].]</span></p></li></ul><p>Now, we normalize each vector to get an orthonormal basis:</p><ul><li><p><span class=\"math\">[MATH: [2; 2; \u2212 1]]</span></p></li><li><p><span class=\"math\">[MATH: [4; \u2212 2; 4]]</span></p></li></ul><p>Therefore, <span class=\"math\">[MATH: [(2)/(3); (2)/(3); \u2212 (1)/(3)]]</span> is an orthonormal basis for <span class=\"math\">[MATH: V.]</span></p><p>Finally, <span class=\"math\">[MATH: a=\\dfrac{2}{3},]</span> <span class=\"math\">[MATH: b=-\\dfrac1  3,]</span> <span class=\"math\">[MATH: c=\\dfrac{2}{3},]</span> and  </p><p><span class=\"math\">[MATH: |a|+|b|+|c| = \\left| \\dfrac{2}{3} \\right| + \\left|-\\dfrac{1}{3}\\right| + \\left| \\dfrac{2}{3} \\right| = \\dfrac 5 3.]</span></p>",
+            "readable_text": "First, let's denote\n\n[MATH: [2; 2; \u2212 1]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [2; 2; \u2212 1]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], by using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: = a_{2} \u2212 (6 \u22c5 2 + 0 \u22c5 2 + 3 \u22c5 (\u2212 1))/(2^{2} + 2^{2} + (\u2212 1)^{2})v_{1}; = [6; 0; 3] \u2212 [2; 2; \u2212 1]; = [4; \u2212 2; 4].]\n\nNow, we normalize each vector to get an orthonormal basis:\n\n- [MATH: [2; 2; \u2212 1]]\n- [MATH: [4; \u2212 2; 4]]\n\nTherefore, [MATH: [(2)/(3); (2)/(3); \u2212 (1)/(3)]] is an orthonormal basis for [MATH: V.]\n\nFinally, [MATH: a=\\dfrac{2}{3},] [MATH: b=-\\dfrac1 3,] [MATH: c=\\dfrac{2}{3},] and\n\n[MATH: |a|+|b|+|c| = \\left| \\dfrac{2}{3} \\right| + \\left|-\\dfrac{1}{3}\\right| + \\left| \\dfrac{2}{3} \\right| = \\dfrac 5 3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the subspace [MATH: V] and an orthonormal basis [MATH: \\mathcal B] of [MATH: V,] given below. Given that [MATH: \\mathcal B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n'\n[MATH: [2; 2; \u2212 1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's denote\n\n[MATH: [2; 2; \u2212 1]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [2; 2; \u2212 1]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], by using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: = a_{2} \u2212 (6 \u22c5 2 + 0 \u22c5 2 + 3 \u22c5 (\u2212 1))/(2^{2} + 2^{2} + (\u2212 1)^{2})v_{1}; = [6; 0; 3] \u2212 [2; 2; \u2212 1]; = [4; \u2212 2; 4].]\n\nNow, we normalize each vector to get an orthonormal basis:\n\n- [MATH: [2; 2; \u2212 1]]\n- [MATH: [4; \u2212 2; 4]]\n\nTherefore, [MATH: [(2)/(3); (2)/(3); \u2212 (1)/(3)]] is an orthonormal basis for [MATH: V.]\n\nFinally, [MATH: a=\\dfrac{2}{3},] [MATH: b=-\\dfrac1 3,] [MATH: c=\\dfrac{2}{3},] and\n\n[MATH: |a|+|b|+|c| = \\left| \\dfrac{2}{3} \\right| + \\left|-\\dfrac{1}{3}\\right| + \\left| \\dfrac{2}{3} \\right| = \\dfrac 5 3.]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "40739",
+        "dom_id": "question-40739",
+        "selector": "#question-40739",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: V = Span{[1; 1; \u2212 1], [1; 2; \u2212 3]}, B = {[(sqrt(3))/(3); (sqrt(3))/(3); \u2212 (sqrt(3))/(3)], [a; b; c]}]</span></p><p>Consider the subspace <span class=\"math\">[MATH: V]</span> and an <strong>orthonormal</strong> basis <span class=\"math\">[MATH: B]</span> of <span class=\"math\">[MATH: V,]</span> given above. Given that <span class=\"math\">[MATH: B]</span> is derived from <span class=\"math\">[MATH: V]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: |a|+|b|+|c|?]</span></p>",
+          "readable_text": "[MATH: V = Span{[1; 1; \u2212 1], [1; 2; \u2212 3]}, B = {[(sqrt(3))/(3); (sqrt(3))/(3); \u2212 (sqrt(3))/(3)], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthonormal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40739-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 3sqrt(2)]</span></p>",
+            "readable_text": "[MATH: 3sqrt(2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40739-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2sqrt(2)]</span></p>",
+            "readable_text": "[MATH: 2sqrt(2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40739-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 4]</span></p>",
+            "readable_text": "[MATH: 4]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40739-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 6]</span></p>",
+            "readable_text": "[MATH: 6]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40739-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: sqrt(2)]</span></p>",
+            "readable_text": "[MATH: sqrt(2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: V = Span{[1; 1; \u2212 1], [1; 2; \u2212 3]}, B = {[(sqrt(3))/(3); (sqrt(3))/(3); \u2212 (sqrt(3))/(3)], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthonormal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n\nChoices:\na. [MATH: 3sqrt(2)]\nb. [MATH: 2sqrt(2)]\nc. [MATH: 4]\nd. [MATH: 6]\ne. [MATH: sqrt(2)]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "40740",
+        "dom_id": "question-40740",
+        "selector": "#question-40740",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: A = [\u2212 1|3; \u2212 2|0; 2|\u2212 3], B = {u_{1}, u_{2}} = {[\u2212 (1)/(3); \u2212 (2)/(3); (2)/(3)], [a; b; c]}]</span></p><p>Consider the subspace <span class=\"math\">[MATH: Col(A)]</span> and an <strong>orthonormal</strong> basis <span class=\"math\">[MATH: B]</span> of <span class=\"math\">[MATH: Col(A),]</span> where <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: B]</span> are given above. Given that <span class=\"math\">[MATH: B]</span> is derived from <span class=\"math\">[MATH: Col(A)]</span> using the Gram-Schmidt process, what is the value of <span class=\"math\">[MATH: |a|+|b|+|c|?]</span></p>",
+          "readable_text": "[MATH: A = [\u2212 1|3; \u2212 2|0; 2|\u2212 3], B = {u_{1}, u_{2}} = {[\u2212 (1)/(3); \u2212 (2)/(3); (2)/(3)], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthonormal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-40740-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)]</span> </p>",
+            "readable_text": "[MATH: (1)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-40740-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (8)/(3)]</span> </p>",
+            "readable_text": "[MATH: (8)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-40740-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (2)/(3)]</span> </p>",
+            "readable_text": "[MATH: (2)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-40740-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (7)/(3)]</span> </p>",
+            "readable_text": "[MATH: (7)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-40740-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (5)/(3)]</span> </p>",
+            "readable_text": "[MATH: (5)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: A = [\u2212 1|3; \u2212 2|0; 2|\u2212 3], B = {u_{1}, u_{2}} = {[\u2212 (1)/(3); \u2212 (2)/(3); (2)/(3)], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthonormal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n\nChoices:\na. [MATH: (1)/(3)]\nb. [MATH: (8)/(3)]\nc. [MATH: (2)/(3)]\nd. [MATH: (7)/(3)]\ne. [MATH: (5)/(3)]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nThe Gram-Schmidt process is an algorithm that we can use to construct an orthogonal basis if we are given a non-orthogonal basis to start with.\n\nContent:\nFor example, consider the basis [MATH: \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\}] for the subspace [MATH: V=\\textrm{Span} \\{ \\mathbf{a}_1, \\mathbf{a}_2 \\},] where\n[MATH: [1; \u2212 1]]\n\nContent:\nWe can use the above basis to construct an orthogonal basis for the given [MATH: 2]-dimensional subspace. To do this, we use the Gram-Schmidt process, which involves [MATH: 2] steps:\n\nContent:\n- Step 1: Set [MATH: {\\color{blue}\\mathbf{v}_1}=\\mathbf{a}_1.]\n- Step 2: Find a vector [MATH: \\color{blue}\\mathbf{v}_2] in [MATH: V] that's orthogonal to [MATH: \\color{blue}\\mathbf{v}_1.] This can be achieved by computing\n[MATH: v_{2}|= a_{2}\u2212 proj_{v_{1}}a_{2}; = a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\n\n[IMG: /graphics/417c5afa5e0daa667d60c63ed4a75b5d]\n\nNotice that [MATH: \\color{blue}\\mathbf{v}_2] is written as a linear combination of [MATH: \\mathbf{a}_1(={\\color{blue}\\mathbf{v}_1})] and [MATH: \\mathbf{a}_2.] So this means that [MATH: {\\color{blue}\\mathbf{v}_2} \\in V,] and also [MATH: {\\color{blue}\\mathbf{v}_2} \\perp {\\color{blue}\\mathbf{v}_1}.]\nMoreover,\n[MATH: \\textrm{Span}\\{\\mathbf{a}_1,\\mathbf{a}_2\\} = V = \\textrm{Span}\\{ {\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2} \\}.]\n\nContent:\nAfter applying the Gram-Schmidt process, we get the set [MATH: \\mathcal{B}=\\{{\\color{blue}\\mathbf{v}_1}, {\\color{blue}\\mathbf{v}_2}\\},] which is an orthogonal basis for [MATH: V.]\n\nContent:\nSo, in our example, we start by setting [MATH: [1; \u2212 1]] Then, we find the vector [MATH: \\mathbf{v}_2] that's orthogonal to [MATH: \\textrm{Span}\\{\\mathbf{v}_1\\}] as follows:\n\nContent:\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}; = a_{2} \u2212 (4 \u22c5 1 + 6 \u22c5 (\u2212 1))/(1^{2} + (\u2212 1)^{2})v_{1}; = [4; 6] \u2212 (\u2212 1) \u22c5 [1; \u2212 1]; = [5; 5]]\n\nContent:\nTherefore, [MATH: [1; \u2212 1]] is an orthogonal basis for [MATH: V.]\n\n---\n\nItem 2 \u2014 Example: Finding an Orthogonal Basis For the Span of Two Vectors\n\nExample Prompt:\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: \\mathcal B] of [MATH: V,] given below. Given that [MATH: \\mathcal B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: \\dfrac{a}{c}?]\n\n[MATH: [1; \u2212 1; 2]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's denote\n\n[MATH: [1; \u2212 1; 2]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [1; \u2212 1; 2]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: v_{2}|= a_{2} \u2212 ((\u2212 3) \u22c5 1 + 5 \u22c5 (\u2212 1) + 2 \u22c5 2)/(1^{2} + (\u2212 1)^{2} + 2^{2})v_{1}; = [\u2212 3; 5; 2] + (2)/(3)[1; \u2212 1; 2]; = [\u2212 (7)/(3); (13)/(3); (10)/(3)].]\n\nTherefore, [MATH: [1; \u2212 1; 2]] is an orthogonal basis for [MATH: V.]\n\nFinally, [MATH: a=-\\dfrac 7 3,] [MATH: c=\\dfrac{10}{3}] and\n\n[MATH: \\dfrac{a}{c} = \\dfrac{\\left(-\\dfrac{7}{3}\\right)}{\\left(\\dfrac{10}{3}\\right)} = -\\dfrac{7}{10}.]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n[MATH: V = Span{[2; \u2212 3; 1], [4; \u2212 2; 0]}, B = {[2; \u2212 3; 1], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: (a)/(c)?]\n\nChoices:\na. [MATH: \u2212 2]\nb. [MATH: 1]\nc. [MATH: 3]\nd. [MATH: \u2212 1]\ne. [MATH: \u2212 4]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n[MATH: V = Span{[1; 5; 1], [\u2212 2; \u2212 5; 0]}, B = {[1; 5; 1], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthogonal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: (a)/(c)?]\n\nChoices:\na. [MATH: \u2212 2]\nb. [MATH: 1]\nc. [MATH: \u2212 1]\nd. [MATH: 0]\ne. [MATH: 2]\n\n---\n\nItem 5 \u2014 Tutorial: Scaling the Vectors After the Gram-Schmidt Process\n\nContent:\nSometimes it's helpful to \"clean up\" the result of a Gram-Schmidt process by scaling the resulting vectors.\n\nContent:\nFor example, suppose that the set [MATH: \\mathcal B,] given by\n\nContent:\n[MATH: [1; \u2212 1; 2]]\n\nContent:\nis an orthogonal basis for [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}.]\n\nContent:\nSince the vector [MATH: \\mathbf{v}_2] lies in [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}] and [MATH: \\mathbf{v}_1 \\perp \\mathbf{v}_2,] the vector [MATH: 3\\mathbf{v}_2] also lies in [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}] and [MATH: \\mathbf{v}_1 \\perp 3\\mathbf{v}_2.] Therefore, taking\n\nContent:\n[MATH: [\u2212 7; 13; 10]]\n\nContent:\ninstead of [MATH: \\mathbf{v}_2,] we again obtain an orthogonal basis for [MATH: \\textrm{Span} \\{ \\mathbf{v}_1, \\mathbf{v}_2 \\}\\mathbin{:}]\n\nContent:\n[MATH: [1; \u2212 1; 2]]\n\nContent:\nBut this time, the second vector in the basis looks slightly nicer and is probably easier to work with.\n\n---\n\nItem 6 \u2014 Example: Finding an Orthogonal Basis For the Column Space of a Matrix\n\nExample Prompt:\nConsider the subspace [MATH: \\textrm{Col}(A)] and an orthogonal basis [MATH: \\mathcal B] of [MATH: \\textrm{Col}(A),] where [MATH: A] and [MATH: \\mathcal B] are given below. Given that [MATH: \\mathcal B] is derived from [MATH: \\textrm{Col}(A)] using the Gram-Schmidt process, what is the value of [MATH: \\dfrac{c}{a}?]\n\n[MATH: [1|\u2212 5; \u2212 2|\u2212 1; 2|\u2212 3]]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that [MATH: \\textrm{Col}(A)] is the span of the columns of [MATH: A.]\n\nFirst, let's denote\n\n[MATH: [1; \u2212 2; 2]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [1; \u2212 2; 2]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], by using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: v_{2}|= a_{2} \u2212 ((\u2212 5) \u22c5 1 + (\u2212 1) \u22c5 (\u2212 2) + (\u2212 3) \u22c5 2)/(1^{2} + (\u2212 2)^{2} + 2^{2})v_{1}; = [\u2212 5; \u2212 1; \u2212 3] + [1; \u2212 2; 2]; = [\u2212 4; \u2212 3; \u2212 1].]\n\nTherefore, [MATH: [1; \u2212 2; 2]] is an orthogonal basis for [MATH: \\textrm{Col}(A).]\n\nFinally, [MATH: a=-4,] [MATH: c=-1,] and\n\n[MATH: \\dfrac{c}{a} = \\dfrac{-1}{-4} = \\dfrac{1}{4}.]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\n[MATH: A = [3|2; \u2212 1|1; 0|2], B = {[3; \u2212 1; 0], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthogonal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: (b)/(a)?]\n\nChoices:\na. [MATH: 4]\nb. [MATH: \u2212 5]\nc. [MATH: 1]\nd. [MATH: 3]\ne. [MATH: \u2212 2]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\n[MATH: A = [4|5; 4|5; 2|\u2212 2], B = {[4; 4; 2], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthogonal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: (c)/(a)?]\n\nChoices:\na. [MATH: 2]\nb. [MATH: 1]\nc. [MATH: \u2212 4]\nd. [MATH: \u2212 2]\ne. [MATH: 3]\n\n---\n\nItem 9 \u2014 Tutorial: Using the Gram-Schmidt Process to Find an Orthonormal Basis\n\nContent:\nGiven a basis [MATH: \\{\\mathbf{a}_1, \\mathbf{a}_2\\}] for a subspace [MATH: V,] we can use the Gram-Schmidt process to find an orthonormal basis of the subspace.\n\nContent:\nTo do this, we simply execute the Gram-Schmidt process as before to obtain an orthogonal basis [MATH: \\{\\mathbf{v}_1, \\mathbf{v}_2\\},] and then we normalize each vector in this basis to get the orthonormal basis [MATH: \\{\\mathbf{u}_1, \\mathbf{u}_2\\},] where\n[MATH: \\mathbf{u}_1 = \\dfrac{\\mathbf{v}_1}{\\Vert \\mathbf{v}_1 \\Vert},\n\\quad\n\\mathbf{u}_2 = \\dfrac{\\mathbf{v}_2}{\\Vert \\mathbf{v}_2 \\Vert}.]\n\n---\n\nItem 10 \u2014 Example: Finding an Orthonormal Basis of a Vector Space\n\nExample Prompt:\nConsider the subspace [MATH: V] and an orthonormal basis [MATH: \\mathcal B] of [MATH: V,] given below. Given that [MATH: \\mathcal B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n'\n[MATH: [2; 2; \u2212 1]]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's denote\n\n[MATH: [2; 2; \u2212 1]]\n\nWe proceed to find an orthogonal basis using the Gram-Schmidt process, as follows.\n\n- Step 1: We set [MATH: [2; 2; \u2212 1]]\n- Step 2: Next, we find [MATH: \\mathbf{v}_2], by using the formula\n[MATH: v_{2}|= a_{2} \u2212 (a_{2} \u22c5 v_{1})/(v_{1} \u22c5 v_{1})v_{1}.]\nApplying the formula for [MATH: \\mathbf v_2] in our case gives\n[MATH: = a_{2} \u2212 (6 \u22c5 2 + 0 \u22c5 2 + 3 \u22c5 (\u2212 1))/(2^{2} + 2^{2} + (\u2212 1)^{2})v_{1}; = [6; 0; 3] \u2212 [2; 2; \u2212 1]; = [4; \u2212 2; 4].]\n\nNow, we normalize each vector to get an orthonormal basis:\n\n- [MATH: [2; 2; \u2212 1]]\n- [MATH: [4; \u2212 2; 4]]\n\nTherefore, [MATH: [(2)/(3); (2)/(3); \u2212 (1)/(3)]] is an orthonormal basis for [MATH: V.]\n\nFinally, [MATH: a=\\dfrac{2}{3},] [MATH: b=-\\dfrac1 3,] [MATH: c=\\dfrac{2}{3},] and\n\n[MATH: |a|+|b|+|c| = \\left| \\dfrac{2}{3} \\right| + \\left|-\\dfrac{1}{3}\\right| + \\left| \\dfrac{2}{3} \\right| = \\dfrac 5 3.]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\n[MATH: V = Span{[1; 1; \u2212 1], [1; 2; \u2212 3]}, B = {[(sqrt(3))/(3); (sqrt(3))/(3); \u2212 (sqrt(3))/(3)], [a; b; c]}]\n\nConsider the subspace [MATH: V] and an orthonormal basis [MATH: B] of [MATH: V,] given above. Given that [MATH: B] is derived from [MATH: V] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n\nChoices:\na. [MATH: 3sqrt(2)]\nb. [MATH: 2sqrt(2)]\nc. [MATH: 4]\nd. [MATH: 6]\ne. [MATH: sqrt(2)]\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\n[MATH: A = [\u2212 1|3; \u2212 2|0; 2|\u2212 3], B = {u_{1}, u_{2}} = {[\u2212 (1)/(3); \u2212 (2)/(3); (2)/(3)], [a; b; c]}]\n\nConsider the subspace [MATH: Col(A)] and an orthonormal basis [MATH: B] of [MATH: Col(A),] where [MATH: A] and [MATH: B] are given above. Given that [MATH: B] is derived from [MATH: Col(A)] using the Gram-Schmidt process, what is the value of [MATH: |a|+|b|+|c|?]\n\nChoices:\na. [MATH: (1)/(3)]\nb. [MATH: (8)/(3)]\nc. [MATH: (2)/(3)]\nd. [MATH: (7)/(3)]\ne. [MATH: (5)/(3)]"
+  }
+}

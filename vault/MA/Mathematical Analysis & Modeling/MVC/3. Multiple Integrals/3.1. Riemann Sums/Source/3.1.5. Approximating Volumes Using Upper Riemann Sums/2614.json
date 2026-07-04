@@ -1,0 +1,1557 @@
+{
+  "schema_version": 2,
+  "topic_id": "2614",
+  "topic_title": "Approximating Volumes Using Upper Riemann Sums",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2614/Source/2614.html",
+  "source_url": "https://mathacademy.com/topics/2614",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "35488",
+        "dom_id": "sectionLink-35488",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-35488"
+      },
+      {
+        "index": 2,
+        "step_id": "23451",
+        "dom_id": "sectionLink-23451",
+        "name": "",
+        "title": "Calculating an Expression for the Upper Bound in Terms of Maximum Values",
+        "selector": "#sectionLink-23451"
+      },
+      {
+        "index": 3,
+        "step_id": "23472",
+        "dom_id": "sectionLink-23472",
+        "name": "",
+        "title": "Calculating the Maximum Value of the Function in Each Partition",
+        "selector": "#sectionLink-23472"
+      },
+      {
+        "index": 4,
+        "step_id": "35509",
+        "dom_id": "sectionLink-35509",
+        "name": "",
+        "title": "Updating Our Notation",
+        "selector": "#sectionLink-35509"
+      },
+      {
+        "index": 5,
+        "step_id": "23450",
+        "dom_id": "sectionLink-23450",
+        "name": "",
+        "title": "Calculating an Upper Riemann Sum in the Case of a Strictly Decreasing Function",
+        "selector": "#sectionLink-23450"
+      },
+      {
+        "index": 6,
+        "step_id": "23449",
+        "dom_id": "sectionLink-23449",
+        "name": "",
+        "title": "Calculating an Upper Riemann Sum in the Case of a Strictly Increasing Function",
+        "selector": "#sectionLink-23449"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "477",
+        "name": "Approximating Areas With the Left Riemann Sum",
+        "href": "/topics/approximating-areas-with-the-left-riemann-sum-477"
+      },
+      {
+        "topic_id": "1753",
+        "name": "Volumes of Rectangular Solids",
+        "href": "/topics/volumes-of-rectangular-solids-1753"
+      },
+      {
+        "topic_id": "1899",
+        "name": "The Domain of a Multivariable Function",
+        "href": "/topics/the-domain-of-a-multivariable-function-1899"
+      },
+      {
+        "topic_id": "3697",
+        "name": "Partitions of Intervals",
+        "href": "/topics/partitions-of-intervals-3697"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "35488",
+        "content_id": "5777",
+        "dom_id": "step-35488",
+        "selector": "#step-35488",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we will describe a process for calculating an <strong>upper bound</strong> for the volume enclosed between a surface <span class=\"math\">[MATH: z=f(x,y)]</span> and the <span class=\"math\">[MATH: xy]</span>-plane. </p>",
+            "readable_text": "In this lesson, we will describe a process for calculating an upper bound for the volume enclosed between a surface [MATH: z=f(x,y)] and the [MATH: xy]-plane.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As an example, consider the rectangle <span class=\"math\">[MATH: R]</span> in the <span class=\"math\">[MATH: xy]</span>-plane, defined as</p>",
+            "readable_text": "As an example, consider the rectangle [MATH: R] in the [MATH: xy]-plane, defined as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: R = {(x, y): 0 \u2264 x \u2264 1, 0 \u2264 y \u2264 1}.]</span></p>",
+            "readable_text": "[MATH: R = {(x, y): 0 \u2264 x \u2264 1, 0 \u2264 y \u2264 1}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A sketch of the region <span class=\"math\">[MATH: R]</span> is shown below.</p>",
+            "readable_text": "A sketch of the region [MATH: R] is shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/c0a74d25d25e61e93c2a97518e1a919c\"></p>",
+            "readable_text": "[IMG: /graphics/c0a74d25d25e61e93c2a97518e1a919c]",
+            "images": [
+              {
+                "src": "/graphics/c0a74d25d25e61e93c2a97518e1a919c",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now consider the function <span class=\"math\">[MATH: f(x,y) = 3-x^2-y^2,]</span> defined over <span class=\"math\">[MATH: R,]</span> shown below.</p>",
+            "readable_text": "Now consider the function [MATH: f(x,y) = 3-x^2-y^2,] defined over [MATH: R,] shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/4af6f1be61894fefa8779f60c2dd9e7e\"></p>",
+            "readable_text": "[IMG: /graphics/4af6f1be61894fefa8779f60c2dd9e7e]",
+            "images": [
+              {
+                "src": "/graphics/4af6f1be61894fefa8779f60c2dd9e7e",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The space underneath the surface and above the region <span class=\"math\">[MATH: R]</span> defines a fixed volume <span class=\"math\">[MATH: V.]</span> Our goal is to find an upper bound for <span class=\"math\">[MATH: V.]</span> We do this by approximating this volume using rectangular solids. </p>",
+            "readable_text": "The space underneath the surface and above the region [MATH: R] defines a fixed volume [MATH: V.] Our goal is to find an upper bound for [MATH: V.] We do this by approximating this volume using rectangular solids.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start by partitioning the <span class=\"math\">[MATH: x]</span>- and <span class=\"math\">[MATH: y]</span>-intervals of <span class=\"math\">[MATH: R.]</span> Let&#x27;s pick two subintervals of equal length for both <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y.]</span></p>",
+            "readable_text": "We start by partitioning the [MATH: x]- and [MATH: y]-intervals of [MATH: R.] Let's pick two subintervals of equal length for both [MATH: x] and [MATH: y.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/07f91e726da8c13345b2920917d134d3\"></p>",
+            "readable_text": "[IMG: /graphics/07f91e726da8c13345b2920917d134d3]",
+            "images": [
+              {
+                "src": "/graphics/07f91e726da8c13345b2920917d134d3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The region <span class=\"math\">[MATH: R]</span> is now partitioned into <span class=\"math\">[MATH: 4]</span> rectangles:</p>",
+            "readable_text": "The region [MATH: R] is now partitioned into [MATH: 4] rectangles:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/7b49c1cb78941be2932124ed979fdf36\"></p>",
+            "readable_text": "[IMG: /graphics/7b49c1cb78941be2932124ed979fdf36]",
+            "images": [
+              {
+                "src": "/graphics/7b49c1cb78941be2932124ed979fdf36",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We seek an <em>upper</em> bound for the volume <span class=\"math\">[MATH: V.]</span> So, we let <span class=\"math\">[MATH: M_{ij}]</span> be the <em>largest</em> value of <span class=\"math\">[MATH: f]</span> in each subregion <span class=\"math\">[MATH: R_{ij}.]</span> We then define a rectangular solid in each subregion whose base is <span class=\"math\">[MATH: R_{ij}]</span> and whose height is <span class=\"math\">[MATH: M_{ij}.]</span> </p>",
+            "readable_text": "We seek an upper bound for the volume [MATH: V.] So, we let [MATH: M_{ij}] be the largest value of [MATH: f] in each subregion [MATH: R_{ij}.] We then define a rectangular solid in each subregion whose base is [MATH: R_{ij}] and whose height is [MATH: M_{ij}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, the rectangular solid corresponding to <span class=\"math\">[MATH: R_{11}]</span> is given below. </p>",
+            "readable_text": "For example, the rectangular solid corresponding to [MATH: R_{11}] is given below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/a49a62e1d9f09a8b670c60ab24654377\"></p>",
+            "readable_text": "[IMG: /graphics/a49a62e1d9f09a8b670c60ab24654377]",
+            "images": [
+              {
+                "src": "/graphics/a49a62e1d9f09a8b670c60ab24654377",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The volume of this rectangular solid is</p>",
+            "readable_text": "The volume of this rectangular solid is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11}\\cdot \\textrm{Area}(R_{11})  = \\dfrac14M_{11}.]</span></p>",
+            "readable_text": "[MATH: M_{11}\\cdot \\textrm{Area}(R_{11}) = \\dfrac14M_{11}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Similarly, the volumes of the rectangular solids formed by the partitions <span class=\"math\">[MATH: R_{21}, R_{12},]</span> and <span class=\"math\">[MATH: R_{22}]</span> respectively are\n<span class=\"math\">[MATH: \\dfrac14M_{21}, \\qquad \\dfrac14M_{12}, \\qquad \\dfrac14M_{22}.]</span></p>",
+            "readable_text": "Similarly, the volumes of the rectangular solids formed by the partitions [MATH: R_{21}, R_{12},] and [MATH: R_{22}] respectively are\n[MATH: \\dfrac14M_{21}, \\qquad \\dfrac14M_{12}, \\qquad \\dfrac14M_{22}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Drawing all four rectangular solids, we get a volume that looks as follows:</p>",
+            "readable_text": "Drawing all four rectangular solids, we get a volume that looks as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/bfacf791cdc8ecc5641be55cd5a6513d\"></p>",
+            "readable_text": "[IMG: /graphics/bfacf791cdc8ecc5641be55cd5a6513d]",
+            "images": [
+              {
+                "src": "/graphics/bfacf791cdc8ecc5641be55cd5a6513d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The upper bound <span class=\"math\">[MATH: U]</span> for our volume is the sum of the volumes of our four rectangular solids. This gives\n<span class=\"math\">[MATH: U = \\dfrac14(M_{11} + M_{21} + M_{12} + M_{22}).]</span></p>",
+            "readable_text": "The upper bound [MATH: U] for our volume is the sum of the volumes of our four rectangular solids. This gives\n[MATH: U = \\dfrac14(M_{11} + M_{21} + M_{12} + M_{22}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The number <span class=\"math\">[MATH: U]</span> is called the <strong>upper Riemann sum with respect to the given partition</strong>.</p>",
+            "readable_text": "The number [MATH: U] is called the upper Riemann sum with respect to the given partition.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note:</strong> We don&#x27;t yet know the values of <span class=\"math\">[MATH: M_{ij},]</span> the height of each solid. We&#x27;ll learn to figure these out a little later in the lesson. For now, we will just focus on writing <span class=\"math\">[MATH: U]</span> as an expression of <span class=\"math\">[MATH: M_{ij}.]</span></p>",
+            "readable_text": "Note: We don't yet know the values of [MATH: M_{ij},] the height of each solid. We'll learn to figure these out a little later in the lesson. For now, we will just focus on writing [MATH: U] as an expression of [MATH: M_{ij}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/c0a74d25d25e61e93c2a97518e1a919c",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/4af6f1be61894fefa8779f60c2dd9e7e",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/07f91e726da8c13345b2920917d134d3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/7b49c1cb78941be2932124ed979fdf36",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/a49a62e1d9f09a8b670c60ab24654377",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/bfacf791cdc8ecc5641be55cd5a6513d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn this lesson, we will describe a process for calculating an upper bound for the volume enclosed between a surface [MATH: z=f(x,y)] and the [MATH: xy]-plane.\n\nContent:\nAs an example, consider the rectangle [MATH: R] in the [MATH: xy]-plane, defined as\n\nContent:\n[MATH: R = {(x, y): 0 \u2264 x \u2264 1, 0 \u2264 y \u2264 1}.]\n\nContent:\nA sketch of the region [MATH: R] is shown below.\n\nGraphic:\n[IMG: /graphics/c0a74d25d25e61e93c2a97518e1a919c]\n\nContent:\nNow consider the function [MATH: f(x,y) = 3-x^2-y^2,] defined over [MATH: R,] shown below.\n\nGraphic:\n[IMG: /graphics/4af6f1be61894fefa8779f60c2dd9e7e]\n\nContent:\nThe space underneath the surface and above the region [MATH: R] defines a fixed volume [MATH: V.] Our goal is to find an upper bound for [MATH: V.] We do this by approximating this volume using rectangular solids.\n\nContent:\nWe start by partitioning the [MATH: x]- and [MATH: y]-intervals of [MATH: R.] Let's pick two subintervals of equal length for both [MATH: x] and [MATH: y.]\n\nGraphic:\n[IMG: /graphics/07f91e726da8c13345b2920917d134d3]\n\nContent:\nThe region [MATH: R] is now partitioned into [MATH: 4] rectangles:\n\nGraphic:\n[IMG: /graphics/7b49c1cb78941be2932124ed979fdf36]\n\nContent:\nWe seek an upper bound for the volume [MATH: V.] So, we let [MATH: M_{ij}] be the largest value of [MATH: f] in each subregion [MATH: R_{ij}.] We then define a rectangular solid in each subregion whose base is [MATH: R_{ij}] and whose height is [MATH: M_{ij}.]\n\nContent:\nFor example, the rectangular solid corresponding to [MATH: R_{11}] is given below.\n\nGraphic:\n[IMG: /graphics/a49a62e1d9f09a8b670c60ab24654377]\n\nContent:\nThe volume of this rectangular solid is\n\nContent:\n[MATH: M_{11}\\cdot \\textrm{Area}(R_{11}) = \\dfrac14M_{11}.]\n\nContent:\nSimilarly, the volumes of the rectangular solids formed by the partitions [MATH: R_{21}, R_{12},] and [MATH: R_{22}] respectively are\n[MATH: \\dfrac14M_{21}, \\qquad \\dfrac14M_{12}, \\qquad \\dfrac14M_{22}.]\n\nContent:\nDrawing all four rectangular solids, we get a volume that looks as follows:\n\nGraphic:\n[IMG: /graphics/bfacf791cdc8ecc5641be55cd5a6513d]\n\nContent:\nThe upper bound [MATH: U] for our volume is the sum of the volumes of our four rectangular solids. This gives\n[MATH: U = \\dfrac14(M_{11} + M_{21} + M_{12} + M_{22}).]\n\nContent:\nThe number [MATH: U] is called the upper Riemann sum with respect to the given partition.\n\nContent:\nNote: We don't yet know the values of [MATH: M_{ij},] the height of each solid. We'll learn to figure these out a little later in the lesson. For now, we will just focus on writing [MATH: U] as an expression of [MATH: M_{ij}.]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "23451",
+        "content_id": "6246",
+        "dom_id": "step-23451",
+        "selector": "#step-23451",
+        "step_anchor": "step-2",
+        "title": "Calculating an Expression for the Upper Bound in Terms of Maximum Values",
+        "key_prerequisites": [
+          {
+            "topic_id": "477",
+            "name": "Approximating Areas With the Left Riemann Sum",
+            "href": "/topics/477",
+            "type": ""
+          },
+          {
+            "topic_id": "1753",
+            "name": "Volumes of Rectangular Solids",
+            "href": "/topics/1753",
+            "type": ""
+          },
+          {
+            "topic_id": "3697",
+            "name": "Partitions of Intervals",
+            "href": "/topics/3697",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/7bd8e396e842ee10967b4656ad76cdd5\"></div><p>Consider the partition of the rectangular region <span class=\"math\">[MATH: R]</span> shown above and the positive function <span class=\"math\">[MATH: f(x,y)]</span> defined on <span class=\"math\">[MATH: R.]</span> Find an expression for the upper Riemann sum of <span class=\"math\">[MATH: f]</span> with respect to this partition.</p><p><em>Hint: <span class=\"math\">[MATH: M_{ij}]</span> denotes the maximum value of <span class=\"math\">[MATH: f]</span> on the subregion <span class=\"math\">[MATH: R_{ij}]</span></em></p>",
+            "readable_text": "[IMG: /graphics/7bd8e396e842ee10967b4656ad76cdd5]\n\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x,y)] defined on [MATH: R.] Find an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]",
+            "images": [
+              {
+                "src": "/graphics/7bd8e396e842ee10967b4656ad76cdd5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To calculate the upper Riemann sum <span class=\"math\">[MATH: U]</span> with respect to the given partition, we compute the sum of the volumes of <span class=\"math\">[MATH: 2]</span> rectangular solids, one for each <span class=\"math\">[MATH: R_{ij}.]</span></p><p>The volume of the rectangular solid corresponding to each subregion <span class=\"math\">[MATH: R_{ij}]</span> is given by</p><p><span class=\"math\">[MATH: M_{ij}\\cdot \\textrm{Area}(R_{ij}).]</span></p><p>where <span class=\"math\">[MATH: M_{ij}]</span> denotes the maximum value of <span class=\"math\">[MATH: f]</span> on the subregion <span class=\"math\">[MATH: R_{ij}.]</span> We pick the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> because we&#x27;re finding the <em>upper</em> sum.</p><p>So in our case, we have</p><p><span class=\"math\">[MATH: U = M_{11}\\cdot \\textrm{Area}(R_{11}) + M_{21}\\cdot \\textrm{Area}(R_{21}).]</span></p><p>Now, notice that</p><p><span class=\"math\">[MATH: \\textrm{Area}(R_{11}) = 8]</span></p><p>and</p><p><span class=\"math\">[MATH: \\textrm{Area}(R_{21}) = 4.]</span></p><p>Therefore, we have</p><p><span class=\"math\">[MATH: U|= 8 \u22c5 M_{11} + 4 \u22c5 M_{21}; = 8M_{11} + 4M_{21}.]</span></p>",
+            "readable_text": "To calculate the upper Riemann sum [MATH: U] with respect to the given partition, we compute the sum of the volumes of [MATH: 2] rectangular solids, one for each [MATH: R_{ij}.]\n\nThe volume of the rectangular solid corresponding to each subregion [MATH: R_{ij}] is given by\n\n[MATH: M_{ij}\\cdot \\textrm{Area}(R_{ij}).]\n\nwhere [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum.\n\nSo in our case, we have\n\n[MATH: U = M_{11}\\cdot \\textrm{Area}(R_{11}) + M_{21}\\cdot \\textrm{Area}(R_{21}).]\n\nNow, notice that\n\n[MATH: \\textrm{Area}(R_{11}) = 8]\n\nand\n\n[MATH: \\textrm{Area}(R_{21}) = 4.]\n\nTherefore, we have\n\n[MATH: U|= 8 \u22c5 M_{11} + 4 \u22c5 M_{21}; = 8M_{11} + 4M_{21}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/7bd8e396e842ee10967b4656ad76cdd5",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/7bd8e396e842ee10967b4656ad76cdd5]\n\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x,y)] defined on [MATH: R.] Find an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo calculate the upper Riemann sum [MATH: U] with respect to the given partition, we compute the sum of the volumes of [MATH: 2] rectangular solids, one for each [MATH: R_{ij}.]\n\nThe volume of the rectangular solid corresponding to each subregion [MATH: R_{ij}] is given by\n\n[MATH: M_{ij}\\cdot \\textrm{Area}(R_{ij}).]\n\nwhere [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum.\n\nSo in our case, we have\n\n[MATH: U = M_{11}\\cdot \\textrm{Area}(R_{11}) + M_{21}\\cdot \\textrm{Area}(R_{21}).]\n\nNow, notice that\n\n[MATH: \\textrm{Area}(R_{11}) = 8]\n\nand\n\n[MATH: \\textrm{Area}(R_{21}) = 4.]\n\nTherefore, we have\n\n[MATH: U|= 8 \u22c5 M_{11} + 4 \u22c5 M_{21}; = 8M_{11} + 4M_{21}.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "122846",
+        "dom_id": "question-122846",
+        "selector": "#question-122846",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-122846\"></p>",
+          "readable_text": "[IMG: /graphics/q-122846]",
+          "images": [
+            {
+              "src": "/graphics/q-122846",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the partition of the rectangular region <span class=\"math\">[MATH: R]</span> shown above and the positive function <span class=\"math\">[MATH: f(x, y)]</span> defined on <span class=\"math\">[MATH: R.]</span> Which of the following gives an expression for the upper Riemann sum of <span class=\"math\">[MATH: f]</span> with respect to this partition.</p><p><em>Hint: <span class=\"math\">[MATH: M_{ij}]</span> denotes the maximum value of <span class=\"math\">[MATH: f]</span> on the subregion <span class=\"math\">[MATH: R_{ij}]</span></em></p>",
+          "readable_text": "Consider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x, y)] defined on [MATH: R.] Which of the following gives an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-122846-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} + M_{12} + M_{13}]</span></p>",
+            "readable_text": "[MATH: M_{11} + M_{12} + M_{13}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-122846-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} \u2212 M_{12} \u2212 M_{13}]</span></p>",
+            "readable_text": "[MATH: M_{11} \u2212 M_{12} \u2212 M_{13}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-122846-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} + 2M_{12} + M_{13}]</span></p>",
+            "readable_text": "[MATH: M_{11} + 2M_{12} + M_{13}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-122846-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2(M_{11} + M_{12} + M_{13})]</span></p>",
+            "readable_text": "[MATH: 2(M_{11} + M_{12} + M_{13})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-122846-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} \u22c5 M_{12} \u22c5 M_{13}]</span></p>",
+            "readable_text": "[MATH: M_{11} \u22c5 M_{12} \u22c5 M_{13}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-122846",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-122846]\n\nPrompt:\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x, y)] defined on [MATH: R.] Which of the following gives an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]\n\nChoices:\na. [MATH: M_{11} + M_{12} + M_{13}]\nb. [MATH: M_{11} \u2212 M_{12} \u2212 M_{13}]\nc. [MATH: M_{11} + 2M_{12} + M_{13}]\nd. [MATH: 2(M_{11} + M_{12} + M_{13})]\ne. [MATH: M_{11} \u22c5 M_{12} \u22c5 M_{13}]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "122847",
+        "dom_id": "question-122847",
+        "selector": "#question-122847",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-122847\"></p>",
+          "readable_text": "[IMG: /graphics/q-122847]",
+          "images": [
+            {
+              "src": "/graphics/q-122847",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the partition of the rectangular region <span class=\"math\">[MATH: R]</span> shown above and the positive function <span class=\"math\">[MATH: f(x, y)]</span> defined on <span class=\"math\">[MATH: R.]</span> Which of the following gives an expression for the upper Riemann sum of <span class=\"math\">[MATH: f]</span> with respect to this partition.</p><p><em>Hint: <span class=\"math\">[MATH: M_{ij}]</span> denotes the maximum value of <span class=\"math\">[MATH: f]</span> on the subregion <span class=\"math\">[MATH: R_{ij}]</span></em></p>",
+          "readable_text": "Consider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x, y)] defined on [MATH: R.] Which of the following gives an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-122847-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} + M_{21} + M_{12} + M_{22}]</span></p>",
+            "readable_text": "[MATH: M_{11} + M_{21} + M_{12} + M_{22}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-122847-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2M_{11} + M_{21} + 2M_{12} + M_{22}]</span></p>",
+            "readable_text": "[MATH: 2M_{11} + M_{21} + 2M_{12} + M_{22}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-122847-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 2(M_{11} + M_{21} + M_{12} + M_{22})]</span></p>",
+            "readable_text": "[MATH: 2(M_{11} + M_{21} + M_{12} + M_{22})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-122847-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} \u22c5 M_{21} \u22c5 M_{12} \u22c5 M_{22}]</span></p>",
+            "readable_text": "[MATH: M_{11} \u22c5 M_{21} \u22c5 M_{12} \u22c5 M_{22}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-122847-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11} \u2212 M_{21} + M_{12} \u2212 M_{22}]</span></p>",
+            "readable_text": "[MATH: M_{11} \u2212 M_{21} + M_{12} \u2212 M_{22}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-122847",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-122847]\n\nPrompt:\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x, y)] defined on [MATH: R.] Which of the following gives an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]\n\nChoices:\na. [MATH: M_{11} + M_{21} + M_{12} + M_{22}]\nb. [MATH: 2M_{11} + M_{21} + 2M_{12} + M_{22}]\nc. [MATH: 2(M_{11} + M_{21} + M_{12} + M_{22})]\nd. [MATH: M_{11} \u22c5 M_{21} \u22c5 M_{12} \u22c5 M_{22}]\ne. [MATH: M_{11} \u2212 M_{21} + M_{12} \u2212 M_{22}]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "23472",
+        "content_id": "3957",
+        "dom_id": "step-23472",
+        "selector": "#step-23472",
+        "step_anchor": "step-5",
+        "title": "Calculating the Maximum Value of the Function in Each Partition",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall the region <span class=\"math\">[MATH: R]</span> that we encountered earlier:</p>",
+            "readable_text": "Recall the region [MATH: R] that we encountered earlier:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/e0d82c3a69c228f2e3fd63e35fef29b6\"></p>",
+            "readable_text": "[IMG: /graphics/e0d82c3a69c228f2e3fd63e35fef29b6]",
+            "images": [
+              {
+                "src": "/graphics/e0d82c3a69c228f2e3fd63e35fef29b6",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Earlier, we saw that an upper bound for the volume <span class=\"math\">[MATH: V]</span> of </p>",
+            "readable_text": "Earlier, we saw that an upper bound for the volume [MATH: V] of",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: z = f(x,y) = 3-x^2-y^2]</span> </p>",
+            "readable_text": "[MATH: z = f(x,y) = 3-x^2-y^2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>defined over the region <span class=\"math\">[MATH: R]</span> with respect to the partition <span class=\"math\">[MATH: P]</span> (shown above) is given by</p>",
+            "readable_text": "defined over the region [MATH: R] with respect to the partition [MATH: P] (shown above) is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: U = \\dfrac14(M_{11} + M_{21}+ M_{12} + M_{22}),]</span></p>",
+            "readable_text": "[MATH: U = \\dfrac14(M_{11} + M_{21}+ M_{12} + M_{22}),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: M_{ij}]</span> is the maximum value of <span class=\"math\">[MATH: f]</span> over the subregion <span class=\"math\">[MATH: R_{ij}.]</span> Our goal now is to calculate the values of <span class=\"math\">[MATH: M_{ij}.]</span></p>",
+            "readable_text": "where [MATH: M_{ij}] is the maximum value of [MATH: f] over the subregion [MATH: R_{ij}.] Our goal now is to calculate the values of [MATH: M_{ij}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start by considering <span class=\"math\">[MATH: M_{11},]</span> so let&#x27;s zoom in on <span class=\"math\">[MATH: R_{11}\\mathbin{:}]</span></p>",
+            "readable_text": "We start by considering [MATH: M_{11},] so let's zoom in on [MATH: R_{11}\\mathbin{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/065ca1bee2f46c46f7562ca41fa42518\"></p>",
+            "readable_text": "[IMG: /graphics/065ca1bee2f46c46f7562ca41fa42518]",
+            "images": [
+              {
+                "src": "/graphics/065ca1bee2f46c46f7562ca41fa42518",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let&#x27;s take a closer look at the function <span class=\"math\">[MATH: f(x,y)\\mathbin{:}]</span>\n<span class=\"math\">[MATH: f(x,y) = 3-x^2-y^2]</span> </p>",
+            "readable_text": "Now, let's take a closer look at the function [MATH: f(x,y)\\mathbin{:}]\n[MATH: f(x,y) = 3-x^2-y^2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that</p>",
+            "readable_text": "Notice that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>as we <em>increase</em> <span class=\"math\">[MATH: x,]</span> the value of <span class=\"math\">[MATH: f]</span> <em>decreases</em> (because we&#x27;re <em>subtracting</em> <span class=\"math\">[MATH: x^2]</span>), and</p></li><li><p>as we <em>increase</em> <span class=\"math\">[MATH: y,]</span> the value of <span class=\"math\">[MATH: f]</span> <em>decreases</em> (because we&#x27;re <em>subtracting</em> <span class=\"math\">[MATH: y^2]</span>).</p></li></ul>",
+            "readable_text": "- as we increase [MATH: x,] the value of [MATH: f] decreases (because we're subtracting [MATH: x^2]), and\n- as we increase [MATH: y,] the value of [MATH: f] decreases (because we're subtracting [MATH: y^2]).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/25040c7a58995d4d98fa4ddd08b224a2\"></p>",
+            "readable_text": "[IMG: /graphics/25040c7a58995d4d98fa4ddd08b224a2]",
+            "images": [
+              {
+                "src": "/graphics/25040c7a58995d4d98fa4ddd08b224a2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As a result, the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> in this subregion is attained when we have the <em>smallest</em> possible <span class=\"math\">[MATH: x]</span> and the <em>smallest</em> possible <span class=\"math\">[MATH: y.]</span> This is the value at the <em>bottom left corner</em> of the subregion.</p>",
+            "readable_text": "As a result, the maximum value of [MATH: f] in this subregion is attained when we have the smallest possible [MATH: x] and the smallest possible [MATH: y.] This is the value at the bottom left corner of the subregion.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/8f6fdb74cb5ff315510de1c1fc576ebc\"></p>",
+            "readable_text": "[IMG: /graphics/8f6fdb74cb5ff315510de1c1fc576ebc]",
+            "images": [
+              {
+                "src": "/graphics/8f6fdb74cb5ff315510de1c1fc576ebc",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the function <span class=\"math\">[MATH: f(x,y)]</span> decreases as <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> increase everywhere on <span class=\"math\">[MATH: R,]</span> the maximum value of <span class=\"math\">[MATH: f]</span> in each subregion <span class=\"math\">[MATH: R_{ij}]</span> <em>always</em> occurs at the bottom left corner! </p>",
+            "readable_text": "Since the function [MATH: f(x,y)] decreases as [MATH: x] and [MATH: y] increase everywhere on [MATH: R,] the maximum value of [MATH: f] in each subregion [MATH: R_{ij}] always occurs at the bottom left corner!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/771540972d749f582b70fe1121536499\"></p>",
+            "readable_text": "[IMG: /graphics/771540972d749f582b70fe1121536499]",
+            "images": [
+              {
+                "src": "/graphics/771540972d749f582b70fe1121536499",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Calculating the value of <span class=\"math\">[MATH: f]</span> at each bottom left corner, we get the following:</p>",
+            "readable_text": "Calculating the value of [MATH: f] at each bottom left corner, we get the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: M_{11}|= f(0, 0) = 3; M_{21}|= f((1)/(2), 0) = 2.75; M_{12}|= f(0, (1)/(2)) = 2.75; M_{22}|= f((1)/(2), (1)/(2)) = 2]</span></p>",
+            "readable_text": "[MATH: M_{11}|= f(0, 0) = 3; M_{21}|= f((1)/(2), 0) = 2.75; M_{12}|= f(0, (1)/(2)) = 2.75; M_{22}|= f((1)/(2), (1)/(2)) = 2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, substituting the above values in our expression for <span class=\"math\">[MATH: U,]</span> we get</p>",
+            "readable_text": "Finally, substituting the above values in our expression for [MATH: U,] we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: U = \\dfrac14(3+2.75+2.75+2.5) = 2.75.]</span></p>",
+            "readable_text": "[MATH: U = \\dfrac14(3+2.75+2.75+2.5) = 2.75.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Remember that <span class=\"math\">[MATH: U]</span> is the <em>upper</em> Riemann sum, which is an <em>upper</em> bound for the volume between <span class=\"math\">[MATH: z=f(x,y)]</span> and the region <span class=\"math\">[MATH: R.]</span> Therefore, we conclude that the volume between <span class=\"math\">[MATH: z = f(x,y)]</span> and the region <span class=\"math\">[MATH: R]</span> must be smaller than (or equal to) <span class=\"math\">[MATH: 2.75.]</span></p>",
+            "readable_text": "Remember that [MATH: U] is the upper Riemann sum, which is an upper bound for the volume between [MATH: z=f(x,y)] and the region [MATH: R.] Therefore, we conclude that the volume between [MATH: z = f(x,y)] and the region [MATH: R] must be smaller than (or equal to) [MATH: 2.75.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/e0d82c3a69c228f2e3fd63e35fef29b6",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/065ca1bee2f46c46f7562ca41fa42518",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/25040c7a58995d4d98fa4ddd08b224a2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/8f6fdb74cb5ff315510de1c1fc576ebc",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/771540972d749f582b70fe1121536499",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall the region [MATH: R] that we encountered earlier:\n\nGraphic:\n[IMG: /graphics/e0d82c3a69c228f2e3fd63e35fef29b6]\n\nContent:\nEarlier, we saw that an upper bound for the volume [MATH: V] of\n\nContent:\n[MATH: z = f(x,y) = 3-x^2-y^2]\n\nContent:\ndefined over the region [MATH: R] with respect to the partition [MATH: P] (shown above) is given by\n\nContent:\n[MATH: U = \\dfrac14(M_{11} + M_{21}+ M_{12} + M_{22}),]\n\nContent:\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] over the subregion [MATH: R_{ij}.] Our goal now is to calculate the values of [MATH: M_{ij}.]\n\nContent:\nWe start by considering [MATH: M_{11},] so let's zoom in on [MATH: R_{11}\\mathbin{:}]\n\nGraphic:\n[IMG: /graphics/065ca1bee2f46c46f7562ca41fa42518]\n\nContent:\nNow, let's take a closer look at the function [MATH: f(x,y)\\mathbin{:}]\n[MATH: f(x,y) = 3-x^2-y^2]\n\nContent:\nNotice that\n\nContent:\n- as we increase [MATH: x,] the value of [MATH: f] decreases (because we're subtracting [MATH: x^2]), and\n- as we increase [MATH: y,] the value of [MATH: f] decreases (because we're subtracting [MATH: y^2]).\n\nGraphic:\n[IMG: /graphics/25040c7a58995d4d98fa4ddd08b224a2]\n\nContent:\nAs a result, the maximum value of [MATH: f] in this subregion is attained when we have the smallest possible [MATH: x] and the smallest possible [MATH: y.] This is the value at the bottom left corner of the subregion.\n\nGraphic:\n[IMG: /graphics/8f6fdb74cb5ff315510de1c1fc576ebc]\n\nContent:\nSince the function [MATH: f(x,y)] decreases as [MATH: x] and [MATH: y] increase everywhere on [MATH: R,] the maximum value of [MATH: f] in each subregion [MATH: R_{ij}] always occurs at the bottom left corner!\n\nGraphic:\n[IMG: /graphics/771540972d749f582b70fe1121536499]\n\nContent:\nCalculating the value of [MATH: f] at each bottom left corner, we get the following:\n\nContent:\n[MATH: M_{11}|= f(0, 0) = 3; M_{21}|= f((1)/(2), 0) = 2.75; M_{12}|= f(0, (1)/(2)) = 2.75; M_{22}|= f((1)/(2), (1)/(2)) = 2]\n\nContent:\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\nContent:\n[MATH: U = \\dfrac14(3+2.75+2.75+2.5) = 2.75.]\n\nContent:\nRemember that [MATH: U] is the upper Riemann sum, which is an upper bound for the volume between [MATH: z=f(x,y)] and the region [MATH: R.] Therefore, we conclude that the volume between [MATH: z = f(x,y)] and the region [MATH: R] must be smaller than (or equal to) [MATH: 2.75.]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "35509",
+        "content_id": "5783",
+        "dom_id": "step-35509",
+        "selector": "#step-35509",
+        "step_anchor": "step-6",
+        "title": "Updating Our Notation",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We need to introduce just a bit more notation. To help us, let&#x27;s consider the region <span class=\"math\">[MATH: R]</span> and the partition <span class=\"math\">[MATH: P]</span> shown below.</p>",
+            "readable_text": "We need to introduce just a bit more notation. To help us, let's consider the region [MATH: R] and the partition [MATH: P] shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/6dcc037d18942cbf36dbba6c2b5e290d\"></p>",
+            "readable_text": "[IMG: /graphics/6dcc037d18942cbf36dbba6c2b5e290d]",
+            "images": [
+              {
+                "src": "/graphics/6dcc037d18942cbf36dbba6c2b5e290d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s convenient to express our region <span class=\"math\">[MATH: R]</span> in a way that does not involve a diagram. We can do this using the Cartesian product.</p>",
+            "readable_text": "It's convenient to express our region [MATH: R] in a way that does not involve a diagram. We can do this using the Cartesian product.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Using the Cartesian product, we have <span class=\"math\">[MATH: R = [1,4]\\times [1,3].]</span></p>",
+            "readable_text": "Using the Cartesian product, we have [MATH: R = [1,4]\\times [1,3].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Similarly:</p>",
+            "readable_text": "Similarly:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The partition of the <span class=\"math\">[MATH: x]</span>-interval <span class=\"math\">[MATH: [1,4]]</span> can be expressed as <span class=\"math\">[MATH: P_1 = \\{1,2,3,4\\}.]</span></p></li><li><p>The partition of the <span class=\"math\">[MATH: y]</span>-interval <span class=\"math\">[MATH: [1,3]]</span> can be expressed as <span class=\"math\">[MATH: P_2 = \\{1,3\\}.]</span></p></li><li><p>Therefore, we can write the partition as <span class=\"math\">[MATH: P = P_1\\times P_2.]</span></p></li></ul>",
+            "readable_text": "- The partition of the [MATH: x]-interval [MATH: [1,4]] can be expressed as [MATH: P_1 = \\{1,2,3,4\\}.]\n- The partition of the [MATH: y]-interval [MATH: [1,3]] can be expressed as [MATH: P_2 = \\{1,3\\}.]\n- Therefore, we can write the partition as [MATH: P = P_1\\times P_2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we write <span class=\"math\">[MATH: U(f,P)]</span> for the upper Riemann sum of the function <span class=\"math\">[MATH: f]</span> with respect to <span class=\"math\">[MATH: P.]</span></p>",
+            "readable_text": "Finally, we write [MATH: U(f,P)] for the upper Riemann sum of the function [MATH: f] with respect to [MATH: P.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note:</strong> We write <span class=\"math\">[MATH: U(f,P)]</span> because the answer we get for the upper bound <span class=\"math\">[MATH: U]</span> depends on the function <span class=\"math\">[MATH: f]</span> and the partition <span class=\"math\">[MATH: P]</span> that we choose. If we choose a different function or partition, then we&#x27;ll get a different upper bound.</p>",
+            "readable_text": "Note: We write [MATH: U(f,P)] because the answer we get for the upper bound [MATH: U] depends on the function [MATH: f] and the partition [MATH: P] that we choose. If we choose a different function or partition, then we'll get a different upper bound.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/6dcc037d18942cbf36dbba6c2b5e290d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWe need to introduce just a bit more notation. To help us, let's consider the region [MATH: R] and the partition [MATH: P] shown below.\n\nGraphic:\n[IMG: /graphics/6dcc037d18942cbf36dbba6c2b5e290d]\n\nContent:\nIt's convenient to express our region [MATH: R] in a way that does not involve a diagram. We can do this using the Cartesian product.\n\nContent:\nUsing the Cartesian product, we have [MATH: R = [1,4]\\times [1,3].]\n\nContent:\nSimilarly:\n\nContent:\n- The partition of the [MATH: x]-interval [MATH: [1,4]] can be expressed as [MATH: P_1 = \\{1,2,3,4\\}.]\n- The partition of the [MATH: y]-interval [MATH: [1,3]] can be expressed as [MATH: P_2 = \\{1,3\\}.]\n- Therefore, we can write the partition as [MATH: P = P_1\\times P_2.]\n\nContent:\nFinally, we write [MATH: U(f,P)] for the upper Riemann sum of the function [MATH: f] with respect to [MATH: P.]\n\nContent:\nNote: We write [MATH: U(f,P)] because the answer we get for the upper bound [MATH: U] depends on the function [MATH: f] and the partition [MATH: P] that we choose. If we choose a different function or partition, then we'll get a different upper bound."
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "23450",
+        "content_id": "6245",
+        "dom_id": "step-23450",
+        "selector": "#step-23450",
+        "step_anchor": "step-7",
+        "title": "Calculating an Upper Riemann Sum in the Case of a Strictly Decreasing Function",
+        "key_prerequisites": [
+          {
+            "topic_id": "1628",
+            "name": "Increasing and Decreasing Functions",
+            "href": "/topics/1628",
+            "type": ""
+          },
+          {
+            "topic_id": "4387",
+            "name": "Visualizing Cartesian Products",
+            "href": "/topics/4387",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: R = [1,5] \\times [2,6]]</span> be a region in the <span class=\"math\">[MATH: xy]</span>-plane, and let <span class=\"math\">[MATH: f(x,y) = 65-x^2-y^2.]</span>\nFurther, let <span class=\"math\">[MATH: P]</span> be a partition of <span class=\"math\">[MATH: R,]</span> where</p><p><span class=\"math\">[MATH: P_{1} = {1, 3, 5}, P_{2} = {2, 4, 6}, P = P_{1} \u00d7 P_{2}.]</span></p><p>Calculate the upper Riemann sum <span class=\"math\">[MATH: U(f,P).]</span></p>",
+            "readable_text": "Let [MATH: R = [1,5] \\times [2,6]] be a region in the [MATH: xy]-plane, and let [MATH: f(x,y) = 65-x^2-y^2.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {1, 3, 5}, P_{2} = {2, 4, 6}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f,P).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, let&#x27;s draw the region <span class=\"math\">[MATH: R]</span> and the partition <span class=\"math\">[MATH: P.]</span></p><div class=\"graphic\"><img src=\"/graphics/9b2abc9b7e3a6bfcb6d7041a24fce9aa\"></div><p>The upper sum <span class=\"math\">[MATH: U(f,P)]</span> is given by</p><p><span class=\"math\">[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]</span></p><p>where <span class=\"math\">[MATH: M_{ij}]</span> is the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> in each subregion <span class=\"math\">[MATH: R_{ij}.]</span> We pick the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> because we&#x27;re finding the <em>upper</em> sum.</p><p>Taking into account the fact that <span class=\"math\">[MATH: \\textrm{Area}(R_{ij})=4]</span> for all <span class=\"math\">[MATH: 4]</span> regions, the formula for <span class=\"math\">[MATH: U(f,P)]</span> reduces to\n<span class=\"math\">[MATH: U(f, P)|= 4 \u22c5 M_{11} + 4 \u22c5 M_{21} + 4 \u22c5 M_{12} + 4 \u22c5 M_{22}; = 4(M_{11} + M_{21} + M_{12} + M_{22}).]</span></p><p>Now, notice that</p><ul><li><p><span class=\"math\">[MATH: f(x,y) = 65-x^2-y^2]</span> decreases as <span class=\"math\">[MATH: x]</span> increases, and</p></li><li><p><span class=\"math\">[MATH: f(x,y) = 65-x^2-y^2]</span> decreases as <span class=\"math\">[MATH: y]</span> increases.</p></li></ul><div class=\"graphic\"><img src=\"/graphics/143b73cdc2be16101dddbb200c3c39b6\"></div><p>As a result, the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> in each subregion is attained when we have the <em>smallest</em> possible <span class=\"math\">[MATH: x]</span> and the <em>smallest</em> possible <span class=\"math\">[MATH: y.]</span> This is the value at the <em>bottom left corner</em> of each subregion.</p><div class=\"graphic\"><img src=\"/graphics/09e5f4950e59ffc259e3ed3bef452a2f\"></div><p>Calculating the value of <span class=\"math\">[MATH: f]</span> at each bottom left corner, we get the following:</p><p><span class=\"math\">[MATH: M_{11}|= f(1, 2) = 60; M_{21}|= f(3, 2) = 52; M_{12}|= f(1, 4) = 48; M_{22}|= f(3, 4) = 40]</span></p><p>Finally, substituting the above values in our expression for <span class=\"math\">[MATH: U,]</span> we get</p><p><span class=\"math\">[MATH: U(f, P)|= 4(60 + 52 + 48 + 40) = 800.]</span></p>",
+            "readable_text": "First, let's draw the region [MATH: R] and the partition [MATH: P.]\n\n[IMG: /graphics/9b2abc9b7e3a6bfcb6d7041a24fce9aa]\n\nThe upper sum [MATH: U(f,P)] is given by\n\n[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]\n\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] in each subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum.\n\nTaking into account the fact that [MATH: \\textrm{Area}(R_{ij})=4] for all [MATH: 4] regions, the formula for [MATH: U(f,P)] reduces to\n[MATH: U(f, P)|= 4 \u22c5 M_{11} + 4 \u22c5 M_{21} + 4 \u22c5 M_{12} + 4 \u22c5 M_{22}; = 4(M_{11} + M_{21} + M_{12} + M_{22}).]\n\nNow, notice that\n\n- [MATH: f(x,y) = 65-x^2-y^2] decreases as [MATH: x] increases, and\n- [MATH: f(x,y) = 65-x^2-y^2] decreases as [MATH: y] increases.\n\n[IMG: /graphics/143b73cdc2be16101dddbb200c3c39b6]\n\nAs a result, the maximum value of [MATH: f] in each subregion is attained when we have the smallest possible [MATH: x] and the smallest possible [MATH: y.] This is the value at the bottom left corner of each subregion.\n\n[IMG: /graphics/09e5f4950e59ffc259e3ed3bef452a2f]\n\nCalculating the value of [MATH: f] at each bottom left corner, we get the following:\n\n[MATH: M_{11}|= f(1, 2) = 60; M_{21}|= f(3, 2) = 52; M_{12}|= f(1, 4) = 48; M_{22}|= f(3, 4) = 40]\n\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\n[MATH: U(f, P)|= 4(60 + 52 + 48 + 40) = 800.]",
+            "images": [
+              {
+                "src": "/graphics/9b2abc9b7e3a6bfcb6d7041a24fce9aa",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/143b73cdc2be16101dddbb200c3c39b6",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/09e5f4950e59ffc259e3ed3bef452a2f",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/9b2abc9b7e3a6bfcb6d7041a24fce9aa",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/143b73cdc2be16101dddbb200c3c39b6",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/09e5f4950e59ffc259e3ed3bef452a2f",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nLet [MATH: R = [1,5] \\times [2,6]] be a region in the [MATH: xy]-plane, and let [MATH: f(x,y) = 65-x^2-y^2.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {1, 3, 5}, P_{2} = {2, 4, 6}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f,P).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's draw the region [MATH: R] and the partition [MATH: P.]\n\n[IMG: /graphics/9b2abc9b7e3a6bfcb6d7041a24fce9aa]\n\nThe upper sum [MATH: U(f,P)] is given by\n\n[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]\n\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] in each subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum.\n\nTaking into account the fact that [MATH: \\textrm{Area}(R_{ij})=4] for all [MATH: 4] regions, the formula for [MATH: U(f,P)] reduces to\n[MATH: U(f, P)|= 4 \u22c5 M_{11} + 4 \u22c5 M_{21} + 4 \u22c5 M_{12} + 4 \u22c5 M_{22}; = 4(M_{11} + M_{21} + M_{12} + M_{22}).]\n\nNow, notice that\n\n- [MATH: f(x,y) = 65-x^2-y^2] decreases as [MATH: x] increases, and\n- [MATH: f(x,y) = 65-x^2-y^2] decreases as [MATH: y] increases.\n\n[IMG: /graphics/143b73cdc2be16101dddbb200c3c39b6]\n\nAs a result, the maximum value of [MATH: f] in each subregion is attained when we have the smallest possible [MATH: x] and the smallest possible [MATH: y.] This is the value at the bottom left corner of each subregion.\n\n[IMG: /graphics/09e5f4950e59ffc259e3ed3bef452a2f]\n\nCalculating the value of [MATH: f] at each bottom left corner, we get the following:\n\n[MATH: M_{11}|= f(1, 2) = 60; M_{21}|= f(3, 2) = 52; M_{12}|= f(1, 4) = 48; M_{22}|= f(3, 4) = 40]\n\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\n[MATH: U(f, P)|= 4(60 + 52 + 48 + 40) = 800.]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "75048",
+        "dom_id": "question-75048",
+        "selector": "#question-75048",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: R = [\u2212 1, 1] \u00d7 [\u2212 1, 1]]</span> be a region in the <span class=\"math\">[MATH: xy]</span>-plane, and let <span class=\"math\">[MATH: f(x, y) = 5 \u2212 3x \u2212 y.]</span>\nFurther, let <span class=\"math\">[MATH: P]</span> be a partition of <span class=\"math\">[MATH: R,]</span> where</p><p><span class=\"math\">[MATH: P_{1} = {\u2212 1, 0, 1}, P_{2} = {\u2212 1, 0, 1}, P = P_{1} \u00d7 P_{2}.]</span></p><p>Calculate the upper Riemann sum <span class=\"math\">[MATH: U(f, P).]</span></p>",
+          "readable_text": "Let [MATH: R = [\u2212 1, 1] \u00d7 [\u2212 1, 1]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = 5 \u2212 3x \u2212 y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {\u2212 1, 0, 1}, P_{2} = {\u2212 1, 0, 1}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-75048-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 30]</span></p>",
+            "readable_text": "[MATH: 30]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-75048-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 28]</span></p>",
+            "readable_text": "[MATH: 28]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-75048-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 24]</span></p>",
+            "readable_text": "[MATH: 24]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-75048-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 20]</span></p>",
+            "readable_text": "[MATH: 20]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-75048-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 34]</span></p>",
+            "readable_text": "[MATH: 34]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: R = [\u2212 1, 1] \u00d7 [\u2212 1, 1]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = 5 \u2212 3x \u2212 y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {\u2212 1, 0, 1}, P_{2} = {\u2212 1, 0, 1}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 30]\nb. [MATH: 28]\nc. [MATH: 24]\nd. [MATH: 20]\ne. [MATH: 34]"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "75229",
+        "dom_id": "question-75229",
+        "selector": "#question-75229",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: R = [\u2212 2, 2] \u00d7 [\u2212 2, 2]]</span> be a region in the <span class=\"math\">[MATH: xy]</span>-plane, and let <span class=\"math\">[MATH: f(x, y) = 6 \u2212 2x \u2212 y.]</span>\nFurther, let <span class=\"math\">[MATH: P]</span> be a partition of <span class=\"math\">[MATH: R,]</span> where</p><p><span class=\"math\">[MATH: P_{1} = {\u2212 2, 0, 2}, P_{2} = {\u2212 2, 0, 2}, P = P_{1} \u00d7 P_{2}.]</span></p><p>Calculate the upper Riemann sum <span class=\"math\">[MATH: U(f, P).]</span></p>",
+          "readable_text": "Let [MATH: R = [\u2212 2, 2] \u00d7 [\u2212 2, 2]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = 6 \u2212 2x \u2212 y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {\u2212 2, 0, 2}, P_{2} = {\u2212 2, 0, 2}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-75229-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 64]</span></p>",
+            "readable_text": "[MATH: 64]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-75229-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 144]</span></p>",
+            "readable_text": "[MATH: 144]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-75229-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 120]</span></p>",
+            "readable_text": "[MATH: 120]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-75229-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 104]</span></p>",
+            "readable_text": "[MATH: 104]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-75229-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 36]</span></p>",
+            "readable_text": "[MATH: 36]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: R = [\u2212 2, 2] \u00d7 [\u2212 2, 2]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = 6 \u2212 2x \u2212 y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {\u2212 2, 0, 2}, P_{2} = {\u2212 2, 0, 2}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 64]\nb. [MATH: 144]\nc. [MATH: 120]\nd. [MATH: 104]\ne. [MATH: 36]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "23449",
+        "content_id": "6244",
+        "dom_id": "step-23449",
+        "selector": "#step-23449",
+        "step_anchor": "step-10",
+        "title": "Calculating an Upper Riemann Sum in the Case of a Strictly Increasing Function",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: R = [0,2]\\times [1,3]]</span> be a region in the <span class=\"math\">[MATH: xy]</span>-plane, and let <span class=\"math\">[MATH: f(x,y) = x+2y.]</span>\nFurther, let <span class=\"math\">[MATH: P]</span> be a partition of <span class=\"math\">[MATH: R,]</span> where</p><p><span class=\"math\">[MATH: P_{1} = {0, 1, 2}, P_{2} = {1, 2, 3}, P = P_{1} \u00d7 P_{2}.]</span></p><p>Calculate the upper Riemann sum <span class=\"math\">[MATH: U(f,P).]</span></p>",
+            "readable_text": "Let [MATH: R = [0,2]\\times [1,3]] be a region in the [MATH: xy]-plane, and let [MATH: f(x,y) = x+2y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {0, 1, 2}, P_{2} = {1, 2, 3}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f,P).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, let&#x27;s draw the region <span class=\"math\">[MATH: R]</span> and the partition <span class=\"math\">[MATH: P.]</span></p><div class=\"graphic\"><img src=\"/graphics/94f8ae5652f9bf448a84bd30a23dbe09\"></div><p>The upper sum <span class=\"math\">[MATH: U(f,P)]</span> is given by</p><p><span class=\"math\">[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]</span></p><p>where <span class=\"math\">[MATH: M_{ij}]</span> is the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> in each subregion <span class=\"math\">[MATH: R_{ij}.]</span> We pick the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> because we&#x27;re finding the <em>upper</em> sum,</p><p>Taking into account the fact that <span class=\"math\">[MATH: \\textrm{Area}(R_{ij})=1]</span> for all <span class=\"math\">[MATH: 4]</span> subregions, the formula for <span class=\"math\">[MATH: U(f,P)]</span> reduces to\n<span class=\"math\">[MATH: U(f,P) = M_{11} + M_{21} + M_{12} + M_{22}.]</span></p><p>Now, notice that</p><ul><li><p><span class=\"math\">[MATH: f(x,y) = x+2y]</span> increases as <span class=\"math\">[MATH: x]</span> increases, and</p></li><li><p><span class=\"math\">[MATH: f(x,y) = x+2y]</span> increases as <span class=\"math\">[MATH: y]</span> increases.</p></li></ul><div class=\"graphic\"><img src=\"/graphics/c32290b459f231155ebed12f7dbb2413\"></div><p>As a result, the <em>maximum</em> value of <span class=\"math\">[MATH: f]</span> in each subregion is attained when we have the <em>largest</em> possible <span class=\"math\">[MATH: x]</span> and the <em>largest</em> possible <span class=\"math\">[MATH: y]</span>. This is the value at the <em>top right corner</em> of each subregion.</p><div class=\"graphic\"><img src=\"/graphics/e53b15ce6facb291ce49ed2b43c131db\"></div><p>Calculating the value of <span class=\"math\">[MATH: f]</span> at each top right corner, we get the following:</p><p><span class=\"math\">[MATH: M_{11}|= f(1, 2) = 5; M_{21}|= f(2, 2) = 6; M_{12}|= f(1, 3) = 7; M_{22}|= f(2, 3) = 8]</span></p><p>Finally, substituting the above values in our expression for <span class=\"math\">[MATH: U,]</span> we get</p><p><span class=\"math\">[MATH: U(f, P)|= 5 + 6 + 7 + 8 = 26.]</span></p>",
+            "readable_text": "First, let's draw the region [MATH: R] and the partition [MATH: P.]\n\n[IMG: /graphics/94f8ae5652f9bf448a84bd30a23dbe09]\n\nThe upper sum [MATH: U(f,P)] is given by\n\n[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]\n\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] in each subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum,\n\nTaking into account the fact that [MATH: \\textrm{Area}(R_{ij})=1] for all [MATH: 4] subregions, the formula for [MATH: U(f,P)] reduces to\n[MATH: U(f,P) = M_{11} + M_{21} + M_{12} + M_{22}.]\n\nNow, notice that\n\n- [MATH: f(x,y) = x+2y] increases as [MATH: x] increases, and\n- [MATH: f(x,y) = x+2y] increases as [MATH: y] increases.\n\n[IMG: /graphics/c32290b459f231155ebed12f7dbb2413]\n\nAs a result, the maximum value of [MATH: f] in each subregion is attained when we have the largest possible [MATH: x] and the largest possible [MATH: y]. This is the value at the top right corner of each subregion.\n\n[IMG: /graphics/e53b15ce6facb291ce49ed2b43c131db]\n\nCalculating the value of [MATH: f] at each top right corner, we get the following:\n\n[MATH: M_{11}|= f(1, 2) = 5; M_{21}|= f(2, 2) = 6; M_{12}|= f(1, 3) = 7; M_{22}|= f(2, 3) = 8]\n\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\n[MATH: U(f, P)|= 5 + 6 + 7 + 8 = 26.]",
+            "images": [
+              {
+                "src": "/graphics/94f8ae5652f9bf448a84bd30a23dbe09",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/c32290b459f231155ebed12f7dbb2413",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/e53b15ce6facb291ce49ed2b43c131db",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/94f8ae5652f9bf448a84bd30a23dbe09",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/c32290b459f231155ebed12f7dbb2413",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/e53b15ce6facb291ce49ed2b43c131db",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nLet [MATH: R = [0,2]\\times [1,3]] be a region in the [MATH: xy]-plane, and let [MATH: f(x,y) = x+2y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {0, 1, 2}, P_{2} = {1, 2, 3}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f,P).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's draw the region [MATH: R] and the partition [MATH: P.]\n\n[IMG: /graphics/94f8ae5652f9bf448a84bd30a23dbe09]\n\nThe upper sum [MATH: U(f,P)] is given by\n\n[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]\n\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] in each subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum,\n\nTaking into account the fact that [MATH: \\textrm{Area}(R_{ij})=1] for all [MATH: 4] subregions, the formula for [MATH: U(f,P)] reduces to\n[MATH: U(f,P) = M_{11} + M_{21} + M_{12} + M_{22}.]\n\nNow, notice that\n\n- [MATH: f(x,y) = x+2y] increases as [MATH: x] increases, and\n- [MATH: f(x,y) = x+2y] increases as [MATH: y] increases.\n\n[IMG: /graphics/c32290b459f231155ebed12f7dbb2413]\n\nAs a result, the maximum value of [MATH: f] in each subregion is attained when we have the largest possible [MATH: x] and the largest possible [MATH: y]. This is the value at the top right corner of each subregion.\n\n[IMG: /graphics/e53b15ce6facb291ce49ed2b43c131db]\n\nCalculating the value of [MATH: f] at each top right corner, we get the following:\n\n[MATH: M_{11}|= f(1, 2) = 5; M_{21}|= f(2, 2) = 6; M_{12}|= f(1, 3) = 7; M_{22}|= f(2, 3) = 8]\n\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\n[MATH: U(f, P)|= 5 + 6 + 7 + 8 = 26.]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "75047",
+        "dom_id": "question-75047",
+        "selector": "#question-75047",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: R = [2, 4] \u00d7 [2, 4]]</span> be a region in the <span class=\"math\">[MATH: xy]</span>-plane, and let <span class=\"math\">[MATH: f(x, y) = x^{2} + y^{2}.]</span>\nFurther, let <span class=\"math\">[MATH: P]</span> be a partition of <span class=\"math\">[MATH: R,]</span> where</p><p><span class=\"math\">[MATH: P_{1} = {2, 3, 4}, P_{2} = {2, 3, 4}, P = P_{1} \u00d7 P_{2}.]</span></p><p>Calculate the upper Riemann sum <span class=\"math\">[MATH: U(f, P).]</span></p>",
+          "readable_text": "Let [MATH: R = [2, 4] \u00d7 [2, 4]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = x^{2} + y^{2}.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {2, 3, 4}, P_{2} = {2, 3, 4}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-75047-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 100]</span></p>",
+            "readable_text": "[MATH: 100]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-75047-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 88]</span></p>",
+            "readable_text": "[MATH: 88]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-75047-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 75]</span></p>",
+            "readable_text": "[MATH: 75]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-75047-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 96]</span></p>",
+            "readable_text": "[MATH: 96]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-75047-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 115]</span></p>",
+            "readable_text": "[MATH: 115]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: R = [2, 4] \u00d7 [2, 4]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = x^{2} + y^{2}.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {2, 3, 4}, P_{2} = {2, 3, 4}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 100]\nb. [MATH: 88]\nc. [MATH: 75]\nd. [MATH: 96]\ne. [MATH: 115]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "123133",
+        "dom_id": "question-123133",
+        "selector": "#question-123133",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Let <span class=\"math\">[MATH: R = [2, 10] \u00d7 [3, 7]]</span> be a region in the <span class=\"math\">[MATH: xy]</span>-plane, and let <span class=\"math\">[MATH: f(x, y) = x + y.]</span>\nFurther, let <span class=\"math\">[MATH: P]</span> be a partition of <span class=\"math\">[MATH: R,]</span> where</p><p><span class=\"math\">[MATH: P_{1} = {2, 6, 10}, P_{2} = {3, 5, 7}, P = P_{1} \u00d7 P_{2}.]</span></p><p>Calculate the upper Riemann sum <span class=\"math\">[MATH: U(f, P).]</span></p>",
+          "readable_text": "Let [MATH: R = [2, 10] \u00d7 [3, 7]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = x + y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {2, 6, 10}, P_{2} = {3, 5, 7}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-123133-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 56]</span></p>",
+            "readable_text": "[MATH: 56]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-123133-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 448]</span></p>",
+            "readable_text": "[MATH: 448]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-123133-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 320]</span></p>",
+            "readable_text": "[MATH: 320]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-123133-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 384]</span></p>",
+            "readable_text": "[MATH: 384]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-123133-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 480]</span></p>",
+            "readable_text": "[MATH: 480]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nLet [MATH: R = [2, 10] \u00d7 [3, 7]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = x + y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {2, 6, 10}, P_{2} = {3, 5, 7}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 56]\nb. [MATH: 448]\nc. [MATH: 320]\nd. [MATH: 384]\ne. [MATH: 480]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn this lesson, we will describe a process for calculating an upper bound for the volume enclosed between a surface [MATH: z=f(x,y)] and the [MATH: xy]-plane.\n\nContent:\nAs an example, consider the rectangle [MATH: R] in the [MATH: xy]-plane, defined as\n\nContent:\n[MATH: R = {(x, y): 0 \u2264 x \u2264 1, 0 \u2264 y \u2264 1}.]\n\nContent:\nA sketch of the region [MATH: R] is shown below.\n\nGraphic:\n[IMG: /graphics/c0a74d25d25e61e93c2a97518e1a919c]\n\nContent:\nNow consider the function [MATH: f(x,y) = 3-x^2-y^2,] defined over [MATH: R,] shown below.\n\nGraphic:\n[IMG: /graphics/4af6f1be61894fefa8779f60c2dd9e7e]\n\nContent:\nThe space underneath the surface and above the region [MATH: R] defines a fixed volume [MATH: V.] Our goal is to find an upper bound for [MATH: V.] We do this by approximating this volume using rectangular solids.\n\nContent:\nWe start by partitioning the [MATH: x]- and [MATH: y]-intervals of [MATH: R.] Let's pick two subintervals of equal length for both [MATH: x] and [MATH: y.]\n\nGraphic:\n[IMG: /graphics/07f91e726da8c13345b2920917d134d3]\n\nContent:\nThe region [MATH: R] is now partitioned into [MATH: 4] rectangles:\n\nGraphic:\n[IMG: /graphics/7b49c1cb78941be2932124ed979fdf36]\n\nContent:\nWe seek an upper bound for the volume [MATH: V.] So, we let [MATH: M_{ij}] be the largest value of [MATH: f] in each subregion [MATH: R_{ij}.] We then define a rectangular solid in each subregion whose base is [MATH: R_{ij}] and whose height is [MATH: M_{ij}.]\n\nContent:\nFor example, the rectangular solid corresponding to [MATH: R_{11}] is given below.\n\nGraphic:\n[IMG: /graphics/a49a62e1d9f09a8b670c60ab24654377]\n\nContent:\nThe volume of this rectangular solid is\n\nContent:\n[MATH: M_{11}\\cdot \\textrm{Area}(R_{11}) = \\dfrac14M_{11}.]\n\nContent:\nSimilarly, the volumes of the rectangular solids formed by the partitions [MATH: R_{21}, R_{12},] and [MATH: R_{22}] respectively are\n[MATH: \\dfrac14M_{21}, \\qquad \\dfrac14M_{12}, \\qquad \\dfrac14M_{22}.]\n\nContent:\nDrawing all four rectangular solids, we get a volume that looks as follows:\n\nGraphic:\n[IMG: /graphics/bfacf791cdc8ecc5641be55cd5a6513d]\n\nContent:\nThe upper bound [MATH: U] for our volume is the sum of the volumes of our four rectangular solids. This gives\n[MATH: U = \\dfrac14(M_{11} + M_{21} + M_{12} + M_{22}).]\n\nContent:\nThe number [MATH: U] is called the upper Riemann sum with respect to the given partition.\n\nContent:\nNote: We don't yet know the values of [MATH: M_{ij},] the height of each solid. We'll learn to figure these out a little later in the lesson. For now, we will just focus on writing [MATH: U] as an expression of [MATH: M_{ij}.]\n\n---\n\nItem 2 \u2014 Example: Calculating an Expression for the Upper Bound in Terms of Maximum Values\n\nExample Prompt:\n[IMG: /graphics/7bd8e396e842ee10967b4656ad76cdd5]\n\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x,y)] defined on [MATH: R.] Find an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo calculate the upper Riemann sum [MATH: U] with respect to the given partition, we compute the sum of the volumes of [MATH: 2] rectangular solids, one for each [MATH: R_{ij}.]\n\nThe volume of the rectangular solid corresponding to each subregion [MATH: R_{ij}] is given by\n\n[MATH: M_{ij}\\cdot \\textrm{Area}(R_{ij}).]\n\nwhere [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum.\n\nSo in our case, we have\n\n[MATH: U = M_{11}\\cdot \\textrm{Area}(R_{11}) + M_{21}\\cdot \\textrm{Area}(R_{21}).]\n\nNow, notice that\n\n[MATH: \\textrm{Area}(R_{11}) = 8]\n\nand\n\n[MATH: \\textrm{Area}(R_{21}) = 4.]\n\nTherefore, we have\n\n[MATH: U|= 8 \u22c5 M_{11} + 4 \u22c5 M_{21}; = 8M_{11} + 4M_{21}.]\n\n---\n\nItem 3 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-122846]\n\nPrompt:\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x, y)] defined on [MATH: R.] Which of the following gives an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]\n\nChoices:\na. [MATH: M_{11} + M_{12} + M_{13}]\nb. [MATH: M_{11} \u2212 M_{12} \u2212 M_{13}]\nc. [MATH: M_{11} + 2M_{12} + M_{13}]\nd. [MATH: 2(M_{11} + M_{12} + M_{13})]\ne. [MATH: M_{11} \u22c5 M_{12} \u22c5 M_{13}]\n\n---\n\nItem 4 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-122847]\n\nPrompt:\nConsider the partition of the rectangular region [MATH: R] shown above and the positive function [MATH: f(x, y)] defined on [MATH: R.] Which of the following gives an expression for the upper Riemann sum of [MATH: f] with respect to this partition.\n\nHint: [MATH: M_{ij}] denotes the maximum value of [MATH: f] on the subregion [MATH: R_{ij}]\n\nChoices:\na. [MATH: M_{11} + M_{21} + M_{12} + M_{22}]\nb. [MATH: 2M_{11} + M_{21} + 2M_{12} + M_{22}]\nc. [MATH: 2(M_{11} + M_{21} + M_{12} + M_{22})]\nd. [MATH: M_{11} \u22c5 M_{21} \u22c5 M_{12} \u22c5 M_{22}]\ne. [MATH: M_{11} \u2212 M_{21} + M_{12} \u2212 M_{22}]\n\n---\n\nItem 5 \u2014 Tutorial: Calculating the Maximum Value of the Function in Each Partition\n\nContent:\nRecall the region [MATH: R] that we encountered earlier:\n\nGraphic:\n[IMG: /graphics/e0d82c3a69c228f2e3fd63e35fef29b6]\n\nContent:\nEarlier, we saw that an upper bound for the volume [MATH: V] of\n\nContent:\n[MATH: z = f(x,y) = 3-x^2-y^2]\n\nContent:\ndefined over the region [MATH: R] with respect to the partition [MATH: P] (shown above) is given by\n\nContent:\n[MATH: U = \\dfrac14(M_{11} + M_{21}+ M_{12} + M_{22}),]\n\nContent:\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] over the subregion [MATH: R_{ij}.] Our goal now is to calculate the values of [MATH: M_{ij}.]\n\nContent:\nWe start by considering [MATH: M_{11},] so let's zoom in on [MATH: R_{11}\\mathbin{:}]\n\nGraphic:\n[IMG: /graphics/065ca1bee2f46c46f7562ca41fa42518]\n\nContent:\nNow, let's take a closer look at the function [MATH: f(x,y)\\mathbin{:}]\n[MATH: f(x,y) = 3-x^2-y^2]\n\nContent:\nNotice that\n\nContent:\n- as we increase [MATH: x,] the value of [MATH: f] decreases (because we're subtracting [MATH: x^2]), and\n- as we increase [MATH: y,] the value of [MATH: f] decreases (because we're subtracting [MATH: y^2]).\n\nGraphic:\n[IMG: /graphics/25040c7a58995d4d98fa4ddd08b224a2]\n\nContent:\nAs a result, the maximum value of [MATH: f] in this subregion is attained when we have the smallest possible [MATH: x] and the smallest possible [MATH: y.] This is the value at the bottom left corner of the subregion.\n\nGraphic:\n[IMG: /graphics/8f6fdb74cb5ff315510de1c1fc576ebc]\n\nContent:\nSince the function [MATH: f(x,y)] decreases as [MATH: x] and [MATH: y] increase everywhere on [MATH: R,] the maximum value of [MATH: f] in each subregion [MATH: R_{ij}] always occurs at the bottom left corner!\n\nGraphic:\n[IMG: /graphics/771540972d749f582b70fe1121536499]\n\nContent:\nCalculating the value of [MATH: f] at each bottom left corner, we get the following:\n\nContent:\n[MATH: M_{11}|= f(0, 0) = 3; M_{21}|= f((1)/(2), 0) = 2.75; M_{12}|= f(0, (1)/(2)) = 2.75; M_{22}|= f((1)/(2), (1)/(2)) = 2]\n\nContent:\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\nContent:\n[MATH: U = \\dfrac14(3+2.75+2.75+2.5) = 2.75.]\n\nContent:\nRemember that [MATH: U] is the upper Riemann sum, which is an upper bound for the volume between [MATH: z=f(x,y)] and the region [MATH: R.] Therefore, we conclude that the volume between [MATH: z = f(x,y)] and the region [MATH: R] must be smaller than (or equal to) [MATH: 2.75.]\n\n---\n\nItem 6 \u2014 Tutorial: Updating Our Notation\n\nContent:\nWe need to introduce just a bit more notation. To help us, let's consider the region [MATH: R] and the partition [MATH: P] shown below.\n\nGraphic:\n[IMG: /graphics/6dcc037d18942cbf36dbba6c2b5e290d]\n\nContent:\nIt's convenient to express our region [MATH: R] in a way that does not involve a diagram. We can do this using the Cartesian product.\n\nContent:\nUsing the Cartesian product, we have [MATH: R = [1,4]\\times [1,3].]\n\nContent:\nSimilarly:\n\nContent:\n- The partition of the [MATH: x]-interval [MATH: [1,4]] can be expressed as [MATH: P_1 = \\{1,2,3,4\\}.]\n- The partition of the [MATH: y]-interval [MATH: [1,3]] can be expressed as [MATH: P_2 = \\{1,3\\}.]\n- Therefore, we can write the partition as [MATH: P = P_1\\times P_2.]\n\nContent:\nFinally, we write [MATH: U(f,P)] for the upper Riemann sum of the function [MATH: f] with respect to [MATH: P.]\n\nContent:\nNote: We write [MATH: U(f,P)] because the answer we get for the upper bound [MATH: U] depends on the function [MATH: f] and the partition [MATH: P] that we choose. If we choose a different function or partition, then we'll get a different upper bound.\n\n---\n\nItem 7 \u2014 Example: Calculating an Upper Riemann Sum in the Case of a Strictly Decreasing Function\n\nExample Prompt:\nLet [MATH: R = [1,5] \\times [2,6]] be a region in the [MATH: xy]-plane, and let [MATH: f(x,y) = 65-x^2-y^2.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {1, 3, 5}, P_{2} = {2, 4, 6}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f,P).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's draw the region [MATH: R] and the partition [MATH: P.]\n\n[IMG: /graphics/9b2abc9b7e3a6bfcb6d7041a24fce9aa]\n\nThe upper sum [MATH: U(f,P)] is given by\n\n[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]\n\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] in each subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum.\n\nTaking into account the fact that [MATH: \\textrm{Area}(R_{ij})=4] for all [MATH: 4] regions, the formula for [MATH: U(f,P)] reduces to\n[MATH: U(f, P)|= 4 \u22c5 M_{11} + 4 \u22c5 M_{21} + 4 \u22c5 M_{12} + 4 \u22c5 M_{22}; = 4(M_{11} + M_{21} + M_{12} + M_{22}).]\n\nNow, notice that\n\n- [MATH: f(x,y) = 65-x^2-y^2] decreases as [MATH: x] increases, and\n- [MATH: f(x,y) = 65-x^2-y^2] decreases as [MATH: y] increases.\n\n[IMG: /graphics/143b73cdc2be16101dddbb200c3c39b6]\n\nAs a result, the maximum value of [MATH: f] in each subregion is attained when we have the smallest possible [MATH: x] and the smallest possible [MATH: y.] This is the value at the bottom left corner of each subregion.\n\n[IMG: /graphics/09e5f4950e59ffc259e3ed3bef452a2f]\n\nCalculating the value of [MATH: f] at each bottom left corner, we get the following:\n\n[MATH: M_{11}|= f(1, 2) = 60; M_{21}|= f(3, 2) = 52; M_{12}|= f(1, 4) = 48; M_{22}|= f(3, 4) = 40]\n\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\n[MATH: U(f, P)|= 4(60 + 52 + 48 + 40) = 800.]\n\n---\n\nItem 8 \u2014 Question 3\n\nPrompt:\nLet [MATH: R = [\u2212 1, 1] \u00d7 [\u2212 1, 1]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = 5 \u2212 3x \u2212 y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {\u2212 1, 0, 1}, P_{2} = {\u2212 1, 0, 1}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 30]\nb. [MATH: 28]\nc. [MATH: 24]\nd. [MATH: 20]\ne. [MATH: 34]\n\n---\n\nItem 9 \u2014 Question 4\n\nPrompt:\nLet [MATH: R = [\u2212 2, 2] \u00d7 [\u2212 2, 2]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = 6 \u2212 2x \u2212 y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {\u2212 2, 0, 2}, P_{2} = {\u2212 2, 0, 2}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 64]\nb. [MATH: 144]\nc. [MATH: 120]\nd. [MATH: 104]\ne. [MATH: 36]\n\n---\n\nItem 10 \u2014 Example: Calculating an Upper Riemann Sum in the Case of a Strictly Increasing Function\n\nExample Prompt:\nLet [MATH: R = [0,2]\\times [1,3]] be a region in the [MATH: xy]-plane, and let [MATH: f(x,y) = x+2y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {0, 1, 2}, P_{2} = {1, 2, 3}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f,P).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's draw the region [MATH: R] and the partition [MATH: P.]\n\n[IMG: /graphics/94f8ae5652f9bf448a84bd30a23dbe09]\n\nThe upper sum [MATH: U(f,P)] is given by\n\n[MATH: U(f,P) = M_{11}\\cdot\\textrm{Area}(R_{11}) + M_{21}\\cdot\\textrm{Area}(R_{21}) + M_{12}\\cdot\\textrm{Area}(R_{12}) + M_{22}\\cdot\\textrm{Area}(R_{22}),]\n\nwhere [MATH: M_{ij}] is the maximum value of [MATH: f] in each subregion [MATH: R_{ij}.] We pick the maximum value of [MATH: f] because we're finding the upper sum,\n\nTaking into account the fact that [MATH: \\textrm{Area}(R_{ij})=1] for all [MATH: 4] subregions, the formula for [MATH: U(f,P)] reduces to\n[MATH: U(f,P) = M_{11} + M_{21} + M_{12} + M_{22}.]\n\nNow, notice that\n\n- [MATH: f(x,y) = x+2y] increases as [MATH: x] increases, and\n- [MATH: f(x,y) = x+2y] increases as [MATH: y] increases.\n\n[IMG: /graphics/c32290b459f231155ebed12f7dbb2413]\n\nAs a result, the maximum value of [MATH: f] in each subregion is attained when we have the largest possible [MATH: x] and the largest possible [MATH: y]. This is the value at the top right corner of each subregion.\n\n[IMG: /graphics/e53b15ce6facb291ce49ed2b43c131db]\n\nCalculating the value of [MATH: f] at each top right corner, we get the following:\n\n[MATH: M_{11}|= f(1, 2) = 5; M_{21}|= f(2, 2) = 6; M_{12}|= f(1, 3) = 7; M_{22}|= f(2, 3) = 8]\n\nFinally, substituting the above values in our expression for [MATH: U,] we get\n\n[MATH: U(f, P)|= 5 + 6 + 7 + 8 = 26.]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\nLet [MATH: R = [2, 4] \u00d7 [2, 4]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = x^{2} + y^{2}.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {2, 3, 4}, P_{2} = {2, 3, 4}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 100]\nb. [MATH: 88]\nc. [MATH: 75]\nd. [MATH: 96]\ne. [MATH: 115]\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\nLet [MATH: R = [2, 10] \u00d7 [3, 7]] be a region in the [MATH: xy]-plane, and let [MATH: f(x, y) = x + y.]\nFurther, let [MATH: P] be a partition of [MATH: R,] where\n\n[MATH: P_{1} = {2, 6, 10}, P_{2} = {3, 5, 7}, P = P_{1} \u00d7 P_{2}.]\n\nCalculate the upper Riemann sum [MATH: U(f, P).]\n\nChoices:\na. [MATH: 56]\nb. [MATH: 448]\nc. [MATH: 320]\nd. [MATH: 384]\ne. [MATH: 480]"
+  }
+}

@@ -141,7 +141,6 @@ $$
 ```quiz
 type: radio
 id: ma-49527
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the definite integral $\displaystyle \int_{1}^{2}\sqrt{2x - 1}dx$.
 options:
@@ -152,6 +151,7 @@ options:
   content: |-
     $2\sqrt{3} - \frac{2}{3}$
 - id: c
+  correct: true
   content: |-
     $\sqrt{3} - \frac{1}{3}$
 - id: d
@@ -169,7 +169,6 @@ options:
 ```quiz
 type: radio
 id: ma-49610
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the definite integral $\displaystyle \int_{1}^{2}(2x + 1)^{2}dx$.
 options:
@@ -183,6 +182,7 @@ options:
   content: |-
     $\frac{95}{6}$
 - id: d
+  correct: true
   content: |-
     $\frac{49}{3}$
 - id: e
@@ -242,11 +242,11 @@ $$
 ```quiz
 type: radio
 id: ma-12912
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the definite integral $\displaystyle \int_{0}^{1}\frac{x}{x^{2} + 1}dx$.
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{1}{2}\ln (2)$
 - id: b
@@ -270,11 +270,11 @@ options:
 ```quiz
 type: radio
 id: ma-12917
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the definite integral $\displaystyle \int_{-2}^{0}\frac{x^{2}}{x^{3} + 9}dx$.
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{2}{3}\ln (3)$
 - id: b

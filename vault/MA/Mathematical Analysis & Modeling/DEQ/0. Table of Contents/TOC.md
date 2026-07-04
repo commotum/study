@@ -1,0 +1,199 @@
+# Differential Equations
+
+```check-progress
+```
+
+## Course Content
+
+- [ ] 1. First-Order Differential Equations
+	- [ ] 1.1. Techniques for Solving First-Order ODEs
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.1. Solving First-Order ODEs Using Separation of Variables|1.1.1. Solving First-Order ODEs Using Separation of Variables]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.2. Solving First-Order IVPs Using Separation of Variables|1.1.2. Solving First-Order IVPs Using Separation of Variables]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.3. Introduction to First-Order Linear ODEs|1.1.3. Introduction to First-Order Linear ODEs]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.4. General Solutions of First-Order Linear ODEs|1.1.4. General Solutions of First-Order Linear ODEs]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.5. Solving First-Order Linear ODEs With Exponential Forcing|1.1.5. Solving First-Order Linear ODEs With Exponential Forcing]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.6. Solving First-Order Linear ODEs With Sinusoidal Forcing|1.1.6. Solving First-Order Linear ODEs With Sinusoidal Forcing]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.7. Solving First-Order Linear ODEs Using Integrating Factors|1.1.7. Solving First-Order Linear ODEs Using Integrating Factors]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.8. Solving First-Order ODEs by Substitution|1.1.8. Solving First-Order ODEs by Substitution]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.9. Further Solving First-Order ODEs by Substitution|1.1.9. Further Solving First-Order ODEs by Substitution]]
+		- [ ] [[1. First-Order Differential Equations/1.1. Techniques for Solving First-Order ODEs/Lessons/1.1.10. Reducing ODEs to First-Order Linear by Substitution|1.1.10. Reducing ODEs to First-Order Linear by Substitution]]
+	- [ ] 1.2. Special First-Order Equations
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.1. Homogeneous Functions|1.2.1. Homogeneous Functions]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.2. Homogeneous First-Order ODEs|1.2.2. Homogeneous First-Order ODEs]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.3. Exact Differential Equations|1.2.3. Exact Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.4. Solving Exact ODEs Using Integrating Factors|1.2.4. Solving Exact ODEs Using Integrating Factors]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.5. Bernoulli Differential Equations|1.2.5. Bernoulli Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.6. Riccati Differential Equations|1.2.6. Riccati Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.7. Clairaut Differential Equations|1.2.7. Clairaut Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.2. Special First-Order Equations/Lessons/1.2.8. d'Alembert Differential Equations|1.2.8. d'Alembert Differential Equations]]
+	- [ ] 1.3. Slope Fields
+		- [ ] [[1. First-Order Differential Equations/1.3. Slope Fields/Lessons/1.3.1. Slope Fields for Directly Integrable Differential Equations|1.3.1. Slope Fields for Directly Integrable Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.3. Slope Fields/Lessons/1.3.2. Slope Fields for Autonomous Differential Equations|1.3.2. Slope Fields for Autonomous Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.3. Slope Fields/Lessons/1.3.3. Slope Fields for Nonautonomous Differential Equations|1.3.3. Slope Fields for Nonautonomous Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.3. Slope Fields/Lessons/1.3.4. Analyzing Slope Fields for Directly Integrable Differential Equations|1.3.4. Analyzing Slope Fields for Directly Integrable Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.3. Slope Fields/Lessons/1.3.5. Analyzing Slope Fields for Autonomous Differential Equations|1.3.5. Analyzing Slope Fields for Autonomous Differential Equations]]
+		- [ ] [[1. First-Order Differential Equations/1.3. Slope Fields/Lessons/1.3.6. Analyzing Slope Fields for Nonautonomous Differential Equations|1.3.6. Analyzing Slope Fields for Nonautonomous Differential Equations]]
+	- [ ] 1.4. Qualitative Techniques for Differential Equations
+		- [ ] [[1. First-Order Differential Equations/1.4. Qualitative Techniques for Differential Equations/Lessons/1.4.1. Qualitative Analysis of First-Order ODEs|1.4.1. Qualitative Analysis of First-Order ODEs]]
+		- [ ] [[1. First-Order Differential Equations/1.4. Qualitative Techniques for Differential Equations/Lessons/1.4.2. Equilibrium Solutions of First-Order ODEs|1.4.2. Equilibrium Solutions of First-Order ODEs]]
+		- [ ] [[1. First-Order Differential Equations/1.4. Qualitative Techniques for Differential Equations/Lessons/1.4.3. Phase Lines of First-Order ODEs|1.4.3. Phase Lines of First-Order ODEs]]
+		- [ ] [[1. First-Order Differential Equations/1.4. Qualitative Techniques for Differential Equations/Lessons/1.4.4. Classifying Equilibrium Solutions of First-Order ODEs|1.4.4. Classifying Equilibrium Solutions of First-Order ODEs]]
+- [ ] 2. Modeling With First-Order Differential Equations
+	- [ ] 2.1. Applications of First-Order ODEs
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.1. Applications of First-Order ODEs/Lessons/2.1.1. Modeling With First-Order ODEs|2.1.1. Modeling With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.1. Applications of First-Order ODEs/Lessons/2.1.2. Further Modeling With First-Order ODEs|2.1.2. Further Modeling With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.1. Applications of First-Order ODEs/Lessons/2.1.3. Modeling Mixture Problems With First-Order Separable ODEs|2.1.3. Modeling Mixture Problems With First-Order Separable ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.1. Applications of First-Order ODEs/Lessons/2.1.4. Modeling Mixture Problems With First-Order Linear ODEs|2.1.4. Modeling Mixture Problems With First-Order Linear ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.1. Applications of First-Order ODEs/Lessons/2.1.5. Orthogonal Trajectories|2.1.5. Orthogonal Trajectories]]
+	- [ ] 2.2. Growth and Decay Models With First-Order ODEs
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.1. Exponential Growth and Decay Models With First-Order ODEs|2.2.1. Exponential Growth and Decay Models With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.2. Exponential Growth and Decay Models With First-Order ODEs- Calculating Unknown Times and Initial Values|2.2.2. Exponential Growth and Decay Models With First-Order ODEs: Calculating Unknown Times and Initial Values]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.3. Exponential Growth and Decay Models With First-Order ODEs- Half-Life Problems|2.2.3. Exponential Growth and Decay Models With First-Order ODEs: Half-Life Problems]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.4. Inhibited Growth Models With First-Order ODEs|2.2.4. Inhibited Growth Models With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.5. Inhibited Decay Models With First-Order ODEs|2.2.5. Inhibited Decay Models With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.6. Logistic Growth Models With First-Order ODEs|2.2.6. Logistic Growth Models With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.7. Qualitative Analysis of the Logistic Growth Equation|2.2.7. Qualitative Analysis of the Logistic Growth Equation]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.2. Growth and Decay Models With First-Order ODEs/Lessons/2.2.8. Solving the Logistic Growth Equation|2.2.8. Solving the Logistic Growth Equation]]
+	- [ ] 2.3. Physical Applications of First-Order ODEs
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.1. Velocity and Acceleration as Functions of Displacement|2.3.1. Velocity and Acceleration as Functions of Displacement]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.2. Determining Properties of Objects Described as Functions of Displacement|2.3.2. Determining Properties of Objects Described as Functions of Displacement]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.3. Falling Body Problems With Linear Drag|2.3.3. Falling Body Problems With Linear Drag]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.4. Falling Body Problems With Quadratic Drag|2.3.4. Falling Body Problems With Quadratic Drag]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.5. Newton's Law of Universal Gravitation|2.3.5. Newton's Law of Universal Gravitation]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.6. Modeling Escape Velocity With First-Order ODEs|2.3.6. Modeling Escape Velocity With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.7. Modeling RL Circuits With First-Order ODEs|2.3.7. Modeling RL Circuits With First-Order ODEs]]
+		- [ ] [[2. Modeling With First-Order Differential Equations/2.3. Physical Applications of First-Order ODEs/Lessons/2.3.8. Modeling RC Circuits With First-Order ODEs|2.3.8. Modeling RC Circuits With First-Order ODEs]]
+- [ ] 3. Linear Differential Equations
+	- [ ] 3.1. Theory of Solutions to Linear ODEs
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.1. Differential Operators|3.1.1. Differential Operators]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.2. Linear Differential Operators|3.1.2. Linear Differential Operators]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.3. Introduction to Second-Order Linear ODEs|3.1.3. Introduction to Second-Order Linear ODEs]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.4. The Superposition Principle|3.1.4. The Superposition Principle]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.5. Reduction of Order|3.1.5. Reduction of Order]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.6. Linear Independence of Solutions to Homogeneous ODEs|3.1.6. Linear Independence of Solutions to Homogeneous ODEs]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.7. General Solutions of Linear ODEs|3.1.7. General Solutions of Linear ODEs]]
+		- [ ] [[3. Linear Differential Equations/3.1. Theory of Solutions to Linear ODEs/Lessons/3.1.8. Abel's Identity|3.1.8. Abel's Identity]]
+	- [ ] 3.2. Second-Order Linear ODEs With Constant Coefficients
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.1. Second-Order Homogeneous ODEs- Characteristic Equations With Distinct Real Roots|3.2.1. Second-Order Homogeneous ODEs: Characteristic Equations With Distinct Real Roots]]
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.2. Second-Order Homogeneous ODEs- Characteristic Equations With Repeated Roots|3.2.2. Second-Order Homogeneous ODEs: Characteristic Equations With Repeated Roots]]
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.3. Second-Order Homogeneous ODEs- Characteristic Equations With Complex Roots|3.2.3. Second-Order Homogeneous ODEs: Characteristic Equations With Complex Roots]]
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.4. Second-Order Homogeneous Initial Value Problems|3.2.4. Second-Order Homogeneous Initial Value Problems]]
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.5. Second-Order Inhomogeneous ODEs With Polynomial Forcing|3.2.5. Second-Order Inhomogeneous ODEs With Polynomial Forcing]]
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.6. Second-Order Inhomogeneous ODEs With Exponential Forcing|3.2.6. Second-Order Inhomogeneous ODEs With Exponential Forcing]]
+		- [ ] [[3. Linear Differential Equations/3.2. Second-Order Linear ODEs With Constant Coefficients/Lessons/3.2.7. Second-Order Inhomogeneous ODEs With Sinusoidal Forcing|3.2.7. Second-Order Inhomogeneous ODEs With Sinusoidal Forcing]]
+	- [ ] 3.3. The Cauchy-Euler Equations
+		- [ ] [[3. Linear Differential Equations/3.3. The Cauchy-Euler Equations/Lessons/3.3.1. Cauchy-Euler Equations- Characteristic Equations With Distinct Real Roots|3.3.1. Cauchy-Euler Equations: Characteristic Equations With Distinct Real Roots]]
+		- [ ] [[3. Linear Differential Equations/3.3. The Cauchy-Euler Equations/Lessons/3.3.2. Cauchy-Euler Equations- Characteristic Equations With Repeated Roots|3.3.2. Cauchy-Euler Equations: Characteristic Equations With Repeated Roots]]
+		- [ ] [[3. Linear Differential Equations/3.3. The Cauchy-Euler Equations/Lessons/3.3.3. Cauchy-Euler Equations- Characteristic Equations With Complex Roots|3.3.3. Cauchy-Euler Equations: Characteristic Equations With Complex Roots]]
+		- [ ] [[3. Linear Differential Equations/3.3. The Cauchy-Euler Equations/Lessons/3.3.4. Cauchy-Euler Equations With Forcing|3.3.4. Cauchy-Euler Equations With Forcing]]
+	- [ ] 3.4. Variation of Parameters
+		- [ ] [[3. Linear Differential Equations/3.4. Variation of Parameters/Lessons/3.4.1. Variation of Parameters for First-Order Linear ODEs|3.4.1. Variation of Parameters for First-Order Linear ODEs]]
+		- [ ] [[3. Linear Differential Equations/3.4. Variation of Parameters/Lessons/3.4.2. Variation of Parameters for Second-Order ODEs|3.4.2. Variation of Parameters for Second-Order ODEs]]
+		- [ ] [[3. Linear Differential Equations/3.4. Variation of Parameters/Lessons/3.4.3. Solving Second-Order ODEs Using Variation of Parameters|3.4.3. Solving Second-Order ODEs Using Variation of Parameters]]
+		- [ ] [[3. Linear Differential Equations/3.4. Variation of Parameters/Lessons/3.4.4. Variation of Parameters With Higher-Order ODEs|3.4.4. Variation of Parameters With Higher-Order ODEs]]
+	- [ ] 3.5. Modeling With Second-Order ODEs
+		- [ ] [[3. Linear Differential Equations/3.5. Modeling With Second-Order ODEs/Lessons/3.5.1. Simple Harmonic Oscillators|3.5.1. Simple Harmonic Oscillators]]
+		- [ ] [[3. Linear Differential Equations/3.5. Modeling With Second-Order ODEs/Lessons/3.5.2. Damped Oscillators|3.5.2. Damped Oscillators]]
+		- [ ] [[3. Linear Differential Equations/3.5. Modeling With Second-Order ODEs/Lessons/3.5.3. Forced Oscillators|3.5.3. Forced Oscillators]]
+		- [ ] [[3. Linear Differential Equations/3.5. Modeling With Second-Order ODEs/Lessons/3.5.4. Resonance in Vibrating Systems|3.5.4. Resonance in Vibrating Systems]]
+		- [ ] [[3. Linear Differential Equations/3.5. Modeling With Second-Order ODEs/Lessons/3.5.5. Modeling Capacitor Charge in RCL Circuits With Second-Order ODEs|3.5.5. Modeling Capacitor Charge in RCL Circuits With Second-Order ODEs]]
+		- [ ] [[3. Linear Differential Equations/3.5. Modeling With Second-Order ODEs/Lessons/3.5.6. Modeling Current in RCL Circuits With Second-Order ODEs|3.5.6. Modeling Current in RCL Circuits With Second-Order ODEs]]
+- [ ] 4. Systems of Differential Equations
+	- [ ] 4.1. Systems of ODEs
+		- [ ] [[4. Systems of Differential Equations/4.1. Systems of ODEs/Lessons/4.1.1. Introduction to Systems of Linear ODEs|4.1.1. Introduction to Systems of Linear ODEs]]
+		- [ ] [[4. Systems of Differential Equations/4.1. Systems of ODEs/Lessons/4.1.2. Expressing Homogeneous ODEs as First-Order Systems|4.1.2. Expressing Homogeneous ODEs as First-Order Systems]]
+		- [ ] [[4. Systems of Differential Equations/4.1. Systems of ODEs/Lessons/4.1.3. Expressing Inhomogeneous ODEs as First-Order Systems|4.1.3. Expressing Inhomogeneous ODEs as First-Order Systems]]
+		- [ ] [[4. Systems of Differential Equations/4.1. Systems of ODEs/Lessons/4.1.4. Linear Independence for Homogeneous Systems of ODEs|4.1.4. Linear Independence for Homogeneous Systems of ODEs]]
+		- [ ] [[4. Systems of Differential Equations/4.1. Systems of ODEs/Lessons/4.1.5. General Solutions of First-Order Linear Systems of ODEs|4.1.5. General Solutions of First-Order Linear Systems of ODEs]]
+	- [ ] 4.2. Solving Systems of Linear ODEs
+		- [ ] [[4. Systems of Differential Equations/4.2. Solving Systems of Linear ODEs/Lessons/4.2.1. Solving Decoupled Homogeneous Systems of ODEs|4.2.1. Solving Decoupled Homogeneous Systems of ODEs]]
+		- [ ] [[4. Systems of Differential Equations/4.2. Solving Systems of Linear ODEs/Lessons/4.2.2. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues|4.2.2. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.2. Solving Systems of Linear ODEs/Lessons/4.2.3. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues and Initial Conditions|4.2.3. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues and Initial Conditions]]
+		- [ ] [[4. Systems of Differential Equations/4.2. Solving Systems of Linear ODEs/Lessons/4.2.4. Solving Homogeneous Systems of ODEs With Repeated Eigenvalues|4.2.4. Solving Homogeneous Systems of ODEs With Repeated Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.2. Solving Systems of Linear ODEs/Lessons/4.2.5. Solving Homogeneous Systems of ODEs With Complex Eigenvalues|4.2.5. Solving Homogeneous Systems of ODEs With Complex Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.2. Solving Systems of Linear ODEs/Lessons/4.2.6. Solving Inhomogeneous Systems of ODEs|4.2.6. Solving Inhomogeneous Systems of ODEs]]
+	- [ ] 4.3. Phase Portraits for Systems of Linear ODEs
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.1. Phase Planes and Phase Portraits|4.3.1. Phase Planes and Phase Portraits]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.2. Equilibrium Points and Stability for Systems of ODEs|4.3.2. Equilibrium Points and Stability for Systems of ODEs]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.3. Phase Portraits for Decoupled Linear Systems|4.3.3. Phase Portraits for Decoupled Linear Systems]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.4. Phase Portraits for Linear Systems With Real Distinct Eigenvalues|4.3.4. Phase Portraits for Linear Systems With Real Distinct Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.5. Phase Portraits for Linear Systems With Repeated Eigenvalues|4.3.5. Phase Portraits for Linear Systems With Repeated Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.6. Phase Portraits for Linear Systems With Zero Eigenvalues|4.3.6. Phase Portraits for Linear Systems With Zero Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.7. Phase Portraits for Linear Systems With Complex Eigenvalues|4.3.7. Phase Portraits for Linear Systems With Complex Eigenvalues]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.8. Shifted Systems of ODEs|4.3.8. Shifted Systems of ODEs]]
+		- [ ] [[4. Systems of Differential Equations/4.3. Phase Portraits for Systems of Linear ODEs/Lessons/4.3.9. Linear Approximations Near Equilibria|4.3.9. Linear Approximations Near Equilibria]]
+	- [ ] 4.4. Solving Systems of ODEs Using Matrix Methods
+		- [ ] [[4. Systems of Differential Equations/4.4. Solving Systems of ODEs Using Matrix Methods/Lessons/4.4.1. Matrix Exponentials|4.4.1. Matrix Exponentials]]
+		- [ ] [[4. Systems of Differential Equations/4.4. Solving Systems of ODEs Using Matrix Methods/Lessons/4.4.2. Fundamental Matrices|4.4.2. Fundamental Matrices]]
+		- [ ] [[4. Systems of Differential Equations/4.4. Solving Systems of ODEs Using Matrix Methods/Lessons/4.4.3. Solving Homogeneous Systems of ODEs Using Matrix Methods|4.4.3. Solving Homogeneous Systems of ODEs Using Matrix Methods]]
+		- [ ] [[4. Systems of Differential Equations/4.4. Solving Systems of ODEs Using Matrix Methods/Lessons/4.4.4. Solving Inhomogeneous Systems of ODEs Using Matrix Methods|4.4.4. Solving Inhomogeneous Systems of ODEs Using Matrix Methods]]
+		- [ ] [[4. Systems of Differential Equations/4.4. Solving Systems of ODEs Using Matrix Methods/Lessons/4.4.5. Solving Systems of ODEs Using Variation of Parameters|4.4.5. Solving Systems of ODEs Using Variation of Parameters]]
+	- [ ] 4.5. Modeling With Systems of Linear ODEs
+		- [ ] [[4. Systems of Differential Equations/4.5. Modeling With Systems of Linear ODEs/Lessons/4.5.1. The Lotka-Volterra Predator-Prey Model|4.5.1. The Lotka-Volterra Predator-Prey Model]]
+		- [ ] [[4. Systems of Differential Equations/4.5. Modeling With Systems of Linear ODEs/Lessons/4.5.2. The Lotka-Volterra Model With Carrying Capacity|4.5.2. The Lotka-Volterra Model With Carrying Capacity]]
+- [ ] 5. Laplace Transforms
+	- [ ] 5.1. Laplace Transforms
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.1. The Floor and Ceiling Functions|5.1.1. The Floor and Ceiling Functions]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.2. The Unit Step Function|5.1.2. The Unit Step Function]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.3. Piecewise Continuity|5.1.3. Piecewise Continuity]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.4. Introduction to Laplace Transforms|5.1.4. Introduction to Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.5. Linearity of Laplace Transforms|5.1.5. Linearity of Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.6. Laplace Transforms of Piecewise Continuous Functions|5.1.6. Laplace Transforms of Piecewise Continuous Functions]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.7. The Smoothness Property of Laplace Transforms|5.1.7. The Smoothness Property of Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.8. Laplace Transforms of Derivatives|5.1.8. Laplace Transforms of Derivatives]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.9. Laplace Transforms of Integrals|5.1.9. Laplace Transforms of Integrals]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.10. The First Shifting Theorem of Laplace Transforms|5.1.10. The First Shifting Theorem of Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.11. The Second Shifting Theorem of Laplace Transforms|5.1.11. The Second Shifting Theorem of Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.1. Laplace Transforms/Lessons/5.1.12. Inverse Laplace Transforms|5.1.12. Inverse Laplace Transforms]]
+	- [ ] 5.2. Solving Linear ODEs Using Laplace Transforms
+		- [ ] [[5. Laplace Transforms/5.2. Solving Linear ODEs Using Laplace Transforms/Lessons/5.2.1. Solving First-Order ODEs Using Laplace Transforms|5.2.1. Solving First-Order ODEs Using Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.2. Solving Linear ODEs Using Laplace Transforms/Lessons/5.2.2. Solving First-Order ODEs With Time-Delayed Forcing Using Laplace Transforms|5.2.2. Solving First-Order ODEs With Time-Delayed Forcing Using Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.2. Solving Linear ODEs Using Laplace Transforms/Lessons/5.2.3. Solving Second-Order ODEs Using Laplace Transforms|5.2.3. Solving Second-Order ODEs Using Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.2. Solving Linear ODEs Using Laplace Transforms/Lessons/5.2.4. Solving Second-Order ODEs With Time-Delayed Forcing Using Laplace Transforms|5.2.4. Solving Second-Order ODEs With Time-Delayed Forcing Using Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.2. Solving Linear ODEs Using Laplace Transforms/Lessons/5.2.5. Solving Homogeneous Systems of ODEs Using Laplace Transforms|5.2.5. Solving Homogeneous Systems of ODEs Using Laplace Transforms]]
+		- [ ] [[5. Laplace Transforms/5.2. Solving Linear ODEs Using Laplace Transforms/Lessons/5.2.6. Solving Inhomogeneous Systems of ODEs Using Laplace Transforms|5.2.6. Solving Inhomogeneous Systems of ODEs Using Laplace Transforms]]
+- [ ] 6. Boundary Value Problems
+	- [ ] 6.1. Boundary Value Problems
+		- [ ] [[6. Boundary Value Problems/6.1. Boundary Value Problems/Lessons/6.1.1. Introduction to Boundary Value Problems|6.1.1. Introduction to Boundary Value Problems]]
+		- [ ] [[6. Boundary Value Problems/6.1. Boundary Value Problems/Lessons/6.1.2. Second-Order Homogeneous Boundary Value Problems|6.1.2. Second-Order Homogeneous Boundary Value Problems]]
+		- [ ] [[6. Boundary Value Problems/6.1. Boundary Value Problems/Lessons/6.1.3. Second-Order Inhomogeneous Boundary Value Problems|6.1.3. Second-Order Inhomogeneous Boundary Value Problems]]
+		- [ ] [[6. Boundary Value Problems/6.1. Boundary Value Problems/Lessons/6.1.4. Eigenvalues and Eigenfunctions of Homogeneous BVPs|6.1.4. Eigenvalues and Eigenfunctions of Homogeneous BVPs]]
+	- [ ] 6.2. Fourier Series
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.1. Introduction to Fourier Series|6.2.1. Introduction to Fourier Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.2. Properties of Fourier Series|6.2.2. Properties of Fourier Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.3. Fourier Sine Series|6.2.3. Fourier Sine Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.4. Fourier Cosine Series|6.2.4. Fourier Cosine Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.5. Fourier Series of Arbitrary Period|6.2.5. Fourier Series of Arbitrary Period]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.6. Convergence of Fourier Series|6.2.6. Convergence of Fourier Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.7. Differentiating and Integrating Fourier Series|6.2.7. Differentiating and Integrating Fourier Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.8. Solving ODEs Using Fourier Series|6.2.8. Solving ODEs Using Fourier Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.9. Solving IVPs Using Fourier Series|6.2.9. Solving IVPs Using Fourier Series]]
+		- [ ] [[6. Boundary Value Problems/6.2. Fourier Series/Lessons/6.2.10. Solving BVPs Using Fourier Series|6.2.10. Solving BVPs Using Fourier Series]]
+- [ ] 7. Approximating Solutions to Differential Equations
+	- [ ] 7.1. Series Solutions of Differential Equations
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.1. Introduction to Recurrence Relations|7.1.1. Introduction to Recurrence Relations]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.2. Taylor Series Solutions of Differential Equations|7.1.2. Taylor Series Solutions of Differential Equations]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.3. Power Series Solutions of Differential Equations|7.1.3. Power Series Solutions of Differential Equations]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.4. Regular Singular Points|7.1.4. Regular Singular Points]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.5. The Method of Frobenius|7.1.5. The Method of Frobenius]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.6. Finding Recurrence Relations for the Coefficients of a Frobenius Solution|7.1.6. Finding Recurrence Relations for the Coefficients of a Frobenius Solution]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.1. Series Solutions of Differential Equations/Lessons/7.1.7. Finding General Solutions Using the Method of Frobenius|7.1.7. Finding General Solutions Using the Method of Frobenius]]
+	- [ ] 7.2. Euler's Method
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.2. Euler's Method/Lessons/7.2.1. Euler's Method- Calculating One Step|7.2.1. Euler's Method: Calculating One Step]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.2. Euler's Method/Lessons/7.2.2. Euler's Method- Calculating Multiple Steps|7.2.2. Euler's Method: Calculating Multiple Steps]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.2. Euler's Method/Lessons/7.2.3. The Modified Euler Method|7.2.3. The Modified Euler Method]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.2. Euler's Method/Lessons/7.2.4. Euler's Method for Systems of ODEs|7.2.4. Euler's Method for Systems of ODEs]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.2. Euler's Method/Lessons/7.2.5. Euler's Method for Second-Order ODEs|7.2.5. Euler's Method for Second-Order ODEs]]
+	- [ ] 7.3. Higher-Order Numerical Methods
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.3. Higher-Order Numerical Methods/Lessons/7.3.1. The RK4 Method|7.3.1. The RK4 Method]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.3. Higher-Order Numerical Methods/Lessons/7.3.2. The ABM2 Method|7.3.2. The ABM2 Method]]
+	- [ ] 7.4. Implicit Numerical Methods
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.4. Implicit Numerical Methods/Lessons/7.4.1. The Implicit Euler Method|7.4.1. The Implicit Euler Method]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.4. Implicit Numerical Methods/Lessons/7.4.2. The Trapezoidal Method|7.4.2. The Trapezoidal Method]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.4. Implicit Numerical Methods/Lessons/7.4.3. Using the Implicit Euler Method With Newton's Method|7.4.3. Using the Implicit Euler Method With Newton's Method]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.4. Implicit Numerical Methods/Lessons/7.4.4. Using the Trapezoidal Method With Newton's Method|7.4.4. Using the Trapezoidal Method With Newton's Method]]
+	- [ ] 7.5. Analyzing Numerical Methods
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.5. Analyzing Numerical Methods/Lessons/7.5.1. Big-O Notation|7.5.1. Big-O Notation]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.5. Analyzing Numerical Methods/Lessons/7.5.2. Error in Numerical Methods|7.5.2. Error in Numerical Methods]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.5. Analyzing Numerical Methods/Lessons/7.5.3. Order of Numerical Methods|7.5.3. Order of Numerical Methods]]
+		- [ ] [[7. Approximating Solutions to Differential Equations/7.5. Analyzing Numerical Methods/Lessons/7.5.4. Stability of Numerical Methods|7.5.4. Stability of Numerical Methods]]

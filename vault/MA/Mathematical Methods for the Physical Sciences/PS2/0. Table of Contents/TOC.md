@@ -1,0 +1,291 @@
+# Mathematical Methods for the Physical Sciences II
+
+```check-progress
+```
+
+## Course Content
+
+- [ ] 1. Projections
+	- [ ] 1.1. Inner Products
+		- [ ] [[1. Projections/1.1. Inner Products/Lessons/1.1.1. The Dot Product in N-Dimensional Euclidean Space|1.1.1. The Dot Product in N-Dimensional Euclidean Space]]
+		- [ ] [[1. Projections/1.1. Inner Products/Lessons/1.1.2. The Norm of a Vector in N-Dimensional Euclidean Space|1.1.2. The Norm of a Vector in N-Dimensional Euclidean Space]]
+		- [ ] [[1. Projections/1.1. Inner Products/Lessons/1.1.3. Inner Product Spaces|1.1.3. Inner Product Spaces]]
+		- [ ] [[1. Projections/1.1. Inner Products/Lessons/1.1.4. The Inner Product in Vector Spaces Over the Complex Numbers|1.1.4. The Inner Product in Vector Spaces Over the Complex Numbers]]
+		- [ ] [[1. Projections/1.1. Inner Products/Lessons/1.1.5. The Norm of a Vector in Inner Product Spaces|1.1.5. The Norm of a Vector in Inner Product Spaces]]
+	- [ ] 1.2. Orthogonality
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.1. Orthogonal Vectors in Euclidean Spaces|1.2.1. Orthogonal Vectors in Euclidean Spaces]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.2. Orthogonal Vectors in Inner Product Spaces|1.2.2. Orthogonal Vectors in Inner Product Spaces]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.3. The Cauchy-Schwarz Inequality and the Angle Between Two Vectors|1.2.3. The Cauchy-Schwarz Inequality and the Angle Between Two Vectors]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.4. The Pythagorean Theorem and the Triangle Inequality|1.2.4. The Pythagorean Theorem and the Triangle Inequality]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.5. Orthogonal Complements|1.2.5. Orthogonal Complements]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.6. Orthogonal Sets in Euclidean Spaces|1.2.6. Orthogonal Sets in Euclidean Spaces]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.7. Orthogonal Sets in Inner Product Spaces|1.2.7. Orthogonal Sets in Inner Product Spaces]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.8. Orthogonal Matrices|1.2.8. Orthogonal Matrices]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.9. Orthogonal Linear Transformations|1.2.9. Orthogonal Linear Transformations]]
+		- [ ] [[1. Projections/1.2. Orthogonality/Lessons/1.2.10. The Four Fundamental Subspaces of a Matrix|1.2.10. The Four Fundamental Subspaces of a Matrix]]
+	- [ ] 1.3. Orthogonal Projections
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.1. Projecting Vectors Onto One-Dimensional Subspaces|1.3.1. Projecting Vectors Onto One-Dimensional Subspaces]]
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.2. The Components of a Vector with Respect to an Orthogonal or Orthonormal Basis|1.3.2. The Components of a Vector with Respect to an Orthogonal or Orthonormal Basis]]
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.3. Projecting Vectors Onto Subspaces in Euclidean Spaces (Orthogonal Bases)|1.3.3. Projecting Vectors Onto Subspaces in Euclidean Spaces (Orthogonal Bases)]]
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.4. Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases)|1.3.4. Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases)]]
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.5. Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases)- Applications|1.3.5. Projecting Vectors Onto Subspaces in Euclidean Spaces (Arbitrary Bases): Applications]]
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.6. Projection Matrices, Linear Transformations and Their Properties|1.3.6. Projection Matrices, Linear Transformations and Their Properties]]
+		- [ ] [[1. Projections/1.3. Orthogonal Projections/Lessons/1.3.7. Projecting Vectors Onto Subspaces in Inner Product Spaces|1.3.7. Projecting Vectors Onto Subspaces in Inner Product Spaces]]
+	- [ ] 1.4. Orthogonalization Processes
+		- [ ] [[1. Projections/1.4. Orthogonalization Processes/Lessons/1.4.1. The Gram-Schmidt Process for Two Vectors|1.4.1. The Gram-Schmidt Process for Two Vectors]]
+		- [ ] [[1. Projections/1.4. Orthogonalization Processes/Lessons/1.4.2. The Gram-Schmidt Process in the General Case|1.4.2. The Gram-Schmidt Process in the General Case]]
+		- [ ] [[1. Projections/1.4. Orthogonalization Processes/Lessons/1.4.3. QR Factorization|1.4.3. QR Factorization]]
+- [ ] 2. Quadratic Forms
+	- [ ] 2.1. Diagonalization of Symmetric Matrices
+		- [ ] [[2. Quadratic Forms/2.1. Diagonalization of Symmetric Matrices/Lessons/2.1.1. Diagonalization of 2x2 Symmetric Matrices|2.1.1. Diagonalization of 2x2 Symmetric Matrices]]
+		- [ ] [[2. Quadratic Forms/2.1. Diagonalization of Symmetric Matrices/Lessons/2.1.2. Diagonalization of 3x3 Symmetric Matrices|2.1.2. Diagonalization of 3x3 Symmetric Matrices]]
+		- [ ] [[2. Quadratic Forms/2.1. Diagonalization of Symmetric Matrices/Lessons/2.1.3. The Spectral Theorem|2.1.3. The Spectral Theorem]]
+	- [ ] 2.2. Quadratic Forms
+		- [ ] [[2. Quadratic Forms/2.2. Quadratic Forms/Lessons/2.2.1. Bilinear Forms|2.2.1. Bilinear Forms]]
+		- [ ] [[2. Quadratic Forms/2.2. Quadratic Forms/Lessons/2.2.2. Quadratic Forms|2.2.2. Quadratic Forms]]
+		- [ ] [[2. Quadratic Forms/2.2. Quadratic Forms/Lessons/2.2.3. Change of Variables in Quadratic Forms|2.2.3. Change of Variables in Quadratic Forms]]
+		- [ ] [[2. Quadratic Forms/2.2. Quadratic Forms/Lessons/2.2.4. Positive-Definite and Negative-Definite Quadratic Forms|2.2.4. Positive-Definite and Negative-Definite Quadratic Forms]]
+		- [ ] [[2. Quadratic Forms/2.2. Quadratic Forms/Lessons/2.2.5. Constrained Optimization of Quadratic Forms|2.2.5. Constrained Optimization of Quadratic Forms]]
+		- [ ] [[2. Quadratic Forms/2.2. Quadratic Forms/Lessons/2.2.6. Constrained Optimization of Quadratic Forms- Determining Where Extrema are Attained|2.2.6. Constrained Optimization of Quadratic Forms: Determining Where Extrema are Attained]]
+	- [ ] 2.3. Singular Value Decomposition
+		- [ ] [[2. Quadratic Forms/2.3. Singular Value Decomposition/Lessons/2.3.1. The Singular Values of a Matrix|2.3.1. The Singular Values of a Matrix]]
+		- [ ] [[2. Quadratic Forms/2.3. Singular Value Decomposition/Lessons/2.3.2. Computing the Singular Values of a Matrix|2.3.2. Computing the Singular Values of a Matrix]]
+		- [ ] [[2. Quadratic Forms/2.3. Singular Value Decomposition/Lessons/2.3.3. Singular Value Decomposition of 2x2 Matrices|2.3.3. Singular Value Decomposition of 2x2 Matrices]]
+		- [ ] [[2. Quadratic Forms/2.3. Singular Value Decomposition/Lessons/2.3.4. Singular Value Decomposition of 2x2 Matrices With Zero or Repeated Eigenvalues|2.3.4. Singular Value Decomposition of 2x2 Matrices With Zero or Repeated Eigenvalues]]
+		- [ ] [[2. Quadratic Forms/2.3. Singular Value Decomposition/Lessons/2.3.5. Singular Value Decomposition of Larger Matrices|2.3.5. Singular Value Decomposition of Larger Matrices]]
+		- [ ] [[2. Quadratic Forms/2.3. Singular Value Decomposition/Lessons/2.3.6. Singular Value Decomposition and the Pseudoinverse Matrix|2.3.6. Singular Value Decomposition and the Pseudoinverse Matrix]]
+- [ ] 3. Applications of Linear Algebra
+	- [ ] 3.1. Linear Least-Squares Problems
+		- [ ] [[3. Applications of Linear Algebra/3.1. Linear Least-Squares Problems/Lessons/3.1.1. The Least-Squares Solution of a Linear System (Without Collinearity)|3.1.1. The Least-Squares Solution of a Linear System (Without Collinearity)]]
+		- [ ] [[3. Applications of Linear Algebra/3.1. Linear Least-Squares Problems/Lessons/3.1.2. The Least-Squares Solution of a Linear System (With Collinearity)|3.1.2. The Least-Squares Solution of a Linear System (With Collinearity)]]
+		- [ ] [[3. Applications of Linear Algebra/3.1. Linear Least-Squares Problems/Lessons/3.1.3. Finding a Least-Squares Solution Using QR Factorization|3.1.3. Finding a Least-Squares Solution Using QR Factorization]]
+		- [ ] [[3. Applications of Linear Algebra/3.1. Linear Least-Squares Problems/Lessons/3.1.4. Weighted Least-Squares|3.1.4. Weighted Least-Squares]]
+- [ ] 4. Multiple Integrals
+	- [ ] 4.1. Triple Integrals
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.1. Repeated Integrals in Three Dimensions|4.1.1. Repeated Integrals in Three Dimensions]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.2. Triple Integrals Over Rectangular Domains|4.1.2. Triple Integrals Over Rectangular Domains]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.3. Type I, II, and III Regions in Three-Dimensional Space|4.1.3. Type I, II, and III Regions in Three-Dimensional Space]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.4. Triple Integrals Over Type I Regions|4.1.4. Triple Integrals Over Type I Regions]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.5. Triple Integrals Over Type II Regions|4.1.5. Triple Integrals Over Type II Regions]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.6. Triple Integrals Over Type III Regions|4.1.6. Triple Integrals Over Type III Regions]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.7. Calculating Volumes of Solids Using Triple Integrals|4.1.7. Calculating Volumes of Solids Using Triple Integrals]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.8. Changing the Order of Integration in Triple Integrals- Changing Projection|4.1.8. Changing the Order of Integration in Triple Integrals: Changing Projection]]
+		- [ ] [[4. Multiple Integrals/4.1. Triple Integrals/Lessons/4.1.9. Changing the Order of Integration in Triple Integrals- Changing Region|4.1.9. Changing the Order of Integration in Triple Integrals: Changing Region]]
+	- [ ] 4.2. Change of Variables for Triple Integrals
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.1. Cylindrical Polar Coordinates|4.2.1. Cylindrical Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.2. Surfaces in Cylindrical Polar Coordinates|4.2.2. Surfaces in Cylindrical Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.3. Spherical Polar Coordinates|4.2.3. Spherical Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.4. Surfaces in Spherical Polar Coordinates|4.2.4. Surfaces in Spherical Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.5. The Multivariable Chain Rule With Polar Coordinates|4.2.5. The Multivariable Chain Rule With Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.6. Triple Integrals in Cylindrical Polar Coordinates|4.2.6. Triple Integrals in Cylindrical Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.7. Triple Integrals in Spherical Polar Coordinates|4.2.7. Triple Integrals in Spherical Polar Coordinates]]
+		- [ ] [[4. Multiple Integrals/4.2. Change of Variables for Triple Integrals/Lessons/4.2.8. Computing Triple Integrals Using a Change of Variables|4.2.8. Computing Triple Integrals Using a Change of Variables]]
+- [ ] 5. Line Integrals
+	- [ ] 5.1. Line Integrals of Scalar Functions
+		- [ ] [[5. Line Integrals/5.1. Line Integrals of Scalar Functions/Lessons/5.1.1. Line Integrals of Scalar Functions|5.1.1. Line Integrals of Scalar Functions]]
+		- [ ] [[5. Line Integrals/5.1. Line Integrals of Scalar Functions/Lessons/5.1.2. Properties of Line Integrals of Scalar Functions|5.1.2. Properties of Line Integrals of Scalar Functions]]
+		- [ ] [[5. Line Integrals/5.1. Line Integrals of Scalar Functions/Lessons/5.1.3. Line Integrals of Scalar Functions Over Paths Expressed as Functions of X|5.1.3. Line Integrals of Scalar Functions Over Paths Expressed as Functions of X]]
+		- [ ] [[5. Line Integrals/5.1. Line Integrals of Scalar Functions/Lessons/5.1.4. Line Integrals of Scalar Functions Over Paths Expressed as Functions of Y|5.1.4. Line Integrals of Scalar Functions Over Paths Expressed as Functions of Y]]
+	- [ ] 5.2. Line Integrals of Scalar Functions Over Parametric Curves
+		- [ ] [[5. Line Integrals/5.2. Line Integrals of Scalar Functions Over Parametric Curves/Lessons/5.2.1. Line Integrals of Scalar Functions Over Line Segments|5.2.1. Line Integrals of Scalar Functions Over Line Segments]]
+		- [ ] [[5. Line Integrals/5.2. Line Integrals of Scalar Functions Over Parametric Curves/Lessons/5.2.2. Line Integrals of Scalar Functions Over Circles|5.2.2. Line Integrals of Scalar Functions Over Circles]]
+		- [ ] [[5. Line Integrals/5.2. Line Integrals of Scalar Functions Over Parametric Curves/Lessons/5.2.3. Line Integrals of Scalar Functions Over Ellipses|5.2.3. Line Integrals of Scalar Functions Over Ellipses]]
+		- [ ] [[5. Line Integrals/5.2. Line Integrals of Scalar Functions Over Parametric Curves/Lessons/5.2.4. Further Properties of Line Integrals of Scalar Functions|5.2.4. Further Properties of Line Integrals of Scalar Functions]]
+		- [ ] [[5. Line Integrals/5.2. Line Integrals of Scalar Functions Over Parametric Curves/Lessons/5.2.5. Line Integrals of Scalar Functions Over Polar Curves|5.2.5. Line Integrals of Scalar Functions Over Polar Curves]]
+	- [ ] 5.3. Line Integrals With Respect to X and Y
+		- [ ] [[5. Line Integrals/5.3. Line Integrals With Respect to X and Y/Lessons/5.3.1. Line Integrals With Respect to X and Y|5.3.1. Line Integrals With Respect to X and Y]]
+		- [ ] [[5. Line Integrals/5.3. Line Integrals With Respect to X and Y/Lessons/5.3.2. Properties of Line Integrals With Respect to X and Y|5.3.2. Properties of Line Integrals With Respect to X and Y]]
+		- [ ] [[5. Line Integrals/5.3. Line Integrals With Respect to X and Y/Lessons/5.3.3. Sums of Line Integrals With Respect to X and Y Over Parametric Curves|5.3.3. Sums of Line Integrals With Respect to X and Y Over Parametric Curves]]
+		- [ ] [[5. Line Integrals/5.3. Line Integrals With Respect to X and Y/Lessons/5.3.4. Sums of Line Integrals With Respect to X and Y|5.3.4. Sums of Line Integrals With Respect to X and Y]]
+	- [ ] 5.4. Line Integrals of Vector-Valued Functions
+		- [ ] [[5. Line Integrals/5.4. Line Integrals of Vector-Valued Functions/Lessons/5.4.1. Line Integrals of Vector-Valued Functions Over Parametric Curves|5.4.1. Line Integrals of Vector-Valued Functions Over Parametric Curves]]
+		- [ ] [[5. Line Integrals/5.4. Line Integrals of Vector-Valued Functions/Lessons/5.4.2. Line Integrals of Vector-Valued Functions Over General Curves|5.4.2. Line Integrals of Vector-Valued Functions Over General Curves]]
+		- [ ] [[5. Line Integrals/5.4. Line Integrals of Vector-Valued Functions/Lessons/5.4.3. Interpreting Line Integrals of Vector-Valued Functions|5.4.3. Interpreting Line Integrals of Vector-Valued Functions]]
+		- [ ] [[5. Line Integrals/5.4. Line Integrals of Vector-Valued Functions/Lessons/5.4.4. Properties of Line Integrals of Vector-Valued Functions|5.4.4. Properties of Line Integrals of Vector-Valued Functions]]
+		- [ ] [[5. Line Integrals/5.4. Line Integrals of Vector-Valued Functions/Lessons/5.4.5. The Fundamental Theorem for Line Integrals|5.4.5. The Fundamental Theorem for Line Integrals]]
+		- [ ] [[5. Line Integrals/5.4. Line Integrals of Vector-Valued Functions/Lessons/5.4.6. Path Independence of Line Integrals|5.4.6. Path Independence of Line Integrals]]
+	- [ ] 5.5. Circulation and Flux
+		- [ ] [[5. Line Integrals/5.5. Circulation and Flux/Lessons/5.5.1. Outward-Pointing Unit Normal Vectors in 2D|5.5.1. Outward-Pointing Unit Normal Vectors in 2D]]
+		- [ ] [[5. Line Integrals/5.5. Circulation and Flux/Lessons/5.5.2. Circulation|5.5.2. Circulation]]
+		- [ ] [[5. Line Integrals/5.5. Circulation and Flux/Lessons/5.5.3. Flux in Two-Dimensional Vector Fields|5.5.3. Flux in Two-Dimensional Vector Fields]]
+		- [ ] [[5. Line Integrals/5.5. Circulation and Flux/Lessons/5.5.4. Calculating Flux in Two-Dimensional Vector Fields|5.5.4. Calculating Flux in Two-Dimensional Vector Fields]]
+		- [ ] [[5. Line Integrals/5.5. Circulation and Flux/Lessons/5.5.5. Source-Free Vector Fields|5.5.5. Source-Free Vector Fields]]
+	- [ ] 5.6. Green's Theorem
+		- [ ] [[5. Line Integrals/5.6. Green's Theorem/Lessons/5.6.1. Introduction to Green's Theorem|5.6.1. Introduction to Green's Theorem]]
+		- [ ] [[5. Line Integrals/5.6. Green's Theorem/Lessons/5.6.2. Green's Theorem in Polar Coordinates|5.6.2. Green's Theorem in Polar Coordinates]]
+		- [ ] [[5. Line Integrals/5.6. Green's Theorem/Lessons/5.6.3. Using Green's Theorem to Calculate Area|5.6.3. Using Green's Theorem to Calculate Area]]
+		- [ ] [[5. Line Integrals/5.6. Green's Theorem/Lessons/5.6.4. Extending Green's Theorem|5.6.4. Extending Green's Theorem]]
+		- [ ] [[5. Line Integrals/5.6. Green's Theorem/Lessons/5.6.5. Green's Theorem in Flux Form|5.6.5. Green's Theorem in Flux Form]]
+- [ ] 6. Surface Integrals
+	- [ ] 6.1. Parametric Surfaces
+		- [ ] [[6. Surface Integrals/6.1. Parametric Surfaces/Lessons/6.1.1. Parametric Surfaces|6.1.1. Parametric Surfaces]]
+		- [ ] [[6. Surface Integrals/6.1. Parametric Surfaces/Lessons/6.1.2. Tangent Planes to Parametric Surfaces|6.1.2. Tangent Planes to Parametric Surfaces]]
+		- [ ] [[6. Surface Integrals/6.1. Parametric Surfaces/Lessons/6.1.3. Parametrizations of Ellipsoids and Cones|6.1.3. Parametrizations of Ellipsoids and Cones]]
+		- [ ] [[6. Surface Integrals/6.1. Parametric Surfaces/Lessons/6.1.4. Parametrizations of Paraboloids and Hyperboloids|6.1.4. Parametrizations of Paraboloids and Hyperboloids]]
+		- [ ] [[6. Surface Integrals/6.1. Parametric Surfaces/Lessons/6.1.5. Parametrizations of Cylinders|6.1.5. Parametrizations of Cylinders]]
+	- [ ] 6.2. Surface Area
+		- [ ] [[6. Surface Integrals/6.2. Surface Area/Lessons/6.2.1. Surface Areas of Revolution- Rotation About the X-Axis|6.2.1. Surface Areas of Revolution: Rotation About the X-Axis]]
+		- [ ] [[6. Surface Integrals/6.2. Surface Area/Lessons/6.2.2. Surface Areas of Revolution- Rotation About the Y-Axis|6.2.2. Surface Areas of Revolution: Rotation About the Y-Axis]]
+		- [ ] [[6. Surface Integrals/6.2. Surface Area/Lessons/6.2.3. Surface Areas of Revolution for Parametric Curves|6.2.3. Surface Areas of Revolution for Parametric Curves]]
+		- [ ] [[6. Surface Integrals/6.2. Surface Area/Lessons/6.2.4. Areas of Parametric Surfaces|6.2.4. Areas of Parametric Surfaces]]
+		- [ ] [[6. Surface Integrals/6.2. Surface Area/Lessons/6.2.5. Surfaces of Revolution|6.2.5. Surfaces of Revolution]]
+		- [ ] [[6. Surface Integrals/6.2. Surface Area/Lessons/6.2.6. Areas of Surfaces|6.2.6. Areas of Surfaces]]
+	- [ ] 6.3. Surface Integrals
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.1. Surface Integrals Over Parametric Surfaces|6.3.1. Surface Integrals Over Parametric Surfaces]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.2. Surface Integrals Over Cartesian Surfaces|6.3.2. Surface Integrals Over Cartesian Surfaces]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.3. Flux in Three-Dimensional Vector Fields|6.3.3. Flux in Three-Dimensional Vector Fields]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.4. Flux Through Closed Surfaces|6.3.4. Flux Through Closed Surfaces]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.5. Calculating Flux Through Parametric Surfaces|6.3.5. Calculating Flux Through Parametric Surfaces]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.6. Calculating Flux Through Cartesian Surfaces|6.3.6. Calculating Flux Through Cartesian Surfaces]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.7. Calculating Flux Through Closed Surfaces|6.3.7. Calculating Flux Through Closed Surfaces]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.8. The Divergence Theorem|6.3.8. The Divergence Theorem]]
+		- [ ] [[6. Surface Integrals/6.3. Surface Integrals/Lessons/6.3.9. Stokes' Theorem|6.3.9. Stokes' Theorem]]
+- [ ] 7. Applications of Multivariable Calculus
+	- [ ] 7.1. Vector Mechanics
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.1. Velocity and Acceleration as Functions of Displacement|7.1.1. Velocity and Acceleration as Functions of Displacement]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.2. Determining Properties of Objects Described as Functions of Displacement|7.1.2. Determining Properties of Objects Described as Functions of Displacement]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.3. The Components of Acceleration|7.1.3. The Components of Acceleration]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.4. Newton's Second Law|7.1.4. Newton's Second Law]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.5. Applying Newton's Second Law in the Plane|7.1.5. Applying Newton's Second Law in the Plane]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.6. The Work-Energy Principle|7.1.6. The Work-Energy Principle]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.1. Vector Mechanics/Lessons/7.1.7. Circular Motion About the Origin|7.1.7. Circular Motion About the Origin]]
+	- [ ] 7.2. Optimization
+		- [ ] [[7. Applications of Multivariable Calculus/7.2. Optimization/Lessons/7.2.1. Global vs. Local Extrema and Critical Points of Multivariable Functions|7.2.1. Global vs. Local Extrema and Critical Points of Multivariable Functions]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.2. Optimization/Lessons/7.2.2. The Second Partial Derivatives Test|7.2.2. The Second Partial Derivatives Test]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.2. Optimization/Lessons/7.2.3. Calculating Global Extrema of Multivariable Functions|7.2.3. Calculating Global Extrema of Multivariable Functions]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.2. Optimization/Lessons/7.2.4. Lagrange Multipliers With One Constraint|7.2.4. Lagrange Multipliers With One Constraint]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.2. Optimization/Lessons/7.2.5. Lagrange Multipliers With Multiple Constraints|7.2.5. Lagrange Multipliers With Multiple Constraints]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.2. Optimization/Lessons/7.2.6. Optimizing Multivariable Functions Using Lagrange Multipliers|7.2.6. Optimizing Multivariable Functions Using Lagrange Multipliers]]
+	- [ ] 7.3. Applications of Multiple Integrals
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.1. The Average Value of a Multivariable Function|7.3.1. The Average Value of a Multivariable Function]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.2. Density, Mass, and Charge of Plane Laminas|7.3.2. Density, Mass, and Charge of Plane Laminas]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.3. Moments and Center of Mass|7.3.3. Moments and Center of Mass]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.4. Moments and Centers of Mass of Thin Rods|7.3.4. Moments and Centers of Mass of Thin Rods]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.5. Moments and Centers of Mass of Plane Laminas|7.3.5. Moments and Centers of Mass of Plane Laminas]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.6. Moments of Inertia of Laminas About the Coordinate Axes|7.3.6. Moments of Inertia of Laminas About the Coordinate Axes]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.7. Moments of Inertia of Laminas About Other Axes|7.3.7. Moments of Inertia of Laminas About Other Axes]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.8. Calculating the Radius of Gyration of a Plane Lamina|7.3.8. Calculating the Radius of Gyration of a Plane Lamina]]
+		- [ ] [[7. Applications of Multivariable Calculus/7.3. Applications of Multiple Integrals/Lessons/7.3.9. The Parallel Axis Theorem|7.3.9. The Parallel Axis Theorem]]
+- [ ] 8. Systems of Differential Equations
+	- [ ] 8.1. Systems of ODEs
+		- [ ] [[8. Systems of Differential Equations/8.1. Systems of ODEs/Lessons/8.1.1. Introduction to Systems of Linear ODEs|8.1.1. Introduction to Systems of Linear ODEs]]
+		- [ ] [[8. Systems of Differential Equations/8.1. Systems of ODEs/Lessons/8.1.2. Expressing Homogeneous ODEs as First-Order Systems|8.1.2. Expressing Homogeneous ODEs as First-Order Systems]]
+		- [ ] [[8. Systems of Differential Equations/8.1. Systems of ODEs/Lessons/8.1.3. Expressing Inhomogeneous ODEs as First-Order Systems|8.1.3. Expressing Inhomogeneous ODEs as First-Order Systems]]
+		- [ ] [[8. Systems of Differential Equations/8.1. Systems of ODEs/Lessons/8.1.4. Linear Independence for Homogeneous Systems of ODEs|8.1.4. Linear Independence for Homogeneous Systems of ODEs]]
+		- [ ] [[8. Systems of Differential Equations/8.1. Systems of ODEs/Lessons/8.1.5. General Solutions of First-Order Linear Systems of ODEs|8.1.5. General Solutions of First-Order Linear Systems of ODEs]]
+	- [ ] 8.2. Solving Systems of Linear ODEs
+		- [ ] [[8. Systems of Differential Equations/8.2. Solving Systems of Linear ODEs/Lessons/8.2.1. Solving Decoupled Homogeneous Systems of ODEs|8.2.1. Solving Decoupled Homogeneous Systems of ODEs]]
+		- [ ] [[8. Systems of Differential Equations/8.2. Solving Systems of Linear ODEs/Lessons/8.2.2. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues|8.2.2. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.2. Solving Systems of Linear ODEs/Lessons/8.2.3. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues and Initial Conditions|8.2.3. Solving Homogeneous Systems of ODEs With Distinct Eigenvalues and Initial Conditions]]
+		- [ ] [[8. Systems of Differential Equations/8.2. Solving Systems of Linear ODEs/Lessons/8.2.4. Solving Homogeneous Systems of ODEs With Repeated Eigenvalues|8.2.4. Solving Homogeneous Systems of ODEs With Repeated Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.2. Solving Systems of Linear ODEs/Lessons/8.2.5. Solving Homogeneous Systems of ODEs With Complex Eigenvalues|8.2.5. Solving Homogeneous Systems of ODEs With Complex Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.2. Solving Systems of Linear ODEs/Lessons/8.2.6. Solving Inhomogeneous Systems of ODEs|8.2.6. Solving Inhomogeneous Systems of ODEs]]
+	- [ ] 8.3. Phase Portraits for Systems of Linear ODEs
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.1. Phase Planes and Phase Portraits|8.3.1. Phase Planes and Phase Portraits]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.2. Equilibrium Points and Stability for Systems of ODEs|8.3.2. Equilibrium Points and Stability for Systems of ODEs]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.3. Phase Portraits for Decoupled Linear Systems|8.3.3. Phase Portraits for Decoupled Linear Systems]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.4. Phase Portraits for Linear Systems With Real Distinct Eigenvalues|8.3.4. Phase Portraits for Linear Systems With Real Distinct Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.5. Phase Portraits for Linear Systems With Repeated Eigenvalues|8.3.5. Phase Portraits for Linear Systems With Repeated Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.6. Phase Portraits for Linear Systems With Zero Eigenvalues|8.3.6. Phase Portraits for Linear Systems With Zero Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.7. Phase Portraits for Linear Systems With Complex Eigenvalues|8.3.7. Phase Portraits for Linear Systems With Complex Eigenvalues]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.8. Shifted Systems of ODEs|8.3.8. Shifted Systems of ODEs]]
+		- [ ] [[8. Systems of Differential Equations/8.3. Phase Portraits for Systems of Linear ODEs/Lessons/8.3.9. Linear Approximations Near Equilibria|8.3.9. Linear Approximations Near Equilibria]]
+	- [ ] 8.4. Solving Systems of ODEs Using Matrix Methods
+		- [ ] [[8. Systems of Differential Equations/8.4. Solving Systems of ODEs Using Matrix Methods/Lessons/8.4.1. Matrix Exponentials|8.4.1. Matrix Exponentials]]
+		- [ ] [[8. Systems of Differential Equations/8.4. Solving Systems of ODEs Using Matrix Methods/Lessons/8.4.2. Fundamental Matrices|8.4.2. Fundamental Matrices]]
+		- [ ] [[8. Systems of Differential Equations/8.4. Solving Systems of ODEs Using Matrix Methods/Lessons/8.4.3. Solving Homogeneous Systems of ODEs Using Matrix Methods|8.4.3. Solving Homogeneous Systems of ODEs Using Matrix Methods]]
+		- [ ] [[8. Systems of Differential Equations/8.4. Solving Systems of ODEs Using Matrix Methods/Lessons/8.4.4. Solving Inhomogeneous Systems of ODEs Using Matrix Methods|8.4.4. Solving Inhomogeneous Systems of ODEs Using Matrix Methods]]
+		- [ ] [[8. Systems of Differential Equations/8.4. Solving Systems of ODEs Using Matrix Methods/Lessons/8.4.5. Solving Systems of ODEs Using Variation of Parameters|8.4.5. Solving Systems of ODEs Using Variation of Parameters]]
+	- [ ] 8.5. Modeling With Systems of Linear ODEs
+		- [ ] [[8. Systems of Differential Equations/8.5. Modeling With Systems of Linear ODEs/Lessons/8.5.1. The Lotka-Volterra Predator-Prey Model|8.5.1. The Lotka-Volterra Predator-Prey Model]]
+		- [ ] [[8. Systems of Differential Equations/8.5. Modeling With Systems of Linear ODEs/Lessons/8.5.2. The Lotka-Volterra Model With Carrying Capacity|8.5.2. The Lotka-Volterra Model With Carrying Capacity]]
+- [ ] 9. Laplace Transforms
+	- [ ] 9.1. Laplace Transforms
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.1. The Unit Step Function|9.1.1. The Unit Step Function]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.2. The Floor and Ceiling Functions|9.1.2. The Floor and Ceiling Functions]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.3. Piecewise Continuity|9.1.3. Piecewise Continuity]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.4. Introduction to Laplace Transforms|9.1.4. Introduction to Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.5. Linearity of Laplace Transforms|9.1.5. Linearity of Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.6. Laplace Transforms of Piecewise Continuous Functions|9.1.6. Laplace Transforms of Piecewise Continuous Functions]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.7. The Smoothness Property of Laplace Transforms|9.1.7. The Smoothness Property of Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.8. Laplace Transforms of Derivatives|9.1.8. Laplace Transforms of Derivatives]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.9. Laplace Transforms of Integrals|9.1.9. Laplace Transforms of Integrals]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.10. The First Shifting Theorem of Laplace Transforms|9.1.10. The First Shifting Theorem of Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.11. The Second Shifting Theorem of Laplace Transforms|9.1.11. The Second Shifting Theorem of Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.1. Laplace Transforms/Lessons/9.1.12. Inverse Laplace Transforms|9.1.12. Inverse Laplace Transforms]]
+	- [ ] 9.2. Solving Linear ODEs Using Laplace Transforms
+		- [ ] [[9. Laplace Transforms/9.2. Solving Linear ODEs Using Laplace Transforms/Lessons/9.2.1. Solving First-Order ODEs Using Laplace Transforms|9.2.1. Solving First-Order ODEs Using Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.2. Solving Linear ODEs Using Laplace Transforms/Lessons/9.2.2. Solving First-Order ODEs With Time-Delayed Forcing Using Laplace Transforms|9.2.2. Solving First-Order ODEs With Time-Delayed Forcing Using Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.2. Solving Linear ODEs Using Laplace Transforms/Lessons/9.2.3. Solving Second-Order ODEs Using Laplace Transforms|9.2.3. Solving Second-Order ODEs Using Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.2. Solving Linear ODEs Using Laplace Transforms/Lessons/9.2.4. Solving Second-Order ODEs With Time-Delayed Forcing Using Laplace Transforms|9.2.4. Solving Second-Order ODEs With Time-Delayed Forcing Using Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.2. Solving Linear ODEs Using Laplace Transforms/Lessons/9.2.5. Solving Homogeneous Systems of ODEs Using Laplace Transforms|9.2.5. Solving Homogeneous Systems of ODEs Using Laplace Transforms]]
+		- [ ] [[9. Laplace Transforms/9.2. Solving Linear ODEs Using Laplace Transforms/Lessons/9.2.6. Solving Inhomogeneous Systems of ODEs Using Laplace Transforms|9.2.6. Solving Inhomogeneous Systems of ODEs Using Laplace Transforms]]
+- [ ] 10. Boundary Value Problems
+	- [ ] 10.1. Boundary Value Problems
+		- [ ] [[10. Boundary Value Problems/10.1. Boundary Value Problems/Lessons/10.1.1. Introduction to Boundary Value Problems|10.1.1. Introduction to Boundary Value Problems]]
+		- [ ] [[10. Boundary Value Problems/10.1. Boundary Value Problems/Lessons/10.1.2. Second-Order Homogeneous Boundary Value Problems|10.1.2. Second-Order Homogeneous Boundary Value Problems]]
+		- [ ] [[10. Boundary Value Problems/10.1. Boundary Value Problems/Lessons/10.1.3. Second-Order Inhomogeneous Boundary Value Problems|10.1.3. Second-Order Inhomogeneous Boundary Value Problems]]
+		- [ ] [[10. Boundary Value Problems/10.1. Boundary Value Problems/Lessons/10.1.4. Eigenvalues and Eigenfunctions of Homogeneous BVPs|10.1.4. Eigenvalues and Eigenfunctions of Homogeneous BVPs]]
+	- [ ] 10.2. Fourier Series
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.1. Introduction to Fourier Series|10.2.1. Introduction to Fourier Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.2. Properties of Fourier Series|10.2.2. Properties of Fourier Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.3. Fourier Sine Series|10.2.3. Fourier Sine Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.4. Fourier Cosine Series|10.2.4. Fourier Cosine Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.5. Fourier Series of Arbitrary Period|10.2.5. Fourier Series of Arbitrary Period]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.6. Convergence of Fourier Series|10.2.6. Convergence of Fourier Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.7. Differentiating and Integrating Fourier Series|10.2.7. Differentiating and Integrating Fourier Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.8. Solving ODEs Using Fourier Series|10.2.8. Solving ODEs Using Fourier Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.9. Solving IVPs Using Fourier Series|10.2.9. Solving IVPs Using Fourier Series]]
+		- [ ] [[10. Boundary Value Problems/10.2. Fourier Series/Lessons/10.2.10. Solving BVPs Using Fourier Series|10.2.10. Solving BVPs Using Fourier Series]]
+- [ ] 11. Approximating Solutions to Differential Equations
+	- [ ] 11.1. Euler's Method
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.1. Euler's Method/Lessons/11.1.1. Euler's Method- Calculating One Step|11.1.1. Euler's Method: Calculating One Step]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.1. Euler's Method/Lessons/11.1.2. Euler's Method- Calculating Multiple Steps|11.1.2. Euler's Method: Calculating Multiple Steps]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.1. Euler's Method/Lessons/11.1.3. The Modified Euler Method|11.1.3. The Modified Euler Method]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.1. Euler's Method/Lessons/11.1.4. Euler's Method for Systems of ODEs|11.1.4. Euler's Method for Systems of ODEs]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.1. Euler's Method/Lessons/11.1.5. Euler's Method for Second-Order ODEs|11.1.5. Euler's Method for Second-Order ODEs]]
+	- [ ] 11.2. Higher-Order Numerical Methods
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.2. Higher-Order Numerical Methods/Lessons/11.2.1. The RK4 Method|11.2.1. The RK4 Method]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.2. Higher-Order Numerical Methods/Lessons/11.2.2. The ABM2 Method|11.2.2. The ABM2 Method]]
+	- [ ] 11.3. Implicit Numerical Methods
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.3. Implicit Numerical Methods/Lessons/11.3.1. The Implicit Euler Method|11.3.1. The Implicit Euler Method]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.3. Implicit Numerical Methods/Lessons/11.3.2. The Trapezoidal Method|11.3.2. The Trapezoidal Method]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.3. Implicit Numerical Methods/Lessons/11.3.3. Newton's Method|11.3.3. Newton's Method]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.3. Implicit Numerical Methods/Lessons/11.3.4. Using the Implicit Euler Method With Newton's Method|11.3.4. Using the Implicit Euler Method With Newton's Method]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.3. Implicit Numerical Methods/Lessons/11.3.5. Using the Trapezoidal Method With Newton's Method|11.3.5. Using the Trapezoidal Method With Newton's Method]]
+	- [ ] 11.4. Analyzing Numerical Methods
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.4. Analyzing Numerical Methods/Lessons/11.4.1. Big-O Notation|11.4.1. Big-O Notation]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.4. Analyzing Numerical Methods/Lessons/11.4.2. Error in Numerical Methods|11.4.2. Error in Numerical Methods]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.4. Analyzing Numerical Methods/Lessons/11.4.3. Order of Numerical Methods|11.4.3. Order of Numerical Methods]]
+		- [ ] [[11. Approximating Solutions to Differential Equations/11.4. Analyzing Numerical Methods/Lessons/11.4.4. Stability of Numerical Methods|11.4.4. Stability of Numerical Methods]]
+- [ ] 12. Combining Random Variables
+	- [ ] 12.1. Distributions of Two Continuous Random Variables
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.1. Joint Distributions for Continuous Random Variables|12.1.1. Joint Distributions for Continuous Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.2. Marginal Distributions for Continuous Random Variables|12.1.2. Marginal Distributions for Continuous Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.3. Independence of Continuous Random Variables|12.1.3. Independence of Continuous Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.4. Conditional Distributions for Continuous Random Variables|12.1.4. Conditional Distributions for Continuous Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.5. The Joint CDF of Two Continuous Random Variables|12.1.5. The Joint CDF of Two Continuous Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.6. Properties of the Joint CDF of Two Continuous Random Variables|12.1.6. Properties of the Joint CDF of Two Continuous Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.1. Distributions of Two Continuous Random Variables/Lessons/12.1.7. The Bivariate Normal Distribution|12.1.7. The Bivariate Normal Distribution]]
+	- [ ] 12.2. Combining Normal Random Variables
+		- [ ] [[12. Combining Random Variables/12.2. Combining Normal Random Variables/Lessons/12.2.1. Combining Two Normally Distributed Random Variables|12.2.1. Combining Two Normally Distributed Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.2. Combining Normal Random Variables/Lessons/12.2.2. Combining Multiple Normally Distributed Random Variables|12.2.2. Combining Multiple Normally Distributed Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.2. Combining Normal Random Variables/Lessons/12.2.3. I.I.D Normal Random Variables|12.2.3. I.I.D Normal Random Variables]]
+	- [ ] 12.3. Expectation for Multivariate Distributions
+		- [ ] [[12. Combining Random Variables/12.3. Expectation for Multivariate Distributions/Lessons/12.3.1. Expected Values of Sums and Products of Random Variables|12.3.1. Expected Values of Sums and Products of Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.3. Expectation for Multivariate Distributions/Lessons/12.3.2. Variance of Sums of Independent Random Variables|12.3.2. Variance of Sums of Independent Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.3. Expectation for Multivariate Distributions/Lessons/12.3.3. Computing Expected Values From Joint Distributions|12.3.3. Computing Expected Values From Joint Distributions]]
+		- [ ] [[12. Combining Random Variables/12.3. Expectation for Multivariate Distributions/Lessons/12.3.4. Conditional Expectation for Discrete Random Variables|12.3.4. Conditional Expectation for Discrete Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.3. Expectation for Multivariate Distributions/Lessons/12.3.5. Conditional Variance for Discrete Random Variables|12.3.5. Conditional Variance for Discrete Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.3. Expectation for Multivariate Distributions/Lessons/12.3.6. The Rule of the Lazy Statistician for Two Random Variables|12.3.6. The Rule of the Lazy Statistician for Two Random Variables]]
+	- [ ] 12.4. Covariance of Random Variables
+		- [ ] [[12. Combining Random Variables/12.4. Covariance of Random Variables/Lessons/12.4.1. The Covariance of Two Random Variables|12.4.1. The Covariance of Two Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.4. Covariance of Random Variables/Lessons/12.4.2. Variance of Sums of Random Variables|12.4.2. Variance of Sums of Random Variables]]
+		- [ ] [[12. Combining Random Variables/12.4. Covariance of Random Variables/Lessons/12.4.3. The Covariance Matrix|12.4.3. The Covariance Matrix]]
+		- [ ] [[12. Combining Random Variables/12.4. Covariance of Random Variables/Lessons/12.4.4. The Correlation Coefficient for Two Random Variables|12.4.4. The Correlation Coefficient for Two Random Variables]]
+	- [ ] 12.5. The Central Limit Theorem
+		- [ ] [[12. Combining Random Variables/12.5. The Central Limit Theorem/Lessons/12.5.1. The Sample Mean|12.5.1. The Sample Mean]]
+		- [ ] [[12. Combining Random Variables/12.5. The Central Limit Theorem/Lessons/12.5.2. Sampling Distributions|12.5.2. Sampling Distributions]]
+		- [ ] [[12. Combining Random Variables/12.5. The Central Limit Theorem/Lessons/12.5.3. Variance of Sample Means|12.5.3. Variance of Sample Means]]
+		- [ ] [[12. Combining Random Variables/12.5. The Central Limit Theorem/Lessons/12.5.4. Sample Means From Normal Populations|12.5.4. Sample Means From Normal Populations]]
+		- [ ] [[12. Combining Random Variables/12.5. The Central Limit Theorem/Lessons/12.5.5. The Central Limit Theorem|12.5.5. The Central Limit Theorem]]

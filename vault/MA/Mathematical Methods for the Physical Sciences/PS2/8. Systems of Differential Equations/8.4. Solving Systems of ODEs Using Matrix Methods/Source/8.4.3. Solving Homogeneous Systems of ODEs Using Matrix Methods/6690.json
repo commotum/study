@@ -1,0 +1,1587 @@
+{
+  "schema_version": 2,
+  "topic_id": "6690",
+  "topic_title": "Solving Homogeneous Systems of ODEs Using Matrix Methods",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/6690/Source/6690.html",
+  "source_url": "https://mathacademy.com/topics/6690",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "592270",
+        "dom_id": "sectionLink-592270",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-592270"
+      },
+      {
+        "index": 2,
+        "step_id": "592271",
+        "dom_id": "sectionLink-592271",
+        "name": "",
+        "title": "Finding the General Solution of a Homogeneous System Using a Given Matrix Exponential",
+        "selector": "#sectionLink-592271"
+      },
+      {
+        "index": 3,
+        "step_id": "592274",
+        "dom_id": "sectionLink-592274",
+        "name": "",
+        "title": "Solving Initial Value Problems",
+        "selector": "#sectionLink-592274"
+      },
+      {
+        "index": 4,
+        "step_id": "592275",
+        "dom_id": "sectionLink-592275",
+        "name": "",
+        "title": "Solving a Homogeneous Initial Value Problem Using a Given Matrix Exponential",
+        "selector": "#sectionLink-592275"
+      },
+      {
+        "index": 5,
+        "step_id": "592278",
+        "dom_id": "sectionLink-592278",
+        "name": "",
+        "title": "Solving Initial Value Problems With Shifted Conditions",
+        "selector": "#sectionLink-592278"
+      },
+      {
+        "index": 6,
+        "step_id": "592279",
+        "dom_id": "sectionLink-592279",
+        "name": "",
+        "title": "Solving a Homogeneous Initial Value Problem Using a Given Matrix Exponential: Shifted Initial Conditions",
+        "selector": "#sectionLink-592279"
+      },
+      {
+        "index": 7,
+        "step_id": "592282",
+        "dom_id": "sectionLink-592282",
+        "name": "",
+        "title": "Reminder: Properties of Matrix Exponentials",
+        "selector": "#sectionLink-592282"
+      },
+      {
+        "index": 8,
+        "step_id": "592283",
+        "dom_id": "sectionLink-592283",
+        "name": "",
+        "title": "Proving the Matrix Exponential Formula for IVP Solution: Homogeneous Systems",
+        "selector": "#sectionLink-592283"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "967",
+        "name": "The Hyperbolic Functions",
+        "href": "/topics/the-hyperbolic-functions-967"
+      },
+      {
+        "topic_id": "6376",
+        "name": "Fundamental Matrices",
+        "href": "/topics/fundamental-matrices-6376"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 16,
+    "step_count": 8,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "592270",
+        "content_id": "14515",
+        "dom_id": "step-592270",
+        "selector": "#step-592270",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Matrix exponentials can be used for solving homogeneous systems of the form\n<span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t),]</span>\nwhere <span class=\"math\">[MATH: A]</span> is a constant square matrix.</p>",
+            "readable_text": "Matrix exponentials can be used for solving homogeneous systems of the form\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),]\nwhere [MATH: A] is a constant square matrix.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, consider the system\n<span class=\"math\">[MATH: {x^{\u2032}(t) = 5y(t); y^{\u2032}(t) = \u2212 5x(t)]</span></p>",
+            "readable_text": "For example, consider the system\n[MATH: {x^{\u2032}(t) = 5y(t); y^{\u2032}(t) = \u2212 5x(t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Writing our system in matrix form, we get\n<span class=\"math\">[MATH: [0|5; \u2212 5|0]]</span>\nwhere <span class=\"math\">[MATH: [x(t); y(t)]]</span> So, the matrix of the system is <span class=\"math\">[MATH: [0|5; \u2212 5|0]]</span></p>",
+            "readable_text": "Writing our system in matrix form, we get\n[MATH: [0|5; \u2212 5|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|5; \u2212 5|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that given the system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix, the general solution of the system can be written as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]</span>\nwhere <span class=\"math\">[MATH: \\Phi(t)]</span> is a fundamental matrix of the system, and <span class=\"math\">[MATH: \\mathbf{c}]</span> is some constant vector.</p>",
+            "readable_text": "Recall that given the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is some constant vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since we have already seen how to compute the standard fundamental matrix, we will not repeat the calculation here. So, computing the standard fundamental matrix <span class=\"math\">[MATH: \\Phi_0(t)]</span> of the system, we get\n<span class=\"math\">[MATH: [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)]]</span></p>",
+            "readable_text": "Since we have already seen how to compute the standard fundamental matrix, we will not repeat the calculation here. So, computing the standard fundamental matrix [MATH: \\Phi_0(t)] of the system, we get\n[MATH: [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the general solution is</p>",
+            "readable_text": "Therefore, the general solution is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)][c_{1}; c_{2}]; = c_{1}[\\cos (5t); \u2212 \\sin (5t)] + c_{2}[\\sin (5t); \\cos (5t)],]</span></p>",
+            "readable_text": "[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)][c_{1}; c_{2}]; = c_{1}[\\cos (5t); \u2212 \\sin (5t)] + c_{2}[\\sin (5t); \\cos (5t)],]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: c_1,c_2 \\in \\mathbb{R}.]</span></p>",
+            "readable_text": "where [MATH: c_1,c_2 \\in \\mathbb{R}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note:</strong> Recall that for the general solution of the ordinary differential equation <span class=\"math\">[MATH: x&#x27;(t)=ax(t),]</span> we have \n<span class=\"math\">[MATH: x&#x27;(t)=ax(t)\n\\qquad\\Rightarrow\\qquad\nx(t) = c \\, e^{at},\n\\quad\nc \\in \\mathbb{R}.]</span>\nNow, for the general solution of the matrix differential equation <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t),]</span> we obtain \n<span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t)\n\\qquad\\Rightarrow\\qquad\n\\mathbf{x}(t) = e^{At} \\, \\mathbf{c},\n\\quad\n\\mathbf{c} \\in \\mathbb{R}^n.]</span></p>",
+            "readable_text": "Note: Recall that for the general solution of the ordinary differential equation [MATH: x'(t)=ax(t),] we have\n[MATH: x'(t)=ax(t)\n\\qquad\\Rightarrow\\qquad\nx(t) = c \\, e^{at},\n\\quad\nc \\in \\mathbb{R}.]\nNow, for the general solution of the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),] we obtain\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)\n\\qquad\\Rightarrow\\qquad\n\\mathbf{x}(t) = e^{At} \\, \\mathbf{c},\n\\quad\n\\mathbf{c} \\in \\mathbb{R}^n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see more examples.</p>",
+            "readable_text": "Let's see more examples.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nMatrix exponentials can be used for solving homogeneous systems of the form\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),]\nwhere [MATH: A] is a constant square matrix.\n\nContent:\nFor example, consider the system\n[MATH: {x^{\u2032}(t) = 5y(t); y^{\u2032}(t) = \u2212 5x(t)]\n\nContent:\nWriting our system in matrix form, we get\n[MATH: [0|5; \u2212 5|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|5; \u2212 5|0]]\n\nContent:\nRecall that given the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is some constant vector.\n\nContent:\nSince we have already seen how to compute the standard fundamental matrix, we will not repeat the calculation here. So, computing the standard fundamental matrix [MATH: \\Phi_0(t)] of the system, we get\n[MATH: [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)]]\n\nContent:\nTherefore, the general solution is\n\nContent:\n[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)][c_{1}; c_{2}]; = c_{1}[\\cos (5t); \u2212 \\sin (5t)] + c_{2}[\\sin (5t); \\cos (5t)],]\n\nContent:\nwhere [MATH: c_1,c_2 \\in \\mathbb{R}.]\n\nContent:\nNote: Recall that for the general solution of the ordinary differential equation [MATH: x'(t)=ax(t),] we have\n[MATH: x'(t)=ax(t)\n\\qquad\\Rightarrow\\qquad\nx(t) = c \\, e^{at},\n\\quad\nc \\in \\mathbb{R}.]\nNow, for the general solution of the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),] we obtain\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)\n\\qquad\\Rightarrow\\qquad\n\\mathbf{x}(t) = e^{At} \\, \\mathbf{c},\n\\quad\n\\mathbf{c} \\in \\mathbb{R}^n.]\n\nContent:\nLet's see more examples."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "592271",
+        "content_id": "21707",
+        "dom_id": "step-592271",
+        "selector": "#step-592271",
+        "step_anchor": "step-2",
+        "title": "Finding the General Solution of a Homogeneous System Using a Given Matrix Exponential",
+        "key_prerequisites": [
+          {
+            "topic_id": "967",
+            "name": "The Hyperbolic Functions",
+            "href": "/topics/967",
+            "type": ""
+          },
+          {
+            "topic_id": "6376",
+            "name": "Fundamental Matrices",
+            "href": "/topics/6376",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = \u2212 7x(t) + y(t); y^{\u2032}(t) = \u2212 7y(t)]</span>\nFind the general solution to the system of ODEs above.</p><p><em>Hint: <span class=\"math\">[MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]]</span> where <span class=\"math\">[MATH: [\u2212 7|1; 0|\u2212 7]]</span></em></p>",
+            "readable_text": "[MATH: {x^{\u2032}(t) = \u2212 7x(t) + y(t); y^{\u2032}(t) = \u2212 7y(t)]\nFind the general solution to the system of ODEs above.\n\nHint: [MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]] where [MATH: [\u2212 7|1; 0|\u2212 7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Writing our system in matrix form, we get\n<span class=\"math\">[MATH: [\u2212 7|1; 0|\u2212 7]]</span>\nwhere <span class=\"math\">[MATH: [x(t); y(t)]]</span> So, the matrix of the system is <span class=\"math\">[MATH: [\u2212 7|1; 0|\u2212 7]]</span></p><p>Given the system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix, the general solution of the system can be written as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]</span>\nwhere <span class=\"math\">[MATH: \\Phi(t)]</span> is a fundamental matrix of the system, and <span class=\"math\">[MATH: \\mathbf{c}]</span> is a constant vector.</p><p>Now, using the given information, the standard fundamental matrix <span class=\"math\">[MATH: \\Phi_0(t)]</span> of the system is given by\n<span class=\"math\">[MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]]</span></p><p>Therefore, the general solution is</p><p><span class=\"math\">[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}][c_{1}; c_{2}]; = c_{1}[e^{\u2212 7t}; 0] + c_{2}[te^{\u2212 7t}; e^{\u2212 7t}]; = c_{1}[1; 0]e^{\u2212 7t} + c_{2}[t; 1]e^{\u2212 7t},]</span></p><p>where <span class=\"math\">[MATH: c_1,c_2 \\in \\mathbb{R}.]</span></p>",
+            "readable_text": "Writing our system in matrix form, we get\n[MATH: [\u2212 7|1; 0|\u2212 7]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [\u2212 7|1; 0|\u2212 7]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is a constant vector.\n\nNow, using the given information, the standard fundamental matrix [MATH: \\Phi_0(t)] of the system is given by\n[MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]]\n\nTherefore, the general solution is\n\n[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}][c_{1}; c_{2}]; = c_{1}[e^{\u2212 7t}; 0] + c_{2}[te^{\u2212 7t}; e^{\u2212 7t}]; = c_{1}[1; 0]e^{\u2212 7t} + c_{2}[t; 1]e^{\u2212 7t},]\n\nwhere [MATH: c_1,c_2 \\in \\mathbb{R}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: {x^{\u2032}(t) = \u2212 7x(t) + y(t); y^{\u2032}(t) = \u2212 7y(t)]\nFind the general solution to the system of ODEs above.\n\nHint: [MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]] where [MATH: [\u2212 7|1; 0|\u2212 7]]\n\nContent:\nEXPLANATION\n\nExplanation:\nWriting our system in matrix form, we get\n[MATH: [\u2212 7|1; 0|\u2212 7]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [\u2212 7|1; 0|\u2212 7]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is a constant vector.\n\nNow, using the given information, the standard fundamental matrix [MATH: \\Phi_0(t)] of the system is given by\n[MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]]\n\nTherefore, the general solution is\n\n[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}][c_{1}; c_{2}]; = c_{1}[e^{\u2212 7t}; 0] + c_{2}[te^{\u2212 7t}; e^{\u2212 7t}]; = c_{1}[1; 0]e^{\u2212 7t} + c_{2}[t; 1]e^{\u2212 7t},]\n\nwhere [MATH: c_1,c_2 \\in \\mathbb{R}.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "334772",
+        "dom_id": "question-334772",
+        "selector": "#question-334772",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = \u2212 4y(t); y^{\u2032}(t) = 4x(t)]</span>\nWhich of the following gives the general solution to the system of ODEs above?</p><p><em>Hint: <span class=\"math\">[MATH: e^{At} = [\\cos (4t)|\u2212 \\sin (4t); \\sin (4t)|\\cos (4t)],]</span> where <span class=\"math\">[MATH: A = [0|\u2212 4; 4|0].]</span></em></p>",
+          "readable_text": "[MATH: {x^{\u2032}(t) = \u2212 4y(t); y^{\u2032}(t) = 4x(t)]\nWhich of the following gives the general solution to the system of ODEs above?\n\nHint: [MATH: e^{At} = [\\cos (4t)|\u2212 \\sin (4t); \\sin (4t)|\\cos (4t)],] where [MATH: A = [0|\u2212 4; 4|0].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-334772-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{4t}]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{4t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-334772-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)]e^{4t} + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)]e^{4t} + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-334772-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-334772-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\\sin (4t); \\cos (4t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\\sin (4t); \\cos (4t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-334772-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{\u2212 4t}]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{\u2212 4t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: {x^{\u2032}(t) = \u2212 4y(t); y^{\u2032}(t) = 4x(t)]\nWhich of the following gives the general solution to the system of ODEs above?\n\nHint: [MATH: e^{At} = [\\cos (4t)|\u2212 \\sin (4t); \\sin (4t)|\\cos (4t)],] where [MATH: A = [0|\u2212 4; 4|0].]\n\nChoices:\na. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{4t}]\nb. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)]e^{4t} + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]\nc. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]\nd. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\\sin (4t); \\cos (4t)]]\ne. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{\u2212 4t}]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "335023",
+        "dom_id": "question-335023",
+        "selector": "#question-335023",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = 3x(t)]</span>\nWhich of the following gives the general solution to the system of ODEs above?</p><p><em>Hint: <span class=\"math\">[MATH: e^{At} = [\\cosh (3t)|\\sinh (3t); \\sinh (3t)|\\cosh (3t)],]</span> where <span class=\"math\">[MATH: A = [0|3; 3|0].]</span></em></p>",
+          "readable_text": "[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = 3x(t)]\nWhich of the following gives the general solution to the system of ODEs above?\n\nHint: [MATH: e^{At} = [\\cosh (3t)|\\sinh (3t); \\sinh (3t)|\\cosh (3t)],] where [MATH: A = [0|3; 3|0].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-335023-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\u2212 \\sinh (3t); \\cosh (3t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\u2212 \\sinh (3t); \\cosh (3t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-335023-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-335023-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-335023-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]e^{\u2212 3t}]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]e^{\u2212 3t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-335023-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{\u2212 3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]</span></p>",
+            "readable_text": "[MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{\u2212 3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = 3x(t)]\nWhich of the following gives the general solution to the system of ODEs above?\n\nHint: [MATH: e^{At} = [\\cosh (3t)|\\sinh (3t); \\sinh (3t)|\\cosh (3t)],] where [MATH: A = [0|3; 3|0].]\n\nChoices:\na. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\u2212 \\sinh (3t); \\cosh (3t)]]\nb. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]\nc. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]]\nd. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]e^{\u2212 3t}]\ne. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{\u2212 3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "592274",
+        "content_id": "14529",
+        "dom_id": "step-592274",
+        "selector": "#step-592274",
+        "step_anchor": "step-5",
+        "title": "Solving Initial Value Problems",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let&#x27;s find the solution to the initial value problem below\n<span class=\"math\">[MATH: {x^{\u2032}(t) = 7x(t) + y(t); y^{\u2032}(t) = 7y(t),]</span></p>",
+            "readable_text": "Now, let's find the solution to the initial value problem below\n[MATH: {x^{\u2032}(t) = 7x(t) + y(t); y^{\u2032}(t) = 7y(t),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Writing our system in matrix form, we get\n<span class=\"math\">[MATH: [7|1; 0|7]]</span>\nwhere <span class=\"math\">[MATH: [x(t); y(t)]]</span> So, the matrix of the system is <span class=\"math\">[MATH: [7|1; 0|7]]</span></p>",
+            "readable_text": "Writing our system in matrix form, we get\n[MATH: [7|1; 0|7]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [7|1; 0|7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the general solution of the system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix, can be written as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{c},]</span>\nwhere <span class=\"math\">[MATH: \\Phi_0(t) = e^{At}]</span> is the standard fundamental matrix of the system, and <span class=\"math\">[MATH: \\mathbf{c}]</span> is some constant vector.</p>",
+            "readable_text": "Recall that the general solution of the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, can be written as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system, and [MATH: \\mathbf{c}] is some constant vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Evaluating both sides of <span class=\"math\">[MATH: \\mathbf{x}(t) = e^{At} \\mathbf{c}]</span> at <span class=\"math\">[MATH: t=0,]</span> we get\n<span class=\"math\">[MATH: x(0)|= \u03a6_{0}(0)c; x(0)|= e^{A(0)}c; x(0)|= Ic; c|= x(0).]</span></p>",
+            "readable_text": "Evaluating both sides of [MATH: \\mathbf{x}(t) = e^{At} \\mathbf{c}] at [MATH: t=0,] we get\n[MATH: x(0)|= \u03a6_{0}(0)c; x(0)|= e^{A(0)}c; x(0)|= Ic; c|= x(0).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, the solution to our initial value problem is \n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0).]</span></p>",
+            "readable_text": "Thus, the solution to our initial value problem is\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Computing the standard fundamental matrix <span class=\"math\">[MATH: \\Phi_0(t)]</span> of the system, we get\n<span class=\"math\">[MATH: [e^{7t}|te^{7t}; 0|e^{7t}]]</span></p>",
+            "readable_text": "Computing the standard fundamental matrix [MATH: \\Phi_0(t)] of the system, we get\n[MATH: [e^{7t}|te^{7t}; 0|e^{7t}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the solution is</p>",
+            "readable_text": "Therefore, the solution is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x(t)|= e^{At}x(0); = [e^{7t}|te^{7t}; 0|e^{7t}][3; \u2212 2]; = [(3 \u2212 2t)e^{7t}; \u2212 2e^{7t}].]</span></p>",
+            "readable_text": "[MATH: x(t)|= e^{At}x(0); = [e^{7t}|te^{7t}; 0|e^{7t}][3; \u2212 2]; = [(3 \u2212 2t)e^{7t}; \u2212 2e^{7t}].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nNow, let's find the solution to the initial value problem below\n[MATH: {x^{\u2032}(t) = 7x(t) + y(t); y^{\u2032}(t) = 7y(t),]\n\nContent:\nWriting our system in matrix form, we get\n[MATH: [7|1; 0|7]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [7|1; 0|7]]\n\nContent:\nRecall that the general solution of the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, can be written as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system, and [MATH: \\mathbf{c}] is some constant vector.\n\nContent:\nEvaluating both sides of [MATH: \\mathbf{x}(t) = e^{At} \\mathbf{c}] at [MATH: t=0,] we get\n[MATH: x(0)|= \u03a6_{0}(0)c; x(0)|= e^{A(0)}c; x(0)|= Ic; c|= x(0).]\n\nContent:\nThus, the solution to our initial value problem is\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0).]\n\nContent:\nComputing the standard fundamental matrix [MATH: \\Phi_0(t)] of the system, we get\n[MATH: [e^{7t}|te^{7t}; 0|e^{7t}]]\n\nContent:\nTherefore, the solution is\n\nContent:\n[MATH: x(t)|= e^{At}x(0); = [e^{7t}|te^{7t}; 0|e^{7t}][3; \u2212 2]; = [(3 \u2212 2t)e^{7t}; \u2212 2e^{7t}].]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "592275",
+        "content_id": "21725",
+        "dom_id": "step-592275",
+        "selector": "#step-592275",
+        "step_anchor": "step-6",
+        "title": "Solving a Homogeneous Initial Value Problem Using a Given Matrix Exponential",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = \u2212 3x(t),]</span>\nFind the solution to the initial value problem above.</p><p><em>Hint: <span class=\"math\">[MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]]</span> where <span class=\"math\">[MATH: [0|3; \u2212 3|0]]</span></em></p>",
+            "readable_text": "[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = \u2212 3x(t),]\nFind the solution to the initial value problem above.\n\nHint: [MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]] where [MATH: [0|3; \u2212 3|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Writing our system in matrix form, we get\n<span class=\"math\">[MATH: [0|3; \u2212 3|0]]</span>\nwhere <span class=\"math\">[MATH: [x(t); y(t)]]</span> So, the matrix of the system is <span class=\"math\">[MATH: [0|3; \u2212 3|0]]</span></p><p>Given the system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix, the solution of the initial value problem can be written as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0),]</span>\nwhere <span class=\"math\">[MATH: \\Phi_0(t) = e^{At}]</span> is the standard fundamental matrix of the system, and <span class=\"math\">[MATH: \\mathbf{x}(0)]</span> is the initial condition vector.</p><p>Now, using the given information, the standard fundamental matrix <span class=\"math\">[MATH: \\Phi_0(t)]</span> of the system is given by</p><p><span class=\"math\">[MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]]</span></p><p>Therefore, the solution is</p><p><span class=\"math\">[MATH: x(t)|= e^{At}x(0); = [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)][2; \u2212 1]; = [2\\cos (3t) \u2212 \\sin (3t); \u2212 2\\sin (3t) \u2212 \\cos (3t)].]</span></p>",
+            "readable_text": "Writing our system in matrix form, we get\n[MATH: [0|3; \u2212 3|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|3; \u2212 3|0]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the solution of the initial value problem can be written as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0),]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system, and [MATH: \\mathbf{x}(0)] is the initial condition vector.\n\nNow, using the given information, the standard fundamental matrix [MATH: \\Phi_0(t)] of the system is given by\n\n[MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]]\n\nTherefore, the solution is\n\n[MATH: x(t)|= e^{At}x(0); = [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)][2; \u2212 1]; = [2\\cos (3t) \u2212 \\sin (3t); \u2212 2\\sin (3t) \u2212 \\cos (3t)].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = \u2212 3x(t),]\nFind the solution to the initial value problem above.\n\nHint: [MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]] where [MATH: [0|3; \u2212 3|0]]\n\nContent:\nEXPLANATION\n\nExplanation:\nWriting our system in matrix form, we get\n[MATH: [0|3; \u2212 3|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|3; \u2212 3|0]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the solution of the initial value problem can be written as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0),]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system, and [MATH: \\mathbf{x}(0)] is the initial condition vector.\n\nNow, using the given information, the standard fundamental matrix [MATH: \\Phi_0(t)] of the system is given by\n\n[MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]]\n\nTherefore, the solution is\n\n[MATH: x(t)|= e^{At}x(0); = [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)][2; \u2212 1]; = [2\\cos (3t) \u2212 \\sin (3t); \u2212 2\\sin (3t) \u2212 \\cos (3t)].]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "335267",
+        "dom_id": "question-335267",
+        "selector": "#question-335267",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = \u2212 3x(t) + y(t); y^{\u2032}(t) = \u2212 3y(t),[x(0); y(0)] = [0; 2]]</span>\nFind the solution to the initial value problem above.</p><p><em>Hint: <span class=\"math\">[MATH: e^{At} = [e^{\u2212 3t}|te^{\u2212 3t}; 0|e^{\u2212 3t}],]</span> where <span class=\"math\">[MATH: A = [\u2212 3|1; 0|\u2212 3].]</span></em></p>",
+          "readable_text": "[MATH: {x^{\u2032}(t) = \u2212 3x(t) + y(t); y^{\u2032}(t) = \u2212 3y(t),[x(0); y(0)] = [0; 2]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [e^{\u2212 3t}|te^{\u2212 3t}; 0|e^{\u2212 3t}],] where [MATH: A = [\u2212 3|1; 0|\u2212 3].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-335267-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2te^{\u2212 3t}; 2e^{\u2212 3t}]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2te^{\u2212 3t}; 2e^{\u2212 3t}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-335267-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2te^{\u2212 3t}; 2e^{\u2212 3t}]]</span></p>",
+            "readable_text": "[MATH: [2te^{\u2212 3t}; 2e^{\u2212 3t}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-335267-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2e^{\u2212 3t}; 2te^{\u2212 3t}]]</span></p>",
+            "readable_text": "[MATH: [2e^{\u2212 3t}; 2te^{\u2212 3t}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-335267-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2te^{3t}; 2e^{\u2212 3t}]]</span></p>",
+            "readable_text": "[MATH: [2te^{3t}; 2e^{\u2212 3t}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-335267-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2te^{\u2212 3t}; \u2212 2e^{\u2212 3t}]]</span></p>",
+            "readable_text": "[MATH: [2te^{\u2212 3t}; \u2212 2e^{\u2212 3t}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: {x^{\u2032}(t) = \u2212 3x(t) + y(t); y^{\u2032}(t) = \u2212 3y(t),[x(0); y(0)] = [0; 2]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [e^{\u2212 3t}|te^{\u2212 3t}; 0|e^{\u2212 3t}],] where [MATH: A = [\u2212 3|1; 0|\u2212 3].]\n\nChoices:\na. [MATH: [\u2212 2te^{\u2212 3t}; 2e^{\u2212 3t}]]\nb. [MATH: [2te^{\u2212 3t}; 2e^{\u2212 3t}]]\nc. [MATH: [2e^{\u2212 3t}; 2te^{\u2212 3t}]]\nd. [MATH: [2te^{3t}; 2e^{\u2212 3t}]]\ne. [MATH: [2te^{\u2212 3t}; \u2212 2e^{\u2212 3t}]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "333981",
+        "dom_id": "question-333981",
+        "selector": "#question-333981",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = 2y(t); y^{\u2032}(t) = 2x(t),[x(0); y(0)] = [0; \u2212 3]]</span>\nFind the solution to the initial value problem above.</p><p><em>Hint: <span class=\"math\">[MATH: e^{At} = [\\cosh (2t)|\\sinh (2t); \\sinh (2t)|\\cosh (2t)],]</span> where <span class=\"math\">[MATH: A = [0|2; 2|0].]</span></em></p>",
+          "readable_text": "[MATH: {x^{\u2032}(t) = 2y(t); y^{\u2032}(t) = 2x(t),[x(0); y(0)] = [0; \u2212 3]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [\\cosh (2t)|\\sinh (2t); \\sinh (2t)|\\cosh (2t)],] where [MATH: A = [0|2; 2|0].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-333981-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\\sinh (2t); \u2212 3\\cosh (2t)]]</span></p>",
+            "readable_text": "[MATH: [\\sinh (2t); \u2212 3\\cosh (2t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-333981-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 3\\sinh (2t); 3\\cosh (2t)]]</span></p>",
+            "readable_text": "[MATH: [\u2212 3\\sinh (2t); 3\\cosh (2t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-333981-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 3\\sinh (2t); \u2212 3\\cosh (2t)]]</span></p>",
+            "readable_text": "[MATH: [\u2212 3\\sinh (2t); \u2212 3\\cosh (2t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-333981-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [3\\sinh (2t); \u2212 3\\cosh (2t)]]</span></p>",
+            "readable_text": "[MATH: [3\\sinh (2t); \u2212 3\\cosh (2t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-333981-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2\\sinh (2t); \u2212 3\\cosh (2t)]]</span></p>",
+            "readable_text": "[MATH: [2\\sinh (2t); \u2212 3\\cosh (2t)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: {x^{\u2032}(t) = 2y(t); y^{\u2032}(t) = 2x(t),[x(0); y(0)] = [0; \u2212 3]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [\\cosh (2t)|\\sinh (2t); \\sinh (2t)|\\cosh (2t)],] where [MATH: A = [0|2; 2|0].]\n\nChoices:\na. [MATH: [\\sinh (2t); \u2212 3\\cosh (2t)]]\nb. [MATH: [\u2212 3\\sinh (2t); 3\\cosh (2t)]]\nc. [MATH: [\u2212 3\\sinh (2t); \u2212 3\\cosh (2t)]]\nd. [MATH: [3\\sinh (2t); \u2212 3\\cosh (2t)]]\ne. [MATH: [2\\sinh (2t); \u2212 3\\cosh (2t)]]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "592278",
+        "content_id": "14530",
+        "dom_id": "step-592278",
+        "selector": "#step-592278",
+        "step_anchor": "step-9",
+        "title": "Solving Initial Value Problems With Shifted Conditions",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, let&#x27;s find the solution to the initial value problem \n<span class=\"math\">[MATH: {x^{\u2032}(t) = \u2212 7y(t); y^{\u2032}(t) = 7x(t),]</span>\ngiven that <span class=\"math\">[MATH: [\\cos (7t)|\u2212 \\sin (7t); \\sin (7t)|\\cos (7t)]]</span> where <span class=\"math\">[MATH: [0|\u2212 7; 7|0]]</span></p>",
+            "readable_text": "Next, let's find the solution to the initial value problem\n[MATH: {x^{\u2032}(t) = \u2212 7y(t); y^{\u2032}(t) = 7x(t),]\ngiven that [MATH: [\\cos (7t)|\u2212 \\sin (7t); \\sin (7t)|\\cos (7t)]] where [MATH: [0|\u2212 7; 7|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Writing our system in matrix form, we get\n<span class=\"math\">[MATH: [0|\u2212 7; 7|0]]</span>\nwhere <span class=\"math\">[MATH: [x(t); y(t)]]</span> So, the matrix of the system is <span class=\"math\">[MATH: [0|\u2212 7; 7|0]]</span></p>",
+            "readable_text": "Writing our system in matrix form, we get\n[MATH: [0|\u2212 7; 7|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|\u2212 7; 7|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Given the system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix, the general solution is <span class=\"math\">[MATH: \\mathbf{x}(t) = e^{At} \\, \\mathbf{c}.]</span> We can determine the constant vector <span class=\"math\">[MATH: \\mathbf{c}]</span> using the initial condition at time <span class=\"math\">[MATH: t=t_0{:}]</span>\n<span class=\"math\">[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c} \\implies \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0),]</span>\nsince the inverse of <span class=\"math\">[MATH: e^{At_0}]</span> is <span class=\"math\">[MATH: e^{-At_0}.]</span> Plugging this back into our general solution gives the formula\n<span class=\"math\">[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]</span></p>",
+            "readable_text": "Given the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution is [MATH: \\mathbf{x}(t) = e^{At} \\, \\mathbf{c}.] We can determine the constant vector [MATH: \\mathbf{c}] using the initial condition at time [MATH: t=t_0{:}]\n[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c} \\implies \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0),]\nsince the inverse of [MATH: e^{At_0}] is [MATH: e^{-At_0}.] Plugging this back into our general solution gives the formula\n[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the solution to our specific problem (with <span class=\"math\">[MATH: t_0=1]</span>) is\n<span class=\"math\">[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cos (7(t \u2212 1))|\u2212 \\sin (7(t \u2212 1)); \\sin (7(t \u2212 1))|\\cos (7(t \u2212 1))][0; \u2212 4]; = [4\\sin (7(t \u2212 1)); \u2212 4\\cos (7(t \u2212 1))].]</span></p>",
+            "readable_text": "Therefore, the solution to our specific problem (with [MATH: t_0=1]) is\n[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cos (7(t \u2212 1))|\u2212 \\sin (7(t \u2212 1)); \\sin (7(t \u2212 1))|\\cos (7(t \u2212 1))][0; \u2212 4]; = [4\\sin (7(t \u2212 1)); \u2212 4\\cos (7(t \u2212 1))].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nNext, let's find the solution to the initial value problem\n[MATH: {x^{\u2032}(t) = \u2212 7y(t); y^{\u2032}(t) = 7x(t),]\ngiven that [MATH: [\\cos (7t)|\u2212 \\sin (7t); \\sin (7t)|\\cos (7t)]] where [MATH: [0|\u2212 7; 7|0]]\n\nContent:\nWriting our system in matrix form, we get\n[MATH: [0|\u2212 7; 7|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|\u2212 7; 7|0]]\n\nContent:\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution is [MATH: \\mathbf{x}(t) = e^{At} \\, \\mathbf{c}.] We can determine the constant vector [MATH: \\mathbf{c}] using the initial condition at time [MATH: t=t_0{:}]\n[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c} \\implies \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0),]\nsince the inverse of [MATH: e^{At_0}] is [MATH: e^{-At_0}.] Plugging this back into our general solution gives the formula\n[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]\n\nContent:\nTherefore, the solution to our specific problem (with [MATH: t_0=1]) is\n[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cos (7(t \u2212 1))|\u2212 \\sin (7(t \u2212 1)); \\sin (7(t \u2212 1))|\\cos (7(t \u2212 1))][0; \u2212 4]; = [4\\sin (7(t \u2212 1)); \u2212 4\\cos (7(t \u2212 1))].]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "592279",
+        "content_id": "21723",
+        "dom_id": "step-592279",
+        "selector": "#step-592279",
+        "step_anchor": "step-10",
+        "title": "Solving a Homogeneous Initial Value Problem Using a Given Matrix Exponential: Shifted Initial Conditions",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = 7y(t); y^{\u2032}(t) = 7x(t),]</span>\nFind the solution to the initial value problem above.</p><p><em>Hint: <span class=\"math\">[MATH: [\\cosh (7t)|\\sinh (7t); \\sinh (7t)|\\cosh (7t)]]</span> where <span class=\"math\">[MATH: [0|7; 7|0]]</span></em></p>",
+            "readable_text": "[MATH: {x^{\u2032}(t) = 7y(t); y^{\u2032}(t) = 7x(t),]\nFind the solution to the initial value problem above.\n\nHint: [MATH: [\\cosh (7t)|\\sinh (7t); \\sinh (7t)|\\cosh (7t)]] where [MATH: [0|7; 7|0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Writing our system in matrix form, we get\n<span class=\"math\">[MATH: [0|7; 7|0]]</span>\nwhere <span class=\"math\">[MATH: [x(t); y(t)]]</span> So, the matrix of the system is <span class=\"math\">[MATH: [0|7; 7|0]]</span></p><p>Given the system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t) = A \\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix, the general solution of the system can be written as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]</span>\nwhere <span class=\"math\">[MATH: \\Phi(t)]</span> is a fundamental matrix of the system, and <span class=\"math\">[MATH: \\mathbf{c}]</span> is a constant vector.</p><p>So, we can write our general solution as\n<span class=\"math\">[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\mathbf{c} =e^{At} \\, \\mathbf{c},]</span>\nwhere <span class=\"math\">[MATH: \\Phi_0(t) = e^{At}]</span> is the standard fundamental matrix of the system. Substituting <span class=\"math\">[MATH: t = t_0,]</span> we have \n<span class=\"math\">[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c},]</span>\nand since <span class=\"math\">[MATH: e^{At}]</span> is invertible for all <span class=\"math\">[MATH: t,]</span> we have\n<span class=\"math\">[MATH: \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0).]</span></p><p>Plugging the above back into our expression for <span class=\"math\">[MATH: \\mathbf{x}(t),]</span> we get\n<span class=\"math\">[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]</span></p><p>Therefore, the solution is\n<span class=\"math\">[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cosh (7(t \u2212 1))|\\sinh (7(t \u2212 1)); \\sinh (7(t \u2212 1))|\\cosh (7(t \u2212 1))][0; 3]; = [3\\sinh (7(t \u2212 1)); 3\\cosh (7(t \u2212 1))].]</span></p>",
+            "readable_text": "Writing our system in matrix form, we get\n[MATH: [0|7; 7|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|7; 7|0]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is a constant vector.\n\nSo, we can write our general solution as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\mathbf{c} =e^{At} \\, \\mathbf{c},]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system. Substituting [MATH: t = t_0,] we have\n[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c},]\nand since [MATH: e^{At}] is invertible for all [MATH: t,] we have\n[MATH: \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0).]\n\nPlugging the above back into our expression for [MATH: \\mathbf{x}(t),] we get\n[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]\n\nTherefore, the solution is\n[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cosh (7(t \u2212 1))|\\sinh (7(t \u2212 1)); \\sinh (7(t \u2212 1))|\\cosh (7(t \u2212 1))][0; 3]; = [3\\sinh (7(t \u2212 1)); 3\\cosh (7(t \u2212 1))].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[MATH: {x^{\u2032}(t) = 7y(t); y^{\u2032}(t) = 7x(t),]\nFind the solution to the initial value problem above.\n\nHint: [MATH: [\\cosh (7t)|\\sinh (7t); \\sinh (7t)|\\cosh (7t)]] where [MATH: [0|7; 7|0]]\n\nContent:\nEXPLANATION\n\nExplanation:\nWriting our system in matrix form, we get\n[MATH: [0|7; 7|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|7; 7|0]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is a constant vector.\n\nSo, we can write our general solution as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\mathbf{c} =e^{At} \\, \\mathbf{c},]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system. Substituting [MATH: t = t_0,] we have\n[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c},]\nand since [MATH: e^{At}] is invertible for all [MATH: t,] we have\n[MATH: \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0).]\n\nPlugging the above back into our expression for [MATH: \\mathbf{x}(t),] we get\n[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]\n\nTherefore, the solution is\n[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cosh (7(t \u2212 1))|\\sinh (7(t \u2212 1)); \\sinh (7(t \u2212 1))|\\cosh (7(t \u2212 1))][0; 3]; = [3\\sinh (7(t \u2212 1)); 3\\cosh (7(t \u2212 1))].]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "334547",
+        "dom_id": "question-334547",
+        "selector": "#question-334547",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = 2x(t) + y(t); y^{\u2032}(t) = 2y(t),[x(1); y(1)] = [1; 0]]</span>\nFind the solution to the initial value problem above.</p><p><em>Hint: <span class=\"math\">[MATH: e^{At} = [e^{2t}|te^{2t}; 0|e^{2t}],]</span> where <span class=\"math\">[MATH: A = [2|1; 0|2].]</span></em></p><table><tr><td><p><span class=\"math\">[MATH: [x(t); y(t)] =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "[MATH: {x^{\u2032}(t) = 2x(t) + y(t); y^{\u2032}(t) = 2y(t),[x(1); y(1)] = [1; 0]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [e^{2t}|te^{2t}; 0|e^{2t}],] where [MATH: A = [2|1; 0|2].]\n\n| [MATH: [x(t); y(t)] =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: {x^{\u2032}(t) = 2x(t) + y(t); y^{\u2032}(t) = 2y(t),[x(1); y(1)] = [1; 0]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [e^{2t}|te^{2t}; 0|e^{2t}],] where [MATH: A = [2|1; 0|2].]\n\n| [MATH: [x(t); y(t)] =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "335447",
+        "dom_id": "question-335447",
+        "selector": "#question-335447",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p><span class=\"math\">[MATH: {x^{\u2032}(t) = 6y(t); y^{\u2032}(t) = 6x(t),[x(3); y(3)] = [\u2212 2; 0]]</span>\nFind the solution to the initial value problem above.</p><p><em>Hint: <span class=\"math\">[MATH: e^{At} = [\\cosh (6t)|\\sinh (6t); \\sinh (6t)|\\cosh (6t)],]</span> where <span class=\"math\">[MATH: A = [0|6; 6|0].]</span></em></p>",
+          "readable_text": "[MATH: {x^{\u2032}(t) = 6y(t); y^{\u2032}(t) = 6x(t),[x(3); y(3)] = [\u2212 2; 0]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [\\cosh (6t)|\\sinh (6t); \\sinh (6t)|\\cosh (6t)],] where [MATH: A = [0|6; 6|0].]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-335447-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]</span></p>",
+            "readable_text": "[MATH: [2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-335447-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-335447-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2\\cosh (6(t \u2212 3)); 2\\sinh (6(t \u2212 3))]]</span></p>",
+            "readable_text": "[MATH: [2\\cosh (6(t \u2212 3)); 2\\sinh (6(t \u2212 3))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-335447-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\\sinh (6(t \u2212 3)); \\cosh (6(t \u2212 3))]]</span></p>",
+            "readable_text": "[MATH: [\\sinh (6(t \u2212 3)); \\cosh (6(t \u2212 3))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-335447-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [\u2212 2\\cosh (6(t \u2212 3)); \u2212 2\\sinh (6(t \u2212 3))]]</span></p>",
+            "readable_text": "[MATH: [\u2212 2\\cosh (6(t \u2212 3)); \u2212 2\\sinh (6(t \u2212 3))]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n[MATH: {x^{\u2032}(t) = 6y(t); y^{\u2032}(t) = 6x(t),[x(3); y(3)] = [\u2212 2; 0]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [\\cosh (6t)|\\sinh (6t); \\sinh (6t)|\\cosh (6t)],] where [MATH: A = [0|6; 6|0].]\n\nChoices:\na. [MATH: [2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]\nb. [MATH: [\u2212 2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]\nc. [MATH: [2\\cosh (6(t \u2212 3)); 2\\sinh (6(t \u2212 3))]]\nd. [MATH: [\\sinh (6(t \u2212 3)); \\cosh (6(t \u2212 3))]]\ne. [MATH: [\u2212 2\\cosh (6(t \u2212 3)); \u2212 2\\sinh (6(t \u2212 3))]]"
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "592282",
+        "content_id": "14528",
+        "dom_id": "step-592282",
+        "selector": "#step-592282",
+        "step_anchor": "step-13",
+        "title": "Reminder: Properties of Matrix Exponentials",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Before proceeding with the next example, let&#x27;s recall some important properties of matrix exponentials:</p>",
+            "readable_text": "Before proceeding with the next example, let's recall some important properties of matrix exponentials:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ol><li><p><em>Law of Exponents:</em> If <span class=\"math\">[MATH: A]</span> is a constant square matrix, then<br/><span class=\"math\">[MATH: e^{A(t+s)} = e^{At}\\,e^{As}.]</span></p></li><li><p><em>Inverse:</em> For any <span class=\"math\">[MATH: t,]</span> the matrix <span class=\"math\">[MATH: e^{At}]</span> is invertible and \n<span class=\"math\">[MATH: (e^{At})^{-1} = e^{-At}.]</span></p></li><li><p><em>Identity:</em> For any square matrix <span class=\"math\">[MATH: A,]</span>\n<span class=\"math\">[MATH: e^{A\\cdot 0} = I.]</span></p></li><li><p><em>Product of exponentials:</em> If <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: B]</span> commute (i.e., <span class=\"math\">[MATH: AB = BA]</span>), then<br/><span class=\"math\">[MATH: e^{A}e^{B} = e^{A+B}.]</span><br/><strong>Watch out!</strong> In general, this identity is <em>not true</em> unless <span class=\"math\">[MATH: A]</span> and <span class=\"math\">[MATH: B]</span> commute.</p></li></ol>",
+            "readable_text": "1. Law of Exponents: If [MATH: A] is a constant square matrix, then\n[MATH: e^{A(t+s)} = e^{At}\\,e^{As}.]\n2. Inverse: For any [MATH: t,] the matrix [MATH: e^{At}] is invertible and\n[MATH: (e^{At})^{-1} = e^{-At}.]\n3. Identity: For any square matrix [MATH: A,]\n[MATH: e^{A\\cdot 0} = I.]\n4. Product of exponentials: If [MATH: A] and [MATH: B] commute (i.e., [MATH: AB = BA]), then\n[MATH: e^{A}e^{B} = e^{A+B}.]\nWatch out! In general, this identity is not true unless [MATH: A] and [MATH: B] commute.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see how these properties can be used in practice.</p>",
+            "readable_text": "Let's see how these properties can be used in practice.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nBefore proceeding with the next example, let's recall some important properties of matrix exponentials:\n\nContent:\n1. Law of Exponents: If [MATH: A] is a constant square matrix, then\n[MATH: e^{A(t+s)} = e^{At}\\,e^{As}.]\n2. Inverse: For any [MATH: t,] the matrix [MATH: e^{At}] is invertible and\n[MATH: (e^{At})^{-1} = e^{-At}.]\n3. Identity: For any square matrix [MATH: A,]\n[MATH: e^{A\\cdot 0} = I.]\n4. Product of exponentials: If [MATH: A] and [MATH: B] commute (i.e., [MATH: AB = BA]), then\n[MATH: e^{A}e^{B} = e^{A+B}.]\nWatch out! In general, this identity is not true unless [MATH: A] and [MATH: B] commute.\n\nContent:\nLet's see how these properties can be used in practice."
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "592283",
+        "content_id": "21711",
+        "dom_id": "step-592283",
+        "selector": "#step-592283",
+        "step_anchor": "step-14",
+        "title": "Proving the Matrix Exponential Formula for IVP Solution: Homogeneous Systems",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the homogeneous system <span class=\"math\">[MATH: \\mathbf{x}&#x27;(t)=A\\mathbf{x}(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix. You&#x27;re given that the standard fundamental matrix <span class=\"math\">[MATH: \\Phi_0(t)]</span> is the unique solution to the initial value problem\n<span class=\"math\">[MATH: \\Phi_0&#x27;(t) = A\\Phi_0(t), \\qquad \\Phi_0(0) = I_n.]</span></p><p>A derivation of the formula for the solution <span class=\"math\">[MATH: \\mathbf{x}(t)]</span> passing through <span class=\"math\">[MATH: \\mathbf{x}(t_0)]</span> is presented below. </p><blockquote><p><span class=\"math\">[MATH: \\textrm{L1}{:}\\;]</span> Let <span class=\"math\">[MATH: \\Phi_0(t)=e^{At}]</span> </p><p><span class=\"math\">[MATH: \\textrm{L2}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{x}(t)=\\Phi_0(t)\\,\\mathbf{c}]</span> for some constant vector <span class=\"math\">[MATH: \\mathbf{c}]</span> </p><p><span class=\"math\">[MATH: \\textrm{L3}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{x}(t)=e^{At}\\,\\mathbf{c}]</span> </p><p><span class=\"math\">[MATH: \\textrm{L4}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c}]</span> </p><p><span class=\"math\">[MATH: \\textrm{L5}{:}\\;]</span> <span class=\"math\">[MATH: (e^{A t_0})^{-1} \\mathbf{x}(t_0)=(e^{At_0})^{-1} e^{A t_0} \\, \\mathbf{c}]</span> </p><p><span class=\"math\">[MATH: \\textrm{L6}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{c} = e^{-A t_0} \\mathbf{x}(t_0) \\,]</span> </p><p><span class=\"math\">[MATH: \\textrm{L7}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{x}(t) = e^{At} e^{-At_0} \\mathbf{x}(t_0) \\,]</span> </p><p><span class=\"math\">[MATH: \\textrm{L8}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{x}(t) = e^{At - At_0} \\mathbf{x}(t_0) \\,]</span> </p><p><span class=\"math\">[MATH: \\textrm{L9}{:}\\;]</span> <span class=\"math\">[MATH: \\mathbf{x}(t) = e^{A(t-t_0)} \\mathbf{x}(t_0) \\,]</span> </p></blockquote><p>Fill in the blanks to justify each step of the following reasoning.</p><p><span class=\"math\">[MATH: \\qquad]</span> Line <span class=\"math\">[MATH: \\textrm{L5}]</span> follows from <span class=\"math\">[MATH: \\textrm{L4}]</span> by <span class=\"math\">[MATH: AAAAAAAAAAAAAAA]</span></p><p><span class=\"math\">[MATH: \\qquad]</span> The property of the matrix exponential used in <span class=\"math\">[MATH: \\textrm{L8}]</span> is <span class=\"math\">[MATH: AAAAAAAAAAAAAAA]</span></p><p><span class=\"math\">[MATH: \\qquad]</span> Line <span class=\"math\">[MATH: \\textrm{L9}]</span> follows from <span class=\"math\">[MATH: \\textrm{L8}]</span> by the fact that  <span class=\"math\">[MATH: AAAAAAAAAAAAAAA]</span></p>",
+            "readable_text": "Consider the homogeneous system [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \\Phi_0(t)] is the unique solution to the initial value problem\n[MATH: \\Phi_0'(t) = A\\Phi_0(t), \\qquad \\Phi_0(0) = I_n.]\n\nA derivation of the formula for the solution [MATH: \\mathbf{x}(t)] passing through [MATH: \\mathbf{x}(t_0)] is presented below.\n\n> [MATH: \\textrm{L1}{:}\\;] Let [MATH: \\Phi_0(t)=e^{At}]\n>\n> [MATH: \\textrm{L2}{:}\\;] [MATH: \\mathbf{x}(t)=\\Phi_0(t)\\,\\mathbf{c}] for some constant vector [MATH: \\mathbf{c}]\n>\n> [MATH: \\textrm{L3}{:}\\;] [MATH: \\mathbf{x}(t)=e^{At}\\,\\mathbf{c}]\n>\n> [MATH: \\textrm{L4}{:}\\;] [MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c}]\n>\n> [MATH: \\textrm{L5}{:}\\;] [MATH: (e^{A t_0})^{-1} \\mathbf{x}(t_0)=(e^{At_0})^{-1} e^{A t_0} \\, \\mathbf{c}]\n>\n> [MATH: \\textrm{L6}{:}\\;] [MATH: \\mathbf{c} = e^{-A t_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L7}{:}\\;] [MATH: \\mathbf{x}(t) = e^{At} e^{-At_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L8}{:}\\;] [MATH: \\mathbf{x}(t) = e^{At - At_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L9}{:}\\;] [MATH: \\mathbf{x}(t) = e^{A(t-t_0)} \\mathbf{x}(t_0) \\,]\n\nFill in the blanks to justify each step of the following reasoning.\n\n[MATH: \\qquad] Line [MATH: \\textrm{L5}] follows from [MATH: \\textrm{L4}] by [MATH: AAAAAAAAAAAAAAA]\n\n[MATH: \\qquad] The property of the matrix exponential used in [MATH: \\textrm{L8}] is [MATH: AAAAAAAAAAAAAAA]\n\n[MATH: \\qquad] Line [MATH: \\textrm{L9}] follows from [MATH: \\textrm{L8}] by the fact that [MATH: AAAAAAAAAAAAAAA]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let&#x27;s justify each of the selected steps.</p><ul><li><p>We first consider lines <span class=\"math\">[MATH: \\textrm{L4}]</span> and <span class=\"math\">[MATH: \\textrm{L5}.]</span> Starting from <span class=\"math\">[MATH: \\textrm{L4},]</span>\n<span class=\"math\">[MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c},]</span>\nwe multiply both sides on the left by <span class=\"math\">[MATH: (e^{At_0})^{-1}]</span> to get\n<span class=\"math\">[MATH: (e^{A t_0})^{-1}\\mathbf{x}(t_0)=(e^{At_0})^{-1}e^{A t_0}\\,\\mathbf{c},]</span>\nwhich is line <span class=\"math\">[MATH: \\textrm{L5}.]</span> Therefore, <span class=\"math\">[MATH: \\textrm{L5}]</span> follows from <span class=\"math\">[MATH: \\textrm{L4}]</span> by <span class=\"math\">[MATH: (e^{At_{0}})^{\u2212 1}]</span></p></li><li><p>Next, we justify the step <span class=\"math\">[MATH: \\textrm{L7}]</span> to <span class=\"math\">[MATH: \\textrm{L8}.]</span> Since <span class=\"math\">[MATH: At]</span> and <span class=\"math\">[MATH: -At_0]</span> commute, we may combine exponentials:\n<span class=\"math\">[MATH: e^{At}e^{-At_0}=e^{At-At_0}.]</span>\nSubstituting this into line <span class=\"math\">[MATH: \\textrm{L7}]</span> produces line <span class=\"math\">[MATH: \\textrm{L8}.]</span> Hence, the property of the matrix exponential used in <span class=\"math\">[MATH: \\textrm{L8}]</span> is <span class=\"math\">[MATH: X]</span></p></li><li><p>Finally, we consider lines <span class=\"math\">[MATH: \\textrm{L8}]</span> and <span class=\"math\">[MATH: \\textrm{L9}.]</span> Starting from <span class=\"math\">[MATH: \\textrm{L8},]</span>\n<span class=\"math\">[MATH: \\mathbf{x}(t)=e^{At-At_0}\\mathbf{x}(t_0),]</span>\nwe rewrite the exponent using the algebraic identity <span class=\"math\">[MATH: At-At_0=A(t-t_0)]</span> to get\n<span class=\"math\">[MATH: \\mathbf{x}(t)=e^{A(t-t_0)}\\mathbf{x}(t_0),]</span>\nwhich is line <span class=\"math\">[MATH: \\textrm{L9}.]</span> Thus, <span class=\"math\">[MATH: \\textrm{L9}]</span> follows from <span class=\"math\">[MATH: \\textrm{L8}]</span> by the fact that <span class=\"math\">[MATH: \\bbox[4pt, border: solid 1pt lightgray]{At-At_0=A(t-t_0)\\text{ for any }t\\text{ and }t_0}.]</span></p></li></ul>",
+            "readable_text": "Let's justify each of the selected steps.\n\n- We first consider lines [MATH: \\textrm{L4}] and [MATH: \\textrm{L5}.] Starting from [MATH: \\textrm{L4},]\n[MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c},]\nwe multiply both sides on the left by [MATH: (e^{At_0})^{-1}] to get\n[MATH: (e^{A t_0})^{-1}\\mathbf{x}(t_0)=(e^{At_0})^{-1}e^{A t_0}\\,\\mathbf{c},]\nwhich is line [MATH: \\textrm{L5}.] Therefore, [MATH: \\textrm{L5}] follows from [MATH: \\textrm{L4}] by [MATH: (e^{At_{0}})^{\u2212 1}]\n- Next, we justify the step [MATH: \\textrm{L7}] to [MATH: \\textrm{L8}.] Since [MATH: At] and [MATH: -At_0] commute, we may combine exponentials:\n[MATH: e^{At}e^{-At_0}=e^{At-At_0}.]\nSubstituting this into line [MATH: \\textrm{L7}] produces line [MATH: \\textrm{L8}.] Hence, the property of the matrix exponential used in [MATH: \\textrm{L8}] is [MATH: X]\n- Finally, we consider lines [MATH: \\textrm{L8}] and [MATH: \\textrm{L9}.] Starting from [MATH: \\textrm{L8},]\n[MATH: \\mathbf{x}(t)=e^{At-At_0}\\mathbf{x}(t_0),]\nwe rewrite the exponent using the algebraic identity [MATH: At-At_0=A(t-t_0)] to get\n[MATH: \\mathbf{x}(t)=e^{A(t-t_0)}\\mathbf{x}(t_0),]\nwhich is line [MATH: \\textrm{L9}.] Thus, [MATH: \\textrm{L9}] follows from [MATH: \\textrm{L8}] by the fact that [MATH: \\bbox[4pt, border: solid 1pt lightgray]{At-At_0=A(t-t_0)\\text{ for any }t\\text{ and }t_0}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the homogeneous system [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \\Phi_0(t)] is the unique solution to the initial value problem\n[MATH: \\Phi_0'(t) = A\\Phi_0(t), \\qquad \\Phi_0(0) = I_n.]\n\nA derivation of the formula for the solution [MATH: \\mathbf{x}(t)] passing through [MATH: \\mathbf{x}(t_0)] is presented below.\n\n> [MATH: \\textrm{L1}{:}\\;] Let [MATH: \\Phi_0(t)=e^{At}]\n>\n> [MATH: \\textrm{L2}{:}\\;] [MATH: \\mathbf{x}(t)=\\Phi_0(t)\\,\\mathbf{c}] for some constant vector [MATH: \\mathbf{c}]\n>\n> [MATH: \\textrm{L3}{:}\\;] [MATH: \\mathbf{x}(t)=e^{At}\\,\\mathbf{c}]\n>\n> [MATH: \\textrm{L4}{:}\\;] [MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c}]\n>\n> [MATH: \\textrm{L5}{:}\\;] [MATH: (e^{A t_0})^{-1} \\mathbf{x}(t_0)=(e^{At_0})^{-1} e^{A t_0} \\, \\mathbf{c}]\n>\n> [MATH: \\textrm{L6}{:}\\;] [MATH: \\mathbf{c} = e^{-A t_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L7}{:}\\;] [MATH: \\mathbf{x}(t) = e^{At} e^{-At_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L8}{:}\\;] [MATH: \\mathbf{x}(t) = e^{At - At_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L9}{:}\\;] [MATH: \\mathbf{x}(t) = e^{A(t-t_0)} \\mathbf{x}(t_0) \\,]\n\nFill in the blanks to justify each step of the following reasoning.\n\n[MATH: \\qquad] Line [MATH: \\textrm{L5}] follows from [MATH: \\textrm{L4}] by [MATH: AAAAAAAAAAAAAAA]\n\n[MATH: \\qquad] The property of the matrix exponential used in [MATH: \\textrm{L8}] is [MATH: AAAAAAAAAAAAAAA]\n\n[MATH: \\qquad] Line [MATH: \\textrm{L9}] follows from [MATH: \\textrm{L8}] by the fact that [MATH: AAAAAAAAAAAAAAA]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's justify each of the selected steps.\n\n- We first consider lines [MATH: \\textrm{L4}] and [MATH: \\textrm{L5}.] Starting from [MATH: \\textrm{L4},]\n[MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c},]\nwe multiply both sides on the left by [MATH: (e^{At_0})^{-1}] to get\n[MATH: (e^{A t_0})^{-1}\\mathbf{x}(t_0)=(e^{At_0})^{-1}e^{A t_0}\\,\\mathbf{c},]\nwhich is line [MATH: \\textrm{L5}.] Therefore, [MATH: \\textrm{L5}] follows from [MATH: \\textrm{L4}] by [MATH: (e^{At_{0}})^{\u2212 1}]\n- Next, we justify the step [MATH: \\textrm{L7}] to [MATH: \\textrm{L8}.] Since [MATH: At] and [MATH: -At_0] commute, we may combine exponentials:\n[MATH: e^{At}e^{-At_0}=e^{At-At_0}.]\nSubstituting this into line [MATH: \\textrm{L7}] produces line [MATH: \\textrm{L8}.] Hence, the property of the matrix exponential used in [MATH: \\textrm{L8}] is [MATH: X]\n- Finally, we consider lines [MATH: \\textrm{L8}] and [MATH: \\textrm{L9}.] Starting from [MATH: \\textrm{L8},]\n[MATH: \\mathbf{x}(t)=e^{At-At_0}\\mathbf{x}(t_0),]\nwe rewrite the exponent using the algebraic identity [MATH: At-At_0=A(t-t_0)] to get\n[MATH: \\mathbf{x}(t)=e^{A(t-t_0)}\\mathbf{x}(t_0),]\nwhich is line [MATH: \\textrm{L9}.] Thus, [MATH: \\textrm{L9}] follows from [MATH: \\textrm{L8}] by the fact that [MATH: \\bbox[4pt, border: solid 1pt lightgray]{At-At_0=A(t-t_0)\\text{ for any }t\\text{ and }t_0}.]"
+      },
+      {
+        "lesson_index": 15,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "333992",
+        "dom_id": "question-333992",
+        "selector": "#question-333992",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the homogeneous system <span class=\"math\">[MATH: x^{\u2032}(t) = Ax(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix. You&#x27;re given that the standard fundamental matrix <span class=\"math\">[MATH: \u03a6_{0}(t)]</span> is the unique solution to the initial value problem\n<span class=\"math\">[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]</span>\nA derivation of the formula for the solution <span class=\"math\">[MATH: x(t)]</span> passing through <span class=\"math\">[MATH: x(0)]</span> is presented below. </p><blockquote><p><span class=\"math\">[MATH: L1:]</span> Let <span class=\"math\">[MATH: \u03a6_{0}(t) = e^{At}]</span> </p><p><span class=\"math\">[MATH: L2:]</span> <span class=\"math\">[MATH: x(t) = \u03a6_{0}(t)c]</span> for some constant vector <span class=\"math\">[MATH: c]</span> </p><p><span class=\"math\">[MATH: L3:]</span> <span class=\"math\">[MATH: x(0) = \u03a6_{0}(0)c]</span> </p><p><span class=\"math\">[MATH: L4:]</span> <span class=\"math\">[MATH: \u03a6_{0}(0) = I_{n}]</span></p><p><span class=\"math\">[MATH: L5:]</span> <span class=\"math\">[MATH: x(0) = c]</span> </p><p><span class=\"math\">[MATH: L6:]</span> <span class=\"math\">[MATH: x(t) = e^{At}x(0)]</span></p></blockquote><p>Select the correct options to justify each step of the reasoning.</p><p> Line <span class=\"math\">[MATH: L2]</span> follows from <span class=\"math\">[MATH: L1]</span> by the \n<span class=\"select-list\" data-select-id=\"selectList-333992-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p> Line <span class=\"math\">[MATH: L3]</span> follows from <span class=\"math\">[MATH: L2]</span> by \n<span class=\"select-list\" data-select-id=\"selectList-333992-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p> Line <span class=\"math\">[MATH: L6]</span> follows from line <span class=\"math\">[MATH: L2]</span> by substitution from lines <span class=\"select-list\" data-select-id=\"selectList-333992-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "Consider the homogeneous system [MATH: x^{\u2032}(t) = Ax(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \u03a6_{0}(t)] is the unique solution to the initial value problem\n[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]\nA derivation of the formula for the solution [MATH: x(t)] passing through [MATH: x(0)] is presented below.\n\n> [MATH: L1:] Let [MATH: \u03a6_{0}(t) = e^{At}]\n>\n> [MATH: L2:] [MATH: x(t) = \u03a6_{0}(t)c] for some constant vector [MATH: c]\n>\n> [MATH: L3:] [MATH: x(0) = \u03a6_{0}(0)c]\n>\n> [MATH: L4:] [MATH: \u03a6_{0}(0) = I_{n}]\n>\n> [MATH: L5:] [MATH: x(0) = c]\n>\n> [MATH: L6:] [MATH: x(t) = e^{At}x(0)]\n\nSelect the correct options to justify each step of the reasoning.\n\nLine [MATH: L2] follows from [MATH: L1] by the\n[SELECT 1].\n\nLine [MATH: L3] follows from [MATH: L2] by\n[SELECT 2].\n\nLine [MATH: L6] follows from line [MATH: L2] by substitution from lines [SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-333992-0",
+              "frame_dom_id": "selectListFrame-333992-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "definition of matrix multiplication",
+                  "readable_text": "definition of matrix multiplication"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "definition of a solution curve",
+                  "readable_text": "definition of a solution curve"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "properties of the determinant",
+                  "readable_text": "properties of the determinant"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "properties of a fundamental matrix",
+                  "readable_text": "properties of a fundamental matrix"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-333992-1",
+              "frame_dom_id": "selectListFrame-333992-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "evaluating both sides at <span class=\"math\">[MATH: t = 0]</span>",
+                  "readable_text": "evaluating both sides at [MATH: t = 0]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "using diagonalization of <span class=\"math\">[MATH: \u03a6]</span>",
+                  "readable_text": "using diagonalization of [MATH: \u03a6]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "differentiating the equation",
+                  "readable_text": "differentiating the equation"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "applying the chain rule",
+                  "readable_text": "applying the chain rule"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-333992-2",
+              "frame_dom_id": "selectListFrame-333992-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: L1]</span> and <span class=\"math\">[MATH: L2]</span>",
+                  "readable_text": "[MATH: L1] and [MATH: L2]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: L1]</span> and <span class=\"math\">[MATH: L5]</span>",
+                  "readable_text": "[MATH: L1] and [MATH: L5]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: L3]</span> and <span class=\"math\">[MATH: L4]</span>",
+                  "readable_text": "[MATH: L3] and [MATH: L4]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: L1]</span> and <span class=\"math\">[MATH: L3]</span>",
+                  "readable_text": "[MATH: L1] and [MATH: L3]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-333992-0",
+            "frame_dom_id": "selectListFrame-333992-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "definition of matrix multiplication",
+                "readable_text": "definition of matrix multiplication"
+              },
+              {
+                "index": 2,
+                "normalized_html": "definition of a solution curve",
+                "readable_text": "definition of a solution curve"
+              },
+              {
+                "index": 3,
+                "normalized_html": "properties of the determinant",
+                "readable_text": "properties of the determinant"
+              },
+              {
+                "index": 4,
+                "normalized_html": "properties of a fundamental matrix",
+                "readable_text": "properties of a fundamental matrix"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-333992-1",
+            "frame_dom_id": "selectListFrame-333992-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "evaluating both sides at <span class=\"math\">[MATH: t = 0]</span>",
+                "readable_text": "evaluating both sides at [MATH: t = 0]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "using diagonalization of <span class=\"math\">[MATH: \u03a6]</span>",
+                "readable_text": "using diagonalization of [MATH: \u03a6]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "differentiating the equation",
+                "readable_text": "differentiating the equation"
+              },
+              {
+                "index": 4,
+                "normalized_html": "applying the chain rule",
+                "readable_text": "applying the chain rule"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-333992-2",
+            "frame_dom_id": "selectListFrame-333992-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: L1]</span> and <span class=\"math\">[MATH: L2]</span>",
+                "readable_text": "[MATH: L1] and [MATH: L2]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: L1]</span> and <span class=\"math\">[MATH: L5]</span>",
+                "readable_text": "[MATH: L1] and [MATH: L5]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: L3]</span> and <span class=\"math\">[MATH: L4]</span>",
+                "readable_text": "[MATH: L3] and [MATH: L4]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: L1]</span> and <span class=\"math\">[MATH: L3]</span>",
+                "readable_text": "[MATH: L1] and [MATH: L3]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nConsider the homogeneous system [MATH: x^{\u2032}(t) = Ax(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \u03a6_{0}(t)] is the unique solution to the initial value problem\n[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]\nA derivation of the formula for the solution [MATH: x(t)] passing through [MATH: x(0)] is presented below.\n\n> [MATH: L1:] Let [MATH: \u03a6_{0}(t) = e^{At}]\n>\n> [MATH: L2:] [MATH: x(t) = \u03a6_{0}(t)c] for some constant vector [MATH: c]\n>\n> [MATH: L3:] [MATH: x(0) = \u03a6_{0}(0)c]\n>\n> [MATH: L4:] [MATH: \u03a6_{0}(0) = I_{n}]\n>\n> [MATH: L5:] [MATH: x(0) = c]\n>\n> [MATH: L6:] [MATH: x(t) = e^{At}x(0)]\n\nSelect the correct options to justify each step of the reasoning.\n\nLine [MATH: L2] follows from [MATH: L1] by the\n[SELECT 1].\n\nLine [MATH: L3] follows from [MATH: L2] by\n[SELECT 2].\n\nLine [MATH: L6] follows from line [MATH: L2] by substitution from lines [SELECT 3]."
+      },
+      {
+        "lesson_index": 16,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "336639",
+        "dom_id": "question-336639",
+        "selector": "#question-336639",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the homogeneous system <span class=\"math\">[MATH: x^{\u2032}(t) = Ax(t),]</span> where <span class=\"math\">[MATH: A]</span> is a constant square matrix. You&#x27;re given that the standard fundamental matrix <span class=\"math\">[MATH: \u03a6_{0}(t)]</span> is the unique solution to the initial value problem\n<span class=\"math\">[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]</span></p><p>A derivation of the formula for the solution <span class=\"math\">[MATH: x(t)]</span> passing through <span class=\"math\">[MATH: x(t_{0})]</span> is presented below. </p><blockquote><p><span class=\"math\">[MATH: L1:]</span> Let <span class=\"math\">[MATH: \u03a6_{0}(t) = e^{At}]</span></p><p><span class=\"math\">[MATH: L2:]</span> <span class=\"math\">[MATH: x(t) = \u03a6_{0}(t)c]</span> for some constant vector <span class=\"math\">[MATH: c]</span></p><p><span class=\"math\">[MATH: L3:]</span> <span class=\"math\">[MATH: x(t) = e^{At}c]</span> </p><p><span class=\"math\">[MATH: L4:]</span> <span class=\"math\">[MATH: x(t_{0}) = e^{At_{0}}c]</span></p><p><span class=\"math\">[MATH: L5:]</span> <span class=\"math\">[MATH: (e^{At_{0}})^{\u2212 1}x(t_{0}) = (e^{At_{0}})^{\u2212 1}e^{At_{0}}c]</span></p><p><span class=\"math\">[MATH: L6:]</span> <span class=\"math\">[MATH: c = e^{\u2212 At_{0}}x(t_{0})]</span></p><p><span class=\"math\">[MATH: L7:]</span> <span class=\"math\">[MATH: x(t) = e^{At}e^{\u2212 At_{0}}x(t_{0})]</span></p><p><span class=\"math\">[MATH: L8:]</span> <span class=\"math\">[MATH: x(t) = e^{At \u2212 At_{0}}x(t_{0})]</span></p><p><span class=\"math\">[MATH: L9:]</span> <span class=\"math\">[MATH: x(t) = e^{A(t \u2212 t_{0})}x(t_{0})]</span></p></blockquote><p>Select the correct options to justify each step of the reasoning.</p><p> Line <span class=\"math\">[MATH: L2]</span> is true by <span class=\"select-list\" data-select-id=\"selectList-336639-0\" data-select-index=\"1\">[SELECT 1]</span>.</p><p> Line <span class=\"math\">[MATH: L4]</span> follows from <span class=\"math\">[MATH: L3]</span> <span class=\"select-list\" data-select-id=\"selectList-336639-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p> Line <span class=\"math\">[MATH: L8]</span> follows from <span class=\"math\">[MATH: L7]</span> by the fact that <span class=\"select-list\" data-select-id=\"selectList-336639-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "Consider the homogeneous system [MATH: x^{\u2032}(t) = Ax(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \u03a6_{0}(t)] is the unique solution to the initial value problem\n[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]\n\nA derivation of the formula for the solution [MATH: x(t)] passing through [MATH: x(t_{0})] is presented below.\n\n> [MATH: L1:] Let [MATH: \u03a6_{0}(t) = e^{At}]\n>\n> [MATH: L2:] [MATH: x(t) = \u03a6_{0}(t)c] for some constant vector [MATH: c]\n>\n> [MATH: L3:] [MATH: x(t) = e^{At}c]\n>\n> [MATH: L4:] [MATH: x(t_{0}) = e^{At_{0}}c]\n>\n> [MATH: L5:] [MATH: (e^{At_{0}})^{\u2212 1}x(t_{0}) = (e^{At_{0}})^{\u2212 1}e^{At_{0}}c]\n>\n> [MATH: L6:] [MATH: c = e^{\u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L7:] [MATH: x(t) = e^{At}e^{\u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L8:] [MATH: x(t) = e^{At \u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L9:] [MATH: x(t) = e^{A(t \u2212 t_{0})}x(t_{0})]\n\nSelect the correct options to justify each step of the reasoning.\n\nLine [MATH: L2] is true by [SELECT 1].\n\nLine [MATH: L4] follows from [MATH: L3] [SELECT 2].\n\nLine [MATH: L8] follows from [MATH: L7] by the fact that [SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-336639-0",
+              "frame_dom_id": "selectListFrame-336639-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "evaluating both sides at <span class=\"math\">[MATH: t = t_{0}]</span>",
+                  "readable_text": "evaluating both sides at [MATH: t = t_{0}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "the properties of a fundamental matrix",
+                  "readable_text": "the properties of a fundamental matrix"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "the definition of matrix exponential",
+                  "readable_text": "the definition of matrix exponential"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-336639-1",
+              "frame_dom_id": "selectListFrame-336639-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "by substituting <span class=\"math\">[MATH: t = t_{0}]</span>",
+                  "readable_text": "by substituting [MATH: t = t_{0}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "by substitution from line <span class=\"math\">[MATH: L2]</span>",
+                  "readable_text": "by substitution from line [MATH: L2]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "using the fact that <span class=\"math\">[MATH: \u03a6_{0}(0) = I_{n}]</span>",
+                  "readable_text": "using the fact that [MATH: \u03a6_{0}(0) = I_{n}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-336639-2",
+              "frame_dom_id": "selectListFrame-336639-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: e^{X}e^{Y} = e^{X + Y}]</span> when <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: Y]</span> commute",
+                  "readable_text": "[MATH: e^{X}e^{Y} = e^{X + Y}] when [MATH: X] and [MATH: Y] commute"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: Bt \u2212 Bt_{0} = B(t \u2212 t_{0})]</span> for any <span class=\"math\">[MATH: t]</span> and <span class=\"math\">[MATH: t_{0}]</span>",
+                  "readable_text": "[MATH: Bt \u2212 Bt_{0} = B(t \u2212 t_{0})] for any [MATH: t] and [MATH: t_{0}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: e^{Mt}e^{\u2212 Mt_{0}} = e^{M(t \u2212 t_{0})}]</span>",
+                  "readable_text": "[MATH: e^{Mt}e^{\u2212 Mt_{0}} = e^{M(t \u2212 t_{0})}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: e^{At_{0}} = e^{At}]</span> for any matrix <span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: e^{At_{0}} = e^{At}] for any matrix [MATH: A]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-336639-0",
+            "frame_dom_id": "selectListFrame-336639-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "evaluating both sides at <span class=\"math\">[MATH: t = t_{0}]</span>",
+                "readable_text": "evaluating both sides at [MATH: t = t_{0}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "the properties of a fundamental matrix",
+                "readable_text": "the properties of a fundamental matrix"
+              },
+              {
+                "index": 3,
+                "normalized_html": "the definition of matrix exponential",
+                "readable_text": "the definition of matrix exponential"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-336639-1",
+            "frame_dom_id": "selectListFrame-336639-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "by substituting <span class=\"math\">[MATH: t = t_{0}]</span>",
+                "readable_text": "by substituting [MATH: t = t_{0}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "by substitution from line <span class=\"math\">[MATH: L2]</span>",
+                "readable_text": "by substitution from line [MATH: L2]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "using the fact that <span class=\"math\">[MATH: \u03a6_{0}(0) = I_{n}]</span>",
+                "readable_text": "using the fact that [MATH: \u03a6_{0}(0) = I_{n}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-336639-2",
+            "frame_dom_id": "selectListFrame-336639-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: e^{X}e^{Y} = e^{X + Y}]</span> when <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: Y]</span> commute",
+                "readable_text": "[MATH: e^{X}e^{Y} = e^{X + Y}] when [MATH: X] and [MATH: Y] commute"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: Bt \u2212 Bt_{0} = B(t \u2212 t_{0})]</span> for any <span class=\"math\">[MATH: t]</span> and <span class=\"math\">[MATH: t_{0}]</span>",
+                "readable_text": "[MATH: Bt \u2212 Bt_{0} = B(t \u2212 t_{0})] for any [MATH: t] and [MATH: t_{0}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: e^{Mt}e^{\u2212 Mt_{0}} = e^{M(t \u2212 t_{0})}]</span>",
+                "readable_text": "[MATH: e^{Mt}e^{\u2212 Mt_{0}} = e^{M(t \u2212 t_{0})}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: e^{At_{0}} = e^{At}]</span> for any matrix <span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: e^{At_{0}} = e^{At}] for any matrix [MATH: A]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nConsider the homogeneous system [MATH: x^{\u2032}(t) = Ax(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \u03a6_{0}(t)] is the unique solution to the initial value problem\n[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]\n\nA derivation of the formula for the solution [MATH: x(t)] passing through [MATH: x(t_{0})] is presented below.\n\n> [MATH: L1:] Let [MATH: \u03a6_{0}(t) = e^{At}]\n>\n> [MATH: L2:] [MATH: x(t) = \u03a6_{0}(t)c] for some constant vector [MATH: c]\n>\n> [MATH: L3:] [MATH: x(t) = e^{At}c]\n>\n> [MATH: L4:] [MATH: x(t_{0}) = e^{At_{0}}c]\n>\n> [MATH: L5:] [MATH: (e^{At_{0}})^{\u2212 1}x(t_{0}) = (e^{At_{0}})^{\u2212 1}e^{At_{0}}c]\n>\n> [MATH: L6:] [MATH: c = e^{\u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L7:] [MATH: x(t) = e^{At}e^{\u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L8:] [MATH: x(t) = e^{At \u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L9:] [MATH: x(t) = e^{A(t \u2212 t_{0})}x(t_{0})]\n\nSelect the correct options to justify each step of the reasoning.\n\nLine [MATH: L2] is true by [SELECT 1].\n\nLine [MATH: L4] follows from [MATH: L3] [SELECT 2].\n\nLine [MATH: L8] follows from [MATH: L7] by the fact that [SELECT 3]."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nMatrix exponentials can be used for solving homogeneous systems of the form\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),]\nwhere [MATH: A] is a constant square matrix.\n\nContent:\nFor example, consider the system\n[MATH: {x^{\u2032}(t) = 5y(t); y^{\u2032}(t) = \u2212 5x(t)]\n\nContent:\nWriting our system in matrix form, we get\n[MATH: [0|5; \u2212 5|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|5; \u2212 5|0]]\n\nContent:\nRecall that given the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is some constant vector.\n\nContent:\nSince we have already seen how to compute the standard fundamental matrix, we will not repeat the calculation here. So, computing the standard fundamental matrix [MATH: \\Phi_0(t)] of the system, we get\n[MATH: [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)]]\n\nContent:\nTherefore, the general solution is\n\nContent:\n[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [\\cos (5t)|\\sin (5t); \u2212 \\sin (5t)|\\cos (5t)][c_{1}; c_{2}]; = c_{1}[\\cos (5t); \u2212 \\sin (5t)] + c_{2}[\\sin (5t); \\cos (5t)],]\n\nContent:\nwhere [MATH: c_1,c_2 \\in \\mathbb{R}.]\n\nContent:\nNote: Recall that for the general solution of the ordinary differential equation [MATH: x'(t)=ax(t),] we have\n[MATH: x'(t)=ax(t)\n\\qquad\\Rightarrow\\qquad\nx(t) = c \\, e^{at},\n\\quad\nc \\in \\mathbb{R}.]\nNow, for the general solution of the matrix differential equation [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),] we obtain\n[MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t)\n\\qquad\\Rightarrow\\qquad\n\\mathbf{x}(t) = e^{At} \\, \\mathbf{c},\n\\quad\n\\mathbf{c} \\in \\mathbb{R}^n.]\n\nContent:\nLet's see more examples.\n\n---\n\nItem 2 \u2014 Example: Finding the General Solution of a Homogeneous System Using a Given Matrix Exponential\n\nExample Prompt:\n[MATH: {x^{\u2032}(t) = \u2212 7x(t) + y(t); y^{\u2032}(t) = \u2212 7y(t)]\nFind the general solution to the system of ODEs above.\n\nHint: [MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]] where [MATH: [\u2212 7|1; 0|\u2212 7]]\n\nContent:\nEXPLANATION\n\nExplanation:\nWriting our system in matrix form, we get\n[MATH: [\u2212 7|1; 0|\u2212 7]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [\u2212 7|1; 0|\u2212 7]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is a constant vector.\n\nNow, using the given information, the standard fundamental matrix [MATH: \\Phi_0(t)] of the system is given by\n[MATH: [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}]]\n\nTherefore, the general solution is\n\n[MATH: x(t)|= \u03a6_{0}(t)c; = e^{At}c; = [e^{\u2212 7t}|te^{\u2212 7t}; 0|e^{\u2212 7t}][c_{1}; c_{2}]; = c_{1}[e^{\u2212 7t}; 0] + c_{2}[te^{\u2212 7t}; e^{\u2212 7t}]; = c_{1}[1; 0]e^{\u2212 7t} + c_{2}[t; 1]e^{\u2212 7t},]\n\nwhere [MATH: c_1,c_2 \\in \\mathbb{R}.]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n[MATH: {x^{\u2032}(t) = \u2212 4y(t); y^{\u2032}(t) = 4x(t)]\nWhich of the following gives the general solution to the system of ODEs above?\n\nHint: [MATH: e^{At} = [\\cos (4t)|\u2212 \\sin (4t); \\sin (4t)|\\cos (4t)],] where [MATH: A = [0|\u2212 4; 4|0].]\n\nChoices:\na. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{4t}]\nb. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)]e^{4t} + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]\nc. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]]\nd. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\\sin (4t); \\cos (4t)]]\ne. [MATH: x(t) = c_{1}[\\cos (4t); \\sin (4t)] + c_{2}[\u2212 \\sin (4t); \\cos (4t)]e^{\u2212 4t}]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = 3x(t)]\nWhich of the following gives the general solution to the system of ODEs above?\n\nHint: [MATH: e^{At} = [\\cosh (3t)|\\sinh (3t); \\sinh (3t)|\\cosh (3t)],] where [MATH: A = [0|3; 3|0].]\n\nChoices:\na. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\u2212 \\sinh (3t); \\cosh (3t)]]\nb. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]\nc. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]]\nd. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)] + c_{2}[\\sinh (3t); \\cosh (3t)]e^{\u2212 3t}]\ne. [MATH: x(t) = c_{1}[\\cosh (3t); \\sinh (3t)]e^{\u2212 3t} + c_{2}[\\sinh (3t); \\cosh (3t)]]\n\n---\n\nItem 5 \u2014 Tutorial: Solving Initial Value Problems\n\nContent:\nNow, let's find the solution to the initial value problem below\n[MATH: {x^{\u2032}(t) = 7x(t) + y(t); y^{\u2032}(t) = 7y(t),]\n\nContent:\nWriting our system in matrix form, we get\n[MATH: [7|1; 0|7]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [7|1; 0|7]]\n\nContent:\nRecall that the general solution of the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, can be written as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system, and [MATH: \\mathbf{c}] is some constant vector.\n\nContent:\nEvaluating both sides of [MATH: \\mathbf{x}(t) = e^{At} \\mathbf{c}] at [MATH: t=0,] we get\n[MATH: x(0)|= \u03a6_{0}(0)c; x(0)|= e^{A(0)}c; x(0)|= Ic; c|= x(0).]\n\nContent:\nThus, the solution to our initial value problem is\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0).]\n\nContent:\nComputing the standard fundamental matrix [MATH: \\Phi_0(t)] of the system, we get\n[MATH: [e^{7t}|te^{7t}; 0|e^{7t}]]\n\nContent:\nTherefore, the solution is\n\nContent:\n[MATH: x(t)|= e^{At}x(0); = [e^{7t}|te^{7t}; 0|e^{7t}][3; \u2212 2]; = [(3 \u2212 2t)e^{7t}; \u2212 2e^{7t}].]\n\n---\n\nItem 6 \u2014 Example: Solving a Homogeneous Initial Value Problem Using a Given Matrix Exponential\n\nExample Prompt:\n[MATH: {x^{\u2032}(t) = 3y(t); y^{\u2032}(t) = \u2212 3x(t),]\nFind the solution to the initial value problem above.\n\nHint: [MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]] where [MATH: [0|3; \u2212 3|0]]\n\nContent:\nEXPLANATION\n\nExplanation:\nWriting our system in matrix form, we get\n[MATH: [0|3; \u2212 3|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|3; \u2212 3|0]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the solution of the initial value problem can be written as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\, \\mathbf{x}(0),]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system, and [MATH: \\mathbf{x}(0)] is the initial condition vector.\n\nNow, using the given information, the standard fundamental matrix [MATH: \\Phi_0(t)] of the system is given by\n\n[MATH: [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)]]\n\nTherefore, the solution is\n\n[MATH: x(t)|= e^{At}x(0); = [\\cos (3t)|\\sin (3t); \u2212 \\sin (3t)|\\cos (3t)][2; \u2212 1]; = [2\\cos (3t) \u2212 \\sin (3t); \u2212 2\\sin (3t) \u2212 \\cos (3t)].]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\n[MATH: {x^{\u2032}(t) = \u2212 3x(t) + y(t); y^{\u2032}(t) = \u2212 3y(t),[x(0); y(0)] = [0; 2]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [e^{\u2212 3t}|te^{\u2212 3t}; 0|e^{\u2212 3t}],] where [MATH: A = [\u2212 3|1; 0|\u2212 3].]\n\nChoices:\na. [MATH: [\u2212 2te^{\u2212 3t}; 2e^{\u2212 3t}]]\nb. [MATH: [2te^{\u2212 3t}; 2e^{\u2212 3t}]]\nc. [MATH: [2e^{\u2212 3t}; 2te^{\u2212 3t}]]\nd. [MATH: [2te^{3t}; 2e^{\u2212 3t}]]\ne. [MATH: [2te^{\u2212 3t}; \u2212 2e^{\u2212 3t}]]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\n[MATH: {x^{\u2032}(t) = 2y(t); y^{\u2032}(t) = 2x(t),[x(0); y(0)] = [0; \u2212 3]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [\\cosh (2t)|\\sinh (2t); \\sinh (2t)|\\cosh (2t)],] where [MATH: A = [0|2; 2|0].]\n\nChoices:\na. [MATH: [\\sinh (2t); \u2212 3\\cosh (2t)]]\nb. [MATH: [\u2212 3\\sinh (2t); 3\\cosh (2t)]]\nc. [MATH: [\u2212 3\\sinh (2t); \u2212 3\\cosh (2t)]]\nd. [MATH: [3\\sinh (2t); \u2212 3\\cosh (2t)]]\ne. [MATH: [2\\sinh (2t); \u2212 3\\cosh (2t)]]\n\n---\n\nItem 9 \u2014 Tutorial: Solving Initial Value Problems With Shifted Conditions\n\nContent:\nNext, let's find the solution to the initial value problem\n[MATH: {x^{\u2032}(t) = \u2212 7y(t); y^{\u2032}(t) = 7x(t),]\ngiven that [MATH: [\\cos (7t)|\u2212 \\sin (7t); \\sin (7t)|\\cos (7t)]] where [MATH: [0|\u2212 7; 7|0]]\n\nContent:\nWriting our system in matrix form, we get\n[MATH: [0|\u2212 7; 7|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|\u2212 7; 7|0]]\n\nContent:\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution is [MATH: \\mathbf{x}(t) = e^{At} \\, \\mathbf{c}.] We can determine the constant vector [MATH: \\mathbf{c}] using the initial condition at time [MATH: t=t_0{:}]\n[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c} \\implies \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0),]\nsince the inverse of [MATH: e^{At_0}] is [MATH: e^{-At_0}.] Plugging this back into our general solution gives the formula\n[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]\n\nContent:\nTherefore, the solution to our specific problem (with [MATH: t_0=1]) is\n[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cos (7(t \u2212 1))|\u2212 \\sin (7(t \u2212 1)); \\sin (7(t \u2212 1))|\\cos (7(t \u2212 1))][0; \u2212 4]; = [4\\sin (7(t \u2212 1)); \u2212 4\\cos (7(t \u2212 1))].]\n\n---\n\nItem 10 \u2014 Example: Solving a Homogeneous Initial Value Problem Using a Given Matrix Exponential: Shifted Initial Conditions\n\nExample Prompt:\n[MATH: {x^{\u2032}(t) = 7y(t); y^{\u2032}(t) = 7x(t),]\nFind the solution to the initial value problem above.\n\nHint: [MATH: [\\cosh (7t)|\\sinh (7t); \\sinh (7t)|\\cosh (7t)]] where [MATH: [0|7; 7|0]]\n\nContent:\nEXPLANATION\n\nExplanation:\nWriting our system in matrix form, we get\n[MATH: [0|7; 7|0]]\nwhere [MATH: [x(t); y(t)]] So, the matrix of the system is [MATH: [0|7; 7|0]]\n\nGiven the system [MATH: \\mathbf{x}'(t) = A \\mathbf{x}(t),] where [MATH: A] is a constant square matrix, the general solution of the system can be written as\n[MATH: \\mathbf{x}(t) = \\Phi(t) \\, \\mathbf{c},]\nwhere [MATH: \\Phi(t)] is a fundamental matrix of the system, and [MATH: \\mathbf{c}] is a constant vector.\n\nSo, we can write our general solution as\n[MATH: \\mathbf{x}(t) = \\Phi_0(t) \\mathbf{c} =e^{At} \\, \\mathbf{c},]\nwhere [MATH: \\Phi_0(t) = e^{At}] is the standard fundamental matrix of the system. Substituting [MATH: t = t_0,] we have\n[MATH: \\mathbf{x}(t_0) = e^{At_0} \\, \\mathbf{c},]\nand since [MATH: e^{At}] is invertible for all [MATH: t,] we have\n[MATH: \\mathbf{c} = e^{-At_0} \\, \\mathbf{x}(t_0).]\n\nPlugging the above back into our expression for [MATH: \\mathbf{x}(t),] we get\n[MATH: x(t)|= e^{At}e^{\u2212 At_{0}}x(t_{0}); = e^{A(t \u2212 t_{0})}x(t_{0}).]\n\nTherefore, the solution is\n[MATH: x(t)|= e^{A(t \u2212 1)}x(1); = [\\cosh (7(t \u2212 1))|\\sinh (7(t \u2212 1)); \\sinh (7(t \u2212 1))|\\cosh (7(t \u2212 1))][0; 3]; = [3\\sinh (7(t \u2212 1)); 3\\cosh (7(t \u2212 1))].]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\n[MATH: {x^{\u2032}(t) = 2x(t) + y(t); y^{\u2032}(t) = 2y(t),[x(1); y(1)] = [1; 0]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [e^{2t}|te^{2t}; 0|e^{2t}],] where [MATH: A = [2|1; 0|2].]\n\n| [MATH: [x(t); y(t)] =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\n[MATH: {x^{\u2032}(t) = 6y(t); y^{\u2032}(t) = 6x(t),[x(3); y(3)] = [\u2212 2; 0]]\nFind the solution to the initial value problem above.\n\nHint: [MATH: e^{At} = [\\cosh (6t)|\\sinh (6t); \\sinh (6t)|\\cosh (6t)],] where [MATH: A = [0|6; 6|0].]\n\nChoices:\na. [MATH: [2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]\nb. [MATH: [\u2212 2\\sinh (6(t \u2212 3)); 2\\cosh (6(t \u2212 3))]]\nc. [MATH: [2\\cosh (6(t \u2212 3)); 2\\sinh (6(t \u2212 3))]]\nd. [MATH: [\\sinh (6(t \u2212 3)); \\cosh (6(t \u2212 3))]]\ne. [MATH: [\u2212 2\\cosh (6(t \u2212 3)); \u2212 2\\sinh (6(t \u2212 3))]]\n\n---\n\nItem 13 \u2014 Tutorial: Reminder: Properties of Matrix Exponentials\n\nContent:\nBefore proceeding with the next example, let's recall some important properties of matrix exponentials:\n\nContent:\n1. Law of Exponents: If [MATH: A] is a constant square matrix, then\n[MATH: e^{A(t+s)} = e^{At}\\,e^{As}.]\n2. Inverse: For any [MATH: t,] the matrix [MATH: e^{At}] is invertible and\n[MATH: (e^{At})^{-1} = e^{-At}.]\n3. Identity: For any square matrix [MATH: A,]\n[MATH: e^{A\\cdot 0} = I.]\n4. Product of exponentials: If [MATH: A] and [MATH: B] commute (i.e., [MATH: AB = BA]), then\n[MATH: e^{A}e^{B} = e^{A+B}.]\nWatch out! In general, this identity is not true unless [MATH: A] and [MATH: B] commute.\n\nContent:\nLet's see how these properties can be used in practice.\n\n---\n\nItem 14 \u2014 Example: Proving the Matrix Exponential Formula for IVP Solution: Homogeneous Systems\n\nExample Prompt:\nConsider the homogeneous system [MATH: \\mathbf{x}'(t)=A\\mathbf{x}(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \\Phi_0(t)] is the unique solution to the initial value problem\n[MATH: \\Phi_0'(t) = A\\Phi_0(t), \\qquad \\Phi_0(0) = I_n.]\n\nA derivation of the formula for the solution [MATH: \\mathbf{x}(t)] passing through [MATH: \\mathbf{x}(t_0)] is presented below.\n\n> [MATH: \\textrm{L1}{:}\\;] Let [MATH: \\Phi_0(t)=e^{At}]\n>\n> [MATH: \\textrm{L2}{:}\\;] [MATH: \\mathbf{x}(t)=\\Phi_0(t)\\,\\mathbf{c}] for some constant vector [MATH: \\mathbf{c}]\n>\n> [MATH: \\textrm{L3}{:}\\;] [MATH: \\mathbf{x}(t)=e^{At}\\,\\mathbf{c}]\n>\n> [MATH: \\textrm{L4}{:}\\;] [MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c}]\n>\n> [MATH: \\textrm{L5}{:}\\;] [MATH: (e^{A t_0})^{-1} \\mathbf{x}(t_0)=(e^{At_0})^{-1} e^{A t_0} \\, \\mathbf{c}]\n>\n> [MATH: \\textrm{L6}{:}\\;] [MATH: \\mathbf{c} = e^{-A t_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L7}{:}\\;] [MATH: \\mathbf{x}(t) = e^{At} e^{-At_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L8}{:}\\;] [MATH: \\mathbf{x}(t) = e^{At - At_0} \\mathbf{x}(t_0) \\,]\n>\n> [MATH: \\textrm{L9}{:}\\;] [MATH: \\mathbf{x}(t) = e^{A(t-t_0)} \\mathbf{x}(t_0) \\,]\n\nFill in the blanks to justify each step of the following reasoning.\n\n[MATH: \\qquad] Line [MATH: \\textrm{L5}] follows from [MATH: \\textrm{L4}] by [MATH: AAAAAAAAAAAAAAA]\n\n[MATH: \\qquad] The property of the matrix exponential used in [MATH: \\textrm{L8}] is [MATH: AAAAAAAAAAAAAAA]\n\n[MATH: \\qquad] Line [MATH: \\textrm{L9}] follows from [MATH: \\textrm{L8}] by the fact that [MATH: AAAAAAAAAAAAAAA]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's justify each of the selected steps.\n\n- We first consider lines [MATH: \\textrm{L4}] and [MATH: \\textrm{L5}.] Starting from [MATH: \\textrm{L4},]\n[MATH: \\mathbf{x}(t_0)=e^{A t_0} \\, \\mathbf{c},]\nwe multiply both sides on the left by [MATH: (e^{At_0})^{-1}] to get\n[MATH: (e^{A t_0})^{-1}\\mathbf{x}(t_0)=(e^{At_0})^{-1}e^{A t_0}\\,\\mathbf{c},]\nwhich is line [MATH: \\textrm{L5}.] Therefore, [MATH: \\textrm{L5}] follows from [MATH: \\textrm{L4}] by [MATH: (e^{At_{0}})^{\u2212 1}]\n- Next, we justify the step [MATH: \\textrm{L7}] to [MATH: \\textrm{L8}.] Since [MATH: At] and [MATH: -At_0] commute, we may combine exponentials:\n[MATH: e^{At}e^{-At_0}=e^{At-At_0}.]\nSubstituting this into line [MATH: \\textrm{L7}] produces line [MATH: \\textrm{L8}.] Hence, the property of the matrix exponential used in [MATH: \\textrm{L8}] is [MATH: X]\n- Finally, we consider lines [MATH: \\textrm{L8}] and [MATH: \\textrm{L9}.] Starting from [MATH: \\textrm{L8},]\n[MATH: \\mathbf{x}(t)=e^{At-At_0}\\mathbf{x}(t_0),]\nwe rewrite the exponent using the algebraic identity [MATH: At-At_0=A(t-t_0)] to get\n[MATH: \\mathbf{x}(t)=e^{A(t-t_0)}\\mathbf{x}(t_0),]\nwhich is line [MATH: \\textrm{L9}.] Thus, [MATH: \\textrm{L9}] follows from [MATH: \\textrm{L8}] by the fact that [MATH: \\bbox[4pt, border: solid 1pt lightgray]{At-At_0=A(t-t_0)\\text{ for any }t\\text{ and }t_0}.]\n\n---\n\nItem 15 \u2014 Question 7\n\nPrompt:\nConsider the homogeneous system [MATH: x^{\u2032}(t) = Ax(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \u03a6_{0}(t)] is the unique solution to the initial value problem\n[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]\nA derivation of the formula for the solution [MATH: x(t)] passing through [MATH: x(0)] is presented below.\n\n> [MATH: L1:] Let [MATH: \u03a6_{0}(t) = e^{At}]\n>\n> [MATH: L2:] [MATH: x(t) = \u03a6_{0}(t)c] for some constant vector [MATH: c]\n>\n> [MATH: L3:] [MATH: x(0) = \u03a6_{0}(0)c]\n>\n> [MATH: L4:] [MATH: \u03a6_{0}(0) = I_{n}]\n>\n> [MATH: L5:] [MATH: x(0) = c]\n>\n> [MATH: L6:] [MATH: x(t) = e^{At}x(0)]\n\nSelect the correct options to justify each step of the reasoning.\n\nLine [MATH: L2] follows from [MATH: L1] by the\n[SELECT 1].\n\nLine [MATH: L3] follows from [MATH: L2] by\n[SELECT 2].\n\nLine [MATH: L6] follows from line [MATH: L2] by substitution from lines [SELECT 3].\n\n---\n\nItem 16 \u2014 Question 8\n\nPrompt:\nConsider the homogeneous system [MATH: x^{\u2032}(t) = Ax(t),] where [MATH: A] is a constant square matrix. You're given that the standard fundamental matrix [MATH: \u03a6_{0}(t)] is the unique solution to the initial value problem\n[MATH: \u03a6_{0}^{\u2032}(t) = A\u03a6_{0}(t), \u03a6_{0}(0) = I_{n}.]\n\nA derivation of the formula for the solution [MATH: x(t)] passing through [MATH: x(t_{0})] is presented below.\n\n> [MATH: L1:] Let [MATH: \u03a6_{0}(t) = e^{At}]\n>\n> [MATH: L2:] [MATH: x(t) = \u03a6_{0}(t)c] for some constant vector [MATH: c]\n>\n> [MATH: L3:] [MATH: x(t) = e^{At}c]\n>\n> [MATH: L4:] [MATH: x(t_{0}) = e^{At_{0}}c]\n>\n> [MATH: L5:] [MATH: (e^{At_{0}})^{\u2212 1}x(t_{0}) = (e^{At_{0}})^{\u2212 1}e^{At_{0}}c]\n>\n> [MATH: L6:] [MATH: c = e^{\u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L7:] [MATH: x(t) = e^{At}e^{\u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L8:] [MATH: x(t) = e^{At \u2212 At_{0}}x(t_{0})]\n>\n> [MATH: L9:] [MATH: x(t) = e^{A(t \u2212 t_{0})}x(t_{0})]\n\nSelect the correct options to justify each step of the reasoning.\n\nLine [MATH: L2] is true by [SELECT 1].\n\nLine [MATH: L4] follows from [MATH: L3] [SELECT 2].\n\nLine [MATH: L8] follows from [MATH: L7] by the fact that [SELECT 3]."
+  }
+}

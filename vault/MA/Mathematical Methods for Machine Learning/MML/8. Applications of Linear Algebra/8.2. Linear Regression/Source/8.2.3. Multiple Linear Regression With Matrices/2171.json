@@ -1,0 +1,950 @@
+{
+  "schema_version": 2,
+  "topic_id": "2171",
+  "topic_title": "Multiple Linear Regression With Matrices",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2171/Source/2171.html",
+  "source_url": "https://mathacademy.com/topics/2171",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "20314",
+        "dom_id": "sectionLink-20314",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-20314"
+      },
+      {
+        "index": 2,
+        "step_id": "20315",
+        "dom_id": "sectionLink-20315",
+        "name": "",
+        "title": "Identifying Elements of a Multiple Linear Regression",
+        "selector": "#sectionLink-20315"
+      },
+      {
+        "index": 3,
+        "step_id": "37336",
+        "dom_id": "sectionLink-37336",
+        "name": "",
+        "title": "Regression Planes Passing Through the Origin",
+        "selector": "#sectionLink-37336"
+      },
+      {
+        "index": 4,
+        "step_id": "20317",
+        "dom_id": "sectionLink-20317",
+        "name": "",
+        "title": "Identifying Elements of a Multiple Linear Regression That Passes Through the Origin",
+        "selector": "#sectionLink-20317"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2169",
+        "name": "Linear Regression With Matrices",
+        "href": "/topics/linear-regression-with-matrices-2169"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 8,
+    "step_count": 4,
+    "question_count": 4,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "20314",
+        "content_id": "3655",
+        "dom_id": "step-20314",
+        "selector": "#step-20314",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>When carrying out a linear regression in two variables, say <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y,]</span> our task is to find a straight line that best fits a set of data points <span class=\"math\">[MATH: (x_i,y_i).]</span> We can easily extend this technique to situations involving three variables. </p>",
+            "readable_text": "When carrying out a linear regression in two variables, say [MATH: x] and [MATH: y,] our task is to find a straight line that best fits a set of data points [MATH: (x_i,y_i).] We can easily extend this technique to situations involving three variables.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The following table shows the number of units <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2]</span> (in hundreds) of two goods produced by a small company in several production runs and the respective profits <span class=\"math\">[MATH: y]</span> (in thousands of dollars) obtained by the company.   </p>",
+            "readable_text": "The following table shows the number of units [MATH: x_1] and [MATH: x_2] (in hundreds) of two goods produced by a small company in several production runs and the respective profits [MATH: y] (in thousands of dollars) obtained by the company.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p>Good Type 1 <span class=\"math\">[MATH: (x_1)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><th><p>Good Type 2 <span class=\"math\">[MATH: (x_2)]</span></p></th><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td></tr><tr><th><p>Profit <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td></tr></table>",
+            "readable_text": "| Good Type 1 [MATH: (x_1)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Good Type 2 [MATH: (x_2)] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 6] |\n| Profit [MATH: (y)] | [MATH: 6] | [MATH: 15] | [MATH: 18] | [MATH: 24] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since we now have three variables, <span class=\"math\">[MATH: x_1, x_2,]</span> and <span class=\"math\">[MATH: y,]</span> our task is to find a <em>plane</em> of the form</p>",
+            "readable_text": "Since we now have three variables, [MATH: x_1, x_2,] and [MATH: y,] our task is to find a plane of the form",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2]</span></p>",
+            "readable_text": "[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>that best fits the data.</p>",
+            "readable_text": "that best fits the data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/ce577d42e7ec709994f1904ff5657bba\"></p>",
+            "readable_text": "[IMG: /graphics/ce577d42e7ec709994f1904ff5657bba]",
+            "images": [
+              {
+                "src": "/graphics/ce577d42e7ec709994f1904ff5657bba",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting the values of <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2]</span> into the regression equation and equating the results to the corresponding observed values of <span class=\"math\">[MATH: y,]</span> we obtain the following system:</p>",
+            "readable_text": "Substituting the values of [MATH: x_1] and [MATH: x_2] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\u03b2_{0} + \u03b2_{1} + 2\u03b2_{2} = 6; \u03b2_{0} + 2\u03b2_{1} + 3\u03b2_{2} = 15; \u03b2_{0} + 3\u03b2_{1} + 4\u03b2_{2} = 18; \u03b2_{0} + 4\u03b2_{1} + 6\u03b2_{2} = 24]</span></p>",
+            "readable_text": "[MATH: {\u03b2_{0} + \u03b2_{1} + 2\u03b2_{2} = 6; \u03b2_{0} + 2\u03b2_{1} + 3\u03b2_{2} = 15; \u03b2_{0} + 3\u03b2_{1} + 4\u03b2_{2} = 18; \u03b2_{0} + 4\u03b2_{1} + 6\u03b2_{2} = 24]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This system can be expressed in matrix notation as</p>",
+            "readable_text": "This system can be expressed in matrix notation as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|2; 1|2|3; 1|3|4; 1|4|6]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y).]</span> </p>",
+            "readable_text": "[MATH: [1|1|2; 1|2|3; 1|3|4; 1|4|6]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As usual, <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the coefficient vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. </p>",
+            "readable_text": "As usual, [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the coefficient vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since our points do not all lie on a plane, there will be no parameters <span class=\"math\">[MATH: \\beta_0,]</span> <span class=\"math\">[MATH: \\beta_1,]</span> and <span class=\"math\">[MATH: \\beta_2]</span> such that this equation is true. So instead, we seek parameters <span class=\"math\">[MATH: \\beta_0,]</span> <span class=\"math\">[MATH: \\beta_1,]</span> and <span class=\"math\">[MATH: \\beta_2]</span> that best approximate the solution.</p>",
+            "readable_text": "Since our points do not all lie on a plane, there will be no parameters [MATH: \\beta_0,] [MATH: \\beta_1,] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0,] [MATH: \\beta_1,] and [MATH: \\beta_2] that best approximate the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, we seek to find a column vector <span class=\"math\">[MATH: \\boldsymbol\\beta]</span> such that</p>",
+            "readable_text": "In other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]</span></p>",
+            "readable_text": "[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>is as small as possible.</p>",
+            "readable_text": "is as small as possible.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that this is exactly the least-squares problem for the system <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.]</span> Therefore, the coefficients of the plane that best fits the data can be found as the solution to the corresponding least-squares problem! </p>",
+            "readable_text": "Notice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the plane that best fits the data can be found as the solution to the corresponding least-squares problem!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Pre-multiplying the equation <span class=\"math\">[MATH: X \\boldsymbol{\\beta} = \\mathbf{y}]</span> by <span class=\"math\">[MATH: X^T,]</span> we obtain the corresponding normal equation</p>",
+            "readable_text": "Pre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since the columns of <span class=\"math\">[MATH: X]</span> are linearly independent, the matrix <span class=\"math\">[MATH: {X^T}X]</span> is invertible, and </p>",
+            "readable_text": "Since the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]</span></p>",
+            "readable_text": "[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> into the formula above and simplifying, we get</p>",
+            "readable_text": "Substituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03b2^(^) = [2; 7; \u2212 1].]</span></p>",
+            "readable_text": "[MATH: \u03b2^(^) = [2; 7; \u2212 1].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the plane of best fit (regression plane) is </p>",
+            "readable_text": "Therefore, the plane of best fit (regression plane) is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = 2+ 7x_1-x_2.]</span> </p>",
+            "readable_text": "[MATH: y = 2+ 7x_1-x_2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note that we can use the same technique to fit data involving more variables. For example, if we have four variables <span class=\"math\">[MATH: x_1, x_2, x_3,]</span> and <span class=\"math\">[MATH: y,]</span> then we can find a four-dimensional <strong>hyperplane</strong> of the form</p>",
+            "readable_text": "Note that we can use the same technique to fit data involving more variables. For example, if we have four variables [MATH: x_1, x_2, x_3,] and [MATH: y,] then we can find a four-dimensional hyperplane of the form",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2 + \\beta_3 x_3]</span></p>",
+            "readable_text": "[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2 + \\beta_3 x_3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>that best fits a set of data points <span class=\"math\">[MATH: (x_{1i},x_{2i}, x_{3i}, y).]</span>  The coefficients of this hyperplane are found by solving the corresponding least-squares problem. </p>",
+            "readable_text": "that best fits a set of data points [MATH: (x_{1i},x_{2i}, x_{3i}, y).] The coefficients of this hyperplane are found by solving the corresponding least-squares problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, applying linear regression to situations involving three or more variables is called <strong>multiple linear regression</strong>.</p>",
+            "readable_text": "Finally, applying linear regression to situations involving three or more variables is called multiple linear regression.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/ce577d42e7ec709994f1904ff5657bba",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWhen carrying out a linear regression in two variables, say [MATH: x] and [MATH: y,] our task is to find a straight line that best fits a set of data points [MATH: (x_i,y_i).] We can easily extend this technique to situations involving three variables.\n\nContent:\nThe following table shows the number of units [MATH: x_1] and [MATH: x_2] (in hundreds) of two goods produced by a small company in several production runs and the respective profits [MATH: y] (in thousands of dollars) obtained by the company.\n\nContent:\n| Good Type 1 [MATH: (x_1)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Good Type 2 [MATH: (x_2)] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 6] |\n| Profit [MATH: (y)] | [MATH: 6] | [MATH: 15] | [MATH: 18] | [MATH: 24] |\n\nContent:\nSince we now have three variables, [MATH: x_1, x_2,] and [MATH: y,] our task is to find a plane of the form\n\nContent:\n[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2]\n\nContent:\nthat best fits the data.\n\nGraphic:\n[IMG: /graphics/ce577d42e7ec709994f1904ff5657bba]\n\nContent:\nSubstituting the values of [MATH: x_1] and [MATH: x_2] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: {\u03b2_{0} + \u03b2_{1} + 2\u03b2_{2} = 6; \u03b2_{0} + 2\u03b2_{1} + 3\u03b2_{2} = 15; \u03b2_{0} + 3\u03b2_{1} + 4\u03b2_{2} = 18; \u03b2_{0} + 4\u03b2_{1} + 6\u03b2_{2} = 24]\n\nContent:\nThis system can be expressed in matrix notation as\n\nContent:\n[MATH: [1|1|2; 1|2|3; 1|3|4; 1|4|6]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y).]\n\nContent:\nAs usual, [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the coefficient vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nSince our points do not all lie on a plane, there will be no parameters [MATH: \\beta_0,] [MATH: \\beta_1,] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0,] [MATH: \\beta_1,] and [MATH: \\beta_2] that best approximate the solution.\n\nContent:\nIn other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that\n\nContent:\n[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]\n\nContent:\nis as small as possible.\n\nContent:\nNotice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the plane that best fits the data can be found as the solution to the corresponding least-squares problem!\n\nContent:\nPre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation\n\nContent:\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nContent:\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and\n\nContent:\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nContent:\nSubstituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get\n\nContent:\n[MATH: \u03b2^(^) = [2; 7; \u2212 1].]\n\nContent:\nTherefore, the plane of best fit (regression plane) is\n\nContent:\n[MATH: y = 2+ 7x_1-x_2.]\n\nContent:\nNote that we can use the same technique to fit data involving more variables. For example, if we have four variables [MATH: x_1, x_2, x_3,] and [MATH: y,] then we can find a four-dimensional hyperplane of the form\n\nContent:\n[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2 + \\beta_3 x_3]\n\nContent:\nthat best fits a set of data points [MATH: (x_{1i},x_{2i}, x_{3i}, y).] The coefficients of this hyperplane are found by solving the corresponding least-squares problem.\n\nContent:\nFinally, applying linear regression to situations involving three or more variables is called multiple linear regression."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20315",
+        "content_id": "5614",
+        "dom_id": "step-20315",
+        "selector": "#step-20315",
+        "step_anchor": "step-2",
+        "title": "Identifying Elements of a Multiple Linear Regression",
+        "key_prerequisites": [
+          {
+            "topic_id": "1807",
+            "name": "The Cartesian Equation of a Plane",
+            "href": "/topics/1807",
+            "type": ""
+          },
+          {
+            "topic_id": "2169",
+            "name": "Linear Regression With Matrices",
+            "href": "/topics/2169",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_1]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_2]</span></p></td><td><p><b><span class=\"math\">[MATH: 7]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6.5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td></tr></table><p>The vector of coefficients of the plane <span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2]</span> that best fits the data above can be found using multiple linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. Find  <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> in this context.  </p>",
+            "readable_text": "| [MATH: x_1] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_2] | [MATH: 7] | [MATH: 6.5] | [MATH: 6] | [MATH: 5] | [MATH: 3] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 5] | [MATH: 9] | [MATH: 15] |\n\nThe vector of coefficients of the plane [MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_1]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_2]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}7]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}6.5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}3]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}1]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}2]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}5]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}9]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}15]</span></p></td></tr></table><p>The coefficients of the plane </p><p><span class=\"math\">[MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2]</span></p><p>that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system </p><p><span class=\"math\">[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [1; 2; 5; 9; 15]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p><p>Thus, we have\n<span class=\"math\">[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]]</span> </p>",
+            "readable_text": "| [MATH: x_1] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] |\n| [MATH: x_2] | [MATH: \\color{purple}7] | [MATH: \\color{purple}6.5] | [MATH: \\color{purple}6] | [MATH: \\color{purple}5] | [MATH: \\color{purple}3] |\n| [MATH: y] | [MATH: \\color{red}1] | [MATH: \\color{red}2] | [MATH: \\color{red}5] | [MATH: \\color{red}9] | [MATH: \\color{red}15] |\n\nThe coefficients of the plane\n\n[MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [1; 2; 5; 9; 15]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nThus, we have\n[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x_1] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_2] | [MATH: 7] | [MATH: 6.5] | [MATH: 6] | [MATH: 5] | [MATH: 3] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 5] | [MATH: 9] | [MATH: 15] |\n\nThe vector of coefficients of the plane [MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x_1] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] |\n| [MATH: x_2] | [MATH: \\color{purple}7] | [MATH: \\color{purple}6.5] | [MATH: \\color{purple}6] | [MATH: \\color{purple}5] | [MATH: \\color{purple}3] |\n| [MATH: y] | [MATH: \\color{red}1] | [MATH: \\color{red}2] | [MATH: \\color{red}5] | [MATH: \\color{red}9] | [MATH: \\color{red}15] |\n\nThe coefficients of the plane\n\n[MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [1; 2; 5; 9; 15]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nThus, we have\n[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "42323",
+        "dom_id": "question-42323",
+        "selector": "#question-42323",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_{1}]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_{2}]</span></p></td><td><p><b><span class=\"math\">[MATH: 10]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 25]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 32]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 42]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 15]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 5]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td></tr></table><p>The vector of coefficients of the plane <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2}]</span> that best fits the data above can be found using multi linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the observation vector <span class=\"math\">[MATH: y]</span> in this context?</p>",
+          "readable_text": "| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 25] | [MATH: 32] | [MATH: 42] | [MATH: 15] |\n| [MATH: y] | [MATH: 0] | [MATH: \u2212 5] | [MATH: \u2212 2] | [MATH: 2] | [MATH: 7] |\n\nThe vector of coefficients of the plane [MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2}] that best fits the data above can be found using multi linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-42323-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 2; 3; 4; 5]]</span></p>",
+            "readable_text": "[MATH: [1; 2; 3; 4; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-42323-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]</span></p>",
+            "readable_text": "[MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-42323-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]</span></p>",
+            "readable_text": "[MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-42323-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0; \u2212 5; \u2212 2; 2; 7]]</span></p>",
+            "readable_text": "[MATH: [0; \u2212 5; \u2212 2; 2; 7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-42323-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [10; 25; 32; 42; 15]]</span></p>",
+            "readable_text": "[MATH: [10; 25; 32; 42; 15]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 25] | [MATH: 32] | [MATH: 42] | [MATH: 15] |\n| [MATH: y] | [MATH: 0] | [MATH: \u2212 5] | [MATH: \u2212 2] | [MATH: 2] | [MATH: 7] |\n\nThe vector of coefficients of the plane [MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2}] that best fits the data above can be found using multi linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?\n\nChoices:\na. [MATH: [1; 2; 3; 4; 5]]\nb. [MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]\nc. [MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]\nd. [MATH: [0; \u2212 5; \u2212 2; 2; 7]]\ne. [MATH: [10; 25; 32; 42; 15]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "139857",
+        "dom_id": "question-139857",
+        "selector": "#question-139857",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_{1}]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_{2}]</span></p></td><td><p><b><span class=\"math\">[MATH: 10]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 12]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 15]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 18]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 22]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_{3}]</span></p></td><td><p><b><span class=\"math\">[MATH: \u2212 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 0]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 7]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 12]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td></tr></table><p>The vector of coefficients of the hyperplane <span class=\"math\">[MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}]</span> that best fits the data above can be found using multiple linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 12] | [MATH: 15] | [MATH: 18] | [MATH: 22] |\n| [MATH: x_{3}] | [MATH: \u2212 2] | [MATH: 0] | [MATH: 3] | [MATH: 7] | [MATH: 12] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139857-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|10; 2|12; 3|15; 4|18; 5|22]]</span></p>",
+            "readable_text": "[MATH: [1|10; 2|12; 3|15; 4|18; 5|22]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139857-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|10|\u2212 2; 1|2|12|0; 1|3|15|3; 1|4|18|7; 1|5|22|12]]</span></p>",
+            "readable_text": "[MATH: [1|1|10|\u2212 2; 1|2|12|0; 1|3|15|3; 1|4|18|7; 1|5|22|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139857-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|10|\u2212 2; 2|12|0; 3|15|3; 4|18|7; 5|22|12]]</span></p>",
+            "readable_text": "[MATH: [1|10|\u2212 2; 2|12|0; 3|15|3; 4|18|7; 5|22|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139857-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|10|\u2212 2; 2|2|12|0; 4|3|15|3; 6|4|18|7; 8|5|22|12]]</span></p>",
+            "readable_text": "[MATH: [1|1|10|\u2212 2; 2|2|12|0; 4|3|15|3; 6|4|18|7; 8|5|22|12]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139857-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 2; 4; 6; 8]]</span></p>",
+            "readable_text": "[MATH: [1; 2; 4; 6; 8]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 12] | [MATH: 15] | [MATH: 18] | [MATH: 22] |\n| [MATH: x_{3}] | [MATH: \u2212 2] | [MATH: 0] | [MATH: 3] | [MATH: 7] | [MATH: 12] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|10; 2|12; 3|15; 4|18; 5|22]]\nb. [MATH: [1|1|10|\u2212 2; 1|2|12|0; 1|3|15|3; 1|4|18|7; 1|5|22|12]]\nc. [MATH: [1|10|\u2212 2; 2|12|0; 3|15|3; 4|18|7; 5|22|12]]\nd. [MATH: [1|1|10|\u2212 2; 2|2|12|0; 4|3|15|3; 6|4|18|7; 8|5|22|12]]\ne. [MATH: [1; 2; 4; 6; 8]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "37336",
+        "content_id": "6153",
+        "dom_id": "step-37336",
+        "selector": "#step-37336",
+        "step_anchor": "step-5",
+        "title": "Regression Planes Passing Through the Origin",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Sometimes, we might need to place a constraint on the regression plane that forces it to pass through the origin. </p>",
+            "readable_text": "Sometimes, we might need to place a constraint on the regression plane that forces it to pass through the origin.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s once again consider our small company. The following table shows the number of units <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2]</span> (in hundreds) of two goods produced by the company in several production runs and the respective profits <span class=\"math\">[MATH: y]</span> (in thousands of dollars) obtained by the company.   </p>",
+            "readable_text": "Let's once again consider our small company. The following table shows the number of units [MATH: x_1] and [MATH: x_2] (in hundreds) of two goods produced by the company in several production runs and the respective profits [MATH: y] (in thousands of dollars) obtained by the company.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><th><p>Good Type 1 <span class=\"math\">[MATH: (x_1)]</span></p></th><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><th><p>Good Type 2 <span class=\"math\">[MATH: (x_2)]</span></p></th><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td></tr><tr><th><p>Profit <span class=\"math\">[MATH: (y)]</span></p></th><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td></tr></table>",
+            "readable_text": "| Good Type 1 [MATH: (x_1)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Good Type 2 [MATH: (x_2)] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 6] |\n| Profit [MATH: (y)] | [MATH: 6] | [MATH: 15] | [MATH: 18] | [MATH: 24] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s known that the profit equals zero when the company does not produce any goods, so <span class=\"math\">[MATH: y=0]</span> when <span class=\"math\">[MATH: x_1=x_2 = 0.]</span> The company wishes to find a plane that best fits the data <em>subject to</em> the constraint that it should pass through the point <span class=\"math\">[MATH: (0,0, 0).]</span></p>",
+            "readable_text": "It's known that the profit equals zero when the company does not produce any goods, so [MATH: y=0] when [MATH: x_1=x_2 = 0.] The company wishes to find a plane that best fits the data subject to the constraint that it should pass through the point [MATH: (0,0, 0).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, we want to find the plane</p>",
+            "readable_text": "Therefore, we want to find the plane",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y = \\beta_1 x_1 + \\beta_2 x_2]</span></p>",
+            "readable_text": "[MATH: y = \\beta_1 x_1 + \\beta_2 x_2]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>that best fits the given data points. </p>",
+            "readable_text": "that best fits the given data points.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Substituting the values of <span class=\"math\">[MATH: x_1]</span> and <span class=\"math\">[MATH: x_2]</span> into the regression equation and equating the results to the corresponding observed values of <span class=\"math\">[MATH: y,]</span> we obtain the following system:</p>",
+            "readable_text": "Substituting the values of [MATH: x_1] and [MATH: x_2] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|2; 2|3; 3|4; 4|6]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y)]</span> </p>",
+            "readable_text": "[MATH: [1|2; 2|3; 3|4; 4|6]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. </p>",
+            "readable_text": "where [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The rest of the arguments are the same as before. Since not all points lie on a plane, there will be no parameters <span class=\"math\">[MATH: \\beta_1]</span> and <span class=\"math\">[MATH: \\beta_2]</span> such that this equation is true. So instead, we seek parameters <span class=\"math\">[MATH: \\beta_1]</span> and <span class=\"math\">[MATH: \\beta_2]</span> that best approximate the solution. </p>",
+            "readable_text": "The rest of the arguments are the same as before. Since not all points lie on a plane, there will be no parameters [MATH: \\beta_1] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_1] and [MATH: \\beta_2] that best approximate the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSometimes, we might need to place a constraint on the regression plane that forces it to pass through the origin.\n\nContent:\nLet's once again consider our small company. The following table shows the number of units [MATH: x_1] and [MATH: x_2] (in hundreds) of two goods produced by the company in several production runs and the respective profits [MATH: y] (in thousands of dollars) obtained by the company.\n\nContent:\n| Good Type 1 [MATH: (x_1)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Good Type 2 [MATH: (x_2)] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 6] |\n| Profit [MATH: (y)] | [MATH: 6] | [MATH: 15] | [MATH: 18] | [MATH: 24] |\n\nContent:\nIt's known that the profit equals zero when the company does not produce any goods, so [MATH: y=0] when [MATH: x_1=x_2 = 0.] The company wishes to find a plane that best fits the data subject to the constraint that it should pass through the point [MATH: (0,0, 0).]\n\nContent:\nTherefore, we want to find the plane\n\nContent:\n[MATH: y = \\beta_1 x_1 + \\beta_2 x_2]\n\nContent:\nthat best fits the given data points.\n\nContent:\nSubstituting the values of [MATH: x_1] and [MATH: x_2] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: [1|2; 2|3; 3|4; 4|6]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y)]\n\nContent:\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nThe rest of the arguments are the same as before. Since not all points lie on a plane, there will be no parameters [MATH: \\beta_1] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_1] and [MATH: \\beta_2] that best approximate the solution."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "20317",
+        "content_id": "5615",
+        "dom_id": "step-20317",
+        "selector": "#step-20317",
+        "step_anchor": "step-6",
+        "title": "Identifying Elements of a Multiple Linear Regression That Passes Through the Origin",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_1]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_2]</span></p></td><td><p><b><span class=\"math\">[MATH: -8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: -2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 15]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_3]</span></p></td><td><p><b><span class=\"math\">[MATH: 8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 40]</span></p></td><td><p><span class=\"math\">[MATH: 60]</span></p></td></tr></table><p>The vector of coefficients of the hyperplane <span class=\"math\">[MATH: y = \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3]</span> that best fits the data above can be found using multiple linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector. Find  <span class=\"math\">[MATH: X]</span> and <span class=\"math\">[MATH: \\mathbf{y}]</span> in this context.   </p>",
+            "readable_text": "| [MATH: x_1] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: x_2] | [MATH: -8] | [MATH: -2] | [MATH: 6] | [MATH: 15] |\n| [MATH: x_3] | [MATH: 8] | [MATH: 6] | [MATH: 4] | [MATH: 2] |\n| [MATH: y] | [MATH: 10] | [MATH: 20] | [MATH: 40] | [MATH: 60] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_1]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{blue}4]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_2]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}-8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}-2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{purple}15]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_3]</span></p></td><td><p><b><span class=\"math\">[MATH: \\color{green}8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{green}6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{green}4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \\color{green}2]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}10]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}20]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}40]</span></p></td><td><p><span class=\"math\">[MATH: \\color{red}60]</span></p></td></tr></table><p>The coefficients of the hyperplane  </p><p><span class=\"math\">[MATH: y= \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3]</span></p><p>that best fits the data can be found as the least-squares solution <span class=\"math\">[MATH: {\\hat{\\boldsymbol{\\beta}}}]</span> to the system </p><p><span class=\"math\">[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [10; 20; 40; 60]^(\u23de)^(y),]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the design matrix, <span class=\"math\">[MATH: \\boldsymbol{\\beta}]</span> is the parameter vector, and <span class=\"math\">[MATH: \\mathbf{y}]</span> is the observation vector.</p><p>Thus, we have </p><p><span class=\"math\">[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]]</span></p>",
+            "readable_text": "| [MATH: x_1] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] |\n| [MATH: x_2] | [MATH: \\color{purple}-8] | [MATH: \\color{purple}-2] | [MATH: \\color{purple}6] | [MATH: \\color{purple}15] |\n| [MATH: x_3] | [MATH: \\color{green}8] | [MATH: \\color{green}6] | [MATH: \\color{green}4] | [MATH: \\color{green}2] |\n| [MATH: y] | [MATH: \\color{red}10] | [MATH: \\color{red}20] | [MATH: \\color{red}40] | [MATH: \\color{red}60] |\n\nThe coefficients of the hyperplane\n\n[MATH: y= \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [10; 20; 40; 60]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nThus, we have\n\n[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: x_1] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: x_2] | [MATH: -8] | [MATH: -2] | [MATH: 6] | [MATH: 15] |\n| [MATH: x_3] | [MATH: 8] | [MATH: 6] | [MATH: 4] | [MATH: 2] |\n| [MATH: y] | [MATH: 10] | [MATH: 20] | [MATH: 40] | [MATH: 60] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x_1] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] |\n| [MATH: x_2] | [MATH: \\color{purple}-8] | [MATH: \\color{purple}-2] | [MATH: \\color{purple}6] | [MATH: \\color{purple}15] |\n| [MATH: x_3] | [MATH: \\color{green}8] | [MATH: \\color{green}6] | [MATH: \\color{green}4] | [MATH: \\color{green}2] |\n| [MATH: y] | [MATH: \\color{red}10] | [MATH: \\color{red}20] | [MATH: \\color{red}40] | [MATH: \\color{red}60] |\n\nThe coefficients of the hyperplane\n\n[MATH: y= \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [10; 20; 40; 60]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nThus, we have\n\n[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "42300",
+        "dom_id": "question-42300",
+        "selector": "#question-42300",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_{1}]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 3]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 5]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_{2}]</span></p></td><td><p><b><span class=\"math\">[MATH: 10]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 25]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 32]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 42]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 15]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 5]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td></tr></table><p>The vector of coefficients of the plane <span class=\"math\">[MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2}]</span> that best fits the data above can be found using multiple linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 25] | [MATH: 32] | [MATH: 42] | [MATH: 15] |\n| [MATH: y] | [MATH: 0] | [MATH: \u2212 5] | [MATH: \u2212 2] | [MATH: 2] | [MATH: 7] |\n\nThe vector of coefficients of the plane [MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2}] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-42300-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|10|0; 2|25|\u2212 5; 3|32|\u2212 2; 4|42|2; 5|15|7]]</span></p>",
+            "readable_text": "[MATH: [1|10|0; 2|25|\u2212 5; 3|32|\u2212 2; 4|42|2; 5|15|7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-42300-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]</span></p>",
+            "readable_text": "[MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-42300-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]</span></p>",
+            "readable_text": "[MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-42300-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 2; 3; 4; 5]]</span></p>",
+            "readable_text": "[MATH: [1; 2; 3; 4; 5]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-42300-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0; \u2212 5; \u2212 2; 2; 7]]</span></p>",
+            "readable_text": "[MATH: [0; \u2212 5; \u2212 2; 2; 7]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 25] | [MATH: 32] | [MATH: 42] | [MATH: 15] |\n| [MATH: y] | [MATH: 0] | [MATH: \u2212 5] | [MATH: \u2212 2] | [MATH: 2] | [MATH: 7] |\n\nThe vector of coefficients of the plane [MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2}] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|10|0; 2|25|\u2212 5; 3|32|\u2212 2; 4|42|2; 5|15|7]]\nb. [MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]\nc. [MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]\nd. [MATH: [1; 2; 3; 4; 5]]\ne. [MATH: [0; \u2212 5; \u2212 2; 2; 7]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "139935",
+        "dom_id": "question-139935",
+        "selector": "#question-139935",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: x_{1}]</span></p></td><td><p><b><span class=\"math\">[MATH: 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 16]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_{2}]</span></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 4]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 6]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 10]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: x_{3}]</span></p></td><td><p><b><span class=\"math\">[MATH: \u2212 10]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \u2212 8]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \u2212 5]</span></b></p></td><td><p><b><span class=\"math\">[MATH: \u2212 1]</span></b></p></td><td><p><b><span class=\"math\">[MATH: 2]</span></b></p></td></tr><tr><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 30]</span></p></td></tr></table><p>The vector of coefficients of the hyperplane <span class=\"math\">[MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}]</span> that best fits the data above can be found using multi linear regression as </p><p><span class=\"math\">[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]</span></p><p>where <span class=\"math\">[MATH: X]</span> is the corresponding design matrix and <span class=\"math\">[MATH: y]</span> is the observation vector. Which of the following is the design matrix <span class=\"math\">[MATH: X]</span> in this context?</p>",
+          "readable_text": "| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 8] | [MATH: 16] |\n| [MATH: x_{2}] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] | [MATH: 10] |\n| [MATH: x_{3}] | [MATH: \u2212 10] | [MATH: \u2212 8] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 2] |\n| [MATH: y] | [MATH: 5] | [MATH: 10] | [MATH: 16] | [MATH: 22] | [MATH: 30] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}] that best fits the data above can be found using multi linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-139935-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|1|2|\u2212 10; 1|2|4|\u2212 8; 1|4|6|\u2212 5; 1|8|8|\u2212 1; 1|16|10|2]]</span></p>",
+            "readable_text": "[MATH: [1|1|2|\u2212 10; 1|2|4|\u2212 8; 1|4|6|\u2212 5; 1|8|8|\u2212 1; 1|16|10|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-139935-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|2; 2|4; 4|6; 8|8; 16|10]]</span></p>",
+            "readable_text": "[MATH: [1|2; 2|4; 4|6; 8|8; 16|10]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-139935-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [5; 10; 16; 22; 30]]</span> </p>",
+            "readable_text": "[MATH: [5; 10; 16; 22; 30]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-139935-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|2|5; 2|4|10; 4|6|16; 8|8|22; 16|10|30]]</span></p>",
+            "readable_text": "[MATH: [1|2|5; 2|4|10; 4|6|16; 8|8|22; 16|10|30]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-139935-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1|2|\u2212 10; 2|4|\u2212 8; 4|6|\u2212 5; 8|8|\u2212 1; 16|10|2]]</span></p>",
+            "readable_text": "[MATH: [1|2|\u2212 10; 2|4|\u2212 8; 4|6|\u2212 5; 8|8|\u2212 1; 16|10|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 8] | [MATH: 16] |\n| [MATH: x_{2}] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] | [MATH: 10] |\n| [MATH: x_{3}] | [MATH: \u2212 10] | [MATH: \u2212 8] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 2] |\n| [MATH: y] | [MATH: 5] | [MATH: 10] | [MATH: 16] | [MATH: 22] | [MATH: 30] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}] that best fits the data above can be found using multi linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|1|2|\u2212 10; 1|2|4|\u2212 8; 1|4|6|\u2212 5; 1|8|8|\u2212 1; 1|16|10|2]]\nb. [MATH: [1|2; 2|4; 4|6; 8|8; 16|10]]\nc. [MATH: [5; 10; 16; 22; 30]]\nd. [MATH: [1|2|5; 2|4|10; 4|6|16; 8|8|22; 16|10|30]]\ne. [MATH: [1|2|\u2212 10; 2|4|\u2212 8; 4|6|\u2212 5; 8|8|\u2212 1; 16|10|2]]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nWhen carrying out a linear regression in two variables, say [MATH: x] and [MATH: y,] our task is to find a straight line that best fits a set of data points [MATH: (x_i,y_i).] We can easily extend this technique to situations involving three variables.\n\nContent:\nThe following table shows the number of units [MATH: x_1] and [MATH: x_2] (in hundreds) of two goods produced by a small company in several production runs and the respective profits [MATH: y] (in thousands of dollars) obtained by the company.\n\nContent:\n| Good Type 1 [MATH: (x_1)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Good Type 2 [MATH: (x_2)] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 6] |\n| Profit [MATH: (y)] | [MATH: 6] | [MATH: 15] | [MATH: 18] | [MATH: 24] |\n\nContent:\nSince we now have three variables, [MATH: x_1, x_2,] and [MATH: y,] our task is to find a plane of the form\n\nContent:\n[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2]\n\nContent:\nthat best fits the data.\n\nGraphic:\n[IMG: /graphics/ce577d42e7ec709994f1904ff5657bba]\n\nContent:\nSubstituting the values of [MATH: x_1] and [MATH: x_2] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: {\u03b2_{0} + \u03b2_{1} + 2\u03b2_{2} = 6; \u03b2_{0} + 2\u03b2_{1} + 3\u03b2_{2} = 15; \u03b2_{0} + 3\u03b2_{1} + 4\u03b2_{2} = 18; \u03b2_{0} + 4\u03b2_{1} + 6\u03b2_{2} = 24]\n\nContent:\nThis system can be expressed in matrix notation as\n\nContent:\n[MATH: [1|1|2; 1|2|3; 1|3|4; 1|4|6]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y).]\n\nContent:\nAs usual, [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the coefficient vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nSince our points do not all lie on a plane, there will be no parameters [MATH: \\beta_0,] [MATH: \\beta_1,] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_0,] [MATH: \\beta_1,] and [MATH: \\beta_2] that best approximate the solution.\n\nContent:\nIn other words, we seek to find a column vector [MATH: \\boldsymbol\\beta] such that\n\nContent:\n[MATH: \\| \\mathbf{y} - X\\boldsymbol{\\beta}\\|]\n\nContent:\nis as small as possible.\n\nContent:\nNotice that this is exactly the least-squares problem for the system [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}.] Therefore, the coefficients of the plane that best fits the data can be found as the solution to the corresponding least-squares problem!\n\nContent:\nPre-multiplying the equation [MATH: X \\boldsymbol{\\beta} = \\mathbf{y}] by [MATH: X^T,] we obtain the corresponding normal equation\n\nContent:\n[MATH: X^T \\! X {\\hat{\\boldsymbol{\\beta}}} = X^T \\mathbf{y}.]\n\nContent:\nSince the columns of [MATH: X] are linearly independent, the matrix [MATH: {X^T}X] is invertible, and\n\nContent:\n[MATH: {\\hat{\\boldsymbol{\\beta}}} = (X^T \\! X )^{-1} X^T \\mathbf{y}.]\n\nContent:\nSubstituting [MATH: X] and [MATH: \\mathbf{y}] into the formula above and simplifying, we get\n\nContent:\n[MATH: \u03b2^(^) = [2; 7; \u2212 1].]\n\nContent:\nTherefore, the plane of best fit (regression plane) is\n\nContent:\n[MATH: y = 2+ 7x_1-x_2.]\n\nContent:\nNote that we can use the same technique to fit data involving more variables. For example, if we have four variables [MATH: x_1, x_2, x_3,] and [MATH: y,] then we can find a four-dimensional hyperplane of the form\n\nContent:\n[MATH: y = \\beta_0+ \\beta_1x_1 + \\beta_2 x_2 + \\beta_3 x_3]\n\nContent:\nthat best fits a set of data points [MATH: (x_{1i},x_{2i}, x_{3i}, y).] The coefficients of this hyperplane are found by solving the corresponding least-squares problem.\n\nContent:\nFinally, applying linear regression to situations involving three or more variables is called multiple linear regression.\n\n---\n\nItem 2 \u2014 Example: Identifying Elements of a Multiple Linear Regression\n\nExample Prompt:\n| [MATH: x_1] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_2] | [MATH: 7] | [MATH: 6.5] | [MATH: 6] | [MATH: 5] | [MATH: 3] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 5] | [MATH: 9] | [MATH: 15] |\n\nThe vector of coefficients of the plane [MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x_1] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] | [MATH: \\color{blue}5] |\n| [MATH: x_2] | [MATH: \\color{purple}7] | [MATH: \\color{purple}6.5] | [MATH: \\color{purple}6] | [MATH: \\color{purple}5] | [MATH: \\color{purple}3] |\n| [MATH: y] | [MATH: \\color{red}1] | [MATH: \\color{red}2] | [MATH: \\color{red}5] | [MATH: \\color{red}9] | [MATH: \\color{red}15] |\n\nThe coefficients of the plane\n\n[MATH: y=\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]^(\u23de)^(X)[\u03b2_{0}; \u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [1; 2; 5; 9; 15]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nThus, we have\n[MATH: [1|1|7; 1|2|6.5; 1|3|6; 1|4|5; 1|5|3]]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 25] | [MATH: 32] | [MATH: 42] | [MATH: 15] |\n| [MATH: y] | [MATH: 0] | [MATH: \u2212 5] | [MATH: \u2212 2] | [MATH: 2] | [MATH: 7] |\n\nThe vector of coefficients of the plane [MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2}] that best fits the data above can be found using multi linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the observation vector [MATH: y] in this context?\n\nChoices:\na. [MATH: [1; 2; 3; 4; 5]]\nb. [MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]\nc. [MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]\nd. [MATH: [0; \u2212 5; \u2212 2; 2; 7]]\ne. [MATH: [10; 25; 32; 42; 15]]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 12] | [MATH: 15] | [MATH: 18] | [MATH: 22] |\n| [MATH: x_{3}] | [MATH: \u2212 2] | [MATH: 0] | [MATH: 3] | [MATH: 7] | [MATH: 12] |\n| [MATH: y] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \u03b2_{0} + \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{0}; \u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|10; 2|12; 3|15; 4|18; 5|22]]\nb. [MATH: [1|1|10|\u2212 2; 1|2|12|0; 1|3|15|3; 1|4|18|7; 1|5|22|12]]\nc. [MATH: [1|10|\u2212 2; 2|12|0; 3|15|3; 4|18|7; 5|22|12]]\nd. [MATH: [1|1|10|\u2212 2; 2|2|12|0; 4|3|15|3; 6|4|18|7; 8|5|22|12]]\ne. [MATH: [1; 2; 4; 6; 8]]\n\n---\n\nItem 5 \u2014 Tutorial: Regression Planes Passing Through the Origin\n\nContent:\nSometimes, we might need to place a constraint on the regression plane that forces it to pass through the origin.\n\nContent:\nLet's once again consider our small company. The following table shows the number of units [MATH: x_1] and [MATH: x_2] (in hundreds) of two goods produced by the company in several production runs and the respective profits [MATH: y] (in thousands of dollars) obtained by the company.\n\nContent:\n| Good Type 1 [MATH: (x_1)] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| Good Type 2 [MATH: (x_2)] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 6] |\n| Profit [MATH: (y)] | [MATH: 6] | [MATH: 15] | [MATH: 18] | [MATH: 24] |\n\nContent:\nIt's known that the profit equals zero when the company does not produce any goods, so [MATH: y=0] when [MATH: x_1=x_2 = 0.] The company wishes to find a plane that best fits the data subject to the constraint that it should pass through the point [MATH: (0,0, 0).]\n\nContent:\nTherefore, we want to find the plane\n\nContent:\n[MATH: y = \\beta_1 x_1 + \\beta_2 x_2]\n\nContent:\nthat best fits the given data points.\n\nContent:\nSubstituting the values of [MATH: x_1] and [MATH: x_2] into the regression equation and equating the results to the corresponding observed values of [MATH: y,] we obtain the following system:\n\nContent:\n[MATH: [1|2; 2|3; 3|4; 4|6]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}]^(\u23de)^(\u03b2)|= [6; 15; 18; 24]^(\u23de)^(y)]\n\nContent:\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nContent:\nThe rest of the arguments are the same as before. Since not all points lie on a plane, there will be no parameters [MATH: \\beta_1] and [MATH: \\beta_2] such that this equation is true. So instead, we seek parameters [MATH: \\beta_1] and [MATH: \\beta_2] that best approximate the solution.\n\n---\n\nItem 6 \u2014 Example: Identifying Elements of a Multiple Linear Regression That Passes Through the Origin\n\nExample Prompt:\n| [MATH: x_1] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] |\n| [MATH: x_2] | [MATH: -8] | [MATH: -2] | [MATH: 6] | [MATH: 15] |\n| [MATH: x_3] | [MATH: 8] | [MATH: 6] | [MATH: 4] | [MATH: 2] |\n| [MATH: y] | [MATH: 10] | [MATH: 20] | [MATH: 40] | [MATH: 60] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: \\mathbf{y}] is the observation vector. Find [MATH: X] and [MATH: \\mathbf{y}] in this context.\n\nContent:\nEXPLANATION\n\nExplanation:\n| [MATH: x_1] | [MATH: \\color{blue}1] | [MATH: \\color{blue}2] | [MATH: \\color{blue}3] | [MATH: \\color{blue}4] |\n| [MATH: x_2] | [MATH: \\color{purple}-8] | [MATH: \\color{purple}-2] | [MATH: \\color{purple}6] | [MATH: \\color{purple}15] |\n| [MATH: x_3] | [MATH: \\color{green}8] | [MATH: \\color{green}6] | [MATH: \\color{green}4] | [MATH: \\color{green}2] |\n| [MATH: y] | [MATH: \\color{red}10] | [MATH: \\color{red}20] | [MATH: \\color{red}40] | [MATH: \\color{red}60] |\n\nThe coefficients of the hyperplane\n\n[MATH: y= \\beta_1 x_1 + \\beta_2 x_2 +\\beta_3 x_3]\n\nthat best fits the data can be found as the least-squares solution [MATH: {\\hat{\\boldsymbol{\\beta}}}] to the system\n\n[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]^(\u23de)^(X)[\u03b2_{1}; \u03b2_{2}; \u03b2_{3}]^(\u23de)^(\u03b2)|= [10; 20; 40; 60]^(\u23de)^(y),]\n\nwhere [MATH: X] is the design matrix, [MATH: \\boldsymbol{\\beta}] is the parameter vector, and [MATH: \\mathbf{y}] is the observation vector.\n\nThus, we have\n\n[MATH: [1|\u2212 8|8; 2|\u2212 2|6; 3|6|4; 4|15|2]]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] |\n| [MATH: x_{2}] | [MATH: 10] | [MATH: 25] | [MATH: 32] | [MATH: 42] | [MATH: 15] |\n| [MATH: y] | [MATH: 0] | [MATH: \u2212 5] | [MATH: \u2212 2] | [MATH: 2] | [MATH: 7] |\n\nThe vector of coefficients of the plane [MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2}] that best fits the data above can be found using multiple linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|10|0; 2|25|\u2212 5; 3|32|\u2212 2; 4|42|2; 5|15|7]]\nb. [MATH: [1|10; 2|25; 3|32; 4|42; 5|15]]\nc. [MATH: [1|1|10; 1|2|25; 1|3|32; 1|4|42; 1|5|15]]\nd. [MATH: [1; 2; 3; 4; 5]]\ne. [MATH: [0; \u2212 5; \u2212 2; 2; 7]]\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\n| [MATH: x_{1}] | [MATH: 1] | [MATH: 2] | [MATH: 4] | [MATH: 8] | [MATH: 16] |\n| [MATH: x_{2}] | [MATH: 2] | [MATH: 4] | [MATH: 6] | [MATH: 8] | [MATH: 10] |\n| [MATH: x_{3}] | [MATH: \u2212 10] | [MATH: \u2212 8] | [MATH: \u2212 5] | [MATH: \u2212 1] | [MATH: 2] |\n| [MATH: y] | [MATH: 5] | [MATH: 10] | [MATH: 16] | [MATH: 22] | [MATH: 30] |\n\nThe vector of coefficients of the hyperplane [MATH: y = \u03b2_{1}x_{1} + \u03b2_{2}x_{2} + \u03b2_{3}x_{3}] that best fits the data above can be found using multi linear regression as\n\n[MATH: [\u03b2_{1}; \u03b2_{2}; \u03b2_{3}] = (X^{T}X)^{\u2212 1}X^{T}y,]\n\nwhere [MATH: X] is the corresponding design matrix and [MATH: y] is the observation vector. Which of the following is the design matrix [MATH: X] in this context?\n\nChoices:\na. [MATH: [1|1|2|\u2212 10; 1|2|4|\u2212 8; 1|4|6|\u2212 5; 1|8|8|\u2212 1; 1|16|10|2]]\nb. [MATH: [1|2; 2|4; 4|6; 8|8; 16|10]]\nc. [MATH: [5; 10; 16; 22; 30]]\nd. [MATH: [1|2|5; 2|4|10; 4|6|16; 8|8|22; 16|10|30]]\ne. [MATH: [1|2|\u2212 10; 2|4|\u2212 8; 4|6|\u2212 5; 8|8|\u2212 1; 16|10|2]]"
+  }
+}

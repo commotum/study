@@ -1,0 +1,1159 @@
+{
+  "schema_version": 2,
+  "topic_id": "5551",
+  "topic_title": "Kahn's Algorithm",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5551/Source/5551.html",
+  "source_url": "https://mathacademy.com/topics/5551",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "416923",
+        "dom_id": "sectionLink-416923",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-416923"
+      },
+      {
+        "index": 2,
+        "step_id": "416924",
+        "dom_id": "sectionLink-416924",
+        "name": "",
+        "title": "Implementing One Iteration of Kahn's Algorithm",
+        "selector": "#sectionLink-416924"
+      },
+      {
+        "index": 3,
+        "step_id": "416927",
+        "dom_id": "sectionLink-416927",
+        "name": "",
+        "title": "Constructing a Topological Ordering Using Kahn's Algorithm",
+        "selector": "#sectionLink-416927"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "954",
+        "name": "The Degree of a Vertex",
+        "href": "/topics/the-degree-of-a-vertex-954"
+      },
+      {
+        "topic_id": "5432",
+        "name": "Topological Ordering",
+        "href": "/topics/topological-ordering-5432"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 7,
+    "step_count": 3,
+    "question_count": 4,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "416923",
+        "content_id": "11178",
+        "dom_id": "step-416923",
+        "selector": "#step-416923",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that a <strong>topological ordering</strong> (<strong>TO</strong>, or <strong>topological sort</strong>) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge <span class=\"math\">[MATH: u \\to v]</span> from vertex <span class=\"math\">[MATH: u]</span> to vertex <span class=\"math\">[MATH: v]</span>, <span class=\"math\">[MATH: u]</span> appears before <span class=\"math\">[MATH: v]</span> in the ordering.</p>",
+            "readable_text": "Recall that a topological ordering (TO, or topological sort) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can find a topological ordering of a DAG using <strong>Kahn&#x27;s algorithm.</strong></p>",
+            "readable_text": "We can find a topological ordering of a DAG using Kahn's algorithm.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Kahn&#x27;s algorithm for topological ordering consists of two main steps:</p>",
+            "readable_text": "Kahn's algorithm for topological ordering consists of two main steps:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 1:</strong> Add all vertices with no <em>incoming</em> edges (where the indegree <span class=\"math\">[MATH: \\deg^-(v)=0]</span>) to the TO, in any order.</p></li><li><p><strong>Step 2:</strong> Remove all vertices added in Step 1 from the graph, along with all their <em>outgoing</em> edges. </p></li></ul>",
+            "readable_text": "- Step 1: Add all vertices with no incoming edges (where the indegree [MATH: \\deg^-(v)=0]) to the TO, in any order.\n- Step 2: Remove all vertices added in Step 1 from the graph, along with all their outgoing edges.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We repeat steps 1 and 2 until no vertices remain in the graph.</p>",
+            "readable_text": "We repeat steps 1 and 2 until no vertices remain in the graph.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If, at any point, there are vertices remaining in the graph, but none have an in-degree of 0, it means the initial graph was not a directed acyclic graph (DAG). In this case, the remaining vertices form one or more cycles. </p>",
+            "readable_text": "If, at any point, there are vertices remaining in the graph, but none have an in-degree of 0, it means the initial graph was not a directed acyclic graph (DAG). In this case, the remaining vertices form one or more cycles.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, Kahn&#x27;s algorithm can <em>detect cycles effectively and identify the vertices involved!</em> Cycle detection is an important problem in graph theory.</p>",
+            "readable_text": "Thus, Kahn's algorithm can detect cycles effectively and identify the vertices involved! Cycle detection is an important problem in graph theory.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can express Kahn&#x27;s algorithm using <strong>pseudocode.</strong> Pseudocode is a simplified, programming language-independent way of describing an algorithm. It uses a mix of natural language and programming concepts, helping programmers to plan and visualize code logic without focusing on syntax.</p>",
+            "readable_text": "We can express Kahn's algorithm using pseudocode. Pseudocode is a simplified, programming language-independent way of describing an algorithm. It uses a mix of natural language and programming concepts, helping programmers to plan and visualize code logic without focusing on syntax.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The pseudocode for Kahn&#x27;s algorithm is the following:</p>",
+            "readable_text": "The pseudocode for Kahn's algorithm is the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p><code>Initialize the empty TO queue # topological ordering\n</code></p><p><code>Initialize list V of all vertices in the graph \n</code></p><p><code>Initialize list E of all edges in the graph\n</code></p><p><code>while (V is not empty):   # Until at least one vertex remains\n</code></p><p><code>    for (all v in V):   # Go over all remaining vertices in V\n</code></p><p><code>        if (not (*,v) in E):   # If the vertex v has no incoming edges\n</code></p><p><code>            Add v to TO queue \n</code></p><p><code>            Remove all outgoing edges for vertex v\n</code></p><p><code>            Remove v from V \n</code></p></blockquote>",
+            "readable_text": "> Initialize the empty TO queue # topological ordering\n>\n> Initialize list V of all vertices in the graph\n>\n> Initialize list E of all edges in the graph\n>\n> while (V is not empty): # Until at least one vertex remains\n>\n> for (all v in V): # Go over all remaining vertices in V\n>\n> if (not (*,v) in E): # If the vertex v has no incoming edges\n>\n> Add v to TO queue\n>\n> Remove all outgoing edges for vertex v\n>\n> Remove v from V",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s illustrate Kahn&#x27;s algorithm by finding a topological ordering of the following DAG. Notice that the graph is disconnected, but this does not prevent Kahn&#x27;s algorithm from producing a valid topological ordering (TO).</p>",
+            "readable_text": "Let's illustrate Kahn's algorithm by finding a topological ordering of the following DAG. Notice that the graph is disconnected, but this does not prevent Kahn's algorithm from producing a valid topological ordering (TO).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/7325a852e9106317e8b9216a31c5fb0c\"></p>",
+            "readable_text": "[IMG: /graphics/7325a852e9106317e8b9216a31c5fb0c]",
+            "images": [
+              {
+                "src": "/graphics/7325a852e9106317e8b9216a31c5fb0c",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start with an empty TO: <span class=\"math\">[MATH: \\{\\}.]</span> </p>",
+            "readable_text": "We start with an empty TO: [MATH: \\{\\}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Step 1.1. Add all vertices with an indegree of <span class=\"math\">[MATH: 0]</span> to the TO; these vertices are <span class=\"math\">[MATH: v_2, v_5, v_7,]</span> and <span class=\"math\">[MATH: v_{12}.]</span> Since we can list them in any order, we will use ascending order based on their indices.\nHence, the TO is: <span class=\"math\">[MATH: \\{v_2, v_5, v_7,v_{12}\\}.]</span></p>",
+            "readable_text": "Step 1.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_2, v_5, v_7,] and [MATH: v_{12}.] Since we can list them in any order, we will use ascending order based on their indices.\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}\\}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Step 2.1. Remove the vertices <span class=\"math\">[MATH: v_2, v_5, v_7,]</span> and <span class=\"math\">[MATH: v_{12}]</span> from the graph, along with all their outgoing edges. The resulting graph is shown below.</p>",
+            "readable_text": "Step 2.1. Remove the vertices [MATH: v_2, v_5, v_7,] and [MATH: v_{12}] from the graph, along with all their outgoing edges. The resulting graph is shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/226f37e021a1049a87457412a20a6963\"></p>",
+            "readable_text": "[IMG: /graphics/226f37e021a1049a87457412a20a6963]",
+            "images": [
+              {
+                "src": "/graphics/226f37e021a1049a87457412a20a6963",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Step 2.1. Add all vertices with an indegree of <span class=\"math\">[MATH: 0]</span> to the TO; these vertices are <span class=\"math\">[MATH: v_3, v_6, v_8,]</span> and <span class=\"math\">[MATH: v_{11}.]</span> \nHence, the TO is: <span class=\"math\">[MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}\\}.]</span></p>",
+            "readable_text": "Step 2.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_3, v_6, v_8,] and [MATH: v_{11}.]\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}\\}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Step 2.2. Remove the vertices <span class=\"math\">[MATH: v_3, v_6, v_8,]</span> and <span class=\"math\">[MATH: v_{11}]</span> from the graph, along with all their outgoing edges. </p>",
+            "readable_text": "Step 2.2. Remove the vertices [MATH: v_3, v_6, v_8,] and [MATH: v_{11}] from the graph, along with all their outgoing edges.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/b8276e8142292a29be7090ad5685ba91\"></p>",
+            "readable_text": "[IMG: /graphics/b8276e8142292a29be7090ad5685ba91]",
+            "images": [
+              {
+                "src": "/graphics/b8276e8142292a29be7090ad5685ba91",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Step 3.1. Add all vertices with an indegree of <span class=\"math\">[MATH: 0]</span> to the TO; these vertices are <span class=\"math\">[MATH: v_1, v_4, v_9,]</span> and <span class=\"math\">[MATH: v_{10}.]</span> \nHence, the TO is: <span class=\"math\">[MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}, v_1, v_4, v_9, v_{10}\\}.]</span></p>",
+            "readable_text": "Step 3.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_1, v_4, v_9,] and [MATH: v_{10}.]\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}, v_1, v_4, v_9, v_{10}\\}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Step 3.2. No vertices remain; therefore, the topological ordering (TO) is complete, as shown in the image below.</p>",
+            "readable_text": "Step 3.2. No vertices remain; therefore, the topological ordering (TO) is complete, as shown in the image below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/8b8f1609265da50843256bc3f43c48fa\"></p>",
+            "readable_text": "[IMG: /graphics/8b8f1609265da50843256bc3f43c48fa]",
+            "images": [
+              {
+                "src": "/graphics/8b8f1609265da50843256bc3f43c48fa",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that: </p>",
+            "readable_text": "Notice that:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>At each step of the algorithm, we&#x27;ll always add vertices to the topological ordering in ascending order of their indices for simplicity, but the vertices can be added in any order. </p></li><li><p>Kahn&#x27;s algorithm produces only one variant of a topological ordering (TO). In general, a TO is not unique, and finding all possible topological orderings requires other exhaustive search algorithms.</p></li></ul>",
+            "readable_text": "- At each step of the algorithm, we'll always add vertices to the topological ordering in ascending order of their indices for simplicity, but the vertices can be added in any order.\n- Kahn's algorithm produces only one variant of a topological ordering (TO). In general, a TO is not unique, and finding all possible topological orderings requires other exhaustive search algorithms.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/7325a852e9106317e8b9216a31c5fb0c",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/226f37e021a1049a87457412a20a6963",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/b8276e8142292a29be7090ad5685ba91",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/8b8f1609265da50843256bc3f43c48fa",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that a topological ordering (TO, or topological sort) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nContent:\nWe can find a topological ordering of a DAG using Kahn's algorithm.\n\nContent:\nKahn's algorithm for topological ordering consists of two main steps:\n\nContent:\n- Step 1: Add all vertices with no incoming edges (where the indegree [MATH: \\deg^-(v)=0]) to the TO, in any order.\n- Step 2: Remove all vertices added in Step 1 from the graph, along with all their outgoing edges.\n\nContent:\nWe repeat steps 1 and 2 until no vertices remain in the graph.\n\nContent:\nIf, at any point, there are vertices remaining in the graph, but none have an in-degree of 0, it means the initial graph was not a directed acyclic graph (DAG). In this case, the remaining vertices form one or more cycles.\n\nContent:\nThus, Kahn's algorithm can detect cycles effectively and identify the vertices involved! Cycle detection is an important problem in graph theory.\n\nContent:\nWe can express Kahn's algorithm using pseudocode. Pseudocode is a simplified, programming language-independent way of describing an algorithm. It uses a mix of natural language and programming concepts, helping programmers to plan and visualize code logic without focusing on syntax.\n\nContent:\nThe pseudocode for Kahn's algorithm is the following:\n\nContent:\n> Initialize the empty TO queue # topological ordering\n>\n> Initialize list V of all vertices in the graph\n>\n> Initialize list E of all edges in the graph\n>\n> while (V is not empty): # Until at least one vertex remains\n>\n> for (all v in V): # Go over all remaining vertices in V\n>\n> if (not (*,v) in E): # If the vertex v has no incoming edges\n>\n> Add v to TO queue\n>\n> Remove all outgoing edges for vertex v\n>\n> Remove v from V\n\nContent:\nLet's illustrate Kahn's algorithm by finding a topological ordering of the following DAG. Notice that the graph is disconnected, but this does not prevent Kahn's algorithm from producing a valid topological ordering (TO).\n\nGraphic:\n[IMG: /graphics/7325a852e9106317e8b9216a31c5fb0c]\n\nContent:\nWe start with an empty TO: [MATH: \\{\\}.]\n\nContent:\nStep 1.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_2, v_5, v_7,] and [MATH: v_{12}.] Since we can list them in any order, we will use ascending order based on their indices.\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}\\}.]\n\nContent:\nStep 2.1. Remove the vertices [MATH: v_2, v_5, v_7,] and [MATH: v_{12}] from the graph, along with all their outgoing edges. The resulting graph is shown below.\n\nGraphic:\n[IMG: /graphics/226f37e021a1049a87457412a20a6963]\n\nContent:\nStep 2.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_3, v_6, v_8,] and [MATH: v_{11}.]\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}\\}.]\n\nContent:\nStep 2.2. Remove the vertices [MATH: v_3, v_6, v_8,] and [MATH: v_{11}] from the graph, along with all their outgoing edges.\n\nGraphic:\n[IMG: /graphics/b8276e8142292a29be7090ad5685ba91]\n\nContent:\nStep 3.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_1, v_4, v_9,] and [MATH: v_{10}.]\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}, v_1, v_4, v_9, v_{10}\\}.]\n\nContent:\nStep 3.2. No vertices remain; therefore, the topological ordering (TO) is complete, as shown in the image below.\n\nGraphic:\n[IMG: /graphics/8b8f1609265da50843256bc3f43c48fa]\n\nContent:\nNotice that:\n\nContent:\n- At each step of the algorithm, we'll always add vertices to the topological ordering in ascending order of their indices for simplicity, but the vertices can be added in any order.\n- Kahn's algorithm produces only one variant of a topological ordering (TO). In general, a TO is not unique, and finding all possible topological orderings requires other exhaustive search algorithms."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "416924",
+        "content_id": "16871",
+        "dom_id": "step-416924",
+        "selector": "#step-416924",
+        "step_anchor": "step-2",
+        "title": "Implementing One Iteration of Kahn's Algorithm",
+        "key_prerequisites": [
+          {
+            "topic_id": "954",
+            "name": "The Degree of a Vertex",
+            "href": "/topics/954",
+            "type": ""
+          },
+          {
+            "topic_id": "5432",
+            "name": "Topological Ordering",
+            "href": "/topics/5432",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/b2143ce53db3b92b4f226470949dfa1d\"></div><p>Consider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn&#x27;s algorithm. Which of the following graphs results from applying the first iteration of the algorithm?</p><div class=\"graphic\"><img src=\"/graphics/0d997b462f22914366a158a06be4a422\"></div>",
+            "readable_text": "[IMG: /graphics/b2143ce53db3b92b4f226470949dfa1d]\n\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Which of the following graphs results from applying the first iteration of the algorithm?\n\n[IMG: /graphics/0d997b462f22914366a158a06be4a422]",
+            "images": [
+              {
+                "src": "/graphics/b2143ce53db3b92b4f226470949dfa1d",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/0d997b462f22914366a158a06be4a422",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that Kahn&#x27;s algorithm for topological ordering consists of two main substeps:</p><ul><li><p>Substep 1. Add all vertices with no <em>incoming</em> edges to the TO, in any order.</p></li><li><p>Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding <em>outgoing</em> edges. </p></li></ul><p>Repeat substeps 1 and 2 until no vertices remain in the graph.</p><p>In the given graph, only three vertices have no incoming edges. Hence, only these three should be added to the TO in substep 1 and then removed along with their outgoing edges in substep 2, completing the first iteration of the algorithm.</p><p>These three vertices and their outgoing edges are highlighted in the image below.</p><div class=\"graphic\"><img src=\"/graphics/f44413b2ffddd177a53caef591ff1603\"></div><p>Therefore, the graph after the first iteration of the algorithm will be as follows:</p><div class=\"graphic\"><img src=\"/graphics/9f6618eb49f371fa8cd2e7a3a5a73551\"></div><p>So, the correct answer is graph <span class=\"math\">[MATH: \\textrm{II}.]</span></p>",
+            "readable_text": "Recall that Kahn's algorithm for topological ordering consists of two main substeps:\n\n- Substep 1. Add all vertices with no incoming edges to the TO, in any order.\n- Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding outgoing edges.\n\nRepeat substeps 1 and 2 until no vertices remain in the graph.\n\nIn the given graph, only three vertices have no incoming edges. Hence, only these three should be added to the TO in substep 1 and then removed along with their outgoing edges in substep 2, completing the first iteration of the algorithm.\n\nThese three vertices and their outgoing edges are highlighted in the image below.\n\n[IMG: /graphics/f44413b2ffddd177a53caef591ff1603]\n\nTherefore, the graph after the first iteration of the algorithm will be as follows:\n\n[IMG: /graphics/9f6618eb49f371fa8cd2e7a3a5a73551]\n\nSo, the correct answer is graph [MATH: \\textrm{II}.]",
+            "images": [
+              {
+                "src": "/graphics/f44413b2ffddd177a53caef591ff1603",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/9f6618eb49f371fa8cd2e7a3a5a73551",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/b2143ce53db3b92b4f226470949dfa1d",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/0d997b462f22914366a158a06be4a422",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/f44413b2ffddd177a53caef591ff1603",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/9f6618eb49f371fa8cd2e7a3a5a73551",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/b2143ce53db3b92b4f226470949dfa1d]\n\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Which of the following graphs results from applying the first iteration of the algorithm?\n\n[IMG: /graphics/0d997b462f22914366a158a06be4a422]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that Kahn's algorithm for topological ordering consists of two main substeps:\n\n- Substep 1. Add all vertices with no incoming edges to the TO, in any order.\n- Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding outgoing edges.\n\nRepeat substeps 1 and 2 until no vertices remain in the graph.\n\nIn the given graph, only three vertices have no incoming edges. Hence, only these three should be added to the TO in substep 1 and then removed along with their outgoing edges in substep 2, completing the first iteration of the algorithm.\n\nThese three vertices and their outgoing edges are highlighted in the image below.\n\n[IMG: /graphics/f44413b2ffddd177a53caef591ff1603]\n\nTherefore, the graph after the first iteration of the algorithm will be as follows:\n\n[IMG: /graphics/9f6618eb49f371fa8cd2e7a3a5a73551]\n\nSo, the correct answer is graph [MATH: \\textrm{II}.]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "259246",
+        "dom_id": "question-259246",
+        "selector": "#question-259246",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259246\"></p>",
+          "readable_text": "[IMG: /graphics/q-259246]",
+          "images": [
+            {
+              "src": "/graphics/q-259246",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn&#x27;s algorithm. Determine which vertices should be added to the TO in the first step of the algorithm.</p>",
+          "readable_text": "Consider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Determine which vertices should be added to the TO in the first step of the algorithm.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259246-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{10}]</span> only</p>",
+            "readable_text": "[MATH: v_{10}] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259246-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{1}]</span> and <span class=\"math\">[MATH: v_{4}]</span> only</p>",
+            "readable_text": "[MATH: v_{1}] and [MATH: v_{4}] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259246-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{1}]</span> only</p>",
+            "readable_text": "[MATH: v_{1}] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259246-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{1}]</span> and <span class=\"math\">[MATH: v_{3}]</span> only</p>",
+            "readable_text": "[MATH: v_{1}] and [MATH: v_{3}] only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259246-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{1}, v_{2}, v_{3},]</span> and <span class=\"math\">[MATH: v_{4}]</span></p>",
+            "readable_text": "[MATH: v_{1}, v_{2}, v_{3},] and [MATH: v_{4}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259246",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259246]\n\nPrompt:\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Determine which vertices should be added to the TO in the first step of the algorithm.\n\nChoices:\na. [MATH: v_{10}] only\nb. [MATH: v_{1}] and [MATH: v_{4}] only\nc. [MATH: v_{1}] only\nd. [MATH: v_{1}] and [MATH: v_{3}] only\ne. [MATH: v_{1}, v_{2}, v_{3},] and [MATH: v_{4}]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "259254",
+        "dom_id": "question-259254",
+        "selector": "#question-259254",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259254\"></p>",
+          "readable_text": "[IMG: /graphics/q-259254]",
+          "images": [
+            {
+              "src": "/graphics/q-259254",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn&#x27;s algorithm. Which of the following graphs results from applying the first iteration of the algorithm?</p>",
+          "readable_text": "Consider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Which of the following graphs results from applying the first iteration of the algorithm?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259254-a",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-259254-a-2\"></p>",
+            "readable_text": "[IMG: /graphics/q-259254-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-259254-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259254-b",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-259254-a-3\"></p>",
+            "readable_text": "[IMG: /graphics/q-259254-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-259254-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259254-c",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-259254-a-1\"></p>",
+            "readable_text": "[IMG: /graphics/q-259254-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-259254-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259254-d",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-259254-a-4\"></p>",
+            "readable_text": "[IMG: /graphics/q-259254-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-259254-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259254-e",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-259254-a-5\"></p>",
+            "readable_text": "[IMG: /graphics/q-259254-a-5]",
+            "images": [
+              {
+                "src": "/graphics/q-259254-a-5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259254",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259254-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259254-a-3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259254-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259254-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259254-a-5",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259254]\n\nPrompt:\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Which of the following graphs results from applying the first iteration of the algorithm?\n\nChoices:\na. [IMG: /graphics/q-259254-a-2]\nb. [IMG: /graphics/q-259254-a-3]\nc. [IMG: /graphics/q-259254-a-1]\nd. [IMG: /graphics/q-259254-a-4]\ne. [IMG: /graphics/q-259254-a-5]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "416927",
+        "content_id": "16951",
+        "dom_id": "step-416927",
+        "selector": "#step-416927",
+        "step_anchor": "step-5",
+        "title": "Constructing a Topological Ordering Using Kahn's Algorithm",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/f74ecb424ac80817e3423d83c1119cd9\"></div><p>Use Kahn&#x27;s algorithm to construct a topological ordering for the directed acyclic graph above. </p>",
+            "readable_text": "[IMG: /graphics/f74ecb424ac80817e3423d83c1119cd9]\n\nUse Kahn's algorithm to construct a topological ordering for the directed acyclic graph above.",
+            "images": [
+              {
+                "src": "/graphics/f74ecb424ac80817e3423d83c1119cd9",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that Kahn&#x27;s algorithm for topological ordering (TO) consists of two main substeps:</p><ul><li><p>Substep 1. Add all vertices with no <em>incoming</em> edges to the TO, in any order.</p></li><li><p>Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding <em>outgoing</em> edges. </p></li></ul><p>Repeat substeps 1 and 2 until no vertices remain in the graph.</p><p>The pseudocode for Kahn&#x27;s algorithm is the following:</p><blockquote><p><code>Initialize the empty queue TO # topological ordering\n</code></p><p><code>Initialize list V of all vertices in the graph \n</code></p><p><code>Initialize list E of all edges in the graph\n</code></p><p><code>while (V is not empty):   # Until at least one vertex remains\n</code></p><p><code>    for (all v in V):   # Go over all remaining vertices in V\n</code></p><p><code>        if (not (*,v) in E):   # If the vertex v has no incoming edges\n</code></p><p><code>            Add v to TO queue \n</code></p><p><code>            Remove all outgoing edges for vertex v\n</code></p><p><code>            Remove v from V \n</code></p></blockquote><p>With that in mind, we proceed as follows:</p><table><tr><td><p><strong>Step 1.</strong></p></td></tr><tr><td><div class=\"graphic\"><img src=\"/graphics/249d54c0fa2bbdbf5fbbcbbeb208e3c9\"></div></td><td><table><tr><td><p>\n<strong>1.1.</strong> Add all vertices with no incoming edges to the TO, namely, <span class=\"math\">[MATH: v_4]</span> and <span class=\"math\">[MATH: v_8.]</span>\n</p></td></tr><tr><td><p>\n<strong>1.2.</strong> Remove the vertices <span class=\"math\">[MATH: v_4]</span> and <span class=\"math\">[MATH: v_8]</span> from the graph, along with all their outgoing edges. \n</p></td></tr><tr><td><table><tr><td><p>Remaining Vertices:</p></td><td><p> <span class=\"math\">[MATH: v_1, v_2, v_3, v_5, v_6, v_7]</span> </p></td></tr><tr><td><p>Topological Ordering:</p></td><td><p> <span class=\"math\">[MATH: v_4, v_8]</span> </p></td></tr></table></td></tr></table></td></tr><tr><td><p><strong>Step 2.</strong></p></td></tr><tr><td><div class=\"graphic\"><img src=\"/graphics/d98cb785915df5d0a6cbfc0cf1af6e6f\"></div></td><td><table><tr><td><p>\n<strong>2.1.</strong> Add all vertices with no incoming edges to the TO, namely, <span class=\"math\">[MATH: v_2, v_5]</span> and <span class=\"math\">[MATH: v_7.]</span>\n</p></td></tr><tr><td><p>\n<strong>2.2.</strong> Remove the vertices <span class=\"math\">[MATH: v_2, v_5]</span> and <span class=\"math\">[MATH: v_7]</span> from the graph, along with all their outgoing edges.\n</p></td></tr><tr><td><table><tr><td><p>Remaining Vertices:</p></td><td><p> <span class=\"math\">[MATH: v_1, v_3, v_6]</span> </p></td></tr><tr><td><p>Topological Ordering:</p></td><td><p> <span class=\"math\">[MATH: v_4, v_8, v_2, v_5, v_7]</span> </p></td></tr></table></td></tr></table></td></tr><tr><td><p><strong>Step 3.</strong></p></td></tr><tr><td><div class=\"graphic\"><img src=\"/graphics/382e3145af6764c31559cea88df9c15c\"></div></td><td><table><tr><td><p>\n<strong>3.1.</strong> Add the remaining vertices <span class=\"math\">[MATH: v_1, v_3, v_6]</span> to the TO.\n</p></td></tr><tr><td><p>\n<strong>3.2.</strong> Remove the vertices <span class=\"math\">[MATH: v_1, v_3, v_6]</span> from the graph.\n</p></td></tr><tr><td><table><tr><td><p>Remaining Vertices:</p></td><td><p> <span class=\"math\">[MATH: -]</span> </p></td></tr><tr><td><p>Topological Ordering:</p></td><td><p> <span class=\"math\">[MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6]</span> </p></td></tr></table></td></tr></table></td></tr></table><p>After completing all the steps, we obtained the following topological ordering:\n<span class=\"math\">[MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6]</span></p><div class=\"graphic\"><img src=\"/graphics/bdb7be5ac8459982041f184f1fcc138a\"></div>",
+            "readable_text": "Recall that Kahn's algorithm for topological ordering (TO) consists of two main substeps:\n\n- Substep 1. Add all vertices with no incoming edges to the TO, in any order.\n- Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding outgoing edges.\n\nRepeat substeps 1 and 2 until no vertices remain in the graph.\n\nThe pseudocode for Kahn's algorithm is the following:\n\n> Initialize the empty queue TO # topological ordering\n>\n> Initialize list V of all vertices in the graph\n>\n> Initialize list E of all edges in the graph\n>\n> while (V is not empty): # Until at least one vertex remains\n>\n> for (all v in V): # Go over all remaining vertices in V\n>\n> if (not (*,v) in E): # If the vertex v has no incoming edges\n>\n> Add v to TO queue\n>\n> Remove all outgoing edges for vertex v\n>\n> Remove v from V\n\nWith that in mind, we proceed as follows:\n\n| Step 1. |\n| [IMG: /graphics/249d54c0fa2bbdbf5fbbcbbeb208e3c9] | | 1.1. Add all vertices with no incoming edges to the TO, namely, [MATH: v_4] and [MATH: v_8.] | / | 1.2. Remove the vertices [MATH: v_4] and [MATH: v_8] from the graph, along with all their outgoing edges. | / | | Remaining Vertices: | [MATH: v_1, v_2, v_3, v_5, v_6, v_7] | / | Topological Ordering: | [MATH: v_4, v_8] | | |\n| Step 2. |\n| [IMG: /graphics/d98cb785915df5d0a6cbfc0cf1af6e6f] | | 2.1. Add all vertices with no incoming edges to the TO, namely, [MATH: v_2, v_5] and [MATH: v_7.] | / | 2.2. Remove the vertices [MATH: v_2, v_5] and [MATH: v_7] from the graph, along with all their outgoing edges. | / | | Remaining Vertices: | [MATH: v_1, v_3, v_6] | / | Topological Ordering: | [MATH: v_4, v_8, v_2, v_5, v_7] | | |\n| Step 3. |\n| [IMG: /graphics/382e3145af6764c31559cea88df9c15c] | | 3.1. Add the remaining vertices [MATH: v_1, v_3, v_6] to the TO. | / | 3.2. Remove the vertices [MATH: v_1, v_3, v_6] from the graph. | / | | Remaining Vertices: | [MATH: -] | / | Topological Ordering: | [MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6] | | |\n\nAfter completing all the steps, we obtained the following topological ordering:\n[MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6]\n\n[IMG: /graphics/bdb7be5ac8459982041f184f1fcc138a]",
+            "images": [
+              {
+                "src": "/graphics/249d54c0fa2bbdbf5fbbcbbeb208e3c9",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/d98cb785915df5d0a6cbfc0cf1af6e6f",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/382e3145af6764c31559cea88df9c15c",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/bdb7be5ac8459982041f184f1fcc138a",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/f74ecb424ac80817e3423d83c1119cd9",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/249d54c0fa2bbdbf5fbbcbbeb208e3c9",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/d98cb785915df5d0a6cbfc0cf1af6e6f",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/382e3145af6764c31559cea88df9c15c",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/bdb7be5ac8459982041f184f1fcc138a",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/f74ecb424ac80817e3423d83c1119cd9]\n\nUse Kahn's algorithm to construct a topological ordering for the directed acyclic graph above.\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that Kahn's algorithm for topological ordering (TO) consists of two main substeps:\n\n- Substep 1. Add all vertices with no incoming edges to the TO, in any order.\n- Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding outgoing edges.\n\nRepeat substeps 1 and 2 until no vertices remain in the graph.\n\nThe pseudocode for Kahn's algorithm is the following:\n\n> Initialize the empty queue TO # topological ordering\n>\n> Initialize list V of all vertices in the graph\n>\n> Initialize list E of all edges in the graph\n>\n> while (V is not empty): # Until at least one vertex remains\n>\n> for (all v in V): # Go over all remaining vertices in V\n>\n> if (not (*,v) in E): # If the vertex v has no incoming edges\n>\n> Add v to TO queue\n>\n> Remove all outgoing edges for vertex v\n>\n> Remove v from V\n\nWith that in mind, we proceed as follows:\n\n| Step 1. |\n| [IMG: /graphics/249d54c0fa2bbdbf5fbbcbbeb208e3c9] | | 1.1. Add all vertices with no incoming edges to the TO, namely, [MATH: v_4] and [MATH: v_8.] | / | 1.2. Remove the vertices [MATH: v_4] and [MATH: v_8] from the graph, along with all their outgoing edges. | / | | Remaining Vertices: | [MATH: v_1, v_2, v_3, v_5, v_6, v_7] | / | Topological Ordering: | [MATH: v_4, v_8] | | |\n| Step 2. |\n| [IMG: /graphics/d98cb785915df5d0a6cbfc0cf1af6e6f] | | 2.1. Add all vertices with no incoming edges to the TO, namely, [MATH: v_2, v_5] and [MATH: v_7.] | / | 2.2. Remove the vertices [MATH: v_2, v_5] and [MATH: v_7] from the graph, along with all their outgoing edges. | / | | Remaining Vertices: | [MATH: v_1, v_3, v_6] | / | Topological Ordering: | [MATH: v_4, v_8, v_2, v_5, v_7] | | |\n| Step 3. |\n| [IMG: /graphics/382e3145af6764c31559cea88df9c15c] | | 3.1. Add the remaining vertices [MATH: v_1, v_3, v_6] to the TO. | / | 3.2. Remove the vertices [MATH: v_1, v_3, v_6] from the graph. | / | | Remaining Vertices: | [MATH: -] | / | Topological Ordering: | [MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6] | | |\n\nAfter completing all the steps, we obtained the following topological ordering:\n[MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6]\n\n[IMG: /graphics/bdb7be5ac8459982041f184f1fcc138a]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "262067",
+        "dom_id": "question-262067",
+        "selector": "#question-262067",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-262067\"></p>",
+          "readable_text": "[IMG: /graphics/q-262067]",
+          "images": [
+            {
+              "src": "/graphics/q-262067",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Use Kahn&#x27;s algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**</p><p>** 1.1. ** Add all vertices with no <span class=\"select-list\" data-select-id=\"selectList-262067-0\" data-select-index=\"1\">[SELECT 1]</span> edges to the topological ordering, namely, <span class=\"select-list\" data-select-id=\"selectList-262067-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p>** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their <span class=\"select-list\" data-select-id=\"selectList-262067-2\" data-select-index=\"3\">[SELECT 3]</span> edges.</p>",
+          "readable_text": "Use Kahn's algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**\n\n** 1.1. ** Add all vertices with no [SELECT 1] edges to the topological ordering, namely, [SELECT 2].\n\n** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their [SELECT 3] edges.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-262067-0",
+              "frame_dom_id": "selectListFrame-262067-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "incoming",
+                  "readable_text": "incoming"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "outgoing",
+                  "readable_text": "outgoing"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-262067-1",
+              "frame_dom_id": "selectListFrame-262067-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{2}, v_{3}, v_{7}]</span>",
+                  "readable_text": "[MATH: v_{2}, v_{3}, v_{7}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{2}, v_{5}, v_{7}]</span>",
+                  "readable_text": "[MATH: v_{2}, v_{5}, v_{7}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{2}]</span>,  <span class=\"math\">[MATH: v_{6}]</span>",
+                  "readable_text": "[MATH: v_{2}], [MATH: v_{6}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{2}, v_{3}]</span>",
+                  "readable_text": "[MATH: v_{1}, v_{2}, v_{3}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-262067-2",
+              "frame_dom_id": "selectListFrame-262067-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "incoming",
+                  "readable_text": "incoming"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "outgoing",
+                  "readable_text": "outgoing"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-262067",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-262067-0",
+            "frame_dom_id": "selectListFrame-262067-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "incoming",
+                "readable_text": "incoming"
+              },
+              {
+                "index": 2,
+                "normalized_html": "outgoing",
+                "readable_text": "outgoing"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-262067-1",
+            "frame_dom_id": "selectListFrame-262067-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{2}, v_{3}, v_{7}]</span>",
+                "readable_text": "[MATH: v_{2}, v_{3}, v_{7}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{2}, v_{5}, v_{7}]</span>",
+                "readable_text": "[MATH: v_{2}, v_{5}, v_{7}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: v_{2}]</span>,  <span class=\"math\">[MATH: v_{6}]</span>",
+                "readable_text": "[MATH: v_{2}], [MATH: v_{6}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{2}, v_{3}]</span>",
+                "readable_text": "[MATH: v_{1}, v_{2}, v_{3}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-262067-2",
+            "frame_dom_id": "selectListFrame-262067-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "incoming",
+                "readable_text": "incoming"
+              },
+              {
+                "index": 2,
+                "normalized_html": "outgoing",
+                "readable_text": "outgoing"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-262067]\n\nPrompt:\nUse Kahn's algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**\n\n** 1.1. ** Add all vertices with no [SELECT 1] edges to the topological ordering, namely, [SELECT 2].\n\n** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their [SELECT 3] edges."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "259257",
+        "dom_id": "question-259257",
+        "selector": "#question-259257",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259257\"></p>",
+          "readable_text": "[IMG: /graphics/q-259257]",
+          "images": [
+            {
+              "src": "/graphics/q-259257",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Use Kahn&#x27;s algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**</p><p>** 1.1. ** Add all vertices with no <span class=\"select-list\" data-select-id=\"selectList-259257-0\" data-select-index=\"1\">[SELECT 1]</span> edges to the topological ordering, namely, <span class=\"select-list\" data-select-id=\"selectList-259257-1\" data-select-index=\"2\">[SELECT 2]</span>.</p><p>** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their <span class=\"select-list\" data-select-id=\"selectList-259257-2\" data-select-index=\"3\">[SELECT 3]</span> edges.</p>",
+          "readable_text": "Use Kahn's algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**\n\n** 1.1. ** Add all vertices with no [SELECT 1] edges to the topological ordering, namely, [SELECT 2].\n\n** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their [SELECT 3] edges.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-259257-0",
+              "frame_dom_id": "selectListFrame-259257-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "incoming",
+                  "readable_text": "incoming"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "outgoing",
+                  "readable_text": "outgoing"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-259257-1",
+              "frame_dom_id": "selectListFrame-259257-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 5,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{7}]</span>",
+                  "readable_text": "[MATH: v_{1}, v_{7}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{6}]</span>",
+                  "readable_text": "[MATH: v_{6}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{10}]</span>",
+                  "readable_text": "[MATH: v_{10}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{4}, v_{7}]</span>",
+                  "readable_text": "[MATH: v_{1}, v_{4}, v_{7}]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{2}, v_{3}, v_{4}]</span>",
+                  "readable_text": "[MATH: v_{1}, v_{2}, v_{3}, v_{4}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-259257-2",
+              "frame_dom_id": "selectListFrame-259257-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "outgoing",
+                  "readable_text": "outgoing"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "incoming",
+                  "readable_text": "incoming"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-259257",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-259257-0",
+            "frame_dom_id": "selectListFrame-259257-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "incoming",
+                "readable_text": "incoming"
+              },
+              {
+                "index": 2,
+                "normalized_html": "outgoing",
+                "readable_text": "outgoing"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-259257-1",
+            "frame_dom_id": "selectListFrame-259257-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 5,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{7}]</span>",
+                "readable_text": "[MATH: v_{1}, v_{7}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{6}]</span>",
+                "readable_text": "[MATH: v_{6}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: v_{10}]</span>",
+                "readable_text": "[MATH: v_{10}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{4}, v_{7}]</span>",
+                "readable_text": "[MATH: v_{1}, v_{4}, v_{7}]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}, v_{2}, v_{3}, v_{4}]</span>",
+                "readable_text": "[MATH: v_{1}, v_{2}, v_{3}, v_{4}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-259257-2",
+            "frame_dom_id": "selectListFrame-259257-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "outgoing",
+                "readable_text": "outgoing"
+              },
+              {
+                "index": 2,
+                "normalized_html": "incoming",
+                "readable_text": "incoming"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259257]\n\nPrompt:\nUse Kahn's algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**\n\n** 1.1. ** Add all vertices with no [SELECT 1] edges to the topological ordering, namely, [SELECT 2].\n\n** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their [SELECT 3] edges."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nRecall that a topological ordering (TO, or topological sort) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nContent:\nWe can find a topological ordering of a DAG using Kahn's algorithm.\n\nContent:\nKahn's algorithm for topological ordering consists of two main steps:\n\nContent:\n- Step 1: Add all vertices with no incoming edges (where the indegree [MATH: \\deg^-(v)=0]) to the TO, in any order.\n- Step 2: Remove all vertices added in Step 1 from the graph, along with all their outgoing edges.\n\nContent:\nWe repeat steps 1 and 2 until no vertices remain in the graph.\n\nContent:\nIf, at any point, there are vertices remaining in the graph, but none have an in-degree of 0, it means the initial graph was not a directed acyclic graph (DAG). In this case, the remaining vertices form one or more cycles.\n\nContent:\nThus, Kahn's algorithm can detect cycles effectively and identify the vertices involved! Cycle detection is an important problem in graph theory.\n\nContent:\nWe can express Kahn's algorithm using pseudocode. Pseudocode is a simplified, programming language-independent way of describing an algorithm. It uses a mix of natural language and programming concepts, helping programmers to plan and visualize code logic without focusing on syntax.\n\nContent:\nThe pseudocode for Kahn's algorithm is the following:\n\nContent:\n> Initialize the empty TO queue # topological ordering\n>\n> Initialize list V of all vertices in the graph\n>\n> Initialize list E of all edges in the graph\n>\n> while (V is not empty): # Until at least one vertex remains\n>\n> for (all v in V): # Go over all remaining vertices in V\n>\n> if (not (*,v) in E): # If the vertex v has no incoming edges\n>\n> Add v to TO queue\n>\n> Remove all outgoing edges for vertex v\n>\n> Remove v from V\n\nContent:\nLet's illustrate Kahn's algorithm by finding a topological ordering of the following DAG. Notice that the graph is disconnected, but this does not prevent Kahn's algorithm from producing a valid topological ordering (TO).\n\nGraphic:\n[IMG: /graphics/7325a852e9106317e8b9216a31c5fb0c]\n\nContent:\nWe start with an empty TO: [MATH: \\{\\}.]\n\nContent:\nStep 1.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_2, v_5, v_7,] and [MATH: v_{12}.] Since we can list them in any order, we will use ascending order based on their indices.\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}\\}.]\n\nContent:\nStep 2.1. Remove the vertices [MATH: v_2, v_5, v_7,] and [MATH: v_{12}] from the graph, along with all their outgoing edges. The resulting graph is shown below.\n\nGraphic:\n[IMG: /graphics/226f37e021a1049a87457412a20a6963]\n\nContent:\nStep 2.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_3, v_6, v_8,] and [MATH: v_{11}.]\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}\\}.]\n\nContent:\nStep 2.2. Remove the vertices [MATH: v_3, v_6, v_8,] and [MATH: v_{11}] from the graph, along with all their outgoing edges.\n\nGraphic:\n[IMG: /graphics/b8276e8142292a29be7090ad5685ba91]\n\nContent:\nStep 3.1. Add all vertices with an indegree of [MATH: 0] to the TO; these vertices are [MATH: v_1, v_4, v_9,] and [MATH: v_{10}.]\nHence, the TO is: [MATH: \\{v_2, v_5, v_7,v_{12}, v_3, v_6, v_8, v_{11}, v_1, v_4, v_9, v_{10}\\}.]\n\nContent:\nStep 3.2. No vertices remain; therefore, the topological ordering (TO) is complete, as shown in the image below.\n\nGraphic:\n[IMG: /graphics/8b8f1609265da50843256bc3f43c48fa]\n\nContent:\nNotice that:\n\nContent:\n- At each step of the algorithm, we'll always add vertices to the topological ordering in ascending order of their indices for simplicity, but the vertices can be added in any order.\n- Kahn's algorithm produces only one variant of a topological ordering (TO). In general, a TO is not unique, and finding all possible topological orderings requires other exhaustive search algorithms.\n\n---\n\nItem 2 \u2014 Example: Implementing One Iteration of Kahn's Algorithm\n\nExample Prompt:\n[IMG: /graphics/b2143ce53db3b92b4f226470949dfa1d]\n\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Which of the following graphs results from applying the first iteration of the algorithm?\n\n[IMG: /graphics/0d997b462f22914366a158a06be4a422]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that Kahn's algorithm for topological ordering consists of two main substeps:\n\n- Substep 1. Add all vertices with no incoming edges to the TO, in any order.\n- Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding outgoing edges.\n\nRepeat substeps 1 and 2 until no vertices remain in the graph.\n\nIn the given graph, only three vertices have no incoming edges. Hence, only these three should be added to the TO in substep 1 and then removed along with their outgoing edges in substep 2, completing the first iteration of the algorithm.\n\nThese three vertices and their outgoing edges are highlighted in the image below.\n\n[IMG: /graphics/f44413b2ffddd177a53caef591ff1603]\n\nTherefore, the graph after the first iteration of the algorithm will be as follows:\n\n[IMG: /graphics/9f6618eb49f371fa8cd2e7a3a5a73551]\n\nSo, the correct answer is graph [MATH: \\textrm{II}.]\n\n---\n\nItem 3 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-259246]\n\nPrompt:\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Determine which vertices should be added to the TO in the first step of the algorithm.\n\nChoices:\na. [MATH: v_{10}] only\nb. [MATH: v_{1}] and [MATH: v_{4}] only\nc. [MATH: v_{1}] only\nd. [MATH: v_{1}] and [MATH: v_{3}] only\ne. [MATH: v_{1}, v_{2}, v_{3},] and [MATH: v_{4}]\n\n---\n\nItem 4 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-259254]\n\nPrompt:\nConsider the above directed acyclic graph. Suppose we want to construct a corresponding topological ordering (TO) using Kahn's algorithm. Which of the following graphs results from applying the first iteration of the algorithm?\n\nChoices:\na. [IMG: /graphics/q-259254-a-2]\nb. [IMG: /graphics/q-259254-a-3]\nc. [IMG: /graphics/q-259254-a-1]\nd. [IMG: /graphics/q-259254-a-4]\ne. [IMG: /graphics/q-259254-a-5]\n\n---\n\nItem 5 \u2014 Example: Constructing a Topological Ordering Using Kahn's Algorithm\n\nExample Prompt:\n[IMG: /graphics/f74ecb424ac80817e3423d83c1119cd9]\n\nUse Kahn's algorithm to construct a topological ordering for the directed acyclic graph above.\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that Kahn's algorithm for topological ordering (TO) consists of two main substeps:\n\n- Substep 1. Add all vertices with no incoming edges to the TO, in any order.\n- Substep 2. Remove all vertices processed in substep 1 from the graph and all the corresponding outgoing edges.\n\nRepeat substeps 1 and 2 until no vertices remain in the graph.\n\nThe pseudocode for Kahn's algorithm is the following:\n\n> Initialize the empty queue TO # topological ordering\n>\n> Initialize list V of all vertices in the graph\n>\n> Initialize list E of all edges in the graph\n>\n> while (V is not empty): # Until at least one vertex remains\n>\n> for (all v in V): # Go over all remaining vertices in V\n>\n> if (not (*,v) in E): # If the vertex v has no incoming edges\n>\n> Add v to TO queue\n>\n> Remove all outgoing edges for vertex v\n>\n> Remove v from V\n\nWith that in mind, we proceed as follows:\n\n| Step 1. |\n| [IMG: /graphics/249d54c0fa2bbdbf5fbbcbbeb208e3c9] | | 1.1. Add all vertices with no incoming edges to the TO, namely, [MATH: v_4] and [MATH: v_8.] | / | 1.2. Remove the vertices [MATH: v_4] and [MATH: v_8] from the graph, along with all their outgoing edges. | / | | Remaining Vertices: | [MATH: v_1, v_2, v_3, v_5, v_6, v_7] | / | Topological Ordering: | [MATH: v_4, v_8] | | |\n| Step 2. |\n| [IMG: /graphics/d98cb785915df5d0a6cbfc0cf1af6e6f] | | 2.1. Add all vertices with no incoming edges to the TO, namely, [MATH: v_2, v_5] and [MATH: v_7.] | / | 2.2. Remove the vertices [MATH: v_2, v_5] and [MATH: v_7] from the graph, along with all their outgoing edges. | / | | Remaining Vertices: | [MATH: v_1, v_3, v_6] | / | Topological Ordering: | [MATH: v_4, v_8, v_2, v_5, v_7] | | |\n| Step 3. |\n| [IMG: /graphics/382e3145af6764c31559cea88df9c15c] | | 3.1. Add the remaining vertices [MATH: v_1, v_3, v_6] to the TO. | / | 3.2. Remove the vertices [MATH: v_1, v_3, v_6] from the graph. | / | | Remaining Vertices: | [MATH: -] | / | Topological Ordering: | [MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6] | | |\n\nAfter completing all the steps, we obtained the following topological ordering:\n[MATH: v_4, v_8, v_2, v_5, v_7, v_1, v_3,v_6]\n\n[IMG: /graphics/bdb7be5ac8459982041f184f1fcc138a]\n\n---\n\nItem 6 \u2014 Question 3\n\nQuestion Graphic:\n[IMG: /graphics/q-262067]\n\nPrompt:\nUse Kahn's algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**\n\n** 1.1. ** Add all vertices with no [SELECT 1] edges to the topological ordering, namely, [SELECT 2].\n\n** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their [SELECT 3] edges.\n\n---\n\nItem 7 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-259257]\n\nPrompt:\nUse Kahn's algorithm to construct a topological ordering of the directed acyclic graph above.**Step 1.**\n\n** 1.1. ** Add all vertices with no [SELECT 1] edges to the topological ordering, namely, [SELECT 2].\n\n** 1.2. ** Remove the vertices chosen in 1.1 from the graph, along with all their [SELECT 3] edges."
+  }
+}

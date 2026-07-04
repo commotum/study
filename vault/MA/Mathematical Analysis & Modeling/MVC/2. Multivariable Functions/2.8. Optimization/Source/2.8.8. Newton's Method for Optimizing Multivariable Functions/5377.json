@@ -1,0 +1,1313 @@
+{
+  "schema_version": 2,
+  "topic_id": "5377",
+  "topic_title": "Newton's Method for Optimizing Multivariable Functions",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5377/Source/5377.html",
+  "source_url": "https://mathacademy.com/topics/5377",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "221904",
+        "dom_id": "sectionLink-221904",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-221904"
+      },
+      {
+        "index": 2,
+        "step_id": "452235",
+        "dom_id": "sectionLink-452235",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-452235"
+      },
+      {
+        "index": 3,
+        "step_id": "230728",
+        "dom_id": "sectionLink-230728",
+        "name": "",
+        "title": "Computing One Iteration of the Newton-Raphson Method",
+        "selector": "#sectionLink-230728"
+      },
+      {
+        "index": 4,
+        "step_id": "230729",
+        "dom_id": "sectionLink-230729",
+        "name": "",
+        "title": "Computing Two Iterations of the Newton-Raphson Method",
+        "selector": "#sectionLink-230729"
+      },
+      {
+        "index": 5,
+        "step_id": "230730",
+        "dom_id": "sectionLink-230730",
+        "name": "",
+        "title": "Alternative to Newton's Method for Multivariable Functions Using Linear Systems",
+        "selector": "#sectionLink-230730"
+      },
+      {
+        "index": 6,
+        "step_id": "452234",
+        "dom_id": "sectionLink-452234",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-452234"
+      },
+      {
+        "index": 7,
+        "step_id": "230731",
+        "dom_id": "sectionLink-230731",
+        "name": "",
+        "title": "Computing Iterations of the Newton-Raphson Method Using Linear Systems",
+        "selector": "#sectionLink-230731"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2824",
+        "name": "The Second Derivative of a Multivariable Function",
+        "href": "/topics/the-second-derivative-of-a-multivariable-function-2824"
+      },
+      {
+        "topic_id": "2926",
+        "name": "Newton's Method for Optimizing Single-Variable Functions",
+        "href": "/topics/newtons-method-for-optimizing-single-variable-functions-2926"
+      },
+      {
+        "topic_id": "5379",
+        "name": "Newton's Method for Multivariable Functions",
+        "href": "/topics/newtons-method-for-multivariable-functions-5379"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 13,
+    "step_count": 7,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "221904",
+        "content_id": "10739",
+        "dom_id": "step-221904",
+        "selector": "#step-221904",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a previous lesson, we saw how Newton\u2019s method can be used to find local minima or maxima of a smooth function <span class=\"math\">[MATH: f : \\mathbb{R} \\to \\mathbb{R}]</span> by approximating the function near the current guess with a parabola.</p>",
+            "readable_text": "In a previous lesson, we saw how Newton\u2019s method can be used to find local minima or maxima of a smooth function [MATH: f : \\mathbb{R} \\to \\mathbb{R}] by approximating the function near the current guess with a parabola.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that in one variable, Newton\u2019s update rule is</p>",
+            "readable_text": "Recall that in one variable, Newton\u2019s update rule is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{n+1} = x_n - \\frac{f&#x27;(x_n)}{f&#x27;&#x27;(x_n)},]</span></p>",
+            "readable_text": "[MATH: x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: f&#x27;(x)]</span> is the first derivative, and <span class=\"math\">[MATH: f&#x27;&#x27;(x)]</span> is the second derivative.</p>",
+            "readable_text": "where [MATH: f'(x)] is the first derivative, and [MATH: f''(x)] is the second derivative.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To generalize this idea to higher dimensions, we need analogues of the first and second derivatives.</p>",
+            "readable_text": "To generalize this idea to higher dimensions, we need analogues of the first and second derivatives.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p> Recall that the gradient vector <span class=\"math\">[MATH: \\nabla f(\\mathbf{x})]</span> generalizes the first derivative to multivariable functions, and the Hessian matrix <span class=\"math\">[MATH: H_f(\\mathbf{x})]</span> generalizes the second derivative.</p>",
+            "readable_text": "Recall that the gradient vector [MATH: \\nabla f(\\mathbf{x})] generalizes the first derivative to multivariable functions, and the Hessian matrix [MATH: H_f(\\mathbf{x})] generalizes the second derivative.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Like before, we aim to find critical points, which are the points where the gradient vanishes:\n<span class=\"math\">[MATH: \\nabla f(\\mathbf{x}) = \\mathbf{0}]</span></p>",
+            "readable_text": "Like before, we aim to find critical points, which are the points where the gradient vanishes:\n[MATH: \\nabla f(\\mathbf{x}) = \\mathbf{0}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So once again, optimization becomes a root-finding problem, but now for the gradient vector <span class=\"math\">[MATH: \\nabla f(\\mathbf{x}).]</span></p>",
+            "readable_text": "So once again, optimization becomes a root-finding problem, but now for the gradient vector [MATH: \\nabla f(\\mathbf{x}).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Just like in one dimension, we approximate <span class=\"math\">[MATH: f(\\mathbf{x})]</span> near our current guess <span class=\"math\">[MATH: \\mathbf{x}_n]</span> using a second-order Taylor expansion</p>",
+            "readable_text": "Just like in one dimension, we approximate [MATH: f(\\mathbf{x})] near our current guess [MATH: \\mathbf{x}_n] using a second-order Taylor expansion",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: f(\\mathbf{x}) \\approx f(\\mathbf{x}_n) + \\nabla f(\\mathbf{x}_n)^T (\\mathbf{x} - \\mathbf{x}_n) + \\frac{1}{2} (\\mathbf{x} - \\mathbf{x}_n)^T H_f(\\mathbf{x}_n) (\\mathbf{x} - \\mathbf{x}_n).]</span></p>",
+            "readable_text": "[MATH: f(\\mathbf{x}) \\approx f(\\mathbf{x}_n) + \\nabla f(\\mathbf{x}_n)^T (\\mathbf{x} - \\mathbf{x}_n) + \\frac{1}{2} (\\mathbf{x} - \\mathbf{x}_n)^T H_f(\\mathbf{x}_n) (\\mathbf{x} - \\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is the multivariable analogue of a parabola, a <em>quadratic surface</em>.</p>",
+            "readable_text": "This is the multivariable analogue of a parabola, a quadratic surface.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the minimum of this quadratic surface, we compute its gradient with respect to <span class=\"math\">[MATH: \\mathbf{x}]</span> and set it equal to zero. The gradient of the approximation is</p>",
+            "readable_text": "To find the minimum of this quadratic surface, we compute its gradient with respect to [MATH: \\mathbf{x}] and set it equal to zero. The gradient of the approximation is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\nabla f(\\mathbf{x}) \\approx \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n).]</span></p>",
+            "readable_text": "[MATH: \\nabla f(\\mathbf{x}) \\approx \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We then set the gradient equal to the zero vector:\n<span class=\"math\">[MATH: \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n) = \\mathbf{0}]</span></p>",
+            "readable_text": "We then set the gradient equal to the zero vector:\n[MATH: \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n) = \\mathbf{0}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we isolate <span class=\"math\">[MATH: \\mathbf{x},]</span> as follows:</p>",
+            "readable_text": "Finally, we isolate [MATH: \\mathbf{x},] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: H_{f}(x_{n})(x \u2212 x_{n})|= \u2212 \u2207f(x_{n}); x \u2212 x_{n}|= \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n}); x|= x_{n} \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n})]</span></p>",
+            "readable_text": "[MATH: H_{f}(x_{n})(x \u2212 x_{n})|= \u2212 \u2207f(x_{n}); x \u2212 x_{n}|= \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n}); x|= x_{n} \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n})]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This new value becomes our next guess, which we call <span class=\"math\">[MATH: \\mathbf{x}_{n+1}.]</span> So, we write</p>",
+            "readable_text": "This new value becomes our next guess, which we call [MATH: \\mathbf{x}_{n+1}.] So, we write",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).}]</span></p>",
+            "readable_text": "[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Newton\u2019s method can be extremely fast, but only under the following conditions:</p>",
+            "readable_text": "Newton\u2019s method can be extremely fast, but only under the following conditions:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The function <span class=\"math\">[MATH: f]</span> is twice continuously differentiable (i.e., smooth).</p></li><li><p>The starting point <span class=\"math\">[MATH: \\mathbf{x}_0]</span> is close to a critical point.</p></li><li><p>The Hessian <span class=\"math\">[MATH: H_f(\\mathbf{x})]</span> is invertible and preferably positive definite near the solution.</p></li></ul>",
+            "readable_text": "- The function [MATH: f] is twice continuously differentiable (i.e., smooth).\n- The starting point [MATH: \\mathbf{x}_0] is close to a critical point.\n- The Hessian [MATH: H_f(\\mathbf{x})] is invertible and preferably positive definite near the solution.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>When these conditions are met, Newton\u2019s method often converges in just a few iterations.</p>",
+            "readable_text": "When these conditions are met, Newton\u2019s method often converges in just a few iterations.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a previous lesson, we saw how Newton\u2019s method can be used to find local minima or maxima of a smooth function [MATH: f : \\mathbb{R} \\to \\mathbb{R}] by approximating the function near the current guess with a parabola.\n\nContent:\nRecall that in one variable, Newton\u2019s update rule is\n\nContent:\n[MATH: x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)},]\n\nContent:\nwhere [MATH: f'(x)] is the first derivative, and [MATH: f''(x)] is the second derivative.\n\nContent:\nTo generalize this idea to higher dimensions, we need analogues of the first and second derivatives.\n\nContent:\nRecall that the gradient vector [MATH: \\nabla f(\\mathbf{x})] generalizes the first derivative to multivariable functions, and the Hessian matrix [MATH: H_f(\\mathbf{x})] generalizes the second derivative.\n\nContent:\nLike before, we aim to find critical points, which are the points where the gradient vanishes:\n[MATH: \\nabla f(\\mathbf{x}) = \\mathbf{0}]\n\nContent:\nSo once again, optimization becomes a root-finding problem, but now for the gradient vector [MATH: \\nabla f(\\mathbf{x}).]\n\nContent:\nJust like in one dimension, we approximate [MATH: f(\\mathbf{x})] near our current guess [MATH: \\mathbf{x}_n] using a second-order Taylor expansion\n\nContent:\n[MATH: f(\\mathbf{x}) \\approx f(\\mathbf{x}_n) + \\nabla f(\\mathbf{x}_n)^T (\\mathbf{x} - \\mathbf{x}_n) + \\frac{1}{2} (\\mathbf{x} - \\mathbf{x}_n)^T H_f(\\mathbf{x}_n) (\\mathbf{x} - \\mathbf{x}_n).]\n\nContent:\nThis is the multivariable analogue of a parabola, a quadratic surface.\n\nContent:\nTo find the minimum of this quadratic surface, we compute its gradient with respect to [MATH: \\mathbf{x}] and set it equal to zero. The gradient of the approximation is\n\nContent:\n[MATH: \\nabla f(\\mathbf{x}) \\approx \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n).]\n\nContent:\nWe then set the gradient equal to the zero vector:\n[MATH: \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n) = \\mathbf{0}]\n\nContent:\nFinally, we isolate [MATH: \\mathbf{x},] as follows:\n\nContent:\n[MATH: H_{f}(x_{n})(x \u2212 x_{n})|= \u2212 \u2207f(x_{n}); x \u2212 x_{n}|= \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n}); x|= x_{n} \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n})]\n\nContent:\nThis new value becomes our next guess, which we call [MATH: \\mathbf{x}_{n+1}.] So, we write\n\nContent:\n[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).}]\n\nContent:\nNewton\u2019s method can be extremely fast, but only under the following conditions:\n\nContent:\n- The function [MATH: f] is twice continuously differentiable (i.e., smooth).\n- The starting point [MATH: \\mathbf{x}_0] is close to a critical point.\n- The Hessian [MATH: H_f(\\mathbf{x})] is invertible and preferably positive definite near the solution.\n\nContent:\nWhen these conditions are met, Newton\u2019s method often converges in just a few iterations."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "452235",
+        "content_id": "13153",
+        "dom_id": "step-452235",
+        "selector": "#step-452235",
+        "step_anchor": "step-2",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x,y)]</span> in the region <span class=\"math\">[MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: f(x,y) =x^2y-2xy^2+x^3-4x.]</span></p>",
+            "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) =x^2y-2xy^2+x^3-4x.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s calculate one iteration of the Newton-Raphson method, starting at the point <span class=\"math\">[MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.]</span> </p>",
+            "readable_text": "Let\u2019s calculate one iteration of the Newton-Raphson method, starting at the point [MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Newton-Raphson method of optimizing a multivariable function <span class=\"math\">[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]</span> is</p>",
+            "readable_text": "The Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: H_f(\\mathbf{x}_n)]</span> and <span class=\"math\">[MATH: \\nabla{f}(\\mathbf{x}_n)]</span> are the Hessian and gradient of <span class=\"math\">[MATH: f]</span>, respectively, evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p>",
+            "readable_text": "where [MATH: H_f(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our case, the gradient is</p>",
+            "readable_text": "In our case, the gradient is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]</span></p>",
+            "readable_text": "[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>and the Hessian is</p>",
+            "readable_text": "and the Hessian is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]</span></p>",
+            "readable_text": "[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, our Newton-Raphson formula is</p>",
+            "readable_text": "Therefore, our Newton-Raphson formula is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]</span></p>",
+            "readable_text": "[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Starting with\n<span class=\"math\">[MATH: [1; 1]]</span> we have</p>",
+            "readable_text": "Starting with\n[MATH: [1; 1]] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}^{\u2212 1}[2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; = [1; 1] \u2212 [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)]^{\u2212 1}[2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; = [1; 1] \u2212 [8|\u2212 2; \u2212 2|\u2212 4]^{\u2212 1}[\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/((8) \u22c5 (\u2212 4) \u2212 (\u2212 2) \u22c5 (\u2212 2))[\u2212 4|2; 2|8][\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/(\u2212 36)[\u2212 2; \u2212 26]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]</span></p>",
+            "readable_text": "[MATH: x_{1}|= x_{0} \u2212 [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}^{\u2212 1}[2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; = [1; 1] \u2212 [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)]^{\u2212 1}[2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; = [1; 1] \u2212 [8|\u2212 2; \u2212 2|\u2212 4]^{\u2212 1}[\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/((8) \u22c5 (\u2212 4) \u2212 (\u2212 2) \u22c5 (\u2212 2))[\u2212 4|2; 2|8][\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/(\u2212 36)[\u2212 2; \u2212 26]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) =x^2y-2xy^2+x^3-4x.]\n\nContent:\nLet\u2019s calculate one iteration of the Newton-Raphson method, starting at the point [MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.]\n\nContent:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: H_f(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nIn our case, the gradient is\n\nContent:\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]\n\nContent:\nand the Hessian is\n\nContent:\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]\n\nContent:\nTherefore, our Newton-Raphson formula is\n\nContent:\n[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]\n\nContent:\nStarting with\n[MATH: [1; 1]] we have\n\nContent:\n[MATH: x_{1}|= x_{0} \u2212 [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}^{\u2212 1}[2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; = [1; 1] \u2212 [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)]^{\u2212 1}[2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; = [1; 1] \u2212 [8|\u2212 2; \u2212 2|\u2212 4]^{\u2212 1}[\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/((8) \u22c5 (\u2212 4) \u2212 (\u2212 2) \u22c5 (\u2212 2))[\u2212 4|2; 2|8][\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/(\u2212 36)[\u2212 2; \u2212 26]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "230728",
+        "content_id": "16706",
+        "dom_id": "step-230728",
+        "selector": "#step-230728",
+        "step_anchor": "step-3",
+        "title": "Computing One Iteration of the Newton-Raphson Method",
+        "key_prerequisites": [
+          {
+            "topic_id": "864",
+            "name": "Inverses of 2x2 Matrices",
+            "href": "/topics/864",
+            "type": ""
+          },
+          {
+            "topic_id": "1934",
+            "name": "The Gradient Vector",
+            "href": "/topics/1934",
+            "type": ""
+          },
+          {
+            "topic_id": "2824",
+            "name": "The Second Derivative of a Multivariable Function",
+            "href": "/topics/2824",
+            "type": ""
+          },
+          {
+            "topic_id": "2926",
+            "name": "Newton's Method for Optimizing Single-Variable Functions",
+            "href": "/topics/2926",
+            "type": ""
+          },
+          {
+            "topic_id": "5379",
+            "name": "Newton's Method for Multivariable Functions",
+            "href": "/topics/5379",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x,y)]</span> in the region <span class=\"math\">[MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: f(x,y) = 2x^2y-2x^2+3xy^2+3xy+1.]</span>\nCalculate one iteration of the Newton-Raphson process for optimization that starts at <span class=\"math\">[MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.]</span> Round your final answer to three decimal places (if needed).</p>",
+            "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = 2x^2y-2x^2+3xy^2+3xy+1.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.] Round your final answer to three decimal places (if needed).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson method of optimizing a multivariable function <span class=\"math\">[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]</span> is</p><p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]</span></p><p>where <span class=\"math\">[MATH: H(\\mathbf{x}_n)]</span> and <span class=\"math\">[MATH: \\nabla{f}(\\mathbf{x}_n)]</span> are the Hessian and gradient of <span class=\"math\">[MATH: f]</span>, respectively, evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p><p>In our case, the gradient is</p><p><span class=\"math\">[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1); (\u2202)/(\u2202y)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1)]; = [4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x],]</span></p><p>and the Hessian is</p><p><span class=\"math\">[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202x)(2x^{2} + 6xy + 3x); (\u2202)/(\u2202y)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202y)(2x^{2} + 6xy + 3x)]; = [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x].]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]]</span></p><p>Starting with\n<span class=\"math\">[MATH: [1; 1]]</span> we have</p><p><span class=\"math\">[MATH: x_{1}|= x_{0} \u2212 [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]_{x_{0}}^{\u2212 1}[4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x]_{x_{0}}; = [1; 1] \u2212 [4(1) \u2212 4|4(1) + 6(1) + 3; 4(1) + 6(1) + 3|6(1)]^{\u2212 1}[4(1)(1) \u2212 4(1) + 3(1)^{2} + 3(1); 2(1)^{2} + 6(1)(1) + 3(1)]; = [1; 1] \u2212 [0|13; 13|6]^{\u2212 1}[6; 11]; = [1; 1] \u2212 (1)/(0 \u22c5 6 \u2212 13 \u22c5 13)[6|\u2212 13; \u2212 13|0][6; 11]; = [1; 1] + (1)/(169)[\u2212 107; \u2212 78]; \u2248 [0.367; 0.538].]</span></p>",
+            "readable_text": "The Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1); (\u2202)/(\u2202y)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1)]; = [4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202x)(2x^{2} + 6xy + 3x); (\u2202)/(\u2202y)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202y)(2x^{2} + 6xy + 3x)]; = [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]]\n\nStarting with\n[MATH: [1; 1]] we have\n\n[MATH: x_{1}|= x_{0} \u2212 [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]_{x_{0}}^{\u2212 1}[4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x]_{x_{0}}; = [1; 1] \u2212 [4(1) \u2212 4|4(1) + 6(1) + 3; 4(1) + 6(1) + 3|6(1)]^{\u2212 1}[4(1)(1) \u2212 4(1) + 3(1)^{2} + 3(1); 2(1)^{2} + 6(1)(1) + 3(1)]; = [1; 1] \u2212 [0|13; 13|6]^{\u2212 1}[6; 11]; = [1; 1] \u2212 (1)/(0 \u22c5 6 \u2212 13 \u22c5 13)[6|\u2212 13; \u2212 13|0][6; 11]; = [1; 1] + (1)/(169)[\u2212 107; \u2212 78]; \u2248 [0.367; 0.538].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = 2x^2y-2x^2+3xy^2+3xy+1.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.] Round your final answer to three decimal places (if needed).\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1); (\u2202)/(\u2202y)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1)]; = [4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202x)(2x^{2} + 6xy + 3x); (\u2202)/(\u2202y)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202y)(2x^{2} + 6xy + 3x)]; = [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]]\n\nStarting with\n[MATH: [1; 1]] we have\n\n[MATH: x_{1}|= x_{0} \u2212 [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]_{x_{0}}^{\u2212 1}[4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x]_{x_{0}}; = [1; 1] \u2212 [4(1) \u2212 4|4(1) + 6(1) + 3; 4(1) + 6(1) + 3|6(1)]^{\u2212 1}[4(1)(1) \u2212 4(1) + 3(1)^{2} + 3(1); 2(1)^{2} + 6(1)(1) + 3(1)]; = [1; 1] \u2212 [0|13; 13|6]^{\u2212 1}[6; 11]; = [1; 1] \u2212 (1)/(0 \u22c5 6 \u2212 13 \u22c5 13)[6|\u2212 13; \u2212 13|0][6; 11]; = [1; 1] + (1)/(169)[\u2212 107; \u2212 78]; \u2248 [0.367; 0.538].]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "256562",
+        "dom_id": "question-256562",
+        "selector": "#question-256562",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [0, 2] \u00d7 [0, 2]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = x^{2}y \u2212 2x \u2212 y^{2} + 1.]</span>\nCalculate one iteration of the Newton-Raphson process for optimization that starts at <span class=\"math\">[MATH: x_{0} = [1, 1]^{T}.]</span> Round your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{1} = []</span></p></td><td><p>\n<span class=\"math\">[MATH: 1.25]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 2] \u00d7 [0, 2]\u2286R^{2},] where\n[MATH: f(x, y) = x^{2}y \u2212 2x \u2212 y^{2} + 1.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{1} = [] | [MATH: 1.25] | [MATH: ]] |\n| [FREE_ENTRY 1] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 2] \u00d7 [0, 2]\u2286R^{2},] where\n[MATH: f(x, y) = x^{2}y \u2212 2x \u2212 y^{2} + 1.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{1} = [] | [MATH: 1.25] | [MATH: ]] |\n| [FREE_ENTRY 1] |"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "256534",
+        "dom_id": "question-256534",
+        "selector": "#question-256534",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = 3xy^{2} + 3x^{2} \u2212 8xy \u2212 x.]</span>\nCalculate one iteration of the Newton-Raphson process for optimization that starts at <span class=\"math\">[MATH: x_{0} = [1, 1]^{T}.]</span> Round your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{1} = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = 3xy^{2} + 3x^{2} \u2212 8xy \u2212 x.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{1} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = 3xy^{2} + 3x^{2} \u2212 8xy \u2212 x.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{1} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "230729",
+        "content_id": "16707",
+        "dom_id": "step-230729",
+        "selector": "#step-230729",
+        "step_anchor": "step-6",
+        "title": "Computing Two Iterations of the Newton-Raphson Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x,y)]</span> in the region <span class=\"math\">[MATH: [1,2] \\times [1,2] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: f(x,y) = x^3+y^3-3x-6y+9.]</span>\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at <span class=\"math\">[MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T]</span> if the first iteration of the algorithm gives <span class=\"math\">[MATH: \\mathbf x_1 = \\big[1, \\: 1.5 \\big]^T.]</span> Round your final answer to three decimal places (if needed).</p>",
+            "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [1,2] \\times [1,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = x^3+y^3-3x-6y+9.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T] if the first iteration of the algorithm gives [MATH: \\mathbf x_1 = \\big[1, \\: 1.5 \\big]^T.] Round your final answer to three decimal places (if needed).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson method of optimizing a multivariable function <span class=\"math\">[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]</span> is</p><p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]</span></p><p>where <span class=\"math\">[MATH: H(\\mathbf{x}_n)]</span> and <span class=\"math\">[MATH: \\nabla{f}(\\mathbf{x}_n)]</span> are the Hessian and gradient of <span class=\"math\">[MATH: f]</span>, respectively, evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p><p>In our case, the gradient is</p><p><span class=\"math\">[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9); (\u2202)/(\u2202y)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9)]; = [3x^{2} \u2212 3; 3y^{2} \u2212 6],]</span></p><p>and the Hessian is</p><p><span class=\"math\">[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(3x^{2} \u2212 3)|(\u2202)/(\u2202x)(3y^{2} \u2212 6); (\u2202)/(\u2202y)(3x^{2} \u2212 3)|(\u2202)/(\u2202y)(3y^{2} \u2212 6)]; = [6x|0; 0|6y].]</span></p><p>Therefore, our Newton-Raphson formula is</p><p><span class=\"math\">[MATH: [6x|0; 0|6y]]</span></p><p>For the second iteration, we have</p><p><span class=\"math\">[MATH: x_{2}|= x_{1} \u2212 [6x|0; 0|6y]_{x_{1}}^{\u2212 1}[3x^{2} \u2212 3; 3y^{2} \u2212 6]_{x_{1}}; = [1; 1.5] \u2212 [6(1)|0; 0|6(1.5)]^{\u2212 1}[3(1)^{2} \u2212 3; 3(1.5)^{2} \u2212 6]; = [1; 1.5] \u2212 [6|0; 0|9]^{\u2212 1}[0; 0.75]; = [1; 1.5] \u2212 (1)/(6 \u22c5 9 \u2212 0 \u22c5 0)[9|0; 0|6][0; 0.75]; = [1; 1.5] \u2212 (1)/(54)[0; 4.5]; \u2248 [1; 1.417].]</span></p>",
+            "readable_text": "The Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9); (\u2202)/(\u2202y)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9)]; = [3x^{2} \u2212 3; 3y^{2} \u2212 6],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(3x^{2} \u2212 3)|(\u2202)/(\u2202x)(3y^{2} \u2212 6); (\u2202)/(\u2202y)(3x^{2} \u2212 3)|(\u2202)/(\u2202y)(3y^{2} \u2212 6)]; = [6x|0; 0|6y].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [6x|0; 0|6y]]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 [6x|0; 0|6y]_{x_{1}}^{\u2212 1}[3x^{2} \u2212 3; 3y^{2} \u2212 6]_{x_{1}}; = [1; 1.5] \u2212 [6(1)|0; 0|6(1.5)]^{\u2212 1}[3(1)^{2} \u2212 3; 3(1.5)^{2} \u2212 6]; = [1; 1.5] \u2212 [6|0; 0|9]^{\u2212 1}[0; 0.75]; = [1; 1.5] \u2212 (1)/(6 \u22c5 9 \u2212 0 \u22c5 0)[9|0; 0|6][0; 0.75]; = [1; 1.5] \u2212 (1)/(54)[0; 4.5]; \u2248 [1; 1.417].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [1,2] \\times [1,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = x^3+y^3-3x-6y+9.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T] if the first iteration of the algorithm gives [MATH: \\mathbf x_1 = \\big[1, \\: 1.5 \\big]^T.] Round your final answer to three decimal places (if needed).\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9); (\u2202)/(\u2202y)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9)]; = [3x^{2} \u2212 3; 3y^{2} \u2212 6],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(3x^{2} \u2212 3)|(\u2202)/(\u2202x)(3y^{2} \u2212 6); (\u2202)/(\u2202y)(3x^{2} \u2212 3)|(\u2202)/(\u2202y)(3y^{2} \u2212 6)]; = [6x|0; 0|6y].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [6x|0; 0|6y]]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 [6x|0; 0|6y]_{x_{1}}^{\u2212 1}[3x^{2} \u2212 3; 3y^{2} \u2212 6]_{x_{1}}; = [1; 1.5] \u2212 [6(1)|0; 0|6(1.5)]^{\u2212 1}[3(1)^{2} \u2212 3; 3(1.5)^{2} \u2212 6]; = [1; 1.5] \u2212 [6|0; 0|9]^{\u2212 1}[0; 0.75]; = [1; 1.5] \u2212 (1)/(6 \u22c5 9 \u2212 0 \u22c5 0)[9|0; 0|6][0; 0.75]; = [1; 1.5] \u2212 (1)/(54)[0; 4.5]; \u2248 [1; 1.417].]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "256520",
+        "dom_id": "question-256520",
+        "selector": "#question-256520",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [\u2212 6, \u2212 3] \u00d7 [1, 2]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = 2xy^{2} \u2212 6x + 4y^{3} + 7.]</span>\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at <span class=\"math\">[MATH: x_{0} = [\u2212 6, 1]^{T}]</span> if the first iteration of the algorithm gives <span class=\"math\">[MATH: x_{1} = [\u2212 3, 2]^{T}.]</span> Round your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{2} = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"math\">[MATH: 1.75]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [\u2212 6, \u2212 3] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = 2xy^{2} \u2212 6x + 4y^{3} + 7.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [\u2212 6, 1]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [\u2212 3, 2]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [MATH: 1.75] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [\u2212 6, \u2212 3] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = 2xy^{2} \u2212 6x + 4y^{3} + 7.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [\u2212 6, 1]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [\u2212 3, 2]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [MATH: 1.75] |"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "256515",
+        "dom_id": "question-256515",
+        "selector": "#question-256515",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [1, 2] \u00d7 [\u2212 2, 1]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = 2x^{2}y + 4x^{2} \u2212 3xy \u2212 8x.]</span>\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at <span class=\"math\">[MATH: x_{0} = [1, \u2212 2]^{T}]</span> if the first iteration of the algorithm gives <span class=\"math\">[MATH: x_{1} = [2, 0]^{T}.]</span> Round your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: x_{2} = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [\u2212 2, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 2x^{2}y + 4x^{2} \u2212 3xy \u2212 8x.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, \u2212 2]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [2, 0]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [\u2212 2, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 2x^{2}y + 4x^{2} \u2212 3xy \u2212 8x.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, \u2212 2]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [2, 0]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "230730",
+        "content_id": "10940",
+        "dom_id": "step-230730",
+        "selector": "#step-230730",
+        "step_anchor": "step-9",
+        "title": "Alternative to Newton's Method for Multivariable Functions Using Linear Systems",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the standard Newton\u2019s method update for multivariable optimization is</p>",
+            "readable_text": "Recall that the standard Newton\u2019s method update for multivariable optimization is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large Hessian matrix by rewriting the update as a linear system instead.</p>",
+            "readable_text": "In higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large Hessian matrix by rewriting the update as a linear system instead.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s see how.</p>",
+            "readable_text": "Let\u2019s see how.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We start with the original update formula:</p>",
+            "readable_text": "We start with the original update formula:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we subtract <span class=\"math\">[MATH: \\mathbf{x}_n]</span> from both sides:</p>",
+            "readable_text": "Next, we subtract [MATH: \\mathbf{x}_n] from both sides:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = -[H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = -[H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, we multiply both sides by <span class=\"math\">[MATH: H_f(\\mathbf{x}_n){:}]</span></p>",
+            "readable_text": "Then, we multiply both sides by [MATH: H_f(\\mathbf{x}_n){:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla f(\\mathbf{x}_n)]</span></p>",
+            "readable_text": "[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla f(\\mathbf{x}_n)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is a linear system of equations. It\u2019s mathematically equivalent to the original update rule, but much better for actual computation, since we no longer need to invert the Hessian; we just need to solve for <span class=\"math\">[MATH: (\\mathbf{x}_{n+1} - \\mathbf{x}_n)]</span>. </p>",
+            "readable_text": "This is a linear system of equations. It\u2019s mathematically equivalent to the original update rule, but much better for actual computation, since we no longer need to invert the Hessian; we just need to solve for [MATH: (\\mathbf{x}_{n+1} - \\mathbf{x}_n)].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the standard Newton\u2019s method update for multivariable optimization is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).]\n\nContent:\nIn higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large Hessian matrix by rewriting the update as a linear system instead.\n\nContent:\nLet\u2019s see how.\n\nContent:\nWe start with the original update formula:\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]\n\nContent:\nNext, we subtract [MATH: \\mathbf{x}_n] from both sides:\n\nContent:\n[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = -[H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]\n\nContent:\nThen, we multiply both sides by [MATH: H_f(\\mathbf{x}_n){:}]\n\nContent:\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla f(\\mathbf{x}_n)]\n\nContent:\nThis is a linear system of equations. It\u2019s mathematically equivalent to the original update rule, but much better for actual computation, since we no longer need to invert the Hessian; we just need to solve for [MATH: (\\mathbf{x}_{n+1} - \\mathbf{x}_n)]."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "452234",
+        "content_id": "13152",
+        "dom_id": "step-452234",
+        "selector": "#step-452234",
+        "step_anchor": "step-10",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall the example we worked on, where we computed one iteration of the Newton\u2013Raphson method. </p>",
+            "readable_text": "Recall the example we worked on, where we computed one iteration of the Newton\u2013Raphson method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We aim to find a critical point of the function \n<span class=\"math\">[MATH: f(x,y) =x^2y-2xy^2+x^3-4x,]</span>\nin the region <span class=\"math\">[MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,]</span> starting at the point <span class=\"math\">[MATH: \\big[ 1, \\: 1 \\big]^T]</span>.</p>",
+            "readable_text": "We aim to find a critical point of the function\n[MATH: f(x,y) =x^2y-2xy^2+x^3-4x,]\nin the region [MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,] starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, let\u2019s carry out one iteration of Newton\u2013Raphson using linear systems.</p>",
+            "readable_text": "Now, let\u2019s carry out one iteration of Newton\u2013Raphson using linear systems.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Newton-Raphson method of optimizing a multivariable function <span class=\"math\">[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]</span> is</p>",
+            "readable_text": "The Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]</span></p>",
+            "readable_text": "[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: H_f(\\mathbf{x}_n)]</span> and <span class=\"math\">[MATH: \\nabla{f}(\\mathbf{x}_n)]</span> are the Hessian and gradient of <span class=\"math\">[MATH: f]</span>, respectively, evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p>",
+            "readable_text": "where [MATH: H_f(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Equivalently, at each iteration, the above equation can be rewritten as</p>",
+            "readable_text": "Equivalently, at each iteration, the above equation can be rewritten as",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]</span></p>",
+            "readable_text": "[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In our case, the gradient is</p>",
+            "readable_text": "In our case, the gradient is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]</span></p>",
+            "readable_text": "[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>and the Hessian is</p>",
+            "readable_text": "and the Hessian is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]</span></p>",
+            "readable_text": "[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, our Newton-Raphson system of equations is</p>",
+            "readable_text": "Therefore, our Newton-Raphson system of equations is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]</span></p>",
+            "readable_text": "[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Starting with <span class=\"math\">[MATH: [1; 1]]</span> we have</p>",
+            "readable_text": "Starting with [MATH: [1; 1]] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)](x_{1} \u2212 x_{0})|= \u2212 [2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; [8|\u2212 2; \u2212 2|\u2212 4](x_{1} \u2212 x_{0})|= [1; 3].]</span></p>",
+            "readable_text": "[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)](x_{1} \u2212 x_{0})|= \u2212 [2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; [8|\u2212 2; \u2212 2|\u2212 4](x_{1} \u2212 x_{0})|= [1; 3].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Solving this system of equations, we get <span class=\"math\">[MATH: [\u2212 1/18; \u2212 13/18]]</span> Hence,</p>",
+            "readable_text": "Solving this system of equations, we get [MATH: [\u2212 1/18; \u2212 13/18]] Hence,",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{1}|= x_{0} + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]</span></p>",
+            "readable_text": "[MATH: x_{1}|= x_{0} + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is the same result we obtained previously.</p>",
+            "readable_text": "This is the same result we obtained previously.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall the example we worked on, where we computed one iteration of the Newton\u2013Raphson method.\n\nContent:\nWe aim to find a critical point of the function\n[MATH: f(x,y) =x^2y-2xy^2+x^3-4x,]\nin the region [MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,] starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T].\n\nContent:\nNow, let\u2019s carry out one iteration of Newton\u2013Raphson using linear systems.\n\nContent:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: H_f(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nEquivalently, at each iteration, the above equation can be rewritten as\n\nContent:\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]\n\nContent:\nIn our case, the gradient is\n\nContent:\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]\n\nContent:\nand the Hessian is\n\nContent:\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]\n\nContent:\nTherefore, our Newton-Raphson system of equations is\n\nContent:\n[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]\n\nContent:\nStarting with [MATH: [1; 1]] we have\n\nContent:\n[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)](x_{1} \u2212 x_{0})|= \u2212 [2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; [8|\u2212 2; \u2212 2|\u2212 4](x_{1} \u2212 x_{0})|= [1; 3].]\n\nContent:\nSolving this system of equations, we get [MATH: [\u2212 1/18; \u2212 13/18]] Hence,\n\nContent:\n[MATH: x_{1}|= x_{0} + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]\n\nContent:\nThis is the same result we obtained previously."
+      },
+      {
+        "lesson_index": 11,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "230731",
+        "content_id": "16708",
+        "dom_id": "step-230731",
+        "selector": "#step-230731",
+        "step_anchor": "step-11",
+        "title": "Computing Iterations of the Newton-Raphson Method Using Linear Systems",
+        "key_prerequisites": [
+          {
+            "topic_id": "151",
+            "name": "Solving 2x2 Systems of Equations Using Gaussian Elimination",
+            "href": "/topics/151",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x,y)]</span> in the region <span class=\"math\">[MATH: [0,1]\\times[0,1] \\subseteq \\mathbb{R}^2,]</span> where\n<span class=\"math\">[MATH: f(x,y) = xy^2+3x^2-xy-x.]</span>\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point <span class=\"math\">[MATH: \\big[ 1, \\: 1 \\big]^T,]</span> and compute the components of the first iteration</p>",
+            "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,1]\\times[0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = xy^2+3x^2-xy-x.]\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T,] and compute the components of the first iteration",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The Newton-Raphson method of optimizing a multivariable function <span class=\"math\">[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]</span> is</p><p><span class=\"math\">[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]</span></p><p>where <span class=\"math\">[MATH: H(\\mathbf{x}_n)]</span> and <span class=\"math\">[MATH: \\nabla{f}(\\mathbf{x}_n)]</span> are the Hessian and gradient of <span class=\"math\">[MATH: f]</span>, respectively, evaluated at <span class=\"math\">[MATH: \\mathbf{x}_n.]</span></p><p>Equivalently, at each iteration, the above equation can be rewritten as</p><p><span class=\"math\">[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]</span></p><p>In our case, the gradient is</p><p><span class=\"math\">[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(xy^{2} + 3x^{2} \u2212 xy \u2212 x); (\u2202)/(\u2202y)(xy^{2} + 3x^{2} \u2212 xy \u2212 x)]; = [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x],]</span></p><p>and the Hessian is</p><p><span class=\"math\">[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202x)(2xy \u2212 x); (\u2202)/(\u2202y)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 x)]; = [6|2y \u2212 1; 2y \u2212 1|2x].]</span></p><p>Therefore, our Newton-Raphson system of equations is</p><p><span class=\"math\">[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]]</span></p><p>Starting with <span class=\"math\">[MATH: [1; 1]]</span> we have</p><p><span class=\"math\">[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x]_{x_{0}}; [6|2(1) \u2212 1; 2(1) \u2212 1|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} + 6(1) \u2212 (1) \u2212 1; 2(1)(1) \u2212 1]; [6|1; 1|2](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]</span></p><p>Solving this system of equations, we get <span class=\"math\">[MATH: [\u2212 9/11; \u2212 1/11]]</span> Hence,</p><p><span class=\"math\">[MATH: x_{1}|= x_{0} + [\u2212 9/11; \u2212 1/11]; = [1; 1] + [\u2212 9/11; \u2212 1/11]; \u2248 [0.182; 0.909].]</span></p>",
+            "readable_text": "The Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nEquivalently, at each iteration, the above equation can be rewritten as\n\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(xy^{2} + 3x^{2} \u2212 xy \u2212 x); (\u2202)/(\u2202y)(xy^{2} + 3x^{2} \u2212 xy \u2212 x)]; = [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202x)(2xy \u2212 x); (\u2202)/(\u2202y)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 x)]; = [6|2y \u2212 1; 2y \u2212 1|2x].]\n\nTherefore, our Newton-Raphson system of equations is\n\n[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]]\n\nStarting with [MATH: [1; 1]] we have\n\n[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x]_{x_{0}}; [6|2(1) \u2212 1; 2(1) \u2212 1|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} + 6(1) \u2212 (1) \u2212 1; 2(1)(1) \u2212 1]; [6|1; 1|2](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]\n\nSolving this system of equations, we get [MATH: [\u2212 9/11; \u2212 1/11]] Hence,\n\n[MATH: x_{1}|= x_{0} + [\u2212 9/11; \u2212 1/11]; = [1; 1] + [\u2212 9/11; \u2212 1/11]; \u2248 [0.182; 0.909].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,1]\\times[0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = xy^2+3x^2-xy-x.]\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T,] and compute the components of the first iteration\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nEquivalently, at each iteration, the above equation can be rewritten as\n\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(xy^{2} + 3x^{2} \u2212 xy \u2212 x); (\u2202)/(\u2202y)(xy^{2} + 3x^{2} \u2212 xy \u2212 x)]; = [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202x)(2xy \u2212 x); (\u2202)/(\u2202y)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 x)]; = [6|2y \u2212 1; 2y \u2212 1|2x].]\n\nTherefore, our Newton-Raphson system of equations is\n\n[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]]\n\nStarting with [MATH: [1; 1]] we have\n\n[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x]_{x_{0}}; [6|2(1) \u2212 1; 2(1) \u2212 1|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} + 6(1) \u2212 (1) \u2212 1; 2(1)(1) \u2212 1]; [6|1; 1|2](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]\n\nSolving this system of equations, we get [MATH: [\u2212 9/11; \u2212 1/11]] Hence,\n\n[MATH: x_{1}|= x_{0} + [\u2212 9/11; \u2212 1/11]; = [1; 1] + [\u2212 9/11; \u2212 1/11]; \u2248 [0.182; 0.909].]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "256567",
+        "dom_id": "question-256567",
+        "selector": "#question-256567",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = 5x^{2}y \u2212 4x + 2y^{3} \u2212 6y^{2}.]</span>\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point <span class=\"math\">[MATH: [1, 1]^{T}.]</span><span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: ](x_{1} \u2212 x_{0}) = []</span></p></td><td><p><span class=\"math\">[MATH: \u2212 6]</span></p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 5x^{2}y \u2212 4x + 2y^{3} \u2212 6y^{2}.]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T}.]| [MATH: [] | [FREE_ENTRY 1] | [MATH: 10] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [MATH: \u2212 6] | [MATH: ]] |\n| [MATH: 10] | [FREE_ENTRY 2] | [FREE_ENTRY 3] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 5x^{2}y \u2212 4x + 2y^{3} \u2212 6y^{2}.]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T}.]| [MATH: [] | [FREE_ENTRY 1] | [MATH: 10] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [MATH: \u2212 6] | [MATH: ]] |\n| [MATH: 10] | [FREE_ENTRY 2] | [FREE_ENTRY 3] |"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "256564",
+        "dom_id": "question-256564",
+        "selector": "#question-256564",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to find a critical point of the function <span class=\"math\">[MATH: f(x, y)]</span> in the region <span class=\"math\">[MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},]</span> where\n<span class=\"math\">[MATH: f(x, y) = 2x^{2}y \u2212 4xy^{2} \u2212 x + 6y^{3}.]</span>\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point <span class=\"math\">[MATH: [1, 0]^{T},]</span> and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).<span class=\"free-response-line\"><table><tr><td><p><span class=\"math\">[MATH: []</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td><td><p><span class=\"math\">[MATH: ](x_{1} \u2212 x_{0}) = []</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>\n</p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span>\n</p></td><td><p><span class=\"math\">[MATH: \u2212 8]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td></tr></table>\n<table><tr><td><p><span class=\"math\">[MATH: x_{1} = []</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: ]]</span></p></td></tr><tr><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span>\n</p></td></tr></table></span></p>",
+          "readable_text": "Suppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 2x^{2}y \u2212 4xy^{2} \u2212 x + 6y^{3}.]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 0]^{T},] and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).| [MATH: [] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 2] | [MATH: ]] |\n| [FREE_ENTRY 3] | [MATH: \u2212 8] | [MATH: \u2212 2] |\n\n| [MATH: x_{1} = [] | [MATH: 1] | [MATH: ]] |\n| [FREE_ENTRY 4] |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 2x^{2}y \u2212 4xy^{2} \u2212 x + 6y^{3}.]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 0]^{T},] and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).| [MATH: [] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 2] | [MATH: ]] |\n| [FREE_ENTRY 3] | [MATH: \u2212 8] | [MATH: \u2212 2] |\n\n| [MATH: x_{1} = [] | [MATH: 1] | [MATH: ]] |\n| [FREE_ENTRY 4] |"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn a previous lesson, we saw how Newton\u2019s method can be used to find local minima or maxima of a smooth function [MATH: f : \\mathbb{R} \\to \\mathbb{R}] by approximating the function near the current guess with a parabola.\n\nContent:\nRecall that in one variable, Newton\u2019s update rule is\n\nContent:\n[MATH: x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)},]\n\nContent:\nwhere [MATH: f'(x)] is the first derivative, and [MATH: f''(x)] is the second derivative.\n\nContent:\nTo generalize this idea to higher dimensions, we need analogues of the first and second derivatives.\n\nContent:\nRecall that the gradient vector [MATH: \\nabla f(\\mathbf{x})] generalizes the first derivative to multivariable functions, and the Hessian matrix [MATH: H_f(\\mathbf{x})] generalizes the second derivative.\n\nContent:\nLike before, we aim to find critical points, which are the points where the gradient vanishes:\n[MATH: \\nabla f(\\mathbf{x}) = \\mathbf{0}]\n\nContent:\nSo once again, optimization becomes a root-finding problem, but now for the gradient vector [MATH: \\nabla f(\\mathbf{x}).]\n\nContent:\nJust like in one dimension, we approximate [MATH: f(\\mathbf{x})] near our current guess [MATH: \\mathbf{x}_n] using a second-order Taylor expansion\n\nContent:\n[MATH: f(\\mathbf{x}) \\approx f(\\mathbf{x}_n) + \\nabla f(\\mathbf{x}_n)^T (\\mathbf{x} - \\mathbf{x}_n) + \\frac{1}{2} (\\mathbf{x} - \\mathbf{x}_n)^T H_f(\\mathbf{x}_n) (\\mathbf{x} - \\mathbf{x}_n).]\n\nContent:\nThis is the multivariable analogue of a parabola, a quadratic surface.\n\nContent:\nTo find the minimum of this quadratic surface, we compute its gradient with respect to [MATH: \\mathbf{x}] and set it equal to zero. The gradient of the approximation is\n\nContent:\n[MATH: \\nabla f(\\mathbf{x}) \\approx \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n).]\n\nContent:\nWe then set the gradient equal to the zero vector:\n[MATH: \\nabla f(\\mathbf{x}_n) + H_f(\\mathbf{x}_n)(\\mathbf{x} - \\mathbf{x}_n) = \\mathbf{0}]\n\nContent:\nFinally, we isolate [MATH: \\mathbf{x},] as follows:\n\nContent:\n[MATH: H_{f}(x_{n})(x \u2212 x_{n})|= \u2212 \u2207f(x_{n}); x \u2212 x_{n}|= \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n}); x|= x_{n} \u2212 [H_{f}(x_{n})]^{\u2212 1}\u2207f(x_{n})]\n\nContent:\nThis new value becomes our next guess, which we call [MATH: \\mathbf{x}_{n+1}.] So, we write\n\nContent:\n[MATH: \\bbox[4pt,border: 1px solid lightgray]{\\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).}]\n\nContent:\nNewton\u2019s method can be extremely fast, but only under the following conditions:\n\nContent:\n- The function [MATH: f] is twice continuously differentiable (i.e., smooth).\n- The starting point [MATH: \\mathbf{x}_0] is close to a critical point.\n- The Hessian [MATH: H_f(\\mathbf{x})] is invertible and preferably positive definite near the solution.\n\nContent:\nWhen these conditions are met, Newton\u2019s method often converges in just a few iterations.\n\n---\n\nItem 2 \u2014 Tutorial: A Worked Example\n\nContent:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) =x^2y-2xy^2+x^3-4x.]\n\nContent:\nLet\u2019s calculate one iteration of the Newton-Raphson method, starting at the point [MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.]\n\nContent:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: H_f(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nIn our case, the gradient is\n\nContent:\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]\n\nContent:\nand the Hessian is\n\nContent:\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]\n\nContent:\nTherefore, our Newton-Raphson formula is\n\nContent:\n[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]\n\nContent:\nStarting with\n[MATH: [1; 1]] we have\n\nContent:\n[MATH: x_{1}|= x_{0} \u2212 [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}^{\u2212 1}[2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; = [1; 1] \u2212 [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)]^{\u2212 1}[2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; = [1; 1] \u2212 [8|\u2212 2; \u2212 2|\u2212 4]^{\u2212 1}[\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/((8) \u22c5 (\u2212 4) \u2212 (\u2212 2) \u22c5 (\u2212 2))[\u2212 4|2; 2|8][\u2212 1; \u2212 3]; = [1; 1] \u2212 (1)/(\u2212 36)[\u2212 2; \u2212 26]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]\n\n---\n\nItem 3 \u2014 Example: Computing One Iteration of the Newton-Raphson Method\n\nExample Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,1] \\times [0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = 2x^2y-2x^2+3xy^2+3xy+1.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 1 \\big]^T.] Round your final answer to three decimal places (if needed).\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1); (\u2202)/(\u2202y)(2x^{2}y \u2212 2x^{2} + 3xy^{2} + 3xy + 1)]; = [4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202x)(2x^{2} + 6xy + 3x); (\u2202)/(\u2202y)(4xy \u2212 4x + 3y^{2} + 3y)|(\u2202)/(\u2202y)(2x^{2} + 6xy + 3x)]; = [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]]\n\nStarting with\n[MATH: [1; 1]] we have\n\n[MATH: x_{1}|= x_{0} \u2212 [4y \u2212 4|4x + 6y + 3; 4x + 6y + 3|6x]_{x_{0}}^{\u2212 1}[4xy \u2212 4x + 3y^{2} + 3y; 2x^{2} + 6xy + 3x]_{x_{0}}; = [1; 1] \u2212 [4(1) \u2212 4|4(1) + 6(1) + 3; 4(1) + 6(1) + 3|6(1)]^{\u2212 1}[4(1)(1) \u2212 4(1) + 3(1)^{2} + 3(1); 2(1)^{2} + 6(1)(1) + 3(1)]; = [1; 1] \u2212 [0|13; 13|6]^{\u2212 1}[6; 11]; = [1; 1] \u2212 (1)/(0 \u22c5 6 \u2212 13 \u22c5 13)[6|\u2212 13; \u2212 13|0][6; 11]; = [1; 1] + (1)/(169)[\u2212 107; \u2212 78]; \u2248 [0.367; 0.538].]\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 2] \u00d7 [0, 2]\u2286R^{2},] where\n[MATH: f(x, y) = x^{2}y \u2212 2x \u2212 y^{2} + 1.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{1} = [] | [MATH: 1.25] | [MATH: ]] |\n| [FREE_ENTRY 1] |\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = 3xy^{2} + 3x^{2} \u2212 8xy \u2212 x.]\nCalculate one iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, 1]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{1} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |\n\n---\n\nItem 6 \u2014 Example: Computing Two Iterations of the Newton-Raphson Method\n\nExample Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [1,2] \\times [1,2] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = x^3+y^3-3x-6y+9.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: \\mathbf x_0 = \\big[1, \\: 2 \\big]^T] if the first iteration of the algorithm gives [MATH: \\mathbf x_1 = \\big[1, \\: 1.5 \\big]^T.] Round your final answer to three decimal places (if needed).\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9); (\u2202)/(\u2202y)(x^{3} + y^{3} \u2212 3x \u2212 6y + 9)]; = [3x^{2} \u2212 3; 3y^{2} \u2212 6],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(3x^{2} \u2212 3)|(\u2202)/(\u2202x)(3y^{2} \u2212 6); (\u2202)/(\u2202y)(3x^{2} \u2212 3)|(\u2202)/(\u2202y)(3y^{2} \u2212 6)]; = [6x|0; 0|6y].]\n\nTherefore, our Newton-Raphson formula is\n\n[MATH: [6x|0; 0|6y]]\n\nFor the second iteration, we have\n\n[MATH: x_{2}|= x_{1} \u2212 [6x|0; 0|6y]_{x_{1}}^{\u2212 1}[3x^{2} \u2212 3; 3y^{2} \u2212 6]_{x_{1}}; = [1; 1.5] \u2212 [6(1)|0; 0|6(1.5)]^{\u2212 1}[3(1)^{2} \u2212 3; 3(1.5)^{2} \u2212 6]; = [1; 1.5] \u2212 [6|0; 0|9]^{\u2212 1}[0; 0.75]; = [1; 1.5] \u2212 (1)/(6 \u22c5 9 \u2212 0 \u22c5 0)[9|0; 0|6][0; 0.75]; = [1; 1.5] \u2212 (1)/(54)[0; 4.5]; \u2248 [1; 1.417].]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [\u2212 6, \u2212 3] \u00d7 [1, 2]\u2286R^{2},] where\n[MATH: f(x, y) = 2xy^{2} \u2212 6x + 4y^{3} + 7.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [\u2212 6, 1]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [\u2212 3, 2]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [MATH: 1.75] |\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [1, 2] \u00d7 [\u2212 2, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 2x^{2}y + 4x^{2} \u2212 3xy \u2212 8x.]\nCalculate the second iteration of the Newton-Raphson process for optimization that starts at [MATH: x_{0} = [1, \u2212 2]^{T}] if the first iteration of the algorithm gives [MATH: x_{1} = [2, 0]^{T}.] Round your final answer to three decimal places (if needed).| [MATH: x_{2} = [] | [FREE_ENTRY 1] | [MATH: ]] |\n| [FREE_ENTRY 2] |\n\n---\n\nItem 9 \u2014 Tutorial: Alternative to Newton's Method for Multivariable Functions Using Linear Systems\n\nContent:\nRecall that the standard Newton\u2019s method update for multivariable optimization is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n).]\n\nContent:\nIn higher dimensions, it\u2019s often more useful to avoid calculating the inverse of a large Hessian matrix by rewriting the update as a linear system instead.\n\nContent:\nLet\u2019s see how.\n\nContent:\nWe start with the original update formula:\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]\n\nContent:\nNext, we subtract [MATH: \\mathbf{x}_n] from both sides:\n\nContent:\n[MATH: \\mathbf{x}_{n+1} - \\mathbf{x}_n = -[H_f(\\mathbf{x}_n)]^{-1} \\nabla f(\\mathbf{x}_n)]\n\nContent:\nThen, we multiply both sides by [MATH: H_f(\\mathbf{x}_n){:}]\n\nContent:\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla f(\\mathbf{x}_n)]\n\nContent:\nThis is a linear system of equations. It\u2019s mathematically equivalent to the original update rule, but much better for actual computation, since we no longer need to invert the Hessian; we just need to solve for [MATH: (\\mathbf{x}_{n+1} - \\mathbf{x}_n)].\n\n---\n\nItem 10 \u2014 Tutorial: A Worked Example\n\nContent:\nRecall the example we worked on, where we computed one iteration of the Newton\u2013Raphson method.\n\nContent:\nWe aim to find a critical point of the function\n[MATH: f(x,y) =x^2y-2xy^2+x^3-4x,]\nin the region [MATH: [0,2]\\times[0,2] \\subseteq \\mathbb{R}^2,] starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T].\n\nContent:\nNow, let\u2019s carry out one iteration of Newton\u2013Raphson using linear systems.\n\nContent:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\nContent:\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nContent:\nwhere [MATH: H_f(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nContent:\nEquivalently, at each iteration, the above equation can be rewritten as\n\nContent:\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]\n\nContent:\nIn our case, the gradient is\n\nContent:\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x); (\u2202)/(\u2202y)(x^{2}y \u2212 2xy^{2} + x^{3} \u2212 4x)]; = [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy],]\n\nContent:\nand the Hessian is\n\nContent:\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202x)(x^{2} \u2212 4xy); (\u2202)/(\u2202y)(2xy \u2212 2y^{2} + 3x^{2} \u2212 4)|(\u2202)/(\u2202y)(x^{2} \u2212 4xy)]; = [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x].]\n\nContent:\nTherefore, our Newton-Raphson system of equations is\n\nContent:\n[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]]\n\nContent:\nStarting with [MATH: [1; 1]] we have\n\nContent:\n[MATH: [2y + 6x|2x \u2212 4y; 2x \u2212 4y|\u2212 4x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [2xy \u2212 2y^{2} + 3x^{2} \u2212 4; x^{2} \u2212 4xy]_{x_{0}}; [2(1) + 6(1)|2(1) \u2212 4(1); 2(1) \u2212 4(1)|\u2212 4(1)](x_{1} \u2212 x_{0})|= \u2212 [2(1)(1) \u2212 2(1)^{2} + 3(1)^{2} \u2212 4; (1)^{2} \u2212 4(1)(1)]; [8|\u2212 2; \u2212 2|\u2212 4](x_{1} \u2212 x_{0})|= [1; 3].]\n\nContent:\nSolving this system of equations, we get [MATH: [\u2212 1/18; \u2212 13/18]] Hence,\n\nContent:\n[MATH: x_{1}|= x_{0} + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [1; 1] + [\u2212 (1)/(18); \u2212 (13)/(18)]; = [(17)/(18); (5)/(18)].]\n\nContent:\nThis is the same result we obtained previously.\n\n---\n\nItem 11 \u2014 Example: Computing Iterations of the Newton-Raphson Method Using Linear Systems\n\nExample Prompt:\nSuppose we wish to find a critical point of the function [MATH: f(x,y)] in the region [MATH: [0,1]\\times[0,1] \\subseteq \\mathbb{R}^2,] where\n[MATH: f(x,y) = xy^2+3x^2-xy-x.]\nFind the matrix equation that defines the first iteration of the Newton-Raphson process starting at the point [MATH: \\big[ 1, \\: 1 \\big]^T,] and compute the components of the first iteration\n\nContent:\nEXPLANATION\n\nExplanation:\nThe Newton-Raphson method of optimizing a multivariable function [MATH: f : \\mathbb{R}^n \\to \\mathbb{R}] is\n\n[MATH: \\mathbf{x}_{n+1} = \\mathbf{x}_n - [H_f(\\mathbf{x}_n)]^{-1} \\nabla{f}(\\mathbf{x}_n),]\n\nwhere [MATH: H(\\mathbf{x}_n)] and [MATH: \\nabla{f}(\\mathbf{x}_n)] are the Hessian and gradient of [MATH: f], respectively, evaluated at [MATH: \\mathbf{x}_n.]\n\nEquivalently, at each iteration, the above equation can be rewritten as\n\n[MATH: H_f(\\mathbf{x}_n)(\\mathbf{x}_{n+1} - \\mathbf{x}_n) = -\\nabla{f}(\\mathbf{x}_n).]\n\nIn our case, the gradient is\n\n[MATH: \u2207f(x)|= [(\u2202)/(\u2202x)(xy^{2} + 3x^{2} \u2212 xy \u2212 x); (\u2202)/(\u2202y)(xy^{2} + 3x^{2} \u2212 xy \u2212 x)]; = [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x],]\n\nand the Hessian is\n\n[MATH: H_{f}(x)|= [(\u2202)/(\u2202x)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202x)(2xy \u2212 x); (\u2202)/(\u2202y)(y^{2} + 6x \u2212 y \u2212 1)|(\u2202)/(\u2202y)(2xy \u2212 x)]; = [6|2y \u2212 1; 2y \u2212 1|2x].]\n\nTherefore, our Newton-Raphson system of equations is\n\n[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]]\n\nStarting with [MATH: [1; 1]] we have\n\n[MATH: [6|2y \u2212 1; 2y \u2212 1|2x]_{x_{0}}(x_{1} \u2212 x_{0})|= \u2212 [y^{2} + 6x \u2212 y \u2212 1; 2xy \u2212 x]_{x_{0}}; [6|2(1) \u2212 1; 2(1) \u2212 1|2(1)](x_{1} \u2212 x_{0})|= \u2212 [(1)^{2} + 6(1) \u2212 (1) \u2212 1; 2(1)(1) \u2212 1]; [6|1; 1|2](x_{1} \u2212 x_{0})|= [\u2212 5; \u2212 1].]\n\nSolving this system of equations, we get [MATH: [\u2212 9/11; \u2212 1/11]] Hence,\n\n[MATH: x_{1}|= x_{0} + [\u2212 9/11; \u2212 1/11]; = [1; 1] + [\u2212 9/11; \u2212 1/11]; \u2248 [0.182; 0.909].]\n\n---\n\nItem 12 \u2014 Question 5\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 5x^{2}y \u2212 4x + 2y^{3} \u2212 6y^{2}.]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 1]^{T}.]| [MATH: [] | [FREE_ENTRY 1] | [MATH: 10] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [MATH: \u2212 6] | [MATH: ]] |\n| [MATH: 10] | [FREE_ENTRY 2] | [FREE_ENTRY 3] |\n\n---\n\nItem 13 \u2014 Question 6\n\nPrompt:\nSuppose we wish to find a critical point of the function [MATH: f(x, y)] in the region [MATH: [0, 1] \u00d7 [0, 1]\u2286R^{2},] where\n[MATH: f(x, y) = 2x^{2}y \u2212 4xy^{2} \u2212 x + 6y^{3}.]\nFill in the blanks in the matrix equation below that defines the first iteration of the Newton-Raphson process starting at the point [MATH: [1, 0]^{T},] and compute the components of the first iteration, rounding your final answer to three decimal places (if needed).| [MATH: [] | [MATH: 0] | [FREE_ENTRY 1] | [MATH: ](x_{1} \u2212 x_{0}) = [] | [FREE_ENTRY 2] | [MATH: ]] |\n| [FREE_ENTRY 3] | [MATH: \u2212 8] | [MATH: \u2212 2] |\n\n| [MATH: x_{1} = [] | [MATH: 1] | [MATH: ]] |\n| [FREE_ENTRY 4] |"
+  }
+}

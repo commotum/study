@@ -1,0 +1,1365 @@
+{
+  "schema_version": 2,
+  "topic_id": "5527",
+  "topic_title": "Gradients With Respect to a Variable Subset",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5527/Source/5527.html",
+  "source_url": "https://mathacademy.com/topics/5527",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "463319",
+        "dom_id": "sectionLink-463319",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-463319"
+      },
+      {
+        "index": 2,
+        "step_id": "463320",
+        "dom_id": "sectionLink-463320",
+        "name": "",
+        "title": "The Subset Gradient",
+        "selector": "#sectionLink-463320"
+      },
+      {
+        "index": 3,
+        "step_id": "463321",
+        "dom_id": "sectionLink-463321",
+        "name": "",
+        "title": "Computing Basic Subset Gradients",
+        "selector": "#sectionLink-463321"
+      },
+      {
+        "index": 4,
+        "step_id": "463324",
+        "dom_id": "sectionLink-463324",
+        "name": "",
+        "title": "Variable Groups",
+        "selector": "#sectionLink-463324"
+      },
+      {
+        "index": 5,
+        "step_id": "463325",
+        "dom_id": "sectionLink-463325",
+        "name": "",
+        "title": "Computing Parameter Subset Gradients",
+        "selector": "#sectionLink-463325"
+      },
+      {
+        "index": 6,
+        "step_id": "463328",
+        "dom_id": "sectionLink-463328",
+        "name": "",
+        "title": "Computing Vector Subset Gradients",
+        "selector": "#sectionLink-463328"
+      },
+      {
+        "index": 7,
+        "step_id": "463331",
+        "dom_id": "sectionLink-463331",
+        "name": "",
+        "title": "Second-Order Derivatives",
+        "selector": "#sectionLink-463331"
+      },
+      {
+        "index": 8,
+        "step_id": "463332",
+        "dom_id": "sectionLink-463332",
+        "name": "",
+        "title": "Computing Second-Order Derivatives",
+        "selector": "#sectionLink-463332"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2824",
+        "name": "The Second Derivative of a Multivariable Function",
+        "href": "/topics/the-second-derivative-of-a-multivariable-function-2824"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 16,
+    "step_count": 8,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "463319",
+        "content_id": "11970",
+        "dom_id": "step-463319",
+        "selector": "#step-463319",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the gradient of a function \n<span class=\"math\">[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]</span>\ntells us how the function changes with respect to each of its input variables. It collects all the partial derivatives into a single vector:</p>",
+            "readable_text": "Recall that the gradient of a function\n[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]\ntells us how the function changes with respect to each of its input variables. It collects all the partial derivatives into a single vector:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202f)/(\u2202x_{1}); (\u2202f)/(\u2202x_{2}); \u22ee; (\u2202f)/(\u2202x_{n})]]</span> </p>",
+            "readable_text": "[MATH: [(\u2202f)/(\u2202x_{1}); (\u2202f)/(\u2202x_{2}); \u22ee; (\u2202f)/(\u2202x_{n})]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This vector points in the direction of the <em>steepest increase</em> of the function, and its components describe how sensitive <span class=\"math\">[MATH: f]</span> is to changes in each variable <span class=\"math\">[MATH: x_1, x_2, \\dots, x_n.]</span></p>",
+            "readable_text": "This vector points in the direction of the steepest increase of the function, and its components describe how sensitive [MATH: f] is to changes in each variable [MATH: x_1, x_2, \\dots, x_n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In other words, <span class=\"math\">[MATH: \\nabla f]</span> gives us a complete picture of how <span class=\"math\">[MATH: f]</span> behaves locally around a point, not just in one direction, but in every direction.</p>",
+            "readable_text": "In other words, [MATH: \\nabla f] gives us a complete picture of how [MATH: f] behaves locally around a point, not just in one direction, but in every direction.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>But sometimes, we\u2019re not interested in how the function behaves in every direction. Maybe some variables are being held fixed, or we just care about how the function responds to changes in a few specific inputs. In that case, we don\u2019t need the full gradient. We only need the derivatives with respect to the variables we care about.</p>",
+            "readable_text": "But sometimes, we\u2019re not interested in how the function behaves in every direction. Maybe some variables are being held fixed, or we just care about how the function responds to changes in a few specific inputs. In that case, we don\u2019t need the full gradient. We only need the derivatives with respect to the variables we care about.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This idea leads us to the concept of the <strong>subset gradient</strong>, which captures how a function changes with respect to only a chosen group of variables while treating the others as constant.</p>",
+            "readable_text": "This idea leads us to the concept of the subset gradient, which captures how a function changes with respect to only a chosen group of variables while treating the others as constant.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we will learn what subset gradients are, and how to compute them. Let&#x27;s look at a concrete example in the next slide.</p>",
+            "readable_text": "In this lesson, we will learn what subset gradients are, and how to compute them. Let's look at a concrete example in the next slide.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the gradient of a function\n[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]\ntells us how the function changes with respect to each of its input variables. It collects all the partial derivatives into a single vector:\n\nContent:\n[MATH: [(\u2202f)/(\u2202x_{1}); (\u2202f)/(\u2202x_{2}); \u22ee; (\u2202f)/(\u2202x_{n})]]\n\nContent:\nThis vector points in the direction of the steepest increase of the function, and its components describe how sensitive [MATH: f] is to changes in each variable [MATH: x_1, x_2, \\dots, x_n.]\n\nContent:\nIn other words, [MATH: \\nabla f] gives us a complete picture of how [MATH: f] behaves locally around a point, not just in one direction, but in every direction.\n\nContent:\nBut sometimes, we\u2019re not interested in how the function behaves in every direction. Maybe some variables are being held fixed, or we just care about how the function responds to changes in a few specific inputs. In that case, we don\u2019t need the full gradient. We only need the derivatives with respect to the variables we care about.\n\nContent:\nThis idea leads us to the concept of the subset gradient, which captures how a function changes with respect to only a chosen group of variables while treating the others as constant.\n\nContent:\nIn this lesson, we will learn what subset gradients are, and how to compute them. Let's look at a concrete example in the next slide."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "463320",
+        "content_id": "11971",
+        "dom_id": "step-463320",
+        "selector": "#step-463320",
+        "step_anchor": "step-2",
+        "title": "The Subset Gradient",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A <strong>subset gradient</strong> is the vector formed by taking only the partial derivatives of a function with respect to a chosen subset of variables.</p>",
+            "readable_text": "A subset gradient is the vector formed by taking only the partial derivatives of a function with respect to a chosen subset of variables.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s look at an example to understand how a subset gradient works in practice.</p>",
+            "readable_text": "Let\u2019s look at an example to understand how a subset gradient works in practice.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have the function<br/><span class=\"math\">[MATH: f(x, y, z) = x^2 y + y z^2.]</span><br/>This function depends on three variables, and its full gradient is</p>",
+            "readable_text": "Suppose we have the function\n[MATH: f(x, y, z) = x^2 y + y z^2.]\nThis function depends on three variables, and its full gradient is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y); (\u2202f)/(\u2202z)]]</span></p>",
+            "readable_text": "[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y); (\u2202f)/(\u2202z)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The full gradient tells us how <span class=\"math\">[MATH: f]</span> responds to changes in all three directions. But in some situations, we may only care about how <span class=\"math\">[MATH: f]</span> changes when we vary a few of the variables, for example, just <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y.]</span></p>",
+            "readable_text": "The full gradient tells us how [MATH: f] responds to changes in all three directions. But in some situations, we may only care about how [MATH: f] changes when we vary a few of the variables, for example, just [MATH: x] and [MATH: y.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If that\u2019s the case, we compute a subset gradient, which focuses only on the variables of interest. In this case, we compute</p>",
+            "readable_text": "If that\u2019s the case, we compute a subset gradient, which focuses only on the variables of interest. In this case, we compute",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y)]]</span></p>",
+            "readable_text": "[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y)]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Here, we are treating <span class=\"math\">[MATH: z]</span> as a constant, as if it were fixed and not changing, while taking partial derivatives with respect to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> only. This is the same idea that underlies partial derivatives more generally: we hold all other variables constant except the ones we are differentiating with respect to.</p>",
+            "readable_text": "Here, we are treating [MATH: z] as a constant, as if it were fixed and not changing, while taking partial derivatives with respect to [MATH: x] and [MATH: y] only. This is the same idea that underlies partial derivatives more generally: we hold all other variables constant except the ones we are differentiating with respect to.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Subset gradients are especially useful in problems where only some variables are being updated. They allow us to focus on the directions that matter for a particular step or subproblem, without being distracted by variables we are not actively changing.</p>",
+            "readable_text": "Subset gradients are especially useful in problems where only some variables are being updated. They allow us to focus on the directions that matter for a particular step or subproblem, without being distracted by variables we are not actively changing.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nA subset gradient is the vector formed by taking only the partial derivatives of a function with respect to a chosen subset of variables.\n\nContent:\nLet\u2019s look at an example to understand how a subset gradient works in practice.\n\nContent:\nSuppose we have the function\n[MATH: f(x, y, z) = x^2 y + y z^2.]\nThis function depends on three variables, and its full gradient is\n\nContent:\n[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y); (\u2202f)/(\u2202z)]]\n\nContent:\nThe full gradient tells us how [MATH: f] responds to changes in all three directions. But in some situations, we may only care about how [MATH: f] changes when we vary a few of the variables, for example, just [MATH: x] and [MATH: y.]\n\nContent:\nIf that\u2019s the case, we compute a subset gradient, which focuses only on the variables of interest. In this case, we compute\n\nContent:\n[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y)]]\n\nContent:\nHere, we are treating [MATH: z] as a constant, as if it were fixed and not changing, while taking partial derivatives with respect to [MATH: x] and [MATH: y] only. This is the same idea that underlies partial derivatives more generally: we hold all other variables constant except the ones we are differentiating with respect to.\n\nContent:\nSubset gradients are especially useful in problems where only some variables are being updated. They allow us to focus on the directions that matter for a particular step or subproblem, without being distracted by variables we are not actively changing."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "463321",
+        "content_id": "17532",
+        "dom_id": "step-463321",
+        "selector": "#step-463321",
+        "step_anchor": "step-3",
+        "title": "Computing Basic Subset Gradients",
+        "key_prerequisites": [
+          {
+            "topic_id": "1934",
+            "name": "The Gradient Vector",
+            "href": "/topics/1934",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(x,y,z,w) = xyzw,]</span> compute <span class=\"math\">[MATH: \\nabla_{x,w} \\: f.]</span></p>",
+            "readable_text": "Given the function [MATH: f(x,y,z,w) = xyzw,] compute [MATH: \\nabla_{x,w} \\: f.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To compute <span class=\"math\">[MATH: \\nabla_{x,w} \\: f]</span>, we take partial derivatives with respect to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: w]</span> only.</p><p><span class=\"math\">[MATH: (\u2202f)/(\u2202x) = (\u2202)/(\u2202x)(xyzw)|= yzw; (\u2202f)/(\u2202w) = (\u2202)/(\u2202w)(xyzw)|= xyz]</span></p><p>Therefore, we obtain the following:\n<span class=\"math\">[MATH: \u2207_{x, w}f|= [(\u2202f)/(\u2202x); (\u2202f)/(\u2202w)]; = [yzw; xyz]]</span></p>",
+            "readable_text": "To compute [MATH: \\nabla_{x,w} \\: f], we take partial derivatives with respect to [MATH: x] and [MATH: w] only.\n\n[MATH: (\u2202f)/(\u2202x) = (\u2202)/(\u2202x)(xyzw)|= yzw; (\u2202f)/(\u2202w) = (\u2202)/(\u2202w)(xyzw)|= xyz]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{x, w}f|= [(\u2202f)/(\u2202x); (\u2202f)/(\u2202w)]; = [yzw; xyz]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven the function [MATH: f(x,y,z,w) = xyzw,] compute [MATH: \\nabla_{x,w} \\: f.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo compute [MATH: \\nabla_{x,w} \\: f], we take partial derivatives with respect to [MATH: x] and [MATH: w] only.\n\n[MATH: (\u2202f)/(\u2202x) = (\u2202)/(\u2202x)(xyzw)|= yzw; (\u2202f)/(\u2202w) = (\u2202)/(\u2202w)(xyzw)|= xyz]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{x, w}f|= [(\u2202f)/(\u2202x); (\u2202f)/(\u2202w)]; = [yzw; xyz]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "263486",
+        "dom_id": "question-263486",
+        "selector": "#question-263486",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(x, y, z) = x^{2}y + yz^{2},]</span> compute <span class=\"math\">[MATH: \u2207_{x, y}f.]</span><br/><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{x, y}f =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function [MATH: f(x, y, z) = x^{2}y + yz^{2},] compute [MATH: \u2207_{x, y}f.]\n\n| [MATH: \u2207_{x, y}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function [MATH: f(x, y, z) = x^{2}y + yz^{2},] compute [MATH: \u2207_{x, y}f.]\n\n| [MATH: \u2207_{x, y}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "264818",
+        "dom_id": "question-264818",
+        "selector": "#question-264818",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(x, y, z, w) = xy^{2} + yz^{2} + zw^{2},]</span> compute <span class=\"math\">[MATH: \u2207_{x, y}f.]</span><br/><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{x, y}f =]</span></p></td><td></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function [MATH: f(x, y, z, w) = xy^{2} + yz^{2} + zw^{2},] compute [MATH: \u2207_{x, y}f.]\n\n| [MATH: \u2207_{x, y}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function [MATH: f(x, y, z, w) = xy^{2} + yz^{2} + zw^{2},] compute [MATH: \u2207_{x, y}f.]\n\n| [MATH: \u2207_{x, y}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "463324",
+        "content_id": "11972",
+        "dom_id": "step-463324",
+        "selector": "#step-463324",
+        "step_anchor": "step-6",
+        "title": "Variable Groups",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So far, we have looked at functions with a few individual variables like <span class=\"math\">[MATH: x]</span>, <span class=\"math\">[MATH: y]</span>, and <span class=\"math\">[MATH: z]</span>. But in many real-world problems, we work with vectors of inputs and parameters rather than just a few named variables.</p>",
+            "readable_text": "So far, we have looked at functions with a few individual variables like [MATH: x], [MATH: y], and [MATH: z]. But in many real-world problems, we work with vectors of inputs and parameters rather than just a few named variables.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s return to a familiar example where we fit a straight line to some data.</p>",
+            "readable_text": "Let\u2019s return to a familiar example where we fit a straight line to some data.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose our <em>linear model</em> is given by </p>",
+            "readable_text": "Suppose our linear model is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: f(x; m, b) = mx + b,]</span></p>",
+            "readable_text": "[MATH: f(x; m, b) = mx + b,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where </p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: x]</span> is the input, and </p></li><li><p><span class=\"math\">[MATH: m]</span> and <span class=\"math\">[MATH: b]</span> are the <em>parameters</em> we are trying to learn. </p></li></ul>",
+            "readable_text": "- [MATH: x] is the input, and\n- [MATH: m] and [MATH: b] are the parameters we are trying to learn.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>If we want to understand how the output changes when we adjust <span class=\"math\">[MATH: m]</span> and <span class=\"math\">[MATH: b]</span>, we compute the gradient with respect to these parameters, denoted <span class=\"math\">[MATH: \\nabla_{m,b} \\, f]</span>. This tells us how sensitive the function is to changes in the slope and intercept, assuming <span class=\"math\">[MATH: x]</span> is held fixed.</p>",
+            "readable_text": "If we want to understand how the output changes when we adjust [MATH: m] and [MATH: b], we compute the gradient with respect to these parameters, denoted [MATH: \\nabla_{m,b} \\, f]. This tells us how sensitive the function is to changes in the slope and intercept, assuming [MATH: x] is held fixed.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The same idea applies in higher dimensions.</p>",
+            "readable_text": "The same idea applies in higher dimensions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, suppose we have multiple input variables and define a model  </p>",
+            "readable_text": "Now, suppose we have multiple input variables and define a model",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1 x_1 + w_2 x_2 + \\cdots + w_n x_n,]</span> </p>",
+            "readable_text": "[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1 x_1 + w_2 x_2 + \\cdots + w_n x_n,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where </p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: \\mathbf{x} = (x_1, x_2, \\dots, x_n)]</span> is the <strong>input vector</strong>, and </p></li><li><p><span class=\"math\">[MATH: \\mathbf{w} = (w_1, w_2, \\dots, w_n)]</span> is the <strong>vector of parameters</strong> (or weights).</p></li></ul>",
+            "readable_text": "- [MATH: \\mathbf{x} = (x_1, x_2, \\dots, x_n)] is the input vector, and\n- [MATH: \\mathbf{w} = (w_1, w_2, \\dots, w_n)] is the vector of parameters (or weights).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To understand how <span class=\"math\">[MATH: f]</span> depends on the parameters, we compute the <em>gradient</em> with respect to <span class=\"math\">[MATH: \\mathbf{w}{:}]</span></p>",
+            "readable_text": "To understand how [MATH: f] depends on the parameters, we compute the gradient with respect to [MATH: \\mathbf{w}{:}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202f)/(\u2202w_{1}); (\u2202f)/(\u2202w_{2}); \u22ee; (\u2202f)/(\u2202w_{n})]]</span></p>",
+            "readable_text": "[MATH: [(\u2202f)/(\u2202w_{1}); (\u2202f)/(\u2202w_{2}); \u22ee; (\u2202f)/(\u2202w_{n})]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Each <span class=\"math\">[MATH: x_j]</span> is treated as constant during this computation. Just like in the scalar case, we are asking how the output depends on each parameter while keeping the input fixed. This gradient gives exactly the information we need when updating model weights during training.</p>",
+            "readable_text": "Each [MATH: x_j] is treated as constant during this computation. Just like in the scalar case, we are asking how the output depends on each parameter while keeping the input fixed. This gradient gives exactly the information we need when updating model weights during training.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we will apply this result to a specific numerical example.</p>",
+            "readable_text": "Next, we will apply this result to a specific numerical example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSo far, we have looked at functions with a few individual variables like [MATH: x], [MATH: y], and [MATH: z]. But in many real-world problems, we work with vectors of inputs and parameters rather than just a few named variables.\n\nContent:\nLet\u2019s return to a familiar example where we fit a straight line to some data.\n\nContent:\nSuppose our linear model is given by\n\nContent:\n[MATH: f(x; m, b) = mx + b,]\n\nContent:\nwhere\n\nContent:\n- [MATH: x] is the input, and\n- [MATH: m] and [MATH: b] are the parameters we are trying to learn.\n\nContent:\nIf we want to understand how the output changes when we adjust [MATH: m] and [MATH: b], we compute the gradient with respect to these parameters, denoted [MATH: \\nabla_{m,b} \\, f]. This tells us how sensitive the function is to changes in the slope and intercept, assuming [MATH: x] is held fixed.\n\nContent:\nThe same idea applies in higher dimensions.\n\nContent:\nNow, suppose we have multiple input variables and define a model\n\nContent:\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1 x_1 + w_2 x_2 + \\cdots + w_n x_n,]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\mathbf{x} = (x_1, x_2, \\dots, x_n)] is the input vector, and\n- [MATH: \\mathbf{w} = (w_1, w_2, \\dots, w_n)] is the vector of parameters (or weights).\n\nContent:\nTo understand how [MATH: f] depends on the parameters, we compute the gradient with respect to [MATH: \\mathbf{w}{:}]\n\nContent:\n[MATH: [(\u2202f)/(\u2202w_{1}); (\u2202f)/(\u2202w_{2}); \u22ee; (\u2202f)/(\u2202w_{n})]]\n\nContent:\nEach [MATH: x_j] is treated as constant during this computation. Just like in the scalar case, we are asking how the output depends on each parameter while keeping the input fixed. This gradient gives exactly the information we need when updating model weights during training.\n\nContent:\nNext, we will apply this result to a specific numerical example."
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "463325",
+        "content_id": "17533",
+        "dom_id": "step-463325",
+        "selector": "#step-463325",
+        "step_anchor": "step-7",
+        "title": "Computing Parameter Subset Gradients",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given the quadratic function <span class=\"math\">[MATH: f(x,y; a,b) = a - bx^{2}+y^3]</span>, compute <span class=\"math\">[MATH: \\nabla_{a,b} \\: f.]</span></p>",
+            "readable_text": "Given the quadratic function [MATH: f(x,y; a,b) = a - bx^{2}+y^3], compute [MATH: \\nabla_{a,b} \\: f.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To compute <span class=\"math\">[MATH: \\nabla_{a,b} \\: f]</span>, we take partial derivatives with respect to <span class=\"math\">[MATH: a]</span> and <span class=\"math\">[MATH: b]</span>.</p><p><span class=\"math\">[MATH: (\u2202f)/(\u2202a)|= (\u2202)/(\u2202a)(a \u2212 bx^{2} + y^{3}) = 1; (\u2202f)/(\u2202b)|= (\u2202)/(\u2202b)(a \u2212 bx^{2} + y^{3}) = \u2212 x^{2}]</span></p><p>Therefore, we obtain the following:\n<span class=\"math\">[MATH: \u2207_{a, b}f|= [(\u2202f)/(\u2202a); (\u2202f)/(\u2202b)]; = [1; \u2212 x^{2}]]</span></p>",
+            "readable_text": "To compute [MATH: \\nabla_{a,b} \\: f], we take partial derivatives with respect to [MATH: a] and [MATH: b].\n\n[MATH: (\u2202f)/(\u2202a)|= (\u2202)/(\u2202a)(a \u2212 bx^{2} + y^{3}) = 1; (\u2202f)/(\u2202b)|= (\u2202)/(\u2202b)(a \u2212 bx^{2} + y^{3}) = \u2212 x^{2}]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{a, b}f|= [(\u2202f)/(\u2202a); (\u2202f)/(\u2202b)]; = [1; \u2212 x^{2}]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven the quadratic function [MATH: f(x,y; a,b) = a - bx^{2}+y^3], compute [MATH: \\nabla_{a,b} \\: f.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo compute [MATH: \\nabla_{a,b} \\: f], we take partial derivatives with respect to [MATH: a] and [MATH: b].\n\n[MATH: (\u2202f)/(\u2202a)|= (\u2202)/(\u2202a)(a \u2212 bx^{2} + y^{3}) = 1; (\u2202f)/(\u2202b)|= (\u2202)/(\u2202b)(a \u2212 bx^{2} + y^{3}) = \u2212 x^{2}]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{a, b}f|= [(\u2202f)/(\u2202a); (\u2202f)/(\u2202b)]; = [1; \u2212 x^{2}]]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "263487",
+        "dom_id": "question-263487",
+        "selector": "#question-263487",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the linear function <span class=\"math\">[MATH: f(x; m, b) = mx + b,]</span> compute <span class=\"math\">[MATH: \u2207_{m, b}f.]</span><br/><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{m, b}f =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the linear function [MATH: f(x; m, b) = mx + b,] compute [MATH: \u2207_{m, b}f.]\n\n| [MATH: \u2207_{m, b}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the linear function [MATH: f(x; m, b) = mx + b,] compute [MATH: \u2207_{m, b}f.]\n\n| [MATH: \u2207_{m, b}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |"
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "264859",
+        "dom_id": "question-264859",
+        "selector": "#question-264859",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(x, y; a, b, c) = ax + by + c,]</span> compute <span class=\"math\">[MATH: \u2207_{a, c}f.]</span><br/><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{a, c}f =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function [MATH: f(x, y; a, b, c) = ax + by + c,] compute [MATH: \u2207_{a, c}f.]\n\n| [MATH: \u2207_{a, c}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function [MATH: f(x, y; a, b, c) = ax + by + c,] compute [MATH: \u2207_{a, c}f.]\n\n| [MATH: \u2207_{a, c}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "463328",
+        "content_id": "17704",
+        "dom_id": "step-463328",
+        "selector": "#step-463328",
+        "step_anchor": "step-10",
+        "title": "Computing Vector Subset Gradients",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given the function \n<span class=\"math\">[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1x_1^{3} + w_2x_2^{3},]</span>\ncompute <span class=\"math\">[MATH: \\nabla_{\\mathbf{w}} \\: f]</span> with the input <span class=\"math\">[MATH: [3, \u2212 2]]</span> </p>",
+            "readable_text": "Given the function\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1x_1^{3} + w_2x_2^{3},]\ncompute [MATH: \\nabla_{\\mathbf{w}} \\: f] with the input [MATH: [3, \u2212 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To compute <span class=\"math\">[MATH: \\nabla_{\\mathbf{w}} \\: f]</span>, we take partial derivatives with respect to each component of <span class=\"math\">[MATH: \\mathbf{w}.]</span></p><p><span class=\"math\">[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{1}^{3}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{2}^{3}]</span></p><p>Therefore, with <span class=\"math\">[MATH: [3, \u2212 2]]</span> we obtain the following:\n<span class=\"math\">[MATH: \u2207_{w}f|= [x_{1}^{3}; x_{2}^{3}]; = [27; \u2212 8]]</span></p>",
+            "readable_text": "To compute [MATH: \\nabla_{\\mathbf{w}} \\: f], we take partial derivatives with respect to each component of [MATH: \\mathbf{w}.]\n\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{1}^{3}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{2}^{3}]\n\nTherefore, with [MATH: [3, \u2212 2]] we obtain the following:\n[MATH: \u2207_{w}f|= [x_{1}^{3}; x_{2}^{3}]; = [27; \u2212 8]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven the function\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1x_1^{3} + w_2x_2^{3},]\ncompute [MATH: \\nabla_{\\mathbf{w}} \\: f] with the input [MATH: [3, \u2212 2]]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo compute [MATH: \\nabla_{\\mathbf{w}} \\: f], we take partial derivatives with respect to each component of [MATH: \\mathbf{w}.]\n\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{1}^{3}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{2}^{3}]\n\nTherefore, with [MATH: [3, \u2212 2]] we obtain the following:\n[MATH: \u2207_{w}f|= [x_{1}^{3}; x_{2}^{3}]; = [27; \u2212 8]]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "263488",
+        "dom_id": "question-263488",
+        "selector": "#question-263488",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function \n<span class=\"math\">[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2},]</span>\ncompute <span class=\"math\">[MATH: \u2207_{w}f]</span> with the input <span class=\"math\">[MATH: x = [2, \u2212 1]^{T}.]</span><br/><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{w}f =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function\n[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2},]\ncompute [MATH: \u2207_{w}f] with the input [MATH: x = [2, \u2212 1]^{T}.]\n\n| [MATH: \u2207_{w}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function\n[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2},]\ncompute [MATH: \u2207_{w}f] with the input [MATH: x = [2, \u2212 1]^{T}.]\n\n| [MATH: \u2207_{w}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "264875",
+        "dom_id": "question-264875",
+        "selector": "#question-264875",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function \n<span class=\"math\">[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3},]</span>\ncompute <span class=\"math\">[MATH: \u2207_{w}f]</span> with the input <span class=\"math\">[MATH: x = [1, 2, 3]^{T}.]</span><br/><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{w}f =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function\n[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3},]\ncompute [MATH: \u2207_{w}f] with the input [MATH: x = [1, 2, 3]^{T}.]\n\n| [MATH: \u2207_{w}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function\n[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3},]\ncompute [MATH: \u2207_{w}f] with the input [MATH: x = [1, 2, 3]^{T}.]\n\n| [MATH: \u2207_{w}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | |"
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "463331",
+        "content_id": "11973",
+        "dom_id": "step-463331",
+        "selector": "#step-463331",
+        "step_anchor": "step-13",
+        "title": "Second-Order Derivatives",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Just as we can compute gradients with respect to a subset of variables, we can also take second derivatives while focusing on just the variables that matter for our problem. </p>",
+            "readable_text": "Just as we can compute gradients with respect to a subset of variables, we can also take second derivatives while focusing on just the variables that matter for our problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>When we write <span class=\"math\">[MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} f)]</span>, we are computing all second-order partial derivatives of the function <span class=\"math\">[MATH: f]</span> with respect to the variables in <span class=\"math\">[MATH: \\mathbf{w}.]</span> The result is a square matrix where each entry describes how one component of the gradient changes when we vary one of the selected variables. This matrix is the <strong>Hessian with respect to</strong> <span class=\"math\">[MATH: \\mathbf{w}.]</span></p>",
+            "readable_text": "When we write [MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} f)], we are computing all second-order partial derivatives of the function [MATH: f] with respect to the variables in [MATH: \\mathbf{w}.] The result is a square matrix where each entry describes how one component of the gradient changes when we vary one of the selected variables. This matrix is the Hessian with respect to [MATH: \\mathbf{w}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To make this concrete, suppose we have a function <span class=\"math\">[MATH: f(x, y, z)]</span> that depends on three variables. If we only care about second derivatives with respect to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span>, we write <span class=\"math\">[MATH: \\nabla_{x,y}(\\nabla_{x,y} f).]</span></p>",
+            "readable_text": "To make this concrete, suppose we have a function [MATH: f(x, y, z)] that depends on three variables. If we only care about second derivatives with respect to [MATH: x] and [MATH: y], we write [MATH: \\nabla_{x,y}(\\nabla_{x,y} f).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This gives us a <span class=\"math\">[MATH: 2 \\times 2]</span> matrix that contains the following second-order partial derivatives</p>",
+            "readable_text": "This gives us a [MATH: 2 \\times 2] matrix that contains the following second-order partial derivatives",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202^{2}f)/(\u2202x^{2})|(\u2202^{2}f)/(\u2202x\u2202y); (\u2202^{2}f)/(\u2202y\u2202x)|(\u2202^{2}f)/(\u2202y^{2})]]</span></p>",
+            "readable_text": "[MATH: [(\u2202^{2}f)/(\u2202x^{2})|(\u2202^{2}f)/(\u2202x\u2202y); (\u2202^{2}f)/(\u2202y\u2202x)|(\u2202^{2}f)/(\u2202y^{2})]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Even though <span class=\"math\">[MATH: f]</span> depends on three variables, this matrix isolates the second-derivative behavior of <span class=\"math\">[MATH: f]</span> in just the <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> directions. This allows us to analyze or optimize over part of the input space without involving every variable.</p>",
+            "readable_text": "Even though [MATH: f] depends on three variables, this matrix isolates the second-derivative behavior of [MATH: f] in just the [MATH: x] and [MATH: y] directions. This allows us to analyze or optimize over part of the input space without involving every variable.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let\u2019s go through a concrete example.  </p>",
+            "readable_text": "Let\u2019s go through a concrete example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the function<br/><span class=\"math\">[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1^2 x_2^2 - w_2 x_1,]</span><br/>and suppose we want to compute the Hessian with respect to <span class=\"math\">[MATH: \\mathbf{w} = [w_1, \\, w_2]^T.]</span></p>",
+            "readable_text": "Consider the function\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1^2 x_2^2 - w_2 x_1,]\nand suppose we want to compute the Hessian with respect to [MATH: \\mathbf{w} = [w_1, \\, w_2]^T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>First, we compute the gradient:</p>",
+            "readable_text": "First, we compute the gradient:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = 2w_{1}x_{2}^{2}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = \u2212 x_{1}]</span></p>",
+            "readable_text": "[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = 2w_{1}x_{2}^{2}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = \u2212 x_{1}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we compute the second derivatives:</p>",
+            "readable_text": "Next, we compute the second derivatives:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2})|= 2x_{2}^{2},|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2})|= 0; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|= 0|(\u2202^{2}f)/(\u2202w_{2}^{2})|= 0]</span></p>",
+            "readable_text": "[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2})|= 2x_{2}^{2},|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2})|= 0; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|= 0|(\u2202^{2}f)/(\u2202w_{2}^{2})|= 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Putting everything into matrix form, we get the Hessian</p>",
+            "readable_text": "Putting everything into matrix form, we get the Hessian",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]]</span></p>",
+            "readable_text": "[MATH: [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is the Hessian with respect to the parameter vector <span class=\"math\">[MATH: \\mathbf{w}.]</span> It tells us how the gradient of the function (with respect to parameters) changes when we vary each parameter and reveals the local shape of the function near any given point.</p>",
+            "readable_text": "This is the Hessian with respect to the parameter vector [MATH: \\mathbf{w}.] It tells us how the gradient of the function (with respect to parameters) changes when we vary each parameter and reveals the local shape of the function near any given point.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nJust as we can compute gradients with respect to a subset of variables, we can also take second derivatives while focusing on just the variables that matter for our problem.\n\nContent:\nWhen we write [MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} f)], we are computing all second-order partial derivatives of the function [MATH: f] with respect to the variables in [MATH: \\mathbf{w}.] The result is a square matrix where each entry describes how one component of the gradient changes when we vary one of the selected variables. This matrix is the Hessian with respect to [MATH: \\mathbf{w}.]\n\nContent:\nTo make this concrete, suppose we have a function [MATH: f(x, y, z)] that depends on three variables. If we only care about second derivatives with respect to [MATH: x] and [MATH: y], we write [MATH: \\nabla_{x,y}(\\nabla_{x,y} f).]\n\nContent:\nThis gives us a [MATH: 2 \\times 2] matrix that contains the following second-order partial derivatives\n\nContent:\n[MATH: [(\u2202^{2}f)/(\u2202x^{2})|(\u2202^{2}f)/(\u2202x\u2202y); (\u2202^{2}f)/(\u2202y\u2202x)|(\u2202^{2}f)/(\u2202y^{2})]]\n\nContent:\nEven though [MATH: f] depends on three variables, this matrix isolates the second-derivative behavior of [MATH: f] in just the [MATH: x] and [MATH: y] directions. This allows us to analyze or optimize over part of the input space without involving every variable.\n\nContent:\nLet\u2019s go through a concrete example.\n\nContent:\nConsider the function\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1^2 x_2^2 - w_2 x_1,]\nand suppose we want to compute the Hessian with respect to [MATH: \\mathbf{w} = [w_1, \\, w_2]^T.]\n\nContent:\nFirst, we compute the gradient:\n\nContent:\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = 2w_{1}x_{2}^{2}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = \u2212 x_{1}]\n\nContent:\nNext, we compute the second derivatives:\n\nContent:\n[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2})|= 2x_{2}^{2},|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2})|= 0; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|= 0|(\u2202^{2}f)/(\u2202w_{2}^{2})|= 0]\n\nContent:\nPutting everything into matrix form, we get the Hessian\n\nContent:\n[MATH: [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]]\n\nContent:\nThis is the Hessian with respect to the parameter vector [MATH: \\mathbf{w}.] It tells us how the gradient of the function (with respect to parameters) changes when we vary each parameter and reveals the local shape of the function near any given point."
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "463332",
+        "content_id": "17534",
+        "dom_id": "step-463332",
+        "selector": "#step-463332",
+        "step_anchor": "step-14",
+        "title": "Computing Second-Order Derivatives",
+        "key_prerequisites": [
+          {
+            "topic_id": "2824",
+            "name": "The Second Derivative of a Multivariable Function",
+            "href": "/topics/2824",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(\\mathbf{x}; \\mathbf{w}) = (w_1x_1 - w_2+x_2)^2,]</span> compute <span class=\"math\">[MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} \\: f).]</span></p>",
+            "readable_text": "Given the function [MATH: f(\\mathbf{x}; \\mathbf{w}) = (w_1x_1 - w_2+x_2)^2,] compute [MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} \\: f).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, we compute <span class=\"math\">[MATH: \\nabla_{\\mathbf{w}} \\: f]</span>:\n<span class=\"math\">[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = 2x_{1}(w_{1}x_{1} \u2212 w_{2} + x_{2}); (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = \u2212 2(w_{1}x_{1} \u2212 w_{2} + x_{2})]</span></p><p>Next, we compute the second derivatives:\n<span class=\"math\">[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2}) = 2x_{1}^{2}|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}) = \u2212 2x_{1}; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1}) = \u2212 2x_{1}|(\u2202^{2}f)/(\u2202w_{2}^{2}) = 2]</span></p><p>Therefore, we obtain the following:\n<span class=\"math\">[MATH: \u2207_{w}(\u2207_{w}f)|= [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]; = [2x_{1}^{2}|\u2212 2x_{1}; \u2212 2x_{1}|2]]</span> </p>",
+            "readable_text": "First, we compute [MATH: \\nabla_{\\mathbf{w}} \\: f]:\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = 2x_{1}(w_{1}x_{1} \u2212 w_{2} + x_{2}); (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = \u2212 2(w_{1}x_{1} \u2212 w_{2} + x_{2})]\n\nNext, we compute the second derivatives:\n[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2}) = 2x_{1}^{2}|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}) = \u2212 2x_{1}; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1}) = \u2212 2x_{1}|(\u2202^{2}f)/(\u2202w_{2}^{2}) = 2]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{w}(\u2207_{w}f)|= [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]; = [2x_{1}^{2}|\u2212 2x_{1}; \u2212 2x_{1}|2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nGiven the function [MATH: f(\\mathbf{x}; \\mathbf{w}) = (w_1x_1 - w_2+x_2)^2,] compute [MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} \\: f).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we compute [MATH: \\nabla_{\\mathbf{w}} \\: f]:\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = 2x_{1}(w_{1}x_{1} \u2212 w_{2} + x_{2}); (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = \u2212 2(w_{1}x_{1} \u2212 w_{2} + x_{2})]\n\nNext, we compute the second derivatives:\n[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2}) = 2x_{1}^{2}|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}) = \u2212 2x_{1}; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1}) = \u2212 2x_{1}|(\u2202^{2}f)/(\u2202w_{2}^{2}) = 2]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{w}(\u2207_{w}f)|= [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]; = [2x_{1}^{2}|\u2212 2x_{1}; \u2212 2x_{1}|2]]"
+      },
+      {
+        "lesson_index": 15,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "263489",
+        "dom_id": "question-263489",
+        "selector": "#question-263489",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(x, y, z) = x^{2}y + yz^{2},]</span> compute <span class=\"math\">[MATH: \u2207_{x, y}(\u2207_{x, y}f).]</span><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{x, y}(\u2207_{x, y}f) =]</span></p></td><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-3\" data-blank-index=\"3\">[FREE_ENTRY 3]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-4\" data-blank-index=\"4\">[FREE_ENTRY 4]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function [MATH: f(x, y, z) = x^{2}y + yz^{2},] compute [MATH: \u2207_{x, y}(\u2207_{x, y}f).]\n\n| [MATH: \u2207_{x, y}(\u2207_{x, y}f) =] | | [FREE_ENTRY 1] | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | [FREE_ENTRY 4] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 3,
+              "dom_id": "freeResponseTextbox-3",
+              "placeholder": "[FREE_ENTRY 3]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 4,
+              "dom_id": "freeResponseTextbox-4",
+              "placeholder": "[FREE_ENTRY 4]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 3,
+            "dom_id": "freeResponseTextbox-3",
+            "placeholder": "[FREE_ENTRY 3]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 4,
+            "dom_id": "freeResponseTextbox-4",
+            "placeholder": "[FREE_ENTRY 4]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function [MATH: f(x, y, z) = x^{2}y + yz^{2},] compute [MATH: \u2207_{x, y}(\u2207_{x, y}f).]\n\n| [MATH: \u2207_{x, y}(\u2207_{x, y}f) =] | | [FREE_ENTRY 1] | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | [FREE_ENTRY 4] | |"
+      },
+      {
+        "lesson_index": 16,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "263490",
+        "dom_id": "question-263490",
+        "selector": "#question-263490",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Given the function <span class=\"math\">[MATH: f(x; w) = (w_{1}x_{1} + w_{2}x_{2})^{2},]</span> compute <span class=\"math\">[MATH: \u2207_{w}(\u2207_{w}f).]</span><br/>\n</p><table><tr><td><p><span class=\"math\">[MATH: \u2207_{w}(\u2207_{w}f) =]</span></p></td><td></td><td><p><span class=\"math\">[MATH: 2x_{1}^{2}]</span></p></td><td><p><span class=\"math\">[MATH: 2x_{1}x_{2}]</span></p></td><td></td></tr><tr><td></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></p></td><td><p><span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span></p></td><td></td></tr></table>",
+          "readable_text": "Given the function [MATH: f(x; w) = (w_{1}x_{1} + w_{2}x_{2})^{2},] compute [MATH: \u2207_{w}(\u2207_{w}f).]\n\n| [MATH: \u2207_{w}(\u2207_{w}f) =] | | [MATH: 2x_{1}^{2}] | [MATH: 2x_{1}x_{2}] | |\n| | [FREE_ENTRY 1] | [FREE_ENTRY 2] | |",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nGiven the function [MATH: f(x; w) = (w_{1}x_{1} + w_{2}x_{2})^{2},] compute [MATH: \u2207_{w}(\u2207_{w}f).]\n\n| [MATH: \u2207_{w}(\u2207_{w}f) =] | | [MATH: 2x_{1}^{2}] | [MATH: 2x_{1}x_{2}] | |\n| | [FREE_ENTRY 1] | [FREE_ENTRY 2] | |"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nRecall that the gradient of a function\n[MATH: f : \\mathbb{R}^n \\to \\mathbb{R}]\ntells us how the function changes with respect to each of its input variables. It collects all the partial derivatives into a single vector:\n\nContent:\n[MATH: [(\u2202f)/(\u2202x_{1}); (\u2202f)/(\u2202x_{2}); \u22ee; (\u2202f)/(\u2202x_{n})]]\n\nContent:\nThis vector points in the direction of the steepest increase of the function, and its components describe how sensitive [MATH: f] is to changes in each variable [MATH: x_1, x_2, \\dots, x_n.]\n\nContent:\nIn other words, [MATH: \\nabla f] gives us a complete picture of how [MATH: f] behaves locally around a point, not just in one direction, but in every direction.\n\nContent:\nBut sometimes, we\u2019re not interested in how the function behaves in every direction. Maybe some variables are being held fixed, or we just care about how the function responds to changes in a few specific inputs. In that case, we don\u2019t need the full gradient. We only need the derivatives with respect to the variables we care about.\n\nContent:\nThis idea leads us to the concept of the subset gradient, which captures how a function changes with respect to only a chosen group of variables while treating the others as constant.\n\nContent:\nIn this lesson, we will learn what subset gradients are, and how to compute them. Let's look at a concrete example in the next slide.\n\n---\n\nItem 2 \u2014 Tutorial: The Subset Gradient\n\nContent:\nA subset gradient is the vector formed by taking only the partial derivatives of a function with respect to a chosen subset of variables.\n\nContent:\nLet\u2019s look at an example to understand how a subset gradient works in practice.\n\nContent:\nSuppose we have the function\n[MATH: f(x, y, z) = x^2 y + y z^2.]\nThis function depends on three variables, and its full gradient is\n\nContent:\n[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y); (\u2202f)/(\u2202z)]]\n\nContent:\nThe full gradient tells us how [MATH: f] responds to changes in all three directions. But in some situations, we may only care about how [MATH: f] changes when we vary a few of the variables, for example, just [MATH: x] and [MATH: y.]\n\nContent:\nIf that\u2019s the case, we compute a subset gradient, which focuses only on the variables of interest. In this case, we compute\n\nContent:\n[MATH: [(\u2202f)/(\u2202x); (\u2202f)/(\u2202y)]]\n\nContent:\nHere, we are treating [MATH: z] as a constant, as if it were fixed and not changing, while taking partial derivatives with respect to [MATH: x] and [MATH: y] only. This is the same idea that underlies partial derivatives more generally: we hold all other variables constant except the ones we are differentiating with respect to.\n\nContent:\nSubset gradients are especially useful in problems where only some variables are being updated. They allow us to focus on the directions that matter for a particular step or subproblem, without being distracted by variables we are not actively changing.\n\n---\n\nItem 3 \u2014 Example: Computing Basic Subset Gradients\n\nExample Prompt:\nGiven the function [MATH: f(x,y,z,w) = xyzw,] compute [MATH: \\nabla_{x,w} \\: f.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo compute [MATH: \\nabla_{x,w} \\: f], we take partial derivatives with respect to [MATH: x] and [MATH: w] only.\n\n[MATH: (\u2202f)/(\u2202x) = (\u2202)/(\u2202x)(xyzw)|= yzw; (\u2202f)/(\u2202w) = (\u2202)/(\u2202w)(xyzw)|= xyz]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{x, w}f|= [(\u2202f)/(\u2202x); (\u2202f)/(\u2202w)]; = [yzw; xyz]]\n\n---\n\nItem 4 \u2014 Question 1\n\nPrompt:\nGiven the function [MATH: f(x, y, z) = x^{2}y + yz^{2},] compute [MATH: \u2207_{x, y}f.]\n\n| [MATH: \u2207_{x, y}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n\n---\n\nItem 5 \u2014 Question 2\n\nPrompt:\nGiven the function [MATH: f(x, y, z, w) = xy^{2} + yz^{2} + zw^{2},] compute [MATH: \u2207_{x, y}f.]\n\n| [MATH: \u2207_{x, y}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n\n---\n\nItem 6 \u2014 Tutorial: Variable Groups\n\nContent:\nSo far, we have looked at functions with a few individual variables like [MATH: x], [MATH: y], and [MATH: z]. But in many real-world problems, we work with vectors of inputs and parameters rather than just a few named variables.\n\nContent:\nLet\u2019s return to a familiar example where we fit a straight line to some data.\n\nContent:\nSuppose our linear model is given by\n\nContent:\n[MATH: f(x; m, b) = mx + b,]\n\nContent:\nwhere\n\nContent:\n- [MATH: x] is the input, and\n- [MATH: m] and [MATH: b] are the parameters we are trying to learn.\n\nContent:\nIf we want to understand how the output changes when we adjust [MATH: m] and [MATH: b], we compute the gradient with respect to these parameters, denoted [MATH: \\nabla_{m,b} \\, f]. This tells us how sensitive the function is to changes in the slope and intercept, assuming [MATH: x] is held fixed.\n\nContent:\nThe same idea applies in higher dimensions.\n\nContent:\nNow, suppose we have multiple input variables and define a model\n\nContent:\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1 x_1 + w_2 x_2 + \\cdots + w_n x_n,]\n\nContent:\nwhere\n\nContent:\n- [MATH: \\mathbf{x} = (x_1, x_2, \\dots, x_n)] is the input vector, and\n- [MATH: \\mathbf{w} = (w_1, w_2, \\dots, w_n)] is the vector of parameters (or weights).\n\nContent:\nTo understand how [MATH: f] depends on the parameters, we compute the gradient with respect to [MATH: \\mathbf{w}{:}]\n\nContent:\n[MATH: [(\u2202f)/(\u2202w_{1}); (\u2202f)/(\u2202w_{2}); \u22ee; (\u2202f)/(\u2202w_{n})]]\n\nContent:\nEach [MATH: x_j] is treated as constant during this computation. Just like in the scalar case, we are asking how the output depends on each parameter while keeping the input fixed. This gradient gives exactly the information we need when updating model weights during training.\n\nContent:\nNext, we will apply this result to a specific numerical example.\n\n---\n\nItem 7 \u2014 Example: Computing Parameter Subset Gradients\n\nExample Prompt:\nGiven the quadratic function [MATH: f(x,y; a,b) = a - bx^{2}+y^3], compute [MATH: \\nabla_{a,b} \\: f.]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo compute [MATH: \\nabla_{a,b} \\: f], we take partial derivatives with respect to [MATH: a] and [MATH: b].\n\n[MATH: (\u2202f)/(\u2202a)|= (\u2202)/(\u2202a)(a \u2212 bx^{2} + y^{3}) = 1; (\u2202f)/(\u2202b)|= (\u2202)/(\u2202b)(a \u2212 bx^{2} + y^{3}) = \u2212 x^{2}]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{a, b}f|= [(\u2202f)/(\u2202a); (\u2202f)/(\u2202b)]; = [1; \u2212 x^{2}]]\n\n---\n\nItem 8 \u2014 Question 3\n\nPrompt:\nGiven the linear function [MATH: f(x; m, b) = mx + b,] compute [MATH: \u2207_{m, b}f.]\n\n| [MATH: \u2207_{m, b}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n\n---\n\nItem 9 \u2014 Question 4\n\nPrompt:\nGiven the function [MATH: f(x, y; a, b, c) = ax + by + c,] compute [MATH: \u2207_{a, c}f.]\n\n| [MATH: \u2207_{a, c}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n\n---\n\nItem 10 \u2014 Example: Computing Vector Subset Gradients\n\nExample Prompt:\nGiven the function\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1x_1^{3} + w_2x_2^{3},]\ncompute [MATH: \\nabla_{\\mathbf{w}} \\: f] with the input [MATH: [3, \u2212 2]]\n\nContent:\nEXPLANATION\n\nExplanation:\nTo compute [MATH: \\nabla_{\\mathbf{w}} \\: f], we take partial derivatives with respect to each component of [MATH: \\mathbf{w}.]\n\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{1}^{3}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1}^{3} + w_{2}x_{2}^{3}) = x_{2}^{3}]\n\nTherefore, with [MATH: [3, \u2212 2]] we obtain the following:\n[MATH: \u2207_{w}f|= [x_{1}^{3}; x_{2}^{3}]; = [27; \u2212 8]]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\nGiven the function\n[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2},]\ncompute [MATH: \u2207_{w}f] with the input [MATH: x = [2, \u2212 1]^{T}.]\n\n| [MATH: \u2207_{w}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n\n---\n\nItem 12 \u2014 Question 6\n\nPrompt:\nGiven the function\n[MATH: f(x; w) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3},]\ncompute [MATH: \u2207_{w}f] with the input [MATH: x = [1, 2, 3]^{T}.]\n\n| [MATH: \u2207_{w}f =] | | [FREE_ENTRY 1] | |\n| | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | |\n\n---\n\nItem 13 \u2014 Tutorial: Second-Order Derivatives\n\nContent:\nJust as we can compute gradients with respect to a subset of variables, we can also take second derivatives while focusing on just the variables that matter for our problem.\n\nContent:\nWhen we write [MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} f)], we are computing all second-order partial derivatives of the function [MATH: f] with respect to the variables in [MATH: \\mathbf{w}.] The result is a square matrix where each entry describes how one component of the gradient changes when we vary one of the selected variables. This matrix is the Hessian with respect to [MATH: \\mathbf{w}.]\n\nContent:\nTo make this concrete, suppose we have a function [MATH: f(x, y, z)] that depends on three variables. If we only care about second derivatives with respect to [MATH: x] and [MATH: y], we write [MATH: \\nabla_{x,y}(\\nabla_{x,y} f).]\n\nContent:\nThis gives us a [MATH: 2 \\times 2] matrix that contains the following second-order partial derivatives\n\nContent:\n[MATH: [(\u2202^{2}f)/(\u2202x^{2})|(\u2202^{2}f)/(\u2202x\u2202y); (\u2202^{2}f)/(\u2202y\u2202x)|(\u2202^{2}f)/(\u2202y^{2})]]\n\nContent:\nEven though [MATH: f] depends on three variables, this matrix isolates the second-derivative behavior of [MATH: f] in just the [MATH: x] and [MATH: y] directions. This allows us to analyze or optimize over part of the input space without involving every variable.\n\nContent:\nLet\u2019s go through a concrete example.\n\nContent:\nConsider the function\n[MATH: f(\\mathbf{x}; \\mathbf{w}) = w_1^2 x_2^2 - w_2 x_1,]\nand suppose we want to compute the Hessian with respect to [MATH: \\mathbf{w} = [w_1, \\, w_2]^T.]\n\nContent:\nFirst, we compute the gradient:\n\nContent:\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = 2w_{1}x_{2}^{2}; (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}^{2}x_{2}^{2} \u2212 w_{2}x_{1}) = \u2212 x_{1}]\n\nContent:\nNext, we compute the second derivatives:\n\nContent:\n[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2})|= 2x_{2}^{2},|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2})|= 0; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|= 0|(\u2202^{2}f)/(\u2202w_{2}^{2})|= 0]\n\nContent:\nPutting everything into matrix form, we get the Hessian\n\nContent:\n[MATH: [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]]\n\nContent:\nThis is the Hessian with respect to the parameter vector [MATH: \\mathbf{w}.] It tells us how the gradient of the function (with respect to parameters) changes when we vary each parameter and reveals the local shape of the function near any given point.\n\n---\n\nItem 14 \u2014 Example: Computing Second-Order Derivatives\n\nExample Prompt:\nGiven the function [MATH: f(\\mathbf{x}; \\mathbf{w}) = (w_1x_1 - w_2+x_2)^2,] compute [MATH: \\nabla_{\\mathbf{w}}(\\nabla_{\\mathbf{w}} \\: f).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, we compute [MATH: \\nabla_{\\mathbf{w}} \\: f]:\n[MATH: (\u2202f)/(\u2202w_{1})|= (\u2202)/(\u2202w_{1})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = 2x_{1}(w_{1}x_{1} \u2212 w_{2} + x_{2}); (\u2202f)/(\u2202w_{2})|= (\u2202)/(\u2202w_{2})(w_{1}x_{1} \u2212 w_{2} + x_{2})^{2} = \u2212 2(w_{1}x_{1} \u2212 w_{2} + x_{2})]\n\nNext, we compute the second derivatives:\n[MATH: (\u2202^{2}f)/(\u2202w_{1}^{2}) = 2x_{1}^{2}|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}) = \u2212 2x_{1}; (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1}) = \u2212 2x_{1}|(\u2202^{2}f)/(\u2202w_{2}^{2}) = 2]\n\nTherefore, we obtain the following:\n[MATH: \u2207_{w}(\u2207_{w}f)|= [(\u2202^{2}f)/(\u2202w_{1}^{2})|(\u2202^{2}f)/(\u2202w_{1}\u2202w_{2}); (\u2202^{2}f)/(\u2202w_{2}\u2202w_{1})|(\u2202^{2}f)/(\u2202w_{2}^{2})]; = [2x_{1}^{2}|\u2212 2x_{1}; \u2212 2x_{1}|2]]\n\n---\n\nItem 15 \u2014 Question 7\n\nPrompt:\nGiven the function [MATH: f(x, y, z) = x^{2}y + yz^{2},] compute [MATH: \u2207_{x, y}(\u2207_{x, y}f).]\n\n| [MATH: \u2207_{x, y}(\u2207_{x, y}f) =] | | [FREE_ENTRY 1] | [FREE_ENTRY 2] | |\n| | [FREE_ENTRY 3] | [FREE_ENTRY 4] | |\n\n---\n\nItem 16 \u2014 Question 8\n\nPrompt:\nGiven the function [MATH: f(x; w) = (w_{1}x_{1} + w_{2}x_{2})^{2},] compute [MATH: \u2207_{w}(\u2207_{w}f).]\n\n| [MATH: \u2207_{w}(\u2207_{w}f) =] | | [MATH: 2x_{1}^{2}] | [MATH: 2x_{1}x_{2}] | |\n| | [FREE_ENTRY 1] | [FREE_ENTRY 2] | |"
+  }
+}

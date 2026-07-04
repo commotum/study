@@ -1,0 +1,1913 @@
+{
+  "schema_version": 2,
+  "topic_id": "3248",
+  "topic_title": "The RK4 Method",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3248/Source/3248.html",
+  "source_url": "https://mathacademy.com/topics/3248",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "613991",
+        "dom_id": "sectionLink-613991",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-613991"
+      },
+      {
+        "index": 2,
+        "step_id": "613992",
+        "dom_id": "sectionLink-613992",
+        "name": "",
+        "title": "Identifying the Runge-Kutta Method",
+        "selector": "#sectionLink-613992"
+      },
+      {
+        "index": 3,
+        "step_id": "613995",
+        "dom_id": "sectionLink-613995",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-613995"
+      },
+      {
+        "index": 4,
+        "step_id": "613996",
+        "dom_id": "sectionLink-613996",
+        "name": "",
+        "title": "Calculating a Y-Increment Given All Intermediate Values",
+        "selector": "#sectionLink-613996"
+      },
+      {
+        "index": 5,
+        "step_id": "613999",
+        "dom_id": "sectionLink-613999",
+        "name": "",
+        "title": "Calculating a Y-Increment Given Some Intermediate Values",
+        "selector": "#sectionLink-613999"
+      },
+      {
+        "index": 6,
+        "step_id": "614002",
+        "dom_id": "sectionLink-614002",
+        "name": "",
+        "title": "Approximating the Solution to an Initial Value Problem Using RK4",
+        "selector": "#sectionLink-614002"
+      },
+      {
+        "index": 7,
+        "step_id": "614005",
+        "dom_id": "sectionLink-614005",
+        "name": "",
+        "title": "A Graphical Explanation of the RK4 Method",
+        "selector": "#sectionLink-614005"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3668",
+        "name": "Euler's Method: Calculating Multiple Steps",
+        "href": "/topics/eulers-method-calculating-multiple-steps-3668"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 15,
+    "step_count": 7,
+    "question_count": 8,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "613991",
+        "content_id": "14321",
+        "dom_id": "step-613991",
+        "selector": "#step-613991",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For a first-order initial value problem, Euler&#x27;s method approximates the increment in <span class=\"math\">[MATH: y]</span> over a step by using a single slope - the slope at the current point.</p>",
+            "readable_text": "For a first-order initial value problem, Euler's method approximates the increment in [MATH: y] over a step by using a single slope - the slope at the current point.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is simple and works well when the slope stays nearly constant across a step, but can become inaccurate when the slope changes noticeably between successive <span class=\"math\">[MATH: x]</span>-values.</p>",
+            "readable_text": "This is simple and works well when the slope stays nearly constant across a step, but can become inaccurate when the slope changes noticeably between successive [MATH: x]-values.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The Runge\u2013Kutta Method improves this idea by sampling the slope at several points within the same step and combining them into a weighted average.\nFor an initial value problem</p>",
+            "readable_text": "The Runge\u2013Kutta Method improves this idea by sampling the slope at several points within the same step and combining them into a weighted average.\nFor an initial value problem",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y(a) = c,]</span></p>",
+            "readable_text": "[MATH: y' = f(x,y), \\qquad y(a) = c,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>the increment in <span class=\"math\">[MATH: y]</span> using the <strong>Runge-Kutta</strong> (<strong>RK4</strong>) <strong>Method</strong> with step size <span class=\"math\">[MATH: \\Delta x]</span> is</p>",
+            "readable_text": "the increment in [MATH: y] using the Runge-Kutta (RK4) Method with step size [MATH: \\Delta x] is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Delta y  = \\dfrac16\\left(y&#x27; + 2y&#x27;_1 + 2y&#x27;_2 + y&#x27;_3\\right) \\cdot \\Delta x,]</span></p>",
+            "readable_text": "[MATH: \\Delta y = \\dfrac16\\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where</p>",
+            "readable_text": "where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: y&#x27; = f(x,y)]</span> is the slope at the initial point <span class=\"math\">[MATH: (x,y),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_1 = f(x_1,y_1)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y&#x27; \\cdot \\Delta x\\right)\\!,]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_2 = f(x_2,y_2)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y&#x27;_1 \\cdot \\Delta x\\right)\\!,]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_3 = f(x_3, y_3)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y&#x27;_2 \\cdot \\Delta x).]</span></p></li></ul>",
+            "readable_text": "- [MATH: y' = f(x,y)] is the slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1,y_1)] is the estimated slope at [MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y' \\cdot \\Delta x\\right)\\!,]\n- [MATH: y'_2 = f(x_2,y_2)] is the estimated slope at [MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y'_1 \\cdot \\Delta x\\right)\\!,]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Instead of assuming the initial slope represents the entire interval, we take additional \u201cin-between\u201d slope estimates at the midpoint of the step and near its end. This provides a much better estimate of the overall increment in <span class=\"math\">[MATH: y]</span> during the step, while still using only evaluations of <span class=\"math\">[MATH: f(x,y).]</span></p>",
+            "readable_text": "Instead of assuming the initial slope represents the entire interval, we take additional \u201cin-between\u201d slope estimates at the midpoint of the step and near its end. This provides a much better estimate of the overall increment in [MATH: y] during the step, while still using only evaluations of [MATH: f(x,y).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ll see an example of how to implement the RK4 method soon, but first, let&#x27;s make sure we know at which points the slope is evaluated in the next example.</p>",
+            "readable_text": "We'll see an example of how to implement the RK4 method soon, but first, let's make sure we know at which points the slope is evaluated in the next example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Important note: Many texts denote the four intermediate values by <span class=\"math\">[MATH: k_1, k_2, k_3, k_4,]</span> sometimes scaling each by <span class=\"math\">[MATH: \\Delta x,]</span> but the underlying idea is the same.</p>",
+            "readable_text": "Important note: Many texts denote the four intermediate values by [MATH: k_1, k_2, k_3, k_4,] sometimes scaling each by [MATH: \\Delta x,] but the underlying idea is the same.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nFor a first-order initial value problem, Euler's method approximates the increment in [MATH: y] over a step by using a single slope - the slope at the current point.\n\nContent:\nThis is simple and works well when the slope stays nearly constant across a step, but can become inaccurate when the slope changes noticeably between successive [MATH: x]-values.\n\nContent:\nThe Runge\u2013Kutta Method improves this idea by sampling the slope at several points within the same step and combining them into a weighted average.\nFor an initial value problem\n\nContent:\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\n\nContent:\nthe increment in [MATH: y] using the Runge-Kutta (RK4) Method with step size [MATH: \\Delta x] is\n\nContent:\n[MATH: \\Delta y = \\dfrac16\\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\n\nContent:\nwhere\n\nContent:\n- [MATH: y' = f(x,y)] is the slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1,y_1)] is the estimated slope at [MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y' \\cdot \\Delta x\\right)\\!,]\n- [MATH: y'_2 = f(x_2,y_2)] is the estimated slope at [MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y'_1 \\cdot \\Delta x\\right)\\!,]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nContent:\nInstead of assuming the initial slope represents the entire interval, we take additional \u201cin-between\u201d slope estimates at the midpoint of the step and near its end. This provides a much better estimate of the overall increment in [MATH: y] during the step, while still using only evaluations of [MATH: f(x,y).]\n\nContent:\nWe'll see an example of how to implement the RK4 method soon, but first, let's make sure we know at which points the slope is evaluated in the next example.\n\nContent:\nImportant note: Many texts denote the four intermediate values by [MATH: k_1, k_2, k_3, k_4,] sometimes scaling each by [MATH: \\Delta x,] but the underlying idea is the same."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "613992",
+        "content_id": "21498",
+        "dom_id": "step-613992",
+        "selector": "#step-613992",
+        "step_anchor": "step-2",
+        "title": "Identifying the Runge-Kutta Method",
+        "key_prerequisites": [
+          {
+            "topic_id": "3668",
+            "name": "Euler's Method: Calculating Multiple Steps",
+            "href": "/topics/3668",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we wish to solve the initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y(a) =c,]</span>\nand we take a step of size <span class=\"math\">[MATH: \\Delta x]</span> using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point <span class=\"math\">[MATH: (x,y) .]</span></p><p><span class=\"math\">[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; y^{\u2032}|= f(x, y); y_{1}^{\u2032}|= f(x_{1}, y_{1})where(x_{1}, y_{1}) = ([math]\\phantom{(q_0,1,L)}[/math], y + (1)/(2)y^{\u2032} \u22c5 \u0394x); y_{2}^{\u2032}|= f(x_{2}, y_{2})where(x_{2}, y_{2}) = (x + (1)/(2)\u0394x, [math]\\phantom{(q_0,1,L)}[/math]); y_{3}^{\u2032}|= f(x_{3}, y_{3})where(x_{3}, y_{3}) = ([math]\\phantom{(q_0,1,L)}[/math], y + y_{2}^{\u2032} \u22c5 \u0394x)]</span></p>",
+            "readable_text": "Suppose we wish to solve the initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) =c,]\nand we take a step of size [MATH: \\Delta x] using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point [MATH: (x,y) .]\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; y^{\u2032}|= f(x, y); y_{1}^{\u2032}|= f(x_{1}, y_{1})where(x_{1}, y_{1}) = ([math]\\phantom{(q_0,1,L)}[/math], y + (1)/(2)y^{\u2032} \u22c5 \u0394x); y_{2}^{\u2032}|= f(x_{2}, y_{2})where(x_{2}, y_{2}) = (x + (1)/(2)\u0394x, [math]\\phantom{(q_0,1,L)}[/math]); y_{3}^{\u2032}|= f(x_{3}, y_{3})where(x_{3}, y_{3}) = ([math]\\phantom{(q_0,1,L)}[/math], y + y_{2}^{\u2032} \u22c5 \u0394x)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem</p><p><span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y(a) = c,]</span></p><p>the increment in <span class=\"math\">[MATH: y]</span> using the Runge-Kutta (RK4) method with step size <span class=\"math\">[MATH: \\Delta x]</span> is computed as the weighted average of four sample slopes:</p><p><span class=\"math\">[MATH: \\Delta y = \\dfrac16 \\left(y&#x27; + 2y&#x27;_1 + 2y&#x27;_2 + y&#x27;_3\\right) \\cdot \\Delta x,]</span></p><p>where</p><ul><li><p><span class=\"math\">[MATH: y&#x27; = f(x,y)]</span> is the estimated slope at the point <span class=\"math\">[MATH: (x,y),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_1 = f(x_1, y_1)]</span> is the estimated slope at <span class=\"math\">[MATH: x + (1)/(2)\u0394x]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_2 = f(x_2, y_2)]</span> is the estimated slope at <span class=\"math\">[MATH: y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_3 = f(x_3, y_3)]</span> is the estimated slope at <span class=\"math\">[MATH: x + \u0394x]</span></p></li></ul>",
+            "readable_text": "For an initial value problem\n\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\n\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n\n[MATH: \\Delta y = \\dfrac16 \\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\n\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: x + (1)/(2)\u0394x]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: x + \u0394x]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we wish to solve the initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) =c,]\nand we take a step of size [MATH: \\Delta x] using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point [MATH: (x,y) .]\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; y^{\u2032}|= f(x, y); y_{1}^{\u2032}|= f(x_{1}, y_{1})where(x_{1}, y_{1}) = ([math]\\phantom{(q_0,1,L)}[/math], y + (1)/(2)y^{\u2032} \u22c5 \u0394x); y_{2}^{\u2032}|= f(x_{2}, y_{2})where(x_{2}, y_{2}) = (x + (1)/(2)\u0394x, [math]\\phantom{(q_0,1,L)}[/math]); y_{3}^{\u2032}|= f(x_{3}, y_{3})where(x_{3}, y_{3}) = ([math]\\phantom{(q_0,1,L)}[/math], y + y_{2}^{\u2032} \u22c5 \u0394x)]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\n\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n\n[MATH: \\Delta y = \\dfrac16 \\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\n\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: x + (1)/(2)\u0394x]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: x + \u0394x]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "331072",
+        "dom_id": "question-331072",
+        "selector": "#question-331072",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the initial value problem\n<span class=\"math\">[MATH: y^{\u2032} = f(x, y), y(1) = 0]</span>\nfor some function <span class=\"math\">[MATH: f(x, y).]</span> The table below shows the intermediate quantities computed in the first iteration of the Runge-Kutta (RK4) method.</p><table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: y^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{1}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{2}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{3}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: \u0394y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td></td></tr></table><p>Given that the step size is <span class=\"math\">[MATH: \u0394x = 1,]</span> at which of the following points is the function <span class=\"math\">[MATH: f]</span> <strong>NOT</strong> evaluated during this iteration?</p>",
+          "readable_text": "Consider the initial value problem\n[MATH: y^{\u2032} = f(x, y), y(1) = 0]\nfor some function [MATH: f(x, y).] The table below shows the intermediate quantities computed in the first iteration of the Runge-Kutta (RK4) method.\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \u2212 1] | [MATH: 2] | |\n\nGiven that the step size is [MATH: \u0394x = 1,] at which of the following points is the function [MATH: f] NOT evaluated during this iteration?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-331072-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: ((3)/(2), (3)/(2))]</span></p>",
+            "readable_text": "[MATH: ((3)/(2), (3)/(2))]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-331072-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: ((3)/(2), (1)/(2))]</span></p>",
+            "readable_text": "[MATH: ((3)/(2), (1)/(2))]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-331072-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1, 0)]</span></p>",
+            "readable_text": "[MATH: (1, 0)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-331072-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (2, \u2212 1)]</span></p>",
+            "readable_text": "[MATH: (2, \u2212 1)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-331072-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (2, (1)/(2))]</span></p>",
+            "readable_text": "[MATH: (2, (1)/(2))]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the initial value problem\n[MATH: y^{\u2032} = f(x, y), y(1) = 0]\nfor some function [MATH: f(x, y).] The table below shows the intermediate quantities computed in the first iteration of the Runge-Kutta (RK4) method.\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \u2212 1] | [MATH: 2] | |\n\nGiven that the step size is [MATH: \u0394x = 1,] at which of the following points is the function [MATH: f] NOT evaluated during this iteration?\n\nChoices:\na. [MATH: ((3)/(2), (3)/(2))]\nb. [MATH: ((3)/(2), (1)/(2))]\nc. [MATH: (1, 0)]\nd. [MATH: (2, \u2212 1)]\ne. [MATH: (2, (1)/(2))]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "329886",
+        "dom_id": "question-329886",
+        "selector": "#question-329886",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we wish to solve the initial value problem\n<span class=\"math\">[MATH: y^{\u2032} = f(x, y), y(a) = c,]</span>\nand we take a step of size <span class=\"math\">[MATH: \u0394x]</span> using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point <span class=\"math\">[MATH: (x, y).]</span><span class=\"math\">[MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}]</span><span class=\"select-list\" data-select-id=\"selectList-329886-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-329886-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-329886-2\" data-select-index=\"3\">[SELECT 3]</span><span class=\"select-list\" data-select-id=\"selectList-329886-3\" data-select-index=\"4\">[SELECT 4]</span></p>",
+          "readable_text": "Suppose we wish to solve the initial value problem\n[MATH: y^{\u2032} = f(x, y), y(a) = c,]\nand we take a step of size [MATH: \u0394x] using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point [MATH: (x, y).][MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}][SELECT 1][SELECT 2][SELECT 3][SELECT 4]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-329886-0",
+              "frame_dom_id": "selectListFrame-329886-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}]</span>",
+                  "readable_text": "[MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + y_{3}^{\u2032}]</span>",
+                  "readable_text": "[MATH: y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + y_{3}^{\u2032}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 2y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + 2y_{3}^{\u2032}]</span>",
+                  "readable_text": "[MATH: 2y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + 2y_{3}^{\u2032}]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-329886-1",
+              "frame_dom_id": "selectListFrame-329886-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: y^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: y^{\u2032} \u22c5 \u0394x]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(2)y^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: (1)/(2)y^{\u2032} \u22c5 \u0394x]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: y + y^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: y + y^{\u2032} \u22c5 \u0394x]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: y + (1)/(2)y^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: y + (1)/(2)y^{\u2032} \u22c5 \u0394x]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-329886-2",
+              "frame_dom_id": "selectListFrame-329886-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(2)\u0394x]</span>",
+                  "readable_text": "[MATH: (1)/(2)\u0394x]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: x + (1)/(2)\u0394x]</span>",
+                  "readable_text": "[MATH: x + (1)/(2)\u0394x]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u0394x]</span>",
+                  "readable_text": "[MATH: \u0394x]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: x + \u0394x]</span>",
+                  "readable_text": "[MATH: x + \u0394x]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-329886-3",
+              "frame_dom_id": "selectListFrame-329886-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: y + y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: y + y_{2}^{\u2032} \u22c5 \u0394x]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: y + (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: y + (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                  "readable_text": "[MATH: y_{2}^{\u2032} \u22c5 \u0394x]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-329886-0",
+            "frame_dom_id": "selectListFrame-329886-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}]</span>",
+                "readable_text": "[MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + y_{3}^{\u2032}]</span>",
+                "readable_text": "[MATH: y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + y_{3}^{\u2032}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 2y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + 2y_{3}^{\u2032}]</span>",
+                "readable_text": "[MATH: 2y^{\u2032} + y_{1}^{\u2032} + y_{2}^{\u2032} + 2y_{3}^{\u2032}]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-329886-1",
+            "frame_dom_id": "selectListFrame-329886-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: y^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: y^{\u2032} \u22c5 \u0394x]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(2)y^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: (1)/(2)y^{\u2032} \u22c5 \u0394x]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: y + y^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: y + y^{\u2032} \u22c5 \u0394x]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: y + (1)/(2)y^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: y + (1)/(2)y^{\u2032} \u22c5 \u0394x]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-329886-2",
+            "frame_dom_id": "selectListFrame-329886-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(2)\u0394x]</span>",
+                "readable_text": "[MATH: (1)/(2)\u0394x]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: x + (1)/(2)\u0394x]</span>",
+                "readable_text": "[MATH: x + (1)/(2)\u0394x]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u0394x]</span>",
+                "readable_text": "[MATH: \u0394x]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: x + \u0394x]</span>",
+                "readable_text": "[MATH: x + \u0394x]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-329886-3",
+            "frame_dom_id": "selectListFrame-329886-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: y + y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: y + y_{2}^{\u2032} \u22c5 \u0394x]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: y + (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: y + (1)/(2)y_{2}^{\u2032} \u22c5 \u0394x]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: y_{2}^{\u2032} \u22c5 \u0394x]</span>",
+                "readable_text": "[MATH: y_{2}^{\u2032} \u22c5 \u0394x]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\nSuppose we wish to solve the initial value problem\n[MATH: y^{\u2032} = f(x, y), y(a) = c,]\nand we take a step of size [MATH: \u0394x] using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point [MATH: (x, y).][MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}][SELECT 1][SELECT 2][SELECT 3][SELECT 4]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "613995",
+        "content_id": "14358",
+        "dom_id": "step-613995",
+        "selector": "#step-613995",
+        "step_anchor": "step-5",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the following initial value problem:</p>",
+            "readable_text": "Consider the following initial value problem:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = 3x - 2y + 5, \\qquad y(0) = 1]</span></p>",
+            "readable_text": "[MATH: y' = 3x - 2y + 5, \\qquad y(0) = 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Our goal is to approximate <span class=\"math\">[MATH: y(1)]</span> using the Runge-Kutta (RK4) method.</p>",
+            "readable_text": "Our goal is to approximate [MATH: y(1)] using the Runge-Kutta (RK4) method.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Since we know <span class=\"math\">[MATH: y(0)]</span> and wish to estimate <span class=\"math\">[MATH: y(1),]</span> we will use a step size of</p>",
+            "readable_text": "Since we know [MATH: y(0)] and wish to estimate [MATH: y(1),] we will use a step size of",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\Delta x = 1 - 0 = 1.]</span></p>",
+            "readable_text": "[MATH: \\Delta x = 1 - 0 = 1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s use a table to keep track of all important values, including the intermediate slopes. We start by adding the initial condition data <span class=\"math\">[MATH: y(0)=1.]</span></p>",
+            "readable_text": "Let's use a table to keep track of all important values, including the intermediate slopes. We start by adding the initial condition data [MATH: y(0)=1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+            "readable_text": "| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | | | | | |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now let&#x27;s find the required values.</p>",
+            "readable_text": "Now let's find the required values.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>First, we compute the value of <span class=\"math\">[MATH: y&#x27;]</span> according to the given rule:\n<span class=\"math\">[MATH: y^{\u2032}|= 3x \u2212 2y + 5; = 3 \u22c5 0 \u2212 2 \u22c5 1 + 5; = 3.]</span>\nSo, we add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td></td><td></td><td></td><td></td></tr></table></li><li><p>The first intermediate point is\n<span class=\"math\">[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 3 \u22c5 1); = ((1)/(2), (5)/(2)).]</span>\nSo, the first intermediate slope is\n<span class=\"math\">[MATH: y_{1}^{\u2032}|= 3x_{1} \u2212 2y_{1} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (5)/(2) + 5; = (3)/(2).]</span>\nWe can add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac32]</span></p></td><td></td><td></td><td></td></tr></table></li><li><p>The second intermediate point is\n<span class=\"math\">[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 (3)/(2) \u22c5 1); = ((1)/(2), (7)/(4)).]</span>\nSo, the second intermediate slope is\n<span class=\"math\">[MATH: y_{2}^{\u2032}|= 3x_{2} \u2212 2y_{2} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (7)/(4) + 5; = 3.]</span>\nWe add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac32]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td></td><td></td></tr></table></li><li><p>The third intermediate point is\n<span class=\"math\">[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + 3 \u22c5 1); = (1, 4).]</span>\nSo, the third intermediate slope is\n<span class=\"math\">[MATH: y_{3}^{\u2032}|= 3x_{3} \u2212 2y_{3} + 5; = 3 \u22c5 1 \u2212 2 \u22c5 4 + 5; = 0.]</span>\nWe can add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac32]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td></tr></table></li></ul>",
+            "readable_text": "- First, we compute the value of [MATH: y'] according to the given rule:\n[MATH: y^{\u2032}|= 3x \u2212 2y + 5; = 3 \u22c5 0 \u2212 2 \u22c5 1 + 5; = 3.]\nSo, we add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | | | | |\n- The first intermediate point is\n[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 3 \u22c5 1); = ((1)/(2), (5)/(2)).]\nSo, the first intermediate slope is\n[MATH: y_{1}^{\u2032}|= 3x_{1} \u2212 2y_{1} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (5)/(2) + 5; = (3)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | | | |\n- The second intermediate point is\n[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 (3)/(2) \u22c5 1); = ((1)/(2), (7)/(4)).]\nSo, the second intermediate slope is\n[MATH: y_{2}^{\u2032}|= 3x_{2} \u2212 2y_{2} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (7)/(4) + 5; = 3.]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | | |\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + 3 \u22c5 1); = (1, 4).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= 3x_{3} \u2212 2y_{3} + 5; = 3 \u22c5 1 \u2212 2 \u22c5 4 + 5; = 0.]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we compute <span class=\"math\">[MATH: \\Delta y]</span> using the Runge-Kutta Method:</p>",
+            "readable_text": "Finally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(3 + 2 \u22c5 (3)/(2) + 2 \u22c5 3 + 0) \u22c5 1; = (1)/(6) \u22c5 12; = 2.]</span></p>",
+            "readable_text": "[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(3 + 2 \u22c5 (3)/(2) + 2 \u22c5 3 + 0) \u22c5 1; = (1)/(6) \u22c5 12; = 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the completed first row is as given below.</p>",
+            "readable_text": "Therefore, the completed first row is as given below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac32]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To get the values of <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> in the <em>next</em> row, we add <span class=\"math\">[MATH: \\Delta x]</span> to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: \\Delta y]</span> to <span class=\"math\">[MATH: y,]</span> as follows:</p>",
+            "readable_text": "To get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + 2; = 3]</span></p>",
+            "readable_text": "[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + 2; = 3]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Adding these rows to our table gives the following:</p>",
+            "readable_text": "Adding these rows to our table gives the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac32]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+            "readable_text": "| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n| [MATH: 1] | [MATH: 3] | | | | | |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Looking at the two leftmost columns, we conclude that <span class=\"math\">[MATH: y(1) \\approx 3.]</span></p>",
+            "readable_text": "Looking at the two leftmost columns, we conclude that [MATH: y(1) \\approx 3.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConsider the following initial value problem:\n\nContent:\n[MATH: y' = 3x - 2y + 5, \\qquad y(0) = 1]\n\nContent:\nOur goal is to approximate [MATH: y(1)] using the Runge-Kutta (RK4) method.\n\nContent:\nSince we know [MATH: y(0)] and wish to estimate [MATH: y(1),] we will use a step size of\n\nContent:\n[MATH: \\Delta x = 1 - 0 = 1.]\n\nContent:\nLet's use a table to keep track of all important values, including the intermediate slopes. We start by adding the initial condition data [MATH: y(0)=1.]\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | | | | | |\n\nContent:\nNow let's find the required values.\n\nContent:\n- First, we compute the value of [MATH: y'] according to the given rule:\n[MATH: y^{\u2032}|= 3x \u2212 2y + 5; = 3 \u22c5 0 \u2212 2 \u22c5 1 + 5; = 3.]\nSo, we add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | | | | |\n- The first intermediate point is\n[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 3 \u22c5 1); = ((1)/(2), (5)/(2)).]\nSo, the first intermediate slope is\n[MATH: y_{1}^{\u2032}|= 3x_{1} \u2212 2y_{1} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (5)/(2) + 5; = (3)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | | | |\n- The second intermediate point is\n[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 (3)/(2) \u22c5 1); = ((1)/(2), (7)/(4)).]\nSo, the second intermediate slope is\n[MATH: y_{2}^{\u2032}|= 3x_{2} \u2212 2y_{2} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (7)/(4) + 5; = 3.]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | | |\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + 3 \u22c5 1); = (1, 4).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= 3x_{3} \u2212 2y_{3} + 5; = 3 \u22c5 1 \u2212 2 \u22c5 4 + 5; = 0.]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | |\n\nContent:\nFinally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n\nContent:\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(3 + 2 \u22c5 (3)/(2) + 2 \u22c5 3 + 0) \u22c5 1; = (1)/(6) \u22c5 12; = 2.]\n\nContent:\nTherefore, the completed first row is as given below.\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n\nContent:\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\nContent:\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + 2; = 3]\n\nContent:\nAdding these rows to our table gives the following:\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n| [MATH: 1] | [MATH: 3] | | | | | |\n\nContent:\nLooking at the two leftmost columns, we conclude that [MATH: y(1) \\approx 3.]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "613996",
+        "content_id": "21499",
+        "dom_id": "step-613996",
+        "selector": "#step-613996",
+        "step_anchor": "step-6",
+        "title": "Calculating a Y-Increment Given All Intermediate Values",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y&#x27; = xy + x, \\qquad y(0) = 1]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is <span class=\"math\">[MATH: \\Delta x = 1.]</span></p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac54]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{13}{4}]</span></p></td><td></td></tr></table><p>Use the table above to approximate the value of <span class=\"math\">[MATH: y(1).]</span></p>",
+            "readable_text": "Consider the following initial value problem:\n[MATH: y' = xy + x, \\qquad y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \\Delta x = 1.]\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | |\n\nUse the table above to approximate the value of [MATH: y(1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y(a) = c]</span>\nthe increment in <span class=\"math\">[MATH: y]</span> using the Runge-Kutta (RK4) method with step size <span class=\"math\">[MATH: \\Delta x]</span> is computed as the weighted average of four sample slopes:\n<span class=\"math\">[MATH: \\Delta y = \\dfrac16(y&#x27; + 2y&#x27;_1 + 2y&#x27;_2 + y&#x27;_3) \\cdot \\Delta x,]</span>\nwhere</p><ul><li><p><span class=\"math\">[MATH: y&#x27; = f(x,y)]</span> is the estimated slope at the initial point <span class=\"math\">[MATH: (x,y),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_1 = f(x_1, y_1)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y&#x27; \\cdot \\Delta x \\right),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_2 = f(x_2, y_2)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y&#x27;_1 \\cdot \\Delta x \\right),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_3 = f(x_3, y_3)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y&#x27;_2 \\cdot \\Delta x).]</span></p></li></ul><p>All four sample slopes are already computed. So, we just need to find the increment on <span class=\"math\">[MATH: y.]</span></p><p>We compute <span class=\"math\">[MATH: \\Delta y]</span> using the Runge-Kutta method:</p><p><span class=\"math\">[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 1 + 2 \u22c5 (5)/(4) + (13)/(4)) \u22c5 1; = (1)/(6)(2 + (10)/(4) + (13)/(4)); = (1)/(6) \u22c5 (31)/(4); = (31)/(24).]</span></p><p>Therefore, the completed first row is as given below.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac54]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{13}{4}]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{31}{24}]</span></p></td></tr></table><p>To get the values of <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> in the <em>next</em> row, we add <span class=\"math\">[MATH: \\Delta x]</span> to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: \\Delta y]</span> to <span class=\"math\">[MATH: y,]</span> as follows:</p><p><span class=\"math\">[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (31)/(24); = (55)/(24)]</span></p><p>Adding these rows to our table gives the following:</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac54]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{13}{4}]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{31}{24}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{55}{24}]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table><p>Finally, we have\n<span class=\"math\">[MATH: y(1) \u2248 (55)/(24).]</span></p>",
+            "readable_text": "For an initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) = c]\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16(y' + 2y'_1 + 2y'_2 + y'_3) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y' \\cdot \\Delta x \\right),]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y'_1 \\cdot \\Delta x \\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nAll four sample slopes are already computed. So, we just need to find the increment on [MATH: y.]\n\nWe compute [MATH: \\Delta y] using the Runge-Kutta method:\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 1 + 2 \u22c5 (5)/(4) + (13)/(4)) \u22c5 1; = (1)/(6)(2 + (10)/(4) + (13)/(4)); = (1)/(6) \u22c5 (31)/(4); = (31)/(24).]\n\nTherefore, the completed first row is as given below.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | [MATH: \\dfrac{31}{24}] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (31)/(24); = (55)/(24)]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | [MATH: \\dfrac{31}{24}] |\n| [MATH: 1] | [MATH: \\dfrac{55}{24}] | | | | | |\n\nFinally, we have\n[MATH: y(1) \u2248 (55)/(24).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following initial value problem:\n[MATH: y' = xy + x, \\qquad y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \\Delta x = 1.]\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | |\n\nUse the table above to approximate the value of [MATH: y(1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) = c]\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16(y' + 2y'_1 + 2y'_2 + y'_3) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y' \\cdot \\Delta x \\right),]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y'_1 \\cdot \\Delta x \\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nAll four sample slopes are already computed. So, we just need to find the increment on [MATH: y.]\n\nWe compute [MATH: \\Delta y] using the Runge-Kutta method:\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 1 + 2 \u22c5 (5)/(4) + (13)/(4)) \u22c5 1; = (1)/(6)(2 + (10)/(4) + (13)/(4)); = (1)/(6) \u22c5 (31)/(4); = (31)/(24).]\n\nTherefore, the completed first row is as given below.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | [MATH: \\dfrac{31}{24}] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (31)/(24); = (55)/(24)]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | [MATH: \\dfrac{31}{24}] |\n| [MATH: 1] | [MATH: \\dfrac{55}{24}] | | | | | |\n\nFinally, we have\n[MATH: y(1) \u2248 (55)/(24).]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "327875",
+        "dom_id": "question-327875",
+        "selector": "#question-327875",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = 3xy + 1, y(\u2212 (2)/(3)) = \u2212 1]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is <span class=\"math\">[MATH: \u0394x = (2)/(3).]</span></p><table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: y^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{1}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{2}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{3}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: \u0394y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2212 (2)/(3)]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: (5)/(3)]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td></tr></table><p>\n\nTherefore, <span class=\"math\">[MATH: y(0) \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>.</p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = 3xy + 1, y(\u2212 (2)/(3)) = \u2212 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \u0394x = (2)/(3).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: \u2212 (2)/(3)] | [MATH: \u2212 1] | [MATH: 3] | [MATH: 1] | [MATH: (5)/(3)] | [MATH: 1] | [FREE_ENTRY 1] |\n\nTherefore, [MATH: y(0) \u2248]\n[FREE_ENTRY 2].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = 3xy + 1, y(\u2212 (2)/(3)) = \u2212 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \u0394x = (2)/(3).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: \u2212 (2)/(3)] | [MATH: \u2212 1] | [MATH: 3] | [MATH: 1] | [MATH: (5)/(3)] | [MATH: 1] | [FREE_ENTRY 1] |\n\nTherefore, [MATH: y(0) \u2248]\n[FREE_ENTRY 2]."
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "330767",
+        "dom_id": "question-330767",
+        "selector": "#question-330767",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = x + y, y(0) = 1]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is <span class=\"math\">[MATH: \u0394x = (1)/(2).]</span></p><table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: y^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{1}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{2}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{3}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: \u0394y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: (3)/(2)]</span></p></td><td><p><span class=\"math\">[MATH: (13)/(8)]</span></p></td><td><p><span class=\"math\">[MATH: (37)/(16)]</span></p></td><td><p>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>\n</p></td></tr></table><p>\n\nTherefore, <span class=\"math\">[MATH: y((1)/(2)) \u2248]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-2\" data-blank-index=\"2\">[FREE_ENTRY 2]</span>.</p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = x + y, y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \u0394x = (1)/(2).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 1] | [MATH: (3)/(2)] | [MATH: (13)/(8)] | [MATH: (37)/(16)] | [FREE_ENTRY 1] |\n\nTherefore, [MATH: y((1)/(2)) \u2248]\n[FREE_ENTRY 2].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            },
+            {
+              "index": 2,
+              "dom_id": "freeResponseTextbox-2",
+              "placeholder": "[FREE_ENTRY 2]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          },
+          {
+            "index": 2,
+            "dom_id": "freeResponseTextbox-2",
+            "placeholder": "[FREE_ENTRY 2]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Prompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = x + y, y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \u0394x = (1)/(2).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 1] | [MATH: (3)/(2)] | [MATH: (13)/(8)] | [MATH: (37)/(16)] | [FREE_ENTRY 1] |\n\nTherefore, [MATH: y((1)/(2)) \u2248]\n[FREE_ENTRY 2]."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "613999",
+        "content_id": "21559",
+        "dom_id": "step-613999",
+        "selector": "#step-613999",
+        "step_anchor": "step-9",
+        "title": "Calculating a Y-Increment Given Some Intermediate Values",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y&#x27; = x - y, \\qquad y(0) = 1]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the first row of the table below, given that the step size is <span class=\"math\">[MATH: \\Delta x = 1.]</span></p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: -\\dfrac12]</span></p></td><td></td><td></td></tr></table><p>Use the table above to approximate the value of <span class=\"math\">[MATH: y(1).]</span></p>",
+            "readable_text": "Consider the following initial value problem:\n[MATH: y' = x - y, \\qquad y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the first row of the table below, given that the step size is [MATH: \\Delta x = 1.]\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | | |\n\nUse the table above to approximate the value of [MATH: y(1).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem</p><p><span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y(a) = c]</span>\nthe increment in <span class=\"math\">[MATH: y]</span> using the Runge-Kutta (RK4) method with step size <span class=\"math\">[MATH: \\Delta x]</span> is computed as the weighted average of four sample slopes:\n<span class=\"math\">[MATH: \\Delta y = \\dfrac16(y&#x27; + 2y&#x27;_1 + 2y&#x27;_2 + y&#x27;_3) \\cdot \\Delta x,]</span>\nwhere</p><ul><li><p><span class=\"math\">[MATH: y&#x27; = f(x,y)]</span> is the estimated slope at the initial point <span class=\"math\">[MATH: (x,y),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_1 = f(x_1, y_1)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y&#x27; \\cdot \\Delta x \\right),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_2 = f(x_2, y_2)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y&#x27;_1 \\cdot \\Delta x \\right),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_3 = f(x_3, y_3)]</span> is the estimated slope at <span class=\"math\">[MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y&#x27;_2 \\cdot \\Delta x).]</span></p></li></ul><p>The first three sample slopes, evaluated at the initial point and first intermediate points, are already computed. Now let&#x27;s find the others.</p><ul><li><p>The third intermediate point is\n<span class=\"math\">[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + (\u2212 (1)/(2)) \u22c5 1); = (1, (1)/(2)).]</span>\nSo, the third intermediate slope is\n<span class=\"math\">[MATH: y_{3}^{\u2032}|= x_{3} \u2212 y_{3}; = 1 \u2212 (1)/(2); = (1)/(2).]</span>\nWe can add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: -\\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td></td></tr></table></li></ul><p>Finally, we compute <span class=\"math\">[MATH: \\Delta y]</span> using the Runge-Kutta Method:</p><p><span class=\"math\">[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(\u2212 1 + 2 \u22c5 0 + 2 \u22c5 (\u2212 (1)/(2)) + (1)/(2)) \u22c5 1; = (1)/(6)(\u2212 (3)/(2)); = \u2212 (1)/(4).]</span></p><p>Therefore, the completed first row is as given below.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: -\\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: -\\dfrac14]</span></p></td></tr></table><p>To get the values of <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> in the <em>next</em> row, we add <span class=\"math\">[MATH: \\Delta x]</span> to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: \\Delta y]</span> to <span class=\"math\">[MATH: y,]</span> as follows:</p><p><span class=\"math\">[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (\u2212 (1)/(4)); = (3)/(4).]</span></p><p>Adding these rows to our table gives the following:</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: -1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: -\\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: -\\dfrac14]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac34]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table><p>Finally, we have\n<span class=\"math\">[MATH: y(1) \u2248 (3)/(4).]</span></p>",
+            "readable_text": "For an initial value problem\n\n[MATH: y' = f(x,y), \\qquad y(a) = c]\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16(y' + 2y'_1 + 2y'_2 + y'_3) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y' \\cdot \\Delta x \\right),]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y'_1 \\cdot \\Delta x \\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nThe first three sample slopes, evaluated at the initial point and first intermediate points, are already computed. Now let's find the others.\n\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + (\u2212 (1)/(2)) \u22c5 1); = (1, (1)/(2)).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= x_{3} \u2212 y_{3}; = 1 \u2212 (1)/(2); = (1)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | |\n\nFinally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(\u2212 1 + 2 \u22c5 0 + 2 \u22c5 (\u2212 (1)/(2)) + (1)/(2)) \u22c5 1; = (1)/(6)(\u2212 (3)/(2)); = \u2212 (1)/(4).]\n\nTherefore, the completed first row is as given below.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | [MATH: -\\dfrac14] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (\u2212 (1)/(4)); = (3)/(4).]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | [MATH: -\\dfrac14] |\n| [MATH: 1] | [MATH: \\dfrac34] | | | | | |\n\nFinally, we have\n[MATH: y(1) \u2248 (3)/(4).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following initial value problem:\n[MATH: y' = x - y, \\qquad y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the first row of the table below, given that the step size is [MATH: \\Delta x = 1.]\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | | |\n\nUse the table above to approximate the value of [MATH: y(1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n\n[MATH: y' = f(x,y), \\qquad y(a) = c]\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16(y' + 2y'_1 + 2y'_2 + y'_3) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y' \\cdot \\Delta x \\right),]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y'_1 \\cdot \\Delta x \\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nThe first three sample slopes, evaluated at the initial point and first intermediate points, are already computed. Now let's find the others.\n\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + (\u2212 (1)/(2)) \u22c5 1); = (1, (1)/(2)).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= x_{3} \u2212 y_{3}; = 1 \u2212 (1)/(2); = (1)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | |\n\nFinally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(\u2212 1 + 2 \u22c5 0 + 2 \u22c5 (\u2212 (1)/(2)) + (1)/(2)) \u22c5 1; = (1)/(6)(\u2212 (3)/(2)); = \u2212 (1)/(4).]\n\nTherefore, the completed first row is as given below.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | [MATH: -\\dfrac14] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (\u2212 (1)/(4)); = (3)/(4).]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | [MATH: -\\dfrac14] |\n| [MATH: 1] | [MATH: \\dfrac34] | | | | | |\n\nFinally, we have\n[MATH: y(1) \u2248 (3)/(4).]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "339631",
+        "dom_id": "question-339631",
+        "selector": "#question-339631",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = x + 2y, y(\u2212 1) = 0]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is <span class=\"math\">[MATH: \u0394x = 1.]</span></p><table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: y^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{1}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{2}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{3}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: \u0394y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 1]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 (3)/(2)]</span></p></td><td><p><span class=\"math\">[MATH: \u2212 2]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339631-0\" data-select-index=\"1\">[SELECT 1]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339631-1\" data-select-index=\"2\">[SELECT 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339631-2\" data-select-index=\"3\">[SELECT 3]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = x + 2y, y(\u2212 1) = 0]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is [MATH: \u0394x = 1.]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: \u2212 1] | [MATH: 0] | [MATH: \u2212 1] | [MATH: \u2212 (3)/(2)] | [MATH: \u2212 2] | [SELECT 1] | [SELECT 2] |\n| [MATH: 0] | [SELECT 3] | | | | | |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-339631-0",
+              "frame_dom_id": "selectListFrame-339631-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                  "readable_text": "[MATH: 4]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 4]</span>",
+                  "readable_text": "[MATH: \u2212 4]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-339631-1",
+              "frame_dom_id": "selectListFrame-339631-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                  "readable_text": "[MATH: \u2212 2]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 3]</span>",
+                  "readable_text": "[MATH: \u2212 3]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                  "readable_text": "[MATH: 2]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-339631-2",
+              "frame_dom_id": "selectListFrame-339631-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 3]</span>",
+                  "readable_text": "[MATH: \u2212 3]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                  "readable_text": "[MATH: 2]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                  "readable_text": "[MATH: \u2212 2]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-339631-0",
+            "frame_dom_id": "selectListFrame-339631-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 4]</span>",
+                "readable_text": "[MATH: 4]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 4]</span>",
+                "readable_text": "[MATH: \u2212 4]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-339631-1",
+            "frame_dom_id": "selectListFrame-339631-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                "readable_text": "[MATH: \u2212 2]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 3]</span>",
+                "readable_text": "[MATH: \u2212 3]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                "readable_text": "[MATH: 2]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-339631-2",
+            "frame_dom_id": "selectListFrame-339631-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 3]</span>",
+                "readable_text": "[MATH: \u2212 3]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                "readable_text": "[MATH: 2]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                "readable_text": "[MATH: \u2212 2]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = x + 2y, y(\u2212 1) = 0]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is [MATH: \u0394x = 1.]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: \u2212 1] | [MATH: 0] | [MATH: \u2212 1] | [MATH: \u2212 (3)/(2)] | [MATH: \u2212 2] | [SELECT 1] | [SELECT 2] |\n| [MATH: 0] | [SELECT 3] | | | | | |"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "339680",
+        "dom_id": "question-339680",
+        "selector": "#question-339680",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = 2x \u2212 8y, y(1) = (1)/(2)]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is <span class=\"math\">[MATH: \u0394x = (1)/(4).]</span></p><table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: y^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{1}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{2}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{3}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: \u0394y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: (1)/(2)]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339680-0\" data-select-index=\"1\">[SELECT 1]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339680-1\" data-select-index=\"2\">[SELECT 2]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339680-2\" data-select-index=\"3\">[SELECT 3]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339680-3\" data-select-index=\"4\">[SELECT 4]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339680-4\" data-select-index=\"5\">[SELECT 5]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: (5)/(4)]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-339680-5\" data-select-index=\"6\">[SELECT 6]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = 2x \u2212 8y, y(1) = (1)/(2)]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is [MATH: \u0394x = (1)/(4).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: (1)/(2)] | [SELECT 1] | [SELECT 2] | [SELECT 3] | [SELECT 4] | [SELECT 5] |\n| [MATH: (5)/(4)] | [SELECT 6] | | | | | |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-339680-0",
+              "frame_dom_id": "selectListFrame-339680-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                  "readable_text": "[MATH: 2]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                  "readable_text": "[MATH: \u2212 2]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-339680-1",
+              "frame_dom_id": "selectListFrame-339680-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(2)]</span>",
+                  "readable_text": "[MATH: (1)/(2)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(4)]</span>",
+                  "readable_text": "[MATH: (1)/(4)]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: (3)/(4)]</span>",
+                  "readable_text": "[MATH: (3)/(4)]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-339680-2",
+              "frame_dom_id": "selectListFrame-339680-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                  "readable_text": "[MATH: 3]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                  "readable_text": "[MATH: 1]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                  "readable_text": "[MATH: \u2212 2]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-339680-3",
+              "frame_dom_id": "selectListFrame-339680-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: (5)/(3)]</span>",
+                  "readable_text": "[MATH: (5)/(3)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: (5)/(2)]</span>",
+                  "readable_text": "[MATH: (5)/(2)]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: (5)/(4)]</span>",
+                  "readable_text": "[MATH: (5)/(4)]"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "dom_id": "selectList-339680-4",
+              "frame_dom_id": "selectListFrame-339680-4",
+              "placeholder": "[SELECT 5]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(8)]</span>",
+                  "readable_text": "[MATH: (1)/(8)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: (1)/(4)]</span>",
+                  "readable_text": "[MATH: (1)/(4)]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: \u2212 (1)/(8)]</span>",
+                  "readable_text": "[MATH: \u2212 (1)/(8)]"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "dom_id": "selectList-339680-5",
+              "frame_dom_id": "selectListFrame-339680-5",
+              "placeholder": "[SELECT 6]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: (3)/(8)]</span>",
+                  "readable_text": "[MATH: (3)/(8)]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: (3)/(4)]</span>",
+                  "readable_text": "[MATH: (3)/(4)]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: (3)/(7)]</span>",
+                  "readable_text": "[MATH: (3)/(7)]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-339680-0",
+            "frame_dom_id": "selectListFrame-339680-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 2]</span>",
+                "readable_text": "[MATH: 2]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                "readable_text": "[MATH: \u2212 2]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-339680-1",
+            "frame_dom_id": "selectListFrame-339680-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(2)]</span>",
+                "readable_text": "[MATH: (1)/(2)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(4)]</span>",
+                "readable_text": "[MATH: (1)/(4)]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: (3)/(4)]</span>",
+                "readable_text": "[MATH: (3)/(4)]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-339680-2",
+            "frame_dom_id": "selectListFrame-339680-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: 3]</span>",
+                "readable_text": "[MATH: 3]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: 1]</span>",
+                "readable_text": "[MATH: 1]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 2]</span>",
+                "readable_text": "[MATH: \u2212 2]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-339680-3",
+            "frame_dom_id": "selectListFrame-339680-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: (5)/(3)]</span>",
+                "readable_text": "[MATH: (5)/(3)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: (5)/(2)]</span>",
+                "readable_text": "[MATH: (5)/(2)]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: (5)/(4)]</span>",
+                "readable_text": "[MATH: (5)/(4)]"
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "dom_id": "selectList-339680-4",
+            "frame_dom_id": "selectListFrame-339680-4",
+            "placeholder": "[SELECT 5]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(8)]</span>",
+                "readable_text": "[MATH: (1)/(8)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: (1)/(4)]</span>",
+                "readable_text": "[MATH: (1)/(4)]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: \u2212 (1)/(8)]</span>",
+                "readable_text": "[MATH: \u2212 (1)/(8)]"
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "dom_id": "selectList-339680-5",
+            "frame_dom_id": "selectListFrame-339680-5",
+            "placeholder": "[SELECT 6]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: (3)/(8)]</span>",
+                "readable_text": "[MATH: (3)/(8)]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: (3)/(4)]</span>",
+                "readable_text": "[MATH: (3)/(4)]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: (3)/(7)]</span>",
+                "readable_text": "[MATH: (3)/(7)]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = 2x \u2212 8y, y(1) = (1)/(2)]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is [MATH: \u0394x = (1)/(4).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: (1)/(2)] | [SELECT 1] | [SELECT 2] | [SELECT 3] | [SELECT 4] | [SELECT 5] |\n| [MATH: (5)/(4)] | [SELECT 6] | | | | | |"
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "614002",
+        "content_id": "21558",
+        "dom_id": "step-614002",
+        "selector": "#step-614002",
+        "step_anchor": "step-12",
+        "title": "Approximating the Solution to an Initial Value Problem Using RK4",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y&#x27; = 2x(2y+1), \\qquad y(0) = 0]</span>\nUse the Runge-Kutta (RK4) method with one step to approximate <span class=\"math\">[MATH: y\\!\\left(\\dfrac12\\right).]</span></p>",
+            "readable_text": "Consider the following initial value problem:\n[MATH: y' = 2x(2y+1), \\qquad y(0) = 0]\nUse the Runge-Kutta (RK4) method with one step to approximate [MATH: y\\!\\left(\\dfrac12\\right).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>For an initial value problem\n<span class=\"math\">[MATH: y&#x27; = f(x,y), \\qquad y(a) = c,]</span>\nthe increment in <span class=\"math\">[MATH: y]</span> using the Runge-Kutta Method with step size <span class=\"math\">[MATH: \\Delta x]</span> is computed as the weighted average of four sample slopes:\n<span class=\"math\">[MATH: \\Delta y  = \\dfrac16\\left(y&#x27; + 2y&#x27;_1 + 2y&#x27;_2 + y&#x27;_3\\right) \\cdot \\Delta x,]</span>\nwhere</p><ul><li><p><span class=\"math\">[MATH: y&#x27; = f(x,y)]</span> is the slope at the initial point <span class=\"math\">[MATH: (x,y),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_1 = f(x_1,y_1)]</span> is the slope at <span class=\"math\">[MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y&#x27; \\cdot \\Delta x\\right),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_2 = f(x_2,y_2)]</span> is the slope at <span class=\"math\">[MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y&#x27;_1 \\cdot \\Delta x\\right),]</span></p></li><li><p><span class=\"math\">[MATH: y&#x27;_3 = f(x_3, y_3)]</span> is the slope at <span class=\"math\">[MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y&#x27;_2 \\cdot \\Delta x).]</span></p></li></ul><p>Since we want to find the value of <span class=\"math\">[MATH: y]</span> at <span class=\"math\">[MATH: x=\\dfrac12,]</span> starting from <span class=\"math\">[MATH: x=0,]</span> we will use a step size of \n<span class=\"math\">[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]</span></p><p>First, we create a table and add the initial condition data.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table><p>Now let&#x27;s find the required values.</p><ul><li><p>First, we compute the value of <span class=\"math\">[MATH: y&#x27;]</span> according to the given rule:\n<span class=\"math\">[MATH: y^{\u2032}|= 2x(2y + 1); = 2 \u22c5 0 \u22c5 (2 \u22c5 0 + 1); = 0]</span>\nSo, we add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td></td><td></td><td></td><td></td></tr></table></li><li><p>The first intermediate point is\n<span class=\"math\">[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 0 \u22c5 (1)/(2)); = ((1)/(4), 0).]</span>\nSo, the first intermediate slope is\n<span class=\"math\">[MATH: y_{1}^{\u2032}|= 2x_{1}(2y_{1} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 0 + 1); = (1)/(2).]</span>\nWe can add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td></td><td></td><td></td></tr></table></li><li><p>The second intermediate point is\n<span class=\"math\">[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 (1)/(2) \u22c5 (1)/(2)); = ((1)/(4), (1)/(8)).]</span>\nSo, the second intermediate slope is\n<span class=\"math\">[MATH: y_{2}^{\u2032}|= 2x_{2}(2y_{2} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 (1)/(8) + 1); = (1)/(2) \u22c5 ((1)/(4) + 1); = (1)/(2) \u22c5 ((5)/(4)); = (5)/(8).]</span>\nWe add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac58]</span></p></td><td></td><td></td></tr></table></li><li><p>The third intermediate point is\n<span class=\"math\">[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2), 0 + (5)/(8) \u22c5 (1)/(2)); = ((1)/(2), (5)/(16)).]</span>\nSo, the third intermediate slope is\n<span class=\"math\">[MATH: y_{3}^{\u2032}|= 2x_{3}(2y_{3} + 1); = 2 \u22c5 (1)/(2) \u22c5 (2 \u22c5 (5)/(16) + 1); = 1 \u22c5 ((10)/(16) + 1); = (26)/(16); = (13)/(8).]</span>\nWe can add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac58]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{13}8]</span></p></td><td></td></tr></table></li><li><p>Finally, we compute <span class=\"math\">[MATH: \\Delta y]</span> using the Runge-Kutta Method:\n<span class=\"math\">[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 (1)/(2) + 2 \u22c5 (5)/(8) + (13)/(8)) \u22c5 (1)/(2); = (1)/(12)((8)/(8) + (10)/(8) + (13)/(8)); = (1)/(12) \u22c5 (31)/(8); = (31)/(96)]</span>\nWe add this to our table.</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac58]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{13}8]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{31}{96}]</span></p></td></tr></table></li></ul><p>To get the values of <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: y]</span> in the <em>next</em> row, we add <span class=\"math\">[MATH: \\Delta x]</span> to <span class=\"math\">[MATH: x]</span> and <span class=\"math\">[MATH: \\Delta y]</span> to <span class=\"math\">[MATH: y,]</span> as follows:</p><p><span class=\"math\">[MATH: x_{new}|= x + \u0394x; = 0 + (1)/(2); = (1)/(2); y_{new}|= y + \u0394y; = 0 + (31)/(96); = (31)/(96).]</span></p><p>Adding these rows to our table gives the following:</p><table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac58]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{13}8]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{31}{96}]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\dfrac12]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac{31}{96}]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table><p>Therefore, we conclude that <span class=\"math\">[MATH: y\\!\\left(\\dfrac12\\right) \\approx \\dfrac{31}{96}.]</span></p>",
+            "readable_text": "For an initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\nthe increment in [MATH: y] using the Runge-Kutta Method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16\\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1,y_1)] is the slope at [MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y' \\cdot \\Delta x\\right),]\n- [MATH: y'_2 = f(x_2,y_2)] is the slope at [MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y'_1 \\cdot \\Delta x\\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the slope at [MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nSince we want to find the value of [MATH: y] at [MATH: x=\\dfrac12,] starting from [MATH: x=0,] we will use a step size of\n[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]\n\nFirst, we create a table and add the initial condition data.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | | | | | |\n\nNow let's find the required values.\n\n- First, we compute the value of [MATH: y'] according to the given rule:\n[MATH: y^{\u2032}|= 2x(2y + 1); = 2 \u22c5 0 \u22c5 (2 \u22c5 0 + 1); = 0]\nSo, we add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | | | | |\n- The first intermediate point is\n[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 0 \u22c5 (1)/(2)); = ((1)/(4), 0).]\nSo, the first intermediate slope is\n[MATH: y_{1}^{\u2032}|= 2x_{1}(2y_{1} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 0 + 1); = (1)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | | | |\n- The second intermediate point is\n[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 (1)/(2) \u22c5 (1)/(2)); = ((1)/(4), (1)/(8)).]\nSo, the second intermediate slope is\n[MATH: y_{2}^{\u2032}|= 2x_{2}(2y_{2} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 (1)/(8) + 1); = (1)/(2) \u22c5 ((1)/(4) + 1); = (1)/(2) \u22c5 ((5)/(4)); = (5)/(8).]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | | |\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2), 0 + (5)/(8) \u22c5 (1)/(2)); = ((1)/(2), (5)/(16)).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= 2x_{3}(2y_{3} + 1); = 2 \u22c5 (1)/(2) \u22c5 (2 \u22c5 (5)/(16) + 1); = 1 \u22c5 ((10)/(16) + 1); = (26)/(16); = (13)/(8).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | |\n- Finally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 (1)/(2) + 2 \u22c5 (5)/(8) + (13)/(8)) \u22c5 (1)/(2); = (1)/(12)((8)/(8) + (10)/(8) + (13)/(8)); = (1)/(12) \u22c5 (31)/(8); = (31)/(96)]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | [MATH: \\dfrac{31}{96}] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + (1)/(2); = (1)/(2); y_{new}|= y + \u0394y; = 0 + (31)/(96); = (31)/(96).]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | [MATH: \\dfrac{31}{96}] |\n| [MATH: \\dfrac12] | [MATH: \\dfrac{31}{96}] | | | | | |\n\nTherefore, we conclude that [MATH: y\\!\\left(\\dfrac12\\right) \\approx \\dfrac{31}{96}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nConsider the following initial value problem:\n[MATH: y' = 2x(2y+1), \\qquad y(0) = 0]\nUse the Runge-Kutta (RK4) method with one step to approximate [MATH: y\\!\\left(\\dfrac12\\right).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\nthe increment in [MATH: y] using the Runge-Kutta Method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16\\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1,y_1)] is the slope at [MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y' \\cdot \\Delta x\\right),]\n- [MATH: y'_2 = f(x_2,y_2)] is the slope at [MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y'_1 \\cdot \\Delta x\\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the slope at [MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nSince we want to find the value of [MATH: y] at [MATH: x=\\dfrac12,] starting from [MATH: x=0,] we will use a step size of\n[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]\n\nFirst, we create a table and add the initial condition data.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | | | | | |\n\nNow let's find the required values.\n\n- First, we compute the value of [MATH: y'] according to the given rule:\n[MATH: y^{\u2032}|= 2x(2y + 1); = 2 \u22c5 0 \u22c5 (2 \u22c5 0 + 1); = 0]\nSo, we add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | | | | |\n- The first intermediate point is\n[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 0 \u22c5 (1)/(2)); = ((1)/(4), 0).]\nSo, the first intermediate slope is\n[MATH: y_{1}^{\u2032}|= 2x_{1}(2y_{1} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 0 + 1); = (1)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | | | |\n- The second intermediate point is\n[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 (1)/(2) \u22c5 (1)/(2)); = ((1)/(4), (1)/(8)).]\nSo, the second intermediate slope is\n[MATH: y_{2}^{\u2032}|= 2x_{2}(2y_{2} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 (1)/(8) + 1); = (1)/(2) \u22c5 ((1)/(4) + 1); = (1)/(2) \u22c5 ((5)/(4)); = (5)/(8).]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | | |\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2), 0 + (5)/(8) \u22c5 (1)/(2)); = ((1)/(2), (5)/(16)).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= 2x_{3}(2y_{3} + 1); = 2 \u22c5 (1)/(2) \u22c5 (2 \u22c5 (5)/(16) + 1); = 1 \u22c5 ((10)/(16) + 1); = (26)/(16); = (13)/(8).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | |\n- Finally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 (1)/(2) + 2 \u22c5 (5)/(8) + (13)/(8)) \u22c5 (1)/(2); = (1)/(12)((8)/(8) + (10)/(8) + (13)/(8)); = (1)/(12) \u22c5 (31)/(8); = (31)/(96)]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | [MATH: \\dfrac{31}{96}] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + (1)/(2); = (1)/(2); y_{new}|= y + \u0394y; = 0 + (31)/(96); = (31)/(96).]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | [MATH: \\dfrac{31}{96}] |\n| [MATH: \\dfrac12] | [MATH: \\dfrac{31}{96}] | | | | | |\n\nTherefore, we conclude that [MATH: y\\!\\left(\\dfrac12\\right) \\approx \\dfrac{31}{96}.]"
+      },
+      {
+        "lesson_index": 13,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "331205",
+        "dom_id": "question-331205",
+        "selector": "#question-331205",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = x \u2212 2y + 1, y(1) = 2]</span>\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. What entry should be placed in the cell indicated in the table below, if the step size is <span class=\"math\">[MATH: \u0394x = 1?]</span></p><table><tr><td><p><span class=\"math\">[MATH: x]</span></p></td><td><p><span class=\"math\">[MATH: y]</span></p></td><td><p><span class=\"math\">[MATH: y^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{1}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{2}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: y_{3}^{\u2032}]</span></p></td><td><p><span class=\"math\">[MATH: \u0394y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: ?]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = x \u2212 2y + 1, y(1) = 2]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. What entry should be placed in the cell indicated in the table below, if the step size is [MATH: \u0394x = 1?]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: 2] | | | | | |\n| [MATH: 2] | [MATH: ?] | | | | | |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-331205-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (2)/(3)]</span></p>",
+            "readable_text": "[MATH: (2)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-331205-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (4)/(3)]</span></p>",
+            "readable_text": "[MATH: (4)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-331205-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (5)/(3)]</span></p>",
+            "readable_text": "[MATH: (5)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-331205-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u2212 (1)/(3)]</span></p>",
+            "readable_text": "[MATH: \u2212 (1)/(3)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-331205-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = x \u2212 2y + 1, y(1) = 2]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. What entry should be placed in the cell indicated in the table below, if the step size is [MATH: \u0394x = 1?]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: 2] | | | | | |\n| [MATH: 2] | [MATH: ?] | | | | | |\n\nChoices:\na. [MATH: (2)/(3)]\nb. [MATH: (4)/(3)]\nc. [MATH: (5)/(3)]\nd. [MATH: \u2212 (1)/(3)]\ne. [MATH: 0]"
+      },
+      {
+        "lesson_index": 14,
+        "question_index": 8,
+        "item_type": "question",
+        "question_id": "353417",
+        "dom_id": "question-353417",
+        "selector": "#question-353417",
+        "title": "Question 8",
+        "question_number": 8,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the following initial value problem:\n<span class=\"math\">[MATH: y^{\u2032} = y \u22c5 (x + 1), y(\u2212 1) = 1]</span>\nUse the Runge-Kutta (RK4) method with one step to approximate <span class=\"math\">[MATH: y(0).]</span></p>",
+          "readable_text": "Consider the following initial value problem:\n[MATH: y^{\u2032} = y \u22c5 (x + 1), y(\u2212 1) = 1]\nUse the Runge-Kutta (RK4) method with one step to approximate [MATH: y(0).]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-353417-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (79)/(48)]</span></p>",
+            "readable_text": "[MATH: (79)/(48)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-353417-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (41)/(56)]</span></p>",
+            "readable_text": "[MATH: (41)/(56)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-353417-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (5)/(4)]</span></p>",
+            "readable_text": "[MATH: (5)/(4)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-353417-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (3)/(2)]</span></p>",
+            "readable_text": "[MATH: (3)/(2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-353417-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (13)/(8)]</span></p>",
+            "readable_text": "[MATH: (13)/(8)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = y \u22c5 (x + 1), y(\u2212 1) = 1]\nUse the Runge-Kutta (RK4) method with one step to approximate [MATH: y(0).]\n\nChoices:\na. [MATH: (79)/(48)]\nb. [MATH: (41)/(56)]\nc. [MATH: (5)/(4)]\nd. [MATH: (3)/(2)]\ne. [MATH: (13)/(8)]"
+      },
+      {
+        "lesson_index": 15,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "614005",
+        "content_id": "14612",
+        "dom_id": "step-614005",
+        "selector": "#step-614005",
+        "step_anchor": "step-15",
+        "title": "A Graphical Explanation of the RK4 Method",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s go back to our previous initial value problem:</p>",
+            "readable_text": "Let's go back to our previous initial value problem:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: y&#x27; = 3x-2y+5, \\qquad y(0)=1]</span></p>",
+            "readable_text": "[MATH: y' = 3x-2y+5, \\qquad y(0)=1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Carrying out the Runge-Kutta method resulted in the following table.</p>",
+            "readable_text": "Carrying out the Runge-Kutta method resulted in the following table.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\,x\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_1\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_2\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\,y&#x27;_3\\,]</span></p></td><td><p><span class=\"math\">[MATH: \\Delta y]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: \\dfrac32]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+            "readable_text": "| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n| [MATH: 1] | [MATH: 3] | | | | | |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We can view each step of our approximation in the coordinate plane as follows:</p>",
+            "readable_text": "We can view each step of our approximation in the coordinate plane as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The first intermediate point <span class=\"math\">[MATH: (x_1, y_1) = \\left(\\dfrac12, \\dfrac52\\right)]</span> is found using the slope of the initial point <span class=\"math\">[MATH: y&#x27;=3.]</span></p><div class=\"graphic\"><img src=\"/graphics/6c2cc2db78ef6a59ec9216708e3e0c22\"></div></li></ul>",
+            "readable_text": "- The first intermediate point [MATH: (x_1, y_1) = \\left(\\dfrac12, \\dfrac52\\right)] is found using the slope of the initial point [MATH: y'=3.]\n\n[IMG: /graphics/6c2cc2db78ef6a59ec9216708e3e0c22]",
+            "images": [
+              {
+                "src": "/graphics/6c2cc2db78ef6a59ec9216708e3e0c22",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The second intermediate point <span class=\"math\">[MATH: (x_2, y_2) = \\left(\\dfrac12, \\dfrac74\\right)]</span> is found using the slope of the previous intermediate point <span class=\"math\">[MATH: y&#x27;_1=\\dfrac32.]</span></p><div class=\"graphic\"><img src=\"/graphics/70752d29977dda7e9d91648189ed97af\"></div></li><li><p>The third intermediate point <span class=\"math\">[MATH: (x_3, y_3) = (1,4)]</span> is found using the slope of the previous intermediate point <span class=\"math\">[MATH: y&#x27;_2=3.]</span></p><div class=\"graphic\"><img src=\"/graphics/a8542a541e237e46c063f75845574f91\"></div></li><li><p>Finally, we compute the increment in <span class=\"math\">[MATH: y]</span> by taking a weighted average of the four sample slopes.</p><div class=\"graphic\"><img src=\"/graphics/4d69e9fd5c36362c2bf6bcd82a716540\"></div></li></ul>",
+            "readable_text": "- The second intermediate point [MATH: (x_2, y_2) = \\left(\\dfrac12, \\dfrac74\\right)] is found using the slope of the previous intermediate point [MATH: y'_1=\\dfrac32.]\n\n[IMG: /graphics/70752d29977dda7e9d91648189ed97af]\n- The third intermediate point [MATH: (x_3, y_3) = (1,4)] is found using the slope of the previous intermediate point [MATH: y'_2=3.]\n\n[IMG: /graphics/a8542a541e237e46c063f75845574f91]\n- Finally, we compute the increment in [MATH: y] by taking a weighted average of the four sample slopes.\n\n[IMG: /graphics/4d69e9fd5c36362c2bf6bcd82a716540]",
+            "images": [
+              {
+                "src": "/graphics/70752d29977dda7e9d91648189ed97af",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/a8542a541e237e46c063f75845574f91",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/4d69e9fd5c36362c2bf6bcd82a716540",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/6c2cc2db78ef6a59ec9216708e3e0c22",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/70752d29977dda7e9d91648189ed97af",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/a8542a541e237e46c063f75845574f91",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/4d69e9fd5c36362c2bf6bcd82a716540",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nLet's go back to our previous initial value problem:\n\nContent:\n[MATH: y' = 3x-2y+5, \\qquad y(0)=1]\n\nContent:\nCarrying out the Runge-Kutta method resulted in the following table.\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n| [MATH: 1] | [MATH: 3] | | | | | |\n\nContent:\nWe can view each step of our approximation in the coordinate plane as follows:\n\nContent:\n- The first intermediate point [MATH: (x_1, y_1) = \\left(\\dfrac12, \\dfrac52\\right)] is found using the slope of the initial point [MATH: y'=3.]\n\n[IMG: /graphics/6c2cc2db78ef6a59ec9216708e3e0c22]\n\nContent:\n- The second intermediate point [MATH: (x_2, y_2) = \\left(\\dfrac12, \\dfrac74\\right)] is found using the slope of the previous intermediate point [MATH: y'_1=\\dfrac32.]\n\n[IMG: /graphics/70752d29977dda7e9d91648189ed97af]\n- The third intermediate point [MATH: (x_3, y_3) = (1,4)] is found using the slope of the previous intermediate point [MATH: y'_2=3.]\n\n[IMG: /graphics/a8542a541e237e46c063f75845574f91]\n- Finally, we compute the increment in [MATH: y] by taking a weighted average of the four sample slopes.\n\n[IMG: /graphics/4d69e9fd5c36362c2bf6bcd82a716540]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nFor a first-order initial value problem, Euler's method approximates the increment in [MATH: y] over a step by using a single slope - the slope at the current point.\n\nContent:\nThis is simple and works well when the slope stays nearly constant across a step, but can become inaccurate when the slope changes noticeably between successive [MATH: x]-values.\n\nContent:\nThe Runge\u2013Kutta Method improves this idea by sampling the slope at several points within the same step and combining them into a weighted average.\nFor an initial value problem\n\nContent:\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\n\nContent:\nthe increment in [MATH: y] using the Runge-Kutta (RK4) Method with step size [MATH: \\Delta x] is\n\nContent:\n[MATH: \\Delta y = \\dfrac16\\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\n\nContent:\nwhere\n\nContent:\n- [MATH: y' = f(x,y)] is the slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1,y_1)] is the estimated slope at [MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y' \\cdot \\Delta x\\right)\\!,]\n- [MATH: y'_2 = f(x_2,y_2)] is the estimated slope at [MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y'_1 \\cdot \\Delta x\\right)\\!,]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nContent:\nInstead of assuming the initial slope represents the entire interval, we take additional \u201cin-between\u201d slope estimates at the midpoint of the step and near its end. This provides a much better estimate of the overall increment in [MATH: y] during the step, while still using only evaluations of [MATH: f(x,y).]\n\nContent:\nWe'll see an example of how to implement the RK4 method soon, but first, let's make sure we know at which points the slope is evaluated in the next example.\n\nContent:\nImportant note: Many texts denote the four intermediate values by [MATH: k_1, k_2, k_3, k_4,] sometimes scaling each by [MATH: \\Delta x,] but the underlying idea is the same.\n\n---\n\nItem 2 \u2014 Example: Identifying the Runge-Kutta Method\n\nExample Prompt:\nSuppose we wish to solve the initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) =c,]\nand we take a step of size [MATH: \\Delta x] using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point [MATH: (x,y) .]\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; y^{\u2032}|= f(x, y); y_{1}^{\u2032}|= f(x_{1}, y_{1})where(x_{1}, y_{1}) = ([math]\\phantom{(q_0,1,L)}[/math], y + (1)/(2)y^{\u2032} \u22c5 \u0394x); y_{2}^{\u2032}|= f(x_{2}, y_{2})where(x_{2}, y_{2}) = (x + (1)/(2)\u0394x, [math]\\phantom{(q_0,1,L)}[/math]); y_{3}^{\u2032}|= f(x_{3}, y_{3})where(x_{3}, y_{3}) = ([math]\\phantom{(q_0,1,L)}[/math], y + y_{2}^{\u2032} \u22c5 \u0394x)]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\n\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n\n[MATH: \\Delta y = \\dfrac16 \\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\n\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: x + (1)/(2)\u0394x]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: x + \u0394x]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nConsider the initial value problem\n[MATH: y^{\u2032} = f(x, y), y(1) = 0]\nfor some function [MATH: f(x, y).] The table below shows the intermediate quantities computed in the first iteration of the Runge-Kutta (RK4) method.\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \u2212 1] | [MATH: 2] | |\n\nGiven that the step size is [MATH: \u0394x = 1,] at which of the following points is the function [MATH: f] NOT evaluated during this iteration?\n\nChoices:\na. [MATH: ((3)/(2), (3)/(2))]\nb. [MATH: ((3)/(2), (1)/(2))]\nc. [MATH: (1, 0)]\nd. [MATH: (2, \u2212 1)]\ne. [MATH: (2, (1)/(2))]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nSuppose we wish to solve the initial value problem\n[MATH: y^{\u2032} = f(x, y), y(a) = c,]\nand we take a step of size [MATH: \u0394x] using the Runge-Kutta (RK4) method. Fill in the blanks to complete the weighted-average formula for the increment and the stage definitions, starting at the point [MATH: (x, y).][MATH: y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}][SELECT 1][SELECT 2][SELECT 3][SELECT 4]\n\n---\n\nItem 5 \u2014 Tutorial: A Worked Example\n\nContent:\nConsider the following initial value problem:\n\nContent:\n[MATH: y' = 3x - 2y + 5, \\qquad y(0) = 1]\n\nContent:\nOur goal is to approximate [MATH: y(1)] using the Runge-Kutta (RK4) method.\n\nContent:\nSince we know [MATH: y(0)] and wish to estimate [MATH: y(1),] we will use a step size of\n\nContent:\n[MATH: \\Delta x = 1 - 0 = 1.]\n\nContent:\nLet's use a table to keep track of all important values, including the intermediate slopes. We start by adding the initial condition data [MATH: y(0)=1.]\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | | | | | |\n\nContent:\nNow let's find the required values.\n\nContent:\n- First, we compute the value of [MATH: y'] according to the given rule:\n[MATH: y^{\u2032}|= 3x \u2212 2y + 5; = 3 \u22c5 0 \u2212 2 \u22c5 1 + 5; = 3.]\nSo, we add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | | | | |\n- The first intermediate point is\n[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 3 \u22c5 1); = ((1)/(2), (5)/(2)).]\nSo, the first intermediate slope is\n[MATH: y_{1}^{\u2032}|= 3x_{1} \u2212 2y_{1} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (5)/(2) + 5; = (3)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | | | |\n- The second intermediate point is\n[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 1, 1 + (1)/(2) \u22c5 (3)/(2) \u22c5 1); = ((1)/(2), (7)/(4)).]\nSo, the second intermediate slope is\n[MATH: y_{2}^{\u2032}|= 3x_{2} \u2212 2y_{2} + 5; = 3 \u22c5 (1)/(2) \u2212 2 \u22c5 (7)/(4) + 5; = 3.]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | | |\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + 3 \u22c5 1); = (1, 4).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= 3x_{3} \u2212 2y_{3} + 5; = 3 \u22c5 1 \u2212 2 \u22c5 4 + 5; = 0.]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | |\n\nContent:\nFinally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n\nContent:\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(3 + 2 \u22c5 (3)/(2) + 2 \u22c5 3 + 0) \u22c5 1; = (1)/(6) \u22c5 12; = 2.]\n\nContent:\nTherefore, the completed first row is as given below.\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n\nContent:\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\nContent:\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + 2; = 3]\n\nContent:\nAdding these rows to our table gives the following:\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n| [MATH: 1] | [MATH: 3] | | | | | |\n\nContent:\nLooking at the two leftmost columns, we conclude that [MATH: y(1) \\approx 3.]\n\n---\n\nItem 6 \u2014 Example: Calculating a Y-Increment Given All Intermediate Values\n\nExample Prompt:\nConsider the following initial value problem:\n[MATH: y' = xy + x, \\qquad y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \\Delta x = 1.]\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | |\n\nUse the table above to approximate the value of [MATH: y(1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) = c]\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16(y' + 2y'_1 + 2y'_2 + y'_3) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y' \\cdot \\Delta x \\right),]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y'_1 \\cdot \\Delta x \\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nAll four sample slopes are already computed. So, we just need to find the increment on [MATH: y.]\n\nWe compute [MATH: \\Delta y] using the Runge-Kutta method:\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 1 + 2 \u22c5 (5)/(4) + (13)/(4)) \u22c5 1; = (1)/(6)(2 + (10)/(4) + (13)/(4)); = (1)/(6) \u22c5 (31)/(4); = (31)/(24).]\n\nTherefore, the completed first row is as given below.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | [MATH: \\dfrac{31}{24}] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (31)/(24); = (55)/(24)]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 0] | [MATH: 1] | [MATH: \\dfrac54] | [MATH: \\dfrac{13}{4}] | [MATH: \\dfrac{31}{24}] |\n| [MATH: 1] | [MATH: \\dfrac{55}{24}] | | | | | |\n\nFinally, we have\n[MATH: y(1) \u2248 (55)/(24).]\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = 3xy + 1, y(\u2212 (2)/(3)) = \u2212 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \u0394x = (2)/(3).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: \u2212 (2)/(3)] | [MATH: \u2212 1] | [MATH: 3] | [MATH: 1] | [MATH: (5)/(3)] | [MATH: 1] | [FREE_ENTRY 1] |\n\nTherefore, [MATH: y(0) \u2248]\n[FREE_ENTRY 2].\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = x + y, y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) Method. Complete the first row of the table below, given that the step size is [MATH: \u0394x = (1)/(2).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 1] | [MATH: (3)/(2)] | [MATH: (13)/(8)] | [MATH: (37)/(16)] | [FREE_ENTRY 1] |\n\nTherefore, [MATH: y((1)/(2)) \u2248]\n[FREE_ENTRY 2].\n\n---\n\nItem 9 \u2014 Example: Calculating a Y-Increment Given Some Intermediate Values\n\nExample Prompt:\nConsider the following initial value problem:\n[MATH: y' = x - y, \\qquad y(0) = 1]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the first row of the table below, given that the step size is [MATH: \\Delta x = 1.]\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | | |\n\nUse the table above to approximate the value of [MATH: y(1).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n\n[MATH: y' = f(x,y), \\qquad y(a) = c]\nthe increment in [MATH: y] using the Runge-Kutta (RK4) method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16(y' + 2y'_1 + 2y'_2 + y'_3) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the estimated slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1, y_1)] is the estimated slope at [MATH: (x_1, y_1) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y' \\cdot \\Delta x \\right),]\n- [MATH: y'_2 = f(x_2, y_2)] is the estimated slope at [MATH: (x_2, y_2) = \\left( x + \\dfrac12\\Delta x,\\: y + \\dfrac12y'_1 \\cdot \\Delta x \\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the estimated slope at [MATH: (x_3, y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nThe first three sample slopes, evaluated at the initial point and first intermediate points, are already computed. Now let's find the others.\n\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + 1, 1 + (\u2212 (1)/(2)) \u22c5 1); = (1, (1)/(2)).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= x_{3} \u2212 y_{3}; = 1 \u2212 (1)/(2); = (1)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | |\n\nFinally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(\u2212 1 + 2 \u22c5 0 + 2 \u22c5 (\u2212 (1)/(2)) + (1)/(2)) \u22c5 1; = (1)/(6)(\u2212 (3)/(2)); = \u2212 (1)/(4).]\n\nTherefore, the completed first row is as given below.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | [MATH: -\\dfrac14] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + 1; = 1; y_{new}|= y + \u0394y; = 1 + (\u2212 (1)/(4)); = (3)/(4).]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: -1] | [MATH: 0] | [MATH: -\\dfrac12] | [MATH: \\dfrac12] | [MATH: -\\dfrac14] |\n| [MATH: 1] | [MATH: \\dfrac34] | | | | | |\n\nFinally, we have\n[MATH: y(1) \u2248 (3)/(4).]\n\n---\n\nItem 10 \u2014 Question 5\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = x + 2y, y(\u2212 1) = 0]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is [MATH: \u0394x = 1.]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: \u2212 1] | [MATH: 0] | [MATH: \u2212 1] | [MATH: \u2212 (3)/(2)] | [MATH: \u2212 2] | [SELECT 1] | [SELECT 2] |\n| [MATH: 0] | [SELECT 3] | | | | | |\n\n---\n\nItem 11 \u2014 Question 6\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = 2x \u2212 8y, y(1) = (1)/(2)]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. Complete the table below, given that the step size is [MATH: \u0394x = (1)/(4).]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: (1)/(2)] | [SELECT 1] | [SELECT 2] | [SELECT 3] | [SELECT 4] | [SELECT 5] |\n| [MATH: (5)/(4)] | [SELECT 6] | | | | | |\n\n---\n\nItem 12 \u2014 Example: Approximating the Solution to an Initial Value Problem Using RK4\n\nExample Prompt:\nConsider the following initial value problem:\n[MATH: y' = 2x(2y+1), \\qquad y(0) = 0]\nUse the Runge-Kutta (RK4) method with one step to approximate [MATH: y\\!\\left(\\dfrac12\\right).]\n\nContent:\nEXPLANATION\n\nExplanation:\nFor an initial value problem\n[MATH: y' = f(x,y), \\qquad y(a) = c,]\nthe increment in [MATH: y] using the Runge-Kutta Method with step size [MATH: \\Delta x] is computed as the weighted average of four sample slopes:\n[MATH: \\Delta y = \\dfrac16\\left(y' + 2y'_1 + 2y'_2 + y'_3\\right) \\cdot \\Delta x,]\nwhere\n\n- [MATH: y' = f(x,y)] is the slope at the initial point [MATH: (x,y),]\n- [MATH: y'_1 = f(x_1,y_1)] is the slope at [MATH: (x_1,y_1) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y' \\cdot \\Delta x\\right),]\n- [MATH: y'_2 = f(x_2,y_2)] is the slope at [MATH: (x_2,y_2) = \\left(x + \\dfrac12 \\Delta x,\\: y + \\dfrac12 y'_1 \\cdot \\Delta x\\right),]\n- [MATH: y'_3 = f(x_3, y_3)] is the slope at [MATH: (x_3,y_3) = (x + \\Delta x,\\: y + y'_2 \\cdot \\Delta x).]\n\nSince we want to find the value of [MATH: y] at [MATH: x=\\dfrac12,] starting from [MATH: x=0,] we will use a step size of\n[MATH: \\Delta x = \\dfrac12 - 0 = \\dfrac12.]\n\nFirst, we create a table and add the initial condition data.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | | | | | |\n\nNow let's find the required values.\n\n- First, we compute the value of [MATH: y'] according to the given rule:\n[MATH: y^{\u2032}|= 2x(2y + 1); = 2 \u22c5 0 \u22c5 (2 \u22c5 0 + 1); = 0]\nSo, we add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | | | | |\n- The first intermediate point is\n[MATH: (x_{1}, y_{1})|= (x + (1)/(2)\u0394x, y + (1)/(2)y^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 0 \u22c5 (1)/(2)); = ((1)/(4), 0).]\nSo, the first intermediate slope is\n[MATH: y_{1}^{\u2032}|= 2x_{1}(2y_{1} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 0 + 1); = (1)/(2).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | | | |\n- The second intermediate point is\n[MATH: (x_{2}, y_{2})|= (x + (1)/(2)\u0394x, y + (1)/(2)y_{1}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2) \u22c5 (1)/(2), 0 + (1)/(2) \u22c5 (1)/(2) \u22c5 (1)/(2)); = ((1)/(4), (1)/(8)).]\nSo, the second intermediate slope is\n[MATH: y_{2}^{\u2032}|= 2x_{2}(2y_{2} + 1); = 2 \u22c5 (1)/(4) \u22c5 (2 \u22c5 (1)/(8) + 1); = (1)/(2) \u22c5 ((1)/(4) + 1); = (1)/(2) \u22c5 ((5)/(4)); = (5)/(8).]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | | |\n- The third intermediate point is\n[MATH: (x_{3}, y_{3})|= (x + \u0394x, y + y_{2}^{\u2032} \u22c5 \u0394x); = (0 + (1)/(2), 0 + (5)/(8) \u22c5 (1)/(2)); = ((1)/(2), (5)/(16)).]\nSo, the third intermediate slope is\n[MATH: y_{3}^{\u2032}|= 2x_{3}(2y_{3} + 1); = 2 \u22c5 (1)/(2) \u22c5 (2 \u22c5 (5)/(16) + 1); = 1 \u22c5 ((10)/(16) + 1); = (26)/(16); = (13)/(8).]\nWe can add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | |\n- Finally, we compute [MATH: \\Delta y] using the Runge-Kutta Method:\n[MATH: \u0394y|= (1)/(6)(y^{\u2032} + 2y_{1}^{\u2032} + 2y_{2}^{\u2032} + y_{3}^{\u2032}) \u22c5 \u0394x; = (1)/(6)(0 + 2 \u22c5 (1)/(2) + 2 \u22c5 (5)/(8) + (13)/(8)) \u22c5 (1)/(2); = (1)/(12)((8)/(8) + (10)/(8) + (13)/(8)); = (1)/(12) \u22c5 (31)/(8); = (31)/(96)]\nWe add this to our table.\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | [MATH: \\dfrac{31}{96}] |\n\nTo get the values of [MATH: x] and [MATH: y] in the next row, we add [MATH: \\Delta x] to [MATH: x] and [MATH: \\Delta y] to [MATH: y,] as follows:\n\n[MATH: x_{new}|= x + \u0394x; = 0 + (1)/(2); = (1)/(2); y_{new}|= y + \u0394y; = 0 + (31)/(96); = (31)/(96).]\n\nAdding these rows to our table gives the following:\n\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 0] | [MATH: 0] | [MATH: \\dfrac12] | [MATH: \\dfrac58] | [MATH: \\dfrac{13}8] | [MATH: \\dfrac{31}{96}] |\n| [MATH: \\dfrac12] | [MATH: \\dfrac{31}{96}] | | | | | |\n\nTherefore, we conclude that [MATH: y\\!\\left(\\dfrac12\\right) \\approx \\dfrac{31}{96}.]\n\n---\n\nItem 13 \u2014 Question 7\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = x \u2212 2y + 1, y(1) = 2]\nWe wish to approximate the solution using the Runge-Kutta (RK4) method. What entry should be placed in the cell indicated in the table below, if the step size is [MATH: \u0394x = 1?]\n\n| [MATH: x] | [MATH: y] | [MATH: y^{\u2032}] | [MATH: y_{1}^{\u2032}] | [MATH: y_{2}^{\u2032}] | [MATH: y_{3}^{\u2032}] | [MATH: \u0394y] |\n| [MATH: 1] | [MATH: 2] | | | | | |\n| [MATH: 2] | [MATH: ?] | | | | | |\n\nChoices:\na. [MATH: (2)/(3)]\nb. [MATH: (4)/(3)]\nc. [MATH: (5)/(3)]\nd. [MATH: \u2212 (1)/(3)]\ne. [MATH: 0]\n\n---\n\nItem 14 \u2014 Question 8\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the following initial value problem:\n[MATH: y^{\u2032} = y \u22c5 (x + 1), y(\u2212 1) = 1]\nUse the Runge-Kutta (RK4) method with one step to approximate [MATH: y(0).]\n\nChoices:\na. [MATH: (79)/(48)]\nb. [MATH: (41)/(56)]\nc. [MATH: (5)/(4)]\nd. [MATH: (3)/(2)]\ne. [MATH: (13)/(8)]\n\n---\n\nItem 15 \u2014 Tutorial: A Graphical Explanation of the RK4 Method\n\nContent:\nLet's go back to our previous initial value problem:\n\nContent:\n[MATH: y' = 3x-2y+5, \\qquad y(0)=1]\n\nContent:\nCarrying out the Runge-Kutta method resulted in the following table.\n\nContent:\n| [MATH: \\,x\\,] | [MATH: \\,y\\,] | [MATH: \\,y'\\,] | [MATH: \\,y'_1\\,] | [MATH: \\,y'_2\\,] | [MATH: \\,y'_3\\,] | [MATH: \\Delta y] |\n| [MATH: 0] | [MATH: 1] | [MATH: 3] | [MATH: \\dfrac32] | [MATH: 3] | [MATH: 0] | [MATH: 2] |\n| [MATH: 1] | [MATH: 3] | | | | | |\n\nContent:\nWe can view each step of our approximation in the coordinate plane as follows:\n\nContent:\n- The first intermediate point [MATH: (x_1, y_1) = \\left(\\dfrac12, \\dfrac52\\right)] is found using the slope of the initial point [MATH: y'=3.]\n\n[IMG: /graphics/6c2cc2db78ef6a59ec9216708e3e0c22]\n\nContent:\n- The second intermediate point [MATH: (x_2, y_2) = \\left(\\dfrac12, \\dfrac74\\right)] is found using the slope of the previous intermediate point [MATH: y'_1=\\dfrac32.]\n\n[IMG: /graphics/70752d29977dda7e9d91648189ed97af]\n- The third intermediate point [MATH: (x_3, y_3) = (1,4)] is found using the slope of the previous intermediate point [MATH: y'_2=3.]\n\n[IMG: /graphics/a8542a541e237e46c063f75845574f91]\n- Finally, we compute the increment in [MATH: y] by taking a weighted average of the four sample slopes.\n\n[IMG: /graphics/4d69e9fd5c36362c2bf6bcd82a716540]"
+  }
+}

@@ -1,0 +1,2075 @@
+{
+  "schema_version": 2,
+  "topic_id": "2869",
+  "topic_title": "The RSA Cryptosystem",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/2869/Source/2869.html",
+  "source_url": "https://mathacademy.com/topics/2869",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "417285",
+        "dom_id": "sectionLink-417285",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-417285"
+      },
+      {
+        "index": 2,
+        "step_id": "414168",
+        "dom_id": "sectionLink-414168",
+        "name": "",
+        "title": "Encrypting Messages Using RSA",
+        "selector": "#sectionLink-414168"
+      },
+      {
+        "index": 3,
+        "step_id": "414169",
+        "dom_id": "sectionLink-414169",
+        "name": "",
+        "title": "Encrypting Messages Using the RSA Cipher",
+        "selector": "#sectionLink-414169"
+      },
+      {
+        "index": 4,
+        "step_id": "414173",
+        "dom_id": "sectionLink-414173",
+        "name": "",
+        "title": "Decrypting Messages Using RSA",
+        "selector": "#sectionLink-414173"
+      },
+      {
+        "index": 5,
+        "step_id": "414174",
+        "dom_id": "sectionLink-414174",
+        "name": "",
+        "title": "Decrypting Messages Using the RSA Cipher When the Private Key is Given",
+        "selector": "#sectionLink-414174"
+      },
+      {
+        "index": 6,
+        "step_id": "414177",
+        "dom_id": "sectionLink-414177",
+        "name": "",
+        "title": "Decrypting Messages Using the RSA Cipher When the Public Key is Given",
+        "selector": "#sectionLink-414177"
+      },
+      {
+        "index": 7,
+        "step_id": "417287",
+        "dom_id": "sectionLink-417287",
+        "name": "",
+        "title": "Explaining Why the Decryption Step Works",
+        "selector": "#sectionLink-417287"
+      },
+      {
+        "index": 8,
+        "step_id": "430311",
+        "dom_id": "sectionLink-430311",
+        "name": "",
+        "title": "Justifying the RSA Cryptosystem",
+        "selector": "#sectionLink-430311"
+      },
+      {
+        "index": 9,
+        "step_id": "430312",
+        "dom_id": "sectionLink-430312",
+        "name": "",
+        "title": "The Magnitude of N",
+        "selector": "#sectionLink-430312"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "2727",
+        "name": "Euler's Theorem",
+        "href": "/topics/eulers-theorem-2727"
+      },
+      {
+        "topic_id": "2877",
+        "name": "The Diffie-Hellman Protocol",
+        "href": "/topics/the-diffie-hellman-protocol-2877"
+      },
+      {
+        "topic_id": "4818",
+        "name": "Multiplicative Inverses Modulo N",
+        "href": "/topics/multiplicative-inverses-modulo-n-4818"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 15,
+    "step_count": 9,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417285",
+        "content_id": "11837",
+        "dom_id": "step-417285",
+        "selector": "#step-417285",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The <strong>RSA cryptographic algorithm</strong> is a widely used public-key encryption algorithm that ensures secure communication between two parties over an unsecured network. It is based on the computational difficulty of factoring a product of large prime numbers.</p>",
+            "readable_text": "The RSA cryptographic algorithm is a widely used public-key encryption algorithm that ensures secure communication between two parties over an unsecured network. It is based on the computational difficulty of factoring a product of large prime numbers.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we have two parties, Alice and Bob. Bob wishes to share a secret message with Alice over an unsecured network, keeping the message secret from Eve (our eavesdropper), who has access to all the information they share.</p>",
+            "readable_text": "Suppose we have two parties, Alice and Bob. Bob wishes to share a secret message with Alice over an unsecured network, keeping the message secret from Eve (our eavesdropper), who has access to all the information they share.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The RSA cryptographic algorithm allows Bob to share a secret message with Alice and can be described as follows:</p>",
+            "readable_text": "The RSA cryptographic algorithm allows Bob to share a secret message with Alice and can be described as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 1:</strong> Public key creation</p><p>Alice selects two distinct prime numbers and computes the modulus <span class=\"math\">[MATH: n=pq]</span> and totient <span class=\"math\">[MATH: \\phi(n) = (p-1)(q-1),]</span> where <span class=\"math\">[MATH: \\phi(n)]</span> is Euler&#x27;s totient function. Thus, Alice has the following information:</p><ul><li><p>Two secret primes: <span class=\"math\">[MATH: p]</span> and <span class=\"math\">[MATH: q]</span></p></li><li><p>Modulus: <span class=\"math\">[MATH: n = p q]</span></p></li><li><p>Totient: <span class=\"math\">[MATH: \\phi(n) = (p-1)(q-1)]</span></p></li></ul><p>Alice then chooses an encryption exponent <span class=\"math\">[MATH: e]</span> such that \n<span class=\"math\">[MATH: \\gcd(e, \\phi) = 1.]</span>\nAlice publishes the public key <span class=\"math\">[MATH: (e, n).]</span> This is seen by both Bob and Eve.</p></li><li><p><strong>Step 2:</strong> Private key creation</p><p>Alice computes the private decryption exponent <span class=\"math\">[MATH: d]</span> such that \n<span class=\"math\">[MATH: e \\cdot d \\equiv 1 \\pmod{\\phi(n)}.]</span>\nHere, <span class=\"math\">[MATH: d]</span> is simply the multiplicative inverse of <span class=\"math\">[MATH: e]</span> modulo <span class=\"math\">[MATH: \\phi(n).]</span> Alice&#x27;s private key is <span class=\"math\">[MATH: (d,n).]</span></p></li></ul>",
+            "readable_text": "- Step 1: Public key creation\n\nAlice selects two distinct prime numbers and computes the modulus [MATH: n=pq] and totient [MATH: \\phi(n) = (p-1)(q-1),] where [MATH: \\phi(n)] is Euler's totient function. Thus, Alice has the following information:\n\n- Two secret primes: [MATH: p] and [MATH: q]\n- Modulus: [MATH: n = p q]\n- Totient: [MATH: \\phi(n) = (p-1)(q-1)]\n\nAlice then chooses an encryption exponent [MATH: e] such that\n[MATH: \\gcd(e, \\phi) = 1.]\nAlice publishes the public key [MATH: (e, n).] This is seen by both Bob and Eve.\n- Step 2: Private key creation\n\nAlice computes the private decryption exponent [MATH: d] such that\n[MATH: e \\cdot d \\equiv 1 \\pmod{\\phi(n)}.]\nHere, [MATH: d] is simply the multiplicative inverse of [MATH: e] modulo [MATH: \\phi(n).] Alice's private key is [MATH: (d,n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 3:</strong> RSA Encryption</p><p>Bob then encrypts a secret message <span class=\"math\">[MATH: M]</span> (with <span class=\"math\">[MATH: M &lt; n]</span>) using the public key by computing\n<span class=\"math\">[MATH: C \\equiv M^e \\pmod{n}.]</span>\nThe ciphertext <span class=\"math\">[MATH: C]</span> is then sent to Alice.</p></li></ul>",
+            "readable_text": "- Step 3: RSA Encryption\n\nBob then encrypts a secret message [MATH: M] (with [MATH: M < n]) using the public key by computing\n[MATH: C \\equiv M^e \\pmod{n}.]\nThe ciphertext [MATH: C] is then sent to Alice.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 4:</strong> RSA Decryption</p><p>Finally, Alice recovers the original message <span class=\"math\">[MATH: M]</span> using the private key by computing\n<span class=\"math\">[MATH: M \\equiv C^d \\pmod{n}.]</span></p></li></ul>",
+            "readable_text": "- Step 4: RSA Decryption\n\nFinally, Alice recovers the original message [MATH: M] using the private key by computing\n[MATH: M \\equiv C^d \\pmod{n}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We will formally justify this last step at the end of the lesson. Before that, let&#x27;s get some practice at encrypting and decrypting messages using the RSA protocol.</p>",
+            "readable_text": "We will formally justify this last step at the end of the lesson. Before that, let's get some practice at encrypting and decrypting messages using the RSA protocol.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nThe RSA cryptographic algorithm is a widely used public-key encryption algorithm that ensures secure communication between two parties over an unsecured network. It is based on the computational difficulty of factoring a product of large prime numbers.\n\nContent:\nSuppose we have two parties, Alice and Bob. Bob wishes to share a secret message with Alice over an unsecured network, keeping the message secret from Eve (our eavesdropper), who has access to all the information they share.\n\nContent:\nThe RSA cryptographic algorithm allows Bob to share a secret message with Alice and can be described as follows:\n\nContent:\n- Step 1: Public key creation\n\nAlice selects two distinct prime numbers and computes the modulus [MATH: n=pq] and totient [MATH: \\phi(n) = (p-1)(q-1),] where [MATH: \\phi(n)] is Euler's totient function. Thus, Alice has the following information:\n\n- Two secret primes: [MATH: p] and [MATH: q]\n- Modulus: [MATH: n = p q]\n- Totient: [MATH: \\phi(n) = (p-1)(q-1)]\n\nAlice then chooses an encryption exponent [MATH: e] such that\n[MATH: \\gcd(e, \\phi) = 1.]\nAlice publishes the public key [MATH: (e, n).] This is seen by both Bob and Eve.\n- Step 2: Private key creation\n\nAlice computes the private decryption exponent [MATH: d] such that\n[MATH: e \\cdot d \\equiv 1 \\pmod{\\phi(n)}.]\nHere, [MATH: d] is simply the multiplicative inverse of [MATH: e] modulo [MATH: \\phi(n).] Alice's private key is [MATH: (d,n).]\n\nContent:\n- Step 3: RSA Encryption\n\nBob then encrypts a secret message [MATH: M] (with [MATH: M < n]) using the public key by computing\n[MATH: C \\equiv M^e \\pmod{n}.]\nThe ciphertext [MATH: C] is then sent to Alice.\n\nContent:\n- Step 4: RSA Decryption\n\nFinally, Alice recovers the original message [MATH: M] using the private key by computing\n[MATH: M \\equiv C^d \\pmod{n}.]\n\nContent:\nWe will formally justify this last step at the end of the lesson. Before that, let's get some practice at encrypting and decrypting messages using the RSA protocol."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "414168",
+        "content_id": "9632",
+        "dom_id": "step-414168",
+        "selector": "#step-414168",
+        "step_anchor": "step-2",
+        "title": "Encrypting Messages Using RSA",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we encrypt the <span class=\"math\">[MATH: 3]</span>-letter English word <span class=\"math\">[MATH: \\text{DOG}]</span> to ciphertext using the RSA cipher with the public key <span class=\"math\">[MATH: (e,n)=(13,51).]</span> We&#x27;ll assume that we use the usual English alphabet (shown above) during the encryption, where each letter is encrypted separately. Let&#x27;s determine the ciphertext that results from the encryption.</p>",
+            "readable_text": "Suppose we encrypt the [MATH: 3]-letter English word [MATH: \\text{DOG}] to ciphertext using the RSA cipher with the public key [MATH: (e,n)=(13,51).] We'll assume that we use the usual English alphabet (shown above) during the encryption, where each letter is encrypted separately. Let's determine the ciphertext that results from the encryption.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p>",
+            "readable_text": "Hint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table>",
+            "readable_text": "| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To encrypt a word using the RSA cipher with the public key <span class=\"math\">[MATH: (e,n)=(13,51)]</span> over the English alphabet, we do the following:</p>",
+            "readable_text": "To encrypt a word using the RSA cipher with the public key [MATH: (e,n)=(13,51)] over the English alphabet, we do the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Find the index of each letter of the word in the alphabet:</p><table><tr><td><p>D</p></td><td><p>O</p></td><td><p>G</p></td></tr><tr><td><p><span class=\"math\">[MATH: \\color{blue}3]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}14]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}6]</span></p></td></tr></table></li><li><p>Raise each index to the power of <span class=\"math\">[MATH: e=13]</span> modulo <span class=\"math\">[MATH: n=51\\mathbin{:}]</span>\n<span class=\"math\">[MATH: 3^{13}\u226112|(mod51); 14^{13}\u22615|(mod51); 6^{13}\u226127|(mod51)]</span></p></li></ul>",
+            "readable_text": "- Find the index of each letter of the word in the alphabet:\n\n| D | O | G |\n| [MATH: \\color{blue}3] | [MATH: \\color{blue}14] | [MATH: \\color{blue}6] |\n- Raise each index to the power of [MATH: e=13] modulo [MATH: n=51\\mathbin{:}]\n[MATH: 3^{13}\u226112|(mod51); 14^{13}\u22615|(mod51); 6^{13}\u226127|(mod51)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the ciphertext is \n<span class=\"math\">[MATH: 12 \\:\\: 05 \\:\\: 27.]</span></p>",
+            "readable_text": "Therefore, the ciphertext is\n[MATH: 12 \\:\\: 05 \\:\\: 27.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: \\text{DOG}] to ciphertext using the RSA cipher with the public key [MATH: (e,n)=(13,51).] We'll assume that we use the usual English alphabet (shown above) during the encryption, where each letter is encrypted separately. Let's determine the ciphertext that results from the encryption.\n\nContent:\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\nContent:\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nTo encrypt a word using the RSA cipher with the public key [MATH: (e,n)=(13,51)] over the English alphabet, we do the following:\n\nContent:\n- Find the index of each letter of the word in the alphabet:\n\n| D | O | G |\n| [MATH: \\color{blue}3] | [MATH: \\color{blue}14] | [MATH: \\color{blue}6] |\n- Raise each index to the power of [MATH: e=13] modulo [MATH: n=51\\mathbin{:}]\n[MATH: 3^{13}\u226112|(mod51); 14^{13}\u22615|(mod51); 6^{13}\u226127|(mod51)]\n\nContent:\nTherefore, the ciphertext is\n[MATH: 12 \\:\\: 05 \\:\\: 27.]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "414169",
+        "content_id": "15553",
+        "dom_id": "step-414169",
+        "selector": "#step-414169",
+        "step_anchor": "step-3",
+        "title": "Encrypting Messages Using the RSA Cipher",
+        "key_prerequisites": [
+          {
+            "topic_id": "2727",
+            "name": "Euler's Theorem",
+            "href": "/topics/2727",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we encrypt the <span class=\"math\">[MATH: 3]</span>-letter English word <span class=\"math\">[MATH: \\text{BIT}]</span> to ciphertext using the RSA cipher with the public key <span class=\"math\">[MATH: (e,n)=(19,65).]</span> Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table>",
+            "readable_text": "Suppose we encrypt the [MATH: 3]-letter English word [MATH: \\text{BIT}] to ciphertext using the RSA cipher with the public key [MATH: (e,n)=(19,65).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To encrypt a word using the RSA cipher with the public key <span class=\"math\">[MATH: (e,n)=(19,65)]</span> over the English alphabet, we do the following:</p><ul><li><p>Find the index of each letter of the word in the alphabet:</p><table><tr><td><p>B</p></td><td><p>I</p></td><td><p>T</p></td></tr><tr><td><p><span class=\"math\">[MATH: \\color{blue}1]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}8]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}19]</span></p></td></tr></table></li><li><p>Raise each index to the power of <span class=\"math\">[MATH: e=19]</span> modulo <span class=\"math\">[MATH: n=65\\mathbin{:}]</span>\n<span class=\"math\">[MATH: 1^{19}\u22611|(mod65); 8^{19}\u226157|(mod65); 19^{19}\u226159|(mod65)]</span></p></li></ul><p>Therefore, the ciphertext is \n<span class=\"math\">[MATH: 01 \\:\\: 57 \\:\\: 59.]</span></p>",
+            "readable_text": "To encrypt a word using the RSA cipher with the public key [MATH: (e,n)=(19,65)] over the English alphabet, we do the following:\n\n- Find the index of each letter of the word in the alphabet:\n\n| B | I | T |\n| [MATH: \\color{blue}1] | [MATH: \\color{blue}8] | [MATH: \\color{blue}19] |\n- Raise each index to the power of [MATH: e=19] modulo [MATH: n=65\\mathbin{:}]\n[MATH: 1^{19}\u22611|(mod65); 8^{19}\u226157|(mod65); 19^{19}\u226159|(mod65)]\n\nTherefore, the ciphertext is\n[MATH: 01 \\:\\: 57 \\:\\: 59.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: \\text{BIT}] to ciphertext using the RSA cipher with the public key [MATH: (e,n)=(19,65).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nEXPLANATION\n\nExplanation:\nTo encrypt a word using the RSA cipher with the public key [MATH: (e,n)=(19,65)] over the English alphabet, we do the following:\n\n- Find the index of each letter of the word in the alphabet:\n\n| B | I | T |\n| [MATH: \\color{blue}1] | [MATH: \\color{blue}8] | [MATH: \\color{blue}19] |\n- Raise each index to the power of [MATH: e=19] modulo [MATH: n=65\\mathbin{:}]\n[MATH: 1^{19}\u22611|(mod65); 8^{19}\u226157|(mod65); 19^{19}\u226159|(mod65)]\n\nTherefore, the ciphertext is\n[MATH: 01 \\:\\: 57 \\:\\: 59.]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "257238",
+        "dom_id": "question-257238",
+        "selector": "#question-257238",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we encrypt the <span class=\"math\">[MATH: 3]</span>-letter English word <span class=\"math\">[MATH: PEN]</span> to ciphertext using the RSA cipher with the public key <span class=\"math\">[MATH: (e, n) = (13, 77).]</span> Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table><p>The ciphertext is <span class=\"math\">[MATH: 64]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span> <span class=\"math\">[MATH: 41.]</span></p>",
+          "readable_text": "Suppose we encrypt the [MATH: 3]-letter English word [MATH: PEN] to ciphertext using the RSA cipher with the public key [MATH: (e, n) = (13, 77).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe ciphertext is [MATH: 64]\n[FREE_ENTRY 1] [MATH: 41.]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: PEN] to ciphertext using the RSA cipher with the public key [MATH: (e, n) = (13, 77).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe ciphertext is [MATH: 64]\n[FREE_ENTRY 1] [MATH: 41.]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "233778",
+        "dom_id": "question-233778",
+        "selector": "#question-233778",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we encrypt the <span class=\"math\">[MATH: 3]</span>-letter English word <span class=\"math\">[MATH: CAT]</span> to ciphertext using the RSA cipher with the public key <span class=\"math\">[MATH: (e, n) = (17, 91).]</span> Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table><p>The ciphertext is <span class=\"math\">[MATH: 3200]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span>.</p>",
+          "readable_text": "Suppose we encrypt the [MATH: 3]-letter English word [MATH: CAT] to ciphertext using the RSA cipher with the public key [MATH: (e, n) = (17, 91).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe ciphertext is [MATH: 3200]\n[FREE_ENTRY 1].",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: CAT] to ciphertext using the RSA cipher with the public key [MATH: (e, n) = (17, 91).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe ciphertext is [MATH: 3200]\n[FREE_ENTRY 1]."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "414173",
+        "content_id": "9633",
+        "dom_id": "step-414173",
+        "selector": "#step-414173",
+        "step_anchor": "step-6",
+        "title": "Decrypting Messages Using RSA",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table>",
+            "readable_text": "| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the public key <span class=\"math\">[MATH: (e,n)=(19,65)]</span> and get the ciphertext <span class=\"math\">[MATH: 41 \\:\\: 14 \\:\\: 59.]</span> Assuming we used the usual English alphabet (shown above) during the encryption and each letter was encrypted separately, how can we decrypt this and arrive at the original plain text word?</p>",
+            "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e,n)=(19,65)] and get the ciphertext [MATH: 41 \\:\\: 14 \\:\\: 59.] Assuming we used the usual English alphabet (shown above) during the encryption and each letter was encrypted separately, how can we decrypt this and arrive at the original plain text word?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p>",
+            "readable_text": "Hint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To decrypt a message using the RSA cipher, we need to know the private key. </p>",
+            "readable_text": "To decrypt a message using the RSA cipher, we need to know the private key.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that <span class=\"math\">[MATH: n=65 = 5 \\times 13.]</span> Let&#x27;s denote <span class=\"math\">[MATH: p=5]</span> and <span class=\"math\">[MATH: q=13.]</span> Then,\n<span class=\"math\">[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (5 \u2212 1)(13 \u2212 1); = 4 \u22c5 12; = 48.]</span></p>",
+            "readable_text": "Notice that [MATH: n=65 = 5 \\times 13.] Let's denote [MATH: p=5] and [MATH: q=13.] Then,\n[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (5 \u2212 1)(13 \u2212 1); = 4 \u22c5 12; = 48.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For the RSA cipher with private key <span class=\"math\">[MATH: (d,n),]</span> the first component <span class=\"math\">[MATH: d]</span> is the multiplicative inverse of <span class=\"math\">[MATH: e=19]</span> (the first component of the public key) modulo <span class=\"math\">[MATH: \\phi(n)=48{:}]</span>\n<span class=\"math\">[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 48)]</span></p>",
+            "readable_text": "For the RSA cipher with private key [MATH: (d,n),] the first component [MATH: d] is the multiplicative inverse of [MATH: e=19] (the first component of the public key) modulo [MATH: \\phi(n)=48{:}]\n[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 48)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>So, let&#x27;s find the inverse of <span class=\"math\">[MATH: e=19]</span> modulo <span class=\"math\">[MATH: \\phi(n)=48.]</span> To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n<span class=\"math\">[MATH: 48|=|19 \u22c5 2|+|10; \u2199|\u2199; 19|=|10 \u22c5 1|+|9; \u2199|\u2199; 10|=|9 \u22c5 1|+|1]</span>\nSolving for the rightmost terms in the equations above, we get\n<span class=\"math\">[MATH: 10|= 48 \u2212 19 \u22c5 2; 9|= 19 \u2212 10; 1|= 10 \u2212 9.]</span>\nThen, we back-substitute:\n<span class=\"math\">[MATH: 1|= 10 \u2212 9; = 10 \u2212 (19 \u2212 10); = 10 \u22c5 2 \u2212 19; = (48 \u2212 19 \u22c5 2) \u22c5 2 \u2212 19; = 48 \u22c5 2 + 19 \u22c5 (\u2212 5)]</span> \nWe can write this result in modulo <span class=\"math\">[MATH: 48,]</span> as follows:\n<span class=\"math\">[MATH: 48 \u22c5 2 + 19 \u22c5 (\u2212 5)|\u22611|(mod48); 19 \u22c5 43|\u22611|(mod48)]</span>\nSo we have <span class=\"math\">[MATH: 19 \\cdot 43 \\equiv 1 \\: (\\textrm{mod}\\:48),]</span> which means that the inverse of <span class=\"math\">[MATH: e=19]</span> modulo <span class=\"math\">[MATH: 48]</span> is <span class=\"math\">[MATH: e^{-1}=43.]</span></p>",
+            "readable_text": "So, let's find the inverse of [MATH: e=19] modulo [MATH: \\phi(n)=48.] To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n[MATH: 48|=|19 \u22c5 2|+|10; \u2199|\u2199; 19|=|10 \u22c5 1|+|9; \u2199|\u2199; 10|=|9 \u22c5 1|+|1]\nSolving for the rightmost terms in the equations above, we get\n[MATH: 10|= 48 \u2212 19 \u22c5 2; 9|= 19 \u2212 10; 1|= 10 \u2212 9.]\nThen, we back-substitute:\n[MATH: 1|= 10 \u2212 9; = 10 \u2212 (19 \u2212 10); = 10 \u22c5 2 \u2212 19; = (48 \u2212 19 \u22c5 2) \u22c5 2 \u2212 19; = 48 \u22c5 2 + 19 \u22c5 (\u2212 5)]\nWe can write this result in modulo [MATH: 48,] as follows:\n[MATH: 48 \u22c5 2 + 19 \u22c5 (\u2212 5)|\u22611|(mod48); 19 \u22c5 43|\u22611|(mod48)]\nSo we have [MATH: 19 \\cdot 43 \\equiv 1 \\: (\\textrm{mod}\\:48),] which means that the inverse of [MATH: e=19] modulo [MATH: 48] is [MATH: e^{-1}=43.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Thus, our private key is <span class=\"math\">[MATH: (d,n) = (43,65).]</span></p>",
+            "readable_text": "Thus, our private key is [MATH: (d,n) = (43,65).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, to decrypt a word using the RSA cipher with the private key <span class=\"math\">[MATH: (d,n)=(43,65)]</span> over the English alphabet, we do the following:</p>",
+            "readable_text": "Now, to decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(43,65)] over the English alphabet, we do the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Raise each index to the power of <span class=\"math\">[MATH: d=43]</span> modulo <span class=\"math\">[MATH: n=65\\mathbin{:}]</span>\n<span class=\"math\">[MATH: 41^{43}\u226111|(mod65); 14^{43}\u226114|(mod65); 59^{43}\u226119|(mod65)]</span></p></li><li><p>Find the letters that correspond to the new indexes:</p><table><tr><td><p><span class=\"math\">[MATH: \\color{blue}11]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}14]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}19]</span></p></td></tr><tr><td><p>L</p></td><td><p>O</p></td><td><p>T</p></td></tr></table></li></ul>",
+            "readable_text": "- Raise each index to the power of [MATH: d=43] modulo [MATH: n=65\\mathbin{:}]\n[MATH: 41^{43}\u226111|(mod65); 14^{43}\u226114|(mod65); 59^{43}\u226119|(mod65)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}11] | [MATH: \\color{blue}14] | [MATH: \\color{blue}19] |\n| L | O | T |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the plaintext was \n<span class=\"math\">[MATH: L \\:\\: O \\:\\: T.]</span></p>",
+            "readable_text": "Therefore, the plaintext was\n[MATH: L \\:\\: O \\:\\: T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e,n)=(19,65)] and get the ciphertext [MATH: 41 \\:\\: 14 \\:\\: 59.] Assuming we used the usual English alphabet (shown above) during the encryption and each letter was encrypted separately, how can we decrypt this and arrive at the original plain text word?\n\nContent:\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\nContent:\nTo decrypt a message using the RSA cipher, we need to know the private key.\n\nContent:\nNotice that [MATH: n=65 = 5 \\times 13.] Let's denote [MATH: p=5] and [MATH: q=13.] Then,\n[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (5 \u2212 1)(13 \u2212 1); = 4 \u22c5 12; = 48.]\n\nContent:\nFor the RSA cipher with private key [MATH: (d,n),] the first component [MATH: d] is the multiplicative inverse of [MATH: e=19] (the first component of the public key) modulo [MATH: \\phi(n)=48{:}]\n[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 48)]\n\nContent:\nSo, let's find the inverse of [MATH: e=19] modulo [MATH: \\phi(n)=48.] To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n[MATH: 48|=|19 \u22c5 2|+|10; \u2199|\u2199; 19|=|10 \u22c5 1|+|9; \u2199|\u2199; 10|=|9 \u22c5 1|+|1]\nSolving for the rightmost terms in the equations above, we get\n[MATH: 10|= 48 \u2212 19 \u22c5 2; 9|= 19 \u2212 10; 1|= 10 \u2212 9.]\nThen, we back-substitute:\n[MATH: 1|= 10 \u2212 9; = 10 \u2212 (19 \u2212 10); = 10 \u22c5 2 \u2212 19; = (48 \u2212 19 \u22c5 2) \u22c5 2 \u2212 19; = 48 \u22c5 2 + 19 \u22c5 (\u2212 5)]\nWe can write this result in modulo [MATH: 48,] as follows:\n[MATH: 48 \u22c5 2 + 19 \u22c5 (\u2212 5)|\u22611|(mod48); 19 \u22c5 43|\u22611|(mod48)]\nSo we have [MATH: 19 \\cdot 43 \\equiv 1 \\: (\\textrm{mod}\\:48),] which means that the inverse of [MATH: e=19] modulo [MATH: 48] is [MATH: e^{-1}=43.]\n\nContent:\nThus, our private key is [MATH: (d,n) = (43,65).]\n\nContent:\nNow, to decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(43,65)] over the English alphabet, we do the following:\n\nContent:\n- Raise each index to the power of [MATH: d=43] modulo [MATH: n=65\\mathbin{:}]\n[MATH: 41^{43}\u226111|(mod65); 14^{43}\u226114|(mod65); 59^{43}\u226119|(mod65)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}11] | [MATH: \\color{blue}14] | [MATH: \\color{blue}19] |\n| L | O | T |\n\nContent:\nTherefore, the plaintext was\n[MATH: L \\:\\: O \\:\\: T.]"
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "414174",
+        "content_id": "15554",
+        "dom_id": "step-414174",
+        "selector": "#step-414174",
+        "step_anchor": "step-7",
+        "title": "Decrypting Messages Using the RSA Cipher When the Private Key is Given",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the private key <span class=\"math\">[MATH: (d,n)=(13,55)]</span> and get the ciphertext <span class=\"math\">[MATH: 52 \\:\\: 49 \\:\\: 53]</span> as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table>",
+            "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d,n)=(13,55)] and get the ciphertext [MATH: 52 \\:\\: 49 \\:\\: 53] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To decrypt a word using the RSA cipher with the private key <span class=\"math\">[MATH: (d,n)=(13,55)]</span> over the English alphabet, we do the following:</p><ul><li><p>Raise each index to the power of <span class=\"math\">[MATH: d=13]</span> modulo <span class=\"math\">[MATH: n=55\\mathbin{:}]</span>\n<span class=\"math\">[MATH: 52^{13}\u226117|(mod55); 49^{13}\u22614|(mod55); 53^{13}\u22613|(mod55)]</span></p></li><li><p>Find the letters that correspond to the new indexes:</p><table><tr><td><p><span class=\"math\">[MATH: \\color{blue}17]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}4]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}3]</span></p></td></tr><tr><td><p>R</p></td><td><p>E</p></td><td><p>D</p></td></tr></table></li></ul><p>Therefore, the plaintext was \n<span class=\"math\">[MATH: R \\:\\: E \\:\\: D.]</span></p>",
+            "readable_text": "To decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(13,55)] over the English alphabet, we do the following:\n\n- Raise each index to the power of [MATH: d=13] modulo [MATH: n=55\\mathbin{:}]\n[MATH: 52^{13}\u226117|(mod55); 49^{13}\u22614|(mod55); 53^{13}\u22613|(mod55)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}17] | [MATH: \\color{blue}4] | [MATH: \\color{blue}3] |\n| R | E | D |\n\nTherefore, the plaintext was\n[MATH: R \\:\\: E \\:\\: D.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d,n)=(13,55)] and get the ciphertext [MATH: 52 \\:\\: 49 \\:\\: 53] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nEXPLANATION\n\nExplanation:\nTo decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(13,55)] over the English alphabet, we do the following:\n\n- Raise each index to the power of [MATH: d=13] modulo [MATH: n=55\\mathbin{:}]\n[MATH: 52^{13}\u226117|(mod55); 49^{13}\u22614|(mod55); 53^{13}\u22613|(mod55)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}17] | [MATH: \\color{blue}4] | [MATH: \\color{blue}3] |\n| R | E | D |\n\nTherefore, the plaintext was\n[MATH: R \\:\\: E \\:\\: D.]"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "257296",
+        "dom_id": "question-257296",
+        "selector": "#question-257296",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the private key <span class=\"math\">[MATH: (d, n) = (35, 65)]</span> and get the ciphertext <span class=\"math\">[MATH: 380024]</span> as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table><p>The plaintext was\n<span class=\"select-list\" data-select-id=\"selectList-257296-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-257296-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-257296-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d, n) = (35, 65)] and get the ciphertext [MATH: 380024] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257296-0",
+              "frame_dom_id": "selectListFrame-257296-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: M]</span>",
+                  "readable_text": "[MATH: M]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: N]</span>",
+                  "readable_text": "[MATH: N]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                  "readable_text": "[MATH: P]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257296-1",
+              "frame_dom_id": "selectListFrame-257296-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: U]</span>",
+                  "readable_text": "[MATH: U]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                  "readable_text": "[MATH: R]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                  "readable_text": "[MATH: E]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257296-2",
+              "frame_dom_id": "selectListFrame-257296-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: T]</span>",
+                  "readable_text": "[MATH: T]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                  "readable_text": "[MATH: D]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                  "readable_text": "[MATH: H]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                  "readable_text": "[MATH: E]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                  "readable_text": "[MATH: K]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257296-0",
+            "frame_dom_id": "selectListFrame-257296-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: M]</span>",
+                "readable_text": "[MATH: M]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: N]</span>",
+                "readable_text": "[MATH: N]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                "readable_text": "[MATH: P]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257296-1",
+            "frame_dom_id": "selectListFrame-257296-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: U]</span>",
+                "readable_text": "[MATH: U]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                "readable_text": "[MATH: R]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                "readable_text": "[MATH: E]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257296-2",
+            "frame_dom_id": "selectListFrame-257296-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: T]</span>",
+                "readable_text": "[MATH: T]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                "readable_text": "[MATH: D]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                "readable_text": "[MATH: H]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                "readable_text": "[MATH: E]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                "readable_text": "[MATH: K]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d, n) = (35, 65)] and get the ciphertext [MATH: 380024] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3]."
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "257225",
+        "dom_id": "question-257225",
+        "selector": "#question-257225",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the private key <span class=\"math\">[MATH: (d, n) = (19, 91)]</span> and get the ciphertext <span class=\"math\">[MATH: 501433]</span> as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table><p>The plaintext was\n<span class=\"select-list\" data-select-id=\"selectList-257225-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-257225-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-257225-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d, n) = (19, 91)] and get the ciphertext [MATH: 501433] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257225-0",
+              "frame_dom_id": "selectListFrame-257225-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                  "readable_text": "[MATH: P]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                  "readable_text": "[MATH: R]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: V]</span>",
+                  "readable_text": "[MATH: V]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257225-1",
+              "frame_dom_id": "selectListFrame-257225-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                  "readable_text": "[MATH: P]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: O]</span>",
+                  "readable_text": "[MATH: O]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                  "readable_text": "[MATH: R]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257225-2",
+              "frame_dom_id": "selectListFrame-257225-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                  "readable_text": "[MATH: K]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: T]</span>",
+                  "readable_text": "[MATH: T]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                  "readable_text": "[MATH: H]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                  "readable_text": "[MATH: D]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                  "readable_text": "[MATH: E]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257225-0",
+            "frame_dom_id": "selectListFrame-257225-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                "readable_text": "[MATH: P]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                "readable_text": "[MATH: R]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: V]</span>",
+                "readable_text": "[MATH: V]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257225-1",
+            "frame_dom_id": "selectListFrame-257225-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                "readable_text": "[MATH: P]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: O]</span>",
+                "readable_text": "[MATH: O]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                "readable_text": "[MATH: R]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257225-2",
+            "frame_dom_id": "selectListFrame-257225-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                "readable_text": "[MATH: K]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: T]</span>",
+                "readable_text": "[MATH: T]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                "readable_text": "[MATH: H]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                "readable_text": "[MATH: D]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                "readable_text": "[MATH: E]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d, n) = (19, 91)] and get the ciphertext [MATH: 501433] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3]."
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "414177",
+        "content_id": "15555",
+        "dom_id": "step-414177",
+        "selector": "#step-414177",
+        "step_anchor": "step-10",
+        "title": "Decrypting Messages Using the RSA Cipher When the Public Key is Given",
+        "key_prerequisites": [
+          {
+            "topic_id": "2654",
+            "name": "Euler's Totient Function",
+            "href": "/topics/2654",
+            "type": ""
+          },
+          {
+            "topic_id": "4818",
+            "name": "Multiplicative Inverses Modulo N",
+            "href": "/topics/4818",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the public key <span class=\"math\">[MATH: (e,n)=(7,33)]</span> and get the ciphertext <span class=\"math\">[MATH: 15 \\:\\: 16 \\:\\: 13]</span> as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table>",
+            "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e,n)=(7,33)] and get the ciphertext [MATH: 15 \\:\\: 16 \\:\\: 13] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>To decrypt a message using the RSA cipher, we need to know its corresponding private key. </p><p>Notice that <span class=\"math\">[MATH: n=33 = 3 \\times 11.]</span> Let&#x27;s denote <span class=\"math\">[MATH: p=3]</span> and <span class=\"math\">[MATH: q=11.]</span> Then,\n<span class=\"math\">[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (3 \u2212 1)(11 \u2212 1); = 2 \u22c5 10; = 20.]</span></p><p>For the RSA cipher with the private key <span class=\"math\">[MATH: (d,n),]</span> the first component <span class=\"math\">[MATH: d]</span> is the multiplicative inverse of <span class=\"math\">[MATH: e=7]</span> (the first component of the public key) modulo <span class=\"math\">[MATH: \\phi(n)=20{:}]</span>\n<span class=\"math\">[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 20)]</span></p><p>So, let&#x27;s find the inverse of <span class=\"math\">[MATH: e=7]</span> modulo <span class=\"math\">[MATH: \\phi(n)=20.]</span> To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n<span class=\"math\">[MATH: 20|=|7 \u22c5 2|+|6; \u2199|\u2199; 7|=|6 \u22c5 1|+|1]</span>\nSolving for the rightmost terms in the equations above, we get\n<span class=\"math\">[MATH: 6|= 20 \u2212 7 \u22c5 2; 1|= 7 \u2212 6.]</span>\nThen, we back-substitute:\n<span class=\"math\">[MATH: 1|= 7 \u2212 6; = 7 \u2212 (20 \u2212 7 \u22c5 2); = 7 \u22c5 3 \u2212 20; = 7 \u22c5 3 + 20 \u22c5 (\u2212 1)]</span> \nWe can write this result in modulo <span class=\"math\">[MATH: 20,]</span> as follows:\n<span class=\"math\">[MATH: 7 \u22c5 3 + 20 \u22c5 (\u2212 1)|\u22611|(mod20); 7 \u22c5 3|\u22611|(mod20)]</span>\nSo we have <span class=\"math\">[MATH: 7 \\cdot 3 \\equiv 1 \\: (\\textrm{mod}\\:20),]</span> which means that the inverse of <span class=\"math\">[MATH: e=7]</span> modulo <span class=\"math\">[MATH: 20]</span> is <span class=\"math\">[MATH: e^{-1}=3.]</span></p><p>Thus, our private key is <span class=\"math\">[MATH: (d,n) = (3,33).]</span></p><p>Now, to decrypt a word using the RSA cipher with the private key <span class=\"math\">[MATH: (d,n)=(3,33)]</span> over the English alphabet, we do the following:</p><ul><li><p>Raise each index to the power of <span class=\"math\">[MATH: d=3]</span> modulo <span class=\"math\">[MATH: n=33\\mathbin{:}]</span>\n<span class=\"math\">[MATH: 15^{3}\u226109|(mod33); 16^{3}\u226104|(mod33); 13^{3}\u226119|(mod33)]</span></p></li><li><p>Find the letters that correspond to the new indexes:</p><table><tr><td><p><span class=\"math\">[MATH: \\color{blue}09]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}04]</span></p></td><td><p><span class=\"math\">[MATH: \\color{blue}19]</span></p></td></tr><tr><td><p>J</p></td><td><p>E</p></td><td><p>T</p></td></tr></table></li></ul><p>Therefore, the plaintext was \n<span class=\"math\">[MATH: J \\:\\: E \\:\\: T.]</span></p>",
+            "readable_text": "To decrypt a message using the RSA cipher, we need to know its corresponding private key.\n\nNotice that [MATH: n=33 = 3 \\times 11.] Let's denote [MATH: p=3] and [MATH: q=11.] Then,\n[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (3 \u2212 1)(11 \u2212 1); = 2 \u22c5 10; = 20.]\n\nFor the RSA cipher with the private key [MATH: (d,n),] the first component [MATH: d] is the multiplicative inverse of [MATH: e=7] (the first component of the public key) modulo [MATH: \\phi(n)=20{:}]\n[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 20)]\n\nSo, let's find the inverse of [MATH: e=7] modulo [MATH: \\phi(n)=20.] To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n[MATH: 20|=|7 \u22c5 2|+|6; \u2199|\u2199; 7|=|6 \u22c5 1|+|1]\nSolving for the rightmost terms in the equations above, we get\n[MATH: 6|= 20 \u2212 7 \u22c5 2; 1|= 7 \u2212 6.]\nThen, we back-substitute:\n[MATH: 1|= 7 \u2212 6; = 7 \u2212 (20 \u2212 7 \u22c5 2); = 7 \u22c5 3 \u2212 20; = 7 \u22c5 3 + 20 \u22c5 (\u2212 1)]\nWe can write this result in modulo [MATH: 20,] as follows:\n[MATH: 7 \u22c5 3 + 20 \u22c5 (\u2212 1)|\u22611|(mod20); 7 \u22c5 3|\u22611|(mod20)]\nSo we have [MATH: 7 \\cdot 3 \\equiv 1 \\: (\\textrm{mod}\\:20),] which means that the inverse of [MATH: e=7] modulo [MATH: 20] is [MATH: e^{-1}=3.]\n\nThus, our private key is [MATH: (d,n) = (3,33).]\n\nNow, to decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(3,33)] over the English alphabet, we do the following:\n\n- Raise each index to the power of [MATH: d=3] modulo [MATH: n=33\\mathbin{:}]\n[MATH: 15^{3}\u226109|(mod33); 16^{3}\u226104|(mod33); 13^{3}\u226119|(mod33)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}09] | [MATH: \\color{blue}04] | [MATH: \\color{blue}19] |\n| J | E | T |\n\nTherefore, the plaintext was\n[MATH: J \\:\\: E \\:\\: T.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e,n)=(7,33)] and get the ciphertext [MATH: 15 \\:\\: 16 \\:\\: 13] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nEXPLANATION\n\nExplanation:\nTo decrypt a message using the RSA cipher, we need to know its corresponding private key.\n\nNotice that [MATH: n=33 = 3 \\times 11.] Let's denote [MATH: p=3] and [MATH: q=11.] Then,\n[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (3 \u2212 1)(11 \u2212 1); = 2 \u22c5 10; = 20.]\n\nFor the RSA cipher with the private key [MATH: (d,n),] the first component [MATH: d] is the multiplicative inverse of [MATH: e=7] (the first component of the public key) modulo [MATH: \\phi(n)=20{:}]\n[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 20)]\n\nSo, let's find the inverse of [MATH: e=7] modulo [MATH: \\phi(n)=20.] To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n[MATH: 20|=|7 \u22c5 2|+|6; \u2199|\u2199; 7|=|6 \u22c5 1|+|1]\nSolving for the rightmost terms in the equations above, we get\n[MATH: 6|= 20 \u2212 7 \u22c5 2; 1|= 7 \u2212 6.]\nThen, we back-substitute:\n[MATH: 1|= 7 \u2212 6; = 7 \u2212 (20 \u2212 7 \u22c5 2); = 7 \u22c5 3 \u2212 20; = 7 \u22c5 3 + 20 \u22c5 (\u2212 1)]\nWe can write this result in modulo [MATH: 20,] as follows:\n[MATH: 7 \u22c5 3 + 20 \u22c5 (\u2212 1)|\u22611|(mod20); 7 \u22c5 3|\u22611|(mod20)]\nSo we have [MATH: 7 \\cdot 3 \\equiv 1 \\: (\\textrm{mod}\\:20),] which means that the inverse of [MATH: e=7] modulo [MATH: 20] is [MATH: e^{-1}=3.]\n\nThus, our private key is [MATH: (d,n) = (3,33).]\n\nNow, to decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(3,33)] over the English alphabet, we do the following:\n\n- Raise each index to the power of [MATH: d=3] modulo [MATH: n=33\\mathbin{:}]\n[MATH: 15^{3}\u226109|(mod33); 16^{3}\u226104|(mod33); 13^{3}\u226119|(mod33)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}09] | [MATH: \\color{blue}04] | [MATH: \\color{blue}19] |\n| J | E | T |\n\nTherefore, the plaintext was\n[MATH: J \\:\\: E \\:\\: T.]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "257226",
+        "dom_id": "question-257226",
+        "selector": "#question-257226",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the public key <span class=\"math\">[MATH: (e, n) = (23, 91)]</span> and get the ciphertext <span class=\"math\">[MATH: 864113]</span> as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table><p>The plaintext was\n<span class=\"select-list\" data-select-id=\"selectList-257226-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-257226-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-257226-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e, n) = (23, 91)] and get the ciphertext [MATH: 864113] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257226-0",
+              "frame_dom_id": "selectListFrame-257226-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: V]</span>",
+                  "readable_text": "[MATH: V]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: S]</span>",
+                  "readable_text": "[MATH: S]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                  "readable_text": "[MATH: R]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257226-1",
+              "frame_dom_id": "selectListFrame-257226-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: U]</span>",
+                  "readable_text": "[MATH: U]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                  "readable_text": "[MATH: P]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                  "readable_text": "[MATH: R]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257226-2",
+              "frame_dom_id": "selectListFrame-257226-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: N]</span>",
+                  "readable_text": "[MATH: N]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                  "readable_text": "[MATH: D]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                  "readable_text": "[MATH: K]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                  "readable_text": "[MATH: H]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                  "readable_text": "[MATH: E]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257226-0",
+            "frame_dom_id": "selectListFrame-257226-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: V]</span>",
+                "readable_text": "[MATH: V]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: S]</span>",
+                "readable_text": "[MATH: S]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                "readable_text": "[MATH: R]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257226-1",
+            "frame_dom_id": "selectListFrame-257226-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: U]</span>",
+                "readable_text": "[MATH: U]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: P]</span>",
+                "readable_text": "[MATH: P]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                "readable_text": "[MATH: R]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257226-2",
+            "frame_dom_id": "selectListFrame-257226-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: N]</span>",
+                "readable_text": "[MATH: N]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                "readable_text": "[MATH: D]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                "readable_text": "[MATH: K]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                "readable_text": "[MATH: H]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                "readable_text": "[MATH: E]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e, n) = (23, 91)] and get the ciphertext [MATH: 864113] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3]."
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "257355",
+        "dom_id": "question-257355",
+        "selector": "#question-257355",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Suppose we encrypt a <span class=\"math\">[MATH: 3]</span>-letter English word using the RSA cipher with the public key <span class=\"math\">[MATH: (e, n) = (19, 55)]</span> and get the ciphertext <span class=\"math\">[MATH: 490023]</span> as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?</p><p><em>Hint: Use the <code>mod</code> function on your calculator or a software package to compute the required powers modulo <span class=\"math\">[MATH: n.]</span></em></p><table><tr><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>G</p></td><td><p>H</p></td><td><p>I</p></td><td><p>J</p></td><td><p>K</p></td><td><p>L</p></td><td><p>M</p></td></tr><tr><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: 2]</span></p></td><td><p><span class=\"math\">[MATH: 3]</span></p></td><td><p><span class=\"math\">[MATH: 4]</span></p></td><td><p><span class=\"math\">[MATH: 5]</span></p></td><td><p><span class=\"math\">[MATH: 6]</span></p></td><td><p><span class=\"math\">[MATH: 7]</span></p></td><td><p><span class=\"math\">[MATH: 8]</span></p></td><td><p><span class=\"math\">[MATH: 9]</span></p></td><td><p><span class=\"math\">[MATH: 10]</span></p></td><td><p><span class=\"math\">[MATH: 11]</span></p></td><td><p><span class=\"math\">[MATH: 12]</span></p></td></tr><tr><td><p>N</p></td><td><p>O</p></td><td><p>P</p></td><td><p>Q</p></td><td><p>R</p></td><td><p>S</p></td><td><p>T</p></td><td><p>U</p></td><td><p>V</p></td><td><p>W</p></td><td><p>X</p></td><td><p>Y</p></td><td><p>Z</p></td></tr><tr><td><p><span class=\"math\">[MATH: 13]</span></p></td><td><p><span class=\"math\">[MATH: 14]</span></p></td><td><p><span class=\"math\">[MATH: 15]</span></p></td><td><p><span class=\"math\">[MATH: 16]</span></p></td><td><p><span class=\"math\">[MATH: 17]</span></p></td><td><p><span class=\"math\">[MATH: 18]</span></p></td><td><p><span class=\"math\">[MATH: 19]</span></p></td><td><p><span class=\"math\">[MATH: 20]</span></p></td><td><p><span class=\"math\">[MATH: 21]</span></p></td><td><p><span class=\"math\">[MATH: 22]</span></p></td><td><p><span class=\"math\">[MATH: 23]</span></p></td><td><p><span class=\"math\">[MATH: 24]</span></p></td><td><p><span class=\"math\">[MATH: 25]</span></p></td></tr></table><p>The plaintext was\n<span class=\"select-list\" data-select-id=\"selectList-257355-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-257355-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-257355-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "Suppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e, n) = (19, 55)] and get the ciphertext [MATH: 490023] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257355-0",
+              "frame_dom_id": "selectListFrame-257355-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                  "readable_text": "[MATH: C]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: V]</span>",
+                  "readable_text": "[MATH: V]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: J]</span>",
+                  "readable_text": "[MATH: J]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                  "readable_text": "[MATH: K]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                  "readable_text": "[MATH: D]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                  "readable_text": "[MATH: R]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257355-1",
+              "frame_dom_id": "selectListFrame-257355-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                  "readable_text": "[MATH: I]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: O]</span>",
+                  "readable_text": "[MATH: O]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: O]</span>",
+                  "readable_text": "[MATH: O]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                  "readable_text": "[MATH: A]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                  "readable_text": "[MATH: E]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: U]</span>",
+                  "readable_text": "[MATH: U]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257355-2",
+              "frame_dom_id": "selectListFrame-257355-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 6,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                  "readable_text": "[MATH: K]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: M]</span>",
+                  "readable_text": "[MATH: M]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                  "readable_text": "[MATH: H]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: L]</span>",
+                  "readable_text": "[MATH: L]"
+                },
+                {
+                  "index": 5,
+                  "normalized_html": "<span class=\"math\">[MATH: F]</span>",
+                  "readable_text": "[MATH: F]"
+                },
+                {
+                  "index": 6,
+                  "normalized_html": "<span class=\"math\">[MATH: X]</span>",
+                  "readable_text": "[MATH: X]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257355-0",
+            "frame_dom_id": "selectListFrame-257355-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: C]</span>",
+                "readable_text": "[MATH: C]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: V]</span>",
+                "readable_text": "[MATH: V]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: J]</span>",
+                "readable_text": "[MATH: J]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                "readable_text": "[MATH: K]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: D]</span>",
+                "readable_text": "[MATH: D]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: R]</span>",
+                "readable_text": "[MATH: R]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257355-1",
+            "frame_dom_id": "selectListFrame-257355-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: I]</span>",
+                "readable_text": "[MATH: I]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: O]</span>",
+                "readable_text": "[MATH: O]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: O]</span>",
+                "readable_text": "[MATH: O]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: A]</span>",
+                "readable_text": "[MATH: A]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: E]</span>",
+                "readable_text": "[MATH: E]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: U]</span>",
+                "readable_text": "[MATH: U]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257355-2",
+            "frame_dom_id": "selectListFrame-257355-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 6,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: K]</span>",
+                "readable_text": "[MATH: K]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: M]</span>",
+                "readable_text": "[MATH: M]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: H]</span>",
+                "readable_text": "[MATH: H]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: L]</span>",
+                "readable_text": "[MATH: L]"
+              },
+              {
+                "index": 5,
+                "normalized_html": "<span class=\"math\">[MATH: F]</span>",
+                "readable_text": "[MATH: F]"
+              },
+              {
+                "index": 6,
+                "normalized_html": "<span class=\"math\">[MATH: X]</span>",
+                "readable_text": "[MATH: X]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e, n) = (19, 55)] and get the ciphertext [MATH: 490023] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3]."
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417287",
+        "content_id": "11839",
+        "dom_id": "step-417287",
+        "selector": "#step-417287",
+        "step_anchor": "step-13",
+        "title": "Explaining Why the Decryption Step Works",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that in the RSA cryptosystem, we have the public key <span class=\"math\">[MATH: (e,n)]</span> and the private key <span class=\"math\">[MATH: (d,n),]</span> where</p>",
+            "readable_text": "Recall that in the RSA cryptosystem, we have the public key [MATH: (e,n)] and the private key [MATH: (d,n),] where",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><span class=\"math\">[MATH: p]</span> and <span class=\"math\">[MATH: q]</span> are (large) primes,</p></li><li><p><span class=\"math\">[MATH: n=pq]</span> </p></li><li><p><span class=\"math\">[MATH: \\phi(n)=(p-1)(q-1),]</span> and</p></li><li><p><span class=\"math\">[MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)).]</span></p></li></ul>",
+            "readable_text": "- [MATH: p] and [MATH: q] are (large) primes,\n- [MATH: n=pq]\n- [MATH: \\phi(n)=(p-1)(q-1),] and\n- [MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The message <span class=\"math\">[MATH: M]</span> (with <span class=\"math\">[MATH: M &lt; n]</span>) is encrypted by computing\n<span class=\"math\">[MATH: C \\equiv M^e \\quad (\\textrm{mod} \\: n),]</span>\nwhereas <span class=\"math\">[MATH: C]</span> is decrypted by computing\n<span class=\"math\">[MATH: M \\equiv C^d \\quad (\\textrm{mod} \\: n).]</span></p>",
+            "readable_text": "The message [MATH: M] (with [MATH: M < n]) is encrypted by computing\n[MATH: C \\equiv M^e \\quad (\\textrm{mod} \\: n),]\nwhereas [MATH: C] is decrypted by computing\n[MATH: M \\equiv C^d \\quad (\\textrm{mod} \\: n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s now show that after computing <span class=\"math\">[MATH: C^d]</span> modulo <span class=\"math\">[MATH: n,]</span> we indeed restore the original message <span class=\"math\">[MATH: M.]</span></p>",
+            "readable_text": "Let's now show that after computing [MATH: C^d] modulo [MATH: n,] we indeed restore the original message [MATH: M.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We have</p>",
+            "readable_text": "We have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: C^{d}|\u2261(M^{e})^{d}|(modn); \u2261M^{ed}|(modn).]</span></p>",
+            "readable_text": "[MATH: C^{d}|\u2261(M^{e})^{d}|(modn); \u2261M^{ed}|(modn).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, notice that since <span class=\"math\">[MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)),]</span> we have \n<span class=\"math\">[MATH: ed = 1 + k \\phi(n)]</span>\nfor some integer <span class=\"math\">[MATH: k.]</span> Thus,</p>",
+            "readable_text": "Now, notice that since [MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)),] we have\n[MATH: ed = 1 + k \\phi(n)]\nfor some integer [MATH: k.] Thus,",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: M^{ed}|\u2261M^{1 + k\u03d5(n)}|(modn); \u2261M \u22c5 (M^{\u03d5(n)})^{k}|(modn).]</span></p>",
+            "readable_text": "[MATH: M^{ed}|\u2261M^{1 + k\u03d5(n)}|(modn); \u2261M \u22c5 (M^{\u03d5(n)})^{k}|(modn).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we can assume that <span class=\"math\">[MATH: \\gcd(M,n)=1.]</span> Indeed, the probability that <span class=\"math\">[MATH: M]</span> and <span class=\"math\">[MATH: n]</span> will have a common divisor greater than <span class=\"math\">[MATH: 1]</span> is extremely small when the primes <span class=\"math\">[MATH: p]</span> and <span class=\"math\">[MATH: q]</span> are large. Moreover, if this happens, the private key will be compromised anyway. \nTherefore, according to Euler&#x27;s theorem, <span class=\"math\">[MATH: M^{\\phi(n)} \\equiv 1 \\: (\\textrm{mod} \\: n).]</span></p>",
+            "readable_text": "Next, we can assume that [MATH: \\gcd(M,n)=1.] Indeed, the probability that [MATH: M] and [MATH: n] will have a common divisor greater than [MATH: 1] is extremely small when the primes [MATH: p] and [MATH: q] are large. Moreover, if this happens, the private key will be compromised anyway.\nTherefore, according to Euler's theorem, [MATH: M^{\\phi(n)} \\equiv 1 \\: (\\textrm{mod} \\: n).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, we have</p>",
+            "readable_text": "Finally, we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: M \u22c5 (M^{\u03d5(n)})^{k}|\u2261M \u22c5 1^{k}|(modn); \u2261M \u22c5 1|(modn); \u2261M|(modn).]</span></p>",
+            "readable_text": "[MATH: M \u22c5 (M^{\u03d5(n)})^{k}|\u2261M \u22c5 1^{k}|(modn); \u2261M \u22c5 1|(modn); \u2261M|(modn).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that in the RSA cryptosystem, we have the public key [MATH: (e,n)] and the private key [MATH: (d,n),] where\n\nContent:\n- [MATH: p] and [MATH: q] are (large) primes,\n- [MATH: n=pq]\n- [MATH: \\phi(n)=(p-1)(q-1),] and\n- [MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)).]\n\nContent:\nThe message [MATH: M] (with [MATH: M < n]) is encrypted by computing\n[MATH: C \\equiv M^e \\quad (\\textrm{mod} \\: n),]\nwhereas [MATH: C] is decrypted by computing\n[MATH: M \\equiv C^d \\quad (\\textrm{mod} \\: n).]\n\nContent:\nLet's now show that after computing [MATH: C^d] modulo [MATH: n,] we indeed restore the original message [MATH: M.]\n\nContent:\nWe have\n\nContent:\n[MATH: C^{d}|\u2261(M^{e})^{d}|(modn); \u2261M^{ed}|(modn).]\n\nContent:\nNow, notice that since [MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)),] we have\n[MATH: ed = 1 + k \\phi(n)]\nfor some integer [MATH: k.] Thus,\n\nContent:\n[MATH: M^{ed}|\u2261M^{1 + k\u03d5(n)}|(modn); \u2261M \u22c5 (M^{\u03d5(n)})^{k}|(modn).]\n\nContent:\nNext, we can assume that [MATH: \\gcd(M,n)=1.] Indeed, the probability that [MATH: M] and [MATH: n] will have a common divisor greater than [MATH: 1] is extremely small when the primes [MATH: p] and [MATH: q] are large. Moreover, if this happens, the private key will be compromised anyway.\nTherefore, according to Euler's theorem, [MATH: M^{\\phi(n)} \\equiv 1 \\: (\\textrm{mod} \\: n).]\n\nContent:\nFinally, we have\n\nContent:\n[MATH: M \u22c5 (M^{\u03d5(n)})^{k}|\u2261M \u22c5 1^{k}|(modn); \u2261M \u22c5 1|(modn); \u2261M|(modn).]"
+      },
+      {
+        "lesson_index": 14,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "430311",
+        "content_id": "12345",
+        "dom_id": "step-430311",
+        "selector": "#step-430311",
+        "step_anchor": "step-14",
+        "title": "Justifying the RSA Cryptosystem",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Why is the RSA cryptosystem expected to be secure?</p>",
+            "readable_text": "Why is the RSA cryptosystem expected to be secure?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose you are Eve, an attacker eavesdropping on two parties, Alice and Bob, who are using RSA to send secret messages to each other. This means you have access to</p>",
+            "readable_text": "Suppose you are Eve, an attacker eavesdropping on two parties, Alice and Bob, who are using RSA to send secret messages to each other. This means you have access to",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the public key <span class=\"math\">[MATH: (e, n)]</span>, consisting of</p></li><li><p>the public encryption exponent <span class=\"math\">[MATH: e]</span> and </p></li><li><p>the modulus <span class=\"math\">[MATH: n]</span></p></li></ul>",
+            "readable_text": "- the public key [MATH: (e, n)], consisting of\n- the public encryption exponent [MATH: e] and\n- the modulus [MATH: n]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>but you do <em>not</em> have access to</p>",
+            "readable_text": "but you do not have access to",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the factorization <span class=\"math\">[MATH: n = pq]</span></p></li><li><p>the totient <span class=\"math\">[MATH: \\phi(n) = (p-1)(q-1)]</span></p></li><li><p>the private decryption exponent <span class=\"math\">[MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}.]</span></p></li></ul>",
+            "readable_text": "- the factorization [MATH: n = pq]\n- the totient [MATH: \\phi(n) = (p-1)(q-1)]\n- the private decryption exponent [MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Furthermore, whenever Alice or Bob encrypts a secret message <span class=\"math\">[MATH: M]</span> by computing</p>",
+            "readable_text": "Furthermore, whenever Alice or Bob encrypts a secret message [MATH: M] by computing",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: C \\equiv M^e \\pmod{n}]</span></p>",
+            "readable_text": "[MATH: C \\equiv M^e \\pmod{n}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>you have access to the resulting ciphertext <span class=\"math\">[MATH: C.]</span> RSA is secure if it is difficult to use what you have access to <span class=\"math\">[MATH: (e, n]</span>, and <span class=\"math\">[MATH: C)]</span> to compute the original plaintext <span class=\"math\">[MATH: M.]</span> This problem is known as the <strong>RSA problem.</strong></p>",
+            "readable_text": "you have access to the resulting ciphertext [MATH: C.] RSA is secure if it is difficult to use what you have access to [MATH: (e, n], and [MATH: C)] to compute the original plaintext [MATH: M.] This problem is known as the RSA problem.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, you solved the RSA problem for small values of <span class=\"math\">[MATH: n]</span>, such as <span class=\"math\">[MATH: n = 33]</span>, by factoring <span class=\"math\">[MATH: n = pq]</span> into a product of two primes. Given this factorization you computed <span class=\"math\">[MATH: \\phi(n) = (p - 1)(q - 1)]</span>, which let you compute <span class=\"math\">[MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}]</span>, which finally let you compute <span class=\"math\">[MATH: M \\equiv C^d \\pmod{n}.]</span> </p>",
+            "readable_text": "In this lesson, you solved the RSA problem for small values of [MATH: n], such as [MATH: n = 33], by factoring [MATH: n = pq] into a product of two primes. Given this factorization you computed [MATH: \\phi(n) = (p - 1)(q - 1)], which let you compute [MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}], which finally let you compute [MATH: M \\equiv C^d \\pmod{n}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In general, factoring <span class=\"math\">[MATH: n]</span> is the most efficient known method of solving the RSA problem, and no cleverer ways of solving the RSA problem without factoring <span class=\"math\">[MATH: n]</span> are known. </p>",
+            "readable_text": "In general, factoring [MATH: n] is the most efficient known method of solving the RSA problem, and no cleverer ways of solving the RSA problem without factoring [MATH: n] are known.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, it is widely believed (but not proven!) that solving the RSA problem is as difficult as factoring <span class=\"math\">[MATH: n.]</span> In practical implementations of RSA, <span class=\"math\">[MATH: n]</span> is very large. For very large numbers, factoring is widely believed (but not proven!) to be a difficult problem with no known efficient solution in a certain precise technical sense. </p>",
+            "readable_text": "Therefore, it is widely believed (but not proven!) that solving the RSA problem is as difficult as factoring [MATH: n.] In practical implementations of RSA, [MATH: n] is very large. For very large numbers, factoring is widely believed (but not proven!) to be a difficult problem with no known efficient solution in a certain precise technical sense.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nWhy is the RSA cryptosystem expected to be secure?\n\nContent:\nSuppose you are Eve, an attacker eavesdropping on two parties, Alice and Bob, who are using RSA to send secret messages to each other. This means you have access to\n\nContent:\n- the public key [MATH: (e, n)], consisting of\n- the public encryption exponent [MATH: e] and\n- the modulus [MATH: n]\n\nContent:\nbut you do not have access to\n\nContent:\n- the factorization [MATH: n = pq]\n- the totient [MATH: \\phi(n) = (p-1)(q-1)]\n- the private decryption exponent [MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}.]\n\nContent:\nFurthermore, whenever Alice or Bob encrypts a secret message [MATH: M] by computing\n\nContent:\n[MATH: C \\equiv M^e \\pmod{n}]\n\nContent:\nyou have access to the resulting ciphertext [MATH: C.] RSA is secure if it is difficult to use what you have access to [MATH: (e, n], and [MATH: C)] to compute the original plaintext [MATH: M.] This problem is known as the RSA problem.\n\nContent:\nIn this lesson, you solved the RSA problem for small values of [MATH: n], such as [MATH: n = 33], by factoring [MATH: n = pq] into a product of two primes. Given this factorization you computed [MATH: \\phi(n) = (p - 1)(q - 1)], which let you compute [MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}], which finally let you compute [MATH: M \\equiv C^d \\pmod{n}.]\n\nContent:\nIn general, factoring [MATH: n] is the most efficient known method of solving the RSA problem, and no cleverer ways of solving the RSA problem without factoring [MATH: n] are known.\n\nContent:\nTherefore, it is widely believed (but not proven!) that solving the RSA problem is as difficult as factoring [MATH: n.] In practical implementations of RSA, [MATH: n] is very large. For very large numbers, factoring is widely believed (but not proven!) to be a difficult problem with no known efficient solution in a certain precise technical sense."
+      },
+      {
+        "lesson_index": 15,
+        "step_index": 9,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "430312",
+        "content_id": "12346",
+        "dom_id": "step-430312",
+        "selector": "#step-430312",
+        "step_anchor": "step-15",
+        "title": "The Magnitude of N",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>How large is <span class=\"math\">[MATH: n]</span> in practice? The National Institute of Standards and Technology (NIST) currently recommends a key size of <span class=\"math\">[MATH: 2048]</span> bits, meaning <span class=\"math\">[MATH: n]</span> should have <span class=\"math\">[MATH: 2048]</span> binary digits. <span class=\"math\">[MATH: 2^{2047}]</span> is about <span class=\"math\">[MATH: 1.6 \\times 10^{616}]</span>, so numbers this large have <span class=\"math\">[MATH: 616]</span> decimal digits. This suggests the NIST believes numbers this large are currently still difficult to factor, and should remain so for some time. </p>",
+            "readable_text": "How large is [MATH: n] in practice? The National Institute of Standards and Technology (NIST) currently recommends a key size of [MATH: 2048] bits, meaning [MATH: n] should have [MATH: 2048] binary digits. [MATH: 2^{2047}] is about [MATH: 1.6 \\times 10^{616}], so numbers this large have [MATH: 616] decimal digits. This suggests the NIST believes numbers this large are currently still difficult to factor, and should remain so for some time.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To compare this to the current state-of-the-art for factoring, in 1991 RSA Laboratories ran a challenge, the <strong>RSA Factoring Challenge</strong>, challenging researchers to factor specific large numbers, the <strong>RSA numbers</strong>, which are all products <span class=\"math\">[MATH: n = pq]</span> of two large primes, as used in RSA. The largest of the RSA numbers which has been factored so far is called <strong>RSA-250</strong>; it is an <span class=\"math\">[MATH: 829]</span>-bit number (with <span class=\"math\">[MATH: 250]</span> decimal digits), namely</p>",
+            "readable_text": "To compare this to the current state-of-the-art for factoring, in 1991 RSA Laboratories ran a challenge, the RSA Factoring Challenge, challenging researchers to factor specific large numbers, the RSA numbers, which are all products [MATH: n = pq] of two large primes, as used in RSA. The largest of the RSA numbers which has been factored so far is called RSA-250; it is an [MATH: 829]-bit number (with [MATH: 250] decimal digits), namely",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><code>2140324650240744961264423072839333563008614715144755017797754920881418023447\n1401366433455190958046796109928518724709145876873962619215573630474547705208\n0511905649310668769159001975940569345745223058932597669747168173806936489469\n9871578494975937497937\n</code></p>",
+            "readable_text": "2140324650240744961264423072839333563008614715144755017797754920881418023447\n1401366433455190958046796109928518724709145876873962619215573630474547705208\n0511905649310668769159001975940569345745223058932597669747168173806936489469\n9871578494975937497937",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>and it was factored in 2020 using <span class=\"math\">[MATH: 2700]</span> CPU core-years of computation into the following product of two primes:</p>",
+            "readable_text": "and it was factored in 2020 using [MATH: 2700] CPU core-years of computation into the following product of two primes:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><code>6413528947707158027879019017057738908482501474294344720811685963202453234463\n0238623598752668347708737661925585694639798853367 \u00d7 \n3337202759497815655622601060535511422794076034476755466678452098702384172921\n0037080257448673296881877565718986258036932062711.\n</code></p>",
+            "readable_text": "6413528947707158027879019017057738908482501474294344720811685963202453234463\n0238623598752668347708737661925585694639798853367 \u00d7\n3337202759497815655622601060535511422794076034476755466678452098702384172921\n0037080257448673296881877565718986258036932062711.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The smallest RSA number which has not been factored so far is called <strong>RSA-260</strong>; it is an <span class=\"math\">[MATH: 895]</span>-bit number (with <span class=\"math\">[MATH: 260]</span> decimal digits), namely</p>",
+            "readable_text": "The smallest RSA number which has not been factored so far is called RSA-260; it is an [MATH: 895]-bit number (with [MATH: 260] decimal digits), namely",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><code>2211282552952966643528108525502623092761208950247001539441374831912882294140\n2001986512729726569746599085900330031400051170742204560859276357953757185954\n2988389587092292384910067030341246205457845664136645406842143612930176940208\n46391065875914794251435144458199.\n</code></p>",
+            "readable_text": "2211282552952966643528108525502623092761208950247001539441374831912882294140\n2001986512729726569746599085900330031400051170742204560859276357953757185954\n2988389587092292384910067030341246205457845664136645406842143612930176940208\n46391065875914794251435144458199.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The hard drive of the computer that generated the RSA numbers was destroyed. This means that RSA-260 is known to factor into a product of two primes, but <em>nobody</em> knows what they are! </p>",
+            "readable_text": "The hard drive of the computer that generated the RSA numbers was destroyed. This means that RSA-260 is known to factor into a product of two primes, but nobody knows what they are!",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nHow large is [MATH: n] in practice? The National Institute of Standards and Technology (NIST) currently recommends a key size of [MATH: 2048] bits, meaning [MATH: n] should have [MATH: 2048] binary digits. [MATH: 2^{2047}] is about [MATH: 1.6 \\times 10^{616}], so numbers this large have [MATH: 616] decimal digits. This suggests the NIST believes numbers this large are currently still difficult to factor, and should remain so for some time.\n\nContent:\nTo compare this to the current state-of-the-art for factoring, in 1991 RSA Laboratories ran a challenge, the RSA Factoring Challenge, challenging researchers to factor specific large numbers, the RSA numbers, which are all products [MATH: n = pq] of two large primes, as used in RSA. The largest of the RSA numbers which has been factored so far is called RSA-250; it is an [MATH: 829]-bit number (with [MATH: 250] decimal digits), namely\n\nContent:\n2140324650240744961264423072839333563008614715144755017797754920881418023447\n1401366433455190958046796109928518724709145876873962619215573630474547705208\n0511905649310668769159001975940569345745223058932597669747168173806936489469\n9871578494975937497937\n\nContent:\nand it was factored in 2020 using [MATH: 2700] CPU core-years of computation into the following product of two primes:\n\nContent:\n6413528947707158027879019017057738908482501474294344720811685963202453234463\n0238623598752668347708737661925585694639798853367 \u00d7\n3337202759497815655622601060535511422794076034476755466678452098702384172921\n0037080257448673296881877565718986258036932062711.\n\nContent:\nThe smallest RSA number which has not been factored so far is called RSA-260; it is an [MATH: 895]-bit number (with [MATH: 260] decimal digits), namely\n\nContent:\n2211282552952966643528108525502623092761208950247001539441374831912882294140\n2001986512729726569746599085900330031400051170742204560859276357953757185954\n2988389587092292384910067030341246205457845664136645406842143612930176940208\n46391065875914794251435144458199.\n\nContent:\nThe hard drive of the computer that generated the RSA numbers was destroyed. This means that RSA-260 is known to factor into a product of two primes, but nobody knows what they are!"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nThe RSA cryptographic algorithm is a widely used public-key encryption algorithm that ensures secure communication between two parties over an unsecured network. It is based on the computational difficulty of factoring a product of large prime numbers.\n\nContent:\nSuppose we have two parties, Alice and Bob. Bob wishes to share a secret message with Alice over an unsecured network, keeping the message secret from Eve (our eavesdropper), who has access to all the information they share.\n\nContent:\nThe RSA cryptographic algorithm allows Bob to share a secret message with Alice and can be described as follows:\n\nContent:\n- Step 1: Public key creation\n\nAlice selects two distinct prime numbers and computes the modulus [MATH: n=pq] and totient [MATH: \\phi(n) = (p-1)(q-1),] where [MATH: \\phi(n)] is Euler's totient function. Thus, Alice has the following information:\n\n- Two secret primes: [MATH: p] and [MATH: q]\n- Modulus: [MATH: n = p q]\n- Totient: [MATH: \\phi(n) = (p-1)(q-1)]\n\nAlice then chooses an encryption exponent [MATH: e] such that\n[MATH: \\gcd(e, \\phi) = 1.]\nAlice publishes the public key [MATH: (e, n).] This is seen by both Bob and Eve.\n- Step 2: Private key creation\n\nAlice computes the private decryption exponent [MATH: d] such that\n[MATH: e \\cdot d \\equiv 1 \\pmod{\\phi(n)}.]\nHere, [MATH: d] is simply the multiplicative inverse of [MATH: e] modulo [MATH: \\phi(n).] Alice's private key is [MATH: (d,n).]\n\nContent:\n- Step 3: RSA Encryption\n\nBob then encrypts a secret message [MATH: M] (with [MATH: M < n]) using the public key by computing\n[MATH: C \\equiv M^e \\pmod{n}.]\nThe ciphertext [MATH: C] is then sent to Alice.\n\nContent:\n- Step 4: RSA Decryption\n\nFinally, Alice recovers the original message [MATH: M] using the private key by computing\n[MATH: M \\equiv C^d \\pmod{n}.]\n\nContent:\nWe will formally justify this last step at the end of the lesson. Before that, let's get some practice at encrypting and decrypting messages using the RSA protocol.\n\n---\n\nItem 2 \u2014 Tutorial: Encrypting Messages Using RSA\n\nContent:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: \\text{DOG}] to ciphertext using the RSA cipher with the public key [MATH: (e,n)=(13,51).] We'll assume that we use the usual English alphabet (shown above) during the encryption, where each letter is encrypted separately. Let's determine the ciphertext that results from the encryption.\n\nContent:\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\nContent:\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nTo encrypt a word using the RSA cipher with the public key [MATH: (e,n)=(13,51)] over the English alphabet, we do the following:\n\nContent:\n- Find the index of each letter of the word in the alphabet:\n\n| D | O | G |\n| [MATH: \\color{blue}3] | [MATH: \\color{blue}14] | [MATH: \\color{blue}6] |\n- Raise each index to the power of [MATH: e=13] modulo [MATH: n=51\\mathbin{:}]\n[MATH: 3^{13}\u226112|(mod51); 14^{13}\u22615|(mod51); 6^{13}\u226127|(mod51)]\n\nContent:\nTherefore, the ciphertext is\n[MATH: 12 \\:\\: 05 \\:\\: 27.]\n\n---\n\nItem 3 \u2014 Example: Encrypting Messages Using the RSA Cipher\n\nExample Prompt:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: \\text{BIT}] to ciphertext using the RSA cipher with the public key [MATH: (e,n)=(19,65).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nEXPLANATION\n\nExplanation:\nTo encrypt a word using the RSA cipher with the public key [MATH: (e,n)=(19,65)] over the English alphabet, we do the following:\n\n- Find the index of each letter of the word in the alphabet:\n\n| B | I | T |\n| [MATH: \\color{blue}1] | [MATH: \\color{blue}8] | [MATH: \\color{blue}19] |\n- Raise each index to the power of [MATH: e=19] modulo [MATH: n=65\\mathbin{:}]\n[MATH: 1^{19}\u22611|(mod65); 8^{19}\u226157|(mod65); 19^{19}\u226159|(mod65)]\n\nTherefore, the ciphertext is\n[MATH: 01 \\:\\: 57 \\:\\: 59.]\n\n---\n\nItem 4 \u2014 Question 1\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: PEN] to ciphertext using the RSA cipher with the public key [MATH: (e, n) = (13, 77).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe ciphertext is [MATH: 64]\n[FREE_ENTRY 1] [MATH: 41.]\n\n---\n\nItem 5 \u2014 Question 2\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt the [MATH: 3]-letter English word [MATH: CAT] to ciphertext using the RSA cipher with the public key [MATH: (e, n) = (17, 91).] Assuming that we use the usual English alphabet (shown below) during the encryption and each letter is encrypted separately, what ciphertext results from the encryption?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe ciphertext is [MATH: 3200]\n[FREE_ENTRY 1].\n\n---\n\nItem 6 \u2014 Tutorial: Decrypting Messages Using RSA\n\nContent:\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e,n)=(19,65)] and get the ciphertext [MATH: 41 \\:\\: 14 \\:\\: 59.] Assuming we used the usual English alphabet (shown above) during the encryption and each letter was encrypted separately, how can we decrypt this and arrive at the original plain text word?\n\nContent:\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\nContent:\nTo decrypt a message using the RSA cipher, we need to know the private key.\n\nContent:\nNotice that [MATH: n=65 = 5 \\times 13.] Let's denote [MATH: p=5] and [MATH: q=13.] Then,\n[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (5 \u2212 1)(13 \u2212 1); = 4 \u22c5 12; = 48.]\n\nContent:\nFor the RSA cipher with private key [MATH: (d,n),] the first component [MATH: d] is the multiplicative inverse of [MATH: e=19] (the first component of the public key) modulo [MATH: \\phi(n)=48{:}]\n[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 48)]\n\nContent:\nSo, let's find the inverse of [MATH: e=19] modulo [MATH: \\phi(n)=48.] To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n[MATH: 48|=|19 \u22c5 2|+|10; \u2199|\u2199; 19|=|10 \u22c5 1|+|9; \u2199|\u2199; 10|=|9 \u22c5 1|+|1]\nSolving for the rightmost terms in the equations above, we get\n[MATH: 10|= 48 \u2212 19 \u22c5 2; 9|= 19 \u2212 10; 1|= 10 \u2212 9.]\nThen, we back-substitute:\n[MATH: 1|= 10 \u2212 9; = 10 \u2212 (19 \u2212 10); = 10 \u22c5 2 \u2212 19; = (48 \u2212 19 \u22c5 2) \u22c5 2 \u2212 19; = 48 \u22c5 2 + 19 \u22c5 (\u2212 5)]\nWe can write this result in modulo [MATH: 48,] as follows:\n[MATH: 48 \u22c5 2 + 19 \u22c5 (\u2212 5)|\u22611|(mod48); 19 \u22c5 43|\u22611|(mod48)]\nSo we have [MATH: 19 \\cdot 43 \\equiv 1 \\: (\\textrm{mod}\\:48),] which means that the inverse of [MATH: e=19] modulo [MATH: 48] is [MATH: e^{-1}=43.]\n\nContent:\nThus, our private key is [MATH: (d,n) = (43,65).]\n\nContent:\nNow, to decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(43,65)] over the English alphabet, we do the following:\n\nContent:\n- Raise each index to the power of [MATH: d=43] modulo [MATH: n=65\\mathbin{:}]\n[MATH: 41^{43}\u226111|(mod65); 14^{43}\u226114|(mod65); 59^{43}\u226119|(mod65)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}11] | [MATH: \\color{blue}14] | [MATH: \\color{blue}19] |\n| L | O | T |\n\nContent:\nTherefore, the plaintext was\n[MATH: L \\:\\: O \\:\\: T.]\n\n---\n\nItem 7 \u2014 Example: Decrypting Messages Using the RSA Cipher When the Private Key is Given\n\nExample Prompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d,n)=(13,55)] and get the ciphertext [MATH: 52 \\:\\: 49 \\:\\: 53] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nEXPLANATION\n\nExplanation:\nTo decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(13,55)] over the English alphabet, we do the following:\n\n- Raise each index to the power of [MATH: d=13] modulo [MATH: n=55\\mathbin{:}]\n[MATH: 52^{13}\u226117|(mod55); 49^{13}\u22614|(mod55); 53^{13}\u22613|(mod55)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}17] | [MATH: \\color{blue}4] | [MATH: \\color{blue}3] |\n| R | E | D |\n\nTherefore, the plaintext was\n[MATH: R \\:\\: E \\:\\: D.]\n\n---\n\nItem 8 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d, n) = (35, 65)] and get the ciphertext [MATH: 380024] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].\n\n---\n\nItem 9 \u2014 Question 4\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the private key [MATH: (d, n) = (19, 91)] and get the ciphertext [MATH: 501433] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].\n\n---\n\nItem 10 \u2014 Example: Decrypting Messages Using the RSA Cipher When the Public Key is Given\n\nExample Prompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e,n)=(7,33)] and get the ciphertext [MATH: 15 \\:\\: 16 \\:\\: 13] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nContent:\nEXPLANATION\n\nExplanation:\nTo decrypt a message using the RSA cipher, we need to know its corresponding private key.\n\nNotice that [MATH: n=33 = 3 \\times 11.] Let's denote [MATH: p=3] and [MATH: q=11.] Then,\n[MATH: \u03d5(n)|= (p \u2212 1)(q \u2212 1); = (3 \u2212 1)(11 \u2212 1); = 2 \u22c5 10; = 20.]\n\nFor the RSA cipher with the private key [MATH: (d,n),] the first component [MATH: d] is the multiplicative inverse of [MATH: e=7] (the first component of the public key) modulo [MATH: \\phi(n)=20{:}]\n[MATH: d = e^{-1} \\quad (\\textrm{mod} \\: 20)]\n\nSo, let's find the inverse of [MATH: e=7] modulo [MATH: \\phi(n)=20.] To do that, we will use the extended Euclidean algorithm. First, we apply the forward reduction:\n[MATH: 20|=|7 \u22c5 2|+|6; \u2199|\u2199; 7|=|6 \u22c5 1|+|1]\nSolving for the rightmost terms in the equations above, we get\n[MATH: 6|= 20 \u2212 7 \u22c5 2; 1|= 7 \u2212 6.]\nThen, we back-substitute:\n[MATH: 1|= 7 \u2212 6; = 7 \u2212 (20 \u2212 7 \u22c5 2); = 7 \u22c5 3 \u2212 20; = 7 \u22c5 3 + 20 \u22c5 (\u2212 1)]\nWe can write this result in modulo [MATH: 20,] as follows:\n[MATH: 7 \u22c5 3 + 20 \u22c5 (\u2212 1)|\u22611|(mod20); 7 \u22c5 3|\u22611|(mod20)]\nSo we have [MATH: 7 \\cdot 3 \\equiv 1 \\: (\\textrm{mod}\\:20),] which means that the inverse of [MATH: e=7] modulo [MATH: 20] is [MATH: e^{-1}=3.]\n\nThus, our private key is [MATH: (d,n) = (3,33).]\n\nNow, to decrypt a word using the RSA cipher with the private key [MATH: (d,n)=(3,33)] over the English alphabet, we do the following:\n\n- Raise each index to the power of [MATH: d=3] modulo [MATH: n=33\\mathbin{:}]\n[MATH: 15^{3}\u226109|(mod33); 16^{3}\u226104|(mod33); 13^{3}\u226119|(mod33)]\n- Find the letters that correspond to the new indexes:\n\n| [MATH: \\color{blue}09] | [MATH: \\color{blue}04] | [MATH: \\color{blue}19] |\n| J | E | T |\n\nTherefore, the plaintext was\n[MATH: J \\:\\: E \\:\\: T.]\n\n---\n\nItem 11 \u2014 Question 5\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e, n) = (23, 91)] and get the ciphertext [MATH: 864113] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].\n\n---\n\nItem 12 \u2014 Question 6\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nSuppose we encrypt a [MATH: 3]-letter English word using the RSA cipher with the public key [MATH: (e, n) = (19, 55)] and get the ciphertext [MATH: 490023] as a result. Assuming that during the encryption, we used the usual English alphabet (shown below) and each letter was encrypted separately, what was the original (plain text) word?\n\nHint: Use the mod function on your calculator or a software package to compute the required powers modulo [MATH: n.]\n\n| A | B | C | D | E | F | G | H | I | J | K | L | M |\n| [MATH: 0] | [MATH: 1] | [MATH: 2] | [MATH: 3] | [MATH: 4] | [MATH: 5] | [MATH: 6] | [MATH: 7] | [MATH: 8] | [MATH: 9] | [MATH: 10] | [MATH: 11] | [MATH: 12] |\n| N | O | P | Q | R | S | T | U | V | W | X | Y | Z |\n| [MATH: 13] | [MATH: 14] | [MATH: 15] | [MATH: 16] | [MATH: 17] | [MATH: 18] | [MATH: 19] | [MATH: 20] | [MATH: 21] | [MATH: 22] | [MATH: 23] | [MATH: 24] | [MATH: 25] |\n\nThe plaintext was\n[SELECT 1][SELECT 2][SELECT 3].\n\n---\n\nItem 13 \u2014 Tutorial: Explaining Why the Decryption Step Works\n\nContent:\nRecall that in the RSA cryptosystem, we have the public key [MATH: (e,n)] and the private key [MATH: (d,n),] where\n\nContent:\n- [MATH: p] and [MATH: q] are (large) primes,\n- [MATH: n=pq]\n- [MATH: \\phi(n)=(p-1)(q-1),] and\n- [MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)).]\n\nContent:\nThe message [MATH: M] (with [MATH: M < n]) is encrypted by computing\n[MATH: C \\equiv M^e \\quad (\\textrm{mod} \\: n),]\nwhereas [MATH: C] is decrypted by computing\n[MATH: M \\equiv C^d \\quad (\\textrm{mod} \\: n).]\n\nContent:\nLet's now show that after computing [MATH: C^d] modulo [MATH: n,] we indeed restore the original message [MATH: M.]\n\nContent:\nWe have\n\nContent:\n[MATH: C^{d}|\u2261(M^{e})^{d}|(modn); \u2261M^{ed}|(modn).]\n\nContent:\nNow, notice that since [MATH: e \\cdot d \\equiv 1 \\: (\\textrm{mod} \\: \\phi(n)),] we have\n[MATH: ed = 1 + k \\phi(n)]\nfor some integer [MATH: k.] Thus,\n\nContent:\n[MATH: M^{ed}|\u2261M^{1 + k\u03d5(n)}|(modn); \u2261M \u22c5 (M^{\u03d5(n)})^{k}|(modn).]\n\nContent:\nNext, we can assume that [MATH: \\gcd(M,n)=1.] Indeed, the probability that [MATH: M] and [MATH: n] will have a common divisor greater than [MATH: 1] is extremely small when the primes [MATH: p] and [MATH: q] are large. Moreover, if this happens, the private key will be compromised anyway.\nTherefore, according to Euler's theorem, [MATH: M^{\\phi(n)} \\equiv 1 \\: (\\textrm{mod} \\: n).]\n\nContent:\nFinally, we have\n\nContent:\n[MATH: M \u22c5 (M^{\u03d5(n)})^{k}|\u2261M \u22c5 1^{k}|(modn); \u2261M \u22c5 1|(modn); \u2261M|(modn).]\n\n---\n\nItem 14 \u2014 Tutorial: Justifying the RSA Cryptosystem\n\nContent:\nWhy is the RSA cryptosystem expected to be secure?\n\nContent:\nSuppose you are Eve, an attacker eavesdropping on two parties, Alice and Bob, who are using RSA to send secret messages to each other. This means you have access to\n\nContent:\n- the public key [MATH: (e, n)], consisting of\n- the public encryption exponent [MATH: e] and\n- the modulus [MATH: n]\n\nContent:\nbut you do not have access to\n\nContent:\n- the factorization [MATH: n = pq]\n- the totient [MATH: \\phi(n) = (p-1)(q-1)]\n- the private decryption exponent [MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}.]\n\nContent:\nFurthermore, whenever Alice or Bob encrypts a secret message [MATH: M] by computing\n\nContent:\n[MATH: C \\equiv M^e \\pmod{n}]\n\nContent:\nyou have access to the resulting ciphertext [MATH: C.] RSA is secure if it is difficult to use what you have access to [MATH: (e, n], and [MATH: C)] to compute the original plaintext [MATH: M.] This problem is known as the RSA problem.\n\nContent:\nIn this lesson, you solved the RSA problem for small values of [MATH: n], such as [MATH: n = 33], by factoring [MATH: n = pq] into a product of two primes. Given this factorization you computed [MATH: \\phi(n) = (p - 1)(q - 1)], which let you compute [MATH: d \\equiv e^{-1} \\pmod{\\phi(n)}], which finally let you compute [MATH: M \\equiv C^d \\pmod{n}.]\n\nContent:\nIn general, factoring [MATH: n] is the most efficient known method of solving the RSA problem, and no cleverer ways of solving the RSA problem without factoring [MATH: n] are known.\n\nContent:\nTherefore, it is widely believed (but not proven!) that solving the RSA problem is as difficult as factoring [MATH: n.] In practical implementations of RSA, [MATH: n] is very large. For very large numbers, factoring is widely believed (but not proven!) to be a difficult problem with no known efficient solution in a certain precise technical sense.\n\n---\n\nItem 15 \u2014 Tutorial: The Magnitude of N\n\nContent:\nHow large is [MATH: n] in practice? The National Institute of Standards and Technology (NIST) currently recommends a key size of [MATH: 2048] bits, meaning [MATH: n] should have [MATH: 2048] binary digits. [MATH: 2^{2047}] is about [MATH: 1.6 \\times 10^{616}], so numbers this large have [MATH: 616] decimal digits. This suggests the NIST believes numbers this large are currently still difficult to factor, and should remain so for some time.\n\nContent:\nTo compare this to the current state-of-the-art for factoring, in 1991 RSA Laboratories ran a challenge, the RSA Factoring Challenge, challenging researchers to factor specific large numbers, the RSA numbers, which are all products [MATH: n = pq] of two large primes, as used in RSA. The largest of the RSA numbers which has been factored so far is called RSA-250; it is an [MATH: 829]-bit number (with [MATH: 250] decimal digits), namely\n\nContent:\n2140324650240744961264423072839333563008614715144755017797754920881418023447\n1401366433455190958046796109928518724709145876873962619215573630474547705208\n0511905649310668769159001975940569345745223058932597669747168173806936489469\n9871578494975937497937\n\nContent:\nand it was factored in 2020 using [MATH: 2700] CPU core-years of computation into the following product of two primes:\n\nContent:\n6413528947707158027879019017057738908482501474294344720811685963202453234463\n0238623598752668347708737661925585694639798853367 \u00d7\n3337202759497815655622601060535511422794076034476755466678452098702384172921\n0037080257448673296881877565718986258036932062711.\n\nContent:\nThe smallest RSA number which has not been factored so far is called RSA-260; it is an [MATH: 895]-bit number (with [MATH: 260] decimal digits), namely\n\nContent:\n2211282552952966643528108525502623092761208950247001539441374831912882294140\n2001986512729726569746599085900330031400051170742204560859276357953757185954\n2988389587092292384910067030341246205457845664136645406842143612930176940208\n46391065875914794251435144458199.\n\nContent:\nThe hard drive of the computer that generated the RSA numbers was destroyed. This means that RSA-260 is known to factor into a product of two primes, but nobody knows what they are!"
+  }
+}

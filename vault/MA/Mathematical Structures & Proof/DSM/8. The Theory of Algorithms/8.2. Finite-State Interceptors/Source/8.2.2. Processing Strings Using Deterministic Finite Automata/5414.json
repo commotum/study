@@ -1,0 +1,1307 @@
+{
+  "schema_version": 2,
+  "topic_id": "5414",
+  "topic_title": "Processing Strings Using Deterministic Finite Automata",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5414/Source/5414.html",
+  "source_url": "https://mathacademy.com/topics/5414",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "419488",
+        "dom_id": "sectionLink-419488",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-419488"
+      },
+      {
+        "index": 2,
+        "step_id": "419489",
+        "dom_id": "sectionLink-419489",
+        "name": "",
+        "title": "Applying a Transition Function to a String Given a Diagram",
+        "selector": "#sectionLink-419489"
+      },
+      {
+        "index": 3,
+        "step_id": "419492",
+        "dom_id": "sectionLink-419492",
+        "name": "",
+        "title": "Applying a Transition Function to a String Given a Transition Table",
+        "selector": "#sectionLink-419492"
+      },
+      {
+        "index": 4,
+        "step_id": "419495",
+        "dom_id": "sectionLink-419495",
+        "name": "",
+        "title": "The Language of a DFA",
+        "selector": "#sectionLink-419495"
+      },
+      {
+        "index": 5,
+        "step_id": "419496",
+        "dom_id": "sectionLink-419496",
+        "name": "",
+        "title": "Identifying Strings Accepted by a DFA",
+        "selector": "#sectionLink-419496"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3797",
+        "name": "Deterministic Finite Automata",
+        "href": "/topics/deterministic-finite-automata-3797"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 11,
+    "step_count": 5,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419488",
+        "content_id": "9650",
+        "dom_id": "step-419488",
+        "selector": "#step-419488",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a previous lesson, we claimed that a deterministic finite automaton (DFA) is an <strong>acceptor</strong>\u2014an automaton that processes a sequence of symbols and decides whether to &quot;accept&quot; or &quot;reject&quot; them. In this lesson, we&#x27;ll explore how a DFA performs this task.</p>",
+            "readable_text": "In a previous lesson, we claimed that a deterministic finite automaton (DFA) is an acceptor\u2014an automaton that processes a sequence of symbols and decides whether to \"accept\" or \"reject\" them. In this lesson, we'll explore how a DFA performs this task.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A <strong>string</strong> is a finite sequence of symbols from an <strong>alphabet</strong> <span class=\"math\">[MATH: \\Sigma]</span>, which is a nonempty finite set. For example, <span class=\"math\">[MATH: \\textrm{aab}]</span> is a string on the alphabet <span class=\"math\">[MATH: \\{ \\textrm{a}, \\textrm{b} \\}]</span>, and <span class=\"math\">[MATH: \\textrm{100a11b}]</span> is a string on the alphabet <span class=\"math\">[MATH: \\{ \\textrm{0}, \\textrm{1}, \\textrm{a}, \\textrm{b} \\}]</span>. </p>",
+            "readable_text": "A string is a finite sequence of symbols from an alphabet [MATH: \\Sigma], which is a nonempty finite set. For example, [MATH: \\textrm{aab}] is a string on the alphabet [MATH: \\{ \\textrm{a}, \\textrm{b} \\}], and [MATH: \\textrm{100a11b}] is a string on the alphabet [MATH: \\{ \\textrm{0}, \\textrm{1}, \\textrm{a}, \\textrm{b} \\}].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: \\omega = a \\beta]</span> be a string, where <span class=\"math\">[MATH: a]</span> is the first symbol of <span class=\"math\">[MATH: \\omega]</span> and <span class=\"math\">[MATH: \\beta]</span> is the remainder of <span class=\"math\">[MATH: \\omega]</span> after removing the first symbol.\nThen, starting from the transition function <span class=\"math\">[MATH: \\delta : Q \\times \\Sigma \\to Q]</span> of an automaton <span class=\"math\">[MATH: A = (Q, \\Sigma, \\delta, q_0, F)]</span> whose set of input symbols is the alphabet <span class=\"math\">[MATH: \\Sigma]</span>, we can extend <span class=\"math\">[MATH: \\delta]</span> to  a function on strings on the alphabet <span class=\"math\">[MATH: \\Sigma]</span> recursively as follows:</p>",
+            "readable_text": "Let [MATH: \\omega = a \\beta] be a string, where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\nThen, starting from the transition function [MATH: \\delta : Q \\times \\Sigma \\to Q] of an automaton [MATH: A = (Q, \\Sigma, \\delta, q_0, F)] whose set of input symbols is the alphabet [MATH: \\Sigma], we can extend [MATH: \\delta] to a function on strings on the alphabet [MATH: \\Sigma] recursively as follows:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03b4(q, \u03b5)|= q; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2)]</span></p>",
+            "readable_text": "[MATH: \u03b4(q, \u03b5)|= q; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>where <span class=\"math\">[MATH: \\varepsilon]</span> denotes the empty string (the string containing no symbols) and <span class=\"math\">[MATH: q]</span> is a state of an automaton.</p>",
+            "readable_text": "where [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To demonstrate, let&#x27;s find <span class=\"math\">[MATH: \\delta(p, 1201),]</span> where <span class=\"math\">[MATH: \\delta: Q \\times \\Sigma \\to Q]</span> is the transition function of the DFA represented by the diagram below.</p>",
+            "readable_text": "To demonstrate, let's find [MATH: \\delta(p, 1201),] where [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the DFA represented by the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/7023de0c3ef0b466b96cc95030ea82c5\"></p>",
+            "readable_text": "[IMG: /graphics/7023de0c3ef0b466b96cc95030ea82c5]",
+            "images": [
+              {
+                "src": "/graphics/7023de0c3ef0b466b96cc95030ea82c5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>According to the definition of the transition function <span class=\"math\">[MATH: \\delta,]</span> for <span class=\"math\">[MATH: \\omega = 1201]</span> we obtain the following:</p>",
+            "readable_text": "According to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 1201] we obtain the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \u03b4(p, 1201)|= \u03b4(\u03b4(p, 1), 201); = \u03b4(p, 201); = \u03b4(\u03b4(p, 2), 01); = \u03b4(p, 01); = \u03b4(\u03b4(p, 0), 1); = \u03b4(q, 1); = p]</span></p>",
+            "readable_text": "[MATH: \u03b4(p, 1201)|= \u03b4(\u03b4(p, 1), 201); = \u03b4(p, 201); = \u03b4(\u03b4(p, 2), 01); = \u03b4(p, 01); = \u03b4(\u03b4(p, 0), 1); = \u03b4(q, 1); = p]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s describe what is going on in the computations from a slightly different point of view.</p>",
+            "readable_text": "Let's describe what is going on in the computations from a slightly different point of view.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Step 1.</strong> The automaton is at the start state <span class=\"math\">[MATH: p]</span> and observes the first letter of the string:\n<span class=\"math\">[MATH: \\bbox[2pt,Gainsboro]{1} \\, 2 \\, 0 \\, 1]</span>\nFrom the diagram, <span class=\"math\">[MATH: \\delta(p,1)=p.]</span> So, the automaton switches to state <span class=\"math\">[MATH: p]</span> (in this case, it does not change the state) and moves to the next letter of the string. </p></li><li><p><strong>Step 2.</strong> The automaton is at the state <span class=\"math\">[MATH: p]</span> and observes the second letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{2} \\, 0 \\, 1]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(p,2)=p.]</span> So, the automaton switches to state <span class=\"math\">[MATH: p]</span> (in this case, it does not change the state) and moves to the next letter of the string. </p></li><li><p><strong>Step 3.</strong> The automaton is at the state <span class=\"math\">[MATH: p]</span> and observes the third letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(p,0)=q.]</span> So, the automaton switches to state <span class=\"math\">[MATH: q]</span> and moves to the next letter of the string. </p></li><li><p><strong>Step 4.</strong> The automaton is at the state <span class=\"math\">[MATH: q]</span> and observes the fourth letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(q,1)=p.]</span> So, the automaton switches to state <span class=\"math\">[MATH: p]</span> and stops since the entire string has been processed.</p></li></ul>",
+            "readable_text": "- Step 1. The automaton is at the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{1} \\, 2 \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,1)=p.] So, the automaton switches to state [MATH: p] (in this case, it does not change the state) and moves to the next letter of the string.\n- Step 2. The automaton is at the state [MATH: p] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{2} \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,2)=p.] So, the automaton switches to state [MATH: p] (in this case, it does not change the state) and moves to the next letter of the string.\n- Step 3. The automaton is at the state [MATH: p] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]\nFrom the diagram, [MATH: \\delta(p,0)=q.] So, the automaton switches to state [MATH: q] and moves to the next letter of the string.\n- Step 4. The automaton is at the state [MATH: q] and observes the fourth letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]\nFrom the diagram, [MATH: \\delta(q,1)=p.] So, the automaton switches to state [MATH: p] and stops since the entire string has been processed.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The diagram below summarizes the process. It notes the state of the DFA and the part of the string left to process at each step.</p>",
+            "readable_text": "The diagram below summarizes the process. It notes the state of the DFA and the part of the string left to process at each step.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/54a2b3788d2590ff8601845842d9ebcd\"></p>",
+            "readable_text": "[IMG: /graphics/54a2b3788d2590ff8601845842d9ebcd]",
+            "images": [
+              {
+                "src": "/graphics/54a2b3788d2590ff8601845842d9ebcd",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/7023de0c3ef0b466b96cc95030ea82c5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/54a2b3788d2590ff8601845842d9ebcd",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a previous lesson, we claimed that a deterministic finite automaton (DFA) is an acceptor\u2014an automaton that processes a sequence of symbols and decides whether to \"accept\" or \"reject\" them. In this lesson, we'll explore how a DFA performs this task.\n\nContent:\nA string is a finite sequence of symbols from an alphabet [MATH: \\Sigma], which is a nonempty finite set. For example, [MATH: \\textrm{aab}] is a string on the alphabet [MATH: \\{ \\textrm{a}, \\textrm{b} \\}], and [MATH: \\textrm{100a11b}] is a string on the alphabet [MATH: \\{ \\textrm{0}, \\textrm{1}, \\textrm{a}, \\textrm{b} \\}].\n\nContent:\nLet [MATH: \\omega = a \\beta] be a string, where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\nThen, starting from the transition function [MATH: \\delta : Q \\times \\Sigma \\to Q] of an automaton [MATH: A = (Q, \\Sigma, \\delta, q_0, F)] whose set of input symbols is the alphabet [MATH: \\Sigma], we can extend [MATH: \\delta] to a function on strings on the alphabet [MATH: \\Sigma] recursively as follows:\n\nContent:\n[MATH: \u03b4(q, \u03b5)|= q; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2)]\n\nContent:\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nContent:\nTo demonstrate, let's find [MATH: \\delta(p, 1201),] where [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the DFA represented by the diagram below.\n\nGraphic:\n[IMG: /graphics/7023de0c3ef0b466b96cc95030ea82c5]\n\nContent:\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 1201] we obtain the following:\n\nContent:\n[MATH: \u03b4(p, 1201)|= \u03b4(\u03b4(p, 1), 201); = \u03b4(p, 201); = \u03b4(\u03b4(p, 2), 01); = \u03b4(p, 01); = \u03b4(\u03b4(p, 0), 1); = \u03b4(q, 1); = p]\n\nContent:\nLet's describe what is going on in the computations from a slightly different point of view.\n\nContent:\n- Step 1. The automaton is at the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{1} \\, 2 \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,1)=p.] So, the automaton switches to state [MATH: p] (in this case, it does not change the state) and moves to the next letter of the string.\n- Step 2. The automaton is at the state [MATH: p] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{2} \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,2)=p.] So, the automaton switches to state [MATH: p] (in this case, it does not change the state) and moves to the next letter of the string.\n- Step 3. The automaton is at the state [MATH: p] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]\nFrom the diagram, [MATH: \\delta(p,0)=q.] So, the automaton switches to state [MATH: q] and moves to the next letter of the string.\n- Step 4. The automaton is at the state [MATH: q] and observes the fourth letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]\nFrom the diagram, [MATH: \\delta(q,1)=p.] So, the automaton switches to state [MATH: p] and stops since the entire string has been processed.\n\nContent:\nThe diagram below summarizes the process. It notes the state of the DFA and the part of the string left to process at each step.\n\nGraphic:\n[IMG: /graphics/54a2b3788d2590ff8601845842d9ebcd]"
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "419489",
+        "content_id": "15585",
+        "dom_id": "step-419489",
+        "selector": "#step-419489",
+        "step_anchor": "step-2",
+        "title": "Applying a Transition Function to a String Given a Diagram",
+        "key_prerequisites": [
+          {
+            "topic_id": "3797",
+            "name": "Deterministic Finite Automata",
+            "href": "/topics/3797",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/9f829fc8966016ab8b2e19403ce1188f\"></div><p>Consider the deterministic finite automaton represented by the above diagram. Given that <span class=\"math\">[MATH: \\delta: Q \\times \\Sigma \\to Q]</span> is the transition function of the automaton, find <span class=\"math\">[MATH: \\delta(p, 0101).]</span></p>",
+            "readable_text": "[IMG: /graphics/9f829fc8966016ab8b2e19403ce1188f]\n\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, find [MATH: \\delta(p, 0101).]",
+            "images": [
+              {
+                "src": "/graphics/9f829fc8966016ab8b2e19403ce1188f",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let <span class=\"math\">[MATH: \\omega = a \\beta]</span> be a finite sequence of symbols (a string), where <span class=\"math\">[MATH: a]</span> is the first symbol of <span class=\"math\">[MATH: \\omega]</span> and <span class=\"math\">[MATH: \\beta]</span> is the remainder of <span class=\"math\">[MATH: \\omega]</span> after removing the first symbol.</p><p>Then, we can extend the transition function <span class=\"math\">[MATH: \\delta]</span> of the automaton to strings recursively as</p><p><span class=\"math\">[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]</span></p><p>where <span class=\"math\">[MATH: \\varepsilon]</span> denotes the empty string (the string containing no symbols) and <span class=\"math\">[MATH: q]</span> is a state of an automaton.</p><p>According to the definition of the transition function <span class=\"math\">[MATH: \\delta,]</span> for <span class=\"math\">[MATH: \\omega = 0101]</span> we obtain the following:</p><p><span class=\"math\">[MATH: \u03b4(p, 0101)|= \u03b4(\u03b4(p, 0), 101); = \u03b4(r, 101); = \u03b4(\u03b4(r, 1), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(q, 1); = r]</span></p><p>Let&#x27;s describe what is going on in the computations from a slightly different point of view.</p><ul><li><p><em>Step 1.</em> The automaton is at the start state <span class=\"math\">[MATH: p]</span> and observes the first letter of the string:\n<span class=\"math\">[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0 \\, 1]</span>\nFrom the diagram, <span class=\"math\">[MATH: \\delta(p,0)=r.]</span> So, the automaton switches to state <span class=\"math\">[MATH: r]</span> and moves to the next letter of the string. </p></li><li><p><em>Step 2.</em> The automaton is at the state <span class=\"math\">[MATH: r]</span> and observes the second letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0 \\, 1]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(r,1)=r.]</span> So, the automaton switches to state <span class=\"math\">[MATH: r]</span> (in this case, does not change the state) and moves to the next letter of the string. </p></li><li><p><em>Step 3.</em> The automaton is at the state <span class=\"math\">[MATH: r]</span> and observes the third letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(r,0)=q.]</span> So, the automaton switches to state <span class=\"math\">[MATH: q]</span> and moves to the next letter of the string. </p></li><li><p><em>Step 4.</em> The automaton is at the state <span class=\"math\">[MATH: q]</span> and observes the fourth letter of the string:\n<span class=\"math\">[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]</span> \nFrom the diagram, <span class=\"math\">[MATH: \\delta(q,1)=r.]</span> So, the automaton switches to state <span class=\"math\">[MATH: r]</span> and stops since the entire string has been processed.</p></li></ul><p>We can summarize the process in the diagram below.</p><div class=\"graphic\"><img src=\"/graphics/04b030ddae9ec20c2b1cb342f521e713\"></div>",
+            "readable_text": "Let [MATH: \\omega = a \\beta] be a finite sequence of symbols (a string), where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\n\nThen, we can extend the transition function [MATH: \\delta] of the automaton to strings recursively as\n\n[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 0101] we obtain the following:\n\n[MATH: \u03b4(p, 0101)|= \u03b4(\u03b4(p, 0), 101); = \u03b4(r, 101); = \u03b4(\u03b4(r, 1), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(q, 1); = r]\n\nLet's describe what is going on in the computations from a slightly different point of view.\n\n- Step 1. The automaton is at the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,0)=r.] So, the automaton switches to state [MATH: r] and moves to the next letter of the string.\n- Step 2. The automaton is at the state [MATH: r] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(r,1)=r.] So, the automaton switches to state [MATH: r] (in this case, does not change the state) and moves to the next letter of the string.\n- Step 3. The automaton is at the state [MATH: r] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]\nFrom the diagram, [MATH: \\delta(r,0)=q.] So, the automaton switches to state [MATH: q] and moves to the next letter of the string.\n- Step 4. The automaton is at the state [MATH: q] and observes the fourth letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]\nFrom the diagram, [MATH: \\delta(q,1)=r.] So, the automaton switches to state [MATH: r] and stops since the entire string has been processed.\n\nWe can summarize the process in the diagram below.\n\n[IMG: /graphics/04b030ddae9ec20c2b1cb342f521e713]",
+            "images": [
+              {
+                "src": "/graphics/04b030ddae9ec20c2b1cb342f521e713",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/9f829fc8966016ab8b2e19403ce1188f",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/04b030ddae9ec20c2b1cb342f521e713",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/9f829fc8966016ab8b2e19403ce1188f]\n\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, find [MATH: \\delta(p, 0101).]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet [MATH: \\omega = a \\beta] be a finite sequence of symbols (a string), where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\n\nThen, we can extend the transition function [MATH: \\delta] of the automaton to strings recursively as\n\n[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 0101] we obtain the following:\n\n[MATH: \u03b4(p, 0101)|= \u03b4(\u03b4(p, 0), 101); = \u03b4(r, 101); = \u03b4(\u03b4(r, 1), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(q, 1); = r]\n\nLet's describe what is going on in the computations from a slightly different point of view.\n\n- Step 1. The automaton is at the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,0)=r.] So, the automaton switches to state [MATH: r] and moves to the next letter of the string.\n- Step 2. The automaton is at the state [MATH: r] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(r,1)=r.] So, the automaton switches to state [MATH: r] (in this case, does not change the state) and moves to the next letter of the string.\n- Step 3. The automaton is at the state [MATH: r] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]\nFrom the diagram, [MATH: \\delta(r,0)=q.] So, the automaton switches to state [MATH: q] and moves to the next letter of the string.\n- Step 4. The automaton is at the state [MATH: q] and observes the fourth letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]\nFrom the diagram, [MATH: \\delta(q,1)=r.] So, the automaton switches to state [MATH: r] and stops since the entire string has been processed.\n\nWe can summarize the process in the diagram below.\n\n[IMG: /graphics/04b030ddae9ec20c2b1cb342f521e713]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "235950",
+        "dom_id": "question-235950",
+        "selector": "#question-235950",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-235950\"></p>",
+          "readable_text": "[IMG: /graphics/q-235950]",
+          "images": [
+            {
+              "src": "/graphics/q-235950",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the deterministic finite automaton represented by the above diagram. Given that <span class=\"math\">[MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q]</span> is the transition function of the automaton, <span class=\"math\">[MATH: \u03b4(p, 0010) =]</span></p>",
+          "readable_text": "Consider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(p, 0010) =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-235950-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: r]</span></p>",
+            "readable_text": "[MATH: r]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-235950-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q]</span></p>",
+            "readable_text": "[MATH: q]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-235950-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: p]</span></p>",
+            "readable_text": "[MATH: p]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-235950-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-235950-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-235950",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-235950]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(p, 0010) =]\n\nChoices:\na. [MATH: r]\nb. [MATH: q]\nc. [MATH: p]\nd. [MATH: 0]\ne. [MATH: 1]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "257745",
+        "dom_id": "question-257745",
+        "selector": "#question-257745",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-257745\"></p>",
+          "readable_text": "[IMG: /graphics/q-257745]",
+          "images": [
+            {
+              "src": "/graphics/q-257745",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the deterministic finite automaton represented by the above diagram. Given that <span class=\"math\">[MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q]</span> is the transition function of the automaton, <span class=\"math\">[MATH: \u03b4(r, 1110) =]</span></p>",
+          "readable_text": "Consider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(r, 1110) =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-257745-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-257745-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: p]</span></p>",
+            "readable_text": "[MATH: p]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-257745-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: r]</span></p>",
+            "readable_text": "[MATH: r]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-257745-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: q]</span></p>",
+            "readable_text": "[MATH: q]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-257745-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-257745",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-257745]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(r, 1110) =]\n\nChoices:\na. [MATH: 1]\nb. [MATH: p]\nc. [MATH: r]\nd. [MATH: q]\ne. [MATH: 0]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "419492",
+        "content_id": "15587",
+        "dom_id": "step-419492",
+        "selector": "#step-419492",
+        "step_anchor": "step-5",
+        "title": "Applying a Transition Function to a String Given a Transition Table",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr></table><p>Consider the deterministic finite automaton represented by the transition table above. Given that <span class=\"math\">[MATH: \\delta: Q \\times \\Sigma \\to Q]</span> is the transition function of the automaton, find <span class=\"math\">[MATH: \\delta(p, 1011).]</span></p>",
+            "readable_text": "| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: r] |\n| [MATH: q] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: r] | [MATH: q] | [MATH: p] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, find [MATH: \\delta(p, 1011).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The diagram corresponding to our automaton is shown below.</p><div class=\"graphic\"><img src=\"/graphics/d65f76cdd478d7001684a0348350d90f\"></div><p>Let <span class=\"math\">[MATH: \\omega = a \\beta]</span> be a finite sequence of symbols (a string), where <span class=\"math\">[MATH: a]</span> is the first symbol of <span class=\"math\">[MATH: \\omega]</span> and <span class=\"math\">[MATH: \\beta]</span> is the remainder of <span class=\"math\">[MATH: \\omega]</span> after removing the first symbol.</p><p>Then we can extend the transition function <span class=\"math\">[MATH: \\delta]</span> of the automaton to strings recursively as</p><p><span class=\"math\">[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]</span></p><p>where <span class=\"math\">[MATH: \\varepsilon]</span> denotes the empty string (the string containing no symbols) and <span class=\"math\">[MATH: q]</span> is a state of an automaton.</p><p>According to the definition of the transition function <span class=\"math\">[MATH: \\delta,]</span> for <span class=\"math\">[MATH: \\omega = 1011]</span> we obtain the following:</p><p><span class=\"math\">[MATH: \u03b4(p, 1011)|= \u03b4(\u03b4(p, 1), 011); = \u03b4(r, 011); = \u03b4(\u03b4(r, 0), 11); = \u03b4(q, 11); = \u03b4(\u03b4(q, 1), 1); = \u03b4(q, 1); = q]</span></p><p>We can summarize the process in the diagram below.</p><div class=\"graphic\"><img src=\"/graphics/072b48e35d3dfa8f07716c01b3db40bb\"></div>",
+            "readable_text": "The diagram corresponding to our automaton is shown below.\n\n[IMG: /graphics/d65f76cdd478d7001684a0348350d90f]\n\nLet [MATH: \\omega = a \\beta] be a finite sequence of symbols (a string), where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\n\nThen we can extend the transition function [MATH: \\delta] of the automaton to strings recursively as\n\n[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 1011] we obtain the following:\n\n[MATH: \u03b4(p, 1011)|= \u03b4(\u03b4(p, 1), 011); = \u03b4(r, 011); = \u03b4(\u03b4(r, 0), 11); = \u03b4(q, 11); = \u03b4(\u03b4(q, 1), 1); = \u03b4(q, 1); = q]\n\nWe can summarize the process in the diagram below.\n\n[IMG: /graphics/072b48e35d3dfa8f07716c01b3db40bb]",
+            "images": [
+              {
+                "src": "/graphics/d65f76cdd478d7001684a0348350d90f",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/072b48e35d3dfa8f07716c01b3db40bb",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/d65f76cdd478d7001684a0348350d90f",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/072b48e35d3dfa8f07716c01b3db40bb",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: r] |\n| [MATH: q] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: r] | [MATH: q] | [MATH: p] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, find [MATH: \\delta(p, 1011).]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram corresponding to our automaton is shown below.\n\n[IMG: /graphics/d65f76cdd478d7001684a0348350d90f]\n\nLet [MATH: \\omega = a \\beta] be a finite sequence of symbols (a string), where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\n\nThen we can extend the transition function [MATH: \\delta] of the automaton to strings recursively as\n\n[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 1011] we obtain the following:\n\n[MATH: \u03b4(p, 1011)|= \u03b4(\u03b4(p, 1), 011); = \u03b4(r, 011); = \u03b4(\u03b4(r, 0), 11); = \u03b4(q, 11); = \u03b4(\u03b4(q, 1), 1); = \u03b4(q, 1); = q]\n\nWe can summarize the process in the diagram below.\n\n[IMG: /graphics/072b48e35d3dfa8f07716c01b3db40bb]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "235998",
+        "dom_id": "question-235998",
+        "selector": "#question-235998",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217r]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr></table><p>Consider the deterministic finite automaton represented by the transition table above. Given that <span class=\"math\">[MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q]</span> is the transition function of the automaton, <span class=\"math\">[MATH: \u03b4(p, 0101) =]</span></p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192 p] | [MATH: r] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: p] |\n| [MATH: \u2217r] | [MATH: p] | [MATH: r] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(p, 0101) =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-235998-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: r]</span></p>",
+            "readable_text": "[MATH: r]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-235998-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q]</span></p>",
+            "readable_text": "[MATH: q]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-235998-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-235998-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: p]</span></p>",
+            "readable_text": "[MATH: p]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-235998-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192 p] | [MATH: r] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: p] |\n| [MATH: \u2217r] | [MATH: p] | [MATH: r] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(p, 0101) =]\n\nChoices:\na. [MATH: r]\nb. [MATH: q]\nc. [MATH: 0]\nd. [MATH: p]\ne. [MATH: 1]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "257786",
+        "dom_id": "question-257786",
+        "selector": "#question-257786",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192; \u2217q]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: s]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217r]</span></p></td><td><p><span class=\"math\">[MATH: s]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: s]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr></table><p>Consider the deterministic finite automaton represented by the transition table above. Given that <span class=\"math\">[MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q]</span> is the transition function of the automaton, <span class=\"math\">[MATH: \u03b4(q, 1011) =]</span></p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [MATH: q] | [MATH: p] |\n| [MATH: \u2192; \u2217q] | [MATH: r] | [MATH: s] |\n| [MATH: \u2217r] | [MATH: s] | [MATH: r] |\n| [MATH: s] | [MATH: p] | [MATH: r] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(q, 1011) =]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-257786-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 1]</span></p>",
+            "readable_text": "[MATH: 1]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-257786-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: q]</span></p>",
+            "readable_text": "[MATH: q]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-257786-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: 0]</span></p>",
+            "readable_text": "[MATH: 0]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-257786-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: p]</span></p>",
+            "readable_text": "[MATH: p]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-257786-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: r]</span></p>",
+            "readable_text": "[MATH: r]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [MATH: q] | [MATH: p] |\n| [MATH: \u2192; \u2217q] | [MATH: r] | [MATH: s] |\n| [MATH: \u2217r] | [MATH: s] | [MATH: r] |\n| [MATH: s] | [MATH: p] | [MATH: r] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(q, 1011) =]\n\nChoices:\na. [MATH: 1]\nb. [MATH: q]\nc. [MATH: 0]\nd. [MATH: p]\ne. [MATH: r]"
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "419495",
+        "content_id": "9655",
+        "dom_id": "step-419495",
+        "selector": "#step-419495",
+        "step_anchor": "step-8",
+        "title": "The Language of a DFA",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A finite string is <strong>accepted</strong> by a deterministic finite automaton if the automation ends in one of its final states after processing the entire string. Otherwise, the string is rejected. The set of all accepted finite strings is the <strong>language of the DFA</strong>.</p>",
+            "readable_text": "A finite string is accepted by a deterministic finite automaton if the automation ends in one of its final states after processing the entire string. Otherwise, the string is rejected. The set of all accepted finite strings is the language of the DFA.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, consider the two strings <span class=\"math\">[MATH: 1010]</span> and <span class=\"math\">[MATH: 11000.]</span> Are either of these accepted by the DFA represented by the diagram below?</p>",
+            "readable_text": "For example, consider the two strings [MATH: 1010] and [MATH: 11000.] Are either of these accepted by the DFA represented by the diagram below?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/f8f5d6725d4c0c028ce24da078576104\"></p>",
+            "readable_text": "[IMG: /graphics/f8f5d6725d4c0c028ce24da078576104]",
+            "images": [
+              {
+                "src": "/graphics/f8f5d6725d4c0c028ce24da078576104",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find out, let&#x27;s apply the extended transition function to our strings.</p>",
+            "readable_text": "To find out, let's apply the extended transition function to our strings.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Processing the string <span class=\"math\">[MATH: 1010,]</span> we get:\n</p><table><tr><td><p>\n<span class=\"math\">[MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = p]</span>\n</p></td><td><div class=\"graphic\"><img src=\"/graphics/f7eba9b9cc7300f9adce62248c0ddfb9\"></div></td></tr></table><p>\nThe process terminates at the state <span class=\"math\">[MATH: p.]</span> Since <span class=\"math\">[MATH: p]</span> is not a final (accepting) state, the string <span class=\"math\">[MATH: 1010]</span> is rejected.</p></li><li><p>Processing the string <span class=\"math\">[MATH: 11000,]</span> we get:\n</p><table><tr><td><p>\n<span class=\"math\">[MATH: \u03b4(p, 11000)|= \u03b4(\u03b4(p, 1), 1000); = \u03b4(p, 1000); = \u03b4(\u03b4(p, 1), 000); = \u03b4(p, 000); = \u03b4(\u03b4(p, 0), 00); = \u03b4(q, 00); = \u03b4(\u03b4(q, 0), 0); = \u03b4(p, 0); = q]</span>\n</p></td><td><div class=\"graphic\"><img src=\"/graphics/7dd133d30779fbffad6bc9846fbb7495\"></div></td></tr></table><p>\nThe process terminates at the state <span class=\"math\">[MATH: q.]</span> Since <span class=\"math\">[MATH: q]</span> is a final (accepting) state, the string <span class=\"math\">[MATH: 11000]</span> is accepted.</p></li></ul>",
+            "readable_text": "- Processing the string [MATH: 1010,] we get:\n\n| [MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = p] | [IMG: /graphics/f7eba9b9cc7300f9adce62248c0ddfb9] |\n\nThe process terminates at the state [MATH: p.] Since [MATH: p] is not a final (accepting) state, the string [MATH: 1010] is rejected.\n- Processing the string [MATH: 11000,] we get:\n\n| [MATH: \u03b4(p, 11000)|= \u03b4(\u03b4(p, 1), 1000); = \u03b4(p, 1000); = \u03b4(\u03b4(p, 1), 000); = \u03b4(p, 000); = \u03b4(\u03b4(p, 0), 00); = \u03b4(q, 00); = \u03b4(\u03b4(q, 0), 0); = \u03b4(p, 0); = q] | [IMG: /graphics/7dd133d30779fbffad6bc9846fbb7495] |\n\nThe process terminates at the state [MATH: q.] Since [MATH: q] is a final (accepting) state, the string [MATH: 11000] is accepted.",
+            "images": [
+              {
+                "src": "/graphics/f7eba9b9cc7300f9adce62248c0ddfb9",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/7dd133d30779fbffad6bc9846fbb7495",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The language of this DFA consists of all finite strings of <span class=\"math\">[MATH: 0]</span>&#x27;s and <span class=\"math\">[MATH: 1]</span>&#x27;s that contain an odd number of <span class=\"math\">[MATH: 0]</span>&#x27;s. </p>",
+            "readable_text": "The language of this DFA consists of all finite strings of [MATH: 0]'s and [MATH: 1]'s that contain an odd number of [MATH: 0]'s.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We begin processing a string in state <span class=\"math\">[MATH: p.]</span> Notice that when the automaton reads a <span class=\"math\">[MATH: 1,]</span> the state remains unchanged. However, when it encounters a <span class=\"math\">[MATH: 0,]</span> it switches to the accepting state <span class=\"math\">[MATH: q.]</span> If the automaton is in <span class=\"math\">[MATH: q]</span> and processes another <span class=\"math\">[MATH: 0,]</span> it transitions back to the non-accepting state <span class=\"math\">[MATH: p.]</span></p>",
+            "readable_text": "We begin processing a string in state [MATH: p.] Notice that when the automaton reads a [MATH: 1,] the state remains unchanged. However, when it encounters a [MATH: 0,] it switches to the accepting state [MATH: q.] If the automaton is in [MATH: q] and processes another [MATH: 0,] it transitions back to the non-accepting state [MATH: p.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the automaton will end in the accepting state <span class=\"math\">[MATH: q]</span> if and only if the input contains an odd number of <span class=\"math\">[MATH: 0]</span>&#x27;s (since all <span class=\"math\">[MATH: 1]</span>&#x27;s are ignored).</p>",
+            "readable_text": "Therefore, the automaton will end in the accepting state [MATH: q] if and only if the input contains an odd number of [MATH: 0]'s (since all [MATH: 1]'s are ignored).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/f8f5d6725d4c0c028ce24da078576104",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/f7eba9b9cc7300f9adce62248c0ddfb9",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/7dd133d30779fbffad6bc9846fbb7495",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nA finite string is accepted by a deterministic finite automaton if the automation ends in one of its final states after processing the entire string. Otherwise, the string is rejected. The set of all accepted finite strings is the language of the DFA.\n\nContent:\nFor example, consider the two strings [MATH: 1010] and [MATH: 11000.] Are either of these accepted by the DFA represented by the diagram below?\n\nGraphic:\n[IMG: /graphics/f8f5d6725d4c0c028ce24da078576104]\n\nContent:\nTo find out, let's apply the extended transition function to our strings.\n\nContent:\n- Processing the string [MATH: 1010,] we get:\n\n| [MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = p] | [IMG: /graphics/f7eba9b9cc7300f9adce62248c0ddfb9] |\n\nThe process terminates at the state [MATH: p.] Since [MATH: p] is not a final (accepting) state, the string [MATH: 1010] is rejected.\n- Processing the string [MATH: 11000,] we get:\n\n| [MATH: \u03b4(p, 11000)|= \u03b4(\u03b4(p, 1), 1000); = \u03b4(p, 1000); = \u03b4(\u03b4(p, 1), 000); = \u03b4(p, 000); = \u03b4(\u03b4(p, 0), 00); = \u03b4(q, 00); = \u03b4(\u03b4(q, 0), 0); = \u03b4(p, 0); = q] | [IMG: /graphics/7dd133d30779fbffad6bc9846fbb7495] |\n\nThe process terminates at the state [MATH: q.] Since [MATH: q] is a final (accepting) state, the string [MATH: 11000] is accepted.\n\nContent:\nThe language of this DFA consists of all finite strings of [MATH: 0]'s and [MATH: 1]'s that contain an odd number of [MATH: 0]'s.\n\nContent:\nWe begin processing a string in state [MATH: p.] Notice that when the automaton reads a [MATH: 1,] the state remains unchanged. However, when it encounters a [MATH: 0,] it switches to the accepting state [MATH: q.] If the automaton is in [MATH: q] and processes another [MATH: 0,] it transitions back to the non-accepting state [MATH: p.]\n\nContent:\nTherefore, the automaton will end in the accepting state [MATH: q] if and only if the input contains an odd number of [MATH: 0]'s (since all [MATH: 1]'s are ignored)."
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "419496",
+        "content_id": "15586",
+        "dom_id": "step-419496",
+        "selector": "#step-419496",
+        "step_anchor": "step-9",
+        "title": "Identifying Strings Accepted by a DFA",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast\\:q]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: r]</span></p></td><td><p><span class=\"math\">[MATH: p]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td></tr></table><p>Which of the following strings are accepted by the DFA represented by the transition table above?</p><ol><li><p> <span class=\"math\">[MATH: 0001]</span> </p></li><li><p> <span class=\"math\">[MATH: 1010]</span> </p></li><li><p> <span class=\"math\">[MATH: 0011]</span> </p></li></ol>",
+            "readable_text": "| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: q] | [MATH: p] |\n| [MATH: \\ast\\:q] | [MATH: r] | [MATH: q] |\n| [MATH: \\ast \\: r] | [MATH: p] | [MATH: q] |\n\nWhich of the following strings are accepted by the DFA represented by the transition table above?\n\n1. [MATH: 0001]\n2. [MATH: 1010]\n3. [MATH: 0011]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The diagram corresponding to our automaton is shown below.</p><div class=\"graphic\"><img src=\"/graphics/f22322e1b4ef3d5f4e63e5d1a26da4ea\"></div><p>Let&#x27;s apply the extended transition function to our strings.</p><ul><li><p>Consider the string <span class=\"math\">[MATH: 0001{:}]</span>\n</p><table><tr><td><p>\n<span class=\"math\">[MATH: \u03b4(p, 0001)|= \u03b4(\u03b4(p, 0), 001); = \u03b4(q, 001); = \u03b4(\u03b4(q, 0), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(p, 1); = p]</span>\n</p></td><td><div class=\"graphic\"><img src=\"/graphics/ce3f0e70bb83850e1bc717dc266a991a\"></div></td></tr></table><p>\nThe process is terminated at the state <span class=\"math\">[MATH: p.]</span> Since <span class=\"math\">[MATH: p]</span> is not a final (accepting) state, the string <span class=\"math\">[MATH: 0001]</span> is rejected.</p></li><li><p>Consider the string <span class=\"math\">[MATH: 1010{:}]</span>\n</p><table><tr><td><p>\n<span class=\"math\">[MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = r]</span>\n</p></td><td><div class=\"graphic\"><img src=\"/graphics/900f4f1e1513d229ab3d246f6e24bef9\"></div></td></tr></table><p>\nThe process is terminated at the state <span class=\"math\">[MATH: r.]</span> Since <span class=\"math\">[MATH: r]</span> is a final (accepting) state, the string <span class=\"math\">[MATH: 1010]</span> is accepted.</p></li><li><p>Consider the string <span class=\"math\">[MATH: 0011{:}]</span>\n</p><table><tr><td><p>\n<span class=\"math\">[MATH: \u03b4(p, 0011)|= \u03b4(\u03b4(p, 0), 011); = \u03b4(q, 011); = \u03b4(\u03b4(q, 0), 11); = \u03b4(r, 11); = \u03b4(\u03b4(r, 1), 1); = \u03b4(q, 1); = q]</span>\n</p></td><td><div class=\"graphic\"><img src=\"/graphics/7aaff1dc31623019476abdac7e53bed0\"></div></td></tr></table><p>\nThe process is terminated at the state <span class=\"math\">[MATH: q.]</span> Since <span class=\"math\">[MATH: q]</span> is a final (accepting) state, the string <span class=\"math\">[MATH: 0011]</span> is accepted. </p></li></ul><p>Therefore, the correct answer is &quot;II and III only.&quot;</p>",
+            "readable_text": "The diagram corresponding to our automaton is shown below.\n\n[IMG: /graphics/f22322e1b4ef3d5f4e63e5d1a26da4ea]\n\nLet's apply the extended transition function to our strings.\n\n- Consider the string [MATH: 0001{:}]\n\n| [MATH: \u03b4(p, 0001)|= \u03b4(\u03b4(p, 0), 001); = \u03b4(q, 001); = \u03b4(\u03b4(q, 0), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(p, 1); = p] | [IMG: /graphics/ce3f0e70bb83850e1bc717dc266a991a] |\n\nThe process is terminated at the state [MATH: p.] Since [MATH: p] is not a final (accepting) state, the string [MATH: 0001] is rejected.\n- Consider the string [MATH: 1010{:}]\n\n| [MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = r] | [IMG: /graphics/900f4f1e1513d229ab3d246f6e24bef9] |\n\nThe process is terminated at the state [MATH: r.] Since [MATH: r] is a final (accepting) state, the string [MATH: 1010] is accepted.\n- Consider the string [MATH: 0011{:}]\n\n| [MATH: \u03b4(p, 0011)|= \u03b4(\u03b4(p, 0), 011); = \u03b4(q, 011); = \u03b4(\u03b4(q, 0), 11); = \u03b4(r, 11); = \u03b4(\u03b4(r, 1), 1); = \u03b4(q, 1); = q] | [IMG: /graphics/7aaff1dc31623019476abdac7e53bed0] |\n\nThe process is terminated at the state [MATH: q.] Since [MATH: q] is a final (accepting) state, the string [MATH: 0011] is accepted.\n\nTherefore, the correct answer is \"II and III only.\"",
+            "images": [
+              {
+                "src": "/graphics/f22322e1b4ef3d5f4e63e5d1a26da4ea",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/ce3f0e70bb83850e1bc717dc266a991a",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/900f4f1e1513d229ab3d246f6e24bef9",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/7aaff1dc31623019476abdac7e53bed0",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/f22322e1b4ef3d5f4e63e5d1a26da4ea",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/ce3f0e70bb83850e1bc717dc266a991a",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/900f4f1e1513d229ab3d246f6e24bef9",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/7aaff1dc31623019476abdac7e53bed0",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: q] | [MATH: p] |\n| [MATH: \\ast\\:q] | [MATH: r] | [MATH: q] |\n| [MATH: \\ast \\: r] | [MATH: p] | [MATH: q] |\n\nWhich of the following strings are accepted by the DFA represented by the transition table above?\n\n1. [MATH: 0001]\n2. [MATH: 1010]\n3. [MATH: 0011]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram corresponding to our automaton is shown below.\n\n[IMG: /graphics/f22322e1b4ef3d5f4e63e5d1a26da4ea]\n\nLet's apply the extended transition function to our strings.\n\n- Consider the string [MATH: 0001{:}]\n\n| [MATH: \u03b4(p, 0001)|= \u03b4(\u03b4(p, 0), 001); = \u03b4(q, 001); = \u03b4(\u03b4(q, 0), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(p, 1); = p] | [IMG: /graphics/ce3f0e70bb83850e1bc717dc266a991a] |\n\nThe process is terminated at the state [MATH: p.] Since [MATH: p] is not a final (accepting) state, the string [MATH: 0001] is rejected.\n- Consider the string [MATH: 1010{:}]\n\n| [MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = r] | [IMG: /graphics/900f4f1e1513d229ab3d246f6e24bef9] |\n\nThe process is terminated at the state [MATH: r.] Since [MATH: r] is a final (accepting) state, the string [MATH: 1010] is accepted.\n- Consider the string [MATH: 0011{:}]\n\n| [MATH: \u03b4(p, 0011)|= \u03b4(\u03b4(p, 0), 011); = \u03b4(q, 011); = \u03b4(\u03b4(q, 0), 11); = \u03b4(r, 11); = \u03b4(\u03b4(r, 1), 1); = \u03b4(q, 1); = q] | [IMG: /graphics/7aaff1dc31623019476abdac7e53bed0] |\n\nThe process is terminated at the state [MATH: q.] Since [MATH: q] is a final (accepting) state, the string [MATH: 0011] is accepted.\n\nTherefore, the correct answer is \"II and III only.\""
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "257859",
+        "dom_id": "question-257859",
+        "selector": "#question-257859",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u03a3}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192; \u2217r]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: q]</span></p></td><td><p><span class=\"math\">[MATH: r]</span></p></td></tr></table><p>Which of the following strings are accepted by the DFA represented by the transition table above?</p><table><tr><td><p><span class=\"math\">[MATH: 1100]</span></p></td><td><p><span class=\"math\">[MATH: :]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257859-0\" data-select-index=\"1\">[SELECT 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0101]</span></p></td><td><p><span class=\"math\">[MATH: :]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257859-1\" data-select-index=\"2\">[SELECT 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 001]</span></p></td><td><p><span class=\"math\">[MATH: :]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-257859-2\" data-select-index=\"3\">[SELECT 3]</span></p></td></tr></table>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192; \u2217r] | [MATH: q] | [MATH: r] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n\nWhich of the following strings are accepted by the DFA represented by the transition table above?\n\n| [MATH: 1100] | [MATH: :] | [SELECT 1] |\n| [MATH: 0101] | [MATH: :] | [SELECT 2] |\n| [MATH: 001] | [MATH: :] | [SELECT 3] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-257859-0",
+              "frame_dom_id": "selectListFrame-257859-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "Accepted",
+                  "readable_text": "Accepted"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "Rejected",
+                  "readable_text": "Rejected"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-257859-1",
+              "frame_dom_id": "selectListFrame-257859-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "Rejected",
+                  "readable_text": "Rejected"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "Accepted",
+                  "readable_text": "Accepted"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-257859-2",
+              "frame_dom_id": "selectListFrame-257859-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "Rejected",
+                  "readable_text": "Rejected"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "Accepted",
+                  "readable_text": "Accepted"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-257859-0",
+            "frame_dom_id": "selectListFrame-257859-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "Accepted",
+                "readable_text": "Accepted"
+              },
+              {
+                "index": 2,
+                "normalized_html": "Rejected",
+                "readable_text": "Rejected"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-257859-1",
+            "frame_dom_id": "selectListFrame-257859-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "Rejected",
+                "readable_text": "Rejected"
+              },
+              {
+                "index": 2,
+                "normalized_html": "Accepted",
+                "readable_text": "Accepted"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-257859-2",
+            "frame_dom_id": "selectListFrame-257859-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "Rejected",
+                "readable_text": "Rejected"
+              },
+              {
+                "index": 2,
+                "normalized_html": "Accepted",
+                "readable_text": "Accepted"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192; \u2217r] | [MATH: q] | [MATH: r] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n\nWhich of the following strings are accepted by the DFA represented by the transition table above?\n\n| [MATH: 1100] | [MATH: :] | [SELECT 1] |\n| [MATH: 0101] | [MATH: :] | [SELECT 2] |\n| [MATH: 001] | [MATH: :] | [SELECT 3] |"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "235956",
+        "dom_id": "question-235956",
+        "selector": "#question-235956",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-235956\"></p>",
+          "readable_text": "[IMG: /graphics/q-235956]",
+          "images": [
+            {
+              "src": "/graphics/q-235956",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following strings are accepted by the DFA represented by the above diagram?</p><table><tr><td><p><span class=\"math\">[MATH: 000]</span></p></td><td><p><span class=\"math\">[MATH: :]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235956-0\" data-select-index=\"1\">[SELECT 1]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 0101]</span></p></td><td><p><span class=\"math\">[MATH: :]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235956-1\" data-select-index=\"2\">[SELECT 2]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: 1011]</span></p></td><td><p><span class=\"math\">[MATH: :]</span></p></td><td><p><span class=\"select-list\" data-select-id=\"selectList-235956-2\" data-select-index=\"3\">[SELECT 3]</span></p></td></tr></table>",
+          "readable_text": "Which of the following strings are accepted by the DFA represented by the above diagram?\n\n| [MATH: 000] | [MATH: :] | [SELECT 1] |\n| [MATH: 0101] | [MATH: :] | [SELECT 2] |\n| [MATH: 1011] | [MATH: :] | [SELECT 3] |",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-235956-0",
+              "frame_dom_id": "selectListFrame-235956-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "Rejected",
+                  "readable_text": "Rejected"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "Accepted",
+                  "readable_text": "Accepted"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-235956-1",
+              "frame_dom_id": "selectListFrame-235956-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "Accepted",
+                  "readable_text": "Accepted"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "Rejected",
+                  "readable_text": "Rejected"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-235956-2",
+              "frame_dom_id": "selectListFrame-235956-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "Accepted",
+                  "readable_text": "Accepted"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "Rejected",
+                  "readable_text": "Rejected"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-235956",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-235956-0",
+            "frame_dom_id": "selectListFrame-235956-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "Rejected",
+                "readable_text": "Rejected"
+              },
+              {
+                "index": 2,
+                "normalized_html": "Accepted",
+                "readable_text": "Accepted"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-235956-1",
+            "frame_dom_id": "selectListFrame-235956-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "Accepted",
+                "readable_text": "Accepted"
+              },
+              {
+                "index": 2,
+                "normalized_html": "Rejected",
+                "readable_text": "Rejected"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-235956-2",
+            "frame_dom_id": "selectListFrame-235956-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "Accepted",
+                "readable_text": "Accepted"
+              },
+              {
+                "index": 2,
+                "normalized_html": "Rejected",
+                "readable_text": "Rejected"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-235956]\n\nPrompt:\nWhich of the following strings are accepted by the DFA represented by the above diagram?\n\n| [MATH: 000] | [MATH: :] | [SELECT 1] |\n| [MATH: 0101] | [MATH: :] | [SELECT 2] |\n| [MATH: 1011] | [MATH: :] | [SELECT 3] |"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn a previous lesson, we claimed that a deterministic finite automaton (DFA) is an acceptor\u2014an automaton that processes a sequence of symbols and decides whether to \"accept\" or \"reject\" them. In this lesson, we'll explore how a DFA performs this task.\n\nContent:\nA string is a finite sequence of symbols from an alphabet [MATH: \\Sigma], which is a nonempty finite set. For example, [MATH: \\textrm{aab}] is a string on the alphabet [MATH: \\{ \\textrm{a}, \\textrm{b} \\}], and [MATH: \\textrm{100a11b}] is a string on the alphabet [MATH: \\{ \\textrm{0}, \\textrm{1}, \\textrm{a}, \\textrm{b} \\}].\n\nContent:\nLet [MATH: \\omega = a \\beta] be a string, where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\nThen, starting from the transition function [MATH: \\delta : Q \\times \\Sigma \\to Q] of an automaton [MATH: A = (Q, \\Sigma, \\delta, q_0, F)] whose set of input symbols is the alphabet [MATH: \\Sigma], we can extend [MATH: \\delta] to a function on strings on the alphabet [MATH: \\Sigma] recursively as follows:\n\nContent:\n[MATH: \u03b4(q, \u03b5)|= q; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2)]\n\nContent:\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nContent:\nTo demonstrate, let's find [MATH: \\delta(p, 1201),] where [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the DFA represented by the diagram below.\n\nGraphic:\n[IMG: /graphics/7023de0c3ef0b466b96cc95030ea82c5]\n\nContent:\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 1201] we obtain the following:\n\nContent:\n[MATH: \u03b4(p, 1201)|= \u03b4(\u03b4(p, 1), 201); = \u03b4(p, 201); = \u03b4(\u03b4(p, 2), 01); = \u03b4(p, 01); = \u03b4(\u03b4(p, 0), 1); = \u03b4(q, 1); = p]\n\nContent:\nLet's describe what is going on in the computations from a slightly different point of view.\n\nContent:\n- Step 1. The automaton is at the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{1} \\, 2 \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,1)=p.] So, the automaton switches to state [MATH: p] (in this case, it does not change the state) and moves to the next letter of the string.\n- Step 2. The automaton is at the state [MATH: p] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{2} \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,2)=p.] So, the automaton switches to state [MATH: p] (in this case, it does not change the state) and moves to the next letter of the string.\n- Step 3. The automaton is at the state [MATH: p] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]\nFrom the diagram, [MATH: \\delta(p,0)=q.] So, the automaton switches to state [MATH: q] and moves to the next letter of the string.\n- Step 4. The automaton is at the state [MATH: q] and observes the fourth letter of the string:\n[MATH: {\\color{lightgrey}1} \\, {\\color{lightgrey}2} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]\nFrom the diagram, [MATH: \\delta(q,1)=p.] So, the automaton switches to state [MATH: p] and stops since the entire string has been processed.\n\nContent:\nThe diagram below summarizes the process. It notes the state of the DFA and the part of the string left to process at each step.\n\nGraphic:\n[IMG: /graphics/54a2b3788d2590ff8601845842d9ebcd]\n\n---\n\nItem 2 \u2014 Example: Applying a Transition Function to a String Given a Diagram\n\nExample Prompt:\n[IMG: /graphics/9f829fc8966016ab8b2e19403ce1188f]\n\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, find [MATH: \\delta(p, 0101).]\n\nContent:\nEXPLANATION\n\nExplanation:\nLet [MATH: \\omega = a \\beta] be a finite sequence of symbols (a string), where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\n\nThen, we can extend the transition function [MATH: \\delta] of the automaton to strings recursively as\n\n[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 0101] we obtain the following:\n\n[MATH: \u03b4(p, 0101)|= \u03b4(\u03b4(p, 0), 101); = \u03b4(r, 101); = \u03b4(\u03b4(r, 1), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(q, 1); = r]\n\nLet's describe what is going on in the computations from a slightly different point of view.\n\n- Step 1. The automaton is at the start state [MATH: p] and observes the first letter of the string:\n[MATH: \\bbox[2pt,Gainsboro]{0} \\, 1 \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(p,0)=r.] So, the automaton switches to state [MATH: r] and moves to the next letter of the string.\n- Step 2. The automaton is at the state [MATH: r] and observes the second letter of the string:\n[MATH: {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1} \\, 0 \\, 1]\nFrom the diagram, [MATH: \\delta(r,1)=r.] So, the automaton switches to state [MATH: r] (in this case, does not change the state) and moves to the next letter of the string.\n- Step 3. The automaton is at the state [MATH: r] and observes the third letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, \\bbox[2pt,Gainsboro]{0} \\, 1]\nFrom the diagram, [MATH: \\delta(r,0)=q.] So, the automaton switches to state [MATH: q] and moves to the next letter of the string.\n- Step 4. The automaton is at the state [MATH: q] and observes the fourth letter of the string:\n[MATH: {\\color{lightgrey}0} \\, {\\color{lightgrey}1} \\, {\\color{lightgrey}0} \\, \\bbox[2pt,Gainsboro]{1}]\nFrom the diagram, [MATH: \\delta(q,1)=r.] So, the automaton switches to state [MATH: r] and stops since the entire string has been processed.\n\nWe can summarize the process in the diagram below.\n\n[IMG: /graphics/04b030ddae9ec20c2b1cb342f521e713]\n\n---\n\nItem 3 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-235950]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(p, 0010) =]\n\nChoices:\na. [MATH: r]\nb. [MATH: q]\nc. [MATH: p]\nd. [MATH: 0]\ne. [MATH: 1]\n\n---\n\nItem 4 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-257745]\n\nPrompt:\nConsider the deterministic finite automaton represented by the above diagram. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(r, 1110) =]\n\nChoices:\na. [MATH: 1]\nb. [MATH: p]\nc. [MATH: r]\nd. [MATH: q]\ne. [MATH: 0]\n\n---\n\nItem 5 \u2014 Example: Applying a Transition Function to a String Given a Transition Table\n\nExample Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: p] | [MATH: r] |\n| [MATH: q] | [MATH: p] | [MATH: q] |\n| [MATH: \\ast \\: r] | [MATH: q] | [MATH: p] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \\delta: Q \\times \\Sigma \\to Q] is the transition function of the automaton, find [MATH: \\delta(p, 1011).]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram corresponding to our automaton is shown below.\n\n[IMG: /graphics/d65f76cdd478d7001684a0348350d90f]\n\nLet [MATH: \\omega = a \\beta] be a finite sequence of symbols (a string), where [MATH: a] is the first symbol of [MATH: \\omega] and [MATH: \\beta] is the remainder of [MATH: \\omega] after removing the first symbol.\n\nThen we can extend the transition function [MATH: \\delta] of the automaton to strings recursively as\n\n[MATH: \u03b4(q, \u03b5)|= q,; \u03b4(q, \u03c9)|= \u03b4(\u03b4(q, a), \u03b2),]\n\nwhere [MATH: \\varepsilon] denotes the empty string (the string containing no symbols) and [MATH: q] is a state of an automaton.\n\nAccording to the definition of the transition function [MATH: \\delta,] for [MATH: \\omega = 1011] we obtain the following:\n\n[MATH: \u03b4(p, 1011)|= \u03b4(\u03b4(p, 1), 011); = \u03b4(r, 011); = \u03b4(\u03b4(r, 0), 11); = \u03b4(q, 11); = \u03b4(\u03b4(q, 1), 1); = \u03b4(q, 1); = q]\n\nWe can summarize the process in the diagram below.\n\n[IMG: /graphics/072b48e35d3dfa8f07716c01b3db40bb]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192 p] | [MATH: r] | [MATH: q] |\n| [MATH: q] | [MATH: q] | [MATH: p] |\n| [MATH: \u2217r] | [MATH: p] | [MATH: r] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(p, 0101) =]\n\nChoices:\na. [MATH: r]\nb. [MATH: q]\nc. [MATH: 0]\nd. [MATH: p]\ne. [MATH: 1]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: p] | [MATH: q] | [MATH: p] |\n| [MATH: \u2192; \u2217q] | [MATH: r] | [MATH: s] |\n| [MATH: \u2217r] | [MATH: s] | [MATH: r] |\n| [MATH: s] | [MATH: p] | [MATH: r] |\n\nConsider the deterministic finite automaton represented by the transition table above. Given that [MATH: \u03b4: Q \u00d7 \u03a3 \u2192 Q] is the transition function of the automaton, [MATH: \u03b4(q, 1011) =]\n\nChoices:\na. [MATH: 1]\nb. [MATH: q]\nc. [MATH: 0]\nd. [MATH: p]\ne. [MATH: r]\n\n---\n\nItem 8 \u2014 Tutorial: The Language of a DFA\n\nContent:\nA finite string is accepted by a deterministic finite automaton if the automation ends in one of its final states after processing the entire string. Otherwise, the string is rejected. The set of all accepted finite strings is the language of the DFA.\n\nContent:\nFor example, consider the two strings [MATH: 1010] and [MATH: 11000.] Are either of these accepted by the DFA represented by the diagram below?\n\nGraphic:\n[IMG: /graphics/f8f5d6725d4c0c028ce24da078576104]\n\nContent:\nTo find out, let's apply the extended transition function to our strings.\n\nContent:\n- Processing the string [MATH: 1010,] we get:\n\n| [MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = p] | [IMG: /graphics/f7eba9b9cc7300f9adce62248c0ddfb9] |\n\nThe process terminates at the state [MATH: p.] Since [MATH: p] is not a final (accepting) state, the string [MATH: 1010] is rejected.\n- Processing the string [MATH: 11000,] we get:\n\n| [MATH: \u03b4(p, 11000)|= \u03b4(\u03b4(p, 1), 1000); = \u03b4(p, 1000); = \u03b4(\u03b4(p, 1), 000); = \u03b4(p, 000); = \u03b4(\u03b4(p, 0), 00); = \u03b4(q, 00); = \u03b4(\u03b4(q, 0), 0); = \u03b4(p, 0); = q] | [IMG: /graphics/7dd133d30779fbffad6bc9846fbb7495] |\n\nThe process terminates at the state [MATH: q.] Since [MATH: q] is a final (accepting) state, the string [MATH: 11000] is accepted.\n\nContent:\nThe language of this DFA consists of all finite strings of [MATH: 0]'s and [MATH: 1]'s that contain an odd number of [MATH: 0]'s.\n\nContent:\nWe begin processing a string in state [MATH: p.] Notice that when the automaton reads a [MATH: 1,] the state remains unchanged. However, when it encounters a [MATH: 0,] it switches to the accepting state [MATH: q.] If the automaton is in [MATH: q] and processes another [MATH: 0,] it transitions back to the non-accepting state [MATH: p.]\n\nContent:\nTherefore, the automaton will end in the accepting state [MATH: q] if and only if the input contains an odd number of [MATH: 0]'s (since all [MATH: 1]'s are ignored).\n\n---\n\nItem 9 \u2014 Example: Identifying Strings Accepted by a DFA\n\nExample Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Sigma}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \\to \\! p] | [MATH: q] | [MATH: p] |\n| [MATH: \\ast\\:q] | [MATH: r] | [MATH: q] |\n| [MATH: \\ast \\: r] | [MATH: p] | [MATH: q] |\n\nWhich of the following strings are accepted by the DFA represented by the transition table above?\n\n1. [MATH: 0001]\n2. [MATH: 1010]\n3. [MATH: 0011]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram corresponding to our automaton is shown below.\n\n[IMG: /graphics/f22322e1b4ef3d5f4e63e5d1a26da4ea]\n\nLet's apply the extended transition function to our strings.\n\n- Consider the string [MATH: 0001{:}]\n\n| [MATH: \u03b4(p, 0001)|= \u03b4(\u03b4(p, 0), 001); = \u03b4(q, 001); = \u03b4(\u03b4(q, 0), 01); = \u03b4(r, 01); = \u03b4(\u03b4(r, 0), 1); = \u03b4(p, 1); = p] | [IMG: /graphics/ce3f0e70bb83850e1bc717dc266a991a] |\n\nThe process is terminated at the state [MATH: p.] Since [MATH: p] is not a final (accepting) state, the string [MATH: 0001] is rejected.\n- Consider the string [MATH: 1010{:}]\n\n| [MATH: \u03b4(p, 1010)|= \u03b4(\u03b4(p, 1), 010); = \u03b4(p, 010); = \u03b4(\u03b4(p, 0), 10); = \u03b4(q, 10); = \u03b4(\u03b4(q, 1), 0); = \u03b4(q, 0); = r] | [IMG: /graphics/900f4f1e1513d229ab3d246f6e24bef9] |\n\nThe process is terminated at the state [MATH: r.] Since [MATH: r] is a final (accepting) state, the string [MATH: 1010] is accepted.\n- Consider the string [MATH: 0011{:}]\n\n| [MATH: \u03b4(p, 0011)|= \u03b4(\u03b4(p, 0), 011); = \u03b4(q, 011); = \u03b4(\u03b4(q, 0), 11); = \u03b4(r, 11); = \u03b4(\u03b4(r, 1), 1); = \u03b4(q, 1); = q] | [IMG: /graphics/7aaff1dc31623019476abdac7e53bed0] |\n\nThe process is terminated at the state [MATH: q.] Since [MATH: q] is a final (accepting) state, the string [MATH: 0011] is accepted.\n\nTherefore, the correct answer is \"II and III only.\"\n\n---\n\nItem 10 \u2014 Question 5\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u03a3}] | [MATH: 0] | [MATH: 1] |\n| [MATH: \u2192; \u2217r] | [MATH: q] | [MATH: r] |\n| [MATH: q] | [MATH: q] | [MATH: r] |\n\nWhich of the following strings are accepted by the DFA represented by the transition table above?\n\n| [MATH: 1100] | [MATH: :] | [SELECT 1] |\n| [MATH: 0101] | [MATH: :] | [SELECT 2] |\n| [MATH: 001] | [MATH: :] | [SELECT 3] |\n\n---\n\nItem 11 \u2014 Question 6\n\nQuestion Graphic:\n[IMG: /graphics/q-235956]\n\nPrompt:\nWhich of the following strings are accepted by the DFA represented by the above diagram?\n\n| [MATH: 000] | [MATH: :] | [SELECT 1] |\n| [MATH: 0101] | [MATH: :] | [SELECT 2] |\n| [MATH: 1011] | [MATH: :] | [SELECT 3] |"
+  }
+}

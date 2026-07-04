@@ -1,0 +1,1508 @@
+{
+  "schema_version": 2,
+  "topic_id": "1788",
+  "topic_title": "Modeling RL Circuits With First-Order ODEs",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/1788/Source/1788.html",
+  "source_url": "https://mathacademy.com/topics/1788",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "589205",
+        "dom_id": "sectionLink-589205",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-589205"
+      },
+      {
+        "index": 2,
+        "step_id": "608075",
+        "dom_id": "sectionLink-608075",
+        "name": "",
+        "title": "RL Circuits",
+        "selector": "#sectionLink-608075"
+      },
+      {
+        "index": 3,
+        "step_id": "589206",
+        "dom_id": "sectionLink-589206",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-589206"
+      },
+      {
+        "index": 4,
+        "step_id": "589207",
+        "dom_id": "sectionLink-589207",
+        "name": "",
+        "title": "Constructing an Equation Governing the Current in an RL Circuit",
+        "selector": "#sectionLink-589207"
+      },
+      {
+        "index": 5,
+        "step_id": "589210",
+        "dom_id": "sectionLink-589210",
+        "name": "",
+        "title": "Steady-State Solutions for Constant EMFs",
+        "selector": "#sectionLink-589210"
+      },
+      {
+        "index": 6,
+        "step_id": "589211",
+        "dom_id": "sectionLink-589211",
+        "name": "",
+        "title": "Solving an Equation Governing the Current in an RL Circuit: Constant EMF",
+        "selector": "#sectionLink-589211"
+      },
+      {
+        "index": 7,
+        "step_id": "589215",
+        "dom_id": "sectionLink-589215",
+        "name": "",
+        "title": "Steady-State Solutions for Sinusoidal EMFs",
+        "selector": "#sectionLink-589215"
+      },
+      {
+        "index": 8,
+        "step_id": "589216",
+        "dom_id": "sectionLink-589216",
+        "name": "",
+        "title": "Solving an Equation Governing the Current in an RL Circuit: Sinusoidal EMF",
+        "selector": "#sectionLink-589216"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1076",
+        "name": "Writing Sums of Trigonometric Functions in Amplitude-Phase Form",
+        "href": "/topics/writing-sums-of-trigonometric-functions-in-amplitude-phase-form-1076"
+      },
+      {
+        "topic_id": "2023",
+        "name": "Modeling With First-Order ODEs",
+        "href": "/topics/modeling-with-first-order-odes-2023"
+      },
+      {
+        "topic_id": "6680",
+        "name": "Solving First-Order Linear ODEs With Sinusoidal Forcing",
+        "href": "/topics/solving-first-order-linear-odes-with-sinusoidal-forcing-6680"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 15,
+    "step_count": 8,
+    "question_count": 7,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "589205",
+        "content_id": "14568",
+        "dom_id": "step-589205",
+        "selector": "#step-589205",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>One application of differential equations is to model the current in electrical circuits.</p>",
+            "readable_text": "One application of differential equations is to model the current in electrical circuits.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>An <strong>electrical circuit</strong> is a closed, continuous path through which an electric charge can flow. The <strong>current</strong>, measured in amperes (<span class=\"math\">[MATH: \\textrm{A}]</span>), is the rate at which electric charge flows through the circuit as a function of time.</p>",
+            "readable_text": "An electrical circuit is a closed, continuous path through which an electric charge can flow. The current, measured in amperes ([MATH: \\textrm{A}]), is the rate at which electric charge flows through the circuit as a function of time.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Electrical circuits can contain many different components.</p>",
+            "readable_text": "Electrical circuits can contain many different components.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>A <strong>power source</strong>, such as a <strong>cell</strong> (or <strong>battery</strong>), that supplies energy to the circuit by maintaining a potential difference (electromotive force, EMF), measured in volts (<span class=\"math\">[MATH: \\textrm{V}]</span>).</p><div class=\"graphic\"><img src=\"/graphics/cf5e542c357bedff6e8cc4abe1946a9f\"></div></li><li><p><strong>Conducting paths</strong>, such as wires, through which current carriers (electrons) flow.</p><div class=\"graphic\"><img src=\"/graphics/861e36025ddb163b610f60a5c48c4d47\"></div></li><li><p>A <strong>resistor</strong> opposes the current and dissipates energy as heat. Resistance is measured in ohms (<span class=\"math\">[MATH: \\Omega]</span>).</p><div class=\"graphic\"><img src=\"/graphics/480b064573dbe0ed330a13f950ce6656\"></div></li><li><p>An <strong>inductor</strong> opposes <em>changes</em> in the current over time by storing energy in a magnetic field. Inductance is measured in henries (<span class=\"math\">[MATH: \\textrm{H}]</span>).</p><div class=\"graphic\"><img src=\"/graphics/d97a38c251b7313a94c8cabe7879986c\"></div></li></ul>",
+            "readable_text": "- A power source, such as a cell (or battery), that supplies energy to the circuit by maintaining a potential difference (electromotive force, EMF), measured in volts ([MATH: \\textrm{V}]).\n\n[IMG: /graphics/cf5e542c357bedff6e8cc4abe1946a9f]\n- Conducting paths, such as wires, through which current carriers (electrons) flow.\n\n[IMG: /graphics/861e36025ddb163b610f60a5c48c4d47]\n- A resistor opposes the current and dissipates energy as heat. Resistance is measured in ohms ([MATH: \\Omega]).\n\n[IMG: /graphics/480b064573dbe0ed330a13f950ce6656]\n- An inductor opposes changes in the current over time by storing energy in a magnetic field. Inductance is measured in henries ([MATH: \\textrm{H}]).\n\n[IMG: /graphics/d97a38c251b7313a94c8cabe7879986c]",
+            "images": [
+              {
+                "src": "/graphics/cf5e542c357bedff6e8cc4abe1946a9f",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/861e36025ddb163b610f60a5c48c4d47",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/480b064573dbe0ed330a13f950ce6656",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/d97a38c251b7313a94c8cabe7879986c",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In the next slide, we will connect these components in series to form an RL circuit.</p>",
+            "readable_text": "In the next slide, we will connect these components in series to form an RL circuit.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/cf5e542c357bedff6e8cc4abe1946a9f",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/861e36025ddb163b610f60a5c48c4d47",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/480b064573dbe0ed330a13f950ce6656",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/d97a38c251b7313a94c8cabe7879986c",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nOne application of differential equations is to model the current in electrical circuits.\n\nContent:\nAn electrical circuit is a closed, continuous path through which an electric charge can flow. The current, measured in amperes ([MATH: \\textrm{A}]), is the rate at which electric charge flows through the circuit as a function of time.\n\nContent:\nElectrical circuits can contain many different components.\n\nContent:\n- A power source, such as a cell (or battery), that supplies energy to the circuit by maintaining a potential difference (electromotive force, EMF), measured in volts ([MATH: \\textrm{V}]).\n\n[IMG: /graphics/cf5e542c357bedff6e8cc4abe1946a9f]\n- Conducting paths, such as wires, through which current carriers (electrons) flow.\n\n[IMG: /graphics/861e36025ddb163b610f60a5c48c4d47]\n- A resistor opposes the current and dissipates energy as heat. Resistance is measured in ohms ([MATH: \\Omega]).\n\n[IMG: /graphics/480b064573dbe0ed330a13f950ce6656]\n- An inductor opposes changes in the current over time by storing energy in a magnetic field. Inductance is measured in henries ([MATH: \\textrm{H}]).\n\n[IMG: /graphics/d97a38c251b7313a94c8cabe7879986c]\n\nContent:\nIn the next slide, we will connect these components in series to form an RL circuit."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "608075",
+        "content_id": "14899",
+        "dom_id": "step-608075",
+        "selector": "#step-608075",
+        "step_anchor": "step-2",
+        "title": "RL Circuits",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Electrical circuits are said to be <strong>in series</strong> if the components are connected end to end in a single path, so that the same current flows through every component in the circuit.</p>",
+            "readable_text": "Electrical circuits are said to be in series if the components are connected end to end in a single path, so that the same current flows through every component in the circuit.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this lesson, we&#x27;ll look at <strong>RL circuits</strong>, which contain both a resistor and an inductor, most commonly in series with a voltage source. An example is shown below, consisting of a resistance <span class=\"math\">[MATH: R,]</span> in ohms, an inductance <span class=\"math\">[MATH: L,]</span> in henries, and a source EMF <span class=\"math\">[MATH: E,]</span> in volts. </p>",
+            "readable_text": "In this lesson, we'll look at RL circuits, which contain both a resistor and an inductor, most commonly in series with a voltage source. An example is shown below, consisting of a resistance [MATH: R,] in ohms, an inductance [MATH: L,] in henries, and a source EMF [MATH: E,] in volts.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/8201f14bffbb8a40b920be8ea9d47f57\"></p>",
+            "readable_text": "[IMG: /graphics/8201f14bffbb8a40b920be8ea9d47f57]",
+            "images": [
+              {
+                "src": "/graphics/8201f14bffbb8a40b920be8ea9d47f57",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>How do we find a differential equation that best describes the circuit&#x27;s current <span class=\"math\">[MATH: I(t),]</span> measured in amperes, where <span class=\"math\">[MATH: t]</span> is the time, in seconds?</p>",
+            "readable_text": "How do we find a differential equation that best describes the circuit's current [MATH: I(t),] measured in amperes, where [MATH: t] is the time, in seconds?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>According to conservation of energy, as electric charge moves around a circuit, the energy gained from the source must equal the energy lost in the components. The decrease in voltage across a component is called a <strong>voltage drop</strong>.</p>",
+            "readable_text": "According to conservation of energy, as electric charge moves around a circuit, the energy gained from the source must equal the energy lost in the components. The decrease in voltage across a component is called a voltage drop.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>From this follows <strong>Kirchhoff&#x27;s Voltage Law</strong>, which states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops around the loop.</p>",
+            "readable_text": "From this follows Kirchhoff's Voltage Law, which states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops around the loop.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In an RL circuit, there are two voltage drops:</p>",
+            "readable_text": "In an RL circuit, there are two voltage drops:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The resistor <em>opposes the flow of current</em>, hence producing a voltage drop proportional to the current, with a constant of proportionality <span class=\"math\">[MATH: R{:}]</span> <span class=\"math\">[MATH: V_R = RI]</span></p></li><li><p>The inductor <em>opposes changes in current</em>, hence producing a voltage drop proportional to the rate of change of current, with a constant of proportionality <span class=\"math\">[MATH: L{:}]</span> <span class=\"math\">[MATH: V_L = L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p></li></ul>",
+            "readable_text": "- The resistor opposes the flow of current, hence producing a voltage drop proportional to the current, with a constant of proportionality [MATH: R{:}] [MATH: V_R = RI]\n- The inductor opposes changes in current, hence producing a voltage drop proportional to the rate of change of current, with a constant of proportionality [MATH: L{:}] [MATH: V_L = L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, by Kirchhoff&#x27;s Voltage Law, the source voltage <span class=\"math\">[MATH: E]</span> is the sum of the voltage drops: <span class=\"math\">[MATH: E = V_R + V_L.]</span></p>",
+            "readable_text": "Therefore, by Kirchhoff's Voltage Law, the source voltage [MATH: E] is the sum of the voltage drops: [MATH: E = V_R + V_L.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>As a result, the basic equation governing the amount of current <span class=\"math\">[MATH: I(t)]</span> in the circuit is\n<span class=\"math\">[MATH: E = RI + L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}\n\\quad\\Longrightarrow\\quad\n\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + \\dfrac{R}{L}I = \\dfrac{E}{L}.]</span></p>",
+            "readable_text": "As a result, the basic equation governing the amount of current [MATH: I(t)] in the circuit is\n[MATH: E = RI + L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}\n\\quad\\Longrightarrow\\quad\n\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + \\dfrac{R}{L}I = \\dfrac{E}{L}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Next, we will look at a worked example with specific values for <span class=\"math\">[MATH: R,]</span> <span class=\"math\">[MATH: L,]</span> and <span class=\"math\">[MATH: E.]</span></p>",
+            "readable_text": "Next, we will look at a worked example with specific values for [MATH: R,] [MATH: L,] and [MATH: E.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/8201f14bffbb8a40b920be8ea9d47f57",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nElectrical circuits are said to be in series if the components are connected end to end in a single path, so that the same current flows through every component in the circuit.\n\nContent:\nIn this lesson, we'll look at RL circuits, which contain both a resistor and an inductor, most commonly in series with a voltage source. An example is shown below, consisting of a resistance [MATH: R,] in ohms, an inductance [MATH: L,] in henries, and a source EMF [MATH: E,] in volts.\n\nGraphic:\n[IMG: /graphics/8201f14bffbb8a40b920be8ea9d47f57]\n\nContent:\nHow do we find a differential equation that best describes the circuit's current [MATH: I(t),] measured in amperes, where [MATH: t] is the time, in seconds?\n\nContent:\nAccording to conservation of energy, as electric charge moves around a circuit, the energy gained from the source must equal the energy lost in the components. The decrease in voltage across a component is called a voltage drop.\n\nContent:\nFrom this follows Kirchhoff's Voltage Law, which states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops around the loop.\n\nContent:\nIn an RL circuit, there are two voltage drops:\n\nContent:\n- The resistor opposes the flow of current, hence producing a voltage drop proportional to the current, with a constant of proportionality [MATH: R{:}] [MATH: V_R = RI]\n- The inductor opposes changes in current, hence producing a voltage drop proportional to the rate of change of current, with a constant of proportionality [MATH: L{:}] [MATH: V_L = L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nContent:\nTherefore, by Kirchhoff's Voltage Law, the source voltage [MATH: E] is the sum of the voltage drops: [MATH: E = V_R + V_L.]\n\nContent:\nAs a result, the basic equation governing the amount of current [MATH: I(t)] in the circuit is\n[MATH: E = RI + L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}\n\\quad\\Longrightarrow\\quad\n\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + \\dfrac{R}{L}I = \\dfrac{E}{L}.]\n\nContent:\nNext, we will look at a worked example with specific values for [MATH: R,] [MATH: L,] and [MATH: E.]"
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "589206",
+        "content_id": "14572",
+        "dom_id": "step-589206",
+        "selector": "#step-589206",
+        "step_anchor": "step-3",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Consider the RL circuit shown below.  </p>",
+            "readable_text": "Consider the RL circuit shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/8d3142f46337d40efdfe95cf0f96ba65\"></p>",
+            "readable_text": "[IMG: /graphics/8d3142f46337d40efdfe95cf0f96ba65]",
+            "images": [
+              {
+                "src": "/graphics/8d3142f46337d40efdfe95cf0f96ba65",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s find the differential equation that describes the current <span class=\"math\">[MATH: I]</span> (in amperes) as a function of time <span class=\"math\">[MATH: t]</span> (in seconds).</p>",
+            "readable_text": "Let's find the differential equation that describes the current [MATH: I] (in amperes) as a function of time [MATH: t] (in seconds).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The diagram shows a series RL circuit with a source electromotive force (EMF) of <span class=\"math\">[MATH: 5\\,\\textrm{V},]</span> a resistor with resistance <span class=\"math\">[MATH: 15\\,\\Omega,]</span> and an inductor with an inductance of <span class=\"math\">[MATH: 3\\,\\textrm{H}.]</span></p>",
+            "readable_text": "The diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 5\\,\\textrm{V},] a resistor with resistance [MATH: 15\\,\\Omega,] and an inductor with an inductance of [MATH: 3\\,\\textrm{H}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Kirchhoff&#x27;s voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.</p>",
+            "readable_text": "Kirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In an RL circuit, there are two voltage drops:</p>",
+            "readable_text": "In an RL circuit, there are two voltage drops:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The voltage drop across the resistor is proportional to the current, with a constant of proportionality <span class=\"math\">[MATH: R = 15\\,\\Omega{:}]</span>\n<span class=\"math\">[MATH: V_R = 15I]</span></p></li><li><p>The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality <span class=\"math\">[MATH: L = 3\\,\\textrm{H}{:}]</span>\n<span class=\"math\">[MATH: V_L = 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p></li></ul>",
+            "readable_text": "- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 15\\,\\Omega{:}]\n[MATH: V_R = 15I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 3\\,\\textrm{H}{:}]\n[MATH: V_L = 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, by Kirchhoff&#x27;s voltage law, the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> in the circuit is\n<span class=\"math\">[MATH: 5 = 15I + 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]</span>\nwhich gives\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = \\dfrac{5}{3}.]</span></p>",
+            "readable_text": "Therefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 5 = 15I + 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = \\dfrac{5}{3}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/8d3142f46337d40efdfe95cf0f96ba65",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConsider the RL circuit shown below.\n\nGraphic:\n[IMG: /graphics/8d3142f46337d40efdfe95cf0f96ba65]\n\nContent:\nLet's find the differential equation that describes the current [MATH: I] (in amperes) as a function of time [MATH: t] (in seconds).\n\nContent:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 5\\,\\textrm{V},] a resistor with resistance [MATH: 15\\,\\Omega,] and an inductor with an inductance of [MATH: 3\\,\\textrm{H}.]\n\nContent:\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nContent:\nIn an RL circuit, there are two voltage drops:\n\nContent:\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 15\\,\\Omega{:}]\n[MATH: V_R = 15I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 3\\,\\textrm{H}{:}]\n[MATH: V_L = 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nContent:\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 5 = 15I + 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = \\dfrac{5}{3}.]"
+      },
+      {
+        "lesson_index": 4,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "589207",
+        "content_id": "21758",
+        "dom_id": "step-589207",
+        "selector": "#step-589207",
+        "step_anchor": "step-4",
+        "title": "Constructing an Equation Governing the Current in an RL Circuit",
+        "key_prerequisites": [
+          {
+            "topic_id": "2023",
+            "name": "Modeling With First-Order ODEs",
+            "href": "/topics/2023",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/8ecd3861795d3513d25a091b8f5aa93b\"></div><p>Find the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> (in amperes) at time <span class=\"math\">[MATH: t]</span> (in seconds) in the circuit given in the diagram above.</p>",
+            "readable_text": "[IMG: /graphics/8ecd3861795d3513d25a091b8f5aa93b]\n\nFind the differential equation governing the amount of current [MATH: I] (in amperes) at time [MATH: t] (in seconds) in the circuit given in the diagram above.",
+            "images": [
+              {
+                "src": "/graphics/8ecd3861795d3513d25a091b8f5aa93b",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The diagram shows a series RL circuit with a source electromotive force (EMF) of <span class=\"math\">[MATH: E(t) = 7\\sin(3t)\\,\\textrm{V},]</span> a resistor with resistance <span class=\"math\">[MATH: 14\\,\\Omega,]</span> and an inductor with an inductance of <span class=\"math\">[MATH: 7\\,\\textrm{H}.]</span></p><p>Kirchhoff&#x27;s voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.</p><p>In an RL circuit, there are two voltage drops:</p><ul><li><p>The voltage drop across the resistor is proportional to the current, with a constant of proportionality <span class=\"math\">[MATH: R = 14\\,\\Omega.]</span>\n<span class=\"math\">[MATH: V_R = 14I]</span></p></li><li><p>The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality <span class=\"math\">[MATH: L = 7\\,\\textrm{H}.]</span>\n<span class=\"math\">[MATH: V_L = 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p></li></ul><p>The source voltage (EMF) is given by\n<span class=\"math\">[MATH: E(t) = 7\\sin(3t).]</span></p><p>Therefore, by Kirchhoff&#x27;s voltage law, the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> in the circuit is\n<span class=\"math\">[MATH: 7\\sin(3t) = 14I + 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]</span>\nwhich gives\n<span class=\"math\">[MATH: 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = 7\\sin(3t) - 14I,]</span>\nso\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\sin(3t) - 2I,]</span></p><p>Therefore, the differential equation is\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 2I = \\sin(3t).]</span></p>",
+            "readable_text": "The diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: E(t) = 7\\sin(3t)\\,\\textrm{V},] a resistor with resistance [MATH: 14\\,\\Omega,] and an inductor with an inductance of [MATH: 7\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 14\\,\\Omega.]\n[MATH: V_R = 14I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 7\\,\\textrm{H}.]\n[MATH: V_L = 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nThe source voltage (EMF) is given by\n[MATH: E(t) = 7\\sin(3t).]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 7\\sin(3t) = 14I + 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]\nwhich gives\n[MATH: 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = 7\\sin(3t) - 14I,]\nso\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\sin(3t) - 2I,]\n\nTherefore, the differential equation is\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 2I = \\sin(3t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/8ecd3861795d3513d25a091b8f5aa93b",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/8ecd3861795d3513d25a091b8f5aa93b]\n\nFind the differential equation governing the amount of current [MATH: I] (in amperes) at time [MATH: t] (in seconds) in the circuit given in the diagram above.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: E(t) = 7\\sin(3t)\\,\\textrm{V},] a resistor with resistance [MATH: 14\\,\\Omega,] and an inductor with an inductance of [MATH: 7\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 14\\,\\Omega.]\n[MATH: V_R = 14I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 7\\,\\textrm{H}.]\n[MATH: V_L = 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nThe source voltage (EMF) is given by\n[MATH: E(t) = 7\\sin(3t).]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 7\\sin(3t) = 14I + 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]\nwhich gives\n[MATH: 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = 7\\sin(3t) - 14I,]\nso\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\sin(3t) - 2I,]\n\nTherefore, the differential equation is\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 2I = \\sin(3t).]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "336188",
+        "dom_id": "question-336188",
+        "selector": "#question-336188",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A series RL circuit has a source electromotive force (EMF) of <span class=\"math\">[MATH: 10V,]</span> a resistance of <span class=\"math\">[MATH: 50\u03a9,]</span> and an inductance of <span class=\"math\">[MATH: 2H.]</span> Find the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> (in amperes) in the circuit at time <span class=\"math\">[MATH: t]</span> (in seconds).</p>",
+          "readable_text": "A series RL circuit has a source electromotive force (EMF) of [MATH: 10V,] a resistance of [MATH: 50\u03a9,] and an inductance of [MATH: 2H.] Find the differential equation governing the amount of current [MATH: I] (in amperes) in the circuit at time [MATH: t] (in seconds).",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-336188-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) \u2212 50I = 10]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) \u2212 50I = 10]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-336188-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) + 25I = 5]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) + 25I = 5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-336188-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) \u2212 25I = 5]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) \u2212 25I = 5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-336188-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) + 50I = 10]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) + 50I = 10]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-336188-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) + (1)/(50)I = 10]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) + (1)/(50)I = 10]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nA series RL circuit has a source electromotive force (EMF) of [MATH: 10V,] a resistance of [MATH: 50\u03a9,] and an inductance of [MATH: 2H.] Find the differential equation governing the amount of current [MATH: I] (in amperes) in the circuit at time [MATH: t] (in seconds).\n\nChoices:\na. [MATH: (dI)/(dt) \u2212 50I = 10]\nb. [MATH: (dI)/(dt) + 25I = 5]\nc. [MATH: (dI)/(dt) \u2212 25I = 5]\nd. [MATH: (dI)/(dt) + 50I = 10]\ne. [MATH: (dI)/(dt) + (1)/(50)I = 10]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "336190",
+        "dom_id": "question-336190",
+        "selector": "#question-336190",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-336190\"></p>",
+          "readable_text": "[IMG: /graphics/q-336190]",
+          "images": [
+            {
+              "src": "/graphics/q-336190",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> (in amperes) at time <span class=\"math\">[MATH: t]</span> (in seconds) in the circuit given in the diagram above.</p>",
+          "readable_text": "Find the differential equation governing the amount of current [MATH: I] (in amperes) at time [MATH: t] (in seconds) in the circuit given in the diagram above.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-336190-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) + 12I = 2\\sin (3t)]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) + 12I = 2\\sin (3t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-336190-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) \u2212 12I = (1)/(2)\\sin (3t)]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) \u2212 12I = (1)/(2)\\sin (3t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-336190-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) + 48I = 4\\sin (3t)]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) + 48I = 4\\sin (3t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-336190-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) + 12I = (1)/(2)\\sin (3t)]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) + 12I = (1)/(2)\\sin (3t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-336190-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (dI)/(dt) \u2212 48I = 2\\sin (3t)]</span></p>",
+            "readable_text": "[MATH: (dI)/(dt) \u2212 48I = 2\\sin (3t)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-336190",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-336190]\n\nPrompt:\nFind the differential equation governing the amount of current [MATH: I] (in amperes) at time [MATH: t] (in seconds) in the circuit given in the diagram above.\n\nChoices:\na. [MATH: (dI)/(dt) + 12I = 2\\sin (3t)]\nb. [MATH: (dI)/(dt) \u2212 12I = (1)/(2)\\sin (3t)]\nc. [MATH: (dI)/(dt) + 48I = 4\\sin (3t)]\nd. [MATH: (dI)/(dt) + 12I = (1)/(2)\\sin (3t)]\ne. [MATH: (dI)/(dt) \u2212 48I = 2\\sin (3t)]"
+      },
+      {
+        "lesson_index": 7,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "589210",
+        "content_id": "14581",
+        "dom_id": "step-589210",
+        "selector": "#step-589210",
+        "step_anchor": "step-7",
+        "title": "Steady-State Solutions for Constant EMFs",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a first-order linear differential equation, the solution splits into a <strong>transient term</strong> that decays over time and a <strong>steady-state term</strong> that remains as <span class=\"math\">[MATH: t \\to \\infty.]</span></p>",
+            "readable_text": "In a first-order linear differential equation, the solution splits into a transient term that decays over time and a steady-state term that remains as [MATH: t \\to \\infty.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In an RL circuit with a constant electromotive force (EMF), this steady-state value corresponds to the long-term current in the circuit after all transient effects have died out, independent of the initial condition.</p>",
+            "readable_text": "In an RL circuit with a constant electromotive force (EMF), this steady-state value corresponds to the long-term current in the circuit after all transient effects have died out, independent of the initial condition.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To demonstrate how to extract the steady-state current from the general solution of an RL circuit model, suppose the current <span class=\"math\">[MATH: I(t),]</span> in amperes, in a series RL circuit governed by the differential equation\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 12.]</span></p>",
+            "readable_text": "To demonstrate how to extract the steady-state current from the general solution of an RL circuit model, suppose the current [MATH: I(t),] in amperes, in a series RL circuit governed by the differential equation\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 12.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is a first-order linear equation with constant coefficients. To find the general solution, we must sum the complementary and particular solutions.</p>",
+            "readable_text": "This is a first-order linear equation with constant coefficients. To find the general solution, we must sum the complementary and particular solutions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>To find the complementary solution <span class=\"math\">[MATH: I_c,]</span> we solve the corresponding homogeneous equation, given by\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]</span>\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n<span class=\"math\">[MATH: I_c(t) = Ae^{-6t},]</span>\nwhere <span class=\"math\">[MATH: A]</span> is a constant of integration.</p></li><li><p>Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree <span class=\"math\">[MATH: 0.]</span> So, we assume that the particular solution is also a polynomial of degree <span class=\"math\">[MATH: 0,]</span> i.e.,\n<span class=\"math\">[MATH: I_p(t) = \\alpha.]</span>\nTo find the value of <span class=\"math\">[MATH: \\alpha,]</span> we substitute <span class=\"math\">[MATH: I_p = \\alpha]</span> and <span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)&#x27; = 0,]</span> into the inhomogeneous equation:\n<span class=\"math\">[MATH: 0 + 6\\alpha = 12\n\\quad\\Longrightarrow\\quad\n\\alpha = 2]</span>\nTherefore, the particular solution is <span class=\"math\">[MATH: I_p(t) = 2.]</span></p></li></ul>",
+            "readable_text": "- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-6t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree [MATH: 0.] So, we assume that the particular solution is also a polynomial of degree [MATH: 0,] i.e.,\n[MATH: I_p(t) = \\alpha.]\nTo find the value of [MATH: \\alpha,] we substitute [MATH: I_p = \\alpha] and [MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)' = 0,] into the inhomogeneous equation:\n[MATH: 0 + 6\\alpha = 12\n\\quad\\Longrightarrow\\quad\n\\alpha = 2]\nTherefore, the particular solution is [MATH: I_p(t) = 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is</p>",
+            "readable_text": "Now, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + 2.]</span></p>",
+            "readable_text": "[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note the following:</p>",
+            "readable_text": "Note the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The quantity <span class=\"math\">[MATH: I_c = Ae^{-6t}]</span> is the <em>transient current</em>, since it goes to zero as <span class=\"math\">[MATH: t \\to \\infty.]</span> </p></li><li><p>The constant <span class=\"math\">[MATH: I_p = 2]</span> is the <em>steady-state current</em>. As <span class=\"math\">[MATH: t\\to\\infty,]</span> the current <span class=\"math\">[MATH: I]</span> approaches the value of the steady-state current.</p></li></ul>",
+            "readable_text": "- The quantity [MATH: I_c = Ae^{-6t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The constant [MATH: I_p = 2] is the steady-state current. As [MATH: t\\to\\infty,] the current [MATH: I] approaches the value of the steady-state current.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the steady-state current is <span class=\"math\">[MATH: 2]</span> amperes.</p>",
+            "readable_text": "Therefore, the steady-state current is [MATH: 2] amperes.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a first-order linear differential equation, the solution splits into a transient term that decays over time and a steady-state term that remains as [MATH: t \\to \\infty.]\n\nContent:\nIn an RL circuit with a constant electromotive force (EMF), this steady-state value corresponds to the long-term current in the circuit after all transient effects have died out, independent of the initial condition.\n\nContent:\nTo demonstrate how to extract the steady-state current from the general solution of an RL circuit model, suppose the current [MATH: I(t),] in amperes, in a series RL circuit governed by the differential equation\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 12.]\n\nContent:\nThis is a first-order linear equation with constant coefficients. To find the general solution, we must sum the complementary and particular solutions.\n\nContent:\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-6t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree [MATH: 0.] So, we assume that the particular solution is also a polynomial of degree [MATH: 0,] i.e.,\n[MATH: I_p(t) = \\alpha.]\nTo find the value of [MATH: \\alpha,] we substitute [MATH: I_p = \\alpha] and [MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)' = 0,] into the inhomogeneous equation:\n[MATH: 0 + 6\\alpha = 12\n\\quad\\Longrightarrow\\quad\n\\alpha = 2]\nTherefore, the particular solution is [MATH: I_p(t) = 2.]\n\nContent:\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n\nContent:\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + 2.]\n\nContent:\nNote the following:\n\nContent:\n- The quantity [MATH: I_c = Ae^{-6t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The constant [MATH: I_p = 2] is the steady-state current. As [MATH: t\\to\\infty,] the current [MATH: I] approaches the value of the steady-state current.\n\nContent:\nTherefore, the steady-state current is [MATH: 2] amperes."
+      },
+      {
+        "lesson_index": 8,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "589211",
+        "content_id": "21757",
+        "dom_id": "step-589211",
+        "selector": "#step-589211",
+        "step_anchor": "step-8",
+        "title": "Solving an Equation Governing the Current in an RL Circuit: Constant EMF",
+        "key_prerequisites": [
+          {
+            "topic_id": "1717",
+            "name": "Limits of Exponential Functions",
+            "href": "/topics/1717",
+            "type": ""
+          },
+          {
+            "topic_id": "6678",
+            "name": "General Solutions of First-Order Linear ODEs",
+            "href": "/topics/6678",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/d621f8115fb854aa278fd2eea1f93614\"></div><p>Find an equation for the current <span class=\"math\">[MATH: I(t)]</span> (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time <span class=\"math\">[MATH: t]</span> (in seconds) <strong>only</strong>, given that the current when <span class=\"math\">[MATH: t = 0\\,\\textrm s]</span> is <span class=\"math\">[MATH: 1\\,\\textrm{A}.]</span></p>",
+            "readable_text": "[IMG: /graphics/d621f8115fb854aa278fd2eea1f93614]\n\nFind an equation for the current [MATH: I(t)] (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time [MATH: t] (in seconds) only, given that the current when [MATH: t = 0\\,\\textrm s] is [MATH: 1\\,\\textrm{A}.]",
+            "images": [
+              {
+                "src": "/graphics/d621f8115fb854aa278fd2eea1f93614",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The diagram shows a series RL circuit with a source electromotive force (EMF) of <span class=\"math\">[MATH: 4\\,\\textrm{V},]</span> a resistor of resistance of <span class=\"math\">[MATH: 12\\,\\Omega,]</span> and an inductor of inductance <span class=\"math\">[MATH: 2\\,\\textrm{H}.]</span></p><p>Kirchhoff&#x27;s voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.</p><p>In an RL circuit, there are two voltage drops:</p><ul><li><p>The voltage drop across the resistor is proportional to the current, with a constant of proportionality <span class=\"math\">[MATH: R = 12\\,\\Omega.]</span>\n<span class=\"math\">[MATH: V_R = 12I]</span></p></li><li><p>The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality <span class=\"math\">[MATH: L = 2\\,\\textrm{H}.]</span>\n<span class=\"math\">[MATH: V_L = 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p></li></ul><p>Therefore, by Kirchhoff&#x27;s voltage law, the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> in the circuit is</p><p><span class=\"math\">[MATH: 4 = 12I + 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p><p>which gives\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 2.]</span></p><p>This is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.</p><ul><li><p>To find the complementary solution <span class=\"math\">[MATH: I_c,]</span> we solve the corresponding homogeneous equation, given by\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]</span>\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n<span class=\"math\">[MATH: I_c(t) = Ae^{-6t},]</span>\nwhere <span class=\"math\">[MATH: A]</span> is a constant of integration.</p></li><li><p>Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree <span class=\"math\">[MATH: 0.]</span> So, we assume that the particular solution is also a polynomial of degree <span class=\"math\">[MATH: 0,]</span> i.e.,\n<span class=\"math\">[MATH: I_p(t) = \\alpha.]</span>\nTo find the value of <span class=\"math\">[MATH: \\alpha,]</span> we substitute <span class=\"math\">[MATH: I_p = \\alpha]</span> and <span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)&#x27; = 0]</span> into the inhomogeneous equation:\n<span class=\"math\">[MATH: 0 + 6\\alpha = 2\n\\quad\\Longrightarrow\\quad\n\\alpha = \\dfrac13]</span>\nTherefore, the particular solution is <span class=\"math\">[MATH: I_p(t) = \\dfrac13.]</span></p></li></ul><p>Now, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n<span class=\"math\">[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + \\dfrac13.]</span></p><p>We&#x27;re told that the circuit starts with an initial current of <span class=\"math\">[MATH: 1\\,\\textrm{A}.]</span> So, we can apply the initial condition <span class=\"math\">[MATH: I(0) = 1,]</span> and solve for <span class=\"math\">[MATH: A{:}]</span>\n<span class=\"math\">[MATH: I(0)|= 1; Ae^{\u2212 6(0)} + (1)/(3)|= 1; A|= (2)/(3)]</span></p><p>Therefore, we have the following expression for <span class=\"math\">[MATH: I(t){:}]</span>\n<span class=\"math\">[MATH: I(t)|= (2)/(3)e^{\u2212 6t} + (1)/(3); = (1)/(3)(2e^{\u2212 6t} + 1)]</span></p><p>Note the following:</p><ul><li><p>The quantity <span class=\"math\">[MATH: I_c = \\dfrac23e^{-6t}]</span> is the <em>transient current</em>, since it goes to zero as <span class=\"math\">[MATH: t \\to \\infty.]</span> </p></li><li><p>The constant <span class=\"math\">[MATH: I_p = \\dfrac13]</span> is the <em>steady-state current</em>. As <span class=\"math\">[MATH: t\\to\\infty,]</span> the current <span class=\"math\">[MATH: I]</span> approaches the value of the steady-state current.</p></li></ul>",
+            "readable_text": "The diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 4\\,\\textrm{V},] a resistor of resistance of [MATH: 12\\,\\Omega,] and an inductor of inductance [MATH: 2\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 12\\,\\Omega.]\n[MATH: V_R = 12I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 2\\,\\textrm{H}.]\n[MATH: V_L = 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n\n[MATH: 4 = 12I + 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 2.]\n\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-6t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree [MATH: 0.] So, we assume that the particular solution is also a polynomial of degree [MATH: 0,] i.e.,\n[MATH: I_p(t) = \\alpha.]\nTo find the value of [MATH: \\alpha,] we substitute [MATH: I_p = \\alpha] and [MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)' = 0] into the inhomogeneous equation:\n[MATH: 0 + 6\\alpha = 2\n\\quad\\Longrightarrow\\quad\n\\alpha = \\dfrac13]\nTherefore, the particular solution is [MATH: I_p(t) = \\dfrac13.]\n\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + \\dfrac13.]\n\nWe're told that the circuit starts with an initial current of [MATH: 1\\,\\textrm{A}.] So, we can apply the initial condition [MATH: I(0) = 1,] and solve for [MATH: A{:}]\n[MATH: I(0)|= 1; Ae^{\u2212 6(0)} + (1)/(3)|= 1; A|= (2)/(3)]\n\nTherefore, we have the following expression for [MATH: I(t){:}]\n[MATH: I(t)|= (2)/(3)e^{\u2212 6t} + (1)/(3); = (1)/(3)(2e^{\u2212 6t} + 1)]\n\nNote the following:\n\n- The quantity [MATH: I_c = \\dfrac23e^{-6t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The constant [MATH: I_p = \\dfrac13] is the steady-state current. As [MATH: t\\to\\infty,] the current [MATH: I] approaches the value of the steady-state current.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/d621f8115fb854aa278fd2eea1f93614",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/d621f8115fb854aa278fd2eea1f93614]\n\nFind an equation for the current [MATH: I(t)] (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time [MATH: t] (in seconds) only, given that the current when [MATH: t = 0\\,\\textrm s] is [MATH: 1\\,\\textrm{A}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 4\\,\\textrm{V},] a resistor of resistance of [MATH: 12\\,\\Omega,] and an inductor of inductance [MATH: 2\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 12\\,\\Omega.]\n[MATH: V_R = 12I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 2\\,\\textrm{H}.]\n[MATH: V_L = 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n\n[MATH: 4 = 12I + 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 2.]\n\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-6t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree [MATH: 0.] So, we assume that the particular solution is also a polynomial of degree [MATH: 0,] i.e.,\n[MATH: I_p(t) = \\alpha.]\nTo find the value of [MATH: \\alpha,] we substitute [MATH: I_p = \\alpha] and [MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)' = 0] into the inhomogeneous equation:\n[MATH: 0 + 6\\alpha = 2\n\\quad\\Longrightarrow\\quad\n\\alpha = \\dfrac13]\nTherefore, the particular solution is [MATH: I_p(t) = \\dfrac13.]\n\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + \\dfrac13.]\n\nWe're told that the circuit starts with an initial current of [MATH: 1\\,\\textrm{A}.] So, we can apply the initial condition [MATH: I(0) = 1,] and solve for [MATH: A{:}]\n[MATH: I(0)|= 1; Ae^{\u2212 6(0)} + (1)/(3)|= 1; A|= (2)/(3)]\n\nTherefore, we have the following expression for [MATH: I(t){:}]\n[MATH: I(t)|= (2)/(3)e^{\u2212 6t} + (1)/(3); = (1)/(3)(2e^{\u2212 6t} + 1)]\n\nNote the following:\n\n- The quantity [MATH: I_c = \\dfrac23e^{-6t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The constant [MATH: I_p = \\dfrac13] is the steady-state current. As [MATH: t\\to\\infty,] the current [MATH: I] approaches the value of the steady-state current."
+      },
+      {
+        "lesson_index": 9,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "336473",
+        "dom_id": "question-336473",
+        "selector": "#question-336473",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The current <span class=\"math\">[MATH: I(t),]</span> in amperes, in a series RL circuit is governed by the differential equation</p><p><span class=\"math\">[MATH: (dI)/(dt) + 10I = 4, I(0) = 2.]</span>\nFind the steady-state current for this circuit.</p><p><span class=\"free-response-line\">The steady-state current is\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span> amperes.</span></p>",
+          "readable_text": "The current [MATH: I(t),] in amperes, in a series RL circuit is governed by the differential equation\n\n[MATH: (dI)/(dt) + 10I = 4, I(0) = 2.]\nFind the steady-state current for this circuit.\n\nThe steady-state current is\n[FREE_ENTRY 1] amperes.",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe current [MATH: I(t),] in amperes, in a series RL circuit is governed by the differential equation\n\n[MATH: (dI)/(dt) + 10I = 4, I(0) = 2.]\nFind the steady-state current for this circuit.\n\nThe steady-state current is\n[FREE_ENTRY 1] amperes."
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "336198",
+        "dom_id": "question-336198",
+        "selector": "#question-336198",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-336198\"></p>",
+          "readable_text": "[IMG: /graphics/q-336198]",
+          "images": [
+            {
+              "src": "/graphics/q-336198",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find an equation for the current <span class=\"math\">[MATH: I(t)]</span> (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time <span class=\"math\">[MATH: t]</span> (in seconds) <strong>only</strong>, given that the current when <span class=\"math\">[MATH: t = 0s]</span> is <span class=\"math\">[MATH: 1A.]</span><span class=\"free-response-line\"><span class=\"math\">[MATH: I(t) =]</span>\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span></span></p>",
+          "readable_text": "Find an equation for the current [MATH: I(t)] (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time [MATH: t] (in seconds) only, given that the current when [MATH: t = 0s] is [MATH: 1A.][MATH: I(t) =]\n[FREE_ENTRY 1]",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-336198",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-336198]\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind an equation for the current [MATH: I(t)] (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time [MATH: t] (in seconds) only, given that the current when [MATH: t = 0s] is [MATH: 1A.][MATH: I(t) =]\n[FREE_ENTRY 1]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "336215",
+        "dom_id": "question-336215",
+        "selector": "#question-336215",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>A series RL circuit has a source electromotive force (EMF) of <span class=\"math\">[MATH: 5V,]</span> a resistance of <span class=\"math\">[MATH: 20\u03a9,]</span> and an inductance of <span class=\"math\">[MATH: 2H.]</span>\nFind, <strong>rounded to two decimal places</strong>, the circuit&#x27;s current after <span class=\"math\">[MATH: 0.01]</span> seconds given that the initial current is <span class=\"math\">[MATH: 2A.]</span><span class=\"free-response-line\">The current after <span class=\"math\">[MATH: 0.01]</span> seconds is\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span> amperes.</span></p>",
+          "readable_text": "A series RL circuit has a source electromotive force (EMF) of [MATH: 5V,] a resistance of [MATH: 20\u03a9,] and an inductance of [MATH: 2H.]\nFind, rounded to two decimal places, the circuit's current after [MATH: 0.01] seconds given that the initial current is [MATH: 2A.]The current after [MATH: 0.01] seconds is\n[FREE_ENTRY 1] amperes.",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Calculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA series RL circuit has a source electromotive force (EMF) of [MATH: 5V,] a resistance of [MATH: 20\u03a9,] and an inductance of [MATH: 2H.]\nFind, rounded to two decimal places, the circuit's current after [MATH: 0.01] seconds given that the initial current is [MATH: 2A.]The current after [MATH: 0.01] seconds is\n[FREE_ENTRY 1] amperes."
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 7,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "589215",
+        "content_id": "14580",
+        "dom_id": "step-589215",
+        "selector": "#step-589215",
+        "step_anchor": "step-12",
+        "title": "Steady-State Solutions for Sinusoidal EMFs",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In many cases, the EMF produced by a power source is sinusoidal, not constant. Such a power source is shown in the diagram below.</p>",
+            "readable_text": "In many cases, the EMF produced by a power source is sinusoidal, not constant. Such a power source is shown in the diagram below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/2eda2bc5660f78d79cdeead37101b6b8\"></p>",
+            "readable_text": "[IMG: /graphics/2eda2bc5660f78d79cdeead37101b6b8]",
+            "images": [
+              {
+                "src": "/graphics/2eda2bc5660f78d79cdeead37101b6b8",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a first-order linear RL circuit driven by a sinusoidal voltage, the solution consists of a transient current that decays over time and a steady-state current that oscillates with the same frequency as the input and is independent of the initial condition.</p>",
+            "readable_text": "In a first-order linear RL circuit driven by a sinusoidal voltage, the solution consists of a transient current that decays over time and a steady-state current that oscillates with the same frequency as the input and is independent of the initial condition.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, let&#x27;s find the amplitude of the steady-state current in the RL circuit shown below.</p>",
+            "readable_text": "For example, let's find the amplitude of the steady-state current in the RL circuit shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/b625942eacafca3975be3c9ff39ca540\"></p>",
+            "readable_text": "[IMG: /graphics/b625942eacafca3975be3c9ff39ca540]",
+            "images": [
+              {
+                "src": "/graphics/b625942eacafca3975be3c9ff39ca540",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>The diagram shows a series RL circuit with a source electromotive force (EMF) of <span class=\"math\">[MATH: 3\\sin(4t)\\,\\textrm{V},]</span> a resistor of resistance <span class=\"math\">[MATH: 7\\,\\Omega,]</span> and an inductor of inductance <span class=\"math\">[MATH: 1\\,\\textrm{H}.]</span></p>",
+            "readable_text": "The diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 3\\sin(4t)\\,\\textrm{V},] a resistor of resistance [MATH: 7\\,\\Omega,] and an inductor of inductance [MATH: 1\\,\\textrm{H}.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Kirchhoff&#x27;s voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.</p>",
+            "readable_text": "Kirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In an RL circuit, there are two voltage drops:</p>",
+            "readable_text": "In an RL circuit, there are two voltage drops:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The voltage drop across the resistor is proportional to the current, with a constant of proportionality <span class=\"math\">[MATH: R = 7\\,\\Omega.]</span>\n<span class=\"math\">[MATH: V_R = 7I]</span></p></li><li><p>The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality <span class=\"math\">[MATH: L = 1\\,\\textrm{H}.]</span>\n<span class=\"math\">[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p></li></ul>",
+            "readable_text": "- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 7\\,\\Omega.]\n[MATH: V_R = 7I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 1\\,\\textrm{H}.]\n[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, by Kirchhoff&#x27;s voltage law, the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> in the circuit is\n<span class=\"math\">[MATH: 3\\sin(4t) = 7I + 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span>\nwhich gives the equation\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 7I = 3\\sin(4t).]</span></p>",
+            "readable_text": "Therefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 3\\sin(4t) = 7I + 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\nwhich gives the equation\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 7I = 3\\sin(4t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>This is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.</p>",
+            "readable_text": "This is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>To find the complementary solution <span class=\"math\">[MATH: I_c,]</span> we solve the corresponding homogeneous equation, given by\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 7I_c = 0.]</span>\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n<span class=\"math\">[MATH: I_c(t) = Ae^{-7t},]</span>\nwhere <span class=\"math\">[MATH: A]</span> is a constant of integration.</p></li><li><p>Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument <span class=\"math\">[MATH: 4t.]</span> So, we assume that the particular solution is also sinusoidal with argument <span class=\"math\">[MATH: 4t,]</span> i.e.,\n<span class=\"math\">[MATH: I_p(t) = \\alpha\\cos(4t) + \\beta\\sin(4t).]</span>\nTo find the values of <span class=\"math\">[MATH: \\alpha]</span> and <span class=\"math\">[MATH: \\beta,]</span> we substitute\n<span class=\"math\">[MATH: I_{p}|= \u03b1\\cos (4t) + \u03b2\\sin (4t),; (dI_{p})/(dt)|= \u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t),]</span>\ninto the inhomogeneous equation and group like terms on the left-hand side:\n<span class=\"math\">[MATH: (\u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t)) + 7(\u03b1\\cos (4t) + \u03b2\\sin (4t))|= 3\\sin (4t); (\u2212 4\u03b1 + 7\u03b2)\\sin (4t) + (7\u03b1 + 4\u03b2)\\cos (4t)|= 3\\sin (4t)]</span>\nEquating the coefficients, we get the following system of equations:\n<span class=\"math\">[MATH: {\u2212 4\u03b1 + 7\u03b2 = 3|(equating the coefficients of\\sin (4t)); 7\u03b1 + 4\u03b2 = 0|(equating the coefficients of\\cos (4t))]</span>\nSolving this system gives <span class=\"math\">[MATH: \\alpha = -\\dfrac{12}{65},]</span> <span class=\"math\">[MATH: \\beta = \\dfrac{21}{65}.]</span> Therefore, the particular solution is\n<span class=\"math\">[MATH: I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]</span></p></li></ul>",
+            "readable_text": "- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 7I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-7t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument [MATH: 4t.] So, we assume that the particular solution is also sinusoidal with argument [MATH: 4t,] i.e.,\n[MATH: I_p(t) = \\alpha\\cos(4t) + \\beta\\sin(4t).]\nTo find the values of [MATH: \\alpha] and [MATH: \\beta,] we substitute\n[MATH: I_{p}|= \u03b1\\cos (4t) + \u03b2\\sin (4t),; (dI_{p})/(dt)|= \u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t),]\ninto the inhomogeneous equation and group like terms on the left-hand side:\n[MATH: (\u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t)) + 7(\u03b1\\cos (4t) + \u03b2\\sin (4t))|= 3\\sin (4t); (\u2212 4\u03b1 + 7\u03b2)\\sin (4t) + (7\u03b1 + 4\u03b2)\\cos (4t)|= 3\\sin (4t)]\nEquating the coefficients, we get the following system of equations:\n[MATH: {\u2212 4\u03b1 + 7\u03b2 = 3|(equating the coefficients of\\sin (4t)); 7\u03b1 + 4\u03b2 = 0|(equating the coefficients of\\cos (4t))]\nSolving this system gives [MATH: \\alpha = -\\dfrac{12}{65},] [MATH: \\beta = \\dfrac{21}{65}.] Therefore, the particular solution is\n[MATH: I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n<span class=\"math\">[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-7t} - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]</span></p>",
+            "readable_text": "Now, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-7t} - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note the following:</p>",
+            "readable_text": "Note the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The quantity <span class=\"math\">[MATH: I_c(t) = Ae^{-7t}]</span> is the <em>transient current</em>, since it goes to zero as <span class=\"math\">[MATH: t \\to \\infty.]</span></p></li><li><p>The function <span class=\"math\">[MATH: I_p(t) =  - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t)]</span> is the <em>steady-state current</em>. It governs the current&#x27;s long-term behavior.</p></li></ul>",
+            "readable_text": "- The quantity [MATH: I_c(t) = Ae^{-7t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The function [MATH: I_p(t) = - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t)] is the steady-state current. It governs the current's long-term behavior.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, as <span class=\"math\">[MATH: t\\to\\infty,]</span> we have</p>",
+            "readable_text": "Therefore, as [MATH: t\\to\\infty,] we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: I(t) \\approx I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]</span></p>",
+            "readable_text": "[MATH: I(t) \\approx I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, the amplitude of the steady-state current is given by</p>",
+            "readable_text": "Finally, the amplitude of the steady-state current is given by",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\sqrt{\\left(-\\dfrac{12}{65}\\right)^2 + \\left(\\dfrac{21}{65}\\right)^2} \\approx 0.37\\,\\textrm{A},]</span></p>",
+            "readable_text": "[MATH: \\sqrt{\\left(-\\dfrac{12}{65}\\right)^2 + \\left(\\dfrac{21}{65}\\right)^2} \\approx 0.37\\,\\textrm{A},]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>rounded to two decimal places. This amplitude represents the maximum magnitude of the steady-state current flowing through the circuit.</p>",
+            "readable_text": "rounded to two decimal places. This amplitude represents the maximum magnitude of the steady-state current flowing through the circuit.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/2eda2bc5660f78d79cdeead37101b6b8",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/b625942eacafca3975be3c9ff39ca540",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn many cases, the EMF produced by a power source is sinusoidal, not constant. Such a power source is shown in the diagram below.\n\nGraphic:\n[IMG: /graphics/2eda2bc5660f78d79cdeead37101b6b8]\n\nContent:\nIn a first-order linear RL circuit driven by a sinusoidal voltage, the solution consists of a transient current that decays over time and a steady-state current that oscillates with the same frequency as the input and is independent of the initial condition.\n\nContent:\nFor example, let's find the amplitude of the steady-state current in the RL circuit shown below.\n\nGraphic:\n[IMG: /graphics/b625942eacafca3975be3c9ff39ca540]\n\nContent:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 3\\sin(4t)\\,\\textrm{V},] a resistor of resistance [MATH: 7\\,\\Omega,] and an inductor of inductance [MATH: 1\\,\\textrm{H}.]\n\nContent:\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nContent:\nIn an RL circuit, there are two voltage drops:\n\nContent:\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 7\\,\\Omega.]\n[MATH: V_R = 7I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 1\\,\\textrm{H}.]\n[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nContent:\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 3\\sin(4t) = 7I + 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\nwhich gives the equation\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 7I = 3\\sin(4t).]\n\nContent:\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\nContent:\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 7I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-7t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument [MATH: 4t.] So, we assume that the particular solution is also sinusoidal with argument [MATH: 4t,] i.e.,\n[MATH: I_p(t) = \\alpha\\cos(4t) + \\beta\\sin(4t).]\nTo find the values of [MATH: \\alpha] and [MATH: \\beta,] we substitute\n[MATH: I_{p}|= \u03b1\\cos (4t) + \u03b2\\sin (4t),; (dI_{p})/(dt)|= \u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t),]\ninto the inhomogeneous equation and group like terms on the left-hand side:\n[MATH: (\u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t)) + 7(\u03b1\\cos (4t) + \u03b2\\sin (4t))|= 3\\sin (4t); (\u2212 4\u03b1 + 7\u03b2)\\sin (4t) + (7\u03b1 + 4\u03b2)\\cos (4t)|= 3\\sin (4t)]\nEquating the coefficients, we get the following system of equations:\n[MATH: {\u2212 4\u03b1 + 7\u03b2 = 3|(equating the coefficients of\\sin (4t)); 7\u03b1 + 4\u03b2 = 0|(equating the coefficients of\\cos (4t))]\nSolving this system gives [MATH: \\alpha = -\\dfrac{12}{65},] [MATH: \\beta = \\dfrac{21}{65}.] Therefore, the particular solution is\n[MATH: I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]\n\nContent:\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-7t} - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]\n\nContent:\nNote the following:\n\nContent:\n- The quantity [MATH: I_c(t) = Ae^{-7t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The function [MATH: I_p(t) = - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t)] is the steady-state current. It governs the current's long-term behavior.\n\nContent:\nTherefore, as [MATH: t\\to\\infty,] we have\n\nContent:\n[MATH: I(t) \\approx I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]\n\nContent:\nFinally, the amplitude of the steady-state current is given by\n\nContent:\n[MATH: \\sqrt{\\left(-\\dfrac{12}{65}\\right)^2 + \\left(\\dfrac{21}{65}\\right)^2} \\approx 0.37\\,\\textrm{A},]\n\nContent:\nrounded to two decimal places. This amplitude represents the maximum magnitude of the steady-state current flowing through the circuit."
+      },
+      {
+        "lesson_index": 13,
+        "step_index": 8,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "589216",
+        "content_id": "21761",
+        "dom_id": "step-589216",
+        "selector": "#step-589216",
+        "step_anchor": "step-13",
+        "title": "Solving an Equation Governing the Current in an RL Circuit: Sinusoidal EMF",
+        "key_prerequisites": [
+          {
+            "topic_id": "1076",
+            "name": "Writing Sums of Trigonometric Functions in Amplitude-Phase Form",
+            "href": "/topics/1076",
+            "type": ""
+          },
+          {
+            "topic_id": "1719",
+            "name": "Limits of Trigonometric Functions",
+            "href": "/topics/1719",
+            "type": ""
+          },
+          {
+            "topic_id": "6680",
+            "name": "Solving First-Order Linear ODEs With Sinusoidal Forcing",
+            "href": "/topics/6680",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/596d73053c5f191533d2ca0ece3ff989\"></div><p>Find the amplitude of the steady-state current for the RL circuit shown above, <strong>rounded to two decimal places.</strong></p>",
+            "readable_text": "[IMG: /graphics/596d73053c5f191533d2ca0ece3ff989]\n\nFind the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.",
+            "images": [
+              {
+                "src": "/graphics/596d73053c5f191533d2ca0ece3ff989",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>The diagram shows a series RL circuit with a source electromotive force (EMF) of <span class=\"math\">[MATH: 5\\sin(3t)\\,\\textrm{V},]</span> a resistor of resistance <span class=\"math\">[MATH: 5\\,\\Omega,]</span> and an inductor of inductance <span class=\"math\">[MATH: 1\\,\\textrm{H}.]</span></p><p>Kirchhoff&#x27;s voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.</p><p>In an RL circuit, there are two voltage drops:</p><ul><li><p>The voltage drop across the resistor is proportional to the current, with a constant of proportionality <span class=\"math\">[MATH: R = 5\\,\\Omega.]</span>\n<span class=\"math\">[MATH: V_R = 5I]</span></p></li><li><p>The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality <span class=\"math\">[MATH: L = 1\\,\\textrm{H}.]</span>\n<span class=\"math\">[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}.]</span></p></li></ul><p>Therefore, by Kirchhoff&#x27;s voltage law, the differential equation governing the amount of current <span class=\"math\">[MATH: I]</span> in the circuit is\n<span class=\"math\">[MATH: 5\\sin(3t) = 5I + \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]</span></p><p>which gives\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = 5\\sin(3t).]</span></p><p>This is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.</p><ul><li><p>To find the complementary solution <span class=\"math\">[MATH: I_c,]</span> we solve the corresponding homogeneous equation, given by\n<span class=\"math\">[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 5I_c = 0.]</span>\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n<span class=\"math\">[MATH: I_c(t) = Ae^{-5t},]</span>\nwhere <span class=\"math\">[MATH: A]</span> is a constant of integration.</p></li><li><p>Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument <span class=\"math\">[MATH: 3t.]</span> So, we assume that the particular solution is also sinusoidal with argument <span class=\"math\">[MATH: 3t,]</span> i.e.,\n<span class=\"math\">[MATH: I_p(t) = \\alpha\\cos(3t) + \\beta\\sin(3t).]</span>\nTo find the values of <span class=\"math\">[MATH: \\alpha]</span> and <span class=\"math\">[MATH: \\beta,]</span> we substitute\n<span class=\"math\">[MATH: I_{p}|= \u03b1\\cos (3t) + \u03b2\\sin (3t),; (dI_{p})/(dt)|= \u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t),]</span>\ninto the inhomogeneous equation and group like terms on the left-hand side:\n<span class=\"math\">[MATH: (\u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t)) + 5(\u03b1\\cos (3t) + \u03b2\\sin (3t))|= 5\\sin (3t); (\u2212 3\u03b1 + 5\u03b2)\\sin (3t) + (5\u03b1 + 3\u03b2)\\cos (3t)|= 5\\sin (3t)]</span>\nEquating the coefficients, we get the following system of equations:\n<span class=\"math\">[MATH: {\u2212 3\u03b1 + 5\u03b2 = 5|(equating the coefficients of\\sin (3t)); 5\u03b1 + 3\u03b2 = 0|(equating the coefficients of\\cos (3t))]</span>\nSolving this system gives <span class=\"math\">[MATH: \\alpha = -\\dfrac{15}{34},]</span> <span class=\"math\">[MATH: \\beta = \\dfrac{25}{34}.]</span> Therefore, the particular solution is\n<span class=\"math\">[MATH: I_p(t) = -\\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]</span></p></li></ul><p>Now, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n<span class=\"math\">[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-5t} - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]</span></p><p>Note the following:</p><ul><li><p>The quantity <span class=\"math\">[MATH: I_c(t) = Ae^{-5t}]</span> is the <em>transient current</em>, since it goes to zero as <span class=\"math\">[MATH: t \\to \\infty.]</span> </p></li><li><p>The function <span class=\"math\">[MATH: I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t)]</span> is the <em>steady-state current</em>. It governs the current&#x27;s long-term behavior.</p></li></ul><p>Therefore, as <span class=\"math\">[MATH: t\\to\\infty,]</span> we have\n<span class=\"math\">[MATH: I(t)\\approx I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]</span></p><p>Finally, the amplitude of the steady-state current is given by\n<span class=\"math\">[MATH: \\sqrt{\\left(-\\dfrac{15}{34}\\right)^2 + \\left(\\dfrac{25}{34}\\right)^2} \\approx 0.86\\,\\textrm{A},]</span>\nrounded to two decimal places.</p>",
+            "readable_text": "The diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 5\\sin(3t)\\,\\textrm{V},] a resistor of resistance [MATH: 5\\,\\Omega,] and an inductor of inductance [MATH: 1\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 5\\,\\Omega.]\n[MATH: V_R = 5I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 1\\,\\textrm{H}.]\n[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}.]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 5\\sin(3t) = 5I + \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = 5\\sin(3t).]\n\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 5I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-5t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument [MATH: 3t.] So, we assume that the particular solution is also sinusoidal with argument [MATH: 3t,] i.e.,\n[MATH: I_p(t) = \\alpha\\cos(3t) + \\beta\\sin(3t).]\nTo find the values of [MATH: \\alpha] and [MATH: \\beta,] we substitute\n[MATH: I_{p}|= \u03b1\\cos (3t) + \u03b2\\sin (3t),; (dI_{p})/(dt)|= \u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t),]\ninto the inhomogeneous equation and group like terms on the left-hand side:\n[MATH: (\u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t)) + 5(\u03b1\\cos (3t) + \u03b2\\sin (3t))|= 5\\sin (3t); (\u2212 3\u03b1 + 5\u03b2)\\sin (3t) + (5\u03b1 + 3\u03b2)\\cos (3t)|= 5\\sin (3t)]\nEquating the coefficients, we get the following system of equations:\n[MATH: {\u2212 3\u03b1 + 5\u03b2 = 5|(equating the coefficients of\\sin (3t)); 5\u03b1 + 3\u03b2 = 0|(equating the coefficients of\\cos (3t))]\nSolving this system gives [MATH: \\alpha = -\\dfrac{15}{34},] [MATH: \\beta = \\dfrac{25}{34}.] Therefore, the particular solution is\n[MATH: I_p(t) = -\\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-5t} - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nNote the following:\n\n- The quantity [MATH: I_c(t) = Ae^{-5t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The function [MATH: I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t)] is the steady-state current. It governs the current's long-term behavior.\n\nTherefore, as [MATH: t\\to\\infty,] we have\n[MATH: I(t)\\approx I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nFinally, the amplitude of the steady-state current is given by\n[MATH: \\sqrt{\\left(-\\dfrac{15}{34}\\right)^2 + \\left(\\dfrac{25}{34}\\right)^2} \\approx 0.86\\,\\textrm{A},]\nrounded to two decimal places.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/596d73053c5f191533d2ca0ece3ff989",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/596d73053c5f191533d2ca0ece3ff989]\n\nFind the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 5\\sin(3t)\\,\\textrm{V},] a resistor of resistance [MATH: 5\\,\\Omega,] and an inductor of inductance [MATH: 1\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 5\\,\\Omega.]\n[MATH: V_R = 5I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 1\\,\\textrm{H}.]\n[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}.]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 5\\sin(3t) = 5I + \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = 5\\sin(3t).]\n\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 5I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-5t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument [MATH: 3t.] So, we assume that the particular solution is also sinusoidal with argument [MATH: 3t,] i.e.,\n[MATH: I_p(t) = \\alpha\\cos(3t) + \\beta\\sin(3t).]\nTo find the values of [MATH: \\alpha] and [MATH: \\beta,] we substitute\n[MATH: I_{p}|= \u03b1\\cos (3t) + \u03b2\\sin (3t),; (dI_{p})/(dt)|= \u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t),]\ninto the inhomogeneous equation and group like terms on the left-hand side:\n[MATH: (\u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t)) + 5(\u03b1\\cos (3t) + \u03b2\\sin (3t))|= 5\\sin (3t); (\u2212 3\u03b1 + 5\u03b2)\\sin (3t) + (5\u03b1 + 3\u03b2)\\cos (3t)|= 5\\sin (3t)]\nEquating the coefficients, we get the following system of equations:\n[MATH: {\u2212 3\u03b1 + 5\u03b2 = 5|(equating the coefficients of\\sin (3t)); 5\u03b1 + 3\u03b2 = 0|(equating the coefficients of\\cos (3t))]\nSolving this system gives [MATH: \\alpha = -\\dfrac{15}{34},] [MATH: \\beta = \\dfrac{25}{34}.] Therefore, the particular solution is\n[MATH: I_p(t) = -\\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-5t} - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nNote the following:\n\n- The quantity [MATH: I_c(t) = Ae^{-5t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The function [MATH: I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t)] is the steady-state current. It governs the current's long-term behavior.\n\nTherefore, as [MATH: t\\to\\infty,] we have\n[MATH: I(t)\\approx I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nFinally, the amplitude of the steady-state current is given by\n[MATH: \\sqrt{\\left(-\\dfrac{15}{34}\\right)^2 + \\left(\\dfrac{25}{34}\\right)^2} \\approx 0.86\\,\\textrm{A},]\nrounded to two decimal places."
+      },
+      {
+        "lesson_index": 14,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "336463",
+        "dom_id": "question-336463",
+        "selector": "#question-336463",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-336463\"></p>",
+          "readable_text": "[IMG: /graphics/q-336463]",
+          "images": [
+            {
+              "src": "/graphics/q-336463",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Consider the RL circuit shown above. Given that the current <span class=\"math\">[MATH: I(t)]</span> at time <span class=\"math\">[MATH: t]</span> seconds is given by\n<span class=\"math\">[MATH: I(t) = Ae^{\u2212 14t} + \u03b1\\cos (2t) + \u03b2\\sin (2t),]</span>\nwhere <span class=\"math\">[MATH: A,]</span> <span class=\"math\">[MATH: \u03b1,]</span> and <span class=\"math\">[MATH: \u03b2]</span> are constants, find the value of <span class=\"math\">[MATH: \u03b1 + \u03b2.]</span></p>",
+          "readable_text": "Consider the RL circuit shown above. Given that the current [MATH: I(t)] at time [MATH: t] seconds is given by\n[MATH: I(t) = Ae^{\u2212 14t} + \u03b1\\cos (2t) + \u03b2\\sin (2t),]\nwhere [MATH: A,] [MATH: \u03b1,] and [MATH: \u03b2] are constants, find the value of [MATH: \u03b1 + \u03b2.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-336463-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (13)/(25)]</span> </p>",
+            "readable_text": "[MATH: (13)/(25)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-336463-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (9)/(25)]</span></p>",
+            "readable_text": "[MATH: (9)/(25)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-336463-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (7)/(25)]</span></p>",
+            "readable_text": "[MATH: (7)/(25)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-336463-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (17)/(25)]</span> </p>",
+            "readable_text": "[MATH: (17)/(25)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-336463-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (12)/(25)]</span> </p>",
+            "readable_text": "[MATH: (12)/(25)]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-336463",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-336463]\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the RL circuit shown above. Given that the current [MATH: I(t)] at time [MATH: t] seconds is given by\n[MATH: I(t) = Ae^{\u2212 14t} + \u03b1\\cos (2t) + \u03b2\\sin (2t),]\nwhere [MATH: A,] [MATH: \u03b1,] and [MATH: \u03b2] are constants, find the value of [MATH: \u03b1 + \u03b2.]\n\nChoices:\na. [MATH: (13)/(25)]\nb. [MATH: (9)/(25)]\nc. [MATH: (7)/(25)]\nd. [MATH: (17)/(25)]\ne. [MATH: (12)/(25)]"
+      },
+      {
+        "lesson_index": 15,
+        "question_index": 7,
+        "item_type": "question",
+        "question_id": "336210",
+        "dom_id": "question-336210",
+        "selector": "#question-336210",
+        "title": "Question 7",
+        "question_number": 7,
+        "question_format": "free-response",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-336210\"></p>",
+          "readable_text": "[IMG: /graphics/q-336210]",
+          "images": [
+            {
+              "src": "/graphics/q-336210",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "<p>A scientific calculator is required to answer this question.</p>",
+          "readable_text": "A scientific calculator is required to answer this question.",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Find the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.<span class=\"free-response-line\">The amplitude of the steady-state current is approximately\n<span class=\"blank\" data-blank-id=\"freeResponseTextbox-1\" data-blank-index=\"1\">[FREE_ENTRY 1]</span> amperes.</span></p>",
+          "readable_text": "Find the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.The amplitude of the steady-state current is approximately\n[FREE_ENTRY 1] amperes.",
+          "images": [],
+          "free_entry_blanks": [
+            {
+              "index": 1,
+              "dom_id": "freeResponseTextbox-1",
+              "placeholder": "[FREE_ENTRY 1]",
+              "input_type": "math-editor"
+            }
+          ],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-336210",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [
+          {
+            "index": 1,
+            "dom_id": "freeResponseTextbox-1",
+            "placeholder": "[FREE_ENTRY 1]",
+            "input_type": "math-editor"
+          }
+        ],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-336210]\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.The amplitude of the steady-state current is approximately\n[FREE_ENTRY 1] amperes."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nOne application of differential equations is to model the current in electrical circuits.\n\nContent:\nAn electrical circuit is a closed, continuous path through which an electric charge can flow. The current, measured in amperes ([MATH: \\textrm{A}]), is the rate at which electric charge flows through the circuit as a function of time.\n\nContent:\nElectrical circuits can contain many different components.\n\nContent:\n- A power source, such as a cell (or battery), that supplies energy to the circuit by maintaining a potential difference (electromotive force, EMF), measured in volts ([MATH: \\textrm{V}]).\n\n[IMG: /graphics/cf5e542c357bedff6e8cc4abe1946a9f]\n- Conducting paths, such as wires, through which current carriers (electrons) flow.\n\n[IMG: /graphics/861e36025ddb163b610f60a5c48c4d47]\n- A resistor opposes the current and dissipates energy as heat. Resistance is measured in ohms ([MATH: \\Omega]).\n\n[IMG: /graphics/480b064573dbe0ed330a13f950ce6656]\n- An inductor opposes changes in the current over time by storing energy in a magnetic field. Inductance is measured in henries ([MATH: \\textrm{H}]).\n\n[IMG: /graphics/d97a38c251b7313a94c8cabe7879986c]\n\nContent:\nIn the next slide, we will connect these components in series to form an RL circuit.\n\n---\n\nItem 2 \u2014 Tutorial: RL Circuits\n\nContent:\nElectrical circuits are said to be in series if the components are connected end to end in a single path, so that the same current flows through every component in the circuit.\n\nContent:\nIn this lesson, we'll look at RL circuits, which contain both a resistor and an inductor, most commonly in series with a voltage source. An example is shown below, consisting of a resistance [MATH: R,] in ohms, an inductance [MATH: L,] in henries, and a source EMF [MATH: E,] in volts.\n\nGraphic:\n[IMG: /graphics/8201f14bffbb8a40b920be8ea9d47f57]\n\nContent:\nHow do we find a differential equation that best describes the circuit's current [MATH: I(t),] measured in amperes, where [MATH: t] is the time, in seconds?\n\nContent:\nAccording to conservation of energy, as electric charge moves around a circuit, the energy gained from the source must equal the energy lost in the components. The decrease in voltage across a component is called a voltage drop.\n\nContent:\nFrom this follows Kirchhoff's Voltage Law, which states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops around the loop.\n\nContent:\nIn an RL circuit, there are two voltage drops:\n\nContent:\n- The resistor opposes the flow of current, hence producing a voltage drop proportional to the current, with a constant of proportionality [MATH: R{:}] [MATH: V_R = RI]\n- The inductor opposes changes in current, hence producing a voltage drop proportional to the rate of change of current, with a constant of proportionality [MATH: L{:}] [MATH: V_L = L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nContent:\nTherefore, by Kirchhoff's Voltage Law, the source voltage [MATH: E] is the sum of the voltage drops: [MATH: E = V_R + V_L.]\n\nContent:\nAs a result, the basic equation governing the amount of current [MATH: I(t)] in the circuit is\n[MATH: E = RI + L\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}\n\\quad\\Longrightarrow\\quad\n\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + \\dfrac{R}{L}I = \\dfrac{E}{L}.]\n\nContent:\nNext, we will look at a worked example with specific values for [MATH: R,] [MATH: L,] and [MATH: E.]\n\n---\n\nItem 3 \u2014 Tutorial: A Worked Example\n\nContent:\nConsider the RL circuit shown below.\n\nGraphic:\n[IMG: /graphics/8d3142f46337d40efdfe95cf0f96ba65]\n\nContent:\nLet's find the differential equation that describes the current [MATH: I] (in amperes) as a function of time [MATH: t] (in seconds).\n\nContent:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 5\\,\\textrm{V},] a resistor with resistance [MATH: 15\\,\\Omega,] and an inductor with an inductance of [MATH: 3\\,\\textrm{H}.]\n\nContent:\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nContent:\nIn an RL circuit, there are two voltage drops:\n\nContent:\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 15\\,\\Omega{:}]\n[MATH: V_R = 15I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 3\\,\\textrm{H}{:}]\n[MATH: V_L = 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nContent:\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 5 = 15I + 3\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = \\dfrac{5}{3}.]\n\n---\n\nItem 4 \u2014 Example: Constructing an Equation Governing the Current in an RL Circuit\n\nExample Prompt:\n[IMG: /graphics/8ecd3861795d3513d25a091b8f5aa93b]\n\nFind the differential equation governing the amount of current [MATH: I] (in amperes) at time [MATH: t] (in seconds) in the circuit given in the diagram above.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: E(t) = 7\\sin(3t)\\,\\textrm{V},] a resistor with resistance [MATH: 14\\,\\Omega,] and an inductor with an inductance of [MATH: 7\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 14\\,\\Omega.]\n[MATH: V_R = 14I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 7\\,\\textrm{H}.]\n[MATH: V_L = 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nThe source voltage (EMF) is given by\n[MATH: E(t) = 7\\sin(3t).]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 7\\sin(3t) = 14I + 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t},]\nwhich gives\n[MATH: 7\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = 7\\sin(3t) - 14I,]\nso\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\sin(3t) - 2I,]\n\nTherefore, the differential equation is\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 2I = \\sin(3t).]\n\n---\n\nItem 5 \u2014 Question 1\n\nPrompt:\nA series RL circuit has a source electromotive force (EMF) of [MATH: 10V,] a resistance of [MATH: 50\u03a9,] and an inductance of [MATH: 2H.] Find the differential equation governing the amount of current [MATH: I] (in amperes) in the circuit at time [MATH: t] (in seconds).\n\nChoices:\na. [MATH: (dI)/(dt) \u2212 50I = 10]\nb. [MATH: (dI)/(dt) + 25I = 5]\nc. [MATH: (dI)/(dt) \u2212 25I = 5]\nd. [MATH: (dI)/(dt) + 50I = 10]\ne. [MATH: (dI)/(dt) + (1)/(50)I = 10]\n\n---\n\nItem 6 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-336190]\n\nPrompt:\nFind the differential equation governing the amount of current [MATH: I] (in amperes) at time [MATH: t] (in seconds) in the circuit given in the diagram above.\n\nChoices:\na. [MATH: (dI)/(dt) + 12I = 2\\sin (3t)]\nb. [MATH: (dI)/(dt) \u2212 12I = (1)/(2)\\sin (3t)]\nc. [MATH: (dI)/(dt) + 48I = 4\\sin (3t)]\nd. [MATH: (dI)/(dt) + 12I = (1)/(2)\\sin (3t)]\ne. [MATH: (dI)/(dt) \u2212 48I = 2\\sin (3t)]\n\n---\n\nItem 7 \u2014 Tutorial: Steady-State Solutions for Constant EMFs\n\nContent:\nIn a first-order linear differential equation, the solution splits into a transient term that decays over time and a steady-state term that remains as [MATH: t \\to \\infty.]\n\nContent:\nIn an RL circuit with a constant electromotive force (EMF), this steady-state value corresponds to the long-term current in the circuit after all transient effects have died out, independent of the initial condition.\n\nContent:\nTo demonstrate how to extract the steady-state current from the general solution of an RL circuit model, suppose the current [MATH: I(t),] in amperes, in a series RL circuit governed by the differential equation\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 12.]\n\nContent:\nThis is a first-order linear equation with constant coefficients. To find the general solution, we must sum the complementary and particular solutions.\n\nContent:\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-6t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree [MATH: 0.] So, we assume that the particular solution is also a polynomial of degree [MATH: 0,] i.e.,\n[MATH: I_p(t) = \\alpha.]\nTo find the value of [MATH: \\alpha,] we substitute [MATH: I_p = \\alpha] and [MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)' = 0,] into the inhomogeneous equation:\n[MATH: 0 + 6\\alpha = 12\n\\quad\\Longrightarrow\\quad\n\\alpha = 2]\nTherefore, the particular solution is [MATH: I_p(t) = 2.]\n\nContent:\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n\nContent:\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + 2.]\n\nContent:\nNote the following:\n\nContent:\n- The quantity [MATH: I_c = Ae^{-6t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The constant [MATH: I_p = 2] is the steady-state current. As [MATH: t\\to\\infty,] the current [MATH: I] approaches the value of the steady-state current.\n\nContent:\nTherefore, the steady-state current is [MATH: 2] amperes.\n\n---\n\nItem 8 \u2014 Example: Solving an Equation Governing the Current in an RL Circuit: Constant EMF\n\nExample Prompt:\n[IMG: /graphics/d621f8115fb854aa278fd2eea1f93614]\n\nFind an equation for the current [MATH: I(t)] (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time [MATH: t] (in seconds) only, given that the current when [MATH: t = 0\\,\\textrm s] is [MATH: 1\\,\\textrm{A}.]\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 4\\,\\textrm{V},] a resistor of resistance of [MATH: 12\\,\\Omega,] and an inductor of inductance [MATH: 2\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 12\\,\\Omega.]\n[MATH: V_R = 12I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 2\\,\\textrm{H}.]\n[MATH: V_L = 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n\n[MATH: 4 = 12I + 2\\cdot\\,\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 6I = 2.]\n\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 6I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-6t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is a polynomial of degree [MATH: 0.] So, we assume that the particular solution is also a polynomial of degree [MATH: 0,] i.e.,\n[MATH: I_p(t) = \\alpha.]\nTo find the value of [MATH: \\alpha,] we substitute [MATH: I_p = \\alpha] and [MATH: \\dfrac{\\mathrm{d}I_p}{\\mathrm{d}t} = (\\alpha)' = 0] into the inhomogeneous equation:\n[MATH: 0 + 6\\alpha = 2\n\\quad\\Longrightarrow\\quad\n\\alpha = \\dfrac13]\nTherefore, the particular solution is [MATH: I_p(t) = \\dfrac13.]\n\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-6t} + \\dfrac13.]\n\nWe're told that the circuit starts with an initial current of [MATH: 1\\,\\textrm{A}.] So, we can apply the initial condition [MATH: I(0) = 1,] and solve for [MATH: A{:}]\n[MATH: I(0)|= 1; Ae^{\u2212 6(0)} + (1)/(3)|= 1; A|= (2)/(3)]\n\nTherefore, we have the following expression for [MATH: I(t){:}]\n[MATH: I(t)|= (2)/(3)e^{\u2212 6t} + (1)/(3); = (1)/(3)(2e^{\u2212 6t} + 1)]\n\nNote the following:\n\n- The quantity [MATH: I_c = \\dfrac23e^{-6t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The constant [MATH: I_p = \\dfrac13] is the steady-state current. As [MATH: t\\to\\infty,] the current [MATH: I] approaches the value of the steady-state current.\n\n---\n\nItem 9 \u2014 Question 3\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nThe current [MATH: I(t),] in amperes, in a series RL circuit is governed by the differential equation\n\n[MATH: (dI)/(dt) + 10I = 4, I(0) = 2.]\nFind the steady-state current for this circuit.\n\nThe steady-state current is\n[FREE_ENTRY 1] amperes.\n\n---\n\nItem 10 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-336198]\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind an equation for the current [MATH: I(t)] (in amperes) in the circuit given in the diagram above, expressing your answer in terms of time [MATH: t] (in seconds) only, given that the current when [MATH: t = 0s] is [MATH: 1A.][MATH: I(t) =]\n[FREE_ENTRY 1]\n\n---\n\nItem 11 \u2014 Question 5\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nA series RL circuit has a source electromotive force (EMF) of [MATH: 5V,] a resistance of [MATH: 20\u03a9,] and an inductance of [MATH: 2H.]\nFind, rounded to two decimal places, the circuit's current after [MATH: 0.01] seconds given that the initial current is [MATH: 2A.]The current after [MATH: 0.01] seconds is\n[FREE_ENTRY 1] amperes.\n\n---\n\nItem 12 \u2014 Tutorial: Steady-State Solutions for Sinusoidal EMFs\n\nContent:\nIn many cases, the EMF produced by a power source is sinusoidal, not constant. Such a power source is shown in the diagram below.\n\nGraphic:\n[IMG: /graphics/2eda2bc5660f78d79cdeead37101b6b8]\n\nContent:\nIn a first-order linear RL circuit driven by a sinusoidal voltage, the solution consists of a transient current that decays over time and a steady-state current that oscillates with the same frequency as the input and is independent of the initial condition.\n\nContent:\nFor example, let's find the amplitude of the steady-state current in the RL circuit shown below.\n\nGraphic:\n[IMG: /graphics/b625942eacafca3975be3c9ff39ca540]\n\nContent:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 3\\sin(4t)\\,\\textrm{V},] a resistor of resistance [MATH: 7\\,\\Omega,] and an inductor of inductance [MATH: 1\\,\\textrm{H}.]\n\nContent:\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nContent:\nIn an RL circuit, there are two voltage drops:\n\nContent:\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 7\\,\\Omega.]\n[MATH: V_R = 7I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 1\\,\\textrm{H}.]\n[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nContent:\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 3\\sin(4t) = 7I + 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\nwhich gives the equation\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 7I = 3\\sin(4t).]\n\nContent:\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\nContent:\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 7I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-7t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument [MATH: 4t.] So, we assume that the particular solution is also sinusoidal with argument [MATH: 4t,] i.e.,\n[MATH: I_p(t) = \\alpha\\cos(4t) + \\beta\\sin(4t).]\nTo find the values of [MATH: \\alpha] and [MATH: \\beta,] we substitute\n[MATH: I_{p}|= \u03b1\\cos (4t) + \u03b2\\sin (4t),; (dI_{p})/(dt)|= \u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t),]\ninto the inhomogeneous equation and group like terms on the left-hand side:\n[MATH: (\u2212 4\u03b1\\sin (4t) + 4\u03b2\\cos (4t)) + 7(\u03b1\\cos (4t) + \u03b2\\sin (4t))|= 3\\sin (4t); (\u2212 4\u03b1 + 7\u03b2)\\sin (4t) + (7\u03b1 + 4\u03b2)\\cos (4t)|= 3\\sin (4t)]\nEquating the coefficients, we get the following system of equations:\n[MATH: {\u2212 4\u03b1 + 7\u03b2 = 3|(equating the coefficients of\\sin (4t)); 7\u03b1 + 4\u03b2 = 0|(equating the coefficients of\\cos (4t))]\nSolving this system gives [MATH: \\alpha = -\\dfrac{12}{65},] [MATH: \\beta = \\dfrac{21}{65}.] Therefore, the particular solution is\n[MATH: I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]\n\nContent:\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-7t} - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]\n\nContent:\nNote the following:\n\nContent:\n- The quantity [MATH: I_c(t) = Ae^{-7t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The function [MATH: I_p(t) = - \\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t)] is the steady-state current. It governs the current's long-term behavior.\n\nContent:\nTherefore, as [MATH: t\\to\\infty,] we have\n\nContent:\n[MATH: I(t) \\approx I_p(t) = -\\dfrac{12}{65}\\cos(4t) + \\dfrac{21}{65}\\sin(4t).]\n\nContent:\nFinally, the amplitude of the steady-state current is given by\n\nContent:\n[MATH: \\sqrt{\\left(-\\dfrac{12}{65}\\right)^2 + \\left(\\dfrac{21}{65}\\right)^2} \\approx 0.37\\,\\textrm{A},]\n\nContent:\nrounded to two decimal places. This amplitude represents the maximum magnitude of the steady-state current flowing through the circuit.\n\n---\n\nItem 13 \u2014 Example: Solving an Equation Governing the Current in an RL Circuit: Sinusoidal EMF\n\nExample Prompt:\n[IMG: /graphics/596d73053c5f191533d2ca0ece3ff989]\n\nFind the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.\n\nContent:\nEXPLANATION\n\nExplanation:\nThe diagram shows a series RL circuit with a source electromotive force (EMF) of [MATH: 5\\sin(3t)\\,\\textrm{V},] a resistor of resistance [MATH: 5\\,\\Omega,] and an inductor of inductance [MATH: 1\\,\\textrm{H}.]\n\nKirchhoff's voltage law states that in a series circuit, the source voltage (EMF) equals the sum of the voltage drops.\n\nIn an RL circuit, there are two voltage drops:\n\n- The voltage drop across the resistor is proportional to the current, with a constant of proportionality [MATH: R = 5\\,\\Omega.]\n[MATH: V_R = 5I]\n- The voltage drop across the inductor is proportional to the rate of change of current, with a constant of proportionality [MATH: L = 1\\,\\textrm{H}.]\n[MATH: V_L = 1\\cdot\\dfrac{\\mathrm{d}I}{\\mathrm{d}t} = \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}.]\n\nTherefore, by Kirchhoff's voltage law, the differential equation governing the amount of current [MATH: I] in the circuit is\n[MATH: 5\\sin(3t) = 5I + \\dfrac{\\mathrm{d}I}{\\mathrm{d}t}]\n\nwhich gives\n[MATH: \\dfrac{\\mathrm{d}I}{\\mathrm{d}t} + 5I = 5\\sin(3t).]\n\nThis is a first-order linear equation with constant coefficients. So, to find the general solution, we must find the sum of the complementary and particular solutions.\n\n- To find the complementary solution [MATH: I_c,] we solve the corresponding homogeneous equation, given by\n[MATH: \\dfrac{\\mathrm{d}I_c}{\\mathrm{d}t} + 5I_c = 0.]\nSolving using an integration technique, such as separation of variables, we obtain the complementary solution\n[MATH: I_c(t) = Ae^{-5t},]\nwhere [MATH: A] is a constant of integration.\n- Next, we find the particular solution. Note that the right-hand side of the inhomogeneous equation is sinusoidal with argument [MATH: 3t.] So, we assume that the particular solution is also sinusoidal with argument [MATH: 3t,] i.e.,\n[MATH: I_p(t) = \\alpha\\cos(3t) + \\beta\\sin(3t).]\nTo find the values of [MATH: \\alpha] and [MATH: \\beta,] we substitute\n[MATH: I_{p}|= \u03b1\\cos (3t) + \u03b2\\sin (3t),; (dI_{p})/(dt)|= \u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t),]\ninto the inhomogeneous equation and group like terms on the left-hand side:\n[MATH: (\u2212 3\u03b1\\sin (3t) + 3\u03b2\\cos (3t)) + 5(\u03b1\\cos (3t) + \u03b2\\sin (3t))|= 5\\sin (3t); (\u2212 3\u03b1 + 5\u03b2)\\sin (3t) + (5\u03b1 + 3\u03b2)\\cos (3t)|= 5\\sin (3t)]\nEquating the coefficients, we get the following system of equations:\n[MATH: {\u2212 3\u03b1 + 5\u03b2 = 5|(equating the coefficients of\\sin (3t)); 5\u03b1 + 3\u03b2 = 0|(equating the coefficients of\\cos (3t))]\nSolving this system gives [MATH: \\alpha = -\\dfrac{15}{34},] [MATH: \\beta = \\dfrac{25}{34}.] Therefore, the particular solution is\n[MATH: I_p(t) = -\\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nNow, since the general solution is given by the sum of the complementary solution and the particular solution, the general solution in our case is\n[MATH: I(t) = I_c(t) + I_p(t) = Ae^{-5t} - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nNote the following:\n\n- The quantity [MATH: I_c(t) = Ae^{-5t}] is the transient current, since it goes to zero as [MATH: t \\to \\infty.]\n- The function [MATH: I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t)] is the steady-state current. It governs the current's long-term behavior.\n\nTherefore, as [MATH: t\\to\\infty,] we have\n[MATH: I(t)\\approx I_p(t) = - \\dfrac{15}{34}\\cos(3t) + \\dfrac{25}{34}\\sin(3t).]\n\nFinally, the amplitude of the steady-state current is given by\n[MATH: \\sqrt{\\left(-\\dfrac{15}{34}\\right)^2 + \\left(\\dfrac{25}{34}\\right)^2} \\approx 0.86\\,\\textrm{A},]\nrounded to two decimal places.\n\n---\n\nItem 14 \u2014 Question 6\n\nQuestion Graphic:\n[IMG: /graphics/q-336463]\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nConsider the RL circuit shown above. Given that the current [MATH: I(t)] at time [MATH: t] seconds is given by\n[MATH: I(t) = Ae^{\u2212 14t} + \u03b1\\cos (2t) + \u03b2\\sin (2t),]\nwhere [MATH: A,] [MATH: \u03b1,] and [MATH: \u03b2] are constants, find the value of [MATH: \u03b1 + \u03b2.]\n\nChoices:\na. [MATH: (13)/(25)]\nb. [MATH: (9)/(25)]\nc. [MATH: (7)/(25)]\nd. [MATH: (17)/(25)]\ne. [MATH: (12)/(25)]\n\n---\n\nItem 15 \u2014 Question 7\n\nQuestion Graphic:\n[IMG: /graphics/q-336210]\n\nCalculator Instructions:\nA scientific calculator is required to answer this question.\n\nPrompt:\nFind the amplitude of the steady-state current for the RL circuit shown above, rounded to two decimal places.The amplitude of the steady-state current is approximately\n[FREE_ENTRY 1] amperes."
+  }
+}

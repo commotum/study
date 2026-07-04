@@ -1,0 +1,1547 @@
+{
+  "schema_version": 2,
+  "topic_id": "5420",
+  "topic_title": "Processing Strings Using Turing Machines",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5420/Source/5420.html",
+  "source_url": "https://mathacademy.com/topics/5420",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "420718",
+        "dom_id": "sectionLink-420718",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-420718"
+      },
+      {
+        "index": 2,
+        "step_id": "420719",
+        "dom_id": "sectionLink-420719",
+        "name": "",
+        "title": "A Worked Example",
+        "selector": "#sectionLink-420719"
+      },
+      {
+        "index": 3,
+        "step_id": "420720",
+        "dom_id": "sectionLink-420720",
+        "name": "",
+        "title": "Applying a Turing Machine to a String Using a Transition Diagram",
+        "selector": "#sectionLink-420720"
+      },
+      {
+        "index": 4,
+        "step_id": "420723",
+        "dom_id": "sectionLink-420723",
+        "name": "",
+        "title": "Applying a Turing Machine to a String Using a Transition Table",
+        "selector": "#sectionLink-420723"
+      },
+      {
+        "index": 5,
+        "step_id": "420726",
+        "dom_id": "sectionLink-420726",
+        "name": "",
+        "title": "Instantaneous Descriptions",
+        "selector": "#sectionLink-420726"
+      },
+      {
+        "index": 6,
+        "step_id": "420727",
+        "dom_id": "sectionLink-420727",
+        "name": "",
+        "title": "Applying a Turing Machine to a String Using Instantaneous Descriptions",
+        "selector": "#sectionLink-420727"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "3802",
+        "name": "Introduction to Turing Machines",
+        "href": "/topics/introduction-to-turing-machines-3802"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "420718",
+        "content_id": "9992",
+        "dom_id": "step-420718",
+        "selector": "#step-420718",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a previous lesson, we saw how to update a Turing machine&#x27;s configuration. In this lesson, we&#x27;ll discuss setting up and applying a Turing machine to an input string.</p>",
+            "readable_text": "In a previous lesson, we saw how to update a Turing machine's configuration. In this lesson, we'll discuss setting up and applying a Turing machine to an input string.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In a Turing machine&#x27;s starting state, a given input string is written on the tape with infinite empty cells on either side.\nThe tape head is positioned at the leftmost cell that holds the input symbol and is labeled with the machine&#x27;s start state.</p>",
+            "readable_text": "In a Turing machine's starting state, a given input string is written on the tape with infinite empty cells on either side.\nThe tape head is positioned at the leftmost cell that holds the input symbol and is labeled with the machine's start state.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Below is an example of the starting configuration of a Turing machine with a starting state of <span class=\"math\">[MATH: q]</span> and an input string of <span class=\"math\">[MATH: 10\\square1]</span>.</p>",
+            "readable_text": "Below is an example of the starting configuration of a Turing machine with a starting state of [MATH: q] and an input string of [MATH: 10\\square1].",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/dd838135b642ddd9ba248cd283f6f596\"></p>",
+            "readable_text": "[IMG: /graphics/dd838135b642ddd9ba248cd283f6f596]",
+            "images": [
+              {
+                "src": "/graphics/dd838135b642ddd9ba248cd283f6f596",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We then repeatedly update its configuration using the transition function <span class=\"math\">[MATH: \\delta: Q \\times \\Gamma \\to Q \\times \\Gamma \\times \\{L,R\\},]</span> as before. By doing so, we get one of the following three cases:</p>",
+            "readable_text": "We then repeatedly update its configuration using the transition function [MATH: \\delta: Q \\times \\Gamma \\to Q \\times \\Gamma \\times \\{L,R\\},] as before. By doing so, we get one of the following three cases:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>If the machine reaches a final state in a finite number of steps, it stops.</p></li><li><p>If the transition function <span class=\"math\">[MATH: \\delta(q,X)]</span> is undefined at some point in the process, the machine gets stuck.</p></li><li><p>If the machine repeats a step or sequence of steps forever, it falls into an infinite cycle and never stops.</p></li></ul>",
+            "readable_text": "- If the machine reaches a final state in a finite number of steps, it stops.\n- If the transition function [MATH: \\delta(q,X)] is undefined at some point in the process, the machine gets stuck.\n- If the machine repeats a step or sequence of steps forever, it falls into an infinite cycle and never stops.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s demonstrate with an example.</p>",
+            "readable_text": "Let's demonstrate with an example.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/dd838135b642ddd9ba248cd283f6f596",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nIn a previous lesson, we saw how to update a Turing machine's configuration. In this lesson, we'll discuss setting up and applying a Turing machine to an input string.\n\nContent:\nIn a Turing machine's starting state, a given input string is written on the tape with infinite empty cells on either side.\nThe tape head is positioned at the leftmost cell that holds the input symbol and is labeled with the machine's start state.\n\nContent:\nBelow is an example of the starting configuration of a Turing machine with a starting state of [MATH: q] and an input string of [MATH: 10\\square1].\n\nGraphic:\n[IMG: /graphics/dd838135b642ddd9ba248cd283f6f596]\n\nContent:\nWe then repeatedly update its configuration using the transition function [MATH: \\delta: Q \\times \\Gamma \\to Q \\times \\Gamma \\times \\{L,R\\},] as before. By doing so, we get one of the following three cases:\n\nContent:\n- If the machine reaches a final state in a finite number of steps, it stops.\n- If the transition function [MATH: \\delta(q,X)] is undefined at some point in the process, the machine gets stuck.\n- If the machine repeats a step or sequence of steps forever, it falls into an infinite cycle and never stops.\n\nContent:\nLet's demonstrate with an example."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "420719",
+        "content_id": "11640",
+        "dom_id": "step-420719",
+        "selector": "#step-420719",
+        "step_anchor": "step-2",
+        "title": "A Worked Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose the string <span class=\"math\">[MATH: 10\\square1]</span> is written on the tape of the Turing machine given by the diagram below, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol and the tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span></p>",
+            "readable_text": "Suppose the string [MATH: 10\\square1] is written on the tape of the Turing machine given by the diagram below, where [MATH: \\square] is the blank symbol and the tape head initially observes the left-most symbol of the string in state [MATH: q_1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/cb966e7baf8a9844887857ceeb624a41\"></p>",
+            "readable_text": "[IMG: /graphics/cb966e7baf8a9844887857ceeb624a41]",
+            "images": [
+              {
+                "src": "/graphics/cb966e7baf8a9844887857ceeb624a41",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s see how the machine processes the data on the tape step-by-step.</p>",
+            "readable_text": "Let's see how the machine processes the data on the tape step-by-step.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>According to the description, our Turing machine starts in the following configuration:</p></li></ul>",
+            "readable_text": "- According to the description, our Turing machine starts in the following configuration:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/8c75070bf21b64ce54975276b0914eda\"></p>",
+            "readable_text": "[IMG: /graphics/8c75070bf21b64ce54975276b0914eda]",
+            "images": [
+              {
+                "src": "/graphics/8c75070bf21b64ce54975276b0914eda",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The machine observes symbol <span class=\"math\">[MATH: 1]</span> in state <span class=\"math\">[MATH: q_1.]</span> According to the transition diagram, \n<span class=\"math\">[MATH: (q_1,1) \\to (q_1,1,R).]</span>\nSo, we should stay in state <span class=\"math\">[MATH: q_1,]</span> write <span class=\"math\">[MATH: 1]</span> into the cell, and move right. Performing this transition gives us the following new configuration:</p></li></ul>",
+            "readable_text": "- The machine observes symbol [MATH: 1] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,1) \\to (q_1,1,R).]\nSo, we should stay in state [MATH: q_1,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/03f14026e1d4929172a50bbd204e7bfc\"></p>",
+            "readable_text": "[IMG: /graphics/03f14026e1d4929172a50bbd204e7bfc]",
+            "images": [
+              {
+                "src": "/graphics/03f14026e1d4929172a50bbd204e7bfc",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The machine observes symbol <span class=\"math\">[MATH: 0]</span> in state <span class=\"math\">[MATH: q_1.]</span> According to the transition diagram, \n<span class=\"math\">[MATH: (q_1,0) \\to (q_2,1,R).]</span>\nSo, we should swap to state <span class=\"math\">[MATH: q_2,]</span> write <span class=\"math\">[MATH: 1]</span> into the cell, and move right. Performing this transition gives us the following new configuration:</p></li></ul>",
+            "readable_text": "- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,0) \\to (q_2,1,R).]\nSo, we should swap to state [MATH: q_2,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/14aff7bd978d729aef4e5dbd6b8d7487\"></p>",
+            "readable_text": "[IMG: /graphics/14aff7bd978d729aef4e5dbd6b8d7487]",
+            "images": [
+              {
+                "src": "/graphics/14aff7bd978d729aef4e5dbd6b8d7487",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>The machine observes an empty cell <span class=\"math\">[MATH: \\square]</span> in state <span class=\"math\">[MATH: q_2.]</span> According to the transition diagram, \n<span class=\"math\">[MATH: (q_2,\\square) \\to (q_0,1,R).]</span>\nSo, we should swap to state <span class=\"math\">[MATH: q_0,]</span> write <span class=\"math\">[MATH: 1]</span> into the cell, and move right. Performing this transition gives us the following new configuration:</p></li></ul>",
+            "readable_text": "- The machine observes an empty cell [MATH: \\square] in state [MATH: q_2.] According to the transition diagram,\n[MATH: (q_2,\\square) \\to (q_0,1,R).]\nSo, we should swap to state [MATH: q_0,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/701153f8b3d6f8f791d2dc9bd2080e8b\"></p>",
+            "readable_text": "[IMG: /graphics/701153f8b3d6f8f791d2dc9bd2080e8b]",
+            "images": [
+              {
+                "src": "/graphics/701153f8b3d6f8f791d2dc9bd2080e8b",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, the machine observes the symbol <span class=\"math\">[MATH: 1]</span> in state <span class=\"math\">[MATH: q_0.]</span> According to the transition diagram, <span class=\"math\">[MATH: q_0]</span> is the final state. So, the machine stops at <span class=\"math\">[MATH: q_0.]</span></p>",
+            "readable_text": "Finally, the machine observes the symbol [MATH: 1] in state [MATH: q_0.] According to the transition diagram, [MATH: q_0] is the final state. So, the machine stops at [MATH: q_0.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s now see an example of a machine that doesn&#x27;t stop at a final state.</p>",
+            "readable_text": "Let's now see an example of a machine that doesn't stop at a final state.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/cb966e7baf8a9844887857ceeb624a41",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/8c75070bf21b64ce54975276b0914eda",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/03f14026e1d4929172a50bbd204e7bfc",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/14aff7bd978d729aef4e5dbd6b8d7487",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/701153f8b3d6f8f791d2dc9bd2080e8b",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nSuppose the string [MATH: 10\\square1] is written on the tape of the Turing machine given by the diagram below, where [MATH: \\square] is the blank symbol and the tape head initially observes the left-most symbol of the string in state [MATH: q_1.]\n\nGraphic:\n[IMG: /graphics/cb966e7baf8a9844887857ceeb624a41]\n\nContent:\nLet's see how the machine processes the data on the tape step-by-step.\n\nContent:\n- According to the description, our Turing machine starts in the following configuration:\n\nGraphic:\n[IMG: /graphics/8c75070bf21b64ce54975276b0914eda]\n\nContent:\n- The machine observes symbol [MATH: 1] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,1) \\to (q_1,1,R).]\nSo, we should stay in state [MATH: q_1,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\nGraphic:\n[IMG: /graphics/03f14026e1d4929172a50bbd204e7bfc]\n\nContent:\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,0) \\to (q_2,1,R).]\nSo, we should swap to state [MATH: q_2,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\nGraphic:\n[IMG: /graphics/14aff7bd978d729aef4e5dbd6b8d7487]\n\nContent:\n- The machine observes an empty cell [MATH: \\square] in state [MATH: q_2.] According to the transition diagram,\n[MATH: (q_2,\\square) \\to (q_0,1,R).]\nSo, we should swap to state [MATH: q_0,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\nGraphic:\n[IMG: /graphics/701153f8b3d6f8f791d2dc9bd2080e8b]\n\nContent:\nFinally, the machine observes the symbol [MATH: 1] in state [MATH: q_0.] According to the transition diagram, [MATH: q_0] is the final state. So, the machine stops at [MATH: q_0.]\n\nContent:\nLet's now see an example of a machine that doesn't stop at a final state."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "420720",
+        "content_id": "15698",
+        "dom_id": "step-420720",
+        "selector": "#step-420720",
+        "step_anchor": "step-3",
+        "title": "Applying a Turing Machine to a String Using a Transition Diagram",
+        "key_prerequisites": [
+          {
+            "topic_id": "3802",
+            "name": "Introduction to Turing Machines",
+            "href": "/topics/3802",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/c0468e9617f1cd22d9339dabbc7e3f34\"></div><p>The string <span class=\"math\">[MATH: 0\\square]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span> What would be the machine&#x27;s configuration when it stops?</p>",
+            "readable_text": "[IMG: /graphics/c0468e9617f1cd22d9339dabbc7e3f34]\n\nThe string [MATH: 0\\square] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What would be the machine's configuration when it stops?",
+            "images": [
+              {
+                "src": "/graphics/c0468e9617f1cd22d9339dabbc7e3f34",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let&#x27;s see how the machine processes the data on the tape step-by-step.</p><ul><li><p>According to the description, our Turing machine starts at the following configuration:</p></li></ul><div class=\"graphic\"><img src=\"/graphics/3de3bed74d656319b661e49833e822aa\"></div><ul><li><p>The machine observes symbol <span class=\"math\">[MATH: 0]</span> in state <span class=\"math\">[MATH: q_1.]</span> According to the transition diagram, \n<span class=\"math\">[MATH: (q_1,0) \\to (q_2,0,R).]</span>\nSo, we should swap to state <span class=\"math\">[MATH: q_2,]</span> write <span class=\"math\">[MATH: 0]</span> into the cell, and move right. Performing this transition gives us the following new configuration:</p></li></ul><div class=\"graphic\"><img src=\"/graphics/9c7de070e34c0f2ae61aad217757f30a\"></div><ul><li><p>The machine observes an empty cell <span class=\"math\">[MATH: \\square]</span> in state <span class=\"math\">[MATH: q_2.]</span> According to the transition diagram, \n<span class=\"math\">[MATH: (q_2,\\square) \\to (q_2,0,R).]</span>\nSo, we should stay in state <span class=\"math\">[MATH: q_2,]</span> write <span class=\"math\">[MATH: 0]</span> into the cell, and move right. Performing this transition gives us the following new configuration:</p></li></ul><div class=\"graphic\"><img src=\"/graphics/f0b4ffa6e71d8d9a5d60178ff3c3037d\"></div><p>Notice that the final step will be repeated forever since the tape has infinitely many empty cells to the right. So, the machine falls into an infinite cycle and never stops.</p>",
+            "readable_text": "Let's see how the machine processes the data on the tape step-by-step.\n\n- According to the description, our Turing machine starts at the following configuration:\n\n[IMG: /graphics/3de3bed74d656319b661e49833e822aa]\n\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,0) \\to (q_2,0,R).]\nSo, we should swap to state [MATH: q_2,] write [MATH: 0] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/9c7de070e34c0f2ae61aad217757f30a]\n\n- The machine observes an empty cell [MATH: \\square] in state [MATH: q_2.] According to the transition diagram,\n[MATH: (q_2,\\square) \\to (q_2,0,R).]\nSo, we should stay in state [MATH: q_2,] write [MATH: 0] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/f0b4ffa6e71d8d9a5d60178ff3c3037d]\n\nNotice that the final step will be repeated forever since the tape has infinitely many empty cells to the right. So, the machine falls into an infinite cycle and never stops.",
+            "images": [
+              {
+                "src": "/graphics/3de3bed74d656319b661e49833e822aa",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/9c7de070e34c0f2ae61aad217757f30a",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/f0b4ffa6e71d8d9a5d60178ff3c3037d",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/c0468e9617f1cd22d9339dabbc7e3f34",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/3de3bed74d656319b661e49833e822aa",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/9c7de070e34c0f2ae61aad217757f30a",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/f0b4ffa6e71d8d9a5d60178ff3c3037d",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/c0468e9617f1cd22d9339dabbc7e3f34]\n\nThe string [MATH: 0\\square] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What would be the machine's configuration when it stops?\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's see how the machine processes the data on the tape step-by-step.\n\n- According to the description, our Turing machine starts at the following configuration:\n\n[IMG: /graphics/3de3bed74d656319b661e49833e822aa]\n\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,0) \\to (q_2,0,R).]\nSo, we should swap to state [MATH: q_2,] write [MATH: 0] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/9c7de070e34c0f2ae61aad217757f30a]\n\n- The machine observes an empty cell [MATH: \\square] in state [MATH: q_2.] According to the transition diagram,\n[MATH: (q_2,\\square) \\to (q_2,0,R).]\nSo, we should stay in state [MATH: q_2,] write [MATH: 0] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/f0b4ffa6e71d8d9a5d60178ff3c3037d]\n\nNotice that the final step will be repeated forever since the tape has infinitely many empty cells to the right. So, the machine falls into an infinite cycle and never stops."
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "258782",
+        "dom_id": "question-258782",
+        "selector": "#question-258782",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-258782\"></p>",
+          "readable_text": "[IMG: /graphics/q-258782]",
+          "images": [
+            {
+              "src": "/graphics/q-258782",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: 1\u25fb11]</span> is written on the tape of the Turing machine given by the above diagram, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> Which of the following shows the machine&#x27;s configuration when it stops?</p>",
+          "readable_text": "The string [MATH: 1\u25fb11] is written on the tape of the Turing machine given by the above diagram, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-258782-a",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-258782-a-3\"></p>",
+            "readable_text": "[IMG: /graphics/q-258782-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-258782-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-258782-b",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-258782-a-4\"> </p>",
+            "readable_text": "[IMG: /graphics/q-258782-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-258782-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-258782-c",
+            "content_type": "text",
+            "normalized_html": "<p> The machine does not stop (infinite cycle).</p>",
+            "readable_text": "The machine does not stop (infinite cycle).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-258782-d",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-258782-a-1\"></p>",
+            "readable_text": "[IMG: /graphics/q-258782-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-258782-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-258782-e",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-258782-a-2\"></p>",
+            "readable_text": "[IMG: /graphics/q-258782-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-258782-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-258782",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258782-a-3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258782-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258782-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-258782-a-2",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-258782]\n\nPrompt:\nThe string [MATH: 1\u25fb11] is written on the tape of the Turing machine given by the above diagram, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. [IMG: /graphics/q-258782-a-3]\nb. [IMG: /graphics/q-258782-a-4]\nc. The machine does not stop (infinite cycle).\nd. [IMG: /graphics/q-258782-a-1]\ne. [IMG: /graphics/q-258782-a-2]"
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "238162",
+        "dom_id": "question-238162",
+        "selector": "#question-238162",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-238162\"></p>",
+          "readable_text": "[IMG: /graphics/q-238162]",
+          "images": [
+            {
+              "src": "/graphics/q-238162",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: 11\u25fb0]</span> is written on the tape of the Turing machine given by the above diagram, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> Which of the following shows the machine&#x27;s configuration when it stops?</p>",
+          "readable_text": "The string [MATH: 11\u25fb0] is written on the tape of the Turing machine given by the above diagram, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-238162-a",
+            "content_type": "text",
+            "normalized_html": "<p>The machine does not stop (infinite cycle).</p>",
+            "readable_text": "The machine does not stop (infinite cycle).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-238162-b",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238162-a-2\"></p>",
+            "readable_text": "[IMG: /graphics/q-238162-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-238162-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-238162-c",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238162-a-1\"></p>",
+            "readable_text": "[IMG: /graphics/q-238162-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-238162-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-238162-d",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238162-a-3\"></p>",
+            "readable_text": "[IMG: /graphics/q-238162-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-238162-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-238162-e",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238162-a-4\"></p>",
+            "readable_text": "[IMG: /graphics/q-238162-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-238162-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-238162",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238162-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238162-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238162-a-3",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238162-a-4",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-238162]\n\nPrompt:\nThe string [MATH: 11\u25fb0] is written on the tape of the Turing machine given by the above diagram, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. The machine does not stop (infinite cycle).\nb. [IMG: /graphics/q-238162-a-2]\nc. [IMG: /graphics/q-238162-a-1]\nd. [IMG: /graphics/q-238162-a-3]\ne. [IMG: /graphics/q-238162-a-4]"
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "420723",
+        "content_id": "15700",
+        "dom_id": "step-420723",
+        "selector": "#step-420723",
+        "step_anchor": "step-6",
+        "title": "Applying a Turing Machine to a String Using a Transition Table",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \\square]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! q_1]</span></p></td><td><p><span class=\"math\">[MATH: (q_1,1,R)]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td><td><p><span class=\"math\">[MATH: (q_0,0,L)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q_0]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td></tr></table><p>The string <span class=\"math\">[MATH: 01\\square0]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span> What would be the machine&#x27;s configuration when it stops?</p>",
+            "readable_text": "| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 0] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_1,1,R)] | [MATH: -] | [MATH: (q_0,0,L)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] | [MATH: -] |\n\nThe string [MATH: 01\\square0] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What would be the machine's configuration when it stops?",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Let&#x27;s see how the machine processes the data on the tape step-by-step.</p><ul><li><p>According to the description, our Turing machine starts in the following configuration:</p></li></ul><div class=\"graphic\"><img src=\"/graphics/eeac30ee94c09a2a6d79219e05937c45\"></div><ul><li><p>The machine observes symbol <span class=\"math\">[MATH: 0]</span> in state <span class=\"math\">[MATH: q_1.]</span> According to the transition table, \n<span class=\"math\">[MATH: \\delta(q_1,0) = (q_1,1,R).]</span>\nSo, we should stay in state <span class=\"math\">[MATH: q_1,]</span> write <span class=\"math\">[MATH: 1]</span> into the cell, and move right. Performing this transition gives us the following new configuration:</p></li></ul><div class=\"graphic\"><img src=\"/graphics/5fb2fa8a06e07b234b9336104184c7cc\"></div><p>Finally, the machine observes the symbol <span class=\"math\">[MATH: 1]</span> in state <span class=\"math\">[MATH: q_1.]</span> According to the transition table, the transition function is not defined at <span class=\"math\">[MATH: (q_1,1).]</span> So, the machine gets stuck.</p>",
+            "readable_text": "Let's see how the machine processes the data on the tape step-by-step.\n\n- According to the description, our Turing machine starts in the following configuration:\n\n[IMG: /graphics/eeac30ee94c09a2a6d79219e05937c45]\n\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition table,\n[MATH: \\delta(q_1,0) = (q_1,1,R).]\nSo, we should stay in state [MATH: q_1,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/5fb2fa8a06e07b234b9336104184c7cc]\n\nFinally, the machine observes the symbol [MATH: 1] in state [MATH: q_1.] According to the transition table, the transition function is not defined at [MATH: (q_1,1).] So, the machine gets stuck.",
+            "images": [
+              {
+                "src": "/graphics/eeac30ee94c09a2a6d79219e05937c45",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/5fb2fa8a06e07b234b9336104184c7cc",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/eeac30ee94c09a2a6d79219e05937c45",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/5fb2fa8a06e07b234b9336104184c7cc",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 0] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_1,1,R)] | [MATH: -] | [MATH: (q_0,0,L)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] | [MATH: -] |\n\nThe string [MATH: 01\\square0] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What would be the machine's configuration when it stops?\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's see how the machine processes the data on the tape step-by-step.\n\n- According to the description, our Turing machine starts in the following configuration:\n\n[IMG: /graphics/eeac30ee94c09a2a6d79219e05937c45]\n\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition table,\n[MATH: \\delta(q_1,0) = (q_1,1,R).]\nSo, we should stay in state [MATH: q_1,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/5fb2fa8a06e07b234b9336104184c7cc]\n\nFinally, the machine observes the symbol [MATH: 1] in state [MATH: q_1.] According to the transition table, the transition function is not defined at [MATH: (q_1,1).] So, the machine gets stuck."
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "259073",
+        "dom_id": "question-259073",
+        "selector": "#question-259073",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u0393}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u25fb]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 q_{1}]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: (q_{2}, 0, R)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q_{2}]</span></p></td><td><p><span class=\"math\">[MATH: (q_{0}, 0, R)]</span></p></td><td><p><span class=\"math\">[MATH: (q_{2}, 1, R)]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217q_{0}]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td></tr></table><p>The string <span class=\"math\">[MATH: \u25fb10]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> Which of the following shows the machine&#x27;s configuration when it stops?</p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 0] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: (q_{2}, 0, R)] |\n| [MATH: q_{2}] | [MATH: (q_{0}, 0, R)] | [MATH: (q_{2}, 1, R)] | [MATH: \u2212] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: \u25fb10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259073-a",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-259073-a-2\"></p>",
+            "readable_text": "[IMG: /graphics/q-259073-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-259073-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259073-b",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-259073-a-1\"></p>",
+            "readable_text": "[IMG: /graphics/q-259073-a-1]",
+            "images": [
+              {
+                "src": "/graphics/q-259073-a-1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259073-c",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-259073-a-4\"></p>",
+            "readable_text": "[IMG: /graphics/q-259073-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-259073-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259073-d",
+            "content_type": "image",
+            "normalized_html": "<p>\n<img src=\"/graphics/q-259073-a-3\"> </p>",
+            "readable_text": "[IMG: /graphics/q-259073-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-259073-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259073-e",
+            "content_type": "text",
+            "normalized_html": "<p> The machine does not stop (infinite cycle).</p>",
+            "readable_text": "The machine does not stop (infinite cycle).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259073-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259073-a-1",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259073-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-259073-a-3",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 0] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: (q_{2}, 0, R)] |\n| [MATH: q_{2}] | [MATH: (q_{0}, 0, R)] | [MATH: (q_{2}, 1, R)] | [MATH: \u2212] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: \u25fb10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. [IMG: /graphics/q-259073-a-2]\nb. [IMG: /graphics/q-259073-a-1]\nc. [IMG: /graphics/q-259073-a-4]\nd. [IMG: /graphics/q-259073-a-3]\ne. The machine does not stop (infinite cycle)."
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "238163",
+        "dom_id": "question-238163",
+        "selector": "#question-238163",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u0393}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u25fb]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 q_{1}]</span></p></td><td><p><span class=\"math\">[MATH: (q_{1}, 0, R)]</span></p></td><td><p><span class=\"math\">[MATH: (q_{1}, 1, R)]</span></p></td><td><p><span class=\"math\">[MATH: (q_{1}, 1, R)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217q_{0}]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td></tr></table><p>The string <span class=\"math\">[MATH: 10]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> Which of the following shows the machine&#x27;s configuration when it stops?</p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 0] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 0, R)] | [MATH: (q_{1}, 1, R)] | [MATH: (q_{1}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: 10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-238163-a",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238163-a-4\"></p>",
+            "readable_text": "[IMG: /graphics/q-238163-a-4]",
+            "images": [
+              {
+                "src": "/graphics/q-238163-a-4",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-238163-b",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238163-a-5\"></p>",
+            "readable_text": "[IMG: /graphics/q-238163-a-5]",
+            "images": [
+              {
+                "src": "/graphics/q-238163-a-5",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-238163-c",
+            "content_type": "text",
+            "normalized_html": "<p>The machine does not stop (infinite cycle).</p>",
+            "readable_text": "The machine does not stop (infinite cycle).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-238163-d",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238163-a-2\"></p>",
+            "readable_text": "[IMG: /graphics/q-238163-a-2]",
+            "images": [
+              {
+                "src": "/graphics/q-238163-a-2",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-238163-e",
+            "content_type": "image",
+            "normalized_html": "<p><img src=\"/graphics/q-238163-a-3\"></p>",
+            "readable_text": "[IMG: /graphics/q-238163-a-3]",
+            "images": [
+              {
+                "src": "/graphics/q-238163-a-3",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-238163-a-4",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238163-a-5",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238163-a-2",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/q-238163-a-3",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 0] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 0, R)] | [MATH: (q_{1}, 1, R)] | [MATH: (q_{1}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: 10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. [IMG: /graphics/q-238163-a-4]\nb. [IMG: /graphics/q-238163-a-5]\nc. The machine does not stop (infinite cycle).\nd. [IMG: /graphics/q-238163-a-2]\ne. [IMG: /graphics/q-238163-a-3]"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "420726",
+        "content_id": "10022",
+        "dom_id": "step-420726",
+        "selector": "#step-420726",
+        "step_anchor": "step-9",
+        "title": "Instantaneous Descriptions",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Constructing a tape diagram for each configuration of a Turing machine can be cumbersome.\nFortunately, an <strong>instantaneous description</strong> (ID) provides a concise shorthand notation.</p>",
+            "readable_text": "Constructing a tape diagram for each configuration of a Turing machine can be cumbersome.\nFortunately, an instantaneous description (ID) provides a concise shorthand notation.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For a given configuration, the ID consists of the current sequence of symbols on the tape, with the current state placed just before the symbol being observed. For example, the ID of a machine with the configuration below is <span class=\"math\">[MATH: 1q_10.]</span></p>",
+            "readable_text": "For a given configuration, the ID consists of the current sequence of symbols on the tape, with the current state placed just before the symbol being observed. For example, the ID of a machine with the configuration below is [MATH: 1q_10.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/feb4f0faf1ecfbb2bf8a4f5db496a7c6\"></p>",
+            "readable_text": "[IMG: /graphics/feb4f0faf1ecfbb2bf8a4f5db496a7c6]",
+            "images": [
+              {
+                "src": "/graphics/feb4f0faf1ecfbb2bf8a4f5db496a7c6",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To a machine transitioning from one ID to another, we use the <span class=\"math\">[MATH: \\vdash]</span> notation.\nFor example, if the machine above contains the command <span class=\"math\">[MATH: (q_1,0) \\to (q_2, 1, R),]</span> the next transition is expressed as follows:\n<span class=\"math\">[MATH: 1q_10 \\:\\vdash\\: 11q_2\\square]</span></p>",
+            "readable_text": "To a machine transitioning from one ID to another, we use the [MATH: \\vdash] notation.\nFor example, if the machine above contains the command [MATH: (q_1,0) \\to (q_2, 1, R),] the next transition is expressed as follows:\n[MATH: 1q_10 \\:\\vdash\\: 11q_2\\square]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>In this case, we add <span class=\"math\">[MATH: \\square]</span> after <span class=\"math\">[MATH: q_2]</span> because the head now observes a blank symbol. Let&#x27;s now apply a Turing machine to a string using instantaneous descriptions.</p>",
+            "readable_text": "In this case, we add [MATH: \\square] after [MATH: q_2] because the head now observes a blank symbol. Let's now apply a Turing machine to a string using instantaneous descriptions.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Suppose the string <span class=\"math\">[MATH: 00]</span> is written on the tape of the Turing machine given by the transition table below, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol and the tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span></p>",
+            "readable_text": "Suppose the string [MATH: 00] is written on the tape of the Turing machine given by the transition table below, where [MATH: \\square] is the blank symbol and the tape head initially observes the left-most symbol of the string in state [MATH: q_1.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}]</span></p></td><td><p><span class=\"math\">[MATH: 0]</span></p></td><td><p><span class=\"math\">[MATH: \\square]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\to \\! q_1]</span></p></td><td><p><span class=\"math\">[MATH: (q_1,0,R)]</span></p></td><td><p><span class=\"math\">[MATH: (q_2,0,L)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q_2]</span></p></td><td><p><span class=\"math\">[MATH: (q_2,0,L)]</span></p></td><td><p><span class=\"math\">[MATH: (q_0,0,R)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \\ast \\: q_0]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td><td><p><span class=\"math\">[MATH: -]</span></p></td></tr></table>",
+            "readable_text": "| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 0] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_1,0,R)] | [MATH: (q_2,0,L)] |\n| [MATH: q_2] | [MATH: (q_2,0,L)] | [MATH: (q_0,0,R)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We&#x27;ll write a sequence of the machine&#x27;s moves encoded using instantaneous descriptions.\nFirst, let&#x27;s summarize the nontrivial commands from our transition table:</p>",
+            "readable_text": "We'll write a sequence of the machine's moves encoded using instantaneous descriptions.\nFirst, let's summarize the nontrivial commands from our transition table:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p>Command</p></td><td><p>Descriprion</p></td></tr><tr><td><p><span class=\"math\">[MATH: \\delta(q_1, 0) = (q_1, 0, R)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_1,]</span> observes <span class=\"math\">[MATH: 0{:}]</span><br/> write <span class=\"math\">[MATH: 0,]</span> stay in state <span class=\"math\">[MATH: q_1,]</span> and move right.</p></td></tr><tr><td><p><span class=\"math\">[MATH: \\delta(q_1, \\square)  = (q_2, 0, L)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_1,]</span> observes <span class=\"math\">[MATH: \\square{:}]</span><br/> write <span class=\"math\">[MATH: 0,]</span> swap to state <span class=\"math\">[MATH: q_2,]</span> and move left.</p></td></tr><tr><td><p><span class=\"math\">[MATH: \\delta(q_2, 0)  = (q_2, 0, L)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_2,]</span> observes <span class=\"math\">[MATH: 0{:}]</span><br/> write <span class=\"math\">[MATH: 0,]</span> stay in state <span class=\"math\">[MATH: q_2,]</span> and move left.</p></td></tr><tr><td><p><span class=\"math\">[MATH: \\delta(q_2, \\square)  = (q_0, 0, R)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_2,]</span> observes <span class=\"math\">[MATH: \\square{:}]</span><br/> write <span class=\"math\">[MATH: 0,]</span> swap to state <span class=\"math\">[MATH: q_0,]</span> and move right.</p></td></tr></table>",
+            "readable_text": "| Command | Descriprion |\n| [MATH: \\delta(q_1, 0) = (q_1, 0, R)] | In state [MATH: q_1,] observes [MATH: 0{:}] / write [MATH: 0,] stay in state [MATH: q_1,] and move right. |\n| [MATH: \\delta(q_1, \\square) = (q_2, 0, L)] | In state [MATH: q_1,] observes [MATH: \\square{:}] / write [MATH: 0,] swap to state [MATH: q_2,] and move left. |\n| [MATH: \\delta(q_2, 0) = (q_2, 0, L)] | In state [MATH: q_2,] observes [MATH: 0{:}] / write [MATH: 0,] stay in state [MATH: q_2,] and move left. |\n| [MATH: \\delta(q_2, \\square) = (q_0, 0, R)] | In state [MATH: q_2,] observes [MATH: \\square{:}] / write [MATH: 0,] swap to state [MATH: q_0,] and move right. |",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Then, the machine goes through the following configurations:</p>",
+            "readable_text": "Then, the machine goes through the following configurations:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<table><tr><td><p>Instantaneous Description</p></td><td><p>Tape Diagram</p></td></tr><tr><td><p><span class=\"math\">[MATH: q_1 00]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/8dd7ce499fcd1f221673e20f566a4a7d\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 0 q_1 0]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/fc1bc3f71afd84e5069f922fded5e632\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 00 q_1 \\square]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/cbf29350d9df0a52e48c1e820b1a98a9\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 0 q_2 00]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/50910a4ea2749e51979beb832195a86d\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: q_2 000]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/5f98c3478c48873203330e1098a9e704\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: q_2 \\square000]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/8692f735da837c8799dbaf09281aa189\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 0 q_0 000]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/5e1b285552fc8f28c50b3df22b3b6518\"></div></td></tr></table>",
+            "readable_text": "| Instantaneous Description | Tape Diagram |\n| [MATH: q_1 00] | [IMG: /graphics/8dd7ce499fcd1f221673e20f566a4a7d] |\n| [MATH: 0 q_1 0] | [IMG: /graphics/fc1bc3f71afd84e5069f922fded5e632] |\n| [MATH: 00 q_1 \\square] | [IMG: /graphics/cbf29350d9df0a52e48c1e820b1a98a9] |\n| [MATH: 0 q_2 00] | [IMG: /graphics/50910a4ea2749e51979beb832195a86d] |\n| [MATH: q_2 000] | [IMG: /graphics/5f98c3478c48873203330e1098a9e704] |\n| [MATH: q_2 \\square000] | [IMG: /graphics/8692f735da837c8799dbaf09281aa189] |\n| [MATH: 0 q_0 000] | [IMG: /graphics/5e1b285552fc8f28c50b3df22b3b6518] |",
+            "images": [
+              {
+                "src": "/graphics/8dd7ce499fcd1f221673e20f566a4a7d",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/fc1bc3f71afd84e5069f922fded5e632",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/cbf29350d9df0a52e48c1e820b1a98a9",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/50910a4ea2749e51979beb832195a86d",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/5f98c3478c48873203330e1098a9e704",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/8692f735da837c8799dbaf09281aa189",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/5e1b285552fc8f28c50b3df22b3b6518",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, writing the sequence of IDs using <span class=\"math\">[MATH: \\vdash]</span> notation, we get the following:</p>",
+            "readable_text": "Finally, writing the sequence of IDs using [MATH: \\vdash] notation, we get the following:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: q_{1}00|\u22a20q_{1}0; \u22a200q_{1}\u25fb; \u22a20q_{2}00; \u22a2q_{2}000; \u22a2q_{2}\u25fb000; \u22a20q_{0}000]</span></p>",
+            "readable_text": "[MATH: q_{1}00|\u22a20q_{1}0; \u22a200q_{1}\u25fb; \u22a20q_{2}00; \u22a2q_{2}000; \u22a2q_{2}\u25fb000; \u22a20q_{0}000]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/feb4f0faf1ecfbb2bf8a4f5db496a7c6",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/8dd7ce499fcd1f221673e20f566a4a7d",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/fc1bc3f71afd84e5069f922fded5e632",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/cbf29350d9df0a52e48c1e820b1a98a9",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/50910a4ea2749e51979beb832195a86d",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/5f98c3478c48873203330e1098a9e704",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/8692f735da837c8799dbaf09281aa189",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/5e1b285552fc8f28c50b3df22b3b6518",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nConstructing a tape diagram for each configuration of a Turing machine can be cumbersome.\nFortunately, an instantaneous description (ID) provides a concise shorthand notation.\n\nContent:\nFor a given configuration, the ID consists of the current sequence of symbols on the tape, with the current state placed just before the symbol being observed. For example, the ID of a machine with the configuration below is [MATH: 1q_10.]\n\nGraphic:\n[IMG: /graphics/feb4f0faf1ecfbb2bf8a4f5db496a7c6]\n\nContent:\nTo a machine transitioning from one ID to another, we use the [MATH: \\vdash] notation.\nFor example, if the machine above contains the command [MATH: (q_1,0) \\to (q_2, 1, R),] the next transition is expressed as follows:\n[MATH: 1q_10 \\:\\vdash\\: 11q_2\\square]\n\nContent:\nIn this case, we add [MATH: \\square] after [MATH: q_2] because the head now observes a blank symbol. Let's now apply a Turing machine to a string using instantaneous descriptions.\n\nContent:\nSuppose the string [MATH: 00] is written on the tape of the Turing machine given by the transition table below, where [MATH: \\square] is the blank symbol and the tape head initially observes the left-most symbol of the string in state [MATH: q_1.]\n\nContent:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 0] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_1,0,R)] | [MATH: (q_2,0,L)] |\n| [MATH: q_2] | [MATH: (q_2,0,L)] | [MATH: (q_0,0,R)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nWe'll write a sequence of the machine's moves encoded using instantaneous descriptions.\nFirst, let's summarize the nontrivial commands from our transition table:\n\nContent:\n| Command | Descriprion |\n| [MATH: \\delta(q_1, 0) = (q_1, 0, R)] | In state [MATH: q_1,] observes [MATH: 0{:}] / write [MATH: 0,] stay in state [MATH: q_1,] and move right. |\n| [MATH: \\delta(q_1, \\square) = (q_2, 0, L)] | In state [MATH: q_1,] observes [MATH: \\square{:}] / write [MATH: 0,] swap to state [MATH: q_2,] and move left. |\n| [MATH: \\delta(q_2, 0) = (q_2, 0, L)] | In state [MATH: q_2,] observes [MATH: 0{:}] / write [MATH: 0,] stay in state [MATH: q_2,] and move left. |\n| [MATH: \\delta(q_2, \\square) = (q_0, 0, R)] | In state [MATH: q_2,] observes [MATH: \\square{:}] / write [MATH: 0,] swap to state [MATH: q_0,] and move right. |\n\nContent:\nThen, the machine goes through the following configurations:\n\nContent:\n| Instantaneous Description | Tape Diagram |\n| [MATH: q_1 00] | [IMG: /graphics/8dd7ce499fcd1f221673e20f566a4a7d] |\n| [MATH: 0 q_1 0] | [IMG: /graphics/fc1bc3f71afd84e5069f922fded5e632] |\n| [MATH: 00 q_1 \\square] | [IMG: /graphics/cbf29350d9df0a52e48c1e820b1a98a9] |\n| [MATH: 0 q_2 00] | [IMG: /graphics/50910a4ea2749e51979beb832195a86d] |\n| [MATH: q_2 000] | [IMG: /graphics/5f98c3478c48873203330e1098a9e704] |\n| [MATH: q_2 \\square000] | [IMG: /graphics/8692f735da837c8799dbaf09281aa189] |\n| [MATH: 0 q_0 000] | [IMG: /graphics/5e1b285552fc8f28c50b3df22b3b6518] |\n\nContent:\nFinally, writing the sequence of IDs using [MATH: \\vdash] notation, we get the following:\n\nContent:\n[MATH: q_{1}00|\u22a20q_{1}0; \u22a200q_{1}\u25fb; \u22a20q_{2}00; \u22a2q_{2}000; \u22a2q_{2}\u25fb000; \u22a20q_{0}000]"
+      },
+      {
+        "lesson_index": 10,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "420727",
+        "content_id": "15701",
+        "dom_id": "step-420727",
+        "selector": "#step-420727",
+        "step_anchor": "step-10",
+        "title": "Applying a Turing Machine to a String Using Instantaneous Descriptions",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/6f091253d0ffa753251ca4bba531dd81\"></div><p>The string <span class=\"math\">[MATH: 101]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \\square]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_1.]</span> Write the sequence of the machine&#x27;s configurations in terms of instantaneous descriptions.</p>",
+            "readable_text": "[IMG: /graphics/6f091253d0ffa753251ca4bba531dd81]\n\nThe string [MATH: 101] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] Write the sequence of the machine's configurations in terms of instantaneous descriptions.",
+            "images": [
+              {
+                "src": "/graphics/6f091253d0ffa753251ca4bba531dd81",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>First, let&#x27;s summarize the nontrivial commands from our transition table:</p><table><tr><td><p>Command</p></td><td><p>Description</p></td></tr><tr><td><p><span class=\"math\">[MATH: (q_1, 1) \\to (q_2, 1, R)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_1,]</span> observes <span class=\"math\">[MATH: 1{:}]</span><br/> swap to state <span class=\"math\">[MATH: q_2,]</span> write <span class=\"math\">[MATH: 1,]</span>  and move right.</p></td></tr><tr><td><p><span class=\"math\">[MATH: (q_1, \\square)  \\to (q_1, 1, L)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_1,]</span> observes <span class=\"math\">[MATH: \\square{:}]</span><br/> stay in state <span class=\"math\">[MATH: q_1,]</span> write <span class=\"math\">[MATH: 1,]</span> and move left.</p></td></tr><tr><td><p><span class=\"math\">[MATH: (q_2, 0)  \\to (q_2, 1, R)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_2,]</span> observes <span class=\"math\">[MATH: 0{:}]</span><br/> stay in state <span class=\"math\">[MATH: q_2,]</span> write <span class=\"math\">[MATH: 1,]</span> and move right.</p></td></tr><tr><td><p><span class=\"math\">[MATH: (q_2, 1)  \\to (q_0, 1, R)]</span></p></td><td><p>In state <span class=\"math\">[MATH: q_2,]</span> observes <span class=\"math\">[MATH: 1{:}]</span><br/> stay in state <span class=\"math\">[MATH: q_0,]</span> write <span class=\"math\">[MATH: 1,]</span> and move right.</p></td></tr></table><p>The machine goes through the following configurations:</p><table><tr><td><p>Instantaneous Description</p></td><td><p>Tape Diagram</p></td></tr><tr><td><p><span class=\"math\">[MATH: q_1 101]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/c5daa005d315f5edca3fa101960f5f09\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 1 q_201]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/e558027ac7920e6bef65e24cc0795233\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 11 q_2 1]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/91e8109c1057ac2482bdec1126f2c5b9\"></div></td></tr><tr><td><p><span class=\"math\">[MATH: 111q_0 \\square]</span></p></td><td><div class=\"graphic\"><img src=\"/graphics/847834553b8af349a13acd12316bfeab\"></div></td></tr></table><p>Using the <span class=\"math\">[MATH: \\vdash]</span> notation, we get the following:</p><p><span class=\"math\">[MATH: q_{1}101|\u22a21q_{2}01; \u22a211q_{2}1; \u22a2111q_{0}\u25fb]</span></p>",
+            "readable_text": "First, let's summarize the nontrivial commands from our transition table:\n\n| Command | Description |\n| [MATH: (q_1, 1) \\to (q_2, 1, R)] | In state [MATH: q_1,] observes [MATH: 1{:}] / swap to state [MATH: q_2,] write [MATH: 1,] and move right. |\n| [MATH: (q_1, \\square) \\to (q_1, 1, L)] | In state [MATH: q_1,] observes [MATH: \\square{:}] / stay in state [MATH: q_1,] write [MATH: 1,] and move left. |\n| [MATH: (q_2, 0) \\to (q_2, 1, R)] | In state [MATH: q_2,] observes [MATH: 0{:}] / stay in state [MATH: q_2,] write [MATH: 1,] and move right. |\n| [MATH: (q_2, 1) \\to (q_0, 1, R)] | In state [MATH: q_2,] observes [MATH: 1{:}] / stay in state [MATH: q_0,] write [MATH: 1,] and move right. |\n\nThe machine goes through the following configurations:\n\n| Instantaneous Description | Tape Diagram |\n| [MATH: q_1 101] | [IMG: /graphics/c5daa005d315f5edca3fa101960f5f09] |\n| [MATH: 1 q_201] | [IMG: /graphics/e558027ac7920e6bef65e24cc0795233] |\n| [MATH: 11 q_2 1] | [IMG: /graphics/91e8109c1057ac2482bdec1126f2c5b9] |\n| [MATH: 111q_0 \\square] | [IMG: /graphics/847834553b8af349a13acd12316bfeab] |\n\nUsing the [MATH: \\vdash] notation, we get the following:\n\n[MATH: q_{1}101|\u22a21q_{2}01; \u22a211q_{2}1; \u22a2111q_{0}\u25fb]",
+            "images": [
+              {
+                "src": "/graphics/c5daa005d315f5edca3fa101960f5f09",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/e558027ac7920e6bef65e24cc0795233",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/91e8109c1057ac2482bdec1126f2c5b9",
+                "alt": ""
+              },
+              {
+                "src": "/graphics/847834553b8af349a13acd12316bfeab",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/6f091253d0ffa753251ca4bba531dd81",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/c5daa005d315f5edca3fa101960f5f09",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/e558027ac7920e6bef65e24cc0795233",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/91e8109c1057ac2482bdec1126f2c5b9",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/847834553b8af349a13acd12316bfeab",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/6f091253d0ffa753251ca4bba531dd81]\n\nThe string [MATH: 101] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] Write the sequence of the machine's configurations in terms of instantaneous descriptions.\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's summarize the nontrivial commands from our transition table:\n\n| Command | Description |\n| [MATH: (q_1, 1) \\to (q_2, 1, R)] | In state [MATH: q_1,] observes [MATH: 1{:}] / swap to state [MATH: q_2,] write [MATH: 1,] and move right. |\n| [MATH: (q_1, \\square) \\to (q_1, 1, L)] | In state [MATH: q_1,] observes [MATH: \\square{:}] / stay in state [MATH: q_1,] write [MATH: 1,] and move left. |\n| [MATH: (q_2, 0) \\to (q_2, 1, R)] | In state [MATH: q_2,] observes [MATH: 0{:}] / stay in state [MATH: q_2,] write [MATH: 1,] and move right. |\n| [MATH: (q_2, 1) \\to (q_0, 1, R)] | In state [MATH: q_2,] observes [MATH: 1{:}] / stay in state [MATH: q_0,] write [MATH: 1,] and move right. |\n\nThe machine goes through the following configurations:\n\n| Instantaneous Description | Tape Diagram |\n| [MATH: q_1 101] | [IMG: /graphics/c5daa005d315f5edca3fa101960f5f09] |\n| [MATH: 1 q_201] | [IMG: /graphics/e558027ac7920e6bef65e24cc0795233] |\n| [MATH: 11 q_2 1] | [IMG: /graphics/91e8109c1057ac2482bdec1126f2c5b9] |\n| [MATH: 111q_0 \\square] | [IMG: /graphics/847834553b8af349a13acd12316bfeab] |\n\nUsing the [MATH: \\vdash] notation, we get the following:\n\n[MATH: q_{1}101|\u22a21q_{2}01; \u22a211q_{2}1; \u22a2111q_{0}\u25fb]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "238186",
+        "dom_id": "question-238186",
+        "selector": "#question-238186",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<table><tr><td><p><span class=\"math\">[MATH: _{Q}\u2216^{\u0393}]</span></p></td><td><p><span class=\"math\">[MATH: 1]</span></p></td><td><p><span class=\"math\">[MATH: \u25fb]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2192 q_{1}]</span></p></td><td><p><span class=\"math\">[MATH: (q_{1}, 1, R)]</span></p></td><td><p><span class=\"math\">[MATH: (q_{2}, 1, L)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: q_{2}]</span></p></td><td><p><span class=\"math\">[MATH: (q_{2}, 1, L)]</span></p></td><td><p><span class=\"math\">[MATH: (q_{0}, 1, R)]</span></p></td></tr><tr><td><p><span class=\"math\">[MATH: \u2217q_{0}]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td><td><p><span class=\"math\">[MATH: \u2212]</span></p></td></tr></table><p>The string <span class=\"math\">[MATH: 11]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> </p><p>Select the correct options in the following sequence of the machine&#x27;s moves encoded using instantaneous descriptions:</p><p><span class=\"math\">[MATH: q_{2}]</span><span class=\"select-list\" data-select-id=\"selectList-238186-0\" data-select-index=\"1\">[SELECT 1]</span></p>",
+          "readable_text": "| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 1, R)] | [MATH: (q_{2}, 1, L)] |\n| [MATH: q_{2}] | [MATH: (q_{2}, 1, L)] | [MATH: (q_{0}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.]\n\nSelect the correct options in the following sequence of the machine's moves encoded using instantaneous descriptions:\n\n[MATH: q_{2}][SELECT 1]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-238186-0",
+              "frame_dom_id": "selectListFrame-238186-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q_{2}]</span>",
+                  "readable_text": "[MATH: q_{2}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q_{1}]</span>",
+                  "readable_text": "[MATH: q_{1}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q_{0}]</span>",
+                  "readable_text": "[MATH: q_{0}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-238186-0",
+            "frame_dom_id": "selectListFrame-238186-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q_{2}]</span>",
+                "readable_text": "[MATH: q_{2}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q_{1}]</span>",
+                "readable_text": "[MATH: q_{1}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q_{0}]</span>",
+                "readable_text": "[MATH: q_{0}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Prompt:\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 1, R)] | [MATH: (q_{2}, 1, L)] |\n| [MATH: q_{2}] | [MATH: (q_{2}, 1, L)] | [MATH: (q_{0}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.]\n\nSelect the correct options in the following sequence of the machine's moves encoded using instantaneous descriptions:\n\n[MATH: q_{2}][SELECT 1]"
+      },
+      {
+        "lesson_index": 12,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "259198",
+        "dom_id": "question-259198",
+        "selector": "#question-259198",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259198\"></p>",
+          "readable_text": "[IMG: /graphics/q-259198]",
+          "images": [
+            {
+              "src": "/graphics/q-259198",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The string <span class=\"math\">[MATH: \u25fb10]</span> is written on the tape of the Turing machine given by the transition table above, where <span class=\"math\">[MATH: \u25fb]</span> is the blank symbol. The tape head initially observes the left-most symbol of the string in state <span class=\"math\">[MATH: q_{1}.]</span> Select the correct options in the following sequence of the machine&#x27;s moves encoded using instantaneous descriptions:</p><p><span class=\"math\">[MATH: q_{1}]</span><span class=\"select-list\" data-select-id=\"selectList-259198-0\" data-select-index=\"1\">[SELECT 1]</span></p>",
+          "readable_text": "The string [MATH: \u25fb10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Select the correct options in the following sequence of the machine's moves encoded using instantaneous descriptions:\n\n[MATH: q_{1}][SELECT 1]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-259198-0",
+              "frame_dom_id": "selectListFrame-259198-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 3,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: q_{1}]</span>",
+                  "readable_text": "[MATH: q_{1}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: q_{2}]</span>",
+                  "readable_text": "[MATH: q_{2}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: q_{0}]</span>",
+                  "readable_text": "[MATH: q_{0}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-259198",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-259198-0",
+            "frame_dom_id": "selectListFrame-259198-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 3,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: q_{1}]</span>",
+                "readable_text": "[MATH: q_{1}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: q_{2}]</span>",
+                "readable_text": "[MATH: q_{2}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: q_{0}]</span>",
+                "readable_text": "[MATH: q_{0}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259198]\n\nPrompt:\nThe string [MATH: \u25fb10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Select the correct options in the following sequence of the machine's moves encoded using instantaneous descriptions:\n\n[MATH: q_{1}][SELECT 1]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nIn a previous lesson, we saw how to update a Turing machine's configuration. In this lesson, we'll discuss setting up and applying a Turing machine to an input string.\n\nContent:\nIn a Turing machine's starting state, a given input string is written on the tape with infinite empty cells on either side.\nThe tape head is positioned at the leftmost cell that holds the input symbol and is labeled with the machine's start state.\n\nContent:\nBelow is an example of the starting configuration of a Turing machine with a starting state of [MATH: q] and an input string of [MATH: 10\\square1].\n\nGraphic:\n[IMG: /graphics/dd838135b642ddd9ba248cd283f6f596]\n\nContent:\nWe then repeatedly update its configuration using the transition function [MATH: \\delta: Q \\times \\Gamma \\to Q \\times \\Gamma \\times \\{L,R\\},] as before. By doing so, we get one of the following three cases:\n\nContent:\n- If the machine reaches a final state in a finite number of steps, it stops.\n- If the transition function [MATH: \\delta(q,X)] is undefined at some point in the process, the machine gets stuck.\n- If the machine repeats a step or sequence of steps forever, it falls into an infinite cycle and never stops.\n\nContent:\nLet's demonstrate with an example.\n\n---\n\nItem 2 \u2014 Tutorial: A Worked Example\n\nContent:\nSuppose the string [MATH: 10\\square1] is written on the tape of the Turing machine given by the diagram below, where [MATH: \\square] is the blank symbol and the tape head initially observes the left-most symbol of the string in state [MATH: q_1.]\n\nGraphic:\n[IMG: /graphics/cb966e7baf8a9844887857ceeb624a41]\n\nContent:\nLet's see how the machine processes the data on the tape step-by-step.\n\nContent:\n- According to the description, our Turing machine starts in the following configuration:\n\nGraphic:\n[IMG: /graphics/8c75070bf21b64ce54975276b0914eda]\n\nContent:\n- The machine observes symbol [MATH: 1] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,1) \\to (q_1,1,R).]\nSo, we should stay in state [MATH: q_1,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\nGraphic:\n[IMG: /graphics/03f14026e1d4929172a50bbd204e7bfc]\n\nContent:\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,0) \\to (q_2,1,R).]\nSo, we should swap to state [MATH: q_2,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\nGraphic:\n[IMG: /graphics/14aff7bd978d729aef4e5dbd6b8d7487]\n\nContent:\n- The machine observes an empty cell [MATH: \\square] in state [MATH: q_2.] According to the transition diagram,\n[MATH: (q_2,\\square) \\to (q_0,1,R).]\nSo, we should swap to state [MATH: q_0,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\nGraphic:\n[IMG: /graphics/701153f8b3d6f8f791d2dc9bd2080e8b]\n\nContent:\nFinally, the machine observes the symbol [MATH: 1] in state [MATH: q_0.] According to the transition diagram, [MATH: q_0] is the final state. So, the machine stops at [MATH: q_0.]\n\nContent:\nLet's now see an example of a machine that doesn't stop at a final state.\n\n---\n\nItem 3 \u2014 Example: Applying a Turing Machine to a String Using a Transition Diagram\n\nExample Prompt:\n[IMG: /graphics/c0468e9617f1cd22d9339dabbc7e3f34]\n\nThe string [MATH: 0\\square] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What would be the machine's configuration when it stops?\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's see how the machine processes the data on the tape step-by-step.\n\n- According to the description, our Turing machine starts at the following configuration:\n\n[IMG: /graphics/3de3bed74d656319b661e49833e822aa]\n\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition diagram,\n[MATH: (q_1,0) \\to (q_2,0,R).]\nSo, we should swap to state [MATH: q_2,] write [MATH: 0] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/9c7de070e34c0f2ae61aad217757f30a]\n\n- The machine observes an empty cell [MATH: \\square] in state [MATH: q_2.] According to the transition diagram,\n[MATH: (q_2,\\square) \\to (q_2,0,R).]\nSo, we should stay in state [MATH: q_2,] write [MATH: 0] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/f0b4ffa6e71d8d9a5d60178ff3c3037d]\n\nNotice that the final step will be repeated forever since the tape has infinitely many empty cells to the right. So, the machine falls into an infinite cycle and never stops.\n\n---\n\nItem 4 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-258782]\n\nPrompt:\nThe string [MATH: 1\u25fb11] is written on the tape of the Turing machine given by the above diagram, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. [IMG: /graphics/q-258782-a-3]\nb. [IMG: /graphics/q-258782-a-4]\nc. The machine does not stop (infinite cycle).\nd. [IMG: /graphics/q-258782-a-1]\ne. [IMG: /graphics/q-258782-a-2]\n\n---\n\nItem 5 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-238162]\n\nPrompt:\nThe string [MATH: 11\u25fb0] is written on the tape of the Turing machine given by the above diagram, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. The machine does not stop (infinite cycle).\nb. [IMG: /graphics/q-238162-a-2]\nc. [IMG: /graphics/q-238162-a-1]\nd. [IMG: /graphics/q-238162-a-3]\ne. [IMG: /graphics/q-238162-a-4]\n\n---\n\nItem 6 \u2014 Example: Applying a Turing Machine to a String Using a Transition Table\n\nExample Prompt:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 0] | [MATH: 1] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_1,1,R)] | [MATH: -] | [MATH: (q_0,0,L)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] | [MATH: -] |\n\nThe string [MATH: 01\\square0] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] What would be the machine's configuration when it stops?\n\nContent:\nEXPLANATION\n\nExplanation:\nLet's see how the machine processes the data on the tape step-by-step.\n\n- According to the description, our Turing machine starts in the following configuration:\n\n[IMG: /graphics/eeac30ee94c09a2a6d79219e05937c45]\n\n- The machine observes symbol [MATH: 0] in state [MATH: q_1.] According to the transition table,\n[MATH: \\delta(q_1,0) = (q_1,1,R).]\nSo, we should stay in state [MATH: q_1,] write [MATH: 1] into the cell, and move right. Performing this transition gives us the following new configuration:\n\n[IMG: /graphics/5fb2fa8a06e07b234b9336104184c7cc]\n\nFinally, the machine observes the symbol [MATH: 1] in state [MATH: q_1.] According to the transition table, the transition function is not defined at [MATH: (q_1,1).] So, the machine gets stuck.\n\n---\n\nItem 7 \u2014 Question 3\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 0] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: (q_{2}, 0, R)] |\n| [MATH: q_{2}] | [MATH: (q_{0}, 0, R)] | [MATH: (q_{2}, 1, R)] | [MATH: \u2212] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: \u25fb10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. [IMG: /graphics/q-259073-a-2]\nb. [IMG: /graphics/q-259073-a-1]\nc. [IMG: /graphics/q-259073-a-4]\nd. [IMG: /graphics/q-259073-a-3]\ne. The machine does not stop (infinite cycle).\n\n---\n\nItem 8 \u2014 Question 4\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 0] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 0, R)] | [MATH: (q_{1}, 1, R)] | [MATH: (q_{1}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: 10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Which of the following shows the machine's configuration when it stops?\n\nChoices:\na. [IMG: /graphics/q-238163-a-4]\nb. [IMG: /graphics/q-238163-a-5]\nc. The machine does not stop (infinite cycle).\nd. [IMG: /graphics/q-238163-a-2]\ne. [IMG: /graphics/q-238163-a-3]\n\n---\n\nItem 9 \u2014 Tutorial: Instantaneous Descriptions\n\nContent:\nConstructing a tape diagram for each configuration of a Turing machine can be cumbersome.\nFortunately, an instantaneous description (ID) provides a concise shorthand notation.\n\nContent:\nFor a given configuration, the ID consists of the current sequence of symbols on the tape, with the current state placed just before the symbol being observed. For example, the ID of a machine with the configuration below is [MATH: 1q_10.]\n\nGraphic:\n[IMG: /graphics/feb4f0faf1ecfbb2bf8a4f5db496a7c6]\n\nContent:\nTo a machine transitioning from one ID to another, we use the [MATH: \\vdash] notation.\nFor example, if the machine above contains the command [MATH: (q_1,0) \\to (q_2, 1, R),] the next transition is expressed as follows:\n[MATH: 1q_10 \\:\\vdash\\: 11q_2\\square]\n\nContent:\nIn this case, we add [MATH: \\square] after [MATH: q_2] because the head now observes a blank symbol. Let's now apply a Turing machine to a string using instantaneous descriptions.\n\nContent:\nSuppose the string [MATH: 00] is written on the tape of the Turing machine given by the transition table below, where [MATH: \\square] is the blank symbol and the tape head initially observes the left-most symbol of the string in state [MATH: q_1.]\n\nContent:\n| [MATH: \\Large _{Q} \\!\\backslash\\! ^{\\Gamma}] | [MATH: 0] | [MATH: \\square] |\n| [MATH: \\to \\! q_1] | [MATH: (q_1,0,R)] | [MATH: (q_2,0,L)] |\n| [MATH: q_2] | [MATH: (q_2,0,L)] | [MATH: (q_0,0,R)] |\n| [MATH: \\ast \\: q_0] | [MATH: -] | [MATH: -] |\n\nContent:\nWe'll write a sequence of the machine's moves encoded using instantaneous descriptions.\nFirst, let's summarize the nontrivial commands from our transition table:\n\nContent:\n| Command | Descriprion |\n| [MATH: \\delta(q_1, 0) = (q_1, 0, R)] | In state [MATH: q_1,] observes [MATH: 0{:}] / write [MATH: 0,] stay in state [MATH: q_1,] and move right. |\n| [MATH: \\delta(q_1, \\square) = (q_2, 0, L)] | In state [MATH: q_1,] observes [MATH: \\square{:}] / write [MATH: 0,] swap to state [MATH: q_2,] and move left. |\n| [MATH: \\delta(q_2, 0) = (q_2, 0, L)] | In state [MATH: q_2,] observes [MATH: 0{:}] / write [MATH: 0,] stay in state [MATH: q_2,] and move left. |\n| [MATH: \\delta(q_2, \\square) = (q_0, 0, R)] | In state [MATH: q_2,] observes [MATH: \\square{:}] / write [MATH: 0,] swap to state [MATH: q_0,] and move right. |\n\nContent:\nThen, the machine goes through the following configurations:\n\nContent:\n| Instantaneous Description | Tape Diagram |\n| [MATH: q_1 00] | [IMG: /graphics/8dd7ce499fcd1f221673e20f566a4a7d] |\n| [MATH: 0 q_1 0] | [IMG: /graphics/fc1bc3f71afd84e5069f922fded5e632] |\n| [MATH: 00 q_1 \\square] | [IMG: /graphics/cbf29350d9df0a52e48c1e820b1a98a9] |\n| [MATH: 0 q_2 00] | [IMG: /graphics/50910a4ea2749e51979beb832195a86d] |\n| [MATH: q_2 000] | [IMG: /graphics/5f98c3478c48873203330e1098a9e704] |\n| [MATH: q_2 \\square000] | [IMG: /graphics/8692f735da837c8799dbaf09281aa189] |\n| [MATH: 0 q_0 000] | [IMG: /graphics/5e1b285552fc8f28c50b3df22b3b6518] |\n\nContent:\nFinally, writing the sequence of IDs using [MATH: \\vdash] notation, we get the following:\n\nContent:\n[MATH: q_{1}00|\u22a20q_{1}0; \u22a200q_{1}\u25fb; \u22a20q_{2}00; \u22a2q_{2}000; \u22a2q_{2}\u25fb000; \u22a20q_{0}000]\n\n---\n\nItem 10 \u2014 Example: Applying a Turing Machine to a String Using Instantaneous Descriptions\n\nExample Prompt:\n[IMG: /graphics/6f091253d0ffa753251ca4bba531dd81]\n\nThe string [MATH: 101] is written on the tape of the Turing machine given by the transition table above, where [MATH: \\square] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_1.] Write the sequence of the machine's configurations in terms of instantaneous descriptions.\n\nContent:\nEXPLANATION\n\nExplanation:\nFirst, let's summarize the nontrivial commands from our transition table:\n\n| Command | Description |\n| [MATH: (q_1, 1) \\to (q_2, 1, R)] | In state [MATH: q_1,] observes [MATH: 1{:}] / swap to state [MATH: q_2,] write [MATH: 1,] and move right. |\n| [MATH: (q_1, \\square) \\to (q_1, 1, L)] | In state [MATH: q_1,] observes [MATH: \\square{:}] / stay in state [MATH: q_1,] write [MATH: 1,] and move left. |\n| [MATH: (q_2, 0) \\to (q_2, 1, R)] | In state [MATH: q_2,] observes [MATH: 0{:}] / stay in state [MATH: q_2,] write [MATH: 1,] and move right. |\n| [MATH: (q_2, 1) \\to (q_0, 1, R)] | In state [MATH: q_2,] observes [MATH: 1{:}] / stay in state [MATH: q_0,] write [MATH: 1,] and move right. |\n\nThe machine goes through the following configurations:\n\n| Instantaneous Description | Tape Diagram |\n| [MATH: q_1 101] | [IMG: /graphics/c5daa005d315f5edca3fa101960f5f09] |\n| [MATH: 1 q_201] | [IMG: /graphics/e558027ac7920e6bef65e24cc0795233] |\n| [MATH: 11 q_2 1] | [IMG: /graphics/91e8109c1057ac2482bdec1126f2c5b9] |\n| [MATH: 111q_0 \\square] | [IMG: /graphics/847834553b8af349a13acd12316bfeab] |\n\nUsing the [MATH: \\vdash] notation, we get the following:\n\n[MATH: q_{1}101|\u22a21q_{2}01; \u22a211q_{2}1; \u22a2111q_{0}\u25fb]\n\n---\n\nItem 11 \u2014 Question 5\n\nPrompt:\n| [MATH: _{Q}\u2216^{\u0393}] | [MATH: 1] | [MATH: \u25fb] |\n| [MATH: \u2192 q_{1}] | [MATH: (q_{1}, 1, R)] | [MATH: (q_{2}, 1, L)] |\n| [MATH: q_{2}] | [MATH: (q_{2}, 1, L)] | [MATH: (q_{0}, 1, R)] |\n| [MATH: \u2217q_{0}] | [MATH: \u2212] | [MATH: \u2212] |\n\nThe string [MATH: 11] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.]\n\nSelect the correct options in the following sequence of the machine's moves encoded using instantaneous descriptions:\n\n[MATH: q_{2}][SELECT 1]\n\n---\n\nItem 12 \u2014 Question 6\n\nQuestion Graphic:\n[IMG: /graphics/q-259198]\n\nPrompt:\nThe string [MATH: \u25fb10] is written on the tape of the Turing machine given by the transition table above, where [MATH: \u25fb] is the blank symbol. The tape head initially observes the left-most symbol of the string in state [MATH: q_{1}.] Select the correct options in the following sequence of the machine's moves encoded using instantaneous descriptions:\n\n[MATH: q_{1}][SELECT 1]"
+  }
+}

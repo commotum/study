@@ -1,0 +1,754 @@
+{
+  "schema_version": 2,
+  "topic_id": "3945",
+  "topic_title": "Computing Principal Components",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/3945/Source/3945.html",
+  "source_url": "https://mathacademy.com/topics/3945",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "39395",
+        "dom_id": "sectionLink-39395",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-39395"
+      },
+      {
+        "index": 2,
+        "step_id": "39400",
+        "dom_id": "sectionLink-39400",
+        "name": "",
+        "title": "Finding a Principal Component Given a 2x2 Covariance Matrix",
+        "selector": "#sectionLink-39400"
+      },
+      {
+        "index": 3,
+        "step_id": "36991",
+        "dom_id": "sectionLink-36991",
+        "name": "",
+        "title": "Finding a Principal Component Given a 3x3 Covariance Matrix",
+        "selector": "#sectionLink-36991"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1977",
+        "name": "Calculating the Eigenvectors of a 3x3 Matrix With Distinct Eigenvalues",
+        "href": "/topics/calculating-the-eigenvectors-of-a-3x3-matrix-with-distinct-eigenvalues-1977"
+      },
+      {
+        "topic_id": "3775",
+        "name": "Introduction to Principal Component Analysis",
+        "href": "/topics/introduction-to-principal-component-analysis-3775"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 7,
+    "step_count": 3,
+    "question_count": 4,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "39395",
+        "content_id": "6507",
+        "dom_id": "step-39395",
+        "selector": "#step-39395",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Recall that the principal components of a standardized observation matrix <span class=\"math\">[MATH: X]</span> are the unit eigenvectors of the covariance matrix <span class=\"math\">[MATH: C.]</span> If </p>",
+            "readable_text": "Recall that the principal components of a standardized observation matrix [MATH: X] are the unit eigenvectors of the covariance matrix [MATH: C.] If",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]</span></p>",
+            "readable_text": "[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>are the eigenvalues of <span class=\"math\">[MATH: C]</span> written in descending order, then: </p>",
+            "readable_text": "are the eigenvalues of [MATH: C] written in descending order, then:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>the <span class=\"math\">[MATH: 1]</span>st principal component is the unit eigenvector <span class=\"math\">[MATH: \\mathbf u_1]</span> corresponding to the <span class=\"math\">[MATH: 1]</span>st eigenvalue <span class=\"math\">[MATH: \\lambda_1,]</span></p></li><li><p>the <span class=\"math\">[MATH: 2]</span>nd principal component is the unit eigenvector <span class=\"math\">[MATH: \\mathbf u_2]</span> corresponding to the <span class=\"math\">[MATH: 2]</span>nd eigenvalue <span class=\"math\">[MATH: \\lambda_2,]</span></p></li><li><p><span class=\"math\">[MATH: \\cdots]</span></p></li></ul>",
+            "readable_text": "- the [MATH: 1]st principal component is the unit eigenvector [MATH: \\mathbf u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: \\mathbf u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>and so on.</p>",
+            "readable_text": "and so on.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, suppose that the covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is </p>",
+            "readable_text": "For example, suppose that the covariance matrix [MATH: C] of some particular observations is",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [9|1; 1|9]]</span></p>",
+            "readable_text": "[MATH: [9|1; 1|9]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>It&#x27;s easy to show that the eigenvalues of the covariance matrix <span class=\"math\">[MATH: C,]</span> in descending order, are </p>",
+            "readable_text": "It's easy to show that the eigenvalues of the covariance matrix [MATH: C,] in descending order, are",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: \\lambda_1=10, \\qquad\n\\lambda_2=8.]</span></p>",
+            "readable_text": "[MATH: \\lambda_1=10, \\qquad\n\\lambda_2=8.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To find the first principal component of the data, we need the unit eigenvector corresponding to the eigenvalue <span class=\"math\">[MATH: \\lambda_1=10.]</span> </p>",
+            "readable_text": "To find the first principal component of the data, we need the unit eigenvector corresponding to the eigenvalue [MATH: \\lambda_1=10.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Applying our usual algorithm for finding eigenvectors, we have</p>",
+            "readable_text": "Applying our usual algorithm for finding eigenvectors, we have",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: C \u2212 10I|= [9|1; 1|9] \u2212 10[1|0; 0|1] = [\u2212 1|1; 1|\u2212 1].]</span></p>",
+            "readable_text": "[MATH: C \u2212 10I|= [9|1; 1|9] \u2212 10[1|0; 0|1] = [\u2212 1|1; 1|\u2212 1].]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Now, seeking a non-zero solution of <span class=\"math\">[MATH: (C-10I)\\mathbf{x}=\\mathbf{0}]</span> gives the eigenvector </p>",
+            "readable_text": "Now, seeking a non-zero solution of [MATH: (C-10I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 1]]</span> </p>",
+            "readable_text": "[MATH: [1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Finally, dividing <span class=\"math\">[MATH: \\mathbf{v}_1]</span> by its norm <span class=\"math\">[MATH: \\| \\mathbf{v}_1 \\| = \\sqrt{2},]</span> we get </p>",
+            "readable_text": "Finally, dividing [MATH: \\mathbf{v}_1] by its norm [MATH: \\| \\mathbf{v}_1 \\| = \\sqrt{2},] we get",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><span class=\"math\">[MATH: [1; 1]]</span> </p>",
+            "readable_text": "[MATH: [1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, the <span class=\"math\">[MATH: 1]</span>st principal component of the data is <span class=\"math\">[MATH: [1; 1]]</span></p>",
+            "readable_text": "Therefore, the [MATH: 1]st principal component of the data is [MATH: [1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p><strong>Note:</strong> The opposite vector <span class=\"math\">[MATH: [1; 1]]</span> also works in the example above.</p>",
+            "readable_text": "Note: The opposite vector [MATH: [1; 1]] also works in the example above.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nRecall that the principal components of a standardized observation matrix [MATH: X] are the unit eigenvectors of the covariance matrix [MATH: C.] If\n\nContent:\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nContent:\nare the eigenvalues of [MATH: C] written in descending order, then:\n\nContent:\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: \\mathbf u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: \\mathbf u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nContent:\nand so on.\n\nContent:\nFor example, suppose that the covariance matrix [MATH: C] of some particular observations is\n\nContent:\n[MATH: [9|1; 1|9]]\n\nContent:\nIt's easy to show that the eigenvalues of the covariance matrix [MATH: C,] in descending order, are\n\nContent:\n[MATH: \\lambda_1=10, \\qquad\n\\lambda_2=8.]\n\nContent:\nTo find the first principal component of the data, we need the unit eigenvector corresponding to the eigenvalue [MATH: \\lambda_1=10.]\n\nContent:\nApplying our usual algorithm for finding eigenvectors, we have\n\nContent:\n[MATH: C \u2212 10I|= [9|1; 1|9] \u2212 10[1|0; 0|1] = [\u2212 1|1; 1|\u2212 1].]\n\nContent:\nNow, seeking a non-zero solution of [MATH: (C-10I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector\n\nContent:\n[MATH: [1; 1]]\n\nContent:\nFinally, dividing [MATH: \\mathbf{v}_1] by its norm [MATH: \\| \\mathbf{v}_1 \\| = \\sqrt{2},] we get\n\nContent:\n[MATH: [1; 1]]\n\nContent:\nTherefore, the [MATH: 1]st principal component of the data is [MATH: [1; 1]]\n\nContent:\nNote: The opposite vector [MATH: [1; 1]] also works in the example above."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "39400",
+        "content_id": "10450",
+        "dom_id": "step-39400",
+        "selector": "#step-39400",
+        "step_anchor": "step-2",
+        "title": "Finding a Principal Component Given a 2x2 Covariance Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "991",
+            "name": "Calculating the Eigenvectors of a 2x2 Matrix",
+            "href": "/topics/991",
+            "type": ""
+          },
+          {
+            "topic_id": "3138",
+            "name": "The Sample Covariance Matrix",
+            "href": "/topics/3138",
+            "type": ""
+          },
+          {
+            "topic_id": "3775",
+            "name": "Introduction to Principal Component Analysis",
+            "href": "/topics/3775",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>The covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is shown below. \n<span class=\"math\">[MATH: [7|3; 3|15]]</span>\nFind the second principal component of the data, given that the eigenvalues of <span class=\"math\">[MATH: C]</span> are <span class=\"math\">[MATH: 16]</span> and <span class=\"math\">[MATH: 6.]</span></p>",
+            "readable_text": "The covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: [7|3; 3|15]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 16] and [MATH: 6.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that the unit eigenvectors of the covariance matrix <span class=\"math\">[MATH: C]</span> are called the principal components of the data. If </p><p><span class=\"math\">[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]</span></p><p>are the eigenvalues of <span class=\"math\">[MATH: C]</span> written in descending order, then: </p><ul><li><p>the <span class=\"math\">[MATH: 1]</span>st principal component is the unit eigenvector <span class=\"math\">[MATH: \\mathbf u_1]</span> corresponding to the <span class=\"math\">[MATH: 1]</span>st eigenvalue <span class=\"math\">[MATH: \\lambda_1,]</span></p></li><li><p>the <span class=\"math\">[MATH: 2]</span>nd principal component is the unit eigenvector <span class=\"math\">[MATH: \\mathbf u_2]</span> corresponding to the <span class=\"math\">[MATH: 2]</span>nd eigenvalue <span class=\"math\">[MATH: \\lambda_2,]</span></p></li><li><p><span class=\"math\">[MATH: \\cdots]</span></p></li></ul><p>and so on.</p><p>In our case, the eigenvalues of the covariance matrix <span class=\"math\">[MATH: C,]</span> in descending order, are <span class=\"math\">[MATH: \\lambda_1=16]</span> and <span class=\"math\">[MATH: \\lambda_2=6.]</span>\nSo, we need the unit eigenvector that corresponds to the eigenvalue <span class=\"math\">[MATH: \\lambda_2=6{:}]</span></p><p>Applying our usual algorithm for finding eigenvectors, we have</p><p><span class=\"math\">[MATH: C \u2212 6I|= [7|3; 3|15] \u2212 6[1|0; 0|1] = [1|3; 3|9].]</span></p><p>Seeking a non-zero solution of <span class=\"math\">[MATH: (C-6I)\\mathbf{x}=\\mathbf{0}]</span> gives the eigenvector <span class=\"math\">[MATH: [\u2212 3; 1]]</span> </p><p>Finally, dividing <span class=\"math\">[MATH: \\mathbf{v}_2]</span> by its norm <span class=\"math\">[MATH: \\| \\mathbf{v}_2 \\| = \\sqrt{10},]</span> we get </p><p><span class=\"math\">[MATH: [\u2212 3; 1]]</span> </p><p>Therefore, the second principal component of the data is <span class=\"math\">[MATH: [\u2212 3; 1]]</span></p>",
+            "readable_text": "Recall that the unit eigenvectors of the covariance matrix [MATH: C] are called the principal components of the data. If\n\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nare the eigenvalues of [MATH: C] written in descending order, then:\n\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: \\mathbf u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: \\mathbf u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nand so on.\n\nIn our case, the eigenvalues of the covariance matrix [MATH: C,] in descending order, are [MATH: \\lambda_1=16] and [MATH: \\lambda_2=6.]\nSo, we need the unit eigenvector that corresponds to the eigenvalue [MATH: \\lambda_2=6{:}]\n\nApplying our usual algorithm for finding eigenvectors, we have\n\n[MATH: C \u2212 6I|= [7|3; 3|15] \u2212 6[1|0; 0|1] = [1|3; 3|9].]\n\nSeeking a non-zero solution of [MATH: (C-6I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector [MATH: [\u2212 3; 1]]\n\nFinally, dividing [MATH: \\mathbf{v}_2] by its norm [MATH: \\| \\mathbf{v}_2 \\| = \\sqrt{10},] we get\n\n[MATH: [\u2212 3; 1]]\n\nTherefore, the second principal component of the data is [MATH: [\u2212 3; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: [7|3; 3|15]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 16] and [MATH: 6.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the unit eigenvectors of the covariance matrix [MATH: C] are called the principal components of the data. If\n\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nare the eigenvalues of [MATH: C] written in descending order, then:\n\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: \\mathbf u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: \\mathbf u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nand so on.\n\nIn our case, the eigenvalues of the covariance matrix [MATH: C,] in descending order, are [MATH: \\lambda_1=16] and [MATH: \\lambda_2=6.]\nSo, we need the unit eigenvector that corresponds to the eigenvalue [MATH: \\lambda_2=6{:}]\n\nApplying our usual algorithm for finding eigenvectors, we have\n\n[MATH: C \u2212 6I|= [7|3; 3|15] \u2212 6[1|0; 0|1] = [1|3; 3|9].]\n\nSeeking a non-zero solution of [MATH: (C-6I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector [MATH: [\u2212 3; 1]]\n\nFinally, dividing [MATH: \\mathbf{v}_2] by its norm [MATH: \\| \\mathbf{v}_2 \\| = \\sqrt{10},] we get\n\n[MATH: [\u2212 3; 1]]\n\nTherefore, the second principal component of the data is [MATH: [\u2212 3; 1]]"
+      },
+      {
+        "lesson_index": 3,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "137739",
+        "dom_id": "question-137739",
+        "selector": "#question-137739",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is shown below. \n<span class=\"math\">[MATH: C = [9|2; 2|6]]</span>\nFind the first principal component of the data, given that the eigenvalues of <span class=\"math\">[MATH: C]</span> are <span class=\"math\">[MATH: 10]</span> and <span class=\"math\">[MATH: 5.]</span></p>",
+          "readable_text": "The covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [9|2; 2|6]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 10] and [MATH: 5.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137739-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: [0; 1]]</span></p>",
+            "readable_text": "[MATH: [0; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137739-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(5))[\u2212 1; 2]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(5))[\u2212 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137739-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(2))[\u2212 1; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(2))[\u2212 1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137739-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(2))[1; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(2))[1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137739-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(5))[2; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(5))[2; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [9|2; 2|6]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 10] and [MATH: 5.]\n\nChoices:\na. [MATH: [0; 1]]\nb. [MATH: (1)/(sqrt(5))[\u2212 1; 2]]\nc. [MATH: (1)/(sqrt(2))[\u2212 1; 1]]\nd. [MATH: (1)/(sqrt(2))[1; 1]]\ne. [MATH: (1)/(sqrt(5))[2; 1]]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "138512",
+        "dom_id": "question-138512",
+        "selector": "#question-138512",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is shown below. \n<span class=\"math\">[MATH: C = [3|3; 3|11]]</span>\nFind the second principal component of the data, given that the eigenvalues of <span class=\"math\">[MATH: C]</span> are <span class=\"math\">[MATH: 12]</span> and <span class=\"math\">[MATH: 2.]</span></p>",
+          "readable_text": "The covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|3; 3|11]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 12] and [MATH: 2.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-138512-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(13))[\u2212 3; 2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(sqrt(13))[\u2212 3; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-138512-b",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: (1)/(sqrt(10))[\u2212 3; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(10))[\u2212 3; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-138512-c",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: [1; 0]]</span></p>",
+            "readable_text": "[MATH: [1; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-138512-d",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: (1)/(sqrt(13))[\u2212 2; 3]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(13))[\u2212 2; 3]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-138512-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(10))[3; 1]]</span> </p>",
+            "readable_text": "[MATH: (1)/(sqrt(10))[3; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|3; 3|11]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 12] and [MATH: 2.]\n\nChoices:\na. [MATH: (1)/(sqrt(13))[\u2212 3; 2]]\nb. [MATH: (1)/(sqrt(10))[\u2212 3; 1]]\nc. [MATH: [1; 0]]\nd. [MATH: (1)/(sqrt(13))[\u2212 2; 3]]\ne. [MATH: (1)/(sqrt(10))[3; 1]]"
+      },
+      {
+        "lesson_index": 5,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "36991",
+        "content_id": "9836",
+        "dom_id": "step-36991",
+        "selector": "#step-36991",
+        "step_anchor": "step-5",
+        "title": "Finding a Principal Component Given a 3x3 Covariance Matrix",
+        "key_prerequisites": [
+          {
+            "topic_id": "1977",
+            "name": "Calculating the Eigenvectors of a 3x3 Matrix With Distinct Eigenvalues",
+            "href": "/topics/1977",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<p>The covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is shown below. \n<span class=\"math\">[MATH: [5|2|2; 2|6|0; 2|0|4]]</span>\nFind the first principal component of the data, given that the eigenvalues of <span class=\"math\">[MATH: S]</span> are <span class=\"math\">[MATH: 8,]</span> <span class=\"math\">[MATH: 5,]</span> and <span class=\"math\">[MATH: 2.]</span></p>",
+            "readable_text": "The covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: [5|2|2; 2|6|0; 2|0|4]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: S] are [MATH: 8,] [MATH: 5,] and [MATH: 2.]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that the unit eigenvectors of the covariance matrix <span class=\"math\">[MATH: C]</span> are called the principal components of the data. If </p><p><span class=\"math\">[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]</span></p><p>are the eigenvalues of <span class=\"math\">[MATH: C]</span> written in descending order, then: </p><ul><li><p>the <span class=\"math\">[MATH: 1]</span>st principal component is the unit eigenvector <span class=\"math\">[MATH: u_1]</span> corresponding to the <span class=\"math\">[MATH: 1]</span>st eigenvalue <span class=\"math\">[MATH: \\lambda_1,]</span></p></li><li><p>the <span class=\"math\">[MATH: 2]</span>nd principal component is the unit eigenvector <span class=\"math\">[MATH: u_2]</span> corresponding to the <span class=\"math\">[MATH: 2]</span>nd eigenvalue <span class=\"math\">[MATH: \\lambda_2,]</span></p></li><li><p><span class=\"math\">[MATH: \\cdots]</span></p></li></ul><p>and so on.</p><p>In our case, the eigenvalues of the covariance matrix <span class=\"math\">[MATH: C,]</span> in descending order, are </p><p><span class=\"math\">[MATH: \\lambda_1=8,\\qquad\n\\lambda_2=5,\\qquad\n\\lambda_3=2.]</span></p><p>So, we need the unit eigenvector that corresponds to the eigenvalue <span class=\"math\">[MATH: \\lambda_1=8{:}]</span></p><p>Applying our usual algorithm for finding eigenvectors, we have</p><p><span class=\"math\">[MATH: C \u2212 8I|= [5|2|2; 2|6|0; 2|0|4] \u2212 8[1|0|0; 0|1|0; 0|0|1] = [\u2212 3|2|2; 2|\u2212 2|0; 2|0|\u2212 4].]</span></p><p>Seeking a non-zero solution of <span class=\"math\">[MATH: (C-8I)\\mathbf{x}=\\mathbf{0}]</span> gives the eigenvector <span class=\"math\">[MATH: [2; 2; 1]]</span> </p><p>Finally, dividing <span class=\"math\">[MATH: \\mathbf{v}_1]</span> by its norm <span class=\"math\">[MATH: \\| \\mathbf{v}_1 \\| =3,]</span> we get </p><p><span class=\"math\">[MATH: [2; 2; 1]]</span> </p><p>Therefore, the first principal component of the data is <span class=\"math\">[MATH: [2; 2; 1]]</span></p>",
+            "readable_text": "Recall that the unit eigenvectors of the covariance matrix [MATH: C] are called the principal components of the data. If\n\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nare the eigenvalues of [MATH: C] written in descending order, then:\n\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nand so on.\n\nIn our case, the eigenvalues of the covariance matrix [MATH: C,] in descending order, are\n\n[MATH: \\lambda_1=8,\\qquad\n\\lambda_2=5,\\qquad\n\\lambda_3=2.]\n\nSo, we need the unit eigenvector that corresponds to the eigenvalue [MATH: \\lambda_1=8{:}]\n\nApplying our usual algorithm for finding eigenvectors, we have\n\n[MATH: C \u2212 8I|= [5|2|2; 2|6|0; 2|0|4] \u2212 8[1|0|0; 0|1|0; 0|0|1] = [\u2212 3|2|2; 2|\u2212 2|0; 2|0|\u2212 4].]\n\nSeeking a non-zero solution of [MATH: (C-8I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector [MATH: [2; 2; 1]]\n\nFinally, dividing [MATH: \\mathbf{v}_1] by its norm [MATH: \\| \\mathbf{v}_1 \\| =3,] we get\n\n[MATH: [2; 2; 1]]\n\nTherefore, the first principal component of the data is [MATH: [2; 2; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: [5|2|2; 2|6|0; 2|0|4]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: S] are [MATH: 8,] [MATH: 5,] and [MATH: 2.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the unit eigenvectors of the covariance matrix [MATH: C] are called the principal components of the data. If\n\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nare the eigenvalues of [MATH: C] written in descending order, then:\n\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nand so on.\n\nIn our case, the eigenvalues of the covariance matrix [MATH: C,] in descending order, are\n\n[MATH: \\lambda_1=8,\\qquad\n\\lambda_2=5,\\qquad\n\\lambda_3=2.]\n\nSo, we need the unit eigenvector that corresponds to the eigenvalue [MATH: \\lambda_1=8{:}]\n\nApplying our usual algorithm for finding eigenvectors, we have\n\n[MATH: C \u2212 8I|= [5|2|2; 2|6|0; 2|0|4] \u2212 8[1|0|0; 0|1|0; 0|0|1] = [\u2212 3|2|2; 2|\u2212 2|0; 2|0|\u2212 4].]\n\nSeeking a non-zero solution of [MATH: (C-8I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector [MATH: [2; 2; 1]]\n\nFinally, dividing [MATH: \\mathbf{v}_1] by its norm [MATH: \\| \\mathbf{v}_1 \\| =3,] we get\n\n[MATH: [2; 2; 1]]\n\nTherefore, the first principal component of the data is [MATH: [2; 2; 1]]"
+      },
+      {
+        "lesson_index": 6,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "138519",
+        "dom_id": "question-138519",
+        "selector": "#question-138519",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is shown below. \n<span class=\"math\">[MATH: C = [3|2|2; 2|2|0; 2|0|4]]</span>\nFind the first principal component of the data, given that the eigenvalues of <span class=\"math\">[MATH: C]</span> are <span class=\"math\">[MATH: 6,]</span> <span class=\"math\">[MATH: 3,]</span> and <span class=\"math\">[MATH: 0.]</span></p>",
+          "readable_text": "The covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|2|2; 2|2|0; 2|0|4]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 6,] [MATH: 3,] and [MATH: 0.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-138519-a",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: (1)/(3)[2; 1; 2]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[2; 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-138519-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(21))[\u2212 4; 1; 2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(sqrt(21))[\u2212 4; 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-138519-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(5))[2; 1; 0]]</span> </p>",
+            "readable_text": "[MATH: (1)/(sqrt(5))[2; 1; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-138519-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(3)[2; \u2212 1; 2]]</span> </p>",
+            "readable_text": "[MATH: (1)/(3)[2; \u2212 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-138519-e",
+            "content_type": "text",
+            "normalized_html": "<p> <span class=\"math\">[MATH: (1)/(3)[2; \u2212 2; \u2212 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(3)[2; \u2212 2; \u2212 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|2|2; 2|2|0; 2|0|4]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 6,] [MATH: 3,] and [MATH: 0.]\n\nChoices:\na. [MATH: (1)/(3)[2; 1; 2]]\nb. [MATH: (1)/(sqrt(21))[\u2212 4; 1; 2]]\nc. [MATH: (1)/(sqrt(5))[2; 1; 0]]\nd. [MATH: (1)/(3)[2; \u2212 1; 2]]\ne. [MATH: (1)/(3)[2; \u2212 2; \u2212 1]]"
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "137740",
+        "dom_id": "question-137740",
+        "selector": "#question-137740",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>The covariance matrix <span class=\"math\">[MATH: C]</span> of some particular observations is shown below. \n<span class=\"math\">[MATH: C = [3|0|0; 0|9|2; 0|2|6]]</span>\nFind the second principal component of the data, given that the eigenvalues of <span class=\"math\">[MATH: C]</span> are <span class=\"math\">[MATH: 10,]</span> <span class=\"math\">[MATH: 5,]</span> and <span class=\"math\">[MATH: 3.]</span></p>",
+          "readable_text": "The covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|0|0; 0|9|2; 0|2|6]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 10,] [MATH: 5,] and [MATH: 3.]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-137740-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(5))[2; 0; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(5))[2; 0; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-137740-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(3))[1; \u2212 1; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(3))[1; \u2212 1; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-137740-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(5))[0; \u2212 1; 2]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(5))[0; \u2212 1; 2]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-137740-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(2))[1; 0; 1]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(2))[1; 0; 1]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-137740-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: (1)/(sqrt(2))[\u2212 1; 1; 0]]</span></p>",
+            "readable_text": "[MATH: (1)/(sqrt(2))[\u2212 1; 1; 0]]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|0|0; 0|9|2; 0|2|6]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 10,] [MATH: 5,] and [MATH: 3.]\n\nChoices:\na. [MATH: (1)/(sqrt(5))[2; 0; 1]]\nb. [MATH: (1)/(sqrt(3))[1; \u2212 1; 1]]\nc. [MATH: (1)/(sqrt(5))[0; \u2212 1; 2]]\nd. [MATH: (1)/(sqrt(2))[1; 0; 1]]\ne. [MATH: (1)/(sqrt(2))[\u2212 1; 1; 0]]"
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nRecall that the principal components of a standardized observation matrix [MATH: X] are the unit eigenvectors of the covariance matrix [MATH: C.] If\n\nContent:\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nContent:\nare the eigenvalues of [MATH: C] written in descending order, then:\n\nContent:\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: \\mathbf u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: \\mathbf u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nContent:\nand so on.\n\nContent:\nFor example, suppose that the covariance matrix [MATH: C] of some particular observations is\n\nContent:\n[MATH: [9|1; 1|9]]\n\nContent:\nIt's easy to show that the eigenvalues of the covariance matrix [MATH: C,] in descending order, are\n\nContent:\n[MATH: \\lambda_1=10, \\qquad\n\\lambda_2=8.]\n\nContent:\nTo find the first principal component of the data, we need the unit eigenvector corresponding to the eigenvalue [MATH: \\lambda_1=10.]\n\nContent:\nApplying our usual algorithm for finding eigenvectors, we have\n\nContent:\n[MATH: C \u2212 10I|= [9|1; 1|9] \u2212 10[1|0; 0|1] = [\u2212 1|1; 1|\u2212 1].]\n\nContent:\nNow, seeking a non-zero solution of [MATH: (C-10I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector\n\nContent:\n[MATH: [1; 1]]\n\nContent:\nFinally, dividing [MATH: \\mathbf{v}_1] by its norm [MATH: \\| \\mathbf{v}_1 \\| = \\sqrt{2},] we get\n\nContent:\n[MATH: [1; 1]]\n\nContent:\nTherefore, the [MATH: 1]st principal component of the data is [MATH: [1; 1]]\n\nContent:\nNote: The opposite vector [MATH: [1; 1]] also works in the example above.\n\n---\n\nItem 2 \u2014 Example: Finding a Principal Component Given a 2x2 Covariance Matrix\n\nExample Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: [7|3; 3|15]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 16] and [MATH: 6.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the unit eigenvectors of the covariance matrix [MATH: C] are called the principal components of the data. If\n\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nare the eigenvalues of [MATH: C] written in descending order, then:\n\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: \\mathbf u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: \\mathbf u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nand so on.\n\nIn our case, the eigenvalues of the covariance matrix [MATH: C,] in descending order, are [MATH: \\lambda_1=16] and [MATH: \\lambda_2=6.]\nSo, we need the unit eigenvector that corresponds to the eigenvalue [MATH: \\lambda_2=6{:}]\n\nApplying our usual algorithm for finding eigenvectors, we have\n\n[MATH: C \u2212 6I|= [7|3; 3|15] \u2212 6[1|0; 0|1] = [1|3; 3|9].]\n\nSeeking a non-zero solution of [MATH: (C-6I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector [MATH: [\u2212 3; 1]]\n\nFinally, dividing [MATH: \\mathbf{v}_2] by its norm [MATH: \\| \\mathbf{v}_2 \\| = \\sqrt{10},] we get\n\n[MATH: [\u2212 3; 1]]\n\nTherefore, the second principal component of the data is [MATH: [\u2212 3; 1]]\n\n---\n\nItem 3 \u2014 Question 1\n\nPrompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [9|2; 2|6]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 10] and [MATH: 5.]\n\nChoices:\na. [MATH: [0; 1]]\nb. [MATH: (1)/(sqrt(5))[\u2212 1; 2]]\nc. [MATH: (1)/(sqrt(2))[\u2212 1; 1]]\nd. [MATH: (1)/(sqrt(2))[1; 1]]\ne. [MATH: (1)/(sqrt(5))[2; 1]]\n\n---\n\nItem 4 \u2014 Question 2\n\nPrompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|3; 3|11]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 12] and [MATH: 2.]\n\nChoices:\na. [MATH: (1)/(sqrt(13))[\u2212 3; 2]]\nb. [MATH: (1)/(sqrt(10))[\u2212 3; 1]]\nc. [MATH: [1; 0]]\nd. [MATH: (1)/(sqrt(13))[\u2212 2; 3]]\ne. [MATH: (1)/(sqrt(10))[3; 1]]\n\n---\n\nItem 5 \u2014 Example: Finding a Principal Component Given a 3x3 Covariance Matrix\n\nExample Prompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: [5|2|2; 2|6|0; 2|0|4]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: S] are [MATH: 8,] [MATH: 5,] and [MATH: 2.]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that the unit eigenvectors of the covariance matrix [MATH: C] are called the principal components of the data. If\n\n[MATH: \\lambda_1 \\gt \\lambda_2 \\gt \\cdots\\gt \\lambda_n]\n\nare the eigenvalues of [MATH: C] written in descending order, then:\n\n- the [MATH: 1]st principal component is the unit eigenvector [MATH: u_1] corresponding to the [MATH: 1]st eigenvalue [MATH: \\lambda_1,]\n- the [MATH: 2]nd principal component is the unit eigenvector [MATH: u_2] corresponding to the [MATH: 2]nd eigenvalue [MATH: \\lambda_2,]\n- [MATH: \\cdots]\n\nand so on.\n\nIn our case, the eigenvalues of the covariance matrix [MATH: C,] in descending order, are\n\n[MATH: \\lambda_1=8,\\qquad\n\\lambda_2=5,\\qquad\n\\lambda_3=2.]\n\nSo, we need the unit eigenvector that corresponds to the eigenvalue [MATH: \\lambda_1=8{:}]\n\nApplying our usual algorithm for finding eigenvectors, we have\n\n[MATH: C \u2212 8I|= [5|2|2; 2|6|0; 2|0|4] \u2212 8[1|0|0; 0|1|0; 0|0|1] = [\u2212 3|2|2; 2|\u2212 2|0; 2|0|\u2212 4].]\n\nSeeking a non-zero solution of [MATH: (C-8I)\\mathbf{x}=\\mathbf{0}] gives the eigenvector [MATH: [2; 2; 1]]\n\nFinally, dividing [MATH: \\mathbf{v}_1] by its norm [MATH: \\| \\mathbf{v}_1 \\| =3,] we get\n\n[MATH: [2; 2; 1]]\n\nTherefore, the first principal component of the data is [MATH: [2; 2; 1]]\n\n---\n\nItem 6 \u2014 Question 3\n\nPrompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|2|2; 2|2|0; 2|0|4]]\nFind the first principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 6,] [MATH: 3,] and [MATH: 0.]\n\nChoices:\na. [MATH: (1)/(3)[2; 1; 2]]\nb. [MATH: (1)/(sqrt(21))[\u2212 4; 1; 2]]\nc. [MATH: (1)/(sqrt(5))[2; 1; 0]]\nd. [MATH: (1)/(3)[2; \u2212 1; 2]]\ne. [MATH: (1)/(3)[2; \u2212 2; \u2212 1]]\n\n---\n\nItem 7 \u2014 Question 4\n\nPrompt:\nThe covariance matrix [MATH: C] of some particular observations is shown below.\n[MATH: C = [3|0|0; 0|9|2; 0|2|6]]\nFind the second principal component of the data, given that the eigenvalues of [MATH: C] are [MATH: 10,] [MATH: 5,] and [MATH: 3.]\n\nChoices:\na. [MATH: (1)/(sqrt(5))[2; 0; 1]]\nb. [MATH: (1)/(sqrt(3))[1; \u2212 1; 1]]\nc. [MATH: (1)/(sqrt(5))[0; \u2212 1; 2]]\nd. [MATH: (1)/(sqrt(2))[1; 0; 1]]\ne. [MATH: (1)/(sqrt(2))[\u2212 1; 1; 0]]"
+  }
+}

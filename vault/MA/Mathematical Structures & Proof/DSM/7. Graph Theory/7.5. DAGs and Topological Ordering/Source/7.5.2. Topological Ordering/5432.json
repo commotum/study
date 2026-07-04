@@ -1,0 +1,1548 @@
+{
+  "schema_version": 2,
+  "topic_id": "5432",
+  "topic_title": "Topological Ordering",
+  "source_html": "/home/jake/Developer/MA/DATA/Lessons/5432/Source/5432.html",
+  "source_url": "https://mathacademy.com/topics/5432",
+  "normalization": {
+    "math_placeholder": "[MATH: ...]",
+    "image_placeholder": "[IMG: /graphics/...]",
+    "free_entry_placeholder": "[FREE_ENTRY n]",
+    "select_placeholder": "[SELECT n]"
+  },
+  "toc": {
+    "sidebar_selector": "#sidebar",
+    "section_links_selector": "#sectionLinks .sectionLink",
+    "section_links": [
+      {
+        "index": 1,
+        "step_id": "417552",
+        "dom_id": "sectionLink-417552",
+        "name": "",
+        "title": "Introduction",
+        "selector": "#sectionLink-417552"
+      },
+      {
+        "index": 2,
+        "step_id": "417553",
+        "dom_id": "sectionLink-417553",
+        "name": "",
+        "title": "Another Example",
+        "selector": "#sectionLink-417553"
+      },
+      {
+        "index": 3,
+        "step_id": "417554",
+        "dom_id": "sectionLink-417554",
+        "name": "",
+        "title": "Understanding Topological Orderings",
+        "selector": "#sectionLink-417554"
+      },
+      {
+        "index": 4,
+        "step_id": "417557",
+        "dom_id": "sectionLink-417557",
+        "name": "",
+        "title": "Identifying Topological Orderings",
+        "selector": "#sectionLink-417557"
+      },
+      {
+        "index": 5,
+        "step_id": "417560",
+        "dom_id": "sectionLink-417560",
+        "name": "",
+        "title": "Constructing a Topological Ordering by Inspection",
+        "selector": "#sectionLink-417560"
+      },
+      {
+        "index": 6,
+        "step_id": "417563",
+        "dom_id": "sectionLink-417563",
+        "name": "",
+        "title": "Practical Applications of Topological Ordering",
+        "selector": "#sectionLink-417563"
+      }
+    ],
+    "topic_prerequisites": [
+      {
+        "topic_id": "1296",
+        "name": "Directed Acyclic Graphs",
+        "href": "/topics/directed-acyclic-graphs-1296"
+      },
+      {
+        "topic_id": "2756",
+        "name": "Connected Graphs",
+        "href": "/topics/connected-graphs-2756"
+      },
+      {
+        "topic_id": "3414",
+        "name": "Proof by Contradiction",
+        "href": "/topics/proof-by-contradiction-3414"
+      },
+      {
+        "topic_id": "4925",
+        "name": "Proving Biconditional Statements",
+        "href": "/topics/proving-biconditional-statements-4925"
+      }
+    ]
+  },
+  "lesson": {
+    "container_selector": "#lessonContent",
+    "item_count": 12,
+    "step_count": 6,
+    "question_count": 6,
+    "items": [
+      {
+        "lesson_index": 1,
+        "step_index": 1,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417552",
+        "content_id": "11177",
+        "dom_id": "step-417552",
+        "selector": "#step-417552",
+        "step_anchor": "step-1",
+        "title": "Introduction",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>A <strong>topological ordering</strong> (TO, or <strong>topological sort</strong>) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge <span class=\"math\">[MATH: u \\to v]</span> from vertex <span class=\"math\">[MATH: u]</span> to vertex <span class=\"math\">[MATH: v]</span>, <span class=\"math\">[MATH: u]</span> appears before <span class=\"math\">[MATH: v]</span> in the ordering.</p>",
+            "readable_text": "A topological ordering (TO, or topological sort) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Alternatively, a topological ordering of a directed acyclic graph is a linear ordering of its vertices such that, if we arrange the vertices in order from left to right, each vertex has all its successors positioned to the right and all its predecessors to the left. Equivalently, all edges point from left to right.</p>",
+            "readable_text": "Alternatively, a topological ordering of a directed acyclic graph is a linear ordering of its vertices such that, if we arrange the vertices in order from left to right, each vertex has all its successors positioned to the right and all its predecessors to the left. Equivalently, all edges point from left to right.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For example, consider the graph below.</p>",
+            "readable_text": "For example, consider the graph below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/2739d4a5f12ec1ca6c4cbffc25f671cb\"></p>",
+            "readable_text": "[IMG: /graphics/2739d4a5f12ec1ca6c4cbffc25f671cb]",
+            "images": [
+              {
+                "src": "/graphics/2739d4a5f12ec1ca6c4cbffc25f671cb",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>To obtain a topological ordering, the vertices of this graph can be rearranged as follows: <span class=\"math\">[MATH: v_1, v_2, v_4, v_5, v_3.]</span> The image below illustrates this topological ordering.</p>",
+            "readable_text": "To obtain a topological ordering, the vertices of this graph can be rearranged as follows: [MATH: v_1, v_2, v_4, v_5, v_3.] The image below illustrates this topological ordering.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/25290950e0de7de42134302edbe83889\"></p>",
+            "readable_text": "[IMG: /graphics/25290950e0de7de42134302edbe83889]",
+            "images": [
+              {
+                "src": "/graphics/25290950e0de7de42134302edbe83889",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Note: </p>",
+            "readable_text": "Note:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>A topological ordering is not a new graph but a different visual representation of the same graph.</p></li><li><p>Topological orderings are not unique. Graphs usually have multiple topological orderings. For example, a graph with <span class=\"math\">[MATH: n]</span> isolated vertices has <span class=\"math\">[MATH: n!]</span> topological orderings since its vertices can be arranged in any order.</p></li></ul>",
+            "readable_text": "- A topological ordering is not a new graph but a different visual representation of the same graph.\n- Topological orderings are not unique. Graphs usually have multiple topological orderings. For example, a graph with [MATH: n] isolated vertices has [MATH: n!] topological orderings since its vertices can be arranged in any order.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>For another example, both images below represent valid topological orderings of the graph above.</p>",
+            "readable_text": "For another example, both images below represent valid topological orderings of the graph above.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/fb4d72ffb2d500291b0beeeac3553147\"></p>",
+            "readable_text": "[IMG: /graphics/fb4d72ffb2d500291b0beeeac3553147]",
+            "images": [
+              {
+                "src": "/graphics/fb4d72ffb2d500291b0beeeac3553147",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Notice that the two weakly connected components of the initial graph remain disconnected from each other in the topological orderings.</p>",
+            "readable_text": "Notice that the two weakly connected components of the initial graph remain disconnected from each other in the topological orderings.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>We have the following theorem:</p>",
+            "readable_text": "We have the following theorem:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<blockquote><p><em>Theorem (DAG criterion): A directed graph is a directed acyclic graph if and only if it has a topological ordering.</em></p><p><em>Proof:</em> </p><p><em>DAG <span class=\"math\">[MATH: \\Rightarrow]</span> TO. This direction is proven using <strong>Kahn&#x27;s Algorithm</strong>, which will be discussed in a future topic. The algorithm provides a procedure for constructing a topological ordering for any DAG.</em></p><p><em>DAG <span class=\"math\">[MATH: \\Leftarrow]</span> TO. This direction can be proven by contradiction:</em></p><p><em>Suppose a topological ordering (TO) exists, but the graph is not a DAG and contains a cycle.</em></p><p><em>Since the TO exists, it includes all vertices of this cycle. Let <span class=\"math\">[MATH: v]</span> be the first vertex of the cycle in the ordering. By the definition of a cycle, there must be an incoming edge to <span class=\"math\">[MATH: v]</span> from another vertex <span class=\"math\">[MATH: u]</span> within the cycle.</em></p><p><em>However, because this is a topological ordering, <span class=\"math\">[MATH: u]</span> must appear earlier than <span class=\"math\">[MATH: v]</span> in the ordering. This contradicts the assumption that <span class=\"math\">[MATH: v]</span> is the first vertex of the cycle in the ordering.</em></p><p><em>This contradiction implies that our initial assumption is false, and therefore, the graph must be a DAG.</em></p></blockquote>",
+            "readable_text": "> Theorem (DAG criterion): A directed graph is a directed acyclic graph if and only if it has a topological ordering.\n>\n> Proof:\n>\n> DAG [MATH: \\Rightarrow] TO. This direction is proven using Kahn's Algorithm, which will be discussed in a future topic. The algorithm provides a procedure for constructing a topological ordering for any DAG.\n>\n> DAG [MATH: \\Leftarrow] TO. This direction can be proven by contradiction:\n>\n> Suppose a topological ordering (TO) exists, but the graph is not a DAG and contains a cycle.\n>\n> Since the TO exists, it includes all vertices of this cycle. Let [MATH: v] be the first vertex of the cycle in the ordering. By the definition of a cycle, there must be an incoming edge to [MATH: v] from another vertex [MATH: u] within the cycle.\n>\n> However, because this is a topological ordering, [MATH: u] must appear earlier than [MATH: v] in the ordering. This contradicts the assumption that [MATH: v] is the first vertex of the cycle in the ordering.\n>\n> This contradiction implies that our initial assumption is false, and therefore, the graph must be a DAG.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/2739d4a5f12ec1ca6c4cbffc25f671cb",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/25290950e0de7de42134302edbe83889",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/fb4d72ffb2d500291b0beeeac3553147",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nA topological ordering (TO, or topological sort) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nContent:\nAlternatively, a topological ordering of a directed acyclic graph is a linear ordering of its vertices such that, if we arrange the vertices in order from left to right, each vertex has all its successors positioned to the right and all its predecessors to the left. Equivalently, all edges point from left to right.\n\nContent:\nFor example, consider the graph below.\n\nGraphic:\n[IMG: /graphics/2739d4a5f12ec1ca6c4cbffc25f671cb]\n\nContent:\nTo obtain a topological ordering, the vertices of this graph can be rearranged as follows: [MATH: v_1, v_2, v_4, v_5, v_3.] The image below illustrates this topological ordering.\n\nGraphic:\n[IMG: /graphics/25290950e0de7de42134302edbe83889]\n\nContent:\nNote:\n\nContent:\n- A topological ordering is not a new graph but a different visual representation of the same graph.\n- Topological orderings are not unique. Graphs usually have multiple topological orderings. For example, a graph with [MATH: n] isolated vertices has [MATH: n!] topological orderings since its vertices can be arranged in any order.\n\nContent:\nFor another example, both images below represent valid topological orderings of the graph above.\n\nGraphic:\n[IMG: /graphics/fb4d72ffb2d500291b0beeeac3553147]\n\nContent:\nNotice that the two weakly connected components of the initial graph remain disconnected from each other in the topological orderings.\n\nContent:\nWe have the following theorem:\n\nContent:\n> Theorem (DAG criterion): A directed graph is a directed acyclic graph if and only if it has a topological ordering.\n>\n> Proof:\n>\n> DAG [MATH: \\Rightarrow] TO. This direction is proven using Kahn's Algorithm, which will be discussed in a future topic. The algorithm provides a procedure for constructing a topological ordering for any DAG.\n>\n> DAG [MATH: \\Leftarrow] TO. This direction can be proven by contradiction:\n>\n> Suppose a topological ordering (TO) exists, but the graph is not a DAG and contains a cycle.\n>\n> Since the TO exists, it includes all vertices of this cycle. Let [MATH: v] be the first vertex of the cycle in the ordering. By the definition of a cycle, there must be an incoming edge to [MATH: v] from another vertex [MATH: u] within the cycle.\n>\n> However, because this is a topological ordering, [MATH: u] must appear earlier than [MATH: v] in the ordering. This contradicts the assumption that [MATH: v] is the first vertex of the cycle in the ordering.\n>\n> This contradiction implies that our initial assumption is false, and therefore, the graph must be a DAG."
+      },
+      {
+        "lesson_index": 2,
+        "step_index": 2,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417553",
+        "content_id": "11850",
+        "dom_id": "step-417553",
+        "selector": "#step-417553",
+        "step_anchor": "step-2",
+        "title": "Another Example",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/9d101509b3bb58c8029c7ab9145cd5de\"></p>",
+            "readable_text": "[IMG: /graphics/9d101509b3bb58c8029c7ab9145cd5de]",
+            "images": [
+              {
+                "src": "/graphics/9d101509b3bb58c8029c7ab9145cd5de",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Let&#x27;s look at another example. Suppose we have the graph shown above and we want to know which of the following options represents topological orderings of the graph.</p>",
+            "readable_text": "Let's look at another example. Suppose we have the graph shown above and we want to know which of the following options represents topological orderings of the graph.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ol><li><p> <span class=\"math\">[MATH: v_3, v_2, v_1, v_4, v_5]</span> </p></li><li><p> <span class=\"math\">[MATH: v_3, v_2, v_4, v_1, v_5]</span> </p></li><li><p> <span class=\"math\">[MATH: v_3, v_1, v_2, v_4, v_5]</span> </p></li></ol>",
+            "readable_text": "1. [MATH: v_3, v_2, v_1, v_4, v_5]\n2. [MATH: v_3, v_2, v_4, v_1, v_5]\n3. [MATH: v_3, v_1, v_2, v_4, v_5]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>With that in mind, let&#x27;s examine the given options.</p>",
+            "readable_text": "With that in mind, let's examine the given options.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.</p></li></ul>",
+            "readable_text": "- Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/d8e07d8dfaa5c5cf46b52b1c810d8e24\"></p>",
+            "readable_text": "[IMG: /graphics/d8e07d8dfaa5c5cf46b52b1c810d8e24]",
+            "images": [
+              {
+                "src": "/graphics/d8e07d8dfaa5c5cf46b52b1c810d8e24",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Option II is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.</p></li></ul>",
+            "readable_text": "- Option II is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "graphic",
+            "normalized_html": "<p><img src=\"/graphics/7f626367f2eda7d5cc94eff898e867f1\"></p>",
+            "readable_text": "[IMG: /graphics/7f626367f2eda7d5cc94eff898e867f1]",
+            "images": [
+              {
+                "src": "/graphics/7f626367f2eda7d5cc94eff898e867f1",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p>Option III is <em>not</em> a topological ordering because <span class=\"math\">[MATH: v_2]</span> succeeds <span class=\"math\">[MATH: v_1,]</span> but our DAG contains the edge <span class=\"math\">[MATH: v_2 \\to v_1]</span> (opposite direction).</p></li></ul>",
+            "readable_text": "- Option III is not a topological ordering because [MATH: v_2] succeeds [MATH: v_1,] but our DAG contains the edge [MATH: v_2 \\to v_1] (opposite direction).",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Therefore, only options I and II represent topological orderings for the graph.</p>",
+            "readable_text": "Therefore, only options I and II represent topological orderings for the graph.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/9d101509b3bb58c8029c7ab9145cd5de",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/d8e07d8dfaa5c5cf46b52b1c810d8e24",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/7f626367f2eda7d5cc94eff898e867f1",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Graphic:\n[IMG: /graphics/9d101509b3bb58c8029c7ab9145cd5de]\n\nContent:\nLet's look at another example. Suppose we have the graph shown above and we want to know which of the following options represents topological orderings of the graph.\n\nContent:\n1. [MATH: v_3, v_2, v_1, v_4, v_5]\n2. [MATH: v_3, v_2, v_4, v_1, v_5]\n3. [MATH: v_3, v_1, v_2, v_4, v_5]\n\nContent:\nWith that in mind, let's examine the given options.\n\nContent:\n- Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nGraphic:\n[IMG: /graphics/d8e07d8dfaa5c5cf46b52b1c810d8e24]\n\nContent:\n- Option II is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nGraphic:\n[IMG: /graphics/7f626367f2eda7d5cc94eff898e867f1]\n\nContent:\n- Option III is not a topological ordering because [MATH: v_2] succeeds [MATH: v_1,] but our DAG contains the edge [MATH: v_2 \\to v_1] (opposite direction).\n\nContent:\nTherefore, only options I and II represent topological orderings for the graph."
+      },
+      {
+        "lesson_index": 3,
+        "step_index": 3,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "417554",
+        "content_id": "16901",
+        "dom_id": "step-417554",
+        "selector": "#step-417554",
+        "step_anchor": "step-3",
+        "title": "Understanding Topological Orderings",
+        "key_prerequisites": [
+          {
+            "topic_id": "1296",
+            "name": "Directed Acyclic Graphs",
+            "href": "/topics/1296",
+            "type": ""
+          }
+        ],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/81a71ef20809c0af8c16b441b7fe10ec\"></div><p>Some edges are depicted without arrows in the directed acyclic graph (DAG) shown above.\nAdd the arrows in such a way that the resulting DAG can represent the following topological ordering:\n<span class=\"math\">[MATH: v_2, \\: v_6, \\: v_1,\\: v_5, \\: v_4, \\: v_3]</span></p>",
+            "readable_text": "[IMG: /graphics/81a71ef20809c0af8c16b441b7fe10ec]\n\nSome edges are depicted without arrows in the directed acyclic graph (DAG) shown above.\nAdd the arrows in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_2, \\: v_6, \\: v_1,\\: v_5, \\: v_4, \\: v_3]",
+            "images": [
+              {
+                "src": "/graphics/81a71ef20809c0af8c16b441b7fe10ec",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that a <em>topological ordering</em> (TO) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge <span class=\"math\">[MATH: u \\to v]</span> from vertex <span class=\"math\">[MATH: u]</span> to vertex <span class=\"math\">[MATH: v]</span>, <span class=\"math\">[MATH: u]</span> appears before <span class=\"math\">[MATH: v]</span> in the ordering.</p><p>With that in mind, let&#x27;s examine the highlighted edges.</p><ul><li><p><span class=\"math\">[MATH: v_2]</span> precedes <span class=\"math\">[MATH: v_5]</span> in our TO, hence the first incomplete edge must be <span class=\"math\">[MATH: v_2 \\to v_5.]</span></p></li><li><p><span class=\"math\">[MATH: v_6]</span> precedes <span class=\"math\">[MATH: v_5]</span> in our TO, hence the second incomplete edge must be <span class=\"math\">[MATH: v_6 \\to v_5.]</span></p></li></ul><p>The graph with restored arrows is shown below.</p><div class=\"graphic\"><img src=\"/graphics/16d9040ba2cd7e59e63685aa899e005f\"></div>",
+            "readable_text": "Recall that a topological ordering (TO) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nWith that in mind, let's examine the highlighted edges.\n\n- [MATH: v_2] precedes [MATH: v_5] in our TO, hence the first incomplete edge must be [MATH: v_2 \\to v_5.]\n- [MATH: v_6] precedes [MATH: v_5] in our TO, hence the second incomplete edge must be [MATH: v_6 \\to v_5.]\n\nThe graph with restored arrows is shown below.\n\n[IMG: /graphics/16d9040ba2cd7e59e63685aa899e005f]",
+            "images": [
+              {
+                "src": "/graphics/16d9040ba2cd7e59e63685aa899e005f",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/81a71ef20809c0af8c16b441b7fe10ec",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/16d9040ba2cd7e59e63685aa899e005f",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/81a71ef20809c0af8c16b441b7fe10ec]\n\nSome edges are depicted without arrows in the directed acyclic graph (DAG) shown above.\nAdd the arrows in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_2, \\: v_6, \\: v_1,\\: v_5, \\: v_4, \\: v_3]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a topological ordering (TO) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nWith that in mind, let's examine the highlighted edges.\n\n- [MATH: v_2] precedes [MATH: v_5] in our TO, hence the first incomplete edge must be [MATH: v_2 \\to v_5.]\n- [MATH: v_6] precedes [MATH: v_5] in our TO, hence the second incomplete edge must be [MATH: v_6 \\to v_5.]\n\nThe graph with restored arrows is shown below.\n\n[IMG: /graphics/16d9040ba2cd7e59e63685aa899e005f]"
+      },
+      {
+        "lesson_index": 4,
+        "question_index": 1,
+        "item_type": "question",
+        "question_id": "259162",
+        "dom_id": "question-259162",
+        "selector": "#question-259162",
+        "title": "Question 1",
+        "question_number": 1,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259162\"></p>",
+          "readable_text": "[IMG: /graphics/q-259162]",
+          "images": [
+            {
+              "src": "/graphics/q-259162",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>In the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n<span class=\"math\">[MATH: v_{2}, v_{3}, v_{1}, v_{5}, v_{4}]</span>The correct directions of the edges are</p><p>\n<span class=\"select-list\" data-select-id=\"selectList-259162-0\" data-select-index=\"1\">[SELECT 1]</span>, \n<span class=\"select-list\" data-select-id=\"selectList-259162-1\" data-select-index=\"2\">[SELECT 2]</span>, \n<span class=\"select-list\" data-select-id=\"selectList-259162-2\" data-select-index=\"3\">[SELECT 3]</span>.</p>",
+          "readable_text": "In the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_{2}, v_{3}, v_{1}, v_{5}, v_{4}]The correct directions of the edges are\n\n[SELECT 1],\n[SELECT 2],\n[SELECT 3].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-259162-0",
+              "frame_dom_id": "selectListFrame-259162-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1} \u2192 v_{2}]</span>",
+                  "readable_text": "[MATH: v_{1} \u2192 v_{2}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{2} \u2192 v_{1}]</span>",
+                  "readable_text": "[MATH: v_{2} \u2192 v_{1}]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-259162-1",
+              "frame_dom_id": "selectListFrame-259162-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{4} \u2192 v_{3}]</span>",
+                  "readable_text": "[MATH: v_{4} \u2192 v_{3}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3} \u2192 v_{4}]</span>",
+                  "readable_text": "[MATH: v_{3} \u2192 v_{4}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-259162-2",
+              "frame_dom_id": "selectListFrame-259162-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{5} \u2192 v_{3}]</span>",
+                  "readable_text": "[MATH: v_{5} \u2192 v_{3}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3} \u2192 v_{5}]</span>",
+                  "readable_text": "[MATH: v_{3} \u2192 v_{5}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-259162",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-259162-0",
+            "frame_dom_id": "selectListFrame-259162-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1} \u2192 v_{2}]</span>",
+                "readable_text": "[MATH: v_{1} \u2192 v_{2}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{2} \u2192 v_{1}]</span>",
+                "readable_text": "[MATH: v_{2} \u2192 v_{1}]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-259162-1",
+            "frame_dom_id": "selectListFrame-259162-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{4} \u2192 v_{3}]</span>",
+                "readable_text": "[MATH: v_{4} \u2192 v_{3}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3} \u2192 v_{4}]</span>",
+                "readable_text": "[MATH: v_{3} \u2192 v_{4}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-259162-2",
+            "frame_dom_id": "selectListFrame-259162-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{5} \u2192 v_{3}]</span>",
+                "readable_text": "[MATH: v_{5} \u2192 v_{3}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3} \u2192 v_{5}]</span>",
+                "readable_text": "[MATH: v_{3} \u2192 v_{5}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259162]\n\nPrompt:\nIn the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_{2}, v_{3}, v_{1}, v_{5}, v_{4}]The correct directions of the edges are\n\n[SELECT 1],\n[SELECT 2],\n[SELECT 3]."
+      },
+      {
+        "lesson_index": 5,
+        "question_index": 2,
+        "item_type": "question",
+        "question_id": "262091",
+        "dom_id": "question-262091",
+        "selector": "#question-262091",
+        "title": "Question 2",
+        "question_number": 2,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-262091\"></p>",
+          "readable_text": "[IMG: /graphics/q-262091]",
+          "images": [
+            {
+              "src": "/graphics/q-262091",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>In the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n<span class=\"math\">[MATH: v_{1}, v_{5}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]</span>The correct directions of the edges are</p><p>\n<span class=\"select-list\" data-select-id=\"selectList-262091-0\" data-select-index=\"1\">[SELECT 1]</span>, \n<span class=\"select-list\" data-select-id=\"selectList-262091-1\" data-select-index=\"2\">[SELECT 2]</span>.</p>",
+          "readable_text": "In the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_{1}, v_{5}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]The correct directions of the edges are\n\n[SELECT 1],\n[SELECT 2].",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-262091-0",
+              "frame_dom_id": "selectListFrame-262091-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{5} \u2192 v_{6}]</span>",
+                  "readable_text": "[MATH: v_{5} \u2192 v_{6}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{6} \u2192 v_{5}]</span>",
+                  "readable_text": "[MATH: v_{6} \u2192 v_{5}]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-262091-1",
+              "frame_dom_id": "selectListFrame-262091-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 2,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3} \u2192 v_{4}]</span>",
+                  "readable_text": "[MATH: v_{3} \u2192 v_{4}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{4} \u2192 v_{3}]</span>",
+                  "readable_text": "[MATH: v_{4} \u2192 v_{3}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-262091",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-262091-0",
+            "frame_dom_id": "selectListFrame-262091-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{5} \u2192 v_{6}]</span>",
+                "readable_text": "[MATH: v_{5} \u2192 v_{6}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{6} \u2192 v_{5}]</span>",
+                "readable_text": "[MATH: v_{6} \u2192 v_{5}]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-262091-1",
+            "frame_dom_id": "selectListFrame-262091-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 2,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3} \u2192 v_{4}]</span>",
+                "readable_text": "[MATH: v_{3} \u2192 v_{4}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{4} \u2192 v_{3}]</span>",
+                "readable_text": "[MATH: v_{4} \u2192 v_{3}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-262091]\n\nPrompt:\nIn the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_{1}, v_{5}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]The correct directions of the edges are\n\n[SELECT 1],\n[SELECT 2]."
+      },
+      {
+        "lesson_index": 6,
+        "step_index": 4,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "417557",
+        "content_id": "16981",
+        "dom_id": "step-417557",
+        "selector": "#step-417557",
+        "step_anchor": "step-6",
+        "title": "Identifying Topological Orderings",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/a0c45a11d18a244fef2e76156f3dfe56\"></div><p>Which of the following represents a topological ordering of the directed acyclic graph shown above?</p><ol><li><p> <span class=\"math\">[MATH: v_5, v_1, v_4, v_2, v_6, v_3]</span> </p></li><li><p> <span class=\"math\">[MATH: v_5, v_4, v_1, v_2, v_6, v_3]</span> </p></li><li><p> <span class=\"math\">[MATH: v_6, v_1, v_4, v_2, v_5, v_3]</span> </p></li></ol>",
+            "readable_text": "[IMG: /graphics/a0c45a11d18a244fef2e76156f3dfe56]\n\nWhich of the following represents a topological ordering of the directed acyclic graph shown above?\n\n1. [MATH: v_5, v_1, v_4, v_2, v_6, v_3]\n2. [MATH: v_5, v_4, v_1, v_2, v_6, v_3]\n3. [MATH: v_6, v_1, v_4, v_2, v_5, v_3]",
+            "images": [
+              {
+                "src": "/graphics/a0c45a11d18a244fef2e76156f3dfe56",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that a <em>topological ordering</em> (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge <span class=\"math\">[MATH: u \\to v]</span> from vertex <span class=\"math\">[MATH: u]</span> to vertex <span class=\"math\">[MATH: v]</span>, <span class=\"math\">[MATH: u]</span> appears before <span class=\"math\">[MATH: v]</span> in the ordering.</p><p>With that in mind, let&#x27;s examine the given options.</p><ul><li><p>Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.</p><p>Notice that the two components remain disconnected from each other in the TO image.</p></li></ul><div class=\"graphic\"><img src=\"/graphics/3cb7b68034213f86fccc77d197204f83\"></div><ul><li><p>Option II is <em>not</em> a topological ordering because <span class=\"math\">[MATH: v_4]</span> precedes <span class=\"math\">[MATH: v_1,]</span> but our DAG contains the edge <span class=\"math\">[MATH: v_1 \\to v_4]</span> (opposite direction).</p></li></ul><ul><li><p>Option III is <em>not</em> a topological ordering because <span class=\"math\">[MATH: v_6]</span> precedes <span class=\"math\">[MATH: v_5,]</span> but our DAG contains the edge <span class=\"math\">[MATH: v_5 \\to v_6]</span> (opposite direction).</p></li></ul><p>Therefore, the correct answer is &quot;I only.&quot;</p>",
+            "readable_text": "Recall that a topological ordering (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nWith that in mind, let's examine the given options.\n\n- Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nNotice that the two components remain disconnected from each other in the TO image.\n\n[IMG: /graphics/3cb7b68034213f86fccc77d197204f83]\n\n- Option II is not a topological ordering because [MATH: v_4] precedes [MATH: v_1,] but our DAG contains the edge [MATH: v_1 \\to v_4] (opposite direction).\n\n- Option III is not a topological ordering because [MATH: v_6] precedes [MATH: v_5,] but our DAG contains the edge [MATH: v_5 \\to v_6] (opposite direction).\n\nTherefore, the correct answer is \"I only.\"",
+            "images": [
+              {
+                "src": "/graphics/3cb7b68034213f86fccc77d197204f83",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/a0c45a11d18a244fef2e76156f3dfe56",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/3cb7b68034213f86fccc77d197204f83",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/a0c45a11d18a244fef2e76156f3dfe56]\n\nWhich of the following represents a topological ordering of the directed acyclic graph shown above?\n\n1. [MATH: v_5, v_1, v_4, v_2, v_6, v_3]\n2. [MATH: v_5, v_4, v_1, v_2, v_6, v_3]\n3. [MATH: v_6, v_1, v_4, v_2, v_5, v_3]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a topological ordering (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nWith that in mind, let's examine the given options.\n\n- Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nNotice that the two components remain disconnected from each other in the TO image.\n\n[IMG: /graphics/3cb7b68034213f86fccc77d197204f83]\n\n- Option II is not a topological ordering because [MATH: v_4] precedes [MATH: v_1,] but our DAG contains the edge [MATH: v_1 \\to v_4] (opposite direction).\n\n- Option III is not a topological ordering because [MATH: v_6] precedes [MATH: v_5,] but our DAG contains the edge [MATH: v_5 \\to v_6] (opposite direction).\n\nTherefore, the correct answer is \"I only.\""
+      },
+      {
+        "lesson_index": 7,
+        "question_index": 3,
+        "item_type": "question",
+        "question_id": "259197",
+        "dom_id": "question-259197",
+        "selector": "#question-259197",
+        "title": "Question 3",
+        "question_number": 3,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259197\"></p>",
+          "readable_text": "[IMG: /graphics/q-259197]",
+          "images": [
+            {
+              "src": "/graphics/q-259197",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following represent the topological orderings of the directed acyclic graph shown above?</p><ol><li><p> <span class=\"math\">[MATH: v_{1}, v_{3}, v_{2}, v_{4}, v_{5}]</span> </p></li><li><p> <span class=\"math\">[MATH: v_{3}, v_{2}, v_{1}, v_{4}, v_{5}]</span> </p></li><li><p> <span class=\"math\">[MATH: v_{3}, v_{1}, v_{4}, v_{5}, v_{2}]</span> </p></li></ol>",
+          "readable_text": "Which of the following represent the topological orderings of the directed acyclic graph shown above?\n\n1. [MATH: v_{1}, v_{3}, v_{2}, v_{4}, v_{5}]\n2. [MATH: v_{3}, v_{2}, v_{1}, v_{4}, v_{5}]\n3. [MATH: v_{3}, v_{1}, v_{4}, v_{5}, v_{2}]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259197-a",
+            "content_type": "text",
+            "normalized_html": "<p>III only</p>",
+            "readable_text": "III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259197-b",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259197-c",
+            "content_type": "text",
+            "normalized_html": "<p>II and III only</p>",
+            "readable_text": "II and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259197-d",
+            "content_type": "text",
+            "normalized_html": "<p>II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259197-e",
+            "content_type": "text",
+            "normalized_html": "<p>I only</p>",
+            "readable_text": "I only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259197",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259197]\n\nPrompt:\nWhich of the following represent the topological orderings of the directed acyclic graph shown above?\n\n1. [MATH: v_{1}, v_{3}, v_{2}, v_{4}, v_{5}]\n2. [MATH: v_{3}, v_{2}, v_{1}, v_{4}, v_{5}]\n3. [MATH: v_{3}, v_{1}, v_{4}, v_{5}, v_{2}]\n\nChoices:\na. III only\nb. I and III only\nc. II and III only\nd. II only\ne. I only"
+      },
+      {
+        "lesson_index": 8,
+        "question_index": 4,
+        "item_type": "question",
+        "question_id": "259157",
+        "dom_id": "question-259157",
+        "selector": "#question-259157",
+        "title": "Question 4",
+        "question_number": 4,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259157\"></p>",
+          "readable_text": "[IMG: /graphics/q-259157]",
+          "images": [
+            {
+              "src": "/graphics/q-259157",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which of the following represent the topological orderings of the directed acyclic graph shown above?</p><ol><li><p> <span class=\"math\">[MATH: v_{1}, v_{2}, v_{7}, v_{4}, v_{3}, v_{5}, v_{6}]</span> </p></li><li><p> <span class=\"math\">[MATH: v_{5}, v_{1}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]</span> </p></li><li><p> <span class=\"math\">[MATH: v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}]</span> </p></li></ol>",
+          "readable_text": "Which of the following represent the topological orderings of the directed acyclic graph shown above?\n\n1. [MATH: v_{1}, v_{2}, v_{7}, v_{4}, v_{3}, v_{5}, v_{6}]\n2. [MATH: v_{5}, v_{1}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]\n3. [MATH: v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259157-a",
+            "content_type": "text",
+            "normalized_html": "<p> II only</p>",
+            "readable_text": "II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259157-b",
+            "content_type": "text",
+            "normalized_html": "<p> III only</p>",
+            "readable_text": "III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259157-c",
+            "content_type": "text",
+            "normalized_html": "<p>I and III only</p>",
+            "readable_text": "I and III only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259157-d",
+            "content_type": "text",
+            "normalized_html": "<p> I and II only</p>",
+            "readable_text": "I and II only",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259157-e",
+            "content_type": "text",
+            "normalized_html": "<p>None of them</p>",
+            "readable_text": "None of them",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259157",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259157]\n\nPrompt:\nWhich of the following represent the topological orderings of the directed acyclic graph shown above?\n\n1. [MATH: v_{1}, v_{2}, v_{7}, v_{4}, v_{3}, v_{5}, v_{6}]\n2. [MATH: v_{5}, v_{1}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]\n3. [MATH: v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}]\n\nChoices:\na. II only\nb. III only\nc. I and III only\nd. I and II only\ne. None of them"
+      },
+      {
+        "lesson_index": 9,
+        "step_index": 5,
+        "item_type": "step",
+        "step_type": "example",
+        "step_id": "417560",
+        "content_id": "16870",
+        "dom_id": "step-417560",
+        "selector": "#step-417560",
+        "step_anchor": "step-9",
+        "title": "Constructing a Topological Ordering by Inspection",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "example_question",
+            "normalized_html": "<div class=\"graphic\"><img src=\"/graphics/8ea19d868f8deb19f8e42081abea6e4a\"></div><p>Complete the missing vertices in the topological ordering given for the above graph.</p><p><span class=\"math\">[MATH: v_{2}]</span></p>",
+            "readable_text": "[IMG: /graphics/8ea19d868f8deb19f8e42081abea6e4a]\n\nComplete the missing vertices in the topological ordering given for the above graph.\n\n[MATH: v_{2}]",
+            "images": [
+              {
+                "src": "/graphics/8ea19d868f8deb19f8e42081abea6e4a",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<p>EXPLANATION</p>",
+            "readable_text": "EXPLANATION",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "example_explanation",
+            "normalized_html": "<p>Recall that a <em>topological ordering</em> (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge <span class=\"math\">[MATH: u \\to v]</span> from vertex <span class=\"math\">[MATH: u]</span> to vertex <span class=\"math\">[MATH: v]</span>, <span class=\"math\">[MATH: u]</span> appears before <span class=\"math\">[MATH: v]</span> in the ordering. </p><p>Alternatively, we can say that in a topological ordering, each vertex must have all its successors positioned to the right and all its predecessors to the left.</p><p>Notice that the missing vertices are <span class=\"math\">[MATH: v_2, v_3,]</span> and <span class=\"math\">[MATH: v_5,]</span> and they should be ordered relative to each other.</p><p>By inspecting the graph, we can observe the following dependencies:</p><ul><li><p>The vertex <span class=\"math\">[MATH: v_5]</span> has no successors. Hence, it is the rightmost vertex:\n<span class=\"math\">[MATH: \\square, \\: v_4, \\:  \\: \\square, \\: v_1, \\: v_6, \\bbox[3pt,Moccasin]{v_5}]</span></p></li><li><p>The vertex <span class=\"math\">[MATH: v_2]</span> has no predecessors. Hence, it is the leftmost vertex:\n<span class=\"math\">[MATH: \\bbox[3pt,Moccasin]{v_2}, \\: v_4,\\:  \\: \\square, \\: v_1, \\: v_6, \\: v_5]</span></p></li><li><p>The vertex <span class=\"math\">[MATH: v_1]</span> is successor of <span class=\"math\">[MATH: v_3.]</span> Hence, <span class=\"math\">[MATH: v_3]</span> must be positioned to the left of <span class=\"math\">[MATH: v_1{:}]</span>\n<span class=\"math\">[MATH: v_2, \\: v_4, \\: \\bbox[3pt,Moccasin]{v_3}, \\: v_1, \\: v_6,  \\: v_5]</span></p></li></ul><p>The corresponding layout of the DAG representing this topological ordering is shown below.</p><div class=\"graphic\"><img src=\"/graphics/2cc6abe08ecbde55c89040fa0b9f232e\"></div><p>Therefore, the correct positions in the topological ordering are the following: \n<span class=\"math\">[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}v_2}, \\:\nv_4, \\:\n\\: \\bbox[3pt,Gainsboro]{\\color{blue}v_3}\n,\\:v_1, \\: v_6,\n\\bbox[3pt,Gainsboro]{\\color{blue}v_5}]</span></p>",
+            "readable_text": "Recall that a topological ordering (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nAlternatively, we can say that in a topological ordering, each vertex must have all its successors positioned to the right and all its predecessors to the left.\n\nNotice that the missing vertices are [MATH: v_2, v_3,] and [MATH: v_5,] and they should be ordered relative to each other.\n\nBy inspecting the graph, we can observe the following dependencies:\n\n- The vertex [MATH: v_5] has no successors. Hence, it is the rightmost vertex:\n[MATH: \\square, \\: v_4, \\: \\: \\square, \\: v_1, \\: v_6, \\bbox[3pt,Moccasin]{v_5}]\n- The vertex [MATH: v_2] has no predecessors. Hence, it is the leftmost vertex:\n[MATH: \\bbox[3pt,Moccasin]{v_2}, \\: v_4,\\: \\: \\square, \\: v_1, \\: v_6, \\: v_5]\n- The vertex [MATH: v_1] is successor of [MATH: v_3.] Hence, [MATH: v_3] must be positioned to the left of [MATH: v_1{:}]\n[MATH: v_2, \\: v_4, \\: \\bbox[3pt,Moccasin]{v_3}, \\: v_1, \\: v_6, \\: v_5]\n\nThe corresponding layout of the DAG representing this topological ordering is shown below.\n\n[IMG: /graphics/2cc6abe08ecbde55c89040fa0b9f232e]\n\nTherefore, the correct positions in the topological ordering are the following:\n[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}v_2}, \\:\nv_4, \\:\n\\: \\bbox[3pt,Gainsboro]{\\color{blue}v_3}\n,\\:v_1, \\: v_6,\n\\bbox[3pt,Gainsboro]{\\color{blue}v_5}]",
+            "images": [
+              {
+                "src": "/graphics/2cc6abe08ecbde55c89040fa0b9f232e",
+                "alt": ""
+              }
+            ],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/8ea19d868f8deb19f8e42081abea6e4a",
+            "alt": ""
+          },
+          {
+            "src": "/graphics/2cc6abe08ecbde55c89040fa0b9f232e",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Example Prompt:\n[IMG: /graphics/8ea19d868f8deb19f8e42081abea6e4a]\n\nComplete the missing vertices in the topological ordering given for the above graph.\n\n[MATH: v_{2}]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a topological ordering (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nAlternatively, we can say that in a topological ordering, each vertex must have all its successors positioned to the right and all its predecessors to the left.\n\nNotice that the missing vertices are [MATH: v_2, v_3,] and [MATH: v_5,] and they should be ordered relative to each other.\n\nBy inspecting the graph, we can observe the following dependencies:\n\n- The vertex [MATH: v_5] has no successors. Hence, it is the rightmost vertex:\n[MATH: \\square, \\: v_4, \\: \\: \\square, \\: v_1, \\: v_6, \\bbox[3pt,Moccasin]{v_5}]\n- The vertex [MATH: v_2] has no predecessors. Hence, it is the leftmost vertex:\n[MATH: \\bbox[3pt,Moccasin]{v_2}, \\: v_4,\\: \\: \\square, \\: v_1, \\: v_6, \\: v_5]\n- The vertex [MATH: v_1] is successor of [MATH: v_3.] Hence, [MATH: v_3] must be positioned to the left of [MATH: v_1{:}]\n[MATH: v_2, \\: v_4, \\: \\bbox[3pt,Moccasin]{v_3}, \\: v_1, \\: v_6, \\: v_5]\n\nThe corresponding layout of the DAG representing this topological ordering is shown below.\n\n[IMG: /graphics/2cc6abe08ecbde55c89040fa0b9f232e]\n\nTherefore, the correct positions in the topological ordering are the following:\n[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}v_2}, \\:\nv_4, \\:\n\\: \\bbox[3pt,Gainsboro]{\\color{blue}v_3}\n,\\:v_1, \\: v_6,\n\\bbox[3pt,Gainsboro]{\\color{blue}v_5}]"
+      },
+      {
+        "lesson_index": 10,
+        "question_index": 5,
+        "item_type": "question",
+        "question_id": "259164",
+        "dom_id": "question-259164",
+        "selector": "#question-259164",
+        "title": "Question 5",
+        "question_number": 5,
+        "question_format": "multiple-choice",
+        "choice_count": 5,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259164\"></p>",
+          "readable_text": "[IMG: /graphics/q-259164]",
+          "images": [
+            {
+              "src": "/graphics/q-259164",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Which vertex should be placed last in the topological orderings of the graph shown above?</p>",
+          "readable_text": "Which vertex should be placed last in the topological orderings of the graph shown above?",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [
+          {
+            "choice_index": 1,
+            "label": "a",
+            "dom_id": "questionWidget-choiceLetterCircle-259164-a",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{7}]</span></p>",
+            "readable_text": "[MATH: v_{7}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 2,
+            "label": "b",
+            "dom_id": "questionWidget-choiceLetterCircle-259164-b",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{4}]</span> </p>",
+            "readable_text": "[MATH: v_{4}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 3,
+            "label": "c",
+            "dom_id": "questionWidget-choiceLetterCircle-259164-c",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{5}]</span> </p>",
+            "readable_text": "[MATH: v_{5}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 4,
+            "label": "d",
+            "dom_id": "questionWidget-choiceLetterCircle-259164-d",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{3}]</span> </p>",
+            "readable_text": "[MATH: v_{3}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "choice_index": 5,
+            "label": "e",
+            "dom_id": "questionWidget-choiceLetterCircle-259164-e",
+            "content_type": "text",
+            "normalized_html": "<p><span class=\"math\">[MATH: v_{6}]</span></p>",
+            "readable_text": "[MATH: v_{6}]",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [
+          {
+            "src": "/graphics/q-259164",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259164]\n\nPrompt:\nWhich vertex should be placed last in the topological orderings of the graph shown above?\n\nChoices:\na. [MATH: v_{7}]\nb. [MATH: v_{4}]\nc. [MATH: v_{5}]\nd. [MATH: v_{3}]\ne. [MATH: v_{6}]"
+      },
+      {
+        "lesson_index": 11,
+        "question_index": 6,
+        "item_type": "question",
+        "question_id": "259301",
+        "dom_id": "question-259301",
+        "selector": "#question-259301",
+        "title": "Question 6",
+        "question_number": 6,
+        "question_format": "select-list",
+        "choice_count": 0,
+        "has_content_in_snapshot": true,
+        "hydration_required": false,
+        "graphic": {
+          "normalized_html": "<p><img src=\"/graphics/q-259301\"></p>",
+          "readable_text": "[IMG: /graphics/q-259301]",
+          "images": [
+            {
+              "src": "/graphics/q-259301",
+              "alt": ""
+            }
+          ],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "calculator_instructions": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "prompt": {
+          "normalized_html": "<p>Place the missing vertices in their correct positions in the topological ordering of the graph shown above.<span class=\"math\">[MATH: v_{3}]</span><span class=\"select-list\" data-select-id=\"selectList-259301-0\" data-select-index=\"1\">[SELECT 1]</span><span class=\"select-list\" data-select-id=\"selectList-259301-1\" data-select-index=\"2\">[SELECT 2]</span><span class=\"select-list\" data-select-id=\"selectList-259301-2\" data-select-index=\"3\">[SELECT 3]</span><span class=\"select-list\" data-select-id=\"selectList-259301-3\" data-select-index=\"4\">[SELECT 4]</span></p>",
+          "readable_text": "Place the missing vertices in their correct positions in the topological ordering of the graph shown above.[MATH: v_{3}][SELECT 1][SELECT 2][SELECT 3][SELECT 4]",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": [
+            {
+              "index": 1,
+              "dom_id": "selectList-259301-0",
+              "frame_dom_id": "selectListFrame-259301-0",
+              "placeholder": "[SELECT 1]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                  "readable_text": "[MATH: v_{3}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                  "readable_text": "[MATH: v_{7}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                  "readable_text": "[MATH: v_{4}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                  "readable_text": "[MATH: v_{1}]"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "dom_id": "selectList-259301-1",
+              "frame_dom_id": "selectListFrame-259301-1",
+              "placeholder": "[SELECT 2]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                  "readable_text": "[MATH: v_{3}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                  "readable_text": "[MATH: v_{4}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                  "readable_text": "[MATH: v_{7}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                  "readable_text": "[MATH: v_{1}]"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "dom_id": "selectList-259301-2",
+              "frame_dom_id": "selectListFrame-259301-2",
+              "placeholder": "[SELECT 3]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                  "readable_text": "[MATH: v_{3}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                  "readable_text": "[MATH: v_{1}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                  "readable_text": "[MATH: v_{4}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                  "readable_text": "[MATH: v_{7}]"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "dom_id": "selectList-259301-3",
+              "frame_dom_id": "selectListFrame-259301-3",
+              "placeholder": "[SELECT 4]",
+              "option_count": 4,
+              "options": [
+                {
+                  "index": 1,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                  "readable_text": "[MATH: v_{1}]"
+                },
+                {
+                  "index": 2,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                  "readable_text": "[MATH: v_{3}]"
+                },
+                {
+                  "index": 3,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                  "readable_text": "[MATH: v_{7}]"
+                },
+                {
+                  "index": 4,
+                  "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                  "readable_text": "[MATH: v_{4}]"
+                }
+              ]
+            }
+          ]
+        },
+        "body": {
+          "normalized_html": "",
+          "readable_text": "",
+          "images": [],
+          "free_entry_blanks": [],
+          "select_lists": []
+        },
+        "choices": [],
+        "images": [
+          {
+            "src": "/graphics/q-259301",
+            "alt": ""
+          }
+        ],
+        "free_entry_blanks": [],
+        "select_lists": [
+          {
+            "index": 1,
+            "dom_id": "selectList-259301-0",
+            "frame_dom_id": "selectListFrame-259301-0",
+            "placeholder": "[SELECT 1]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                "readable_text": "[MATH: v_{3}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                "readable_text": "[MATH: v_{7}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                "readable_text": "[MATH: v_{4}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                "readable_text": "[MATH: v_{1}]"
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "dom_id": "selectList-259301-1",
+            "frame_dom_id": "selectListFrame-259301-1",
+            "placeholder": "[SELECT 2]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                "readable_text": "[MATH: v_{3}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                "readable_text": "[MATH: v_{4}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                "readable_text": "[MATH: v_{7}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                "readable_text": "[MATH: v_{1}]"
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "dom_id": "selectList-259301-2",
+            "frame_dom_id": "selectListFrame-259301-2",
+            "placeholder": "[SELECT 3]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                "readable_text": "[MATH: v_{3}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                "readable_text": "[MATH: v_{1}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                "readable_text": "[MATH: v_{4}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                "readable_text": "[MATH: v_{7}]"
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "dom_id": "selectList-259301-3",
+            "frame_dom_id": "selectListFrame-259301-3",
+            "placeholder": "[SELECT 4]",
+            "option_count": 4,
+            "options": [
+              {
+                "index": 1,
+                "normalized_html": "<span class=\"math\">[MATH: v_{1}]</span>",
+                "readable_text": "[MATH: v_{1}]"
+              },
+              {
+                "index": 2,
+                "normalized_html": "<span class=\"math\">[MATH: v_{3}]</span>",
+                "readable_text": "[MATH: v_{3}]"
+              },
+              {
+                "index": 3,
+                "normalized_html": "<span class=\"math\">[MATH: v_{7}]</span>",
+                "readable_text": "[MATH: v_{7}]"
+              },
+              {
+                "index": 4,
+                "normalized_html": "<span class=\"math\">[MATH: v_{4}]</span>",
+                "readable_text": "[MATH: v_{4}]"
+              }
+            ]
+          }
+        ],
+        "readable_text": "Question Graphic:\n[IMG: /graphics/q-259301]\n\nPrompt:\nPlace the missing vertices in their correct positions in the topological ordering of the graph shown above.[MATH: v_{3}][SELECT 1][SELECT 2][SELECT 3][SELECT 4]"
+      },
+      {
+        "lesson_index": 12,
+        "step_index": 6,
+        "item_type": "step",
+        "step_type": "tutorial",
+        "step_id": "417563",
+        "content_id": "11283",
+        "dom_id": "step-417563",
+        "selector": "#step-417563",
+        "step_anchor": "step-12",
+        "title": "Practical Applications of Topological Ordering",
+        "key_prerequisites": [],
+        "has_content_in_snapshot": true,
+        "sections": [
+          {
+            "section_type": "content",
+            "normalized_html": "<p>Topological orderings of DAGS have many real-world applications:</p>",
+            "readable_text": "Topological orderings of DAGS have many real-world applications:",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          },
+          {
+            "section_type": "content",
+            "normalized_html": "<ul><li><p><strong>Task Scheduling.</strong> DAGs can be used in project management and job scheduling, where each task (job or project) is represented as a vertex, and directed edges indicate dependencies between tasks.</p><p>For example, given several tasks for different departments in a company and the dependencies between the tasks (which may be represented as a DAG), we can reorder the tasks in topological order to help with project planning. </p></li><li><p><strong>Data Flow Analysis.</strong> DAGs can be used to model computational processes, where each computation module is represented as a vertex, and directed edges indicate the data flow between modules and the order of execution for the calculations.</p><p>For example, given some cells in a spreadsheet and, for each cell, a list of cells used in its calculations, we can represent this as a DAG and reorder the cells in topological order. This tells us a valid order in which to calculate the output of each cell, ensuring that all cell outputs are calculated before they&#x27;re needed in other cells. </p></li></ul>",
+            "readable_text": "- Task Scheduling. DAGs can be used in project management and job scheduling, where each task (job or project) is represented as a vertex, and directed edges indicate dependencies between tasks.\n\nFor example, given several tasks for different departments in a company and the dependencies between the tasks (which may be represented as a DAG), we can reorder the tasks in topological order to help with project planning.\n- Data Flow Analysis. DAGs can be used to model computational processes, where each computation module is represented as a vertex, and directed edges indicate the data flow between modules and the order of execution for the calculations.\n\nFor example, given some cells in a spreadsheet and, for each cell, a list of cells used in its calculations, we can represent this as a DAG and reorder the cells in topological order. This tells us a valid order in which to calculate the output of each cell, ensuring that all cell outputs are calculated before they're needed in other cells.",
+            "images": [],
+            "free_entry_blanks": [],
+            "select_lists": []
+          }
+        ],
+        "images": [],
+        "free_entry_blanks": [],
+        "select_lists": [],
+        "readable_text": "Content:\nTopological orderings of DAGS have many real-world applications:\n\nContent:\n- Task Scheduling. DAGs can be used in project management and job scheduling, where each task (job or project) is represented as a vertex, and directed edges indicate dependencies between tasks.\n\nFor example, given several tasks for different departments in a company and the dependencies between the tasks (which may be represented as a DAG), we can reorder the tasks in topological order to help with project planning.\n- Data Flow Analysis. DAGs can be used to model computational processes, where each computation module is represented as a vertex, and directed edges indicate the data flow between modules and the order of execution for the calculations.\n\nFor example, given some cells in a spreadsheet and, for each cell, a list of cells used in its calculations, we can represent this as a DAG and reorder the cells in topological order. This tells us a valid order in which to calculate the output of each cell, ensuring that all cell outputs are calculated before they're needed in other cells."
+      }
+    ],
+    "readable_text": "Item 1 \u2014 Tutorial: Introduction\n\nContent:\nA topological ordering (TO, or topological sort) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nContent:\nAlternatively, a topological ordering of a directed acyclic graph is a linear ordering of its vertices such that, if we arrange the vertices in order from left to right, each vertex has all its successors positioned to the right and all its predecessors to the left. Equivalently, all edges point from left to right.\n\nContent:\nFor example, consider the graph below.\n\nGraphic:\n[IMG: /graphics/2739d4a5f12ec1ca6c4cbffc25f671cb]\n\nContent:\nTo obtain a topological ordering, the vertices of this graph can be rearranged as follows: [MATH: v_1, v_2, v_4, v_5, v_3.] The image below illustrates this topological ordering.\n\nGraphic:\n[IMG: /graphics/25290950e0de7de42134302edbe83889]\n\nContent:\nNote:\n\nContent:\n- A topological ordering is not a new graph but a different visual representation of the same graph.\n- Topological orderings are not unique. Graphs usually have multiple topological orderings. For example, a graph with [MATH: n] isolated vertices has [MATH: n!] topological orderings since its vertices can be arranged in any order.\n\nContent:\nFor another example, both images below represent valid topological orderings of the graph above.\n\nGraphic:\n[IMG: /graphics/fb4d72ffb2d500291b0beeeac3553147]\n\nContent:\nNotice that the two weakly connected components of the initial graph remain disconnected from each other in the topological orderings.\n\nContent:\nWe have the following theorem:\n\nContent:\n> Theorem (DAG criterion): A directed graph is a directed acyclic graph if and only if it has a topological ordering.\n>\n> Proof:\n>\n> DAG [MATH: \\Rightarrow] TO. This direction is proven using Kahn's Algorithm, which will be discussed in a future topic. The algorithm provides a procedure for constructing a topological ordering for any DAG.\n>\n> DAG [MATH: \\Leftarrow] TO. This direction can be proven by contradiction:\n>\n> Suppose a topological ordering (TO) exists, but the graph is not a DAG and contains a cycle.\n>\n> Since the TO exists, it includes all vertices of this cycle. Let [MATH: v] be the first vertex of the cycle in the ordering. By the definition of a cycle, there must be an incoming edge to [MATH: v] from another vertex [MATH: u] within the cycle.\n>\n> However, because this is a topological ordering, [MATH: u] must appear earlier than [MATH: v] in the ordering. This contradicts the assumption that [MATH: v] is the first vertex of the cycle in the ordering.\n>\n> This contradiction implies that our initial assumption is false, and therefore, the graph must be a DAG.\n\n---\n\nItem 2 \u2014 Tutorial: Another Example\n\nGraphic:\n[IMG: /graphics/9d101509b3bb58c8029c7ab9145cd5de]\n\nContent:\nLet's look at another example. Suppose we have the graph shown above and we want to know which of the following options represents topological orderings of the graph.\n\nContent:\n1. [MATH: v_3, v_2, v_1, v_4, v_5]\n2. [MATH: v_3, v_2, v_4, v_1, v_5]\n3. [MATH: v_3, v_1, v_2, v_4, v_5]\n\nContent:\nWith that in mind, let's examine the given options.\n\nContent:\n- Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nGraphic:\n[IMG: /graphics/d8e07d8dfaa5c5cf46b52b1c810d8e24]\n\nContent:\n- Option II is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nGraphic:\n[IMG: /graphics/7f626367f2eda7d5cc94eff898e867f1]\n\nContent:\n- Option III is not a topological ordering because [MATH: v_2] succeeds [MATH: v_1,] but our DAG contains the edge [MATH: v_2 \\to v_1] (opposite direction).\n\nContent:\nTherefore, only options I and II represent topological orderings for the graph.\n\n---\n\nItem 3 \u2014 Example: Understanding Topological Orderings\n\nExample Prompt:\n[IMG: /graphics/81a71ef20809c0af8c16b441b7fe10ec]\n\nSome edges are depicted without arrows in the directed acyclic graph (DAG) shown above.\nAdd the arrows in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_2, \\: v_6, \\: v_1,\\: v_5, \\: v_4, \\: v_3]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a topological ordering (TO) of a directed acyclic graph is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nWith that in mind, let's examine the highlighted edges.\n\n- [MATH: v_2] precedes [MATH: v_5] in our TO, hence the first incomplete edge must be [MATH: v_2 \\to v_5.]\n- [MATH: v_6] precedes [MATH: v_5] in our TO, hence the second incomplete edge must be [MATH: v_6 \\to v_5.]\n\nThe graph with restored arrows is shown below.\n\n[IMG: /graphics/16d9040ba2cd7e59e63685aa899e005f]\n\n---\n\nItem 4 \u2014 Question 1\n\nQuestion Graphic:\n[IMG: /graphics/q-259162]\n\nPrompt:\nIn the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_{2}, v_{3}, v_{1}, v_{5}, v_{4}]The correct directions of the edges are\n\n[SELECT 1],\n[SELECT 2],\n[SELECT 3].\n\n---\n\nItem 5 \u2014 Question 2\n\nQuestion Graphic:\n[IMG: /graphics/q-262091]\n\nPrompt:\nIn the directed acyclic graph (DAG) shown above, some edges are depicted without arrows.\nSelect the correct directions for the highlighted edges in such a way that the resulting DAG can represent the following topological ordering:\n[MATH: v_{1}, v_{5}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]The correct directions of the edges are\n\n[SELECT 1],\n[SELECT 2].\n\n---\n\nItem 6 \u2014 Example: Identifying Topological Orderings\n\nExample Prompt:\n[IMG: /graphics/a0c45a11d18a244fef2e76156f3dfe56]\n\nWhich of the following represents a topological ordering of the directed acyclic graph shown above?\n\n1. [MATH: v_5, v_1, v_4, v_2, v_6, v_3]\n2. [MATH: v_5, v_4, v_1, v_2, v_6, v_3]\n3. [MATH: v_6, v_1, v_4, v_2, v_5, v_3]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a topological ordering (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nWith that in mind, let's examine the given options.\n\n- Option I is a topological ordering because all edges are directed from a preceding vertex to a succeeding vertex in this list. The corresponding layout of the DAG representing this topological ordering is shown below.\n\nNotice that the two components remain disconnected from each other in the TO image.\n\n[IMG: /graphics/3cb7b68034213f86fccc77d197204f83]\n\n- Option II is not a topological ordering because [MATH: v_4] precedes [MATH: v_1,] but our DAG contains the edge [MATH: v_1 \\to v_4] (opposite direction).\n\n- Option III is not a topological ordering because [MATH: v_6] precedes [MATH: v_5,] but our DAG contains the edge [MATH: v_5 \\to v_6] (opposite direction).\n\nTherefore, the correct answer is \"I only.\"\n\n---\n\nItem 7 \u2014 Question 3\n\nQuestion Graphic:\n[IMG: /graphics/q-259197]\n\nPrompt:\nWhich of the following represent the topological orderings of the directed acyclic graph shown above?\n\n1. [MATH: v_{1}, v_{3}, v_{2}, v_{4}, v_{5}]\n2. [MATH: v_{3}, v_{2}, v_{1}, v_{4}, v_{5}]\n3. [MATH: v_{3}, v_{1}, v_{4}, v_{5}, v_{2}]\n\nChoices:\na. III only\nb. I and III only\nc. II and III only\nd. II only\ne. I only\n\n---\n\nItem 8 \u2014 Question 4\n\nQuestion Graphic:\n[IMG: /graphics/q-259157]\n\nPrompt:\nWhich of the following represent the topological orderings of the directed acyclic graph shown above?\n\n1. [MATH: v_{1}, v_{2}, v_{7}, v_{4}, v_{3}, v_{5}, v_{6}]\n2. [MATH: v_{5}, v_{1}, v_{2}, v_{4}, v_{6}, v_{3}, v_{7}]\n3. [MATH: v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}]\n\nChoices:\na. II only\nb. III only\nc. I and III only\nd. I and II only\ne. None of them\n\n---\n\nItem 9 \u2014 Example: Constructing a Topological Ordering by Inspection\n\nExample Prompt:\n[IMG: /graphics/8ea19d868f8deb19f8e42081abea6e4a]\n\nComplete the missing vertices in the topological ordering given for the above graph.\n\n[MATH: v_{2}]\n\nContent:\nEXPLANATION\n\nExplanation:\nRecall that a topological ordering (TO) of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge [MATH: u \\to v] from vertex [MATH: u] to vertex [MATH: v], [MATH: u] appears before [MATH: v] in the ordering.\n\nAlternatively, we can say that in a topological ordering, each vertex must have all its successors positioned to the right and all its predecessors to the left.\n\nNotice that the missing vertices are [MATH: v_2, v_3,] and [MATH: v_5,] and they should be ordered relative to each other.\n\nBy inspecting the graph, we can observe the following dependencies:\n\n- The vertex [MATH: v_5] has no successors. Hence, it is the rightmost vertex:\n[MATH: \\square, \\: v_4, \\: \\: \\square, \\: v_1, \\: v_6, \\bbox[3pt,Moccasin]{v_5}]\n- The vertex [MATH: v_2] has no predecessors. Hence, it is the leftmost vertex:\n[MATH: \\bbox[3pt,Moccasin]{v_2}, \\: v_4,\\: \\: \\square, \\: v_1, \\: v_6, \\: v_5]\n- The vertex [MATH: v_1] is successor of [MATH: v_3.] Hence, [MATH: v_3] must be positioned to the left of [MATH: v_1{:}]\n[MATH: v_2, \\: v_4, \\: \\bbox[3pt,Moccasin]{v_3}, \\: v_1, \\: v_6, \\: v_5]\n\nThe corresponding layout of the DAG representing this topological ordering is shown below.\n\n[IMG: /graphics/2cc6abe08ecbde55c89040fa0b9f232e]\n\nTherefore, the correct positions in the topological ordering are the following:\n[MATH: \\bbox[3pt,Gainsboro]{\\color{blue}v_2}, \\:\nv_4, \\:\n\\: \\bbox[3pt,Gainsboro]{\\color{blue}v_3}\n,\\:v_1, \\: v_6,\n\\bbox[3pt,Gainsboro]{\\color{blue}v_5}]\n\n---\n\nItem 10 \u2014 Question 5\n\nQuestion Graphic:\n[IMG: /graphics/q-259164]\n\nPrompt:\nWhich vertex should be placed last in the topological orderings of the graph shown above?\n\nChoices:\na. [MATH: v_{7}]\nb. [MATH: v_{4}]\nc. [MATH: v_{5}]\nd. [MATH: v_{3}]\ne. [MATH: v_{6}]\n\n---\n\nItem 11 \u2014 Question 6\n\nQuestion Graphic:\n[IMG: /graphics/q-259301]\n\nPrompt:\nPlace the missing vertices in their correct positions in the topological ordering of the graph shown above.[MATH: v_{3}][SELECT 1][SELECT 2][SELECT 3][SELECT 4]\n\n---\n\nItem 12 \u2014 Tutorial: Practical Applications of Topological Ordering\n\nContent:\nTopological orderings of DAGS have many real-world applications:\n\nContent:\n- Task Scheduling. DAGs can be used in project management and job scheduling, where each task (job or project) is represented as a vertex, and directed edges indicate dependencies between tasks.\n\nFor example, given several tasks for different departments in a company and the dependencies between the tasks (which may be represented as a DAG), we can reorder the tasks in topological order to help with project planning.\n- Data Flow Analysis. DAGs can be used to model computational processes, where each computation module is represented as a vertex, and directed edges indicate the data flow between modules and the order of execution for the calculations.\n\nFor example, given some cells in a spreadsheet and, for each cell, a list of cells used in its calculations, we can represent this as a DAG and reorder the cells in topological order. This tells us a valid order in which to calculate the output of each cell, ensuring that all cell outputs are calculated before they're needed in other cells."
+  }
+}
