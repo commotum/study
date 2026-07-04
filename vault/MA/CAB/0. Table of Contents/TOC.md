@@ -1,0 +1,264 @@
+# AP Calculus AB
+
+```check-progress
+```
+
+## Course Content
+
+- [ ] 1. Limits and Continuity
+	- [ ] 1.1. Estimating Limits from Graphs
+		- [ ] [[1. Limits and Continuity/1.1. Estimating Limits from Graphs/Lessons/1.1.1. The Finite Limit of a Function|1.1.1. The Finite Limit of a Function]]
+		- [ ] [[1. Limits and Continuity/1.1. Estimating Limits from Graphs/Lessons/1.1.2. The Left and Right-Sided Limits of a Function|1.1.2. The Left and Right-Sided Limits of a Function]]
+		- [ ] [[1. Limits and Continuity/1.1. Estimating Limits from Graphs/Lessons/1.1.3. Finding the Existence of a Limit Using One-Sided Limits|1.1.3. Finding the Existence of a Limit Using One-Sided Limits]]
+		- [ ] [[1. Limits and Continuity/1.1. Estimating Limits from Graphs/Lessons/1.1.4. Limits at Infinity from Graphs|1.1.4. Limits at Infinity from Graphs]]
+		- [ ] [[1. Limits and Continuity/1.1. Estimating Limits from Graphs/Lessons/1.1.5. Infinite Limits from Graphs|1.1.5. Infinite Limits from Graphs]]
+	- [ ] 1.2. The Algebra of Limits
+		- [ ] [[1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.1. Limits of Power Functions, and the Constant Rule for Limits|1.2.1. Limits of Power Functions, and the Constant Rule for Limits]]
+		- [ ] [[1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.2. The Sum Rule for Limits|1.2.2. The Sum Rule for Limits]]
+		- [ ] [[1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.3. The Product and Quotient Rules for Limits|1.2.3. The Product and Quotient Rules for Limits]]
+		- [ ] [[1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.4. The Power and Root Rules for Limits|1.2.4. The Power and Root Rules for Limits]]
+	- [ ] 1.3. Limits of Functions
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.1. Limits at Infinity of Polynomials|1.3.1. Limits at Infinity of Polynomials]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.2. Limits of Reciprocal Functions|1.3.2. Limits of Reciprocal Functions]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions|1.3.3. Limits of Exponential Functions]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.4. Limits of Logarithmic Functions|1.3.4. Limits of Logarithmic Functions]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.5. Limits of Radical Functions|1.3.5. Limits of Radical Functions]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.6. Limits of Trigonometric Functions|1.3.6. Limits of Trigonometric Functions]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.7. Limits of Reciprocal Trigonometric Functions|1.3.7. Limits of Reciprocal Trigonometric Functions]]
+		- [ ] [[1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.8. Limits of Piecewise Functions|1.3.8. Limits of Piecewise Functions]]
+	- [ ] 1.4. Determining Limits Using Algebraic Manipulation
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.1. Calculating Limits of Rational Functions by Factoring|1.4.1. Calculating Limits of Rational Functions by Factoring]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.2. Limits of Absolute Value Functions|1.4.2. Limits of Absolute Value Functions]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.3. Calculating Limits of Radical Functions Using Conjugate Multiplication|1.4.3. Calculating Limits of Radical Functions Using Conjugate Multiplication]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.4. Calculating Limits Using Trigonometric Identities|1.4.4. Calculating Limits Using Trigonometric Identities]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.5. Limits at Infinity and Horizontal Asymptotes of Rational Functions|1.4.5. Limits at Infinity and Horizontal Asymptotes of Rational Functions]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.6. Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions|1.4.6. Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.7. Evaluating Limits at Infinity of Radical Functions|1.4.7. Evaluating Limits at Infinity of Radical Functions]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.8. Vertical Asymptotes of Rational Functions|1.4.8. Vertical Asymptotes of Rational Functions]]
+		- [ ] [[1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.9. Connecting Infinite Limits and Vertical Asymptotes of Rational Functions|1.4.9. Connecting Infinite Limits and Vertical Asymptotes of Rational Functions]]
+	- [ ] 1.5. Special Limits
+		- [ ] [[1. Limits and Continuity/1.5. Special Limits/Lessons/1.5.1. The Squeeze Theorem|1.5.1. The Squeeze Theorem]]
+		- [ ] [[1. Limits and Continuity/1.5. Special Limits/Lessons/1.5.2. Special Limits Involving Sine|1.5.2. Special Limits Involving Sine]]
+		- [ ] [[1. Limits and Continuity/1.5. Special Limits/Lessons/1.5.3. Evaluating Special Limits Involving Sine Using a Substitution|1.5.3. Evaluating Special Limits Involving Sine Using a Substitution]]
+		- [ ] [[1. Limits and Continuity/1.5. Special Limits/Lessons/1.5.4. Special Limits Involving Cosine|1.5.4. Special Limits Involving Cosine]]
+	- [ ] 1.6. Continuity
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.1. Determining Continuity from Graphs|1.6.1. Determining Continuity from Graphs]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.2. Defining Continuity at a Point|1.6.2. Defining Continuity at a Point]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.3. Left and Right Continuity|1.6.3. Left and Right Continuity]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.4. Further Continuity of Piecewise Functions|1.6.4. Further Continuity of Piecewise Functions]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.5. Point Discontinuities|1.6.5. Point Discontinuities]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.6. Jump Discontinuities|1.6.6. Jump Discontinuities]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.7. Discontinuities Due to Vertical Asymptotes|1.6.7. Discontinuities Due to Vertical Asymptotes]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.8. Continuity Over an Interval|1.6.8. Continuity Over an Interval]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.9. Continuity of Functions|1.6.9. Continuity of Functions]]
+		- [ ] [[1. Limits and Continuity/1.6. Continuity/Lessons/1.6.10. The Intermediate Value Theorem|1.6.10. The Intermediate Value Theorem]]
+	- [ ] 1.7. Removing Discontinuities
+		- [ ] [[1. Limits and Continuity/1.7. Removing Discontinuities/Lessons/1.7.1. Removing Point Discontinuities|1.7.1. Removing Point Discontinuities]]
+		- [ ] [[1. Limits and Continuity/1.7. Removing Discontinuities/Lessons/1.7.2. Removing Jump Discontinuities|1.7.2. Removing Jump Discontinuities]]
+		- [ ] [[1. Limits and Continuity/1.7. Removing Discontinuities/Lessons/1.7.3. Removing Discontinuities From Rational Functions|1.7.3. Removing Discontinuities From Rational Functions]]
+- [ ] 2. Differentiation: Definition and Fundamental Properties
+	- [ ] 2.1. Introduction to Differentiation
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.1. The Average Rate of Change of a Function over a Varying Interval|2.1.1. The Average Rate of Change of a Function over a Varying Interval]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.2. The Instantaneous Rate of Change of a Function at a Point|2.1.2. The Instantaneous Rate of Change of a Function at a Point]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.3. Defining the Derivative Using Derivative Notation|2.1.3. Defining the Derivative Using Derivative Notation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.4. Continuity and Differentiability of Functions|2.1.4. Continuity and Differentiability of Functions]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.5. The Power Rule for Differentiation|2.1.5. The Power Rule for Differentiation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.6. The Sum and Constant Multiple Rules for Differentiation|2.1.6. The Sum and Constant Multiple Rules for Differentiation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.7. Calculating the Slope of a Tangent Line Using Differentiation|2.1.7. Calculating the Slope of a Tangent Line Using Differentiation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.8. Calculating the Equation of a Tangent Line Using Differentiation|2.1.8. Calculating the Equation of a Tangent Line Using Differentiation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.1. Introduction to Differentiation/Lessons/2.1.9. Calculating the Equation of a Normal Line Using Differentiation|2.1.9. Calculating the Equation of a Normal Line Using Differentiation]]
+	- [ ] 2.2. Derivatives of Functions and the Rules of Differentiation
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.1. Differentiating Exponential Functions|2.2.1. Differentiating Exponential Functions]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.2. Differentiating Logarithmic Functions|2.2.2. Differentiating Logarithmic Functions]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.3. Differentiating Trigonometric Functions|2.2.3. Differentiating Trigonometric Functions]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.4. Second and Higher-Order Derivatives|2.2.4. Second and Higher-Order Derivatives]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.5. The Product Rule for Differentiation|2.2.5. The Product Rule for Differentiation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.6. The Quotient Rule for Differentiation|2.2.6. The Quotient Rule for Differentiation]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.7. Differentiating Reciprocal Trigonometric Functions|2.2.7. Differentiating Reciprocal Trigonometric Functions]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.8. Calculating Derivatives From Data and Tables|2.2.8. Calculating Derivatives From Data and Tables]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.9. Calculating Derivatives From Graphs|2.2.9. Calculating Derivatives From Graphs]]
+		- [ ] [[2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.10. Recognizing Derivatives in Limits|2.2.10. Recognizing Derivatives in Limits]]
+- [ ] 3. Differentiation: Composite, Implicit, and Inverse Functions
+	- [ ] 3.1. Differentiating Composite Functions
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.1. The Chain Rule for Differentiation|3.1.1. The Chain Rule for Differentiation]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.2. The Chain Rule With Exponential Functions|3.1.2. The Chain Rule With Exponential Functions]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.3. The Chain Rule With Logarithmic Functions|3.1.3. The Chain Rule With Logarithmic Functions]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.4. The Chain Rule With Trigonometric Functions|3.1.4. The Chain Rule With Trigonometric Functions]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.5. Calculating Derivatives From Data Using the Chain Rule|3.1.5. Calculating Derivatives From Data Using the Chain Rule]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.6. Calculating Derivatives From Graphs Using the Chain Rule|3.1.6. Calculating Derivatives From Graphs Using the Chain Rule]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.7. Selecting Procedures for Calculating Derivatives|3.1.7. Selecting Procedures for Calculating Derivatives]]
+	- [ ] 3.2. Differentiating Implicit and Inverse Functions
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.2. Differentiating Implicit and Inverse Functions/Lessons/3.2.1. Implicit Differentiation|3.2.1. Implicit Differentiation]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.2. Differentiating Implicit and Inverse Functions/Lessons/3.2.2. Calculating dy-dx Using dx-dy|3.2.2. Calculating dy/dx Using dx/dy]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.2. Differentiating Implicit and Inverse Functions/Lessons/3.2.3. Differentiating Inverse Functions|3.2.3. Differentiating Inverse Functions]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.2. Differentiating Implicit and Inverse Functions/Lessons/3.2.4. Differentiating an Inverse Function at a Point|3.2.4. Differentiating an Inverse Function at a Point]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.2. Differentiating Implicit and Inverse Functions/Lessons/3.2.5. Differentiating Inverse Trigonometric Functions|3.2.5. Differentiating Inverse Trigonometric Functions]]
+		- [ ] [[3. Differentiation- Composite, Implicit, and Inverse Functions/3.2. Differentiating Implicit and Inverse Functions/Lessons/3.2.6. Differentiating Inverse Reciprocal Trigonometric Functions|3.2.6. Differentiating Inverse Reciprocal Trigonometric Functions]]
+- [ ] 4. Contextual Applications of Differentiation
+	- [ ] 4.1. Contextual Applications of Differentiation
+		- [ ] [[4. Contextual Applications of Differentiation/4.1. Contextual Applications of Differentiation/Lessons/4.1.1. Interpreting the Meaning of the Derivative in Context|4.1.1. Interpreting the Meaning of the Derivative in Context]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.1. Contextual Applications of Differentiation/Lessons/4.1.2. Rates of Change in Applied Contexts|4.1.2. Rates of Change in Applied Contexts]]
+	- [ ] 4.2. Estimating Derivatives
+		- [ ] [[4. Contextual Applications of Differentiation/4.2. Estimating Derivatives/Lessons/4.2.1. Estimating Derivatives Using a Forward Difference Quotient|4.2.1. Estimating Derivatives Using a Forward Difference Quotient]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.2. Estimating Derivatives/Lessons/4.2.2. Estimating Derivatives Using a Backward Difference Quotient|4.2.2. Estimating Derivatives Using a Backward Difference Quotient]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.2. Estimating Derivatives/Lessons/4.2.3. Estimating Derivatives Using a Central Difference Quotient|4.2.3. Estimating Derivatives Using a Central Difference Quotient]]
+	- [ ] 4.3. Displacement, Velocity, and Acceleration
+		- [ ] [[4. Contextual Applications of Differentiation/4.3. Displacement, Velocity, and Acceleration/Lessons/4.3.1. Calculating Velocity for Straight-Line Motion Using Differentiation|4.3.1. Calculating Velocity for Straight-Line Motion Using Differentiation]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.3. Displacement, Velocity, and Acceleration/Lessons/4.3.2. Determining Characteristics of Moving Objects Using Differentiation|4.3.2. Determining Characteristics of Moving Objects Using Differentiation]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.3. Displacement, Velocity, and Acceleration/Lessons/4.3.3. Calculating Acceleration for Straight-Line Motion Using Differentiation|4.3.3. Calculating Acceleration for Straight-Line Motion Using Differentiation]]
+	- [ ] 4.4. Related Rates of Change
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.1. Introduction to Related Rates|4.4.1. Introduction to Related Rates]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.2. Related Rates With Implicit Functions|4.4.2. Related Rates With Implicit Functions]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.3. Calculating Related Rates With Circles and Spheres|4.4.3. Calculating Related Rates With Circles and Spheres]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.4. Calculating Related Rates With Squares|4.4.4. Calculating Related Rates With Squares]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.5. Calculating Related Rates With Rectangular Solids|4.4.5. Calculating Related Rates With Rectangular Solids]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.6. Calculating Related Rates Using the Pythagorean Theorem|4.4.6. Calculating Related Rates Using the Pythagorean Theorem]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.7. Calculating Related Rates Using Similar Triangles|4.4.7. Calculating Related Rates Using Similar Triangles]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.8. Calculating Related Rates Using Trigonometry|4.4.8. Calculating Related Rates Using Trigonometry]]
+		- [ ] [[4. Contextual Applications of Differentiation/4.4. Related Rates of Change/Lessons/4.4.9. Calculating Related Rates With Cones|4.4.9. Calculating Related Rates With Cones]]
+- [ ] 5. Analytical Applications of Differentiation
+	- [ ] 5.1. L'Hopital's Rule
+		- [ ] [[5. Analytical Applications of Differentiation/5.1. L'Hopital's Rule/Lessons/5.1.1. L'Hopital's Rule|5.1.1. L'Hopital's Rule]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.1. L'Hopital's Rule/Lessons/5.1.2. L'Hopital's Rule Applied to Tables|5.1.2. L'Hopital's Rule Applied to Tables]]
+	- [ ] 5.2. Analytical Applications of Differentiation
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.1. The Mean Value Theorem|5.2.1. The Mean Value Theorem]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.2. Global vs. Local Extrema and Critical Points|5.2.2. Global vs. Local Extrema and Critical Points]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.3. The Extreme Value Theorem|5.2.3. The Extreme Value Theorem]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.4. Using Differentiation to Calculate Critical Points|5.2.4. Using Differentiation to Calculate Critical Points]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.5. Determining Intervals on Which a Function Is Increasing or Decreasing|5.2.5. Determining Intervals on Which a Function Is Increasing or Decreasing]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.6. Using the First Derivative Test to Classify Local Extrema|5.2.6. Using the First Derivative Test to Classify Local Extrema]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.7. The Candidates Test|5.2.7. The Candidates Test]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.8. Intervals of Concavity|5.2.8. Intervals of Concavity]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.9. Relating Concavity to the Second Derivative|5.2.9. Relating Concavity to the Second Derivative]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.10. Points of Inflection|5.2.10. Points of Inflection]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.2. Analytical Applications of Differentiation/Lessons/5.2.11. The Second Derivative Test|5.2.11. The Second Derivative Test]]
+	- [ ] 5.3. Analysis of Curves
+		- [ ] [[5. Analytical Applications of Differentiation/5.3. Analysis of Curves/Lessons/5.3.1. Sketching the Derivative of a Function From the Function's Graph|5.3.1. Sketching the Derivative of a Function From the Function's Graph]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.3. Analysis of Curves/Lessons/5.3.2. Interpreting the Graph of a Function's Derivative|5.3.2. Interpreting the Graph of a Function's Derivative]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.3. Analysis of Curves/Lessons/5.3.3. Interpreting the Graph of a Function's Derivative- Concavity and Points of Inflection|5.3.3. Interpreting the Graph of a Function's Derivative: Concavity and Points of Inflection]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.3. Analysis of Curves/Lessons/5.3.4. Sketching a Function From the Graph of its Derivative|5.3.4. Sketching a Function From the Graph of its Derivative]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.3. Analysis of Curves/Lessons/5.3.5. Sketching a Function Given Some Derivative Properties|5.3.5. Sketching a Function Given Some Derivative Properties]]
+	- [ ] 5.4. Approximating Values of a Function
+		- [ ] [[5. Analytical Applications of Differentiation/5.4. Approximating Values of a Function/Lessons/5.4.1. Approximating Functions Using Local Linearity and Linearization|5.4.1. Approximating Functions Using Local Linearity and Linearization]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.4. Approximating Values of a Function/Lessons/5.4.2. Approximating the Roots of a Number Using Local Linearity|5.4.2. Approximating the Roots of a Number Using Local Linearity]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.4. Approximating Values of a Function/Lessons/5.4.3. Approximating Trigonometric Functions Using Local Linearity|5.4.3. Approximating Trigonometric Functions Using Local Linearity]]
+	- [ ] 5.5. Optimization
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.1. Solving Optimization Problems Using Derivatives|5.5.1. Solving Optimization Problems Using Derivatives]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.2. Optimization Problems Involving Sectors of Circles|5.5.2. Optimization Problems Involving Sectors of Circles]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.3. Optimization Problems Involving Boxes and Trays|5.5.3. Optimization Problems Involving Boxes and Trays]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.4. Optimization Problems Involving Cylinders|5.5.4. Optimization Problems Involving Cylinders]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.5. Optimizing Distances|5.5.5. Optimizing Distances]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.6. Optimizing Distances to Curves|5.5.6. Optimizing Distances to Curves]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.7. Optimization Problems With Inscribed Shapes|5.5.7. Optimization Problems With Inscribed Shapes]]
+		- [ ] [[5. Analytical Applications of Differentiation/5.5. Optimization/Lessons/5.5.8. Optimization Problems in Economics|5.5.8. Optimization Problems in Economics]]
+- [ ] 6. Integration
+	- [ ] 6.1. Indefinite Integrals
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.1. The Antiderivative|6.1.1. The Antiderivative]]
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.2. The Constant Multiple Rule for Indefinite Integrals|6.1.2. The Constant Multiple Rule for Indefinite Integrals]]
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.3. The Sum Rule for Indefinite Integrals|6.1.3. The Sum Rule for Indefinite Integrals]]
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.4. Integrating the Reciprocal Function|6.1.4. Integrating the Reciprocal Function]]
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.5. Integrating Exponential Functions|6.1.5. Integrating Exponential Functions]]
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.6. Integrating Trigonometric Functions|6.1.6. Integrating Trigonometric Functions]]
+		- [ ] [[6. Integration/6.1. Indefinite Integrals/Lessons/6.1.7. Integration Using Inverse Trigonometric Functions|6.1.7. Integration Using Inverse Trigonometric Functions]]
+	- [ ] 6.2. Approximating Areas with Riemann Sums
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.1. Approximating Areas With the Left Riemann Sum|6.2.1. Approximating Areas With the Left Riemann Sum]]
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.2. Approximating Areas With the Right Riemann Sum|6.2.2. Approximating Areas With the Right Riemann Sum]]
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.3. Approximating Areas With the Midpoint Riemann Sum|6.2.3. Approximating Areas With the Midpoint Riemann Sum]]
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.4. Approximating Areas With the Trapezoidal Rule|6.2.4. Approximating Areas With the Trapezoidal Rule]]
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.5. Left and Right Riemann Sums in Sigma Notation|6.2.5. Left and Right Riemann Sums in Sigma Notation]]
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.6. Midpoint and Trapezoidal Rules in Sigma Notation|6.2.6. Midpoint and Trapezoidal Rules in Sigma Notation]]
+		- [ ] [[6. Integration/6.2. Approximating Areas with Riemann Sums/Lessons/6.2.7. Approximating Areas Under Graphs of Composite Functions|6.2.7. Approximating Areas Under Graphs of Composite Functions]]
+	- [ ] 6.3. Definite Integrals
+		- [ ] [[6. Integration/6.3. Definite Integrals/Lessons/6.3.1. Defining Definite Integrals Using Left and Right Riemann Sums|6.3.1. Defining Definite Integrals Using Left and Right Riemann Sums]]
+		- [ ] [[6. Integration/6.3. Definite Integrals/Lessons/6.3.2. The Fundamental Theorem of Calculus|6.3.2. The Fundamental Theorem of Calculus]]
+		- [ ] [[6. Integration/6.3. Definite Integrals/Lessons/6.3.3. Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions|6.3.3. Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions]]
+		- [ ] [[6. Integration/6.3. Definite Integrals/Lessons/6.3.4. The Sum and Constant Multiple Rules for Definite Integrals|6.3.4. The Sum and Constant Multiple Rules for Definite Integrals]]
+		- [ ] [[6. Integration/6.3. Definite Integrals/Lessons/6.3.5. Properties of Definite Integrals Involving the Limits of Integration|6.3.5. Properties of Definite Integrals Involving the Limits of Integration]]
+	- [ ] 6.4. The Area Under a Curve
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.1. The Area Bounded by a Curve and the X-Axis|6.4.1. The Area Bounded by a Curve and the X-Axis]]
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.2. Evaluating Definite Integrals Using Symmetry|6.4.2. Evaluating Definite Integrals Using Symmetry]]
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.3. Finding the Area Between a Curve and the X-Axis When They Intersect|6.4.3. Finding the Area Between a Curve and the X-Axis When They Intersect]]
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.4. The Area Bounded by a Curve and the Y-Axis|6.4.4. The Area Bounded by a Curve and the Y-Axis]]
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.5. Calculating the Definite Integral of a Function Given Its Graph|6.4.5. Calculating the Definite Integral of a Function Given Its Graph]]
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.6. Calculating the Definite Integral of a Function's Derivative Given its Graph|6.4.6. Calculating the Definite Integral of a Function's Derivative Given its Graph]]
+		- [ ] [[6. Integration/6.4. The Area Under a Curve/Lessons/6.4.7. Definite Integrals of Piecewise Functions|6.4.7. Definite Integrals of Piecewise Functions]]
+	- [ ] 6.5. Accumulation Functions
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.1. The Integral as an Accumulation Function|6.5.1. The Integral as an Accumulation Function]]
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.2. The Second Fundamental Theorem of Calculus|6.5.2. The Second Fundamental Theorem of Calculus]]
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.3. Maximizing a Function Using the Graph of Its Derivative|6.5.3. Maximizing a Function Using the Graph of Its Derivative]]
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.4. Minimizing a Function Using the Graph of its Derivative|6.5.4. Minimizing a Function Using the Graph of its Derivative]]
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.5. Further Optimizing Functions Using Graphs of Derivatives|6.5.5. Further Optimizing Functions Using Graphs of Derivatives]]
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.6. Integrating Rates of Change|6.5.6. Integrating Rates of Change]]
+		- [ ] [[6. Integration/6.5. Accumulation Functions/Lessons/6.5.7. Integrating Density Functions|6.5.7. Integrating Density Functions]]
+	- [ ] 6.6. Integration Using Substitution
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.1. Integrating Algebraic Functions Using Substitution|6.6.1. Integrating Algebraic Functions Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.2. Integrating Linear Rational Functions Using Substitution|6.6.2. Integrating Linear Rational Functions Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.3. Integration Using Substitution|6.6.3. Integration Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.4. Calculating Definite Integrals Using Substitution|6.6.4. Calculating Definite Integrals Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.5. Further Integration of Algebraic Functions Using Substitution|6.6.5. Further Integration of Algebraic Functions Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.6. Integrating Exponential Functions Using Linear Substitution|6.6.6. Integrating Exponential Functions Using Linear Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.7. Integrating Exponential Functions Using Substitution|6.6.7. Integrating Exponential Functions Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.8. Integrating Trigonometric Functions Using Substitution|6.6.8. Integrating Trigonometric Functions Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.9. Integrating Logarithmic Functions Using Substitution|6.6.9. Integrating Logarithmic Functions Using Substitution]]
+		- [ ] [[6. Integration/6.6. Integration Using Substitution/Lessons/6.6.10. Integration by Substitution With Inverse Trigonometric Functions|6.6.10. Integration by Substitution With Inverse Trigonometric Functions]]
+	- [ ] 6.7. Integration Using Trigonometric Identities
+		- [ ] [[6. Integration/6.7. Integration Using Trigonometric Identities/Lessons/6.7.1. Integration Using Basic Trigonometric Identities|6.7.1. Integration Using Basic Trigonometric Identities]]
+		- [ ] [[6. Integration/6.7. Integration Using Trigonometric Identities/Lessons/6.7.2. Integration Using the Pythagorean Identities|6.7.2. Integration Using the Pythagorean Identities]]
+		- [ ] [[6. Integration/6.7. Integration Using Trigonometric Identities/Lessons/6.7.3. Integration Using the Double-Angle Formulas|6.7.3. Integration Using the Double-Angle Formulas]]
+	- [ ] 6.8. Special Techniques for Integration
+		- [ ] [[6. Integration/6.8. Special Techniques for Integration/Lessons/6.8.1. Integrating Functions Using Polynomial Division|6.8.1. Integrating Functions Using Polynomial Division]]
+		- [ ] [[6. Integration/6.8. Special Techniques for Integration/Lessons/6.8.2. Integrating Functions by Completing the Square|6.8.2. Integrating Functions by Completing the Square]]
+- [ ] 7. Differential Equations
+	- [ ] 7.1. Introduction to Differential Equations
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.1. Introduction to Differential Equations|7.1.1. Introduction to Differential Equations]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.2. Verifying Solutions of Differential Equations|7.1.2. Verifying Solutions of Differential Equations]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.3. Solving First-Order ODEs Using Direct Integration|7.1.3. Solving First-Order ODEs Using Direct Integration]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.4. Solving First-Order ODEs Using Separation of Variables|7.1.4. Solving First-Order ODEs Using Separation of Variables]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.5. Solving First-Order IVPs Using Separation of Variables|7.1.5. Solving First-Order IVPs Using Separation of Variables]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.6. Modeling With First-Order ODEs|7.1.6. Modeling With First-Order ODEs]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.7. Further Modeling With First-Order ODEs|7.1.7. Further Modeling With First-Order ODEs]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.8. Exponential Growth and Decay Models With First-Order ODEs|7.1.8. Exponential Growth and Decay Models With First-Order ODEs]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.9. Exponential Growth and Decay Models With First-Order ODEs- Calculating Unknown Times and Initial Values|7.1.9. Exponential Growth and Decay Models With First-Order ODEs: Calculating Unknown Times and Initial Values]]
+		- [ ] [[7. Differential Equations/7.1. Introduction to Differential Equations/Lessons/7.1.10. Exponential Growth and Decay Models With First-Order ODEs- Half-Life Problems|7.1.10. Exponential Growth and Decay Models With First-Order ODEs: Half-Life Problems]]
+	- [ ] 7.2. Qualitative Techniques for Differential Equations
+		- [ ] [[7. Differential Equations/7.2. Qualitative Techniques for Differential Equations/Lessons/7.2.1. Qualitative Analysis of First-Order ODEs|7.2.1. Qualitative Analysis of First-Order ODEs]]
+		- [ ] [[7. Differential Equations/7.2. Qualitative Techniques for Differential Equations/Lessons/7.2.2. Equilibrium Solutions of First-Order ODEs|7.2.2. Equilibrium Solutions of First-Order ODEs]]
+	- [ ] 7.3. Slope Fields
+		- [ ] [[7. Differential Equations/7.3. Slope Fields/Lessons/7.3.1. Slope Fields for Directly Integrable Differential Equations|7.3.1. Slope Fields for Directly Integrable Differential Equations]]
+		- [ ] [[7. Differential Equations/7.3. Slope Fields/Lessons/7.3.2. Slope Fields for Autonomous Differential Equations|7.3.2. Slope Fields for Autonomous Differential Equations]]
+		- [ ] [[7. Differential Equations/7.3. Slope Fields/Lessons/7.3.3. Slope Fields for Nonautonomous Differential Equations|7.3.3. Slope Fields for Nonautonomous Differential Equations]]
+		- [ ] [[7. Differential Equations/7.3. Slope Fields/Lessons/7.3.4. Analyzing Slope Fields for Directly Integrable Differential Equations|7.3.4. Analyzing Slope Fields for Directly Integrable Differential Equations]]
+		- [ ] [[7. Differential Equations/7.3. Slope Fields/Lessons/7.3.5. Analyzing Slope Fields for Autonomous Differential Equations|7.3.5. Analyzing Slope Fields for Autonomous Differential Equations]]
+		- [ ] [[7. Differential Equations/7.3. Slope Fields/Lessons/7.3.6. Analyzing Slope Fields for Nonautonomous Differential Equations|7.3.6. Analyzing Slope Fields for Nonautonomous Differential Equations]]
+- [ ] 8. Applications of Integration
+	- [ ] 8.1. Applications of Integration
+		- [ ] [[8. Applications of Integration/8.1. Applications of Integration/Lessons/8.1.1. The Average Value of a Function|8.1.1. The Average Value of a Function]]
+		- [ ] [[8. Applications of Integration/8.1. Applications of Integration/Lessons/8.1.2. The Area Between Curves Expressed as Functions of X|8.1.2. The Area Between Curves Expressed as Functions of X]]
+		- [ ] [[8. Applications of Integration/8.1. Applications of Integration/Lessons/8.1.3. The Area Between Curves Expressed as Functions of Y|8.1.3. The Area Between Curves Expressed as Functions of Y]]
+		- [ ] [[8. Applications of Integration/8.1. Applications of Integration/Lessons/8.1.4. Finding Areas Between Curves that Intersect at More Than Two Points|8.1.4. Finding Areas Between Curves that Intersect at More Than Two Points]]
+	- [ ] 8.2. Connecting Position, Velocity and Acceleration Using Integrals
+		- [ ] [[8. Applications of Integration/8.2. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/8.2.1. Calculating Velocity Using Integration|8.2.1. Calculating Velocity Using Integration]]
+		- [ ] [[8. Applications of Integration/8.2. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/8.2.2. Determining Characteristics of Moving Objects Using Integration|8.2.2. Determining Characteristics of Moving Objects Using Integration]]
+		- [ ] [[8. Applications of Integration/8.2. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/8.2.3. Calculating the Position Function of a Particle Using Integration|8.2.3. Calculating the Position Function of a Particle Using Integration]]
+		- [ ] [[8. Applications of Integration/8.2. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/8.2.4. Calculating the Displacement of a Particle Using Integration|8.2.4. Calculating the Displacement of a Particle Using Integration]]
+		- [ ] [[8. Applications of Integration/8.2. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/8.2.5. Calculating the Total Distance Traveled by a Particle|8.2.5. Calculating the Total Distance Traveled by a Particle]]
+		- [ ] [[8. Applications of Integration/8.2. Connecting Position, Velocity and Acceleration Using Integrals/Lessons/8.2.6. Average Position, Velocity, and Acceleration|8.2.6. Average Position, Velocity, and Acceleration]]
+	- [ ] 8.3. Volumes of Solids With Known Cross Sections
+		- [ ] [[8. Applications of Integration/8.3. Volumes of Solids With Known Cross Sections/Lessons/8.3.1. Volumes of Solids with Square Cross Sections|8.3.1. Volumes of Solids with Square Cross Sections]]
+		- [ ] [[8. Applications of Integration/8.3. Volumes of Solids With Known Cross Sections/Lessons/8.3.2. Volumes of Solids with Rectangular Cross Sections|8.3.2. Volumes of Solids with Rectangular Cross Sections]]
+		- [ ] [[8. Applications of Integration/8.3. Volumes of Solids With Known Cross Sections/Lessons/8.3.3. Volumes of Solids with Triangular Cross Sections|8.3.3. Volumes of Solids with Triangular Cross Sections]]
+		- [ ] [[8. Applications of Integration/8.3. Volumes of Solids With Known Cross Sections/Lessons/8.3.4. Volumes of Solids with Circular Cross Sections|8.3.4. Volumes of Solids with Circular Cross Sections]]
+	- [ ] 8.4. Volumes of Revolution
+		- [ ] [[8. Applications of Integration/8.4. Volumes of Revolution/Lessons/8.4.1. Volumes of Revolution Using the Disc Method- Rotation About the Coordinate Axes|8.4.1. Volumes of Revolution Using the Disc Method: Rotation About the Coordinate Axes]]
+		- [ ] [[8. Applications of Integration/8.4. Volumes of Revolution/Lessons/8.4.2. Volumes of Revolution Using the Disc Method- Rotation About Other Axes|8.4.2. Volumes of Revolution Using the Disc Method: Rotation About Other Axes]]
+		- [ ] [[8. Applications of Integration/8.4. Volumes of Revolution/Lessons/8.4.3. Volumes of Revolution Using the Washer Method- Rotation About the Coordinate Axes|8.4.3. Volumes of Revolution Using the Washer Method: Rotation About the Coordinate Axes]]
+		- [ ] [[8. Applications of Integration/8.4. Volumes of Revolution/Lessons/8.4.4. Volumes of Revolution Using the Washer Method- Rotation About Other Axes|8.4.4. Volumes of Revolution Using the Washer Method: Rotation About Other Axes]]
+- [ ] 9. Applications of Technology
+	- [ ] 9.1. Using Graphing Calculators
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.1. Evaluating Expressions Using a Graphing Calculator|9.1.1. Evaluating Expressions Using a Graphing Calculator]]
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.2. Finding Roots of Functions Using a Graphing Calculator|9.1.2. Finding Roots of Functions Using a Graphing Calculator]]
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.3. Finding Intersections of Functions Using a Graphing Calculator|9.1.3. Finding Intersections of Functions Using a Graphing Calculator]]
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.4. Finding Extrema of Functions Using a Graphing Calculator|9.1.4. Finding Extrema of Functions Using a Graphing Calculator]]
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.5. Finding Derivatives Using a Graphing Calculator|9.1.5. Finding Derivatives Using a Graphing Calculator]]
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.6. Finding Definite Integrals Using a Graphing Calculator|9.1.6. Finding Definite Integrals Using a Graphing Calculator]]
+		- [ ] [[9. Applications of Technology/9.1. Using Graphing Calculators/Lessons/9.1.7. Exploring Functions Using Technology|9.1.7. Exploring Functions Using Technology]]
