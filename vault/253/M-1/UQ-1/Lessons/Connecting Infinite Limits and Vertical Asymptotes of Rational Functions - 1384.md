@@ -60,7 +60,7 @@ $$
 
 These one-sided limits match up with what we see in the graph of $f(x)$, shown below.
 
-![](<1f0de881aee9cf164ae6f91299a59145.png>)
+![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/1f0de881aee9cf164ae6f91299a59145.png>)
 
 ---
 
@@ -95,7 +95,7 @@ $$
 
 This matches up with what we see in the graph of $f(x)$, shown below.
 
-![](<699affabb0d7d5f074de07be10a3540c.png>)
+![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/699affabb0d7d5f074de07be10a3540c.png>)
 
 ---
 
@@ -193,7 +193,7 @@ $$
 
 This matches up with what we see in the graph of $f(x)$, shown below.
 
-![](<0516da9f3887ae8d8817d11c13cd2d24.png>)
+![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/0516da9f3887ae8d8817d11c13cd2d24.png>)
 
 ---
 
@@ -298,7 +298,7 @@ and therefore III is true.
 
 In conclusion, only statements II and III are true. A plot of the function is shown below.
 
-![](<dffdf7de5a57d6d0adefc1ede9d7672e.png>)
+![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/dffdf7de5a57d6d0adefc1ede9d7672e.png>)
 
 ---
 
@@ -418,7 +418,7 @@ and therefore statement I is correct.
 
 In conclusion, only statement I is correct. A plot of the function is shown below.
 
-![](<19b67df6adf3aba2408de6918e1836f4.png>)
+![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/19b67df6adf3aba2408de6918e1836f4.png>)
 
 ---
 

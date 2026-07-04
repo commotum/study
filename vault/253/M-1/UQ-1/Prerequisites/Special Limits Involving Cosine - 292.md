@@ -48,7 +48,7 @@ $$
 
 we get the following picture.
 
-![](<b7d40e7f3039dc93da4554157fa1cc56.png>)
+![](<253/M-1/UQ-1/Source/Special Limits Involving Cosine - 292/Images/b7d40e7f3039dc93da4554157fa1cc56.png>)
 
 While
 
