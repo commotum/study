@@ -7,9 +7,9 @@ Example:
     ./import_ma_course.py MF1 MF2 MF3 --overwrite
 
 The importer reads the canonical Math Academy data under
-/Users/jake/Developer/MA/DATA and creates a course folder like:
+/Users/jake/Developer/MA/DATA and creates a categorized course folder like:
 
-    vault/MA/MF1/
+    vault/MA/Mathematical-Foundations/MF1/
         Home.md
         0. Table of Contents/TOC.md
         1. Unit Name/
@@ -38,6 +38,24 @@ DEFAULT_MA_DATA_ROOT = Path("/Users/jake/Developer/MA/DATA")
 DEFAULT_TARGET_ROOT = Path("/Users/jake/Developer/study/vault/MA")
 QUEUE_SIZE = 5
 DEFAULT_QUEUE_PREREQUISITE_SCOPE = "course"
+COURSE_CATEGORIES = {
+    "MF1": "Mathematical-Foundations",
+    "MF2": "Mathematical-Foundations",
+    "MF3": "Mathematical-Foundations",
+    "CA1": "Single-Variable-Calculus",
+    "CA2": "Single-Variable-Calculus",
+    "CAB": "Single-Variable-Calculus",
+    "CBC": "Single-Variable-Calculus",
+    "DEQ": "Mathematical-Analysis-&-Modeling",
+    "LAL": "Mathematical-Analysis-&-Modeling",
+    "MVC": "Mathematical-Analysis-&-Modeling",
+    "PAS": "Mathematical-Analysis-&-Modeling",
+    "DSM": "Mathematical-Structures-&-Proof",
+    "MOP": "Mathematical-Structures-&-Proof",
+    "MML": "Mathematical-Methods-for-Machine-Learning",
+    "PS1": "Mathematical-Methods-for-the-Physical-Sciences",
+    "PS2": "Mathematical-Methods-for-the-Physical-Sciences",
+}
 
 UNIT_RE = re.compile(r"^###\s+(\d+)\.\s+(.+?)(?:\s+\d+\s+topics?)?\s*$")
 MODULE_RE = re.compile(r"^\*\*(\d+\.\d+)\.\s+(.+?)\*\*\s*$")
@@ -157,6 +175,18 @@ def markdown_path(path: Path) -> str:
 def markdown_relpath(from_dir: Path, to_file: Path) -> str:
     rel = Path(os.path.relpath(to_file, start=from_dir))
     return markdown_path(rel)
+
+
+def course_dir_for_code(target_root: Path, course_code: str) -> Path:
+    category = COURSE_CATEGORIES.get(course_code.upper())
+    return target_root / category / course_code if category else target_root / course_code
+
+
+def course_vault_prefix(target_root: Path, course_dir: Path) -> Path:
+    try:
+        return course_dir.relative_to(target_root.parent)
+    except ValueError:
+        return Path(target_root.name) / course_dir.name
 
 
 def load_courses(ma_data_root: Path) -> dict[str, CourseInfo]:
@@ -422,7 +452,7 @@ def rewrite_markdown(
                 }
             )
             return match.group(0)
-        target_file = target_root / placement.course_code / placement.lesson_relative_path
+        target_file = course_dir_for_code(target_root, placement.course_code) / placement.lesson_relative_path
         return f"]({markdown_relpath(lesson_parent, target_file)})"
 
     text = LESSON_MD_LINK_RE.sub(replace_lesson_link, text)
@@ -446,16 +476,16 @@ def ensure_lesson_metadata(text: str, topic: Topic) -> str:
     return "\n".join([*metadata, "", text]).strip() + "\n"
 
 
-def lesson_nav_footer(course: CourseInfo, target_root: Path) -> str:
-    course_prefix = Path(target_root.name) / course.code
+def lesson_nav_footer(course: CourseInfo, target_root: Path, course_dir: Path) -> str:
+    course_prefix = course_vault_prefix(target_root, course_dir)
     home_target = (course_prefix / "Home").as_posix()
     toc_target = (course_prefix / "0. Table of Contents" / "TOC").as_posix()
     return "\n\n```update-progress\n```\n\n" f"[[{home_target}|Home]]\n[[{toc_target}|Table of Contents]]\n"
 
 
-def ensure_lesson_nav_footer(text: str, course: CourseInfo, target_root: Path) -> str:
+def ensure_lesson_nav_footer(text: str, course: CourseInfo, target_root: Path, course_dir: Path) -> str:
     without_footer = LESSON_FOOTER_RE.sub("", text.rstrip())
-    return without_footer + lesson_nav_footer(course, target_root)
+    return without_footer + lesson_nav_footer(course, target_root, course_dir)
 
 
 def copy_lesson_source(
@@ -745,7 +775,7 @@ def import_course(
         catalog=catalog,
     )
 
-    course_dir = target_root / course.code
+    course_dir = course_dir_for_code(target_root, course.code)
     topic_ids = {topic.topic_id for topic in topics}
     prerequisite_rows = load_course_prerequisite_rows(ma_data_root=ma_data_root, topic_ids=topic_ids)
     prerequisites = build_prerequisite_map(prerequisite_rows)
@@ -802,7 +832,7 @@ def import_course(
                 placements=placements,
                 unresolved_links=unresolved_links,
             )
-            rewritten = ensure_lesson_nav_footer(rewritten, course, target_root)
+            rewritten = ensure_lesson_nav_footer(rewritten, course, target_root, course_dir)
             target_lesson_path.write_text(rewritten, encoding="utf-8")
             copied_files.append(target_lesson_path.as_posix())
             copy_lesson_source(
@@ -817,7 +847,7 @@ def import_course(
             if not target_lesson_path.exists():
                 raise FileNotFoundError(f"Missing lesson file for nav refresh: {target_lesson_path}")
             original = target_lesson_path.read_text(encoding="utf-8")
-            updated = ensure_lesson_nav_footer(original, course, target_root)
+            updated = ensure_lesson_nav_footer(original, course, target_root, course_dir)
             if updated != original:
                 target_lesson_path.write_text(updated, encoding="utf-8")
                 copied_files.append(target_lesson_path.as_posix())

@@ -336,5 +336,5 @@ $$
 ```update-progress
 ```
 
-[[MA/MF2/Home|Home]]
-[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

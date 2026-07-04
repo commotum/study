@@ -32,7 +32,7 @@ rg -n -i "right riemann|riemann sum|definite integral" util/Mathematical-Foundat
    - Keep the working candidate list small enough to inspect carefully, usually 5-12 lessons.
 
 ```bash
-rg -n -i "Question|Example|right Riemann|cos" vault/MA/MF*/**/Lessons/*.md
+rg -n -i "Question|Example|right Riemann|cos" vault/MA/Mathematical-Foundations/MF*/**/Lessons/*.md
 ```
 
 4. Inspect candidate lesson questions and examples.

@@ -404,5 +404,5 @@ provided that $n \neq -1$. To emphasize, the power rule does *not* work when $n=
 ```update-progress
 ```
 
-[[MA/MF2/Home|Home]]
-[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

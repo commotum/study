@@ -399,5 +399,5 @@ Use the right Riemann sum for $l(t)$ over the interval $[1, 7]$ with three subin
 ```update-progress
 ```
 
-[[MA/MF3/Home|Home]]
-[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

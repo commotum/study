@@ -325,5 +325,5 @@ Therefore, since the limit of the sequence of partial sums is infinite, the seri
 ```update-progress
 ```
 
-[[MA/MF3/Home|Home]]
-[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

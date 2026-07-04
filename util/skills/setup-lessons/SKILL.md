@@ -49,14 +49,14 @@ python3 util/skills/setup-lessons/scripts/list_problems.py vault/252/M-1/WHW-1/W
 python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
   vault/252/M-1/WHW-1/WHW-1.md \
   --kind lesson \
-  --lesson-md 'vault/MA/MF3/9. Definite Integrals/9.1. Approximating Areas with Riemann Sums/Lessons/9.1.2. Approximating Areas With the Right Riemann Sum.md'
+  --lesson-md 'vault/MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.1. Approximating Areas with Riemann Sums/Lessons/9.1.2. Approximating Areas With the Right Riemann Sum.md'
 ```
 
 ```bash
 python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
   vault/252/M-1/WHW-1/WHW-1.md \
   --kind prerequisite \
-  --lesson-md 'vault/MA/MF2/9. Trigonometry/9.4. Special Trigonometric Ratios/Lessons/9.4.3. Finding Trigonometric Ratios of Special Angles Using the Unit Circle.md'
+  --lesson-md 'vault/MA/Mathematical-Foundations/MF2/9. Trigonometry/9.4. Special Trigonometric Ratios/Lessons/9.4.3. Finding Trigonometric Ratios of Special Angles Using the Unit Circle.md'
 ```
 
 5. Avoid duplicates.

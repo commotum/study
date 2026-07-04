@@ -266,5 +266,5 @@ Which of the above could be the graph of $y = x(x + 1)(x - 1)$?
 ```update-progress
 ```
 
-[[MA/MF2/Home|Home]]
-[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

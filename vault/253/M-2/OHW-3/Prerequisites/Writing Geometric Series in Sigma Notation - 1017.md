@@ -312,5 +312,5 @@ The geometric series $486 + 162 + 54⋯ + 2$ can be expressed using sigma notati
 ```update-progress
 ```
 
-[[MA/MF3/Home|Home]]
-[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

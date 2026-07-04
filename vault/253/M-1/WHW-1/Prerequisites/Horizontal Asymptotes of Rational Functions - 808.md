@@ -278,5 +278,5 @@ This is not a constant, which means that $y = f(x)$ does not have a horizontal a
 ```update-progress
 ```
 
-[[MA/MF2/Home|Home]]
-[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

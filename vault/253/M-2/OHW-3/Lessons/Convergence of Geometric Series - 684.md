@@ -309,5 +309,5 @@ The equation $2^k = 4$ has the solution $k=2$. Now, since $2^k$ increases as $k$
 ```update-progress
 ```
 
-[[MA/MF3/Home|Home]]
-[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

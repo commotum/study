@@ -151,5 +151,5 @@ $(7u^{2} - 6v)(v - u) =$
 ```update-progress
 ```
 
-[[MA/MF1/Home|Home]]
-[[MA/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF1/Home|Home]]
+[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]

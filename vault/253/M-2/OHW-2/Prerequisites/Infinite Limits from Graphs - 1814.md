@@ -171,5 +171,5 @@ The figure above shows the graph of $f(x)$. Evaluate $lim_(x → 3^{+})f(x)$.
 ```update-progress
 ```
 
-[[MA/MF2/Home|Home]]
-[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

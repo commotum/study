@@ -312,5 +312,5 @@ Cars are entering a traffic jam at a rate of $7t$ cars per minute. If at time $t
 ```update-progress
 ```
 
-[[MA/MF3/Home|Home]]
-[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

@@ -168,5 +168,5 @@ Find all of the real solutions to the equation $5(x - 4)^{4} = 405$.
 ```update-progress
 ```
 
-[[MA/MF1/Home|Home]]
-[[MA/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF1/Home|Home]]
+[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]

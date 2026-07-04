@@ -342,5 +342,5 @@ Find $lim_(x → - 1)\sqrt{10 - 3f(x)}$ for the function $f(x)$ plotted above.
 ```update-progress
 ```
 
-[[MA/MF2/Home|Home]]
-[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
