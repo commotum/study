@@ -13,12 +13,17 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-QUESTION_HEADING_RE = re.compile(r"^\*\*Question\s+(?P<number>\d+):?\*\*\s*$", re.IGNORECASE)
+QUESTION_HEADING_RE = re.compile(
+    r"^\*\*Question\s+(?P<number>\d+):?\*\*(?P<inline_content>.*)$",
+    re.IGNORECASE,
+)
 SECTION_BREAK_RE = re.compile(r"^---\s*$")
 CHOICE_RE = re.compile(r"^\s*-\s+\[(?P<mark>[ xX])\]\s+(?P<label>[A-Za-z])\.\s*(?P<content>.*)$")
 QUIZ_FENCE_RE = re.compile(r"^\s*```quiz\s*$")
 QUESTION_ID_RE = re.compile(r"\bq-(?P<id>\d+)(?:-a-\d+)?\.(?:png|jpe?g|gif|webp|svg)\b", re.IGNORECASE)
 ANSWER_SPLIT_RE = re.compile(r"[\s,+/|]+")
+CHOICES_HEADING_RE = re.compile(r"^#{1,6}\s+Choices\s*$", re.IGNORECASE)
+TABLE_SEPARATOR_RE = re.compile(r"^:?-{3,}:?$")
 
 MISSING_ANSWER_COMMENT = (
     "# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, "
@@ -46,6 +51,13 @@ class Conversion:
 class ConvertedBlock:
     lines: list[str]
     conversion: Conversion
+
+
+@dataclass(frozen=True)
+class FileResult:
+    path: Path
+    conversions: list[Conversion]
+    changed: bool
 
 
 def trim_blank_edges(lines: list[str]) -> list[str]:
@@ -187,6 +199,87 @@ def parse_choices(block_lines: list[str]) -> tuple[list[str], list[Choice], list
     return content_lines, choices, tail_lines
 
 
+def split_table_row(line: str) -> list[str] | None:
+    text = line.strip()
+    if not text.startswith("|") or not text.endswith("|"):
+        return None
+    return [cell.strip() for cell in text.strip("|").split("|")]
+
+
+def is_table_separator(cells: list[str]) -> bool:
+    return bool(cells) and all(TABLE_SEPARATOR_RE.match(cell.replace(" ", "")) for cell in cells)
+
+
+def render_table_row(cells: list[str]) -> str:
+    return "| " + " | ".join(cells) + " |"
+
+
+def render_table_separator(column_count: int) -> str:
+    return "| " + " | ".join(["---"] * column_count) + " |"
+
+
+def table_choice_content(headers: list[str], cells: list[str]) -> list[str]:
+    while len(cells) < len(headers):
+        cells.append("")
+    return [
+        render_table_row(headers),
+        render_table_separator(len(headers)),
+        render_table_row(cells[: len(headers)]),
+    ]
+
+
+def parse_table_choices(block_lines: list[str]) -> tuple[list[str], list[Choice], list[str]] | None:
+    choices_heading_index = next(
+        (index for index, line in enumerate(block_lines) if CHOICES_HEADING_RE.match(line.strip())),
+        None,
+    )
+    if choices_heading_index is None:
+        return None
+
+    table_start = choices_heading_index + 1
+    while table_start < len(block_lines) and not block_lines[table_start].strip():
+        table_start += 1
+
+    if table_start + 2 > len(block_lines):
+        return None
+
+    header = split_table_row(block_lines[table_start])
+    separator = split_table_row(block_lines[table_start + 1])
+    if not header or not separator or not is_table_separator(separator):
+        return None
+    if not header[0].strip().lower() == "option":
+        return None
+
+    option_headers = header[1:]
+    if not option_headers:
+        return None
+
+    choices: list[Choice] = []
+    index = table_start + 2
+    while index < len(block_lines):
+        cells = split_table_row(block_lines[index])
+        if not cells:
+            break
+        label = cells[0].strip().lower()
+        if not re.fullmatch(r"[a-z]", label):
+            break
+        choices.append(
+            Choice(
+                label=label,
+                content=table_choice_content(option_headers, cells[1:]),
+                checked=False,
+            )
+        )
+        index += 1
+
+    if len(choices) < 2:
+        return None
+
+    content_lines = trim_blank_edges(block_lines[:choices_heading_index])
+    tail_lines = block_lines[index:]
+    return content_lines, choices, tail_lines
+
+
 def render_quiz_block(
     question_number: str,
     start_line: int,
@@ -242,6 +335,15 @@ def render_quiz_block(
     )
 
 
+def merge_inline_content(inline_content: str, content_lines: list[str]) -> list[str]:
+    inline = inline_content.strip()
+    if not inline:
+        return content_lines
+    if content_lines:
+        return [inline, "", *content_lines]
+    return [inline]
+
+
 def convert_markdown(text: str, answer_overrides: dict[str, set[str]], quiz_type: str) -> tuple[str, list[Conversion]]:
     lines = text.splitlines()
     output: list[str] = []
@@ -259,24 +361,28 @@ def convert_markdown(text: str, answer_overrides: dict[str, set[str]], quiz_type
         block_end = find_question_end(lines, block_start)
         block_lines = lines[block_start:block_end]
 
-        parsed = None if any(QUIZ_FENCE_RE.match(line) for line in block_lines) else parse_choices(block_lines)
+        parsed = None
+        if not any(QUIZ_FENCE_RE.match(line) for line in block_lines):
+            parsed = parse_choices(block_lines) or parse_table_choices(block_lines)
         if parsed is None:
             output.extend(lines[index:block_end])
             index = block_end
             continue
 
         content_lines, choices, tail_lines = parsed
+        inline_content = heading_match.group("inline_content")
+        merged_content_lines = merge_inline_content(inline_content, content_lines)
         converted = render_quiz_block(
             question_number=heading_match.group("number"),
             start_line=index + 1,
-            content_lines=content_lines,
+            content_lines=merged_content_lines,
             choices=choices,
             tail_lines=tail_lines,
             answer_overrides=answer_overrides,
             quiz_type=quiz_type,
         )
 
-        output.append(lines[index])
+        output.append(f"**Question {heading_match.group('number')}:**" if inline_content.strip() else lines[index])
         output.append("")
         output.extend(converted.lines)
         if block_end < len(lines) and SECTION_BREAK_RE.match(lines[block_end]):
@@ -294,7 +400,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Convert checklist multiple-choice questions in an MA lesson markdown file to quiz blocks.",
     )
-    parser.add_argument("markdown_file", type=Path)
+    parser.add_argument(
+        "paths",
+        nargs="+",
+        type=Path,
+        help="Markdown files or directories. Directories are searched recursively for .md files.",
+    )
     parser.add_argument(
         "--answer",
         action="append",
@@ -316,49 +427,89 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dry-run", action="store_true", help="Print a summary without modifying the file.")
     parser.add_argument("--diff", action="store_true", help="Print a unified diff of the proposed changes.")
     parser.add_argument("--backup", action="store_true", help="Write a .bak copy before modifying the file.")
+    parser.add_argument("--summary-only", action="store_true", help="Only print the aggregate conversion summary.")
     return parser
+
+
+def expand_markdown_paths(paths: list[Path]) -> list[Path]:
+    markdown_files: list[Path] = []
+    seen: set[Path] = set()
+
+    for path in paths:
+        if path.is_dir():
+            candidates = sorted(path.rglob("*.md"))
+        else:
+            candidates = [path]
+
+        for candidate in candidates:
+            resolved = candidate.resolve()
+            if resolved in seen:
+                continue
+            seen.add(resolved)
+            markdown_files.append(candidate)
+
+    return markdown_files
+
+
+def print_file_result(result: FileResult, dry_run: bool) -> None:
+    action = "Would convert" if dry_run else "Converted"
+    print(f"{action} {len(result.conversions)} question(s) in {result.path}")
+    for conversion in result.conversions:
+        correct = ",".join(conversion.correct_labels) if conversion.correct_labels else "missing"
+        print(
+            f"  line {conversion.start_line}: Question {conversion.question_number} "
+            f"-> {conversion.quiz_id} ({conversion.choice_count} options, correct={correct})"
+        )
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
 
-    markdown_file = args.markdown_file
-    original_text = markdown_file.read_text(encoding="utf-8")
-    answer_overrides = parse_answer_overrides(args.answer, args.answer_key_file)
-    converted_text, conversions = convert_markdown(original_text, answer_overrides, args.type)
-
-    if args.diff:
-        sys.stdout.writelines(
-            difflib.unified_diff(
-                original_text.splitlines(keepends=True),
-                converted_text.splitlines(keepends=True),
-                fromfile=str(markdown_file),
-                tofile=str(markdown_file),
-            )
-        )
-
-    missing_count = sum(1 for conversion in conversions if not conversion.correct_labels)
-    action = "Would convert" if args.dry_run else "Converted"
-    print(f"{action} {len(conversions)} question(s) in {markdown_file}")
-    if conversions:
-        for conversion in conversions:
-            correct = ",".join(conversion.correct_labels) if conversion.correct_labels else "missing"
-            print(
-                f"  line {conversion.start_line}: Question {conversion.question_number} "
-                f"-> {conversion.quiz_id} ({conversion.choice_count} options, correct={correct})"
-            )
-    if missing_count:
-        print(f"  {missing_count} question(s) need correct-answer metadata.")
-
-    if args.dry_run or converted_text == original_text:
+    markdown_files = expand_markdown_paths(args.paths)
+    if not markdown_files:
+        print("No markdown files found.")
         return 0
 
-    if args.backup:
-        backup_file = markdown_file.with_suffix(markdown_file.suffix + ".bak")
-        shutil.copy2(markdown_file, backup_file)
+    answer_overrides = parse_answer_overrides(args.answer, args.answer_key_file)
 
-    markdown_file.write_text(converted_text, encoding="utf-8")
+    results: list[FileResult] = []
+    total_missing = 0
+
+    for markdown_file in markdown_files:
+        original_text = markdown_file.read_text(encoding="utf-8")
+        converted_text, conversions = convert_markdown(original_text, answer_overrides, args.type)
+        changed = converted_text != original_text
+
+        if args.diff and changed:
+            sys.stdout.writelines(
+                difflib.unified_diff(
+                    original_text.splitlines(keepends=True),
+                    converted_text.splitlines(keepends=True),
+                    fromfile=str(markdown_file),
+                    tofile=str(markdown_file),
+                )
+            )
+
+        if conversions:
+            result = FileResult(path=markdown_file, conversions=conversions, changed=changed)
+            results.append(result)
+            if not args.summary_only:
+                print_file_result(result, args.dry_run)
+            total_missing += sum(1 for conversion in conversions if not conversion.correct_labels)
+
+        if not args.dry_run and changed:
+            if args.backup:
+                backup_file = markdown_file.with_suffix(markdown_file.suffix + ".bak")
+                shutil.copy2(markdown_file, backup_file)
+            markdown_file.write_text(converted_text, encoding="utf-8")
+
+    action = "Would convert" if args.dry_run else "Converted"
+    total_conversions = sum(len(result.conversions) for result in results)
+    print(f"{action} {total_conversions} question(s) across {len(results)} file(s).")
+    if total_missing:
+        print(f"{total_missing} question(s) need correct-answer metadata.")
+
     return 0
 
 
