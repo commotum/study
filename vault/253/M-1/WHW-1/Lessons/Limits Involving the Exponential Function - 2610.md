@@ -1,5 +1,10 @@
 # Limits Involving the Exponential Function
 
+
+<!--
+lesson-id: 2610
+topic-code: MF3.7.1.4
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -388,3 +393,9 @@ options:
 
 - [Next: Improper Integrals of the Second Kind](<253/M-1/WHW-1/Lessons/Improper Integrals of the Second Kind - 759.md>)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

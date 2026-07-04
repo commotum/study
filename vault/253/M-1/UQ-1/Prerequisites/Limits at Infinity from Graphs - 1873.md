@@ -1,5 +1,10 @@
 # Limits at Infinity from Graphs
 
+
+<!--
+lesson-id: 1873
+topic-code: MF2.11.1.4
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -236,3 +241,9 @@ options:
 
 - [Next: Infinite Limits from Graphs](<Infinite Limits from Graphs - 1814.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -1,0 +1,226 @@
+# Left and Right Riemann Sums in Sigma Notation
+
+<!--
+lesson-id: 1042
+topic-code: MF3.9.1.3
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Expressing a Left Riemann Sum in Sigma Notation](#expressing-a-left-riemann-sum-in-sigma-notation)
+- [Right Riemann Sums in Sigma Notation](#right-riemann-sums-in-sigma-notation)
+- [Expressing a Right Riemann Sum in Sigma Notation](#expressing-a-right-riemann-sum-in-sigma-notation)
+
+## Prerequisites
+
+- [Approximating Areas With the Left Riemann Sum](<9.1.1. Approximating Areas With the Left Riemann Sum.md>)
+- [Approximating Areas With the Right Riemann Sum](<9.1.2. Approximating Areas With the Right Riemann Sum.md>)
+- [Describing Function Composition](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.17. Describing Function Composition.md>)
+- [Properties of Finite Series](<../../../../PCL/1. Sequences and Series/1.1. Arithmetic Series/Lessons/1.1.2. Properties of Finite Series.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Remember that the formula for the left Riemann sum for $y=f(x)$ with a regular step size over the interval $[a,b]$ is
+$({\color{red}{f(x_0)}} + {\color{red}{f(x_1)}} + \ldots + {\color{red}{f(x_{n-1})}}) \cdot {\color{blue}{\Delta x}}$,
+where $n$ is the number of rectangles, $x_0=a$ and $x_{n}=b$ are the endpoints of the interval, and the step size is
+
+$$
+\Delta x = \dfrac{b-a}{n}
+$$
+
+The formula above contains a lot of addition signs. We can simplify this by writing the sum in the **sigma notation**:
+
+$$
+\sum_{k=0}^{n-1} {\color{red}f(x_k)}\,{\color{blue}\Delta x}
+$$
+
+where
+
+$$
+x_k = a+ k\Delta x
+$$
+
+for
+
+$$
+k=0,1,2,\ldots,n-1
+$$
+
+---
+
+<a id="expressing-a-left-riemann-sum-in-sigma-notation"></a>
+## Expressing a Left Riemann Sum in Sigma Notation
+
+**Example:** The area under the curve $y=4-x^2$ between $x=-1$, $x=2$, and the $x$-axis is approximated using a left Riemann sum, as shown below. What is the expression for the Riemann sum in sigma notation?
+
+![](<../Source/Left and Right Riemann Sums in Sigma Notation - 1042/Images/ed16173ebe0275016a94e29e27948e67.png>)
+
+**Explanation**
+
+The left Riemann sum for $y=f(x)$ with a regular step size in sigma notation is
+
+$$
+\sum_{k=0}^{n-1} f(x_k)\Delta x
+$$
+
+where
+
+$$
+x_k = a + k\Delta x
+$$
+
+with
+
+$$
+\Delta x = \dfrac{b-a}{n}
+$$
+
+From the diagram, we see that there are $n=3$ rectangles. The endpoints indicate that $a=-1$ and $b=2$, so the step size is
+
+$$
+\Delta x = \dfrac{2-(-1)}{3} = \dfrac 3 3 = 1
+$$
+
+Therefore, using sigma notation, the left Riemann sum can be expressed as
+
+$$
+\begin{aligned}
+∑_(k = 0)^(n - 1)f(x_{k})Δx &= ∑_(k = 0)^(n - 1)f(a + kΔx)Δx \\
+&= ∑_(k = 0)^(3 - 1)f(-1 + k \cdot 1) \cdot 1 \\
+&= ∑_(k = 0)^(2)f(k - 1) \\
+&= ∑_(k = 0)^(2)(4 - (k - 1)^{2}) \\
+&= ∑_(k = 0)^(2)(4 - k^{2} + 2k - 1) \\
+&= ∑_(k = 0)^(2)(3 + 2k - k^{2})
+\end{aligned}
+$$
+
+---
+
+**Question 1**
+
+![](<../Source/Left and Right Riemann Sums in Sigma Notation - 1042/Images/q-49264.png>)
+
+The area under the curve $y = \sqrt{x}$ between $x = 1$, $x = 4$ and the $x$-axis is approximated using a left Riemann sum, as shown above. What is the expression for the Riemann sum in sigma notation?
+
+- [ ] A. $∑_(i = 0)^(2)\sqrt{i}$
+- [ ] B. $∑_(i = 0)^(2)\sqrt{i - 1}$
+- [ ] C. $∑_(i = 0)^(2)\sqrt{i + 4}$
+- [ ] D. $∑_(i = 0)^(2)\sqrt{i + 1}$
+- [ ] E. $∑_(i = 1)^(3)\sqrt{i + 1}$
+
+---
+
+**Question 2**
+
+![](<../Source/Left and Right Riemann Sums in Sigma Notation - 1042/Images/q-49185.png>)
+
+The area under the curve $y = x^{2}$ between $x = 1$, $x = 4$ and the $x$-axis is approximated using a left Riemann sum, as shown above. What is the expression for the Riemann sum in sigma notation?
+
+- [ ] A. $∑_(k = 1)^(3)(1 + k)^{2}$
+- [ ] B. $∑_(k = 1)^(4)(1 + k)^{2}$
+- [ ] C. $∑_(k = 1)^(4)k^{2}$
+- [ ] D. $∑_(k = 0)^(2)(1 + k)^{2}$
+- [ ] E. $∑_(k = 1)^(3)k^{2}$
+
+---
+
+<a id="right-riemann-sums-in-sigma-notation"></a>
+## Right Riemann Sums in Sigma Notation
+
+Recall that the formula for the right Riemann sum for $y=f(x)$ over the interval $[a,b]$ is
+$({\color{red}f(x_1)} + {\color{red}f(x_2)} + \ldots + {\color{red}f(x_n)}) \cdot {\color{blue}\Delta x}$.
+This right Riemann sum in sigma notation is
+
+$$
+\sum_{k=1}^{n} {\color{red}f(x_k)}{\color{blue}\Delta x}
+$$
+
+where
+
+$$
+x_k=a+k\Delta x
+$$
+
+and
+
+$$
+\Delta x = \dfrac{b-a}{n}
+$$
+
+Notice that this is very similar to the left Riemann sum. The only differences are that the counter starts at $k=1$ instead of $k=0$, and the counter ends at $k=n$ instead of $k=n-1$.
+
+---
+
+<a id="expressing-a-right-riemann-sum-in-sigma-notation"></a>
+## Expressing a Right Riemann Sum in Sigma Notation
+
+**Example:** The area under the curve $y=\cos\left(\dfrac{x}{2}\right)$ between $x=0$ and $x=3$ and the $x$-axis is approximated by a right Riemann sum using $3$ subintervals of equal length. What is the expression for the Riemann sum in sigma notation?
+
+**Explanation**
+
+The right Riemann sum for $y=f(x)$ with a regular step size in sigma notation is
+
+$$
+\sum_{i=1}^n f(x_i)\Delta x
+$$
+
+where
+
+$$
+x_i = a + i\Delta x
+$$
+
+and
+
+$$
+\Delta x = \dfrac{b-a}{n}
+$$
+
+Note that here we are using the index $i$ instead of $k$. It doesn't matter which letter we use for the counter.
+
+We're told that there are $n=3$ subintervals. The endpoints indicate that $a=0$ and $b=3$. So, we have
+
+$$
+\Delta x = \dfrac{3-0}{3} = \dfrac{3}{3} = 1
+$$
+
+Therefore, using sigma notation, the right Riemann sum can be expressed as
+
+$$
+\begin{aligned}
+∑_(i = 1)^(n)f(x_{i})Δx &= ∑_(i = 1)^(n)f(a + iΔx)Δx \\
+&= ∑_(i = 1)^(3)f(0 + i \cdot 1) \cdot 1 \\
+&= ∑_(i = 1)^(3)f(i) \\
+&= ∑_(i = 1)^(3)\cos (\frac{i}{2})
+\end{aligned}
+$$
+
+---
+
+**Question 3:** The area under the curve $y = x^{3}$ between $x = 1$ and $x = 4$ and the $x$-axis is approximated by a right Riemann sum using $6$ subintervals of equal length. What is the expression for the Riemann sum in sigma notation?
+
+- [ ] A. $∑_(k = 1)^(6)[\frac{1}{2}(1 + k)^{3}]$
+- [ ] B. $∑_(k = 1)^(6)[\frac{1}{2}(1 + \frac{k}{2})^{3}]$
+- [ ] C. $∑_(k = 1)^(4)(1 + 6k)^{3}$
+- [ ] D. $∑_(k = 1)^(4)[\frac{1}{2}(1 + k)^{3}]$
+- [ ] E. $∑_(k = 1)^(6)(1 + k)^{3}$
+
+---
+
+**Question 4:** The area under the curve $y = x^{4}$ between $x = 0$ and $x = 5$ and the $x$-axis is approximated by a right Riemann sum using $n$ subintervals of equal length. What is the expression for the Riemann sum in sigma notation?
+
+- [ ] A. $∑_(i = 0)^(n - 1)[(\frac{5}{n})^{4} \cdot i^{4}]$
+- [ ] B. $∑_(i = 1)^(n)[(\frac{5}{n})^{5} \cdot i^{4}]$
+- [ ] C. $∑_(i = 0)^(n - 1)[(\frac{5}{n})^{5} \cdot i^{4}]$
+- [ ] D. $∑_(i = 1)^(n)[(\frac{5}{n})^{4} \cdot i^{5}]$
+- [ ] E. $∑_(i = 1)^(n - 1)[(\frac{5}{n})^{5} \cdot i^{5}]$
+
+```update-progress
+```
+
+[[MA/MF3/Home|Home]]
+[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]

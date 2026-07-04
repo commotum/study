@@ -1,5 +1,10 @@
 # Finding the Existence of a Limit Using One-Sided Limits
 
+
+<!--
+lesson-id: 625
+topic-code: MF2.11.1.3
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -311,3 +316,9 @@ options:
 
 - [Next: Limits of Power Functions, and the Constant Rule for Limits](<Limits of Power Functions, and the Constant Rule for Limits - 1716.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

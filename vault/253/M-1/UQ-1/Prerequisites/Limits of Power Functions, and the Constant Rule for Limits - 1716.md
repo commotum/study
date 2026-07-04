@@ -1,5 +1,10 @@
 # Limits of Power Functions, and the Constant Rule for Limits
 
+
+<!--
+lesson-id: 1716
+topic-code: MF2.11.2.1
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -464,3 +469,9 @@ options:
 
 - [Next: The Sum Rule for Limits](<The Sum Rule for Limits - 1914.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

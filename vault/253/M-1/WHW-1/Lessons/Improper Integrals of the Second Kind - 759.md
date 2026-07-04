@@ -1,5 +1,10 @@
 # Improper Integrals of the Second Kind
 
+
+<!--
+lesson-id: 759
+topic-code: MF3.10.6.5
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -442,3 +447,9 @@ options:
 
 - [Next: WHW-1 Problems](253/M-1/WHW-1/WHW-1.md)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

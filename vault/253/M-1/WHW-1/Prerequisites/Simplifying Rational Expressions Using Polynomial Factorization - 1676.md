@@ -1,5 +1,10 @@
 # Simplifying Rational Expressions Using Polynomial Factorization
 
+
+<!--
+lesson-id: 1676
+topic-code: MF2.6.1.1
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -403,3 +408,9 @@ options:
 
 - [Next: Calculating Limits of Rational Functions by Factoring](<253/M-1/WHW-1/Lessons/Calculating Limits of Rational Functions by Factoring - 1813.md>)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

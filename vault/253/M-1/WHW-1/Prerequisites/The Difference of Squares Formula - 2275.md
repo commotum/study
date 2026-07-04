@@ -1,5 +1,10 @@
 # The Difference of Squares Formula
 
+
+<!--
+lesson-id: 2275
+topic-code: MF1.11.1.11
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -357,3 +362,9 @@ options:
 
 - [Next: Factoring Differences of Squares](<253/M-1/WHW-1/Prerequisites/Factoring Differences of Squares - 370.md>)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

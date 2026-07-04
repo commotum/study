@@ -1,0 +1,282 @@
+# Horizontal Asymptotes of Rational Functions
+
+<!--
+lesson-id: 808
+topic-code: MF2.6.3.9
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Finding a Horizontal Asymptote When the Degrees of the Numerator and Denominator are Equal](#finding-a-horizontal-asymptote-when-the-degrees-of-the-numerator-and-denominator-are-equal)
+- [Finding a Horizontal Asymptote When the Degree of the Denominator is Greater](#finding-a-horizontal-asymptote-when-the-degree-of-the-denominator-is-greater)
+- [Finding a Horizontal Asymptote When the Degree of the Numerator is Greater](#finding-a-horizontal-asymptote-when-the-degree-of-the-numerator-is-greater)
+
+## Prerequisites
+
+- [The Quotient Rule for Exponents With Algebraic Expressions](<../../../../AG1/8. Exponential Functions/8.1. Rules of Exponents/Lessons/8.1.3. The Quotient Rule for Exponents With Algebraic Expressions.md>)
+- [Graph Transformations of Reciprocal Functions](<6.3.2. Graph Transformations of Reciprocal Functions.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+A **horizontal asymptote** is a horizontal line that a graph of a function approaches as $x$ tends to (positive or negative) infinity.
+
+For example, let's consider the rational function
+
+$$
+f(x) = \frac{2x^2}{x^2-1}
+$$
+
+The graph of $y=f(x)$ is shown below.
+
+![](<../Source/Horizontal Asymptotes of Rational Functions - 808/Images/cd4075a0ee06edd282f0bec70b24e703.png>)
+
+We can see that $y=f(x)$ has the horizontal asymptote $y=2$. The function gets closer and closer to this line but never touches it.
+
+But how can we calculate the horizontal asymptote of a function without using a graph?
+
+To find the horizontal asymptote of a rational function, we follow these three steps.
+
+1. Identify the **dominant term** in the denominator. The dominant term is the leading term of the polynomial in the denominator, though we usually ignore the coefficient.
+2. Divide every term in the numerator and denominator of $f(x)$ by the dominant term.
+3. Evaluate the remaining expression as $x\to\infty$.
+
+In our case, the dominant term is $x^2$. So, we divide every term in the numerator and denominator by $x^2$, as follows:
+
+$$
+\begin{aligned}
+f(x) &= \frac{2x^{2}}{x^{2} - 1} \\
+&= (\frac{\frac{2x^{2}}{x^{2}}}{\frac{x^{2}}{x^{2}} - \frac{1}{x^{2}}}) \\
+&= (\frac{2}{1 - \frac{1}{x^{2}}})
+\end{aligned}
+$$
+
+When $x$ is very large, the
+
+$$
+\dfrac{1}{x^2}
+$$
+
+term becomes very small. Therefore, as $x\to\infty$, we have
+
+$$
+\begin{aligned}
+f(x) &= (\frac{2}{1 - \frac{1}{x^{2}}}) \\
+&= → \frac{2}{1 - 0} \\
+&= 2
+\end{aligned}
+$$
+
+Therefore, the horizontal asymptote is $y=2$.
+
+---
+
+<a id="finding-a-horizontal-asymptote-when-the-degrees-of-the-numerator-and-denominator-are-equal"></a>
+## Finding a Horizontal Asymptote When the Degrees of the Numerator and Denominator are Equal
+
+**Example:** Determine the horizontal asymptote of the function $f(x) = \dfrac{4x^3-x}{3x^3+24}$.
+
+**Explanation**
+
+To find the horizontal asymptote of a rational function, we divide every term in the numerator and denominator by the dominant term in the denominator, and then we let $x\to\infty$.
+
+Ignoring the coefficient, the dominant term in the denominator is $x^3$. So, we divide every term in the numerator and denominator by $x^3$, as follows:
+
+$$
+\begin{aligned}
+f(x) &= \frac{4x^{3} - x}{3x^{3} + 24} \\
+&= ((\frac{4x^{3}}{x^{3}} - \frac{x}{x^{3}}))/((\frac{3x^{3}}{x^{3}} + \frac{24}{x^{3}})) \\
+&= ((4 - \frac{1}{x^{2}}))/((3 + \frac{24}{x^{3}}))
+\end{aligned}
+$$
+
+Now, when $x$ is very large, the terms
+
+$$
+\dfrac{1}{x^2}
+$$
+
+and
+
+$$
+\dfrac{24}{x^3}
+$$
+
+become very small. Therefore, as $x\to\infty$, we have
+
+$$
+\begin{aligned}
+f(x) &= ((4 - \frac{1}{x^{2}}))/((3 + \frac{24}{x^{3}})) \\
+&= → \frac{4 - 0}{3 + 0} \\
+&= \frac{4}{3}
+\end{aligned}
+$$
+
+So, the horizontal asymptote is
+
+$$
+y = \dfrac{4}{3}
+$$
+
+---
+
+**Question 1:** Determine the horizontal asymptote of the function $f(x) = \frac{3x^{2} - x}{x^{2} + 4}$.
+
+- [ ] A. $y = 2$
+- [ ] B. $y = 0$
+- [ ] C. $y = 3$
+- [ ] D. $y =-2$
+- [ ] E. No horizontal asymptote exist
+
+---
+
+**Question 2:** Determine the horizontal asymptote of the function $f(x) = (2x(x^{3} + 1))/(3x^{4} - 7)$.
+
+- [ ] A. $y = \frac{2}{3}$
+- [ ] B. $y = 3$
+- [ ] C. $y = 2$
+- [ ] D. $y = 1$
+- [ ] E. No horizontal asymptote exist
+
+---
+
+<a id="finding-a-horizontal-asymptote-when-the-degree-of-the-denominator-is-greater"></a>
+## Finding a Horizontal Asymptote When the Degree of the Denominator is Greater
+
+**Example:** Determine the horizontal asymptote of the function $f(x) = \dfrac{3x^2+ 2x}{6x^4-1}$.
+
+**Explanation**
+
+To find the horizontal asymptote of a rational function, we divide every term in the numerator and denominator by the dominant term in the denominator, and then we let $x\to\infty$.
+
+Ignoring the coefficient, the dominant term in the denominator is $x^4$. So, we divide every term in the numerator and denominator by $x^4$, as follows:
+
+$$
+\begin{aligned}
+f(x) &= \frac{3x^{2} + 2x}{6x^{4} - 1} \\
+&= ((\frac{3x^{2}}{x^{4}} + \frac{2x}{x^{4}}))/((\frac{6x^{4}}{x^{4}} - \frac{1}{x^{4}})) \\
+&= ((\frac{3}{x^{2}} + \frac{2}{x^{3}}))/((6 - \frac{1}{x^{4}}))
+\end{aligned}
+$$
+
+Now, when $x$ is very large, the terms
+
+$$
+\dfrac{3}{x^2}, \dfrac{2}{x^3}
+$$
+
+and
+
+$$
+\dfrac{1}{x^4}
+$$
+
+become very small. Therefore, as $x\to\infty$, we have
+
+$$
+\begin{aligned}
+f(x) &= ((\frac{3}{x^{2}} + \frac{2}{x^{3}}))/((6 - \frac{1}{x^{4}})) \\
+&= → \frac{0 + 0}{6 - 0} \\
+&= 0
+\end{aligned}
+$$
+
+So, the horizontal asymptote is $y = 0$.
+
+---
+
+**Question 3:** Determine the horizontal asymptote of the function $f(x) = \frac{3 - 4x}{2x^{2} + 1}$.
+
+- [ ] A. $y = 0$
+- [ ] B. $y = 3$
+- [ ] C. $y =-4$
+- [ ] D. $y = 1$
+- [ ] E. $y =-2$
+
+---
+
+**Question 4:** Determine the horizontal asymptote of the function $f(x) = \frac{2x + 1}{9x + 8x^{2} - x^{3}}$.
+
+- [ ] A. $y =-\frac{1}{9}$
+- [ ] B. $y = 1$
+- [ ] C. $y = 0$
+- [ ] D. $y =-2$
+- [ ] E. $y = \frac{2}{9}$
+
+---
+
+**Question 5:** Determine the horizontal asymptote of the function $f(x) = (7x^{2} + 4)/(x(3x^{2} + 12))$.
+
+- [ ] A. $y = \frac{7}{3}$
+- [ ] B. $y = 0$
+- [ ] C. $y = 7$
+- [ ] D. No horizontal asymptotes
+- [ ] E. $y = \frac{1}{4}$
+
+---
+
+<a id="finding-a-horizontal-asymptote-when-the-degree-of-the-numerator-is-greater"></a>
+## Finding a Horizontal Asymptote When the Degree of the Numerator is Greater
+
+**Example:** Determine the horizontal asymptote of $f(x) = \dfrac{2x^3}{x^2-1}$.
+
+**Explanation**
+
+To find the horizontal asymptote of a rational function, we divide every term in the numerator and denominator by the dominant term in the denominator, and then we let $x\to\infty$.
+
+Ignoring the coefficient, the dominant term in the denominator is $x^2$. So, we divide every term in the numerator and denominator by $x^2$, as follows:
+
+$$
+\begin{aligned}
+f(x) &= \frac{2x^{3}}{x^{2} - 1} \\
+&= ((\frac{2x^{3}}{x^{2}}))/((\frac{x^{2}}{x^{2}} - \frac{1}{x^{2}})) \\
+&= (2x)/((1 - \frac{1}{x^{2}}))
+\end{aligned}
+$$
+
+Now, when $x$ is very large, the term
+
+$$
+\dfrac{1}{x^2}
+$$
+
+becomes very small. Therefore, as $x\to\infty$, we have
+
+$$
+\begin{aligned}
+f(x) &= (2x)/((1 - \frac{1}{x^{2}})) \\
+&\approx \frac{2x}{1 - 0} \\
+&= 2x
+\end{aligned}
+$$
+
+This is not a constant, which means that $y = f(x)$ does not have a horizontal asymptote.
+
+---
+
+**Question 6:** Determine the horizontal asymptote of $f(x) = \frac{x^{3} + 3}{4x^{2} - 6x}$.
+
+- [ ] A. $y = 0$
+- [ ] B. No horizontal asymptotes
+- [ ] C. $y = \frac{1}{4}$
+- [ ] D. $y =-\frac{3}{4}$
+- [ ] E. $y =-1$
+
+---
+
+**Question 7:** Determine the horizontal asymptote of $f(x) = (x^{2}(2 - x^{2}))/(x^{3})$.
+
+- [ ] A. $y = 2$
+- [ ] B. $y = 0$
+- [ ] C. $y =-1$
+- [ ] D. $y =-2$
+- [ ] E. No horizontal asymptotes
+
+```update-progress
+```
+
+[[MA/MF2/Home|Home]]
+[[MA/MF2/0. Table of Contents/TOC|Table of Contents]]

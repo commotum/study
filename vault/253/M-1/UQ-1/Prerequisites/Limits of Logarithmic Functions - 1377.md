@@ -1,5 +1,10 @@
 # Limits of Logarithmic Functions
 
+
+<!--
+lesson-id: 1377
+topic-code: MF2.11.3.4
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -421,3 +426,9 @@ options:
 
 - [Next: Limits of Exponential Functions](<Limits of Exponential Functions - 1717.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -1,5 +1,10 @@
 # Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions
 
+
+<!--
+lesson-id: 607
+topic-code: MF3.7.1.8
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -414,3 +419,9 @@ options:
 
 - [Next: Limits Involving the Exponential Function](<253/M-1/WHW-1/Lessons/Limits Involving the Exponential Function - 2610.md>)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

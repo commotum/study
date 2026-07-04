@@ -1,5 +1,10 @@
 # Calculating Limits of Rational Functions by Factoring
 
+
+<!--
+lesson-id: 1813
+topic-code: MF2.11.3.9
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -359,3 +364,9 @@ options:
 
 - [Next: Limits at Infinity and Horizontal Asymptotes of Rational Functions](<253/M-1/WHW-1/Lessons/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903.md>)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -1,16 +1,30 @@
 ## Prerequisites
 
-- [The Difference of Squares Formula](<253/M-1/WHW-1/Prerequisites/The Difference of Squares Formula - 2275.md>)
-- [Factoring Differences of Squares](<253/M-1/WHW-1/Prerequisites/Factoring Differences of Squares - 370.md>)
-- [Simplifying Rational Expressions Using Polynomial Factorization](<253/M-1/WHW-1/Prerequisites/Simplifying Rational Expressions Using Polynomial Factorization - 1676.md>)
+- [The Difference of Squares Formula - 2275](<Prerequisites/The Difference of Squares Formula - 2275.md>)
+- [Factoring Differences of Squares - 370](<Prerequisites/Factoring Differences of Squares - 370.md>)
+- [Factoring Sums and Differences of Cubes - 441](<Prerequisites/Factoring Sums and Differences of Cubes - 441.md>)
+- [Factoring Biquadratic Expressions - 2336](<Prerequisites/Factoring Biquadratic Expressions - 2336.md>)
+- [Simplifying Rational Expressions Using Polynomial Factorization - 1676](<Prerequisites/Simplifying Rational Expressions Using Polynomial Factorization - 1676.md>)
+- [Factoring Cubic Expressions by Grouping - 428](<Prerequisites/Factoring Cubic Expressions by Grouping - 428.md>)
+- [The Product and Quotient Rules for Limits - 1246](<Prerequisites/The Product and Quotient Rules for Limits - 1246.md>)
+- [The Power and Root Rules for Limits - 37](<Prerequisites/The Power and Root Rules for Limits - 37.md>)
+- [Horizontal Asymptotes of Rational Functions - 808](<Prerequisites/Horizontal Asymptotes of Rational Functions - 808.md>)
+- [Limits at Infinity of Polynomials - 1263](<Prerequisites/Limits at Infinity of Polynomials - 1263.md>)
+- [Limits of Exponential Functions - 1717](<Prerequisites/Limits of Exponential Functions - 1717.md>)
+- [Limits of Reciprocal Functions - 1905](<Prerequisites/Limits of Reciprocal Functions - 1905.md>)
+- [Limits of Logarithmic Functions - 1377](<Prerequisites/Limits of Logarithmic Functions - 1377.md>)
+- [Limits of Trigonometric Functions - 1719](<Prerequisites/Limits of Trigonometric Functions - 1719.md>)
+- [Integrating Trigonometric Functions Using Substitution - 478](<Prerequisites/Integrating Trigonometric Functions Using Substitution - 478.md>)
+- [Integration by Substitution With Inverse Trigonometric Functions - 315](<Prerequisites/Integration by Substitution With Inverse Trigonometric Functions - 315.md>)
+- [Integrating Exponential Functions Using Substitution - 3770](<Prerequisites/Integrating Exponential Functions Using Substitution - 3770.md>)
 
 ## Lessons
 
-- [Calculating Limits of Rational Functions by Factoring](<253/M-1/WHW-1/Lessons/Calculating Limits of Rational Functions by Factoring - 1813.md>)
-- [Limits at Infinity and Horizontal Asymptotes of Rational Functions](<253/M-1/WHW-1/Lessons/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903.md>)
-- [Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<253/M-1/WHW-1/Lessons/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
-- [Limits Involving the Exponential Function](<253/M-1/WHW-1/Lessons/Limits Involving the Exponential Function - 2610.md>)
-- [Improper Integrals of the Second Kind](<253/M-1/WHW-1/Lessons/Improper Integrals of the Second Kind - 759.md>)
+- [Calculating Limits of Rational Functions by Factoring - 1813](<Lessons/Calculating Limits of Rational Functions by Factoring - 1813.md>)
+- [Limits Involving the Exponential Function - 2610](<Lessons/Limits Involving the Exponential Function - 2610.md>)
+- [Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903](<Lessons/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903.md>)
+- [Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607](<Lessons/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
+- [Improper Integrals of the Second Kind - 759](<Lessons/Improper Integrals of the Second Kind - 759.md>)
 
 ---
 

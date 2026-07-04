@@ -1,14 +1,19 @@
 ## Prerequisites
 
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
+- [Introduction to Sequences - 2271](<Prerequisites/Introduction to Sequences - 2271.md>)
+- [Describing Function Composition - 3817](<Prerequisites/Describing Function Composition - 3817.md>)
+- [Areas of Rectangles and Squares - 1352](<Prerequisites/Areas of Rectangles and Squares - 1352.md>)
+- [Increasing and Decreasing Functions - 1628](<Prerequisites/Increasing and Decreasing Functions - 1628.md>)
+- [Graphs of General Quadratic Functions - 84](<Prerequisites/Graphs of General Quadratic Functions - 84.md>)
+- [Properties of Finite Series - 3958](<Prerequisites/Properties of Finite Series - 3958.md>)
+- [Approximating Areas With the Left Riemann Sum - 477](<Prerequisites/Approximating Areas With the Left Riemann Sum - 477.md>)
+- [Finding Trigonometric Ratios of Quadrantal Angles - 269](<Prerequisites/Finding Trigonometric Ratios of Quadrantal Angles - 269.md>)
+- [Finding Trigonometric Ratios of Special Angles Using the Unit Circle - 268](<Prerequisites/Finding Trigonometric Ratios of Special Angles Using the Unit Circle - 268.md>)
 
 ## Lessons
 
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
+- [Approximating Areas With the Right Riemann Sum - 1281](<Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>)
+- [Left and Right Riemann Sums in Sigma Notation - 1042](<Lessons/Left and Right Riemann Sums in Sigma Notation - 1042.md>)
 
 ---
 ## Problem 1

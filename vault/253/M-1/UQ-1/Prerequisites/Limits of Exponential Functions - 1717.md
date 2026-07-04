@@ -1,5 +1,10 @@
 # Limits of Exponential Functions
 
+
+<!--
+lesson-id: 1717
+topic-code: MF2.11.3.3
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -328,3 +333,9 @@ options:
 
 - [Next: Improper Integrals Involving Exponential Functions](<Improper Integrals Involving Exponential Functions - 4004.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

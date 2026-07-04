@@ -1,0 +1,395 @@
+# Approximating Areas With the Left Riemann Sum
+
+<!--
+lesson-id: 477
+topic-code: MF3.9.1.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [A General Formula for the Left Riemann Sum](#a-general-formula-for-the-left-riemann-sum)
+- [Calculating a Left Riemann Sum With Regular Step Size](#calculating-a-left-riemann-sum-with-regular-step-size)
+- [Solving for an Unknown Given the Value of a Left Riemann Sum With Regular Step Size](#solving-for-an-unknown-given-the-value-of-a-left-riemann-sum-with-regular-step-size)
+- [Overestimates and Underestimates](#overestimates-and-underestimates)
+- [Determining Whether a Left Riemann Sum is an Overestimate or Underestimate](#determining-whether-a-left-riemann-sum-is-an-overestimate-or-underestimate)
+- [Left Riemann Sums with Irregular Step Size](#left-riemann-sums-with-irregular-step-size)
+- [Calculating a Left Riemann Sum With Irregular Step Size](#calculating-a-left-riemann-sum-with-irregular-step-size)
+
+## Prerequisites
+
+- [Graphs of General Quadratic Functions](<../../../../AG1/10. Quadratic Equations & Functions/10.2. Quadratic Functions/Lessons/10.2.3. Graphs of General Quadratic Functions.md>)
+- [Areas of Rectangles and Squares](<../../../../PAL/6. Geometry/6.7. Area and Perimeter/Lessons/6.7.1. Areas of Rectangles and Squares.md>)
+- [Increasing and Decreasing Functions](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.11. Increasing and Decreasing Functions.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose that we wish to find the area $\mathcal{A}$ under the graph of $y=x^2$ between the $x$-values $x=1$ and $x=4$, as shown below.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/b923340927f80192d4432c9e4a6d659c.png>)
+
+We can *approximate* the area using, for instance, the area of three rectangles, each with a width equal to $1$.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/f9d2c3158eb9a2d8d20544aab131091f.png>)
+
+So, we find the area of each rectangle and then add them all together.
+
+$$
+A \mid \approx [f(1)^(⏞)^(height) \cdot 1_(⏟)_(width)]^(⏞)^([math]1[/math]st rectangle) + [f(2)^(⏞)^(height) \cdot 1_(⏟)_(width)]^(⏞)^([math]2[/math]nd rectangle) + [f(3)^(⏞)^(height) \cdot 1_(⏟)_(width)]^(⏞)^([math]3[/math]rd rectangle); = [1^{2} \cdot 1] + [2^{2} \cdot 1] + [3^{2} \cdot 1]; = 1 + 4 + 9; = 14
+$$
+
+Here, we approximated the area using a **left Riemann sum**, which means that the top-*left* corner of each rectangle touches the curve.
+
+Because the function is *strictly increasing* over the interval $[1,4]$, the rectangles are entirely *below* the function, which means our approximation is an *underestimate* of the actual area.
+
+---
+
+<a id="a-general-formula-for-the-left-riemann-sum"></a>
+## A General Formula for the Left Riemann Sum
+
+In general, the area $\mathcal{A}$ under the curve $y=f(x)$ over the interval $[a,b]$ can be approximated using a left Riemann sum by calculating the area of each rectangle and adding them together.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/01bbea4655115ee6aea7c1844960a765.png>)
+
+We can write this mathematically as
+
+$$
+\mathcal{A} \approx f(x_0)\Delta x+f(x_1)\Delta x+f(x_2)\Delta x+ \cdots + f(x_{n-1}) \Delta x
+$$
+
+where $n$ is the number of rectangles and the step size $\Delta x$ is given by
+
+$$
+\Delta x=\dfrac{b-a}{n}
+$$
+
+We can simplify by factoring out the $\Delta x$, which gives the following general formula:
+
+$$
+heights
+$$
+
+---
+
+<a id="calculating-a-left-riemann-sum-with-regular-step-size"></a>
+## Calculating a Left Riemann Sum With Regular Step Size
+
+**Example:** Estimate the area under the curve $y=f(x)=(2x-4)^2$ over the interval $[0,2]$ using a left Riemann sum with $4$ rectangles of equal width.
+
+**Explanation**
+
+First, let's compute the step size $\Delta x$, which is just the width of each rectangle. In this case, the endpoints of our interval are $a=0$ and $b=2$, and there are $n=4$ rectangles, so the step size is
+
+$$
+\Delta x=\dfrac{b-a}{n}=\dfrac{2-0}{4}=0.5
+$$
+
+Now, let's sketch our situation. We are using a left Riemann sum, which means we draw the rectangles so that the left corner of each rectangle coincides with the curve.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/c7701da672e6421f8810995b994704fd.png>)
+
+The area $\mathcal{A}$ can be approximated using the formula
+
+$$
+\mathcal A\approx(\overbrace{{\color{red}{f(0)}}+{\color{red}{f(0.5)}}+{\color{red}{f(1)}}+{\color{red}{f(1.5)}}}^{\color{red}{\large\text{heights}}})\cdot \underbrace{\color{blue}\Delta x}_{\color{blue}{\large\text{width}}}
+$$
+
+So, we now set up a table with the values of $f(x)$ at each point:
+
+| $x$ | $0$ | $0.5$ | $1$ | $1.5$ |
+| --- | ---: | ---: | ---: | ---: |
+| $f(x)$ | $16$ | $9$ | $4$ | $1$ |
+
+Finally, we obtain the following approximation for our area:
+
+$$
+A \approx (16 + 9 + 4 + 1) \cdot 0.5 = 15
+$$
+
+---
+
+**Question 1**
+
+> A calculator is required to answer this question.
+
+Estimate the area under the curve $y = (x + 1)^{3} + 1$ over the interval $[- 1, 0]$ using a left Riemann sum with step size $Δx = 0.25$.
+
+- [ ] A. $2.295$
+- [ ] B. $1.141$
+- [ ] C. $3.120$
+- [ ] D. $1.230$
+- [ ] E. $2.160$
+
+---
+
+**Question 2**
+
+> A calculator is required to answer this question.
+
+Estimate the area under the curve $y = x^{2}$ over the interval $[- 1, 1]$ using a left Riemann sum with step size $Δx = 0.5$.
+
+- [ ] A. $0.625$
+- [ ] B. $0$
+- [ ] C. $0.75$
+- [ ] D. $0.5$
+- [ ] E. $0.67$
+
+---
+
+<a id="solving-for-an-unknown-given-the-value-of-a-left-riemann-sum-with-regular-step-size"></a>
+## Solving for an Unknown Given the Value of a Left Riemann Sum With Regular Step Size
+
+**Example:** The table below gives some values of a continuous function $f(x)$ over the interval $[-4,2]$. If the left Riemann sum approximation of the area under the curve $y=f(x)$ with $3$ equal subintervals has a value of $28$, then what must be the value of $k$?
+
+| $x$ | $-4$ | $-2$ | $0$ | $2$ |
+| --- | ---: | ---: | ---: | ---: |
+| $f(x)$ | $5$ | $3$ | $k$ | $2$ |
+
+**Explanation**
+
+The area $\mathcal{A}$ can be approximated using the formula for the left Riemann sum:
+
+$$
+\mathcal A\approx(\overbrace{{\color{red}{f(-4)}}+{\color{red}{f(-2)}}+{\color{red}{f(0)}}}^{\color{red}{\large\text{heights}}})\cdot \underbrace{\color{blue}\Delta x}_{\color{blue}{\large\text{width}}}
+$$
+
+So, we set up a table with the values of $f(x)$ at each point:
+
+| $x$ | $-4$ | $-2$ | $0$ |
+| --- | ---: | ---: | ---: |
+| $f(x)$ | $5$ | $3$ | $k$ |
+
+Now, we obtain the following approximation for the area:
+
+$$
+A \mid \approx (5 + 3 + k) \cdot 2; = (8 + k) \cdot 2; = 16 + 2k
+$$
+
+Since we are given that $\mathcal A$ must be $28$, we obtain
+
+$$
+\begin{aligned}
+16 + 2k &= 28 \\
+2k &= 12 \\
+k &= 6
+\end{aligned}
+$$
+
+---
+
+**Question 3**
+
+> A calculator is required to answer this question.
+
+The table below gives the values of a continuous function $f(x)$ over the closed interval $[1, 10]$ with a regular step size. If the left Riemann sum approximation of the area under the curve $y = f(x)$ with $3$ subintervals defined by the given points has a value of $45$, then what must be the value of $k$?
+
+| $x$ | $1$ | $4$ | $7$ | $10$ |
+| --- | ---: | ---: | ---: | ---: |
+| $f(x)$ | $-1$ | $k$ | $9$ | $15$ |
+
+- [ ] A. $5$
+- [ ] B. $7$
+- [ ] C. $15$
+- [ ] D. $9$
+- [ ] E. $14$
+
+---
+
+**Question 4**
+
+> A calculator is required to answer this question.
+
+The table below gives the values of a continuous function $f(x)$ over the closed interval $[2, 8]$ with a regular step size. If the left Riemann sum approximation of the area under the curve $y = f(x)$ with $3$ subintervals defined by the given points has a value of $16$, then what must be the value of $k$?
+
+| $x$ | $2$ | $4$ | $6$ | $8$ |
+| --- | ---: | ---: | ---: | ---: |
+| $f(x)$ | $1$ | $3$ | $k$ | $12$ |
+
+- [ ] A. $4$
+- [ ] B. $12$
+- [ ] C. $8$
+- [ ] D. $10$
+- [ ] E. $16$
+
+---
+
+<a id="overestimates-and-underestimates"></a>
+## Overestimates and Underestimates
+
+Whether the left Riemann sum underestimates or overestimates the actual area under a function depends on whether the function is increasing or decreasing.
+
+- If the function $f(x)$ is increasing, then the rectangles fall *below* the function, which means the left Riemann sum gives an *underestimate* of the actual area under the curve $y=f(x)$.![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/05800258a79f954305aaa47c9479df31.png>)
+- If the function $f(x)$ is decreasing, then the rectangles reach *above* the function, which means the left Riemann sum gives an *overestimate* of the actual area under the curve $y=f(x)$.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/85a6d9e1be51f841426a88bd38173231.png>)
+
+---
+
+<a id="determining-whether-a-left-riemann-sum-is-an-overestimate-or-underestimate"></a>
+## Determining Whether a Left Riemann Sum is an Overestimate or Underestimate
+
+**Example:** Suppose a left Riemann sum is used to approximate the area under the curve $y=f(x)=(2x-4)^2$ over the interval $[0,2]$. Is the resulting estimation an overestimate or an underestimate?
+
+**Explanation**
+
+Let's sketch our situation. We are using a left Riemann sum, which means we draw the rectangles so that the left corner of each rectangle coincides with the curve.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/459d4d66604c1019364f30a348f52d87.png>)
+
+Because the function is *decreasing* over the interval $[0,2]$, the rectangles reach *above* the function, which means our approximation is an *overestimate* of the actual area.
+
+---
+
+**Question 5**
+
+> A calculator is required to answer this question.
+
+A left Riemann sum is used to approximate the area under the curve $y = f(x)$ between $x =-3$ and $x =-1$ for each of the functions below. For which function does the Riemann sum give an *underestimate* of the area?
+
+- [ ] A. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-4.png>)
+- [ ] B. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-1.png>)
+- [ ] C. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-3.png>)
+- [ ] D. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-2.png>)
+- [ ] E. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-5.png>)
+
+---
+
+**Question 6**
+
+> A calculator is required to answer this question.
+
+A left Riemann sum is used to approximate the area under the curve $y = f(x)$ between $x =-1$ and $x = 3$ for each of the functions below. For which function does the Riemann sum give an *overestimate* of the area?
+
+- [ ] A. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-5.png>)
+- [ ] B. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-2.png>)
+- [ ] C. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-4.png>)
+- [ ] D. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-3.png>)
+- [ ] E. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-1.png>)
+
+---
+
+<a id="left-riemann-sums-with-irregular-step-size"></a>
+## Left Riemann Sums with Irregular Step Size
+
+In the last few examples, the step size $\Delta x$ was the same for each of the rectangles. In these cases, we say that the step size is **regular**.
+
+There are situations where the step size can vary, which we call an **irregular step size**. But we can still use a left Riemann sum to approximate the area.
+
+For example, let's use a left Riemann sum to approximate the area under the curve of the continuous function $y=f(x)$ whose data is given in the table below.
+
+| $x$ | $1$ | $2$ | $3.5$ | $4$ |
+| --- | ---: | ---: | ---: | ---: |
+| $f(x)$ | $1$ | $4$ | $6$ | $12$ |
+
+First, note that the domain of $f(x)$ has been *partitioned* as
+
+$$
+\begin{aligned} [1,4] &= [1, 2] \cup [2, 3.5] \cup [3.5, 4]. \end{aligned}
+$$
+
+Let's plot what this function might look like, using the values given in the table.
+
+![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/0415c229ccd591643da24a7acbe5823c.png>)
+
+We've drawn some rectangles to help us calculate our left Riemann sum, and we have chosen the heights of each rectangle to be calculated using the left endpoint of each interval.
+
+By calculating the area of each rectangle, we obtain the following approximation for our area:
+
+$$
+1
+$$
+
+Plugging our numbers into the above, we find
+
+$$
+\begin{aligned} \mathcal{A} &\approx {\color{red}1} \cdot ({\color{blue}2-1}) + {\color{red}4} \cdot ({\color{blue}3.5-2}) + {\color{red}6} \cdot ({\color{blue}4-3.5}) \\[5pt] &= {\color{red}1} \cdot {\color{blue}1} +{\color{red}4} \cdot {\color{blue}1.5}+ {\color{red}6} \cdot {\color{blue}0.5} \\[5pt] &=1+6+3 \\[5pt] &= 10. \end{aligned}
+$$
+
+---
+
+<a id="calculating-a-left-riemann-sum-with-irregular-step-size"></a>
+## Calculating a Left Riemann Sum With Irregular Step Size
+
+**Example:** The following table shows some values of a continuous function $f(x)$ over the interval $[0,2]$.
+
+| $x$ | $0$ | $0.8$ | $1.6$ | $2$ |
+| --- | ---: | ---: | ---: | ---: |
+| $f(x)$ | $2$ | $5$ | $10$ | $12$ |
+
+Use the left Riemann sum, with the three subintervals indicated by the data, to approximate the area under the curve $y=f(x)$ over the interval $[0,2]$.
+
+**Explanation**
+
+In this case, we have $n=3$ rectangles. Using the left Riemann sum, the area is computed as
+
+$$
+\mathcal{A} \approx f(0.0)\Delta x_1+f(0.8)\Delta x_2+f(1.6)\Delta x_3
+$$
+
+where each $\Delta x_i$ is calculated by considering the step between a particular $x$-value and the next one, i.e.,
+
+$$
+\Delta x_i = x_{i+1}-x_{i}
+$$
+
+We set up a value table that includes the $\Delta x$'s.
+
+| $x$ | $0$ | $0.8$ | $1.6$ | $2$ |
+| --- | ---: | ---: | ---: | ---: |
+| $\Delta{x}$ | $0.8$ | $0.8$ | $0.4$ | $-$ |
+| $f(x)$ | $2$ | $5$ | $10$ | $12$ |
+
+Finally, we plug in the numbers to approximate the area under the curve and get
+
+$$
+A \mid \approx 2 \cdot 0.8 + 5 \cdot 0.8 + 10 \cdot 0.4; = 1.6 + 4 + 4; = 9.6
+$$
+
+---
+
+**Question 7**
+
+> A calculator is required to answer this question.
+
+The following table shows some values of a continuous function $f(x)$ over the interval $[0, 70]$.
+
+| $x$ | $0$ | $30$ | $40$ | $50$ | $70$ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| $f(x)$ | $10$ | $22$ | $30$ | $45$ | $85$ |
+
+Use the left Riemann sum, with the four subintervals indicated by the data, to approximate the value of the area under the curve $y = f(x)$ over the interval $[0, 70]$.
+
+- [ ] A. $3110$
+- [ ] B. $2140$
+- [ ] C. $1720$
+- [ ] D. $1070$
+- [ ] E. $3210$
+
+---
+
+**Question 8**
+
+> A calculator is required to answer this question.
+
+The following table shows some values of a continuous function $f(x)$ over the interval $[0, 8]$.
+
+| $x$ | $0$ | $3$ | $5$ | $6$ | $8$ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| $f(x)$ | $1$ | $5$ | $9$ | $11$ | $15$ |
+
+Use the left Riemann sum, with the four subintervals indicated by the data, to approximate the area under the curve $y = f(x)$ over the interval $[0, 8]$.
+
+- [ ] A. $35$
+- [ ] B. $45$
+- [ ] C. $44$
+- [ ] D. $48$
+- [ ] E. $74$
+
+```update-progress
+```
+
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

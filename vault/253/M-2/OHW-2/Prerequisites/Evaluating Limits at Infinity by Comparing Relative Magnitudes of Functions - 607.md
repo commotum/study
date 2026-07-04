@@ -1,0 +1,236 @@
+# Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions
+
+<!--
+lesson-id: 607
+topic-code: MF3.7.1.8
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Comparing an Exponential Function and a Polynomial Function](#comparing-an-exponential-function-and-a-polynomial-function)
+- [Comparing a Polynomial Function and a Logarithmic Function](#comparing-a-polynomial-function-and-a-logarithmic-function)
+- [Comparing an Exponential Function and a Logarithmic Function](#comparing-an-exponential-function-and-a-logarithmic-function)
+- [Comparing the Relative Magnitude of a Trigonometric Function](#comparing-the-relative-magnitude-of-a-trigonometric-function)
+
+## Prerequisites
+
+- [Limits at Infinity of Polynomials](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.1. Limits at Infinity of Polynomials.md>)
+- [Limits of Logarithmic Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.4. Limits of Logarithmic Functions.md>)
+- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
+- [Limits of Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.6. Limits of Trigonometric Functions.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose that we want to calculate the following limit:
+
+$$
+\lim_{x\to \infty}\dfrac{x}{e^x}
+$$
+
+Notice that as $x \to \infty$, both the numerator and denominator approach $\infty$. Consequently, attempting direct substitution gives
+
+$$
+\dfrac \infty\infty
+$$
+
+, which is called an **indeterminate form** because we are unable to determine what it means.
+
+However, there is a trick. The trick is to realize that the numerator approaches infinity slowly, whereas the denominator approaches infinity rapidly. So for large values of $x$, we have
+
+$$
+\dfrac{x}{e^x} = \dfrac{\text{a big number}}{\text{a really really big number}}
+$$
+
+To put this in perspective: if $x=20$, then
+
+$$
+\dfrac{x}{e^x} = \dfrac{20}{e^{20}} \approx \dfrac{20}{485165195} \approx 0.00000004
+$$
+
+So, we conclude that
+
+$$
+\lim_{x\to \infty}\dfrac{x}{e^x} = 0
+$$
+
+This result is consistent with the graph of
+
+$$
+y=\dfrac{x}{e^x}
+$$
+
+![](<../Source/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607/Images/f0ac2e52e31c9080ec195b9c9a836361.png>)
+
+In general, for large values of $x$,
+
+$$
+e^{x} \gg x^n \gg \ln(x)
+$$
+
+where $\gg$ means **much greater than**, and $n$ is *any* positive integer. We can use this to solve a variety of problems involving limits at infinity.
+
+---
+
+<a id="comparing-an-exponential-function-and-a-polynomial-function"></a>
+## Comparing an Exponential Function and a Polynomial Function
+
+**Example:** Evaluate $\displaystyle \lim_{x\to \infty}\dfrac{x^{100}}{e^x}$.
+
+**Explanation**
+
+Both the numerator and denominator approach $\infty$ as $x\to\infty$. However, since $e^x \gg x^{100}$ for large values of $x$, the denominator is growing much faster than the numerator. Consequently, we conclude that
+
+$$
+\lim_{x\to \infty}\dfrac{x^{100}}{e^x} = 0
+$$
+
+---
+
+**Question 1:** Evaluate $lim_(x → ∞)\frac{e^{x}}{x^{9}}$.
+
+- [ ] A. $∞$
+- [ ] B. $0$
+- [ ] C. $1$
+- [ ] D. $DNE$
+- [ ] E. $e$
+
+---
+
+**Question 2:** Evaluate $lim_(x → ∞)\frac{e^{x}}{x}$.
+
+- [ ] A. $0$
+- [ ] B. $DNE$
+- [ ] C. $e$
+- [ ] D. $1$
+- [ ] E. $∞$
+
+---
+
+<a id="comparing-a-polynomial-function-and-a-logarithmic-function"></a>
+## Comparing a Polynomial Function and a Logarithmic Function
+
+**Example:** Evaluate $\displaystyle \lim_{x\to \infty}\dfrac{x}{\ln{x}}$.
+
+**Explanation**
+
+Both the numerator and denominator approach $\infty$ as $x\to\infty$. However, since $x \gg \ln{x}$ for large values of $x$, the numerator is growing much faster than the denominator. Consequently, we conclude that
+
+$$
+\lim_{x\to \infty}\dfrac{x}{\ln{x}} = \infty
+$$
+
+---
+
+**Question 3:** Evaluate $lim_(x → ∞)(x)/(\ln (2x))$.
+
+- [ ] A. $∞$
+- [ ] B. $1$
+- [ ] C. $0$
+- [ ] D. $\ln (2)$
+- [ ] E. $DNE$
+
+---
+
+**Question 4:** Evaluate $lim_(x → ∞)\frac{\ln x}{x^{2}}$.
+
+- [ ] A. $0$
+- [ ] B. $1$
+- [ ] C. $DNE$
+- [ ] D. $∞$
+- [ ] E. $2$
+
+---
+
+<a id="comparing-an-exponential-function-and-a-logarithmic-function"></a>
+## Comparing an Exponential Function and a Logarithmic Function
+
+**Example:** Evaluate $\displaystyle \lim_{x\to \infty}\dfrac{e^{2x}}{\ln{x}}$.
+
+**Explanation**
+
+Both the numerator and denominator approach $\infty$ as $x\to\infty$. However, since $e^{2x} \gg \ln{x}$ for large values of $x$, the numerator is growing much faster than the denominator. Consequently, we conclude that
+
+$$
+\lim_{x\to \infty}\dfrac{e^{2x}}{\ln{x}} = \infty
+$$
+
+---
+
+**Question 5:** Evaluate $lim_(x → ∞)(e^{x})/(\ln (2x))$.
+
+- [ ] A. $1$
+- [ ] B. $0$
+- [ ] C. $\frac{e}{2}$
+- [ ] D. $\frac{1}{2}$
+- [ ] E. $∞$
+
+---
+
+**Question 6:** Evaluate $lim_(x → ∞)(\ln (3x))/(e^{x})$.
+
+- [ ] A. $∞$
+- [ ] B. $0$
+- [ ] C. $DNE$
+- [ ] D. $\ln (2)$
+- [ ] E. $e$
+
+---
+
+<a id="comparing-the-relative-magnitude-of-a-trigonometric-function"></a>
+## Comparing the Relative Magnitude of a Trigonometric Function
+
+**Example:** Evaluate $\displaystyle \lim_{x\to \infty}\dfrac{\cos x}{x^2+1}$.
+
+**Explanation**
+
+The numerator here is a bounded, oscillating function with
+
+$$
+\mid \cos x \mid \leq 1
+$$
+
+However, the denominator $x^2+1$ grows without bound as $x\to\infty$. So the denominator is growing much faster than the numerator, and we conclude that
+
+$$
+\lim_{x\to \infty}\dfrac{\cos x}{x^2+1} = 0
+$$
+
+We can see this from the graph of
+
+$$
+y=\dfrac{\cos x}{x^2+1}
+$$
+
+shown below:
+
+![](<../Source/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607/Images/2887328aab485652d020545444662790.png>)
+
+---
+
+**Question 7:** Evaluate $lim_(x → ∞)\frac{\sin x - 3}{x^{3} + x^{2}}$.
+
+- [ ] A. $DNE$
+- [ ] B. $-5$
+- [ ] C. $-3$
+- [ ] D. $∞$
+- [ ] E. $0$
+
+---
+
+**Question 8:** Evaluate $lim_(x → ∞)\frac{3\sin x}{2x + 1}$.
+
+- [ ] A. $∞$
+- [ ] B. $0$
+- [ ] C. $3$
+- [ ] D. $DNE$
+- [ ] E. $\frac{3}{2}$
+
+```update-progress
+```
+
+[[MA/MF3/Home|Home]]
+[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]

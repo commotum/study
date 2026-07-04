@@ -1,5 +1,10 @@
 # Factoring Differences of Squares
 
+
+<!--
+lesson-id: 370
+topic-code: MF1.11.2.5
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -412,3 +417,9 @@ options:
 
 - [Next: Simplifying Rational Expressions Using Polynomial Factorization](<253/M-1/UQ-1/Prerequisites/Simplifying Rational Expressions Using Polynomial Factorization - 1676.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

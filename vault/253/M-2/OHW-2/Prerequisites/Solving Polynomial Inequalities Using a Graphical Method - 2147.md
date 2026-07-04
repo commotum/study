@@ -1,0 +1,234 @@
+# Solving Polynomial Inequalities Using a Graphical Method
+
+<!--
+lesson-id: 2147
+topic-code: MF3.2.1.7
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Solving a Polynomial Inequality Using a Given Graph](#solving-a-polynomial-inequality-using-a-given-graph)
+- [Solving a Factored Polynomial Inequality](#solving-a-factored-polynomial-inequality)
+- [Solving a Polynomial Inequality Containing No Constant Term](#solving-a-polynomial-inequality-containing-no-constant-term)
+
+## Prerequisites
+
+- [Graphing General Polynomials](<../../../../AG2/2. Polynomials/2.6. Graphs of Polynomials/Lessons/2.6.6. Graphing General Polynomials.md>)
+- [Solving Quadratic Inequalities Using the Graphical Method](<2.1.3. Solving Quadratic Inequalities Using the Graphical Method.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+One way of solving polynomial inequalities is to use a graphical method.
+
+For example, suppose we want to solve the inequality
+
+$$
+p(x) \geq 0
+$$
+
+where $y = p(x)$ is a polynomial whose graph is sketched below:
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/c99f4944da2da9b93963e3a05e668f49.png>)
+
+Solving the inequality
+
+$$
+p(x) \geq 0
+$$
+
+means finding the intervals where the graph of $p(x)$ is above the $x$-axis or touching the $x$-axis. These parts of the graph of $p(x)$ are shown below:
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/59dd9fc2fce4a6b1f850ae89bbba2a96.png>)
+
+We see that the function lies on or above the $x$-axis on the intervals
+
+$[MATH: (-\infty, -3] \quad \textrm{and}\quad [-1,2].]$
+
+Therefore, the solution to the inequality
+
+$$
+p(x) \geq 0
+$$
+
+is
+
+$[MATH: x \in (-\infty, -3] \cup [-1,2].]$
+
+---
+
+<a id="solving-a-polynomial-inequality-using-a-given-graph"></a>
+## Solving a Polynomial Inequality Using a Given Graph
+
+**Example:** Given the sketch of the polynomial $y = p(x)$ shown above, find the solution to $p(x) < 0$.
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/d83a13bf5ff8ffe872e5b3c6e4a0f77b.png>)
+
+**Explanation**
+
+To solve the inequality $p(x) < 0$, we need to find the values of $x$ for which the curve $y=p(x)$ lies below the $x$-axis. These intervals are shown below.
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/a34e9e5ebc457ab4ff0ab4ce9004f44f.png>)
+
+Based on the graph, the solution is
+$x \in (-\infty, -3) \cup (-3, -1) \cup (0,2)$.
+
+**Watch out!** Notice that this is a strict inequality, so we do not include the roots in our solution.
+
+---
+
+**Question 1**
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/q-40185.png>)
+
+Given the sketch of a polynomial $p(x)$ above, find the solution to $p(x) < 0$.
+
+- [ ] A. $x ∈ (- ∞, 1)$
+- [ ] B. $x ∈ (- ∞,-3)∪(1, ∞)$
+- [ ] C. $x ∈ (- ∞,-3)∪(-2, ∞)$
+- [ ] D. $x ∈ (-3,-2)∪(1, ∞)$
+- [ ] E. $x ∈ (- ∞,-3)∪(-2, 1)∪(1, ∞)$
+
+---
+
+**Question 2**
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/q-40180.png>)
+
+Given the sketch of a polynomial $p(x)$ above, find the solution to $p(x) \ge 0$.
+
+- [ ] A. $[MATH: x ∈ [- 3, 1]∪[3, ∞)]$
+- [ ] B. $[MATH: x ∈ (- ∞, 1]]$
+- [ ] C. $[MATH: x ∈ [0, 3]∪[4, ∞)]$
+- [ ] D. $[MATH: x ∈ (- ∞,-3]∪{-2}∪[1, ∞)]$
+- [ ] E. $x ∈ [- 3, 1]$
+
+---
+
+<a id="solving-a-factored-polynomial-inequality"></a>
+## Solving a Factored Polynomial Inequality
+
+**Example:** Given the polynomial $P(x) = x^3(x+2)^2(x-2)$, find the solution of $P(x) \geq 0$.
+
+**Explanation**
+
+To solve the inequality
+
+$$
+P(x) \geq 0
+$$
+
+we need to find the values of $x$ for which the curve $y=P(x)$ lies above the $x$-axis or touches this axis.
+
+The roots of the polynomial
+
+$$
+P(x) = x^3(x+2)^2(x-2)
+$$
+
+are $x=0$ and $x= \pm{2}$, where
+
+- $x=-2$ has multiplicity $2$,
+- $x=0$ has multiplicity $3$, and
+- $x=2$ is a simple root.
+
+Also, $P(x)$ is a polynomial of degree $6$ with a positive leading coefficient. So, we can graph the curve as follows:
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/6b432fef92363fb20bc112fcae6d7bc7.png>)
+
+Since we are interested in solving
+
+$$
+P(x) \geq 0
+$$
+
+we look for the parts of the curve that are above the $x$-axis or touching the $x$-axis.
+
+Based on the graph, the solution is $[MATH: x \in (-\infty,0] \cup [2, \infty).]$
+
+---
+
+**Question 3:** Given the polynomial $P(x) = (x + 2)(x - 1)(x - 2)$, find the solution of $P(x) > 0$.
+
+- [ ] A. $x ∈ (-2, 0)∪(1, ∞)$
+- [ ] B. $x ∈ (-2, 1)∪(2, ∞)$
+- [ ] C. $x ∈ (1, ∞)$
+- [ ] D. $x ∈ (-2, 1)$
+- [ ] E. $x ∈ (- ∞, 2)$
+
+---
+
+**Question 4:** Given the polynomial $P(x) = (x - 1)^{3}(x + 2)$, find the solution of $P(x) \le 0$.
+
+- [ ] A. $[MATH: x ∈ (- ∞,-2]∪[1, ∞)]$
+- [ ] B. $[MATH: x ∈ [- 2,-1]∪[1, ∞)]$
+- [ ] C. $[MATH: x ∈ (- ∞, 1]∪[2, ∞)]$
+- [ ] D. $x ∈ [- 2, 2]$
+- [ ] E. $x ∈ [- 2, 1]$
+
+---
+
+<a id="solving-a-polynomial-inequality-containing-no-constant-term"></a>
+## Solving a Polynomial Inequality Containing No Constant Term
+
+**Example:** Given $f(x) = x^3 - 9x$, solve $f(x) \gt 0$.
+
+**Explanation**
+
+To solve the inequality $f(x) \gt 0$, we need to find the values of $x$ for which the curve $y = f(x)$ lies above the $x$-axis.
+
+First, we factor the polynomial $f(x){:}$
+
+$$
+\begin{aligned}
+f(x) &= x^{3} - 9x \\
+&= x(x^{2} - 9) \\
+&= x(x + 3)(x - 3)
+\end{aligned}
+$$
+
+The roots of the polynomial
+
+$$
+f(x) = x^3 - 9x
+$$
+
+are $x=-3$, $x=0$, and $x = 3$, which are all simple roots.
+
+So, we can graph the curve as follows:
+
+![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/539d1de5f6c1505dc8a8fbe9db23f6b8.png>)
+
+Since we are interested in solving $f(x) \gt 0$, we look for the part of the curve that is above the $x$-axis.
+
+Based on the graph, the solution is
+$x \in (-3,0) \cup (3,\infty)$.
+
+---
+
+**Question 5:** Given $f(x) = x^{3} - 3x^{2} - 4x$, solve $f(x) \le 0$.
+
+- [ ] A. $[MATH: x ∈ (- ∞, 0]]$
+- [ ] B. $[MATH: x ∈ [4, ∞)]$
+- [ ] C. $[MATH: x ∈ [- 1, 0]∪[4, ∞)]$
+- [ ] D. $[MATH: x ∈ (- ∞,-1]∪[0, 4]]$
+- [ ] E. $[MATH: x ∈ [- 1, ∞)]$
+
+---
+
+**Question 6:** Given $P(x) = x^{4} + 4x^{3} - 5x^{2}$, solve $P(x) < 0$.
+
+- [ ] A. $x ∈ (-5, 0)∪(0, 1)$
+- [ ] B. $x ∈ (-5,-1)∪(0, 1)$
+- [ ] C. $x ∈ (0, 1)$
+- [ ] D. $x ∈ (-1, 5)$
+- [ ] E. $x ∈ (- ∞,-5)∪(1, ∞)$
+
+```update-progress
+```
+
+[[MA/MF3/Home|Home]]
+[[MA/MF3/0. Table of Contents/TOC|Table of Contents]]

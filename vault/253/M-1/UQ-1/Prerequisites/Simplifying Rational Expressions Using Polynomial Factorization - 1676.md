@@ -1,5 +1,10 @@
 # Simplifying Rational Expressions Using Polynomial Factorization
 
+
+<!--
+lesson-id: 1676
+topic-code: MF2.6.1.1
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -402,3 +407,9 @@ options:
 
 - [Next: Improper Integrals](<Improper Integrals - 758.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

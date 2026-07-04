@@ -1,5 +1,10 @@
 # Improper Integrals Involving Exponential Functions
 
+
+<!--
+lesson-id: 4004
+topic-code: MF3.10.6.2
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -409,3 +414,9 @@ options:
 
 - [Next: The Power and Root Rules for Limits](<The Power and Root Rules for Limits - 37.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

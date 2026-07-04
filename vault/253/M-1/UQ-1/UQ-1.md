@@ -1,67 +1,59 @@
-# UQ-1
+## Prerequisites
 
-## Study Order
+- [Adding and Subtracting Radical Expressions - 3756](<Prerequisites/Adding and Subtracting Radical Expressions - 3756.md>)
+- [The Difference of Squares Formula - 2275](<Prerequisites/The Difference of Squares Formula - 2275.md>)
+- [Factoring Differences of Squares - 370](<Prerequisites/Factoring Differences of Squares - 370.md>)
+- [The Finite Limit of a Function - 461](<Prerequisites/The Finite Limit of a Function - 461.md>)
+- [Further Rationalizing Denominators of Algebraic Expressions - 6185](<Prerequisites/Further Rationalizing Denominators of Algebraic Expressions - 6185.md>)
+- [The Left and Right-Sided Limits of a Function - 472](<Prerequisites/The Left and Right-Sided Limits of a Function - 472.md>)
+- [Finding the Existence of a Limit Using One-Sided Limits - 625](<Prerequisites/Finding the Existence of a Limit Using One-Sided Limits - 625.md>)
+- [Factoring Sums and Differences of Cubes - 441](<Prerequisites/Factoring Sums and Differences of Cubes - 441.md>)
+- [Limits of Power Functions, and the Constant Rule for Limits - 1716](<Prerequisites/Limits of Power Functions, and the Constant Rule for Limits - 1716.md>)
+- [Factoring Biquadratic Expressions - 2336](<Prerequisites/Factoring Biquadratic Expressions - 2336.md>)
+- [Simplifying Rational Expressions Using Polynomial Factorization - 1676](<Prerequisites/Simplifying Rational Expressions Using Polynomial Factorization - 1676.md>)
+- [The Sum Rule for Limits - 1914](<Prerequisites/The Sum Rule for Limits - 1914.md>)
+- [Solving Quadratic Equations with Leading Coefficients by Factoring - 1422](<Prerequisites/Solving Quadratic Equations with Leading Coefficients by Factoring - 1422.md>)
+- [Factoring Cubic Expressions by Grouping - 428](<Prerequisites/Factoring Cubic Expressions by Grouping - 428.md>)
+- [The Discriminant of a Quadratic Equation - 425](<Prerequisites/The Discriminant of a Quadratic Equation - 425.md>)
+- [The Power and Root Rules for Limits - 37](<Prerequisites/The Power and Root Rules for Limits - 37.md>)
+- [Horizontal Asymptotes of Rational Functions - 808](<Prerequisites/Horizontal Asymptotes of Rational Functions - 808.md>)
+- [Vertical Asymptotes of Rational Functions - 1815](<Prerequisites/Vertical Asymptotes of Rational Functions - 1815.md>)
+- [Limits at Infinity from Graphs - 1873](<Prerequisites/Limits at Infinity from Graphs - 1873.md>)
+- [Infinite Limits from Graphs - 1814](<Prerequisites/Infinite Limits from Graphs - 1814.md>)
+- [Limits at Infinity of Polynomials - 1263](<Prerequisites/Limits at Infinity of Polynomials - 1263.md>)
+- [Limits of Exponential Functions - 1717](<Prerequisites/Limits of Exponential Functions - 1717.md>)
+- [Limits of Radical Functions - 1986](<Prerequisites/Limits of Radical Functions - 1986.md>)
+- [Limits of Reciprocal Functions - 1905](<Prerequisites/Limits of Reciprocal Functions - 1905.md>)
+- [Limits of Logarithmic Functions - 1377](<Prerequisites/Limits of Logarithmic Functions - 1377.md>)
+- [Limits of Trigonometric Functions - 1719](<Prerequisites/Limits of Trigonometric Functions - 1719.md>)
+- [Limits Involving the Exponential Function - 2610](<Prerequisites/Limits Involving the Exponential Function - 2610.md>)
+- [Limits of Reciprocal Trigonometric Functions - 1958](<Prerequisites/Limits of Reciprocal Trigonometric Functions - 1958.md>)
+- [Special Limits Involving Sine - 606](<Prerequisites/Special Limits Involving Sine - 606.md>)
+- [Evaluating Special Limits Involving Sine Using a Substitution - 3678](<Prerequisites/Evaluating Special Limits Involving Sine Using a Substitution - 3678.md>)
+- [Second and Higher-Order Derivatives - 281](<Prerequisites/Second and Higher-Order Derivatives - 281.md>)
+- [Selecting Procedures for Calculating Derivatives - 1115](<Prerequisites/Selecting Procedures for Calculating Derivatives - 1115.md>)
+- [Special Limits Involving Cosine - 292](<Prerequisites/Special Limits Involving Cosine - 292.md>)
+- [The Area Bounded by a Curve and the X-Axis - 1040](<Prerequisites/The Area Bounded by a Curve and the X-Axis - 1040.md>)
+- [Calculating Definite Integrals Using Substitution - 1159](<Prerequisites/Calculating Definite Integrals Using Substitution - 1159.md>)
+- [Integrating Trigonometric Functions Using Substitution - 478](<Prerequisites/Integrating Trigonometric Functions Using Substitution - 478.md>)
+- [Integration by Substitution With Inverse Trigonometric Functions - 315](<Prerequisites/Integration by Substitution With Inverse Trigonometric Functions - 315.md>)
+- [Integrating Exponential Functions Using Substitution - 3770](<Prerequisites/Integrating Exponential Functions Using Substitution - 3770.md>)
+- [Improper Integrals Involving Arctangent - 4005](<Prerequisites/Improper Integrals Involving Arctangent - 4005.md>)
+- [Improper Integrals Involving Exponential Functions - 4004](<Prerequisites/Improper Integrals Involving Exponential Functions - 4004.md>)
 
-### Main Priority
+## Lessons
 
-#### Layer 6
+- [The Product and Quotient Rules for Limits - 1246](<Lessons/The Product and Quotient Rules for Limits - 1246.md>)
+- [Calculating Limits of Rational Functions by Factoring - 1813](<Lessons/Calculating Limits of Rational Functions by Factoring - 1813.md>)
+- [Vertical Asymptotes of Rational Functions - 807](<Lessons/Vertical Asymptotes of Rational Functions - 807.md>)
+- [Calculating Limits of Radical Functions Using Conjugate Multiplication - 604](<Lessons/Calculating Limits of Radical Functions Using Conjugate Multiplication - 604.md>)
+- [Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903](<Lessons/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903.md>)
+- [Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607](<Lessons/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
+- [Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384](<Lessons/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384.md>)
+- [L'Hopital's Rule - 463](<Lessons/L'Hopital's Rule - 463.md>)
+- [Improper Integrals - 758](<Lessons/Improper Integrals - 758.md>)
+- [Improper Integrals of the Second Kind - 759](<Lessons/Improper Integrals of the Second Kind - 759.md>)
+- [Improper Integrals Over the Real Line - 1382](<Lessons/Improper Integrals Over the Real Line - 1382.md>)
+- [Improper Integrals of the Second Kind - Discontinuities at Interior Points - 3550](<Lessons/Improper Integrals of the Second Kind - Discontinuities at Interior Points - 3550.md>)
 
-- [Improper Integrals](<Improper Integrals - 758.md>)
-- [The Product and Quotient Rules for Limits](<The Product and Quotient Rules for Limits - 1246.md>)
-
-#### Layer 7
-
-- [Improper Integrals of the Second Kind](<253/M-1/UQ-1/Prerequisites/Improper Integrals of the Second Kind - 759.md>)
-- [Calculating Limits of Rational Functions by Factoring](<253/M-1/UQ-1/Prerequisites/Calculating Limits of Rational Functions by Factoring - 1813.md>)
-
-#### Layer 8
-
-- [L'Hopital's Rule](<L'Hopital's Rule - 463.md>)
-- [Improper Integrals Over the Real Line](<Improper Integrals Over the Real Line - 1382.md>)
-- [Improper Integrals of the Second Kind: Discontinuities at Interior Points](<Improper Integrals of the Second Kind- Discontinuities at Interior Points - 3550.md>)
-- [Limits at Infinity and Horizontal Asymptotes of Rational Functions](<253/M-1/UQ-1/Prerequisites/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903.md>)
-- [Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<253/M-1/UQ-1/Prerequisites/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
-- [Vertical Asymptotes of Rational Functions](<Vertical Asymptotes of Rational Functions - 807.md>)
-- [Connecting Infinite Limits and Vertical Asymptotes of Rational Functions](<Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384.md>)
-- [Calculating Limits of Radical Functions Using Conjugate Multiplication](<Calculating Limits of Radical Functions Using Conjugate Multiplication - 604.md>)
-
-### Low Priority
-
-#### Layer 1
-
-- [The Finite Limit of a Function](<The Finite Limit of a Function - 461.md>)
-
-#### Layer 2
-
-- [The Left and Right-Sided Limits of a Function](<The Left and Right-Sided Limits of a Function - 472.md>)
-
-#### Layer 3
-
-- [Finding the Existence of a Limit Using One-Sided Limits](<Finding the Existence of a Limit Using One-Sided Limits - 625.md>)
-
-#### Layer 4
-
-- [Limits of Power Functions, and the Constant Rule for Limits](<Limits of Power Functions, and the Constant Rule for Limits - 1716.md>)
-
-#### Layer 5
-
-- [The Sum Rule for Limits](<The Sum Rule for Limits - 1914.md>)
-
-#### Layer 6
-
-- [Special Limits Involving Sine](<Special Limits Involving Sine - 606.md>)
-- [Limits at Infinity from Graphs](<Limits at Infinity from Graphs - 1873.md>)
-- [Infinite Limits from Graphs](<Infinite Limits from Graphs - 1814.md>)
-
-#### Layer 7
-
-- [Evaluating Special Limits Involving Sine Using a Substitution](<Evaluating Special Limits Involving Sine Using a Substitution - 3678.md>)
-- [Limits of Logarithmic Functions](<Limits of Logarithmic Functions - 1377.md>)
-- [Limits of Exponential Functions](<Limits of Exponential Functions - 1717.md>)
-- [Improper Integrals Involving Exponential Functions](<Improper Integrals Involving Exponential Functions - 4004.md>)
-- [The Power and Root Rules for Limits](<The Power and Root Rules for Limits - 37.md>)
-
-#### Layer 8
-
-- [Special Limits Involving Cosine](<Special Limits Involving Cosine - 292.md>)
-- [Limits Involving the Exponential Function](<253/M-1/UQ-1/Prerequisites/Limits Involving the Exponential Function - 2610.md>)
+---

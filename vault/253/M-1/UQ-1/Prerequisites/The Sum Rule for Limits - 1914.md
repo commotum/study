@@ -1,5 +1,10 @@
 # The Sum Rule for Limits
 
+
+<!--
+lesson-id: 1914
+topic-code: MF2.11.2.2
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -246,3 +251,9 @@ options:
 
 - [Next: Special Limits Involving Sine](<Special Limits Involving Sine - 606.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

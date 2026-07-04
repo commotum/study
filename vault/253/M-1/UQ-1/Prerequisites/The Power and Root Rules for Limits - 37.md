@@ -1,5 +1,10 @@
 # The Power and Root Rules for Limits
 
+
+<!--
+lesson-id: 37
+topic-code: MF2.11.2.4
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -468,3 +473,9 @@ options:
 
 - [Next: Special Limits Involving Cosine](<Special Limits Involving Cosine - 292.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

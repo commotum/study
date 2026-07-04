@@ -1,5 +1,10 @@
 # The Left and Right-Sided Limits of a Function
 
+
+<!--
+lesson-id: 472
+topic-code: MF2.11.1.2
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -415,3 +420,9 @@ options:
 
 - [Next: Finding the Existence of a Limit Using One-Sided Limits](<Finding the Existence of a Limit Using One-Sided Limits - 625.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

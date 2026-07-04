@@ -1,0 +1,362 @@
+# Areas of Rectangles and Squares
+
+<!--
+lesson-id: 1352
+topic-code: MF1.13.3.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [The Area of a Square](#the-area-of-a-square)
+- [Calculating the Area of a Square From a Diagram](#calculating-the-area-of-a-square-from-a-diagram)
+- [The Area of a Rectangle](#the-area-of-a-rectangle)
+- [Calculating the Area of a Rectangle From a Diagram](#calculating-the-area-of-a-rectangle-from-a-diagram)
+- [Calculating the Length of a Side of a Rectangle Given Another Side and Its Area](#calculating-the-length-of-a-side-of-a-rectangle-given-another-side-and-its-area)
+- [Calculating the Area of a Rectangle or a Square Given Its Perimeter](#calculating-the-area-of-a-rectangle-or-a-square-given-its-perimeter)
+
+## Prerequisites
+
+- [Properties of Rectangles and Squares](<../../13.2. Polygons/Lessons/13.2.8. Properties of Rectangles and Squares.md>)
+- [Squaring Rational Numbers](<../../../4. Exponents & Radicals/4.1. Exponents/Lessons/4.1.7. Squaring Rational Numbers.md>)
+- [Units of Area and Volume](<../../../2. Ratios & Percentages/2.3. Working With Units/Lessons/2.3.6. Units of Area and Volume.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+The **area** of a shape is a measure of how much space is enclosed by a shape on a plane. Let's consider a square with sides of length of $1\,\textrm{in}$.
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/c1f5c41cde345efbe34e0e3e489bec4f.png>)
+
+The area of this square is equal to ${\color{red}{1\,\textrm{in}^2}}$, which we say in words as "one square inch."
+
+Similarly, if we have three squares with sides of length $1\,\textrm{cm}$, $1\,\textrm{m}$, and $1\,\textrm{ft}$ respectively, then their respective areas will be
+$1\,\textrm{cm}^2, \qquad 1\,\textrm{m}^2, \qquad 1\,\textrm{ft}^2$.
+
+---
+
+<a id="the-area-of-a-square"></a>
+## The Area of a Square
+
+Let's now suppose that we would like to compute the area of the square $ABCD$, shown below. Notice that, this time, the sides of the square span multiple unit lengths.
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/14a3476d8210a24903e91d3c4a4e5588.png>)
+
+The length of one side of a grid square is equal to $1\,\textrm{cm}$. So, the area of one grid square is $1\,\textrm{cm}^2$.
+
+Now, we need to find how many grid squares are contained inside $ABCD$.
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/62cf21402f7c1c077ee21f03cbdb07b5.png>)
+
+Inside the large blue square, there are $3$ rows containing $3$ grid squares each, so we can fit exactly
+
+$$
+3 \times 3 = 3^2 = 9
+$$
+
+grid squares inside $ABCD$.
+
+Each grid square has area $1\,\textrm{cm}^2$, so the area $\mathcal A$ of $ABCD$ is
+
+$$
+\mathcal{A} = (3\,\textrm{cm})^2 = 9\,\textrm{cm}^2
+$$
+
+In general, if we have a square with a side of length $a$, then the area of the square is given by
+
+$$
+\mathcal{A} = a^2
+$$
+
+---
+
+<a id="calculating-the-area-of-a-square-from-a-diagram"></a>
+## Calculating the Area of a Square From a Diagram
+
+**Example:** What is the area of the square shown below?
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/6cfa5fc00c53e9946c6cd3526a8a15bb.png>)
+
+**Explanation**
+
+The area of a square with sides of length $a$ is given by
+
+$$
+\mathcal{A} = a^2
+$$
+
+Note that each side of a grid cell measures $3\,\textrm{ft}$, and each side of the shaded square covers $4$ grid cells. So, the length of each side of the shaded square is
+
+$$
+a = 3 \times 4 = 12 \, \textrm{ft}
+$$
+
+Therefore, the area of the shaded square is
+
+$$
+\begin{aligned}
+A &= a^{2} = 12^{2} = 144ft^{2}
+\end{aligned}
+$$
+
+---
+
+**Question 1**
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/q-53274.png>)
+
+Colin has a square flower bed whose dimensions are shown in the figure above. What is the area of the flowerbed?
+
+- [ ] A. $20yd$
+- [ ] B. $24yd^{2}$
+- [ ] C. $6yd$
+- [ ] D. $36yd^{2}$
+- [ ] E. $30yd^{2}$
+
+---
+
+**Question 2**
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/q-53234.png>)
+
+What is the area of the square shown above?
+
+- [ ] A. $16in^{2}$
+- [ ] B. $8in$
+- [ ] C. $36in$
+- [ ] D. $4in^{2}$
+- [ ] E. $1in^{2}$
+
+---
+
+<a id="the-area-of-a-rectangle"></a>
+## The Area of a Rectangle
+
+In general, for a rectangle with sides of length $a$ and $b$, the area of the rectangle is given by
+
+$$
+\mathcal{A} = a \cdot b
+$$
+
+Let's demonstrate by finding the area of the rectangle $PQRS$, shown below.
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/81384f1259fb79152447a7be5c30b3b5.png>)
+
+From the figure, we see that the rectangle has the following side lengths:
+
+$$
+a = {PQ} = 10\,\mathrm{cm}, \qquad b = {PS} = 6\,\mathrm{cm}
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+A &= a \cdot b \\
+&= 10cm \cdot 6cm \\
+&= 60cm^{2}
+\end{aligned}
+$$
+
+It does not matter which side we call $a$ and which side we call $b$. In the above example, if we set
+
+$$
+a = {QR} = 6\,\mathrm{cm}, \qquad b = {RS} = 10\,\mathrm{cm}
+$$
+
+then we get
+
+$$
+\begin{aligned}
+A &= a \cdot b \\
+&= 10cm \cdot 6cm \\
+&= 60cm^{2}
+\end{aligned}
+$$
+
+as before.
+
+---
+
+<a id="calculating-the-area-of-a-rectangle-from-a-diagram"></a>
+## Calculating the Area of a Rectangle From a Diagram
+
+**Example:** A cinema has a rectangular hall whose dimensions are shown in the figure below. What is the area of the hall?
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/9268257e44063228af9e8084147200e4.png>)
+
+**Explanation**
+
+The area of a rectangle is given by
+
+$$
+\mathcal{A} = a \cdot b
+$$
+
+where $a$ and $b$ are the lengths of the sides.
+
+From the figure, we obtain that
+
+$$
+a = 4.5\,\mathrm{m}, \qquad b = 6\,\mathrm{m}
+$$
+
+Therefore, the area of the hall is
+
+$$
+\begin{aligned}
+A &= a \cdot b = 4.5 \cdot 6 = 27m^{2}
+\end{aligned}
+$$
+
+---
+
+**Question 3**
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/q-53232.png>)
+
+Kate has a rectangular bedroom whose dimensions are shown in the figure above. What is the area of the room?
+
+- [ ] A. $7.5m$
+- [ ] B. $16m$
+- [ ] C. $12.25m^{2}$
+- [ ] D. $15m^{2}$
+- [ ] E. $14m^{2}$
+
+---
+
+**Question 4**
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/q-53262.png>)
+
+Find the area of the rectangle $ABCD$ shown above.
+
+- [ ] A. $28m^{2}$
+- [ ] B. $12m^{2}$
+- [ ] C. $17m$
+- [ ] D. $2.5m$
+- [ ] E. $21m^{2}$
+
+---
+
+<a id="calculating-the-length-of-a-side-of-a-rectangle-given-another-side-and-its-area"></a>
+## Calculating the Length of a Side of a Rectangle Given Another Side and Its Area
+
+**Example:** The area of the rectangular field shown below is $2\,400\,\textrm{m}^2$. What is the value of $x$?
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/708d25bef8a3894c8dd0865b58df1b22.png>)
+
+**Explanation**
+
+The area of a rectangle is given by
+
+$$
+\mathcal{A} = a \cdot b
+$$
+
+where $a$ and $b$ are the lengths of the sides.
+
+From the figure, we obtain that
+
+$$
+\mathcal{A} = 2\,400\mathrm{m}^2, \qquad a = 60\,\mathrm{m}, \qquad b=x
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+A &= a \cdot b \\
+2400 &= 60 \cdot x \\
+x &= \frac{2400}{60} \\
+x &= 40m
+\end{aligned}
+$$
+
+---
+
+**Question 5**
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/q-53269.png>)
+
+The area of the rectangular field shown above is $500yd^{2}$. What is the value of $x$?
+
+- [ ] A. $20yd$
+- [ ] B. $25yd$
+- [ ] C. $500yd$
+- [ ] D. $15yd^{2}$
+- [ ] E. $30yd$
+
+---
+
+**Question 6**
+
+![](<../Source/Areas of Rectangles and Squares - 1352/Images/q-53272.png>)
+
+The area of the rectangular piece of paper shown above is $150cm^{2}$. What is the value of $x$?
+
+- [ ] A. $20cm$
+- [ ] B. $15cm$
+- [ ] C. $150cm$
+- [ ] D. $25cm^{2}$
+- [ ] E. $10cm$
+
+---
+
+<a id="calculating-the-area-of-a-rectangle-or-a-square-given-its-perimeter"></a>
+## Calculating the Area of a Rectangle or a Square Given Its Perimeter
+
+**Example:** Find the area of the rectangle $ABCD$ if its perimeter is $40$ and ${BC} = 12$.
+
+**Explanation**
+
+We can find the length of ${AB}$ by using the formula for the perimeter, as follows:
+
+$$
+\begin{aligned}
+p &= AB + BC + CD + DA \\
+p &= 2AB + 2BC \\
+40 &= 2AB + 2(12) \\
+40 &= 2AB + 24 \\
+2AB &= 16 \\
+AB &= 8
+\end{aligned}
+$$
+
+Therefore, the area of the rectangle $ABCD$ is
+
+$$
+\begin{aligned}
+A &= AB \cdot BC \\
+&= 8 \cdot 12 \\
+&= 96
+\end{aligned}
+$$
+
+---
+
+**Question 7:** Find the area of a rectangle $ABCD$ if the perimeter is $50$ and $BC = 4AB$.
+
+- [ ] A. $50$
+- [ ] B. $100$
+- [ ] C. $25$
+- [ ] D. $200$
+- [ ] E. $20$
+
+---
+
+**Question 8:** Find the area of the rectangle $ABCD$ if its perimeter is $90$ and $BC = 15$.
+
+- [ ] A. $255$
+- [ ] B. $1025$
+- [ ] C. $1125$
+- [ ] D. $900$
+- [ ] E. $450$
+
+```update-progress
+```
+
+[[MA/MF1/Home|Home]]
+[[MA/MF1/0. Table of Contents/TOC|Table of Contents]]

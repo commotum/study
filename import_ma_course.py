@@ -43,6 +43,12 @@ MODULE_RE = re.compile(r"^\*\*(\d+\.\d+)\.\s+(.+?)\*\*\s*$")
 TOPIC_RE = re.compile(r"^-\s+(\d+(?:\.\d+)+)\.\s+(.+?)\s*$")
 IMAGE_LINK_RE = re.compile(r"!\[([^\]]*)\]\(<?Source/Images/([^)>]+)>?\)")
 LESSON_MD_LINK_RE = re.compile(r"\]\(\.\./(\d+)/(\d+)\.md\)")
+LESSON_FOOTER_RE = re.compile(
+    r"\n+```update-progress\s*\n```\s*"
+    r"(?:\n+\[\[[^\]\n]+\|Home\]\]\s*)?"
+    r"(?:\n+\[\[[^\]\n]+\|Table of Contents\]\]\s*)?$",
+    re.MULTILINE,
+)
 
 
 @dataclass(frozen=True)
@@ -116,6 +122,11 @@ def parse_args() -> argparse.Namespace:
         "--indexes-only",
         action="store_true",
         help="Only refresh topics.csv, prerequisites.csv, Home.md, and manifest metadata.",
+    )
+    parser.add_argument(
+        "--refresh-lesson-nav",
+        action="store_true",
+        help="Refresh lesson footers with update-progress, Home, and Table of Contents links.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Validate and print the plan without writing files.")
     parser.add_argument("--list-courses", action="store_true", help="List supported course codes and exit.")
@@ -425,6 +436,18 @@ def ensure_lesson_metadata(text: str, topic: Topic) -> str:
     return "\n".join([*metadata, "", text]).strip() + "\n"
 
 
+def lesson_nav_footer(course: CourseInfo, target_root: Path) -> str:
+    course_prefix = Path(target_root.name) / course.code
+    home_target = (course_prefix / "Home").as_posix()
+    toc_target = (course_prefix / "0. Table of Contents" / "TOC").as_posix()
+    return "\n\n```update-progress\n```\n\n" f"[[{home_target}|Home]]\n[[{toc_target}|Table of Contents]]\n"
+
+
+def ensure_lesson_nav_footer(text: str, course: CourseInfo, target_root: Path) -> str:
+    without_footer = LESSON_FOOTER_RE.sub("", text.rstrip())
+    return without_footer + lesson_nav_footer(course, target_root)
+
+
 def copy_lesson_source(
     *,
     raw_lesson_dir: Path,
@@ -684,6 +707,7 @@ def import_course(
     target_root: Path,
     overwrite: bool,
     indexes_only: bool,
+    refresh_lesson_nav: bool,
     dry_run: bool,
 ) -> dict[str, object]:
     catalog = load_catalog(ma_data_root)
@@ -724,6 +748,7 @@ def import_course(
         "min_layer": min(course_layers),
         "max_layer": max(course_layers),
         "initial_available_count": len(initial_available),
+        "refresh_lesson_nav": refresh_lesson_nav,
     }
     if dry_run:
         return plan
@@ -753,6 +778,7 @@ def import_course(
                 placements=placements,
                 unresolved_links=unresolved_links,
             )
+            rewritten = ensure_lesson_nav_footer(rewritten, course, target_root)
             target_lesson_path.write_text(rewritten, encoding="utf-8")
             copied_files.append(target_lesson_path.as_posix())
             copy_lesson_source(
@@ -761,6 +787,16 @@ def import_course(
                 target_source_dir=target_source_dir,
                 copied_files=copied_files,
             )
+    elif refresh_lesson_nav:
+        for topic in topics:
+            target_lesson_path = course_dir / topic_lesson_relpath(topic)
+            if not target_lesson_path.exists():
+                raise FileNotFoundError(f"Missing lesson file for nav refresh: {target_lesson_path}")
+            original = target_lesson_path.read_text(encoding="utf-8")
+            updated = ensure_lesson_nav_footer(original, course, target_root)
+            if updated != original:
+                target_lesson_path.write_text(updated, encoding="utf-8")
+                copied_files.append(target_lesson_path.as_posix())
 
     toc_path = course_dir / "0. Table of Contents" / "TOC.md"
     if not indexes_only:
@@ -790,6 +826,9 @@ def import_course(
         "file_count": existing_manifest.get("file_count", len(copied_files) + 5)
         if indexes_only
         else len(copied_files) + 5,
+        "lesson_nav_footer_count": existing_manifest.get("lesson_nav_footer_count", len(copied_files))
+        if indexes_only and not refresh_lesson_nav
+        else len(topics),
         "unresolved_link_count": existing_manifest.get("unresolved_link_count", len(unresolved_links))
         if indexes_only
         else len(unresolved_links),
@@ -849,6 +888,7 @@ def main() -> int:
                 target_root=args.target_root,
                 overwrite=args.overwrite,
                 indexes_only=args.indexes_only,
+                refresh_lesson_nav=args.refresh_lesson_nav,
                 dry_run=args.dry_run,
             )
             for course_code in course_codes

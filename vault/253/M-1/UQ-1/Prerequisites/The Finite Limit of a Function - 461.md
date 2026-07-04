@@ -1,5 +1,10 @@
 # The Finite Limit of a Function
 
+
+<!--
+lesson-id: 461
+topic-code: MF2.11.1.1
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -308,3 +313,9 @@ options:
 
 - [Next: The Left and Right-Sided Limits of a Function](<The Left and Right-Sided Limits of a Function - 472.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

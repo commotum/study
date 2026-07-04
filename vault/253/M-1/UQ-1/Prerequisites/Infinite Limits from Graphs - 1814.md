@@ -1,5 +1,10 @@
 # Infinite Limits from Graphs
 
+
+<!--
+lesson-id: 1814
+topic-code: MF2.11.1.5
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -229,3 +234,9 @@ options:
 
 - [Next: Evaluating Special Limits Involving Sine Using a Substitution](<Evaluating Special Limits Involving Sine Using a Substitution - 3678.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

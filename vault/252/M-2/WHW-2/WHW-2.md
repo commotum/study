@@ -1,14 +1,34 @@
 ## Prerequisites
 
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
+- [Solving Equations With Odd Exponents Using the Nth Root Method - 3748](<Prerequisites/Solving Equations With Odd Exponents Using the Nth Root Method - 3748.md>)
+- [Describing Function Composition - 3817](<Prerequisites/Describing Function Composition - 3817.md>)
+- [Solving Equations With Even Exponents Using the Nth Root Method - 1587](<Prerequisites/Solving Equations With Even Exponents Using the Nth Root Method - 1587.md>)
+- [Areas of Rectangles and Squares - 1352](<Prerequisites/Areas of Rectangles and Squares - 1352.md>)
+- [Areas of Circles - 1745](<Prerequisites/Areas of Circles - 1745.md>)
+- [Factoring Higher-Order Polynomials as a Difference of Squares - 660](<Prerequisites/Factoring Higher-Order Polynomials as a Difference of Squares - 660.md>)
+- [Increasing and Decreasing Functions - 1628](<Prerequisites/Increasing and Decreasing Functions - 1628.md>)
+- [Graphs of General Quadratic Functions - 84](<Prerequisites/Graphs of General Quadratic Functions - 84.md>)
+- [Areas of Trapezoids - 1353](<Prerequisites/Areas of Trapezoids - 1353.md>)
+- [Properties of Finite Series - 3958](<Prerequisites/Properties of Finite Series - 3958.md>)
+- [Limits at Infinity from Graphs - 1873](<Prerequisites/Limits at Infinity from Graphs - 1873.md>)
+- [Graphing General Polynomials - 2049](<Prerequisites/Graphing General Polynomials - 2049.md>)
+- [Integration Using Inverse Trigonometric Functions - 342](<Prerequisites/Integration Using Inverse Trigonometric Functions - 342.md>)
+- [Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions - 3575](<Prerequisites/Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions - 3575.md>)
+- [Integrating Trigonometric Functions Using Substitution - 478](<Prerequisites/Integrating Trigonometric Functions Using Substitution - 478.md>)
 
 ## Lessons
 
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
+- [Approximating Areas With the Left Riemann Sum - 477](<Lessons/Approximating Areas With the Left Riemann Sum - 477.md>)
+- [Approximating Areas With the Right Riemann Sum - 1281](<Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>)
+- [Left and Right Riemann Sums in Sigma Notation - 1042](<Lessons/Left and Right Riemann Sums in Sigma Notation - 1042.md>)
+- [Defining Definite Integrals Using Left and Right Riemann Sums - 1086](<Lessons/Defining Definite Integrals Using Left and Right Riemann Sums - 1086.md>)
+- [The Sum and Constant Multiple Rules for Definite Integrals - 1685](<Lessons/The Sum and Constant Multiple Rules for Definite Integrals - 1685.md>)
+- [Properties of Definite Integrals Involving the Limits of Integration - 632](<Lessons/Properties of Definite Integrals Involving the Limits of Integration - 632.md>)
+- [The Area Bounded by a Curve and the X-Axis - 1040](<Lessons/The Area Bounded by a Curve and the X-Axis - 1040.md>)
+- [Finding the Area Between a Curve and the X-Axis When They Intersect - 1432](<Lessons/Finding the Area Between a Curve and the X-Axis When They Intersect - 1432.md>)
+- [Calculating the Definite Integral of a Function Given Its Graph - 1200](<Lessons/Calculating the Definite Integral of a Function Given Its Graph - 1200.md>)
+- [Definite Integrals of Piecewise Functions - 626](<Lessons/Definite Integrals of Piecewise Functions - 626.md>)
+- [The Average Value of a Function - 1203](<Lessons/The Average Value of a Function - 1203.md>)
 
 ---
 ## Problem 1

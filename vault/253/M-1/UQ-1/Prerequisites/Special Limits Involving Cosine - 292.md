@@ -1,5 +1,9 @@
 # Special Limits Involving Cosine
 
+
+<!--
+lesson-id: 292
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -447,3 +451,9 @@ $$
 
 - [Next: Limits Involving the Exponential Function](<253/M-1/UQ-1/Prerequisites/Limits Involving the Exponential Function - 2610.md>)
 - [Back to UQ-1](UQ-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

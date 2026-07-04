@@ -1,5 +1,10 @@
 # Limits at Infinity and Horizontal Asymptotes of Rational Functions
 
+
+<!--
+lesson-id: 1903
+topic-code: MF3.7.1.6
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -453,3 +458,9 @@ options:
 
 - [Next: Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<253/M-1/WHW-1/Lessons/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
 - [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

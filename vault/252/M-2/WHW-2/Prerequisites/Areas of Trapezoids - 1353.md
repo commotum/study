@@ -1,0 +1,351 @@
+# Areas of Trapezoids
+
+<!--
+lesson-id: 1353
+topic-code: MF1.13.3.3
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Calculating the Area of a Trapezoid](#calculating-the-area-of-a-trapezoid)
+- [Calculating the Area of a Trapezoid With Vertical Bases](#calculating-the-area-of-a-trapezoid-with-vertical-bases)
+- [Finding the Value of an Unknown Using the Area of a Trapezoid](#finding-the-value-of-an-unknown-using-the-area-of-a-trapezoid)
+- [Determining the Area of a Triangle by Finding the Area of a Trapezoid](#determining-the-area-of-a-triangle-by-finding-the-area-of-a-trapezoid)
+- [Deriving the Formula](#deriving-the-formula)
+
+## Prerequisites
+
+- [Areas of Triangles](<13.3.2. Areas of Triangles.md>)
+- [The Segment Addition Postulate](<../../../12. Geometry Fundamentals/12.1. Introduction to Geometry/Lessons/12.1.7. The Segment Addition Postulate.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+The **area of a trapezoid** is given by the formula
+
+$$
+\mathcal{A} = \dfrac{(a+b)\cdot h}{2}
+$$
+
+where
+
+- $a$ and $b$ are lengths of the **bases,** and
+- $h$ is the **height** of the trapezoid (the length of a perpendicular segment drawn between the bases).
+
+We'll derive this result at the end of the lesson.
+
+To demonstrate how to apply this formula, let's use the above formula to compute the area of the trapezoid $ABCD$ shown below.
+
+![](<../Source/Areas of Trapezoids - 1353/Images/2d351d83ef2d6c3020212b693227841c.png>)
+
+From the picture above, we have
+
+$$
+\begin{aligned}
+A &= ((a + b) \cdot h)/(2) \\
+&= ((AB + CD) \cdot CH)/(2) \\
+&= ((6 + 4) \cdot 3.5)/(2) \\
+&= \frac{10 \cdot 3.5}{2} \\
+&= \frac{35}{2} \\
+&= 17.5cm^{2}
+\end{aligned}
+$$
+
+---
+
+<a id="calculating-the-area-of-a-trapezoid"></a>
+## Calculating the Area of a Trapezoid
+
+**Example:** Find the area of the trapezoid $FGHI$.
+
+![](<../Source/Areas of Trapezoids - 1353/Images/4772e9920d88fdf16c885d820ee6bae5.png>)
+
+**Explanation**
+
+The area of a trapezoid is given by
+
+$$
+\mathcal{A} = \dfrac{(a+b) \cdot h}{2}
+$$
+
+where $a,b$ are lengths of the bases and $h$ is the height of the trapezoid.
+
+In our case, we have
+
+$$
+a = FJ+GJ = 16, \qquad b = HI = 7, \qquad h = IJ = 6
+$$
+
+Therefore, the area of our trapezoid is
+
+$$
+\begin{aligned}
+A &= ((16 + 7) \cdot 6)/(2) \\
+&= \frac{23 \cdot 6}{2} \\
+&= 23 \cdot 3 \\
+&= 69
+\end{aligned}
+$$
+
+---
+
+**Question 1:** The bases of a trapezoid are $a = 7mm$ and $b = 5mm$. The height is $h = 3mm$. What is the area of the trapezoid?
+
+- [ ] A. $12mm^{2}$
+- [ ] B. $24mm^{2}$
+- [ ] C. $36mm^{2}$
+- [ ] D. $16mm^{2}$
+- [ ] E. $18mm^{2}$
+
+---
+
+**Question 2**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-53231.png>)
+
+Find the area of the trapezoid $ABCD$.
+
+- [ ] A. $280ft^{2}$
+- [ ] B. $360ft^{2}$
+- [ ] C. $540ft^{2}$
+- [ ] D. $300ft^{2}$
+- [ ] E. $400ft^{2}$
+
+---
+
+<a id="calculating-the-area-of-a-trapezoid-with-vertical-bases"></a>
+## Calculating the Area of a Trapezoid With Vertical Bases
+
+**Example:** What is the area of the trapezoid $JKLM$?
+
+![](<../Source/Areas of Trapezoids - 1353/Images/719d14ad4d90768b65e6cd5e02116ba9.png>)
+
+**Explanation**
+
+The area of a trapezoid is given by
+
+$$
+\mathcal{A} = \dfrac{(a+b) \cdot h}{2}
+$$
+
+where $a,b$ are lengths of the bases and $h$ is the height of the trapezoid.
+
+In our case, we have
+
+$$
+a = JM = 4.5, \qquad b = KL = 9, \qquad h = 8
+$$
+
+Therefore, the area of our trapezoid is
+
+$$
+\begin{aligned}
+A &= ((4.5 + 9) \cdot 8)/(2) \\
+&= 13.5 \cdot 4 \\
+&= 54
+\end{aligned}
+$$
+
+---
+
+**Question 3**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-53246.png>)
+
+What is the area of the trapezoid $PQRS$?
+
+- [ ] A. $17$
+- [ ] B. $24$
+- [ ] C. $8.5$
+- [ ] D. $18$
+- [ ] E. $34$
+
+---
+
+**Question 4**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-53181.png>)
+
+What is the area of the trapezoid $PQRS$?
+
+- [ ] A. $10$
+- [ ] B. $8$
+- [ ] C. $9$
+- [ ] D. $18$
+- [ ] E. $16$
+
+---
+
+<a id="finding-the-value-of-an-unknown-using-the-area-of-a-trapezoid"></a>
+## Finding the Value of an Unknown Using the Area of a Trapezoid
+
+**Example:** The area of the trapezoid $ABCD$ shown below is $12$ square units. Calculate $x$.
+
+![](<../Source/Areas of Trapezoids - 1353/Images/16d5f1c7ea92c0930739756e8f906522.png>)
+
+**Explanation**
+
+The area of a trapezoid is given by
+
+$$
+\mathcal{A} = \dfrac{(a+b) \cdot h}{2}
+$$
+
+where $a,b$ are lengths of the bases and $h$ is the height of the trapezoid.
+
+In our case, we have
+
+$$
+\begin{aligned}
+a &= AB = 4x + 2 \\
+b &= CD = 3x - 1 \\
+h &= 3
+\end{aligned}
+$$
+
+Substituting the above into the formula for the area of a trapezoid and solving for $x$, we get
+
+$$
+\begin{aligned}
+((a + b) \cdot h)/(2) &= A \\
+(((4x + 2) + (3x - 1)) \cdot 3)/(2) &= 12 \\
+(7x + 1) \cdot 3 &= 24 \\
+7x + 1 &= 8 \\
+7x &= 7 \\
+x &= 1
+\end{aligned}
+$$
+
+---
+
+**Question 5**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-53235.png>)
+
+The area of the trapezoid $ABCD$ shown above is $20$ square units. Calculate $x$.
+
+- [ ] A. $3$
+- [ ] B. $2$
+- [ ] C. $1$
+- [ ] D. $5$
+- [ ] E. $4$
+
+---
+
+**Question 6**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-21200.png>)
+
+Find the height $CH$ of the trapezoid $ABCD$ given that its area is $28m^{2}$.
+
+- [ ] A. $4m$
+- [ ] B. $14m$
+- [ ] C. $8m$
+- [ ] D. $10m$
+- [ ] E. $6m$
+
+---
+
+<a id="determining-the-area-of-a-triangle-by-finding-the-area-of-a-trapezoid"></a>
+## Determining the Area of a Triangle by Finding the Area of a Trapezoid
+
+**Example:** If the area of the trapezoid $ABCD$ is $38\,\textrm{ft}^2$, what is the area of the triangle $\triangle BCE$?
+
+![](<../Source/Areas of Trapezoids - 1353/Images/4d578c31628173f89d469e1d40d0efed.png>)
+
+**Explanation**
+
+First, by considering the area of the trapezoid $ABCD$, we have that
+
+$$
+\begin{aligned}
+A_{ABCD} &= ((AB + CD) \cdot DF)/(2) \\
+38 &= ((AB + 6) \cdot 4)/(2) \\
+38 &= (AB + 6) \cdot 2 \\
+19 &= AB + 6 \\
+AB &= 13ft
+\end{aligned}
+$$
+
+Now, we use the fact that $EF=CD=6$ and $AF=2$. This gives
+
+$$
+\begin{aligned}
+BE &= AB - (AF + EF) \\
+&= 13 - (2 + 6) \\
+&= 5ft
+\end{aligned}
+$$
+
+Finally, the area of $\triangle BCE$ can be calculated as
+
+$$
+\begin{aligned}
+A_{△BCE} &= \frac{CE \cdot BE}{2} \\
+&= \frac{DF \cdot BE}{2} \\
+&= \frac{4 \cdot 5}{2} \\
+&= 10ft^{2}
+\end{aligned}
+$$
+
+---
+
+**Question 7**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-53253.png>)
+
+If the area of the trapezoid $ABCD$ is $19m^{2}$, what is the area of the triangle $△BCE$?
+
+- [ ] A. $5m^{2}$
+- [ ] B. $4m^{2}$
+- [ ] C. $6m^{2}$
+- [ ] D. $2m^{2}$
+- [ ] E. $3m^{2}$
+
+---
+
+**Question 8**
+
+![](<../Source/Areas of Trapezoids - 1353/Images/q-53236.png>)
+
+If the area of the triangle $△ADF$ is $9m^{2}$, what is the area of the trapezoid $ABCD$?
+
+- [ ] A. $21m^{2}$
+- [ ] B. $25m^{2}$
+- [ ] C. $23.5m^{2}$
+- [ ] D. $30m^{2}$
+- [ ] E. $36m^{2}$
+
+---
+
+<a id="deriving-the-formula"></a>
+## Deriving the Formula
+
+![](<../Source/Areas of Trapezoids - 1353/Images/8ab42f16e1df1d7aa270ea35b39431f5.png>)
+
+We'll now derive the formula for the area of a trapezoid. Consider a trapezoid with bases of length $a, b$, and height $h$, as shown above.
+
+Let's now make another copy of the figure, rotate it $180^\circ$, and place it next to the original.
+
+![](<../Source/Areas of Trapezoids - 1353/Images/09931ec16331a32761c383b244d4fa71.png>)
+
+We now have a parallelogram with a base of length $a+b$ and a height of $h$. The area of this parallelogram is
+
+$$
+\textrm{Area of Parallelogram} = \textrm{base} \times \textrm{height} = (a+b) \times h
+$$
+
+To find the area of the original trapezoid, we divide the above value in half:
+
+$$
+\textrm{Area of Trapezoid} = \dfrac{\textrm{Area of Parallelogram}}{2} = \dfrac{(a+b) \cdot h}{2}
+$$
+
+```update-progress
+```
+
+[[MA/MF1/Home|Home]]
+[[MA/MF1/0. Table of Contents/TOC|Table of Contents]]

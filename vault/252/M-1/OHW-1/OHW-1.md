@@ -1,14 +1,19 @@
 ## Prerequisites
 
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
+- [Describing Function Composition - 3817](<Prerequisites/Describing Function Composition - 3817.md>)
+- [Areas of Rectangles and Squares - 1352](<Prerequisites/Areas of Rectangles and Squares - 1352.md>)
+- [Increasing and Decreasing Functions - 1628](<Prerequisites/Increasing and Decreasing Functions - 1628.md>)
+- [Graphs of General Quadratic Functions - 84](<Prerequisites/Graphs of General Quadratic Functions - 84.md>)
+- [Properties of Finite Series - 3958](<Prerequisites/Properties of Finite Series - 3958.md>)
+- [The Integral as an Accumulation Function - 333](<Prerequisites/The Integral as an Accumulation Function - 333.md>)
+- [Calculating the Position Function of a Particle Using Integration - 335](<Prerequisites/Calculating the Position Function of a Particle Using Integration - 335.md>)
 
 ## Lessons
 
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
+- [Approximating Areas With the Left Riemann Sum - 477](<Lessons/Approximating Areas With the Left Riemann Sum - 477.md>)
+- [Approximating Areas With the Right Riemann Sum - 1281](<Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>)
+- [Left and Right Riemann Sums in Sigma Notation - 1042](<Lessons/Left and Right Riemann Sums in Sigma Notation - 1042.md>)
+- [Calculating the Displacement of a Particle Using Integration - 3576](<Lessons/Calculating the Displacement of a Particle Using Integration - 3576.md>)
 
 ---
 ## Problem 1
