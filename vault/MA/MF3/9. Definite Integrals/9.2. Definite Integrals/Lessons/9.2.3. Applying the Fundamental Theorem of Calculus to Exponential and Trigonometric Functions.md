@@ -73,11 +73,11 @@ $$
 ```quiz
 type: radio
 id: ma-73236
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\displaystyle \int_{0}^{1}5^{x}dx$.
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{4}{\ln 5}$
 - id: b
@@ -101,7 +101,6 @@ options:
 ```quiz
 type: radio
 id: ma-73235
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{2}e^{x}dx$?
 options:
@@ -115,6 +114,7 @@ options:
   content: |-
     $e$
 - id: d
+  correct: true
   content: |-
     $e^{2} - 1$
 - id: e
@@ -149,11 +149,11 @@ $$
 ```quiz
 type: radio
 id: ma-17821
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\displaystyle \int_{- π/6}^{π/4}\sec^{2} xdx$.
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{\sqrt{3} + 1}{\sqrt{3}}$
 - id: b
@@ -177,7 +177,6 @@ options:
 ```quiz
 type: radio
 id: ma-17818
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{π/3}\cos xdx$?
 options:
@@ -188,6 +187,7 @@ options:
   content: |-
     $\frac{\sqrt{3} - 1}{2}$
 - id: c
+  correct: true
   content: |-
     $\frac{\sqrt{3}}{2}$
 - id: d
