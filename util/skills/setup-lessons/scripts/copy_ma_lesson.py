@@ -44,6 +44,11 @@ COURSE_TOPIC_FIELDNAMES = [
     "local-src-path",
     "assignment",
 ]
+DEFAULT_CALC2_TOPICS = Path(
+    "/Users/jake/Developer/MA/COURSES/Math-Academy/University/Calculus-II/GRAPH-Calculus-II/Topics.csv"
+)
+DEFAULT_MA_DATA_LESSONS = Path("/Users/jake/Developer/MA/DATA/Lessons")
+DEFAULT_MA_DATA_PREREQUISITES = Path("/Users/jake/Developer/MA/DATA/Prerequisites.csv")
 
 
 def parse_args() -> argparse.Namespace:
@@ -111,6 +116,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Normalize existing local files and refresh indices without copying a new lesson.",
     )
+    parser.add_argument(
+        "--overwrite-existing",
+        action="store_true",
+        help="Re-copy lesson markdown and source folders even when local copies already exist.",
+    )
     args = parser.parse_args()
     if not args.refresh_only:
         if not args.lesson_md:
@@ -153,6 +163,11 @@ def repo_relative(path: Path, repo_root: Path) -> str | None:
         return None
 
 
+def resolve_row_path(value: str, repo_root: Path) -> Path:
+    path = Path(value).expanduser()
+    return path if path.is_absolute() else repo_root / path
+
+
 def vault_relative(path: Path, repo_root: Path) -> str:
     rel = repo_relative(path, repo_root)
     if rel is None:
@@ -166,7 +181,10 @@ def parse_lesson_id(path: Path) -> str | None:
     except UnicodeDecodeError:
         return None
     match = LESSON_ID_RE.search(text)
-    return match.group(1).strip() if match else None
+    if match:
+        return match.group(1).strip()
+    suffix_match = re.search(r" - (\d+)$", path.stem)
+    return suffix_match.group(1) if suffix_match else None
 
 
 def safe_filename_part(value: str) -> str:
@@ -199,6 +217,34 @@ def load_topics(index_path: Path) -> tuple[list[dict[str, str]], list[str]]:
     return rows, fieldnames
 
 
+def load_calc2_fallback_topics() -> list[dict[str, str]]:
+    if not DEFAULT_CALC2_TOPICS.exists() or not DEFAULT_MA_DATA_LESSONS.exists():
+        return []
+
+    rows: list[dict[str, str]] = []
+    with DEFAULT_CALC2_TOPICS.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        for index, row in enumerate(reader, start=1):
+            topic_id = row["topic-id"]
+            lesson_dir = DEFAULT_MA_DATA_LESSONS / topic_id
+            lesson_md = lesson_dir / f"{topic_id}.md"
+            source_dir = lesson_dir / "Source"
+            if not lesson_md.exists() or not source_dir.exists():
+                continue
+            rows.append(
+                {
+                    "layer": str(100000 + index),
+                    "course": "Calc2",
+                    "topic-id": topic_id,
+                    "topic-number": row["topic-number"],
+                    "topic-name": row["topic-name"],
+                    "md-path": lesson_md.as_posix(),
+                    "src-path": source_dir.as_posix(),
+                }
+            )
+    return rows
+
+
 def load_prerequisites(prerequisites_path: Path) -> dict[str, list[str]]:
     with prerequisites_path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
@@ -211,10 +257,21 @@ def load_prerequisites(prerequisites_path: Path) -> dict[str, list[str]]:
     return prereqs
 
 
+def merge_prerequisites(prereqs: dict[str, list[str]], extra_path: Path) -> None:
+    if not extra_path.exists():
+        return
+    extra = load_prerequisites(extra_path)
+    for topic_id, required_ids in extra.items():
+        existing = prereqs.setdefault(topic_id, [])
+        for required_id in required_ids:
+            if required_id not in existing:
+                existing.append(required_id)
+
+
 def index_by_topic_id(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     indexed: dict[str, dict[str, str]] = {}
     for row in rows:
-        indexed[row["topic-id"]] = row
+        indexed.setdefault(row["topic-id"], row)
     return indexed
 
 
@@ -237,6 +294,9 @@ def find_index_row(
         for row in rows:
             if Path(row["md-path"]).as_posix() == lesson_rel:
                 return row
+    for row in rows:
+        if resolve_row_path(row["md-path"], repo_root).resolve() == lesson_md.resolve():
+            return row
     return filename_index.get(lesson_md.name)
 
 
@@ -266,8 +326,13 @@ def sort_key(row: dict[str, str]) -> tuple[int, str, tuple[int | str, ...], str]
     )
 
 
-def copy_file_once(source: Path, destination: Path, dry_run: bool) -> str:
+def copy_file_once(source: Path, destination: Path, dry_run: bool, overwrite_existing: bool = False) -> str:
     if destination.exists():
+        if overwrite_existing:
+            if dry_run:
+                return f"would overwrite file: {source} -> {destination}"
+            shutil.copy2(source, destination)
+            return f"overwrote file: {source} -> {destination}"
         return f"skip existing file: {destination}"
     if dry_run:
         return f"would copy file: {source} -> {destination}"
@@ -276,8 +341,14 @@ def copy_file_once(source: Path, destination: Path, dry_run: bool) -> str:
     return f"copied file: {source} -> {destination}"
 
 
-def copy_dir_once(source: Path, destination: Path, dry_run: bool) -> str:
+def copy_dir_once(source: Path, destination: Path, dry_run: bool, overwrite_existing: bool = False) -> str:
     if destination.exists():
+        if overwrite_existing:
+            if dry_run:
+                return f"would overwrite source folder: {source} -> {destination}"
+            shutil.rmtree(destination)
+            shutil.copytree(source, destination)
+            return f"overwrote source folder: {source} -> {destination}"
         return f"skip existing source folder: {destination}"
     if dry_run:
         return f"would copy source folder: {source} -> {destination}"
@@ -330,11 +401,28 @@ def rename_path_once(source: Path, destination: Path, dry_run: bool, label: str)
 
 
 def rewrite_local_source_links(markdown_path: Path, old_source_name: str, new_source_name: str, dry_run: bool) -> str:
+    def rewrite_raw_source_targets(value: str) -> str:
+        value = re.sub(
+            r"\]\(<?Source/([^)>]+)>?\)",
+            lambda match: f"](<../Source/{new_source_name}/{match.group(1)}>)",
+            value,
+        )
+        return value.replace('src="Source/', f'src="../Source/{new_source_name}/')
+
     if old_source_name == new_source_name or not markdown_path.exists():
+        if markdown_path.exists():
+            text = markdown_path.read_text(encoding="utf-8")
+            new_text = rewrite_raw_source_targets(text)
+            if new_text != text:
+                if dry_run:
+                    return f"would rewrite source links: {markdown_path}"
+                markdown_path.write_text(new_text, encoding="utf-8")
+                return f"rewrote source links: {markdown_path}"
         return f"skip source links already canonical: {markdown_path}"
     text = markdown_path.read_text(encoding="utf-8")
     new_text = text.replace(f"../Source/{old_source_name}/", f"../Source/{new_source_name}/")
     new_text = new_text.replace(f"../Source/{old_source_name}>", f"../Source/{new_source_name}>")
+    new_text = rewrite_raw_source_targets(new_text)
     if new_text == text:
         return f"skip no source links to rewrite: {markdown_path}"
     if dry_run:
@@ -440,9 +528,10 @@ def copy_indexed_lesson(
     repo_root: Path,
     assignment_dir: Path,
     dry_run: bool,
+    overwrite_existing: bool = False,
 ) -> list[str]:
-    lesson_md = repo_root / row["md-path"]
-    source_path = repo_root / row["src-path"]
+    lesson_md = resolve_row_path(row["md-path"], repo_root)
+    source_path = resolve_row_path(row["src-path"], repo_root)
     if not lesson_md.exists():
         raise FileNotFoundError(f"lesson markdown not found: {lesson_md}")
     if not source_path.exists():
@@ -461,20 +550,23 @@ def copy_indexed_lesson(
     if existing_md is not None:
         old_source = find_local_source_dir(source_root, row, existing_md)
         messages.append(rename_path_once(existing_md, destination_md, dry_run, "lesson markdown"))
+        current_md = destination_md if destination_md.exists() or not dry_run else existing_md
+        messages.append(copy_file_once(lesson_md, current_md, dry_run, overwrite_existing))
         if old_source is not None:
             messages.append(rename_path_once(old_source, destination_source, dry_run, "source folder"))
-            messages.append(
-                rewrite_local_source_links(
-                    destination_md if not dry_run and destination_md.exists() else existing_md,
-                    old_source.name,
-                    destination_source.name,
-                    dry_run,
-                )
+        messages.append(copy_dir_once(source_path, destination_source, dry_run, overwrite_existing))
+        messages.append(
+            rewrite_local_source_links(
+                destination_md if not dry_run and destination_md.exists() else existing_md,
+                old_source.name if old_source is not None else source_path.name,
+                destination_source.name,
+                dry_run,
             )
+        )
         return messages
 
-    messages.append(copy_file_once(lesson_md, destination_md, dry_run))
-    messages.append(copy_dir_once(source_path, destination_source, dry_run))
+    messages.append(copy_file_once(lesson_md, destination_md, dry_run, overwrite_existing))
+    messages.append(copy_dir_once(source_path, destination_source, dry_run, overwrite_existing))
     messages.append(rewrite_local_source_links(destination_md, source_path.name, destination_source.name, dry_run))
     return messages
 
@@ -1091,9 +1183,13 @@ def main() -> int:
     local_topics_path = source_root / "topics.csv"
 
     topic_rows, topic_fieldnames = load_topics(index_path)
+    if index_path == repo_root / "util" / "Mathematical-Foundations" / "topics.csv":
+        topic_rows.extend(load_calc2_fallback_topics())
     topic_by_id = index_by_topic_id(topic_rows)
     filename_index = index_by_unique_filename(topic_rows)
     prerequisites = load_prerequisites(prerequisites_path)
+    if prerequisites_path == repo_root / "util" / "Mathematical-Foundations" / "prerequisites.csv":
+        merge_prerequisites(prerequisites, DEFAULT_MA_DATA_PREREQUISITES)
     local_rows = read_local_topics(local_topics_path)
 
     if not args.refresh_only:
@@ -1117,9 +1213,29 @@ def main() -> int:
 
         for row, section_name in sorted(selected.values(), key=lambda item: sort_key(item[0])):
             role = SECTION_TO_ROLE[section_name]
-            for message in copy_indexed_lesson(row, section_name, repo_root, assignment_dir, args.dry_run):
+            for message in copy_indexed_lesson(
+                row,
+                section_name,
+                repo_root,
+                assignment_dir,
+                args.dry_run,
+                args.overwrite_existing,
+            ):
                 print(message)
             merge_topic_row(local_rows, row, role, topic_fieldnames)
+    elif args.overwrite_existing:
+        for row in sorted(local_rows.values(), key=sort_key):
+            role = row.get("role", "prerequisite")
+            section_name = "Lessons" if role == "lesson" else "Prerequisites"
+            for message in copy_indexed_lesson(
+                row,
+                section_name,
+                repo_root,
+                assignment_dir,
+                args.dry_run,
+                args.overwrite_existing,
+            ):
+                print(message)
 
     for message in normalize_assignment_local_copies(local_rows, assignment_dir, args.dry_run):
         print(message)
