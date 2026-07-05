@@ -83,17 +83,57 @@ $$
 
 **Question 1**
 
-$\sin (90^{∘}) =$ $\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  $\sin (90^{∘}) =$
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $1$
+  correct: true
+- id: d
+  content: |-
+    Undefined
+- id: e
+  content: |-
+    $90$
+```
 
 ---
 
-**Question 2:** Find the value of $\cos (0^{∘}) + \sin (270^{∘})$.
+**Question 2:**
 
-- [ ] A. $1$
-- [ ] B. $-2$
-- [ ] C. $2$
-- [ ] D. $0$
-- [ ] E. Undefined
+```quiz
+type: radio
+id: q-2
+content: |-
+  Find the value of $\cos (0^{∘}) + \sin (270^{∘})$.
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  content: |-
+    $-2$
+- id: c
+  content: |-
+    $2$
+- id: d
+  content: |-
+    $0$
+  correct: true
+- id: e
+  content: |-
+    Undefined
+```
 
 ---
 
@@ -149,25 +189,85 @@ is undefined.
 
 **Question 3**
 
-Find the value of $\tan (180^{∘})$.$\tan (180^{∘}) =$
-$\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Find the value of $\tan (180^{∘})$. $\tan (180^{∘}) =$
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $0$
+  correct: true
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    Undefined
+- id: e
+  content: |-
+    $180$
+```
 
 ---
 
 **Question 4**
 
-Find the value of $\tan (180^{∘}) + \cot (90^{∘})$.$\tan (180^{∘}) + \cot (90^{∘}) =$
-$\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Find the value of $\tan (180^{∘}) + \cot (90^{∘})$. $\tan (180^{∘}) + \cot (90^{∘}) =$
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $0$
+  correct: true
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    Undefined
+```
 
 ---
 
-**Question 5:** Find the value of $\tan (\frac{3π}{2})$.
+**Question 5:**
 
-- [ ] A. $-1$
-- [ ] B. Undefined
-- [ ] C. $0$
-- [ ] D. $π$
-- [ ] E. $1$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Find the value of $\tan (\frac{3π}{2})$.
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    Undefined
+  correct: true
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $π$
+- id: e
+  content: |-
+    $1$
+```
 
 ---
 
@@ -224,22 +324,62 @@ is undefined.
 
 ---
 
-**Question 6:** Find the value of $\csc (\frac{3π}{2})$.
+**Question 6:**
 
-- [ ] A. $-2$
-- [ ] B. $1$
-- [ ] C. $-1$
-- [ ] D. $2$
-- [ ] E. $\frac{1}{2}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Find the value of $\csc (\frac{3π}{2})$.
+options:
+- id: a
+  content: |-
+    $-2$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $-1$
+  correct: true
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $\frac{1}{2}$
+```
 
 ---
 
 **Question 7**
 
-$\sec (0^{∘}) + \csc (90^{∘}) =$ $\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-7
+content: |-
+  $\sec (0^{∘}) + \csc (90^{∘}) =$
+options:
+- id: a
+  content: |-
+    $0$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $2$
+  correct: true
+- id: d
+  content: |-
+    Undefined
+- id: e
+  content: |-
+    $-2$
+```
 
 ```update-progress
 ```
 
-[[252/Home|Home]]
-[[252/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

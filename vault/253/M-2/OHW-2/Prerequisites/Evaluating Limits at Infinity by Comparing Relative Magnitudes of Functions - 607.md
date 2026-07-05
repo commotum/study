@@ -90,23 +90,59 @@ $$
 
 ---
 
-**Question 1:** Evaluate $lim_(x → ∞)\frac{e^{x}}{x^{9}}$.
+**Question 1:**
 
-- [ ] A. $∞$
-- [ ] B. $0$
-- [ ] C. $1$
-- [ ] D. $DNE$
-- [ ] E. $e$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Evaluate $lim_(x → ∞)\frac{e^{x}}{x^{9}}$.
+options:
+- id: a
+  content: |-
+    $∞$
+  correct: true
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $DNE$
+- id: e
+  content: |-
+    $e$
+```
 
 ---
 
-**Question 2:** Evaluate $lim_(x → ∞)\frac{e^{x}}{x}$.
+**Question 2:**
 
-- [ ] A. $0$
-- [ ] B. $DNE$
-- [ ] C. $e$
-- [ ] D. $1$
-- [ ] E. $∞$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Evaluate $lim_(x → ∞)\frac{e^{x}}{x}$.
+options:
+- id: a
+  content: |-
+    $0$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $e$
+- id: d
+  content: |-
+    $1$
+- id: e
+  content: |-
+    $∞$
+  correct: true
+```
 
 ---
 
@@ -125,23 +161,59 @@ $$
 
 ---
 
-**Question 3:** Evaluate $lim_(x → ∞)(x)/(\ln (2x))$.
+**Question 3:**
 
-- [ ] A. $∞$
-- [ ] B. $1$
-- [ ] C. $0$
-- [ ] D. $\ln (2)$
-- [ ] E. $DNE$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Evaluate $lim_(x → ∞)(x)/(\ln (2x))$.
+options:
+- id: a
+  content: |-
+    $∞$
+  correct: true
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $\ln (2)$
+- id: e
+  content: |-
+    $DNE$
+```
 
 ---
 
-**Question 4:** Evaluate $lim_(x → ∞)\frac{\ln x}{x^{2}}$.
+**Question 4:**
 
-- [ ] A. $0$
-- [ ] B. $1$
-- [ ] C. $DNE$
-- [ ] D. $∞$
-- [ ] E. $2$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Evaluate $lim_(x → ∞)\frac{\ln x}{x^{2}}$.
+options:
+- id: a
+  content: |-
+    $0$
+  correct: true
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $∞$
+- id: e
+  content: |-
+    $2$
+```
 
 ---
 
@@ -160,23 +232,59 @@ $$
 
 ---
 
-**Question 5:** Evaluate $lim_(x → ∞)(e^{x})/(\ln (2x))$.
+**Question 5:**
 
-- [ ] A. $1$
-- [ ] B. $0$
-- [ ] C. $\frac{e}{2}$
-- [ ] D. $\frac{1}{2}$
-- [ ] E. $∞$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Evaluate $lim_(x → ∞)(e^{x})/(\ln (2x))$.
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $\frac{e}{2}$
+- id: d
+  content: |-
+    $\frac{1}{2}$
+- id: e
+  content: |-
+    $∞$
+  correct: true
+```
 
 ---
 
-**Question 6:** Evaluate $lim_(x → ∞)(\ln (3x))/(e^{x})$.
+**Question 6:**
 
-- [ ] A. $∞$
-- [ ] B. $0$
-- [ ] C. $DNE$
-- [ ] D. $\ln (2)$
-- [ ] E. $e$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Evaluate $lim_(x → ∞)(\ln (3x))/(e^{x})$.
+options:
+- id: a
+  content: |-
+    $∞$
+- id: b
+  content: |-
+    $0$
+  correct: true
+- id: c
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $\ln (2)$
+- id: e
+  content: |-
+    $e$
+```
 
 ---
 
@@ -211,23 +319,59 @@ shown below:
 
 ---
 
-**Question 7:** Evaluate $lim_(x → ∞)\frac{\sin x - 3}{x^{3} + x^{2}}$.
+**Question 7:**
 
-- [ ] A. $DNE$
-- [ ] B. $-5$
-- [ ] C. $-3$
-- [ ] D. $∞$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-7
+content: |-
+  Evaluate $lim_(x → ∞)\frac{\sin x - 3}{x^{3} + x^{2}}$.
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  content: |-
+    $-5$
+- id: c
+  content: |-
+    $-3$
+- id: d
+  content: |-
+    $∞$
+- id: e
+  content: |-
+    $0$
+  correct: true
+```
 
 ---
 
-**Question 8:** Evaluate $lim_(x → ∞)\frac{3\sin x}{2x + 1}$.
+**Question 8:**
 
-- [ ] A. $∞$
-- [ ] B. $0$
-- [ ] C. $3$
-- [ ] D. $DNE$
-- [ ] E. $\frac{3}{2}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  Evaluate $lim_(x → ∞)\frac{3\sin x}{2x + 1}$.
+options:
+- id: a
+  content: |-
+    $∞$
+- id: b
+  content: |-
+    $0$
+  correct: true
+- id: c
+  content: |-
+    $3$
+- id: d
+  content: |-
+    $DNE$
+- id: e
+  content: |-
+    $\frac{3}{2}$
+```
 
 ```update-progress
 ```

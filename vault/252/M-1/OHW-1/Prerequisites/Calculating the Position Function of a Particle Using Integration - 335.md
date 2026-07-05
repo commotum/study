@@ -69,29 +69,61 @@ $$
 
 **Question 1**
 
-> A scientific calculator is required to answer this question.
-
-A particle moves along a straight line relative to a fixed origin $O$ with velocity $v(t) = 6t + 6t^{2}$, where $t > 0$ is the time. If the particle is at the position $x = 2$ when $t = 0$, calculate the position $x$ of the particle at time $t$.
-
-- [ ] A. $x(t) = 3t^{2} + 2t^{3}$
-- [ ] B. $x(t) = 3t^{2} + 2t^{3} - 2$
-- [ ] C. $x(t) = 3t^{2} + 2t^{3} + 1$
-- [ ] D. $x(t) = 3t^{2} + 2t^{3} - 1$
-- [ ] E. $x(t) = 3t^{2} + 2t^{3} + 2$
+```quiz
+type: radio
+id: q-1
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle moves along a straight line relative to a fixed origin $O$ with velocity $v(t) = 6t + 6t^{2}$, where $t > 0$ is the time. If the particle is at the position $x = 2$ when $t = 0$, calculate the position $x$ of the particle at time $t$.
+options:
+- id: a
+  content: |-
+    $x(t) = 3t^{2} + 2t^{3}$
+- id: b
+  content: |-
+    $x(t) = 3t^{2} + 2t^{3} - 2$
+- id: c
+  content: |-
+    $x(t) = 3t^{2} + 2t^{3} + 1$
+- id: d
+  content: |-
+    $x(t) = 3t^{2} + 2t^{3} - 1$
+- id: e
+  content: |-
+    $x(t) = 3t^{2} + 2t^{3} + 2$
+  correct: true
+```
 
 ---
 
 **Question 2**
 
-> A scientific calculator is required to answer this question.
-
-A particle moves along a straight line relative to a fixed origin $O$ with velocity $v(t) = 9$, where $t$ is the time. If the particle is at the position $x = 0$ when $t = 1$, calculate the position $x$ of the particle at time $t > 0$.
-
-- [ ] A. $x(t) = 9$
-- [ ] B. $x(t) = 0$
-- [ ] C. $x(t) = 9t + 1$
-- [ ] D. $x(t) = 9t - 9$
-- [ ] E. $x(t) = 9t$
+```quiz
+type: radio
+id: q-2
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle moves along a straight line relative to a fixed origin $O$ with velocity $v(t) = 9$, where $t$ is the time. If the particle is at the position $x = 0$ when $t = 1$, calculate the position $x$ of the particle at time $t > 0$.
+options:
+- id: a
+  content: |-
+    $x(t) = 9$
+- id: b
+  content: |-
+    $x(t) = 0$
+- id: c
+  content: |-
+    $x(t) = 9t + 1$
+- id: d
+  content: |-
+    $x(t) = 9t - 9$
+  correct: true
+- id: e
+  content: |-
+    $x(t) = 9t$
+```
 
 ---
 
@@ -156,29 +188,61 @@ $$
 
 **Question 3**
 
-> A scientific calculator is required to answer this question.
-
-A particle moves along a straight line relative to a fixed origin $O$ with acceleration $a(t) = 2e^{2t}$, where $t \ge 0$ is the time. If the particle has position $x = e^{2}$ and velocity $v = e^{2}$ when $t = 1$, calculate the position $x$ of the particle at time $t > 0$.
-
-- [ ] A. $x(t) = 2e^{2t} + e^{2}$
-- [ ] B. $x(t) = \frac{1}{2}e^{2t} + te^{2} + e^{2}$
-- [ ] C. $x(t) = e^{2t} + te^{2}$
-- [ ] D. $x(t) = \frac{1}{2}e^{2t} + \frac{1}{2}e^{2}$
-- [ ] E. $x(t) = 2e^{2t} + te^{2} + \frac{1}{2}e^{2}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle moves along a straight line relative to a fixed origin $O$ with acceleration $a(t) = 2e^{2t}$, where $t \ge 0$ is the time. If the particle has position $x = e^{2}$ and velocity $v = e^{2}$ when $t = 1$, calculate the position $x$ of the particle at time $t > 0$.
+options:
+- id: a
+  content: |-
+    $x(t) = 2e^{2t} + e^{2}$
+- id: b
+  content: |-
+    $x(t) = \frac{1}{2}e^{2t} + te^{2} + e^{2}$
+- id: c
+  content: |-
+    $x(t) = e^{2t} + te^{2}$
+- id: d
+  content: |-
+    $x(t) = \frac{1}{2}e^{2t} + \frac{1}{2}e^{2}$
+  correct: true
+- id: e
+  content: |-
+    $x(t) = 2e^{2t} + te^{2} + \frac{1}{2}e^{2}$
+```
 
 ---
 
 **Question 4**
 
-> A scientific calculator is required to answer this question.
-
-A particle moves along a straight line relative to a fixed origin $O$ with acceleration $a(t) = t - 2t^{4}$, where $t \ge 0$ is the time. If the particle has position $x = \frac{1}{10}$ and velocity $v = \frac{1}{10}$ when $t = 1$, calculate the position $x$ of the particle at time $t > 0$.
-
-- [ ] A. $x(t) = \frac{1}{3}t^{3} - \frac{1}{12}t^{6}$
-- [ ] B. $x(t) = \frac{1}{6}t^{3} - \frac{1}{15}t^{6} + \frac{1}{20}t^{2}$
-- [ ] C. $x(t) = \frac{1}{6}t^{3}$
-- [ ] D. $x(t) = \frac{1}{6}t^{3} - \frac{1}{15}t^{6}$
-- [ ] E. $x(t) = \frac{1}{6}t^{3} - \frac{1}{15}t^{6} + \frac{1}{20}t^{2}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle moves along a straight line relative to a fixed origin $O$ with acceleration $a(t) = t - 2t^{4}$, where $t \ge 0$ is the time. If the particle has position $x = \frac{1}{10}$ and velocity $v = \frac{1}{10}$ when $t = 1$, calculate the position $x$ of the particle at time $t > 0$.
+options:
+- id: a
+  content: |-
+    $x(t) = \frac{1}{3}t^{3} - \frac{1}{12}t^{6}$
+- id: b
+  content: |-
+    $x(t) = \frac{1}{6}t^{3} - \frac{1}{15}t^{6} + \frac{1}{20}t^{2}$
+- id: c
+  content: |-
+    $x(t) = \frac{1}{6}t^{3}$
+- id: d
+  content: |-
+    $x(t) = \frac{1}{6}t^{3} - \frac{1}{15}t^{6}$
+  correct: true
+- id: e
+  content: |-
+    $x(t) = \frac{1}{6}t^{3} - \frac{1}{15}t^{6} + \frac{1}{20}t^{2}$
+```
 
 ```update-progress
 ```

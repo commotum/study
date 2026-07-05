@@ -82,29 +82,61 @@ $x \in (-\infty, -3) \cup (-3, -1) \cup (0,2)$.
 
 **Question 1**
 
-![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/q-40185.png>)
-
-Given the sketch of a polynomial $p(x)$ above, find the solution to $p(x) < 0$.
-
-- [ ] A. $x ∈ (- ∞, 1)$
-- [ ] B. $x ∈ (- ∞,-3)∪(1, ∞)$
-- [ ] C. $x ∈ (- ∞,-3)∪(-2, ∞)$
-- [ ] D. $x ∈ (-3,-2)∪(1, ∞)$
-- [ ] E. $x ∈ (- ∞,-3)∪(-2, 1)∪(1, ∞)$
+```quiz
+type: radio
+id: ma-40185
+content: |-
+  ![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/q-40185.png>)
+  
+  Given the sketch of a polynomial $p(x)$ above, find the solution to $p(x) < 0$.
+options:
+- id: a
+  content: |-
+    $x ∈ (- ∞, 1)$
+- id: b
+  content: |-
+    $x ∈ (- ∞,-3)∪(1, ∞)$
+- id: c
+  content: |-
+    $x ∈ (- ∞,-3)∪(-2, ∞)$
+- id: d
+  content: |-
+    $x ∈ (-3,-2)∪(1, ∞)$
+- id: e
+  correct: true
+  content: |-
+    $x ∈ (- ∞,-3)∪(-2, 1)∪(1, ∞)$
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/q-40180.png>)
-
-Given the sketch of a polynomial $p(x)$ above, find the solution to $p(x) \ge 0$.
-
-- [ ] A. $[MATH: x ∈ [- 3, 1]∪[3, ∞)]$
-- [ ] B. $[MATH: x ∈ (- ∞, 1]]$
-- [ ] C. $[MATH: x ∈ [0, 3]∪[4, ∞)]$
-- [ ] D. $[MATH: x ∈ (- ∞,-3]∪{-2}∪[1, ∞)]$
-- [ ] E. $x ∈ [- 3, 1]$
+```quiz
+type: radio
+id: ma-40180
+content: |-
+  ![](<../Source/Solving Polynomial Inequalities Using a Graphical Method - 2147/Images/q-40180.png>)
+  
+  Given the sketch of a polynomial $p(x)$ above, find the solution to $p(x) \ge 0$.
+options:
+- id: a
+  content: |-
+    $[MATH: x ∈ [- 3, 1]∪[3, ∞)]$
+- id: b
+  content: |-
+    $[MATH: x ∈ (- ∞, 1]]$
+- id: c
+  content: |-
+    $[MATH: x ∈ [0, 3]∪[4, ∞)]$
+- id: d
+  content: |-
+    $[MATH: x ∈ (- ∞,-3]∪{-2}∪[1, ∞)]$
+- id: e
+  correct: true
+  content: |-
+    $x ∈ [- 3, 1]$
+```
 
 ---
 
@@ -151,23 +183,59 @@ Based on the graph, the solution is $[MATH: x \in (-\infty,0] \cup [2, \infty).]
 
 ---
 
-**Question 3:** Given the polynomial $P(x) = (x + 2)(x - 1)(x - 2)$, find the solution of $P(x) > 0$.
+**Question 3:**
 
-- [ ] A. $x ∈ (-2, 0)∪(1, ∞)$
-- [ ] B. $x ∈ (-2, 1)∪(2, ∞)$
-- [ ] C. $x ∈ (1, ∞)$
-- [ ] D. $x ∈ (-2, 1)$
-- [ ] E. $x ∈ (- ∞, 2)$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Given the polynomial $P(x) = (x + 2)(x - 1)(x - 2)$, find the solution of $P(x) > 0$.
+options:
+- id: a
+  content: |-
+    $x ∈ (-2, 0)∪(1, ∞)$
+- id: b
+  correct: true
+  content: |-
+    $x ∈ (-2, 1)∪(2, ∞)$
+- id: c
+  content: |-
+    $x ∈ (1, ∞)$
+- id: d
+  content: |-
+    $x ∈ (-2, 1)$
+- id: e
+  content: |-
+    $x ∈ (- ∞, 2)$
+```
 
 ---
 
-**Question 4:** Given the polynomial $P(x) = (x - 1)^{3}(x + 2)$, find the solution of $P(x) \le 0$.
+**Question 4:**
 
-- [ ] A. $[MATH: x ∈ (- ∞,-2]∪[1, ∞)]$
-- [ ] B. $[MATH: x ∈ [- 2,-1]∪[1, ∞)]$
-- [ ] C. $[MATH: x ∈ (- ∞, 1]∪[2, ∞)]$
-- [ ] D. $x ∈ [- 2, 2]$
-- [ ] E. $x ∈ [- 2, 1]$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Given the polynomial $P(x) = (x - 1)^{3}(x + 2)$, find the solution of $P(x) \le 0$.
+options:
+- id: a
+  content: |-
+    $[MATH: x ∈ (- ∞,-2]∪[1, ∞)]$
+- id: b
+  content: |-
+    $[MATH: x ∈ [- 2,-1]∪[1, ∞)]$
+- id: c
+  content: |-
+    $[MATH: x ∈ (- ∞, 1]∪[2, ∞)]$
+- id: d
+  content: |-
+    $x ∈ [- 2, 2]$
+- id: e
+  correct: true
+  content: |-
+    $x ∈ [- 2, 1]$
+```
 
 ---
 
@@ -209,23 +277,59 @@ $x \in (-3,0) \cup (3,\infty)$.
 
 ---
 
-**Question 5:** Given $f(x) = x^{3} - 3x^{2} - 4x$, solve $f(x) \le 0$.
+**Question 5:**
 
-- [ ] A. $[MATH: x ∈ (- ∞, 0]]$
-- [ ] B. $[MATH: x ∈ [4, ∞)]$
-- [ ] C. $[MATH: x ∈ [- 1, 0]∪[4, ∞)]$
-- [ ] D. $[MATH: x ∈ (- ∞,-1]∪[0, 4]]$
-- [ ] E. $[MATH: x ∈ [- 1, ∞)]$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Given $f(x) = x^{3} - 3x^{2} - 4x$, solve $f(x) \le 0$.
+options:
+- id: a
+  content: |-
+    $[MATH: x ∈ (- ∞, 0]]$
+- id: b
+  content: |-
+    $[MATH: x ∈ [4, ∞)]$
+- id: c
+  content: |-
+    $[MATH: x ∈ [- 1, 0]∪[4, ∞)]$
+- id: d
+  correct: true
+  content: |-
+    $[MATH: x ∈ (- ∞,-1]∪[0, 4]]$
+- id: e
+  content: |-
+    $[MATH: x ∈ [- 1, ∞)]$
+```
 
 ---
 
-**Question 6:** Given $P(x) = x^{4} + 4x^{3} - 5x^{2}$, solve $P(x) < 0$.
+**Question 6:**
 
-- [ ] A. $x ∈ (-5, 0)∪(0, 1)$
-- [ ] B. $x ∈ (-5,-1)∪(0, 1)$
-- [ ] C. $x ∈ (0, 1)$
-- [ ] D. $x ∈ (-1, 5)$
-- [ ] E. $x ∈ (- ∞,-5)∪(1, ∞)$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given $P(x) = x^{4} + 4x^{3} - 5x^{2}$, solve $P(x) < 0$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $x ∈ (-5, 0)∪(0, 1)$
+- id: b
+  content: |-
+    $x ∈ (-5,-1)∪(0, 1)$
+- id: c
+  content: |-
+    $x ∈ (0, 1)$
+- id: d
+  content: |-
+    $x ∈ (-1, 5)$
+- id: e
+  content: |-
+    $x ∈ (- ∞,-5)∪(1, ∞)$
+```
 
 ```update-progress
 ```

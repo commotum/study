@@ -1,10 +1,10 @@
 # Calculating Limits of Radical Functions Using Conjugate Multiplication
 
-
 <!--
 lesson-id: 604
 topic-code: MF3.7.1.7
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -13,10 +13,10 @@ topic-code: MF3.7.1.7
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](../37/37.md)
-- [Calculating Limits of Rational Functions by Factoring](../1813/1813.md)
-- [Adding and Subtracting Radical Expressions](../3756/3756.md)
-- [Further Rationalizing Denominators of Algebraic Expressions](../6185/6185.md)
+- [The Power and Root Rules for Limits](<../../../../CAB/1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.4. The Power and Root Rules for Limits.md>)
+- [Calculating Limits of Rational Functions by Factoring](<../../../../CAB/1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.1. Calculating Limits of Rational Functions by Factoring.md>)
+- [Adding and Subtracting Radical Expressions](<../../../../AG1/4. Radical Expressions/4.1. Radical Expressions/Lessons/4.1.8. Adding and Subtracting Radical Expressions.md>)
+- [Further Rationalizing Denominators of Algebraic Expressions](<../../../../AG1/4. Radical Expressions/4.1. Radical Expressions/Lessons/4.1.11. Further Rationalizing Denominators of Algebraic Expressions.md>)
 
 ---
 
@@ -33,7 +33,7 @@ If we try to evaluate the limit by directly substituting $x=1$, we get an indete
 
 $$
 \begin{aligned}
-\lim_{x \to 1}\frac{\sqrt{x} - 1}{x - 1} &= \frac{\sqrt{1} - 1}{1 - 1} = \frac{0}{0}
+lim_(x → 1)\frac{\sqrt{x} - 1}{x - 1} &= \frac{\sqrt{1} - 1}{1 - 1} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -58,7 +58,7 @@ If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
 \begin{aligned}
-\lim_{x \to 4^{+}}\frac{x - 2\sqrt{x}}{x - 4} &= \frac{4 - 2\sqrt{4}}{4 - 4} = \frac{0}{0}
+lim_(x → 4^{+})\frac{x - 2\sqrt{x}}{x - 4} &= \frac{4 - 2\sqrt{4}}{4 - 4} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -74,9 +74,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-604-q001
+id: q-1
 content: |-
-  Evaluate $\lim_{x \to 0}\frac{\sqrt{x + 4} - 2}{x}$.
+  Evaluate $lim_(x → 0)\frac{\sqrt{x + 4} - 2}{x}$.
 options:
 - id: a
   content: |-
@@ -95,15 +95,16 @@ options:
   content: |-
     $DNE$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-604-q002
+id: q-2
 content: |-
-  Evaluate $\lim_{x \to 4}\frac{\sqrt{x} - 2}{x - 4}$.
+  Evaluate $lim_(x → 4)\frac{\sqrt{x} - 2}{x - 4}$.
 options:
 - id: a
   content: |-
@@ -122,6 +123,7 @@ options:
   content: |-
     $DNE$
 ```
+
 ---
 
 <a id="calculating-the-limit-of-a-rational-function-with-a-radical-in-the-denominator"></a>
@@ -135,7 +137,7 @@ If we attempt to evaluate the limit by simply evaluating the function at $x=0$, 
 
 $$
 \begin{aligned}
-\lim_{x \to 0}\frac{3x}{\sqrt{x + 1} - 1} &= \frac{3 \cdot 0}{\sqrt{0 + 1} - 1} = \frac{0}{0}
+lim_(x → 0)\frac{3x}{\sqrt{x + 1} - 1} &= \frac{3 \cdot 0}{\sqrt{0 + 1} - 1} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -151,9 +153,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-604-q003
+id: q-3
 content: |-
-  Evaluate $\lim_{x \to 1^{-}}\frac{x - 1}{\sqrt{x + 3} - 2}$.
+  Evaluate $lim_(x → 1^{-})\frac{x - 1}{\sqrt{x + 3} - 2}$.
 options:
 - id: a
   content: |-
@@ -172,15 +174,16 @@ options:
   content: |-
     $\frac{1}{2}$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-604-q004
+id: q-4
 content: |-
-  Evaluate $\lim_{x \to 1^{+}}\frac{1 - x^{2}}{1 - \sqrt{x}}$.
+  Evaluate $lim_(x → 1^{+})\frac{1 - x^{2}}{1 - \sqrt{x}}$.
 options:
 - id: a
   content: |-
@@ -199,15 +202,9 @@ options:
   content: |-
     $DNE$
 ```
----
-
-## Navigation
-
-- [Next: The Finite Limit of a Function](<The Finite Limit of a Function - 461.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

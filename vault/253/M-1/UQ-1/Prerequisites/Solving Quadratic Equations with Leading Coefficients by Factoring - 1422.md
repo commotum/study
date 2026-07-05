@@ -114,23 +114,59 @@ $$
 
 ---
 
-**Question 1:** Solve the equation $2x^{2} + 3x + 1 = 0$.
+**Question 1:**
 
-- [ ] A. $x =-2,-\frac{3}{4}$
-- [ ] B. $x =-3,-\frac{1}{2}$
-- [ ] C. $x =-\frac{3}{2},-1$
-- [ ] D. $x =-1,-\frac{1}{2}$
-- [ ] E. $x =-2,-\frac{1}{4}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Solve the equation $2x^{2} + 3x + 1 = 0$.
+options:
+- id: a
+  content: |-
+    $x =-2,-\frac{3}{4}$
+- id: b
+  content: |-
+    $x =-3,-\frac{1}{2}$
+- id: c
+  content: |-
+    $x =-\frac{3}{2},-1$
+- id: d
+  correct: true
+  content: |-
+    $x =-1,-\frac{1}{2}$
+- id: e
+  content: |-
+    $x =-2,-\frac{1}{4}$
+```
 
 ---
 
-**Question 2:** Solve the equation $5x^{2} + 3x - 2 = 0$.
+**Question 2:**
 
-- [ ] A. $x = \frac{1}{5}, 1$
-- [ ] B. $x =-1, \frac{2}{3}$
-- [ ] C. $x =-3, \frac{2}{5}$
-- [ ] D. $x =-1, \frac{2}{5}$
-- [ ] E. $x = \frac{2}{5}, 2$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Solve the equation $5x^{2} + 3x - 2 = 0$.
+options:
+- id: a
+  content: |-
+    $x = \frac{1}{5}, 1$
+- id: b
+  content: |-
+    $x =-1, \frac{2}{3}$
+- id: c
+  content: |-
+    $x =-3, \frac{2}{5}$
+- id: d
+  correct: true
+  content: |-
+    $x =-1, \frac{2}{5}$
+- id: e
+  content: |-
+    $x = \frac{2}{5}, 2$
+```
 
 ---
 
@@ -183,23 +219,59 @@ $$
 
 ---
 
-**Question 3:** Solve the equation $2z^{2} + 10z + 8 = 0$.
+**Question 3:**
 
-- [ ] A. $z =-1,-\frac{1}{4}$
-- [ ] B. $z =-2,-\frac{3}{4}$
-- [ ] C. $z =-4,-1$
-- [ ] D. $z =-\frac{3}{4},-\frac{1}{2}$
-- [ ] E. $z =-4,-\frac{3}{2}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Solve the equation $2z^{2} + 10z + 8 = 0$.
+options:
+- id: a
+  content: |-
+    $z =-1,-\frac{1}{4}$
+- id: b
+  content: |-
+    $z =-2,-\frac{3}{4}$
+- id: c
+  correct: true
+  content: |-
+    $z =-4,-1$
+- id: d
+  content: |-
+    $z =-\frac{3}{4},-\frac{1}{2}$
+- id: e
+  content: |-
+    $z =-4,-\frac{3}{2}$
+```
 
 ---
 
-**Question 4:** Solve the equation $8y^{2} - 20y + 8 = 0$.
+**Question 4:**
 
-- [ ] A. $y = \frac{1}{2}, 2$
-- [ ] B. $y =-\frac{1}{2}, 2$
-- [ ] C. $y =-2, \frac{1}{2}$
-- [ ] D. $y = \frac{1}{8}, 8$
-- [ ] E. $y =-2,-\frac{1}{2}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Solve the equation $8y^{2} - 20y + 8 = 0$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $y = \frac{1}{2}, 2$
+- id: b
+  content: |-
+    $y =-\frac{1}{2}, 2$
+- id: c
+  content: |-
+    $y =-2, \frac{1}{2}$
+- id: d
+  content: |-
+    $y = \frac{1}{8}, 8$
+- id: e
+  content: |-
+    $y =-2,-\frac{1}{2}$
+```
 
 ---
 
@@ -248,23 +320,59 @@ $$
 
 ---
 
-**Question 5:** Solve the equation $5y = 3 - 2y^{2}$.
+**Question 5:**
 
-- [ ] A. $y =-5, 3$
-- [ ] B. $y =-3, 2$
-- [ ] C. $y =-3,-2$
-- [ ] D. $y =-\frac{1}{2}, 3$
-- [ ] E. $y =-3, \frac{1}{2}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Solve the equation $5y = 3 - 2y^{2}$.
+options:
+- id: a
+  content: |-
+    $y =-5, 3$
+- id: b
+  content: |-
+    $y =-3, 2$
+- id: c
+  content: |-
+    $y =-3,-2$
+- id: d
+  content: |-
+    $y =-\frac{1}{2}, 3$
+- id: e
+  correct: true
+  content: |-
+    $y =-3, \frac{1}{2}$
+```
 
 ---
 
-**Question 6:** Solve the equation $5u - 9 =-2u^{2} + 8u$.
+**Question 6:**
 
-- [ ] A. $-1, \frac{9}{2}$
-- [ ] B. $-3,-\frac{3}{2}$
-- [ ] C. $1, \frac{9}{2}$
-- [ ] D. $-3, \frac{3}{2}$
-- [ ] E. $-\frac{3}{2}, 3$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Solve the equation $5u - 9 =-2u^{2} + 8u$.
+options:
+- id: a
+  content: |-
+    $-1, \frac{9}{2}$
+- id: b
+  content: |-
+    $-3,-\frac{3}{2}$
+- id: c
+  content: |-
+    $1, \frac{9}{2}$
+- id: d
+  content: |-
+    $-3, \frac{3}{2}$
+- id: e
+  correct: true
+  content: |-
+    $-\frac{3}{2}, 3$
+```
 
 ```update-progress
 ```

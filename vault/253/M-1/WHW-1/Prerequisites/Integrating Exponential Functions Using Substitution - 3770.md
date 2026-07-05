@@ -90,7 +90,6 @@ $$
 ```quiz
 type: radio
 id: ma-73663
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int5xe^{1 - 5x^{2}}dx$?
 options:
@@ -104,6 +103,7 @@ options:
   content: |-
     $5e^{1 - 5x^{2}} + C$
 - id: d
+  correct: true
   content: |-
     $-\frac{1}{2}e^{1 - 5x^{2}} + C$
 - id: e
@@ -118,11 +118,11 @@ options:
 ```quiz
 type: radio
 id: ma-13737
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int4x^{2}e^{x^{3} + 2}dx$?
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{4}{3}e^{x^{3} + 2} + C$
 - id: b
@@ -167,11 +167,11 @@ $$
 ```quiz
 type: radio
 id: ma-31420
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the integral $\intx8^{3x^{2}}dx$.
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{8^{3x^{2}}}{6\ln 8} + C$
 - id: b
@@ -195,7 +195,6 @@ options:
 ```quiz
 type: radio
 id: ma-73800
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the integral $\displaystyle \int3x^{2}3^{x^{3} - 5}dx$.
 options:
@@ -209,6 +208,7 @@ options:
   content: |-
     $2 \cdot 3^{x^{3} - 5} + C$
 - id: d
+  correct: true
   content: |-
     $\frac{3^{x^{3} - 5}}{\ln 3} + C$
 - id: e
@@ -258,7 +258,6 @@ Notice that, in the last step, we used the fact that $e^{2x} + 1 > 0$ for all $x
 ```quiz
 type: radio
 id: ma-113852
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the integral $\displaystyle \int2e^{3x}(e^{3x} + 2)^{3}dx$.
 options:
@@ -272,6 +271,7 @@ options:
   content: |-
     $(2(e^{3x} + 2)^{4})/(3) + C$
 - id: d
+  correct: true
   content: |-
     $((e^{3x} + 2)^{4})/(6) + C$
 - id: e
@@ -286,7 +286,6 @@ options:
 ```quiz
 type: radio
 id: ma-113876
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the integral $\displaystyle \int\frac{3^{x + 1}}{\sqrt{3^{x} + 1}}dx$.
 options:
@@ -303,6 +302,7 @@ options:
   content: |-
     $\frac{\sqrt{3^{x} + 1}}{\ln 3} + C$
 - id: e
+  correct: true
   content: |-
     $\frac{6\sqrt{3^{x} + 1}}{\ln 3} + C$
 ```
@@ -392,11 +392,11 @@ $$
 ```quiz
 type: radio
 id: ma-13751
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate the integral $\displaystyle \int_{0}^{\sqrt{\ln 3}}5xe^{x^{2}}dx$.
 options:
 - id: a
+  correct: true
   content: |-
     $5$
 - id: b
@@ -420,11 +420,11 @@ options:
 ```quiz
 type: radio
 id: ma-30977
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate the integral $\displaystyle \int_{0}^{1}x2^{3x^{2}}dx$.
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{7}{6\ln 2}$
 - id: b

@@ -1,10 +1,10 @@
 # Factoring Differences of Squares
 
-
 <!--
 lesson-id: 370
 topic-code: MF1.11.2.5
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,7 +15,7 @@ topic-code: MF1.11.2.5
 
 ## Prerequisites
 
-- [The Difference of Squares Formula](<253/M-1/WHW-1/Prerequisites/The Difference of Squares Formula - 2275.md>)
+- [The Difference of Squares Formula](<../../11.1. Polynomials/Lessons/11.1.11. The Difference of Squares Formula.md>)
 
 ---
 
@@ -78,32 +78,27 @@ $$
 
 ---
 
-**Question 1:** Factor $y^{2} - \frac{1}{4}$.
+**Question 1:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q001
+id: q-1
 content: |-
   Factor $y^{2} - \frac{1}{4}$.
-
 options:
 - id: a
   content: |-
     $(y - \frac{1}{2})(y - \frac{1}{2})$
-
 - id: b
   content: |-
     $(y - \frac{1}{8})(y + \frac{1}{2})$
-
 - id: c
   content: |-
     $(y - \frac{1}{2})(y + \frac{1}{2})$
   correct: true
-
 - id: d
   content: |-
     $(y - \frac{1}{4})(y + 1)$
-
 - id: e
   content: |-
     $(y - \frac{3}{4})(y - \frac{1}{2})$
@@ -111,32 +106,27 @@ options:
 
 ---
 
-**Question 2:** Factor $y^{2} - 25$.
+**Question 2:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q002
+id: q-2
 content: |-
   Factor $y^{2} - 25$.
-
 options:
 - id: a
   content: |-
     $(y + 5)(y + 5)$
-
 - id: b
   content: |-
     $(y - 5)(y + 5)$
   correct: true
-
 - id: c
   content: |-
     $(y - 5)(y - 5)$
-
 - id: d
   content: |-
     $(y + 5)^{2}$
-
 - id: e
   content: |-
     $(y - 12)(y - 13)$
@@ -165,31 +155,26 @@ $$
 
 ---
 
-**Question 3:** Factor the expression $16a^{2} - 81$.
+**Question 3:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q003
+id: q-3
 content: |-
   Factor the expression $16a^{2} - 81$.
-
 options:
 - id: a
   content: |-
     $(2a - 3)(2a + 3)$
-
 - id: b
   content: |-
     $(4a - 9)(4a - 9)$
-
 - id: c
   content: |-
     $(2a - 3)(2a - 3)$
-
 - id: d
   content: |-
     $(4a + 9)(4a + 9)$
-
 - id: e
   content: |-
     $(4a - 9)(4a + 9)$
@@ -198,32 +183,27 @@ options:
 
 ---
 
-**Question 4:** Factor the expression $16a^{2} - 25$.
+**Question 4:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q004
+id: q-4
 content: |-
   Factor the expression $16a^{2} - 25$.
-
 options:
 - id: a
   content: |-
     $(2a - 5)(2a + 5)$
-
 - id: b
   content: |-
     $(4a - 5)(4a + 5)$
   correct: true
-
 - id: c
   content: |-
     $(4a - 5)(4a - 5)$
-
 - id: d
   content: |-
     $(2a + 5)(2a + 5)$
-
 - id: e
   content: |-
     $(4a + 5)(4a + 5)$
@@ -262,32 +242,27 @@ $$
 
 ---
 
-**Question 5:** Factor the expression $2v^{2} - 50$.
+**Question 5:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q005
+id: q-5
 content: |-
   Factor the expression $2v^{2} - 50$.
-
 options:
 - id: a
   content: |-
     $2(v - 5)(v + 5)$
   correct: true
-
 - id: b
   content: |-
     $2(v + 10)(v - 5)$
-
 - id: c
   content: |-
     $(2v + 5)(v - 5)$
-
 - id: d
   content: |-
     $2(v - 5)(v - 5)$
-
 - id: e
   content: |-
     $(2v - 5)(v + 5)$
@@ -295,32 +270,27 @@ options:
 
 ---
 
-**Question 6:** Factor the expression $4a^{2} - 36$.
+**Question 6:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q006
+id: q-6
 content: |-
   Factor the expression $4a^{2} - 36$.
-
 options:
 - id: a
   content: |-
     $4(a - 3)(a - 3)$
-
 - id: b
   content: |-
     $4(a + 3)(a + 3)$
-
 - id: c
   content: |-
     $(4a + 3)(a - 3)$
-
 - id: d
   content: |-
     $4(a + 3)(a - 3)$
   correct: true
-
 - id: e
   content: |-
     $(4a - 3)(a + 3)$
@@ -348,32 +318,27 @@ $$
 
 ---
 
-**Question 7:** Express $81x^{2} - 49y^{2}$ as a product of two binomials.
+**Question 7:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q007
+id: q-7
 content: |-
   Express $81x^{2} - 49y^{2}$ as a product of two binomials.
-
 options:
 - id: a
   content: |-
     $(3x - 7y)(3x - 7y)$
-
 - id: b
   content: |-
     $(9x - 7y)(9x + 7y)$
   correct: true
-
 - id: c
   content: |-
     $(3x - 7y)(3x + 7y)$
-
 - id: d
   content: |-
     $(9x - 7y)(9x - 7y)$
-
 - id: e
   content: |-
     $(9x + 7y)(9x + 7y)$
@@ -381,46 +346,34 @@ options:
 
 ---
 
-**Question 8:** Express $4e^{2} - 16f^{2}$ as a product of two binomials.
+**Question 8:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-370-q008
+id: q-8
 content: |-
   Express $4e^{2} - 16f^{2}$ as a product of two binomials.
-
 options:
 - id: a
   content: |-
     $(e - 2f)(e + 2f)$
-
 - id: b
   content: |-
     $(2e + 4f)(2e + 4f)$
-
 - id: c
   content: |-
     $(2e - 4f)(2e + 4f)$
   correct: true
-
 - id: d
   content: |-
     $(e - 2f)(e - 2f)$
-
 - id: e
   content: |-
     $(2e - 4f)(2e - 4f)$
 ```
 
----
-
-## Navigation
-
-- [Next: Simplifying Rational Expressions Using Polynomial Factorization](<253/M-1/WHW-1/Prerequisites/Simplifying Rational Expressions Using Polynomial Factorization - 1676.md>)
-- [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
-
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF1/Home|Home]]
+[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]

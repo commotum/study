@@ -58,29 +58,61 @@ Therefore, we conclude that:
 
 **Question 1**
 
-![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27692.png>)
-
-On which interval(s) is the function $y = f(x)$, shown above, increasing?
-
-- [ ] A. $(1, ∞)$ only
-- [ ] B. $(- ∞, 0)$ and $(1, ∞)$
-- [ ] C. $(- ∞, 0)$ only
-- [ ] D. $(- ∞, 1)$ only
-- [ ] E. $(0, ∞)$ only
+```quiz
+type: radio
+id: ma-27692
+content: |-
+  ![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27692.png>)
+  
+  On which interval(s) is the function $y = f(x)$, shown above, increasing?
+options:
+- id: a
+  content: |-
+    $(1, ∞)$ only
+- id: b
+  correct: true
+  content: |-
+    $(- ∞, 0)$ and $(1, ∞)$
+- id: c
+  content: |-
+    $(- ∞, 0)$ only
+- id: d
+  content: |-
+    $(- ∞, 1)$ only
+- id: e
+  content: |-
+    $(0, ∞)$ only
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27846.png>)
-
-On which interval is the function $y = f(x)$, shown above, strictly increasing?
-
-- [ ] A. $(-1, ∞)$
-- [ ] B. $(- ∞, 1)$
-- [ ] C. $(1, ∞)$
-- [ ] D. $(-1, 1)$
-- [ ] E. $(- ∞,-1)$
+```quiz
+type: radio
+id: ma-27846
+content: |-
+  ![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27846.png>)
+  
+  On which interval is the function $y = f(x)$, shown above, strictly increasing?
+options:
+- id: a
+  content: |-
+    $(-1, ∞)$
+- id: b
+  content: |-
+    $(- ∞, 1)$
+- id: c
+  correct: true
+  content: |-
+    $(1, ∞)$
+- id: d
+  content: |-
+    $(-1, 1)$
+- id: e
+  content: |-
+    $(- ∞,-1)$
+```
 
 ---
 
@@ -123,32 +155,64 @@ Therefore, we can conclude that:
 
 **Question 3**
 
-![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27700.png>)
-
-On which interval is the function $y = f(x)$, shown above, decreasing?
-
-- [ ] A. $(- ∞, 0)∪(1, ∞)$
-- [ ] B. $(1, ∞)$
-- [ ] C. $(- ∞, 1)$
-- [ ] D. $(- ∞, 0)$
-- [ ] E. $(0, 1)$
+```quiz
+type: radio
+id: ma-27700
+content: |-
+  ![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27700.png>)
+  
+  On which interval is the function $y = f(x)$, shown above, decreasing?
+options:
+- id: a
+  content: |-
+    $(- ∞, 0)∪(1, ∞)$
+- id: b
+  content: |-
+    $(1, ∞)$
+- id: c
+  content: |-
+    $(- ∞, 1)$
+- id: d
+  content: |-
+    $(- ∞, 0)$
+- id: e
+  correct: true
+  content: |-
+    $(0, 1)$
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27892.png>)
-
-On which interval is the function $y = f(x)$, shown above, strictly decreasing?
-
-- [ ] A. $(0, 2)$ and $(2, ∞)$
-- [ ] B. $(-2, 2)$ and $(2, ∞)$
-- [ ] C. $(1, ∞)$
-- [ ] D. $(-2, 0)$ and $(2, ∞)$
-- [ ] E. $(2, ∞)$
+```quiz
+type: radio
+id: ma-27892
+content: |-
+  ![](<../Source/Increasing and Decreasing Functions - 1628/Images/q-27892.png>)
+  
+  On which interval is the function $y = f(x)$, shown above, strictly decreasing?
+options:
+- id: a
+  content: |-
+    $(0, 2)$ and $(2, ∞)$
+- id: b
+  content: |-
+    $(-2, 2)$ and $(2, ∞)$
+- id: c
+  content: |-
+    $(1, ∞)$
+- id: d
+  content: |-
+    $(-2, 0)$ and $(2, ∞)$
+- id: e
+  correct: true
+  content: |-
+    $(2, ∞)$
+```
 
 ```update-progress
 ```
 
-[[252/Home|Home]]
-[[252/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF1/Home|Home]]
+[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]

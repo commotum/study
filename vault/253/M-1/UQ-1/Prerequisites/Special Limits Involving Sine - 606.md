@@ -1,10 +1,10 @@
 # Special Limits Involving Sine
 
-
 <!--
 lesson-id: 606
 topic-code: MF3.7.1.3
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -14,8 +14,8 @@ topic-code: MF3.7.1.3
 
 ## Prerequisites
 
-- [Simplifying Expressions Using Basic Trigonometric Identities](../203/203.md)
-- [Limits of Reciprocal Trigonometric Functions](../1958/1958.md)
+- [Simplifying Expressions Using Basic Trigonometric Identities](<../../../5. Trigonometry/5.3. Trigonometric Identities/Lessons/5.3.1. Simplifying Expressions Using Basic Trigonometric Identities.md>)
+- [Limits of Reciprocal Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.7. Limits of Reciprocal Trigonometric Functions.md>)
 
 ---
 
@@ -25,13 +25,13 @@ topic-code: MF3.7.1.3
 Consider the limit
 
 $$
-\lim_{x \to 0} \dfrac{\sin x}{x}
+\lim_\limits{x \to 0} \dfrac{\sin x}{x}
 $$
 
 Direct substitution leads to the indeterminate form:
 
 $$
-\lim_{x \to 0}\frac{\sin x}{x} = (\sin (0))/(0) = \frac{0}{0}
+lim_(x → 0)\frac{\sin x}{x} = (\sin (0))/(0) = \frac{0}{0}
 $$
 
 However, if we plot the graphs of
@@ -42,7 +42,7 @@ $$
 
 we get the following picture.
 
-![](<253/M-1/UQ-1/Source/Special Limits Involving Sine - 606/Images/af1d87fbe43dd114bd027cfa82acb481.png>)
+![](<../Source/Special Limits Involving Sine - 606/Images/af1d87fbe43dd114bd027cfa82acb481.png>)
 
 While
 
@@ -53,7 +53,7 @@ $$
 is undefined at $x=0$, it does appear from the graph that
 
 $$
-\lim_{x \to 0} \dfrac{\sin x}{x}=1
+\lim_\limits{x \to 0} \dfrac{\sin x}{x}=1
 $$
 
 It's possible to prove this result more rigorously, and we'll do this at the end of the lesson. For now, we will assume that it is true and use it to calculate other limits.
@@ -87,8 +87,8 @@ Rewriting the given limit using the algebra of limits and applying our special l
 
 $$
 \begin{aligned}
-\lim_{x \to 0}\frac{2\sin x}{3x} &= \lim_{x \to 0}(\frac{2}{3} \cdot \frac{\sin x}{x}) \\
-&= \frac{2}{3} \cdot \lim_{x \to 0}\frac{\sin x}{x} \\
+lim_(x → 0)\frac{2\sin x}{3x} &= lim_(x → 0)(\frac{2}{3} \cdot \frac{\sin x}{x}) \\
+&= \frac{2}{3} \cdot lim_(x → 0)\frac{\sin x}{x} \\
 &= \frac{2}{3} \cdot 1 \\
 &= \frac{2}{3}
 \end{aligned}
@@ -100,9 +100,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-606-q001
+id: q-1
 content: |-
-  Evaluate $\lim_{x \to 0}\frac{5\sin x}{2x}$.
+  Evaluate $lim_(x → 0)\frac{5\sin x}{2x}$.
 options:
 - id: a
   content: |-
@@ -121,15 +121,16 @@ options:
   content: |-
     $\frac{2}{5}$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-606-q002
+id: q-2
 content: |-
-  What is $\lim_{x \to 0}\frac{x}{7\sin x}$?
+  What is $lim_(x → 0)\frac{x}{7\sin x}$?
 options:
 - id: a
   content: |-
@@ -148,12 +149,13 @@ options:
   content: |-
     $7$
 ```
+
 ---
 
 <a id="evaluating-a-limit-of-a-function-involving-the-special-limit-with-sine-advanced-cases"></a>
 ## Evaluating a Limit of a Function Involving the Special Limit With Sine: Advanced Cases
 
-**Example:** Evaluate $\lim_{\theta \to 0}\: \dfrac{\theta \cot \theta}{4 \cos^2 \theta}$.
+**Example:** Evaluate $\lim_\limits{\theta \to 0}\: \dfrac{\theta \cot \theta}{4 \cos^2 \theta}$.
 
 **Explanation**
 
@@ -161,23 +163,23 @@ First, we can simplify the limit using trigonometric identities, as follows:
 
 $$
 \begin{aligned}
-\lim_{\theta \to 0}\frac{θ\cot θ}{4\cos^{2} θ} &= \lim_{\theta \to 0}(\frac{θ}{4\cos^{2} θ} \cdot \cot θ) \\
-&= \lim_{\theta \to 0}(\frac{θ}{4\cos^{2} θ} \cdot \frac{\cos θ}{\sin θ}) \\
-&= \lim_{\theta \to 0}(\frac{θ}{\sin θ} \cdot \frac{1}{4\cos θ}) \\
-&= \lim_{\theta \to 0}\frac{θ}{\sin θ} \cdot \lim_{\theta \to 0}\frac{1}{4\cos θ}
+lim_(θ → 0)\frac{θ\cot θ}{4\cos^{2} θ} &= lim_(θ → 0)(\frac{θ}{4\cos^{2} θ} \cdot \cot θ) \\
+&= lim_(θ → 0)(\frac{θ}{4\cos^{2} θ} \cdot \frac{\cos θ}{\sin θ}) \\
+&= lim_(θ → 0)(\frac{θ}{\sin θ} \cdot \frac{1}{4\cos θ}) \\
+&= lim_(θ → 0)\frac{θ}{\sin θ} \cdot lim_(θ → 0)\frac{1}{4\cos θ}
 \end{aligned}
 $$
 
 Let's now evaluate the limits separately:
 
 - Consider the first limit. Notice that as $\theta \to 0$, both numerator and denominator approach $0$. So, if we attempt to evaluate the limit directly, we get
-$\lim_{\theta \to 0}\: \dfrac{\theta}{\sin\theta} = \dfrac{0}{0}$,
+$\lim_\limits{\theta \to 0}\: \dfrac{\theta}{\sin\theta} = \dfrac{0}{0}$,
 which is an indeterminate form. Rewriting the given limit using the algebra of limits and applying our special limit, we get the following:
-$\lim_{\theta \to 0}\frac{θ}{\sin θ}|= (1)/((\lim_{\theta \to 0}\frac{\sin θ}{θ})); = \frac{1}{1}; = 1$
+$lim_(θ → 0)\frac{θ}{\sin θ}|= (1)/((lim_(θ → 0)\frac{\sin θ}{θ})); = \frac{1}{1}; = 1$
 - Consider the second limit. Evaluating it directly, we get
-$\lim_{\theta \to 0} \:\dfrac{1}{4 \cos \theta} = \dfrac{1}{4\cos 0} = \dfrac14$.
+$\lim_\limits{\theta \to 0} \:\dfrac{1}{4 \cos \theta} = \dfrac{1}{4\cos 0} = \dfrac14$.
 Therefore, we have
-$\lim_{\theta \to 0}\frac{θ}{\sin θ} \cdot \lim_{\theta \to 0}\frac{1}{4\cos θ}|= 1 \cdot \frac{1}{4} = \frac{1}{4}$.
+$lim_(θ → 0)\frac{θ}{\sin θ} \cdot lim_(θ → 0)\frac{1}{4\cos θ}|= 1 \cdot \frac{1}{4} = \frac{1}{4}$.
 
 ---
 
@@ -185,9 +187,9 @@ $\lim_{\theta \to 0}\frac{θ}{\sin θ} \cdot \lim_{\theta \to 0}\frac{1}{4\cos �
 
 ```quiz
 type: radio
-id: MA253-UQ1-606-q003
+id: q-3
 content: |-
-  Find the value of $\lim_{\theta \to 0}\frac{2\cos θ}{θ\cot θ}$.
+  Find the value of $lim_(θ → 0)\frac{2\cos θ}{θ\cot θ}$.
 options:
 - id: a
   content: |-
@@ -206,15 +208,16 @@ options:
   content: |-
     $-2$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-606-q004
+id: q-4
 content: |-
-  Calculate $\lim_{\theta \to 0}\frac{2θ}{\tan θ}$.
+  Calculate $lim_(θ → 0)\frac{2θ}{\tan θ}$.
 options:
 - id: a
   content: |-
@@ -233,6 +236,7 @@ options:
     $2$
   correct: true
 ```
+
 ---
 
 <a id="proof-of-the-result"></a>
@@ -264,7 +268,7 @@ $$
 
 Let the point $C$ be the point of intersection of the tangent to this circle at the point $A$ and the line $\overset{\longleftrightarrow}{OB}$. The point $H$ is the projection of the point $B$ onto the $x$-axis. See the illustration below.
 
-![](<253/M-1/UQ-1/Source/Special Limits Involving Sine - 606/Images/be6e7265341e98f4865886c48524c3b1.png>)
+![](<../Source/Special Limits Involving Sine - 606/Images/be6e7265341e98f4865886c48524c3b1.png>)
 
 Then, $OA = OB =1$,
 
@@ -339,7 +343,7 @@ $$
 we get
 
 $$
-\begin{bmatrix}\lim_{\theta \to 0^{+}}\cos θ & \le \lim_{\theta \to 0^{+}}\frac{\sin θ}{θ} \le \lim_{\theta \to 0^{+}}1 \\ 1 & \le \lim_{\theta \to 0^{+}}\frac{\sin θ}{θ} \le 1\end{bmatrix}
+\begin{bmatrix}lim_(θ → 0^{+})\cos θ & \le lim_(θ → 0^{+})\frac{\sin θ}{θ} \le lim_(θ → 0^{+})1 \\ 1 & \le lim_(θ → 0^{+})\frac{\sin θ}{θ} \le 1\end{bmatrix}
 $$
 
 and consequently, the squeeze theorem implies that
@@ -358,9 +362,9 @@ Let $u=-\theta$. Then, the limit $\theta \to 0^-$ is equivalent to $u \to 0^+$. 
 
 $$
 \begin{aligned}
-\lim_{\theta \to 0^{-}}\frac{\sin θ}{θ} &= \lim_{u \to 0^{+}}(\sin (-u))/((-u)) \\
-&= \lim_{u \to 0^{+}}\frac{-\sin u}{-u} \\
-&= \lim_{u \to 0^{+}}\frac{\sin u}{u} \\
+lim_(θ → 0^{-})\frac{\sin θ}{θ} &= lim_(u → 0^{+})(\sin (-u))/((-u)) \\
+&= lim_(u → 0^{+})\frac{-\sin u}{-u} \\
+&= lim_(u → 0^{+})\frac{\sin u}{u} \\
 &= 1
 \end{aligned}
 $$
@@ -376,15 +380,9 @@ we conclude that
 $$
 \lim_{\theta \to 0} \dfrac{\sin \theta}{\theta} = 1
 $$
----
-
-## Navigation
-
-- [Next: Limits at Infinity from Graphs](<Limits at Infinity from Graphs - 1873.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

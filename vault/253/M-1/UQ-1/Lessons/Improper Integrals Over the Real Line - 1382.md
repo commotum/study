@@ -1,10 +1,10 @@
 # Improper Integrals Over the Real Line
 
-
 <!--
 lesson-id: 1382
 topic-code: MF3.10.6.4
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,9 +15,9 @@ topic-code: MF3.10.6.4
 
 ## Prerequisites
 
-- [The Area Bounded by a Curve and the X-Axis](../1040/1040.md)
-- [Improper Integrals Involving Exponential Functions](../4004/4004.md)
-- [Improper Integrals Involving Arctangent](../4005/4005.md)
+- [The Area Bounded by a Curve and the X-Axis](<../../../9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
+- [Improper Integrals Involving Exponential Functions](<10.6.2. Improper Integrals Involving Exponential Functions.md>)
+- [Improper Integrals Involving Arctangent](<10.6.3. Improper Integrals Involving Arctangent.md>)
 
 ---
 
@@ -75,7 +75,7 @@ With that in mind, let's examine our integrals.
 $\begin{aligned} \int_{0}^{\infty} e^{-x}\, \textrm{d}x &= \lim_{a \to \infty} \int_{0}^{a} e^{-x}\, \textrm{d}x \\ &= \lim_{a \to \infty} \left[-e^{-x}\right]_0^a \\ &= -\lim_{a \to \infty} \left({e^{-a}}-1\right) \\ &= 1. \end{aligned}$
 So the integral converges, and statement I is true.
 - Computing the integral in statement II, we get
-$∫_{- ∞}^{0}e^{-x}dx|= \lim_{a \to -\infty}∫_{a}^{0}e^{-x}dx; = \lim_{a \to -\infty}[- e^{-x}]_{a}^{0}; = \lim_{a \to -\infty}(e^{-a} - 1); = + ∞$.
+$∫_{- ∞}^{0}e^{-x}dx|= lim_(a → - ∞)∫_{a}^{0}e^{-x}dx; = lim_(a → - ∞)[- e^{-x}]_{a}^{0}; = lim_(a → - ∞)(e^{-a} - 1); = + ∞$.
 So the integral diverges, and statement II is true.
 - The integral in statement III can be expressed as
 $\displaystyle \int_{-\infty}^\infty f(x) \, \textrm dx= \int_{-\infty}^0 f(x) \, \textrm dx + \int_0^\infty f(x) \, \textrm dx$.
@@ -85,30 +85,22 @@ In conclusion, statements I, II, and III are all true.
 
 ---
 
-**Question 1:**
+**Question 1**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1382-q001
+id: q-1
 content: |-
-  Consider the function
-  $$
-  f(x) = 3x^{2}
-  $$
-  Which of the following statements are true?
+  Consider the function $f(x) = 3x^{2}$. Which of the following statements are true?
   
-  $$
-  \begin{aligned}
-  \text{I.}\quad &\int_{0}^{\infty}f(x)\,dx \text{ is convergent} \\
-  \text{II.}\quad &\int_{-\infty}^{0}f(x)\,dx \text{ is divergent} \\
-  \text{III.}\quad &\int_{-\infty}^{\infty}f(x)\,dx \text{ is divergent}
-  \end{aligned}
-  $$
+  1. $∫_{0}^{∞}f(x)dx$ is convergent
+  2. $∫_{- ∞}^{0}f(x)dx$ is divergent
+  3. $∫_{- ∞}^{∞}f(x)dx$ is divergent
 options:
 - id: a
+  correct: true
   content: |-
     II and III only
-  correct: true
 - id: b
   content: |-
     I only
@@ -122,35 +114,28 @@ options:
   content: |-
     I and III only
 ```
+
 ---
 
-**Question 2:**
+**Question 2**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1382-q002
+id: q-2
 content: |-
-  Consider the function
-  $$
-  f(x) = e^{2x}
-  $$
-  Which of the following statements are true?
+  Consider the function $f(x) = e^{2x}$. Which of the following statements are true?
   
-  $$
-  \begin{aligned}
-  \text{I.}\quad &\int_{0}^{\infty}f(x)\,dx \text{ is convergent} \\
-  \text{II.}\quad &\int_{-\infty}^{0}f(x)\,dx \text{ is divergent} \\
-  \text{III.}\quad &\int_{-\infty}^{\infty}f(x)\,dx \text{ is divergent}
-  \end{aligned}
-  $$
+  1. $∫_{0}^{∞}f(x)dx$ is convergent
+  2. $∫_{- ∞}^{0}f(x)dx$ is divergent
+  3. $∫_{- ∞}^{∞}f(x)dx$ is divergent
 options:
 - id: a
   content: |-
     I only
 - id: b
+  correct: true
   content: |-
     III only
-  correct: true
 - id: c
   content: |-
     I, II, and III
@@ -161,6 +146,7 @@ options:
   content: |-
     I and II only
 ```
+
 ---
 
 <a id="improper-integrals-of-even-and-odd-functions"></a>
@@ -222,12 +208,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1382-q003
+id: q-3
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{\infty}\frac{1}{4 + x^{2}}\,dx
-  $$
+  Evaluate $∫_{- ∞}^{∞}\frac{1}{4 + x^{2}}dx$.
 options:
 - id: a
   content: |-
@@ -242,22 +225,20 @@ options:
   content: |-
     $\frac{2π}{3}$
 - id: e
+  correct: true
   content: |-
     $\frac{π}{2}$
-  correct: true
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1382-q004
+id: q-4
 content: |-
-  Evaluate the integral
-  $$
-  \int_{-\infty}^{\infty}\frac{6x^{5}}{(3 + x^{6})^{2}}\,dx
-  $$
+  Evaluate the integral $∫_{- ∞}^{∞}(6x^{5})/((3 + x^{6})^{2})dx$.
 options:
 - id: a
   content: |-
@@ -272,10 +253,11 @@ options:
   content: |-
     $1$
 - id: e
+  correct: true
   content: |-
     $0$
-  correct: true
 ```
+
 ---
 
 <a id="finding-the-area-of-an-unbounded-region"></a>
@@ -287,7 +269,7 @@ options:
 
 Let's sketch a graph of the region.
 
-![](<253/M-1/UQ-1/Source/Improper Integrals Over the Real Line - 1382/Images/12de9a29b2f0e4eaad17166bc9fc3b49.png>)
+![](<../Source/Improper Integrals Over the Real Line - 1382/Images/12de9a29b2f0e4eaad17166bc9fc3b49.png>)
 
 In this case, we must calculate the improper integral
 
@@ -329,11 +311,11 @@ square units.
 
 ---
 
-**Question 5:**
+**Question 5**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1382-q005
+id: ma-81168
 content: |-
   ![](<../Source/Improper Integrals Over the Real Line - 1382/Images/q-81168.png>)
   
@@ -349,27 +331,28 @@ options:
   content: |-
     $0$
 - id: d
+  correct: true
   content: |-
     $\frac{π}{3}$
-  correct: true
 - id: e
   content: |-
     $π$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1382-q006
+id: q-6
 content: |-
   Find the total area of the region bounded by the graph of the curve $y = \mid x \mid e^{-x^{2}}$ and the $x$-axis.
 options:
 - id: a
+  correct: true
   content: |-
     $1$
-  correct: true
 - id: b
   content: |-
     $\frac{π}{3}$
@@ -383,15 +366,9 @@ options:
   content: |-
     $\frac{π}{2}$
 ```
----
-
-## Navigation
-
-- [Next: Improper Integrals of the Second Kind: Discontinuities at Interior Points](<Improper Integrals of the Second Kind- Discontinuities at Interior Points - 3550.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

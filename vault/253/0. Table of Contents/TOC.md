@@ -43,6 +43,9 @@
 		- [ ] [[M-2/OHW-2/Lessons/Further Convergence of Geometric Sequences - 3838|1.4.2. Further Convergence of Geometric Sequences]]
 		- [ ] [[M-2/OHW-2/Lessons/Determining Limits of Sequences Using Relative Magnitudes - 1245|7.1.9. Determining Limits of Sequences Using Relative Magnitudes]]
 		- [ ] [[M-2/OHW-2/Lessons/Determining Intervals on Which a Function Is Increasing or Decreasing - 1359|8.2.6. Determining Intervals on Which a Function Is Increasing or Decreasing]]
+		- [ ] [[M-2/OHW-2/Lessons/Monotonic Sequences - 1096|4.2.1. Monotonic Sequences]]
+		- [ ] [[M-2/OHW-2/Lessons/Identifying Monotonic Sequences Using Differentiation - 3844|4.2.2. Identifying Monotonic Sequences Using Differentiation]]
+		- [ ] [[M-2/OHW-2/Lessons/Identifying Monotonic Sequences Using Ratios - 3861|4.2.3. Identifying Monotonic Sequences Using Ratios]]
 	- [ ] OHW-3
 		- [ ] [[M-2/OHW-3/Lessons/Finding the Sum of an Arithmetic Series - 675|1.2.2. Finding the Sum of an Arithmetic Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Sums of Finite Geometric Series Given in Sigma Notation - 690|1.3.4. Sums of Finite Geometric Series Given in Sigma Notation]]
@@ -53,3 +56,4 @@
 		- [ ] [[M-2/OHW-3/Lessons/Further Properties of Infinite Series - 4052|1.4.6. Further Properties of Infinite Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Solving Inequalities Involving Geometric Sequences - 1004|2.1.14. Solving Inequalities Involving Geometric Sequences]]
 		- [ ] [[M-2/OHW-3/Lessons/Convergence of Geometric Series - 684|1.4.10. Convergence of Geometric Series]]
+		- [ ] [[M-2/OHW-3/Lessons/Telescoping Series - 1176|4.3.5. Telescoping Series]]

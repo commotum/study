@@ -125,29 +125,65 @@ So, the distance covered by the object is $360\,\textrm{km}$.
 
 **Question 1**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-59768.png>)
-
-The speed-time graph shows the motion of an object during the time interval from $t = 0$ to $t = 8$ hours. What is the total distance covered by the moving object?
-
-- [ ] A. $270km$
-- [ ] B. $540km$
-- [ ] C. $560km$
-- [ ] D. $290km$
-- [ ] E. $280km$
+```quiz
+type: radio
+id: ma-59768
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-59768.png>)
+  
+  The speed-time graph shows the motion of an object during the time interval from $t = 0$ to $t = 8$ hours. What is the total distance covered by the moving object?
+options:
+- id: a
+  content: |-
+    $270km$
+- id: b
+  content: |-
+    $540km$
+- id: c
+  content: |-
+    $560km$
+- id: d
+  content: |-
+    $290km$
+- id: e
+  correct: true
+  content: |-
+    $280km$
+```
 
 ---
 
 **Question 2**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237038.png>)
-
-The speed-time graph represents the motion of an object during a time interval of $9$ seconds.The total distance covered by the object is
-$\underline{\hspace{1.5cm}}$
-$ft$.
+```quiz
+type: radio
+id: ma-237038
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237038.png>)
+  
+  The speed-time graph represents the motion of an object during a time interval of $9$ seconds.The total distance covered by the object is
+options:
+- id: a
+  correct: true
+  content: |-
+    $630ft$
+- id: b
+  content: |-
+    $1{,}260ft$
+- id: c
+  content: |-
+    $315ft$
+- id: d
+  content: |-
+    $140ft$
+- id: e
+  content: |-
+    $9ft$
+```
 
 ---
 
@@ -196,41 +232,97 @@ So, the distance covered by the object is $480$ meters.
 
 **Question 3**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-208838.png>)
-
-The speed-time graph represents the motion of a car over a time interval of $5$ hours.The total distance covered by the car is
-$\underline{\hspace{1.5cm}}$
-$km$.
+```quiz
+type: radio
+id: ma-208838
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-208838.png>)
+  
+  The speed-time graph represents the motion of a car over a time interval of $5$ hours.The total distance covered by the car is
+options:
+- id: a
+  correct: true
+  content: |-
+    $315km$
+- id: b
+  content: |-
+    $450km$
+- id: c
+  content: |-
+    $180km$
+- id: d
+  content: |-
+    $135km$
+- id: e
+  content: |-
+    $90km$
+```
 
 ---
 
 **Question 4**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-26501.png>)
-
-The speed-time graph shows the motion of an object during the time interval from $t = 0$ to $t = 80$ seconds. What is the total distance covered by the moving object?
-
-- [ ] A. $300m$
-- [ ] B. $60m$
-- [ ] C. $180m$
-- [ ] D. $240m$
-- [ ] E. $210m$
+```quiz
+type: radio
+id: ma-26501
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-26501.png>)
+  
+  The speed-time graph shows the motion of an object during the time interval from $t = 0$ to $t = 80$ seconds. What is the total distance covered by the moving object?
+options:
+- id: a
+  content: |-
+    $300m$
+- id: b
+  content: |-
+    $60m$
+- id: c
+  correct: true
+  content: |-
+    $180m$
+- id: d
+  content: |-
+    $240m$
+- id: e
+  content: |-
+    $210m$
+```
 
 ---
 
 **Question 5**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237063.png>)
-
-The speed-time graph represents the motion of an arrow over a time interval of $3$ seconds.The total distance covered by the arrow is
-$\underline{\hspace{1.5cm}}$
-$m$.
+```quiz
+type: radio
+id: ma-237063
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237063.png>)
+  
+  The speed-time graph represents the motion of an arrow over a time interval of $3$ seconds.The total distance covered by the arrow is
+options:
+- id: a
+  correct: true
+  content: |-
+    $135m$
+- id: b
+  content: |-
+    $210m$
+- id: c
+  content: |-
+    $150m$
+- id: d
+  content: |-
+    $90m$
+- id: e
+  content: |-
+    $45m$
+```
 
 ---
 
@@ -288,28 +380,65 @@ Therefore, it took $16 \,\textrm{s}$ for the car to stop.
 
 **Question 6**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-59772.png>)
-
-A car starts to decelerate from an initial speed of $8m/s$ until it comes to rest. The speed-time graph illustrates the motion of the car. If the car covered a total distance of $20m$ during this period, how long did it take for the car to stop?
-
-- [ ] A. $10s$
-- [ ] B. $2s$
-- [ ] C. $4s$
-- [ ] D. $5s$
-- [ ] E. $2.5s$
+```quiz
+type: radio
+id: ma-59772
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-59772.png>)
+  
+  A car starts to decelerate from an initial speed of $8m/s$ until it comes to rest. The speed-time graph illustrates the motion of the car. If the car covered a total distance of $20m$ during this period, how long did it take for the car to stop?
+options:
+- id: a
+  content: |-
+    $10s$
+- id: b
+  content: |-
+    $2s$
+- id: c
+  content: |-
+    $4s$
+- id: d
+  correct: true
+  content: |-
+    $5s$
+- id: e
+  content: |-
+    $2.5s$
+```
 
 ---
 
 **Question 7**
 
-> A calculator is required to answer this question.
-
-![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237117.png>)
-
-A train began to decelerate and came to rest after $3$ minutes. The speed-time graph above illustrates the motion of the train. If the total distance covered while decelerating was $6km$, what was the initial speed of the train?The initial speed of the train was
-$\underline{\hspace{1.5cm}}$ $km/\min$.
+```quiz
+type: radio
+id: ma-237117
+content: |-
+  > A calculator is required to answer this question.
+  
+  ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237117.png>)
+  
+  A train began to decelerate and came to rest after $3$ minutes. The speed-time graph above illustrates the motion of the train. If the total distance covered while decelerating was $6km$, what was the initial speed of the train?The initial speed of the train was
+options:
+- id: a
+  correct: true
+  content: |-
+    $4\,km/min$
+- id: b
+  content: |-
+    $2\,km/min$
+- id: c
+  content: |-
+    $3\,km/min$
+- id: d
+  content: |-
+    $6\,km/min$
+- id: e
+  content: |-
+    $12\,km/min$
+```
 
 ---
 
@@ -362,36 +491,95 @@ So, the distance covered by the car is $1\,200$ meters.
 
 **Question 8**
 
-> A calculator is required to answer this question.
-
-A motorcycle starts from rest and accelerates with a constant acceleration of $3m/s^{2}$. The total distance covered by the motorcycle in the first $6$ seconds is $\underline{\hspace{1.5cm}}$ $m$.
+```quiz
+type: radio
+id: q-8
+content: |-
+  > A calculator is required to answer this question.
+  
+  A motorcycle starts from rest and accelerates with a constant acceleration of $3m/s^{2}$. What is the total distance covered by the motorcycle in the first $6$ seconds?
+options:
+- id: a
+  correct: true
+  content: |-
+    $54m$
+- id: b
+  content: |-
+    $18m$
+- id: c
+  content: |-
+    $27m$
+- id: d
+  content: |-
+    $36m$
+- id: e
+  content: |-
+    $108m$
+```
 
 ---
 
 **Question 9**
 
-> A calculator is required to answer this question.
-
-A car moves with constant acceleration for $10$ seconds, changing its speed from $0m/s$ to $40m/s$. Then, the car moves with constant deceleration, stopping after a further $5$ seconds. Calculate the entire distance covered by the car.
-
-- [ ] A. $550m$
-- [ ] B. $300m$
-- [ ] C. $400m$
-- [ ] D. $600m$
-- [ ] E. $800m$
+```quiz
+type: radio
+id: q-9
+content: |-
+  > A calculator is required to answer this question.
+  
+  A car moves with constant acceleration for $10$ seconds, changing its speed from $0m/s$ to $40m/s$. Then, the car moves with constant deceleration, stopping after a further $5$ seconds. Calculate the entire distance covered by the car.
+options:
+- id: a
+  content: |-
+    $550m$
+- id: b
+  correct: true
+  content: |-
+    $300m$
+- id: c
+  content: |-
+    $400m$
+- id: d
+  content: |-
+    $600m$
+- id: e
+  content: |-
+    $800m$
+```
 
 ---
 
 **Question 10**
 
-> A calculator is required to answer this question.
-
-A racing car decelerates steadily from $180mph$ to $60mph$, covering a distance of $880ft$. For how long was the car decelerating?
-
-*Hint: You may use the fact that $1mi = 5280ft$ and $1h = 3600s$.*
-
-The car was decelerating for
-$\underline{\hspace{1.5cm}}$ $s$.
+```quiz
+type: radio
+id: q-10
+content: |-
+  > A calculator is required to answer this question.
+  
+  A racing car decelerates steadily from $180mph$ to $60mph$, covering a distance of $880ft$. For how long was the car decelerating?
+  
+  *Hint: You may use the fact that $1mi = 5280ft$ and $1h = 3600s$.*
+  
+  The car was decelerating for
+options:
+- id: a
+  correct: true
+  content: |-
+    $5s$
+- id: b
+  content: |-
+    $2.5s$
+- id: c
+  content: |-
+    $7.5s$
+- id: d
+  content: |-
+    $10s$
+- id: e
+  content: |-
+    $15s$
+```
 
 ```update-progress
 ```

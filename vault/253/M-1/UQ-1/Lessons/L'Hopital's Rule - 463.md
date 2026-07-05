@@ -1,10 +1,10 @@
 # L'Hopital's Rule
 
-
 <!--
 lesson-id: 463
 topic-code: MF3.7.1.1
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -18,13 +18,13 @@ topic-code: MF3.7.1.1
 
 ## Prerequisites
 
-- [Second and Higher-Order Derivatives](../281/281.md)
-- [Selecting Procedures for Calculating Derivatives](../1115/1115.md)
-- [Limits of Logarithmic Functions](../1377/1377.md)
-- [Limits of Exponential Functions](../1717/1717.md)
-- [Limits of Reciprocal Functions](../1905/1905.md)
-- [Limits of Reciprocal Trigonometric Functions](../1958/1958.md)
-- [Limits of Radical Functions](../1986/1986.md)
+- [Second and Higher-Order Derivatives](<../../../../CAB/2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.4. Second and Higher-Order Derivatives.md>)
+- [Selecting Procedures for Calculating Derivatives](<../../../../CAB/3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.7. Selecting Procedures for Calculating Derivatives.md>)
+- [Limits of Logarithmic Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.4. Limits of Logarithmic Functions.md>)
+- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
+- [Limits of Reciprocal Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.2. Limits of Reciprocal Functions.md>)
+- [Limits of Reciprocal Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.7. Limits of Reciprocal Trigonometric Functions.md>)
+- [Limits of Radical Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.5. Limits of Radical Functions.md>)
 
 ---
 
@@ -104,9 +104,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q001
+id: q-1
 content: |-
-  What is $\lim_{x \to 0}(x\cos x)/(\ln (x + 1))$?
+  What is $lim_(x → 0)(x\cos x)/(\ln (x + 1))$?
 options:
 - id: a
   content: |-
@@ -125,15 +125,16 @@ options:
     $1$
   correct: true
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q002
+id: q-2
 content: |-
-  What is $\lim_{x \to 0}\frac{x^{2} - x}{\tan x}$?
+  What is $lim_(x → 0)\frac{x^{2} - x}{\tan x}$?
 options:
 - id: a
   content: |-
@@ -152,6 +153,7 @@ options:
   content: |-
     $0$
 ```
+
 ---
 
 <a id="calculating-a-limit-using-lhopitals-rule-twice"></a>
@@ -191,9 +193,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q003
+id: q-3
 content: |-
-  What is $\lim_{x \to 0}\frac{\sin x - x}{x^{3} + x^{2}}$?
+  What is $lim_(x → 0)\frac{\sin x - x}{x^{3} + x^{2}}$?
 options:
 - id: a
   content: |-
@@ -212,15 +214,16 @@ options:
     $0$
   correct: true
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q004
+id: q-4
 content: |-
-  What is $\lim_{x \to 0}((x^{2} - 1)^{2} - 1)/(x^{2})$?
+  What is $lim_(x → 0)((x^{2} - 1)^{2} - 1)/(x^{2})$?
 options:
 - id: a
   content: |-
@@ -239,6 +242,7 @@ options:
     $-2$
   correct: true
 ```
+
 ---
 
 <a id="lhopitals-rule-for-the-case-of-infinity-divided-by-infinity"></a>
@@ -318,9 +322,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q005
+id: q-5
 content: |-
-  Evaluate $\lim_{x \to 0^{+}}(\ln x)/((\frac{1}{x^{2}}))$.
+  Evaluate $lim_(x → 0^{+})(\ln x)/((\frac{1}{x^{2}}))$.
 options:
 - id: a
   content: |-
@@ -339,15 +343,16 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q006
+id: q-6
 content: |-
-  Evaluate $\lim_{x \to 0^{+}}(\ln (\sin x))/(\csc x)$.
+  Evaluate $lim_(x → 0^{+})(\ln (\sin x))/(\csc x)$.
 options:
 - id: a
   content: |-
@@ -366,6 +371,7 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 <a id="lhopitals-rule-for-limits-at-positive-or-negative-infinity"></a>
@@ -417,9 +423,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q007
+id: q-7
 content: |-
-  What is $\lim_{x \to \infty}\frac{2\ln x}{e^{x}}$?
+  What is $lim_(x → ∞)\frac{2\ln x}{e^{x}}$?
 options:
 - id: a
   content: |-
@@ -438,15 +444,16 @@ options:
   content: |-
     $-1$
 ```
+
 ---
 
 **Question 8:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-463-q008
+id: q-8
 content: |-
-  What is $\lim_{x \to \infty}\frac{x + 1}{\sqrt{x} - 1}$?
+  What is $lim_(x → ∞)\frac{x + 1}{\sqrt{x} - 1}$?
 options:
 - id: a
   content: |-
@@ -465,6 +472,7 @@ options:
     $∞$
   correct: true
 ```
+
 ---
 
 <a id="the-general-theorem"></a>
@@ -496,15 +504,9 @@ provided that the following conditions are met:
 - If $a$ is $\pm \infty$, and $f$ and $g$ are both differentiable for all sufficiently large $x$, then the limit $\displaystyle\lim_{x\to \pm\infty} \frac {f'(x)}{g'(x)}$ exists.
 
 When working with familiar functions like polynomials, trigonometric functions, exponential functions, logarithmic functions, etc, it's safe to assume that these conditions are met.
----
-
-## Navigation
-
-- [Next: Improper Integrals Over the Real Line](<Improper Integrals Over the Real Line - 1382.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

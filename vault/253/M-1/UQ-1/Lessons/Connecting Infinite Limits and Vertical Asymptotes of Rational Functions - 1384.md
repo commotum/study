@@ -1,9 +1,10 @@
 # Connecting Infinite Limits and Vertical Asymptotes of Rational Functions
 
-
 <!--
 lesson-id: 1384
+topic-code: MTH-253.
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -60,7 +61,7 @@ $$
 
 These one-sided limits match up with what we see in the graph of $f(x)$, shown below.
 
-![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/1f0de881aee9cf164ae6f91299a59145.png>)
+![](<../Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/1f0de881aee9cf164ae6f91299a59145.png>)
 
 ---
 
@@ -95,66 +96,36 @@ $$
 
 This matches up with what we see in the graph of $f(x)$, shown below.
 
-![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/699affabb0d7d5f074de07be10a3540c.png>)
+![](<../Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/699affabb0d7d5f074de07be10a3540c.png>)
 
 ---
 
-**Question 1:**
+**Question 1**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q001
-content: |-
-  > A calculator is required to answer this question.
-  
-  Evaluate $\lim_{x \to (-3)^{+}}\frac{x^{2} + 4}{3x^{2} - 27}$.
-options:
-- id: a
-  content: |-
-    $-\frac{1}{9}$
-- id: b
-  content: |-
-    $\frac{1}{3}$
-- id: c
-  content: |-
-    DNE
-- id: d
-  content: |-
-    $∞$
-- id: e
-  content: |-
-    $- ∞$
-  correct: true
-```
+> A calculator is required to answer this question.
+
+Evaluate $lim_(x → (-3)^{+})\frac{x^{2} + 4}{3x^{2} - 27}$.
+
+- [ ] A. $-\frac{1}{9}$
+- [ ] B. $\frac{1}{3}$
+- [ ] C. DNE
+- [ ] D. $∞$
+- [ ] E. $- ∞$
+
 ---
 
-**Question 2:**
+**Question 2**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q002
-content: |-
-  > A calculator is required to answer this question.
-  
-  Evaluate $\lim_{x \to 2^{+}}\frac{x^{2} + 2x - 3}{10x - 20}$.
-options:
-- id: a
-  content: |-
-    $- ∞$
-- id: b
-  content: |-
-    DNE
-- id: c
-  content: |-
-    $+ ∞$
-  correct: true
-- id: d
-  content: |-
-    $0$
-- id: e
-  content: |-
-    $-\frac{1}{2}$
-```
+> A calculator is required to answer this question.
+
+Evaluate $lim_(x → 2^{+})\frac{x^{2} + 2x - 3}{10x - 20}$.
+
+- [ ] A. $- ∞$
+- [ ] B. DNE
+- [ ] C. $+ ∞$
+- [ ] D. $0$
+- [ ] E. $-\frac{1}{2}$
+
 ---
 
 <a id="evaluating-the-left-sided-limit-of-a-rational-function-at-a-vertical-asymptote"></a>
@@ -193,66 +164,36 @@ $$
 
 This matches up with what we see in the graph of $f(x)$, shown below.
 
-![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/0516da9f3887ae8d8817d11c13cd2d24.png>)
+![](<../Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/0516da9f3887ae8d8817d11c13cd2d24.png>)
 
 ---
 
-**Question 3:**
+**Question 3**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q003
-content: |-
-  > A calculator is required to answer this question.
-  
-  Calculate $\lim_{x \to (-1)^{-}}\frac{x}{2x^{2} - 2}$.
-options:
-- id: a
-  content: |-
-    $- ∞$
-  correct: true
-- id: b
-  content: |-
-    $+ ∞$
-- id: c
-  content: |-
-    DNE
-- id: d
-  content: |-
-    $0$
-- id: e
-  content: |-
-    $-\frac{1}{4}$
-```
+> A calculator is required to answer this question.
+
+Calculate $lim_(x → (-1)^{-})\frac{x}{2x^{2} - 2}$.
+
+- [ ] A. $- ∞$
+- [ ] B. $+ ∞$
+- [ ] C. DNE
+- [ ] D. $0$
+- [ ] E. $-\frac{1}{4}$
+
 ---
 
-**Question 4:**
+**Question 4**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q004
-content: |-
-  > A calculator is required to answer this question.
-  
-  Calculate $\lim_{x \to 4^{-}}(- (1)/(x(x - 4)))$.
-options:
-- id: a
-  content: |-
-    $+ ∞$
-  correct: true
-- id: b
-  content: |-
-    DNE
-- id: c
-  content: |-
-    $\frac{1}{4}$
-- id: d
-  content: |-
-    $0$
-- id: e
-  content: |-
-    $- ∞$
-```
+> A calculator is required to answer this question.
+
+Calculate $lim_(x → 4^{-})(- (1)/(x(x - 4)))$.
+
+- [ ] A. $+ ∞$
+- [ ] B. DNE
+- [ ] C. $\frac{1}{4}$
+- [ ] D. $0$
+- [ ] E. $- ∞$
+
 ---
 
 <a id="identifying-correct-limits-of-a-given-rational-function"></a>
@@ -298,74 +239,44 @@ and therefore III is true.
 
 In conclusion, only statements II and III are true. A plot of the function is shown below.
 
-![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/dffdf7de5a57d6d0adefc1ede9d7672e.png>)
+![](<../Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/dffdf7de5a57d6d0adefc1ede9d7672e.png>)
 
 ---
 
-**Question 5:**
+**Question 5**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q005
-content: |-
-  > A calculator is required to answer this question.
-  
-  Given that $f(x) = (2x)/((x - 2)^{2})$, which of the following statements is correct?
-  
-  1. $\lim_{x \to 2^{-}}f(x) = + ∞$
-  2. $\lim_{x \to 2}f(x) = + ∞$
-  3. $\lim_{x \to 2^{+}}f(x) = - ∞$
-options:
-- id: a
-  content: |-
-    I only
-- id: b
-  content: |-
-    II only
-- id: c
-  content: |-
-    I and II only
-  correct: true
-- id: d
-  content: |-
-    III only
-- id: e
-  content: |-
-    I and III only
-```
+> A calculator is required to answer this question.
+
+Given that $f(x) = (2x)/((x - 2)^{2})$, which of the following statements is correct?
+
+1. $lim_(x → 2^{-})f(x) = + ∞$
+2. $lim_(x → 2)f(x) = + ∞$
+3. $lim_(x → 2^{+})f(x) = - ∞$
+
+- [ ] A. I only
+- [ ] B. II only
+- [ ] C. I and II only
+- [ ] D. III only
+- [ ] E. I and III only
+
 ---
 
-**Question 6:**
+**Question 6**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q006
-content: |-
-  > A calculator is required to answer this question.
-  
-  Given that $f(x) = (x^{2})/((x - 1)^{3})$, which of the following statements is correct?
-  
-  1. $\lim_{x \to 1^{-}}f(x) = + ∞$
-  2. $\lim_{x \to 1}f(x) = + ∞$
-  3. $\lim_{x \to 1^{+}}f(x) = + ∞$
-options:
-- id: a
-  content: |-
-    I only
-- id: b
-  content: |-
-    II and III only
-- id: c
-  content: |-
-    III only
-  correct: true
-- id: d
-  content: |-
-    I and II only
-- id: e
-  content: |-
-    I, II and III
-```
+> A calculator is required to answer this question.
+
+Given that $f(x) = (x^{2})/((x - 1)^{3})$, which of the following statements is correct?
+
+1. $lim_(x → 1^{-})f(x) = + ∞$
+2. $lim_(x → 1)f(x) = + ∞$
+3. $lim_(x → 1^{+})f(x) = + ∞$
+
+- [ ] A. I only
+- [ ] B. II and III only
+- [ ] C. III only
+- [ ] D. I and II only
+- [ ] E. I, II and III
+
 ---
 
 <a id="identifying-correct-limits-of-a-given-function-when-simplification-is-required"></a>
@@ -418,83 +329,40 @@ and therefore statement I is correct.
 
 In conclusion, only statement I is correct. A plot of the function is shown below.
 
-![](<253/M-1/UQ-1/Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/19b67df6adf3aba2408de6918e1836f4.png>)
+![](<../Source/Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384/Images/19b67df6adf3aba2408de6918e1836f4.png>)
 
 ---
 
-**Question 7:**
+**Question 7**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q007
-content: |-
-  > A calculator is required to answer this question.
-  
-  Given that $f(x) = \frac{x + 3}{x^{2} - 9}$, which of the following statements is correct?
-  
-  1. $\lim_{x \to (-3)^{-}}f(x) = - ∞$
-  2. $\lim_{x \to (-3)^{+}}f(x) = + ∞$
-  3. $\lim_{x \to 3^{+}}f(x) = ∞$
-options:
-- id: a
-  content: |-
-    I only
-- id: b
-  content: |-
-    II only
-- id: c
-  content: |-
-    I and III only
-- id: d
-  content: |-
-    III only
-  correct: true
-- id: e
-  content: |-
-    I and II only
-```
+> A calculator is required to answer this question.
+
+Given that $f(x) = \frac{x + 3}{x^{2} - 9}$, which of the following statements is correct?
+
+1. $lim_(x → (-3)^{-})f(x) = - ∞$
+2. $lim_(x → (-3)^{+})f(x) = + ∞$
+3. $lim_(x → 3^{+})f(x) = ∞$
+
+- [ ] A. I only
+- [ ] B. II only
+- [ ] C. I and III only
+- [ ] D. III only
+- [ ] E. I and II only
+
 ---
 
-**Question 8:**
+**Question 8**
 
-```quiz
-type: radio
-id: MA253-UQ1-1384-q008
-content: |-
-  > A calculator is required to answer this question.
-  
-  Given that $f(x) = \frac{2x + 2}{x^{2} - 1}$, which of the following statements is correct?
-  
-  1. $\lim_{x \to 1^{-}}f(x) = - ∞$
-  2. $\lim_{x \to (-1)^{+}}f(x) = + ∞$
-  3. $\lim_{x \to (-1)^{-}}f(x) = - ∞$
-options:
-- id: a
-  content: |-
-    II and III only
-- id: b
-  content: |-
-    II only
-- id: c
-  content: |-
-    I only
-  correct: true
-- id: d
-  content: |-
-    I and II only
-- id: e
-  content: |-
-    I and III only
-```
----
+> A calculator is required to answer this question.
 
-## Navigation
+Given that $f(x) = \frac{2x + 2}{x^{2} - 1}$, which of the following statements is correct?
 
-- [Next: Calculating Limits of Radical Functions Using Conjugate Multiplication](<Calculating Limits of Radical Functions Using Conjugate Multiplication - 604.md>)
-- [Back to UQ-1](UQ-1.md)
+1. $lim_(x → 1^{-})f(x) = - ∞$
+2. $lim_(x → (-1)^{+})f(x) = + ∞$
+3. $lim_(x → (-1)^{-})f(x) = - ∞$
 
-```update-progress
-```
-
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+- [ ] A. II and III only
+- [ ] B. II only
+- [ ] C. I only
+- [ ] D. I and II only
+- [ ] E. I and III only

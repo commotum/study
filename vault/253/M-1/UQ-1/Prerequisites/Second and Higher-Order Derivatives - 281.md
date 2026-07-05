@@ -99,23 +99,59 @@ $$
 
 ---
 
-**Question 1:** Find $f^{″}(x)$ for $f(x) = 5x^{4} - 4x^{2} - 7x$.
+**Question 1:**
 
-- [ ] A. $60x^{2} - 8$
-- [ ] B. $8x$
-- [ ] C. $20x^{3} - 8x - 7$
-- [ ] D. $60x^{2}$
-- [ ] E. $20x^{3} - 8x$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Find $f^{″}(x)$ for $f(x) = 5x^{4} - 4x^{2} - 7x$.
+options:
+- id: a
+  content: |-
+    $60x^{2} - 8$
+  correct: true
+- id: b
+  content: |-
+    $8x$
+- id: c
+  content: |-
+    $20x^{3} - 8x - 7$
+- id: d
+  content: |-
+    $60x^{2}$
+- id: e
+  content: |-
+    $20x^{3} - 8x$
+```
 
 ---
 
-**Question 2:** Find $f^{″}(x)$ for $f(x) = 3x^{4} - 7x^{2} - 8$.
+**Question 2:**
 
-- [ ] A. $36x^{2} + 14$
-- [ ] B. $36x^{2} - 14$
-- [ ] C. $36x^{2}$
-- [ ] D. $36x^{2} + 14x$
-- [ ] E. $36x^{2} - 14x$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Find $f^{″}(x)$ for $f(x) = 3x^{4} - 7x^{2} - 8$.
+options:
+- id: a
+  content: |-
+    $36x^{2} + 14$
+- id: b
+  content: |-
+    $36x^{2} - 14$
+  correct: true
+- id: c
+  content: |-
+    $36x^{2}$
+- id: d
+  content: |-
+    $36x^{2} + 14x$
+- id: e
+  content: |-
+    $36x^{2} - 14x$
+```
 
 ---
 
@@ -172,23 +208,59 @@ $$
 
 ---
 
-**Question 3:** Calculate $\frac{d^{2}y}{dx^{2}}$ for $y = 2x^{7} + 5x^{5} + \frac{12}{x}$.
+**Question 3:**
 
-- [ ] A. $84x^{5} + 60x^{3} + \frac{24}{x^{3}}$
-- [ ] B. $60x^{5} + 100x^{3} + \frac{24}{x^{3}}$
-- [ ] C. $84x^{5} + 100x^{3} - 24x^{3}$
-- [ ] D. $84x^{5} + 100x^{3} - \frac{24}{x^{3}}$
-- [ ] E. $84x^{5} + 100x^{3} + \frac{24}{x^{3}}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Calculate $\frac{d^{2}y}{dx^{2}}$ for $y = 2x^{7} + 5x^{5} + \frac{12}{x}$.
+options:
+- id: a
+  content: |-
+    $84x^{5} + 60x^{3} + \frac{24}{x^{3}}$
+- id: b
+  content: |-
+    $60x^{5} + 100x^{3} + \frac{24}{x^{3}}$
+- id: c
+  content: |-
+    $84x^{5} + 100x^{3} - 24x^{3}$
+- id: d
+  content: |-
+    $84x^{5} + 100x^{3} - \frac{24}{x^{3}}$
+- id: e
+  content: |-
+    $84x^{5} + 100x^{3} + \frac{24}{x^{3}}$
+  correct: true
+```
 
 ---
 
-**Question 4:** Calculate $\frac{d^{2}y}{dx^{2}}$ for $y = 5x^{4} + 4x^{2}$.
+**Question 4:**
 
-- [ ] A. $60x^{2} + 12$
-- [ ] B. $60x^{2} + 8$
-- [ ] C. $60x^{3} + 8$
-- [ ] D. $60x^{2} + 8x$
-- [ ] E. $30x^{2} + 8$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Calculate $\frac{d^{2}y}{dx^{2}}$ for $y = 5x^{4} + 4x^{2}$.
+options:
+- id: a
+  content: |-
+    $60x^{2} + 12$
+- id: b
+  content: |-
+    $60x^{2} + 8$
+  correct: true
+- id: c
+  content: |-
+    $60x^{3} + 8$
+- id: d
+  content: |-
+    $60x^{2} + 8x$
+- id: e
+  content: |-
+    $30x^{2} + 8$
+```
 
 ---
 
@@ -305,23 +377,59 @@ $$
 
 ---
 
-**Question 5:** Given $h(x) = 3x^{2} - 5x + \frac{3}{x}$, find $h^{‴}(x)$.
+**Question 5:**
 
-- [ ] A. $\frac{18}{x^{4}}$
-- [ ] B. $\frac{6}{x^{3}}$
-- [ ] C. $-\frac{6}{x^{3}}$
-- [ ] D. $-\frac{6}{x^{4}} + 6$
-- [ ] E. $-\frac{18}{x^{4}}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Given $h(x) = 3x^{2} - 5x + \frac{3}{x}$, find $h^{‴}(x)$.
+options:
+- id: a
+  content: |-
+    $\frac{18}{x^{4}}$
+- id: b
+  content: |-
+    $\frac{6}{x^{3}}$
+- id: c
+  content: |-
+    $-\frac{6}{x^{3}}$
+- id: d
+  content: |-
+    $-\frac{6}{x^{4}} + 6$
+- id: e
+  content: |-
+    $-\frac{18}{x^{4}}$
+  correct: true
+```
 
 ---
 
-**Question 6:** Given $y = \frac{x^{3}}{4} - \frac{4}{x^{2}}$, find $\frac{d^{3}y}{dx^{3}}$.
+**Question 6:**
 
-- [ ] A. $\frac{3x}{2} + \frac{24}{x^{5}}$
-- [ ] B. $\frac{3}{2} + \frac{24}{x^{4}}$
-- [ ] C. $\frac{3}{2} - \frac{96}{x^{5}}$
-- [ ] D. $\frac{3}{2} + \frac{96}{x^{5}}$
-- [ ] E. $\frac{3x}{2} - \frac{24}{x^{4}}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given $y = \frac{x^{3}}{4} - \frac{4}{x^{2}}$, find $\frac{d^{3}y}{dx^{3}}$.
+options:
+- id: a
+  content: |-
+    $\frac{3x}{2} + \frac{24}{x^{5}}$
+- id: b
+  content: |-
+    $\frac{3}{2} + \frac{24}{x^{4}}$
+- id: c
+  content: |-
+    $\frac{3}{2} - \frac{96}{x^{5}}$
+- id: d
+  content: |-
+    $\frac{3}{2} + \frac{96}{x^{5}}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{3x}{2} - \frac{24}{x^{4}}$
+```
 
 ```update-progress
 ```

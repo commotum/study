@@ -10,10 +10,10 @@
 
 ## Progress
 
-- Course: 0% (0/33)
+- Course: 0% (0/37)
 
 - M-1: 0% (0/17)
-- M-2: 0% (0/16)
+- M-2: 0% (0/20)
 
 ## History
 
@@ -21,7 +21,7 @@
 
 ## Summary
 
-- Completed lessons: 0 / 33
+- Completed lessons: 0 / 37
 - Queue size: 5 / 5
 
 <!--

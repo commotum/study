@@ -1,10 +1,10 @@
 # Limits Involving the Exponential Function
 
-
 <!--
 lesson-id: 2610
 topic-code: MF3.7.1.4
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,8 +15,8 @@ topic-code: MF3.7.1.4
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](../37/37.md)
-- [Limits of Exponential Functions](../1717/1717.md)
+- [The Power and Root Rules for Limits](<../../../../CAB/1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.4. The Power and Root Rules for Limits.md>)
+- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
 
 ---
 
@@ -87,8 +87,8 @@ Now, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-\lim_{n \to \infty}(1 + \frac{1}{n})^{3n} &= \lim_{n \to \infty}[(1 + \frac{1}{n})^{n}]^{3} \\
-&= [\lim_{n \to \infty}(1 + \frac{1}{n})^{n}]^{3} \\
+lim_(n → ∞)(1 + \frac{1}{n})^{3n} &= lim_(n → ∞)[(1 + \frac{1}{n})^{n}]^{3} \\
+&= [lim_(n → ∞)(1 + \frac{1}{n})^{n}]^{3} \\
 &= e^{3}
 \end{aligned}
 $$
@@ -99,28 +99,23 @@ $$
 
 ```quiz
 type: radio
-id: MA253-WHW1-2610-q001
+id: q-1
 content: |-
-  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{-2n}$?
-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{-2n}$?
 options:
 - id: a
   content: |-
     $\frac{e}{2}$
-
 - id: b
   content: |-
     $e^{2}$
-
 - id: c
+  correct: true
   content: |-
     $\frac{1}{e^{2}}$
-  correct: true
-
 - id: d
   content: |-
     $2e$
-
 - id: e
   content: |-
     $e$
@@ -132,28 +127,23 @@ options:
 
 ```quiz
 type: radio
-id: MA253-WHW1-2610-q002
+id: q-2
 content: |-
-  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{n/2}$?
-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{n/2}$?
 options:
 - id: a
   content: |-
     $\frac{2}{e}$
-
 - id: b
   content: |-
     $e^{2}$
-
 - id: c
   content: |-
     $2e$
-
 - id: d
+  correct: true
   content: |-
     $\sqrt{e}$
-  correct: true
-
 - id: e
   content: |-
     $\frac{e}{2}$
@@ -178,8 +168,8 @@ Now, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-\lim_{n \to \infty}(1 + \frac{1}{n})^{nx/3} &= \lim_{n \to \infty}[(1 + \frac{1}{n})^{n}]^{x/3} \\
-&= [\lim_{n \to \infty}(1 + \frac{1}{n})^{n}]^{x/3} \\
+lim_(n → ∞)(1 + \frac{1}{n})^{nx/3} &= lim_(n → ∞)[(1 + \frac{1}{n})^{n}]^{x/3} \\
+&= [lim_(n → ∞)(1 + \frac{1}{n})^{n}]^{x/3} \\
 &= e^{x/3} \\
 &= \sqrt[3]{e^{x}}
 \end{aligned}
@@ -191,31 +181,26 @@ $$
 
 ```quiz
 type: radio
-id: MA253-WHW1-2610-q003
+id: q-3
 content: |-
-  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{4nx}$?
-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{4nx}$?
 options:
 - id: a
   content: |-
     $4e^{-4x}$
-
 - id: b
   content: |-
     $4e^{x}$
-
 - id: c
   content: |-
     $4e^{4x}$
-
 - id: d
   content: |-
     $e^{-4x}$
-
 - id: e
+  correct: true
   content: |-
     $e^{4x}$
-  correct: true
 ```
 
 ---
@@ -224,28 +209,23 @@ options:
 
 ```quiz
 type: radio
-id: MA253-WHW1-2610-q004
+id: q-4
 content: |-
-  What is $\lim_{n \to \infty}(1 + \frac{1}{n})^{nx/2}$?
-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{nx/2}$?
 options:
 - id: a
   content: |-
     $\frac{\sqrt{e}}{2}$
-
 - id: b
   content: |-
     $x\sqrt{e}$
-
 - id: c
+  correct: true
   content: |-
     $\sqrt{e^{x}}$
-  correct: true
-
 - id: d
   content: |-
     $\frac{e^{x}}{\sqrt{2}}$
-
 - id: e
   content: |-
     $\frac{e^{x}}{2}$
@@ -268,9 +248,9 @@ First, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-\lim_{n \to \infty}(1 + \frac{x}{n})^{n} &= \lim_{n \to \infty}(1 + \frac{1}{n/x})^{n} \\
-&= \lim_{n \to \infty}(1 + \frac{1}{n/x})^{(n/x) \cdot x} \\
-&= [\lim_{n \to \infty}(1 + \frac{1}{n/x})^{n/x}]^{x}
+lim_(n → ∞)(1 + \frac{x}{n})^{n} &= lim_(n → ∞)(1 + \frac{1}{n/x})^{n} \\
+&= lim_(n → ∞)(1 + \frac{1}{n/x})^{(n/x) \cdot x} \\
+&= [lim_(n → ∞)(1 + \frac{1}{n/x})^{n/x}]^{x}
 \end{aligned}
 $$
 
@@ -284,7 +264,7 @@ Since $m\to\infty$ as $n\to\infty$, we obtain
 
 $$
 \begin{aligned}
-[\lim_{n \to \infty}(1 + \frac{1}{n/x})^{n/x}]^{x} &= [\underbrace{\lim_{m \to \infty}(1 + \frac{1}{m})^{m}}_{e}]^{x} \\
+[lim_(n → ∞)(1 + \frac{1}{n/x})^{n/x}]^{x} &= [lim_(m → ∞)(1 + \frac{1}{m})^{m}_(⏟)_(e)]^{x} \\
 &= e^{x}
 \end{aligned}
 $$
@@ -292,7 +272,7 @@ $$
 Therefore, we conclude that
 
 $$
-e^{x} = \lim_{n \to \infty}(1 + \frac{x}{n})^{n}
+e^{x} = lim_(n → ∞)(1 + \frac{x}{n})^{n}
 $$
 
 ---
@@ -314,8 +294,8 @@ Now, we rewrite the given limit using the algebra of limits, as follows:
 
 $$
 \begin{aligned}
-\lim_{n \to \infty}(1 + \frac{x}{n})^{-n/2} &= \lim_{n \to \infty}[(1 + \frac{x}{n})^{n}]^{-1/2} \\
-&= [\lim_{n \to \infty}(1 + \frac{x}{n})^{n}]^{-1/2} \\
+lim_(n → ∞)(1 + \frac{x}{n})^{-n/2} &= lim_(n → ∞)[(1 + \frac{x}{n})^{n}]^{-1/2} \\
+&= [lim_(n → ∞)(1 + \frac{x}{n})^{n}]^{-1/2} \\
 &= (e^{x})^{-1/2} \\
 &= \sqrt{\frac{1}{e^{x}}}
 \end{aligned}
@@ -327,31 +307,26 @@ $$
 
 ```quiz
 type: radio
-id: MA253-WHW1-2610-q005
+id: q-5
 content: |-
-  What is $\lim_{n \to \infty}(1 + \frac{x}{n})^{-3n}$?
-
+  What is $lim_(n → ∞)(1 + \frac{x}{n})^{-3n}$?
 options:
 - id: a
   content: |-
     $e^{3x}$
-
 - id: b
   content: |-
     $e^{-1/3x}$
-
 - id: c
   content: |-
     $e^{3}$
-
 - id: d
   content: |-
     $e^{1/3x}$
-
 - id: e
+  correct: true
   content: |-
     $e^{-3x}$
-  correct: true
 ```
 
 ---
@@ -360,42 +335,30 @@ options:
 
 ```quiz
 type: radio
-id: MA253-WHW1-2610-q006
+id: q-6
 content: |-
-  What is $\lim_{n \to \infty}(1 + \frac{x}{n})^{2nx}$?
-
+  What is $lim_(n → ∞)(1 + \frac{x}{n})^{2nx}$?
 options:
 - id: a
   content: |-
     $e^{2}$
-
 - id: b
+  correct: true
   content: |-
     $e^{2x^{2}}$
-  correct: true
-
 - id: c
   content: |-
     $e^{2/x^{2}}$
-
 - id: d
   content: |-
     $e^{2x}$
-
 - id: e
   content: |-
     $e^{2/x}$
 ```
 
----
-
-## Navigation
-
-- [Next: Improper Integrals of the Second Kind](<253/M-1/WHW-1/Lessons/Improper Integrals of the Second Kind - 759.md>)
-- [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
-
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

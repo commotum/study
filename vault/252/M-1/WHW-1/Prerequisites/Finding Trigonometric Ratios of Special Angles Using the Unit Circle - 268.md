@@ -102,23 +102,59 @@ $$
 
 ---
 
-**Question 1:** What is $\cos 120^{∘}$?
+**Question 1:**
 
-- [ ] A. $-1$
-- [ ] B. $\frac{\sqrt{3}}{2}$
-- [ ] C. $-\frac{1}{2}$
-- [ ] D. $-\frac{\sqrt{2}}{2}$
-- [ ] E. $\frac{1}{2}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $\cos 120^{∘}$?
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $\frac{\sqrt{3}}{2}$
+- id: c
+  content: |-
+    $-\frac{1}{2}$
+  correct: true
+- id: d
+  content: |-
+    $-\frac{\sqrt{2}}{2}$
+- id: e
+  content: |-
+    $\frac{1}{2}$
+```
 
 ---
 
-**Question 2:** What is $\sin 330^{∘}$?
+**Question 2:**
 
-- [ ] A. $-\frac{\sqrt{3}}{2}$
-- [ ] B. $-\frac{1}{\sqrt{2}}$
-- [ ] C. $\frac{\sqrt{3}}{2}$
-- [ ] D. $-\frac{1}{2}$
-- [ ] E. $\frac{\sqrt{2}}{2}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $\sin 330^{∘}$?
+options:
+- id: a
+  content: |-
+    $-\frac{\sqrt{3}}{2}$
+- id: b
+  content: |-
+    $-\frac{1}{\sqrt{2}}$
+- id: c
+  content: |-
+    $\frac{\sqrt{3}}{2}$
+- id: d
+  content: |-
+    $-\frac{1}{2}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{\sqrt{2}}{2}$
+```
 
 ---
 
@@ -153,23 +189,59 @@ $$
 
 ---
 
-**Question 3:** What is $\sin (\frac{4π}{3})$?
+**Question 3:**
 
-- [ ] A. $\frac{2\sqrt{3}}{3}$
-- [ ] B. $\frac{\sqrt{3}}{2}$
-- [ ] C. $-\frac{\sqrt{3}}{2}$
-- [ ] D. $-\frac{2\sqrt{3}}{3}$
-- [ ] E. $\frac{3\sqrt{2}}{4}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $\sin (\frac{4π}{3})$?
+options:
+- id: a
+  content: |-
+    $\frac{2\sqrt{3}}{3}$
+- id: b
+  content: |-
+    $\frac{\sqrt{3}}{2}$
+- id: c
+  content: |-
+    $-\frac{\sqrt{3}}{2}$
+  correct: true
+- id: d
+  content: |-
+    $-\frac{2\sqrt{3}}{3}$
+- id: e
+  content: |-
+    $\frac{3\sqrt{2}}{4}$
+```
 
 ---
 
-**Question 4:** What is $\cos (\frac{3π}{4})$?
+**Question 4:**
 
-- [ ] A. $\frac{\sqrt{2}}{2}$
-- [ ] B. $\frac{\sqrt{3}}{2}$
-- [ ] C. $-\frac{\sqrt{2}}{2}$
-- [ ] D. $\frac{-1}{2}$
-- [ ] E. $-\frac{\sqrt{3}}{2}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $\cos (\frac{3π}{4})$?
+options:
+- id: a
+  content: |-
+    $\frac{\sqrt{2}}{2}$
+- id: b
+  content: |-
+    $\frac{\sqrt{3}}{2}$
+- id: c
+  content: |-
+    $-\frac{\sqrt{2}}{2}$
+  correct: true
+- id: d
+  content: |-
+    $\frac{-1}{2}$
+- id: e
+  content: |-
+    $-\frac{\sqrt{3}}{2}$
+```
 
 ---
 
@@ -210,23 +282,59 @@ $$
 
 ---
 
-**Question 5:** What is $\csc 225^{∘}$?
+**Question 5:**
 
-- [ ] A. $-\sqrt{2}$
-- [ ] B. $\frac{\sqrt{3}}{2}$
-- [ ] C. $\frac{\sqrt{2}}{3}$
-- [ ] D. $\frac{\sqrt{2}}{2}$
-- [ ] E. $\sqrt{3}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $\csc 225^{∘}$?
+options:
+- id: a
+  content: |-
+    $-\sqrt{2}$
+  correct: true
+- id: b
+  content: |-
+    $\frac{\sqrt{3}}{2}$
+- id: c
+  content: |-
+    $\frac{\sqrt{2}}{3}$
+- id: d
+  content: |-
+    $\frac{\sqrt{2}}{2}$
+- id: e
+  content: |-
+    $\sqrt{3}$
+```
 
 ---
 
-**Question 6:** What is $\sec (\frac{2π}{3})$?
+**Question 6:**
 
-- [ ] A. $\frac{2}{\sqrt{3}}$
-- [ ] B. $-1$
-- [ ] C. $-2$
-- [ ] D. $-\frac{1}{2}$
-- [ ] E. $\frac{2\sqrt{3}}{3}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  What is $\sec (\frac{2π}{3})$?
+options:
+- id: a
+  content: |-
+    $\frac{2}{\sqrt{3}}$
+- id: b
+  content: |-
+    $-1$
+- id: c
+  content: |-
+    $-2$
+  correct: true
+- id: d
+  content: |-
+    $-\frac{1}{2}$
+- id: e
+  content: |-
+    $\frac{2\sqrt{3}}{3}$
+```
 
 ---
 
@@ -270,26 +378,62 @@ $$
 
 ---
 
-**Question 7:** What is $\cot (\frac{π}{3})$?
+**Question 7:**
 
-- [ ] A. $\sqrt{3}$
-- [ ] B. $-\sqrt{3}$
-- [ ] C. $1$
-- [ ] D. $-\frac{1}{\sqrt{3}}$
-- [ ] E. $\frac{1}{\sqrt{3}}$
+```quiz
+type: radio
+id: q-7
+content: |-
+  What is $\cot (\frac{π}{3})$?
+options:
+- id: a
+  content: |-
+    $\sqrt{3}$
+- id: b
+  content: |-
+    $-\sqrt{3}$
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $-\frac{1}{\sqrt{3}}$
+- id: e
+  content: |-
+    $\frac{1}{\sqrt{3}}$
+  correct: true
+```
 
 ---
 
-**Question 8:** What is $\tan (\frac{5π}{6})$?
+**Question 8:**
 
-- [ ] A. $-\frac{\sqrt{3}}{3}$
-- [ ] B. $\frac{\sqrt{3}}{3}$
-- [ ] C. $-1$
-- [ ] D. $-\frac{\sqrt{2}}{2}$
-- [ ] E. $-\frac{\sqrt{3}}{2}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  What is $\tan (\frac{5π}{6})$?
+options:
+- id: a
+  content: |-
+    $-\frac{\sqrt{3}}{3}$
+  correct: true
+- id: b
+  content: |-
+    $\frac{\sqrt{3}}{3}$
+- id: c
+  content: |-
+    $-1$
+- id: d
+  content: |-
+    $-\frac{\sqrt{2}}{2}$
+- id: e
+  content: |-
+    $-\frac{\sqrt{3}}{2}$
+```
 
 ```update-progress
 ```
 
-[[252/Home|Home]]
-[[252/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

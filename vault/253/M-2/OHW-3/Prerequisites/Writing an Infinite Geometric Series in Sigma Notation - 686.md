@@ -106,25 +106,63 @@ $$
 
 ---
 
-**Question 1:** Express the sum to infinity of the following geometric series using sigma notation:
-$-2.4 + 7.2 - 21.6 + ⋯$
+**Question 1:**
 
-- [ ] A. $∑_(n = 1)^(∞)(-2.4)(-3)^{n}$
-- [ ] B. $∑_(n = 1)^(∞)7.2(-3)^{n}$
-- [ ] C. $∑_(n = 1)^(∞)0.8(-3)^{n}$
-- [ ] D. $∑_(n = 1)^(∞)(-0.8)(-3)^{n}$
-- [ ] E. $∑_(n = 1)^(∞)2.4(-3)^{n}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Express the sum to infinity of the following geometric series using sigma notation:
+  
+  $-2.4 + 7.2 - 21.6 + ⋯$
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(∞)(-2.4)(-3)^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(∞)7.2(-3)^{n}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(∞)0.8(-3)^{n}$
+  correct: true
+- id: d
+  content: |-
+    $∑_(n = 1)^(∞)(-0.8)(-3)^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(∞)2.4(-3)^{n}$
+```
 
 ---
 
-**Question 2:** Express the sum to infinity of the following geometric series using sigma notation:
-$16 - 4 + 1 + ⋯$
+**Question 2:**
 
-- [ ] A. $∑_(n = 1)^(∞)4(-\frac{1}{4})^{n}$
-- [ ] B. $∑_(n = 1)^(∞)(-4)(-\frac{1}{4})^{n}$
-- [ ] C. $∑_(n = 1)^(∞)(-64)(-\frac{1}{4})^{n}$
-- [ ] D. $∑_(n = 1)^(∞)64(-\frac{1}{4})^{n}$
-- [ ] E. $∑_(n = 1)^(∞)16(-\frac{1}{4})^{n}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Express the sum to infinity of the following geometric series using sigma notation:
+  
+  $16 - 4 + 1 + ⋯$
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(∞)4(-\frac{1}{4})^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(∞)(-4)(-\frac{1}{4})^{n}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(∞)(-64)(-\frac{1}{4})^{n}$
+  correct: true
+- id: d
+  content: |-
+    $∑_(n = 1)^(∞)64(-\frac{1}{4})^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(∞)16(-\frac{1}{4})^{n}$
+```
 
 ---
 
@@ -162,23 +200,59 @@ $$
 
 ---
 
-**Question 3:** Consider the sequence starting from $a_{1} =-30$ with the property $\frac{a_{n + 1}}{a_{n}} = \frac{5}{9}$ for all $n \ge 1$. Write the sum to infinity of the terms of this sequence using sigma notation.
+**Question 3:**
 
-- [ ] A. $∑_(n = 1)^(∞)(\frac{50}{3})(\frac{5}{9})^{n}$
-- [ ] B. $∑_(n = 1)^(∞)(-54)(\frac{5}{9})^{n}$
-- [ ] C. $∑_(n = 1)^(∞)56(\frac{5}{9})^{n}$
-- [ ] D. $∑_(n = 1)^(∞)(-\frac{50}{3})(\frac{5}{9})^{n}$
-- [ ] E. $∑_(n = 1)^(∞)54(\frac{5}{9})^{n}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Consider the sequence starting from $a_{1} =-30$ with the property $\frac{a_{n + 1}}{a_{n}} = \frac{5}{9}$ for all $n \ge 1$. Write the sum to infinity of the terms of this sequence using sigma notation.
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(∞)(\frac{50}{3})(\frac{5}{9})^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(∞)(-54)(\frac{5}{9})^{n}$
+  correct: true
+- id: c
+  content: |-
+    $∑_(n = 1)^(∞)56(\frac{5}{9})^{n}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(∞)(-\frac{50}{3})(\frac{5}{9})^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(∞)54(\frac{5}{9})^{n}$
+```
 
 ---
 
-**Question 4:** Consider the sequence starting from $a_{1} = 6$ with the property $\frac{a_{n + 1}}{a_{n}} = \frac{1}{6}$ for all $n \ge 1$. Write the sum to infinity of the terms of this sequence using sigma notation.
+**Question 4:**
 
-- [ ] A. $∑_(n = 1)^(∞)(\frac{1}{6})^{n}$
-- [ ] B. $∑_(n = 1)^(∞)12(\frac{1}{6})^{n}$
-- [ ] C. $∑_(n = 1)^(∞)36(\frac{1}{6})^{n}$
-- [ ] D. $∑_(n = 1)^(∞)\frac{1}{36}(\frac{1}{6})^{n}$
-- [ ] E. $∑_(n = 1)^(∞)42(\frac{1}{6})^{n}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Consider the sequence starting from $a_{1} = 6$ with the property $\frac{a_{n + 1}}{a_{n}} = \frac{1}{6}$ for all $n \ge 1$. Write the sum to infinity of the terms of this sequence using sigma notation.
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(∞)(\frac{1}{6})^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(∞)12(\frac{1}{6})^{n}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(∞)36(\frac{1}{6})^{n}$
+  correct: true
+- id: d
+  content: |-
+    $∑_(n = 1)^(∞)\frac{1}{36}(\frac{1}{6})^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(∞)42(\frac{1}{6})^{n}$
+```
 
 ```update-progress
 ```

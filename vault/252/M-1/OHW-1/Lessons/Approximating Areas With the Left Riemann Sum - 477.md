@@ -113,29 +113,61 @@ $$
 
 **Question 1**
 
-> A calculator is required to answer this question.
-
-Estimate the area under the curve $y = (x + 1)^{3} + 1$ over the interval $[- 1, 0]$ using a left Riemann sum with step size $Δx = 0.25$.
-
-- [ ] A. $2.295$
-- [ ] B. $1.141$
-- [ ] C. $3.120$
-- [ ] D. $1.230$
-- [ ] E. $2.160$
+```quiz
+type: radio
+id: q-1
+content: |-
+  > A calculator is required to answer this question.
+  
+  Estimate the area under the curve $y = (x + 1)^{3} + 1$ over the interval $[- 1, 0]$ using a left Riemann sum with step size $Δx = 0.25$.
+options:
+- id: a
+  content: |-
+    $2.295$
+- id: b
+  content: |-
+    $1.141$
+  correct: true
+- id: c
+  content: |-
+    $3.120$
+- id: d
+  content: |-
+    $1.230$
+- id: e
+  content: |-
+    $2.160$
+```
 
 ---
 
 **Question 2**
 
-> A calculator is required to answer this question.
-
-Estimate the area under the curve $y = x^{2}$ over the interval $[- 1, 1]$ using a left Riemann sum with step size $Δx = 0.5$.
-
-- [ ] A. $0.625$
-- [ ] B. $0$
-- [ ] C. $0.75$
-- [ ] D. $0.5$
-- [ ] E. $0.67$
+```quiz
+type: radio
+id: q-2
+content: |-
+  > A calculator is required to answer this question.
+  
+  Estimate the area under the curve $y = x^{2}$ over the interval $[- 1, 1]$ using a left Riemann sum with step size $Δx = 0.5$.
+options:
+- id: a
+  content: |-
+    $0.625$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $0.75$
+  correct: true
+- id: d
+  content: |-
+    $0.5$
+- id: e
+  content: |-
+    $0.67$
+```
 
 ---
 
@@ -182,37 +214,69 @@ $$
 
 **Question 3**
 
-> A calculator is required to answer this question.
-
-The table below gives the values of a continuous function $f(x)$ over the closed interval $[1, 10]$ with a regular step size. If the left Riemann sum approximation of the area under the curve $y = f(x)$ with $3$ subintervals defined by the given points has a value of $45$, then what must be the value of $k$?
-
-| $x$ | $1$ | $4$ | $7$ | $10$ |
-| --- | ---: | ---: | ---: | ---: |
-| $f(x)$ | $-1$ | $k$ | $9$ | $15$ |
-
-- [ ] A. $5$
-- [ ] B. $7$
-- [ ] C. $15$
-- [ ] D. $9$
-- [ ] E. $14$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A calculator is required to answer this question.
+  
+  The table below gives the values of a continuous function $f(x)$ over the closed interval $[1, 10]$ with a regular step size. If the left Riemann sum approximation of the area under the curve $y = f(x)$ with $3$ subintervals defined by the given points has a value of $45$, then what must be the value of $k$?
+  
+  | $x$ | $1$ | $4$ | $7$ | $10$ |
+  | --- | ---: | ---: | ---: | ---: |
+  | $f(x)$ | $-1$ | $k$ | $9$ | $15$ |
+options:
+- id: a
+  content: |-
+    $5$
+- id: b
+  content: |-
+    $7$
+  correct: true
+- id: c
+  content: |-
+    $15$
+- id: d
+  content: |-
+    $9$
+- id: e
+  content: |-
+    $14$
+```
 
 ---
 
 **Question 4**
 
-> A calculator is required to answer this question.
-
-The table below gives the values of a continuous function $f(x)$ over the closed interval $[2, 8]$ with a regular step size. If the left Riemann sum approximation of the area under the curve $y = f(x)$ with $3$ subintervals defined by the given points has a value of $16$, then what must be the value of $k$?
-
-| $x$ | $2$ | $4$ | $6$ | $8$ |
-| --- | ---: | ---: | ---: | ---: |
-| $f(x)$ | $1$ | $3$ | $k$ | $12$ |
-
-- [ ] A. $4$
-- [ ] B. $12$
-- [ ] C. $8$
-- [ ] D. $10$
-- [ ] E. $16$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A calculator is required to answer this question.
+  
+  The table below gives the values of a continuous function $f(x)$ over the closed interval $[2, 8]$ with a regular step size. If the left Riemann sum approximation of the area under the curve $y = f(x)$ with $3$ subintervals defined by the given points has a value of $16$, then what must be the value of $k$?
+  
+  | $x$ | $2$ | $4$ | $6$ | $8$ |
+  | --- | ---: | ---: | ---: | ---: |
+  | $f(x)$ | $1$ | $3$ | $k$ | $12$ |
+options:
+- id: a
+  content: |-
+    $4$
+  correct: true
+- id: b
+  content: |-
+    $12$
+- id: c
+  content: |-
+    $8$
+- id: d
+  content: |-
+    $10$
+- id: e
+  content: |-
+    $16$
+```
 
 ---
 
@@ -245,29 +309,61 @@ Because the function is *decreasing* over the interval $[0,2]$, the rectangles r
 
 **Question 5**
 
-> A calculator is required to answer this question.
-
-A left Riemann sum is used to approximate the area under the curve $y = f(x)$ between $x =-3$ and $x =-1$ for each of the functions below. For which function does the Riemann sum give an *underestimate* of the area?
-
-- [ ] A. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-4.png>)
-- [ ] B. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-1.png>)
-- [ ] C. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-3.png>)
-- [ ] D. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-2.png>)
-- [ ] E. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-5.png>)
+```quiz
+type: radio
+id: ma-49105
+content: |-
+  > A calculator is required to answer this question.
+  
+  A left Riemann sum is used to approximate the area under the curve $y = f(x)$ between $x =-3$ and $x =-1$ for each of the functions below. For which function does the Riemann sum give an *underestimate* of the area?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-4.png>)
+- id: b
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-1.png>)
+  correct: true
+- id: c
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-3.png>)
+- id: d
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-2.png>)
+- id: e
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49105-a-5.png>)
+```
 
 ---
 
 **Question 6**
 
-> A calculator is required to answer this question.
-
-A left Riemann sum is used to approximate the area under the curve $y = f(x)$ between $x =-1$ and $x = 3$ for each of the functions below. For which function does the Riemann sum give an *overestimate* of the area?
-
-- [ ] A. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-5.png>)
-- [ ] B. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-2.png>)
-- [ ] C. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-4.png>)
-- [ ] D. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-3.png>)
-- [ ] E. ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-1.png>)
+```quiz
+type: radio
+id: ma-49109
+content: |-
+  > A calculator is required to answer this question.
+  
+  A left Riemann sum is used to approximate the area under the curve $y = f(x)$ between $x =-1$ and $x = 3$ for each of the functions below. For which function does the Riemann sum give an *overestimate* of the area?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-5.png>)
+- id: b
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-2.png>)
+- id: c
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-4.png>)
+- id: d
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-3.png>)
+- id: e
+  content: |-
+    ![](<../Source/Approximating Areas With the Left Riemann Sum - 477/Images/q-49109-a-1.png>)
+  correct: true
+```
 
 ---
 
@@ -352,41 +448,73 @@ $$
 
 **Question 7**
 
-> A calculator is required to answer this question.
-
-The following table shows some values of a continuous function $f(x)$ over the interval $[0, 70]$.
-
-| $x$ | $0$ | $30$ | $40$ | $50$ | $70$ |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| $f(x)$ | $10$ | $22$ | $30$ | $45$ | $85$ |
-
-Use the left Riemann sum, with the four subintervals indicated by the data, to approximate the value of the area under the curve $y = f(x)$ over the interval $[0, 70]$.
-
-- [ ] A. $3110$
-- [ ] B. $2140$
-- [ ] C. $1720$
-- [ ] D. $1070$
-- [ ] E. $3210$
+```quiz
+type: radio
+id: q-7
+content: |-
+  > A calculator is required to answer this question.
+  
+  The following table shows some values of a continuous function $f(x)$ over the interval $[0, 70]$.
+  
+  | $x$ | $0$ | $30$ | $40$ | $50$ | $70$ |
+  | --- | ---: | ---: | ---: | ---: | ---: |
+  | $f(x)$ | $10$ | $22$ | $30$ | $45$ | $85$ |
+  
+  Use the left Riemann sum, with the four subintervals indicated by the data, to approximate the value of the area under the curve $y = f(x)$ over the interval $[0, 70]$.
+options:
+- id: a
+  content: |-
+    $3110$
+- id: b
+  content: |-
+    $2140$
+- id: c
+  content: |-
+    $1720$
+  correct: true
+- id: d
+  content: |-
+    $1070$
+- id: e
+  content: |-
+    $3210$
+```
 
 ---
 
 **Question 8**
 
-> A calculator is required to answer this question.
-
-The following table shows some values of a continuous function $f(x)$ over the interval $[0, 8]$.
-
-| $x$ | $0$ | $3$ | $5$ | $6$ | $8$ |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| $f(x)$ | $1$ | $5$ | $9$ | $11$ | $15$ |
-
-Use the left Riemann sum, with the four subintervals indicated by the data, to approximate the area under the curve $y = f(x)$ over the interval $[0, 8]$.
-
-- [ ] A. $35$
-- [ ] B. $45$
-- [ ] C. $44$
-- [ ] D. $48$
-- [ ] E. $74$
+```quiz
+type: radio
+id: q-8
+content: |-
+  > A calculator is required to answer this question.
+  
+  The following table shows some values of a continuous function $f(x)$ over the interval $[0, 8]$.
+  
+  | $x$ | $0$ | $3$ | $5$ | $6$ | $8$ |
+  | --- | ---: | ---: | ---: | ---: | ---: |
+  | $f(x)$ | $1$ | $5$ | $9$ | $11$ | $15$ |
+  
+  Use the left Riemann sum, with the four subintervals indicated by the data, to approximate the area under the curve $y = f(x)$ over the interval $[0, 8]$.
+options:
+- id: a
+  content: |-
+    $35$
+- id: b
+  content: |-
+    $45$
+- id: c
+  content: |-
+    $44$
+  correct: true
+- id: d
+  content: |-
+    $48$
+- id: e
+  content: |-
+    $74$
+```
 
 ```update-progress
 ```

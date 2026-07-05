@@ -113,23 +113,59 @@ Since $\mid r \mid < 1$, the sequence converges to $0$.
 
 ---
 
-**Question 1:** Does the sequence $a_{n} = (2(5)^{n})/((-3)^{n})$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+**Question 1:**
 
-- [ ] A. Converges to $\frac{5}{3}$
-- [ ] B. Converges to $2$
-- [ ] C. Converges to $0$
-- [ ] D. Converges to $-\frac{10}{3}$
-- [ ] E. The sequence diverges
+```quiz
+type: radio
+id: q-1
+content: |-
+  Does the sequence $a_{n} = (2(5)^{n})/((-3)^{n})$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+options:
+- id: a
+  content: |-
+    Converges to $\frac{5}{3}$
+- id: b
+  content: |-
+    Converges to $2$
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $-\frac{10}{3}$
+- id: e
+  correct: true
+  content: |-
+    The sequence diverges
+```
 
 ---
 
-**Question 2:** Does the sequence $a_{n} = (5(3)^{n})/(3^{n + 1})$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+**Question 2:**
 
-- [ ] A. The sequence diverges
-- [ ] B. Converges to $\frac{5}{3}$
-- [ ] C. Converges to $-1$
-- [ ] D. Converges to $0$
-- [ ] E. Converges to $3$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Does the sequence $a_{n} = (5(3)^{n})/(3^{n + 1})$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+options:
+- id: a
+  content: |-
+    The sequence diverges
+- id: b
+  correct: true
+  content: |-
+    Converges to $\frac{5}{3}$
+- id: c
+  content: |-
+    Converges to $-1$
+- id: d
+  content: |-
+    Converges to $0$
+- id: e
+  content: |-
+    Converges to $3$
+```
 
 ---
 
@@ -179,23 +215,59 @@ $$
 
 ---
 
-**Question 3:** Consider the geometric sequence $a_{n} = x^{2}(\frac{1}{x})^{n}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+**Question 3:**
 
-- [ ] A. $x \ge \frac{1}{2}$
-- [ ] B. $0 < x \le 1$
-- [ ] C. $x \ge 2$
-- [ ] D. $x > 0$
-- [ ] E. $x \ge 1$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Consider the geometric sequence $a_{n} = x^{2}(\frac{1}{x})^{n}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  content: |-
+    $x \ge \frac{1}{2}$
+- id: b
+  content: |-
+    $0 < x \le 1$
+- id: c
+  content: |-
+    $x \ge 2$
+- id: d
+  content: |-
+    $x > 0$
+- id: e
+  correct: true
+  content: |-
+    $x \ge 1$
+```
 
 ---
 
-**Question 4:** Consider the sequence $a_{n} = x(\frac{x^{2}}{9})^{n}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+**Question 4:**
 
-- [ ] A. $x \ge 9$
-- [ ] B. $0 < x \le 3$
-- [ ] C. $x \ge 3$
-- [ ] D. $0 < x \le 9$
-- [ ] E. $0 < x \le \sqrt{3}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Consider the sequence $a_{n} = x(\frac{x^{2}}{9})^{n}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  content: |-
+    $x \ge 9$
+- id: b
+  correct: true
+  content: |-
+    $0 < x \le 3$
+- id: c
+  content: |-
+    $x \ge 3$
+- id: d
+  content: |-
+    $0 < x \le 9$
+- id: e
+  content: |-
+    $0 < x \le \sqrt{3}$
+```
 
 ---
 
@@ -247,23 +319,59 @@ $$
 
 ---
 
-**Question 5:** Consider the sequence $a_{n} = \frac{x^{n + 6}}{x^{2n + 1}}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+**Question 5:**
 
-- [ ] A. $x > 6$
-- [ ] B. $x > 1$
-- [ ] C. $0 < x \le 1$
-- [ ] D. $x \ge 1$
-- [ ] E. $x \ge 6$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Consider the sequence $a_{n} = \frac{x^{n + 6}}{x^{2n + 1}}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  content: |-
+    $x > 6$
+- id: b
+  content: |-
+    $x > 1$
+- id: c
+  content: |-
+    $0 < x \le 1$
+- id: d
+  correct: true
+  content: |-
+    $x \ge 1$
+- id: e
+  content: |-
+    $x \ge 6$
+```
 
 ---
 
-**Question 6:** Consider the sequence $a_{n} = \frac{x^{2n - 3}}{4^{n}}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+**Question 6:**
 
-- [ ] A. $0 < x \le 2$
-- [ ] B. $x > 0$
-- [ ] C. $0 < x \le \sqrt{2}$
-- [ ] D. $x \ge 2$
-- [ ] E. $0 < x \le 4$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Consider the sequence $a_{n} = \frac{x^{2n - 3}}{4^{n}}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  correct: true
+  content: |-
+    $0 < x \le 2$
+- id: b
+  content: |-
+    $x > 0$
+- id: c
+  content: |-
+    $0 < x \le \sqrt{2}$
+- id: d
+  content: |-
+    $x \ge 2$
+- id: e
+  content: |-
+    $0 < x \le 4$
+```
 
 ```update-progress
 ```

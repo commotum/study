@@ -1,10 +1,10 @@
 # The Difference of Squares Formula
 
-
 <!--
 lesson-id: 2275
 topic-code: MF1.11.1.11
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,8 +15,8 @@ topic-code: MF1.11.1.11
 
 ## Prerequisites
 
-- [Multiplying Binomials](../371/371.md)
-- [The Power of Product Rule for Exponents](../2012/2012.md)
+- [Multiplying Binomials](<11.1.7. Multiplying Binomials.md>)
+- [The Power of Product Rule for Exponents](<../../../4. Exponents & Radicals/4.2. The Rules of Exponents/Lessons/4.2.4. The Power of Product Rule for Exponents.md>)
 
 ---
 
@@ -66,32 +66,27 @@ $$
 
 ---
 
-**Question 1:** What is $(z + 1)(z - 1)$?
+**Question 1:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q001
+id: q-1
 content: |-
   What is $(z + 1)(z - 1)$?
-
 options:
 - id: a
   content: |-
     $z^{2} - 2z - 1$
-
 - id: b
   content: |-
     $z^{2} - 2z + 1$
-
 - id: c
   content: |-
     $z^{2} + 2z + 1$
-
 - id: d
+  correct: true
   content: |-
     $z^{2} - 1$
-  correct: true
-
 - id: e
   content: |-
     $z^{2} + 2z - 1$
@@ -103,33 +98,26 @@ options:
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q002
+id: q-2
 content: |-
-  Expand the following product.
-
-  $(x + \sqrt{6})(x - \sqrt{6}) =$
-
+  Expand the following product.$(x + \sqrt{6})(x - \sqrt{6}) =$
 options:
 - id: a
-  content: |-
-    $x^2 - 6$
   correct: true
-
+  content: |-
+    $x^{2} - 6$
 - id: b
   content: |-
-    $x^2 + 6$
-
+    $x^{2} + 6$
 - id: c
   content: |-
-    $x^2 + 2\sqrt{6}x + 6$
-
+    $x^{2} - 2\sqrt{6}x + 6$
 - id: d
   content: |-
-    $x^2 - 2\sqrt{6}x + 6$
-
+    $x^{2} + 2\sqrt{6}x - 6$
 - id: e
   content: |-
-    $x^2 - \sqrt{6}$
+    $x^{2} - \sqrt{6}$
 ```
 
 ---
@@ -159,63 +147,51 @@ $$
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q003
+id: q-3
 content: |-
-  Expand the following product.
-
-  $(4x + 9)(4x - 9) =$
-
+  Expand the following product.$(4x + 9)(4x - 9) =$
 options:
 - id: a
-  content: |-
-    $16x^2 - 81$
   correct: true
-
+  content: |-
+    $16x^{2} - 81$
 - id: b
   content: |-
-    $16x^2 + 81$
-
+    $16x^{2} + 81$
 - id: c
   content: |-
-    $16x^2 + 72x + 81$
-
+    $8x^{2} - 81$
 - id: d
   content: |-
-    $16x^2 - 72x + 81$
-
+    $16x^{2} - 72x - 81$
 - id: e
   content: |-
-    $8x^2 - 81$
+    $4x^{2} - 81$
 ```
 
 ---
 
-**Question 4:** What is $(3x + 2y)(3x - 2y)$?
+**Question 4:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q004
+id: q-4
 content: |-
   What is $(3x + 2y)(3x - 2y)$?
-
 options:
 - id: a
+  correct: true
   content: |-
     $9x^{2} - 4y^{2}$
-  correct: true
-
 - id: b
   content: |-
     $9x^{2} + 12xy + 4y^{2}$
-
 - id: c
   content: |-
     $9x^{2} + 4y^{2}$
-
 - id: d
   content: |-
     $9x^{2} - 12xy + 4y^{2}$
-
 - id: e
   content: |-
     $9x^{2} + 12xy - 4y^{2}$
@@ -244,32 +220,27 @@ $$
 
 ---
 
-**Question 5:** What is $(c^{2} + d^{3})(c^{2} - d^{3})$?
+**Question 5:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q005
+id: q-5
 content: |-
   What is $(c^{2} + d^{3})(c^{2} - d^{3})$?
-
 options:
 - id: a
   content: |-
     $c^{2} - d^{5}$
-
 - id: b
   content: |-
     $c^{4} + 2c^{2}d^{3} - d^{6}$
-
 - id: c
+  correct: true
   content: |-
     $c^{4} - d^{6}$
-  correct: true
-
 - id: d
   content: |-
     $c^{4} - 2c^{2}d^{3} - d^{6}$
-
 - id: e
   content: |-
     $2c^{2} - 2d^{3}$
@@ -277,32 +248,27 @@ options:
 
 ---
 
-**Question 6:** What is $(3x^{2} - 2y)(3x^{2} + 2y)$?
+**Question 6:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q006
+id: q-6
 content: |-
   What is $(3x^{2} - 2y)(3x^{2} + 2y)$?
-
 options:
 - id: a
   content: |-
     $9x^{4} - 12x^{2}y - 4y^{2}$
-
 - id: b
   content: |-
     $9x^{4} + 12x^{2}y - 4y^{2}$
-
 - id: c
+  correct: true
   content: |-
     $9x^{4} - 4y^{2}$
-  correct: true
-
 - id: d
   content: |-
     $9x^{4} + 4y^{2}$
-
 - id: e
   content: |-
     $9x^{4} + 6x^{2}y - 4y^{2}$
@@ -336,32 +302,27 @@ $$
 
 ---
 
-**Question 7:** What is $(x^{n} + 5)(x^{n} - 5)$?
+**Question 7:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q007
+id: q-7
 content: |-
   What is $(x^{n} + 5)(x^{n} - 5)$?
-
 options:
 - id: a
   content: |-
     $x^{n} - 25$
-
 - id: b
+  correct: true
   content: |-
     $x^{2n} - 25$
-  correct: true
-
 - id: c
   content: |-
     $x^{2n} + 25$
-
 - id: d
   content: |-
     $x^{2n} - 10x^{n} - 25$
-
 - id: e
   content: |-
     $x^{n} - 5$
@@ -369,45 +330,34 @@ options:
 
 ---
 
-**Question 8:** What is $(x^{n} + 3y^{n})(x^{n} - 3y^{n})$?
+**Question 8:**
 
 ```quiz
 type: radio
-id: MA253-WHW1-2275-q008
+id: q-8
 content: |-
   What is $(x^{n} + 3y^{n})(x^{n} - 3y^{n})$?
-
 options:
 - id: a
+  correct: true
   content: |-
     $x^{2n} - 9y^{2n}$
-  correct: true
-
 - id: b
   content: |-
     $x^{2n} + 6x^{n}y^{n} - 9y^{2n}$
-
 - id: c
   content: |-
     $x^{2n} + 9y^{2n}$
-
 - id: d
   content: |-
     $x^{2n} + 3x^{n}y^{n} - 9y^{2n}$
-
 - id: e
   content: |-
     $x^{2n} - 6x^{n}y^{n} - 9y^{2n}$
 ```
----
-
-## Navigation
-
-- [Next: Factoring Differences of Squares](<253/M-1/UQ-1/Prerequisites/Factoring Differences of Squares - 370.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF1/Home|Home]]
+[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]

@@ -2,7 +2,7 @@
 
 <!--
 lesson-id: 1060
-topic-code: MF2.6.1.6
+topic-code: MF3.10.5.1
 -->
 
 ## Table of Contents
@@ -13,7 +13,7 @@ topic-code: MF2.6.1.6
 
 ## Prerequisites
 
-- [Advanced Rational Equations](<../../6.2. Rational Equations/Lessons/6.2.2. Advanced Rational Equations.md>)
+- [Advanced Rational Equations](<../../../../PCL/2. Rational Functions/2.1. Rational Expressions and Equations/Lessons/2.1.4. Advanced Rational Equations.md>)
 
 ---
 
@@ -155,29 +155,61 @@ $$
 
 **Question 1**
 
-> A calculator is required to answer this question.
-
-Express $(4x + 13)/((3 - 5x)(2x + 1))$ as a sum of partial fractions.
-
-- [ ] A. $- (8)/((3 - 5x)) + (2)/((2x + 1))$
-- [ ] B. $(12)/((3 - 5x)) + (4)/((2x + 1))$
-- [ ] C. $(7)/((3 - 5x)) + (2)/((2x + 1))$
-- [ ] D. $- (3)/((3 - 5x)) + (1)/((2x + 1))$
-- [ ] E. $(3)/((3 - 5x)) + (4)/((2x + 1))$
+```quiz
+type: radio
+id: q-1
+content: |-
+  > A calculator is required to answer this question.
+  
+  Express $(4x + 13)/((3 - 5x)(2x + 1))$ as a sum of partial fractions.
+options:
+- id: a
+  content: |-
+    $- (8)/((3 - 5x)) + (2)/((2x + 1))$
+- id: b
+  content: |-
+    $(12)/((3 - 5x)) + (4)/((2x + 1))$
+- id: c
+  content: |-
+    $(7)/((3 - 5x)) + (2)/((2x + 1))$
+  correct: true
+- id: d
+  content: |-
+    $- (3)/((3 - 5x)) + (1)/((2x + 1))$
+- id: e
+  content: |-
+    $(3)/((3 - 5x)) + (4)/((2x + 1))$
+```
 
 ---
 
 **Question 2**
 
-> A calculator is required to answer this question.
-
-Express $(11x + 46)/((x + 2)(x + 8))$ as a sum of partial fractions.
-
-- [ ] A. $- (2)/((x + 2)) + (5)/((x + 8))$
-- [ ] B. $(4)/((x + 2)) + (7)/((x + 8))$
-- [ ] C. $- (3)/((x + 2)) - (2)/((x + 8))$
-- [ ] D. $(6)/((x + 2)) - (5)/((x + 8))$
-- [ ] E. $(7)/((x + 2)) + (1)/((x + 8))$
+```quiz
+type: radio
+id: q-2
+content: |-
+  > A calculator is required to answer this question.
+  
+  Express $(11x + 46)/((x + 2)(x + 8))$ as a sum of partial fractions.
+options:
+- id: a
+  content: |-
+    $- (2)/((x + 2)) + (5)/((x + 8))$
+- id: b
+  content: |-
+    $(4)/((x + 2)) + (7)/((x + 8))$
+  correct: true
+- id: c
+  content: |-
+    $- (3)/((x + 2)) - (2)/((x + 8))$
+- id: d
+  content: |-
+    $(6)/((x + 2)) - (5)/((x + 8))$
+- id: e
+  content: |-
+    $(7)/((x + 2)) + (1)/((x + 8))$
+```
 
 ---
 
@@ -240,32 +272,64 @@ $$
 
 **Question 3**
 
-> A calculator is required to answer this question.
-
-Express $(16x^{2} + 55x + 19)/((2x + 1)(x + 5)(x + 1))$ as a sum of partial fractions.
-
-- [ ] A. $- (4)/((2x + 1)) + (7)/((x + 5)) + (4)/((x + 1))$
-- [ ] B. $- (1)/((2x + 1)) + (6)/((x + 5)) - (3)/((x + 1))$
-- [ ] C. $(1)/((2x + 1)) + (3)/((x + 5)) - (2)/((x + 1))$
-- [ ] D. $- (2)/((2x + 1)) + (4)/((x + 5)) + (5)/((x + 1))$
-- [ ] E. $(6)/((2x + 1)) + (2)/((x + 5)) - (11)/((x + 1))$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A calculator is required to answer this question.
+  
+  Express $(16x^{2} + 55x + 19)/((2x + 1)(x + 5)(x + 1))$ as a sum of partial fractions.
+options:
+- id: a
+  content: |-
+    $- (4)/((2x + 1)) + (7)/((x + 5)) + (4)/((x + 1))$
+- id: b
+  content: |-
+    $- (1)/((2x + 1)) + (6)/((x + 5)) - (3)/((x + 1))$
+- id: c
+  content: |-
+    $(1)/((2x + 1)) + (3)/((x + 5)) - (2)/((x + 1))$
+- id: d
+  content: |-
+    $- (2)/((2x + 1)) + (4)/((x + 5)) + (5)/((x + 1))$
+  correct: true
+- id: e
+  content: |-
+    $(6)/((2x + 1)) + (2)/((x + 5)) - (11)/((x + 1))$
+```
 
 ---
 
 **Question 4**
 
-> A calculator is required to answer this question.
-
-Express $(-2x^{2} + 21x + 41)/((x + 1)(2 - x)(x + 3))$ as a sum of partial fractions.
-
-- [ ] A. $(3)/((x + 1)) + (5)/((2 - x)) + (4)/((x + 3))$
-- [ ] B. $(8)/((x + 1)) + (1)/((2 - x)) + (2)/((x + 3))$
-- [ ] C. $(4)/((x + 1)) - (6)/((2 - x)) - (7)/((x + 3))$
-- [ ] D. $(2)/((x + 1)) - (1)/((2 - x)) - (3)/((x + 3))$
-- [ ] E. $(3)/((x + 1)) - (2)/((2 - x)) + (6)/((x + 3))$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A calculator is required to answer this question.
+  
+  Express $(-2x^{2} + 21x + 41)/((x + 1)(2 - x)(x + 3))$ as a sum of partial fractions.
+options:
+- id: a
+  content: |-
+    $(3)/((x + 1)) + (5)/((2 - x)) + (4)/((x + 3))$
+  correct: true
+- id: b
+  content: |-
+    $(8)/((x + 1)) + (1)/((2 - x)) + (2)/((x + 3))$
+- id: c
+  content: |-
+    $(4)/((x + 1)) - (6)/((2 - x)) - (7)/((x + 3))$
+- id: d
+  content: |-
+    $(2)/((x + 1)) - (1)/((2 - x)) - (3)/((x + 3))$
+- id: e
+  content: |-
+    $(3)/((x + 1)) - (2)/((2 - x)) + (6)/((x + 3))$
+```
 
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

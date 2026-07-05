@@ -95,29 +95,67 @@ $$
 
 ---
 
-**Question 1:** Given that
-$∑_(i = 1)^(17)a_{i} = 125$,
-find the value of
-$∑_(i = 1)^(17)4a_{i}$.
+**Question 1:**
 
-- [ ] A. $3125$
-- [ ] B. $(125)^{3}$
-- [ ] C. $500$
-- [ ] D. $600$
-- [ ] E. $400$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Given that
+  
+  $∑_(i = 1)^(17)a_{i} = 125$,
+  find the value of
+  $∑_(i = 1)^(17)4a_{i}$.
+options:
+- id: a
+  content: |-
+    $3125$
+- id: b
+  content: |-
+    $(125)^{3}$
+- id: c
+  correct: true
+  content: |-
+    $500$
+- id: d
+  content: |-
+    $600$
+- id: e
+  content: |-
+    $400$
+```
 
 ---
 
-**Question 2:** Given that
-$∑_(i = 1)^(10)a_{i} = 12$,
-find the value of
-$∑_(i = 1)^(10)(-3a_{i})$.
+**Question 2:**
 
-- [ ] A. $-36$
-- [ ] B. $-30$
-- [ ] C. $-26$
-- [ ] D. $-9$
-- [ ] E. $-120$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Given that
+  
+  $∑_(i = 1)^(10)a_{i} = 12$,
+  find the value of
+  $∑_(i = 1)^(10)(-3a_{i})$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $-36$
+- id: b
+  content: |-
+    $-30$
+- id: c
+  content: |-
+    $-26$
+- id: d
+  content: |-
+    $-9$
+- id: e
+  content: |-
+    $-120$
+```
 
 ---
 
@@ -188,18 +226,59 @@ $$
 
 **Question 3**
 
-$∑_(i = 1)^(43)1 =$ $\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is the value of $∑_(i = 1)^(43)1$?
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  content: |-
+    $42$
+- id: c
+  correct: true
+  content: |-
+    $43$
+- id: d
+  content: |-
+    $44$
+- id: e
+  content: |-
+    $86$
+```
 
 ---
 
-**Question 4:** Evaluate
-$∑_(i = 1)^(12)7$.
+**Question 4:**
 
-- [ ] A. $12^{7}$
-- [ ] B. $84$
-- [ ] C. $98$
-- [ ] D. $70$
-- [ ] E. $19$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Evaluate
+  
+  $∑_(i = 1)^(12)7$.
+options:
+- id: a
+  content: |-
+    $12^{7}$
+- id: b
+  correct: true
+  content: |-
+    $84$
+- id: c
+  content: |-
+    $98$
+- id: d
+  content: |-
+    $70$
+- id: e
+  content: |-
+    $19$
+```
 
 ---
 
@@ -292,23 +371,63 @@ $$
 
 **Question 5**
 
-If $∑_(i = 1)^(51)a_{i} = 2$ and $∑_(i = 1)^(51)b_{i} =-5$, then$∑_(i = 1)^(51)(a_{i} + b_{i}) =$
-$\underline{\hspace{1.5cm}}$.
+```quiz
+type: radio
+id: q-5
+content: |-
+  If $∑_(i = 1)^(51)a_{i} = 2$ and $∑_(i = 1)^(51)b_{i} =-5$, then$∑_(i = 1)^(51)(a_{i} + b_{i}) =$
+options:
+- id: a
+  content: |-
+    $7$
+- id: b
+  content: |-
+    $3$
+- id: c
+  correct: true
+  content: |-
+    $-3$
+- id: d
+  content: |-
+    $-7$
+- id: e
+  content: |-
+    $-10$
+```
 
 ---
 
-**Question 6:** Given that
-$∑_(i = 1)^(24)a_{i} =-3$
-and
-$∑_(i = 1)^(24)b_{i} =-10$,
-find the value of
-$∑_(i = 1)^(24)(4a_{i} + 3b_{i})$.
+**Question 6:**
 
-- [ ] A. $-24$
-- [ ] B. $-13$
-- [ ] C. $-48$
-- [ ] D. $-49$
-- [ ] E. $-42$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given that
+  
+  $∑_(i = 1)^(24)a_{i} =-3$
+  and
+  $∑_(i = 1)^(24)b_{i} =-10$,
+  find the value of
+  $∑_(i = 1)^(24)(4a_{i} + 3b_{i})$.
+options:
+- id: a
+  content: |-
+    $-24$
+- id: b
+  content: |-
+    $-13$
+- id: c
+  content: |-
+    $-48$
+- id: d
+  content: |-
+    $-49$
+- id: e
+  correct: true
+  content: |-
+    $-42$
+```
 
 ```update-progress
 ```

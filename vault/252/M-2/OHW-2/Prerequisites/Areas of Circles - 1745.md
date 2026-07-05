@@ -79,27 +79,61 @@ $$
 
 ---
 
-**Question 1:** What is the area of a circle that has a radius of $\sqrt{3}m$?
+**Question 1:**
 
-- [ ] A. $2\sqrt{3}m^{2}$
-- [ ] B. $3πm^{2}$
-- [ ] C. $2\sqrt{3}πm^{2}$
-- [ ] D. $9m^{2}$
-- [ ] E. $6πm^{2}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is the area of a circle that has a radius of $\sqrt{3}m$?
+options:
+- id: a
+  content: |-
+    $2\sqrt{3}m^{2}$
+- id: b
+  content: |-
+    $3πm^{2}$
+  correct: true
+- id: c
+  content: |-
+    $2\sqrt{3}πm^{2}$
+- id: d
+  content: |-
+    $9m^{2}$
+- id: e
+  content: |-
+    $6πm^{2}$
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Areas of Circles - 1745/Images/q-53584.png>)
-
-What is the area of a circle that has a radius of $12cm$?
-
-- [ ] A. $72πcm$
-- [ ] B. $72π^{2}cm^{2}$
-- [ ] C. $12πcm$
-- [ ] D. $12cm^{2}$
-- [ ] E. $144πcm^{2}$
+```quiz
+type: radio
+id: ma-53584
+content: |-
+  ![](<../Source/Areas of Circles - 1745/Images/q-53584.png>)
+  
+  What is the area of a circle that has a radius of $12cm$?
+options:
+- id: a
+  content: |-
+    $72πcm$
+- id: b
+  content: |-
+    $72π^{2}cm^{2}$
+- id: c
+  content: |-
+    $12πcm$
+- id: d
+  content: |-
+    $12cm^{2}$
+- id: e
+  content: |-
+    $144πcm^{2}$
+  correct: true
+```
 
 ---
 
@@ -126,27 +160,61 @@ $$
 
 ---
 
-**Question 3:** What is the area of a circle that has a diameter of $18km$?
+**Question 3:**
 
-- [ ] A. $81km$
-- [ ] B. $3km^{2}$
-- [ ] C. $81πkm^{2}$
-- [ ] D. $9πkm^{2}$
-- [ ] E. $3πkm$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is the area of a circle that has a diameter of $18km$?
+options:
+- id: a
+  content: |-
+    $81km$
+- id: b
+  content: |-
+    $3km^{2}$
+- id: c
+  content: |-
+    $81πkm^{2}$
+  correct: true
+- id: d
+  content: |-
+    $9πkm^{2}$
+- id: e
+  content: |-
+    $3πkm$
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/Areas of Circles - 1745/Images/q-3731.png>)
-
-What is the area of a circle that has a diameter of $6$?
-
-- [ ] A. $3π^{2}$
-- [ ] B. $6π$
-- [ ] C. $6π^{2}$
-- [ ] D. $9π$
-- [ ] E. $3π$
+```quiz
+type: radio
+id: ma-3731
+content: |-
+  ![](<../Source/Areas of Circles - 1745/Images/q-3731.png>)
+  
+  What is the area of a circle that has a diameter of $6$?
+options:
+- id: a
+  content: |-
+    $3π^{2}$
+- id: b
+  content: |-
+    $6π$
+- id: c
+  content: |-
+    $6π^{2}$
+- id: d
+  content: |-
+    $9π$
+  correct: true
+- id: e
+  content: |-
+    $3π$
+```
 
 ---
 
@@ -177,27 +245,61 @@ $$
 
 ---
 
-**Question 5:** What is the diameter of a circle if its area is $16π$?
+**Question 5:**
 
-- [ ] A. $6$
-- [ ] B. $12$
-- [ ] C. $8$
-- [ ] D. $10$
-- [ ] E. $4$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is the diameter of a circle if its area is $16π$?
+options:
+- id: a
+  content: |-
+    $6$
+- id: b
+  content: |-
+    $12$
+- id: c
+  content: |-
+    $8$
+  correct: true
+- id: d
+  content: |-
+    $10$
+- id: e
+  content: |-
+    $4$
+```
 
 ---
 
 **Question 6**
 
-![](<../Source/Areas of Circles - 1745/Images/q-53642.png>)
-
-Given that the area of a circle is $5πcm^{2}$, what is its radius?
-
-- [ ] A. $5cm$
-- [ ] B. $\sqrt{5}πcm$
-- [ ] C. $\sqrt{5}cm$
-- [ ] D. $\frac{5}{2}cm$
-- [ ] E. $\frac{\sqrt{5}}{2}cm$
+```quiz
+type: radio
+id: ma-53642
+content: |-
+  ![](<../Source/Areas of Circles - 1745/Images/q-53642.png>)
+  
+  Given that the area of a circle is $5πcm^{2}$, what is its radius?
+options:
+- id: a
+  content: |-
+    $5cm$
+- id: b
+  content: |-
+    $\sqrt{5}πcm$
+- id: c
+  content: |-
+    $\sqrt{5}cm$
+  correct: true
+- id: d
+  content: |-
+    $\frac{5}{2}cm$
+- id: e
+  content: |-
+    $\frac{\sqrt{5}}{2}cm$
+```
 
 ---
 
@@ -244,29 +346,61 @@ $$
 
 **Question 7**
 
-![](<../Source/Areas of Circles - 1745/Images/q-53639.png>)
-
-The area of the quarter pizza above is $5πin^{2}$, what is the diameter of the pizza?
-
-- [ ] A. $2\sqrt{5}in$
-- [ ] B. $\sqrt{5}in$
-- [ ] C. $2\sqrt{10}in$
-- [ ] D. $4\sqrt{5}in$
-- [ ] E. $4\sqrt{10}in$
+```quiz
+type: radio
+id: ma-53639
+content: |-
+  ![](<../Source/Areas of Circles - 1745/Images/q-53639.png>)
+  
+  The area of the quarter pizza above is $5πin^{2}$, what is the diameter of the pizza?
+options:
+- id: a
+  content: |-
+    $2\sqrt{5}in$
+- id: b
+  content: |-
+    $\sqrt{5}in$
+- id: c
+  content: |-
+    $2\sqrt{10}in$
+- id: d
+  content: |-
+    $4\sqrt{5}in$
+  correct: true
+- id: e
+  content: |-
+    $4\sqrt{10}in$
+```
 
 ---
 
 **Question 8**
 
-![](<../Source/Areas of Circles - 1745/Images/q-53577.png>)
-
-James plans to build a circular swimming pool in his back yard. What is the diameter of the pool if its area is $4πm^{2}$.
-
-- [ ] A. $πm$
-- [ ] B. $2πm$
-- [ ] C. $2m$
-- [ ] D. $4πm$
-- [ ] E. $4m$
+```quiz
+type: radio
+id: ma-53577
+content: |-
+  ![](<../Source/Areas of Circles - 1745/Images/q-53577.png>)
+  
+  James plans to build a circular swimming pool in his back yard. What is the diameter of the pool if its area is $4πm^{2}$.
+options:
+- id: a
+  content: |-
+    $πm$
+- id: b
+  content: |-
+    $2πm$
+- id: c
+  content: |-
+    $2m$
+- id: d
+  content: |-
+    $4πm$
+- id: e
+  content: |-
+    $4m$
+  correct: true
+```
 
 ```update-progress
 ```

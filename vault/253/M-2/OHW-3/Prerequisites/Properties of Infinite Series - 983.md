@@ -101,30 +101,68 @@ $$
 
 ---
 
-**Question 1:** If $∑_(n = 1)^(∞)a_{n} = 1$ and
-$∑_(n = 1)^(∞)b_{n} = 5$,
-then calculate
-$∑_(n = 1)^(∞)2a_{n} + ∑_(n = 1)^(∞)6b_{n}$.
+**Question 1:**
 
-- [ ] A. $30$
-- [ ] B. $15$
-- [ ] C. $32$
-- [ ] D. $34$
-- [ ] E. $8$
+```quiz
+type: radio
+id: q-1
+content: |-
+  If $∑_(n = 1)^(∞)a_{n} = 1$ and
+  
+  $∑_(n = 1)^(∞)b_{n} = 5$,
+  then calculate
+  $∑_(n = 1)^(∞)2a_{n} + ∑_(n = 1)^(∞)6b_{n}$.
+options:
+- id: a
+  content: |-
+    $30$
+- id: b
+  content: |-
+    $15$
+- id: c
+  correct: true
+  content: |-
+    $32$
+- id: d
+  content: |-
+    $34$
+- id: e
+  content: |-
+    $8$
+```
 
 ---
 
-**Question 2:** If $∑_(n = 1)^(∞)a_{n} = 2$,
-$∑_(n = 1)^(∞)b_{n} =-2$ and
-$∑_(n = 1)^(∞)c_{n} =-1$,
-then calculate
-$∑_(n = 1)^(∞)2.5a_{n} - ∑_(n = 1)^(∞)0.5b_{n} + ∑_(n = 1)^(∞)2c_{n}$.
+**Question 2:**
 
-- [ ] A. $-4$
-- [ ] B. $16$
-- [ ] C. $21$
-- [ ] D. $-10$
-- [ ] E. $4$
+```quiz
+type: radio
+id: q-2
+content: |-
+  If $∑_(n = 1)^(∞)a_{n} = 2$,
+  
+  $∑_(n = 1)^(∞)b_{n} =-2$ and
+  $∑_(n = 1)^(∞)c_{n} =-1$,
+  then calculate
+  $∑_(n = 1)^(∞)2.5a_{n} - ∑_(n = 1)^(∞)0.5b_{n} + ∑_(n = 1)^(∞)2c_{n}$.
+options:
+- id: a
+  content: |-
+    $-4$
+- id: b
+  content: |-
+    $16$
+- id: c
+  content: |-
+    $21$
+- id: d
+  content: |-
+    $-10$
+- id: e
+  correct: true
+  content: |-
+    $4$
+```
 
 ---
 
@@ -169,23 +207,59 @@ is convergent for $K > 0$.
 
 ---
 
-**Question 3:** Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, determine all real values of $K$ for which $(K - 2) \cdot ∑_(n = 1)^(∞)a_{n}$ is convergent.
+**Question 3:**
 
-- [ ] A. The series is convergent for all $K$
-- [ ] B. $K < 2$
-- [ ] C. $K \ne 2$
-- [ ] D. $\mid K - 2 \mid < 1$
-- [ ] E. $\mid K \mid < 2$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, determine all real values of $K$ for which $(K - 2) \cdot ∑_(n = 1)^(∞)a_{n}$ is convergent.
+options:
+- id: a
+  correct: true
+  content: |-
+    The series is convergent for all $K$
+- id: b
+  content: |-
+    $K < 2$
+- id: c
+  content: |-
+    $K \ne 2$
+- id: d
+  content: |-
+    $\mid K - 2 \mid < 1$
+- id: e
+  content: |-
+    $\mid K \mid < 2$
+```
 
 ---
 
-**Question 4:** Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, determine all real values of $K$ for which $\frac{1}{K} \cdot ∑_(n = 1)^(∞)a_{n}$ is convergent.
+**Question 4:**
 
-- [ ] A. $K < 1$
-- [ ] B. $\mid K \mid > 1$
-- [ ] C. $K \ne 0$
-- [ ] D. The series is convergent for all $K$
-- [ ] E. $0 < \mid K \mid < 1$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, determine all real values of $K$ for which $\frac{1}{K} \cdot ∑_(n = 1)^(∞)a_{n}$ is convergent.
+options:
+- id: a
+  content: |-
+    $K < 1$
+- id: b
+  content: |-
+    $\mid K \mid > 1$
+- id: c
+  correct: true
+  content: |-
+    $K \ne 0$
+- id: d
+  content: |-
+    The series is convergent for all $K$
+- id: e
+  content: |-
+    $0 < \mid K \mid < 1$
+```
 
 ---
 
@@ -217,23 +291,59 @@ $$
 
 ---
 
-**Question 5:** Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, determine all real values of $K$ for which $∑_(n = 1)^(∞)(K - 3) \cdot a_{n}$ is divergent.
+**Question 5:**
 
-- [ ] A. $K = 3$
-- [ ] B. The series is divergent for all $K$
-- [ ] C. $\mid K \mid > 3$
-- [ ] D. $K \ne 3$
-- [ ] E. $0 < \mid K \mid < 1$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, determine all real values of $K$ for which $∑_(n = 1)^(∞)(K - 3) \cdot a_{n}$ is divergent.
+options:
+- id: a
+  content: |-
+    $K = 3$
+- id: b
+  content: |-
+    The series is divergent for all $K$
+- id: c
+  content: |-
+    $\mid K \mid > 3$
+- id: d
+  correct: true
+  content: |-
+    $K \ne 3$
+- id: e
+  content: |-
+    $0 < \mid K \mid < 1$
+```
 
 ---
 
-**Question 6:** Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, determine all real values of $K$ for which $∑_(n = 1)^(∞)(K + 1) \cdot a_{n}$ is **convergent.**
+**Question 6:**
 
-- [ ] A. $0 < \mid K \mid < 1$
-- [ ] B. $K \ne - 1$
-- [ ] C. $K =-1$
-- [ ] D. $\mid K \mid > 1$
-- [ ] E. The series is divergent for all real $K$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, determine all real values of $K$ for which $∑_(n = 1)^(∞)(K + 1) \cdot a_{n}$ is **convergent.**
+options:
+- id: a
+  content: |-
+    $0 < \mid K \mid < 1$
+- id: b
+  content: |-
+    $K \ne - 1$
+- id: c
+  correct: true
+  content: |-
+    $K =-1$
+- id: d
+  content: |-
+    $\mid K \mid > 1$
+- id: e
+  content: |-
+    The series is divergent for all real $K$
+```
 
 ```update-progress
 ```

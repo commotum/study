@@ -123,23 +123,59 @@ $$
 
 ---
 
-**Question 1:** Determine the horizontal asymptote of the function $f(x) = \frac{3x^{2} - x}{x^{2} + 4}$.
+**Question 1:**
 
-- [ ] A. $y = 2$
-- [ ] B. $y = 0$
-- [ ] C. $y = 3$
-- [ ] D. $y =-2$
-- [ ] E. No horizontal asymptote exist
+```quiz
+type: radio
+id: q-1
+content: |-
+  Determine the horizontal asymptote of the function $f(x) = \frac{3x^{2} - x}{x^{2} + 4}$.
+options:
+- id: a
+  content: |-
+    $y = 2$
+- id: b
+  content: |-
+    $y = 0$
+- id: c
+  correct: true
+  content: |-
+    $y = 3$
+- id: d
+  content: |-
+    $y =-2$
+- id: e
+  content: |-
+    No horizontal asymptote exist
+```
 
 ---
 
-**Question 2:** Determine the horizontal asymptote of the function $f(x) = (2x(x^{3} + 1))/(3x^{4} - 7)$.
+**Question 2:**
 
-- [ ] A. $y = \frac{2}{3}$
-- [ ] B. $y = 3$
-- [ ] C. $y = 2$
-- [ ] D. $y = 1$
-- [ ] E. No horizontal asymptote exist
+```quiz
+type: radio
+id: q-2
+content: |-
+  Determine the horizontal asymptote of the function $f(x) = (2x(x^{3} + 1))/(3x^{4} - 7)$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $y = \frac{2}{3}$
+- id: b
+  content: |-
+    $y = 3$
+- id: c
+  content: |-
+    $y = 2$
+- id: d
+  content: |-
+    $y = 1$
+- id: e
+  content: |-
+    No horizontal asymptote exist
+```
 
 ---
 
@@ -188,33 +224,87 @@ So, the horizontal asymptote is $y = 0$.
 
 ---
 
-**Question 3:** Determine the horizontal asymptote of the function $f(x) = \frac{3 - 4x}{2x^{2} + 1}$.
+**Question 3:**
 
-- [ ] A. $y = 0$
-- [ ] B. $y = 3$
-- [ ] C. $y =-4$
-- [ ] D. $y = 1$
-- [ ] E. $y =-2$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Determine the horizontal asymptote of the function $f(x) = \frac{3 - 4x}{2x^{2} + 1}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $y = 0$
+- id: b
+  content: |-
+    $y = 3$
+- id: c
+  content: |-
+    $y =-4$
+- id: d
+  content: |-
+    $y = 1$
+- id: e
+  content: |-
+    $y =-2$
+```
 
 ---
 
-**Question 4:** Determine the horizontal asymptote of the function $f(x) = \frac{2x + 1}{9x + 8x^{2} - x^{3}}$.
+**Question 4:**
 
-- [ ] A. $y =-\frac{1}{9}$
-- [ ] B. $y = 1$
-- [ ] C. $y = 0$
-- [ ] D. $y =-2$
-- [ ] E. $y = \frac{2}{9}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Determine the horizontal asymptote of the function $f(x) = \frac{2x + 1}{9x + 8x^{2} - x^{3}}$.
+options:
+- id: a
+  content: |-
+    $y =-\frac{1}{9}$
+- id: b
+  content: |-
+    $y = 1$
+- id: c
+  correct: true
+  content: |-
+    $y = 0$
+- id: d
+  content: |-
+    $y =-2$
+- id: e
+  content: |-
+    $y = \frac{2}{9}$
+```
 
 ---
 
-**Question 5:** Determine the horizontal asymptote of the function $f(x) = (7x^{2} + 4)/(x(3x^{2} + 12))$.
+**Question 5:**
 
-- [ ] A. $y = \frac{7}{3}$
-- [ ] B. $y = 0$
-- [ ] C. $y = 7$
-- [ ] D. No horizontal asymptotes
-- [ ] E. $y = \frac{1}{4}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Determine the horizontal asymptote of the function $f(x) = (7x^{2} + 4)/(x(3x^{2} + 12))$.
+options:
+- id: a
+  content: |-
+    $y = \frac{7}{3}$
+- id: b
+  correct: true
+  content: |-
+    $y = 0$
+- id: c
+  content: |-
+    $y = 7$
+- id: d
+  content: |-
+    No horizontal asymptotes
+- id: e
+  content: |-
+    $y = \frac{1}{4}$
+```
 
 ---
 
@@ -257,23 +347,59 @@ This is not a constant, which means that $y = f(x)$ does not have a horizontal a
 
 ---
 
-**Question 6:** Determine the horizontal asymptote of $f(x) = \frac{x^{3} + 3}{4x^{2} - 6x}$.
+**Question 6:**
 
-- [ ] A. $y = 0$
-- [ ] B. No horizontal asymptotes
-- [ ] C. $y = \frac{1}{4}$
-- [ ] D. $y =-\frac{3}{4}$
-- [ ] E. $y =-1$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Determine the horizontal asymptote of $f(x) = \frac{x^{3} + 3}{4x^{2} - 6x}$.
+options:
+- id: a
+  content: |-
+    $y = 0$
+- id: b
+  correct: true
+  content: |-
+    No horizontal asymptotes
+- id: c
+  content: |-
+    $y = \frac{1}{4}$
+- id: d
+  content: |-
+    $y =-\frac{3}{4}$
+- id: e
+  content: |-
+    $y =-1$
+```
 
 ---
 
-**Question 7:** Determine the horizontal asymptote of $f(x) = (x^{2}(2 - x^{2}))/(x^{3})$.
+**Question 7:**
 
-- [ ] A. $y = 2$
-- [ ] B. $y = 0$
-- [ ] C. $y =-1$
-- [ ] D. $y =-2$
-- [ ] E. No horizontal asymptotes
+```quiz
+type: radio
+id: q-7
+content: |-
+  Determine the horizontal asymptote of $f(x) = (x^{2}(2 - x^{2}))/(x^{3})$.
+options:
+- id: a
+  content: |-
+    $y = 2$
+- id: b
+  content: |-
+    $y = 0$
+- id: c
+  content: |-
+    $y =-1$
+- id: d
+  content: |-
+    $y =-2$
+- id: e
+  correct: true
+  content: |-
+    No horizontal asymptotes
+```
 
 ```update-progress
 ```

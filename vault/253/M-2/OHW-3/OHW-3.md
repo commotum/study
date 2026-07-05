@@ -29,6 +29,7 @@
 - [Further Properties of Infinite Series - 4052](<Lessons/Further Properties of Infinite Series - 4052.md>)
 - [Solving Inequalities Involving Geometric Sequences - 1004](<Lessons/Solving Inequalities Involving Geometric Sequences - 1004.md>)
 - [Convergence of Geometric Series - 684](<Lessons/Convergence of Geometric Series - 684.md>)
+- [Telescoping Series - 1176](<Lessons/Telescoping Series - 1176.md>)
 
 ---
 ## Problem 1

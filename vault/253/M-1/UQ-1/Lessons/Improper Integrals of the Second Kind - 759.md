@@ -1,10 +1,10 @@
 # Improper Integrals of the Second Kind
 
-
 <!--
 lesson-id: 759
 topic-code: MF3.10.6.5
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -17,9 +17,9 @@ topic-code: MF3.10.6.5
 
 ## Prerequisites
 
-- [Integration by Substitution With Inverse Trigonometric Functions](../315/315.md)
-- [Integrating Trigonometric Functions Using Substitution](../478/478.md)
-- [Integrating Exponential Functions Using Substitution](../3770/3770.md)
+- [Integration by Substitution With Inverse Trigonometric Functions](<../../10.1. Integration Using Substitution/Lessons/10.1.10. Integration by Substitution With Inverse Trigonometric Functions.md>)
+- [Integrating Trigonometric Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
+- [Integrating Exponential Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
 
 ---
 
@@ -79,21 +79,15 @@ Therefore, the correct answer is "II only."
 
 ---
 
-**Question 1:**
+**Question 1**
 
 ```quiz
 type: radio
-id: MA253-UQ1-759-q001
+id: q-1
 content: |-
   Which of the following is an improper integral of the second kind?
   
-  $$
-  \begin{aligned}
-  \text{I.}\quad &\int_{2}^{6}\frac{dx}{x} \\
-  \text{II.}\quad &\int_{2}^{6}\frac{dx}{x - 6} \\
-  \text{III.}\quad &\int_{2}^{\infty}\frac{dx}{x - 6}
-  \end{aligned}
-  $$
+  1. $∫_{2}^{6}\frac{dx}{x}$ II. $∫_{2}^{6}\frac{dx}{x - 6}$ III. $∫_{2}^{∞}\frac{dx}{x - 6}$
 options:
 - id: a
   content: |-
@@ -112,23 +106,18 @@ options:
     II only
   correct: true
 ```
+
 ---
 
-**Question 2:**
+**Question 2**
 
 ```quiz
 type: radio
-id: MA253-UQ1-759-q002
+id: q-2
 content: |-
   Which of the following is an improper integral of the second kind?
   
-  $$
-  \begin{aligned}
-  \text{I.}\quad &\int_{\pi/4}^{\infty}\tan x\,dx \\
-  \text{II.}\quad &\int_{0}^{\pi/2}\frac{dx}{1 - \sin x} \\
-  \text{III.}\quad &\int_{\pi/4}^{\pi/2}\csc x\,dx
-  \end{aligned}
-  $$
+  1. $∫_{π/4}^{∞}\tan xdx$ II. $∫_{0}^{π/2}\frac{dx}{1 - \sin x}dx$ III. $∫_{π/4}^{π/2}\csc xdx$
 options:
 - id: a
   content: |-
@@ -147,6 +136,7 @@ options:
   content: |-
     I only
 ```
+
 ---
 
 <a id="improper-integrals-of-the-second-kind-rewriting-the-lower-limit"></a>
@@ -220,60 +210,60 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-759-q003
+id: q-3
 content: |-
-  Which of the following is equivalent to the integral
-  $$
-  \int_{2}^{5}\frac{dx}{\sqrt{x^{2} - 4}}
-  $$
+  Which of the following is equivalent to
+  
+  $∫_{2}^{5}\frac{dx}{\sqrt{x^{2} - 4}}$?
 options:
 - id: a
   content: |-
-    $\lim_{a \to -\infty}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $lim_(a → - ∞)(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: b
   content: |-
-    $\lim_{a \to 4^{+}}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $lim_(a → 4^{+})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: c
   content: |-
-    $\lim_{a \to 5^{-}}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $lim_(a → 5^{-})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: d
   content: |-
-    $\lim_{a \to +\infty}(∫_{2}^{a}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $lim_(a → + ∞)(∫_{2}^{a}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: e
   content: |-
-    $\lim_{a \to 2^{+}}(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
+    $lim_(a → 2^{+})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
   correct: true
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-759-q004
+id: q-4
 content: |-
-  Which of the following is equivalent to the integral
-  $$
-  \int_{-6}^{-3}\frac{dx}{\sqrt{x^{2} - 9}}
-  $$
+  Which of the following is equivalent to
+  
+  $∫_{-6}^{-3}\frac{dx}{\sqrt{x^{2} - 9}}$?
 options:
 - id: a
   content: |-
-    $\lim_{b \to \infty}(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $lim_(b → ∞)(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: b
   content: |-
-    $\lim_{b \to 3^{-}}(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $lim_(b → 3^{-})(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: c
   content: |-
-    $\lim_{b \to (-3)^{-}}(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $lim_(b → (-3)^{-})(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
   correct: true
 - id: d
   content: |-
-    $\lim_{b \to (-6)^{+}}(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $lim_(b → (-6)^{+})(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: e
   content: |-
-    $\lim_{b \to -\infty}(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
+    $lim_(b → - ∞)(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 ```
+
 ---
 
 <a id="evaluating-improper-integrals-of-the-second-kind"></a>
@@ -297,11 +287,11 @@ Nonetheless, it is possible to evaluate the integral by setting the upper bound 
 
 $$
 \begin{aligned}
-∫_{0}^{1}\frac{1}{\sqrt{1 - x^{2}}}dx &= \lim_{b \to 1^{-}}∫_{0}^{b}\frac{1}{\sqrt{1 - x^{2}}}dx \\
-&= \lim_{b \to 1^{-}}\arcsin x \mid _{0}^{b} \\
-&= \lim_{b \to 1^{-}}[\arcsin b - \arcsin 0] \\
-&= \lim_{b \to 1^{-}}[\arcsin b - 0] \\
-&= \lim_{b \to 1^{-}}\arcsin b \\
+∫_{0}^{1}\frac{1}{\sqrt{1 - x^{2}}}dx &= lim_(b → 1^{-})∫_{0}^{b}\frac{1}{\sqrt{1 - x^{2}}}dx \\
+&= lim_(b → 1^{-})\arcsin x \mid _{0}^{b} \\
+&= lim_(b → 1^{-})[\arcsin b - \arcsin 0] \\
+&= lim_(b → 1^{-})[\arcsin b - 0] \\
+&= lim_(b → 1^{-})\arcsin b \\
 &= \arcsin (1) \\
 &= \frac{π}{2}
 \end{aligned}
@@ -358,10 +348,10 @@ Nonetheless, it is possible to calculate the integral by setting the *lower* bou
 
 $$
 \begin{aligned}
-∫_{0}^{1}\frac{du}{u} &= \lim_{a \to 0^{+}}∫_{a}^{1}\frac{du}{u} \\
-&= \lim_{a \to 0^{+}}\ln \mid u \mid \mid _{a}^{1} \\
-&= \lim_{a \to 0^{+}}[\ln\begin{vmatrix}1 & -\ln & a\end{vmatrix}] \\
-&= \lim_{a \to 0^{+}}[0 - \ln \mid a \mid ] \\
+∫_{0}^{1}\frac{du}{u} &= lim_(a → 0^{+})∫_{a}^{1}\frac{du}{u} \\
+&= lim_(a → 0^{+})\ln \mid u \mid \mid _{a}^{1} \\
+&= lim_(a → 0^{+})[\ln\begin{vmatrix}1 & -\ln & a\end{vmatrix}] \\
+&= lim_(a → 0^{+})[0 - \ln \mid a \mid ] \\
 &= - (- ∞) \\
 &= ∞
 \end{aligned}
@@ -375,12 +365,9 @@ Therefore, we conclude that the integral is divergent.
 
 ```quiz
 type: radio
-id: MA253-UQ1-759-q005
+id: q-5
 content: |-
-  Evaluate
-  $$
-  \int_{0}^{16}\frac{1}{\sqrt{x}}\,dx
-  $$
+  What is $∫_{0}^{16}\frac{1}{\sqrt{x}}dx$?
 options:
 - id: a
   content: |-
@@ -399,18 +386,16 @@ options:
   content: |-
     $\frac{1}{4}$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-759-q006
+id: q-6
 content: |-
-  Evaluate
-  $$
-  \int_{1}^{4}\frac{dt}{\sqrt{4 - t}}
-  $$
+  What is $∫_{1}^{4}\frac{dt}{\sqrt{4 - t}}$?
 options:
 - id: a
   content: |-
@@ -429,15 +414,9 @@ options:
   content: |-
     The integral is divergent
 ```
----
-
-## Navigation
-
-- [Next: Calculating Limits of Rational Functions by Factoring](<253/M-1/UQ-1/Prerequisites/Calculating Limits of Rational Functions by Factoring - 1813.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

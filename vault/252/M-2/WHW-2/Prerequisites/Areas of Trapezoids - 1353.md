@@ -92,27 +92,61 @@ $$
 
 ---
 
-**Question 1:** The bases of a trapezoid are $a = 7mm$ and $b = 5mm$. The height is $h = 3mm$. What is the area of the trapezoid?
+**Question 1:**
 
-- [ ] A. $12mm^{2}$
-- [ ] B. $24mm^{2}$
-- [ ] C. $36mm^{2}$
-- [ ] D. $16mm^{2}$
-- [ ] E. $18mm^{2}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  The bases of a trapezoid are $a = 7mm$ and $b = 5mm$. The height is $h = 3mm$. What is the area of the trapezoid?
+options:
+- id: a
+  content: |-
+    $12mm^{2}$
+- id: b
+  content: |-
+    $24mm^{2}$
+- id: c
+  content: |-
+    $36mm^{2}$
+- id: d
+  content: |-
+    $16mm^{2}$
+- id: e
+  correct: true
+  content: |-
+    $18mm^{2}$
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-53231.png>)
-
-Find the area of the trapezoid $ABCD$.
-
-- [ ] A. $280ft^{2}$
-- [ ] B. $360ft^{2}$
-- [ ] C. $540ft^{2}$
-- [ ] D. $300ft^{2}$
-- [ ] E. $400ft^{2}$
+```quiz
+type: radio
+id: ma-53231
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-53231.png>)
+  
+  Find the area of the trapezoid $ABCD$.
+options:
+- id: a
+  content: |-
+    $280ft^{2}$
+- id: b
+  content: |-
+    $360ft^{2}$
+- id: c
+  content: |-
+    $540ft^{2}$
+- id: d
+  correct: true
+  content: |-
+    $300ft^{2}$
+- id: e
+  content: |-
+    $400ft^{2}$
+```
 
 ---
 
@@ -153,29 +187,61 @@ $$
 
 **Question 3**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-53246.png>)
-
-What is the area of the trapezoid $PQRS$?
-
-- [ ] A. $17$
-- [ ] B. $24$
-- [ ] C. $8.5$
-- [ ] D. $18$
-- [ ] E. $34$
+```quiz
+type: radio
+id: ma-53246
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-53246.png>)
+  
+  What is the area of the trapezoid $PQRS$?
+options:
+- id: a
+  content: |-
+    $17$
+- id: b
+  content: |-
+    $24$
+- id: c
+  content: |-
+    $8.5$
+- id: d
+  content: |-
+    $18$
+- id: e
+  correct: true
+  content: |-
+    $34$
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-53181.png>)
-
-What is the area of the trapezoid $PQRS$?
-
-- [ ] A. $10$
-- [ ] B. $8$
-- [ ] C. $9$
-- [ ] D. $18$
-- [ ] E. $16$
+```quiz
+type: radio
+id: ma-53181
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-53181.png>)
+  
+  What is the area of the trapezoid $PQRS$?
+options:
+- id: a
+  content: |-
+    $10$
+- id: b
+  content: |-
+    $8$
+- id: c
+  correct: true
+  content: |-
+    $9$
+- id: d
+  content: |-
+    $18$
+- id: e
+  content: |-
+    $16$
+```
 
 ---
 
@@ -223,29 +289,61 @@ $$
 
 **Question 5**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-53235.png>)
-
-The area of the trapezoid $ABCD$ shown above is $20$ square units. Calculate $x$.
-
-- [ ] A. $3$
-- [ ] B. $2$
-- [ ] C. $1$
-- [ ] D. $5$
-- [ ] E. $4$
+```quiz
+type: radio
+id: ma-53235
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-53235.png>)
+  
+  The area of the trapezoid $ABCD$ shown above is $20$ square units. Calculate $x$.
+options:
+- id: a
+  content: |-
+    $3$
+- id: b
+  correct: true
+  content: |-
+    $2$
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $4$
+```
 
 ---
 
 **Question 6**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-21200.png>)
-
-Find the height $CH$ of the trapezoid $ABCD$ given that its area is $28m^{2}$.
-
-- [ ] A. $4m$
-- [ ] B. $14m$
-- [ ] C. $8m$
-- [ ] D. $10m$
-- [ ] E. $6m$
+```quiz
+type: radio
+id: ma-21200
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-21200.png>)
+  
+  Find the height $CH$ of the trapezoid $ABCD$ given that its area is $28m^{2}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $4m$
+- id: b
+  content: |-
+    $14m$
+- id: c
+  content: |-
+    $8m$
+- id: d
+  content: |-
+    $10m$
+- id: e
+  content: |-
+    $6m$
+```
 
 ---
 
@@ -295,29 +393,61 @@ $$
 
 **Question 7**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-53253.png>)
-
-If the area of the trapezoid $ABCD$ is $19m^{2}$, what is the area of the triangle $△BCE$?
-
-- [ ] A. $5m^{2}$
-- [ ] B. $4m^{2}$
-- [ ] C. $6m^{2}$
-- [ ] D. $2m^{2}$
-- [ ] E. $3m^{2}$
+```quiz
+type: radio
+id: ma-53253
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-53253.png>)
+  
+  If the area of the trapezoid $ABCD$ is $19m^{2}$, what is the area of the triangle $△BCE$?
+options:
+- id: a
+  content: |-
+    $5m^{2}$
+- id: b
+  correct: true
+  content: |-
+    $4m^{2}$
+- id: c
+  content: |-
+    $6m^{2}$
+- id: d
+  content: |-
+    $2m^{2}$
+- id: e
+  content: |-
+    $3m^{2}$
+```
 
 ---
 
 **Question 8**
 
-![](<../Source/Areas of Trapezoids - 1353/Images/q-53236.png>)
-
-If the area of the triangle $△ADF$ is $9m^{2}$, what is the area of the trapezoid $ABCD$?
-
-- [ ] A. $21m^{2}$
-- [ ] B. $25m^{2}$
-- [ ] C. $23.5m^{2}$
-- [ ] D. $30m^{2}$
-- [ ] E. $36m^{2}$
+```quiz
+type: radio
+id: ma-53236
+content: |-
+  ![](<../Source/Areas of Trapezoids - 1353/Images/q-53236.png>)
+  
+  If the area of the triangle $△ADF$ is $9m^{2}$, what is the area of the trapezoid $ABCD$?
+options:
+- id: a
+  content: |-
+    $21m^{2}$
+- id: b
+  content: |-
+    $25m^{2}$
+- id: c
+  content: |-
+    $23.5m^{2}$
+- id: d
+  correct: true
+  content: |-
+    $30m^{2}$
+- id: e
+  content: |-
+    $36m^{2}$
+```
 
 ---
 

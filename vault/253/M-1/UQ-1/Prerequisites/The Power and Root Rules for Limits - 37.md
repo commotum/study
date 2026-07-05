@@ -1,10 +1,10 @@
 # The Power and Root Rules for Limits
 
-
 <!--
 lesson-id: 37
 topic-code: MF2.11.2.4
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -17,9 +17,9 @@ topic-code: MF2.11.2.4
 
 ## Prerequisites
 
-- [Evaluating Numerical Expressions Containing Radicals](../589/589.md)
-- [The Product and Quotient Rules for Limits](../1246/1246.md)
-- [Radicals as Fractional Exponents](../2607/2607.md)
+- [Evaluating Numerical Expressions Containing Radicals](<../../../../PAL/3. Exponents & Radicals/3.5. Radicals/Lessons/3.5.6. Evaluating Numerical Expressions Containing Radicals.md>)
+- [The Product and Quotient Rules for Limits](<11.2.3. The Product and Quotient Rules for Limits.md>)
+- [Radicals as Fractional Exponents](<../../../../PAL/3. Exponents & Radicals/3.6. The Rules of Radicals/Lessons/3.6.1. Radicals as Fractional Exponents.md>)
 
 ---
 
@@ -29,20 +29,20 @@ topic-code: MF2.11.2.4
 The **power rule** states that the limit of a power is the power of the limit. More precisely, if $n$ is any positive integer and
 
 $$
-\lim_{x\rightarrow a}f(x)=L
+\lim_\limits{x\rightarrow a}f(x)=L
 $$
 
 then
 
 $$
-\lim_{x \to a}(f(x))^{n} = (\lim_{x \to a}f(x))^{n} = L^{n}
+lim_(x → a)(f(x))^{n} = (lim_(x → a)f(x))^{n} = L^{n}
 $$
 
-For example, with the power rule, we can evaluate a limit like $\lim_{x\rightarrow 2}(3x-4)^{8}$ by evaluating the limit of the expression within parentheses and then taking the power of the result.
+For example, with the power rule, we can evaluate a limit like $\lim_\limits{x\rightarrow 2}(3x-4)^{8}$ by evaluating the limit of the expression within parentheses and then taking the power of the result.
 
 $$
 \begin{aligned}
-\lim_{x \to 2}(3x - 4)^{8} &= (\lim_{x \to 2}(3x - 4))^{8} \\
+lim_(x → 2)(3x - 4)^{8} &= (lim_(x → 2)(3x - 4))^{8} \\
 &= (3 \cdot 2 - 4)^{8} \\
 &= 2^{8} \\
 &= 256
@@ -54,14 +54,14 @@ $$
 <a id="applying-the-power-rule-to-compute-a-limit"></a>
 ## Applying the Power Rule to Compute a Limit
 
-**Example:** Calculate $\lim_{x\rightarrow 3}\left[(2x-1)^3(x-2)^9\right]$.
+**Example:** Calculate $\lim_\limits{x\rightarrow 3}\left[(2x-1)^3(x-2)^9\right]$.
 
 **Explanation**
 
 Here, we apply the product rule and the power rule to get
 
 $$
-\begin{aligned} \lim_{x\rightarrow 3}\left[(2x-1)^3(x-2)^9\right] &= \lim_{x\rightarrow 3}(2x-1)^3\cdot \lim_{x\rightarrow 3}(x-2)^9 \\[3pt] &= \left(\lim_{x\rightarrow 3}(2x-1)\right)^3\cdot \left(\lim_{x\rightarrow 3}(x-2)\right)^9 \\[3pt] &= (2\cdot 3 -1)^3\cdot (3-2)^9 \\[3pt] &= 5^3 \cdot 1^9 \\[3pt] & = 125. \end{aligned}
+\begin{aligned} \lim_\limits{x\rightarrow 3}\left[(2x-1)^3(x-2)^9\right] &= \lim_\limits{x\rightarrow 3}(2x-1)^3\cdot \lim_\limits{x\rightarrow 3}(x-2)^9 \\[3pt] &= \left(\lim_\limits{x\rightarrow 3}(2x-1)\right)^3\cdot \left(\lim_\limits{x\rightarrow 3}(x-2)\right)^9 \\[3pt] &= (2\cdot 3 -1)^3\cdot (3-2)^9 \\[3pt] &= 5^3 \cdot 1^9 \\[3pt] & = 125. \end{aligned}
 $$
 
 ---
@@ -70,9 +70,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q001
+id: q-1
 content: |-
-  Find $\lim_{z \to 3}((z - 5)^{5})/((z + 3)^{2})$.
+  Find $lim_(z → 3)((z - 5)^{5})/((z + 3)^{2})$.
 options:
 - id: a
   content: |-
@@ -91,15 +91,16 @@ options:
   content: |-
     $\frac{4}{9}$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q002
+id: q-2
 content: |-
-  Find $\lim_{y \to 3}(5 - y)^{2}(2y - 5)^{11}$.
+  Find $lim_(y → 3)(5 - y)^{2}(2y - 5)^{11}$.
 options:
 - id: a
   content: |-
@@ -118,28 +119,29 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 <a id="applying-the-power-rule-to-compute-a-limit-given-a-graph"></a>
 ## Applying the Power Rule to Compute a Limit Given a Graph
 
-**Example:** The figure below shows the graph of $f(x)$. Determine $\lim_{x\rightarrow 2} \left(\dfrac{2-7x}{xf(x)+2}\right)^3$.
+**Example:** The figure below shows the graph of $f(x)$. Determine $\lim_\limits{x\rightarrow 2} \left(\dfrac{2-7x}{xf(x)+2}\right)^3$.
 
-![](<253/M-1/UQ-1/Source/The Power and Root Rules for Limits - 37/Images/5b1c62b8a1922eb68b19731dc94a94a8.png>)
+![](<../Source/The Power and Root Rules for Limits - 37/Images/5b1c62b8a1922eb68b19731dc94a94a8.png>)
 
 **Explanation**
 
 From the graph, we find
 
 $$
-\lim_{x\rightarrow 2} f(x)=3
+\lim_\limits{x\rightarrow 2} f(x)=3
 $$
 
 Therefore, using the power rule, we have
 
 $$
 \begin{aligned}
-\lim_{x \to 2}((2 - 7x)/(xf(x) + 2))^{3} &= (\lim_{x \to 2}(2 - 7x)/(xf(x) + 2))^{3} \\
+lim_(x → 2)((2 - 7x)/(xf(x) + 2))^{3} &= (lim_(x → 2)(2 - 7x)/(xf(x) + 2))^{3} \\
 &= ((2 - 7(2))/((2 \cdot 3) + 2))^{3} \\
 &= (\frac{-12}{8})^{3} \\
 &= (\frac{-3}{2})^{3} \\
@@ -149,15 +151,15 @@ $$
 
 ---
 
-**Question 3:**
+**Question 3**
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q003
+id: ma-35616
 content: |-
   ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35616.png>)
   
-  Find $\lim_{x \to 1/2}(2(f(x))^{4})/((6x - 1)^{3})$ for the function $f(x)$ plotted above.
+  Find $lim_(x → 1/2)(2(f(x))^{4})/((6x - 1)^{3})$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -176,17 +178,18 @@ options:
   content: |-
     $64$
 ```
+
 ---
 
-**Question 4:**
+**Question 4**
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q004
+id: ma-35294
 content: |-
   ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35294.png>)
   
-  Find $\lim_{x \to - 1}(5 + 7x)^{3}(f(x) - x)^{4}$ for the function $f(x)$ plotted above.
+  Find $lim_(x → - 1)(5 + 7x)^{3}(f(x) - x)^{4}$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -205,6 +208,7 @@ options:
   content: |-
     $-81$
 ```
+
 ---
 
 <a id="the-root-rule-for-limits"></a>
@@ -215,20 +219,20 @@ The **root rule** states that the limit of a root is the root of the limit (prov
 More precisely, if $n$ is any positive integer and
 
 $$
-\lim_{x\rightarrow a}f(x)=L
+\lim_\limits{x\rightarrow a}f(x)=L
 $$
 
 then
 
 $$
-\lim_{x \to a}\sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a}f(x)} = \sqrt[n]{L}
+lim_(x → a)\sqrt[n]{f(x)} = \sqrt[n]{lim_(x → a)f(x)} = \sqrt[n]{L}
 $$
 
-For example, with the root rule, we can evaluate a limit like $\lim_{x\rightarrow 2}\sqrt{3x-2}$ by evaluating the limit of the expression within the root and then taking the root of the result:
+For example, with the root rule, we can evaluate a limit like $\lim_\limits{x\rightarrow 2}\sqrt{3x-2}$ by evaluating the limit of the expression within the root and then taking the root of the result:
 
 $$
 \begin{aligned}
-\lim_{x \to 2}\sqrt{3x - 2} &= \sqrt{\lim_{x \to 2}(3x - 2)} \\
+lim_(x → 2)\sqrt{3x - 2} &= \sqrt{lim_(x → 2)(3x - 2)} \\
 &= \sqrt{3 \cdot 2 - 2} \\
 &= \sqrt{4} \\
 &= 2
@@ -240,14 +244,14 @@ $$
 <a id="applying-the-root-rule-to-compute-a-limit"></a>
 ## Applying the Root Rule to Compute a Limit
 
-**Example:** Find $\lim_{x \to 1} \dfrac{\sqrt{x+8}}{x-2}$.
+**Example:** Find $\lim_\limits{x \to 1} \dfrac{\sqrt{x+8}}{x-2}$.
 
 **Explanation**
 
 Applying the quotient rule, we get
 
 $$
-\lim_{x\rightarrow 1} \dfrac{\sqrt{x+8}}{x-2} =\dfrac{\lim_{x\rightarrow 1} \sqrt{x+8}}{\lim_{x\rightarrow 1}(x-2)}
+\lim_\limits{x\rightarrow 1} \dfrac{\sqrt{x+8}}{x-2} =\dfrac{\lim_\limits{x\rightarrow 1} \sqrt{x+8}}{\lim_\limits{x\rightarrow 1}(x-2)}
 $$
 
 We calculate the limits of the numerator and denominator, separately.
@@ -256,7 +260,7 @@ Applying the root rule in the numerator, we have
 
 $$
 \begin{aligned}
-\lim_{x \to 1}\sqrt{x + 8} &= \sqrt{\lim_{x \to 1}(x + 8)} \\
+lim_(x → 1)\sqrt{x + 8} &= \sqrt{lim_(x → 1)(x + 8)} \\
 &= \sqrt{1 + 8} \\
 &= \sqrt{9} \\
 &= 3
@@ -267,7 +271,7 @@ For the denominator, we have
 
 $$
 \begin{aligned}
-\lim_{x \to 1}(x - 2) &= 1 - 2 \\
+lim_(x → 1)(x - 2) &= 1 - 2 \\
 &=-1
 \end{aligned}
 $$
@@ -276,7 +280,7 @@ Consequently,
 
 $$
 \begin{aligned}
-\lim_{x \to 1}\frac{\sqrt{x + 8}}{x - 2} &= (3)/((-1)) \\
+lim_(x → 1)\frac{\sqrt{x + 8}}{x - 2} &= (3)/((-1)) \\
 &=-3
 \end{aligned}
 $$
@@ -287,9 +291,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q005
+id: q-5
 content: |-
-  Find $\lim_{x \to 4}\sqrt[3]{\frac{x^{3} - 10}{x^{2} - 3x - 2}}$.
+  Find $lim_(x → 4)\sqrt[3]{\frac{x^{3} - 10}{x^{2} - 3x - 2}}$.
 options:
 - id: a
   content: |-
@@ -308,15 +312,16 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q006
+id: q-6
 content: |-
-  Find $\lim_{x \to 1}\frac{2\sqrt{x + 3}}{5x - 1}$.
+  Find $lim_(x → 1)\frac{2\sqrt{x + 3}}{5x - 1}$.
 options:
 - id: a
   content: |-
@@ -335,6 +340,7 @@ options:
   content: |-
     $\frac{1}{4}$
 ```
+
 ---
 
 <a id="combining-different-rules"></a>
@@ -343,22 +349,22 @@ options:
 If we combine the power rule and the root rule, then we get the following useful generalization: if
 
 $$
-\lim_{x\rightarrow a}f(x)=L
+\lim_\limits{x\rightarrow a}f(x)=L
 $$
 
 then for any fraction $p/q$, we have
 
 $$
-\lim_{x\rightarrow a}\left(f(x)\right)^{p/q} = \left(\lim_{x\rightarrow a} f(x)\right)^{p/q} = L^{p/q}
+\lim_\limits{x\rightarrow a}\left(f(x)\right)^{p/q} = \left(\lim_\limits{x\rightarrow a} f(x)\right)^{p/q} = L^{p/q}
 $$
 
 provided that $L^{p/q}$ exists.
 
-For example, we can evaluate a limit like $\lim_{y\rightarrow 64} y^{-1/6}$ by evaluating the limit of $y$ and then exponentiating the result to the fractional exponent:
+For example, we can evaluate a limit like $\lim_\limits{y\rightarrow 64} y^{-1/6}$ by evaluating the limit of $y$ and then exponentiating the result to the fractional exponent:
 
 $$
 \begin{aligned}
-\lim_{y \to 64}y^{-1/6} &= (\lim_{y \to 64}y)^{-1/6} \\
+lim_(y → 64)y^{-1/6} &= (lim_(y → 64)y)^{-1/6} \\
 &= (64)^{-1/6} \\
 &= (2^{6})^{-1/6} \\
 &= 2^{-1} \\
@@ -371,9 +377,9 @@ $$
 <a id="combining-different-rules-to-compute-a-limit-given-a-graph"></a>
 ## Combining Different Rules to Compute a Limit Given a Graph
 
-**Example:** Find $\lim_{x\rightarrow -2}\left(\dfrac{f(x)}{x^2-1}\right)^{2/3}$ for the function $f(x)$ plotted below.
+**Example:** Find $\lim_\limits{x\rightarrow -2}\left(\dfrac{f(x)}{x^2-1}\right)^{2/3}$ for the function $f(x)$ plotted below.
 
-![](<253/M-1/UQ-1/Source/The Power and Root Rules for Limits - 37/Images/433879c8fc1dc773a81d747ece67c3f0.png>)
+![](<../Source/The Power and Root Rules for Limits - 37/Images/433879c8fc1dc773a81d747ece67c3f0.png>)
 
 **Explanation**
 
@@ -381,21 +387,21 @@ According to the power rule and the quotient rules,
 
 $$
 \begin{aligned}
-\lim_{x \to - 2}((f(x))/(x^{2} - 1))^{2/3} &= ((\lim_{x \to - 2}f(x))/(\lim_{x \to - 2}(x^{2} - 1)))^{2/3}
+lim_(x → - 2)((f(x))/(x^{2} - 1))^{2/3} &= ((lim_(x → - 2)f(x))/(lim_(x → - 2)(x^{2} - 1)))^{2/3}
 \end{aligned}
 $$
 
 We find from the graph that the limit of the numerator is
 
 $$
-\lim_{x\rightarrow -2} f(x)=1
+\lim_\limits{x\rightarrow -2} f(x)=1
 $$
 
 We also calculate the limit of the denominator as
 
 $$
 \begin{aligned}
-\lim_{x \to - 2}(x^{2} - 1) &= (-2)^{2} - 1 = 3
+lim_(x → - 2)(x^{2} - 1) &= (-2)^{2} - 1 = 3
 \end{aligned}
 $$
 
@@ -403,7 +409,7 @@ So we get
 
 $$
 \begin{aligned}
-\lim_{x \to - 2}((f(x))/(x^{2} - 1))^{2/3} &= ((\lim_{x \to - 2}f(x))/(\lim_{x \to - 2}(x^{2} - 1)))^{2/3} \\
+lim_(x → - 2)((f(x))/(x^{2} - 1))^{2/3} &= ((lim_(x → - 2)f(x))/(lim_(x → - 2)(x^{2} - 1)))^{2/3} \\
 &= (\frac{1}{3})^{2/3} \\
 &= \sqrt[3]{\frac{1}{9}}
 \end{aligned}
@@ -411,15 +417,15 @@ $$
 
 ---
 
-**Question 7:**
+**Question 7**
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q007
+id: ma-35644
 content: |-
   ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35644.png>)
   
-  Find $\lim_{x \to 0}\sqrt[3]{6 + 4f(x)}$ for the function $f(x)$ plotted above.
+  Find $lim_(x → 0)\sqrt[3]{6 + 4f(x)}$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -438,17 +444,18 @@ options:
     $2$
   correct: true
 ```
+
 ---
 
-**Question 8:**
+**Question 8**
 
 ```quiz
 type: radio
-id: MA253-UQ1-37-q008
+id: ma-35641
 content: |-
   ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35641.png>)
   
-  Find $\lim_{x \to - 1}\sqrt{10 - 3f(x)}$ for the function $f(x)$ plotted above.
+  Find $lim_(x → - 1)\sqrt{10 - 3f(x)}$ for the function $f(x)$ plotted above.
 options:
 - id: a
   content: |-
@@ -467,15 +474,9 @@ options:
   content: |-
     $DNE$
 ```
----
-
-## Navigation
-
-- [Next: Special Limits Involving Cosine](<Special Limits Involving Cosine - 292.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

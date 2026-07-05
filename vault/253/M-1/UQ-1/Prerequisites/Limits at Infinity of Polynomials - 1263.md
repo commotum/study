@@ -96,23 +96,59 @@ $$
 
 ---
 
-**Question 1:** Given that $p(x) =-5x^{8}$ and $q(x) = \frac{1}{15x^{2}}$, what is $lim_(x → - ∞)(p(x) \cdot q(x))$?
+**Question 1:**
 
-- [ ] A. $-\frac{1}{3}$
-- [ ] B. $∞$
-- [ ] C. $0$
-- [ ] D. $- ∞$
-- [ ] E. $DNE$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Given that $p(x) =-5x^{8}$ and $q(x) = \frac{1}{15x^{2}}$, what is $lim_(x → - ∞)(p(x) \cdot q(x))$?
+options:
+- id: a
+  content: |-
+    $-\frac{1}{3}$
+- id: b
+  content: |-
+    $∞$
+- id: c
+  content: |-
+    $0$
+- id: d
+  correct: true
+  content: |-
+    $- ∞$
+- id: e
+  content: |-
+    $DNE$
+```
 
 ---
 
-**Question 2:** Find $lim_(x → ∞)(-7x^{6})$.
+**Question 2:**
 
-- [ ] A. $∞$
-- [ ] B. $0$
-- [ ] C. $- ∞$
-- [ ] D. $7$
-- [ ] E. $DNE$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Find $lim_(x → ∞)(-7x^{6})$.
+options:
+- id: a
+  content: |-
+    $∞$
+- id: b
+  content: |-
+    $0$
+- id: c
+  correct: true
+  content: |-
+    $- ∞$
+- id: d
+  content: |-
+    $7$
+- id: e
+  content: |-
+    $DNE$
+```
 
 ---
 
@@ -180,25 +216,59 @@ $$
 
 **Question 3**
 
-![](<../Source/Limits at Infinity of Polynomials - 1263/Images/q-35241.png>)
-
-The figure shows the graph of $y = f(x)$. Calculate $lim_(x → - ∞)(xf(x))^{3}$.
-
-- [ ] A. $- ∞$
-- [ ] B. $DNE$
-- [ ] C. $∞$
-- [ ] D. $-27$
-- [ ] E. $-\frac{1}{27}$
+```quiz
+type: radio
+id: ma-35241
+content: |-
+  ![](<../Source/Limits at Infinity of Polynomials - 1263/Images/q-35241.png>)
+  
+  The figure shows the graph of $y = f(x)$. Calculate $lim_(x → - ∞)(xf(x))^{3}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $- ∞$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $∞$
+- id: d
+  content: |-
+    $-27$
+- id: e
+  content: |-
+    $-\frac{1}{27}$
+```
 
 ---
 
-**Question 4:** Evaluate $lim_(x → - ∞)(-\frac{x^{5}}{4})$.
+**Question 4:**
 
-- [ ] A. $∞$
-- [ ] B. $DNE$
-- [ ] C. $0$
-- [ ] D. $- ∞$
-- [ ] E. $\frac{1}{4}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Evaluate $lim_(x → - ∞)(-\frac{x^{5}}{4})$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $∞$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $- ∞$
+- id: e
+  content: |-
+    $\frac{1}{4}$
+```
 
 ---
 
@@ -246,23 +316,59 @@ $$
 
 ---
 
-**Question 5:** Given that $p(x) =-\frac{2}{3x^{4}}$ and $q(x) =-\frac{1}{6x^{3}}$, what is $lim_(x → - ∞)(x \cdot p(x))/(q(x))$?
+**Question 5:**
 
-- [ ] A. $-4$
-- [ ] B. $DNE$
-- [ ] C. $- ∞$
-- [ ] D. $4$
-- [ ] E. $∞$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Given that $p(x) =-\frac{2}{3x^{4}}$ and $q(x) =-\frac{1}{6x^{3}}$, what is $lim_(x → - ∞)(x \cdot p(x))/(q(x))$?
+options:
+- id: a
+  content: |-
+    $-4$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $- ∞$
+- id: d
+  correct: true
+  content: |-
+    $4$
+- id: e
+  content: |-
+    $∞$
+```
 
 ---
 
-**Question 6:** Given that $p(x) =-2x^{5}$ and $q(x) = 4x^{5}$, what is $lim_(x → ∞)(p(x))/(q(x))$?
+**Question 6:**
 
-- [ ] A. $\frac{1}{2}$
-- [ ] B. $2$
-- [ ] C. $1$
-- [ ] D. $-\frac{1}{2}$
-- [ ] E. $-2$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given that $p(x) =-2x^{5}$ and $q(x) = 4x^{5}$, what is $lim_(x → ∞)(p(x))/(q(x))$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{2}$
+- id: b
+  content: |-
+    $2$
+- id: c
+  content: |-
+    $1$
+- id: d
+  correct: true
+  content: |-
+    $-\frac{1}{2}$
+- id: e
+  content: |-
+    $-2$
+```
 
 ---
 
@@ -315,23 +421,59 @@ $$
 
 ---
 
-**Question 7:** Evaluate $lim_(x → - ∞)(5 + 2x - 4x^{3} + 6x^{2})$.
+**Question 7:**
 
-- [ ] A. $DNE$
-- [ ] B. $- ∞$
-- [ ] C. $-4$
-- [ ] D. $∞$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-7
+content: |-
+  Evaluate $lim_(x → - ∞)(5 + 2x - 4x^{3} + 6x^{2})$.
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  content: |-
+    $- ∞$
+- id: c
+  content: |-
+    $-4$
+- id: d
+  correct: true
+  content: |-
+    $∞$
+- id: e
+  content: |-
+    $0$
+```
 
 ---
 
-**Question 8:** Calculate $lim_(x → - ∞)(6x^{3} - x + 6)$.
+**Question 8:**
 
-- [ ] A. $0$
-- [ ] B. $∞$
-- [ ] C. $6$
-- [ ] D. $DNE$
-- [ ] E. $- ∞$
+```quiz
+type: radio
+id: q-8
+content: |-
+  Calculate $lim_(x → - ∞)(6x^{3} - x + 6)$.
+options:
+- id: a
+  content: |-
+    $0$
+- id: b
+  content: |-
+    $∞$
+- id: c
+  content: |-
+    $6$
+- id: d
+  content: |-
+    $DNE$
+- id: e
+  correct: true
+  content: |-
+    $- ∞$
+```
 
 ```update-progress
 ```

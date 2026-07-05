@@ -1,13 +1,13 @@
 ---
 name: match-ma-lesson
-description: Find the Math Academy lesson or lessons that best match a given math problem by using the study repo's global Math Academy topics index, then verifying candidates against the actual examples and questions in the lesson markdown. Use when the user gives a single math problem, assignment problem, or problem excerpt and asks which Math Academy lessons cover the same skills, knowledge, or question type.
+description: Find the Math Academy lesson or lessons that best match a given math problem by using the study repo's Math Academy group/course indices, then verifying candidates against the actual examples and questions in the lesson markdown. Use when the user gives a single math problem, assignment problem, or problem excerpt and asks which Math Academy lessons cover the same skills, knowledge, or question type.
 ---
 
 # Match MA Lesson
 
 ## Overview
 
-Match a given math problem to Math Academy lessons in the study vault. Use the index to find candidate lessons, but choose matches only after inspecting the candidate lesson markdown and comparing its examples/questions to the given problem.
+Match a given math problem to Math Academy lessons in the study vault. Use the scoped indices to find candidate lessons, but choose matches only after inspecting the candidate lesson markdown and comparing its examples/questions to the given problem.
 
 ## Workflow
 
@@ -16,27 +16,33 @@ Match a given math problem to Math Academy lessons in the study vault. Use the i
    - If the user provides a file path, inspect the exact problem text and cite the line number.
    - Keep the problem atomic; do not broaden to nearby assignment problems unless the user asks for a whole assignment.
 
-2. Search the global Math Academy index first.
-   - Use `util/Mathematical-Foundations/topics.csv` as the primary index.
-   - The useful columns are `course`, `topic-number`, `topic-name`, `md-path`, and `src-path`.
+2. Search the scoped Math Academy indices first.
+   - For MTH-252/MTH-253 review matching, start with `vault/MA/Mathematical-Foundations/catalog.csv`.
+   - For MTH-253 sequences, series, integration techniques, and other Calculus II material, also search `vault/MA/Single-Variable-Calculus/catalog.csv` and the course-local `vault/MA/Single-Variable-Calculus/CA2/topics.csv`.
+   - The useful group catalog columns are `layer`, `topic-id`, `topic-code`, `topic-name`, `lesson-path`, and `source-path`.
+   - The useful course topics columns are `topic-id`, `topic-code`, `topic-number`, `topic-name`, `unit`, `module`, `lesson-path`, `source-path`, and `layer`.
+   - Use `layer` for study-order and prerequisite-readiness decisions. Unit/module order is structural navigation, not the study queue order.
+   - In course-local `topics.csv`, `lesson-path` and `source-path` are relative to that course folder. For CA2, prefix them with `vault/MA/Single-Variable-Calculus/CA2/`.
    - Search topic names with the problem's core concepts and synonyms.
    - Prefer `rg` for local search.
 
 ```bash
-rg -n -i "right riemann|riemann sum|definite integral" util/Mathematical-Foundations/topics.csv
+rg -n -i "right riemann|riemann sum|definite integral" vault/MA/Mathematical-Foundations/catalog.csv vault/MA/Single-Variable-Calculus/catalog.csv
+rg -n -i "geometric series|taylor|maclaurin|power series" vault/MA/Single-Variable-Calculus/catalog.csv vault/MA/Single-Variable-Calculus/CA2/topics.csv
 ```
 
 3. Expand the candidate set when the index is too broad or too sparse.
-   - Search lesson markdown under `vault/MA` for exact terms, notation, and distinctive objects from the problem.
+   - Search lesson markdown under the relevant scoped course folders for exact terms, notation, and distinctive objects from the problem.
+   - Use the global `vault/MA/catalog.csv` only as a broad fallback when Mathematical Foundations plus the relevant course/group index is clearly missing the topic.
    - Include prerequisite candidates when the problem requires a separate skill, such as special-angle trig values, exponent rules, factoring, or interpreting a graph.
    - Keep the working candidate list small enough to inspect carefully, usually 5-12 lessons.
 
 ```bash
-rg -n -i "Question|Example|right Riemann|cos" vault/MA/Mathematical-Foundations/MF*/**/Lessons/*.md
+rg -n -i "Question|Example|right Riemann|cos" vault/MA/Mathematical-Foundations/*/**/Lessons/*.md vault/MA/Single-Variable-Calculus/CA2/**/Lessons/*.md
 ```
 
 4. Inspect candidate lesson questions and examples.
-   - Open each candidate `md-path`; only use `src-path` if images, tables, or source assets are needed to understand a prompt.
+   - Open each candidate `lesson-path`; only use `source-path` if images, tables, or source assets are needed to understand a prompt.
    - Search inside each lesson for `**Question`, `**Example`, `Problem`, and the problem's key terms.
    - Read enough surrounding lines to understand the actual question type.
 
@@ -81,7 +87,12 @@ Near misses:
 ## Local Paths
 
 - Study repo root: `/Users/jake/Developer/study`
-- Global MA topics index: `util/Mathematical-Foundations/topics.csv`
+- Primary Mathematical Foundations catalog: `vault/MA/Mathematical-Foundations/catalog.csv`
+- Calculus II course-local topics: `vault/MA/Single-Variable-Calculus/CA2/topics.csv`
+- Single Variable Calculus group catalog: `vault/MA/Single-Variable-Calculus/catalog.csv`
+- Broad fallback catalog: `vault/MA/catalog.csv`
+- Group-local catalogs: `vault/MA/<Group>/catalog.csv`
+- Course-local topics/prerequisites: `vault/MA/<Group>/<Course>/topics.csv` and `vault/MA/<Group>/<Course>/prerequisites.csv`
 - Math Academy vault root: `vault/MA`
 
 If a command is run from another working directory, resolve these paths relative to the study repo root.

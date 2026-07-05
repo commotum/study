@@ -87,29 +87,61 @@ $$
 
 **Question 1**
 
-> A scientific calculator is required to answer this question.
-
-Find the real solution to the equation $x^{5} =-32$.
-
-- [ ] A. $-2$
-- [ ] B. $2$
-- [ ] C. There is no real solution
-- [ ] D. $6$
-- [ ] E. $-6$
+```quiz
+type: radio
+id: q-1
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Find the real solution to the equation $x^{5} =-32$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $-2$
+- id: b
+  content: |-
+    $2$
+- id: c
+  content: |-
+    There is no real solution
+- id: d
+  content: |-
+    $6$
+- id: e
+  content: |-
+    $-6$
+```
 
 ---
 
 **Question 2**
 
-> A scientific calculator is required to answer this question.
-
-Find the real solution to the equation $3x^{3} = 192$.
-
-- [ ] A. $6$
-- [ ] B. $2$
-- [ ] C. $4$
-- [ ] D. $3$
-- [ ] E. $5$
+```quiz
+type: radio
+id: q-2
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Find the real solution to the equation $3x^{3} = 192$.
+options:
+- id: a
+  content: |-
+    $6$
+- id: b
+  content: |-
+    $2$
+- id: c
+  correct: true
+  content: |-
+    $4$
+- id: d
+  content: |-
+    $3$
+- id: e
+  content: |-
+    $5$
+```
 
 ---
 
@@ -149,29 +181,61 @@ Therefore, the solution is $x=8$.
 
 **Question 3**
 
-> A scientific calculator is required to answer this question.
-
-Find the real solution to the equation $(x - 5)^{5} =-32$.
-
-- [ ] A. $-3$
-- [ ] B. $5$
-- [ ] C. $3$
-- [ ] D. $4$
-- [ ] E. $-2$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Find the real solution to the equation $(x - 5)^{5} =-32$.
+options:
+- id: a
+  content: |-
+    $-3$
+- id: b
+  content: |-
+    $5$
+- id: c
+  correct: true
+  content: |-
+    $3$
+- id: d
+  content: |-
+    $4$
+- id: e
+  content: |-
+    $-2$
+```
 
 ---
 
 **Question 4**
 
-> A scientific calculator is required to answer this question.
-
-Find the real solution to the equation $2(x + 4)^{3} = 686$.
-
-- [ ] A. $-7$
-- [ ] B. $-3$
-- [ ] C. $3$
-- [ ] D. $6$
-- [ ] E. $7$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Find the real solution to the equation $2(x + 4)^{3} = 686$.
+options:
+- id: a
+  content: |-
+    $-7$
+- id: b
+  content: |-
+    $-3$
+- id: c
+  correct: true
+  content: |-
+    $3$
+- id: d
+  content: |-
+    $6$
+- id: e
+  content: |-
+    $7$
+```
 
 ```update-progress
 ```

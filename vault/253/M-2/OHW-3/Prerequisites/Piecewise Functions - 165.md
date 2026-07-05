@@ -101,7 +101,6 @@ $g(x)|= 3x; g(3)|= 3(3); = 9$
 ```quiz
 type: radio
 id: ma-7301
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given the following piecewise function $f(x)$, what is $f(3)$?
   $f(x) = {\frac{1}{4}x,\begin{vmatrix}x \le 3 \\ 5,\end{vmatrix}x > 3$
@@ -121,6 +120,7 @@ options:
 - id: e
   content: |-
     $\frac{3}{4}$
+  correct: true
 ```
 
 ---
@@ -130,7 +130,6 @@ options:
 ```quiz
 type: radio
 id: ma-6975
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given the following piecewise function $f(x)$, what is $f(-2)$?
   $f(x) = {2x,\begin{vmatrix}x < 0 \\ x + 3,\end{vmatrix}x \ge 0$
@@ -141,6 +140,7 @@ options:
 - id: b
   content: |-
     $-4$
+  correct: true
 - id: c
   content: |-
     $4$
@@ -179,7 +179,6 @@ Therefore, the graph of the given function is as follows:
 ```quiz
 type: radio
 id: ma-46318
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given that
   $f(x) = {-1,\begin{vmatrix}x < 0 \\ 2,\end{vmatrix}x \ge 0$,
@@ -194,6 +193,7 @@ options:
 - id: c
   content: |-
     ![](<../Source/Piecewise Functions - 165/Images/q-46318-a-1.png>)
+  correct: true
 - id: d
   content: |-
     ![](<../Source/Piecewise Functions - 165/Images/q-46318-a-2.png>)
@@ -209,7 +209,6 @@ options:
 ```quiz
 type: radio
 id: ma-46887
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given that
   $f(x) = {1,\begin{vmatrix}x \le - 2 \\ -1,\end{vmatrix}- 2 < x \le 2; 2, \mid x > 2$,
@@ -230,6 +229,7 @@ options:
 - id: e
   content: |-
     ![](<../Source/Piecewise Functions - 165/Images/q-46887-a-1.png>)
+  correct: true
 ```
 
 ---
@@ -259,7 +259,6 @@ Therefore, the graph of the given function is as follows:
 ```quiz
 type: radio
 id: ma-34540
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Piecewise Functions - 165/Images/q-34540.png>)
   
@@ -268,6 +267,7 @@ options:
 - id: a
   content: |-
     $f(x) = {2,\begin{vmatrix}x \le 0 \\ x + 1,\end{vmatrix}x > 0$
+  correct: true
 - id: b
   content: |-
     $f(x) = {-1,\begin{vmatrix}x \le 0 \\ -x + 3,\end{vmatrix}x > 0$
@@ -289,7 +289,6 @@ options:
 ```quiz
 type: radio
 id: ma-19304
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Piecewise Functions - 165/Images/q-19304.png>)
   
@@ -304,6 +303,7 @@ options:
 - id: c
   content: |-
     $f(x) = {2x + 1,\begin{vmatrix}x \le 1 \\ 2 - 2x,\end{vmatrix}x > 1$
+  correct: true
 - id: d
   content: |-
     The graph is not a function
@@ -343,7 +343,6 @@ Note that the function is defined at the point $x=-1$, even though the function 
 ```quiz
 type: radio
 id: ma-34605
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Piecewise Functions - 165/Images/q-34605.png>)
   
@@ -364,6 +363,7 @@ options:
 - id: e
   content: |-
     $[MATH: (-1, 5]]$
+  correct: true
 ```
 
 ---
@@ -373,7 +373,6 @@ options:
 ```quiz
 type: radio
 id: ma-34612
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Piecewise Functions - 165/Images/q-34612.png>)
   
@@ -382,6 +381,7 @@ options:
 - id: a
   content: |-
     $[MATH: (- ∞,-1)∪(-1, 4]]$
+  correct: true
 - id: b
   content: |-
     $(- ∞,-1)∪(-1, 4)$

@@ -68,23 +68,59 @@ $$
 
 ---
 
-**Question 1:** What is $lim_(x → 7)\log (15x - 5)$?
+**Question 1:**
 
-- [ ] A. $\frac{1}{3}$
-- [ ] B. $7$
-- [ ] C. $DNE$
-- [ ] D. $2$
-- [ ] E. $1$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $lim_(x → 7)\log (15x - 5)$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{3}$
+- id: b
+  content: |-
+    $7$
+- id: c
+  content: |-
+    $DNE$
+- id: d
+  correct: true
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $1$
+```
 
 ---
 
-**Question 2:** What is $lim_(x → 5)\log_{3} (5x + 2)$?
+**Question 2:**
 
-- [ ] A. $DNE$
-- [ ] B. $3$
-- [ ] C. $∞$
-- [ ] D. $5$
-- [ ] E. $- ∞$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $lim_(x → 5)\log_{3} (5x + 2)$?
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  correct: true
+  content: |-
+    $3$
+- id: c
+  content: |-
+    $∞$
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $- ∞$
+```
 
 ---
 
@@ -150,23 +186,59 @@ $$
 
 ---
 
-**Question 3:** What is $lim_(x → ∞)\log_{2} (5 - x)$?
+**Question 3:**
 
-- [ ] A. $10$
-- [ ] B. $- ∞$
-- [ ] C. $DNE$
-- [ ] D. $2$
-- [ ] E. $∞$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $lim_(x → ∞)\log_{2} (5 - x)$?
+options:
+- id: a
+  content: |-
+    $10$
+- id: b
+  content: |-
+    $- ∞$
+- id: c
+  correct: true
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $∞$
+```
 
 ---
 
-**Question 4:** What is $lim_(x → ∞)\log (2x - 4)$?
+**Question 4:**
 
-- [ ] A. $DNE$
-- [ ] B. $∞$
-- [ ] C. $- ∞$
-- [ ] D. $2$
-- [ ] E. $50$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $lim_(x → ∞)\log (2x - 4)$?
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  correct: true
+  content: |-
+    $∞$
+- id: c
+  content: |-
+    $- ∞$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $50$
+```
 
 ---
 
@@ -205,23 +277,59 @@ $$
 
 ---
 
-**Question 5:** What is $lim_(x → 5^{-})\log (5 - x)$?
+**Question 5:**
 
-- [ ] A. $- ∞$
-- [ ] B. $2$
-- [ ] C. $∞$
-- [ ] D. $DNE$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $lim_(x → 5^{-})\log (5 - x)$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $- ∞$
+- id: b
+  content: |-
+    $2$
+- id: c
+  content: |-
+    $∞$
+- id: d
+  content: |-
+    $DNE$
+- id: e
+  content: |-
+    $0$
+```
 
 ---
 
-**Question 6:** Calculate $lim_(x → (-3)^{+})\ln (x + 3)$.
+**Question 6:**
 
-- [ ] A. $- ∞$
-- [ ] B. $DNE$
-- [ ] C. $∞$
-- [ ] D. $0$
-- [ ] E. $3$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Calculate $lim_(x → (-3)^{+})\ln (x + 3)$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $- ∞$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $∞$
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $3$
+```
 
 ---
 
@@ -266,23 +374,59 @@ $$
 
 ---
 
-**Question 7:** Calculate $lim_(x → (-4))\log_{2} (x + 4)$.
+**Question 7:**
 
-- [ ] A. $∞$
-- [ ] B. $DNE$
-- [ ] C. $- ∞$
-- [ ] D. $2$
-- [ ] E. $1$
+```quiz
+type: radio
+id: q-7
+content: |-
+  Calculate $lim_(x → (-4))\log_{2} (x + 4)$.
+options:
+- id: a
+  content: |-
+    $∞$
+- id: b
+  correct: true
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $- ∞$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $1$
+```
 
 ---
 
-**Question 8:** Calculate $lim_(x → 1/2)\ln (2x - 1)$.
+**Question 8:**
 
-- [ ] A. $∞$
-- [ ] B. $DNE$
-- [ ] C. $\frac{1}{2}$
-- [ ] D. $- ∞$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-8
+content: |-
+  Calculate $lim_(x → 1/2)\ln (2x - 1)$.
+options:
+- id: a
+  content: |-
+    $∞$
+- id: b
+  correct: true
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $\frac{1}{2}$
+- id: d
+  content: |-
+    $- ∞$
+- id: e
+  content: |-
+    $0$
+```
 
 ```update-progress
 ```

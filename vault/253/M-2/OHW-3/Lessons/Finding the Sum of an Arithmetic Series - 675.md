@@ -143,31 +143,63 @@ $$
 
 **Question 1**
 
-> A calculator is required to answer this question.
-
-Find the sum of the following arithmetic series.
-$(-5) + (-2) + 1 + 4 + ⋯ + 28$
-
-- [ ] A. $156$
-- [ ] B. $138$
-- [ ] C. $142$
-- [ ] D. $124$
-- [ ] E. $164$
+```quiz
+type: radio
+id: q-1
+content: |-
+  > A calculator is required to answer this question.
+  
+  Find the sum of the following arithmetic series.
+  $(-5) + (-2) + 1 + 4 + ⋯ + 28$
+options:
+- id: a
+  content: |-
+    $156$
+- id: b
+  content: |-
+    $138$
+  correct: true
+- id: c
+  content: |-
+    $142$
+- id: d
+  content: |-
+    $124$
+- id: e
+  content: |-
+    $164$
+```
 
 ---
 
 **Question 2**
 
-> A calculator is required to answer this question.
-
-The following arithmetic series has $11$ terms in total. Find the sum of the series.
-$7 + 15 + 23 + 31 + ⋯ + 87$
-
-- [ ] A. $515$
-- [ ] B. $539$
-- [ ] C. $503$
-- [ ] D. $521$
-- [ ] E. $517$
+```quiz
+type: radio
+id: q-2
+content: |-
+  > A calculator is required to answer this question.
+  
+  The following arithmetic series has $11$ terms in total. Find the sum of the series.
+  $7 + 15 + 23 + 31 + ⋯ + 87$
+options:
+- id: a
+  content: |-
+    $515$
+- id: b
+  content: |-
+    $539$
+- id: c
+  content: |-
+    $503$
+- id: d
+  content: |-
+    $521$
+- id: e
+  content: |-
+    $517$
+  correct: true
+```
 
 ---
 
@@ -213,29 +245,61 @@ $$
 
 **Question 3**
 
-> A calculator is required to answer this question.
-
-Calculate the sum of the arithmetic series $∑_(n = 0)^(10)(9n - 12)$.
-
-- [ ] A. $432$
-- [ ] B. $816$
-- [ ] C. $224$
-- [ ] D. $363$
-- [ ] E. $672$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A calculator is required to answer this question.
+  
+  Calculate the sum of the arithmetic series $∑_(n = 0)^(10)(9n - 12)$.
+options:
+- id: a
+  content: |-
+    $432$
+- id: b
+  content: |-
+    $816$
+- id: c
+  content: |-
+    $224$
+- id: d
+  content: |-
+    $363$
+  correct: true
+- id: e
+  content: |-
+    $672$
+```
 
 ---
 
 **Question 4**
 
-> A calculator is required to answer this question.
-
-What is the sum of the arithmetic series $∑_(n = 1)^(11)(-5n)$?
-
-- [ ] A. $-275$
-- [ ] B. $-550$
-- [ ] C. $-330$
-- [ ] D. $150$
-- [ ] E. $-660$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A calculator is required to answer this question.
+  
+  What is the sum of the arithmetic series $∑_(n = 1)^(11)(-5n)$?
+options:
+- id: a
+  content: |-
+    $-275$
+- id: b
+  content: |-
+    $-550$
+- id: c
+  content: |-
+    $-330$
+  correct: true
+- id: d
+  content: |-
+    $150$
+- id: e
+  content: |-
+    $-660$
+```
 
 ---
 
@@ -328,31 +392,63 @@ $$
 
 **Question 5**
 
-> A calculator is required to answer this question.
-
-Calculate the sum of the first $30$ terms of the following arithmetic series.
-$\frac{1}{2} + \frac{3}{2} + \frac{5}{2} + \frac{7}{2} + ⋯$
-
-- [ ] A. $460$
-- [ ] B. $452$
-- [ ] C. $448$
-- [ ] D. $455$
-- [ ] E. $450$
+```quiz
+type: radio
+id: q-5
+content: |-
+  > A calculator is required to answer this question.
+  
+  Calculate the sum of the first $30$ terms of the following arithmetic series.
+  $\frac{1}{2} + \frac{3}{2} + \frac{5}{2} + \frac{7}{2} + ⋯$
+options:
+- id: a
+  content: |-
+    $460$
+- id: b
+  content: |-
+    $452$
+- id: c
+  content: |-
+    $448$
+- id: d
+  content: |-
+    $455$
+- id: e
+  content: |-
+    $450$
+  correct: true
+```
 
 ---
 
 **Question 6**
 
-> A calculator is required to answer this question.
-
-Calculate the sum of the first $10$ terms of the following arithmetic series.
-$2 + 7 + 12 + ⋯$
-
-- [ ] A. $245$
-- [ ] B. $252$
-- [ ] C. $212$
-- [ ] D. $249$
-- [ ] E. $235$
+```quiz
+type: radio
+id: q-6
+content: |-
+  > A calculator is required to answer this question.
+  
+  Calculate the sum of the first $10$ terms of the following arithmetic series.
+  $2 + 7 + 12 + ⋯$
+options:
+- id: a
+  content: |-
+    $245$
+  correct: true
+- id: b
+  content: |-
+    $252$
+- id: c
+  content: |-
+    $212$
+- id: d
+  content: |-
+    $249$
+- id: e
+  content: |-
+    $235$
+```
 
 ---
 
@@ -411,30 +507,62 @@ $$
 
 **Question 7**
 
-> A calculator is required to answer this question.
-
-An arithmetic series has $a_{5} = 30$ and $a_{12} = 65$, where $a_{5}$ and $a_{12}$ are the fifth and twelfth terms of the series, respectively.
-Find the sum of the first $10$ terms of the series.
-
-- [ ] A. $260$
-- [ ] B. $365$
-- [ ] C. $325$
-- [ ] D. $315$
-- [ ] E. $395$
+```quiz
+type: radio
+id: q-7
+content: |-
+  > A calculator is required to answer this question.
+  
+  An arithmetic series has $a_{5} = 30$ and $a_{12} = 65$, where $a_{5}$ and $a_{12}$ are the fifth and twelfth terms of the series, respectively.
+  Find the sum of the first $10$ terms of the series.
+options:
+- id: a
+  content: |-
+    $260$
+- id: b
+  content: |-
+    $365$
+- id: c
+  content: |-
+    $325$
+  correct: true
+- id: d
+  content: |-
+    $315$
+- id: e
+  content: |-
+    $395$
+```
 
 ---
 
 **Question 8**
 
-> A calculator is required to answer this question.
-
-An arithmetic series has $a_{1} =-1$ and $a_{3} = 7$, where $a_{1}$ and $a_{3}$ are the first and third terms of the series, respectively. What is the sum of the first $12$ terms of the series?
-
-- [ ] A. $288$
-- [ ] B. $204$
-- [ ] C. $252$
-- [ ] D. $512$
-- [ ] E. $342$
+```quiz
+type: radio
+id: q-8
+content: |-
+  > A calculator is required to answer this question.
+  
+  An arithmetic series has $a_{1} =-1$ and $a_{3} = 7$, where $a_{1}$ and $a_{3}$ are the first and third terms of the series, respectively. What is the sum of the first $12$ terms of the series?
+options:
+- id: a
+  content: |-
+    $288$
+- id: b
+  content: |-
+    $204$
+- id: c
+  content: |-
+    $252$
+  correct: true
+- id: d
+  content: |-
+    $512$
+- id: e
+  content: |-
+    $342$
+```
 
 ---
 

@@ -96,7 +96,6 @@ $$
 ```quiz
 type: radio
 id: ma-274
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $f(g(x))$ for $f(x) = x + 3$ and $g(x) = 2x + 1$?
 options:
@@ -113,6 +112,7 @@ options:
   content: |-
     $2x + 1$
 - id: e
+  correct: true
   content: |-
     $2x + 4$
 ```
@@ -124,7 +124,6 @@ options:
 ```quiz
 type: radio
 id: ma-350
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $f(x) = x + 5$ and $g(x) = 3x + 1$, then $(g∘f)(x) =$
 options:
@@ -135,6 +134,7 @@ options:
   content: |-
     $3x + 1$
 - id: c
+  correct: true
   content: |-
     $3x + 16$
 - id: d
@@ -196,7 +196,6 @@ $$
 ```quiz
 type: radio
 id: ma-138991
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $g(x) =-2x + 5$, then $(g∘g)(x) =$
 options:
@@ -204,6 +203,7 @@ options:
   content: |-
     $4x + 5$
 - id: b
+  correct: true
   content: |-
     $4x - 5$
 - id: c
@@ -222,11 +222,27 @@ options:
 **Question 4:**
 
 ```quiz
-type: free
+type: radio
 id: ma-222424
-# MA_ANSWER_MISSING: set correct to an optional reference answer
 content: |-
-  If $g(x) = x^{2} + 2$, then $(g∘g)(x) =$ $\underline{\hspace{1.5cm}}$.
+  If $g(x) = x^{2} + 2$, then $(g∘g)(x) =$
+options:
+- id: a
+  content: |-
+    $x^{4} + 4x^{2} + 6$
+  correct: true
+- id: b
+  content: |-
+    $x^{4} + 4x^{2} + 4$
+- id: c
+  content: |-
+    $x^{4} + 2$
+- id: d
+  content: |-
+    $x^{2} + 4$
+- id: e
+  content: |-
+    $x^{4} + 2x^{2} + 6$
 ```
 
 ---
@@ -269,12 +285,27 @@ $$
 **Question 5:**
 
 ```quiz
-type: free
+type: radio
 id: ma-221503
-# MA_ANSWER_MISSING: set correct to an optional reference answer
 content: |-
-  If $f(x) = x^{2} - 2x - 1$, then find an expression for $f(a + 1)$.$f(a + 1) =$
-  $\underline{\hspace{1.5cm}}$
+  If $f(x) = x^{2} - 2x - 1$, then find an expression for $f(a + 1)$.
+options:
+- id: a
+  content: |-
+    $a^{2} - 2$
+  correct: true
+- id: b
+  content: |-
+    $a^{2} + 2a - 2$
+- id: c
+  content: |-
+    $a^{2} - 1$
+- id: d
+  content: |-
+    $a^{2} + 2$
+- id: e
+  content: |-
+    $a^{2} - 2a - 2$
 ```
 
 ---
@@ -282,12 +313,27 @@ content: |-
 **Question 6:**
 
 ```quiz
-type: free
+type: radio
 id: ma-222435
-# MA_ANSWER_MISSING: set correct to an optional reference answer
 content: |-
-  If $f(x) = x^{2} - 2x - 1$, then find an expression for $f(a + b)$.$f(a + b) =$
-  $\underline{\hspace{1.5cm}}$
+  If $f(x) = x^{2} - 2x - 1$, then find an expression for $f(a + b)$.
+options:
+- id: a
+  content: |-
+    $a^{2} + 2ab + b^{2} - 2a - 2b - 1$
+  correct: true
+- id: b
+  content: |-
+    $a^{2} + 2ab + b^{2} - 1$
+- id: c
+  content: |-
+    $a^{2} + b^{2} - 2a - 2b - 1$
+- id: d
+  content: |-
+    $a^{2} + 2ab + b^{2} + 2a + 2b - 1$
+- id: e
+  content: |-
+    $a^{2} + 2ab + b^{2} - 2a - 2b + 1$
 ```
 
 ---
@@ -353,7 +399,6 @@ $$
 ```quiz
 type: radio
 id: ma-314840
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $f(x) = b + 5x$ and $f(3a + 2) = 20a$, where $a$ and $b$ are constants, find an expression for $b$ in terms of $a$.
 options:
@@ -370,6 +415,7 @@ options:
   content: |-
     $5b - 10$
 - id: e
+  correct: true
   content: |-
     $5a - 10$
 ```
@@ -379,12 +425,27 @@ options:
 **Question 8:**
 
 ```quiz
-type: free
+type: radio
 id: ma-313448
-# MA_ANSWER_MISSING: set correct to an optional reference answer
 content: |-
-  If $f(x) = b - 5x$ and $f(3a + 2) = 20a$, where $a$ and $b$ are constants, find an expression for $b$ in terms of $a$.$b =$
-  $\underline{\hspace{1.5cm}}$
+  If $f(x) = b - 5x$ and $f(3a + 2) = 20a$, where $a$ and $b$ are constants, find an expression for $b$ in terms of $a$.
+options:
+- id: a
+  content: |-
+    $35a + 10$
+  correct: true
+- id: b
+  content: |-
+    $5a + 10$
+- id: c
+  content: |-
+    $35a - 10$
+- id: d
+  content: |-
+    $15a + 10$
+- id: e
+  content: |-
+    $20a + 10$
 ```
 
 ```update-progress

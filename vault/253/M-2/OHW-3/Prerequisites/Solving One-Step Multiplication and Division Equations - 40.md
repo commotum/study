@@ -73,23 +73,59 @@ $$
 
 ---
 
-**Question 1:** If $\frac{m}{8} = 11$, then $m =$
+**Question 1:**
 
-- [ ] A. $\frac{11}{8}$
-- [ ] B. $19$
-- [ ] C. $88$
-- [ ] D. $3$
-- [ ] E. $-3$
+```quiz
+type: radio
+id: q-1
+content: |-
+  If $\frac{m}{8} = 11$, then $m =$
+options:
+- id: a
+  content: |-
+    $\frac{11}{8}$
+- id: b
+  content: |-
+    $19$
+- id: c
+  content: |-
+    $88$
+  correct: true
+- id: d
+  content: |-
+    $3$
+- id: e
+  content: |-
+    $-3$
+```
 
 ---
 
-**Question 2:** If $\frac{z}{6} =-6$, then $z =$
+**Question 2:**
 
-- [ ] A. $z =-36$
-- [ ] B. $z =-1$
-- [ ] C. $z = 1$
-- [ ] D. $z = \frac{1}{2}$
-- [ ] E. $z =-12$
+```quiz
+type: radio
+id: q-2
+content: |-
+  If $\frac{z}{6} =-6$, then $z =$
+options:
+- id: a
+  content: |-
+    $z =-36$
+  correct: true
+- id: b
+  content: |-
+    $z =-1$
+- id: c
+  content: |-
+    $z = 1$
+- id: d
+  content: |-
+    $z = \frac{1}{2}$
+- id: e
+  content: |-
+    $z =-12$
+```
 
 ---
 
@@ -120,23 +156,59 @@ $$
 
 ---
 
-**Question 3:** If $\frac{1}{4} = \frac{g}{12}$, then $g =$
+**Question 3:**
 
-- [ ] A. $6$
-- [ ] B. $8$
-- [ ] C. $-8$
-- [ ] D. $-3$
-- [ ] E. $3$
+```quiz
+type: radio
+id: q-3
+content: |-
+  If $\frac{1}{4} = \frac{g}{12}$, then $g =$
+options:
+- id: a
+  content: |-
+    $6$
+- id: b
+  content: |-
+    $8$
+- id: c
+  content: |-
+    $-8$
+- id: d
+  content: |-
+    $-3$
+- id: e
+  content: |-
+    $3$
+  correct: true
+```
 
 ---
 
-**Question 4:** If $-\frac{1}{3} = \frac{m}{6}$, then $m =$
+**Question 4:**
 
-- [ ] A. $-\frac{1}{18}$
-- [ ] B. $-2$
-- [ ] C. $\frac{1}{18}$
-- [ ] D. $2$
-- [ ] E. $-\frac{2}{3}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  If $-\frac{1}{3} = \frac{m}{6}$, then $m =$
+options:
+- id: a
+  content: |-
+    $-\frac{1}{18}$
+- id: b
+  content: |-
+    $-2$
+  correct: true
+- id: c
+  content: |-
+    $\frac{1}{18}$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $-\frac{2}{3}$
+```
 
 ---
 
@@ -198,23 +270,59 @@ $$
 
 ---
 
-**Question 5:** If $-\frac{c}{5} = 3$, then $c =$
+**Question 5:**
 
-- [ ] A. $-\frac{3}{5}$
-- [ ] B. $15$
-- [ ] C. $-\frac{5}{3}$
-- [ ] D. $-15$
-- [ ] E. $\frac{3}{5}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  If $-\frac{c}{5} = 3$, then $c =$
+options:
+- id: a
+  content: |-
+    $-\frac{3}{5}$
+- id: b
+  content: |-
+    $15$
+- id: c
+  content: |-
+    $-\frac{5}{3}$
+- id: d
+  content: |-
+    $-15$
+  correct: true
+- id: e
+  content: |-
+    $\frac{3}{5}$
+```
 
 ---
 
-**Question 6:** If $-\frac{p}{3} = \frac{1}{6}$, then $p =$
+**Question 6:**
 
-- [ ] A. $\frac{1}{2}$
-- [ ] B. $-\frac{1}{18}$
-- [ ] C. $\frac{1}{18}$
-- [ ] D. $-2$
-- [ ] E. $-\frac{1}{2}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  If $-\frac{p}{3} = \frac{1}{6}$, then $p =$
+options:
+- id: a
+  content: |-
+    $\frac{1}{2}$
+- id: b
+  content: |-
+    $-\frac{1}{18}$
+- id: c
+  content: |-
+    $\frac{1}{18}$
+- id: d
+  content: |-
+    $-2$
+- id: e
+  content: |-
+    $-\frac{1}{2}$
+  correct: true
+```
 
 ---
 
@@ -278,23 +386,59 @@ $$
 
 ---
 
-**Question 7:** If $6y = 14$, then $y =$
+**Question 7:**
 
-- [ ] A. $7$
-- [ ] B. $20$
-- [ ] C. $\frac{7}{3}$
-- [ ] D. $8$
-- [ ] E. $\frac{3}{7}$
+```quiz
+type: radio
+id: q-7
+content: |-
+  If $6y = 14$, then $y =$
+options:
+- id: a
+  content: |-
+    $7$
+- id: b
+  content: |-
+    $20$
+- id: c
+  content: |-
+    $\frac{7}{3}$
+  correct: true
+- id: d
+  content: |-
+    $8$
+- id: e
+  content: |-
+    $\frac{3}{7}$
+```
 
 ---
 
-**Question 8:** If $-4x =-36$, then $x =$
+**Question 8:**
 
-- [ ] A. $9$
-- [ ] B. $4$
-- [ ] C. $-4$
-- [ ] D. $-40$
-- [ ] E. $-9$
+```quiz
+type: radio
+id: q-8
+content: |-
+  If $-4x =-36$, then $x =$
+options:
+- id: a
+  content: |-
+    $9$
+  correct: true
+- id: b
+  content: |-
+    $4$
+- id: c
+  content: |-
+    $-4$
+- id: d
+  content: |-
+    $-40$
+- id: e
+  content: |-
+    $-9$
+```
 
 ```update-progress
 ```

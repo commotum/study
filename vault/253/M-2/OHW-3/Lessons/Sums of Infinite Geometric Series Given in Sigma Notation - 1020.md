@@ -104,23 +104,59 @@ $$
 
 ---
 
-**Question 1:** Given that $a_{1} =-18$ and $\frac{a_{n + 1}}{a_{n}} =-0.9$ for all integers $n \ge 1$, find the value of $∑_(n = 1)^(∞)a_{n}$.
+**Question 1:**
 
-- [ ] A. $-\frac{19}{2}$
-- [ ] B. $-\frac{180}{19}$
-- [ ] C. $-\frac{28}{3}$
-- [ ] D. $-15$
-- [ ] E. $-10$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Given that $a_{1} =-18$ and $\frac{a_{n + 1}}{a_{n}} =-0.9$ for all integers $n \ge 1$, find the value of $∑_(n = 1)^(∞)a_{n}$.
+options:
+- id: a
+  content: |-
+    $-\frac{19}{2}$
+- id: b
+  content: |-
+    $-\frac{180}{19}$
+  correct: true
+- id: c
+  content: |-
+    $-\frac{28}{3}$
+- id: d
+  content: |-
+    $-15$
+- id: e
+  content: |-
+    $-10$
+```
 
 ---
 
-**Question 2:** Given that $a_{1} = 5$ and $\frac{a_{n + 1}}{a_{n}} = \frac{3}{5}$ for all integers $n \ge 1$, find the value of $∑_(n = 1)^(∞)a_{n}$.
+**Question 2:**
 
-- [ ] A. $4$
-- [ ] B. $12$
-- [ ] C. $25$
-- [ ] D. $\frac{25}{2}$
-- [ ] E. $\frac{27}{2}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Given that $a_{1} = 5$ and $\frac{a_{n + 1}}{a_{n}} = \frac{3}{5}$ for all integers $n \ge 1$, find the value of $∑_(n = 1)^(∞)a_{n}$.
+options:
+- id: a
+  content: |-
+    $4$
+- id: b
+  content: |-
+    $12$
+- id: c
+  content: |-
+    $25$
+- id: d
+  content: |-
+    $\frac{25}{2}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{27}{2}$
+```
 
 ---
 
@@ -166,23 +202,59 @@ $$
 
 ---
 
-**Question 3:** What is $∑_(n = 1)^(∞)\frac{1}{2}(0.3)^{n}$?
+**Question 3:**
 
-- [ ] A. $\frac{2}{7}$
-- [ ] B. $\frac{3}{14}$
-- [ ] C. $\frac{3}{20}$
-- [ ] D. $\frac{6}{29}$
-- [ ] E. $\frac{1}{5}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $∑_(n = 1)^(∞)\frac{1}{2}(0.3)^{n}$?
+options:
+- id: a
+  content: |-
+    $\frac{2}{7}$
+- id: b
+  content: |-
+    $\frac{3}{14}$
+  correct: true
+- id: c
+  content: |-
+    $\frac{3}{20}$
+- id: d
+  content: |-
+    $\frac{6}{29}$
+- id: e
+  content: |-
+    $\frac{1}{5}$
+```
 
 ---
 
-**Question 4:** What is $∑_(n = 1)^(∞)5(\frac{1}{4})^{n}$?
+**Question 4:**
 
-- [ ] A. $\frac{1}{2}$
-- [ ] B. $\frac{5}{3}$
-- [ ] C. $\frac{5}{4}$
-- [ ] D. $\frac{1}{3}$
-- [ ] E. $\frac{1}{4}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $∑_(n = 1)^(∞)5(\frac{1}{4})^{n}$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{2}$
+- id: b
+  content: |-
+    $\frac{5}{3}$
+  correct: true
+- id: c
+  content: |-
+    $\frac{5}{4}$
+- id: d
+  content: |-
+    $\frac{1}{3}$
+- id: e
+  content: |-
+    $\frac{1}{4}$
+```
 
 ---
 
@@ -230,23 +302,59 @@ $$
 
 ---
 
-**Question 5:** What is $∑_(n = 3)^(∞)\frac{9}{2}(\frac{1}{3})^{n}$?
+**Question 5:**
 
-- [ ] A. $\frac{1}{5}$
-- [ ] B. $\frac{1}{4}$
-- [ ] C. $\frac{1}{2}$
-- [ ] D. $\frac{2}{3}$
-- [ ] E. $\frac{1}{3}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $∑_(n = 3)^(∞)\frac{9}{2}(\frac{1}{3})^{n}$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{5}$
+- id: b
+  content: |-
+    $\frac{1}{4}$
+  correct: true
+- id: c
+  content: |-
+    $\frac{1}{2}$
+- id: d
+  content: |-
+    $\frac{2}{3}$
+- id: e
+  content: |-
+    $\frac{1}{3}$
+```
 
 ---
 
-**Question 6:** Evaluate the series $∑_(n = 2)^(∞)(\frac{1}{4})^{n}$.
+**Question 6:**
 
-- [ ] A. $\frac{7}{12}$
-- [ ] B. $\frac{5}{4}$
-- [ ] C. $\frac{1}{8}$
-- [ ] D. $\frac{1}{12}$
-- [ ] E. $\frac{1}{10}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Evaluate the series $∑_(n = 2)^(∞)(\frac{1}{4})^{n}$.
+options:
+- id: a
+  content: |-
+    $\frac{7}{12}$
+- id: b
+  content: |-
+    $\frac{5}{4}$
+- id: c
+  content: |-
+    $\frac{1}{8}$
+- id: d
+  content: |-
+    $\frac{1}{12}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{1}{10}$
+```
 
 ---
 
@@ -296,29 +404,61 @@ $$
 
 **Question 7**
 
-> A scientific calculator is required to answer this question.
-
-Evaluate the geometric series $∑_(n = 2)^(∞)8(-\frac{3}{5})^{n - 1}$.
-
-- [ ] A. $-3$
-- [ ] B. $\frac{1}{3}$
-- [ ] C. $-\frac{8}{5}$
-- [ ] D. $-4$
-- [ ] E. $\frac{24}{5}$
+```quiz
+type: radio
+id: q-7
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Evaluate the geometric series $∑_(n = 2)^(∞)8(-\frac{3}{5})^{n - 1}$.
+options:
+- id: a
+  content: |-
+    $-3$
+  correct: true
+- id: b
+  content: |-
+    $\frac{1}{3}$
+- id: c
+  content: |-
+    $-\frac{8}{5}$
+- id: d
+  content: |-
+    $-4$
+- id: e
+  content: |-
+    $\frac{24}{5}$
+```
 
 ---
 
 **Question 8**
 
-> A scientific calculator is required to answer this question.
-
-Evaluate the geometric series $∑_(n = 1)^(∞)3(0.5)^{4n}$.
-
-- [ ] A. $2$
-- [ ] B. $1$
-- [ ] C. $4$
-- [ ] D. $\frac{1}{5}$
-- [ ] E. $\frac{1}{4}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Evaluate the geometric series $∑_(n = 1)^(∞)3(0.5)^{4n}$.
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $4$
+- id: d
+  content: |-
+    $\frac{1}{5}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{1}{4}$
+```
 
 ```update-progress
 ```

@@ -1,10 +1,10 @@
 # Limits at Infinity and Horizontal Asymptotes of Rational Functions
 
-
 <!--
 lesson-id: 1903
 topic-code: MF3.7.1.6
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -16,8 +16,8 @@ topic-code: MF3.7.1.6
 
 ## Prerequisites
 
-- [Horizontal Asymptotes of Rational Functions](../808/808.md)
-- [Limits of Reciprocal Functions](../1905/1905.md)
+- [Horizontal Asymptotes of Rational Functions](<../../../../PCL/2. Rational Functions/2.2. Rational Functions/Lessons/2.2.4. Horizontal Asymptotes of Rational Functions.md>)
+- [Limits of Reciprocal Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.2. Limits of Reciprocal Functions.md>)
 
 ---
 
@@ -27,7 +27,7 @@ topic-code: MF3.7.1.6
 To calculate the limit at infinity of a rational function, such as
 
 $$
-\lim_{x\rightarrow \infty}\left(\dfrac{x^4}{x^5-x^2}\right)
+\lim_\limits{x\rightarrow \infty}\left(\dfrac{x^4}{x^5-x^2}\right)
 $$
 
 we apply the following procedure:
@@ -36,23 +36,23 @@ we apply the following procedure:
 
 $$
 \begin{aligned}
-\lim_{x \to \infty}(\frac{x^{4}}{x^{5} - x^{2}}) &= \lim_{x \to \infty}((x^{4} \div x^{5})/((x^{5} - x^{2}) \div x^{5})) \\
-&= \lim_{x \to \infty}(\frac{\frac{x^{4}}{x^{5}}}{\frac{x^{5}}{x^{5}} - \frac{x^{2}}{x^{5}}}) \\
-&= \lim_{x \to \infty}(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}})
+lim_(x → ∞)(\frac{x^{4}}{x^{5} - x^{2}}) &= lim_(x → ∞)((x^{4} \div x^{5})/((x^{5} - x^{2}) \div x^{5})) \\
+&= lim_(x → ∞)(\frac{\frac{x^{4}}{x^{5}}}{\frac{x^{5}}{x^{5}} - \frac{x^{2}}{x^{5}}}) \\
+&= lim_(x → ∞)(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}})
 \end{aligned}
 $$
 
 **Step 2:** Apply the rule that if $n$ is any positive integer then
 
 $$
-\displaystyle \lim_{x\rightarrow \infty}\left(\dfrac{1}{x^n}\right)=0
+\displaystyle \lim_\limits{x\rightarrow \infty}\left(\dfrac{1}{x^n}\right)=0
 $$
 
 Evaluate the remaining expression to obtain the answer.
 
 $$
 \begin{aligned}
-\lim_{x \to \infty}(\frac{x^{4}}{x^{5} - x^{2}}) &= \lim_{x \to \infty}(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}}) \\
+lim_(x → ∞)(\frac{x^{4}}{x^{5} - x^{2}}) &= lim_(x → ∞)(\frac{\frac{1}{x}}{1 - \frac{1}{x^{3}}}) \\
 &= \frac{0}{1 - 0} \\
 &= \frac{0}{1} \\
 &= 0
@@ -64,7 +64,7 @@ $$
 <a id="evaluating-a-limit-at-infinity-rational-solutions"></a>
 ## Evaluating a Limit at Infinity: Rational Solutions
 
-**Example:** Evaluate $\lim_{x\rightarrow \infty} \dfrac{3x^4+9x}{6x^4-x^3}$.
+**Example:** Evaluate $\lim_\limits{x\rightarrow \infty} \dfrac{3x^4+9x}{6x^4-x^3}$.
 
 **Explanation**
 
@@ -72,8 +72,8 @@ First, we divide both the numerator and the denominator by the highest power of 
 
 $$
 \begin{aligned}
-\lim_{x \to \infty}\frac{3x^{4} + 9x}{6x^{4} - x^{3}} &= \lim_{x \to \infty}((\frac{3x^{4}}{x^{4}} + \frac{9x}{x^{4}}))/((\frac{6x^{4}}{x^{4}} - \frac{x^{3}}{x^{4}})) \\
-&= \lim_{x \to \infty}((3 + \frac{9}{x^{3}}))/((6 - \frac{1}{x})) \\
+lim_(x → ∞)\frac{3x^{4} + 9x}{6x^{4} - x^{3}} &= lim_(x → ∞)((\frac{3x^{4}}{x^{4}} + \frac{9x}{x^{4}}))/((\frac{6x^{4}}{x^{4}} - \frac{x^{3}}{x^{4}})) \\
+&= lim_(x → ∞)((3 + \frac{9}{x^{3}}))/((6 - \frac{1}{x})) \\
 &= \frac{3 + 0}{6 - 0} \\
 &= \frac{1}{2}
 \end{aligned}
@@ -85,9 +85,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q001
+id: q-1
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{3x^{4} + 1}{-3x^{4} - 2x^{3}}$.
+  Evaluate $lim_(x → ∞)\frac{3x^{4} + 1}{-3x^{4} - 2x^{3}}$.
 options:
 - id: a
   content: |-
@@ -106,15 +106,16 @@ options:
   content: |-
     $-3$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q002
+id: q-2
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{-15}{x^{3} - 2}$.
+  Evaluate $lim_(x → ∞)\frac{-15}{x^{3} - 2}$.
 options:
 - id: a
   content: |-
@@ -133,12 +134,13 @@ options:
   content: |-
     $∞$
 ```
+
 ---
 
 <a id="evaluating-a-limit-at-infinity-infinite-solutions"></a>
 ## Evaluating a Limit at Infinity: Infinite Solutions
 
-**Example:** Calculate $\lim_{x\rightarrow -\infty} \dfrac{4-5x-2x^3}{x^2+3}$.
+**Example:** Calculate $\lim_\limits{x\rightarrow -\infty} \dfrac{4-5x-2x^3}{x^2+3}$.
 
 **Explanation**
 
@@ -146,10 +148,10 @@ First, we divide both the numerator and the denominator by the highest power of 
 
 $$
 \begin{aligned}
-\lim_{x \to -\infty}\frac{4 - 5x - 2x^{3}}{x^{2} + 3} &= \lim_{x \to -\infty}((\frac{-2x^{3}}{x^{2}} - \frac{5x}{x^{2}} + \frac{4}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{3}{x^{2}})) \\
-&= \lim_{x \to -\infty}((-2x - \frac{5}{x} + \frac{4}{x^{2}}))/((1 + \frac{3}{x^{2}})) \\
-&= \lim_{x \to -\infty}(\frac{-2x + 0 + 0}{1 + 0}) \\
-&= \lim_{x \to -\infty}(-2x) \\
+lim_(x → - ∞)\frac{4 - 5x - 2x^{3}}{x^{2} + 3} &= lim_(x → - ∞)((\frac{-2x^{3}}{x^{2}} - \frac{5x}{x^{2}} + \frac{4}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{3}{x^{2}})) \\
+&= lim_(x → - ∞)((-2x - \frac{5}{x} + \frac{4}{x^{2}}))/((1 + \frac{3}{x^{2}})) \\
+&= lim_(x → - ∞)(\frac{-2x + 0 + 0}{1 + 0}) \\
+&= lim_(x → - ∞)(-2x) \\
 &= ∞
 \end{aligned}
 $$
@@ -160,9 +162,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q003
+id: q-3
 content: |-
-  Calculate $\lim_{x \to \infty}\frac{x^{4} - 6}{x^{2} - x + 2}$.
+  Calculate $lim_(x → ∞)\frac{x^{4} - 6}{x^{2} - x + 2}$.
 options:
 - id: a
   content: |-
@@ -181,15 +183,16 @@ options:
   content: |-
     $- ∞$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q004
+id: q-4
 content: |-
-  Calculate $\lim_{x \to -\infty}\frac{2x^{3} - 13}{x + 11}$.
+  Calculate $lim_(x → - ∞)\frac{2x^{3} - 13}{x + 11}$.
 options:
 - id: a
   content: |-
@@ -208,6 +211,7 @@ options:
   content: |-
     $\frac{13}{11}$
 ```
+
 ---
 
 <a id="horizontal-asymptotes-of-rational-functions"></a>
@@ -225,9 +229,9 @@ As a result, we get
 
 $$
 \begin{aligned}
-\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x + 1}{x^{2} + 2} \\
-&= \lim_{x \to \infty}((\frac{x}{x^{2}} + \frac{1}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{2}{x^{2}})) \\
-&= \lim_{x \to \infty}((\frac{1}{x} + \frac{1}{x^{2}}))/((1 + \frac{2}{x^{2}})) \\
+lim_(x → ∞)f(x) &= lim_(x → ∞)\frac{x + 1}{x^{2} + 2} \\
+&= lim_(x → ∞)((\frac{x}{x^{2}} + \frac{1}{x^{2}}))/((\frac{x^{2}}{x^{2}} + \frac{2}{x^{2}})) \\
+&= lim_(x → ∞)((\frac{1}{x} + \frac{1}{x^{2}}))/((1 + \frac{2}{x^{2}})) \\
 &= \frac{0 + 0}{1 + 0} \\
 &= 0
 \end{aligned}
@@ -235,7 +239,7 @@ $$
 
 So the horizontal asymptote of the graph $y=f(x)$ is $y=0$, as shown below.
 
-![](<253/M-1/UQ-1/Source/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903/Images/0c4f485fcbb53ac9c3c1e186c6793a29.png>)
+![](<../Source/Limits at Infinity and Horizontal Asymptotes of Rational Functions - 1903/Images/0c4f485fcbb53ac9c3c1e186c6793a29.png>)
 
 ---
 
@@ -249,16 +253,16 @@ So the horizontal asymptote of the graph $y=f(x)$ is $y=0$, as shown below.
 The horizontal asymptote is
 
 $$
-y=\lim_{x \rightarrow \infty} f(x)
+y=\lim_\limits{x \rightarrow \infty} f(x)
 $$
 
 To find the horizontal asymptote, we apply the usual procedure of dividing the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$.
 
 $$
 \begin{aligned}
-\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{2x^{3} + 1}{x^{3} - 15x} \\
-&= \lim_{x \to \infty}((\frac{2x^{3}}{x^{3}} + \frac{1}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{15x}{x^{3}})) \\
-&= \lim_{x \to \infty}((2 + \frac{1}{x^{3}}))/((1 - \frac{15}{x^{2}})) \\
+lim_(x → ∞)f(x) &= lim_(x → ∞)\frac{2x^{3} + 1}{x^{3} - 15x} \\
+&= lim_(x → ∞)((\frac{2x^{3}}{x^{3}} + \frac{1}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{15x}{x^{3}})) \\
+&= lim_(x → ∞)((2 + \frac{1}{x^{3}}))/((1 - \frac{15}{x^{2}})) \\
 &= \frac{2 + 0}{1 - 0} \\
 &= 2
 \end{aligned}
@@ -272,7 +276,7 @@ Therefore, the horizontal asymptote is $y=2$.
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q005
+id: q-5
 content: |-
   What is the horizontal asymptote of $y = f(x)$ with $f(x) = \frac{3x + 4}{6 - 15x}$?
 options:
@@ -293,13 +297,14 @@ options:
   content: |-
     $y =-\frac{2}{3}$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q006
+id: q-6
 content: |-
   Find the horizontal asymptote of the function $f(x) = \frac{2x + 5}{2x^{3} + 2x + 6}$.
 options:
@@ -320,6 +325,7 @@ options:
   content: |-
     $y = 2$
 ```
+
 ---
 
 <a id="identifying-when-a-rational-function-has-no-horizontal-asymptote"></a>
@@ -332,18 +338,18 @@ options:
 The horizontal asymptote is
 
 $$
-y=\lim_{x \rightarrow \infty} f(x)
+y=\lim_\limits{x \rightarrow \infty} f(x)
 $$
 
 To find the horizontal asymptote, we apply the usual procedure of dividing the numerator and denominator by the highest power of $x$ in the denominator, which is $x^3$.
 
 $$
 \begin{aligned}
-\lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x^{5} - 10}{x^{3} - 8x^{2}} \\
-&= \lim_{x \to \infty}((\frac{x^{5}}{x^{3}} - \frac{10}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{8x^{2}}{x^{3}})) \\
-&= \lim_{x \to \infty}((x^{2} - \frac{10}{x^{3}}))/((1 - \frac{8}{x})) \\
-&= \lim_{x \to \infty}(\frac{x^{2} - 0}{1 - 0}) \\
-&= \lim_{x \to \infty}x^{2} \\
+lim_(x → ∞)f(x) &= lim_(x → ∞)\frac{x^{5} - 10}{x^{3} - 8x^{2}} \\
+&= lim_(x → ∞)((\frac{x^{5}}{x^{3}} - \frac{10}{x^{3}}))/((\frac{x^{3}}{x^{3}} - \frac{8x^{2}}{x^{3}})) \\
+&= lim_(x → ∞)((x^{2} - \frac{10}{x^{3}}))/((1 - \frac{8}{x})) \\
+&= lim_(x → ∞)(\frac{x^{2} - 0}{1 - 0}) \\
+&= lim_(x → ∞)x^{2} \\
 &= ∞
 \end{aligned}
 $$
@@ -356,7 +362,7 @@ The limit does not come out to a finite number. Therefore, there is no horizonta
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q007
+id: q-7
 content: |-
   Find the horizontal asymptote of $y = f(x)$ where $f(x) = \frac{12x - 3x^{4}}{3x^{2} + 7}$.
 options:
@@ -377,13 +383,14 @@ options:
   content: |-
     $y = 1$
 ```
+
 ---
 
 **Question 8:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1903-q008
+id: q-8
 content: |-
   Find the horizontal asymptote of $y = f(x)$ where $f(x) = \frac{3x^{2} - 2}{9x}$.
 options:
@@ -404,15 +411,9 @@ options:
     No horizontal asymptote
   correct: true
 ```
----
-
-## Navigation
-
-- [Next: Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<253/M-1/UQ-1/Prerequisites/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

@@ -136,25 +136,59 @@ $$
 
 **Question 1**
 
-Express the following arithmetic series using sigma notation.
-
-$-11 - 16 - 21 - 26 - 31 - 36 - 41$
-
-- [ ] A. $∑_(n = 1)^(7)(-6n - 5)$
-- [ ] B. $∑_(n = 1)^(7)(5n - 10)$
-- [ ] C. $∑_(n = 1)^(7)(-4n - 7)$
-- [ ] D. $∑_(n = 1)^(7)(-5n - 6)$
-- [ ] E. $∑_(n = 1)^(7)(-10n - 1)$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Express the following arithmetic series using sigma notation.
+  
+  $-11 - 16 - 21 - 26 - 31 - 36 - 41$
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(7)(-6n - 5)$
+- id: b
+  content: |-
+    $∑_(n = 1)^(7)(5n - 10)$
+- id: c
+  content: |-
+    $∑_(n = 1)^(7)(-4n - 7)$
+- id: d
+  correct: true
+  content: |-
+    $∑_(n = 1)^(7)(-5n - 6)$
+- id: e
+  content: |-
+    $∑_(n = 1)^(7)(-10n - 1)$
+```
 
 ---
 
-**Question 2:** The arithmetic series $3 + 9 + 15 + 21 + 27$ can be written in sigma notation as
+**Question 2:**
 
-- [ ] A. $∑_(n = 1)^(5)(6n - 1)$
-- [ ] B. $∑_(n = 1)^(5)6n$
-- [ ] C. $∑_(n = 1)^(5)(6n - 3)$
-- [ ] D. $∑_(n = 1)^(5)(6n + 3)$
-- [ ] E. $∑_(n = 1)^(5)(3n - 6)$
+```quiz
+type: radio
+id: q-2
+content: |-
+  The arithmetic series $3 + 9 + 15 + 21 + 27$ can be written in sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(5)(6n - 1)$
+- id: b
+  content: |-
+    $∑_(n = 1)^(5)6n$
+- id: c
+  correct: true
+  content: |-
+    $∑_(n = 1)^(5)(6n - 3)$
+- id: d
+  content: |-
+    $∑_(n = 1)^(5)(6n + 3)$
+- id: e
+  content: |-
+    $∑_(n = 1)^(5)(3n - 6)$
+```
 
 ---
 
@@ -221,29 +255,61 @@ $$
 
 **Question 3**
 
-Express the following arithmetic series using sigma notation.
-
-$-35 - 29 - 23 - … + 31 + 37$
-
-- [ ] A. $∑_(n = 0)^(12)(6n - 41)$
-- [ ] B. $∑_(n = 1)^(13)(41 - 6n)$
-- [ ] C. $∑_(n = 1)^(12)(6n - 41)$
-- [ ] D. $∑_(n = 0)^(13)(6n - 35)$
-- [ ] E. $∑_(n = 1)^(13)(6n - 41)$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Express the following arithmetic series using sigma notation.
+  
+  $-35 - 29 - 23 - … + 31 + 37$
+options:
+- id: a
+  content: |-
+    $∑_(n = 0)^(12)(6n - 41)$
+- id: b
+  content: |-
+    $∑_(n = 1)^(13)(41 - 6n)$
+- id: c
+  content: |-
+    $∑_(n = 1)^(12)(6n - 41)$
+- id: d
+  content: |-
+    $∑_(n = 0)^(13)(6n - 35)$
+- id: e
+  correct: true
+  content: |-
+    $∑_(n = 1)^(13)(6n - 41)$
+```
 
 ---
 
 **Question 4**
 
-Express the following arithmetic series using sigma notation.
-
-$9 + 11 + 13 + … + 19 + 21$
-
-- [ ] A. $∑_(n = 1)^(7)(2n + 7)$
-- [ ] B. $∑_(n = 1)^(7)(2n + 5)$
-- [ ] C. $∑_(n = 1)^(6)(2n - 3)$
-- [ ] D. $∑_(n = 0)^(7)(2n + 3)$
-- [ ] E. $∑_(n = 0)^(6)(2n - 7)$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Express the following arithmetic series using sigma notation.
+  
+  $9 + 11 + 13 + … + 19 + 21$
+options:
+- id: a
+  correct: true
+  content: |-
+    $∑_(n = 1)^(7)(2n + 7)$
+- id: b
+  content: |-
+    $∑_(n = 1)^(7)(2n + 5)$
+- id: c
+  content: |-
+    $∑_(n = 1)^(6)(2n - 3)$
+- id: d
+  content: |-
+    $∑_(n = 0)^(7)(2n + 3)$
+- id: e
+  content: |-
+    $∑_(n = 0)^(6)(2n - 7)$
+```
 
 ---
 
@@ -300,23 +366,59 @@ $$
 
 ---
 
-**Question 5:** An arithmetic series has $a_{2} = 3$ and $a_{9} =-18$, where $a_{2}$ and $a_{9}$ are the second and ninth terms of the series, respectively. What is the sum of the first $10$ terms of the series, expressed using sigma notation?
+**Question 5:**
 
-- [ ] A. $∑_(n = 1)^(10)(5n - 7)$
-- [ ] B. $∑_(n = 1)^(10)(-3n + 9)$
-- [ ] C. $∑_(n = 1)^(10)(-n + 5)$
-- [ ] D. $∑_(n = 1)^(10)(-5n + 13)$
-- [ ] E. $∑_(n = 1)^(10)(n + 1)$
+```quiz
+type: radio
+id: q-5
+content: |-
+  An arithmetic series has $a_{2} = 3$ and $a_{9} =-18$, where $a_{2}$ and $a_{9}$ are the second and ninth terms of the series, respectively. What is the sum of the first $10$ terms of the series, expressed using sigma notation?
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(10)(5n - 7)$
+- id: b
+  correct: true
+  content: |-
+    $∑_(n = 1)^(10)(-3n + 9)$
+- id: c
+  content: |-
+    $∑_(n = 1)^(10)(-n + 5)$
+- id: d
+  content: |-
+    $∑_(n = 1)^(10)(-5n + 13)$
+- id: e
+  content: |-
+    $∑_(n = 1)^(10)(n + 1)$
+```
 
 ---
 
-**Question 6:** An arithmetic series has $a_{1} = 5$ and $a_{5} = 13$, where $a_{1}$ and $a_{5}$ are the first and fifth terms of the series, respectively. What is the sum of the first five terms of the series, expressed using sigma notation?
+**Question 6:**
 
-- [ ] A. $∑_(n = 1)^(5)(2n + 3)$
-- [ ] B. $∑_(n = 1)^(5)(3n + 2)$
-- [ ] C. $∑_(n = 1)^(5)(-3n + 8)$
-- [ ] D. $∑_(n = 1)^(5)(4n + 1)$
-- [ ] E. $∑_(n = 1)^(5)(-2n + 7)$
+```quiz
+type: radio
+id: q-6
+content: |-
+  An arithmetic series has $a_{1} = 5$ and $a_{5} = 13$, where $a_{1}$ and $a_{5}$ are the first and fifth terms of the series, respectively. What is the sum of the first five terms of the series, expressed using sigma notation?
+options:
+- id: a
+  correct: true
+  content: |-
+    $∑_(n = 1)^(5)(2n + 3)$
+- id: b
+  content: |-
+    $∑_(n = 1)^(5)(3n + 2)$
+- id: c
+  content: |-
+    $∑_(n = 1)^(5)(-3n + 8)$
+- id: d
+  content: |-
+    $∑_(n = 1)^(5)(4n + 1)$
+- id: e
+  content: |-
+    $∑_(n = 1)^(5)(-2n + 7)$
+```
 
 ```update-progress
 ```

@@ -114,23 +114,59 @@ $$
 
 ---
 
-**Question 1:** What is $∫\frac{1}{\sqrt{1 - 4x^{2}}}dx$?
+**Question 1:**
 
-- [ ] A. $(\arcsin (2x))/(2) + C$
-- [ ] B. $(\arccos (2x))/(2) + C$
-- [ ] C. $(\arcsin (4x))/(4) + C$
-- [ ] D. $2\arcsin (2x) + C$
-- [ ] E. $(\arccos (4x))/(4) + C$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $∫\frac{1}{\sqrt{1 - 4x^{2}}}dx$?
+options:
+- id: a
+  content: |-
+    $(\arcsin (2x))/(2) + C$
+  correct: true
+- id: b
+  content: |-
+    $(\arccos (2x))/(2) + C$
+- id: c
+  content: |-
+    $(\arcsin (4x))/(4) + C$
+- id: d
+  content: |-
+    $2\arcsin (2x) + C$
+- id: e
+  content: |-
+    $(\arccos (4x))/(4) + C$
+```
 
 ---
 
-**Question 2:** What is $∫\frac{3}{\sqrt{49 - x^{2}}}dx$?
+**Question 2:**
 
-- [ ] A. $3\arctan (\frac{x}{7}) + C$
-- [ ] B. $(\arcsin (\frac{x}{7}))/(3) + C$
-- [ ] C. $(3\arcsin (\frac{x}{7}))/(7) + C$
-- [ ] D. $3\arctan (7x) + C$
-- [ ] E. $3\arcsin (\frac{x}{7}) + C$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $∫\frac{3}{\sqrt{49 - x^{2}}}dx$?
+options:
+- id: a
+  content: |-
+    $3\arctan (\frac{x}{7}) + C$
+- id: b
+  content: |-
+    $(\arcsin (\frac{x}{7}))/(3) + C$
+- id: c
+  content: |-
+    $(3\arcsin (\frac{x}{7}))/(7) + C$
+- id: d
+  content: |-
+    $3\arctan (7x) + C$
+- id: e
+  content: |-
+    $3\arcsin (\frac{x}{7}) + C$
+  correct: true
+```
 
 ---
 
@@ -180,23 +216,59 @@ $$
 
 ---
 
-**Question 3:** What is $∫\frac{6}{1 + 9x^{2}}dx$?
+**Question 3:**
 
-- [ ] A. $6\arctan (3x) + C$
-- [ ] B. $(\arcsin (3x))/(3) + C$
-- [ ] C. $2\arctan (3x) + C$
-- [ ] D. $2\arcsin (3x) + C$
-- [ ] E. $(\arctan (3x))/(3) + C$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $∫\frac{6}{1 + 9x^{2}}dx$?
+options:
+- id: a
+  content: |-
+    $6\arctan (3x) + C$
+- id: b
+  content: |-
+    $(\arcsin (3x))/(3) + C$
+- id: c
+  content: |-
+    $2\arctan (3x) + C$
+  correct: true
+- id: d
+  content: |-
+    $2\arcsin (3x) + C$
+- id: e
+  content: |-
+    $(\arctan (3x))/(3) + C$
+```
 
 ---
 
-**Question 4:** What is $∫\frac{1}{9 + x^{2}}dx$?
+**Question 4:**
 
-- [ ] A. $\frac{1}{3}\arctan (\frac{x}{3}) + C$
-- [ ] B. $\arctan (\frac{x}{9}) + C$
-- [ ] C. $\arctan (\frac{x}{3}) + C$
-- [ ] D. $\frac{1}{3}\arctan (\frac{x}{9}) + C$
-- [ ] E. $\frac{1}{9}\arctan (\frac{x}{9}) + C$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $∫\frac{1}{9 + x^{2}}dx$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{3}\arctan (\frac{x}{3}) + C$
+  correct: true
+- id: b
+  content: |-
+    $\arctan (\frac{x}{9}) + C$
+- id: c
+  content: |-
+    $\arctan (\frac{x}{3}) + C$
+- id: d
+  content: |-
+    $\frac{1}{3}\arctan (\frac{x}{9}) + C$
+- id: e
+  content: |-
+    $\frac{1}{9}\arctan (\frac{x}{9}) + C$
+```
 
 ---
 
@@ -231,23 +303,59 @@ $$
 
 ---
 
-**Question 5:** What is $∫(8dx)/(\mid 8x \mid \sqrt{(8x)^{2} - 1})$?
+**Question 5:**
 
-- [ ] A. $4arcsec(8x) + C$
-- [ ] B. $arcsec(8x) + C$
-- [ ] C. $(arcsec(4x))/(4) + C$
-- [ ] D. $arcsec(64x) + C$
-- [ ] E. $(arcsec(8x))/(8) + C$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $∫(8dx)/(\mid 8x \mid \sqrt{(8x)^{2} - 1})$?
+options:
+- id: a
+  content: |-
+    $4arcsec(8x) + C$
+- id: b
+  content: |-
+    $arcsec(8x) + C$
+  correct: true
+- id: c
+  content: |-
+    $(arcsec(4x))/(4) + C$
+- id: d
+  content: |-
+    $arcsec(64x) + C$
+- id: e
+  content: |-
+    $(arcsec(8x))/(8) + C$
+```
 
 ---
 
-**Question 6:** What is $∫\frac{2}{\mid x \mid \sqrt{4x^{2} - 1}}dx$?
+**Question 6:**
 
-- [ ] A. $arcsec(2x) + C$
-- [ ] B. $4arcsec(2x) + C$
-- [ ] C. $2arcsec(2x) + C$
-- [ ] D. $(arcsec(2x))/(2) + C$
-- [ ] E. $(arcsec(2x))/(4) + C$
+```quiz
+type: radio
+id: q-6
+content: |-
+  What is $∫\frac{2}{\mid x \mid \sqrt{4x^{2} - 1}}dx$?
+options:
+- id: a
+  content: |-
+    $arcsec(2x) + C$
+- id: b
+  content: |-
+    $4arcsec(2x) + C$
+- id: c
+  content: |-
+    $2arcsec(2x) + C$
+  correct: true
+- id: d
+  content: |-
+    $(arcsec(2x))/(2) + C$
+- id: e
+  content: |-
+    $(arcsec(2x))/(4) + C$
+```
 
 ---
 
@@ -307,23 +415,59 @@ $$
 
 ---
 
-**Question 7:** Evaluate the integral $∫_{0}^{7}\frac{9}{2 + 8x^{2}}dx$.
+**Question 7:**
 
-- [ ] A. $\frac{9}{4}\arctan (14)$
-- [ ] B. $\frac{9}{4}\arctan (7)$
-- [ ] C. $\frac{9}{2}\arctan (14)$
-- [ ] D. $9\arctan (14)$
-- [ ] E. $\frac{9}{2}\arctan (7)$
+```quiz
+type: radio
+id: q-7
+content: |-
+  Evaluate the integral $∫_{0}^{7}\frac{9}{2 + 8x^{2}}dx$.
+options:
+- id: a
+  content: |-
+    $\frac{9}{4}\arctan (14)$
+  correct: true
+- id: b
+  content: |-
+    $\frac{9}{4}\arctan (7)$
+- id: c
+  content: |-
+    $\frac{9}{2}\arctan (14)$
+- id: d
+  content: |-
+    $9\arctan (14)$
+- id: e
+  content: |-
+    $\frac{9}{2}\arctan (7)$
+```
 
 ---
 
-**Question 8:** Evaluate the integral $∫_{0}^{1}\frac{2}{\sqrt{2 - x^{2}}}dx$.
+**Question 8:**
 
-- [ ] A. $\frac{3π}{2}$
-- [ ] B. $\frac{π}{3}$
-- [ ] C. $\frac{π}{2}$
-- [ ] D. $\frac{π}{4}$
-- [ ] E. $\frac{π}{6}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  Evaluate the integral $∫_{0}^{1}\frac{2}{\sqrt{2 - x^{2}}}dx$.
+options:
+- id: a
+  content: |-
+    $\frac{3π}{2}$
+- id: b
+  content: |-
+    $\frac{π}{3}$
+- id: c
+  content: |-
+    $\frac{π}{2}$
+  correct: true
+- id: d
+  content: |-
+    $\frac{π}{4}$
+- id: e
+  content: |-
+    $\frac{π}{6}$
+```
 
 ---
 

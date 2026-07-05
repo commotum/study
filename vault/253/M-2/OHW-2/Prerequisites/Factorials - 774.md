@@ -72,23 +72,59 @@ $$
 
 ---
 
-**Question 1:** What is $5!$?
+**Question 1:**
 
-- [ ] A. $120$
-- [ ] B. $5$
-- [ ] C. $40$
-- [ ] D. $60$
-- [ ] E. $25$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $5!$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $120$
+- id: b
+  content: |-
+    $5$
+- id: c
+  content: |-
+    $40$
+- id: d
+  content: |-
+    $60$
+- id: e
+  content: |-
+    $25$
+```
 
 ---
 
-**Question 2:** What is $2!3!$?
+**Question 2:**
 
-- [ ] A. $12$
-- [ ] B. $8$
-- [ ] C. $24$
-- [ ] D. $18$
-- [ ] E. $6$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $2!3!$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $12$
+- id: b
+  content: |-
+    $8$
+- id: c
+  content: |-
+    $24$
+- id: d
+  content: |-
+    $18$
+- id: e
+  content: |-
+    $6$
+```
 
 ---
 
@@ -116,23 +152,59 @@ $$
 
 ---
 
-**Question 3:** What is $3! + 0!$?
+**Question 3:**
 
-- [ ] A. $3$
-- [ ] B. Undefined
-- [ ] C. $6$
-- [ ] D. $4$
-- [ ] E. $7$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $3! + 0!$?
+options:
+- id: a
+  content: |-
+    $3$
+- id: b
+  content: |-
+    Undefined
+- id: c
+  content: |-
+    $6$
+- id: d
+  content: |-
+    $4$
+- id: e
+  correct: true
+  content: |-
+    $7$
+```
 
 ---
 
-**Question 4:** What is $\frac{2!}{0!}$?
+**Question 4:**
 
-- [ ] A. $0$
-- [ ] B. $6$
-- [ ] C. $2$
-- [ ] D. $1$
-- [ ] E. Undefined
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $\frac{2!}{0!}$?
+options:
+- id: a
+  content: |-
+    $0$
+- id: b
+  content: |-
+    $6$
+- id: c
+  correct: true
+  content: |-
+    $2$
+- id: d
+  content: |-
+    $1$
+- id: e
+  content: |-
+    Undefined
+```
 
 ---
 
@@ -196,23 +268,59 @@ $$
 
 ---
 
-**Question 5:** Simplify $\frac{7!3!}{4!2!}$.
+**Question 5:**
 
-- [ ] A. $90$
-- [ ] B. $145$
-- [ ] C. $210$
-- [ ] D. $630$
-- [ ] E. $126$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Simplify $\frac{7!3!}{4!2!}$.
+options:
+- id: a
+  content: |-
+    $90$
+- id: b
+  content: |-
+    $145$
+- id: c
+  content: |-
+    $210$
+- id: d
+  correct: true
+  content: |-
+    $630$
+- id: e
+  content: |-
+    $126$
+```
 
 ---
 
-**Question 6:** Evaluate $\frac{6!}{3!}$.
+**Question 6:**
 
-- [ ] A. $120$
-- [ ] B. $9$
-- [ ] C. $18$
-- [ ] D. $20$
-- [ ] E. $2$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Evaluate $\frac{6!}{3!}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $120$
+- id: b
+  content: |-
+    $9$
+- id: c
+  content: |-
+    $18$
+- id: d
+  content: |-
+    $20$
+- id: e
+  content: |-
+    $2$
+```
 
 ```update-progress
 ```

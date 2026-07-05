@@ -1,10 +1,10 @@
 # Improper Integrals of the Second Kind
 
-
 <!--
 lesson-id: 759
 topic-code: MF3.10.6.5
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -17,9 +17,9 @@ topic-code: MF3.10.6.5
 
 ## Prerequisites
 
-- [Integration by Substitution With Inverse Trigonometric Functions](../315/315.md)
-- [Integrating Trigonometric Functions Using Substitution](../478/478.md)
-- [Integrating Exponential Functions Using Substitution](../3770/3770.md)
+- [Integration by Substitution With Inverse Trigonometric Functions](<../../10.1. Integration Using Substitution/Lessons/10.1.10. Integration by Substitution With Inverse Trigonometric Functions.md>)
+- [Integrating Trigonometric Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
+- [Integrating Exponential Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
 
 ---
 
@@ -29,7 +29,7 @@ topic-code: MF3.10.6.5
 An **improper integral of the second kind** is the integral of the form
 
 $$
-\displaystyle \int_{\color{red}{a}}^{\color{blue}{b}} f(x)\,dx
+\displaystyle \int_{\color{red}{a}}^{\color{blue}{b}} f(x)\,\textrm d x
 $$
 
 where the integration limits $\color{red}a$ and $\color{blue}b$ are both finite, and the function $f(x)$ is unbounded as we approach one of these limits.
@@ -37,24 +37,24 @@ where the integration limits $\color{red}a$ and $\color{blue}b$ are both finite,
 For instance, the definite integral
 
 $$
-\int_{\color{red}{0}}^{\color{blue}{1}}\frac{1}{\sqrt{x}}\,dx
+\int_{\color{red}{0}}^{\color{blue}{1}}\frac{1}{\sqrt{x}}\textrm{d}x
 $$
 
 is an improper integral of the second kind because
 
 - both limits ($\color{red}0$ and $\color{blue}1$) are finite, and
 - the function under the integral is unbounded as we approach one of the limits (the *lower* limit in this case):
-$f(x) = \frac{1}{\sqrt{x}} \to \infty \quad\text{as}\quad x\to {\color{red}0}^+$
+$f(x) = \frac{1}{\sqrt{x}} \rightarrow \infty \quad\textrm{as}\quad x\rightarrow {\color{red}0}^+$
 
 Let's look at some examples of integrals that are *not* improper integrals of the second kind:
 
 - For the integral
-$\int_1^\infty \frac{1}{\sqrt{x}}\,dx$
+$\int_1^\infty \frac{1}{\sqrt{x}}\textrm{d}x$
 the upper limit is infinite. Therefore, it is *not* an improper integral of the second kind.
 - For the integral
-$\int_{\color{red}{1}}^{\color{blue}{2}} \frac{1}{\sqrt{x}}\,dx$
+$\int_{\color{red}{1}}^{\color{blue}{2}} \frac{1}{\sqrt{x}}\textrm{d}x$
 the function $f(x)$ under the integral is finite at both limits:
-$f(1) = \frac{1}{\sqrt{1}} = 1 \ne \pm \infty; f(2) = \frac{1}{\sqrt{2}} \ne \pm \infty$
+$f(1)|= \frac{1}{\sqrt{1}} = 1 \ne ± ∞; f(2)|= \frac{1}{\sqrt{2}} \ne ± ∞$
 Therefore, it is *not* an improper integral of the second kind.
 
 ---
@@ -64,7 +64,7 @@ Therefore, it is *not* an improper integral of the second kind.
 
 **Example:** Which of the following is an improper integral of the second kind?
 
-1. $\displaystyle \int_{0}^{\infty} \frac{1}{x - 2}\,dx\qquad$ II. $\displaystyle \int_{-2}^{0} \frac{1}{x + 2}\,dx\qquad$ III. $\displaystyle \int_{2}^{3} \frac{1}{x^2 - 1}\,dx$
+1. $\displaystyle \int_{0}^{\infty} \dfrac{\text{d}x}{x-2}\qquad$ II. $\displaystyle \int_{-2}^{0} \dfrac{\text{d}x}{x+2}\qquad$ III. $\displaystyle \int_{2}^{3} \dfrac{\text{d}x}{x^2-1}$
 
 **Explanation**
 
@@ -72,40 +72,35 @@ Let's examine each of the given integrals.
 
 - Integral I is an improper integral over an *infinite* domain since its upper limit is infinite. So, it is not an improper integral of the second kind.
 - Integral II is an improper integral of the second kind since it has finite limits, and
-$f(x) = \dfrac{1}{x+2} \to \infty \quad \text{as}\quad x\to (-2)^+$.
+$f(x) = \dfrac{1}{x+2} \rightarrow \infty \quad \textrm{as}\quad x\rightarrow (-2)^+$.
 - Integral III is not an improper integral since it has finite limits, and the function under the integral is finite at every point $x\in[2,3]$.
 
 Therefore, the correct answer is "II only."
 
 ---
 
-**Question 1:**
+**Question 1**
 
 ```quiz
 type: radio
-id: MA253-WHW1-759-q001
+id: q-1
 content: |-
   Which of the following is an improper integral of the second kind?
   
-  1. $\int_{2}^{6}\frac{1}{x}\,dx$ II. $\int_{2}^{6}\frac{1}{x - 6}\,dx$ III. $\int_{2}^{\infty}\frac{1}{x - 6}\,dx$
-
+  1. $∫_{2}^{6}\frac{dx}{x}$ II. $∫_{2}^{6}\frac{dx}{x - 6}$ III. $∫_{2}^{∞}\frac{dx}{x - 6}$
 options:
 - id: a
   content: |-
     I and II only
-
 - id: b
   content: |-
     III only
-
 - id: c
   content: |-
     I and III only
-
 - id: d
   content: |-
     I, II, and III
-
 - id: e
   content: |-
     II only
@@ -114,34 +109,29 @@ options:
 
 ---
 
-**Question 2:**
+**Question 2**
 
 ```quiz
 type: radio
-id: MA253-WHW1-759-q002
+id: q-2
 content: |-
   Which of the following is an improper integral of the second kind?
   
-  1. $\int_{\pi/4}^{\infty}\tan x\,dx$ II. $\int_{0}^{\pi/2}\frac{1}{1 - \sin x}\,dx$ III. $\int_{\pi/4}^{\pi/2}\csc x\,dx$
-
+  1. $∫_{π/4}^{∞}\tan xdx$ II. $∫_{0}^{π/2}\frac{dx}{1 - \sin x}dx$ III. $∫_{π/4}^{π/2}\csc xdx$
 options:
 - id: a
   content: |-
     III only
-
 - id: b
   content: |-
     II and III only
-
 - id: c
   content: |-
     I and II only
-
 - id: d
   content: |-
     II only
   correct: true
-
 - id: e
   content: |-
     I only
@@ -155,19 +145,19 @@ options:
 Let's once again consider the following improper integral:
 
 $$
-I = \int_{\color{red}{0}}^{\color{blue}1}\frac{1}{\sqrt{x}}\,dx
+I = \int_{\color{red}{0}}^{\color{blue}1}\frac{1}{\sqrt{x}}\textrm{d}x
 $$
 
 The function under the integral is unbounded as we approach the *lower* integration limit from any point that lies in the interval $x\in ({\color{red}{0}},{\color{blue}{1}})$:
 
 $$
-f(x) = \frac{1}{\sqrt{x}} \to \infty \quad\text{as}\quad x\to {\color{red}0}^+
+f(x) = \frac{1}{\sqrt{x}} \rightarrow \infty \quad\textrm{as}\quad x\rightarrow {\color{red}0}^+
 $$
 
 We can attempt to evaluate this integral by integrating $f(x)$ over the interval $x\in [a, 1]$ for some parameter $a\in ({\color{red}{0}},{\color{blue}{1}})$ and taking the limit as $a\to{\color{red}0}^+$:
 
 $$
-I = \lim_{a \to {\color{red}0}^+} \int_a^1 \frac{1}{\sqrt{x}}\,dx
+I = \lim_{a\to{\color{red}0}^+} \int_a^1 \frac{1}{\sqrt{x}}\textrm{d}x
 $$
 
 ---
@@ -178,19 +168,19 @@ $$
 Now let's consider the following improper integral:
 
 $$
-I = \int_{\color{red}0}^{\color{blue}{2}}\frac{1}{\sqrt[3]{x-2}}\,dx
+I = \int_{\color{red}0}^{\color{blue}{2}}\frac{1}{\sqrt[3]{x-2}}\textrm{d}x
 $$
 
 The function under the integral is unbounded as we approach the *upper* integration limit from any point that lies in the interval $x\in ({\color{red}{0}},{\color{blue}{2}})$
 
 $$
-f(x) = \frac{1}{\sqrt[3]{x-2}} \to -\infty \quad\text{as}\quad x\to {\color{blue}2}^-
+f(x) = \frac{1}{\sqrt[3]{x-2}} \rightarrow -\infty \quad\textrm{as}\quad x\rightarrow {\color{blue}2}^-
 $$
 
 We can attempt to evaluate this integral by integrating $f(x)$ over the interval $x\in [0, b]$ for some parameter $b\in ({\color{red}{0}},{\color{blue}{2}})$ and taking the limit as $b\to{\color{blue}2}^-$:
 
 $$
-I = \lim_{b \to {\color{blue}2}^-} \int_{0}^b \frac{1}{\sqrt[3]{x-2}}\,dx
+I = \lim_{b\to{\color{blue}2}^-} \int_{0}^b \frac{1}{\sqrt[3]{x-2}}\textrm{d}x
 $$
 
 ---
@@ -198,20 +188,20 @@ $$
 <a id="rewriting-one-of-the-limits-of-an-improper-integral"></a>
 ## Rewriting One of the Limits of an Improper Integral
 
-**Example:** Rewrite the improper integral $\displaystyle \int_{0}^{1} \frac{1}{x^2 - 1}\,dx$ as the limit of definite integral.
+**Example:** Rewrite the improper integral $\displaystyle {\int_{0}^{1} \dfrac{\textrm{d}x}{x^2-1}}$ as the limit of definite integral.
 
 **Explanation**
 
 This is an improper integral of the second kind because the function under the integral is unbounded as we approach the *upper* integration limit from any point that lies in the interval $x\in (0,{\color{blue}{1}})$:
 
 $$
-f(x) = \dfrac{1}{x^2-1} \to -\infty\quad \text{as}\quad x\to {\color{blue}{1}} ^-
+f(x) = \dfrac {1}{x^2-1} \rightarrow -\infty\quad \textrm{as}\quad x\rightarrow {\color{blue}{1}} ^-
 $$
 
 We can attempt to evaluate this integral by integrating $f(x)$ over the interval $x\in [0, b]$ and taking the limit as $b\to{\color{blue}1}^-$:
 
 $$
-\displaystyle \int_{0}^{1} \frac{1}{x^2 - 1}\,dx = \lim_{b \to {\color{blue}{1}}^-} \left(\displaystyle \int_{0}^{b} \frac{1}{x^2 - 1}\,dx \right)
+\displaystyle {\int_{0}^{1} \dfrac{\textrm{d}x}{x^2-1}} = \lim\limits_{b \to {\color{blue}{1}}^-} \left(\displaystyle {\int_{0}^{b} \dfrac{\textrm{d}x}{x^2-1}} \right)
 $$
 
 ---
@@ -220,31 +210,27 @@ $$
 
 ```quiz
 type: radio
-id: MA253-WHW1-759-q003
+id: q-3
 content: |-
   Which of the following is equivalent to
-  $\int_{2}^{5}\frac{1}{\sqrt{x^{2} - 4}}\,dx$?
-
+  
+  $∫_{2}^{5}\frac{dx}{\sqrt{x^{2} - 4}}$?
 options:
 - id: a
   content: |-
-    $\lim_{a \to -\infty} \int_{a}^{5}\frac{1}{\sqrt{x^{2} - 4}}\,dx$
-
+    $lim_(a → - ∞)(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: b
   content: |-
-    $\lim_{a \to 4^+} \int_{a}^{5}\frac{1}{\sqrt{x^{2} - 4}}\,dx$
-
+    $lim_(a → 4^{+})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: c
   content: |-
-    $\lim_{a \to 5^-} \int_{a}^{5}\frac{1}{\sqrt{x^{2} - 4}}\,dx$
-
+    $lim_(a → 5^{-})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: d
   content: |-
-    $\lim_{a \to +\infty} \int_{2}^{a}\frac{1}{\sqrt{x^{2} - 4}}\,dx$
-
+    $lim_(a → + ∞)(∫_{2}^{a}\frac{dx}{\sqrt{x^{2} - 4}})$
 - id: e
   content: |-
-    $\lim_{a \to 2^+} \int_{a}^{5}\frac{1}{\sqrt{x^{2} - 4}}\,dx$
+    $lim_(a → 2^{+})(∫_{a}^{5}\frac{dx}{\sqrt{x^{2} - 4}})$
   correct: true
 ```
 
@@ -254,32 +240,28 @@ options:
 
 ```quiz
 type: radio
-id: MA253-WHW1-759-q004
+id: q-4
 content: |-
   Which of the following is equivalent to
-  $\int_{-6}^{-3}\frac{1}{\sqrt{x^{2} - 9}}\,dx$?
-
+  
+  $∫_{-6}^{-3}\frac{dx}{\sqrt{x^{2} - 9}}$?
 options:
 - id: a
   content: |-
-    $\lim_{b \to \infty} \int_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}\,dx$
-
+    $lim_(b → ∞)(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: b
   content: |-
-    $\lim_{b \to 3^-} \int_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}\,dx$
-
+    $lim_(b → 3^{-})(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: c
   content: |-
-    $\lim_{b \to -3^-} \int_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}\,dx$
+    $lim_(b → (-3)^{-})(∫_{-6}^{b}\frac{1}{\sqrt{x^{2} - 9}}dx)$
   correct: true
-
 - id: d
   content: |-
-    $\lim_{b \to -6^+} \int_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}\,dx$
-
+    $lim_(b → (-6)^{+})(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 - id: e
   content: |-
-    $\lim_{b \to -\infty} \int_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}\,dx$
+    $lim_(b → - ∞)(∫_{b}^{-3}\frac{1}{\sqrt{x^{2} - 9}}dx)$
 ```
 
 ---
@@ -292,33 +274,33 @@ We've seen how to construct improper integrals of the second kind. Now, let's le
 As an example, let's consider the following integral:
 
 $$
-\int_0^1 \frac{1}{\sqrt{1 - x^2}}\,dx
+\int_0^1 \frac{\textrm d x}{\sqrt{1-x^2}}
 $$
 
 This is an improper integral of the second kind because the function is unbounded at the upper limit of integration:
 
 $$
-f(x) = \frac{1}{\sqrt{1-x^2}} \to \infty \quad\text{as}\quad x\to 1^-
+f(x) = \frac{1}{\sqrt{1-x^2}} \rightarrow \infty \quad\textrm{as}\quad x\rightarrow 1^-
 $$
 
 Nonetheless, it is possible to evaluate the integral by setting the upper bound equal to some parameter $b$, integrating as usual, and then taking the limit as $b\to 1^-$.
 
 $$
 \begin{aligned}
-\int_{0}^{1}\frac{1}{\sqrt{1 - x^{2}}}\,dx &= \lim_{b \to 1^-}\int_{0}^{b}\frac{1}{\sqrt{1 - x^{2}}}\,dx \\
-&= \lim_{b \to 1^-}\arcsin x\bigg|_{0}^{b} \\
-&= \lim_{b \to 1^-}[\arcsin b - \arcsin 0] \\
-&= \lim_{b \to 1^-}[\arcsin b - 0] \\
-&= \lim_{b \to 1^-}\arcsin b \\
+∫_{0}^{1}\frac{1}{\sqrt{1 - x^{2}}}dx &= lim_(b → 1^{-})∫_{0}^{b}\frac{1}{\sqrt{1 - x^{2}}}dx \\
+&= lim_(b → 1^{-})\arcsin x \mid _{0}^{b} \\
+&= lim_(b → 1^{-})[\arcsin b - \arcsin 0] \\
+&= lim_(b → 1^{-})[\arcsin b - 0] \\
+&= lim_(b → 1^{-})\arcsin b \\
 &= \arcsin (1) \\
-&= \frac{\pi}{2}
+&= \frac{π}{2}
 \end{aligned}
 $$
 
 Therefore, we conclude that
 
 $$
-\int_0^1 \frac{1}{\sqrt{1 - x^2}}\,dx = \dfrac{\pi}{2}
+\int_0^1 \frac{\textrm d x}{\sqrt{1-x^2}} = \dfrac{\pi}{2}
 $$
 
 If the limit is infinite or does not exist, we say that the integral is **divergent**. Let's see an example.
@@ -328,14 +310,14 @@ If the limit is infinite or does not exist, we say that the integral is **diverg
 <a id="evaluating-an-improper-integral-of-the-second-kind"></a>
 ## Evaluating an Improper Integral of the Second Kind
 
-**Example:** Evaluate $\displaystyle \int_0^{\pi/2}\tan x\,dx$.
+**Example:** Evaluate $\displaystyle\int_0^{\pi/2}\tan x\,\textrm d x$.
 
 **Explanation**
 
 First, let's rewrite the integral using a substitution. Let $u = \cos x$. Then, we have
 
 $$
-\dfrac{du}{dx} = -\sin x \quad\Longrightarrow\quad -du = \sin x\,dx
+\dfrac{\textrm d u}{\textrm d x} = -\sin x \quad\Longrightarrow\quad -\textrm d u = \sin x\,\textrm d x
 $$
 
 We use the table below to change the limits:
@@ -348,28 +330,30 @@ Carrying out the change of variable, we have
 
 $$
 \begin{aligned}
-\int_{0}^{\pi/2}\tan x\,dx &= \int_{0}^{\pi/2}\frac{\sin x}{\cos x}\,dx \\
-&= \int_{1}^{0}-\frac{1}{u}\,du \\
-&= \int_{0}^{1}\frac{1}{u}\,du
+∫_{0}^{π/2}\tan xdx &= ∫_{0}^{π/2}\frac{\sin x}{\cos x}dx \\
+&= ∫_{0}^{π/2}\frac{\sin xdx}{\cos x} \\
+&= ∫_{1}^{0}\frac{-du}{u} \\
+&= - ∫_{1}^{0}\frac{du}{u} \\
+&= ∫_{0}^{1}\frac{du}{u}
 \end{aligned}
 $$
 
 This is an improper integral of the second kind because the function under the integral is unbounded at the *lower* limit of integration.
 
 $$
-f(u) = \dfrac{1}{u} \to \infty \quad\text{as}\quad u\to 0^+
+f(u) = \dfrac{1}{u} \rightarrow \infty \quad\textrm{as}\quad u\rightarrow 0^+
 $$
 
 Nonetheless, it is possible to calculate the integral by setting the *lower* bound equal to some parameter $a$, integrating as usual, and then taking the limit as $a\to0^+$.
 
 $$
 \begin{aligned}
-\int_{0}^{1}\frac{1}{u}\,du &= \lim_{a \to 0^+}\int_{a}^{1}\frac{1}{u}\,du \\
-&= \lim_{a \to 0^+}\ln|u|\bigg|_{a}^{1} \\
-&= \lim_{a \to 0^+}\left[\ln|1| - \ln|a|\right] \\
-&= \lim_{a \to 0^+}\left[0 - \ln|a|\right] \\
-&= - (-\infty) \\
-&= \infty
+∫_{0}^{1}\frac{du}{u} &= lim_(a → 0^{+})∫_{a}^{1}\frac{du}{u} \\
+&= lim_(a → 0^{+})\ln \mid u \mid \mid _{a}^{1} \\
+&= lim_(a → 0^{+})[\ln\begin{vmatrix}1 & -\ln & a\end{vmatrix}] \\
+&= lim_(a → 0^{+})[0 - \ln \mid a \mid ] \\
+&= - (- ∞) \\
+&= ∞
 \end{aligned}
 $$
 
@@ -381,28 +365,23 @@ Therefore, we conclude that the integral is divergent.
 
 ```quiz
 type: radio
-id: MA253-WHW1-759-q005
+id: q-5
 content: |-
-  What is $\int_{0}^{16}\frac{1}{\sqrt{x}}\,dx$?
-
+  What is $∫_{0}^{16}\frac{1}{\sqrt{x}}dx$?
 options:
 - id: a
   content: |-
     $16$
-
 - id: b
   content: |-
     $4$
-
 - id: c
   content: |-
     The integral is divergent
-
 - id: d
   content: |-
     $8$
   correct: true
-
 - id: e
   content: |-
     $\frac{1}{4}$
@@ -414,42 +393,30 @@ options:
 
 ```quiz
 type: radio
-id: MA253-WHW1-759-q006
+id: q-6
 content: |-
-  What is $\int_{1}^{4}\frac{1}{\sqrt{4 - t}}\,dt$?
-
+  What is $∫_{1}^{4}\frac{dt}{\sqrt{4 - t}}$?
 options:
 - id: a
   content: |-
     $2\sqrt{3}$
   correct: true
-
 - id: b
   content: |-
     $\frac{1}{2\sqrt{3}}$
-
 - id: c
   content: |-
     $4$
-
 - id: d
   content: |-
     $2\sqrt{3} - 2\sqrt{2}$
-
 - id: e
   content: |-
     The integral is divergent
 ```
 
----
-
-## Navigation
-
-- [Next: WHW-1 Problems](253/M-1/WHW-1/WHW-1.md)
-- [Back to WHW-1](253/M-1/WHW-1/WHW-1.md)
-
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

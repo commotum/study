@@ -156,31 +156,63 @@ the sequence converges to $0$.
 
 **Question 1**
 
-Consider the following geometric sequence:
-$2, 1, \frac{1}{2}, \frac{1}{4}, …$
-
-Determine whether the sequence is convergent or divergent. If it converges, find the limit.
-
-- [ ] A. Converges to $2$
-- [ ] B. Converges to $\frac{1}{4}$
-- [ ] C. Converges to $0$
-- [ ] D. Converges to $\frac{1}{2}$
-- [ ] E. The sequence diverges
+```quiz
+type: radio
+id: q-1
+content: |-
+  Consider the following geometric sequence:
+  $2, 1, \frac{1}{2}, \frac{1}{4}, …$
+  
+  Determine whether the sequence is convergent or divergent. If it converges, find the limit.
+options:
+- id: a
+  content: |-
+    Converges to $2$
+- id: b
+  content: |-
+    Converges to $\frac{1}{4}$
+- id: c
+  correct: true
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $\frac{1}{2}$
+- id: e
+  content: |-
+    The sequence diverges
+```
 
 ---
 
 **Question 2**
 
-Consider the following geometric sequence:
-
-$5,-5, 5,-5, …$
-Determine whether the sequence is convergent or divergent. If it converges, find the limit.
-
-- [ ] A. Converges to $1$
-- [ ] B. The sequence diverges
-- [ ] C. Converges to $-5$
-- [ ] D. Converges to $0$
-- [ ] E. Converges to $5$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Consider the following geometric sequence:
+  
+  $5,-5, 5,-5, …$
+  Determine whether the sequence is convergent or divergent. If it converges, find the limit.
+options:
+- id: a
+  content: |-
+    Converges to $1$
+- id: b
+  correct: true
+  content: |-
+    The sequence diverges
+- id: c
+  content: |-
+    Converges to $-5$
+- id: d
+  content: |-
+    Converges to $0$
+- id: e
+  content: |-
+    Converges to $5$
+```
 
 ---
 
@@ -218,24 +250,61 @@ Since $\mid r \mid > 1$, the sequence is divergent.
 
 ---
 
-**Question 3:** Does the sequence $a_{n} = 2^{n}$ for $n \ge 1$
-converge or diverge? If it converges, what is its limit?
+**Question 3:**
 
-- [ ] A. Converges to $1$
-- [ ] B. The sequence diverges
-- [ ] C. Converges to $0$
-- [ ] D. Converges to $\frac{1}{2}$
-- [ ] E. Converges to $2$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Does the sequence $a_{n} = 2^{n}$ for $n \ge 1$
+  
+  converge or diverge? If it converges, what is its limit?
+options:
+- id: a
+  content: |-
+    Converges to $1$
+- id: b
+  correct: true
+  content: |-
+    The sequence diverges
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $\frac{1}{2}$
+- id: e
+  content: |-
+    Converges to $2$
+```
 
 ---
 
-**Question 4:** Does the sequence $a_{n} = 3(-1)^{n}$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+**Question 4:**
 
-- [ ] A. The sequence diverges
-- [ ] B. Converges to $3$
-- [ ] C. Converges to $-1$
-- [ ] D. Converges to $-3$
-- [ ] E. Converges to $1$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Does the sequence $a_{n} = 3(-1)^{n}$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+options:
+- id: a
+  correct: true
+  content: |-
+    The sequence diverges
+- id: b
+  content: |-
+    Converges to $3$
+- id: c
+  content: |-
+    Converges to $-1$
+- id: d
+  content: |-
+    Converges to $-3$
+- id: e
+  content: |-
+    Converges to $1$
+```
 
 ---
 
@@ -272,33 +341,65 @@ Since $\mid r \mid >1$, the sequence diverges.
 
 **Question 5**
 
-Consider the following geometric sequence:
-
-$a_{n + 1} =-\frac{2}{3}a_{n}, a_{1} = 5, n \ge 1$
-
-Determine whether the sequence is convergent or divergent. If it converges, find the limit.
-
-- [ ] A. The sequence diverges
-- [ ] B. Converges to $5$
-- [ ] C. Converges to $\frac{2}{3}$
-- [ ] D. Converges to $0$
-- [ ] E. Converges to $-\frac{2}{3}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Consider the following geometric sequence:
+  
+  $a_{n + 1} =-\frac{2}{3}a_{n}, a_{1} = 5, n \ge 1$
+  
+  Determine whether the sequence is convergent or divergent. If it converges, find the limit.
+options:
+- id: a
+  content: |-
+    The sequence diverges
+- id: b
+  content: |-
+    Converges to $5$
+- id: c
+  content: |-
+    Converges to $\frac{2}{3}$
+- id: d
+  correct: true
+  content: |-
+    Converges to $0$
+- id: e
+  content: |-
+    Converges to $-\frac{2}{3}$
+```
 
 ---
 
 **Question 6**
 
-Consider the following sequence:
-
-$a_{n + 1} = a_{n}, a_{1} =-3, n \ge 1$.
-
-Determine whether the sequence is convergent or divergent. If it converges, find the limit.
-
-- [ ] A. Converges to $-\frac{1}{3}$
-- [ ] B. Converges to $1$
-- [ ] C. Converges to $0$
-- [ ] D. The sequence diverges
-- [ ] E. Converges to $-3$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Consider the following sequence:
+  
+  $a_{n + 1} = a_{n}, a_{1} =-3, n \ge 1$.
+  
+  Determine whether the sequence is convergent or divergent. If it converges, find the limit.
+options:
+- id: a
+  content: |-
+    Converges to $-\frac{1}{3}$
+- id: b
+  content: |-
+    Converges to $1$
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    The sequence diverges
+- id: e
+  correct: true
+  content: |-
+    Converges to $-3$
+```
 
 ```update-progress
 ```

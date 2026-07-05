@@ -93,23 +93,59 @@ $$
 
 ---
 
-**Question 1:** The geometric series $1 + 3 + 9 + 27$ can be written using sigma notation as
+**Question 1:**
 
-- [ ] A. $∑_(n = 1)^(4)(\frac{1}{3})^{n - 1}$
-- [ ] B. $∑_(n = 1)^(4)3^{n - 1}$
-- [ ] C. $∑_(n = 1)^(4)3 \cdot 2^{n - 1}$
-- [ ] D. $∑_(n = 1)^(4)(\frac{1}{9})^{n - 1}$
-- [ ] E. $∑_(n = 1)^(4)\frac{1}{3} \cdot 9^{n - 1}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  The geometric series $1 + 3 + 9 + 27$ can be written using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(4)(\frac{1}{3})^{n - 1}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(4)3^{n - 1}$
+  correct: true
+- id: c
+  content: |-
+    $∑_(n = 1)^(4)3 \cdot 2^{n - 1}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(4)(\frac{1}{9})^{n - 1}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(4)\frac{1}{3} \cdot 9^{n - 1}$
+```
 
 ---
 
-**Question 2:** The geometric series $5 + 10 + 20 + 40 + 80 + 160$ can be written using sigma notation as
+**Question 2:**
 
-- [ ] A. $∑_(n = 1)^(6)10^{n - 1}$
-- [ ] B. $∑_(n = 1)^(6)5 \cdot 4^{n - 1}$
-- [ ] C. $∑_(n = 1)^(6)4 \cdot 2^{n - 1}$
-- [ ] D. $∑_(n = 1)^(6)5 \cdot 2^{n - 1}$
-- [ ] E. $∑_(n = 1)^(6)2 \cdot 5^{n - 1}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  The geometric series $5 + 10 + 20 + 40 + 80 + 160$ can be written using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(6)10^{n - 1}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(6)5 \cdot 4^{n - 1}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(6)4 \cdot 2^{n - 1}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(6)5 \cdot 2^{n - 1}$
+  correct: true
+- id: e
+  content: |-
+    $∑_(n = 1)^(6)2 \cdot 5^{n - 1}$
+```
 
 ---
 
@@ -153,23 +189,59 @@ $$
 
 ---
 
-**Question 3:** The geometric series $4 + 12 + 36 + 108 + 324$ can be expressed using sigma notation as
+**Question 3:**
 
-- [ ] A. $∑_(n = 1)^(5)\frac{3}{4} \cdot 3^{n}$
-- [ ] B. $∑_(n = 1)^(5)\frac{3}{4} \cdot 4^{n}$
-- [ ] C. $∑_(n = 1)^(5)\frac{1}{4} \cdot 3^{n}$
-- [ ] D. $∑_(n = 1)^(5)\frac{1}{3} \cdot 4^{n}$
-- [ ] E. $∑_(n = 1)^(5)\frac{4}{3} \cdot 3^{n}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  The geometric series $4 + 12 + 36 + 108 + 324$ can be expressed using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(5)\frac{3}{4} \cdot 3^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(5)\frac{3}{4} \cdot 4^{n}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(5)\frac{1}{4} \cdot 3^{n}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(5)\frac{1}{3} \cdot 4^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(5)\frac{4}{3} \cdot 3^{n}$
+  correct: true
+```
 
 ---
 
-**Question 4:** The geometric series $6 + 12 + 24 + 48 + 96 + 192 + 384$ can be expressed using sigma notation as
+**Question 4:**
 
-- [ ] A. $∑_(n = 1)^(7)\frac{1}{3} \cdot 2^{n}$
-- [ ] B. $∑_(n = 1)^(7)2 \cdot 3^{n}$
-- [ ] C. $∑_(n = 1)^(7)\frac{1}{2} \cdot 3^{n}$
-- [ ] D. $∑_(n = 1)^(7)\frac{3}{2} \cdot 2^{n}$
-- [ ] E. $∑_(n = 1)^(7)3 \cdot 2^{n}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  The geometric series $6 + 12 + 24 + 48 + 96 + 192 + 384$ can be expressed using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(7)\frac{1}{3} \cdot 2^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(7)2 \cdot 3^{n}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(7)\frac{1}{2} \cdot 3^{n}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(7)\frac{3}{2} \cdot 2^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(7)3 \cdot 2^{n}$
+  correct: true
+```
 
 ---
 
@@ -213,23 +285,59 @@ $$
 
 ---
 
-**Question 5:** The geometric series $3 - 6 + 12 - 24 + 48$ can be expressed using sigma notation as
+**Question 5:**
 
-- [ ] A. $∑_(n = 1)^(5)2 \cdot (-3)^{n - 1}$
-- [ ] B. $∑_(n = 1)^(5)3 \cdot (-2)^{n - 1}$
-- [ ] C. $∑_(n = 1)^(5)(-3) \cdot (-2)^{n - 1}$
-- [ ] D. $∑_(n = 1)^(5)4 \cdot (-3)^{n - 1}$
-- [ ] E. $∑_(n = 1)^(5)5 \cdot (-3)^{n - 1}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  The geometric series $3 - 6 + 12 - 24 + 48$ can be expressed using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(5)2 \cdot (-3)^{n - 1}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(5)3 \cdot (-2)^{n - 1}$
+  correct: true
+- id: c
+  content: |-
+    $∑_(n = 1)^(5)(-3) \cdot (-2)^{n - 1}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(5)4 \cdot (-3)^{n - 1}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(5)5 \cdot (-3)^{n - 1}$
+```
 
 ---
 
-**Question 6:** The geometric series $-2 + \frac{1}{3} - \frac{1}{18} + \frac{1}{108}$ can be expressed using sigma notation as
+**Question 6:**
 
-- [ ] A. $∑_(n = 1)^(4)(-2) \cdot (-\frac{1}{6})^{n}$
-- [ ] B. $∑_(n = 1)^(4)(-3) \cdot (-\frac{1}{6})^{n}$
-- [ ] C. $∑_(n = 1)^(4)2 \cdot (-\frac{1}{3})^{n}$
-- [ ] D. $∑_(n = 1)^(4)4 \cdot (-\frac{1}{3})^{n}$
-- [ ] E. $∑_(n = 1)^(4)12 \cdot (-\frac{1}{6})^{n}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  The geometric series $-2 + \frac{1}{3} - \frac{1}{18} + \frac{1}{108}$ can be expressed using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(4)(-2) \cdot (-\frac{1}{6})^{n}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(4)(-3) \cdot (-\frac{1}{6})^{n}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(4)2 \cdot (-\frac{1}{3})^{n}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(4)4 \cdot (-\frac{1}{3})^{n}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(4)12 \cdot (-\frac{1}{6})^{n}$
+  correct: true
+```
 
 ---
 
@@ -285,29 +393,61 @@ $$
 
 **Question 7**
 
-> A scientific calculator is required to answer this question.
-
-The geometric series $6 + 18 + ⋯ + 1458$ can be expressed using sigma notation as
-
-- [ ] A. $∑_(n = 1)^(6)6 \cdot 3^{n - 1}$
-- [ ] B. $∑_(n = 1)^(6)3 \cdot 2^{n - 1}$
-- [ ] C. $∑_(n = 1)^(5)6 \cdot 3^{n - 1}$
-- [ ] D. $∑_(n = 1)^(7)6 \cdot 3^{n - 1}$
-- [ ] E. $∑_(n = 1)^(5)3 \cdot 2^{n - 1}$
+```quiz
+type: radio
+id: q-7
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  The geometric series $6 + 18 + ⋯ + 1458$ can be expressed using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(6)6 \cdot 3^{n - 1}$
+  correct: true
+- id: b
+  content: |-
+    $∑_(n = 1)^(6)3 \cdot 2^{n - 1}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(5)6 \cdot 3^{n - 1}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(7)6 \cdot 3^{n - 1}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(5)3 \cdot 2^{n - 1}$
+```
 
 ---
 
 **Question 8**
 
-> A scientific calculator is required to answer this question.
-
-The geometric series $486 + 162 + 54⋯ + 2$ can be expressed using sigma notation as
-
-- [ ] A. $∑_(n = 1)^(7)486 \cdot (\frac{1}{3})^{n - 1}$
-- [ ] B. $∑_(n = 1)^(5)486 \cdot (\frac{1}{3})^{n - 1}$
-- [ ] C. $∑_(n = 1)^(6)486 \cdot (\frac{1}{4})^{n - 1}$
-- [ ] D. $∑_(n = 1)^(7)486 \cdot (\frac{1}{4})^{n - 1}$
-- [ ] E. $∑_(n = 1)^(6)486 \cdot (\frac{1}{3})^{n - 1}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  The geometric series $486 + 162 + 54⋯ + 2$ can be expressed using sigma notation as
+options:
+- id: a
+  content: |-
+    $∑_(n = 1)^(7)486 \cdot (\frac{1}{3})^{n - 1}$
+- id: b
+  content: |-
+    $∑_(n = 1)^(5)486 \cdot (\frac{1}{3})^{n - 1}$
+- id: c
+  content: |-
+    $∑_(n = 1)^(6)486 \cdot (\frac{1}{4})^{n - 1}$
+- id: d
+  content: |-
+    $∑_(n = 1)^(7)486 \cdot (\frac{1}{4})^{n - 1}$
+- id: e
+  content: |-
+    $∑_(n = 1)^(6)486 \cdot (\frac{1}{3})^{n - 1}$
+  correct: true
+```
 
 ```update-progress
 ```

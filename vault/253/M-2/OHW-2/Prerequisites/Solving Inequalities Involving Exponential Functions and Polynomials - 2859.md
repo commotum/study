@@ -76,23 +76,59 @@ $$
 
 ---
 
-**Question 1:** Solve the inequality $((x^{2} - 16)^{3})/(5^{x}) \ge 0$.
+**Question 1:**
 
-- [ ] A. $x \le - 4$ or $x \ge 4$
-- [ ] B. $x \ge - 4$
-- [ ] C. $-4 \le x \le 4$
-- [ ] D. $x \ge 5$
-- [ ] E. $x \le - 5$ or $x \ge 5$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Solve the inequality $((x^{2} - 16)^{3})/(5^{x}) \ge 0$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $x \le - 4$ or $x \ge 4$
+- id: b
+  content: |-
+    $x \ge - 4$
+- id: c
+  content: |-
+    $-4 \le x \le 4$
+- id: d
+  content: |-
+    $x \ge 5$
+- id: e
+  content: |-
+    $x \le - 5$ or $x \ge 5$
+```
 
 ---
 
-**Question 2:** Solve the inequality $(5x + 2)^{4} \cdot 3^{x} < 0$.
+**Question 2:**
 
-- [ ] A. $-\frac{2}{5} < x < \frac{2}{5}$
-- [ ] B. $x < - \frac{2}{5}$ or $x > \frac{2}{5}$
-- [ ] C. $x > - \frac{2}{5}$
-- [ ] D. no solution
-- [ ] E. all real numbers
+```quiz
+type: radio
+id: q-2
+content: |-
+  Solve the inequality $(5x + 2)^{4} \cdot 3^{x} < 0$.
+options:
+- id: a
+  content: |-
+    $-\frac{2}{5} < x < \frac{2}{5}$
+- id: b
+  content: |-
+    $x < - \frac{2}{5}$ or $x > \frac{2}{5}$
+- id: c
+  content: |-
+    $x > - \frac{2}{5}$
+- id: d
+  correct: true
+  content: |-
+    no solution
+- id: e
+  content: |-
+    all real numbers
+```
 
 ---
 
@@ -123,23 +159,59 @@ Therefore, the solution is $-2 < x < 1$.
 
 ---
 
-**Question 3:** Solve the inequality $-4^{3x} \ge 4^{3x}x^{2} - 3 \cdot 4^{3x}$.
+**Question 3:**
 
-- [ ] A. $0 \le x \le 2$
-- [ ] B. $-\sqrt{2} \le x \le \sqrt{2}$
-- [ ] C. $-2 \le x \le 2$
-- [ ] D. $x \le - \sqrt{2}$ or $x \ge \sqrt{2}$
-- [ ] E. $x \le - 2$ or $x \ge 2$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Solve the inequality $-4^{3x} \ge 4^{3x}x^{2} - 3 \cdot 4^{3x}$.
+options:
+- id: a
+  content: |-
+    $0 \le x \le 2$
+- id: b
+  correct: true
+  content: |-
+    $-\sqrt{2} \le x \le \sqrt{2}$
+- id: c
+  content: |-
+    $-2 \le x \le 2$
+- id: d
+  content: |-
+    $x \le - \sqrt{2}$ or $x \ge \sqrt{2}$
+- id: e
+  content: |-
+    $x \le - 2$ or $x \ge 2$
+```
 
 ---
 
-**Question 4:** Solve the inequality $x^{2}e^{4x} < 3e^{4x} - 2xe^{4x}$.
+**Question 4:**
 
-- [ ] A. $x < - 3$ or $x > 1$
-- [ ] B. $-3 < x < 1$
-- [ ] C. $x < 0$ or $x > 3$
-- [ ] D. $0 < x < 3$
-- [ ] E. $x < - 3$ or $x > 0$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Solve the inequality $x^{2}e^{4x} < 3e^{4x} - 2xe^{4x}$.
+options:
+- id: a
+  content: |-
+    $x < - 3$ or $x > 1$
+- id: b
+  correct: true
+  content: |-
+    $-3 < x < 1$
+- id: c
+  content: |-
+    $x < 0$ or $x > 3$
+- id: d
+  content: |-
+    $0 < x < 3$
+- id: e
+  content: |-
+    $x < - 3$ or $x > 0$
+```
 
 ---
 
@@ -176,23 +248,59 @@ $$
 
 ---
 
-**Question 5:** Solve the inequality $x^{3} \cdot 2^{5x} \ge 2^{5x - 6}$.
+**Question 5:**
 
-- [ ] A. $-\frac{1}{4} \le x \le \frac{1}{4}$
-- [ ] B. $x \le - \frac{1}{4}$ or $x \ge \frac{1}{4}$
-- [ ] C. $x \le \frac{1}{4}$
-- [ ] D. $x \ge - \frac{1}{4}$
-- [ ] E. $x \ge \frac{1}{4}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Solve the inequality $x^{3} \cdot 2^{5x} \ge 2^{5x - 6}$.
+options:
+- id: a
+  content: |-
+    $-\frac{1}{4} \le x \le \frac{1}{4}$
+- id: b
+  content: |-
+    $x \le - \frac{1}{4}$ or $x \ge \frac{1}{4}$
+- id: c
+  content: |-
+    $x \le \frac{1}{4}$
+- id: d
+  content: |-
+    $x \ge - \frac{1}{4}$
+- id: e
+  correct: true
+  content: |-
+    $x \ge \frac{1}{4}$
+```
 
 ---
 
-**Question 6:** Solve the inequality $3^{4x}x^{2} \ge 3^{4x + 1}x$.
+**Question 6:**
 
-- [ ] A. no solution
-- [ ] B. $x \le - 3$ or $x \ge 0$
-- [ ] C. $0 \le x \le 3$
-- [ ] D. $x \le 0$ or $x \ge 3$
-- [ ] E. all real numbers
+```quiz
+type: radio
+id: q-6
+content: |-
+  Solve the inequality $3^{4x}x^{2} \ge 3^{4x + 1}x$.
+options:
+- id: a
+  content: |-
+    no solution
+- id: b
+  content: |-
+    $x \le - 3$ or $x \ge 0$
+- id: c
+  content: |-
+    $0 \le x \le 3$
+- id: d
+  correct: true
+  content: |-
+    $x \le 0$ or $x \ge 3$
+- id: e
+  content: |-
+    all real numbers
+```
 
 ```update-progress
 ```

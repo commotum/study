@@ -73,29 +73,61 @@ Therefore, $x=-4$ is a multiple root of even multiplicity.
 
 **Question 1**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-140411.png>)
-
-A part of the graph of a polynomial $p(x)$ is given above. Which of the following statements is true?
-
-- [ ] A. $x = 3$ is a multiple root of even multiplicity
-- [ ] B. $x = 3$ is a simple root
-- [ ] C. $x = 3$ is not a root of $p(x)$
-- [ ] D. $x = 3$ is a simple root of even multiplicity
-- [ ] E. $x = 3$ is a multiple root of odd multiplicity
+```quiz
+type: radio
+id: ma-140411
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-140411.png>)
+  
+  A part of the graph of a polynomial $p(x)$ is given above. Which of the following statements is true?
+options:
+- id: a
+  content: |-
+    $x = 3$ is a multiple root of even multiplicity
+- id: b
+  correct: true
+  content: |-
+    $x = 3$ is a simple root
+- id: c
+  content: |-
+    $x = 3$ is not a root of $p(x)$
+- id: d
+  content: |-
+    $x = 3$ is a simple root of even multiplicity
+- id: e
+  content: |-
+    $x = 3$ is a multiple root of odd multiplicity
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-140414.png>)
-
-A part of the graph of a polynomial $p(x)$ is shown above. Which of the following statements is true?
-
-- [ ] A. $x =-2$ is not a root of $p(x)$
-- [ ] B. $x =-2$ is a multiple root of even multiplicity
-- [ ] C. $x =-2$ is a simple root of even multiplicity
-- [ ] D. $x =-2$ is a multiple root of odd multiplicity
-- [ ] E. $x =-2$ is a simple root
+```quiz
+type: radio
+id: ma-140414
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-140414.png>)
+  
+  A part of the graph of a polynomial $p(x)$ is shown above. Which of the following statements is true?
+options:
+- id: a
+  content: |-
+    $x =-2$ is not a root of $p(x)$
+- id: b
+  correct: true
+  content: |-
+    $x =-2$ is a multiple root of even multiplicity
+- id: c
+  content: |-
+    $x =-2$ is a simple root of even multiplicity
+- id: d
+  content: |-
+    $x =-2$ is a multiple root of odd multiplicity
+- id: e
+  content: |-
+    $x =-2$ is a simple root
+```
 
 ---
 
@@ -124,37 +156,69 @@ Therefore, the correct answer is "I and II only".
 
 **Question 3**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-38768.png>)
-
-The graph of a polynomial $p(x)$ is shown above. Which of the following statements are true?
-
-1. $x = 0$ is a root of even multiplicity.
-2. $x =-1$ and $x = 2$ are roots of even multiplicity.
-3. $p(x) → ∞$ as $x → ∞$.
-
-- [ ] A. II only
-- [ ] B. II and III only
-- [ ] C. I only
-- [ ] D. I, II, and III
-- [ ] E. I and II only
+```quiz
+type: radio
+id: ma-38768
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-38768.png>)
+  
+  The graph of a polynomial $p(x)$ is shown above. Which of the following statements are true?
+  
+  1. $x = 0$ is a root of even multiplicity.
+  2. $x =-1$ and $x = 2$ are roots of even multiplicity.
+  3. $p(x) → ∞$ as $x → ∞$.
+options:
+- id: a
+  content: |-
+    II only
+- id: b
+  correct: true
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    I only
+- id: d
+  content: |-
+    I, II, and III
+- id: e
+  content: |-
+    I and II only
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-38762.png>)
-
-The graph of a polynomial $p(x)$ is shown above. Which of the following statements are true?
-
-1. $x = 2$ is a root of even multiplicity.
-2. $x = ± 1$ are roots of odd multiplicity.
-3. $p(0) = 2$.
-
-- [ ] A. I and II only
-- [ ] B. III only
-- [ ] C. II and III only
-- [ ] D. None
-- [ ] E. I only
+```quiz
+type: radio
+id: ma-38762
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-38762.png>)
+  
+  The graph of a polynomial $p(x)$ is shown above. Which of the following statements are true?
+  
+  1. $x = 2$ is a root of even multiplicity.
+  2. $x = ± 1$ are roots of odd multiplicity.
+  3. $p(0) = 2$.
+options:
+- id: a
+  correct: true
+  content: |-
+    I and II only
+- id: b
+  content: |-
+    III only
+- id: c
+  content: |-
+    II and III only
+- id: d
+  content: |-
+    None
+- id: e
+  content: |-
+    I only
+```
 
 ---
 
@@ -189,29 +253,61 @@ $$
 
 **Question 5**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-38671.png>)
-
-Which of the following could be the equation of the polynomial curve shown above?
-
-- [ ] A. $y = 3(x + 3)(x + 1)(x - 2)$
-- [ ] B. $y = (x + 3)(x + 1)^{2}(x - 2)$
-- [ ] C. $y = 3(x + 2)(x + 1)(x - 2)$
-- [ ] D. $y = 2(x + 3)(x + 1)(x - 2)$
-- [ ] E. $y = 5x^{2}(x + 1)(x - 2)$
+```quiz
+type: radio
+id: ma-38671
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-38671.png>)
+  
+  Which of the following could be the equation of the polynomial curve shown above?
+options:
+- id: a
+  content: |-
+    $y = 3(x + 3)(x + 1)(x - 2)$
+- id: b
+  correct: true
+  content: |-
+    $y = (x + 3)(x + 1)^{2}(x - 2)$
+- id: c
+  content: |-
+    $y = 3(x + 2)(x + 1)(x - 2)$
+- id: d
+  content: |-
+    $y = 2(x + 3)(x + 1)(x - 2)$
+- id: e
+  content: |-
+    $y = 5x^{2}(x + 1)(x - 2)$
+```
 
 ---
 
 **Question 6**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-38668.png>)
-
-Which of the following could be the equation of the polynomial curve shown above?
-
-- [ ] A. $y =-x(x + 1)(x - 1)$
-- [ ] B. $y =-x^{2}(x + 1)(x - 1)^{2}$
-- [ ] C. $y =-x(x + 1)(x - 1)(x + 2)$
-- [ ] D. $y =-x(x + 1)^{2}(x - 1)$
-- [ ] E. $y =-x(x + 1)^{2}(x - 1)(x + 2)$
+```quiz
+type: radio
+id: ma-38668
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-38668.png>)
+  
+  Which of the following could be the equation of the polynomial curve shown above?
+options:
+- id: a
+  correct: true
+  content: |-
+    $y =-x(x + 1)(x - 1)$
+- id: b
+  content: |-
+    $y =-x^{2}(x + 1)(x - 1)^{2}$
+- id: c
+  content: |-
+    $y =-x(x + 1)(x - 1)(x + 2)$
+- id: d
+  content: |-
+    $y =-x(x + 1)^{2}(x - 1)$
+- id: e
+  content: |-
+    $y =-x(x + 1)^{2}(x - 1)(x + 2)$
+```
 
 ---
 
@@ -239,29 +335,61 @@ Only graph $\textbf{III}$ displays this end behavior. Therefore, the correct ans
 
 **Question 7**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-38632.png>)
-
-Which of the above could be the graph of $y =-5x^{2}(x - 1)^{2}(x - 2)$?
-
-- [ ] A. $III$
-- [ ] B. $I$
-- [ ] C. $IV$
-- [ ] D. None of the given graphs are correct
-- [ ] E. $II$
+```quiz
+type: radio
+id: ma-38632
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-38632.png>)
+  
+  Which of the above could be the graph of $y =-5x^{2}(x - 1)^{2}(x - 2)$?
+options:
+- id: a
+  content: |-
+    $III$
+- id: b
+  content: |-
+    $I$
+- id: c
+  correct: true
+  content: |-
+    $IV$
+- id: d
+  content: |-
+    None of the given graphs are correct
+- id: e
+  content: |-
+    $II$
+```
 
 ---
 
 **Question 8**
 
-![](<../Source/Graphing General Polynomials - 2049/Images/q-38630.png>)
-
-Which of the above could be the graph of $y = x(x + 1)(x - 1)$?
-
-- [ ] A. $II$
-- [ ] B. $I$
-- [ ] C. None of the given graphs are correct
-- [ ] D. $III$
-- [ ] E. $IV$
+```quiz
+type: radio
+id: ma-38630
+content: |-
+  ![](<../Source/Graphing General Polynomials - 2049/Images/q-38630.png>)
+  
+  Which of the above could be the graph of $y = x(x + 1)(x - 1)$?
+options:
+- id: a
+  content: |-
+    $II$
+- id: b
+  correct: true
+  content: |-
+    $I$
+- id: c
+  content: |-
+    None of the given graphs are correct
+- id: d
+  content: |-
+    $III$
+- id: e
+  content: |-
+    $IV$
+```
 
 ```update-progress
 ```

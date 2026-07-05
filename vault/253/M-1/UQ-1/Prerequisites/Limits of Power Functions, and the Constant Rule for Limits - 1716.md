@@ -1,10 +1,10 @@
 # Limits of Power Functions, and the Constant Rule for Limits
 
-
 <!--
 lesson-id: 1716
 topic-code: MF2.11.2.1
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -17,7 +17,7 @@ topic-code: MF2.11.2.1
 
 ## Prerequisites
 
-- [Finding the Existence of a Limit Using One-Sided Limits](../625/625.md)
+- [Finding the Existence of a Limit Using One-Sided Limits](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.3. Finding the Existence of a Limit Using One-Sided Limits.md>)
 
 ---
 
@@ -50,7 +50,7 @@ $$
 
 and checking the left and right-sided limits.
 
-![](<253/M-1/UQ-1/Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/80774891e577dc84f744644b3b3a434a.png>)
+![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/80774891e577dc84f744644b3b3a434a.png>)
 
 Looking at the graph, we compute the left and right-sided limits:
 
@@ -68,7 +68,7 @@ $$
 <a id="computing-a-limit-using-direct-substitution"></a>
 ## Computing a Limit Using Direct Substitution
 
-**Example:** Find $\lim_{x\rightarrow (-1/2)} x^3$.
+**Example:** Find $\lim_\limits{x\rightarrow (-1/2)} x^3$.
 
 **Explanation**
 
@@ -82,7 +82,7 @@ directly into the limit, we find
 
 $$
 \begin{aligned}
-\lim_{x \to (-1/2)}x^{3} &= (-\frac{1}{2})^{3} \\
+lim_(x → (-1/2))x^{3} &= (-\frac{1}{2})^{3} \\
 &=-\frac{1}{2^{3}} \\
 &=-\frac{1}{8}
 \end{aligned}
@@ -94,9 +94,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q001
+id: q-1
 content: |-
-  Find $\lim_{x \to - 2}x^{5}$.
+  Find $lim_(x → - 2)x^{5}$.
 options:
 - id: a
   content: |-
@@ -115,15 +115,16 @@ options:
     $-32$
   correct: true
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q002
+id: q-2
 content: |-
-  Find $\lim_{x \to 3}x^{4}$.
+  Find $lim_(x → 3)x^{4}$.
 options:
 - id: a
   content: |-
@@ -142,6 +143,7 @@ options:
   content: |-
     $12$
 ```
+
 ---
 
 <a id="the-limit-of-a-constant-function"></a>
@@ -153,16 +155,16 @@ $$
 f(x)=c
 $$
 
-the limit $\lim_{x\rightarrow a} c$ will match the value of the constant:
+the limit $\lim_\limits{x\rightarrow a} c$ will match the value of the constant:
 
 $$
-\lim_{x\rightarrow a} c=c \,
+\lim_\limits{x\rightarrow a} c=c \,
 $$
 
-For example, the limit $\lim_{x\rightarrow 2} 1$ is just the value of the constant, $1$:
+For example, the limit $\lim_\limits{x\rightarrow 2} 1$ is just the value of the constant, $1$:
 
 $$
-\lim_{x\rightarrow 2} 1 = 1
+\lim_\limits{x\rightarrow 2} 1 = 1
 $$
 
 We can verify this result by graphing the function
@@ -171,7 +173,7 @@ $$
 f(x) = 1
 $$
 
-![](<253/M-1/UQ-1/Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/99a2e48f6b089ca604ad9784978ca02f.png>)
+![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/99a2e48f6b089ca604ad9784978ca02f.png>)
 
 Looking at the graph, we compute the left and right-sided limits:
 
@@ -189,7 +191,7 @@ $$
 <a id="computing-the-limit-of-a-constant-function"></a>
 ## Computing the Limit of a Constant Function
 
-**Example:** Evaluate $\lim_{x\,\rightarrow \,-4} \sqrt{7}$.
+**Example:** Evaluate $\lim_\limits{x\,\rightarrow \,-4} \sqrt{7}$.
 
 **Explanation**
 
@@ -202,7 +204,7 @@ $$
 remains equal to $\sqrt{7}$. Therefore, we have
 
 $$
-\lim_{x\,\rightarrow\, -4} \sqrt{7}=\sqrt{7}
+\lim_\limits{x\,\rightarrow\, -4} \sqrt{7}=\sqrt{7}
 $$
 
 ---
@@ -211,9 +213,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q003
+id: q-3
 content: |-
-  Evaluate $\lim_{x \to - \sqrt{2}}π$.
+  Evaluate $lim_(x → - \sqrt{2})π$.
 options:
 - id: a
   content: |-
@@ -232,15 +234,16 @@ options:
   content: |-
     $\sqrt{2}$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q004
+id: q-4
 content: |-
-  Evaluate $\lim_{y \to \pi/3}3$.
+  Evaluate $lim_(y → π/3)3$.
 options:
 - id: a
   content: |-
@@ -259,6 +262,7 @@ options:
   content: |-
     $3π$
 ```
+
 ---
 
 <a id="the-constant-rule-for-limits"></a>
@@ -267,19 +271,19 @@ options:
 The **constant rule for limits** states that if $c$ is a constant, and
 
 $$
-\lim_{x\rightarrow a}f(x)=L
+\lim_\limits{x\rightarrow a}f(x)=L
 $$
 
 then
 
 $$
-\lim_{x\rightarrow a}c\cdot f(x) = c\cdot \lim_{x\rightarrow a}f(x)=c\cdot L
+\lim_\limits{x\rightarrow a}c\cdot f(x) = c\cdot \lim_\limits{x\rightarrow a}f(x)=c\cdot L
 $$
 
-For example, to compute $\lim_{x\rightarrow 2}5x^3$, we just factor the constant $5$ out of the limit and then substitute:
+For example, to compute $\lim_\limits{x\rightarrow 2}5x^3$, we just factor the constant $5$ out of the limit and then substitute:
 
 $$
-\begin{aligned} \lim_{x\rightarrow 2}{\color{blue}5}x^3 &= {\color{blue}5} \lim_{x\rightarrow 2}x^3 \\[5pt] &= {\color{blue}5}\cdot 2^3 \\[5pt] &= 40 \end{aligned}
+\begin{aligned} \lim_\limits{x\rightarrow 2}{\color{blue}5}x^3 &= {\color{blue}5} \lim_\limits{x\rightarrow 2}x^3 \\[5pt] &= {\color{blue}5}\cdot 2^3 \\[5pt] &= 40 \end{aligned}
 $$
 
 Similarly, consider the graph of the function $y=f(x)$ below. Suppose we know that
@@ -290,7 +294,7 @@ $$
 
 where $c$ is a real constant. Let's find the value of $c$.
 
-![](<253/M-1/UQ-1/Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/c4bbbe0545c8db61cc85595057b4fb03.png>)
+![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/c4bbbe0545c8db61cc85595057b4fb03.png>)
 
 From the figure above, we get that
 
@@ -302,8 +306,8 @@ Therefore,
 
 $$
 \begin{aligned}
-\lim_{x \to 1}cf(x) &= 10 \\
-c \cdot \lim_{x \to 1}f(x) &= 10 \\
+lim_(x → 1)cf(x) &= 10 \\
+c \cdot lim_(x → 1)f(x) &= 10 \\
 c \cdot 5 &= 10 \\
 c &= 2
 \end{aligned}
@@ -330,9 +334,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q005
+id: q-5
 content: |-
-  Given that $\lim_{x \to \sqrt{2}}Cx^{6} = 8$, where $C$ is a real constant, what is the value of $C$?
+  Given that $lim_(x → \sqrt{2})Cx^{6} = 8$, where $C$ is a real constant, what is the value of $C$?
 options:
 - id: a
   content: |-
@@ -351,15 +355,16 @@ options:
   content: |-
     $\frac{1}{2}$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q006
+id: q-6
 content: |-
-  Find $\lim_{y \to 3}\frac{5y^{2}}{3}$.
+  Find $lim_(y → 3)\frac{5y^{2}}{3}$.
 options:
 - id: a
   content: |-
@@ -378,28 +383,29 @@ options:
   content: |-
     $10$
 ```
+
 ---
 
 <a id="using-the-constant-rule-to-compute-the-limit-of-a-function-given-a-graph"></a>
 ## Using the Constant Rule to Compute the Limit of a Function Given a Graph
 
-**Example:** The figure below shows the graph of $y=f(x)$. Evaluate $\lim_{x \rightarrow \,0} \Bigl(-2.5f(x)\Bigr)$.
+**Example:** The figure below shows the graph of $y=f(x)$. Evaluate $\lim_\limits{x \rightarrow \,0} \Bigl(-2.5f(x)\Bigr)$.
 
-![](<253/M-1/UQ-1/Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/a7f8750a28cdc0a0af8a34991e6a0836.png>)
+![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/a7f8750a28cdc0a0af8a34991e6a0836.png>)
 
 **Explanation**
 
 From the graph we get that
 
 $$
-\lim_{x\to 0}f(x)=2
+\lim_\limits{x\to 0}f(x)=2
 $$
 
 Therefore,
 
 $$
 \begin{aligned}
-\lim_{x \to 0}(-2.5f(x)) &= (-2.5) \cdot \lim_{x \to 0}f(x) \\
+lim_(x → 0)(-2.5f(x)) &= (-2.5) \cdot lim_(x → 0)f(x) \\
 &= (-2.5) \cdot 2 \\
 &=-5
 \end{aligned}
@@ -407,15 +413,15 @@ $$
 
 ---
 
-**Question 7:**
+**Question 7**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q007
+id: ma-35398
 content: |-
   ![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/q-35398.png>)
   
-  The figure above shows the graph of $y = f(x)$. Evaluate $\lim_{x \to 0}\sqrt{7}f(x)$.
+  The figure above shows the graph of $y = f(x)$. Evaluate $lim_(x → 0)\sqrt{7}f(x)$.
 options:
 - id: a
   content: |-
@@ -434,17 +440,18 @@ options:
   content: |-
     $-2\sqrt{7}$
 ```
+
 ---
 
-**Question 8:**
+**Question 8**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1716-q008
+id: ma-35397
 content: |-
   ![](<../Source/Limits of Power Functions, and the Constant Rule for Limits - 1716/Images/q-35397.png>)
   
-  The figure above shows the graph of $y = f(x)$. Evaluate $\lim_{x \to 1}(-6f(x))$.
+  The figure above shows the graph of $y = f(x)$. Evaluate $lim_(x → 1)(-6f(x))$.
 options:
 - id: a
   content: |-
@@ -452,26 +459,20 @@ options:
 - id: b
   content: |-
     $-30$
+  correct: true
 - id: c
   content: |-
     $-1$
 - id: d
   content: |-
     $-3$
-  correct: true
 - id: e
   content: |-
     $-18$
 ```
----
-
-## Navigation
-
-- [Next: The Sum Rule for Limits](<The Sum Rule for Limits - 1914.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

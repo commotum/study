@@ -1,10 +1,10 @@
 # Calculating Limits of Rational Functions by Factoring
 
-
 <!--
 lesson-id: 1813
 topic-code: MF2.11.3.9
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -14,9 +14,9 @@ topic-code: MF2.11.3.9
 
 ## Prerequisites
 
-- [Factoring Sums and Differences of Cubes](../441/441.md)
-- [The Product and Quotient Rules for Limits](../1246/1246.md)
-- [Simplifying Rational Expressions Using Polynomial Factorization](../1676/1676.md)
+- [Factoring Sums and Differences of Cubes](<../../../2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.4. Factoring Sums and Differences of Cubes.md>)
+- [The Product and Quotient Rules for Limits](<../../11.2. The Algebra of Limits/Lessons/11.2.3. The Product and Quotient Rules for Limits.md>)
+- [Simplifying Rational Expressions Using Polynomial Factorization](<../../../6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.1. Simplifying Rational Expressions Using Polynomial Factorization.md>)
 
 ---
 
@@ -33,7 +33,7 @@ If we try to evaluate the limit by directly substituting $x=0$, we get a confusi
 
 $$
 \begin{aligned}
-\lim_{x \to 0}\frac{x^{3} - 2x}{x^{2} + 4x} &= ((0)^{3} - 2(0))/((0)^{2} + 4(0)) = \frac{0}{0}
+lim_(x → 0)\frac{x^{3} - 2x}{x^{2} + 4x} &= ((0)^{3} - 2(0))/((0)^{2} + 4(0)) = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -62,14 +62,14 @@ $$
 <a id="calculating-the-limit-of-a-rational-function-with-one-quadratic-term-by-factoring"></a>
 ## Calculating the Limit of a Rational Function With One Quadratic Term by Factoring
 
-**Example:** Evaluate $\lim_{x\rightarrow -3}\dfrac{x^2-9}{x+3}$.
+**Example:** Evaluate $\lim_\limits{x\rightarrow -3}\dfrac{x^2-9}{x+3}$.
 
 **Explanation**
 
 If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
-\begin{aligned} \lim_{x\rightarrow -3}\dfrac{x^2-9}{x+3} = \dfrac{(-3)^2-9}{(-3)+3} = \dfrac{0}{0} \end{aligned}
+\begin{aligned} \lim_\limits{x\rightarrow -3}\dfrac{x^2-9}{x+3} = \dfrac{(-3)^2-9}{(-3)+3} = \dfrac{0}{0} \end{aligned}
 $$
 
 So, to find the limit, we have to factor the numerator and the denominator. We get
@@ -86,7 +86,7 @@ Therefore,
 
 $$
 \begin{aligned}
-\lim_{x \to - 3}\frac{x^{2} - 9}{x + 3} &= \lim_{x \to - 3}(x - 3) \\
+lim_(x → - 3)\frac{x^{2} - 9}{x + 3} &= lim_(x → - 3)(x - 3) \\
 &=-3 - 3 \\
 &=-6
 \end{aligned}
@@ -98,9 +98,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1813-q001
+id: q-1
 content: |-
-  Evaluate $\lim_{x \to - 2}\frac{2x + 4}{x^{2} - 3x - 10}$.
+  Evaluate $lim_(x → - 2)\frac{2x + 4}{x^{2} - 3x - 10}$.
 options:
 - id: a
   content: |-
@@ -119,15 +119,16 @@ options:
     $-\frac{2}{7}$
   correct: true
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1813-q002
+id: q-2
 content: |-
-  Evaluate $\lim_{x \to 1} - \frac{x^{2} - 1}{x - 1}$.
+  Evaluate $lim_(x → 1) - \frac{x^{2} - 1}{x - 1}$.
 options:
 - id: a
   content: |-
@@ -146,19 +147,20 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 <a id="calculating-the-limit-of-a-rational-function-with-two-quadratic-terms-by-factoring"></a>
 ## Calculating the Limit of a Rational Function With Two Quadratic Terms by Factoring
 
-**Example:** Evaluate $\lim_{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30}$.
+**Example:** Evaluate $\lim_\limits{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30}$.
 
 **Explanation**
 
 If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
-\begin{aligned} \lim_{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30} = \dfrac{6^2-6\cdot 6}{6^2-6-30} = \dfrac{0}{0} \end{aligned}
+\begin{aligned} \lim_\limits{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30} = \dfrac{6^2-6\cdot 6}{6^2-6-30} = \dfrac{0}{0} \end{aligned}
 $$
 
 So, to find the limit, we have to factor the numerator and the denominator. We get
@@ -173,7 +175,7 @@ Therefore,
 
 $$
 \begin{aligned}
-\lim_{x \to 6}\frac{x^{2} - 6x}{x^{2} - x - 30} &= \lim_{x \to 6}\frac{x}{x + 5} \\
+lim_(x → 6)\frac{x^{2} - 6x}{x^{2} - x - 30} &= lim_(x → 6)\frac{x}{x + 5} \\
 &= \frac{6}{6 + 5} \\
 &= \frac{6}{11}
 \end{aligned}
@@ -185,9 +187,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1813-q003
+id: q-3
 content: |-
-  Evaluate $\lim_{y \to 2}\frac{3y^{2} - 12y + 12}{y^{2} - 4}$.
+  Evaluate $lim_(y → 2)\frac{3y^{2} - 12y + 12}{y^{2} - 4}$.
 options:
 - id: a
   content: |-
@@ -206,15 +208,16 @@ options:
   content: |-
     $3$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1813-q004
+id: q-4
 content: |-
-  Evaluate $\lim_{x \to 4}\frac{x^{2} - x - 12}{x^{2} - 16}$.
+  Evaluate $lim_(x → 4)\frac{x^{2} - x - 12}{x^{2} - 16}$.
 options:
 - id: a
   content: |-
@@ -233,19 +236,20 @@ options:
     $\frac{7}{8}$
   correct: true
 ```
+
 ---
 
 <a id="calculating-the-limit-of-a-rational-function-with-higher-order-terms-by-factoring"></a>
 ## Calculating the Limit of a Rational Function With Higher Order Terms by Factoring
 
-**Example:** Evaluate $\lim_{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1}$.
+**Example:** Evaluate $\lim_\limits{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1}$.
 
 **Explanation**
 
 If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
-\begin{aligned} \lim_{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1} = \dfrac{1^3-2(1)^2+1}{1-1} = \dfrac{0}{0} \end{aligned}
+\begin{aligned} \lim_\limits{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1} = \dfrac{1^3-2(1)^2+1}{1-1} = \dfrac{0}{0} \end{aligned}
 $$
 
 So, to find the limit, we have to factor the numerator and the denominator. We get
@@ -262,7 +266,7 @@ Therefore,
 
 $$
 \begin{aligned}
-\lim_{x \to 1}\frac{x^{3} - 2x^{2} + x}{x - 1} &= \lim_{x \to 1}x(x - 1) \\
+lim_(x → 1)\frac{x^{3} - 2x^{2} + x}{x - 1} &= lim_(x → 1)x(x - 1) \\
 &= 1(1 - 1) \\
 &= 0
 \end{aligned}
@@ -274,9 +278,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1813-q005
+id: q-5
 content: |-
-  Evaluate $\lim_{y \to - 3}\frac{y^{3} + 6y^{2} + 9y}{2y^{2} - 2y - 24}$.
+  Evaluate $lim_(y → - 3)\frac{y^{3} + 6y^{2} + 9y}{2y^{2} - 2y - 24}$.
 options:
 - id: a
   content: |-
@@ -295,15 +299,16 @@ options:
   content: |-
     $-\frac{3}{14}$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1813-q006
+id: q-6
 content: |-
-  Evaluate $\lim_{y \to 0}\frac{y^{3} + 2y^{2}}{y^{2} + 3y}$.
+  Evaluate $lim_(y → 0)\frac{y^{3} + 2y^{2}}{y^{2} + 3y}$.
 options:
 - id: a
   content: |-
@@ -322,15 +327,9 @@ options:
     $0$
   correct: true
 ```
----
-
-## Navigation
-
-- [Next: L'Hopital's Rule](<L'Hopital's Rule - 463.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

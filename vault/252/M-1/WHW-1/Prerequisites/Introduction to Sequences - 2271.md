@@ -60,23 +60,60 @@ $$
 
 **Question 1**
 
-What is the fifth term of the following sequence?
-
-$2,-64,-8, 16, 128, 32$
-
-- [ ] A. $-8$
-- [ ] B. $16$
-- [ ] C. $-64$
-- [ ] D. $128$
-- [ ] E. $32$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is the fifth term of the following sequence?
+  
+  $2,-64,-8, 16, 128, 32$
+options:
+- id: a
+  content: |-
+    $-8$
+- id: b
+  content: |-
+    $16$
+- id: c
+  content: |-
+    $-64$
+- id: d
+  correct: true
+  content: |-
+    $128$
+- id: e
+  content: |-
+    $32$
+```
 
 ---
 
 **Question 2**
 
-What is the sum of the fourth, fifth, and sixth terms of the following sequence?
-$8,-24, 44, 92,-244, 458$The sum of the fourth, fifth, and sixth terms of the sequence is
-$\underline{\hspace{1.5cm}}$.
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is the sum of the fourth, fifth, and sixth terms of the following sequence?
+  $8,-24, 44, 92,-244, 458$The sum of the fourth, fifth, and sixth terms of the sequence is
+options:
+- id: a
+  correct: true
+  content: |-
+    $306$
+- id: b
+  content: |-
+    $214$
+- id: c
+  content: |-
+    $550$
+- id: d
+  content: |-
+    $672$
+- id: e
+  content: |-
+    $-152$
+```
 
 ---
 
@@ -211,23 +248,61 @@ In conclusion, only statement II is true.
 
 **Question 3**
 
-A sequence is defined as $f(n) = 4n - 5$ for $n \ge 1$. The $7$th term of the sequence is $\underline{\hspace{1.5cm}}$.
+```quiz
+type: radio
+id: q-3
+content: |-
+  A sequence is defined as $f(n) = 4n - 5$ for $n \ge 1$. The $7$th term of the sequence is
+options:
+- id: a
+  correct: true
+  content: |-
+    $23$
+- id: b
+  content: |-
+    $28$
+- id: c
+  content: |-
+    $19$
+- id: d
+  content: |-
+    $33$
+- id: e
+  content: |-
+    $7$
+```
 
 ---
 
 **Question 4**
 
-Which of the following statements is true regarding the sequence $f(n) = 3n^{2} - 1$ for $n \ge 1$?
-
-1. Its last term is $299$
-2. Its first term is $2$
-3. Its second term is equal to the first term
-
-- [ ] A. II only
-- [ ] B. I and II only
-- [ ] C. I and III only
-- [ ] D. I only
-- [ ] E. II and III only
+```quiz
+type: radio
+id: q-4
+content: |-
+  Which of the following statements is true regarding the sequence $f(n) = 3n^{2} - 1$ for $n \ge 1$?
+  
+  1. Its last term is $299$
+  2. Its first term is $2$
+  3. Its second term is equal to the first term
+options:
+- id: a
+  correct: true
+  content: |-
+    II only
+- id: b
+  content: |-
+    I and II only
+- id: c
+  content: |-
+    I and III only
+- id: d
+  content: |-
+    I only
+- id: e
+  content: |-
+    II and III only
+```
 
 ---
 
@@ -308,26 +383,62 @@ $$
 
 ---
 
-**Question 5:** A sequence is defined as $a_{n} = 2 - 5n$ for $n \ge 1$. What is the $4$th term of the sequence?
+**Question 5:**
 
-- [ ] A. $-12$
-- [ ] B. $-15$
-- [ ] C. $-18$
-- [ ] D. $-7$
-- [ ] E. $-22$
+```quiz
+type: radio
+id: q-5
+content: |-
+  A sequence is defined as $a_{n} = 2 - 5n$ for $n \ge 1$. What is the $4$th term of the sequence?
+options:
+- id: a
+  content: |-
+    $-12$
+- id: b
+  content: |-
+    $-15$
+- id: c
+  correct: true
+  content: |-
+    $-18$
+- id: d
+  content: |-
+    $-7$
+- id: e
+  content: |-
+    $-22$
+```
 
 ---
 
-**Question 6:** A sequence is defined as $a_{n} = 2n + 1$ for $n \ge 1$. What is the sum of the first and third terms?
+**Question 6:**
 
-- [ ] A. $12$
-- [ ] B. $6$
-- [ ] C. $10$
-- [ ] D. $4$
-- [ ] E. $8$
+```quiz
+type: radio
+id: q-6
+content: |-
+  A sequence is defined as $a_{n} = 2n + 1$ for $n \ge 1$. What is the sum of the first and third terms?
+options:
+- id: a
+  content: |-
+    $12$
+- id: b
+  content: |-
+    $6$
+- id: c
+  correct: true
+  content: |-
+    $10$
+- id: d
+  content: |-
+    $4$
+- id: e
+  content: |-
+    $8$
+```
 
 ```update-progress
 ```
 
-[[252/Home|Home]]
-[[252/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

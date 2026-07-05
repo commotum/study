@@ -111,29 +111,87 @@ $$
 
 ---
 
-**Question 1:** The first term of a geometric sequence is $4$, and the common ratio is $3$. What is the $6$th term?
+**Question 1:**
 
-- [ ] A. $2916$
-- [ ] B. $1052$
-- [ ] C. $718$
-- [ ] D. $243$
-- [ ] E. $972$
+```quiz
+type: radio
+id: q-1
+content: |-
+  The first term of a geometric sequence is $4$, and the common ratio is $3$. What is the $6$th term?
+options:
+- id: a
+  content: |-
+    $2916$
+- id: b
+  content: |-
+    $1052$
+- id: c
+  content: |-
+    $718$
+- id: d
+  content: |-
+    $243$
+- id: e
+  content: |-
+    $972$
+  correct: true
+```
 
 ---
 
 **Question 2**
 
-The first term of a geometric sequence is $32$ and the common ratio is $-\frac{1}{4}$. The $7$th term of this sequence is $\underline{\hspace{1.5cm}}$.
+```quiz
+type: radio
+id: q-2
+content: |-
+  The first term of a geometric sequence is $32$ and the common ratio is $-\frac{1}{4}$. The $7$th term of this sequence is
+options:
+- id: a
+  content: |-
+    $\frac{1}{128}$
+  correct: true
+- id: b
+  content: |-
+    $-\frac{1}{128}$
+- id: c
+  content: |-
+    $\frac{1}{64}$
+- id: d
+  content: |-
+    $-\frac{1}{64}$
+- id: e
+  content: |-
+    $\frac{1}{256}$
+```
 
 ---
 
-**Question 3:** The first term of a geometric sequence is $5$, and the common ratio is $2$. What is the $10$th term?
+**Question 3:**
 
-- [ ] A. $512$
-- [ ] B. $1940$
-- [ ] C. $5120$
-- [ ] D. $2560$
-- [ ] E. $1280$
+```quiz
+type: radio
+id: q-3
+content: |-
+  The first term of a geometric sequence is $5$, and the common ratio is $2$. What is the $10$th term?
+options:
+- id: a
+  content: |-
+    $512$
+- id: b
+  content: |-
+    $1940$
+- id: c
+  content: |-
+    $5120$
+- id: d
+  content: |-
+    $2560$
+  correct: true
+- id: e
+  content: |-
+    $1280$
+```
 
 ---
 
@@ -195,27 +253,89 @@ $$
 
 **Question 4**
 
-Find the formula for the $n$th term of a sequence if the $4$th term is $-135$ and the common ratio is $-3$.$a_{n} =$
-$\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Find the formula for the $n$th term of a sequence if the $4$th term is $-135$ and the common ratio is $-3$.
+options:
+- id: a
+  content: |-
+    $a_{n} = 5(-3)^{n - 1}$
+  correct: true
+- id: b
+  content: |-
+    $a_{n} = -5(-3)^{n - 1}$
+- id: c
+  content: |-
+    $a_{n} = 5(-3)^{n}$
+- id: d
+  content: |-
+    $a_{n} = -135(-3)^{n - 1}$
+- id: e
+  content: |-
+    $a_{n} = 15(-3)^{n - 1}$
+```
 
 ---
 
 **Question 5**
 
-Consider the following geometric sequence.
-$6,-2, \frac{2}{3}, …$
-The formula for the $n$th term of this sequence is $a_{n} =$ $\underline{\hspace{1.5cm}}$.
+```quiz
+type: radio
+id: q-5
+content: |-
+  Consider the following geometric sequence.
+  $6,-2, \frac{2}{3}, …$
+  The formula for the $n$th term of this sequence is
+options:
+- id: a
+  content: |-
+    $a_{n} = 6\left(-\frac{1}{3}\right)^{n - 1}$
+  correct: true
+- id: b
+  content: |-
+    $a_{n} = 6\left(\frac{1}{3}\right)^{n - 1}$
+- id: c
+  content: |-
+    $a_{n} = -2\left(-\frac{1}{3}\right)^{n - 1}$
+- id: d
+  content: |-
+    $a_{n} = 6(-3)^{n - 1}$
+- id: e
+  content: |-
+    $a_{n} = \frac{2}{3}\left(-\frac{1}{3}\right)^{n - 1}$
+```
 
 ---
 
-**Question 6:** Find the formula for the $n$th term of the following geometric sequence.
-$\frac{1}{3},-1, 3, …$
+**Question 6:**
 
-- [ ] A. $a_{n} =-3^{n - 1}$
-- [ ] B. $a_{n} =-3^{n - 2}$
-- [ ] C. $a_{n} = (-3)^{n - 2}$
-- [ ] D. $a_{n} = - (-3)^{n - 2}$
-- [ ] E. $a_{n} = (-3)^{n - 1}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Find the formula for the $n$th term of the following geometric sequence.
+  
+  $\frac{1}{3},-1, 3, …$
+options:
+- id: a
+  content: |-
+    $a_{n} =-3^{n - 1}$
+- id: b
+  content: |-
+    $a_{n} =-3^{n - 2}$
+- id: c
+  content: |-
+    $a_{n} = (-3)^{n - 2}$
+- id: d
+  content: |-
+    $a_{n} = - (-3)^{n - 2}$
+  correct: true
+- id: e
+  content: |-
+    $a_{n} = (-3)^{n - 1}$
+```
 
 ---
 
@@ -282,24 +402,85 @@ $$
 
 **Question 7**
 
-If the fifth term of a geometric sequence is $\frac{1}{8}$ and the common ratio is $\frac{1}{4}$, then the eighth term of this sequence is $\underline{\hspace{1.5cm}}$.
+```quiz
+type: radio
+id: q-7
+content: |-
+  If the fifth term of a geometric sequence is $\frac{1}{8}$ and the common ratio is $\frac{1}{4}$, then the eighth term of this sequence is
+options:
+- id: a
+  content: |-
+    $\frac{1}{512}$
+  correct: true
+- id: b
+  content: |-
+    $\frac{1}{256}$
+- id: c
+  content: |-
+    $\frac{1}{128}$
+- id: d
+  content: |-
+    $\frac{1}{32}$
+- id: e
+  content: |-
+    $\frac{1}{2048}$
+```
 
 ---
 
-**Question 8:** Given that the $8$th term of a geometric sequence is $8$, and the common ratio is $\frac{1}{2}$, find the fifteenth term.
+**Question 8:**
 
-- [ ] A. $\frac{1}{32}$
-- [ ] B. $\frac{1}{16}$
-- [ ] C. $2$
-- [ ] D. $\frac{1}{8}$
-- [ ] E. $4$
+```quiz
+type: radio
+id: q-8
+content: |-
+  Given that the $8$th term of a geometric sequence is $8$, and the common ratio is $\frac{1}{2}$, find the fifteenth term.
+options:
+- id: a
+  content: |-
+    $\frac{1}{32}$
+- id: b
+  content: |-
+    $\frac{1}{16}$
+  correct: true
+- id: c
+  content: |-
+    $2$
+- id: d
+  content: |-
+    $\frac{1}{8}$
+- id: e
+  content: |-
+    $4$
+```
 
 ---
 
 **Question 9**
 
-Find the formula for the $n$th term of a geometric sequence if the fourth term is $-\frac{2}{3}$ and the common ratio is $-2$.$a_{n} =$
-$\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-9
+content: |-
+  Find the formula for the $n$th term of a geometric sequence if the fourth term is $-\frac{2}{3}$ and the common ratio is $-2$.
+options:
+- id: a
+  content: |-
+    $a_{n} = \frac{1}{12}(-2)^{n - 1}$
+  correct: true
+- id: b
+  content: |-
+    $a_{n} = -\frac{1}{12}(-2)^{n - 1}$
+- id: c
+  content: |-
+    $a_{n} = \frac{1}{12}(-2)^{n}$
+- id: d
+  content: |-
+    $a_{n} = -\frac{2}{3}(-2)^{n - 1}$
+- id: e
+  content: |-
+    $a_{n} = \frac{1}{6}(-2)^{n - 1}$
+```
 
 ```update-progress
 ```

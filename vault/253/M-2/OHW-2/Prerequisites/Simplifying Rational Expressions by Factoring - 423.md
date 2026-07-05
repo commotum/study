@@ -59,23 +59,59 @@ $$
 
 ---
 
-**Question 1:** What is $\frac{4z - 8x}{2z - 4y}$ reduced to its lowest terms?
+**Question 1:**
 
-- [ ] A. $\frac{z + 2x}{z + 2y}$
-- [ ] B. $\frac{z - 2x}{z - 2y}$
-- [ ] C. $2$
-- [ ] D. $4$
-- [ ] E. $(2(z - 2x))/(z - 2y)$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $\frac{4z - 8x}{2z - 4y}$ reduced to its lowest terms?
+options:
+- id: a
+  content: |-
+    $\frac{z + 2x}{z + 2y}$
+- id: b
+  content: |-
+    $\frac{z - 2x}{z - 2y}$
+- id: c
+  content: |-
+    $2$
+- id: d
+  content: |-
+    $4$
+- id: e
+  content: |-
+    $(2(z - 2x))/(z - 2y)$
+  correct: true
+```
 
 ---
 
-**Question 2:** What is $\frac{6b + 6a}{6a}$?
+**Question 2:**
 
-- [ ] A. $6b$
-- [ ] B. $b + a$
-- [ ] C. $b$
-- [ ] D. $b + 1$
-- [ ] E. $\frac{b + a}{a}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $\frac{6b + 6a}{6a}$?
+options:
+- id: a
+  content: |-
+    $6b$
+- id: b
+  content: |-
+    $b + a$
+- id: c
+  content: |-
+    $b$
+- id: d
+  content: |-
+    $b + 1$
+- id: e
+  content: |-
+    $\frac{b + a}{a}$
+  correct: true
+```
 
 ---
 
@@ -94,23 +130,59 @@ $$
 
 ---
 
-**Question 3:** What is $\frac{4xy - x}{4y - 1}$?
+**Question 3:**
 
-- [ ] A. Not reducible
-- [ ] B. $xy$
-- [ ] C. $\frac{1}{y}$
-- [ ] D. $\frac{x}{y}$
-- [ ] E. $x$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $\frac{4xy - x}{4y - 1}$?
+options:
+- id: a
+  content: |-
+    Not reducible
+- id: b
+  content: |-
+    $xy$
+- id: c
+  content: |-
+    $\frac{1}{y}$
+- id: d
+  content: |-
+    $\frac{x}{y}$
+- id: e
+  content: |-
+    $x$
+  correct: true
+```
 
 ---
 
-**Question 4:** What is $\frac{ab - b}{3a - 3}$?
+**Question 4:**
 
-- [ ] A. $\frac{b}{a}$
-- [ ] B. Not reducible
-- [ ] C. $\frac{b}{3}$
-- [ ] D. $\frac{3}{b}$
-- [ ] E. $\frac{a}{b}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $\frac{ab - b}{3a - 3}$?
+options:
+- id: a
+  content: |-
+    $\frac{b}{a}$
+- id: b
+  content: |-
+    Not reducible
+- id: c
+  content: |-
+    $\frac{b}{3}$
+  correct: true
+- id: d
+  content: |-
+    $\frac{3}{b}$
+- id: e
+  content: |-
+    $\frac{a}{b}$
+```
 
 ---
 
@@ -131,23 +203,59 @@ is already in lowest terms.
 
 ---
 
-**Question 5:** What is $\frac{7x + 1}{7x}$?
+**Question 5:**
 
-- [ ] A. $7$
-- [ ] B. $1$
-- [ ] C. $7x$
-- [ ] D. $\frac{7x + 1}{7x}$
-- [ ] E. $7x + 1$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $\frac{7x + 1}{7x}$?
+options:
+- id: a
+  content: |-
+    $7$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $7x$
+- id: d
+  content: |-
+    $\frac{7x + 1}{7x}$
+  correct: true
+- id: e
+  content: |-
+    $7x + 1$
+```
 
 ---
 
-**Question 6:** What is $\frac{3a + 4}{2}$?
+**Question 6:**
 
-- [ ] A. $2$
-- [ ] B. $3a + 2$
-- [ ] C. $3a + 4$
-- [ ] D. $\frac{3a + 4}{2}$
-- [ ] E. $\frac{3a}{2}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  What is $\frac{3a + 4}{2}$?
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $3a + 2$
+- id: c
+  content: |-
+    $3a + 4$
+- id: d
+  content: |-
+    $\frac{3a + 4}{2}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{3a}{2}$
+```
 
 ---
 
@@ -170,23 +278,59 @@ $$
 
 ---
 
-**Question 7:** What is $\frac{4ab - 8 + 10x}{10x + 8 - 2ab}$ reduced to its lowest terms?
+**Question 7:**
 
-- [ ] A. $-2$
-- [ ] B. $\frac{ab - 2 + 5x}{5x + 2 - ab}$
-- [ ] C. $\frac{ab - 4 + 5x}{5x + 4 - ab}$
-- [ ] D. $\frac{2ab - 4 + 5x}{5x + 4 - ab}$
-- [ ] E. $2$
+```quiz
+type: radio
+id: q-7
+content: |-
+  What is $\frac{4ab - 8 + 10x}{10x + 8 - 2ab}$ reduced to its lowest terms?
+options:
+- id: a
+  content: |-
+    $-2$
+- id: b
+  content: |-
+    $\frac{ab - 2 + 5x}{5x + 2 - ab}$
+- id: c
+  content: |-
+    $\frac{ab - 4 + 5x}{5x + 4 - ab}$
+- id: d
+  content: |-
+    $\frac{2ab - 4 + 5x}{5x + 4 - ab}$
+  correct: true
+- id: e
+  content: |-
+    $2$
+```
 
 ---
 
-**Question 8:** What is $\frac{8a - 4b + 12}{20b + 8a}$ reduced to its lowest terms?
+**Question 8:**
 
-- [ ] A. $\frac{2a - b + 3}{5b + 2a}$
-- [ ] B. $\frac{2a - b}{5b + 2a}$
-- [ ] C. $\frac{-b + 5}{4b}$
-- [ ] D. $\frac{-4b + 12}{20b}$
-- [ ] E. $\frac{2a + b - 3}{5b - 2a}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  What is $\frac{8a - 4b + 12}{20b + 8a}$ reduced to its lowest terms?
+options:
+- id: a
+  content: |-
+    $\frac{2a - b + 3}{5b + 2a}$
+  correct: true
+- id: b
+  content: |-
+    $\frac{2a - b}{5b + 2a}$
+- id: c
+  content: |-
+    $\frac{-b + 5}{4b}$
+- id: d
+  content: |-
+    $\frac{-4b + 12}{20b}$
+- id: e
+  content: |-
+    $\frac{2a + b - 3}{5b - 2a}$
+```
 
 ```update-progress
 ```

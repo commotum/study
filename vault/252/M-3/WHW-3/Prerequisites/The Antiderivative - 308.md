@@ -139,7 +139,6 @@ $$
 ```quiz
 type: radio
 id: ma-2022
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\intx^{4}dx$.
 options:
@@ -158,6 +157,7 @@ options:
 - id: e
   content: |-
     $\frac{x^{5}}{5} + C$
+  correct: true
 ```
 
 ---
@@ -167,13 +167,13 @@ options:
 ```quiz
 type: radio
 id: ma-2005
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\intxdx$.
 options:
 - id: a
   content: |-
     $\frac{x^{2}}{2} + C$
+  correct: true
 - id: b
   content: |-
     $2x^{2}$
@@ -239,7 +239,6 @@ $$
 ```quiz
 type: radio
 id: ma-2023
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find the antiderivative of $\sqrt[3]{x^{2}}$.
 options:
@@ -252,6 +251,7 @@ options:
 - id: c
   content: |-
     $\frac{3x^{5/3}}{5} + C$
+  correct: true
 - id: d
   content: |-
     $\frac{3x^{4/3}}{4} + C$
@@ -267,7 +267,6 @@ options:
 ```quiz
 type: radio
 id: ma-29635
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find the antiderivative of $x^{1/3}$.
 options:
@@ -286,6 +285,7 @@ options:
 - id: e
   content: |-
     $\frac{3x^{4/3}}{4} + C$
+  correct: true
 ```
 
 ---
@@ -339,7 +339,6 @@ $$
 ```quiz
 type: radio
 id: ma-29989
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given that $f(x) = \frac{1}{x^{3/5}}$ and that $F^{′}(x) = f(x)$, calculate $F(x)$.
 options:
@@ -355,6 +354,7 @@ options:
 - id: d
   content: |-
     $\frac{5}{2}x^{2/5} + C$
+  correct: true
 - id: e
   content: |-
     $\frac{2}{5}x^{2/5} + C$
@@ -367,13 +367,13 @@ options:
 ```quiz
 type: radio
 id: ma-29987
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Given that $f(x) = x^{-2/3}$ and that $F^{′}(x) = f(x)$, calculate $F(x)$.
 options:
 - id: a
   content: |-
     $3x^{1/3} + C$
+  correct: true
 - id: b
   content: |-
     $5x^{-1/3} + C$

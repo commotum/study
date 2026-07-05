@@ -96,23 +96,59 @@ $$
 
 ---
 
-**Question 1:** Calculate the sum to infinity of the geometric series $-8 - 6 - \frac{9}{2} - \frac{27}{8} - ⋯$
+**Question 1:**
 
-- [ ] A. $-32$
-- [ ] B. $-12$
-- [ ] C. $-22$
-- [ ] D. $-16$
-- [ ] E. $-24$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Calculate the sum to infinity of the geometric series $-8 - 6 - \frac{9}{2} - \frac{27}{8} - ⋯$
+options:
+- id: a
+  content: |-
+    $-32$
+  correct: true
+- id: b
+  content: |-
+    $-12$
+- id: c
+  content: |-
+    $-22$
+- id: d
+  content: |-
+    $-16$
+- id: e
+  content: |-
+    $-24$
+```
 
 ---
 
-**Question 2:** Calculate the sum to infinity of the geometric series $30 + 9 + \frac{27}{10} + \frac{81}{100} + ⋯$
+**Question 2:**
 
-- [ ] A. $\frac{300}{7}$
-- [ ] B. $\frac{410}{8}$
-- [ ] C. $32$
-- [ ] D. $38$
-- [ ] E. $42$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Calculate the sum to infinity of the geometric series $30 + 9 + \frac{27}{10} + \frac{81}{100} + ⋯$
+options:
+- id: a
+  content: |-
+    $\frac{300}{7}$
+  correct: true
+- id: b
+  content: |-
+    $\frac{410}{8}$
+- id: c
+  content: |-
+    $32$
+- id: d
+  content: |-
+    $38$
+- id: e
+  content: |-
+    $42$
+```
 
 ---
 
@@ -152,29 +188,61 @@ $$
 
 **Question 3**
 
-> A calculator is required to answer this question.
-
-Calculate the sum to infinity of the geometric series $6 - 0.12 + 0.0024 - 0.000048 + ⋯$
-
-- [ ] A. $\frac{103}{19}$
-- [ ] B. $\frac{100}{17}$
-- [ ] C. $\frac{153}{25}$
-- [ ] D. $5$
-- [ ] E. $\frac{109}{18}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A calculator is required to answer this question.
+  
+  Calculate the sum to infinity of the geometric series $6 - 0.12 + 0.0024 - 0.000048 + ⋯$
+options:
+- id: a
+  content: |-
+    $\frac{103}{19}$
+- id: b
+  content: |-
+    $\frac{100}{17}$
+  correct: true
+- id: c
+  content: |-
+    $\frac{153}{25}$
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $\frac{109}{18}$
+```
 
 ---
 
 **Question 4**
 
-> A calculator is required to answer this question.
-
-Calculate the sum to infinity of the geometric series $1.8 + 0.9 + 0.45 + 0.225 + ⋯$
-
-- [ ] A. $1.8$
-- [ ] B. $3.6$
-- [ ] C. $3.3$
-- [ ] D. $3.9$
-- [ ] E. $4.5$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A calculator is required to answer this question.
+  
+  Calculate the sum to infinity of the geometric series $1.8 + 0.9 + 0.45 + 0.225 + ⋯$
+options:
+- id: a
+  content: |-
+    $1.8$
+- id: b
+  content: |-
+    $3.6$
+  correct: true
+- id: c
+  content: |-
+    $3.3$
+- id: d
+  content: |-
+    $3.9$
+- id: e
+  content: |-
+    $4.5$
+```
 
 ---
 
@@ -232,29 +300,61 @@ $$
 
 **Question 5**
 
-> A scientific calculator is required to answer this question.
-
-Consider the infinite geometric sequence that has a first term equal to $6$ and a fourth term equal to $\frac{3}{4}$. What is the sum to infinity of the terms of this sequence?
-
-- [ ] A. $14$
-- [ ] B. $10$
-- [ ] C. $12$
-- [ ] D. $22$
-- [ ] E. $9$
+```quiz
+type: radio
+id: q-5
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Consider the infinite geometric sequence that has a first term equal to $6$ and a fourth term equal to $\frac{3}{4}$. What is the sum to infinity of the terms of this sequence?
+options:
+- id: a
+  content: |-
+    $14$
+- id: b
+  content: |-
+    $10$
+- id: c
+  content: |-
+    $12$
+  correct: true
+- id: d
+  content: |-
+    $22$
+- id: e
+  content: |-
+    $9$
+```
 
 ---
 
 **Question 6**
 
-> A scientific calculator is required to answer this question.
-
-Consider the positive infinite geometric sequence that has a first term equal to $18$ and a third term equal to $2$. What is the sum to infinity of the terms of this sequence?
-
-- [ ] A. $27$
-- [ ] B. $36$
-- [ ] C. $18$
-- [ ] D. $24$
-- [ ] E. $21$
+```quiz
+type: radio
+id: q-6
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  Consider the positive infinite geometric sequence that has a first term equal to $18$ and a third term equal to $2$. What is the sum to infinity of the terms of this sequence?
+options:
+- id: a
+  content: |-
+    $27$
+  correct: true
+- id: b
+  content: |-
+    $36$
+- id: c
+  content: |-
+    $18$
+- id: d
+  content: |-
+    $24$
+- id: e
+  content: |-
+    $21$
+```
 
 ---
 

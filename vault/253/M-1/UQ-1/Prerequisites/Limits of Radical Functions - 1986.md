@@ -109,23 +109,59 @@ $$
 
 ---
 
-**Question 1:** Calculate $lim_(x → 4^{-})\sqrt{x - 4}$.
+**Question 1:**
 
-- [ ] A. $2$
-- [ ] B. $4$
-- [ ] C. $0$
-- [ ] D. $1$
-- [ ] E. $DNE$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Calculate $lim_(x → 4^{-})\sqrt{x - 4}$.
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $4$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $1$
+- id: e
+  correct: true
+  content: |-
+    $DNE$
+```
 
 ---
 
-**Question 2:** Calculate $lim_(x → 4)\sqrt{6x + 1}$.
+**Question 2:**
 
-- [ ] A. $4$
-- [ ] B. $DNE$
-- [ ] C. $5$
-- [ ] D. $0$
-- [ ] E. $25$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Calculate $lim_(x → 4)\sqrt{6x + 1}$.
+options:
+- id: a
+  content: |-
+    $4$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  correct: true
+  content: |-
+    $5$
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $25$
+```
 
 ---
 
@@ -181,23 +217,59 @@ $$
 
 ---
 
-**Question 3:** Find $lim_(x → - ∞)\sqrt{5 + 4x}$.
+**Question 3:**
 
-- [ ] A. $2$
-- [ ] B. $-2$
-- [ ] C. $DNE$
-- [ ] D. $- ∞$
-- [ ] E. $∞$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Find $lim_(x → - ∞)\sqrt{5 + 4x}$.
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $-2$
+- id: c
+  correct: true
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $- ∞$
+- id: e
+  content: |-
+    $∞$
+```
 
 ---
 
-**Question 4:** What is $lim_(x → ∞)\sqrt{x}$?
+**Question 4:**
 
-- [ ] A. $∞$
-- [ ] B. $1$
-- [ ] C. $DNE$
-- [ ] D. $0$
-- [ ] E. $- ∞$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $lim_(x → ∞)\sqrt{x}$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $∞$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $- ∞$
+```
 
 ---
 
@@ -248,23 +320,59 @@ $$
 
 ---
 
-**Question 5:** Calculate $lim_(x → 3)\sqrt[3]{2x - 6}$.
+**Question 5:**
 
-- [ ] A. $DNE$
-- [ ] B. $2$
-- [ ] C. $3$
-- [ ] D. $∞$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Calculate $lim_(x → 3)\sqrt[3]{2x - 6}$.
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  content: |-
+    $2$
+- id: c
+  content: |-
+    $3$
+- id: d
+  content: |-
+    $∞$
+- id: e
+  correct: true
+  content: |-
+    $0$
+```
 
 ---
 
-**Question 6:** Find $lim_(x → 8^{+})(\sqrt[3]{x} + 1)$.
+**Question 6:**
 
-- [ ] A. $1$
-- [ ] B. $3$
-- [ ] C. DNE
-- [ ] D. $9$
-- [ ] E. $-1$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Find $lim_(x → 8^{+})(\sqrt[3]{x} + 1)$.
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  correct: true
+  content: |-
+    $3$
+- id: c
+  content: |-
+    DNE
+- id: d
+  content: |-
+    $9$
+- id: e
+  content: |-
+    $-1$
+```
 
 ---
 
@@ -293,23 +401,59 @@ $$
 
 ---
 
-**Question 7:** What is $lim_(x → - ∞)\sqrt[3]{x}$?
+**Question 7:**
 
-- [ ] A. $DNE$
-- [ ] B. $- ∞$
-- [ ] C. $1$
-- [ ] D. $∞$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-7
+content: |-
+  What is $lim_(x → - ∞)\sqrt[3]{x}$?
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  correct: true
+  content: |-
+    $- ∞$
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $∞$
+- id: e
+  content: |-
+    $0$
+```
 
 ---
 
-**Question 8:** What is $lim_(x → - ∞)\sqrt[3]{5x + 3}$?
+**Question 8:**
 
-- [ ] A. $DNE$
-- [ ] B. $∞$
-- [ ] C. $- ∞$
-- [ ] D. $\sqrt[3]{3}$
-- [ ] E. $5$
+```quiz
+type: radio
+id: q-8
+content: |-
+  What is $lim_(x → - ∞)\sqrt[3]{5x + 3}$?
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  content: |-
+    $∞$
+- id: c
+  correct: true
+  content: |-
+    $- ∞$
+- id: d
+  content: |-
+    $\sqrt[3]{3}$
+- id: e
+  content: |-
+    $5$
+```
 
 ```update-progress
 ```

@@ -1,10 +1,10 @@
 # Limits of Logarithmic Functions
 
-
 <!--
 lesson-id: 1377
 topic-code: MF2.11.3.4
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -16,10 +16,10 @@ topic-code: MF2.11.3.4
 
 ## Prerequisites
 
-- [The Product and Quotient Rules for Limits](../1246/1246.md)
-- [Combining Graph Transformations of Logarithmic Functions](../1707/1707.md)
-- [Infinite Limits from Graphs](../1814/1814.md)
-- [Limits at Infinity from Graphs](../1873/1873.md)
+- [The Product and Quotient Rules for Limits](<../../11.2. The Algebra of Limits/Lessons/11.2.3. The Product and Quotient Rules for Limits.md>)
+- [Combining Graph Transformations of Logarithmic Functions](<../../../5. Exponentials & Logarithms/5.6. Graphs of Logarithmic Functions/Lessons/5.6.2. Combining Graph Transformations of Logarithmic Functions.md>)
+- [Infinite Limits from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.5. Infinite Limits from Graphs.md>)
+- [Limits at Infinity from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
 
 ---
 
@@ -28,7 +28,7 @@ topic-code: MF2.11.3.4
 
 Let's look at the graph of $y=\log_2{x}$ below.
 
-![](<253/M-1/UQ-1/Source/Limits of Logarithmic Functions - 1377/Images/066423173a38dd656fac50d96a262269.png>)
+![](<../Source/Limits of Logarithmic Functions - 1377/Images/066423173a38dd656fac50d96a262269.png>)
 
 From the graph, we see that
 
@@ -49,7 +49,7 @@ Remember that logarithms are only defined for positive inputs $x\gt 0$, so we mu
 <a id="evaluating-using-direct-substitution"></a>
 ## Evaluating Using Direct Substitution
 
-**Example:** Find $\lim_{x \to 4}\log_2 (x+4)$.
+**Example:** Find $\lim_\limits{x \to 4}\log_2 (x+4)$.
 
 **Explanation**
 
@@ -59,7 +59,7 @@ To find this limit, we substitute $x=4$ into the expression:
 
 $$
 \begin{aligned}
-\lim_{x \to 4}\log_{2} (x + 4) &= \log_{2} (4 + 4) \\
+lim_(x → 4)\log_{2} (x + 4) &= \log_{2} (4 + 4) \\
 &= \log_{2} (8) \\
 &= \log_{2} (2^{3}) \\
 &= 3
@@ -72,9 +72,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q001
+id: q-1
 content: |-
-  What is $\lim_{x \to 7}\log (15x - 5)$?
+  What is $lim_(x → 7)\log (15x - 5)$?
 options:
 - id: a
   content: |-
@@ -86,30 +86,31 @@ options:
   content: |-
     $DNE$
 - id: d
+  correct: true
   content: |-
     $2$
-  correct: true
 - id: e
   content: |-
     $1$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q002
+id: q-2
 content: |-
-  What is $\lim_{x \to 5}\log_{3} (5x + 2)$?
+  What is $lim_(x → 5)\log_{3} (5x + 2)$?
 options:
 - id: a
   content: |-
     $DNE$
 - id: b
+  correct: true
   content: |-
     $3$
-  correct: true
 - id: c
   content: |-
     $∞$
@@ -120,6 +121,7 @@ options:
   content: |-
     $- ∞$
 ```
+
 ---
 
 <a id="infinite-limits-and-limits-at-infinity-of-logarithmic-functions"></a>
@@ -131,7 +133,7 @@ $$
 y=\log_2(x)
 $$
 
-![](<253/M-1/UQ-1/Source/Limits of Logarithmic Functions - 1377/Images/63aca78cdf8a6e3c36e5f58b1749d9a4.png>)
+![](<../Source/Limits of Logarithmic Functions - 1377/Images/63aca78cdf8a6e3c36e5f58b1749d9a4.png>)
 
 As $x$ gets larger and larger, the curve increases without bound. So, we have
 
@@ -174,7 +176,7 @@ $$
 y = \log_2 \left(x-1\right)
 $$
 
-![](<253/M-1/UQ-1/Source/Limits of Logarithmic Functions - 1377/Images/8ee7297c22b0e03cd456399a9b19d715.png>)
+![](<../Source/Limits of Logarithmic Functions - 1377/Images/8ee7297c22b0e03cd456399a9b19d715.png>)
 
 From the graph, we see that the function increases without bound as $x$ increases. Therefore,
 
@@ -188,9 +190,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q003
+id: q-3
 content: |-
-  What is $\lim_{x \to \infty}\log_{2} (5 - x)$?
+  What is $lim_(x → ∞)\log_{2} (5 - x)$?
 options:
 - id: a
   content: |-
@@ -199,9 +201,9 @@ options:
   content: |-
     $- ∞$
 - id: c
+  correct: true
   content: |-
     $DNE$
-  correct: true
 - id: d
   content: |-
     $2$
@@ -209,23 +211,24 @@ options:
   content: |-
     $∞$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q004
+id: q-4
 content: |-
-  What is $\lim_{x \to \infty}\log (2x - 4)$?
+  What is $lim_(x → ∞)\log (2x - 4)$?
 options:
 - id: a
   content: |-
     $DNE$
 - id: b
+  correct: true
   content: |-
     $∞$
-  correct: true
 - id: c
   content: |-
     $- ∞$
@@ -236,12 +239,13 @@ options:
   content: |-
     $50$
 ```
+
 ---
 
 <a id="evaluating-one-sided-infinite-limits-of-logarithmic-functions"></a>
 ## Evaluating One-Sided Infinite Limits of Logarithmic Functions
 
-**Example:** Calculate $\lim_{x \to (-2)^{-}} \ln (x+2)$ and $\lim_{x \to (-2)^{+}} \ln (x+2)$.
+**Example:** Calculate $\lim_\limits{x \to (-2)^{-}} \ln (x+2)$ and $\lim_\limits{x \to (-2)^{+}} \ln (x+2)$.
 
 **Explanation**
 
@@ -251,7 +255,7 @@ $$
 y = \ln(x+2)
 $$
 
-![](<253/M-1/UQ-1/Source/Limits of Logarithmic Functions - 1377/Images/80d6bc19b64bd7cc0ce3de61fd9a4e3a.png>)
+![](<../Source/Limits of Logarithmic Functions - 1377/Images/80d6bc19b64bd7cc0ce3de61fd9a4e3a.png>)
 
 The function is not defined for
 
@@ -262,13 +266,13 @@ $$
 Therefore,
 
 $$
-\lim_{x \to (-2)^{-}} \ln (x+2) = \textrm{DNE}
+\lim_\limits{x \to (-2)^{-}} \ln (x+2) = \textrm{DNE}
 $$
 
 However, the function is defined for $x\gt -2$. Therefore,
 
 $$
-\lim_{x \to (-2)^{+}} \ln (x+2) = -\infty
+\lim_\limits{x \to (-2)^{+}} \ln (x+2) = -\infty
 $$
 
 ---
@@ -277,14 +281,14 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q005
+id: q-5
 content: |-
-  What is $\lim_{x \to 5^{-}}\log (5 - x)$?
+  What is $lim_(x → 5^{-})\log (5 - x)$?
 options:
 - id: a
+  correct: true
   content: |-
     $- ∞$
-  correct: true
 - id: b
   content: |-
     $2$
@@ -298,20 +302,21 @@ options:
   content: |-
     $0$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q006
+id: q-6
 content: |-
-  Calculate $\lim_{x \to (-3)^{+}}\ln (x + 3)$.
+  Calculate $lim_(x → (-3)^{+})\ln (x + 3)$.
 options:
 - id: a
+  correct: true
   content: |-
     $- ∞$
-  correct: true
 - id: b
   content: |-
     $DNE$
@@ -325,12 +330,13 @@ options:
   content: |-
     $3$
 ```
+
 ---
 
 <a id="evaluating-infinite-limits-of-logarithmic-functions"></a>
 ## Evaluating Infinite Limits of Logarithmic Functions
 
-**Example:** Calculate $\lim_{x \to 2} \ln (x-2)$.
+**Example:** Calculate $\lim_\limits{x \to 2} \ln (x-2)$.
 
 **Explanation**
 
@@ -340,7 +346,7 @@ $$
 y = \ln(x-2)
 $$
 
-![](<253/M-1/UQ-1/Source/Limits of Logarithmic Functions - 1377/Images/c31c4c5fd15fffd1e1b9661217eef36e.png>)
+![](<../Source/Limits of Logarithmic Functions - 1377/Images/c31c4c5fd15fffd1e1b9661217eef36e.png>)
 
 The function is not defined for
 
@@ -351,19 +357,19 @@ $$
 Therefore,
 
 $$
-\lim_{x \to 2^{-}} \ln (x-2) = \textrm{DNE}
+\lim_\limits{x \to 2^{-}} \ln (x-2) = \textrm{DNE}
 $$
 
 However, the function is defined for $x\gt 2$. Therefore,
 
 $$
-\lim_{x \to 2^{+}} \ln (x-2) = -\infty
+\lim_\limits{x \to 2^{+}} \ln (x-2) = -\infty
 $$
 
 Since the left and right-sided limits are not equal, we have
 
 $$
-\lim_{x \to 2} \ln (x-2) = \textrm{DNE}
+\lim_\limits{x \to 2} \ln (x-2) = \textrm{DNE}
 $$
 
 ---
@@ -372,17 +378,17 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q007
+id: q-7
 content: |-
-  Calculate $\lim_{x \to (-4)}\log_{2} (x + 4)$.
+  Calculate $lim_(x → (-4))\log_{2} (x + 4)$.
 options:
 - id: a
   content: |-
     $∞$
 - id: b
+  correct: true
   content: |-
     $DNE$
-  correct: true
 - id: c
   content: |-
     $- ∞$
@@ -393,23 +399,24 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 **Question 8:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-1377-q008
+id: q-8
 content: |-
-  Calculate $\lim_{x \to 1/2}\ln (2x - 1)$.
+  Calculate $lim_(x → 1/2)\ln (2x - 1)$.
 options:
 - id: a
   content: |-
     $∞$
 - id: b
+  correct: true
   content: |-
     $DNE$
-  correct: true
 - id: c
   content: |-
     $\frac{1}{2}$
@@ -420,15 +427,9 @@ options:
   content: |-
     $0$
 ```
----
-
-## Navigation
-
-- [Next: Limits of Exponential Functions](<Limits of Exponential Functions - 1717.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

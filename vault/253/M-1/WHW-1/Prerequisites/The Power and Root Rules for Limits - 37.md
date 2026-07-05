@@ -66,23 +66,59 @@ $$
 
 ---
 
-**Question 1:** Find $lim_(z → 3)((z - 5)^{5})/((z + 3)^{2})$.
+**Question 1:**
 
-- [ ] A. $-\frac{2}{3}$
-- [ ] B. $\frac{2}{3}$
-- [ ] C. $-\frac{4}{3}$
-- [ ] D. $-\frac{8}{9}$
-- [ ] E. $\frac{4}{9}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Find $lim_(z → 3)((z - 5)^{5})/((z + 3)^{2})$.
+options:
+- id: a
+  content: |-
+    $-\frac{2}{3}$
+- id: b
+  content: |-
+    $\frac{2}{3}$
+- id: c
+  content: |-
+    $-\frac{4}{3}$
+- id: d
+  content: |-
+    $-\frac{8}{9}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{4}{9}$
+```
 
 ---
 
-**Question 2:** Find $lim_(y → 3)(5 - y)^{2}(2y - 5)^{11}$.
+**Question 2:**
 
-- [ ] A. $16$
-- [ ] B. $8$
-- [ ] C. $4$
-- [ ] D. $2$
-- [ ] E. $1$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Find $lim_(y → 3)(5 - y)^{2}(2y - 5)^{11}$.
+options:
+- id: a
+  content: |-
+    $16$
+- id: b
+  content: |-
+    $8$
+- id: c
+  content: |-
+    $4$
+  correct: true
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $1$
+```
 
 ---
 
@@ -117,29 +153,61 @@ $$
 
 **Question 3**
 
-![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35616.png>)
-
-Find $lim_(x → 1/2)(2(f(x))^{4})/((6x - 1)^{3})$ for the function $f(x)$ plotted above.
-
-- [ ] A. $DNE$
-- [ ] B. $\frac{81}{64}$
-- [ ] C. $0$
-- [ ] D. $\frac{1}{64}$
-- [ ] E. $64$
+```quiz
+type: radio
+id: ma-35616
+content: |-
+  ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35616.png>)
+  
+  Find $lim_(x → 1/2)(2(f(x))^{4})/((6x - 1)^{3})$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $DNE$
+  correct: true
+- id: b
+  content: |-
+    $\frac{81}{64}$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $\frac{1}{64}$
+- id: e
+  content: |-
+    $64$
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35294.png>)
-
-Find $lim_(x → - 1)(5 + 7x)^{3}(f(x) - x)^{4}$ for the function $f(x)$ plotted above.
-
-- [ ] A. $-8$
-- [ ] B. $-641$
-- [ ] C. $0$
-- [ ] D. $-1$
-- [ ] E. $-81$
+```quiz
+type: radio
+id: ma-35294
+content: |-
+  ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35294.png>)
+  
+  Find $lim_(x → - 1)(5 + 7x)^{3}(f(x) - x)^{4}$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $-8$
+  correct: true
+- id: b
+  content: |-
+    $-641$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $-1$
+- id: e
+  content: |-
+    $-81$
+```
 
 ---
 
@@ -219,23 +287,59 @@ $$
 
 ---
 
-**Question 5:** Find $lim_(x → 4)\sqrt[3]{\frac{x^{3} - 10}{x^{2} - 3x - 2}}$.
+**Question 5:**
 
-- [ ] A. $2$
-- [ ] B. $3$
-- [ ] C. $9$
-- [ ] D. $\sqrt[3]{54}$
-- [ ] E. $1$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Find $lim_(x → 4)\sqrt[3]{\frac{x^{3} - 10}{x^{2} - 3x - 2}}$.
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $3$
+  correct: true
+- id: c
+  content: |-
+    $9$
+- id: d
+  content: |-
+    $\sqrt[3]{54}$
+- id: e
+  content: |-
+    $1$
+```
 
 ---
 
-**Question 6:** Find $lim_(x → 1)\frac{2\sqrt{x + 3}}{5x - 1}$.
+**Question 6:**
 
-- [ ] A. $4$
-- [ ] B. $0$
-- [ ] C. $1$
-- [ ] D. $2$
-- [ ] E. $\frac{1}{4}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Find $lim_(x → 1)\frac{2\sqrt{x + 3}}{5x - 1}$.
+options:
+- id: a
+  content: |-
+    $4$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $1$
+  correct: true
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $\frac{1}{4}$
+```
 
 ---
 
@@ -315,29 +419,61 @@ $$
 
 **Question 7**
 
-![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35644.png>)
-
-Find $lim_(x → 0)\sqrt[3]{6 + 4f(x)}$ for the function $f(x)$ plotted above.
-
-- [ ] A. $\sqrt[3]{2}$
-- [ ] B. $DNE$
-- [ ] C. $\sqrt[6]{5}$
-- [ ] D. $\sqrt[3]{10}$
-- [ ] E. $2$
+```quiz
+type: radio
+id: ma-35644
+content: |-
+  ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35644.png>)
+  
+  Find $lim_(x → 0)\sqrt[3]{6 + 4f(x)}$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $\sqrt[3]{2}$
+- id: b
+  content: |-
+    $DNE$
+- id: c
+  content: |-
+    $\sqrt[6]{5}$
+- id: d
+  content: |-
+    $\sqrt[3]{10}$
+- id: e
+  content: |-
+    $2$
+  correct: true
+```
 
 ---
 
 **Question 8**
 
-![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35641.png>)
-
-Find $lim_(x → - 1)\sqrt{10 - 3f(x)}$ for the function $f(x)$ plotted above.
-
-- [ ] A. $2$
-- [ ] B. $\sqrt{13}$
-- [ ] C. $\sqrt{8}$
-- [ ] D. $\sqrt{7}$
-- [ ] E. $DNE$
+```quiz
+type: radio
+id: ma-35641
+content: |-
+  ![](<../Source/The Power and Root Rules for Limits - 37/Images/q-35641.png>)
+  
+  Find $lim_(x → - 1)\sqrt{10 - 3f(x)}$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $2$
+  correct: true
+- id: b
+  content: |-
+    $\sqrt{13}$
+- id: c
+  content: |-
+    $\sqrt{8}$
+- id: d
+  content: |-
+    $\sqrt{7}$
+- id: e
+  content: |-
+    $DNE$
+```
 
 ```update-progress
 ```

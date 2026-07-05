@@ -1,10 +1,10 @@
 # Improper Integrals
 
-
 <!--
 lesson-id: 758
 topic-code: MF3.10.6.1
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -16,7 +16,7 @@ topic-code: MF3.10.6.1
 
 ## Prerequisites
 
-- [Calculating Definite Integrals Using Substitution](../1159/1159.md)
+- [Calculating Definite Integrals Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.4. Calculating Definite Integrals Using Substitution.md>)
 
 ---
 
@@ -41,7 +41,7 @@ $$
 
 shown below.
 
-![](<253/M-1/UQ-1/Source/Improper Integrals - 758/Images/d9faf36184225455f9f737c44a957ab0.png>)
+![](<../Source/Improper Integrals - 758/Images/d9faf36184225455f9f737c44a957ab0.png>)
 
 To compute an improper integral, we need to compute the limit of the integral as the upper limit approaches infinity. So, in this case, we have
 
@@ -53,11 +53,11 @@ To compute this improper integral, we start by integrating as usual:
 
 $$
 \begin{aligned}
-\lim_{a \to \infty}\int_{2}^{a}\frac{1}{x^{2}}dx &= \lim_{a \to \infty}\int_{2}^{a}x^{-2}dx \\
-&= \lim_{a \to \infty}[\frac{x^{-1}}{-1}]_{2}^{a} \\
-&= \lim_{a \to \infty}[- \frac{1}{x}]_{2}^{a} \\
-&= \lim_{a \to \infty}([- \frac{1}{a}] - [- \frac{1}{2}]) \\
-&= \lim_{a \to \infty}(\frac{1}{2} - \frac{1}{a})
+lim_(a → ∞)∫_{2}^{a}\frac{1}{x^{2}}dx &= lim_(a → ∞)∫_{2}^{a}x^{-2}dx \\
+&= lim_(a → ∞)[\frac{x^{-1}}{-1}]_{2}^{a} \\
+&= lim_(a → ∞)[- \frac{1}{x}]_{2}^{a} \\
+&= lim_(a → ∞)([- \frac{1}{a}] - [- \frac{1}{2}]) \\
+&= lim_(a → ∞)(\frac{1}{2} - \frac{1}{a})
 \end{aligned}
 $$
 
@@ -65,7 +65,7 @@ Now, we take the limits as $a\to \infty{:}$
 
 $$
 \begin{aligned}
-\lim_{a \to \infty}(\frac{1}{2} - \frac{1}{a}) &= \frac{1}{2} - 0 \\
+lim_(a → ∞)(\frac{1}{2} - \frac{1}{a}) &= \frac{1}{2} - 0 \\
 &= \frac{1}{2}
 \end{aligned}
 $$
@@ -89,11 +89,11 @@ We proceed by setting the upper bound equal to some parameter $a$, integrating a
 
 $$
 \begin{aligned}
-\int_{2}^{\infty}\frac{8}{t^{5}}dt &= \lim_{a \to \infty}\int_{2}^{a}\frac{8}{t^{5}}dt \\
-&= 8\lim_{a \to \infty}\int_{2}^{a}t^{-5}dt \\
-&= 8\lim_{a \to \infty}[- \frac{1}{4}t^{-4}]_{2}^{a} \\
-&=-2 \cdot \lim_{a \to \infty}[\frac{1}{t^{4}}]_{2}^{a} \\
-&=-2 \cdot \lim_{a \to \infty}(\frac{1}{a^{4}} - \frac{1}{2^{4}}) \\
+∫_{2}^{∞}\frac{8}{t^{5}}dt &= lim_(a → ∞)∫_{2}^{a}\frac{8}{t^{5}}dt \\
+&= 8lim_(a → ∞)∫_{2}^{a}t^{-5}dt \\
+&= 8lim_(a → ∞)[- \frac{1}{4}t^{-4}]_{2}^{a} \\
+&=-2 \cdot lim_(a → ∞)[\frac{1}{t^{4}}]_{2}^{a} \\
+&=-2 \cdot lim_(a → ∞)(\frac{1}{a^{4}} - \frac{1}{2^{4}}) \\
 &=-2(0 - \frac{1}{16}) \\
 &= \frac{1}{8}
 \end{aligned}
@@ -105,12 +105,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q001
+id: q-1
 content: |-
-  Evaluate
-  $$
-  \int_{1}^{\infty}\frac{3}{\theta^{3}}\,d\theta
-  $$
+  What is $∫_{1}^{∞}\frac{3}{θ^{3}}dθ$?
 options:
 - id: a
   content: |-
@@ -129,18 +126,16 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q002
+id: q-2
 content: |-
-  Evaluate
-  $$
-  \int_{1}^{\infty}\frac{2}{\sqrt{x^{9}}}\,dx
-  $$
+  What is $∫_{1}^{∞}\frac{2}{\sqrt{x^{9}}}dx$?
 options:
 - id: a
   content: |-
@@ -159,6 +154,7 @@ options:
   content: |-
     The integral diverges
 ```
+
 ---
 
 <a id="calculating-improper-integrals-with-an-unbounded-upper-limit-using-substitution"></a>
@@ -202,12 +198,12 @@ Finally, we proceed by setting the upper bound equal to some parameter $a$, inte
 
 $$
 \begin{aligned}
-\int_{0}^{\infty}(1)/((x + 1)^{2})dx &= \int_{1}^{\infty}\frac{1}{u^{2}}du \\
-&= \int_{1}^{\infty}u^{-2}du \\
-&= \lim_{a \to \infty}\int_{1}^{a}u^{-2}du \\
-&= \lim_{a \to \infty}[- u^{-1}]_{1}^{a} \\
-&=-\lim_{a \to \infty}[\frac{1}{u}]_{1}^{a} \\
-&=-1 \cdot \lim_{a \to \infty}[\frac{1}{a} - \frac{1}{1}] \\
+∫_{0}^{∞}(1)/((x + 1)^{2})dx &= ∫_{1}^{∞}\frac{1}{u^{2}}du \\
+&= ∫_{1}^{∞}u^{-2}du \\
+&= lim_(a → ∞)∫_{1}^{a}u^{-2}du \\
+&= lim_(a → ∞)[- u^{-1}]_{1}^{a} \\
+&=-lim_(a → ∞)[\frac{1}{u}]_{1}^{a} \\
+&=-1 \cdot lim_(a → ∞)[\frac{1}{a} - \frac{1}{1}] \\
 &=-1 \cdot (0 - 1) \\
 &= 1
 \end{aligned}
@@ -219,12 +215,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q003
+id: q-3
 content: |-
-  Evaluate
-  $$
-  \int_{0}^{\infty}\frac{1}{\sqrt{(x + 4)^{5}}}\,dx
-  $$
+  Evaluate $∫_{0}^{∞}(1)/(\sqrt{(x + 4)^{5}})dx$.
 options:
 - id: a
   content: |-
@@ -243,18 +236,16 @@ options:
   content: |-
     $\frac{3}{16}$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q004
+id: q-4
 content: |-
-  Evaluate the integral
-  $$
-  \int_{0}^{\infty}\frac{x}{(1 + x^{2})^{2}}\,dx
-  $$
+  Evaluate the integral $∫_{0}^{∞}(x)/((1 + x^{2})^{2})dx$.
 options:
 - id: a
   content: |-
@@ -273,6 +264,7 @@ options:
   content: |-
     $1$
 ```
+
 ---
 
 <a id="calculating-improper-integrals-with-an-unbounded-lower-limit"></a>
@@ -306,13 +298,13 @@ Finally, we proceed by setting the lower bound equal to some parameter $a$, inte
 
 $$
 \begin{aligned}
-\int_{-\infty}^{0}(1)/((x - 4)^{2})dx &= \int_{-\infty}^{-4}\frac{1}{u^{2}}du \\
-&= \int_{-\infty}^{-4}u^{-2}du \\
-&= \lim_{a \to -\infty}\int_{a}^{-4}u^{-2}du \\
-&= \lim_{a \to -\infty}[- u^{-1}]_{a}^{-4} \\
-&=-1 \cdot \lim_{a \to -\infty}[\frac{1}{u}]_{a}^{-4} \\
-&=-1 \cdot \lim_{a \to -\infty}[(1)/((-4)) - \frac{1}{a}] \\
-&=-1 \cdot \lim_{a \to -\infty}(-\frac{1}{4} - \frac{1}{a}) \\
+∫_{- ∞}^{0}(1)/((x - 4)^{2})dx &= ∫_{- ∞}^{-4}\frac{1}{u^{2}}du \\
+&= ∫_{- ∞}^{-4}u^{-2}du \\
+&= lim_(a → - ∞)∫_{a}^{-4}u^{-2}du \\
+&= lim_(a → - ∞)[- u^{-1}]_{a}^{-4} \\
+&=-1 \cdot lim_(a → - ∞)[\frac{1}{u}]_{a}^{-4} \\
+&=-1 \cdot lim_(a → - ∞)[(1)/((-4)) - \frac{1}{a}] \\
+&=-1 \cdot lim_(a → - ∞)(-\frac{1}{4} - \frac{1}{a}) \\
 &=-1 \cdot (-\frac{1}{4} - 0) \\
 &= \frac{1}{4}
 \end{aligned}
@@ -324,12 +316,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q005
+id: q-5
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{-1}\frac{1}{x^{3}}\,dx
-  $$
+  What is $∫_{- ∞}^{-1}\frac{1}{x^{3}}dx$?
 options:
 - id: a
   content: |-
@@ -348,18 +337,16 @@ options:
   content: |-
     $-\frac{1}{4}$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q006
+id: q-6
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{-1}\frac{1}{(7x + 3)^{3}}\,dx
-  $$
+  Evaluate $∫_{- ∞}^{-1}(1)/((7x + 3)^{3})dx$.
 options:
 - id: a
   content: |-
@@ -378,18 +365,16 @@ options:
     $-\frac{1}{224}$
   correct: true
 ```
+
 ---
 
 **Question 7:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q007
+id: q-7
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{-1}\frac{3x^{2}}{(x^{3} - 1)^{4}}\,dx
-  $$
+  Evaluate $∫_{- ∞}^{-1}(3x^{2})/((x^{3} - 1)^{4})dx$.
 options:
 - id: a
   content: |-
@@ -408,6 +393,7 @@ options:
   content: |-
     $-\frac{3}{8}$
 ```
+
 ---
 
 <a id="divergent-improper-integrals"></a>
@@ -430,12 +416,12 @@ We can attempt to work out $I$ by integrating over $x\in[1,a]$ as usual and taki
 
 $$
 \begin{aligned}
-\int_{1}^{\infty}\frac{1}{x}dx &= \lim_{a \to \infty}\int_{1}^{a}\frac{1}{x}dx \\
-&= \lim_{a \to \infty}[\ln \mid x \mid ]_{1}^{a} \\
-&= \lim_{a \to \infty}([\ln a] - [\ln 1]) \\
-&= \lim_{a \to \infty}([\ln a] - [0]) \\
-&= \lim_{a \to \infty}(\ln a) \\
-&= \infty
+∫_{1}^{∞}\frac{1}{x}dx &= lim_(a → ∞)∫_{1}^{a}\frac{1}{x}dx \\
+&= lim_(a → ∞)[\ln \mid x \mid ]_{1}^{a} \\
+&= lim_(a → ∞)([\ln a] - [\ln 1]) \\
+&= lim_(a → ∞)([\ln a] - [0]) \\
+&= lim_(a → ∞)(\ln a) \\
+&= ∞
 \end{aligned}
 $$
 
@@ -457,13 +443,13 @@ The limit of $I$ as $a\rightarrow \infty$ is infinite. Therefore, the integral $
 Let's work out each integral.
 
 - For the first integral, we have
-$\int_{1}^{\infty}\frac{1}{\sqrt{x}}dx|= \lim_{b \to \infty}\int_{1}^{b}\frac{1}{\sqrt{x}}dx; = \lim_{b \to \infty}\int_{1}^{b}x^{-1/2}dx; = \lim_{b \to \infty}[2x^{1/2}]_{1}^{b}; = 2\lim_{b \to \infty}[\sqrt{x}]_{1}^{b}; = 2\lim_{b \to \infty}[\sqrt{b} - 1]; = \infty$,
+$∫_{1}^{∞}\frac{1}{\sqrt{x}}dx|= lim_(b → ∞)∫_{1}^{b}\frac{1}{\sqrt{x}}dx; = lim_(b → ∞)∫_{1}^{b}x^{-1/2}dx; = lim_(b → ∞)[2x^{1/2}]_{1}^{b}; = 2lim_(b → ∞)[\sqrt{x}]_{1}^{b}; = 2lim_(b → ∞)[\sqrt{b} - 1]; = ∞$,
 so the integral diverges.
 - For the second integral, we have
-$\int_{-\infty}^{-2}(1)/((1 + x)^{2})dx|= \lim_{a \to -\infty}\int_{a}^{-2}(1)/((1 + x)^{2})dx; = \lim_{a \to -\infty}[- \frac{1}{1 + x}]_{a}^{-2}; = \lim_{a \to -\infty}[- \frac{1}{1 - 2} + \frac{1}{1 + a}]; = \lim_{a \to -\infty}[\frac{1}{1 + a} + 1]; = 1$,
+$∫_{- ∞}^{-2}(1)/((1 + x)^{2})dx|= lim_(a → - ∞)∫_{a}^{-2}(1)/((1 + x)^{2})dx; = lim_(a → - ∞)[- \frac{1}{1 + x}]_{a}^{-2}; = lim_(a → - ∞)[- \frac{1}{1 - 2} + \frac{1}{1 + a}]; = lim_(a → - ∞)[\frac{1}{1 + a} + 1]; = 1$,
 so the integral is convergent (not divergent).
 - For the third integral, we have
-$\int_{1}^{\infty}\frac{1}{x^{3}}dx|= \lim_{b \to \infty}\int_{1}^{b}\frac{1}{x^{3}}dx; = \lim_{b \to \infty}\int_{1}^{b}x^{-3}dx; = \lim_{b \to \infty}[- \frac{1}{2x^{2}}]_{1}^{b}; = \lim_{b \to \infty}[- \frac{1}{2b^{2}} + (1)/(2(1^{2}))]; = \lim_{b \to \infty}[\frac{1}{2} - \frac{1}{2b^{2}}]; = \frac{1}{2} - 0; = \frac{1}{2}$,
+$∫_{1}^{∞}\frac{1}{x^{3}}dx|= lim_(b → ∞)∫_{1}^{b}\frac{1}{x^{3}}dx; = lim_(b → ∞)∫_{1}^{b}x^{-3}dx; = lim_(b → ∞)[- \frac{1}{2x^{2}}]_{1}^{b}; = lim_(b → ∞)[- \frac{1}{2b^{2}} + (1)/(2(1^{2}))]; = lim_(b → ∞)[\frac{1}{2} - \frac{1}{2b^{2}}]; = \frac{1}{2} - 0; = \frac{1}{2}$,
 so the integral is convergent (not divergent).
 
 In conclusion, only integral I is divergent.
@@ -474,12 +460,9 @@ In conclusion, only integral I is divergent.
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q008
+id: q-8
 content: |-
-  Evaluate
-  $$
-  \int_{0}^{\infty}\frac{1}{2x + 1}\,dx
-  $$
+  What is $∫_{0}^{∞}\frac{1}{2x + 1}dx$?
 options:
 - id: a
   content: |-
@@ -498,23 +481,20 @@ options:
   content: |-
     $2\ln (2)$
 ```
+
 ---
 
-**Question 9:**
+**Question 9**
 
 ```quiz
 type: radio
-id: MA253-UQ1-758-q009
+id: q-9
 content: |-
   Which of the following improper integrals are divergent?
   
-  $$
-  \begin{aligned}
-  \text{I.}\quad &\int_{10}^{\infty}\frac{1}{\sqrt{x - 1}}\,dx \\
-  \text{II.}\quad &\int_{-\infty}^{-1}\frac{1}{x}\,dx \\
-  \text{III.}\quad &\int_{1}^{\infty}\frac{1}{x^{2}}\,dx
-  \end{aligned}
-  $$
+  1. $∫_{10}^{∞}\frac{1}{\sqrt{x - 1}}dx$
+  2. $∫_{- ∞}^{-1}\frac{1}{x}dx$
+  3. $∫_{1}^{∞}\frac{1}{x^{2}}dx$
 options:
 - id: a
   content: |-
@@ -533,15 +513,9 @@ options:
     I and II only
   correct: true
 ```
----
-
-## Navigation
-
-- [Next: The Product and Quotient Rules for Limits](<The Product and Quotient Rules for Limits - 1246.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

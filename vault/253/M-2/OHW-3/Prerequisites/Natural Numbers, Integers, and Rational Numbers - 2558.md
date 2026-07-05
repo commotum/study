@@ -65,33 +65,65 @@ Therefore, the correct answer is "III only."
 
 **Question 1**
 
-Which of the following are natural numbers?
-
-1. $1$
-2. $-2$
-3. $-\frac{1}{2}$
-
-- [ ] A. I, II, and III
-- [ ] B. II only
-- [ ] C. III only
-- [ ] D. I and II only
-- [ ] E. I only
+```quiz
+type: radio
+id: q-1
+content: |-
+  Which of the following are natural numbers?
+  
+  1. $1$
+  2. $-2$
+  3. $-\frac{1}{2}$
+options:
+- id: a
+  content: |-
+    I, II, and III
+- id: b
+  content: |-
+    II only
+- id: c
+  content: |-
+    III only
+- id: d
+  content: |-
+    I and II only
+- id: e
+  correct: true
+  content: |-
+    I only
+```
 
 ---
 
 **Question 2**
 
-Which of the following are natural numbers?
-
-1. $5$
-2. $0$
-3. $\frac{1}{5}$
-
-- [ ] A. II and III only
-- [ ] B. III only
-- [ ] C. II only
-- [ ] D. I only
-- [ ] E. I and II only
+```quiz
+type: radio
+id: q-2
+content: |-
+  Which of the following are natural numbers?
+  
+  1. $5$
+  2. $0$
+  3. $\frac{1}{5}$
+options:
+- id: a
+  content: |-
+    II and III only
+- id: b
+  content: |-
+    III only
+- id: c
+  content: |-
+    II only
+- id: d
+  correct: true
+  content: |-
+    I only
+- id: e
+  content: |-
+    I and II only
+```
 
 ---
 
@@ -140,33 +172,65 @@ Therefore, the correct answer is "I and III only."
 
 **Question 3**
 
-Which of the following numbers are integers?
-
-1. $0$
-2. $-8$
-3. $8$
-
-- [ ] A. I, II, and III
-- [ ] B. I and II only
-- [ ] C. II only
-- [ ] D. I only
-- [ ] E. III only
+```quiz
+type: radio
+id: q-3
+content: |-
+  Which of the following numbers are integers?
+  
+  1. $0$
+  2. $-8$
+  3. $8$
+options:
+- id: a
+  correct: true
+  content: |-
+    I, II, and III
+- id: b
+  content: |-
+    I and II only
+- id: c
+  content: |-
+    II only
+- id: d
+  content: |-
+    I only
+- id: e
+  content: |-
+    III only
+```
 
 ---
 
 **Question 4**
 
-Which of the following numbers are integers?
-
-1. $1$
-2. $-2$
-3. $-\frac{1}{2}$
-
-- [ ] A. II only
-- [ ] B. I only
-- [ ] C. I and II only
-- [ ] D. III only
-- [ ] E. I, II, and III
+```quiz
+type: radio
+id: q-4
+content: |-
+  Which of the following numbers are integers?
+  
+  1. $1$
+  2. $-2$
+  3. $-\frac{1}{2}$
+options:
+- id: a
+  content: |-
+    II only
+- id: b
+  content: |-
+    I only
+- id: c
+  correct: true
+  content: |-
+    I and II only
+- id: d
+  content: |-
+    III only
+- id: e
+  content: |-
+    I, II, and III
+```
 
 ---
 
@@ -234,33 +298,65 @@ Therefore, the correct answer is "I, II, and III."
 
 **Question 5**
 
-Which of the following statements are true?
-
-1. $\frac{3}{2}$ is a rational number
-2. $0$ is a rational number
-3. $-1$ is a rational number
-
-- [ ] A. I, II, and III
-- [ ] B. I and III only
-- [ ] C. I and II only
-- [ ] D. I only
-- [ ] E. II and III only
+```quiz
+type: radio
+id: q-5
+content: |-
+  Which of the following statements are true?
+  
+  1. $\frac{3}{2}$ is a rational number
+  2. $0$ is a rational number
+  3. $-1$ is a rational number
+options:
+- id: a
+  correct: true
+  content: |-
+    I, II, and III
+- id: b
+  content: |-
+    I and III only
+- id: c
+  content: |-
+    I and II only
+- id: d
+  content: |-
+    I only
+- id: e
+  content: |-
+    II and III only
+```
 
 ---
 
 **Question 6**
 
-Which of the following statements are true?
-
-1. $-2$ is a natural number
-2. $-2$ is an integer
-3. $-2$ is a rational number
-
-- [ ] A. III only
-- [ ] B. I and II only
-- [ ] C. I, II, and III
-- [ ] D. II only
-- [ ] E. II and III only
+```quiz
+type: radio
+id: q-6
+content: |-
+  Which of the following statements are true?
+  
+  1. $-2$ is a natural number
+  2. $-2$ is an integer
+  3. $-2$ is a rational number
+options:
+- id: a
+  content: |-
+    III only
+- id: b
+  content: |-
+    I and II only
+- id: c
+  content: |-
+    I, II, and III
+- id: d
+  content: |-
+    II only
+- id: e
+  correct: true
+  content: |-
+    II and III only
+```
 
 ---
 
@@ -355,33 +451,65 @@ Therefore, the correct answer is "I and III only."
 
 **Question 7**
 
-Which of the following numbers are rational?
-
-1. $1.3^(―)$
-2. $4.321$
-3. $0.141327…$
-
-- [ ] A. II only
-- [ ] B. II and III only
-- [ ] C. III only
-- [ ] D. I only
-- [ ] E. I and II only
+```quiz
+type: radio
+id: q-7
+content: |-
+  Which of the following numbers are rational?
+  
+  1. $1.3^(―)$
+  2. $4.321$
+  3. $0.141327…$
+options:
+- id: a
+  content: |-
+    II only
+- id: b
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    III only
+- id: d
+  content: |-
+    I only
+- id: e
+  correct: true
+  content: |-
+    I and II only
+```
 
 ---
 
 **Question 8**
 
-Which of the following numbers are rational?
-
-1. $3.624$
-2. $0.25^(―)$
-3. $7.526380…$
-
-- [ ] A. I only
-- [ ] B. I and III only
-- [ ] C. II and III only
-- [ ] D. II only
-- [ ] E. I and II only
+```quiz
+type: radio
+id: q-8
+content: |-
+  Which of the following numbers are rational?
+  
+  1. $3.624$
+  2. $0.25^(―)$
+  3. $7.526380…$
+options:
+- id: a
+  content: |-
+    I only
+- id: b
+  content: |-
+    I and III only
+- id: c
+  content: |-
+    II and III only
+- id: d
+  content: |-
+    II only
+- id: e
+  correct: true
+  content: |-
+    I and II only
+```
 
 ```update-progress
 ```

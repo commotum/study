@@ -73,23 +73,59 @@ $$
 
 ---
 
-**Question 1:** Rationalize the denominator of $\frac{4a^{2}}{2 + \sqrt{a}}$.
+**Question 1:**
 
-- [ ] A. $\frac{8a^{2} - 4a^{3}}{2 - 4a}$
-- [ ] B. $\frac{4a^{2} - 4a^{2}\sqrt{a}}{a - 4}$
-- [ ] C. $\frac{8a^{2} - 4a^{2}\sqrt{a}}{4 - a}$
-- [ ] D. $2a + a\sqrt{a}$
-- [ ] E. $\frac{8a^{2}\sqrt{a} - 4a^{3}}{2 - 4a}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Rationalize the denominator of $\frac{4a^{2}}{2 + \sqrt{a}}$.
+options:
+- id: a
+  content: |-
+    $\frac{8a^{2} - 4a^{3}}{2 - 4a}$
+- id: b
+  content: |-
+    $\frac{4a^{2} - 4a^{2}\sqrt{a}}{a - 4}$
+- id: c
+  correct: true
+  content: |-
+    $\frac{8a^{2} - 4a^{2}\sqrt{a}}{4 - a}$
+- id: d
+  content: |-
+    $2a + a\sqrt{a}$
+- id: e
+  content: |-
+    $\frac{8a^{2}\sqrt{a} - 4a^{3}}{2 - 4a}$
+```
 
 ---
 
-**Question 2:** Rationalize the denominator of $\frac{d + 1}{\sqrt{2d} + 1}$.
+**Question 2:**
 
-- [ ] A. $((2d + 1)(\sqrt{d} - 1))/(d - 1)$
-- [ ] B. $((d + 1)(\sqrt{2d} - 1))/(d - 1)$
-- [ ] C. $((2d + 1)(\sqrt{2d} - 1))/(d - 1)$
-- [ ] D. $((d + 1)(\sqrt{2d} - 1))/(2d - 1)$
-- [ ] E. $((d + 1)(\sqrt{d} - 1))/(2d - 1)$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Rationalize the denominator of $\frac{d + 1}{\sqrt{2d} + 1}$.
+options:
+- id: a
+  content: |-
+    $((2d + 1)(\sqrt{d} - 1))/(d - 1)$
+- id: b
+  content: |-
+    $((d + 1)(\sqrt{2d} - 1))/(d - 1)$
+- id: c
+  content: |-
+    $((2d + 1)(\sqrt{2d} - 1))/(d - 1)$
+- id: d
+  correct: true
+  content: |-
+    $((d + 1)(\sqrt{2d} - 1))/(2d - 1)$
+- id: e
+  content: |-
+    $((d + 1)(\sqrt{d} - 1))/(2d - 1)$
+```
 
 ---
 
@@ -110,23 +146,59 @@ $$
 
 ---
 
-**Question 3:** Rationalize the denominator of $\frac{x}{\sqrt{x + 2} + 4}$.
+**Question 3:**
 
-- [ ] A. $(x(\sqrt{x + 2} + 4))/(x + 18)$
-- [ ] B. $(x(\sqrt{x - 2} - 4))/(x - 18)$
-- [ ] C. $\frac{x}{x - 14}$
-- [ ] D. $(x(\sqrt{x + 2} - 4))/(x - 14)$
-- [ ] E. $\frac{x\sqrt{x - 2} + 4}{x - 14}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Rationalize the denominator of $\frac{x}{\sqrt{x + 2} + 4}$.
+options:
+- id: a
+  content: |-
+    $(x(\sqrt{x + 2} + 4))/(x + 18)$
+- id: b
+  content: |-
+    $(x(\sqrt{x - 2} - 4))/(x - 18)$
+- id: c
+  content: |-
+    $\frac{x}{x - 14}$
+- id: d
+  correct: true
+  content: |-
+    $(x(\sqrt{x + 2} - 4))/(x - 14)$
+- id: e
+  content: |-
+    $\frac{x\sqrt{x - 2} + 4}{x - 14}$
+```
 
 ---
 
-**Question 4:** Rationalize the denominator of $-\frac{4w}{3 + \sqrt{2w + 5}}$.
+**Question 4:**
 
-- [ ] A. $- (2w(3 - \sqrt{2w + 5}))/(2 - w)$
-- [ ] B. $-\frac{6w + \sqrt{2w + 5}}{2 - w}$
-- [ ] C. $(2w(3 - \sqrt{2w - 5}))/(14 + w)$
-- [ ] D. $\frac{6w + \sqrt{2w + 5}}{2 + w}$
-- [ ] E. $- (2w(3 - \sqrt{2w - 5}))/(7 + w)$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Rationalize the denominator of $-\frac{4w}{3 + \sqrt{2w + 5}}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $- (2w(3 - \sqrt{2w + 5}))/(2 - w)$
+- id: b
+  content: |-
+    $-\frac{6w + \sqrt{2w + 5}}{2 - w}$
+- id: c
+  content: |-
+    $(2w(3 - \sqrt{2w - 5}))/(14 + w)$
+- id: d
+  content: |-
+    $\frac{6w + \sqrt{2w + 5}}{2 + w}$
+- id: e
+  content: |-
+    $- (2w(3 - \sqrt{2w - 5}))/(7 + w)$
+```
 
 ---
 
@@ -147,23 +219,59 @@ $$
 
 ---
 
-**Question 5:** Rationalize the denominator of $\frac{1}{\sqrt{w} + \sqrt{w - 3}}$.
+**Question 5:**
 
-- [ ] A. $\frac{\sqrt{w} - \sqrt{w - 3}}{3}$
-- [ ] B. $3(\sqrt{w} - \sqrt{w - 3})$
-- [ ] C. $\frac{\sqrt{w} - \sqrt{w - 3}}{2}$
-- [ ] D. $(2(\sqrt{w} - \sqrt{w - 3}))/(3)$
-- [ ] E. $2(\sqrt{w} - \sqrt{w - 3})$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Rationalize the denominator of $\frac{1}{\sqrt{w} + \sqrt{w - 3}}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $\frac{\sqrt{w} - \sqrt{w - 3}}{3}$
+- id: b
+  content: |-
+    $3(\sqrt{w} - \sqrt{w - 3})$
+- id: c
+  content: |-
+    $\frac{\sqrt{w} - \sqrt{w - 3}}{2}$
+- id: d
+  content: |-
+    $(2(\sqrt{w} - \sqrt{w - 3}))/(3)$
+- id: e
+  content: |-
+    $2(\sqrt{w} - \sqrt{w - 3})$
+```
 
 ---
 
-**Question 6:** Rationalize the denominator of $\frac{4}{\sqrt{y + 1} + \sqrt{y - 3}}$.
+**Question 6:**
 
-- [ ] A. $-2(\sqrt{y + 1} - \sqrt{y - 3})$
-- [ ] B. $\sqrt{y - 1} - \sqrt{y + 3}$
-- [ ] C. $\sqrt{y + 1} - \sqrt{y - 3}$
-- [ ] D. $\frac{\sqrt{y + 1} - \sqrt{y - 3}}{2}$
-- [ ] E. $\sqrt{y + 3} - \sqrt{y - 1}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Rationalize the denominator of $\frac{4}{\sqrt{y + 1} + \sqrt{y - 3}}$.
+options:
+- id: a
+  content: |-
+    $-2(\sqrt{y + 1} - \sqrt{y - 3})$
+- id: b
+  content: |-
+    $\sqrt{y - 1} - \sqrt{y + 3}$
+- id: c
+  correct: true
+  content: |-
+    $\sqrt{y + 1} - \sqrt{y - 3}$
+- id: d
+  content: |-
+    $\frac{\sqrt{y + 1} - \sqrt{y - 3}}{2}$
+- id: e
+  content: |-
+    $\sqrt{y + 3} - \sqrt{y - 1}$
+```
 
 ```update-progress
 ```

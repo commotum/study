@@ -1,10 +1,10 @@
 # Vertical Asymptotes of Rational Functions
 
-
 <!--
 lesson-id: 807
 topic-code: MF2.6.3.8
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,11 +15,11 @@ topic-code: MF2.6.3.8
 
 ## Prerequisites
 
-- [The Discriminant of a Quadratic Equation](../425/425.md)
-- [Factoring Cubic Expressions by Grouping](../428/428.md)
-- [Factoring Sums and Differences of Cubes](../441/441.md)
-- [Solving Quadratic Equations with Leading Coefficients by Factoring](../1422/1422.md)
-- [Simplifying Rational Expressions Using Polynomial Factorization](../1676/1676.md)
+- [The Discriminant of a Quadratic Equation](<../../../1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.15. The Discriminant of a Quadratic Equation.md>)
+- [Factoring Cubic Expressions by Grouping](<../../../2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.3. Factoring Cubic Expressions by Grouping.md>)
+- [Factoring Sums and Differences of Cubes](<../../../2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.4. Factoring Sums and Differences of Cubes.md>)
+- [Solving Quadratic Equations with Leading Coefficients by Factoring](<../../../1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.8. Solving Quadratic Equations with Leading Coefficients by Factoring.md>)
+- [Simplifying Rational Expressions Using Polynomial Factorization](<../../6.1. Rational Expressions/Lessons/6.1.1. Simplifying Rational Expressions Using Polynomial Factorization.md>)
 
 ---
 
@@ -36,7 +36,7 @@ $$
 
 The graph of $y=f(x)$ is shown below.
 
-![](<253/M-1/UQ-1/Source/Vertical Asymptotes of Rational Functions - 807/Images/5f5826d19b1d277374ccb3488a6692af.png>)
+![](<../Source/Vertical Asymptotes of Rational Functions - 807/Images/5f5826d19b1d277374ccb3488a6692af.png>)
 
 The two dotted lines $x=2$ and $x=-2$ are the vertical asymptotes of the function. The function gets closer and closer to these lines but never touches them.
 
@@ -88,7 +88,7 @@ This gives the two solutions $x = -2$ and $x = 3$. Therefore, the equations of t
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q001
+id: q-1
 content: |-
   Determine the vertical asymptotes of $f(x) = \frac{1}{x^{2} + 6x - 16}$.
 options:
@@ -99,9 +99,9 @@ options:
   content: |-
     $x =-5, x = 1$
 - id: c
+  correct: true
   content: |-
     $x =-8, x = 2$
-  correct: true
 - id: d
   content: |-
     $x =-2, x = \frac{1}{4}$
@@ -109,13 +109,14 @@ options:
   content: |-
     $x = 3, x = \frac{1}{2}$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q002
+id: q-2
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{3x^{2} - 12x}{x^{2} - 2x - 3}$.
 options:
@@ -123,9 +124,9 @@ options:
   content: |-
     No vertical asymptotes
 - id: b
+  correct: true
   content: |-
     $x =-1, x = 3$
-  correct: true
 - id: c
   content: |-
     $x = 3$ only
@@ -136,13 +137,14 @@ options:
   content: |-
     $x = 1, x = 4$
 ```
+
 ---
 
 **Question 3:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q003
+id: q-3
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{2}{2 - x} + \frac{3}{2 + x}$.
 options:
@@ -156,13 +158,14 @@ options:
   content: |-
     $x =-2, x = 1$
 - id: d
+  correct: true
   content: |-
     $x =-2, x = 2$
-  correct: true
 - id: e
   content: |-
     $x =-2, x = 0, x = 2$
 ```
+
 ---
 
 <a id="calculating-vertical-asymptotes-with-common-factors-in-the-numerator-and-denominator"></a>
@@ -196,7 +199,7 @@ This gives the solution $x = 4$. Therefore, $x = 4$ is the only vertical asympto
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q004
+id: q-4
 content: |-
   Calculate the vertical asymptotes of $f(x) = (x)/(x(x - 2))$.
 options:
@@ -207,9 +210,9 @@ options:
   content: |-
     $x = 0$ only
 - id: c
+  correct: true
   content: |-
     $x = 2$ only
-  correct: true
 - id: d
   content: |-
     The function has no vertical asymptotes
@@ -217,13 +220,14 @@ options:
   content: |-
     $x =-2, x = 2$
 ```
+
 ---
 
 **Question 5:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q005
+id: q-5
 content: |-
   Determine the vertical asymptotes of $f(x) = \frac{x - 2}{x^{2} + 2x - 8}$.
 options:
@@ -231,9 +235,9 @@ options:
   content: |-
     $x =-4, x = 2$
 - id: b
+  correct: true
   content: |-
     $x =-4$ only
-  correct: true
 - id: c
   content: |-
     $x = 2, x = 4$
@@ -244,13 +248,14 @@ options:
   content: |-
     $x = 2$ only
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q006
+id: q-6
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{x^{2} - 3x + 2}{x^{2} + x - 2}$.
 options:
@@ -258,9 +263,9 @@ options:
   content: |-
     $x = 2$ only
 - id: b
+  correct: true
   content: |-
     $x =-2$ only
-  correct: true
 - id: c
   content: |-
     $x = 1$ only
@@ -271,6 +276,7 @@ options:
   content: |-
     $x =-2, x = 1$
 ```
+
 ---
 
 <a id="calculating-vertical-asymptotes-when-the-denominator-has-complex-roots"></a>
@@ -311,7 +317,7 @@ Therefore, the only vertical asymptote is $x = 0$.
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q007
+id: q-7
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{1}{x^{2} - 4x + 5}$.
 options:
@@ -322,9 +328,9 @@ options:
   content: |-
     $x = 5$ only
 - id: c
+  correct: true
   content: |-
     The function has no vertical asymptotes
-  correct: true
 - id: d
   content: |-
     $x =-1, x = 5$
@@ -332,13 +338,14 @@ options:
   content: |-
     $x = 1$ only
 ```
+
 ---
 
 **Question 8:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q008
+id: q-8
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{5}{x^{3} + x^{2} + x}$.
 options:
@@ -352,27 +359,28 @@ options:
   content: |-
     $x = \frac{1}{2}$ only
 - id: d
+  correct: true
   content: |-
     $x = 0$ only
-  correct: true
 - id: e
   content: |-
     $x =-1, x =-\frac{1}{2}$
 ```
+
 ---
 
 **Question 9:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q009
+id: q-9
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{2x}{x^{3} - 27}$.
 options:
 - id: a
+  correct: true
   content: |-
     $x = 3$ only
-  correct: true
 - id: b
   content: |-
     $x =-3, x = 0, x = 3$
@@ -386,6 +394,7 @@ options:
   content: |-
     No vertical asymptotes
 ```
+
 ---
 
 <a id="calculating-vertical-asymptotes-with-common-factors-when-the-denominator-has-complex-roots"></a>
@@ -434,7 +443,7 @@ Therefore, $f(x)$ has no vertical asymptotes.
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q010
+id: q-10
 content: |-
   Calculate the vertical asymptotes of $f(x) = \frac{x}{x^{3} + x^{2} + x}$.
 options:
@@ -442,9 +451,9 @@ options:
   content: |-
     $x =-1, x = 1$
 - id: b
+  correct: true
   content: |-
     The function has no vertical asymptotes
-  correct: true
 - id: c
   content: |-
     $x =-1, x = 0, x = 1$
@@ -455,13 +464,14 @@ options:
   content: |-
     $x = 0$ only
 ```
+
 ---
 
 **Question 11:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-807-q011
+id: q-11
 content: |-
   Determine the vertical asymptotes of the function $f(x) = \frac{x^{2} - 1}{x^{3} - x^{2} + x - 1}$.
 options:
@@ -469,9 +479,9 @@ options:
   content: |-
     $x = 1$ only
 - id: b
+  correct: true
   content: |-
     The function has no vertical asymptotes
-  correct: true
 - id: c
   content: |-
     $x =-1$ only
@@ -482,15 +492,9 @@ options:
   content: |-
     $x =-1, x = 1$
 ```
----
-
-## Navigation
-
-- [Next: Connecting Infinite Limits and Vertical Asymptotes of Rational Functions](<Connecting Infinite Limits and Vertical Asymptotes of Rational Functions - 1384.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]

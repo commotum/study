@@ -82,23 +82,59 @@ Since the limit exists, the sequence converges, and its limit is $0$.
 
 ---
 
-**Question 1:** What is the limit of the sequence $a_{n} = \frac{7n^{3} + 3}{5n^{3} + 3n^{2}}$ for $n \ge 1$?
+**Question 1:**
 
-- [ ] A. $7$
-- [ ] B. $\frac{2}{5}$
-- [ ] C. $0$
-- [ ] D. $\frac{7}{5}$
-- [ ] E. The sequence diverges.
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is the limit of the sequence $a_{n} = \frac{7n^{3} + 3}{5n^{3} + 3n^{2}}$ for $n \ge 1$?
+options:
+- id: a
+  content: |-
+    $7$
+- id: b
+  content: |-
+    $\frac{2}{5}$
+- id: c
+  content: |-
+    $0$
+- id: d
+  correct: true
+  content: |-
+    $\frac{7}{5}$
+- id: e
+  content: |-
+    The sequence diverges.
+```
 
 ---
 
-**Question 2:** What is the limit of the sequence $a_{n} = \frac{2n + 3}{4n}$ for $n \ge 1$?
+**Question 2:**
 
-- [ ] A. $\frac{1}{2}$
-- [ ] B. $\frac{3}{4}$
-- [ ] C. The sequence diverges.
-- [ ] D. $2$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is the limit of the sequence $a_{n} = \frac{2n + 3}{4n}$ for $n \ge 1$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $\frac{1}{2}$
+- id: b
+  content: |-
+    $\frac{3}{4}$
+- id: c
+  content: |-
+    The sequence diverges.
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $0$
+```
 
 ---
 
@@ -131,33 +167,65 @@ In conclusion, sequences II and III diverge.
 
 **Question 3**
 
-Which of the following sequences diverge?
-
-1. $a_{n} = \frac{n^{3} - 1}{n^{2} + 1}$ for $n \ge 1$
-2. $a_{n} = \frac{n^{5} - n}{n^{4} - 2}$ for $n \ge 1$
-3. $a_{n} = \frac{1}{n^{2} + 8}$ for $n \ge 1$
-
-- [ ] A. II and III only
-- [ ] B. I and II only
-- [ ] C. II only
-- [ ] D. I, II and III
-- [ ] E. I only
+```quiz
+type: radio
+id: q-3
+content: |-
+  Which of the following sequences diverge?
+  
+  1. $a_{n} = \frac{n^{3} - 1}{n^{2} + 1}$ for $n \ge 1$
+  2. $a_{n} = \frac{n^{5} - n}{n^{4} - 2}$ for $n \ge 1$
+  3. $a_{n} = \frac{1}{n^{2} + 8}$ for $n \ge 1$
+options:
+- id: a
+  content: |-
+    II and III only
+- id: b
+  correct: true
+  content: |-
+    I and II only
+- id: c
+  content: |-
+    II only
+- id: d
+  content: |-
+    I, II and III
+- id: e
+  content: |-
+    I only
+```
 
 ---
 
 **Question 4**
 
-Which of the following sequences diverge?
-
-1. $a_{n} = \frac{n - 1}{n^{3} + 1}$ for $n \ge 1$
-2. $a_{n} = \frac{2}{n^{3}}$ for $n \ge 1$
-3. $a_{n} = \frac{n^{3} + 3}{3n^{2} - n}$ for $n \ge 1$
-
-- [ ] A. I and II only
-- [ ] B. II and III only
-- [ ] C. I, II, and III
-- [ ] D. III only
-- [ ] E. None
+```quiz
+type: radio
+id: q-4
+content: |-
+  Which of the following sequences diverge?
+  
+  1. $a_{n} = \frac{n - 1}{n^{3} + 1}$ for $n \ge 1$
+  2. $a_{n} = \frac{2}{n^{3}}$ for $n \ge 1$
+  3. $a_{n} = \frac{n^{3} + 3}{3n^{2} - n}$ for $n \ge 1$
+options:
+- id: a
+  content: |-
+    I and II only
+- id: b
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    I, II, and III
+- id: d
+  correct: true
+  content: |-
+    III only
+- id: e
+  content: |-
+    None
+```
 
 ---
 
@@ -199,23 +267,59 @@ $$
 
 ---
 
-**Question 5:** What is the limit of the sequence $a_{n} = (3n^{3}(2n^{3} - 1))/((2n^{3} - 3)(2n^{3} + 3))$ for $n \ge 1$?
+**Question 5:**
 
-- [ ] A. $\frac{3}{2}$
-- [ ] B. $0$
-- [ ] C. $6$
-- [ ] D. $\frac{3}{5}$
-- [ ] E. The sequence diverges.
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is the limit of the sequence $a_{n} = (3n^{3}(2n^{3} - 1))/((2n^{3} - 3)(2n^{3} + 3))$ for $n \ge 1$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $\frac{3}{2}$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $6$
+- id: d
+  content: |-
+    $\frac{3}{5}$
+- id: e
+  content: |-
+    The sequence diverges.
+```
 
 ---
 
-**Question 6:** What is the limit of the sequence $a_{n} = ((3n^{2} + 2)(3n^{2} - 2))/(n^{2}(2n^{3} - 5))$ for $n \ge 1$?
+**Question 6:**
 
-- [ ] A. $-4$
-- [ ] B. $3$
-- [ ] C. The sequence diverges
-- [ ] D. $\frac{1}{2}$
-- [ ] E. $0$
+```quiz
+type: radio
+id: q-6
+content: |-
+  What is the limit of the sequence $a_{n} = ((3n^{2} + 2)(3n^{2} - 2))/(n^{2}(2n^{3} - 5))$ for $n \ge 1$?
+options:
+- id: a
+  content: |-
+    $-4$
+- id: b
+  content: |-
+    $3$
+- id: c
+  content: |-
+    The sequence diverges
+- id: d
+  content: |-
+    $\frac{1}{2}$
+- id: e
+  correct: true
+  content: |-
+    $0$
+```
 
 ```update-progress
 ```

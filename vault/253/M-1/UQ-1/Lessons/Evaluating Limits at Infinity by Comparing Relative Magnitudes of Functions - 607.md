@@ -1,10 +1,10 @@
 # Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions
 
-
 <!--
 lesson-id: 607
 topic-code: MF3.7.1.8
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,10 +15,10 @@ topic-code: MF3.7.1.8
 
 ## Prerequisites
 
-- [Limits at Infinity of Polynomials](../1263/1263.md)
-- [Limits of Logarithmic Functions](../1377/1377.md)
-- [Limits of Exponential Functions](../1717/1717.md)
-- [Limits of Trigonometric Functions](../1719/1719.md)
+- [Limits at Infinity of Polynomials](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.1. Limits at Infinity of Polynomials.md>)
+- [Limits of Logarithmic Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.4. Limits of Logarithmic Functions.md>)
+- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
+- [Limits of Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.6. Limits of Trigonometric Functions.md>)
 
 ---
 
@@ -63,7 +63,7 @@ $$
 y=\dfrac{x}{e^x}
 $$
 
-![](<253/M-1/UQ-1/Source/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607/Images/f0ac2e52e31c9080ec195b9c9a836361.png>)
+![](<../Source/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607/Images/f0ac2e52e31c9080ec195b9c9a836361.png>)
 
 In general, for large values of $x$,
 
@@ -94,9 +94,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q001
+id: q-1
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{e^{x}}{x^{9}}$.
+  Evaluate $lim_(x → ∞)\frac{e^{x}}{x^{9}}$.
 options:
 - id: a
   content: |-
@@ -115,15 +115,16 @@ options:
   content: |-
     $e$
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q002
+id: q-2
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{e^{x}}{x}$.
+  Evaluate $lim_(x → ∞)\frac{e^{x}}{x}$.
 options:
 - id: a
   content: |-
@@ -142,6 +143,7 @@ options:
     $∞$
   correct: true
 ```
+
 ---
 
 <a id="comparing-a-polynomial-function-and-a-logarithmic-function"></a>
@@ -163,9 +165,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q003
+id: q-3
 content: |-
-  Evaluate $\lim_{x \to \infty}(x)/(\ln (2x))$.
+  Evaluate $lim_(x → ∞)(x)/(\ln (2x))$.
 options:
 - id: a
   content: |-
@@ -184,15 +186,16 @@ options:
   content: |-
     $DNE$
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q004
+id: q-4
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{\ln x}{x^{2}}$.
+  Evaluate $lim_(x → ∞)\frac{\ln x}{x^{2}}$.
 options:
 - id: a
   content: |-
@@ -211,6 +214,7 @@ options:
   content: |-
     $2$
 ```
+
 ---
 
 <a id="comparing-an-exponential-function-and-a-logarithmic-function"></a>
@@ -232,9 +236,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q005
+id: q-5
 content: |-
-  Evaluate $\lim_{x \to \infty}(e^{x})/(\ln (2x))$.
+  Evaluate $lim_(x → ∞)(e^{x})/(\ln (2x))$.
 options:
 - id: a
   content: |-
@@ -253,15 +257,16 @@ options:
     $∞$
   correct: true
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q006
+id: q-6
 content: |-
-  Evaluate $\lim_{x \to \infty}(\ln (3x))/(e^{x})$.
+  Evaluate $lim_(x → ∞)(\ln (3x))/(e^{x})$.
 options:
 - id: a
   content: |-
@@ -280,6 +285,7 @@ options:
   content: |-
     $e$
 ```
+
 ---
 
 <a id="comparing-the-relative-magnitude-of-a-trigonometric-function"></a>
@@ -309,7 +315,7 @@ $$
 
 shown below:
 
-![](<253/M-1/UQ-1/Source/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607/Images/2887328aab485652d020545444662790.png>)
+![](<../Source/Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions - 607/Images/2887328aab485652d020545444662790.png>)
 
 ---
 
@@ -317,9 +323,9 @@ shown below:
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q007
+id: q-7
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{\sin x - 3}{x^{3} + x^{2}}$.
+  Evaluate $lim_(x → ∞)\frac{\sin x - 3}{x^{3} + x^{2}}$.
 options:
 - id: a
   content: |-
@@ -338,15 +344,16 @@ options:
     $0$
   correct: true
 ```
+
 ---
 
 **Question 8:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-607-q008
+id: q-8
 content: |-
-  Evaluate $\lim_{x \to \infty}\frac{3\sin x}{2x + 1}$.
+  Evaluate $lim_(x → ∞)\frac{3\sin x}{2x + 1}$.
 options:
 - id: a
   content: |-
@@ -365,15 +372,9 @@ options:
   content: |-
     $\frac{3}{2}$
 ```
----
-
-## Navigation
-
-- [Next: Vertical Asymptotes of Rational Functions](<Vertical Asymptotes of Rational Functions - 807.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

@@ -1,10 +1,10 @@
 # Improper Integrals Involving Exponential Functions
 
-
 <!--
 lesson-id: 4004
 topic-code: MF3.10.6.2
 -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -15,8 +15,8 @@ topic-code: MF3.10.6.2
 
 ## Prerequisites
 
-- [Improper Integrals](../758/758.md)
-- [Integrating Exponential Functions Using Substitution](../3770/3770.md)
+- [Improper Integrals](<10.6.1. Improper Integrals.md>)
+- [Integrating Exponential Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
 
 ---
 
@@ -33,16 +33,16 @@ $$
 
 This is an improper integral because the lower limit is unbounded. It can be interpreted as the shaded area under the curve $y=e^{x}$ shown below.
 
-![](<253/M-1/UQ-1/Source/Improper Integrals Involving Exponential Functions - 4004/Images/2a1caaac52eba4edfa1349a021c2021d.png>)
+![](<../Source/Improper Integrals Involving Exponential Functions - 4004/Images/2a1caaac52eba4edfa1349a021c2021d.png>)
 
 We proceed as we would with any other improper integral. We set the lower bound equal to some parameter $a$, integrate, and take the limit as $a \to -\infty{:}$
 
 $$
 \begin{aligned}
-∫_{- ∞}^{1}e^{x}dx &= \lim_{a \to -\infty}∫_{a}^{1}e^{x}dx \\
-&= \lim_{a \to -\infty}[e^{x}]_{a}^{1} \\
-&= \lim_{a \to -\infty}(e^{1} - e^{a}) \\
-&= \lim_{a \to -\infty}(e - e^{a})
+∫_{- ∞}^{1}e^{x}dx &= lim_(a → - ∞)∫_{a}^{1}e^{x}dx \\
+&= lim_(a → - ∞)[e^{x}]_{a}^{1} \\
+&= lim_(a → - ∞)(e^{1} - e^{a}) \\
+&= lim_(a → - ∞)(e - e^{a})
 \end{aligned}
 $$
 
@@ -55,7 +55,7 @@ Knowing this, we can solve our integral by evaluating the limit:
 
 $$
 \begin{aligned}
-∫_{- ∞}^{1}e^{x}dx &= \lim_{a \to -\infty}(e - e^{a}) \\
+∫_{- ∞}^{1}e^{x}dx &= lim_(a → - ∞)(e - e^{a}) \\
 &= e - 0 \\
 &= e
 \end{aligned}
@@ -96,10 +96,10 @@ We proceed by setting the upper bound equal to some parameter $a$, integrating a
 
 $$
 \begin{aligned}
-∫_{-1}^{∞}e^{-3x}dx &= \lim_{a \to \infty}∫_{-1}^{a}e^{-3x}dx \\
-&= \lim_{a \to \infty}[- \frac{e^{-3x}}{3}]_{-1}^{a} \\
-&=-\frac{1}{3} \cdot \lim_{a \to \infty}[e^{-3x}]_{-1}^{a} \\
-&=-\frac{1}{3} \cdot (\lim_{a \to \infty}e^{-3a} - e^{3})
+∫_{-1}^{∞}e^{-3x}dx &= lim_(a → ∞)∫_{-1}^{a}e^{-3x}dx \\
+&= lim_(a → ∞)[- \frac{e^{-3x}}{3}]_{-1}^{a} \\
+&=-\frac{1}{3} \cdot lim_(a → ∞)[e^{-3x}]_{-1}^{a} \\
+&=-\frac{1}{3} \cdot (lim_(a → ∞)e^{-3a} - e^{3})
 \end{aligned}
 $$
 
@@ -108,13 +108,13 @@ Now, recall the end behavior of the function $y=e^{-3x}$ shown in the graph belo
 - $\lim\limits_{x \to -\infty} e^{-3x} = \infty$
 - $\lim\limits_{x \to \infty} e^{-3x} =0$
 
-![](<253/M-1/UQ-1/Source/Improper Integrals Involving Exponential Functions - 4004/Images/121e8b397fd3d1ba5e806dfe5ca38245.png>)
+![](<../Source/Improper Integrals Involving Exponential Functions - 4004/Images/121e8b397fd3d1ba5e806dfe5ca38245.png>)
 
 Using this to evaluate our integral, we conclude that
 
 $$
 \begin{aligned}
-∫_{-1}^{∞}e^{-3x} &= -\frac{1}{3} \cdot (\lim_{a \to \infty}e^{-3a} - e^{3}) \\
+∫_{-1}^{∞}e^{-3x} &= -\frac{1}{3} \cdot (lim_(a → ∞)e^{-3a} - e^{3}) \\
 &=-\frac{1}{3} \cdot (0 - e^{3}) \\
 &= \frac{e^{3}}{3}
 \end{aligned}
@@ -126,12 +126,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-4004-q001
+id: q-1
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{-1}2e^{x}\,dx
-  $$
+  What is $∫_{- ∞}^{-1}2e^{x}dx$?
 options:
 - id: a
   content: |-
@@ -143,25 +140,23 @@ options:
   content: |-
     $2e$
 - id: d
+  correct: true
   content: |-
     $\frac{2}{e}$
-  correct: true
 - id: e
   content: |-
     The integral diverges
 ```
+
 ---
 
 **Question 2:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-4004-q002
+id: q-2
 content: |-
-  Evaluate
-  $$
-  \int_{1}^{\infty}e^{-2x}\,dx
-  $$
+  What is $∫_{1}^{∞}e^{-2x}dx$?
 options:
 - id: a
   content: |-
@@ -170,9 +165,9 @@ options:
   content: |-
     $\frac{1}{2e}$
 - id: c
+  correct: true
   content: |-
     $\frac{1}{2e^{2}}$
-  correct: true
 - id: d
   content: |-
     $\frac{1}{e^{2}}$
@@ -180,6 +175,7 @@ options:
   content: |-
     $\frac{2}{e^{2}}$
 ```
+
 ---
 
 <a id="improper-integral-involving-other-exponential-functions"></a>
@@ -199,11 +195,11 @@ We proceed by setting the lower bound equal to some parameter $a$, integrating a
 
 $$
 \begin{aligned}
-∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= 3 \cdot \lim_{a \to -\infty}∫_{a}^{0}2^{2x + 1}dx \\
-&= 3 \cdot \lim_{a \to -\infty}[(2^{2x + 1})/(2\ln (2))]_{a}^{0} \\
-&= (3 \cdot 2^{1})/(2\ln (2)) \cdot \lim_{a \to -\infty}[2^{2x}]_{a}^{0} \\
-&= (3)/(\ln (2)) \cdot \lim_{a \to -\infty}(2^{0} - 2^{2a}) \\
-&= (3)/(\ln (2)) \cdot (1 - \lim_{a \to -\infty}2^{2a})
+∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= 3 \cdot lim_(a → - ∞)∫_{a}^{0}2^{2x + 1}dx \\
+&= 3 \cdot lim_(a → - ∞)[(2^{2x + 1})/(2\ln (2))]_{a}^{0} \\
+&= (3 \cdot 2^{1})/(2\ln (2)) \cdot lim_(a → - ∞)[2^{2x}]_{a}^{0} \\
+&= (3)/(\ln (2)) \cdot lim_(a → - ∞)(2^{0} - 2^{2a}) \\
+&= (3)/(\ln (2)) \cdot (1 - lim_(a → - ∞)2^{2a})
 \end{aligned}
 $$
 
@@ -212,13 +208,13 @@ Now, recall the end behavior of the function $y=2^{2x}$ shown in the graph below
 - $\lim\limits_{x \to -\infty} 2^{2x} = 0$
 - $\lim\limits_{x \to \infty} 2^{2x} = \infty$
 
-![](<253/M-1/UQ-1/Source/Improper Integrals Involving Exponential Functions - 4004/Images/e9da045e68ed322bd54138b5cd02b995.png>)
+![](<../Source/Improper Integrals Involving Exponential Functions - 4004/Images/e9da045e68ed322bd54138b5cd02b995.png>)
 
 Using this to evaluate our integral, we conclude that
 
 $$
 \begin{aligned}
-∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= (3)/(\ln (2)) \cdot (1 - \lim_{a \to -\infty}2^{2a}) \\
+∫_{- ∞}^{0}3 \cdot 2^{2x + 1}dx &= (3)/(\ln (2)) \cdot (1 - lim_(a → - ∞)2^{2a}) \\
 &= (3)/(\ln (2)) \cdot (1 - 0) \\
 &= (3)/(\ln (2))
 \end{aligned}
@@ -230,12 +226,9 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-4004-q003
+id: q-3
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{0}7^{x}\,dx
-  $$
+  What is $∫_{- ∞}^{0}7^{x}dx$?
 options:
 - id: a
   content: |-
@@ -250,27 +243,25 @@ options:
   content: |-
     $\frac{1}{7}$
 - id: e
+  correct: true
   content: |-
     $(1)/(\ln (7))$
-  correct: true
 ```
+
 ---
 
 **Question 4:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-4004-q004
+id: q-4
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{0}5^{x/2}\,dx
-  $$
+  What is $∫_{- ∞}^{0}5^{x/2}dx$?
 options:
 - id: a
+  correct: true
   content: |-
     $(2)/(\ln (5))$
-  correct: true
 - id: b
   content: |-
     $\frac{2}{5}$
@@ -284,6 +275,7 @@ options:
   content: |-
     $(1)/(2\ln (5))$
 ```
+
 ---
 
 <a id="calculating-an-improper-integral-using-a-substitution"></a>
@@ -318,10 +310,10 @@ Now, we proceed by setting the upper bound equal to some parameter $a$, integrat
 $$
 \begin{aligned}
 ∫_{1}^{∞}x^{3} \cdot 2^{-x^{4}}dx &= \frac{1}{4}∫_{1}^{∞}2^{-u}du \\
-&= \frac{1}{4} \cdot \lim_{a \to \infty}∫_{1}^{a}2^{-u}du \\
-&= \frac{1}{4} \cdot \lim_{a \to \infty}[- \frac{2^{-u}}{\ln 2}]_{1}^{a} \\
-&=-\frac{1}{4\ln 2} \cdot \lim_{a \to \infty}[2^{-u}]_{1}^{a} \\
-&=-\frac{1}{4\ln 2} \cdot (\lim_{a \to \infty}\frac{1}{2^{a}} - \frac{1}{2})
+&= \frac{1}{4} \cdot lim_(a → ∞)∫_{1}^{a}2^{-u}du \\
+&= \frac{1}{4} \cdot lim_(a → ∞)[- \frac{2^{-u}}{\ln 2}]_{1}^{a} \\
+&=-\frac{1}{4\ln 2} \cdot lim_(a → ∞)[2^{-u}]_{1}^{a} \\
+&=-\frac{1}{4\ln 2} \cdot (lim_(a → ∞)\frac{1}{2^{a}} - \frac{1}{2})
 \end{aligned}
 $$
 
@@ -336,13 +328,13 @@ shown in the graph below:
 - $\lim\limits_{x \to -\infty} \dfrac{1}{2^{x}} = \infty$
 - $\lim\limits_{x \to \infty} \dfrac{1}{2^{x}} = 0$
 
-![](<253/M-1/UQ-1/Source/Improper Integrals Involving Exponential Functions - 4004/Images/769170756b4db689d820f57e3f8d9791.png>)
+![](<../Source/Improper Integrals Involving Exponential Functions - 4004/Images/769170756b4db689d820f57e3f8d9791.png>)
 
 Using this to evaluate our integral, we conclude that
 
 $$
 \begin{aligned}
-∫_{1}^{∞}x^{3} \cdot 2^{-x^{4}}dx &= -\frac{1}{4\ln 2} \cdot (\lim_{a \to \infty}\frac{1}{2^{a}} - \frac{1}{2}) \\
+∫_{1}^{∞}x^{3} \cdot 2^{-x^{4}}dx &= -\frac{1}{4\ln 2} \cdot (lim_(a → ∞)\frac{1}{2^{a}} - \frac{1}{2}) \\
 &=-\frac{1}{4\ln 2} \cdot (0 - \frac{1}{2}) \\
 &= \frac{1}{8\ln 2}
 \end{aligned}
@@ -354,20 +346,17 @@ $$
 
 ```quiz
 type: radio
-id: MA253-UQ1-4004-q005
+id: q-5
 content: |-
-  Evaluate the integral
-  $$
-  \int_{0}^{\infty}\frac{e^{-\sqrt{2x}}}{\sqrt{x}}\,dx
-  $$
+  Evaluate the integral $∫_{0}^{∞}\frac{e^{-\sqrt{2x}}}{\sqrt{x}}dx$.
 options:
 - id: a
   content: |-
     The integral diverges
 - id: b
+  correct: true
   content: |-
     $\sqrt{2}$
-  correct: true
 - id: c
   content: |-
     $\frac{\sqrt{2}}{2}$
@@ -378,26 +367,24 @@ options:
   content: |-
     $2$
 ```
+
 ---
 
 **Question 6:**
 
 ```quiz
 type: radio
-id: MA253-UQ1-4004-q006
+id: q-6
 content: |-
-  Evaluate
-  $$
-  \int_{-\infty}^{0}x^{2} \cdot 2^{x^{3}}\,dx
-  $$
+  What is $∫_{- ∞}^{0}x^{2} \cdot 2^{x^{3}}dx$?
 options:
 - id: a
   content: |-
     $\frac{1}{3\ln 5}$
 - id: b
+  correct: true
   content: |-
     $\frac{1}{3\ln 2}$
-  correct: true
 - id: c
   content: |-
     The integral diverges
@@ -408,15 +395,9 @@ options:
   content: |-
     $\frac{1}{3}$
 ```
----
-
-## Navigation
-
-- [Next: The Power and Root Rules for Limits](<The Power and Root Rules for Limits - 37.md>)
-- [Back to UQ-1](UQ-1.md)
 
 ```update-progress
 ```
 
-[[253/Home|Home]]
-[[253/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF3/Home|Home]]
+[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]

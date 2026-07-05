@@ -73,33 +73,65 @@ $$
 
 **Question 1**
 
-![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35817.png>)
-
-Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
-
-1. $lim_(x → ∞)f(x) =-3$
-2. $lim_(x → ∞)f(x) = 0$
-3. $lim_(x → - ∞)f(x) =-3$
-
-- [ ] A. I and II
-- [ ] B. II only
-- [ ] C. I and III
-- [ ] D. III only
-- [ ] E. II and III
+```quiz
+type: radio
+id: ma-35817
+content: |-
+  ![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35817.png>)
+  
+  Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
+  
+  1. $lim_(x → ∞)f(x) =-3$
+  2. $lim_(x → ∞)f(x) = 0$
+  3. $lim_(x → - ∞)f(x) =-3$
+options:
+- id: a
+  content: |-
+    I and II
+- id: b
+  content: |-
+    II only
+  correct: true
+- id: c
+  content: |-
+    I and III
+- id: d
+  content: |-
+    III only
+- id: e
+  content: |-
+    II and III
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35042.png>)
-
-The figure above shows the graph of $f(x)$. Find $lim_(x → ∞)f(x)$.
-
-- [ ] A. $DNE$
-- [ ] B. $∞$
-- [ ] C. $-5$
-- [ ] D. $5$
-- [ ] E. $0$
+```quiz
+type: radio
+id: ma-35042
+content: |-
+  ![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35042.png>)
+  
+  The figure above shows the graph of $f(x)$. Find $lim_(x → ∞)f(x)$.
+options:
+- id: a
+  content: |-
+    $DNE$
+- id: b
+  content: |-
+    $∞$
+- id: c
+  content: |-
+    $-5$
+  correct: true
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $0$
+```
 
 ---
 
@@ -147,33 +179,65 @@ $$
 
 **Question 3**
 
-![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-47580.png>)
-
-Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
-
-1. $lim_(x → - ∞)f(x) = - ∞$
-2. $lim_(x → ∞)f(x) = ∞$
-3. $lim_(x → ∞)f(x) = - ∞$
-
-- [ ] A. I only
-- [ ] B. II only
-- [ ] C. III only
-- [ ] D. II and III
-- [ ] E. I and III
+```quiz
+type: radio
+id: ma-47580
+content: |-
+  ![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-47580.png>)
+  
+  Which of the following statements are true concerning the function $y = f(x)$ whose graph is shown above?
+  
+  1. $lim_(x → - ∞)f(x) = - ∞$
+  2. $lim_(x → ∞)f(x) = ∞$
+  3. $lim_(x → ∞)f(x) = - ∞$
+options:
+- id: a
+  content: |-
+    I only
+- id: b
+  content: |-
+    II only
+- id: c
+  content: |-
+    III only
+  correct: true
+- id: d
+  content: |-
+    II and III
+- id: e
+  content: |-
+    I and III
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35809.png>)
-
-The figure above shows the graph of $f(x)$. Find $lim_(x → ∞)f(x)$ and $lim_(x → - ∞)f(x)$.
-
-- [ ] A. $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = - ∞$
-- [ ] B. $lim_(x → ∞)f(x) = 0$ and $lim_(x → - ∞)f(x) = DNE$
-- [ ] C. $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = 0$
-- [ ] D. $lim_(x → ∞)f(x) = 0$ and $lim_(x → - ∞)f(x) = 0$
-- [ ] E. $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = DNE$
+```quiz
+type: radio
+id: ma-35809
+content: |-
+  ![](<../Source/Limits at Infinity from Graphs - 1873/Images/q-35809.png>)
+  
+  The figure above shows the graph of $f(x)$. Find $lim_(x → ∞)f(x)$ and $lim_(x → - ∞)f(x)$.
+options:
+- id: a
+  content: |-
+    $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = - ∞$
+- id: b
+  content: |-
+    $lim_(x → ∞)f(x) = 0$ and $lim_(x → - ∞)f(x) = DNE$
+- id: c
+  content: |-
+    $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = 0$
+  correct: true
+- id: d
+  content: |-
+    $lim_(x → ∞)f(x) = 0$ and $lim_(x → - ∞)f(x) = 0$
+- id: e
+  content: |-
+    $lim_(x → ∞)f(x) = ∞$ and $lim_(x → - ∞)f(x) = DNE$
+```
 
 ```update-progress
 ```

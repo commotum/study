@@ -69,29 +69,63 @@ is convergent.
 
 ---
 
-**Question 1:** Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, which of the following is true regarding the series $∑_(n = 150)^(∞)a_{n}$?
+**Question 1:**
 
-- [ ] A. It is always convergent
-- [ ] B. It is convergent only if $\mid a_{n} \mid < 1$ for $n \ge 150$
-- [ ] C. It is convergent only if $\mid a_{n} \mid > 1$ for $n \ge 150$
-- [ ] D. There is not enough information
-- [ ] E. It is always divergent
+```quiz
+type: radio
+id: q-1
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, which of the following is true regarding the series $∑_(n = 150)^(∞)a_{n}$?
+options:
+- id: a
+  correct: true
+  content: |-
+    It is always convergent
+- id: b
+  content: |-
+    It is convergent only if $\mid a_{n} \mid < 1$ for $n \ge 150$
+- id: c
+  content: |-
+    It is convergent only if $\mid a_{n} \mid > 1$ for $n \ge 150$
+- id: d
+  content: |-
+    There is not enough information
+- id: e
+  content: |-
+    It is always divergent
+```
 
 ---
 
 **Question 2**
 
-Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, which of the following statements is true regarding the series $∑_(n = k)^(∞)a_{n}$, where $k$ is a positive integer?
-
-1. It is convergent for all $10 < k < 100$
-2. It is divergent for $k \ge 100$
-3. It is divergent for $1 < k < 100$
-
-- [ ] A. I, II, and III
-- [ ] B. II and III only
-- [ ] C. III only
-- [ ] D. I only
-- [ ] E. II only
+```quiz
+type: radio
+id: q-2
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, which of the following statements is true regarding the series $∑_(n = k)^(∞)a_{n}$, where $k$ is a positive integer?
+  
+  1. It is convergent for all $10 < k < 100$
+  2. It is divergent for $k \ge 100$
+  3. It is divergent for $1 < k < 100$
+options:
+- id: a
+  content: |-
+    I, II, and III
+- id: b
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    III only
+- id: d
+  correct: true
+  content: |-
+    I only
+- id: e
+  content: |-
+    II only
+```
 
 ---
 
@@ -136,29 +170,63 @@ is also divergent.
 
 ---
 
-**Question 3:** Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, which of the following is true regarding the series $∑_(n = 200)^(∞)a_{n}$? Assume that $a_{n}$ is well-defined for all $n⩾1$.
+**Question 3:**
 
-- [ ] A. It is convergent only if $\mid a_{n} \mid < 1$ for $n \ge 200$
-- [ ] B. It is always convergent
-- [ ] C. It is convergent only if $\mid a_{n} \mid > 1$ for $n \ge 200$
-- [ ] D. It is always divergent
-- [ ] E. There is not enough information
+```quiz
+type: radio
+id: q-3
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, which of the following is true regarding the series $∑_(n = 200)^(∞)a_{n}$? Assume that $a_{n}$ is well-defined for all $n⩾1$.
+options:
+- id: a
+  content: |-
+    It is convergent only if $\mid a_{n} \mid < 1$ for $n \ge 200$
+- id: b
+  content: |-
+    It is always convergent
+- id: c
+  content: |-
+    It is convergent only if $\mid a_{n} \mid > 1$ for $n \ge 200$
+- id: d
+  correct: true
+  content: |-
+    It is always divergent
+- id: e
+  content: |-
+    There is not enough information
+```
 
 ---
 
 **Question 4**
 
-Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, which of the following statements are true regarding the series $∑_(n = k)^(∞)a_{n}$, where $k$ is a positive integer, and $a_{n}$ is well-defined for all $n⩾1$?
-
-1. It is convergent for $k > 10$
-2. It is convergent for $k > 10^{100}$
-3. It is divergent for all $k$
-
-- [ ] A. III only
-- [ ] B. I, II, and III
-- [ ] C. I only
-- [ ] D. II only
-- [ ] E. I and II only
+```quiz
+type: radio
+id: q-4
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, which of the following statements are true regarding the series $∑_(n = k)^(∞)a_{n}$, where $k$ is a positive integer, and $a_{n}$ is well-defined for all $n⩾1$?
+  
+  1. It is convergent for $k > 10$
+  2. It is convergent for $k > 10^{100}$
+  3. It is divergent for all $k$
+options:
+- id: a
+  correct: true
+  content: |-
+    III only
+- id: b
+  content: |-
+    I, II, and III
+- id: c
+  content: |-
+    I only
+- id: d
+  content: |-
+    II only
+- id: e
+  content: |-
+    I and II only
+```
 
 ---
 
@@ -209,33 +277,65 @@ Therefore, the correct answer is "I, II, III."
 
 **Question 5**
 
-Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true?
-
-1. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(∞)b_{n}$ is convergent
-2. $∑_(n = 20)^(∞)a_{n}$ is convergent
-3. $10^{20} \cdot ∑_(n = 1)^(∞)b_{n}$ is divergent
-
-- [ ] A. I only
-- [ ] B. I and III only
-- [ ] C. I, II, and III
-- [ ] D. II only
-- [ ] E. I and II only
+```quiz
+type: radio
+id: q-5
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true?
+  
+  1. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(∞)b_{n}$ is convergent
+  2. $∑_(n = 20)^(∞)a_{n}$ is convergent
+  3. $10^{20} \cdot ∑_(n = 1)^(∞)b_{n}$ is divergent
+options:
+- id: a
+  content: |-
+    I only
+- id: b
+  content: |-
+    I and III only
+- id: c
+  content: |-
+    I, II, and III
+- id: d
+  content: |-
+    II only
+- id: e
+  correct: true
+  content: |-
+    I and II only
+```
 
 ---
 
 **Question 6**
 
-Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true?
-
-1. $∑_(n = 12)^(∞)a_{n}$ is divergent
-2. $3 \cdot ∑_(n = 1)^(∞)b_{n}$ is divergent
-3. $∑_(n = 12)^(∞)a_{n} + 3 \cdot ∑_(n = 1)^(∞)b_{n}$ is convergent
-
-- [ ] A. I and III only
-- [ ] B. III only
-- [ ] C. II only
-- [ ] D. I only
-- [ ] E. I and II only
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true?
+  
+  1. $∑_(n = 12)^(∞)a_{n}$ is divergent
+  2. $3 \cdot ∑_(n = 1)^(∞)b_{n}$ is divergent
+  3. $∑_(n = 12)^(∞)a_{n} + 3 \cdot ∑_(n = 1)^(∞)b_{n}$ is convergent
+options:
+- id: a
+  content: |-
+    I and III only
+- id: b
+  correct: true
+  content: |-
+    III only
+- id: c
+  content: |-
+    II only
+- id: d
+  content: |-
+    I only
+- id: e
+  content: |-
+    I and II only
+```
 
 ---
 
@@ -268,33 +368,65 @@ Therefore, the correct answer is "I and III only."
 
 **Question 7**
 
-Given that $∑_(n = 1)^(∞)a_{n}$ is divergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true? Assume that $a_{n}$ is well-defined for $n⩾1$.
-
-1. $∑_(n = 10)^(∞)a_{n}$ is convergent
-2. $∑_(n = 20)^(∞)b_{n}$ is convergent
-3. $∑_(n = 10)^(∞)a_{n} - ∑_(n = 20)^(∞)b_{n}$ is divergent
-
-- [ ] A. II and III only
-- [ ] B. I and II only
-- [ ] C. II only
-- [ ] D. I and III only
-- [ ] E. I only
+```quiz
+type: radio
+id: q-7
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true? Assume that $a_{n}$ is well-defined for $n⩾1$.
+  
+  1. $∑_(n = 10)^(∞)a_{n}$ is convergent
+  2. $∑_(n = 20)^(∞)b_{n}$ is convergent
+  3. $∑_(n = 10)^(∞)a_{n} - ∑_(n = 20)^(∞)b_{n}$ is divergent
+options:
+- id: a
+  correct: true
+  content: |-
+    II and III only
+- id: b
+  content: |-
+    I and II only
+- id: c
+  content: |-
+    II only
+- id: d
+  content: |-
+    I and III only
+- id: e
+  content: |-
+    I only
+```
 
 ---
 
 **Question 8**
 
-Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is divergent, which of the following statements are true? Assume that $b_{n}$ is well-defined for $n⩾1$.
-
-1. $∑_(n = 12)^(∞)b_{n}$ is convergent
-2. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(∞)b_{n}$ is convergent
-3. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(12)b_{n}$ is convergent
-
-- [ ] A. I and II only
-- [ ] B. II only
-- [ ] C. I, II, and III
-- [ ] D. II and III only
-- [ ] E. III only
+```quiz
+type: radio
+id: q-8
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is divergent, which of the following statements are true? Assume that $b_{n}$ is well-defined for $n⩾1$.
+  
+  1. $∑_(n = 12)^(∞)b_{n}$ is convergent
+  2. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(∞)b_{n}$ is convergent
+  3. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(12)b_{n}$ is convergent
+options:
+- id: a
+  content: |-
+    I and II only
+- id: b
+  content: |-
+    II only
+- id: c
+  content: |-
+    I, II, and III
+- id: d
+  content: |-
+    II and III only
+- id: e
+  correct: true
+  content: |-
+    III only
+```
 
 ---
 

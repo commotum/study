@@ -62,7 +62,6 @@ The axis of symmetry is the vertical line that passes through the vertex. Theref
 ```quiz
 type: radio
 id: ma-24633
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24633.png>)
   
@@ -71,6 +70,7 @@ options:
 - id: a
   content: |-
     vertex: $(0, 1)$, line of symmetry: $x = 0$
+  correct: true
 - id: b
   content: |-
     vertex: $(0,-1)$, line of symmetry: $x = 1$
@@ -92,7 +92,6 @@ options:
 ```quiz
 type: radio
 id: ma-24393
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24393.png>)
   
@@ -110,6 +109,7 @@ options:
 - id: d
   content: |-
     vertex: $(3,-2)$, line of symmetry: $x = 3$
+  correct: true
 - id: e
   content: |-
     vertex: $(-2, 3)$, line of symmetry: $y = 2$
@@ -139,7 +139,6 @@ Therefore, the roots are $x=-2$ and $x=4$.
 ```quiz
 type: radio
 id: ma-30786
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-30786.png>)
   
@@ -157,6 +156,7 @@ options:
 - id: d
   content: |-
     $x =-6$ and $x =-4$
+  correct: true
 - id: e
   content: |-
     $x =-6$ and $x =-3$
@@ -169,7 +169,6 @@ options:
 ```quiz
 type: radio
 id: ma-30788
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-30788.png>)
   
@@ -190,6 +189,7 @@ options:
 - id: e
   content: |-
     $x =-5$ and $x = 2$
+  correct: true
 ```
 
 ---
@@ -226,7 +226,6 @@ $$
 ```quiz
 type: radio
 id: ma-56293
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-56293.png>)
   
@@ -235,6 +234,7 @@ options:
 - id: a
   content: |-
     $-\frac{9}{4}$
+  correct: true
 - id: b
   content: |-
     $2$
@@ -256,7 +256,6 @@ options:
 ```quiz
 type: radio
 id: ma-83558
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-83558.png>)
   
@@ -274,6 +273,7 @@ options:
 - id: d
   content: |-
     $1$
+  correct: true
 - id: e
   content: |-
     $\frac{1}{3}$
@@ -321,7 +321,6 @@ We fill out the graph by drawing the parabola through the plotted points:
 ```quiz
 type: radio
 id: ma-24673
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Which of the following shows the graph of $y =-x^{2} + x - 2$?
 options:
@@ -334,6 +333,7 @@ options:
 - id: c
   content: |-
     ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-1.png>)
+  correct: true
 - id: d
   content: |-
     ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-5.png>)
@@ -349,13 +349,13 @@ options:
 ```quiz
 type: radio
 id: ma-24676
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Sketch the graph of $y = x^{2} - 2x$.
 options:
 - id: a
   content: |-
     ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-1.png>)
+  correct: true
 - id: b
   content: |-
     ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-3.png>)

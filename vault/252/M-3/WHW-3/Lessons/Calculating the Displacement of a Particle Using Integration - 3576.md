@@ -84,29 +84,61 @@ So the total displacement between $t=1$ and $t=3$ is $34$.
 
 **Question 1**
 
-> A scientific calculator is required to answer this question.
-
-A particle $P$ moves along the $x$-axis and its velocity at time $t$ is given by $v(t) = 6t^{2} - 2t$. What is the total displacement of the particle between $t = 1$ and $t = 4$?
-
-- [ ] A. $88$
-- [ ] B. $92$
-- [ ] C. $148$
-- [ ] D. $111$
-- [ ] E. $4$
+```quiz
+type: radio
+id: q-1
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle $P$ moves along the $x$-axis and its velocity at time $t$ is given by $v(t) = 6t^{2} - 2t$. What is the total displacement of the particle between $t = 1$ and $t = 4$?
+options:
+- id: a
+  content: |-
+    $88$
+- id: b
+  content: |-
+    $92$
+- id: c
+  content: |-
+    $148$
+- id: d
+  correct: true
+  content: |-
+    $111$
+- id: e
+  content: |-
+    $4$
+```
 
 ---
 
 **Question 2**
 
-> A scientific calculator is required to answer this question.
-
-A particle $P$ moves along the $x$-axis and its velocity at time $t$ is given by $v(t) = 12t^{2} - 4t$. What is the total displacement of the particle between $t = 0$ and $t = 3$?
-
-- [ ] A. $96$
-- [ ] B. $68$
-- [ ] C. $0$
-- [ ] D. $72$
-- [ ] E. $90$
+```quiz
+type: radio
+id: q-2
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle $P$ moves along the $x$-axis and its velocity at time $t$ is given by $v(t) = 12t^{2} - 4t$. What is the total displacement of the particle between $t = 0$ and $t = 3$?
+options:
+- id: a
+  content: |-
+    $96$
+- id: b
+  content: |-
+    $68$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $72$
+- id: e
+  correct: true
+  content: |-
+    $90$
+```
 
 ---
 
@@ -143,29 +175,61 @@ So the position of the particle at $t=4$ is $x=116$.
 
 **Question 3**
 
-> A scientific calculator is required to answer this question.
-
-A particle $P$ moves along the $x$-axis and its velocity at time $t \ge 0$ is given by $v(t) = e^{t/3} - 1$. At time $t = 0$ the particle is located at the position $x = e + 1$. What is the position of the particle at time $t = 3$?
-
-- [ ] A. $x = 3e - 1$
-- [ ] B. $x = e - 1$
-- [ ] C. $x = 4e - 5$
-- [ ] D. $x = 3e^{3} - e$
-- [ ] E. $x = 4e^{3}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle $P$ moves along the $x$-axis and its velocity at time $t \ge 0$ is given by $v(t) = e^{t/3} - 1$. At time $t = 0$ the particle is located at the position $x = e + 1$. What is the position of the particle at time $t = 3$?
+options:
+- id: a
+  content: |-
+    $x = 3e - 1$
+- id: b
+  content: |-
+    $x = e - 1$
+- id: c
+  correct: true
+  content: |-
+    $x = 4e - 5$
+- id: d
+  content: |-
+    $x = 3e^{3} - e$
+- id: e
+  content: |-
+    $x = 4e^{3}$
+```
 
 ---
 
 **Question 4**
 
-> A scientific calculator is required to answer this question.
-
-A particle $P$ moves along the $x$-axis and its velocity at time $t > 0$ is given by $v(t) = 4t + 3t^{2}$. At time $t = 1$ the particle is located at the position $x = 12$. What is the position of the particle at time $t = 4$?
-
-- [ ] A. $92$
-- [ ] B. $100$
-- [ ] C. $97$
-- [ ] D. $93$
-- [ ] E. $105$
+```quiz
+type: radio
+id: q-4
+content: |-
+  > A scientific calculator is required to answer this question.
+  
+  A particle $P$ moves along the $x$-axis and its velocity at time $t > 0$ is given by $v(t) = 4t + 3t^{2}$. At time $t = 1$ the particle is located at the position $x = 12$. What is the position of the particle at time $t = 4$?
+options:
+- id: a
+  content: |-
+    $92$
+- id: b
+  content: |-
+    $100$
+- id: c
+  content: |-
+    $97$
+- id: d
+  content: |-
+    $93$
+- id: e
+  correct: true
+  content: |-
+    $105$
+```
 
 ---
 
@@ -202,29 +266,61 @@ So the position of the particle at $t=8$ is $x=5$.
 
 **Question 5**
 
-![](<../Source/Calculating the Displacement of a Particle Using Integration - 3576/Images/q-81515.png>)
-
-The graph above shows the velocity of an object moving in a straight line along the $x$-axis. At time $t = 1$ the particle is located at the position $x = 2$. What is the position of the particle at time $t = 7$?
-
-- [ ] A. $2$
-- [ ] B. $7$
-- [ ] C. $4$
-- [ ] D. $6$
-- [ ] E. $8$
+```quiz
+type: radio
+id: ma-81515
+content: |-
+  ![](<../Source/Calculating the Displacement of a Particle Using Integration - 3576/Images/q-81515.png>)
+  
+  The graph above shows the velocity of an object moving in a straight line along the $x$-axis. At time $t = 1$ the particle is located at the position $x = 2$. What is the position of the particle at time $t = 7$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $7$
+- id: c
+  content: |-
+    $4$
+- id: d
+  content: |-
+    $6$
+- id: e
+  content: |-
+    $8$
+```
 
 ---
 
 **Question 6**
 
-![](<../Source/Calculating the Displacement of a Particle Using Integration - 3576/Images/q-49319.png>)
-
-The graph above shows the velocity of an object moving in a straight line along the $x$-axis. At time $t = 0$ the particle is located at the position $x = 6$. What is the position of the particle at time $t = 3$?
-
-- [ ] A. $12$
-- [ ] B. $8$
-- [ ] C. $14$
-- [ ] D. $11$
-- [ ] E. $20$
+```quiz
+type: radio
+id: ma-49319
+content: |-
+  ![](<../Source/Calculating the Displacement of a Particle Using Integration - 3576/Images/q-49319.png>)
+  
+  The graph above shows the velocity of an object moving in a straight line along the $x$-axis. At time $t = 0$ the particle is located at the position $x = 6$. What is the position of the particle at time $t = 3$?
+options:
+- id: a
+  content: |-
+    $12$
+- id: b
+  content: |-
+    $8$
+- id: c
+  content: |-
+    $14$
+- id: d
+  correct: true
+  content: |-
+    $11$
+- id: e
+  content: |-
+    $20$
+```
 
 ```update-progress
 ```

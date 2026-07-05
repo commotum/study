@@ -127,23 +127,59 @@ $$
 
 ---
 
-**Question 1:** What is $∫_{\sqrt{3}/3}^{∞}\frac{7}{1 + x^{2}}dx$?
+**Question 1:**
 
-- [ ] A. $\frac{7π}{2}$
-- [ ] B. $\frac{7π}{3}$
-- [ ] C. $\frac{14π}{3}$
-- [ ] D. $\frac{7π}{6}$
-- [ ] E. $7π$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $∫_{\sqrt{3}/3}^{∞}\frac{7}{1 + x^{2}}dx$?
+options:
+- id: a
+  content: |-
+    $\frac{7π}{2}$
+- id: b
+  correct: true
+  content: |-
+    $\frac{7π}{3}$
+- id: c
+  content: |-
+    $\frac{14π}{3}$
+- id: d
+  content: |-
+    $\frac{7π}{6}$
+- id: e
+  content: |-
+    $7π$
+```
 
 ---
 
-**Question 2:** What is $∫_{- ∞}^{\sqrt{3}}\frac{2}{1 + x^{2}}dx$?
+**Question 2:**
 
-- [ ] A. $\frac{π}{3}$
-- [ ] B. The integral diverges
-- [ ] C. $\frac{5π}{3}$
-- [ ] D. $\frac{π}{6}$
-- [ ] E. $\frac{π}{2}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $∫_{- ∞}^{\sqrt{3}}\frac{2}{1 + x^{2}}dx$?
+options:
+- id: a
+  content: |-
+    $\frac{π}{3}$
+- id: b
+  content: |-
+    The integral diverges
+- id: c
+  correct: true
+  content: |-
+    $\frac{5π}{3}$
+- id: d
+  content: |-
+    $\frac{π}{6}$
+- id: e
+  content: |-
+    $\frac{π}{2}$
+```
 
 ---
 
@@ -214,23 +250,59 @@ $$
 
 ---
 
-**Question 3:** Evaluate the integral $∫_{0}^{∞}\frac{2}{4x^{2} + 1}dx$.
+**Question 3:**
 
-- [ ] A. $π$
-- [ ] B. $\frac{π}{2}$
-- [ ] C. The integral diverges
-- [ ] D. $2π$
-- [ ] E. $\frac{π}{4}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Evaluate the integral $∫_{0}^{∞}\frac{2}{4x^{2} + 1}dx$.
+options:
+- id: a
+  content: |-
+    $π$
+- id: b
+  correct: true
+  content: |-
+    $\frac{π}{2}$
+- id: c
+  content: |-
+    The integral diverges
+- id: d
+  content: |-
+    $2π$
+- id: e
+  content: |-
+    $\frac{π}{4}$
+```
 
 ---
 
-**Question 4:** Evaluate the integral $∫_{- ∞}^{1/2}\frac{1}{1 + 4t^{2}}dt =$
+**Question 4:**
 
-- [ ] A. $\frac{π}{8}$
-- [ ] B. $\frac{3π}{8}$
-- [ ] C. $\frac{3π}{2}$
-- [ ] D. The integral diverges
-- [ ] E. $\frac{π}{4}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Evaluate the integral $∫_{- ∞}^{1/2}\frac{1}{1 + 4t^{2}}dt =$
+options:
+- id: a
+  content: |-
+    $\frac{π}{8}$
+- id: b
+  correct: true
+  content: |-
+    $\frac{3π}{8}$
+- id: c
+  content: |-
+    $\frac{3π}{2}$
+- id: d
+  content: |-
+    The integral diverges
+- id: e
+  content: |-
+    $\frac{π}{4}$
+```
 
 ---
 
@@ -285,23 +357,59 @@ $$
 
 ---
 
-**Question 5:** Evaluate the integral $∫_{0}^{∞}\frac{2}{z^{2} + 9}dz$.
+**Question 5:**
 
-- [ ] A. $\frac{π}{2}$
-- [ ] B. $\frac{2π}{3}$
-- [ ] C. $\frac{π}{3}$
-- [ ] D. The integral diverges
-- [ ] E. $\frac{3π}{2}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Evaluate the integral $∫_{0}^{∞}\frac{2}{z^{2} + 9}dz$.
+options:
+- id: a
+  content: |-
+    $\frac{π}{2}$
+- id: b
+  content: |-
+    $\frac{2π}{3}$
+- id: c
+  correct: true
+  content: |-
+    $\frac{π}{3}$
+- id: d
+  content: |-
+    The integral diverges
+- id: e
+  content: |-
+    $\frac{3π}{2}$
+```
 
 ---
 
-**Question 6:** What is $∫_{- ∞}^{3}\frac{3}{9 + z^{2}}dz$?
+**Question 6:**
 
-- [ ] A. $\frac{3π}{4}$
-- [ ] B. $\frac{π}{4}$
-- [ ] C. The integral diverges
-- [ ] D. $\frac{π}{2}$
-- [ ] E. $\frac{3π}{2}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  What is $∫_{- ∞}^{3}\frac{3}{9 + z^{2}}dz$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $\frac{3π}{4}$
+- id: b
+  content: |-
+    $\frac{π}{4}$
+- id: c
+  content: |-
+    The integral diverges
+- id: d
+  content: |-
+    $\frac{π}{2}$
+- id: e
+  content: |-
+    $\frac{3π}{2}$
+```
 
 ---
 
@@ -369,23 +477,59 @@ $$
 
 ---
 
-**Question 7:** Use the substitution $u = e^{x}$ to evaluate $∫_{0}^{∞}\frac{e^{x}}{1 + 3e^{2x}}dx$.
+**Question 7:**
 
-- [ ] A. $\frac{\sqrt{3}π}{6}$
-- [ ] B. The integral diverges
-- [ ] C. $\frac{2\sqrt{3}π}{3}$
-- [ ] D. $\frac{\sqrt{3}π}{18}$
-- [ ] E. $\frac{\sqrt{3}π}{3}$
+```quiz
+type: radio
+id: q-7
+content: |-
+  Use the substitution $u = e^{x}$ to evaluate $∫_{0}^{∞}\frac{e^{x}}{1 + 3e^{2x}}dx$.
+options:
+- id: a
+  content: |-
+    $\frac{\sqrt{3}π}{6}$
+- id: b
+  content: |-
+    The integral diverges
+- id: c
+  content: |-
+    $\frac{2\sqrt{3}π}{3}$
+- id: d
+  correct: true
+  content: |-
+    $\frac{\sqrt{3}π}{18}$
+- id: e
+  content: |-
+    $\frac{\sqrt{3}π}{3}$
+```
 
 ---
 
-**Question 8:** What is $∫_{- ∞}^{1}\frac{6t}{t^{4} + 3}dt$?
+**Question 8:**
 
-- [ ] A. $-3π$
-- [ ] B. $-\frac{π}{\sqrt{3}}$
-- [ ] C. $\frac{3π}{2}$
-- [ ] D. The integral diverges
-- [ ] E. $-\frac{\sqrt{3}π}{2}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  What is $∫_{- ∞}^{1}\frac{6t}{t^{4} + 3}dt$?
+options:
+- id: a
+  content: |-
+    $-3π$
+- id: b
+  correct: true
+  content: |-
+    $-\frac{π}{\sqrt{3}}$
+- id: c
+  content: |-
+    $\frac{3π}{2}$
+- id: d
+  content: |-
+    The integral diverges
+- id: e
+  content: |-
+    $-\frac{\sqrt{3}π}{2}$
+```
 
 ```update-progress
 ```

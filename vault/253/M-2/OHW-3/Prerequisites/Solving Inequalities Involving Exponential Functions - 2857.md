@@ -78,20 +78,59 @@ $$
 
 ---
 
-**Question 1**
+**Question 1:**
 
-Solve the inequality $2 \cdot 8^{2x} < \frac{1}{3}$.$x$
-$\underline{\hspace{1.5cm}}$ $\underline{\hspace{1.5cm}}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Solve the inequality $2 \cdot 8^{2x} < \frac{1}{3}$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $x < \frac{-\ln 6}{2\ln 8}$
+- id: b
+  content: |-
+    $x > \frac{-\ln 6}{2\ln 8}$
+- id: c
+  content: |-
+    $x < \frac{\ln 6}{2\ln 8}$
+- id: d
+  content: |-
+    $x < \frac{-\ln 3}{2\ln 8}$
+- id: e
+  content: |-
+    $x > \frac{\ln 6}{2\ln 8}$
+```
 
 ---
 
-**Question 2:** Solve the inequality $3e^{x} - 4 < 0$.
+**Question 2:**
 
-- [ ] A. $x < \ln 3 + \ln 4$
-- [ ] B. $x < \ln 3 - \ln 4$
-- [ ] C. $x > \ln 3 - \ln 4$
-- [ ] D. $x > \ln 4 - \ln 3$
-- [ ] E. $x < \ln 4 - \ln 3$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Solve the inequality $3e^{x} - 4 < 0$.
+options:
+- id: a
+  content: |-
+    $x < \ln 3 + \ln 4$
+- id: b
+  content: |-
+    $x < \ln 3 - \ln 4$
+- id: c
+  content: |-
+    $x > \ln 3 - \ln 4$
+- id: d
+  content: |-
+    $x > \ln 4 - \ln 3$
+- id: e
+  correct: true
+  content: |-
+    $x < \ln 4 - \ln 3$
+```
 
 ---
 
@@ -177,23 +216,59 @@ $$
 
 ---
 
-**Question 3:** Solve the inequality $3 \cdot (\frac{2}{7})^{x} + 1 \ge 16$.
+**Question 3:**
 
-- [ ] A. $x \ge \frac{\ln 5}{\ln 2 - \ln 7}$
-- [ ] B. $x \le \frac{\ln 7}{\ln 5 - \ln 2}$
-- [ ] C. $x \ge \frac{\ln 2}{\ln 5 + \ln 7}$
-- [ ] D. $x \le \frac{\ln 5}{\ln 2 - \ln 7}$
-- [ ] E. $x \le \frac{\ln 2}{\ln 5 - \ln 7}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Solve the inequality $3 \cdot (\frac{2}{7})^{x} + 1 \ge 16$.
+options:
+- id: a
+  content: |-
+    $x \ge \frac{\ln 5}{\ln 2 - \ln 7}$
+- id: b
+  content: |-
+    $x \le \frac{\ln 7}{\ln 5 - \ln 2}$
+- id: c
+  content: |-
+    $x \ge \frac{\ln 2}{\ln 5 + \ln 7}$
+- id: d
+  correct: true
+  content: |-
+    $x \le \frac{\ln 5}{\ln 2 - \ln 7}$
+- id: e
+  content: |-
+    $x \le \frac{\ln 2}{\ln 5 - \ln 7}$
+```
 
 ---
 
-**Question 4:** Solve the inequality $(0.3)^{x - 2} - 6 \le 0$.
+**Question 4:**
 
-- [ ] A. $x \ge (\ln (6))/(\ln (0.3)) + 2$
-- [ ] B. $x \le (\ln (0.3))/(\ln (6)) - 2$
-- [ ] C. $x \le (\ln (6))/(\ln (0.3)) + 2$
-- [ ] D. $x \ge (\ln (0.3))/(\ln (6)) - 2$
-- [ ] E. $x \le \ln (6) - \ln (0.3) + 2$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Solve the inequality $(0.3)^{x - 2} - 6 \le 0$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $x \ge (\ln (6))/(\ln (0.3)) + 2$
+- id: b
+  content: |-
+    $x \le (\ln (0.3))/(\ln (6)) - 2$
+- id: c
+  content: |-
+    $x \le (\ln (6))/(\ln (0.3)) + 2$
+- id: d
+  content: |-
+    $x \ge (\ln (0.3))/(\ln (6)) - 2$
+- id: e
+  content: |-
+    $x \le \ln (6) - \ln (0.3) + 2$
+```
 
 ---
 
@@ -265,23 +340,59 @@ Therefore, the inequality $3^{8-x} > -3$ is satisfied for all real values of $x$
 
 ---
 
-**Question 5:** Solve the inequality $2 \cdot 5^{3 - x} + 4 > 0$.
+**Question 5:**
 
-- [ ] A. no solutions
-- [ ] B. $x > 3 - \log_{5} (2)$
-- [ ] C. $x < 3 - \log_{5} (2)$
-- [ ] D. $x > \log_{5} (2) - 3$
-- [ ] E. all real numbers
+```quiz
+type: radio
+id: q-5
+content: |-
+  Solve the inequality $2 \cdot 5^{3 - x} + 4 > 0$.
+options:
+- id: a
+  content: |-
+    no solutions
+- id: b
+  content: |-
+    $x > 3 - \log_{5} (2)$
+- id: c
+  content: |-
+    $x < 3 - \log_{5} (2)$
+- id: d
+  content: |-
+    $x > \log_{5} (2) - 3$
+- id: e
+  correct: true
+  content: |-
+    all real numbers
+```
 
 ---
 
-**Question 6:** Solve the inequality $9 - e^{4x} > 10$.
+**Question 6:**
 
-- [ ] A. all real numbers
-- [ ] B. $x < \frac{1}{4}$
-- [ ] C. $x > - \frac{1}{4}$
-- [ ] D. $x < - \frac{1}{4}$
-- [ ] E. no solutions
+```quiz
+type: radio
+id: q-6
+content: |-
+  Solve the inequality $9 - e^{4x} > 10$.
+options:
+- id: a
+  content: |-
+    all real numbers
+- id: b
+  content: |-
+    $x < \frac{1}{4}$
+- id: c
+  content: |-
+    $x > - \frac{1}{4}$
+- id: d
+  content: |-
+    $x < - \frac{1}{4}$
+- id: e
+  correct: true
+  content: |-
+    no solutions
+```
 
 ---
 
@@ -324,23 +435,59 @@ $$
 
 ---
 
-**Question 7:** Solve the inequality $-3^{2x + 5} \le 7^{x}$.
+**Question 7:**
 
-- [ ] A. $x \le \frac{7\ln 5}{2\ln 3}$
-- [ ] B. $x \le \frac{2\ln 5}{7\ln 3}$
-- [ ] C. $x \ge \frac{2\ln 7}{5\ln 3}$
-- [ ] D. no solutions
-- [ ] E. all real numbers
+```quiz
+type: radio
+id: q-7
+content: |-
+  Solve the inequality $-3^{2x + 5} \le 7^{x}$.
+options:
+- id: a
+  content: |-
+    $x \le \frac{7\ln 5}{2\ln 3}$
+- id: b
+  content: |-
+    $x \le \frac{2\ln 5}{7\ln 3}$
+- id: c
+  content: |-
+    $x \ge \frac{2\ln 7}{5\ln 3}$
+- id: d
+  content: |-
+    no solutions
+- id: e
+  correct: true
+  content: |-
+    all real numbers
+```
 
 ---
 
-**Question 8:** Solve the inequality $2 \cdot 3^{x} < 5^{1 - x}$.
+**Question 8:**
 
-- [ ] A. $x > \frac{\ln 5 - \ln 2}{\ln 3 + \ln 5}$
-- [ ] B. $x < \frac{\ln 2 + \ln 5}{\ln 3 + \ln 5}$
-- [ ] C. $x > \frac{\ln 5 - \ln 2}{\ln 5 - \ln 3}$
-- [ ] D. $x < \frac{\ln 5 - \ln 2}{\ln 5 - \ln 3}$
-- [ ] E. $x < \frac{\ln 5 - \ln 2}{\ln 3 + \ln 5}$
+```quiz
+type: radio
+id: q-8
+content: |-
+  Solve the inequality $2 \cdot 3^{x} < 5^{1 - x}$.
+options:
+- id: a
+  content: |-
+    $x > \frac{\ln 5 - \ln 2}{\ln 3 + \ln 5}$
+- id: b
+  content: |-
+    $x < \frac{\ln 2 + \ln 5}{\ln 3 + \ln 5}$
+- id: c
+  content: |-
+    $x > \frac{\ln 5 - \ln 2}{\ln 5 - \ln 3}$
+- id: d
+  content: |-
+    $x < \frac{\ln 5 - \ln 2}{\ln 5 - \ln 3}$
+- id: e
+  correct: true
+  content: |-
+    $x < \frac{\ln 5 - \ln 2}{\ln 3 + \ln 5}$
+```
 
 ```update-progress
 ```

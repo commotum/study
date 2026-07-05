@@ -69,23 +69,59 @@ $$
 
 ---
 
-**Question 1:** What is $5\sqrt{x} - \sqrt{x}$?
+**Question 1:**
 
-- [ ] A. $4\sqrt{x}$
-- [ ] B. $5\sqrt{x}$
-- [ ] C. $4$
-- [ ] D. $5$
-- [ ] E. $6\sqrt{x}$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $5\sqrt{x} - \sqrt{x}$?
+options:
+- id: a
+  correct: true
+  content: |-
+    $4\sqrt{x}$
+- id: b
+  content: |-
+    $5\sqrt{x}$
+- id: c
+  content: |-
+    $4$
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $6\sqrt{x}$
+```
 
 ---
 
-**Question 2:** Simplify $3\sqrt{y - 1} + 5\sqrt{y - 1}$.
+**Question 2:**
 
-- [ ] A. $15\sqrt{y}$
-- [ ] B. $15(y - 1)$
-- [ ] C. $8\sqrt{y - 1}$
-- [ ] D. $8\sqrt{y} - 8$
-- [ ] E. $15\sqrt{y - 1}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Simplify $3\sqrt{y - 1} + 5\sqrt{y - 1}$.
+options:
+- id: a
+  content: |-
+    $15\sqrt{y}$
+- id: b
+  content: |-
+    $15(y - 1)$
+- id: c
+  correct: true
+  content: |-
+    $8\sqrt{y - 1}$
+- id: d
+  content: |-
+    $8\sqrt{y} - 8$
+- id: e
+  content: |-
+    $15\sqrt{y - 1}$
+```
 
 ---
 
@@ -136,23 +172,59 @@ $$
 
 ---
 
-**Question 3:** What is $2x\sqrt{45} + x\sqrt{x} - 2x\sqrt{5}$?
+**Question 3:**
 
-- [ ] A. $2x\sqrt{45} + x\sqrt{x} - 2x\sqrt{5}$
-- [ ] B. $8x\sqrt{5} + x\sqrt{x}$
-- [ ] C. $1$
-- [ ] D. $4x\sqrt{5} + x\sqrt{x}$
-- [ ] E. $5x\sqrt{5x}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $2x\sqrt{45} + x\sqrt{x} - 2x\sqrt{5}$?
+options:
+- id: a
+  content: |-
+    $2x\sqrt{45} + x\sqrt{x} - 2x\sqrt{5}$
+- id: b
+  content: |-
+    $8x\sqrt{5} + x\sqrt{x}$
+- id: c
+  content: |-
+    $1$
+- id: d
+  correct: true
+  content: |-
+    $4x\sqrt{5} + x\sqrt{x}$
+- id: e
+  content: |-
+    $5x\sqrt{5x}$
+```
 
 ---
 
-**Question 4:** What is $r^{2}\sqrt{r^{5}} + 4r^{4}\sqrt{r}$?
+**Question 4:**
 
-- [ ] A. $17r^{4}\sqrt{r}$
-- [ ] B. $3r^{3}\sqrt{r}$
-- [ ] C. $2r^{3}\sqrt{4r}$
-- [ ] D. $5r^{4}\sqrt{r}$
-- [ ] E. $4r^{4}\sqrt{2r}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $r^{2}\sqrt{r^{5}} + 4r^{4}\sqrt{r}$?
+options:
+- id: a
+  content: |-
+    $17r^{4}\sqrt{r}$
+- id: b
+  content: |-
+    $3r^{3}\sqrt{r}$
+- id: c
+  content: |-
+    $2r^{3}\sqrt{4r}$
+- id: d
+  correct: true
+  content: |-
+    $5r^{4}\sqrt{r}$
+- id: e
+  content: |-
+    $4r^{4}\sqrt{2r}$
+```
 
 ---
 
@@ -210,23 +282,59 @@ $$
 
 ---
 
-**Question 5:** What is $2\sqrt[3]{a} - 3\sqrt{a} - 5\sqrt[3]{a} + \sqrt{a}$?
+**Question 5:**
 
-- [ ] A. $-2\sqrt{a}$
-- [ ] B. $-2a\sqrt{a} - 3\sqrt[3]{a}$
-- [ ] C. $a\sqrt{a} + 3\sqrt{a} - 3\sqrt[3]{a}$
-- [ ] D. $a\sqrt{a} - 3\sqrt{a} - 5\sqrt[3]{a}$
-- [ ] E. $-2\sqrt{a} - 3\sqrt[3]{a}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $2\sqrt[3]{a} - 3\sqrt{a} - 5\sqrt[3]{a} + \sqrt{a}$?
+options:
+- id: a
+  content: |-
+    $-2\sqrt{a}$
+- id: b
+  content: |-
+    $-2a\sqrt{a} - 3\sqrt[3]{a}$
+- id: c
+  content: |-
+    $a\sqrt{a} + 3\sqrt{a} - 3\sqrt[3]{a}$
+- id: d
+  content: |-
+    $a\sqrt{a} - 3\sqrt{a} - 5\sqrt[3]{a}$
+- id: e
+  correct: true
+  content: |-
+    $-2\sqrt{a} - 3\sqrt[3]{a}$
+```
 
 ---
 
-**Question 6:** Given that $x \ge 0$, simplify the expression $x\sqrt{12} - \sqrt{27x^{2}} + 4\sqrt[3]{x^{4}} - 2x\sqrt[3]{x}$.
+**Question 6:**
 
-- [ ] A. $4x\sqrt[3]{x} - 2\sqrt{x}$
-- [ ] B. $-x\sqrt{3} + 2\sqrt{x}$
-- [ ] C. $\sqrt{3} + 2x\sqrt[3]{x}$
-- [ ] D. $-3x + 4x\sqrt[3]{x} - 2\sqrt{x}$
-- [ ] E. $-x\sqrt{3} + 2x\sqrt[3]{x}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Given that $x \ge 0$, simplify the expression $x\sqrt{12} - \sqrt{27x^{2}} + 4\sqrt[3]{x^{4}} - 2x\sqrt[3]{x}$.
+options:
+- id: a
+  content: |-
+    $4x\sqrt[3]{x} - 2\sqrt{x}$
+- id: b
+  content: |-
+    $-x\sqrt{3} + 2\sqrt{x}$
+- id: c
+  content: |-
+    $\sqrt{3} + 2x\sqrt[3]{x}$
+- id: d
+  content: |-
+    $-3x + 4x\sqrt[3]{x} - 2\sqrt{x}$
+- id: e
+  correct: true
+  content: |-
+    $-x\sqrt{3} + 2x\sqrt[3]{x}$
+```
 
 ```update-progress
 ```

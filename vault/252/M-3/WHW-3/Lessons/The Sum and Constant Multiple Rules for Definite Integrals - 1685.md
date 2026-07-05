@@ -82,7 +82,6 @@ $$
 ```quiz
 type: radio
 id: ma-65996
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{π/3}3\sec^{2} xdx$?
 options:
@@ -99,6 +98,7 @@ options:
   content: |-
     $0$
 - id: e
+  correct: true
   content: |-
     $3\sqrt{3}$
 ```
@@ -110,7 +110,6 @@ options:
 ```quiz
 type: radio
 id: ma-65997
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{2}8x^{3}dx$?
 options:
@@ -121,6 +120,7 @@ options:
   content: |-
     $44$
 - id: c
+  correct: true
   content: |-
     $32$
 - id: d
@@ -192,11 +192,11 @@ $$
 ```quiz
 type: radio
 id: ma-17842
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{π/6}^{π/4}(\sec^{2} x - \csc^{2} x)dx$?
 options:
 - id: a
+  correct: true
   content: |-
     $\frac{2\sqrt{3} - 4}{\sqrt{3}}$
 - id: b
@@ -220,7 +220,6 @@ options:
 ```quiz
 type: radio
 id: ma-2006
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{9}(\sqrt{x} - 1)dx$?
 options:
@@ -228,6 +227,7 @@ options:
   content: |-
     $\displaystyle \int_{0}^{9}\sqrt{x}dx - \displaystyle \int_{0}^{9}xdx$
 - id: b
+  correct: true
   content: |-
     $\displaystyle \int_{0}^{9}\sqrt{x}dx - \displaystyle \int_{0}^{9}dx$
 - id: c
@@ -300,7 +300,6 @@ $$
 ```quiz
 type: radio
 id: ma-2167
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{-2}^{2}(6x^{2} + 3x)dx$?
 options:
@@ -308,6 +307,7 @@ options:
   content: |-
     $64$
 - id: b
+  correct: true
   content: |-
     $32$
 - id: c
@@ -328,7 +328,6 @@ options:
 ```quiz
 type: radio
 id: ma-51064
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate $\displaystyle \int_{0}^{1}(5t^{4} - 2t)dt$.
 options:
@@ -345,6 +344,7 @@ options:
   content: |-
     $3$
 - id: e
+  correct: true
   content: |-
     $0$
 ```
@@ -385,7 +385,6 @@ $$
 ```quiz
 type: radio
 id: ma-29781
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{1}^{8}(\frac{4}{\sqrt[3]{x^{4}}} + x^{2})dx$?
 options:
@@ -396,6 +395,7 @@ options:
   content: |-
     $\frac{511}{3}$
 - id: c
+  correct: true
   content: |-
     $\frac{529}{3}$
 - id: d
@@ -413,7 +413,6 @@ options:
 ```quiz
 type: radio
 id: ma-29784
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{1}^{16}(\frac{10}{\sqrt[4]{x^{3}}} + \frac{x}{10})dx$?
 options:
@@ -427,6 +426,7 @@ options:
   content: |-
     $\frac{211}{10}$
 - id: d
+  correct: true
   content: |-
     $\frac{211}{4}$
 - id: e

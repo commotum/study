@@ -1,15 +1,20 @@
 ## Prerequisites
 
+- [Fractions of Fractions - 323](<Prerequisites/Fractions of Fractions - 323.md>)
 - [Factorials - 774](<Prerequisites/Factorials - 774.md>)
 - [Simplifying Rational Expressions by Factoring - 423](<Prerequisites/Simplifying Rational Expressions by Factoring - 423.md>)
 - [The Domain of a Function - 802](<Prerequisites/The Domain of a Function - 802.md>)
 - [Multiplying Binomials - 371](<Prerequisites/Multiplying Binomials - 371.md>)
 - [Factorials in Variable Expressions - 3710](<Prerequisites/Factorials in Variable Expressions - 3710.md>)
+- [The Power of Quotient Rule With Algebraic Expressions - 1428](<Prerequisites/The Power of Quotient Rule With Algebraic Expressions - 1428.md>)
 - [The Nth Term of a Geometric Sequence - 680](<Prerequisites/The Nth Term of a Geometric Sequence - 680.md>)
 - [Combining the Rules of Exponents With Algebraic Expressions - 1417](<Prerequisites/Combining the Rules of Exponents With Algebraic Expressions - 1417.md>)
+- [Further Solving Linear Inequalities - 4034](<Prerequisites/Further Solving Linear Inequalities - 4034.md>)
 - [End Behavior of Functions - 2048](<Prerequisites/End Behavior of Functions - 2048.md>)
+- [Increasing and Decreasing Functions - 1628](<Prerequisites/Increasing and Decreasing Functions - 1628.md>)
 - [The Power and Root Rules for Limits - 37](<Prerequisites/The Power and Root Rules for Limits - 37.md>)
 - [Solving Elementary Quadratic Inequalities - 1495](<Prerequisites/Solving Elementary Quadratic Inequalities - 1495.md>)
+- [Solving Rational Inequalities - 3355](<Prerequisites/Solving Rational Inequalities - 3355.md>)
 - [Solving Inequalities Involving Exponential Functions and Polynomials - 2859](<Prerequisites/Solving Inequalities Involving Exponential Functions and Polynomials - 2859.md>)
 - [Limits at Infinity from Graphs - 1873](<Prerequisites/Limits at Infinity from Graphs - 1873.md>)
 - [Combining Graph Transformations of Sine and Cosine - 275](<Prerequisites/Combining Graph Transformations of Sine and Cosine - 275.md>)
@@ -32,6 +37,9 @@
 - [Further Convergence of Geometric Sequences - 3838](<Lessons/Further Convergence of Geometric Sequences - 3838.md>)
 - [Determining Limits of Sequences Using Relative Magnitudes - 1245](<Lessons/Determining Limits of Sequences Using Relative Magnitudes - 1245.md>)
 - [Determining Intervals on Which a Function Is Increasing or Decreasing - 1359](<Lessons/Determining Intervals on Which a Function Is Increasing or Decreasing - 1359.md>)
+- [Monotonic Sequences - 1096](<Lessons/Monotonic Sequences - 1096.md>)
+- [Identifying Monotonic Sequences Using Differentiation - 3844](<Lessons/Identifying Monotonic Sequences Using Differentiation - 3844.md>)
+- [Identifying Monotonic Sequences Using Ratios - 3861](<Lessons/Identifying Monotonic Sequences Using Ratios - 3861.md>)
 
 ---
 ## Problem 1

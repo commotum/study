@@ -127,23 +127,59 @@ However, since $x=2$ is not a valid solution, we conclude that our equation has 
 
 ---
 
-**Question 1:** Solve the equation $\frac{1}{4x} + (1)/(2x(3x + 1)) = \frac{1}{3x + 1}$.
+**Question 1:**
 
-- [ ] A. $x =-3$
-- [ ] B. No solutions
-- [ ] C. $x = 2$
-- [ ] D. $x = 1$
-- [ ] E. $x = 3$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Solve the equation $\frac{1}{4x} + (1)/(2x(3x + 1)) = \frac{1}{3x + 1}$.
+options:
+- id: a
+  content: |-
+    $x =-3$
+- id: b
+  content: |-
+    No solutions
+- id: c
+  content: |-
+    $x = 2$
+- id: d
+  content: |-
+    $x = 1$
+- id: e
+  content: |-
+    $x = 3$
+  correct: true
+```
 
 ---
 
-**Question 2:** Solve the equation $\frac{3}{z - 1} - (3)/(z(z - 1)) = \frac{2}{z}$.
+**Question 2:**
 
-- [ ] A. $z =-2$
-- [ ] B. $z = 1$
-- [ ] C. No solutions
-- [ ] D. $z =-1$
-- [ ] E. $z = 3$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Solve the equation $\frac{3}{z - 1} - (3)/(z(z - 1)) = \frac{2}{z}$.
+options:
+- id: a
+  content: |-
+    $z =-2$
+- id: b
+  content: |-
+    $z = 1$
+- id: c
+  content: |-
+    No solutions
+  correct: true
+- id: d
+  content: |-
+    $z =-1$
+- id: e
+  content: |-
+    $z = 3$
+```
 
 ---
 
@@ -256,23 +292,59 @@ However, since $k=2$ is not a valid solution, our equation has no solutions.
 
 ---
 
-**Question 3:** Solve the equation $\frac{1}{S + 1} + \frac{2}{S - 1} = \frac{1}{S^{2} - 1}$.
+**Question 3:**
 
-- [ ] A. $S = 3$
-- [ ] B. $S =-2$
-- [ ] C. No solutions
-- [ ] D. $S =-4$
-- [ ] E. $S = 0$
+```quiz
+type: radio
+id: q-3
+content: |-
+  Solve the equation $\frac{1}{S + 1} + \frac{2}{S - 1} = \frac{1}{S^{2} - 1}$.
+options:
+- id: a
+  content: |-
+    $S = 3$
+- id: b
+  content: |-
+    $S =-2$
+- id: c
+  content: |-
+    No solutions
+- id: d
+  content: |-
+    $S =-4$
+- id: e
+  content: |-
+    $S = 0$
+  correct: true
+```
 
 ---
 
-**Question 4:** Solve the equation $\frac{5}{y + 9} = \frac{7}{y - 4} - \frac{65}{y^{2} + 5y - 36}$.
+**Question 4:**
 
-- [ ] A. $y = \frac{3}{2}$
-- [ ] B. $y = 9$
-- [ ] C. $y = 23$
-- [ ] D. No solutions
-- [ ] E. $y = 2$
+```quiz
+type: radio
+id: q-4
+content: |-
+  Solve the equation $\frac{5}{y + 9} = \frac{7}{y - 4} - \frac{65}{y^{2} + 5y - 36}$.
+options:
+- id: a
+  content: |-
+    $y = \frac{3}{2}$
+- id: b
+  content: |-
+    $y = 9$
+- id: c
+  content: |-
+    $y = 23$
+- id: d
+  content: |-
+    No solutions
+  correct: true
+- id: e
+  content: |-
+    $y = 2$
+```
 
 ---
 
@@ -336,23 +408,59 @@ Therefore, the solution to our original equation is $u=2$.
 
 ---
 
-**Question 5:** Solve the equation $\frac{11}{T} - \frac{4}{2T - 1} = \frac{1}{2T^{2} - T}$.
+**Question 5:**
 
-- [ ] A. $T = 2$
-- [ ] B. $T = \frac{2}{3}$
-- [ ] C. No solutions
-- [ ] D. $T = 1$
-- [ ] E. $T = \frac{1}{2}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Solve the equation $\frac{11}{T} - \frac{4}{2T - 1} = \frac{1}{2T^{2} - T}$.
+options:
+- id: a
+  content: |-
+    $T = 2$
+- id: b
+  content: |-
+    $T = \frac{2}{3}$
+  correct: true
+- id: c
+  content: |-
+    No solutions
+- id: d
+  content: |-
+    $T = 1$
+- id: e
+  content: |-
+    $T = \frac{1}{2}$
+```
 
 ---
 
-**Question 6:** Solve the equation $\frac{3}{y + 5} + \frac{1}{2y} = \frac{5}{2y^{2} + 10y}$.
+**Question 6:**
 
-- [ ] A. $y = 5$
-- [ ] B. No solutions
-- [ ] C. $y = 2$
-- [ ] D. $y =-2$
-- [ ] E. $y = 1$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Solve the equation $\frac{3}{y + 5} + \frac{1}{2y} = \frac{5}{2y^{2} + 10y}$.
+options:
+- id: a
+  content: |-
+    $y = 5$
+- id: b
+  content: |-
+    No solutions
+  correct: true
+- id: c
+  content: |-
+    $y = 2$
+- id: d
+  content: |-
+    $y =-2$
+- id: e
+  content: |-
+    $y = 1$
+```
 
 ```update-progress
 ```

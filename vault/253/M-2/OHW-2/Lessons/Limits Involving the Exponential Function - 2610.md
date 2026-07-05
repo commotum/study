@@ -95,23 +95,59 @@ $$
 
 ---
 
-**Question 1:** What is $lim_(n → ∞)(1 + \frac{1}{n})^{-2n}$?
+**Question 1:**
 
-- [ ] A. $\frac{e}{2}$
-- [ ] B. $e^{2}$
-- [ ] C. $\frac{1}{e^{2}}$
-- [ ] D. $2e$
-- [ ] E. $e$
+```quiz
+type: radio
+id: q-1
+content: |-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{-2n}$?
+options:
+- id: a
+  content: |-
+    $\frac{e}{2}$
+- id: b
+  content: |-
+    $e^{2}$
+- id: c
+  correct: true
+  content: |-
+    $\frac{1}{e^{2}}$
+- id: d
+  content: |-
+    $2e$
+- id: e
+  content: |-
+    $e$
+```
 
 ---
 
-**Question 2:** What is $lim_(n → ∞)(1 + \frac{1}{n})^{n/2}$?
+**Question 2:**
 
-- [ ] A. $\frac{2}{e}$
-- [ ] B. $e^{2}$
-- [ ] C. $2e$
-- [ ] D. $\sqrt{e}$
-- [ ] E. $\frac{e}{2}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{n/2}$?
+options:
+- id: a
+  content: |-
+    $\frac{2}{e}$
+- id: b
+  content: |-
+    $e^{2}$
+- id: c
+  content: |-
+    $2e$
+- id: d
+  correct: true
+  content: |-
+    $\sqrt{e}$
+- id: e
+  content: |-
+    $\frac{e}{2}$
+```
 
 ---
 
@@ -141,23 +177,59 @@ $$
 
 ---
 
-**Question 3:** What is $lim_(n → ∞)(1 + \frac{1}{n})^{4nx}$?
+**Question 3:**
 
-- [ ] A. $4e^{-4x}$
-- [ ] B. $4e^{x}$
-- [ ] C. $4e^{4x}$
-- [ ] D. $e^{-4x}$
-- [ ] E. $e^{4x}$
+```quiz
+type: radio
+id: q-3
+content: |-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{4nx}$?
+options:
+- id: a
+  content: |-
+    $4e^{-4x}$
+- id: b
+  content: |-
+    $4e^{x}$
+- id: c
+  content: |-
+    $4e^{4x}$
+- id: d
+  content: |-
+    $e^{-4x}$
+- id: e
+  correct: true
+  content: |-
+    $e^{4x}$
+```
 
 ---
 
-**Question 4:** What is $lim_(n → ∞)(1 + \frac{1}{n})^{nx/2}$?
+**Question 4:**
 
-- [ ] A. $\frac{\sqrt{e}}{2}$
-- [ ] B. $x\sqrt{e}$
-- [ ] C. $\sqrt{e^{x}}$
-- [ ] D. $\frac{e^{x}}{\sqrt{2}}$
-- [ ] E. $\frac{e^{x}}{2}$
+```quiz
+type: radio
+id: q-4
+content: |-
+  What is $lim_(n → ∞)(1 + \frac{1}{n})^{nx/2}$?
+options:
+- id: a
+  content: |-
+    $\frac{\sqrt{e}}{2}$
+- id: b
+  content: |-
+    $x\sqrt{e}$
+- id: c
+  correct: true
+  content: |-
+    $\sqrt{e^{x}}$
+- id: d
+  content: |-
+    $\frac{e^{x}}{\sqrt{2}}$
+- id: e
+  content: |-
+    $\frac{e^{x}}{2}$
+```
 
 ---
 
@@ -231,23 +303,59 @@ $$
 
 ---
 
-**Question 5:** What is $lim_(n → ∞)(1 + \frac{x}{n})^{-3n}$?
+**Question 5:**
 
-- [ ] A. $e^{3x}$
-- [ ] B. $e^{-1/3x}$
-- [ ] C. $e^{3}$
-- [ ] D. $e^{1/3x}$
-- [ ] E. $e^{-3x}$
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $lim_(n → ∞)(1 + \frac{x}{n})^{-3n}$?
+options:
+- id: a
+  content: |-
+    $e^{3x}$
+- id: b
+  content: |-
+    $e^{-1/3x}$
+- id: c
+  content: |-
+    $e^{3}$
+- id: d
+  content: |-
+    $e^{1/3x}$
+- id: e
+  correct: true
+  content: |-
+    $e^{-3x}$
+```
 
 ---
 
-**Question 6:** What is $lim_(n → ∞)(1 + \frac{x}{n})^{2nx}$?
+**Question 6:**
 
-- [ ] A. $e^{2}$
-- [ ] B. $e^{2x^{2}}$
-- [ ] C. $e^{2/x^{2}}$
-- [ ] D. $e^{2x}$
-- [ ] E. $e^{2/x}$
+```quiz
+type: radio
+id: q-6
+content: |-
+  What is $lim_(n → ∞)(1 + \frac{x}{n})^{2nx}$?
+options:
+- id: a
+  content: |-
+    $e^{2}$
+- id: b
+  correct: true
+  content: |-
+    $e^{2x^{2}}$
+- id: c
+  content: |-
+    $e^{2/x^{2}}$
+- id: d
+  content: |-
+    $e^{2x}$
+- id: e
+  content: |-
+    $e^{2/x}$
+```
 
 ```update-progress
 ```

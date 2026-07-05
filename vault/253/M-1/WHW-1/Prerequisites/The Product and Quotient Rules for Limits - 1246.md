@@ -88,23 +88,59 @@ $$
 
 ---
 
-**Question 1:** Find $lim_(y → 2)(2y - 5)(y^{2} + 6y + 9)$.
+**Question 1:**
 
-- [ ] A. $-25$
-- [ ] B. $-70$
-- [ ] C. $-29$
-- [ ] D. $-174$
-- [ ] E. $-150$
+```quiz
+type: radio
+id: q-1
+content: |-
+  Find $lim_(y → 2)(2y - 5)(y^{2} + 6y + 9)$.
+options:
+- id: a
+  correct: true
+  content: |-
+    $-25$
+- id: b
+  content: |-
+    $-70$
+- id: c
+  content: |-
+    $-29$
+- id: d
+  content: |-
+    $-174$
+- id: e
+  content: |-
+    $-150$
+```
 
 ---
 
-**Question 2:** Find $lim_(x → 1/6)(2x + 1)(3x - 1)$.
+**Question 2:**
 
-- [ ] A. $-\frac{3}{2}$
-- [ ] B. $-\frac{1}{6}$
-- [ ] C. $\frac{4}{6}$
-- [ ] D. $\frac{16}{9}$
-- [ ] E. $-\frac{2}{3}$
+```quiz
+type: radio
+id: q-2
+content: |-
+  Find $lim_(x → 1/6)(2x + 1)(3x - 1)$.
+options:
+- id: a
+  content: |-
+    $-\frac{3}{2}$
+- id: b
+  content: |-
+    $-\frac{1}{6}$
+- id: c
+  content: |-
+    $\frac{4}{6}$
+- id: d
+  content: |-
+    $\frac{16}{9}$
+- id: e
+  correct: true
+  content: |-
+    $-\frac{2}{3}$
+```
 
 ---
 
@@ -137,29 +173,61 @@ $$
 
 **Question 3**
 
-![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-35443.png>)
-
-Find $lim_(x → 1)(x^{2} + 2)f(x)$ for the function $f(x)$ plotted above.
-
-- [ ] A. $1$
-- [ ] B. $2$
-- [ ] C. $DNE$
-- [ ] D. $0$
-- [ ] E. $3$
+```quiz
+type: radio
+id: ma-35443
+content: |-
+  ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-35443.png>)
+  
+  Find $lim_(x → 1)(x^{2} + 2)f(x)$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  content: |-
+    $2$
+- id: c
+  correct: true
+  content: |-
+    $DNE$
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $3$
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-35441.png>)
-
-Find $lim_(x → 0)((2x + 3)f(x))/(9)$ for the function $f(x)$ plotted above.
-
-- [ ] A. $\frac{2}{3}$
-- [ ] B. $0$
-- [ ] C. $3$
-- [ ] D. $\frac{1}{3}$
-- [ ] E. $DNE$
+```quiz
+type: radio
+id: ma-35441
+content: |-
+  ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-35441.png>)
+  
+  Find $lim_(x → 0)((2x + 3)f(x))/(9)$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $\frac{2}{3}$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $3$
+- id: d
+  correct: true
+  content: |-
+    $\frac{1}{3}$
+- id: e
+  content: |-
+    $DNE$
+```
 
 ---
 
@@ -230,23 +298,59 @@ $$
 
 ---
 
-**Question 5:** Find $lim_(x → - 3)\frac{2x}{x + 2}$.
+**Question 5:**
 
-- [ ] A. $-6$
-- [ ] B. $-2$
-- [ ] C. $6$
-- [ ] D. $2$
-- [ ] E. $-3$
+```quiz
+type: radio
+id: q-5
+content: |-
+  Find $lim_(x → - 3)\frac{2x}{x + 2}$.
+options:
+- id: a
+  content: |-
+    $-6$
+- id: b
+  content: |-
+    $-2$
+- id: c
+  correct: true
+  content: |-
+    $6$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $-3$
+```
 
 ---
 
-**Question 6:** Find $lim_(x → - 2) - 4x^{-3}$.
+**Question 6:**
 
-- [ ] A. $\frac{1}{32}$
-- [ ] B. $-1$
-- [ ] C. $\frac{1}{2}$
-- [ ] D. $-32$
-- [ ] E. $-8$
+```quiz
+type: radio
+id: q-6
+content: |-
+  Find $lim_(x → - 2) - 4x^{-3}$.
+options:
+- id: a
+  content: |-
+    $\frac{1}{32}$
+- id: b
+  content: |-
+    $-1$
+- id: c
+  correct: true
+  content: |-
+    $\frac{1}{2}$
+- id: d
+  content: |-
+    $-32$
+- id: e
+  content: |-
+    $-8$
+```
 
 ---
 
@@ -296,29 +400,61 @@ $$
 
 **Question 7**
 
-![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-17283.png>)
-
-Find $lim_(x → 1)(3f(x) + 3x)/(6x^{2} + 4)$ for the function $f(x)$ plotted above.
-
-- [ ] A. $0$
-- [ ] B. Does not exist
-- [ ] C. $10$
-- [ ] D. $3$
-- [ ] E. $-1$
+```quiz
+type: radio
+id: ma-17283
+content: |-
+  ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-17283.png>)
+  
+  Find $lim_(x → 1)(3f(x) + 3x)/(6x^{2} + 4)$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  correct: true
+  content: |-
+    $0$
+- id: b
+  content: |-
+    Does not exist
+- id: c
+  content: |-
+    $10$
+- id: d
+  content: |-
+    $3$
+- id: e
+  content: |-
+    $-1$
+```
 
 ---
 
 **Question 8**
 
-![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-17281.png>)
-
-Find $lim_(x → - π/2)(4x + π)/(f(x))$ for the function $f(x)$ plotted above.
-
-- [ ] A. $-\frac{2π}{3}$
-- [ ] B. $\frac{π}{3}$
-- [ ] C. $\frac{2π}{3}$
-- [ ] D. $-\frac{π}{3}$
-- [ ] E. $\frac{3}{π}$
+```quiz
+type: radio
+id: ma-17281
+content: |-
+  ![](<../Source/The Product and Quotient Rules for Limits - 1246/Images/q-17281.png>)
+  
+  Find $lim_(x → - π/2)(4x + π)/(f(x))$ for the function $f(x)$ plotted above.
+options:
+- id: a
+  content: |-
+    $-\frac{2π}{3}$
+- id: b
+  content: |-
+    $\frac{π}{3}$
+- id: c
+  content: |-
+    $\frac{2π}{3}$
+- id: d
+  correct: true
+  content: |-
+    $-\frac{π}{3}$
+- id: e
+  content: |-
+    $\frac{3}{π}$
+```
 
 ```update-progress
 ```

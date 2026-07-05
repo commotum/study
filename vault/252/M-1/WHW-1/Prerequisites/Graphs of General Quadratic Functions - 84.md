@@ -59,29 +59,61 @@ The axis of symmetry is the vertical line that passes through the vertex. Theref
 
 **Question 1**
 
-![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24633.png>)
-
-For the parabola shown above, find the vertex and the equation of the axis of symmetry.
-
-- [ ] A. vertex: $(0, 1)$, line of symmetry: $x = 0$
-- [ ] B. vertex: $(0,-1)$, line of symmetry: $x = 1$
-- [ ] C. vertex: $(0, 1)$, line of symmetry: $y = 1$
-- [ ] D. vertex: $(0, 1)$, line of symmetry: $y = 0$
-- [ ] E. vertex: $(0, 0)$, line of symmetry: $x =-1$
+```quiz
+type: radio
+id: ma-24633
+content: |-
+  ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24633.png>)
+  
+  For the parabola shown above, find the vertex and the equation of the axis of symmetry.
+options:
+- id: a
+  content: |-
+    vertex: $(0, 1)$, line of symmetry: $x = 0$
+  correct: true
+- id: b
+  content: |-
+    vertex: $(0,-1)$, line of symmetry: $x = 1$
+- id: c
+  content: |-
+    vertex: $(0, 1)$, line of symmetry: $y = 1$
+- id: d
+  content: |-
+    vertex: $(0, 1)$, line of symmetry: $y = 0$
+- id: e
+  content: |-
+    vertex: $(0, 0)$, line of symmetry: $x =-1$
+```
 
 ---
 
 **Question 2**
 
-![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24393.png>)
-
-For the parabola shown above, find the vertex and the equation of the axis of symmetry.
-
-- [ ] A. vertex: $(3, 2)$, line of symmetry: $y = 3$
-- [ ] B. vertex: $(3,-2)$, line of symmetry: $x =-2$
-- [ ] C. vertex: $(2, 3)$, line of symmetry: $x =-2$
-- [ ] D. vertex: $(3,-2)$, line of symmetry: $x = 3$
-- [ ] E. vertex: $(-2, 3)$, line of symmetry: $y = 2$
+```quiz
+type: radio
+id: ma-24393
+content: |-
+  ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24393.png>)
+  
+  For the parabola shown above, find the vertex and the equation of the axis of symmetry.
+options:
+- id: a
+  content: |-
+    vertex: $(3, 2)$, line of symmetry: $y = 3$
+- id: b
+  content: |-
+    vertex: $(3,-2)$, line of symmetry: $x =-2$
+- id: c
+  content: |-
+    vertex: $(2, 3)$, line of symmetry: $x =-2$
+- id: d
+  content: |-
+    vertex: $(3,-2)$, line of symmetry: $x = 3$
+  correct: true
+- id: e
+  content: |-
+    vertex: $(-2, 3)$, line of symmetry: $y = 2$
+```
 
 ---
 
@@ -104,29 +136,61 @@ Therefore, the roots are $x=-2$ and $x=4$.
 
 **Question 3**
 
-![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-30786.png>)
-
-Find the roots of the parabola shown above.
-
-- [ ] A. $x =-8$ and $x =-4$
-- [ ] B. $x =-6$ and $x =-2$
-- [ ] C. $x =-7$ and $x =-4$
-- [ ] D. $x =-6$ and $x =-4$
-- [ ] E. $x =-6$ and $x =-3$
+```quiz
+type: radio
+id: ma-30786
+content: |-
+  ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-30786.png>)
+  
+  Find the roots of the parabola shown above.
+options:
+- id: a
+  content: |-
+    $x =-8$ and $x =-4$
+- id: b
+  content: |-
+    $x =-6$ and $x =-2$
+- id: c
+  content: |-
+    $x =-7$ and $x =-4$
+- id: d
+  content: |-
+    $x =-6$ and $x =-4$
+  correct: true
+- id: e
+  content: |-
+    $x =-6$ and $x =-3$
+```
 
 ---
 
 **Question 4**
 
-![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-30788.png>)
-
-Find the roots of the parabola shown above.
-
-- [ ] A. $x =-\frac{7}{2}$ and $x = 2$
-- [ ] B. $x =-\frac{9}{2}$ and $x = 2$
-- [ ] C. $x =-4$ and $x = 2$
-- [ ] D. $x =-2$ and $x = 5$
-- [ ] E. $x =-5$ and $x = 2$
+```quiz
+type: radio
+id: ma-30788
+content: |-
+  ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-30788.png>)
+  
+  Find the roots of the parabola shown above.
+options:
+- id: a
+  content: |-
+    $x =-\frac{7}{2}$ and $x = 2$
+- id: b
+  content: |-
+    $x =-\frac{9}{2}$ and $x = 2$
+- id: c
+  content: |-
+    $x =-4$ and $x = 2$
+- id: d
+  content: |-
+    $x =-2$ and $x = 5$
+- id: e
+  content: |-
+    $x =-5$ and $x = 2$
+  correct: true
+```
 
 ---
 
@@ -159,29 +223,61 @@ $$
 
 **Question 5**
 
-![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-56293.png>)
-
-The equation of the curve above is $y = \frac{9}{4}x^{2} + 2x + k$. Find the value of $k$.
-
-- [ ] A. $-\frac{9}{4}$
-- [ ] B. $2$
-- [ ] C. $\frac{9}{4}$
-- [ ] D. $-\frac{3}{2}$
-- [ ] E. $\frac{3}{2}$
+```quiz
+type: radio
+id: ma-56293
+content: |-
+  ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-56293.png>)
+  
+  The equation of the curve above is $y = \frac{9}{4}x^{2} + 2x + k$. Find the value of $k$.
+options:
+- id: a
+  content: |-
+    $-\frac{9}{4}$
+  correct: true
+- id: b
+  content: |-
+    $2$
+- id: c
+  content: |-
+    $\frac{9}{4}$
+- id: d
+  content: |-
+    $-\frac{3}{2}$
+- id: e
+  content: |-
+    $\frac{3}{2}$
+```
 
 ---
 
 **Question 6**
 
-![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-83558.png>)
-
-The equation of the curve above is $y =-\frac{1}{2}x^{2} + x + k$. Find the value of $k$.
-
-- [ ] A. $-1$
-- [ ] B. $3$
-- [ ] C. $\frac{1}{2}$
-- [ ] D. $1$
-- [ ] E. $\frac{1}{3}$
+```quiz
+type: radio
+id: ma-83558
+content: |-
+  ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-83558.png>)
+  
+  The equation of the curve above is $y =-\frac{1}{2}x^{2} + x + k$. Find the value of $k$.
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $3$
+- id: c
+  content: |-
+    $\frac{1}{2}$
+- id: d
+  content: |-
+    $1$
+  correct: true
+- id: e
+  content: |-
+    $\frac{1}{3}$
+```
 
 ---
 
@@ -222,28 +318,60 @@ We fill out the graph by drawing the parabola through the plotted points:
 
 **Question 7**
 
-Which of the following shows the graph of $y =-x^{2} + x - 2$?
-
-- [ ] A. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-4.png>)
-- [ ] B. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-2.png>)
-- [ ] C. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-1.png>)
-- [ ] D. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-5.png>)
-- [ ] E. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-3.png>)
+```quiz
+type: radio
+id: ma-24673
+content: |-
+  Which of the following shows the graph of $y =-x^{2} + x - 2$?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-4.png>)
+- id: b
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-2.png>)
+- id: c
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-1.png>)
+  correct: true
+- id: d
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-5.png>)
+- id: e
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24673-a-3.png>)
+```
 
 ---
 
 **Question 8**
 
-Sketch the graph of $y = x^{2} - 2x$.
-
-- [ ] A. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-1.png>)
-- [ ] B. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-3.png>)
-- [ ] C. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-4.png>)
-- [ ] D. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-2.png>)
-- [ ] E. ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-5.png>)
+```quiz
+type: radio
+id: ma-24676
+content: |-
+  Sketch the graph of $y = x^{2} - 2x$.
+options:
+- id: a
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-1.png>)
+  correct: true
+- id: b
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-3.png>)
+- id: c
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-4.png>)
+- id: d
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-2.png>)
+- id: e
+  content: |-
+    ![](<../Source/Graphs of General Quadratic Functions - 84/Images/q-24676-a-5.png>)
+```
 
 ```update-progress
 ```
 
-[[252/Home|Home]]
-[[252/0. Table of Contents/TOC|Table of Contents]]
+[[MA/Mathematical-Foundations/MF2/Home|Home]]
+[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
