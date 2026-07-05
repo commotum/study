@@ -73,7 +73,7 @@ def trim_blank_edges(lines: list[str]) -> list[str]:
 def block_scalar(key: str, value_lines: list[str], indent: str = "") -> list[str]:
     lines = [f"{indent}{key}: |-"]
     for line in value_lines or [""]:
-        lines.append(f"{indent}  {line}" if line else f"{indent}  ")
+        lines.append(f"{indent}  {line}" if line else "")
     return lines
 
 
