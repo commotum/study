@@ -174,7 +174,7 @@ type: radio
 id: p5-original-check
 content: |-
   A car safely navigates an icy banked curve at speed $v$. Now consider that the ice has melted and there is static friction between the tires and road. What is the direction of the friction force if the car is going faster than $v$?
-  
+
   ![](<../Source/Images/banked-curve-car-diagram.png>)
 options:
 - id: a

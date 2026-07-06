@@ -196,7 +196,7 @@ type: radio
 id: p7-original-check
 content: |-
   A key on a string traces out a horizontal circle. Assume there is no air resistance. Which free-body diagram could accurately depict the key?
-  
+
   ![](<../Source/Images/conical-pendulum-key-free-body-diagrams.png>)
 options:
 - id: a
