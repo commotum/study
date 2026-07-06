@@ -37,6 +37,13 @@ $$
 
 The key cue is the word **bottom**: the seat must support the rider's weight and also provide the extra inward force needed for circular motion.
 
+Use this order:
+
+1. Decide which way is inward.
+2. Write the radial force equation.
+3. Compute $m\omega^2r$.
+4. Add that centripetal-force term to $mg$.
+
 ---
 
 <a id="choose-the-radial-direction"></a>
@@ -74,18 +81,28 @@ options:
   content: |-
     $N-mg=m\omega^2r$
   correct: true
+  feedback: |-
+    At the bottom, inward is upward, so $N$ is positive and $mg$ is negative.
 - id: p4-q1-b
   content: |-
     $mg-N=m\omega^2r$
+  feedback: |-
+    This is the top-of-the-wheel sign pattern.
 - id: p4-q1-c
   content: |-
     $N+mg=0$
+  feedback: |-
+    The net radial force is not zero because the rider is accelerating toward the center.
 - id: p4-q1-d
   content: |-
     $N=m\omega r$
+  feedback: |-
+    The radial acceleration uses $\omega^2r$, not $\omega r$.
 - id: p4-q1-e
   content: |-
     $mg=m\omega^2r$
+  feedback: |-
+    This ignores the normal force from the seat.
 ```
 
 ---
@@ -125,19 +142,29 @@ options:
 - id: p4-q2-a
   content: |-
     $14\ \mathrm{N}$
+  feedback: |-
+    This uses $m\omega$ and misses both squaring $\omega$ and multiplying by $r$.
 - id: p4-q2-b
   content: |-
     $84\ \mathrm{N}$
   correct: true
+  feedback: |-
+    $70(0.20)^2(30)=70(0.04)(30)=84$.
 - id: p4-q2-c
   content: |-
     $420\ \mathrm{N}$
+  feedback: |-
+    This uses $m\omega r$ instead of $m\omega^2r$.
 - id: p4-q2-d
   content: |-
     $686\ \mathrm{N}$
+  feedback: |-
+    This is approximately the rider's weight, not the centripetal-force term.
 - id: p4-q2-e
   content: |-
     $2100\ \mathrm{N}$
+  feedback: |-
+    This multiplies $mr$ without the $\omega^2$ factor.
 ```
 
 ---
@@ -148,6 +175,14 @@ options:
 **Example:** A Ferris wheel has radius $42\ \mathrm{m}$ and angular velocity $0.16\ \mathrm{rad}/\mathrm{s}$. Find the magnitude of the normal force on a $68\ \mathrm{kg}$ rider at the bottom of the wheel.
 
 **Explanation**
+
+First list the quantities that matter:
+
+- Bottom of the wheel: use $N-mg=m\omega^2r$.
+- Mass: $m=68\ \mathrm{kg}$.
+- Radius: $r=42\ \mathrm{m}$.
+- Angular speed: $\omega=0.16\ \mathrm{rad}/\mathrm{s}$.
+- Gravitational field strength: $g=9.8\ \mathrm{m}/\mathrm{s}^2$.
 
 At the bottom, use
 
@@ -187,19 +222,29 @@ options:
 - id: p4-q3-a
   content: |-
     $204\ \mathrm{N}$
+  feedback: |-
+    This subtracts the centripetal term from the weight: $588-384$.
 - id: p4-q3-b
   content: |-
     $384\ \mathrm{N}$
+  feedback: |-
+    This is only $m\omega^2r$, not the normal force.
 - id: p4-q3-c
   content: |-
     $588\ \mathrm{N}$
+  feedback: |-
+    This is only the rider's weight, $mg$.
 - id: p4-q3-d
   content: |-
     $972\ \mathrm{N}$
   correct: true
+  feedback: |-
+    At the bottom, $N=mg+m\omega^2r=588+384=972\ \mathrm{N}$.
 - id: p4-q3-e
   content: |-
     $1176\ \mathrm{N}$
+  feedback: |-
+    This doubles the weight instead of adding the centripetal-force term.
 ```
 
 ---
@@ -246,19 +291,29 @@ options:
 - id: p4-q4-a
   content: |-
     $N=mg-m\omega^2r$
+  feedback: |-
+    This is the top-of-the-wheel formula.
 - id: p4-q4-b
   content: |-
     $N=mg+m\omega^2r$
   correct: true
+  feedback: |-
+    At the bottom, the seat must provide weight support plus the inward centripetal-force term.
 - id: p4-q4-c
   content: |-
     $N=m\omega^2r-mg$
+  feedback: |-
+    This solves $N-mg=m\omega^2r$ with the sign of $mg$ moved the wrong way.
 - id: p4-q4-d
   content: |-
     $N=m\omega r+mg$
+  feedback: |-
+    The centripetal-force term is $m\omega^2r$, not $m\omega r$.
 - id: p4-q4-e
   content: |-
     $N=mg$
+  feedback: |-
+    This would mean zero radial acceleration, but circular motion requires an inward net force.
 ```
 
 ---

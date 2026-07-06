@@ -23,6 +23,13 @@
 
 The problem asks how the normal force on a Ferris-wheel rider at the top compares with the normal force at the bottom. The cue is that the rider is moving in a vertical circle at constant angular velocity, so the net force must point toward the center at both positions.
 
+The reusable procedure is:
+
+1. Choose inward as positive at each position.
+2. Give each real force a sign based on that local inward direction.
+3. Set the signed net force equal to $m\omega^2r$.
+4. Solve for each normal force and compare the two expressions.
+
 Use a separate inward direction at the top and at the bottom:
 
 - At the top, inward points downward.
@@ -87,6 +94,11 @@ $$
 
 The right-hand side is positive in both equations because it is the required inward net force.
 
+| Position | Inward direction | Force pointing inward | Force pointing outward | Radial equation |
+| --- | --- | --- | --- | --- |
+| Top | Downward | $mg$ | $N_{\text{top}}$ | $mg-N_{\text{top}}=m\omega^2r$ |
+| Bottom | Upward | $N_{\text{bottom}}$ | $mg$ | $N_{\text{bottom}}-mg=m\omega^2r$ |
+
 ```quiz
 type: radio
 id: p3-q2-radial-equations
@@ -143,6 +155,18 @@ $$
 
 The same centripetal term is subtracted at the top and added at the bottom.
 
+You can check both expressions by substituting them back into the original radial equations:
+
+$$
+mg-(mg-m\omega^2r)=m\omega^2r
+$$
+
+and
+
+$$
+(mg+m\omega^2r)-mg=m\omega^2r.
+$$
+
 ```quiz
 type: radio
 id: p3-q3-solved-normal-forces
@@ -190,6 +214,18 @@ For a rotating wheel, $m\omega^2r$ is positive. The top normal force is $mg$ min
 $$
 N_{\text{top}}<N_{\text{bottom}}.
 $$
+
+A direct comparison gives the same result:
+
+$$
+\begin{aligned}
+N_{\text{bottom}}-N_{\text{top}}
+&=(mg+m\omega^2r)-(mg-m\omega^2r) \\
+&=2m\omega^2r.
+\end{aligned}
+$$
+
+For a rotating wheel, $2m\omega^2r>0$, so $N_{\text{bottom}}$ is larger.
 
 ```quiz
 type: radio

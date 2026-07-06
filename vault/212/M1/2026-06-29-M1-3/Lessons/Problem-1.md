@@ -26,6 +26,12 @@ In a Ferris-wheel comparison, the cue is that the rider is at the **top** or **b
 
 The center of the circle is below the rider at the top and above the rider at the bottom. That one direction change decides whether gravity helps or opposes the seat's normal force.
 
+Use the same three steps each time:
+
+1. Point the positive radial direction inward.
+2. Give each force a plus or minus sign based on whether it points inward.
+3. Solve for the normal force and compare it with $mg$.
+
 ---
 
 <a id="aim-the-radial-equation-inward"></a>
@@ -42,6 +48,11 @@ $$
 $$
 
 Only the force signs change from top to bottom, because "inward" points downward at the top and upward at the bottom.
+
+| Position | Inward direction | Force pointing inward |
+| --- | --- | --- |
+| Top | Downward | $mg$ |
+| Bottom | Upward | $N_{\text{bottom}}$ |
 
 ```quiz
 type: radio
@@ -201,7 +212,7 @@ $$
 N_{\text{bottom}}=mg+m\frac{v^2}{r}.
 $$
 
-The same positive centripetal term is subtracted at the top and added at the bottom. Therefore,
+For a rotating wheel, the centripetal term $m\frac{v^2}{r}$ is positive. That means $N_{\text{top}}$ is $mg$ minus a positive amount, while $N_{\text{bottom}}$ is $mg$ plus the same positive amount. Therefore,
 
 $$
 N_{\text{top}}<N_{\text{bottom}}.
@@ -228,7 +239,7 @@ options:
   content: |-
     $N_{\text{top}} = N_{\text{bottom}}$
   feedback: |-
-    The speed may be constant, but the inward direction changes, so the normal forces are not equal.
+    Constant speed keeps the size of $\frac{v^2}{r}$ the same, but the force signs change at the top and bottom.
 - id: q4-c
   content: |-
     $N_{\text{top}} < N_{\text{bottom}}$

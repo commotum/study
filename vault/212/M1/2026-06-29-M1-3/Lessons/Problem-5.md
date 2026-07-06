@@ -23,6 +23,8 @@
 
 When a rider is at the top of a Ferris wheel, the center of the circle is below the rider. That means the required centripetal force points downward. The useful move is to choose inward as positive, put every vertical force into that direction, and solve the force balance for the normal force.
 
+![](<../Source/Images/ferris-wheel-top-bottom-normal-force.png>)
+
 For the assignment problem, the given values are
 
 $$
@@ -131,7 +133,14 @@ $$
 N=mg-m\omega^2r.
 $$
 
-Substitute $m=68\ \mathrm{kg}$, $g=9.8\ \mathrm{m}/\mathrm{s}^2$, $\omega=0.16\ \mathrm{rad}/\mathrm{s}$, and $r=42\ \mathrm{m}$:
+Summarize the known values before substituting:
+
+- $m=68\ \mathrm{kg}$
+- $g=9.8\ \mathrm{m}/\mathrm{s}^2$
+- $\omega=0.16\ \mathrm{rad}/\mathrm{s}$
+- $r=42\ \mathrm{m}$
+
+Now substitute:
 
 $$
 \begin{aligned}
@@ -155,7 +164,7 @@ content: |-
 options:
 - id: a
   content: |-
-    $310\ \mathrm{N}$
+    $400\ \mathrm{N}$
   correct: true
 - id: b
   content: |-
@@ -165,7 +174,7 @@ options:
     $580\ \mathrm{N}$
 - id: d
   content: |-
-    $800\ \mathrm{N}$
+    $90\ \mathrm{N}$
 ```
 
 ---
