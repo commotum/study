@@ -1,5 +1,10 @@
 # Recognizing Contact Loss on a Curved Surface
 
+<!--
+lesson-id: 212-M1-020
+topic-code: MTH212.M1.20
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -292,3 +297,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Choosing a Free-Body Diagram for an Icy Banked Curve](<../../2026-06-30-M1-4/Lessons/Problem-1.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

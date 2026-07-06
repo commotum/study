@@ -1,5 +1,10 @@
 # Deriving the Angle in a Conical Pendulum
 
+<!--
+lesson-id: 212-M1-028
+topic-code: MTH212.M1.28
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -341,3 +346,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](<Problem-11.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

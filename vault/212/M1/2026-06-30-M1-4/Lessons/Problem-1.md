@@ -1,5 +1,10 @@
 # Choosing a Free-Body Diagram for an Icy Banked Curve
 
+<!--
+lesson-id: 212-M1-021
+topic-code: MTH212.M1.21
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -228,3 +233,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Finding the Speed for a Frictionless Banked Curve](<Problem-4.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

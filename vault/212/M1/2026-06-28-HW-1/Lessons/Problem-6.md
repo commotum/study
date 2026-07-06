@@ -1,5 +1,10 @@
 # Recognizing Tangential Velocity in Circular Motion
 
+<!--
+lesson-id: 212-M1-006
+topic-code: MTH212.M1.06
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -220,3 +225,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Comparing Centripetal Acceleration with the Radius Vector](<Problem-7.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

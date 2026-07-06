@@ -1,5 +1,10 @@
 # Reading Net Force Arrows for Circular Motion
 
+<!--
+lesson-id: 212-M1-010
+topic-code: MTH212.M1.10
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -229,3 +234,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Finding the Net-Force Direction in Circular Motion](<../../2026-07-03-HW-2/Lessons/Problem-4.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

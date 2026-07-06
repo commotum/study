@@ -88,7 +88,6 @@ $$
 ```quiz
 type: radio
 id: ma-2033
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int2\cos ydy$?
 options:
@@ -107,6 +106,7 @@ options:
 - id: e
   content: |-
     $2\sin y + C$
+  correct: true
 ```
 
 ---
@@ -116,7 +116,6 @@ options:
 ```quiz
 type: radio
 id: ma-2034
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int - \sin θdθ$?
 options:
@@ -126,6 +125,7 @@ options:
 - id: b
   content: |-
     $\cos θ + C$
+  correct: true
 - id: c
   content: |-
     $\sin θ + C$
@@ -169,7 +169,6 @@ $$
 ```quiz
 type: radio
 id: ma-2044
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int - 3\sec θ\tan θdθ$?
 options:
@@ -182,6 +181,7 @@ options:
 - id: c
   content: |-
     $-3\sec θ + C$
+  correct: true
 - id: d
   content: |-
     $-3\csc θ + C$
@@ -197,7 +197,6 @@ options:
 ```quiz
 type: radio
 id: ma-2042
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int - 2\csc y\cot ydy$?
 options:
@@ -210,6 +209,7 @@ options:
 - id: c
   content: |-
     $2\csc y + C$
+  correct: true
 - id: d
   content: |-
     $-2\csc y + C$
@@ -252,13 +252,13 @@ $$
 ```quiz
 type: radio
 id: ma-49118
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\sec x(\tan x + 8\sec x)dx$?
 options:
 - id: a
   content: |-
     $\sec x + 8\tan x + C$
+  correct: true
 - id: b
   content: |-
     $-\sec x + 4\csc x + C$
@@ -280,7 +280,6 @@ options:
 ```quiz
 type: radio
 id: ma-2035
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int3\sec^{2} zdz$?
 options:
@@ -290,6 +289,7 @@ options:
 - id: b
   content: |-
     $3\tan z + C$
+  correct: true
 - id: c
   content: |-
     $3\sec z + C$
@@ -339,7 +339,6 @@ $$
 ```quiz
 type: radio
 id: ma-49093
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\csc x(\csc x - 2\cot x)dx$?
 options:
@@ -349,6 +348,7 @@ options:
 - id: b
   content: |-
     $-\cot x + 2\csc x + C$
+  correct: true
 - id: c
   content: |-
     $-\cot x + \csc x + C$
@@ -367,7 +367,6 @@ options:
 ```quiz
 type: radio
 id: ma-2037
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int2\csc^{2} θdθ$?
 options:
@@ -383,6 +382,7 @@ options:
 - id: d
   content: |-
     $-2\cot θ + C$
+  correct: true
 - id: e
   content: |-
     $-2\tan θ + C$

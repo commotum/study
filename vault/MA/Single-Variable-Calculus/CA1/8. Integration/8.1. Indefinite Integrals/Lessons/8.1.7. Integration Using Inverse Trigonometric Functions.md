@@ -75,7 +75,6 @@ $$
 ```quiz
 type: radio
 id: ma-19090
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{-5}{\sqrt{1 - x^{2}}}dx$?
 options:
@@ -88,6 +87,7 @@ options:
 - id: c
   content: |-
     $-5\arcsin x + C$
+  correct: true
 - id: d
   content: |-
     $5\arctan x + C$
@@ -103,7 +103,6 @@ options:
 ```quiz
 type: radio
 id: ma-2493
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{9}{\sqrt{1 - y^{2}}}dy$?
 options:
@@ -113,6 +112,7 @@ options:
 - id: b
   content: |-
     $9\arcsin y + C$
+  correct: true
 - id: c
   content: |-
     $-9\arcsin y + C$
@@ -155,7 +155,6 @@ $$
 ```quiz
 type: radio
 id: ma-2497
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{3}{x^{2} + 1}dx$?
 options:
@@ -168,6 +167,7 @@ options:
 - id: c
   content: |-
     $3\arctan x + C$
+  correct: true
 - id: d
   content: |-
     $-3\arctan x + C$
@@ -183,7 +183,6 @@ options:
 ```quiz
 type: radio
 id: ma-2498
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{4}{x^{2} + 1}dx$?
 options:
@@ -193,6 +192,7 @@ options:
 - id: b
   content: |-
     $4\arctan x + C$
+  correct: true
 - id: c
   content: |-
     $4arcsecx + C$
@@ -237,7 +237,6 @@ $$
 ```quiz
 type: radio
 id: ma-49077
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int(\frac{3}{\mid x \mid \sqrt{x^{2} - 1}} + 12)dx$?
 options:
@@ -253,6 +252,7 @@ options:
 - id: d
   content: |-
     $3arcsecx + 12x + C$
+  correct: true
 - id: e
   content: |-
     $3\arcsin x + 6x^{2} + C$
@@ -265,7 +265,6 @@ options:
 ```quiz
 type: radio
 id: ma-19100
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{11}{\mid x \mid \sqrt{x^{2} - 1}}dx$?
 options:
@@ -278,6 +277,7 @@ options:
 - id: c
   content: |-
     $11\arcsecx + C$
+  correct: true
 - id: d
   content: |-
     $\arcsec(11x) + C$
@@ -328,7 +328,6 @@ $$
 ```quiz
 type: radio
 id: ma-19102
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{3x^{2}}{x^{2} + 1}dx$?
 options:
@@ -338,6 +337,7 @@ options:
 - id: b
   content: |-
     $3x - 3\arctan x + C$
+  correct: true
 - id: c
   content: |-
     $3arctanx + C$
@@ -356,7 +356,6 @@ options:
 ```quiz
 type: radio
 id: ma-49149
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{x^{2} - 4}{x^{2} + 1}dx$?
 options:
@@ -375,6 +374,7 @@ options:
 - id: e
   content: |-
     $x - 5\arctan x + C$
+  correct: true
 ```
 
 ```update-progress

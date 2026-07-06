@@ -1,5 +1,10 @@
 # Ranking Radial Accelerations
 
+<!--
+lesson-id: 212-M1-003
+topic-code: MTH212.M1.03
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -293,3 +298,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Checking the Magnitude of Centripetal Acceleration](<../../2026-06-28-HW-1/Lessons/Problem-9.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

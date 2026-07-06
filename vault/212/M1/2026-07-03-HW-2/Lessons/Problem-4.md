@@ -1,5 +1,10 @@
 # Finding the Net-Force Direction in Circular Motion
 
+<!--
+lesson-id: 212-M1-011
+topic-code: MTH212.M1.11
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -195,3 +200,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Free-Body Diagrams for Level Circular Motion](<../../2026-06-30-M1-4/Lessons/Problem-2.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

@@ -1,5 +1,10 @@
 # Relating Tangential Speed to Angular Speed
 
+<!--
+lesson-id: 212-M1-001
+topic-code: MTH212.M1.01
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -353,3 +358,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Tangential Speed From Angular Velocity](<../../2026-06-29-M1-3/Lessons/Problem-2.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

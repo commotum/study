@@ -1,5 +1,10 @@
 # Choosing Friction Direction on a Banked Curve
 
+<!--
+lesson-id: 212-M1-023
+topic-code: MTH212.M1.23
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -220,3 +225,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Maximum Speed on a Frictional Banked Curve](<Problem-6.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

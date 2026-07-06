@@ -98,7 +98,6 @@ $$
 ```quiz
 type: radio
 id: ma-2204
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\displaystyle \int\sin (5z)dz$.
 options:
@@ -108,6 +107,7 @@ options:
 - id: b
   content: |-
     $-\frac{1}{5}\cos (5z) + C$
+  correct: true
 - id: c
   content: |-
     $5\cos (5z) + C$
@@ -126,7 +126,6 @@ options:
 ```quiz
 type: radio
 id: ma-13647
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{π/8}5\sin (4x)dx$?
 options:
@@ -145,6 +144,7 @@ options:
 - id: e
   content: |-
     $\frac{5}{4}$
+  correct: true
 ```
 
 ---
@@ -187,7 +187,6 @@ $$
 ```quiz
 type: radio
 id: ma-10143
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the integral $\displaystyle \int\sec (7x)\tan (7x)dx$.
 options:
@@ -206,6 +205,7 @@ options:
 - id: e
   content: |-
     $\frac{1}{7}\sec (7x) + C$
+  correct: true
 ```
 
 ---
@@ -215,7 +215,6 @@ options:
 ```quiz
 type: radio
 id: ma-10157
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate the integral $\displaystyle \int\csc (8x)\cot (8x)dx$.
 options:
@@ -234,6 +233,7 @@ options:
 - id: e
   content: |-
     $-\frac{1}{8}\csc (8x) + C$
+  correct: true
 ```
 
 ---
@@ -308,7 +308,6 @@ $$
 ```quiz
 type: radio
 id: ma-13461
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\intx\sin (x^{2})dx$.
 options:
@@ -321,6 +320,7 @@ options:
 - id: c
   content: |-
     $-\frac{1}{2}\cos (x^{2}) + C$
+  correct: true
 - id: d
   content: |-
     $\cos (x^{2}) + C$
@@ -336,7 +336,6 @@ options:
 ```quiz
 type: radio
 id: ma-13474
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int4x^{2}\sec^{2} (x^{3})dx$?
 options:
@@ -349,6 +348,7 @@ options:
 - id: c
   content: |-
     $\frac{4}{3}\tan (x^{3}) + C$
+  correct: true
 - id: d
   content: |-
     $\frac{4}{3}\sec (x^{3}) + C$
@@ -409,13 +409,13 @@ $$
 ```quiz
 type: radio
 id: ma-49557
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int\frac{2\cos y}{\sin y}dy$?
 options:
 - id: a
   content: |-
     $2\ln \mid \sin y \mid + C$
+  correct: true
 - id: b
   content: |-
     $\ln \mid \cos y \mid + C$
@@ -437,7 +437,6 @@ options:
 ```quiz
 type: radio
 id: ma-10046
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate the integral
   $\displaystyle \int_{0}^{π/4}\frac{\sec x\tan x}{1 + \sec x}dx$.
@@ -448,6 +447,7 @@ options:
 - id: b
   content: |-
     $\ln (1 + \sqrt{2}) - \ln 2$
+  correct: true
 - id: c
   content: |-
     $\ln (1 - \sqrt{2}) + \ln 2$

@@ -1,5 +1,10 @@
 # Comparing Normal Force and Weight at the Top of a Hill
 
+<!--
+lesson-id: 212-M1-019
+topic-code: MTH212.M1.19
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -307,3 +312,9 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 Next: [Recognizing Contact Loss on a Curved Surface](<../../2026-07-03-HW-2/Lessons/Problem-12.md>)
 
 <!-- study-guide-nav:end -->
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]

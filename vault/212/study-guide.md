@@ -2,6 +2,8 @@
 
 This is a compact exam path through the highest-overlap circular-motion lessons.
 
+Progress: [Home](<Home.md>) | [Table of Contents](<0. Table of Contents/TOC.md>)
+
 ## Overlap Clusters
 
 - Radial and tangential decomposition
