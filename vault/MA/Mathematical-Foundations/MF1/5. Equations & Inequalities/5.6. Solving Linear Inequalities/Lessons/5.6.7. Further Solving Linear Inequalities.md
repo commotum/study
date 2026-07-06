@@ -93,7 +93,6 @@ Our solution can be expressed using a number line, as shown below.
 ```quiz
 type: radio
 id: q-1
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $2g + 12 \le 10 - 7g$.
 options:
@@ -109,6 +108,7 @@ options:
 - id: d
   content: |-
     $g \le - \frac{2}{9}$
+  correct: true
 - id: e
   content: |-
     $g \ge \frac{2}{9}$
@@ -203,7 +203,6 @@ $$
 ```quiz
 type: radio
 id: q-3
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{7x - 5}{3} > 3$.
 options:
@@ -213,6 +212,7 @@ options:
 - id: b
   content: |-
     $x > 2$
+  correct: true
 - id: c
   content: |-
     $x > 3$
@@ -231,7 +231,6 @@ options:
 ```quiz
 type: radio
 id: q-4
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{7 - 3x}{2} > 2$.
 options:
@@ -241,6 +240,7 @@ options:
 - id: b
   content: |-
     $x < 1$
+  correct: true
 - id: c
   content: |-
     $x < - 1$
@@ -292,7 +292,6 @@ $$
 ```quiz
 type: radio
 id: q-5
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{1 - 6x}{3} \ge 2x$.
 options:
@@ -308,6 +307,7 @@ options:
 - id: d
   content: |-
     $x \le \frac{1}{12}$
+  correct: true
 - id: e
   content: |-
     $x \le - \frac{1}{12}$
@@ -320,7 +320,6 @@ options:
 ```quiz
 type: radio
 id: q-6
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $5y + 2 \le \frac{3y - 1}{2}$.
 options:
@@ -333,6 +332,7 @@ options:
 - id: c
   content: |-
     $y \le - \frac{5}{7}$
+  correct: true
 - id: d
   content: |-
     $y \le - \frac{7}{5}$
@@ -412,13 +412,13 @@ Therefore, the solution is $a < -1$.
 ```quiz
 type: radio
 id: q-7
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{4x + 7}{3} \ge \frac{5x}{2}$.
 options:
 - id: a
   content: |-
     $x \le 2$
+  correct: true
 - id: b
   content: |-
     $x \ge 2$
@@ -440,7 +440,6 @@ options:
 ```quiz
 type: radio
 id: q-8
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{x + 10}{4} > \frac{6 - 2x}{5}$.
 options:
@@ -456,6 +455,7 @@ options:
 - id: d
   content: |-
     $x > - 2$
+  correct: true
 - id: e
   content: |-
     $x > - 1$

@@ -1,0 +1,443 @@
+## Problem 1
+
+**Question 1**
+
+```quiz
+type: radio
+id: q-1
+content: |-
+  The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory at constant speed when viewed from above/below.
+  
+  The string makes an angle $\theta$ with the horizontal and the period of the circular motion is $T$ (constant).
+  
+  Is the bob undergoing uniform circular motion? Choose the correct answer with the best explanation.
+  
+  ![](<Source/WHW-2/Images/conical-pendulum-diagram.png>)
+options:
+- id: a
+  content: |-
+    Yes, because the bob moves in a circular path at a constant speed
+  correct: true
+- id: b
+  content: |-
+    Not necessarily because it depends on if the tension in the string is constant
+- id: c
+  content: |-
+    No, because even with a constant period, the bob experiences changing radial and tangential accelerations
+- id: d
+  content: |-
+    Yes, because the bob moves in a circular path with a constant period
+```
+
+---
+## Problem 2
+
+**Question 2**
+
+```quiz
+type: radio
+id: q-2
+content: |-
+  The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory when viewed from above/below.
+  
+  The string makes an angle $\theta$ with the horizontal and the period of the circular motion is $T$ (constant).
+  
+  What is the radius of the circular trajectory?
+  
+  ![](<Source/WHW-2/Images/conical-pendulum-diagram.png>)
+options:
+- id: a
+  content: |-
+    $L$
+- id: b
+  content: |-
+    $L\cos\theta$
+  correct: true
+- id: c
+  content: |-
+    $L\sin\theta$
+- id: d
+  content: |-
+    $L\tan\theta$
+```
+
+---
+## Problem 3
+
+**Question 3**
+
+```quiz
+type: radio
+id: q-3
+content: |-
+  The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory when viewed from above/below.
+  
+  The string makes an angle $\theta$ with the horizontal and the period of the circular motion is $T$ (constant).
+  
+  What is the magnitude of the object's centripetal force?
+  
+  ![](<Source/WHW-2/Images/conical-pendulum-diagram.png>)
+options:
+- id: a
+  content: |-
+    $\dfrac{4\pi^2mr}{T^2}$
+  correct: true
+- id: b
+  content: |-
+    $\dfrac{2\pi mr}{T^2}$
+- id: c
+  content: |-
+    $\dfrac{mr}{T^2}$
+- id: d
+  content: |-
+    $\dfrac{mr}{2\pi T^2}$
+- id: e
+  content: |-
+    $\dfrac{mr}{4\pi T^2}$
+```
+
+---
+## Problem 4
+
+**Question 4**
+
+```quiz
+type: radio
+id: q-4
+content: |-
+  The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory when viewed from above/below.
+  
+  The string makes an angle $\theta$ with the horizontal and the period of the circular motion is $T$ (constant).
+  
+  Given the side-view of the filled (not dashed) bob below in Figure 2, where does the net force on the bob point?
+  
+  ![](<Source/WHW-2/Images/conical-pendulum-diagram.png>)
+options:
+- id: a
+  content: |-
+    Directly to the left
+  correct: true
+- id: b
+  content: |-
+    Directly to the right
+- id: c
+  content: |-
+    Along the string, toward the ceiling
+- id: d
+  content: |-
+    Not listed
+```
+
+---
+## Problem 5
+
+**Question 5**
+
+```quiz
+type: radio
+id: q-5
+content: |-
+  The figures below show a bob of mass $m$ attached to a light string of length $L$ which undergoes uniform circular motion.
+  
+  The string makes an angle $\theta$ with the horizontal and the period of the circular motion is $T$.
+  
+  What is $\theta$ in terms of the other given variables? Remember that $g$ is always considered given unless otherwise stated.
+  
+  Hint: Make a free-body diagram of the filled bob in the side-view and write the $\sum F_r=ma_r$ and $\sum F_y=ma_y$ component equations for the radial and vertical directions. Simplify these as much as possible and use the resulting equations to solve for $\theta$.
+  
+  ![](<Source/WHW-2/Images/conical-pendulum-diagram.png>)
+options:
+- id: a
+  content: |-
+    $\arccos\left(\dfrac{gT^2}{2\pi L}\right)$
+- id: b
+  content: |-
+    $\arcsin\left(\dfrac{gT^2}{2\pi L}\right)$
+- id: c
+  content: |-
+    $\arctan\left(\dfrac{gT^2}{2\pi L}\right)$
+- id: d
+  content: |-
+    $\arccos\left(\dfrac{gT^2}{4\pi^2L}\right)$
+- id: e
+  content: |-
+    $\arcsin\left(\dfrac{gT^2}{4\pi^2L}\right)$
+  correct: true
+- id: f
+  content: |-
+    $\arctan\left(\dfrac{gT^2}{4\pi^2L}\right)$
+```
+
+---
+## Problem 6
+
+**Question 6**
+
+```quiz
+type: radio
+id: q-6
+content: |-
+  The figure below shows an F1 sports car of mass $m$ traversing a circular track banked at angle $\theta$ from the horizontal with constant speed $v$.
+  
+  The track has radius $r$ and there is friction between the tires and the track. Assume the friction points up the track in the side-view.
+  
+  If the $y$-axis points vertically upwards, which of the following gives the equation for the net force along the $y$ direction? Take $n$ to be the magnitude of the normal force on the car and $f$ the magnitude of the frictional force.
+  
+  ![](<Source/WHW-2/Images/banked-track-car-diagram.png>)
+options:
+- id: a
+  content: |-
+    $0=ma_y=\sum F_y=n\cos\theta+f\sin\theta-mg$
+  correct: true
+- id: b
+  content: |-
+    $0=ma_y=\sum F_y=n\sin\theta+f\cos\theta-mg$
+- id: c
+  content: |-
+    $0=ma_y=\sum F_y=n\cos\theta-f\sin\theta-mg$
+- id: d
+  content: |-
+    $0=ma_y=\sum F_y=n\sin\theta-f\cos\theta-mg$
+```
+
+---
+## Problem 7
+
+**Question 7**
+
+```quiz
+type: radio
+id: q-7
+content: |-
+  The figure below shows an F1 sports car of mass $m$ traversing a circular track banked at angle $\theta$ from the horizontal with constant speed $v$.
+  
+  The track has radius $r$ and there is friction between the tires and the track. Assume the friction points up the track in the side-view.
+  
+  Which of the following options is the correct equation for the component of the net force along the centripetal $c$ direction, pointing radially inward toward the circle's center?
+  
+  Take $n$ to be the magnitude of the normal force on the car and $f$ the magnitude of the frictional force.
+  
+  ![](<Source/WHW-2/Images/banked-track-car-diagram.png>)
+options:
+- id: a
+  content: |-
+    $\dfrac{mv^2}{r}=ma_c=\sum F_c=n\sin\theta+f\cos\theta$
+- id: b
+  content: |-
+    $\dfrac{mv^2}{r}=ma_c=\sum F_c=n\sin\theta-f\cos\theta$
+  correct: true
+- id: c
+  content: |-
+    $\dfrac{mv^2}{r}=ma_c=\sum F_c=n\cos\theta+f\sin\theta$
+- id: d
+  content: |-
+    $\dfrac{mv^2}{r}=ma_c=\sum F_c=n\cos\theta-f\sin\theta$
+```
+
+---
+## Problem 8
+
+**Question 8**
+
+```quiz
+type: radio
+id: q-8
+content: |-
+  The figure below shows an F1 sports car of mass $m$ traversing a circular track banked at angle $\theta$ from the horizontal with constant speed $v$.
+  
+  The track has radius $r$ and there is friction between the tires and the track. Assume the friction points up the track in the side-view.
+  
+  What is the magnitude of the static frictional force on the car?
+  
+  ![](<Source/WHW-2/Images/banked-track-car-diagram.png>)
+options:
+- id: a
+  content: |-
+    $mg+\dfrac{mv^2}{r}\cos\theta$
+- id: b
+  content: |-
+    $mg-\dfrac{mv^2}{r}\cos\theta$
+- id: c
+  content: |-
+    $mg\sin\theta+\dfrac{mv^2}{r}\cos\theta$
+- id: d
+  content: |-
+    $mg\sin\theta-\dfrac{mv^2}{r}\cos\theta$
+  correct: true
+```
+
+---
+## Problem 9
+
+**Question 9**
+
+```quiz
+type: checkbox
+id: q-9
+content: |-
+  The figure below shows an F1 sports car of mass $m$ traversing a circular track banked at angle $\theta$ from the horizontal with constant speed $v$. The track has radius $r$ and there is static friction between the tires and the track.
+  
+  Which of the following are true statements regarding this scenario?
+  
+  ![](<Source/WHW-2/Images/banked-track-car-diagram.png>)
+options:
+- id: a
+  content: |-
+    The direction of the static friction force acting on the car depends on $v$
+  correct: true
+- id: b
+  content: |-
+    The magnitude of the static friction force acting on the car depends on $v$
+  correct: true
+- id: c
+  content: |-
+    There is a maximum speed which the car can go, above which it cannot maintain the circular trajectory of radius $r$ and will slide along the ramp/incline
+  correct: true
+- id: d
+  content: |-
+    In the side view, the acceleration of the car points directly to the left
+  correct: true
+- id: e
+  content: |-
+    In the side view, the acceleration of the car points down the ramp/incline
+- id: f
+  content: |-
+    If $v=\sqrt{gr\tan\theta}$ then there will be no static friction on the car as it traverses the racetrack
+  correct: true
+```
+
+---
+## Problem 10
+
+**Question 10**
+
+```quiz
+type: checkbox
+id: q-10
+content: |-
+  Skateboarder Hony Tawk completes a circular loop-the-loop and never leaves contact with the loop. Neglect rolling friction.
+  
+  Which of the following statements are true regarding Hony's motion?
+  
+  ![](<Source/WHW-2/Images/loop-the-loop-diagram.png>)
+options:
+- id: a
+  content: |-
+    There exists a minimum speed which Hony needs to be going when entering the loop-the-loop in order to complete it
+  correct: true
+- id: b
+  content: |-
+    At the minimum speed, the normal force on Hony goes to zero at the top of the loop
+  correct: true
+- id: c
+  content: |-
+    Hony undergoes uniform circular motion while completing the loop-the-loop
+- id: d
+  content: |-
+    The centripetal force on Hony is constant while completing the loop-the-loop
+- id: e
+  content: |-
+    The mechanical energy, kinetic plus potential, of Hony is approximately conserved
+  correct: true
+```
+
+---
+## Problem 11
+
+**Question 11**
+
+```quiz
+type: radio
+id: q-11
+content: |-
+  Hony Tawk completes a circular loop-the-loop and never leaves contact with the loop of radius $r$.
+  
+  What is the minimum speed required for Hony Tawk to enter the loop-the-loop with in order to complete it? Ignore rolling friction.
+  
+  Hint: Make a free-body diagram for Hony when at the top of the loop-the-loop and consider your answers to the previous question.
+  
+  ![](<Source/WHW-2/Images/loop-the-loop-diagram.png>)
+options:
+- id: a
+  content: |-
+    $\sqrt{2gr}$
+- id: b
+  content: |-
+    $\sqrt{3gr}$
+- id: c
+  content: |-
+    $2\sqrt{gr}$
+- id: d
+  content: |-
+    $\sqrt{5gr}$
+  correct: true
+```
+
+---
+## Problem 12
+
+**Question 12**
+
+```quiz
+type: checkbox
+id: q-12
+content: |-
+  Starting from rest, a penguin lying on its belly slides down the right side of a spherical igloo of radius $r$.
+  
+  Neglecting friction, the penguin will slide off and, at some angle $\theta_c$ from the vertical, eventually lose contact with the igloo.
+  
+  Which of the following is true about the penguin the instant before losing contact with the igloo?
+  
+  ![](<Source/WHW-2/Images/igloo-slide-diagram.png>)
+options:
+- id: a
+  content: |-
+    The normal force on the penguin from the igloo is negligible/zero
+  correct: true
+- id: b
+  content: |-
+    The centripetal force on the penguin is negligible/zero
+- id: c
+  content: |-
+    The penguin's acceleration was directed tangentially to the igloo's surface
+- id: d
+  content: |-
+    Prior to this instant, the penguin had been undergoing uniform circular motion
+```
+
+---
+## Problem 13
+
+**Question 13**
+
+```quiz
+type: radio
+id: q-13
+content: |-
+  A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest.
+  
+  Neglecting friction, the penguin will slide off and, at some angle $\theta_c$ from the vertical, eventually lose contact with the igloo.
+  
+  To two significant figures, what is this critical angle $\theta_c$?
+  
+  Hint: First draw a free-body diagram for the penguin. Then use this to find the equation for the component of the net force along the radial direction and simplify as much as possible. Also notice that the mechanical energy of the penguin is conserved since friction is negligible.
+  
+  ![](<Source/WHW-2/Images/igloo-slide-diagram.png>)
+options:
+- id: a
+  content: |-
+    $39^\circ$
+- id: b
+  content: |-
+    $42^\circ$
+- id: c
+  content: |-
+    $44^\circ$
+- id: d
+  content: |-
+    $48^\circ$
+  correct: true
+- id: e
+  content: |-
+    $51^\circ$
+```
