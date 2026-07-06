@@ -76,6 +76,7 @@ So the angular acceleration is $3\ \mathrm{rad}/\mathrm{s}^2$. This example is s
 ```quiz
 type: radio
 id: q-p2-1
+shuffle: true
 content: |-
   A disk speeds up from $6\ \mathrm{rad}/\mathrm{s}$ to $18\ \mathrm{rad}/\mathrm{s}$ in $3\ \mathrm{s}$ with constant angular acceleration. What is the angular acceleration?
 options:
@@ -127,6 +128,7 @@ The negative sign tells you that the angular velocity is decreasing in the chose
 ```quiz
 type: radio
 id: q-p2-2
+shuffle: true
 content: |-
   A wheel slows from $14\ \mathrm{rad}/\mathrm{s}$ to $2\ \mathrm{rad}/\mathrm{s}$ in $4\ \mathrm{s}$ with constant angular acceleration. What is the signed angular acceleration?
 options:
@@ -192,6 +194,7 @@ $$
 ```quiz
 type: radio
 id: q-p2-3
+shuffle: true
 content: |-
   A disk is spinning at $15\ \mathrm{rad}/\mathrm{s}$ and comes to a stop in $30\ \mathrm{s}$ with constant angular acceleration. What is the magnitude of the angular acceleration?
 options:
@@ -248,6 +251,7 @@ $$
 ```quiz
 type: radio
 id: q-p2-4
+shuffle: true
 content: |-
   A disk spins at $14\ \mathrm{rad}/\mathrm{s}$ and comes to rest in $32\ \mathrm{s}$ with constant angular acceleration. What is the magnitude of the angular acceleration, rounded to two decimal places?
 options:

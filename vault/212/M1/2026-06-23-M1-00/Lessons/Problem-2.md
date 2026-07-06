@@ -71,6 +71,7 @@ The equation also has the solution $t=-2$, but the interval starts at $t=0$, so 
 ```quiz
 type: radio
 id: p2-q1
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=27-3t^2$. What is the positive time when it reverses direction?
 options:
@@ -123,6 +124,7 @@ This setup uses the whole velocity function. Do not use the initial angular velo
 ```quiz
 type: radio
 id: p2-q2
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=12-3t^2$ and starts at $t=0$. Which integral gives the angle it turns before reversing direction?
 options:
@@ -174,6 +176,7 @@ So the disk turns through $36$ radians over that interval.
 ```quiz
 type: radio
 id: p2-q3
+shuffle: true
 content: |-
   Evaluate $\displaystyle \int_0^2 (12-3t^2)\,dt$.
 options:
@@ -241,6 +244,7 @@ The units also match the requested answer: angular velocity has units $\mathrm{r
 ```quiz
 type: radio
 id: p2-q4
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=8-2t^2$ and starts at $t=0$. Through what angle does it turn before reversing direction?
 options:

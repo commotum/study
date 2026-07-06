@@ -43,6 +43,7 @@ Gravity points straight down. Unless the ball is exactly at the top or bottom of
 ```quiz
 type: radio
 id: q-p4-1
+shuffle: true
 content: |-
   A ball on a string moves in a vertical circle. The $r$-axis points inward along the string, and the $t$-axis is perpendicular to the string. Which statement correctly identifies the force that can create tangential acceleration?
 options:
@@ -92,6 +93,7 @@ Use this map before plugging in numbers:
 ```quiz
 type: radio
 id: q-p4-2
+shuffle: true
 content: |-
   A ball is in a vertical circle. The angle between the weight vector and the inward radial axis is $\theta$. What is the magnitude of the tangential component of the weight?
 options:
@@ -155,6 +157,7 @@ So the magnitude is about $3.4\ \mathrm{m}/\mathrm{s}^2$.
 ```quiz
 type: radio
 id: q-p4-3
+shuffle: true
 content: |-
   A ball is moving in a vertical circle. The angle between the weight vector and the inward radial axis is $20^\circ$. What is the magnitude of the tangential acceleration, rounded to two significant figures?
 options:
@@ -210,6 +213,7 @@ If a signed tangential axis is specified, the sign depends on whether gravity's 
 ```quiz
 type: radio
 id: q-p4-4
+shuffle: true
 content: |-
   A ball in a vertical circle has $m=0.75\ \mathrm{kg}$, $L=1.2\ \mathrm{m}$, $T=3.0\ \mathrm{N}$, and $\theta=10^\circ$. What is the magnitude of the tangential acceleration, rounded to two significant figures?
 options:

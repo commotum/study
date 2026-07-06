@@ -62,6 +62,7 @@ Only the force signs change from top to bottom, because "inward" points downward
 ```quiz
 type: radio
 id: normal-force-top-bottom-q1
+shuffle: true
 content: |-
   A rider is at the bottom of a Ferris wheel. Which direction is inward, toward the center of the circle?
 options:
@@ -116,6 +117,7 @@ Gravity already supplies part of the needed inward force, so the seat does not n
 ```quiz
 type: radio
 id: normal-force-top-bottom-q2
+shuffle: true
 content: |-
   At the top of a Ferris wheel, inward is downward. Which equation correctly describes the rider's radial force balance?
 options:
@@ -170,6 +172,7 @@ The seat must both overcome weight and provide the inward acceleration, so the b
 ```quiz
 type: radio
 id: normal-force-top-bottom-q3
+shuffle: true
 content: |-
   At the bottom of a Ferris wheel, which expression gives the normal force from the seat on the rider?
 options:
@@ -232,6 +235,7 @@ $$
 ```quiz
 type: radio
 id: normal-force-top-bottom-q4
+shuffle: true
 content: |-
   A person is riding on a Ferris wheel which is rotating at constant angular speed. How does the magnitude of the normal force of the Ferris wheel on the person at the top compare to the magnitude of the normal force of the wheel on the person at the bottom?
 options:

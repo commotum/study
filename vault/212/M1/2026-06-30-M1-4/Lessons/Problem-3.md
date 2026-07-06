@@ -65,6 +65,7 @@ The only horizontal force available is static friction. Static friction points t
 ```quiz
 type: radio
 id: p3-q1
+shuffle: true
 content: |-
   A car travels around a level circular curve without sliding. Which force supplies the inward, centripetal force?
 options:
@@ -117,6 +118,7 @@ $$
 ```quiz
 type: radio
 id: p3-q2
+shuffle: true
 content: |-
   A car is going around a level circular curve as fast as it can without sliding. Which equation correctly connects static friction to the required inward force?
 options:
@@ -170,6 +172,7 @@ This assumes $m$, $r$, and $g$ are not zero, which is true for this physical sit
 ```quiz
 type: radio
 id: p3-q3
+shuffle: true
 content: |-
   A $1500\ \mathrm{kg}$ car goes around a level curve of radius $30\ \mathrm{m}$ at $12\ \mathrm{m}/\mathrm{s}$ at the limiting speed before sliding. Which expression gives $\mu_s$?
 options:
@@ -225,6 +228,7 @@ $$
 ```quiz
 type: radio
 id: p3-q4
+shuffle: true
 content: |-
   A car goes around a level circular curve of radius $75\ \mathrm{m}$ at $18\ \mathrm{m}/\mathrm{s}$ at the limiting speed before sliding. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, what coefficient of static friction is required, rounded to two decimal places?
 options:
@@ -276,6 +280,7 @@ So a coefficient of static friction should be a plain number, not a number with 
 ```quiz
 type: radio
 id: p3-q5
+shuffle: true
 content: |-
   A $1000\ \mathrm{kg}$ car and a $2000\ \mathrm{kg}$ car both take the same level curve at the same limiting speed. Which statement is correct?
 options:

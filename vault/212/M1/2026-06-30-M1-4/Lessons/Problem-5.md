@@ -52,6 +52,7 @@ So at exactly speed $v$, static friction would not be needed. If friction is ava
 ```quiz
 type: radio
 id: p5-no-friction-speed
+shuffle: true
 content: |-
   A car takes a banked curve at the no-friction speed $v$. The road now has static friction, but the car still travels at speed $v$. What is the direction of the static friction force?
 options:
@@ -95,6 +96,7 @@ Static friction opposes that possible slipping. Therefore, friction points down 
 ```quiz
 type: radio
 id: p5-too-fast
+shuffle: true
 content: |-
   A car safely takes an icy banked curve at speed $v$. On the same curve, the road is dry and the car travels faster than $v$. Which statement correctly gives the static friction direction?
 options:
@@ -138,6 +140,7 @@ Static friction opposes that possible slipping. Therefore, friction points up th
 ```quiz
 type: radio
 id: p5-too-slow
+shuffle: true
 content: |-
   A car safely takes an icy banked curve at speed $v$. On the same curve, the road is dry and the car travels slower than $v$. What is the direction of static friction?
 options:
@@ -177,6 +180,7 @@ The direction is not forward or backward along the path. In this question, stati
 ```quiz
 type: radio
 id: p5-original-check
+shuffle: true
 content: |-
   A car safely navigates an icy banked curve at speed $v$. Now consider that the ice has melted and there is static friction between the tires and road. What is the direction of the friction force if the car is going faster than $v$?
 

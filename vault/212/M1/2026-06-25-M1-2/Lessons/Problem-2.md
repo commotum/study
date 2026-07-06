@@ -49,6 +49,7 @@ The rotating disks create the same kind of comparison. The rotation controls the
 ```quiz
 type: radio
 id: q-hold-fixed
+shuffle: true
 content: |-
   In the rotating-disk setup, suppose $T$ and $\theta$ are held fixed while $D$ increases. What should you treat as unchanged when deciding where $D$ belongs in the formula for $v$?
 options:
@@ -95,6 +96,7 @@ $$
 ```quiz
 type: radio
 id: q-distance-position
+shuffle: true
 content: |-
   A cart must travel a track length $L$ in the same fixed time no matter which track is used. If the formula gives the required speed $v$, where should $L$ appear?
 options:
@@ -141,6 +143,7 @@ That requires a larger speed, so $D$ is a numerator factor.
 ```quiz
 type: radio
 id: q-common-trap
+shuffle: true
 content: |-
   Which explanation correctly avoids the common trap when deciding where $D$ belongs?
 options:
@@ -199,6 +202,7 @@ The full formula agrees with the reasoning: $D$ is in the numerator.
 ```quiz
 type: radio
 id: q-original-form
+shuffle: true
 content: |-
   A bullet passes through two holes in rotating disks a distance $D$ apart. The period $T$ and angular separation $\theta$ are fixed. In the formula for the bullet speed $v$, where should $D$ appear?
 options:

@@ -85,6 +85,7 @@ $$
 ```quiz
 type: radio
 id: angle-reversal-time
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=12-0.75t^2$. Starting from $t_0=0$, when does it first reverse direction?
 options:
@@ -158,6 +159,7 @@ The disk turns through $32\ \mathrm{rad}$ before reversing.
 ```quiz
 type: radio
 id: angle-integrate-velocity
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=15-0.60t^2$. It reverses at $t=5\ \mathrm{s}$. How far does it turn from $t=0$ to $t=5$?
 options:
@@ -219,6 +221,7 @@ If you integrate from $-3$ to $3$, you are using a time interval that starts bef
 ```quiz
 type: radio
 id: angle-correct-bounds
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=25-t^2$. Starting from $t_0=0$, which setup gives the angle turned before the disk first reverses?
 options:
@@ -316,6 +319,7 @@ $$
 ```quiz
 type: radio
 id: angle-target-match
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=24-1.5t^2$. Through what angle does it turn from $t_0=0$ until it first reverses?
 options:

@@ -57,6 +57,7 @@ That equation finds the time when the disk momentarily stops before rotating the
 ```quiz
 type: radio
 id: p1-q1
+shuffle: true
 content: |-
   A disk has angular velocity $\omega(t)=20-5t^2$. Which equation should you solve to find when it reverses direction?
 options:
@@ -108,6 +109,7 @@ $$
 ```quiz
 type: radio
 id: p1-q2
+shuffle: true
 content: |-
   Solve $0=45-5t^2$ until $t^2$ is isolated. What is $t^2$?
 options:
@@ -153,6 +155,7 @@ $$
 ```quiz
 type: radio
 id: p1-q3
+shuffle: true
 content: |-
   A reversal-time equation gives $t^2=25$. The motion starts at $t_0=0$. Which time should be reported?
 options:
@@ -224,6 +227,7 @@ The disk reverses direction at $6$ seconds.
 ```quiz
 type: radio
 id: p1-q4
+shuffle: true
 content: |-
   The angular velocity of a spinning disk is $\omega(t)=A-Bt^2$, with $A=32\ \mathrm{rad}/\mathrm{s}$ and $B=2.0\ \mathrm{rad}/\mathrm{s}^3$. Starting from $t_0=0$, at what time does the disk reverse direction?
 options:

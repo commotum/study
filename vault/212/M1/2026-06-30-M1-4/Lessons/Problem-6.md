@@ -56,6 +56,7 @@ That direction is the sign decision that controls the whole formula. For the max
 ```quiz
 type: radio
 id: p6-friction-direction
+shuffle: true
 content: |-
   A car is on a banked curve and is moving faster than the no-friction design speed. Which direction does static friction point?
 options:
@@ -112,6 +113,7 @@ $$
 ```quiz
 type: radio
 id: p6-force-equations
+shuffle: true
 content: |-
   For the maximum-speed case on a banked curve, which pair of equations uses the correct friction direction?
 options:
@@ -169,6 +171,7 @@ $$
 ```quiz
 type: radio
 id: p6-speed-formula
+shuffle: true
 content: |-
   Which formula gives the maximum speed for a frictional banked curve when friction points down the bank?
 options:
@@ -238,6 +241,7 @@ $$
 ```quiz
 type: radio
 id: p6-numeric-evaluation
+shuffle: true
 content: |-
   A car goes around a banked curve with $r=60\ \mathrm{m}$, $\theta=10^\circ$, and $\mu_s=0.50$. Use
   $$

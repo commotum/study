@@ -56,6 +56,7 @@ This is the first placement cue: $T$ is in the denominator of angular speed beca
 ```quiz
 type: radio
 id: p3-q1
+shuffle: true
 content: |-
   A wheel completes one revolution in $0.50\ \mathrm{s}$. Which expression represents its angular speed?
 options:
@@ -104,6 +105,7 @@ The bullet's travel time is proportional to $T$. A slower rotation gives the bul
 ```quiz
 type: radio
 id: p3-q2
+shuffle: true
 content: |-
   A disk has period $T$ and must rotate through angle $\phi$ before the next hole lines up. Which expression gives that rotation time?
 options:
@@ -152,6 +154,7 @@ Therefore, $T$ belongs in the denominator of the bullet-speed formula. The perio
 ```quiz
 type: radio
 id: p3-q3
+shuffle: true
 content: |-
   A bullet crosses two rotating disks separated by distance $L$. The holes are separated by angle $\alpha$, and the shaft period is $P$. In the formula for the bullet speed, where should $P$ appear?
 options:
@@ -187,6 +190,7 @@ So Setup A requires the faster bullet. This direction check agrees with $T$ bein
 ```quiz
 type: radio
 id: p3-q4
+shuffle: true
 content: |-
   In the same rotating-disk setup, suppose only the period changes from $T$ to $3T$. What should happen to the required bullet speed?
 options:

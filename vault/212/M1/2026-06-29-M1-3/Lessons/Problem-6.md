@@ -73,6 +73,7 @@ The weight $mg$ itself is not the centripetal force; it is used only to find the
 ```quiz
 type: radio
 id: q6-1
+shuffle: true
 content: |-
   A coin rides on a horizontal turntable at radius $0.50\ \mathrm{m}$ with coefficient of static friction $\mu_s=0.30$. Which equation matches the instant when the coin is just about to slip?
 options:
@@ -138,6 +139,7 @@ This result assumes $r>0$. It also shows why the object's mass does not belong i
 ```quiz
 type: radio
 id: q6-2
+shuffle: true
 content: |-
   A $0.12\ \mathrm{kg}$ object is on a horizontal turntable at radius $0.40\ \mathrm{m}$ with $\mu_s=0.25$. Which expression gives the threshold angular speed?
 options:
@@ -203,6 +205,7 @@ Taking the square root gives $1/\mathrm{s}$, which is the same unit size as $\ma
 ```quiz
 type: radio
 id: q6-3
+shuffle: true
 content: |-
   A small object rests on a horizontal turntable at radius $0.80\ \mathrm{m}$. If $\mu_s=0.20$, what is the threshold angular speed?
 options:
@@ -260,6 +263,7 @@ $$
 ```quiz
 type: radio
 id: q6-4
+shuffle: true
 content: |-
   A $1.3\ \mathrm{g}$ coin on a turntable at radius $0.35\ \mathrm{m}$ has maximum static friction coefficient $\mu_s=0.18$ between the coin and the surface.
 

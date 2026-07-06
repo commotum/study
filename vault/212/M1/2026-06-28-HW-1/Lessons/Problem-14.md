@@ -66,6 +66,7 @@ So the velocity graph should be below the time axis first, then above the time a
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   A graph of $\theta(t)$ is increasing on an interval. What must be true about $\dfrac{d\theta}{dt}$ on that interval?
 options:
@@ -112,6 +113,7 @@ Those are the times where the velocity graph should be on the horizontal axis.
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   A smooth graph of $\theta(t)$ reaches a local maximum at $t=3$. What value should $\dfrac{d\theta}{dt}$ have at $t=3$?
 options:
@@ -157,6 +159,7 @@ So the velocity graph should go below, above, below, above the time axis.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   A graph of $\theta(t)$ increases, then decreases, then increases. Which sign pattern should $\dfrac{d\theta}{dt}$ have?
 options:
@@ -195,6 +198,7 @@ Use this after checking the sign pattern and the zeroes. Sign and zeroes usually
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   On one interval, $\theta(t)$ is increasing very steeply. On another interval, it is increasing only gently. Where should $\dfrac{d\theta}{dt}$ be larger?
 options:
@@ -246,6 +250,7 @@ Option A starts negative, crosses $0$ at the turning points, becomes negative be
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   The plot below shows the $z$-component of the angular position of an object over a $5$ second time interval. Select the option which shows the $z$-component of the object's corresponding angular velocity over that same interval.
 

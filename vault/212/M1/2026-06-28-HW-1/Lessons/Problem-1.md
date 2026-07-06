@@ -93,6 +93,7 @@ $$
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   Which product correctly sets up the conversion of $30$ revolutions per minute into radians per second?
 options:
@@ -114,6 +115,7 @@ options:
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   Which conversion factor should be used to change the denominator from minutes to seconds in a rate measured in $\mathrm{rev}/\mathrm{min}$?
 options:
@@ -168,6 +170,7 @@ So the setup has the correct final units.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   After simplifying the units in
   $75\ \dfrac{\mathrm{rev}}{\mathrm{min}}\cdot\dfrac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}\cdot\dfrac{1\ \mathrm{min}}{60\ \mathrm{s}},$
@@ -224,6 +227,7 @@ $$
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   What is $90$ revolutions per minute in radians per second?
 options:
@@ -245,6 +249,7 @@ options:
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   What is $45$ revolutions per minute in radians per second?
 options:
@@ -297,6 +302,7 @@ The common trap is stopping at $360\pi$. That number has the wrong time unit.
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   A wheel spins at $150$ revolutions per minute. What is its angular speed in radians per second?
 options:
@@ -359,6 +365,7 @@ $$
 ```quiz
 type: radio
 id: q-7
+shuffle: true
 content: |-
   A wheel spins with an angular speed of $120$ revolutions per minute.
 

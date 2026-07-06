@@ -65,6 +65,7 @@ $$
 ```quiz
 type: radio
 id: p3-q1
+shuffle: true
 content: |-
   A bob moves in a circle of radius $r$ with period $T$. Which expression gives its speed?
 options:
@@ -128,6 +129,7 @@ $$
 ```quiz
 type: radio
 id: p3-q2
+shuffle: true
 content: |-
   A mass $M$ moves in a circle of radius $R$ with period $P$. Which expression gives the centripetal force magnitude?
 options:
@@ -177,6 +179,7 @@ So the matching answer is the one with $4\pi^2$, one factor of $r$, and $T^2$ in
 ```quiz
 type: radio
 id: p3-q3
+shuffle: true
 content: |-
   The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory when viewed from above/below.
 
@@ -231,6 +234,7 @@ This check confirms that $T$ must be squared in the denominator. A longer period
 ```quiz
 type: radio
 id: p3-q4
+shuffle: true
 content: |-
   Two objects have the same mass and circular-path radius. If the second object's period is $3$ times as large as the first object's period, what happens to the centripetal force magnitude?
 options:

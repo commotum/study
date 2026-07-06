@@ -59,6 +59,7 @@ The plus sign is important because the normal force points upward as well as sid
 ```quiz
 type: radio
 id: p6-q1-normal-component
+shuffle: true
 content: |-
   A car is on a track banked at angle $\theta$. The normal force has magnitude $n$ and points perpendicular to the track. Which expression gives the vertical component of the normal force?
 options:
@@ -103,6 +104,7 @@ $$
 ```quiz
 type: radio
 id: p6-q2-friction-component
+shuffle: true
 content: |-
   A friction force of magnitude $f$ points up a track banked at angle $\theta$ above the horizontal. Which expression gives the vertical component of friction?
 options:
@@ -157,6 +159,7 @@ $$
 ```quiz
 type: radio
 id: p6-q3-vertical-equation
+shuffle: true
 content: |-
   A car on a banked track has upward vertical force components $n\cos\theta$ and $f\sin\theta$, and weight $mg$ downward. If $a_y=0$, which equation matches the vertical direction?
 options:
@@ -213,6 +216,7 @@ $$
 ```quiz
 type: radio
 id: p6-q4-common-trap
+shuffle: true
 content: |-
   Which mistake produces the expression $n\sin\theta+f\cos\theta-mg$ for the vertical net force on this banked-track car?
 options:

@@ -54,6 +54,7 @@ If the speed is changing, the full net force is not usually straight inward. It 
 ```quiz
 type: radio
 id: q-radial-left
+shuffle: true
 content: |-
   A particle is at the top of a circle. Which direction is the inward radial part of the net force?
 options:
@@ -90,6 +91,7 @@ Check the tangent before deciding whether the force points with it or against it
 ```quiz
 type: radio
 id: q-tangent-left-clockwise
+shuffle: true
 content: |-
   A particle is at the right side of a circle and is moving clockwise. Which way does its velocity point?
 options:
@@ -124,6 +126,7 @@ So the tangential part points down. The full net force still needs an inward par
 ```quiz
 type: radio
 id: q-slowing-left-clockwise
+shuffle: true
 content: |-
   A particle is at the left side of a circle, moving counterclockwise, and slowing down. Which way should the tangential part of the net force point?
 options:
@@ -145,6 +148,7 @@ options:
 ```quiz
 type: radio
 id: q-speeding-left-clockwise
+shuffle: true
 content: |-
   A particle is at the left side of a circle, moving clockwise, and speeding up. Which way should the tangential part of the net force point?
 options:

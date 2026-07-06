@@ -66,6 +66,7 @@ The revolution units cancel, leaving radians.
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   Convert \(6\) revolutions to radians.
 options:
@@ -110,6 +111,7 @@ So a rate of \(5\) revolutions per second is an angular frequency of \(10\pi\tex
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   A disk spins at \(9\) revolutions per second. What is its angular frequency?
 options:
@@ -159,6 +161,7 @@ $$
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   A fan spins at \(11\) revolutions per second. What is its angular frequency in radians per second, rounded to \(2\) significant figures?
 options:
@@ -196,6 +199,7 @@ $$
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   A motor spins at \(3\) revolutions per second. Which value is its angular frequency?
 options:

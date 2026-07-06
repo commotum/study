@@ -87,6 +87,7 @@ $$
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   If $v(t)=At+v_0$ and $v(t)$ has units $\mathrm{m}/\mathrm{s}$, what are the units of $A$?
 options:
@@ -111,6 +112,7 @@ options:
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   If $x(t)=Pt+x_0$ and $x(t)$ has units $\mathrm{m}$, what are the units of $P$?
 options:
@@ -174,6 +176,7 @@ $$
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   If $\theta(t)=Et^2+\theta_0$ and $\theta(t)$ has units $\mathrm{rad}$, what are the units of $E$?
 options:
@@ -198,6 +201,7 @@ options:
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   If $\omega_z(t)=Gt^4+\omega_0$ and $\omega_z(t)$ has units $\mathrm{rad}/\mathrm{s}$, what are the units of $G$?
 options:
@@ -273,6 +277,7 @@ $$
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   In $\alpha_z(t)=Bt^2+C$, which unit belongs to $C$?
 options:
@@ -297,6 +302,7 @@ options:
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   In $\alpha_z(t)=Bt^2+C$, why is $B$ not measured in $\mathrm{rad}/\mathrm{s}^2$?
 options:
@@ -344,6 +350,7 @@ $$
 ```quiz
 type: radio
 id: q-7
+shuffle: true
 content: |-
   If $\alpha(t)=Ht+\alpha_0$ and $\alpha(t)$ has units $\mathrm{rad}/\mathrm{s}^2$, what are the units of $H$?
 options:
@@ -368,6 +375,7 @@ options:
 ```quiz
 type: radio
 id: q-8
+shuffle: true
 content: |-
   If $\alpha_z(t)=Et^4+F$ and $\alpha_z(t)$ has units $\mathrm{rad}/\mathrm{s}^2$, what are the units of $E$?
 options:

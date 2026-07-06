@@ -49,6 +49,7 @@ Use a vertical $y$-axis and an inward radial $r$-axis. Do not draw a separate "c
 ```quiz
 type: radio
 id: q-p5-1
+shuffle: true
 content: |-
   A bead slides without friction around the inside of a cone at constant height. Which force list belongs on the bead's free-body diagram?
 options:
@@ -103,6 +104,7 @@ $$
 ```quiz
 type: radio
 id: q-p5-2
+shuffle: true
 content: |-
   If $\theta$ is measured between $N$ and the inward radial axis, which pair of force equations is correct?
 options:
@@ -161,6 +163,7 @@ This division is useful because the unknown normal force and the mass both cance
 ```quiz
 type: radio
 id: q-p5-3
+shuffle: true
 content: |-
   Given $N\sin\theta = mg$ and $N\cos\theta = \dfrac{mv^2}{r}$, what equation do you get after dividing the first equation by the second?
 options:
@@ -219,6 +222,7 @@ Since $v$ is a speed, use the positive square root. The mass cancels because bot
 ```quiz
 type: radio
 id: q-p5-4
+shuffle: true
 content: |-
   For the same cone setup, $\tan\theta = \dfrac{r}{h}$ and $\tan\theta = \dfrac{gr}{v^2}$. What is $v$?
 options:
@@ -268,6 +272,7 @@ So the two symbolic ways to decrease the orbital period are to decrease $r$ or i
 ```quiz
 type: radio
 id: q-p5-5
+shuffle: true
 content: |-
   For $T = \dfrac{2\pi r}{\sqrt{gh}}$, which pair of changes would both decrease the orbital period?
 options:

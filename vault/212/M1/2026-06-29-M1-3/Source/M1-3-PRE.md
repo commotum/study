@@ -5,6 +5,7 @@
 ```quiz
 type: radio
 id: m1-3pre-q1
+shuffle: true
 content: |-
   ![](<Images/ferris-wheel-top-bottom-normal-force.png>)
 

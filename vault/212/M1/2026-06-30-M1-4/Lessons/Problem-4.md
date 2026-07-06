@@ -61,6 +61,7 @@ Gravity has no inward component; it points straight down.
 ```quiz
 type: radio
 id: p4-q1-normal-components
+shuffle: true
 content: |-
   A frictionless road is banked at angle $\theta$ from the horizontal. The normal force has magnitude $N$ and leans inward. Which pair of components is correct?
 options:
@@ -137,6 +138,7 @@ The mass cancels because a heavier car has proportionally more weight and propor
 ```quiz
 type: radio
 id: p4-q2-formula
+shuffle: true
 content: |-
   A car moves on a frictionless banked curve of radius $r$ and bank angle $\theta$. Which formula gives the speed that requires no friction?
 options:
@@ -206,6 +208,7 @@ $$
 ```quiz
 type: radio
 id: p4-q3-numeric-speed
+shuffle: true
 content: |-
   A frictionless banked curve has radius $50\ \mathrm{m}$ and bank angle $10.0^\circ$. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, what is the no-friction speed?
 options:
@@ -279,6 +282,7 @@ $$
 ```quiz
 type: radio
 id: p4-q4-original
+shuffle: true
 content: |-
   An icy, no-friction banked curve has radius $48\ \mathrm{m}$ and bank angle $6.2^\circ$. Which speed is closest to the no-friction speed?
 options:

@@ -55,6 +55,7 @@ So the force list is $mg$ and $N$ only.
 ```quiz
 type: radio
 id: q-p1-force-list
+shuffle: true
 content: |-
   A car travels around an icy banked curve with no friction. Which list contains all the forces that should appear in the car's free-body diagram?
 options:
@@ -96,6 +97,7 @@ The normal force does not point left just because the center is left. It points 
 ```quiz
 type: radio
 id: q-p1-arrow-directions
+shuffle: true
 content: |-
   A car is on an icy banked road that slopes upward to the right. The center of the circular path is to the left. Which force directions are correct?
 options:
@@ -135,6 +137,7 @@ The same test rejects a friction arrow. Since the road is icy, friction is absen
 ```quiz
 type: radio
 id: q-p1-extra-arrow
+shuffle: true
 content: |-
   A free-body diagram for an icy banked curve includes $mg$ downward, $N$ perpendicular to the road, and a friction arrow down the slope. What is wrong?
 options:

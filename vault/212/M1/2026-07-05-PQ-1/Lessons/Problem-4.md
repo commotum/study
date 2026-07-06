@@ -84,6 +84,7 @@ A consistent free-body diagram has $N$ and $mg$ with equal vertical lengths, and
 ```quiz
 type: radio
 id: p4-fbd-forces
+shuffle: true
 content: |-
   A coin rides without slipping on a horizontal turntable. Which force list and direction choice matches the free-body diagram?
 options:
@@ -152,6 +153,7 @@ $$
 ```quiz
 type: radio
 id: p4-threshold-equation
+shuffle: true
 content: |-
   A coin is just about to slip on a horizontal turntable. Which threshold equation correctly connects static friction to circular motion?
 options:
@@ -181,6 +183,7 @@ options:
 ```quiz
 type: radio
 id: p4-friction-limit
+shuffle: true
 content: |-
   Before a coin slips, which statement best describes the relationship between the required radial force and static friction?
 options:
@@ -249,6 +252,7 @@ $$
 ```quiz
 type: radio
 id: p4-period-expression
+shuffle: true
 content: |-
   A coin at radius $r$ is at the slipping threshold on a horizontal turntable. If $v=\sqrt{\mu_s g r}$ and $v=2\pi r/T$, what is the threshold period?
 options:
@@ -335,6 +339,7 @@ $$
 ```quiz
 type: radio
 id: p4-minimum-period
+shuffle: true
 content: |-
   For a coin not to slip on a turntable, which statement correctly describes the allowed periods?
 options:

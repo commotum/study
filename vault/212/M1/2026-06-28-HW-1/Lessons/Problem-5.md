@@ -75,6 +75,7 @@ $$
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   Suppose $\alpha_z(t)=9t^2+5$ and $\omega_z(0)=\omega_0$. What is $\omega_z(t)$?
 options:
@@ -139,6 +140,7 @@ $$
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   Suppose $\omega_z(t)=3t^3+5t+\omega_0$ and $\theta_z(0)=\theta_0$. What is $\theta_z(t)$?
 options:
@@ -209,6 +211,7 @@ $$
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   Suppose $\alpha_z(t)=Dt+C$, with $\omega_z(0)=\omega_0$ and $\theta_z(0)=\theta_0$. What is $\theta_z(t)$?
 options:
@@ -281,6 +284,7 @@ $$
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   If $\alpha_z(t)=Pt^2+Q$, which expression gives the part of $\theta_z(t)$ that comes from $Pt^2+Q$, before adding initial-condition terms?
 options:
@@ -349,6 +353,7 @@ At $t=0$, the derivative gives $\omega_z(0)=\omega_0$, and the position formula 
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   The $z$-component of the angular acceleration of an object moving along a circular trajectory has $\alpha_z(t)=Bt^2+C$, where $B$ and $C$ are constants of the appropriate dimension.
 

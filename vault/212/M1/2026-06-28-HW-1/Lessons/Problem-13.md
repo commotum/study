@@ -66,6 +66,7 @@ $$
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   An object moves around a circle and is speeding up. Which description gives the two direction parts of its acceleration?
 options:
@@ -102,6 +103,7 @@ If the object were slowing down, the tangential part would point opposite the ve
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   At the left side of a circular path, an object is moving clockwise and speeding up. Which way does the tangential part of its acceleration point?
 options:
@@ -140,6 +142,7 @@ The total acceleration is the resultant of the down component and the left compo
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   At the right side of a circular path, an object is moving counterclockwise and speeding up. Which general direction should its total acceleration point?
 options:

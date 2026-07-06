@@ -5,6 +5,7 @@
 ```quiz
 type: radio
 id: m1-2asy-q1
+shuffle: true
 content: |-
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
@@ -32,6 +33,7 @@ options:
 ```quiz
 type: radio
 id: m1-2asy-q2
+shuffle: true
 content: |-
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
@@ -59,6 +61,7 @@ options:
 ```quiz
 type: radio
 id: m1-2asy-q3
+shuffle: true
 content: |-
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 

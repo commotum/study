@@ -72,6 +72,7 @@ So in non-uniform circular motion, the net acceleration is not purely tangential
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   In non-uniform circular motion, which statement correctly separates the possible directions of $\vec{a}$?
 options:
@@ -143,6 +144,7 @@ When $\omega\ne 0$ and $|\vec{r}|\ne 0$, this is not $0$. Therefore $\vec{a}$ is
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   If $\vec{a}=-\omega^2\vec{r}+\vec{a}_{\text{tangential}}$ and $\vec{a}_{\text{tangential}}\perp \vec{r}$, what does $\vec{a}\cdot\vec{r}$ equal?
 options:
@@ -195,6 +197,7 @@ A sum with a nonzero radial component is not perpendicular to $\vec{r}$, even if
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   In non-uniform circular motion, why is it wrong to conclude that $\vec{a}\perp\vec{r}$ just because the speed is changing?
 options:
@@ -216,6 +219,7 @@ options:
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   Which conclusion follows from knowing only that the tangential part of acceleration is perpendicular to $\vec{r}$?
 options:
@@ -264,6 +268,7 @@ That statement is about velocity, not acceleration.
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   Consider an object undergoing non-uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity of the object, $\omega$ the angular speed of the object, and $\vec{a}$ its acceleration.
 
@@ -281,6 +286,7 @@ options:
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   Which statement gives the best reason that $\vec{a}$ is not perpendicular to $\vec{r}$ in non-uniform circular motion?
 options:

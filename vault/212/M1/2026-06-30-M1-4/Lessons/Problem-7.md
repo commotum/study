@@ -64,6 +64,7 @@ So the free-body diagram should contain exactly two arrows. Adding a separate "c
 ```quiz
 type: radio
 id: p7-real-forces
+shuffle: true
 content: |-
   A small ball moves in a horizontal circle at the end of a string. Ignore air resistance. Which list gives the real forces acting on the ball?
 options:
@@ -102,6 +103,7 @@ The tension arrow should not point horizontally unless the string itself is hori
 ```quiz
 type: radio
 id: p7-force-directions
+shuffle: true
 content: |-
   A mass hangs from a string that slants upward to the left toward the support while the mass moves in a horizontal circle. Which statement gives the correct force directions on the mass?
 options:
@@ -148,6 +150,7 @@ This check explains why the diagram can have only two force arrows while the mot
 ```quiz
 type: radio
 id: p7-centripetal-check
+shuffle: true
 content: |-
   In a conical pendulum, what supplies the inward net force needed for circular motion?
 options:

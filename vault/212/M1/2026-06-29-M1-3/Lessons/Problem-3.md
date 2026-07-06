@@ -53,6 +53,7 @@ At the bottom, the center is above the rider, so inward points upward. The force
 ```quiz
 type: radio
 id: p3-q1-inward-directions
+shuffle: true
 content: |-
   A rider is at the bottom of a Ferris wheel. Which direction is inward for the radial force equation?
 options:
@@ -102,6 +103,7 @@ The right-hand side is positive in both equations because it is the required inw
 ```quiz
 type: radio
 id: p3-q2-radial-equations
+shuffle: true
 content: |-
   Which pair of equations correctly represents the rider at the top and bottom of a Ferris wheel?
 options:
@@ -170,6 +172,7 @@ $$
 ```quiz
 type: radio
 id: p3-q3-solved-normal-forces
+shuffle: true
 content: |-
   If $mg-N_{\text{top}}=m\omega^2r$ and $N_{\text{bottom}}-mg=m\omega^2r$, which expressions are correct?
 options:
@@ -230,6 +233,7 @@ For a rotating wheel, $2m\omega^2r>0$, so $N_{\text{bottom}}$ is larger.
 ```quiz
 type: radio
 id: p3-q4-homework-comparison
+shuffle: true
 content: |-
   A person rides on a Ferris wheel of radius $r$ at constant angular velocity $\omega$. How does the normal force exerted on the rider from their seat at the top compare to the normal force on the rider from their seat at the bottom?
 options:

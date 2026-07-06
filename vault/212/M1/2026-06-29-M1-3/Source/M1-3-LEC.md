@@ -21,6 +21,7 @@ feedback: |-
 ```quiz
 type: radio
 id: m1-3asy-q2
+shuffle: true
 content: |-
   A person rides on a Ferris wheel of radius $r$ at constant angular velocity $\omega$. How does the normal force exerted on the rider from their seat at the top compare to the normal force on the rider from their seat at the bottom?
 options:

@@ -59,6 +59,7 @@ $$
 ```quiz
 type: radio
 id: p3-center-direction
+shuffle: true
 content: |-
   A cart is at the top of a rounded track and is moving along the curve. Which direction is toward the center of the circular path at that instant?
 options:
@@ -90,6 +91,7 @@ This does not mean every force points downward. It means the combined force must
 ```quiz
 type: radio
 id: p3-net-force-direction
+shuffle: true
 content: |-
   A rider is at the top of a circular hill. The center of the circular path is below the rider. What must be true about the radial part of the net force?
 options:
@@ -139,6 +141,7 @@ The gravitational force is larger than the normal force.
 ```quiz
 type: radio
 id: p3-force-comparison
+shuffle: true
 content: |-
   At the top of a circular hill, gravity is downward and the normal force is upward. If the car's radial net force must point downward, which comparison is required?
 options:
@@ -188,6 +191,7 @@ The comparison changes because the center direction changed.
 ```quiz
 type: radio
 id: p3-reversed-center
+shuffle: true
 content: |-
   A car is moving through the bottom of a circular dip. The center of the circular path is above the car. Which comparison is required?
 options:
@@ -231,6 +235,7 @@ The useful check is: if $N=mg$, then the radial net force would be $0$, so the c
 ```quiz
 type: radio
 id: p3-equal-force-trap
+shuffle: true
 content: |-
   Why is $N=mg$ the wrong comparison for a moving car at the top of a circular hill?
 options:
@@ -273,6 +278,7 @@ Equivalently, the normal force is less than the gravitational force.
 ```quiz
 type: radio
 id: p3-original-question
+shuffle: true
 content: |-
   An out-of-gas car is rolling over the top of a circular hill. At this instant ____
 options:

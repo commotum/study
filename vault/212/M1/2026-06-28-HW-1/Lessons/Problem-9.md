@@ -82,6 +82,7 @@ So if the velocity points to the right, that only tells us the tangent direction
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   In uniform circular motion, which statement correctly describes $\vec{a}$?
 options:
@@ -138,6 +139,7 @@ $$
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   An object moves in a circle of radius $3\ \mathrm{m}$ with speed $12\ \mathrm{m/s}$. What is $|\vec{a}|$?
 options:
@@ -198,6 +200,7 @@ $$
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   If $v=\omega r$, which expression is equal to $\dfrac{v^2}{r}$?
 options:
@@ -256,6 +259,7 @@ The true-or-false statement avoids that direction issue by asking only for the m
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   Consider an object undergoing uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity, $\omega$ the angular speed, and $\vec{a}$ the acceleration.
 
@@ -273,6 +277,7 @@ options:
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   Why does the statement "$\vec{a}$ has magnitude $\dfrac{v^2}{r}$" not need a negative sign?
 options:

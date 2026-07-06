@@ -68,6 +68,7 @@ That is why the top of the loop is the key place to test whether a minimum speed
 ```quiz
 type: radio
 id: p10-q1-contact
+shuffle: true
 content: |-
   At the top of a vertical loop, a rider is just barely maintaining contact with the track. What is the normal force at that instant?
 options:
@@ -132,6 +133,7 @@ The normal force does not appear in the energy equation because it points perpen
 ```quiz
 type: radio
 id: p10-q2-minimum-speed
+shuffle: true
 content: |-
   A rider enters a frictionless vertical loop from the bottom. Which reason best explains why there is a minimum entry speed?
 options:
@@ -153,6 +155,7 @@ options:
 ```quiz
 type: radio
 id: p10-q2-energy-conservation
+shuffle: true
 content: |-
   In a loop-the-loop problem with rolling friction neglected, why is kinetic plus gravitational potential energy approximately conserved?
 options:
@@ -191,6 +194,7 @@ This does not contradict energy conservation. Conservation of mechanical energy 
 ```quiz
 type: radio
 id: p10-q3-uniform
+shuffle: true
 content: |-
   A rider completes a vertical loop with friction neglected. Which statement correctly describes the motion?
 options:
@@ -235,6 +239,7 @@ The direction of the inward force also changes as the rider moves around the loo
 ```quiz
 type: radio
 id: p10-q4-centripetal-force
+shuffle: true
 content: |-
   A rider moves through a vertical loop of fixed radius $R$ while speed changes with height. What happens to the required centripetal force magnitude $m\dfrac{v^2}{R}$?
 options:
@@ -291,6 +296,7 @@ So the true statements are A, B, and E.
 ```quiz
 type: radio
 id: p10-q5-original-check
+shuffle: true
 content: |-
   For Hony's loop-the-loop with rolling friction neglected, which set of statements is true?
 options:

@@ -72,6 +72,7 @@ The main sign check is that the normal force subtracts because the igloo pushes 
 ```quiz
 type: radio
 id: p13-q1-radial-equation
+shuffle: true
 content: |-
   A penguin slides on the outside of a frictionless sphere of radius $r$. At angle $\theta$ from the vertical, it is still in contact with the surface. If radial inward is positive, which equation is correct?
 options:
@@ -132,6 +133,7 @@ $$
 ```quiz
 type: radio
 id: p13-q2-contact-condition
+shuffle: true
 content: |-
   At the instant a slider loses contact with the outside of a frictionless sphere, what condition should be used in the radial force equation?
 options:
@@ -184,6 +186,7 @@ The normal force does not appear in the energy equation because it is perpendicu
 ```quiz
 type: radio
 id: p13-q3-energy-speed
+shuffle: true
 content: |-
   A slider starts from rest at the top of a frictionless sphere of radius $r$. At angle $\theta$ from the vertical, what does energy conservation give for $v^2$?
 options:
@@ -258,6 +261,7 @@ $$
 ```quiz
 type: radio
 id: p13-q4-combine
+shuffle: true
 content: |-
   At the critical angle for a frictionless slider leaving the outside of a sphere, the two speed equations are $v^2=gr\cos\theta$ and $v^2=2gr(1-\cos\theta)$. What equation for $\cos\theta$ follows?
 options:
@@ -308,6 +312,7 @@ Among the given choices, the matching answer is $48^\circ$.
 ```quiz
 type: radio
 id: p13-q5-final-answer
+shuffle: true
 content: |-
   A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest. Neglecting friction, it loses contact at angle $\theta_c$ from the vertical. To two significant figures, what is $\theta_c$?
 options:

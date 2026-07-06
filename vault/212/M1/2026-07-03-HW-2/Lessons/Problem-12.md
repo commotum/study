@@ -69,6 +69,7 @@ Just before losing contact, the normal force has become negligible. It is not la
 ```quiz
 type: radio
 id: p12-q1-contact-loss
+shuffle: true
 content: |-
   A sled slides on the outside of a frictionless circular hill and is just about to leave the surface. Which statement best describes the normal force at that instant?
 options:
@@ -123,6 +124,7 @@ The common trap is treating "centripetal force" as if it must be a separate cont
 ```quiz
 type: radio
 id: p12-q2-radial-acceleration
+shuffle: true
 content: |-
   A bead slides on the outside of a frictionless circular track. At the instant the normal force becomes zero, the bead is still moving with speed $v>0$ along a path of radius $r$. Which statement is correct?
 options:
@@ -162,6 +164,7 @@ The tangential part changes the speed. The radial part changes the direction of 
 ```quiz
 type: radio
 id: p12-q3-acceleration-components
+shuffle: true
 content: |-
   Just before an object leaves a frictionless circular dome, it is still moving along the curved surface with nonzero speed. Which description of its acceleration is best?
 options:
@@ -201,6 +204,7 @@ So the motion is circular for a while, but it is not uniform circular motion.
 ```quiz
 type: radio
 id: p12-q4-uniform-circular-motion
+shuffle: true
 content: |-
   A penguin starts from rest and slides without friction down the outside of a spherical igloo. Before leaving the igloo, why is the motion not uniform circular motion?
 options:
@@ -256,6 +260,7 @@ So the true statement is A.
 ```quiz
 type: radio
 id: p12-q5-original-check
+shuffle: true
 content: |-
   Starting from rest, a penguin slides without friction down the outside of a spherical igloo and loses contact at an angle $\theta_c$ from the vertical. Which statement is true just before contact is lost?
 options:

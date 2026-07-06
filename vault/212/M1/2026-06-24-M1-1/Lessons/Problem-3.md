@@ -47,6 +47,7 @@ For counterclockwise rotation as viewed from the front, the thumb points out of 
 ```quiz
 type: radio
 id: p3-q1
+shuffle: true
 content: |-
   A wheel is viewed from the front and rotates counterclockwise. What is the direction of its angular velocity vector?
 options:
@@ -85,6 +86,7 @@ $$
 ```quiz
 type: radio
 id: p3-q2
+shuffle: true
 content: |-
   A disk is rotating counterclockwise as viewed from the front. It slows uniformly until it stops. What is the direction of its angular acceleration?
 options:
@@ -138,6 +140,7 @@ The $26\ \mathrm{s}$ affects the magnitude of $\vec{\alpha}$, but not its direct
 ```quiz
 type: radio
 id: p3-q3
+shuffle: true
 content: |-
   A disk spins counterclockwise at $8\ \mathrm{rad/s}$ and stops in $4\ \mathrm{s}$. If out of the page is positive, what is the sign of its angular acceleration?
 options:
@@ -174,6 +177,7 @@ The common trap is to pick the direction of rotation. Angular acceleration does 
 ```quiz
 type: radio
 id: p3-q4
+shuffle: true
 content: |-
   A disk is rotating clockwise as viewed from the front. It slows uniformly until it stops. What is the direction of its angular acceleration?
 options:
@@ -195,6 +199,7 @@ options:
 ```quiz
 type: radio
 id: p3-q5
+shuffle: true
 content: |-
   A disk is rotating counterclockwise as viewed from the front and is speeding up. What is the direction of its angular acceleration?
 options:

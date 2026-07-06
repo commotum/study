@@ -70,6 +70,7 @@ The coefficient changes because the exponent comes down as a multiplier.
 ```quiz
 type: radio
 id: q-derivative-form
+shuffle: true
 content: |-
   If $\theta(t)=4.0t^2-0.70t^3$, which expression gives $\omega(t)$?
 options:
@@ -126,6 +127,7 @@ The angular velocity is $6.0\ \mathrm{rad}/\mathrm{s}$.
 ```quiz
 type: radio
 id: q-evaluate-time
+shuffle: true
 content: |-
   If $\theta(t)=2.5t^2-0.30t^3$, what is $\omega(2.0)$?
 options:
@@ -182,6 +184,7 @@ The angular velocity is $-4.0\ \mathrm{rad}/\mathrm{s}$, so the angular speed is
 ```quiz
 type: radio
 id: q-speed-magnitude
+shuffle: true
 content: |-
   If $\theta(t)=4.0t^2-1.5t^3$, what angular speed should be reported at $t=2.0$ seconds?
 options:
@@ -240,6 +243,7 @@ The velocity is positive, so the angular speed is $1.703\ \mathrm{rad}/\mathrm{s
 ```quiz
 type: radio
 id: q-target-like
+shuffle: true
 content: |-
   A particle has $\theta(t)=At^2-Bt^3$, where $A=3.2\ \mathrm{rad}/\mathrm{s}^2$ and $B=0.80\ \mathrm{rad}/\mathrm{s}^3$. What angular speed should be reported at $t=1.5$ seconds?
 options:

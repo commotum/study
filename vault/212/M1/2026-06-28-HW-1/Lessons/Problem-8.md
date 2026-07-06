@@ -89,6 +89,7 @@ The point travels $10$ meters along the circle.
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   A point moves around a circle of radius $3$ meters and sweeps out an angle of $4$ radians. What arc length does it travel?
 options:
@@ -133,6 +134,7 @@ The speed is $12\ \mathrm{m/s}$.
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   A point moves on a circle of radius $4$ meters with angular speed $3$ radians per second. What is its speed?
 options:
@@ -177,6 +179,7 @@ Those are speed units, which matches the meaning of $|\vec v|$.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   If $r$ is measured in meters and $\omega$ is measured in radians per second, what units does $r\omega$ have?
 options:
@@ -198,6 +201,7 @@ options:
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   In circular motion, which expression gives the speed when the radius is $r$ and the angular speed is $\omega$?
 options:
@@ -236,6 +240,7 @@ This distinction matters in true-or-false questions. The velocity vector points 
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   In circular motion, which statement is correctly written?
 options:
@@ -286,6 +291,7 @@ So the statement is true.
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed.
 
@@ -303,6 +309,7 @@ options:
 ```quiz
 type: radio
 id: q-7
+shuffle: true
 content: |-
   A point moves in a circle with radius $r$ and angular speed $\omega$. Which statement explains why its speed is $r\omega$?
 options:

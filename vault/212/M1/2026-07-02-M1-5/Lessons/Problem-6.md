@@ -87,6 +87,7 @@ $$
 ```quiz
 type: radio
 id: p6-radial-force
+shuffle: true
 content: |-
   A ball is in the same upper-left position as the assignment diagram, so tension and the radial component of weight both point inward. If $T=2.0\ \mathrm{N}$, $m=0.40\ \mathrm{kg}$, and $\theta=30^\circ$, which value is the radial acceleration?
 options:
@@ -134,6 +135,7 @@ Do not use $v\cos\theta$ here. In this diagram, cosine gives the horizontal comp
 ```quiz
 type: radio
 id: p6-vertical-component
+shuffle: true
 content: |-
   A ball is released from the same clockwise position with speed $4.0\ \mathrm{m/s}$ and $\theta=30^\circ$. What is its upward velocity component?
 options:
@@ -209,6 +211,7 @@ $$
 ```quiz
 type: radio
 id: p6-combined-height
+shuffle: true
 content: |-
   A $0.40\ \mathrm{kg}$ ball is released from the same clockwise position with $L=0.60\ \mathrm{m}$, $T=2.0\ \mathrm{N}$, and $\theta=30^\circ$. Using $g=9.8\ \mathrm{m/s^2}$, how far above the release point will it rise?
 options:
@@ -276,6 +279,7 @@ $$
 ```quiz
 type: radio
 id: p6-assignment-check
+shuffle: true
 content: |-
   A ball is released from the same clockwise position with $L=0.75\ \mathrm{m}$, $T=1.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=18^\circ$. Using the same method, what is the height above the release point?
 options:

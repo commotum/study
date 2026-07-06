@@ -69,6 +69,7 @@ $$
 ```quiz
 type: radio
 id: p5-q1-components
+shuffle: true
 content: |-
   A string of length $L$ makes an angle $\theta$ with the horizontal. Which pair correctly gives the vertical tension component and the circle radius?
 options:
@@ -140,6 +141,7 @@ $$
 ```quiz
 type: radio
 id: p5-q2-force-equations
+shuffle: true
 content: |-
   A conical pendulum has angle $\theta$ measured from the horizontal. Which force equations match the radial and vertical directions?
 options:
@@ -205,6 +207,7 @@ This removes both $a_r$ and $r$ from equation $(1)$, leaving tension in terms of
 ```quiz
 type: radio
 id: p5-q3-acceleration
+shuffle: true
 content: |-
   If a conical pendulum has period $T$ and radius $r=L\cos\theta$, what does $a_r$ equal?
 options:
@@ -274,6 +277,7 @@ $$
 ```quiz
 type: radio
 id: p5-q4-final-angle
+shuffle: true
 content: |-
   A bob of mass $m$ is attached to a light string of length $L$ and undergoes uniform circular motion with period $T$. The string makes an angle $\theta$ with the horizontal. What is $\theta$?
 options:

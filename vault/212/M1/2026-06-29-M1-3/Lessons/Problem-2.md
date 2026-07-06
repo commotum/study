@@ -58,6 +58,7 @@ So the particle's speed is $6.72\ \mathrm{m}/\mathrm{s}$, which is $6.7\ \mathrm
 ```quiz
 type: radio
 id: p2-q1
+shuffle: true
 content: |-
   A wheel has radius $30\ \mathrm{m}$ and rotates at angular velocity $0.20\ \mathrm{rad}/\mathrm{s}$. What is the speed of a point on the rim?
 options:
@@ -87,6 +88,7 @@ options:
 ```quiz
 type: radio
 id: p2-q2
+shuffle: true
 content: |-
   A point is on the rim of a circular ride with radius $55\ \mathrm{m}$. The ride rotates at $0.10\ \mathrm{rad}/\mathrm{s}$. What is the point's speed?
 options:
@@ -142,6 +144,7 @@ $$
 ```quiz
 type: radio
 id: p2-q3
+shuffle: true
 content: |-
   A Ferris wheel has radius $24\ \mathrm{m}$ and angular velocity $0.18\ \mathrm{rad}/\mathrm{s}$. What is the rim speed to the nearest tenth?
 options:
@@ -196,6 +199,7 @@ $$
 ```quiz
 type: radio
 id: p2-q4
+shuffle: true
 content: |-
   A wheel has diameter $64\ \mathrm{m}$ and angular velocity $0.15\ \mathrm{rad}/\mathrm{s}$. What is the speed of a point on the rim?
 options:

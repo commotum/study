@@ -53,6 +53,7 @@ The centripetal direction is always from the object toward the center of the cir
 ```quiz
 type: radio
 id: p4-net-force-rightmost
+shuffle: true
 content: |-
   A puck moves at constant speed in a horizontal circle. At the instant shown, the puck is at the rightmost point of the circle. Where does the net force point?
 options:
@@ -85,6 +86,7 @@ The side view flattens the circular path into a left-right line through the cent
 ```quiz
 type: radio
 id: p4-side-view-right
+shuffle: true
 content: |-
   The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory when viewed from above/below.
 
@@ -133,6 +135,7 @@ So the net force points inward toward the center, not along the string.
 ```quiz
 type: radio
 id: p4-net-force-not-string
+shuffle: true
 content: |-
   A conical pendulum bob is moving at constant height. The string slants upward and inward toward the pivot. Which statement best describes the net force?
 options:
@@ -165,6 +168,7 @@ The rule does not change: point from the bob toward the center. If the bob is on
 ```quiz
 type: radio
 id: p4-side-view-left
+shuffle: true
 content: |-
   A conical pendulum bob is shown on the left side of its circular path in a side view. Where does the net force point?
 options:

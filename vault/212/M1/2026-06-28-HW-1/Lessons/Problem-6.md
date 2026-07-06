@@ -65,6 +65,7 @@ Horizontal and vertical directions are perpendicular, so $\vec v$ is perpendicul
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   An object is at the top of a circle, so $\vec r$ points upward from the center. If the object is moving clockwise, what is true about $\vec v$?
 options:
@@ -107,6 +108,7 @@ So the exact direction of $\vec v$ may be unknown, but its relationship to $\vec
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   An object moves in uniform circular motion. You are not told whether it moves clockwise or counterclockwise. Which statement is still guaranteed?
 options:
@@ -149,6 +151,7 @@ The inward vector is acceleration, not velocity.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   In uniform circular motion, which description correctly matches the vectors?
 options:
@@ -191,6 +194,7 @@ $$
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ its velocity, $\omega$ its angular speed, and $\vec a$ its acceleration.
   True or false: $\vec v$ is perpendicular to $\vec r$.

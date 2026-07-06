@@ -54,6 +54,7 @@ So the bead is undergoing uniform circular motion.
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   A toy car moves around a circular track at constant speed. Is the toy car undergoing uniform circular motion?
 options:
@@ -98,6 +99,7 @@ With fixed $r$ and constant $T$, this speed is constant. So a fixed circular pat
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   An object travels around a circle of fixed radius $5\ \mathrm{m}$ and takes $4\ \mathrm{s}$ for each complete lap. Which statement best follows?
 options:
@@ -134,6 +136,7 @@ The velocity is not constant because its direction changes. That does not make t
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   A puck moves in a circle at constant speed. Which extra fact is not needed to classify the motion as uniform circular motion?
 options:
@@ -177,6 +180,7 @@ It is also not necessary to check whether the tension is constant first. Force i
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory at constant speed when viewed from above/below.
 

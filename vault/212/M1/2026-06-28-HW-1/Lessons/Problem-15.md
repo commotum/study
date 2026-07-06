@@ -70,6 +70,7 @@ The sign of acceleration comes from how the slope changes, not from whether the 
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   On an interval, $\theta_z(t)$ is increasing, but the graph is flattening out. What is the sign of $\alpha_z(t)$ on that interval?
 options:
@@ -116,6 +117,7 @@ At a smooth local maximum, the slope changes from positive to zero to negative, 
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   A smooth graph of $\theta_z(t)$ has a local maximum at $t=3$. What should be true about $\alpha_z(t)$ near that high point?
 options:
@@ -156,6 +158,7 @@ So the acceleration graph should cross the zero line near $t=1.5$.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   A graph of $\theta_z(t)$ changes from concave down to concave up near $t=2.4$. What should the matching $\alpha_z(t)$ graph do near $t=2.4$?
 options:
@@ -206,6 +209,7 @@ Option A matches this sign pattern. The other options either stay mostly positiv
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   The plot below shows $\theta_z(t)$ over a $5$ second interval. Which option shows the matching angular acceleration $\alpha_z(t)$ over the same interval?
 
@@ -257,6 +261,7 @@ For a graph-matching problem, test each option against curvature:
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   Which statement gives the correct rule for matching $\theta_z(t)$ to $\alpha_z(t)$?
 options:

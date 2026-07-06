@@ -53,6 +53,7 @@ The equation should include only radial components. Tangential components do not
 ```quiz
 type: radio
 id: p3-q1-radial-equation
+shuffle: true
 content: |-
   A ball is in a vertical circle, the $r$-axis points inward along the string, and the tension is $T$. If the inward component of gravity is $F_{g,r}$, which equation correctly sets up the radial direction?
 options:
@@ -94,6 +95,7 @@ This component is positive because it points partly inward. The common check is:
 ```quiz
 type: radio
 id: p3-q2-weight-component
+shuffle: true
 content: |-
   A ball is in the same upper-left position, and the inward radial axis makes angle $\theta$ with the downward direction of gravity. What is the inward radial component of the ball's weight?
 options:
@@ -147,6 +149,7 @@ $$
 ```quiz
 type: radio
 id: p3-q3-solve-acceleration
+shuffle: true
 content: |-
   A ball in the same setup has $T=3.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=60^\circ$. Using $a_r=\frac{T}{m}+g\cos\theta$, what is $a_r$?
 options:
@@ -200,6 +203,7 @@ $$
 ```quiz
 type: radio
 id: p3-q4-original-style
+shuffle: true
 content: |-
   A ball is in the same vertical-circle position with $L=1.1\ \mathrm{m}$, $T=1.8\ \mathrm{N}$, $m=0.45\ \mathrm{kg}$, and $\theta=20^\circ$. What is the radial acceleration magnitude to two significant figures?
 options:

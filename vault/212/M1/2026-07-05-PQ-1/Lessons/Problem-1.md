@@ -48,6 +48,7 @@ For circular motion at constant speed, the acceleration points toward the center
 ```quiz
 type: radio
 id: q-recognize-direction-change
+shuffle: true
 content: |-
   A ball moves at constant speed around a horizontal circle. Which statement is true?
 options:
@@ -83,6 +84,7 @@ The speed is the same for both objects, so $v^2$ is the same. Only the radius ch
 ```quiz
 type: radio
 id: q-smaller-radius-larger-acceleration
+shuffle: true
 content: |-
   Two runners move at the same constant speed around circular tracks. Runner A is on a track with radius $10\text{ m}$, and runner B is on a track with radius $25\text{ m}$. Which runner has the larger centripetal acceleration?
 options:
@@ -120,6 +122,7 @@ This does not conflict with constant speed. Constant speed means the speed is no
 ```quiz
 type: radio
 id: q-constant-speed-smaller-circle
+shuffle: true
 content: |-
   If an object travels at a constant speed in a circular path, the acceleration of the object is
 options:
@@ -161,6 +164,7 @@ Since the radius is in the denominator, one-third as much radius gives three tim
 ```quiz
 type: radio
 id: q-radius-factor-comparison
+shuffle: true
 content: |-
   A scooter moves at the same constant speed around two circles. Circle A has radius $5\text{ m}$, and circle B has radius $20\text{ m}$. How does the acceleration in circle A compare with the acceleration in circle B?
 options:

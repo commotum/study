@@ -69,6 +69,7 @@ The angle $\theta$ multiplies the time because a larger angular gap takes a larg
 ```quiz
 type: radio
 id: q-p4-1
+shuffle: true
 content: |-
   A shaft has period $T=0.60\ \mathrm{s}$. How long does it take the shaft to rotate through $\theta=\pi$ radians?
 options:
@@ -129,6 +130,7 @@ $$
 ```quiz
 type: radio
 id: q-p4-2
+shuffle: true
 content: |-
   Two disks are $D=0.90\ \mathrm{m}$ apart. The shaft has period $T=0.40\ \mathrm{s}$, and the holes are separated by $\theta=\dfrac{\pi}{2}$ radians. What bullet speed lets the bullet pass through both holes?
 options:
@@ -184,6 +186,7 @@ So $\theta$ belongs in the denominator.
 ```quiz
 type: radio
 id: q-p4-3
+shuffle: true
 content: |-
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
@@ -227,6 +230,7 @@ So the angle is part of the time in the denominator, not part of the distance in
 ```quiz
 type: radio
 id: q-p4-4
+shuffle: true
 content: |-
   In the rotating-disk setup, $\theta$ is doubled while $D$ and $T$ stay fixed. What happens to the required bullet speed?
 options:

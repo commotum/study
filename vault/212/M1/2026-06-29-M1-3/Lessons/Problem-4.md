@@ -79,6 +79,7 @@ $$
 ```quiz
 type: radio
 id: p4-q1
+shuffle: true
 content: |-
   A rider is at the bottom of a Ferris wheel. Taking inward as positive, which equation correctly relates the normal force $N$ to the radial acceleration?
 options:
@@ -141,6 +142,7 @@ This is not the normal force yet. It is only the net inward force.
 ```quiz
 type: radio
 id: p4-q2
+shuffle: true
 content: |-
   A $70\ \mathrm{kg}$ rider is on a Ferris wheel with radius $30\ \mathrm{m}$ and angular speed $0.20\ \mathrm{rad}/\mathrm{s}$. What is $m\omega^2r$?
 options:
@@ -221,6 +223,7 @@ $$
 ```quiz
 type: radio
 id: p4-q3
+shuffle: true
 content: |-
   A $60\ \mathrm{kg}$ rider is at the bottom of a Ferris wheel with radius $25\ \mathrm{m}$ and angular speed $0.40\ \mathrm{rad}/\mathrm{s}$. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, what is the normal force from the seat?
 options:
@@ -290,6 +293,7 @@ For the bottom problem, do not subtract the centripetal term. The rider needs mo
 ```quiz
 type: radio
 id: p4-q4
+shuffle: true
 content: |-
   A rider is at the bottom of a Ferris wheel. Which expression gives the magnitude of the normal force from the seat?
 options:

@@ -58,6 +58,7 @@ $$
 ```quiz
 type: radio
 id: q-top-inward-direction
+shuffle: true
 content: |-
   At the top of a vertical Ferris wheel, which direction is the required centripetal force?
 options:
@@ -105,6 +106,7 @@ $$
 ```quiz
 type: radio
 id: q-top-force-balance
+shuffle: true
 content: |-
   A rider is at the top of a vertical circle. Inward is downward, weight is $mg$, and the seat's normal force is $N$ upward. Which force balance is correct?
 options:
@@ -164,6 +166,7 @@ $$
 ```quiz
 type: radio
 id: q-top-substitute
+shuffle: true
 content: |-
   A $50\ \mathrm{kg}$ rider is at the top of a Ferris wheel with $r=20\ \mathrm{m}$ and $\omega=0.30\ \mathrm{rad}/\mathrm{s}$. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, what is the normal force?
 options:
@@ -210,6 +213,7 @@ The common mistake is to use the bottom equation at the top. That adds the centr
 ```quiz
 type: radio
 id: q-top-bottom-trap
+shuffle: true
 content: |-
   A student solves the top-of-wheel problem by using $N=mg+m\omega^2r$. What mistake did they make?
 options:

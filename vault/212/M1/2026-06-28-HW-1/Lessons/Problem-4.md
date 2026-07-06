@@ -89,6 +89,7 @@ $$
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   If $\alpha_z(t)=9t^2-5$, what is the general formula for $\omega_z(t)$?
 options:
@@ -154,6 +155,7 @@ The given constant in the acceleration formula is not the same thing as the inte
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   If $\alpha_z(t)=Pt^2+Q$, where $P$ and $Q$ are constants, what is the general formula for $\omega_z(t)$?
 options:
@@ -223,6 +225,7 @@ $$
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   If $\alpha_z(t)=6t^2+8$ and $\omega_z(0)=\omega_0$, what is $\omega_z(t)$?
 options:
@@ -247,6 +250,7 @@ options:
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   If $\alpha_z(t)=3t^2-10$ and $\omega_z(0)=7$, what is $\omega_z(t)$?
 options:
@@ -348,6 +352,7 @@ $$
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   The $z$-component of the angular acceleration of an object moving along a circular trajectory has $\alpha_z(t)=Bt^2+C$, where $B$ and $C$ are constants of the appropriate dimension.
 

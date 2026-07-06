@@ -49,6 +49,7 @@ So $r$ is the side adjacent to $\theta$.
 ```quiz
 type: radio
 id: p2-q1
+shuffle: true
 content: |-
   A string of length $8$ makes an angle $\theta$ with a horizontal support. The bob is at the lower end of the string. Which side of the side-view right triangle is the horizontal radius?
 options:
@@ -93,6 +94,7 @@ The key is the phrase "with the horizontal." If the angle is measured from the h
 ```quiz
 type: radio
 id: p2-q2
+shuffle: true
 content: |-
   A string of length $L$ makes an angle $\alpha$ with the horizontal. The bob moves in a horizontal circle. Which expression gives the radius of the circular path?
 options:
@@ -139,6 +141,7 @@ This does not contradict the previous rule. It shows why the wording "with the h
 ```quiz
 type: radio
 id: p2-q3
+shuffle: true
 content: |-
   A string of length $L$ makes an angle $\beta$ with the vertical. The bob moves in a horizontal circle. Which expression gives the radius of the circular path?
 options:
@@ -193,6 +196,7 @@ This also passes a quick check: if $\theta$ were very small, the string would be
 ```quiz
 type: radio
 id: p2-q4
+shuffle: true
 content: |-
   The figures below show a bob of mass $m$ attached to a light string of length $L$ which traverses a circular trajectory when viewed from above/below.
 

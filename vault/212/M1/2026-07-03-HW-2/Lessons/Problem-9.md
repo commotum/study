@@ -69,6 +69,7 @@ The acceleration does not point down the ramp. Forces can have components along 
 ```quiz
 type: radio
 id: p9-q1-acceleration
+shuffle: true
 content: |-
   A car moves at constant speed around a banked circular track. In the side view, the center of the circular path is directly to the left of the car. Which statement best describes the acceleration?
 options:
@@ -145,6 +146,7 @@ At exactly this speed, the normal force alone gives the needed inward force, so 
 ```quiz
 type: radio
 id: p9-q2-no-friction-speed
+shuffle: true
 content: |-
   A car moves around a banked circular track of radius $r$ and bank angle $\theta$. Which speed makes static friction unnecessary?
 options:
@@ -201,6 +203,7 @@ That is why the direction of static friction depends on $v$.
 ```quiz
 type: radio
 id: p9-q3-friction-direction
+shuffle: true
 content: |-
   A car is on a banked circular track. The no-friction speed is $v_0=\sqrt{rg\tan\theta}$. Which comparison correctly describes the direction of static friction?
 options:
@@ -255,6 +258,7 @@ Static friction is limited by a maximum possible value. If the car is too fast, 
 ```quiz
 type: radio
 id: p9-q4-friction-magnitude
+shuffle: true
 content: |-
   Why does the magnitude of the static friction force on a banked turn depend on $v$?
 options:
@@ -305,6 +309,7 @@ which is the same as $\sqrt{rg\tan\theta}$, no static friction is needed.
 ```quiz
 type: radio
 id: p9-q5-problem-statements
+shuffle: true
 content: |-
   For the banked-track scenario in Problem 9, which group of statements is true?
 

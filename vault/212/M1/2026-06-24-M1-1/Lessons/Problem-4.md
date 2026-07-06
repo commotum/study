@@ -60,6 +60,7 @@ This is the same as using the area of the triangle under the $\omega$-versus-$t$
 ```quiz
 type: radio
 id: p4-q1
+shuffle: true
 content: |-
   A disk starts at $18\ \mathrm{rad/s}$ and comes to a stop with constant angular acceleration. What average angular velocity should be used while it stops?
 options:
@@ -114,6 +115,7 @@ $$
 ```quiz
 type: radio
 id: p4-q2
+shuffle: true
 content: |-
   A disk starts at $14\ \mathrm{rad/s}$ and stops in $12\ \mathrm{s}$ with constant angular acceleration. What is its angular displacement while stopping?
 options:
@@ -158,6 +160,7 @@ $$
 ```quiz
 type: radio
 id: p4-q3
+shuffle: true
 content: |-
   A disk turns through $156\ \mathrm{rad}$ while stopping. How many revolutions is this, to two significant figures?
 options:
@@ -229,6 +232,7 @@ The common trap is multiplying $12$ by $26$ as if the disk kept spinning at $12\
 ```quiz
 type: radio
 id: p4-q4
+shuffle: true
 content: |-
   A disk is spinning at $16\ \mathrm{rad/s}$ and comes to a stop in $10\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops, to two significant figures?
 options:

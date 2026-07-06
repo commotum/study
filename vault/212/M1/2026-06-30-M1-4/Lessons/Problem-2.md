@@ -59,6 +59,7 @@ So the diagram should show an upward normal force and a downward weight force wi
 ```quiz
 type: radio
 id: level-curve-fbd-q1
+shuffle: true
 content: |-
   A car moves at constant speed on a level circular track. Which vertical-force pair belongs in the free-body diagram?
 options:
@@ -107,6 +108,7 @@ It is not an additional force arrow. For a car on a level road, the real inward 
 ```quiz
 type: radio
 id: level-curve-fbd-q2
+shuffle: true
 content: |-
   A car on a level road turns around a circular path whose center is to the left of the car. Which horizontal force belongs in the free-body diagram?
 options:
@@ -149,6 +151,7 @@ If the radius line points right, static friction points right. If the radius lin
 ```quiz
 type: radio
 id: level-curve-fbd-q3
+shuffle: true
 content: |-
   In a side-view diagram, the center of the car's circular path is to the right of the car. Which free-body diagram description matches the situation?
 options:
@@ -191,6 +194,7 @@ An outward arrow is a common mistake because the rider may feel pushed outward. 
 ```quiz
 type: radio
 id: level-curve-fbd-q4
+shuffle: true
 content: |-
   A diagram for a car turning on a level road already has $N$ up, $mg$ down, and $f_s$ right toward the center. Which added feature would make the diagram wrong?
 options:

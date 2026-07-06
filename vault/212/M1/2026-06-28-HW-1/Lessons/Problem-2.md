@@ -100,6 +100,7 @@ So one revolution covers distance $12\pi$.
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   An object moves once around a circle of radius $R$. What distance does it travel?
 options:
@@ -125,6 +126,7 @@ options:
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   An object completes one revolution around a circle of radius $5$. What distance does it travel?
 options:
@@ -191,6 +193,7 @@ This is the equation for the unknown time $t$.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   An object moves around a circle of radius $7$. Its current speed is $3$, and its speed increases at constant rate $4$. Which equation gives the time $t$ for one revolution?
 options:
@@ -219,6 +222,7 @@ options:
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   An object moves around a circle of radius $5$. Its current speed is $8$, and its speed increases at constant rate $6$. Which equation gives the time $t$ for one revolution?
 options:
@@ -293,6 +297,7 @@ $$
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   An object starts with speed $6$ and speeds up at constant rate $4$. How long does it take to travel distance $20$?
 options:
@@ -321,6 +326,7 @@ options:
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   An object starts with speed $4$ and speeds up at constant rate $2$. How long does it take to travel distance $21$?
 options:
@@ -398,6 +404,7 @@ $$
 ```quiz
 type: radio
 id: q-7
+shuffle: true
 content: |-
   An object has current speed $v$ and speeds up at constant rate $a$. How long does it take to travel distance $L$?
 options:
@@ -465,6 +472,7 @@ The main trap is choosing the root with $-\sqrt{v^2+4\pi ar}$. That root has a n
 ```quiz
 type: radio
 id: q-8
+shuffle: true
 content: |-
   An object travels along a circular trajectory of radius $r$. At one instant, the particle's speed is $v$ and increasing at a constant rate $a$.
 

@@ -58,6 +58,7 @@ $$
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   An object is at the top of a circle. The vector $\vec r$ is measured from the center to the object. Which way does $\vec r$ point?
 options:
@@ -98,6 +99,7 @@ This matches the formula $\vec a=-\omega^2\vec r$: if $\vec r$ points right, the
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   An object is at the bottom of a circle and is moving with uniform circular motion. Which way does $\vec a$ point?
 options:
@@ -119,6 +121,7 @@ options:
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   Suppose $\vec a=-4\vec r$ and $\vec r$ points left. Which statement correctly describes $\vec a$?
 options:
@@ -159,6 +162,7 @@ Their angle is $180^\circ$, so they are opposite, not perpendicular.
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   At the top of a circle in uniform circular motion, $\vec r$ points up and $\vec a$ points down. Which description is correct?
 options:
@@ -201,6 +205,7 @@ So the common trap is to remember the tangent velocity fact and apply it to acce
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   In uniform circular motion, which statement correctly separates the directions of $\vec v$ and $\vec a$ relative to $\vec r$?
 options:
@@ -241,6 +246,7 @@ The statement is false.
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity of the object, $\omega$ the angular speed of the object, and $\vec a$ its acceleration.
 

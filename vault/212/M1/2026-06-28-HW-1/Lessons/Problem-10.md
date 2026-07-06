@@ -64,6 +64,7 @@ So $\vec v$ points upward. The radius points right, and the tangent points upwar
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   An object is at the top of a circle, so $\vec r$ points upward from the center to the object. Which direction could $\vec v$ point if the object is moving along the circle?
 options:
@@ -105,6 +106,7 @@ That extra tangential acceleration is why the motion is non-uniform, but the vel
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   In non-uniform circular motion, the object's speed is increasing. What is still true about $\vec v$?
 options:
@@ -160,6 +162,7 @@ The opposite direction, $\langle -4,3\rangle$, would also be perpendicular. The 
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   At one instant in circular motion, $\vec r=\langle 5,12\rangle$. Which vector is perpendicular to $\vec r$ and could point tangent to the circle?
 options:
@@ -204,6 +207,7 @@ Therefore, the statement is true.
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   Now consider an object undergoing non-uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity of the object, $\omega$ the angular speed of the object, and $\vec a$ its acceleration.
 
@@ -221,6 +225,7 @@ options:
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   Which statement best explains why the answer stays the same for uniform and non-uniform circular motion?
 options:

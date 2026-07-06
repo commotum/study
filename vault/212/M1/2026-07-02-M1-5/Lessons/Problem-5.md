@@ -61,6 +61,7 @@ $$
 ```quiz
 type: radio
 id: problem-5-q1
+shuffle: true
 content: |-
   A particle has $a_r=8\ \mathrm{m}/\mathrm{s}^2$ and $a_t=6\ \mathrm{m}/\mathrm{s}^2$. What is $|\vec a|$?
 options:
@@ -135,6 +136,7 @@ To two significant figures, $|\vec a|=13\ \mathrm{m}/\mathrm{s}^2$.
 ```quiz
 type: radio
 id: problem-5-q2
+shuffle: true
 content: |-
   A ball on a string has $T=1.8\ \mathrm{N}$, $m=0.60\ \mathrm{kg}$, and $\theta=20^\circ$. Use $a_r=\frac{T}{m}+g\cos\theta$ and $a_t=g\sin\theta$.
 
@@ -187,6 +189,7 @@ The negative sign does not make the components subtract inside the magnitude for
 ```quiz
 type: radio
 id: problem-5-q3
+shuffle: true
 content: |-
   For a chosen $t$-axis, a particle has $a_r=7.0\ \mathrm{m}/\mathrm{s}^2$ and $a_t=-2.0\ \mathrm{m}/\mathrm{s}^2$. What is the acceleration magnitude?
 options:
@@ -262,6 +265,7 @@ $$
 ```quiz
 type: radio
 id: problem-5-q4
+shuffle: true
 content: |-
   A ball on a string has $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$. Use $a_r=\frac{T}{m}+g\cos\theta$ and $a_t=g\sin\theta$.
 

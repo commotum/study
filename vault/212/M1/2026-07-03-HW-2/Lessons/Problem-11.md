@@ -78,6 +78,7 @@ $$
 ```quiz
 type: radio
 id: p11-q1-top-contact
+shuffle: true
 content: |-
   A cart is just barely maintaining contact at the top of a vertical loop of radius $r$. Which condition should be used at that instant?
 options:
@@ -122,6 +123,7 @@ This equation says the entry kinetic energy must supply both the kinetic energy 
 ```quiz
 type: radio
 id: p11-q2-energy-equation
+shuffle: true
 content: |-
   A cart enters a frictionless vertical loop of radius $r$ at the bottom with speed $v_0$ and reaches the top with speed $v_{\text{top}}$. Which energy equation correctly connects the two speeds?
 options:
@@ -196,6 +198,7 @@ $$
 ```quiz
 type: radio
 id: p11-q3-combine
+shuffle: true
 content: |-
   A rider enters the bottom of a frictionless loop of radius $r$. At the minimum entry speed, $v_{\text{top}}^2=gr$. What is $v_0^2$ at the bottom?
 options:
@@ -252,6 +255,7 @@ The common trap is choosing only the top-speed condition, $\sqrt{gr}$, or forget
 ```quiz
 type: radio
 id: p11-q4-original-choice
+shuffle: true
 content: |-
   Hony Tawk completes a circular loop-the-loop and never leaves contact with the loop of radius $r$. What is the minimum speed required for Hony Tawk to enter the loop-the-loop? Ignore rolling friction.
 options:

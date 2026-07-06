@@ -64,6 +64,7 @@ $$
 ```quiz
 type: radio
 id: q-flight-time
+shuffle: true
 content: |-
   A rotating shaft has period $T=0.40\ \mathrm{s}$. Two holes are separated by $\theta=\dfrac{\pi}{5}$ radians. What is the time for the shaft to rotate through that angle?
 options:
@@ -115,6 +116,7 @@ The unit check is meters divided by seconds, so the result should be in $\mathrm
 ```quiz
 type: radio
 id: q-use-flight-time
+shuffle: true
 content: |-
   Two rotating disks are $D=0.90\ \mathrm{m}$ apart. The shaft period is $T=0.40\ \mathrm{s}$, and the holes are separated by $\theta=\dfrac{\pi}{5}$. Using $\Delta t=0.040\ \mathrm{s}$, what is the bullet speed?
 options:
@@ -166,6 +168,7 @@ The fraction flips because $D$ is divided by $\dfrac{\theta T}{2\pi}$.
 ```quiz
 type: radio
 id: q-symbolic-formula
+shuffle: true
 content: |-
   A bullet travels distance $D$ while a shaft with period $T$ rotates through angle $\theta$. Which formula gives the bullet speed?
 options:
@@ -223,6 +226,7 @@ $$
 ```quiz
 type: radio
 id: q-substitute-values
+shuffle: true
 content: |-
   Two disks are $D=0.75\ \mathrm{m}$ apart. The hole separation is $\theta=\dfrac{\pi}{3}$, and the shaft period is $T=0.25\ \mathrm{s}$. What is $v=\dfrac{2\pi D}{\theta T}$?
 options:
@@ -274,6 +278,7 @@ Only include extra full rotations if the problem explicitly says the bullet wait
 ```quiz
 type: radio
 id: q-full-period-trap
+shuffle: true
 content: |-
   Two disks are $D=3.0\ \mathrm{m}$ apart. The shaft period is $T=0.60\ \mathrm{s}$, and the holes are separated by $\theta=\dfrac{\pi}{2}$. Which calculation correctly finds the bullet speed?
 options:

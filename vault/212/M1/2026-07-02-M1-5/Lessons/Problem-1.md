@@ -59,6 +59,7 @@ $$
 ```quiz
 type: radio
 id: p1-q1
+shuffle: true
 content: |-
   A particle is at the lower-right side of a circle and is moving counterclockwise while speeding up. Which pair of directions should you combine for the net force?
 options:
@@ -101,6 +102,7 @@ At the lower-left side, counterclockwise motion carries the particle toward the 
 ```quiz
 type: radio
 id: p1-q2
+shuffle: true
 content: |-
   A particle is at the lower-left side of a circle and is moving counterclockwise while speeding up. Which way does the tangential component of the net force point?
 options:
@@ -148,6 +150,7 @@ If one component is larger than the other, the final arrow leans toward the larg
 ```quiz
 type: radio
 id: p1-q3
+shuffle: true
 content: |-
   A particle is at the lower-left side of a circle and is moving counterclockwise while speeding up. The inward component points up-right, and the tangential component points down-right. Which direction best describes the net force?
 options:
@@ -192,6 +195,7 @@ This is the main trap: **speeding up** means tangent forward; **slowing down** m
 ```quiz
 type: radio
 id: p1-q4
+shuffle: true
 content: |-
   A particle is at the lower-right side of a circle and is moving counterclockwise while slowing down. Which pair of component directions should you combine for the net force?
 options:

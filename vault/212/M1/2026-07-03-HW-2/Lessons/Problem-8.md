@@ -66,6 +66,7 @@ The sign checklist is:
 ```quiz
 type: radio
 id: p8-q1-components
+shuffle: true
 content: |-
   A banked track has angle $\theta$ from the horizontal. Static friction points up the track. If radial inward is positive, which components are correct?
 options:
@@ -124,6 +125,7 @@ The main sign to check is the friction term in the radial equation. Because fric
 ```quiz
 type: radio
 id: p8-q2-equations
+shuffle: true
 content: |-
   For a car on a banked curve with friction pointing up the track, which pair of equations matches radial inward and vertical directions?
 options:
@@ -216,6 +218,7 @@ $$
 ```quiz
 type: radio
 id: p8-q3-eliminate
+shuffle: true
 content: |-
   If $N\sin\theta-f_s\cos\theta=\dfrac{mv^2}{r}$ and $N\cos\theta+f_s\sin\theta=mg$, what is $f_s$?
 options:
@@ -257,6 +260,7 @@ This expression has two useful checks:
 ```quiz
 type: radio
 id: p8-q4-variant
+shuffle: true
 content: |-
   A cart of mass $M$ moves at speed $u$ around a circular banked track of radius $R$. The bank angle is $\phi$, and friction points up the track. Which expression gives the static friction magnitude?
 options:
@@ -278,6 +282,7 @@ options:
 ```quiz
 type: radio
 id: p8-q5-original
+shuffle: true
 content: |-
   The figure below shows an F1 sports car of mass $m$ traversing a circular track banked at angle $\theta$ from the horizontal with constant speed $v$. The track has radius $r$, and friction points up the track in the side-view. What is the magnitude of the static frictional force on the car?
 

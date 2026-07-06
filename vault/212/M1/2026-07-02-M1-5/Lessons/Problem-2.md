@@ -51,6 +51,7 @@ The mass $m$ changes the size of the vector, not its direction. So the net force
 ```quiz
 type: radio
 id: p2-q1-force-acceleration
+shuffle: true
 content: |-
   A particle's total acceleration points up-left. What direction does the net force point?
 options:
@@ -93,6 +94,7 @@ So the radial component points up-left.
 ```quiz
 type: radio
 id: p2-q2-radial
+shuffle: true
 content: |-
   A particle is on the lower-right side of a circle. Which direction is the inward radial component?
 options:
@@ -135,6 +137,7 @@ Because the particle is speeding up, tangential acceleration points with the mot
 ```quiz
 type: radio
 id: p2-q3-tangential
+shuffle: true
 content: |-
   A particle is on the lower-right side of a circle, moving clockwise, and speeding up. Which direction is the tangential acceleration?
 options:

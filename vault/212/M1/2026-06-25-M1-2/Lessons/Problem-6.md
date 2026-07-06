@@ -68,6 +68,7 @@ Square the speed before dividing by the radius.
 ```quiz
 type: radio
 id: radial-acceleration-calculate
+shuffle: true
 content: |-
   An object moves in a circle with speed $v=4\ \mathrm{m/s}$ and radius $r=2\ \mathrm{m}$. What is its radial acceleration magnitude?
 options:
@@ -111,6 +112,7 @@ Doubling the speed makes the radial acceleration four times as large when the ra
 ```quiz
 type: radio
 id: radial-acceleration-same-radius
+shuffle: true
 content: |-
   Objects R and S move in circles with the same radius. R has $v=2\ \mathrm{m/s}$, and S has $v=3\ \mathrm{m/s}$. Which comparison of radial accelerations is correct?
 options:
@@ -154,6 +156,7 @@ With the same speed, the smaller radius gives the larger radial acceleration. So
 ```quiz
 type: radio
 id: radial-acceleration-same-speed
+shuffle: true
 content: |-
   Objects T and U move with the same speed. T has radius $r=3\ \mathrm{m}$, and U has radius $r=6\ \mathrm{m}$. Which comparison of radial accelerations is correct?
 options:
@@ -204,6 +207,7 @@ $$
 ```quiz
 type: radio
 id: radial-acceleration-four-object-ranking
+shuffle: true
 content: |-
   Four objects have these $(v,r)$ pairs, with speed in $\mathrm{m/s}$ and radius in $\mathrm{m}$: A $(1,1)$, B $(3,1)$, C $(2,2)$, and D $(1,4)$. Rank their radial accelerations from least to greatest.
 options:
@@ -253,6 +257,7 @@ So B must be greater than C.
 ```quiz
 type: radio
 id: radial-acceleration-trap-check
+shuffle: true
 content: |-
   Two objects have the same speed. Object X moves in a circle of radius $2\ \mathrm{m}$, and object Y moves in a circle of radius $5\ \mathrm{m}$. Which statement is true?
 options:

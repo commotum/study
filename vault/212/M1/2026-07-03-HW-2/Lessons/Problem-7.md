@@ -57,6 +57,7 @@ This equation uses only the components of real forces along the inward axis. The
 ```quiz
 type: radio
 id: p7-q1-axis
+shuffle: true
 content: |-
   A car moves around a circular track at constant speed $v$. The positive $c$ direction is radially inward. What should $\sum F_c$ equal?
 options:
@@ -103,6 +104,7 @@ Now attach the sign. The normal force leans toward the center, so $n\sin\theta$ 
 ```quiz
 type: radio
 id: p7-q2-normal
+shuffle: true
 content: |-
   A banked road makes angle $\theta$ with the horizontal. The normal force $n$ leans inward. Which term is the normal force's component along the inward $c$ direction?
 options:
@@ -149,6 +151,7 @@ The vertical component $f\sin\theta$ is useful for the $y$ equation, but it is n
 ```quiz
 type: radio
 id: p7-q3-friction
+shuffle: true
 content: |-
   A banked road rises outward from the center of the curve. Static friction of magnitude $f$ points up the track. If positive $c$ is inward, what is friction's $c$ component?
 options:
@@ -213,6 +216,7 @@ $$
 ```quiz
 type: radio
 id: p7-q4-equation
+shuffle: true
 content: |-
   The figure below shows an F1 sports car of mass $m$ traversing a circular track banked at angle $\theta$ from the horizontal with constant speed $v$.
 

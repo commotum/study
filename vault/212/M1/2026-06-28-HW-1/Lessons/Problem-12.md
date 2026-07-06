@@ -73,6 +73,7 @@ The left side is a vector, but the right side is only a scalar.
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   Which statement correctly matches the type of quantity on both sides?
 options:
@@ -117,6 +118,7 @@ The calculation does not require the angular speed to stay $5\ \mathrm{rad/s}$ f
 ```quiz
 type: radio
 id: q-2
+shuffle: true
 content: |-
   An object moves on a circle of radius $4\ \mathrm{m}$. At one instant, its angular speed is $3\ \mathrm{rad/s}$. What is its speed at that instant?
 options:
@@ -163,6 +165,7 @@ That matches the meaning of $|\vec v|$.
 ```quiz
 type: radio
 id: q-3
+shuffle: true
 content: |-
   If $r$ is in centimeters and $\omega$ is in radians per second, what units does $r\omega$ have?
 options:
@@ -221,6 +224,7 @@ Non-uniform motion changes whether $\omega$ is constant. It does not change the 
 ```quiz
 type: radio
 id: q-4
+shuffle: true
 content: |-
   An object moves in non-uniform circular motion with fixed radius $6\ \mathrm{m}$. At a particular instant, $\omega=2\ \mathrm{rad/s}$. Which statement is true at that instant?
 options:
@@ -267,6 +271,7 @@ So the statement is true.
 ```quiz
 type: radio
 id: q-5
+shuffle: true
 content: |-
   Consider an object undergoing non-uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed.
 
@@ -284,6 +289,7 @@ options:
 ```quiz
 type: radio
 id: q-6
+shuffle: true
 content: |-
   Why does non-uniform circular motion still satisfy $|\vec v|=r\omega$ at an instant?
 options:
