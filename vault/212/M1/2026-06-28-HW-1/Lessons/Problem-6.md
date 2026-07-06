@@ -208,3 +208,15 @@ When a circular-motion problem asks how $\vec v$ relates to $\vec r$, use the ta
 The radius vector $\vec r$ points from the center to the object. The velocity vector $\vec v$ points tangent to the circular path. A tangent is perpendicular to the radius at the point of contact, so $\vec v \perp \vec r$.
 
 The main trap is mixing up velocity with acceleration. In uniform circular motion, $\vec v$ is tangent, while $\vec a$ points inward toward the center.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Comparing Centripetal Acceleration with the Radius Vector](<Problem-7.md>)
+
+<!-- study-guide-nav:end -->

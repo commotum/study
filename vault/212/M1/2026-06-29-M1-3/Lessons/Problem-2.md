@@ -229,3 +229,15 @@ v=r\omega.
 $$
 
 Multiply the radius by the angular velocity, keep the final unit as distance per time, and round only after the multiplication. The main trap is using diameter in place of radius.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Ranking Radial Accelerations](<../../2026-06-25-M1-2/Lessons/Problem-6.md>)
+
+<!-- study-guide-nav:end -->

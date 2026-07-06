@@ -274,3 +274,15 @@ For a car moving at constant speed around a level circle, use this three-check t
 5. Do not add a separate centripetal-force arrow or an outward force arrow.
 
 The main trap is thinking that constant speed means no acceleration. In circular motion, the speed can stay constant while the direction changes, so the net force points inward.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Finding Static Friction on a Flat Curve](<Problem-3.md>)
+
+<!-- study-guide-nav:end -->

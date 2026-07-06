@@ -265,3 +265,15 @@ The radius vector $\vec r$ points from the center to the object. The acceleratio
 The sign in $\vec a=-\omega^2\vec r$ is the deciding cue: a negative scalar reverses direction instead of making a right angle.
 
 The main trap is mixing up acceleration with velocity: $\vec v$ is tangent and perpendicular to $\vec r$, but $\vec a$ is inward and opposite $\vec r$.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Choosing the Acceleration Direction When Circular Motion Speeds Up](<Problem-13.md>)
+
+<!-- study-guide-nav:end -->

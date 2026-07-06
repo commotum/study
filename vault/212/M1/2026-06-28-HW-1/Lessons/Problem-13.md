@@ -220,3 +220,15 @@ Use this checklist:
 6. Choose the resultant arrow between the inward component and the tangential component.
 
 For the original problem, counterclockwise motion at the upper-left point gives a down-left tangential component, while the center is down-right. Speeding up means the acceleration is the sum of those two directions, so the correct arrow is C.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Choosing the Net Force Direction for Speeding-Up Circular Motion](<../../2026-07-02-M1-5/Lessons/Problem-1.md>)
+
+<!-- study-guide-nav:end -->

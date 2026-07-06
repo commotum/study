@@ -295,3 +295,15 @@ mg-N=m\frac{v^2}{r}>0
 $$
 
 so $mg>N$. The normal force is less than the gravitational force. The common trap is choosing $N=mg$ as if the car had zero vertical acceleration; circular motion requires a downward radial net force at the top.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Recognizing Contact Loss on a Curved Surface](<../../2026-07-03-HW-2/Lessons/Problem-12.md>)
+
+<!-- study-guide-nav:end -->

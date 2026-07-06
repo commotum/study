@@ -285,3 +285,15 @@ $$
 The main trap is using the minimum-speed signs. For maximum speed, friction points down the bank, so it adds inward force and points partly downward.
 
 The mass may be given, but it cancels out. Use the mass only if you are later asked for $N$ or $f_s$, not when the target is $v_{\max}$.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Deciding True Statements About Static Friction on a Banked Turn](<../../2026-07-03-HW-2/Lessons/Problem-9.md>)
+
+<!-- study-guide-nav:end -->

@@ -380,3 +380,15 @@ T_{\min}=2\pi\sqrt{\frac{r}{\mu_s g}}.
 $$
 
 The main trap is the word "smallest." Smaller period means larger speed, so the no-slip condition is $T\ge T_{\min}$, not $T\le T_{\min}$.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Comparing Ferris Wheel Normal Forces](<../../2026-06-29-M1-3/Lessons/Problem-1.md>)
+
+<!-- study-guide-nav:end -->

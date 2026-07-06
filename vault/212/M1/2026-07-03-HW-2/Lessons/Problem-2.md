@@ -224,3 +224,15 @@ r=L\cos\theta.
 $$
 
 Use cosine because the radius is adjacent to the angle. The main trap is choosing $L\sin\theta$, which would be the vertical projection when the angle is measured from the horizontal.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Deriving the Angle in a Conical Pendulum](<Problem-5.md>)
+
+<!-- study-guide-nav:end -->

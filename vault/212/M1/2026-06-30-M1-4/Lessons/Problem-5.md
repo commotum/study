@@ -208,3 +208,15 @@ Use the no-friction speed as the comparison point:
 - Slower than the no-friction speed means the car tends to slide down the bank, so friction points up the bank.
 
 The main trap is choosing a forward or backward direction. For this kind of banked-curve question, static friction is opposing slipping along the slope, not pushing along the direction of travel.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Maximum Speed on a Frictional Banked Curve](<Problem-6.md>)
+
+<!-- study-guide-nav:end -->

@@ -223,3 +223,15 @@ options:
 For a conical-pendulum free-body diagram, first list the real interactions with the object. With no air resistance, the object has weight downward and tension along the string toward the support.
 
 Then use circular motion as a check: the horizontal component of tension supplies the inward net force. Do not add a separate centripetal-force arrow.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Finding the Radius from an Angled String](<../../2026-07-03-HW-2/Lessons/Problem-2.md>)
+
+<!-- study-guide-nav:end -->

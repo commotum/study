@@ -241,3 +241,15 @@ N=mg-m\omega^2r.
 $$
 
 Use this subtraction only because the rider is at the top. The main trap is using the bottom-position equation $N-mg=m\omega^2r$, which would make the normal force too large.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Comparing Normal Force and Weight at the Top of a Hill](<../../2026-07-05-PQ-1/Lessons/Problem-3.md>)
+
+<!-- study-guide-nav:end -->

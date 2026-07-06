@@ -278,3 +278,15 @@ N_{\text{bottom}}=mg+m\frac{v^2}{r}.
 $$
 
 The main trap is thinking constant speed means equal normal forces. Constant speed keeps the size of $\frac{v^2}{r}$ the same, but the force signs change because inward points in opposite directions at the top and bottom.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Finding the Normal Force at the Bottom of a Ferris Wheel](<Problem-4.md>)
+
+<!-- study-guide-nav:end -->

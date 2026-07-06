@@ -341,3 +341,15 @@ v^2=2gr(1-\cos\theta).
 $$
 
 Combine the two equations only after they describe the same instant. The main trap is setting the centripetal term to zero; at lift-off, the normal force is zero, but the object still has inward radial acceleration.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: End of top-30 path.
+
+<!-- study-guide-nav:end -->

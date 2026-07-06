@@ -216,3 +216,15 @@ For an icy banked curve, use this checklist:
 5. Do not add a separate centripetal-force arrow; circular motion describes the net force direction, not a new force.
 
 The correct side-view diagram has exactly two arrows: $mg$ downward and $N$ perpendicular to the bank, tilted inward.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Finding the Speed for a Frictionless Banked Curve](<Problem-4.md>)
+
+<!-- study-guide-nav:end -->

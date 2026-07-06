@@ -94,5 +94,4 @@ a_c=\frac{v^2}{r}=r\omega^2
 $$
 
 
-Example problem:
-A disk is initially spinning at 14 radians per second and comes to a stop in 22 seconds under constant angular acceleration. How many revolutions does it make as it slows down and stops?
+

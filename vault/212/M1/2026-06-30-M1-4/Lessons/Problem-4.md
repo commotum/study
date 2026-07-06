@@ -326,3 +326,15 @@ v=\sqrt{rg\tan\theta}.
 $$
 
 The main traps are swapping sine and cosine, leaving the mass in the final formula, using radians mode for a degree angle, keeping the negative square-root branch, and forgetting the square root.
+
+<!-- study-guide-nav:start -->
+
+---
+
+## Study Guide Navigation
+
+Study guide: [212 Study Guide](<../../../study-guide.md>)
+
+Next: [Choosing Friction Direction on a Banked Curve](<Problem-5.md>)
+
+<!-- study-guide-nav:end -->
