@@ -361,7 +361,7 @@ type: radio
 id: q-7
 content: |-
   A wheel spins with an angular speed of $120$ revolutions per minute.
-  
+
   What is its angular speed in radians per second?
 options:
 - id: a

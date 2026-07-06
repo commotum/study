@@ -15,6 +15,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MA_ROOT = REPO_ROOT / "vault" / "MA"
 MASS_SCRIPT_PATH = REPO_ROOT / "util" / "mass_convert_ma_mcqs.py"
+SKIP_PATH = REPO_ROOT / "util" / "ma_answer_skips.csv"
 
 QUESTION_SECTION_RE = re.compile(
     r"(?P<head>^\*\*Question\s+(?P<number>\d+):?\*\*.*?$)(?P<body>.*?)(?=^\*\*Question\s+\d+:?\*\*|^---\s*$|\Z)",
@@ -52,6 +53,16 @@ def load_mass_helpers():
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
+
+
+def load_skipped_answers(path: Path) -> set[tuple[str, str]]:
+    if not path.exists():
+        return set()
+    return {
+        (row["topic-id"], row["question-id"])
+        for row in read_csv(path)
+        if row.get("topic-id") and row.get("question-id")
+    }
 
 
 def rel(path: Path) -> str:
@@ -136,16 +147,23 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=REPO_ROOT / "util" / "ma_missing_answer_queue.csv",
     )
+    parser.add_argument(
+        "--include-skips",
+        action="store_true",
+        help="Include questions documented in util/ma_answer_skips.csv.",
+    )
     args = parser.parse_args(argv)
 
     mass = load_mass_helpers()
     catalog = mass.load_catalog()
+    skipped_answers = set() if args.include_skips else load_skipped_answers(SKIP_PATH)
     question_rows = {
         (row["topic-id"], row["question-id"]): row
         for row in read_csv(MA_ROOT / "questions.csv")
     }
 
     rows: list[dict[str, str]] = []
+    skipped_rows = 0
     for lesson_path, entries in sorted(catalog.items()):
         if not lesson_path.exists():
             continue
@@ -163,6 +181,9 @@ def main(argv: list[str] | None = None) -> int:
                     continue
                 question_id = mass.quiz_id_from_body(body, question_number, question_map)
                 if not question_id:
+                    continue
+                if (entry.topic_id, question_id) in skipped_answers:
+                    skipped_rows += 1
                     continue
                 ledger_row = question_rows.get((entry.topic_id, question_id))
                 if not ledger_row or ledger_row.get("question-type") != "multiple-choice":
@@ -197,6 +218,8 @@ def main(argv: list[str] | None = None) -> int:
     unique = {(row["topic-id"], row["question-id"]) for row in rows}
     print(f"Wrote {len(rows)} queue rows to {args.output}")
     print(f"Unique topic/question pairs: {len(unique)}")
+    if skipped_rows:
+        print(f"Excluded documented skip rows: {skipped_rows}")
     return 0
 
 

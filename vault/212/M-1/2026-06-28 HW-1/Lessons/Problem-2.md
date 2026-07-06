@@ -467,9 +467,9 @@ type: radio
 id: q-8
 content: |-
   An object travels along a circular trajectory of radius $r$. At one instant, the particle's speed is $v$ and increasing at a constant rate $a$.
-  
+
   Assuming the object speeds up at this same rate, how much time will it take to complete one revolution?
-  
+
   Hint: $r$, $v$, and $a$ are all positive.
 options:
 - id: a
