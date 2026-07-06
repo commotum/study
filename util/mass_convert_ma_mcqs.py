@@ -345,7 +345,7 @@ def repair_partial_quiz_tails(text: str, converter) -> tuple[str, int]:
             repaired_tail = "\n".join(remaining_tail)
             if repaired_tail:
                 return "```quiz\n" + "\n".join(body_lines) + "\n```\n" + repaired_tail
-            return "```quiz\n" + "\n".join(body_lines) + "\n```"
+            return "```quiz\n" + "\n".join(body_lines) + "\n```\n"
 
         # Only the final quiz in a question can have a tail of stray options.
         quiz_matches = list(QUIZ_BLOCK_RE.finditer(section_body))
