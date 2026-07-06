@@ -5,6 +5,7 @@ Use this before final response.
 ## Lesson Quality
 
 - The lesson teaches one core move.
+- Unless the user provided an explicit target path, the finalized lesson is written under `Lessons/` next to the source file.
 - The recognition cue is visible early.
 - Prerequisites are minimal.
 - The first example is canonical.

@@ -7,7 +7,7 @@ description: Build a focused Math Academy-style study lesson from a homework pro
 
 ## Use This Skill When
 
-Use this skill when the user provides a homework problem, assignment problem, quiz item, or problem excerpt and wants a focused study lesson that teaches the one core move needed for that problem. The usual output is a standalone Markdown lesson file in the study vault.
+Use this skill when the user provides a homework problem, assignment problem, quiz item, or problem excerpt and wants a focused study lesson that teaches the one core move needed for that problem. The usual output is a standalone Markdown lesson file in a `Lessons/` folder next to the source assignment or problem file.
 
 ## Required References
 
@@ -29,34 +29,40 @@ Read `references/validation-rubric.md` before final verification. Read schemas o
    - Preserve the exact givens, notation, answer type, answer options, and correct answer if provided.
    - Keep the target problem atomic; do not turn a whole assignment into one lesson unless asked.
 
-2. Identify the core move.
+2. Resolve the lesson destination.
+   - If the user gives an explicit target path, write the finalized lesson there.
+   - Otherwise, create or use a `Lessons/` directory in the source file's parent directory.
+   - For a numbered problem, write `Lessons/Problem-N.md`, where `N` is the source problem number.
+   - If there is no problem number, use a short hyphen-case filename based on the core move.
+
+3. Identify the core move.
    - Write one sentence beginning with a concrete action verb.
    - Name the recognition cue, the exact task, prerequisite floor, likely mistakes, and variant axes.
    - Keep the move narrower than the course topic.
 
-3. Plan the lesson progression.
+4. Plan the lesson progression.
    - Use one tutorial introduction, then example sections that deepen the same move.
    - Each example section should change one local dimension: numbers, representation, direction, condition, edge case, or common trap.
    - Do not introduce a second method or downstream topic inside practice.
 
-4. Write the lesson.
+5. Write the lesson.
    - Use the Markdown shape from `references/lesson-writing-format.md`.
    - Put every practice item in a fenced `quiz` block.
    - Use `type: radio` for multiple-choice practice unless the task genuinely requires another supported quiz type.
    - Do not leave raw checklist questions such as `- [ ] A.` in final output.
 
-5. Validate quiz blocks.
+6. Validate quiz blocks.
    - Run the bundled validator on the final Markdown.
    - For normal core-move lessons, require quiz blocks, require radio practice, and require ids:
 
 ```bash
 python3 /Users/jake/Developer/study/util/skills/core-move-lesson/scripts/validate_quiz_blocks.py \
-  /path/to/Problem-N.md \
+  /path/to/Lessons/Problem-N.md \
   --require-radio-practice \
   --strict-ids
 ```
 
-6. Fix and revalidate.
+7. Fix and revalidate.
    - If validation fails, edit the lesson and rerun the validator.
    - Final response should say where the file was written and whether validation passed.
 
