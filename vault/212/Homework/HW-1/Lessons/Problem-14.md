@@ -248,7 +248,7 @@ type: radio
 id: q-5
 content: |-
   The plot below shows the $z$-component of the angular position of an object over a $5$ second time interval. Select the option which shows the $z$-component of the object's corresponding angular velocity over that same interval.
-  
+
   ![](<../Source/WHW-1/Images/problem-14-angular-position.png>)
 options:
 - id: a

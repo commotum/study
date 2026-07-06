@@ -257,9 +257,9 @@ content: |-
   
   ![](<Source/Week-2-Participation/Images/banked-curve-car-diagram.png>)
   
-  Answer: ==23.2==
+  Answer: ==23==
 feedback: |-
-  At maximum speed, friction points down the slope. Combining the vertical and radial force equations gives $v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}$, which gives $23.2\ \mathrm{m}/\mathrm{s}$ for the given values.
+  At maximum speed, friction points down the slope. Combining the vertical and radial force equations gives $v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}=23.2\ \mathrm{m}/\mathrm{s}$, which is $23\ \mathrm{m}/\mathrm{s}$ to 2 significant figures.
 ```
 
 ---
@@ -336,247 +336,123 @@ options:
 
 
 
-# M1-5asy
-
-Question 1
-
-1 pts
-
-![[Pasted image 20260706042433.png]]
-
-A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle. Which diagram represents a particle moving in the clockwise direction and speeding up?
-◯ A
-◯ B
-◯ C
-◯ D
-◯ E
-◯ F
-◯ G
-◯ H
-
-**D**.
-
-For clockwise motion at the lower-right side of the circle, the particle’s velocity is tangent **down and left**. Since it is **speeding up**, the net force must have:
-
-1. an **inward/radial component** toward the center, and
-    
-2. a **tangential component in the clockwise direction**.
-    
-
-Diagram **D** points generally inward while also having a component along the clockwise tangent, so it represents a particle moving clockwise and speeding up.
-
-
-
-Question 2
-
-1 pts
-
-A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension T in the string.
-
-What is the magnitude of the radial acceleration of the ball?
-Start by drawing a free-body diagram of the ball using rt -axes.
-Enter your answer in $\mathrm{m} / \mathrm{s}^2$, using $\mathrm{L}=0.88 \mathrm{~m}, \mathrm{~T}=1.2 \mathrm{~N}, \mathrm{~m}=0.56 \mathrm{~kg}, \theta=14^{\circ}$.
-
-![[Pasted image 20260706042553.png]]
-
-
-The radial acceleration points **toward the center** of the circle.
-
-At the shown position, both forces have inward radial components:
-
-[  
-\sum F_r = ma_r  
-]
-
-[  
-T + mg\cos\theta = ma_r  
-]
-
-So
-
-[  
-a_r = \frac{T}{m} + g\cos\theta  
-]
-
-Substitute:
-
-[  
-a_r = \frac{1.2}{0.56} + 9.8\cos(14^\circ)  
-]
-
-[  
-a_r \approx 2.14 + 9.51  
-]
-
-[  
-a_r \approx 11.65 \ \text{m/s}^2  
-]
-
-[  
-\boxed{11.7 \ \text{m/s}^2}  
-]
-
-Question 3
-
-1 pts
-
-A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension T in the string.
-
-What is the magnitude of the tangential acceleration of the ball?
-Start by drawing a free-body diagram of the ball using $r t$-axes.
-Enter your answer in $\mathrm{m} / \mathrm{s}^2$, using $\mathrm{L}=0.88 \mathrm{~m}, \mathrm{~T}=1.2 \mathrm{~N}, \mathrm{~m}=0.56 \mathrm{~kg}, \theta=14^{\circ}$.
-
-![[Pasted image 20260706042710.png]]
-
-
-Tension acts purely in the **radial** direction, so it does **not** contribute to tangential acceleration.
-
-Only gravity has a tangential component:
-
-[  
-\sum F_t = ma_t  
-]
-
-[  
-mg\sin\theta = ma_t  
-]
-
-So the magnitude is
-
-[  
-a_t = g\sin\theta  
-]
-
-Substitute:
-
-[  
-a_t = 9.8\sin(14^\circ)  
-]
-
-[  
-a_t \approx 2.37 \ \text{m/s}^2  
-]
-
-[  
-\boxed{2.4 \ \text{m/s}^2}  
-]
-
-For clockwise motion at that instant, this tangential acceleration is opposite the direction of motion, so the ball is slowing down there.
-
-
-Question 4
-
-1 pts
-
-A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension T in the string.
-
-What is the magnitude of the acceleration of the ball?
-Start by drawing a free-body diagram of the ball using rt -axes.
-Enter your answer in $\mathrm{m} / \mathrm{s}^2$, using $\mathrm{L}=0.88 \mathrm{~m}, \mathrm{~T}=1.2 \mathrm{~N}, \mathrm{~m}=0.56 \mathrm{~kg}, \theta=14^{\circ}$.
-
-![[Pasted image 20260706042756.png]]
-
-
-The total acceleration has both radial and tangential components:
-
-[  
-a=\sqrt{a_r^2+a_t^2}  
-]
-
-From the earlier components:
-
-[  
-a_r=\frac{T}{m}+g\cos\theta  
-]
-
-[  
-a_t=g\sin\theta  
-]
-
-So:
-
-[  
-a=\sqrt{\left(\frac{T}{m}+g\cos\theta\right)^2+\left(g\sin\theta\right)^2}  
-]
-
-Substitute the values:
-
-[  
-a=\sqrt{\left(\frac{1.2}{0.56}+9.8\cos14^\circ\right)^2+\left(9.8\sin14^\circ\right)^2}  
-]
-
-[  
-a=\sqrt{(11.65)^2+(2.37)^2}  
-]
-
-[  
-a\approx 11.9 \ \text{m/s}^2  
-]
-
-[  
-\boxed{11.9 \ \text{m/s}^2}  
-]
-
-
-Question 5
-
-1 pts
-
-A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension T in the string.
-
-If the ball is released at the instant shown, how far above the release point will it go at its maximum height?
-Start by drawing a free-body diagram of the ball using rt-axes.
-Enter your answer in m , using $\mathrm{L}=0.88 \mathrm{~m}, \mathrm{~T}=1.2 \mathrm{~N}, \mathrm{~m}=0.56 \mathrm{~kg}, \theta=14^{\circ}$.
-
-![[Pasted image 20260706042857.png]]Use the radial force equation first to find the speed at release:
-
-[  
-\sum F_r = ma_r  
-]
-
-[  
-T + mg\cos\theta = m\frac{v^2}{L}  
-]
-
-[  
-v^2 = L\left(\frac{T}{m}+g\cos\theta\right)  
-]
-
-Substitute:
-
-[  
-v^2 = 0.88\left(\frac{1.2}{0.56}+9.8\cos 14^\circ\right)  
-]
-
-[  
-v^2 \approx 10.25  
-]
-
-At release, the ball moves tangent to the circle. Since it is moving clockwise at the shown position, its upward velocity component is:
-
-[  
-v_y = v\sin\theta  
-]
-
-The extra height it rises after release is:
-
-[  
-\Delta y = \frac{v_y^2}{2g}  
-]
-
-[  
-\Delta y = \frac{v^2\sin^2\theta}{2g}  
-]
-
-[  
-\Delta y = \frac{10.25\sin^2 14^\circ}{2(9.8)}  
-]
-
-[  
-\Delta y \approx 0.0306 \text{ m}  
-]
-
-[  
-\boxed{0.031 \text{ m}}  
-]
-
+## M1-5asy
+
+**Question 1**
+
+```quiz
+type: radio
+id: m1-5asy-q1
+content: |-
+  A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle. Which diagram represents a particle moving in the clockwise direction and speeding up?
+  
+  ![](<Source/Week-2-Participation/Images/clockwise-speeding-up-net-force.png>)
+options:
+- id: a
+  content: |-
+    A
+- id: b
+  content: |-
+    B
+- id: c
+  content: |-
+    C
+- id: d
+  content: |-
+    D
+  correct: true
+  feedback: |-
+    Clockwise and speeding up means the net force points inward plus forward along the clockwise tangent.
+- id: e
+  content: |-
+    E
+- id: f
+  content: |-
+    F
+- id: g
+  content: |-
+    G
+- id: h
+  content: |-
+    H
+```
+
+---
+**Question 2**
+
+```quiz
+type: blank
+id: m1-5asy-q2
+content: |-
+  A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
+  
+  What is the magnitude of the radial acceleration of the ball? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
+  
+  Enter your answer in $\mathrm{m}/\mathrm{s}^2$, using $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$.
+  
+  ![](<Source/Week-2-Participation/Images/vertical-circle-ball-string-diagram.png>)
+  
+  Answer: ==12==
+feedback: |-
+  With the $r$-axis inward along the string, $T+mg\cos\theta=ma_r$, so $a_r=\frac{T}{m}+g\cos\theta=\frac{1.2}{0.56}+9.8\cos(14^\circ)=11.65\ \mathrm{m}/\mathrm{s}^2$, which is $12\ \mathrm{m}/\mathrm{s}^2$ to 2 significant figures.
+```
+
+---
+**Question 3**
+
+```quiz
+type: blank
+id: m1-5asy-q3
+content: |-
+  A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
+  
+  What is the magnitude of the tangential acceleration of the ball? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
+  
+  Enter your answer in $\mathrm{m}/\mathrm{s}^2$, using $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$.
+  
+  ![](<Source/Week-2-Participation/Images/vertical-circle-ball-string-diagram.png>)
+  
+  Answer: ==2.4==
+feedback: |-
+  Tension is radial, so the tangential acceleration comes from gravity: $a_t=g\sin\theta=9.8\sin(14^\circ)=2.37\ \mathrm{m}/\mathrm{s}^2$, which is $2.4\ \mathrm{m}/\mathrm{s}^2$ to 2 significant figures.
+```
+
+---
+**Question 4**
+
+```quiz
+type: blank
+id: m1-5asy-q4
+content: |-
+  A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
+  
+  What is the magnitude of the acceleration of the ball? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
+  
+  Enter your answer in $\mathrm{m}/\mathrm{s}^2$, using $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$.
+  
+  ![](<Source/Week-2-Participation/Images/vertical-circle-ball-string-diagram.png>)
+  
+  Answer: ==12==
+feedback: |-
+  The total acceleration magnitude is $|a|=\sqrt{a_r^2+a_t^2}$. With $a_r=11.65$ and $a_t=2.37$, $|a|=\sqrt{(11.65)^2+(2.37)^2}=11.89\ \mathrm{m}/\mathrm{s}^2$, which is $12\ \mathrm{m}/\mathrm{s}^2$ to 2 significant figures.
+```
+
+---
+**Question 5**
+
+```quiz
+type: blank
+id: m1-5asy-q5
+content: |-
+  A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
+  
+  If the ball is released at the instant shown, how far above the release point will it go at its maximum height? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
+  
+  Enter your answer in meters, using $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$.
+  
+  ![](<Source/Week-2-Participation/Images/vertical-circle-ball-string-diagram.png>)
+  
+  Answer: ==0.031==
+feedback: |-
+  From the radial equation, $v^2=a_rL$. The vertical rise after release is $\Delta y=\frac{v^2\sin^2\theta}{2g}=\frac{(11.65)(0.88)\sin^2(14^\circ)}{2(9.8)}=0.0306\ \mathrm{m}$, which is $0.031\ \mathrm{m}$ to 2 significant figures.
+```
