@@ -24,6 +24,13 @@ When a particle moves around a circle and changes speed, the net force must do t
 
 Use the stated direction of motion and whether the particle is speeding up or slowing down to decide which way the tangential component points. Then combine it with the inward component to choose the net-force arrow.
 
+The repeatable check is:
+
+1. Point inward toward the center.
+2. Point tangent in the direction of motion.
+3. Flip the tangent part if the particle is slowing down.
+4. Choose the single arrow that combines the inward part and the correct tangent part.
+
 ---
 
 <a id="split-the-net-force-into-radial-and-tangential-parts"></a>
@@ -36,6 +43,8 @@ Use the stated direction of motion and whether the particle is speeding up or sl
 At the left side of the circle, the center is to the right of the particle. So the radial part of the net force points right.
 
 This inward part is needed even if the particle's speed is constant. It changes the direction of the velocity so the path curves.
+
+If the speed is changing, the full net force is not usually straight inward. It must still include this inward part, but it also needs a tangential part.
 
 ```quiz
 type: radio
@@ -70,6 +79,8 @@ options:
 At the left side, clockwise motion carries the particle upward. The velocity is tangent to the circle, not inward or outward, so the velocity points up.
 
 The tangent direction depends on the position on the circle and the stated direction of travel. At this same left-side point, counterclockwise motion would point downward instead.
+
+Check the tangent before deciding whether the force points with it or against it.
 
 ```quiz
 type: radio
@@ -126,6 +137,27 @@ options:
     Left, away from the center
 ```
 
+```quiz
+type: radio
+id: q-speeding-left-clockwise
+content: |-
+  A particle is at the left side of a circle, moving clockwise, and speeding up. Which way should the tangential part of the net force point?
+options:
+- id: a
+  content: |-
+    Up
+  correct: true
+- id: b
+  content: |-
+    Down
+- id: c
+  content: |-
+    Right, toward the center
+- id: d
+  content: |-
+    Left, away from the center
+```
+
 ---
 
 <a id="choose-the-matching-diagram"></a>
@@ -142,6 +174,8 @@ Work in two parts:
 
 Combining those gives a net-force arrow that points down and right. In the assignment's diagram set, that is choice C.
 
+Before choosing, reject arrows that miss either requirement. A purely tangential arrow does not bend the path, and a purely inward arrow does not match a changing speed. An arrow with an outward part cannot be the net force for circular motion at that instant.
+
 ```quiz
 type: radio
 id: q-original-diagram-choice
@@ -153,19 +187,29 @@ options:
 - id: a
   content: |-
     A
+  feedback: |-
+    This arrow has an outward part instead of the required inward part.
 - id: b
   content: |-
     B
+  feedback: |-
+    This does not include the needed downward tangential part for slowing down.
 - id: c
   content: |-
     C
   correct: true
+  feedback: |-
+    This combines inward toward the center with a downward tangential part.
 - id: d
   content: |-
     D
+  feedback: |-
+    This is tangent with the clockwise motion, so it would speed the particle up.
 - id: e
   content: |-
     E
+  feedback: |-
+    This misses the clockwise-slowing combination shown by the required inward plus downward direction.
 ```
 
 ---

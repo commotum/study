@@ -5,8 +5,8 @@
 - [Introduction](#introduction)
 - [Recognize Acceleration In Circular Motion](#recognize-acceleration-in-circular-motion)
 - [Compare Radii At The Same Speed](#compare-radii-at-the-same-speed)
-- [Avoid The Constant-Speed Trap](#avoid-the-constant-speed-trap)
-- [Use The Formula With Numbers](#use-the-formula-with-numbers)
+- [Translate Smaller Circle To Smaller Radius](#translate-smaller-circle-to-smaller-radius)
+- [Compare Radius Changes By Factors](#compare-radius-changes-by-factors)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -28,7 +28,9 @@ $$
 a_c=\frac{v^2}{r}
 $$
 
-where $v$ is the speed and $r$ is the radius of the circular path. If the speed stays the same, the radius is in the denominator, so a smaller circle gives a larger acceleration.
+where $v$ is the speed and $r$ is the radius of the circular path.
+
+To compare accelerations, first decide what stays fixed. If the speed stays the same, then $v^2$ stays the same. Only the radius changes, and radius is in the denominator. That means a smaller circle gives a larger acceleration.
 
 ---
 
@@ -98,22 +100,22 @@ options:
 
 ---
 
-<a id="avoid-the-constant-speed-trap"></a>
-## Avoid The Constant-Speed Trap
+<a id="translate-smaller-circle-to-smaller-radius"></a>
+## Translate Smaller Circle To Smaller Radius
 
 **Example:** An object travels at a constant speed in a circular path. If the circle gets smaller while the speed stays the same, what happens to the magnitude of the acceleration?
 
 **Explanation**
 
-Constant speed does not remove centripetal acceleration. It only means there is no tangential acceleration changing the speed.
-
-The centripetal acceleration still has magnitude
+Translate "smaller circle" into "smaller radius." Then use the fixed-speed comparison:
 
 $$
-a_c=\frac{v^2}{r}
+a_c=\frac{\text{same }v^2}{\text{smaller }r}
 $$
 
-With the same $v$, decreasing $r$ increases $a_c$. So the acceleration is larger in magnitude for a smaller circle.
+A smaller denominator makes the fraction larger, so the acceleration magnitude increases.
+
+This does not conflict with constant speed. Constant speed means the speed is not changing; it does not mean the velocity direction is constant.
 
 ```quiz
 type: radio
@@ -135,44 +137,46 @@ options:
 
 ---
 
-<a id="use-the-formula-with-numbers"></a>
-## Use The Formula With Numbers
+<a id="compare-radius-changes-by-factors"></a>
+## Compare Radius Changes By Factors
 
-**Example:** A toy car moves at $4\text{ m/s}$ around a circle of radius $8\text{ m}$. What is the magnitude of its centripetal acceleration?
+**Example:** A car goes around two circular tracks at the same speed. Track A has radius $4\text{ m}$, and track B has radius $12\text{ m}$. How does the acceleration on track A compare with the acceleration on track B?
 
 **Explanation**
 
-Substitute into the formula:
+The speed is the same, so compare only the radii:
 
 $$
-a_c=\frac{v^2}{r}=\frac{(4\text{ m/s})^2}{8\text{ m}}
+a_c=\frac{v^2}{r}
 $$
 
+Track A's radius is one-third of track B's radius:
+
 $$
-a_c=\frac{16\text{ m}^2/\text{s}^2}{8\text{ m}}=2\text{ m/s}^2
+4=\frac{1}{3}\cdot 12
 $$
 
-Squaring the speed is important. Do not divide $v$ by $r$.
+Since the radius is in the denominator, one-third as much radius gives three times as much centripetal acceleration. Track A has the larger acceleration.
 
 ```quiz
 type: radio
-id: q-compute-centripetal-acceleration
+id: q-radius-factor-comparison
 content: |-
-  A puck moves at $6\text{ m/s}$ around a circle of radius $3\text{ m}$. What is the magnitude of its centripetal acceleration?
+  A scooter moves at the same constant speed around two circles. Circle A has radius $5\text{ m}$, and circle B has radius $20\text{ m}$. How does the acceleration in circle A compare with the acceleration in circle B?
 options:
 - id: a
   content: |-
-    $2\text{ m/s}^2$
+    It is $4$ times as large.
+  correct: true
 - id: b
   content: |-
-    $12\text{ m/s}^2$
-  correct: true
+    It is $\frac{1}{4}$ as large.
 - id: c
   content: |-
-    $18\text{ m/s}^2$
+    It is the same because the speed is the same.
 - id: d
   content: |-
-    $36\text{ m/s}^2$
+    It is zero because the speed is constant.
 ```
 
 ---
@@ -185,4 +189,9 @@ $$
 a_c=\frac{v^2}{r}
 $$
 
-The speed can stay constant while acceleration is nonzero because velocity changes direction. When $v$ is fixed, a smaller $r$ makes $\frac{v^2}{r}$ larger, so the acceleration magnitude is larger for a smaller circle.
+Use this checklist:
+
+- Constant speed in a circular path still has acceleration because velocity changes direction.
+- The centripetal acceleration magnitude is $a_c=\frac{v^2}{r}$.
+- If $v$ is fixed, compare only the radius.
+- Smaller radius means larger acceleration because $r$ is in the denominator.

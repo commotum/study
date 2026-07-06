@@ -6,6 +6,7 @@
 - [Choose the Center Direction](#choose-the-center-direction)
 - [Make the Net Force Point Inward](#make-the-net-force-point-inward)
 - [Compare the Opposing Forces](#compare-the-opposing-forces)
+- [Reverse the Comparison When the Center Changes](#reverse-the-comparison-when-the-center-changes)
 - [Avoid the Equal-Force Trap](#avoid-the-equal-force-trap)
 - [Apply the Hill Question](#apply-the-hill-question)
 - [Summary](#summary)
@@ -25,7 +26,13 @@
 
 When an object moves over the top of a circular hill, the center of the circular path is below the object. That means the radial acceleration points downward at the top.
 
-To choose between normal force and gravitational force, first decide which way the net force must point. Then compare the upward and downward forces so their difference points that way.
+Use this rule:
+
+1. Find the direction toward the center.
+2. Make the radial net force point toward the center.
+3. The force pointing toward the center must be larger than the opposing force by $m\dfrac{v^2}{r}$.
+
+At the top of a hill, gravity points toward the center and the normal force points away from the center, so gravity must be larger than the normal force.
 
 ---
 
@@ -144,6 +151,55 @@ options:
 
 ---
 
+<a id="reverse-the-comparison-when-the-center-changes"></a>
+## Reverse the Comparison When the Center Changes
+
+**Example:** A car is at the bottom of a circular dip in the road. Gravity still points downward, and the normal force points upward. Which force must be larger now?
+
+**Explanation**
+
+At the bottom of the dip, the center of the circular path is upward. The radial net force must point upward.
+
+Taking upward as positive, the radial force equation is
+
+$$
+N-mg=m\frac{v^2}{r}
+$$
+
+The right side is positive, so
+
+$$
+N-mg>0
+$$
+
+and therefore
+
+$$
+N>mg
+$$
+
+The comparison changes because the center direction changed.
+
+```quiz
+type: radio
+id: p3-reversed-center
+content: |-
+  A car is moving through the bottom of a circular dip. The center of the circular path is above the car. Which comparison is required?
+options:
+- id: a
+  content: |-
+    $N>mg$
+  correct: true
+- id: b
+  content: |-
+    $N<mg$
+- id: c
+  content: |-
+    $N=mg$
+```
+
+---
+
 <a id="avoid-the-equal-force-trap"></a>
 ## Avoid the Equal-Force Trap
 
@@ -164,6 +220,8 @@ mg-N=m\frac{v^2}{r}
 $$
 
 The car being out of gas does not remove the need for downward radial acceleration at the top of the hill. It only tells you there is no forward driving force from the engine.
+
+The useful check is: if $N=mg$, then the radial net force would be $0$, so the car would not have the required inward radial acceleration at that instant.
 
 ```quiz
 type: radio
