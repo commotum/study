@@ -24,6 +24,7 @@ QUESTION_ID_RE = re.compile(r"\bq-(?P<id>\d+)(?:-a-\d+)?\.(?:png|jpe?g|gif|webp|
 ANSWER_SPLIT_RE = re.compile(r"[\s,+/|]+")
 CHOICES_HEADING_RE = re.compile(r"^#{1,6}\s+Choices\s*$", re.IGNORECASE)
 TABLE_SEPARATOR_RE = re.compile(r"^:?-{3,}:?$")
+TAIL_BOUNDARY_RE = re.compile(r"^(?:```|<a id=|#{1,6}\s+)", re.IGNORECASE)
 
 MISSING_ANSWER_COMMENT = (
     "# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, "
@@ -179,17 +180,14 @@ def parse_choices(block_lines: list[str]) -> tuple[list[str], list[Choice], list
         index += 1
 
         while index < len(block_lines):
-            if CHOICE_RE.match(block_lines[index]):
+            if CHOICE_RE.match(block_lines[index]) or TAIL_BOUNDARY_RE.match(block_lines[index].strip()):
                 break
             if not block_lines[index].strip():
                 choice_lines.append("")
                 index += 1
                 continue
-            if block_lines[index].startswith((" ", "\t")):
-                choice_lines.append(block_lines[index].strip())
-                index += 1
-                continue
-            break
+            choice_lines.append(block_lines[index].strip())
+            index += 1
 
         choices.append(Choice(label=label, content=trim_blank_edges(choice_lines), checked=checked))
 

@@ -49,6 +49,7 @@ class LessonCatalog:
 @dataclass
 class FileStats:
     converted_raw: int = 0
+    repaired_partial: int = 0
     normalized_ids: int = 0
     propagated_answers: int = 0
     missing_blocks: int = 0
@@ -285,6 +286,81 @@ def propagate_known_answers(
     return QUESTION_SECTION_RE.sub(replace_section, text), count
 
 
+def trim_blank_edges(lines: list[str]) -> list[str]:
+    start = 0
+    end = len(lines)
+    while start < end and not lines[start].strip():
+        start += 1
+    while end > start and not lines[end - 1].strip():
+        end -= 1
+    return lines[start:end]
+
+
+def repair_partial_quiz_tails(text: str, converter) -> tuple[str, int]:
+    """Fold raw choices left after a partial quiz conversion back into the quiz."""
+
+    repairs = 0
+
+    def replace_section(match: re.Match[str]) -> str:
+        nonlocal repairs
+        section_body = match.group("body")
+
+        def replace_quiz(quiz_match: re.Match[str]) -> str:
+            nonlocal repairs
+            body = quiz_match.group("body")
+            tail = section_body[quiz_match.end() :]
+            first_choice_index = next(
+                (
+                    index
+                    for index, line in enumerate(tail.splitlines())
+                    if converter.CHOICE_RE.match(line)
+                ),
+                None,
+            )
+            if first_choice_index is None:
+                return quiz_match.group(0)
+
+            tail_lines = tail.splitlines()
+            previous_option_continuation = trim_blank_edges(tail_lines[:first_choice_index])
+            parsed = converter.parse_choices(tail_lines[first_choice_index:])
+            if parsed is None:
+                return quiz_match.group(0)
+            _, choices, remaining_tail = parsed
+            if not choices:
+                return quiz_match.group(0)
+
+            existing_labels = set(OPTION_ID_RE.findall(body))
+            if any(choice.label in existing_labels for choice in choices):
+                return quiz_match.group(0)
+
+            body_lines = body.splitlines()
+            body_lines = trim_blank_edges(body_lines)
+            for line in previous_option_continuation:
+                body_lines.append(f"    {line}" if line else "")
+            for choice in choices:
+                body_lines.append(f"- id: {choice.label}")
+                body_lines.extend(converter.block_scalar("content", choice.content, indent="  "))
+
+            repairs += 1
+            repaired_tail = "\n".join(remaining_tail)
+            if repaired_tail:
+                return "```quiz\n" + "\n".join(body_lines) + "\n```\n" + repaired_tail
+            return "```quiz\n" + "\n".join(body_lines) + "\n```"
+
+        # Only the final quiz in a question can have a tail of stray options.
+        quiz_matches = list(QUIZ_BLOCK_RE.finditer(section_body))
+        if not quiz_matches:
+            return match.group(0)
+        last_quiz = quiz_matches[-1]
+        replaced = replace_quiz(last_quiz)
+        if replaced == last_quiz.group(0):
+            return match.group(0)
+        new_body = section_body[: last_quiz.start()] + replaced
+        return match.group("head") + new_body
+
+    return QUESTION_SECTION_RE.sub(replace_section, text), repairs
+
+
 def collect_quiz_state(
     text: str,
     question_map: dict[str, str],
@@ -424,12 +500,14 @@ def main(argv: list[str] | None = None) -> int:
 
         original = lesson_path.read_text(encoding="utf-8")
         converted, conversions = converter.convert_markdown(original, known_answers, "radio")
+        converted, repaired = repair_partial_quiz_tails(converted, converter)
         converted, normalized = normalize_quiz_ids(converted, question_map)
         converted, propagated = propagate_known_answers(converted, question_map, known_answers)
         missing, verified, unresolved = collect_quiz_state(converted, question_map)
 
         stats = FileStats(
             converted_raw=len(conversions),
+            repaired_partial=repaired,
             normalized_ids=normalized,
             propagated_answers=propagated,
             missing_blocks=len(missing),
@@ -446,6 +524,7 @@ def main(argv: list[str] | None = None) -> int:
                 verified_course_updates[(catalog_entry.topic_id, question_id)].add(catalog_entry.course)
 
         total.converted_raw += stats.converted_raw
+        total.repaired_partial += stats.repaired_partial
         total.normalized_ids += stats.normalized_ids
         total.propagated_answers += stats.propagated_answers
         total.missing_blocks += stats.missing_blocks
@@ -468,6 +547,7 @@ def main(argv: list[str] | None = None) -> int:
     action = "Would update" if args.dry_run else "Updated"
     print(f"{action} {len(changed_files)} lesson file(s).")
     print(f"Raw questions converted: {total.converted_raw}")
+    print(f"Partial quiz tails repaired: {total.repaired_partial}")
     print(f"Quiz ids normalized from q-N to ma-id: {total.normalized_ids}")
     print(f"Known answers propagated into missing blocks: {total.propagated_answers}")
     print(f"Missing-answer quiz blocks seen: {total.missing_blocks}")
