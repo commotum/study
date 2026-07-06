@@ -52,8 +52,10 @@ def image_answer_from_choices(choices: list[base.Choice]) -> ImageAnswer | None:
     for choice in choices:
         content = "\n".join(choice.content)
         matches = list(IMAGE_ANSWER_RE.finditer(content))
-        if len(matches) != 1:
+        if len(matches) > 1:
             return None
+        if not matches:
+            continue
         match = matches[0]
         parsed.append(
             (
@@ -77,7 +79,7 @@ def image_answer_from_choices(choices: list[base.Choice]) -> ImageAnswer | None:
     return ImageAnswer(
         question_id=parsed[0][1],
         correct_label=correct_labels[0],
-        option_count=len(parsed),
+        option_count=len(choices),
     )
 
 
@@ -174,11 +176,14 @@ def quiz_options(body: str) -> list[tuple[str, list[str]]]:
 
 def image_answer_from_quiz_body(body: str) -> ImageAnswer | None:
     parsed: list[tuple[str, str, int]] = []
-    for label, option_lines in quiz_options(body):
+    options = quiz_options(body)
+    for label, option_lines in options:
         content = "\n".join(option_lines)
         matches = list(IMAGE_ANSWER_RE.finditer(content))
-        if len(matches) != 1:
+        if len(matches) > 1:
             return None
+        if not matches:
+            continue
         match = matches[0]
         parsed.append((label, match.group("question_id"), int(match.group("answer_id"))))
 
@@ -192,7 +197,7 @@ def image_answer_from_quiz_body(body: str) -> ImageAnswer | None:
     return ImageAnswer(
         question_id=parsed[0][1],
         correct_label=correct_labels[0],
-        option_count=len(parsed),
+        option_count=len(options),
     )
 
 
