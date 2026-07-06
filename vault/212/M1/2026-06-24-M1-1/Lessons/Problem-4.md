@@ -1,0 +1,253 @@
+# Revolutions While A Disk Stops
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Read The Stopping Cue](#read-the-stopping-cue)
+- [Find The Angular Displacement](#find-the-angular-displacement)
+- [Convert Radians To Revolutions](#convert-radians-to-revolutions)
+- [Avoid The Constant-Speed Trap](#avoid-the-constant-speed-trap)
+- [Summary](#summary)
+
+## Prerequisites
+
+- Know that angular velocity is measured in radians per second.
+- Know that constant angular acceleration makes angular velocity change at a constant rate.
+- Know that one full revolution is $2\pi$ radians.
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+When a rotating object starts with angular velocity, comes to a stop, and has constant angular acceleration, its angular velocity decreases linearly from the starting value to $0$. To find how many revolutions it makes while stopping, find the average angular velocity, multiply by the stopping time to get angular displacement in radians, and then divide by $2\pi$ radians per revolution.
+
+The cue is the phrase "comes to a stop" together with "constant angular acceleration." That tells you the final angular velocity is $0$ and the average angular velocity is halfway between the initial and final values.
+
+---
+
+<a id="read-the-stopping-cue"></a>
+## Read The Stopping Cue
+
+**Example:** A wheel starts at $10\ \mathrm{rad/s}$ and comes to a stop in $8\ \mathrm{s}$ with constant angular acceleration. What average angular velocity should be used during the stop?
+
+**Explanation**
+
+The wheel starts with
+
+$$
+\omega_0=10\ \mathrm{rad/s}
+$$
+
+and comes to a stop, so
+
+$$
+\omega_f=0.
+$$
+
+With constant angular acceleration, angular velocity changes linearly. The average angular velocity is the average of the starting and ending values:
+
+$$
+\omega_{\mathrm{avg}}=\frac{\omega_0+\omega_f}{2}
+=\frac{10+0}{2}
+=5\ \mathrm{rad/s}.
+$$
+
+```quiz
+type: radio
+id: p4-q1
+content: |-
+  A disk starts at $18\ \mathrm{rad/s}$ and comes to a stop with constant angular acceleration. What average angular velocity should be used while it stops?
+options:
+- id: p4-q1-a
+  content: |-
+    $18\ \mathrm{rad/s}$
+- id: p4-q1-b
+  content: |-
+    $9\ \mathrm{rad/s}$
+  correct: true
+- id: p4-q1-c
+  content: |-
+    $0\ \mathrm{rad/s}$
+- id: p4-q1-d
+  content: |-
+    $36\ \mathrm{rad/s}$
+```
+
+---
+
+<a id="find-the-angular-displacement"></a>
+## Find The Angular Displacement
+
+**Example:** A disk starts at $10\ \mathrm{rad/s}$ and stops in $8\ \mathrm{s}$ with constant angular acceleration. How many radians does it turn through while stopping?
+
+**Explanation**
+
+From the previous section, the average angular velocity is
+
+$$
+\omega_{\mathrm{avg}}=5\ \mathrm{rad/s}.
+$$
+
+Angular displacement is average angular velocity times time:
+
+$$
+\Delta\theta=\omega_{\mathrm{avg}}t.
+$$
+
+Substitute the values:
+
+$$
+\Delta\theta=(5\ \mathrm{rad/s})(8\ \mathrm{s})=40\ \mathrm{rad}.
+$$
+
+```quiz
+type: radio
+id: p4-q2
+content: |-
+  A disk starts at $14\ \mathrm{rad/s}$ and stops in $12\ \mathrm{s}$ with constant angular acceleration. What is its angular displacement while stopping?
+options:
+- id: p4-q2-a
+  content: |-
+    $168\ \mathrm{rad}$
+- id: p4-q2-b
+  content: |-
+    $84\ \mathrm{rad}$
+  correct: true
+- id: p4-q2-c
+  content: |-
+    $7\ \mathrm{rad}$
+- id: p4-q2-d
+  content: |-
+    $26\ \mathrm{rad}$
+```
+
+---
+
+<a id="convert-radians-to-revolutions"></a>
+## Convert Radians To Revolutions
+
+**Example:** A disk turns through $40\ \mathrm{rad}$ while stopping. How many revolutions is this, to two significant figures?
+
+**Explanation**
+
+One revolution is $2\pi$ radians:
+
+$$
+1\ \mathrm{rev}=2\pi\ \mathrm{rad}.
+$$
+
+Divide the angular displacement by $2\pi$:
+
+$$
+N=\frac{\Delta\theta}{2\pi}
+=\frac{40}{2\pi}
+\approx 6.4\ \mathrm{rev}.
+$$
+
+```quiz
+type: radio
+id: p4-q3
+content: |-
+  A disk turns through $156\ \mathrm{rad}$ while stopping. How many revolutions is this, to two significant figures?
+options:
+- id: p4-q3-a
+  content: |-
+    $25\ \mathrm{rev}$
+  correct: true
+- id: p4-q3-b
+  content: |-
+    $50\ \mathrm{rev}$
+- id: p4-q3-c
+  content: |-
+    $156\ \mathrm{rev}$
+- id: p4-q3-d
+  content: |-
+    $12\ \mathrm{rev}$
+```
+
+---
+
+<a id="avoid-the-constant-speed-trap"></a>
+## Avoid The Constant-Speed Trap
+
+**Example:** A disk is spinning at $12\ \mathrm{rad/s}$ and comes to a stop in $26\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops?
+
+**Explanation**
+
+Because the disk stops, its final angular velocity is
+
+$$
+\omega_f=0.
+$$
+
+Use the average angular velocity, not the initial angular velocity:
+
+$$
+\omega_{\mathrm{avg}}=\frac{12+0}{2}=6\ \mathrm{rad/s}.
+$$
+
+Then find the angular displacement:
+
+$$
+\Delta\theta=(6\ \mathrm{rad/s})(26\ \mathrm{s})=156\ \mathrm{rad}.
+$$
+
+Convert radians to revolutions:
+
+$$
+N=\frac{156}{2\pi}\approx 24.8\ \mathrm{rev}.
+$$
+
+To two significant figures, the disk makes
+
+$$
+25\ \mathrm{rev}.
+$$
+
+The common trap is multiplying $12$ by $26$ as if the disk kept spinning at $12\ \mathrm{rad/s}$ the whole time. That would double the angular displacement because it ignores the slowdown.
+
+```quiz
+type: radio
+id: p4-q4
+content: |-
+  A disk is spinning at $16\ \mathrm{rad/s}$ and comes to a stop in $10\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops, to two significant figures?
+options:
+- id: p4-q4-a
+  content: |-
+    $25\ \mathrm{rev}$
+- id: p4-q4-b
+  content: |-
+    $13\ \mathrm{rev}$
+  correct: true
+- id: p4-q4-c
+  content: |-
+    $80\ \mathrm{rev}$
+- id: p4-q4-d
+  content: |-
+    $6.4\ \mathrm{rev}$
+```
+
+---
+
+## Summary
+
+For a constant-angular-acceleration stop, the final angular velocity is $0$, so
+
+$$
+\omega_{\mathrm{avg}}=\frac{\omega_0+0}{2}.
+$$
+
+Then compute
+
+$$
+\Delta\theta=\omega_{\mathrm{avg}}t
+$$
+
+and convert radians to revolutions with
+
+$$
+N=\frac{\Delta\theta}{2\pi}.
+$$
+
+The main trap is using $\omega_0t$ as if the disk never slowed down. For a uniform stop, that gives twice the correct angular displacement.
