@@ -1,0 +1,163 @@
+## Problem 1
+
+**Question 1**
+
+```quiz
+type: radio
+id: q-1
+content: |-
+  If an object travels at a constant speed in a circular path, the acceleration of the object is
+options:
+- id: a
+  content: |-
+    larger in magnitude for a smaller circle.
+  correct: true
+- id: b
+  content: |-
+    smaller in magnitude for a smaller circle.
+- id: c
+  content: |-
+    zero.
+```
+
+---
+## Problem 2
+
+**Question 2**
+
+```quiz
+type: radio
+id: q-2
+content: |-
+  A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle. Which diagram represents a particle moving in the clockwise direction and slowing down?
+
+  ![](<Source/Images/problem-2-net-force-diagrams.png>)
+options:
+- id: a
+  content: |-
+    A
+- id: b
+  content: |-
+    B
+- id: c
+  content: |-
+    C
+  correct: true
+- id: d
+  content: |-
+    D
+- id: e
+  content: |-
+    E
+```
+
+---
+## Problem 3
+
+**Question 3**
+
+```quiz
+type: radio
+id: q-3
+content: |-
+  An out-of-gas car is rolling over the top of a circular hill. At this instant ____
+options:
+- id: a
+  content: |-
+    the normal force on the car is greater than the gravitational force on the car
+- id: b
+  content: |-
+    the normal force on the car is less than the gravitational force on the car
+  correct: true
+- id: c
+  content: |-
+    the normal force on the car is equal to the gravitational force on the car
+```
+
+---
+## Problem 4
+
+**Question 4**
+
+```quiz
+type: free-response
+id: q-4
+content: |-
+  A coin of mass $m$ is at radius $r$ on a turntable that is spinning at a constant angular speed. The coefficient of maximum static friction between the coin and turntable is $\mu_s$.
+
+  ![](<Source/Images/problem-4-turntable.png>)
+
+  A. Draw a free-body diagram of the coin. Be sure to label all vectors, axes and angles and keep vector lengths consistent.
+
+  B. What is the smallest period of rotation the turntable can have without the coin slipping? Solve completely symbolically in terms of given variables.
+```
+
+**Solution 4**
+
+![](<Source/Images/problem-4-free-body-diagram.png>)
+
+\[
+\sum F_y = 0 = N - mg \rightarrow N = mg
+\]
+
+\[
+\sum F_r = \frac{mv^2}{r} = \mu_s N = \mu_s mg
+\]
+
+\[
+v = \sqrt{\mu_s g r} = \frac{2\pi r}{T}
+\]
+
+\[
+T = \frac{2\pi r}{\sqrt{\mu_s g r}} = 2\pi \sqrt{\frac{r}{\mu_s g}}
+\]
+
+---
+## Problem 5
+
+**Question 5**
+
+```quiz
+type: free-response
+id: q-5
+content: |-
+  A small bead of mass $m$ slides without friction around an inverted cone. The cone has radius $r$ and height $h$, and the bead maintains a height $h$.
+
+  ![](<Source/Images/problem-5-inverted-cone.png>)
+
+  A. Draw a free-body diagram of the bead. Be sure to label all vectors, axes and angles and keep vector lengths consistent.
+
+  B. What is the orbital period of the bead? Solve completely symbolically in terms of given variables.
+
+  C. Using the given variables, list two ways to decrease the orbital period.
+```
+
+**Solution 5**
+
+![](<Source/Images/problem-5-free-body-diagram.png>)
+
+\[
+T = \frac{2\pi r}{v}, \qquad \tan\theta = \frac{r}{h}
+\]
+
+\[
+\sum F_y = 0 = N\sin\theta - mg \rightarrow N\sin\theta = mg
+\]
+
+\[
+\sum F_r = \frac{mv^2}{r} = N\cos\theta
+\]
+
+\[
+\frac{N\sin\theta}{N\cos\theta} = \frac{mg}{\frac{mv^2}{r}}
+\]
+
+\[
+\tan\theta = \frac{gr}{v^2} = \frac{r}{h} \rightarrow v = \sqrt{gh}
+\]
+
+\[
+T = \frac{2\pi r}{\sqrt{gh}}
+\]
+
+Decrease $r$ or increase $h$ to decrease the orbital period.
