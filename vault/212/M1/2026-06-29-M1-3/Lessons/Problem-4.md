@@ -344,6 +344,12 @@ $$
 
 The main trap is using the top-of-the-wheel equation $N=mg-m\omega^2r$. At the bottom, the normal force must be larger than the rider's weight.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -354,10 +360,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Normal Force at the Top of a Ferris Wheel](<Problem-5.md>)
 
+Study guide index: 17/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

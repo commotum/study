@@ -386,6 +386,12 @@ $$
 
 The main trap is the word "smallest." Smaller period means larger speed, so the no-slip condition is $T\ge T_{\min}$, not $T\le T_{\min}$.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -396,10 +402,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Comparing Ferris Wheel Normal Forces](<../../2026-06-29-M1-3/Lessons/Problem-1.md>)
 
+Study guide index: 15/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

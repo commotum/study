@@ -284,6 +284,12 @@ $$
 
 The main trap is thinking constant speed means equal normal forces. Constant speed keeps the size of $\frac{v^2}{r}$ the same, but the force signs change because inward points in opposite directions at the top and bottom.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -294,10 +300,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Finding the Normal Force at the Bottom of a Ferris Wheel](<Problem-4.md>)
 
+Study guide index: 16/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

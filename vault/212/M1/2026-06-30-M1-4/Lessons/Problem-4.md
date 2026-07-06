@@ -332,6 +332,12 @@ $$
 
 The main traps are swapping sine and cosine, leaving the mass in the final formula, using radians mode for a degree angle, keeping the negative square-root branch, and forgetting the square root.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -342,10 +348,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Choosing Friction Direction on a Banked Curve](<Problem-5.md>)
 
+Study guide index: 22/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

@@ -295,6 +295,12 @@ $$
 
 The main trap is stopping at the top-speed condition or using a height change of only $r$ instead of $2r$.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -305,10 +311,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Finding the Critical Angle Where a Slider Leaves a Sphere](<Problem-13.md>)
 
+Study guide index: 29/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

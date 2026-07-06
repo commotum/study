@@ -294,6 +294,12 @@ Use this checklist when a turntable object is "just about to slip":
 3. Solve for angular speed: $\omega=\sqrt{\mu_sg/r}$.
 4. Divide by $r$ before taking the square root; do not multiply by $r$ or forget the square root.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -304,10 +310,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Finding the Minimum Period Before a Coin Slips](<../../2026-07-05-PQ-1/Lessons/Problem-4.md>)
 
+Study guide index: 14/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

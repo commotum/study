@@ -235,6 +235,12 @@ $$
 
 Multiply the radius by the angular velocity, keep the final unit as distance per time, and round only after the multiplication. The main trap is using diameter in place of radius.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -245,10 +251,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Ranking Radial Accelerations](<../../2026-06-25-M1-2/Lessons/Problem-6.md>)
 
+Study guide index: 02/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

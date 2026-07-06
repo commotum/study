@@ -364,9 +364,9 @@ def repair_partial_quiz_tails(text: str, converter) -> tuple[str, int]:
 def collect_quiz_state(
     text: str,
     question_map: dict[str, str],
-) -> tuple[set[str], set[str], set[str]]:
+) -> tuple[set[str], dict[str, set[str]], set[str]]:
     missing: set[str] = set()
-    verified: set[str] = set()
+    verified: dict[str, set[str]] = defaultdict(set)
     unresolved: set[str] = set()
 
     def inspect_section(match: re.Match[str]) -> str:
@@ -384,7 +384,7 @@ def collect_quiz_state(
             if "MA_ANSWER_MISSING" in body:
                 missing.add(question_id)
             elif len(correct_labels) == 1:
-                verified.add(question_id)
+                verified[question_id].update(correct_labels)
         return match.group(0)
 
     QUESTION_SECTION_RE.sub(inspect_section, text)
@@ -403,10 +403,12 @@ def update_ledgers(
     question_rows: list[dict[str, str]],
     missing_updates: dict[tuple[str, str], set[str]],
     verified_course_updates: dict[tuple[str, str], set[str]],
+    verified_label_updates: dict[tuple[str, str], set[str]],
     dry_run: bool,
-) -> tuple[int, int]:
+) -> tuple[int, int, int]:
     question_by_key = {(row["topic-id"], row["question-id"]): row for row in question_rows}
     needs_answer_rows = 0
+    verified_answer_rows = 0
     course_only_rows = 0
 
     for key, courses in missing_updates.items():
@@ -426,6 +428,26 @@ def update_ledgers(
             row["quiz-updated-courses"] = append_course(row.get("quiz-updated-courses", ""), course)
         if row != before:
             needs_answer_rows += 1
+
+    for key, labels in verified_label_updates.items():
+        if key in missing_updates or len(labels) != 1:
+            continue
+        row = question_by_key.get(key)
+        if not row or row.get("question-type") != "multiple-choice":
+            continue
+        if row.get("quiz-status") == "converted-and-verified":
+            continue
+        before = dict(row)
+        row["quiz-block-format"] = "obsidian-quiz-blocks"
+        row["quiz-block-type"] = "radio"
+        row["quiz-answer-labels"] = next(iter(labels))
+        row["quiz-status"] = "converted-and-verified"
+        row["quiz-answer-source"] = "manual"
+        row["quiz-answer-rule"] = "label"
+        for course in sorted(verified_course_updates.get(key, set())):
+            row["quiz-updated-courses"] = append_course(row.get("quiz-updated-courses", ""), course)
+        if row != before:
+            verified_answer_rows += 1
 
     for key, courses in verified_course_updates.items():
         row = question_by_key.get(key)
@@ -456,7 +478,7 @@ def update_ledgers(
                 [row for row in question_rows if row.get("topic-id") in topic_ids],
             )
 
-    return needs_answer_rows, course_only_rows
+    return needs_answer_rows, verified_answer_rows, course_only_rows
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -485,6 +507,7 @@ def main(argv: list[str] | None = None) -> int:
     changed_files: list[Path] = []
     missing_updates: dict[tuple[str, str], set[str]] = defaultdict(set)
     verified_course_updates: dict[tuple[str, str], set[str]] = defaultdict(set)
+    verified_label_updates: dict[tuple[str, str], set[str]] = defaultdict(set)
 
     for lesson_path in selected_paths:
         entries = catalog[lesson_path]
@@ -519,9 +542,10 @@ def main(argv: list[str] | None = None) -> int:
         for question_id in missing:
             for catalog_entry in entries:
                 missing_updates[(catalog_entry.topic_id, question_id)].add(catalog_entry.course)
-        for question_id in verified:
+        for question_id, labels in verified.items():
             for catalog_entry in entries:
                 verified_course_updates[(catalog_entry.topic_id, question_id)].add(catalog_entry.course)
+                verified_label_updates[(catalog_entry.topic_id, question_id)].update(labels)
 
         total.converted_raw += stats.converted_raw
         total.repaired_partial += stats.repaired_partial
@@ -536,11 +560,12 @@ def main(argv: list[str] | None = None) -> int:
             if not args.dry_run:
                 lesson_path.write_text(converted, encoding="utf-8")
 
-    needs_rows, verified_course_rows = update_ledgers(
+    needs_rows, verified_answer_rows, verified_course_rows = update_ledgers(
         question_fields,
         question_rows,
         missing_updates,
         verified_course_updates,
+        verified_label_updates,
         args.dry_run,
     )
 
@@ -554,6 +579,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Verified radio quiz blocks seen: {total.verified_blocks}")
     print(f"Unresolved quiz ids seen: {total.unresolved_ids}")
     print(f"Ledger rows set/kept as needs-answer: {needs_rows}")
+    print(f"Ledger rows promoted to verified from quiz blocks: {verified_answer_rows}")
     print(f"Verified ledger rows with course provenance updated: {verified_course_rows}")
     return 0
 

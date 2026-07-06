@@ -300,6 +300,12 @@ For circular motion with changing speed:
 4. If the particle is slowing down, the tangential component points backward against the motion.
 5. Choose the net-force arrow that points between the radial and tangential components.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -310,10 +316,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Reading Net Force Arrows for Circular Motion](<../../2026-07-05-PQ-1/Lessons/Problem-2.md>)
 
+Study guide index: 09/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

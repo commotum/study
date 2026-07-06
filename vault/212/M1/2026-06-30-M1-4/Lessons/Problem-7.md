@@ -229,6 +229,12 @@ For a conical-pendulum free-body diagram, first list the real interactions with 
 
 Then use circular motion as a check: the horizontal component of tension supplies the inward net force. Do not add a separate centripetal-force arrow.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -239,10 +245,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: [Finding the Radius from an Angled String](<../../2026-07-03-HW-2/Lessons/Problem-2.md>)
 
+Study guide index: 26/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]

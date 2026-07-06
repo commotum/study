@@ -347,6 +347,12 @@ $$
 
 Combine the two equations only after they describe the same instant. The main trap is setting the centripetal term to zero; at lift-off, the normal force is zero, but the object still has inward radial acceleration.
 
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
 <!-- study-guide-nav:start -->
 
 ---
@@ -357,10 +363,6 @@ Study guide: [212 Study Guide](<../../../study-guide.md>)
 
 Next: End of top-30 path.
 
+Study guide index: 30/30
+
 <!-- study-guide-nav:end -->
-
-```update-progress
-```
-
-[[212/Home|Home]]
-[[212/0. Table of Contents/TOC|Table of Contents]]
