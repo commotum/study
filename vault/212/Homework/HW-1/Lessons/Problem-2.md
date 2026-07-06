@@ -23,7 +23,16 @@
 
 An object travels along a circular trajectory of radius $r$. At one instant, its speed is $v$ and its speed is increasing at a constant rate $a$.
 
-The recognition cue is that the question asks for the time for one full revolution while the speed is changing. Use the same pattern every time:
+The recognition cue is that the question asks for the time for one full revolution while the speed is changing.
+
+The known quantities are:
+
+- one-lap distance: the circumference $2\pi r$
+- initial speed: $v$
+- constant rate of speed increase: $a$
+- unknown elapsed time: $t$
+
+The assumption that the object keeps speeding up at the same rate is what lets us use one constant-acceleration distance formula. Use the same pattern every time:
 
 $$
 \text{one-lap distance}=\text{distance traveled after }t.
@@ -68,6 +77,12 @@ One revolution means one full circumference. For a circle of radius $r$, the cir
 
 $$
 2\pi r.
+$$
+
+So in this problem, one revolution is not an angle to solve for. It is the distance target:
+
+$$
+L=2\pi r.
 $$
 
 With $r=6$, the distance is
@@ -137,7 +152,13 @@ options:
 
 **Explanation**
 
-The distance for one revolution is
+First identify the known quantities:
+
+$$
+L=2\pi(4)=8\pi,\qquad v=5,\qquad a=2.
+$$
+
+The distance for one revolution is the circumference:
 
 $$
 2\pi(4)=8\pi.
@@ -160,6 +181,8 @@ Set the distance traveled equal to the one-lap distance:
 $$
 5t+t^2=8\pi.
 $$
+
+This is the equation for the unknown time $t$.
 
 ---
 
@@ -242,6 +265,12 @@ Move everything to one side:
 
 $$
 t^2+5t-30=0.
+$$
+
+Now the coefficients are visible:
+
+$$
+A=1,\qquad B=5,\qquad C=-30.
 $$
 
 Apply the quadratic formula:
@@ -334,7 +363,7 @@ $$
 \frac12at^2+vt-L=0.
 $$
 
-Use the quadratic formula with
+The coefficients are
 
 $$
 A=\frac12a,\qquad B=v,\qquad C=-L.
@@ -348,6 +377,12 @@ t
 \frac{-v\pm\sqrt{v^2-4\left(\frac12a\right)(-L)}}{2\left(\frac12a\right)}
 =
 \frac{-v\pm\sqrt{v^2+2aL}}{a}.
+$$
+
+The denominator is $a$ because
+
+$$
+2\left(\frac12a\right)=a.
 $$
 
 Since $v$, $a$, and $L$ are positive, the root with $-\sqrt{v^2+2aL}$ has a negative numerator. The time is
@@ -393,10 +428,16 @@ options:
 
 **Explanation**
 
-For one revolution, the distance is
+Use the same knowns-to-equation setup. The problem gives initial speed $v$ and constant speed-increase rate $a$, and one revolution gives
 
 $$
 L=2\pi r.
+$$
+
+So the distance equation is
+
+$$
+2\pi r=vt+\frac12at^2.
 $$
 
 Substitute this into the symbolic distance result:
@@ -453,25 +494,33 @@ options:
 
 ## Summary
 
-For one revolution around a circle of radius $r$, use the distance $2\pi r$. If the current speed is $v$ and speed increases at constant rate $a$, then the distance traveled after time $t$ is
+Use this checklist:
+
+1. Convert one revolution into a distance:
 
 $$
-vt+\frac12at^2.
+L=2\pi r.
 $$
 
-Set the distance equal to one lap:
+2. Model the distance traveled while the speed increases at constant rate $a$:
 
 $$
-vt+\frac12at^2=2\pi r.
+L=vt+\frac12at^2.
 $$
 
-Solving this quadratic gives
+3. Put the equation in standard form:
+
+$$
+\frac12at^2+vt-2\pi r=0.
+$$
+
+4. Use the quadratic formula and keep the positive time:
 
 $$
 t=\frac{-v\pm\sqrt{v^2+4\pi ar}}{a}.
 $$
 
-Choose the plus sign before the square root:
+Since $r$, $v$, and $a$ are positive, the elapsed time is
 
 $$
 \boxed{t=\frac{-v+\sqrt{v^2+4\pi ar}}{a}}.
