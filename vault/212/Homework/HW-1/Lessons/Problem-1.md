@@ -4,7 +4,8 @@
 
 - [Introduction](#introduction)
 - [Choosing the Conversion Factors](#choosing-the-conversion-factors)
-- [Converting With Unit Cancellation](#converting-with-unit-cancellation)
+- [Checking the Remaining Units](#checking-the-remaining-units)
+- [Simplifying the Number](#simplifying-the-number)
 - [Avoiding the Minute-to-Second Trap](#avoiding-the-minute-to-second-trap)
 - [Matching the Answer Choices](#matching-the-answer-choices)
 
@@ -22,7 +23,7 @@
 
 A wheel spins with an angular speed of $120$ revolutions per minute, and the question asks for radians per second.
 
-The recognition cue is the unit change:
+The cue is the unit change:
 
 $$
 \frac{\mathrm{rev}}{\mathrm{min}}
@@ -30,7 +31,7 @@ $$
 \frac{\mathrm{rad}}{\mathrm{s}}.
 $$
 
-Use one conversion factor for revolutions and one conversion factor for minutes:
+Convert the numerator unit and the denominator unit separately:
 
 $$
 1\ \mathrm{rev}=2\pi\ \mathrm{rad},
@@ -38,16 +39,19 @@ $$
 1\ \mathrm{min}=60\ \mathrm{s}.
 $$
 
-The conversion is
+For any angular speed $R$ in revolutions per minute,
 
 $$
-120\ \frac{\mathrm{rev}}{\mathrm{min}}
+R\ \frac{\mathrm{rev}}{\mathrm{min}}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
 \frac{1\ \mathrm{min}}{60\ \mathrm{s}}
-=4\pi\ \frac{\mathrm{rad}}{\mathrm{s}}.
+=
+\frac{R\pi}{30}\ \frac{\mathrm{rad}}{\mathrm{s}}.
 $$
+
+The important part is not the shortcut. The important part is arranging the conversion factors so the old units cancel.
 
 ---
 
@@ -64,19 +68,19 @@ $$
 15\ \frac{\mathrm{rev}}{\mathrm{min}}.
 $$
 
-To cancel revolutions, put $\mathrm{rev}$ in the denominator:
+The unit $\mathrm{rev}$ is in the numerator, so put $\mathrm{rev}$ in the denominator of the conversion factor:
 
 $$
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}.
 $$
 
-To change minutes in the denominator into seconds in the denominator, put $\mathrm{min}$ in the numerator:
+The unit $\mathrm{min}$ is in the denominator, so put $\mathrm{min}$ in the numerator of the conversion factor:
 
 $$
 \frac{1\ \mathrm{min}}{60\ \mathrm{s}}.
 $$
 
-So the correct setup is
+The setup is
 
 $$
 15\ \frac{\mathrm{rev}}{\mathrm{min}}
@@ -107,10 +111,87 @@ options:
     $30\ \dfrac{\mathrm{rev}}{\mathrm{min}}\cdot\dfrac{1\ \mathrm{rad}}{2\pi\ \mathrm{rev}}\cdot\dfrac{60\ \mathrm{s}}{1\ \mathrm{min}}$
 ```
 
+```quiz
+type: radio
+id: q-2
+content: |-
+  Which conversion factor should be used to change the denominator from minutes to seconds in a rate measured in $\mathrm{rev}/\mathrm{min}$?
+options:
+- id: a
+  content: |-
+    $\dfrac{60\ \mathrm{s}}{1\ \mathrm{min}}$
+- id: b
+  content: |-
+    $\dfrac{1\ \mathrm{min}}{60\ \mathrm{s}}$
+  correct: true
+- id: c
+  content: |-
+    $\dfrac{60\ \mathrm{min}}{1\ \mathrm{s}}$
+- id: d
+  content: |-
+    $\dfrac{1\ \mathrm{s}}{60\ \mathrm{min}}$
+```
+
 ---
 
-<a id="converting-with-unit-cancellation"></a>
-## Converting With Unit Cancellation
+<a id="checking-the-remaining-units"></a>
+## Checking the Remaining Units
+
+**Example:** After setting up
+
+$$
+45\ \frac{\mathrm{rev}}{\mathrm{min}}
+\cdot
+\frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
+\cdot
+\frac{1\ \mathrm{min}}{60\ \mathrm{s}},
+$$
+
+what units remain?
+
+**Explanation**
+
+The $\mathrm{rev}$ unit appears once in the numerator and once in the denominator, so those cancel. The same is true for $\mathrm{min}$:
+
+$$
+\frac{\mathrm{rev}}{\mathrm{min}}
+\cdot
+\frac{\mathrm{rad}}{\mathrm{rev}}
+\cdot
+\frac{\mathrm{min}}{\mathrm{s}}
+=
+\frac{\mathrm{rad}}{\mathrm{s}}.
+$$
+
+So the setup has the correct final units.
+
+```quiz
+type: radio
+id: q-3
+content: |-
+  After simplifying the units in
+  $75\ \dfrac{\mathrm{rev}}{\mathrm{min}}\cdot\dfrac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}\cdot\dfrac{1\ \mathrm{min}}{60\ \mathrm{s}},$
+  which units remain?
+options:
+- id: a
+  content: |-
+    $\mathrm{rad}/\mathrm{s}$
+  correct: true
+- id: b
+  content: |-
+    $\mathrm{rad}/\mathrm{min}$
+- id: c
+  content: |-
+    $\mathrm{rev}/\mathrm{s}$
+- id: d
+  content: |-
+    $\mathrm{rad}\cdot\mathrm{s}/\mathrm{min}^2$
+```
+
+---
+
+<a id="simplifying-the-number"></a>
+## Simplifying the Number
 
 **Example:** Convert $60$ revolutions per minute into radians per second.
 
@@ -126,13 +207,7 @@ $$
 \frac{1\ \mathrm{min}}{60\ \mathrm{s}}.
 $$
 
-The $\mathrm{rev}$ units cancel, and the $\mathrm{min}$ units cancel:
-
-$$
-60\cdot\frac{2\pi}{60}\ \frac{\mathrm{rad}}{\mathrm{s}}.
-$$
-
-Simplify:
+After the units cancel, simplify the number:
 
 $$
 60\cdot\frac{2\pi}{60}=2\pi.
@@ -148,7 +223,7 @@ $$
 
 ```quiz
 type: radio
-id: q-2
+id: q-4
 content: |-
   What is $90$ revolutions per minute in radians per second?
 options:
@@ -162,6 +237,27 @@ options:
   content: |-
     $3\pi$
   correct: true
+- id: d
+  content: |-
+    $90\pi$
+```
+
+```quiz
+type: radio
+id: q-5
+content: |-
+  What is $45$ revolutions per minute in radians per second?
+options:
+- id: a
+  content: |-
+    $\dfrac{\pi}{2}$
+- id: b
+  content: |-
+    $\dfrac{3\pi}{2}$
+  correct: true
+- id: c
+  content: |-
+    $3\pi$
 - id: d
   content: |-
     $90\pi$
@@ -186,7 +282,7 @@ $$
 360\pi\ \frac{\mathrm{rad}}{\mathrm{min}}.
 $$
 
-This is not finished because the unit is still radians per minute. Divide by $60$ to change minutes to seconds:
+This is not finished because the unit is still radians per minute. Convert the denominator from minutes to seconds:
 
 $$
 360\pi\ \frac{\mathrm{rad}}{\mathrm{min}}
@@ -196,11 +292,11 @@ $$
 6\pi\ \frac{\mathrm{rad}}{\mathrm{s}}.
 $$
 
-The common trap is stopping at $360\pi$. That number has not been converted to seconds.
+The common trap is stopping at $360\pi$. That number has the wrong time unit.
 
 ```quiz
 type: radio
-id: q-3
+id: q-6
 content: |-
   A wheel spins at $150$ revolutions per minute. What is its angular speed in radians per second?
 options:
@@ -244,7 +340,7 @@ $$
 120\cdot\frac{2\pi}{60}\ \frac{\mathrm{rad}}{\mathrm{s}}.
 $$
 
-Simplify the number:
+Simplify:
 
 $$
 120\cdot\frac{2\pi}{60}
@@ -262,7 +358,7 @@ $$
 
 ```quiz
 type: radio
-id: q-4
+id: q-7
 content: |-
   A wheel spins with an angular speed of $120$ revolutions per minute.
   
@@ -287,24 +383,35 @@ options:
 
 ## Summary
 
-When an angular speed is given in revolutions per minute and the answer should be in radians per second, use
+When an angular speed is given in revolutions per minute and the answer should be in radians per second, convert both parts of the rate:
 
 $$
-1\ \mathrm{rev}=2\pi\ \mathrm{rad}
+\mathrm{rev}\to\mathrm{rad}
 \qquad\text{and}\qquad
-1\ \mathrm{min}=60\ \mathrm{s}.
+\mathrm{min}\to\mathrm{s}.
 $$
 
-Set up the conversion so the old units cancel:
+Use
 
 $$
-\text{rpm}\cdot
+1\ \mathrm{rev}=2\pi\ \mathrm{rad},
+\qquad
+1\ \mathrm{min}=60\ \mathrm{s},
+$$
+
+and arrange the factors so the old units cancel:
+
+$$
+R\ \frac{\mathrm{rev}}{\mathrm{min}}
+\cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
-\frac{1\ \mathrm{min}}{60\ \mathrm{s}}.
+\frac{1\ \mathrm{min}}{60\ \mathrm{s}}
+=
+\frac{R\pi}{30}\ \frac{\mathrm{rad}}{\mathrm{s}}.
 $$
 
-The main trap is converting revolutions to radians but forgetting to convert minutes to seconds. For $120$ revolutions per minute,
+The main trap is converting revolutions to radians but leaving the answer in radians per minute. For $120$ revolutions per minute,
 
 $$
 120\cdot\frac{2\pi}{60}=4\pi,
