@@ -20,7 +20,9 @@
 <a id="introduction"></a>
 ## Introduction
 
-When a rotating object starts with angular velocity, comes to a stop, and has constant angular acceleration, its angular velocity decreases linearly from the starting value to $0$. To find how many revolutions it makes while stopping, find the average angular velocity, multiply by the stopping time to get angular displacement in radians, and then divide by $2\pi$ radians per revolution.
+When a rotating object starts with angular velocity, comes to a stop, and has constant angular acceleration, its angular velocity decreases linearly from the starting value to $0$. The angular displacement is the area under the angular-velocity-versus-time graph.
+
+To find how many revolutions the object makes while stopping, find the average angular velocity, multiply by the stopping time to get angular displacement in radians, and then convert radians to revolutions.
 
 The cue is the phrase "comes to a stop" together with "constant angular acceleration." That tells you the final angular velocity is $0$ and the average angular velocity is halfway between the initial and final values.
 
@@ -52,6 +54,8 @@ $$
 =\frac{10+0}{2}
 =5\ \mathrm{rad/s}.
 $$
+
+This is the same as using the area of the triangle under the $\omega$-versus-$t$ graph: the height is $10\ \mathrm{rad/s}$, the base is $8\ \mathrm{s}$, and the factor $\frac{1}{2}$ comes from the steady drop to zero.
 
 ```quiz
 type: radio
@@ -101,6 +105,12 @@ $$
 \Delta\theta=(5\ \mathrm{rad/s})(8\ \mathrm{s})=40\ \mathrm{rad}.
 $$
 
+Equivalently, for a constant stop from $\omega_0$ to $0$,
+
+$$
+\Delta\theta=\frac{1}{2}\omega_0t.
+$$
+
 ```quiz
 type: radio
 id: p4-q2
@@ -137,11 +147,11 @@ $$
 1\ \mathrm{rev}=2\pi\ \mathrm{rad}.
 $$
 
-Divide the angular displacement by $2\pi$:
+Use a conversion factor that cancels radians:
 
 $$
-N=\frac{\Delta\theta}{2\pi}
-=\frac{40}{2\pi}
+N
+=40\ \mathrm{rad}\cdot \frac{1\ \mathrm{rev}}{2\pi\ \mathrm{rad}}
 \approx 6.4\ \mathrm{rev}.
 $$
 
@@ -190,13 +200,22 @@ $$
 Then find the angular displacement:
 
 $$
-\Delta\theta=(6\ \mathrm{rad/s})(26\ \mathrm{s})=156\ \mathrm{rad}.
+\begin{aligned}
+\Delta\theta
+&=\omega_{\mathrm{avg}}t \\
+&=(6\ \mathrm{rad/s})(26\ \mathrm{s}) \\
+&=156\ \mathrm{rad}.
+\end{aligned}
 $$
 
 Convert radians to revolutions:
 
 $$
-N=\frac{156}{2\pi}\approx 24.8\ \mathrm{rev}.
+\begin{aligned}
+N
+&=156\ \mathrm{rad}\cdot \frac{1\ \mathrm{rev}}{2\pi\ \mathrm{rad}} \\
+&\approx 24.8\ \mathrm{rev}.
+\end{aligned}
 $$
 
 To two significant figures, the disk makes
@@ -249,5 +268,12 @@ and convert radians to revolutions with
 $$
 N=\frac{\Delta\theta}{2\pi}.
 $$
+
+The reusable checklist is:
+
+- "Comes to a stop" means $\omega_f=0$.
+- Constant angular acceleration makes the $\omega$-versus-$t$ graph a straight line.
+- The angular displacement is $\omega_{\mathrm{avg}}t$ or, for a stop, $\frac{1}{2}\omega_0t$.
+- Convert radians to revolutions with $\frac{1\ \mathrm{rev}}{2\pi\ \mathrm{rad}}$.
 
 The main trap is using $\omega_0t$ as if the disk never slowed down. For a uniform stop, that gives twice the correct angular displacement.
