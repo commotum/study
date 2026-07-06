@@ -6,7 +6,7 @@
 - [Converting a Revolution to Distance](#converting-a-revolution-to-distance)
 - [Writing the Distance Equation](#writing-the-distance-equation)
 - [Solving the Quadratic for Time](#solving-the-quadratic-for-time)
-- [Using Symbols for the Whole Lap](#using-symbols-for-the-whole-lap)
+- [Keeping the Positive Symbolic Root](#keeping-the-positive-symbolic-root)
 - [Matching the Answer Choices](#matching-the-answer-choices)
 
 ## Prerequisites
@@ -23,7 +23,13 @@
 
 An object travels along a circular trajectory of radius $r$. At one instant, its speed is $v$ and its speed is increasing at a constant rate $a$.
 
-The recognition cue is that the question asks for the time for one full revolution while the speed is changing. A full revolution gives a distance target:
+The recognition cue is that the question asks for the time for one full revolution while the speed is changing. Use the same pattern every time:
+
+$$
+\text{one-lap distance}=\text{distance traveled after }t.
+$$
+
+For a circle of radius $r$, one revolution covers distance
 
 $$
 2\pi r.
@@ -35,11 +41,19 @@ $$
 vt+\frac12at^2.
 $$
 
-Set these equal and solve for the positive time:
+So the equation to solve is
 
 $$
-vt+\frac12at^2=2\pi r.
+2\pi r=vt+\frac12at^2.
 $$
+
+After moving all terms to one side, this becomes
+
+$$
+\frac12at^2+vt-2\pi r=0.
+$$
+
+The final step is to solve the quadratic and keep the positive time.
 
 ---
 
@@ -64,6 +78,10 @@ $$
 
 So one revolution covers distance $12\pi$.
 
+---
+
+**Question 1:**
+
 ```quiz
 type: radio
 id: q-1
@@ -83,6 +101,31 @@ options:
 - id: d
   content: |-
     $\dfrac{2\pi}{R}$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: q-2
+content: |-
+  An object completes one revolution around a circle of radius $5$. What distance does it travel?
+options:
+- id: a
+  content: |-
+    $5\pi$
+- id: b
+  content: |-
+    $10\pi$
+  correct: true
+- id: c
+  content: |-
+    $\dfrac{5}{2\pi}$
+- id: d
+  content: |-
+    $25\pi$
 ```
 
 ---
@@ -112,15 +155,19 @@ $$
 vt+\frac12at^2=5t+\frac12(2)t^2=5t+t^2.
 $$
 
-Set distance traveled equal to the lap distance:
+Set the distance traveled equal to the one-lap distance:
 
 $$
 5t+t^2=8\pi.
 $$
 
+---
+
+**Question 3:**
+
 ```quiz
 type: radio
-id: q-2
+id: q-3
 content: |-
   An object moves around a circle of radius $7$. Its current speed is $3$, and its speed increases at constant rate $4$. Which equation gives the time $t$ for one revolution?
 options:
@@ -140,6 +187,34 @@ options:
 - id: e
   content: |-
     $3t+4t^2=7\pi$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: q-4
+content: |-
+  An object moves around a circle of radius $5$. Its current speed is $8$, and its speed increases at constant rate $6$. Which equation gives the time $t$ for one revolution?
+options:
+- id: a
+  content: |-
+    $8t+6t^2=10\pi$
+- id: b
+  content: |-
+    $8t+3t^2=10\pi$
+  correct: true
+- id: c
+  content: |-
+    $8t+3t^2=5\pi$
+- id: d
+  content: |-
+    $8+6t=10\pi$
+- id: e
+  content: |-
+    $8t+6t^2=5\pi$
 ```
 
 ---
@@ -182,9 +257,13 @@ $$
 t=\frac{-5+\sqrt{145}}{2}.
 $$
 
+---
+
+**Question 5:**
+
 ```quiz
 type: radio
-id: q-3
+id: q-5
 content: |-
   An object starts with speed $6$ and speeds up at constant rate $4$. How long does it take to travel distance $20$?
 options:
@@ -208,8 +287,36 @@ options:
 
 ---
 
-<a id="using-symbols-for-the-whole-lap"></a>
-## Using Symbols for the Whole Lap
+**Question 6:**
+
+```quiz
+type: radio
+id: q-6
+content: |-
+  An object starts with speed $4$ and speeds up at constant rate $2$. How long does it take to travel distance $21$?
+options:
+- id: a
+  content: |-
+    $3$
+  correct: true
+- id: b
+  content: |-
+    $7$
+- id: c
+  content: |-
+    $-7$
+- id: d
+  content: |-
+    $\dfrac{21}{4}$
+- id: e
+  content: |-
+    $\dfrac{-4-\sqrt{100}}{2}$
+```
+
+---
+
+<a id="keeping-the-positive-symbolic-root"></a>
+## Keeping the Positive Symbolic Root
 
 **Example:** An object has current speed $v$ and speeds up at constant rate $a$. How long does it take to travel distance $L$?
 
@@ -243,15 +350,19 @@ t
 \frac{-v\pm\sqrt{v^2+2aL}}{a}.
 $$
 
-Since $v$, $a$, and $L$ are positive, the root with $-\sqrt{v^2+2aL}$ is negative. The time is
+Since $v$, $a$, and $L$ are positive, the root with $-\sqrt{v^2+2aL}$ has a negative numerator. The time is
 
 $$
 t=\frac{-v+\sqrt{v^2+2aL}}{a}.
 $$
 
+---
+
+**Question 7:**
+
 ```quiz
 type: radio
-id: q-4
+id: q-7
 content: |-
   An object has current speed $v$ and speeds up at constant rate $a$. How long does it take to travel distance $L$?
 options:
@@ -306,9 +417,13 @@ $$
 
 The main trap is choosing the root with $-\sqrt{v^2+4\pi ar}$. That root has a negative numerator, so it gives a negative time.
 
+---
+
+**Question 8:**
+
 ```quiz
 type: radio
-id: q-5
+id: q-8
 content: |-
   An object travels along a circular trajectory of radius $r$. At one instant, the particle's speed is $v$ and increasing at a constant rate $a$.
   
@@ -362,4 +477,4 @@ $$
 \boxed{t=\frac{-v+\sqrt{v^2+4\pi ar}}{a}}.
 $$
 
-The other root is negative, so it cannot be the elapsed time.
+The other root is negative, so it cannot be the elapsed time. The most common setup mistakes are using $\pi r$ instead of $2\pi r$, or writing $at^2$ instead of $\dfrac12at^2$.
