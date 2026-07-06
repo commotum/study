@@ -35,6 +35,14 @@ $$
 
 Then connect that maximum friction force to circular motion and solve for $T$.
 
+Use this order:
+
+1. Draw $N$, $mg$, and inward $f_s$.
+2. Use vertical balance to get $N=mg$.
+3. Set the required radial force equal to the maximum static friction at the threshold.
+4. Substitute $v=2\pi r/T$.
+5. Interpret the result as the smallest allowed period.
+
 ---
 
 <a id="draw-the-forces-on-the-coin"></a>
@@ -163,6 +171,35 @@ options:
     $\dfrac{mv}{r}=\mu_s mg$
   feedback: |-
     The centripetal acceleration is $v^2/r$, not $v/r$.
+```
+
+```quiz
+type: radio
+id: p4-friction-limit
+content: |-
+  Before a coin slips, which statement best describes the relationship between the required radial force and static friction?
+options:
+- id: p4-friction-limit-a
+  content: |-
+    The required radial force is $mv^2/r$, static friction supplies it, and slipping begins when $mv^2/r=\mu_s mg$.
+  correct: true
+  feedback: |-
+    Static friction adjusts up to its maximum value, then the threshold is reached.
+- id: p4-friction-limit-b
+  content: |-
+    Static friction is always equal to $\mu_s mg$, even at slow speeds.
+  feedback: |-
+    Static friction is only equal to its maximum value at the slipping threshold.
+- id: p4-friction-limit-c
+  content: |-
+    The required radial force is $\mu_s mg$, and static friction is $mv^2/r$ only after slipping starts.
+  feedback: |-
+    This reverses the roles. The required radial force is $mv^2/r$.
+- id: p4-friction-limit-d
+  content: |-
+    The required radial force is zero because the coin has constant speed.
+  feedback: |-
+    Constant speed still has inward acceleration when the direction of velocity changes.
 ```
 
 ---

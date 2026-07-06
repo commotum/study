@@ -24,7 +24,7 @@
 
 A bead sliding without friction around an inverted cone has only two real forces: gravity and the normal force from the cone. The recognition cue is that the bead stays at a constant height while moving in a circle, so the vertical forces balance and the inward radial force supplies centripetal acceleration.
 
-The useful move is to split the angled normal force into vertical and radial components, divide the two force equations to eliminate $N$, and then substitute the cone geometry.
+The useful move is to split the angled normal force into vertical and radial components, divide the two force equations to eliminate $N$, and then use tangent as opposite over adjacent in the cone's side-view triangle.
 
 ![](<../Source/Images/problem-5-inverted-cone.png>)
 
@@ -156,7 +156,7 @@ $$
 \tan\theta = \frac{gr}{v^2}
 $$
 
-This is the key bridge between the force diagram and the cone geometry.
+This division is useful because the unknown normal force and the mass both cancel. It also creates $\tan\theta$, which can be matched to the cone's side-view triangle.
 
 ```quiz
 type: radio
@@ -188,7 +188,7 @@ options:
 
 **Explanation**
 
-The side view makes a right triangle. With the same angle convention used in the force diagram,
+The side view makes a right triangle. With the same angle convention used in the force diagram, the side opposite $\theta$ is the horizontal radius $r$, and the side adjacent to $\theta$ is the vertical height $h$. Therefore,
 
 $$
 \tan\theta = \frac{r}{h}
@@ -214,7 +214,7 @@ $$
 v = \sqrt{gh}
 $$
 
-The mass cancels because both force equations contain $m$. The radius cancels at this stage because a wider circle also changes the cone angle.
+Since $v$ is a speed, use the positive square root. The mass cancels because both force equations contain $m$. The radius cancels at this stage because a wider circle also changes the cone angle.
 
 ```quiz
 type: radio
@@ -291,7 +291,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-When a bead moves at constant height on a frictionless cone, draw only $mg$ and $N$. Choose vertical and inward radial axes. If $\theta$ is measured from the radial axis, then
+When a bead moves at constant height on a frictionless cone, draw only $mg$ and $N$. Choose vertical and inward radial axes, and check where $\theta$ is measured before assigning sine and cosine components. If $\theta$ is measured from the radial axis, then
 
 $$
 N\sin\theta = mg,
@@ -305,7 +305,7 @@ $$
 \tan\theta = \frac{gr}{v^2}
 $$
 
-Then use the cone geometry $\tan\theta=r/h$ to get $v=\sqrt{gh}$, and substitute into $T=2\pi r/v$:
+Then use the side-view triangle, where $\tan\theta=r/h$, to get $v=\sqrt{gh}$, and substitute into $T=2\pi r/v$:
 
 $$
 T = \frac{2\pi r}{\sqrt{gh}}
