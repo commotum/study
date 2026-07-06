@@ -1,62 +1,72 @@
-# Problem 3 Lesson: Units of a Coefficient in Angular Acceleration
+# Finding the Units of a Coefficient in Angular Acceleration
 
-## Core Move
+## Table of Contents
 
-Determine the units of an unknown coefficient by requiring every term in an equation to have the same units as the quantity on the left, then divide out the units contributed by variables like time.
+- [Introduction](#introduction)
+- [Matching Units in a Sum](#matching-units-in-a-sum)
+- [Dividing Out a Time Power](#dividing-out-a-time-power)
+- [Distinguishing the Coefficient From the Constant Term](#distinguishing-the-coefficient-from-the-constant-term)
+- [Checking Variants of the Same Move](#checking-variants-of-the-same-move)
 
-## When to Use This
+## Prerequisites
 
-Use this move when a formula contains a constant with unknown units, especially when the constant multiplies a variable with known units.
+- SI units for angular position, angular velocity, and angular acceleration
+- Powers of time units, such as $[t^2]=\mathrm{s}^2$
+- Matching units across terms that are added or subtracted
 
-The key cue is a sum like
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose the $z$-component of angular acceleration is given by
 
 $$
 \alpha_z(t)=Bt^2+C.
 $$
 
-Since terms are being added, $Bt^2$, $C$, and $\alpha_z(t)$ must all have the same units.
+The question is: what SI units does $B$ have?
 
-## Target Problem
-
-The $z$-component of angular acceleration is
-
-$$
-\alpha_z(t)=Bt^2+C.
-$$
-
-What SI units is $B$ measured in?
-
-## Step 1: Match Terms To The Left Side
-
-Angular acceleration has units of radians per second squared:
+The core move is to make the units of each term match the units of the left-hand side. Since $\alpha_z(t)$ is angular acceleration,
 
 $$
 [\alpha_z]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
 $$
 
-Because $Bt^2$ and $C$ are added to make $\alpha_z(t)$, each term must also have units of angular acceleration:
+The term $Bt^2$ must also have units $\mathrm{rad}/\mathrm{s}^2$. Since $t^2$ contributes $\mathrm{s}^2$, the coefficient $B$ must supply the remaining units:
 
 $$
-[Bt^2]=\frac{\mathrm{rad}}{\mathrm{s}^2}
+[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
 $$
 
-and
+Therefore,
 
 $$
-[C]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
 $$
 
-### Worked Example
+---
 
-Suppose
+<a id="matching-units-in-a-sum"></a>
+## Matching Units in a Sum
+
+**Example:** Suppose
 
 $$
 a(t)=Kt+a_0,
 $$
 
-where $a(t)$ is linear acceleration. Find the units of $K$.
+where $a(t)$ is linear acceleration. What are the units of $K$?
 
-Since $a(t)$ has units $\mathrm{m}/\mathrm{s}^2$, the term $Kt$ must also have units $\mathrm{m}/\mathrm{s}^2$:
+**Explanation**
+
+The left-hand side is acceleration, so
+
+$$
+[a(t)]=\frac{\mathrm{m}}{\mathrm{s}^2}.
+$$
+
+Because $Kt$ and $a_0$ are added to make $a(t)$, each term must have units of acceleration:
 
 $$
 [Kt]=\frac{\mathrm{m}}{\mathrm{s}^2}.
@@ -74,55 +84,76 @@ $$
 [K]=\frac{\mathrm{m}}{\mathrm{s}^3}.
 $$
 
-### Try It
+```quiz
+type: radio
+id: q-1
+content: |-
+  If $v(t)=At+v_0$ and $v(t)$ has units $\mathrm{m}/\mathrm{s}$, what are the units of $A$?
+options:
+- id: a
+  content: |-
+    $\mathrm{m}$
+- id: b
+  content: |-
+    $\mathrm{m}/\mathrm{s}$
+- id: c
+  content: |-
+    $\mathrm{m}/\mathrm{s}^2$
+  correct: true
+- id: d
+  content: |-
+    $\mathrm{m}/\mathrm{s}^3$
+- id: e
+  content: |-
+    $\mathrm{s}/\mathrm{m}$
+```
 
-If
+```quiz
+type: radio
+id: q-2
+content: |-
+  If $x(t)=Pt+x_0$ and $x(t)$ has units $\mathrm{m}$, what are the units of $P$?
+options:
+- id: a
+  content: |-
+    $\mathrm{m}$
+- id: b
+  content: |-
+    $\mathrm{m}/\mathrm{s}$
+  correct: true
+- id: c
+  content: |-
+    $\mathrm{m}/\mathrm{s}^2$
+- id: d
+  content: |-
+    $\mathrm{s}/\mathrm{m}$
+- id: e
+  content: |-
+    $\mathrm{m}\cdot\mathrm{s}$
+```
 
-$$
-v(t)=At+v_0,
-$$
+---
 
-and $v(t)$ has units $\mathrm{m}/\mathrm{s}$, what are the units of $A$?
+<a id="dividing-out-a-time-power"></a>
+## Dividing Out a Time Power
 
-**Answer check:** $[At]=\mathrm{m}/\mathrm{s}$, so $[A]\mathrm{s}=\mathrm{m}/\mathrm{s}$ and $[A]=\mathrm{m}/\mathrm{s}^2$.
-
-## Step 2: Divide Out The Time Power
-
-In the target problem,
-
-$$
-[Bt^2]=[\alpha_z].
-$$
-
-Now substitute the units:
-
-$$
-[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
-$$
-
-Divide by $\mathrm{s}^2$:
-
-$$
-[B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
-$$
-
-So $B$ is measured in
-
-$$
-\boxed{\mathrm{rad}/\mathrm{s}^4}.
-$$
-
-### Worked Example
-
-Suppose
+**Example:** Suppose
 
 $$
 \omega(t)=Dt^3+\omega_0,
 $$
 
-where $\omega(t)$ is angular velocity. Find the units of $D$.
+where $\omega(t)$ is angular velocity. What are the units of $D$?
 
-Angular velocity has units $\mathrm{rad}/\mathrm{s}$, so
+**Explanation**
+
+Angular velocity has units
+
+$$
+[\omega]=\frac{\mathrm{rad}}{\mathrm{s}}.
+$$
+
+Therefore, the term $Dt^3$ must have units $\mathrm{rad}/\mathrm{s}$:
 
 $$
 [Dt^3]=\frac{\mathrm{rad}}{\mathrm{s}}.
@@ -140,71 +171,229 @@ $$
 [D]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
 $$
 
-### Try It
+```quiz
+type: radio
+id: q-3
+content: |-
+  If $\theta(t)=Et^2+\theta_0$ and $\theta(t)$ has units $\mathrm{rad}$, what are the units of $E$?
+options:
+- id: a
+  content: |-
+    $\mathrm{rad}$
+- id: b
+  content: |-
+    $\mathrm{rad}/\mathrm{s}$
+- id: c
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^2$
+  correct: true
+- id: d
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^3$
+- id: e
+  content: |-
+    $\mathrm{rad}\cdot\mathrm{s}^2$
+```
 
-If
+```quiz
+type: radio
+id: q-4
+content: |-
+  If $\omega_z(t)=Gt^4+\omega_0$ and $\omega_z(t)$ has units $\mathrm{rad}/\mathrm{s}$, what are the units of $G$?
+options:
+- id: a
+  content: |-
+    $\mathrm{rad}/\mathrm{s}$
+- id: b
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^2$
+- id: c
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^4$
+- id: d
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^5$
+  correct: true
+- id: e
+  content: |-
+    $\mathrm{rad}\cdot\mathrm{s}^3$
+```
+
+---
+
+<a id="distinguishing-the-coefficient-from-the-constant-term"></a>
+## Distinguishing the Coefficient From the Constant Term
+
+**Example:** Suppose
 
 $$
-\theta(t)=Et^2+\theta_0,
+\alpha_z(t)=Bt^2+C.
 $$
 
-and $\theta(t)$ has units $\mathrm{rad}$, what are the units of $E$?
+What are the units of $B$?
 
-**Answer check:** $[Et^2]=\mathrm{rad}$, so $[E]\mathrm{s}^2=\mathrm{rad}$ and $[E]=\mathrm{rad}/\mathrm{s}^2$.
+**Explanation**
 
-## Step 3: Avoid The Common Traps
-
-### Trap 1: Using meters for angular quantities
-
-Angular acceleration is not linear acceleration. Linear acceleration uses $\mathrm{m}/\mathrm{s}^2$, but angular acceleration uses $\mathrm{rad}/\mathrm{s}^2$.
-
-In this problem, the symbol $\alpha_z$ tells you it is angular acceleration, so the numerator should be $\mathrm{rad}$, not $\mathrm{m}$.
-
-### Trap 2: Forgetting the $t^2$
-
-The coefficient $B$ is not itself angular acceleration. The whole product $Bt^2$ has units of angular acceleration.
-
-That means $B$ must carry two extra powers of $1/\mathrm{s}$:
+The left-hand side is angular acceleration, so
 
 $$
-[B]=\frac{[\alpha_z]}{[t^2]}
-=\frac{\mathrm{rad}/\mathrm{s}^2}{\mathrm{s}^2}
-=\frac{\mathrm{rad}}{\mathrm{s}^4}.
+[\alpha_z]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
 $$
 
-### Trap 3: Finding the units of $C$ instead
-
-The constant $C$ is added directly to $Bt^2$, so $C$ has the same units as $\alpha_z$:
+The constant term $C$ is added directly, so
 
 $$
 [C]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
 $$
 
-But the question asks for $B$, and $B$ multiplies $t^2$, so $B$ has units $\mathrm{rad}/\mathrm{s}^4$.
+But $B$ is not added directly. The whole product $Bt^2$ is added, so
 
-## Mastery Check
+$$
+[Bt^2]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+$$
 
-1. If $x(t)=At^2+x_0$ and $x(t)$ is measured in $\mathrm{m}$, what are the units of $A$?
+Since $[t^2]=\mathrm{s}^2$,
 
-2. If $v(t)=Bt^3+v_0$ and $v(t)$ is measured in $\mathrm{m}/\mathrm{s}$, what are the units of $B$?
+$$
+[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+$$
 
-3. If $\omega(t)=Ct^2+\omega_0$ and $\omega(t)$ is measured in $\mathrm{rad}/\mathrm{s}$, what are the units of $C$?
+Therefore,
 
-4. If $\alpha(t)=Dt+\alpha_0$ and $\alpha(t)$ is measured in $\mathrm{rad}/\mathrm{s}^2$, what are the units of $D$?
+$$
+[B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
+$$
 
-5. If $\alpha_z(t)=Et^4+F$ and $\alpha_z(t)$ is measured in $\mathrm{rad}/\mathrm{s}^2$, what are the units of $E$?
+So the correct SI units for $B$ are
 
-### Mastery Check Answers
+$$
+\boxed{\mathrm{rad}/\mathrm{s}^4}.
+$$
 
-1. $\mathrm{m}/\mathrm{s}^2$
-2. $\mathrm{m}/\mathrm{s}^4$
-3. $\mathrm{rad}/\mathrm{s}^3$
-4. $\mathrm{rad}/\mathrm{s}^3$
-5. $\mathrm{rad}/\mathrm{s}^6$
+```quiz
+type: radio
+id: q-5
+content: |-
+  In $\alpha_z(t)=Bt^2+C$, which unit belongs to $C$?
+options:
+- id: a
+  content: |-
+    $\mathrm{m}/\mathrm{s}^2$
+- id: b
+  content: |-
+    $\mathrm{m}/\mathrm{s}^4$
+- id: c
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^2$
+  correct: true
+- id: d
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^3$
+- id: e
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^4$
+```
+
+```quiz
+type: radio
+id: q-6
+content: |-
+  In $\alpha_z(t)=Bt^2+C$, why is $B$ not measured in $\mathrm{rad}/\mathrm{s}^2$?
+options:
+- id: a
+  content: |-
+    Because radians are not SI units
+- id: b
+  content: |-
+    Because $B$ multiplies $t^2$, so $B$ must include two extra powers of $1/\mathrm{s}$
+  correct: true
+- id: c
+  content: |-
+    Because $C$ has no units
+- id: d
+  content: |-
+    Because angular acceleration is measured in meters per second squared
+- id: e
+  content: |-
+    Because $t^2$ has units $\mathrm{rad}^2$
+```
+
+---
+
+<a id="checking-variants-of-the-same-move"></a>
+## Checking Variants of the Same Move
+
+The same procedure works for any formula of the form
+
+$$
+q(t)=At^n+\text{other terms}.
+$$
+
+If $q(t)$ has units $[q]$, then
+
+$$
+[A]\,\mathrm{s}^n=[q],
+$$
+
+so
+
+$$
+[A]=\frac{[q]}{\mathrm{s}^n}.
+$$
+
+```quiz
+type: radio
+id: q-7
+content: |-
+  If $\alpha(t)=Ht+\alpha_0$ and $\alpha(t)$ has units $\mathrm{rad}/\mathrm{s}^2$, what are the units of $H$?
+options:
+- id: a
+  content: |-
+    $\mathrm{rad}/\mathrm{s}$
+- id: b
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^2$
+- id: c
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^3$
+  correct: true
+- id: d
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^4$
+- id: e
+  content: |-
+    $\mathrm{m}/\mathrm{s}^3$
+```
+
+```quiz
+type: radio
+id: q-8
+content: |-
+  If $\alpha_z(t)=Et^4+F$ and $\alpha_z(t)$ has units $\mathrm{rad}/\mathrm{s}^2$, what are the units of $E$?
+options:
+- id: a
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^2$
+- id: b
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^4$
+- id: c
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^5$
+- id: d
+  content: |-
+    $\mathrm{rad}/\mathrm{s}^6$
+  correct: true
+- id: e
+  content: |-
+    $\mathrm{m}/\mathrm{s}^6$
+```
+
+---
 
 ## Summary
 
-When a formula adds terms, every term must have the same units.
+When terms are added, their units must match.
 
 For
 
@@ -212,16 +401,20 @@ $$
 \alpha_z(t)=Bt^2+C,
 $$
 
-the left side has units $\mathrm{rad}/\mathrm{s}^2$. Therefore
+the left-hand side has units $\mathrm{rad}/\mathrm{s}^2$. The product $Bt^2$ must have those same units:
 
 $$
-[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2},
+[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
 $$
 
-so
+Dividing by $\mathrm{s}^2$ gives
 
 $$
 [B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
 $$
 
-The answer is $\boxed{\mathrm{rad}/\mathrm{s}^4}$.
+The answer is
+
+$$
+\boxed{\mathrm{rad}/\mathrm{s}^4}.
+$$

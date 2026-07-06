@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Obsidian Quiz Block Subset",
+  "oneOf": [
+    { "$ref": "#/$defs/radio" },
+    { "$ref": "#/$defs/checkbox" },
+    { "$ref": "#/$defs/blank" },
+    { "$ref": "#/$defs/free" },
+    { "$ref": "#/$defs/select" },
+    { "$ref": "#/$defs/multiSelect" },
+    { "$ref": "#/$defs/noodle" }
+  ],
+  "$defs": {
+    "text": {
+      "type": ["string", "number", "boolean"],
+      "minLength": 1
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["content"],
+      "properties": {
+        "id": { "type": "string" },
+        "content": { "$ref": "#/$defs/text" },
+        "correct": { "type": "boolean" },
+        "feedback": { "$ref": "#/$defs/text" }
+      }
+    },
+    "radio": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content", "options"],
+      "properties": {
+        "type": { "const": "radio" },
+        "id": { "type": "string" },
+        "content": { "$ref": "#/$defs/text" },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/option" }
+        }
+      }
+    },
+    "checkbox": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content", "options"],
+      "properties": {
+        "type": { "const": "checkbox" },
+        "id": { "type": "string" },
+        "content": { "$ref": "#/$defs/text" },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/option" }
+        }
+      }
+    },
+    "blank": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content"],
+      "properties": {
+        "type": { "const": "blank" },
+        "id": { "type": "string" },
+        "require_exact": { "type": "boolean" },
+        "content": { "$ref": "#/$defs/text" }
+      }
+    },
+    "free": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content"],
+      "properties": {
+        "type": { "const": "free" },
+        "id": { "type": "string" },
+        "content": { "$ref": "#/$defs/text" },
+        "correct": { "$ref": "#/$defs/text" }
+      }
+    },
+    "select": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content", "options", "questions"],
+      "properties": {
+        "type": { "const": "select" }
+      }
+    },
+    "multiSelect": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content", "questions"],
+      "properties": {
+        "type": { "const": "multi-select" }
+      }
+    },
+    "noodle": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "content", "options", "questions"],
+      "properties": {
+        "type": { "const": "noodle" }
+      }
+    }
+  }
+}
