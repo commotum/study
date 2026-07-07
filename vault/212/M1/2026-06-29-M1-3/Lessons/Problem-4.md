@@ -229,12 +229,12 @@ content: |-
 options:
 - id: p4-q3-a
   content: |-
-    $204\ \mathrm{N}$
+    $348\ \mathrm{N}$
   feedback: |-
-    This subtracts the centripetal term from the weight: $588-384$.
+    This subtracts the centripetal term from the weight: $588-240$.
 - id: p4-q3-b
   content: |-
-    $384\ \mathrm{N}$
+    $240\ \mathrm{N}$
   feedback: |-
     This is only $m\omega^2r$, not the normal force.
 - id: p4-q3-c
@@ -244,10 +244,10 @@ options:
     This is only the rider's weight, $mg$.
 - id: p4-q3-d
   content: |-
-    $972\ \mathrm{N}$
+    $828\ \mathrm{N}$
   correct: true
   feedback: |-
-    At the bottom, $N=mg+m\omega^2r=588+384=972\ \mathrm{N}$.
+    At the bottom, $N=mg+m\omega^2r=588+240=828\ \mathrm{N}$.
 - id: p4-q3-e
   content: |-
     $1176\ \mathrm{N}$
