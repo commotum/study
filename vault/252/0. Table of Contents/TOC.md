@@ -7,7 +7,7 @@
 
 - [ ] M-1
 	- [ ] OHW-1
-		- [ ] [[M-1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
+		- [x] [[M-1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
 		- [ ] [[M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] WHW-1
 		- [ ] [[M-1/WHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
@@ -19,9 +19,9 @@
 		- [ ] [[M-1/OHW-1/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
 - [ ] M-2
 	- [ ] OHW-2
-		- [ ] [[M-2/OHW-2/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
+		- [x] [[M-2/OHW-2/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
 	- [ ] WHW-2
-		- [ ] [[M-2/WHW-2/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
+		- [x] [[M-2/WHW-2/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
 	- [ ] OHW-2
 		- [ ] [[M-2/OHW-2/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] WHW-2

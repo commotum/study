@@ -971,6 +971,7 @@ def render_course_home(
     completed = completed_ids_for_course(course_root, entries, checked_targets, repo_root)
     local_lesson_ids = {entry["topic-id"] for entry in entries}
     next_entries = []
+    queued_topic_ids: set[str] = set()
     for entry in entries:
         if entry["topic-id"] in completed:
             continue
@@ -980,8 +981,12 @@ def render_course_home(
                 blocked = True
                 break
         if not blocked:
+            if entry["topic-id"] in queued_topic_ids:
+                continue
+            queued_topic_ids.add(entry["topic-id"])
             next_entries.append(entry)
-    next_entries = next_entries[:5]
+            if len(next_entries) >= 5:
+                break
 
     lines = [f"# {course_name(course_root)} Home", "", "## Next Topics", ""]
     if next_entries:
