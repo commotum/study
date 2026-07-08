@@ -860,6 +860,16 @@ def strip_md(value: str) -> str:
     return value[:-3] if value.endswith(".md") else value
 
 
+def course_lesson_entry_key(entry: dict[str, str]) -> tuple[tuple[int, ...], tuple[int, ...], int, tuple[int, ...], str]:
+    return (
+        topic_number_key(entry["module"].removeprefix("M-")),
+        topic_number_key(entry["assignment"].split("-", 1)[-1]),
+        int_or_max(entry.get("layer", "")),
+        topic_number_key(entry.get("topic-number", "")),
+        entry["name"],
+    )
+
+
 def course_lesson_entries(course_rows: dict[str, dict[str, str]], course_root: Path) -> list[dict[str, str]]:
     entries: list[dict[str, str]] = []
     course_prefix = course_root.name + "/"
@@ -884,16 +894,14 @@ def course_lesson_entries(course_rows: dict[str, dict[str, str]], course_root: P
                     "name": Path(course_rel).stem,
                 }
             )
-    return sorted(
-        entries,
-        key=lambda entry: (
-            topic_number_key(entry["module"].removeprefix("M-")),
-            topic_number_key(entry["assignment"].split("-", 1)[-1]),
-            int_or_max(entry.get("layer", "")),
-            topic_number_key(entry.get("topic-number", "")),
-            entry["name"],
-        ),
-    )
+    return sorted(entries, key=course_lesson_entry_key)
+
+
+def unique_course_lesson_entries(entries: list[dict[str, str]]) -> list[dict[str, str]]:
+    unique_entries: dict[str, dict[str, str]] = {}
+    for entry in sorted(entries, key=course_lesson_entry_key):
+        unique_entries.setdefault(entry["topic-id"], entry)
+    return list(unique_entries.values())
 
 
 def render_course_toc(course_root: Path, course_rows: dict[str, dict[str, str]], checked_targets: set[str]) -> str:
@@ -968,11 +976,12 @@ def render_course_home(
     repo_root: Path,
 ) -> str:
     entries = course_lesson_entries(course_rows, course_root)
+    unique_entries = unique_course_lesson_entries(entries)
     completed = completed_ids_for_course(course_root, entries, checked_targets, repo_root)
-    local_lesson_ids = {entry["topic-id"] for entry in entries}
+    local_lesson_ids = {entry["topic-id"] for entry in unique_entries}
     next_entries = []
     queued_topic_ids: set[str] = set()
-    for entry in entries:
+    for entry in unique_entries:
         if entry["topic-id"] in completed:
             continue
         blocked = False
@@ -996,14 +1005,14 @@ def render_course_home(
         lines.append("No eligible next lessons found.")
 
     lines.extend(["", "## Progress", ""])
-    total = len(entries)
-    completed_total = sum(1 for entry in entries if entry["topic-id"] in completed)
+    total = len(unique_entries)
+    completed_total = sum(1 for entry in unique_entries if entry["topic-id"] in completed)
     percent = round((completed_total / total) * 100) if total else 0
-    lines.append(f"- Course: {percent}% ({completed_total}/{total})")
+    lines.append(f"- Course: {percent}% ({completed_total}/{total} unique lessons)")
     lines.append("")
 
     modules: dict[str, list[dict[str, str]]] = {}
-    for entry in entries:
+    for entry in unique_entries:
         modules.setdefault(entry["module"], []).append(entry)
     for module, module_entries in modules.items():
         module_completed = sum(1 for entry in module_entries if entry["topic-id"] in completed)
@@ -1011,7 +1020,7 @@ def render_course_home(
         lines.append(f"- {module}: {module_percent}% ({module_completed}/{len(module_entries)})")
 
     lines.extend(["", "## History", ""])
-    completed_entries = [entry for entry in entries if entry["topic-id"] in completed]
+    completed_entries = [entry for entry in unique_entries if entry["topic-id"] in completed]
     if completed_entries:
         for entry in completed_entries:
             lines.append(f"- [{entry['name']}]({markdown_path(entry['course-rel'])})")
@@ -1023,7 +1032,8 @@ def render_course_home(
             "",
             "## Summary",
             "",
-            f"- Completed lessons: {completed_total} / {total}",
+            f"- Completed unique lessons: {completed_total} / {total}",
+            f"- Assignment placements: {len(entries)}",
             f"- Queue size: {len(next_entries)} / 5",
             "",
             "<!--",
