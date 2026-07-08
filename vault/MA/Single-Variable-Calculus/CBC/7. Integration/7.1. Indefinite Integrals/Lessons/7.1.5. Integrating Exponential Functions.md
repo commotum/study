@@ -56,7 +56,6 @@ $$
 ```quiz
 type: radio
 id: ma-31244
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int3e^{x}dx$?
 options:
@@ -72,6 +71,7 @@ options:
 - id: d
   content: |-
     $3e^{x} + C$
+  correct: true
 - id: e
   content: |-
     $\frac{e^{x}}{3} + C$
@@ -84,13 +84,13 @@ options:
 ```quiz
 type: radio
 id: ma-31245
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int - 2e^{x}dx$?
 options:
 - id: a
   content: |-
     $-2e^{x} + C$
+  correct: true
 - id: b
   content: |-
     $-\frac{2}{e^{x}} + C$
@@ -156,7 +156,6 @@ $$
 ```quiz
 type: radio
 id: ma-31248
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int4 \cdot 5^{x}dx$?
 options:
@@ -172,6 +171,7 @@ options:
 - id: d
   content: |-
     $4 \cdot \frac{5^{x}}{\ln 5} + C$
+  correct: true
 - id: e
   content: |-
     $\frac{5}{\ln x} + C$
@@ -184,7 +184,6 @@ options:
 ```quiz
 type: radio
 id: ma-66139
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Calculate $\displaystyle \int3^{x}dx$.
 options:
@@ -197,6 +196,7 @@ options:
 - id: c
   content: |-
     $\frac{3^{x}}{\ln 3} + C$
+  correct: true
 - id: d
   content: |-
     $\frac{\ln x}{\ln 3} + C$
@@ -227,13 +227,13 @@ $$
 ```quiz
 type: radio
 id: ma-51102
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int(2e^{x} + 4^{x} - 2x)dx$?
 options:
 - id: a
   content: |-
     $2e^{x} + \frac{4^{x}}{\ln 4} - x^{2} + C$
+  correct: true
 - id: b
   content: |-
     $e^{2x} + \frac{4^{x}}{\ln 4} - x^{2} + C$
@@ -255,7 +255,6 @@ options:
 ```quiz
 type: radio
 id: ma-31311
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int(2^{x} - 10e^{x})dx$?
 options:
@@ -274,6 +273,7 @@ options:
 - id: e
   content: |-
     $\frac{2^{x}}{\ln 2} - 10e^{x} + C$
+  correct: true
 ```
 
 ```update-progress

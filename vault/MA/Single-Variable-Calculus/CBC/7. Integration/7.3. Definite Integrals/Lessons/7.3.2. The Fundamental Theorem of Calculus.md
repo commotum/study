@@ -118,7 +118,6 @@ $$
 ```quiz
 type: radio
 id: ma-29634
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{-2}^{2}x^{3}dx$?
 options:
@@ -137,6 +136,7 @@ options:
 - id: e
   content: |-
     $0$
+  correct: true
 ```
 
 ---
@@ -146,7 +146,6 @@ options:
 ```quiz
 type: radio
 id: ma-29744
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate $\displaystyle \int_{-5}^{4}x^{2}dx$.
 options:
@@ -165,6 +164,7 @@ options:
 - id: e
   content: |-
     $63$
+  correct: true
 ```
 
 ---
@@ -197,7 +197,6 @@ $$
 ```quiz
 type: radio
 id: ma-49224
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate $\displaystyle \int_{1/2}^{1}\frac{1}{x^{6}}dx$.
 options:
@@ -207,6 +206,7 @@ options:
 - id: b
   content: |-
     $\frac{31}{5}$
+  correct: true
 - id: c
   content: |-
     $-\frac{7}{5}$
@@ -225,13 +225,13 @@ options:
 ```quiz
 type: radio
 id: ma-49222
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{1}^{2}\frac{1}{x^{4}}dx$?
 options:
 - id: a
   content: |-
     $\frac{7}{24}$
+  correct: true
 - id: b
   content: |-
     $-\frac{7}{12}$
@@ -275,7 +275,6 @@ $$
 ```quiz
 type: radio
 id: ma-29639
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Evaluate $\displaystyle \int_{0}^{4}\sqrt{x^{5}}dx$.
 options:
@@ -285,6 +284,7 @@ options:
 - id: b
   content: |-
     $\frac{256}{7}$
+  correct: true
 - id: c
   content: |-
     $128$
@@ -303,13 +303,13 @@ options:
 ```quiz
 type: radio
 id: ma-49228
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   What is $\displaystyle \int_{0}^{1}\sqrt[5]{x^{3}}dx$?
 options:
 - id: a
   content: |-
     $\frac{5}{8}$
+  correct: true
 - id: b
   content: |-
     $\frac{5}{4}$
