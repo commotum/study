@@ -511,6 +511,131 @@ Since $-Z$ only changes the global phase relative to $Z$, the bit reading is the
 | $(k,j)$ | $-i$ | $\lvert1\rangle$ | $(-1,i)$ | $-i$ | $\lvert1\rangle$ |
 | $(k,k)$ | $-1$ | $\lvert0\rangle$ | $(-1,-1)$ | $1$ | $\lvert0\rangle$ |
 
+
+For dense $\operatorname{CX}(q_0,q_1)$ with $q_0$ control and $q_1$ target,
+
+$$
+\operatorname{CX}(q_0,q_1)=(q_0',q_1').
+$$
+
+Z-basis action:
+
+$$
+\begin{aligned}
+q_0'.z &= q_0.z,\\
+q_1'.z &= q_1.z \oplus q_0.z.
+\end{aligned}
+$$
+
+X-basis kickback action:
+
+$$
+\begin{aligned}
+q_0'.x &= q_0.x \oplus q_1.x,\\
+q_1'.x &= q_1.x.
+\end{aligned}
+$$
+
+So the full Boolean transport is:
+
+$$
+\begin{aligned}
+q_0.z &\longmapsto q_0'.z = q_0.z,\\
+q_1.z &\longmapsto q_1'.z = q_1.z \oplus q_0.z,\\
+q_0.x &\longmapsto q_0'.x = q_0.x \oplus q_1.x,\\
+q_1.x &\longmapsto q_1'.x = q_1.x.
+\end{aligned}
+$$
+
+Equivalently, write each qubit as the local two-bit state $q.x\,q.z$, where the $x$ bit records the sign and the $z$ bit records the read value:
+
+$$
+00=+0,
+\qquad
+01=+1,
+\qquad
+10=-0,
+\qquad
+11=-1.
+$$
+
+In this convention, the transport is
+
+$$
+(q_0.x,q_0.z;\,q_1.x,q_1.z)
+\longmapsto
+(q_0.x\oplus q_1.x,q_0.z;\,q_1.x,q_1.z\oplus q_0.z).
+$$
+
+Rows are ordered by $q_0.x\,q_0.z$ first, then $q_1.x\,q_1.z$.
+
+| Input $q_0$ | Input $q_1$ | Output $q_0'$ | Output $q_1'$ |
+| ----------- | ----------- | ------------- | ------------- |
+| $00=+0$     | $00=+0$     | $00=+0$       | $00=+0$       |
+| $00=+0$     | $01=+1$     | $00=+0$       | $01=+1$       |
+| $00=+0$     | $10=-0$     | $10=-0$       | $10=-0$       |
+| $00=+0$     | $11=-1$     | $10=-0$       | $11=-1$       |
+| $01=+1$     | $00=+0$     | $01=+1$       | $01=+1$       |
+| $01=+1$     | $01=+1$     | $01=+1$       | $00=+0$       |
+| $01=+1$     | $10=-0$     | $11=-1$       | $11=-1$       |
+| $01=+1$     | $11=-1$     | $11=-1$       | $10=-0$       |
+| $10=-0$     | $00=+0$     | $10=-0$       | $00=+0$       |
+| $10=-0$     | $01=+1$     | $10=-0$       | $01=+1$       |
+| $10=-0$     | $10=-0$     | $00=+0$       | $10=-0$       |
+| $10=-0$     | $11=-1$     | $00=+0$       | $11=-1$       |
+| $11=-1$     | $00=+0$     | $11=-1$       | $01=+1$       |
+| $11=-1$     | $01=+1$     | $11=-1$       | $00=+0$       |
+| $11=-1$     | $10=-0$     | $01=+1$       | $11=-1$       |
+| $11=-1$     | $11=-1$     | $01=+1$       | $10=-0$       |
+
+This is the truth-table form of the Boolean transport. If we linearize the same deterministic map on the one-hot basis of the $16$ local Boolean states, it becomes a $16\times16$ permutation matrix. Use the row and column order
+
+$$
+\begin{gathered}
+(00,00),(00,01),(00,10),(00,11),\\
+(01,00),(01,01),(01,10),(01,11),\\
+(10,00),(10,01),(10,10),(10,11),\\
+(11,00),(11,01),(11,10),(11,11).
+\end{gathered}
+$$
+
+Columns are input states and rows are output states, so the matrix entry is
+
+$$
+(P_{\operatorname{CX}})_{\text{out},\text{in}}=1
+\quad\text{exactly when}\quad
+\text{out}=f(\text{in}).
+$$
+
+Thus
+
+$$
+\scriptsize
+P_{\operatorname{CX}}
+=
+\begin{pmatrix}
+1&0&0&0&0&0&0&0&0&0&0&0&0&0&0&0\\
+0&1&0&0&0&0&0&0&0&0&0&0&0&0&0&0\\
+0&0&0&0&0&0&0&0&0&0&1&0&0&0&0&0\\
+0&0&0&0&0&0&0&0&0&0&0&1&0&0&0&0\\
+0&0&0&0&0&1&0&0&0&0&0&0&0&0&0&0\\
+0&0&0&0&1&0&0&0&0&0&0&0&0&0&0&0\\
+0&0&0&0&0&0&0&0&0&0&0&0&0&0&0&1\\
+0&0&0&0&0&0&0&0&0&0&0&0&0&0&1&0\\
+0&0&0&0&0&0&0&0&1&0&0&0&0&0&0&0\\
+0&0&0&0&0&0&0&0&0&1&0&0&0&0&0&0\\
+0&0&1&0&0&0&0&0&0&0&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0&0&0&0&0&0&0&0&0\\
+0&0&0&0&0&0&0&0&0&0&0&0&0&1&0&0\\
+0&0&0&0&0&0&0&0&0&0&0&0&1&0&0&0\\
+0&0&0&0&0&0&0&1&0&0&0&0&0&0&0&0\\
+0&0&0&0&0&0&1&0&0&0&0&0&0&0&0&0
+\end{pmatrix}.
+$$
+
+
+
+
 ## Two-Qubit Z-Control-As-Gate Truth Table
 
 This is a control-as-gate table, not the usual textbook controlled-$Z$ table. I write the phase-state as $\phi$, rather than $\theta$, to match [[6-Physical-Qubits]].
