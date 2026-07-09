@@ -15,9 +15,9 @@ topic-code: MF3.1.4.10
 
 ## Prerequisites
 
-- [Writing an Infinite Geometric Series in Sigma Notation](<1.4.8. Writing an Infinite Geometric Series in Sigma Notation.md>)
-- [Solving Inequalities Involving Exponential Functions](<../../../2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.12. Solving Inequalities Involving Exponential Functions.md>)
-- [Further Convergence of Geometric Sequences](<1.4.2. Further Convergence of Geometric Sequences.md>)
+- [Writing an Infinite Geometric Series in Sigma Notation](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.8. Writing an Infinite Geometric Series in Sigma Notation.md>)
+- [Solving Inequalities Involving Exponential Functions](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.12. Solving Inequalities Involving Exponential Functions.md>)
+- [Further Convergence of Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.2. Further Convergence of Geometric Sequences.md>)
 
 ---
 
@@ -449,5 +449,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

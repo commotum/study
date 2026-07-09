@@ -14,7 +14,7 @@ topic-code: MF1.8.1.10
 
 ## Prerequisites
 
-- [The Domain of a Function](<8.1.4. The Domain of a Function.md>)
+- [The Domain of a Function](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.4. The Domain of a Function.md>)
 
 ---
 

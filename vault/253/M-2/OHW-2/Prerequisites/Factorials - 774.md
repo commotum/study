@@ -15,7 +15,7 @@ topic-code: MF2.14.3.2
 
 ## Prerequisites
 
-- [Simplifying Rational Expressions](<../../../../AG1/5. Rational Expressions & Equations/5.1. Rational Expressions/Lessons/5.1.2. Simplifying Rational Expressions.md>)
+- [Simplifying Rational Expressions](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.2. Rational Expressions/Lessons/7.2.2. Simplifying Rational Expressions.md>)
 
 ---
 
@@ -325,5 +325,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

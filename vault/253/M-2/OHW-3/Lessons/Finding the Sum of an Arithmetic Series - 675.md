@@ -17,7 +17,7 @@ topic-code: MF3.1.2.2
 
 ## Prerequisites
 
-- [Expressing an Arithmetic Series in Sigma Notation](<1.2.1. Expressing an Arithmetic Series in Sigma Notation.md>)
+- [Expressing an Arithmetic Series in Sigma Notation](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.2. Arithmetic Series/Lessons/1.2.1. Expressing an Arithmetic Series in Sigma Notation.md>)
 
 ---
 
@@ -624,5 +624,5 @@ $$
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

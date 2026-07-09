@@ -14,8 +14,8 @@ topic-code: MF3.9.3.1
 
 ## Prerequisites
 
-- [Integration Using Inverse Trigonometric Functions](<../../../8. Differentiation/8.1. Differentiating Implicit and Inverse Functions/Lessons/8.1.8. Integration Using Inverse Trigonometric Functions.md>)
-- [The Sum and Constant Multiple Rules for Definite Integrals](<../../9.2. Definite Integrals/Lessons/9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
+- [Integration Using Inverse Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.1. Differentiating Implicit and Inverse Functions/Lessons/8.1.8. Integration Using Inverse Trigonometric Functions.md>)
+- [The Sum and Constant Multiple Rules for Definite Integrals](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
 
 ---
 

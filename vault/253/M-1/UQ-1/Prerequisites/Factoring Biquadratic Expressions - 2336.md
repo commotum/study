@@ -14,8 +14,8 @@ topic-code: MF2.2.2.5
 
 ## Prerequisites
 
-- [Factoring Perfect Square Trinomials With Leading Coefficients](<../../../../AG1/9. Polynomials/9.2. Factoring Polynomials/Lessons/9.2.4. Factoring Perfect Square Trinomials With Leading Coefficients.md>)
-- [Further Factoring Trinomials With Leading Coefficients](<../../../../AG1/9. Polynomials/9.2. Factoring Polynomials/Lessons/9.2.9. Further Factoring Trinomials With Leading Coefficients.md>)
+- [Factoring Perfect Square Trinomials With Leading Coefficients](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.2. Factoring Polynomials/Lessons/11.2.4. Factoring Perfect Square Trinomials With Leading Coefficients.md>)
+- [Further Factoring Trinomials With Leading Coefficients](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.2. Factoring Polynomials/Lessons/11.2.9. Further Factoring Trinomials With Leading Coefficients.md>)
 
 ---
 
@@ -314,5 +314,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

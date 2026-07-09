@@ -13,7 +13,7 @@ topic-code: MTH-253.
 
 ## Prerequisites
 
-- [Improper Integrals of the Second Kind](../759/759.md)
+- [Improper Integrals of the Second Kind](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.6. Improper Integrals/Lessons/10.6.5. Improper Integrals of the Second Kind.md>)
 
 ---
 
@@ -202,3 +202,9 @@ $$
 - [ ] C. The integral is divergent
 - [ ] D. $\frac{3}{2}$
 - [ ] E. $-\frac{9}{2}$
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -14,8 +14,8 @@ topic-code: MF3.7.1.3
 
 ## Prerequisites
 
-- [Simplifying Expressions Using Basic Trigonometric Identities](<../../../5. Trigonometry/5.3. Trigonometric Identities/Lessons/5.3.1. Simplifying Expressions Using Basic Trigonometric Identities.md>)
-- [Limits of Reciprocal Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.7. Limits of Reciprocal Trigonometric Functions.md>)
+- [Simplifying Expressions Using Basic Trigonometric Identities](<../../../../MA/Mathematical-Foundations/MF3/5. Trigonometry/5.3. Trigonometric Identities/Lessons/5.3.1. Simplifying Expressions Using Basic Trigonometric Identities.md>)
+- [Limits of Reciprocal Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.7. Limits of Reciprocal Trigonometric Functions.md>)
 
 ---
 
@@ -384,5 +384,5 @@ $$
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

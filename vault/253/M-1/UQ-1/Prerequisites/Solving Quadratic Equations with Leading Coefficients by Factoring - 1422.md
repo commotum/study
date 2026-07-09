@@ -14,8 +14,8 @@ topic-code: MF2.1.1.8
 
 ## Prerequisites
 
-- [Solving Quadratic Equations by Factoring](<1.1.7. Solving Quadratic Equations by Factoring.md>)
-- [Further Factoring Trinomials With Leading Coefficients](<../../../../AG1/9. Polynomials/9.2. Factoring Polynomials/Lessons/9.2.9. Further Factoring Trinomials With Leading Coefficients.md>)
+- [Solving Quadratic Equations by Factoring](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.7. Solving Quadratic Equations by Factoring.md>)
+- [Further Factoring Trinomials With Leading Coefficients](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.2. Factoring Polynomials/Lessons/11.2.9. Further Factoring Trinomials With Leading Coefficients.md>)
 
 ---
 
@@ -377,5 +377,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

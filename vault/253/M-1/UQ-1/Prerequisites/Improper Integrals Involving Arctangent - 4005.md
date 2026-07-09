@@ -16,9 +16,9 @@ topic-code: MF3.10.6.3
 
 ## Prerequisites
 
-- [Integration by Substitution With Inverse Trigonometric Functions](<../../10.1. Integration Using Substitution/Lessons/10.1.10. Integration by Substitution With Inverse Trigonometric Functions.md>)
-- [Improper Integrals](<10.6.1. Improper Integrals.md>)
-- [Limits of Inverse Trigonometric Functions](<../../../5. Trigonometry/5.1. The Inverse Trigonometric Functions/Lessons/5.1.5. Limits of Inverse Trigonometric Functions.md>)
+- [Integration by Substitution With Inverse Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.10. Integration by Substitution With Inverse Trigonometric Functions.md>)
+- [Improper Integrals](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.6. Improper Integrals/Lessons/10.6.1. Improper Integrals.md>)
+- [Limits of Inverse Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF3/5. Trigonometry/5.1. The Inverse Trigonometric Functions/Lessons/5.1.5. Limits of Inverse Trigonometric Functions.md>)
 
 ---
 
@@ -534,5 +534,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

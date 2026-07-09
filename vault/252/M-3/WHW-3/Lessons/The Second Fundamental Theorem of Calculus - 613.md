@@ -15,7 +15,7 @@ topic-code: MF3.9.4.2
 
 ## Prerequisites
 
-- [The Integral as an Accumulation Function](<9.4.1. The Integral as an Accumulation Function.md>)
+- [The Integral as an Accumulation Function](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.4. Accumulation Functions/Lessons/9.4.1. The Integral as an Accumulation Function.md>)
 
 ---
 

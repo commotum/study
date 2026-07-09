@@ -6,11 +6,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import re
 import shutil
 import sys
 from datetime import datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 
 KIND_DIRS = {
@@ -32,6 +33,8 @@ ROLE_PRIORITY = {
 
 SECTION_RE = re.compile(r"^##\s+(.+?)\s*$")
 LESSON_ID_RE = re.compile(r"lesson-id:\s*([^\s]+)")
+MARKDOWN_LINK_RE = re.compile(r"\[([^\]\n]+)\]\((<[^>\n]+>|[^)\n]+)\)")
+TOPIC_NUMBER_STEM_RE = re.compile(r"^(\d+(?:\.\d+)+)\.\s*(.+)$")
 UPDATE_PROGRESS_FOOTER_RE = re.compile(
     r"```update-progress[ \t]*\n```"
     r"(?:[ \t]|\n)*"
@@ -224,6 +227,21 @@ def load_topics(index_path: Path) -> tuple[list[dict[str, str]], list[str]]:
     return rows, fieldnames
 
 
+def load_catalog_topic_codes(catalog_path: Path) -> dict[str, str]:
+    if not catalog_path.exists():
+        return {}
+    with catalog_path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        required = {"topic-id", "topic-code"}
+        if not required.issubset(reader.fieldnames or []):
+            raise ValueError(f"catalog is missing required columns {sorted(required)}: {catalog_path}")
+        return {
+            row["topic-code"].strip().upper(): row["topic-id"].strip()
+            for row in reader
+            if row.get("topic-code") and row.get("topic-id")
+        }
+
+
 def load_calc2_fallback_topics() -> list[dict[str, str]]:
     if not DEFAULT_CALC2_TOPICS.exists() or not DEFAULT_MA_DATA_LESSONS.exists():
         return []
@@ -280,6 +298,40 @@ def index_by_topic_id(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     for row in rows:
         indexed.setdefault(row["topic-id"], row)
     return indexed
+
+
+def is_mathematical_foundations_row(row: dict[str, str]) -> bool:
+    course = row.get("course", "")
+    md_path = row.get("md-path", "").replace("\\", "/")
+    return course.startswith("MF") and "/MA/Mathematical-Foundations/MF" in f"/{md_path}"
+
+
+def normalize_link_title(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip().casefold()
+
+
+def build_canonical_prerequisite_link_index(
+    rows: list[dict[str, str]],
+) -> tuple[dict[str, dict[str, str]], dict[str, dict[str, str]]]:
+    by_topic_id = {
+        row["topic-id"]: row
+        for row in rows
+        if row.get("topic-id") and is_mathematical_foundations_row(row)
+    }
+
+    title_candidates: dict[str, list[dict[str, str]]] = {}
+    for row in by_topic_id.values():
+        title = normalize_link_title(row.get("topic-name", ""))
+        if title:
+            title_candidates.setdefault(title, []).append(row)
+
+    by_title: dict[str, dict[str, str]] = {}
+    for title, candidates in title_candidates.items():
+        topic_ids = {row["topic-id"] for row in candidates}
+        if len(topic_ids) == 1:
+            by_title[title] = candidates[0]
+
+    return by_topic_id, by_title
 
 
 def index_by_unique_filename(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
@@ -486,6 +538,208 @@ def rewrite_course_navigation_links(
     return f"rewrote course navigation links: {markdown_path}"
 
 
+def unwrap_markdown_target(value: str) -> str:
+    value = value.strip()
+    if value.startswith("<") and value.endswith(">"):
+        return value[1:-1]
+    return value
+
+
+def topic_code_from_link_target(target: str) -> str | None:
+    clean_target = target.split("#", 1)[0].replace("\\", "/")
+    parts = [
+        part
+        for part in clean_target.split("/")
+        if part and part not in {".", ".."}
+    ]
+    if not parts:
+        return None
+
+    course_code = parts[0]
+    if course_code in {"vault", "MA"}:
+        for part in parts:
+            if re.fullmatch(r"MF[123]", part):
+                course_code = part
+                break
+        else:
+            return None
+
+    if not re.fullmatch(r"[A-Z0-9]+", course_code):
+        return None
+
+    filename = PurePosixPath(clean_target).name
+    stem = filename[:-3] if filename.endswith(".md") else PurePosixPath(filename).stem
+    match = TOPIC_NUMBER_STEM_RE.match(stem)
+    if not match:
+        return None
+    return f"{course_code}.{match.group(1)}".upper()
+
+
+def title_from_link_target(target: str) -> str:
+    clean_target = target.split("#", 1)[0].replace("\\", "/")
+    filename = PurePosixPath(clean_target).name
+    stem = filename[:-3] if filename.endswith(".md") else PurePosixPath(filename).stem
+    match = TOPIC_NUMBER_STEM_RE.match(stem)
+    return match.group(2) if match else stem
+
+
+def topic_number_from_link_target(target: str) -> str | None:
+    clean_target = target.split("#", 1)[0].replace("\\", "/")
+    filename = PurePosixPath(clean_target).name
+    stem = filename[:-3] if filename.endswith(".md") else PurePosixPath(filename).stem
+    match = TOPIC_NUMBER_STEM_RE.match(stem)
+    return match.group(1) if match else None
+
+
+def topic_id_from_link_target(target: str) -> str | None:
+    clean_target = target.split("#", 1)[0].replace("\\", "/")
+    path = PurePosixPath(clean_target)
+    filename = path.name
+    stem = filename[:-3] if filename.endswith(".md") else path.stem
+    return stem if stem.isdigit() else None
+
+
+def canonical_prerequisite_row(
+    label: str,
+    target: str,
+    canonical_by_topic_id: dict[str, dict[str, str]],
+    canonical_by_title: dict[str, dict[str, str]],
+    topic_id_by_code: dict[str, str],
+) -> dict[str, str] | None:
+    explicit_topic_id = topic_id_from_link_target(target)
+    if explicit_topic_id:
+        row = canonical_by_topic_id.get(explicit_topic_id)
+        if row:
+            return row
+
+    topic_code = topic_code_from_link_target(target)
+    if topic_code:
+        topic_id = topic_id_by_code.get(topic_code)
+        if topic_id:
+            row = canonical_by_topic_id.get(topic_id)
+            if row:
+                return row
+
+    topic_number = topic_number_from_link_target(target)
+    if topic_number:
+        wanted_titles = {
+            normalize_link_title(title)
+            for title in (label, title_from_link_target(target))
+            if normalize_link_title(title)
+        }
+        candidates = [
+            row
+            for row in canonical_by_topic_id.values()
+            if row.get("topic-number") == topic_number
+            and normalize_link_title(row.get("topic-name", "")) in wanted_titles
+        ]
+        topic_ids = {row["topic-id"] for row in candidates}
+        if len(topic_ids) == 1:
+            return candidates[0]
+
+    for title in (label, title_from_link_target(target)):
+        row = canonical_by_title.get(normalize_link_title(title))
+        if row:
+            return row
+    return None
+
+
+def relative_markdown_link_target(markdown_path: Path, row: dict[str, str], repo_root: Path) -> str:
+    canonical_path = resolve_row_path(row["md-path"], repo_root)
+    return os.path.relpath(canonical_path, markdown_path.parent).replace(os.sep, "/")
+
+
+def find_course_markdown_by_lesson_id(markdown_path: Path, topic_id: str, repo_root: Path) -> Path | None:
+    course_root = course_root_for_vault_path(markdown_path, repo_root)
+    if course_root is None:
+        return None
+    candidates = [
+        candidate
+        for section_name in ("Lessons", "Prerequisites")
+        for candidate in course_root.glob(f"**/{section_name}/*.md")
+        if candidate != markdown_path and parse_lesson_id(candidate) == topic_id
+    ]
+    if not candidates:
+        return None
+
+    assignment_dir = markdown_path.parent.parent
+    candidates.sort(
+        key=lambda candidate: (
+            0 if candidate.parent.parent == assignment_dir else 1,
+            0 if candidate.parent.name == "Lessons" else 1,
+            candidate.as_posix(),
+        )
+    )
+    return candidates[0]
+
+
+def rewrite_prerequisite_links(
+    markdown_path: Path,
+    repo_root: Path,
+    canonical_by_topic_id: dict[str, dict[str, str]],
+    canonical_by_title: dict[str, dict[str, str]],
+    topic_id_by_code: dict[str, str],
+    dry_run: bool,
+) -> str:
+    if not markdown_path.exists():
+        return f"skip prerequisite links missing markdown: {markdown_path}"
+
+    text = markdown_path.read_text(encoding="utf-8")
+    had_trailing_newline = text.endswith("\n")
+    lines = text.splitlines()
+    try:
+        _, start, end = find_section_bounds(lines, "Prerequisites")
+    except ValueError:
+        return f"skip prerequisite links missing section: {markdown_path}"
+
+    changes = 0
+
+    def rewrite_link(match: re.Match[str]) -> str:
+        nonlocal changes
+        label = match.group(1)
+        raw_target = match.group(2)
+        target = unwrap_markdown_target(raw_target)
+        row = canonical_prerequisite_row(
+            label,
+            target,
+            canonical_by_topic_id,
+            canonical_by_title,
+            topic_id_by_code,
+        )
+        if row is None:
+            topic_id = topic_id_from_link_target(target)
+            local_target = (
+                find_course_markdown_by_lesson_id(markdown_path, topic_id, repo_root)
+                if topic_id
+                else None
+            )
+            if local_target is None:
+                return match.group(0)
+            new_target = os.path.relpath(local_target, markdown_path.parent).replace(os.sep, "/")
+        else:
+            new_target = relative_markdown_link_target(markdown_path, row, repo_root)
+        if target == new_target and raw_target.startswith("<") and raw_target.endswith(">"):
+            return match.group(0)
+
+        changes += 1
+        return f"[{label}](<{new_target}>)"
+
+    for index in range(start, end):
+        lines[index] = MARKDOWN_LINK_RE.sub(rewrite_link, lines[index])
+
+    if changes == 0:
+        return f"skip prerequisite links already canonical: {markdown_path}"
+
+    new_text = "\n".join(lines)
+    if had_trailing_newline:
+        new_text += "\n"
+    if dry_run:
+        return f"would rewrite prerequisite links: {markdown_path} ({changes} links)"
+
+    markdown_path.write_text(new_text, encoding="utf-8")
+    return f"rewrote prerequisite links: {markdown_path} ({changes} links)"
+
+
 def parse_link_target(line: str) -> str | None:
     match = re.match(r"\s*-\s+\[[^\]]+\]\(<([^>]+)>\)\s*$", line)
     if match:
@@ -583,6 +837,9 @@ def copy_indexed_lesson(
     repo_root: Path,
     assignment_dir: Path,
     dry_run: bool,
+    canonical_by_topic_id: dict[str, dict[str, str]],
+    canonical_by_title: dict[str, dict[str, str]],
+    topic_id_by_code: dict[str, str],
     overwrite_existing: bool = False,
 ) -> list[str]:
     lesson_md = resolve_row_path(row["md-path"], repo_root)
@@ -619,6 +876,16 @@ def copy_indexed_lesson(
             )
         )
         messages.append(
+            rewrite_prerequisite_links(
+                destination_md if not dry_run and destination_md.exists() else existing_md,
+                repo_root,
+                canonical_by_topic_id,
+                canonical_by_title,
+                topic_id_by_code,
+                dry_run,
+            )
+        )
+        messages.append(
             rewrite_course_navigation_links(
                 destination_md if not dry_run and destination_md.exists() else existing_md,
                 assignment_dir,
@@ -631,6 +898,16 @@ def copy_indexed_lesson(
     messages.append(copy_file_once(lesson_md, destination_md, dry_run, overwrite_existing))
     messages.append(copy_dir_once(source_path, destination_source, dry_run, overwrite_existing))
     messages.append(rewrite_local_source_links(destination_md, source_path.name, destination_source.name, dry_run))
+    messages.append(
+        rewrite_prerequisite_links(
+            destination_md,
+            repo_root,
+            canonical_by_topic_id,
+            canonical_by_title,
+            topic_id_by_code,
+            dry_run,
+        )
+    )
     messages.append(rewrite_course_navigation_links(destination_md, assignment_dir, repo_root, dry_run))
     return messages
 
@@ -641,6 +918,9 @@ def normalize_existing_copy(
     assignment_dir: Path,
     repo_root: Path,
     dry_run: bool,
+    canonical_by_topic_id: dict[str, dict[str, str]],
+    canonical_by_title: dict[str, dict[str, str]],
+    topic_id_by_code: dict[str, str],
 ) -> list[str]:
     markdown_dir = assignment_dir / section_name
     source_root = assignment_dir / "Source"
@@ -659,6 +939,16 @@ def normalize_existing_copy(
     messages.append(rename_path_once(existing_md, destination_md, dry_run, "lesson markdown"))
     if old_source is None:
         messages.append(f"warning: local source folder not found for topic-id {row['topic-id']} in {source_root}")
+        messages.append(
+            rewrite_prerequisite_links(
+                destination_md if not dry_run and destination_md.exists() else existing_md,
+                repo_root,
+                canonical_by_topic_id,
+                canonical_by_title,
+                topic_id_by_code,
+                dry_run,
+            )
+        )
         messages.append(
             rewrite_course_navigation_links(
                 destination_md if not dry_run and destination_md.exists() else existing_md,
@@ -679,6 +969,16 @@ def normalize_existing_copy(
         )
     )
     messages.append(
+        rewrite_prerequisite_links(
+            destination_md if not dry_run and destination_md.exists() else existing_md,
+            repo_root,
+            canonical_by_topic_id,
+            canonical_by_title,
+            topic_id_by_code,
+            dry_run,
+        )
+    )
+    messages.append(
         rewrite_course_navigation_links(
             destination_md if not dry_run and destination_md.exists() else existing_md,
             assignment_dir,
@@ -694,12 +994,26 @@ def normalize_assignment_local_copies(
     assignment_dir: Path,
     repo_root: Path,
     dry_run: bool,
+    canonical_by_topic_id: dict[str, dict[str, str]],
+    canonical_by_title: dict[str, dict[str, str]],
+    topic_id_by_code: dict[str, str],
 ) -> list[str]:
     messages: list[str] = []
     for row in sorted(local_rows.values(), key=sort_key):
         role = row.get("role", "prerequisite")
         section_name = "Lessons" if role == "lesson" else "Prerequisites"
-        messages.extend(normalize_existing_copy(row, section_name, assignment_dir, repo_root, dry_run))
+        messages.extend(
+            normalize_existing_copy(
+                row,
+                section_name,
+                assignment_dir,
+                repo_root,
+                dry_run,
+                canonical_by_topic_id,
+                canonical_by_title,
+                topic_id_by_code,
+            )
+        )
     return messages
 
 
@@ -1327,6 +1641,8 @@ def main() -> int:
         topic_rows.extend(load_calc2_fallback_topics())
     topic_by_id = index_by_topic_id(topic_rows)
     filename_index = index_by_unique_filename(topic_rows)
+    canonical_by_topic_id, canonical_by_title = build_canonical_prerequisite_link_index(topic_rows)
+    topic_id_by_code = load_catalog_topic_codes(repo_root / "util" / "Mathematical-Foundations" / "catalog.csv")
     prerequisites = load_prerequisites(prerequisites_path)
     if prerequisites_path == repo_root / "util" / "Mathematical-Foundations" / "prerequisites.csv":
         merge_prerequisites(prerequisites, DEFAULT_MA_DATA_PREREQUISITES)
@@ -1359,6 +1675,9 @@ def main() -> int:
                 repo_root,
                 assignment_dir,
                 args.dry_run,
+                canonical_by_topic_id,
+                canonical_by_title,
+                topic_id_by_code,
                 args.overwrite_existing,
             ):
                 print(message)
@@ -1373,11 +1692,22 @@ def main() -> int:
                 repo_root,
                 assignment_dir,
                 args.dry_run,
+                canonical_by_topic_id,
+                canonical_by_title,
+                topic_id_by_code,
                 args.overwrite_existing,
             ):
                 print(message)
 
-    for message in normalize_assignment_local_copies(local_rows, assignment_dir, repo_root, args.dry_run):
+    for message in normalize_assignment_local_copies(
+        local_rows,
+        assignment_dir,
+        repo_root,
+        args.dry_run,
+        canonical_by_topic_id,
+        canonical_by_title,
+        topic_id_by_code,
+    ):
         print(message)
 
     print(write_local_topics(local_topics_path, local_rows, topic_fieldnames, args.dry_run))

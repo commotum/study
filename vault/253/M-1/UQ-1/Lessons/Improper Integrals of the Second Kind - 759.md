@@ -17,9 +17,9 @@ topic-code: MF3.10.6.5
 
 ## Prerequisites
 
-- [Integration by Substitution With Inverse Trigonometric Functions](<../../10.1. Integration Using Substitution/Lessons/10.1.10. Integration by Substitution With Inverse Trigonometric Functions.md>)
-- [Integrating Trigonometric Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
-- [Integrating Exponential Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
+- [Integration by Substitution With Inverse Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.10. Integration by Substitution With Inverse Trigonometric Functions.md>)
+- [Integrating Trigonometric Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
+- [Integrating Exponential Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
 
 ---
 
@@ -418,5 +418,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

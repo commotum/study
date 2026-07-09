@@ -14,9 +14,9 @@ topic-code: MF2.12.3.5
 
 ## Prerequisites
 
-- [The Chain Rule With Trigonometric Functions](<12.3.4. The Chain Rule With Trigonometric Functions.md>)
-- [The Chain Rule With Exponential Functions](<12.3.2. The Chain Rule With Exponential Functions.md>)
-- [The Chain Rule With Logarithmic Functions](<12.3.3. The Chain Rule With Logarithmic Functions.md>)
+- [The Chain Rule With Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.3. Differentiating Composite Functions/Lessons/12.3.4. The Chain Rule With Trigonometric Functions.md>)
+- [The Chain Rule With Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.3. Differentiating Composite Functions/Lessons/12.3.2. The Chain Rule With Exponential Functions.md>)
+- [The Chain Rule With Logarithmic Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.3. Differentiating Composite Functions/Lessons/12.3.3. The Chain Rule With Logarithmic Functions.md>)
 
 ---
 
@@ -302,5 +302,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

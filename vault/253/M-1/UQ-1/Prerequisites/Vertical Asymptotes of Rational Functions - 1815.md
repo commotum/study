@@ -15,9 +15,9 @@ topic-code: MF3.7.1.5
 
 ## Prerequisites
 
-- [Combining Graph Transformations of Reciprocal Functions](<../../../../AG2/5. Rational Expressions & Functions/5.2. Reciprocal Functions/Lessons/5.2.3. Combining Graph Transformations of Reciprocal Functions.md>)
-- [Simplifying Rational Expressions Using Polynomial Factorization](<../../../../AG2/5. Rational Expressions & Functions/5.1. Rational Expressions/Lessons/5.1.1. Simplifying Rational Expressions Using Polynomial Factorization.md>)
-- [Adding Rational Expressions With No Common Factors in the Denominator](<../../../../AG2/5. Rational Expressions & Functions/5.1. Rational Expressions/Lessons/5.1.4. Adding Rational Expressions With No Common Factors in the Denominator.md>)
+- [Combining Graph Transformations of Reciprocal Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.3. Combining Graph Transformations of Reciprocal Functions.md>)
+- [Simplifying Rational Expressions Using Polynomial Factorization](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.1. Simplifying Rational Expressions Using Polynomial Factorization.md>)
+- [Adding Rational Expressions With No Common Factors in the Denominator](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.3. Adding Rational Expressions With No Common Factors in the Denominator.md>)
 
 ---
 
@@ -378,5 +378,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

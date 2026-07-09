@@ -15,11 +15,11 @@ topic-code: MF3.7.2.1
 
 ## Prerequisites
 
-- [Continuity Over an Interval](<../../../../CAB/1. Limits and Continuity/1.6. Continuity/Lessons/1.6.8. Continuity Over an Interval.md>)
-- [Properties of Transformed Secant and Cosecant Functions](<../../../../AG2/9. Trigonometric Functions/9.4. Properties of Transformed Trigonometric Functions/Lessons/9.4.4. Properties of Transformed Secant and Cosecant Functions.md>)
-- [Properties of Transformed Logarithmic Functions](<../../../../AG2/4. Exponentials & Logarithms/4.6. Graphs of Logarithmic Functions/Lessons/4.6.3. Properties of Transformed Logarithmic Functions.md>)
-- [Vertical Asymptotes of Rational Functions](<../../7.1. Limits/Lessons/7.1.5. Vertical Asymptotes of Rational Functions.md>)
-- [Properties of Transformed Tangent and Cotangent Functions](<../../../../AG2/9. Trigonometric Functions/9.4. Properties of Transformed Trigonometric Functions/Lessons/9.4.3. Properties of Transformed Tangent and Cotangent Functions.md>)
+- [Continuity Over an Interval](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.4. Continuity/Lessons/11.4.4. Continuity Over an Interval.md>)
+- [Properties of Transformed Secant and Cosecant Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.8. Properties of Transformed Trigonometric Functions/Lessons/9.8.4. Properties of Transformed Secant and Cosecant Functions.md>)
+- [Properties of Transformed Logarithmic Functions](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.6. Graphs of Logarithmic Functions/Lessons/5.6.3. Properties of Transformed Logarithmic Functions.md>)
+- [Vertical Asymptotes of Rational Functions](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.5. Vertical Asymptotes of Rational Functions.md>)
+- [Properties of Transformed Tangent and Cotangent Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.8. Properties of Transformed Trigonometric Functions/Lessons/9.8.3. Properties of Transformed Tangent and Cotangent Functions.md>)
 
 ---
 

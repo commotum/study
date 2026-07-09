@@ -16,7 +16,7 @@ topic-code: MF2.11.2.3
 
 ## Prerequisites
 
-- [The Sum Rule for Limits](<11.2.2. The Sum Rule for Limits.md>)
+- [The Sum Rule for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.2. The Sum Rule for Limits.md>)
 
 ---
 
@@ -459,5 +459,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -18,9 +18,9 @@ topic-code: MF3.2.1.12
 
 ## Prerequisites
 
-- [Combining the Laws of Logarithms](<../../../../AG2/4. Exponentials & Logarithms/4.2. The Laws of Logarithms/Lessons/4.2.4. Combining the Laws of Logarithms.md>)
-- [Solving Exponential Equations With Different Bases Using Logarithms](<../../../../AG2/4. Exponentials & Logarithms/4.3. Exponential Equations/Lessons/4.3.4. Solving Exponential Equations With Different Bases Using Logarithms.md>)
-- [Further Solving Linear Inequalities](<../../../../PAL/5. Equations & Inequalities/5.3. Solving Linear Inequalities/Lessons/5.3.7. Further Solving Linear Inequalities.md>)
+- [Combining the Laws of Logarithms](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.2. The Laws of Logarithms/Lessons/5.2.4. Combining the Laws of Logarithms.md>)
+- [Solving Exponential Equations With Different Bases Using Logarithms](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.3. Exponential Equations/Lessons/5.3.4. Solving Exponential Equations With Different Bases Using Logarithms.md>)
+- [Further Solving Linear Inequalities](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.7. Further Solving Linear Inequalities.md>)
 
 ---
 
@@ -492,5 +492,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

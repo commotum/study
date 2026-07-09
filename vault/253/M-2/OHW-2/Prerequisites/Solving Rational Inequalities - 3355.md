@@ -14,9 +14,9 @@ topic-code: MF3.2.1.9
 
 ## Prerequisites
 
-- [Roots of Rational Functions](<../../../../PCL/2. Rational Functions/2.2. Rational Functions/Lessons/2.2.1. Roots of Rational Functions.md>)
-- [Vertical Asymptotes of Rational Functions](<../../../../PCL/2. Rational Functions/2.2. Rational Functions/Lessons/2.2.2. Vertical Asymptotes of Rational Functions.md>)
-- [Solving Polynomial Inequalities Using the Sign Table Method](<2.1.8. Solving Polynomial Inequalities Using the Sign Table Method.md>)
+- [Roots of Rational Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.7. Roots of Rational Functions.md>)
+- [Vertical Asymptotes of Rational Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.8. Vertical Asymptotes of Rational Functions.md>)
+- [Solving Polynomial Inequalities Using the Sign Table Method](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.8. Solving Polynomial Inequalities Using the Sign Table Method.md>)
 
 ---
 
@@ -455,5 +455,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

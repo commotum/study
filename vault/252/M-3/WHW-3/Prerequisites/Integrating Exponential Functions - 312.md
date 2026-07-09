@@ -15,7 +15,7 @@ topic-code: MF2.12.4.5
 
 ## Prerequisites
 
-- [Integrating the Reciprocal Function](<12.4.4. Integrating the Reciprocal Function.md>)
+- [Integrating the Reciprocal Function](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.4. Integrating the Reciprocal Function.md>)
 
 ---
 

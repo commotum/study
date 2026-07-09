@@ -16,11 +16,11 @@ topic-code: Calc2.4.2.1
 
 ## Prerequisites
 
-- [Multiplying Binomials](../371/371.md)
-- [Factorials](../774/774.md)
-- [Increasing and Decreasing Functions](../1628/1628.md)
-- [Introduction to Sequences](../2271/2271.md)
-- [Further Solving Linear Inequalities](../4034/4034.md)
+- [Multiplying Binomials](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.7. Multiplying Binomials.md>)
+- [Factorials](<../../../../MA/Mathematical-Foundations/MF2/14. Probability & Combinatorics/14.3. Combinatorics/Lessons/14.3.2. Factorials.md>)
+- [Increasing and Decreasing Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.10. Increasing and Decreasing Functions.md>)
+- [Introduction to Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.1. Introduction to Sequences.md>)
+- [Further Solving Linear Inequalities](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.7. Further Solving Linear Inequalities.md>)
 
 ---
 
@@ -359,3 +359,9 @@ Given $a_{n} = 2n - n^{2}$ for $n \ge 1$, which of the following statements are 
 - [ ] C. III only
 - [ ] D. I and III only
 - [ ] E. II only
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

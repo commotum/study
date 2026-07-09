@@ -15,8 +15,8 @@ topic-code: MF3.7.1.4
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](<../../../../CAB/1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.4. The Power and Root Rules for Limits.md>)
-- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
+- [The Power and Root Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
+- [Limits of Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.3. Limits of Exponential Functions.md>)
 
 ---
 
@@ -360,5 +360,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

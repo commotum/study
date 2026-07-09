@@ -15,10 +15,10 @@ topic-code: Calc2.4.2.3
 
 ## Prerequisites
 
-- [Fractions of Fractions](../323/323.md)
-- [Monotonic Sequences](../1096/1096.md)
-- [The Power of Quotient Rule With Algebraic Expressions](../1428/1428.md)
-- [Factorials in Variable Expressions](../3710/3710.md)
+- [Fractions of Fractions](<../../../../MA/Mathematical-Foundations/MF1/3. The Number System/3.2. Multiplication and Division of Rational Numbers/Lessons/3.2.8. Fractions of Fractions.md>)
+- [Monotonic Sequences](<Monotonic Sequences - 1096.md>)
+- [The Power of Quotient Rule With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/10. Exponential Functions/10.1. Rules of Exponents/Lessons/10.1.5. The Power of Quotient Rule With Algebraic Expressions.md>)
+- [Factorials in Variable Expressions](<../../../../MA/Mathematical-Foundations/MF2/14. Probability & Combinatorics/14.3. Combinatorics/Lessons/14.3.3. Factorials in Variable Expressions.md>)
 
 ---
 
@@ -307,3 +307,9 @@ Given that $a_{n} = ((n + 1)!)/(3^{n})$ for $n \ge 1$, which of the following st
 - [ ] C. III only
 - [ ] D. II only
 - [ ] E. I and II only
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

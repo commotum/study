@@ -15,9 +15,9 @@ topic-code: MF3.1.4.4
 
 ## Prerequisites
 
-- [Piecewise Functions](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.12. Piecewise Functions.md>)
-- [Infinite Series and Partial Sums](<1.4.3. Infinite Series and Partial Sums.md>)
-- [Convergence of Geometric Sequences](<1.4.1. Convergence of Geometric Sequences.md>)
+- [Piecewise Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.11. Piecewise Functions.md>)
+- [Infinite Series and Partial Sums](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.3. Infinite Series and Partial Sums.md>)
+- [Convergence of Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.1. Convergence of Geometric Sequences.md>)
 
 ---
 
@@ -465,5 +465,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

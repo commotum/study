@@ -16,8 +16,8 @@ topic-code: MF2.12.2.4
 
 ## Prerequisites
 
-- [Differentiating Trigonometric Functions](<12.2.3. Differentiating Trigonometric Functions.md>)
-- [Differentiating Logarithmic Functions](<12.2.2. Differentiating Logarithmic Functions.md>)
+- [Differentiating Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.2. Derivatives of Functions and the Rules of Differentiation/Lessons/12.2.3. Differentiating Trigonometric Functions.md>)
+- [Differentiating Logarithmic Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.2. Derivatives of Functions and the Rules of Differentiation/Lessons/12.2.2. Differentiating Logarithmic Functions.md>)
 
 ---
 
@@ -434,5 +434,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

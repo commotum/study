@@ -16,7 +16,7 @@ topic-code: MF1.3.2.8
 
 ## Prerequisites
 
-- [Reciprocals of Rational Numbers](<3.2.6. Reciprocals of Rational Numbers.md>)
+- [Reciprocals of Rational Numbers](<../../../../MA/Mathematical-Foundations/MF1/3. The Number System/3.2. Multiplication and Division of Rational Numbers/Lessons/3.2.6. Reciprocals of Rational Numbers.md>)
 
 ---
 
@@ -559,5 +559,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

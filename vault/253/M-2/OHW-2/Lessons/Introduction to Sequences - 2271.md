@@ -17,7 +17,7 @@ topic-code: MF2.7.1.1
 
 ## Prerequisites
 
-- [The Domain of a Function](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.4. The Domain of a Function.md>)
+- [The Domain of a Function](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.4. The Domain of a Function.md>)
 
 ---
 
@@ -440,5 +440,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

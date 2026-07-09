@@ -18,13 +18,13 @@ topic-code: MF3.7.1.1
 
 ## Prerequisites
 
-- [Second and Higher-Order Derivatives](<../../../../CAB/2. Differentiation- Definition and Fundamental Properties/2.2. Derivatives of Functions and the Rules of Differentiation/Lessons/2.2.4. Second and Higher-Order Derivatives.md>)
-- [Selecting Procedures for Calculating Derivatives](<../../../../CAB/3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.7. Selecting Procedures for Calculating Derivatives.md>)
-- [Limits of Logarithmic Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.4. Limits of Logarithmic Functions.md>)
-- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
-- [Limits of Reciprocal Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.2. Limits of Reciprocal Functions.md>)
-- [Limits of Reciprocal Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.7. Limits of Reciprocal Trigonometric Functions.md>)
-- [Limits of Radical Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.5. Limits of Radical Functions.md>)
+- [Second and Higher-Order Derivatives](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.2. Derivatives of Functions and the Rules of Differentiation/Lessons/12.2.4. Second and Higher-Order Derivatives.md>)
+- [Selecting Procedures for Calculating Derivatives](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.3. Differentiating Composite Functions/Lessons/12.3.5. Selecting Procedures for Calculating Derivatives.md>)
+- [Limits of Logarithmic Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.4. Limits of Logarithmic Functions.md>)
+- [Limits of Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.3. Limits of Exponential Functions.md>)
+- [Limits of Reciprocal Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.2. Limits of Reciprocal Functions.md>)
+- [Limits of Reciprocal Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.7. Limits of Reciprocal Trigonometric Functions.md>)
+- [Limits of Radical Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.5. Limits of Radical Functions.md>)
 
 ---
 
@@ -508,5 +508,5 @@ When working with familiar functions like polynomials, trigonometric functions, 
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

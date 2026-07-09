@@ -15,9 +15,9 @@ topic-code: MF1.12.4.4
 
 ## Prerequisites
 
-- [Solving Equations Using the Square Root Method](<../../../5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.1. Solving Equations Using the Square Root Method.md>)
-- [Areas of Rectangles and Squares](<../../../13. Polygons/13.3. Area and Perimeter/Lessons/13.3.1. Areas of Rectangles and Squares.md>)
-- [Circles](<12.4.1. Circles.md>)
+- [Solving Equations Using the Square Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.1. Solving Equations Using the Square Root Method.md>)
+- [Areas of Rectangles and Squares](<../../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.3. Area and Perimeter/Lessons/13.3.1. Areas of Rectangles and Squares.md>)
+- [Circles](<../../../../MA/Mathematical-Foundations/MF1/12. Geometry Fundamentals/12.4. Circles/Lessons/12.4.1. Circles.md>)
 
 ---
 

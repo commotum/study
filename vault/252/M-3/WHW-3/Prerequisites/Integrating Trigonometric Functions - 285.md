@@ -15,8 +15,8 @@ topic-code: MF2.12.4.6
 
 ## Prerequisites
 
-- [Differentiating Reciprocal Trigonometric Functions](<../../12.2. Derivatives of Functions and the Rules of Differentiation/Lessons/12.2.9. Differentiating Reciprocal Trigonometric Functions.md>)
-- [The Sum Rule for Indefinite Integrals](<12.4.3. The Sum Rule for Indefinite Integrals.md>)
+- [Differentiating Reciprocal Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.2. Derivatives of Functions and the Rules of Differentiation/Lessons/12.2.9. Differentiating Reciprocal Trigonometric Functions.md>)
+- [The Sum Rule for Indefinite Integrals](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.3. The Sum Rule for Indefinite Integrals.md>)
 
 ---
 

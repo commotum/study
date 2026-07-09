@@ -15,10 +15,10 @@ topic-code: Calc2.4.2.2
 
 ## Prerequisites
 
-- [Monotonic Sequences](../1096/1096.md)
-- [Determining Intervals on Which a Function Is Increasing or Decreasing](../1359/1359.md)
-- [Solving Inequalities Involving Positive and Negative Factors](../2982/2982.md)
-- [Solving Rational Inequalities](../3355/3355.md)
+- [Monotonic Sequences](<Monotonic Sequences - 1096.md>)
+- [Determining Intervals on Which a Function Is Increasing or Decreasing](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.2. Analytical Applications of Differentiation/Lessons/8.2.6. Determining Intervals on Which a Function Is Increasing or Decreasing.md>)
+- [Solving Inequalities Involving Positive and Negative Factors](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.5. Solving Inequalities Involving Positive and Negative Factors.md>)
+- [Solving Rational Inequalities](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.9. Solving Rational Inequalities.md>)
 
 ---
 
@@ -335,3 +335,9 @@ Let $a_{n} = \frac{5}{n + 1} + 2\ln (n + 1)$ for $n \ge 1$ and let $f(x) = \frac
 - [ ] C. I and II only
 - [ ] D. None of the statements are true
 - [ ] E. I and III only
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

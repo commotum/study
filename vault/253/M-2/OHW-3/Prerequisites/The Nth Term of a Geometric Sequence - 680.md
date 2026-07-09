@@ -14,8 +14,8 @@ topic-code: MF2.7.3.3
 
 ## Prerequisites
 
-- [The Product Rule for Exponents](<../../../../PAL/3. Exponents & Radicals/3.2. The Rules of Exponents/Lessons/3.2.1. The Product Rule for Exponents.md>)
-- [The Recursive Formula for a Geometric Sequence](<7.3.2. The Recursive Formula for a Geometric Sequence.md>)
+- [The Product Rule for Exponents](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.2. The Rules of Exponents/Lessons/4.2.1. The Product Rule for Exponents.md>)
+- [The Recursive Formula for a Geometric Sequence](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.2. The Recursive Formula for a Geometric Sequence.md>)
 
 ---
 
@@ -485,5 +485,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -15,11 +15,11 @@ topic-code: MF2.9.7.6
 
 ## Prerequisites
 
-- [Vertical Translations of Trigonometric Functions](<9.7.1. Vertical Translations of Trigonometric Functions.md>)
-- [Horizontal Stretches of Trigonometric Functions](<9.7.4. Horizontal Stretches of Trigonometric Functions.md>)
-- [Combining Graph Transformations: Two Operations](<../../../4. Functions/4.2. Graph Transformations of Functions/Lessons/4.2.7. Combining Graph Transformations- Two Operations.md>)
-- [Horizontal Translations of Trigonometric Functions](<9.7.3. Horizontal Translations of Trigonometric Functions.md>)
-- [Vertical Stretches of Trigonometric Functions](<9.7.2. Vertical Stretches of Trigonometric Functions.md>)
+- [Vertical Translations of Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.1. Vertical Translations of Trigonometric Functions.md>)
+- [Horizontal Stretches of Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.4. Horizontal Stretches of Trigonometric Functions.md>)
+- [Combining Graph Transformations: Two Operations](<../../../../MA/Mathematical-Foundations/MF2/4. Functions/4.2. Graph Transformations of Functions/Lessons/4.2.7. Combining Graph Transformations- Two Operations.md>)
+- [Horizontal Translations of Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.3. Horizontal Translations of Trigonometric Functions.md>)
+- [Vertical Stretches of Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.2. Vertical Stretches of Trigonometric Functions.md>)
 
 ---
 
@@ -378,5 +378,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

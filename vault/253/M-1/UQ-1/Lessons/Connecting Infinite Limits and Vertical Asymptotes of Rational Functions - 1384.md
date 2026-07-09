@@ -15,8 +15,8 @@ topic-code: MTH-253.
 
 ## Prerequisites
 
-- [Vertical Asymptotes of Rational Functions](../1815/1815.md)
-- [Limits of Reciprocal Functions](../1905/1905.md)
+- [Vertical Asymptotes of Rational Functions](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.5. Vertical Asymptotes of Rational Functions.md>)
+- [Limits of Reciprocal Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.2. Limits of Reciprocal Functions.md>)
 
 ---
 
@@ -366,3 +366,9 @@ Given that $f(x) = \frac{2x + 2}{x^{2} - 1}$, which of the following statements 
 - [ ] C. I only
 - [ ] D. I and II only
 - [ ] E. I and III only
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

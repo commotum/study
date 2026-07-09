@@ -16,7 +16,7 @@ topic-code: MF3.1.3.1
 
 ## Prerequisites
 
-- [Determining Indexes of Terms in Geometric Sequences](<../../../../AG1/11. Sequences/11.3. Geometric Sequences/Lessons/11.3.6. Determining Indexes of Terms in Geometric Sequences.md>)
+- [Determining Indexes of Terms in Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.6. Determining Indexes of Terms in Geometric Sequences.md>)
 
 ---
 
@@ -592,5 +592,5 @@ $$
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

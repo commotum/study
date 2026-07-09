@@ -16,8 +16,8 @@ topic-code: MF1.13.3.3
 
 ## Prerequisites
 
-- [Areas of Triangles](<13.3.2. Areas of Triangles.md>)
-- [The Segment Addition Postulate](<../../../12. Geometry Fundamentals/12.1. Introduction to Geometry/Lessons/12.1.7. The Segment Addition Postulate.md>)
+- [Areas of Triangles](<../../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.3. Area and Perimeter/Lessons/13.3.2. Areas of Triangles.md>)
+- [The Segment Addition Postulate](<../../../../MA/Mathematical-Foundations/MF1/12. Geometry Fundamentals/12.1. Introduction to Geometry/Lessons/12.1.7. The Segment Addition Postulate.md>)
 
 ---
 

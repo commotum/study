@@ -15,8 +15,8 @@ topic-code: MF1.10.1.6
 
 ## Prerequisites
 
-- [The Power of Quotient Rule With Algebraic Expressions](<10.1.5. The Power of Quotient Rule With Algebraic Expressions.md>)
-- [Combining the Rules of Exponents](<../../../4. Exponents & Radicals/4.2. The Rules of Exponents/Lessons/4.2.6. Combining the Rules of Exponents.md>)
+- [The Power of Quotient Rule With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/10. Exponential Functions/10.1. Rules of Exponents/Lessons/10.1.5. The Power of Quotient Rule With Algebraic Expressions.md>)
+- [Combining the Rules of Exponents](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.2. The Rules of Exponents/Lessons/4.2.6. Combining the Rules of Exponents.md>)
 
 ---
 
@@ -365,5 +365,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

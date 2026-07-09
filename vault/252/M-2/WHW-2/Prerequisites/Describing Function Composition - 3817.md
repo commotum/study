@@ -15,8 +15,8 @@ topic-code: MF2.4.1.3
 
 ## Prerequisites
 
-- [Squaring Binomials](<../../../../AG1/9. Polynomials/9.1. Polynomials/Lessons/9.1.9. Squaring Binomials.md>)
-- [Function Composition](<4.1.2. Function Composition.md>)
+- [Squaring Binomials](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.9. Squaring Binomials.md>)
+- [Function Composition](<../../../../MA/Mathematical-Foundations/MF2/4. Functions/4.1. Functions/Lessons/4.1.2. Function Composition.md>)
 
 ---
 

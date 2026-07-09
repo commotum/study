@@ -13,7 +13,7 @@ topic-code: MF3.1.4.8
 
 ## Prerequisites
 
-- [Infinite Series and Partial Sums](<1.4.3. Infinite Series and Partial Sums.md>)
+- [Infinite Series and Partial Sums](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.3. Infinite Series and Partial Sums.md>)
 
 ---
 
@@ -257,5 +257,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

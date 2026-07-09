@@ -14,7 +14,7 @@ topic-code: MF2.11.1.3
 
 ## Prerequisites
 
-- [The Left and Right-Sided Limits of a Function](<11.1.2. The Left and Right-Sided Limits of a Function.md>)
+- [The Left and Right-Sided Limits of a Function](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.2. The Left and Right-Sided Limits of a Function.md>)
 
 ---
 
@@ -319,5 +319,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -17,7 +17,7 @@ topic-code: MF3.9.2.5
 
 ## Prerequisites
 
-- [The Sum and Constant Multiple Rules for Definite Integrals](<9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
+- [The Sum and Constant Multiple Rules for Definite Integrals](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
 
 ---
 

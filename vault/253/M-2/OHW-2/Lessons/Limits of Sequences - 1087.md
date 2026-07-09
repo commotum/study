@@ -14,8 +14,8 @@ topic-code: MF3.7.1.2
 
 ## Prerequisites
 
-- [Limits at Infinity and Horizontal Asymptotes of Rational Functions](<7.1.6. Limits at Infinity and Horizontal Asymptotes of Rational Functions.md>)
-- [Introduction to Sequences](<../../../../AG1/11. Sequences/11.1. Introduction to Sequences/Lessons/11.1.1. Introduction to Sequences.md>)
+- [Limits at Infinity and Horizontal Asymptotes of Rational Functions](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.6. Limits at Infinity and Horizontal Asymptotes of Rational Functions.md>)
+- [Introduction to Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.1. Introduction to Sequences.md>)
 
 ---
 
@@ -324,5 +324,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

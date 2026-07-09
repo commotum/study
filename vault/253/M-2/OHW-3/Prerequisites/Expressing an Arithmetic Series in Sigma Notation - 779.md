@@ -14,8 +14,8 @@ topic-code: MF3.1.2.1
 
 ## Prerequisites
 
-- [Determining Indexes of Terms in Arithmetic Sequences](<../../../../AG1/11. Sequences/11.2. Arithmetic Sequences/Lessons/11.2.7. Determining Indexes of Terms in Arithmetic Sequences.md>)
-- [Sigma Notation](<../../../../IM3/8. Probability & Statistics/8.3. Analyzing Data/Lessons/8.3.2. Sigma Notation.md>)
+- [Determining Indexes of Terms in Arithmetic Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.2. Arithmetic Sequences/Lessons/7.2.7. Determining Indexes of Terms in Arithmetic Sequences.md>)
+- [Sigma Notation](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.4. Sigma Notation.md>)
 
 ---
 
@@ -423,5 +423,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

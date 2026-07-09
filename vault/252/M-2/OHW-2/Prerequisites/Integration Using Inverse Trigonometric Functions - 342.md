@@ -15,9 +15,9 @@ topic-code: MF3.8.1.8
 
 ## Prerequisites
 
-- [Differentiating Inverse Reciprocal Trigonometric Functions](<8.1.7. Differentiating Inverse Reciprocal Trigonometric Functions.md>)
-- [Dividing Polynomials by Manipulating Rational Expressions](<../../../../AG2/2. Polynomials/2.3. Dividing Polynomials/Lessons/2.3.4. Dividing Polynomials by Manipulating Rational Expressions.md>)
-- [The Sum Rule for Indefinite Integrals](<../../../../CAB/6. Integration/6.1. Indefinite Integrals/Lessons/6.1.3. The Sum Rule for Indefinite Integrals.md>)
+- [Differentiating Inverse Reciprocal Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.1. Differentiating Implicit and Inverse Functions/Lessons/8.1.7. Differentiating Inverse Reciprocal Trigonometric Functions.md>)
+- [Dividing Polynomials by Manipulating Rational Expressions](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.3. Dividing Polynomials/Lessons/2.3.4. Dividing Polynomials by Manipulating Rational Expressions.md>)
+- [The Sum Rule for Indefinite Integrals](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.3. The Sum Rule for Indefinite Integrals.md>)
 
 ---
 

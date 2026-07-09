@@ -13,8 +13,8 @@ topic-code: MF1.8.1.6
 
 ## Prerequisites
 
-- [Horizontal and Vertical Lines](<../../../6. Two-Variable Equations/6.1. Graphs of Linear Equations/Lessons/6.1.5. Horizontal and Vertical Lines.md>)
-- [The Range of a Function](<8.1.7. The Range of a Function.md>)
+- [Horizontal and Vertical Lines](<../../../../MA/Mathematical-Foundations/MF1/6. Two-Variable Equations/6.1. Graphs of Linear Equations/Lessons/6.1.5. Horizontal and Vertical Lines.md>)
+- [The Range of a Function](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.7. The Range of a Function.md>)
 
 ---
 
@@ -215,5 +215,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

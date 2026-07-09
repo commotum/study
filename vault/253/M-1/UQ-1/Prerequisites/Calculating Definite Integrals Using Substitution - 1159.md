@@ -13,8 +13,8 @@ topic-code: MF3.10.1.4
 
 ## Prerequisites
 
-- [Integration Using Substitution](<10.1.3. Integration Using Substitution.md>)
-- [The Sum and Constant Multiple Rules for Definite Integrals](<../../../9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
+- [Integration Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.3. Integration Using Substitution.md>)
+- [The Sum and Constant Multiple Rules for Definite Integrals](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
 
 ---
 
@@ -294,5 +294,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

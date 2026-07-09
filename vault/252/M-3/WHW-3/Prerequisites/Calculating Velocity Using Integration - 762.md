@@ -13,9 +13,9 @@ topic-code: MF3.11.1.4
 
 ## Prerequisites
 
-- [Integrating Trigonometric Functions Using Substitution](<../../../10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
-- [Calculating Acceleration for Straight-Line Motion Using Differentiation](<11.1.2. Calculating Acceleration for Straight-Line Motion Using Differentiation.md>)
-- [Integrating Exponential Functions Using Substitution](<../../../10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
+- [Integrating Trigonometric Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
+- [Calculating Acceleration for Straight-Line Motion Using Differentiation](<../../../../MA/Mathematical-Foundations/MF3/11. Contextual Applications of Calculus/11.1. Displacement, Velocity, and Acceleration/Lessons/11.1.2. Calculating Acceleration for Straight-Line Motion Using Differentiation.md>)
+- [Integrating Exponential Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
 
 ---
 

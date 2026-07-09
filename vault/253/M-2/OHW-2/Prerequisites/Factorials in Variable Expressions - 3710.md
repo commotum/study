@@ -14,9 +14,9 @@ topic-code: MF2.14.3.3
 
 ## Prerequisites
 
-- [Multiplying Binomials](<../../../../AG1/9. Polynomials/9.1. Polynomials/Lessons/9.1.7. Multiplying Binomials.md>)
-- [Simplifying Rational Expressions by Factoring](<../../../../AG1/5. Rational Expressions & Equations/5.1. Rational Expressions/Lessons/5.1.3. Simplifying Rational Expressions by Factoring.md>)
-- [Factorials](<14.3.2. Factorials.md>)
+- [Multiplying Binomials](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.7. Multiplying Binomials.md>)
+- [Simplifying Rational Expressions by Factoring](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.2. Rational Expressions/Lessons/7.2.3. Simplifying Rational Expressions by Factoring.md>)
+- [Factorials](<../../../../MA/Mathematical-Foundations/MF2/14. Probability & Combinatorics/14.3. Combinatorics/Lessons/14.3.2. Factorials.md>)
 
 ---
 
@@ -306,5 +306,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

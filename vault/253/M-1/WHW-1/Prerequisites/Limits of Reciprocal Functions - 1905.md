@@ -18,9 +18,9 @@ topic-code: MF2.11.3.2
 
 ## Prerequisites
 
-- [Limits at Infinity of Polynomials](<11.3.1. Limits at Infinity of Polynomials.md>)
-- [Infinite Limits from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.5. Infinite Limits from Graphs.md>)
-- [Graphing Reciprocal Functions](<../../../6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.1. Graphing Reciprocal Functions.md>)
+- [Limits at Infinity of Polynomials](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.1. Limits at Infinity of Polynomials.md>)
+- [Infinite Limits from Graphs](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.5. Infinite Limits from Graphs.md>)
+- [Graphing Reciprocal Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.1. Graphing Reciprocal Functions.md>)
 
 ---
 
@@ -536,5 +536,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

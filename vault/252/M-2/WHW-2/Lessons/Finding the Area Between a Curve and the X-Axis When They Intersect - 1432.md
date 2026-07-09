@@ -14,11 +14,11 @@ topic-code: MF3.9.3.4
 
 ## Prerequisites
 
-- [Factoring Higher-Order Polynomials as a Difference of Squares](<../../../../AG2/2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.2. Factoring Higher-Order Polynomials as a Difference of Squares.md>)
-- [The Area Bounded by a Curve and the X-Axis](<9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
-- [Solving Equations With Even Exponents Using the Nth Root Method](<../../../../AG1/1. Equations & Inequalities/1.4. Nonlinear Equations/Lessons/1.4.3. Solving Equations With Even Exponents Using the Nth Root Method.md>)
-- [Graphing General Polynomials](<../../../../AG2/2. Polynomials/2.6. Graphs of Polynomials/Lessons/2.6.6. Graphing General Polynomials.md>)
-- [Solving Equations With Odd Exponents Using the Nth Root Method](<../../../../AG1/1. Equations & Inequalities/1.4. Nonlinear Equations/Lessons/1.4.2. Solving Equations With Odd Exponents Using the Nth Root Method.md>)
+- [Factoring Higher-Order Polynomials as a Difference of Squares](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.2. Factoring Higher-Order Polynomials as a Difference of Squares.md>)
+- [The Area Bounded by a Curve and the X-Axis](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
+- [Solving Equations With Even Exponents Using the Nth Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.3. Solving Equations With Even Exponents Using the Nth Root Method.md>)
+- [Graphing General Polynomials](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.5. Graphs of Polynomials/Lessons/2.5.4. Graphing General Polynomials.md>)
+- [Solving Equations With Odd Exponents Using the Nth Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.2. Solving Equations With Odd Exponents Using the Nth Root Method.md>)
 
 ---
 

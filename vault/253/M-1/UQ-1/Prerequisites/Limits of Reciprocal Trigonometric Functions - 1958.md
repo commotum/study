@@ -16,8 +16,8 @@ topic-code: MF2.11.3.7
 
 ## Prerequisites
 
-- [Combining Graph Transformations of Secant and Cosecant](<../../../9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.8. Combining Graph Transformations of Secant and Cosecant.md>)
-- [Limits of Trigonometric Functions](<11.3.6. Limits of Trigonometric Functions.md>)
+- [Combining Graph Transformations of Secant and Cosecant](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.8. Combining Graph Transformations of Secant and Cosecant.md>)
+- [Limits of Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.6. Limits of Trigonometric Functions.md>)
 
 ---
 
@@ -452,5 +452,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

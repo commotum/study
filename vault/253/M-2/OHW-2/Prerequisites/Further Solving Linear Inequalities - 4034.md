@@ -17,8 +17,8 @@ topic-code: MF1.5.6.7
 
 ## Prerequisites
 
-- [Solving Linear Equations Using Cross-Multiplication](<../../5.4. Solving Multi-Step Linear Equations/Lessons/5.4.6. Solving Linear Equations Using Cross-Multiplication.md>)
-- [Representing Solutions to Inequalities on Number Lines](<5.6.6. Representing Solutions to Inequalities on Number Lines.md>)
+- [Solving Linear Equations Using Cross-Multiplication](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.4. Solving Multi-Step Linear Equations/Lessons/5.4.6. Solving Linear Equations Using Cross-Multiplication.md>)
+- [Representing Solutions to Inequalities on Number Lines](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.6. Representing Solutions to Inequalities on Number Lines.md>)
 
 ---
 
@@ -464,5 +464,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

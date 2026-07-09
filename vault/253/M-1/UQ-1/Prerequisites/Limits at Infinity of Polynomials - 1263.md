@@ -19,9 +19,9 @@ topic-code: MF2.11.3.1
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](<../../11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
-- [Limits at Infinity from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
-- [End Behavior of Polynomials](<../../../2. Polynomials/2.1. Polynomials/Lessons/2.1.8. End Behavior of Polynomials.md>)
+- [The Power and Root Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
+- [Limits at Infinity from Graphs](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
+- [End Behavior of Polynomials](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.1. Polynomials/Lessons/2.1.8. End Behavior of Polynomials.md>)
 
 ---
 
@@ -478,5 +478,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

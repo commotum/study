@@ -14,8 +14,8 @@ topic-code: MF2.6.3.9
 
 ## Prerequisites
 
-- [The Quotient Rule for Exponents With Algebraic Expressions](<../../../../AG1/8. Exponential Functions/8.1. Rules of Exponents/Lessons/8.1.3. The Quotient Rule for Exponents With Algebraic Expressions.md>)
-- [Graph Transformations of Reciprocal Functions](<6.3.2. Graph Transformations of Reciprocal Functions.md>)
+- [The Quotient Rule for Exponents With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/10. Exponential Functions/10.1. Rules of Exponents/Lessons/10.1.2. The Quotient Rule for Exponents With Algebraic Expressions.md>)
+- [Graph Transformations of Reciprocal Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.2. Graph Transformations of Reciprocal Functions.md>)
 
 ---
 
@@ -404,5 +404,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -16,8 +16,8 @@ topic-code: MF3.9.5.1
 
 ## Prerequisites
 
-- [Integrating Trigonometric Functions Using Substitution](<../../../10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
-- [Calculating the Definite Integral of a Function Given Its Graph](<../../9.3. The Area Under a Curve/Lessons/9.3.5. Calculating the Definite Integral of a Function Given Its Graph.md>)
+- [Integrating Trigonometric Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
+- [Calculating the Definite Integral of a Function Given Its Graph](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.5. Calculating the Definite Integral of a Function Given Its Graph.md>)
 
 ---
 

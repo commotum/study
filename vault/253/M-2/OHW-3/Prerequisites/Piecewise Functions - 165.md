@@ -15,8 +15,8 @@ topic-code: MF1.8.1.11
 
 ## Prerequisites
 
-- [Equations of Lines in Point-Slope Form](<../../../6. Two-Variable Equations/6.1. Graphs of Linear Equations/Lessons/6.1.9. Equations of Lines in Point-Slope Form.md>)
-- [The Domain of a Function](<8.1.4. The Domain of a Function.md>)
+- [Equations of Lines in Point-Slope Form](<../../../../MA/Mathematical-Foundations/MF1/6. Two-Variable Equations/6.1. Graphs of Linear Equations/Lessons/6.1.9. Equations of Lines in Point-Slope Form.md>)
+- [The Domain of a Function](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.4. The Domain of a Function.md>)
 
 ---
 
@@ -399,5 +399,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

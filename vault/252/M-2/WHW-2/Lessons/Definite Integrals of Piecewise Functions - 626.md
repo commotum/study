@@ -14,7 +14,7 @@ topic-code: MF3.9.3.6
 
 ## Prerequisites
 
-- [Calculating the Definite Integral of a Function Given Its Graph](<9.3.5. Calculating the Definite Integral of a Function Given Its Graph.md>)
+- [Calculating the Definite Integral of a Function Given Its Graph](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.5. Calculating the Definite Integral of a Function Given Its Graph.md>)
 
 ---
 

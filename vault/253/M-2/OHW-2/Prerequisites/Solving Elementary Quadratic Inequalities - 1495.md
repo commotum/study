@@ -17,10 +17,10 @@ topic-code: MF3.2.1.1
 
 ## Prerequisites
 
-- [Solving Quadratic Equations Using a Difference of Squares](<../../../../AG1/10. Quadratic Equations & Functions/10.1. Quadratic Equations/Lessons/10.1.5. Solving Quadratic Equations Using a Difference of Squares.md>)
-- [Absolute Value Inequalities](<../../../../AG1/7. Absolute Value/7.1. Absolute Value Expressions, Equations & Inequalities/Lessons/7.1.8. Absolute Value Inequalities.md>)
-- [Roots of Quadratic Functions](<../../../../AG1/10. Quadratic Equations & Functions/10.2. Quadratic Functions/Lessons/10.2.4. Roots of Quadratic Functions.md>)
-- [Rationalizing Denominators](<../../../../PAL/3. Exponents & Radicals/3.5. Radicals/Lessons/3.5.8. Rationalizing Denominators.md>)
+- [Solving Quadratic Equations Using a Difference of Squares](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.5. Solving Quadratic Equations Using a Difference of Squares.md>)
+- [Absolute Value Inequalities](<../../../../MA/Mathematical-Foundations/MF1/9. Absolute Value/9.1. Absolute Value Expressions, Equations & Inequalities/Lessons/9.1.6. Absolute Value Inequalities.md>)
+- [Roots of Quadratic Functions](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.2. Quadratic Functions/Lessons/1.2.4. Roots of Quadratic Functions.md>)
+- [Rationalizing Denominators](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.4. Radicals/Lessons/4.4.8. Rationalizing Denominators.md>)
 
 ---
 
@@ -483,5 +483,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

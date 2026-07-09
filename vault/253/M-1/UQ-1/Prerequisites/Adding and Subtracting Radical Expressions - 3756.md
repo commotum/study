@@ -16,9 +16,9 @@ topic-code: MF1.7.1.9
 
 ## Prerequisites
 
-- [The Cube Root of a Perfect Cube With Algebraic Expressions](<7.1.4. The Cube Root of a Perfect Cube With Algebraic Expressions.md>)
-- [Simplifying Square Root Expressions Using the Product Rule](<7.1.5. Simplifying Square Root Expressions Using the Product Rule.md>)
-- [Adding and Subtracting Radicals](<../../../4. Exponents & Radicals/4.4. Radicals/Lessons/4.4.7. Adding and Subtracting Radicals.md>)
+- [The Cube Root of a Perfect Cube With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.4. The Cube Root of a Perfect Cube With Algebraic Expressions.md>)
+- [Simplifying Square Root Expressions Using the Product Rule](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.5. Simplifying Square Root Expressions Using the Product Rule.md>)
+- [Adding and Subtracting Radicals](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.4. Radicals/Lessons/4.4.7. Adding and Subtracting Radicals.md>)
 
 ---
 
@@ -339,5 +339,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

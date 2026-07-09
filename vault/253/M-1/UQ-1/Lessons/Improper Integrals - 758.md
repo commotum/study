@@ -16,7 +16,7 @@ topic-code: MF3.10.6.1
 
 ## Prerequisites
 
-- [Calculating Definite Integrals Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.4. Calculating Definite Integrals Using Substitution.md>)
+- [Calculating Definite Integrals Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.4. Calculating Definite Integrals Using Substitution.md>)
 
 ---
 
@@ -517,5 +517,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

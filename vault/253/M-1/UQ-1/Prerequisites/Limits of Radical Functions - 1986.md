@@ -17,10 +17,10 @@ topic-code: MF2.11.3.5
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](<../../11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
-- [The Domain of a Transformed Radical Function](<../../../6. Radical & Rational Functions/6.5. Radical Functions/Lessons/6.5.7. The Domain of a Transformed Radical Function.md>)
-- [Limits at Infinity from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
-- [The Range of a Transformed Radical Function](<../../../6. Radical & Rational Functions/6.5. Radical Functions/Lessons/6.5.8. The Range of a Transformed Radical Function.md>)
+- [The Power and Root Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
+- [The Domain of a Transformed Radical Function](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.5. Radical Functions/Lessons/6.5.7. The Domain of a Transformed Radical Function.md>)
+- [Limits at Infinity from Graphs](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
+- [The Range of a Transformed Radical Function](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.5. Radical Functions/Lessons/6.5.8. The Range of a Transformed Radical Function.md>)
 
 ---
 
@@ -458,5 +458,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

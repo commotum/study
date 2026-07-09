@@ -13,9 +13,9 @@ topic-code: MF3.9.2.3
 
 ## Prerequisites
 
-- [The Fundamental Theorem of Calculus](<9.2.2. The Fundamental Theorem of Calculus.md>)
-- [Integrating Trigonometric Functions](<../../../../CAB/6. Integration/6.1. Indefinite Integrals/Lessons/6.1.6. Integrating Trigonometric Functions.md>)
-- [Integrating Exponential Functions](<../../../../CAB/6. Integration/6.1. Indefinite Integrals/Lessons/6.1.5. Integrating Exponential Functions.md>)
+- [The Fundamental Theorem of Calculus](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.2. The Fundamental Theorem of Calculus.md>)
+- [Integrating Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.6. Integrating Trigonometric Functions.md>)
+- [Integrating Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.5. Integrating Exponential Functions.md>)
 
 ---
 

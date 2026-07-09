@@ -13,7 +13,7 @@ topic-code: MF1.5.7.3
 
 ## Prerequisites
 
-- [Solving Equations Using the Square Root Method](<5.7.1. Solving Equations Using the Square Root Method.md>)
+- [Solving Equations Using the Square Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.1. Solving Equations Using the Square Root Method.md>)
 
 ---
 

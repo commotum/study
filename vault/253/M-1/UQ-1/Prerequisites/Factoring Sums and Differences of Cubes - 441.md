@@ -15,8 +15,8 @@ topic-code: MF2.2.2.4
 
 ## Prerequisites
 
-- [Factoring Differences of Squares](<../../../../AG1/9. Polynomials/9.2. Factoring Polynomials/Lessons/9.2.5. Factoring Differences of Squares.md>)
-- [The Cube Root of a Perfect Cube With Algebraic Expressions](<../../../../AG1/4. Radical Expressions/4.1. Radical Expressions/Lessons/4.1.3. The Cube Root of a Perfect Cube With Algebraic Expressions.md>)
+- [Factoring Differences of Squares](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.2. Factoring Polynomials/Lessons/11.2.5. Factoring Differences of Squares.md>)
+- [The Cube Root of a Perfect Cube With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.4. The Cube Root of a Perfect Cube With Algebraic Expressions.md>)
 
 ---
 
@@ -347,5 +347,5 @@ in a similar way.
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

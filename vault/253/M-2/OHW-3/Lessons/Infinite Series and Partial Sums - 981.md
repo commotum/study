@@ -15,8 +15,8 @@ topic-code: MF3.1.4.3
 
 ## Prerequisites
 
-- [Finding the Sum of an Arithmetic Series](<../../1.2. Arithmetic Series/Lessons/1.2.2. Finding the Sum of an Arithmetic Series.md>)
-- [Sums of Finite Geometric Series Given in Sigma Notation](<../../1.3. Finite Geometric Series/Lessons/1.3.4. Sums of Finite Geometric Series Given in Sigma Notation.md>)
+- [Finding the Sum of an Arithmetic Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.2. Arithmetic Series/Lessons/1.2.2. Finding the Sum of an Arithmetic Series.md>)
+- [Sums of Finite Geometric Series Given in Sigma Notation](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.4. Sums of Finite Geometric Series Given in Sigma Notation.md>)
 
 ---
 
@@ -455,5 +455,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

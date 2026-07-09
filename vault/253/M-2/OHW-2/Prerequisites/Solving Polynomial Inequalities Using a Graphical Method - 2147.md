@@ -14,8 +14,8 @@ topic-code: MF3.2.1.7
 
 ## Prerequisites
 
-- [Graphing General Polynomials](<../../../../AG2/2. Polynomials/2.6. Graphs of Polynomials/Lessons/2.6.6. Graphing General Polynomials.md>)
-- [Solving Quadratic Inequalities Using the Graphical Method](<2.1.3. Solving Quadratic Inequalities Using the Graphical Method.md>)
+- [Graphing General Polynomials](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.5. Graphs of Polynomials/Lessons/2.5.4. Graphing General Polynomials.md>)
+- [Solving Quadratic Inequalities Using the Graphical Method](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.3. Solving Quadratic Inequalities Using the Graphical Method.md>)
 
 ---
 
@@ -334,5 +334,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -14,10 +14,10 @@ topic-code: MF3.1.4.2
 
 ## Prerequisites
 
-- [Convergence of Geometric Sequences](<1.4.1. Convergence of Geometric Sequences.md>)
-- [Combining the Rules of Exponents With Algebraic Expressions](<../../../../AG1/8. Exponential Functions/8.1. Rules of Exponents/Lessons/8.1.7. Combining the Rules of Exponents With Algebraic Expressions.md>)
-- [Solving Elementary Quadratic Inequalities](<../../../2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.1. Solving Elementary Quadratic Inequalities.md>)
-- [Solving Inequalities Involving Positive and Negative Factors](<../../../2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.5. Solving Inequalities Involving Positive and Negative Factors.md>)
+- [Convergence of Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.1. Convergence of Geometric Sequences.md>)
+- [Combining the Rules of Exponents With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/10. Exponential Functions/10.1. Rules of Exponents/Lessons/10.1.6. Combining the Rules of Exponents With Algebraic Expressions.md>)
+- [Solving Elementary Quadratic Inequalities](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.1. Solving Elementary Quadratic Inequalities.md>)
+- [Solving Inequalities Involving Positive and Negative Factors](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.5. Solving Inequalities Involving Positive and Negative Factors.md>)
 
 ---
 
@@ -376,5 +376,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

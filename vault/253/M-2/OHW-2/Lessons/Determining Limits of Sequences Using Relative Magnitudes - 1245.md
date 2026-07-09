@@ -14,8 +14,8 @@ topic-code: MF3.7.1.9
 
 ## Prerequisites
 
-- [Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<7.1.8. Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions.md>)
-- [Limits of Sequences](<7.1.2. Limits of Sequences.md>)
+- [Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.8. Evaluating Limits at Infinity by Comparing Relative Magnitudes of Functions.md>)
+- [Limits of Sequences](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.2. Limits of Sequences.md>)
 
 ---
 
@@ -316,5 +316,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

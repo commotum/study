@@ -14,7 +14,7 @@ topic-code: MF2.9.4.1
 
 ## Prerequisites
 
-- [Extending the Trigonometric Ratios Using Angles in Radians](<../../9.3. The Unit Circle/Lessons/9.3.7. Extending the Trigonometric Ratios Using Angles in Radians.md>)
+- [Extending the Trigonometric Ratios Using Angles in Radians](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.3. The Unit Circle/Lessons/9.3.7. Extending the Trigonometric Ratios Using Angles in Radians.md>)
 
 ---
 

@@ -15,8 +15,8 @@ topic-code: MF1.3.3.9
 
 ## Prerequisites
 
-- [Solving One-Step Multiplication and Division Equations](<../../../5. Equations & Inequalities/5.3. Solving One-Step Linear Equations/Lessons/5.3.3. Solving One-Step Multiplication and Division Equations.md>)
-- [Natural Numbers, Integers, and Rational Numbers](<3.3.8. Natural Numbers, Integers, and Rational Numbers.md>)
+- [Solving One-Step Multiplication and Division Equations](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.3. Solving One-Step Linear Equations/Lessons/5.3.3. Solving One-Step Multiplication and Division Equations.md>)
+- [Natural Numbers, Integers, and Rational Numbers](<../../../../MA/Mathematical-Foundations/MF1/3. The Number System/3.3. Number Theory/Lessons/3.3.8. Natural Numbers, Integers, and Rational Numbers.md>)
 
 ---
 
@@ -440,5 +440,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

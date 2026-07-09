@@ -15,9 +15,9 @@ topic-code: MF3.10.6.4
 
 ## Prerequisites
 
-- [The Area Bounded by a Curve and the X-Axis](<../../../9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
-- [Improper Integrals Involving Exponential Functions](<10.6.2. Improper Integrals Involving Exponential Functions.md>)
-- [Improper Integrals Involving Arctangent](<10.6.3. Improper Integrals Involving Arctangent.md>)
+- [The Area Bounded by a Curve and the X-Axis](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
+- [Improper Integrals Involving Exponential Functions](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.6. Improper Integrals/Lessons/10.6.2. Improper Integrals Involving Exponential Functions.md>)
+- [Improper Integrals Involving Arctangent](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.6. Improper Integrals/Lessons/10.6.3. Improper Integrals Involving Arctangent.md>)
 
 ---
 
@@ -370,5 +370,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

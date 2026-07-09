@@ -17,11 +17,11 @@ topic-code: MF2.11.3.6
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](<../../11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
-- [Combining Graph Transformations of Sine and Cosine](<../../../9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.5. Combining Graph Transformations of Sine and Cosine.md>)
-- [Graph Transformations of Tangent and Cotangent](<../../../9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.6. Graph Transformations of Tangent and Cotangent.md>)
-- [Infinite Limits from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.5. Infinite Limits from Graphs.md>)
-- [Limits at Infinity from Graphs](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
+- [The Power and Root Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
+- [Combining Graph Transformations of Sine and Cosine](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.5. Combining Graph Transformations of Sine and Cosine.md>)
+- [Graph Transformations of Tangent and Cotangent](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.7. Graph Transformations of Trigonometric Functions/Lessons/9.7.6. Graph Transformations of Tangent and Cotangent.md>)
+- [Infinite Limits from Graphs](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.5. Infinite Limits from Graphs.md>)
+- [Limits at Infinity from Graphs](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
 
 ---
 
@@ -479,5 +479,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

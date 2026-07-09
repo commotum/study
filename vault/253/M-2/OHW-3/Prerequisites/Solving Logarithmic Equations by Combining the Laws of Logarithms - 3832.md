@@ -14,10 +14,10 @@ topic-code: MF2.5.4.4
 
 ## Prerequisites
 
-- [Combining the Laws of Logarithms](<../../5.2. The Laws of Logarithms/Lessons/5.2.4. Combining the Laws of Logarithms.md>)
-- [Solving Equations With Even Exponents Using the Nth Root Method](<../../../../AG1/1. Equations & Inequalities/1.4. Nonlinear Equations/Lessons/1.4.3. Solving Equations With Even Exponents Using the Nth Root Method.md>)
-- [Solving Logarithmic Equations Using the Laws of Logarithms](<5.4.3. Solving Logarithmic Equations Using the Laws of Logarithms.md>)
-- [Solving Equations With Odd Exponents Using the Nth Root Method](<../../../../AG1/1. Equations & Inequalities/1.4. Nonlinear Equations/Lessons/1.4.2. Solving Equations With Odd Exponents Using the Nth Root Method.md>)
+- [Combining the Laws of Logarithms](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.2. The Laws of Logarithms/Lessons/5.2.4. Combining the Laws of Logarithms.md>)
+- [Solving Equations With Even Exponents Using the Nth Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.3. Solving Equations With Even Exponents Using the Nth Root Method.md>)
+- [Solving Logarithmic Equations Using the Laws of Logarithms](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.4. Logarithmic Equations/Lessons/5.4.3. Solving Logarithmic Equations Using the Laws of Logarithms.md>)
+- [Solving Equations With Odd Exponents Using the Nth Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.2. Solving Equations With Odd Exponents Using the Nth Root Method.md>)
 
 ---
 
@@ -412,5 +412,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

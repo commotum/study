@@ -16,10 +16,10 @@ topic-code: MF3.2.1.5
 
 ## Prerequisites
 
-- [Compound AND Inequalities](<../../../../AG1/1. Equations & Inequalities/1.3. Linear Inequalities/Lessons/1.3.7. Compound AND Inequalities.md>)
-- [Properties of Transformed Exponential Functions](<../../../../AG2/4. Exponentials & Logarithms/4.5. Graphs of Exponential Functions/Lessons/4.5.6. Properties of Transformed Exponential Functions.md>)
-- [Properties of Transformed Logarithmic Functions](<../../../../AG2/4. Exponentials & Logarithms/4.6. Graphs of Logarithmic Functions/Lessons/4.6.3. Properties of Transformed Logarithmic Functions.md>)
-- [Properties of Transformed Sine and Cosine Functions](<../../../../AG2/9. Trigonometric Functions/9.4. Properties of Transformed Trigonometric Functions/Lessons/9.4.1. Properties of Transformed Sine and Cosine Functions.md>)
+- [Compound AND Inequalities](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.14. Compound AND Inequalities.md>)
+- [Properties of Transformed Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.5. Graphs of Exponential Functions/Lessons/5.5.5. Properties of Transformed Exponential Functions.md>)
+- [Properties of Transformed Logarithmic Functions](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.6. Graphs of Logarithmic Functions/Lessons/5.6.3. Properties of Transformed Logarithmic Functions.md>)
+- [Properties of Transformed Sine and Cosine Functions](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.8. Properties of Transformed Trigonometric Functions/Lessons/9.8.1. Properties of Transformed Sine and Cosine Functions.md>)
 
 ---
 
@@ -398,5 +398,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

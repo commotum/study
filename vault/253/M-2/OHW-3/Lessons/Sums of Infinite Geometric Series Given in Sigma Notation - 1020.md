@@ -15,8 +15,8 @@ topic-code: MF3.1.4.9
 
 ## Prerequisites
 
-- [Writing an Infinite Geometric Series in Sigma Notation](<1.4.8. Writing an Infinite Geometric Series in Sigma Notation.md>)
-- [Finding the Sum of an Infinite Geometric Series](<1.4.7. Finding the Sum of an Infinite Geometric Series.md>)
+- [Writing an Infinite Geometric Series in Sigma Notation](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.8. Writing an Infinite Geometric Series in Sigma Notation.md>)
+- [Finding the Sum of an Infinite Geometric Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.7. Finding the Sum of an Infinite Geometric Series.md>)
 
 ---
 
@@ -463,5 +463,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -16,7 +16,7 @@ topic-code: MF2.12.4.1
 
 ## Prerequisites
 
-- [The Power Rule for Differentiation](<../../12.1. Introduction to Differentiation/Lessons/12.1.5. The Power Rule for Differentiation.md>)
+- [The Power Rule for Differentiation](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.1. Introduction to Differentiation/Lessons/12.1.5. The Power Rule for Differentiation.md>)
 
 ---
 

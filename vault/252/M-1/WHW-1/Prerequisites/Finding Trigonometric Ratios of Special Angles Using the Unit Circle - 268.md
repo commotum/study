@@ -16,8 +16,8 @@ topic-code: MF2.9.4.3
 
 ## Prerequisites
 
-- [Finding Trigonometric Ratios of Quadrantal Angles](<9.4.1. Finding Trigonometric Ratios of Quadrantal Angles.md>)
-- [Introduction to Sequences](<../../../7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.1. Introduction to Sequences.md>)
+- [Finding Trigonometric Ratios of Quadrantal Angles](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.4. Special Trigonometric Ratios/Lessons/9.4.1. Finding Trigonometric Ratios of Quadrantal Angles.md>)
+- [Introduction to Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.1. Introduction to Sequences.md>)
 
 ---
 

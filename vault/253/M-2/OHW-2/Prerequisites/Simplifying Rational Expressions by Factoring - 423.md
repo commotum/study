@@ -15,8 +15,8 @@ topic-code: MF1.7.2.3
 
 ## Prerequisites
 
-- [Simplifying Rational Expressions](<7.2.2. Simplifying Rational Expressions.md>)
-- [Factoring Linear Expressions](<../../../5. Equations & Inequalities/5.2. Simplifying Linear Expressions/Lessons/5.2.9. Factoring Linear Expressions.md>)
+- [Simplifying Rational Expressions](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.2. Rational Expressions/Lessons/7.2.2. Simplifying Rational Expressions.md>)
+- [Factoring Linear Expressions](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.2. Simplifying Linear Expressions/Lessons/5.2.9. Factoring Linear Expressions.md>)
 
 ---
 
@@ -335,5 +335,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

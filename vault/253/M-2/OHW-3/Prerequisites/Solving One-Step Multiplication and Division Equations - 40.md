@@ -17,7 +17,7 @@ topic-code: MF1.5.3.3
 
 ## Prerequisites
 
-- [Solving Linear Equations by Trial and Error](<5.3.1. Solving Linear Equations by Trial and Error.md>)
+- [Solving Linear Equations by Trial and Error](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.3. Solving One-Step Linear Equations/Lessons/5.3.1. Solving Linear Equations by Trial and Error.md>)
 
 ---
 
@@ -443,5 +443,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

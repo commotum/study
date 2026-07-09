@@ -17,9 +17,9 @@ topic-code: MF2.11.2.4
 
 ## Prerequisites
 
-- [Evaluating Numerical Expressions Containing Radicals](<../../../../PAL/3. Exponents & Radicals/3.5. Radicals/Lessons/3.5.6. Evaluating Numerical Expressions Containing Radicals.md>)
-- [The Product and Quotient Rules for Limits](<11.2.3. The Product and Quotient Rules for Limits.md>)
-- [Radicals as Fractional Exponents](<../../../../PAL/3. Exponents & Radicals/3.6. The Rules of Radicals/Lessons/3.6.1. Radicals as Fractional Exponents.md>)
+- [Evaluating Numerical Expressions Containing Radicals](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.4. Radicals/Lessons/4.4.6. Evaluating Numerical Expressions Containing Radicals.md>)
+- [The Product and Quotient Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.3. The Product and Quotient Rules for Limits.md>)
+- [Radicals as Fractional Exponents](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.5. The Rules of Radicals/Lessons/4.5.1. Radicals as Fractional Exponents.md>)
 
 ---
 
@@ -478,5 +478,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

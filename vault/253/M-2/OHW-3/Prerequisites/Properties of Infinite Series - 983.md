@@ -16,8 +16,8 @@ topic-code: MF3.1.4.5
 
 ## Prerequisites
 
-- [Convergent and Divergent Infinite Series](<1.4.4. Convergent and Divergent Infinite Series.md>)
-- [Properties of Finite Series](<../../../../PCL/1. Sequences and Series/1.1. Arithmetic Series/Lessons/1.1.2. Properties of Finite Series.md>)
+- [Convergent and Divergent Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.4. Convergent and Divergent Infinite Series.md>)
+- [Properties of Finite Series](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.5. Properties of Finite Series.md>)
 
 ---
 
@@ -348,5 +348,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

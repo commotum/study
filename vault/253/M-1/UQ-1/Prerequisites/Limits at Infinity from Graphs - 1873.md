@@ -14,8 +14,8 @@ topic-code: MF2.11.1.4
 
 ## Prerequisites
 
-- [The Finite Limit of a Function](<11.1.1. The Finite Limit of a Function.md>)
-- [End Behavior of Functions](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.7. End Behavior of Functions.md>)
+- [The Finite Limit of a Function](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.1. The Finite Limit of a Function.md>)
+- [End Behavior of Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.6. End Behavior of Functions.md>)
 
 ---
 
@@ -242,5 +242,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

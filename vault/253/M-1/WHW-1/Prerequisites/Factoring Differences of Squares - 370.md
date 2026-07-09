@@ -15,7 +15,7 @@ topic-code: MF1.11.2.5
 
 ## Prerequisites
 
-- [The Difference of Squares Formula](<../../11.1. Polynomials/Lessons/11.1.11. The Difference of Squares Formula.md>)
+- [The Difference of Squares Formula](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.11. The Difference of Squares Formula.md>)
 
 ---
 
@@ -375,5 +375,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

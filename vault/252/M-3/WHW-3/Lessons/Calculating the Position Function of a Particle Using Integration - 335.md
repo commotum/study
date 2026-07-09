@@ -13,8 +13,8 @@ topic-code: MF3.11.1.6
 
 ## Prerequisites
 
-- [Calculating Velocity Using Integration](<11.1.4. Calculating Velocity Using Integration.md>)
-- [Calculating Distance From a Speed-Time Graph](<../../../../AG1/2. Two-Variable Equations & Inequalities/2.2. Modeling With Two-Variable Linear Equations/Lessons/2.2.7. Calculating Distance From a Speed-Time Graph.md>)
+- [Calculating Velocity Using Integration](<../../../../MA/Mathematical-Foundations/MF3/11. Contextual Applications of Calculus/11.1. Displacement, Velocity, and Acceleration/Lessons/11.1.4. Calculating Velocity Using Integration.md>)
+- [Calculating Distance From a Speed-Time Graph](<../../../../MA/Mathematical-Foundations/MF1/6. Two-Variable Equations/6.2. Modeling With Two-Variable Linear Equations/Lessons/6.2.6. Calculating Distance From a Speed-Time Graph.md>)
 
 ---
 

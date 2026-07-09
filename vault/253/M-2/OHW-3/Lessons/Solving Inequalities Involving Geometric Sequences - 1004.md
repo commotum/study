@@ -14,10 +14,10 @@ topic-code: MF3.2.1.14
 
 ## Prerequisites
 
-- [The Nth Term of a Geometric Sequence](<../../../../AG1/11. Sequences/11.3. Geometric Sequences/Lessons/11.3.3. The Nth Term of a Geometric Sequence.md>)
-- [Determining Indexes of Terms in Geometric Sequences](<../../../../AG1/11. Sequences/11.3. Geometric Sequences/Lessons/11.3.6. Determining Indexes of Terms in Geometric Sequences.md>)
-- [Solving Inequalities Involving Exponential Functions](<2.1.12. Solving Inequalities Involving Exponential Functions.md>)
-- [Solving Logarithmic Equations by Combining the Laws of Logarithms](<../../../../AG2/4. Exponentials & Logarithms/4.4. Logarithmic Equations/Lessons/4.4.4. Solving Logarithmic Equations by Combining the Laws of Logarithms.md>)
+- [The Nth Term of a Geometric Sequence](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.3. The Nth Term of a Geometric Sequence.md>)
+- [Determining Indexes of Terms in Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.6. Determining Indexes of Terms in Geometric Sequences.md>)
+- [Solving Inequalities Involving Exponential Functions](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.12. Solving Inequalities Involving Exponential Functions.md>)
+- [Solving Logarithmic Equations by Combining the Laws of Logarithms](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.4. Logarithmic Equations/Lessons/5.4.4. Solving Logarithmic Equations by Combining the Laws of Logarithms.md>)
 
 ---
 
@@ -441,5 +441,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -17,7 +17,7 @@ topic-code: MF3.1.4.6
 
 ## Prerequisites
 
-- [Properties of Infinite Series](<1.4.5. Properties of Infinite Series.md>)
+- [Properties of Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.5. Properties of Infinite Series.md>)
 
 ---
 
@@ -448,5 +448,5 @@ We also have the following properties relating to divergent series:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

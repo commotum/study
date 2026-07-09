@@ -14,9 +14,9 @@ topic-code: MF2.11.3.9
 
 ## Prerequisites
 
-- [Factoring Sums and Differences of Cubes](<../../../2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.4. Factoring Sums and Differences of Cubes.md>)
-- [The Product and Quotient Rules for Limits](<../../11.2. The Algebra of Limits/Lessons/11.2.3. The Product and Quotient Rules for Limits.md>)
-- [Simplifying Rational Expressions Using Polynomial Factorization](<../../../6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.1. Simplifying Rational Expressions Using Polynomial Factorization.md>)
+- [Factoring Sums and Differences of Cubes](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.4. Factoring Sums and Differences of Cubes.md>)
+- [The Product and Quotient Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.3. The Product and Quotient Rules for Limits.md>)
+- [Simplifying Rational Expressions Using Polynomial Factorization](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.1. Simplifying Rational Expressions Using Polynomial Factorization.md>)
 
 ---
 
@@ -331,5 +331,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

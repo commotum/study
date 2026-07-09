@@ -15,8 +15,8 @@ topic-code: MF2.6.2.2
 
 ## Prerequisites
 
-- [Rational Equations With Three Terms](<6.2.1. Rational Equations With Three Terms.md>)
-- [The Least Common Multiple of Two Polynomials](<../../../2. Polynomials/2.1. Polynomials/Lessons/2.1.3. The Least Common Multiple of Two Polynomials.md>)
+- [Rational Equations With Three Terms](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.2. Rational Equations/Lessons/6.2.1. Rational Equations With Three Terms.md>)
+- [The Least Common Multiple of Two Polynomials](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.1. Polynomials/Lessons/2.1.3. The Least Common Multiple of Two Polynomials.md>)
 
 ---
 
@@ -465,5 +465,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

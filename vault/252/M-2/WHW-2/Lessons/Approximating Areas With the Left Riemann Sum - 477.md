@@ -18,9 +18,9 @@ topic-code: MF3.9.1.1
 
 ## Prerequisites
 
-- [Graphs of General Quadratic Functions](<../../../../AG1/10. Quadratic Equations & Functions/10.2. Quadratic Functions/Lessons/10.2.3. Graphs of General Quadratic Functions.md>)
-- [Areas of Rectangles and Squares](<../../../../PAL/6. Geometry/6.7. Area and Perimeter/Lessons/6.7.1. Areas of Rectangles and Squares.md>)
-- [Increasing and Decreasing Functions](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.11. Increasing and Decreasing Functions.md>)
+- [Graphs of General Quadratic Functions](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.2. Quadratic Functions/Lessons/1.2.3. Graphs of General Quadratic Functions.md>)
+- [Areas of Rectangles and Squares](<../../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.3. Area and Perimeter/Lessons/13.3.1. Areas of Rectangles and Squares.md>)
+- [Increasing and Decreasing Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.10. Increasing and Decreasing Functions.md>)
 
 ---
 

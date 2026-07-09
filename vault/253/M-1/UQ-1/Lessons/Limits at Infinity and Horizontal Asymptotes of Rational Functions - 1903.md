@@ -16,8 +16,8 @@ topic-code: MF3.7.1.6
 
 ## Prerequisites
 
-- [Horizontal Asymptotes of Rational Functions](<../../../../PCL/2. Rational Functions/2.2. Rational Functions/Lessons/2.2.4. Horizontal Asymptotes of Rational Functions.md>)
-- [Limits of Reciprocal Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.2. Limits of Reciprocal Functions.md>)
+- [Horizontal Asymptotes of Rational Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.9. Horizontal Asymptotes of Rational Functions.md>)
+- [Limits of Reciprocal Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.2. Limits of Reciprocal Functions.md>)
 
 ---
 
@@ -415,5 +415,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -14,8 +14,8 @@ topic-code: MF3.9.2.2
 
 ## Prerequisites
 
-- [The Antiderivative](<../../../../CAB/6. Integration/6.1. Indefinite Integrals/Lessons/6.1.1. The Antiderivative.md>)
-- [Continuity of Functions](<../../../7. Limits & Continuity/7.2. Continuity/Lessons/7.2.1. Continuity of Functions.md>)
+- [The Antiderivative](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.1. The Antiderivative.md>)
+- [Continuity of Functions](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.2. Continuity/Lessons/7.2.1. Continuity of Functions.md>)
 
 ---
 

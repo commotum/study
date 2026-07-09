@@ -13,7 +13,7 @@ topic-code: MF3.10.5.1
 
 ## Prerequisites
 
-- [Advanced Rational Equations](<../../../../PCL/2. Rational Functions/2.1. Rational Expressions and Equations/Lessons/2.1.4. Advanced Rational Equations.md>)
+- [Advanced Rational Equations](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.2. Rational Equations/Lessons/6.2.2. Advanced Rational Equations.md>)
 
 ---
 
@@ -331,5 +331,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

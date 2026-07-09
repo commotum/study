@@ -16,8 +16,8 @@ topic-code: MF3.1.3.4
 
 ## Prerequisites
 
-- [The Sum of a Finite Geometric Series](<1.3.1. The Sum of a Finite Geometric Series.md>)
-- [Writing Geometric Series in Sigma Notation](<1.3.3. Writing Geometric Series in Sigma Notation.md>)
+- [The Sum of a Finite Geometric Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.1. The Sum of a Finite Geometric Series.md>)
+- [Writing Geometric Series in Sigma Notation](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.3. Writing Geometric Series in Sigma Notation.md>)
 
 ---
 
@@ -543,5 +543,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

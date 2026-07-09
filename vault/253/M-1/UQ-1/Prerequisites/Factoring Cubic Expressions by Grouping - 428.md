@@ -15,7 +15,7 @@ topic-code: MF2.2.2.3
 
 ## Prerequisites
 
-- [Further Factoring of Polynomials Using GCFs](<2.2.1. Further Factoring of Polynomials Using GCFs.md>)
+- [Further Factoring of Polynomials Using GCFs](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.2. Factoring Polynomials/Lessons/2.2.1. Further Factoring of Polynomials Using GCFs.md>)
 
 ---
 
@@ -425,5 +425,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

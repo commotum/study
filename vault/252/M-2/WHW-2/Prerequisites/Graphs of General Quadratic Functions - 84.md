@@ -15,8 +15,8 @@ topic-code: MF2.1.2.3
 
 ## Prerequisites
 
-- [Vertical Reflections of Quadratic Functions](<1.2.2. Vertical Reflections of Quadratic Functions.md>)
-- [The Roots of a Function](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.10. The Roots of a Function.md>)
+- [Vertical Reflections of Quadratic Functions](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.2. Quadratic Functions/Lessons/1.2.2. Vertical Reflections of Quadratic Functions.md>)
+- [The Roots of a Function](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.9. The Roots of a Function.md>)
 
 ---
 

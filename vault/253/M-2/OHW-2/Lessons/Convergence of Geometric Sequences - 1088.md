@@ -17,8 +17,8 @@ topic-code: MF3.1.4.1
 
 ## Prerequisites
 
-- [The Nth Term of a Geometric Sequence](<../../../../AG1/11. Sequences/11.3. Geometric Sequences/Lessons/11.3.3. The Nth Term of a Geometric Sequence.md>)
-- [End Behavior of Functions](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.7. End Behavior of Functions.md>)
+- [The Nth Term of a Geometric Sequence](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.3. The Nth Term of a Geometric Sequence.md>)
+- [End Behavior of Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.6. End Behavior of Functions.md>)
 
 ---
 
@@ -404,5 +404,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

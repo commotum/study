@@ -17,8 +17,8 @@ topic-code: MF3.9.2.1
 
 ## Prerequisites
 
-- [Left and Right Riemann Sums in Sigma Notation](<../../9.1. Approximating Areas with Riemann Sums/Lessons/9.1.3. Left and Right Riemann Sums in Sigma Notation.md>)
-- [Limits at Infinity from Graphs](<../../../../CAB/1. Limits and Continuity/1.1. Estimating Limits from Graphs/Lessons/1.1.4. Limits at Infinity from Graphs.md>)
+- [Left and Right Riemann Sums in Sigma Notation](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.1. Approximating Areas with Riemann Sums/Lessons/9.1.3. Left and Right Riemann Sums in Sigma Notation.md>)
+- [Limits at Infinity from Graphs](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.4. Limits at Infinity from Graphs.md>)
 
 ---
 

@@ -14,7 +14,7 @@ topic-code: MF2.2.2.2
 
 ## Prerequisites
 
-- [Factoring Differences of Squares](<../../../../AG1/9. Polynomials/9.2. Factoring Polynomials/Lessons/9.2.5. Factoring Differences of Squares.md>)
+- [Factoring Differences of Squares](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.2. Factoring Polynomials/Lessons/11.2.5. Factoring Differences of Squares.md>)
 
 ---
 

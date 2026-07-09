@@ -18,8 +18,8 @@ topic-code: MF1.8.1.4
 
 ## Prerequisites
 
-- [Unions of Intervals](<../../../5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.11. Unions of Intervals.md>)
-- [Graphs of Functions](<8.1.3. Graphs of Functions.md>)
+- [Unions of Intervals](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.11. Unions of Intervals.md>)
+- [Graphs of Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.3. Graphs of Functions.md>)
 
 ---
 
@@ -410,5 +410,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

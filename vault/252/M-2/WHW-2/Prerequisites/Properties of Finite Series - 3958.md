@@ -16,7 +16,7 @@ topic-code: MF2.7.1.5
 
 ## Prerequisites
 
-- [Sigma Notation](<7.1.4. Sigma Notation.md>)
+- [Sigma Notation](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.4. Sigma Notation.md>)
 
 ---
 

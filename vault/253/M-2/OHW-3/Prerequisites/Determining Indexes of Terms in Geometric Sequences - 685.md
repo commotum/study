@@ -15,8 +15,8 @@ topic-code: MF2.7.3.6
 
 ## Prerequisites
 
-- [Translating Between Explicit and Recursive Formulas for Geometric Sequences](<7.3.4. Translating Between Explicit and Recursive Formulas for Geometric Sequences.md>)
-- [Finding the Common Ratio of a Geometric Sequence Given Two Terms](<7.3.5. Finding the Common Ratio of a Geometric Sequence Given Two Terms.md>)
+- [Translating Between Explicit and Recursive Formulas for Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.4. Translating Between Explicit and Recursive Formulas for Geometric Sequences.md>)
+- [Finding the Common Ratio of a Geometric Sequence Given Two Terms](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.3. Geometric Sequences/Lessons/7.3.5. Finding the Common Ratio of a Geometric Sequence Given Two Terms.md>)
 
 ---
 
@@ -469,5 +469,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

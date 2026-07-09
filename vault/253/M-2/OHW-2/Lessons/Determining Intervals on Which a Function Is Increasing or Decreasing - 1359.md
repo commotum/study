@@ -16,9 +16,9 @@ topic-code: MF3.8.2.6
 
 ## Prerequisites
 
-- [Using Differentiation to Calculate Critical Points](<8.2.5. Using Differentiation to Calculate Critical Points.md>)
-- [Solving Polynomial Inequalities Using a Graphical Method](<../../../2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.7. Solving Polynomial Inequalities Using a Graphical Method.md>)
-- [Solving Inequalities Involving Exponential Functions and Polynomials](<../../../2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.10. Solving Inequalities Involving Exponential Functions and Polynomials.md>)
+- [Using Differentiation to Calculate Critical Points](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.2. Analytical Applications of Differentiation/Lessons/8.2.5. Using Differentiation to Calculate Critical Points.md>)
+- [Solving Polynomial Inequalities Using a Graphical Method](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.7. Solving Polynomial Inequalities Using a Graphical Method.md>)
+- [Solving Inequalities Involving Exponential Functions and Polynomials](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.10. Solving Inequalities Involving Exponential Functions and Polynomials.md>)
 
 ---
 
@@ -470,5 +470,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -15,8 +15,8 @@ topic-code: MF1.6.2.6
 
 ## Prerequisites
 
-- [Areas of Trapezoids](<../../../13. Polygons/13.3. Area and Perimeter/Lessons/13.3.3. Areas of Trapezoids.md>)
-- [Speed-Time Graphs](<6.2.5. Speed-Time Graphs.md>)
+- [Areas of Trapezoids](<../../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.3. Area and Perimeter/Lessons/13.3.3. Areas of Trapezoids.md>)
+- [Speed-Time Graphs](<../../../../MA/Mathematical-Foundations/MF1/6. Two-Variable Equations/6.2. Modeling With Two-Variable Linear Equations/Lessons/6.2.5. Speed-Time Graphs.md>)
 
 ---
 

@@ -15,7 +15,7 @@ topic-code: MF2.2.5.4
 
 ## Prerequisites
 
-- [End Behavior of Polynomials](<../../2.1. Polynomials/Lessons/2.1.8. End Behavior of Polynomials.md>)
+- [End Behavior of Polynomials](<../../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.1. Polynomials/Lessons/2.1.8. End Behavior of Polynomials.md>)
 
 ---
 

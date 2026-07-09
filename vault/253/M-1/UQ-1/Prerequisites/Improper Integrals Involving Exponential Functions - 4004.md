@@ -15,8 +15,8 @@ topic-code: MF3.10.6.2
 
 ## Prerequisites
 
-- [Improper Integrals](<10.6.1. Improper Integrals.md>)
-- [Integrating Exponential Functions Using Substitution](<../../10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
+- [Improper Integrals](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.6. Improper Integrals/Lessons/10.6.1. Improper Integrals.md>)
+- [Integrating Exponential Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
 
 ---
 
@@ -399,5 +399,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -13,10 +13,10 @@ topic-code: MF3.9.3.5
 
 ## Prerequisites
 
-- [Properties of Definite Integrals Involving the Limits of Integration](<../../9.2. Definite Integrals/Lessons/9.2.5. Properties of Definite Integrals Involving the Limits of Integration.md>)
-- [The Area Bounded by a Curve and the X-Axis](<9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
-- [Areas of Trapezoids](<../../../../PAL/6. Geometry/6.7. Area and Perimeter/Lessons/6.7.4. Areas of Trapezoids.md>)
-- [Areas of Circles](<../../../../GEO/2. Circles & Radian Measure/2.1. Circles Essentials/Lessons/2.1.4. Areas of Circles.md>)
+- [Properties of Definite Integrals Involving the Limits of Integration](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.5. Properties of Definite Integrals Involving the Limits of Integration.md>)
+- [The Area Bounded by a Curve and the X-Axis](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
+- [Areas of Trapezoids](<../../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.3. Area and Perimeter/Lessons/13.3.3. Areas of Trapezoids.md>)
+- [Areas of Circles](<../../../../MA/Mathematical-Foundations/MF1/12. Geometry Fundamentals/12.4. Circles/Lessons/12.4.4. Areas of Circles.md>)
 
 ---
 

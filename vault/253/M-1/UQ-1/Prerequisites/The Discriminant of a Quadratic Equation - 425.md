@@ -16,8 +16,8 @@ topic-code: MF2.1.1.15
 
 ## Prerequisites
 
-- [The Quadratic Formula](<1.1.14. The Quadratic Formula.md>)
-- [Natural Numbers, Integers, and Rational Numbers](<../../../../PAL/2. The Number System/2.3. Number Theory/Lessons/2.3.3. Natural Numbers, Integers, and Rational Numbers.md>)
+- [The Quadratic Formula](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.14. The Quadratic Formula.md>)
+- [Natural Numbers, Integers, and Rational Numbers](<../../../../MA/Mathematical-Foundations/MF1/3. The Number System/3.3. Number Theory/Lessons/3.3.8. Natural Numbers, Integers, and Rational Numbers.md>)
 
 ---
 
@@ -441,5 +441,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

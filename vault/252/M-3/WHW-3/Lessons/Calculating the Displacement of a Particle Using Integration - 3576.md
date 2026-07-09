@@ -14,8 +14,8 @@ topic-code: MF3.11.1.7
 
 ## Prerequisites
 
-- [The Integral as an Accumulation Function](<../../../9. Definite Integrals/9.4. Accumulation Functions/Lessons/9.4.1. The Integral as an Accumulation Function.md>)
-- [Calculating the Position Function of a Particle Using Integration](<11.1.6. Calculating the Position Function of a Particle Using Integration.md>)
+- [The Integral as an Accumulation Function](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.4. Accumulation Functions/Lessons/9.4.1. The Integral as an Accumulation Function.md>)
+- [Calculating the Position Function of a Particle Using Integration](<../../../../MA/Mathematical-Foundations/MF3/11. Contextual Applications of Calculus/11.1. Displacement, Velocity, and Acceleration/Lessons/11.1.6. Calculating the Position Function of a Particle Using Integration.md>)
 
 ---
 

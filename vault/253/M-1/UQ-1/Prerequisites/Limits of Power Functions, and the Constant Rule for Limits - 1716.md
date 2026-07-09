@@ -17,7 +17,7 @@ topic-code: MF2.11.2.1
 
 ## Prerequisites
 
-- [Finding the Existence of a Limit Using One-Sided Limits](<../../11.1. Estimating Limits from Graphs/Lessons/11.1.3. Finding the Existence of a Limit Using One-Sided Limits.md>)
+- [Finding the Existence of a Limit Using One-Sided Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.1. Estimating Limits from Graphs/Lessons/11.1.3. Finding the Existence of a Limit Using One-Sided Limits.md>)
 
 ---
 
@@ -474,5 +474,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

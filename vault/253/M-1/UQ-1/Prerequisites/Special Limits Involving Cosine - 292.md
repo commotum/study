@@ -16,9 +16,9 @@ topic-code: MTH-253.
 
 ## Prerequisites
 
-- [Simplifying Expressions Using the Pythagorean Identity](../207/207.md)
-- [Calculating Limits of Rational Functions by Factoring](../1813/1813.md)
-- [Evaluating Special Limits Involving Sine Using a Substitution](../3678/3678.md)
+- [Simplifying Expressions Using the Pythagorean Identity](<../../../../MA/Mathematical-Foundations/MF3/5. Trigonometry/5.3. Trigonometric Identities/Lessons/5.3.2. Simplifying Expressions Using the Pythagorean Identity.md>)
+- [Calculating Limits of Rational Functions by Factoring](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.9. Calculating Limits of Rational Functions by Factoring.md>)
+- [Evaluating Special Limits Involving Sine Using a Substitution](<Evaluating Special Limits Involving Sine Using a Substitution - 3678.md>)
 
 ---
 
@@ -344,3 +344,9 @@ lim_(x → 0)\frac{1 - \cos x}{x} &= lim_(x → 0)(\sin^{2} x)/(x(1 + \cos x)) \
 &= 0
 \end{aligned}
 $$
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

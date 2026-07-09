@@ -14,8 +14,8 @@ topic-code: MF2.6.4.3
 
 ## Prerequisites
 
-- [Rationalizing Denominators With Two Terms](<6.4.2. Rationalizing Denominators With Two Terms.md>)
-- [Rationalizing Denominators of Algebraic Expressions](<6.4.1. Rationalizing Denominators of Algebraic Expressions.md>)
+- [Rationalizing Denominators With Two Terms](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.4. Radical Expressions/Lessons/6.4.2. Rationalizing Denominators With Two Terms.md>)
+- [Rationalizing Denominators of Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.4. Radical Expressions/Lessons/6.4.1. Rationalizing Denominators of Algebraic Expressions.md>)
 
 ---
 
@@ -276,5 +276,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

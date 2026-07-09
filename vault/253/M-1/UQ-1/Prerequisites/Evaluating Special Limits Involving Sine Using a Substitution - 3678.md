@@ -13,7 +13,7 @@ topic-code: MTH-253.
 
 ## Prerequisites
 
-- [Special Limits Involving Sine](../606/606.md)
+- [Special Limits Involving Sine](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.3. Special Limits Involving Sine.md>)
 
 ---
 
@@ -201,3 +201,9 @@ $$
 - [ ] C. $-\frac{π}{3}$
 - [ ] D. $1$
 - [ ] E. $-1$
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

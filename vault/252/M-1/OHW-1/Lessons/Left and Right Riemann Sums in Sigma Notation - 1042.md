@@ -14,10 +14,10 @@ topic-code: MF3.9.1.3
 
 ## Prerequisites
 
-- [Approximating Areas With the Left Riemann Sum](<9.1.1. Approximating Areas With the Left Riemann Sum.md>)
-- [Approximating Areas With the Right Riemann Sum](<9.1.2. Approximating Areas With the Right Riemann Sum.md>)
-- [Describing Function Composition](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.17. Describing Function Composition.md>)
-- [Properties of Finite Series](<../../../../PCL/1. Sequences and Series/1.1. Arithmetic Series/Lessons/1.1.2. Properties of Finite Series.md>)
+- [Approximating Areas With the Left Riemann Sum](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.1. Approximating Areas with Riemann Sums/Lessons/9.1.1. Approximating Areas With the Left Riemann Sum.md>)
+- [Approximating Areas With the Right Riemann Sum](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.1. Approximating Areas with Riemann Sums/Lessons/9.1.2. Approximating Areas With the Right Riemann Sum.md>)
+- [Describing Function Composition](<../../../../MA/Mathematical-Foundations/MF2/4. Functions/4.1. Functions/Lessons/4.1.3. Describing Function Composition.md>)
+- [Properties of Finite Series](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.5. Properties of Finite Series.md>)
 
 ---
 
@@ -25,7 +25,7 @@ topic-code: MF3.9.1.3
 ## Introduction
 
 Remember that the formula for the left Riemann sum for $y=f(x)$ with a regular step size over the interval $[a,b]$ is
-$({\color{red}{f(x_0)}} + {\color{red}{f(x_1)}} + \ldots + {\color{red}{f(x_{n-1})}}) \cdot {\color{blue}{\Delta x}}$,
+$\left({\color{red}{f(x_0)}} + {\color{red}{f(x_1)}} + \cdots + {\color{red}{f(x_{n-1})}}\right) \cdot {\color{blue}{\Delta x}}$,
 where $n$ is the number of rectangles, $x_0=a$ and $x_{n}=b$ are the endpoints of the interval, and the step size is
 
 $$
@@ -35,13 +35,13 @@ $$
 The formula above contains a lot of addition signs. We can simplify this by writing the sum in the **sigma notation**:
 
 $$
-\sum_{k=0}^{n-1} {\color{red}f(x_k)}\,{\color{blue}\Delta x}
+\sum_{k=0}^{n-1} {\color{red}{f(x_k)}}\,{\color{blue}{\Delta x}}
 $$
 
 where
 
 $$
-x_k = a+ k\Delta x
+x_k = a + k\Delta x
 $$
 
 for
@@ -82,19 +82,19 @@ $$
 From the diagram, we see that there are $n=3$ rectangles. The endpoints indicate that $a=-1$ and $b=2$, so the step size is
 
 $$
-\Delta x = \dfrac{2-(-1)}{3} = \dfrac 3 3 = 1
+\Delta x = \dfrac{2-(-1)}{3} = \dfrac{3}{3} = 1
 $$
 
 Therefore, using sigma notation, the left Riemann sum can be expressed as
 
 $$
 \begin{aligned}
-∑_(k = 0)^(n - 1)f(x_{k})Δx &= ∑_(k = 0)^(n - 1)f(a + kΔx)Δx \\
-&= ∑_(k = 0)^(3 - 1)f(-1 + k \cdot 1) \cdot 1 \\
-&= ∑_(k = 0)^(2)f(k - 1) \\
-&= ∑_(k = 0)^(2)(4 - (k - 1)^{2}) \\
-&= ∑_(k = 0)^(2)(4 - k^{2} + 2k - 1) \\
-&= ∑_(k = 0)^(2)(3 + 2k - k^{2})
+\sum_{k=0}^{n-1} f(x_k)\Delta x &= \sum_{k=0}^{n-1} f(a + k\Delta x)\Delta x \\
+&= \sum_{k=0}^{3-1} f(-1 + k \cdot 1) \cdot 1 \\
+&= \sum_{k=0}^{2} f(k - 1) \\
+&= \sum_{k=0}^{2} \left(4 - (k - 1)^2\right) \\
+&= \sum_{k=0}^{2} \left(4 - k^2 + 2k - 1\right) \\
+&= \sum_{k=0}^{2} \left(3 + 2k - k^2\right)
 \end{aligned}
 $$
 
@@ -112,20 +112,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $∑_(i = 0)^(2)\sqrt{i}$
+    $\sum_{i=0}^{2}\sqrt{i}$
 - id: b
   content: |-
-    $∑_(i = 0)^(2)\sqrt{i - 1}$
+    $\sum_{i=0}^{2}\sqrt{i - 1}$
 - id: c
   content: |-
-    $∑_(i = 0)^(2)\sqrt{i + 4}$
+    $\sum_{i=0}^{2}\sqrt{i + 4}$
 - id: d
   content: |-
-    $∑_(i = 0)^(2)\sqrt{i + 1}$
+    $\sum_{i=0}^{2}\sqrt{i + 1}$
   correct: true
 - id: e
   content: |-
-    $∑_(i = 1)^(3)\sqrt{i + 1}$
+    $\sum_{i=1}^{3}\sqrt{i + 1}$
 ```
 
 ---
@@ -142,20 +142,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $∑_(k = 1)^(3)(1 + k)^{2}$
+    $\sum_{k=1}^{3}(1 + k)^2$
 - id: b
   content: |-
-    $∑_(k = 1)^(4)(1 + k)^{2}$
+    $\sum_{k=1}^{4}(1 + k)^2$
 - id: c
   content: |-
-    $∑_(k = 1)^(4)k^{2}$
+    $\sum_{k=1}^{4}k^2$
 - id: d
   content: |-
-    $∑_(k = 0)^(2)(1 + k)^{2}$
+    $\sum_{k=0}^{2}(1 + k)^2$
   correct: true
 - id: e
   content: |-
-    $∑_(k = 1)^(3)k^{2}$
+    $\sum_{k=1}^{3}k^2$
 ```
 
 ---
@@ -164,17 +164,17 @@ options:
 ## Right Riemann Sums in Sigma Notation
 
 Recall that the formula for the right Riemann sum for $y=f(x)$ over the interval $[a,b]$ is
-$({\color{red}f(x_1)} + {\color{red}f(x_2)} + \ldots + {\color{red}f(x_n)}) \cdot {\color{blue}\Delta x}$.
+$\left({\color{red}{f(x_1)}} + {\color{red}{f(x_2)}} + \cdots + {\color{red}{f(x_n)}}\right) \cdot {\color{blue}{\Delta x}}$.
 This right Riemann sum in sigma notation is
 
 $$
-\sum_{k=1}^{n} {\color{red}f(x_k)}{\color{blue}\Delta x}
+\sum_{k=1}^{n} {\color{red}{f(x_k)}}\,{\color{blue}{\Delta x}}
 $$
 
 where
 
 $$
-x_k=a+k\Delta x
+x_k = a + k\Delta x
 $$
 
 and
@@ -197,7 +197,7 @@ Notice that this is very similar to the left Riemann sum. The only differences a
 The right Riemann sum for $y=f(x)$ with a regular step size in sigma notation is
 
 $$
-\sum_{i=1}^n f(x_i)\Delta x
+\sum_{i=1}^{n} f(x_i)\Delta x
 $$
 
 where
@@ -224,10 +224,10 @@ Therefore, using sigma notation, the right Riemann sum can be expressed as
 
 $$
 \begin{aligned}
-∑_(i = 1)^(n)f(x_{i})Δx &= ∑_(i = 1)^(n)f(a + iΔx)Δx \\
-&= ∑_(i = 1)^(3)f(0 + i \cdot 1) \cdot 1 \\
-&= ∑_(i = 1)^(3)f(i) \\
-&= ∑_(i = 1)^(3)\cos (\frac{i}{2})
+\sum_{i=1}^{n} f(x_i)\Delta x &= \sum_{i=1}^{n} f(a + i\Delta x)\Delta x \\
+&= \sum_{i=1}^{3} f(0 + i \cdot 1) \cdot 1 \\
+&= \sum_{i=1}^{3} f(i) \\
+&= \sum_{i=1}^{3} \cos\left(\frac{i}{2}\right)
 \end{aligned}
 $$
 
@@ -243,20 +243,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $∑_(k = 1)^(6)[\frac{1}{2}(1 + k)^{3}]$
+    $\sum_{k=1}^{6}\left[\frac{1}{2}(1 + k)^3\right]$
 - id: b
   content: |-
-    $∑_(k = 1)^(6)[\frac{1}{2}(1 + \frac{k}{2})^{3}]$
+    $\sum_{k=1}^{6}\left[\frac{1}{2}\left(1 + \frac{k}{2}\right)^3\right]$
   correct: true
 - id: c
   content: |-
-    $∑_(k = 1)^(4)(1 + 6k)^{3}$
+    $\sum_{k=1}^{4}(1 + 6k)^3$
 - id: d
   content: |-
-    $∑_(k = 1)^(4)[\frac{1}{2}(1 + k)^{3}]$
+    $\sum_{k=1}^{4}\left[\frac{1}{2}(1 + k)^3\right]$
 - id: e
   content: |-
-    $∑_(k = 1)^(6)(1 + k)^{3}$
+    $\sum_{k=1}^{6}(1 + k)^3$
 ```
 
 ---
@@ -271,20 +271,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $∑_(i = 0)^(n - 1)[(\frac{5}{n})^{4} \cdot i^{4}]$
+    $\sum_{i=0}^{n-1}\left[\left(\frac{5}{n}\right)^4 \cdot i^4\right]$
 - id: b
   content: |-
-    $∑_(i = 1)^(n)[(\frac{5}{n})^{5} \cdot i^{4}]$
+    $\sum_{i=1}^{n}\left[\left(\frac{5}{n}\right)^5 \cdot i^4\right]$
   correct: true
 - id: c
   content: |-
-    $∑_(i = 0)^(n - 1)[(\frac{5}{n})^{5} \cdot i^{4}]$
+    $\sum_{i=0}^{n-1}\left[\left(\frac{5}{n}\right)^5 \cdot i^4\right]$
 - id: d
   content: |-
-    $∑_(i = 1)^(n)[(\frac{5}{n})^{4} \cdot i^{5}]$
+    $\sum_{i=1}^{n}\left[\left(\frac{5}{n}\right)^4 \cdot i^5\right]$
 - id: e
   content: |-
-    $∑_(i = 1)^(n - 1)[(\frac{5}{n})^{5} \cdot i^{5}]$
+    $\sum_{i=1}^{n-1}\left[\left(\frac{5}{n}\right)^5 \cdot i^5\right]$
 ```
 
 ```update-progress

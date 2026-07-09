@@ -15,13 +15,13 @@ topic-code: MF3.8.2.5
 
 ## Prerequisites
 
-- [Roots of Rational Functions](<../../../../PCL/2. Rational Functions/2.2. Rational Functions/Lessons/2.2.1. Roots of Rational Functions.md>)
-- [Global vs. Local Extrema and Critical Points](<8.2.3. Global vs. Local Extrema and Critical Points.md>)
-- [Solving Quadratic Equations by Completing the Square](<../../../../AG1/10. Quadratic Equations & Functions/10.1. Quadratic Equations/Lessons/10.1.12. Solving Quadratic Equations by Completing the Square.md>)
-- [Solving Equations Containing the Exponential Function](<../../../../AG2/4. Exponentials & Logarithms/4.3. Exponential Equations/Lessons/4.3.2. Solving Equations Containing the Exponential Function.md>)
-- [Trigonometric Equations Containing Transformed Tangent Functions](<../../../5. Trigonometry/5.2. Elementary Trigonometric Equations/Lessons/5.2.10. Trigonometric Equations Containing Transformed Tangent Functions.md>)
-- [Selecting Procedures for Calculating Derivatives](<../../../../CAB/3. Differentiation- Composite, Implicit, and Inverse Functions/3.1. Differentiating Composite Functions/Lessons/3.1.7. Selecting Procedures for Calculating Derivatives.md>)
-- [Completing the Square With Odd Linear Terms](<../../../../AG1/10. Quadratic Equations & Functions/10.1. Quadratic Equations/Lessons/10.1.10. Completing the Square With Odd Linear Terms.md>)
+- [Roots of Rational Functions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.3. Rational Functions/Lessons/6.3.7. Roots of Rational Functions.md>)
+- [Global vs. Local Extrema and Critical Points](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.2. Analytical Applications of Differentiation/Lessons/8.2.3. Global vs. Local Extrema and Critical Points.md>)
+- [Solving Quadratic Equations by Completing the Square](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.12. Solving Quadratic Equations by Completing the Square.md>)
+- [Solving Equations Containing the Exponential Function](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.3. Exponential Equations/Lessons/5.3.2. Solving Equations Containing the Exponential Function.md>)
+- [Trigonometric Equations Containing Transformed Tangent Functions](<../../../../MA/Mathematical-Foundations/MF3/5. Trigonometry/5.2. Elementary Trigonometric Equations/Lessons/5.2.10. Trigonometric Equations Containing Transformed Tangent Functions.md>)
+- [Selecting Procedures for Calculating Derivatives](<../../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.3. Differentiating Composite Functions/Lessons/12.3.5. Selecting Procedures for Calculating Derivatives.md>)
+- [Completing the Square With Odd Linear Terms](<../../../../MA/Mathematical-Foundations/MF2/1. Quadratics/1.1. Quadratic Equations/Lessons/1.1.10. Completing the Square With Odd Linear Terms.md>)
 
 ---
 
@@ -445,5 +445,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

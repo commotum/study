@@ -14,9 +14,9 @@ topic-code: MF3.2.1.10
 
 ## Prerequisites
 
-- [Inequalities Involving Powers of Binomials](<2.1.6. Inequalities Involving Powers of Binomials.md>)
-- [Solving Exponential Equations Using the Zero-Product Property](<../../../../AG2/4. Exponentials & Logarithms/4.3. Exponential Equations/Lessons/4.3.5. Solving Exponential Equations Using the Zero-Product Property.md>)
-- [Solving Quadratic Inequalities Using the Graphical Method](<2.1.3. Solving Quadratic Inequalities Using the Graphical Method.md>)
+- [Inequalities Involving Powers of Binomials](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.6. Inequalities Involving Powers of Binomials.md>)
+- [Solving Exponential Equations Using the Zero-Product Property](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.3. Exponential Equations/Lessons/5.3.5. Solving Exponential Equations Using the Zero-Product Property.md>)
+- [Solving Quadratic Inequalities Using the Graphical Method](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.3. Solving Quadratic Inequalities Using the Graphical Method.md>)
 
 ---
 
@@ -305,5 +305,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

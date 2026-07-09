@@ -17,9 +17,9 @@ topic-code: MF1.13.3.1
 
 ## Prerequisites
 
-- [Properties of Rectangles and Squares](<../../13.2. Polygons/Lessons/13.2.8. Properties of Rectangles and Squares.md>)
-- [Squaring Rational Numbers](<../../../4. Exponents & Radicals/4.1. Exponents/Lessons/4.1.7. Squaring Rational Numbers.md>)
-- [Units of Area and Volume](<../../../2. Ratios & Percentages/2.3. Working With Units/Lessons/2.3.6. Units of Area and Volume.md>)
+- [Properties of Rectangles and Squares](<../../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.2. Polygons/Lessons/13.2.8. Properties of Rectangles and Squares.md>)
+- [Squaring Rational Numbers](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.1. Exponents/Lessons/4.1.7. Squaring Rational Numbers.md>)
+- [Units of Area and Volume](<../../../../MA/Mathematical-Foundations/MF1/2. Ratios & Percentages/2.3. Working With Units/Lessons/2.3.6. Units of Area and Volume.md>)
 
 ---
 

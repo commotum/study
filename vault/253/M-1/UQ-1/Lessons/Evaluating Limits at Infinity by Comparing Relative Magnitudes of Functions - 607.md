@@ -15,10 +15,10 @@ topic-code: MF3.7.1.8
 
 ## Prerequisites
 
-- [Limits at Infinity of Polynomials](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.1. Limits at Infinity of Polynomials.md>)
-- [Limits of Logarithmic Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.4. Limits of Logarithmic Functions.md>)
-- [Limits of Exponential Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.3. Limits of Exponential Functions.md>)
-- [Limits of Trigonometric Functions](<../../../../CAB/1. Limits and Continuity/1.3. Limits of Functions/Lessons/1.3.6. Limits of Trigonometric Functions.md>)
+- [Limits at Infinity of Polynomials](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.1. Limits at Infinity of Polynomials.md>)
+- [Limits of Logarithmic Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.4. Limits of Logarithmic Functions.md>)
+- [Limits of Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.3. Limits of Exponential Functions.md>)
+- [Limits of Trigonometric Functions](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.6. Limits of Trigonometric Functions.md>)
 
 ---
 
@@ -376,5 +376,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

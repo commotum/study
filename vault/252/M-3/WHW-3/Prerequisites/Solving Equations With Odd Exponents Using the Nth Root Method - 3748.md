@@ -13,8 +13,8 @@ topic-code: MF1.5.7.2
 
 ## Prerequisites
 
-- [The Cube Root of a Perfect Cube With Algebraic Expressions](<../../../7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.4. The Cube Root of a Perfect Cube With Algebraic Expressions.md>)
-- [Solving Equations Using the Square Root Method](<5.7.1. Solving Equations Using the Square Root Method.md>)
+- [The Cube Root of a Perfect Cube With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.4. The Cube Root of a Perfect Cube With Algebraic Expressions.md>)
+- [Solving Equations Using the Square Root Method](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.7. Nonlinear Equations/Lessons/5.7.1. Solving Equations Using the Square Root Method.md>)
 
 ---
 

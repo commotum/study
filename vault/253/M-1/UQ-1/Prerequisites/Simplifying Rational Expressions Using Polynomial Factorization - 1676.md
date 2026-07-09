@@ -15,8 +15,8 @@ topic-code: MF2.6.1.1
 
 ## Prerequisites
 
-- [Simplifying Rational Expressions by Factoring](<../../../../AG1/5. Rational Expressions & Equations/5.1. Rational Expressions/Lessons/5.1.3. Simplifying Rational Expressions by Factoring.md>)
-- [Further Factoring Trinomials With Leading Coefficients](<../../../../AG1/9. Polynomials/9.2. Factoring Polynomials/Lessons/9.2.9. Further Factoring Trinomials With Leading Coefficients.md>)
+- [Simplifying Rational Expressions by Factoring](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.2. Rational Expressions/Lessons/7.2.3. Simplifying Rational Expressions by Factoring.md>)
+- [Further Factoring Trinomials With Leading Coefficients](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.2. Factoring Polynomials/Lessons/11.2.9. Further Factoring Trinomials With Leading Coefficients.md>)
 
 ---
 
@@ -371,5 +371,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

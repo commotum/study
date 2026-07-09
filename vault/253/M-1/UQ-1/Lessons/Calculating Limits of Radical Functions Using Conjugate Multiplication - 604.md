@@ -13,10 +13,10 @@ topic-code: MF3.7.1.7
 
 ## Prerequisites
 
-- [The Power and Root Rules for Limits](<../../../../CAB/1. Limits and Continuity/1.2. The Algebra of Limits/Lessons/1.2.4. The Power and Root Rules for Limits.md>)
-- [Calculating Limits of Rational Functions by Factoring](<../../../../CAB/1. Limits and Continuity/1.4. Determining Limits Using Algebraic Manipulation/Lessons/1.4.1. Calculating Limits of Rational Functions by Factoring.md>)
-- [Adding and Subtracting Radical Expressions](<../../../../AG1/4. Radical Expressions/4.1. Radical Expressions/Lessons/4.1.8. Adding and Subtracting Radical Expressions.md>)
-- [Further Rationalizing Denominators of Algebraic Expressions](<../../../../AG1/4. Radical Expressions/4.1. Radical Expressions/Lessons/4.1.11. Further Rationalizing Denominators of Algebraic Expressions.md>)
+- [The Power and Root Rules for Limits](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.2. The Algebra of Limits/Lessons/11.2.4. The Power and Root Rules for Limits.md>)
+- [Calculating Limits of Rational Functions by Factoring](<../../../../MA/Mathematical-Foundations/MF2/11. Limits & Continuity/11.3. Limits of Functions/Lessons/11.3.9. Calculating Limits of Rational Functions by Factoring.md>)
+- [Adding and Subtracting Radical Expressions](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.9. Adding and Subtracting Radical Expressions.md>)
+- [Further Rationalizing Denominators of Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.4. Radical Expressions/Lessons/6.4.3. Further Rationalizing Denominators of Algebraic Expressions.md>)
 
 ---
 
@@ -206,5 +206,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -14,8 +14,8 @@ topic-code: Calc2.4.3.5
 
 ## Prerequisites
 
-- [Convergent and Divergent Infinite Series](../982/982.md)
-- [Expressing Rational Functions as Sums of Partial Fractions](../1060/1060.md)
+- [Convergent and Divergent Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.4. Convergent and Divergent Infinite Series.md>)
+- [Expressing Rational Functions as Sums of Partial Fractions](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.5. Integration Using Partial Fractions/Lessons/10.5.1. Expressing Rational Functions as Sums of Partial Fractions.md>)
 
 ---
 
@@ -342,3 +342,9 @@ $∑_(n = 2)^(∞)\frac{8}{n^{2} + 6n + 8}$.
 - [ ] C. The series is divergent
 - [ ] D. $\frac{18}{5}$
 - [ ] E. $\frac{5}{3}$
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

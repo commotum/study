@@ -14,9 +14,9 @@ topic-code: MF1.11.1.7
 
 ## Prerequisites
 
-- [Monomials, Binomials and Trinomials](<11.1.6. Monomials, Binomials and Trinomials.md>)
-- [The Distributive Law for Polynomials](<11.1.4. The Distributive Law for Polynomials.md>)
-- [Simplifying Linear Expressions When a Group of Terms Is Subtracted](<../../../5. Equations & Inequalities/5.2. Simplifying Linear Expressions/Lessons/5.2.7. Simplifying Linear Expressions When a Group of Terms Is Subtracted.md>)
+- [Monomials, Binomials and Trinomials](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.6. Monomials, Binomials and Trinomials.md>)
+- [The Distributive Law for Polynomials](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.4. The Distributive Law for Polynomials.md>)
+- [Simplifying Linear Expressions When a Group of Terms Is Subtracted](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.2. Simplifying Linear Expressions/Lessons/5.2.7. Simplifying Linear Expressions When a Group of Terms Is Subtracted.md>)
 
 ---
 
@@ -253,5 +253,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

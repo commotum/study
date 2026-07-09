@@ -15,7 +15,7 @@ topic-code: MF2.11.1.1
 
 ## Prerequisites
 
-- [Piecewise Functions](<../../../../AG1/6. Functions/6.1. Functions/Lessons/6.1.12. Piecewise Functions.md>)
+- [Piecewise Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.11. Piecewise Functions.md>)
 
 ---
 
@@ -316,5 +316,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF2/Home|Home]]
-[[MA/Mathematical-Foundations/MF2/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

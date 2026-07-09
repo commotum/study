@@ -15,8 +15,8 @@ topic-code: MF1.11.1.11
 
 ## Prerequisites
 
-- [Multiplying Binomials](<11.1.7. Multiplying Binomials.md>)
-- [The Power of Product Rule for Exponents](<../../../4. Exponents & Radicals/4.2. The Rules of Exponents/Lessons/4.2.4. The Power of Product Rule for Exponents.md>)
+- [Multiplying Binomials](<../../../../MA/Mathematical-Foundations/MF1/11. Polynomials/11.1. Polynomials/Lessons/11.1.7. Multiplying Binomials.md>)
+- [The Power of Product Rule for Exponents](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.2. The Rules of Exponents/Lessons/4.2.4. The Power of Product Rule for Exponents.md>)
 
 ---
 
@@ -359,5 +359,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF1/Home|Home]]
-[[MA/Mathematical-Foundations/MF1/0. Table of Contents/TOC|Table of Contents]]
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]
