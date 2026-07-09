@@ -9,6 +9,7 @@ import json
 import re
 import shutil
 import sys
+from datetime import datetime
 from pathlib import Path
 
 
@@ -31,6 +32,12 @@ ROLE_PRIORITY = {
 
 SECTION_RE = re.compile(r"^##\s+(.+?)\s*$")
 LESSON_ID_RE = re.compile(r"lesson-id:\s*([^\s]+)")
+UPDATE_PROGRESS_FOOTER_RE = re.compile(
+    r"```update-progress[ \t]*\n```"
+    r"(?:[ \t]|\n)*"
+    r"(?:\[\[[^\]\n]+?\|(?:Home|Table of Contents)\]\](?:[ \t]|\n)*)*",
+    re.MULTILINE,
+)
 COURSE_TOPIC_FIELDNAMES = [
     "role",
     "layer",
@@ -431,6 +438,54 @@ def rewrite_local_source_links(markdown_path: Path, old_source_name: str, new_so
     return f"rewrote source links: {markdown_path}"
 
 
+def course_root_for_vault_path(path: Path, repo_root: Path) -> Path | None:
+    vault_root = repo_root / "vault"
+    try:
+        relative = path.resolve().relative_to(vault_root.resolve())
+    except ValueError:
+        return None
+    if not relative.parts:
+        return None
+    return vault_root / relative.parts[0]
+
+
+def rewrite_course_navigation_links(
+    markdown_path: Path,
+    assignment_dir: Path,
+    repo_root: Path,
+    dry_run: bool,
+) -> str:
+    if not markdown_path.exists():
+        return f"skip course navigation links missing markdown: {markdown_path}"
+    course_root = course_root_for_vault_path(assignment_dir, repo_root)
+    if course_root is None:
+        return f"skip course navigation links outside vault course: {markdown_path}"
+
+    home_target = vault_relative(course_root / "Home", repo_root)
+    toc_target = vault_relative(course_root / "0. Table of Contents" / "TOC", repo_root)
+    footer = (
+        "```update-progress\n"
+        "```\n\n"
+        f"[[{home_target}|Home]]\n"
+        f"[[{toc_target}|Table of Contents]]"
+    )
+
+    text = markdown_path.read_text(encoding="utf-8")
+    if UPDATE_PROGRESS_FOOTER_RE.search(text):
+        new_text = UPDATE_PROGRESS_FOOTER_RE.sub(footer, text, count=1)
+    else:
+        new_text = text.rstrip() + "\n\n" + footer + "\n"
+    if text.endswith("\n") and not new_text.endswith("\n"):
+        new_text += "\n"
+
+    if new_text == text:
+        return f"skip course navigation links already local: {markdown_path}"
+    if dry_run:
+        return f"would rewrite course navigation links: {markdown_path}"
+    markdown_path.write_text(new_text, encoding="utf-8")
+    return f"rewrote course navigation links: {markdown_path}"
+
+
 def parse_link_target(line: str) -> str | None:
     match = re.match(r"\s*-\s+\[[^\]]+\]\(<([^>]+)>\)\s*$", line)
     if match:
@@ -563,11 +618,20 @@ def copy_indexed_lesson(
                 dry_run,
             )
         )
+        messages.append(
+            rewrite_course_navigation_links(
+                destination_md if not dry_run and destination_md.exists() else existing_md,
+                assignment_dir,
+                repo_root,
+                dry_run,
+            )
+        )
         return messages
 
     messages.append(copy_file_once(lesson_md, destination_md, dry_run, overwrite_existing))
     messages.append(copy_dir_once(source_path, destination_source, dry_run, overwrite_existing))
     messages.append(rewrite_local_source_links(destination_md, source_path.name, destination_source.name, dry_run))
+    messages.append(rewrite_course_navigation_links(destination_md, assignment_dir, repo_root, dry_run))
     return messages
 
 
@@ -575,6 +639,7 @@ def normalize_existing_copy(
     row: dict[str, str],
     section_name: str,
     assignment_dir: Path,
+    repo_root: Path,
     dry_run: bool,
 ) -> list[str]:
     markdown_dir = assignment_dir / section_name
@@ -594,6 +659,14 @@ def normalize_existing_copy(
     messages.append(rename_path_once(existing_md, destination_md, dry_run, "lesson markdown"))
     if old_source is None:
         messages.append(f"warning: local source folder not found for topic-id {row['topic-id']} in {source_root}")
+        messages.append(
+            rewrite_course_navigation_links(
+                destination_md if not dry_run and destination_md.exists() else existing_md,
+                assignment_dir,
+                repo_root,
+                dry_run,
+            )
+        )
         return messages
 
     messages.append(rename_path_once(old_source, destination_source, dry_run, "source folder"))
@@ -605,19 +678,28 @@ def normalize_existing_copy(
             dry_run,
         )
     )
+    messages.append(
+        rewrite_course_navigation_links(
+            destination_md if not dry_run and destination_md.exists() else existing_md,
+            assignment_dir,
+            repo_root,
+            dry_run,
+        )
+    )
     return messages
 
 
 def normalize_assignment_local_copies(
     local_rows: dict[str, dict[str, str]],
     assignment_dir: Path,
+    repo_root: Path,
     dry_run: bool,
 ) -> list[str]:
     messages: list[str] = []
     for row in sorted(local_rows.values(), key=sort_key):
         role = row.get("role", "prerequisite")
         section_name = "Lessons" if role == "lesson" else "Prerequisites"
-        messages.extend(normalize_existing_copy(row, section_name, assignment_dir, dry_run))
+        messages.extend(normalize_existing_copy(row, section_name, assignment_dir, repo_root, dry_run))
     return messages
 
 
@@ -957,15 +1039,47 @@ def read_plugin_data(repo_root: Path) -> dict:
 
 
 def completed_ids_for_course(course_root: Path, entries: list[dict[str, str]], checked_targets: set[str], repo_root: Path) -> set[str]:
+    return set(completion_timestamps_for_course(course_root, entries, checked_targets, repo_root))
+
+
+def completion_timestamps_for_course(
+    course_root: Path,
+    entries: list[dict[str, str]],
+    checked_targets: set[str],
+    repo_root: Path,
+) -> dict[str, str]:
     data = read_plugin_data(repo_root)
-    completed: set[str] = set()
+    completed: dict[str, str] = {}
     course_index = data.get("completionByCourse", {}).get(course_root.name, {})
     if isinstance(course_index, dict):
-        completed.update(topic_id for topic_id, timestamp in course_index.items() if isinstance(timestamp, str) and timestamp)
+        completed.update(
+            {
+                topic_id: timestamp
+                for topic_id, timestamp in course_index.items()
+                if isinstance(timestamp, str) and timestamp
+            }
+        )
+    history = data.get("completionHistory", {})
     for entry in entries:
         if entry["target"] in checked_targets:
-            completed.add(entry["topic-id"])
+            history_key = f"{course_root.name}/{entry['course-rel']}"
+            timestamp = history.get(history_key, "") if isinstance(history, dict) else ""
+            completed.setdefault(entry["topic-id"], timestamp if isinstance(timestamp, str) else "")
     return completed
+
+
+def entry_display_name(entry: dict[str, str]) -> str:
+    return entry.get("topic-name") or entry["name"]
+
+
+def format_history_time(timestamp: str) -> str:
+    if not timestamp:
+        return "Unknown"
+    try:
+        value = datetime.fromisoformat(timestamp.replace("Z", "+00:00")).astimezone()
+    except ValueError:
+        return timestamp
+    return value.strftime("%Y-%m-%d %H:%M")
 
 
 def render_course_home(
@@ -977,7 +1091,8 @@ def render_course_home(
 ) -> str:
     entries = course_lesson_entries(course_rows, course_root)
     unique_entries = unique_course_lesson_entries(entries)
-    completed = completed_ids_for_course(course_root, entries, checked_targets, repo_root)
+    completed_timestamps = completion_timestamps_for_course(course_root, entries, checked_targets, repo_root)
+    completed = set(completed_timestamps)
     local_lesson_ids = {entry["topic-id"] for entry in unique_entries}
     next_entries = []
     queued_topic_ids: set[str] = set()
@@ -1000,7 +1115,7 @@ def render_course_home(
     lines = [f"# {course_name(course_root)} Home", "", "## Next Topics", ""]
     if next_entries:
         for index, entry in enumerate(next_entries, start=1):
-            lines.append(f"{index}. [{entry['name']}]({markdown_path(entry['course-rel'])})")
+            lines.append(f"{index}. [{entry_display_name(entry)}]({markdown_path(entry['course-rel'])})")
     else:
         lines.append("No eligible next lessons found.")
 
@@ -1022,8 +1137,18 @@ def render_course_home(
     lines.extend(["", "## History", ""])
     completed_entries = [entry for entry in unique_entries if entry["topic-id"] in completed]
     if completed_entries:
+        completed_entries.sort(
+            key=lambda entry: (
+                completed_timestamps.get(entry["topic-id"], ""),
+                -int_or_max(entry.get("layer", "")),
+            ),
+            reverse=True,
+        )
         for entry in completed_entries:
-            lines.append(f"- [{entry['name']}]({markdown_path(entry['course-rel'])})")
+            timestamp = completed_timestamps.get(entry["topic-id"], "")
+            lines.append(
+                f"- [{entry_display_name(entry)}]({markdown_path(entry['course-rel'])}) - {format_history_time(timestamp)}"
+            )
     else:
         lines.append("- No completed lessons yet.")
 
@@ -1252,7 +1377,7 @@ def main() -> int:
             ):
                 print(message)
 
-    for message in normalize_assignment_local_copies(local_rows, assignment_dir, args.dry_run):
+    for message in normalize_assignment_local_copies(local_rows, assignment_dir, repo_root, args.dry_run):
         print(message)
 
     print(write_local_topics(local_topics_path, local_rows, topic_fieldnames, args.dry_run))

@@ -38,7 +38,17 @@ We can approximate the area using, for instance, the area of three rectangles, e
 So, we find the area of each rectangle and then add them all together.
 
 $$
-A \mid \approx [f(2)^(⏞)^(height) \cdot 1_(⏟)_(base)]^(⏞)^([math]1[/math]st rectangle) + [f(3)^(⏞)^(height) \cdot 1_(⏟)_(base)]^(⏞)^([math]2[/math]nd rectangle) + [f(4)^(⏞)^(height) \cdot 1_(⏟)_(base)]^(⏞)^([math]3[/math]rd rectangle); = [2^{2} \cdot 1] + [3^{2} \cdot 1] + [4^{2} \cdot 1]; = 4 + 9 + 16; = 29
+\begin{aligned}
+\mathcal{A} &\approx
+\overbrace{\overbrace{f(2)}^{\text{height}} \cdot \underbrace{1}_{\text{width}}}^{\text{1st rectangle}}
++
+\overbrace{\overbrace{f(3)}^{\text{height}} \cdot \underbrace{1}_{\text{width}}}^{\text{2nd rectangle}}
++
+\overbrace{\overbrace{f(4)}^{\text{height}} \cdot \underbrace{1}_{\text{width}}}^{\text{3rd rectangle}} \\
+&= [2^2 \cdot 1] + [3^2 \cdot 1] + [4^2 \cdot 1] \\
+&= 4 + 9 + 16 \\
+&= 29
+\end{aligned}
 $$
 
 Here, we approximated the area using a **right Riemann sum**, which means that the top-*right* corner of each rectangle touches the curve.
@@ -57,7 +67,7 @@ In general, the area $\mathcal{A}$ under the curve $y=f(x)$ over the interval $[
 We can write this mathematically as
 
 $$
-\mathcal{A} \approx f(x_1)\Delta x+f(x_2)\Delta x+f(x_3)\Delta x+ \cdots + f(x_n) \Delta x
+\mathcal{A} \approx f(x_1)\Delta x + f(x_2)\Delta x + f(x_3)\Delta x + \cdots + f(x_n)\Delta x
 $$
 
 where $n$ is the number of rectangles and the step size $\Delta x$ is given by
@@ -69,7 +79,10 @@ $$
 We can simplify by factoring out the $\Delta x$, which gives the following general formula:
 
 $$
-heights
+\begin{aligned}
+\mathcal{A} &\approx \left(f(x_1) + f(x_2) + f(x_3) + \cdots + f(x_n)\right)\Delta x \\
+&= \left(\sum_{i=1}^{n} f(x_i)\right)\Delta x
+\end{aligned}
 $$
 
 ---
@@ -88,7 +101,10 @@ Let's sketch our situation.
 The area $\mathcal{A}$ can be approximated using the formula
 
 $$
-\mathcal A\approx(\overbrace{{\color{red}{f(0.5)}}+{\color{red}{f(1)}}+{\color{red}{f(1.5)}}+{\color{red}{f(2)}}}^{\color{red}{\large\text{heights}}})\cdot \underbrace{\color{blue}\Delta x}_{\color{blue}{\large\text{width}}}
+\mathcal{A} \approx
+\left(\overbrace{{\color{red}{f(0.5)}} + {\color{red}{f(1)}} + {\color{red}{f(1.5)}} + {\color{red}{f(2)}}}^{\color{red}{\large\text{heights}}}\right)
+\cdot
+\underbrace{{\color{blue}{\Delta x}}}_{\color{blue}{\large\text{width}}}
 $$
 
 So, we now set up a table with the values of $f(x)$ at each point:
@@ -100,7 +116,11 @@ So, we now set up a table with the values of $f(x)$ at each point:
 Finally, we obtain the following approximation for our area:
 
 $$
-A \mid \approx (11 + 6 + 3 + 2) \cdot 0.5; = 22 \cdot 0.5; = 11
+\begin{aligned}
+\mathcal{A} &\approx (11 + 6 + 3 + 2) \cdot 0.5 \\
+&= 22 \cdot 0.5 \\
+&= 11
+\end{aligned}
 $$
 
 ---
@@ -113,7 +133,7 @@ id: q-1
 content: |-
   > A calculator is required to answer this question.
   
-  Estimate the area under the curve $y = 4 - 2x$ over the interval $[0, 1]$ using a right Riemann sum with step size $Δx = 0.25$.
+  Estimate the area under the curve $y = 4 - 2x$ over the interval $[0, 1]$ using a right Riemann sum with step size $\Delta x = 0.25$.
 options:
 - id: a
   content: |-
@@ -143,7 +163,7 @@ id: q-2
 content: |-
   > A calculator is required to answer this question.
   
-  Estimate the area under the curve $y = x^{2}$ over the interval $[- 1, 1]$ using a right Riemann sum with step size $Δx = 0.5$.
+  Estimate the area under the curve $y = x^{2}$ over the interval $[- 1, 1]$ using a right Riemann sum with step size $\Delta x = 0.5$.
 options:
 - id: a
   content: |-
@@ -179,7 +199,10 @@ options:
 The area $\mathcal{A}$ under the graph can be approximated using the formula for the right Riemann sum:
 
 $$
-\mathcal A\approx(\overbrace{{\color{red}{f(-2)}}+{\color{red}{f(0)}}+{\color{red}{f(2)}}}^{\color{red}{\large\text{heights}}})\cdot \underbrace{\color{blue}\Delta x}_{\color{blue}{\large\text{width}}}
+\mathcal{A} \approx
+\left(\overbrace{{\color{red}{f(-2)}} + {\color{red}{f(0)}} + {\color{red}{f(2)}}}^{\color{red}{\large\text{heights}}}\right)
+\cdot
+\underbrace{{\color{blue}{\Delta x}}}_{\color{blue}{\large\text{width}}}
 $$
 
 So, we set up a table with the values of $f(x)$ at each point:
@@ -191,13 +214,21 @@ So, we set up a table with the values of $f(x)$ at each point:
 Now, we obtain the following approximation for the area:
 
 $$
-A \mid \approx (3 + k + 2) \cdot 2; = (k + 5) \cdot 2; = 2k + 10
+\begin{aligned}
+\mathcal{A} &\approx (3 + k + 2) \cdot 2 \\
+&= (k + 5) \cdot 2 \\
+&= 2k + 10
+\end{aligned}
 $$
 
-Since we are given that $\mathcal A$ must be $12$, we obtain
+Since we are given that $\mathcal{A}$ must be $12$, we obtain
 
 $$
-\begin{aligned} 2k+10 & =12 \\[5pt] 2k &= 12-10 \\[5pt] k &= \dfrac{2}{2} \\[5pt] k &= 1. \end{aligned}
+\begin{aligned}
+2k + 10 &= 12 \\
+2k &= 2 \\
+k &= 1
+\end{aligned}
 $$
 
 ---
@@ -275,10 +306,12 @@ options:
 
 Whether the right Riemann sum underestimates or overestimates the actual area under a function depends on whether the function is increasing or decreasing.
 
-- If the function $f(x)$ is increasing, then the rectangles reach *above* the function, which means the right Riemann sum gives an *overestimate* of the actual area under the curve $y=f(x)$.![](<../Source/Approximating Areas With the Right Riemann Sum - 1281/Images/9748837bbceeccf80084a79949f81507.png>)
+- If the function $f(x)$ is increasing, then the rectangles reach *above* the function, which means the right Riemann sum gives an *overestimate* of the actual area under the curve $y=f(x)$.
+
+  ![](<../Source/Approximating Areas With the Right Riemann Sum - 1281/Images/9748837bbceeccf80084a79949f81507.png>)
 - If the function $f(x)$ is decreasing, then the rectangles fall *below* the function, which means the right Riemann sum gives an *underestimate* of the actual area under the curve $y=f(x)$.
 
-![](<../Source/Approximating Areas With the Right Riemann Sum - 1281/Images/c31e0ca0a71df0308a782c70fe691900.png>)
+  ![](<../Source/Approximating Areas With the Right Riemann Sum - 1281/Images/c31e0ca0a71df0308a782c70fe691900.png>)
 
 ---
 
@@ -296,7 +329,10 @@ Let's sketch our situation.
 The area $\mathcal{A}$ can be approximated using the formula
 
 $$
-\mathcal A\approx(\overbrace{{\color{red}{f(0.5)}}+{\color{red}{f(1)}}+{\color{red}{f(1.5)}}+{\color{red}{f(2)}}}^{\color{red}{\large\text{heights}}})\cdot \underbrace{\color{blue}\Delta x}_{\color{blue}{\large\text{width}}}
+\mathcal{A} \approx
+\left(\overbrace{{\color{red}{f(0.5)}} + {\color{red}{f(1)}} + {\color{red}{f(1.5)}} + {\color{red}{f(2)}}}^{\color{red}{\large\text{heights}}}\right)
+\cdot
+\underbrace{{\color{blue}{\Delta x}}}_{\color{blue}{\large\text{width}}}
 $$
 
 So, we now set up a table with the values of $f(x)$ at each point:
@@ -308,7 +344,11 @@ So, we now set up a table with the values of $f(x)$ at each point:
 Finally, we obtain the following approximation for our area:
 
 $$
-A \mid \approx (11 + 6 + 3 + 2) \cdot 0.5; = 22 \cdot 0.5; = 11
+\begin{aligned}
+\mathcal{A} &\approx (11 + 6 + 3 + 2) \cdot 0.5 \\
+&= 22 \cdot 0.5 \\
+&= 11
+\end{aligned}
 $$
 
 Because the function is *strictly decreasing* over the interval $[0,2]$, the rectangles reach *below* the function, which means our approximation is an *underestimate* of the correct area.
@@ -378,7 +418,7 @@ options:
 <a id="right-riemann-sums-with-irregular-step-size"></a>
 ## Right Riemann Sums with Irregular Step Size
 
-In the last few examples, the step size $\Delta{x}$ was the same for each of the rectangles. In these cases, we say that the step size is **regular**.
+In the last few examples, the step size $\Delta x$ was the same for each of the rectangles. In these cases, we say that the step size is **regular**.
 
 There are situations where the step size can vary, which we call an **irregular step size**. But we can still use a right Riemann sum to approximate the area.
 
@@ -391,7 +431,7 @@ For example, let's use a right Riemann sum to approximate the area under the cur
 The first thing we note is that the domain of the function $y=f(x)$ is *partitioned* as
 
 $$
-\begin{aligned} [1,4] &= [1, 1.5] \cup [1.5, 2.5] \cup [2.5, 4]. \end{aligned}
+[1,4] = [1,1.5] \cup [1.5,2.5] \cup [2.5,4]
 $$
 
 Let's plot what this function might look like, using the values given in the table.
@@ -403,13 +443,23 @@ We've drawn some rectangles to help us calculate our right Riemann sum, and we h
 By calculating the area of each rectangle, we obtain the following approximation for our area:
 
 $$
-1
+\mathcal{A} \approx f(1.5)(1.5 - 1) + f(2.5)(2.5 - 1.5) + f(4)(4 - 2.5)
 $$
 
 Plugging our numbers into the above, we find
 
 $$
-\begin{aligned} \mathcal{A} &\approx {\color{red}2} \cdot ({\color{blue}1.5-1}) + {\color{red}6} \cdot ({\color{blue}2.5-1.5}) + {\color{red}8} \cdot ({\color{blue}4-2.5}) \\ &= {\color{red}2} \cdot {\color{blue}0.5} +{\color{red}6} \cdot {\color{blue}1}+ {\color{red}8} \cdot {\color{blue}1.5} \\ &=1+6+12 \\ &= 19. \end{aligned}
+\begin{aligned}
+\mathcal{A}
+&\approx {\color{red}{2}} \cdot ({\color{blue}{1.5 - 1}})
++ {\color{red}{6}} \cdot ({\color{blue}{2.5 - 1.5}})
++ {\color{red}{8}} \cdot ({\color{blue}{4 - 2.5}}) \\
+&= {\color{red}{2}} \cdot {\color{blue}{0.5}}
++ {\color{red}{6}} \cdot {\color{blue}{1}}
++ {\color{red}{8}} \cdot {\color{blue}{1.5}} \\
+&= 1 + 6 + 12 \\
+&= 19
+\end{aligned}
 $$
 
 ---
@@ -430,13 +480,13 @@ Use the right Riemann sum, with the four subintervals indicated by the data, to 
 In this case, we have $n=4$ rectangles. Using the right Riemann sum, the area is computed as
 
 $$
-\mathcal{A} \approx f(2)\Delta x_1+f(3)\Delta x_2+f(3.5)\Delta x_3+f(4)\Delta x_4
+\mathcal{A} \approx f(2)\Delta x_1 + f(3)\Delta x_2 + f(3.5)\Delta x_3 + f(4)\Delta x_4
 $$
 
 where each $\Delta x_i$ is calculated by considering the step between a particular $x$-value and the previous one, i.e.,
 
 $$
-\Delta x_i = x_{i}-x_{i-1}
+\Delta x_i = x_i - x_{i-1}
 $$
 
 We set up a table of values that include the $\Delta x$'s.
@@ -449,7 +499,11 @@ We set up a table of values that include the $\Delta x$'s.
 Finally, we plug in the numbers to approximate the area under the curve, and get
 
 $$
-A \mid \approx 4 \cdot 1 + 8.5 \cdot 1 + 10 \cdot 0.5 + 8 \cdot 0.5; = 4 + 8.5 + 5 + 4; = 21.5
+\begin{aligned}
+\mathcal{A} &\approx 4 \cdot 1 + 8.5 \cdot 1 + 10 \cdot 0.5 + 8 \cdot 0.5 \\
+&= 4 + 8.5 + 5 + 4 \\
+&= 21.5
+\end{aligned}
 $$
 
 ---
@@ -464,28 +518,28 @@ content: |-
   
   The table below gives the rate of change $w(t)$, in pounds per year, in a child's weight when the child is exactly $t$ years old.
   
-  | $t(years)$ | $1$ | $1.5$ | $2$ | $3$ | $4$ |
+  | $t$ (years) | $1$ | $1.5$ | $2$ | $3$ | $4$ |
   | --- | ---: | ---: | ---: | ---: | ---: |
-  | $w(pounds/year)$ | $20$ | $12$ | $10$ | $15$ | $10$ |
+  | $w(t)$ (pounds/year) | $20$ | $12$ | $10$ | $15$ | $10$ |
   
   Use the right Riemann sum over $[1, 4]$ with four subintervals to approximate the total increase in the weight of the child.
 options:
 - id: a
   content: |-
-    $51pounds$
+    $51\text{ pounds}$
 - id: b
   correct: true
   content: |-
-    $36pounds$
+    $36\text{ pounds}$
 - id: c
   content: |-
-    $31pounds$
+    $31\text{ pounds}$
 - id: d
   content: |-
-    $61pounds$
+    $61\text{ pounds}$
 - id: e
   content: |-
-    $41pounds$
+    $41\text{ pounds}$
 ```
 
 ---
@@ -500,32 +554,32 @@ content: |-
   
   Pauline is selling orange juice on a market stall. The table below gives the rate $l(t)$, in liters per hour, of lemonade sold at certain moments during the day.
   
-  | $t(hours)$ | $1$ | $3$ | $4$ | $7$ |
+  | $t$ (hours) | $1$ | $3$ | $4$ | $7$ |
   | --- | ---: | ---: | ---: | ---: |
-  | $l(t)(liters/hour)$ | $3$ | $2$ | $4$ | $5$ |
+  | $l(t)$ (liters/hour) | $3$ | $2$ | $4$ | $5$ |
   
   Use the right Riemann sum for $l(t)$ over the interval $[1, 7]$ with three subintervals to approximate the total number of liters Pauline sold.
 options:
 - id: a
   content: |-
-    $28liters$
+    $28\text{ liters}$
 - id: b
   content: |-
-    $11liters$
+    $11\text{ liters}$
 - id: c
   correct: true
   content: |-
-    $23liters$
+    $23\text{ liters}$
 - id: d
   content: |-
-    $26liters$
+    $26\text{ liters}$
 - id: e
   content: |-
-    $14liters$
+    $14\text{ liters}$
 ```
 
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

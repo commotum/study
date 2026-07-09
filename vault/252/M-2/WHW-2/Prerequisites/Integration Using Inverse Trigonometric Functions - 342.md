@@ -380,5 +380,5 @@ options:
 ```update-progress
 ```
 
-[[MA/Mathematical-Foundations/MF3/Home|Home]]
-[[MA/Mathematical-Foundations/MF3/0. Table of Contents/TOC|Table of Contents]]
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]
