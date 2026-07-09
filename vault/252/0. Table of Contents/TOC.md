@@ -12,9 +12,9 @@
 	- [ ] WHW-1
 		- [x] [[M-1/WHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] OHW-1
-		- [ ] [[M-1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
+		- [x] [[M-1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] WHW-1
-		- [ ] [[M-1/WHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
+		- [x] [[M-1/WHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] OHW-1
 		- [ ] [[M-1/OHW-1/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
 - [ ] M-2
@@ -27,9 +27,9 @@
 	- [ ] WHW-2
 		- [x] [[M-2/WHW-2/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] OHW-2
-		- [ ] [[M-2/OHW-2/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
+		- [x] [[M-2/OHW-2/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] WHW-2
-		- [ ] [[M-2/WHW-2/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
+		- [x] [[M-2/WHW-2/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] OHW-2
 		- [ ] [[M-2/OHW-2/Lessons/Defining Definite Integrals Using Left and Right Riemann Sums - 1086|9.2.1. Defining Definite Integrals Using Left and Right Riemann Sums]]
 	- [ ] WHW-2
