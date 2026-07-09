@@ -7,7 +7,7 @@
 
 ## Progress
 
-- Course: 0% (0/135)
+- Course: 0% (0/135 unique lessons)
 
 - 1. Logic: 0% (0/31)
 - 2. Set Theory: 0% (0/27)
@@ -23,7 +23,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 135
+- Completed unique lessons: 0 / 135
+- Assignment placements: 135
 - Queue size: 2 / 5
 
 <!--

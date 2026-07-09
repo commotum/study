@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/353)
+- Course: 0% (0/353 unique lessons)
 
 - 1. Fractions: 0% (0/41)
 - 2. Ratios & Percentages: 0% (0/46)
@@ -32,7 +32,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 353
+- Completed unique lessons: 0 / 353
+- Assignment placements: 353
 - Queue size: 5 / 5
 
 <!--

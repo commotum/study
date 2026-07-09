@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/305)
+- Course: 0% (0/305 unique lessons)
 
 - 1. Limits: 0% (0/32)
 - 2. Continuity: 0% (0/13)
@@ -35,7 +35,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 305
+- Completed unique lessons: 0 / 305
+- Assignment placements: 305
 - Queue size: 5 / 5
 
 <!--

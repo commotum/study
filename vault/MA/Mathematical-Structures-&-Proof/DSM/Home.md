@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/144)
+- Course: 0% (0/144 unique lessons)
 
 - 1. Preliminaries: 0% (0/4)
 - 2. Boolean Algebra: 0% (0/17)
@@ -27,7 +27,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 144
+- Completed unique lessons: 0 / 144
+- Assignment placements: 144
 - Queue size: 5 / 5
 
 <!--

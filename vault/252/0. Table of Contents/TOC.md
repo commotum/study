@@ -8,9 +8,9 @@
 - [ ] M-1
 	- [ ] OHW-1
 		- [x] [[M-1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
-		- [ ] [[M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
+		- [x] [[M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] WHW-1
-		- [ ] [[M-1/WHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
+		- [x] [[M-1/WHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] OHW-1
 		- [ ] [[M-1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] WHW-1
@@ -23,9 +23,9 @@
 	- [ ] WHW-2
 		- [x] [[M-2/WHW-2/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
 	- [ ] OHW-2
-		- [ ] [[M-2/OHW-2/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
+		- [x] [[M-2/OHW-2/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] WHW-2
-		- [ ] [[M-2/WHW-2/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
+		- [x] [[M-2/WHW-2/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] OHW-2
 		- [ ] [[M-2/OHW-2/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] WHW-2

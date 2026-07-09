@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/187)
+- Course: 0% (0/187 unique lessons)
 
 - 1. Vector Functions and Vector Fields: 0% (0/27)
 - 2. Multivariable Functions: 0% (0/53)
@@ -25,7 +25,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 187
+- Completed unique lessons: 0 / 187
+- Assignment placements: 187
 - Queue size: 5 / 5
 
 <!--

@@ -2,25 +2,26 @@
 
 ## Next Topics
 
-1. [Approximating Areas With the Right Riemann Sum](<M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>)
+1. [Left and Right Riemann Sums in Sigma Notation](<M-1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042.md>)
 2. [The Fundamental Theorem of Calculus](<M-3/WHW-3/Lessons/The Fundamental Theorem of Calculus - 283.md>)
 3. [Calculating the Position Function of a Particle Using Integration](<M-3/WHW-3/Lessons/Calculating the Position Function of a Particle Using Integration - 335.md>)
 
 ## Progress
 
-- Course: 6% (1/17 unique lessons)
+- Course: 12% (2/17 unique lessons)
 
-- M-1: 25% (1/4)
+- M-1: 50% (2/4)
 - M-2: 0% (0/8)
 - M-3: 0% (0/5)
 
 ## History
 
+- [Approximating Areas With the Right Riemann Sum](<M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>) - 2026-07-08 17:21
 - [Approximating Areas With the Left Riemann Sum](<M-1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477.md>) - 2026-07-08 16:29
 
 ## Summary
 
-- Completed unique lessons: 1 / 17
+- Completed unique lessons: 2 / 17
 - Assignment placements: 38
 - Queue size: 3 / 5
 

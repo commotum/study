@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/212)
+- Course: 0% (0/212 unique lessons)
 
 - 1. Limits and Continuity: 0% (0/43)
 - 2. Differentiation- Definition and Fundamental Properties: 0% (0/19)
@@ -28,7 +28,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 212
+- Completed unique lessons: 0 / 212
+- Assignment placements: 212
 - Queue size: 5 / 5
 
 <!--

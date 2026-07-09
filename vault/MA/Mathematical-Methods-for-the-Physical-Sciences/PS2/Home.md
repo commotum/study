@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/232)
+- Course: 0% (0/232 unique lessons)
 
 - 1. Projections: 0% (0/25)
 - 2. Quadratic Forms: 0% (0/15)
@@ -31,7 +31,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 232
+- Completed unique lessons: 0 / 232
+- Assignment placements: 232
 - Queue size: 5 / 5
 
 <!--

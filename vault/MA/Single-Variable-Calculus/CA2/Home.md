@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/160)
+- Course: 0% (0/160 unique lessons)
 
 - 1. Integration Techniques: 0% (0/41)
 - 2. Applications of Integration: 0% (0/27)
@@ -24,7 +24,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 160
+- Completed unique lessons: 0 / 160
+- Assignment placements: 160
 - Queue size: 5 / 5
 
 <!--

@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/181)
+- Course: 0% (0/181 unique lessons)
 
 - 1. Probability & Random Variables: 0% (0/20)
 - 2. Expectation: 0% (0/16)
@@ -29,7 +29,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 181
+- Completed unique lessons: 0 / 181
+- Assignment placements: 181
 - Queue size: 5 / 5
 
 <!--

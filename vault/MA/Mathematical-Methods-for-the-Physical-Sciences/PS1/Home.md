@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/294)
+- Course: 0% (0/294 unique lessons)
 
 - 1. Preliminaries: 0% (0/25)
 - 2. Matrices: 0% (0/34)
@@ -32,7 +32,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 294
+- Completed unique lessons: 0 / 294
+- Assignment placements: 294
 - Queue size: 5 / 5
 
 <!--

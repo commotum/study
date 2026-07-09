@@ -10,32 +10,33 @@
 
 ## Progress
 
-- Course: 53% (16/30)
+- Course: 53% (16/30 unique lessons)
 
 - M1: 53% (16/30)
 
 ## History
 
+- [Relating Tangential Speed to Angular Speed](M1/2026-06-28-HW-1/Lessons/Problem-8.md) - 2026-07-08 16:29
+- [Tangential Speed From Angular Velocity](M1/2026-06-29-M1-3/Lessons/Problem-2.md) - 2026-07-08 16:29
 - [Ranking Radial Accelerations](M1/2026-06-25-M1-2/Lessons/Problem-6.md) - 2026-07-08 16:29
+- [Checking the Magnitude of Centripetal Acceleration](M1/2026-06-28-HW-1/Lessons/Problem-9.md) - 2026-07-08 16:29
 - [Recognizing Tangential Velocity in Circular Motion](M1/2026-06-28-HW-1/Lessons/Problem-6.md) - 2026-07-08 16:29
 - [Comparing Centripetal Acceleration with the Radius Vector](M1/2026-06-28-HW-1/Lessons/Problem-7.md) - 2026-07-08 16:29
-- [Relating Tangential Speed to Angular Speed](M1/2026-06-28-HW-1/Lessons/Problem-8.md) - 2026-07-08 16:29
-- [Checking the Magnitude of Centripetal Acceleration](M1/2026-06-28-HW-1/Lessons/Problem-9.md) - 2026-07-08 16:29
 - [Choosing the Acceleration Direction When Circular Motion Speeds Up](M1/2026-06-28-HW-1/Lessons/Problem-13.md) - 2026-07-08 16:29
-- [Comparing Ferris Wheel Normal Forces](M1/2026-06-29-M1-3/Lessons/Problem-1.md) - 2026-07-08 16:29
-- [Tangential Speed From Angular Velocity](M1/2026-06-29-M1-3/Lessons/Problem-2.md) - 2026-07-08 16:29
-- [Finding the Normal Force at the Bottom of a Ferris Wheel](M1/2026-06-29-M1-3/Lessons/Problem-4.md) - 2026-07-08 16:29
-- [Threshold Angular Speed Before Slipping](M1/2026-06-29-M1-3/Lessons/Problem-6.md) - 2026-07-08 16:29
+- [Choosing the Net Force Direction for Speeding-Up Circular Motion](M1/2026-07-02-M1-5/Lessons/Problem-1.md) - 2026-07-08 16:29
+- [Reading Net Force Arrows for Circular Motion](M1/2026-07-05-PQ-1/Lessons/Problem-2.md) - 2026-07-08 16:29
+- [Finding the Net-Force Direction in Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-4.md) - 2026-07-08 16:29
 - [Free-Body Diagrams for Level Circular Motion](M1/2026-06-30-M1-4/Lessons/Problem-2.md) - 2026-07-08 16:29
 - [Finding Static Friction on a Flat Curve](M1/2026-06-30-M1-4/Lessons/Problem-3.md) - 2026-07-08 16:29
-- [Choosing the Net Force Direction for Speeding-Up Circular Motion](M1/2026-07-02-M1-5/Lessons/Problem-1.md) - 2026-07-08 16:29
-- [Finding the Net-Force Direction in Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-4.md) - 2026-07-08 16:29
-- [Reading Net Force Arrows for Circular Motion](M1/2026-07-05-PQ-1/Lessons/Problem-2.md) - 2026-07-08 16:29
+- [Threshold Angular Speed Before Slipping](M1/2026-06-29-M1-3/Lessons/Problem-6.md) - 2026-07-08 16:29
 - [Finding the Minimum Period Before a Coin Slips](M1/2026-07-05-PQ-1/Lessons/Problem-4.md) - 2026-07-08 16:29
+- [Comparing Ferris Wheel Normal Forces](M1/2026-06-29-M1-3/Lessons/Problem-1.md) - 2026-07-08 16:29
+- [Finding the Normal Force at the Bottom of a Ferris Wheel](M1/2026-06-29-M1-3/Lessons/Problem-4.md) - 2026-07-08 16:29
 
 ## Summary
 
-- Completed lessons: 16 / 30
+- Completed unique lessons: 16 / 30
+- Assignment placements: 30
 - Queue size: 5 / 5
 
 <!--

@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/357)
+- Course: 0% (0/357 unique lessons)
 
 - 1. Quadratics: 0% (0/32)
 - 2. Polynomials: 0% (0/28)
@@ -33,7 +33,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 357
+- Completed unique lessons: 0 / 357
+- Assignment placements: 357
 - Queue size: 5 / 5
 
 <!--

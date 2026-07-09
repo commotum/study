@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/159)
+- Course: 0% (0/159 unique lessons)
 
 - 1. First-Order Differential Equations: 0% (0/28)
 - 2. Modeling With First-Order Differential Equations: 0% (0/21)
@@ -26,7 +26,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 159
+- Completed unique lessons: 0 / 159
+- Assignment placements: 159
 - Queue size: 5 / 5
 
 <!--

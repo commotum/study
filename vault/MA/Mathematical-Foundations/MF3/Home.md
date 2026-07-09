@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/323)
+- Course: 0% (0/323 unique lessons)
 
 - 1. Sequences and Series: 0% (0/22)
 - 2. Inequalities: 0% (0/20)
@@ -34,7 +34,8 @@ No completed lessons yet.
 
 ## Summary
 
-- Completed lessons: 0 / 323
+- Completed unique lessons: 0 / 323
+- Assignment placements: 323
 - Queue size: 5 / 5
 
 <!--
