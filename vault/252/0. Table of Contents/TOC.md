@@ -72,5 +72,5 @@
 		- [ ] [[M-3/WHW-3/Lessons/The Integral as an Accumulation Function - 333|9.4.1. The Integral as an Accumulation Function]]
 		- [ ] [[M-3/WHW-3/Lessons/The Average Value of a Function - 1203|9.5.1. The Average Value of a Function]]
 		- [ ] [[M-3/WHW-3/Lessons/The Second Fundamental Theorem of Calculus - 613|9.4.2. The Second Fundamental Theorem of Calculus]]
-		- [ ] [[M-3/WHW-3/Lessons/Calculating the Position Function of a Particle Using Integration - 335|11.1.6. Calculating the Position Function of a Particle Using Integration]]
+		- [x] [[M-3/WHW-3/Lessons/Calculating the Position Function of a Particle Using Integration - 335|11.1.6. Calculating the Position Function of a Particle Using Integration]]
 		- [ ] [[M-3/WHW-3/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
