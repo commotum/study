@@ -52,9 +52,9 @@ as follows:
 
 $$
 \begin{aligned}
-a_{n} &= (3 \cdot (-5)^{n})/(2^{n}) \\
-&= 3 \cdot ((-5)^{n})/(2^{n}) \\
-&= 3_(⏟)_(a) \cdot (-\frac{5}{2}_(⏟)_(r))^{n}
+a_{n} &= \frac{3 \cdot (-5)^{n}}{2^{n}} \\
+&= 3 \cdot \frac{(-5)^{n}}{2^{n}} \\
+&= \underbrace{3}_{a}\cdot\left(\underbrace{-\frac{5}{2}}_{r}\right)^n
 \end{aligned}
 $$
 
@@ -96,9 +96,9 @@ as follows:
 
 $$
 \begin{aligned}
-a_{n} &= (2 \cdot (-3)^{n})/(5^{n + 1}) \\
-&= (2 \cdot (-3)^{n})/(5 \cdot 5^{n}) \\
-&= \frac{2}{5} \cdot ((-3)^{n})/(5^{n}) \\
+a_{n} &= \frac{2 \cdot (-3)^{n}}{5^{n + 1}} \\
+&= \frac{2 \cdot (-3)^{n}}{5 \cdot 5^{n}} \\
+&= \frac{2}{5} \cdot \frac{(-3)^{n}}{5^{n}} \\
 &= \frac{2}{5}(-\frac{3}{5})^{n}
 \end{aligned}
 $$
@@ -119,7 +119,7 @@ Since $\mid r \mid < 1$, the sequence converges to $0$.
 type: radio
 id: q-1
 content: |-
-  Does the sequence $a_{n} = (2(5)^{n})/((-3)^{n})$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+  Does the sequence $a_{n} = \frac{2(5)^{n}}{(-3)^{n}}$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
 options:
 - id: a
   content: |-
@@ -147,7 +147,7 @@ options:
 type: radio
 id: q-2
 content: |-
-  Does the sequence $a_{n} = (5(3)^{n})/(3^{n + 1})$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+  Does the sequence $a_{n} = \frac{5(3)^{n}}{3^{n + 1}}$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
 options:
 - id: a
   content: |-
@@ -198,13 +198,13 @@ $$
 Since $x^2$ is positive, $r$ is also positive, So, the convergence condition is
 
 $$
-0 \lt r\leq 1
+0 < r\leq 1
 $$
 
 Therefore, the sequence converges for
 
 $$
-0 \lt\dfrac{16}{x^2}\leq 1 \qquad \Longrightarrow \qquad x^2 \geq 16
+0 <\dfrac{16}{x^2}\leq 1 \qquad \Longrightarrow \qquad x^2 \geq 16
 $$
 
 Taking into account the fact that $x$ is positive, we get
@@ -308,13 +308,13 @@ $$
 We see that this is a geometric sequence with common ratio $r = x$. Since $x$ is positive, $r$ is also positive. So, the convergence condition is
 
 $$
-0 \lt r \leq 1
+0 < r \leq 1
 $$
 
 Therefore, the sequence converges for
 
 $$
-0 \lt x \leq 1
+0 < x \leq 1
 $$
 
 ---

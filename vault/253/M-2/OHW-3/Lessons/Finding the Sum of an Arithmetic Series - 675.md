@@ -251,7 +251,7 @@ id: q-3
 content: |-
   > A calculator is required to answer this question.
   
-  Calculate the sum of the arithmetic series $∑_(n = 0)^(10)(9n - 12)$.
+  Calculate the sum of the arithmetic series $\displaystyle \sum_{n=0}^{10}(9n - 12)$.
 options:
 - id: a
   content: |-
@@ -281,7 +281,7 @@ id: q-4
 content: |-
   > A calculator is required to answer this question.
   
-  What is the sum of the arithmetic series $∑_(n = 1)^(11)(-5n)$?
+  What is the sum of the arithmetic series $\displaystyle \sum_{n=1}^{11}(-5n)$?
 options:
 - id: a
   content: |-
@@ -594,7 +594,7 @@ in ascending order:
 $$
 \begin{aligned}
 S_{N} &= a_{1} + a_{2} + ⋯ + a_{N - 1} + a_{N} \\
-&= a_{1} + (a_{1} + d)_(⏟)_(a_{2}) + ⋯ + (a_{1} + (N - 2)d)_(⏟)_(a_{N - 1}) + (a_{1} + (N - 1)d)_(⏟)_(a_{N})
+&= a_1+\underbrace{(a_1+d)}_{a_2}+\cdots+\underbrace{(a_1+(N-2)d)}_{a_{N-1}}+\underbrace{(a_1+(N-1)d)}_{a_N}
 \end{aligned}
 $$
 
@@ -603,7 +603,7 @@ Now, let's write down the same sum but place the indices in descending order:
 $$
 \begin{aligned}
 S_{N} &= a_{N} + a_{N - 1} + ⋯ + a_{2} + a_{1} \\
-&= (a_{1} + (N - 1)d)_(⏟)_(a_{N}) + (a_{1} + (N - 2)d)_(⏟)_(a_{N - 1}) + ⋯ + (a_{1} + d)_(⏟)_(a_{2}) + a_{1}
+&= \underbrace{(a_1+(N-1)d)}_{a_N}+\underbrace{(a_1+(N-2)d)}_{a_{N-1}}+\cdots+\underbrace{(a_1+d)}_{a_2}+a_1
 \end{aligned}
 $$
 
@@ -611,7 +611,7 @@ By adding the two expressions, we get the following:
 
 $$
 \begin{aligned}
-\begin{bmatrix}S_{N} &= & a_{1} & + & (a_{1} + d) & + & ⋯ & + & (a_{1} + (N - 1)d) \\ S_{N}|= & (a_{1} + (N - 1)d) & + & (a_{1} + (N - 2)d) & + & ⋯ & + & a_{1} \\ 2S_{N}|= & (2a_{1} + (N - 1)d) & + & (2a_{1} + (N - 1)d) & + & ⋯ & + & (2a_{1} + (N - 1)d)\end{bmatrix}
+\begin{bmatrix}S_{N} &= & a_{1} & + & (a_{1} + d) & + & ⋯ & + & (a_{1} + (N - 1)d) \\ S_{N}= & (a_{1} + (N - 1)d) & + & (a_{1} + (N - 2)d) & + & ⋯ & + & a_{1} \\ 2S_{N}= & (2a_{1} + (N - 1)d) & + & (2a_{1} + (N - 1)d) & + & ⋯ & + & (2a_{1} + (N - 1)d)\end{bmatrix}
 \end{aligned}
 $$
 

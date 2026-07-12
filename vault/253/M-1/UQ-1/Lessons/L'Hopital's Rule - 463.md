@@ -106,11 +106,11 @@ $$
 type: radio
 id: q-1
 content: |-
-  What is $lim_(x → 0)(x\cos x)/(\ln (x + 1))$?
+  What is $\displaystyle \lim_{x \to 0}\frac{x\cos x}{\ln (x + 1)}$?
 options:
 - id: a
   content: |-
-    $∞$
+    $\infty$
 - id: b
   content: |-
     $-1$
@@ -134,11 +134,11 @@ options:
 type: radio
 id: q-2
 content: |-
-  What is $lim_(x → 0)\frac{x^{2} - x}{\tan x}$?
+  What is $\displaystyle \lim_{x \to 0}\frac{x^{2} - x}{\tan x}$?
 options:
 - id: a
   content: |-
-    $- π$
+    $- \pi$
 - id: b
   content: |-
     $-1$
@@ -148,7 +148,7 @@ options:
     $1$
 - id: d
   content: |-
-    $- ∞$
+    $- \infty$
 - id: e
   content: |-
     $0$
@@ -195,7 +195,7 @@ $$
 type: radio
 id: q-3
 content: |-
-  What is $lim_(x → 0)\frac{\sin x - x}{x^{3} + x^{2}}$?
+  What is $\displaystyle \lim_{x \to 0}\frac{\sin x - x}{x^{3} + x^{2}}$?
 options:
 - id: a
   content: |-
@@ -205,7 +205,7 @@ options:
     $-\frac{1}{2}$
 - id: c
   content: |-
-    $∞$
+    $\infty$
 - id: d
   content: |-
     $2$
@@ -223,7 +223,7 @@ options:
 type: radio
 id: q-4
 content: |-
-  What is $lim_(x → 0)((x^{2} - 1)^{2} - 1)/(x^{2})$?
+  What is $\displaystyle \lim_{x \to 0}\frac{(x^{2} - 1)^{2} - 1}{x^{2}}$?
 options:
 - id: a
   content: |-
@@ -236,7 +236,7 @@ options:
     $1$
 - id: d
   content: |-
-    $∞$
+    $\infty$
 - id: e
   content: |-
     $-2$
@@ -324,11 +324,11 @@ $$
 type: radio
 id: q-5
 content: |-
-  Evaluate $lim_(x → 0^{+})(\ln x)/((\frac{1}{x^{2}}))$.
+  Evaluate $\displaystyle \lim_{x \to 0^{+}}\frac{\ln x}{(\frac{1}{x^{2}})}$.
 options:
 - id: a
   content: |-
-    $∞$
+    $\infty$
 - id: b
   content: |-
     $0$
@@ -338,7 +338,7 @@ options:
     $-1$
 - id: d
   content: |-
-    $- ∞$
+    $- \infty$
 - id: e
   content: |-
     $1$
@@ -352,7 +352,7 @@ options:
 type: radio
 id: q-6
 content: |-
-  Evaluate $lim_(x → 0^{+})(\ln (\sin x))/(\csc x)$.
+  Evaluate $\displaystyle \lim_{x \to 0^{+}}\frac{\ln (\sin x)}{\csc x}$.
 options:
 - id: a
   content: |-
@@ -360,10 +360,10 @@ options:
   correct: true
 - id: b
   content: |-
-    $- ∞$
+    $- \infty$
 - id: c
   content: |-
-    $∞$
+    $\infty$
 - id: d
   content: |-
     $-4$
@@ -401,7 +401,7 @@ exists.
 <a id="calculating-a-limit-at-positive-or-negative-infinity-using-lhopitals-rule"></a>
 ## Calculating a Limit at Positive or Negative Infinity Using L'Hopital's Rule
 
-**Example:** Evaluate ${\displaystyle \lim_{x\to\infty} \frac {x^6}{5x^6-4}}$.
+**Example:** Evaluate $\displaystyle {\displaystyle \lim_{x\to\infty} \frac {x^6}{5x^6-4}}$.
 
 **Explanation**
 
@@ -425,7 +425,7 @@ $$
 type: radio
 id: q-7
 content: |-
-  What is $lim_(x → ∞)\frac{2\ln x}{e^{x}}$?
+  What is $\displaystyle \lim_{x \to \infty}\frac{2\ln x}{e^{x}}$?
 options:
 - id: a
   content: |-
@@ -435,7 +435,7 @@ options:
     $1$
 - id: c
   content: |-
-    $∞$
+    $\infty$
 - id: d
   content: |-
     $0$
@@ -453,7 +453,7 @@ options:
 type: radio
 id: q-8
 content: |-
-  What is $lim_(x → ∞)\frac{x + 1}{\sqrt{x} - 1}$?
+  What is $\displaystyle \lim_{x \to \infty}\frac{x + 1}{\sqrt{x} - 1}$?
 options:
 - id: a
   content: |-
@@ -469,7 +469,7 @@ options:
     $-1$
 - id: e
   content: |-
-    $∞$
+    $\infty$
   correct: true
 ```
 

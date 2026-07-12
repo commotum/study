@@ -96,11 +96,11 @@ $$
 type: radio
 id: q-1
 content: |-
-  Evaluate $lim_(x → ∞)\frac{e^{x}}{x^{9}}$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{e^{x}}{x^{9}}$.
 options:
 - id: a
   content: |-
-    $∞$
+    $\infty$
   correct: true
 - id: b
   content: |-
@@ -124,7 +124,7 @@ options:
 type: radio
 id: q-2
 content: |-
-  Evaluate $lim_(x → ∞)\frac{e^{x}}{x}$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{e^{x}}{x}$.
 options:
 - id: a
   content: |-
@@ -140,7 +140,7 @@ options:
     $1$
 - id: e
   content: |-
-    $∞$
+    $\infty$
   correct: true
 ```
 
@@ -167,11 +167,11 @@ $$
 type: radio
 id: q-3
 content: |-
-  Evaluate $lim_(x → ∞)(x)/(\ln (2x))$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{x}{\ln (2x)}$.
 options:
 - id: a
   content: |-
-    $∞$
+    $\infty$
   correct: true
 - id: b
   content: |-
@@ -195,7 +195,7 @@ options:
 type: radio
 id: q-4
 content: |-
-  Evaluate $lim_(x → ∞)\frac{\ln x}{x^{2}}$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{\ln x}{x^{2}}$.
 options:
 - id: a
   content: |-
@@ -209,7 +209,7 @@ options:
     $DNE$
 - id: d
   content: |-
-    $∞$
+    $\infty$
 - id: e
   content: |-
     $2$
@@ -238,7 +238,7 @@ $$
 type: radio
 id: q-5
 content: |-
-  Evaluate $lim_(x → ∞)(e^{x})/(\ln (2x))$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{e^{x}}{\ln (2x)}$.
 options:
 - id: a
   content: |-
@@ -254,7 +254,7 @@ options:
     $\frac{1}{2}$
 - id: e
   content: |-
-    $∞$
+    $\infty$
   correct: true
 ```
 
@@ -266,11 +266,11 @@ options:
 type: radio
 id: q-6
 content: |-
-  Evaluate $lim_(x → ∞)(\ln (3x))/(e^{x})$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{\ln (3x)}{e^{x}}$.
 options:
 - id: a
   content: |-
-    $∞$
+    $\infty$
 - id: b
   content: |-
     $0$
@@ -325,7 +325,7 @@ shown below:
 type: radio
 id: q-7
 content: |-
-  Evaluate $lim_(x → ∞)\frac{\sin x - 3}{x^{3} + x^{2}}$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{\sin x - 3}{x^{3} + x^{2}}$.
 options:
 - id: a
   content: |-
@@ -338,7 +338,7 @@ options:
     $-3$
 - id: d
   content: |-
-    $∞$
+    $\infty$
 - id: e
   content: |-
     $0$
@@ -353,11 +353,11 @@ options:
 type: radio
 id: q-8
 content: |-
-  Evaluate $lim_(x → ∞)\frac{3\sin x}{2x + 1}$.
+  Evaluate $\displaystyle \lim_{x \to \infty}\frac{3\sin x}{2x + 1}$.
 options:
 - id: a
   content: |-
-    $∞$
+    $\infty$
 - id: b
   content: |-
     $0$

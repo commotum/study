@@ -201,9 +201,9 @@ $$
 Now, let's compute these integrals:
 
 - To find the first integral where $x \in [-2,0]$, we compute the area $A_1$ of the trapezoid as follows:
-$A_{1}|= \frac{1}{2} \cdot 2 \cdot (2 + 3); = 5$
+$A_1=\frac{1}{2}\cdot 2\cdot(2+3)=5$
 - To find the second integral where $x \in [0,3]$, we compute the area $A_2$ of the trapezoid as follows:
-$A_{2}|= \frac{1}{2} \cdot 3 \cdot (2 + 4); = 9$
+$A_2=\frac{1}{2}\cdot 3\cdot(2+4)=9$
 
 Therefore, we obtain
 
@@ -338,7 +338,7 @@ $$
 F(T) &= F(0) + ∫_{0}^{T}f(t)dt \\
 &= 100 - ∫_{0}^{T}t^{1/3}dt \\
 &= 100 - \frac{3t^{4/3}}{4} \mid _{0}^{T} \\
-&= 100 - (3(T)^{4/3})/(4) + (3(0)^{4/3})/(4) \\
+&= 100-\frac{3T^{4/3}}{4}+\frac{3(0)^{4/3}}{4} \\
 &= 100 - \frac{3}{4}T^{4/3}
 \end{aligned}
 $$

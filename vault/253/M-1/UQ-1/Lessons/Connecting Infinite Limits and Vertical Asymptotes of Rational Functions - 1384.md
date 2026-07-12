@@ -68,7 +68,7 @@ These one-sided limits match up with what we see in the graph of $f(x)$, shown b
 <a id="evaluating-the-right-sided-limit-of-a-rational-function-at-a-vertical-asymptote"></a>
 ## Evaluating the Right-Sided Limit of a Rational Function at a Vertical Asymptote
 
-**Example:** Evaluate $\lim\limits_{x \to 3^+} \dfrac{1}{x^2-x-6}$.
+**Example:** Evaluate $\displaystyle \lim\limits_{x \to 3^+} \dfrac{1}{x^2-x-6}$.
 
 **Explanation**
 
@@ -104,13 +104,13 @@ This matches up with what we see in the graph of $f(x)$, shown below.
 
 > A calculator is required to answer this question.
 
-Evaluate $lim_(x → (-3)^{+})\frac{x^{2} + 4}{3x^{2} - 27}$.
+Evaluate $\displaystyle \lim_{x \to (-3)^{+}}\frac{x^{2} + 4}{3x^{2} - 27}$.
 
 - [ ] A. $-\frac{1}{9}$
 - [ ] B. $\frac{1}{3}$
 - [ ] C. DNE
-- [ ] D. $∞$
-- [ ] E. $- ∞$
+- [ ] D. $\infty$
+- [ ] E. $- \infty$
 
 ---
 
@@ -118,11 +118,11 @@ Evaluate $lim_(x → (-3)^{+})\frac{x^{2} + 4}{3x^{2} - 27}$.
 
 > A calculator is required to answer this question.
 
-Evaluate $lim_(x → 2^{+})\frac{x^{2} + 2x - 3}{10x - 20}$.
+Evaluate $\displaystyle \lim_{x \to 2^{+}}\frac{x^{2} + 2x - 3}{10x - 20}$.
 
-- [ ] A. $- ∞$
+- [ ] A. $- \infty$
 - [ ] B. DNE
-- [ ] C. $+ ∞$
+- [ ] C. $+ \infty$
 - [ ] D. $0$
 - [ ] E. $-\frac{1}{2}$
 
@@ -131,7 +131,7 @@ Evaluate $lim_(x → 2^{+})\frac{x^{2} + 2x - 3}{10x - 20}$.
 <a id="evaluating-the-left-sided-limit-of-a-rational-function-at-a-vertical-asymptote"></a>
 ## Evaluating the Left-Sided Limit of a Rational Function at a Vertical Asymptote
 
-**Example:** Calculate $\lim\limits_{x \to 1^-} \dfrac{1}{x^2+x - 2}$.
+**Example:** Calculate $\displaystyle \lim\limits_{x \to 1^-} \dfrac{1}{x^2+x - 2}$.
 
 **Explanation**
 
@@ -141,8 +141,8 @@ $$
 \begin{aligned}
 f(x) &= \frac{1}{x^{2} + x - 2} \\
 &= \frac{1}{x^{2} + 2x - x - 2} \\
-&= (1)/(x(x + 2) - (x + 2)) \\
-&= (1)/((x - 1)(x + 2))
+&= \frac{1}{x(x + 2) - (x + 2)} \\
+&= \frac{1}{(x - 1)(x + 2)}
 \end{aligned}
 $$
 
@@ -172,10 +172,10 @@ This matches up with what we see in the graph of $f(x)$, shown below.
 
 > A calculator is required to answer this question.
 
-Calculate $lim_(x → (-1)^{-})\frac{x}{2x^{2} - 2}$.
+Calculate $\displaystyle \lim_{x \to (-1)^{-}}\frac{x}{2x^{2} - 2}$.
 
-- [ ] A. $- ∞$
-- [ ] B. $+ ∞$
+- [ ] A. $- \infty$
+- [ ] B. $+ \infty$
 - [ ] C. DNE
 - [ ] D. $0$
 - [ ] E. $-\frac{1}{4}$
@@ -186,13 +186,13 @@ Calculate $lim_(x → (-1)^{-})\frac{x}{2x^{2} - 2}$.
 
 > A calculator is required to answer this question.
 
-Calculate $lim_(x → 4^{-})(- (1)/(x(x - 4)))$.
+Calculate $\displaystyle \lim_{x \to 4^{-}}(- \frac{1}{x(x - 4)})$.
 
-- [ ] A. $+ ∞$
+- [ ] A. $+ \infty$
 - [ ] B. DNE
 - [ ] C. $\frac{1}{4}$
 - [ ] D. $0$
-- [ ] E. $- ∞$
+- [ ] E. $- \infty$
 
 ---
 
@@ -201,9 +201,9 @@ Calculate $lim_(x → 4^{-})(- (1)/(x(x - 4)))$.
 
 **Example:** Given that $f(x) = \dfrac{x}{(x-1)^2}$, which of the following statements is correct?
 
-1. $\lim\limits_{x \to 1^-}f(x)= -\infty$
-2. $\lim\limits_{x \to 1^+} f(x)= +\infty$
-3. $\lim\limits_{x \to 1} f(x)= +\infty$
+1. $\displaystyle \lim\limits_{x \to 1^-}f(x)= -\infty$
+2. $\displaystyle \lim\limits_{x \to 1^+} f(x)= +\infty$
+3. $\displaystyle \lim\limits_{x \to 1} f(x)= +\infty$
 
 **Explanation**
 
@@ -247,11 +247,11 @@ In conclusion, only statements II and III are true. A plot of the function is sh
 
 > A calculator is required to answer this question.
 
-Given that $f(x) = (2x)/((x - 2)^{2})$, which of the following statements is correct?
+Given that $f(x) = \frac{2x}{(x - 2)^{2}}$, which of the following statements is correct?
 
-1. $lim_(x → 2^{-})f(x) = + ∞$
-2. $lim_(x → 2)f(x) = + ∞$
-3. $lim_(x → 2^{+})f(x) = - ∞$
+1. $\displaystyle \lim_{x \to 2^{-}}f(x) = + \infty$
+2. $\displaystyle \lim_{x \to 2}f(x) = + \infty$
+3. $\displaystyle \lim_{x \to 2^{+}}f(x) = - \infty$
 
 - [ ] A. I only
 - [ ] B. II only
@@ -265,11 +265,11 @@ Given that $f(x) = (2x)/((x - 2)^{2})$, which of the following statements is cor
 
 > A calculator is required to answer this question.
 
-Given that $f(x) = (x^{2})/((x - 1)^{3})$, which of the following statements is correct?
+Given that $f(x) = \frac{x^{2}}{(x - 1)^{3}}$, which of the following statements is correct?
 
-1. $lim_(x → 1^{-})f(x) = + ∞$
-2. $lim_(x → 1)f(x) = + ∞$
-3. $lim_(x → 1^{+})f(x) = + ∞$
+1. $\displaystyle \lim_{x \to 1^{-}}f(x) = + \infty$
+2. $\displaystyle \lim_{x \to 1}f(x) = + \infty$
+3. $\displaystyle \lim_{x \to 1^{+}}f(x) = + \infty$
 
 - [ ] A. I only
 - [ ] B. II and III only
@@ -284,9 +284,9 @@ Given that $f(x) = (x^{2})/((x - 1)^{3})$, which of the following statements is 
 
 **Example:** Given that $f(x) = \dfrac{2-x}{x^2-4}$, which of the following statements is correct?
 
-1. $\lim\limits_{x \to (-2)^+}f(x)= -\infty$
-2. $\lim\limits_{x \to 2^+}f(x)= -\infty$
-3. $\lim\limits_{x \to 2^-}f(x)= \infty$
+1. $\displaystyle \lim\limits_{x \to (-2)^+}f(x)= -\infty$
+2. $\displaystyle \lim\limits_{x \to 2^+}f(x)= -\infty$
+3. $\displaystyle \lim\limits_{x \to 2^-}f(x)= \infty$
 
 **Explanation**
 
@@ -295,7 +295,7 @@ First, let's factor the numerator and denominator, as follows:
 $$
 \begin{aligned}
 f(x) &= \frac{2 - x}{x^{2} - 4} \\
-&= - ((x - 2))/((x - 2)(x + 2))
+&= - \frac{(x - 2)}{(x - 2)(x + 2)}
 \end{aligned}
 $$
 
@@ -313,7 +313,7 @@ $$
 
 Now we see that the function has only one vertical asymptote, $x=-2$. So statements II and III are false.
 
-To find $\lim\limits_{x \to (-2)^+}f(x)$, we evaluate $f(x)$ at $x$-values very close to $x=-2$ from the right.
+To find $\displaystyle \lim\limits_{x \to (-2)^+}f(x)$, we evaluate $f(x)$ at $x$-values very close to $x=-2$ from the right.
 
 | $x$ | $-1.9$ | $-1.99$ | $-1.999$ |
 | --- | ---: | ---: | ---: |
@@ -339,9 +339,9 @@ In conclusion, only statement I is correct. A plot of the function is shown belo
 
 Given that $f(x) = \frac{x + 3}{x^{2} - 9}$, which of the following statements is correct?
 
-1. $lim_(x → (-3)^{-})f(x) = - ∞$
-2. $lim_(x → (-3)^{+})f(x) = + ∞$
-3. $lim_(x → 3^{+})f(x) = ∞$
+1. $\displaystyle \lim_{x \to (-3)^{-}}f(x) = - \infty$
+2. $\displaystyle \lim_{x \to (-3)^{+}}f(x) = + \infty$
+3. $\displaystyle \lim_{x \to 3^{+}}f(x) = \infty$
 
 - [ ] A. I only
 - [ ] B. II only
@@ -357,9 +357,9 @@ Given that $f(x) = \frac{x + 3}{x^{2} - 9}$, which of the following statements i
 
 Given that $f(x) = \frac{2x + 2}{x^{2} - 1}$, which of the following statements is correct?
 
-1. $lim_(x → 1^{-})f(x) = - ∞$
-2. $lim_(x → (-1)^{+})f(x) = + ∞$
-3. $lim_(x → (-1)^{-})f(x) = - ∞$
+1. $\displaystyle \lim_{x \to 1^{-}}f(x) = - \infty$
+2. $\displaystyle \lim_{x \to (-1)^{+}}f(x) = + \infty$
+3. $\displaystyle \lim_{x \to (-1)^{-}}f(x) = - \infty$
 
 - [ ] A. II and III only
 - [ ] B. II only

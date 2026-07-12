@@ -53,11 +53,11 @@ To compute this improper integral, we start by integrating as usual:
 
 $$
 \begin{aligned}
-lim_(a → ∞)∫_{2}^{a}\frac{1}{x^{2}}dx &= lim_(a → ∞)∫_{2}^{a}x^{-2}dx \\
-&= lim_(a → ∞)[\frac{x^{-1}}{-1}]_{2}^{a} \\
-&= lim_(a → ∞)[- \frac{1}{x}]_{2}^{a} \\
-&= lim_(a → ∞)([- \frac{1}{a}] - [- \frac{1}{2}]) \\
-&= lim_(a → ∞)(\frac{1}{2} - \frac{1}{a})
+\lim_{a \to \infty}\int_{2}^{a}\frac{1}{x^{2}}dx &= \lim_{a \to \infty}\int_{2}^{a}x^{-2}dx \\
+&= \lim_{a \to \infty}[\frac{x^{-1}}{-1}]_{2}^{a} \\
+&= \lim_{a \to \infty}[- \frac{1}{x}]_{2}^{a} \\
+&= \lim_{a \to \infty}([- \frac{1}{a}] - [- \frac{1}{2}]) \\
+&= \lim_{a \to \infty}(\frac{1}{2} - \frac{1}{a})
 \end{aligned}
 $$
 
@@ -65,7 +65,7 @@ Now, we take the limits as $a\to \infty{:}$
 
 $$
 \begin{aligned}
-lim_(a → ∞)(\frac{1}{2} - \frac{1}{a}) &= \frac{1}{2} - 0 \\
+\lim_{a \to \infty}(\frac{1}{2} - \frac{1}{a}) &= \frac{1}{2} - 0 \\
 &= \frac{1}{2}
 \end{aligned}
 $$
@@ -89,11 +89,11 @@ We proceed by setting the upper bound equal to some parameter $a$, integrating a
 
 $$
 \begin{aligned}
-∫_{2}^{∞}\frac{8}{t^{5}}dt &= lim_(a → ∞)∫_{2}^{a}\frac{8}{t^{5}}dt \\
-&= 8lim_(a → ∞)∫_{2}^{a}t^{-5}dt \\
-&= 8lim_(a → ∞)[- \frac{1}{4}t^{-4}]_{2}^{a} \\
-&=-2 \cdot lim_(a → ∞)[\frac{1}{t^{4}}]_{2}^{a} \\
-&=-2 \cdot lim_(a → ∞)(\frac{1}{a^{4}} - \frac{1}{2^{4}}) \\
+\int_{2}^{\infty}\frac{8}{t^{5}}dt &= \lim_{a \to \infty}\int_{2}^{a}\frac{8}{t^{5}}dt \\
+&= 8\lim_{a \to \infty}\int_{2}^{a}t^{-5}dt \\
+&= 8\lim_{a \to \infty}[- \frac{1}{4}t^{-4}]_{2}^{a} \\
+&=-2 \cdot \lim_{a \to \infty}[\frac{1}{t^{4}}]_{2}^{a} \\
+&=-2 \cdot \lim_{a \to \infty}(\frac{1}{a^{4}} - \frac{1}{2^{4}}) \\
 &=-2(0 - \frac{1}{16}) \\
 &= \frac{1}{8}
 \end{aligned}
@@ -107,7 +107,7 @@ $$
 type: radio
 id: q-1
 content: |-
-  What is $∫_{1}^{∞}\frac{3}{θ^{3}}dθ$?
+  What is $\displaystyle \int_{1}^{\infty}\frac{3}{θ^{3}}dθ$?
 options:
 - id: a
   content: |-
@@ -135,7 +135,7 @@ options:
 type: radio
 id: q-2
 content: |-
-  What is $∫_{1}^{∞}\frac{2}{\sqrt{x^{9}}}dx$?
+  What is $\displaystyle \int_{1}^{\infty}\frac{2}{\sqrt{x^{9}}}dx$?
 options:
 - id: a
   content: |-
@@ -198,12 +198,12 @@ Finally, we proceed by setting the upper bound equal to some parameter $a$, inte
 
 $$
 \begin{aligned}
-∫_{0}^{∞}(1)/((x + 1)^{2})dx &= ∫_{1}^{∞}\frac{1}{u^{2}}du \\
-&= ∫_{1}^{∞}u^{-2}du \\
-&= lim_(a → ∞)∫_{1}^{a}u^{-2}du \\
-&= lim_(a → ∞)[- u^{-1}]_{1}^{a} \\
-&=-lim_(a → ∞)[\frac{1}{u}]_{1}^{a} \\
-&=-1 \cdot lim_(a → ∞)[\frac{1}{a} - \frac{1}{1}] \\
+\int_{0}^{\infty}\frac{1}{(x + 1)^{2}}dx &= \int_{1}^{\infty}\frac{1}{u^{2}}du \\
+&= \int_{1}^{\infty}u^{-2}du \\
+&= \lim_{a \to \infty}\int_{1}^{a}u^{-2}du \\
+&= \lim_{a \to \infty}[- u^{-1}]_{1}^{a} \\
+&=-\lim_{a \to \infty}[\frac{1}{u}]_{1}^{a} \\
+&=-1 \cdot \lim_{a \to \infty}[\frac{1}{a} - \frac{1}{1}] \\
 &=-1 \cdot (0 - 1) \\
 &= 1
 \end{aligned}
@@ -217,7 +217,7 @@ $$
 type: radio
 id: q-3
 content: |-
-  Evaluate $∫_{0}^{∞}(1)/(\sqrt{(x + 4)^{5}})dx$.
+  Evaluate $\displaystyle \int_{0}^{\infty}\frac{1}{\sqrt{(x + 4)^{5}}}dx$.
 options:
 - id: a
   content: |-
@@ -245,7 +245,7 @@ options:
 type: radio
 id: q-4
 content: |-
-  Evaluate the integral $∫_{0}^{∞}(x)/((1 + x^{2})^{2})dx$.
+  Evaluate the integral $\displaystyle \int_{0}^{\infty}\frac{x}{(1 + x^{2})^{2}}dx$.
 options:
 - id: a
   content: |-
@@ -298,13 +298,13 @@ Finally, we proceed by setting the lower bound equal to some parameter $a$, inte
 
 $$
 \begin{aligned}
-∫_{- ∞}^{0}(1)/((x - 4)^{2})dx &= ∫_{- ∞}^{-4}\frac{1}{u^{2}}du \\
-&= ∫_{- ∞}^{-4}u^{-2}du \\
-&= lim_(a → - ∞)∫_{a}^{-4}u^{-2}du \\
-&= lim_(a → - ∞)[- u^{-1}]_{a}^{-4} \\
-&=-1 \cdot lim_(a → - ∞)[\frac{1}{u}]_{a}^{-4} \\
-&=-1 \cdot lim_(a → - ∞)[(1)/((-4)) - \frac{1}{a}] \\
-&=-1 \cdot lim_(a → - ∞)(-\frac{1}{4} - \frac{1}{a}) \\
+\int_{- \infty}^{0}\frac{1}{(x - 4)^{2}}dx &= \int_{- \infty}^{-4}\frac{1}{u^{2}}du \\
+&= \int_{- \infty}^{-4}u^{-2}du \\
+&= \lim_{a \to - \infty}\int_{a}^{-4}u^{-2}du \\
+&= \lim_{a \to - \infty}[- u^{-1}]_{a}^{-4} \\
+&=-1 \cdot \lim_{a \to - \infty}[\frac{1}{u}]_{a}^{-4} \\
+&=-1 \cdot \lim_{a \to - \infty}[\frac{1}{(-4)} - \frac{1}{a}] \\
+&=-1 \cdot \lim_{a \to - \infty}(-\frac{1}{4} - \frac{1}{a}) \\
 &=-1 \cdot (-\frac{1}{4} - 0) \\
 &= \frac{1}{4}
 \end{aligned}
@@ -318,7 +318,7 @@ $$
 type: radio
 id: q-5
 content: |-
-  What is $∫_{- ∞}^{-1}\frac{1}{x^{3}}dx$?
+  What is $\displaystyle \int_{- \infty}^{-1}\frac{1}{x^{3}}dx$?
 options:
 - id: a
   content: |-
@@ -346,7 +346,7 @@ options:
 type: radio
 id: q-6
 content: |-
-  Evaluate $∫_{- ∞}^{-1}(1)/((7x + 3)^{3})dx$.
+  Evaluate $\displaystyle \int_{- \infty}^{-1}\frac{1}{(7x + 3)^{3}}dx$.
 options:
 - id: a
   content: |-
@@ -374,7 +374,7 @@ options:
 type: radio
 id: q-7
 content: |-
-  Evaluate $∫_{- ∞}^{-1}(3x^{2})/((x^{3} - 1)^{4})dx$.
+  Evaluate $\displaystyle \int_{- \infty}^{-1}\frac{3x^{2}}{(x^{3} - 1)^{4}}dx$.
 options:
 - id: a
   content: |-
@@ -416,12 +416,12 @@ We can attempt to work out $I$ by integrating over $x\in[1,a]$ as usual and taki
 
 $$
 \begin{aligned}
-∫_{1}^{∞}\frac{1}{x}dx &= lim_(a → ∞)∫_{1}^{a}\frac{1}{x}dx \\
-&= lim_(a → ∞)[\ln \mid x \mid ]_{1}^{a} \\
-&= lim_(a → ∞)([\ln a] - [\ln 1]) \\
-&= lim_(a → ∞)([\ln a] - [0]) \\
-&= lim_(a → ∞)(\ln a) \\
-&= ∞
+\int_{1}^{\infty}\frac{1}{x}dx &= \lim_{a \to \infty}\int_{1}^{a}\frac{1}{x}dx \\
+&= \lim_{a \to \infty}[\ln \mid x \mid ]_{1}^{a} \\
+&= \lim_{a \to \infty}([\ln a] - [\ln 1]) \\
+&= \lim_{a \to \infty}([\ln a] - [0]) \\
+&= \lim_{a \to \infty}(\ln a) \\
+&= \infty
 \end{aligned}
 $$
 
@@ -443,13 +443,13 @@ The limit of $I$ as $a\rightarrow \infty$ is infinite. Therefore, the integral $
 Let's work out each integral.
 
 - For the first integral, we have
-$∫_{1}^{∞}\frac{1}{\sqrt{x}}dx|= lim_(b → ∞)∫_{1}^{b}\frac{1}{\sqrt{x}}dx; = lim_(b → ∞)∫_{1}^{b}x^{-1/2}dx; = lim_(b → ∞)[2x^{1/2}]_{1}^{b}; = 2lim_(b → ∞)[\sqrt{x}]_{1}^{b}; = 2lim_(b → ∞)[\sqrt{b} - 1]; = ∞$,
+$\displaystyle \int_{1}^{\infty}\frac{1}{\sqrt{x}}dx= \lim_{b \to \infty}\int_{1}^{b}\frac{1}{\sqrt{x}}dx = \lim_{b \to \infty}\int_{1}^{b}x^{-1/2}dx = \lim_{b \to \infty}[2x^{1/2}]_{1}^{b} = 2\lim_{b \to \infty}[\sqrt{x}]_{1}^{b} = 2\lim_{b \to \infty}[\sqrt{b} - 1] = \infty$,
 so the integral diverges.
 - For the second integral, we have
-$∫_{- ∞}^{-2}(1)/((1 + x)^{2})dx|= lim_(a → - ∞)∫_{a}^{-2}(1)/((1 + x)^{2})dx; = lim_(a → - ∞)[- \frac{1}{1 + x}]_{a}^{-2}; = lim_(a → - ∞)[- \frac{1}{1 - 2} + \frac{1}{1 + a}]; = lim_(a → - ∞)[\frac{1}{1 + a} + 1]; = 1$,
+$\displaystyle \int_{- \infty}^{-2}\frac{1}{(1 + x)^{2}}dx= \lim_{a \to - \infty}\int_{a}^{-2}\frac{1}{(1 + x)^{2}}dx = \lim_{a \to - \infty}[- \frac{1}{1 + x}]_{a}^{-2} = \lim_{a \to - \infty}[- \frac{1}{1 - 2} + \frac{1}{1 + a}] = \lim_{a \to - \infty}[\frac{1}{1 + a} + 1] = 1$,
 so the integral is convergent (not divergent).
 - For the third integral, we have
-$∫_{1}^{∞}\frac{1}{x^{3}}dx|= lim_(b → ∞)∫_{1}^{b}\frac{1}{x^{3}}dx; = lim_(b → ∞)∫_{1}^{b}x^{-3}dx; = lim_(b → ∞)[- \frac{1}{2x^{2}}]_{1}^{b}; = lim_(b → ∞)[- \frac{1}{2b^{2}} + (1)/(2(1^{2}))]; = lim_(b → ∞)[\frac{1}{2} - \frac{1}{2b^{2}}]; = \frac{1}{2} - 0; = \frac{1}{2}$,
+$\displaystyle \int_{1}^{\infty}\frac{1}{x^{3}}dx= \lim_{b \to \infty}\int_{1}^{b}\frac{1}{x^{3}}dx = \lim_{b \to \infty}\int_{1}^{b}x^{-3}dx = \lim_{b \to \infty}[- \frac{1}{2x^{2}}]_{1}^{b} = \lim_{b \to \infty}[- \frac{1}{2b^{2}} + \frac{1}{2(1^{2})}] = \lim_{b \to \infty}[\frac{1}{2} - \frac{1}{2b^{2}}] = \frac{1}{2} - 0 = \frac{1}{2}$,
 so the integral is convergent (not divergent).
 
 In conclusion, only integral I is divergent.
@@ -462,7 +462,7 @@ In conclusion, only integral I is divergent.
 type: radio
 id: q-8
 content: |-
-  What is $∫_{0}^{∞}\frac{1}{2x + 1}dx$?
+  What is $\displaystyle \int_{0}^{\infty}\frac{1}{2x + 1}dx$?
 options:
 - id: a
   content: |-
@@ -476,7 +476,7 @@ options:
     $\frac{1}{2}$
 - id: d
   content: |-
-    $(1)/(\ln (2))$
+    $\frac{1}{\ln (2)}$
 - id: e
   content: |-
     $2\ln (2)$
@@ -492,9 +492,9 @@ id: q-9
 content: |-
   Which of the following improper integrals are divergent?
   
-  1. $∫_{10}^{∞}\frac{1}{\sqrt{x - 1}}dx$
-  2. $∫_{- ∞}^{-1}\frac{1}{x}dx$
-  3. $∫_{1}^{∞}\frac{1}{x^{2}}dx$
+  1. $\displaystyle \int_{10}^{\infty}\frac{1}{\sqrt{x - 1}}dx$
+  2. $\displaystyle \int_{- \infty}^{-1}\frac{1}{x}dx$
+  3. $\displaystyle \int_{1}^{\infty}\frac{1}{x^{2}}dx$
 options:
 - id: a
   content: |-

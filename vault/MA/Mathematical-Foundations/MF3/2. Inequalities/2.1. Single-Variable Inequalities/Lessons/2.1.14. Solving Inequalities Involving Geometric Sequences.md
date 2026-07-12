@@ -47,7 +47,7 @@ $$
 We want the $n$th term to be greater than $3\,000\,000$. So, we can set up and solve the corresponding inequality:
 
 $$
-\begin{bmatrix}a_{n} & > 3000000 \\ 3 \cdot 2^{n - 1} & > 3000000 \\ 2^{n - 1} & > 1000000 \\ \log (2^{n - 1}) & > \log (1000000) \\ (n - 1)\log (2) & > \log (1000000) \\ n - 1 & > (\log (1000000))/(\log (2)) \\ n & > (\log (1000000))/(\log (2)) + 1\end{bmatrix}
+\begin{bmatrix}a_{n} & > 3000000 \\ 3 \cdot 2^{n - 1} & > 3000000 \\ 2^{n - 1} & > 1000000 \\ \log (2^{n - 1}) & > \log (1000000) \\ (n - 1)\log (2) & > \log (1000000) \\ n - 1 & > \frac{\log (1000000)}{\log (2)} \\ n & > \frac{\log (1000000)}{\log (2)} + 1\end{bmatrix}
 $$
 
 Estimating the right-hand side using a calculator, we get
@@ -107,7 +107,7 @@ $$
 We want the $n$th term to be greater than $2\,000\,000$. So, we set up and solve the corresponding inequality:
 
 $$
-\begin{bmatrix}2 \cdot 8^{n - 3} & > 2000000 \\ 8^{n - 3} & > 1000000 \\ \log (8^{n - 3}) & > \log (1000000) \\ (n - 3)\log (8) & > \log (1000000) \\ n - 3 & > (\log (1000000))/(\log (8)) \\ n & > (\log (1000000))/(\log (8)) + 3\end{bmatrix}
+\begin{bmatrix}2 \cdot 8^{n - 3} & > 2000000 \\ 8^{n - 3} & > 1000000 \\ \log (8^{n - 3}) & > \log (1000000) \\ (n - 3)\log (8) & > \log (1000000) \\ n - 3 & > \frac{\log (1000000)}{\log (8)} \\ n & > \frac{\log (1000000)}{\log (8)} + 3\end{bmatrix}
 $$
 
 Estimating the right-hand side using a calculator, we get
@@ -238,7 +238,7 @@ $$
 We want the $n$th term to be less than $0.000\,000\,1$. So, we set up and solve the corresponding inequality:
 
 $$
-\begin{bmatrix}2^{5 - n} & < 0.0000001 \\ \log (2^{5 - n}) & < \log (0.0000001) \\ 5 - n & < (\log (0.0000001))/(\log (2)) \\ -n & < (\log (0.0000001))/(\log (2)) - 5 \\ n & > 5 - (\log (0.0000001))/(\log (2))\end{bmatrix}
+\begin{bmatrix}2^{5 - n} & < 0.0000001 \\ \log (2^{5 - n}) & < \log (0.0000001) \\ 5 - n & < \frac{\log (0.0000001)}{\log (2)} \\ -n & < \frac{\log (0.0000001)}{\log (2)} - 5 \\ n & > 5 - \frac{\log (0.0000001)}{\log (2)}\end{bmatrix}
 $$
 
 Estimating the right-hand side using a calculator, we get
@@ -337,7 +337,7 @@ $$
 We want the $n$th term to be greater than $1\,000$. So, we set up and solve the corresponding inequality:
 
 $$
-\begin{bmatrix}2 \cdot 3^{n - 1} & > 1000 \\ 3^{n - 1} & > 500 \\ \log (3)^{n - 1} & > \log (500) \\ (n - 1)\log (3) & > \log (500) \\ n - 1 & > (\log (500))/(\log (3)) \\ n & > (\log (500))/(\log (3)) + 1\end{bmatrix}
+\begin{bmatrix}2 \cdot 3^{n - 1} & > 1000 \\ 3^{n - 1} & > 500 \\ \log (3)^{n - 1} & > \log (500) \\ (n - 1)\log (3) & > \log (500) \\ n - 1 & > \frac{\log (500)}{\log (3)} \\ n & > \frac{\log (500)}{\log (3)} + 1\end{bmatrix}
 $$
 
 Estimating the right-hand side using a calculator, we get

@@ -43,7 +43,7 @@ Since we know where the function is increasing or decreasing, we can determine w
 The information about $f'(x)$ can be summarized in the following table:
 
 $$
-\begin{bmatrix}x & (- ∞, 2) & 2 & (2, 4) & 4 & (4, + ∞) \\ f & ↗ & max & ↘ & min & ↗ \\ f^{′} & + & 0 & - & 0 & +\end{bmatrix}
+\begin{bmatrix}x & (- \infty, 2) & 2 & (2, 4) & 4 & (4, + \infty) \\ f & ↗ & max & ↘ & min & ↗ \\ f^{′} & + & 0 & - & 0 & +\end{bmatrix}
 $$
 
 In other words,
@@ -70,7 +70,7 @@ We have $f'(x)=0$ at the critical points $A$ and $B$. Note the following:
 The information about $f'(x)$ can be summarized in the following table:
 
 $$
-\begin{bmatrix}x & (- ∞, 1) & 1 & (1, 4) & 4 & (4, + ∞) \\ f & ↘ & min & ↗ & max & ↘ \\ f^{′} & - & 0 & + & 0 & -\end{bmatrix}
+\begin{bmatrix}x & (- \infty, 1) & 1 & (1, 4) & 4 & (4, + \infty) \\ f & ↘ & min & ↗ & max & ↘ \\ f^{′} & - & 0 & + & 0 & -\end{bmatrix}
 $$
 
 Therefore, $f'(x)>0$ on the interval $(1,4)$.
@@ -89,17 +89,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $(2, ∞)$ only
+    $(2, \infty)$ only
 - id: b
   correct: true
   content: |-
     $(0, 2)$
 - id: c
   content: |-
-    $(- ∞, 0)$ and $(2, ∞)$ only
+    $(- \infty, 0)$ and $(2, \infty)$ only
 - id: d
   content: |-
-    $(- ∞, 0)$ only
+    $(- \infty, 0)$ only
 - id: e
   content: |-
     No interval exists where $f^{′}(x) < 0$
@@ -120,13 +120,13 @@ options:
 - id: a
   correct: true
   content: |-
-    $(- ∞, 0)$ and $(2, ∞)$
+    $(- \infty, 0)$ and $(2, \infty)$
 - id: b
   content: |-
-    $(- ∞, 0)$
+    $(- \infty, 0)$
 - id: c
   content: |-
-    $(2, ∞)$
+    $(2, \infty)$
 - id: d
   content: |-
     No interval exists where $f^{′}(x) > 0$.
@@ -222,20 +222,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $x ∈ (- ∞,-1)$
+    $x ∈ (- \infty,-1)$
 - id: b
   content: |-
     $x ∈ (-3, 3)$
 - id: c
   content: |-
-    $x ∈ (- ∞,-1)∪(1, ∞)$
+    $x ∈ (- \infty,-1)∪(1, \infty)$
 - id: d
   correct: true
   content: |-
     $x ∈ (-1, 1)$
 - id: e
   content: |-
-    $x ∈ (1, ∞)$
+    $x ∈ (1, \infty)$
 ```
 
 ---
@@ -283,7 +283,7 @@ Differentiating $f(x)$ using the quotient rule, we get
 
 $$
 \begin{aligned}
-f^{′}(x) &= ((\frac{1}{x}) \cdot x - \ln (2x) \cdot 1)/(x^{2}) \\
+f^{′}(x) &= \frac{(\frac{1}{x}) \cdot x - \ln (2x) \cdot 1}{x^{2}} \\
 &= \frac{1 - \ln 2x}{x^{2}}
 \end{aligned}
 $$
@@ -311,7 +311,7 @@ From the graph, we see that this critical point is a maximum. We also see that t
 We summarize this information in the following table:
 
 $$
-\begin{bmatrix}x & (0, \frac{1}{2}e) & \frac{1}{2}e & (\frac{1}{2}e, ∞) \\ f & ↗ & max & ↘ \\ f^{′} & + & 0 & -\end{bmatrix}
+\begin{bmatrix}x & (0, \frac{1}{2}e) & \frac{1}{2}e & (\frac{1}{2}e, \infty) \\ f & ↗ & max & ↘ \\ f^{′} & + & 0 & -\end{bmatrix}
 $$
 
 Finally, we conclude that the function is strictly increasing on the interval
@@ -366,20 +366,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $x ∈ (- ∞, \frac{3}{4})$
+    $x ∈ (- \infty, \frac{3}{4})$
 - id: b
   content: |-
-    $x ∈ (- ∞, \frac{4}{3})$
+    $x ∈ (- \infty, \frac{4}{3})$
 - id: c
   content: |-
-    $x ∈ (-\frac{3}{4}, ∞)$
+    $x ∈ (-\frac{3}{4}, \infty)$
 - id: d
   content: |-
-    $x ∈ (\frac{4}{3}, ∞)$
+    $x ∈ (\frac{4}{3}, \infty)$
 - id: e
   correct: true
   content: |-
-    $x ∈ (\frac{3}{4}, ∞)$
+    $x ∈ (\frac{3}{4}, \infty)$
 ```
 
 ---

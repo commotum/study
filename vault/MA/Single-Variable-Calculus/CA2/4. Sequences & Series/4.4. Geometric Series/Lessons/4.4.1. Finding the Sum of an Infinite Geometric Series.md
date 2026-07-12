@@ -46,9 +46,9 @@ Indeed, we have $\mid r \mid <1$. Therefore, the sum is
 
 $$
 \begin{aligned}
-S_{∞} &= \frac{a_{1}}{1 - r} \\
-&= (3)/((1 - \frac{1}{3})) \\
-&= (3)/((\frac{2}{3})) \\
+S_{\infty} &= \frac{a_{1}}{1 - r} \\
+&= \frac{3}{(1 - \frac{1}{3})} \\
+&= \frac{3}{(\frac{2}{3})} \\
 &= 3(\frac{3}{2}) \\
 &= \frac{9}{2}
 \end{aligned}
@@ -87,9 +87,9 @@ So, using the formula, we find that the sum to infinity is
 
 $$
 \begin{aligned}
-S_{∞} &= \frac{a_{1}}{1 - r} \\
-&= (1)/(1 - (-\frac{1}{4})) \\
-&= (1)/((\frac{5}{4})) \\
+S_{\infty} &= \frac{a_{1}}{1 - r} \\
+&= \frac{1}{1 - (-\frac{1}{4})} \\
+&= \frac{1}{(\frac{5}{4})} \\
 &= \frac{4}{5}
 \end{aligned}
 $$
@@ -177,7 +177,7 @@ So, using the formula, we find that the sum to infinity is
 
 $$
 \begin{aligned}
-S_{∞} &= \frac{a_{1}}{1 - r} \\
+S_{\infty} &= \frac{a_{1}}{1 - r} \\
 &= \frac{0.25}{1 - 0.5} \\
 &= \frac{0.25}{0.5} \\
 &= 0.5
@@ -277,7 +277,7 @@ Substituting the known information into the above gives:
 
 $$
 \begin{aligned}
-r^{4 - 1} &= ((\frac{1}{16}))/(4) \\
+r^{4 - 1} &= \frac{(\frac{1}{16})}{4} \\
 r^{3} &= \frac{1}{64} \\
 r^{3} &= (\frac{1}{4})^{3} \\
 r &= \frac{1}{4}
@@ -288,9 +288,9 @@ So, using the formula, we find that the sum to infinity is
 
 $$
 \begin{aligned}
-S_{∞} &= \frac{a_{1}}{1 - r} \\
-&= (4)/((1 - \frac{1}{4})) \\
-&= (4)/((\frac{3}{4})) \\
+S_{\infty} &= \frac{a_{1}}{1 - r} \\
+&= \frac{4}{(1 - \frac{1}{4})} \\
+&= \frac{4}{(\frac{3}{4})} \\
 &= 4(\frac{4}{3}) \\
 &= \frac{16}{3}
 \end{aligned}
@@ -376,7 +376,7 @@ $$
 Notice that if $\mid r \mid < 1$ then $r^n\to 0$ as $n\to\infty$. Therefore, as $n\to\infty$, we have:
 
 $$
-S_{n} \mid → a_{1} \cdot \frac{1 - 0}{1 - r}; = a_{1} \cdot \frac{1}{1 - r}; = \frac{a_{1}}{1 - r}; = S_{∞}
+S_{n} \mid \to a_{1} \cdot \frac{1 - 0}{1 - r} = a_{1} \cdot \frac{1}{1 - r} = \frac{a_{1}}{1 - r} = S_{\infty}
 $$
 
 ```update-progress

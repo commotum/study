@@ -43,7 +43,7 @@ the upper and lower limits of integration are the same. If we evaluate the integ
 $$
 \begin{aligned}
 ∫_{3}^{3}xdx &= \frac{x^{2}}{2} \mid _{3}^{3} \\
-&= ((3)^{2})/(2) - ((3)^{2})/(2) \\
+&= \frac{3^2}{2}-\frac{3^2}{2} \\
 &= 0
 \end{aligned}
 $$

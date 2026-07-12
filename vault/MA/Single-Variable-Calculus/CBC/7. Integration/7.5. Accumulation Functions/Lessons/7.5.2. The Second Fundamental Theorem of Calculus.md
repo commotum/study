@@ -290,10 +290,10 @@ options:
     $\frac{\ln x}{\ln x - 1}$
 - id: c
   content: |-
-    $(1)/(x(\ln x - 1))$
+    $\frac{1}{x(\ln x-1)}$
 - id: d
   content: |-
-    $(\ln x)/(x(\ln x - 1))$
+    $\frac{\ln x}{x(\ln x-1)}$
   correct: true
 - id: e
   content: |-
@@ -318,14 +318,14 @@ options:
     $\frac{1}{2 - x}$
 - id: c
   content: |-
-    $(1)/(2\sqrt{x}(2 - x))$
+    $\frac{1}{2\sqrt{x}(2-x)}$
   correct: true
 - id: d
   content: |-
     $\frac{1}{2 - \sqrt{x}}$
 - id: e
   content: |-
-    $(1)/(2\sqrt{x}(2 - \sqrt{x}))$
+    $\frac{1}{2\sqrt{x}(2-\sqrt{x})}$
 ```
 
 ---

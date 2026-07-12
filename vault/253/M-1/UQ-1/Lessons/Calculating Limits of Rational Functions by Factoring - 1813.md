@@ -33,7 +33,7 @@ If we try to evaluate the limit by directly substituting $x=0$, we get a confusi
 
 $$
 \begin{aligned}
-lim_(x → 0)\frac{x^{3} - 2x}{x^{2} + 4x} &= ((0)^{3} - 2(0))/((0)^{2} + 4(0)) = \frac{0}{0}
+\lim_{x \to 0}\frac{x^{3} - 2x}{x^{2} + 4x} &= \frac{(0)^{3} - 2(0)}{(0)^{2} + 4(0)} = \frac{0}{0}
 \end{aligned}
 $$
 
@@ -62,14 +62,14 @@ $$
 <a id="calculating-the-limit-of-a-rational-function-with-one-quadratic-term-by-factoring"></a>
 ## Calculating the Limit of a Rational Function With One Quadratic Term by Factoring
 
-**Example:** Evaluate $\lim_\limits{x\rightarrow -3}\dfrac{x^2-9}{x+3}$.
+**Example:** Evaluate $\displaystyle \lim_{x\rightarrow -3}\dfrac{x^2-9}{x+3}$.
 
 **Explanation**
 
 If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
-\begin{aligned} \lim_\limits{x\rightarrow -3}\dfrac{x^2-9}{x+3} = \dfrac{(-3)^2-9}{(-3)+3} = \dfrac{0}{0} \end{aligned}
+\begin{aligned} \lim_{x\rightarrow -3}\dfrac{x^2-9}{x+3} = \dfrac{(-3)^2-9}{(-3)+3} = \dfrac{0}{0} \end{aligned}
 $$
 
 So, to find the limit, we have to factor the numerator and the denominator. We get
@@ -77,7 +77,7 @@ So, to find the limit, we have to factor the numerator and the denominator. We g
 $$
 \begin{aligned}
 \frac{x^{2} - 9}{x + 3} &= \frac{x^{2} - 3^{2}}{x + 3} \\
-&= ((x + 3)(x - 3))/(x + 3) \\
+&= \frac{(x + 3)(x - 3)}{x + 3} \\
 &= (x - 3)
 \end{aligned}
 $$
@@ -86,7 +86,7 @@ Therefore,
 
 $$
 \begin{aligned}
-lim_(x → - 3)\frac{x^{2} - 9}{x + 3} &= lim_(x → - 3)(x - 3) \\
+\lim_{x \to - 3}\frac{x^{2} - 9}{x + 3} &= \lim_{x \to - 3}(x - 3) \\
 &=-3 - 3 \\
 &=-6
 \end{aligned}
@@ -100,7 +100,7 @@ $$
 type: radio
 id: q-1
 content: |-
-  Evaluate $lim_(x → - 2)\frac{2x + 4}{x^{2} - 3x - 10}$.
+  Evaluate $\displaystyle \lim_{x \to - 2}\frac{2x + 4}{x^{2} - 3x - 10}$.
 options:
 - id: a
   content: |-
@@ -128,7 +128,7 @@ options:
 type: radio
 id: q-2
 content: |-
-  Evaluate $lim_(x → 1) - \frac{x^{2} - 1}{x - 1}$.
+  Evaluate $\displaystyle \lim_{x \to 1} - \frac{x^{2} - 1}{x - 1}$.
 options:
 - id: a
   content: |-
@@ -153,21 +153,21 @@ options:
 <a id="calculating-the-limit-of-a-rational-function-with-two-quadratic-terms-by-factoring"></a>
 ## Calculating the Limit of a Rational Function With Two Quadratic Terms by Factoring
 
-**Example:** Evaluate $\lim_\limits{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30}$.
+**Example:** Evaluate $\displaystyle \lim_{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30}$.
 
 **Explanation**
 
 If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
-\begin{aligned} \lim_\limits{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30} = \dfrac{6^2-6\cdot 6}{6^2-6-30} = \dfrac{0}{0} \end{aligned}
+\begin{aligned} \lim_{x\rightarrow 6}\dfrac{x^2-6x}{x^2-x-30} = \dfrac{6^2-6\cdot 6}{6^2-6-30} = \dfrac{0}{0} \end{aligned}
 $$
 
 So, to find the limit, we have to factor the numerator and the denominator. We get
 
 $$
 \begin{aligned}
-\frac{x^{2} - 6x}{x^{2} - x - 30} &= (x(x - 6))/((x - 6)(x + 5)) = \frac{x}{x + 5}
+\frac{x^{2} - 6x}{x^{2} - x - 30} &= \frac{x(x - 6)}{(x - 6)(x + 5)} = \frac{x}{x + 5}
 \end{aligned}
 $$
 
@@ -175,7 +175,7 @@ Therefore,
 
 $$
 \begin{aligned}
-lim_(x → 6)\frac{x^{2} - 6x}{x^{2} - x - 30} &= lim_(x → 6)\frac{x}{x + 5} \\
+\lim_{x \to 6}\frac{x^{2} - 6x}{x^{2} - x - 30} &= \lim_{x \to 6}\frac{x}{x + 5} \\
 &= \frac{6}{6 + 5} \\
 &= \frac{6}{11}
 \end{aligned}
@@ -189,7 +189,7 @@ $$
 type: radio
 id: q-3
 content: |-
-  Evaluate $lim_(y → 2)\frac{3y^{2} - 12y + 12}{y^{2} - 4}$.
+  Evaluate $\displaystyle \lim_{y \to 2}\frac{3y^{2} - 12y + 12}{y^{2} - 4}$.
 options:
 - id: a
   content: |-
@@ -197,7 +197,7 @@ options:
   correct: true
 - id: b
   content: |-
-    $∞$
+    $\infty$
 - id: c
   content: |-
     $DNE$
@@ -217,7 +217,7 @@ options:
 type: radio
 id: q-4
 content: |-
-  Evaluate $lim_(x → 4)\frac{x^{2} - x - 12}{x^{2} - 16}$.
+  Evaluate $\displaystyle \lim_{x \to 4}\frac{x^{2} - x - 12}{x^{2} - 16}$.
 options:
 - id: a
   content: |-
@@ -227,7 +227,7 @@ options:
     $\frac{8}{7}$
 - id: c
   content: |-
-    $∞$
+    $\infty$
 - id: d
   content: |-
     Does not exist
@@ -242,22 +242,22 @@ options:
 <a id="calculating-the-limit-of-a-rational-function-with-higher-order-terms-by-factoring"></a>
 ## Calculating the Limit of a Rational Function With Higher Order Terms by Factoring
 
-**Example:** Evaluate $\lim_\limits{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1}$.
+**Example:** Evaluate $\displaystyle \lim_{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1}$.
 
 **Explanation**
 
 If we attempt to evaluate the limit, we get an indeterminate form:
 
 $$
-\begin{aligned} \lim_\limits{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1} = \dfrac{1^3-2(1)^2+1}{1-1} = \dfrac{0}{0} \end{aligned}
+\begin{aligned} \lim_{x\rightarrow 1}\dfrac{x^3-2x^2+x}{x-1} = \dfrac{1^3-2(1)^2+1}{1-1} = \dfrac{0}{0} \end{aligned}
 $$
 
 So, to find the limit, we have to factor the numerator and the denominator. We get
 
 $$
 \begin{aligned}
-\frac{x^{3} - 2x^{2} + x}{x - 1} &= (x(x^{2} - 2x + 1))/(x - 1) \\
-&= (x(x - 1)^{2})/(x - 1) \\
+\frac{x^{3} - 2x^{2} + x}{x - 1} &= \frac{x(x^{2} - 2x + 1)}{x - 1} \\
+&= \frac{x(x - 1)^{2}}{x - 1} \\
 &= x(x - 1)
 \end{aligned}
 $$
@@ -266,7 +266,7 @@ Therefore,
 
 $$
 \begin{aligned}
-lim_(x → 1)\frac{x^{3} - 2x^{2} + x}{x - 1} &= lim_(x → 1)x(x - 1) \\
+\lim_{x \to 1}\frac{x^{3} - 2x^{2} + x}{x - 1} &= \lim_{x \to 1}x(x - 1) \\
 &= 1(1 - 1) \\
 &= 0
 \end{aligned}
@@ -280,7 +280,7 @@ $$
 type: radio
 id: q-5
 content: |-
-  Evaluate $lim_(y → - 3)\frac{y^{3} + 6y^{2} + 9y}{2y^{2} - 2y - 24}$.
+  Evaluate $\displaystyle \lim_{y \to - 3}\frac{y^{3} + 6y^{2} + 9y}{2y^{2} - 2y - 24}$.
 options:
 - id: a
   content: |-
@@ -291,10 +291,10 @@ options:
   correct: true
 - id: c
   content: |-
-    $∞$
+    $\infty$
 - id: d
   content: |-
-    $- ∞$
+    $- \infty$
 - id: e
   content: |-
     $-\frac{3}{14}$
@@ -308,7 +308,7 @@ options:
 type: radio
 id: q-6
 content: |-
-  Evaluate $lim_(y → 0)\frac{y^{3} + 2y^{2}}{y^{2} + 3y}$.
+  Evaluate $\displaystyle \lim_{y \to 0}\frac{y^{3} + 2y^{2}}{y^{2} + 3y}$.
 options:
 - id: a
   content: |-
@@ -318,10 +318,10 @@ options:
     $2$
 - id: c
   content: |-
-    $∞$
+    $\infty$
 - id: d
   content: |-
-    $- ∞$
+    $- \infty$
 - id: e
   content: |-
     $0$

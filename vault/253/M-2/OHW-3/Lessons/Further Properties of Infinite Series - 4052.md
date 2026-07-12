@@ -75,7 +75,7 @@ is convergent.
 type: radio
 id: q-1
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, which of the following is true regarding the series $∑_(n = 150)^(∞)a_{n}$?
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is convergent, which of the following is true regarding the series $\displaystyle \sum_{n=150}^{\infty}a_{n}$?
 options:
 - id: a
   correct: true
@@ -103,7 +103,7 @@ options:
 type: radio
 id: q-2
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, which of the following statements is true regarding the series $∑_(n = k)^(∞)a_{n}$, where $k$ is a positive integer?
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is convergent, which of the following statements is true regarding the series $\displaystyle \sum_{n=k}^{\infty}a_{n}$, where $k$ is a positive integer?
   
   1. It is convergent for all $10 < k < 100$
   2. It is divergent for $k \ge 100$
@@ -176,7 +176,7 @@ is also divergent.
 type: radio
 id: q-3
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, which of the following is true regarding the series $∑_(n = 200)^(∞)a_{n}$? Assume that $a_{n}$ is well-defined for all $n⩾1$.
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is divergent, which of the following is true regarding the series $\displaystyle \sum_{n=200}^{\infty}a_{n}$? Assume that $a_{n}$ is well-defined for all $n⩾1$.
 options:
 - id: a
   content: |-
@@ -204,7 +204,7 @@ options:
 type: radio
 id: q-4
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, which of the following statements are true regarding the series $∑_(n = k)^(∞)a_{n}$, where $k$ is a positive integer, and $a_{n}$ is well-defined for all $n⩾1$?
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is divergent, which of the following statements are true regarding the series $\displaystyle \sum_{n=k}^{\infty}a_{n}$, where $k$ is a positive integer, and $a_{n}$ is well-defined for all $n⩾1$?
   
   1. It is convergent for $k > 10$
   2. It is convergent for $k > 10^{100}$
@@ -281,11 +281,11 @@ Therefore, the correct answer is "I, II, III."
 type: radio
 id: q-5
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true?
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is convergent and $\displaystyle \sum_{n=1}^{\infty}b_{n}$ is convergent, which of the following statements are true?
   
-  1. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(∞)b_{n}$ is convergent
-  2. $∑_(n = 20)^(∞)a_{n}$ is convergent
-  3. $10^{20} \cdot ∑_(n = 1)^(∞)b_{n}$ is divergent
+  1. $\displaystyle \sum_{n=1}^{\infty}a_{n} + \sum_{n=1}^{\infty}b_{n}$ is convergent
+  2. $\displaystyle \sum_{n=20}^{\infty}a_{n}$ is convergent
+  3. $\displaystyle 10^{20} \cdot \sum_{n=1}^{\infty}b_{n}$ is divergent
 options:
 - id: a
   content: |-
@@ -313,11 +313,11 @@ options:
 type: radio
 id: q-6
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true?
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is convergent and $\displaystyle \sum_{n=1}^{\infty}b_{n}$ is convergent, which of the following statements are true?
   
-  1. $∑_(n = 12)^(∞)a_{n}$ is divergent
-  2. $3 \cdot ∑_(n = 1)^(∞)b_{n}$ is divergent
-  3. $∑_(n = 12)^(∞)a_{n} + 3 \cdot ∑_(n = 1)^(∞)b_{n}$ is convergent
+  1. $\displaystyle \sum_{n=12}^{\infty}a_{n}$ is divergent
+  2. $\displaystyle 3 \cdot \sum_{n=1}^{\infty}b_{n}$ is divergent
+  3. $\displaystyle \sum_{n=12}^{\infty}a_{n} + 3 \cdot \sum_{n=1}^{\infty}b_{n}$ is convergent
 options:
 - id: a
   content: |-
@@ -372,11 +372,11 @@ Therefore, the correct answer is "I and III only."
 type: radio
 id: q-7
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent and $∑_(n = 1)^(∞)b_{n}$ is convergent, which of the following statements are true? Assume that $a_{n}$ is well-defined for $n⩾1$.
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is divergent and $\displaystyle \sum_{n=1}^{\infty}b_{n}$ is convergent, which of the following statements are true? Assume that $a_{n}$ is well-defined for $n⩾1$.
   
-  1. $∑_(n = 10)^(∞)a_{n}$ is convergent
-  2. $∑_(n = 20)^(∞)b_{n}$ is convergent
-  3. $∑_(n = 10)^(∞)a_{n} - ∑_(n = 20)^(∞)b_{n}$ is divergent
+  1. $\displaystyle \sum_{n=10}^{\infty}a_{n}$ is convergent
+  2. $\displaystyle \sum_{n=20}^{\infty}b_{n}$ is convergent
+  3. $\displaystyle \sum_{n=10}^{\infty}a_{n} - \sum_{n=20}^{\infty}b_{n}$ is divergent
 options:
 - id: a
   correct: true
@@ -404,11 +404,11 @@ options:
 type: radio
 id: q-8
 content: |-
-  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent and $∑_(n = 1)^(∞)b_{n}$ is divergent, which of the following statements are true? Assume that $b_{n}$ is well-defined for $n⩾1$.
+  Given that $\displaystyle \sum_{n=1}^{\infty}a_{n}$ is convergent and $\displaystyle \sum_{n=1}^{\infty}b_{n}$ is divergent, which of the following statements are true? Assume that $b_{n}$ is well-defined for $n⩾1$.
   
-  1. $∑_(n = 12)^(∞)b_{n}$ is convergent
-  2. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(∞)b_{n}$ is convergent
-  3. $∑_(n = 1)^(∞)a_{n} + ∑_(n = 1)^(12)b_{n}$ is convergent
+  1. $\displaystyle \sum_{n=12}^{\infty}b_{n}$ is convergent
+  2. $\displaystyle \sum_{n=1}^{\infty}a_{n} + \sum_{n=1}^{\infty}b_{n}$ is convergent
+  3. $\displaystyle \sum_{n=1}^{\infty}a_{n} + \sum_{n=1}^{12}b_{n}$ is convergent
 options:
 - id: a
   content: |-

@@ -65,7 +65,7 @@ Finally, we can determine the sum of the series by computing the limit of $s_N$ 
 
 $$
 \begin{aligned}
-∑_(n = 1)^(∞)(1)/(n(n + 1)) &= lim_(N → ∞)(1 - \frac{1}{N + 1}) \\
+\sum_{n=1}^{\infty}\frac{1}{n(n + 1)} &= \lim_{N \to \infty}(1 - \frac{1}{N + 1}) \\
 &= 1 - 0 \\
 &= 1
 \end{aligned}
@@ -115,8 +115,8 @@ Finally, we can determine the sum of the series by taking the limit of $s_N$:
 
 $$
 \begin{aligned}
-∑_(n = 4)^(∞)(3)/(n(n + 1)) &= lim_(N → ∞)s_{N} \\
-&= lim_(N → ∞)3[\frac{1}{4} - \frac{1}{N + 1}] \\
+\sum_{n=4}^{\infty}\frac{3}{n(n + 1)} &= \lim_{N \to \infty}s_{N} \\
+&= \lim_{N \to \infty}3[\frac{1}{4} - \frac{1}{N + 1}] \\
 &= 3[\frac{1}{4} - 0] \\
 &= \frac{3}{4}
 \end{aligned}
@@ -125,7 +125,7 @@ $$
 ---
 
 **Question 1:** Calculate
-$∑_(n = 5)^(∞)(1)/(n(n + 1))$.
+$\displaystyle \sum_{n=5}^{\infty}\frac{1}{n(n + 1)}$.
 
 - [ ] A. $\frac{1}{2}$
 - [ ] B. $5$
@@ -135,7 +135,7 @@ $∑_(n = 5)^(∞)(1)/(n(n + 1))$.
 
 ---
 
-**Question 2:** What is $∑_(n = 4)^(∞)(12)/(n(n + 1))$?
+**Question 2:** What is $\displaystyle \sum_{n=4}^{\infty}\frac{12}{n(n + 1)}$?
 
 - [ ] A. $16$
 - [ ] B. $3$
@@ -185,8 +185,8 @@ Finally, we can determine the sum of the series by taking the limit of $s_N$:
 
 $$
 \begin{aligned}
-∑_(n = 1)^(∞)(1)/((n + 2)(n + 3)) &= lim_(N → ∞)s_{N} \\
-&= lim_(N → ∞)(\frac{1}{3} - \frac{1}{N + 3}) \\
+\sum_{n=1}^{\infty}\frac{1}{(n + 2)(n + 3)} &= \lim_{N \to \infty}s_{N} \\
+&= \lim_{N \to \infty}(\frac{1}{3} - \frac{1}{N + 3}) \\
 &= \frac{1}{3} - 0 \\
 &= \frac{1}{3}
 \end{aligned}
@@ -197,9 +197,9 @@ $$
 **Question 3**
 
 Calculate
-$∑_(n = 0)^(∞)(2)/((n + 1)(n + 2))$.
+$\displaystyle \sum_{n=0}^{\infty}\frac{2}{(n + 1)(n + 2)}$.
 
-*Hint: Use the fact that $(1)/((n + 1)(n + 2)) = \frac{1}{n + 1} - \frac{1}{n + 2}$.*
+*Hint: Use the fact that $\frac{1}{(n + 1)(n + 2)} = \frac{1}{n + 1} - \frac{1}{n + 2}$.*
 
 - [ ] A. $\frac{1}{4}$
 - [ ] B. $\frac{1}{2}$
@@ -209,7 +209,7 @@ $∑_(n = 0)^(∞)(2)/((n + 1)(n + 2))$.
 
 ---
 
-**Question 4:** Calculate $∑_(n = 2)^(∞)(5)/(n(n - 1))$.
+**Question 4:** Calculate $\displaystyle \sum_{n=2}^{\infty}\frac{5}{n(n - 1)}$.
 
 - [ ] A. $2$
 - [ ] B. $5$
@@ -222,7 +222,7 @@ $∑_(n = 0)^(∞)(2)/((n + 1)(n + 2))$.
 **Question 5**
 
 Calculate
-$∑_(n = 1)^(∞)\frac{1}{n^{2} + 5n + 6}$.
+$\displaystyle \sum_{n=1}^{\infty}\frac{1}{n^{2} + 5n + 6}$.
 
 *Hint: Try to factor the denominator first.*
 
@@ -293,8 +293,8 @@ Finally, we can determine the sum of the series by taking the limit of $s_N$:
 
 $$
 \begin{aligned}
-lim_(N → ∞)s_{N} &= lim_(N → ∞)\frac{1}{2}[\frac{1}{1} + \frac{1}{2} - \frac{1}{N + 1} - \frac{1}{N + 2}] \\
-&= \frac{1}{2}lim_(N → ∞)[\frac{1}{1} + \frac{1}{2} - \frac{1}{N + 1} - \frac{1}{N + 2}] \\
+\lim_{N \to \infty}s_{N} &= \lim_{N \to \infty}\frac{1}{2}[\frac{1}{1} + \frac{1}{2} - \frac{1}{N + 1} - \frac{1}{N + 2}] \\
+&= \frac{1}{2}\lim_{N \to \infty}[\frac{1}{1} + \frac{1}{2} - \frac{1}{N + 1} - \frac{1}{N + 2}] \\
 &= \frac{1}{2}[\frac{1}{1} + \frac{1}{2} - 0 - 0] \\
 &= \frac{1}{2}[\frac{1}{1} + \frac{1}{2}] \\
 &= \frac{1}{2} \cdot \frac{3}{2} \\
@@ -307,9 +307,9 @@ $$
 **Question 6**
 
 Calculate
-$∑_(n = 1)^(∞)(4)/((n + 3)(n + 5))$.
+$\displaystyle \sum_{n=1}^{\infty}\frac{4}{(n + 3)(n + 5)}$.
 
-*Hint: Use the fact that $(1)/((n + 3)(n + 5)) = \frac{1}{2}(\frac{1}{n + 3} - \frac{1}{n + 5})$.*
+*Hint: Use the fact that $\frac{1}{(n + 3)(n + 5)} = \frac{1}{2}(\frac{1}{n + 3} - \frac{1}{n + 5})$.*
 
 - [ ] A. The series diverges
 - [ ] B. $\frac{7}{24}$
@@ -320,7 +320,7 @@ $∑_(n = 1)^(∞)(4)/((n + 3)(n + 5))$.
 ---
 
 **Question 7:** Calculate
-$∑_(n = 3)^(∞)(5)/((n + 1)(n + 3))$.
+$\displaystyle \sum_{n=3}^{\infty}\frac{5}{(n + 1)(n + 3)}$.
 
 - [ ] A. $\frac{35}{24}$
 - [ ] B. $\frac{9}{8}$
@@ -333,7 +333,7 @@ $∑_(n = 3)^(∞)(5)/((n + 1)(n + 3))$.
 **Question 8**
 
 Calculate
-$∑_(n = 2)^(∞)\frac{8}{n^{2} + 6n + 8}$.
+$\displaystyle \sum_{n=2}^{\infty}\frac{8}{n^{2} + 6n + 8}$.
 
 *Hint: Try to factor the denominator first.*
 

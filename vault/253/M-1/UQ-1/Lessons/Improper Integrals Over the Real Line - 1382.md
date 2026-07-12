@@ -72,10 +72,10 @@ Then, we can compute each of the two integrals separately and combine their resu
 With that in mind, let's examine our integrals.
 
 - Computing the integral in statement I, we get
-$\begin{aligned} \int_{0}^{\infty} e^{-x}\, \textrm{d}x &= \lim_{a \to \infty} \int_{0}^{a} e^{-x}\, \textrm{d}x \\ &= \lim_{a \to \infty} \left[-e^{-x}\right]_0^a \\ &= -\lim_{a \to \infty} \left({e^{-a}}-1\right) \\ &= 1. \end{aligned}$
+$\displaystyle \begin{aligned} \int_{0}^{\infty} e^{-x}\, \textrm{d}x &= \lim_{a \to \infty} \int_{0}^{a} e^{-x}\, \textrm{d}x \\ &= \lim_{a \to \infty} \left[-e^{-x}\right]_0^a \\ &= -\lim_{a \to \infty} \left({e^{-a}}-1\right) \\ &= 1. \end{aligned}$
 So the integral converges, and statement I is true.
 - Computing the integral in statement II, we get
-$∫_{- ∞}^{0}e^{-x}dx|= lim_(a → - ∞)∫_{a}^{0}e^{-x}dx; = lim_(a → - ∞)[- e^{-x}]_{a}^{0}; = lim_(a → - ∞)(e^{-a} - 1); = + ∞$.
+$\displaystyle \int_{- \infty}^{0}e^{-x}dx= \lim_{a \to - \infty}\int_{a}^{0}e^{-x}dx = \lim_{a \to - \infty}[- e^{-x}]_{a}^{0} = \lim_{a \to - \infty}(e^{-a} - 1) = + \infty$.
 So the integral diverges, and statement II is true.
 - The integral in statement III can be expressed as
 $\displaystyle \int_{-\infty}^\infty f(x) \, \textrm dx= \int_{-\infty}^0 f(x) \, \textrm dx + \int_0^\infty f(x) \, \textrm dx$.
@@ -93,9 +93,9 @@ id: q-1
 content: |-
   Consider the function $f(x) = 3x^{2}$. Which of the following statements are true?
   
-  1. $∫_{0}^{∞}f(x)dx$ is convergent
-  2. $∫_{- ∞}^{0}f(x)dx$ is divergent
-  3. $∫_{- ∞}^{∞}f(x)dx$ is divergent
+  1. $\displaystyle \int_{0}^{\infty}f(x)dx$ is convergent
+  2. $\displaystyle \int_{- \infty}^{0}f(x)dx$ is divergent
+  3. $\displaystyle \int_{- \infty}^{\infty}f(x)dx$ is divergent
 options:
 - id: a
   correct: true
@@ -125,9 +125,9 @@ id: q-2
 content: |-
   Consider the function $f(x) = e^{2x}$. Which of the following statements are true?
   
-  1. $∫_{0}^{∞}f(x)dx$ is convergent
-  2. $∫_{- ∞}^{0}f(x)dx$ is divergent
-  3. $∫_{- ∞}^{∞}f(x)dx$ is divergent
+  1. $\displaystyle \int_{0}^{\infty}f(x)dx$ is convergent
+  2. $\displaystyle \int_{- \infty}^{0}f(x)dx$ is divergent
+  3. $\displaystyle \int_{- \infty}^{\infty}f(x)dx$ is divergent
 options:
 - id: a
   content: |-
@@ -161,13 +161,13 @@ $$
 Evaluating two improper integrals can be quite time-consuming. However, we can shorten the process if we see that $f(x)$ is an even or odd function.
 
 - Recall that $f(x)$ is an even function if $f(-x) = f(x)$. Even functions are symmetrical about the $y$-axis. Therefore, if $f(x)$ is even, we have
-$\int_{-\infty}^{0} f(x) \, \textrm{d}x = \int_{0}^{\infty} f(x) \, \textrm{d}x$,
+$\displaystyle \int_{-\infty}^{0} f(x) \, \textrm{d}x = \int_{0}^{\infty} f(x) \, \textrm{d}x$,
 provided that the integrals are convergent. Moreover, if $f(x)$ is even and the above integrals are convergent, then
-$\int_{-\infty}^{\infty} f(x) \, \textrm{d}x = 2\int_{0}^{\infty} f(x) \, \textrm{d}x$.
+$\displaystyle \int_{-\infty}^{\infty} f(x) \, \textrm{d}x = 2\int_{0}^{\infty} f(x) \, \textrm{d}x$.
 - Recall that $f(x)$ is an odd function if $f(-x) = -f(x)$. Therefore, if $f(x)$ is odd, we have
-$\int_{-\infty}^{0} f(x) \, \textrm{d}x = -\int_{0}^{\infty} f(x) \, \textrm{d}x$,
+$\displaystyle \int_{-\infty}^{0} f(x) \, \textrm{d}x = -\int_{0}^{\infty} f(x) \, \textrm{d}x$,
 provided that the integrals are convergent. Moreover, if $f(x)$ is odd and the above integrals are convergent, then
-$\int_{-\infty}^{\infty} f(x) \, \textrm{d}x = 0$.
+$\displaystyle \int_{-\infty}^{\infty} f(x) \, \textrm{d}x = 0$.
 
 ---
 
@@ -187,7 +187,7 @@ $$
 Evaluating the first of these integrals, we get
 
 $$
-\begin{aligned} \int_{-\infty}^0 \dfrac {1}{x^2+1} \,\textrm{d}x &= \lim_{a \to -\infty} \int_{a}^0 \dfrac {1}{x^2+1} \,\textrm{d}x \\[5pt] & = \lim_{a \to -\infty}\left(\arctan (x) \Big \mid _a^0 \right) \\[5pt] & = \lim_{a \to -\infty} \left[\arctan \left(0 \right) - \arctan \left(a \right) \right] \\[5pt] & = 0 - \lim_{a \to -\infty} \arctan \left(a \right) \\[5pt] &=-\left(-\dfrac \pi 2 \right) \\[5pt] & = \dfrac{\pi}{2}. \end{aligned}
+\begin{aligned} \int_{-\infty}^0 \dfrac {1}{x^2+1} \,\textrm{d}x &= \lim_{a \to -\infty} \int_{a}^0 \dfrac {1}{x^2+1} \,\textrm{d}x \\[5pt] & = \lim_{a \to -\infty}\left.\arctan(x)\right|_a^0 \\[5pt] & = \lim_{a \to -\infty} \left[\arctan \left(0 \right) - \arctan \left(a \right) \right] \\[5pt] & = 0 - \lim_{a \to -\infty} \arctan \left(a \right) \\[5pt] &=-\left(-\dfrac \pi 2 \right) \\[5pt] & = \dfrac{\pi}{2}. \end{aligned}
 $$
 
 Now, notice that the integrand is an **even** function (i.e., it is symmetrical about the $y$-axis). This means that we can immediately deduce that
@@ -210,24 +210,24 @@ $$
 type: radio
 id: q-3
 content: |-
-  Evaluate $∫_{- ∞}^{∞}\frac{1}{4 + x^{2}}dx$.
+  Evaluate $\displaystyle \int_{- \infty}^{\infty}\frac{1}{4 + x^{2}}dx$.
 options:
 - id: a
   content: |-
     The integral is divergent
 - id: b
   content: |-
-    $\frac{π}{3}$
+    $\frac{\pi}{3}$
 - id: c
   content: |-
-    $\frac{π}{6}$
+    $\frac{\pi}{6}$
 - id: d
   content: |-
-    $\frac{2π}{3}$
+    $\frac{2\pi}{3}$
 - id: e
   correct: true
   content: |-
-    $\frac{π}{2}$
+    $\frac{\pi}{2}$
 ```
 
 ---
@@ -238,7 +238,7 @@ options:
 type: radio
 id: q-4
 content: |-
-  Evaluate the integral $∫_{- ∞}^{∞}(6x^{5})/((3 + x^{6})^{2})dx$.
+  Evaluate the integral $\displaystyle \int_{- \infty}^{\infty}\frac{6x^{5}}{(3 + x^{6})^{2}}dx$.
 options:
 - id: a
   content: |-
@@ -323,20 +323,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $\frac{π}{6}$
+    $\frac{\pi}{6}$
 - id: b
   content: |-
-    $\frac{π}{2}$
+    $\frac{\pi}{2}$
 - id: c
   content: |-
     $0$
 - id: d
   correct: true
   content: |-
-    $\frac{π}{3}$
+    $\frac{\pi}{3}$
 - id: e
   content: |-
-    $π$
+    $\pi$
 ```
 
 ---
@@ -355,16 +355,16 @@ options:
     $1$
 - id: b
   content: |-
-    $\frac{π}{3}$
+    $\frac{\pi}{3}$
 - id: c
   content: |-
-    $\frac{5π}{6}$
+    $\frac{5\pi}{6}$
 - id: d
   content: |-
     $2$
 - id: e
   content: |-
-    $\frac{π}{2}$
+    $\frac{\pi}{2}$
 ```
 
 ```update-progress

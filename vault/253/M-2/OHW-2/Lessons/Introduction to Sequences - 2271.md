@@ -235,7 +235,7 @@ Finally, since every term of the sequence can be generated using our function, w
 Let's look at each statement in turn:
 
 - The first and second terms of the sequence are represented by $f(1)$ and $f(2)$, respectively. We can compute these values using the rule $f(n) = 5-2n$, as follows;
-$f(1)|= 5 - 2(1) = 3; f(2)|= 5 - 2(2) = 1$
+$f(1)= 5 - 2(1) = 3; f(2)= 5 - 2(2) = 1$
 We see that the second term $f(2)=1$ is smaller than the first term $f(1)=3$. Therefore, statement I is false.
 - We compute the third term as follows:
 $f(3)=5-2(3)=-1$

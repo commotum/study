@@ -36,9 +36,9 @@ In our case, the variable part of the dominant term in the denominator is $n^3$,
 
 $$
 \begin{aligned}
-lim_(n → ∞)a_{n} &= lim_(n → ∞)\frac{n^{3} + 5n}{2n^{3} - n^{2}} \\
-&= lim_(n → ∞)((\frac{n^{3}}{n^{3}} + \frac{5n}{n^{3}}))/((\frac{2n^{3}}{n^{3}} - \frac{n^{2}}{n^{3}})) \\
-&= lim_(n → ∞)((1 + \frac{5}{n^{2}}))/((2 - \frac{1}{n})) \\
+\lim_{n \to \infty}a_{n} &= \lim_{n \to \infty}\frac{n^{3} + 5n}{2n^{3} - n^{2}} \\
+&= \lim_{n \to \infty}\frac{(\frac{n^{3}}{n^{3}} + \frac{5n}{n^{3}})}{(\frac{2n^{3}}{n^{3}} - \frac{n^{2}}{n^{3}})} \\
+&= \lim_{n \to \infty}\frac{(1 + \frac{5}{n^{2}})}{(2 - \frac{1}{n})} \\
 &= \frac{1 + 0}{2 - 0} \\
 &= \frac{1}{2}
 \end{aligned}
@@ -71,8 +71,8 @@ The dominant term in the denominator is $5n^6$, so we divide the numerator and t
 
 $$
 \begin{aligned}
-lim_(n → ∞)\frac{3n^{5} - n}{5n^{6} - n} &= lim_(n → ∞)((\frac{3n^{5}}{n^{6}} - \frac{n}{n^{6}}))/((\frac{5n^{6}}{n^{6}} - \frac{n}{n^{6}})) \\
-&= lim_(n → ∞)((\frac{3}{n} - \frac{1}{n^{5}}))/((5 - \frac{1}{n^{5}})) \\
+\lim_{n \to \infty}\frac{3n^{5} - n}{5n^{6} - n} &= \lim_{n \to \infty}\frac{(\frac{3n^{5}}{n^{6}} - \frac{n}{n^{6}})}{(\frac{5n^{6}}{n^{6}} - \frac{n}{n^{6}})} \\
+&= \lim_{n \to \infty}\frac{(\frac{3}{n} - \frac{1}{n^{5}})}{(5 - \frac{1}{n^{5}})} \\
 &= \frac{0 - 0}{5 - 0} \\
 &= 0
 \end{aligned}
@@ -152,13 +152,13 @@ options:
 Let's analyze each sequence in turn. We need to calculate the limit of each sequence as $n$ approaches at infinity.
 
 - In sequence I, the limit is
-$\lim_{n \to \infty} a_n = \lim_{n \to \infty}\dfrac {1}{n^2} = 0$.
+$\displaystyle \lim_{n \to \infty} a_n = \lim_{n \to \infty}\dfrac {1}{n^2} = 0$.
 The limit exists, so the sequence converges.
 - In sequence II, the dominant term in the denominator is $2n^3$, so we divide the numerator and the denominator by $n^3$ and get
-$lim_(n → ∞)a_{n}|= lim_(n → ∞)\frac{n^{4}}{2n^{3} + 1}; = lim_(n → ∞)((\frac{n^{4}}{n^{3}}))/((\frac{2n^{3}}{n^{3}} + \frac{1}{n^{3}})); = lim_(n → ∞)(n)/((2 + \frac{1}{n^{3}})); = lim_(n → ∞)\frac{n}{2 + 0}; = ∞$.
+$\displaystyle \lim_{n \to \infty}a_{n}= \lim_{n \to \infty}\frac{n^{4}}{2n^{3} + 1} = \lim_{n \to \infty}\frac{(\frac{n^{4}}{n^{3}})}{(\frac{2n^{3}}{n^{3}} + \frac{1}{n^{3}})} = \lim_{n \to \infty}\frac{n}{(2 + \frac{1}{n^{3}})} = \lim_{n \to \infty}\frac{n}{2 + 0} = \infty$.
 The limit does not exist, so the sequence diverges.
 - In sequence III, the dominant term in the denominator is $5n^4$, so we divide the numerator and the denominator by $n^4$ and get
-$lim_(n → ∞)a_{n}|= lim_(n → ∞)\frac{3n^{5} + 7}{5n^{4} - 3n^{3}}; = lim_(n → ∞)((\frac{3n^{5}}{n^{4}} + \frac{7}{n^{4}}))/((\frac{5n^{4}}{n^{4}} - \frac{3n^{3}}{n^{4}})); = lim_(n → ∞)((3n + \frac{7}{n^{4}}))/((5 - \frac{3}{n})); = lim_(n → ∞)\frac{3n + 0}{5 - 0}; = ∞$.
+$\displaystyle \lim_{n \to \infty}a_{n}= \lim_{n \to \infty}\frac{3n^{5} + 7}{5n^{4} - 3n^{3}} = \lim_{n \to \infty}\frac{(\frac{3n^{5}}{n^{4}} + \frac{7}{n^{4}})}{(\frac{5n^{4}}{n^{4}} - \frac{3n^{3}}{n^{4}})} = \lim_{n \to \infty}\frac{(3n + \frac{7}{n^{4}})}{(5 - \frac{3}{n})} = \lim_{n \to \infty}\frac{3n + 0}{5 - 0} = \infty$.
 The limit does not exist, so the sequence diverges.
 
 In conclusion, sequences II and III diverge.
@@ -252,8 +252,8 @@ The dominant term in the denominator is $n^2$, so we divide the numerator and th
 
 $$
 \begin{aligned}
-lim_(n → ∞)\frac{3n^{2} - 7n}{9n^{2} - 1} &= lim_(n → ∞)((\frac{3n^{2}}{n^{2}} - \frac{7n}{n^{2}}))/((\frac{9n^{2}}{n^{2}} - \frac{1}{n^{2}})) \\
-&= lim_(n → ∞)((3 - \frac{7}{n}))/((9 - \frac{1}{n^{2}})) \\
+\lim_{n \to \infty}\frac{3n^{2} - 7n}{9n^{2} - 1} &= \lim_{n \to \infty}\frac{(\frac{3n^{2}}{n^{2}} - \frac{7n}{n^{2}})}{(\frac{9n^{2}}{n^{2}} - \frac{1}{n^{2}})} \\
+&= \lim_{n \to \infty}\frac{(3 - \frac{7}{n})}{(9 - \frac{1}{n^{2}})} \\
 &= \frac{3 - 0}{9 - 0} \\
 &= \frac{1}{3}
 \end{aligned}
@@ -273,7 +273,7 @@ $$
 type: radio
 id: q-5
 content: |-
-  What is the limit of the sequence $a_{n} = (3n^{3}(2n^{3} - 1))/((2n^{3} - 3)(2n^{3} + 3))$ for $n \ge 1$?
+  What is the limit of the sequence $a_{n} = \frac{3n^{3}(2n^{3} - 1)}{(2n^{3} - 3)(2n^{3} + 3)}$ for $n \ge 1$?
 options:
 - id: a
   correct: true
@@ -301,7 +301,7 @@ options:
 type: radio
 id: q-6
 content: |-
-  What is the limit of the sequence $a_{n} = ((3n^{2} + 2)(3n^{2} - 2))/(n^{2}(2n^{3} - 5))$ for $n \ge 1$?
+  What is the limit of the sequence $a_{n} = \frac{(3n^{2} + 2)(3n^{2} - 2)}{n^{2}(2n^{3} - 5)}$ for $n \ge 1$?
 options:
 - id: a
   content: |-

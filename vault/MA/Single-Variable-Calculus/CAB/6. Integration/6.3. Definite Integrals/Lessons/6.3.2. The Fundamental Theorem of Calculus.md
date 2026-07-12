@@ -71,14 +71,14 @@ $$
 **Step 2**: Write the lower and upper limit next to the result.
 
 $$
-\int_1^2 x^2 \, \textrm d x = \left.\dfrac{x^3}{3}\Bigg\right|_{\color{red}1}^{\color{blue}2}
+\int_1^2 x^2 \, \textrm d x = \left.\dfrac{x^3}{3}\right|_{\color{red}1}^{\color{blue}2}
 $$
 
 **Step 3**: Evaluate the antiderivative between the upper and lower limit, and subtract them.
 
 $$
 \begin{aligned}
-\int_{1}^{2}x^{2}dx &= ((2)^{3})/(3) - ((1)^{3})/(3) \\
+\int_{1}^{2}x^2\,dx &= \frac{2^3}{3}-\frac{1^3}{3} \\
 &= \frac{8}{3} - \frac{1}{3} \\
 &= \frac{7}{3}
 \end{aligned}
