@@ -106,6 +106,8 @@ Choose the matching expression.
 ---
 ## Problem 5
 
+![[Pasted image 20260712135650.png]]
+
 The graph of $f$ passes through these points:
 
 $$
@@ -135,6 +137,9 @@ $$
 ---
 ## Problem 6
 
+
+![[Pasted image 20260712135722.png]]
+
 A shaded area is under a semicircular curve for $f(x)$ with domain $[3,7]$.
 
 Choose the definite integral that represents the shaded area.
@@ -148,6 +153,8 @@ Choose the definite integral that represents the shaded area.
 ## Problem 7
 
 Use geometry to evaluate the integral shown by the graph of $f$.
+
+![[Pasted image 20260712135817.png]]
 
 Graph description:
 
