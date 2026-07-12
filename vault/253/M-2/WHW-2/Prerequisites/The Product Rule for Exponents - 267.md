@@ -1,0 +1,326 @@
+# The Product Rule for Exponents
+
+<!--
+lesson-id: 267
+topic-code: MF1.4.2.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Applying the Power Rule for Exponents With Integer Bases](#applying-the-power-rule-for-exponents-with-integer-bases)
+- [Applying the Product Rule for Exponents With Fractional or Decimal Bases](#applying-the-product-rule-for-exponents-with-fractional-or-decimal-bases)
+- [The Product Rule With Negative Exponents](#the-product-rule-with-negative-exponents)
+- [Evaluating Products with Negative Exponents Using the Product Rule](#evaluating-products-with-negative-exponents-using-the-product-rule)
+
+## Prerequisites
+
+- [Negative Exponents](<../../../../MA/Mathematical-Foundations/MF1/4. Exponents & Radicals/4.1. Exponents/Lessons/4.1.12. Negative Exponents.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+To multiply powers of the same base, we simply *add* the exponents. This is called the **product rule for exponents**.
+For example, in the expression
+
+$$
+{\color{blue}3}^4 \times {\color{blue}3}^2
+$$
+
+both powers have the same base $({\color{blue}3})$. Therefore, we can simplify this expression by adding the exponents:
+
+$$
+{\color{blue}3}^4 \times {\color{blue}3}^2 = {\color{blue}3}^{4+2} = {\color{blue}3}^6
+$$
+
+**Note:** The product rule for exponents is really just a quicker alternative to using repeated multiplication, as follows:
+
+$$
+\begin{aligned}
+3^{4} \cdot 3^{2} &=  \\
+3 \cdot 3 \cdot 3 \cdot 3_(⏟)_(4copies) \cdot 3 \cdot 3_(⏟)_(2copies) &=  \\
+3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 \cdot 3_(⏟)_(6copies) &=  \\
+&= 3^{6}
+\end{aligned}
+$$
+
+---
+
+<a id="applying-the-power-rule-for-exponents-with-integer-bases"></a>
+## Applying the Power Rule for Exponents With Integer Bases
+
+**Example:** Express $5(5^2) \times 5^4$ as a base raised to a single exponent.
+
+**Explanation**
+
+First, we write
+
+$$
+5(5^2) = 5^1 \times 5^2
+$$
+
+So our expression can be written as
+$5^1 \times 5^2 \times 5^4$
+
+To multiply powers of the same base, we simply add the exponents:
+
+$$
+5^1 \times 5^2 \times 5^4 = 5^{1+2+4} = 5^7
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-68266
+content: |-
+  What is $7^{6} \cdot 7^{3}$?
+options:
+- id: a
+  content: |-
+    $14^{3}$
+- id: b
+  content: |-
+    $7^{3}$
+- id: c
+  content: |-
+    $7^{9}$
+  correct: true
+- id: d
+  content: |-
+    $49^{18}$
+- id: e
+  content: |-
+    $14^{9}$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-68264
+content: |-
+  What is $2^{2} \cdot 2(2^{3})$?
+options:
+- id: a
+  content: |-
+    $8^{6}$
+- id: b
+  content: |-
+    $8^{5}$
+- id: c
+  content: |-
+    $4^{5}$
+- id: d
+  content: |-
+    $2^{6}$
+  correct: true
+- id: e
+  content: |-
+    $2^{5}$
+```
+
+---
+
+<a id="applying-the-product-rule-for-exponents-with-fractional-or-decimal-bases"></a>
+## Applying the Product Rule for Exponents With Fractional or Decimal Bases
+
+**Example:** Express $\left(\dfrac{1}{3}\right)^2\times \left(\dfrac{1}{3}\right)^2$ as a base raised to a single exponent.
+
+**Explanation**
+
+To multiply powers of the same base, we add the exponents:
+
+$$
+\left(\dfrac{1}{3}\right)^2\times \left(\dfrac{1}{3}\right)^2 = \left(\dfrac{1}{3}\right)^{2+2} = \left(\dfrac{1}{3}\right)^4
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-68079
+content: |-
+  What is $(\frac{1}{2})^{3} \cdot (\frac{1}{2})^{3}$?
+options:
+- id: a
+  content: |-
+    $(\frac{1}{4})^{9}$
+- id: b
+  content: |-
+    $(\frac{1}{2})^{27}$
+- id: c
+  content: |-
+    $(\frac{1}{4})^{6}$
+- id: d
+  content: |-
+    $(\frac{1}{2})^{9}$
+- id: e
+  content: |-
+    $(\frac{1}{2})^{6}$
+  correct: true
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-68299
+content: |-
+  What is $(-\frac{1}{4})^{9} \cdot (-\frac{1}{4})^{4}$?
+options:
+- id: a
+  content: |-
+    $(\frac{1}{16})^{36}$
+- id: b
+  content: |-
+    $(-\frac{1}{4})^{-5}$
+- id: c
+  content: |-
+    $(-\frac{1}{4})^{13}$
+  correct: true
+- id: d
+  content: |-
+    $(\frac{1}{16})^{13}$
+- id: e
+  content: |-
+    $(-\frac{1}{2})^{36}$
+```
+
+---
+
+<a id="the-product-rule-with-negative-exponents"></a>
+## The Product Rule With Negative Exponents
+
+We can use the product rule for exponents with negative exponents too. For instance, to simplify $3^3\times 3^{-5}$, we add the exponents:
+
+$$
+3^{3} \times 3^{-5} = 3^{3-5} = 3^{-2}
+$$
+
+Now, to evaluate $3^{-2}$, we find the reciprocal of the base $(3)$ and then raise that reciprocal to the same power but with the opposite sign:
+
+$$
+3^{-2} = \left(\dfrac{1}{3}\right)^2 =\dfrac{1}{3} \times \dfrac{1}{3} = \dfrac{1}{9}
+$$
+
+---
+
+<a id="evaluating-products-with-negative-exponents-using-the-product-rule"></a>
+## Evaluating Products with Negative Exponents Using the Product Rule
+
+**Example:** Evaluate $2^2\times 2^{-5}$.
+
+**Explanation**
+
+To multiply powers of the same base, we add the exponents:
+
+$$
+2^2\times 2^{-5} =2^{2+(-5)} = 2^{-3}
+$$
+
+To evaluate $2^{-3}$, we find the reciprocal of the base $(2)$ and then raise that reciprocal to the same power but with the opposite sign:
+
+$$
+2^{-3} = \left(\dfrac{1}{2}\right)^3 =\dfrac{1}{2} \times \dfrac{1}{2} \times \dfrac{1}{2} = \dfrac{1}{8}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-100314
+content: |-
+  What is $5^{-3} \cdot 5^{3}$?
+options:
+- id: a
+  content: |-
+    $1$
+  correct: true
+- id: b
+  content: |-
+    $125$
+- id: c
+  content: |-
+    $\frac{1}{125}$
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $0$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-100318
+content: |-
+  What is $5^{4} \cdot 5^{-1}$?
+options:
+- id: a
+  content: |-
+    $15$
+- id: b
+  content: |-
+    $75$
+- id: c
+  content: |-
+    $\frac{1}{75}$
+- id: d
+  content: |-
+    $125$
+  correct: true
+- id: e
+  content: |-
+    $\frac{1}{125}$
+```
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-68319
+content: |-
+  What is $6^{5} \cdot 6^{-7}$?
+options:
+- id: a
+  content: |-
+    $-18$
+- id: b
+  content: |-
+    $\frac{1}{216}$
+- id: c
+  content: |-
+    $\frac{1}{6}$
+- id: d
+  content: |-
+    $\frac{1}{36}$
+  correct: true
+- id: e
+  content: |-
+    $-12$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

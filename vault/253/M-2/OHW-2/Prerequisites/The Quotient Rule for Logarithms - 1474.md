@@ -1,0 +1,377 @@
+# The Quotient Rule for Logarithms
+
+<!--
+lesson-id: 1474
+topic-code: MF2.5.2.2
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Combining Logarithms Using the Quotient Rule](#combining-logarithms-using-the-quotient-rule)
+- [Combining Logarithms With Coefficients Using the Quotient Rule](#combining-logarithms-with-coefficients-using-the-quotient-rule)
+- [Separating a Logarithm Into Two Logarithms Using the Quotient Rule](#separating-a-logarithm-into-two-logarithms-using-the-quotient-rule)
+- [Evaluating an Expression Using the Quotient Rule](#evaluating-an-expression-using-the-quotient-rule)
+
+## Prerequisites
+
+- [The Product Rule for Logarithms](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.2. The Laws of Logarithms/Lessons/5.2.1. The Product Rule for Logarithms.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose we want to rewrite $\log_3(4) - \log_3(6)$ as a single logarithm. We can do this using the **quotient rule**.
+
+The quotient rule is very similar to the product rule, except that this time we're dealing with the difference of two logarithms rather than the sum.
+
+The quotient rule states that two logarithms which share a common base $\color{blue}n$ satisfy
+
+$$
+\log_{\color{blue}n} (a) - \log_{\color{blue}n} (b) = \log_{\color{blue}n}\left(\dfrac a b\right)
+$$
+
+So, we can use this rule to rewrite $\log_{\color{blue}3}(4) - \log_{\color{blue}3}(6)$ as
+
+$$
+\begin{aligned}
+\log_{3} 4 - \log_{3} (6) &= \log_{3} (\frac{4}{6}) \\
+&= \log_{3} (\frac{2}{3})
+\end{aligned}
+$$
+
+The quotient rule works exactly the same for the natural and common logarithms.
+
+---
+
+<a id="combining-logarithms-using-the-quotient-rule"></a>
+## Combining Logarithms Using the Quotient Rule
+
+**Example:** Write $\log_5(16) - \log_5(8)$ as a single logarithm.
+
+**Explanation**
+
+First, let's recall the quotient rule for logarithms:
+
+$$
+\log_n(a) - \log_n(b) = \log_n\left(\dfrac{a}{b} \right)
+$$
+
+Using the quotient rule for logarithms, the given expression can be rewritten as
+
+$$
+\begin{aligned}
+\log_{5} (16) - \log_{5} (8) &= \log_{5} (\frac{16}{8}) \\
+&= \log_{5} (2)
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-25233
+content: |-
+  Express $\log_{2} (x^{3}) - \log_{2} (x)$ as a single logarithm.
+options:
+- id: a
+  content: |-
+    $\log_{2} (x^{3})$
+- id: b
+  content: |-
+    $\log_{2} (x^{3} + x)$
+- id: c
+  content: |-
+    $\log_{2} (x)$
+- id: d
+  content: |-
+    $\log_{2} (x^{2})$
+  correct: true
+- id: e
+  content: |-
+    $\log_{2} (x^{3} - x)$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-24437
+content: |-
+  Express $\log_{7} (21) - \log_{7} (3)$ as a single logarithm.
+options:
+- id: a
+  content: |-
+    $63$
+- id: b
+  content: |-
+    $7$
+- id: c
+  content: |-
+    $\log_{7} (18)$
+- id: d
+  content: |-
+    $1$
+  correct: true
+- id: e
+  content: |-
+    $-1$
+```
+
+---
+
+<a id="combining-logarithms-with-coefficients-using-the-quotient-rule"></a>
+## Combining Logarithms With Coefficients Using the Quotient Rule
+
+**Example:** Express $2\log_2(25) - 2\log_2(5)$ as a single logarithm.
+
+**Explanation**
+
+First, let's recall the quotient rule for logarithms:
+
+$$
+\log_n(a) - \log_n(b) = \log_n\left(\dfrac{a}{b} \right)
+$$
+
+If we factor the given expression and use the quotient rule for logarithms, we get
+
+$$
+\begin{aligned}
+2\log_{2} (25) - 2\log_{2} (5) &= 2(\log_{2} (25) - \log_{2} (5)) \\
+&= 2(\log_{2} (\frac{25}{5})) \\
+&= 2\log_{2} (5)
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+2\log_2(25) - 2\log_2(5) = 2\log_2(5)
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-24439
+content: |-
+  What is $5\log_{2} (128) - 5\log_{2} (8)$?
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  content: |-
+    $20$
+  correct: true
+- id: c
+  content: |-
+    $10$
+- id: d
+  content: |-
+    $5$
+- id: e
+  content: |-
+    $15$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-25934
+content: |-
+  Express $4\log_{4} (12) - 4\log_{4} (2)$ as a single logarithm.
+options:
+- id: a
+  content: |-
+    $4\log_{4} (10)$
+- id: b
+  content: |-
+    $\log_{4} (24)$
+- id: c
+  content: |-
+    $4\log_{4} (6)$
+  correct: true
+- id: d
+  content: |-
+    $4\log_{4} (\frac{1}{6})$
+- id: e
+  content: |-
+    $\log_{4} (\frac{2}{3})$
+```
+
+---
+
+<a id="separating-a-logarithm-into-two-logarithms-using-the-quotient-rule"></a>
+## Separating a Logarithm Into Two Logarithms Using the Quotient Rule
+
+**Example:** Express $\log_3\left(\dfrac{2}{5}\right)$ as a difference of logarithms.
+
+**Explanation**
+
+First, let's recall the quotient rule for logarithms:
+
+$$
+\log_n(a) - \log_n(b) = \log_n\left(\dfrac{a}{b} \right)
+$$
+
+Using the quotient rule for logarithms, we obtain
+
+$$
+\begin{aligned}
+\log_{3} (\frac{2}{5}) &= \log_{3} (2) - \log_{3} (5)
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-47298
+content: |-
+  What is $\ln (\frac{e^{3}}{8})$?
+options:
+- id: a
+  content: |-
+    $(e)/(\ln (8))$
+- id: b
+  content: |-
+    $\ln (8) - 3$
+- id: c
+  content: |-
+    $(3)/(\ln (8))$
+- id: d
+  content: |-
+    $3 - \ln (8)$
+  correct: true
+- id: e
+  content: |-
+    $e - \ln (8)$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-47258
+content: |-
+  What is $2\log_{5} (\frac{p}{q})$?
+options:
+- id: a
+  content: |-
+    $2\log_{5} (p) - 2\log_{5} (q)$
+  correct: true
+- id: b
+  content: |-
+    $2\log_{5} (p) - \log_{5} (q)$
+- id: c
+  content: |-
+    $2(\log_{5} (p))/(\log_{5} (q))$
+- id: d
+  content: |-
+    $\log_{5} (2p) - \log_{5} (2q)$
+- id: e
+  content: |-
+    $\log_{5} (2p) - \log_{5} (q)$
+```
+
+---
+
+<a id="evaluating-an-expression-using-the-quotient-rule"></a>
+## Evaluating an Expression Using the Quotient Rule
+
+**Example:** If $\ln (p) =6$ and $\ln (q) = 4$, then $\ln \left(\dfrac p q\right)=$
+
+**Explanation**
+
+First, let's recall the quotient rule for natural logarithms:
+
+$$
+\ln(a) - \ln(b) = \ln\left(\dfrac{a}{b} \right)
+$$
+
+Using the quotient rule for natural logarithms, we have
+
+$$
+\begin{aligned}
+\ln (\frac{p}{q}) &= \ln (p) - \ln (q) \\
+&= 6 - 4 \\
+&= 2
+\end{aligned}
+$$
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-25027
+content: |-
+  If $\log_{3} (4) = p$ and $\log_{3} (8) = q$, then $\log_{3} (2) =$
+options:
+- id: a
+  content: |-
+    $q - p$
+  correct: true
+- id: b
+  content: |-
+    $\frac{q}{p}$
+- id: c
+  content: |-
+    $p - q$
+- id: d
+  content: |-
+    $\frac{p}{q}$
+- id: e
+  content: |-
+    $q + p$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-113
+content: |-
+  If $\log_{2} (x) = p$ and $\log_{2} (y) = q$, then $\log_{2} (\frac{x}{y}) =$
+options:
+- id: a
+  content: |-
+    $\frac{p}{q}$
+- id: b
+  content: |-
+    $\frac{q}{p}$
+- id: c
+  content: |-
+    $q - p$
+- id: d
+  content: |-
+    $p - q$
+  correct: true
+- id: e
+  content: |-
+    $q + p$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

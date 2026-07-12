@@ -1,0 +1,385 @@
+# Finding Trigonometric Ratios of Quadrantal Angles
+
+<!--
+lesson-id: 269
+topic-code: MF2.9.4.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Computing the Sine or Cosine of a Quadrantal Angle](#computing-the-sine-or-cosine-of-a-quadrantal-angle)
+- [Computing the Tangent or Cotangent of a Quadrantal Angle](#computing-the-tangent-or-cotangent-of-a-quadrantal-angle)
+- [Computing a Reciprocal Ratio of a Quadrantal Angle](#computing-a-reciprocal-ratio-of-a-quadrantal-angle)
+
+## Prerequisites
+
+- [Extending the Trigonometric Ratios Using Angles in Radians](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.3. The Unit Circle/Lessons/9.3.7. Extending the Trigonometric Ratios Using Angles in Radians.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+A **quadrantal angle** is an angle whose terminal side lies on the $x$ or $y$-axis.
+The unit circle below illustrates the quadrantal angles that lie on the range $[MATH: [0^\circ, 360^\circ).]$
+
+![](<../Source/Finding Trigonometric Ratios of Quadrantal Angles - 269/Images/89d766661fd33e20975b611b0e9d931f.png>)
+
+We can identify four points on the unit circle above,
+
+$$
+(1,0), \quad (0,1), \quad (-1,0), \quad (0,-1)
+$$
+
+that correspond to the angles
+
+$$
+0^\circ, \quad 90^\circ,\quad 180^\circ, \quad 270^\circ
+$$
+
+in degrees, or
+
+$$
+0, \quad \dfrac{\pi}{2}, \quad \pi, \quad \dfrac{3\pi}{2}
+$$
+
+in radians.
+
+We can use these points to find cosine and sine of quadrantal angles. First, recall that a point $(x,y)$ on the unit circle is related to the central angle $\theta$ using the following formulas:
+
+$$
+x = \cos\theta, \qquad y = \sin\theta
+$$
+
+For example, if we are asked to find the value of $\cos(\pi)$, then we just look at the $\color{blue}x$-coordinate of the corresponding point. The point is $({\color{blue}{-1}},0)$, and therefore, we get
+
+$$
+\cos(\pi)={\color{blue}{-1}}
+$$
+
+---
+
+<a id="computing-the-sine-or-cosine-of-a-quadrantal-angle"></a>
+## Computing the Sine or Cosine of a Quadrantal Angle
+
+**Example:** Find the value of $\sin{270^\circ}$.
+
+**Explanation**
+
+The angle $270^\circ$ is a quadrantal angle. Let's draw out the quadrantal angles on the unit circle.
+
+![](<../Source/Finding Trigonometric Ratios of Quadrantal Angles - 269/Images/563c73f40a8326dcb4821996da8f1b50.png>)
+
+From the unit circle, we see that the angle $270^\circ$ corresponds to the point $(0,-1)$.
+
+Since the sine of the angle corresponds to the $y$-coordinate, we have
+
+$$
+\sin{270^\circ} = -1
+$$
+
+---
+
+**Question 1**
+
+```quiz
+type: radio
+id: ma-262318
+content: |-
+  $\sin (90^{∘}) =$
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $1$
+  correct: true
+- id: d
+  content: |-
+    Undefined
+- id: e
+  content: |-
+    $90$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-1699
+content: |-
+  Find the value of $\cos (0^{∘}) + \sin (270^{∘})$.
+options:
+- id: a
+  content: |-
+    $1$
+- id: b
+  content: |-
+    $-2$
+- id: c
+  content: |-
+    $2$
+- id: d
+  content: |-
+    $0$
+  correct: true
+- id: e
+  content: |-
+    Undefined
+```
+
+---
+
+<a id="computing-the-tangent-or-cotangent-of-a-quadrantal-angle"></a>
+## Computing the Tangent or Cotangent of a Quadrantal Angle
+
+**Example:** Find the value of $\tan\left(\dfrac{3\pi}{2}\right)$.
+
+**Explanation**
+
+The angle
+
+$$
+\dfrac{3\pi}{2}
+$$
+
+is a quadrantal angle. Let's draw out the quadrantal angles on the unit circle.
+
+![](<../Source/Finding Trigonometric Ratios of Quadrantal Angles - 269/Images/7bbc9d6ea19bf7653c2ffb9b68f04254.png>)
+
+From the unit circle, we see that the angle
+
+$$
+\dfrac{3\pi}{2}
+$$
+
+corresponds to the point $(0,-1)$.
+
+- Since the cosine of the angle corresponds to the $x$-coordinate, we have $\cos\left(\dfrac{3\pi}{2}\right) = 0$.
+- Since the sine of the angle corresponds to the $y$-coordinate, we have $\sin\left(\dfrac{3\pi}{2}\right) = -1$.
+
+Therefore, using the fact that
+
+$$
+\tan{\theta} = \dfrac{\sin \theta}{\cos\theta}
+$$
+
+we have
+
+$$
+\tan\left(\dfrac{3\pi}{2}\right) = \dfrac{\sin\left(\dfrac{3\pi}{2}\right)}{\cos\left(\dfrac{3\pi}{2}\right)} = \dfrac{-1}{0}
+$$
+
+However, division by zero is undefined. Therefore,
+
+$$
+\tan\left(\dfrac{3\pi}{2}\right)
+$$
+
+is undefined.
+
+---
+
+**Question 3**
+
+```quiz
+type: radio
+id: ma-262382
+content: |-
+  Find the value of $\tan (180^{∘})$. $\tan (180^{∘}) =$
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $0$
+  correct: true
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    Undefined
+- id: e
+  content: |-
+    $180$
+```
+
+---
+
+**Question 4**
+
+```quiz
+type: radio
+id: ma-262448
+content: |-
+  Find the value of $\tan (180^{∘}) + \cot (90^{∘})$. $\tan (180^{∘}) + \cot (90^{∘}) =$
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    $0$
+  correct: true
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    Undefined
+```
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-64865
+content: |-
+  Find the value of $\tan (\frac{3π}{2})$.
+options:
+- id: a
+  content: |-
+    $-1$
+- id: b
+  content: |-
+    Undefined
+  correct: true
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $π$
+- id: e
+  content: |-
+    $1$
+```
+
+---
+
+<a id="computing-a-reciprocal-ratio-of-a-quadrantal-angle"></a>
+## Computing a Reciprocal Ratio of a Quadrantal Angle
+
+**Example:** Find the value of $\sec \left(\dfrac{\pi}{2}\right)$.
+
+**Explanation**
+
+The angle
+
+$$
+\dfrac {\pi} 2
+$$
+
+is a quadrantal angle. Let's draw out the quadrantal angles on the unit circle.
+
+![](<../Source/Finding Trigonometric Ratios of Quadrantal Angles - 269/Images/4a6d228ab69252407a496f966c616cac.png>)
+
+From the unit circle, we see that the angle
+
+$$
+\dfrac{\pi}{2}
+$$
+
+corresponds to the point $(0,1)$.
+
+Since the cosine of the angle corresponds to the $x$-coordinate, we have
+
+$$
+\cos{\left(\dfrac {\pi} 2\right)} = 0
+$$
+
+Therefore, using the fact that
+
+$$
+\sec{\theta} = \dfrac{1}{\cos\theta}
+$$
+
+we have
+
+$$
+\sec{\left(\dfrac {\pi} 2\right)} = \dfrac{1}{\cos{\left(\dfrac {\pi} 2\right)}} = \dfrac{1}{0}
+$$
+
+However, division by zero is undefined. Therefore,
+
+$$
+\sec\left(\dfrac {\pi} 2\right)
+$$
+
+is undefined.
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-23417
+content: |-
+  Find the value of $\csc (\frac{3π}{2})$.
+options:
+- id: a
+  content: |-
+    $-2$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $-1$
+  correct: true
+- id: d
+  content: |-
+    $2$
+- id: e
+  content: |-
+    $\frac{1}{2}$
+```
+
+---
+
+**Question 7**
+
+```quiz
+type: radio
+id: ma-246828
+content: |-
+  $\sec (0^{∘}) + \csc (90^{∘}) =$
+options:
+- id: a
+  content: |-
+    $0$
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $2$
+  correct: true
+- id: d
+  content: |-
+    Undefined
+- id: e
+  content: |-
+    $-2$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -1,6 +1,12 @@
 ## Prerequisites
 
+- [The Product Rule for Exponents - 267](<Prerequisites/The Product Rule for Exponents - 267.md>)
+- [Simplifying Linear Expressions Using the Distributive Law - 138](<Prerequisites/Simplifying Linear Expressions Using the Distributive Law - 138.md>)
 - [The Domain of a Function - 802](<Prerequisites/The Domain of a Function - 802.md>)
+- [Arithmetic Sequences - 667](<Prerequisites/Arithmetic Sequences - 667.md>)
+- [The Nth Term of an Arithmetic Sequence - 668](<Prerequisites/The Nth Term of an Arithmetic Sequence - 668.md>)
+- [The Recursive Formula for a Geometric Sequence - 1818](<Prerequisites/The Recursive Formula for a Geometric Sequence - 1818.md>)
+- [The Nth Term of a Geometric Sequence - 680](<Prerequisites/The Nth Term of a Geometric Sequence - 680.md>)
 - [Convergent and Divergent Infinite Series - 982](<Prerequisites/Convergent and Divergent Infinite Series - 982.md>)
 - [Finding the Sum of an Infinite Geometric Series - 691](<Prerequisites/Finding the Sum of an Infinite Geometric Series - 691.md>)
 - [Writing an Infinite Geometric Series in Sigma Notation - 686](<Prerequisites/Writing an Infinite Geometric Series in Sigma Notation - 686.md>)

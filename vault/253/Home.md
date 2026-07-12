@@ -10,10 +10,10 @@
 
 ## Progress
 
-- Course: 0% (0/33 unique lessons)
+- Course: 0% (0/35 unique lessons)
 
 - M-1: 0% (0/13)
-- M-2: 0% (0/20)
+- M-2: 0% (0/22)
 
 ## History
 
@@ -21,8 +21,8 @@
 
 ## Summary
 
-- Completed unique lessons: 0 / 33
-- Assignment placements: 44
+- Completed unique lessons: 0 / 35
+- Assignment placements: 47
 - Queue size: 5 / 5
 
 <!--

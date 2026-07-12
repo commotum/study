@@ -56,7 +56,9 @@
 		- [ ] [[M-2/WHW-2/Lessons/Determining Limits of Sequences Using Relative Magnitudes - 1245|7.1.9. Determining Limits of Sequences Using Relative Magnitudes]]
 		- [ ] [[M-2/WHW-2/Lessons/Convergence of Geometric Series - 684|1.4.10. Convergence of Geometric Series]]
 	- [ ] OHW-2
+		- [ ] [[M-2/OHW-2/Lessons/L'Hopital's Rule - 463|7.1.1. L'Hopital's Rule]]
 		- [ ] [[M-2/OHW-2/Lessons/Determining Intervals on Which a Function Is Increasing or Decreasing - 1359|8.2.6. Determining Intervals on Which a Function Is Increasing or Decreasing]]
+		- [ ] [[M-2/OHW-2/Lessons/Supremum and Infimum - 3036|1.3.9. Supremum and Infimum]]
 		- [ ] [[M-2/OHW-2/Lessons/Monotonic Sequences - 1096|4.2.1. Monotonic Sequences]]
 		- [ ] [[M-2/OHW-2/Lessons/Identifying Monotonic Sequences Using Differentiation - 3844|4.2.2. Identifying Monotonic Sequences Using Differentiation]]
 		- [ ] [[M-2/OHW-2/Lessons/Identifying Monotonic Sequences Using Ratios - 3861|4.2.3. Identifying Monotonic Sequences Using Ratios]]
@@ -72,4 +74,5 @@
 		- [ ] [[M-2/OHW-3/Lessons/Further Properties of Infinite Series - 4052|1.4.6. Further Properties of Infinite Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Solving Inequalities Involving Geometric Sequences - 1004|2.1.14. Solving Inequalities Involving Geometric Sequences]]
 		- [ ] [[M-2/OHW-3/Lessons/Convergence of Geometric Series - 684|1.4.10. Convergence of Geometric Series]]
+		- [ ] [[M-2/OHW-3/Lessons/Harmonic Series and p-Series - 860|4.5.4. Harmonic Series and p-Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Telescoping Series - 1176|4.3.5. Telescoping Series]]

@@ -1,0 +1,514 @@
+# Harmonic Series and p-Series
+
+<!--
+lesson-id: 860
+topic-code: CA2.4.5.4
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Determining Whether a p-Series with Integer Exponent Converges](#determining-whether-a-p-series-with-integer-exponent-converges)
+- [Determining Whether a p-Series With Fractional Exponent Converges](#determining-whether-a-p-series-with-fractional-exponent-converges)
+- [Determining Which Series Converge From a List](#determining-which-series-converge-from-a-list)
+- [Convergence Parameters for p-Series](#convergence-parameters-for-p-series)
+- [Proof that the Harmonic Series Diverges](#proof-that-the-harmonic-series-diverges)
+- [Proof of the p-Series Test](#proof-of-the-p-series-test)
+
+## Prerequisites
+
+- [Compound AND Inequalities](<../../../../MA/Mathematical-Foundations/MF1/5. Equations & Inequalities/5.6. Solving Linear Inequalities/Lessons/5.6.14. Compound AND Inequalities.md>)
+- [Writing Radical Expressions Using Fractional Exponents](<../../../../MA/Mathematical-Foundations/MF1/7. Radical & Rational Expressions/7.1. Radical Expressions/Lessons/7.1.1. Writing Radical Expressions Using Fractional Exponents.md>)
+- [Further Properties of Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.6. Further Properties of Infinite Series.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+A **$p$-series** is any series that takes the form
+
+$$
+\sum_{n=1}^{\infty} \dfrac 1 {n^p}
+$$
+
+where $p$ is a constant.
+
+For example,
+
+- the series $\displaystyle \sum_{n=1}^{\infty} \dfrac{1}{n}$ is a $p$-series with $p=1$, and
+- the series $\displaystyle \sum_{n=1}^{\infty} \dfrac{1}{n^2}$ is a $p$-series with $p=2$.
+
+A rule called the **$p$-series test** can help us determine whether a $p$-series converges or diverges. The $p$-series test states that
+
+- if $p > 1$, then the series converges, while
+- if $p \leq 1$, then the series diverges.
+
+To demonstrate,
+
+- the series $\displaystyle \sum_{n=1}^{\infty} \dfrac{1}{n}$ *diverges* because it is a $p$-series with $p \leq 1$, while
+- the series $\displaystyle \sum_{n=1}^{\infty} \dfrac{1}{n^2}$ *converges* because it is a $p$-series $p > 1$.
+
+The $p$-series with $p=1$ is also known as the **harmonic series**. It is often used as an example of a series that diverges even though its terms approach $0$.
+
+The harmonic series is the edge case used to distinguish between convergent and divergent $p$-series. To remember the $p$-series test, we can use the following mnemonics:
+
+- The $p$-series converges when the terms are *smaller* than those in the harmonic series, meaning that the denominator is *larger* (i.e., $p>1$).
+- The $p$-series diverges when the terms are *larger or the same* as those in the harmonic series, meaning that the denominator is smaller (i.e., $p \leq 1$).
+
+**Note:** As we will show at the end of the lesson, the $p$-series test can be proven using the integral test:
+
+> $\displaystyle \int \dfrac{1}{x^p} \, \textrm dx$ converges if $p > 1$ and diverges if $p \leq 1$.
+
+---
+
+<a id="determining-whether-a-p-series-with-integer-exponent-converges"></a>
+## Determining Whether a p-Series with Integer Exponent Converges
+
+**Example:** Determine whether the series below converges or diverges.
+$\sum_{n=1}^\infty \dfrac 2 {7n^5}$.
+
+**Explanation**
+
+The series can be written as
+
+$$
+\dfrac{2}{7} \sum_{n=1}^\infty \dfrac 1 {n^5}
+$$
+
+This is a $p$-series with $p=5$. Since $p > 1$, the series is convergent.
+
+Note that the factor of
+
+$$
+\dfrac{2}{7}
+$$
+
+multiplying the series does not affect the convergence or divergence of the series.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-81425
+content: |-
+  Use the $p$-test to determine whether the series below converges or diverges.
+
+  $∑_(n = 1)^(∞)\frac{7}{4n}$
+options:
+- id: a
+  content: |-
+    The series diverges by the $p$-test with $p = 4$
+- id: b
+  content: |-
+    The $p$-test cannot be used
+- id: c
+  content: |-
+    The series converges by the $p$-test with $p = 4$
+- id: d
+  content: |-
+    The series converges by the $p$-test with $p = 1$
+- id: e
+  content: |-
+    The series diverges by the $p$-test with $p = 1$
+  correct: true
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-14179
+content: |-
+  Use the $p$-test to determine whether the series below converges or diverges.
+
+  $∑_(n = 1)^(∞)\frac{4}{n^{3}}$
+options:
+- id: a
+  content: |-
+    The series diverges by the $p$-test with $p = 4$
+- id: b
+  content: |-
+    The series diverges by the $p$-test with $p = 3$
+- id: c
+  content: |-
+    The $p$-test cannot be used
+- id: d
+  content: |-
+    The series converges by the $p$-test with $p = 4$
+- id: e
+  content: |-
+    The series converges by the $p$-test with $p = 3$
+  correct: true
+```
+
+---
+
+<a id="determining-whether-a-p-series-with-fractional-exponent-converges"></a>
+## Determining Whether a p-Series With Fractional Exponent Converges
+
+**Example:** Determine whether the series below converges or diverges.
+$\sum_{n=1}^\infty \dfrac 1 {\sqrt {n^5}}$.
+
+**Explanation**
+
+The series can be written as
+
+$$
+\sum_{n=1}^\infty \dfrac 1 {n^{5/2}}
+$$
+
+which is a $p$-series with
+
+$$
+p = \dfrac 5 2
+$$
+
+Since $p > 1$, the series is convergent.
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-50458
+content: |-
+  Determine whether the series below converges or diverges.
+
+  $∑_(n = 1)^(∞)\frac{1}{\sqrt{n}}$.
+options:
+- id: a
+  content: |-
+    The series diverges by the $p$-test with $p = 1$
+- id: b
+  content: |-
+    The series diverges by the $p$-test with $p = \frac{1}{2}$
+  correct: true
+- id: c
+  content: |-
+    The series converges by the $p$-test with $p = \frac{1}{2}$
+- id: d
+  content: |-
+    The $p$-test cannot be used
+- id: e
+  content: |-
+    The series converges by the $p$-test with $p = 1$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-14184
+content: |-
+  Determine whether the series
+
+  $∑_(n = 1)^(∞)\frac{2}{\sqrt[6]{n^{5}}}$
+  converges or diverges.
+options:
+- id: a
+  content: |-
+    The series diverges by the $p$-test with $p = \frac{6}{5}$
+- id: b
+  content: |-
+    The series converges by the $p$-test with $p = \frac{5}{6}$
+- id: c
+  content: |-
+    The series converges by the $p$-test with $p = \frac{6}{5}$
+- id: d
+  content: |-
+    The series diverges by the $p$-test with $p = \frac{5}{6}$
+  correct: true
+- id: e
+  content: |-
+    The $p$-test cannot be used
+```
+
+---
+
+<a id="determining-which-series-converge-from-a-list"></a>
+## Determining Which Series Converge From a List
+
+**Example:** Which of the following series are convergent?
+
+1. $\displaystyle\sum_{n=1}^\infty \dfrac{1}{n^2\sqrt n}$
+2. $\displaystyle\sum_{n=1}^\infty \dfrac{5}{n^2}$
+3. $\displaystyle\sum_{n=1}^\infty \dfrac{\sqrt{n}}{\sqrt{n^3}}$
+
+**Explanation**
+
+We analyze each series in turn.
+
+- First, we look at $\displaystyle\sum_{n=1}^\infty \dfrac{1}{n^2\sqrt n}$. Rewriting this series gives
+$∑_(n = 1)^(∞)\frac{1}{n^{2}\sqrt{n}}|= ∑_(n = 1)^(∞)\frac{1}{n^{2} \cdot n^{1/2}}; = ∑_(n = 1)^(∞)\frac{1}{n^{5/2}}$,
+which is a $p$-series with $p=\dfrac 5 2$. Since $p > 1$, the series converges by the $p$-series test.
+- For the second series, we have
+$\sum_{n=1}^\infty \dfrac{5}{n^2} = 5\sum_{n=1}^\infty \dfrac{1}{{n^2}}$,
+which is a $p$-series with $p=2$. Since $p>1$, the series is convergent by the $p$-series test.
+- For the third series, we have
+$∑_(n = 1)^(∞)\frac{\sqrt{n}}{\sqrt{n^{3}}}|= ∑_(n = 1)^(∞)\frac{n^{1/2}}{n^{3/2}}; = ∑_(n = 1)^(∞)\frac{1}{n}$,
+which is a $p$-series with $p=1$ (the harmonic series). Since $p \leq 1$, the series diverges by the $p$-series test.
+
+Therefore, only series I and II are convergent.
+
+---
+
+**Question 5**
+
+```quiz
+type: radio
+id: ma-50630
+content: |-
+  Which of the following series are convergent?
+
+  1. $∑_(n = 1)^(∞)\frac{3}{n^{5}}$
+  2. $∑_(n = 1)^(∞)\frac{5}{n^{3}\sqrt{n}}$
+  3. $∑_(n = 1)^(∞)\frac{\sqrt{n^{3}}}{n^{2}}$
+options:
+- id: a
+  content: |-
+    II only
+- id: b
+  content: |-
+    I only
+- id: c
+  content: |-
+    I and II only
+  correct: true
+- id: d
+  content: |-
+    II and III only
+- id: e
+  content: |-
+    I and III only
+```
+
+---
+
+**Question 6**
+
+```quiz
+type: radio
+id: ma-50457
+content: |-
+  Which of the following series are convergent?
+
+  1. $∑_(n = 1)^(∞)\frac{1}{n\sqrt{n}}$
+  2. $∑_(n = 1)^(∞)\frac{3}{n}$
+  3. $∑_(n = 1)^(∞)\frac{\sqrt{n}}{2n^{3}}$
+options:
+- id: a
+  content: |-
+    I and III only
+  correct: true
+- id: b
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    I and II only
+- id: d
+  content: |-
+    I only
+- id: e
+  content: |-
+    III only
+```
+
+---
+
+<a id="convergence-parameters-for-p-series"></a>
+## Convergence Parameters for p-Series
+
+**Example:** For which values of $q$ does the series $\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^{4q-2}}$ converge?
+
+**Explanation**
+
+A $p$-series is any series that takes the form
+
+$$
+\sum_{n=1}^{\infty} \dfrac 1 {n^p}
+$$
+
+where $p$ is a constant. The $p$-series test states that
+
+- if $p > 1$, then the series converges, while
+- if $p \leq 1$, then the series diverges.
+
+Comparing our series to the $p$-series, we have
+
+$$
+p = 4q-2
+$$
+
+According to the $p$-series test, the given series converges if
+
+$$
+4q-2 > 1\qquad\Longrightarrow\qquad q >\dfrac 3 4
+$$
+
+Therefore, the series is convergent for all
+
+$$
+q > \dfrac 3 4
+$$
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-50624
+content: |-
+  For which values of $q$ does the series $∑_(n = 1)^(∞)\frac{1}{n^{4q - 3}}$ converge?
+options:
+- id: a
+  content: |-
+    $q \ge \frac{1}{2}$
+- id: b
+  content: |-
+    $q < 1$
+- id: c
+  content: |-
+    $q \ge 1$
+- id: d
+  content: |-
+    $q > 1$
+  correct: true
+- id: e
+  content: |-
+    $q < \frac{1}{2}$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-50622
+content: |-
+  For which values of $q$ does the series $∑_(n = 1)^(∞)\frac{1}{n^{2 - q}}$ converge?
+options:
+- id: a
+  content: |-
+    $q \ge 1$
+- id: b
+  content: |-
+    $q > 1$
+- id: c
+  content: |-
+    $q < 0$
+- id: d
+  content: |-
+    $q \le 1$
+- id: e
+  content: |-
+    $q < 1$
+  correct: true
+```
+
+---
+
+<a id="proof-that-the-harmonic-series-diverges"></a>
+## Proof that the Harmonic Series Diverges
+
+To understand why the harmonic series diverges, we need to apply the integral test.
+
+Given the series
+
+$$
+\sum_{n=1}^{\infty} \dfrac 1 {n}
+$$
+
+we can define a function $f(x)$ such that
+
+$$
+f(x) = \dfrac 1 {x}
+$$
+
+Then we have
+
+$$
+\begin{aligned}
+∫_{1}^{∞}\frac{1}{x}dx &= lim_(b → ∞)[\ln x]_{1}^{b} \\
+&= lim_(b → ∞)(\ln b - \ln 1) \\
+&= ∞
+\end{aligned}
+$$
+
+and therefore, the integral is divergent.
+
+---
+
+<a id="proof-of-the-p-series-test"></a>
+## Proof of the p-Series Test
+
+To understand why the $p$-series test works, we need to apply the integral test.
+
+Given the series
+
+$$
+\sum_{n=1}^{\infty} \dfrac 1 {n^p}
+$$
+
+we can define a function $f(x)$ such that
+
+$$
+f(x) = \dfrac 1 {x^p}
+$$
+
+First, if $p=1$, then our series is the harmonic series, which we have already proven diverges.
+
+On the other hand, if
+
+$$
+p \neq 1
+$$
+
+then we have
+
+$$
+\begin{aligned}
+∫_{1}^{∞}\frac{1}{x^{p}}dx &= lim_(b → ∞)∫_{1}^{b}x^{-p}dx \\
+&= lim_(b → ∞)[\frac{x^{-p + 1}}{-p + 1}]_{1}^{b} \\
+&= lim_(b → ∞)[(1)/((1 - p)x^{p - 1})]_{1}^{b} \\
+&= lim_(b → ∞)((1)/((1 - p)b^{p - 1}) - (1)/((1 - p))) \\
+&= \frac{1}{1 - p}lim_(b → ∞)[\frac{1}{b^{p - 1}}] - (1)/((1 - p))
+\end{aligned}
+$$
+
+which results in two cases:
+
+- If $p>1$, then $\displaystyle \lim_{b\to \infty}\left[\frac {1}{b ^{p - 1}}\right] = 0$ and the integral converges.
+- If $p<1$, then $\displaystyle \lim_{b\to \infty}\left[\frac {1}{b ^{p - 1}}\right] = \infty$ and the integral diverges.
+
+So, if
+
+$$
+p \leq 1
+$$
+
+then the integral diverges, while if $p>1$ then the integral converges.
+
+Consequently, if
+
+$$
+p \leq 1
+$$
+
+then the series diverges, while if $p > 1$ then the integral converges.
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]
