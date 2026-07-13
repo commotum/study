@@ -7,7 +7,7 @@
 
 - [ ] M-1
 	- [ ] UQ-1
-		- [ ] [[M-1/UQ-1/Lessons/The Product and Quotient Rules for Limits - 1246|11.2.3. The Product and Quotient Rules for Limits]]
+		- [x] [[M-1/UQ-1/Lessons/The Product and Quotient Rules for Limits - 1246|11.2.3. The Product and Quotient Rules for Limits]]
 		- [ ] [[M-1/UQ-1/Lessons/Calculating Limits of Rational Functions by Factoring - 1813|11.3.9. Calculating Limits of Rational Functions by Factoring]]
 	- [ ] WHW-1
 		- [ ] [[M-1/WHW-1/Lessons/Calculating Limits of Rational Functions by Factoring - 1813|11.3.9. Calculating Limits of Rational Functions by Factoring]]
@@ -36,9 +36,9 @@
 		- [ ] [[M-1/UQ-1/Lessons/Improper Integrals of the Second Kind - Discontinuities at Interior Points - 3550|Improper Integrals of the Second Kind: Discontinuities at Interior Points]]
 - [ ] M-2
 	- [ ] OHW-2
-		- [ ] [[M-2/OHW-2/Lessons/Introduction to Sequences - 2271|7.1.1. Introduction to Sequences]]
+		- [x] [[M-2/OHW-2/Lessons/Introduction to Sequences - 2271|7.1.1. Introduction to Sequences]]
 	- [ ] WHW-2
-		- [ ] [[M-2/WHW-2/Lessons/Introduction to Sequences - 2271|7.1.1. Introduction to Sequences]]
+		- [x] [[M-2/WHW-2/Lessons/Introduction to Sequences - 2271|7.1.1. Introduction to Sequences]]
 		- [ ] [[M-2/WHW-2/Lessons/Recursive Sequences - 1226|7.1.2. Recursive Sequences]]
 	- [ ] OHW-2
 		- [ ] [[M-2/OHW-2/Lessons/Convergence of Geometric Sequences - 1088|1.4.1. Convergence of Geometric Sequences]]
@@ -76,3 +76,70 @@
 		- [ ] [[M-2/OHW-3/Lessons/Convergence of Geometric Series - 684|1.4.10. Convergence of Geometric Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Harmonic Series and p-Series - 860|4.5.4. Harmonic Series and p-Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Telescoping Series - 1176|4.3.5. Telescoping Series]]
+- [ ] M-3
+	- [ ] OHW-4
+		- [ ] [[M-3/OHW-4/Lessons/Convergent and Divergent Infinite Series - 982|1.4.4. Convergent and Divergent Infinite Series]]
+		- [ ] [[M-3/OHW-4/Lessons/Properties of Infinite Series - 983|1.4.5. Properties of Infinite Series]]
+		- [ ] [[M-3/OHW-4/Lessons/Sums of Infinite Geometric Series Given in Sigma Notation - 1020|1.4.9. Sums of Infinite Geometric Series Given in Sigma Notation]]
+		- [ ] [[M-3/OHW-4/Lessons/Further Properties of Infinite Series - 4052|1.4.6. Further Properties of Infinite Series]]
+		- [ ] [[M-3/OHW-4/Lessons/Harmonic Series and p-Series - 860|4.5.4. Harmonic Series and p-Series]]
+		- [ ] [[M-3/OHW-4/Lessons/The Nth Term Test for Divergence - 743|4.5.1. The Nth Term Test for Divergence]]
+		- [ ] [[M-3/OHW-4/Lessons/The Integral Test - 744|4.5.2. The Integral Test]]
+		- [ ] [[M-3/OHW-4/Lessons/The Remainder Estimate for the Integral Test - 1173|4.5.3. The Remainder Estimate for the Integral Test]]
+	- [ ] OHW-5
+		- [ ] [[M-3/OHW-5/Lessons/Properties of Infinite Series - 983|1.4.5. Properties of Infinite Series]]
+		- [ ] [[M-3/OHW-5/Lessons/Sums of Infinite Geometric Series Given in Sigma Notation - 1020|1.4.9. Sums of Infinite Geometric Series Given in Sigma Notation]]
+		- [ ] [[M-3/OHW-5/Lessons/Convergence of Geometric Series - 684|1.4.10. Convergence of Geometric Series]]
+		- [ ] [[M-3/OHW-5/Lessons/Harmonic Series and p-Series - 860|4.5.4. Harmonic Series and p-Series]]
+		- [ ] [[M-3/OHW-5/Lessons/The Nth Term Test for Divergence - 743|4.5.1. The Nth Term Test for Divergence]]
+		- [ ] [[M-3/OHW-5/Lessons/The Comparison Test - 745|4.5.5. The Comparison Test]]
+		- [ ] [[M-3/OHW-5/Lessons/The Limit Comparison Test - 750|4.5.6. The Limit Comparison Test]]
+		- [ ] [[M-3/OHW-5/Lessons/The Alternating Series Test - 747|4.5.7. The Alternating Series Test]]
+		- [ ] [[M-3/OHW-5/Lessons/Absolute and Conditional Convergence - 748|4.5.10. Absolute and Conditional Convergence]]
+		- [ ] [[M-3/OHW-5/Lessons/The Alternating Series Error Bound - 1174|4.5.11. The Alternating Series Error Bound]]
+		- [ ] [[M-3/OHW-5/Lessons/Selecting Procedures for Analyzing Infinite Series - 1172|4.5.13. Selecting Procedures for Analyzing Infinite Series]]
+	- [ ] OHW-6
+		- [ ] [[M-3/OHW-6/Lessons/The Root Test - 749|4.5.9. The Root Test]]
+		- [ ] [[M-3/OHW-6/Lessons/The Ratio Test - 746|4.5.8. The Ratio Test]]
+		- [ ] [[M-3/OHW-6/Lessons/Radius of Convergence of Power Series - 3560|4.7.2. Radius of Convergence of Power Series]]
+- [ ] M-4
+	- [ ] OHW-7
+		- [ ] [[M-4/OHW-7/Lessons/Sums of Infinite Geometric Series Given in Sigma Notation - 1020|1.4.9. Sums of Infinite Geometric Series Given in Sigma Notation]]
+		- [ ] [[M-4/OHW-7/Lessons/Convergence of Geometric Series - 684|1.4.10. Convergence of Geometric Series]]
+		- [ ] [[M-4/OHW-7/Lessons/The Root Test - 749|4.5.9. The Root Test]]
+		- [ ] [[M-4/OHW-7/Lessons/The Ratio Test - 746|4.5.8. The Ratio Test]]
+		- [ ] [[M-4/OHW-7/Lessons/The Nth Term Test for Divergence - 743|4.5.1. The Nth Term Test for Divergence]]
+		- [ ] [[M-4/OHW-7/Lessons/The Comparison Test - 745|4.5.5. The Comparison Test]]
+		- [ ] [[M-4/OHW-7/Lessons/The Alternating Series Test - 747|4.5.7. The Alternating Series Test]]
+		- [ ] [[M-4/OHW-7/Lessons/Radius of Convergence of Power Series Centered at the Origin - 984|4.7.1. Radius of Convergence of Power Series Centered at the Origin]]
+		- [ ] [[M-4/OHW-7/Lessons/Radius of Convergence of Power Series - 3560|4.7.2. Radius of Convergence of Power Series]]
+	- [ ] OHW-8
+		- [ ] [[M-4/OHW-8/Lessons/Maclaurin Series - 340|4.7.3. Maclaurin Series]]
+		- [ ] [[M-4/OHW-8/Lessons/Taylor Series - 3826|4.7.4. Taylor Series]]
+		- [ ] [[M-4/OHW-8/Lessons/Representing Functions as Power Series - 885|4.7.5. Representing Functions as Power Series]]
+		- [ ] [[M-4/OHW-8/Lessons/Telescoping Series - 1176|4.3.5. Telescoping Series]]
+	- [ ] OHW-9
+		- [ ] [[M-4/OHW-9/Lessons/Harmonic Series and p-Series - 860|4.5.4. Harmonic Series and p-Series]]
+		- [ ] [[M-4/OHW-9/Lessons/The Root Test - 749|4.5.9. The Root Test]]
+		- [ ] [[M-4/OHW-9/Lessons/The Ratio Test - 746|4.5.8. The Ratio Test]]
+		- [ ] [[M-4/OHW-9/Lessons/The Nth Term Test for Divergence - 743|4.5.1. The Nth Term Test for Divergence]]
+		- [ ] [[M-4/OHW-9/Lessons/The Alternating Series Test - 747|4.5.7. The Alternating Series Test]]
+		- [ ] [[M-4/OHW-9/Lessons/Radius of Convergence of Power Series Centered at the Origin - 984|4.7.1. Radius of Convergence of Power Series Centered at the Origin]]
+		- [ ] [[M-4/OHW-9/Lessons/Radius of Convergence of Power Series - 3560|4.7.2. Radius of Convergence of Power Series]]
+		- [ ] [[M-4/OHW-9/Lessons/Taylor Series - 3826|4.7.4. Taylor Series]]
+		- [ ] [[M-4/OHW-9/Lessons/Representing Functions as Power Series - 885|4.7.5. Representing Functions as Power Series]]
+		- [ ] [[M-4/OHW-9/Lessons/Recognizing Standard Maclaurin Series - 884|4.7.6. Recognizing Standard Maclaurin Series]]
+- [ ] M-5
+	- [ ] OHW-10
+		- [ ] [[M-5/OHW-10/Lessons/Recursive Sequences - 1226|7.1.2. Recursive Sequences]]
+		- [ ] [[M-5/OHW-10/Lessons/The Generalized Binomial Theorem - 1189|5.3.1. The Generalized Binomial Theorem]]
+		- [ ] [[M-5/OHW-10/Lessons/Working With the Generalized Binomial Theorem - 695|5.3.2. Working With the Generalized Binomial Theorem]]
+		- [ ] [[M-5/OHW-10/Lessons/Determining Ranges of Validity for Generalized Binomial Expansions - 1191|5.3.3. Determining Ranges of Validity for Generalized Binomial Expansions]]
+		- [ ] [[M-5/OHW-10/Lessons/Approximating Values Using the Generalized Binomial Theorem - 1192|5.3.4. Approximating Values Using the Generalized Binomial Theorem]]
+		- [ ] [[M-5/OHW-10/Lessons/Higher-Degree Taylor Polynomials - 3771|8.4.4. Higher-Degree Taylor Polynomials]]
+		- [ ] [[M-5/OHW-10/Lessons/The Alternating Series Error Bound - 1174|4.5.11. The Alternating Series Error Bound]]
+		- [ ] [[M-5/OHW-10/Lessons/Second-Degree Taylor Polynomials - 1177|4.6.1. Second-Degree Taylor Polynomials]]
+		- [ ] [[M-5/OHW-10/Lessons/Third-Degree Taylor Polynomials - 1222|4.6.3. Third-Degree Taylor Polynomials]]
+		- [ ] [[M-5/OHW-10/Lessons/The Lagrange Error Bound - 1080|4.6.5. The Lagrange Error Bound]]
+		- [ ] [[M-5/OHW-10/Lessons/Representing Functions as Power Series - 885|4.7.5. Representing Functions as Power Series]]
+		- [ ] [[M-5/OHW-10/Lessons/Approximating Integrals Using Taylor Series - 886|4.7.9. Approximating Integrals Using Taylor Series]]

@@ -1,0 +1,241 @@
+# Calculating Velocity Using Integration
+
+<!--
+lesson-id: 762
+topic-code: MF3.11.1.4
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Finding the Velocity of a Particle Whose Acceleration Is Given By a Polynomial](#finding-the-velocity-of-a-particle-whose-acceleration-is-given-by-a-polynomial)
+- [Finding the Velocity of a Particle Whose Acceleration Is Not a Polynomial](#finding-the-velocity-of-a-particle-whose-acceleration-is-not-a-polynomial)
+
+## Prerequisites
+
+- [Integrating Trigonometric Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.8. Integrating Trigonometric Functions Using Substitution.md>)
+- [Calculating Acceleration for Straight-Line Motion Using Differentiation](<../../../../MA/Mathematical-Foundations/MF3/11. Contextual Applications of Calculus/11.1. Displacement, Velocity, and Acceleration/Lessons/11.1.2. Calculating Acceleration for Straight-Line Motion Using Differentiation.md>)
+- [Integrating Exponential Functions Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.7. Integrating Exponential Functions Using Substitution.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+For a particle moving along a straight line with velocity $v(t)$, we calculate the acceleration $a(t)$ by differentiating $v$ with respect to $t$. But what if we're given the acceleration and want to find the velocity?
+
+We need to do the reverse operation of differentiation, which is integration. So, we integrate $a(t)$ with respect to $t$:
+
+$$
+a(t) = \frac{\textrm{d}v}{\textrm{d}t} \quad\Longrightarrow\quad v(t) = \int a(t)\textrm{d}t
+$$
+
+We determine the arbitrary constant of integration using some information that's known about the system.
+
+---
+
+<a id="finding-the-velocity-of-a-particle-whose-acceleration-is-given-by-a-polynomial"></a>
+## Finding the Velocity of a Particle Whose Acceleration Is Given By a Polynomial
+
+**Example:** A particle moves along a straight line relative to a fixed origin $O$ with acceleration, measured in $\textrm m / \textrm s^2$, given by the function $a(t) = 4t^2 - 3t^3$, where $t$ is the time in seconds. If the particle has velocity $v=2\,\textrm m / \textrm s$ when $t=0 \,\textrm s$, calculate the velocity (in $\textrm m / \textrm s$) of the particle at time $t$.
+
+**Explanation**
+
+First, we find $v(t)$ by integrating the acceleration with respect to time:
+
+$$
+\begin{aligned}
+v(t) &= ∫a(t)dt \\
+&= ∫(4t^{2} - 3t^{3})dt \\
+&= \frac{4}{3}t^{3} - \frac{3}{4}t^{4} + C
+\end{aligned}
+$$
+
+To determine $C$, we use the fact that $v(0) = 2$. Substituting this into the above gives
+
+$$
+\begin{aligned}
+2 &= \frac{4}{3}(0)^{3} - \frac{3}{4}(0)^{4} + C \\
+C &= 2
+\end{aligned}
+$$
+
+Therefore, the velocity $v$ of the particle at time $t$ is
+
+$$
+v(t) = \dfrac{4}{3}t^3 -\dfrac{3}{4}t^4 + 2
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-7112
+content: |-
+  A particle moves along a straight line relative to a fixed origin $O$ with acceleration, measured in $m/s^{2}$, given by the function $a(t) = 2t - 9t^{2}$, where $t$ is the time in seconds. If the particle has velocity $v =-2m/s$ when $t = 1s$, calculate the speed of the particle at the moment $t = 2s$.
+options:
+- id: a
+  content: |-
+    $24m/s$
+- id: b
+  content: |-
+    $20m/s$
+  correct: true
+- id: c
+  content: |-
+    $16m/s$
+- id: d
+  content: |-
+    $4m/s$
+- id: e
+  content: |-
+    $12m/s$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-7194
+content: |-
+  A particle moves along a straight line relative to a fixed origin $O$ with acceleration, measured in $m/s^{2}$, given by the function $a(t) = \frac{1}{2}t^{4} - 3t^{3} + t$, where $t$ is the time in seconds. If the particle has velocity $v =-10m/s$ when $t = 0s$, calculate the speed of the particle at the moment $t = 2s$.
+options:
+- id: a
+  content: |-
+    $10.8m/s$
+- id: b
+  content: |-
+    $-16.8m/s$
+- id: c
+  content: |-
+    $-10.8m/s$
+- id: d
+  content: |-
+    $7.2m/s$
+- id: e
+  content: |-
+    $16.8m/s$
+  correct: true
+```
+
+---
+
+<a id="finding-the-velocity-of-a-particle-whose-acceleration-is-not-a-polynomial"></a>
+## Finding the Velocity of a Particle Whose Acceleration Is Not a Polynomial
+
+**Example:** A particle moves along a straight line relative to a fixed origin $O$ with acceleration, measured in $\textrm m / \textrm s^2$, given by the function $a(t) =2e^{-t}+6t^2$, where $t$ is the time in seconds. If the particle has velocity $v=-4 \,\textrm m / \textrm s$ when $t=0 \,\textrm s$, calculate the speed of the particle at the moment $t=1\,\textrm{s}$.
+
+**Explanation**
+
+First, we find $v(t)$ by integrating the acceleration with respect to time:
+
+$$
+\begin{aligned}
+v(t) &= ∫a(t)dt \\
+&= ∫(2e^{-t} + 6t^{2})dt \\
+&= 2(-e^{-t}) + \frac{6}{3}t^{3} + C \\
+&=-2e^{-t} + 2t^{3} + C
+\end{aligned}
+$$
+
+To determine $C$, we use the fact that $v(0) = -4$. Substituting this into the above gives
+
+$$
+\begin{aligned}
+-4 &= -2e^{-0} + 2 \cdot 0^{3} + C \\
+- 4 &= -2 + 0 + C \\
+C &= -2
+\end{aligned}
+$$
+
+Therefore, the velocity $v$ of the particle at time $t$ is
+
+$$
+v(t) = -2 e^{-t}+ 2t^3 -2
+$$
+
+We evaluate the velocity at time
+
+$$
+t=1\,\textrm{s}
+$$
+
+$$
+\begin{aligned}
+v(1) &= -2e^{-1} + 2(1)^{3} - 2 \\
+&=-2e^{-1} + 2 - 2 \\
+&=-\frac{2}{e}m/s
+\end{aligned}
+$$
+
+Finally, since the speed is equal to $\mid v(t) \mid$, we conclude that the speed of the particle is
+
+$$
+\dfrac 2 e\,\textrm{m/s}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-19486
+content: |-
+  A particle moves along a straight line relative to a fixed origin $O$ with acceleration, measured in $m/s^{2}$, given by the function $a(t) = \frac{1}{2}\cos (2t)$, where $t$ is the time in seconds. Given that it is at rest when $t = 0s$, find the velocity (in $m/s$) of the particle at time $t$.
+options:
+- id: a
+  content: |-
+    $v(t) = \frac{1}{4}\sin (2t)$
+  correct: true
+- id: b
+  content: |-
+    $v(t) = \frac{1}{4}(\sin (2t) - 1)$
+- id: c
+  content: |-
+    $v(t) = \frac{1}{2}\sin (2t)$
+- id: d
+  content: |-
+    $v(t) = \frac{1}{2}\cos (2t)$
+- id: e
+  content: |-
+    $v(t) = \frac{1}{4}(\cos (2t) - 1)$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-19484
+content: |-
+  A particle moves along a straight line relative to a fixed origin $O$ with acceleration $a(t) = 3t^{2} - 2t + 2e^{t}$, where $a(t)$ is measured in $m/s^{2}$ and $t$ is measured in seconds. If the particle has velocity $v = 0m/s$ when $t = 0s$, calculate the velocity $v$ of the particle at time $t = 2s$.
+options:
+- id: a
+  content: |-
+    $(2 + 2e^{2})m/s$
+  correct: true
+- id: b
+  content: |-
+    $8m/s$
+- id: c
+  content: |-
+    $(4 + 2e^{2})m/s$
+- id: d
+  content: |-
+    $(2 + e^{2})m/s$
+- id: e
+  content: |-
+    $2e^{2}m/s$
+```
+
+```update-progress
+```
+
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

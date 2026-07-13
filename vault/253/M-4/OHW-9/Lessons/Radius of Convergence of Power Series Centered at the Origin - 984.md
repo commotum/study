@@ -1,0 +1,385 @@
+# Radius of Convergence of Power Series Centered at the Origin
+
+<!--
+lesson-id: 984
+topic-code: CA2.4.7.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Finding the Radius of Convergence of a Given Power Series](#finding-the-radius-of-convergence-of-a-given-power-series)
+- [Finding the Interval of Convergence of a Given Power Series](#finding-the-interval-of-convergence-of-a-given-power-series)
+- [Finding the Radius and Interval of Convergence of a Power Series when the Limit of the Ratio is Zero](#finding-the-radius-and-interval-of-convergence-of-a-power-series-when-the-limit-of-the-ratio-is-zero)
+
+## Prerequisites
+
+- [Selecting Procedures for Analyzing Infinite Series](<../../../../MA/Single-Variable-Calculus/CA2/4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.13. Selecting Procedures for Analyzing Infinite Series.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose that we are given the **infinite power series**
+
+$$
+\sum_{n=1}^{\infty} \frac{x^n}{n^2}=x +\frac{x^2}{2^2}+\frac{x^3}{3^2}+\frac{x^4}{4^2} +\cdots \,
+$$
+
+This series is a function of $x$, and it may converge for some values of $x$ and diverge for other values. How can we determine the values of $x$ for which the series is convergent?
+
+One method that often works is the ratio test for convergence. We define
+
+$$
+a_n=\dfrac{x^n}{n^2}
+$$
+
+and we calculate the limit of the ratio of two successive terms, as follows:
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞) \mid \frac{a_{n + 1}}{a_{n}} \mid \\
+&= lim_(n → ∞) \mid (x^{n + 1})/((n + 1)^{2}) \cdot \frac{n^{2}}{x^{n}} \mid \\
+&= lim_(n → ∞)(n^{2})/((n + 1)^{2}) \mid x \mid \\
+&=\begin{vmatrix}x & lim_(n → ∞)(n^{2})/((n + 1)^{2}) \\ = & x\end{vmatrix}lim_(n → ∞)\frac{n^{2}}{n^{2} + 2n + 1} \\
+&=\begin{vmatrix}x & lim_(n → ∞)\frac{1}{1 + \frac{2}{n} + \frac{1}{n^{2}}} \\ = & x\end{vmatrix}\cdot 1 \\
+&= \mid x \mid
+\end{aligned}
+$$
+
+The ratio test says that the series converges if $L<1$, diverges if $L>1$, and is inconclusive if $L=1$. So, the series converges if $\mid x \mid <1$. Therefore, the series converges for any $x$ that lies in the open interval $(-1,1)$.
+
+Unfortunately, the ratio test gives no conclusion about the convergence when
+
+$$
+\begin{aligned}
+\mid x &= 1
+\end{aligned}
+$$
+
+so the endpoints $x=1$ and $x=-1$ need to be investigated separately using another test for convergence.
+
+- When $x=1$, we have
+$\sum_{n=1}^{\infty} \frac{x^n}{n^2}= \sum_{n=1}^{\infty} \frac{1}{n^2} = 1 +\frac{1}{2^2}+\frac{1}{3^2}+\frac{1}{4^2} +\cdots \,$,
+which is convergent by the $p$-series test.
+- When $x=-1$, we have
+$\sum_{n=1}^{\infty} \frac{x^n}{n^2}= \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2} = -1 +\frac{1}{2^2}-\frac{1}{3^2}+\frac{1}{4^2} +\cdots$
+which is convergent by the alternating series test.
+
+Therefore, the series is convergent provided that $x \in [-1,1]$. We call the interval $[-1,1]$ the **interval of convergence**.
+
+The **radius of convergence** $R$ is half of the length of the interval (in the same way that the radius of a circle is equal to half the diameter of the circle). In our case, we have
+
+$$
+R = \dfrac{1-(-1)}{2} = 1
+$$
+
+---
+
+<a id="finding-the-radius-of-convergence-of-a-given-power-series"></a>
+## Finding the Radius of Convergence of a Given Power Series
+
+**Example:** Find the radius of convergence $R$ of the series
+$\sum_{n=1}^{\infty} \frac{(-1)^{n}x^n}{n \cdot 2^n} = -\frac{x}{1 \cdot 2} + \frac{x^2}{2 \cdot 2^2}-\frac{x^3}{3 \cdot 2^3}+\frac{x^4}{4 \cdot 2^4}+\cdots \,$.
+
+**Explanation**
+
+To apply the ratio test, we define
+
+$$
+a_n=\dfrac{(-1)^{n}x^n}{n \cdot 2^n}
+$$
+
+Then, we calculate the ratio of two successive terms and take the limit as $n\to\infty$:
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞) \mid \frac{a_{n + 1}}{a_{n}} \mid \\
+&= lim_(n → ∞) \mid ((-1)^{n + 1}x^{n + 1})/((n + 1) \cdot 2^{n + 1}) \cdot (n \cdot 2^{n})/((-1)^{n}x^{n}) \mid \\
+&= lim_(n → ∞) \mid (-nx)/(2(n + 1)) \mid \\
+&=\begin{vmatrix}-\frac{x}{2} & \cdot lim_(n → ∞)\frac{n}{n + 1} \\ = & \frac{x}{2}\end{vmatrix}\cdot 1 \\
+&= \frac{\mid x \mid}{2}
+\end{aligned}
+$$
+
+The series converges if $L< 1$. In this case, the convergence condition is satisfied if
+
+$$
+\dfrac{\begin{vmatrix}x &}{2} < 1 \quad\Rightarrow\quad & x\end{vmatrix} < 2
+$$
+
+Therefore, we conclude that the radius of convergence is $R=2$.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-9899
+content: |-
+  What is the radius of convergence $R$ of the series
+
+  $∑_(n = 0)^(∞)3^{n}x^{2n} = 1 + 3x^{2} + 3^{2}x^{4} + 3^{3}x^{6} + ⋯$?
+options:
+- id: a
+  content: |-
+    $R = \frac{1}{\sqrt{3}}$
+  correct: true
+- id: b
+  content: |-
+    $R = 1$
+- id: c
+  content: |-
+    $R = \sqrt{3}$
+- id: d
+  content: |-
+    $R = 3$
+- id: e
+  content: |-
+    $R = \frac{1}{3}$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-82848
+content: |-
+  What is the radius of convergence $R$ of the series
+
+  $∑_(n = 0)^(∞)(x^{n})/((n + 1)3^{n}) = 1 + \frac{x}{2 \cdot 3} + \frac{x^{2}}{3 \cdot 3^{2}} + \frac{x^{3}}{4 \cdot 3^{3}} + ⋯$?
+options:
+- id: a
+  content: |-
+    $R = 1$
+- id: b
+  content: |-
+    $R = \sqrt{3}$
+- id: c
+  content: |-
+    $R = \frac{1}{3}$
+- id: d
+  content: |-
+    $R = 3$
+  correct: true
+- id: e
+  content: |-
+    $R = 9$
+```
+
+---
+
+<a id="finding-the-interval-of-convergence-of-a-given-power-series"></a>
+## Finding the Interval of Convergence of a Given Power Series
+
+**Example:** Find the interval of convergence for the series
+$\sum_{n=1}^{\infty} \frac{x^{n}}{3^n\sqrt{n}}=\dfrac{x}{3}+\frac{x^2}{3^2\cdot \sqrt{2}}+\frac{x^3}{3^3\cdot \sqrt{3}}+\frac{x^4}{3^4\cdot 2}+\cdots \,$.
+
+**Explanation**
+
+To apply the ratio test, we define
+
+$$
+a_n= \dfrac{x^{n}}{3^n\sqrt{n}}
+$$
+
+Then, we calculate the ratio of two successive terms and take the limit as $n\to\infty$:
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞) \mid \frac{a_{n + 1}}{a_{n}} \mid \\
+&= lim_(n → ∞) \mid \frac{x^{n + 1}}{3^{n + 1}\sqrt{n + 1}} \cdot \frac{3^{n}\sqrt{n}}{x^{n}} \mid \\
+&= lim_(n → ∞) \mid \frac{\sqrt{n}x}{3\sqrt{n + 1}} \mid \\
+&= \frac{\mid x\begin{vmatrix}}{3}lim_(n → ∞)(\frac{\sqrt{n}}{\sqrt{n + 1}}) \\ = \frac{\mid x \mid}{3} \cdot 1 \\ = \frac{\mid x\end{vmatrix}}{3}
+\end{aligned}
+$$
+
+The series converges if $L < 1$. In this case, the convergence condition is satisfied for
+
+$$
+\dfrac{\mid x \mid}{3}< 1
+$$
+
+which gives
+$\mid x \mid < 3$.
+
+So, the radius of convergence is $3$, and the series converges for any $x$ that lies in the open interval $(-3,3)$.
+
+The ratio test gives no conclusion about the convergence of the series when $L=1$. So, when
+
+$$
+\begin{aligned}
+\mid x &= 3
+\end{aligned}
+$$
+
+we do not know if the series converges. This means that the endpoints $x=-3$ and $x=3$ need to be investigated separately using another test for convergence.
+
+- When $x=3$, we have
+$∑_(n = 1)^(∞)\frac{x^{n}}{3^{n}\sqrt{n}}|= ∑_(n = 1)^(∞)\frac{3^{n}}{3^{n}\sqrt{n}}; = ∑_(n = 1)^(∞)\frac{1}{\sqrt{n}}; = 1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \frac{1}{\sqrt{4}} + ⋯$,
+which is divergent by the $p$-series test. So the endpoint $x=3$ is *not* included in our interval.
+- When $x=-3$, we have
+$∑_(n = 1)^(∞)\frac{x^{n}}{3^{n}\sqrt{n}}|= ∑_(n = 1)^(∞)((-3)^{n})/(3^{n}\sqrt{n}); = ∑_(n = 1)^(∞)((-1)^{n})/(\sqrt{n}); =-1 + \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{3}} + \frac{1}{\sqrt{4}} + ⋯$,
+which is convergent by the alternating series test. So the endpoint $x=-3$ *is* included in our interval.
+
+Therefore, the interval of convergence is $[MATH: [-3,3).]$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-9917
+content: |-
+  Find the interval of convergence for the series
+
+  $∑_(n = 1)^(∞)\frac{x^{n}}{n} = x + \frac{x^{2}}{2} + \frac{x^{3}}{3} + \frac{x^{4}}{4} + ⋯$.
+options:
+- id: a
+  content: |-
+    $[MATH: x ∈ (-1, 1]]$
+- id: b
+  content: |-
+    $x ∈ [- 1, 1]$
+- id: c
+  content: |-
+    $x ∈ (-1, 1)$
+- id: d
+  content: |-
+    $[MATH: x ∈ [- 1, 1)]$
+  correct: true
+- id: e
+  content: |-
+    $x ∈ (- ∞, ∞)$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-9903
+content: |-
+  Find the interval of convergence for the series
+
+  $∑_(n = 0)^(∞)((-1)^{n}x^{n})/(2^{n}) = 1 - \frac{x}{2} + \frac{x^{2}}{2^{2}} - \frac{x^{3}}{2^{3}} + ⋯$.
+options:
+- id: a
+  content: |-
+    $[MATH: x ∈ [- 2, 2)]$
+- id: b
+  content: |-
+    $[MATH: x ∈ (-2, 2]]$
+- id: c
+  content: |-
+    $x ∈ (- ∞, ∞)$
+- id: d
+  content: |-
+    $x ∈ [- 2, 2]$
+- id: e
+  content: |-
+    $x ∈ (-2, 2)$
+  correct: true
+```
+
+---
+
+<a id="finding-the-radius-and-interval-of-convergence-of-a-power-series-when-the-limit-of-the-ratio-is-zero"></a>
+## Finding the Radius and Interval of Convergence of a Power Series when the Limit of the Ratio is Zero
+
+**Example:** Find the radius and interval of convergence for the series
+$\sum_{n=0}^{\infty}\dfrac{(-1)^n x^{n}}{n!}$.
+
+**Explanation**
+
+To apply the ratio test, we define
+
+$$
+a_n=\dfrac{(-1)^n x^{n}}{n!}
+$$
+
+Then, we calculate the ratio of two successive terms and take the limit as $n\to\infty$:
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞) \mid \frac{a_{n + 1}}{a_{n}} \mid \\
+&= lim_(n → ∞) \mid ((-1)^{n + 1}x^{n + 1})/((n + 1)!) \cdot (n!)/((-1)^{n}x^{n}) \mid \\
+&= lim_(n → ∞) \mid - (x)/((n + 1)) \mid \\
+&=\begin{vmatrix}-x & lim_(n → ∞)\frac{1}{n + 1} \\ = & x\end{vmatrix}\cdot 0 \\
+&= 0
+\end{aligned}
+$$
+
+The series converges if $L< 1$. In this case, the convergence condition is satisfied for all $x\in (-\infty,\infty)$. Therefore, we conclude that the radius of convergence is $R=\infty$, and the interval of convergence is $x\in(-\infty, \infty)$.
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-11617
+content: |-
+  Find the radius of convergence $R$ of the series
+
+  $∑_(n = 0)^(∞)(x^{n})/((n + 1)!) = 1 + \frac{x}{2!} + \frac{x^{2}}{3!} + \frac{x^{3}}{4!} + ⋯$.
+options:
+- id: a
+  content: |-
+    $R = \frac{1}{2}$
+- id: b
+  content: |-
+    $R = 1$
+- id: c
+  content: |-
+    $R = \frac{1}{3}$
+- id: d
+  content: |-
+    $R = 3$
+- id: e
+  content: |-
+    $R = ∞$
+  correct: true
+```
+
+---
+
+**Question 6**
+
+```quiz
+type: radio
+id: ma-9921
+content: |-
+  Find the interval of convergence for the series
+
+  $∑_(n = 0)^(∞)\frac{n^{2}x^{n}}{n!}$.
+options:
+- id: a
+  content: |-
+    $[MATH: x ∈ [0, ∞)]$
+- id: b
+  content: |-
+    $x ∈ (0, ∞)$
+- id: c
+  content: |-
+    $x ∈ (- ∞, ∞)$
+  correct: true
+- id: d
+  content: |-
+    $x ∈ (1, ∞)$
+- id: e
+  content: |-
+    $x ∈ (-1, 1)$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

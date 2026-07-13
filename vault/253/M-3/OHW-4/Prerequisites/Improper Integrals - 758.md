@@ -1,0 +1,521 @@
+# Improper Integrals
+
+<!--
+lesson-id: 758
+topic-code: MF3.10.6.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Calculating Improper Integrals With an Unbounded Upper Limit](#calculating-improper-integrals-with-an-unbounded-upper-limit)
+- [Calculating Improper Integrals With an Unbounded Upper Limit Using Substitution](#calculating-improper-integrals-with-an-unbounded-upper-limit-using-substitution)
+- [Calculating Improper Integrals With an Unbounded Lower Limit](#calculating-improper-integrals-with-an-unbounded-lower-limit)
+- [Divergent Improper Integrals](#divergent-improper-integrals)
+- [Identifying Divergent Improper Integrals](#identifying-divergent-improper-integrals)
+
+## Prerequisites
+
+- [Calculating Definite Integrals Using Substitution](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.1. Integration Using Substitution/Lessons/10.1.4. Calculating Definite Integrals Using Substitution.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+An **improper integral** is an integral where at least one limit of integration is unbounded.
+
+For example, the integral
+
+$$
+\displaystyle\int_2^\infty \dfrac{1}{x^2}\,\textrm d x
+$$
+
+is an improper integral because the upper limit is unbounded (i.e., is infinite).
+
+This improper integral can be interpreted as the shaded area under the curve
+
+$$
+y=\dfrac{1}{x^2}
+$$
+
+shown below.
+
+![](<../Source/Improper Integrals - 758/Images/d9faf36184225455f9f737c44a957ab0.png>)
+
+To compute an improper integral, we need to compute the limit of the integral as the upper limit approaches infinity. So, in this case, we have
+
+$$
+\int_2^\infty \dfrac{1}{x^2}\,\textrm d x = \lim_{a\to\infty} \int_2^a \dfrac{1}{x^2}\,\textrm d x
+$$
+
+To compute this improper integral, we start by integrating as usual:
+
+$$
+\begin{aligned}
+\lim_{a \to \infty}\int_{2}^{a}\frac{1}{x^{2}}dx &= \lim_{a \to \infty}\int_{2}^{a}x^{-2}dx \\
+&= \lim_{a \to \infty}[\frac{x^{-1}}{-1}]_{2}^{a} \\
+&= \lim_{a \to \infty}[- \frac{1}{x}]_{2}^{a} \\
+&= \lim_{a \to \infty}([- \frac{1}{a}] - [- \frac{1}{2}]) \\
+&= \lim_{a \to \infty}(\frac{1}{2} - \frac{1}{a})
+\end{aligned}
+$$
+
+Now, we take the limits as $a\to \infty{:}$
+
+$$
+\begin{aligned}
+\lim_{a \to \infty}(\frac{1}{2} - \frac{1}{a}) &= \frac{1}{2} - 0 \\
+&= \frac{1}{2}
+\end{aligned}
+$$
+
+Therefore, we conclude that
+
+$$
+\int_2^\infty \dfrac{1}{x^2}\,\textrm d x = \dfrac12
+$$
+
+---
+
+<a id="calculating-improper-integrals-with-an-unbounded-upper-limit"></a>
+## Calculating Improper Integrals With an Unbounded Upper Limit
+
+**Example:** Evaluate $\displaystyle \int_2^\infty \dfrac {8}{t^5} \,\textrm{d}t$.
+
+**Explanation**
+
+We proceed by setting the upper bound equal to some parameter $a$, integrating as usual, and then taking the limit as $a\to\infty$.
+
+$$
+\begin{aligned}
+\int_{2}^{\infty}\frac{8}{t^{5}}dt &= \lim_{a \to \infty}\int_{2}^{a}\frac{8}{t^{5}}dt \\
+&= 8\lim_{a \to \infty}\int_{2}^{a}t^{-5}dt \\
+&= 8\lim_{a \to \infty}[- \frac{1}{4}t^{-4}]_{2}^{a} \\
+&=-2 \cdot \lim_{a \to \infty}[\frac{1}{t^{4}}]_{2}^{a} \\
+&=-2 \cdot \lim_{a \to \infty}(\frac{1}{a^{4}} - \frac{1}{2^{4}}) \\
+&=-2(0 - \frac{1}{16}) \\
+&= \frac{1}{8}
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-5962
+content: |-
+  What is $\displaystyle \int_{1}^{\infty}\frac{3}{θ^{3}}dθ$?
+options:
+- id: a
+  content: |-
+    $\frac{3}{4}$
+- id: b
+  content: |-
+    $\frac{3}{2}$
+  correct: true
+- id: c
+  content: |-
+    $\frac{1}{2}$
+- id: d
+  content: |-
+    $\frac{7}{4}$
+- id: e
+  content: |-
+    $1$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-152777
+content: |-
+  What is $\displaystyle \int_{1}^{\infty}\frac{2}{\sqrt{x^{9}}}dx$?
+options:
+- id: a
+  content: |-
+    $\frac{7}{2}$
+- id: b
+  content: |-
+    $4$
+- id: c
+  content: |-
+    $\frac{2}{7}$
+- id: d
+  content: |-
+    $\frac{4}{7}$
+  correct: true
+- id: e
+  content: |-
+    The integral diverges
+```
+
+---
+
+<a id="calculating-improper-integrals-with-an-unbounded-upper-limit-using-substitution"></a>
+## Calculating Improper Integrals With an Unbounded Upper Limit Using Substitution
+
+**Example:** Evaluate $\displaystyle\int_0^\infty \dfrac{1}{(x+1)^2} \,\textrm{d}x$.
+
+**Explanation**
+
+First, we substitute
+
+$$
+u=x+1
+$$
+
+Differentiating, we get
+
+$$
+\dfrac{\textrm{d}u}{\textrm{d}x} = 1 \quad\Longrightarrow\quad \textrm{d}u =\textrm{d}x
+$$
+
+Since $u \to \infty$ when $x \to \infty$, the table for the limits of integration using the rule
+
+$$
+u=x+1
+$$
+
+is as follows:
+
+| $x$ | $0$ | $\infty$ |
+| --- | ---: | ---: |
+| $u$ | $1$ | $\infty$ |
+
+So, the integral in terms of the new variable $u$ is
+
+$$
+\int_0^\infty \dfrac{1}{(x+1)^2} \,\textrm{d}x = \int_1^\infty \dfrac{1}{u^2} \,\textrm{d}u
+$$
+
+Finally, we proceed by setting the upper bound equal to some parameter $a$, integrating as usual, and then taking the limit as $a\to\infty$.
+
+$$
+\begin{aligned}
+\int_{0}^{\infty}\frac{1}{(x + 1)^{2}}dx &= \int_{1}^{\infty}\frac{1}{u^{2}}du \\
+&= \int_{1}^{\infty}u^{-2}du \\
+&= \lim_{a \to \infty}\int_{1}^{a}u^{-2}du \\
+&= \lim_{a \to \infty}[- u^{-1}]_{1}^{a} \\
+&=-\lim_{a \to \infty}[\frac{1}{u}]_{1}^{a} \\
+&=-1 \cdot \lim_{a \to \infty}[\frac{1}{a} - \frac{1}{1}] \\
+&=-1 \cdot (0 - 1) \\
+&= 1
+\end{aligned}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-6297
+content: |-
+  Evaluate $\displaystyle \int_{0}^{\infty}\frac{1}{\sqrt{(x + 4)^{5}}}dx$.
+options:
+- id: a
+  content: |-
+    $\frac{1}{12}$
+  correct: true
+- id: b
+  content: |-
+    The integral diverges
+- id: c
+  content: |-
+    $\frac{1}{4}$
+- id: d
+  content: |-
+    $\frac{1}{8}$
+- id: e
+  content: |-
+    $\frac{3}{16}$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-118619
+content: |-
+  Evaluate the integral $\displaystyle \int_{0}^{\infty}\frac{x}{(1 + x^{2})^{2}}dx$.
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $\frac{1}{2}$
+  correct: true
+- id: c
+  content: |-
+    The integral diverges
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $1$
+```
+
+---
+
+<a id="calculating-improper-integrals-with-an-unbounded-lower-limit"></a>
+## Calculating Improper Integrals With an Unbounded Lower Limit
+
+**Example:** Evaluate $\displaystyle \int_{-\infty}^{0} \dfrac{1}{(x-4)^2} \,\textrm{d}x$.
+
+**Explanation**
+
+Notice that, this time, it's the *lower* limit of integration that's unbounded.
+
+First, we substitute $u=x-4$. Differentiating, we get
+
+$$
+\dfrac{\textrm{d}u}{\textrm{d}x}= 1 \quad\Longrightarrow\quad \textrm{d}u =\textrm{d}x
+$$
+
+Since $u\to -\infty$ when $x\to -\infty$, the table for the limits of integration using the rule $u=x-4$ is as follows:
+
+| $x$ | $0$ | $-\infty$ |
+| --- | ---: | ---: |
+| $u$ | $-4$ | $-\infty$ |
+
+So, the integral in terms of the new variable $u$ is
+
+$$
+\displaystyle \int_{-\infty}^{0} \dfrac{1}{(x-4)^2} \,\textrm{d}x =\int_{-\infty}^{-4} \dfrac{1}{u^2} \,\textrm{d}u
+$$
+
+Finally, we proceed by setting the lower bound equal to some parameter $a$, integrating as usual, and then taking the limit as $a\to-\infty$.
+
+$$
+\begin{aligned}
+\int_{- \infty}^{0}\frac{1}{(x - 4)^{2}}dx &= \int_{- \infty}^{-4}\frac{1}{u^{2}}du \\
+&= \int_{- \infty}^{-4}u^{-2}du \\
+&= \lim_{a \to - \infty}\int_{a}^{-4}u^{-2}du \\
+&= \lim_{a \to - \infty}[- u^{-1}]_{a}^{-4} \\
+&=-1 \cdot \lim_{a \to - \infty}[\frac{1}{u}]_{a}^{-4} \\
+&=-1 \cdot \lim_{a \to - \infty}[\frac{1}{(-4)} - \frac{1}{a}] \\
+&=-1 \cdot \lim_{a \to - \infty}(-\frac{1}{4} - \frac{1}{a}) \\
+&=-1 \cdot (-\frac{1}{4} - 0) \\
+&= \frac{1}{4}
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-20872
+content: |-
+  What is $\displaystyle \int_{- \infty}^{-1}\frac{1}{x^{3}}dx$?
+options:
+- id: a
+  content: |-
+    $-\frac{1}{2}$
+  correct: true
+- id: b
+  content: |-
+    $-2$
+- id: c
+  content: |-
+    $-1$
+- id: d
+  content: |-
+    $-\frac{1}{5}$
+- id: e
+  content: |-
+    $-\frac{1}{4}$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-20884
+content: |-
+  Evaluate $\displaystyle \int_{- \infty}^{-1}\frac{1}{(7x + 3)^{3}}dx$.
+options:
+- id: a
+  content: |-
+    $0$
+- id: b
+  content: |-
+    $-\frac{1}{7}$
+- id: c
+  content: |-
+    The integral diverges
+- id: d
+  content: |-
+    $-\frac{1}{4}$
+- id: e
+  content: |-
+    $-\frac{1}{224}$
+  correct: true
+```
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-100495
+content: |-
+  Evaluate $\displaystyle \int_{- \infty}^{-1}\frac{3x^{2}}{(x^{3} - 1)^{4}}dx$.
+options:
+- id: a
+  content: |-
+    $\frac{1}{24}$
+  correct: true
+- id: b
+  content: |-
+    The integral diverges
+- id: c
+  content: |-
+    $-\frac{1}{8}$
+- id: d
+  content: |-
+    $\frac{3}{8}$
+- id: e
+  content: |-
+    $-\frac{3}{8}$
+```
+
+---
+
+<a id="divergent-improper-integrals"></a>
+## Divergent Improper Integrals
+
+As we've seen, calculating an improper integral involves taking a limit.
+
+When computing this limit, we typically have two possible cases:
+
+- If the limit exists, as it has in the previous examples, we say that the integral is **convergent**.
+- However, if the limit does not exist or is infinite, we say that the integral is **divergent**.
+
+Let's discuss a concrete example of a divergent improper integral. Consider the following:
+
+$$
+I = \int_1^\infty \frac{1}{x}\,\textrm{d}x
+$$
+
+We can attempt to work out $I$ by integrating over $x\in[1,a]$ as usual and taking the limit as $a$ tends to positive infinity. So, we have
+
+$$
+\begin{aligned}
+\int_{1}^{\infty}\frac{1}{x}dx &= \lim_{a \to \infty}\int_{1}^{a}\frac{1}{x}dx \\
+&= \lim_{a \to \infty}[\ln \mid x \mid ]_{1}^{a} \\
+&= \lim_{a \to \infty}([\ln a] - [\ln 1]) \\
+&= \lim_{a \to \infty}([\ln a] - [0]) \\
+&= \lim_{a \to \infty}(\ln a) \\
+&= \infty
+\end{aligned}
+$$
+
+The limit of $I$ as $a\rightarrow \infty$ is infinite. Therefore, the integral $I$ is *divergent*.
+
+---
+
+<a id="identifying-divergent-improper-integrals"></a>
+## Identifying Divergent Improper Integrals
+
+**Example:** Which of the following improper integrals are divergent?
+
+1. $\displaystyle \int_1^\infty \frac{1}{\sqrt{x}}\,\textrm{d}x$
+2. $\displaystyle \int_{-\infty}^{-2} \frac{1}{(1+x)^2}\,\textrm{d}x$
+3. $\displaystyle \int_{1}^\infty \dfrac{1}{x^3} \,\textrm{d}x$
+
+**Explanation**
+
+Let's work out each integral.
+
+- For the first integral, we have
+$\displaystyle \int_{1}^{\infty}\frac{1}{\sqrt{x}}dx= \lim_{b \to \infty}\int_{1}^{b}\frac{1}{\sqrt{x}}dx = \lim_{b \to \infty}\int_{1}^{b}x^{-1/2}dx = \lim_{b \to \infty}[2x^{1/2}]_{1}^{b} = 2\lim_{b \to \infty}[\sqrt{x}]_{1}^{b} = 2\lim_{b \to \infty}[\sqrt{b} - 1] = \infty$,
+so the integral diverges.
+- For the second integral, we have
+$\displaystyle \int_{- \infty}^{-2}\frac{1}{(1 + x)^{2}}dx= \lim_{a \to - \infty}\int_{a}^{-2}\frac{1}{(1 + x)^{2}}dx = \lim_{a \to - \infty}[- \frac{1}{1 + x}]_{a}^{-2} = \lim_{a \to - \infty}[- \frac{1}{1 - 2} + \frac{1}{1 + a}] = \lim_{a \to - \infty}[\frac{1}{1 + a} + 1] = 1$,
+so the integral is convergent (not divergent).
+- For the third integral, we have
+$\displaystyle \int_{1}^{\infty}\frac{1}{x^{3}}dx= \lim_{b \to \infty}\int_{1}^{b}\frac{1}{x^{3}}dx = \lim_{b \to \infty}\int_{1}^{b}x^{-3}dx = \lim_{b \to \infty}[- \frac{1}{2x^{2}}]_{1}^{b} = \lim_{b \to \infty}[- \frac{1}{2b^{2}} + \frac{1}{2(1^{2})}] = \lim_{b \to \infty}[\frac{1}{2} - \frac{1}{2b^{2}}] = \frac{1}{2} - 0 = \frac{1}{2}$,
+so the integral is convergent (not divergent).
+
+In conclusion, only integral I is divergent.
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-6294
+content: |-
+  What is $\displaystyle \int_{0}^{\infty}\frac{1}{2x + 1}dx$?
+options:
+- id: a
+  content: |-
+    The integral is divergent
+  correct: true
+- id: b
+  content: |-
+    $\frac{1}{4}$
+- id: c
+  content: |-
+    $\frac{1}{2}$
+- id: d
+  content: |-
+    $\frac{1}{\ln (2)}$
+- id: e
+  content: |-
+    $2\ln (2)$
+```
+
+---
+
+**Question 9**
+
+```quiz
+type: radio
+id: ma-6032
+content: |-
+  Which of the following improper integrals are divergent?
+  
+  1. $\displaystyle \int_{10}^{\infty}\frac{1}{\sqrt{x - 1}}dx$
+  2. $\displaystyle \int_{- \infty}^{-1}\frac{1}{x}dx$
+  3. $\displaystyle \int_{1}^{\infty}\frac{1}{x^{2}}dx$
+options:
+- id: a
+  content: |-
+    II only
+- id: b
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    I only
+- id: d
+  content: |-
+    III only
+- id: e
+  content: |-
+    I and II only
+  correct: true
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

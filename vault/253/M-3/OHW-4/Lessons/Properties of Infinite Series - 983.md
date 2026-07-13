@@ -1,0 +1,352 @@
+# Properties of Infinite Series
+
+<!--
+lesson-id: 983
+topic-code: CA2.4.3.3
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [The Sum and Constant Multiple Rules for Convergent Series](#the-sum-and-constant-multiple-rules-for-convergent-series)
+- [Calculating a Sum of Convergent Series](#calculating-a-sum-of-convergent-series)
+- [Scalar Multiplication of Infinite Series](#scalar-multiplication-of-infinite-series)
+- [Scalar Multiplication of a Convergent Series](#scalar-multiplication-of-a-convergent-series)
+- [Scalar Multiplication of a Divergent Series](#scalar-multiplication-of-a-divergent-series)
+
+## Prerequisites
+
+- [Convergent and Divergent Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.4. Convergent and Divergent Infinite Series.md>)
+- [Properties of Finite Series](<../../../../MA/Mathematical-Foundations/MF2/7. Sequences/7.1. Introduction to Sequences/Lessons/7.1.5. Properties of Finite Series.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Many of the properties that apply to *finite* series also apply to *convergent* infinite series.
+
+For example, consider the following convergent series:
+
+$$
+\sum_{n =1}^\infty \frac{1}{4^n} = \frac 1 3, \qquad \sum_{n =1}^\infty \frac{1}{5^n} = \frac 1 4
+$$
+
+Let's use these results to calculate
+
+$$
+\sum_{n =1}^\infty \frac{3}{4^n} + \sum_{n =1}^\infty \frac{4}{5^n}
+$$
+
+Since both series converge, we can take the constant factors outside the summation signs, similar to finite series.
+
+$$
+\begin{aligned}
+∑_(n = 1)^(∞)\frac{3}{4^{n}} + ∑_(n = 1)^(∞)\frac{4}{5^{n}} &= 3∑_(n = 1)^(∞)\frac{1}{4^{n}} + 4∑_(n = 1)^(∞)\frac{1}{5^{n}} \\
+&= 3(\frac{1}{3}) + 4(\frac{1}{4}) \\
+&= 2
+\end{aligned}
+$$
+
+Let's now describe the general result.
+
+---
+
+<a id="the-sum-and-constant-multiple-rules-for-convergent-series"></a>
+## The Sum and Constant Multiple Rules for Convergent Series
+
+If $a_n$ and $b_n$ are sequences such that
+
+$$
+\sum_{n =1}^\infty a_n = A,\qquad\qquad \sum_{n =1}^\infty b_n = B
+$$
+
+are both convergent, and if $\alpha$ and $\beta$ are both real numbers, then
+
+$$
+\sum_{n =1}^\infty \alpha a_n + \sum_{n =1}^\infty \beta b_n
+$$
+
+is also convergent, and
+
+$$
+\begin{aligned}
+∑_(n = 1)^(∞)αa_{n} + ∑_(n = 1)^(∞)βb_{n} &= α∑_(n = 1)^(∞)a_{n} + β∑_(n = 1)^(∞)b_{n} \\
+&= αA + βB
+\end{aligned}
+$$
+
+---
+
+<a id="calculating-a-sum-of-convergent-series"></a>
+## Calculating a Sum of Convergent Series
+
+**Example:** If $\displaystyle{\sum_{n=1}^\infty a_n} = 3$ and
+$\displaystyle{\sum_{n =1}^\infty b_n} = \frac 3 4$,
+then calculate
+$\displaystyle{\sum_{n =1}^\infty 2 a_n} + \displaystyle{\sum_{n =1}^\infty 4 b_n}$.
+
+**Explanation**
+
+Taking the constant factors outside of the summation signs gives
+
+$$
+\begin{aligned}
+∑_(n = 1)^(∞)2a_{n} + ∑_(n = 1)^(∞)4b_{n} &= 2∑_(n = 1)^(∞)a_{n} + 4∑_(n = 1)^(∞)b_{n} \\
+&= 2(3) + 4(\frac{3}{4}) \\
+&= 6 + 3 \\
+&= 9
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-9288
+content: |-
+  If $∑_(n = 1)^(∞)a_{n} = 1$ and
+
+  $∑_(n = 1)^(∞)b_{n} = 5$,
+  then calculate
+  $∑_(n = 1)^(∞)2a_{n} + ∑_(n = 1)^(∞)6b_{n}$.
+options:
+- id: a
+  content: |-
+    $30$
+- id: b
+  content: |-
+    $15$
+- id: c
+  content: |-
+    $32$
+  correct: true
+- id: d
+  content: |-
+    $34$
+- id: e
+  content: |-
+    $8$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-13888
+content: |-
+  If $∑_(n = 1)^(∞)a_{n} = 2$,
+
+  $∑_(n = 1)^(∞)b_{n} =-2$ and
+  $∑_(n = 1)^(∞)c_{n} =-1$,
+  then calculate
+  $∑_(n = 1)^(∞)2.5a_{n} - ∑_(n = 1)^(∞)0.5b_{n} + ∑_(n = 1)^(∞)2c_{n}$.
+options:
+- id: a
+  content: |-
+    $-4$
+- id: b
+  content: |-
+    $16$
+- id: c
+  content: |-
+    $21$
+- id: d
+  content: |-
+    $-10$
+- id: e
+  content: |-
+    $4$
+  correct: true
+```
+
+---
+
+<a id="scalar-multiplication-of-infinite-series"></a>
+## Scalar Multiplication of Infinite Series
+
+Note the following rules regarding the multiplication of an infinite series by a scalar $K$:
+
+- If $\displaystyle\sum_{n=1}^\infty a_n$ is convergent, then $\displaystyle \sum_{n=1}^\infty K\cdot a_n = K\cdot \sum_{n=1}^\infty a_n$ is convergent for any real number $K$.
+- If $\displaystyle\sum_{n=1}^\infty a_n$ is divergent, then $\displaystyle \sum_{n=1}^\infty K\cdot a_n$ is divergent for any real number $K\neq 0$.
+
+---
+
+<a id="scalar-multiplication-of-a-convergent-series"></a>
+## Scalar Multiplication of a Convergent Series
+
+**Example:** Given that $\displaystyle \sum_{n=1}^\infty a_n$ is convergent, determine all real values of $K$ for which $\displaystyle \dfrac1{\sqrt{K}} \cdot \sum_{n=1}^\infty a_n$ is convergent.
+
+**Explanation**
+
+Any constant multiple of a convergent series gives a convergent series.
+
+However, the expression
+
+$$
+\dfrac1{\sqrt{K}}
+$$
+
+is not defined when
+
+$$
+K \leq 0
+$$
+
+Therefore, the series
+
+$$
+\dfrac1{\sqrt{K}} \cdot \sum_{n=1}^\infty a_n
+$$
+
+is convergent for $K > 0$.
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-156153
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, determine all real values of $K$ for which $(K - 2) \cdot ∑_(n = 1)^(∞)a_{n}$ is convergent.
+options:
+- id: a
+  content: |-
+    The series is convergent for all $K$
+  correct: true
+- id: b
+  content: |-
+    $K < 2$
+- id: c
+  content: |-
+    $K \ne 2$
+- id: d
+  content: |-
+    $\mid K - 2 \mid < 1$
+- id: e
+  content: |-
+    $\mid K \mid < 2$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-76435
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is convergent, determine all real values of $K$ for which $\frac{1}{K} \cdot ∑_(n = 1)^(∞)a_{n}$ is convergent.
+options:
+- id: a
+  content: |-
+    $K < 1$
+- id: b
+  content: |-
+    $\mid K \mid > 1$
+- id: c
+  content: |-
+    $K \ne 0$
+  correct: true
+- id: d
+  content: |-
+    The series is convergent for all $K$
+- id: e
+  content: |-
+    $0 < \mid K \mid < 1$
+```
+
+---
+
+<a id="scalar-multiplication-of-a-divergent-series"></a>
+## Scalar Multiplication of a Divergent Series
+
+**Example:** Given that $\displaystyle \sum_{n=1}^\infty a_n$ is divergent, determine all real values of $K$ for which $\displaystyle \sum_{n=1}^\infty \left(K-\dfrac 12\right) \cdot a_n$ is **convergent.**
+
+**Explanation**
+
+If we multiply the terms of a divergent series by a non-zero constant, the resulting series is divergent.
+
+However, multiplying the terms of a divergent series by $0$ gives a series that converges to $0$.
+
+Therefore, the series
+
+$$
+\displaystyle \sum_{n=1}^\infty \left(K-\dfrac 12\right) \cdot a_n
+$$
+
+is convergent when
+
+$$
+\begin{aligned}
+K - \frac{1}{2} &= 0 \\
+K &= \frac{1}{2}
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-124070
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, determine all real values of $K$ for which $∑_(n = 1)^(∞)(K - 3) \cdot a_{n}$ is divergent.
+options:
+- id: a
+  content: |-
+    $K = 3$
+- id: b
+  content: |-
+    The series is divergent for all $K$
+- id: c
+  content: |-
+    $\mid K \mid > 3$
+- id: d
+  content: |-
+    $K \ne 3$
+  correct: true
+- id: e
+  content: |-
+    $0 < \mid K \mid < 1$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-124071
+content: |-
+  Given that $∑_(n = 1)^(∞)a_{n}$ is divergent, determine all real values of $K$ for which $∑_(n = 1)^(∞)(K + 1) \cdot a_{n}$ is **convergent.**
+options:
+- id: a
+  content: |-
+    $0 < \mid K \mid < 1$
+- id: b
+  content: |-
+    $K \ne - 1$
+- id: c
+  content: |-
+    $K =-1$
+  correct: true
+- id: d
+  content: |-
+    $\mid K \mid > 1$
+- id: e
+  content: |-
+    The series is divergent for all real $K$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

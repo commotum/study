@@ -1,0 +1,360 @@
+# The Root Test
+
+<!--
+lesson-id: 749
+topic-code: CA2.4.5.9
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Applying the Root Test to a Convergent Series](#applying-the-root-test-to-a-convergent-series)
+- [Applying the Root Test in Divergent and Inconclusive Cases](#applying-the-root-test-in-divergent-and-inconclusive-cases)
+
+## Prerequisites
+
+- [Convergent and Divergent Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.4. Convergent and Divergent Infinite Series.md>)
+- [Limits of Sequences](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.2. Limits of Sequences.md>)
+- [Combining the Rules of Exponents With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/10. Exponential Functions/10.1. Rules of Exponents/Lessons/10.1.6. Combining the Rules of Exponents With Algebraic Expressions.md>)
+- [Factorials in Variable Expressions](<../../../../MA/Mathematical-Foundations/MF2/14. Probability & Combinatorics/14.3. Combinatorics/Lessons/14.3.3. Factorials in Variable Expressions.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+When the $n$th term $a_n$ of an infinite series involves $n$th powers, we can determine whether the series converges or diverges using the **root test**.
+
+Suppose we have a series
+
+$$
+\displaystyle \sum_{n =1} ^\infty a_n
+$$
+
+such that
+
+$$
+a_n \geq 0
+$$
+
+for all
+
+$$
+n \geq 1
+$$
+
+. We define $L$ as the following limit:
+
+$$
+L = \lim_{n \to \infty}\sqrt [n] {a_n} = \lim_{n \to \infty}\left({a_n}\right)^{1/n}
+$$
+
+Then, the root test states the following:
+
+- if $L < 1$, the series converges.
+- if $L >1$ or $L = \infty$, the series diverges.
+- if $L = 1$, the root test is inconclusive.
+
+Let's use the root test to show that the following geometric series converges:
+
+$$
+\displaystyle \sum_{n=1}^\infty \dfrac {1} {2^n}
+$$
+
+In this case, our sequence $a_n$ is defined as
+
+$$
+a_n = \dfrac{1}{2^n}, \qquad n\geq 1
+$$
+
+To apply the root test, we calculate the limit of $\sqrt[n]{a_n}$ as $n\to\infty{:}$
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞)\sqrt[n]{\frac{1}{2^{n}}} \\
+&= lim_(n → ∞)\frac{\sqrt[n]{1}}{\sqrt[n]{2^{n}}} \\
+&= lim_(n → ∞)\frac{1}{2} \\
+&= \frac{1}{2}
+\end{aligned}
+$$
+
+Since
+
+$$
+L=\dfrac12 < 1
+$$
+
+our series converges by the root test.
+
+Finally, when applying the root test, it's worth bearing the following limit facts in mind:
+
+- $\displaystyle \lim_{n \to \infty} \sqrt [n] {a} = 1$ for $a > 0$
+- $\displaystyle \lim_{n \to \infty} \sqrt [n] {n} = 1$
+- $\displaystyle \lim_{n \to \infty} \sqrt [n] {\dfrac 1 {n!}} = 0$
+
+---
+
+<a id="applying-the-root-test-to-a-convergent-series"></a>
+## Applying the Root Test to a Convergent Series
+
+**Example:** Use the root test to show that the following series is convergent.
+$\sum_{n=1}^\infty \dfrac {(7n)^n n} {(8n + 1) ^ n}$
+
+**Explanation**
+
+Suppose we have the series
+
+$$
+\displaystyle \sum_{n =1} ^\infty a_n
+$$
+
+such that
+
+$$
+a_n \geq 0
+$$
+
+for all
+
+$$
+n \geq 1
+$$
+
+and that $L$ is defined as
+
+$$
+L = \lim_{n \to \infty}\sqrt [n] {a_n} = \lim_{n \to \infty}\left({a_n}\right)^{1/n}
+$$
+
+Then, the root test states the following:
+
+- If $L\lt 1$, the series converges.
+- If $L \gt 1$ or $L = \infty$, the series diverges.
+- If $L = 1$, the root test is inconclusive.
+
+We have the sequence $a_n$, defined as
+
+$$
+a_n = \dfrac {(7n)^n n} {(8n + 1) ^ n}
+$$
+
+To apply the root test, we find the limit of $\sqrt[n]{a_n}$ as $n\to\infty$:
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞)\sqrt[n]{a_{n}} \\
+&= lim_(n → ∞)(a_{n})^{1/n} \\
+&= lim_(n → ∞)[((7n)^{n}n)/((8n + 1)^{n})]^{1/n} \\
+&= lim_(n → ∞)\frac{7n \cdot \sqrt[n]{n}}{8n + 1} \\
+&= lim_(n → ∞)((\frac{7n \cdot \sqrt[n]{n}}{n}))/((\frac{8n}{n} + \frac{1}{n})) \\
+&= lim_(n → ∞)(7\sqrt[n]{n})/((8 + \frac{1}{n})) \\
+&= \frac{7 \cdot 1}{8 + 0} \\
+&= \frac{7}{8}
+\end{aligned}
+$$
+
+Note that we used the fact that
+
+$$
+\lim_{n\to\infty} \sqrt[n]{n}=1
+$$
+
+Since
+
+$$
+L =\dfrac{7}{8} \lt 1
+$$
+
+the series converges by the root test.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-138989
+content: |-
+  Calculate $L = lim_(n → ∞)\sqrt[n]{a_{n}}$ for the sequence $a_{n} = \frac{n^{2}}{10^{n}}$. Does $∑_(n = 1)^(∞)a_{n}$ converge or diverge?
+options:
+- id: a
+  content: |-
+    $L = \frac{1}{10}$. The series is convergent.
+  correct: true
+- id: b
+  content: |-
+    $L = 0$. The series is convergent.
+- id: c
+  content: |-
+    $L = ∞$. The series is divergent.
+- id: d
+  content: |-
+    $L = \frac{1}{100}$. The series is convergent.
+- id: e
+  content: |-
+    $L = 10$. The series is divergent.
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-5936
+content: |-
+  Calculate $L = lim_(n → ∞)\sqrt[n]{a_{n}}$ for the sequence $a_{n} = (\frac{n}{3n + 1})^{2n}$. Does $∑_(n = 1)^(∞)a_{n}$ converge or diverge?
+options:
+- id: a
+  content: |-
+    $L = ∞$. The series is divergent.
+- id: b
+  content: |-
+    $L = \frac{1}{9}$. The series is convergent.
+  correct: true
+- id: c
+  content: |-
+    $L = 2$. The series is divergent.
+- id: d
+  content: |-
+    $L = \frac{1}{6}$. The series is convergent.
+- id: e
+  content: |-
+    $L = \frac{1}{3}$. The series is convergent.
+```
+
+---
+
+<a id="applying-the-root-test-in-divergent-and-inconclusive-cases"></a>
+## Applying the Root Test in Divergent and Inconclusive Cases
+
+**Example:** Use the root test to show that the following series is divergent.
+$\sum_{n=1}^\infty \dfrac{n^45^n}{3^n}$
+
+**Explanation**
+
+Suppose we have the series
+
+$$
+\displaystyle \sum_{n =1} ^\infty a_n
+$$
+
+such that
+
+$$
+a_n \geq 0
+$$
+
+for all
+
+$$
+n \geq 1
+$$
+
+and that $L$ is defined as
+
+$$
+L = \lim_{n \to \infty}\sqrt [n] {a_n} = \lim_{n \to \infty}\left({a_n}\right)^{1/n}
+$$
+
+Then, the root test states the following:
+
+- If $L \lt 1$, the series converges.
+- If $L \gt 1$ or $L = \infty$, the series diverges.
+- If $L = 1$, the root test is inconclusive.
+
+We have the sequence $a_n$, defined as
+
+$$
+a_n = \dfrac{n^45^n}{3^n}
+$$
+
+To apply the root test, we find the limit of $\sqrt[n]{a_n}$ as $n\to\infty$:
+
+$$
+\begin{aligned}
+L &= lim_(n → ∞)\sqrt[n]{a_{n}} \\
+&= lim_(n → ∞)(a_{n})^{1/n} \\
+&= lim_(n → ∞)(\frac{n^{4}5^{n}}{3^{n}})^{1/n} \\
+&= lim_(n → ∞)(\frac{\sqrt[n]{n^{4}} \cdot 5}{3}) \\
+&= \frac{5}{3}lim_(n → ∞)\sqrt[n]{n^{4}} \\
+&= \frac{5}{3} \cdot 1^{4} \\
+&= \frac{5}{3}
+\end{aligned}
+$$
+
+Note that we used the fact that
+
+$$
+\lim_{n\to\infty} \sqrt[n]{n} = 1
+$$
+
+Since
+
+$$
+L =\dfrac{5}{3} \gt 1
+$$
+
+the series diverges by the root test.
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-6005
+content: |-
+  Calculate $L = lim_(n → ∞)\sqrt[n]{a_{n}}$ for the sequence $a_{n} = \frac{5^{n}}{2^{n + 3}}$. According to the root test, does $∑_(n = 1)^(∞)a_{n}$ converge or diverge?
+options:
+- id: a
+  content: |-
+    $L = \frac{5}{2}$. The series is divergent.
+  correct: true
+- id: b
+  content: |-
+    $L = 5$. The series is divergent.
+- id: c
+  content: |-
+    $L = 1$. The root test gives no conclusion.
+- id: d
+  content: |-
+    $L = \frac{2}{5}$. The series is convergent.
+- id: e
+  content: |-
+    $L = 2$. The series is divergent.
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-14950
+content: |-
+  Calculate $L = lim_(n → ∞)\sqrt[n]{a_{n}}$ for the sequence $a_{n} = (2^{n}n^{n})/((1 + 2n)^{n})$. According to the root test, does $∑_(n = 1)^(∞)a_{n}$ converge or diverge?
+options:
+- id: a
+  content: |-
+    $L = 0$. The root test gives no conclusion.
+- id: b
+  content: |-
+    $L = 1$. The root test gives no conclusion.
+  correct: true
+- id: c
+  content: |-
+    $L = ∞$. The series is divergent.
+- id: d
+  content: |-
+    $L = 2$. The series is divergent.
+- id: e
+  content: |-
+    $L = 1$. The series is divergent.
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -1,0 +1,282 @@
+# The Alternating Series Error Bound
+
+<!--
+lesson-id: 1174
+topic-code: CA2.4.5.11
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Finding the Alternating Series Error Bound for a Given Partial Sum](#finding-the-alternating-series-error-bound-for-a-given-partial-sum)
+- [Determining the Values of N Such That the Error in the Nth Partial Sum Is Smaller Than a Given Number](#determining-the-values-of-n-such-that-the-error-in-the-nth-partial-sum-is-smaller-than-a-given-number)
+
+## Prerequisites
+
+- [The Alternating Series Test](<../../../../MA/Single-Variable-Calculus/CA2/4. Sequences & Series/4.5. Infinite Series Convergence Tests/Lessons/4.5.7. The Alternating Series Test.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose that we have an alternating series
+
+$$
+S = \sum_{n =1}^\infty b_n
+$$
+
+where
+
+$$
+b_n = (-1)^n a_n
+$$
+
+or
+
+$$
+b_n = (-1)^{n+1} a_n
+$$
+
+with
+
+$$
+a_n \geq 0
+$$
+
+Let's assume that the above series is convergent by the alternating series test.
+
+The $N$th partial sum of this series is
+
+$$
+s_n = \sum_{n =1}^N b_n
+$$
+
+How good an estimate of $S$ is the $n$th partial sum of $S$?
+
+The **alternating series error bound** states that, for a convergent alternating series,
+
+$$
+\begin{vmatrix}S- s_n & < & b_{n+1}\end{vmatrix}
+$$
+
+In other words, the magnitude of the error of the $n$th partial sum is less than the magnitude of the $(n+1)$th term.
+
+---
+
+<a id="finding-the-alternating-series-error-bound-for-a-given-partial-sum"></a>
+## Finding the Alternating Series Error Bound for a Given Partial Sum
+
+**Example:** Suppose that
+$S = \displaystyle\sum\limits_{n = 1}^\infty {\dfrac{{{{(-1)}^n}}}{{\sqrt[4]{{{n^5}}}}}}$
+and that $s_2$ is the second partial sum of $S$. According to the alternating series error bound, $\mid S-s_2 \mid < k$ for some real number $k$. Find the value of $k$.
+
+**Explanation**
+
+Let
+
+$$
+a_n = \dfrac{1}{\sqrt[4]{n^5}}
+$$
+
+and
+
+$$
+b_n= {\dfrac{{{{(-1)}^n}}}{{\sqrt[4]{{{n^5}}}}}}
+$$
+
+Then $a_n$ is positive and decreasing for
+
+$$
+n\geq 1
+$$
+
+and $a_n \to0$ as $n\to\infty$. So, the series is convergent by the alternating series test.
+
+Because our series is a convergent alternating series, the alternating series error bound applies. In particular, for the second partial sum, it states that
+
+$$
+\begin{aligned}
+\begin{vmatrix}S - {s_2} & < & {b_3} & =\left\end{vmatrix} \dfrac{(-1)^{3}}{\sqrt[4]{3^5}} \right &= \dfrac{{1}}{\sqrt[4]{243}}
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+k=\dfrac{{1}}{\sqrt[4]{243}}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-50830
+content: |-
+  Suppose that
+
+  $S = ∑_(n = 1)^(∞)((-1)^{n}n)/(n!)$
+  and that $s_{5}$ is the fifth partial sum of $S$. According to the alternating series error bound, $\mid S - s_{5} \mid < k$ for some real number $k$. Find the value of $k$.
+options:
+- id: a
+  content: |-
+    $\frac{1}{720}$
+- id: b
+  content: |-
+    $\frac{1}{5}$
+- id: c
+  content: |-
+    $\frac{1}{6}$
+- id: d
+  content: |-
+    $\frac{1}{60}$
+- id: e
+  content: |-
+    $\frac{1}{120}$
+  correct: true
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-15170
+content: |-
+  Suppose that
+
+  $S = ∑_(n = 2)^(∞)((-1)^{n})/(\ln (n))$
+  and that $s_{9}$ is the ninth partial sum of $S$. According to the alternating series error bound, $\mid S - s_{9} \mid < k$ for some real number $k$. Find the value of $k$.
+options:
+- id: a
+  content: |-
+    $(\ln (9))/(10)$
+- id: b
+  content: |-
+    $9$
+- id: c
+  content: |-
+    $(1)/(\ln (10))$
+  correct: true
+- id: d
+  content: |-
+    $\ln (9)$
+- id: e
+  content: |-
+    $10$
+```
+
+---
+
+<a id="determining-the-values-of-n-such-that-the-error-in-the-nth-partial-sum-is-smaller-than-a-given-number"></a>
+## Determining the Values of N Such That the Error in the Nth Partial Sum Is Smaller Than a Given Number
+
+**Example:** Given that
+$S = \sum_{n=1}^\infty \dfrac {(-1)^n}{n}$
+and that $s_i$ is the $i$th partial sum of $S$, use the alternating series error bound to determine the values of $i$ such that $\mid S - s_{i} \mid < 0.001$.
+
+**Explanation**
+
+First, let
+
+$$
+a_n =\dfrac{1}{n}
+$$
+
+and
+
+$$
+b_n=\dfrac {(-1)^n}{n}
+$$
+
+Then $a_n$ is decreasing for
+
+$$
+n \geq 1
+$$
+
+and $a_n \to 0$ as $n \to \infty$. So, the series is convergent by the alternating series test.
+
+Because our series is a convergent alternating series, the alternating series error bound applies. In particular, for the $i$th partial sum, it states that
+$\begin{vmatrix}S - s_i & < & b_{i + 1}\end{vmatrix}$.
+
+So, we require
+
+$$
+\begin{aligned}
+\begin{vmatrix}b_{i + 1} &= & ((-1)^{i + 1})/(i + 1)\end{vmatrix} \mid \le 0.001 \\
+&= \frac{1}{i + 1}\begin{vmatrix}\le 0.001 \\ \frac{1}{i + 1}\end{vmatrix}\le \frac{1}{1000} \\
+&= i + 1\begin{vmatrix}\ge 1000 \\ i\end{vmatrix}\ge 999
+\end{aligned}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-50507
+content: |-
+  Given that
+
+  $S = ∑_(n = 1)^(∞)((-1)^{n})/(n^{2})$
+  and that $s_{i}$ is the $i$th partial sum of $S$, use the alternating series error bound to determine an inequality that gives the values of $i$ such that $\mid S - s_{i} \mid < 0.001$.
+options:
+- id: a
+  content: |-
+    $i^{2} + 2i \ge 1000$
+  correct: true
+- id: b
+  content: |-
+    $i^{2} + 2i \ge 1999$
+- id: c
+  content: |-
+    $i^{2} \ge 1000$
+- id: d
+  content: |-
+    $i^{2} \ge 999$
+- id: e
+  content: |-
+    $i^{2} + 2i \ge 999$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-15112
+content: |-
+  Given that
+
+  $S = ∑_(n = 1)^(∞)((-1)^{n})/(\sqrt{n})$
+  and that $s_{i}$ is the $i$th partial sum of $S$, use the alternating series error bound to determine the values of $i$ such that $\mid S - s_{i} \mid < 0.1$.
+options:
+- id: a
+  content: |-
+    $i \ge 10$
+- id: b
+  content: |-
+    $i \ge 100$
+  correct: true
+- id: c
+  content: |-
+    $i \ge 50$
+- id: d
+  content: |-
+    $i \ge 99$
+- id: e
+  content: |-
+    $i \ge 101$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

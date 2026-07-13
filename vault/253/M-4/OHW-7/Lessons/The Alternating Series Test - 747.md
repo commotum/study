@@ -1,0 +1,430 @@
+# The Alternating Series Test
+
+<!--
+lesson-id: 747
+topic-code: CA2.4.5.7
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [The Alternating Series Test](#the-alternating-series-test)
+- [Applying the Alternating Series Test](#applying-the-alternating-series-test)
+- [Applying the Alternating Series Test to an Alternating p-Series](#applying-the-alternating-series-test-to-an-alternating-p-series)
+- [Identifying Convergent Series by Applying the Alternating Series Test](#identifying-convergent-series-by-applying-the-alternating-series-test)
+
+## Prerequisites
+
+- [Convergent and Divergent Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.4. Convergent and Divergent Infinite Series.md>)
+- [Further Determining Limits of Sequences Using Relative Magnitudes](<../../../../MA/Single-Variable-Calculus/CA2/4. Sequences & Series/4.1. Sequences/Lessons/4.1.6. Further Determining Limits of Sequences Using Relative Magnitudes.md>)
+- [Identifying Monotonic Sequences Using Differentiation](<../../../../MA/Single-Variable-Calculus/CA2/4. Sequences & Series/4.2. Monotonic Sequences/Lessons/4.2.2. Identifying Monotonic Sequences Using Differentiation.md>)
+- [Identifying Monotonic Sequences Using Ratios](<../../../../MA/Single-Variable-Calculus/CA2/4. Sequences & Series/4.2. Monotonic Sequences/Lessons/4.2.3. Identifying Monotonic Sequences Using Ratios.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+An **alternating series** is a series whose terms alternate in sign. In other words, an alternating series is any series of the form
+
+$$
+\sum_{n=1}^\infty (-1)^n a_n = -a_1 + a_2 - a_3 + a_4 + \cdots
+$$
+
+or
+
+$$
+\sum_{n=1}^\infty (-1)^{n+1} a_n = a_1 - a_2 + a_3 - a_4 + \cdots
+$$
+
+where $a_n>0$ for all $n$.
+
+For example, the **alternating harmonic series** is given by
+
+$$
+\begin{aligned}
+∑_(n = 1)^(∞)((-1)^{n + 1})/(n) &= ((-1)^{2})/(1) + ((-1)^{3})/(2) + ((-1)^{4})/(3) + ((-1)^{5})/(4) + ⋯ \\
+&= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ⋯
+\end{aligned}
+$$
+
+Unlike the harmonic series
+
+$$
+\displaystyle\sum_{n=1}^\infty \dfrac{1}{n}
+$$
+
+which is divergent, the alternating harmonic series is convergent. In fact, it can be shown that
+
+$$
+\displaystyle\sum_{n=1}^\infty \dfrac{(-1)^n}{n} =\ln 2
+$$
+
+We won't prove this result, but we can get a feel for it by plotting the first few partial sums.
+
+![](<../Source/The Alternating Series Test - 747/Images/cc75ba23ca21b6bfc7fb8f9bd29fb1a7.png>)
+
+---
+
+<a id="the-alternating-series-test"></a>
+## The Alternating Series Test
+
+The **alternating series test** provides a way to test for convergence of an alternating series. The alternating series test states that if
+
+- $a_n$ is positive and decreasing for all $n$, and
+- $a_n\rightarrow 0$ as $n\rightarrow\infty$,
+
+then the alternating series
+
+$$
+\displaystyle\sum_{n=1}^\infty (-1)^n a_n
+$$
+
+and
+
+$$
+\displaystyle\sum_{n=1}^\infty (-1)^{n+1} a_n
+$$
+
+are both convergent.
+
+The key takeaway is that, given an alternating series, we need to check *two* conditions. If it passes both conditions, then the series is convergent.
+
+The alternating series test can only be used to test that a series is convergent. Failure of the test does *not* necessarily mean that the series is divergent. That said, if the condition $a_n\to0$ as $n\rightarrow\infty$ fails, then we *are* able to conclude that the series is divergent by the $n$th term test.
+
+---
+
+<a id="applying-the-alternating-series-test"></a>
+## Applying the Alternating Series Test
+
+**Example:** Use the alternating series test to show that the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}\,n}{n^2+1}$ is convergent.
+
+**Explanation**
+
+Let
+
+$$
+a_n = \dfrac{n}{n^2+1}
+$$
+
+To apply the alternating series test, we need to check that $a_n$ is a decreasing sequence, and that $a_n \to 0$ as $n \to \infty$.
+
+First, we need to check that $a_n$ is decreasing. For this, we can use differentiation.
+
+Let
+
+$$
+f(x) = \dfrac{x}{x^2 +1}
+$$
+
+Computing $f'(x)$ using the quotient rule gives
+
+$$
+f'(x) =\frac{1-x^2}{(x^2+1)^2}
+$$
+
+Since the numerator $1-x^2$ is always negative for $x > 1$, while the denominator $(x^2+1)^2$ is always positive, we have that
+
+$$
+f'(x) \leq 0
+$$
+
+for
+
+$$
+x \geq 1
+$$
+
+So, we conclude that $a_n$ is decreasing for
+
+$$
+n\geq 1
+$$
+
+We now need to check that
+
+$$
+\displaystyle\lim_{n\to\infty}a_n = 0
+$$
+
+In our case, we have
+
+$$
+\begin{aligned}
+lim_(n → ∞)a_{n} &= lim_(n → ∞)\frac{n}{n^{2} + 1} \\
+&= lim_(n → ∞)(\frac{\frac{n}{n^{2}}}{\frac{n^{2}}{n^{2}} + \frac{1}{n^{2}}}) \\
+&= lim_(n → ∞)(\frac{\frac{1}{n}}{1 + \frac{1}{n^{2}}}) \\
+&= \frac{0}{1 + 0} \\
+&= 0
+\end{aligned}
+$$
+
+So the sequence $a_n$ is decreasing for
+
+$$
+n\geq 1
+$$
+
+and $a_n\rightarrow 0$ as $n\rightarrow\infty$. Therefore, the alternating series test tells us that
+
+$$
+\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}n}{n^2+1}
+$$
+
+is convergent.
+
+---
+
+**Question 1**
+
+```quiz
+type: radio
+id: ma-50500
+content: |-
+  Consider the sequence $a_{n} = \frac{1}{n}$. Which of the following statements are true?
+
+  1. $a_{n}$ is positive and decreasing for all $n \ge 1$.
+  2. $lim_(n → ∞)a_{n} = 0$.
+  3. By the alternating test, the series $∑_(n = 1)^(∞)((-1)^{n})/(n)$ is convergent.
+options:
+- id: a
+  content: |-
+    II only
+- id: b
+  content: |-
+    I only
+- id: c
+  content: |-
+    II and III only
+- id: d
+  content: |-
+    I and III only
+- id: e
+  content: |-
+    I, II, and III
+  correct: true
+```
+
+---
+
+**Question 2**
+
+```quiz
+type: radio
+id: ma-50504
+content: |-
+  Consider the sequence $a_{n} = \frac{3n}{n + 1}$. Which of the following statements are true?
+
+  1. $lim_(n → ∞)a_{n} = 0$
+  2. $a_{n}$ is positive and decreasing for all $n \ge 1$
+  3. By the alternating series test, the series $∑_(n = 1)^(∞)(-1)^{n}a_{n}$ is convergent
+options:
+- id: a
+  content: |-
+    I and II only
+- id: b
+  content: |-
+    None of the statements are true
+  correct: true
+- id: c
+  content: |-
+    I and III only
+- id: d
+  content: |-
+    III only
+- id: e
+  content: |-
+    II and III only
+```
+
+---
+
+<a id="applying-the-alternating-series-test-to-an-alternating-p-series"></a>
+## Applying the Alternating Series Test to an Alternating p-Series
+
+**Example:** For which values of $p$ does the series $\displaystyle \sum_{n=1}^\infty \dfrac{(-1)^{n+1}}{n^{p+4}}$ converge?
+
+**Explanation**
+
+Let
+
+$$
+a_n = \dfrac{1}{n^{p+4}}
+$$
+
+Then by the alternating series test, the series
+
+$$
+\displaystyle \sum_{n=1}^\infty (-1)^{n+1}a_n
+$$
+
+converges if
+
+- $a_n$ is positive and decreasing for all $n$, and
+- $a_n \to 0$ as $n\to \infty$.
+
+Here, the sequence $a_n \to 0$ as $n\to\infty$ if
+$\begin{bmatrix}p + 4 & > 0 \\ p & > - 4\end{bmatrix}$.
+
+In addition, $a_n$ is positive and decreasing for
+
+$$
+n \geq 1
+$$
+
+and for all $p > -4$.
+
+Therefore, by the alternating series test, the series is convergent for $p > -4$.
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-50494
+content: |-
+  For which values of $p$ does the series $∑_(n = 1)^(∞)((-1)^{n})/(n^{2p + 1})$ converge?
+options:
+- id: a
+  content: |-
+    $p > - \frac{1}{2}$
+  correct: true
+- id: b
+  content: |-
+    $p \ge 0$
+- id: c
+  content: |-
+    $p \ge - \frac{1}{2}$
+- id: d
+  content: |-
+    $p > 0$
+- id: e
+  content: |-
+    The series converges for all values of $p$.
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-50800
+content: |-
+  For which values of $r$ does the series $∑_(n = 1)^(∞)((-1)^{n})/(n^{6r - 4})$ converge?
+options:
+- id: a
+  content: |-
+    $r \le 6$
+- id: b
+  content: |-
+    $r \ge 6$
+- id: c
+  content: |-
+    $r > \frac{2}{3}$
+  correct: true
+- id: d
+  content: |-
+    The series converges for all values of $r$.
+- id: e
+  content: |-
+    $r > \frac{3}{2}$
+```
+
+---
+
+<a id="identifying-convergent-series-by-applying-the-alternating-series-test"></a>
+## Identifying Convergent Series by Applying the Alternating Series Test
+
+**Example:** Which of the following series converge?
+
+1. $\displaystyle \sum_{n=1}^\infty (-1)^n \cdot 2^{n+1}$
+2. $\displaystyle \sum_{n=1}^\infty \dfrac{(-1)^n}{n^{2/3}}$
+3. $\displaystyle \sum_{n=1}^\infty \dfrac{(-1)^n \sqrt{n}}{2^n}$
+
+**Explanation**
+
+Let's examine each series in turn.
+
+- Let $a_n = 2^{n+1}$. Since $a_n \to \infty$ as $n\to \infty$, the series is divergent by the $n$th term test.
+- Let $a_n = \dfrac{1}{n^{2/3}}$. Clearly, the sequence is positive and decreasing for $n \geq 1$, and $a_n \to 0$ as $n\to \infty$. Therefore, by the alternating series test, $\displaystyle \sum_{n=1}^\infty \dfrac{(-1)^n}{n^{2/3}}$ is convergent.
+- Let $a_n = \dfrac{\sqrt{n}}{2^n}$. Both the numerator and denominator approach infinity as $n \to \infty$. However, the denominator is growing much faster than the numerator, and we conclude that
+$\lim_{n \to \infty} \dfrac{\sqrt{n}}{2^n} = 0$.
+On the other hand, $a_n$ is positive for all $n \geq 1$. Now, we need to check if $a_n$ is decreasing. Consider the function $f(x) = \dfrac{\sqrt{x}}{2^x}$. Then, using the quotient rule for derivatives, we obtain
+$f'(x) =\dfrac{1-x\ln4}{2^{x+1}\sqrt{x}}$.
+The function $f(x)$ is decreasing if $f'(x) < 0$, that is
+$\begin{bmatrix}1 - x\ln 4 & < 0 \\ x\ln 4 & > 1 \\ x & > \frac{1}{\ln 4} \approx 0.7\end{bmatrix}$.
+So, $f(x)$ is decreasing for all $x \geq 1$. Hence, the sequence is positive and decreasing if $n \ge 1$. Therefore, by the alternating series test, $\displaystyle \sum_{n=1}^\infty (-1)^n a_n$ is convergent.
+
+Therefore, the correct answer is "II and III only."
+
+---
+
+**Question 5**
+
+```quiz
+type: radio
+id: ma-50492
+content: |-
+  Which of the following series converge?
+
+  1. $∑_(n = 1)^(∞)((-1)^{n})/(n)$
+  2. $∑_(n = 1)^(∞)((-1)^{n} \cdot n)/(4^{n})$
+  3. $∑_(n = 1)^(∞)((-1)^{n}(2n + 1))/(n)$
+options:
+- id: a
+  content: |-
+    I only
+- id: b
+  content: |-
+    I and II only
+  correct: true
+- id: c
+  content: |-
+    I and III only
+- id: d
+  content: |-
+    II only
+- id: e
+  content: |-
+    II and III only
+```
+
+---
+
+**Question 6**
+
+```quiz
+type: radio
+id: ma-50710
+content: |-
+  Which of the following series converge?
+
+  1. $∑_(n = 1)^(∞)((-1)^{n})/(n^{3} + 3)$
+  2. $∑_(n = 1)^(∞)((-1)^{n} \cdot e^{n})/(3n)$
+  3. $∑_(n = 1)^(∞)((-1)^{n}(n^{2}))/(n + 1)$
+options:
+- id: a
+  content: |-
+    III only
+- id: b
+  content: |-
+    II and III only
+- id: c
+  content: |-
+    II only
+- id: d
+  content: |-
+    I only
+  correct: true
+- id: e
+  content: |-
+    I and II only
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

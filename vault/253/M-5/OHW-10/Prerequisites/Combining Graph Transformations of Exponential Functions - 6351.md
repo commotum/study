@@ -1,0 +1,211 @@
+# Combining Graph Transformations of Exponential Functions
+
+<!--
+lesson-id: 6351
+topic-code: MF2.5.5.4
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Exponential Growth Functions With Horizontal and Vertical Shifts](#exponential-growth-functions-with-horizontal-and-vertical-shifts)
+- [Exponential Functions With Vertical Reflections and Horizontal Shifts](#exponential-functions-with-vertical-reflections-and-horizontal-shifts)
+
+## Prerequisites
+
+- [The Natural Logarithm](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.1. Introduction to Logarithms/Lessons/5.1.4. The Natural Logarithm.md>)
+- [Horizontal Translations of Functions](<../../../../MA/Mathematical-Foundations/MF2/4. Functions/4.2. Graph Transformations of Functions/Lessons/4.2.2. Horizontal Translations of Functions.md>)
+- [Vertical Reflections of Exponential Functions](<../../../../MA/Mathematical-Foundations/MF2/5. Exponentials & Logarithms/5.5. Graphs of Exponential Functions/Lessons/5.5.3. Vertical Reflections of Exponential Functions.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Recall that **Euler's number,** denoted $e$, is an irrational number whose decimal approximation is
+
+$$
+e\approx2.718\,281\,828
+$$
+
+As we'll discover, the exponential growth curve $y=e^x$ is one of the most important curves in mathematics. Its graph is given below.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/cec84ef9213a04defabd1ee37f12b017.png>)
+
+Now, suppose we want to sketch the graph of
+
+$$
+y=e^{x-3} + 1
+$$
+
+First, we shift it $3$ units to the right to get $y=e^{x-3}$. The $y$-intercept moves from $(0,1)$ to the point $(3,1)$ but the horizontal asymptote stays at $y=0$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/d84b038faef6126fa2b35598925f6d38.png>)
+
+Then, we vertically shift it by $1$ unit up to give $e^{x-3} + 1$. The point $(3,1)$ moves to $(3,2)$ and the horizontal asymptote moves from $y=0$ to $y=1$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/481ea97692c89ad7c586681f09060294.png>)
+
+---
+
+<a id="exponential-growth-functions-with-horizontal-and-vertical-shifts"></a>
+## Exponential Growth Functions With Horizontal and Vertical Shifts
+
+**Example:** Plot the curve of $y=8^{x+2}-4$.
+
+**Explanation**
+
+To plot the given function, we follow these steps:
+
+- First, we plot the graph of $y=8^x$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/5db20c0c2a5b286b81d3f52332862eec.png>)
+
+- To plot $y=8^{x+2}$, we shift the graph of $y=8^{x}$ horizontally by $2$ units to the left. The $y$-intercept moves from $(0,1)$ to $(-2,1)$, but the horizontal asymptote stays at $y=0$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/73960df92124c79aec6b0d4fe0210c23.png>)
+
+- To plot $y=8^{x+2}-4$, we shift the graph of $y=8^{x+2}$ vertically by $4$ units down. The point $(-2,1)$ moves to $(-2,-3)$ and the horizontal asymptote moves from $y=0$ to $y=-4$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/05d99841f9a8ee141cf4a3e8c3648e27.png>)
+
+---
+
+**Question 1**
+
+```quiz
+type: radio
+id: ma-32939
+content: |-
+  Which of the following is the graph of $y = 3^{x - 3} - 2$?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32939-a-1.png>)
+  correct: true
+- id: b
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32939-a-4.png>)
+- id: c
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32939-a-2.png>)
+- id: d
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32939-a-3.png>)
+- id: e
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32939-a-5.png>)
+```
+
+---
+
+**Question 2**
+
+```quiz
+type: radio
+id: ma-32975
+content: |-
+  Which of the following is the graph of $y = 5^{x - 2} - 2$?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32975-a-4.png>)
+- id: b
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32975-a-5.png>)
+- id: c
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32975-a-3.png>)
+- id: d
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32975-a-1.png>)
+  correct: true
+- id: e
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-32975-a-2.png>)
+```
+
+---
+
+<a id="exponential-functions-with-vertical-reflections-and-horizontal-shifts"></a>
+## Exponential Functions With Vertical Reflections and Horizontal Shifts
+
+**Example:** Sketch the graph of the function $y=-\left(\dfrac{1}{2}\right)^{x-4}$.
+
+**Explanation**
+
+To plot the given function, we follow these steps:
+
+- We take the curve $y=\left(\dfrac{1}{2}\right)^x$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/b23d927d496baadc6a16b8722b22c693.png>)
+
+- Horizontally shift it by $4$ units to the right to give $y=\left(\dfrac{1}{2}\right)^{x-4}$. The $y$-intercept moves from $(0,1)$ to $(4,1)$ but the horizontal asymptote stays at $y=0$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/833637c510cbe4973cab4a524bea3787.png>)
+
+- Then, reflect it on the $x$-axis to give $y=-\left(\dfrac{1}{2}\right)^{x-4}$. The point $(4,1)$ moves to $(4,-1)$ and the horizontal asymptote stays at $y=0$.
+
+![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/13be27db6bf3af59c6c7c9ffb393feba.png>)
+
+---
+
+**Question 3**
+
+```quiz
+type: radio
+id: ma-27381
+content: |-
+  Which of the following is the graph of $y =-3^{x - 3}$?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-27381-a-5.png>)
+- id: b
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-27381-a-1.png>)
+  correct: true
+- id: c
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-27381-a-4.png>)
+- id: d
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-27381-a-3.png>)
+- id: e
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-27381-a-2.png>)
+```
+
+---
+
+**Question 4**
+
+```quiz
+type: radio
+id: ma-29379
+content: |-
+  Which of the following is the graph of $y = - (\frac{1}{10})^{x - 3}$?
+options:
+- id: a
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-29379-a-3.png>)
+- id: b
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-29379-a-1.png>)
+  correct: true
+- id: c
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-29379-a-2.png>)
+- id: d
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-29379-a-4.png>)
+- id: e
+  content: |-
+    ![](<../Source/Combining Graph Transformations of Exponential Functions - 6351/Images/q-29379-a-5.png>)
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

@@ -1,0 +1,349 @@
+# The Generalized Binomial Theorem
+
+<!--
+lesson-id: 1189
+topic-code: DSM.5.3.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Finding the Binomial Expansion of a Reciprocal Expression](#finding-the-binomial-expansion-of-a-reciprocal-expression)
+- [Finding the Binomial Expansion of a Reciprocal Expression Raised to a Power](#finding-the-binomial-expansion-of-a-reciprocal-expression-raised-to-a-power)
+- [Finding the Binomial Expansion of a Radical Expression](#finding-the-binomial-expansion-of-a-radical-expression)
+
+## Prerequisites
+
+- [Convergent and Divergent Infinite Series](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.4. Convergent and Divergent Infinite Series.md>)
+- [The Special Case of the Binomial Theorem](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.1. The Binomial Theorem/Lessons/1.1.3. The Special Case of the Binomial Theorem.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose we have the following binomial, where $n$ is a positive integer.
+$(1+x)^n$
+We can use the binomial theorem to expand this binomial into a finite series containing ascending powers of $x$ as follows:
+
+$$
+\begin{aligned}
+(1 + x)^{n} &= 1 + nx + (\frac{n}{2})x^{2} + (\frac{n}{3})x^{3} + ⋯ + x^{n}
+\end{aligned}
+$$
+
+We derived this result in a previous lesson. This series is finite whenever $n$ is a positive integer.
+
+However, suppose we want to expand $(1+x)^n$ where $n$ is some other rational number (i.e., not a positive integer)? In such cases, we can apply the **generalized binomial theorem**, which states that
+
+$$
+(1+x)^n = 1 + nx + \dfrac{n(n-1)}{2!}x^2 + \dfrac{n(n-1)(n-2)}{3!}x^3 + \cdots
+$$
+
+In general, this is an *infinite series*. The series is *convergent* for $\mid x \mid < 1$ and *divergent* for
+
+$$
+\mid x \mid \geq 1
+$$
+
+More generally, if $a$ is a real number, then we can expand the binomial $(1+ax)^n$ similarly as follows:
+
+$$
+(1+ax)^n = 1 + nax + \dfrac{n(n-1)}{2!}(ax)^2 + \dfrac{n(n-1)(n-2)}{3!}(ax)^3 + \cdots
+$$
+
+which is convergent whenever $\mid ax \mid < 1$, which we usually write as
+
+$$
+\begin{vmatrix}x & < \dfrac{1}{\mid a\end{vmatrix}}
+$$
+
+Let's use this to find the first few terms of the binomial expansion of
+
+$$
+\dfrac{1}{(1+x)^2}
+$$
+
+Applying the generalized binomial formula with $n=-2$, we obtain
+
+$$
+\begin{aligned}
+(1)/((1 + x)^{2}) &= (1 + x)^{-2} \\
+&= 1 + (-2)x + ((-2)(-2 - 1)x^{2})/(2!) + ((-2)(-2 - 1)(-2 - 2)x^{3})/(3!) + ⋯ \\
+&= 1 - 2x + ((-2)(-3)x^{2})/(2) + ((-2)(-3)(-4)x^{3})/(6) + ⋯ \\
+&= 1 - 2x + \frac{6 \cdot x^{2}}{2} - \frac{24 \cdot x^{3}}{6} + ⋯ \\
+&= 1 - 2x + 3x^{2} - 4x^{3} + ⋯
+\end{aligned}
+$$
+
+Finally, the generalized binomial theorem also works when $n$ *is* a positive integer. In this case, all terms after the $(n+1)$th term equal zero. In this case, we can relax the condition $\mid x \mid < 1$.
+
+---
+
+<a id="finding-the-binomial-expansion-of-a-reciprocal-expression"></a>
+## Finding the Binomial Expansion of a Reciprocal Expression
+
+**Example:** Given that $\mid x \mid < \dfrac{1}{3}$, find the first three terms in the binomial expansion of $\dfrac{1}{1 + 3x}$.
+
+**Explanation**
+
+The generalized binomial formula states that
+
+$$
+(1+x)^n = 1 + nx + \dfrac{n(n-1)x^2}{2!} + \dfrac{n(n-1)(n-2)x^3}{3!}+\cdots
+$$
+
+We rewrite the given expression as
+
+$$
+\dfrac{1}{1 + 3x} = (1+3x)^{-1}
+$$
+
+Now, applying the generalized binomial formula with $n=-1$ and $3x$ instead of $x$, we obtain
+
+$$
+\begin{aligned}
+\frac{1}{1 + 3x} &= (1 + 3x)^{-1} \\
+&= 1 + (-1)(3x) + ((-1)(-1 - 1)(3x)^{2})/(2!) + ⋯ \\
+&= 1 - 3x + ((-1)(-2)(9x^{2}))/(2) + ⋯ \\
+&= 1 - 3x + 9x^{2} + ⋯
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-13517
+content: |-
+  Given that $\mid x \mid < \frac{1}{3}$, find the first three terms in the binomial expansion of $\frac{1}{1 - 3x}$.
+options:
+- id: a
+  content: |-
+    $1 - 3x + 9x^{2} + ⋯$
+- id: b
+  content: |-
+    $1 + 3x - 3x^{2} + ⋯$
+- id: c
+  content: |-
+    $-1 + x - x^{2} + ⋯$
+- id: d
+  content: |-
+    $3 + 3x + 3x^{2} + ⋯$
+- id: e
+  content: |-
+    $1 + 3x + 9x^{2} + ⋯$
+  correct: true
+```
+
+---
+
+**Question 2**
+
+Given that $\mid x \mid < \frac{1}{2}$, find the first **three** terms in the binomial expansion below.$\frac{3}{1 + 2x} =$
+$\underline{\hspace{1.5cm}}$
+$+ ⋯$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-88073
+content: |-
+  Given that $\mid x \mid < 1$, find the first three terms in the binomial expansion of $\frac{1}{1 + x^{2}}$.
+options:
+- id: a
+  content: |-
+    $1 + x^{2} + x^{4} + ⋯$
+- id: b
+  content: |-
+    $1 - x + x^{2} + ⋯$
+- id: c
+  content: |-
+    $1 + x + x^{2} + ⋯$
+- id: d
+  content: |-
+    $1 - x^{2} + x^{4} + ⋯$
+  correct: true
+- id: e
+  content: |-
+    $1 + 2x^{2} + 3x^{4} + ⋯$
+```
+
+---
+
+<a id="finding-the-binomial-expansion-of-a-reciprocal-expression-raised-to-a-power"></a>
+## Finding the Binomial Expansion of a Reciprocal Expression Raised to a Power
+
+**Example:** Given that $\mid x \mid < \dfrac{1}{2}$, find the first three terms in the binomial expansion of $\dfrac{5}{(1+2x)^2}$.
+
+**Explanation**
+
+The generalized binomial formula states that
+
+$$
+(1+x)^n = 1 + nx + \dfrac{n(n-1)x^2}{2!} + \dfrac{n(n-1)(n-2)x^3}{3!}+\cdots
+$$
+
+We rewrite the given expression as
+
+$$
+\dfrac{5}{(1+2x)^2} = 5(1+2x)^{-2}
+$$
+
+Now, applying the generalized binomial formula with $n=-2$ and $2x$ instead of $x$, we obtain
+
+$$
+\begin{aligned} \dfrac{5}{(1+2x)^2} & = 5\left[ 1+(-2)(2x)+\dfrac{(-2)(-2-1)(2x)^2}{2!} + \cdots \right] \\[5pt] & = 5\left[ 1 - 4x +\dfrac{(-2)(-3)(4)x^2}{2} + \cdots \right] \\[5pt] & = 5\left[ 1 - 4x + 12x^2 + \cdots \right] \\[5pt] & = 5 - 20x + 60x^2 + \cdots. \end{aligned}
+$$
+
+---
+
+**Question 4**
+
+Given that $\mid x \mid < \frac{1}{2}$, write out the first **three** terms in the binomial expansion below.$(3)/((1 - 2x)^{2}) =$
+$\underline{\hspace{1.5cm}}$
+$+ ⋯$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-253919
+content: |-
+  Given that $\mid x \mid < \frac{1}{5}$, find the first three terms in the binomial expansion of $(2)/((1 - 5x)^{3})$.
+options:
+- id: a
+  content: |-
+    $2 - 10x + 300x^{2} + ⋯$
+- id: b
+  content: |-
+    $2 + 30x + 150x^{2} + ⋯$
+- id: c
+  content: |-
+    $2 + 30x + 300x^{2} + ⋯$
+  correct: true
+- id: d
+  content: |-
+    $6 - 10x + 30x^{2} + ⋯$
+- id: e
+  content: |-
+    $6 + 20x + 30x^{2} + ⋯$
+```
+
+---
+
+**Question 6**
+
+Given that $\mid x \mid < \frac{1}{3}$, find the first three terms in the binomial expansion of $(3)/((1 + 3x)^{3})$.$(3)/((1 + 3x)^{3}) =$
+$\underline{\hspace{1.5cm}}$
+$+ ⋯$
+
+---
+
+<a id="finding-the-binomial-expansion-of-a-radical-expression"></a>
+## Finding the Binomial Expansion of a Radical Expression
+
+**Example:** Find the binomial expansion of $\dfrac{1}{\sqrt{1+4x}}$ up to the fourth term. Assume that $\mid x \mid <\dfrac{1}{4}$.
+
+**Explanation**
+
+The generalized binomial formula states that
+
+$$
+(1+x)^n = 1 + nx + \dfrac{n(n-1)x^2}{2!} + \dfrac{n(n-1)(n-2)x^3}{3!}+\cdots
+$$
+
+We rewrite the given expression as
+
+$$
+\dfrac{1}{\sqrt{1+4x}} =(1+4x)^{-1/2}
+$$
+
+Now, applying the generalized binomial formula with
+
+$$
+n=-\dfrac12
+$$
+
+and $4x$ instead of $x$, we obtain
+
+$$
+\begin{aligned} \dfrac{1}{\sqrt{1+4x}} & = 1+\left(-\dfrac{1}{2}\right)(4x)+\dfrac{\left(-\dfrac{1}{2}\right)\left(-\dfrac{1}{2}-1\right)(4x)^2}{2!} + \cdots \\[5pt] & = 1 - 2x +\dfrac{\left(-\dfrac{1}{2}\right)\left(-\dfrac{3}{2}\right)16x^2}{2} + \cdots \\[5pt] & = 1 - 2x + 6x^2 + \cdots. \end{aligned}
+$$
+
+---
+
+**Question 7**
+
+Given that $\mid x \mid < \frac{\sqrt{2}}{2}$, find the first three terms in the binomial expansion of $\sqrt{1 - 2x^{2}}$.$\sqrt{1 - 2x^{2}} =$
+$\underline{\hspace{1.5cm}}$
+$+ ⋯$
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-88159
+content: |-
+  Given that $\mid x \mid < 1$, find the first three terms in the binomial expansion of $9\sqrt[3]{1 + x}$.
+options:
+- id: a
+  content: |-
+    $9 + \frac{1}{3}x - \frac{1}{9}x^{2} + ⋯$
+- id: b
+  content: |-
+    $9 + 3x + 6x^{2} + ⋯$
+- id: c
+  content: |-
+    $9 - 6x + 2x^{2} + ⋯$
+- id: d
+  content: |-
+    $9 + 3x - x^{2} + ⋯$
+  correct: true
+- id: e
+  content: |-
+    $9 + \frac{1}{2}x - 2x^{2} + ⋯$
+```
+
+---
+
+**Question 9:**
+
+```quiz
+type: radio
+id: ma-254030
+content: |-
+  Given that $\mid x \mid < \frac{1}{\sqrt{3}}$, find the first **three** terms in the binomial expansion of $\frac{2}{\sqrt[3]{1 + 3x^{2}}}$.
+options:
+- id: a
+  content: |-
+    $2 - 2x^{2} + 4x^{4} + ⋯$
+  correct: true
+- id: b
+  content: |-
+    $2 - x^{2} + 2x^{4} + ⋯$
+- id: c
+  content: |-
+    $4 - 4x^{2} + 8x^{4} + ⋯$
+- id: d
+  content: |-
+    $1 - x^{2} + 4x^{4} + ⋯$
+- id: e
+  content: |-
+    $2 + 4x^{2} + 4x^{4} + ⋯$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

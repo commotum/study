@@ -1,14 +1,31 @@
 ## Prerequisites
 
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
-- [Lesson-Name](<Prerequisites/Lesson-Path>)
+- [Factorials - 774](<Prerequisites/Factorials - 774.md>)
+- [Intersections of Intervals - 347](<Prerequisites/Intersections of Intervals - 347.md>)
+- [Simplifying Rational Expressions by Factoring - 423](<Prerequisites/Simplifying Rational Expressions by Factoring - 423.md>)
+- [Multiplying Binomials - 371](<Prerequisites/Multiplying Binomials - 371.md>)
+- [Factorials in Variable Expressions - 3710](<Prerequisites/Factorials in Variable Expressions - 3710.md>)
+- [Combining the Laws of Logarithms - 30](<Prerequisites/Combining the Laws of Logarithms - 30.md>)
+- [Domain and Range of Inverse Functions - 3734](<Prerequisites/Domain and Range of Inverse Functions - 3734.md>)
+- [Invertible Functions - 1889](<Prerequisites/Invertible Functions - 1889.md>)
+- [Convergent and Divergent Infinite Series - 982](<Prerequisites/Convergent and Divergent Infinite Series - 982.md>)
+- [Finding the Sum of an Infinite Geometric Series - 691](<Prerequisites/Finding the Sum of an Infinite Geometric Series - 691.md>)
+- [Graphing Sine and Cosine - 1491](<Prerequisites/Graphing Sine and Cosine - 1491.md>)
+- [Graphing the Inverse Sine Function - 1483](<Prerequisites/Graphing the Inverse Sine Function - 1483.md>)
+- [Convergence of Geometric Series - 684](<Prerequisites/Convergence of Geometric Series - 684.md>)
+- [Expressing Rational Functions as Sums of Partial Fractions - 1060](<Prerequisites/Expressing Rational Functions as Sums of Partial Fractions - 1060.md>)
+- [Higher-Degree Taylor Polynomials - 3771](<Prerequisites/Higher-Degree Taylor Polynomials - 3771.md>)
 
 ## Lessons
 
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
-- [Lesson-Name](<Lessons/Lesson-Path>)
+- [Telescoping Series - 1176](<Lessons/Telescoping Series - 1176.md>)
+- [Maclaurin Series - 340](<Lessons/Maclaurin Series - 340.md>)
+- [Taylor Series - 3826](<Lessons/Taylor Series - 3826.md>)
+- [Representing Functions as Power Series - 885](<Lessons/Representing Functions as Power Series - 885.md>)
+- [Intervals of Convergence for Scaled Inverse-Sine Series](<Lessons/Problem-10.md>)
+- [Summing an Alternating Rational Series with the Arctangent Series](<Lessons/Problem-11.md>)
+- [Summing a Power Series by Integrating a Known Series](<Lessons/Problem-12.md>)
+- [Expanding a Variable Power With Maclaurin Series](<Lessons/Problem-14.md>)
 
 ---
 ## Problem 1

@@ -9,11 +9,11 @@
 	- [ ] OHW-1
 		- [x] [[M-1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477|9.1.1. Approximating Areas With the Left Riemann Sum]]
 		- [x] [[M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
-	- [ ] WHW-1
+	- [x] WHW-1
 		- [x] [[M-1/WHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281|9.1.2. Approximating Areas With the Right Riemann Sum]]
 	- [ ] OHW-1
 		- [x] [[M-1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
-	- [ ] WHW-1
+	- [x] WHW-1
 		- [x] [[M-1/WHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042|9.1.3. Left and Right Riemann Sums in Sigma Notation]]
 	- [ ] OHW-1
 		- [ ] [[M-1/OHW-1/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
@@ -74,3 +74,16 @@
 		- [ ] [[M-3/WHW-3/Lessons/The Second Fundamental Theorem of Calculus - 613|9.4.2. The Second Fundamental Theorem of Calculus]]
 		- [x] [[M-3/WHW-3/Lessons/Calculating the Position Function of a Particle Using Integration - 335|11.1.6. Calculating the Position Function of a Particle Using Integration]]
 		- [ ] [[M-3/WHW-3/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
+- [ ] M-4
+	- [ ] WHW-4
+		- [ ] [[M-4/WHW-4/Lessons/Simplifying Expressions Using the Pythagorean Identity - 207|5.3.2. Simplifying Expressions Using the Pythagorean Identity]]
+		- [ ] [[M-4/WHW-4/Lessons/The Antiderivative - 308|12.4.1. The Antiderivative]]
+		- [ ] [[M-4/WHW-4/Lessons/The Sum Rule for Indefinite Integrals - 3769|12.4.3. The Sum Rule for Indefinite Integrals]]
+		- [ ] [[M-4/WHW-4/Lessons/Integrating the Reciprocal Function - 1361|12.4.4. Integrating the Reciprocal Function]]
+		- [ ] [[M-4/WHW-4/Lessons/Integrating Trigonometric Functions Using Substitution - 478|10.1.8. Integrating Trigonometric Functions Using Substitution]]
+		- [x] [[M-4/WHW-4/Lessons/Calculating the Position Function of a Particle Using Integration - 335|11.1.6. Calculating the Position Function of a Particle Using Integration]]
+		- [ ] [[M-4/WHW-4/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
+		- [ ] [[M-4/WHW-4/Lessons/Integration Using Substitution - 443|1.1.3. Integration Using Substitution]]
+		- [ ] [[M-4/WHW-4/Lessons/Calculating Definite Integrals Using Substitution - 1159|1.1.4. Calculating Definite Integrals Using Substitution]]
+		- [ ] [[M-4/WHW-4/Lessons/Further Integration of Algebraic Functions Using Substitution - 316|1.1.5. Further Integration of Algebraic Functions Using Substitution]]
+		- [ ] [[M-4/WHW-4/Lessons/Calculating the Total Distance Traveled by a Particle - 636|2.5.5. Calculating the Total Distance Traveled by a Particle]]

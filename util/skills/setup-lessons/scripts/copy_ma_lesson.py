@@ -216,15 +216,89 @@ def local_source_name(row: dict[str, str]) -> str:
     return local_stem(row)
 
 
+CANONICAL_TOPIC_FIELDS = [
+    "layer",
+    "course",
+    "topic-id",
+    "topic-number",
+    "topic-name",
+    "md-path",
+    "src-path",
+]
+
+
 def load_topics(index_path: Path) -> tuple[list[dict[str, str]], list[str]]:
     with index_path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
-        rows = list(reader)
+        raw_rows = list(reader)
         fieldnames = list(reader.fieldnames or [])
-    required = {"layer", "topic-id", "topic-number", "topic-name", "md-path", "src-path"}
-    if not rows or not required.issubset(fieldnames):
-        raise ValueError(f"index is missing required columns {sorted(required)}: {index_path}")
-    return rows, fieldnames
+    required = {"layer", "topic-id", "topic-number", "topic-name"}
+    has_paths = {"md-path", "src-path"}.issubset(fieldnames)
+    has_course_paths = {"lesson-path", "source-path"}.issubset(fieldnames)
+    if not raw_rows or not required.issubset(fieldnames) or not (has_paths or has_course_paths):
+        raise ValueError(
+            "index is missing required topic fields or path columns "
+            f"(md-path/src-path or lesson-path/source-path): {index_path}"
+        )
+
+    rows: list[dict[str, str]] = []
+    for raw in raw_rows:
+        md_path = raw.get("md-path", "") or raw.get("lesson-path", "")
+        src_path = raw.get("src-path", "") or raw.get("source-path", "")
+        if md_path and not raw.get("md-path"):
+            md_path = (index_path.parent / md_path).resolve().as_posix()
+        if src_path and not raw.get("src-path"):
+            src_path = (index_path.parent / src_path).resolve().as_posix()
+        rows.append(
+            {
+                "layer": raw.get("layer", ""),
+                "course": raw.get("course", "") or index_path.parent.name,
+                "topic-id": raw.get("topic-id", ""),
+                "topic-number": raw.get("topic-number", ""),
+                "topic-name": raw.get("topic-name", ""),
+                "md-path": md_path,
+                "src-path": src_path,
+            }
+        )
+    return rows, list(CANONICAL_TOPIC_FIELDS)
+
+
+def merge_all_vault_ma_topics(
+    rows: list[dict[str, str]],
+    repo_root: Path,
+    primary_index: Path,
+) -> None:
+    seen_paths = {
+        resolve_row_path(row["md-path"], repo_root).resolve()
+        for row in rows
+        if row.get("md-path")
+    }
+    for index_path in sorted((repo_root / "vault" / "MA").glob("*/*/topics.csv")):
+        if index_path.resolve() == primary_index.resolve():
+            continue
+        try:
+            extra_rows, _ = load_topics(index_path)
+        except ValueError:
+            continue
+        for row in extra_rows:
+            lesson_path = resolve_row_path(row["md-path"], repo_root).resolve()
+            if lesson_path in seen_paths:
+                continue
+            rows.append(row)
+            seen_paths.add(lesson_path)
+
+
+def merge_all_vault_ma_prerequisites(
+    prerequisites: dict[str, list[str]],
+    repo_root: Path,
+    primary_index: Path,
+) -> None:
+    for prerequisites_path in sorted(
+        (repo_root / "vault" / "MA").glob("*/*/prerequisites.csv")
+    ):
+        if prerequisites_path.resolve() == primary_index.resolve():
+            continue
+        merge_prerequisites(prerequisites, prerequisites_path)
 
 
 def load_catalog_topic_codes(catalog_path: Path) -> dict[str, str]:
@@ -313,11 +387,21 @@ def normalize_link_title(value: str) -> str:
 def build_canonical_prerequisite_link_index(
     rows: list[dict[str, str]],
 ) -> tuple[dict[str, dict[str, str]], dict[str, dict[str, str]]]:
-    by_topic_id = {
-        row["topic-id"]: row
-        for row in rows
-        if row.get("topic-id") and is_mathematical_foundations_row(row)
-    }
+    # Keep Mathematical Foundations as the preferred canonical source when a
+    # topic is mirrored across courses, but retain course-only topics (for
+    # example, Calculus II convergence tests) so their copied prerequisite
+    # links can also be rewritten to local assignment files.
+    by_topic_id: dict[str, dict[str, str]] = {}
+    for row in rows:
+        topic_id = row.get("topic-id")
+        if not topic_id:
+            continue
+        existing = by_topic_id.get(topic_id)
+        if existing is None or (
+            is_mathematical_foundations_row(row)
+            and not is_mathematical_foundations_row(existing)
+        ):
+            by_topic_id[topic_id] = row
 
     title_candidates: dict[str, list[dict[str, str]]] = {}
     for row in by_topic_id.values():
@@ -1639,6 +1723,7 @@ def main() -> int:
     topic_rows, topic_fieldnames = load_topics(index_path)
     if index_path == repo_root / "util" / "Mathematical-Foundations" / "topics.csv":
         topic_rows.extend(load_calc2_fallback_topics())
+    merge_all_vault_ma_topics(topic_rows, repo_root, index_path)
     topic_by_id = index_by_topic_id(topic_rows)
     filename_index = index_by_unique_filename(topic_rows)
     canonical_by_topic_id, canonical_by_title = build_canonical_prerequisite_link_index(topic_rows)
@@ -1646,6 +1731,7 @@ def main() -> int:
     prerequisites = load_prerequisites(prerequisites_path)
     if prerequisites_path == repo_root / "util" / "Mathematical-Foundations" / "prerequisites.csv":
         merge_prerequisites(prerequisites, DEFAULT_MA_DATA_PREREQUISITES)
+    merge_all_vault_ma_prerequisites(prerequisites, repo_root, prerequisites_path)
     local_rows = read_local_topics(local_topics_path)
 
     if not args.refresh_only:

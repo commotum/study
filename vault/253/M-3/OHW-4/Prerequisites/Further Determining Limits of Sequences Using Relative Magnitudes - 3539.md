@@ -1,0 +1,336 @@
+# Further Determining Limits of Sequences Using Relative Magnitudes
+
+<!--
+lesson-id: 3539
+topic-code: CA2.4.1.6
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Determining Whether a Sequence Expressed as a Product Converges](#determining-whether-a-sequence-expressed-as-a-product-converges)
+- [Determining the Convergence of Sequences Containing Trigonometric Functions](#determining-the-convergence-of-sequences-containing-trigonometric-functions)
+- [Determining the Convergence of Sequences Containing Factorials](#determining-the-convergence-of-sequences-containing-factorials)
+
+## Prerequisites
+
+- [Determining Limits of Sequences Using Relative Magnitudes](<../../../../MA/Mathematical-Foundations/MF3/7. Limits & Continuity/7.1. Limits/Lessons/7.1.9. Determining Limits of Sequences Using Relative Magnitudes.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+What is the limit of the following sequence?
+
+$$
+a_n = e^{-n}\sin{n}, \qquad n\geq 0
+$$
+
+First, notice that we can rewrite the sequence using a fraction:
+
+$$
+a_n = \dfrac{\sin{n}}{e^n}, \qquad n\geq 0
+$$
+
+Next, notice that the numerator is a bounded function, with
+
+$$
+\mid \sin{n} \mid \leq 1
+$$
+
+while the denominator $e^n$ grows without bound as $n\to\infty$. This means that the gap between the numerator and denominator grows as $n\to\infty$.
+
+Therefore, we conclude that
+
+$$
+\lim_{n\to\infty} e^{-n}\sin{n} = 0
+$$
+
+In other words, the limit of the sequence is zero. Plotting the sequence on a graph confirms our result.
+
+![](<../Source/Further Determining Limits of Sequences Using Relative Magnitudes - 3539/Images/b601fc3e990f3abb55007b107a69ecdf.png>)
+
+In this lesson, we will determine the limits of sequences by comparing the relative magnitudes of their parts. To do this, recall that for large values of $n$, we have
+
+$$
+n! \gg e^{n} \gg n^m \gg \ln(n)
+$$
+
+where $\gg$ means **much greater than**, and $m$ is *any* positive integer.
+
+---
+
+<a id="determining-whether-a-sequence-expressed-as-a-product-converges"></a>
+## Determining Whether a Sequence Expressed as a Product Converges
+
+**Example:** Does the sequence $a_n = \ln(2n)e^{-3n}+2$ for $n\geq 1$ converge or diverge? If the sequence converges, what is its limit?
+
+**Explanation**
+
+Notice that we can express the terms of the sequence using a fraction:
+
+$$
+a_n = \dfrac {\ln(2n)}{e^{3n}} + 2
+$$
+
+We need to calculate the limit of this sequence as $n$ approaches infinity:
+
+$$
+\lim_{n\to \infty} a_n = \lim_{n\to \infty} \left(\dfrac {\ln(2n)}{e^{3n}} + 2 \right)
+$$
+
+Both the numerator and denominator of the fraction approach infinity as $n\to\infty$. However, the denominator is growing much faster than the numerator, and we conclude that
+
+$$
+\lim_{n\to \infty} \dfrac {\ln(2n)}{e^{3n}} = 0
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+lim_(n → ∞)a_{n} &= lim_(n → ∞)((\ln (2n))/(e^{3n}) + 2) \\
+&= lim_(n → ∞)((\ln (2n))/(e^{3n})) + lim_(n → ∞)(2) \\
+&= 0 + 2 \\
+&= 2
+\end{aligned}
+$$
+
+Therefore, the sequence converges, and its limit is $2$.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-49671
+content: |-
+  What is the limit of the sequence $a_{n} = 5ne^{-2n} + 3$ for $n \ge 1$?
+options:
+- id: a
+  content: |-
+    $4$
+- id: b
+  content: |-
+    The sequence diverges.
+- id: c
+  content: |-
+    $3$
+  correct: true
+- id: d
+  content: |-
+    $0$
+- id: e
+  content: |-
+    $8$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-49672
+content: |-
+  Does the sequence $a_{n} = n^{3}e^{-n}$ for $n \ge 1$ converge or diverge? If the sequence converges, what is its limit?
+options:
+- id: a
+  content: |-
+    $e$
+- id: b
+  content: |-
+    $3$
+- id: c
+  content: |-
+    $0$
+  correct: true
+- id: d
+  content: |-
+    $1$
+- id: e
+  content: |-
+    The sequence diverges.
+```
+
+---
+
+<a id="determining-the-convergence-of-sequences-containing-trigonometric-functions"></a>
+## Determining the Convergence of Sequences Containing Trigonometric Functions
+
+**Example:** What is the limit of the sequence $a_n = \dfrac{\cos n}{n^2+1}$ for $n\geq 0$?
+
+**Explanation**
+
+We calculate the limit of the sequence as $n$ approaches infinity:
+
+$$
+\lim_{n\to \infty} a_n = \dfrac{\cos n}{n^2+1}
+$$
+
+The numerator here is a bounded function with
+
+$$
+\mid \cos n \mid \leq 1
+$$
+
+The denominator $n^2+1$ grows without bound as $n\to\infty$. So we conclude that
+
+$$
+\lim_{n\to \infty}\dfrac{\cos n}{n^2+1} = 0
+$$
+
+Therefore, the sequence converges, and its limit is $0$.
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-49667
+content: |-
+  What is the limit of the sequence $a_{n} = \frac{4n}{\sin n}$ for $n \ge 1$?
+options:
+- id: a
+  content: |-
+    $-4$
+- id: b
+  content: |-
+    $4$
+- id: c
+  content: |-
+    The sequence diverges
+  correct: true
+- id: d
+  content: |-
+    $1$
+- id: e
+  content: |-
+    $0$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-49666
+content: |-
+  What is the limit of the sequence $a_{n} = \frac{e^{n} + \cos n}{e^{n}}$ for $n \ge 1$?
+options:
+- id: a
+  content: |-
+    $2$
+- id: b
+  content: |-
+    $1$
+  correct: true
+- id: c
+  content: |-
+    $e$
+- id: d
+  content: |-
+    The sequence diverges
+- id: e
+  content: |-
+    $-1$
+```
+
+---
+
+<a id="determining-the-convergence-of-sequences-containing-factorials"></a>
+## Determining the Convergence of Sequences Containing Factorials
+
+**Example:** Does the sequence $a_n = \dfrac{2+\cos n}{n!}$ converge or diverge? If the sequence converges, what is its limit?
+
+**Explanation**
+
+We calculate the limit of the sequence as $n$ approaches infinity:
+
+$$
+\lim_{n\to \infty} a_n = \lim_{n\to \infty} \dfrac{2+\cos n}{n!}
+$$
+
+The numerator here is a bounded function with
+
+$$
+1\leq 2+\cos n \leq 3
+$$
+
+The denominator $n$! grows without bound as $n \to\infty$. So we conclude that
+
+$$
+\lim_{n\to \infty} \dfrac{2+\cos n}{n!} = 0
+$$
+
+Therefore, the sequence converges, and its limit is $0$.
+
+---
+
+**Question 5**
+
+```quiz
+type: radio
+id: ma-50966
+content: |-
+  Which of the following sequences converges to $0$?
+
+  1. $a_{n} = \frac{\log_{3} n}{n!}$
+  2. $b_{n} = \frac{n!}{n^{21}}$
+  3. $c_{n} = \frac{e^{n}}{3 + \cos n}$
+options:
+- id: a
+  content: |-
+    $b_{n}$ and $c_{n}$ only
+- id: b
+  content: |-
+    $a_{n}$ only
+  correct: true
+- id: c
+  content: |-
+    $c_{n}$ only
+- id: d
+  content: |-
+    $a_{n}$ and $b_{n}$ only
+- id: e
+  content: |-
+    $b_{n}$ only
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-50962
+content: |-
+  What is the limit of the sequence $a_{n} = \frac{n!}{\ln n}$ for $n > 1$?
+options:
+- id: a
+  content: |-
+    The sequence diverges
+  correct: true
+- id: b
+  content: |-
+    $1$
+- id: c
+  content: |-
+    $\ln 2$
+- id: d
+  content: |-
+    $e$
+- id: e
+  content: |-
+    $0$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

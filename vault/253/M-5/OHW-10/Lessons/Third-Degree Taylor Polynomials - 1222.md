@@ -1,0 +1,330 @@
+# Third-Degree Taylor Polynomials
+
+<!--
+lesson-id: 1222
+topic-code: CA2.4.6.3
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Computing the Third-Degree Taylor Polynomial For a Function Given Some Derivatives](#computing-the-third-degree-taylor-polynomial-for-a-function-given-some-derivatives)
+- [Computing the Third-Degree Taylor Polynomial For a Given Function About a Given Point](#computing-the-third-degree-taylor-polynomial-for-a-given-function-about-a-given-point)
+- [Finding the Coefficient of a Term In the Third-Degree Taylor Polynomial of a Given Function](#finding-the-coefficient-of-a-term-in-the-third-degree-taylor-polynomial-of-a-given-function)
+
+## Prerequisites
+
+- [Analyzing Second-Degree Taylor Polynomials](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.4. Taylor Series/Lessons/8.4.2. Analyzing Second-Degree Taylor Polynomials.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Recall that we can approximate a function $f(x)$ using a second-degree Taylor polynomial. To get this second-degree Taylor polynomial, we add a second term to the linear approximation:
+
+$$
+P_2(x) = \underbrace{f(a) + f'(a)(x-a)}_{\text{linear approximation}} + \underbrace{\dfrac{1}{2}f''(a)(x-a)^2}_{\textrm{new quadratic term}}
+$$
+
+As it turns out, we can keep on adding more and more terms, each time getting better and better approximations. The **third-degree Taylor polynomial** approximation to $f(x)$, denoted $P_3(x)$, is given by
+
+$$
+P_3(x) = \underbrace{f(a) + f'(a)(x-a) + \dfrac{1}{2!}f''(a)(x-a)^2}_{\text{quadratic approximation}} + \underbrace{\dfrac{1}{3!}f^{(3)}(a)(x-a)^3}_{\text{new cubic term}}
+$$
+
+Note that $f^{(3)}$ represents the third derivative of $f$. In other words,
+
+$$
+f^{(3)} = f'''
+$$
+
+In general, $P_3(x)$ is a better approximation to $f(x)$ compared to $P_2(x)$, provided that $x$ is close to $a$.
+
+**Note:** The phrase "Taylor polynomial" refers to a polynomial that's used to approximate a function.
+
+- The first-degree Taylor polynomial is the linear approximation.
+- The second-degree Taylor polynomial is the quadratic approximation.
+- The third-degree Taylor polynomial is the cubic approximation.
+
+---
+
+<a id="computing-the-third-degree-taylor-polynomial-for-a-function-given-some-derivatives"></a>
+## Computing the Third-Degree Taylor Polynomial For a Function Given Some Derivatives
+
+**Example:** Let $f(x)$ be a function with $f(-1)=-1, f'(-1)=3, f''(-1)=-6$ and $f'''(-1)=6$. What is the third-degree Taylor polynomial for $f(x)$ about $x=-1$?
+
+**Explanation**
+
+The third-degree Taylor polynomial of $f(x)$ about $x=-1$ is
+
+$$
+\begin{aligned}
+P_{3}(x) &= f(-1) + f^{′}(-1)(x + 1) + (f^{″}(-1))/(2!)(x + 1)^{2} + (f^{‴}(-1))/(3!)(x + 1)^{3} \\
+&= f(-1) + f^{′}(-1)(x + 1) + (f^{″}(-1))/(2)(x + 1)^{2} + (f^{‴}(-1))/(6)(x + 1)^{3}
+\end{aligned}
+$$
+
+We have been given the following set of values:
+
+$$
+\begin{aligned}
+f(-1) &= -1 \\
+f^{′}(-1) &= 3 \\
+f^{″}(-1) &= -6 \\
+f^{‴}(-1) &= 6
+\end{aligned}
+$$
+
+Substituting the given values into our Taylor polynomial, we get
+
+$$
+\begin{aligned}
+P_{3}(x) &= -1 + 3(x + 1) + ((-6))/(2)(x + 1)^{2} + \frac{6}{6}(x + 1)^{3} \\
+&=-1 + 3(x + 1) - 3(x + 1)^{2} + (x + 1)^{3}
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-51236
+content: |-
+  Let $f$ be a function with $f(-3) = 5, f^{′}(-3) =-1, f^{″}(-3) = 1$ and $f^{‴}(-3) = 2$. Which of the following is the third-degree Taylor polynomial for $f$ about $x =-3$?
+options:
+- id: a
+  content: |-
+    $5 - (x + 3) + (x + 3)^{2} + \frac{2}{3}(x + 3)^{3}$
+- id: b
+  content: |-
+    $5 - (x + 3) + \frac{1}{2}(x + 3)^{2} + \frac{1}{3}(x + 3)^{3}$
+  correct: true
+- id: c
+  content: |-
+    $5 - (x + 3) + \frac{1}{2}(x + 3)^{2} + \frac{2}{3}(x + 3)^{3}$
+- id: d
+  content: |-
+    $5 - (x + 3) + (x + 3)^{2} + 2(x + 3)^{3}$
+- id: e
+  content: |-
+    $5 - (x + 3) + \frac{1}{2}(x + 3)^{2} + \frac{1}{6}(x + 3)^{3}$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-51235
+content: |-
+  Let $f(x)$ be a function with $f(4) = 1, f^{′}(4) =-1, f^{″}(4) =-2$ and $f^{‴}(4) = 12$. Which of the following is the third-degree Taylor polynomial for $f(x)$ about $x = 4$?
+options:
+- id: a
+  content: |-
+    $1 - (x - 4) - 2(x - 4)^{2} + 12(x - 4)^{3}$
+- id: b
+  content: |-
+    $1 - (x + 4) - 2(x + 4)^{2} + 2(x + 4)^{3}$
+- id: c
+  content: |-
+    $1 - (x + 4) - 2(x + 4)^{2} + 12(x + 4)^{3}$
+- id: d
+  content: |-
+    $1 - (x - 4) - (x - 4)^{2} + 2(x - 4)^{3}$
+  correct: true
+- id: e
+  content: |-
+    $1 - (x - 4) - (x - 4)^{2} + (x - 4)^{3}$
+```
+
+---
+
+<a id="computing-the-third-degree-taylor-polynomial-for-a-given-function-about-a-given-point"></a>
+## Computing the Third-Degree Taylor Polynomial For a Given Function About a Given Point
+
+**Example:** Find the third-degree Taylor polynomial of $f(x) = \ln(1+x)$ about $x=0$.
+
+**Explanation**
+
+To find the third-degree Taylor polynomial about $x=0$, we plug $a=0$ into the general formula to give
+
+$$
+P_3(x) = f(0) + f'(0)(x-0) + \dfrac{1}{2!}f''(0)(x-0)^2 + \dfrac{1}{3!}f'''(0)(x-0)^3
+$$
+
+We need to compute $f(0)$, $f'(0)$, $f''(0)$, and $f'''(0)$, as follows:
+
+$$
+\begin{aligned}
+\begin{bmatrix}f(x) &= \ln (1 + x) & ⟹ & f(0)|= \ln (1 + 0) = 0 \\ f^{′}(x)|= (1 + x)^{-1} & ⟹ & f^{′}(0)|= (1 + 0)^{-1} = 1 \\ f^{″}(x)|= - (1 + x)^{-2} & ⟹ & f^{″}(0)|= - (1 + 0)^{-2} =-1 \\ f^{(3)}(x)|= 2(1 + x)^{-3} & ⟹ & f^{‴}(0)|= 2(1 + 0)^{-3} = 2\end{bmatrix}
+\end{aligned}
+$$
+
+Finally, we plug the results for $f(0)$, $f'(0)$, $f''(0)$, and $f'''(0)$ into our third-degree Taylor polynomial. This gives
+
+$$
+\begin{aligned}
+P_{3}(x) &= 0 + (1)(x - 0) + \frac{1}{2!}(-1)(x - 0)^{2} + \frac{1}{3!}(2)(x - 0)^{3} \\
+&= x - \frac{x^{2}}{2} + \frac{x^{3}}{3}
+\end{aligned}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-9360
+content: |-
+  The third-degree Taylor polynomial of $f(x) = \sin x$ about $x = 0$ is
+options:
+- id: a
+  content: |-
+    $x - \frac{x^{3}}{3}$
+- id: b
+  content: |-
+    $x - \frac{x^{3}}{6}$
+  correct: true
+- id: c
+  content: |-
+    $x - \frac{x^{3}}{4}$
+- id: d
+  content: |-
+    $1 + \frac{x^{2}}{4}$
+- id: e
+  content: |-
+    $1 - \frac{x^{2}}{6}$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-9361
+content: |-
+  The third-degree Taylor polynomial of $f(x) = \cos (x + \frac{π}{6})$ about $x = 0$ is
+options:
+- id: a
+  content: |-
+    $\frac{\sqrt{3}}{2} + \frac{x}{4} + \frac{x^{2}}{8} + \frac{x^{3}}{12}$
+- id: b
+  content: |-
+    $\frac{\sqrt{3}}{2} - \frac{x}{2} + \frac{x^{2}}{4} + \frac{x^{3}}{12}$
+- id: c
+  content: |-
+    $\frac{\sqrt{3}}{2} + x + \frac{\sqrt{3}x^{2}}{2} + \frac{x^{3}}{6}$
+- id: d
+  content: |-
+    $\frac{\sqrt{3}}{2} - \frac{x}{2} - \frac{\sqrt{3}x^{2}}{4} + \frac{x^{3}}{12}$
+  correct: true
+- id: e
+  content: |-
+    $\frac{\sqrt{3}}{2} + x + \frac{x^{2}}{2} + \frac{x^{3}}{6}$
+```
+
+---
+
+<a id="finding-the-coefficient-of-a-term-in-the-third-degree-taylor-polynomial-of-a-given-function"></a>
+## Finding the Coefficient of a Term In the Third-Degree Taylor Polynomial of a Given Function
+
+**Example:** What is the coefficient of $(x-1)^3$ in the third-degree Taylor polynomial of $f(x) = e^{-2x}$?
+
+**Explanation**
+
+The coefficient of $(x-1)^3$ is
+
+$$
+\dfrac{1}{3!}f^{(3)}(1)
+$$
+
+Let's compute the necessary derivatives:
+
+$$
+\begin{aligned}
+f(x) &= e^{-2x} \\
+f^{′}(x) &= -2e^{-2x} \\
+f^{″}(x) &= 4e^{-2x} \\
+f^{(3)}(x) &= -8e^{-2x}
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+\dfrac{1}{3!}f^{(3)}(1) =\dfrac{1}{6} \left(-8e^{-2} \right) = -\dfrac{4}{3e^2}
+$$
+
+So the coefficient of $(x-1)^3$ is
+
+$$
+-\dfrac{4}{3e^2}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-15480
+content: |-
+  What is the coefficient of $(x - 2)^{3}$ in the third-degree Taylor polynomial of $f(x) = \ln x$ about $x = 2$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{24}$
+  correct: true
+- id: b
+  content: |-
+    $-\frac{1}{24}$
+- id: c
+  content: |-
+    $\frac{1}{8}$
+- id: d
+  content: |-
+    $\frac{1}{12}$
+- id: e
+  content: |-
+    $\frac{1}{4}$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-15484
+content: |-
+  What is the coefficient of $(x + π)^{3}$ in the third-degree Taylor polynomial of $f(x) = \sin x$ about $x = - π$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{3}$
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $1$
+- id: d
+  content: |-
+    $\frac{1}{2}$
+- id: e
+  content: |-
+    $\frac{1}{6}$
+  correct: true
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

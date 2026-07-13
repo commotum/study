@@ -1,0 +1,469 @@
+# Convergent and Divergent Infinite Series
+
+<!--
+lesson-id: 982
+topic-code: CA2.4.3.2
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Determining Whether a Constant Infinite Series Converges or Diverges](#determining-whether-a-constant-infinite-series-converges-or-diverges)
+- [Determining Whether an Oscillating Infinite Series Converges or Diverges](#determining-whether-an-oscillating-infinite-series-converges-or-diverges)
+- [Determining Whether a Piecewise Infinite Series Converges or Diverges](#determining-whether-a-piecewise-infinite-series-converges-or-diverges)
+- [Determining Whether an Infinite Arithmetic Series Converges or Diverges](#determining-whether-an-infinite-arithmetic-series-converges-or-diverges)
+
+## Prerequisites
+
+- [Piecewise Functions](<../../../../MA/Mathematical-Foundations/MF1/8. Functions/8.1. Functions/Lessons/8.1.11. Piecewise Functions.md>)
+- [Infinite Series and Partial Sums](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.3. Infinite Series and Partial Sums.md>)
+- [Convergence of Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.1. Convergence of Geometric Sequences.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Consider the infinite series
+
+$$
+\displaystyle\sum_{n=1}^\infty \frac{1}{5^n}
+$$
+
+The first five partial sums of this series are:
+
+$$
+\begin{aligned}
+s_{1} &= 0.2 \\
+s_{2} &= 0.24 \\
+s_{3} &= 0.248 \\
+s_{4} &= 0.2496 \\
+s_{5} &= 0.24992
+\end{aligned}
+$$
+
+Let's plot these values on a graph of $s_n$ versus $n$.
+
+![](<../Source/Convergent and Divergent Infinite Series - 982/Images/f37e22e80997f86d12583635f2026b3c.png>)
+
+Looking at the graph above, it appears as though
+
+$$
+\lim_{n\to\infty} s_n = 0.25
+$$
+
+Although we haven't shown it rigorously, the above statement is indeed true. We say that **the limit of the sequence of partial sums** is equal to $0.25$, and we write
+
+$$
+\sum_{n=1}^\infty \frac{1}{5^n} = 0.25
+$$
+
+In general, if the limit of the partial sums of a series
+
+$$
+\displaystyle\sum_{n=1}^\infty a_n
+$$
+
+is some finite number $S$, i.e.,
+
+$$
+\lim_{n\to\infty} s_n = S
+$$
+
+then we say that the infinite series is **convergent** and that it **converges** to $S$. We also write
+
+$$
+\sum_{n=1}^\infty a_n = S
+$$
+
+On the other hand, if the limit does not exist or is infinite, we say that the series is **divergent**.
+
+---
+
+<a id="determining-whether-a-constant-infinite-series-converges-or-diverges"></a>
+## Determining Whether a Constant Infinite Series Converges or Diverges
+
+**Example:** Consider the series $\displaystyle\sum_{n=1}^\infty 2$. Does it converge or diverge? If it converges, what is the sum of the series?
+
+**Explanation**
+
+Let's compute the first few partial sums:
+
+$$
+\begin{aligned}
+s_{1} &= 2 \\
+s_{2} &= 2 + 2 = 2 \cdot 2 \\
+s_{3} &= 2 + 2 + 2 = 2 \cdot 3 \\
+s_{4} &= 2 + 2 + 2 + 2 = 2 \cdot 4
+\end{aligned}
+$$
+
+Looking at the sequence of partial sums, we can see that the formula for the $n$th partial sum is
+$s_n=2n$.
+
+The sequence of partial sums is divergent:
+
+$$
+\lim\limits_{n\to \infty} s_n = \lim\limits_{n\to \infty} 2n = \infty
+$$
+
+Therefore, the series
+
+$$
+\displaystyle\sum_{n=1}^\infty 2
+$$
+
+is also divergent.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-49640
+content: |-
+  Consider the series $\displaystyle \sum_{n=1}^{\infty}(-2)$. Does it converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    Converges to $-8$
+- id: b
+  content: |-
+    Converges to $-4$
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $-2$
+- id: e
+  content: |-
+    The series diverges
+  correct: true
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-49639
+content: |-
+  Consider the series $\displaystyle \sum_{n=1}^{\infty}\frac{1}{2}$. Does it converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    The series diverges
+  correct: true
+- id: b
+  content: |-
+    Converges to $\frac{1}{2}$
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $1$
+- id: e
+  content: |-
+    Converges to $2$
+```
+
+---
+
+<a id="determining-whether-an-oscillating-infinite-series-converges-or-diverges"></a>
+## Determining Whether an Oscillating Infinite Series Converges or Diverges
+
+**Example:** Consider the series $\displaystyle\sum_{n=1}^\infty 2(-1)^n$. Does it converge or diverge? If it converges, what is the sum of the series?
+
+**Explanation**
+
+Let's compute the first few partial sums:
+
+$$
+\begin{aligned}
+s_{1} &= 2(-1)^{1} =-2 \\
+s_{2} &= s_{1} + 2(-1)^{2} =-2 + 2 = 0 \\
+s_{3} &= s_{2} + 2(-1)^{3} = 0 - 2 =-2 \\
+s_{4} &= s_{3} + + 2(-1)^{4} =-2 + 2 = 0
+\end{aligned}
+$$
+
+From the above, we can see that the sequence of partial sums oscillates between $-2$ and $0$ forever.
+
+So the limit of the sequence of partial sums does not exist, and therefore the series is divergent.
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-49643
+content: |-
+  Consider the series $\displaystyle \sum_{n=1}^{\infty}(-\frac{1}{4})(-1)^{n}$. Does it converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    Converges to $0$
+- id: b
+  content: |-
+    Converges to $-\frac{1}{2}$
+- id: c
+  content: |-
+    Converges to $-\frac{1}{4}$
+- id: d
+  content: |-
+    The series diverges
+  correct: true
+- id: e
+  content: |-
+    Converges to $\frac{1}{4}$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-49641
+content: |-
+  Consider the series $\displaystyle \sum_{n=1}^{\infty}(-1)^{n}$. Does it converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    Converges to $0$
+- id: b
+  content: |-
+    Converges to $-2$
+- id: c
+  content: |-
+    Converges to $-1$
+- id: d
+  content: |-
+    The series diverges
+  correct: true
+- id: e
+  content: |-
+    Converges to $1$
+```
+
+---
+
+<a id="determining-whether-a-piecewise-infinite-series-converges-or-diverges"></a>
+## Determining Whether a Piecewise Infinite Series Converges or Diverges
+
+**Example:** Given that the sequence $a_n$ is defined by
+
+$\displaystyle a_n=\begin{cases}1, & n=1, \\ 0, & n\ge 2,\end{cases}$
+
+does $\displaystyle \sum_{n=1}^\infty a_n$ converge or diverge? If it converges, what is the sum of the series?
+
+**Explanation**
+
+Let's compute the first few partial sums:
+
+$$
+\begin{aligned}
+s_{1} &= 1 \\
+s_{2} &= s_{1} + 0 = 1 + 0 = 1 \\
+s_{3} &= s_{2} + 0 = 1 + 0 = 1 \\
+s_{4} &= s_{3} + 0 = 1 + 0 = 1
+\end{aligned}
+$$
+
+Looking at the sequence of partial sums, we can see that the formula for the $n$th partial sum is
+
+$$
+s_n=1
+$$
+
+Therefore, we have
+
+$$
+\lim\limits_{n \to \infty} s_n = 1
+$$
+
+which means that
+
+$$
+\sum_{n=1}^\infty a_n = 1
+$$
+
+We conclude that the series
+
+$$
+\displaystyle \sum\limits_{n=1}^\infty a_n
+$$
+
+is convergent and it converges to $1$.
+
+---
+
+**Question 5**
+
+```quiz
+type: radio
+id: ma-49646
+content: |-
+  Given that the sequence $a_{n}$ is defined by
+
+  $\displaystyle a_n=\begin{cases}0, & n=1, \\ 3, & n\ge 2,\end{cases}$
+
+  does $\displaystyle \sum_{n=1}^{\infty}a_{n}$ converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    The series diverges.
+  correct: true
+- id: b
+  content: |-
+    Converges to $0$
+- id: c
+  content: |-
+    Converges to $-3$
+- id: d
+  content: |-
+    Converges to $1$
+- id: e
+  content: |-
+    Converges to $3$
+```
+
+---
+
+**Question 6**
+
+```quiz
+type: radio
+id: ma-49648
+content: |-
+  Given that the sequence $a_{n}$ is defined by
+
+  $\displaystyle a_n=\begin{cases}\frac{1}{2}, & n=1, \\ 0, & n\ge 2.\end{cases}$
+
+  does $\displaystyle \sum_{n=1}^{\infty}a_{n}$ converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    Converges to $1$
+- id: b
+  content: |-
+    Converges to $\frac{1}{2}$
+  correct: true
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $2$
+- id: e
+  content: |-
+    The series diverges.
+```
+
+---
+
+<a id="determining-whether-an-infinite-arithmetic-series-converges-or-diverges"></a>
+## Determining Whether an Infinite Arithmetic Series Converges or Diverges
+
+**Example:** Consider the series $\displaystyle\sum_{n=1}^\infty n$. Does it converge or diverge? If it converges, what is the sum of the series?
+
+**Explanation**
+
+The given series is an arithmetic series. Its first term is
+
+$$
+a_1 = 1
+$$
+
+and its $n$th term is
+
+$$
+a_n=n
+$$
+
+Using the formula for the sum of an arithmetic series, we get the following formula for the $n$th partial sum:
+
+$$
+\begin{aligned}
+s_{n} = \frac{n}{2}(a_{1} + a_{n}) &= \frac{n(n + 1)}{2}
+\end{aligned}
+$$
+
+Taking the limit of the partial sums, we get
+
+$$
+\begin{aligned}
+\lim_{n \to \infty}s_{n} &= \lim_{n \to \infty}\frac{n(n + 1)}{2} \\
+&= \frac{1}{2}\lim_{n \to \infty}n^{2} \\
+&= \infty
+\end{aligned}
+$$
+
+Therefore, since the limit of the sequence of partial sums is infinite, the series is divergent.
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-49691
+content: |-
+  Consider the series $\displaystyle \sum_{n=1}^{\infty}(n + \frac{1}{2})$. Does it converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    Converges to $2$
+- id: b
+  content: |-
+    The series diverges.
+  correct: true
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $\frac{1}{4}$
+- id: e
+  content: |-
+    Converges to $\frac{1}{2}$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-49693
+content: |-
+  Consider the series $\displaystyle \sum_{n=1}^{\infty}\frac{n}{4}$. Does the sequence converge or diverge? If it converges, what is the sum of the series?
+options:
+- id: a
+  content: |-
+    Converges to $\frac{1}{2}$
+- id: b
+  content: |-
+    The series diverges.
+  correct: true
+- id: c
+  content: |-
+    Converges to $\frac{1}{8}$
+- id: d
+  content: |-
+    Converges to $\frac{1}{4}$
+- id: e
+  content: |-
+    Converges to $1$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

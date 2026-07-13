@@ -1,0 +1,436 @@
+# Simplifying Expressions Using Basic Trigonometric Identities
+
+<!--
+lesson-id: 203
+topic-code: MF3.5.3.1
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Simplifying an Expression Using the Relationship Between Sine, Cosine, and Tangent](#simplifying-an-expression-using-the-relationship-between-sine-cosine-and-tangent)
+- [Simplifying an Expression Using the Relationship Between Sine, Cosine, and Cotangent](#simplifying-an-expression-using-the-relationship-between-sine-cosine-and-cotangent)
+- [Rewriting a Trigonometric Equation Using an Identity](#rewriting-a-trigonometric-equation-using-an-identity)
+- [Simplifying a Complex Rational Expression Using Trigonometric Identities](#simplifying-a-complex-rational-expression-using-trigonometric-identities)
+
+## Prerequisites
+
+- [Dividing Rational Expressions](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.5. Dividing Rational Expressions.md>)
+- [The Reciprocal Trigonometric Ratios](<../../../../MA/Mathematical-Foundations/MF2/9. Trigonometry/9.1. Introduction to Trigonometry/Lessons/9.1.6. The Reciprocal Trigonometric Ratios.md>)
+- [Adding Rational Expressions With No Common Factors in the Denominator](<../../../../MA/Mathematical-Foundations/MF2/6. Radical & Rational Functions/6.1. Rational Expressions/Lessons/6.1.3. Adding Rational Expressions With No Common Factors in the Denominator.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+A **trigonometric identity** is a relationship involving trigonometric functions that is *always* true!
+
+Two of the most basic trigonometric identities are
+
+$$
+\tan \theta = \dfrac {\sin \theta} {\cos \theta},\qquad \cot \theta = \dfrac {\cos \theta} {\sin \theta}
+$$
+
+These are identities, not equations, because they never give a false statement. We will always get equality, regardless of the value of $\theta$ that we select (although it's important to note that $\theta$ must lie within each function's domain).
+
+In addition, we also have the two **reciprocal relationships** that we've already seen:
+
+$$
+\sec \theta = \dfrac 1 {\cos \theta},\qquad \csc \theta = \dfrac 1 {\sin \theta}
+$$
+
+These reciprocal relationships are also trigonometric identities.
+
+Trigonometric identities are useful when we want to simplify trigonometric expressions. Let's see an example of how this works.
+
+---
+
+<a id="simplifying-an-expression-using-the-relationship-between-sine-cosine-and-tangent"></a>
+## Simplifying an Expression Using the Relationship Between Sine, Cosine, and Tangent
+
+**Example:** Simplify the expression $\tan \theta\cos\theta$.
+
+**Explanation**
+
+First, we recall the identity
+
+$$
+\tan \theta = \dfrac {\sin \theta} {\cos \theta}
+$$
+
+and we substitute it into the given expression:
+
+$$
+\begin{aligned}
+\tan θ\cos θ &= \frac{\sin θ}{\cos θ} \cdot \cos θ
+\end{aligned}
+$$
+
+Now, we multiply the two quantities and simplify as much as possible:
+
+$$
+\begin{aligned}
+\frac{\sin θ}{\cos θ} \cdot \cos θ &= \frac{\sin θ \cdot \cos θ}{\cos θ} \\
+&= \frac{\sin θ \cdot \cos θ}{\cos θ} \\
+&= \frac{\sin θ}{1} \\
+&= \sin θ
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+\tan \theta\cos\theta = \sin\theta
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-23501
+content: |-
+  Simplify the expression $\tan θ\sin θ\sec θ$.
+options:
+- id: a
+  content: |-
+    $\tan^{2} θ$
+  correct: true
+- id: b
+  content: |-
+    $\csc^{2} θ$
+- id: c
+  content: |-
+    $\sin^{2} θ$
+- id: d
+  content: |-
+    $\sec^{2} θ$
+- id: e
+  content: |-
+    $\cot^{2} θ$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-24080
+content: |-
+  Simplify the expression $\cos θ\tan θ + \sin θ$.
+options:
+- id: a
+  content: |-
+    $\sin θ$
+- id: b
+  content: |-
+    $1 + \sin θ$
+- id: c
+  content: |-
+    $\sin^{2} θ$
+- id: d
+  content: |-
+    $2\sin θ$
+  correct: true
+- id: e
+  content: |-
+    $2\sin^{2} θ$
+```
+
+---
+
+<a id="simplifying-an-expression-using-the-relationship-between-sine-cosine-and-cotangent"></a>
+## Simplifying an Expression Using the Relationship Between Sine, Cosine, and Cotangent
+
+**Example:** Simplify the expression $3\cot \theta\sin\theta$.
+
+**Explanation**
+
+First, we recall the identity
+
+$$
+\cot \theta = \dfrac {\cos \theta} {\sin \theta}
+$$
+
+and we substitute it into the given expression:
+
+$$
+3\cot θ\sin θ = 3 \cdot \frac{\cos θ}{\sin θ} \cdot \sin θ
+$$
+
+Then, we multiply the terms and simplify as much as possible:
+
+$$
+\begin{aligned}
+3 \cdot \frac{\cos θ}{\sin θ} \cdot \sin θ &= \frac{3\cos θ \cdot \sin θ}{\sin θ} \\
+&= \frac{3\cos θ \cdot \sin θ}{\sin θ} \\
+&= \frac{3\cos θ}{1} \\
+&= 3\cos θ
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+3\cot \theta\sin\theta = 3\cos\theta
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-23764
+content: |-
+  Simplify the expression $\sin^{2} θ\cot θ\csc θ$.
+options:
+- id: a
+  content: |-
+    $\sin θ$
+- id: b
+  content: |-
+    $\sec θ$
+- id: c
+  content: |-
+    $\tan θ$
+- id: d
+  content: |-
+    $\cos θ$
+  correct: true
+- id: e
+  content: |-
+    $\cot θ$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-24082
+content: |-
+  Simplify the expression $\sin θ\cot θ - \cos θ$.
+options:
+- id: a
+  content: |-
+    $\sin θ - \cos θ$
+- id: b
+  content: |-
+    $\sin θ$
+- id: c
+  content: |-
+    $0$
+  correct: true
+- id: d
+  content: |-
+    $\cos θ\sin θ$
+- id: e
+  content: |-
+    $\tan θ$
+```
+
+---
+
+<a id="rewriting-a-trigonometric-equation-using-an-identity"></a>
+## Rewriting a Trigonometric Equation Using an Identity
+
+**Example:** Given that $5\sin\theta=2\cos\theta$, calculate $\tan\theta$.
+
+**Explanation**
+
+First, we recall the identity
+
+$$
+\tan\theta = \dfrac{\sin\theta}{\cos\theta}
+$$
+
+To write the equation in terms of $\tan\theta$ only, we divide both sides of the equation by $\cos\theta$ and apply the above identity, as follows:
+
+$$
+\begin{aligned}
+5\sin θ &= 2\cos θ \\
+5 \cdot \frac{\sin θ}{\cos θ} &= 2 \cdot \frac{\cos θ}{\cos θ} \\
+5\tan θ &= 2
+\end{aligned}
+$$
+
+Finally, we isolate $\tan\theta$ by dividing both sides of the equation by $5$:
+
+$$
+\begin{aligned}
+\frac{5\tan θ}{5} &= \frac{2}{5} \\
+\tan θ &= \frac{2}{5}
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-23784
+content: |-
+  Given that $12\sin θ = 13\cos θ$, calculate $\tan θ$.
+options:
+- id: a
+  content: |-
+    $-\frac{12}{13}$
+- id: b
+  content: |-
+    $\frac{12}{13}$
+- id: c
+  content: |-
+    $10$
+- id: d
+  content: |-
+    $\frac{13}{12}$
+  correct: true
+- id: e
+  content: |-
+    $-\frac{13}{12}$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-23788
+content: |-
+  Given that $15\sin θ = 17\cos θ$, calculate $\cot θ$.
+options:
+- id: a
+  content: |-
+    $\frac{15}{17}$
+  correct: true
+- id: b
+  content: |-
+    $-\frac{17}{15}$
+- id: c
+  content: |-
+    $12$
+- id: d
+  content: |-
+    $-\frac{15}{17}$
+- id: e
+  content: |-
+    $\frac{17}{15}$
+```
+
+---
+
+<a id="simplifying-a-complex-rational-expression-using-trigonometric-identities"></a>
+## Simplifying a Complex Rational Expression Using Trigonometric Identities
+
+**Example:** Simplify the trigonometric expression
+$\dfrac {\cot \theta + \csc \theta} {\cos \theta + 1}$.
+
+**Explanation**
+
+First, let's interpret the fraction as a division:
+
+$$
+\dfrac {\cot \theta + \csc \theta} {\cos \theta + 1} = \left(\cot \theta + \csc \theta\right)\div \left(\cos \theta + 1\right)
+$$
+
+Then, we recall the identities
+
+$$
+\cot \theta = \dfrac {\cos \theta} {\sin \theta}
+$$
+
+and
+
+$$
+\csc\theta = \dfrac{1}{\sin\theta}
+$$
+
+and we substitute them into the above expression:
+
+$$
+\begin{aligned}
+(\cot θ + \csc θ) \div (\cos θ + 1) &= (\frac{\cos θ}{\sin θ} + \frac{1}{\sin θ}) \div (\cos θ + 1) \\
+&= (\frac{\cos θ + 1}{\sin θ}) \div (\cos θ + 1)
+\end{aligned}
+$$
+
+Finally, we turn the division into multiplication, and simplify the expression as much as possible:
+
+$$
+\begin{aligned}
+(\frac{\cos θ + 1}{\sin θ}) \div (\cos θ + 1) &= (\frac{\cos θ + 1}{\sin θ}) \cdot (\frac{1}{\cos θ + 1}) \\
+&= (\cos θ + 1)/(\sin θ(\cos θ + 1)) \\
+&= ((\cos θ + 1))/(\sin θ(\cos θ + 1)) \\
+&= \frac{1}{\sin θ} \\
+&= \csc θ
+\end{aligned}
+$$
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-24081
+content: |-
+  Simplify the trigonometric expression $\frac{\tan θ + \sec θ}{\sin θ + 1}$.
+options:
+- id: a
+  content: |-
+    $2\sec θ$
+- id: b
+  content: |-
+    $1 + \sec θ$
+- id: c
+  content: |-
+    $\sec θ$
+  correct: true
+- id: d
+  content: |-
+    $\sec^{2} θ$
+- id: e
+  content: |-
+    $1 + \sec^{2} θ$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-23767
+content: |-
+  Simplify the trigonometric expression $\frac{\tan θ + 1}{\sec θ}$.
+options:
+- id: a
+  content: |-
+    $\sin θ + \cos θ$
+  correct: true
+- id: b
+  content: |-
+    $1 + \sin θ$
+- id: c
+  content: |-
+    $2\sin θ$
+- id: d
+  content: |-
+    $2(\sin θ + \cos θ)$
+- id: e
+  content: |-
+    $2\sin^{2} θ$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

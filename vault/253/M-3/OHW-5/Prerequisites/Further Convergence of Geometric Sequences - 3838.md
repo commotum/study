@@ -1,0 +1,380 @@
+# Further Convergence of Geometric Sequences
+
+<!--
+lesson-id: 3838
+topic-code: MF3.1.4.2
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Determining Whether a Geometric Sequence Converges Given the General Term](#determining-whether-a-geometric-sequence-converges-given-the-general-term)
+- [Determining Values for Which a Geometric Sequence Converges](#determining-values-for-which-a-geometric-sequence-converges)
+- [Determining Values for Which a Geometric Sequence Converges: Rearrangement Required](#determining-values-for-which-a-geometric-sequence-converges-rearrangement-required)
+
+## Prerequisites
+
+- [Convergence of Geometric Sequences](<../../../../MA/Mathematical-Foundations/MF3/1. Sequences and Series/1.4. Infinite Series/Lessons/1.4.1. Convergence of Geometric Sequences.md>)
+- [Combining the Rules of Exponents With Algebraic Expressions](<../../../../MA/Mathematical-Foundations/MF1/10. Exponential Functions/10.1. Rules of Exponents/Lessons/10.1.6. Combining the Rules of Exponents With Algebraic Expressions.md>)
+- [Solving Elementary Quadratic Inequalities](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.1. Solving Elementary Quadratic Inequalities.md>)
+- [Solving Inequalities Involving Positive and Negative Factors](<../../../../MA/Mathematical-Foundations/MF3/2. Inequalities/2.1. Single-Variable Inequalities/Lessons/2.1.5. Solving Inequalities Involving Positive and Negative Factors.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+For a geometric sequence with the first term $a_1$ and common ratio $r$, we have the following convergence properties:
+
+- If $\mid r \mid < 1$, the sequence is convergent and converges to $0$.
+
+- If $\mid r \mid > 1$, the sequence is divergent.
+
+Moreover, we have the following edge cases:
+
+- If $r=1$, the sequence is convergent and converges to $a_1$.
+
+- If $r = -1$, the sequence is divergent.
+
+With that in mind, let's determine whether the following geometric sequence is convergent or divergent:
+
+$$
+a_n=\dfrac {3 (-5)^{n}}{2 ^ {n}}, \qquad n\geq 1
+$$
+
+To determine whether the sequence is convergent or divergent, we first write the sequence in the form
+
+$$
+a_n = a \cdot r^{n}
+$$
+
+as follows:
+
+$$
+\begin{aligned}
+a_{n} &= \frac{3 \cdot (-5)^{n}}{2^{n}} \\
+&= 3 \cdot \frac{(-5)^{n}}{2^{n}} \\
+&= \underbrace{3}_{a}\cdot\left(\underbrace{-\frac{5}{2}}_{r}\right)^n
+\end{aligned}
+$$
+
+We can now see that this is the geometric sequence with common ratio
+
+$$
+r= -\dfrac 5 2
+$$
+
+Since $\mid r \mid > 1$, the sequence is divergent.
+
+---
+
+<a id="determining-whether-a-geometric-sequence-converges-given-the-general-term"></a>
+## Determining Whether a Geometric Sequence Converges Given the General Term
+
+**Example:** Does the sequence $a_n = \dfrac {2 \cdot (-3) ^ n}{5 ^ {n + 1}}$ for $n\geq 1$ converge or diverge?
+If it converges, what is its limit?
+
+**Explanation**
+
+Suppose we have a geometric sequence with the first term $a_1$ and common ratio $r$. Then, we have the following convergence properties:
+
+- if $\mid r \mid < 1$, the sequence is convergent and converges to $0$
+- if $\mid r \mid > 1$, the sequence is divergent
+
+Moreover, we have the following edge cases:
+
+- if $r=1$, the sequence is convergent and converges to $a_1$
+- if $r = -1$, the sequence is divergent
+
+First, we rewrite the sequence in the form
+
+$$
+a_n = a \cdot r^{n}
+$$
+
+as follows:
+
+$$
+\begin{aligned}
+a_{n} &= \frac{2 \cdot (-3)^{n}}{5^{n + 1}} \\
+&= \frac{2 \cdot (-3)^{n}}{5 \cdot 5^{n}} \\
+&= \frac{2}{5} \cdot \frac{(-3)^{n}}{5^{n}} \\
+&= \frac{2}{5}(-\frac{3}{5})^{n}
+\end{aligned}
+$$
+
+We can now see that this is the geometric sequence with
+
+$$
+r=-\dfrac{3}{5}
+$$
+
+Since $\mid r \mid < 1$, the sequence converges to $0$.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-49566
+content: |-
+  Does the sequence $a_{n} = \frac{2(5)^{n}}{(-3)^{n}}$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+options:
+- id: a
+  content: |-
+    Converges to $\frac{5}{3}$
+- id: b
+  content: |-
+    Converges to $2$
+- id: c
+  content: |-
+    Converges to $0$
+- id: d
+  content: |-
+    Converges to $-\frac{10}{3}$
+- id: e
+  correct: true
+  content: |-
+    The sequence diverges
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-17584
+content: |-
+  Does the sequence $a_{n} = \frac{5(3)^{n}}{3^{n + 1}}$ for $n \ge 1$ converge or diverge? If it converges, what is its limit?
+options:
+- id: a
+  content: |-
+    The sequence diverges
+- id: b
+  correct: true
+  content: |-
+    Converges to $\frac{5}{3}$
+- id: c
+  content: |-
+    Converges to $-1$
+- id: d
+  content: |-
+    Converges to $0$
+- id: e
+  content: |-
+    Converges to $3$
+```
+
+---
+
+<a id="determining-values-for-which-a-geometric-sequence-converges"></a>
+## Determining Values for Which a Geometric Sequence Converges
+
+**Example:** Consider the geometric sequence
+$a_n =\dfrac{x^2}{2}\left(\dfrac{16}{x^2}\right)^{n}, \qquad n\geq 1$
+
+where $x$ is a positive real number. For which values of $x$ is the sequence convergent?
+
+**Explanation**
+
+Suppose we have a geometric sequence with the first term $a_1$ and common ratio $r$. Then, we have the following convergence properties:
+
+- if $\mid r \mid < 1$, the sequence is convergent and converges to $0$
+- if $\mid r \mid > 1$, the sequence is divergent
+
+Moreover, we have the following edge cases:
+
+- if $r=1$, the sequence is convergent and converges to $a_1$
+- if $r = -1$, the sequence is divergent
+
+The given sequence is a geometric sequence with the common ratio
+
+$$
+r = \dfrac{16}{x^2}
+$$
+
+Since $x^2$ is positive, $r$ is also positive, So, the convergence condition is
+
+$$
+0 < r\leq 1
+$$
+
+Therefore, the sequence converges for
+
+$$
+0 <\dfrac{16}{x^2}\leq 1 \qquad \Longrightarrow \qquad x^2 \geq 16
+$$
+
+Taking into account the fact that $x$ is positive, we get
+
+$$
+x \geq 4
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-49571
+content: |-
+  Consider the geometric sequence $a_{n} = x^{2}(\frac{1}{x})^{n}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  content: |-
+    $x \ge \frac{1}{2}$
+- id: b
+  content: |-
+    $0 < x \le 1$
+- id: c
+  content: |-
+    $x \ge 2$
+- id: d
+  content: |-
+    $x > 0$
+- id: e
+  correct: true
+  content: |-
+    $x \ge 1$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-141267
+content: |-
+  Consider the sequence $a_{n} = x(\frac{x^{2}}{9})^{n}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  content: |-
+    $x \ge 9$
+- id: b
+  correct: true
+  content: |-
+    $0 < x \le 3$
+- id: c
+  content: |-
+    $x \ge 3$
+- id: d
+  content: |-
+    $0 < x \le 9$
+- id: e
+  content: |-
+    $0 < x \le \sqrt{3}$
+```
+
+---
+
+<a id="determining-values-for-which-a-geometric-sequence-converges-rearrangement-required"></a>
+## Determining Values for Which a Geometric Sequence Converges: Rearrangement Required
+
+**Example:** Consider the sequence $a_n = \dfrac{x^{2n+1}}{x^{n-2}}$, where $x$ is a real positive number and $n\geq 1$. What are the values of $x$ for which the sequence converges?
+
+**Explanation**
+
+Suppose we have a geometric sequence with the first term $a_1$ and common ratio $r$. Then, we have the following convergence properties:
+
+- if $\mid r \mid < 1$, the sequence is convergent and converges to $0$
+- if $\mid r \mid > 1$, the sequence is divergent
+
+Moreover, we have the following edge cases:
+
+- if $r=1$, the sequence is convergent and converges to $a_1$
+- if $r = -1$, the sequence is divergent
+
+First, we rewrite the sequence in the form
+
+$$
+a_n = a \cdot r^{n}
+$$
+
+as follows:
+
+$$
+\begin{aligned}
+a_{n} &= \frac{x^{2n + 1}}{x^{n - 2}} \\
+&= x^{2n + 1 - n + 2} \\
+&= x^{n + 3} \\
+&= x^{3} \cdot x^{n}
+\end{aligned}
+$$
+
+We see that this is a geometric sequence with common ratio $r = x$. Since $x$ is positive, $r$ is also positive. So, the convergence condition is
+
+$$
+0 < r \leq 1
+$$
+
+Therefore, the sequence converges for
+
+$$
+0 < x \leq 1
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-40144
+content: |-
+  Consider the sequence $a_{n} = \frac{x^{n + 6}}{x^{2n + 1}}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  content: |-
+    $x > 6$
+- id: b
+  content: |-
+    $x > 1$
+- id: c
+  content: |-
+    $0 < x \le 1$
+- id: d
+  correct: true
+  content: |-
+    $x \ge 1$
+- id: e
+  content: |-
+    $x \ge 6$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-49569
+content: |-
+  Consider the sequence $a_{n} = \frac{x^{2n - 3}}{4^{n}}$, where $x$ is a positive real number and $n \ge 1$. What are the values of $x$ for which the sequence converges?
+options:
+- id: a
+  correct: true
+  content: |-
+    $0 < x \le 2$
+- id: b
+  content: |-
+    $x > 0$
+- id: c
+  content: |-
+    $0 < x \le \sqrt{2}$
+- id: d
+  content: |-
+    $x \ge 2$
+- id: e
+  content: |-
+    $0 < x \le 4$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]

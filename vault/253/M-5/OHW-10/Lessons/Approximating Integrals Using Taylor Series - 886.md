@@ -1,0 +1,286 @@
+# Approximating Integrals Using Taylor Series
+
+<!--
+lesson-id: 886
+topic-code: CA2.4.7.9
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Computing Indefinite Integrals Using Taylor Series](#computing-indefinite-integrals-using-taylor-series)
+- [Computing Definite Integrals Using Taylor Series](#computing-definite-integrals-using-taylor-series)
+
+## Prerequisites
+
+- [Representing Functions as Power Series](<../../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.4. Taylor Series/Lessons/8.4.7. Representing Functions as Power Series.md>)
+- [The Sum and Constant Multiple Rules for Definite Integrals](<../../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.4. The Sum and Constant Multiple Rules for Definite Integrals.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Consider the following integral:
+$\int \cos \sqrt{x} \, \textrm dx\,$
+
+Unfortunately, we cannot compute this integral using any of our standard methods. However, we *can* express this integral as an infinite series if we first write the integrand $\cos \sqrt{x}$ as a Maclaurin series.
+
+Let's start with the Maclaurin series expansion of $\cos{x}$, valid for all $x$:
+
+$$
+\cos{x} =1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4+\cdots \,
+$$
+
+Replacing $x$ with $\sqrt{x}$ in the above equation, we find the series expansion for $\cos{\sqrt{x}}$ as follows:
+
+$$
+\begin{aligned}
+\cos \sqrt{x} &= 1 - \frac{1}{2!}(\sqrt{x})^{2} + \frac{1}{4!}(\sqrt{x})^{4} + ⋯ \\
+&= 1 - \frac{x}{2} + \frac{x^{2}}{24} + ⋯
+\end{aligned}
+$$
+
+Integrating both sides of this equality, we get
+
+$$
+\begin{aligned}
+∫\cos \sqrt{x}dx &= ∫(1 - \frac{x}{2} + \frac{x^{2}}{24} + ⋯)dx \\
+&= ∫1dx - \frac{1}{2}∫xdx + \frac{1}{24}∫x^{2}dx + ⋯ \\
+&= C + x - \frac{1}{2} \cdot \frac{x^{2}}{2} + \frac{1}{24} \cdot \frac{x^{3}}{3} + ⋯ \\
+&= C + x - \frac{x^{2}}{4} + \frac{x^{3}}{72} + ⋯
+\end{aligned}
+$$
+
+And we're done! We've just found the Maclaurin series expression for $\displaystyle \int\cos{\sqrt{x}}\,\mathrm{d}x$.
+
+We can apply the same method to any function $f(x)$ having a power series expansion of the form
+
+$$
+f(x)=a_0+a_1 x+a_2 x^2 + \cdots\,
+$$
+
+Integrating the above, we get
+
+$$
+\begin{aligned}
+∫f(x)dx &= ∫(a_{0} + a_{1}x + a_{2}x^{2} + ⋯)dx \\
+&= a_{0}∫dx + a_{1}∫xdx + a_{2}∫x^{2}dx + ⋯ \\
+&= C + a_{0}x + a_{1}\frac{x^{2}}{2} + a_{2}\frac{x^{3}}{3} + ⋯
+\end{aligned}
+$$
+
+This is valid for the same radius of convergence as the series expansion of $f(x)$.
+
+---
+
+<a id="computing-indefinite-integrals-using-taylor-series"></a>
+## Computing Indefinite Integrals Using Taylor Series
+
+**Example:** Starting with the standard Maclaurin result for $e^x$, find the first three terms of the series expansion for $\displaystyle{\int e^{-x^2}\textrm{d}x}$.
+
+**Explanation**
+
+The series expansion of $e^{x}$ is
+
+$$
+\begin{aligned}
+e^{x} &= 1 + x + \frac{1}{2!}x^{2} + ⋯
+\end{aligned}
+$$
+
+Replacing $x$ with $-x^2$ in the above formula, we get
+
+$$
+\begin{aligned}
+e^{-x^{2}} &= 1 + (-x^{2}) + \frac{1}{2!}(-x^{2})^{2} + ⋯ \\
+&= 1 - x^{2} + \frac{1}{2}x^{4} + ⋯
+\end{aligned}
+$$
+
+Finally, integrating with respect to $x$, we get
+
+$$
+\begin{aligned}
+∫e^{-x^{2}}dx &= ∫(1 - x^{2} + \frac{1}{2}x^{4} + ⋯)dx \\
+&= C + x - \frac{1}{3}x^{3} + \frac{1}{10}x^{5} + ⋯
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-12352
+content: |-
+  Starting with the standard Maclaurin expansion for $e^{x}$, find the first three non-zero terms of the series expansion for
+
+  $∫xe^{-x^{2}}dx$.
+options:
+- id: a
+  content: |-
+    $∫xe^{-x^{2}}dx = C + \frac{1}{2}x^{2} - \frac{1}{4}x^{4} + \frac{1}{12}x^{6} + ⋯$
+  correct: true
+- id: b
+  content: |-
+    $∫xe^{-x^{2}}dx = C + \frac{1}{2}x - \frac{1}{4}x^{2} + \frac{1}{12}x^{3} + ⋯$
+- id: c
+  content: |-
+    $∫xe^{-x^{2}}dx = C + \frac{1}{5}x - \frac{1}{10}x^{2} + \frac{1}{15}x^{3} + ⋯$
+- id: d
+  content: |-
+    $∫xe^{-x^{2}}dx = C + \frac{1}{2}x^{2} + \frac{1}{4}x^{4} + \frac{1}{16}x^{6} + ⋯$
+- id: e
+  content: |-
+    $∫xe^{-x^{2}}dx = C + \frac{1}{2}x^{2} - \frac{1}{4}x^{4} + \frac{1}{16}x^{6} + ⋯$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-103961
+content: |-
+  Starting with the standard Maclaurin expansion for $\ln (1 + x)$, find the first three non-zero terms of the series expansion for $∫\ln (1 - x)dx$.
+options:
+- id: a
+  content: |-
+    $∫\ln (1 - x)dx = C + x - \frac{x^{3}}{2} + \frac{x^{5}}{4} + ⋯$
+- id: b
+  content: |-
+    $∫\ln (1 - x)dx = C + x + \frac{x^{2}}{2} + \frac{x^{4}}{4} + ⋯$
+- id: c
+  content: |-
+    $∫\ln (1 - x)dx = C - \frac{x^{2}}{2} - \frac{x^{3}}{6} - \frac{x^{4}}{12} + ⋯$
+  correct: true
+- id: d
+  content: |-
+    $∫\ln (1 - x)dx = C - \frac{x^{2}}{2} + \frac{x^{3}}{3} - \frac{x^{4}}{4} + ⋯$
+- id: e
+  content: |-
+    $∫\ln (1 - x)dx = C - x - \frac{x^{2}}{2} - \frac{x^{3}}{6} + ⋯$
+```
+
+---
+
+<a id="computing-definite-integrals-using-taylor-series"></a>
+## Computing Definite Integrals Using Taylor Series
+
+**Example:** Using the standard form of the Maclaurin series of $\ln(1+x)$, find the first three non-zero terms of the series expansion of the definite integral
+$\displaystyle{\int_0^{1/2}\ln(1-x^2)\text{d}x}$.
+
+**Explanation**
+
+The power series expansion of $\ln(1+x)$ is given by
+
+$$
+\ln (1 + x) = x - \frac{1}{2}x^{2} + \frac{1}{3}x^{3} + ⋯
+$$
+
+Replacing $x$ with $-x^2$ in the above, we get
+
+$$
+\begin{aligned}
+\ln (1 - x^{2}) &= (-x^{2}) - \frac{1}{2}(-x^{2})^{2} + \frac{1}{3}(-x^{2})^{3} + ⋯ \\
+&=-x^{2} - \frac{1}{2}x^{4} - \frac{1}{3}x^{6} + ⋯
+\end{aligned}
+$$
+
+Finally, we calculate the definite integral, as follows:
+
+$$
+\begin{aligned}
+∫_{0}^{1/2}\ln (1 - x^{2})dx &= ∫(-x^{2} - \frac{1}{2}x^{4} - \frac{1}{3}x^{6} + ⋯)dx \\
+&= (-\frac{x^{3}}{3} - \frac{1}{2} \cdot \frac{x^{5}}{5} - \frac{1}{3} \cdot \frac{x^{7}}{7} + ⋯) \mid _{0}^{1/2} \\
+&=-\frac{1}{3 \cdot 2^{3}} - \frac{1}{2 \cdot 5 \cdot 2^{5}} - \frac{1}{3 \cdot 7 \cdot 2^{7}} \\
+&=-\frac{1}{24} - \frac{1}{320} - \frac{1}{2688} + ⋯
+\end{aligned}
+$$
+
+**Note:** We can get a numerical approximation by evaluating the first three terms. This gives
+
+$$
+∫_{0}^{1/2}\ln (1 - x^{2})dx \mid \approx - \frac{1}{24} - \frac{1}{320} - \frac{1}{2688} =-0.04516
+$$
+
+rounded to five decimal places.
+
+The exact value of the integral, rounded to five decimal places, is
+
+$$
+\begin{aligned}
+∫_{0}^{1/2}\ln (1 - x^{2})dx &= -0.04523
+\end{aligned}
+$$
+
+So, our estimation was pretty good!
+
+---
+
+**Question 3**
+
+```quiz
+type: radio
+id: ma-103968
+content: |-
+  > A calculator is required to answer this question.
+
+  Using the standard form of the Maclaurin series of $\frac{1}{1 - x}$, find the first three non-zero terms of the series expansion of the definite integral $∫_{0}^{1/2}\frac{1}{1 - 2x^{3}}dx$.
+options:
+- id: a
+  content: |-
+    $∫_{0}^{1/2}\frac{1}{1 - 2x^{3}}dx = \frac{1}{2} - \frac{1}{16} + \frac{1}{121} - ⋯$
+- id: b
+  content: |-
+    $∫_{0}^{1/2}\frac{1}{1 - 2x^{3}}dx = \frac{1}{2} + \frac{1}{32} + \frac{1}{144} + ⋯$
+- id: c
+  content: |-
+    $∫_{0}^{1/2}\frac{1}{1 - 2x^{3}}dx = 1 - \frac{1}{2} + \frac{1}{28} - ⋯$
+- id: d
+  content: |-
+    $∫_{0}^{1/2}\frac{1}{1 - 2x^{3}}dx = 1 + \frac{1}{2} + \frac{1}{16} + ⋯$
+- id: e
+  content: |-
+    $∫_{0}^{1/2}\frac{1}{1 - 2x^{3}}dx = \frac{1}{2} + \frac{1}{32} + \frac{1}{224} + ⋯$
+  correct: true
+```
+
+---
+
+**Question 4**
+
+```quiz
+type: radio
+id: ma-8280
+content: |-
+  > A calculator is required to answer this question.
+
+  Using the standard form of the Maclaurin series of $\sin x$, find the first three non-zero terms of the series expansion of the definite integral $∫_{0}^{1/2}\frac{\sin x}{x}dx$.
+options:
+- id: a
+  content: |-
+    $∫_{0}^{1/2}\frac{\sin x}{x}dx = \frac{1}{2} - \frac{1}{144} + \frac{1}{19200} + ⋯$
+  correct: true
+- id: b
+  content: |-
+    $∫_{0}^{1/2}\frac{\sin x}{x}dx = \frac{1}{2} + \frac{1}{48} - \frac{1}{3840} + ⋯$
+- id: c
+  content: |-
+    $∫_{0}^{1/2}\frac{\sin x}{x}dx = \frac{1}{2} - \frac{1}{48} + \frac{1}{960} + ⋯$
+- id: d
+  content: |-
+    $∫_{0}^{1/2}\frac{\sin x}{x}dx = \frac{1}{2} - \frac{1}{48} + \frac{1}{3840} + ⋯$
+- id: e
+  content: |-
+    $∫_{0}^{1/2}\frac{\sin x}{x}dx = \frac{1}{2} + \frac{1}{144} - \frac{1}{19200} + ⋯$
+```
+
+```update-progress
+```
+
+[[253/Home|Home]]
+[[253/0. Table of Contents/TOC|Table of Contents]]
