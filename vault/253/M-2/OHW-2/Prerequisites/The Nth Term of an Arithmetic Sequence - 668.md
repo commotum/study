@@ -142,27 +142,14 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: free
 id: ma-214167
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find the formula for the $n$th term of an arithmetic sequence if the first term is $3$ and the second term is $9$.
-options:
-- id: a
-  content: |-
-    $a_{n} = 6n - 3$
-- id: b
-  content: |-
-    $a_{n} = 6n + 3$
-- id: c
-  content: |-
-    $a_{n} = 3n + 6$
-- id: d
-  content: |-
-    $a_{n} = 9n - 6$
-- id: e
-  content: |-
-    $a_{n} = 3n - 6$
+
+  Enter only the expression to the right of $a_n=$.
+correct: |-
+  6n - 3
 ```
 
 ---
@@ -209,27 +196,14 @@ $$
 **Question 3**
 
 ```quiz
-type: radio
+type: free
 id: ma-236449
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find the formula for the $n$th term of an arithmetic sequence if the first term is $-3$ and the common difference is $2$.
-options:
-- id: a
-  content: |-
-    $f(n) = 2n - 5$
-- id: b
-  content: |-
-    $f(n) = 2n - 3$
-- id: c
-  content: |-
-    $f(n) = 2n + 5$
-- id: d
-  content: |-
-    $f(n) = -3n + 2$
-- id: e
-  content: |-
-    $f(n) = 5 - 2n$
+
+  Enter only the expression to the right of $f(n)=$.
+correct: |-
+  2n - 5
 ```
 
 ---
@@ -349,29 +323,14 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: free
 id: ma-236630
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following arithmetic sequence.
   $-17,-12,-7,-2, …$
   What is the $24$th term of this sequence?
-options:
-- id: a
-  content: |-
-    $98$
-- id: b
-  content: |-
-    $93$
-- id: c
-  content: |-
-    $103$
-- id: d
-  content: |-
-    $115$
-- id: e
-  content: |-
-    $88$
+correct: |-
+  98
 ```
 
 ---
@@ -420,27 +379,14 @@ $$
 **Question 7**
 
 ```quiz
-type: radio
+type: free
 id: ma-236646
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Find the formula for the $n$th term of the arithmetic sequence that has $a_{12} = 28$ and the common difference $d = 3$.
-options:
-- id: a
-  content: |-
-    $a_{n} = 3n - 8$
-- id: b
-  content: |-
-    $a_{n} = 3n + 8$
-- id: c
-  content: |-
-    $a_{n} = 3n - 5$
-- id: d
-  content: |-
-    $a_{n} = 28n + 3$
-- id: e
-  content: |-
-    $a_{n} = 3n - 11$
+
+  Enter only the expression to the right of $a_n=$.
+correct: |-
+  3n - 8
 ```
 
 ---

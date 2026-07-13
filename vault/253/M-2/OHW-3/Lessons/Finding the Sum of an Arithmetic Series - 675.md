@@ -181,7 +181,7 @@ content: |-
   > A calculator is required to answer this question.
   
   The following arithmetic series has $11$ terms in total. Find the sum of the series.
-  $7 + 15 + 23 + 31 + ⋯ + 87$
+  $$7 + 15 + 23 + 31 + ⋯ + 87$$
 options:
 - id: a
   content: |-

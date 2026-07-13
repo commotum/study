@@ -131,27 +131,12 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: free
 id: ma-217094
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $a_{n + 1} =-2a_{n}$ with $a_{1} = 2$, then $a_{2} =$
-options:
-- id: a
-  content: |-
-    $-4$
-- id: b
-  content: |-
-    $4$
-- id: c
-  content: |-
-    $-2$
-- id: d
-  content: |-
-    $2$
-- id: e
-  content: |-
-    $0$
+correct: |-
+  -4
 ```
 
 ---
@@ -273,27 +258,12 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: free
 id: ma-217109
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $a_{n + 1} = 5a_{n} - 3$ with $a_{1} = 1$, then $a_{3} =$
-options:
-- id: a
-  content: |-
-    $7$
-- id: b
-  content: |-
-    $2$
-- id: c
-  content: |-
-    $5$
-- id: d
-  content: |-
-    $10$
-- id: e
-  content: |-
-    $22$
+correct: |-
+  7
 ```
 
 ---
@@ -365,27 +335,12 @@ options:
 **Question 8**
 
 ```quiz
-type: radio
+type: free
 id: ma-217120
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $f(n + 1) = f(n) + 8$ with $f(1) =-6$, then $f(4) =$
-options:
-- id: a
-  content: |-
-    $18$
-- id: b
-  content: |-
-    $10$
-- id: c
-  content: |-
-    $2$
-- id: d
-  content: |-
-    $24$
-- id: e
-  content: |-
-    $-2$
+correct: |-
+  18
 ```
 
 ---
@@ -455,29 +410,16 @@ options:
 **Question 10**
 
 ```quiz
-type: radio
+type: free
 id: ma-217141
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following sequence:
   $20, 10, 5, \frac{5}{2}, \frac{5}{4}, …$
   The recursive formula for this sequence is given by
-options:
-- id: a
-  content: |-
-    $a_{n + 1} = \frac{1}{2}a_{n},\ a_{1} = 20$
-- id: b
-  content: |-
-    $a_{n + 1} = 2a_{n},\ a_{1} = 20$
-- id: c
-  content: |-
-    $a_{n + 1} = \frac{1}{2}a_{n},\ a_{1} = 10$
-- id: d
-  content: |-
-    $a_{n + 1} = a_{n} - 10,\ a_{1} = 20$
-- id: e
-  content: |-
-    $a_{n + 1} = \frac{5}{2}a_{n},\ a_{1} = 20$
+
+  Enter the multiplier and the first term, separated by a comma.
+correct: |-
+  1/2, 20
 ```
 
 ```update-progress

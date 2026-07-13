@@ -130,30 +130,17 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: free
 id: ma-249792
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following geometric sequence:
   $100, 80, 64, …$
   
   The recursive formula for this geometric sequence is
-options:
-- id: a
-  content: |-
-    $a_{n + 1} = \frac{4}{5}a_n,\ a_1 = 100,\ n \ge 1$
-- id: b
-  content: |-
-    $a_{n + 1} = \frac{5}{4}a_n,\ a_1 = 100,\ n \ge 1$
-- id: c
-  content: |-
-    $a_{n + 1} = \frac{4}{5}a_n,\ a_1 = 80,\ n \ge 1$
-- id: d
-  content: |-
-    $a_{n + 1} = 20a_n,\ a_1 = 100,\ n \ge 1$
-- id: e
-  content: |-
-    $a_{n + 1} = a_n - 20,\ a_1 = 100,\ n \ge 1$
+
+  Enter the expression to the right of $a_{n+1}=$ and the value of $a_1$, separated by a comma.
+correct: |-
+  (4/5)a_n, 100
 ```
 
 ---
@@ -161,30 +148,17 @@ options:
 **Question 3**
 
 ```quiz
-type: radio
+type: free
 id: ma-249795
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following geometric sequence:
   $243,-162, 108, …$
   
   The recursive formula for this geometric sequence is
-options:
-- id: a
-  content: |-
-    $a_{n + 1} = -\frac{2}{3}a_n,\ a_1 = 243,\ n \ge 1$
-- id: b
-  content: |-
-    $a_{n + 1} = \frac{2}{3}a_n,\ a_1 = 243,\ n \ge 1$
-- id: c
-  content: |-
-    $a_{n + 1} = -\frac{3}{2}a_n,\ a_1 = 243,\ n \ge 1$
-- id: d
-  content: |-
-    $a_{n + 1} = -81a_n,\ a_1 = 243,\ n \ge 1$
-- id: e
-  content: |-
-    $a_{n + 1} = -\frac{2}{3}a_n,\ a_1 = -162,\ n \ge 1$
+
+  Enter the expression to the right of $a_{n+1}=$ and the value of $a_1$, separated by a comma.
+correct: |-
+  (-2/3)a_n, 243
 ```
 
 ---
@@ -215,28 +189,13 @@ Therefore, $a_4 = -54$.
 **Question 4**
 
 ```quiz
-type: radio
+type: free
 id: ma-233046
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following geometric sequence:
   $a_{n + 1} = \frac{5}{2}a_{n}, a_{1} = 4, n \ge 1$The $3$rd term of this geometric sequence is $a_{3} =$
-options:
-- id: a
-  content: |-
-    $25$
-- id: b
-  content: |-
-    $10$
-- id: c
-  content: |-
-    $\frac{25}{2}$
-- id: d
-  content: |-
-    $20$
-- id: e
-  content: |-
-    $\frac{125}{2}$
+correct: |-
+  25
 ```
 
 ---
@@ -244,28 +203,13 @@ options:
 **Question 5**
 
 ```quiz
-type: radio
+type: free
 id: ma-249805
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following geometric sequence:
   $a_{n + 1} = \frac{1}{4}a_{n}, a_{1} = 256, n \ge 1$The $4$th term of this geometric sequence is $a_{4} =$
-options:
-- id: a
-  content: |-
-    $4$
-- id: b
-  content: |-
-    $16$
-- id: c
-  content: |-
-    $64$
-- id: d
-  content: |-
-    $1$
-- id: e
-  content: |-
-    $8$
+correct: |-
+  4
 ```
 
 ---
@@ -362,31 +306,16 @@ options:
 **Question 8**
 
 ```quiz
-type: radio
+type: free
 id: ma-233070
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following geometric sequence:
   
   $f(n + 1) =-2f(n), f(1) = \frac{1}{2}, n \ge 1$
   
   The $4$th term of this geometric sequence is $f(4) =$
-options:
-- id: a
-  content: |-
-    $-4$
-- id: b
-  content: |-
-    $4$
-- id: c
-  content: |-
-    $-2$
-- id: d
-  content: |-
-    $2$
-- id: e
-  content: |-
-    $-8$
+correct: |-
+  -4
 ```
 
 ---

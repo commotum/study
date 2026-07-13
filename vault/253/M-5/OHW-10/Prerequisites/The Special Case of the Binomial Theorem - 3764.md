@@ -98,29 +98,16 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: free
 id: ma-234001
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A calculator is required to answer this question.
   
   What are the first three terms in ascending powers of $t$ of $(1 + \frac{t}{5})^{10}$?
-options:
-- id: a
-  content: |-
-    $1 + 2t + \frac{9}{5}t^{2} + \cdots$
-- id: b
-  content: |-
-    $1 + 2t + \frac{9}{25}t^{2} + \cdots$
-- id: c
-  content: |-
-    $1 + 10t + \frac{9}{5}t^{2} + \cdots$
-- id: d
-  content: |-
-    $1 + \frac{t}{2} + \frac{9}{5}t^{2} + \cdots$
-- id: e
-  content: |-
-    $1 + 2t + \frac{5}{9}t^{2} + \cdots$
+
+  Enter the coefficients of $t$ and $t^2$, separated by a comma.
+correct: |-
+  2, 9/5
 ```
 
 ---
@@ -160,29 +147,14 @@ $$
 **Question 3**
 
 ```quiz
-type: radio
+type: free
 id: ma-234002
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A calculator is required to answer this question.
   
   Find, in ascending powers of $t$, the **first three terms** in the binomial expansion of $(1 - 8t)^{6}$.
-options:
-- id: a
-  content: |-
-    $1 - 48t + 960t^{2} + \cdots$
-- id: b
-  content: |-
-    $1 + 48t + 960t^{2} + \cdots$
-- id: c
-  content: |-
-    $1 - 48t + 384t^{2} + \cdots$
-- id: d
-  content: |-
-    $1 - 8t + 960t^{2} + \cdots$
-- id: e
-  content: |-
-    $1 - 48t - 960t^{2} + \cdots$
+correct: |-
+  1 - 48t + 960t^2
 ```
 
 ---
@@ -283,29 +255,14 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: free
 id: ma-250997
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A calculator is required to answer this question.
   
   What is the coefficient of $k^{4}$ in the expansion of $(1 - 4k)^{6}$?
-options:
-- id: a
-  content: |-
-    $3840$
-- id: b
-  content: |-
-    $1536$
-- id: c
-  content: |-
-    $256$
-- id: d
-  content: |-
-    $960$
-- id: e
-  content: |-
-    $-3840$
+correct: |-
+  3840
 ```
 
 ---

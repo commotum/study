@@ -131,27 +131,12 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: free
 id: ma-217094
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $a_{n + 1} =-2a_{n}$ with $a_{1} = 2$, then $a_{2} =$
-options:
-- id: a
-  content: |-
-    $-4$
-- id: b
-  content: |-
-    $4$
-- id: c
-  content: |-
-    $-2$
-- id: d
-  content: |-
-    $2$
-- id: e
-  content: |-
-    $0$
+correct: |-
+  -4
 ```
 
 ---
@@ -273,27 +258,12 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: free
 id: ma-217109
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $a_{n + 1} = 5a_{n} - 3$ with $a_{1} = 1$, then $a_{3} =$
-options:
-- id: a
-  content: |-
-    $7$
-- id: b
-  content: |-
-    $2$
-- id: c
-  content: |-
-    $5$
-- id: d
-  content: |-
-    $10$
-- id: e
-  content: |-
-    $22$
+correct: |-
+  7
 ```
 
 ---
@@ -319,12 +289,38 @@ $$
 
 We use this formula to compute the terms $f(2), f(3)$, and $f(4)$ as follows:
 
-- To compute $f(2)$, we substitute $n = 1$ into the recursive formula:
-$f(n + 1)|= 2f(n) + 1; f(1 + 1)|= 2f(1) + 1; f(2)|= 2f(1) + 1; f(2)|= 2(3) + 1; f(2)|= 7$
-- To compute $f(3)$, we substitute $n=2$ into the recursive formula:
-$f(n + 1)|= 2f(n) + 1; f(2 + 1)|= 2f(2) + 1; f(3)|= 2f(2) + 1; f(3)|= 2(7) + 1; f(3)|= 15$
-- To compute $f(4)$, we substitute $n=3$ into the recursive formula:
-$f(n + 1)|= 2f(n) + 1; f(3 + 1)|= 2f(3) + 1; f(4)|= 2f(3) + 1; f(4)|= 2(15) + 1; f(4)|= 31$
+To compute $f(2)$, substitute $n=1$ into the recursive formula:
+
+$$
+\begin{aligned}
+f(n+1) &= 2f(n)+1 \\
+f(1+1) &= 2f(1)+1 \\
+f(2) &= 2(3)+1 \\
+f(2) &= 7
+\end{aligned}
+$$
+
+Next, compute $f(3)$ by substituting $n=2$:
+
+$$
+\begin{aligned}
+f(n+1) &= 2f(n)+1 \\
+f(2+1) &= 2f(2)+1 \\
+f(3) &= 2(7)+1 \\
+f(3) &= 15
+\end{aligned}
+$$
+
+Finally, compute $f(4)$ by substituting $n=3$:
+
+$$
+\begin{aligned}
+f(n+1) &= 2f(n)+1 \\
+f(3+1) &= 2f(3)+1 \\
+f(4) &= 2(15)+1 \\
+f(4) &= 31
+\end{aligned}
+$$
 
 Therefore, the fourth term of the sequence is
 
@@ -365,27 +361,12 @@ options:
 **Question 8**
 
 ```quiz
-type: radio
+type: free
 id: ma-217120
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   If $f(n + 1) = f(n) + 8$ with $f(1) =-6$, then $f(4) =$
-options:
-- id: a
-  content: |-
-    $18$
-- id: b
-  content: |-
-    $10$
-- id: c
-  content: |-
-    $2$
-- id: d
-  content: |-
-    $24$
-- id: e
-  content: |-
-    $-2$
+correct: |-
+  18
 ```
 
 ---
@@ -394,9 +375,13 @@ options:
 ## Writing a Recursive Formula for a Sequence
 
 **Example:** Consider the following sequence:
-$1, \quad 6, \quad 11, \quad 16, \quad 21, \quad 26, \quad \dots$
+
+$$1, \quad 6, \quad 11, \quad 16, \quad 21, \quad 26, \quad \dots$$
+
 The recursive formula for this sequence is given by
-$f(n+1) = f(n) + \bbox[3pt, border: 1pt solid black]{\phantom{A}}\,, \qquad f(1) = \bbox[3pt, border: 1pt solid black]{\phantom{A}}\,$.
+
+$$f(n+1) = f(n) + \bbox[3pt, border: 1pt solid black]{\phantom{A}}\,, \qquad f(1) = \bbox[3pt, border: 1pt solid black]{\phantom{A}}\,.$$
+
 From left to right, what are the missing values?
 
 **Explanation**
@@ -426,10 +411,9 @@ type: radio
 id: ma-14435
 content: |-
   Consider the following sequence:
-  
-  $2, 0,-2,-4,-6, …$
+  $$2, 0,-2,-4,-6, …$$
   The recursive formula for this sequence is given by
-  $a_{n + 1} = a_{n} + A, a_{1} = A$.
+  $$a_{n + 1} = a_{n} + A, \quad a_{1} = A.$$
   From left to right, what are the missing values?
 options:
 - id: a
@@ -455,29 +439,16 @@ options:
 **Question 10**
 
 ```quiz
-type: radio
+type: free
 id: ma-217141
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following sequence:
-  $20, 10, 5, \frac{5}{2}, \frac{5}{4}, …$
+  $$20, 10, 5, \frac{5}{2}, \frac{5}{4}, …$$
   The recursive formula for this sequence is given by
-options:
-- id: a
-  content: |-
-    $a_{n + 1} = \frac{1}{2}a_{n},\ a_{1} = 20$
-- id: b
-  content: |-
-    $a_{n + 1} = 2a_{n},\ a_{1} = 20$
-- id: c
-  content: |-
-    $a_{n + 1} = \frac{1}{2}a_{n},\ a_{1} = 10$
-- id: d
-  content: |-
-    $a_{n + 1} = a_{n} - 10,\ a_{1} = 20$
-- id: e
-  content: |-
-    $a_{n + 1} = \frac{5}{2}a_{n},\ a_{1} = 20$
+
+  Enter the multiplier and the first term, separated by a comma.
+correct: |-
+  1/2, 20
 ```
 
 ```update-progress

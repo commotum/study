@@ -58,29 +58,14 @@ $$
 **Question 1**
 
 ```quiz
-type: radio
+type: free
 id: ma-214150
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following arithmetic sequence.
   $-7,-1, 5, 11, …$
   The common difference of this arithmetic sequence is
-options:
-- id: a
-  content: |-
-    $6$
-- id: b
-  content: |-
-    $-6$
-- id: c
-  content: |-
-    $5$
-- id: d
-  content: |-
-    $7$
-- id: e
-  content: |-
-    $12$
+correct: |-
+  6
 ```
 
 ---
@@ -118,29 +103,14 @@ options:
 **Question 3**
 
 ```quiz
-type: radio
+type: free
 id: ma-215846
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following arithmetic sequence.
   $-3, \frac{1}{2}, 4, \frac{15}{2}, …$
   The common difference of this arithmetic sequence is
-options:
-- id: a
-  content: |-
-    $\frac{7}{2}$
-- id: b
-  content: |-
-    $\frac{5}{2}$
-- id: c
-  content: |-
-    $3$
-- id: d
-  content: |-
-    $4$
-- id: e
-  content: |-
-    $\frac{9}{2}$
+correct: |-
+  7/2
 ```
 
 ---
@@ -292,29 +262,14 @@ options:
 **Question 7**
 
 ```quiz
-type: radio
+type: free
 id: ma-214151
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following arithmetic sequence:
   $3, 11, 19, …$
   The fifth term of this sequence is
-options:
-- id: a
-  content: |-
-    $35$
-- id: b
-  content: |-
-    $27$
-- id: c
-  content: |-
-    $31$
-- id: d
-  content: |-
-    $43$
-- id: e
-  content: |-
-    $39$
+correct: |-
+  35
 ```
 
 ---
@@ -322,29 +277,14 @@ options:
 **Question 8**
 
 ```quiz
-type: radio
+type: free
 id: ma-215860
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Consider the following arithmetic sequence:
   $-17,-12,-7, …$
   The eighth term of this sequence is
-options:
-- id: a
-  content: |-
-    $18$
-- id: b
-  content: |-
-    $13$
-- id: c
-  content: |-
-    $23$
-- id: d
-  content: |-
-    $8$
-- id: e
-  content: |-
-    $28$
+correct: |-
+  18
 ```
 
 ```update-progress

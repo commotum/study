@@ -174,29 +174,14 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: free
 id: ma-234173
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A scientific calculator is required to answer this question.
   
   Use the first four terms of the binomial expansion of $(1 + x)^{8}$ in ascending powers of $x$ to approximate $(1.02)^{8}$. Round your answer to five decimal places.
-options:
-- id: a
-  content: |-
-    $(1.02)^{8} \approx 1.17165$
-- id: b
-  content: |-
-    $(1.02)^{8} \approx 1.17160$
-- id: c
-  content: |-
-    $(1.02)^{8} \approx 1.17120$
-- id: d
-  content: |-
-    $(1.02)^{8} \approx 1.17186$
-- id: e
-  content: |-
-    $(1.02)^{8} \approx 1.16000$
+correct: |-
+  1.17165
 ```
 
 ---
@@ -248,29 +233,14 @@ to six decimal places.
 **Question 3**
 
 ```quiz
-type: radio
+type: free
 id: ma-234174
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A scientific calculator is required to answer this question.
   
   Use the first three terms of the binomial expansion of $(1 + x)^{9}$ in ascending powers of $x$ to approximate $(0.97)^{9}$. Round your answer to three decimal places.
-options:
-- id: a
-  content: |-
-    $(0.97)^{9} \approx 0.762$
-- id: b
-  content: |-
-    $(0.97)^{9} \approx 0.763$
-- id: c
-  content: |-
-    $(0.97)^{9} \approx 0.730$
-- id: d
-  content: |-
-    $(0.97)^{9} \approx 0.760$
-- id: e
-  content: |-
-    $(0.97)^{9} \approx 0.970$
+correct: |-
+  0.762
 ```
 
 ---
@@ -391,29 +361,14 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: free
 id: ma-235253
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A scientific calculator is required to answer this question.
   
   Use the first three terms of the binomial expansion of $(5 + x)^{7}$ in ascending powers of $x$ to approximate $(4.97)^{7}$. Round your answer to two decimal places.
-options:
-- id: a
-  content: |-
-    $(4.97)^{7} \approx 74902.81$
-- id: b
-  content: |-
-    $(4.97)^{7} \approx 74902.80$
-- id: c
-  content: |-
-    $(4.97)^{7} \approx 74894.91$
-- id: d
-  content: |-
-    $(4.97)^{7} \approx 78125.00$
-- id: e
-  content: |-
-    $(4.97)^{7} \approx 74961.88$
+correct: |-
+  74902.81
 ```
 
 ---
@@ -477,29 +432,16 @@ rounded to two decimal places.
 **Question 7**
 
 ```quiz
-type: radio
+type: free
 id: ma-266369
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A scientific calculator is required to answer this question.
   
   Calculate the percentage error obtained when approximating the value of $(1.09)^{7}$ using the first three terms of the binomial expansion of $(1 + x)^{7}$ in ascending powers of $x$. Round your final percentage error to two decimal places.
-options:
-- id: a
-  content: |-
-    $1.53%$
-- id: b
-  content: |-
-    $1.50%$
-- id: c
-  content: |-
-    $0.36%$
-- id: d
-  content: |-
-    $2.53%$
-- id: e
-  content: |-
-    $0.15%$
+
+  Enter only the number, without the percent sign.
+correct: |-
+  1.53
 ```
 
 ---
@@ -537,29 +479,16 @@ options:
 **Question 9**
 
 ```quiz
-type: radio
+type: free
 id: ma-266378
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A scientific calculator is required to answer this question.
   
   Calculate the percentage error obtained when approximating the value of $(0.91)^{7}$ using the first three terms of the binomial expansion of $(1 + x)^{7}$ in ascending powers of $x$. Round your final percentage error to two decimal places.
-options:
-- id: a
-  content: |-
-    $4.52%$
-- id: b
-  content: |-
-    $4.50%$
-- id: c
-  content: |-
-    $0.45%$
-- id: d
-  content: |-
-    $1.53%$
-- id: e
-  content: |-
-    $0.05%$
+
+  Enter only the number, without the percent sign.
+correct: |-
+  4.52
 ```
 
 ```update-progress
