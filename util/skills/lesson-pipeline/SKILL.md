@@ -1,13 +1,13 @@
 ---
 name: lesson-pipeline
-description: Generate all missing core-move lessons for a single Markdown assignment file by detecting problem sections, skipping already-associated lessons, and launching same-model sub-agents to run core-move-lesson followed by core-move-refiner for each missing problem. Use when the user gives one assignment path and wants every problem in that file to have a corresponding lesson without overwriting completed lessons.
+description: Generate all or an explicit subset of missing core-move lessons for a single Markdown assignment file by detecting problem sections, skipping existing associated lessons, and launching same-model sub-agents to run core-move-lesson followed by core-move-refiner. Use when the user wants every problem covered or when an assignment workflow such as `setup-lessons` supplies exact unmatched problem numbers that need generated fallback lessons without replacing genuine Math Academy matches.
 ---
 
 # Lesson Pipeline
 
 ## Overview
 
-Take one assignment Markdown file, identify every problem in it, skip problems that already have lesson files, and create the missing lessons by delegating one problem per same-model worker sub-agent. The pipeline is complete only when every problem in the assignment has an associated lesson file.
+Take one assignment Markdown file and create missing core-move lessons by delegating one problem per same-model worker sub-agent. In full mode, process every problem. In targeted mode, process only an explicit list of problem numbers supplied by the caller; this mode is the required fallback for problems that `setup-lessons` classified as having no equivalent Math Academy lesson.
 
 Required local skills:
 
@@ -19,11 +19,14 @@ Required local skills:
 ## Assignment Contract
 
 - Input must be one Markdown assignment file, such as `.../HW-1/HW-1.md`.
+- Input may also include an explicit target list such as `Problems 2, 5, and 7 only`.
 - Problems are normally headed `## Problem N`.
 - The lesson directory is `Lessons/` next to the assignment file.
 - The expected lesson for problem `N` is `Lessons/Problem-N.md`.
 - A problem is considered already associated when its expected lesson file exists and is non-empty.
 - Do not overwrite, delete, rename, or regenerate existing associated lesson files unless the user explicitly asks for that.
+- Full mode targets every detected problem. Targeted mode targets only the supplied problem numbers, even when other problems lack `Lessons/Problem-N.md`.
+- Never infer extra targets from missing `Problem-N.md` files when the caller supplied an explicit target list.
 
 ## Workflow
 
@@ -32,6 +35,7 @@ Required local skills:
    - Read the assignment enough to identify all `## Problem N` headings.
    - Preserve problem numbering exactly as written.
    - If no `## Problem N` headings exist, stop and ask for clarification instead of guessing.
+   - If the caller supplied target problem numbers, normalize duplicates, preserve their assignment order, and verify every target corresponds to a detected heading. Stop and report any nonexistent target instead of silently substituting another problem.
 
 Useful commands from the study repo root:
 
@@ -44,10 +48,11 @@ find /path/to/assignment-parent/Lessons -maxdepth 1 -type f -name 'Problem-*.md'
    - Set `assignment_dir` to the assignment file's parent directory.
    - Set `lesson_dir` to `assignment_dir/Lessons`.
    - Create `lesson_dir` if it does not exist.
-   - For each problem number `N`, compute `lesson_dir/Problem-N.md`.
+   - In full mode, use all detected problem numbers. In targeted mode, use only the verified target problem numbers.
+   - For each in-scope problem number `N`, compute `lesson_dir/Problem-N.md`.
    - Skip any expected lesson file that exists and is non-empty.
    - Treat a missing or zero-byte expected lesson file as work to do.
-   - Report the total problem count, skipped count, and missing count before launching workers.
+   - Report the assignment's total problem count, the in-scope target count, skipped count, and missing count before launching workers.
    - If no lessons are missing, do not launch sub-agents; proceed directly to the completion check.
 
 3. Launch one worker sub-agent per missing problem.
@@ -102,8 +107,9 @@ python3 /Users/jake/Developer/study/util/skills/core-move-lesson/scripts/validat
    - If a worker failed or a lesson is still missing, relaunch a worker for that problem or complete that single problem locally with the same `core-move-lesson` then `core-move-refiner` sequence.
 
 6. Completion condition.
-   - Recompute the full problem-to-lesson map from the assignment file.
-   - The task is not complete until every `## Problem N` has a non-empty `Lessons/Problem-N.md`.
+   - Recompute the problem-to-lesson map from the assignment file.
+   - In full mode, the task is not complete until every `## Problem N` has a non-empty `Lessons/Problem-N.md`.
+   - In targeted mode, the task is not complete until every explicitly targeted problem has a non-empty `Lessons/Problem-N.md`. Out-of-scope problems must remain untouched and do not affect targeted completion.
    - Existing skipped lessons count toward completion, but do not silently claim they were newly generated.
 
 ## Final Response
@@ -112,6 +118,7 @@ Report:
 
 - Assignment path.
 - Number of problems found.
+- Processing mode and targeted problem numbers, when applicable.
 - Existing lesson files skipped.
 - New lesson files created.
 - Any problems that could not be completed.

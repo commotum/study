@@ -1,0 +1,362 @@
+## Prerequisites
+
+- [Lesson-Name](<Prerequisites/Lesson-Path>)
+- [Lesson-Name](<Prerequisites/Lesson-Path>)
+- [Lesson-Name](<Prerequisites/Lesson-Path>)
+
+## Lessons
+
+- [Lesson-Name](<Lessons/Lesson-Path>)
+- [Lesson-Name](<Lessons/Lesson-Path>)
+- [Lesson-Name](<Lessons/Lesson-Path>)
+
+---
+## Problem 1
+
+Differentiate with respect to $x$.
+
+$$
+\frac{d}{dx}\int_x^{107}e^{-t}\,dt=
+$$
+
+---
+## Problem 2
+
+Use Part 1 of the Fundamental Theorem of Calculus to differentiate.
+
+$$
+\frac{d}{dx}\left[\int_1^{\sqrt{x}}\sqrt{t^4+8}\,dt\right]=
+$$
+
+Give an exact answer using symbolic notation and fractions as needed.
+
+---
+## Problem 3
+
+Use Part 1 of the Fundamental Theorem of Calculus to differentiate.
+
+$$
+\frac{d}{dx}\left[\int_7^{1/x}\sin^9(t)\,dt\right]=
+$$
+
+Give an exact answer using symbolic notation and fractions as needed.
+
+---
+## Problem 4
+
+Differentiate.
+
+$$
+y=\int_{-5x}^{x^2}e^{t^2}\,dt
+$$
+
+$$
+y'=
+$$
+
+Give an exact answer using symbolic notation and fractions as needed.
+
+---
+## Problem 5
+
+Let
+
+$$
+f(t)=14\sqrt[3]{t},\qquad -8\leq t\leq 8.
+$$
+
+(a) Choose the accumulation function $F$ associated with $f$ over the stated interval.
+
+- $\displaystyle F(x)=16-\frac{21}{2}x\sqrt[3]{x}$
+- $\displaystyle F(x)=\frac{21}{2}x\sqrt[3]{x}-168$
+- $\displaystyle F(x)=\frac{21}{2}\left(\sqrt[4]{x}\right)^3-\left(\sqrt[4]{-8}\right)^3$
+- $\displaystyle F(x)=168-\frac{21}{2}x\sqrt[3]{x}$
+- $\displaystyle F(x)=\frac{21}{2}\left(\sqrt[4]{x}\right)^3-16$
+
+(b) Find the following exact values.
+
+$$
+F(-1)=
+$$
+
+$$
+F(0)=
+$$
+
+$$
+F(8)=
+$$
+
+(c) Graph $F(x)$ on the domain $-8\leq x\leq 8$.
+
+---
+## Problem 6
+
+Use Part 2 of the Fundamental Theorem of Calculus to evaluate.
+
+$$
+\int_{-7}^{8}8\,dx=
+$$
+
+Use symbolic notation and fractions as needed.
+
+---
+## Problem 7
+
+Use Part 2 of the Fundamental Theorem of Calculus to evaluate.
+
+$$
+\int_2^{10}\frac{1}{x^4}\,dx=
+$$
+
+Give an exact answer using symbolic notation and fractions as needed.
+
+---
+## Problem 8
+
+Evaluate the definite integral exactly.
+
+$$
+\int_{-2}^{2}x^{2/3}\,dx=
+$$
+
+---
+## Problem 9
+
+An antiderivative of the integrand is
+
+$$
+F(x)=x^3-3x^2+7x+1.
+$$
+
+Use it to evaluate.
+
+$$
+\int_1^5\left(3x^2-6x+7\right)\,dx=
+$$
+
+---
+## Problem 10
+
+Use Part 2 of the Fundamental Theorem of Calculus to evaluate.
+
+$$
+\int_3^5 4\sqrt[4]{y^3}\,dy=
+$$
+
+Use symbolic notation and fractions as needed.
+
+---
+## Problem 11
+
+Evaluate.
+
+$$
+\int_{-\pi/2}^{\pi/4}\cos(x)\,dx=
+$$
+
+Use symbolic notation and fractions as needed.
+
+---
+## Problem 12
+
+Use Part 2 of the Fundamental Theorem of Calculus to evaluate.
+
+$$
+\int_{e^3}^{1}\frac{1}{x}\,dx=
+$$
+
+Give an exact answer using symbolic notation and fractions as needed.
+
+---
+## Problem 13
+
+Use the Fundamental Theorem of Calculus and properties of definite integrals to evaluate.
+
+$$
+\int_1^e\frac{5s^2+2s}{s^2}\,ds=
+$$
+
+Use symbolic notation and fractions as needed.
+
+---
+## Problem 14
+
+Let
+
+$$
+f(x)=x^2
+$$
+
+on $[3,7]$.
+
+(a) Find the exact average value of $f$.
+
+$$
+f_{\mathrm{avg}}=
+$$
+
+(b) Find $c$ in $[3,7]$ such that
+
+$$
+f(c)=f_{\mathrm{avg}}.
+$$
+
+Give an exact answer with no radical in the denominator.
+
+$$
+c=
+$$
+
+---
+## Problem 15
+
+For the integral
+
+$$
+\int_0^4\left(4x^2+9\right)\,dx,
+$$
+
+find every number $u$ guaranteed by the Mean Value Theorem for Integrals.
+
+Give the answer as a comma-separated list using symbolic notation and fractions as needed.
+
+$$
+u=
+$$
+
+---
+## Problem 16
+
+Consider the accumulation function
+
+$$
+F(x)=\int_0^x g(t)\,dt,\qquad 0\leq x\leq 5.
+$$
+
+The graph of $y=F(x)$ is piecewise linear through these points:
+
+$$
+(0,0),\quad (1,3),\quad (3,3),\quad (4,-1),\quad (5,0).
+$$
+
+Because $F$ is an antiderivative of $g$, answer the following.
+
+(a) Which statement describes $g(0.2)$?
+
+- $g(0.2)>0$
+- $g(0.2)=0$
+- There is not enough information.
+- $g(0.2)<0$
+
+(b) Select every interval on which $g$ is positive.
+
+- $(0,1)$
+- $(0,5)$
+- $(0,3.75)$
+- $(1,3)$
+- $(4,5)$
+- $(3,3.75)$
+
+(c) Find the minimum value of $F$ on $[0,5]$.
+
+- $-1$
+- $0$
+- $-4$
+- $3$
+- $-5$
+
+(d) Find the minimum value of $\frac{dF}{dx}$ on the domain.
+
+- $-1$
+- $-4$
+- $0$
+- $3$
+- $-5$
+
+(e) Evaluate.
+
+$$
+\int_0^3 g(x)\,dx
+$$
+
+- $3$
+- $\frac{3}{2}$
+- $-3$
+- $\frac{15}{2}$
+- $\frac{9}{2}$
+
+(f) Approximate.
+
+$$
+\int_1^{3.5}g(x)\,dx
+$$
+
+- $2$
+- $2.5$
+- $\frac{17}{2}$
+- $-2$
+
+---
+## Problem 17
+
+Suppose $F$ is an antiderivative of $f$ on $[0,8]$. The graph of the piecewise linear function $y=f(x)$ passes through
+
+$$
+(0,2),\quad (2,-4),\quad (4,-4),\quad (6,0),\quad (8,-2).
+$$
+
+Answer the following.
+
+(a) Which statement describes $f'(3.9)$?
+
+- There is not enough information.
+- $f'(3.9)<0$
+- $f'(3.9)=0$
+- $f'(3.9)>0$
+
+(b) Select every listed $x$-value for which
+
+$$
+F(x)=\int_0^x f(t)\,dt
+$$
+
+is negative.
+
+- $x=0$
+- $x=2.5$
+- $x=4.5$
+- $x=1.0$
+- $x=0.75$
+- $x=7.0$
+
+(c) Evaluate.
+
+$$
+\int_2^6 f'(x)\,dx
+$$
+
+- $0$
+- $1$
+- $-4$
+- $4$
+- $12$
+- $-12$
+
+(d) Approximate.
+
+$$
+\int_5^0 f'(x)\,dx
+$$
+
+- $-2$
+- $4$
+- $2$
+- $-4$
+
+(e) Evaluate $F'(5)$.
+
+- $-7.5$
+- $5$
+- $-2$
+- $2$

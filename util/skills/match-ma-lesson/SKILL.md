@@ -1,6 +1,6 @@
 ---
 name: match-ma-lesson
-description: Find the Math Academy lesson or lessons that best match a given math problem by using the study repo's Math Academy group/course indices, then verifying candidates against the actual examples and questions in the lesson markdown. Use when the user gives a single math problem, assignment problem, or problem excerpt and asks which Math Academy lessons cover the same skills, knowledge, or question type.
+description: Find and verify the Math Academy lesson or lessons that best match a given math problem, classify whether a genuine question-level equivalent exists, and explicitly signal when the problem needs a generated core-move fallback. Use when the user gives a single math problem, assignment problem, or problem excerpt and asks which Math Academy lessons cover the same skills, knowledge, or question type, including assignment workflows that must distinguish true matches from unmatched problems.
 ---
 
 # Match MA Lesson
@@ -58,20 +58,27 @@ nl -ba "vault/MA/path/to/Lesson.md" | sed -n '80,140p'
    - Prefer lessons with the same answer form and constraints, such as exact value, decimal approximation, interval notation, multiple choice, or "do not compute X".
    - Mark prerequisite lessons separately from the main lesson; do not present a prerequisite as the best match unless it is the main task.
    - Mark nearby but weaker lessons as secondary when they teach related notation or a more advanced/later version of the idea.
+   - Count a problem as matched only when at least one lesson question/example teaches the same core move and has substantially the same task shape. A shared topic name, prerequisite skill, or nearby technique is not enough.
+   - If every candidate is only a prerequisite, near miss, broader survey, or different question type, classify the result as `No equivalent Math Academy lesson` instead of forcing a weak main match.
 
 6. Report the result with evidence.
+   - Start with exactly one match status: `Equivalent Math Academy lesson found` or `No equivalent Math Academy lesson`.
    - Give the best match first.
    - Include supporting/prerequisite lessons only when needed to do the problem.
    - Include line-linked file references for the index entry and for the matching lesson question/example.
    - Explain the match in terms of the task shape, not just keywords.
    - If useful, include a brief solution scaffold to show why the selected skills are necessary.
    - Do not claim an exact match unless a lesson question/example closely resembles the given problem.
+   - For `No equivalent Math Academy lesson`, keep useful prerequisites and near misses clearly separated, and do not label either as the main lesson.
+   - When the caller supplies an assignment file and problem number, include a fallback directive naming both: run `lesson-pipeline` in targeted mode for that problem. The assignment-level caller, normally `setup-lessons`, owns that invocation; do not run the full-assignment pipeline from this single-problem matcher.
 
 ## Output Shape
 
 Use this structure unless the user asks for a different format:
 
 ```markdown
+Match status: Equivalent Math Academy lesson found
+
 Best match: [lesson title](absolute path with line)
 
 Why: ...
@@ -82,6 +89,22 @@ Prerequisite/supporting lessons:
 
 Near misses:
 - [lesson title](absolute path with line): why it is related but not the best match
+```
+
+For an unmatched problem, use:
+
+```markdown
+Match status: No equivalent Math Academy lesson
+
+Why: ...
+
+Prerequisite/supporting lessons:
+- [lesson title](absolute path with line): why it is useful but not equivalent
+
+Near misses:
+- [lesson title](absolute path with line): the task-shape mismatch
+
+Fallback: Run $lesson-pipeline in targeted mode for Problem N in /absolute/path/to/assignment.md.
 ```
 
 ## Local Paths
