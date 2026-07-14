@@ -552,13 +552,12 @@ options:
 ```quiz
 type: radio
 id: ma-138974
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   > A scientific calculator is required to answer this question.
 
   Consider the following series:
   $S = ∑_(n = 1)^(∞)\frac{1}{n^{6}}$
-  Suppose that $S$ is approximated by its $6$th partial sum $s_{6}$. Which of the following is an upper bounds on $S$ in terms of $s_{6}$ and the integral test reminder estimate?
+  Suppose that $S$ is approximated by its $6$th partial sum $s_{6}$. Which of the following is a lower bound on $S$ from the integral test remainder estimate?
 options:
 - id: a
   content: |-
@@ -572,6 +571,7 @@ options:
 - id: d
   content: |-
     $S \ge s_{6} + \frac{1}{84035}$
+  correct: true
 - id: e
   content: |-
     $S \ge s_{6} + \frac{1}{74275}$

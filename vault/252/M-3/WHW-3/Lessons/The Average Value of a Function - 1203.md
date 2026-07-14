@@ -121,27 +121,13 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: q-2
+require_exact: true
 content: |-
-  Find the **exact** value of $c$ that satisfies the mean value theorem for integrals for $f(x) = x^{3} - 3x^{2} + 4$ on the interval $[0, 2]$.
-options:
-- id: a
-  correct: true
-  content: |-
-    $c = 1$
-- id: b
-  content: |-
-    $c = 2$
-- id: c
-  content: |-
-    $c = \sqrt{2}$
-- id: d
-  content: |-
-    $c = 1 + \sqrt{3}$
-- id: e
-  content: |-
-    $c = 1 - \sqrt{3}$
+  Find the exact value of $c$ satisfying the mean value theorem for integrals for $f(x)=x^3-3x^2+4$ on $[0,2]$.
+
+  $c =$ ==1==.
 ```
 
 ---

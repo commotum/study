@@ -79,27 +79,13 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: ma-216683
+require_exact: true
 content: |-
-  Expand the following product of binomials. Write your answer in **standard form.** $(b + 7)(b - 2) =$
-options:
-- id: a
-  content: |-
-    $b^{2} + 5b - 14$
-  correct: true
-- id: b
-  content: |-
-    $b^{2} + 9b - 14$
-- id: c
-  content: |-
-    $b^{2} - 5b - 14$
-- id: d
-  content: |-
-    $b^{2} + 5b + 14$
-- id: e
-  content: |-
-    $b + 5$
+  Expand the product in standard form.
+
+  $(b+7)(b-2)=b^2+$ ==5== $b-$ ==14==.
 ```
 
 ---
@@ -122,27 +108,13 @@ $$
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: ma-214088
+require_exact: true
 content: |-
-  Expand the following product of binomials. Write your answer in **standard form.** $(2x + 5)(3x + 1) =$
-options:
-- id: a
-  content: |-
-    $6x^{2} + 17x + 5$
-  correct: true
-- id: b
-  content: |-
-    $6x^{2} + 2x + 5$
-- id: c
-  content: |-
-    $6x^{2} + 15x + 5$
-- id: d
-  content: |-
-    $5x^{2} + 17x + 6$
-- id: e
-  content: |-
-    $6x^{2} - 17x + 5$
+  Expand the product in standard form.
+
+  $(2x+5)(3x+1)=$ ==6== $x^2+$ ==17== $x+$ ==5==.
 ```
 
 ---
@@ -227,27 +199,13 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: blank
 id: ma-216734
+require_exact: true
 content: |-
-  $(7u^{2} - 6v)(v - u) =$
-options:
-- id: a
-  content: |-
-    $-7u^{3} + 7u^{2}v + 6uv - 6v^{2}$
-  correct: true
-- id: b
-  content: |-
-    $7u^{3} + 7u^{2}v - 6uv - 6v^{2}$
-- id: c
-  content: |-
-    $-7u^{3} + 7u^{2}v - 6uv - 6v^{2}$
-- id: d
-  content: |-
-    $-7u^{3} - 7u^{2}v + 6uv - 6v^{2}$
-- id: e
-  content: |-
-    $7u^{2}v - 7u^{3} - 6v^{2}$
+  Complete the expansion.
+
+  $(7u^2-6v)(v-u)=$ ==-7== $u^3+$ ==7== $u^2v+$ ==6== $uv-$ ==6== $v^2$.
 ```
 
 ```update-progress

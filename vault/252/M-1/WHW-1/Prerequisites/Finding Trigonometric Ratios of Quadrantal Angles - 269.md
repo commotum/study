@@ -84,27 +84,11 @@ $$
 **Question 1**
 
 ```quiz
-type: radio
+type: blank
 id: q-1
+require_exact: true
 content: |-
-  $\sin (90^{∘}) =$
-options:
-- id: a
-  content: |-
-    $-1$
-- id: b
-  content: |-
-    $0$
-- id: c
-  content: |-
-    $1$
-  correct: true
-- id: d
-  content: |-
-    Undefined
-- id: e
-  content: |-
-    $90$
+  $\sin(90^\circ) =$ ==1==.
 ```
 
 ---
@@ -190,27 +174,11 @@ is undefined.
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: q-3
+require_exact: true
 content: |-
-  Find the value of $\tan (180^{∘})$. $\tan (180^{∘}) =$
-options:
-- id: a
-  content: |-
-    $-1$
-- id: b
-  content: |-
-    $0$
-  correct: true
-- id: c
-  content: |-
-    $1$
-- id: d
-  content: |-
-    Undefined
-- id: e
-  content: |-
-    $180$
+  $\tan(180^\circ) =$ ==0==.
 ```
 
 ---
@@ -218,27 +186,11 @@ options:
 **Question 4**
 
 ```quiz
-type: radio
+type: blank
 id: q-4
+require_exact: true
 content: |-
-  Find the value of $\tan (180^{∘}) + \cot (90^{∘})$. $\tan (180^{∘}) + \cot (90^{∘}) =$
-options:
-- id: a
-  content: |-
-    $-1$
-- id: b
-  content: |-
-    $0$
-  correct: true
-- id: c
-  content: |-
-    $1$
-- id: d
-  content: |-
-    $2$
-- id: e
-  content: |-
-    Undefined
+  $\tan(180^\circ)+\cot(90^\circ) =$ ==0==.
 ```
 
 ---
@@ -355,27 +307,11 @@ options:
 **Question 7**
 
 ```quiz
-type: radio
+type: blank
 id: q-7
+require_exact: true
 content: |-
-  $\sec (0^{∘}) + \csc (90^{∘}) =$
-options:
-- id: a
-  content: |-
-    $0$
-- id: b
-  content: |-
-    $1$
-- id: c
-  content: |-
-    $2$
-  correct: true
-- id: d
-  content: |-
-    Undefined
-- id: e
-  content: |-
-    $-2$
+  $\sec(0^\circ)+\csc(90^\circ) =$ ==2==.
 ```
 
 ```update-progress

@@ -142,27 +142,13 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: ma-231754
+require_exact: true
 content: |-
-  The first term of a geometric sequence is $32$ and the common ratio is $-\frac{1}{4}$. The $7$th term of this sequence is
-options:
-- id: a
-  content: |-
-    $\frac{1}{128}$
-  correct: true
-- id: b
-  content: |-
-    $-\frac{1}{128}$
-- id: c
-  content: |-
-    $\frac{1}{64}$
-- id: d
-  content: |-
-    $-\frac{1}{64}$
-- id: e
-  content: |-
-    $\frac{1}{256}$
+  The first term of a geometric sequence is $32$ and its common ratio is $-\frac14$.
+
+  The seventh term is ==1/128==. Enter the fraction using `/`.
 ```
 
 ---
@@ -254,27 +240,13 @@ $$
 **Question 4**
 
 ```quiz
-type: radio
+type: blank
 id: ma-231755
+require_exact: true
 content: |-
-  Find the formula for the $n$th term of a sequence if the $4$th term is $-135$ and the common ratio is $-3$.
-options:
-- id: a
-  content: |-
-    $a_{n} = 5(-3)^{n - 1}$
-  correct: true
-- id: b
-  content: |-
-    $a_{n} = -5(-3)^{n - 1}$
-- id: c
-  content: |-
-    $a_{n} = 5(-3)^{n}$
-- id: d
-  content: |-
-    $a_{n} = -135(-3)^{n - 1}$
-- id: e
-  content: |-
-    $a_{n} = 15(-3)^{n - 1}$
+  Find the formula for the $n$th term of a geometric sequence whose fourth term is $-135$ and whose common ratio is $-3$.
+
+  $a_n =$ ==5== $(-3)^{n-1}$.
 ```
 
 ---
@@ -282,29 +254,15 @@ options:
 **Question 5**
 
 ```quiz
-type: radio
+type: blank
 id: ma-231756
+require_exact: true
 content: |-
-  Consider the following geometric sequence.
-  $6,-2, \frac{2}{3}, …$
-  The formula for the $n$th term of this sequence is
-options:
-- id: a
-  content: |-
-    $a_{n} = 6\left(-\frac{1}{3}\right)^{n - 1}$
-  correct: true
-- id: b
-  content: |-
-    $a_{n} = 6\left(\frac{1}{3}\right)^{n - 1}$
-- id: c
-  content: |-
-    $a_{n} = -2\left(-\frac{1}{3}\right)^{n - 1}$
-- id: d
-  content: |-
-    $a_{n} = 6(-3)^{n - 1}$
-- id: e
-  content: |-
-    $a_{n} = \frac{2}{3}\left(-\frac{1}{3}\right)^{n - 1}$
+  Consider the geometric sequence
+
+  $$6,-2,\frac23,\ldots$$
+
+  Its $n$th term is $a_n =$ ==6== $\left(-\frac13\right)^{n-1}$.
 ```
 
 ---
@@ -403,27 +361,13 @@ $$
 **Question 7**
 
 ```quiz
-type: radio
+type: blank
 id: ma-231757
+require_exact: true
 content: |-
-  If the fifth term of a geometric sequence is $\frac{1}{8}$ and the common ratio is $\frac{1}{4}$, then the eighth term of this sequence is
-options:
-- id: a
-  content: |-
-    $\frac{1}{512}$
-  correct: true
-- id: b
-  content: |-
-    $\frac{1}{256}$
-- id: c
-  content: |-
-    $\frac{1}{128}$
-- id: d
-  content: |-
-    $\frac{1}{32}$
-- id: e
-  content: |-
-    $\frac{1}{2048}$
+  The fifth term of a geometric sequence is $\frac18$ and its common ratio is $\frac14$.
+
+  The eighth term is ==1/512==. Enter the fraction using `/`.
 ```
 
 ---
@@ -459,27 +403,13 @@ options:
 **Question 9**
 
 ```quiz
-type: radio
+type: blank
 id: ma-231759
+require_exact: true
 content: |-
-  Find the formula for the $n$th term of a geometric sequence if the fourth term is $-\frac{2}{3}$ and the common ratio is $-2$.
-options:
-- id: a
-  content: |-
-    $a_{n} = \frac{1}{12}(-2)^{n - 1}$
-  correct: true
-- id: b
-  content: |-
-    $a_{n} = -\frac{1}{12}(-2)^{n - 1}$
-- id: c
-  content: |-
-    $a_{n} = \frac{1}{12}(-2)^{n}$
-- id: d
-  content: |-
-    $a_{n} = -\frac{2}{3}(-2)^{n - 1}$
-- id: e
-  content: |-
-    $a_{n} = \frac{1}{6}(-2)^{n - 1}$
+  Find the formula for the $n$th term of a geometric sequence whose fourth term is $-\frac23$ and whose common ratio is $-2$.
+
+  $a_n =$ ==1/12== $(-2)^{n-1}$. Enter the fraction using `/`.
 ```
 
 ```update-progress

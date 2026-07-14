@@ -151,13 +151,13 @@ Therefore, we conclude that $f(x) < 0$ for all $x \in (-\infty,-2) \cup (1,\inft
 ```quiz
 type: radio
 id: q-1
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{x - 4}{2x - 5} > 0$.
 options:
 - id: a
   content: |-
     $x ∈ (- ∞, \frac{5}{2})∪(4, ∞)$
+  correct: true
 - id: b
   content: |-
     $x ∈ (\frac{2}{5}, ∞)$
@@ -179,7 +179,6 @@ options:
 ```quiz
 type: radio
 id: q-2
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{2x + 1}{x - 3} \le 0$.
 options:
@@ -198,6 +197,7 @@ options:
 - id: e
   content: |-
     $[MATH: x ∈ [- \frac{1}{2}, 3)]$
+  correct: true
 ```
 
 ---
@@ -281,7 +281,6 @@ $[MATH: x\in \left(-2,\dfrac12\right]\cup (1,\infty).]$
 ```quiz
 type: radio
 id: q-3
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $(-2)/(x(x^{2} + 9)) > 0$.
 options:
@@ -297,6 +296,7 @@ options:
 - id: d
   content: |-
     $x ∈ (- ∞, 0)$
+  correct: true
 - id: e
   content: |-
     $x ∈ (- ∞,-3)∪(3, ∞)$
@@ -309,7 +309,6 @@ options:
 ```quiz
 type: radio
 id: q-4
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $((1 - x)(x - 2))/(x + 5) \le 0$.
 options:
@@ -325,6 +324,7 @@ options:
 - id: d
   content: |-
     $[MATH: x ∈ (-5, 1]∪[2, ∞)]$
+  correct: true
 - id: e
   content: |-
     $x ∈ (- ∞,-5)∪[1, 2]$
@@ -403,7 +403,6 @@ for all $[MATH: x \in (-\infty,-1]\cup [1,3)]$.
 ```quiz
 type: radio
 id: q-5
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{2x^{2} + x - 6}{x} > 0$.
 options:
@@ -416,6 +415,7 @@ options:
 - id: c
   content: |-
     $x ∈ (-2, 0)∪(\frac{3}{2}, ∞)$
+  correct: true
 - id: d
   content: |-
     $x ∈ (-2, 0)$
@@ -431,7 +431,6 @@ options:
 ```quiz
 type: radio
 id: q-6
-# MA_ANSWER_MISSING: set exactly one options[].correct=true for radio, or all correct options for checkbox
 content: |-
   Solve the inequality $\frac{2x^{3} + 4x}{x - 3} \ge 0$.
 options:
@@ -444,6 +443,7 @@ options:
 - id: c
   content: |-
     $[MATH: x ∈ (- ∞, 0]∪(3, ∞)]$
+  correct: true
 - id: d
   content: |-
     $[MATH: x ∈ [0, 3)]$

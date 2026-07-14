@@ -158,31 +158,15 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: ma-237038
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
+
   ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237038.png>)
-  
-  The speed-time graph represents the motion of an object during a time interval of $9$ seconds.The total distance covered by the object is
-options:
-- id: a
-  correct: true
-  content: |-
-    $630ft$
-- id: b
-  content: |-
-    $1{,}260ft$
-- id: c
-  content: |-
-    $315ft$
-- id: d
-  content: |-
-    $140ft$
-- id: e
-  content: |-
-    $9ft$
+
+  The graph shows an object's speed over $9$ seconds. Its total distance is ==630== ft.
 ```
 
 ---
@@ -233,31 +217,15 @@ So, the distance covered by the object is $480$ meters.
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: ma-208838
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
+
   ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-208838.png>)
-  
-  The speed-time graph represents the motion of a car over a time interval of $5$ hours.The total distance covered by the car is
-options:
-- id: a
-  correct: true
-  content: |-
-    $315km$
-- id: b
-  content: |-
-    $450km$
-- id: c
-  content: |-
-    $180km$
-- id: d
-  content: |-
-    $135km$
-- id: e
-  content: |-
-    $90km$
+
+  The graph shows a car's speed over $5$ hours. Its total distance is ==315== km.
 ```
 
 ---
@@ -297,31 +265,15 @@ options:
 **Question 5**
 
 ```quiz
-type: radio
+type: blank
 id: ma-237063
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
+
   ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237063.png>)
-  
-  The speed-time graph represents the motion of an arrow over a time interval of $3$ seconds.The total distance covered by the arrow is
-options:
-- id: a
-  correct: true
-  content: |-
-    $135m$
-- id: b
-  content: |-
-    $210m$
-- id: c
-  content: |-
-    $150m$
-- id: d
-  content: |-
-    $90m$
-- id: e
-  content: |-
-    $45m$
+
+  The graph shows an arrow's speed over $3$ seconds. Its total distance is ==135== m.
 ```
 
 ---
@@ -413,31 +365,15 @@ options:
 **Question 7**
 
 ```quiz
-type: radio
+type: blank
 id: ma-237117
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
+
   ![](<../Source/Calculating Distance From a Speed-Time Graph - 1590/Images/q-237117.png>)
-  
-  A train began to decelerate and came to rest after $3$ minutes. The speed-time graph above illustrates the motion of the train. If the total distance covered while decelerating was $6km$, what was the initial speed of the train?The initial speed of the train was
-options:
-- id: a
-  correct: true
-  content: |-
-    $4\,km/min$
-- id: b
-  content: |-
-    $2\,km/min$
-- id: c
-  content: |-
-    $3\,km/min$
-- id: d
-  content: |-
-    $6\,km/min$
-- id: e
-  content: |-
-    $12\,km/min$
+
+  A train decelerates uniformly to rest in $3$ minutes while covering $6$ km. Its initial speed is ==4== km/min.
 ```
 
 ---
@@ -492,29 +428,13 @@ So, the distance covered by the car is $1\,200$ meters.
 **Question 8**
 
 ```quiz
-type: radio
+type: blank
 id: ma-222494
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
-  A motorcycle starts from rest and accelerates with a constant acceleration of $3m/s^{2}$. What is the total distance covered by the motorcycle in the first $6$ seconds?
-options:
-- id: a
-  correct: true
-  content: |-
-    $54m$
-- id: b
-  content: |-
-    $18m$
-- id: c
-  content: |-
-    $27m$
-- id: d
-  content: |-
-    $36m$
-- id: e
-  content: |-
-    $108m$
+
+  A motorcycle starts from rest and accelerates constantly at $3\,\mathrm{m/s^2}$. The distance covered in the first $6$ seconds is ==54== m.
 ```
 
 ---
@@ -552,33 +472,15 @@ options:
 **Question 10**
 
 ```quiz
-type: radio
+type: blank
 id: ma-237172
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
-  A racing car decelerates steadily from $180mph$ to $60mph$, covering a distance of $880ft$. For how long was the car decelerating?
-  
-  *Hint: You may use the fact that $1mi = 5280ft$ and $1h = 3600s$.*
-  
-  The car was decelerating for
-options:
-- id: a
-  correct: true
-  content: |-
-    $5s$
-- id: b
-  content: |-
-    $2.5s$
-- id: c
-  content: |-
-    $7.5s$
-- id: d
-  content: |-
-    $10s$
-- id: e
-  content: |-
-    $15s$
+
+  A racing car decelerates steadily from $180$ mph to $60$ mph while covering $880$ ft. Use $1\,\mathrm{mi}=5280\,\mathrm{ft}$ and $1\,\mathrm{h}=3600\,\mathrm{s}$.
+
+  The car decelerates for ==5== s.
 ```
 
 ```update-progress

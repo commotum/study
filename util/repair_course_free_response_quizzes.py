@@ -33,6 +33,10 @@ QUIZ_ID_RE = re.compile(r"^id:\s*(?P<id>\S+)\s*$", re.MULTILINE)
 QUIZ_TYPE_RE = re.compile(r"^type:\s*(?P<type>\S+)\s*$", re.MULTILINE)
 MARKER = "MA_ANSWER_MISSING"
 BLANK_ANSWER_RE = re.compile(r"==(?P<answer>.+?)==")
+OPTION_BLOCK_RE = re.compile(
+    r"^- id:\s*(?P<label>[a-z])\s*$\n(?P<body>.*?)(?=^- id:\s*[a-z]\s*$|\Z)",
+    re.MULTILINE | re.DOTALL,
+)
 
 
 @dataclass(frozen=True)
@@ -137,6 +141,26 @@ def load_ledger() -> dict[tuple[str, str], dict[str, str]]:
 
 def load_topic_metadata(course_root: Path) -> dict[str, dict[str, object]]:
     rows = read_csv(course_root / "topics.csv")
+    if rows and "role" not in rows[0]:
+        rows = read_csv(course_root / "catalog.csv")
+        metadata: dict[str, dict[str, object]] = {}
+        for index, row in enumerate(rows):
+            topic_id = row["topic-id"].strip()
+            if not row.get("lesson-path") or not row.get("source-path"):
+                continue
+            metadata.setdefault(
+                topic_id,
+                {
+                    "row-index": index,
+                    "role": "lesson",
+                    "layer": int(row["layer"]),
+                    "course": row["topic-code"].split(".", 1)[0],
+                    "topic-number": row["topic-code"],
+                    "topic-name": row["topic-name"],
+                    "source-path": row["source-path"],
+                },
+            )
+        return metadata
     metadata: dict[str, dict[str, object]] = {}
     for index, row in enumerate(rows):
         topic_id = row["topic-id"].strip()
@@ -258,6 +282,77 @@ def print_source_details(course_root: Path, rows: list[dict[str, str]], texts: d
         )
 
 
+def correct_option_content(body: str) -> tuple[str, str]:
+    matches: list[tuple[str, str]] = []
+    for option in OPTION_BLOCK_RE.finditer(body):
+        option_body = option.group("body")
+        if not re.search(r"^\s*correct:\s*true\s*$", option_body, re.MULTILINE):
+            continue
+        content_match = re.search(
+            r"^\s*content:\s*\|-\s*$\n(?P<content>(?: {4}.*(?:\n|\Z))*)",
+            option_body,
+            re.MULTILINE,
+        )
+        content = ""
+        if content_match:
+            content = "\n".join(
+                line[4:] if line.startswith("    ") else line
+                for line in content_match.group("content").rstrip("\n").splitlines()
+            )
+        matches.append((option.group("label"), content))
+    if len(matches) != 1:
+        return "", ""
+    return matches[0]
+
+
+def write_answer_candidates(
+    path: Path,
+    rows: list[dict[str, str]],
+    texts: dict[Path, str],
+) -> None:
+    fields = [
+        "queue-order",
+        "topic-id",
+        "question-number",
+        "question-id",
+        "current-quiz-type",
+        "occurrences",
+        "correct-label",
+        "correct-content",
+        "placement",
+    ]
+    output: list[dict[str, str]] = []
+    for row in rows:
+        placement = resolve_repo_path(row["placements"].split(";", 1)[0])
+        target_body = ""
+        for quiz in QUIZ_RE.finditer(texts[placement]):
+            raw_id_match = QUIZ_ID_RE.search(quiz.group("body"))
+            if not raw_id_match:
+                continue
+            raw_id = raw_id_match.group("id").lower()
+            if quiz_id(quiz.group("body")) == row["question-id"] or raw_id == f"q-{row['question-number']}":
+                target_body = quiz.group("body")
+                break
+        label, content = correct_option_content(target_body)
+        output.append(
+            {
+                "queue-order": row["queue-order"],
+                "topic-id": row["topic-id"],
+                "question-number": row["question-number"],
+                "question-id": row["question-id"],
+                "current-quiz-type": row["current-quiz-type"],
+                "occurrences": row["occurrences"],
+                "correct-label": label,
+                "correct-content": content,
+                "placement": rel(placement),
+            }
+        )
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(output)
+
+
 def inventory_question_id(body: str, number: int, meta: dict[str, object]) -> str | None:
     match = QUIZ_ID_RE.search(body)
     if not match:
@@ -311,13 +406,14 @@ def build_inventory(
                     key,
                     {
                         "question-number": number,
+                        "question-numbers": {number},
                         "types": set(),
                         "exact-blank": True,
                         "placements": [],
                     },
                 )
-                if row["question-number"] != number:
-                    raise ValueError(f"Question number mismatch for topic/question {key}")
+                row["question-numbers"].add(number)
+                row["question-number"] = min(row["question-numbers"])
                 row["types"].add(quiz_type(body))
                 row["exact-blank"] = bool(row["exact-blank"]) and (
                     quiz_type(body) == "blank" and "require_exact: false" not in body
@@ -517,6 +613,7 @@ def main() -> int:
     parser.add_argument("--inventory-output", type=Path)
     parser.add_argument("--all-free-response-output", type=Path)
     parser.add_argument("--source-details", action="store_true")
+    parser.add_argument("--answer-candidates-output", type=Path)
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
 
@@ -553,6 +650,8 @@ def main() -> int:
         )
         if args.source_details:
             print_source_details(course_root, free_rows, texts)
+        if args.answer_candidates_output:
+            write_answer_candidates(args.answer_candidates_output.resolve(), free_rows, texts)
 
     missing_free = [row for row in inventory if row["action"] == "missing-free-response-answer"]
     manual_review = [row for row in inventory if row["action"] == "manual-review"]

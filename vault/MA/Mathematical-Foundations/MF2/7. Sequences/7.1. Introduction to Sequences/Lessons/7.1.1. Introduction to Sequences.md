@@ -91,28 +91,15 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: ma-262867
+require_exact: true
 content: |-
-  What is the sum of the fourth, fifth, and sixth terms of the following sequence?
-  $8,-24, 44, 92,-244, 458$The sum of the fourth, fifth, and sixth terms of the sequence is
-options:
-- id: a
-  correct: true
-  content: |-
-    $306$
-- id: b
-  content: |-
-    $214$
-- id: c
-  content: |-
-    $550$
-- id: d
-  content: |-
-    $672$
-- id: e
-  content: |-
-    $-152$
+  What is the sum of the fourth, fifth, and sixth terms of the sequence?
+
+  $$8,-24,44,92,-244,458$$
+
+  The sum is ==306==.
 ```
 
 ---
@@ -249,27 +236,13 @@ In conclusion, only statement II is true.
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: ma-214103
+require_exact: true
 content: |-
-  A sequence is defined as $f(n) = 4n - 5$ for $n \ge 1$. The $7$th term of the sequence is
-options:
-- id: a
-  correct: true
-  content: |-
-    $23$
-- id: b
-  content: |-
-    $28$
-- id: c
-  content: |-
-    $19$
-- id: d
-  content: |-
-    $33$
-- id: e
-  content: |-
-    $7$
+  A sequence is defined by $f(n)=4n-5$ for $n\ge1$.
+
+  Its seventh term is ==23==.
 ```
 
 ---

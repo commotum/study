@@ -222,27 +222,13 @@ options:
 **Question 4:**
 
 ```quiz
-type: radio
+type: blank
 id: ma-222424
+require_exact: true
 content: |-
-  If $g(x) = x^{2} + 2$, then $(g∘g)(x) =$
-options:
-- id: a
-  content: |-
-    $x^{4} + 4x^{2} + 6$
-  correct: true
-- id: b
-  content: |-
-    $x^{4} + 4x^{2} + 4$
-- id: c
-  content: |-
-    $x^{4} + 2$
-- id: d
-  content: |-
-    $x^{2} + 4$
-- id: e
-  content: |-
-    $x^{4} + 2x^{2} + 6$
+  If $g(x)=x^2+2$, complete the composition.
+
+  $(g\circ g)(x)=x^4+$ ==4== $x^2+$ ==6==.
 ```
 
 ---
@@ -285,27 +271,13 @@ $$
 **Question 5:**
 
 ```quiz
-type: radio
+type: blank
 id: ma-221503
+require_exact: true
 content: |-
-  If $f(x) = x^{2} - 2x - 1$, then find an expression for $f(a + 1)$.
-options:
-- id: a
-  content: |-
-    $a^{2} - 2$
-  correct: true
-- id: b
-  content: |-
-    $a^{2} + 2a - 2$
-- id: c
-  content: |-
-    $a^{2} - 1$
-- id: d
-  content: |-
-    $a^{2} + 2$
-- id: e
-  content: |-
-    $a^{2} - 2a - 2$
+  If $f(x)=x^2-2x-1$, complete the expression.
+
+  $f(a+1)=a^2-$ ==2==.
 ```
 
 ---
@@ -313,27 +285,13 @@ options:
 **Question 6:**
 
 ```quiz
-type: radio
+type: blank
 id: ma-222435
+require_exact: true
 content: |-
-  If $f(x) = x^{2} - 2x - 1$, then find an expression for $f(a + b)$.
-options:
-- id: a
-  content: |-
-    $a^{2} + 2ab + b^{2} - 2a - 2b - 1$
-  correct: true
-- id: b
-  content: |-
-    $a^{2} + 2ab + b^{2} - 1$
-- id: c
-  content: |-
-    $a^{2} + b^{2} - 2a - 2b - 1$
-- id: d
-  content: |-
-    $a^{2} + 2ab + b^{2} + 2a + 2b - 1$
-- id: e
-  content: |-
-    $a^{2} + 2ab + b^{2} - 2a - 2b + 1$
+  If $f(x)=x^2-2x-1$, complete the expression.
+
+  $f(a+b)=a^2+$ ==2== $ab+b^2-$ ==2== $a-$ ==2== $b-$ ==1==.
 ```
 
 ---
@@ -425,27 +383,13 @@ options:
 **Question 8:**
 
 ```quiz
-type: radio
+type: blank
 id: ma-313448
+require_exact: true
 content: |-
-  If $f(x) = b - 5x$ and $f(3a + 2) = 20a$, where $a$ and $b$ are constants, find an expression for $b$ in terms of $a$.
-options:
-- id: a
-  content: |-
-    $35a + 10$
-  correct: true
-- id: b
-  content: |-
-    $5a + 10$
-- id: c
-  content: |-
-    $35a - 10$
-- id: d
-  content: |-
-    $15a + 10$
-- id: e
-  content: |-
-    $20a + 10$
+  If $f(x)=b-5x$ and $f(3a+2)=20a$, where $a$ and $b$ are constants, complete the expression for $b$.
+
+  $b =$ ==35== $a+$ ==10==.
 ```
 
 ```update-progress

@@ -91,27 +91,13 @@ Thus, the final solution is $x < -2$.
 **Question 1**
 
 ```quiz
-type: radio
+type: blank
 id: ma-218675
+require_exact: true
 content: |-
-  Find the values of $x$ that satisfy $9x - 17 \ge 10$ and $6x + 21 < 45$.
-options:
-- id: a
-  content: |-
-    $3 \le x < 4$
-  correct: true
-- id: b
-  content: |-
-    $3 < x < 4$
-- id: c
-  content: |-
-    $x \ge 3$
-- id: d
-  content: |-
-    $x < 4$
-- id: e
-  content: |-
-    $4 \le x < 3$
+  Find the values of $x$ satisfying both $9x-17\ge10$ and $6x+21<45$.
+
+  ==3== $\le x <$ ==4==.
 ```
 
 ---
@@ -213,30 +199,13 @@ $$
 **Question 4**
 
 ```quiz
-type: radio
+type: blank
 id: ma-218740
+require_exact: true
 content: |-
-  What is the solution to the following system of inequalities?
-  ${x + 5 \le 6; 5x - 4 < 6$
+  Solve both inequalities $x+5\le6$ and $5x-4<6$.
 
-  The solution is
-options:
-- id: a
-  content: |-
-    $x \le 1$
-  correct: true
-- id: b
-  content: |-
-    $x < 2$
-- id: c
-  content: |-
-    $1 \le x < 2$
-- id: d
-  content: |-
-    $x \ge 1$
-- id: e
-  content: |-
-    There is no solution.
+  $x \le$ ==1==.
 ```
 
 ---
@@ -342,30 +311,13 @@ It turns out that the solutions do not overlap at all. Therefore, no values of $
 **Question 7**
 
 ```quiz
-type: radio
+type: blank
 id: ma-218794
+require_exact: true
 content: |-
-  What is the solution to the following system of inequalities?
-  ${3y - 5 \le 4; 1 - 6y \le - 5$
+  Solve both inequalities $3y-5\le4$ and $1-6y\le-5$.
 
-  The solution is
-options:
-- id: a
-  content: |-
-    $1 \le y \le 3$
-  correct: true
-- id: b
-  content: |-
-    $y \le 3$
-- id: c
-  content: |-
-    $y \ge 1$
-- id: d
-  content: |-
-    $3 \le y \le 1$
-- id: e
-  content: |-
-    There is no solution.
+  ==1== $\le y \le$ ==3==.
 ```
 
 ---
@@ -485,27 +437,13 @@ options:
 **Question 11**
 
 ```quiz
-type: radio
+type: blank
 id: ma-220299
+require_exact: true
 content: |-
-  Find the set of values of $x$ that satisfy $-1 \le 2 - x \le 3$ and $2x + 1 \ge 5$.
-options:
-- id: a
-  content: |-
-    $2 \le x \le 3$
-  correct: true
-- id: b
-  content: |-
-    $-1 \le x \le 3$
-- id: c
-  content: |-
-    $x \ge 2$
-- id: d
-  content: |-
-    $-1 \le x \le 2$
-- id: e
-  content: |-
-    There is no solution.
+  Find the values of $x$ satisfying both $-1\le2-x\le3$ and $2x+1\ge5$.
+
+  ==2== $\le x \le$ ==3==.
 ```
 
 ```update-progress
