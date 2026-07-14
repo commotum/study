@@ -142,14 +142,13 @@ options:
 **Question 2**
 
 ```quiz
-type: free
+type: blank
 id: ma-214167
+require_exact: true
 content: |-
-  Find the formula for the $n$th term of an arithmetic sequence if the first term is $3$ and the second term is $9$.
+  Find the formula for the $n$th term of an arithmetic sequence whose first term is $3$ and second term is $9$.
 
-  Enter only the expression to the right of $a_n=$.
-correct: |-
-  6n - 3
+  $a_n =$ ==6n - 3==, $n \ge 1$.
 ```
 
 ---
@@ -196,14 +195,13 @@ $$
 **Question 3**
 
 ```quiz
-type: free
+type: blank
 id: ma-236449
+require_exact: true
 content: |-
-  Find the formula for the $n$th term of an arithmetic sequence if the first term is $-3$ and the common difference is $2$.
+  Find the formula for the $n$th term of an arithmetic sequence whose first term is $-3$ and common difference is $2$.
 
-  Enter only the expression to the right of $f(n)=$.
-correct: |-
-  2n - 5
+  $f(n) =$ ==2n - 5==, $n \ge 1$.
 ```
 
 ---
@@ -323,14 +321,15 @@ options:
 **Question 6**
 
 ```quiz
-type: free
+type: blank
 id: ma-236630
+require_exact: true
 content: |-
-  Consider the following arithmetic sequence.
-  $-17,-12,-7,-2, …$
-  What is the $24$th term of this sequence?
-correct: |-
-  98
+  Consider the arithmetic sequence
+
+  $$-17,-12,-7,-2,\ldots$$
+
+  Its twenty-fourth term is $a_{24} =$ ==98==.
 ```
 
 ---
@@ -379,14 +378,13 @@ $$
 **Question 7**
 
 ```quiz
-type: free
+type: blank
 id: ma-236646
+require_exact: true
 content: |-
-  Find the formula for the $n$th term of the arithmetic sequence that has $a_{12} = 28$ and the common difference $d = 3$.
+  Find the formula for the $n$th term of an arithmetic sequence with $a_{12}=28$ and common difference $d=3$.
 
-  Enter only the expression to the right of $a_n=$.
-correct: |-
-  3n - 8
+  $a_n =$ ==3n - 8==, $n \ge 1$.
 ```
 
 ---

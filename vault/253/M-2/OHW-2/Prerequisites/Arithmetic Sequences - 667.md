@@ -58,14 +58,15 @@ $$
 **Question 1**
 
 ```quiz
-type: free
+type: blank
 id: ma-214150
+require_exact: true
 content: |-
-  Consider the following arithmetic sequence.
-  $-7,-1, 5, 11, …$
-  The common difference of this arithmetic sequence is
-correct: |-
-  6
+  Consider the arithmetic sequence
+
+  $$-7,-1,5,11,\ldots$$
+
+  Its common difference is ==6==.
 ```
 
 ---
@@ -103,14 +104,15 @@ options:
 **Question 3**
 
 ```quiz
-type: free
+type: blank
 id: ma-215846
+require_exact: true
 content: |-
-  Consider the following arithmetic sequence.
-  $-3, \frac{1}{2}, 4, \frac{15}{2}, …$
-  The common difference of this arithmetic sequence is
-correct: |-
-  7/2
+  Consider the arithmetic sequence
+
+  $$-3,\frac{1}{2},4,\frac{15}{2},\ldots$$
+
+  Its common difference is ==7/2==.
 ```
 
 ---
@@ -262,14 +264,15 @@ options:
 **Question 7**
 
 ```quiz
-type: free
+type: blank
 id: ma-214151
+require_exact: true
 content: |-
-  Consider the following arithmetic sequence:
-  $3, 11, 19, …$
-  The fifth term of this sequence is
-correct: |-
-  35
+  Consider the arithmetic sequence
+
+  $$3,11,19,\ldots$$
+
+  Its fifth term is ==35==.
 ```
 
 ---
@@ -277,14 +280,15 @@ correct: |-
 **Question 8**
 
 ```quiz
-type: free
+type: blank
 id: ma-215860
+require_exact: true
 content: |-
-  Consider the following arithmetic sequence:
-  $-17,-12,-7, …$
-  The eighth term of this sequence is
-correct: |-
-  18
+  Consider the arithmetic sequence
+
+  $$-17,-12,-7,\ldots$$
+
+  Its eighth term is ==18==.
 ```
 
 ```update-progress

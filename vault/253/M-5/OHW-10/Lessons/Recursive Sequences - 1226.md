@@ -131,12 +131,11 @@ options:
 **Question 2**
 
 ```quiz
-type: free
+type: blank
 id: ma-217094
+require_exact: true
 content: |-
-  If $a_{n + 1} =-2a_{n}$ with $a_{1} = 2$, then $a_{2} =$
-correct: |-
-  -4
+  If $a_{n+1}=-2a_n$ with $a_1=2$, then $a_2 =$ ==-4==.
 ```
 
 ---
@@ -258,12 +257,11 @@ options:
 **Question 6**
 
 ```quiz
-type: free
+type: blank
 id: ma-217109
+require_exact: true
 content: |-
-  If $a_{n + 1} = 5a_{n} - 3$ with $a_{1} = 1$, then $a_{3} =$
-correct: |-
-  7
+  If $a_{n+1}=5a_n-3$ with $a_1=1$, then $a_3 =$ ==7==.
 ```
 
 ---
@@ -335,12 +333,11 @@ options:
 **Question 8**
 
 ```quiz
-type: free
+type: blank
 id: ma-217120
+require_exact: true
 content: |-
-  If $f(n + 1) = f(n) + 8$ with $f(1) =-6$, then $f(4) =$
-correct: |-
-  18
+  If $f(n+1)=f(n)+8$ with $f(1)=-6$, then $f(4) =$ ==18==.
 ```
 
 ---
@@ -410,16 +407,17 @@ options:
 **Question 10**
 
 ```quiz
-type: free
+type: blank
 id: ma-217141
+require_exact: true
 content: |-
   Consider the following sequence:
-  $20, 10, 5, \frac{5}{2}, \frac{5}{4}, …$
-  The recursive formula for this sequence is given by
 
-  Enter the multiplier and the first term, separated by a comma.
-correct: |-
-  1/2, 20
+  $$20, 10, 5, \frac{5}{2}, \frac{5}{4}, \ldots$$
+
+  The recursive formula is
+
+  $a_{n+1} =$ ==1/2== $\cdot a_n,\qquad a_1 =$ ==20==.
 ```
 
 ```update-progress

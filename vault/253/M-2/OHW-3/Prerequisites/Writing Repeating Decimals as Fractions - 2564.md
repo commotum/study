@@ -136,27 +136,13 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: q-2
+require_exact: true
 content: |-
-  Write the repeating decimal $1.8888…$ as an improper fraction in its lowest terms.$1.8888… =$
-options:
-- id: a
-  content: |-
-    $\frac{8}{9}$
-- id: b
-  content: |-
-    $\frac{16}{9}$
-- id: c
-  correct: true
-  content: |-
-    $\frac{17}{9}$
-- id: d
-  content: |-
-    $\frac{18}{9}$
-- id: e
-  content: |-
-    $\frac{9}{17}$
+  Write the repeating decimal $1.8888\ldots$ as an improper fraction in lowest terms. Enter the fraction using `/`.
+
+  $1.8888\ldots =$ ==17/9==.
 ```
 
 ---
@@ -224,27 +210,13 @@ $$
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: q-3
+require_exact: true
 content: |-
-  Express $0.14^(―)$ as a fraction in its lowest terms.$0.14^(―) =$
-options:
-- id: a
-  content: |-
-    $\frac{14}{90}$
-- id: b
-  correct: true
-  content: |-
-    $\frac{14}{99}$
-- id: c
-  content: |-
-    $\frac{7}{50}$
-- id: d
-  content: |-
-    $\frac{1}{14}$
-- id: e
-  content: |-
-    $\frac{14}{100}$
+  Express $0.\overline{14}$ as a fraction in lowest terms. Enter the fraction using `/`.
+
+  $0.\overline{14} =$ ==14/99==.
 ```
 
 ---
@@ -414,27 +386,13 @@ options:
 **Question 6**
 
 ```quiz
-type: radio
+type: blank
 id: q-6
+require_exact: true
 content: |-
-  Express $0.234^(―)$ as a fraction in its lowest terms.$0.234^(―) =$
-options:
-- id: a
-  correct: true
-  content: |-
-    $\frac{211}{900}$
-- id: b
-  content: |-
-    $\frac{211}{990}$
-- id: c
-  content: |-
-    $\frac{234}{999}$
-- id: d
-  content: |-
-    $\frac{23}{99}$
-- id: e
-  content: |-
-    $\frac{121}{450}$
+  Express $0.23\overline{4}$ as a fraction in lowest terms. Enter the fraction using `/`.
+
+  $0.23\overline{4} =$ ==211/900==.
 ```
 
 ```update-progress

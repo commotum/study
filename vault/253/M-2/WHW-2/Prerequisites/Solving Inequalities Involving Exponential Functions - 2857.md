@@ -81,27 +81,13 @@ $$
 **Question 1:**
 
 ```quiz
-type: radio
+type: blank
 id: ma-276944
+require_exact: true
 content: |-
-  Solve the inequality $2 \cdot 8^{2x} < \frac{1}{3}$.
-options:
-- id: a
-  correct: true
-  content: |-
-    $x < \frac{-\ln 6}{2\ln 8}$
-- id: b
-  content: |-
-    $x > \frac{-\ln 6}{2\ln 8}$
-- id: c
-  content: |-
-    $x < \frac{\ln 6}{2\ln 8}$
-- id: d
-  content: |-
-    $x < \frac{-\ln 3}{2\ln 8}$
-- id: e
-  content: |-
-    $x > \frac{\ln 6}{2\ln 8}$
+  Solve $2\cdot8^{2x}<\frac13$. Enter the boundary in keyboard form using `ln`, parentheses, and `/`.
+
+  $x <$ ==-ln(6)/(2ln(8))==.
 ```
 
 ---

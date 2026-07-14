@@ -227,27 +227,11 @@ $$
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: ma-233747
+require_exact: true
 content: |-
-  What is the value of $∑_(i = 1)^(43)1$?
-options:
-- id: a
-  content: |-
-    $1$
-- id: b
-  content: |-
-    $42$
-- id: c
-  correct: true
-  content: |-
-    $43$
-- id: d
-  content: |-
-    $44$
-- id: e
-  content: |-
-    $86$
+  $\displaystyle \sum_{i=1}^{43}1 =$ ==43==.
 ```
 
 ---
@@ -372,27 +356,13 @@ $$
 **Question 5**
 
 ```quiz
-type: radio
+type: blank
 id: ma-233748
+require_exact: true
 content: |-
-  If $∑_(i = 1)^(51)a_{i} = 2$ and $∑_(i = 1)^(51)b_{i} =-5$, then$∑_(i = 1)^(51)(a_{i} + b_{i}) =$
-options:
-- id: a
-  content: |-
-    $7$
-- id: b
-  content: |-
-    $3$
-- id: c
-  correct: true
-  content: |-
-    $-3$
-- id: d
-  content: |-
-    $-7$
-- id: e
-  content: |-
-    $-10$
+  If $\displaystyle \sum_{i=1}^{51}a_i=2$ and $\displaystyle \sum_{i=1}^{51}b_i=-5$, then
+
+  $\displaystyle \sum_{i=1}^{51}(a_i+b_i) =$ ==-3==.
 ```
 
 ---

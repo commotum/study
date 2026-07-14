@@ -10,9 +10,9 @@
 
 ## Progress
 
-- Course: 0% (0/323 unique lessons)
+- Course: 0% (1/323 unique lessons)
 
-- 1. Sequences and Series: 0% (0/22)
+- 1. Sequences and Series: 5% (1/22)
 - 2. Inequalities: 0% (0/20)
 - 3. Parametric & Polar Coordinates: 0% (0/15)
 - 4. Conic Sections: 0% (0/27)
@@ -30,11 +30,11 @@
 
 ## History
 
-No completed lessons yet.
+- [The Sum of a Finite Geometric Series](<1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.1. The Sum of a Finite Geometric Series.md>) - 2026-07-13 17:41
 
 ## Summary
 
-- Completed unique lessons: 0 / 323
+- Completed unique lessons: 1 / 323
 - Assignment placements: 323
 - Queue size: 5 / 5
 

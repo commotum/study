@@ -120,29 +120,15 @@ options:
 **Question 2**
 
 ```quiz
-type: radio
+type: blank
 id: ma-300664
+require_exact: true
 content: |-
   ![](<../Source/The Left and Right-Sided Limits of a Function - 472/Images/q-300664.png>)
-  
-  If the figure above shows the graph of $f(x)$, then which statement is true?
-options:
-- id: a
-  content: |-
-    $lim_(x → 1^{-})f(x) = 2$ and $lim_(x → 1^{+})f(x) = 2$
-  correct: true
-- id: b
-  content: |-
-    $lim_(x → 1^{-})f(x) = 1$ and $lim_(x → 1^{+})f(x) = 2$
-- id: c
-  content: |-
-    $lim_(x → 1^{-})f(x) = 2$ and $lim_(x → 1^{+})f(x) = 3$
-- id: d
-  content: |-
-    $lim_(x → 1^{-})f(x) = DNE$ and $lim_(x → 1^{+})f(x) = 2$
-- id: e
-  content: |-
-    $lim_(x → 1^{-})f(x) = 2$ and $lim_(x → 1^{+})f(x) = DNE$
+
+  If the figure shows the graph of $f(x)$, then
+
+  $\displaystyle \lim_{x\to1^-}f(x) =$ ==2==, and $\displaystyle \lim_{x\to1^+}f(x) =$ ==2==.
 ```
 
 ---

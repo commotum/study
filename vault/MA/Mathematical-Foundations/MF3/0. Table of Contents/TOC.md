@@ -17,7 +17,7 @@
 		- [ ] [[1. Sequences and Series/1.2. Arithmetic Series/Lessons/1.2.3. Finding the First Term of an Arithmetic Series|1.2.3. Finding the First Term of an Arithmetic Series]]
 		- [ ] [[1. Sequences and Series/1.2. Arithmetic Series/Lessons/1.2.4. Calculating the Number of Terms in an Arithmetic Series|1.2.4. Calculating the Number of Terms in an Arithmetic Series]]
 	- [ ] 1.3. Finite Geometric Series
-		- [ ] [[1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.1. The Sum of a Finite Geometric Series|1.3.1. The Sum of a Finite Geometric Series]]
+		- [x] [[1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.1. The Sum of a Finite Geometric Series|1.3.1. The Sum of a Finite Geometric Series]]
 		- [ ] [[1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.2. The Sum of the First N Terms of a Geometric Series|1.3.2. The Sum of the First N Terms of a Geometric Series]]
 		- [ ] [[1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.3. Writing Geometric Series in Sigma Notation|1.3.3. Writing Geometric Series in Sigma Notation]]
 		- [ ] [[1. Sequences and Series/1.3. Finite Geometric Series/Lessons/1.3.4. Sums of Finite Geometric Series Given in Sigma Notation|1.3.4. Sums of Finite Geometric Series Given in Sigma Notation]]

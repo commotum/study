@@ -3,8 +3,10 @@
 
 The answer key is processed in study order.  A target quiz is converted only
 when its topic/question pair is classified as ``free-response`` in the Math
-Academy question ledger.  Duplicate local placements are repaired together and
-checked against the answer key's expected occurrence count.
+Academy question ledger.  The repaired form is an exact-match ``blank`` quiz,
+with inline ``==answer==`` gaps defined in a separate layout file.  Duplicate
+local placements are repaired together and checked against the answer key's
+expected occurrence count.
 """
 
 from __future__ import annotations
@@ -30,6 +32,7 @@ LESSON_ID_RE = re.compile(r"^lesson-id:\s*(?P<id>\d+)\s*$", re.MULTILINE)
 QUIZ_ID_RE = re.compile(r"^id:\s*(?P<id>\S+)\s*$", re.MULTILINE)
 QUIZ_TYPE_RE = re.compile(r"^type:\s*(?P<type>\S+)\s*$", re.MULTILINE)
 MARKER = "MA_ANSWER_MISSING"
+BLANK_ANSWER_RE = re.compile(r"==(?P<answer>.+?)==")
 
 
 @dataclass(frozen=True)
@@ -40,7 +43,6 @@ class Answer:
     question_id: str
     answer: str
     expected_occurrences: int
-    response_instruction: str
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -82,7 +84,6 @@ def load_answers(path: Path) -> list[Answer]:
             question_id=row["question-id"].strip(),
             answer=row["answer"],
             expected_occurrences=int(row["expected-occurrences"]),
-            response_instruction=row.get("response-instruction", "").strip(),
         )
         for row in rows
     ]
@@ -92,6 +93,39 @@ def load_answers(path: Path) -> list[Answer]:
     if len(keys) != len(set(keys)):
         raise ValueError("Answer key contains duplicate topic/question pairs")
     return answers
+
+
+def load_blank_layouts(path: Path, answers: list[Answer]) -> dict[tuple[str, str], str]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError("Blank layout file must contain a JSON object")
+
+    layouts: dict[tuple[str, str], str] = {}
+    answer_keys = {(item.topic_id, item.question_id) for item in answers}
+    for raw_key, content in payload.items():
+        if not isinstance(raw_key, str) or ":" not in raw_key or not isinstance(content, str):
+            raise ValueError(f"Invalid blank layout entry: {raw_key!r}")
+        topic_id, question_id = raw_key.split(":", 1)
+        key = (topic_id, question_id)
+        if key in layouts:
+            raise ValueError(f"Duplicate blank layout key: {key}")
+        layouts[key] = content
+
+    if set(layouts) != answer_keys:
+        missing = sorted(answer_keys - set(layouts))
+        extra = sorted(set(layouts) - answer_keys)
+        raise ValueError(f"Blank layout key mismatch: missing={missing}, extra={extra}")
+
+    for item in answers:
+        key = (item.topic_id, item.question_id)
+        inline_answers = BLANK_ANSWER_RE.findall(layouts[key])
+        if not inline_answers:
+            raise ValueError(f"Blank layout contains no ==answer== gaps: {key}")
+        if ", ".join(inline_answers) != item.answer:
+            raise ValueError(
+                f"Blank layout answers do not match answer key for {key}: {inline_answers}"
+            )
+    return layouts
 
 
 def load_ledger() -> dict[tuple[str, str], dict[str, str]]:
@@ -153,6 +187,77 @@ def load_source_question_map(raw_source_path: str) -> dict[str, str]:
     return result
 
 
+def load_source_questions(raw_source_path: str) -> dict[str, dict[str, object]]:
+    """Load normalized source question records keyed by Math Academy question id."""
+    if not raw_source_path:
+        return {}
+    source_path = resolve_repo_path(raw_source_path)
+    if not source_path.exists():
+        return {}
+    result: dict[str, dict[str, object]] = {}
+    for json_path in sorted(source_path.glob("*.json")):
+        if json_path.name == "_image_meta.json" or not json_path.name[:1].isdigit():
+            continue
+        try:
+            payload = json.loads(json_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        items = payload.get("lesson", {}).get("items", [])
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict) or item.get("question_id") is None:
+                continue
+            result[str(item["question_id"])] = item
+    return result
+
+
+def print_source_details(course_root: Path, rows: list[dict[str, str]], texts: dict[Path, str]) -> None:
+    """Print source blank scaffolding and one current quiz for conversion review."""
+    metadata = load_topic_metadata(course_root)
+    cached: dict[str, dict[str, dict[str, object]]] = {}
+    for row in rows:
+        if row["action"] != "convert-to-exact-blank":
+            continue
+        topic_id = row["topic-id"]
+        questions = cached.setdefault(
+            topic_id,
+            load_source_questions(str(metadata.get(topic_id, {}).get("source-path", ""))),
+        )
+        item = questions.get(row["question-id"])
+        if item is None:
+            raise ValueError(
+                f"Could not load source question {row['question-id']} for topic {topic_id}"
+            )
+        placement = resolve_repo_path(row["placements"].split(";", 1)[0])
+        current_body = ""
+        for quiz in QUIZ_RE.finditer(texts[placement]):
+            raw_quiz_id = QUIZ_ID_RE.search(quiz.group("body"))
+            if (
+                quiz_id(quiz.group("body")) == row["question-id"]
+                or (
+                    raw_quiz_id
+                    and raw_quiz_id.group("id").lower()
+                    == f"q-{row['question-number']}"
+                )
+            ):
+                current_body = quiz.group("body")
+                break
+        print(
+            "\n".join(
+                [
+                    f"=== queue {row['queue-order']} | topic {topic_id} | "
+                    f"question {row['question-number']} | ma-{row['question-id']} ===",
+                    str(item.get("readable_text", "")),
+                    "SOURCE PROMPT HTML:",
+                    str(item.get("prompt", {}).get("normalized_html", "")),
+                    "CURRENT QUIZ:",
+                    current_body,
+                ]
+            )
+        )
+
+
 def inventory_question_id(body: str, number: int, meta: dict[str, object]) -> str | None:
     match = QUIZ_ID_RE.search(body)
     if not match:
@@ -180,6 +285,8 @@ def build_inventory(
     texts: dict[Path, str],
     answers: list[Answer],
     ledger: dict[tuple[str, str], dict[str, str]],
+    *,
+    missing_only: bool = True,
 ) -> list[dict[str, str]]:
     topic_metadata = load_topic_metadata(course_root)
     answer_map = {(item.topic_id, item.question_id): item.answer for item in answers}
@@ -194,7 +301,7 @@ def build_inventory(
             number = int(section.group("number"))
             for quiz in QUIZ_RE.finditer(section.group("body")):
                 body = quiz.group("body")
-                if MARKER not in body:
+                if missing_only and MARKER not in body:
                     continue
                 question_id = inventory_question_id(body, number, meta)
                 if not question_id:
@@ -205,12 +312,16 @@ def build_inventory(
                     {
                         "question-number": number,
                         "types": set(),
+                        "exact-blank": True,
                         "placements": [],
                     },
                 )
                 if row["question-number"] != number:
                     raise ValueError(f"Question number mismatch for topic/question {key}")
                 row["types"].add(quiz_type(body))
+                row["exact-blank"] = bool(row["exact-blank"]) and (
+                    quiz_type(body) == "blank" and "require_exact: false" not in body
+                )
                 row["placements"].append(rel(path))
 
     def sort_key(item: tuple[tuple[str, str], dict[str, object]]) -> tuple[object, ...]:
@@ -230,8 +341,10 @@ def build_inventory(
         meta = topic_metadata.get(topic_id, {})
         ledger_row = ledger.get(key)
         original_type = ledger_row.get("question-type", "ledger-missing") if ledger_row else "ledger-missing"
-        if original_type == "free-response" and key in answer_map:
-            action = "convert-to-free"
+        if original_type == "free-response" and bool(row["exact-blank"]):
+            action = "already-exact-blank"
+        elif original_type == "free-response":
+            action = "convert-to-exact-blank"
         elif original_type == "multiple-choice":
             action = "retain-genuine-mcq"
         elif original_type == "free-response":
@@ -283,59 +396,37 @@ def write_inventory(path: Path, rows: list[dict[str, str]]) -> None:
         writer.writerows(rows)
 
 
-def extract_content_lines(body: str) -> list[str]:
-    lines = body.splitlines()
-    for index, line in enumerate(lines):
-        if re.match(r"^content:\s*[>|]", line):
-            end = index + 1
-            while end < len(lines):
-                if lines[end].startswith("  ") or not lines[end].strip():
-                    end += 1
-                    continue
-                break
-            content = lines[index:end]
-            while len(content) > 1 and not content[-1].strip():
-                content.pop()
-            return content
-    raise ValueError("Quiz block has no top-level content block scalar")
-
-
-def correct_answer(body: str) -> str | None:
-    lines = body.splitlines()
-    for index, line in enumerate(lines):
-        if re.match(r"^correct:\s*[>|]", line):
-            values: list[str] = []
-            index += 1
-            while index < len(lines) and (lines[index].startswith("  ") or not lines[index].strip()):
-                values.append(lines[index][2:] if lines[index].startswith("  ") else "")
-                index += 1
-            return "\n".join(values).strip()
-    return None
-
-
-def free_body(body: str, raw_id: str, answer: str, response_instruction: str) -> str:
-    content = extract_content_lines(body)
-    if response_instruction:
-        instruction_line = f"  {response_instruction}"
-        if instruction_line not in content:
-            while len(content) > 1 and not content[-1].strip():
-                content.pop()
-            content.extend(["", instruction_line])
-        else:
-            instruction_index = content.index(instruction_line)
-            if instruction_index > 0 and not content[instruction_index - 1].strip():
-                content[instruction_index - 1] = ""
-    correct = ["correct: |-", *(f"  {line}" for line in answer.splitlines())]
-    return "\n".join(["type: free", f"id: {raw_id}", *content, *correct])
+def exact_blank_body(raw_id: str, content: str) -> str:
+    content_lines = [f"  {line}" if line else "" for line in content.splitlines()]
+    return "\n".join(
+        [
+            "type: blank",
+            f"id: {raw_id}",
+            "require_exact: true",
+            "content: |-",
+            *content_lines,
+        ]
+    )
 
 
 def repair(
     texts: dict[Path, str],
     answers: list[Answer],
     ledger: dict[tuple[str, str], dict[str, str]],
+    layouts: dict[tuple[str, str], str],
 ) -> tuple[dict[Path, str], list[str]]:
     changed: set[Path] = set()
     report: list[str] = []
+
+    def matches_item(body: str, item: Answer) -> bool:
+        id_match = QUIZ_ID_RE.search(body)
+        if not id_match:
+            return False
+        raw_id = id_match.group("id")
+        return (
+            quiz_id(body) == item.question_id
+            or raw_id.lower() == f"q-{item.question_number}"
+        )
 
     for item in answers:
         key = (item.topic_id, item.question_id)
@@ -346,44 +437,36 @@ def repair(
             raise ValueError(f"Refusing non-free-response ledger row: {key}")
 
         seen = 0
-        converted = 0
-        already_free = 0
-        updated_free = 0
+        converted_to_blank = 0
+        already_blank = 0
+        updated_blank = 0
         for path in sorted(texts):
             if lesson_id(texts[path]) != item.topic_id:
                 continue
 
             def replace(match: re.Match[str]) -> str:
-                nonlocal seen, converted, already_free, updated_free
+                nonlocal seen, converted_to_blank, already_blank, updated_blank
                 body = match.group("body")
                 id_match = QUIZ_ID_RE.search(body)
-                if not id_match or quiz_id(body) != item.question_id:
+                if not id_match or not matches_item(body, item):
                     return match.group(0)
                 seen += 1
                 current_type = quiz_type(body)
+                new_body = exact_blank_body(id_match.group("id"), layouts[key])
+                if current_type == "blank":
+                    if "require_exact: false" in body:
+                        raise ValueError(f"Reveal-only blank found for {key} in {rel(path)}")
+                    if new_body == body:
+                        already_blank += 1
+                        return match.group(0)
+                    updated_blank += 1
+                    return f"```quiz\n{new_body}\n```"
                 if current_type == "free":
                     if MARKER in body or "\noptions:" in body:
                         raise ValueError(f"Malformed existing free block for {key} in {rel(path)}")
-                    new_body = free_body(
-                        body,
-                        id_match.group("id"),
-                        item.answer,
-                        item.response_instruction,
-                    )
-                    if new_body == body:
-                        already_free += 1
-                        return match.group(0)
-                    updated_free += 1
-                    return f"```quiz\n{new_body}\n```"
-                if current_type not in {"radio", "checkbox"} or MARKER not in body:
+                elif current_type not in {"radio", "checkbox"}:
                     raise ValueError(f"Unexpected source block for {key} in {rel(path)}")
-                converted += 1
-                new_body = free_body(
-                    body,
-                    id_match.group("id"),
-                    item.answer,
-                    item.response_instruction,
-                )
+                converted_to_blank += 1
                 return f"```quiz\n{new_body}\n```"
 
             new_text = QUIZ_RE.sub(replace, texts[path])
@@ -397,8 +480,9 @@ def repair(
             )
         report.append(
             f"{item.study_order:02d}. topic {item.topic_id} question {item.question_number} "
-            f"(ma-{item.question_id}): answer={item.answer!r}; converted={converted}; "
-            f"updated-free={updated_free}; already-free={already_free}; occurrences={seen}"
+            f"(ma-{item.question_id}): answers={BLANK_ANSWER_RE.findall(layouts[key])!r}; "
+            f"converted-to-blank={converted_to_blank}; updated-blank={updated_blank}; "
+            f"already-blank={already_blank}; occurrences={seen}"
         )
 
     for item in answers:
@@ -409,17 +493,16 @@ def repair(
                 continue
             for match in QUIZ_RE.finditer(text):
                 body = match.group("body")
-                if quiz_id(body) != item.question_id:
+                if not matches_item(body, item):
                     continue
                 verified += 1
-                if quiz_type(body) != "free":
+                if quiz_type(body) != "blank":
                     raise ValueError(f"Post-repair type check failed for {key} in {rel(path)}")
-                if correct_answer(body) != item.answer:
-                    raise ValueError(f"Post-repair answer check failed for {key} in {rel(path)}")
-                if MARKER in body or "\noptions:" in body:
+                desired = exact_blank_body(QUIZ_ID_RE.search(body).group("id"), layouts[key])
+                if body != desired:
+                    raise ValueError(f"Post-repair layout check failed for {key} in {rel(path)}")
+                if MARKER in body or "\noptions:" in body or "\ncorrect:" in body:
                     raise ValueError(f"Post-repair cleanup check failed for {key} in {rel(path)}")
-                if item.response_instruction and item.response_instruction not in body:
-                    raise ValueError(f"Post-repair instruction check failed for {key} in {rel(path)}")
         if verified != item.expected_occurrences:
             raise ValueError(f"Post-repair occurrence check failed for {key}: {verified}")
 
@@ -430,12 +513,16 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("course_root", type=Path)
     parser.add_argument("answer_key", type=Path)
+    parser.add_argument("--blank-layouts", type=Path, required=True)
     parser.add_argument("--inventory-output", type=Path)
+    parser.add_argument("--all-free-response-output", type=Path)
+    parser.add_argument("--source-details", action="store_true")
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
 
     course_root = args.course_root.resolve()
     answers = load_answers(args.answer_key.resolve())
+    layouts = load_blank_layouts(args.blank_layouts.resolve(), answers)
     ledger = load_ledger()
     texts = {
         path: path.read_text(encoding="utf-8")
@@ -447,6 +534,26 @@ def main() -> int:
         write_inventory(args.inventory_output.resolve(), inventory)
         print(f"Wrote {len(inventory)} unique missing-question rows to {args.inventory_output}")
 
+    if args.all_free_response_output:
+        all_rows = build_inventory(
+            course_root,
+            texts,
+            answers,
+            ledger,
+            missing_only=False,
+        )
+        free_rows = [
+            row for row in all_rows
+            if row["original-question-type"] == "free-response"
+        ]
+        write_inventory(args.all_free_response_output.resolve(), free_rows)
+        print(
+            f"Wrote {len(free_rows)} unique MA free-response rows to "
+            f"{args.all_free_response_output}"
+        )
+        if args.source_details:
+            print_source_details(course_root, free_rows, texts)
+
     missing_free = [row for row in inventory if row["action"] == "missing-free-response-answer"]
     manual_review = [row for row in inventory if row["action"] == "manual-review"]
     if missing_free or manual_review:
@@ -454,7 +561,7 @@ def main() -> int:
             f"Inventory is not fully classified: missing-free={len(missing_free)}, manual-review={len(manual_review)}"
         )
 
-    repaired, report = repair(texts, answers, ledger)
+    repaired, report = repair(texts, answers, ledger, layouts)
     for line in report:
         print(line)
 

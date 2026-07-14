@@ -174,14 +174,15 @@ options:
 **Question 2**
 
 ```quiz
-type: free
+type: blank
 id: ma-234173
+require_exact: true
 content: |-
   > A scientific calculator is required to answer this question.
-  
-  Use the first four terms of the binomial expansion of $(1 + x)^{8}$ in ascending powers of $x$ to approximate $(1.02)^{8}$. Round your answer to five decimal places.
-correct: |-
-  1.17165
+
+  Use the first four terms of the binomial expansion of $(1+x)^8$ to approximate $(1.02)^8$. Round to five decimal places.
+
+  $(1.02)^8 \approx$ ==1.17165==.
 ```
 
 ---
@@ -233,14 +234,15 @@ to six decimal places.
 **Question 3**
 
 ```quiz
-type: free
+type: blank
 id: ma-234174
+require_exact: true
 content: |-
   > A scientific calculator is required to answer this question.
-  
-  Use the first three terms of the binomial expansion of $(1 + x)^{9}$ in ascending powers of $x$ to approximate $(0.97)^{9}$. Round your answer to three decimal places.
-correct: |-
-  0.762
+
+  Use the first three terms of the binomial expansion of $(1+x)^9$ to approximate $(0.97)^9$. Round to three decimal places.
+
+  $(0.97)^9 \approx$ ==0.762==.
 ```
 
 ---
@@ -361,14 +363,15 @@ options:
 **Question 6**
 
 ```quiz
-type: free
+type: blank
 id: ma-235253
+require_exact: true
 content: |-
   > A scientific calculator is required to answer this question.
-  
-  Use the first three terms of the binomial expansion of $(5 + x)^{7}$ in ascending powers of $x$ to approximate $(4.97)^{7}$. Round your answer to two decimal places.
-correct: |-
-  74902.81
+
+  Use the first three terms of the binomial expansion of $(5+x)^7$ to approximate $(4.97)^7$. Round to two decimal places.
+
+  $(4.97)^7 \approx$ ==74902.81==.
 ```
 
 ---
@@ -432,16 +435,15 @@ rounded to two decimal places.
 **Question 7**
 
 ```quiz
-type: free
+type: blank
 id: ma-266369
+require_exact: true
 content: |-
   > A scientific calculator is required to answer this question.
-  
-  Calculate the percentage error obtained when approximating the value of $(1.09)^{7}$ using the first three terms of the binomial expansion of $(1 + x)^{7}$ in ascending powers of $x$. Round your final percentage error to two decimal places.
 
-  Enter only the number, without the percent sign.
-correct: |-
-  1.53
+  Approximate $(1.09)^7$ using the first three terms of the binomial expansion of $(1+x)^7$, then calculate the percentage error. Round to two decimal places.
+
+  Percentage error $\approx$ ==1.53==%.
 ```
 
 ---
@@ -479,16 +481,15 @@ options:
 **Question 9**
 
 ```quiz
-type: free
+type: blank
 id: ma-266378
+require_exact: true
 content: |-
   > A scientific calculator is required to answer this question.
-  
-  Calculate the percentage error obtained when approximating the value of $(0.91)^{7}$ using the first three terms of the binomial expansion of $(1 + x)^{7}$ in ascending powers of $x$. Round your final percentage error to two decimal places.
 
-  Enter only the number, without the percent sign.
-correct: |-
-  4.52
+  Approximate $(0.91)^7$ using the first three terms of the binomial expansion of $(1+x)^7$, then calculate the percentage error. Round to two decimal places.
+
+  Percentage error $\approx$ ==4.52==%.
 ```
 
 ```update-progress

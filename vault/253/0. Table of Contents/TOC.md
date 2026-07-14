@@ -39,7 +39,7 @@
 		- [x] [[M-2/OHW-2/Lessons/Introduction to Sequences - 2271|7.1.1. Introduction to Sequences]]
 	- [ ] WHW-2
 		- [x] [[M-2/WHW-2/Lessons/Introduction to Sequences - 2271|7.1.1. Introduction to Sequences]]
-		- [ ] [[M-2/WHW-2/Lessons/Recursive Sequences - 1226|7.1.2. Recursive Sequences]]
+		- [x] [[M-2/WHW-2/Lessons/Recursive Sequences - 1226|7.1.2. Recursive Sequences]]
 	- [ ] OHW-2
 		- [ ] [[M-2/OHW-2/Lessons/Convergence of Geometric Sequences - 1088|1.4.1. Convergence of Geometric Sequences]]
 	- [ ] WHW-2
@@ -65,7 +65,7 @@
 	- [ ] WHW-2
 		- [ ] [[M-2/WHW-2/Lessons/Telescoping Series - 1176|4.3.5. Telescoping Series]]
 	- [ ] OHW-3
-		- [ ] [[M-2/OHW-3/Lessons/Finding the Sum of an Arithmetic Series - 675|1.2.2. Finding the Sum of an Arithmetic Series]]
+		- [x] [[M-2/OHW-3/Lessons/Finding the Sum of an Arithmetic Series - 675|1.2.2. Finding the Sum of an Arithmetic Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Sums of Finite Geometric Series Given in Sigma Notation - 690|1.3.4. Sums of Finite Geometric Series Given in Sigma Notation]]
 		- [ ] [[M-2/OHW-3/Lessons/Infinite Series and Partial Sums - 981|1.4.3. Infinite Series and Partial Sums]]
 		- [ ] [[M-2/OHW-3/Lessons/Convergent and Divergent Infinite Series - 982|1.4.4. Convergent and Divergent Infinite Series]]
@@ -131,7 +131,7 @@
 		- [ ] [[M-4/OHW-9/Lessons/Recognizing Standard Maclaurin Series - 884|4.7.6. Recognizing Standard Maclaurin Series]]
 - [ ] M-5
 	- [ ] OHW-10
-		- [ ] [[M-5/OHW-10/Lessons/Recursive Sequences - 1226|7.1.2. Recursive Sequences]]
+		- [x] [[M-5/OHW-10/Lessons/Recursive Sequences - 1226|7.1.2. Recursive Sequences]]
 		- [ ] [[M-5/OHW-10/Lessons/The Generalized Binomial Theorem - 1189|5.3.1. The Generalized Binomial Theorem]]
 		- [ ] [[M-5/OHW-10/Lessons/Working With the Generalized Binomial Theorem - 695|5.3.2. Working With the Generalized Binomial Theorem]]
 		- [ ] [[M-5/OHW-10/Lessons/Determining Ranges of Validity for Generalized Binomial Expansions - 1191|5.3.3. Determining Ranges of Validity for Generalized Binomial Expansions]]

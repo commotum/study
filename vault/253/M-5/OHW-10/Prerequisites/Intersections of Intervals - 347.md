@@ -157,27 +157,13 @@ $$
 **Question 3**
 
 ```quiz
-type: radio
+type: blank
 id: ma-208742
+require_exact: true
 content: |-
-  Express the intersection of intervals $[-2, 0]\cap[-1, 3]$ as an inequality.
-options:
-- id: a
-  content: |-
-    $-1 \le x \le 0$
-  correct: true
-- id: b
-  content: |-
-    $-2 \le x \le 3$
-- id: c
-  content: |-
-    $-2 \le x \le 0$
-- id: d
-  content: |-
-    $-1 \le x \le 3$
-- id: e
-  content: |-
-    $0 \le x \le 3$
+  Express the intersection $[-2,0]\cap[-1,3]$ as an inequality.
+
+  ==-1== $\le x \le$ ==0==.
 ```
 
 ---
@@ -185,27 +171,13 @@ options:
 **Question 4**
 
 ```quiz
-type: radio
+type: blank
 id: ma-214604
+require_exact: true
 content: |-
-  Find the intersection of intervals $(-\infty, 3)\cap(-\infty, 1]$. Express the result as an inequality.
-options:
-- id: a
-  content: |-
-    $x \le 1$
-  correct: true
-- id: b
-  content: |-
-    $x < 1$
-- id: c
-  content: |-
-    $x < 3$
-- id: d
-  content: |-
-    $1 \le x < 3$
-- id: e
-  content: |-
-    $x \le 3$
+  Find $(-\infty,3)\cap(-\infty,1]$ and express the result as an inequality.
+
+  $x \le$ ==1==.
 ```
 
 ---
@@ -213,27 +185,13 @@ options:
 **Question 5**
 
 ```quiz
-type: radio
+type: blank
 id: ma-214619
+require_exact: true
 content: |-
-  Find the intersection of intervals $(-\infty, 2]\cap(-3, \infty)$. Express the result as an inequality.
-options:
-- id: a
-  content: |-
-    $-3 < x \le 2$
-  correct: true
-- id: b
-  content: |-
-    $-3 \le x \le 2$
-- id: c
-  content: |-
-    $x \le 2$
-- id: d
-  content: |-
-    $x > -3$
-- id: e
-  content: |-
-    $-3 < x < 2$
+  Find $(-\infty,2]\cap(-3,\infty)$ and express the result as an inequality.
+
+  ==-3== $< x \le$ ==2==.
 ```
 
 ---

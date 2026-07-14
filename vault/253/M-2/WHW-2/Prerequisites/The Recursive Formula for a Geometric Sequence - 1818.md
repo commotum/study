@@ -130,17 +130,17 @@ options:
 **Question 2**
 
 ```quiz
-type: free
+type: blank
 id: ma-249792
+require_exact: true
 content: |-
-  Consider the following geometric sequence:
-  $100, 80, 64, …$
-  
-  The recursive formula for this geometric sequence is
+  Consider the geometric sequence
 
-  Enter the expression to the right of $a_{n+1}=$ and the value of $a_1$, separated by a comma.
-correct: |-
-  (4/5)a_n, 100
+  $$100,80,64,\ldots$$
+
+  Its recursive formula is
+
+  $a_{n+1} =$ ==(4/5)a_n==, $a_1 =$ ==100==, $n \ge 1$.
 ```
 
 ---
@@ -148,17 +148,17 @@ correct: |-
 **Question 3**
 
 ```quiz
-type: free
+type: blank
 id: ma-249795
+require_exact: true
 content: |-
-  Consider the following geometric sequence:
-  $243,-162, 108, …$
-  
-  The recursive formula for this geometric sequence is
+  Consider the geometric sequence
 
-  Enter the expression to the right of $a_{n+1}=$ and the value of $a_1$, separated by a comma.
-correct: |-
-  (-2/3)a_n, 243
+  $$243,-162,108,\ldots$$
+
+  Its recursive formula is
+
+  $a_{n+1} =$ ==(-2/3)a_n==, $a_1 =$ ==243==, $n \ge 1$.
 ```
 
 ---
@@ -189,13 +189,15 @@ Therefore, $a_4 = -54$.
 **Question 4**
 
 ```quiz
-type: free
+type: blank
 id: ma-233046
+require_exact: true
 content: |-
-  Consider the following geometric sequence:
-  $a_{n + 1} = \frac{5}{2}a_{n}, a_{1} = 4, n \ge 1$The $3$rd term of this geometric sequence is $a_{3} =$
-correct: |-
-  25
+  Consider the geometric sequence defined by
+
+  $$a_{n+1}=\frac{5}{2}a_n,\qquad a_1=4,\qquad n \ge 1.$$
+
+  Its third term is $a_3 =$ ==25==.
 ```
 
 ---
@@ -203,13 +205,15 @@ correct: |-
 **Question 5**
 
 ```quiz
-type: free
+type: blank
 id: ma-249805
+require_exact: true
 content: |-
-  Consider the following geometric sequence:
-  $a_{n + 1} = \frac{1}{4}a_{n}, a_{1} = 256, n \ge 1$The $4$th term of this geometric sequence is $a_{4} =$
-correct: |-
-  4
+  Consider the geometric sequence defined by
+
+  $$a_{n+1}=\frac{1}{4}a_n,\qquad a_1=256,\qquad n \ge 1.$$
+
+  Its fourth term is $a_4 =$ ==4==.
 ```
 
 ---
@@ -306,16 +310,15 @@ options:
 **Question 8**
 
 ```quiz
-type: free
+type: blank
 id: ma-233070
+require_exact: true
 content: |-
-  Consider the following geometric sequence:
-  
-  $f(n + 1) =-2f(n), f(1) = \frac{1}{2}, n \ge 1$
-  
-  The $4$th term of this geometric sequence is $f(4) =$
-correct: |-
-  -4
+  Consider the geometric sequence defined by
+
+  $$f(n+1)=-2f(n),\qquad f(1)=\frac{1}{2},\qquad n \ge 1.$$
+
+  Its fourth term is $f(4) =$ ==-4==.
 ```
 
 ---

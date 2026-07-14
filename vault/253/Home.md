@@ -2,30 +2,32 @@
 
 ## Next Topics
 
-1. [Recursive Sequences](<M-2/WHW-2/Lessons/Recursive Sequences - 1226.md>)
-2. [Finding the Sum of an Arithmetic Series](<M-2/OHW-3/Lessons/Finding the Sum of an Arithmetic Series - 675.md>)
-3. [Sums of Finite Geometric Series Given in Sigma Notation](<M-2/OHW-3/Lessons/Sums of Finite Geometric Series Given in Sigma Notation - 690.md>)
-4. [Calculating Limits of Rational Functions by Factoring](<M-1/UQ-1/Lessons/Calculating Limits of Rational Functions by Factoring - 1813.md>)
-5. [Convergence of Geometric Sequences](<M-2/OHW-2/Lessons/Convergence of Geometric Sequences - 1088.md>)
+1. [Sums of Finite Geometric Series Given in Sigma Notation](<M-2/OHW-3/Lessons/Sums of Finite Geometric Series Given in Sigma Notation - 690.md>)
+2. [Calculating Limits of Rational Functions by Factoring](<M-1/UQ-1/Lessons/Calculating Limits of Rational Functions by Factoring - 1813.md>)
+3. [Convergence of Geometric Sequences](<M-2/OHW-2/Lessons/Convergence of Geometric Sequences - 1088.md>)
+4. [Vertical Asymptotes of Rational Functions](<M-1/UQ-1/Lessons/Vertical Asymptotes of Rational Functions - 807.md>)
+5. [Solving Inequalities Involving Geometric Sequences](<M-2/OHW-3/Lessons/Solving Inequalities Involving Geometric Sequences - 1004.md>)
 
 ## Progress
 
-- Course: 3% (2/62 unique lessons)
+- Course: 6% (4/62 unique lessons)
 
 - M-1: 8% (1/13)
-- M-2: 5% (1/22)
+- M-2: 14% (3/22)
 - M-3: 0% (0/13)
 - M-4: 0% (0/5)
 - M-5: 0% (0/9)
 
 ## History
 
+- [Finding the Sum of an Arithmetic Series](<M-2/OHW-3/Lessons/Finding the Sum of an Arithmetic Series - 675.md>) - 2026-07-13 17:05
+- [Recursive Sequences](<M-2/WHW-2/Lessons/Recursive Sequences - 1226.md>) - 2026-07-13 16:59
 - [Introduction to Sequences](<M-2/OHW-2/Lessons/Introduction to Sequences - 2271.md>) - 2026-07-12 22:37
 - [The Product and Quotient Rules for Limits](<M-1/UQ-1/Lessons/The Product and Quotient Rules for Limits - 1246.md>) - 2026-07-12 22:28
 
 ## Summary
 
-- Completed unique lessons: 2 / 62
+- Completed unique lessons: 4 / 62
 - Assignment placements: 103
 - Queue size: 5 / 5
 

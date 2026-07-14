@@ -61,7 +61,8 @@ a_{3} &= 7
 $$
 
 We can keep going by substituting $n=3,4,5$, and so on. The resulting terms of the sequence are as follows:
-$3,\qquad 5,\qquad 7,\qquad 9,\qquad 11,\ldots$
+
+$$3,\qquad 5,\qquad 7,\qquad 9,\qquad 11,\ldots$$
 
 ---
 
@@ -131,12 +132,11 @@ options:
 **Question 2**
 
 ```quiz
-type: free
+type: blank
 id: ma-217094
+require_exact: true
 content: |-
-  If $a_{n + 1} =-2a_{n}$ with $a_{1} = 2$, then $a_{2} =$
-correct: |-
-  -4
+  If $a_{n+1}=-2a_n$ with $a_1=2$, then $a_2 =$ ==-4==.
 ```
 
 ---
@@ -190,10 +190,27 @@ $$
 
 We use this formula to compute the terms $a_2$ and $a_3$ as follows:
 
-- We first compute $a_2$ by substituting $n=1$ into the recursive formula:
-$a_{n + 1}|= 3a_{n} - 2; a_{1 + 1}|= 3a_{1} - 2; a_{2}|= 3a_{1} - 2; a_{2}|= 3(2) - 2; a_{2}|= 4$
-- Then, we compute $a_3$ by substituting $n=2$ into the recursive formula:
-$a_{n + 1}|= 3a_{n} - 2; a_{2 + 1}|= 3a_{2} - 2; a_{3}|= 3a_{2} - 2; a_{3}|= 3(4) - 2; a_{3}|= 10$
+First, compute $a_2$ by substituting $n=1$ into the recursive formula:
+
+$$
+\begin{aligned}
+a_{n+1} &= 3a_n-2 \\
+a_{1+1} &= 3a_1-2 \\
+a_2 &= 3(2)-2 \\
+a_2 &= 4
+\end{aligned}
+$$
+
+Then, compute $a_3$ by substituting $n=2$:
+
+$$
+\begin{aligned}
+a_{n+1} &= 3a_n-2 \\
+a_{2+1} &= 3a_2-2 \\
+a_3 &= 3(4)-2 \\
+a_3 &= 10
+\end{aligned}
+$$
 
 Therefore, $a_3=10$.
 
@@ -258,12 +275,11 @@ options:
 **Question 6**
 
 ```quiz
-type: free
+type: blank
 id: ma-217109
+require_exact: true
 content: |-
-  If $a_{n + 1} = 5a_{n} - 3$ with $a_{1} = 1$, then $a_{3} =$
-correct: |-
-  7
+  If $a_{n+1}=5a_n-3$ with $a_1=1$, then $a_3 =$ ==7==.
 ```
 
 ---
@@ -361,12 +377,11 @@ options:
 **Question 8**
 
 ```quiz
-type: free
+type: blank
 id: ma-217120
+require_exact: true
 content: |-
-  If $f(n + 1) = f(n) + 8$ with $f(1) =-6$, then $f(4) =$
-correct: |-
-  18
+  If $f(n+1)=f(n)+8$ with $f(1)=-6$, then $f(4) =$ ==18==.
 ```
 
 ---
@@ -439,16 +454,17 @@ options:
 **Question 10**
 
 ```quiz
-type: free
+type: blank
 id: ma-217141
+require_exact: true
 content: |-
   Consider the following sequence:
-  $$20, 10, 5, \frac{5}{2}, \frac{5}{4}, …$$
-  The recursive formula for this sequence is given by
 
-  Enter the multiplier and the first term, separated by a comma.
-correct: |-
-  1/2, 20
+  $$20, 10, 5, \frac{5}{2}, \frac{5}{4}, \ldots$$
+
+  The recursive formula is
+
+  $a_{n+1} =$ ==1/2== $\cdot a_n,\qquad a_1 =$ ==20==.
 ```
 
 ```update-progress

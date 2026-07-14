@@ -98,16 +98,15 @@ options:
 **Question 2**
 
 ```quiz
-type: free
+type: blank
 id: ma-234001
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
-  What are the first three terms in ascending powers of $t$ of $(1 + \frac{t}{5})^{10}$?
 
-  Enter the coefficients of $t$ and $t^2$, separated by a comma.
-correct: |-
-  2, 9/5
+  Complete the first three terms in ascending powers of $t$:
+
+  $\left(1+\frac{t}{5}\right)^{10}=1+$ ==2== $t+$ ==9/5== $t^2+\cdots$.
 ```
 
 ---
@@ -147,14 +146,15 @@ $$
 **Question 3**
 
 ```quiz
-type: free
+type: blank
 id: ma-234002
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
-  Find, in ascending powers of $t$, the **first three terms** in the binomial expansion of $(1 - 8t)^{6}$.
-correct: |-
-  1 - 48t + 960t^2
+
+  Complete the first three terms in ascending powers of $t$:
+
+  $(1-8t)^6 =$ ==1 - 48t + 960t^2== $+\cdots$.
 ```
 
 ---
@@ -255,14 +255,13 @@ options:
 **Question 6**
 
 ```quiz
-type: free
+type: blank
 id: ma-250997
+require_exact: true
 content: |-
   > A calculator is required to answer this question.
-  
-  What is the coefficient of $k^{4}$ in the expansion of $(1 - 4k)^{6}$?
-correct: |-
-  3840
+
+  The coefficient of $k^4$ in the expansion of $(1-4k)^6$ is ==3840==.
 ```
 
 ---

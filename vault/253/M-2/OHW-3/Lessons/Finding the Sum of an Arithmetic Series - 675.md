@@ -89,7 +89,8 @@ and they all add up to the value of $(a_1 + a_N)$.
 ## Finding the Sum of an Arithmetic Series Given the First and Last Terms
 
 **Example:** Find the sum of the following arithmetic series:
-$1+6+11+16+21+\cdots+101$
+
+$$1+6+11+16+21+\cdots+101$$
 
 **Explanation**
 
@@ -150,7 +151,7 @@ content: |-
   > A calculator is required to answer this question.
   
   Find the sum of the following arithmetic series.
-  $(-5) + (-2) + 1 + 4 + ⋯ + 28$
+  $$(-5) + (-2) + 1 + 4 + ⋯ + 28$$
 options:
 - id: a
   content: |-
