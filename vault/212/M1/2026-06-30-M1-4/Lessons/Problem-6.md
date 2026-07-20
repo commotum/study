@@ -307,7 +307,7 @@ The mass may be given, but it cancels out. Use the mass only if you are later as
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Deciding True Statements About Static Friction on a Banked Turn](<../../2026-07-03-HW-2/Lessons/Problem-9.md>)
 

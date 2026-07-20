@@ -303,7 +303,7 @@ That does not make the radial acceleration zero. Just before the object leaves, 
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Choosing a Free-Body Diagram for an Icy Banked Curve](<../../2026-06-30-M1-4/Lessons/Problem-1.md>)
 

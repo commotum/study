@@ -230,7 +230,7 @@ The main trap is choosing a forward or backward direction. For this kind of bank
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Maximum Speed on a Frictional Banked Curve](<Problem-6.md>)
 

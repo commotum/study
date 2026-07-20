@@ -97,6 +97,14 @@ $$
 \int \frac{y^5}{\left(1-y^3\right)^{3/2}}\,dy
 $$
 
+Hint from the assignment: split the numerator as
+
+$$
+y^5=y^2\cdot y^3,
+$$
+
+then use back-substitution.
+
 ---
 ## Problem 7
 

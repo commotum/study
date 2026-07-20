@@ -316,7 +316,7 @@ For circular motion with changing speed:
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Reading Net Force Arrows for Circular Motion](<../../2026-07-05-PQ-1/Lessons/Problem-2.md>)
 

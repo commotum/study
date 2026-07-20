@@ -251,7 +251,7 @@ Multiply the radius by the angular velocity, keep the final unit as distance per
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Ranking Radial Accelerations](<../../2026-06-25-M1-2/Lessons/Problem-6.md>)
 

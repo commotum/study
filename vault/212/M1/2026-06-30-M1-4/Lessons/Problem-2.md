@@ -296,7 +296,7 @@ The main trap is thinking that constant speed means no acceleration. In circular
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding Static Friction on a Flat Curve](<Problem-3.md>)
 

@@ -205,7 +205,7 @@ For uniform circular motion, use the circular path as the cue: the net force poi
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Free-Body Diagrams for Level Circular Motion](<../../2026-06-30-M1-4/Lessons/Problem-2.md>)
 

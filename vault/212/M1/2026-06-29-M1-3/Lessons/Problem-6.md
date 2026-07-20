@@ -310,7 +310,7 @@ Use this checklist when a turntable object is "just about to slip":
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Minimum Period Before a Coin Slips](<../../2026-07-05-PQ-1/Lessons/Problem-4.md>)
 

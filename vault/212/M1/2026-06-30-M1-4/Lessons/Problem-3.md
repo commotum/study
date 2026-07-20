@@ -333,7 +333,7 @@ The main traps are using $v$ instead of $v^2$, keeping the mass after it cancels
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Threshold Angular Speed Before Slipping](<../../2026-06-29-M1-3/Lessons/Problem-6.md>)
 

@@ -330,7 +330,7 @@ The statement "$\vec{a}$ has magnitude $\dfrac{v^2}{r}=\omega^2r$" is true. It d
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Recognizing Uniform Circular Motion](<../../2026-07-03-HW-2/Lessons/Problem-1.md>)
 

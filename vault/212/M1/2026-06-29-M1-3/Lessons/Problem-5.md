@@ -263,7 +263,7 @@ Use this subtraction only because the rider is at the top. The main trap is usin
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Comparing Normal Force and Weight at the Top of a Hill](<../../2026-07-05-PQ-1/Lessons/Problem-3.md>)
 

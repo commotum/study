@@ -237,7 +237,7 @@ The correct side-view diagram has exactly two arrows: $mg$ downward and $N$ perp
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Speed for a Frictionless Banked Curve](<Problem-4.md>)
 

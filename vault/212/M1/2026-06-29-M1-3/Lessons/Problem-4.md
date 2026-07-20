@@ -360,7 +360,7 @@ The main trap is using the top-of-the-wheel equation $N=mg-m\omega^2r$. At the b
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Normal Force at the Top of a Ferris Wheel](<Problem-5.md>)
 

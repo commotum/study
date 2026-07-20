@@ -228,7 +228,7 @@ If both answers are yes, the object is undergoing uniform circular motion. A con
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Recognizing Tangential Velocity in Circular Motion](<../../2026-06-28-HW-1/Lessons/Problem-6.md>)
 

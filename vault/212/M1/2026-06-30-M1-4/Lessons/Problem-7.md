@@ -244,7 +244,7 @@ Then use circular motion as a check: the horizontal component of tension supplie
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Radius from an Angled String](<../../2026-07-03-HW-2/Lessons/Problem-2.md>)
 

@@ -300,7 +300,7 @@ The main trap is thinking constant speed means equal normal forces. Constant spe
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Normal Force at the Bottom of a Ferris Wheel](<Problem-4.md>)
 

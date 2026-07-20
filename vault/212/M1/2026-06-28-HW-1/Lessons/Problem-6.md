@@ -230,7 +230,7 @@ The main trap is mixing up velocity with acceleration. In uniform circular motio
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Comparing Centripetal Acceleration with the Radius Vector](<Problem-7.md>)
 

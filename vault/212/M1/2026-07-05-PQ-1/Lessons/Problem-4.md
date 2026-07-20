@@ -403,7 +403,7 @@ The main trap is the word "smallest." Smaller period means larger speed, so the 
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Comparing Ferris Wheel Normal Forces](<../../2026-06-29-M1-3/Lessons/Problem-1.md>)
 

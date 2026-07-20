@@ -319,7 +319,7 @@ so $mg>N$. The normal force is less than the gravitational force. The common tra
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Recognizing Contact Loss on a Curved Surface](<../../2026-07-03-HW-2/Lessons/Problem-12.md>)
 

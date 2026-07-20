@@ -348,7 +348,7 @@ The main traps are swapping sine and cosine, leaving the mass in the final formu
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Choosing Friction Direction on a Banked Curve](<Problem-5.md>)
 

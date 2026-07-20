@@ -364,7 +364,7 @@ Combine the two equations only after they describe the same instant. The main tr
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: End of top-30 path.
 

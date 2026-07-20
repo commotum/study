@@ -241,7 +241,7 @@ For the original problem, counterclockwise motion at the upper-left point gives 
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Choosing the Net Force Direction for Speeding-Up Circular Motion](<../../2026-07-02-M1-5/Lessons/Problem-1.md>)
 

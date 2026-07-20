@@ -239,7 +239,7 @@ For a net-force diagram in circular motion, first find the inward direction towa
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Net-Force Direction in Circular Motion](<../../2026-07-03-HW-2/Lessons/Problem-4.md>)
 

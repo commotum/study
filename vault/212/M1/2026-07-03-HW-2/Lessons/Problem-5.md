@@ -351,7 +351,7 @@ The main trap is using the formula for an angle measured from the vertical. Here
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](<Problem-11.md>)
 

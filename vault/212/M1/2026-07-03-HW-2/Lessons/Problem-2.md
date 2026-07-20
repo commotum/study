@@ -246,7 +246,7 @@ Use cosine because the radius is adjacent to the angle. The main trap is choosin
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Deriving the Angle in a Conical Pendulum](<Problem-5.md>)
 

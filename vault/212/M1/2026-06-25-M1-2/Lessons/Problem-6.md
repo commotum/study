@@ -304,7 +304,7 @@ The main trap is comparing only speed or only circle size. Speed is squared, and
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Checking the Magnitude of Centripetal Acceleration](<../../2026-06-28-HW-1/Lessons/Problem-9.md>)
 

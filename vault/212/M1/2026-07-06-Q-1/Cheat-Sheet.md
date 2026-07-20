@@ -40,3 +40,4 @@ $$
 $$
 \Delta y_{\max}=\frac{v_{0y}^2}{2g}=\frac{v_0^2\sin^2\theta}{2g} \qquad v_{0y}=v_0\sin\theta
 $$
+

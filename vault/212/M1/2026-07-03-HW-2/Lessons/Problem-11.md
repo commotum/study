@@ -311,7 +311,7 @@ The main trap is stopping at the top-speed condition or using a height change of
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Finding the Critical Angle Where a Slider Leaves a Sphere](<Problem-13.md>)
 

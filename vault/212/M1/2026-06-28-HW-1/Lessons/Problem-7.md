@@ -289,7 +289,7 @@ The main trap is mixing up acceleration with velocity: $\vec v$ is tangent and p
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Choosing the Acceleration Direction When Circular Motion Speeds Up](<Problem-13.md>)
 

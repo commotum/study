@@ -362,7 +362,7 @@ Compare $v$ with $v_0$. Below $v_0$, friction points up the ramp; at $v_0$, fric
 
 ## Study Guide Navigation
 
-Study guide: [212 Study Guide](<../../../study-guide.md>)
+Study guide: [212 Study Guide](<Study-Guide.md>)
 
 Next: [Choosing a Free-Body Diagram for a Conical Pendulum](<../../2026-06-30-M1-4/Lessons/Problem-7.md>)
 
